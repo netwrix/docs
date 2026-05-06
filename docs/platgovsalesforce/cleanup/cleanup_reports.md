@@ -37,7 +37,7 @@ The results list all customizations of Record type **Objects & Fields**, startin
 
 ### Open Clean Up Status
 
-This report enables you to find customizations that have been identified and noted for clean up.
+Use this report to find customizations that have been identified and noted for clean up.
 
 ### Clean Up Waiting for Info
 
@@ -66,7 +66,7 @@ Ownership of customizations is important for clean up and accountability in the 
 The results list customizations with owners who are either:
 
 - Not active in Salesforce
-- Do not have access to Platform Governance for Salesforce
+- Don't have access to Platform Governance for Salesforce
 
 ### Customizations without Related Processes
 
@@ -74,14 +74,14 @@ The results list all customizations with no process assigned.
 
 ### Custom Fields without Help Text
 
-Help and Descriptions enable users to more efficiently use the system. The results list
+Help and descriptions help users use the system more efficiently. The results list
 customizations missing help.
 
 To fix, open the customization, click **Update Description and Help Text**.
 
 ### Custom Fields without Description
 
-Help and Descriptions enable users to more efficiently use the system. The results list
+Help and descriptions help users use the system more efficiently. The results list
 customizations missing descriptions.
 
 To fix, open the customization, click **Update Description and Help Text**.

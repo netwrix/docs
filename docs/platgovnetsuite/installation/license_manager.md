@@ -22,7 +22,7 @@ If the **Take Web Site Offline for Maintenance** option is changed, you must use
 
     ![Add a New License.](/images/platgovnetsuite/installing_strongpoint/license_new.webp)
 
-3. Click **Get Lic. Number** if the **License Number** is blank. If the License Number is not blank,
+3. Click **Get Lic. Number** if the **License Number** is blank. If the License Number isn't blank,
    continue with the next step.
 4. Click **New Licensed User**.
 
@@ -55,7 +55,7 @@ Some buttons and fields are only visible when you **Edit** the License.
   Optimization**, **Intelligent Change Management** and **Enterprise**.
 - **Edition**: displays your NetSuite Edition.
 - **Subsidiaries**: displays the number of operating subsidiaries you have in your OneWorld account.
-  Platform Governance for NetSuite does not count subsidiaries that are only used for financial
+  Platform Governance for NetSuite doesn't count subsidiaries that are only used for financial
   transactions or as an elimination subsidiary.
 - **View**: select **Strongpoint Licensed Users** to filter the view and see the user information.
 - **Licensed User**: select a user number and click the Open icon that appears if you hover next to
@@ -63,7 +63,7 @@ Some buttons and fields are only visible when you **Edit** the License.
 - **New Licensed User**: opens the **Licensed User** form.
 - **Edit**: opens the **Licensed User** form for the selected **User**.
 
-Click on a column heading to toggle the sort order based on the column contents. By default, the
+Click a column heading to toggle the sort order based on the column contents. By default, the
 records are sorted alphabetically by **User** name.
 
-NetSuite displays 25 records per page. Use the drop down to select other pages of records.
+NetSuite displays 25 records per page. Use the dropdown to select other pages of records.

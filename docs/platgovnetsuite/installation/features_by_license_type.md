@@ -44,7 +44,7 @@ Menus and items not available for your license type are automatically hidden.
 
 
 <sup>1</sup> **Non-Material Object Changes** are changes detected in the object definition not caused by human
-intervention and do not have any functional impact. Examples include NetSuite internal IDs, object
+intervention and don't have any functional impact. Examples include NetSuite internal IDs, object
 XML structure or JSON representation or reordering values in a list.
 
 | **Optional Menus**        | **Menu Items**                                                                                                                                                                                                                     |

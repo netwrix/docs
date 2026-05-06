@@ -115,9 +115,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '10.0',
+        label: '10.0',
+        isLatest: true,
+        sidebarFile: './sidebars/activitymonitor/10.0.js',
+      },
+      {
         version: '9.0',
         label: '9.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/activitymonitor/9.0.js',
       },
       {
@@ -133,7 +139,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/activitymonitor/7.1.js',
       },
     ],
-    defaultVersion: '9.0',
+    defaultVersion: '10.0',
   },
   {
     id: 'auditor',
@@ -518,9 +524,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '26.03',
+        label: '26.03',
+        isLatest: true,
+        sidebarFile: './sidebars/privilegesecure/26.03.js',
+      },
+      {
         version: '25.12',
         label: '25.12',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/privilegesecure/25.12.js',
       },
       {
@@ -529,14 +541,8 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/privilegesecure/4.2.js',
       },
-      {
-        version: '4.1',
-        label: '4.1',
-        isLatest: false,
-        sidebarFile: './sidebars/privilegesecure/4.1.js',
-      },
     ],
-    defaultVersion: '25.12',
+    defaultVersion: '26.03',
   },
   {
     id: 'privilegesecurediscovery',

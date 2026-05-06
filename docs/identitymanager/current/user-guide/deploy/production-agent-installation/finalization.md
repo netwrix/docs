@@ -17,7 +17,7 @@ This page describes the last few steps that the production agent needs for Ident
 Finalize the installation of the agent by proceeding as follows:
 
 1. Install
-[Windows' hosting bundle for ASP.Net Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+[Windows' hosting bundle for ASP.Net Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
 
 If the bundle was installed before [Configure the Pool and Site](../../../user-guide/deploy/production-agent-installation/iis-configuration), then IIS might not display the AspNetCore module and Identity Manager will not run. In this case, relaunch the bundle's installation executable to perform a repair.
 

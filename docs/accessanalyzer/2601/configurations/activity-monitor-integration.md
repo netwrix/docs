@@ -34,19 +34,16 @@ AA2601 Reports (file system activity, SharePoint, Copilot)
 
 | Event Type | Content |
 | --- | --- |
-| **File System Events** | SMB/CIFS file access, reads, writes, renames, permission changes — path, user, bytes transferred |
-| **SharePoint Online Events** | SharePoint file and folder activity — user, site, event type |
-| **Log Event Extended Format (LEEF) Events** | Network-format events — vendor, product, source/destination IP, signatures |
-| **Copilot Events** | Microsoft 365 Copilot interactions — user, entity, workload, region |
+| **File System Events** | SMB/CIFS file access, reads, writes, renames, permission changes |
+| **SharePoint Online Events** | SharePoint file and folder activity |
+| **Copilot Events** | Microsoft 365 Copilot interactions — accessed resources |
 
 ### Security Model
 
 Authentication uses **mutual TLS with SPKI hash pinning**:
 
 - AA2601 requires TLS 1.3 and rejects older protocol versions.
-- NAM agents must present a client certificate on every connection.
-- Certificate chain validation is intentionally permissive — NAM agents use self-signed certificates.
-- AA2601 performs real agent authentication by matching the SHA-256 hash of the agent's certificate public key (SPKI hash) against a persistent allowlist in its database.
+- Both products perform mutual authentication by matching hashes of each other's certificate public key (SPKI hash) against a persistent allowlist in their configuration.
 
 SPKI hashes survive certificate renewal as long as the key pair is unchanged. Re-enroll only when an agent generates a new key pair.
 
@@ -56,7 +53,7 @@ SPKI hashes survive certificate renewal as long as the key pair is unchanged. Re
 
 Before connecting NAM agents to AA2601:
 
-- **Netwrix Activity Monitor** must be installed and monitoring the hosts for which you want real-time activity in AA2601. Confirm monitoring is active before adding the AA2601 output.
+- **Netwrix Activity Monitor** must be installed and monitoring the hosts or services for which you want real-time activity in AA2601. Confirm monitoring is active before adding the AA2601 output.
 - **TLS certificates** must be provisioned on the AA2601 server. The server certificate and private key paths are set via the environment variables `SYSLOG_TLS_CERT_PATH` and `SYSLOG_TLS_KEY_PATH`. Contact your infrastructure team if the listener isn't starting.
 - **Network connectivity** must allow NAM agents to reach AA2601 on TCP port 4504 (default) through any firewalls or network policies.
 - You must have **Administrator** access to AA2601 to generate enrollment tokens and view enrolled agents.
@@ -88,27 +85,33 @@ If the listener isn't running, check the application logs for the reason — mis
 4. Copy the token using the clipboard icon.
 
 :::note
-Tokens expire after **1 hour**. Generating a new token immediately invalidates any previously issued token. A single token can enroll multiple agents simultaneously — plan your enrollment session and generate the token immediately before you begin.
+Tokens expire after **1 hour**. Generating a new token immediately invalidates any previously issued token. A single token can enroll multiple agents and outputs simultaneously — plan your enrollment session and generate the token immediately before you begin.
 :::
 
 ### Step 3 — Add the AA2601 Output in Netwrix Activity Monitor
 
-Add an AA2601 output destination to each monitoring policy in NAM that covers the hosts you want to stream into AA2601.
+Add an AA2601 output to each monitored host or service in NAM you want to stream into AA2601.
 
 :::note
 The following steps describe the general configuration flow. Exact menu labels and field names in the NAM console may differ depending on your NAM version. Verify the steps against the NAM documentation for your installed version.
 :::
 
 1. Open the Netwrix Activity Monitor console.
-2. Navigate to the monitoring policy for the target host or host group.
-3. Open the output configuration for that policy.
-4. Add a new output destination and select the **Netwrix Access Analyzer** output type.
-5. Enter the hostname or IP address of your AA2601 instance and the listener port (default: 4504).
-6. When prompted for an enrollment token, enter the token you generated in Step 2.
-7. Save the output configuration.
-8. Repeat for each monitoring policy covering additional hosts.
+2. Navigate to the monitored host or service.
+3. Add a new output and select the **Netwrix Access Analyzer 26** output type.
+4. Enter the hostname or IP address of your AA2601 instance and the listener port (default: 4504).
+5. Enter the enrollment token you generated in Step 2 and select **Enroll**. Ensure the connection is successful.
+6. Save the output configuration.
+7. Repeat for each monitored host or service.
 
-The NAM agent connects to AA2601, presents its client certificate, and sends an enrollment request. AA2601 validates the token, adds the agent's SPKI hash to the trusted agents allowlist, and confirms enrollment. After that, the agent reconnects and begins streaming events. You no longer need the enrollment token unless the agent generates a new key pair.
+:::note
+You can add an output in bulk by selecting multiple hosts/services and selecting **Add Output**. 
+:::
+
+The NAM agent connects to AA2601, validates AA2601's certificate by comparing it to the hash embedded in the enrollment token, 
+presents its client certificate, and sends an enrollment request. AA2601 validates the token, adds the agent's SPKI hash to the trusted agents allowlist, and confirms enrollment. 
+The NAM agent also adds AA2601's SPKI hash to the allowlist.
+After that, the agent reconnects and begins streaming events. You no longer need the enrollment token unless the agent generates a new key pair.
 
 ### Step 4 — Verify Enrollment
 
@@ -183,8 +186,8 @@ Use the default port (4504) unless you have a conflict. If you must change it:
 ### TLS Certificate Management
 
 - **Monitor certificate expiration.** AA2601 logs a warning when the server certificate is within 30 days of expiry, and again within 7 days. Treat the 30-day warning as actionable.
-- **NAM agents use self-signed certificates** — this is expected and supported. Don't replace them with CA-signed certificates unless your NAM deployment specifically requires it.
-- **Key pair rotation requires re-enrollment.** If a NAM agent generates a new key pair (for example, after a reinstall), its previous SPKI hash entry will no longer match. Re-enroll the agent using a new enrollment token. Remove the stale entry via the API: `DELETE /api/v1/nam-listener/agents/:spki_hash`.
+- **NAM agents use self-signed certificates by default** — this is expected and supported. If you replace them with CA-signed certificates, re-enroll the agent.
+- **Key pair rotation requires re-enrollment.** If a NAM agent generates a new key pair, its previous SPKI hash entry will no longer match. Re-enroll the agent using a new enrollment token. Remove the stale entry via the API: `DELETE /api/v1/nam-listener/agents/:spki_hash`.
 
 ### Enrollment Token Practices
 

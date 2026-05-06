@@ -58,14 +58,14 @@ Set and Profile.
 ![Access report by PermissionSet/Profile](/images/platgovsalesforce/reports/access_reports_permission_by_permset.webp)
 
 - **Users to Profiles/PermissionSets**: Displays the Profile, PermissionSet, and PermissionSet Group
-assigned to each user. You can filter the report information. For example, if you want a list of
-users that have Admin profiles, you can set two filters:
+assigned to each user. You can filter the report information. For example, to list
+users with Admin profiles, set two filters:
 
     - Customization Name Contains **Admin**
     - Salesforce type Equals Profile
 
 - **Date Assigned** and **Expires on** are only relevant for PermissionSets. They are blank for
-Profiles. If your org doesn't use the **Expires on** feature, you can remove the column from the
+Profiles. If the org doesn't use the **Expires on** feature, remove the column from the
 report.
 
 ![Users to Profile/PermissionSets](/images/platgovsalesforce/reports/access_reports_users_to_profile.webp)
@@ -78,7 +78,7 @@ Compliant.
 ![Access Report Profile Permissions Changes](/images/platgovsalesforce/reports/access_reports_profile_changes.webp)
 
 - **Changes to Users**: Displays the changes to tracked user data fields. See
-[Enhanced CPQ Support](/docs/platgovsalesforce/changemanagement/datatracking/enhanced_cpq_support.md) for instructions on
+[Enhanced Configure, Price, Quote (CPQ) Support](/docs/platgovsalesforce/changemanagement/datatracking/enhanced_cpq_support.md) for instructions on
 setting up tracking.<br /><br />If you see the message: _--String too long - Skipped lines due to CPU limit reached--_ it
 means you have reached the governor limits. Profiles and PermissionSets are very data heavy.
 Platform Governance for Salesforce skips the record and continues the scan the next day to ensure
@@ -111,12 +111,12 @@ To generate this report:
 5. Click **Scan**.
 
 This pushes the new list of fields to the report. If you select other fields and repeat the
-process, the previous report is overwritten. Export any reports you want to keep.
+process, the system overwrites the previous report. Export any reports you want to keep.
 
 ## Security Reports
 
-These reports are related to the Salesforce Health Check. It tracks if this feature of the health
-check is **Enabled** or **Disabled** for your Salesforce Organization. For full detail compare the
+These reports are related to the Salesforce Health Check. The reports track whether each health
+check feature is **Enabled** or **Disabled** for your Salesforce Organization. For full detail, compare the
 report to the health check section in Salesforce Setup.
 
 These reports are available from **Netwrix Dashboard**  **Reports**  **Security Reports**.
@@ -204,8 +204,8 @@ as closed. Use this report to review changes that have been automatically cleare
 reporting of changes to the system.
 -  **Data Tracking Change Logs**: displays changes on objects set for data tracking.
 -  **Change/Approval Policy Changes**: this report is based on Field History Tracking. You can track
-up to 20 fields from the Policy Record. Salesforce starts tracking field history from the date and
-time you turn it on a field.
+up to 20 fields from the Policy Record. Salesforce tracks field history from the date and
+time you enable it on a field.
 -  **Fast Scan for Permissions Changes**: displays all changes detected in PermissionSet,
 PermissionSetGroup, and Profiles by the Fast Scan.
 

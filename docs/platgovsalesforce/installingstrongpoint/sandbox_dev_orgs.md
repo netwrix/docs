@@ -6,8 +6,7 @@ sidebar_position: 100
 
 # Sandbox Accounts
 
-Salesforce sandbox accounts are set up for testing. Data storage is now optimized in these accounts
-to make the most of their limited capacity. Default documentation is not created. Refer to the
+Salesforce sandbox accounts are set up for testing. Platform Governance for Salesforce optimizes data storage in these accounts to make the most of their limited capacity and doesn't create default documentation. See the
 [Salesforce documentation](https://help.salesforce.com/articleView?id=data_sandbox_environments.htmandtype=5)
 for specifications and feature comparisons of sandbox types.
 
@@ -15,17 +14,17 @@ When a sandbox is identified, Platform Governance for Salesforce limits excessiv
 not creating the following items:
 
 - Customizations for reports not used in more than a year.
-- Change logs are not automatically created for Developer or Developer Pro sandboxes, but change
-  detection. last modified date, and environment compare can be used.
-- Report and Workflow joins are not created for Developer or Developer Pro sandboxes. They are
+- Platform Governance for Salesforce doesn't automatically create change logs for Developer or Developer Pro sandboxes, but change
+  detection, last modified date, and environment compare are available.
+- Platform Governance for Salesforce doesn't create Report and Workflow joins for Developer or Developer Pro sandboxes. These are
   enabled for Partial and Full sandboxes, but can be disabled to save space.
-- Separate XML representation files are not created.
-- Separate JSON representation files are not created.
+- Platform Governance for Salesforce doesn't create separate XML representation files.
+- Platform Governance for Salesforce doesn't create separate JSON representation files.
 
 If you need to see the Customizations for an object, open the Scanner, select the object, and click
 **Run Scanner**.
 
-## Controlling Sandbox Change Log, Junction and Report Creation
+## Controlling Sandbox Change Log, Junction, and Report Creation
 
 You can enable/disable change log, junction, and report creation for a sandbox from the
 **Configuration and Stats** page.
