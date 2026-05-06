@@ -109,33 +109,24 @@ Collect the following values:
 
 ## Part 2: Prepare Access Analyzer
 
-### Sign in as the bootstrap User Admin
+### First sign-in
 
-<!-- SYNC: install/quickinstall.md "Sign in as the bootstrap User Admin" -->
-<!-- If you change this block, update the matching block in install/quickinstall.md -->
+The installer provisions the first administrator account automatically during setup — the person whose email was entered at the **First Admin Email** prompt can sign in immediately using their Active Directory password.
 
-The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Admin** role. This account can create and manage other users but **cannot** access system configuration. Use it on first login to pre-provision your users, then sign out and sign back in as an Administrator for system-level work.
+Navigate to `https://<your-hostname>` and sign in with the first admin's AD credentials. From here, add additional users under **Configuration** > **Users**.
 
-1. Retrieve the bootstrap admin password from the Kubernetes secret:
+#### Breakglass account
 
-   ```bash
-   sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
-     -o jsonpath='{.data.password}' | base64 -d; echo
-   ```
+The installer also creates a bootstrap account, `admin@dspm.local`, as a recovery mechanism. If the first admin account becomes inaccessible, retrieve the bootstrap password to regain access:
 
-2. Open a browser and navigate to `https://<your-hostname>`.
+```bash
+sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
+  -o jsonpath='{.data.password}' | base64 -d; echo
+```
 
-3. Sign in with:
-   - **Username**: `admin@dspm.local`
-   - **Password**: (from step 1)
-
-4. Complete first-login setup:
-   - Scan the QR code with an authenticator app, enter a device name, submit the one-time code. **Save this enrollment** — you will need the same authenticator for any future bootstrap admin login.
-   - Enter a first name and last name. **Do not change the email address.**
-
-Proceed to [Pre-provision user accounts](#pre-provision-user-accounts) below.
-
-<!-- END SYNC -->
+:::warning
+Do not change the bootstrap account email address — doing so causes authentication failures.
+:::
 
 ### Pre-provision user accounts
 
@@ -150,8 +141,6 @@ The email address entered during pre-provisioning must exactly match the address
 3. Enter the user's **Name** and **Email** address.
 4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer** (see [Roles](#roles) below).
 5. Click **Create User**.
-
-Assign at least one user the **Administrator** role — the bootstrap `admin@dspm.local` account is a User Admin only and cannot access system configuration. Assign at least one additional user the **User Admin** role if you want a non-bootstrap user to manage accounts going forward.
 
 No password is required for pre-provisioned accounts. For details on managing users, see [Users](users.md).
 
