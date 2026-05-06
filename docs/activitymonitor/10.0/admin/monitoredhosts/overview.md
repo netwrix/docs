@@ -30,6 +30,7 @@ Agent:
 - Microsoft Entra ID (formerly Azure AD)
 - SharePoint
 - SharePoint Online
+- Microsoft 365 Copilot
 - Exchange Online
 - SQL Server
 

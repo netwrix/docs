@@ -15,7 +15,7 @@ The window opens for all types of hosts that can be monitored with an Activity A
 following topics for additional information:
 
 - [Azure Files](/docs/activitymonitor/10.0/admin/monitoredhosts/add/azurefiles.md)
-- [Cohesity SmartFiles](/docs/activitymonitor/10.0/requirements/activityagent/nas-device-configuration/cohesity-activity.md)
+- [Cohesity SmartFiles](/docs/activitymonitor/10.0/admin/monitoredhosts/add/cohesity.md)
 - [CTERA](/docs/activitymonitor/10.0/requirements/activityagent/nas-device-configuration/ctera-activity.md)
 - [Dell Celerra or VNX](/docs/activitymonitor/10.0/admin/monitoredhosts/add/dellcelerravnx.md)
 - [Dell Isilon/PowerScale](/docs/activitymonitor/10.0/admin/monitoredhosts/add/dellpowerscale.md)

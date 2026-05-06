@@ -27,3 +27,10 @@ The configurable options are:
 - Connect – Click to validate the connection to the Cohesity cluster using the provided credentials
 - Enable Audit Log option for specified views – Select this checkbox to have the product
   automatically enable auditing for all views in the monitoring scope
+
+
+:::note
+See the [Cohesity SmartFiles Activity Auditing Configuration](/docs/activitymonitor/10.0/requirements/activityagent/nas-device-configuration/cohesity-activity.md) topic for
+additional information on Cohesity SmartFiles host.
+:::
+
