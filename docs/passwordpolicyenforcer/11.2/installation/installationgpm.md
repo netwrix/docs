@@ -1,6 +1,6 @@
 ---
 title: "Deploy with Group Policy"
-description: "Deploy Password Policy Enforcer to multiple computers automatically with Group Policy."
+description: "Deploy Password Policy Enforcer to multiple computers with Group Policy."
 sidebar_position: 40
 ---
 

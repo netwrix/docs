@@ -1,6 +1,6 @@
 ---
 title: "Disable Windows Rules"
-description: "Disable Windows domain password policy rules via Group Policy so that Password Policy Enforcer can manage all password requirements without conflict."
+description: "How to disable the Windows password policy rules to avoid conflicts with Password Policy Enforcer."
 sidebar_position: 20
 ---
 
@@ -13,7 +13,7 @@ PPE has its own rules for password [history](/docs/passwordpolicyenforcer/11.2/a
 To disable the Windows password policy rules:
 
 1. Start the Group Policy Management Console (`gpmc.msc`).
-2. Expand the **Forest:** and **Domains** items, then expand your domain in the left pane.
+2. Expand the **Forest** and **Domains** items, then expand your domain in the left pane.
 3. Right-click the **Default Domain Policy** GPO (or whichever GPO you use for your domain password policy), then click **Edit**.
 4. Expand **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Account Policies** > **Password Policy**.
 5. Double-click **Enforce password history** in the right pane.

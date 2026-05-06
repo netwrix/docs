@@ -1,12 +1,12 @@
 ---
 title: "Domain and Local Policies"
-description: "Domain and Local Policies"
+description: "Use Password Policy Enforcer to enforce domain and local password policies."
 sidebar_position: 50
 ---
 
 # Domain and Local Policies
 
-Netwrix Password Policy Enforcer enforces password policies for both domain and local user accounts.
+Netwrix Password Policy Enforcer (PPE) enforces password policies for both domain and local user accounts.
 
 Domain user accounts exist in Active Directory. The domain controllers store information about these accounts and replicate changes among themselves.
 
@@ -16,9 +16,9 @@ A typical Windows network has both domain and local user accounts, but you might
 
 ## Installation Differences
 
-Install Password Policy Enforcer on all the domain controllers in the domain to enforce password policies for domain user accounts. You don't need to install Password Policy Enforcer on read-only domain controllers unless you're using the [Maximum Age rule](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/maximum_age_rule.md), [Password Policy Client](/docs/passwordpolicyenforcer/11.2/admin/password-policy-client/password_policy_client.md), [PPE Web](/docs/passwordpolicyenforcer/11.2/web-overview/web_overview.md), or Netwrix Password Reset.
+Install Password Policy Enforcer on all the domain controllers in the domain to enforce password policies for domain user accounts. You don't need to install it on read-only domain controllers unless you're using the [Maximum Age rule](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/maximum_age_rule.md), [Password Policy Client](/docs/passwordpolicyenforcer/11.2/admin/password-policy-client/password_policy_client.md), [PPE Web](/docs/passwordpolicyenforcer/11.2/web-overview/web_overview.md), or Netwrix Password Reset.
 
-To enforce password policies for local user accounts, install Password Policy Enforcer on the computers that contain the user accounts you want to enforce password policies for. These computers can be workstations or servers, and they can be standalone or domain members. You don't normally need to install Password Policy Enforcer on the workstations and servers in a domain because most users log on with a domain account. If this is the case, you'll most likely only need to install Password Policy Enforcer on the domain controllers.
+To enforce password policies for local user accounts, install Password Policy Enforcer on the computers that contain the user accounts you want to enforce password policies for. These computers can be workstations or servers, and they can be standalone or domain members. You don't normally need to install PPE on the workstations and servers in a domain because most users log on with a domain account. If this is the case, you'll most likely only need to install PPE on the domain controllers.
 
 ## Operational Differences
 
@@ -36,7 +36,7 @@ You can also use Group Policy to distribute a local configuration to many comput
 ### Distribute the local configuration with Group Policy
 
 1. Start the Group Policy Management Console (gpmc.msc).
-2. Expand the **Forest:** and **Domains** items, then expand your domain in the left pane.
+2. Expand the **Forest** and **Domains** items, then expand your domain in the left pane.
 3. Right-click the Group Policy object you want to use, then click **Edit...**
 4. Expand the **Computer Configuration**, **Preferences**, and **Windows Settings** items in the left pane.
 5. Right-click the **Registry** item, then select **New** > **Registry Wizard**.

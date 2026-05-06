@@ -1,6 +1,6 @@
 ---
 title: "Install the Server Components"
-description: "Install the PPE Server, Configuration Console, and Mailer Service components on domain controllers, servers, or workstations using the Setup wizard or the command line."
+description: "Install the Password Policy Enforcer server components with the Setup wizard or the command line."
 sidebar_position: 10
 ---
 
