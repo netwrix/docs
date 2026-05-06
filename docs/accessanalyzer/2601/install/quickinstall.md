@@ -82,7 +82,7 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 | **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see below |
 
 :::note
-**AD/DC Root CA Bundle is always required regardless of which TLS option you choose.** Even if the installer generates your server certificate, it still needs a separate CA file to trust the connection to your domain controller. See [Active Directory information](#active-directory-information).
+**AD/DC Root CA Bundle is always required regardless of which TLS option you choose.** Even if the installer generates your server certificate, it still needs a separate CA file to trust the connection to your domain controller. See [Active Directory information](#bring-your-own-certificate-file-requirements).
 :::
 
 #### Bring your own certificate — file requirements
@@ -97,7 +97,7 @@ sudo mkdir -p /opt/dspm-tls
 | --- | --- |
 | `<hostname>.crt` | Server identity certificate in PEM format. The Subject Alternative Name (SAN) list must include the hostname **in lowercase** and the server's IP address. |
 | `<hostname>.key` | Private key paired with the certificate (PEM). The OS user running the installer must be able to read it — not just `root`. |
-| `ca-bundle.crt` | CA certificates that trust the server certificate. If the CA that signed the server certificate and the CA that signed the domain controller's LDAPS certificate are different, concatenate both — see [Active Directory information](#active-directory-information). |
+| `ca-bundle.crt` | CA certificates that trust the server certificate. If the CA that signed the server certificate and the CA that signed the domain controller's LDAPS certificate are different, concatenate both — see [Active Directory information](#bring-your-own-certificate-file-requirements). |
 
 **SAN requirement:** The hostname in the SAN list must be lowercase. Browsers normalize hostnames to lowercase during TLS validation — a case mismatch causes HTTP 401 failures at sign-in. The SAN must also include the server IP address.
 
@@ -287,7 +287,7 @@ The **Example** column shows representative values for illustration — enter yo
 | Email Attribute | `mail` | The LDAP attribute that holds the user's email address |
 | First Admin Email | `admin@corp.example.com` | Must match their AD `mail` attribute exactly, including case |
 | First Admin Name | `Jane Smith` | Used in the UI only |
-| Advanced Settings | `No` *(standard installations)* | See note below |
+| Advanced Settings | `No` *(standard installations)* | See the following note |
 | TLS Certificate | *(select your provisioning method)* | See [TLS certificates](#tls-certificates) |
 | TLS Certificate File *(Bring your own only)* | `/opt/dspm-tls/aa2601.crt` | |
 | TLS Private Key File *(Bring your own only)* | `/opt/dspm-tls/aa2601.key` | |

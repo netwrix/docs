@@ -17,9 +17,9 @@ This article is for the team performing the Access Analyzer deployment. It cover
 - [Installer Command Reference](install-commands.md) — full catalog of every installer flag and environment variable
 - [TLS Certificate Requirements](system/certificates.md) — certificate formats, SAN rules, CA bundle preparation
 
-Access Analyzer supports connecting an identity provider (IdP) so users authenticate through your organization's directory rather than with local credentials. IdP federation is **optional** — if you omit `--idp-type` at install time, Access Analyzer is deployed without Keycloak and uses local accounts only.
+Access Analyzer supports connecting an identity provider (IdP) so users authenticate through your organization's directory rather than with local credentials. IdP federation is **optional** — if you omit `--idp-type` at install time, Access Analyzer deploys without Keycloak and uses local accounts only.
 
-When `--idp-type` is configured, the installer automatically:
+When you configure `--idp-type`, the installer automatically:
 
 1. Deploys Keycloak (v26.5.3) as part of the cluster
 2. Waits for Keycloak to become healthy
@@ -40,7 +40,7 @@ Confirm the following before running the installer with IdP flags:
 `--hostname` is required and must:
 
 - Be a real DNS hostname (not an IP address — IPs will not work because the browser TLS handshake requires the hostname in the certificate's SAN).
-- Be lowercase, and match lowercase in the certificate SAN list. Keycloak's OIDC issuer URL is derived from this value; a case mismatch between SAN and browser-normalized hostname produces HTTP 401 at sign-in.
+- Be lowercase, and match lowercase in the certificate SAN list. Keycloak derives its OIDC issuer URL from this value; a case mismatch between SAN and browser-normalized hostname produces HTTP 401 at sign-in.
 - Resolve the same from client browsers and in-cluster pods. The installer configures the in-cluster rewrite automatically; the customer is responsible for the public DNS record or `/etc/hosts` entry that client browsers use.
 - Avoid the `.local` and `.localhost` TLDs — both break in-cluster DNS resolution and silently break OIDC login flows.
 
@@ -62,7 +62,7 @@ For full certificate format and preparation details, see [TLS Certificate Requir
 END HIDDEN -->
 
 :::note
-`--idp-alias` must match `[A-Za-z0-9._-]+` — letters, digits, hyphens, underscores, and dots only. Spaces aren't allowed. The alias is shown as the label on the login button.
+`--idp-alias` must match `[A-Za-z0-9._-]+` — letters, digits, hyphens, underscores, and dots only. Spaces aren't allowed. The alias appears as the label on the login button.
 :::
 
 <!-- HIDDEN: Entra ID OIDC, Entra ID SAML, Generic OIDC, and Generic SAML are post-GA. Uncomment when ready to publish.
@@ -253,7 +253,7 @@ kubectl exec -n access-analyzer statefulset/keycloak -- bash -c '
 ```
 
 :::note
-The bootstrap admin credentials are read from environment variables already present in the pod. Don't pass them as command-line arguments — they would appear in Kubernetes audit logs.
+Keycloak reads the bootstrap admin credentials from environment variables already present in the pod. Don't pass them as command-line arguments — they would appear in Kubernetes audit logs.
 :::
 
 <!-- HIDDEN: Manual OIDC/SAML configuration sections are post-GA. Uncomment when ready to publish.

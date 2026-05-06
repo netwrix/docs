@@ -9,7 +9,7 @@ sidebar_position: 70
 The Users page lets you create and manage the accounts that have access to Netwrix Access Analyzer. Navigate to **Configuration** > **Users** to view and manage all users.
 
 :::note
-This page is available to users with the **User Admin** or **Administrator** role. Users with the Viewer role cannot access this page.
+This page is available to users with the **User Admin** or **Administrator** role. Users with the Viewer role can't access this page.
 :::
 
 ## Users list
@@ -40,7 +40,7 @@ A user can only hold one role at a time.
 
 ## Bootstrap admin account
 
-Access Analyzer seeds a built-in account, `admin@dspm.local`, during installation. This account is assigned the **User Admin** role and is intended for first-time user provisioning only.
+Access Analyzer seeds a built-in account, `admin@dspm.local`, during installation. Access Analyzer assigns this account the **User Admin** role for first-time user provisioning only.
 
 To retrieve the bootstrap admin password:
 
@@ -49,10 +49,10 @@ sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
   -o jsonpath='{.data.password}' | base64 -d; echo
 ```
 
-On first login, you will be prompted to enroll an authenticator app for MFA and set a display name. Do not change the email address.
+On first login, Access Analyzer prompts you to enroll an authenticator app for MFA and set a display name. Don't change the email address.
 
 :::note
-Keep the bootstrap account active as an emergency recovery account, but do not use it for routine user management. Create at least one named User Admin account during initial setup and use that account for ongoing administration.
+Keep the bootstrap account active as an emergency recovery account, but don't use it for routine user management. Create at least one named User Admin account during initial setup and use that account for ongoing administration.
 :::
 
 For the full first-login walkthrough, see [Quick Install — Step 5](/docs/accessanalyzer/2601/install/quickinstall#step-6-sign-in).
@@ -64,10 +64,10 @@ After installation, complete the following steps in order before handing the pro
 | Step | Action | Notes |
 | --- | --- | --- |
 | **1** | Sign in as `admin@dspm.local` | Uses the bootstrap User Admin account. Retrieve the password using the kubectl command above. |
-| **2** | Create at least one named **User Admin** | Provides a dedicated account for user management with no system configuration access. Use this account for ongoing user administration so that Administrator accounts are not required for routine user changes. |
+| **2** | Create at least one named **User Admin** | Provides a dedicated account for user management with no system configuration access. Use this account for ongoing user administration so that Administrator accounts aren't required for routine user changes. |
 | **3** | Create at least one **Administrator** | Grants full access — system configuration and user management. This is typically the person responsible for setting up and maintaining the product. |
 | **4** | Create **Viewer** accounts as needed | Optional. Add Viewer accounts for stakeholders who need read-only access to dashboards and reports. |
-| **5** | Sign out of the bootstrap account | Day-to-day work should be done from named accounts. |
+| **5** | Sign out of the bootstrap account | Do day-to-day work from named accounts. |
 
 ## Add a user
 
@@ -107,7 +107,7 @@ When your deployment is configured to use an external Identity Provider, you can
 No password is required. The account is ready for the user to sign in through your IdP.
 
 :::note
-If a user authenticates through your IdP without a pre-provisioned account in Access Analyzer, their sign-in is blocked and they see an access error. Pre-provision the account first, then the user can sign in successfully.
+If a user authenticates through your IdP without a pre-provisioned account in Access Analyzer, Access Analyzer blocks their sign-in and they see an access error. Pre-provision the account first, then the user can sign in successfully.
 :::
 
 ## Edit a user
@@ -136,7 +136,7 @@ The account becomes active immediately. The user can sign in and use the applica
 
 1. In the users list, click the actions menu for an active user and select **Deactivate**.
 
-Deactivating a user revokes all of their active sessions immediately. The account record is preserved and can be reactivated later.
+Deactivating a user revokes all of their active sessions immediately. Access Analyzer preserves the account record; you can reactivate it later.
 
 :::note
 You can't deactivate your own account or the last active User Admin account.
@@ -158,7 +158,7 @@ Access Analyzer generates a password reset token for the user. The user must set
 2. Confirm the deletion.
 
 :::warning
-Deleting a user is permanent and can't be undone.
+Deleting a user is permanent; you can't undo it.
 :::
 
 You can't delete your own account or the last active User Admin account.

@@ -7,7 +7,7 @@ draft: true
 
 # Installer Command Reference
 
-You install Access Analyzer using a single curl command that downloads and runs the installer. You can pass options to this command to customize how the product is deployed on your server. Most installations need only a license key and accept all defaults.
+You install Access Analyzer using a single curl command that downloads and runs the installer. You can pass options to this command to customize how the installer deploys the product on your server. Most installations need only a license key and accept all defaults.
 
 ## Before You Run the Installer
 
@@ -111,7 +111,7 @@ Export the variables before running the installer. When you set the same option 
 | `DRY_RUN` | `--dry-run` | `true` |
 
 :::note
-`LDAP_BIND_PASSWORD` is the only secret environment variable, and the installer doesn't actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#required-actions) for the two supported ways to provide the password.
+`LDAP_BIND_PASSWORD` is the only secret environment variable, and the installer doesn't honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#required-actions) for the two supported ways to provide the password.
 :::
 
 ## Running the Installer

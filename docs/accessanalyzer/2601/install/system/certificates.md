@@ -42,7 +42,7 @@ All three files must be in PEM format. When you choose **Bring your own certific
 
 - **Format**: a single PEM file containing one or more `-----BEGIN CERTIFICATE-----` blocks concatenated together.
 - **Must include**:
-  - The CA certificate that signed your **application TLS certificate** (item 1 above).
+  - The CA certificate that signed your **application TLS certificate** (item 1).
   - The CA certificate that signed your **domain controller's LDAPS certificate** — often a different CA in multi-domain or multi-CA environments.
 - **Concatenating multiple CAs** is a simple `cat` on Linux:
 

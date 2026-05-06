@@ -6,7 +6,7 @@ sidebar_position: 75
 
 # Identity Provider
 
-Access Analyzer supports federation with your organization's identity system so that users can sign in with their existing corporate credentials. Authentication is handled by your identity provider; roles and permissions are managed within Access Analyzer.
+Access Analyzer supports federation with your organization's identity system so that users can sign in with their existing corporate credentials. Your identity provider handles authentication; you manage roles and permissions within Access Analyzer.
 
 Setting up an identity provider connection is a two-part process: first you configure the integration in your identity system, then you prepare user accounts inside Access Analyzer.
 
@@ -86,7 +86,7 @@ No application registration or callback URL is required for LDAP. Prepare the fo
 
 **Service account:**
 
-Create a dedicated, read-only service account in your directory with read access to the user base DN. For Active Directory, the account needs **Read** permission on the user OU. No write access or special group membership is required.
+Create a dedicated, read-only service account in your directory with read access to the user base DN. For Active Directory, the account needs **Read** permission on the user OU. The account doesn't need write access or special group membership.
 
 **Network access:**
 
@@ -111,7 +111,7 @@ Collect the following values:
 
 ### First sign-in
 
-The installer provisions the first administrator account automatically during setup — the person whose email was entered at the **First Admin Email** prompt can sign in immediately using their Active Directory password.
+The installer provisions the first administrator account automatically during setup — the person whose email you entered at the **First Admin Email** prompt can sign in immediately using their Active Directory password.
 
 Navigate to `https://<your-hostname>` and sign in with the first admin's AD credentials. From here, add additional users under **Configuration** > **Users**.
 
@@ -130,7 +130,7 @@ Don't change the bootstrap account email address — doing so causes authenticat
 
 ### Pre-provision user accounts
 
-Before a user can sign in through the identity provider, their account must exist in Access Analyzer. The application authenticates them against your IdP successfully but denies access if no matching account has been created.
+Before a user can sign in through the identity provider, their account must exist in Access Analyzer. The application authenticates them against your IdP successfully but denies access if no matching account exists.
 
 :::note
 The email address entered during pre-provisioning must exactly match the address sent by the IdP or stored in the LDAP `mail` attribute, including case. A mismatch causes sign-in to fail.
@@ -173,7 +173,7 @@ Sessions are valid for up to 8 hours from sign-in and expire after 4 hours of in
 | --- | --- |
 | **Pre-provisioning required** | Users must have an account in Access Analyzer before their first sign-in. |
 | **Email must match exactly** | The email entered during pre-provisioning must match what the IdP or LDAP directory sends, including case. |
-| **Roles managed in Access Analyzer** | Roles and permissions are set in Access Analyzer, not in your IdP or directory. |
+| **Roles managed in Access Analyzer** | You set roles and permissions in Access Analyzer, not in your IdP or directory. |
 | **Local accounts coexist** | The administrator account created at deployment remains a local account and continues to sign in with a password. |
 | **Password reset unavailable for federated accounts** | The **Reset Password** action in the Users page is available for local accounts only. Federated users manage their credentials through your IdP. |
-| **Name and email locked after first sign-in** | Once a user has signed in at least once, their name and email are set from the IdP token and can't be changed in the Access Analyzer UI. Update them in your IdP instead. |
+| **Name and email locked after first sign-in** | Once a user has signed in at least once, their name and email come from the IdP token; you can't change them in the Access Analyzer UI. Update them in your IdP instead. |
