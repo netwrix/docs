@@ -1,0 +1,10 @@
+{
+  "label": "Microsoft 365 Copilot Search Query",
+  "position": 75,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "m365copilot"
+  }
+}

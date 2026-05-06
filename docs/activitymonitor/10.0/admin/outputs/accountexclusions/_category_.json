@@ -1,0 +1,10 @@
+{
+  "label": "Account Exclusions Tab",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "accountexclusions"
+  }
+}
