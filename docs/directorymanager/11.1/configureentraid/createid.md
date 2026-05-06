@@ -68,11 +68,25 @@ channel is added, removed, or modified. As a result, Directory Manager can't det
 changes incrementally and must replicate all Microsoft Teams objects on every replication cycle.
 This is a known Microsoft platform limitation.
 
-This behavior has a performance impact because Directory Manager replicates all Microsoft Teams
-regardless of whether changes occurred. To mitigate this, you can enable or disable Teams channel
-replication using the `ReplicateTeamsChannelChanges` setting in the following file:
+This behavior increases replication time and resource usage, particularly in environments with a
+large number of Microsoft Teams objects, because Directory Manager replicates all Microsoft Teams
+regardless of whether changes occurred. To control this behavior, use the
+`ReplicateTeamsChannelChanges` setting. Disabling it (the default) skips Teams channel replication
+and avoids the performance impact; enable it only when full Teams channel replication is required.
 
-`[Installation Directory]\ReplicationService\Inetpub\GroupIDReplicationService\Web\appsettings.json`
+This setting is set to `false` (disabled) by default. Set it to `true` to enable full Teams channel
+replication.
+
+To change the `ReplicateTeamsChannelChanges` setting:
+
+Step 1 – Stop the Directory Manager Replication Service.
+
+Step 2 – Open the following file in a text editor:
+
+`<installation-directory>\ReplicationService\Inetpub\GroupIDReplicationService\Web\appsettings.json`
+
+Step 3 – Locate the existing `EntraID` section at the root of `appsettings.json` and set the
+`ReplicateTeamsChannelChanges` value as shown:
 
 ```json
 "EntraID": {
@@ -80,4 +94,6 @@ replication using the `ReplicateTeamsChannelChanges` setting in the following fi
 }
 ```
 
-This setting is disabled `false` by default. Set it to `true` to enable full Teams channel replication.
+Step 4 – Save the file.
+
+Step 5 – Restart the Directory Manager Replication Service.
