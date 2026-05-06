@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Reverse Proxy
 
-Identity Manager can be installed behind a [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) that acts as an intermediate server between users and Identity Manager's server, in order to process users' requests and redirect them to the right server(s), for performance and security purposes.
+Identity Manager can be installed behind a [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) that acts as an intermediate server between users and Identity Manager's server, to process users' requests and redirect them to the right servers, for performance and security purposes.
 
 ## Overview
 
@@ -18,23 +18,23 @@ able to monitor plain text requests from/to Identity Manager's server;
     ![Proxy Purposes: Encryption](/images/identitymanager/proxy_purpose_encryption.webp)
 
 - installing Identity Manager with an integrated agent on a network isolated from the users'
-browsers, in order to be able to access sensitive systems which are protected by being set up on a network isolated from the Internet;
+browsers, to be able to access sensitive systems which are protected by being set up on a network isolated from the Internet;
 
     ![Proxy Installation Example](/images/identitymanager/proxy_example.webp)
 
-This installation will be used for the configuration examples below.
+This installation will be used for the following configuration examples.
 
 - using several Identity Manager's server instances for load-balancing purposes.
 
     ![Proxy Purposes: Load Balancing](/images/identitymanager/proxy_purpose_loadbalancing.webp)
 
-As Identity Manager is **session-less**, working with several servers does not imply the need to synchronize sessions between servers, nor the need to guarantee that a particular IP will be processed by a particular server.
+As Identity Manager is **session-less**, working with several servers doesn't imply the need to synchronize sessions between servers, nor the need to guarantee that a particular IP will be processed by a particular server.
 
 ### Nginx
 
 For these tasks, [nginx](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#nginx) is a relevant choice of reverse proxy. There are several versions of nginx available, suitable for several Linux-based environments. [Installation instructions](https://docs.nginx.com/nginx/admin-guide/installing-nginx/) can be found directly on the nginx website.
 
-At its core, Identity Manager is an ASP.NET application with a Kestrel server. We can configure a nginx reverse proxy accordingly by following [Microsoft's guidelines](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-10.0&tabs=linux-ubuntu#microsofts-guidelines).
+At its core, Identity Manager is an ASP.NET application with a Kestrel server. You can configure a nginx reverse proxy accordingly by following [Microsoft's guidelines](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-10.0&tabs=linux-ubuntu#microsofts-guidelines).
 
 Nginx [configuration files](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/) are usually located in `/etc/nginx`.
 
@@ -126,7 +126,7 @@ With this configuration, SSL is enabled between the nginx proxy and the client, 
 
 ### Static files
 
-Performance can be enhanced for static file serving. This requires extracting static files such as the UI JavaScript application and the logo and pictures, and storing them on the nginx server directly.See more information about [static file serving with nginx](https://docs.nginx.com/nginx/admin-guide/web-server/serving-static-content/).
+Performance can be enhanced for static file serving. This requires extracting static files such as the UI JavaScript application and the logo and pictures, and storing them on the nginx server directly. For details, see [static file serving with nginx](https://docs.nginx.com/nginx/admin-guide/web-server/serving-static-content/).
 
 ## Load Balancing Configuration
 

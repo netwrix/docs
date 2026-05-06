@@ -42,7 +42,7 @@ The agent's service account needs specific permissions presented in the [Create 
 
 - _Read_, _Modify_, and _List folder contents_ on the working directory;
 - _Read & Execute_ and _List folder contents_ on the `Runtime` directory, usually
-`C:/identitymanager<Organization>/Runtime`, in order to run the agent executable;
+`C:/identitymanager<Organization>/Runtime`, to run the agent executable;
 - _Read_, _Modify_, and _List folder contents_ on the directory for provisioning orders, whose path
 depends on the `Work` folder's path;
 - _Read_, _Modify_, _List folder contents_, and _Write_ on the directory for data collection, whose
@@ -63,7 +63,7 @@ Every Identity Manager agent needs one or several service accounts on the targe
 > assigned an Active Directory service account that can read, write, change users' passwords, update
 > group memberships, and synchronize the whole Active Directory.
 
-Before going further, make sure the integration team has provided:
+Before going further, ensure the integration team has provided:
 
 - The list of all managed systems
 - Service accounts with the necessary permissions for the agent to perform _Read_ and/or _Write_
@@ -82,11 +82,11 @@ The agent needs to be assigned a hostname **within** the organization's domain. 
 
 The associated DNS zone needs to be [updated accordingly](https://docs.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/create-an-alias-cname-record-in-dns-for-web1).
 
-The DNS alias should be written in lowercase in order to comply with as many security rules as possible.
+The DNS alias should be written in lowercase to comply with as many security rules as possible.
 
 ## SSL Certificate
 
-The agent requires the use of HTTPS ports and an SSL certificate in order to perform HTTPS communication with the server.
+The agent requires the use of HTTPS ports and an SSL certificate to perform HTTPS communication with the server.
 
 ## Emails
 
@@ -94,9 +94,9 @@ The agent needs access to an **SMTP server** to [Send Notifications](../../insta
 
 ## Encryption Key Pair
 
-An [RSA-2048 encryption key pair](https://en.wikipedia.org/wiki/Public-key_cryptography) is required for the agent in order to perform various encryption operations, such as source, configuration, or log file encryptions;
+An [RSA-2048 encryption key pair](https://en.wikipedia.org/wiki/Public-key_cryptography) is required for the agent to perform various encryption operations, such as source, configuration, or log file encryptions;
 
-Such a certificate does not need to be integrated into the target organization's Public Key Infrastructure and does not require an expiration date. They are only relevant to internal and temporary Identity Manager data and can be changed at any time.
+Such a certificate doesn't need to be integrated into the target organization's Public Key Infrastructure and doesn't require an expiration date. They are only relevant to internal and temporary Identity Manager data and can be changed at any time.
 
 An RSA key pair, as in an [X.509](https://fr.wikipedia.org/wiki/X.509) public key certificate and a private key, can be stored either:
 
@@ -107,7 +107,7 @@ An RSA key pair, as in an [X.509](https://fr.wikipedia.org/wiki/X.509) public ke
 
 The key pair can be generated with tools such as [OpenSSL](https://www.openssl.org/docs/manmaster/man1/req.html) or Microsoft's [New-SelfSignedCertificate](https://docs.microsoft.com/en-us/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps) and [pvk2pfx tool](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/pvk2pfx?redirectedfrom=MSDN).
 
-## What's Next?
+## Next Steps
 
 To start the installation, follow either the [ Quick Start Guide](../../installation-guide/quick-start) or the [Production-Ready Installation](../../installation-guide/production-ready).
 

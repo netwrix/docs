@@ -43,7 +43,7 @@ The iteration argument is usually used with the help of [Build Unique Value Aspe
 
 Builds a username by concatenating a first name initials, a separator, a last name and a possible suffix.
 
-Hyphenated first names are accepted (In this case, we consider the initial of each first name).
+Hyphenated first names are accepted (in this case, the initial of each first name is used).
 
 ```
 string? BuildUsernameWithInitials(string? firstName, string? lastName, string? separator, string? suffix, int? maxLength, int? iteration)
@@ -51,7 +51,7 @@ string? BuildUsernameWithInitials(string? firstName, string? lastName, string? s
 
 The `maxLength` argument limits the length of the username.
 
-The iteration argument is usually used with the help of [Build Unique Value Aspect](../../../integration-guide/toolkit/xml-configuration/workflows/aspects/builduniquevalueaspect.md). If it is greater than 0, we use several letters of the first name avoiding as much as possible to insert a number in the built username.
+The iteration argument is usually used with the help of [Build Unique Value Aspect](../../../integration-guide/toolkit/xml-configuration/workflows/aspects/builduniquevalueaspect.md). If it is greater than 0, the function uses several letters of the first name to avoid inserting a number in the built username.
 
 ### Example of use in a BuildUniqueValue aspect:
 
