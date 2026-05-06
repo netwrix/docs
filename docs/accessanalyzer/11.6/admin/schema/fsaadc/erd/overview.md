@@ -12,7 +12,7 @@ Tables not shown in any diagram (no foreign keys): `SA_FSAA_SchemaVer` (single-r
 
 ## Top-level Partitioning
 
-`SA_FSAA_Hosts` is the root of the schema. Every other table includes a `HOST` column whose foreign key cascades on delete, so removing a host atomically purges its entire data set. The following diagrams are **representative, not exhaustive** — they show the parent tables for each subsystem; the per-subsystem diagrams later in this section cover the remaining HOST-partitioned tables (for example, `SA_FSAA_Rights`, `SA_FSAA_LocalTrustees`, `SA_FSAA_GatesProxy`, `SA_FSAA_Policies`, the four `SA_FSAA_File*` aggregations, and every `SA_FSAC_*` / `SA_FSDLP_*` / `SA_FSDFS_*` table).
+`SA_FSAA_Hosts` is the root of the schema. Every other table includes a `HOST` column whose foreign key cascades on delete, so removing a host atomically purges its entire data set. The following diagrams are **representative, not exhaustive** — they show the parent tables for each subsystem; the per-subsystem diagrams that follow cover the remaining HOST-partitioned tables (for example, `SA_FSAA_Rights`, `SA_FSAA_LocalTrustees`, `SA_FSAA_GatesProxy`, `SA_FSAA_Policies`, the four `SA_FSAA_File*` aggregations, and every `SA_FSAC_*` / `SA_FSDLP_*` / `SA_FSDFS_*` table).
 
 **Core subsystem roots:**
 

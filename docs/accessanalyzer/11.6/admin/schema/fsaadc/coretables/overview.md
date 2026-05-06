@@ -531,7 +531,7 @@ This table is intentionally append-only with no primary key, foreign keys, or in
 
 ## Activity Collector Tables (SA_FSAC_*) {#activity-collector-tables-sa_fsac_}
 
-The following tables are produced by the **File System Activity Collector**. They capture audit events streamed from agents on the file servers and roll those events up into daily-activity aggregates and exception detections.
+The **File System Activity Collector** produces the following tables. They capture audit events streamed from agents on the file servers and roll those events up into daily-activity aggregates and exception detections.
 
 ### SA_FSAC_ProcessNames {#sa_fsac_processnames}
 
@@ -630,7 +630,7 @@ The following tables are produced by the **File System Activity Collector**. The
 
 ### SA_FSAC_DailyActivity {#sa_fsac_dailyactivity}
 
-**Description:** Daily aggregation of activity-event counts, partitioned by `(host, date, folder, trustee, operation, allow)`. The folder ID is the *containing folder* for the operation, so each row counts how many operations of a given type a trustee performed in a folder on a given day. This table feeds the daily-activity views and the *Most Active Users* / *Most Active Servers* reports.
+**Description:** Daily aggregation of activity-event counts, partitioned by `(host, date, folder, trustee, operation, allow)`. The folder ID is the *containing folder* for the operation, so each row counts how many times a trustee performed a given operation type in a folder on a given day. This table feeds the daily-activity views and the *Most Active Users* / *Most Active Servers* reports.
 
 | Column Name | Data Type | Size | Nullable | PK | FK | Default | Description |
 |---|---|---|---|---|---|---|---|
@@ -755,7 +755,7 @@ No foreign keys are declared on this table; `GateID`, `TrusteeID`, `ResourceID`,
 
 ## Sensitive Data Tables (SA_FSDLP_*) {#sensitive-data-tables-sa_fsdlp_}
 
-The following tables are produced by the **Sensitive Data / DLP collector**. They capture matches against configured DLP criteria, including per-match excerpt context and links to the subject-profile system that ties hits to specific identities.
+The **Sensitive Data / DLP collector** produces the following tables. They capture matches against configured DLP criteria, including per-match excerpt context and links to the subject-profile system that ties hits to specific identities.
 
 ### SA_FSDLP_ImportHistory {#sa_fsdlp_importhistory}
 
@@ -782,7 +782,7 @@ The following tables are produced by the **Sensitive Data / DLP collector**. The
 |---|---|---|---|---|---|---|---|
 | HOST | int | | No | PK | FK → SA_FSAA_Hosts.ID | | Host partition |
 | ID | int | | No | PK | | | Per-host criterion ID |
-| Name | nvarchar | 256 | No | | | | Criterion name (for example, "US Social Security Number") |
+| Name | nvarchar | 256 | No | | | | Criterion name (for example, "U.S. Social Security Number") |
 | Risk | int | | No | | | `0` | Risk score |
 | pattern_guid | uniqueidentifier | | Yes | | | | Global criterion GUID |
 
@@ -873,7 +873,7 @@ The `SA_SubjectProfile_*` tables are owned by the central Subject Profile module
 
 ## DFS Namespace Tables (SA_FSDFS_*) {#dfs-namespace-tables-sa_fsdfs_}
 
-The following tables are produced by the **DFS Namespace collector**. They capture Microsoft DFS namespaces and the links that map DFS paths to underlying physical shares.
+The **DFS Namespace collector** produces the following tables. They capture Microsoft DFS namespaces and the links that map DFS paths to underlying physical shares.
 
 ### SA_FSDFS_Namespaces {#sa_fsdfs_namespaces}
 
@@ -916,7 +916,7 @@ The following tables are produced by the **DFS Namespace collector**. They captu
 | Timeout | int | | Yes | | | | DFS-link cache timeout |
 | DfsGuid | uniqueidentifier | | Yes | | | | DFS link's unique identifier |
 | Comment | nvarchar | 1024 | Yes | | | | Free-text comment |
-| IsRoot | bit | | No | | | | True if this link represents the namespace root rather than a sub-link |
+| IsRoot | bit | | No | | | | True if the DFS link represents the namespace root rather than a sub-link |
 
 **Primary Key:** `PK_SA_FSDFS_Links` — clustered on `(HOST, ID)`
 
