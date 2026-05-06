@@ -17,11 +17,11 @@ The source code of the program is licensed to the Non-Profit Open Software Licen
 
 **Binary License and Usage**
 
-The binary code may not be included as part of a commercial package unless a license is purchased. Visit the "our services" section on https://www.pingcastle.com for licensing options.
+The binary code may not be included as part of a commercial package unless a license is purchased. Visit the **Services** section on https://www.pingcastle.com for licensing options.
 
 **License Expiration**
 
-PingCastle will only run until the built-in license expiration date. After this date, the program will cease to function.
+PingCastle only runs until the built-in license expiration date. After this date, the program stops functioning.
 
 This date is surfaced as the End of Support date in the tool.
 
@@ -211,7 +211,7 @@ Scan all reachable domains and automatically generate a consolidated report with
 PingCastle.exe --healthcheck --server *
 ```
 
-This will scan all reachable domains, enable reachable mode, and automatically create a consolidation report. The process typically takes a few minutes to an hour depending on your environment size.
+This scans all reachable domains, enables reachable mode, and automatically creates a consolidation report. The process typically takes a few minutes to an hour depending on your environment size.
 
 ### Option 2: Report Consolidation
 
@@ -228,7 +228,7 @@ PingCastle.exe --hc-conso
 
 This consolidates all available XML reports and generates summary reports with trust relationship maps. XML reports generated from multiple locations can be combined to create a comprehensive view of your infrastructure.
 
-**Note**: Consolidation is performed automatically when using `--server *` for automatic domain discovery.
+**Note**: PingCastle performs consolidation automatically when using `--server *` for automatic domain discovery.
 
 **Output Files**
 
@@ -409,7 +409,7 @@ PingCastle.exe --reload-report encrypted-report.xml
 
 ### Email Delivery
 
-PingCastle can automatically send reports via SMTP. If encryption is enabled, reports will be encrypted before sending.
+PingCastle can automatically send reports via SMTP. If encryption is enabled, PingCastle encrypts reports before sending.
 
 **SMTP Configuration**:
 
@@ -676,7 +676,7 @@ Netwrix is actively working to reduce false positive detections:
 > * No malicious payloads or hidden behavior are present in the software.
 > * The detections occur only because its ability to enumerate security risks and misconfigurations could provide information an attacker might misuse.
 >
-> In short, PingCastle should be viewed in the same category as other professional penetration-testing or red-team tools: safe and valuable in the hands of administrators and security professionals, but flagged by antivirus products due to its capabilities.
+> In short, PingCastle belongs in the same category as other professional penetration-testing or red-team tools: safe and valuable in the hands of administrators and security professionals, but flagged by antivirus products due to its capabilities.
 :::
 
 ## List of open source software used

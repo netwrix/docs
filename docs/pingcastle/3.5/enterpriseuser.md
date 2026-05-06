@@ -14,7 +14,7 @@ management, thus improving over time.
 
 # PingCastle built-in security
 
-PingCastle Enterprise is a tool dedicated to improve the AD security, so
+PingCastle Enterprise is a tool dedicated to improving Active Directory (AD) security, so
 security has been a major priority alongside every step of the creation
 and improvement.
 
@@ -67,10 +67,8 @@ These methods can be used separately or in coordination, meaning you can
 either use a Dual-Factor authentication (recommended) or a single factor
 authentication.
 
-If the password authentication must be disabled, the setting
-\"disablePasswordLogin\" should be set to on. OpenID is automatically
-enabled if the OpenID section is completed in the \"appsettings.json\"
-file.
+To disable password authentication, set `disablePasswordLogin` to `true`. OpenID is automatically
+enabled when the OpenID section is completed in `appsettings.json`.
 
 Authentication using OpenID:
 
@@ -115,8 +113,8 @@ Saml2, ...)
 
 Claims permission is the way to assign dynamically permissions based on
 Windows group. Claims are case sensitive. You can
-also open the "View my user's claims page in "Manage your account" to
-see what claims have been pushed to Ping Castle.
+also open the user's claims page (available under **Manage your account**) to
+see what claims have been pushed to PingCastle Enterprise.
 
 ![Une image contenant texte, capture d'écran, Police, conception Description générée automatiquement](/images/pingcastle/enterpriseuser/image9.webp)
 
@@ -145,8 +143,7 @@ Account / User management
 
 Management view
 
-Each view is dedicated to a certain kind of audience, which is defined
-by the role each stakeholder has.
+Each view targets a specific audience based on the stakeholder's role.
 
 ## Role-Based Access and Permission Structure
 
@@ -237,9 +234,9 @@ From this global page, you can then access detailed process for each
 step of the PingCastle maturity assessment (Domain Coverage, Ownership,
 etc.) while more detailed pages can be shown in the advanced menu.
 
-This view is mainly dedicated for the company management, notably the
-\"Maturity Assessment\" part, as it will show KPI as well as Objectives
-and goals to improve the overall level of security of the AD.
+This view is primarily for company management, notably the
+\"Maturity Assessment\" part, which shows KPIs as well as objectives
+and goals to improve the overall level of AD security.
 
 Nonetheless, it can also be used by Technical stakeholder such as AD
 administrator, as it can greatly assist in the technical remediation.
@@ -300,8 +297,7 @@ Detailed view of the breakdown for a major area:
 
 Use this page to understand the work performed and the remaining work for AD security.
 
-Then a button \"Click here to get more details\" is available to switch
-to a more detailed dashboard.
+Click the **Get more details** button to switch to a more detailed dashboard.
 
 ## Area maturity dashboard
 
@@ -403,7 +399,7 @@ the user to the detail of the report.
 The "View Action Plans" option changes the color of the items and enables the user to see quickly what the status of the action plans are.
 :::
 
-Typically, the first step of a remediation will be to request domain owners to set up an action plan without enforcing it.
+The first step of a remediation is to request domain owners to set up an action plan without enforcing it.
 
 To see the top rules that need to be fixed to improve the maturity or
 the score, a selection of the 2 tab "Maturity" or "Priority" enables the
@@ -438,36 +434,28 @@ Additional reports may be added in the future or if requested.
 The \"Staled Objects\" are one of the 4 main components of the Risk
 Score (the 2.2 area)
 
-This section will give a lot of details on how the Stale Objects
-influence your overall Risk Score, as well as guidelines on how to
-reduce the risk and improve the overall Risk Score.
+This section covers how the Stale Objects component influences your overall Risk Score and provides guidelines for reducing risk and improving the score.
 
 **Privileged accounts**
 
 The \"Privileged accounts\" are one of the 4 main components of the Risk
 Score (the 2.2 area)
 
-This section will give a lot of details on how the Stale Objects
-influence your overall Risk Score, as well as guidelines on how to
-reduce the risk and improve the overall Risk Score.
+This section covers how the Stale Objects component influences your overall Risk Score and provides guidelines for reducing risk and improving the score.
 
 **Trusts**
 
 The \"Trusts\" are one of the 4 main components of the Risk Score (the
 2.2 area)
 
-This section will give a lot of details on how the Stale Objects
-influence your overall Risk Score, as well as guidelines on how to
-reduce the risk and improve the overall Risk Score.
+This section covers how the Stale Objects component influences your overall Risk Score and provides guidelines for reducing risk and improving the score.
 
 **Anomalies**
 
 The \"Anomalies\" are one of the 4 main components of the Risk Score
 (the 2.2 area)
 
-This section will give a lot of details on how the Stale Objects
-influence your overall Risk Score, as well as guidelines on how to
-reduce the risk and improve the overall Risk Score.
+This section covers how the Stale Objects component influences your overall Risk Score and provides guidelines for reducing risk and improving the score.
 
 # Technical view (\"Infrastructure\")
 

@@ -74,7 +74,7 @@ Licenses are based on the number of domains managed, with licenses available up 
 - Domain Controllers aren't counted for licensing purposes, only domains
 - Licenses are bundled in packs of 10 domains, up to 60, with an unlimited license thereafter
 
-**Example**: If you have contoso.com with two subdomains called uk.contoso.com and us.contoso.com, this would require a 10-domain licensing pack.
+**Example**: If you have `contoso.com` with two subdomains called `uk.contoso.com` and `us.contoso.com`, this would require a 10-domain licensing pack.
 
 ## Architecture
 
@@ -2132,7 +2132,7 @@ Set the certificate requirement to **Accept** (not **Require**) to allow API acc
 :::
 
 :::note Browser Cache
-If certificate settings are changed, close and reopen the browser to avoid connection cache reuse.
+Close and reopen the browser after changing certificate settings to avoid connection cache reuse.
 :::
 
 **PingCastle Configuration**
@@ -3363,7 +3363,7 @@ More detailed error messages can be found in the event log or by running the app
 
 **Solution:**
 
-Check the detailed error message and correct the issue. For license errors, verify and update the license key in appsettings.json.
+Check the detailed error message and correct the issue. If you see a license error, verify the license key in `appsettings.json` and update it if needed.
 
 </details>
 

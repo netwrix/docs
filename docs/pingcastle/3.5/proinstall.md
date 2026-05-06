@@ -65,9 +65,9 @@ relying on \"dotnet standard 2.0\".
 PingCastle relies on the Windows account to perform scans and doesn't
 use third party authentication system.
 
-PingCastle Pro requires Azure AD or a Windows Active Directory to
-perform authentication. If AzureAD is used, the application must be
-allowed to get the token from AAD (typically login.microsoftonline.com).
+PingCastle Pro requires Azure Active Directory (Azure AD) or a Windows Active Directory to
+perform authentication. If Azure AD is used, the application must be
+allowed to get the token from Azure AD (typically `login.microsoftonline.com`).
 
 ## License
 
@@ -80,8 +80,8 @@ domains include subdomains of a forest.
 
 **Example**
 
-If you have consto.com with two subdomains called uk.consto.com and
-us.consto.com, then you would require three licenses.
+If you have `consto.com` with two subdomains called `uk.consto.com` and
+`us.consto.com`, then you would require three licenses.
 
 # Architecture
 
@@ -107,7 +107,7 @@ it in the database.
 
 # Minimal AzureAD Configuration
 
-Add the end of the procedure, you will get "Tenant ID" and "Client ID".
+At the end of the procedure, you receive a **Tenant ID** and a **Client ID**.
 
 **Connect to \"Azure Portal\" located at https://portal.azure.com**
 
@@ -119,15 +119,14 @@ Select the App Registrations pane.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image5.webp)
 
-And then click New registration from the toolbar in the top. That
-will open a dialog "Register and app".
+Click **New registration** from the toolbar at the top. A **Register an app** dialog opens.
 
 ![](/images/pingcastle/proinstall/image6.webp)
 
 Add a name but also the redirect Uri.
 
 :::note
-The redirect URI must point to the FQDN of the server that will be accessed. It MUST starts with HTTPS and MUST ends with /signin-oidc.
+The redirect URI must point to the fully qualified domain name (FQDN) of the server that is being accessed. It must start with HTTPS and end with `/signin-oidc`.
 :::
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image7.webp)
@@ -198,8 +197,7 @@ It requires:
 
 ## API Key and endpoint
 
-Before starting the setup, the admin is required to provide the Tenant
-ID, the Client ID of the application.
+Before starting the setup, provide the Tenant ID and Client ID of the application.
 
 The Client Secret, Notification group, and SMTP configuration is
 optional and can be modified later in the appsettings.Production.json
@@ -207,7 +205,7 @@ file.
 
 ## Procedure
 
-The MSI file guides the installation of the software:
+The Windows Installer (MSI) file guides the installation of the software:
 
 ![](/images/pingcastle/proinstall/image15.webp)
 
@@ -242,7 +240,7 @@ Then the authentication configuration is asked.
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image21.webp)
 
 For Windows, default group which is allowed to PingCastle is everyone.
-To change the group, select the browse button. A new dialog is shown.
+To change the group, select the browse button. A new dialog appears.
 
 2.  If you select "Domain admins" this group won't work. Indeed, it will
     be stripped in the restricted token and the user won't be seen as
@@ -437,10 +435,10 @@ Then create a database.
 
 ![](/images/pingcastle/proinstall/image38.webp)
 
-Don't forget to set the owner as the user you created before.
+Set the owner as the user you created earlier.
 
-You should verify that the credentials and that the server is available
-before going further.
+Verify that the credentials are correct and that the server is available
+before continuing.
 
 ![Une image contenant texte, capture d'écran, nombre, affichage Description générée automatiquement](/images/pingcastle/proinstall/image39.webp)
 
@@ -461,12 +459,8 @@ Specify the following:
 Server=tcp:server.fqdn.com;Database=PingCastle;User Id=pingcastle;password=pingcastle;Trusted_Connection=True;MultipleActiveResultSets=true
 ```
 
-Unfortunately, the server will not create the database at the
-installation time. You will discover any issue at the first run. Dont
-forget to check the event log to have the full error message. You can
-change the connection string after the installation by editing the file
-appsettings.production.json. Don't forget that special characters may
-need to be escaped as they are located inside a json string.
+The server doesn't create the database at installation time. Any issues appear on first run. Check the event log for the full error message. You can
+change the connection string after installation by editing `appsettings.production.json`. Special characters in the connection string must be escaped because the value is inside a JSON string.
 
 ![Une image contenant texte, capture d'écran, Police Description générée automatiquement](/images/pingcastle/proinstall/image42.webp)
 
@@ -500,7 +494,7 @@ Specify the following:
 Server=tcp:server.fqdn.com;Database=PingCastle;Trusted_Connection=True;MultipleActiveResultSets=true
 ```
 
-The installation will continue.
+The installation continues.
 
 After the installation, another steep need to be done: you need to
 change the Application Pool identity.\
@@ -588,7 +582,7 @@ the connection string, named as "DefaultConnection".
 
 At the first run of the application, the database is created. If there
 is an error with the database (missing right, invalid connection string)
-or hosting, the next screen will not be displayed.
+or hosting, the next screen doesn't appear.
 
 For Azure configuration, the application asks you to connect using
 Azure.
@@ -783,9 +777,7 @@ dotnet.exe PingCastlePro.dll --server.urls=http://*:8080
 However, if there is a permission problem in the database, this method
 won\'t display an error because the database will be connected under the
 user context and not the system context. Typically on Windows, the IIS
-service connect under IIS APPPool\\AppName. Refer to the following page to grant rights to the application pool account on SQL Server:
-
-**https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login**
+service connect under IIS APPPool\\AppName. To grant rights to the application pool account on SQL Server, see [How to add the ApplicationPoolIdentity to a SQL Server login](https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login).
 
 Then depending on the platform additional logs can be stored.
 
@@ -862,9 +854,7 @@ Solution:
 Grant the right to create tables in the database or run a SQL script to
 create this table. This script is available on demand.
 
-Don't forget that the inability to create table can be seen of a
-symptom of a lack of permissions. The inability to add or remove records
-in the database will prohibit the use of the application.
+The inability to create tables is a symptom of insufficient permissions. If the application pool identity can't add or remove records in the database, the application can't start.
 
 If you are running PingCastle from another SQL Server, the default
 identity used by the application pool will not be granted access.
@@ -907,8 +897,7 @@ add `;User ID=sa;Password=pass123`
 
 3.  This is usually located at: C:\\PingCastlePro
 
-4.  Edit the **Appsettings.json** file so the Logging Section looks like
-    the example below:
+4.  Edit the **Appsettings.json** file so the Logging section matches the following:
 
 ```json
 "Logging": {
