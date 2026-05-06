@@ -134,7 +134,7 @@ Use the multi-select panel to manage recipients:
 
 #### Alert Trigger Conditions
 
-The system continuously monitors the Auto Scanner and sends email alerts when it detects that the scanner is not running as configured in the scheduler.
+The system continuously monitors the Auto Scanner and sends email alerts when it detects that the scanner isn't running as configured in the scheduler.
 
 ## Jira Configuration
 
@@ -191,7 +191,7 @@ Jira integration.
    without clicking **Push**. If you are using an org where you don't want to create a
    Change Request, leave this unchecked so you can do your research or testing without generating
    Change Requests.
-6. Platform Governance for Salesforce does not automatically create Change Requests, because not all tickets result in a Change Request.
+6. Platform Governance for Salesforce doesn't automatically create Change Requests, because not all tickets result in a Change Request.
    Tickets must be pushed to Platform Governance for Salesforce to begin the process. When Automatic
    Synchronization is on, Platform Governance for Salesforce synchronizes changes to the Status and Customizations
    between Jira and Platform Governance for Salesforce without manually pushing changes.

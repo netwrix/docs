@@ -46,7 +46,7 @@ Click **Add Proposed Data Record** to include new data records created or modifi
 
 # Step 6 – Request Approval
 
-Once you add all required information, the operator can click **Request Approval** to move the Change Request (CR) into Pending Approval status.
+After you add all required information, the operator can click **Request Approval** to move the Change Request (CR) into Pending Approval status.
 
 ![Approve Process - Request Approval](/images/platgovsalesforce/integrations/zendesk/Approve_Process_-_Request_Approval.webp)
 

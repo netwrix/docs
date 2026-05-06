@@ -58,7 +58,7 @@ selecting **Create New View**. Use the filters to generate your list.
 :::note
 Before moving on to other clean up activities, delete unused
 customizations that are safe to delete, such as fields that have not been used in
-years or that are not used by any other customization.
+years or that aren't used by any other customization.
 :::
 
 ### Analyze and Organize the Results

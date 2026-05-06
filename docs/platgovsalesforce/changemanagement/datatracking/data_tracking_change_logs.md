@@ -99,7 +99,7 @@ This report returns only the Discount Schedule Ids of records that don't have th
 
 ### Using an Apex Class as a Filter
 
-To implement complex filtering logic that a report cannot handle, create a custom **Apex Class**.
+To implement complex filtering logic that a report can't handle, create a custom **Apex Class**.
 
 **Netwrix Platform Governance** provides support for custom logic by allowing Apex classes to act as filters.
 

@@ -20,8 +20,8 @@ Integrations with Salesforce include:
 
 Platform Governance for Salesforce’s Change Management capabilities are integrated with Jira, one of
 the most popular issue ticketing and development project management systems. Customers can
-push Jira change tickets into a Change Request, enabling easy management of changes directly in
-their system, seamless tracking of compliant changes and automating the reconciliation of change
+push Jira change tickets into a Change Request, enabling change management directly in
+their system, tracking compliant changes, and automating the reconciliation of change
 logs during an audit. This provides the following benefits to your users:
 
 - Improved team productivity by automatically detecting objects mentioned in Jira tickets, managing

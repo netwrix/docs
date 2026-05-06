@@ -4,7 +4,7 @@ title: Platform Governance for Salesforce - Zendesk Integration
 
 # Overview
 
-Platform Governance for Salesforce's Change Management capabilities are integrated with Zendesk, one of the most popular customer service and issue ticketing systems. Customers can look for and include Salesforce Customizations, assess impacts for requested changes, and push Zendesk change tickets into a Change Request. This enables easy management of changes, seamless tracking of compliant changes and automating the reconciliation of change logs during an audit.
+Platform Governance for Salesforce's Change Management capabilities are integrated with Zendesk, one of the most popular customer service and issue ticketing systems. Customers can look for and include Salesforce Customizations, assess impacts for requested changes, and push Zendesk change tickets into a Change Request. This enables change management, tracking of compliant changes and automating the reconciliation of change logs during an audit.
 
 User benefits include:
 

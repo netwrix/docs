@@ -23,7 +23,7 @@ The FastScan is the **only method** that detects and documents changes to:
 - **ProfilePasswordPolicy**: Password policies and requirements configured at the Profile level
 - **ProfileSessionSetting**: Session timeout and security settings for Profiles
 
-When changes are made to these settings, FastScan automatically creates Change Log records at the Profile level, ensuring complete visibility of security configuration changes that the standard scanner does not capture.
+When changes are made to these settings, FastScan automatically creates Change Log records at the Profile level, ensuring complete visibility of security configuration changes that the standard scanner doesn't capture.
 
 ---
 

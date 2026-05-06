@@ -6,7 +6,7 @@ sidebar_position: 100
 
 # Sandbox Accounts
 
-Salesforce sandbox accounts are set up for testing. Platform Governance for Salesforce optimizes data storage in these accounts to make the most of their limited capacity and does not create default documentation. See the
+Salesforce sandbox accounts are set up for testing. Platform Governance for Salesforce optimizes data storage in these accounts to make the most of their limited capacity and doesn't create default documentation. See the
 [Salesforce documentation](https://help.salesforce.com/articleView?id=data_sandbox_environments.htmandtype=5)
 for specifications and feature comparisons of sandbox types.
 
@@ -14,12 +14,12 @@ When a sandbox is identified, Platform Governance for Salesforce limits excessiv
 not creating the following items:
 
 - Customizations for reports not used in more than a year.
-- Platform Governance for Salesforce does not automatically create change logs for Developer or Developer Pro sandboxes, but change
+- Platform Governance for Salesforce doesn't automatically create change logs for Developer or Developer Pro sandboxes, but change
   detection, last modified date, and environment compare are available.
-- Platform Governance for Salesforce does not create Report and Workflow joins for Developer or Developer Pro sandboxes. These are
+- Platform Governance for Salesforce doesn't create Report and Workflow joins for Developer or Developer Pro sandboxes. These are
   enabled for Partial and Full sandboxes, but can be disabled to save space.
-- Platform Governance for Salesforce does not create separate XML representation files.
-- Platform Governance for Salesforce does not create separate JSON representation files.
+- Platform Governance for Salesforce doesn't create separate XML representation files.
+- Platform Governance for Salesforce doesn't create separate JSON representation files.
 
 If you need to see the Customizations for an object, open the Scanner, select the object, and click
 **Run Scanner**.

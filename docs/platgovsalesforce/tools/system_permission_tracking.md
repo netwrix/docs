@@ -170,7 +170,7 @@ Export change logs for further analysis or compliance reporting:
 
 **Solutions**:
 - Clear any applied search filters
-- Permissions already marked as selected do not appear in search results
+- Permissions already marked as selected don't appear in search results
 - Use **Refresh** to reload the list
 - Verify the permission exists in your Salesforce org
 - Check if the permission is already in the Recommended Permissions list

@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Change Enablement
 
-Speed and safety are not opposites. Platform Governance for Salesforce demonstrates that **Faster** can also be **Safer** and sometimes **Very Fast** can be **Extremely Safe**.
+Speed and safety aren't opposites. Platform Governance for Salesforce demonstrates that **Faster** can also be **Safer** and sometimes **Very Fast** can be **Extremely Safe**.
 
 The [Change Monitoring](/docs/platgovsalesforce/techdebt/tech_debt_change_monitoring.md) topic covers setting up automated change
 monitoring to deliver instant oversight of your org. [Org Clean Up](/docs/platgovsalesforce/techdebt/tech_debt_org_clean_up.md)

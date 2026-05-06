@@ -8,7 +8,7 @@ sidebar_position: 10
 
 Platform Governance for Salesforce's Change Enablement capabilities are integrated with Jira, one of
 the most popular issue ticketing and development project management systems. Customers can look for and include Salesforce Customizations, assess impacts for requested changes, and push Jira
-change tickets into a Change Request. This enables easy management of changes, seamless tracking of
+change tickets into a Change Request. This enables change management, tracking of
 compliant changes and automating the reconciliation of change logs during an audit.
 
 User benefits include:

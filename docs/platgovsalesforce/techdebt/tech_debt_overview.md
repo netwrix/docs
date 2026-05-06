@@ -38,7 +38,7 @@ There are many ways to classify tech debt. Three main categories are:
 These customizations are littered amongst and intertwined with business-critical portions of
 virtually every org.
 
-Salesforce tech debt is normal. It does not reflect team aptitude or level of competence. In
+Salesforce tech debt is normal. It doesn't reflect team aptitude or level of competence. In
 most cases, the changes made to the org were part of rapid, rational, responsible solutions to the
 problems of the day. The incredible flexibility of the Salesforce platform enables an organization
 to move forward with high velocity and in an agile manner. Over time, the cost of changing or adding

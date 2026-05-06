@@ -58,7 +58,7 @@ complications.
    ![Edit icon](/images/platgovsalesforce/tech_debt/edit_icon.webp)
    icon and edit the **Clean Up Status** and other Clean Up Fields. You can select multiple fields
    using the checkboxes to set the values for the group.
-2. For easy reference later, set a project name in the **Clean Up Classification** field such as
+2. To find the group later, set a project name in the **Clean Up Classification** field such as
    _Simple Account Clean Up_. You can filter on this later when you send for approval.
 3. If you have questions, send an email or Chatter request to the owner and set the **Clean Up
    Status** to _Send Request Info Email_ as a reminder you are awaiting a response.
@@ -70,7 +70,7 @@ complications.
    scripts and workflows are still useful, need to be fixed, or cleaned up. What are the scripts or
    workflows doing if there is no data in the field?
 6. As you work through the list, note your findings in the **Clean Up Comments** field.
-7. To keep an unused field, set the **Clean Up Status** to **Ignore**. Alternatively, set the **Date Last Used** to a date in the future. Platform Governance for Salesforce does not override the manually set date with an earlier date, so you can retain the customization. To view
+7. To keep an unused field, set the **Clean Up Status** to **Ignore**. Alternatively, set the **Date Last Used** to a date in the future. Platform Governance for Salesforce doesn't override the manually set date with an earlier date, so you can retain the customization. To view
    ignored Customizations, select:
    **Strongpoint** > **Reports** > **Clean Up** > **Customizations Excluded From Clean Up**
 
@@ -178,7 +178,7 @@ the fields.
 
 Clean up the fields in a sandbox first, run your test sets, and review the changes with the affected business owners before making the change in production.
 
-Platform Governance for Salesforce tools do not support deleting items. To remove objects in bulk, use [Destructive Change Sets](https://developer.salesforce.com/docs/atlas.en-us.daas.meta/daas/daas_destructive_changes.htm). You can also remove them manually.
+Platform Governance for Salesforce tools don't support deleting items. To remove objects in bulk, use [Destructive Change Sets](https://developer.salesforce.com/docs/atlas.en-us.daas.meta/daas/daas_destructive_changes.htm). You can also remove them manually.
 
 ## Step 7: Validate Your Change Approval Process Was Followed
 
