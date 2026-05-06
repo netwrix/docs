@@ -10,7 +10,7 @@ title: Finding Change Requests from Zendesk
 4. Click **Continue**.
 5. Add a filter: **Change Type Equals Zendesk**.
 6. Add any additional columns you want to display.
-7. Once the report is created, click **Save**. 
+7. After you create the report, click **Save**. 
 
 :::tip Best Practice
 Title the report something meaningful, such as 'Find Change Requests from Zendesk'.

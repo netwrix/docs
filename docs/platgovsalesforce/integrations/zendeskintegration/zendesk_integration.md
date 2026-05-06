@@ -4,7 +4,7 @@ title: Platform Governance for Salesforce - Zendesk Integration
 
 # Overview
 
-Platform Governance for Salesforce's Change Management capabilities are integrated with Zendesk, one of the most popular customer service and issue ticketing systems. Customers are able to look for and include Salesforce Customizations, assess impacts for requested changes, and push Zendesk change tickets into a Change Request. This enables easy management of changes, seamless tracking of compliant changes and automating the reconciliation of change logs during an audit.
+Platform Governance for Salesforce's Change Management capabilities are integrated with Zendesk, one of the most popular customer service and issue ticketing systems. Customers can look for and include Salesforce Customizations, assess impacts for requested changes, and push Zendesk change tickets into a Change Request. This enables change management, tracking of compliant changes and automating the reconciliation of change logs during an audit.
 
 User benefits include:
 
@@ -36,7 +36,7 @@ Here are the steps to install the Zendesk app. You must have **Admin** privilege
 3. Navigate to **Apps and integrations** > **Zendesk Support apps** > **Marketplace**.
 ![Zendesk App Menu](/images/platgovsalesforce/integrations/zendesk/Zendesk_Apps_Menu.webp)
 4. Search for **Platform Governance for Salesforce**.
-5. Click **Platform Governance for Salesforce** when it is displayed.
+5. Click **Platform Governance for Salesforce** when it appears.
 6. Click **Install**. When installation is complete, you are prompted to sign in to your Zendesk dashboard to continue.
 7. Click the **Admin** icon in the left panel.
 8. Navigate to **Apps and integrations** > **Zendesk Support apps**.
@@ -54,7 +54,7 @@ Here are the steps to install the Zendesk app. You must have **Admin** privilege
     :::note
     OAuth authentication is required by Salesforce. You need to create a Connected App in Salesforce first:
     1. Go to https://test.salesforce.com/ for sandbox or https://login.salesforce.com/ for production.
-    2. Navigate to Setup > Apps > App Manager > New Connected App.
+    2. Go to **Setup** > **Apps** > **App Manager** > **New Connected App**.
     ![New Connected App](/images/platgovsalesforce/integrations/zendesk/New_Connected_App.webp)
     3. Fill in the required fields and enable API (Enable OAuth Settings).
     4. Set the Callback URL: https://server-sf.herokuapp.com/auth/handle_decision.
@@ -90,9 +90,9 @@ After installation, you need to authorize the connection to Salesforce:
 
 ![Admin Panel OAuth](/images/platgovsalesforce/integrations/zendesk/Admin_Panel_Oauth.webp)
 
-3. A popup window will open redirecting to Salesforce's OAuth 2.0 authorization screen.
+3. A popup window opens, redirecting to the Salesforce OAuth 2.0 authorization screen.
 4. Log in with your Salesforce credentials.
-5. You will be asked to authorize Platform Governance for Salesforce to access data in your org.
+5. Authorize Platform Governance for Salesforce to access data in your org.
 6. Once authorized, the app securely stores the access and refresh tokens and links the Salesforce org with Zendesk.
 
 ![Auth Succesfull](/images/platgovsalesforce/integrations/zendesk/Auth_Succesfull.webp)
@@ -109,8 +109,8 @@ Click the new Platform Governance for Salesforce icon in the left panel. The Gro
 
 Enter the group and approval information:
 
-- **Allow these Zendesk groups to request approval**: one or more groups who can request approval for a change request. Select a group from the drop down list. Click +. Repeat as needed.
-- **Allow these Zendesk groups to approve**: one or more groups who can approve a change request. Select a group from the drop down list. Click +. Repeat as needed.
+- **Allow these Zendesk groups to request approval**: one or more groups who can request approval for a change request. Select a group from the dropdown list. Click +. Repeat as needed.
+- **Allow these Zendesk groups to approve**: one or more groups who can approve a change request. Select a group from the dropdown list. Click +. Repeat as needed.
 - **Approval process**: select the approval process to use:
   - **Approval in Zendesk**: Approvals managed directly in Zendesk.
   - **Approval in Salesforce**: Approval continues in Salesforce.
@@ -120,10 +120,10 @@ Enter the group and approval information:
 
 # Using the App in Tickets
 
-In the ticket sidebar, the Platform Governance app displays CR information, action buttons, and accordions for existing/proposed customizations and data records. External links to Impact Analysis and Document Requirements (DRD) in Salesforce are also available.
+In the ticket sidebar, the Platform Governance app displays Change Request (CR) information, action buttons, and accordions for existing/proposed customizations and data records. External links to Impact Analysis and Dependency Relationship Diagram (DRD) views in Salesforce are also available.
 
 :::note
-The integration will only appear in the ticket sidebar once the Zendesk ticket has been created.
+The integration only appears in the ticket sidebar after the Zendesk ticket has been created.
 :::
 
 ![Integration After Create Zendesk Ticket](/images/platgovsalesforce/integrations/zendesk/1_See_integration_after_create_a_zendesk_ticket.webp)

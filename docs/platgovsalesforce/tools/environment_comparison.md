@@ -7,12 +7,10 @@ sidebar_position: 70
 # Environment Comparison
 
 Administrators use this tool to compare environments and generate an Excel report file with the
-results. This report can be used to troubleshoot processes or data causing errors in a particular
+results. Use this report to troubleshoot processes or data causing errors in a particular
 account, compare preferences between accounts, or determine if data needs to migrate between
-accounts. An [Environment Compare Log](/docs/platgovsalesforce/reports/deployment_logs_environment_compare.md) is
-generated. The comparison can handle up to 10,000 items. You receive an email with a link to the
-[Export Object Attachment](/docs/platgovsalesforce/tools/export_object_attachment_records.md) record, where you can download your
-file. Here is the basic process:
+accounts. The tool generates an [Environment Compare Log](/docs/platgovsalesforce/reports/deployment_logs_environment_compare.md). The comparison can handle up to 10,000 items. You receive an email with a link to the
+[Export Object Attachment](/docs/platgovsalesforce/tools/export_object_attachment_records.md) record, where you can download your file. The basic process is:
 
 Open **Netwrix Dashboard** > **Tools** > **Environment Comparison**
 
@@ -28,9 +26,9 @@ Open **Netwrix Dashboard** > **Tools** > **Environment Comparison**
 
 For both the **Source** and **Target** Environments:
 
-Select your credentials from the drop down lists. Create credentials with the Credentials Handler.
+Select your credentials from the dropdown lists. Create credentials with the Credentials Handler.
 
-The **Click here to proceed** link opens the Credentials Handler where you can add, edit and sync
+Select the Credentials Handler link to open it and add, edit, and sync
 your credentials.
 
 ## Add Filters for the Comparison
@@ -52,7 +50,7 @@ Filters are cumulative. Use a single filter (1 through 3) to avoid overlapping s
 **Metadata Type**
 
 Select a **All** or a specific metadata type to compare from the list. If you select **Report**,
-only tabular and summary reports are compared. Metric and joined reports are not compared.
+only tabular and summary reports are compared. Metric and joined reports aren't compared.
 
 ![compare_env_filters](/images/platgovsalesforce/tools/compare_env_filters.webp)
 
@@ -60,7 +58,7 @@ only tabular and summary reports are compared. Metric and joined reports are not
 
 **Change Request**
 
-Enter a Change Request ID, or use the drop down to scroll through a list of available Change
+Enter a Change Request ID, or use the dropdown to scroll through a list of available Change
 Requests.
 
 ![Import Customizations from a Change Request](/images/platgovsalesforce/tools/compare_env_filters3.webp)
@@ -69,7 +67,7 @@ Requests.
 
 1. Scroll through the **Search Customizations**, or enter all or part of a name to filter the list.
    You can **Select a Salesforce Type** to limit this list. If you select **Report**, only tabular
-   and summary reports are compared. Metric and joined reports are not compared.
+   and summary reports are compared. Metric and joined reports aren't compared.
 2. Select one or more customizations in the **Select Customizations** scroll box. Use **Shift** or
    **Ctrl** to select multiple customizations .
 3. Click the right arrow to move the items to the **Selected Customizations** list. To remove an
@@ -88,18 +86,17 @@ Requests.
 
 ## Select Export Options
 
-Click **Export to Excel** if you want to view the report in Excel. You receive an email when the
-Excel file is complete.
+To view the report in Excel, click **Export to Excel**. You receive an email when the Excel file is complete.
 
 ## Run the Comparison
 
-Click **Compare**. The process is run in the background. You receive an email when the compare is
+Click **Compare**. The process runs in the background. You receive an email when the compare is
 complete.
 
 ## View the Report
 
 1. Open the **Export Attachments** tab. Change the Export Attachments from **Recently Viewed** to
-   **All** if necessary to see your report. Refer to
+   **All** if necessary to see your report. See
    [Export Object Attachment](/docs/platgovsalesforce/tools/export_object_attachment_records.md) for details on adding the tab to
    your tool bar if needed.
 2. Click the **Environment Comparison** report in the list. The Export Attachment **Details** are
@@ -124,7 +121,7 @@ comparison type:
 
 **In Both Same**: items present in both Environments without differences
 
-**In Both Different**: items present in both Environments with differences. Here is an example:
+**In Both Different**: items present in both Environments with differences. The following example shows differences:
 
 ![Example of Environment Comparison differences](/images/platgovsalesforce/tools/compare_env_results_excel_diffs.webp)
 
@@ -134,8 +131,8 @@ You can use the link in your Environment Compare complete email to directly open
 and create a Change Request based on the differences.
 
 1. Open **Netwrix Dashboard** > **Tools** > **Environment Comparison**
-2. **Select Customization(s)** contains all of the Customizations with Differences. Select one or
-   more and click **Add** to move them to the **Selected Customization(s)** pane.
+2. **Select Customizations** contains all of the Customizations with Differences. Select one or
+   more and click **Add** to move them to the **Selected Customizations** pane.
 
     ![Select Customizations with Differences and create a Change Request](/images/platgovsalesforce/tools/compare_env_create_cr.webp)
 

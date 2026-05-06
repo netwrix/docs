@@ -27,5 +27,5 @@ Click **Configuration and Stats** in the **Resources** section, or open **Settin
 
 5. Open **Netwrix Dashboard** > **Scanner** > **Manual Scanners**
 6. Click **Name** to select all.
-7. Click **Run Scanner** to make sure that everything is updated and documented in your account
+7. Click **Run Scanner** to ensure that everything is updated and documented in your account
    after the license change.
