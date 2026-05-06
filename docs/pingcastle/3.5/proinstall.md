@@ -5,12 +5,7 @@ sidebar_position: 5
 
 ## Description
 
-PingCastle Pro is a tool designed to improve and follow the Active
-Directory overall security level. This software has been developed to be
-compatible with most of the possible existing configurations. The goal
-(when the tool was created) wasn't to aim for perfection, but to
-provide reliable data to present the situation to the management, thus
-improving over time.
+PingCastle Pro is a tool that helps you improve and follow your overall Active Directory security level. The software is compatible with most existing configurations. The goal of the tool isn't perfection, but to provide reliable data that presents the situation to management for improvement over time.
 
 # Requirements
 
@@ -38,7 +33,7 @@ See the .NET 8.0 Supported Operating System documentation [here](https://learn.m
 
 ## Database
 
-PingCastle Pro is using a database to store its data.
+PingCastle Pro uses a database to store its data.
 
 The current supported databases are:
 
@@ -55,8 +50,7 @@ The current supported databases are:
 PingCastle Basic and PingCastle Professional require \"dotnet framework
 2.0\" or subsequent versions.
 
-PingCastle Enterprise is using the \"asp.net core 8.0 framework\" still
-relying on \"dotnet standard 2.0\".
+PingCastle Enterprise uses the "asp.net core 8.0 framework" but still relies on "dotnet standard 2.0".
 
 1.  Netwrix recommends not exposing the web application directly. Use a reverse proxy such as IIS, Apache2, or Nginx.
 
@@ -85,15 +79,9 @@ If you have `consto.com` with two subdomains called `uk.consto.com` and
 
 # Architecture
 
-PingCastle is using a distributed architecture.
+PingCastle uses a distributed architecture.
 
-The PingCastle Basic can be considered as a stand alone agent. The
-program executes an assessment of the Active Directory and produces a
-report. This report is in two forms: a xml file and a html file. These
-two files provide two representations of the same data. By default the
-.xml file is being filtered to remove potential private data such as
-account name from this collected data. This filter can be deactivated by
-running the program with the flag \--level Full.
+PingCastle Basic acts as a standalone agent. The program assesses the Active Directory and produces a report in two forms: an XML file and an HTML file. These two files provide two representations of the same data. By default, PingCastle filters the XML file to remove potential private data such as account names from this collected data. To deactivate this filter, run the program with the `--level Full` flag.
 
 Then the data contained in the xml file is pushed into PingCastle Pro
 directly via the API, or indirectly via an indirect import such as
@@ -102,8 +90,7 @@ confidentiality of the data.
 
 ![](/images/pingcastle/proinstall/image3.webp)
 
-Then the PingCastle Pro provide the services around the data and store
-it in the database.
+PingCastle Pro then provides services around the data and stores it in the database.
 
 # Minimal AzureAD Configuration
 
@@ -665,9 +652,7 @@ the access to the task scheduler can't be delegated.
 ## Custom installation
 
 :::note
-PingCastle is using behing the hood a folder named "PingCastle" in
-the task scheduler. The COM api is used as it exposes the security
-descriptor -- which isn't the case of the native PowerShell APIL
+PingCastle uses a folder named "PingCastle" in the task scheduler. The COM API exposes the security descriptor, which the native PowerShell API doesn't.
 :::
 
 If you want PingCastle to be able to start or stop tasks but not being

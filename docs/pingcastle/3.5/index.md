@@ -7,7 +7,7 @@ sidebar_position: 4
 
 PingCastle is a security assessment and auditing tool for CISOs, Security Auditors, and IT Professionals working with Active Directory and Entra ID.
 
-Netwrix offers various products to help protect your network infrastructure. PingCastle is specifically designed for assessment—not protection. It collects comprehensive information from your Active Directory and Entra ID environments, analyzes this data for security risks and misconfigurations, and generates detailed reports with actionable findings.
+Netwrix offers various products to help protect your network infrastructure. PingCastle focuses specifically on assessment. It collects comprehensive information from your Active Directory and Entra ID environments, analyzes this data for security risks and misconfigurations, and generates detailed reports with actionable findings.
 
 These reports help you identify and prioritize security issues that need remediation, giving you clear visibility into your security posture and enabling data-driven decisions to improve your environment's security.
 
@@ -34,8 +34,7 @@ To continue using PingCastle after the built-in license expires, you must purcha
 
 ## Methodology
 
-The PingCastle tool is just one part of a global methodology aiming at
-securing Active Directories.
+The PingCastle tool is one part of a global methodology for securing Active Directories.
 
 ![](/images/pingcastle/basicuser/image1.webp)
 
@@ -85,7 +84,7 @@ Starting with PingCastle 3.5, the .NET runtime is bundled directly with the appl
 - No local administrator privileges required
 - No additional components or frameworks need to be installed
 
-**Previous Versions**: PingCastle versions before 3.5 required .NET Framework 4.7.2 to be installed separately.
+**Previous Versions**: PingCastle versions before 3.5 required a separate installation of .NET Framework 4.7.2.
 
 ## How it works
 
@@ -641,7 +640,7 @@ During migration:
 
 ### PingCastle AntiVirus Detections
 
-PingCastle has been used as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and EDR products to flag it as malicious.
+Attackers have used PingCastle as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and EDR products to flag it as malicious.
 
 **Recommended Action**: Whitelist PingCastle.exe on specific systems and/or users where it is authorized for security assessments. Normal end users shouldn't be running PingCastle.
 
@@ -667,7 +666,7 @@ Netwrix is actively working to reduce false positive detections:
 >
 >  PingCastle is a trusted security assessment tool designed to help organizations evaluate the health and security posture of their Active Directory environments. 
 >
-> Some antivirus or endpoint protection solutions may flag PingCastle as "hacktool" or a "potentially unwanted program (PUP)". This isn't because PingCastle is malicious, but because it has dual-use potential: the same in-depth techniques it uses to audit and test security could also be misused by attackers. It doesn't itself attack AD, but could be used during reconnaissance to enumerate risks that attackers could exploit. Security vendors often classify such advanced administrative and diagnostic tools conservatively to avoid underestimating risk. 
+> Some antivirus or endpoint protection solutions may flag PingCastle as "hacktool" or a "potentially unwanted program (PUP)". The flag reflects PingCastle's dual-use potential rather than malicious behavior: the same in-depth techniques it uses to audit and test security can also be misused by attackers. PingCastle doesn't itself attack AD, but attackers could use it during reconnaissance to enumerate risks they could exploit. Security vendors often classify such advanced administrative and diagnostic tools conservatively to avoid underestimating risk. 
 >
 > The following applies: 
 >

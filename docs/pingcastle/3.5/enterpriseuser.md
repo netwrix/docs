@@ -5,41 +5,21 @@ sidebar_position: 3
 
 ## Description
 
-PingCastle Enterprise is a tool designed to improve and follow the
-Active Directory overall security level. This software has been
-developed to be compatible with most of the possible existing
-configurations. The goal (when the tool was created) wasn't to aim for
-perfection, but to provide reliable data to present the situation to the
-management, thus improving over time.
+PingCastle Enterprise is a tool that helps you improve and follow your overall Active Directory security level. The software is compatible with most existing configurations. The goal of the tool isn't perfection, but to provide reliable data that presents the situation to management for improvement over time.
 
 # PingCastle built-in security
 
-PingCastle Enterprise is a tool dedicated to improving Active Directory (AD) security, so
-security has been a major priority alongside every step of the creation
-and improvement.
+PingCastle Enterprise is a tool dedicated to improving Active Directory (AD) security, so security is a major priority at every step of creation and improvement.
 
-First, the application has been designed in a framework where most
-common attacks such as XSS or SQL Injection are prohibited by design.
+First, the application uses a framework that prohibits most common attacks such as XSS or SQL injection by design.
 
-Because such protections can be sometimes avoided, the application has
-an additional layer of protection with all known HTTP security headers
-and including the header \"Content Security Policy\" in strict mode.
-That means that all the JavaScript code of the application is stored in
-separate files and that JavaScript included in the page via injection
-will not run in the browser. This protection can be checked via third
-party service such as \"security headers\". It means that
-\"unsafe-inline\" and \"unsafe-eval\" aren't accepted.
+Because attackers can sometimes bypass such protections, the application includes an additional layer of protection with all known HTTP security headers, including the "Content Security Policy" header in strict mode. The application stores all JavaScript code in separate files, so JavaScript injected into the page doesn't run in the browser. You can verify this protection with a third-party service such as "security headers". The application doesn't accept "unsafe-inline" and "unsafe-eval".
 
 ![](/images/pingcastle/enterpriseuser/image2.webp)
 
-The application uses enforced controls which force parameters to be
-checked twice against a model (in the browser then in the server
-application) and all queries to the database are parameterized. There is
-no SQL string built by the application.
+The application uses enforced controls that check parameters twice against a model (in the browser, then in the server application), and parameterizes all database queries. The application never builds SQL strings.
 
-Then each access to the database is verified by a filter which controls
-the data to be queried before a database query is sent. This code is
-tested by unit tests to lower the risk of a misconception in the filter.
+A filter verifies each database access by controlling the data to query before sending the database query. Unit tests cover this code to lower the risk of a misconception in the filter.
 
 The application is based mainly on the following frameworks:
 
@@ -53,15 +33,11 @@ The application is based mainly on the following frameworks:
 
 - chart.js
 
-The up-to-date list of explicit components can be seen in the about page
-of the application.
+You can view the up-to-date list of explicit components on the about page of the application.
 
 # Authentication and user management
 
-PingCastle Enterprise provides by default two mechanisms for
-authentication: classic login password and external authentication. The
-external authentication allows to use widely supported providers such as
-Azure AD, Google, or professional web SSO such as Okta.
+PingCastle Enterprise provides two mechanisms for authentication by default: classic login password and external authentication. External authentication supports widely used providers such as Azure AD, Google, or professional web SSO such as Okta.
 
 These methods can be used separately or in coordination, meaning you can
 either use a Dual-Factor authentication (recommended) or a single factor
@@ -86,8 +62,7 @@ method are provided.
 
 ## Authorization
 
-Ping Castle allows to set up permissions on Entities, or objects (Domains
-or AzureAD)
+PingCastle lets you set up permissions on Entities, or objects (Domains or AzureAD).
 
 The permissions can be set on the detail of the Entities
 
@@ -122,7 +97,7 @@ see what claims have been pushed to PingCastle Enterprise.
 
 **Main pages overview**
 
-The application is divided is 4 different areas:
+The application has four areas:
 
 - The management view
 
@@ -199,13 +174,9 @@ The product implements three main layers of permission:
 
 ## Page organization
 
-All the pages of the PingCastle Enterprise solution has been designed in
-order to be as clear as possible. It means that, when it is possible,
-the pages follow the same kind of architecture, enabling the users to
-quickly get used to the solution in general.
+The pages of the PingCastle Enterprise solution follow a consistent architecture so users can quickly get used to the solution.
 
-For instance, most pages can show \"All data\" available to the user or
-set up a filter to only see a more narrowed down set of data.
+For instance, most pages can show "All data" available to the user, or apply a filter to show a narrower set of data.
 
 ![](/images/pingcastle/enterpriseuser/image13.webp)
 
@@ -319,10 +290,7 @@ what is being well done and what can be improved.
 The first section of the page always shows a global explanation of the
 objective of the area.
 
-Then, it displays a few KPI which are composing the maturity evaluation.
-If the objective is reached, the KPI is in green color, else its color
-is red. A \"Detail\" button allows to directly reach the technical view,
-with extra advanced information on how to remediate and improve the KPI.
+Then, it displays a few KPI that compose the maturity evaluation. If the objective is reached, the KPI appears in green; otherwise, it appears in red. A "Detail" button takes you directly to the technical view, with advanced information on how to remediate and improve the KPI.
 
 ![](/images/pingcastle/enterpriseuser/image20.webp)
 
@@ -358,11 +326,7 @@ Entities Details for the related tab:
 
 ## Remediation / Rule Matrix
 
-The \"Rule Matrix\" view represents a feature that aggregates every rule
-used in the 4 categories to calculate the Global Risk score. Through
-that feature, you can efficiently identify what are the main points of
-failure within your Active Directory, and then put in place the
-associated remediation plan.
+The "Rule Matrix" view aggregates every rule used in the 4 categories to calculate the Global Risk score. With this feature, you can identify the main points of failure within your Active Directory and then put the associated remediation plan in place.
 
 It takes the form of a double entry table, with on one side all the
 domains within your perimeter, and on the other side all the rules and
@@ -416,9 +380,7 @@ select entity.
 
 ## Advanced
 
-The \"Advanced\" part of the Dashboard is composed of a multiple of
-extra utilities that can assist you in understanding your current level
-of AD security as well as how to improve it
+The "Advanced" part of the Dashboard contains extra utilities that help you understand your current level of AD security and how to improve it
 
 It consists of the following pages:
 
@@ -632,29 +594,28 @@ list of all the domains that a specific domain can see.
 
 **Methodology used to build the maps**
 
-PingCastle is using the data included in the report from the most
-reliable source to the less reliable source, in the following order:
+PingCastle uses the data in the report from the most reliable source to the least reliable source, in the following order:
 
 1.  The most reliable source is domain where the report has been
     generated.
 
-2.  The tool is using direct [trust
+2.  The tool uses direct [trust
     data](https://msdn.microsoft.com/en-us/library/cc223765.aspx).
 
-3.  The tool is using forest trust information. This information is
+3.  The tool uses forest trust information. This information is
     located in
     the [msDS-TrustForestTrustInfo](https://msdn.microsoft.com/en-us/library/cc223786.aspx) attribute
     of a forest trust and in the [partition
     element](https://technet.microsoft.com/en-us/library/cc961591.aspx) of
     the configuration binding context.
 
-4.  The tool is using the information provided by the [domain locator
+4.  The tool uses the information provided by the [domain locator
     service](https://technet.microsoft.com/en-us/library/cc961830.aspx) when
     examining trusts. This information can add the Netbios name or the
     forest name of a trusted domain.
 
-5.  If the "reachable" option has been set when producing a report, the
-    tool is using domain SID found (in [foreign security
+5.  If the "reachable" option is set when producing a report, the
+    tool uses domain SIDs found (in [foreign security
     principals](https://msdn.microsoft.com/en-us/library/cc223700.aspx) or [sid
     history](<https://msdn.microsoft.com/en-us/library/ms679833(v=vs.85).aspx>))
     to query the [domain locator
@@ -680,8 +641,7 @@ domain are shown.
 
 ## Domain events
 
-This page allows to query any events which occurred on one or more
-domain and to filter then by type.
+This page lets you query any events that occurred on one or more domains and filter them by type.
 
 ![](/images/pingcastle/enterpriseuser/image45.webp)
 
