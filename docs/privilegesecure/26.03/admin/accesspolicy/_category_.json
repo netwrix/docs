@@ -1,0 +1,9 @@
+{
+  "label": "Access Policy",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,  "link": {
+    "type": "doc",
+    "id": "accesspolicy"
+  }
+}
