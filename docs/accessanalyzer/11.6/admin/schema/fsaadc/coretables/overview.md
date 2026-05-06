@@ -525,7 +525,7 @@ The **Rights bitmask** (`AllowRights` / `DenyRights`) uses the simplified six-bi
 | RunTime | datetime2 | | Yes | | | | When the scan ran |
 | FSAAConfigXml | xml | | Yes | | | | Snapshot of the FSAA XML configuration |
 
-This table is intentionally append-only with no primary key, foreign keys, or indexes. Every scan run inserts a new row; rows are never updated and are not referenced by other tables. Querying is by `ScanHost` / `RunTime` and is expected to be infrequent (forensic / support use).
+This table is intentionally append-only with no primary key, foreign keys, or indexes. Every scan run inserts a new row; rows are never updated and aren't referenced by other tables. Querying is by `ScanHost` / `RunTime` and is expected to be infrequent (forensic / support use).
 
 ---
 

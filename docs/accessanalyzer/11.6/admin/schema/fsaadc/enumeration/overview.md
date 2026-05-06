@@ -1,6 +1,6 @@
 # Enumeration & Lookup Values Reference
 
-This section documents the possible values stored in coded columns used throughout the FSAA DC schema. These values appear in core data tables and are decoded into human-readable labels by views.
+This section documents the possible values stored in coded columns used throughout the FSAA DC schema. These values appear in core data tables, and views decode them into human-readable labels.
 
 ---
 
@@ -10,7 +10,7 @@ Referenced by `SA_FSAA_Trustees.TrusteeType` and `SA_FSAA_LocalTrustees.TrusteeT
 
 | Value | Name | Description |
 |---|---|---|
-| 0 | Unknown | Type could not be determined |
+| 0 | Unknown | Type couldn't be determined |
 | 1 | SecurityPrincipal | Built-in / well-known security principal (for example, `Everyone`) |
 | 2 | LocalUser | Local user account |
 | 3 | LocalGroup | Local group account |
@@ -94,5 +94,5 @@ The corresponding Windows mask values are stored separately in the `*Mask` colum
 | 1179648 | Read Permissions |
 
 :::note
-Many additional special-permission decimal values are decoded by the `CASE` expression in `SA_FSAA_PermissionsView` / `SA_FSAA_DirectPermissionsView` / `SA_FSAA_InheritedPermissionsView`.
+The `CASE` expression in `SA_FSAA_PermissionsView` / `SA_FSAA_DirectPermissionsView` / `SA_FSAA_InheritedPermissionsView` decodes many additional special-permission decimal values.
 :::

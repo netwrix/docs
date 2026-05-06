@@ -12,7 +12,7 @@ All functions and procedures live in the `dbo` schema. Most of the table-valued 
 
 **Type:** Scalar function
 
-**Description:** Walks the parent chain in `SA_FSAA_Resources` and concatenates names with the appropriate delimiter (`/` for Unix resources of type 5/6, `\` for everything else) to produce the full resource path. Returns NULL if the resource is not found.
+**Description:** Walks the parent chain in `SA_FSAA_Resources` and concatenates names with the appropriate delimiter (`/` for Unix resources of type 5/6, `\` for everything else) to produce the full resource path. Returns NULL if the resource isn't found.
 
 ---
 
@@ -32,7 +32,7 @@ All functions and procedures live in the `dbo` schema. Most of the table-valued 
 
 **Type:** Scalar function
 
-**Description:** Returns 1 if the trustee is a (recursive) member of the group, else 0. Encodes well-known fast paths for `Everyone (S-1-1-0)`, `Authenticated Users (S-1-5-11)` (excluding Guest, Anonymous, and Domain Computers), and `Domain Users (S-1-5-21-...-513)`. Falls back to `SA_FSAA_GetTrusteeMembership` when the relationship cannot be answered by a fast path.
+**Description:** Returns 1 if the trustee is a (recursive) member of the group, else 0. Encodes well-known fast paths for `Everyone (S-1-1-0)`, `Authenticated Users (S-1-5-11)` (excluding Guest, Anonymous, and Domain Computers), and `Domain Users (S-1-5-21-...-513)`. Falls back to `SA_FSAA_GetTrusteeMembership` when the relationship can't be answered by a fast path.
 
 ---
 
@@ -62,7 +62,7 @@ All functions and procedures live in the `dbo` schema. Most of the table-valued 
 
 **Type:** Inline table-valued function
 
-**Description:** Returns a single row of trustee identity. For local trustees the values come from `SA_FSAA_LocalTrustees`; for domain trustees they come from the AD inventory's `SA_ADInventory_*` tables matched by SID (handling SID History when `IsHistoricalSID = 1`). The function does not project the SID — callers pass it in via `@objectSID` and the wrapper `SA_FSAA_GetTrusteeInformation` re-emits it from `SA_FSAA_Trustees`.
+**Description:** Returns a single row of trustee identity. For local trustees the values come from `SA_FSAA_LocalTrustees`; for domain trustees they come from the AD inventory's `SA_ADInventory_*` tables matched by SID (handling SID History when `IsHistoricalSID = 1`). The function doesn't project the SID — callers pass it in via `@objectSID` and the wrapper `SA_FSAA_GetTrusteeInformation` re-emits it from `SA_FSAA_Trustees`.
 
 ---
 

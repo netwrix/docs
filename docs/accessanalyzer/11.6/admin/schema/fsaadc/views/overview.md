@@ -252,7 +252,7 @@ For views, column sizes are derived from the underlying source columns and the S
 | ResourceTypeDescription | varchar | 6 | Yes | Computed (CASE) | |
 | ResourceDeletedUSN | int | | Yes | SA_FSAA_Resources.DeletedUSN | |
 | ResourcePath | nvarchar | 4000 | Yes | SA_FSAA_Paths.Path | Local resource path |
-| NetworkPath | nvarchar | 4000 | Yes | Computed (see logic above) | UNC path or NFS-style path |
+| NetworkPath | nvarchar | 4000 | Yes | Computed (see Network-path logic) | UNC path or NFS-style path |
 | NestedLevel | int | | Yes | Computed (`r.NestedLevel - g.NestedLevel`) | Depth from share root |
 
 ---
@@ -340,7 +340,7 @@ For views, column sizes are derived from the underlying source columns and the S
 | ExceptionName | varchar | 128 | No | SA_FSAA_ExceptionTypes.Name | |
 | GateID | int | | Yes | SA_FSAA_Exceptions.GateID | |
 | ResourceID | bigint | | Yes | SA_FSAA_Exceptions.ResourceID | |
-| Path | nvarchar | 4000 | Yes | Computed (see logic above) | UNC path / resource path / NULL |
+| Path | nvarchar | 4000 | Yes | Computed (see Path logic) | UNC path / resource path / NULL |
 | TrusteeID | int | | Yes | SA_FSAA_Exceptions.TrusteeID | |
 | TrusteeSID | varchar | 184 | Yes | SA_FSAA_Trustees.SID | |
 | TrusteeType | smallint | | Yes | SA_FSAA_Trustees.TrusteeType | |
@@ -549,7 +549,7 @@ For views, column sizes are derived from the underlying source columns and the S
 **Description:** Surface view over `SA_FSAC_PermissionChanges` that resolves the affected trustee and decodes the ACL / ACE / inheritance / access-rights bitmasks into descriptive strings.
 
 :::note
-This view does not join `SA_FSAC_ActivityEvents` or `SA_FSAA_Resources` — the access time and resource path are not exposed; reports needing them must join `SA_FSAC_ActivityEvents` themselves.
+This view doesn't join `SA_FSAC_ActivityEvents` or `SA_FSAA_Resources` — the access time and resource path aren't exposed; reports needing them must join `SA_FSAC_ActivityEvents` themselves.
 :::
 
 **Source tables:** `SA_FSAC_PermissionChanges`, `SA_FSAA_Hosts`, UDF `SA_FSAA_GetTrusteeInformation`.

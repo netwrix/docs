@@ -2,7 +2,7 @@
 
 ## Complete Foreign Key Listing
 
-| FK Name | Parent Table | Parent Column(s) | Referenced Table | Referenced Column(s) | On Delete |
+| FK Name | Parent Table | Parent Columns | Referenced Table | Referenced Columns | On Delete |
 |---|---|---|---|---|---|
 | FK_SA_FSAA_ImportHistory_HOST | SA_FSAA_ImportHistory | HOST | SA_FSAA_Hosts | ID | CASCADE |
 | FK_SA_FSAA_Trustees_HOST | SA_FSAA_Trustees | HOST | SA_FSAA_Hosts | ID | CASCADE |
