@@ -8,11 +8,7 @@ import TabItem from '@theme/TabItem';
 
 ## Description
 
-PingCastle Enterprise is a tool designed to improve and follow the
-Active Directory overall security level. This software has been
-developed to be compatible with most of the possible existing
-configurations. The goal is to provide reliable data to present the situation to the
-management, enabling continuous improvement over time.
+PingCastle Enterprise is a tool that helps you improve and follow your overall Active Directory security level. The software is compatible with most existing configurations and provides reliable data to present the situation to management, enabling continuous improvement over time.
 
 ## Requirements
 
@@ -74,7 +70,7 @@ Licenses are based on the number of domains managed, with licenses available up 
 - Domain Controllers aren't counted for licensing purposes, only domains
 - Licenses are bundled in packs of 10 domains, up to 60, with an unlimited license thereafter
 
-**Example**: If you have contoso.com with two subdomains called uk.contoso.com and us.contoso.com, this would require a 10-domain licensing pack.
+**Example**: If you have `contoso.com` with two subdomains called `uk.contoso.com` and `us.contoso.com`, this would require a 10-domain licensing pack.
 
 ## Architecture
 
@@ -131,7 +127,7 @@ graph LR
 - Requires SQL Server database for data storage
 - Accessible via HTTP/HTTPS (ports 80/443)
 - Provides web interface for administrators and users
-- Built-in scheduler that used Windows Task Scheduler for automated scanning of local and trusted domains
+- Built-in scheduler that uses Windows Task Scheduler for automated scanning of local and trusted domains
 
 #### PingCastle.exe Scanner
 
@@ -1387,7 +1383,7 @@ This section is for advanced users who can't use or prefer not to use the MSI In
 - **Custom Windows configurations** requiring non-standard setup
 - Environments where the MSI Installer isn't available or can't be used
 
-For standard Windows Server deployments, the MSI Installer (described earlier in this document) is the recommended and supported installation method.
+For standard Windows Server deployments, the MSI Installer is the recommended and supported installation method.
 :::
 
 PingCastle Enterprise can be manually installed as a standard ASP.NET Core 8.0 application. Manual installation involves:
@@ -1422,7 +1418,7 @@ PingCastle Enterprise can run on any infrastructure that supports ASP.NET Core 8
 
 **Windows with IIS (Manual Installation)**
 - [Host ASP.NET Core on Windows with IIS](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/)
-- Follow the steps outlined earlier: extract ZIP, create IIS website, disable Default Web Site, configure app pool, and set SQL permissions
+- Follow the preceding steps: extract ZIP, create IIS website, disable Default Web Site, configure app pool, and set SQL permissions
 
 **Linux (Limited Support - Manual Installation)**
 - [Host ASP.NET Core on Linux with Nginx](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx)
@@ -1447,7 +1443,7 @@ Database backups are the customer's responsibility.
 PingCastle Enterprise requires a database user account with database owner permissions. The application automatically creates and updates database tables during initial setup and software updates.
 
 :::note MSI Installer Handles This Automatically
-If using the MSI Installer, database setup is handled automatically. This section is only relevant for manual installations.
+The MSI Installer handles database setup automatically. This section is only relevant for manual installations.
 :::
 
 <Tabs>
@@ -1703,7 +1699,7 @@ You can then view the log stream:
 
 ![App Service log stream view](/images/pingcastle/enterpriseinstall/image76.webp)
 
-In the example below, the connectionString wasn't found because Docker doesn't forward it. This must be corrected before the application can start:
+In the following example, the connectionString wasn't found because Docker doesn't forward it. Correct this before the application can start:
 
 ![Connection string error displayed in log stream](/images/pingcastle/enterpriseinstall/image77.webp)
 
@@ -2132,7 +2128,7 @@ Set the certificate requirement to **Accept** (not **Require**) to allow API acc
 :::
 
 :::note Browser Cache
-If certificate settings are changed, close and reopen the browser to avoid connection cache reuse.
+Close and reopen the browser after changing certificate settings to avoid connection cache reuse.
 :::
 
 **PingCastle Configuration**
@@ -2168,7 +2164,7 @@ If the certificate can't be recognized, an error is displayed:
 
 ![Certificate Not Recognized](/images/pingcastle/enterpriseinstall/Authentication/cert-not-recognized.webp)
 
-Ensure the user account login matches one of the certificate identifiers listed earlier.
+Ensure the user account login matches one of the preceding certificate identifiers.
 
   </TabItem>
 </Tabs>
@@ -3363,7 +3359,7 @@ More detailed error messages can be found in the event log or by running the app
 
 **Solution:**
 
-Check the detailed error message and correct the issue. For license errors, verify and update the license key in appsettings.json.
+Check the detailed error message and correct the issue. If you see a license error, verify the license key in `appsettings.json` and update it if needed.
 
 </details>
 
