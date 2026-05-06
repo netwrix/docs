@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Microsoft Entra ID Identity Store
 
-Once you have registered Directory Manager and created a user with required directory role in
-Microsoft Entra ID, you can now create an Microsoft Entra ID identity store in GroupID. This topic
+After you have registered Directory Manager and created a user with required directory role in
+Microsoft Entra ID, you can create an Microsoft Entra ID identity store in GroupID. This topic
 walks you through the steps to create an Microsoft Entra ID identity store and assign a role to the
 Microsoft Entra ID user in Directory Manager.
 
@@ -18,11 +18,11 @@ See the
 topic for creating an Microsoft Entra ID identity store.
 
 :::note
-If you intend to use a service account user with Global Administrator directory role, then no
-change is required in the default Directory Manager security roles settings of Microsoft Entra ID
-identity store. And if you intend to use a service account user with any role, other than Global
-administrator directory role (i.e. User Administrator + Exchange Administrator), then the Directory
-Manager Administrator security role criteria group must be changed to User Account Administrator.
+If you intend to use a service account user with Global Administrator directory role, you don't
+need to change the default Directory Manager security roles settings of the Microsoft Entra ID
+identity store. If you intend to use a service account user with any role other than Global
+Administrator directory role (i.e. User Administrator + Exchange Administrator), you must change
+the Directory Manager Administrator security role criteria group to User Account Administrator.
 :::
 
 
@@ -54,23 +54,23 @@ Step 7 – On the Security Roles page, click **Save**.
 If you are using a service account with minimum directory role assignments, the following
 limitations apply:
 
-- Only the User role can be assigned to newly created users and mailboxes objects from GroupID. The
-  same applies to existing users and mailboxes, as Directory Roles cannot be changed, using a
-  service account with minimum directory role assignments.
+- You can only assign the User role to newly created users and mailbox objects from GroupID. The
+  same applies to existing users and mailboxes, because you can't change Directory Roles when
+  using a service account with minimum directory role assignments.
 
-- The password reset functionality would be limited to objects falling in the User role, User
-  Administrator role, and Helpdesk role.
+- Password reset functionality is limited to objects in the User role, User Administrator role,
+  and Helpdesk role.
 
 ## Limitations of Microsoft Teams Channels
 
-The Microsoft Graph API does not return Microsoft Teams objects in delta query results when a
-channel is added, removed, or modified. As a result, Directory Manager cannot detect Teams channel
+The Microsoft Graph API doesn't return Microsoft Teams objects in delta query results when a
+channel is added, removed, or modified. As a result, Directory Manager can't detect Teams channel
 changes incrementally and must replicate all Microsoft Teams objects on every replication cycle.
 This is a known Microsoft platform limitation.
 
-This behavior has a performance impact because all Microsoft Teams are replicated regardless of
-whether changes occurred. To mitigate this, you can enable or disable Teams channel replication
-using the `ReplicateTeamsChannelChanges` setting in the following file:
+This behavior has a performance impact because Directory Manager replicates all Microsoft Teams
+regardless of whether changes occurred. To mitigate this, you can enable or disable Teams channel
+replication using the `ReplicateTeamsChannelChanges` setting in the following file:
 
 `[Installation Directory]\ReplicationService\Inetpub\GroupIDReplicationService\Web\appsettings.json`
 
