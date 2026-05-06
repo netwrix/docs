@@ -17,9 +17,7 @@ No matter whether the machine is virtual or physical, running a Identity Manager
 :::
 ## Software
 
-[.NET version 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0/runtime) or higher must be installed.
-
-**Microsoft Excel** must be installed.
+[.NET version 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0/runtime) or higher must be installed.
 
 A **web browser** must be accessible to test the future installation. Identity Manager's UI supports all popular browsers:
 
@@ -36,7 +34,7 @@ A **Windows local administrator account** is required to install the server and 
 
 A not-so-minimalist text editor such as [Notepad++](https://notepad-plus-plus.org/downloads/) can be useful to comfortably edit network configuration files. See the [Network Configuration](../../integration-guide/network-configuration)topic for additional information.
 
-## What's Next?
+## Next Steps
 
 Let's move on to the requirements for Identity Manager's database. See the[Database](../../installation-guide/requirements/database-requirements)topic for additional information.
 

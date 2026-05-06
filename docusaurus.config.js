@@ -80,7 +80,8 @@ const config = {
         ],
         theme: {
           options: {
-            scrollYOffset: '.navbar',
+            // navbar (3.75rem ≈ 60px) + back-link bar (2.5rem = 40px)
+            scrollYOffset: 100,
           },
         },
       },

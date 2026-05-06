@@ -6,10 +6,10 @@ sidebar_position: 40
 
 # Install the Agents
 
-Most on-premises installations use an agent **integrated** with Identity Manager's server. If this is your case, **and** the server is **Already** installed, no need to go further. If, on the other hand, you need **separate** agents, or if you are installing Identity Manager's agents within Identity Manager's **SaaS** offering, this is the way to go.
+Most on-premises installations use an agent **integrated** with Identity Manager's server. If this is your case, **and** the server is **Already** installed, no need to go further. If you need **separate** agents, or if you are installing Identity Manager's agents within Identity Manager's **SaaS** offering, follow this guide.
 
 :::note
-Please make sure that Identity Manager's agent requirements are met before going further. See the [Agent](../../installation-guide/requirements/agent-requirements) topic for additional information.
+ensure that Identity Manager's agent requirements are met before going further. See the [Agent](../../installation-guide/requirements/agent-requirements) topic for additional information.
 :::
 
 
@@ -44,7 +44,7 @@ It might require a few modifications to target the agent instead of the server:
 
 **Step 1 –** Open web.config with a text editor.
 
-**Step 2 –** Change the arguments **and** stdoutLogFile attributes of the `<aspNet>` element as indicated below:
+**Step 2 –** Change the arguments **and** stdoutLogFile attributes of the `<aspNet>` element as follows:
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
@@ -86,7 +86,7 @@ This sums up IIS settings.
 
 ## Hosting Bundle
 
-You need to install the [dotnet hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) (version 8.0 or higher) to be able to run dotnet application.
+You need to install the [dotnet hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) (version 10.0 or higher) to be able to run dotnet application.
 
 ## Select an Agent Identity
 
@@ -103,7 +103,7 @@ Identity Manager's agent IIS Website
 
 Usually, creating an IIS application pool, such as the one within which Identity Manager's server website runs, triggers the creation of a service account `IIS APPPOOL/<apppool_name>` (where `<apppool_name>` is the application pool name) known as an application pool identity. It is associated with the IIS website. This account is granted basic group membership that should enable it to access what it needs.
 
-For more information about IIS identities, visit the [Microsoft Documentation](https://support.microsoft.com/en-us/help/4466942/understanding-identities-in-iis).
+To learn how IIS identities work, see the [Microsoft Documentation](https://support.microsoft.com/en-us/help/4466942/understanding-identities-in-iis).
 
 Building on this default behavior, the default Application Pool Identity is usually granted the necessary permissions for Identity Manager's server to operate.
 
@@ -113,13 +113,13 @@ Before going further, you should check the following points:
 
 **Step 2 –** Check the permissions on the working directory. Right-click the working directory **and** select Security. The group section should contain one of the `IIS APPPOOL/<apppool_name>` groups, namely Users. **and**,
 
-**Step 3 –** If the built-in application pool identity has been created but does not have the right permissions, you can follow the steps outlined in Install the Agents section to fix it. Go back to the section to make sure that the built-in application pool identity is effectively used by Identity Manager's server IIS Website.
+**Step 3 –** If the built-in application pool identity has been created but doesn't have the right permissions, you can follow the steps outlined in Install the Agents section to fix it. Go back to the section to ensure that the built-in application pool identity is effectively used by Identity Manager's server IIS Website.
 
 **Step 4 –** If you would rather use a custom service account instead of the built-in application pool identity, start with Install the Agents.
 
 **Step 5 –** If you're not sure what to do, follow the procedure below, starting with Install the Agents.
 
-Once the steps indicated above are completed you can carry on with setting an IIS Identity.
+After completing the previous steps, you can carry on with setting an IIS Identity.
 
 ### Set an IIS Identity
 
@@ -129,7 +129,7 @@ If you would rather use a custom service account created for Identity Manager's 
 
 The following implies that a [custom service account](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/service-accounts) has **Already** been created for Identity Manager's agent. See the[Install the Server](../../installation-guide/production-ready/server) topic for additional information.
 
-Follow the steps below to set an IIS identity **and** note that these are the same for the server:
+Follow the steps below to set an IIS identity. The same steps apply to the server:
 
 **Step 1 –** Open the IIS Manager (`INETMGR.MSC`).
 
@@ -139,13 +139,13 @@ Follow the steps below to set an IIS identity **and** note that these are the sa
 
 **Step 4 –** Right-click **and** select **Advanced Settings**.
 
-**Step 5 –** In the **Process Model** section, on the **Identity** list item, click on the three dots to open the **Application Pool Identity** dialog.
+**Step 5 –** In the **Process Model** section, on the **Identity** list item, click the three dots to open the **Application Pool Identity** dialog.
 
-**Step 6 –** Select the **Custom Account** radio button **and** click on **Set**.
+**Step 6 –** Select the **Custom Account** radio button **and** click **Set**.
 
 **Step 7 –** Enter the Service Account credentials.
 
-**Step 8 –** Click **OK**. You're all set.
+**Step 8 –** Click **OK**.
 
 Identity Manager's server IIS site will now use this identity to access the database **and** the working directory.
 
@@ -181,13 +181,13 @@ required
 
 To fix the **missing** permissions follow the steps:
 
-**Step 1 –** Click on **Edit**.
+**Step 1 –** Click **Edit**.
 
-**Step 2 –** Click on **Add**.
+**Step 2 –** Click **Add**.
 
 **Step 3 –** In the **Enter the object names to select** textbox, enter the service account name in the down-level logon format. For example, if you chose the built-in application pool identity, this would be `IIS APPPOOL/UsercubeAgent<Organization>`.
 
-**Step 4 –** Click on **OK**.
+**Step 4 –** Click **OK**.
 
 **Step 5 –** Select the newly added user name in the Group or user names panel at the top of the window.
 
@@ -294,7 +294,7 @@ openssl req -x509 -newkey rsa:1024 -keyout usercubecontoso.key -out usercubecont
 openssl req -x509 -newkey rsa:1024 -keyout usercubecontoso.key -out usercubecontoso.cert -days 18250
 ```
 
-Public key certificates can also be bought from trusted certificate providers **and** bundled with a private key into a [PKCS #12](https://en.wikipedia.org/wiki/PKCS_12) archive using step 2 in the frame above.
+Public key certificates can also be bought from trusted certificate providers **and** bundled with a private key into a [PKCS #12](https://en.wikipedia.org/wiki/PKCS_12) archive using step 2 from the preceding example.
 
 The certificate has to be linked to Identity Manager via EncryptionCertificate in the *appsettings.agent.json* file.
 
@@ -391,13 +391,13 @@ sc.exe create Identity Manager binpath= "<Usercube-Agent.exe --service>" display
 ```
 
 :::tip
-Remember, make sure to include a space between each parameter's equal sign (=) **and** the parameter value.
+Remember, ensure to include a space between each parameter's equal sign (=) **and** the parameter value.
 :::
 
 
 ## Configure the Starting Mode in IIS (optional)
 
-This step is important if the scheduler is enabled. IIS starts Identity Manager's agent only if an incoming http request is made on the server **and** the scheduler is not launched until Identity Manager's agent is started. Because of that, you need to carefully set up the starting mode of IIS to force the starting of Identity Manager's agent.
+This step is important if the scheduler is enabled. IIS starts Identity Manager's agent only if an incoming http request is made on the server **and** the scheduler isn't launched until Identity Manager's agent is started. Because of that, you need to carefully set up the starting mode of IIS to force the starting of Identity Manager's agent.
 
 Identity Manager's agent warm up is done using the `<applicationInitialization>` element in the web.config file, the configuration is described [here.](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-8/iis-80-application-initialization)
 
@@ -419,9 +419,9 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 Once done, you need to check that the configured jobs are launched via the Identity Manager's scheduler without having to manually issue a request on Identity Manager's agent.
 
-If this is not correctly configured, any restart of your IIS or application pool could prevent jobs from being launched.
+If this isn't correctly configured, any restart of your IIS or application pool could prevent jobs from being launched.
 
-## What's Next?
+## Next Steps
 
 The last step in the installation process is setting up an Email server. See the [Send Notifications](../../installation-guide/production-ready/email-server) topic for additional information.
 
