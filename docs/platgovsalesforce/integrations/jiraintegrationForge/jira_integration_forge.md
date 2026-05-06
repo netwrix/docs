@@ -7,8 +7,7 @@ sidebar_position: 3
 # Set Up the Jira Integration
 
 Platform Governance for Salesforce's Change Enablement capabilities are integrated with Jira, one of
-the most popular issue ticketing and development project management systems. Customers are able to
-look for and include Salesforce Customizations, assess impacts for requested changes, and push Jira
+the most popular issue ticketing and development project management systems. Customers can look for and include Salesforce Customizations, assess impacts for requested changes, and push Jira
 change tickets into a Change Request. This enables easy management of changes, seamless tracking of
 compliant changes and automating the reconciliation of change logs during an audit (Now in Forge).
 
@@ -20,7 +19,7 @@ User benefits include:
 - Enable automatic synchronization of Jira and Platform Governance for Salesforce change tickets.
 
 :::note
-Change Requests are not automatically created, as not all tickets result in a Change Request.
+Change Requests aren't automatically created, as not all tickets result in a Change Request.
 Tickets must be pushed to Platform Governance for Salesforce to begin the process. If Automatic
 Synchronization is turned on, then changes to the Status and Customizations are synchronized between
 Jira and Platform Governance for Salesforce without the need to keep manually pushing the changes.
@@ -38,7 +37,7 @@ You can map custom fields between Change Requests and Jira. Refer to
 
 ## Review Your Jira Statuses
 
-To take advantage of the automatic synchronization feature, we recommend reviewing your Jira
+To take advantage of the automatic synchronization feature, review your Jira
 statuses to be mapped to the Change Request statuses. When a ticket status is updated to a mapped
 status, Platform Governance for Salesforce handles the synchronization between Jira and Salesforce.
 
@@ -60,7 +59,7 @@ Cloud Integration Credentials after installing the app.
 
 :::note
 You must be a Jira system administrator to install the **Strongpoint for Salesforce** app. Contact
-your Jira system administrator if you do not have administrative permissions.
+your Jira system administrator if you don't have administrative permissions.
 :::
 
 1. Open your **Jira Software Dashboard**.
@@ -90,7 +89,7 @@ Configure the connected app:
 
     ![Open the Strongpoint Connected App](/images/platgovsalesforce/integrations/connected_app.webp)
 
-3. Click the drop down arrow on the right side and select **Edit**.
+3. Click the dropdown arrow on the right side and select **Edit**.
 4. Set the **Callback URL** to see in the forge integration
  ![Link oauth callback forge](/images/platgovsalesforce/integrations/jiraForge/netwrix_sf_connected_app_login.webp)
 5. These **Oauth Scopes** must be selected:
@@ -109,7 +108,7 @@ Configure the connected app:
 8. Copy the Consumer Key and the Consumer Secret codes to a clipboard. You are prompted for this
    information when you use the app.
 
-If you do not use a connected app, you can set up Jira Cloud Integration Credentials as an
+If you don't use a connected app, you can set up Jira Cloud Integration Credentials as an
 alternative.
 
 
@@ -121,7 +120,7 @@ You can restrict this by project or profile.
 Users opening a restricted project receive a information message, instructions for enabling access,
 and a link to this topic.
 
-> _The Strongpoint Salesforce Integration is not supported for this project._
+> _The Strongpoint Salesforce Integration isn't supported for this project._
 
 Follow the instructions for Restricting Access to a Project or Setting Groups/Profiles Visibility to grant the user appropriate access.
 
@@ -147,7 +146,7 @@ groups.
 Users opening a restricted project receive a information message, instructions for enabling access,
 and a link to this topic.
 
-> _The Strongpoint Salesforce Integration is not supported for this project._
+> _The Strongpoint Salesforce Integration isn't supported for this project._
 
 Follow the instructions for Restricting Access to a Project or Setting Groups/Profiles Visibility to grant the user appropriate access.
 
@@ -175,7 +174,7 @@ Follow the instructions for Restricting Access to a Project or Setting Groups/Pr
     ![Set up the Jira status mappings for Change Request status](/images/platgovsalesforce/integrations/jira_status_settings.webp)
 
 4. Enter the mappings between your Jira statuses and the Change Request statuses. You must define
-   your Jira statuses prior to this step. You can enter multiple Jira statuses for each Change
+   your Jira statuses before this step. You can enter multiple Jira statuses for each Change
    Request status, separated by commas. For example, **In Progress, Backlog**. Assign your mapping
    for each of the Change Request statuses:
 
@@ -187,12 +186,12 @@ Follow the instructions for Restricting Access to a Project or Setting Groups/Pr
 
 5. Check **Is Automatic Sync** to enable Platform Governance for Salesforce to handle the
    synchronization between Jira and Salesforce when a Ticket status is updated to a mapped status.
-   without having to click **Push**. If you are using an org where you do not want to create a
+   without having to click **Push**. If you are using an org where you don't want to create a
    Change Request, leave this unchecked so you can do your research or testing without generating
    Change Requests.
 
    :::note
-   Change Requests are not automatically created, as not all tickets result in a Change Request.
+   Change Requests aren't automatically created, as not all tickets result in a Change Request.
    Tickets must be pushed to Platform Governance for Salesforce to begin the process. If Automatic
    Synchronization is turned on, then changes to the Status and Customizations are synchronized
    between Jira and Platform Governance for Salesforce without the need to keep manually pushing the

@@ -38,7 +38,7 @@ Scroll down to the Metadata Scanner section.
 You can schedule the scanners to auto-scan your environment:
 
 1. Toggle **Enabled** to activate a scan. Hover over the **?** for details on the scan.
-2. Select the **Frequency** and **Day**. If you do not specify a time Platform Governance for
+2. Select the **Frequency** and **Day**. If you don't specify a time Platform Governance for
    Salesforce rescans at midnight.
 
     ![getting_started_wizard6](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard6.webp)

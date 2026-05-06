@@ -21,7 +21,7 @@ The Change Log is organized into two main panels:
 | Package | The package where the change was logged |
 | Related Change Request | Reference to the associated Change Request (if any) |
 | Compliant Indicator | Compliance status according to the active policy |
-| Active | Whether the customization is currently active |
+| Active | Whether the customization is active |
 
 ### 2. "CHANGE DETAILS" Panel
 

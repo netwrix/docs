@@ -17,7 +17,7 @@ Attachments**.
 
 ![Example Export Attachment detail](/images/platgovsalesforce/tools/export_object_attach_record_2.webp)
 
-The export history is saved in Salesforce. The **Export Attachments** tab appears by default in both Salesforce Lightning and Classic views. If the tab is not visible, you can add it using the following methods:
+The export history is saved in Salesforce. The **Export Attachments** tab appears by default in both Salesforce Lightning and Classic views. If the tab isn't visible, you can add it using the following methods:
 
 ## Salesforce Lightning
 

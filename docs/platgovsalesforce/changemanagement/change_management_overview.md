@@ -10,7 +10,7 @@ Platform Governance for Salesforce Closed Loop Change Management and Compliance 
 change management system for changes to Salesforce accounts using the Platform Governance for
 Salesforce automated documentation and change management system.
 
-Platform Governance for Salesforce extends your current change management system to enable you to:
+With Platform Governance for Salesforce, you can extend your current change management system to:
 
 - Establish change management policies for different types of objects and processes.
 - Route changes for approval within Salesforce.
@@ -18,7 +18,7 @@ Platform Governance for Salesforce extends your current change management system
 - Detect and resolve non-compliant changes.
 - Manage deployments and sandbox refreshing using best practices.
 
-## Plan, Approve and Deploy Changes
+## Plan, Approve, and Deploy Changes
 
 ### Plan with a Change Request
 
@@ -45,12 +45,12 @@ The **Advanced Change Management** Module provides additional functionality:
 :::note
 Change Management can be integrated with other change tracking systems using the External Change
 Request Number field. It is beneficial to use the change records since they can be linked to
-processes, customizations and clean up activities.
+processes, customizations, and clean up activities.
 :::
 
 ### Confirm with a Deployment Record
 
-When tracking Full Software Development Lifecycle changes, the Deployment Record enables you to
+When tracking Full Software Development Lifecycle changes, use the Deployment Record to
 track deployment approvals. Once a Change Request is approved, this documents a change is ready for
 development. At this point, a new change request with the Stage Deployment Record can be created and
 tracked.

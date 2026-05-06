@@ -7,7 +7,7 @@ sidebar_position: 40
 # Date Last Used
 
 Date Last Used (DLU) captures changes triggered by users or other customizations. Specifically, the
-last date the Customization, or the data it contains, was created, changed, accessed, processed or
+last date the Customization, or the data it contains, was created, changed, accessed, processed, or
 used.The DLU value indicates that the customization was used at least as late as the DLU. It does
 not indicate if it was used earlier. If DLU is blank, it indicates there in no verified date.
 
@@ -26,7 +26,7 @@ make better decisions about the value of maintaining specific CustomFields. Usag
 - how recently the field has been used (_recency_)
 
 :::note
-DLU analysis should only be performed in Production orgs. Sandbox orgs do not reflect actual usage.
+DLU analysis should only be performed in Production orgs. Sandbox orgs don't reflect actual usage.
 :::
 
 **Usage data fields:**
@@ -96,7 +96,7 @@ has been disabled. To change the time period:
 ## DLU Metadata Types
 
 Metadata types marked with an **\*** must have the **Event Logs** enabled to gather DLU information.
-DLU can be used for the following metadata types:
+Use DLU for the following metadata types:
 
 | Salesforce Family Types & Joins                | Metadata Types                                                                                       | DLU                                                                                               |
 | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
@@ -157,7 +157,7 @@ DLU can be used for the following metadata types:
 
 ## Excluded Metadata Extended Types
 
-DLU is not used for the following metadata Extended Types:
+DLU isn't used for the following metadata Extended Types:
 
 |                             |                          |
 | --------------------------- | ------------------------ |
@@ -179,12 +179,12 @@ DLU is not used for the following metadata Extended Types:
 
 ## DLU Scheduler
 
-The [Scheduler](/docs/platgovsalesforce/scanner/scheduler.md) is where you can add frequency, day and time for processes
+The [Scheduler](/docs/platgovsalesforce/scanner/scheduler.md) is where you can add frequency, day, and time for processes
 to run. Under **Field Usage and DLU**, you can set up the scheduler to update the last used date
 field on customizations with the date the metadata was last used. It populates information for field
 usage on custom fields and custom objects and catch any permission set assignments related to users.
 
 ![scheduler](/images/platgovsalesforce/clean_up/scheduler.webp)
 
-Once the scheduler has been set up, you can view the DLU under the **Metadata** tab on the
+After the scheduler has been set up, you can view the DLU under the **Metadata** tab on the
 customization record.

@@ -13,7 +13,7 @@ To access Platform Governance for Salesforce in Salesforce Lightning Experience:
     ![Salesforce App launcher](/images/platgovsalesforce/app_launcher.webp)
 
 2. Search for and select **Netwrix Lightning**.  
-   If you do not see the app, select **View All** to display all available apps.
+   If you don't see the app, select **View All** to display all available apps.
 
     ![Select Netwrix Lightning](/images/platgovsalesforce/app_netwrix_lightning.webp)
 
@@ -52,7 +52,7 @@ Use the dropdown menus at the top of the dashboard to access the main features:
 - **Settings** – Access Getting Started, system status, installation tools, credentials, and the Knowledge Center.
 - **Scanner** – Access the Scheduler, manual scanners, the field-level scanner, and the DLU Configuration scanner.
 - **Tools** – Access tools such as the dependency relationship diagram, environment comparison, profile comparison, and the access review assistant.
-- **Reports** – Access reports related to customizations, change enablement, cleanup, release and deployment, audit, and financial controls.
+- **Reports** – Access reports related to customizations, change enablement, cleanup, release, deployment, audit, and financial controls.
 
 ---
 
@@ -66,7 +66,7 @@ The **Scanner Status** panel provides an overview of scanning activity in your S
 To run the system scanner immediately, select **Rescan Now**.
 
 **Important:**  
-The **Rescan Now** option runs the main system scanner only. It does not include the following scanners:
+The **Rescan Now** option runs the main system scanner only. It doesn't include the following scanners:
 
 - **Permissions Assignment**  
 - **System Permissions Scanner**  

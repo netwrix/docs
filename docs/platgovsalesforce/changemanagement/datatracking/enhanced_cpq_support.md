@@ -7,17 +7,17 @@ sidebar_position: 100
 # Data Tracking
 
 Salesforce CPQ (Configure, Price, Quote Software) sales tool provides accurate pricing with any
-given product configuration scenario. Behind the scenes, CPQ uses configuration data stored in
+given product configuration scenario. CPQ uses configuration data stored in
 custom objects. Manually monitoring this configuration data is the hardest part of SOX compliance.
 In the CPQ application, for example, important rules about products, prices, discounts, and
 approvals are stored as data in custom objects. Getting visibility into these changes is incredibly
 time-consuming, and there are few options for preventing changes that can put your processes and
 compliance in jeopardy.
 
-This is not unique to CPQ. Billing and other applications that touch revenue related data are all
+This isn't unique to CPQ. Billing and other applications that touch revenue related data are all
 potentially in scope and in your auditor's sights.
 
-Platform Governance for Salesforce solves this major pain point by treating configuration data with
+Platform Governance for Salesforce solves this problem by treating configuration data with
 the same scrutiny it applies to other Apex metadata in your Org. It is the only native solution to
 give you visibility into these changes. You can create mitigating controls to automatically block
 changes to critical CPQ rules. For example, you can now designate the fields on the **Discount

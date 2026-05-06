@@ -45,7 +45,7 @@ and select **New Rule** or **Report Clean Up Rules**.
 - **Name** is the assigned name for the **Report Clean Up Rule**.
 - **Description** is the purpose of the rule record. An informative description helps administrators
   maintain and identify rules.
-- **Notify Report Owners Prior to Archive** check to send email to report owners prior to archive.
+- **Notify Report Owners Before Archive** check to send email to report owners before archive.
   Default is checked.
 - **Automatic** check to include the rule in the automated report clean up.
 - **Inactive** check to disable this Report Clean Up Rule.
@@ -63,7 +63,7 @@ When **Automatic** is enabled, configure the schedule for the rule.
 - **Weekly Event**
 - **Monthly Event**
 - **Yearly Event**
-- **Repeat Every "N" Week(s)** (weekly schedule)
+- **Repeat Every "N" Weeks** (weekly schedule)
 - **End By**:
   - **Date**
   - **Time**
@@ -89,10 +89,10 @@ When **Automatic** is enabled, configure the schedule for the rule.
 
 #### Advanced Filters
 
-- **Select/Selected Report Owner(s)** filters reports by matching selected owners for the rule or if
-  **Exclude Owner(s)** is checked, to exclude matching owners.
-- **Select/Selected Inactive Owner(s)** filters reports by matching selected inactive owners.
-  **All Inactive Owner(s)** includes all inactive owners.
+- **Select/Selected Report Owners** filters reports by matching selected owners for the rule or if
+  **Exclude Owners** is checked, to exclude matching owners.
+- **Select/Selected Inactive Owners** filters reports by matching selected inactive owners.
+  **All Inactive Owners** includes all inactive owners.
 
 ### Rule Preview
 
@@ -125,9 +125,9 @@ If a Report matches the Clean Up Rule:
 1. Summary notification of all matching reports is sent to the rule owner.
 2. Immediate notice is sent to all report owners. Notifications include a **Retain this Report**
    link and a **Preview** link.
-3. If the report is not retained and not used, a final notification is sent prior to the archive
+3. If the report isn't retained and not used, a final notification is sent before the archive
    date.
-4. If the report is not retained and not used by the archive date:
+4. If the report isn't retained and not used by the archive date:
    - Report is archived.
    - Archive notifications are sent to rule owner and report owners.
    - Report is added to **Archived Reports**.
@@ -142,9 +142,9 @@ If a Report matches the Clean Up Rule:
    - Notification is emailed to report owners unless disabled.
    - All notifications include a **Retain this Report** link.
    - Report is added to **Reports to be Archived**.
-2. If the report is not retained and not used:
+2. If the report isn't retained and not used:
    - Final notifications are sent.
-3. If the report is not retained and not used by the archive date:
+3. If the report isn't retained and not used by the archive date:
    - Report is archived.
    - Notifications are sent.
    - Report is added to **Archived Reports**.
@@ -173,7 +173,7 @@ Notification emails contain a **Retain this Report** link.
 
 ## Auto Archiving a Report
 
-If a report is not retained:
+If a report isn't retained:
 
 - Report is archived.
 - Customization record is marked **Inactive**.

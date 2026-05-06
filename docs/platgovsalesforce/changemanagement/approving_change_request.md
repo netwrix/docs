@@ -19,7 +19,7 @@ notifications are sent when the Change Request owner advances the status to **Pe
 
 3. Change Request owner [Completes and Validates the Change Request](/docs/platgovsalesforce/changemanagement/completing_change_request.md).
 
-Once the Change Request is approved, you cannot change the customizations associated with it or make any other modifications to the record.
+After the Change Request is approved, you can't change the customizations associated with it or make any other modifications to the record.
 
 You can add the **Netwrix CR Approval Override** Permission Set to specific users. Users with
 this Permission Set can approve a Change Request independently of the governing policy. 

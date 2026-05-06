@@ -20,7 +20,7 @@ To use the scheduler tool:
 
 2. Select the category to automate by clicking on **Disabled** to enable it. There is no save
    button, automation is turned on and saved by toggling **Enabled**/**Disabled**.
-3. Select the **Frequency** , **Day** and **Time**. Your selections are automatically saved.
+3. Select the **Frequency**, **Day**, and **Time**. Your selections are automatically saved.
 4. Click any menu item to close the **Scheduler**.
 
 ---
@@ -29,7 +29,7 @@ To use the scheduler tool:
 
 ### Initial Documentation Phase
 
-When you first install Platform Governance for Salesforce, enable only the **Automated Scan** with **Daily** frequency. Do not enable other scanners until your org is fully documented. This approach ensures:
+When you first install Platform Governance for Salesforce, enable only the **Automated Scan** with **Daily** frequency. Don't enable other scanners until your org is fully documented. This approach ensures:
 
 - Complete baseline documentation before change detection begins
 - Optimal resource utilization during initial scan
@@ -53,7 +53,7 @@ Avoid enabling all scanners by default, as this can consume unnecessary resource
 
 Configure logical time windows between scanners to prevent batch execution conflicts. Stagger your scanner schedules to ensure:
 
-- Scanners do not run concurrently
+- Scanners don't run concurrently
 - Each scanner completes before the next one starts
 - System resources remain available for other Salesforce operations
 

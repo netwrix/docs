@@ -7,7 +7,7 @@ sidebar_position: 50
 # Validate the Data
 
 Accurate documentation is critical to support your change management and clean up processes.
-Platform Governance for Salesforce has automated tools to enable you to ensure that your
+Platform Governance for Salesforce provides automated tools to ensure that your
 customizations are documented properly.
 
 ## Status Report
@@ -23,12 +23,12 @@ From the Netwrix Dashboard: click **Configuration and Stats** in the **Resources
 ## Dependency Relationship Diagram
 
 You can check data by navigating through the Dependency Relationship Diagram (DRD) and selecting
-object(s) types.
+object types.
 
 To validate data with the DRD:
 
 1. Open **Netwrix Dashboard** > **Tools** > **Dependency Relationship Diagram**.
-2. Select an **Object(s) Type** from the pull-down menu.
+2. Select an **Object Type** from the pull-down menu.
 3. Click a field and validate the data.
 
 ![entity_diagram](/images/platgovsalesforce/tools/entity_diagram_light.webp)

@@ -77,7 +77,7 @@ record.
 
 Attachments are generated during the deployment for validation and auditing. Use **New Note** to
 create a deployment note, or **Attach File** to add a file to the deployment log. Notes and
-attachments can be edited, viewed or deleted.
+attachments can be edited, viewed, or deleted.
 
 ## Deployment Components
 

@@ -11,7 +11,7 @@ can use all of your Salesforce administration and configuration skills to effici
 organize what is important to you.
 
 Most of the examples so far have used List Views to move Customizations through the Clean Up Process
-of identification, assessment, approval and clean up. Reports, when combined with Controls, can
+of identification, assessment, approval, and clean up. Reports, when combined with Controls, can
 deliver powerful results for your clean up process.
 
 For example, you can set up a Report to search the **XML/Code** or **Changed By** fields of
@@ -19,7 +19,7 @@ Customizations for any ongoing situations. You can then set a trigger to update 
 report to include specific people, such as new users. Finally, add a dashboard where you can view
 the key metrics from your Report.
 
-The Enterprise Compliance edition enables you to take management to the next level by designating
+With the Enterprise Compliance edition, you can take management to the next level by designating
 reports as scheduled automated controls. These controls create situation-specific change logs or
 control violation logs that can be reviewed and cleared.
 
@@ -28,7 +28,7 @@ It is easy to build a comprehensive dashboard on the **Control Logs** object in 
 configuration or data. You can designate who receives alerts without needing to build new workflows
 or triggers.
 
-To learn more about simplifying governance and audit with Enterprise Compliance tools, reach out to
+To simplify governance and audit with Enterprise Compliance tools, reach out to
 your Customer Success Manager or Account Executive.
 
 **Next Technical Debt Topic:** [Change Enablement](/docs/platgovsalesforce/techdebt/tech_debt_org_change_enablement.md)

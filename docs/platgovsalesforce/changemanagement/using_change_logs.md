@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Using Change Logs
 
-Change Logs allow you to see the type of change, who made the change and view the system notes of
+Use Change Logs to see the type of change, who made the change, and view the system notes of
 the Salesforce record. Change Logs are accessed from the **Change Logs** tab or through
 [Change Enablement Reports](/docs/platgovsalesforce/changemanagement/change_management_reports.md).
 
@@ -28,7 +28,7 @@ Here is an example change log for a **CustomObject** Metadata type.
 - **Actual Change Date**: Date the Customization was last modified.
 - **Customization Created By**: User who created the customization.
 - **Customization Modified By**: User who last modified the customization.
-- **Customization**: Linked Customization(s) that have changed.
+- **Customization**: Linked customizations that have changed.
 - **Metadata Type**: Salesforce metadata type of the Customization.
 - **Field Name**: Name of the changed field.
 - **Active**: Checked if the Customization is active.
@@ -73,13 +73,13 @@ The **Created By** and **Last Modified By** users and dates are displayed at the
 The **Audit** section displays all fields related to an audit. Click the edit icon to edit the
 record.
 
-- **Sampled For Audit**: Select **None**, **Internal** or **External**.
+- **Sampled For Audit**: Select **None**, **Internal**, or **External**.
 - **Audited By**: Auditor selects their user name from the list.
 - **Internal Audit Comments**: Internal notes added by the Auditor.
-- **Internal Audit Status**: Select **None**, **Approved**, **Rejected** or **Under Investigation**.
+- **Internal Audit Status**: Select **None**, **Approved**, **Rejected**, or **Under Investigation**.
 - **Last Internal Audit**: User who made the last change in the Internal Audit fields.
 - **External Audit Comments**: External notes added by the Auditor.
-- **External Audit Status**: Select **None**, **Approved**, **Rejected** or **Under Investigation**.
+- **External Audit Status**: Select **None**, **Approved**, **Rejected**, or **Under Investigation**.
 - **Last External Audit**: User who made the last change in the External Audit fields.
 
 ## Related Tab

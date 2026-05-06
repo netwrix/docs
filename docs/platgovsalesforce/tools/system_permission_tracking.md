@@ -39,7 +39,7 @@ Automates the scanning process. You can choose between three scheduling options�
 
 ### Email Notifications
 
-You can enable Email Notifications to receive reports showing System Permission changes. Select a notification frequency and define the list of recipients. Users do not need to manually subscribe—the system handles this automatically. Recipients must have the 'Netwrix Grant Permissions' Permission Set assigned.
+You can enable Email Notifications to receive reports showing System Permission changes. Select a notification frequency and define the list of recipients. Users don't need to manually subscribe—the system handles this automatically. Recipients must have the 'Netwrix Grant Permissions' Permission Set assigned.
 
 ![Enable Notifications](/images/platgovsalesforce/sys_perm_tracking/Enable_Notifications.webp)
 
@@ -55,7 +55,7 @@ Add users who will receive notification emails. Recipients must have the require
 
 ### In-App Notifications
 
-If In-App Notifications are enabled, each scan creates a record in the Downloaded Files component on the Netwrix Dashboard. This provides links to reports showing all detected System Permission changes. An Export Attachment record is also created, but users typically do not need to access it directly.
+If In-App Notifications are enabled, each scan creates a record in the Downloaded Files component on the Netwrix Dashboard. This provides links to reports showing all detected System Permission changes. An Export Attachment record is also created, but users typically don't need to access it directly.
 
 **Example of a System Permission Change in Downloaded Files:**
 
@@ -85,7 +85,7 @@ Allows searching and selecting System Permissions not included in the recommende
 
 ## Selected Permissions
 
-Displays all System Permissions currently selected for tracking, whether selected from Recommended Permissions or All Permissions. You can remove all tracked permissions or selectively remove only specific ones.
+Displays all System Permissions selected for tracking, whether selected from Recommended Permissions or All Permissions. You can remove all tracked permissions or selectively remove only specific ones.
 
 ![Selected Permissions](/images/platgovsalesforce/sys_perm_tracking/Selected_Permissions.webp)
 
@@ -117,7 +117,7 @@ The Change Log provides a detailed record of each detected change. Key fields in
 
 Change logs can be exported for further analysis or compliance reporting:
 
-1. Select the desired change log entries
+1. Select the change log entries you want
 2. Click **Export** to download the data
 3. The export includes all relevant details about the permission changes
 
@@ -154,19 +154,19 @@ Change logs can be exported for further analysis or compliance reporting:
 
 ### Email Notifications Not Being Received
 
-**Issue**: Configured recipients are not receiving email notifications
+**Issue**: Configured recipients aren't receiving email notifications
 
 **Solutions**:
 - Ensure Email Notifications are enabled
 - Verify at least one valid recipient is added
 - Check that recipients have the required Permission Set ('Netwrix Grant Permissions')
-- Make sure a valid schedule is configured
+- Ensure a valid schedule is configured
 - Verify email addresses are correct in Salesforce
 - Check spam/junk folders for notification emails
 
 ### Permissions Not Appearing in All Permissions
 
-**Issue**: Expected permissions are not showing in the All Permissions list
+**Issue**: Expected permissions aren't showing in the All Permissions list
 
 **Solutions**:
 - Clear any applied search filters

@@ -6,7 +6,7 @@ sidebar_position: 120
 
 # Cleaning Up Change Logs
 
-The **Change Logs Clean Up** tool enables you to schedule an automatic clean up of old Change Logs.
+Use the **Change Logs Clean Up** tool to schedule an automatic clean up of old Change Logs.
 Cleaning up these old logs helps keep your orgs efficient and organized.
 
 :::note

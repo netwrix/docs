@@ -22,7 +22,7 @@ The General Configuration section allows administrators to select which Salesfor
 
 ![DLU General Configuration](/images/platgovsalesforce/dlu_configuration/DLU_General_Configuration.webp)
 
-- Only metadata types currently supported by the DLU Scanner are displayed. Unsupported Salesforce types are not shown and cannot be selected.
+- Only metadata types supported by the DLU Scanner are displayed. Unsupported Salesforce types aren't shown and can't be selected.
 - Once selected, the scheduler will process only the chosen types. If no types are selected, the DLU Scanner will process all supported types shown in the list.
 
 ## Custom Fields Configuration

@@ -12,7 +12,7 @@ Platform Governance for Salesforce – Zendesk Integration supports three types 
 
 - Operators can Request Approval when the CR is in Draft.
 - Admins can Approve or Reject when the CR is Pending Approval.
-- Admins can Complete the CR once it is Approved.
+- Admins can Complete the CR after it is Approved.
 
 ### Screenshots
 

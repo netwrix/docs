@@ -12,24 +12,24 @@ Jira Integration errors
 
 Error message:
 
-_Please verify your Jira Credentials. Go to_ **Netwrix Dashboard** _>_ **Configurations and Stats**
+_Verify your Jira Credentials. Go to_ **Netwrix Dashboard** _>_ **Configurations and Stats**
 _>_ **Jira Configuration** _>_ **Credentials**
 
 Solution:
 
-Refer to [Credentials](/docs/platgovsalesforce/installingstrongpoint/config_and_stats.md#credentials) for more
+See [Credentials](/docs/platgovsalesforce/installingstrongpoint/config_and_stats.md#credentials) for
 information on entering your credentials.
 
 ## Error with Mapping Jira Statuses
 
 Error message:
 
-_Please verify your Jira Credentials. Go to_ **Netwrix Dashboard** _>_ **Configurations and Stats**
+_Verify your Jira Credentials. Go to_ **Netwrix Dashboard** _>_ **Configurations and Stats**
 _>_ **Jira Configuration** _->_ **Status Mapping**
 
 Solution:
 
-Refer to [Status Mapping](/docs/platgovsalesforce/installingstrongpoint/config_and_stats.md#status-mapping) for more
+See [Status Mapping](/docs/platgovsalesforce/installingstrongpoint/config_and_stats.md#status-mapping) for
 information on mapping your statuses.
 
 ## Error with Salesforce Credentials
@@ -41,7 +41,7 @@ security token.
 
 If you are using Salesforce Authenticator, update it to the most recent Six-digit code.
 
-Or verify that the user is not locked.
+Or verify that the user isn't locked.
 
 Solution:
 
@@ -53,8 +53,8 @@ Error message:
 
 error=invalid_client_id&error_description=client%20identifier%20invalid
 
-Refer to [Access Data with API Integration](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) for
-more information on setting up the connected app.
+See [Access Data with API Integration](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) for
+information on setting up the connected app.
 
 ## Error with Consumer Secret
 
@@ -64,7 +64,7 @@ Verify the Consumers Secret from the Connected App.
 
 Solution:
 
-Refer to [Credentials](/docs/platgovsalesforce/installingstrongpoint/config_and_stats.md#credentials) for more
+See [Credentials](/docs/platgovsalesforce/installingstrongpoint/config_and_stats.md#credentials) for
 information on entering your credentials
 
 ## URL Errors
@@ -75,5 +75,5 @@ error=redirect_uri_mismatch
 
 Solution:
 
-Refer to [Connected App](jira_walkthrough_example.md#connected-app) Connected App for more
+See [Connected App](jira_walkthrough_example.md#connected-app) for
 information on setting up the connected app.

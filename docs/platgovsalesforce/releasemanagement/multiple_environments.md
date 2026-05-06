@@ -9,11 +9,11 @@ sidebar_position: 40
 Multiple Environment Deployment Tracking helps you manage changes between your Production and
 Development/Testing .
 
-With multiple environment deployment tracking, you can push, pull and access your change requests in
+With multiple environment deployment tracking, you can push, pull, and access your change requests in
 all your environments that have Platform Governance for Salesforce installed. This alleviates the
 risk of breaking your production account. By documenting and validating the change process through
 change requests, deployment records and environment comparison, multiple environment deployment
-tracking enables you to access change requests in any environment where Platform Governance for
+tracking lets you access change requests in any environment where Platform Governance for
 Salesforce is installed, and to deploy changes and promote code from one environment to another.
 
 ## Push/Pull Change Requests
@@ -32,7 +32,7 @@ Salesforce is installed, and to deploy changes and promote code from one environ
 
     ![Enter Credentials](/images/platgovsalesforce/release_management/push_pull_popup.webp)
 
-6. Click **Test Connection** to make sure your credentials are correct. If your credentials are
+6. Click **Test Connection** to ensure your credentials are correct. If your credentials are
    not correct, you can click **Save Credentials** and edit.
 
 ### Push the Change Request

@@ -20,7 +20,7 @@ customizations and processes. It identifies the Change Policy that applies based
 the Customization Record and the process risk from the Process Records.
 
 The Change and Approval Policy also determines the change level required for any detected changes to
-be compliant. This ensures that even changes that do not go through the planned change management
+be compliant. This ensures that even changes that don't go through the planned change management
 process are analyzed against the policy for compliance.
 
 For example, a company may have multiple policies:
@@ -33,8 +33,8 @@ For example, a company may have multiple policies:
    audit review.
 3. **Custom Object Policy** to manage Custom fields and object.
 
-Once in place, policies remind users of the level of change management required as well as monitors
-the changes that do occur and raises alerts to IT by custom reports if there are any change
+After policies are in place, they remind users of the level of change management required and monitor
+the changes that occur, raising alerts to IT via custom reports if there are any change
 violations.
 
 ## Change Process Overview
@@ -43,7 +43,7 @@ Platform Governance for Salesforce automatically detects any changes to the cust
 system and log them. The system finds the relevant Change/Approval Policy and determines the change
 level required for compliance. It then looks for the relevant change record. For example, if it
 determines that a script changed and a Full Software Development Lifecycle was required for
-compliance, it looks for an approved Deployment Record. If it does not find one, it flags the change
+compliance, it looks for an approved Deployment Record. If it doesn't find one, it flags the change
 as non-compliant. An alert is sent to the Object owners notifying them of the non-compliant change.
 
 1. **Detect the Change**: [Automated Scanner](/docs/platgovsalesforce/installingstrongpoint/setting_up_initial_scan.md)
@@ -56,7 +56,7 @@ as non-compliant. An alert is sent to the Object owners notifying them of the no
     - If Platform Governance for Salesforce finds the appropriate Change Request or if the change is
       **Log Only**, it marks the change as compliant and attaches the Change Log to the Change
       Record.
-    - If Platform Governance for Salesforce determines the change is non-compliant (does not fall
+    - If Platform Governance for Salesforce determines the change is non-compliant (doesn't fall
       under the relevant policy) it send an alert to IT and Object Owners to investigate the change
       and document what needs to be done to make the change compliant.
 

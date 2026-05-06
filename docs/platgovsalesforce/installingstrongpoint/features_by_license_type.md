@@ -16,7 +16,7 @@ This table summarizes what is included in each type.
 
 | Feature                                                    | Automated Documentation                                                                                           | Intelligent Change Enablement                                                                                     | Enterprise Compliance                                                                                             |
 | ---------------------------------------------------------- | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
-| Customization, Scanners and DRD                            | **&#10003;** | **&#10003;** | **&#10003;** |
+| Customization, Scanners, and DRD                            | **&#10003;** | **&#10003;** | **&#10003;** |
 | Field-Level Scanner                                        | **&#10003;** | **&#10003;** | **&#10003;** |
 | Clean Up: Reports, and Scheduler, Processes, DLU           | **&#10003;** | **&#10003;** | **&#10003;** |
 | Profile / Permission Set Comparison                        | **&#10003;** | **&#10003;** | **&#10003;** |
@@ -24,7 +24,7 @@ This table summarizes what is included in each type.
 | User Activity                                              |                                                                                                                   | **&#10003;** | **&#10003;** |
 | Implementation, Planned Customizations, Map Customizations |                                                                                                                   | **&#10003;** | **&#10003;** |
 | Change Request (Change Management)                         |                                                                                                                   | **&#10003;** | **&#10003;** |
-| Release & Deployment (Deployment, Rollback & Sync Tool)    |                                                                                                                   | **&#10003;** | **&#10003;** |
+| Release & Deployment (Deployment, Rollback, & Sync Tool)    |                                                                                                                   | **&#10003;** | **&#10003;** |
 | Compare Environments                                       |                                                                                                                   | **&#10003;** | **&#10003;** |
 | Financial Controls                                         |                                                                                                                   |                                                                                                                   | **&#10003;** |
 
@@ -35,7 +35,7 @@ optimization tools.
 
 Automated Documentation includes the following features:
 
-- Customizations, Scanners and DRD
+- Customizations, Scanners, and DRD
 - Field-Level Scanner
 - Generate and download object configurations
 - Clean Up and Optimization that tracks DLU (Date Last Used)
@@ -45,7 +45,7 @@ Automated Documentation includes the following features:
 
 ## Intelligent Change Enablement
 
-This license is best for companies that need to manage changes in their account(s).
+This license is best for companies that need to manage changes in one or more accounts.
 
 Intelligent Change Management includes the following features:
 
@@ -57,7 +57,7 @@ Intelligent Change Management includes the following features:
 - Scheduler
 - Implementation, Planned Customizations, Map Customizations
 - Change Requests
-- Release and Deployment (Deployment, Rollback and Enviro Sync Tool)
+- Release and Deployment (Deployment, Rollback, and Enviro Sync Tool)
 - Compare Environments
 - Profile / Permission Set Comparison
 - User Access Assistance
@@ -78,7 +78,7 @@ Enterprise Compliance includes the following features:
 - Scheduler
 - Implementation, Planned Customizations, Map Customizations
 - Change Requests
-- Release and Deployment (Deployment, Rollback and Enviro Sync Tool) and Compare Environments
+- Release and Deployment (Deployment, Rollback, and Enviro Sync Tool) and Compare Environments
 - Financial Controls
 - Audit Reports and Fields
 - Profile / Permission Set Comparison

@@ -16,7 +16,7 @@ diagrams and clean up tools. You can print or export results for offline referen
 
 The scanning process is a function of size: smaller orgs index in only a few hours, while large orgs can take up to 5 days.
 
-Platform Governance for Salesforce is a 100% native Salesforce App. Our records and code usage DO NOT count against your governance limits. Moreover, once the initial scan is complete, Platform Governance for Salesforce automatically updates documentation relating only to things that have changed, greatly reducing the amount of time required to scan.
+Platform Governance for Salesforce is a 100% native Salesforce App. Records and code usage don't count against your governance limits. Moreover, after the initial scan is complete, Platform Governance for Salesforce automatically updates documentation relating only to things that have changed, greatly reducing the amount of time required to scan.
 :::
 
 Once your orgs are documented, understanding the downstream dependencies of any change is a
@@ -43,8 +43,8 @@ the dependencies.
 
     ![Opening an item in the DRD](/images/platgovsalesforce/tech_debt/tech_debt_1.webp)
 
-2. Click an attribute to expand the metadata record and view all the dependencies. Drill down for
-   details so you can fully understand the downstream dependencies.
+2. Click an attribute to expand the metadata record and view all the dependencies. Select nested items for
+   details to fully understand the downstream dependencies.
 
     ![Viewing dependencies in the DRD](/images/platgovsalesforce/tech_debt/tech_debt_13.webp)
 
@@ -58,7 +58,7 @@ the dependencies.
    metadata and change history for the Customization.
 
 :::tip
-Read more about the [Customization Record](/docs/platgovsalesforce/customizations/customizations_overview.md).
+See [Customization Record](/docs/platgovsalesforce/customizations/customizations_overview.md) for an overview of the record structure.
 
 Click **Show/Hide Standard Fields** to toggle displaying Standard Fields in the DRD.
 :::
@@ -192,7 +192,7 @@ Two key actions are available in the Customization Record:
 
 ## Finder
 
-The Customization Finder is a powerful search and filtering tool that helps you locate and analyze Customization records across your Salesforce instance. It enables users to quickly find specific customizations, understand ownership and usage, and export results for further analysis.
+The Customization Finder is a powerful search and filtering tool that helps you locate and analyze Customization records across your Salesforce instance. Use it to quickly find specific customizations, understand ownership and usage, and export results for further analysis.
 
 Finder is especially useful for audits, clean-up initiatives, impact analysis, and documentation reviews.
 
@@ -220,7 +220,7 @@ When enabled, Finder includes managed package components in the results. When di
 
 #### Customization Type Filtering
 
-This section allows you to narrow results by customization type.
+Use this section to narrow results by customization type.
 
 **Search Types**
 Quickly filter the list of available customization types.
@@ -260,19 +260,19 @@ Search results are displayed in a tabular format and include key information for
 - Created By
 - Modified By
 
-Pagination controls and page size options allow you to navigate large result sets efficiently.
+Use the pagination controls and page size options to navigate large result sets efficiently.
 
 ![Customization Finder Results](/images/platgovsalesforce/tech_debt/customization_finder_results.webp)
 
 ## Object Exporter
 
-Object Exporter enables exporting information about entire objects, profiles or users into Excel for
-further research. Read more on [Exporting Objects](/docs/platgovsalesforce/tools/export_objects.md),
-[Exporting Profiles](/docs/platgovsalesforce/tools/export_profiles.md) and [Exporting Users](/docs/platgovsalesforce/tools/export_users.md).
+Object Exporter exports information about entire objects, profiles, or users into Excel for
+further research. See [Exporting Objects](/docs/platgovsalesforce/tools/export_objects.md),
+[Exporting Profiles](/docs/platgovsalesforce/tools/export_profiles.md), and [Exporting Users](/docs/platgovsalesforce/tools/export_users.md) for instructions.
 
 ## Reports and List Views
 
-Platform Governance for Salesforce is fully built into Salesforce so you can take advantage our our
+Platform Governance for Salesforce is fully built into Salesforce so you can use the built-in
 libraries of List Views and Reports or build your own.
 
 **Next Technical Debt Topic:** [Change Monitoring](/docs/platgovsalesforce/techdebt/tech_debt_change_monitoring.md)

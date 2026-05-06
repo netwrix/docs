@@ -61,17 +61,17 @@ The Metadata tab provides the metadata information about the customization, incl
 
 ### Custom
 
-The **Custom** tab shows the join, scanner and DLU dates.
+The **Custom** tab shows the join, scanner, and DLU dates.
 
 - **Last Scanner Date**: last date in which the scanner ran and evaluated the current customization.
 - **Make Join Date**: date customization was last passed to Make Join script.
-- **Date Last Used**: date the customization was last used. Refer to
-  [DLU](/docs/platgovsalesforce/cleanup/date_last_used.md) for more information.
+- **Date Last Used**: date the customization was last used. See
+  [Date Last Used (DLU)](/docs/platgovsalesforce/cleanup/date_last_used.md) for how DLU data is collected and used.
 
 ### DRD
 
 The Dependency Relationship Diagram ([DRD](/docs/platgovsalesforce/tools/viewing_drd.md)) displays objects,
-customizations and their relationships and dependencies.
+customizations, and their relationships and dependencies.
 
 ![DRD Example](/images/platgovsalesforce/customizations/drd.webp)
 
@@ -83,7 +83,7 @@ request feature.
 - **Change/Approval Policy**: designates the approval policy related to a customization.
 - **Add to Change Request**: Lookup tool to associate the clean up to an existing change request.
 - **Data Change Tracking**: tracking status.
-    - **Not Tracked**: changes in data records are not tracked.
+    - **Not Tracked**: changes in data records aren't tracked.
     - **Tracked, Blocking**: changes in data records are blocked if there is no approved Change Request.
     - **Tracked, Non-Blocking**: changes in data records are logged.
 

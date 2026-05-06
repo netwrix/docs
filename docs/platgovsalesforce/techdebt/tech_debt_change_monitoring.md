@@ -10,15 +10,15 @@ Activating change monitoring is the next step on the path to reduce your Technic
 monitoring records all changes that occur in the org and automatically alerts stakeholders of any
 that fall outside of policy or impose unacceptable levels of risk.
 
-Change monitoring can be integrated into your change governance process or be leveraged as the
-foundation of a new super-efficient process using Platform Governance for Salesforce. For now,
+Change monitoring can be integrated into your change governance process or used as the
+foundation of a new efficient process using Platform Governance for Salesforce. For now,
 oversight is the goal. In particular, notification of any changes that touch automation (code,
 workflows, triggers), profiles or roles is essential. The severity level can be set to the level of
 change a policy should impose. For example, code-related changes normally follow a tighter approval
 process than simple data model changes.
 
 :::tip
-**How Change Policies Work**: Every time a customization is created or changed in an org, Platform Governance for Salesforce checks to see if the change should have been reviewed or approved. By default, this depends on the dependencies — a picklist with no dependencies is a relatively safe change compared to a picklist with risky code dependencies. Default policies can be customized and applied to specific customizations. For example, most reports do not need change control, but management reports need to be tightly controlled.
+**How Change Policies Work**: Every time a customization is created or changed in an org, Platform Governance for Salesforce checks to see if the change should have been reviewed or approved. By default, this depends on the dependencies — a picklist with no dependencies is a relatively safe change compared to a picklist with risky code dependencies. Default policies can be customized and applied to specific customizations. For example, most reports don't need change control, but management reports need to be tightly controlled.
 :::
 
 Policies define the level of change control to follow to reduce risk. The five change levels contain
@@ -28,18 +28,18 @@ escalating levels of rigor and/or skill required to address a change:
 | --------------------------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | L1: Log Changes                         | This is a safe change.                                                                       | Ordinary report.                                                            | Anyone.                                                                                               |
 | L2: Change Request                      | This needs approval from management but not sandbox review.                                  | Management report or Control.                                               | Anyone, provided prior approval is granted.                                                          |
-| L3: Sandbox Development and Testing     | This is not a complex change, but best practices require it to be tested in a sandbox first. | Data model changes with no dependencies. For example, adding a new field.   | Business Analyst or Admin with prior approval, working in sandbox before deploying in production.     |
-| L4: Full Software Development Lifecycle | This is not a safe change. It needs to be changed carefully with rigorous testing.           | Changes to code or a picklist used in field with code or SoQL dependencies. | Admin / Developer with prior approval working through a full development cycle in multiple sandboxes. |
+| L3: Sandbox Development and Testing     | This isn't a complex change, but best practices require it to be tested in a sandbox first. | Data model changes with no dependencies. For example, adding a new field.   | Business Analyst or Admin with prior approval, working in sandbox before deploying in production.     |
+| L4: Full Software Development Lifecycle | This isn't a safe change. It needs to be changed carefully with rigorous testing.           | Changes to code or a picklist used in field with code or SoQL dependencies. | Admin / Developer with prior approval working through a full development cycle in multiple sandboxes. |
 
 Changes made without the policy-required approval are reported as Non-Compliant. Review the
-Non-Compliant Changes Report to ensure dangerous changes do not slip through and cause process or
+Non-Compliant Changes Report to ensure dangerous changes don't slip through and cause process or
 data problems.
 
 Policies can also be used to block unauthorized changes.
 
 ## Default Policy
 
-Netwrix recommends our default policy as a foundational best practice. In addition, consider
+Netwrix recommends the default policy as a foundational best practice. In addition, consider
 Specific Monitoring for anything needing special protection.
 
 ![Netwrix Default Policy](/images/platgovsalesforce/tech_debt/tech_debt_default_policy_1.webp)
@@ -49,12 +49,12 @@ Specific Monitoring for anything needing special protection.
 
 Platform Governance for Salesforce documents **Unresolved Non-Compliant Changes** in both a List
 View and a Report. Both show you all the changes that should have received approval and the level of
-change control required for the change. The List View enables you to quickly review and manage the
+change control required for the change. Use the List View to quickly review and manage the
 resolution from a single screen through the **Short Resolution Description** and **Status** fields.
 
-If you are not fully leveraging Platform Governance for Salesforce in your change enablement
+If you aren't fully using Platform Governance for Salesforce in your change enablement
 process, you can restrict your review of changes by filtering out object types or risk levels that
-do not concern you. Alternatively, you can create different reports for different team members to
+don't concern you. Alternatively, you can create different reports for different team members to
 prioritize what you see.
 
 ![Unresolved Non-Compliant Changes Report](/images/platgovsalesforce/tech_debt/tech_debt_8.webp)
@@ -67,7 +67,7 @@ From this tab, you can:
 
 ### View Customizations Associated with the Policy
 
-The Customizations section shows which Salesforce customizations are currently governed by the policy.
+The Customizations section shows which Salesforce customizations are governed by the policy.
 
 ### Add or Manage Customizations
 
@@ -113,7 +113,7 @@ To configure Automatic Policy Assignment by Salesforce Type:
 ![Select Change Level By SF Type](/images/platgovsalesforce/tech_debt/select_change_level_by_sf_type.webp)
 
 
-This method allows you to automatically assign policies to specific Salesforce object types.
+Use this method to automatically assign policies to specific Salesforce object types.
 
 #### Option 2: Add Customization
 
@@ -143,7 +143,7 @@ This feature ensures consistent governance by:
 ## Specific Monitoring
 
 The default policy may be all you require. However, you should consider whether there are specific
-people, objects, reports or fields that need special protection. These can be addressed in two ways:
+people, objects, reports, or fields that need special protection. These can be addressed in two ways:
 
 - Specific People
 - Specific Customizations
@@ -222,7 +222,7 @@ To assign a Change / Approval Policy to a Custom Object and its related fields:
 ![Applying a Policy from a Custom Object](/images/platgovsalesforce/tech_debt/policy_set_button.webp)
 
 4. In the Set Policy dialog:
-        - Assign the desired Change / Approval Policy to the Custom Object.
+        - Assign the Change / Approval Policy you want to the Custom Object.
         - Review the list of related Custom Fields associated with the object.
 5. Select individual fields, or use the header checkbox to select all fields.
 6. Click:

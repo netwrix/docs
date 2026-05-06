@@ -24,8 +24,8 @@ Click **Save** when complete.
 
 ## Credentials for Environment Comparison
 
-When you follow the **Click here to proceed** link on the Environment Comparison tool, it opens the
-Credentials Handler where you can add, edit and sync your credentials.
+On the Environment Comparison tool, select the link to open the
+Credentials Handler where you can add, edit, and sync your credentials.
 
 ![Credentials Handler](/images/platgovsalesforce/settings/credentials_list.webp)
 

@@ -29,7 +29,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
     - **Change Request Type**: Customizations for metadata changes and Data Records for data.
     - **Parent Change Request**: enter an optional parent change request if this is part of a bigger
       change.
-    - **Change Overview**: add a summary of the desired changes.
+    - **Change Overview**: add a summary of the changes you want to make.
     - **Change Type**: select the type from the list. **Minor** is the default.
     - **Is Release**: check if this change request represents a release. The customizations from all
       the child change requests are rolled into this release for deployment.
@@ -88,7 +88,7 @@ Data Record Change Requests are only available with an Enterprise Compliance lic
 
     - Filter an existing List View or create a new one.
 
-    - Select the desired Salesforce Type.
+    - Select the Salesforce Type you want.
 
     - Add the **API Name** column to the view.
 

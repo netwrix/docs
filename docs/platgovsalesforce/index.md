@@ -13,16 +13,16 @@ date.
 
 By implementing Platform Governance for Salesforce you can:
 
-- Automatically catalog all custom fields, scripts, forms, searches, records and workflows.
-- Visually browse standard and custom fields, lists and records to find all related scripts,
-  searches, users and departments.
+- Automatically catalog all custom fields, scripts, forms, searches, records, and workflows.
+- Visually browse standard and custom fields, lists, and records to find all related scripts,
+  searches, users, and departments.
 - Capture and search script comments and identify poorly commented code.
 - Automatically track changes to your customizations using the change logs, so you can see what
   customizations were changed, how they were changed, when they were changed and who changed them.
 
 ## Installation and Initial Scan
 
-Once you install Platform Governance for Salesforce, you click the **Start Spider** button
+After you install Platform Governance for Salesforce, you click the **Start Spider** button
 and your customizations are documented over the course of 4-5 days with minimal impact on system
 performance. Once completed, you have a searchable database of all your customizations.
 
@@ -33,16 +33,16 @@ have your account both fully documented and optimized.
 
 ### Clean Up
 
-Use the end to end documentation of custom objects and our Clean Up Tools to:
+Use the end to end documentation of custom objects and the Clean Up Tools to:
 
-- Identify unused fields, searches and other custom objects.
+- Identify unused fields, searches, and other custom objects.
 - Quickly identify dependencies to reduce the risk of breaking things in your account (for example, see if a
   search is being used in a script or workflow).
 - Use Change Requests to keep your changes organized and capture approvals.
 
 ### Script Management
 
-Critical Script Analysis enables you to determine how healthy your scripts are and what areas you
+Critical Script Analysis lets you determine how healthy your scripts are and what areas you
 can fix to improve your account. With the tools and the Critical Script Analysis methodology you
 can:
 
@@ -53,7 +53,7 @@ can:
 
 ## Intelligent Change Management
 
-Platform Governance for Salesforce is the only application for Salesforce that enables end to end
+Platform Governance for Salesforce is the only application for Salesforce that provides end to end
 change management and compliance. This process can be achieved effectively in only 5 weeks after
 install.
 

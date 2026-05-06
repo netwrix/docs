@@ -33,7 +33,7 @@ The previous image shows additional Permission Sets included in the package. Bel
    Provides access to Netwrix configuration settings.
 
    - **Netwrix CR Approval Override**  
-   Allows users to approve a Change Request regardless of the current policy.
+   Users with this permission set can approve a Change Request regardless of the current policy.
 
    - **Netwrix Restricted**  
    A restricted set of permissions required for users who will be making data updates to tracked or controlled objects.

@@ -34,9 +34,7 @@ This applies to:
 
 If the Customization is missing, you need to run the scanner for the specific Salesforce types.
 
-Refer to the following link for instructions on how to run the scanner for specific Salesforce types:
-
-[**Manual Scanner**](/docs/platgovsalesforce/installingstrongpoint/running_scanner.md)
+See [**Running the Scanner**](/docs/platgovsalesforce/installingstrongpoint/running_scanner.md) for instructions on how to run the scanner for specific Salesforce types.
 
 ---
 

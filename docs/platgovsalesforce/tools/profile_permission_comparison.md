@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Profile Permission Comparison
 
-The Profile / Permission Set Comparison enables you to efficiently clean up and secure your Orgs.
+Use the Profile / Permission Set Comparison to efficiently clean up and secure your Orgs.
 
 - _Clean Up Efficiency_: Identify inactive, unused, or excessive permissions, ensuring your Org is
   streamlined and efficient.
@@ -29,7 +29,7 @@ Run the scanners before you perform comparisons to ensure you have the latest da
 To perform a **System Permission** comparison:
 
 1. Select **Tools** > **Permissions Comparison** from the Netwrix Dashboard page. Click the
-   expansion indicator u to expand the **Comparison** panel. Make sure **System Permission** is
+   expansion indicator u to expand the **Comparison** panel. Ensure **System Permission** is
    selected.
 
     ![Open the Profile / Permission Comparison](/images/platgovsalesforce/tools/permission_comparison.webp)
@@ -57,7 +57,7 @@ To perform a **System Permission** comparison:
 To perform an **Object Permission** comparison:
 
 1. Select **Tools** > **Permissions Comparison** from the Netwrix Dashboard page. Click the
-   expansion indicator u to expand the **Comparison** panel. Make sure **Object Permission** is
+   expansion indicator u to expand the **Comparison** panel. Ensure **Object Permission** is
    selected.
 
     If you ran a **System Permission** comparison before switching to **Object Permission**, your

@@ -24,7 +24,7 @@ The Deployment Record status must be **Completed** to be eligible for Rollback.
 
     ![Rollback button is only available for Completed Deployment Records](/images/platgovsalesforce/release_management/rollback_button.webp)
 
-3. Click **Test Connection** to ensure your credentials are working. If your credentials are not
+3. Click **Test Connection** to ensure your credentials are working. If your credentials aren't
    correct, you can click **Save Credentials** and edit.
 
     ![Rollback selected customizations](/images/platgovsalesforce/release_management/rollback_selected.webp)

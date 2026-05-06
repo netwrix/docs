@@ -78,7 +78,7 @@ This is required because the Permission Set grants access to the data and system
 
 ### Assign Netwrix Grant Permissions
 
-1. Navigate to **Setup** > **Users** > **Permission Sets**
+1. In Salesforce, open **Setup** > **Users** > **Permission Sets**
 2. Search for and click **Netwrix Grant Permissions**
 ![NetwrixPermissionSet](/images/platgovsalesforce/installing_strongpoint/NetwrixPermissionSet.webp)
 3. Click **Manage Assignments**
@@ -90,14 +90,14 @@ This is required because the Permission Set grants access to the data and system
 7. Click **Done**
 
 :::note Required Permission Set
-All users who access the Netwrix Lightning application need the **Netwrix Grant Permissions** permission set. Without this permission set, users cannot use Platform Governance for Salesforce.
+All users who access the Netwrix Lightning application need the **Netwrix Grant Permissions** permission set. Without this permission set, users can't use Platform Governance for Salesforce.
 :::
 
 ### Verify Permission Assignment
 
 To verify that you assigned the permission set correctly:
 
-1. Navigate to **Setup** > **Users** > **Users**
+1. In Salesforce, open **Setup** > **Users** > **Users**
 2. Click a user who should have access
 3. Scroll to the **Permission Set Assignments** section
 4. Verify that **Netwrix Grant Permissions** appears in the list

@@ -97,7 +97,7 @@ Before setting up incremental or scheduled scans, you must complete an initial f
 
 ### 3.2 Configuring Metadata Types to Document
 
-You can configure which Salesforce metadata types you want to document based on your organization's needs. This allows you to focus on the most relevant components and optimize scan performance.
+You can configure which Salesforce metadata types you want to document based on your organization's needs. Selecting specific types lets you focus on the most relevant components and optimize scan performance.
 
 **To select specific metadata types:**
 

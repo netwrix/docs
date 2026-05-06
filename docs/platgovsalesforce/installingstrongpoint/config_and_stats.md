@@ -134,7 +134,7 @@ Use the multi-select panel to manage recipients:
 
 #### Alert Trigger Conditions
 
-The system continuously monitors the Auto Scanner and sends email alerts when it detects that the scanner is not running as configured in the scheduler.
+The system continuously monitors the Auto Scanner and sends email alerts when it detects that the scanner isn't running as configured in the scheduler.
 
 ## Jira Configuration
 
@@ -158,7 +158,7 @@ Jira integration.
 3. Enter your credentials:
 
     - **Jira Username** is your Jira login email associated with your Jira API token.
-    - **Jira Token** is your Jira API token. If you do not have your token, follow the steps in the
+    - **Jira Token** is your Jira API token. If you don't have your token, follow the steps in the
       [Atlassian](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) documentation.
     - **Jira Account Name** is the _company specific part_ of the Jira site URL
       (**https://\_**JiraAccountName**\_.atlassian.net**). Only enter the _JiraAccountName_, not the
@@ -176,7 +176,7 @@ Jira integration.
     ![Set up the Jira status mappings for Change Request status](/images/platgovsalesforce/integrations/jira_status_settings.webp)
 
 4. Enter the mappings between your Jira statuses and the Change Request statuses. You must define
-   your Jira statuses prior to this step. You can enter multiple Jira statuses for each Change
+   your Jira statuses before this step. You can enter multiple Jira statuses for each Change
    Request status, separated by commas. For example, **In Progress, Backlog**. Assign your mapping
    for each of the Change Request statuses:
 
@@ -188,10 +188,10 @@ Jira integration.
 
 5. Check **Is Automatic Sync** to enable Platform Governance for Salesforce to handle the
    synchronization between Jira and Salesforce when a Ticket status is updated to a mapped status.
-   without having to click **Push**. If you are using an org where you do not want to create a
+   without having to click **Push**. If you are using an org where you don't want to create a
    Change Request, leave this unchecked so you can do your research or testing without generating
    Change Requests.
-6. Change Requests are not automatically created, as not all tickets result in a Change Request.
+6. Change Requests aren't automatically created, as not all tickets result in a Change Request.
    Tickets must be pushed to Platform Governance for Salesforce to begin the process. If Automatic
    Synchronization is turned on, then changes to the Status and Customizations are synchronized
    between Jira and Platform Governance for Salesforce without the need to keep manually pushing the

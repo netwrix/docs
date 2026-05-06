@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Managing Orgs in the Real World
 
-In a perfect world, we have the time and resources to employ best practices by an experienced team
-in every situation. However, the world is not perfect, and technical debt accumulates, adding
+In a perfect world, there's time and resources to employ best practices with an experienced team
+in every situation. However, the world isn't perfect, and technical debt accumulates, adding
 difficulty and complexity to making enhancements and managing your orgs.
 
 Platform Governance for Salesforce is designed for a real world where:
@@ -31,7 +31,7 @@ in short order:
    unused and the risk posed by changes.
 3. **Activate** Change Monitoring to alert stakeholders of risky changes. Platform Governance for
    Salesforce warns org owners and admins about risk at very granular levels.
-4. **Plan** the clean up of unused, defunct and redundant customizations using the powerful search
+4. **Plan** the clean up of unused, defunct, and redundant customizations using the powerful search
    capabilities.
 5. **Implement** Automated Risk Management to guide all change agents to make enhancements in a
    structured, safe, and efficient manner.
@@ -46,6 +46,6 @@ Each stage delivers benefits to significantly improve your ability to manage tec
 | Stage                                        | Automated Documentation                                                            | Change Monitoring                                                        | Org Clean Up                                                                                | Change Enablement                                                                                                                                       |
 | -------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Benefit**                                      | Plan your changes confidently with a firm understanding of what is in use          | Monitor all changes in all orgs for technical and organizational risk    | Simplify and maintain your orgs for future success                                          | Improve time to value with automated tools that assess risk and intelligently distribute work within your team                                          |
-| **How Platform Governance for Salesforce Helps** | Creates visual, searchable documentation making it easy to understand complex orgs | Instantiates policies to mitigate risky changes before they are deployed | Simplifies clean up with a combination of automated tools, dependency models and usage data | Ensures changes are made properly, safely and efficiently, resulting in up to 80% reduction in enhancement requests that require a CoE or CI/CD process |
+| **How Platform Governance for Salesforce Helps** | Creates visual, searchable documentation making it easy to understand complex orgs | Instantiates policies to mitigate risky changes before they are deployed | Simplifies clean up with a combination of automated tools, dependency models and usage data | Ensures changes are made properly, safely, and efficiently, resulting in up to 80% reduction in enhancement requests that require a CoE or CI/CD process |
 
 **Next Technical Debt Topic:** [Automated Documentation](/docs/platgovsalesforce/techdebt/tech_debt_auto_documentation.md)

@@ -163,7 +163,7 @@ This report can be accessed through:
 - Regularly review monitoring rules
 - Set up notifications to stay informed about field changes
 - Every time you create a new field, evaluate if the new field needs to be added to any existing Monitored Rule or if you need to create a new one.
-- Make sure the Field Tracking [scanner is scheduled](/docs/platgovsalesforce/scanner/scheduler.md) on a regular basis.
+- Ensure the Field Tracking [scanner is scheduled](/docs/platgovsalesforce/scanner/scheduler.md) on a regular basis.
 
 ## Limitations
 - Object selection limited to 5 per criterion
@@ -171,7 +171,7 @@ This report can be accessed through:
 - Requires careful configuration to avoid performance impacts
 
 ## Troubleshooting
-- Check notification settings if reports are not received
+- Check notification settings if reports aren't received
 - Verify object and field selection criteria
 - Ensure proper permissions for tracking
 - Missing field access change log: Review if the field is part of a monitoring rule and/or if the rule is active.

@@ -10,31 +10,30 @@ Platform Governance for Salesforce is a stress-free change management and compli
 NetSuite and Salesforce. It helps companies manage change in their systems, enabling them to drive
 growth with confidence and certainty. Here are answers to Frequently Asked Questions:
 
-- Can Platform Governance for Salesforce provide a SOC1 Report?
-- Can I install Platform Governance for Salesforce in the Sandbox or Release Preview?
-- Is our private data being transmitted or shared in any way?
-- What is the time or effort required to use Platform Governance for Salesforce?
-- Who needs a Platform Governance for Salesforce License? What is the difference between an editor and a viewer?
+- SOC1 report availability
+- Installing in the Sandbox or Release Preview
+- Private data transmission and sharing
+- Time and effort required to use Platform Governance for Salesforce
+- License requirements and editor vs. viewer differences
 
-#### Can Platform Governance for Salesforce provide a SOC1 Report?
+#### SOC1 report availability
 
 Contact your Account Manager to request a SOC1 type 2 report. Reports are available by the end of
 January. A bridge letter can be provided if necessary.
 
-Platform Governance for Salesforce does not presently issue SOC2 reports.
+Platform Governance for Salesforce doesn’t issue SOC2 reports.
 
 Platform Governance for Salesforce is built on Salesforce. Platform Governance for Salesforce does
 not have access to or store any of your data outside of your Salesforce platform.
 
-#### Can I install Platform Governance for Salesforce in the Sandbox or Release Preview?
+#### Installing in the Sandbox or Release Preview
 
-Many of our customers install Platform Governance for Salesforce in their sandbox before installing
-it in production. Your license covers both sandbox and production instances. We currently do not
-have the ability to have the bundle installed in release previews.
+Many customers install Platform Governance for Salesforce in their sandbox before installing
+it in production. Your license covers both sandbox and production instances. The bundle can’t be installed in release previews.
 
-#### Is our private data being transmitted or shared in any way?
+#### Private data transmission and sharing
 
-Platform Governance is completely contained within NetSuite and Salesforce. It utilizes the
+Platform Governance is completely contained within NetSuite and Salesforce. It uses the
 platform’s custom records and APIs to create and manage documentation. No data leaves the system at
 anytime to ensure compliance with data security requirements for critical system and process data.
 All code and key tools are locked to ensure consistent processes within the application. Access to
@@ -46,14 +45,14 @@ All Platform Governance for Salesforce documentation can be printed, rendered as
 exported to an external repository and can be reimported and retained for archiving purposes by an
 authorized user.
 
-#### What is the time or effort required to use Platform Governance for Salesforce?
+#### Time and effort required to use Platform Governance for Salesforce
 
 A lot less than you would expect. The first phase is to get your complete customization
 documentation library. All this requires is for the Administrator to install the bundle, press
 “Start Spider” and let the system run. After a few nights, the system documentation is complete and
 you can review the results in the Status Report.
 
-We have User Guides and online videos to walk you through Clean Up, Script Analysis and other
+User guides and online videos are available to walk you through Clean Up, Script Analysis and other
 capabilities. Because Platform Governance for Salesforce creates complete documentation and updates
 on an ongoing basis with your NetSuite and Salesforce records, you can use the pre-built searches or
 create your own to get instant visibility into your account. While Platform Governance for
@@ -61,7 +60,7 @@ Salesforce greatly reduces the amount of time to find information and identify i
 the NetSuite and Salesforce Administrators will still need to do the appropriate due diligence and
 analysis to ensure their actions are appropriate and safe.
 
-#### Who needs a Platform Governance for Salesforce License? What is the difference between an editor and a viewer?
+#### License requirements and editor vs. viewer differences
 
 Licenses are only required for editors of Platform Governance for Salesforce (that is, people who create
 or edit processes or view customization documentation). No license is required for users who merely

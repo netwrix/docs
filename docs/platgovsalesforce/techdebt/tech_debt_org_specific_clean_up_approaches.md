@@ -51,7 +51,7 @@ Code and Other Critical Objects with dependencies on Unused Fields and Objects:
 2. Open each relevant Customization in a new tab and set the **Clean Up Status** to **Under
    Investigation** and add appropriate **Clean Up Notes**.
 3. While investigating, flag any Unused Test Classes you no longer need. They are identified with
-   the Test Class check box.
+   the Test Class checkbox.
 
 ## Unused Test Classes
 
@@ -101,12 +101,12 @@ itself):
 
 ## Layouts and List Views
 
-These customizations do not have a reliable **Date Last Used**. We are working to narrow this gap.
+These customizations don't have a reliable **Date Last Used**. This gap is being addressed in future releases.
 For now, be extra careful when investigating these items.
 
 ## Value-based Clean Up
 
-Sometimes we want to clean up values, not only Customizations. For example:
+Sometimes you need to clean up values, not only Customizations. For example:
 
 - Cleaning up as someone leaves the company
 - Identifying hard-coded dependencies on users
@@ -127,7 +127,7 @@ You have already seen some clues to how you might do this in preceding cases. Fo
 
 Points to consider:
 
-- Restricting the List View to one Record Type enables you to edit records directly from the List
+- Restricting the List View to one Record Type lets you edit records directly from the List
   View.
 - Search carefully if using multiple terms - quotes
   can be useful to enforce only the string you are looking for. **"Search Term"** (in quotes) finds

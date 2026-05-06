@@ -36,13 +36,13 @@ On the Initial Setup Wizard page, choose the package type you have purchased and
 
 ## Add your Credentials
 
-Once you have chosen your license type, you need to add your credentials. If your credentials
+After you have chosen your license type, you need to add your credentials. If your credentials
 change, an alert is sent to update the saved credentials. Expired credentials can cause auto
 scanners to fail. Use **Netwrix Dashboard** > **Settings**> **SP Credentials** to update your
 credentials.
 
 :::warning High Assurance Users
-If your organization has High Assurance enabled, you **cannot** use this credential method. You must use [Named Credentials](named_credential.md) instead.
+If your organization has High Assurance enabled, you **can't** use this credential method. You must use [Named Credentials](named_credential.md) instead.
 :::
 
 ![getting_started_wizard3](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard3.webp)
@@ -84,7 +84,7 @@ You may need to create multiple remote site settings. The wizard will display al
 1. Return to the Getting Started Wizard
 2. Click **Test Connection**
 3. **Test connection was Successful** is displayed if the connection succeeds
-4. Once the test is successful, click **Next**
+4. After the test is successful, click **Next**
 
 ## Next Steps
 

@@ -82,7 +82,7 @@ No other changes are required for Connected App authentication.
 ### Status Mapping
 
 - **Status Mapping is still required**.
-- Existing Status Mapping configurations continue to work and do not need to be recreated.
+- Existing Status Mapping configurations continue to work and don't need to be recreated.
 - Ensure Status Mapping is correctly configured before switching users to the Forge App.
 
 ## Coexistence During Migration
@@ -97,7 +97,7 @@ However, to ensure consistency and take advantage of the latest improvements, Ne
 
 ## Recommendation
 
-Although continued use of the legacy integration does not cause functional issues, the **Salesforce Forge App** is the recommended solution moving forward due to:
+Although continued use of the legacy integration doesn't cause functional issues, the **Salesforce Forge App** is the recommended solution moving forward due to:
 
 - Simplified authentication
 - Reduced configuration requirements

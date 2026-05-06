@@ -7,11 +7,11 @@ sidebar_position: 10
 # Change Enablement Reports
 
 Platform Governance for Salesforce has many different reports you can use to view your changes,
-these include: Compliant, Open Non-Compliant and What Changed Reports.
+these include: Compliant, Open Non-Compliant, and What Changed Reports.
 
 The **Compliant Changes** and **Unresolved Non-Compliant** reports are the primary reports for
 managing changes in your system. They display all changes in the system that are compliant and those
-that are not compliant. An additional report called **What Changed?** shows all changes that have
+that aren't compliant. An additional report called **What Changed?** shows all changes that have
 happened.
 
 To access the Change Reports:

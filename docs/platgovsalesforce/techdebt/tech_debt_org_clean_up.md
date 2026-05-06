@@ -33,7 +33,7 @@ These items can help you identify Customizations for Clean Up:
 
 ## Date Last Used
 
-Date Last Used (DLU) is a key criterion for clean up, as you generally are not cleaning up active
+Date Last Used (DLU) is a key criterion for clean up, as you generally aren't cleaning up active
 Customizations. DLU means different things to different people in the Salesforce community. The
 generic definition is:
 
@@ -44,11 +44,11 @@ generic definition is:
 
 For all clean up activities, consider the following items:
 
-- Blank DLU means there is no verified date. A blank date does not mean it is safe to remove.
-- DLU is not the only criterion. You must look at the dependencies. An unused field with related
-  code is not safe to remove. It is, however, a sign you may have unnecessary code.
+- Blank DLU means there is no verified date. A blank date doesn't mean it's safe to remove.
+- DLU isn't the only criterion. You must look at the dependencies. An unused field with related
+  code isn't safe to remove. It is, however, a sign you may have unnecessary code.
 - An unused field may have important data from the history of your company. A good question to
-  investigate is why isn’t it being used? It might be a good idea that never got off the ground.
+  investigate: why isn’t it being used? It might be a good idea that never got off the ground.
 - Cleaned up Customizations are archived if you need to restore.
 
 Like all Salesforce Date fields, DLU can be filtered using relative date formats (typically what you
@@ -60,8 +60,8 @@ will want). You can also filter on specific dates.
 
 The most common unused Customizations are Reports. In most orgs, new Reports are created every day.
 Some are critical to ongoing business processes, others are quick solutions to day-to-day problems.
-These one-time quick reports accumulate in your orgs, causing confusion and inefficiency. Refer to
-[Automated Report Clean Up](/docs/platgovsalesforce/tools/automated_report_clean_up.md) for more details.
+These one-time quick reports accumulate in your orgs, causing confusion and inefficiency. See
+[Automated Report Clean Up](/docs/platgovsalesforce/tools/automated_report_clean_up.md) for details on removing them.
 
 ## Employees Related to a Customization
 
@@ -70,7 +70,7 @@ Knowing who is using a customization is useful. This is tackled in steps, by Use
 ### Users
 
 **Field and Object Users**: Track employees editing a Field (using a custom or standard Object). It
-is not turned on for all Customizations which would be inefficient. If you use _Salesforce Shield
+isn't turned on for all Customizations which would be inefficient. If you use _Salesforce Shield
 Event Monitoring_, Platform Governance for Salesforce captures this data automatically.
 
 To capture the data without Salesforce Shield Event Monitoring:
@@ -92,12 +92,12 @@ the execution history of APEX-related objects.
 - **Salesforce Shield Event Monitoring**: Employee usage data for Reports, Dashboards, and many
   other objects, is only available with Salesforce Shield Event Monitoring. It enhances usage
   metadata to show users who are viewing non-scripted objects and executing or triggering code and
-  workflows. Once you activate _Salesforce Shield Event Monitoring_, data is collected from that
-  point on. It is not retroactive.
+  workflows. After you activate _Salesforce Shield Event Monitoring_, data is collected from that
+  point on. It isn't retroactive.
 
-**Users referred to in objects**: Fields are not created for everything, but all the metadata is
+**Users referred to in objects**: Fields aren't created for everything, but all the metadata is
 available. You can identify users (and other things) referred to in dashboard filters, formula
-fields, SOQL, or even code, by searching the raw XML, JSON or code. The
+fields, SOQL, or even code, by searching the raw XML, JSON, or code. The
 [Specific Clean Up Approaches](/docs/platgovsalesforce/techdebt/tech_debt_org_specific_clean_up_approaches.md) section contains
 examples.
 

@@ -23,7 +23,7 @@ The FastScan is the **only method** that detects and documents changes to:
 - **ProfilePasswordPolicy**: Password policies and requirements configured at the Profile level
 - **ProfileSessionSetting**: Session timeout and security settings for Profiles
 
-When changes are made to these settings, it automatically creates Change Log records at the Profile level, ensuring complete visibility of security configuration changes that are not captured by the standard scanner.
+When changes are made to these settings, it automatically creates Change Log records at the Profile level, ensuring complete visibility of security configuration changes that aren't captured by the standard scanner.
 
 ---
 
@@ -76,11 +76,11 @@ You can schedule the FastScan to run automatically:
 1. Go to the **Netwrix Dashboard** page
 2. Navigate to the **Scanner** > **Scheduler** menu
 3. Locate the **FastScan Profile/Permission Set** scheduler
-4. Select your desired frequency (for example, Daily or Weekly)
+4. Select your desired frequency (for example, Daily, or Weekly)
 5. Choose the time of day to run
 6. Click **Enable** to activate
 
-For more information about the scheduler, see the [Scheduler documentation](/docs/platgovsalesforce/scanner/scheduler.md).
+See [Scheduler documentation](/docs/platgovsalesforce/scanner/scheduler.md).
 
 **Best Practice**: Schedule the FastScan to run daily during off-peak hours to ensure timely change detection without impacting users.
 

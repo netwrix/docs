@@ -42,7 +42,7 @@ _User_Export.xls_.
 
 **Download Files**
 
-Click **Download Files** to see a list of generated files. The file does not appear in the list
+Click **Download Files** to see a list of generated files. The file doesn't appear in the list
 until it is complete.
 
 ![Download files](/images/platgovsalesforce/tools/export_users_download.webp)

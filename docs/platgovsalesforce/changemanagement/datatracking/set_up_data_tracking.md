@@ -46,7 +46,7 @@ Here are the requirements to set up Data Tracking:
 
 ## Select Objects to Track
 
-In this section, users can apply tracking recommendations to one or more objects in the list. To do this, select the desired objects and click **Apply Recommendations**.
+In this section, users can apply tracking recommendations to one or more objects in the list. To do this, select the objects you want and click **Apply Recommendations**.
 
 ![Review the recommended objects for data tracking](/images/platgovsalesforce/change_management/data_tracking_recommended.webp)
 

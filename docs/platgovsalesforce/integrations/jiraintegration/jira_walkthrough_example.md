@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Jira Walkthrough Example
 
-This walkthrough is one example based on our test account. You must
-[install and configure](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) the Platform Governance for Salesforce Salesforce Jira
-integration, including setting up the **[Jira Statuses](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md)** prior to using this
+This walkthrough is one example based on a test account. You must
+[install and configure](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) the Platform Governance for Salesforce Jira
+integration, including setting up the **[Jira Statuses](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md)** before using this
 walkthrough.
 
 The walkthrough demonstrates these steps:
@@ -38,7 +38,7 @@ The walkthrough demonstrates these steps:
 5. Click **Create**.
 
 :::note
-Alerts and notifications may occur during this walkthrough, and are not included in these steps. For example, override alert, notifications for approvers, and notification for the change request.
+Alerts and notifications may occur during this walkthrough, and aren't included in these steps. For example, override alert, notifications for approvers, and notification for the change request.
 :::
 
 ## Connect to the App
@@ -71,7 +71,7 @@ If the configuration fails, an error message is displayed. For example,
 
 > **error=redirect_uri_mismatch**
 >
-> - The 10 minutes timing slot from Salesforce is not completed yet. Wait for completion.
+> - The 10 minutes timing slot from Salesforce isn't completed yet. Wait for completion.
 > - If the error persists, check the [Callback URL](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md).
 >
 >     - You may have left a space between the two Callback URLs
@@ -80,13 +80,13 @@ If the configuration fails, an error message is displayed. For example,
 
 ### Login User
 
-Enter your Salesforce **Username**, **Password** and **Security Token**. If you are using MFA or
+Enter your Salesforce **Username**, **Password**, and **Security Token**. If you are using MFA or
 SSO: use your SSO Password. The Security token is the changing 6 digit code from your SSO or MFA
 app.
 
 ![Enter your Jira credentials](/images/platgovsalesforce/integrations/jiraLoginUserViewRebrand.webp)
 
-If you do not have your security token, you can use these steps to reset your token:
+If you don't have your security token, you can use these steps to reset your token:
 
 1. Log in to your Salesforce account.
 2. Open **View Profile** > **Settings**.
@@ -98,15 +98,15 @@ If you do not have your security token, you can use these steps to reset your to
    section). The **Synchronized with** status displays the org you are logged into for Salesforce.
 
 :::note
-You cannot login if you do not have the **appropriate role permissions to create a change request**.
+You can't login if you don't have the **appropriate role permissions to create a change request**.
 :::
 
-If you do not enter the correct credentials, an error is displayed. After six unsuccessful
+If you don't enter the correct credentials, an error is displayed. After six unsuccessful
 consecutive attempts to login, your account is suspended for 30 minutes.
 
 ## Add Customizations
 
-Once you have logged in, the form is displayed.
+After you have logged in, the form is displayed.
 
 ![Connection details for the ticket](/images/platgovsalesforce/integrations/jiraRebrandFieldsCompleted.webp)
 
@@ -123,7 +123,7 @@ Once you have logged in, the form is displayed.
   ![delete](/images/platgovnetsuite/integrations/delete.webp) icon.
 - **View DRD** and **Impact Analysis** are tools to Perform Risk Assessment.
 - **Push** creates the Change Request in Salesforce. **Push** is also used to manually update your
-  Change Request if you are not using the [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) feature.
+  Change Request if you aren't using the [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) feature.
 
 ### Add Existing Customizations by Name or API Name
 
@@ -143,11 +143,11 @@ Once you have logged in, the form is displayed.
 
 ### Add Proposed Customizations
 
-In this procedure, we are adding a new Customization.
+In this procedure, this procedure adds a new Customization.
 
 1. Enter a new, valid API Name in the **Add Customization** for **Proposed Customizations** field.
    For this example, enter **CustomerPriorities**.
-2. Click (**Add Proposed customizations**) to add it. If the API Name is valid, and does not match an existing API Name, the
+2. Click (**Add Proposed customizations**) to add it. If the API Name is valid, and doesn't match an existing API Name, the
    new Customization is added to the **Proposed Customizations** list.
 
     ![Add a proposed customization](/images/platgovsalesforce/integrations/proposedCustomizationsListJiraRebrand.webp)
@@ -155,13 +155,13 @@ In this procedure, we are adding a new Customization.
 ### Create the Change Request
 
 Using the Platform Governance for Salesforce Jira integration, your Change Requests are created
-automatically when you add a Customization. To setup or update the status mapping, refer to setting
+automatically when you add a Customization. To set up or update the status mapping, refer to setting
 up the **[Jira Statuses](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md)** procedure.
 
 1. Change the Jira status of your ticket to match the status set up for **CR In Progress**. For
    example, **In Progress**. Refer to setting up the **[Jira Statuses](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md)**
    procedure.
-2. Click **Push** to create the Change Request if you are not using the
+2. Click **Push** to create the Change Request if you aren't using the
    [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) feature. The change request is created in
    Salesforce with the **In Progress** status.
 3. Expand the **Change Request** field on the right. The status is now **None/In Progress**. There
@@ -179,12 +179,12 @@ selected customizations, in this example, **Marketing and Log Changes Only**.
 ### Impact Analysis
 
 The impact analysis tool reviews your customizations for dependencies or risks. Click **Impact
-Analysis** to run the tool. Here is an example report showing the Customizations that **Cannot be
+Analysis** to run the tool. Here is an example report showing the Customizations that **Can't be
 Safely Deleted or Modified** tab:
 
 ![Impact analysis report](/images/platgovnetsuite/integrations/jira_example_impact_analysis.webp)
 
-Before proceeding with your changes, review each warning to ensure your change does not break
+Before proceeding with your changes, review each warning to ensure your change doesn't break
 something. Dependencies can be reviewed with the DRD tool.
 
 ### View DRD
@@ -200,10 +200,10 @@ Customizations and all dependencies.
 
 ## Ready for Development
 
-Once you have resolved any risk or conflicts, your changes are ready for development:
+After you have resolved any risk or conflicts, your changes are ready for development:
 
 1. Change the Jira status of your ticket to match the status set up for **CR Pending Approval**. 
-2. Click **Push** if you are not using [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) to push
+2. Click **Push** if you aren't using [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) to push
    status changes.
 3. Expand the **Change Request** field on the right. The status is now **Pending Approval / In
    Progress**. There is a link to open the Change Request in Salesforce.
@@ -224,9 +224,9 @@ ticket is ready to be updated.
     ![Change Request is approved](/images/platgovsalesforce/integrations/jiraRebrandApprovedLink.webp)
 
 2. Change the Jira status of your ticket to match the status set up for **CR Approved**.
-3. Click **Push** if you are not using [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) to push
+3. Click **Push** if you aren't using [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegration/jira_integration.md) to push
    status changes.
-4. Once your deployment and verification activities are complete, change the Jira status of your
+4. After your deployment and verification activities are complete, change the Jira status of your
    ticket to match the status set up **CR Complete**. For example, **Done**.
 
 If you open the Change Request in Salesforce:
