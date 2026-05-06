@@ -8,7 +8,7 @@ sidebar_position: 20
 
 After you have registered Directory Manager and created a user with required directory role in
 Microsoft Entra ID, you can create an Microsoft Entra ID identity store in GroupID. This topic
-walks you through the steps to create an Microsoft Entra ID identity store and assign a role to the
+explains how to create an Microsoft Entra ID identity store and assign a role to the
 Microsoft Entra ID user in Directory Manager.
 
 ## To create a Microsoft Entra ID Identity Store
@@ -58,7 +58,7 @@ limitations apply:
   same applies to existing users and mailboxes, because you can't change Directory Roles when
   using a service account with minimum directory role assignments.
 
-- Password reset functionality is limited to objects in the User role, User Administrator role,
+- Password reset functionality works only for objects in the User role, User Administrator role,
   and Helpdesk role.
 
 ## Limitations of Microsoft Teams Channels
@@ -72,9 +72,9 @@ This behavior increases replication time and resource usage, particularly in env
 large number of Microsoft Teams objects, because Directory Manager replicates all Microsoft Teams
 regardless of whether changes occurred. To control this behavior, use the
 `ReplicateTeamsChannelChanges` setting. Disabling it (the default) skips Teams channel replication
-and avoids the performance impact; enable it only when full Teams channel replication is required.
+and avoids the performance impact; enable it only when you need full Teams channel replication.
 
-This setting is set to `false` (disabled) by default. Set it to `true` to enable full Teams channel
+This setting defaults to `false` (disabled). Set it to `true` to enable full Teams channel
 replication.
 
 To change the `ReplicateTeamsChannelChanges` setting:
