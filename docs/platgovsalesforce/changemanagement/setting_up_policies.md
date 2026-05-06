@@ -55,7 +55,7 @@ Set the required Change Level for each Metadata Type. The form shows the default
 
 | **Change Level**                        | **Description**                                                                                                                                                                         |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Log Changes Only                    | Since the scanner automatically logs all changes, this change level requires no actions for compliance. The scanner automatically marks any changes to these components as compliant.        |
+| Log Changes Only                    | Because the scanner automatically logs all changes, this change level requires no actions for compliance. The scanner automatically marks any changes to these components as compliant.        |
 | Change Request                      | Any changes to these components require an Approved Change Request.                                                                                                                        |
 | Sandbox Development & Testing       | Any changes to these components require an Approved Change Request in the Stage Development Project. It also requires that you attach a parent Change Request to the Development Project. |
 | Full Software Development Lifecycle | Any changes to these components require an Approved Change Request in the Stage Deployment Record or Rollback Record.                                                                                                                        |
@@ -105,7 +105,7 @@ See [Set Up Data Tracking](/docs/platgovsalesforce/changemanagement/datatracking
 
 ### Health Check Changes
 
-Health Check Changes affect the way Platform Governance handles changes for the customization records for each Salesforce Health Check group
+Health Check Changes affect how Platform Governance handles changes for the customization records for each Salesforce Health Check group
 (session settings, file upload and security settings), so you can track and report on current
 settings. There is a [Health Settings](/docs/platgovsalesforce/customizations/understanding_customization_record.md) tab
 for the specific records on the customization record.
@@ -187,8 +187,7 @@ available on the **Related** tab on the policy.
 
     ![Adding customizations by Salesforce Type](/images/platgovsalesforce/change_management/policy_change_by_sf_type.webp)
 
-3. Set **Category** and **Sub-Category** filters if you want to narrow the list. Sub-categories are
-   not available for all Categories.
+3. Set **Category** and **Sub-Category** filters to narrow the list. Not all categories have sub-categories.
 
     ![Set filters for Salesforce type](/images/platgovsalesforce/change_management/policy_add_sf_type2.webp)
 

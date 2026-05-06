@@ -6,10 +6,9 @@ sidebar_position: 60
 
 # Completing and Validating a Change Request
 
-Once the changes are complete, validate the Change Request and mark it as **Completed** on the path. 
+After the changes are complete, validate the Change Request and mark it as **Completed** on the path. 
 
-1. Open **Change Requests** to view the list of Change Requests. You may have to change the filter
-   from **Recently Viewed**.
+1. Open **Change Requests** to view the list of Change Requests. If the list is filtered to **Recently Viewed**, change the filter to see all records.
 2. Locate your Change Request and click the linked **Name**.
 3. Click **Rescan** to start the change documentation process.
 4. Run **Netwrix Dashboard** > **Tools** > **Environment Comparison**. Validate the changes are what
