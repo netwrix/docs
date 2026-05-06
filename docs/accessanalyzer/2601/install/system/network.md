@@ -16,7 +16,7 @@ All outbound traffic uses HTTPS (port 443). The following endpoints must be reac
 | --- | --- | --- | --- |
 | `api.keygen.sh` | Keygen / Licensing | License validation API | Installation and updates |
 | `oci.pkg.keygen.sh` | Keygen / Licensing | Netwrix OCI registry — Helm charts and application images | Installation and updates |
-| `raw.pkg.keygen.sh` | Keygen / Licensing | Installer script download | Installation and updates |
+| `raw.pkg.keygen.sh` | Keygen / Licensing | Installer binary download | Installation and updates |
 | `keygen-dist.c3c9112df8df715f42d1162cdce5dba1.r2.cloudflarestorage.com` | Keygen / Licensing CDN | Keygen artifact storage | Installation and updates |
 | `api.github.com` | GitHub | GitHub API | Installation only |
 | `github.com` | GitHub | Repository and release access | Installation only |
@@ -84,7 +84,7 @@ If an endpoint detection or antivirus product is running on the Access Analyzer 
 | `/usr/local/bin/k3s` | K3s binary |
 
 :::note
-Setting `SKIP_AV_CHECK=true` before running the installer bypasses the antivirus detection prompt, but does not configure exclusions automatically. Configure exclusions manually before running the installer.
+Configure exclusions manually before running the installer. The installer's preflight check detects common antivirus products and will prompt you to confirm exclusions are in place before proceeding.
 :::
 
 ## Firewall Configuration

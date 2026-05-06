@@ -11,7 +11,7 @@ Access Analyzer supports federation with your organization's identity system so 
 Setting up an identity provider connection is a two-part process: first you configure the integration in your identity system, then you prepare user accounts inside Access Analyzer.
 
 :::note
-Before completing the steps below, confirm that the infrastructure and network requirements for your IdP type are in place. See [Configure Identity Provider](../install/identity-provider.md) in the Installation section.
+Before completing the steps below, confirm that the infrastructure and network requirements for your IdP type are in place. See [Network and Port Requirements](../install/system/network.md) and [TLS Certificate Requirements](../install/system/certificates.md).
 :::
 
 ## Supported integration types

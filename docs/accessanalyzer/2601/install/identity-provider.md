@@ -2,6 +2,7 @@
 title: "Configure Identity Provider"
 description: "Deployment steps for connecting an Identity Provider to Access Analyzer using the installer"
 sidebar_position: 50
+draft: true
 ---
 
 # Configure Identity Provider

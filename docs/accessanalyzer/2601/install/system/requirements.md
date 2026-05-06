@@ -20,9 +20,6 @@ The installer enforces absolute minimums via preflight checks — installation i
 | **Medium** | 16 cores | 48 GB | 1 TB SSD | Up to ~5,000 assets |
 | **Large** | 32 cores | 64 GB | 1 TB SSD | 5,000+ assets / enterprise |
 
-:::note
-The `--size` flag scales memory thresholds by the specified multiplier. For example, `--size 2` doubles the minimum and recommended memory requirements enforced by the preflight checks.
-:::
 
 ## Disk Space Requirements
 
