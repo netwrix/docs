@@ -13,7 +13,7 @@ can be hidden for each account through [Menu Management](/docs/platgovnetsuite/i
 These examples show all the options for an **Enterprise Compliance** license.
 
 :::note
-If you do not see the **Strongpoint** tab, contact your Administrator regarding
+If you don't see the **Strongpoint** tab, contact your Administrator regarding
 [Setting Tab Access](/docs/platgovnetsuite/installation/setting_strongpoint_tab_access.md).
 :::
 
@@ -27,24 +27,24 @@ Strongpoint Menu tab includes:
 
 - **Strongpoint Support**: How to, installation settings and reference information.
 - **Tools**: Access to the Spider, field impact analysis and SQL Library.
-- **Customizations**: Search, manage and analyze your customizations.
+- **Customizations**: Search, manage, and analyze your customizations.
 - **Clean up**: A set of tools to enable organized account clean up.
 - **Automated Search Clean up**: A set of tools to enable automated account clean up.
 - **Script Management**: Script analysis and management tools to improve performance.
 - **Change Management Reports**: Access all of the change reports.
-- **Change Management Tools**: Create change requests, manage and track changes.
+- **Change Management Tools**: Create change requests, manage, and track changes.
 - **Financial Controls**: Controls, agent approval and control incident handling.
 - **Audit**: Tools to audit your accounts.
 - **Material Risk**: Manage and track material risks.
 - **Manage Processes**: Process record analysis and search capabilities.
 - **Map Customizations**: View/edit customizations with no processes.
-- **Process Issues**: Search, analyze and track your process issues.
+- **Process Issues**: Search, analyze, and track your process issues.
 - **User Management**: Employee related searches to enhance control of your account.
 - **Integrations**: Access available integrations.
 - **Archives**: View archived information.
 - **Implementation**: View implementation assignments, planned customizations and improvement
   projects.
-- **Testing**: Develop, organize, track and analyze testing of your processes and customizations.
+- **Testing**: Develop, organize, track, and analyze testing of your processes and customizations.
 
 ## Strongpoint Overview
 

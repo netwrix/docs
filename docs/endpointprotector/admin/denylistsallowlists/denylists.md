@@ -14,7 +14,7 @@ content by Endpoint Protector, available for both Content Aware Protection and e
 ![Denylists Custom Content configuration](customecontent.webp)
 
 From this section, you can view and add e-mail custom content denylists and from the Actions column,
-you can edit, delete or export an existing denylist.
+you can edit, delete, or export an existing denylist.
 
 To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description** and then type or paste items at least three characters separated by a new line,
@@ -27,7 +27,7 @@ uploaded again.
 :::
 
 
-Once the denylist is created, it will be displayed on the Custom Content list and will be available
+After the denylist is created, it will be displayed on the Custom Content list and will be available
 when creating or editing a Content Aware Protection or eDiscovery policy.
 
 ![Creating a new denylist](newdenylist.webp)
@@ -38,7 +38,7 @@ File Name Denylists are custom-deﬁned lists of ﬁle names detected by Endpoin
 for both Content Aware Protection and eDiscovery modules.
 
 From this section, you can view and add ﬁlename denylists and from the Actions column, you can edit,
-delete or export an existing denylist.
+delete, or export an existing denylist.
 
 To create a new denylist, under the list of available denylists, click Add, provide a name and
 description and then type or paste the ﬁle names separated by a new line, comma, or semicolon. You
@@ -56,12 +56,12 @@ Examples: Matching and Non-Matching for File Extensions like “.epp”:
 - Matching – test.epp, mail.epp, 123.epp
 - Non-Matching – 123.epp.zip, mail.epp.txt
 
-Once the denylist is created, it will be displayed on the File Name list and will be available when
+After the denylist is created, it will be displayed on the File Name list and will be available when
 creating or editing a Content Aware Protection or eDiscovery policy.
 
 :::warning
 For Content Aware Protection, the File Name Denylists work only for Block & Report type
-Policies. The Case Sensitive and Whole Words Only features do not apply.
+Policies. The Case Sensitive and Whole Words Only features don't apply.
 :::
 
 
@@ -89,7 +89,7 @@ transfer ﬁles also needs to be selected from within the Content Aware Protecti
 
 
 From this section, you can view and add ﬁle location denylists and from the Actions column, you can
-edit, delete or export an existing denylist.
+edit, delete, or export an existing denylist.
 
 To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description**, add the items separated by a new line, comma, or semicolon and then select the
@@ -100,6 +100,9 @@ File Location Denylist will not apply to groups of users, only to groups of comp
 File Location Denylist will only apply for the selected computer groups after 15 minutes.
 :::
 
+:::note
+**Known limitation:** Location-based denylists and allowlists aren't reliable when Deep Packet Inspection (DPI) is active. DPI operates at the network level and identifies files by matching transferred data hashes against files on the local machine. If the same file exists in multiple locations, Endpoint Protector can't determine which copy was transferred, and location-based rules can't be applied.
+:::
 
 ![File Location New Denylist](filelocationnewdenylists.webp)
 
@@ -161,8 +164,8 @@ and **description** and then add the regex expression.
 ![You can view and add regex expressions and from the Actions column](regexdenylists.webp)
 
 You can test a regular expression for accuracy using the right-side option. Add the content and then
-click Test. If the Regular Expression has no errors, then the same content should appear into the
-Matched content box, as shown below:
+click Test. If the Regular Expression has no errors, then the same content should appear in the
+Matched content box:
 
 - To match an E-mail – `[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}`
 - To match an IP –
@@ -183,7 +186,7 @@ Endpoint Protector supports both standard Regex syntax and **Perl-Compatible Reg
 
 **Case Sensitivity Options in Regular Expressions**
 
-Regular expressions allow you to control how text matching handles letter casing. Depending on your requirements, you can use case-sensitive, case-insensitive, or partially case-insensitive matching.
+Regular expressions let you control how text matching handles letter casing. Depending on your requirements, you can use case-sensitive, case-insensitive, or partially case-insensitive matching.
 
 **1. Case-Sensitive Matching (Default)**
 
@@ -212,7 +215,7 @@ In the following example, the pattern '(?i)test' will match “test,” “Test,
    ![](Regexcaseinsensitivity2.png)
 
 **3. Partial Case-Insensitive Matching**
-Regex also allows you to apply case-insensitive matching only to specific parts of your pattern.
+Regex also lets you apply case-insensitive matching only to specific parts of your pattern.
  You can enable and disable this mode using the following flags:
 
 -   `(?i)` — enables case-insensitive mode
@@ -232,8 +235,8 @@ Does **not match:** `"CONFIDENTIAL DOCUMENT"`
 | .             | Matches any single character except newline (\\n).                      | a.c matches “abc”, “axc”, etc.                                       |
 | \*            | Matches 0 or more occurrences of the preceding character or group.      | bo\* matches “b”, “bo”, “boo”, “booo”, etc.                          |
 | []            | Defines a character class, matching any one of the enclosed characters. | [abc] matches “a”, “b”, or “c”.                                      |
-| [abc]         | Any single character of a, b or c                                       | [abc] matches “a”, “b”, or “c”.                                      |
-| [&circ;abc]       | Any single character expect a, b or c                                   | It will match any single charact expect “a”, “b”, or “c”.            |
+| [abc]         | Any single character of a, b, or c                                      | [abc] matches “a”, “b”, or “c”.                                      |
+| [&circ;abc]       | Any single character expect a, b, or c                                  | It will match any single charact expect “a”, “b”, or “c”.            |
 | [a-z]         | A character in range a-z                                                | It will match single character in range of a – z.                    |
 | [a-zA-Z]      | A character in range a-z & A-Z                                          | It will match single character in range of a – z & A - Z             |
 | \\d           | Any digit character                                                     | \\d will match any digit 0-9                                         |
@@ -257,7 +260,7 @@ Domain and URL Denylists are available only for the Content Aware Protection mod
 ![Domain and URL Denylists ](domainurldenylists.webp)
 
 From this section, you can view and add domain and URL denylists and from the Actions column, you
-can edit, delete or export an existing denylist.
+can edit, delete, or export an existing denylist.
 
 To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description** and then **type or paste** items separated by a new line, comma, or semicolon.
@@ -276,7 +279,7 @@ You can deﬁne the content by adding the ﬁle name, ﬁle name and extension, 
 pdf, test1example.pdf. example.endpointprotector.com, \*example.com, \*example\*example,
 https://website.com
 
-Once the denylist is created, it will be displayed on the Domain and URL list and will be available
+After the denylist is created, it will be displayed on the Domain and URL list and will be available
 when creating or editing a Content Aware Protection policy.
 
 ![Creating a New Domain URL denylists](domainurlnewdenylists.webp)
@@ -303,7 +306,7 @@ Aware Protection Policy.
 ![E-mail Domain Denylists](e-maildomaindenylists.webp)
 
 From this section, you can view and add e-mail domain denylists and from the Actions column, you can
-edit, delete or export an existing e-mail domain denylist.
+edit, delete, or export an existing e-mail domain denylist.
 
 To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description**, add the items separated by a new line, comma, or semicolon and then select the
@@ -325,19 +328,19 @@ the example below for Google Chrome:
 **chrome.exe --incognito**
 
 With CLI commands denylists, you can deﬁne criteria for command line arguments that match speciﬁc
-application behaviors. This allows you to create CAP policies tailored to your organization's needs,
+application behaviors. This lets you create CAP policies tailored to your organization's needs,
 ensuring that the launch and behavior of applications align with your security and compliance
 requirements.
 
 :::note
 Certain native command line utilities such as `ls`, `md`, `cd`, which are embedded in the
 Operating System Core, may not be captured by CAP visibility. These commands are integral to the
-functioning of the operating system and are typically excluded from CAP policies, and are not an
+functioning of the operating system and are typically excluded from CAP policies, and aren't an
 egress channel.
 :::
 
 
-Follow the steps to deﬁne CLI command denylist policies.
+To deﬁne CLI command denylist policies:
 
 **Step 1 –** Navigate to **Denylists** > **Application** tab in the Endpoint Protector Console.
 
@@ -349,7 +352,7 @@ control and monitoring of application usage.
 
 ![Configuring Applications Denylists](applicationsdenylists.webp)
 
-Follow these steps and leverage CLI commands denylists to enhance your organization's security
+Follow these steps and use CLI commands denylists to enhance your organization's security
 posture and ensure that applications are used in compliance with your policies and regulations.
 
 :::note
@@ -376,7 +379,7 @@ Protection and eDiscovery policies via the Endpoint Protector Server interface.
 The Endpoint Protector Server offers three options for defining MIP labels:
 
 - MIP Label Name – Specify the human-redable name of the MIP label.
-- MIP GUID – Utilize the unique identifier associated with the MIP label.
+- MIP GUID – use the unique identifier associated with the MIP label.
 - Both – Combine both the label name and GUID for maximum accuracy.
 
 This flexibility allows administrators to avoid creating custom dictionaries to recognize
@@ -386,9 +389,9 @@ MIP labels can be used along other CAP conditions, including content-aware and l
 scanning. This enable granular control over data protection based on MPIP classifications.
 
 :::note
-While Endpoint Protector can currently recognize MIP-encrypted files by their GUID (if
+While Endpoint Protector can recognize MIP-encrypted files by their GUID (if
 they follow the latest MIP format used by office web tools labeling), content-aware scanning for
-these files is not yet supported.
+these files isn't yet supported.
 :::
 
 
@@ -408,7 +411,7 @@ This section covers the use of and integration with Netwrix Data Classification 
 
 Netwrix Data Classification helps organizations identify, categorize, and tag data based on predefined policies. With NDC, you can understand where sensitive data resides, how it is used, and who has access to it, which supports data security, regulatory compliance, and informed decision-making.
 
-Starting with the 25.12 release, Endpoint Protector allows direct NDC label definition for Content Aware Protection and eDiscovery policies through the Endpoint Protector Server interface, so you do not need to build custom dictionaries to recognize labeled files.
+Starting with the 25.12 release, Endpoint Protector allows direct NDC label definition for Content Aware Protection and eDiscovery policies through the Endpoint Protector Server interface, so you don't need to build custom dictionaries to recognize labeled files.
 
 ![Configuration for Netwrix Data Classification](NDCClassification.png)
 

@@ -16,7 +16,7 @@ Administrator needs to enable custom record field's Show in List option.
     ![opp_clearance_case3-1](/images/platgovnetsuite/change_management/opp_clearance_case3-1.webp)
 
 2. IT Approvers approve the change.
-3. updates the custom field. No script is using the parent record of the field.
+3. Administrator updates the custom field. No script uses the parent record of the field.
 
 **Expected Result**
 

@@ -19,13 +19,13 @@ The proxy configuration is based on a set of standard dotnet environment variabl
 - `HTTPS_PROXY`: the proxy server used on HTTPS requests.
 - `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
-The dotnet environment does not rely on the OS-wide proxy configuration. It is mandatory to use the above-mentioned environment variables to configure the proxy.
+The dotnet environment doesn't rely on the OS-wide proxy configuration. It is mandatory to use the above-mentioned environment variables to configure the proxy.
 
 ### HTTPS_PROXY
 
 The `HTTPS_PROXY` environment variable may be the hostname or IP address, optionally followed by a colon and port number, or it may be an http URL, optionally including a username and password for Proxy Server authentication.
 
-The URL must start with `http`, **not https**, and cannot include any text after the hostname, IP, or port.
+The URL must start with `http`, **not https**, and can't include any text after the hostname, IP, or port.
 
 This example shows various ways to properly configure a proxy server using Powershell:
 
@@ -42,9 +42,9 @@ $env:HTTPS_PROXY="10.65.1.1:6060"
 $env:HTTPS_PROXY="http://proxy.contoso.com:6060"
 ```
 
-We recommend using the `<hostname>:<port>` syntax since it is not misleading. We discourage using the `http://<hostname>:<port>` syntax since it is not intuitive to indicate the `http` scheme to route `https` traffic. However, if you decide to use this syntax, do not forget to include a comment stating that `http` scheme is mandatory at the configuration level, even if it will not be used at runtime.
+The `<hostname>:<port>` syntax is recommended since it isn't misleading. Avoid the `http://<hostname>:<port>` syntax since it isn't intuitive to indicate the `http` scheme to route `https` traffic. However, if you decide to use this syntax, don't forget to include a comment stating that `http` scheme is mandatory at the configuration level, even if it will not be used at runtime.
 
-#### Do not do
+#### Don't do
 
 This example shows the wrong ways to initialize the `HTTPS_PROXY` environment variable. The environment variable will be **silently ignored** and the traffic will not be routed through the proxy.
 
@@ -68,7 +68,7 @@ $env:HTTPS_PROXY="http://mylogin:mypassword@proxy.contoso.com:6060"
 
 ### NO_PROXY
 
-The `NO_PROXY` environment variable is a comma-separated list of hostnames that should be excluded from proxying. To exclude all subdomains ("wildcard" exclusion), domains in the `NO_PROXY` list need to be prefixed with a dot (`.`), which is standard, but not particularly well documented. **Do not use the star (`*`) prefix !!!**
+The `NO_PROXY` environment variable is a comma-separated list of hostnames that should be excluded from proxying. To exclude all subdomains ("wildcard" exclusion), domains in the `NO_PROXY` list need to be prefixed with a dot (`.`), which is standard, but not particularly well documented. **Don't use the star (`*`) prefix.**
 
 This example shows various ways to exclude domains from proxying:
 
@@ -87,7 +87,7 @@ $env:NO_PROXY="www.google.com,www.microsoft.com"
 $env:NO_PROXY=".google.com,.microsoft.com"
 ```
 
-#### Do not do
+#### Don't do
 
 This example shows the wrong ways to initialize the `NO_PROXY` environment variable.
 
@@ -106,7 +106,11 @@ The proxy configuration is based on a set of standard dotnet environment variabl
 - At user level: for the user running the Identity Manager server or agent
 - At IIS level: in the application `web.config` file
 
-Note that when creating an environment variable in IIS `web.config` file, all child processes created by the IIS application will inherit from this environment variables. For example, while running the Identity Manager agent all tasks started by the agent will inherit the proxy environment variables.
+:::note
+
+When creating an environment variable in IIS `web.config` file, all child processes created by the IIS application will inherit from this environment variables. For example, while running the Identity Manager agent all tasks started by the agent will inherit the proxy environment variables.
+
+:::
 
 This example shows how to configure the proxy in the IIS `web.config` file:
 
@@ -137,7 +141,7 @@ $env:HTTPS_PROXY="proxy.contoso.com"
 # The proxy is properly configured !!!
 ```
 
-**Do not use** Invoke-WebRequest or Test-NetConnection to test the proxy configuration. In Powershell 5, these tools are using a different network stack from dotnet environment and are using the OS-wide proxy settings. They will ignore the `HTTPS_PROXY` environment variable
+**Don't use** Invoke-WebRequest or Test-NetConnection to test the proxy configuration. In Powershell 5, these tools are using a different network stack from dotnet environment and are using the OS-wide proxy settings. They will ignore the `HTTPS_PROXY` environment variable
 
 ### Using Powershell Core
 
@@ -159,9 +163,9 @@ Invoke-WebRequest https://contoso.usercube.com/
 exit
 ```
 
-### Known errors when proxy is not properly configured
+### Known errors when proxy isn't properly configured
 
-When the proxy environment variables does not match the expected format, they will be **silently** ignored.
+When the proxy environment variables doesn't match the expected format, they will be **silently** ignored.
 
 - If `HTTPS_PROXY` is ignored, the network stack will try to directly access public URL's without
 going through the proxy.
@@ -172,16 +176,16 @@ When testing the proxy configuration, if you get one of the following error mess
 - ` No such host is known.`
 - `Hote inconnu`
 
-It means that the `HTTPS_PROXY` is not set or does not match the expected format. The HTTP client tries to directly resolve the public hostname instead of resolving the proxy hostname.
+It means that the `HTTPS_PROXY` isn't set or doesn't match the expected format. The HTTP client tries to directly resolve the public hostname instead of resolving the proxy hostname.
 
-Review the `HTTPS_PROXY` value, check that it does not:
+Review the `HTTPS_PROXY` value, check that it doesn't:
 
 - use the `https` scheme
 - include trailing slashes or characters after the hostname:port
 
 ## Reference Documentation
 
-- [HttpClient.DefaultProxy](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient.defaultproxy?view=net-8.0&viewFallbackFrom=netcore-8.0#httpclientdefaultproxy):
+- [HttpClient.DefaultProxy](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpclient.defaultproxy?view=net-10.0#httpclientdefaultproxy):
 reference for environment variables.
 - NO_PROXY: [unofficial documentation](https://stackoverflow.com/a/62663469) for wildcard domain
 exclusion
