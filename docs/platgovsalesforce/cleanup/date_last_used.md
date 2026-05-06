@@ -51,8 +51,8 @@ DLU analysis should only be performed in Production orgs. Sandbox orgs don't ref
   | Unavailable | Blank | Never enabled for this field. | Blank | Populated |
   | Pending | Blank | Enabled. Waiting for the scanner to run. | Blank | Populated |
   | Current | Populated | Enabled. DLU is current and accurate using automated nightly scans. | Today | Blank |
-  | Recent | Populated, May be stale | Disabled. Last scan when enabled was within the past three months. Three months is the default time period. See [Setting the DLU Expiration](#setting-the-dluexpiration). | Within set time period | Populated |
-  | Expired | Populated, May be stale | Disabled. Last scan when enabled was longer than three months ago. Three months is the default time period. See [Setting the DLU Expiration](#setting-the-dluexpiration). | Older than set time period | Populated |
+  | Recent | Populated, May be stale | Disabled. Last scan when enabled was within the past three months. Three months is the default time period. See [Setting the DLU Expiration](#setting-the-dlu-expiration). | Within set time period | Populated |
+  | Expired | Populated, May be stale | Disabled. Last scan when enabled was longer than three months ago. Three months is the default time period. See [Setting the DLU Expiration](#setting-the-dlu-expiration). | Older than set time period | Populated |
 
 If **Field History Tracking** is enabled for a CustomField with a **DLU Status** of either
 **Recent** or **Expired**, the status changes to **Pending**. The following example shows this:
