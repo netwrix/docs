@@ -37,7 +37,7 @@ The installation of the server as part of an Active Directory domain requires th
 
 The server should be assigned a [custom Windows service account](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/service-accounts).
 
-The IIS built-in [application pool identity](https://support.microsoft.com/en-us/help/4466942/understanding-identities-in-iis) should not be used, because it will prevent the custom account from connecting to a distant SQL Server. Hence Netwrix Identity Manager (formerly Usercube) recommends using a domain account.
+The IIS built-in [application pool identity](https://support.microsoft.com/en-us/help/4466942/understanding-identities-in-iis) shouldn't be used, because it will prevent the custom account from connecting to a distant SQL Server. Hence Netwrix Identity Manager (formerly Usercube) recommends using a domain account.
 
 ### Working directory permissions
 
@@ -45,7 +45,7 @@ The agent's service account needs specific permissions presented in the[Create a
 
 - _Read_ and _List folder contents_ on the working directory;
 - _Read & Execute_ and _List folder contents_ on the `Runtime` directory, usually
-`C:/identitymanager<Organization>/Runtime`, in order to run the agent executable;
+`C:/identitymanager<Organization>/Runtime`, to run the agent executable;
 - _Read_ and _List folder contents_ on the directory for provisioning orders, whose path depends on
 the `Work` folder's path;
 - _Read_, _List folder contents_, and _Write_ on the directory for data collection, whose path
@@ -70,11 +70,11 @@ In the case of an **on-premises** installation, the server needs to be assigned 
 
 The associated DNS zone needs to be [updated accordingly](https://docs.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/create-an-alias-cname-record-in-dns-for-web1).
 
-The DNS alias should be written in lowercase in order to comply with as many security rules as possible.
+The DNS alias should be written in lowercase to comply with as many security rules as possible.
 
 ## SSL Certificate
 
-The server requires the use of an SSL certificate in order to perform HTTPS communication with end-users' browsers.
+The server requires the use of an SSL certificate to perform HTTPS communication with end-users' browsers.
 
 Identity Manager **SaaS** offering comes with an SSL certificate signed by a trusted certificate authority for the `*.usercube.com` domains. This certificate allows end-users to access the server through the Internet without any further configuration. Using another domain name for the **SaaS** installation requires providing Netwrix Identity Manager (formerly Usercube) with the corresponding SSL certificate signed by a trusted certificate Authority.
 
@@ -88,11 +88,11 @@ The server needs access to an **SMTP server** to [Send Notifications](../../inst
 
 An [RSA-2048 encryption key pair](https://en.wikipedia.org/wiki/Public-key_cryptography) is required for:
 
-- Identity Manager's server in order to perform various encryption operations, such as source,
+- Identity Manager's server to perform various encryption operations, such as source,
 configuration, or log file encryptions;
 - Identity Manager's Identity Server for end-user authentication purposes.
 
-Such a certificate does not need to be integrated into the target organization's Public Key Infrastructure and does not require an expiration date. They are only relevant to internal and temporary Identity Manager data and can be changed at any time.
+Such a certificate doesn't need to be integrated into the target organization's Public Key Infrastructure and doesn't require an expiration date. They are only relevant to internal and temporary Identity Manager data and can be changed at any time.
 
 An RSA key pair, as in an [X.509](https://fr.wikipedia.org/wiki/X.509) public key certificate and a private key, can be stored either:
 
@@ -103,7 +103,7 @@ An RSA key pair, as in an [X.509](https://fr.wikipedia.org/wiki/X.509) public ke
 
 The key pair can be generated with tools such as [OpenSSL](https://www.openssl.org/docs/manmaster/man1/req.html) or Microsoft's [New-SelfSignedCertificate](https://docs.microsoft.com/en-us/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps) and[ pvk2pfx tool](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/pvk2pfx?redirectedfrom=MSDN).
 
-## What's Next?
+## Next Steps
 
 Let's move on to Identity Manager's agent requirements. See the [Agent](../../installation-guide/requirements/agent-requirements) topic for additional information.
 
