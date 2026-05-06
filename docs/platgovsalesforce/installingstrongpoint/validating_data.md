@@ -22,7 +22,7 @@ From the Netwrix Dashboard: click **Configuration and Stats** in the **Resources
 
 ## Dependency Relationship Diagram
 
-You can check data by navigating through the Dependency Relationship Diagram (DRD) and selecting
+You can check data by navigating the Dependency Relationship Diagram (DRD) and selecting
 object types.
 
 To validate data with the DRD:

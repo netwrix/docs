@@ -39,7 +39,7 @@ Automates the scanning process. You can choose between three scheduling optionsâ
 
 ### Email Notifications
 
-You can enable Email Notifications to receive reports showing System Permission changes. Select a notification frequency and define the list of recipients. Users don't need to manually subscribeâ€”the system handles this automatically. Recipients must have the 'Netwrix Grant Permissions' Permission Set assigned.
+You can enable Email Notifications to receive reports showing System Permission changes. Select a notification frequency and define the list of recipients. The system automatically handles subscriptions. Recipients must have the 'Netwrix Grant Permissions' Permission Set assigned.
 
 ![Enable Notifications](/images/platgovsalesforce/sys_perm_tracking/Enable_Notifications.webp)
 
@@ -49,7 +49,7 @@ Choose whether the report should be sent daily, weekly, or monthly, and configur
 
 #### Recipients
 
-Add users who will receive notification emails. Recipients must have the required Permission Set to access the internal components used by this feature. After saving, the recipients are automatically subscribed to the System Permission Change Log report.
+Add users to receive notification emails. Recipients must have the required Permission Set to access the internal components used by this feature. After saving, the recipients are automatically subscribed to the System Permission Change Log report.
 
 ![Weekly Report Example](/images/platgovsalesforce/sys_perm_tracking/Report_Weekly.webp)
 
@@ -115,7 +115,7 @@ The Change Log provides a detailed record of each detected change. Key fields in
 
 ### Exporting Change Logs
 
-Change logs can be exported for further analysis or compliance reporting:
+Export change logs for further analysis or compliance reporting:
 
 1. Select the change log entries you want
 2. Click **Export** to download the data
@@ -170,7 +170,7 @@ Change logs can be exported for further analysis or compliance reporting:
 
 **Solutions**:
 - Clear any applied search filters
-- Permissions already marked as selected will not appear in search results
+- Permissions already marked as selected do not appear in search results
 - Use **Refresh** to reload the list
 - Verify the permission exists in your Salesforce org
 - Check if the permission is already in the Recommended Permissions list

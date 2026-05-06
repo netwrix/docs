@@ -13,6 +13,6 @@ deployments are released.
 
 Release Management is enabled for Intelligent Change Management and Enterprise Compliance Licenses.
 
-- [Deployments](/docs/platgovsalesforce/releasemanagement/deployments.md): Documents your deployment process so you can safely moves deployments from one environment to another.
-- [Rollback](/docs/platgovsalesforce/releasemanagement/rollback.md): Use this to safely rollback your deployments.
+- [Deployments](/docs/platgovsalesforce/releasemanagement/deployments.md): Documents your deployment process so you can move deployments from one environment to another.
+- [Rollback](/docs/platgovsalesforce/releasemanagement/rollback.md): Use this to roll back your deployments.
 - [Multiple Environment Deployment](/docs/platgovsalesforce/releasemanagement/multiple_environments.md): Manages changes between your Production, Development, and Testing accounts.

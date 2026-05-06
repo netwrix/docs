@@ -7,8 +7,8 @@ sidebar_position: 1
 
 # Welcome
 
-Platform Governance for Salesforce is integrated into the Salesforce backend keeping all your data
-within your Salesforce account. Your documentation is automatically maintained so it is always up to
+Platform Governance for Salesforce integrates into the Salesforce backend, keeping all your data
+within your Salesforce account. The system automatically maintains your documentation so it is always up to
 date.
 
 By implementing Platform Governance for Salesforce you can:
@@ -22,9 +22,9 @@ By implementing Platform Governance for Salesforce you can:
 
 ## Installation and Initial Scan
 
-After you install Platform Governance for Salesforce, you click the **Start Spider** button
-and your customizations are documented over the course of 4-5 days with minimal impact on system
-performance. Once completed, you have a searchable database of all your customizations.
+After you install Platform Governance for Salesforce, click the **Start Spider** button.
+Your customizations are documented over the course of 4-5 days with minimal impact on system
+performance. After the scan completes, you have a searchable database of all your customizations.
 
 ## Documentation and Optimization
 
@@ -53,11 +53,11 @@ can:
 
 ## Intelligent Change Management
 
-Platform Governance for Salesforce is the only application for Salesforce that provides end to end
-change management and compliance. This process can be achieved effectively in only 5 weeks after
+Platform Governance for Salesforce provides end-to-end
+change management and compliance. This process can be completed in 5 weeks after
 install.
 
-By implementing Platform Governance for Salesforce you give your customers the ability to:
+By implementing Platform Governance for Salesforce, you give your customers the ability to:
 
 - Track all changes to custom objects in Salesforce.
 - Automatically be alerted to non-compliant changes.
@@ -69,19 +69,17 @@ By implementing Platform Governance for Salesforce you give your customers the a
 
 ## Enterprise Compliance
 
-Once Intelligent Change Management is complete, it only takes between 3 to 4 weeks to achieve
-Enterprise Compliance.
+After Intelligent Change Management is complete, Enterprise Compliance takes 3 to 4 additional weeks.
 
 ### Environment Comparison
 
-The Environment Management Module enables Salesforce customers and consultants to quickly and
-accurately identify differences between any two Salesforce accounts that have Intelligent Change
-Management installed. Since both accounts have Platform Governance for Salesforce documentation in
+The Environment Management Module enables Salesforce customers and consultants to identify differences between any two Salesforce accounts that have Intelligent Change
+Management installed. Because both accounts have Platform Governance for Salesforce documentation in
 place, the tool can quickly compare them. It is principally used in four scenarios:
 
 - Sandbox Refreshes
 - Migrating Customizations Between Developer and Sandbox Accounts
-- User Acceptance Testing (UAT) and Performance Testing Environment Validation
+- User Acceptance Testing (UAT) and Performance Testing environment validation
 - Deploying Changes to Production
 
 ### Automated Audit

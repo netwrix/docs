@@ -15,7 +15,7 @@ User benefits include:
 
 - Avoid duplicate effort of creating tickets in two different systems.
 - Perform impact analysis assessment.
-- Navigate to DRD views.
+- Navigate to Dependency Relationship Diagram (DRD) views.
 - Enable automatic synchronization of Jira and Platform Governance for Salesforce change tickets.
 
 :::note
@@ -189,8 +189,7 @@ If **Visibility Settings** is blank, all projects have access.
 
 #### Setting Groups/Profiles Visibility
 
-Access to the Jira Platform Governance for Salesforce integration can also be performed with Profile
-groups.
+You can also restrict access to the Jira Platform Governance for Salesforce integration using Profile groups.
 
 Users opening a restricted project receive a information message, instructions for enabling access,
 and a link to this topic.
@@ -234,8 +233,8 @@ Follow the instructions for Restricting Access to a Project or Setting Groups/Pr
     - **Rejected Values**
 
 5. Check **Is Automatic Sync** to enable Platform Governance for Salesforce to handle the
-   synchronization between Jira and Salesforce when a Ticket status is updated to a mapped status.
-   without having to click **Push**. If you are using an org where you don't want to create a
+   synchronization between Jira and Salesforce when a Ticket status is updated to a mapped status,
+   without requiring a manual **Push**. If you are using an org where you don't want to create a
    Change Request, leave this unchecked so you can do your research or testing without generating
    Change Requests.
 

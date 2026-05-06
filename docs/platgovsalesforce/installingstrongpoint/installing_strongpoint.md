@@ -20,7 +20,7 @@ The installation runs in the background. You receive an email notification when 
 
 ## Configure Authentication
 
-After installing the package, you need to configure authentication credentials. Platform Governance for Salesforce supports two authentication methods:
+After installing the package, configure authentication credentials. Platform Governance for Salesforce supports two authentication methods:
 
 ### Recommended: Named Credential Authentication (OAuth)
 
@@ -72,9 +72,9 @@ When using Session ID authentication, create a dedicated Integration User specif
 
 ## Assign Permission Set to Users
 
-After configuring authentication, you must assign the required Permission Set to users who will access Platform Governance for Salesforce, and to any users running scheduled jobs or background processes the application requires.
+After configuring authentication, assign the required Permission Set to users who need access to Platform Governance for Salesforce, and to any users running scheduled jobs or background processes the application requires.
 
-This is required because the Permission Set grants access to the data and system processes Platform Governance uses, including metadata scanning and other automated operations.
+The Permission Set grants access to the data and system processes Platform Governance uses, including metadata scanning and other automated operations.
 
 ### Assign Netwrix Grant Permissions
 
@@ -90,7 +90,7 @@ This is required because the Permission Set grants access to the data and system
 7. Click **Done**
 
 :::note Required Permission Set
-All users who access the Netwrix Lightning application need the **Netwrix Grant Permissions** permission set. Without this permission set, users can't use Platform Governance for Salesforce.
+All users who access the Netwrix Lightning application need the **Netwrix Grant Permissions** permission set to use Platform Governance for Salesforce.
 :::
 
 ### Verify Permission Assignment
@@ -109,7 +109,7 @@ After configuring authentication (either Named Credentials or Session ID), acces
 1. Open the Salesforce **App Launcher** (grid icon in the top navigation)
 2. Search for and select **Netwrix Lightning**
 ![NetwrixLightning](/images/platgovsalesforce/installing_strongpoint/NetwrixLightningMenu.webp)
-3. A window will appear displaying the License Agreement and EULA. Review the contents carefully and then select **Accept**.
+3. A window displays the License Agreement and EULA. Review the contents carefully and then select **Accept**.
 
 ![eula](/images/platgovsalesforce/installing_strongpoint/eula.webp)
 

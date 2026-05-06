@@ -6,9 +6,9 @@ sidebar_position: 4
 
 # Data Tracking - Troubleshooting
 
-This section describes common issues and known errors that users can encounter while working with **Data Tracking**. It provides guidance to help identify the cause of a problem and outlines recommended steps to resolve or mitigate it.
+This section covers common issues and known errors you may encounter while working with **Data Tracking**, and describes steps to resolve or mitigate each one.
 
-The following topics highlight frequently reported scenarios, configuration issues, or system behaviors that can affect normal operation. Reviewing these items can help quickly diagnose problems and reduce troubleshooting time.
+The following topics cover frequently reported scenarios, configuration issues, and system behaviors that can affect normal operation.
 
 ---
 
@@ -69,11 +69,11 @@ If you encounter a new conflicting object, you may need to investigate further o
 
 ## Test Class Dependencies
 
-The test class generated for each tracking trigger is created using a dynamic template. This template includes the necessary structure and relationships required to create valid test records.
+The system generates the test class for each tracking trigger using a dynamic template. This template includes the necessary structure and relationships required to create valid test records.
 
 ### How it works
 
-When a trigger is created, a corresponding test class is automatically generated. This test class:
+When the system creates a trigger, it automatically generates a corresponding test class. This test class:
 
 - Inserts sample records
 - Ensures the required **75% code coverage** for deployment

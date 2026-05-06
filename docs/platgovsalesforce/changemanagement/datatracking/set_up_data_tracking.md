@@ -46,7 +46,7 @@ Here are the requirements to set up Data Tracking:
 
 ## Select Objects to Track
 
-In this section, users can apply tracking recommendations to one or more objects in the list. To do this, select the objects you want and click **Apply Recommendations**.
+In this section, you can apply tracking recommendations to one or more objects in the list. To do this, select the objects you want and click **Apply Recommendations**.
 
 ![Review the recommended objects for data tracking](/images/platgovsalesforce/change_management/data_tracking_recommended.webp)
 
@@ -62,12 +62,12 @@ While metadata changes in Salesforce can be tracked but not blocked, with **Data
 Changes to records in **Non-Triggerable objects** can't be blocked. See [**Non-Triggerable Objects**](non_triggerable_objects.md) to understand which objects can't be blocked and how they are handled.
 :::
 
-Users can also choose whether tracking should apply to **Updates Only** for each object.
+You can also choose whether tracking should apply to **Updates Only** for each object.
 
 - **No**: Tracks changes to both new and existing records.
 - **Yes**: Tracks changes to existing records only. Changes to new records aren't tracked.
 
-If you want to enable tracking for objects that aren't included in the recommended list, follow these steps:
+To enable tracking for objects not included in the recommended list:
 
 1. Click **Show Additional Objects for Tracking (Advanced)**. The **Additional Objects** list appears.
 2. Search for the object by typing its name.
@@ -97,7 +97,7 @@ Data Tracking isn't designed for **high-volume objects** such as Opportunities o
 
 ## Select Fields to Track
 
-In some cases, users might need to monitor only specific sensitive fields within a tracked object, rather than tracking all changes to the object.
+In some cases, you might need to monitor only specific sensitive fields within a tracked object, rather than tracking all changes to the object.
 
 To support this, you can configure which fields should have additional tracking control.
 
@@ -164,7 +164,7 @@ For Data Records, select the change level in the **Application Configuration Cha
 
 ## Adding Data Records to Change Requests
 
-When creating a Change Request, users can add **Existing Data Records** and **Proposed Data Records**, similar to how metadata components are added.
+When creating a Change Request, you can add **Existing Data Records** and **Proposed Data Records**, similar to how metadata components are added.
 
 ![Adding Data Records to Change Requests](/images/platgovsalesforce/change_management/add_records_change_request.webp)
 

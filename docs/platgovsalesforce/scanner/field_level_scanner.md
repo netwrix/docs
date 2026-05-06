@@ -24,7 +24,7 @@ Navigate to the Netwrix Dashboard:
 
 ## Field Level Security Scanner UI
 
-From this screen, users can search for and select multiple fields from different objects. The selected fields will be displayed in the table at the bottom of the screen.
+From this screen, users can search for and select multiple fields from different objects. The selected fields are displayed in the table at the bottom of the screen.
 The maximum number of fields that can be selected is 50.
 
 ![Open the Field Level Security Scanner](/images/platgovsalesforce/scanners/field_level_scanner.webp)
@@ -36,7 +36,7 @@ Parent Object, Package, and Salesforce Type for a selected Object.
 Run the scanners before you search to ensure you have the latest data.
 :::
 
-Below is a step-by-step example of how to run the scanner:
+The following example shows how to run the scanner:
 
 1. Start typing the name of a **Salesforce Object**, then select it from the autocomplete list.
 2. Click **Search Fields**.
@@ -59,7 +59,7 @@ Below is a step-by-step example of how to run the scanner:
 After the scan is complete, open the Reports tab and select **Field Permissions** Report.
 
 :::note
-After the scanner is executed, the functionality will be locked until the process is complete.
+After the scanner is executed, the functionality is locked until the process is complete.
 
 If you need to run it again, the results represent a snapshot at the time of execution. Previous executions aren't stored, and no historical data is maintained.
 :::

@@ -63,20 +63,19 @@ Use the **Connected App** tab if you set up the connected app using the procedur
 2. Enter the **Consumer Key** and **Consumer Secret**.
 3. Click **Is Sandbox account?** if you are logging in to a sandbox.
 4. Click **Connect**. If this is the first time you are using the connected app, you are prompted to
-   select your username. The connected app is configured for you. Once finished, click **Close** on
-   the confirmation screen. The Strongpoint form is displayed. Your connection persists unless you
+   select your username. The connected app configures itself automatically. Once finished, click **Close** on
+   the confirmation screen. The Netwrix form appears. Your connection persists unless you
    click **Gear** on the integration page.
 
-If the configuration fails, an error message is displayed. For example,
+If the configuration fails, the app displays an error message. For example,
 
 > **error=redirect_uri_mismatch**
 >
 > - The 10 minutes timing slot from Salesforce isn't completed yet. Wait for completion.
 > - If the error persists, check the [Callback URL](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_integration_forge.md).
 >
->     - You may have left a space between the two Callback URLs
->     - You may have an error in the newly added Callback URL it should be:
->       **See in your Jira Account in the Connected Tab in Netwrix Salesforce Forge**
+>     - Check for a space between the two Callback URLs.
+>     - Check the newly added Callback URL. See your Jira account in the **Connected** tab in Netwrix Salesforce Forge.
 
 ### Login User
 
@@ -94,19 +93,19 @@ If you don't have your security token, you can use these steps to reset your tok
 3. Select **Reset My Security Token** from the menu.
 4. Click **Reset Security Token**. Check your email for your new token.
 5. Click **Sandbox Account?** if you are using your sandbox.
-6. Click **Connect**. If the connection is successful, the form is displayed (see Add Customizations
+6. Click **Connect**. If the connection is successful, the form appears (see Add Customizations
    section). The **Synchronized with** status displays the org you are logged into for Salesforce.
 
 :::note
 You can't login if you don't have the **appropriate role permissions to create a change request**.
 :::
 
-If you don't enter the correct credentials, an error is displayed. After six unsuccessful
-consecutive attempts to login, your account is suspended for 30 minutes.
+If you don't enter the correct credentials, an error appears. After six unsuccessful
+consecutive attempts to log in, your account is suspended for 30 minutes.
 
 ## Add Customizations
 
-After you have logged in, the form is displayed.
+After you have logged in, the form appears.
 
 ![Connection details for the ticket](/images/platgovsalesforce/integrations/jiraForge/mainViewForge.webp)
 
@@ -117,11 +116,11 @@ After you have logged in, the form is displayed.
 - **Change Level Req** is blank until Customizations have been added. If there are multiple change
   levels, the most stringent one is applied.
 - **Select Customizations** is where you specify the Customizations you are changing or adding. If
-  the Customization exists in your account, it is added to the **Select Customizations** list. **Add
-  Proposed Customizations** are added to the **Proposed Customizations** list. You can delete added
-  Customizations with the
+  the Customization exists in your account, the integration adds it to the **Select Customizations** list. **Add
+  Proposed Customizations** adds entries to the **Proposed Customizations** list. You can delete added
+  Customizations with the
   ![delete](/images/platgovsalesforce/integrations/jiraForge/trashIcon.webp) icon.
-- **View DRD** and **Impact Analysis** are tools to Perform Risk Assessment.
+- **View DRD** and **Impact Analysis** are tools to perform risk assessment. **View DRD** opens the Dependency Relationship Diagram (DRD).
 - **Push** creates the Change Request in Salesforce. **Push** is also used to manually update your
   Change Request if you aren't using the [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_integration_forge.md) feature.
 
@@ -136,7 +135,7 @@ After you have logged in, the form is displayed.
 
 3. Select one or more Customizations. This example uses **FLODocs__spDocumentation (LightningComponentBundle)**, a
    customization in the _FdtPartial Demo Org_.
-4. Click **Add Selected Customizations**. The selected Customization is added to the **Existing
+4. Click **Add Selected Customizations**. The integration adds the selected Customization to the **Existing
    Customizations** list.
 
     ![Add an existing customization](/images/platgovsalesforce/integrations/jiraForge/jira_example_add_existingForge.webp)
@@ -144,27 +143,26 @@ After you have logged in, the form is displayed.
 
 ### Add Proposed Customizations
 
-In this procedure, this procedure adds a new Customization.
+This procedure adds a new Customization.
 
 1. Enter a new, valid API Name in the **Add Customization** for **Proposed Customizations** field.
    For this example, enter **CustomerPriorities**.
-2. Click (**+**) to add it. If the API Name is valid, and doesn't match an existing API Name, the
-   new Customization is added to the **Proposed Customizations** list.
+2. Click (**+**) to add it. If the API Name is valid and doesn't match an existing API Name, the
+   integration adds the new Customization to the **Proposed Customizations** list.
 
     ![Add a proposed customization](/images/platgovsalesforce/integrations/jiraForge/jira_example_proposedCustoForge.webp)
 
 ### Create the Change Request
 
-Using the Platform Governance for Salesforce Jira integration, your Change Requests are created
-automatically when you add a Customization. To set up or update the status mapping, refer to setting
+The Platform Governance for Salesforce Jira integration automatically creates your Change Requests
+when you add a Customization. To set up or update the status mapping, refer to setting
 up the **[Jira Statuses](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_integration_forge.md)** procedure.
 
 1. Change the Jira status of your ticket to match the status set up for **CR In Progress**. For
    example, **In Progress**. Refer to setting up the **[Jira Statuses](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_integration_forge.md)**
    procedure.
 2. Click **Push** to create the Change Request if you aren't using the
-   [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_integration_forge.md) feature. The change request is created in
-   Salesforce with the **In Progress** status.
+   [Automatic Synchronization](/docs/platgovsalesforce/integrations/jiraintegrationForge/jira_integration_forge.md) feature. Salesforce creates the change request with the **In Progress** status.
 3. Expand the **Change Request** field on the right. The status is now **In Progress**. There
    is a link to open the Change Request in Salesforce.
 
@@ -190,7 +188,7 @@ something. Dependencies can be reviewed with the DRD tool.
 
 ### View DRD
 
-The [Dependency Relationship Diagram](/docs/platgovsalesforce/tools/viewing_drd.md) (DRD) tool graphically displays your
+The [DRD](/docs/platgovsalesforce/tools/viewing_drd.md) tool graphically displays your
 Customizations and all dependencies.
 
 1. Click **View DRD**.

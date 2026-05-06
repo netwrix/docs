@@ -10,9 +10,11 @@ This topic discusses the new Platform Governance for Salesforce Lightning custom
 is only available with the Platform Governance for Salesforce Lightning app. Refer to the topic
 [Old Customization Record](/docs/platgovsalesforce/customizations/old_customization_record.md) for the old style customization record.
 
-**NOTE:** For installed orgs, users must load the Strongpoint Home Page first before opening the
+:::note
+For installed orgs, users must load the Strongpoint Home Page before opening the
 **Customization** tab for the first time after the 6.0 update. The new form assignment happens in
 the background for the Strongpoint Home page.
+:::
 
 The customization detail contains general information about the customization record. The
 customization name appears in the banner with function buttons:

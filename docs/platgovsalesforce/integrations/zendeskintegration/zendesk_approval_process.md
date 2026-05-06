@@ -28,7 +28,7 @@ Platform Governance for Salesforce – Zendesk Integration supports three types 
 
 ![Approval Process - Complete](/images/platgovsalesforce/integrations/zendesk/Approval_process_-_Complete.webp)
 
-After completing the Change Request you will see the record in a complete status:
+After completing the Change Request, the record appears in a complete status:
 
 ![Approval Process - After Complete](/images/platgovsalesforce/integrations/zendesk/Approval_process_-_After_Complete.webp)
 
@@ -65,7 +65,7 @@ After completing the Change Request you will see the record in a complete status
 
 ![Approval Process - Complete](/images/platgovsalesforce/integrations/zendesk/Approval_process_-_Complete.webp)
 
-After completing the Change Request you will see the record in a complete status:
+After completing the Change Request, the record appears in a complete status:
 
 ![Approval Process - After Complete](/images/platgovsalesforce/integrations/zendesk/Approval_process_-_After_Complete.webp)
 

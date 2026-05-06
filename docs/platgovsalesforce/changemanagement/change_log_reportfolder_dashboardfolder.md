@@ -48,7 +48,7 @@ The Change Log is organized into two main panels:
 
 ## Additional Notes
 
-- Access changes are tracked with specific indicators:
+- The system tracks access changes with specific indicators:
   - "Change Type" shows the nature of the modification
   - When access is revoked, "Change Type" displays "Removed"
 - The layout is consistent for both ReportFolder and DashboardFolder

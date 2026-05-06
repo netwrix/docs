@@ -12,10 +12,10 @@ The Metadata Scanner form is displayed.
 
 ## Sandbox Options
 
-If you are installing in a sandbox, there is an option for **Change Log Creation**. If **Enabled**,
-change logs are created in the sandbox. Due to Salesforce space limits on different
+If you are installing in a sandbox, there is an option for **Change Log Creation**. When **Enabled**,
+the sandbox creates change logs. Due to Salesforce space limits on different
 [sandbox accounts](https://help.salesforce.com/articleView?id=data_sandbox_environments.htmandtype=5),
-you may want to disable change logs to save space. This option can also be accessed on the
+consider disabling change logs to save space. This option is also available on the
 [Configuration and Stats](/docs/platgovsalesforce/installingstrongpoint/config_and_stats.md) page for the sandbox.
 
 Here are the options for a Sandbox installation. Be sure to **Save** each setting you change. Scroll
@@ -38,7 +38,7 @@ Scroll down to the Metadata Scanner section.
 You can schedule the scanners to auto-scan your environment:
 
 1. Toggle **Enabled** to activate a scan. Hover over the **?** for details on the scan.
-2. Select the **Frequency** and **Day**. If you don't specify a time Platform Governance for
+2. Select the **Frequency** and **Day**. Without a specified time, Platform Governance for
    Salesforce rescans at midnight.
 
     ![getting_started_wizard6](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard6.webp)
@@ -61,7 +61,7 @@ Change the day or time of your Scanner run to prevent overlap which may cause fa
 
 3. Click **Next**.
 
-The final screen is displayed. Click **Done** to close the wizard.
+The final screen appears. Click **Done** to close the wizard.
 
 ![getting_started_wizard8](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard8.webp)
 

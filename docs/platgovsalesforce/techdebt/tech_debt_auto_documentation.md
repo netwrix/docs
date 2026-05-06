@@ -6,21 +6,17 @@ sidebar_position: 20
 
 # Automated Documentation
 
-Great documentation is easy with Platform Governance for Salesforce. Install the managed package in
-a sandbox or production org and start the scanners.Platform Governance for Salesforce continuously
-maintains automated digital documentation of each Salesforce org and provides easy to understand
-diagrams and clean up tools. You can print or export results for offline reference.
+Platform Governance for Salesforce continuously maintains automated digital documentation of each Salesforce org and provides diagrams and clean-up tools. Install the managed package in a sandbox or production org and start the scanners. You can print or export results for offline reference.
 
 :::tip
-**Learning About the Scanners**: Review the [Running the Scanner](/docs/platgovsalesforce/installingstrongpoint/running_scanner.md) topic or reach out to the  Customer Success team. It takes half an hour or so to get set up and on your way.
+**Learning About the Scanners**: Review the [Running the Scanner](/docs/platgovsalesforce/installingstrongpoint/running_scanner.md) topic or reach out to the Customer Success team. Setup takes about half an hour.
 
 The scanning process is a function of size: smaller orgs index in only a few hours, while large orgs can take up to 5 days.
 
 Platform Governance for Salesforce is a 100% native Salesforce App. Records and code usage don't count against your governance limits. Moreover, after the initial scan is complete, Platform Governance for Salesforce automatically updates documentation relating only to things that have changed, greatly reducing the amount of time required to scan.
 :::
 
-Once your orgs are documented, understanding the downstream dependencies of any change is a
-straightforward, simple process. There are a number of ways to do this:
+Once your orgs are documented, Platform Governance for Salesforce provides several ways to understand the downstream dependencies of any change:
 
 - Dependency Relationship Diagram (DRD)
 - Customization Record
@@ -121,7 +117,7 @@ The Custom tab displays usage and lifecycle-related data gathered through scanni
 - First detected (join) date
 - Last used date (when available)
 - Percentage populated (for data fields)
-- DLU (Data Lifecycle Usage) status
+- DLU (Date Last Used) status
 - Parent last update date
 - Track History Field enablement status
 
@@ -180,8 +176,8 @@ Two key actions are available in the Customization Record:
 
 1. **ReScan Button**: 
    - Click the "ReScan" button to manually trigger a new scan of the customization.
-   - This helps detect any recent changes that might not have been captured in the previous scan.
-   - Useful for ensuring you have the most up-to-date information about the customization.
+   - This detects recent changes not captured in the previous scan.
+   - Use this to ensure you have the most up-to-date information about the customization.
 
 2. **Go To Record Button**:
    - Click the "Go To Record" button to directly navigate to the original Salesforce record for this customization.
@@ -192,7 +188,7 @@ Two key actions are available in the Customization Record:
 
 ## Finder
 
-The Customization Finder is a powerful search and filtering tool that helps you locate and analyze Customization records across your Salesforce instance. Use it to quickly find specific customizations, understand ownership and usage, and export results for further analysis.
+The Customization Finder is a search and filtering tool that helps you locate and analyze Customization records across your Salesforce instance. Use it to find specific customizations, understand ownership and usage, and export results for further analysis.
 
 Finder is especially useful for audits, clean-up initiatives, impact analysis, and documentation reviews.
 
@@ -203,7 +199,7 @@ The upper section of the Finder page provides a comprehensive set of filters to 
 #### Text and API Name Search
 
 **Search by text / API Name**
-Allows free-text searching across customization names and API names.
+Searches customization names and API names using free text.
 
 #### Date Filters
 
@@ -232,7 +228,7 @@ Only selected types are included in the results.
 
 #### Created By Filtering
 
-This section allows filtering Customizations based on the user who created them.
+Use this section to filter customizations by the user who created them.
 
 **Search Users**
 Quickly locate users by name.
@@ -250,7 +246,7 @@ At the bottom of the filter section, Finder provides the following actions:
 
 ### Search Results
 
-Search results are displayed in a tabular format and include key information for each Customization, such as:
+Search results appear in a table and include key information for each customization, such as:
 
 - Name
 - Type

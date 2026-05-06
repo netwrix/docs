@@ -8,8 +8,7 @@ sidebar_position: 10
 
 Platform Governance for Salesforce's scheduler creates automated scans, manages scripts, uses the
 Agent and finds the date last used (DLU). The schedules are validated to prevent scanners from
-running concurrently, potentially causing conflicts and incomplete documentation. A warning message
-is displayed if you create an overlapping scanner schedule.
+running concurrently, potentially causing conflicts and incomplete documentation. The scheduler displays a warning if you create an overlapping scanner schedule.
 
 To use the scheduler tool:
 
@@ -37,7 +36,7 @@ When you first install Platform Governance for Salesforce, enable only the **Aut
 
 ### Profile and Permission Set Heavy Orgs
 
-If your org contains many profiles and permission sets, you can enable the **Fast Scan** for more agile change detection and change log generation. The Fast Scan provides quicker turnaround than the Daily Scan while maintaining accuracy for permission-related changes.
+For orgs with many profiles and permission sets, enable the **Fast Scan** for faster change detection and change log generation. The Fast Scan provides quicker turnaround than the Daily Scan while maintaining accuracy for permission-related changes.
 
 ### Scanner Selection
 

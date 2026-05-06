@@ -15,9 +15,8 @@ Use the Profile / Permission Set Comparison to efficiently clean up and secure y
 
 Comparison tool features include:
 
-- _Native Salesforce Components_: Enjoy a seamless experience within your Salesforce environment.
-- _Compare up to three Profiles / Permission Sets_: Gain a comprehensive view of your Org's
-  permissions.
+- _Native Salesforce Components_: Works within your Salesforce environment.
+- _Compare up to three Profiles / Permission Sets_: View your Org's permissions side by side.
 - _Export Results to Excel_: Share and analyze comparison results.
 
 :::note
@@ -60,8 +59,7 @@ To perform an **Object Permission** comparison:
    expansion indicator u to expand the **Comparison** panel. Ensure **Object Permission** is
    selected.
 
-    If you ran a **System Permission** comparison before switching to **Object Permission**, your
-    selected items are used by default. You can select different items to compare.
+    If you ran a **System Permission** comparison before switching to **Object Permission**, the tool uses your selected items by default. You can select different items to compare.
 
 2. Select at least two **Profile / Permission Sets**. For each item:
 

@@ -19,7 +19,7 @@ Clean up involves some or all of the following steps:
 
 ## Clean Up Tools
 
-There is a series of built in Clean Up Tools to enable Administrators to clean up their account in
+Platform Governance for Salesforce provides a series of built-in Clean Up Tools to enable Administrators to clean up their account in
 an organized and efficient manner. There are many types of clean up, but they generally follow the
 same steps:
 
@@ -56,16 +56,15 @@ You can clean up individual or multiple customizations by going to the Customiza
 selecting **Create New View**. Use the filters to generate your list.
 
 :::note
-Before moving on to other clean up activities, it is often a good idea to delete unused
-customizations that are highly likely safe to delete, such as fields that have not been used in
-years or that aren't used by any other customization.
+Before moving on to other clean up activities, delete unused
+customizations that are safe to delete, such as fields that have not been used in
+years or that are not used by any other customization.
 :::
 
 ### Analyze and Organize the Results
 
-After you have selected the customizations that you want to clean up and have created a New View, you
-can analyze the results. You can then sort and filter the results and are required to group and
-manage the output for subsequent steps. You may chose to clean up based on Salesforce type and
+After selecting the customizations to clean up and creating a New View, analyze the results. Sort and filter the results and group and
+manage the output for subsequent steps. You can clean up based on Salesforce type and
 record type (among other options).
 
 Every Customization record has a Clean-Up Status field that tracks the status of the
@@ -79,7 +78,7 @@ The statuses are:
 - **Under Investigation**: Flags the customization as under investigation.
 - **Disabled/Hidden**: Tracks that the customization has been disabled.
 - **Archived**: Tracks that the data / set-up was archived.
-- **Deleted**: Tracks that the customization has been deleted. The doc will be inactivated.
+- **Deleted**: Tracks that the customization has been deleted. The doc is inactivated.
 - **Ignore**: Removes it from the searches.
 - **Fix ScriptID:** Changes the ID of the script.
 - **Reassign Owner**: Changes the owner.
@@ -87,8 +86,8 @@ The statuses are:
 
 ### Create Change Requests (if required)
 
-Some changes such as deletion, changes to scriptID and Help impact the customization itself. For
-these types of changes, creating a Change Request is recommended. However, for clean up, you can create
+Some changes, such as deletion and changes to scriptID and Help, impact the customization itself. For
+these types of changes, Netwrix recommends creating a Change Request. For clean up, you can create
 new change requests and assign them to the customizations. In the results view, **Create Change
 Request** creates a new change request. After that is added to that customization it appears under
 **Related Change Requests**. You can have multiple customizations assigned to multiple change
@@ -107,6 +106,6 @@ edited like any other Salesforce data directly in a Platform Governance for Sale
 
 ### Run the Scanner
 
-At the end of the process of updating customization records, the account should be scanned to
-update the documentation for the customization changes. It can be re-scanned for the specific
-record type that was changed.
+After updating customization records, scan the account to
+update the documentation for the customization changes. You can re-scan for the specific
+record type that changed.

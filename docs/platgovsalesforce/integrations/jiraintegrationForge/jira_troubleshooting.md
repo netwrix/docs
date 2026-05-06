@@ -36,8 +36,7 @@ information on mapping your statuses.
 
 Error message:
 
-Verify Your User Credentials: It may be an Invalid username, wrong password, or invalid
-security token.
+Verify Your User Credentials: the username is invalid, the password is wrong, or the security token is invalid.
 
 If you are using Salesforce Authenticator, update it to the most recent Six-digit code.
 

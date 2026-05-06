@@ -6,10 +6,10 @@ sidebar_position: 10
 
 # Deployments
 
-Your deployments can be documented across your test environments to your production
+Platform Governance for Salesforce documents your deployments across test environments to production
 environments. Each step in the deployment process complies with your policies and a comprehensive
-approval process. Deployments are blocked if approvals aren't complete. A full audit trail of the
-entire deployment process is maintained.The process is:
+approval process. Deployments are blocked if approvals aren't complete. Platform Governance for Salesforce maintains a full audit trail of the
+entire deployment process. The process is:
 
 - Create a Change Request
 - Create a Deployment Record
@@ -62,13 +62,13 @@ These steps can be completed after the deployment record is approved.
 
     This creates a package to:
 
-    - **Validate Customizations**: Use to check the deployment is going to work. It simulates your
+    - **Validate Customizations**: Use to check the deployment before it runs. It simulates your
       deployment.
     - **Deploy Retrieved Customizations**: Use to deploy your customizations when you are ready to
       proceed.
 
 4. Check your dependencies and validate your customizations.
-5. Click **Deploy Retrieved Customizations** to start the deployment. This may take some time, since
+5. Click **Deploy Retrieved Customizations** to start the deployment. This can take some time because
    it runs the test cases into the target environment.
 
     ![Run the Deployment](/images/platgovsalesforce/release_management/deployment_tool-4.webp)

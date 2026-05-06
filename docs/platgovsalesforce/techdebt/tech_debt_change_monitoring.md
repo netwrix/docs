@@ -28,8 +28,8 @@ escalating levels of rigor and/or skill required to address a change:
 | --------------------------------------- | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | L1: Log Changes                         | This is a safe change.                                                                       | Ordinary report.                                                            | Anyone.                                                                                               |
 | L2: Change Request                      | This needs approval from management but not sandbox review.                                  | Management report or Control.                                               | Anyone, provided prior approval is granted.                                                          |
-| L3: Sandbox Development and Testing     | This isn't a complex change, but best practices require it to be tested in a sandbox first. | Data model changes with no dependencies. For example, adding a new field.   | Business Analyst or Admin with prior approval, working in sandbox before deploying in production.     |
-| L4: Full Software Development Lifecycle | This isn't a safe change. It needs to be changed carefully with rigorous testing.           | Changes to code or a picklist used in field with code or SoQL dependencies. | Admin / Developer with prior approval working through a full development cycle in multiple sandboxes. |
+| L3: Sandbox Development and Testing     | The change is low complexity, but best practices require testing in a sandbox first. | Data model changes with no dependencies. For example, adding a new field.   | Business Analyst or Admin with prior approval, working in sandbox before deploying in production.     |
+| L4: Full Software Development Lifecycle | This change requires careful handling and rigorous testing.           | Changes to code or a picklist used in field with code or Salesforce Object Query Language (SOQL) dependencies. | Admin / Developer with prior approval working through a full development cycle in multiple sandboxes. |
 
 Changes made without the policy-required approval are reported as Non-Compliant. Review the
 Non-Compliant Changes Report to ensure dangerous changes don't slip through and cause process or
@@ -49,12 +49,9 @@ Specific Monitoring for anything needing special protection.
 
 Platform Governance for Salesforce documents **Unresolved Non-Compliant Changes** in both a List
 View and a Report. Both show you all the changes that should have received approval and the level of
-change control required for the change. Use the List View to quickly review and manage the
-resolution from a single screen through the **Short Resolution Description** and **Status** fields.
+change control required for the change. Use the List View to review and manage the resolution from a single screen through the **Short Resolution Description** and **Status** fields.
 
-If you aren't fully using Platform Governance for Salesforce in your change enablement
-process, you can restrict your review of changes by filtering out object types or risk levels that
-don't concern you. Alternatively, you can create different reports for different team members to
+To restrict your review of changes, filter out object types or risk levels that don't apply to your team. Alternatively, you can create different reports for different team members to
 prioritize what you see.
 
 ![Unresolved Non-Compliant Changes Report](/images/platgovsalesforce/tech_debt/tech_debt_8.webp)
@@ -142,8 +139,7 @@ This feature ensures consistent governance by:
 
 ## Specific Monitoring
 
-The default policy may be all you require. However, you should consider whether there are specific
-people, objects, reports, or fields that need special protection. These can be addressed in two ways:
+The default policy may be all you require. Consider whether specific people, objects, reports, or fields need special protection. Address these through:
 
 - Specific People
 - Specific Customizations
@@ -210,7 +206,7 @@ watching your org to spot problems before they happen.
 
 ### Adding Custom Fields and Objects to the Policy
 
-When you add sensitive objects to a policy, you may also need to apply the same policy to the Custom Fields that belong to that object. Platform Governance for Salesforce provides a streamlined **Set Policy** action directly on the Customization record to support this workflow.
+When you add sensitive objects to a policy, also apply the same policy to the custom fields that belong to that object. Platform Governance for Salesforce provides a streamlined **Set Policy** action directly on the Customization record to support this workflow.
 
 #### Applying a Policy from a Custom Object
 To assign a Change / Approval Policy to a Custom Object and its related fields:

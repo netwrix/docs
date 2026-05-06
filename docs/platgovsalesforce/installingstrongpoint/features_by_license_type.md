@@ -16,9 +16,9 @@ This table summarizes what is included in each type.
 
 | Feature                                                    | Automated Documentation                                                                                           | Intelligent Change Enablement                                                                                     | Enterprise Compliance                                                                                             |
 | ---------------------------------------------------------- | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------: |
-| Customization, Scanners, and DRD                            | **&#10003;** | **&#10003;** | **&#10003;** |
+| Customization, Scanners, and DRD (Dependency Relationship Diagram) | **&#10003;** | **&#10003;** | **&#10003;** |
 | Field-Level Scanner                                        | **&#10003;** | **&#10003;** | **&#10003;** |
-| Clean Up: Reports, and Scheduler, Processes, DLU           | **&#10003;** | **&#10003;** | **&#10003;** |
+| Clean Up: Reports, and Scheduler, Processes, DLU (Date Last Used) | **&#10003;** | **&#10003;** | **&#10003;** |
 | Profile / Permission Set Comparison                        | **&#10003;** | **&#10003;** | **&#10003;** |
 | User Access Assistance                                     |                                                                                                                   | **&#10003;** | **&#10003;** |
 | User Activity                                              |                                                                                                                   | **&#10003;** | **&#10003;** |

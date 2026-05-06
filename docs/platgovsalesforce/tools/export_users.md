@@ -8,8 +8,8 @@ sidebar_position: 50
 
 Exports user information to an XLS file.
 
-Administrators can use this tool to export all user information into a single view for easy review
-and management. The export is done in the background to avoid timing out or exceeding the Salesforce
+Administrators can use this tool to export all user information into a single view for review
+and management. The export runs in the background to avoid timing out or exceeding the Salesforce
 Governor Limits. You receive an email with a link to the
 [Export Object Attachment](/docs/platgovsalesforce/tools/export_object_attachment_records.md) record, where you can download your
 file.
@@ -37,7 +37,7 @@ Click the toggles to activate or inactivate the settings you want to export.
 
 **Download XLS**
 
-Click **Download XLS** to export your selections. An email is sent with a link to the file
+Click **Download XLS** to export your selections. You receive an email with a link to the file
 _User_Export.xls_.
 
 **Download Files**

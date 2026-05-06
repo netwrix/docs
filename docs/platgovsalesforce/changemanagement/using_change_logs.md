@@ -7,7 +7,7 @@ sidebar_position: 70
 # Using Change Logs
 
 Use Change Logs to see the type of change, who made the change, and view the system notes of
-the Salesforce record. Change Logs are accessed from the **Change Logs** tab or through
+the Salesforce record. Access Change Logs from the **Change Logs** tab or through
 [Change Enablement Reports](/docs/platgovsalesforce/changemanagement/change_management_reports.md).
 
 1. Click **Change Logs** tab.
@@ -64,7 +64,7 @@ The **Values** section displays the **New Value** and **Old Value** of each fiel
 
 ![changelog_values](/images/platgovsalesforce/change_management/changelog_values1_light.webp)
 
-The **Created By** and **Last Modified By** users and dates are displayed at the end of the list.
+The **Created By** and **Last Modified By** users and dates appear at the end of the list.
 
 ![changelog_values](/images/platgovsalesforce/change_management/changelog_values2_light.webp)
 
@@ -87,7 +87,7 @@ record.
 ### Change Log History
 
 **Change Log History** displays the latest history entries by **Date**. The changed **Field**,
-**User** making the change, **Original Value** and **New Value** are displayed. If there is a **+**
+**User** making the change, **Original Value** and **New Value** appear. If there is a **+**
 sign by the number in **Change Log History** header, click **View All** to see the complete history.
 
 ### Notes & Attachments

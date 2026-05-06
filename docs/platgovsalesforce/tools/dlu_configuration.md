@@ -22,8 +22,8 @@ The General Configuration section allows administrators to select which Salesfor
 
 ![DLU General Configuration](/images/platgovsalesforce/dlu_configuration/DLU_General_Configuration.webp)
 
-- Only metadata types supported by the DLU Scanner are displayed. Unsupported Salesforce types aren't shown and can't be selected.
-- Once selected, the scheduler will process only the chosen types. If no types are selected, the DLU Scanner will process all supported types shown in the list.
+- The list shows only metadata types supported by the DLU Scanner. Unsupported Salesforce types aren't shown and can't be selected.
+- Once selected, the scheduler processes only the chosen types. If no types are selected, the DLU Scanner processes all supported types shown in the list.
 
 ## Custom Fields Configuration
 
@@ -36,19 +36,19 @@ Administrators can:
 - Select specific fields
 - Save their preferences
 
-Only the selected fields will be processed by the DLU Scanner, allowing customers to focus on what they want and reduce unnecessary processing.
+The DLU Scanner processes only the selected fields, reducing unnecessary processing.
 
-## How the Configuration Is Used
+## How the configuration is used
 
 The DLU Scanners use the saved configuration to determine which Salesforce metadata types, objects, and fields are included in each scheduled execution.
 
-Any changes made in the DLU Configuration are applied to subsequent scanner runs.
+Changes made in the DLU Configuration apply to subsequent scanner runs.
 
 ## DLU Scanner Scheduler Configuration
 
 To ensure the DLU Scanner runs automatically, you must configure and enable the scheduler.
 
-### Steps to configure the scheduler:
+### Configure the scheduler
 
 1. Navigate to **Netwrix Dashboard** > **Scanner** > **Scheduler**.
 
@@ -62,7 +62,7 @@ To ensure the DLU Scanner runs automatically, you must configure and enable the 
 4. Enable the scheduler by selecting the highlighted option.
 5. Save the configuration.
 
-Once enabled, the scheduler will execute the DLU Scanner according to the configured frequency and use the settings defined in DLU Configuration.
+Once enabled, the scheduler executes the DLU Scanner according to the configured frequency and uses the settings defined in DLU Configuration.
 
 :::note
-If the scheduler is disabled, no DLU scans will run, even if the DLU Configuration is correctly defined.
+If the scheduler is disabled, no DLU scans run, even if the DLU Configuration is correctly defined.

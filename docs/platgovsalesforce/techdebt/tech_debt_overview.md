@@ -11,9 +11,7 @@ organization in a Salesforce environment. The articles don't extensively focus o
 risk and governance.
 
 The articles begin with a brief review of the root causes of technical debt and the general principles and
-capabilities that may apply in a variety of situations. The majority of the document is focused on
-systematically taking control of an SFDC org with varying degrees of complexity ranging from simple
-to extreme, moving rapidly through critical stages of Salesforce org management maturity:
+capabilities that may apply in a variety of situations. The majority of the document focuses on systematically taking control of a Salesforce (SFDC) org with varying degrees of complexity, moving through critical stages of Salesforce org management maturity:
 
 - Early stages rapidly deliver value with minimal allocation of effort or disruption of process.
 - Later stages build on this base to streamline your account and change processes.
@@ -40,7 +38,7 @@ There are many ways to classify tech debt. Three main categories are:
 These customizations are littered amongst and intertwined with business-critical portions of
 virtually every org.
 
-Salesforce tech debt is normal. It isn't a reflection of team aptitude or level of competence. In
+Salesforce tech debt is normal. It does not reflect team aptitude or level of competence. In
 most cases, the changes made to the org were part of rapid, rational, responsible solutions to the
 problems of the day. The incredible flexibility of the Salesforce platform enables an organization
 to move forward with high velocity and in an agile manner. Over time, the cost of changing or adding
@@ -49,7 +47,6 @@ enhancements. Training costs are inflated answering questions about outdated fie
 turnover or org growth makes tribal knowledge unworkable and ongoing regression testing adds
 significant cost and slows down innovation.
 
-It is time to tackle your tech debt and unleash your team’s innovation on the task of delivering
-great solutions to your business.
+Tackle your tech debt to free your team’s capacity for delivering solutions to your business.
 
 **Next Technical Debt Topic:** [Managing Orgs in the Real World](/docs/platgovsalesforce/techdebt/tech_debt_managing_orgs.md)

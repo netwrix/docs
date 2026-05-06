@@ -20,15 +20,15 @@ The scanner is only available to Administrators.
 To run the scanner:
 
 1. Open **Netwrix Dashboard** > **Scanner** > **Manual Scanners**
-2. Use the optional **Search Types** to narrow the focus of the list if you are looking for a
+2. Use the optional **Search Types** to narrow the focus of the list when looking for a
    specific type.
-3. You can select + beside one or more types to scan or you can scan the whole environment by
+3. Select + beside one or more types to scan, or scan the whole environment by
    clicking + on the **Name** row to select all the types.
 
     ![scanner](/images/platgovsalesforce/installing_strongpoint/scanner.webp)
 
 4. Click **Run Scanner**.
-5. The batch runs in the background. You receive an email notification when the scan is complete.
+5. The batch runs in the background. You receive an email notification when the scan completes.
 
 6. From the Netwrix Dashboard: click **Configuration and Stats** in the **Resources** section, or
    open **Settings** > **Configuration and Stats**.
@@ -45,7 +45,7 @@ You can create your own Salesforce view for the scanners:
     5. Select **Apex Class** for the **Field**.
     6. Select **starts with** for the **Operator**.
     7. Assign **FLO, Strongpoint, NetPG** for the **Value**.
-    8. Click **Save**. You can now see the status of all of the Strongpoint jobs.
+    8. Click **Save**. The view now shows the status of all Strongpoint jobs.
       ![Viewing running Netwrix jobs](/images/platgovsalesforce/installing_strongpoint/scanner_view2.webp)
 
 **Next Step:** [Validate the Data ](/docs/platgovsalesforce/installingstrongpoint/validating_data.md)

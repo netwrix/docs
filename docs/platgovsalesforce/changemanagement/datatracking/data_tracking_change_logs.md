@@ -23,12 +23,12 @@ The platform supports different change tracking behaviors that determine how cha
 
 #### Tracked, Non-Blocking
 
-When an object is configured as **Tracked, Non-Blocking**, the changes are monitored and recorded in Change Logs.
+When an object is configured as **Tracked, Non-Blocking**, the system monitors changes and records them in Change Logs.
 
 - If the change is associated with an **approved Change Request**, the system records it as a **Compliant Change Log**.
 - If the change occurs **without an approved Change Request**, the system records it as a **Non-Compliant Change Log**.
 
-In this mode, users can complete their changes while all activity is tracked and evaluated for compliance.
+In this mode, users can complete their changes while the system tracks and evaluates all activity for compliance.
 
 #### Tracked, Blocking
 
@@ -37,7 +37,7 @@ When an object is configured as **Tracked, Blocking**, the system enforces stric
 - If a change is associated with an **approved Change Request**, the system records it as a **Compliant Change Log**.
 - If a user attempts to make a change **without an approved Change Request**, the system blocks the operation.
 
-In this case, an error message is displayed and the change isn't saved. This mode ensures that all modifications follow the required approval process before being applied.
+In this case, the system displays an error message and doesn't save the change. This mode ensures that all modifications follow the required approval process before being applied.
 
 :::
 
@@ -66,7 +66,7 @@ The **Netwrix Platform Governance** Change Log has some features specific to dat
 
 ## Filtering Change Logs
 
-In some cases, you might want **Change Logs** to be created only when specific conditions are met.
+In some cases, you might want to create **Change Logs** only when specific conditions are met.
 
 For example:
 - You might want to create an **Opportunity Change Log** only when an admin updates specific fields on a **Closed Won Opportunity**.
@@ -78,7 +78,7 @@ With **Netwrix Platform Governance**, you can apply filters to tracked objects u
 
 ### Using a Report as a Filter
 
-Using a **Report** is the simplest way to implement a filter.
+Using a **Report** is a common way to implement a filter.
 
 Create a report that returns a list of **record Ids**. If a tracked record update matches the report’s filter criteria, the system creates a **Change Log** for that record.
 
@@ -99,7 +99,7 @@ This report returns only the Discount Schedule Ids of records that don't have th
 
 ### Using an Apex Class as a Filter
 
-If your filtering logic is too complex to implement with a report, you can create a custom **Apex Class**.
+To implement complex filtering logic that a report cannot handle, create a custom **Apex Class**.
 
 **Netwrix Platform Governance** provides support for custom logic by allowing Apex classes to act as filters.
 
@@ -122,7 +122,7 @@ The start and end times should be used by your filtering logic to return a Set o
 
 #### Example: Don't create Change Logs for changes in “User-Defined” CPQ Discount Schedules.
 
-Here’s an example that does the same job as the Report filter above.
+Here’s an example that does the same job as the Report filter described in the previous section.
 
 ```apex
 global without sharing class DiscountScheduleFilter implements FLODocs.IChangeLogFilter {
@@ -142,7 +142,7 @@ global without sharing class DiscountScheduleFilter implements FLODocs.IChangeLo
 
 ### Applying a Filter to a Tracked Object
 
-After the **Netwrix Platform Governance** scanner runs, a **Customization** record is automatically created for the corresponding **Report** or **Apex Class**.
+After the **Netwrix Platform Governance** scanner runs, it automatically creates a **Customization** record for the corresponding **Report** or **Apex Class**.
 
 To configure the filter:
 

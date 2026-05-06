@@ -45,10 +45,8 @@ generic definition is:
 For all clean up activities, consider the following items:
 
 - Blank DLU means there is no verified date. A blank date doesn't mean it's safe to remove.
-- DLU isn't the only criterion. You must look at the dependencies. An unused field with related
-  code isn't safe to remove. It is, however, a sign you may have unnecessary code.
-- An unused field may have important data from the history of your company. A good question to
-  investigate: why isn’t it being used? It might be a good idea that never got off the ground.
+- DLU isn't the only criterion. Check the dependencies. An unused field with related code isn't safe to remove. It can, however, indicate unnecessary code.
+- An unused field may have important data from the history of your company. Investigate why it isn’t being used. It may represent a feature or process that was started but never completed.
 - Cleaned up Customizations are archived if you need to restore.
 
 Like all Salesforce Date fields, DLU can be filtered using relative date formats (typically what you
@@ -69,8 +67,7 @@ Knowing who is using a customization is useful. This is tackled in steps, by Use
 
 ### Users
 
-**Field and Object Users**: Track employees editing a Field (using a custom or standard Object). It
-isn't turned on for all Customizations which would be inefficient. If you use _Salesforce Shield
+**Field and Object Users**: Track employees editing a field (using a custom or standard object). Enabling tracking for all customizations would be inefficient, so it is enabled selectively. If you use _Salesforce Shield
 Event Monitoring_, Platform Governance for Salesforce captures this data automatically.
 
 To capture the data without Salesforce Shield Event Monitoring:
@@ -78,8 +75,7 @@ To capture the data without Salesforce Shield Event Monitoring:
 1. Enable **Field Audit Trail** for the field.
 2. Permit Salesforce to populate the audit log for the last 18 months.
 3. Rescan the tracked fields.
-4. Names of the employees changing the data in each field are gathered automatically. This process
-   can take multiple days for a large dataset.
+4. Platform Governance for Salesforce automatically gathers the names of employees changing the data in each field. This process can take multiple days for a large dataset.
 5. Turn off audit history if desired.
 
 **Code, App, and Component Users**: With _Salesforce Shield Event Monitoring_, capture users from
@@ -95,9 +91,7 @@ the execution history of APEX-related objects.
   workflows. After you activate _Salesforce Shield Event Monitoring_, data is collected from that
   point on. It isn't retroactive.
 
-**Users referred to in objects**: Fields aren't created for everything, but all the metadata is
-available. You can identify users (and other things) referred to in dashboard filters, formula
-fields, SOQL, or even code, by searching the raw XML, JSON, or code. The
+**Users referred to in objects**: Fields aren't created for everything, but all the metadata is available. Identify users (and other things) referred to in dashboard filters, formula fields, SOQL, or code by searching the raw XML, JSON, or code. The
 [Specific Clean Up Approaches](/docs/platgovsalesforce/techdebt/tech_debt_org_specific_clean_up_approaches.md) section contains
 examples.
 

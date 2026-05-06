@@ -9,10 +9,8 @@ sidebar_position: 70
 Administrators use this tool to compare environments and generate an Excel report file with the
 results. Use this report to troubleshoot processes or data causing errors in a particular
 account, compare preferences between accounts, or determine if data needs to migrate between
-accounts. An [Environment Compare Log](/docs/platgovsalesforce/reports/deployment_logs_environment_compare.md) is
-generated. The comparison can handle up to 10,000 items. You receive an email with a link to the
-[Export Object Attachment](/docs/platgovsalesforce/tools/export_object_attachment_records.md) record, where you can download your
-file. Here is the basic process:
+accounts. The tool generates an [Environment Compare Log](/docs/platgovsalesforce/reports/deployment_logs_environment_compare.md). The comparison can handle up to 10,000 items. You receive an email with a link to the
+[Export Object Attachment](/docs/platgovsalesforce/tools/export_object_attachment_records.md) record, where you can download your file. The basic process is:
 
 Open **Netwrix Dashboard** > **Tools** > **Environment Comparison**
 
@@ -88,12 +86,11 @@ Requests.
 
 ## Select Export Options
 
-Click **Export to Excel** if you want to view the report in Excel. You receive an email when the
-Excel file is complete.
+To view the report in Excel, click **Export to Excel**. You receive an email when the Excel file is complete.
 
 ## Run the Comparison
 
-Click **Compare**. The process is run in the background. You receive an email when the compare is
+Click **Compare**. The process runs in the background. You receive an email when the compare is
 complete.
 
 ## View the Report
@@ -124,7 +121,7 @@ comparison type:
 
 **In Both Same**: items present in both Environments without differences
 
-**In Both Different**: items present in both Environments with differences. Here is an example:
+**In Both Different**: items present in both Environments with differences. The following example shows differences:
 
 ![Example of Environment Comparison differences](/images/platgovsalesforce/tools/compare_env_results_excel_diffs.webp)
 

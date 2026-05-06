@@ -74,14 +74,14 @@ The results list all customizations with no process assigned.
 
 ### Custom Fields without Help Text
 
-Help and descriptions let users more efficiently use the system. The results list
+Help and descriptions help users use the system more efficiently. The results list
 customizations missing help.
 
 To fix, open the customization, click **Update Description and Help Text**.
 
 ### Custom Fields without Description
 
-Help and descriptions let users more efficiently use the system. The results list
+Help and descriptions help users use the system more efficiently. The results list
 customizations missing descriptions.
 
 To fix, open the customization, click **Update Description and Help Text**.

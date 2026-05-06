@@ -6,9 +6,9 @@ sidebar_position: 40
 
 # Export Profiles and Permission Sets
 
-Administrators can use this tool to export all user permissions into a single view for easy review
-and management. The export is done in the background to avoid timing out or exceeding the Salesforce
-Governor Limits. You will receive an email with a link to the
+Administrators can use this tool to export all user permissions into a single view for review
+and management. The export runs in the background to avoid timing out or exceeding the Salesforce
+Governor Limits. You receive an email with a link to the
 [Export Object Attachment](/docs/platgovsalesforce/tools/export_object_attachment_records.md) record, where you can download your
 file.
 
@@ -37,7 +37,7 @@ To remove permission sets, select them in the Selected list and use the left arr
 
 **Download XLS**
 
-Click **Download XLS** to export your selections. An email is sent with a link to the file
+Click **Download XLS** to export your selections. You receive an email with a link to the file
 _ProfilesExport.xls_.
 
 **Download Files**

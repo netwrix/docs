@@ -23,7 +23,7 @@ Customization records contain the following information:
    fields, scripts, searches, and records.
 
 For Change Management and Compliance, the joins between customizations are critical to determine the
-IT risk of making changes to the system. For example, they warn you if changing a search could break
+IT risk of making changes to the system. For example, the system warns you if changing a search will break
 a workflow or a script.
 
 ![drd](/images/platgovsalesforce/customizations/drd.webp)

@@ -19,13 +19,10 @@ Customizations for any ongoing situations. You can then set a trigger to update 
 report to include specific people, such as new users. Finally, add a dashboard where you can view
 the key metrics from your Report.
 
-With the Enterprise Compliance edition, you can take management to the next level by designating
-reports as scheduled automated controls. These controls create situation-specific change logs or
+With the Enterprise Compliance edition, designate reports as scheduled automated controls for enhanced governance. These controls create situation-specific change logs or
 control violation logs that can be reviewed and cleared.
 
-It is easy to build a comprehensive dashboard on the **Control Logs** object in a single
-**Unresolved Control Violations** List View to monitor dangerous or irritating changes in
-configuration or data. You can designate who receives alerts without needing to build new workflows
+Build a comprehensive dashboard on the **Control Logs** object in a single **Unresolved Control Violations** List View to monitor dangerous or unwanted changes in configuration or data. You can designate who receives alerts without needing to build new workflows
 or triggers.
 
 To simplify governance and audit with Enterprise Compliance tools, reach out to

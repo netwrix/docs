@@ -1,7 +1,7 @@
 # Scanner Troubleshooting Guide
 
 ## Overview
-This guide helps you troubleshoot the Strongpoint scanner system in your Salesforce org. You'll find verification methods, scanner limits, duration estimates, and best practices for running initial scans—especially useful for large organizations.
+This guide helps you troubleshoot the scanner system in your Salesforce org. It covers verification methods, scanner limits, duration estimates, and best practices for running initial scans—especially useful for large organizations.
 
 ---
 
@@ -16,7 +16,7 @@ This guide helps you troubleshoot the Strongpoint scanner system in your Salesfo
 
 ### 1.1 Estimating Scan Duration
 
-Understanding how long a scan will take helps you plan accordingly:
+Use the following estimates to plan your scan schedule:
 
 | Org Size | Metadata Count | Estimated Duration | Characteristics |
 |----------|----------------|-------------------|-----------------|
@@ -77,9 +77,9 @@ When the **Retrieved Stage** shows **Verified** and both count values match, it 
 
 ## 2. Scanner Status
 
-You can monitor the scanner execution status in real-time through the Strongpoint UI. For detailed instructions on how to view scanner progress, check the status of running batches, and interpret the Scanner Status page, see the [Scanner Status documentation](../navigate_strongpoint#scanner-status).
+Monitor the scanner execution status in real time through the Platform Governance UI. For instructions on viewing scanner progress, checking the status of running batches, and interpreting the Scanner Status page, see the [Scanner Status documentation](../navigate_strongpoint#scanner-status).
 
-You can also create your own Salesforce view to monitor scanner jobs directly in Salesforce. For step-by-step instructions on creating a custom view for the scanners, see the [Running Scanner documentation](/docs/platgovsalesforce/installingstrongpoint/running_scanner.md#creating-a-custom-view-for-scanners).
+You can also create your own Salesforce view to monitor scanner jobs directly in Salesforce. For instructions on creating a custom view for the scanners, see the [Running Scanner documentation](/docs/platgovsalesforce/installingstrongpoint/running_scanner.md#creating-a-custom-view-for-scanners).
 
 ## 3. Initial Scan Recommendations
 
@@ -89,15 +89,15 @@ Before setting up incremental or scheduled scans, you must complete an initial f
 
 **To configure and run the full scan:**
 
-1. Navigate to the Strongpoint Scanner configuration
-2. Configure the automated scan settings following the [Scanner Scheduler documentation](./scheduler)
-3. Start the full scan and monitor its progress using the [Scanner Status page](../navigate_strongpoint#scanner-status)
+1. Navigate to the Scanner configuration.
+2. Configure the automated scan settings following the [Scanner Scheduler documentation](./scheduler).
+3. Start the full scan and monitor its progress using the [Scanner Status page](../navigate_strongpoint#scanner-status).
 
-**Important:** Wait for the full scan to complete before configuring incremental scans. You can verify completion by checking the information in [section 1.3](#13-verifying-complete-metadata-documentation).
+**Important:** Wait for the full scan to complete before configuring incremental scans. Verify completion using the steps in [section 1.3](#13-verifying-complete-metadata-documentation).
 
 ### 3.2 Configuring Metadata Types to Document
 
-You can configure which Salesforce metadata types you want to document based on your organization's needs. Selecting specific types lets you focus on the most relevant components and optimize scan performance.
+Configure which Salesforce metadata types to document based on your organization's needs. Selecting specific types lets you focus on the most relevant components and optimize scan performance.
 
 **To select specific metadata types:**
 

@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # Multiple Environment Deployment Tracking
 
-A best practice is to create change requests in your production account so that they aren't lost,
-they have an audit trail and approvals can be shown.
+Create change requests in your production account so that they aren't lost,
+they have an audit trail, and approvals are recorded.
 
 Here is the overall process flow for multiple deployment tracking:
 
@@ -27,8 +27,8 @@ Here is the overall process flow for multiple deployment tracking:
     - **Change Request Name**: Enter a meaningful name.
     - Select the **Change Type**.
     - **Change Overview**: Enter a meaningful description.
-    - Add **Customizations**. If you add **Proposed Customizations** they don't show up on the
-      change log as they don't exist in both environments.
+    - Add **Customizations**. If you add **Proposed Customizations**, they don't appear on the
+      change log because they don't exist in both environments.
     - Add one or more **Additional Approvers**.
 
 3. **Save** the change request.
@@ -97,13 +97,13 @@ These steps can be completed after the deployment record is approved.
     This creates a package to:
 
     - **Check Dependencies**: Use to check what has been referenced.
-    - **Validate Customizations**: Use to check the deployment is going to work. It simulates your
+    - **Validate Customizations**: Use to check the deployment before it runs. It simulates your
       deployment.
     - **Deploy Retrieved Customizations**: Use to deploy your customizations when you are ready to
       proceed.
 
 4. Check your dependencies and validate your customizations.
-5. Click **Deploy Retrieved Customizations** to start the deployment. This may take some time, since
+5. Click **Deploy Retrieved Customizations** to start the deployment. This can take some time because
    it runs the test cases into the target environment.
 
     ![Run the Deployment](/images/platgovsalesforce/release_management/deployment_tool-4.webp)

@@ -7,7 +7,7 @@ sidebar_position: 90
 # Access Review Assistant
 
 The Access Review Assistant creates a comprehensive display of permissions and profiles for a
-selected **Object**, **User**, or **Profile / PermissionSet**. The results can be exported to Excel.
+selected **Object**, **User**, or **Profile / PermissionSet**. You can export the results to Excel.
 The Access Review Assistant feature is available with the Intelligent Change Enablement and
 Enterprise Compliance [licenses](/docs/platgovsalesforce/installingstrongpoint/features_by_license_type.md).
 

@@ -6,10 +6,7 @@ sidebar_position: 80
 
 # Change Enablement
 
-It is commonly believed doing things faster is more dangerous, and doing things slowly and carefully
-is safer. In today's world, slower isn't an option. Platform Governance for Salesforce
-realized that **Faster** can also be **Safer** and sometimes **Very Fast** can be **Extremely
-Safe**.
+Speed and safety are not opposites. Platform Governance for Salesforce demonstrates that **Faster** can also be **Safer** and sometimes **Very Fast** can be **Extremely Safe**.
 
 The [Change Monitoring](/docs/platgovsalesforce/techdebt/tech_debt_change_monitoring.md) topic covers setting up automated change
 monitoring to deliver instant oversight of your org. [Org Clean Up](/docs/platgovsalesforce/techdebt/tech_debt_org_clean_up.md)
@@ -33,8 +30,7 @@ The key steps:
    existing Jira or ServiceNow process.
 4. **Roll Out the New Process** in production.
 
-Whether you are trying to get ahead of the game or have to meet specific governance or compliance
-goals, the Netwrix team of experts can lead you every step of the way. The team can implement an approach your
+Whether you are pursuing proactive governance or meeting specific compliance goals, the Netwrix team of experts can guide you through implementation. The team can implement an approach your
 team, stakeholders, and auditors will love.
 
 Reach out to your Customer Success Manager or Account Executive to explore Intelligent Change

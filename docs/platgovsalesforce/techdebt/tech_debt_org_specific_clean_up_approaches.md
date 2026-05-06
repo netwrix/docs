@@ -18,8 +18,7 @@ Here are some guidelines to specific clean up problems:
 - Layouts and List Views
 - Value-based Clean Up
 
-These guidelines assume you set up your List Views the same way as described
-[Step 1: Identify and Prioritize Targets](/docs/platgovsalesforce/techdebt/tech_debt_org_clean_up_example.md).
+These guidelines assume you set up your List Views as described in [Step 1: Identify and Prioritize Targets](/docs/platgovsalesforce/techdebt/tech_debt_org_clean_up_example.md).
 
 ## Unused, Risky
 
@@ -101,8 +100,7 @@ itself):
 
 ## Layouts and List Views
 
-These customizations don't have a reliable **Date Last Used**. This gap is being addressed in future releases.
-For now, be extra careful when investigating these items.
+These customizations don't have a reliable **Date Last Used**. Be careful when investigating these items.
 
 ## Value-based Clean Up
 

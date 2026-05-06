@@ -107,8 +107,8 @@ tab for the **PasswordPolicies** customization.
 
 ### Data Classification
 
-The **Data Classification** tab in the **Custom Field** customization record gives you an
-at-a-glance look at all classified fields in the Object — who owns them, their compliance category,
+The **Data Classification** tab in the **Custom Field** customization record gives you a
+quick view of all classified fields in the Object — who owns them, their compliance category,
 sensitivity level, and other important details. You also have access to custom reports showing you
 where your classified data can be found.
 
@@ -130,7 +130,7 @@ on a financial report.
 - **Risk/Requirement**: risk associated with the customization.
 - **Last Control Run Date**: This is the last date the control was run.
 - **Alert Process Owner**: checkbox to alert the process owner whenever an incident is detected.
-- **Alert/Task Message**: The message that will be sent to the assignee on tasks or recipients of
+- **Alert/Task Message**: The message sent to the assignee on tasks or recipients of
   alerts.
 - **Instructions for Resolution**: instructions for resolving the issue.
 - **Control Error/Warning**: errors or warnings encountered when control was last run. Blank

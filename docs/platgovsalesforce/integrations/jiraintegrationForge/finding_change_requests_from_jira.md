@@ -18,5 +18,5 @@ Create a Report:
     Equals  
    Select Jira
 6. Add any additional columns you want to display.
-7. After the report is created, click **Save**. Best practice is to title the search something
+7. After you create the report, click **Save**. Best practice is to title the search something
    meaningful, such as **Find Change Requests from Jira**.

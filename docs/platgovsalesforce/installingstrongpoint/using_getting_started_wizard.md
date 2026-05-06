@@ -36,8 +36,8 @@ On the Initial Setup Wizard page, choose the package type you have purchased and
 
 ## Add your Credentials
 
-After you have chosen your license type, you need to add your credentials. If your credentials
-change, an alert is sent to update the saved credentials. Expired credentials can cause auto
+After you have chosen your license type, add your credentials. If your credentials
+change, the system sends an alert to update the saved credentials. Expired credentials can cause auto
 scanners to fail. Use **Netwrix Dashboard** > **Settings**> **SP Credentials** to update your
 credentials.
 
@@ -61,7 +61,7 @@ If your organization has High Assurance enabled, you **can't** use this credenti
 
 ## Test Your Connection
 
-This step applies to **both** Named Credentials and Session ID authentication methods. You need to configure the remote site settings to allow Platform Governance to communicate with external services.
+This step applies to **both** Named Credentials and Session ID authentication methods. Configure the remote site settings to allow Platform Governance to communicate with external services.
 
 ![Testing the connection](/images/platgovsalesforce/installing_strongpoint/getting_started_wizard10.webp)
 
@@ -76,14 +76,14 @@ This step applies to **both** Named Credentials and Session ID authentication me
 4. Repeat for each remote site URL shown in the wizard
 
 :::tip Multiple Remote Sites
-You may need to create multiple remote site settings. The wizard will display all required URLs. Create a separate remote site entry for each URL shown.
+You may need to create multiple remote site settings. The wizard displays all required URLs. Create a separate remote site entry for each URL shown.
 :::
 
 ### Test the Connection
 
 1. Return to the Getting Started Wizard
 2. Click **Test Connection**
-3. **Test connection was Successful** is displayed if the connection succeeds
+3. If the connection succeeds, **Test connection was Successful** appears.
 4. After the test is successful, click **Next**
 
 ## Next Steps
