@@ -86,7 +86,7 @@ This sums up IIS settings.
 
 ## Hosting Bundle
 
-You need to install the [dotnet hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) (version 8.0 or higher) to be able to run dotnet application.
+You need to install the [dotnet hosting bundle](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) (version 10.0 or higher) to be able to run dotnet application.
 
 ## Select an Agent Identity
 

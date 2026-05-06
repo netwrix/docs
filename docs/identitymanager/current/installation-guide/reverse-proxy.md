@@ -34,7 +34,7 @@ As Identity Manager is **session-less**, working with several servers does not 
 
 For these tasks, [nginx](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#nginx) is a relevant choice of reverse proxy. There are several versions of nginx available, suitable for several Linux-based environments. [Installation instructions](https://docs.nginx.com/nginx/admin-guide/installing-nginx/) can be found directly on the nginx website.
 
-At its core, Identity Manager is an ASP.NET application with a Kestrel server. We can configure a nginx reverse proxy accordingly by following [Microsoft's guidelines](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-8.0&tabs=linux-ubuntu#microsofts-guidelines).
+At its core, Identity Manager is an ASP.NET application with a Kestrel server. We can configure a nginx reverse proxy accordingly by following [Microsoft's guidelines](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx?view=aspnetcore-10.0&tabs=linux-ubuntu#microsofts-guidelines).
 
 Nginx [configuration files](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/) are usually located in `/etc/nginx`.
 
