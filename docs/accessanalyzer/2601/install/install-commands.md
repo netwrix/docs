@@ -111,7 +111,7 @@ Export the variables before running the installer. When you set the same option 
 | `DRY_RUN` | `--dry-run` | `true` |
 
 :::note
-`LDAP_BIND_PASSWORD` is the only secret environment variable, and the installer doesn't actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#step-3-download-and-run-the-installer) for the two supported ways to provide the password.
+`LDAP_BIND_PASSWORD` is the only secret environment variable, and the installer doesn't actually honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#required-actions) for the two supported ways to provide the password.
 :::
 
 ## Running the Installer

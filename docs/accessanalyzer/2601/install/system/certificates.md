@@ -6,9 +6,9 @@ sidebar_position: 40
 
 # TLS Certificate Requirements
 
-Access Analyzer requires three certificate-related files at install time. This page describes the format of each file, the rules the installer enforces, and common gotchas when preparing them.
+Access Analyzer requires three certificate-related files at install time. This page describes the format of each file, the rules the installer enforces, and common pitfalls when preparing them.
 
-All three files must be in PEM format. When choosing **Bring your own certificate** in the installer wizard, you will be prompted to provide the path to each file.
+All three files must be in PEM format. When you choose **Bring your own certificate** in the installer wizard, the wizard prompts you for the path to each file.
 
 ## Summary
 
@@ -24,7 +24,7 @@ All three files must be in PEM format. When choosing **Bring your own certificat
 - **Issued by**: your internal certificate authority.
 - **Subject Alternative Names (SANs)**: must include **both** the server's hostname (for example, `accessanalyzer.example.com`) **and** the server IP address. Without a matching SAN, browsers reject the connection.
 - **Hostname in SANs must be lowercase.** Browsers normalize hostnames to lowercase during TLS validation. If the cert SAN is mixed-case, sign-in fails with HTTP 401. Always generate certificates using a lowercase hostname in the SAN list.
-- **Where it's used**: served by Traefik for every browser request to the application URL.
+- **Where it's used**: Traefik serves it for every browser request to the application URL.
 
 ## 2. Application TLS Private Key (`<hostname>.key`)
 
@@ -50,7 +50,7 @@ All three files must be in PEM format. When choosing **Bring your own certificat
   cat app-ca.crt ldaps-ca.crt > /opt/dspm-tls/ca-bundle.crt
   ```
 
-- **Why two purposes, one file**: the bundle is used by Traefik to secure the application's HTTPS endpoint **and** by Keycloak internally to trust the LDAPS connection to your domain controller.
+- **Why two purposes, one file**: Traefik uses the bundle to secure the application's HTTPS endpoint, **and** Keycloak uses it internally to trust the LDAPS connection to your domain controller.
 
 ## Multi-domain and Multi-CA Environments
 

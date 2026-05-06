@@ -10,7 +10,7 @@ Access Analyzer requires outbound internet access during installation and operat
 
 ## Outbound Endpoints (Internet)
 
-All outbound traffic uses HTTPS (port 443). The following endpoints must be reachable from the Access Analyzer server:
+All outbound traffic uses HTTPS (port 443). The Access Analyzer server must be able to reach the following endpoints:
 
 | Endpoint | Category | Purpose | When Required |
 | --- | --- | --- | --- |
@@ -30,7 +30,7 @@ All outbound traffic uses HTTPS (port 443). The following endpoints must be reac
 
 ## Internal Ports
 
-These ports are used within the Access Analyzer VM for service-to-service communication:
+Access Analyzer uses these ports within the VM for service-to-service communication:
 
 | Port | Protocol | Service | Description |
 | --- | --- | --- | --- |
@@ -64,7 +64,7 @@ Depending on the connectors you configure, the Access Analyzer VM must also have
 
 ## Proxy Configuration
 
-If outbound traffic is routed through a proxy, set the following environment variables before running the installer:
+If a proxy routes outbound traffic, set the following environment variables before running the installer:
 
 ```bash
 export HTTP_PROXY="http://<PROXY_HOST>:<PROXY_PORT>"
@@ -89,7 +89,7 @@ Configure exclusions manually before running the installer. The installer's pref
 
 ## Firewall Configuration
 
-Allow outbound HTTPS (port 443) to all endpoints listed in the [Outbound Endpoints](#outbound-endpoints-internet) table above. The examples below show how to configure this on common platforms.
+Allow outbound HTTPS (port 443) to all endpoints in the [Outbound Endpoints](#outbound-endpoints-internet) table. The following examples show how to configure this on common platforms.
 
 ### Azure (NSG Rule)
 
@@ -124,7 +124,7 @@ sudo ufw reload
 
 ### Verify Connectivity
 
-After configuring firewall rules, verify that the required endpoints are reachable from the Access Analyzer server:
+After configuring firewall rules, verify that the Access Analyzer server can reach the required endpoints:
 
 ```bash
 curl -I https://oci.pkg.keygen.sh

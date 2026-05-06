@@ -62,7 +62,7 @@ For full certificate format and preparation details, see [TLS Certificate Requir
 END HIDDEN -->
 
 :::note
-`--idp-alias` must match `[A-Za-z0-9._-]+` — letters, digits, hyphens, underscores, and dots only. Spaces are not allowed. The alias is shown as the label on the login button.
+`--idp-alias` must match `[A-Za-z0-9._-]+` — letters, digits, hyphens, underscores, and dots only. Spaces aren't allowed. The alias is shown as the label on the login button.
 :::
 
 <!-- HIDDEN: Entra ID OIDC, Entra ID SAML, Generic OIDC, and Generic SAML are post-GA. Uncomment when ready to publish.
@@ -209,7 +209,7 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
   --ldap-users-dn "OU=Users,DC=corp,DC=example,DC=com"
 ```
 
-As with the Active Directory section above, pass `--ca-bundle` with the root CA cert that signed the directory's LDAPS certificate when it is not in the OS trust store.
+As with the Active Directory section, pass `--ca-bundle` with the root CA cert that signed the directory's LDAPS certificate when it isn't in the OS trust store.
 
 The `ldap` type uses generic LDAP defaults: `uid` for the username attribute and `entryUUID` for the UUID attribute.
 
@@ -228,7 +228,7 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
 ```
 
 :::note
-`--configure-idp-only` does not require `--license-key`. It skips all infrastructure provisioning steps and runs only the IdP configuration phase.
+`--configure-idp-only` doesn't require `--license-key`. It skips all infrastructure provisioning steps and runs only the IdP configuration phase.
 :::
 
 ## Next steps
@@ -520,7 +520,7 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
   # ...same --idp-* flags used during the original install
 ```
 
-`--configure-idp-only` does not require `--license-key`.
+`--configure-idp-only` doesn't require `--license-key`.
 
 ### If retry fails with 409 Conflict
 
@@ -550,4 +550,4 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
   /opt/keycloak/bin/kcadm.sh delete components/"${LDAP_ID}" -r dspm
 ```
 
-Replace `<alias>` with the value that was passed to `--idp-alias` during the failed install. Then re-run `--configure-idp-only`.
+Replace `<alias>` with the value you passed to `--idp-alias` during the failed install. Then re-run `--configure-idp-only`.

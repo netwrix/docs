@@ -11,7 +11,7 @@ Access Analyzer supports federation with your organization's identity system so 
 Setting up an identity provider connection is a two-part process: first you configure the integration in your identity system, then you prepare user accounts inside Access Analyzer.
 
 :::note
-Before completing the steps below, confirm that the infrastructure and network requirements for your IdP type are in place. See [Network and Port Requirements](../install/system/network.md) and [TLS Certificate Requirements](../install/system/certificates.md).
+Before continuing, confirm that the infrastructure and network requirements for your IdP type are in place. See [Network and Port Requirements](../install/system/network.md) and [TLS Certificate Requirements](../install/system/certificates.md).
 :::
 
 ## Supported integration types
@@ -125,7 +125,7 @@ sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
 ```
 
 :::warning
-Do not change the bootstrap account email address — doing so causes authentication failures.
+Don't change the bootstrap account email address — doing so causes authentication failures.
 :::
 
 ### Pre-provision user accounts
@@ -139,7 +139,7 @@ The email address entered during pre-provisioning must exactly match the address
 1. Navigate to **Configuration** > **Users**.
 2. Click **Add User**.
 3. Enter the user's **Name** and **Email** address.
-4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer** (see [Roles](#roles) below).
+4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer** (see [Roles](#roles)).
 5. Click **Create User**.
 
 No password is required for pre-provisioned accounts. For details on managing users, see [Users](users.md).
@@ -149,12 +149,12 @@ No password is required for pre-provisioned accounts. For details on managing us
 <!-- SYNC: install/quickinstall.md "Roles" -->
 <!-- If you change this block, update the matching block in install/quickinstall.md -->
 
-Access Analyzer has three roles. The bootstrap `admin@dspm.local` account is seeded as User Admin, so it can pre-provision the rest of your users, including your first Administrator.
+Access Analyzer has three roles. The installer seeds the bootstrap `admin@dspm.local` account as User Admin, so it can pre-provision the rest of your users, including your first Administrator.
 
 | Role | Description |
 | --- | --- |
 | **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
-| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. Access Analyzer assigns this role to the bootstrap `admin@dspm.local` account. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
 <!-- END SYNC -->
@@ -163,7 +163,7 @@ Access Analyzer has three roles. The bootstrap `admin@dspm.local` account is see
 
 When identity provider integration is active, the Access Analyzer login page presents a credential form that validates against your directory.
 
-On first sign-in, Access Analyzer matches the email address from the IdP token or LDAP directory to the pre-provisioned account and permanently links the IdP identity to that account. On all subsequent sign-ins, the user's unique IdP identifier is used directly.
+On first sign-in, Access Analyzer matches the email address from the IdP token or LDAP directory to the pre-provisioned account and permanently links the IdP identity to that account. On all subsequent sign-ins, Access Analyzer uses the user's unique IdP identifier directly.
 
 Sessions are valid for up to 8 hours from sign-in and expire after 4 hours of inactivity.
 

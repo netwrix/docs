@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Uninstalling Access Analyzer
 
-To completely remove Access Analyzer from the system, run the K3s uninstall script provided by the installer.
+To completely remove Access Analyzer from the system, run the K3s uninstall script that the installer provides.
 
 :::warning
 Uninstalling removes all Kubernetes resources, databases, and application data. This action is irreversible. Back up any data you need before proceeding.
@@ -45,7 +45,7 @@ Confirm that K3s is no longer running:
 systemctl status k3s-dspm
 ```
 
-The service should not be found or should show as inactive.
+The service should either not exist or show as inactive.
 
 ## Reinstallation
 

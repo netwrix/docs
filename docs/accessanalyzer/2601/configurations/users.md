@@ -55,7 +55,7 @@ On first login, you will be prompted to enroll an authenticator app for MFA and 
 Keep the bootstrap account active as an emergency recovery account, but do not use it for routine user management. Create at least one named User Admin account during initial setup and use that account for ongoing administration.
 :::
 
-For the full first-login walkthrough, see [Quick Install — Step 5](/docs/accessanalyzer/2601/install/quickinstall#step-5-sign-in-as-the-bootstrap-user-admin-and-pre-provision-users).
+For the full first-login walkthrough, see [Quick Install — Step 5](/docs/accessanalyzer/2601/install/quickinstall#step-5-sign-in-with-entra-id-credentials).
 
 ## Recommended initial setup
 

@@ -60,7 +60,7 @@ If running on a hypervisor, configure **static memory allocation** (not dynamic/
 
 ### DNS
 
-The hostname you enter during installation must be a fully qualified domain name (FQDN) — it must contain at least one dot (for example, `analyzer.corp.example.com`). A plain hostname without a dot is rejected by the installer.
+The hostname you enter during installation must be a fully qualified domain name (FQDN) — it must contain at least one dot (for example, `analyzer.corp.example.com`). The installer rejects a plain hostname without a dot.
 
 The hostname must resolve to the VM's IP address from:
 
@@ -79,10 +79,10 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 | --- | --- | --- | --- |
 | **Generate self-signed** | Installer generates a certificate automatically — no CA involvement | Quick evaluations and proof-of-concept installs. Not for production — browsers will show a security warning | Nothing — installer handles it |
 | **Sign with AD Certificate Services** | Installer generates a CSR and submits it to your organization's AD CS to be signed by your internal Enterprise CA | Enterprise environments where AD CS is already deployed and the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
-| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS is not available | Three PEM files — see below |
+| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see below |
 
 :::note
-**AD/DC Root CA Bundle is always required regardless of which TLS option you choose.** Even if the installer generates your server certificate, it still needs a separate CA file to trust the connection to your domain controller. See [Active Directory information](#active-directory-information).
+**AD/DC Root CA Bundle is always required regardless of which TLS option you choose.** Even if the installer generates your server certificate, it still needs a separate CA file to trust the connection to your domain controller. See [Active Directory information](#bring-your-own-certificate-file-requirements).
 :::
 
 #### Bring your own certificate — file requirements
@@ -97,7 +97,7 @@ sudo mkdir -p /opt/dspm-tls
 | --- | --- |
 | `<hostname>.crt` | Server identity certificate in PEM format. The Subject Alternative Name (SAN) list must include the hostname **in lowercase** and the server's IP address. |
 | `<hostname>.key` | Private key paired with the certificate (PEM). The OS user running the installer must be able to read it — not just `root`. |
-| `ca-bundle.crt` | CA certificate(s) that trust the server certificate. If the CA that signed the server certificate and the CA that signed the domain controller's LDAPS certificate are different, concatenate both — see [Active Directory information](#active-directory-information). |
+| `ca-bundle.crt` | CA certificates that trust the server certificate. If the CA that signed the server certificate and the CA that signed the domain controller's LDAPS certificate are different, concatenate both — see [Active Directory information](#bring-your-own-certificate-file-requirements). |
 
 **SAN requirement:** The hostname in the SAN list must be lowercase. Browsers normalize hostnames to lowercase during TLS validation — a case mismatch causes HTTP 401 failures at sign-in. The SAN must also include the server IP address.
 
@@ -131,14 +131,14 @@ Gather these values from your directory team before starting. The installer wiza
 
 | Field | What It Is | Example |
 | --- | --- | --- |
-| LDAP URL | Address of your domain controller. Use port 636 (LDAPS, encrypted) — strongly recommended; port 389 (plain LDAP) is available if LDAPS is not configured | `ldaps://dc.corp.example.com:636` |
+| LDAP URL | Address of your domain controller. Use port 636 (LDAPS, encrypted) — strongly recommended; port 389 (plain LDAP) is available if LDAPS isn't configured | `ldaps://dc.corp.example.com:636` |
 | Bind DN | Full Distinguished Name of a read-only service account | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` |
 | Bind Password | Password for the service account | — |
 | Users Base DN | LDAP container where user accounts are stored | `CN=Users,DC=corp,DC=example,DC=com` |
 | Email Attribute | LDAP attribute storing the user's email address (usually `mail`) | `mail` |
 | AD/DC Root CA Bundle | Root CA certificate that signed the domain controller's LDAPS certificate. Required for all TLS options | `/opt/dspm-tls/ca-bundle.crt` |
 
-**Bind DN format:** The installer requires full Distinguished Name (DN) format — for example, `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com`. User Principal Name (UPN) format (`user@domain.com`) is not accepted. The DN must exactly match the account's record in Active Directory.
+**Bind DN format:** The installer requires full Distinguished Name (DN) format — for example, `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com`. The installer doesn't accept User Principal Name (UPN) format (`user@domain.com`). The DN must exactly match the account's record in Active Directory.
 
 **AD/DC Root CA Bundle:** To identify which CA signed the domain controller's LDAPS certificate, run this from the Access Analyzer server:
 
@@ -163,13 +163,13 @@ cat app-ca.crt ldaps-ca.crt > /opt/dspm-tls/ca-bundle.crt
 
 ### First admin account
 
-Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions the account automatically. That person signs in using their Active Directory password — no separate password is set.
+Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions the account automatically. That person signs in using their Active Directory password — no separate password is needed.
 
 The email address must match the `mail` attribute of the person's Active Directory account exactly, including case.
 
 ### License key
 
-Your Netwrix license key is required to download the installer and is the first prompt in the installation wizard. Obtain it from your Netwrix account representative before starting.
+You need your Netwrix license key to download the installer; it's the first prompt in the installation wizard. Obtain it from your Netwrix account representative before starting.
 
 ### Connector port requirements
 
@@ -261,7 +261,7 @@ rm -f "$TMP_FILE"
 dspm-installer --version
 ```
 
-If this returns a version number, the binary is ready. If it returns an error, the download failed — verify your license key is correct and that the server has outbound access to all required domains listed above.
+If this returns a version number, the binary is ready. If it returns an error, the download failed — verify your license key is correct and that the server has outbound access to all required domains listed earlier.
 
 ### Step 4: Run the installer
 
@@ -302,7 +302,7 @@ The **Example** column shows representative values for illustration — enter yo
 When the installer finishes, it displays a summary screen. Review it before proceeding — it includes the application URL, required actions, and useful paths.
 
 :::note
-This step can be skipped if you are signing in for the first time and only need to add users and assign roles. Return to complete the required actions before using `kubectl` or configuring firewall rules.
+You can skip this step if you're signing in for the first time and only need to add users and assign roles. Return to complete the required actions before using `kubectl` or configuring firewall rules.
 :::
 
 ```
@@ -356,7 +356,7 @@ sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
 ```
 
 :::warning
-Do not change the bootstrap account email address — doing so causes authentication failures.
+Don't change the bootstrap account email address — doing so causes authentication failures.
 :::
 
 ---
@@ -479,7 +479,7 @@ For certificate-specific issues, see [TLS Certificate Requirements — Troublesh
 | Sign-in silently fails with `PKIX path building failed` in Keycloak logs | CA bundle is missing the LDAPS DC's CA | Concatenate the DC's LDAPS CA into the bundle and re-run the installer |
 | Browser rejects the application URL with a SAN mismatch error | Hostname entered as an IP address, or SAN doesn't include the hostname in use | Use a DNS hostname and verify the cert SAN list |
 | Pods not starting after installation | Outbound HTTPS blocked to one or more required endpoints | Verify connectivity to all domains in [Required Domains](#required-domains) |
-| Installer rejects the hostname | Hostname does not contain a dot — not a valid FQDN | Use a fully qualified domain name such as `analyzer.corp.example.com` |
+| Installer rejects the hostname | Hostname doesn't contain a dot — not a valid FQDN | Use a fully qualified domain name such as `analyzer.corp.example.com` |
 | Installer rejects the Bind DN | UPN format (`user@domain.com`) entered instead of full DN | Use full Distinguished Name format: `CN=user,OU=ServiceAccounts,DC=corp,DC=example,DC=com` |
 
 **Useful diagnostic commands:**
