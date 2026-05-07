@@ -6,25 +6,25 @@ sidebar_position: 40
 
 # TLS Certificate Requirements
 
-Access Analyzer requires three certificate-related files at install time. This page describes the format of each file, the rules the installer enforces, and common gotchas when preparing them.
+Access Analyzer requires three certificate-related files at install time. This page describes the format of each file, the rules the installer enforces, and common pitfalls when preparing them.
 
-All three files must be in PEM format. They are passed to the installer as environment variables or CLI flags.
+All three files must be in PEM format. When you choose **Bring your own certificate** in the installer wizard, the wizard prompts you for the path to each file.
 
 ## Summary
 
-| File | Environment variable | Flag | Purpose |
-| --- | --- | --- | --- |
-| `<hostname>.crt` | `TLS_CERT_FILE` | `--tls-cert` | Application TLS certificate (what browsers validate) |
-| `<hostname>.key` | `TLS_KEY_FILE` | `--tls-key` | Private key paired with the certificate |
-| `ca-bundle.crt` | `TLS_CA_BUNDLE_FILE` | `--ca-bundle` | Trusted root CAs (application and LDAPS) |
+| File | Installer Prompt | Purpose |
+| --- | --- | --- |
+| `<hostname>.crt` | TLS Certificate File | Application TLS certificate (what browsers validate) |
+| `<hostname>.key` | TLS Private Key File | Private key paired with the certificate |
+| `ca-bundle.crt` | AD/DC Root CA Bundle Path | Trusted root CAs (application and LDAPS) |
 
 ## 1. Application TLS Certificate (`<hostname>.crt`)
 
 - **Format**: PEM (Base64 certificate block, starting with `-----BEGIN CERTIFICATE-----`).
 - **Issued by**: your internal certificate authority.
 - **Subject Alternative Names (SANs)**: must include **both** the server's hostname (for example, `accessanalyzer.example.com`) **and** the server IP address. Without a matching SAN, browsers reject the connection.
-- **Hostname in SANs must be lowercase.** Browsers normalize hostnames to lowercase during TLS validation, and Keycloak's OIDC issuer URL is derived from `DSPM_HOSTNAME`. If the cert SAN is mixed-case but the issuer URL is lowercased by the browser, sign-in fails with HTTP 401. Always generate certificates using a lowercase hostname in the SAN list.
-- **Where it's used**: served by Traefik for every browser request to the application URL.
+- **Hostname in SANs must be lowercase.** Browsers normalize hostnames to lowercase during TLS validation. If the cert SAN is mixed-case, sign-in fails with HTTP 401. Always generate certificates using a lowercase hostname in the SAN list.
+- **Where it's used**: Traefik serves it for every browser request to the application URL.
 
 ## 2. Application TLS Private Key (`<hostname>.key`)
 
@@ -42,7 +42,7 @@ All three files must be in PEM format. They are passed to the installer as envir
 
 - **Format**: a single PEM file containing one or more `-----BEGIN CERTIFICATE-----` blocks concatenated together.
 - **Must include**:
-  - The CA certificate that signed your **application TLS certificate** (item 1 above).
+  - The CA certificate that signed your **application TLS certificate** (item 1).
   - The CA certificate that signed your **domain controller's LDAPS certificate** — often a different CA in multi-domain or multi-CA environments.
 - **Concatenating multiple CAs** is a simple `cat` on Linux:
 
@@ -50,7 +50,7 @@ All three files must be in PEM format. They are passed to the installer as envir
   cat app-ca.crt ldaps-ca.crt > /opt/dspm-tls/ca-bundle.crt
   ```
 
-- **Why two purposes, one file**: the bundle is used by Traefik to secure the application's HTTPS endpoint **and** by Keycloak internally to trust the LDAPS connection to your domain controller.
+- **Why two purposes, one file**: Traefik uses the bundle to secure the application's HTTPS endpoint, **and** Keycloak uses it internally to trust the LDAPS connection to your domain controller.
 
 ## Multi-domain and Multi-CA Environments
 
@@ -91,6 +91,6 @@ sudo update-ca-certificates
 | --- | --- | --- |
 | Sign-in fails with HTTP 401 after correct credentials | SAN hostname has mixed case, but browser normalized to lowercase | Re-issue the certificate with lowercase hostname in the SAN list |
 | Installer exits with "Failed to read TLS private key" | Key file owned by `root`, installer runs as non-root user | `sudo chown <install-user> /opt/dspm-tls/<hostname>.key` |
-| Web UI loads, IdP login button appears, sign-in fails silently | CA bundle missing the LDAPS CA | Concatenate the DC's LDAPS CA into the bundle; re-run the installer with `--configure-idp-only` |
+| Web UI loads, IdP login button appears, sign-in fails silently | CA bundle missing the LDAPS CA | Concatenate the DC's LDAPS CA into the bundle and re-run the installer |
 | Browser shows "certificate not trusted" | Application CA not distributed to client machines | Distribute the CA to client machines via Group Policy or MDM |
 | "Certificate is valid for X but not for Y" in browser | Cert SAN doesn't include the hostname or IP being used | Re-issue with full SAN list including both DNS name and IP |

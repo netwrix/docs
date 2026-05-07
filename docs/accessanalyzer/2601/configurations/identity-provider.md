@@ -6,12 +6,12 @@ sidebar_position: 75
 
 # Identity Provider
 
-Access Analyzer supports federation with your organization's identity system so that users can sign in with their existing corporate credentials. Authentication is handled by your identity provider; roles and permissions are managed within Access Analyzer.
+Access Analyzer supports federation with your organization's identity system so that users can sign in with their existing corporate credentials. Your identity provider handles authentication; you manage roles and permissions within Access Analyzer.
 
 Setting up an identity provider connection is a two-part process: first you configure the integration in your identity system, then you prepare user accounts inside Access Analyzer.
 
 :::note
-Before completing the steps below, confirm that the infrastructure and network requirements for your IdP type are in place. See [Configure Identity Provider](../install/identity-provider.md) in the Installation section.
+Before continuing, confirm that the infrastructure and network requirements for your IdP type are in place. See [Network and Port Requirements](../install/system/network.md) and [TLS Certificate Requirements](../install/system/certificates.md).
 :::
 
 ## Supported integration types
@@ -86,7 +86,7 @@ No application registration or callback URL is required for LDAP. Prepare the fo
 
 **Service account:**
 
-Create a dedicated, read-only service account in your directory with read access to the user base DN. For Active Directory, the account needs **Read** permission on the user OU. No write access or special group membership is required.
+Create a dedicated, read-only service account in your directory with read access to the user base DN. For Active Directory, the account needs **Read** permission on the user OU. The account doesn't need write access or special group membership.
 
 **Network access:**
 
@@ -109,37 +109,28 @@ Collect the following values:
 
 ## Part 2: Prepare Access Analyzer
 
-### Sign in as the bootstrap User Admin
+### First sign-in
 
-<!-- SYNC: install/quickinstall.md "Sign in as the bootstrap User Admin" -->
-<!-- If you change this block, update the matching block in install/quickinstall.md -->
+The installer provisions the first administrator account automatically during setup — the person whose email you entered at the **First Admin Email** prompt can sign in immediately using their Active Directory password.
 
-The installer seeds a bootstrap account, `admin@dspm.local`, with the **User Admin** role. This account can create and manage other users but **cannot** access system configuration. Use it on first login to pre-provision your users, then sign out and sign back in as an Administrator for system-level work.
+Navigate to `https://<your-hostname>` and sign in with the first admin's AD credentials. From here, add additional users under **Configuration** > **Users**.
 
-1. Retrieve the bootstrap admin password from the Kubernetes secret:
+#### Breakglass account
 
-   ```bash
-   sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
-     -o jsonpath='{.data.password}' | base64 -d; echo
-   ```
+The installer also creates a bootstrap account, `admin@dspm.local`, as a recovery mechanism. If the first admin account becomes inaccessible, retrieve the bootstrap password to regain access:
 
-2. Open a browser and navigate to `https://<your-hostname>`.
+```bash
+sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
+  -o jsonpath='{.data.password}' | base64 -d; echo
+```
 
-3. Sign in with:
-   - **Username**: `admin@dspm.local`
-   - **Password**: (from step 1)
-
-4. Complete first-login setup:
-   - Scan the QR code with an authenticator app, enter a device name, submit the one-time code. **Save this enrollment** — you will need the same authenticator for any future bootstrap admin login.
-   - Enter a first name and last name. **Do not change the email address.**
-
-Proceed to [Pre-provision user accounts](#pre-provision-user-accounts) below.
-
-<!-- END SYNC -->
+:::warning
+Don't change the bootstrap account email address — doing so causes authentication failures.
+:::
 
 ### Pre-provision user accounts
 
-Before a user can sign in through the identity provider, their account must exist in Access Analyzer. The application authenticates them against your IdP successfully but denies access if no matching account has been created.
+Before a user can sign in through the identity provider, their account must exist in Access Analyzer. The application authenticates them against your IdP successfully but denies access if no matching account exists.
 
 :::note
 The email address entered during pre-provisioning must exactly match the address sent by the IdP or stored in the LDAP `mail` attribute, including case. A mismatch causes sign-in to fail.
@@ -148,10 +139,8 @@ The email address entered during pre-provisioning must exactly match the address
 1. Navigate to **Configuration** > **Users**.
 2. Click **Add User**.
 3. Enter the user's **Name** and **Email** address.
-4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer** (see [Roles](#roles) below).
+4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer** (see [Roles](#roles)).
 5. Click **Create User**.
-
-Assign at least one user the **Administrator** role — the bootstrap `admin@dspm.local` account is a User Admin only and cannot access system configuration. Assign at least one additional user the **User Admin** role if you want a non-bootstrap user to manage accounts going forward.
 
 No password is required for pre-provisioned accounts. For details on managing users, see [Users](users.md).
 
@@ -160,12 +149,12 @@ No password is required for pre-provisioned accounts. For details on managing us
 <!-- SYNC: install/quickinstall.md "Roles" -->
 <!-- If you change this block, update the matching block in install/quickinstall.md -->
 
-Access Analyzer has three roles. The bootstrap `admin@dspm.local` account is seeded as User Admin, so it can pre-provision the rest of your users, including your first Administrator.
+Access Analyzer has three roles. The installer seeds the bootstrap `admin@dspm.local` account as User Admin, so it can pre-provision the rest of your users, including your first Administrator.
 
 | Role | Description |
 | --- | --- |
 | **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
-| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. Access Analyzer assigns this role to the bootstrap `admin@dspm.local` account. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
 <!-- END SYNC -->
@@ -174,7 +163,7 @@ Access Analyzer has three roles. The bootstrap `admin@dspm.local` account is see
 
 When identity provider integration is active, the Access Analyzer login page presents a credential form that validates against your directory.
 
-On first sign-in, Access Analyzer matches the email address from the IdP token or LDAP directory to the pre-provisioned account and permanently links the IdP identity to that account. On all subsequent sign-ins, the user's unique IdP identifier is used directly.
+On first sign-in, Access Analyzer matches the email address from the IdP token or LDAP directory to the pre-provisioned account and permanently links the IdP identity to that account. On all subsequent sign-ins, Access Analyzer uses the user's unique IdP identifier directly.
 
 Sessions are valid for up to 8 hours from sign-in and expire after 4 hours of inactivity.
 
@@ -184,7 +173,7 @@ Sessions are valid for up to 8 hours from sign-in and expire after 4 hours of in
 | --- | --- |
 | **Pre-provisioning required** | Users must have an account in Access Analyzer before their first sign-in. |
 | **Email must match exactly** | The email entered during pre-provisioning must match what the IdP or LDAP directory sends, including case. |
-| **Roles managed in Access Analyzer** | Roles and permissions are set in Access Analyzer, not in your IdP or directory. |
+| **Roles managed in Access Analyzer** | You set roles and permissions in Access Analyzer, not in your IdP or directory. |
 | **Local accounts coexist** | The administrator account created at deployment remains a local account and continues to sign in with a password. |
 | **Password reset unavailable for federated accounts** | The **Reset Password** action in the Users page is available for local accounts only. Federated users manage their credentials through your IdP. |
-| **Name and email locked after first sign-in** | Once a user has signed in at least once, their name and email are set from the IdP token and can't be changed in the Access Analyzer UI. Update them in your IdP instead. |
+| **Name and email locked after first sign-in** | Once a user has signed in at least once, their name and email come from the IdP token; you can't change them in the Access Analyzer UI. Update them in your IdP instead. |
