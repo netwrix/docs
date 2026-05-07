@@ -1,7 +1,7 @@
 ---
 title: "HIBP Updater"
 description: "HIBP Updater"
-sidebar_position: 90
+sidebar_position: 20
 ---
 
 # HIBP Updater
@@ -27,17 +27,17 @@ If the HIBP database is copied to and stored local on the Domain Controllers:
 
 - The HIBP database takes up additional space on the machine where it is copied. (Aproximetly 13GB but subject to change)
 - If doing local the database needs to be on every Domain Controller in the same location as specified in the Rule.
-- A network connection doesn't come into play and possibly affect performance of checking the password against the HIBP database
+- A network connection doesn't come into play and possibly affect performance of checking the password against the HIBP database
 - The pending password candidate is checked against the archived hash file at the local level. If a password hash is matched, the pending password change is rejected.
 
 
 If the HIBP database is kept on a Network Share:
 
-- The database takes up space only on the Network Share, not on each Domain Controller. 
-- Requires a working network connection from the Domain Controllers to the Network Share with Read permissions to check:
+- The database takes up space only on the Network Share, not on each Domain Controller. 
+- Requires a working network connection from the Domain Controllers to the Network Share with Read permissions to check:
 - The pending password candidate from Domain Controller against the HIBP Database stored on the Network Share, this could affect LSASS/Password Change performance depending on the environment.
 - HIBP database space isn't required on the domain controllers but on one Network Location.
-- At the time of a password change, if the Network Share isn't available, the Domain Controller must assume the hash is okay and the possibility of a known compromised password being accepted.
+- At the time of a password change, if the Network Share isn't available, the Domain Controller must assume the hash is okay and the possibility of a known compromised password being accepted.
 
 ## Installation and Configuration
 
@@ -58,7 +58,7 @@ Only run this from one server.
 
 ### Passwords Hash Database
 
-Password Policy Enforcer uses the Passwords Hash database to check if users’ new and pending
+Password Policy Enforcer uses the Passwords Hash database to check if users' new and pending
 password (i.e. during a password reset) matches the hash of a compromised password from a data
 breach.
 
@@ -83,7 +83,7 @@ size of the hash file, this download takes up a significant amount of CPU and do
 
 - Update Type:
 
-    - Full Download – Download all data from the HIBP database hosted on the Netwrix website
+    - Full Download – Download all data from the HIBP database hosted on the Netwrix website
     - Incremental Update – Download updates from the HIBP database hosted on the Netwrix website
       instead of downloading the full HIBP database. This option is enabled after a full download of
       the HIBP database has completed.

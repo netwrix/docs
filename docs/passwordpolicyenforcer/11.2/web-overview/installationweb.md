@@ -1,7 +1,7 @@
 ---
 title: "Install Password Policy Enforcer Web"
 description: "Install Password Policy Enforcer Web"
-sidebar_position: 70
+sidebar_position: 10
 ---
 
 # Install Password Policy Enforcer Web
@@ -34,7 +34,7 @@ click **Next** if you accept all the terms.
 **Step 5 –** Click **Browse...** if you want to choose a different folder for the Password Policy
 Enforcer Web documentation and tools, then click **Next**.
 
-**Step 6 –** Select an **IIS Web Site** from the dropdown. Change the default Virtual Directory, if
+**Step 6 –** Select an **IIS Web Site** from the dropdown. Change the default Virtual Directory, if
 needed.
 
 :::note
@@ -53,8 +53,8 @@ is recommended.
 
 #### Before You Begin
 
-The HTML templates and associated images are overwritten during an upgrade. You must back up and
-customized HTML templates and images before upgrading. The HTML templates and images are installed
+The HTML templates and associated images are overwritten during an upgrade. You must back up and
+customized HTML templates and images before upgrading. The HTML templates and images are installed
 in the `\Inetpub\wwwroot\ppeweb\` folder by default.
 
 :::note
@@ -76,5 +76,5 @@ integration.
 **Step 1 –** Start the PPE Web Setup Wizard and follow the prompts. The Setup Wizard uninstalls the
 previous version. There is no need to manually uninstall previous versions.
 
-**Step 2 –** Restore any customized HTML templates and images after upgrading. Don't restore
+**Step 2 –** Restore any customized HTML templates and images after upgrading. Don't restore
 PPEWeb.dll from the backup as it belongs to the previous version.
