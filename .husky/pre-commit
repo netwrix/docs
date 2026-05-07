@@ -1,9 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 # check-anchors.sh requires bash 4+ (associative arrays). On macOS the system
-# bash is 3.2; prefer the Homebrew one if present.
-BASH_EXEC=bash
-if [[ ${BASH_VERSINFO[0]:-0} -lt 4 ]] && [[ -x /opt/homebrew/bin/bash ]]; then
-  BASH_EXEC=/opt/homebrew/bin/bash
-fi
+# bash is 3.2; prefer Homebrew bash if present.
+BASH_EXEC="${HOMEBREW_PREFIX:-/opt/homebrew}/bin/bash"
+[ ! -x "$BASH_EXEC" ] && BASH_EXEC=bash
 "$BASH_EXEC" "$REPO_ROOT/scripts/check-anchors.sh" --staged
