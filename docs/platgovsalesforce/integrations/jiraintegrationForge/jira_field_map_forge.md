@@ -40,7 +40,7 @@ Ensure the fields are created in Salesforce.
 1. Open **Salesforce Setup** > **Object Manager** > **Change Request**
 2. Open **Fields & Relationships**
 
-If your fields are not in the list, use the **New** button to add them.
+If your fields aren't in the list, use the **New** button to add them.
 
 For this example, the **Strongpoint Version** and **SF Version Number** fields have been added.
 
@@ -58,14 +58,14 @@ Add the fields to the Page Layouts.
 
 1. Open **Salesforce Setup** > **Object Manager** > **Change Request**.
 2. Open **Page Layouts**.
-3. Select your layout. If your fields are not in the layout, add them. For this example, the
+3. Select your layout. If your fields aren't in the layout, add them. For this example, the
    **Strongpoint Version** and **SF Version Number** fields have been added to the **Customizations
    Layout**.
 
     ![Add to layouts](/images/platgovsalesforce/integrations/field_map_layouts.webp)
 
 4. Open **Setup** > **Lightning App Builder**.
-5. Open your Record Page. This example shows the **Customizations Record** page. Make sure your
+5. Open your Record Page. This example shows the **Customizations Record** page. Ensure your
    fields are in the record page and set to visible.
 
     ![Check record page for fields and visibility](/images/platgovsalesforce/integrations/field_map_record.webp)
@@ -80,7 +80,7 @@ In Jira, update the details for the fields. This example sets the **Strongpoint 
 ### Access Mapping Configuration
 
 :::note
-Make sure your custom fields have values before you start the mapping. The Jira API names
+Ensure your custom fields have values before you start the mapping. The Jira API names
 are in the format _customfield\_#####_. You need to know the value to locate the Jira API name in
 the list.
 :::
@@ -104,7 +104,7 @@ The Jira API names are required to create the mapping record.
 ### Create Mapping Record
 
 1. Open the App Launcher.
-2. Navigate to **CR CustomFields Mapping**. It is added as a tab on the navigation bar. You can
+2. Navigate to **CR CustomFields Mapping**. The app adds it as a tab on the navigation bar. You can
    click the down arrow on the tab and add it to your navigation bar.
 
     ![Launch CR CustomFields Mapping](/images/platgovsalesforce/integrations/field_map_launcher.webp)
@@ -123,8 +123,7 @@ The Jira API names are required to create the mapping record.
    Verify Field Creation section for details. **Strongpoint_Version__c** is used in this example.
 7. Click **Save** or **Save & New** if you have additional mappings.
 
-The mapping is now complete. In the next update, the information is populated in the fields and
-shows in the Netwrix Change Request.
+The mapping is now complete. In the next update, the fields are populated and the information appears in the Netwrix Change Request.
 
 ![Field Map complete](/images/platgovsalesforce/integrations/field_map_complete.webp)
 

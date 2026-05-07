@@ -7,7 +7,7 @@ sidebar_position: 90
 # Access Review Assistant
 
 The Access Review Assistant creates a comprehensive display of permissions and profiles for a
-selected **Object**, **User**, or **Profile / PermissionSet**. The results can be exported to Excel.
+selected **Object**, **User**, or **Profile / PermissionSet**. You can export the results to Excel.
 The Access Review Assistant feature is available with the Intelligent Change Enablement and
 Enterprise Compliance [licenses](/docs/platgovsalesforce/installingstrongpoint/features_by_license_type.md).
 
@@ -24,7 +24,7 @@ There are three Access Assistance search types:
 ## Search By Object
 
 1. Select **Tools** > **Access Review Assistant** from the Netwrix Dashboard page. Click the
-   expansion indicator u to expand the **Access Assistance** panel. Make sure **Search By Object**
+   expansion indicator u to expand the **Access Assistance** panel. Ensure **Search By Object**
    is selected.
 
     ![Open the Access Review Assistant](/images/platgovsalesforce/tools/access_review_assistant.webp)
@@ -52,7 +52,7 @@ There are three Access Assistance search types:
 ## Search By User
 
 1. Select **Tools** > **Access Review Assistant** from the Netwrix Dashboard page. Click the
-   expansion indicator u to expand the **Access Assistance** panel. Make sure **Search By User** is
+   expansion indicator u to expand the **Access Assistance** panel. Ensure **Search By User** is
    selected.
 
     ![Search By User](/images/platgovsalesforce/tools/access_assist_user.webp)
@@ -70,7 +70,7 @@ There are three Access Assistance search types:
 ## Search By Profile / Permission Set
 
 1. Select **Tools** > **Access Review Assistant** from the Netwrix Dashboard page. Click the
-   expansion indicator u to expand the **Access Assistance** panel. Make sure **Search By Profile /
+   expansion indicator u to expand the **Access Assistance** panel. Ensure **Search By Profile /
    Permission Set** is selected.
 
     ![Search by Profile / Permission Set](/images/platgovsalesforce/tools/access_assist_profile.webp)
