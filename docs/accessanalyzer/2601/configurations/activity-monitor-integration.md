@@ -129,7 +129,7 @@ To confirm AA2601 is receiving events:
 2. Navigate to the resource or host that NAM is monitoring.
 3. Review the activity data for recent file events.
 
-If no events appear after a few minutes, see [Troubleshooting](#launches-the-installation-wizard).
+If no events appear after a few minutes, see [Troubleshooting](#troubleshooting).
 
 ---
 
