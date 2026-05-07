@@ -78,8 +78,8 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 | Option | What It Does | Best For | What to Prepare |
 | --- | --- | --- | --- |
 | **Generate self-signed** | Installer generates a certificate automatically — no CA involvement | Quick evaluations and proof-of-concept installs. Not for production — browsers will show a security warning | Nothing — installer handles it |
-| **Sign with AD Certificate Services** | Installer generates a CSR and submits it to your organization's AD CS to be signed by your internal Enterprise CA | Enterprise environments where AD CS is already deployed and the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
-| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see below |
+| **Sign with AD Certificate Services** | Installer generates a CSR and submits it to your organization's AD CS, where your internal Enterprise CA signs it | Enterprise environments where AD CS is already deployed and the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
+| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see [file requirements](#bring-your-own-certificate-file-requirements) |
 
 :::note
 **AD/DC Root CA Bundle is always required regardless of which TLS option you choose.** Even if the installer generates your server certificate, it still needs a separate CA file to trust the connection to your domain controller. See [Active Directory information](#bring-your-own-certificate-file-requirements).
@@ -163,7 +163,7 @@ cat app-ca.crt ldaps-ca.crt > /opt/dspm-tls/ca-bundle.crt
 
 ### First admin account
 
-Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions the account automatically. That person signs in using their Active Directory password — no separate password is needed.
+Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions the account automatically. That person signs in using their Active Directory password and doesn't need a separate one.
 
 The email address must match the `mail` attribute of the person's Active Directory account exactly, including case.
 
@@ -261,7 +261,7 @@ rm -f "$TMP_FILE"
 dspm-installer --version
 ```
 
-If this returns a version number, the binary is ready. If it returns an error, the download failed — verify your license key is correct and that the server has outbound access to all required domains listed earlier.
+If this returns a version number, the binary is ready. If it returns an error, the download failed — verify your license key is correct and that the server has outbound access to all [required domains](#required-domains).
 
 ### Step 4: Run the installer
 
