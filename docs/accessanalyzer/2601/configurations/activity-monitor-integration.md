@@ -142,8 +142,8 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 | Setting | Default | Range | Description |
 | --- | --- | --- | --- |
 | `activitymonitor_tcp_port` | 4504 | 1 – 65535 | TCP port the listener binds to. Must match the port configured in NAM agent settings. |
-| `activitymonitor_max_connections` | 100 | 10 – 1000 | Maximum simultaneous agent connections. Connections beyond this limit are rejected at the TCP layer. |
-| `activitymonitor_connection_timeout` | 900 | 5 – 3600 | Seconds of inactivity before an idle agent connection is dropped. Set this to be comfortably longer than your NAM polling interval. |
+| `activitymonitor_max_connections` | 100 | 10 – 1000 | Maximum simultaneous agent connections. AA2601 rejects connections beyond this limit at the TCP layer. |
+| `activitymonitor_connection_timeout` | 900 | 5 – 3600 | Seconds of inactivity before AA2601 drops an idle agent connection. Set this to be comfortably longer than your NAM polling interval. |
 
 ### Performance and Throughput Settings
 
@@ -151,7 +151,7 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 | --- | --- | --- | --- |
 | `activitymonitor_reactor_threads` | 0 (auto) | 0 – 32 | Async input/output threads for handling connections. `0` automatically uses one thread per CPU core — correct for almost all deployments. |
 | `activitymonitor_buffer_threads` | 8 | 1 – 16 | Writer threads that drain the in-memory event buffer to ClickHouse. More threads help sustain high write rates. |
-| `activitymonitor_buffer_max_size` | 10,000 | 1,000 – 500,000 | Maximum events held in memory at once. When full, new arrivals are held at the TCP layer (backpressure to agents) rather than dropped. |
+| `activitymonitor_buffer_max_size` | 10,000 | 1,000 – 500,000 | Maximum events held in memory at once. When full, AA2601 holds new arrivals at the TCP layer (backpressure to agents) rather than dropping them. |
 | `activitymonitor_batch_size` | 100 | 10 – 1,000 | Events grouped per internal processing batch. |
 | `activitymonitor_batch_interval_seconds` | 10 | 1 – 60 | Maximum seconds between batch flushes to ClickHouse. The primary control for **data freshness** — lower values mean events appear in reports sooner, at the cost of more frequent small writes. |
 | `activitymonitor_clickhouse_batch_size` | 10,000 | 1,000 – 100,000 | Events per ClickHouse write operation. Larger batches are more efficient but increase memory usage during the write. |
@@ -161,9 +161,9 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 
 | Setting | Default | Range | Description |
 | --- | --- | --- | --- |
-| `activitymonitor_enrollment_first_message_timeout_seconds` | 10 | 5 – 60 | Seconds AA2601 waits for the first message after a new connection is established. AA2601 closes connections that send nothing within this window. |
-| `activitymonitor_enrollment_ban_duration_seconds` | 10 | 5 – 300 | Seconds a source IP is blocked after a protocol violation (invalid enrollment code, malformed JSON, or unexpected message format). |
-| `activitymonitor_max_message_size` | 16,777,216 (16 MB) | 65,536 – 67,108,864 | Maximum byte size of a single message from a NAM agent. If exceeded without a line delimiter, AA2601 drops the connection. |
+| `activitymonitor_enrollment_first_message_timeout_seconds` | 10 | 5 – 60 | Seconds AA2601 waits for the first message after the agent establishes a new connection. AA2601 closes connections that send nothing within this window. |
+| `activitymonitor_enrollment_ban_duration_seconds` | 10 | 5 – 300 | Seconds AA2601 blocks a source IP after a protocol violation (invalid enrollment code, malformed JSON, or unexpected message format). |
+| `activitymonitor_max_message_size` | 16,777,216 (16 MB) | 65,536 – 67,108,864 | Maximum byte size of a single message from a NAM agent. If a message exceeds this size without a line delimiter, AA2601 drops the connection. |
 
 ### Shutdown Settings
 
@@ -254,7 +254,7 @@ The listener retries startup up to 5 times with exponential backoff (starting at
 
 ### An agent connected but isn't sending data
 
-- Verify the agent was successfully enrolled. AA2601 silently rejects data connections from agents that have not completed enrollment because their SPKI hash isn't in the allowlist. Re-enroll using a new token.
+- Verify the agent enrolled successfully. AA2601 silently rejects data connections from agents that have not completed enrollment because their SPKI hash isn't in the allowlist. Re-enroll using a new token.
 - Verify `activitymonitor_connection_timeout` isn't shorter than the agent's event polling interval. If agents idle longer than the timeout, AA2601 drops them between batches and they must reconnect.
 
 ### Events aren't appearing in reports
