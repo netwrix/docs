@@ -85,7 +85,7 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 **AD/DC Root CA Bundle is always required regardless of which TLS option you choose.** Even if the installer generates your server certificate, it still needs a separate CA file to trust the connection to your domain controller. See [Active Directory information](#bring-your-own-certificate-file-requirements).
 :::
 
-#### Bring your own certificate — file requirements
+#### Bring your own certificate — file requirements {#bring-your-own-certificate-file-requirements}
 
 If you selected **Bring your own certificate**, prepare the following three files and place them in `/opt/dspm-tls/` on the server before running the installer:
 
