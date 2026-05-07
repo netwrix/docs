@@ -135,7 +135,7 @@ If no events appear after a few minutes, see [Troubleshooting](#troubleshooting)
 
 ## Application Settings Reference
 
-All Activity Monitor settings are at **Configuration > Application Settings > Activity Monitor**. Settings take effect immediately when you save them — no restart required. Each setting shows its current value, default, and an **Overridden** badge when changed from the default. Use the reset (↺) button to restore an individual setting to its default.
+All Activity Monitor settings are at **Configuration > Application Settings > Activity Monitor**. Settings take effect immediately when you save them — no restart required. Each setting shows its current value and default. An **Overridden** badge appears when the value differs from the default. Use the reset (↺) button to restore an individual setting to its default.
 
 ### Connection Settings
 
@@ -213,7 +213,7 @@ Start with defaults. Only adjust if you observe specific symptoms.
 **If you have many agents connecting simultaneously:**
 - Raise `activitymonitor_max_connections` to at least the number of expected concurrent agents, with 20–30% headroom.
 
-**Don't lower `activitymonitor_connection_timeout` below your NAM polling interval.** If NAM sends events every 5 minutes and the timeout is less than 300 seconds, agents will be dropped between batches and forced to reconnect constantly. The default of 900 seconds provides safe headroom for most polling configurations.
+**Don't lower `activitymonitor_connection_timeout` below your NAM polling interval.** If NAM sends events every 5 minutes and the timeout is less than 300 seconds, AA2601 drops agents between batches and forces them to reconnect constantly. The default of 900 seconds provides safe headroom for most polling configurations.
 
 ### Kubernetes Shutdown Considerations
 
@@ -231,7 +231,7 @@ To temporarily disable ingestion without removing agent configurations:
 The listener stops accepting new connections. Existing agents will see their connections close and queue events locally per NAM's own buffering. When you re-enable ingestion, agents reconnect and resume streaming.
 
 :::note
-Disabling and re-enabling doesn't cause data loss for events that occurred while disabled, as long as NAM agents have sufficient local buffering.
+Disabling and re-enabling doesn't cause data loss for events that occurred while ingestion was disabled, as long as NAM agents have sufficient local buffering.
 :::
 
 ---
@@ -242,7 +242,7 @@ Disabling and re-enabling doesn't cause data loss for events that occurred while
 
 - Verify `enable_activitymonitor_ingestion` is `true` in **Configuration > Application Settings > Feature Flags**.
 - Verify the TLS certificate environment variables (`SYSLOG_TLS_CERT_PATH`, `SYSLOG_TLS_KEY_PATH`) are set and the files are readable. The application logs report a specific error if a certificate is missing, unreadable, or expired.
-- Verify the configured port isn't already bound by another process.
+- Verify no other process is already using the configured port.
 
 The listener retries startup up to 5 times with exponential backoff (starting at 0.5s, capping at 30s). Check logs for `"Failed to start NAM Listener"` messages with retry counts.
 

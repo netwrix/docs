@@ -51,6 +51,6 @@ customers. So if you reach 100 customers, you should set up a second Application
 
 :::note
 Individual variables - like the number of passwords per user - will affect
-performance. Especially for MSP systems, you must monitor performance continuously and add
+performance. Especially for Managed Service Provider (MSP) systems, you must monitor performance continuously and add
 resources on demand.
 :::
