@@ -233,7 +233,7 @@ jobs:
       - name: Fix heading anchors
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
         run: |
-          bash scripts/vale-autofix.sh --anchors-only origin/dev
+          bash scripts/vale-autofix.sh --anchors-only origin/dev /tmp/changed-files.txt
 
       - name: Check anchor links
         id: anchor-check
