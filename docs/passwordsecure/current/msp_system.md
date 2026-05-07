@@ -32,7 +32,7 @@ If your customer's count is growing over time, you should add every 200 users a 
 The following system requirements are the minimum system requirements and should manage around 10
 customers with 20 users each.
 
-- Windows Server 2016 (or newer)
+- Windows Server 2019 (or newer)
 - 4 CPU’s
 - 16 GB RAM
 - min. 50 GB HDD
