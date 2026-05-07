@@ -29,5 +29,5 @@ Don't run multiple versions of the Password Policy Server in a domain for an ext
 The Password Policy Client installer detects existing installations and upgrades them to version 11.2. Follow the [Install the Password Policy Client](/docs/passwordpolicyenforcer/11.2/installation/installationclient.md) instructions to upgrade an existing installation. You don't need to uninstall the old version first.
 
 :::warning
-Don't use any new features while running older Password Policy Enforcer components that may not fully support the new features. Netwrix develops and tests all PPE components together as a single version. You will have the best experience when using all the components from one version together.
+Don't use any new features while running older Password Policy Enforcer components that may not fully support the new features. Netwrix develops and tests all PPE components together as a single version. For the best experience, use all the components from one version together.
 :::
