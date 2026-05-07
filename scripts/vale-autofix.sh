@@ -108,6 +108,8 @@ update_heading_anchors() {
   local old_headings=()
   local new_headings=()
   local in_hunk=0
+  local in_old_fence=0  # inside a code fence in the removed (-) stream
+  local in_new_fence=0  # inside a code fence in the added (+) stream
   local anchor_updates=0
 
   while IFS= read -r line; do
@@ -122,6 +124,8 @@ update_heading_anchors() {
       old_headings=()
       new_headings=()
       in_hunk=0
+      in_old_fence=0
+      in_new_fence=0
       continue
     fi
 
@@ -134,6 +138,8 @@ update_heading_anchors() {
       old_headings=()
       new_headings=()
       in_hunk=1
+      in_old_fence=0
+      in_new_fence=0
       continue
     fi
 
@@ -141,13 +147,26 @@ update_heading_anchors() {
       continue
     fi
 
-    # Collect removed headings (lines starting with - then #)
-    if [[ "$line" =~ ^-#{1,6}\ + ]]; then
+    # Track code fences so bash comments and other # lines inside code blocks
+    # are not mistaken for markdown headings.
+    # Context lines (space prefix) affect both streams; +/- lines affect only theirs.
+    local _pfx="${line:0:1}" _content="${line:1}"
+    if [[ "$_content" =~ ^(\`{3,}|~{3,}) ]]; then
+      case "$_pfx" in
+        ' ') in_old_fence=$(( 1 - in_old_fence )); in_new_fence=$(( 1 - in_new_fence )) ;;
+        '-') in_old_fence=$(( 1 - in_old_fence )) ;;
+        '+') in_new_fence=$(( 1 - in_new_fence )) ;;
+      esac
+      continue
+    fi
+
+    # Collect removed headings (lines starting with - then #), skip if inside a code fence
+    if [ "$in_old_fence" -eq 0 ] && [[ "$line" =~ ^-#{1,6}\ + ]]; then
       old_headings+=("${line:1}")
     fi
 
-    # Collect added headings (lines starting with + then #)
-    if [[ "$line" =~ ^\+#{1,6}\ + ]]; then
+    # Collect added headings (lines starting with + then #), skip if inside a code fence
+    if [ "$in_new_fence" -eq 0 ] && [[ "$line" =~ ^\+#{1,6}\ + ]]; then
       new_headings+=("${line:1}")
     fi
   done <<< "$diff_output"
