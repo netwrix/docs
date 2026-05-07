@@ -2,6 +2,7 @@
 title: "Configure Identity Provider"
 description: "Deployment steps for connecting an Identity Provider to Access Analyzer using the installer"
 sidebar_position: 50
+draft: true
 ---
 
 # Configure Identity Provider
@@ -16,9 +17,9 @@ This article is for the team performing the Access Analyzer deployment. It cover
 - [Installer Command Reference](install-commands.md) — full catalog of every installer flag and environment variable
 - [TLS Certificate Requirements](system/certificates.md) — certificate formats, SAN rules, CA bundle preparation
 
-Access Analyzer supports connecting an identity provider (IdP) so users authenticate through your organization's directory rather than with local credentials. IdP federation is **optional** — if you omit `--idp-type` at install time, Access Analyzer is deployed without Keycloak and uses local accounts only.
+Access Analyzer supports connecting an identity provider (IdP) so users authenticate through your organization's directory rather than with local credentials. IdP federation is **optional** — if you omit `--idp-type` at install time, Access Analyzer deploys without Keycloak and uses local accounts only.
 
-When `--idp-type` is configured, the installer automatically:
+When you configure `--idp-type`, the installer automatically:
 
 1. Deploys Keycloak (v26.5.3) as part of the cluster
 2. Waits for Keycloak to become healthy
@@ -39,7 +40,7 @@ Confirm the following before running the installer with IdP flags:
 `--hostname` is required and must:
 
 - Be a real DNS hostname (not an IP address — IPs will not work because the browser TLS handshake requires the hostname in the certificate's SAN).
-- Be lowercase, and match lowercase in the certificate SAN list. Keycloak's OIDC issuer URL is derived from this value; a case mismatch between SAN and browser-normalized hostname produces HTTP 401 at sign-in.
+- Be lowercase, and match lowercase in the certificate SAN list. Keycloak derives its OIDC issuer URL from this value; a case mismatch between SAN and browser-normalized hostname produces HTTP 401 at sign-in.
 - Resolve the same from client browsers and in-cluster pods. The installer configures the in-cluster rewrite automatically; the customer is responsible for the public DNS record or `/etc/hosts` entry that client browsers use.
 - Avoid the `.local` and `.localhost` TLDs — both break in-cluster DNS resolution and silently break OIDC login flows.
 
@@ -61,7 +62,7 @@ For full certificate format and preparation details, see [TLS Certificate Requir
 END HIDDEN -->
 
 :::note
-`--idp-alias` must match `[A-Za-z0-9._-]+` — letters, digits, hyphens, underscores, and dots only. Spaces are not allowed. The alias is shown as the label on the login button.
+`--idp-alias` must match `[A-Za-z0-9._-]+` — letters, digits, hyphens, underscores, and dots only. Spaces aren't allowed. The alias appears as the label on the login button.
 :::
 
 <!-- HIDDEN: Entra ID OIDC, Entra ID SAML, Generic OIDC, and Generic SAML are post-GA. Uncomment when ready to publish.
@@ -208,7 +209,7 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
   --ldap-users-dn "OU=Users,DC=corp,DC=example,DC=com"
 ```
 
-As with the Active Directory section above, pass `--ca-bundle` with the root CA cert that signed the directory's LDAPS certificate when it is not in the OS trust store.
+As with the Active Directory section, pass `--ca-bundle` with the root CA cert that signed the directory's LDAPS certificate when it isn't in the OS trust store.
 
 The `ldap` type uses generic LDAP defaults: `uid` for the username attribute and `entryUUID` for the UUID attribute.
 
@@ -227,7 +228,7 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
 ```
 
 :::note
-`--configure-idp-only` does not require `--license-key`. It skips all infrastructure provisioning steps and runs only the IdP configuration phase.
+`--configure-idp-only` doesn't require `--license-key`. It skips all infrastructure provisioning steps and runs only the IdP configuration phase.
 :::
 
 ## Next steps
@@ -252,7 +253,7 @@ kubectl exec -n access-analyzer statefulset/keycloak -- bash -c '
 ```
 
 :::note
-The bootstrap admin credentials are read from environment variables already present in the pod. Don't pass them as command-line arguments — they would appear in Kubernetes audit logs.
+Keycloak reads the bootstrap admin credentials from environment variables already present in the pod. Don't pass them as command-line arguments — they would appear in Kubernetes audit logs.
 :::
 
 <!-- HIDDEN: Manual OIDC/SAML configuration sections are post-GA. Uncomment when ready to publish.
@@ -519,7 +520,7 @@ curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-insta
   # ...same --idp-* flags used during the original install
 ```
 
-`--configure-idp-only` does not require `--license-key`.
+`--configure-idp-only` doesn't require `--license-key`.
 
 ### If retry fails with 409 Conflict
 
@@ -549,4 +550,4 @@ kubectl exec -n access-analyzer statefulset/keycloak -- \
   /opt/keycloak/bin/kcadm.sh delete components/"${LDAP_ID}" -r dspm
 ```
 
-Replace `<alias>` with the value that was passed to `--idp-alias` during the failed install. Then re-run `--configure-idp-only`.
+Replace `<alias>` with the value you passed to `--idp-alias` during the failed install. Then re-run `--configure-idp-only`.

@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # Hardware and System Requirements
 
-Access Analyzer is deployed on a single Linux virtual machine. The installer runs preflight checks to validate that your system meets these requirements before installation begins.
+Access Analyzer runs on a single Linux virtual machine. The installer runs preflight checks to validate that your system meets these requirements before installation begins.
 
 ## Deployment Sizing
 
-The installer enforces absolute minimums via preflight checks — installation is blocked if the system falls below these thresholds. Use the **Production Recommended** specifications for customer-facing or enterprise deployments.
+The installer enforces absolute minimums via preflight checks — the installer blocks installation if the system falls below these thresholds. Use the **Production Recommended** specifications for customer-facing or enterprise deployments.
 
 **Absolute installer minimums (enforced by preflight):** 6 vCPUs, 24 GB RAM, 20 GB free disk.
 
@@ -20,9 +20,6 @@ The installer enforces absolute minimums via preflight checks — installation i
 | **Medium** | 16 cores | 48 GB | 1 TB SSD | Up to ~5,000 assets |
 | **Large** | 32 cores | 64 GB | 1 TB SSD | 5,000+ assets / enterprise |
 
-:::note
-The `--size` flag scales memory thresholds by the specified multiplier. For example, `--size 2` doubles the minimum and recommended memory requirements enforced by the preflight checks.
-:::
 
 ## Disk Space Requirements
 
@@ -36,7 +33,7 @@ The installer validates free space on the following paths:
 | `/var/log` | 5 GB | System and application logs |
 | `/etc` | 1 GB | Configuration files |
 
-Write access is also verified for `/var`, `/tmp`, and `/etc`.
+The installer also verifies write access for `/var`, `/tmp`, and `/etc`.
 
 ## Operating System
 
@@ -48,7 +45,7 @@ Write access is also verified for `/var`, `/tmp`, and `/etc`.
 
 **Compatible distributions (engineer-validated):** Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are compatible with the installer. Ubuntu is Debian-based, so Debian stable releases are also supported.
 
-**Not supported:** AIX and other non-Linux operating systems are not compatible. The installer requires a 64-bit Linux distribution with kernel capabilities including cgroups v1/v2, Linux namespaces, and overlay filesystem support.
+**Not supported:** AIX and other non-Linux operating systems aren't compatible. The installer requires a 64-bit Linux distribution with kernel capabilities including cgroups v1/v2, Linux namespaces, and overlay filesystem support.
 
 ## Kernel and Container Runtime Requirements
 
