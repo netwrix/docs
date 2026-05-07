@@ -84,8 +84,17 @@ _process_heading_pairs() {
 
 update_heading_anchors() {
   local base_ref="${1:-}"
+  local files_list="${2:-}"
   local diff_output
-  if [ -n "$base_ref" ]; then
+
+  if [ -n "$files_list" ] && [ -f "$files_list" ]; then
+    local files=()
+    mapfile -t files < "$files_list"
+    if [ ${#files[@]} -eq 0 ]; then
+      return 0
+    fi
+    diff_output=$(git diff "${base_ref}" -- "${files[@]}" 2>/dev/null || true)
+  elif [ -n "$base_ref" ]; then
     diff_output=$(git diff "${base_ref}" -- '*.md' 2>/dev/null || true)
   else
     diff_output=$(git diff HEAD -- '*.md' 2>/dev/null || true)
@@ -164,7 +173,7 @@ case "${1:-}" in
     return 0 2>/dev/null || exit 0
     ;;
   --anchors-only)
-    update_heading_anchors "${2:-}"
+    update_heading_anchors "${2:-}" "${3:-}"
     exit 0
     ;;
 esac
