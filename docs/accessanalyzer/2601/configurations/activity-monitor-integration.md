@@ -8,7 +8,7 @@ sidebar_position: 85
 
 ## Overview
 
-Access Analyzer integrates with **Netwrix Activity Monitor (NAM)** to ingest real-time file system, SharePoint Online, and Microsoft 365 Copilot activity events. Once configured, these events populate the activity reports in AA2601 and power anomaly detection and sensitive data activity tracking.
+Access Analyzer integrates with **Netwrix Activity Monitor (NAM)** to ingest real-time file system, SharePoint Online, and Microsoft 365 Copilot activity events. After you configure the integration, these events populate the activity reports in AA2601 and power anomaly detection and sensitive data activity tracking.
 
 The integration works through a built-in TCP listener that NAM agents connect to over a secure, mutually authenticated TLS 1.3 channel. Events stream continuously from NAM agents into AA2601's analytics database (ClickHouse), where they become available in reports.
 
@@ -250,7 +250,7 @@ The listener retries startup up to 5 times with exponential backoff (starting at
 
 - Verify network connectivity from the agent host to AA2601 on the configured port (default: 4504).
 - Verify the agent is configured with the correct hostname and port. The port in NAM agent configuration must match `activitymonitor_tcp_port`.
-- Verify the agent has a valid TLS client certificate. Connections without a client certificate are rejected and the source IP is temporarily banned.
+- Verify the agent has a valid TLS client certificate. AA2601 rejects connections without a client certificate and temporarily bans the source IP.
 
 ### An agent connected but isn't sending data
 
@@ -274,7 +274,7 @@ Bans are short (default: 10 seconds) and reset on pod restart. For persistent is
 
 ### Enrolled agents list has stale entries
 
-Agents that have been decommissioned or reinstalled may leave stale entries in the allowlist. These are harmless — the old SPKI hash will never match a new agent's certificate. Remove them using the API:
+Decommissioned or reinstalled agents may leave stale entries in the allowlist. These are harmless — the old SPKI hash will never match a new agent's certificate. Remove them using the API:
 
 ```
 DELETE /api/v1/nam-listener/agents/:spki_hash
