@@ -6,32 +6,6 @@ sidebar_position: 70
 
 # Command Line Interface
 
-## Silent Installation
-
-Replace _version_ with the complete version and build number of the **msi** file. For example,
-11.2.0.148.
-
-Install only PPE Server: msiexec /i Netwrix_PPE_Server_**version**_x64.msi ADDLOCAL=FeatureServerPPE
-/q
-
-Install only Console: msiexec /i Netwrix_PPE_Server_**version**_x64.msi ADDLOCAL=FeatureConsole /q
-
-Install only Mailer Server: msiexec /i Netwrix_PPE_Server_**version**_x64.msi
-ADDLOCAL=FeaturePPEMailerServer /q
-
-Install all 3 components:
-
-msiexec /i Netwrix_PPE_Server_**version**_x64.msi
-ADDLOCAL=FeaturePPEMailerServer,FeatureConsole,FeatureServerPPE /q
-
-By default Console only installed: msiexec /i Netwrix_PPE_Server_**version**_x64.msi /q
-
-Uninstall all: msiexec /uninstall Netwrix_PPE_Server_**version**_x64.msi /q
-
-Uninstall only particular feature: msiexec /i _path_to_your_msi_file.msi_ REMOVE=_FeatureName_ /qn
-
-If a reboot wasn't done, add **/forcerestart** at the end
-
 ## Mailer
 
 You can run the Password Policy Enforcer Mailer from the command line to deliver email immediately,
