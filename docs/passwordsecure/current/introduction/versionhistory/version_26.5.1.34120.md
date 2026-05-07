@@ -18,4 +18,4 @@ sidebar_position: 8
 ## Fixed
 ### Windows application
 - Fixed an issue that caused heavy performance issues when using the Windows application.
-- Fixed an issue causing the permissions of Active Directory profiles and Entra ID profiles not to load using the Windows application.
+- Fixed an issue causing the permissions of Active Directory profiles and Entra ID profiles not to load in the Windows application.
