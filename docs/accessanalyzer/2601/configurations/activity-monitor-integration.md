@@ -8,7 +8,7 @@ sidebar_position: 85
 
 ## Overview
 
-Access Analyzer integrates with **Netwrix Activity Monitor (NAM)** to ingest real-time file system, SharePoint Online, and Microsoft 365 Copilot activity events. Once you configure the integration, these events populate the activity reports in AA2601 and power anomaly detection and sensitive data activity tracking.
+Access Analyzer integrates with **Netwrix Activity Monitor (NAM)** to ingest real-time file system, SharePoint Online, and Microsoft 365 Copilot activity events. After you configure the integration, these events populate the activity reports in AA2601 and power anomaly detection and sensitive data activity tracking.
 
 The integration works through a built-in TCP listener that NAM agents connect to over a secure, mutually authenticated TLS 1.3 channel. Events stream continuously from NAM agents into AA2601's analytics database (ClickHouse), where they become available in reports.
 
