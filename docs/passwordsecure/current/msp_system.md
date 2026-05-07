@@ -43,12 +43,11 @@ If your customer count grows over time, for every additional 200 users add at le
 - 4 GB RAM
 
 RECOMMENDED:, you should use an application server to handle a max of about 100
-customers. So if you reach 100 customers, you should set up a second Application Server or use some
-sort of load balancing between the application servers.
+customers. So if you reach 100 customers, you should set up a second Application Server or use load balancing between the application servers.
 
-**CAUTION:** Add an additional Web-Endpoint (including load balancing) for every additional 1000 users.
+**CAUTION:** Add a Web-Endpoint (including load balancing) for every additional 1000 users.
 
-**CAUTION:** Add an additional Application Server (including load balancing) for every additional 100 customers or 1000 users.
+**CAUTION:** Add an Application Server (including load balancing) for every additional 100 customers or 1000 users.
 
 :::note
 Individual variables - like the number of passwords per user - will affect
