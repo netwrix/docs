@@ -31,16 +31,16 @@ health details.
 The Settings tab has the following configurable settings:
 
 - Time to Retain Reports – Time period to retain reports. Reports with a created date older than the
-  retain time will be removed at this interval. By default, this is set to 1 Month. Use the
-  drop-down menu to select another interval, which includes 1 Day, 1 Week, 1 Month, 3 Months, and 6
+  retain time are removed at this interval. By default, this is set to 1 Month. Use the
+  dropdown to select another interval, which includes 1 Day, 1 Week, 1 Month, 3 Months, and 6
   Months as options.
 - Time Interval to Run Report Cleanup – The interval to run the Report Cleanup job. At the interval
-  specified, any reports older than the retention period will be cleaned up. By default, this is set
-  to 1 Day. Use the drop-down menu to select another interval, which includes 1 Day, 1 Week, and 1
+  specified, any reports older than the retention period are cleaned up. By default, this is set
+  to 1 Day. Use the dropdown to select another interval, which includes 1 Day, 1 Week, and 1
   Month as options.
 - Time During the day to run the Cleanup – The time during the day to run the Cleanup script,
-  happening at the currently configured interval. By default, this is set to midnight, 12:00 AM. Use
-  the clock menu to select the desired time.
+  happening at the configured interval. By default, this is set to midnight, 12:00 AM. Use
+  the clock menu to select the time you want.
 
 **Health Tab**
 
@@ -49,7 +49,7 @@ The Health tab displays the following information:
 ![Health tab of the Report Maintenance job details page](/images/threatprevention/7.5/reportingmodule/configuration/systemsettings/reporthealth.webp)
 
 - Size of Reports Directory – Displays the size of the directory where reports are stored
-- Next Run Time – Date timestamp for the next time the job will run
+- Next Run Time – Date timestamp for the next scheduled job run
 
 ## Database Maintenance Job Details Page
 
@@ -63,28 +63,28 @@ health details.
 The settings tab has the following configurable settings:
 
 - Time to Retain Events – Time period to retain events not related to any threats. Threats with the
-  "False Positive" status will be removed at this interval. By default, this is set to 1 Week. Use
-  the drop-down menu to select another interval, which includes 1 Week, 1 Month, 3 Months, and 6
+  "False Positive" status are removed at this interval. By default, this is set to 1 Week. Use
+  the dropdown to select another interval, which includes 1 Week, 1 Month, 3 Months, and 6
   Months as options.
 - Time to Retain Threat Events – Time period to retain events related to any threats. The primary
-  event for each threat will still be retained. By default, this is set to 1 Month. Use the
-  drop-down menu to select another interval, which includes 1 Week, 1 Month, 3 Months, 6 Months, and
+  event for each threat is still retained. By default, this is set to 1 Month. Use the
+  dropdown to select another interval, which includes 1 Week, 1 Month, 3 Months, 6 Months, and
   1 Year as options.
-- Time to Retain Open Threats – Time period to retain threats with the "Open" status. By default,
-  this is set to 6 Months. Use the drop-down menu to select another interval, which includes 1
+- Time to Retain Open Threats – Time period to retain threats with the "Open" status. By default,
+  this is set to 6 Months. Use the dropdown to select another interval, which includes 1
   Month, 3 Months, 6 Months, 1 Year, 5 Years, and Forever as options.
-- Time to Retain Closed Threats – Time period to retain threats with the "Closed" status. By
-  default, this is set to 6 Months. Use the drop-down menu to select another interval, which
+- Time to Retain Closed Threats – Time period to retain threats with the "Closed" status. By
+  default, this is set to 6 Months. Use the dropdown to select another interval, which
   includes 1 Month, 3 Months, 6 Months, 1 Year, 5 Years, and Forever as options.
 - Time to Retain Audit Logs – Time period to retain audit log data. By default, this is set to 6
-  Months. Use the drop-down menu to select another interval, which includes 1 Month, 3 Months, 6
+  Months. Use the dropdown to select another interval, which includes 1 Month, 3 Months, 6
   Months, 1 Year, 5 Years, and Forever as options.
 - Time to Retain Policy Data – Time period to retain expired policy data. By default, this is set to
-  6 Months. Use the drop-down menu to select another interval, which includes 1 Month, 3 Months, 6
+  6 Months. Use the dropdown to select another interval, which includes 1 Month, 3 Months, 6
   Months, 1 Year, 5 Years, and Forever as options.
 
-This job is essential for maintaining a healthy and efficient Threat Manager database. You can
-choose to store certain data types for longer periods of time. Longer periods will require larger
+This job is essential for maintaining a healthy and efficient Threat Manager database. You can
+choose to store certain data types for longer periods of time. Longer periods require larger
 disk storage space and disk access speeds.
 
 **Health Tab**
@@ -96,4 +96,4 @@ The Health tab displays the following information:
 - Database Size – Displays the size of the database file
 - Events in queue – Displays the number of events in queue for potential threat detection purposes
 - Last Heartbeat – Date timestamp for the last time the agent connection was checked
-- Next Run Time – Date timestamp for the next time the job will run
+- Next Run Time – Date timestamp for the next scheduled job run

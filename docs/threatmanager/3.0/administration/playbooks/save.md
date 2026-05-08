@@ -6,10 +6,9 @@ sidebar_position: 20
 
 # Save a Playbook Step to My Steps
 
-Sometimes it may be convenient to save a step so that it can be added to multiple playbooks without
-recreating the step.
+Save a step to reuse it across multiple playbooks without recreating it each time.
 
-Follow the steps to save a step to the My Steps list.
+ save a step to the My Steps list.
 
 ![playbookstep](/images/threatmanager/3.0/administration/playbooks/playbookstep.webp)
 

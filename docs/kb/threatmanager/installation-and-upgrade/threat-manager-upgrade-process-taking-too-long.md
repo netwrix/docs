@@ -19,13 +19,13 @@ knowledge_article_id: kA04u000000wnkiCAA
 
 ## Question
 
-The Netwrix Threat Manager upgrade process is stuck, should I interrupt it and run it again?
+The Netwrix Threat Manager upgrade process is stuck. Is it safe to interrupt and run it again?
 
 ## Answer
 
-Depending on the size and version of the PostgreSQL database, the upgrade process might take longer since it may include the database conversion process. The database size and version directly affect the upgrade time and may lead to the 24-hour long upgrade process. This behavior is expected − allow the upgrade process to finish.
+Depending on the size and version of the PostgreSQL database, the upgrade process can take longer because it may include the database conversion process. The database size and version directly affect the upgrade time and can result in an upgrade that takes up to 24 hours. This behavior is expected — allow the upgrade process to finish.
 
-> **IMPORTANT:** It is possible to skip the database conversion to avoid the downtime − you can deploy a new Netwrix Threat Manager server with a new PostgreSQL database. Refer to the following article for additional information: Installation ⸱ v2.8.
+> **IMPORTANT:** You can skip the database conversion to avoid the downtime − you can deploy a new Netwrix Threat Manager server with a new PostgreSQL database. See the following article for additional information: Installation ⸱ v2.8.
 
 ## Related articles
 

@@ -6,15 +6,15 @@ sidebar_position: 90
 
 # Netwrix Integrations Page
 
-The Netwrix Integrations page within the Integrations interface lists the products for which the
+The Netwrix Integrations page within the Integrations interface lists the products for which the
 application is configured to connect.
 
 ![Integrations interface on the Netwrix Integration page](/images/threatmanager/3.0/administration/configuration/integrations/page_3.webp)
 
-Integrations with other Netwrix products enables you to run Investigations on the event data within
+Integrations with other Netwrix products let you run investigations on the event data within
 the connected database. When you add a Netwrixintegration, the selection for Default Data Source
 identifies which database is the default source for Investigation reports. You can change it by
-selecting a different database from the drop-down menu. The table provides the following
+selecting a different database from the dropdown. The table provides the following
 information:
 
 - Name – The name of the integration, as supplied when it was added
@@ -24,32 +24,32 @@ information:
 - Description – Integration description, as supplied when it was added
 
 To view integration details or make modifications, select an integration from the list or under
-Netwrix Integrations in the navigation pane.
+Netwrix Integrations in the navigation pane.
 
 ## Add a Netwrix Integration
 
 :::note
-Prior to adding a Netwrix Integration, you must first configure a Credential Profile with
+Before adding a Netwrix Integration, configure a Credential Profile with
 credentials properly provisioned for connecting to the database. See the
 [Credential Profile Page](/docs/threatmanager/3.1/administration/configuration/integrations/credentialprofile.md) topic for additional information on creating a
 profile.
 :::
 
 
-Follow the steps below to add a Netwrix Integration.
+To add a Netwrix Integration:
 
 **Step 1 –** On the Integrations interface, click Add New Integration in the navigation pane. The
 Add New Integration window opens.
 
 ![Add New Integrations window with the Netwrix Integration type selected](/images/threatmanager/3.0/administration/configuration/integrations/netwrixintegrations.webp)
 
-**Step 2 –** In the Type drop-down list, select Netwrix Integration.
+**Step 2 –** In the Type dropdown, select Netwrix Integration.
 
 **Step 3 –** Enter the following information:
 
 - Name – Provide a unique, descriptive name of the integration
 - Description – Provide an Integration description
-- Database Host – Enter the database server hostname (NetBIOS name, FQDN, or IP address) with the
+- Database Host – Enter the database server hostname (NetBIOS name, FQDN, or IP address) with the
   instance name or non-standard port, if applicable, in one of the following formats:
 
     - No named instance, use `[SQLHostName]`, for example `NT-SQL02`
@@ -59,19 +59,19 @@ Add New Integration window opens.
     - Named instance with non-standard port, use `[SQLHostName]\[SQLInstanceName],[PortNumber]`, for
       example `NT-SQL02\Netwrix,72`
 
-- Credential Profile – Select the Credential Profile by name from the drop-down menu. This was
+- Credential Profile – Select the Credential Profile by name from the dropdown. This was
   pre-created in the Credential Profiles page.
 - Configuration Catalog Name – Enter the name of the configuration database. By default, this is set
   to the name of the Threat Prevention database, `NVMonitorConfig`.
 - Catalog Name – Enter the name of the database. By default, this is set to the name of the Threat
   Prevention database, `NVMonitorData`.
-- Integration Service URL – This should not be modified. It is the URL for the service endpoint, by
+- Integration Service URL – Don't modify this value. It is the URL for the service endpoint, by
   default `http://localhost:55558`.
-- Show Deleted Policies – When this option is checked, deleted policies will show on the Policy Sync
+- Show Deleted Policies – When this option is checked, deleted policies appear on the Policy Sync
   tab of this Netwrix integration.
 
-**Step 4 –** Click **Test Connection** to ensure connection to the database. This will take a
-moment. Then a message will appear in the upper right corner of the console indicating a successful
+**Step 4 –** Click **Test Connection** to ensure connection to the database. This takes a
+moment. A message appears in the upper right corner of the console indicating a successful
 or failed connection. If successful, move on to the next step. If failed, recheck your entries for
 error and repeat this step until a successful connection is established.
 
@@ -87,13 +87,13 @@ database and the archive database, if one has been configured.
 
 ## Netwrix Integration Details
 
-Follow the steps to view the details of a Netwrix product integration.
+To view the details of a Netwrix product integration:
 
 **Step 6 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
 
 **Step 7 –** On the Integrations interface, click **Netwrix Integrations** in the navigation pane to
-view a list of the already integrated Netwrix products.
+view a list of the already integrated Netwrix products.
 
 **Step 8 –** Select a product from the table or the navigation pane to view the integration details.
 
@@ -126,11 +126,11 @@ The tab provides the following settings:
 - Credential Profile – Displays the Credential Profile by name
 - Configuration Catalog Name – Displays the name of the configuration database .
 - Catalog Name – Displays the name of the database
-- Integration Service URL – Displays the URL for the service endpoint. This should not be modified.
-- Show Deleted Policies – When this option is checked, deleted policies will show on the Policy Sync
+- Integration Service URL – Displays the URL for the service endpoint. Don't modify this value.
+- Show Deleted Policies – When this option is checked, deleted policies appear on the Policy Sync
   tab of this Netwrix integration.
-- Test Connection – Click **Test Connection** to ensure connection to the database. This will take a
-  moment. Then a message will appear in the upper right corner of the console indicating a
+- Test Connection – Click **Test Connection** to ensure connection to the database. This takes a
+  moment. A message appears in the upper right corner of the console indicating a
   successful or failed connection.
 
 The Save button is enabled when any settings are modified. Click it to commit the changes before
@@ -156,13 +156,12 @@ The tab provides the following information:
 
 ## Edit Integration Name and Description
 
-Follow the steps to edit a Netwrix Integration name and/or description.
+To edit a Netwrix Integration name and/or description:
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
 
-**Step 2 –** On the Integrations interface, click Netwrix Integrations and select the desired
-Netwrix Integration.
+**Step 2 –** On the Integrations interface, click Netwrix Integrations and select the integration you want to modify.
 
 **Step 3 –** Click the **Edit** button in the upper right corner of the name and description box.
 
@@ -174,27 +173,26 @@ Netwrix Integration.
 
 **Step 6 –** Click the **Save** button.
 
-The Netwrix Integration name and/or description have been modified.
+Threat Manager updates the Netwrix Integration name and/or description.
 
 ## Modify Netwrix Integration Configuration
 
-Follow the steps to modify the configuration for the selected integration.
+To modify the configuration for the selected integration:
 
 ![Netwrix Integration Details on the Configuration tab](/images/threatmanager/3.0/administration/configuration/integrations/configurationtab.webp)
 
-**Step 1 –** On the Integrations interface, click Netwrix Integrations and select the desired
-Netwrix Integration.
+**Step 1 –** On the Integrations interface, click Netwrix Integrations and select the integration you want to modify.
 
-**Step 2 –** The Configuration tab opens, where you can make the desired modification.
+**Step 2 –** The Configuration tab opens, where you can make your modifications.
 
 **Step 3 –** To modify the Database Host, modify the value by typing in the textbox.
 
 **Step 4 –** To modify the Credential Profile, select the Credential Profile by name from the
-drop-down menu. This was pre-created in the Credential Profiles page.
+dropdown. This was pre-created in the Credential Profiles page.
 
 :::note
 If you modify the Credential Profile for a domain, click **Test Connection** to ensure
-connection to the database. This will take a moment. Then a message will appear in the upper right
+connection to the database. This takes a moment. A message appears in the upper right
 corner of the console indicating a successful or failed connection.
 :::
 
@@ -204,7 +202,7 @@ corner of the console indicating a successful or failed connection.
 **Step 6 –** For the Catalog Name, modify the value by typing in the textbox.
 
 :::tip
-Remember, the Integration Service URL value should not be modified.
+Do not modify the Integration Service URL value.
 :::
 
 
@@ -213,4 +211,4 @@ Remember, the Integration Service URL value should not be modified.
 **Step 8 –** The Save button is enabled when any settings are modified. Click it to commit the
 changes before leaving the page.
 
-The changes to the Configuration have been committed.
+Threat Manager saves the changes to the Configuration.

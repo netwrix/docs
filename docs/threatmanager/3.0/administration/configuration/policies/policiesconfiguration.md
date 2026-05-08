@@ -38,17 +38,17 @@ The Configuration tab contains the following configuration options:
 
 - Enabled – This option is set to ON or enabled by default. Click the checkmark to set to OFF or
   disabled.
-- Token Username – The username that is used by the Honeytoken deployment process and threat
-  detection. This is a static username that will be used for all deployments for this policy.
+- Token Username – The username used by the Honeytoken deployment process and threat
+  detection. This is a static username used for all deployments for this policy.
 
     :::note
-    The token username can be changed post-deployment, however tokens under the previous
-    username will no longer bedetected.
+    The token username can be changed post-deployment, however Threat Manager no longer detects tokens under the previous
+    username.
     :::
 
 
     :::info
-    Do not change the username of a Honeytoken after a successful deployment of
+    Don't change the username of a Honeytoken after a successful deployment of
     the token to a host.
     :::
 
@@ -58,31 +58,31 @@ The Configuration tab contains the following configuration options:
   random numbers.
 
     :::note
-    If the Honeytoken script cannot reach the Threat Manager URL, the Honeytoken will
-    still be deployed but Threat Manager will be unaware of the Honeytoken deployment status.
+    If the Honeytoken script can't reach the Threat Manager URL, the Honeytoken still
+    deploys but Threat Manager is unaware of the Honeytoken deployment status.
     :::
 
 
 - Threat Manager URL – Specify the Threat Manager address to be used by the Honeytoken script to
   communicate with Threat Manager. Honeytoken hosts must be able to communicate via HTTP REST to
-  this address in order to report Honeytoken deployment status
+  this address to report Honeytoken deployment status
 - Token Domain – The domain to be used for the deployed Honeytoken. This can be selected from
   existing, known domains or a custom domain can be specified.
 - Select Credential Profile – Lists Credential Profiles added on the
   [Integrations Interface](/docs/threatmanager/3.0/administration/configuration/integrations/overview.md). Select a Credential Profile from the
-  drop-down list.
+  dropdown list.
 - Select Preferrred Action Service – Select the Action Service to be used for Honeytoken deployment.
-- Token Time to Reset Password – All Honeytokens for a policy will share common password. This value
-  specifies how frequently a new password will be generated for the Honeytoken policy. Select a
-  value using the drop-down menu from the following options:
+- Token Time to Reset Password – All Honeytokens for a policy share a common password. This value
+  specifies how frequently Threat Manager generates a new password for the Honeytoken policy. Select a
+  value using the dropdown menu from the following options:
     - 1 Day
     - 7 Days
     - 14 Days
     - 30 Days
     - 90 Days
 - Test Policy Button– Click the Test Policy button to run an LDAP query for the token username
-  specified. This generates an event that will be detected by an Active Directory monitoring agent
-  and sent to Threat Manager. If the event is received by Threat Manager within three minutes, the
+  specified. This generates an event that an Active Directory monitoring agent detects
+  and sends to Threat Manager. If the event is received by Threat Manager within three minutes, the
   button displays Test Succeeded.
 
     :::note
@@ -104,13 +104,12 @@ properly configured to capture LDAP events for the Honeytoken policy.
 :::
 
 
-- Copy LDAP Filter Button– Clicking the Copy LDAP Filter button will automatically copy to the
-  clipboard the exact string that is required for Activity Monitor or Threat Prevention to configure
-  the LDAP events for this Honeytoken. The copied string should then be pasted into the LDAP filter
+- Copy LDAP Filter Button– Click **Copy LDAP Filter** to copy the exact string required for Activity Monitor or Threat Prevention to configure
+  the LDAP events for this Honeytoken. Paste the copied string into the LDAP filter
   policy settings for Activity Monitor or Threat Prevention.
 
     :::note
-    This is a required configuration in order to detect LDAP-based Honeytoken threats.
+    This is a required configuration to detect LDAP-based Honeytoken threats.
     :::
 
 
@@ -126,8 +125,8 @@ following information:
 - Host – The host where the policy was deployed to create Honeytokens
 - Token Name – The name of the Honeytoken user
 - Token Status:
-    - Active – The token is currently deployed to the host and has an active process
-    - Decommissioned – The token is no longer valid and does not have an active process
+    - Active – The token is  deployed to the host and has an active process
+    - Decommissioned – The token is no longer valid and doesn't have an active process
 - Process – The process ID of the process launched for the Honeytoken
 - Last Deployed – When the policy was last run and deployed a new token on the host
 - Created – The creation date and timestamp for the Honeytoken
@@ -135,7 +134,7 @@ following information:
 ## Deployment Tab
 
 The Deployment tab provides a variety of methods to deploy Honeytokens to computers. Threat Manager
-Action Service can be used to deploy Honeytokens to remote computers, or a PowerShell script can be
+Action Service lets you deploy Honeytokens to remote computers, or a PowerShell script can be
 downloaded to allow either an external mechanism to deploy Honeytokens or for manual deployment of
 the Honeytokens.
 
@@ -144,12 +143,12 @@ the Honeytokens.
 - PowerShell Script Deployment:
 
     - Download – Click the Download button to download the Honeytoken deployment script. Running
-      this script will deploy a Honeytoken and report the status of the deployment to Threat
+      this script deploys a Honeytoken and reports the status of the deployment to Threat
       Manager.
 
         :::note
         The token's current username, domain, and password are automatically injected into
-        the script as a backup in case the Threat Manager address cannot be accessed by the
+        the script as a backup in case the Threat Manager address can't be accessed by the
         Honeytoken script.
         :::
 
@@ -162,8 +161,8 @@ the Honeytokens.
     - Deploy Now Button– Click Deploy Now to open the Deployment Status Window and immediately
       deploy to all hosts specified in the Hosts list, using the Honeytoken policy preferred Action
       Service.
-    - Schedule – Select a schedule to automatically enable automatic deployment of Honeytokens. Once
-      a schedule is designated, deployment will be queued immediately and will then follow the
+    - Schedule – Select a schedule to automatically deploy Honeytokens. Once
+      a schedule is designated, deployment queues immediately and then follows the
       specified schedule. The default schedule is None.
         - Hourly
         - Daily
@@ -172,18 +171,18 @@ the Honeytokens.
 
 ## Deployment Status Window
 
-When the Deploy Now button is clicked, Threat Manager will immediately deploy the Honeytoken to all
-hosts specified in the Hosts lists, utilizing the preferred action service selected for the
+When you click Deploy Now, Threat Manager immediately deploys the Honeytoken to all
+hosts specified in the Hosts list, using the preferred action service selected for the
 Honeytoken policy on the Configuration tab.
 
 ![honeytokeninprogress](/images/threatmanager/3.0/administration/configuration/policies/honeytokeninprogress.webp)
 
-Closing this window will not cancel the deployment.
+Closing this window does not cancel the deployment.
 
 ![honeytokendeploymentwindowcomplete](/images/threatmanager/3.0/administration/configuration/policies/honeytokendeploymentwindowcomplete.webp)
 
-The window will update when the deployment is complete. The hosts and statuses will be listed,
-viewable by clicking the caret. Deployment status for each host may also be viewed on the Policy
+The window updates when the deployment is complete. The hosts and statuses are listed,
+viewable by clicking the caret. Deployment status for each host can also be viewed on the Policy
 History tab. When finished, click **Close** or the gray x to exit the window.
 
 ## History Tab

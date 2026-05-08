@@ -6,15 +6,15 @@ sidebar_position: 10
 
 # Upgrade Threat Manager from 2.6/2.7 To 2.8
 
-Follow the steps to upgrade Threat Manager 2.6/2.7 to 2.8 or to apply a hotfix to Threat Manager.
+ upgrade Threat Manager 2.6/2.7 to 2.8 or to apply a hotfix to Threat Manager.
 
 **Step 1 –** Install the new version of PostreSQL.
 
 ![postgresql](/images/threatmanager/3.0/install/postgresql.webp)
 
 :::note
-The migration of PostgreSQL 10 to 14 will require a migration of theThreat Manager
-database. You may proceed through the migration process in the following menu.
+The migration of PostgreSQL 10 to 14 requires a migration of the Threat Manager
+database. Proceed through the migration process in the following menu.
 :::
 
 
@@ -31,7 +31,7 @@ database. You may proceed through the migration process in the following menu.
     - Compression Level – Select the compression level to be applied to the data. It contains the
       following options:
 
-        - None – Compression will not be applied to the data
+        - None – No compression is applied to the data
         - Low – Lower level of compression requires more disk space to perform the migration, but
           takes faster to complete
         - Medium – Medium level of compression balances disk space usage and migration speed
@@ -39,7 +39,7 @@ database. You may proceed through the migration process in the following menu.
           increases the time required for completion
 
         :::note
-        The compression algorithm option is used on the exported data. It does not affect
+        The compression algorithm option is used on the exported data. It doesn't affect
         either the old or the new database.
         :::
 
@@ -54,12 +54,12 @@ database. You may proceed through the migration process in the following menu.
         - Recommended – Number of threads equal to half of the available processor cores
         - Performant – Number of threads equal to the number of processor cores
 
-    - Reduce Source Databaze Size – This action will lead to the migration dropping the indexes in
-      the old databases, prior to performing the migration
+    - Reduce Source Databaze Size – This action drops the indexes in
+      the old databases before performing the migration
 
         :::note
-        This setting is not recommended as it will leave the old database in a broken
-        state, but the data is preserved. Some users may need this option if they do not have enough
+        This setting isn't recommended as it leaves the old database in a broken
+        state, but the data is preserved. Some users may need this option if they don't have enough
         free disk space to perform the migration.
         :::
 
@@ -67,7 +67,7 @@ database. You may proceed through the migration process in the following menu.
         If the migration fails, it can be re-run from the installer.
 
         This option is also reveals a **Delete Source Database** checkbox. After exporting the data
-        from the old database, the old database will be deleted.
+        from the old database, Threat Manager deletes the old database.
 
         :::warning
         The use of **Delete Source Database** is an extreme option that highly not
@@ -76,14 +76,13 @@ database. You may proceed through the migration process in the following menu.
         :::
 
 
-        If the migration fails, user will need to manually import the data into the new database
-        from the export file.
+        If the migration fails, manually import the data into the new database from the export file.
 
 **Step 3 –** Click **Validate** to proceed. Then, click **Next** in the bottom right corner.
 
 :::note
 The migration of PostgreSQL 10 to 14 may require significant disk space to perform safely.
-The disk space required for the backup does not need to be on the same disk as the database itself.
+The disk space required for the backup doesn't need to be on the same disk as the database itself.
 :::
 
 
@@ -96,7 +95,7 @@ should see the existing PostgreSQL database and prompt to migrate.
 
 ![postgresqlwarning](/images/threatmanager/3.0/install/postgresqlwarning.webp)
 
-**Step 6 –** Click **OK**, click **Next**, then click **Test**. You will see the following message.
+**Step 6 –** Click **OK**, click **Next**, then click **Test**. The following message appears.
 
 ![readyformigration](/images/threatmanager/3.0/install/readyformigration.webp)
 
@@ -104,14 +103,13 @@ should see the existing PostgreSQL database and prompt to migrate.
 
 :::note
 Migrating a large database can take about 24 hours or more. During this time Netwrix
-Threat Manager will not work. Installing Netwrix Threat Manager 2.8 with a new database, and
-directing event streams to that server after the installation is complete, will eliminate downtime.
+Threat Manager does not work. Installing Netwrix Threat Manager 2.8 with a new database and directing event streams to that server after the installation is complete eliminates downtime.
 :::
 
 
 ## Clean up Dependencies
 
-After installation it is necessary to clean up dependencies associated with the previous version of
+After installation you must clean up dependencies associated with the previous version of
 the Threat Manager. To do this, uninstall the following dependencies:
 
 - PGSQL10
@@ -125,18 +123,18 @@ topics for additional information:
 - [Optionally Install the Action Service on Additional Servers](/docs/threatmanager/3.0/install/actionservice.md)
 - [Secure the Threat Manager Console](/docs/threatmanager/3.0/install/secure.md)
 
-Clear the cache of the browser that will be used to view the Threat Manager Console prior to
+Clear the cache of the browser you use to view the Threat Manager Console before
 launching Threat Manager.
 
 ## Check for Deprecated App Tokens
 
-If upgrading from a version prior to 2.8, the app tokens may have been deprecated. This can be
+If upgrading from a version before 2.8, the app tokens may have been deprecated. This can be
 identified by navigating to the Integrations page in Threat Manager. If an app token is deprecated,
-it is necessary to create a new one for the application to use.
+you must create a new one for the application to use.
 
 ### Identify and Update App Tokens
 
-Follow the steps to identify and create new app tokens.
+ identify and create new app tokens.
 
 **Step 1 –** In the Threat Manager Console, navigate to the Integrations page.
 
@@ -145,8 +143,7 @@ tokens that have been deprecated during the upgrade. A deprecated app token can 
 presence of a red warning triangle.
 
 :::note
-Non-local action services will need their app tokens updated. Local action services will
-be automatically updated.
+Non-local action services require their app tokens to be updated. Local action services are updated automatically.
 :::
 
 

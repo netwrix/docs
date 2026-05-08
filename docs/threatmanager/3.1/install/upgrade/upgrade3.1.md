@@ -14,9 +14,9 @@ The upgrade process from Threat Manager 3.0 to 3.1 involves the following steps:
 
 ## Upgrade PostgreSQL
 
-To upgrade PostgreSQL from 14.13.x to 14.20.x:
+To upgrade from PostgreSQL 14.13.x to 14.20.x:
 
-**Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window appears.
+**Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window opens.
 
 ![Netwrix Threat Manager Setup window](/images/threatmanager/3.1/install/upgrade/setup-launcher.webp)
 
@@ -28,7 +28,7 @@ To upgrade PostgreSQL from 14.13.x to 14.20.x:
 
 ![Netwrix PostgreSQL Setup wizard on the EULA page](/images/threatmanager/3.1/install/upgrade/postgres-eula.webp)
 
-**Step 4 –** Read the End User License Agreement, select the checkbox to accept it, and click **Next**.
+**Step 4 –** Read the End User License Agreement and select the I accept the license agreement checkbox. Click Next.
 
 **Step 5 –** The installation begins and the installer displays a Setup Progress window. Click Exit
 when the installation is successful to close the wizard.
@@ -51,7 +51,7 @@ PostgreSQL may fail to start or behave unexpectedly if any tool monitors it.
 ## Install Threat Manager 3.1
 
 **Step 1 –** Click the Netwrix Threat Manager **Setup** button on the Netwrix Threat Manager setup
-window. The following window appears:
+window. The following window is displayed:
 
 ![Install Threat Manager 3.1 Page](/images/threatmanager/3.1/install/upgrade/ntm-initial.webp)
 
@@ -59,7 +59,8 @@ window. The following window appears:
 
 ![Install Netwrix Threat Manager 3.1 page](/images/threatmanager/3.1/install/upgrade/ntm-eula.webp)
 
-**Step 3 –** On the End User License Agreement page, review and accept the licensing agreement. Then click **Next**.
+**Step 3 –** On the End User License Agreement page, review and accept the licensing agreement and
+then click **Next**.
 
 ![Threat Manager 3.1 Defalt Setup Folder](/images/threatmanager/3.1/install/upgrade/ntm-location.webp)
 
@@ -74,8 +75,9 @@ Enter a new path or use the Browse button to modify it. Click **Next**.
 **Step 5 –** On the database page, ensure the host and port are set correctly.
 
 :::note
-If you install on the same server as the PostgreSQL database application,
-this information is accurate by default. The default database name is stealthdefend, but you can modify it.
+If installing on the same server where the PostgreSQL database application was installed,
+this information will be accurate by default. The default database name is stealthdefend; however,
+it can be modified as desired.
 :::
 
 
@@ -86,12 +88,12 @@ this information is accurate by default. The default database name is stealthdef
 ![Firewall Rules Page of Threat Manager Installation wizard](/images/threatmanager/3.1/install/upgrade/ntm-opts.webp)
 
 **Step 8 –** By default, the installer will Create Inbound Windows Firewall Rules. Deselect the
-checkbox if you don't want the installer to automatically create these rules, because you have
+checkbox if you do not want the installer to automatically create these rules, because you have
 already created them. The installer will also by default install AD and Entra PowerShell modules. Click **Next**.
 
 ![Threat Manager Installation Progress page](/images/threatmanager/3.1/install/upgrade/ntm-progress.webp)
 
-**Step 9 –** The installation process will begin and the Setup wizard will display the progress.
+**Step 9 –** The installation process begins and the Setup wizard displays the progress.
 
 ![Threat Manager 3.1 Installed Successfully page](/images/threatmanager/3.1/install/upgrade/ntm-success.webp)
 
