@@ -50,7 +50,7 @@ here.
 
 Users in sbpam.local are all set up with both UPN and Email Address – but they’re not the same.
 
-The two Okta users below both map to the same sbpam.local user
+The following two Okta users both map to the same sbpam.local user
 
 ![Okta login format](/images/privilegesecure/4.2/accessmanagement/admin/configuration/integrationdetails/oktaloginformat.webp)
 

@@ -30,7 +30,7 @@ Some servers are added with the **WinRM Disabled** option. It is only possible t
 
 > **IMPORTANT:** If WinRM is disabled during the initial scan of the domain resources, the subsequent scan and addition of resources would be performed with WinRM disabled as well
 
-Follow the steps below:
+Follow these steps:
 
 1. Make sure that PowerShell 7.1 is installed. Assets and v7.1.7 release info are available on the [PowerShell Team's Organization Page ⸱ GitHub 🫱🏽‍🫲🏽](https://github.com/PowerShell/PowerShell/releases/tag/v7.1.7)
 

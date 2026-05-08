@@ -19,7 +19,7 @@ To add a New Local Users.
 
 **Step 2 –** Click the **Add** button and select New Local User from the dropdown list.
 
-**Step 3 –** In the New Local User textbox, enter the name that will be assigned to the local user
+**Step 3 –** In the New Local User textbox, enter the name to assign to the local user
 account.
 
 **Step 4 –** Enter a password in the Password and Confirm Password fields.

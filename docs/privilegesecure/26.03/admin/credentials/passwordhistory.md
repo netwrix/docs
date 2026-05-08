@@ -19,7 +19,7 @@ The window has the following features:
 The window has the following columns:
 
 - Creation Date — Date timestamp when the item was created
-- Password (Click to View) — Displays the password. By default, it will be hidden. Click an
+- Password (Click to View) — Displays the password. By default, it is hidden. Click an
 individual password to view it or click the Show Passwords button to view all passwords in the
 table.
 

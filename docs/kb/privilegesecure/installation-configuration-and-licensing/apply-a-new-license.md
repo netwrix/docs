@@ -38,13 +38,13 @@ Netwrix Privilege Secure Access Management comes with a 30-day trial license. On
 
    ![The user settings dropdown menu in Netwrix Privilege Secure Access Management.](./../0-images/ka0Qk000000DgJB_0EM4u000004biJb.png)
 
-   The **About Netwrix Privilege Secure Access Management** page will be displayed, including an **Import License** button that you can use to update the product's license.
+   The **About Netwrix Privilege Secure Access Management** page is displayed, including an **Import License** button that you can use to update the product's license.
 
    **_IMPORTANT:_** _If a new license key file is needed, please contact your Netwrix or Netwrix Account Manager._
 
    ![The About page in Netwrix Privilege Secure Access Management's web application interface.](./../0-images/ka0Qk000000DgJB_0EM4u000004biJg.png)
 
-3. Click **Import License**. A Windows file dialog will open. Navigate to the location of the new license key file, select it, and click **Open**. The license will be imported, and the displayed license information will be updated.
+3. Click **Import License**. A Windows file dialog opens. Navigate to the location of the new license key file, select it, and click **Open**. The license is imported, and the displayed license information is updated.
 
 ### Alternate Instructions (PowerShell)
 
