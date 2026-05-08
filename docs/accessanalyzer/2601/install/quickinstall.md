@@ -19,7 +19,7 @@ Before running the installer, confirm the following:
 - [ ] AD/DC Root CA bundle file prepared and placed on the server
 - [ ] Active Directory service account details collected
 - [ ] First admin email address confirmed (must match the AD `mail` attribute exactly)
-- [ ] Netwrix license key on hand
+- [ ] Netwrix license key ready
 
 ### System requirements
 
@@ -134,7 +134,7 @@ Gather these values from your directory team before starting. The installer wiza
 | LDAP URL | Address of your domain controller. Use port 636 (LDAPS, encrypted) — strongly recommended; port 389 (plain LDAP) is available if LDAPS isn't configured | `ldaps://dc.corp.example.com:636` |
 | Bind DN | Full Distinguished Name of a read-only service account | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` |
 | Bind Password | Password for the service account | — |
-| Users Base DN | LDAP container where user accounts are stored | `CN=Users,DC=corp,DC=example,DC=com` |
+| Users Base DN | LDAP container that holds user accounts | `CN=Users,DC=corp,DC=example,DC=com` |
 | Email Attribute | LDAP attribute storing the user's email address (usually `mail`) | `mail` |
 | AD/DC Root CA Bundle | Root CA certificate that signed the domain controller's LDAPS certificate. Required for all TLS options | `/opt/dspm-tls/ca-bundle.crt` |
 
@@ -283,7 +283,7 @@ The **Example** column shows representative values for illustration — enter yo
 | LDAP URL | `ldaps://dc.corp.example.com:636` | Use port 636 (LDAPS) — port 389 is available but unencrypted |
 | Bind DN | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` | Full DN format required — not UPN format |
 | Bind Password | *(your service account password)* | Input is silent — no characters appear |
-| Users Base DN | `CN=Users,DC=corp,DC=example,DC=com` | The LDAP container where user accounts are stored |
+| Users Base DN | `CN=Users,DC=corp,DC=example,DC=com` | The LDAP container that holds user accounts |
 | Email Attribute | `mail` | The LDAP attribute that holds the user's email address |
 | First Admin Email | `admin@corp.example.com` | Must match their AD `mail` attribute exactly, including case |
 | First Admin Name | `Jane Smith` | Used in the UI only |
@@ -461,7 +461,7 @@ This table also appears at [Configuration > Identity Provider > Roles](../config
 | Role | Description |
 | --- | --- |
 | **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
-| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account has this role. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
 The **User Admin** role provides a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration.
