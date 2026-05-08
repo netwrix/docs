@@ -40,7 +40,7 @@ The file that controls where Netwrix Privilege Secure session recordings are sto
 
 Consider the following:
 
-- If this file exists on the Netwrix Privilege Secure server, then it can be modified to change where recorded sessions are stored. If this is the case, follow the instructions in the [Modifying sbpam_iolog.json](#modifying-sbpamiologjson) section to edit this file.
+- If this file exists on the Netwrix Privilege Secure server, then it can be modified to change where recorded sessions are stored. If this is the case, follow the instructions in the [Modifying sbpam_iolog.json](#modifying-sbpam-iologjson) section to edit this file.
 - If the file does not exist, then it will need to be created at the following path on the Netwrix Privilege Secure server (substitute the "C" drive letter for the server's `%PROGRAMDATA%` drive letter, if necessary):
 
 ```text
@@ -53,7 +53,7 @@ C:\ProgramData\STEALTHbits\PAM\ProxyService\sbpam_iolog.json
 sbpam-proxy.exe cfg -c sbpam_iolog
 ```
 
-### Modifying sbpam_iolog.json
+### Modifying sbpam_iolog.json {#modifying-sbpam-iologjson}
 
 1. Open **sbpam_iolog.json**, and locate (or create) the **path** key.
 
