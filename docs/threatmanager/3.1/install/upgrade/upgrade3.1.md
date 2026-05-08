@@ -19,15 +19,15 @@ Follow the steps to upgrade from PostgreSQL 14.13.x to 14.20.x.
 **Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window is
 displayed.
 
-![Netwrix Threat Manager Setup window](/images/threatmanager/3.1/intsall/upgrade/setup-launcher.webp)
+![Netwrix Threat Manager Setup window](/images/threatmanager/3.1/install/upgrade/setup-launcher.webp)
 
 **Step 2 –**  Click **PostgreSQL Setup** to upgrade the PostgreSQL version. The Netwrix PostgreSQL Setup wizard opens.
 
-![Netwrix Netwrix PostgreSQL Setup wizard](/images/threatmanager/3.1/intsall/upgrade/postgres-initial.webp)
+![Netwrix Netwrix PostgreSQL Setup wizard](/images/threatmanager/3.1/install/upgrade/postgres-initial.webp)
 
 **Step 3 –**  Click **PostgreSQL Setup** to upgrade the PostgreSQL version. The Netwrix PostgreSQL Setup wizard opens.
 
-![Netwrix PostgreSQL Setup wizard on the EULA page](/images/threatmanager/3.1/intsall/upgrade/postgres-eula.webp)
+![Netwrix PostgreSQL Setup wizard on the EULA page](/images/threatmanager/3.1/install/upgrade/postgres-eula.webp)
 
 **Step 4 –** Read the End User License Agreement and select the I accept the license agreement checkbox. Click Next.
 
@@ -54,16 +54,16 @@ PostgreSQL may fail to start or behave unexpectedly when monitored by any tool.
 **Step 1 –** Click the Netwrix Threat Manager **Setup** button on the Netwrix Threat Manager setup
 window. The following window is displayed:
 
-![Install Threat Manager 3.1 Page](/images/threatmanager/3.1/intsall/upgrade/ntm-initial.webp)
+![Install Threat Manager 3.1 Page](/images/threatmanager/3.1/install/upgrade/ntm-initial.webp)
 
 **Step 2 –** Click **Install**.
 
-![Install Netwrix Threat Manager 3.1 page](/images/threatmanager/3.1/intsall/upgrade/ntm-eula.webp)
+![Install Netwrix Threat Manager 3.1 page](/images/threatmanager/3.1/install/upgrade/ntm-eula.webp)
 
 **Step 3 –** On the End User License Agreement page, review and accept the licensing agreement and
 then click **Next**.
 
-![Threat Manager 3.1 Defalt Setup Folder](/images/threatmanager/3.1/intsall/upgrade/ntm-location.webp)
+![Threat Manager 3.1 Defalt Setup Folder](/images/threatmanager/3.1/install/upgrade/ntm-location.webp)
 
 **Step 4 –** By default, the installation directory is set to:
 
@@ -71,7 +71,7 @@ then click **Next**.
 
 Enter a new path or use the Browse button to modify as desired. Click **Next**.
 
-![Connect to a Threat Manager Database page](/images/threatmanager/3.1/intsall/upgrade/ntm-db.webp)
+![Connect to a Threat Manager Database page](/images/threatmanager/3.1/install/upgrade/ntm-db.webp)
 
 **Step 5 –** On the database page, ensure the host and port are set correctly.
 
@@ -86,17 +86,17 @@ it can be modified as desired.
 
 **Step 7 –** After successful validation, click **Next**.
 
-![Firewall Rules Page of Threat Manager Installation wizard](/images/threatmanager/3.1/intsall/upgrade/ntm-opts.webp)
+![Firewall Rules Page of Threat Manager Installation wizard](/images/threatmanager/3.1/install/upgrade/ntm-opts.webp)
 
 **Step 8 –** By default, the installer will Create Inbound Windows Firewall Rules. Deselect the
 checkbox if you do not want the installer to automatically create these rules, because you have
 already created them. The installer will also by default install AD and Entra PowerShell modules. Click **Next**.
 
-![Threat Manager Installation Progress page](/images/threatmanager/3.1/intsall/upgrade/ntm-progress.webp)
+![Threat Manager Installation Progress page](/images/threatmanager/3.1/install/upgrade/ntm-progress.webp)
 
 **Step 9 –** The installation process will begin and the Setup wizard will display the progress.
 
-![Threat Manager 3.1 Installed Successfully page](/images/threatmanager/3.1/intsall/upgrade/ntm-success.webp)
+![Threat Manager 3.1 Installed Successfully page](/images/threatmanager/3.1/install/upgrade/ntm-success.webp)
 
 **Step 10 –** Click **Exit** when the installation completes successfully. The Netwrix Threat
 Manager Setup wizard closes.
