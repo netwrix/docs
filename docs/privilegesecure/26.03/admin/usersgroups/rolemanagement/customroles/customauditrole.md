@@ -64,8 +64,8 @@ not associated with the role. Permissions on the right are assigned to the selec
 
 Available permissions include:
 
-- View Recordings. Historical recordings may be viewed by the auditor. 
-- Live Session Viewer. Auditor can watch live sessions.  If this option is selected then the next two options may be added
+- View Recordings. Historical recordings may be viewed by the auditor.
+- Live Session Viewer. Auditor can watch live sessions. If this option is selected then the next two options may be added
      - Terminate session - Auditor watching a live session can stop the session but users can start a new session.
      - Lock session - Auditor watching a live session can stop the session and prevent new ones being started.
 

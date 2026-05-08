@@ -112,7 +112,7 @@ Microsoft article for additional information.
 Sometime in early 2026, Microsoft tightened their security rules such that password rotation requires an additional role.
 
 **Password Administrator**
-Can reset passwords for non-admin users and other Password Administrators, but cannot reset passwords for users holding any privileged Entra roles - lower risk role.
+Can reset passwords for non-admin users and other Password Administrators, but can't reset passwords for users holding any privileged Entra roles - lower risk role.
 
 **Privileged Authentication Administrator** Can change password of any account
 

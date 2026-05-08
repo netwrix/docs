@@ -17,7 +17,7 @@ Allows the rest call to skip the certificate check for the built-in check out st
 ## CheckoutScriptBlock
 
 Supply a PowerShell script block to be used for checking out password from CyberArk. The script
-block will be called with two arguments. We recommend that you use a param() block as follows:
+block will be called with two arguments. Netwrix recommends using a param() block as follows:
 
 ```powershell
 param(

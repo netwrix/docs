@@ -101,7 +101,7 @@ To execute an operation.
 :::note
 The Help menu displays key information regarding the selected operation. The Help menu for
 the Enumerate Active Directory Objects operation displays the operation name, required fields,
-notes, and a brief description of the selected operation. We recommend that you view the Help menu
+notes, and a brief description of the selected operation. View the Help menu
 for each operation you intend to execute.
 :::
 

@@ -22,7 +22,7 @@ protection policy. See the Edit Protected Group Members topic for additional inf
 The table has the following columns:
 
 - Group Name — Displays the name of the group
-- Allowed members — Authorized account that is not removed from the local group when the
+- Allowed members — Authorized account that isn't removed from the local group when the
 protection policy runs. If a domain isn't specified in the name, the account is assumed to be
 local to the resource.
 

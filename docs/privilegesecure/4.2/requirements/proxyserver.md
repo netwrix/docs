@@ -13,7 +13,7 @@ Privilege Secure supports a variety of RDP/SSH clients, including:
 - MS Remote Desktop Connection Manager
 - MS Terminal Services Client (Remote Desktop)
 
-On all Privilege Secure servers, we recommend that you exclude the following directories from
+On all Privilege Secure servers, Netwrix recommends excluding the following directories from
 antivirus and endpoint protection software. a drive letter isn't specified in each
 path, as that can be customized during each Privilege Secure and service installation.
 

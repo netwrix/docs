@@ -57,7 +57,7 @@ page in the browser. don't sign in.
 - If the Sign In page doesn't display as expected, review the values configured for the OpenID
 Connect connector and modify them where needed. Then, verify the Sign In page again.
 :::note
-When configuring OpenID Connect for Okta, it is necessary to ensure that the Grant
+When configuring OpenID Connect for Okta, ensure that the Grant
 type in Okta is set to Implicit (hybrid) and the sub-settings Allow ID Token with implicit grant
 type and Allow Access Token with implicit grant type are both enabled.
 :::
