@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # MSP System
 
-To ensure optimal operation, you should make the following hardware resources available:
+To ensure optimal operation, provide the following hardware resources:
 
 ## Microsoft SQL Server
 
@@ -21,7 +21,7 @@ customers with less than 20 users each.
 
 **CAUTION:** Don't use SQL Server Express edition because of its limitations.
 
-If your customer count grows over time, for every additional 200 users add at least:
+If your customer count grows, for every additional 200 users add at least:
 
 - 2 CPU’s
 - 8 GB RAM
@@ -37,13 +37,13 @@ customers with 20 users each.
 - min. 50 GB HDD
 - .NET Framework 4.8
 
-If your customer count grows over time, for every additional 200 users add at least:
+If your customer count grows, for every additional 200 users add at least:
 
 - 1 CPU
 - 4 GB RAM
 
 RECOMMENDED:, you should use an application server to handle a max of about 100
-customers. So if you reach 100 customers, you should set up a second Application Server or use load balancing between the application servers.
+customers. If you reach 100 customers, you should set up a second Application Server or use load balancing between the application servers.
 
 **CAUTION:** Add a Web-Endpoint (including load balancing) for every additional 1000 users.
 

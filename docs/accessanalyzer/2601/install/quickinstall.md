@@ -79,7 +79,7 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 | --- | --- | --- | --- |
 | **Generate self-signed** | Installer generates a certificate automatically — no CA involvement | Quick evaluations and proof-of-concept installs. Not for production — browsers will show a security warning | Nothing — installer handles it |
 | **Sign with AD Certificate Services** | Installer generates a CSR and submits it to your organization's AD CS to be signed by your internal Enterprise CA | Enterprise environments where AD CS is already deployed and the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
-| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see below |
+| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see the following section |
 
 :::note
 **AD/DC Root CA Bundle is always required regardless of which TLS option you choose.** Even if the installer generates your server certificate, it still needs a separate CA file to trust the connection to your domain controller. See [Active Directory information](#bring-your-own-certificate-file-requirements).
@@ -134,7 +134,7 @@ Gather these values from your directory team before starting. The installer wiza
 | LDAP URL | Address of your domain controller. Use port 636 (LDAPS, encrypted) — strongly recommended; port 389 (plain LDAP) is available if LDAPS isn't configured | `ldaps://dc.corp.example.com:636` |
 | Bind DN | Full Distinguished Name of a read-only service account | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` |
 | Bind Password | Password for the service account | — |
-| Users Base DN | LDAP container where user accounts are stored | `CN=Users,DC=corp,DC=example,DC=com` |
+| Users Base DN | LDAP container that holds user accounts | `CN=Users,DC=corp,DC=example,DC=com` |
 | Email Attribute | LDAP attribute storing the user's email address (usually `mail`) | `mail` |
 | AD/DC Root CA Bundle | Root CA certificate that signed the domain controller's LDAPS certificate. Required for all TLS options | `/opt/dspm-tls/ca-bundle.crt` |
 
@@ -283,7 +283,7 @@ The **Example** column shows representative values for illustration — enter yo
 | LDAP URL | `ldaps://dc.corp.example.com:636` | Use port 636 (LDAPS) — port 389 is available but unencrypted |
 | Bind DN | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` | Full DN format required — not UPN format |
 | Bind Password | *(your service account password)* | Input is silent — no characters appear |
-| Users Base DN | `CN=Users,DC=corp,DC=example,DC=com` | The LDAP container where user accounts are stored |
+| Users Base DN | `CN=Users,DC=corp,DC=example,DC=com` | The LDAP container that holds user accounts |
 | Email Attribute | `mail` | The LDAP attribute that holds the user's email address |
 | First Admin Email | `admin@corp.example.com` | Must match their AD `mail` attribute exactly, including case |
 | First Admin Name | `Jane Smith` | Used in the UI only |
