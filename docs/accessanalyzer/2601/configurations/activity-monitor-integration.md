@@ -40,7 +40,7 @@ AA2601 Reports (file system activity, SharePoint, Copilot)
 
 ### Security Model
 
-Authentication uses **mutual TLS with SPKI hash pinning**:
+Authentication uses **mutual TLS with Subject Public Key Info (SPKI) hash pinning**:
 
 - AA2601 requires TLS 1.3 and rejects older protocol versions.
 - Both products perform mutual authentication by matching hashes of each other's certificate public key (SPKI hash) against a persistent allowlist in their configuration.
@@ -54,7 +54,7 @@ SPKI hashes survive certificate renewal as long as the key pair is unchanged. Re
 Before connecting NAM agents to AA2601:
 
 - **Netwrix Activity Monitor** must be installed and monitoring the hosts or services for which you want real-time activity in AA2601. Confirm monitoring is active before adding the AA2601 output.
-- **TLS certificates** must be provisioned on the AA2601 server. The server certificate and private key paths are set via the environment variables `SYSLOG_TLS_CERT_PATH` and `SYSLOG_TLS_KEY_PATH`. Contact your infrastructure team if the listener isn't starting.
+- **TLS certificates** must be provisioned on the AA2601 server. The environment variables `SYSLOG_TLS_CERT_PATH` and `SYSLOG_TLS_KEY_PATH` specify the server certificate and private key paths. Contact your infrastructure team if the listener isn't starting.
 - **Network connectivity** must allow NAM agents to reach AA2601 on TCP port 4504 (default) through any firewalls or network policies.
 - You must have **Administrator** access to AA2601 to generate enrollment tokens and view enrolled agents.
 
