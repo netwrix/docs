@@ -26,7 +26,8 @@ When you install an add-in in Outlook.com, it will also appear in other versions
 
 The EPP Client will also enforce the Content Aware Policies on those accounts when accessed through Outlook on the Web, with no additional configuration needed. The Outlook interface doesn't display the add-in.
 
-To obtain the Outlook add-in manifest and validator files, visit the latest announcements on the <a href="https://community.netwrix.com/t/version-5-9-4-3-released-now-with-hotfix-1/15972" target="_blank" title="Netwrix community portal" alt="Netwrix community portal">Netwrix community portal</a> or contact <a href="https://www.netwrix.com/support.html" target="_blank" title="Netwrix Support" alt="Netwrix Support">Netwrix Global Services &amp; Support</a>.
+To obtain the Outlook add-in manifest and validator files, visit [Netwrix My Products portal](https://customer.netwrix.com/sign_in.html?rf=my_products.html).\
+Customer portal access is required to download the EPP content*. See also announcements on the <a href="https://community.netwrix.com/t/version-5-9-4-3-released-now-with-hotfix-1/15972" target="_blank" title="Netwrix community portal" alt="Netwrix community portal">Netwrix community portal</a> or contact <a href="https://www.netwrix.com/support.html" target="_blank" title="Netwrix Support" alt="Netwrix Support">Netwrix Global Services &amp; Support</a>.
 
 ## Requirements
 
@@ -35,10 +36,13 @@ To ensure full configuration and functionality of the EPP Microsoft New Outlook 
 1. Update EPP Clients\
 Ensure that all Endpoint Protector (EPP) Clients are updated to at least version 5.9.4.3. This version is necessary to support the features and capabilities of the new add-in.
 
-2. Deploy configured Microsoft Outlook Add-in (manifest.xml)\
+2. Download the latest New Outlook add-in from the [Netwrix My Products portal](https://customer.netwrix.com/sign_in.html?rf=my_products.html).\
+Customer portal access is required to download the EPP content*.
+
+3. Deploy configured Microsoft Outlook Add-in (manifest.xml)\
 Configure and deploy the Microsoft Outlook add-in and assign it to the relevant user accounts. This can be managed centrally via the Microsoft 365 Admin Center or manually on individual user accounts.
 
-3. Host Validation Part and Icons\
+4. Host Validation Part and Icons\
 The Endpoint Protector add-in requires certain files to be hosted by the customer and accessible from the internet. This includes:
 
    - **mainpage.html** - Needs to be hosted; this is the entry point of the add-in.
@@ -67,8 +71,13 @@ Ensure that a standard Endpoint Protector (EPP) Content Aware Protection (CAP) p
 Ensure that the setting under Content Aware Protection → Deep Packet Inspection called "Block Unsupported Protocols in New Outlook" is turned off. This setting is no longer needed if the EPP add-in is in use.
 
 :::note
-On macOS, an EPP certificate is used to ensure secure communication between the add-in and the EppClient. Refer to the existing User Manual chapter for [detailed instructions](./deeppacket#dpi-certi%EF%AC%81cate-on-macos). If you have configured the DPI certificate on macOS, you can ignore this note.
+On macOS, an EPP certificate is used to ensure secure communication between the add-in and the EppClient. Refer to the existing User Manual chapter for [detailed instructions](./deeppacket#dpi-certiﬁcate-on-macos). If you have configured the DPI certificate on macOS, you can ignore this note.
 :::
+
+:::warning Important
+Ensure these URLs are correctly hosted on your server and accessible via the internet to enable required functionalities for the add-in.
+:::
+
 
 ## Pre-configuring add-in (manifest.xml)
 

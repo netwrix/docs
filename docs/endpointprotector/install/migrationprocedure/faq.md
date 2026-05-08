@@ -98,9 +98,9 @@ You may need to refresh Entra ID / SSO application registrations after migration
 **Checklist:**
 1. Confirm the new server's IP/FQDN is reachable from endpoints (firewall, DNS).
 2. Confirm client communications are enabled on the server (**System Configuration → System Settings**).
-3. Confirm client packages are uploaded to the server — 5.9.4.3 (the required signature bridge) and 2602 (the target version).
+3. Confirm client packages are uploaded to the server — 5.9.4.3 (the required signature bridge) and 2605 (the target version).
 4. Check the **Device Control → Computers** page and sort by **Last Seen**.
-5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 first, they can't receive the 2602 client package directly — deploy 5.9.4.3 first via your software distribution tool before upgrading to 2602. See [Phase 3 — Uploading EPP & EE Client Packages](migrationguide#phase-3--uploading-epp--ee-client-packages) for the full client upgrade path.
+5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 first, they can't receive the 2605 client package directly — deploy 5.9.4.3 first via your software distribution tool before upgrading to 2605. See [Phase 3 — Uploading EPP & EE Client Packages](migrationguide#phase-3--uploading-epp--ee-client-packages) for the full client upgrade path.
 6. Verify that firewall rules allow HTTPS connections on the configured EPP communication port.
 7. Consider reinstalling the EPP Client if it appears to be corrupted.
 

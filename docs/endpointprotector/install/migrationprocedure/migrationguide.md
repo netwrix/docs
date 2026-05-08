@@ -512,7 +512,7 @@ For environments where the payload of an update is a concern, you can save bandw
 
 ### Certificate Bridge and Upgrade Path
 
-Understanding the required package set requires knowing why a direct upgrade from older 5.x clients to 2602 isn't possible.
+Understanding the required package set requires knowing why a direct upgrade from older 5.x clients to 2605 isn't possible.
 
 Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and transitioned all code signing certificates from **CoSoSys signatures** to **Netwrix signatures**. This transition affects how endpoint clients verify server-pushed updates:
 
@@ -522,7 +522,7 @@ Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and tran
 |5.9.4.3 | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
 | 2511 and newer | Netwrix only | Can't be pushed to 5.9.4.1 clients directly |
 
-Clients on 5.9.4.1 or older **can't** upgrade directly to 2602. They must first upgrade to **5.9.4.3** (which trusts both signature types), then proceed to 2602:
+Clients on 5.9.4.1 or older **can't** upgrade directly to 2605. They must first upgrade to **5.9.4.3** (which trusts both signature types), then proceed to 2605:
 
 ![EPP Client Migration — end-to-end process diagram](clientupgradediagram.webp)
 
@@ -532,13 +532,13 @@ The packages you need to upload depend on your current EPP client population and
 
 | Package | Notes |
 |---|---|
-| EPP Client 2602 (Windows) | Latest — primary target for all endpoints |
-| EPP Client 2602 (macOS) | Latest — primary target for all endpoints |
+| EPP Client 2605 (Windows) | Latest — primary target for all endpoints |
+| EPP Client 2605 (macOS) | Latest — primary target for all endpoints |
 | EPP Client 5.9.4.3 Hotfix 1 (Windows) | Bridge client — required only for endpoints still below 5.9.4.3 |
 | EPP Client 5.9.4.3 Hotfix 1 (macOS) | Bridge client — required only for endpoints still below 5.9.4.3 |
 | Checksum file for each client | Required for integrity verification |
-| EE Client 2602 (Windows) | Latest — required if Enforced Encryption is in use |
-| EE Client 2602 (macOS) | Latest — required if Enforced Encryption is in use |
+| EE Client 2605 (Windows) | Latest — required if Enforced Encryption is in use |
+| EE Client 2605 (macOS) | Latest — required if Enforced Encryption is in use |
 
 ### Upload Procedure
 

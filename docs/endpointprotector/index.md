@@ -37,7 +37,7 @@ safeguard critical business data.
 ### Support Status Overview
 
 - **Current EPP Server Version (2604)**: Full active support with new features, security updates, and comprehensive technical assistance
-- **Current EPP Client & EE Version (2602)**: Full active support with new features, security updates, and comprehensive technical assistance
+- **Current EPP Client & EE Version (2605)**: Full active support with new features, security updates, and comprehensive technical assistance
 - **Previous Versions (5.9.4.2 and earlier)**: All previous versions transition to discontinued support
 
 ### What This Means
