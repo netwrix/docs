@@ -1,5 +1,5 @@
 ---
-description: 'If Netwrix Threat Manager isn't receiving file system events from Netwrix Activity Monitor agents, the Syslog message template may be set incorrectly. This article explains how to change the Syslog message template from LEEF to Netwrix Threat Prevention in the Netwrix Activity Monitor console.'
+description: If Netwrix Threat Manager is not receiving file system events from Netwrix Activity Monitor agents, the Syslog message template may be set incorrectly. This article explains how to change the Syslog message template from LEEF to Netwrix Threat Prevention in the Netwrix Activity Monitor console.
 keywords:
 - Netwrix Threat Manager
 - Netwrix Activity Monitor
