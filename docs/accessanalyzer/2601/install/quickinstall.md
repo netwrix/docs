@@ -79,13 +79,13 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 | --- | --- | --- | --- |
 | **Generate self-signed** | Installer generates a certificate automatically — no CA involvement | Quick evaluations and proof-of-concept installs. Not for production — browsers will show a security warning | Nothing — installer handles it |
 | **Sign with AD Certificate Services** | Installer generates a CSR and submits it to your organization's AD CS to be signed by your internal Enterprise CA | Enterprise environments where AD CS is already deployed and the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
-| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see [Bring your own certificate file requirements](#bring-your-own-certificate-file-requirements) |
+| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see below |
 
 :::note
 **AD/DC Root CA Bundle is always required regardless of which TLS option you choose.** Even if the installer generates your server certificate, it still needs a separate CA file to trust the connection to your domain controller. See [Active Directory information](#bring-your-own-certificate-file-requirements).
 :::
 
-#### Bring your own certificate file requirements
+#### Bring your own certificate — file requirements
 
 If you selected **Bring your own certificate**, prepare the following three files and place them in `/opt/dspm-tls/` on the server before running the installer:
 
@@ -461,7 +461,7 @@ This table also appears at [Configuration > Identity Provider > Roles](../config
 | Role | Description |
 | --- | --- |
 | **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
-| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account has this role. |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
 The **User Admin** role provides a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration.
