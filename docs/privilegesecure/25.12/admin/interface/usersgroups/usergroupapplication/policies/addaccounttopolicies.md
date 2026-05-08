@@ -30,8 +30,6 @@ Both tables have the following columns:
 
 ## Add Policies
 
-Follow these steps to add a policy to the present account.
-
 **Step 1 –** Navigate to the **Users & Groups** page.
 
 **Step 2 –** In the Users & Groups list, click the name of the account you want to open the User

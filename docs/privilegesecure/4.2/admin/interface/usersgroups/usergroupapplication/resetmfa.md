@@ -12,8 +12,6 @@ This option is only available when the Internal MFA option is enabled on the Use
 [Authentication Connector Tab](/docs/privilegesecure/4.2/admin/interface/usersgroups/usergroupapplication/authenticationconnector.md) for additional
 information.
 
-Follow these steps to reset a user's MFA.
-
 **Step 1 –** Navigate to the **Policy** > **Users & Groups** page.
 
 **Step 2 –** Select the user you want or group account.

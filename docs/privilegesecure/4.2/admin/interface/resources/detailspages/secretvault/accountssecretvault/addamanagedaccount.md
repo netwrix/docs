@@ -6,8 +6,6 @@ sidebar_position: 10
 
 # Add a Managed Account Window
 
-Follow these steps to add a managed account to the secret vault.
-
 **Step 1 –** Click the **Add** button.
 
 ![addmanagedaccount](/images/privilegesecure/4.2/accessmanagement/admin/policy/window/resources/addmanagedaccount.webp)

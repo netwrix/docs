@@ -40,7 +40,7 @@ port of the Privilege Secure server:
 
 - CORS – The OpenID Connect provider requires the Privilege Secure callback location to be
 configured for CORS. This will either be displayed by the provider after redirection, or a 500
-error is returned. If an error is returned, CORS is not configured with the correct
+error is returned. If an error is returned, CORS isn't configured with the correct
 information. Enter the address and port of the Privilege Secure server:
 
 [protocol]//[hostname]:[port]
