@@ -90,5 +90,5 @@ The Exclusions tab lists existing exclusions for the threat. Exclusions use rule
 To create a custom threat from an Investigation page:
 
 1. Click Investigate in the application's header bar.
-2. select an investigation and follow the steps from the Step 5 in the Custom Option on the Threat
-   Detection Page section above.
+2. Select an investigation and follow the steps from Step 5 in the Custom Option on the Threat
+   Detection Page section.

@@ -202,7 +202,7 @@ corner of the console indicating a successful or failed connection.
 **Step 6 –** For the Catalog Name, modify the value by typing in the textbox.
 
 :::tip
-Do not modify the Integration Service URL value.
+Don't modify the Integration Service URL value.
 :::
 
 

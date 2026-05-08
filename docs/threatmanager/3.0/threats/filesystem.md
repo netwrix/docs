@@ -17,7 +17,7 @@ permissions are added or increased on a folder or file, a threat is created.
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Definition            | The High Risk Permissions threat creates a threat when a high risk trustee (Domain Users, Anonymous Logon, Authenticated Users, and Everyone) is added to the ACL on a folder or file. These permissions are high risk because they grant unrestricted access to a resource. |
 | Example               | Domain Users are given Read access to a folder. Everyone is given Full Control on a folder which already had Domain Users with Read Access.                                                                                                                                  |
-| Trigger               | A threat is created when a user adds a high risk trustee (defined above) to a folder or file, which increases the amount of open access. This threat is updated with the total number of folders or files affected due to the inherited permissions.                         |
+| Trigger               | A threat is created when a user adds a high risk trustee (as defined in the Definition row) to a folder or file, which increases the amount of open access. This threat is updated with the total number of folders or files affected due to the inherited permissions.      |
 
 ## NTDS.dit File Access
 

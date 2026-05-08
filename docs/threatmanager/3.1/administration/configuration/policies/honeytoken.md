@@ -54,7 +54,7 @@ Manager** > **Netwrix Threat Manager for AD LDAP**.
 ![Netwrix Threat Manager for AD LDAP template – Event Type tab with LDAP Query filter](/images/threatprevention/7.5/admin/policies/eventtype/usecase/ldapmonitoringfortm.webp)
 
 **Step 6 –** Under Event Filters select **LDAP Query**. If the Include LDAP Queries list is empty,
-select the other **LDAP Monitoring** event type in the list above.
+select the other **LDAP Monitoring** event type in the Event Filters list.
 
 **Step 7 –** Scroll to the bottom of the Include LDAP Queries list.
 
@@ -74,7 +74,7 @@ To configure LDAP monitoring within Netwrix Activity Monitor for Netwrix Threat
 Manager:
 
 :::note
-LDAP Monitoring is not enabled by default. Enable it in the Monitored Domains tab.
+LDAP Monitoring isn't enabled by default. Enable it in the Monitored Domains tab.
 :::
 
 

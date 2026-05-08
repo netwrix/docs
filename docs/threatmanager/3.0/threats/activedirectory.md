@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Active Directory Threats
 
-The following threats are monitored for Active Directory. definition of each threat is given below.
+Threat Manager monitors the following Active Directory threats. The following sections define each threat.
 
 ## AdminSDHolder ACL Tampering
 
@@ -61,7 +61,7 @@ Permissions to retrieve passwords for Group Managed Service Accounts (GMSA) are 
 
 ## Hidden Object
 
-Changing object Deny Read or Deny List Contents permissions can effectively hide an Active Directory object, as LDAP queries do not return it. This causes the object to avoid monitoring and detection, because service accounts used by security solutions cannot query the object. 
+Changing object Deny Read or Deny List Contents permissions can effectively hide an Active Directory object, as LDAP queries don't return it. This causes the object to avoid monitoring and detection, because service accounts used by security solutions can't query the object. 
 
 ## Honeytoken
 

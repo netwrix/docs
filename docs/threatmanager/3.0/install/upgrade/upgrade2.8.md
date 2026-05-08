@@ -103,7 +103,7 @@ should see the existing PostgreSQL database and prompt to migrate.
 
 :::note
 Migrating a large database can take about 24 hours or more. During this time Netwrix
-Threat Manager does not work. Installing Netwrix Threat Manager 2.8 with a new database and directing event streams to that server after the installation is complete eliminates downtime.
+Threat Manager doesn't work. Installing Netwrix Threat Manager 2.8 with a new database and directing event streams to that server after the installation is complete eliminates downtime.
 :::
 
 

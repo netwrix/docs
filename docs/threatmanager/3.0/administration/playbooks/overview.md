@@ -68,7 +68,7 @@ The General tab has the following configuration options:
 
 - Allowed for all threat response – Allows customization of which threats are applicable for this
   playbook. (All threats are allowed by default). If a threat is excluded from Allowed Threats, it
-  is not available to run ad hoc on the Threat Details page or for automated threat
+  isn't available to run ad hoc on the Threat Details page or for automated threat
   response.
 - Send Email on Execution of Playbook – Threat Manager sends an email notification after the playbook
   runs.

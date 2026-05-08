@@ -165,7 +165,7 @@ The following areas use stacking:
 
 - Honey Tokens
 
-    - The same logic as $Credential from the action section above
+    - The same logic as $Credential from the Actions section
 
 To add a credential to an existing Credential Profile:
 

@@ -28,7 +28,7 @@ To upgrade from PostgreSQL 14.13.x to 14.20.x:
 
 ![Netwrix PostgreSQL Setup wizard on the EULA page](/images/threatmanager/3.1/install/upgrade/postgres-eula.webp)
 
-**Step 4 –** Read the End User License Agreement and select the I accept the license agreement checkbox. Click Next.
+**Step 4 –** Read the End User License Agreement, select the acceptance checkbox, and click **Next**.
 
 **Step 5 –** The installation begins and the installer displays a Setup Progress window. Click Exit
 when the installation is successful to close the wizard.
@@ -59,8 +59,8 @@ window. The following window is displayed:
 
 ![Install Netwrix Threat Manager 3.1 page](/images/threatmanager/3.1/install/upgrade/ntm-eula.webp)
 
-**Step 3 –** On the End User License Agreement page, review and accept the licensing agreement and
-then click **Next**.
+**Step 3 –** On the End User License Agreement page, review and accept the licensing agreement,
+and then click **Next**.
 
 ![Threat Manager 3.1 Defalt Setup Folder](/images/threatmanager/3.1/install/upgrade/ntm-location.webp)
 
@@ -88,7 +88,7 @@ it can be modified as desired.
 ![Firewall Rules Page of Threat Manager Installation wizard](/images/threatmanager/3.1/install/upgrade/ntm-opts.webp)
 
 **Step 8 –** By default, the installer will Create Inbound Windows Firewall Rules. Deselect the
-checkbox if you do not want the installer to automatically create these rules, because you have
+checkbox if you don't want the installer to automatically create these rules, because you have
 already created them. The installer will also by default install AD and Entra PowerShell modules. Click **Next**.
 
 ![Threat Manager Installation Progress page](/images/threatmanager/3.1/install/upgrade/ntm-progress.webp)

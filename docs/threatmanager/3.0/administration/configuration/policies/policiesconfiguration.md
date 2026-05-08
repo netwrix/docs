@@ -177,7 +177,7 @@ Honeytoken policy on the Configuration tab.
 
 ![honeytokeninprogress](/images/threatmanager/3.0/administration/configuration/policies/honeytokeninprogress.webp)
 
-Closing this window does not cancel the deployment.
+Closing this window doesn't cancel the deployment.
 
 ![honeytokendeploymentwindowcomplete](/images/threatmanager/3.0/administration/configuration/policies/honeytokendeploymentwindowcomplete.webp)
 

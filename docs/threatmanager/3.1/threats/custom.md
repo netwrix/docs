@@ -91,4 +91,4 @@ To create a custom threat from an Investigation page:
 
 1. Click Investigate in the application's header bar.
 2. Select an investigation and follow the steps from Step 5 in the Custom Option on the Threat
-   Detection Page section above.
+   Detection Page section.

@@ -22,7 +22,7 @@ The Processing tab contains the configuration options for processing the threat.
 
 **General:**
 
-- Status – When set to ON, Threat Manager detects this threat. When set to OFF, Threat Manager does not detect this threat. When a threat status is **OFF** and then set to
+- Status – When set to ON, Threat Manager detects this threat. When set to OFF, Threat Manager doesn't detect this threat. When a threat status is **OFF** and then set to
   **ON**, a dialog appears to determine which data is processed.
 
 - Threat Level – The relative severity level, or risk level, of the threat. Threat level controls
