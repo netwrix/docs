@@ -363,7 +363,7 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 | High server load | Certificate regeneration for all endpoints creates a burst load spike |
 
 :::warning
-If using Enforced Encryption and you change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. This is strongly discouraged.
+If using Enforced Encryption and you change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
 :::
 
 ### Deploying the 2510 Base Image
@@ -653,7 +653,7 @@ After reconfiguration, verify each integration is functioning:
 
 #### Troubleshooting Failed Integrations
 
-If an integration fails verification, use the steps below:
+If an integration fails verification, use the following steps:
 
 **SMTP / Email alerts not firing:**
 1. Navigate to **System Configuration → System Settings → Email Configuration**.

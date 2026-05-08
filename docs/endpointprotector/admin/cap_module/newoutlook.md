@@ -8,7 +8,7 @@ sidebar_position: 50
 
 Starting from Endpoint Protector Clients version 5.9.4.3, you can fully manage New Outlook as a Content Aware Protection Exit Point via the Microsoft 365 Web Add-in. Unlike COM add-ins for classic Outlook, which install directly on individual endpoints, you must deploy Microsoft Web Add-ins centrally using the Microsoft 365 Admin Center or manually within the user account in the Outlook application.
 
-Microsoft 365 Web Add-ins associate with user accounts rather than computers or devices. Once you deploy an add-in to a user account, every device the user employs to access that account has the add-in available. This means you can't restrict it to just one device, such as the user's Mac computer only.
+Microsoft 365 Web Add-ins associate with user accounts rather than computers or devices. After you deploy an add-in to a user account, every device the user employs to access that account has the add-in available. This means you can't restrict it to just one device, such as the user's Mac computer only.
 
 For detailed instructions and more information, refer to the official documentation available through Microsoft and Endpoint Protector resources:
 - [Microsoft resources](https://learn.microsoft.com/en-us/office/dev/add-ins/overview/office-add-ins)
@@ -160,12 +160,12 @@ However, the add-in has a predefined, hardcoded behavior when it can't communica
 3. Change the value from `true` to `false`.
 
 :::warning Important
-Use this option carefully and ensure it is aligned with your rollout plan to avoid interruptions in essential business email communication.
+Use this option carefully and align it with your rollout plan to avoid interruptions in essential business email communication.
 :::
 
 ## Default Blocking Message of New Outlook Add-in
 
-There is also an option to replace the add-in default message in the tooltip prompt in the email editor window in New Outlook with a custom one.
+You can also replace the add-in default message in the tooltip prompt in the email editor window in New Outlook with a custom one.
 
 **To change that:**
 
@@ -217,6 +217,6 @@ The central deployment method allows administrators to deploy the EPP New Outloo
 6. After selecting the file and clicking **Next**, under **Add users**, choose **Specific users/groups** and use the search box to find the groups you want.\
   ![Specific users/groups selector](msaddinspecifictargetuser.webp "Specific users/groups selector")
 7. When the list appears under **To be added**, click **Next** and then click **Accept Permissions**. Review the needed permissions and click **Accept**.
-8. Ensure to keep **Deployment Method** as **Fixed (Default)**.
+8. Keep **Deployment Method** as **Fixed (Default)**.
 9. Click **Next** and then **Finish deployment**.
 10. After making changes, allow some time for them to propagate. According to Microsoft, this process can take anywhere from a few minutes to 24 hours.

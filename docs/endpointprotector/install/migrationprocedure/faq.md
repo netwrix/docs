@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Frequently Asked Questions
 
-This page covers the most common questions and issues encountered during EPP server migrations.
+This page covers the most common questions and issues you may encounter during EPP server migrations.
 
 ---
 
