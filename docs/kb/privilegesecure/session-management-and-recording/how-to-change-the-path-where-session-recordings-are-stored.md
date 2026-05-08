@@ -28,7 +28,7 @@ The default location for recorded Netwrix Privilege Secure sessions can be modif
 
 ## Instructions
 
-Perform the changes below on each proxy node (HA, remote).
+Perform the following changes on each proxy node (HA, remote).
 
 ### Locating or Creating sbpam_iolog.json
 
@@ -40,7 +40,7 @@ The file that controls where Netwrix Privilege Secure session recordings are sto
 
 Consider the following:
 
-- If this file exists on the Netwrix Privilege Secure server, then it can simply be modified to change where recorded sessions are stored. If this is the case, follow the instructions below to jump to the instructions for editing this file.
+- If this file exists on the Netwrix Privilege Secure server, then it can be modified to change where recorded sessions are stored. If this is the case, follow the instructions in the [Modifying sbpam_iolog.json](#modifying-sbpamiologjson) section to edit this file.
 - If the file does not exist, then it will need to be created at the following path on the Netwrix Privilege Secure server (substitute the "C" drive letter for the server's `%PROGRAMDATA%` drive letter, if necessary):
 
 ```text
@@ -65,16 +65,16 @@ sbpam-proxy.exe cfg -c sbpam_iolog
 }
 ```
 
-2. The value for the key (after the ":") can be changed to any valid path, which is where new session recordings will be stored after this change is saved.
+2. The value for the key (after the ":") can be changed to any valid path, which is where new session recordings are stored after this change is saved.
 
 > **IMPORTANT:** The double slashes (`\`) and quotes surrounding the path must be used for the new path, otherwise the file will no longer be valid JSON.
 
 Consider the following:
 
 - In addition to new session recordings, previous session recordings should be manually moved from the old recording path to the new location.
-- If there are active Netwrix Privilege Secure sessions then some of the recordings in the old location will be locked by Netwrix Privilege Secure's Proxy Service. It is safe to skip these files for now, and move them later once their associated session has ended and files are no longer locked.
+- If there are active Netwrix Privilege Secure sessions then some of the recordings in the old location are locked by Netwrix Privilege Secure's Proxy Service. It is safe to skip these files for now, and move them later once their associated session has ended and files are no longer locked.
 
-If this process is performed successfully, then all old and new recordings will be stored in the new location and will be available for playback in Netwrix Privilege Secure.
+If this process is performed successfully, then all old and new recordings are stored in the new location and are available for playback in Netwrix Privilege Secure.
 
 ### For Netwrix Privilege Secure 3.7 or Higher:
 
@@ -101,7 +101,7 @@ Open the `appsettings.json` file:
 \ProgramData\STEALTHbits\PAM\WebService\appsettings.json
 ```
 
-If this file exists on the Netwrix Privilege Secure server, then it can simply be modified to change where recorded sessions are stored. If the file doesn't exist, then it will need to be created.
+If this file exists on the Netwrix Privilege Secure server, then it can be modified to change where recorded sessions are stored. If the file does not exist, then it will need to be created.
 
 ### Modifying appsettings.json
 
@@ -113,16 +113,16 @@ If this file exists on the Netwrix Privilege Secure server, then it can simply b
 }
 ```
 
-2. The value for the key (after the ":") can be changed to any valid path, which is where new session recordings will be stored after this change is saved.
+2. The value for the key (after the ":") can be changed to any valid path, which is where new session recordings are stored after this change is saved.
 
 > **IMPORTANT:** The double slashes (`\`) and quotes surrounding the path must be used for the new path, otherwise the file will no longer be valid JSON.
 
 Consider the following:
 
 - In addition to new session recordings, previous session recordings should be manually moved from the old recording path to the new location.
-- If there are active Netwrix Privilege Secure sessions then some of the recordings in the old location will be locked by Netwrix Privilege Secure's Proxy Service. It is safe to skip these files for now, and move them later once their associated session has ended and files are no longer locked.
+- If there are active Netwrix Privilege Secure sessions then some of the recordings in the old location are locked by Netwrix Privilege Secure's Proxy Service. It is safe to skip these files for now, and move them later once their associated session has ended and files are no longer locked.
 
-If this process is performed successfully, then all old and new recordings will be stored in the new location and will be available for playback in Netwrix Privilege Secure.
+If this process is performed successfully, then all old and new recordings are stored in the new location and are available for playback in Netwrix Privilege Secure.
 
 ### For Netwrix Privilege Secure 3.7 or Higher:
 

@@ -42,7 +42,7 @@ space in Activity names that are made up of multiple words, for example:
 
 `Netwrix\JonSmith+Add_to_Local_Administrators+SQL1`
 
-If you want to add notes, ensure to add the appropriate number of “+” delimiters if you aren't
+To add notes, ensure you add the appropriate number of “+” delimiters if you aren't
 defining an access policy:
 
 `Netwrix\JonSmith+Local Admin+SQL1.netwrix.com++Server Maintenance`

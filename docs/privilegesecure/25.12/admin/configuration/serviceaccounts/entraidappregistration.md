@@ -99,7 +99,7 @@ information.
 In order for existing account passwords to be rotated by Privilege Secure in hybrid Microsoft Entra
 ID tenants, the Password Writeback feature in Microsoft Entra ID must be enabled. Enabling Password
 Writeback allows hybrid account passwords to be updated either in on-prem AD or in Microsoft Entra
-ID, and the result will be synced to the other location. Without having this functionality enabled
+ID, and the result is synced to the other location. Without having this functionality enabled
 in a hybrid Microsoft Entra ID tenant, all attempts to change an account's password will fail.
 
 Enabling Password Writeback isn't specific to Privilege Secure. See the

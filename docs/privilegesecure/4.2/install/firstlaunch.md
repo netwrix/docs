@@ -69,7 +69,7 @@ To walk through the Setup Wizard.
 the following information and then click Next:
 
 - Domain – Enter the account's domain in `domain.com` format
-- Username – Enter the account. The domain auto-populate from the field above.
+- Username – Enter the account. The domain auto-populates from the Domain field.
 - Password – Enter the account's password. The eye icon lets you view the entry.
 
 ![Setup Wizard on the Step 2 page](/images/privilegesecure/4.2/accessmanagement/install/authenticator.webp)

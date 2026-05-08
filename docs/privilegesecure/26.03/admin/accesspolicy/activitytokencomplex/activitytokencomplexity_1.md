@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Add Activity Token Complexity Policy
 
-Follow the steps below to add an Activity Token Complexity policy to the console. See the Activity
+Follow these steps to add an Activity Token Complexity policy to the console. See the Activity
 Token Complexity section for detailed descriptions of the fields.
 
 **Step 1 –** Navigate to the **Policy** > **Access Policies** > **Activity Token Complexity Policy**

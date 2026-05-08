@@ -31,8 +31,8 @@ Workflow Tiers (only visible when Approval Type is set to Tiered):
 - Delete icon – Deletes the selected Workflow Tier (A confirmation window displays)
 - Edit icon – Modify the escalation settings for the Workflow Tier
 - Escalation – The amount of time available to approve the request before it is escalated
-- Escalation Account – The user that the request will be escalated to
-- Escalation Group – The group that the request will be escalated to
+- Escalation Account – The user that the request is escalated to
+- Escalation Group – The group that the request is escalated to
 - Approvers – The users or groups that can approve a request. See the Approvals Dashboard topic
 for additional information on how to approve a requested session.
 - Add Approver icon – Add a user or group as an approver
@@ -47,8 +47,8 @@ for additional information on how to approve a requested session.
 
 - Escalation in Minutes – The amount of time available to approve the request before it is escalated
 (default is 10 minutes)
-- Escalation Account – The user that the request will be escalated to
-- Escalation Group – The group that the request will be escalated to
+- Escalation Account – The user that the request is escalated to
+- Escalation Group – The group that the request is escalated to
 
 **Step 7 –** Click **Okay** to save the escalation settings.
 
@@ -100,8 +100,8 @@ Workflow Tier settings (only visible when Approval Type is set to Tiered):
 - Delete icon – Deletes the selected Workflow Tier (A confirmation window displays)
 - Edit icon – Modify the escalation settings for the Workflow Tier
 - Escalation – The amount of time available to approve the request before it is escalated
-- Escalation Account – The user that the request will be escalated to
-- Escalation Group – The group that the request will be escalated to
+- Escalation Account – The user that the request is escalated to
+- Escalation Group – The group that the request is escalated to
 - Approvers – The users or groups that can approve a request.
 - Add Approver icon – Add a user or group as an Approver.
 - Remove Approver icon – Removes the selected Approver (A confirmation window displays)

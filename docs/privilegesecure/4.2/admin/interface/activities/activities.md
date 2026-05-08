@@ -109,7 +109,7 @@ Microsoft Entra ID or Website. See the [Microsoft Entra ID Details Page](/docs/p
 If any of these settings are modified, Save, and Cancel buttons appear. Click **Save** to
 commit the modifications. Click **Cancel** to discard the modifications.
 
-Below the activity details in the main pane are the session details, the actions that occurs
+The main pane also shows the session details — the actions that occur
 before, during, and after the session:
 
 - Pre-Session (Grant) — List of actions that runs before the session begins. These actions may

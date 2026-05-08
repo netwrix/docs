@@ -141,7 +141,7 @@ certificate for Netwrix Privilege Secure. Signing the RDP file with this trusted
 To obtain the certificate thumbprint, open the Certificates snap-in. From there, the certificate
 thumbprint can be found in the local computer's certificates store on the Netwrix Privilege Secure
 server. This certificate thumbprint lets you certify the Privilege Secure Web Service as well.
-Follow the steps below to obtain a certificate thumbprint.
+Follow these steps to obtain a certificate thumbprint.
 
 **Step 1 –** Open the Windows Certificate Manager Tool (certmgr.exe).
 
@@ -166,7 +166,7 @@ thumbprint of the signed certificate to ensure the unknown publisher warning dis
 
 **Update Group Policy settings in Windows**
 
-Follow the steps below to update the GPO to include the SHA1 thumbprint of the signed certificate to
+Follow these steps to update the GPO to include the SHA1 thumbprint of the signed certificate to
 ensure the unknown publisher warning disappears completely.
 
 **Step 1 –** Open the Windows Local Group Policy Editor.

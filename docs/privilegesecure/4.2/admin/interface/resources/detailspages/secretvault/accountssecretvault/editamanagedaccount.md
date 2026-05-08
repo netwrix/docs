@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Edit a Managed Account Window
 
-Follow the steps below to edit a managed account in a secret vault.
+Follow these steps to edit a managed account in a secret vault.
 
 **Step 1 –** Select a resource from the results list.
 

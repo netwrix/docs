@@ -11,7 +11,7 @@ Secret Vaults lets you provide Privilege Secure users with access to vaulted sec
 
 ## Add a Secret Vault
 
-Follow the steps below to add a new Secret Vault.
+Follow these steps to add a new Secret Vault.
 
 **Step 1 –** Navigate to the **Policy** > **Resources** page.
 

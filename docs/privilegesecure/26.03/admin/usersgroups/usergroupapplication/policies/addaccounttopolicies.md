@@ -30,7 +30,7 @@ Both tables have the following columns:
 
 ## Add Policies
 
-Follow the steps below to add a policy to the present account.
+Follow these steps to add a policy to the present account.
 
 **Step 1 –** Navigate to the **Users & Groups** page.
 

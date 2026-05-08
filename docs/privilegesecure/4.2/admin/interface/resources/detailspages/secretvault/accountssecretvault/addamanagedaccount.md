@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Add a Managed Account Window
 
-Follow the steps below to add a managed account to the secret vault.
+Follow these steps to add a managed account to the secret vault.
 
 **Step 1 –** Click the **Add** button.
 

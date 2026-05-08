@@ -177,7 +177,7 @@ The Subscriptions tab allows the Privilege Secure user to Subscribe to the repor
 
 ![Reporting Subscriptions Tab](/images/privilegesecure/26.03/accessmanagement/admin/auditreporting/page/subscriptionstab.webp)
 
-The report will be emailed to the Email value for the user, which is populated based on Active
+The report is emailed to the Email value for the user, which is populated based on Active
 Directory attributes and can be confirmed for a given user by checking the Users and Groups page. If
 a new custom schedule is needed for a Subscription, one can be created under the **Policy** >
 **Platforms** > **Schedule Policies** menu. All Schedule Policies shows up in the list when you
@@ -190,6 +190,6 @@ The Subscriptions tab has the following configuration options:
 subscribed Privilege Secure user
 - Subscribe/Unsubscribe button – Subscribe or unsubscribe the logged in user to the report according
 to a specified schedule from the dropdown menu
-- CSV checkbox – If checked, a CSV of the report will be emailed to the subscribed user
-- PDF checkbox – If checked, a PDF of the report will be emailed to the subscribed user
+- CSV checkbox – If checked, a CSV of the report is emailed to the subscribed user
+- PDF checkbox – If checked, a PDF of the report is emailed to the subscribed user
 - Subscriptions table – Shows the subscribed users for the report, and their subscription schedule
