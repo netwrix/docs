@@ -96,8 +96,8 @@ information.
 
 ## Rotate a Microsoft Entra ID Account Password in a Hybrid Tenant
 
-In order for existing account passwords to be rotated by Privilege Secure in hybrid Microsoft Entra
-ID tenants, the Password Writeback feature in Microsoft Entra ID must be enabled. Enabling Password
+For Privilege Secure to rotate existing account passwords in hybrid Microsoft Entra
+ID tenants, enable the Password Writeback feature in Microsoft Entra ID. Enabling Password
 Writeback allows hybrid account passwords to be updated either in on-prem AD or in Microsoft Entra
 ID, and the result is synced to the other location. Without having this functionality enabled
 in a hybrid Microsoft Entra ID tenant, all attempts to change an account's password will fail.

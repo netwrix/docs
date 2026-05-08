@@ -75,4 +75,4 @@ modify group/local policy to force RDP password prompts.
 
 ![Direct Connect password prompt](/images/privilegesecure/4.2/accessmanagement/admin/dashboard/directconnect.webp)
 
-If a password is entered outside of the RDP session, it is automatically used and the inline password prompt doesn't display, unless there is an authentication error.
+If a password is entered outside the RDP session, it is automatically used and the inline password prompt doesn't display, unless there is an authentication error.

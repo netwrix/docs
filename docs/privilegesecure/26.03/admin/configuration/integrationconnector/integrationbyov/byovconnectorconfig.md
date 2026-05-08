@@ -8,7 +8,7 @@ sidebar_position: 10
 
 This topic walks through the steps necessary to configure Netwrix Privilege Secure as a BYOV
 Integration Connector that lets you perform activities as a specific user account. This can be
-done with accounts managed by Privilege Secure, or with accounts stored inside of a Secret Vault
+done with accounts managed by Privilege Secure, or with accounts stored in a Secret Vault
 within Privilege Secure.
 
 Use this workflow to bypass the default "Enable Account" and "Disable Account" pre-session and
