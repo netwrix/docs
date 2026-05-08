@@ -38,131 +38,111 @@ _get_product_version_folder() {
   fi
 }
 
-_process_heading_pairs() {
-  local file="$1"
-  local -n _old="$2"
-  local -n _new="$3"
-  local updates=0
-
-  if [ -z "$file" ] || [ ${#_old[@]} -eq 0 ] || [ ${#_new[@]} -eq 0 ]; then
-    echo 0
-    return 0
-  fi
-
-  local count=${#_old[@]}
-  if [ ${#_new[@]} -lt "$count" ]; then
-    count=${#_new[@]}
-  fi
-
-  local folder
-  folder=$(_get_product_version_folder "$file")
-
-  if [ ! -d "$folder" ]; then
-    echo 0
-    return 0
-  fi
-
-  for ((i = 0; i < count; i++)); do
-    local old_slug new_slug
-    old_slug=$(slugify "${_old[$i]}")
-    new_slug=$(slugify "${_new[$i]}")
-
-    if [ "$old_slug" = "$new_slug" ] || [ -z "$old_slug" ] || [ -z "$new_slug" ]; then
-      continue
-    fi
-
-    # Replace #old-slug with #new-slug in all .md files in the folder
-    find "$folder" -name '*.md' -exec \
-      sed -i "s|#${old_slug}\([) ]\)|#${new_slug}\1|g" {} +
-
-    updates=$((updates + 1))
+_word_overlap_score() {
+  local old_heading="$1" new_heading="$2"
+  local old_slug new_slug
+  old_slug=$(slugify "$old_heading")
+  new_slug=$(slugify "$new_heading")
+  [ "$old_slug" = "$new_slug" ] && echo 100 && return
+  local -a ow nw
+  IFS='-' read -ra ow <<< "$old_slug"
+  IFS='-' read -ra nw <<< "$new_slug"
+  local intersect=0 word nword
+  for word in "${ow[@]}"; do
+    [ -z "$word" ] && continue
+    for nword in "${nw[@]}"; do
+      [ -z "$nword" ] && continue
+      if [ "$word" = "$nword" ]; then intersect=$((intersect + 1)); break; fi
+    done
   done
-
-  echo "$updates"
-  return 0
+  local maxlen=${#ow[@]}
+  [ ${#nw[@]} -gt "$maxlen" ] && maxlen=${#nw[@]}
+  [ "$maxlen" -eq 0 ] && echo 0 && return
+  echo $(( (intersect * 100) / maxlen ))
 }
 
 update_heading_anchors() {
-  local base_ref="${1:-}"
+  local base_ref="${1:-HEAD}"
   local files_list="${2:-}"
-  local diff_output
-
+  local -a files=()
   if [ -n "$files_list" ] && [ -f "$files_list" ]; then
-    local files=()
     mapfile -t files < "$files_list"
-    if [ ${#files[@]} -eq 0 ]; then
-      return 0
-    fi
-    diff_output=$(git diff "${base_ref}" -- "${files[@]}" 2>/dev/null || true)
-  elif [ -n "$base_ref" ]; then
-    diff_output=$(git diff "${base_ref}" -- '*.md' 2>/dev/null || true)
   else
-    diff_output=$(git diff HEAD -- '*.md' 2>/dev/null || true)
+    mapfile -t files < <(git diff --name-only "${base_ref}" -- '*.md' 2>/dev/null || true)
   fi
+  [ ${#files[@]} -eq 0 ] && return 0
 
-  if [ -z "$diff_output" ]; then
-    return 0
-  fi
-
-  local current_file=""
-  local old_headings=()
-  local new_headings=()
-  local in_hunk=0
   local anchor_updates=0
+  local file
+  for file in "${files[@]}"; do
+    [ -f "$file" ] || continue
+    local base_content
+    base_content=$(git show "${base_ref}:${file}" 2>/dev/null || true)
+    [ -z "$base_content" ] && continue
 
-  while IFS= read -r line; do
-    if [[ "$line" =~ ^diff\ --git\ a/(.*\.md)\ b/ ]]; then
-      # Process pending heading pairs from previous file
-      if [ -n "$current_file" ] && [ ${#old_headings[@]} -gt 0 ] && [ ${#new_headings[@]} -gt 0 ]; then
-        local _pair_result
-        _pair_result=$(_process_heading_pairs "$current_file" old_headings new_headings)
-        anchor_updates=$((anchor_updates + _pair_result))
+    local -a old_h=() new_h=()
+    local line in_fence=0
+    while IFS= read -r line; do
+      if [[ "$line" =~ ^(\`{3,}|~{3,}) ]]; then
+        in_fence=$(( 1 - in_fence )); continue
       fi
-      current_file="${BASH_REMATCH[1]}"
-      old_headings=()
-      new_headings=()
-      in_hunk=0
-      continue
-    fi
-
-    if [[ "$line" =~ ^@@ ]]; then
-      if [ -n "$current_file" ] && [ ${#old_headings[@]} -gt 0 ] && [ ${#new_headings[@]} -gt 0 ]; then
-        local _pair_result
-        _pair_result=$(_process_heading_pairs "$current_file" old_headings new_headings)
-        anchor_updates=$((anchor_updates + _pair_result))
+      [ "$in_fence" -eq 0 ] && [[ "$line" =~ ^#{1,6}[[:space:]] ]] && old_h+=("$line")
+    done <<< "$base_content"
+    in_fence=0
+    while IFS= read -r line; do
+      if [[ "$line" =~ ^(\`{3,}|~{3,}) ]]; then
+        in_fence=$(( 1 - in_fence )); continue
       fi
-      old_headings=()
-      new_headings=()
-      in_hunk=1
-      continue
-    fi
+      [ "$in_fence" -eq 0 ] && [[ "$line" =~ ^#{1,6}[[:space:]] ]] && new_h+=("$line")
+    done < "$file"
 
-    if [ "$in_hunk" -eq 0 ]; then
-      continue
-    fi
+    local -a removed=() added=()
+    local h match n o
+    for h in "${old_h[@]}"; do
+      match=0
+      for n in "${new_h[@]}"; do [ "$h" = "$n" ] && match=1 && break; done
+      [ "$match" -eq 0 ] && removed+=("$h")
+    done
+    for h in "${new_h[@]}"; do
+      match=0
+      for o in "${old_h[@]}"; do [ "$h" = "$o" ] && match=1 && break; done
+      [ "$match" -eq 0 ] && added+=("$h")
+    done
+    if [ ${#removed[@]} -eq 0 ] || [ ${#added[@]} -eq 0 ]; then continue; fi
 
-    # Collect removed headings (lines starting with - then #)
-    if [[ "$line" =~ ^-#{1,6}\ + ]]; then
-      old_headings+=("${line:1}")
-    fi
+    local folder
+    folder=$(_get_product_version_folder "$file")
+    [ -d "$folder" ] || continue
 
-    # Collect added headings (lines starting with + then #)
-    if [[ "$line" =~ ^\+#{1,6}\ + ]]; then
-      new_headings+=("${line:1}")
-    fi
-  done <<< "$diff_output"
+    local -a used_new_idx=()
+    for h in "${removed[@]}"; do
+      local best_score=0 best_idx=-1 best_new="" idx=0 cand
+      for cand in "${added[@]}"; do
+        local already=0 ui
+        for ui in "${used_new_idx[@]}"; do [ "$ui" -eq "$idx" ] && already=1 && break; done
+        if [ "$already" -eq 0 ]; then
+          local score
+          score=$(_word_overlap_score "$h" "$cand")
+          if [ "$score" -gt "$best_score" ]; then
+            best_score=$score; best_idx=$idx; best_new="$cand"
+          fi
+        fi
+        idx=$((idx + 1))
+      done
+      [ "$best_score" -lt 50 ] && continue
+      local old_slug new_slug
+      old_slug=$(slugify "$h")
+      new_slug=$(slugify "$best_new")
+      if [ "$old_slug" != "$new_slug" ] && [ -n "$old_slug" ] && [ -n "$new_slug" ]; then
+        find "$folder" -name '*.md' -exec \
+          sed -i "s|#${old_slug}\([) ]\)|#${new_slug}\1|g" {} +
+        anchor_updates=$((anchor_updates + 1))
+        used_new_idx+=("$best_idx")
+      fi
+    done
+  done
 
-  # Process final file
-  if [ -n "$current_file" ] && [ ${#old_headings[@]} -gt 0 ] && [ ${#new_headings[@]} -gt 0 ]; then
-    local _pair_result
-    _pair_result=$(_process_heading_pairs "$current_file" old_headings new_headings)
-    anchor_updates=$((anchor_updates + _pair_result))
-  fi
-
-  if [ "$anchor_updates" -gt 0 ]; then
-    echo "Updated $anchor_updates anchor link(s)"
-  fi
-
+  [ "$anchor_updates" -gt 0 ] && echo "Updated $anchor_updates anchor link(s)"
   return 0
 }
 
