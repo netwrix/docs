@@ -19,7 +19,7 @@ Before running the installer, confirm the following:
 - [ ] AD/DC Root CA bundle file prepared and placed on the server
 - [ ] Active Directory service account details collected
 - [ ] First admin email address confirmed (must match the AD `mail` attribute exactly)
-- [ ] Netwrix license key on hand
+- [ ] Netwrix license key ready
 
 ### System requirements
 
@@ -78,14 +78,14 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 | Option | What It Does | Best For | What to Prepare |
 | --- | --- | --- | --- |
 | **Generate self-signed** | Installer generates a certificate automatically — no CA involvement | Quick evaluations and proof-of-concept installs. Not for production — browsers will show a security warning | Nothing — installer handles it |
-| **Sign with AD Certificate Services** | Installer generates a CSR and submits it to your organization's AD CS to be signed by your internal Enterprise CA | Enterprise environments where AD CS is already deployed and the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
-| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see below |
+| **Sign with AD Certificate Services** | Installer generates a CSR and submits it to your organization's AD CS, where your internal Enterprise CA signs it | Enterprise environments where AD CS is already deployed and the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
+| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see [file requirements](#bring-your-own-certificate-file-requirements) |
 
 :::note
 **AD/DC Root CA Bundle is always required regardless of which TLS option you choose.** Even if the installer generates your server certificate, it still needs a separate CA file to trust the connection to your domain controller. See [Active Directory information](#bring-your-own-certificate-file-requirements).
 :::
 
-#### Bring your own certificate — file requirements
+#### Bring your own certificate file requirements
 
 If you selected **Bring your own certificate**, prepare the following three files and place them in `/opt/dspm-tls/` on the server before running the installer:
 
@@ -134,7 +134,7 @@ Gather these values from your directory team before starting. The installer wiza
 | LDAP URL | Address of your domain controller. Use port 636 (LDAPS, encrypted) — strongly recommended; port 389 (plain LDAP) is available if LDAPS isn't configured | `ldaps://dc.corp.example.com:636` |
 | Bind DN | Full Distinguished Name of a read-only service account | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` |
 | Bind Password | Password for the service account | — |
-| Users Base DN | LDAP container where user accounts are stored | `CN=Users,DC=corp,DC=example,DC=com` |
+| Users Base DN | LDAP container that holds user accounts | `CN=Users,DC=corp,DC=example,DC=com` |
 | Email Attribute | LDAP attribute storing the user's email address (usually `mail`) | `mail` |
 | AD/DC Root CA Bundle | Root CA certificate that signed the domain controller's LDAPS certificate. Required for all TLS options | `/opt/dspm-tls/ca-bundle.crt` |
 
@@ -163,7 +163,7 @@ cat app-ca.crt ldaps-ca.crt > /opt/dspm-tls/ca-bundle.crt
 
 ### First admin account
 
-Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions the account automatically. That person signs in using their Active Directory password — no separate password is needed.
+Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions the account automatically. That person signs in using their Active Directory password and doesn't need a separate one.
 
 The email address must match the `mail` attribute of the person's Active Directory account exactly, including case.
 
@@ -261,7 +261,7 @@ rm -f "$TMP_FILE"
 dspm-installer --version
 ```
 
-If this returns a version number, the binary is ready. If it returns an error, the download failed — verify your license key is correct and that the server has outbound access to all required domains listed earlier.
+If this returns a version number, the binary is ready. If it returns an error, the download failed — verify your license key is correct and that the server has outbound access to all [required domains](#required-domains).
 
 ### Step 4: Run the installer
 
@@ -283,7 +283,7 @@ The **Example** column shows representative values for illustration — enter yo
 | LDAP URL | `ldaps://dc.corp.example.com:636` | Use port 636 (LDAPS) — port 389 is available but unencrypted |
 | Bind DN | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` | Full DN format required — not UPN format |
 | Bind Password | *(your service account password)* | Input is silent — no characters appear |
-| Users Base DN | `CN=Users,DC=corp,DC=example,DC=com` | The LDAP container where user accounts are stored |
+| Users Base DN | `CN=Users,DC=corp,DC=example,DC=com` | The LDAP container that holds user accounts |
 | Email Attribute | `mail` | The LDAP attribute that holds the user's email address |
 | First Admin Email | `admin@corp.example.com` | Must match their AD `mail` attribute exactly, including case |
 | First Admin Name | `Jane Smith` | Used in the UI only |
@@ -461,7 +461,7 @@ This table also appears at [Configuration > Identity Provider > Roles](../config
 | Role | Description |
 | --- | --- |
 | **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
-| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account is assigned this role. |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account has this role. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
 The **User Admin** role provides a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration.
