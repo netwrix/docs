@@ -6,23 +6,23 @@ sidebar_position: 10
 
 # Active Directory Threats
 
-The following threats are monitored for Active Directory. definition of each threat is given below.
+The following threats are monitored for Active Directory.
 
 ## AdminSDHolder ACL Tampering
 
- Modifying the Access Control List (ACL) of the AdminSDHolder container in Active Directory enables an attacker to achieve and maintain persistence in an already compromised domain, even if an administrator finds and removes the attacker's permission on a protected object the AdminSDHolder controls. 
+Modifying the access control list (ACL) of the AdminSDHolder container in Active Directory enables an attacker to achieve and maintain persistence in an already compromised domain, even if an administrator finds and removes the attacker's permission on a protected object the AdminSDHolder controls.
 
 ## AS-REP Roasted Users
 
- AS-REP roasting is a technique that allows retrieving password hashes for users that have 'Do not require Kerberos pre-authentication' property selected. Those hashes can then be cracked offline. 
+AS-REP roasting is a technique that allows retrieving password hashes for users that have the "Don't require Kerberos pre-authentication" property selected. Those hashes can then be cracked offline.
 
 ## DCShadow
 
- DCShadow is a feature of Mimikatz and a technique for elevating a regular workstation account to a domain controller and executing malicious replication against the domain. DCShadow can set arbitrary attributes within Active Directory. 
+DCShadow is a feature of Mimikatz and a technique for elevating a regular workstation account to a domain controller and executing malicious replication against the domain. DCShadow can set arbitrary attributes within Active Directory.
 
 ## DC Sync
 
- Replication from a non-domain controller account can be evidence of a Mimikatz DCSync attack. Performing a DCSync remotely extracts the NTLM password hash for the account that is the target of the attack. 
+Replication from a non-domain controller account can be evidence of a Mimikatz DCSync attack. Performing a DCSync remotely extracts the NTLM password hash for the targeted account.
 
 :::note
 The domain monitoring policy must be configured to exclude domain controllers. See the
@@ -33,67 +33,67 @@ information.
 
 ## Domain Backup Key Compromise
 
-The Data Protection API (DPAPI) is used by Windows to encrypt user secrets such as saved credentials, browser cookies, website passwords, and other sensitive information. For computers joined to an Active Directory domain, secrets protected by the DPAPI are also encrypted with a domain backup key. This key is stored in Active Directory and enables recovery of DPAPI-protected secrets should the user lose their own backup key. Because the domain backup key cannot be rotated, its exposure is a significant event. 
+The Data Protection API (DPAPI) is used by Windows to encrypt user secrets such as saved credentials, browser cookies, website passwords, and other sensitive information. For computers joined to an Active Directory domain, secrets protected by DPAPI are also encrypted with a domain backup key. This key is stored in Active Directory and enables recovery of DPAPI-protected secrets should the user lose their own backup key. Because the domain backup key can't be rotated, its exposure is a significant event.
 
 ## Exposed Administrative Credentials
 
-Highly privileged accounts, groups, and systems have direct or indirect administrative control over the Active Directory forest/domain. Given the sensitive nature of these accounts, they should only be used on domain controllers. Pass-the-Hash attacks are successful because highly privileged credentials are used to access lower security systems. Having access to a privileged user's hash allows attackers to move laterally. 
- 
-This threat aligns to best practices for securing Active Directory. If an organization does not enforce limiting privileged account access to only Domain Controllers, this threat should remain disabled to eliminate noise. 
+Highly privileged accounts, groups, and systems have direct or indirect administrative control over the Active Directory forest/domain. Given the sensitive nature of these accounts, they should only be used on domain controllers. Pass-the-Hash attacks succeed because highly privileged credentials are used to access lower security systems. Having access to a privileged user's hash allows attackers to move laterally.
+
+This threat aligns to best practices for securing Active Directory. If an organization doesn't enforce limiting privileged account access to only Domain Controllers, this threat should remain disabled to eliminate noise.
 
 ## Golden Ticket
 
-By obtaining the password hash for the most powerful service account in Active Directory, the KRBTGT account, an attacker is able to compromise every account within Active Directory, giving them unlimited and virtually undetectable access to any system connected to Active Directory. 
+By obtaining the password hash for the most powerful service account in Active Directory, the KRBTGT account, an attacker can compromise every account within Active Directory, giving them unlimited and virtually undetectable access to any system connected to Active Directory.
 
 ## Forged Ticket
 
-Definition: Forged Tickets provide a way for an attacker to elevate privileges by injecting additional group membership into their Kerberos tickets, giving them more privileges than they actually have in Active Directory. Threat Manager will compare PAC data in authentication to the user's actual group member and generate a threat when it finds a discrepancy. 
+Forged Tickets provide a way for an attacker to elevate privileges by injecting additional group membership into their Kerberos tickets, giving them more privileges than they actually have in Active Directory. Threat Manager compares the Privilege Attribute Certificate (PAC) data in authentication to the user's actual group membership and generates a threat when it finds a discrepancy.
 
-Trigger: Perform Authentication using fabricated/invalid tickets with groups present in the authentication Ticket PAC data that does not match the users Active Directory group membership.  
+Trigger: Threat Manager detects authentication using fabricated or invalid tickets with groups present in the PAC data that don't match the user's Active Directory group membership.
 
 ## GMSA Password Access
 
-The passwords for Group Managed Service Accounts (GMSA) are stored in BLOB format in the msDS-ManagedPassword attribute of the GMSA account object in Active Directory. It is trivial to convert the BLOB to a useable clear text password. It is suspicious for a user to attempt to read this attribute, as only authorized computer accounts should retrieve a GMSA’s password. 
+The passwords for group Managed Service Accounts (gMSA) are stored in BLOB format in the msDS-ManagedPassword attribute of the gMSA account object in Active Directory. Converting the BLOB to usable clear text requires standard tooling. It is suspicious for a user to attempt to read this attribute, as only authorized computer accounts should retrieve a gMSA’s password.
 
 ## GMSA Permissions Assignment
 
-Permissions to retrieve passwords for Group Managed Service Accounts (GMSA) are typically granted only to the computer account of each computer running the service. The assignment of privileges to non-computer accounts (e.g. human accounts) can be indicative of an adversary's attempt to compromise the GMSA password. 
+Permissions to retrieve passwords for group Managed Service Accounts (gMSA) are typically granted only to the computer account of each computer running the service. The assignment of privileges to non-computer accounts (for example, human accounts) can be indicative of an adversary's attempt to compromise the gMSA password.
 
 ## Hidden Object
 
-Changing object Deny Read or Deny List Contents permissions can effectively hide an Active Directory object as it will not be returned in LDAP queries. This causes the object to avoid monitoring and detection, as service accounts used by these solutions will be unable to query the object. 
+Changing object Deny Read or Deny List Contents permissions can effectively hide an Active Directory object because it won't be returned in LDAP queries. This causes the object to avoid monitoring and detection, as service accounts used by these solutions are unable to query the object.
 
 ## Honeytoken
 
-Honeytokens are fake credentials stored in memory. When an attack scans memory they may try to authenticate or query the domain for information about the account. A Honeytoken threat can be generated by two methods: LDAP or Authentication. An authentication Honeytoken threat is generated when a perpetrator attempts to authenticate with a Honeytoken user account. An LDAP Honeytoken threat is generated when a perpetrator performs an LDAP query against a Honeytoken user account. 
+Honeytokens are fake credentials stored in memory. When an attacker scans memory, they may try to authenticate or query the domain for information about the account. A Honeytoken threat can be generated by two methods: LDAP or Authentication. An authentication Honeytoken threat is generated when a perpetrator attempts to authenticate with a Honeytoken user account. An LDAP Honeytoken threat is generated when a perpetrator performs an LDAP query against a Honeytoken user account.
 
 ## Insecure UAC Change
 
-Some changes to User Account Control Flags on Active Directory Objects can potentially expose security risks."PASSWD_CANT_CHANGE", "TRUSTED_FOR_DELEGATION", "USE_DES_KEY_ONLY", and "DONT_REQ_PREAUTH" are particularly risky. 
+Some changes to User Account Control (UAC) flags on Active Directory objects can expose security risks. "PASSWD_CANT_CHANGE", "TRUSTED_FOR_DELEGATION", "USE_DES_KEY_ONLY", and "DONT_REQ_PREAUTH" are particularly risky.
 
 ## Kerberoasting
 
-Kerberoasting is an attack method that allows an attacker to crack the passwords of service accounts in Active Directory offline and without fear of detection. 
+Kerberoasting is an attack method that allows an attacker to crack the passwords of service accounts in Active Directory offline and without fear of detection.
 
 ## LDAP Reconnaissance
 
-When an attacker initially compromises a system on a network, they will have few to no privileges within the domain. However, due to the architecture of Active Directory, once an attacker has infiltrated any domain-joined computer, they are able to query the directory and its objects using LDAP, allowing them to locate sensitive accounts and assets to target in their attack. 
+When an attacker initially compromises a system on a network, they have few to no privileges within the domain. However, due to the architecture of Active Directory, once an attacker has infiltrated any domain-joined computer, they can query the directory and its objects using LDAP, allowing them to locate sensitive accounts and assets to target in their attack.
 
 ## LSASS Process Injection
 
-LSASS process injection is a deliberate and common method used by a variety of attacks including: Skeleton Key, MemSSP, and SID History Tampering. By injecting code into the lsass.exe process an attacker can scrape the password hashes directly out of process memory. 
+LSASS process injection is a deliberate and common method used by a variety of attacks including Skeleton Key, MemSSP, and SID History Tampering. By injecting code into the lsass.exe process, an attacker can scrape the password hashes directly out of process memory.
 
 ## Pass-The-Ticket
 
-A Pass-the-Ticket event occurs when a user extracts a valid Kerberos ticket from one system and uses it to authenticate from another system. This allows the attacker to compromise a user's account and use it from any domain-joined computer. 
+A Pass-the-Ticket event occurs when a user extracts a valid Kerberos ticket from one system and uses it to authenticate from another system. This allows the attacker to compromise a user's account and use it from any domain-joined computer.
 
 ## Password Spraying
 
-Password Spraying indicates an attempt to gain access to credentials by using common passwords against large numbers of accounts while also staying below an organization’s defined lockout threshold. 
+Password Spraying indicates an attempt to gain access to credentials by using common passwords against large numbers of accounts while staying below an organization’s defined lockout threshold.
 
 ## Potential BadSuccessor Abuse
 
-Attackers can manipulate the msDS-ManagedAccountPrecededByLink of a dMSA account to any principal in the domain to leverage the access that account has.
+Attackers can manipulate the msDS-ManagedAccountPrecededByLink of a dMSA account to any principal in the domain to use the access that account has.
 
 ## Primary Group ID Modification
 
@@ -101,25 +101,25 @@ Attackers can hide a users group membership by modifying the primaryGroupID to a
 
 ## Replication Permissions
 
-Providing a user with replication permissions allows the user to execute domain replication commands against domain controllers. This type of behavior is common with DCSync and DCShadow threats. 
+Providing a user with replication permissions allows the user to execute domain replication commands against domain controllers. This type of behavior is common with DCSync and DCShadow threats.
 
 ## Sensitive Group Changes
 
-Sensitive Group Changes indicate that the membership of a group containing extremely sensitive permissions has been modified. This includes any Active Directory group with the Sensitive tag in Threat Manager, which includes many standard Active Directory Groups such as: Domain Admins, Enterprise Admins, and Schema Admins. 
+Sensitive Group Changes indicate that the membership of a group containing extremely sensitive permissions has been modified. This includes any Active Directory group with the Sensitive tag in Threat Manager, which includes many standard Active Directory groups such as Domain Admins, Enterprise Admins, and Schema Admins.
 
 ## Service Account Misuse
 
-Indicates that a service account was used to log into a machine that is not listed in their service principal names attribute. 
+Indicates that a service account was used to log into a machine that isn't listed in its service principal names attribute.
 
-This threat aligns to best practices for securing Active Directory. If an organization does not enforce service accounts to only authenticate to hosts within their servicePrincipalName values, this threat should remain disabled to eliminate noise. 
+This threat aligns to best practices for securing Active Directory. If an organization doesn't enforce service accounts to only authenticate to hosts within their servicePrincipalName values, this threat should remain disabled to eliminate noise.
 
 ## SID History Tampering
 
-Mimikatz or other tools can be used to inject SID History into user accounts. This allows an account to effectively be given permissions, such as Domain Admin, even though it is not actually a member of Domain Admins. 
+Mimikatz or other tools inject SID History into user accounts. This allows an account to effectively gain permissions, such as Domain Admin, even though it isn't actually a member of Domain Admins.
 
 ## SPN Assigned to Privileged User
 
-An account is only vulnerable to Kerberoasting attacks if it has a service principal name. Service accounts should not have more privileges than required to perform their function. Visit [Netwrix Attack Catalog](https://www.netwrix.com/attack.html) to learn more about this threat. 
+An account is only vulnerable to Kerberoasting attacks if it has a service principal name. Service accounts shouldn't have more privileges than required to perform their function. See the [Netwrix Attack Catalog](https://www.netwrix.com/attack.html) for details about Kerberoasting and SPN-related attacks.
 
 ## Suspected Domain Controller Impersonation
 
@@ -127,4 +127,4 @@ When an adversary obtains a Domain Controller account hash, they can authenticat
 
 ## Zerologon Exploitation
 
-CVE-2020-1472 (a.k.a. "Zerologon") is an elevation of privilege vulnerability that allows an unauthenticated attacker to escalate their privileges to domain administrator by exploiting a flaw in the Netlogon Remote Protocol (MS-NRPC). To exploit this vulnerability, an attacker requires only the ability to communicate over the MS-NRPC protocol to a domain controller. 
+CVE-2020-1472 (also known as "Zerologon") is an elevation of privilege vulnerability that allows an unauthenticated attacker to escalate their privileges to domain administrator by exploiting a flaw in the Netlogon Remote Protocol (MS-NRPC). To exploit this vulnerability, an attacker requires only the ability to communicate over the MS-NRPC protocol to a domain controller.

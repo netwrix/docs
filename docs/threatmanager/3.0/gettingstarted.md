@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Getting Started with Threat Manager
 
-Once Threat Manager is installed, complete the following configuration to enable users to begin
+Once Threat Manager is installed, complete the following configuration to let users begin
 viewing threat analytics in an organization’s environment.
 
 After installation, configuration is required for many of Threat Manager's additional capabilities.
@@ -17,9 +17,7 @@ SIEM service integration can be enabled in their respective configuration pages.
 ## Send Data to Threat Manager
 
 Threat Manager threat detection requires file system and/or Active Directory and/or Microsoft Entra
-ID activity to be monitored by either the Activity Monitor or Threat Prevention. An agent must be
-deployed to the server being monitored, and the products must be configured to stream data to Threat
-Manager.
+ID activity monitored by either the Activity Monitor or Threat Prevention. Deploy an agent to each monitored server and configure the products to stream data to Threat Manager.
 
 See the [Integration with Other Netwrix Products](/docs/threatmanager/3.0/install/integration/overview.md) topic for additional
 information.
@@ -28,7 +26,7 @@ information.
 
 File system activity is monitored by the Activity Monitor or the Threat Prevention file system
 policy. Deploy an activity agent to every Windows file server to be monitored and/or to Windows
-proxy servers for every NAS device to be monitored. The monitored host must be configured to send
+proxy servers for every NAS device to be monitored. Configure the monitored host to send
 events to Threat Manager. See the
 [Netwrix Activity Monitor Integration](/docs/threatmanager/3.0/install/integration/activitymonitor.md) topic for additional
 information.
@@ -36,7 +34,7 @@ information.
 ### Active Directory Activity
 
 Active Directory activity can be monitored by either the Activity Monitor or Threat Prevention.
-Deploy an Active Directory agent to domain controllers in order for Threat Manager to receive Active
+Deploy an Active Directory agent to domain controllers for Threat Manager to receive Active
 Directory events:
 
 - Activity Monitor – Monitored domain must be configured to stream data through the domain
@@ -52,7 +50,7 @@ Directory events:
 
 Microsoft Entra ID activity can be monitored by Activity Monitor. Deploy an Activity Monitor agent
 to a Windows server and configure it to monitor an Microsoft Entra ID tenant to send events to
-Threat Manager. The monitored tenant must be configured to send events to Threat Manager. See the
+Threat Manager. Configure the monitored tenant to send events to Threat Manager. See the
 [Netwrix Activity Monitor Integration](/docs/threatmanager/3.0/install/integration/activitymonitor.md) topic for additional
 information.
 
@@ -70,8 +68,7 @@ for additional information.
 The Threat Manager Console has features that require initial configuration to turn them on. These
 pages are located under the [Configuration Menu](/docs/threatmanager/3.0/administration/configuration/overview.md):
 
-- The [Integrations Interface](/docs/threatmanager/3.0/administration/configuration/integrations/overview.md) provides the
-  ability to add and configure external integrations for Threat Manager including:
+- The [Integrations Interface](/docs/threatmanager/3.0/administration/configuration/integrations/overview.md) lets you add and configure external integrations for Threat Manager including:
     - [Active Directory Sync Page](/docs/threatmanager/3.0/administration/configuration/integrations/activedirectorysync.md)
     - [Entra ID Sync Page](/docs/threatmanager/3.0/administration/configuration/integrations/entraidsync.md)
     - [App Tokens Page](/docs/threatmanager/3.0/administration/configuration/integrations/apptoken.md)
@@ -82,5 +79,5 @@ pages are located under the [Configuration Menu](/docs/threatmanager/3.0/adminis
     - [SIEM Page](/docs/threatmanager/3.0/administration/configuration/integrations/siem.md)
     - [Netwrix Integrations Page](/docs/threatmanager/3.0/administration/configuration/integrations/netwrixintegrations.md)
     - [Tag Management Page](/docs/threatmanager/3.0/administration/configuration/integrations/tagmanagement.md)
-- The [Policies Page](/docs/threatmanager/3.0/administration/configuration/policies/overview.md) provides the ability to add
+- The [Policies Page](/docs/threatmanager/3.0/administration/configuration/policies/overview.md) lets you add
   and configure policies used for threat detection including Honeytoken threats

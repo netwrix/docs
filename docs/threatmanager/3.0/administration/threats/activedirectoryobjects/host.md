@@ -37,8 +37,7 @@ The Threats tab for a host displays the threats for the host by timeframe.
 ![Threats tab of the Host Details page](/images/threatmanager/3.0/administration/threatdetails/threatstab.webp)
 
 The Threats tab contains a bar chart that displays each type of threat on the host and a pie chart
-that shows the total number of threats on the host. The Threats List displayed below the Historical
-Events section displays all threats that occurred on the host for the selected timeframe.
+that shows the total number of threats on the host. The Threats List in the Historical Events section displays all threats that occurred on the host for the selected timeframe.
 
 ## Activity Summary Tab
 

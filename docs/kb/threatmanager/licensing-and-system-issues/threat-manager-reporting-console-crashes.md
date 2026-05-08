@@ -29,7 +29,9 @@ Microsoft Silverlight has reached the end of support. If you have the new Report
 
 1. Uninstall Microsoft Silverlight from servers in your environment.
 
-> **NOTE:** If the new Netwrix Threat Manager Reporting Module is not installed in your environment, refer to the following article for additional information: Reporting Module − Getting Started with the Reporting Module ⸱ v7.3.
+:::note
+If the Netwrix Threat Manager Reporting Module isn't installed in your environment, see the following article for additional information: Reporting Module − Getting Started with the Reporting Module ⸱ v7.3.
+:::
 
 ## Related articles
 

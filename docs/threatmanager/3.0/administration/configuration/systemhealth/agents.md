@@ -13,8 +13,6 @@ to the Threat Manager server.
 
 ![System Health Page Agent Overview](/images/threatmanager/3.0/administration/configuration/systemhealth/agentoverview.webp)
 
-Clicking **Decommission** will remove an agent from the Threat Manager agent list.
+Clicking **Decommission** removes an agent from the Threat Manager agent list.
 
-If an active agent has not contacted the Threat Manager server for 10 minutes, it will be placed
-into offline mode. This will generate an alert in Threat Manager. In the instance that an agent has
-become unresponsive, a magenta alert banner displays, located just below the navigation header.
+If an active agent has not contacted the Threat Manager server for 10 minutes, Threat Manager places it into offline mode and generates an alert. If an agent becomes unresponsive, a magenta alert banner displays just below the navigation header.

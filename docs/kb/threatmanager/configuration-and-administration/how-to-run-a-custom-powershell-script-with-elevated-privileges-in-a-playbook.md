@@ -21,7 +21,7 @@ knowledge_article_id: kA04u0000000K7UCAU
 How to run a custom PowerShell script with elevated privileges in a playbook
 
 ## Issue
-A custom PowerShell script that requires elevated privileges will not run, even if the credential profile has elevated privileges.
+A custom PowerShell script that requires elevated privileges does not run, even if the credential profile has elevated privileges.
 
 ## Instructions
 1. Upgrade the customer to `2.7 SP1 HF8` or greater

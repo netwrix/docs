@@ -32,10 +32,10 @@ The Threats page displays three buttons in the top right corner:
 
 ![evidencebox](/images/threatmanager/3.0/administration/threatdetails/evidencebox.webp)
 
-- Unassigned – If the threat has not been assigned to an owner, the button will display as
-  Unassigned. If a user has been assigned to an owner, the button will display the username. Click
+- Unassigned – If the threat has not been assigned to an owner, the button displays as
+  Unassigned. If a user has been assigned to an owner, the button displays the username. Click
   it to open the Workflow Window where assigned user and/or status can be updated.
-- Set Status – If no status is set for the threat the button will display as _Set Status_. If a
+- Set Status – If no status is set for the threat the button displays as _Set Status_. If a
   status has been set for the threat then this button displays the status of the threat. Click it to
   open the Workflow Window, where assigned user and/or status can be updated.
 - Threat Response – Click to open the Threat Response Window and designate the playbook to response
@@ -55,15 +55,14 @@ The information displayed on this page is dependent upon the type of threat sele
 :::
 
 
-- _(Optional)_ Assigned To – Displays the user currently assigned to the threat. Assign or edit the
-  Assigned User using the drop-down list. The list populates with users granted access to the
+- _(Optional)_ Assigned To – Displays the user assigned to the threat. Assign or edit the
+  Assigned User using the dropdown. The list populates with users granted access to the
   console on the User Access page of the System Settings interface. See the User Access Page topic
   for additional information.
-- Set Status – Select a status for the threat from the drop-down list:
+- Set Status – Select a status for the threat from the dropdown:
 
     - Open – Default status for new threats
-    - Under Investigation – Threats that are currently under or pending investigation by an
-      administrator
+    - Under Investigation – Threats under or pending investigation by an administrator
     - Closed - Resolved – Legitimate threats that have been contained or dealt with
     - Closed - False Positive – Behavior that has been incorrectly identified by Threat Manager as a
       threat

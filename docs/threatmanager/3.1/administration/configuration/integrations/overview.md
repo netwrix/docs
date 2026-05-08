@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Integrations Interface
 
-The Integrations interface allows you to configure integrations with a variety of Netwrix products
+Use the Integrations interface to configure integrations with a variety of Netwrix products
 and third-party systems and applications.
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
