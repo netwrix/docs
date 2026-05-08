@@ -44,7 +44,7 @@ This banner contains a link to the page relevant to the issue.
 
 The Threat Manager [Home Page](/docs/threatmanager/3.1/administration/home.md) provides an overview of the possible threats
 detected in an organization's environment for the past 24 hours. It displays interactive
-graphs and a rollup count that enables easy tracking and response for new threats
+graphs and a rollup count that enables tracking and response for new threats
 and users with risky activity.
 
 ## Threats Page

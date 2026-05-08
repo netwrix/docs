@@ -7,8 +7,8 @@ sidebar_position: 30
 # Threats Page
 
 The Threats page is where end-users and analysts investigate possible threats in their environment.
-This page displays an historical timeline of the detected threats and advanced filtering that allows
-users to find threats with ease.
+This page displays an historical timeline of the detected threats and advanced filtering that lets
+users find threats quickly.
 
 ## All Threats
 

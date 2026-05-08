@@ -50,7 +50,7 @@ and users with risky activity.
 
 The Threat Manager [Threats Page](/docs/threatmanager/3.0/administration/threats/threats.md) is where end users and analysts investigate possible
 threats in their environment. This page displays a historical timeline of the detected threats and
-advanced filtering that lets you find threats with ease. An end user can navigate into
+advanced filtering that lets you find threats quickly. An end user can navigate into
 threats and view additional details. Threats have a response workflow that enables teams to assign a
 user to evaluate the threat, set status updates on the threat, and add any desired comments to the
 threat.

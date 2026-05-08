@@ -7,7 +7,7 @@ sidebar_position: 20
 # Configure Honeytoken Threats
 
 The first step for configuring Honeytoken threats is to select a good Honeytoken username format.
-This is important for a number of reasons.
+This is important for several reasons.
 
 - The Honeytoken name should be convincing enough that an adversary would want to use it.
 - To reduce noise, the username format shouldn't match (in part or in full) another user,

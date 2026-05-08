@@ -59,7 +59,7 @@ window. The following window is displayed:
 
 ![Install Netwrix Threat Manager 3.1 page](/images/threatmanager/3.1/install/upgrade/ntm-eula.webp)
 
-**Step 3 –** On the End User License Agreement page, review and accept the licensing agreement,
+**Step 3 –** Review and accept the licensing agreement on the End User License Agreement page,
 and then click **Next**.
 
 ![Threat Manager 3.1 Defalt Setup Folder](/images/threatmanager/3.1/install/upgrade/ntm-location.webp)
