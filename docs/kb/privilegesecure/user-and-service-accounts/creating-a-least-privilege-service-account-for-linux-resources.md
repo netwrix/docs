@@ -27,11 +27,11 @@ knowledge_article_id: kA04u0000000HU1CAM
 
 To onboard Linux resources into Netwrix Privilege Secure (NPS), a service account is required that can execute certain elevated commands on the Linux resource.
 
-While one could simply use the root account, it is not secure and would be a drastic over-provisioning of privileges. Instead, create a dedicated service account with a `sudoers` file that only allows elevation for the commands required by Netwrix Privilege Secure.
+While one could use the root account, it is not secure and would be a drastic over-provisioning of privileges. Instead, create a dedicated service account with a `sudoers` file that only allows elevation for the commands required by Netwrix Privilege Secure.
 
 ## Instructions
 
-1. Create a new user on the Linux resource that will be used as the service account such as **svc_sbpam**. On most Linux distros, this will be performed with the `useradd` command, for example: `useradd svc_sbpam -m`.
+1. Create a new user on the Linux resource that is used as the service account such as **svc_sbpam**. On most Linux distros, this is performed with the `useradd` command, for example: `useradd svc_sbpam -m`.
 
    > NOTE: Alternatively, you may create the user interactively using the `adduser svc_sbpam` command.
 
@@ -67,7 +67,7 @@ sudo: no tty present and no askpass program specified
 
 To resolve this, perform the following steps:
 
-1. Check the logs on the Linux resource for error messages involving the **svc_sbpam** account (or whatever service account name you chose) via the below steps:
+1. Check the logs on the Linux resource for error messages involving the **svc_sbpam** account (or whatever service account name you chose) with the following command:
 
 ```bash
 sudo grep svc_sbpam /var/log/*
@@ -75,7 +75,7 @@ sudo grep svc_sbpam /var/log/*
 
 2. If any of the entries reference a particular command that the service account failed to run due to insufficient sudoer privileges, be sure to note the path of the command (for example, `/sbin/ifconfig/`) and add it to the end of the `Cmnd_Alias SB_CMNDS` entries in the service account's `/etc/sudoers.d/` file.
 
-3. You should then reattempt to provision a session now that the necessary command alias is configured for the service account.
+3. Reattempt to provision a session now that the necessary command alias is configured for the service account.
 
 ## Additional Troubleshooting
 
@@ -88,11 +88,11 @@ standard input or configure an askpass helper sudo: a password is required.'
 
 This would indicate that your service account (such as **svc_sbpam**) is not listed in the `/etc/sudoers` file.
 
-> NOTE: This can easily be confirmed by attempting to use `sudo` as your service account.
+> NOTE: This can be confirmed by attempting to use `sudo` as your service account.
 
-To fix this, you may refer to the following steps:
+To fix this, perform the following steps:
 
-1. Edit your `sudoers` file, typically with the below command:
+1. Edit your `sudoers` file, typically with the following command:
 
 ```bash
 sudo visudo
@@ -108,7 +108,7 @@ sbpam_svc    ALL=NOPASSWD: ALL
 
 ## Using a Shell Script to Determine sudoers.d File Configuration
 
-Instead of using the methods described in the above sections, a shell script can be deployed that will determine the exact contents of the `/etc/sudoers.d/` file that should be created. Please refer to the following steps:
+Instead of using the methods described in the preceding sections, a shell script can be deployed to determine the exact contents of the `/etc/sudoers.d/` file that should be created. Perform the following steps:
 
 1. Copy the following script:
 

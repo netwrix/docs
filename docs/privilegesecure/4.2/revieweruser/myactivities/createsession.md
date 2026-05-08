@@ -21,7 +21,7 @@ Activity.
 of resources; selecting **Create Session** from the session ribbon opens the Configure Session
 window.
 :::warning
-If your license is expired and you can still log in, you cannot create activity sessions.
+If your license is expired and you can still log in, you can't create activity sessions.
 :::
 
 ![configuresessionuser](/images/privilegesecure/4.2/accessmanagement/enduser/access/configuresessionuser.webp)

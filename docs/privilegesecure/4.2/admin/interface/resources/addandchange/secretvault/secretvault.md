@@ -6,8 +6,6 @@ sidebar_position: 50
 
 # Add Secret Vault
 
-Follow the steps below to add a new secret vault to the console.
-
 **Step 1 –** Navigate to the **Policy** > **Resources** page.
 
 **Step 2 –** Click the **Plus** icon and select New Secret Vault from the dropdown list.

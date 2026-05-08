@@ -15,7 +15,7 @@ To end a Web Session.
 
 ![Browser Extension Start Web Session](/images/privilegesecure/26.03/accessmanagement/enduser/browserextension/browserextensionstartsession.webp)
 
-A count-down timer indicates how much time is remaining for the web session. A REC icon will be
+A count-down timer indicates how much time is remaining for the web session. A REC icon is
 overlayed on the extension if the current page is being recorded.
 
 **Step 2 –** Click the red **END MY SESSION** link to close the web session.

@@ -43,7 +43,7 @@ information.
 to communicate to the target resource via WinRM. This value is determined during the initial host
 scan of the resource, but will not be automatically changed during subsequent host scans.
 - Trust on Discovery checkbox — If this checkbox is selected, the certificate that is used with
-WinRM HTTPS will be trusted when the host is first scanned. Otherwise, the NPS administrator needs
+WinRM HTTPS is trusted when the host is first scanned. Otherwise, the NPS administrator needs
 to manually trust the host.
 - Action on Thumbprint Mismatch — This menu selection determines the course of action when a
 thumbprint mismatch occurs during a connection to the resource.

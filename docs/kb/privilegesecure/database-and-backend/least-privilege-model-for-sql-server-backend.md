@@ -40,7 +40,7 @@ The service account requires the following roles on the PAM database:
 4. ALTER permission on the dbo schema
 5. CREATE TABLE
 
-> **NOTE:** As an alternate privilege, instead of 4. and 5. in the above list, the `db_ddladmin` role may be granted. The purpose of the ALTER/CREATE permissions, whether granted directly or through `ddladmin`, is to allow for non-temporary tables to be created and dropped inside of the NPS database during regular operation of the software.
+> **NOTE:** As an alternate privilege, instead of 4. and 5. in the preceding list, the `db_ddladmin` role may be granted. The purpose of the ALTER/CREATE permissions, whether granted directly or through `ddladmin`, is to allow for non-temporary tables to be created and dropped inside of the NPS database during regular operation of the software.
 
 ### During installations and upgrades
 

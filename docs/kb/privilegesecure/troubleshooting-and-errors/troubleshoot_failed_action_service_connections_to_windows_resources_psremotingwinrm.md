@@ -34,7 +34,7 @@ In PowerShell, run the following command:
 Test-WSMan
 ```
 
-The following output will appear if both PSRemoting and WinRM are enabled:
+The following output appears if both PSRemoting and WinRM are enabled:
 
 ```
 wsmid: http://schemas.dmtf.org/wbem/wsman/identity/1/wsmanidentity.xsd
@@ -43,7 +43,7 @@ ProductVendor   : Microsoft Corporation
 ProductVersion  : OS: 0.0.0 SP: 0.0 Stack: 3.0
 ```
 
-If PSRemoting and/or WinRM are not enabled on the target resource, the following output will appear:
+If PSRemoting and/or WinRM are not enabled on the target resource, the following output appears:
 
 ```
 Test-WSMan : <f:WSManFault xmlns:f="http://schemas.microsoft.com/wbem/wsman/1/wsmanfault" Code="2150858770""
@@ -65,7 +65,7 @@ At line:1 char:1
 Enable-PSRemoting
 ```
 
-The following output will appear:
+The following output appears:
 
 ```
 WinRM has been updated to receive requests.

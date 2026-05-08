@@ -18,11 +18,11 @@ be updated.
 
 ## Updating a Credential Profile Password
 
-Follow the steps below to update passwords for a Credential Profile.
+To update passwords for a Credential Profile.
 
 **Step 1 –** Navigate to the Integrations menu **Settings** > **Integrations**.
 
-**Step 2 –** Select the account under the **Credential Profile** drop-down list.
+**Step 2 –** Select the account under the **Credential Profile** dropdown.
 
 ![credentialprofileedit](/images/threatmanager/3.0/administration/troubleshooting/credentialprofileedit.webp)
 
@@ -34,4 +34,4 @@ Follow the steps below to update passwords for a Credential Profile.
 
 **Step 5 –** Click Save.
 
-A new password has been updated for the Credential Profile.
+The Credential Profile password is now updated.
