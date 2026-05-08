@@ -34,7 +34,7 @@ The complete migration process follows this sequence:
 ![EPP Server Migration — end-to-end process diagram](eppmigrationdiagram.webp)
 
 :::warning
-The server does not accept backups from versions **other than 5.9.4.2**. The intermediate upgrade step to 5.9.4.2 is **mandatory** — skipping it will result in a failed restoration.
+The server doesn't accept backups from versions **other than 5.9.4.2**. The intermediate upgrade step to 5.9.4.2 is **mandatory** — skipping it will result in a failed restoration.
 :::
 
 :::warning
@@ -74,7 +74,7 @@ Always verify your source server version before creating the migration backup.
 
 ### New EPP Client and Server versioning
 
-Starting with the 2509 EPP Server release in October 2025, a new versioning scheme has been introduced. For details, see [Unified EPP Clients and Server Versioning](/docs/endpointprotector/install/overview.md).
+Starting with the 2509 EPP Server release in October 2025, Netwrix introduced a new versioning scheme. For details, see [Unified EPP Clients and Server Versioning](/docs/endpointprotector/install/overview.md).
 
 :::tip
 Netwrix recommends the migration upgrade path to the 2510 image with 2604 patch for any environment still on legacy 5.x versions. Use in-place upgrades within the 5.x series only as an intermediate step to reach 5.9.4.2.
@@ -129,7 +129,7 @@ Confirm hypervisor version compatibility **before** scheduling a migration maint
 :::
 
 :::note
-The hypervisor recommendations above reflect the best available guidance based on the EPP image format and known compatibility. However, hypervisor provisioning, configuration, and ongoing maintenance fall outside the scope of Netwrix support. Netwrix can't assist with hypervisor-side issues — customers are responsible for their own virtualisation infrastructure.
+The preceding hypervisor recommendations reflect the best available guidance based on the EPP image format and known compatibility. However, hypervisor provisioning, configuration, and ongoing maintenance fall outside the scope of Netwrix support. Netwrix can't assist with hypervisor-side issues — customers are responsible for their own virtualisation infrastructure.
 :::
 
 ### System Resource Assessment
@@ -169,7 +169,7 @@ Plan a maintenance window that accounts for the following:
 - Post-migration verification: **30–60 minutes**
 - Client package uploads: **10–20 minutes**
 
-These times are based on laboratory test results and may vary in your environment depending on several factors, including hardware assigned to the appliance.
+These times reflect laboratory test results and may vary in your environment depending on several factors, including hardware assigned to the appliance.
 
 **During the upgrade window, the following will be unavailable:**
 - EPP/EE client communication with the server
@@ -177,15 +177,15 @@ These times are based on laboratory test results and may vary in your environmen
 - File Shadow and log generation
 
 :::tip
-EPP clients continue logging events locally during server downtime. All queued events are delivered to the server once communication is restored. No endpoint data is lost.
+EPP clients continue logging events locally during server downtime. The server receives all queued events once communication resumes. No endpoint data is lost.
 :::
 
 :::tip
-In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, allowing the server to focus on the upgrade and ensuring no logs are left unprocessed in the queue. Client communications can be disabled in several ways:
+In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, allowing the server to focus on the upgrade and ensuring no logs remain unprocessed in the queue. Client communications can be disabled in several ways:
 - Blocking the EPP communication port on the perimeter or host-based firewall
 - Blocking the port at the virtual machine network stack level (vSwitch port group policy, NSX rule, or equivalent)
 
-Re-enable communications after the upgraded server has been verified and is ready to accept traffic.
+Re-enable communications after you verify the upgraded server and it's ready to accept traffic.
 :::
 
 ### VM Snapshot and Backup
@@ -199,7 +199,7 @@ VM backup and snapshot management is the full responsibility of the customer's a
 **Step 1 — Create a VM snapshot** on your hypervisor (VMware, Hyper-V, ESXi, AWS, Azure, etc.).
 
 :::warning
-In AWS, snapshots are queued and not taken instantly. Verify the snapshot is in **"completed"** status before proceeding.
+In AWS, the system queues snapshots and doesn't take them instantly. Verify the snapshot is in **"completed"** status before proceeding.
 :::
 
 :::tip
@@ -232,7 +232,7 @@ The System Configuration Backup doesn't include logs and file shadows. If you ne
 - Retain the old server VM after migration for log access.
 
 :::tip
-If your organization has compliance requirements for data retention (e.g., GDPR, HIPAA, SOX), never decommission the old server until you have confirmed that log retention requirements are met by an alternative solution (SIEM, external export).
+If your organization has compliance requirements for data retention (e.g., GDPR, HIPAA, SOX), never decommission the old server until you have confirmed that an alternative solution (SIEM, external export) meets log retention requirements.
 :::
 
 ### Pre-Migration Checklist Summary
@@ -369,7 +369,7 @@ If using Enforced Encryption and you change the IP/FQDN, every user with an EE-p
 ### Deploying the 2510 Base Image
 
 :::tip
-Both the **2509** and **2510** base images can be upgraded directly to 2602. The **2510 image is recommended** for new deployments — it includes improvements to disk sizing (320 GB) and resolves DHCP/DNS configuration issues present in 2509. If you already have a 2509 image available, it is fully supported and reaches 2602 without any intermediate image migration.
+You can upgrade both the **2509** and **2510** base images directly to 2602. **Netwrix recommends the 2510 image** for new deployments — it includes improvements to disk sizing (320 GB) and resolves DHCP/DNS configuration issues present in 2509. If you already have a 2509 image available, Netwrix fully supports it and you can reach 2602 without any intermediate image migration.
 :::
 
 1. Download the Endpoint Protector **2510** VM image from the [My Products portal on netwrix.com](https://customer.netwrix.com/sign_in.html?rf=my_products.html), or request it from your account team.
@@ -382,7 +382,7 @@ Both the **2509** and **2510** base images can be upgraded directly to 2602. The
    - Configure DNS
 
 :::note
-⚠️ **Known Issue:** IP network settings may not save correctly if only one DNS field is filled. **Workaround:** Fill **both** DNS fields. Use for example Google's public DNS (`8.8.8.8` and `8.8.4.4`) as a secondary if you don't have a second internal DNS server.
+⚠️ **Known Issue:** IP network settings may not save correctly if you fill only one DNS field. **Workaround:** Fill **both** DNS fields. Use for example Google's public DNS (`8.8.8.8` and `8.8.4.4`) as a secondary if you don't have a second internal DNS server.
 :::
 
 ![2510 Network Configuration — IP, subnet, gateway, both DNS fields filled](2510_network_config.webp)
@@ -391,7 +391,7 @@ Both the **2509** and **2510** base images can be upgraded directly to 2602. The
 
 ### Temporarily Disabling Client Communications
 
-Immediately after the new VM is provisioned and reachable, disable client communications before performing any further configuration. This prevents endpoints from discovering and connecting to the new server while it is still being prepared.
+Immediately after you provision the new VM and it's reachable, disable client communications before performing any further configuration. This prevents endpoints from discovering and connecting to the new server while you're still preparing it.
 
 1. Log in to the new server console.
 2. Navigate to **System Configuration → System Settings**.
@@ -403,8 +403,8 @@ Disabling client communications prevents endpoints from registering with an inco
 
 ### Activate trial license on a newly deployed image
 
-To be able to upgrade a clean appliance, at least a Trial license should be activated. Go to **System Configuration** → **Licensing** and choose **Free Trial**. The proper license will be imported in a later step, after the upgrade and backup restore process.
-If activated successfully, you should see a green banner at the top.
+To upgrade a clean appliance, activate at least a Trial license. Go to **System Configuration** → **Licensing** and choose **Free Trial**. You'll import the proper license in a later step, after the upgrade and backup restore process.
+After successful activation, you should see a green banner at the top.
 
 ![EPP License Trial activation](licensetrialactivation.webp)
 
@@ -424,14 +424,14 @@ With the license active, upgrade the fresh 2510 image to the current latest patc
 For air-gapped environments, follow the same procedure using the 2604 cumulative patch file — this is the same patch used for online environments.
 :::
 
-3. After each patch, refresh browser and verify the version in **Appliance → Server Information** before applying the next.
+3. After each patch, refresh the browser and verify the version in **Appliance → Server Information** before applying the next.
 4. Once on 2604, confirm the server is stable and all services are running before proceeding to the backup restore.
 
 ![Appliance → Server Information — version 2604 after patching](server_info_2602.webp)
 
 ### Restoring the 5.9.4.2 Backup onto 2604
 
-The 5.9.4.2 backup is restored onto the fully patched 2604 server. The backup format is compatible with all versions in the new image series (2510 through 2604 and later).
+Restore the 5.9.4.2 backup onto the fully patched 2604 server. The backup format is compatible with all versions in the new image series (2510 through 2604 and later).
 
 1. Log in to the **2604 server console**.
 2. Navigate to **System Maintenance → System Backup v2**.
@@ -451,7 +451,7 @@ The 5.9.4.2 backup is restored onto the fully patched 2604 server. The backup fo
 
 ![System Backup list — Ready to download status confirming successful restore](backup_ready_restored.webp)
 
-9. After few minutes, click **Reload** above the status column to refresh progress. If the console becomes unresponsive, refresh the browser — this is normal during application restart.
+9. After a few minutes, click **Reload** above the status column to refresh progress. If the console becomes unresponsive, refresh the browser — this is normal during application restart.
 
 
 :::tip
@@ -471,7 +471,7 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 1. Navigate to **System Configuration → System Licensing → Import License**.
 2. Upload the license file that contains the `php_els` field.
 3. After import, go to **Appliance → Server Information**.
-4. Confirm that **"ELS for PHP = Active"** is displayed before continuing.
+4. Confirm that **"ELS for PHP = Active"** appears before continuing.
 
 You can validate the php_els component status in Appliance → Server Information.
 ![Appliance → Server Information — license](server_info_license.webp)
@@ -492,12 +492,12 @@ If ELS for PHP is **not Active**, stop and resolve this before proceeding. The s
 
 The new 2509/2510 server and further EPP Server patches don't include client packages by default. You must upload them manually.
 
-If you are using an external tool to manage your packages, you can ignore this section unless you are a Netwrix Enforced Encryption (EasyLock) customer — in that case, you need to follow the instructions below.
+If you are using an external tool to manage your packages, you can ignore this section unless you are a Netwrix Enforced Encryption (EasyLock) customer — in that case, follow the instructions in this section.
 
 Download the Endpoint Protector Clients from the [My Products portal on netwrix.com](https://customer.netwrix.com/sign_in.html?rf=my_products.html), or request them from your account team.
 
 :::note
-The EPP Server Client Upgrade feature doesn't support Linux client upgrades — Linux clients must be upgraded manually by administrators.
+The EPP Server Client Upgrade feature doesn't support Linux client upgrades — administrators must upgrade Linux clients manually.
 :::
 
 The average size of EPP Clients update is:
@@ -542,7 +542,7 @@ The packages you need to upload depend on your current EPP client population and
 
 ### Upload Procedure
 
-The client update mechanism controls how EPP clients are distributed and updated from the server. For a full description of available settings and options, see [Client Update Mechanism](/docs/endpointprotector/admin/systemconfiguration/systemsettings#client-update-mechanism). 
+The client update mechanism controls how the server distributes and updates EPP clients. For a full description of available settings and options, see [Client Update Mechanism](/docs/endpointprotector/admin/systemconfiguration/systemsettings#client-update-mechanism). 
 
 1. Navigate to **System Configuration → Client Software**.
 2. Use the upload function to add each client package and its corresponding checksum file.
@@ -550,18 +550,18 @@ The client update mechanism controls how EPP clients are distributed and updated
 ![System Configuration → Client Software — uploaded client versions](../../admin/systemconfiguration/ClientSoftwareUpdatePage.webp)
 
 :::warning
-Upload **both** EE clients for Windows and macOS if both operating systems are in use in your organization. Missing even one platform's EE client can break encryption enforcement on that platform.
+Upload **both** EE clients for Windows and macOS if your organization uses both operating systems. Missing even one platform's EE client can break encryption enforcement on that platform.
 :::
 
 ### Obsolete OS limitations
 
-As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), obsolete and discontinued operating systems aren't supported by the latest EPP Client versions. If continued use of the EPP Client on an unsupported operating system is required, the last available Client version compatible with that operating system must be used. While such Client versions may retain the ability to communicate with the EPP Server, they are no longer covered under the standard support agreement. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Netwrix provides support in such cases on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000).
+As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), the latest EPP Client versions don't support obsolete and discontinued operating systems. If you must continue using the EPP Client on an unsupported operating system, use the last available Client version compatible with that operating system. While such Client versions may retain the ability to communicate with the EPP Server, the standard support agreement no longer covers them. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Netwrix provides support in such cases on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000).
 
 ---
 
 ## Post-Migration Verification
 
-Complete all items in this checklist after the migration is finished.
+Complete all items in this checklist after you finish the migration.
 
 ### Server Health Check
 
@@ -641,7 +641,7 @@ Re-import and reconfigure each active integration before proceeding to verificat
 
 #### Post-Migration Integration Verification
 
-Once reconfigured, verify each integration is functioning:
+After reconfiguration, verify each integration is functioning:
 
 | Integration | How to Verify |
 |---|---|
@@ -657,7 +657,7 @@ If an integration fails verification, use the steps below:
 
 **SMTP / Email alerts not firing:**
 1. Navigate to **System Configuration → System Settings → Email Configuration**.
-2. Re-enter SMTP credentials — passwords aren't always restored from backup.
+2. Re-enter SMTP credentials — the backup doesn't always restore passwords.
 3. Use the test email function and check server logs if delivery fails.
 4. Verify firewall allows outbound on the configured SMTP port (25, 465, or 587).
 
@@ -672,7 +672,7 @@ AD Sync may appear to complete successfully but only import a partial set of use
 
 **Entra ID / SSO / SCIM not working:**
 1. Navigate to **System Configuration → SSO / Single Sign-On**.
-2. Re-enter tenant ID, client ID, and client secret — these aren't restored from backup.
+2. Re-enter tenant ID, client ID, and client secret — the backup doesn't restore these.
 3. Verify the redirect URI registered in Azure AD matches the new server address.
 4. Perform a test SSO login in an incognito window.
 5. If SCIM provisioning is broken, re-generate the SCIM token in the EPP console and update it in Entra ID.
@@ -680,7 +680,7 @@ AD Sync may appear to complete successfully but only import a partial set of use
 **SIEM / Syslog events not forwarding:**
 1. Reconfigure the SIEM destination IP, port, and protocol.
 2. Generate a test event and confirm it reaches the SIEM receiver.
-3. If events still don't appear, contact Netwrix Support — a server-side script may be required to restart the syslog forwarding service.
+3. If events still don't appear, contact Netwrix Support — you may need a server-side script to restart the syslog forwarding service.
 
 **AWS / S3 file shadows unreachable:**
 1. Navigate to **System Configuration → File Shadow Repository**.

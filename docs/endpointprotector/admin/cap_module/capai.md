@@ -14,8 +14,8 @@ As artificial intelligence tools become increasingly integrated into everyday bu
 
 This new functionality enables businesses to maintain precise control over information exchanges with popular AI chat applications. By incorporating Data Loss Prevention for LLMs, EPP enhances security by:
 
--   Granting administrators the ability to manage who can interact with AI prompts through web applications.
--   Offering tools to oversee the management of sensitive content, whether it is typed directly or attached as a file.
+-   Letting administrators manage who can interact with AI prompts through web applications.
+-   Offering tools to oversee sensitive content, whether typed directly or attached as a file.
 
 **Benefits**
 
@@ -23,7 +23,7 @@ By implementing these controls, organizations can protect sensitive information 
 
 ## AI Interaction Visibility and Control in Netwrix Endpoint Protector: Data Loss Prevention for LLMs
 
-Endpoint Protector extends Data Loss Prevention to the most widely used AI technologies — including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X Grok, Claude, Meta AI, and Perplexity — ensuring secure and compliant use across your organization. Coverage includes the embedded Microsoft Copilot add-in in Windows 11, New Outlook, New Teams, and Edge. Endpoint Protector also provides visibility and control over ChatGPT, Claude and Copilot native clients.
+Endpoint Protector extends Data Loss Prevention to the most widely used AI technologies — including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X Grok, Claude, Meta AI, and Perplexity — ensuring secure and compliant use across your organization. Coverage includes the embedded Microsoft Copilot add-in in Windows 11, New Outlook, New Teams, and Edge. Endpoint Protector also provides visibility and control over ChatGPT, Claude, and Copilot native clients.
 
 ## Configure Netwrix EPP to Monitor AI Prompt Transactions
 
@@ -31,14 +31,14 @@ To monitor or control AI prompts with EPP, you need to meet the following prereq
 
 -   use latest EPP Server version
 -   use latest EPP Client version
--   CAP license with the Content Aware Protection (CAP) module enabled
--   DPI (Deep Packet Inspection) module enabled
+-   Content Aware Protection (CAP) license with the CAP module enabled
+-   Deep Packet Inspection (DPI) module enabled
 
 If you meet all of the preceding requirements, most of the setup is already complete. This is because any existing web browser monitor/control policy will automatically apply to user interactions with supported AI chat applications, enforcing your policy definitions when violations occur.
 
 ## Use Case Example
 
-### I. Simple CAP Policy Triggering on Credit Card Detection
+### Example 1: Simple CAP Policy Triggering on Credit Card Detection
 
 To configure a CAP policy for this purpose:
 
@@ -46,11 +46,11 @@ To configure a CAP policy for this purpose:
 
 ![Define base CAP policy settings](capai_usecase01_01.webp)
 
-2.  Define CAP application exit points by selecting the web browsers you want to monitor or control. ensure the relevant browsers are checked so the policy applies when users interact with AI chat applications through these browsers.
+2.  Define CAP application exit points by selecting the web browsers you want to monitor or control. Ensure you check the relevant browsers so the policy applies when users interact with AI chat applications through these browsers.
 
 ![Define CAP application exit points](capai_usecase01_02.webp)
 
-3.  Define CAP Policy Denylists for this use case by selecting the necessary credit card patterns. Ensure that the appropriate patterns are checked so that the policy will detect and block any attempts to submit credit card information through AI chat applications.
+3.  Define CAP Policy Denylists for this use case by selecting the necessary credit card patterns. Ensure you check the appropriate patterns so the policy detects and blocks any attempts to submit credit card information through AI chat applications.
 
 ![Define CAP Policy Denylists](capai_usecase01_03.webp)
 
@@ -68,11 +68,11 @@ To configure a CAP policy for this purpose:
 The test covers several AI platforms: Copilot, ChatGPT, Google Gemini, DeepSeek, and X Grok.
 
     -   **Responsiveness Check** – Verified that each AI model was actively responding, ensuring the interaction was genuine and not a simulated or dummy web transaction triggered by the URL.​
-    -   **Data Leakage Simulation** – Credit card (CC) patterns were submitted to each AI platform to request validation. Sample data was generated using an AI engine. The CAP policy was configured to automatically block any transaction containing CC data.
-    -   **Cross-Engine Validation** – Repeated the same procedure across all mentioned AI engines to confirm consistent behavior and validate DLP enforcement.​
+    -   **Data Leakage Simulation** – The test submitted credit card (CC) patterns to each AI platform for validation. An AI engine generated the sample data. The CAP policy automatically blocks any transaction containing CC data.
+    -   **Cross-Engine Validation** – The test repeated the same procedure across all mentioned AI engines to confirm consistent behavior and validate DLP enforcement.​
     -   **Conclusion** – The demonstration confirms that **Netwrix EPP DLP integrates seamlessly with AI tools such as Copilot, ChatGPT, Google Gemini, DeepSeek, and X Grok** to **prevent data leakage, enforce compliance, and ensure secure information handling at the endpoint level**, while maintaining a positive user experience.
 
-### II. Contextual CAP Policy Triggering on PII patterns in combination for Copilot web & apps
+### Example 2: Contextual CAP Policy Triggering on PII patterns in combination for Copilot web & apps
 
 To configure a CAP policy for this purpose:
 
@@ -80,7 +80,7 @@ To configure a CAP policy for this purpose:
 
 ![Define base CAP policy settings](capai_usecase01_01.webp)
 
-2.  Define CAP application exit points by selecting the web browsers you want to monitor or control. ensure the relevant browsers are checked so the policy applies when users interact with AI chat applications through these browsers.
+2.  Define CAP application exit points by selecting the web browsers you want to monitor or control. Ensure you check the relevant browsers so the policy applies when users interact with AI chat applications through these browsers.
 
 :::tip
 For Copilot plugins in New Outlook, Teams, or Windows 11 25H2, also verify the in-app definitions for Outlook and Teams when configuring policies.
@@ -88,7 +88,7 @@ For Copilot plugins in New Outlook, Teams, or Windows 11 25H2, also verify the i
 
 ![Define CAP application exit points](capai_usecase01_02.webp)
 
-3.  Define Policy Denylists for this use case by selecting the necessary credit card patterns. Ensure that the appropriate patterns are checked so that the policy will detect and block any attempts to submit credit card information through AI chat applications.
+3.  Define Policy Denylists for this use case by selecting the necessary credit card patterns. Ensure you check the appropriate patterns so the policy detects and blocks any attempts to submit credit card information through AI chat applications.
 
 ![Define CAP Policy Denylists](capai_usecase02_01.webp)
 
@@ -111,12 +111,12 @@ You can use contextual rules to create complex pattern definitions for more accu
 
 The test begins with verifying **Copilot’s functionality** to ensure proper operation.
 
-    • **Initial HR Scenario** – An HR use case is simulated, where employment contract templates without sensitive data are enhanced using Copilot to improve formatting and presentation quality.
+    • **Initial HR Scenario** – The test simulates an HR use case in which Copilot enhances employment contract templates without sensitive data to improve formatting and presentation quality.
 
-    • **Data Leakage Prevention Test** – A realistic dataset containing sensitive HR information from a CRM system is introduced. When this data is processed through Copilot, the Netwrix DLP solution detects the presence of personal data and automatically blocks the transaction, preventing unauthorized disclosure.
+    • **Data Leakage Prevention Test** – The test introduces a realistic dataset containing sensitive HR information from a CRM system. When Copilot processes this data, the Netwrix DLP solution detects personal data and automatically blocks the transaction, preventing unauthorized disclosure.
 
-    • **Microsoft Teams Scenario** – The same test is conducted using Copilot integrated with Microsoft Teams. The DLP system again identifies sensitive information and stops the operation, confirming consistent protection within collaboration environments.
+    • **Microsoft Teams Scenario** – The test runs the same scenario using Copilot integrated with Microsoft Teams. The DLP system again identifies sensitive information and stops the operation, confirming consistent protection within collaboration environments.
 
-    • **Outlook Scenario** – The procedure is repeated in Microsoft’s new Outlook with Copilot Agent. Despite the platform change, the DLP system maintains the same behavior, successfully blocking data transmission.
+    • **Outlook Scenario** – The test repeats the procedure in Microsoft’s new Outlook with Copilot Agent. Despite the platform change, the DLP system maintains the same behavior, successfully blocking data transmission.
 
     • **Conclusion** – The demonstration confirms that **Netwrix EPP DLP** integrates seamlessly with AI tools such as Copilot to **prevent data leakage**, **enforce compliance**, and **ensure secure information handling** across Microsoft 365 applications.
