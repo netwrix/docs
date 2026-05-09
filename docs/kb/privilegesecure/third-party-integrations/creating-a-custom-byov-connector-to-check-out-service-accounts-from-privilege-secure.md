@@ -431,7 +431,7 @@ $InsecureAllowServiceAccounts = $true
 | Login Account          | `Vault`                                          |
 | Activity Type          | `Interactive`                                    |
 | Login Account Template | `<your account>`                                 |
-| Vault Connector        | `<the BYOV vault connector configured above>`    |
+| Vault Connector        | `<the BYOV vault connector configured earlier>`    |
 
 4. Once the activity is properly configured, click **Save**.
 

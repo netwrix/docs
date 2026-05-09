@@ -89,7 +89,7 @@ Set any data rentention policies your organization requires and number of days:
 
 - SIEM Retention (logs)
 - Email Rentention
-- I/O Logs (Session recordings)
+- Input/Output Logs (Session recordings)
 
 ## Services
 

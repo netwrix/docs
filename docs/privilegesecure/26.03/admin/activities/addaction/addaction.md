@@ -31,7 +31,7 @@ These actions may be paired with a corresponding Pre-Session action.
 Unit, a User or Computer..
 - AD Organizational Unit for the Action - AD Organizational Unit — Enter a pre-existing
 Organizational Unit the login account have delegated permissions for.
-- AD Rights to be Added - AD Rights to be Added — Select which right will be delegated to the login
+- AD Rights to be Added - AD Rights to be Added — Select which right is delegated to the login
 account for managing the previously specified Organizational Unit.
 - Continue on Error - Continue on Error — If an error occurs, continue to the next step rather than
 halting the action.

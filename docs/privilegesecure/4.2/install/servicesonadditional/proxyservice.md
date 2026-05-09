@@ -142,7 +142,7 @@ servers.
 
 
 **Step 4 –** If edits were made, remove the `sbpam-node.crt` file from the following location on
-both servers using the command below as an administrator:
+both servers using the following command as an administrator:
 
 ```
 del C:\ProgramData\Stealthbits\PAM\tls\certs\sbpam-node.crt
@@ -189,7 +189,7 @@ server has remote proxy server information:
 }
 ```
 
-**Step 4 –** Remove the `sbpam-node.crt` file on the remote proxy server using the command below.
+**Step 4 –** Remove the `sbpam-node.crt` file on the remote proxy server using the following command.
 
 ```
 del C:\ProgramData\Stealthbits\PAM\tls\certs\sbpam-node.crt

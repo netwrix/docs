@@ -36,5 +36,5 @@ This article explains how to respond to timeouts experienced during Remote Deskt
   2. Resume your work by launching a new RDP session, either through the **Active** tab of the **Dashboard** or through the **My Activities** card for your activity.
 
 - For sessions provisioned through DirectConnect via an RDP manager:
-  1. When the RDP session is terminated, the Netwrix Privilege Secure session will be deprovisioned.
+  1. When the RDP session is terminated, the Netwrix Privilege Secure session is deprovisioned.
   2. You will need to relaunch a new DirectConnect session to continue your work.

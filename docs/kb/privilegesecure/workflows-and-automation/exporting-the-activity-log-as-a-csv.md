@@ -123,7 +123,7 @@ Write-Host "Export complete found $($Data.Length) records"
 .\ActivityReport.ps1
 ```
 
-5. You will be prompted for a Netwrix Privilege Secure administrator username and password, your Netwrix Privilege Secure URL, and an MFA code (if applicable).  
+5. You are prompted for a Netwrix Privilege Secure administrator username and password, your Netwrix Privilege Secure URL, and an MFA code (if applicable).  
    ![User-added image](./../0-images/ka04u000000HdD5_0EM4u000005yZ83.png)
 
 6. Your activity data will then be output to a file called `out.csv`.  

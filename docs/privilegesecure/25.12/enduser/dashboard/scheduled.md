@@ -45,7 +45,7 @@ Secure administrator.
 - Host — Resource that the user run the activity on
 - Login Account — Displays the account used to log onto the resource
 - Activity — Displays the name of the activity
-- Start — Indicates when the activity starts. This refers to when the activity’s actions will be
+- Start — Indicates when the activity starts. This refers to when the activity’s actions are
 executed and not when the user logs on to the resource.
 - End — Indicates when the session is scheduled to end the activity, which is determined by the
 start time plus the maximum session duration set by the access policy Connection Profile

@@ -101,7 +101,7 @@ To execute an operation.
 :::note
 The Help menu displays key information regarding the selected operation. The Help menu for
 the Enumerate Active Directory Objects operation displays the operation name, required fields,
-notes, and a brief description of the selected operation. We recommend that you view the Help menu
+notes, and a brief description of the selected operation. View the Help menu
 for each operation you intend to execute.
 :::
 
@@ -127,7 +127,7 @@ pressing **F1**.
 | Port Scan for Host | Scans the Host for will-known ports: <ul><li>SSH (Port 22)</li><li>RDP (Port 3389)</li><li>WinRM (Port 5985)</li><li>WinRM (Port 5986)</li></ul> | <ul><li>Host</li></ul> | A ping test is also performed and is reported in the output's heading. |
 | Verify SSH Connectivity for Host | Verifies SSH connectivity and authentication to the target Host. The well-known SSH port (port 22) is used by default but can be customized. The Username and Password fields authenticate the SSH session. The ability to run sudo commands, specify which sudo commands the user has access to, and whether the user's sudo commands use the "NOPASSWD" directive are also checked. | <ul><li>Host</li><li>Port</li><li>Username</li><li>Password</li></ul> | N/A |
 | Set Privilege Secure AppSettingUser Config Files | Sets the hostname in each Privilege Secure appsetting.user.json configuration file. This hostname should match the CN of the server's IIS-bound certificate for the Privilege Secure web application. The syntax used in the filed should be the full URL, for example: https://hostname.domain.com:6500 | <ul><li>Host</li></ul> | Should be run on each Privilege Secure server with an IIS-bound certificate installed. |
-| Export Privilege Secure Diagnostics | Exports logs, various configuration files, and version information for the Privilege Secure server. A date range can be selected for the logs to reduce operation runtime. Upon execution, the user is prompted to pick a location where the diagnostics will be zipped and saved. | <ul><li>Date Range</li></ul> | Only exports diagnostics for the Privilege Secure server running this application. |
+| Export Privilege Secure Diagnostics | Exports logs, various configuration files, and version information for the Privilege Secure server. A date range can be selected for the logs to reduce operation runtime. Upon execution, the user is prompted to pick a location where the diagnostics are zipped and saved. | <ul><li>Date Range</li></ul> | Only exports diagnostics for the Privilege Secure server running this application. |
 
 
 ## Sign RDP Files to Prevent Publisher Warning
@@ -142,7 +142,6 @@ resolve the trust problem with RDP files.
 To obtain the certificate thumbprint, open the Certificates snap-in. From there, the certificate
 thumbprint can be found in the local computer's certificates store on the Netwrix Privilege Secure
 server. This certificate thumbprint lets you certify the Privilege Secure Web Service as well.
-Follow the steps below to obtain a certificate thumbprint.
 
 **Step 1 –** Open the Windows Certificate Manager Tool (certmgr.exe).
 
@@ -166,9 +165,6 @@ The Netwrix Privilege Secure session has been authenticated. Update the GPO to i
 thumbprint of the signed certificate to ensure the unknown publisher warning disappears completely.
 
 **Update Group Policy settings in Windows**
-
-Follow the steps below to update the GPO to include the SHA1 thumbprint of the signed certificate to
-ensure the unknown publisher warning disappears completely.
 
 **Step 1 –** Open the Windows Local Group Policy Editor.
 
@@ -196,7 +192,7 @@ certificate thumbprints** field.
 
 **Step 7 –** Click **Apply** > **OK**.
 
-The RDP file has been certified and will be trusted by Windows computers that are part of this
+The RDP file has been certified and is trusted by Windows computers that are part of this
 policy.
 
 :::note

@@ -18,7 +18,7 @@ topic for additional information.
 
 Select the method of authentication for the user or group:
 
-- Internal MFA — User will be prompted using the internal MFA when signing into the Privilege Secure
+- Internal MFA — User is prompted using the internal MFA when signing into the Privilege Secure
 console
 - Duo (and other RADIUS profile values) — RADIUS profile that is used for MFA when the user
 signs into the Privilege Secure console
@@ -41,5 +41,5 @@ group assignment takes precedence over the Internal MFA setting on the user.
 - If the user MFA setting is for a RADIUS profile, the User assignment takes precedence over any
 group RADIUS profile setting.
 - If the user is a member of multiple Active Directory groups, each having different RADIUS
-profiles, the user assignment will be determined by the alphabetical order of the RADIUS profile
+profiles, the user assignment is determined by the alphabetical order of the RADIUS profile
 name.
