@@ -816,14 +816,20 @@ function camelToTitleCase(str) {
 
 function transformApiSidebarLabels(items) {
   return items.map(item => {
-    if (item.type !== 'category') return item;
-    return {
-      ...item,
-      label: camelToTitleCase(item.label),
-      items: item.items ? transformApiSidebarLabels(item.items) : item.items,
-    };
+    if (item.type === 'category') {
+      return {
+        ...item,
+        label: camelToTitleCase(item.label),
+        items: item.items ? transformApiSidebarLabels(item.items) : item.items,
+      };
+    }
+    if (item.type === 'doc' && item.label) {
+      return { ...item, label: item.label.replace(/\.$/, '') };
+    }
+    return item;
   });
 }
+
 
 /**
  * Generate all Docusaurus plugin configurations

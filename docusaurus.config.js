@@ -52,6 +52,21 @@ const config = {
   // Set Mermaid
   markdown: {
     mermaid: true,
+    // Strip trailing periods from title/sidebar_label in generated API operation pages.
+    // The OpenAPI summaries often end with a period; Docusaurus uses title as the
+    // prev/next pagination label, so this cleans up navigation text site-wide.
+    parseFrontMatter: async (params) => {
+      const result = await params.defaultParseFrontMatter(params);
+      if (params.filePath.includes('/integration/api/reference/')) {
+        if (result.frontMatter.title) {
+          result.frontMatter.title = result.frontMatter.title.replace(/\.$/, '');
+        }
+        if (result.frontMatter.sidebar_label) {
+          result.frontMatter.sidebar_label = result.frontMatter.sidebar_label.replace(/\.$/, '');
+        }
+      }
+      return result;
+    },
   },
   themes: ['@docusaurus/theme-mermaid', 'docusaurus-theme-openapi-docs'],
 
