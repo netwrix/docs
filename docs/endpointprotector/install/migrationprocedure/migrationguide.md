@@ -320,10 +320,31 @@ After confirming the upgrade to 5.9.4.2 is stable (wait for the 24-hour backgrou
 2. Click **Create** and name it clearly: `migration-to-2510-YYYY-MM-DD`.
 3. Save the backup key securely.
 4. Download the backup file once status shows **"Ready to download"**.
+5. Check the size of the backup. If it's larger than 200 MB, refer to the [next subchapter](#my-backup-is-bigger-than-200-mb).
 
 :::tip
 This backup at 5.9.4.2 is the **only** backup that will work on the 2510 platform. Label it clearly and store it separately from previous backups to avoid any confusion during the restoration step.
 :::
+
+:::note
+The Backup feature backs up all configuration details, excluding log evidence and File Shadows.
+:::
+
+Use [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.md#audit-log-backup) to back up logs and/or File Shadows (optional). Logs and file shadow backups aren't migrated to the new environment. See the notes in this section for an overview of how to preserve logs and/or File Shadows in an offline state before starting the upgrade process.
+
+
+#### My backup is bigger than 200 MB
+
+If your 5.9.4.2 backup export is larger than 200 MB, follow these steps:
+1. Consider cleaning up the database using the Audit Log Backup feature if possible (refer to the [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.md#audit-log-backup) chapter). This removes obsolete data and can decrease the backup file size.
+2. Contact EPP Support and report that your "5.9.4.2 backup is bigger than 200 MB." Request an individual offline patch file to fix the backup export size. You can also request assistance with the manual procedure.
+3. Apply the mentioned patch, which adds several backup export improvements on top of the 5.9.4.2 backup functionality. 
+:::note
+This doesn't change the EPP Server version — it remains 5.9.4.2.
+:::
+
+4. If the new export attempt still returns more than 200 MB after successfully importing the offline patch, contact Netwrix Support for assistance with the manual procedure.
+
 
 ---
 

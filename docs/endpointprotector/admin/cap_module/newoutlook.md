@@ -4,7 +4,7 @@ description: "Content Aware Protection for New Outlook"
 sidebar_position: 50
 ---
 
-# Content Aware Protection for New Outlook
+## Content Aware Protection for New Outlook
 
 Starting from Endpoint Protector Clients version 5.9.4.3, New Outlook can be fully managed as a Content Aware Protection Exit Point via the Microsoft 365 Web Add-in. Unlike COM add-ins for classic Outlook, which are installed directly on individual endpoints, Microsoft Web Add-ins need to be deployed centrally using the Microsoft 365 Admin Center or manually within the user account in Outlook application.
 
@@ -28,7 +28,7 @@ The EPP Client will also enforce the Content Aware Policies on those accounts wh
 
 To obtain the Outlook add-in manifest and validator files, visit the latest announcements on the <a href="https://community.netwrix.com/t/version-5-9-4-3-released-now-with-hotfix-1/15972" target="_blank" title="Netwrix community portal" alt="Netwrix community portal">Netwrix community portal</a> or contact <a href="https://www.netwrix.com/support.html" target="_blank" title="Netwrix Support" alt="Netwrix Support">Netwrix Global Services &amp; Support</a>.
 
-## Requirements
+### Requirements
 
 To ensure full configuration and functionality of the EPP Microsoft New Outlook add-in, three dependencies must be addressed collectively:
 
@@ -70,7 +70,7 @@ Ensure that the setting under Content Aware Protection → Deep Packet Inspectio
 On macOS, an EPP certificate is used to ensure secure communication between the add-in and the EppClient. Refer to the existing User Manual chapter for [detailed instructions](./deeppacket#dpi-certi%EF%AC%81cate-on-macos). If you have configured the DPI certificate on macOS, you can ignore this note.
 :::
 
-## Pre-configuring add-in (manifest.xml)
+### Pre-configuring add-in (manifest.xml)
 
 At the core of any Office Add-in is the manifest file (.xml). This file acts as the blueprint for the add-in, containing:
 
@@ -135,7 +135,7 @@ This is required by the Microsoft add-in validator. Replace the placeholder URLs
 Ensure these URLs are correctly hosted on your server and accessible via the internet to enable required functionalities for the add-in.
 :::
 
-## Default Behavior of New Outlook Add-in and EPP Client
+### Default Behavior of New Outlook Add-in and EPP Client
 
 The default behavior of the New Outlook add-in and EPP Client will align with the EPP Content Aware Protection (CAP) policy defined for email and Outlook actions. This includes capabilities such as reporting, blocking, and other egress channel controls when specific conditions are met.
 
@@ -154,7 +154,7 @@ However, the add-in has a predefined, hardcoded behavior when it can't communica
 Use this option carefully and ensure it is aligned with your rollout plan to avoid interruptions in essential business email communication.
 :::
 
-## Default Blocking Message of New Outlook Add-in
+### Default Blocking Message of New Outlook Add-in
 
 There is also an option to replace the add-in default message in the tooltip prompt in the email editor window in New Outlook with a custom one.
 
@@ -172,7 +172,7 @@ This prompt supports only one language locale.
 
  ![Sample of default tooltip prompt message](msnewoutlookaddintoolbar.webp "Sample of default tooltip prompt message")
 
-## Manual Deployment Method
+### Manual Deployment Method
 
 The manual deployment method isn't recommended because it must be repeated for each user account. This method is intended for pilot phases, troubleshooting, or feature PoCs.
 
@@ -192,7 +192,7 @@ Refer to official Microsoft KB article: [Use add-ins in Outlook](https://support
 7. Select **Open** to install the add-in.
 8. After making changes, allow some time for them to propagate. According to Microsoft, this process can take anywhere from a few minutes to up to 24 hours.
 
-## Central Deployment Method
+### Central Deployment Method
 
 The central deployment method allows administrators to deploy the EPP New Outlook add-in in phases across global user populations. This approach helps minimize administrative effort and ensures a smooth implementation process. For detailed guidance, refer to the official Microsoft Knowledge Base (KB): [Office add-ins](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/office-addins?view=o365-worldwide).
 
@@ -211,3 +211,13 @@ The central deployment method allows administrators to deploy the EPP New Outloo
 8. Ensure to keep **Deployment Method** as **Fixed (Default)**.
 9. Click **Next** and then **Finish deployment**.
 10. After making changes, allow some time for them to propagate. According to Microsoft, this process can take anywhere from a few minutes to up to 24 hours.
+
+## Upgrade scenario
+
+If you need to apply an updated version of the New Outlook add-in provided by Netwrix, follow the steps described in [Requirements](#requirements).
+
+Release notes for a given fix may indicate that only one of the component files has changed. In that case, repeat the configuration and hosting procedure only for that specific file. For example, New Outlook add-in version 1.1 requires updating only `validator.js` — reconfigure and rehost it by replacing the previous file.
+
+:::warning
+After rehosting the updated New Outlook add-in, reboot the affected computers for the changes to take effect. Rebooting ensures that all cache and connections are refreshed.
+:::
