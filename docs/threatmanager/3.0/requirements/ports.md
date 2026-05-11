@@ -8,7 +8,6 @@ sidebar_position: 50
 
 The following figure shows Netwrix Threat Manager architecture and component interactions.
 
-
 ![threatmanagerserver](/images/threatmanager/3.0/requirements/threatmanagerserver.webp)
 
 Configure appropriate firewall rules to allow these connections.
@@ -20,20 +19,9 @@ applications that provide the data stream:
 
 | Communication Direction | Protocol | Ports | Description                                                                                                                                                                                                            |
 | ----------------------- | -------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Inbound                 | UDP      | 10000 | Syslog messaging File System event data stream from Activity Monitor agent hosts                                                                                                                                     |
+| Inbound                 | UDP      | 10000 | Syslog messaging File System event data stream from Activity Monitor agent host(s)                                                                                                                                     |
 | Inbound                 | TCP      | 10001 | Advanced Message Queuing Protocol (AMQP) Active Directory event data stream from Activity Monitor agent hosts Active Directory event data stream from Threat Prevention agent hosts File System event data stream from Threat Prevention agent hosts |
-| Bidirectional           | TCP      | 8080  | Access Analyzer Console hosts                                                                                                                                                                                        |
-
-## Application Services Firewall Rules
-
-The following firewall settings are required for communication for the Threat Manager services:
-
-| Communication Direction | Protocol | Ports                             | Description                                                                      |
-| ----------------------- | -------- | --------------------------------- | -------------------------------------------------------------------------------- |
-| Bidirectional           | TCP      | 55555                             | Active Directory authentication for the application console                                |
-| Bidirectional           | TCP      | 55556                             | Active Directory authentication for the application console                                |
-| Bidirectional           | TCP      | 55557                             | Local host communication from the Event Service to the Job Service agent hosts |
-| Bidirectional           | TCP      | Dynamically Configured on Startup | Local host communication from the Event Service to the Job Service agent hosts |
+| Bidirectional           | TCP      | 8080  | Access Analyzer Console Host(s)                                                                                                                                                                                        |
 
 ## Database Firewall Rules
 
@@ -48,7 +36,7 @@ recommended or the default.
 
 | Communication Direction | Protocol | Ports | Description                                                                           |
 | ----------------------- | -------- | ----- | ------------------------------------------------------------------------------------- |
-| Outbound                | TCP      | 5432  | Local Host and Remote communication from the PostgreSQL to the Threat Manager server. |
+| Outbound                | TCP      | 5435  | Local Host and Remote communication from the PostgreSQL to the Threat Manager server. |
 
 ## Application Console Access Firewall Rules
 
@@ -76,7 +64,6 @@ Active Directory domain controllers:
 | Outbound                | TCP      | 88      | Kerberos-sec                                                                                                                  |
 | Outbound                | TCP      | 135     | The endpoint mapper tells the client which randomly assigned port a service (FRS, AD replication, MAPI, etc.) is listening on |
 | Outbound                | TCP      | 389     | LDAP                                                                                                                          |
-| Outbound                | TCP      | 636     | SSL LDAP                                                                                                                      |
 | Outbound                | TCP      | 9389    | Active Directory Web Services                                                                                                 |
 | Outbound                | TCP      | Various | The port that 135 reports. Used to bulk translate AD object names between formats.(Ephemeral Ports)                           |
 
