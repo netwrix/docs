@@ -18,7 +18,7 @@ Password Secure should be installed on a separate server from NPS and properly c
 
 Follow the instructions in the official documentation to install and configure the **Password Secure server** ([installation guide](/docs/passwordsecure/9_3/installation/)) and to start the **Web Application** ([web application guide](/docs/passwordsecure/9_3/configuration/webapplication/web_application)).
 
-after the server and web application are installed and configured, continue with the steps below.
+after the server and web application are installed and configured, continue with the following steps.
 
 ### Generate an API Key
 
@@ -188,4 +188,4 @@ Always verify configurations and permissions, especially when integrating with s
 - The DLLs shipped with NPS are compatible with Password Secure versions 9.2.0 and above
 - If you need to use a newer version of Password Secure, manually replace (“hot-swap”) the DLLs in:
 `C:\Program Files\Stealthbits\PAM\ActionServiceWorker\PsrApi`
-- Updated DLLs will be included in new NPS product releases, but for immediate compatibility with the latest Password Secure releases, manual updates is required. The SDK can be downloaded from the Password Secure Customer Information System.
+- Updated DLLs are included in new NPS product releases, but for immediate compatibility with the latest Password Secure releases, manual updates is required. The SDK can be downloaded from the Password Secure Customer Information System.

@@ -41,7 +41,7 @@ A key for threat types is displayed below the chart.
 
 ## Members Tab
 
-The Members tab displays information of Entra ID group members.
+The Members tab displays information of Entra ID group members.
 
 ![Entra ID Group Members Tab](/images/threatmanager/3.0/administration/threatdetails/entraidgroupmemberstab.webp)
 
@@ -77,10 +77,10 @@ Each table has the following columns:
   topic for additional information
 - Group Type – The type of group within Microsoft Entra ID
 - Membership Type - How the group membership was assigned
-- Security Enabled - Shows whether or not the "Security Enabled" flag is enabled within Microsoft
+- Security Enabled - Shows whether the "Security Enabled" flag is enabled within Microsoft
   Entra ID, if enabled it means that this type of group is used to manage user and computer access
   to shared resources for a group of users
-- Role Assignments Allowed - This flag shows whether or not a group can be assigned a role within
+- Role Assignments Allowed - This flag shows whether a group can be assigned a role within
   Microsoft Entra ID
 - Tags - The tags associated with the group
 
@@ -105,10 +105,10 @@ The Roles tab displays information about roles assigned to the group.
 The Roles tab displays two tables:
 
 - Eligible Assignments – Lists the roles that the group is eligible for. An eligible assignment
-  refers to a role assignment that a user or group can activate when needed but is not permanently
+  refers to a role assignment that a user or group can activate when needed but isn't permanently
   active
 
-- Active Assignments – Lists roles that are currently active and usable to the group
+- Active Assignments – Lists roles that are active and usable to the group
 
 **The eligible assignments table has the following columns**
 
@@ -117,18 +117,18 @@ The Roles tab displays two tables:
 - Inherited from - How the eligible assignment was inherited
 - Start Time - When the group is eligible for the role
 - End Time - When the role eligibility expires
-- Privileged - If the role is privileged or not. A privileged role in Microsoft Entra ID grants
+- Privileged - Whether the role is privileged. A privileged role in Microsoft Entra ID grants
   elevated permissions for high-level administrative tasks.
 
 **The active assignments table has the following columns**
 
 ![Roles Active Assignment Page](/images/threatmanager/3.0/administration/threatdetails/groupmembershiprolesactiveassignment.webp)
 
-- Role - Roles that are currently active
+- Role - Active roles
 - Scope - Defines the boundary within which the assigned role permissions are valid
 - Inherited from - How the eligible assignment was inherited
 - Assignment Type - How was the active role assignment assigned
 - Start Time - When the group is eligible for the role
 - End Time - When the role eligibility expires
-- Privileged - Whether or not the role is privileged (the role has elevated permission or
+- Privileged - Whether the role is privileged (the role has elevated permission or
   administrative access to EntraID resources)

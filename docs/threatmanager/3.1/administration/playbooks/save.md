@@ -9,7 +9,7 @@ sidebar_position: 20
 Sometimes it may be convenient to save a step so that it can be added to multiple playbooks without
 recreating the step.
 
-Follow the steps to save a step to the My Steps list.
+To save a step to the My Steps list:
 
 ![playbookstep](/images/threatmanager/3.0/administration/playbooks/playbookstep.webp)
 

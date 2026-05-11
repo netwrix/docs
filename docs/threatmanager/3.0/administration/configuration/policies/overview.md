@@ -7,7 +7,7 @@ sidebar_position: 40
 # Policies Page
 
 The Policies Page provides an overview of the policies added to the Policies box and their
-deployment history. It also provides the ability to add new polices and configure them.
+deployment history. It also lets you add new polices and configure them.
 
 ![page](/images/threatmanager/3.0/administration/configuration/policies/page.webp)
 
@@ -18,18 +18,18 @@ The Polices table displays the following information:
   policy is disabled
 - Hosts – The number of hosts on which the policy is applied
 - Last Deployed – The date and timestamp of the last policy deployment
-- Schedule – The interval at which the policy will deploy
+- Schedule – The interval at which the policy deploys
 
 The Deployment History table displays the following information:
 
 - Created – When the policy was applied to a host
 - Host – The host on which the policy was applied. If the host exists in the Threat Manager
-  database, click on the host link to go to the [Host Details Page](/docs/threatmanager/3.0/administration/threats/activedirectoryobjects/host.md)
+  database, click the host link to go to the [Host Details Page](/docs/threatmanager/3.0/administration/threats/activedirectoryobjects/host.md)
 - User Name – The user account associated with the policy. (In the case of a Honeytoken policy, the
   user account created by the Honeytoken policy.)
-- Policy – The policy name. Click on the policy link to go to the Configuration tab for that policy.
+- Policy – The policy name. Click the policy link to go to the Configuration tab for that policy.
 
-The Policies page also provides the ability to click on a policy and view information and
+The Policies page also lets you click a policy and view information and
 configuration options for that policy. See [Policy Configuration](/docs/threatmanager/3.0/administration/configuration/policies/policiesconfiguration.md) for
 additional information.
 
@@ -41,18 +41,16 @@ account. Policies for Honeytokens are added on the Policies page.
 
 :::note
 When a Honeytoken name is specified and the policy is enabled, this policy becomes
-immediately valid for Honeytoken threat detection. Please refer to
+immediately valid for Honeytoken threat detection. See
 [Configure Honeytoken Threats](/docs/threatmanager/3.0/administration/configuration/policies/honeytoken.md) for Honeytoken naming best practices.
 :::
 
-
-Follow the steps to add a policy.
 
 ![addnewpolicy](/images/threatmanager/3.0/administration/configuration/policies/addnewpolicy.webp)
 
 **Step 1 –** In the Policies box, click Add New Policy. The Add Profile window opens.
 
-**Step 2 –** In the Type drop-down list, select Honeytoken.
+**Step 2 –** In the Type dropdown list, select Honeytoken.
 
 **Step 3 –** Enter the following information:
 

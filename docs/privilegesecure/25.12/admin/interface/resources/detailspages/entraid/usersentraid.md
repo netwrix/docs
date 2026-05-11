@@ -10,7 +10,7 @@ The Users tab for Microsoft Entra ID (formerly Azure AD) shows information about
 selected resource.
 
 :::note
-Users in hybrid environments will be associated with the on-premises Active Directory
+Users in hybrid environments are associated with the on-premises Active Directory
 domain resource (if the on-premises domain has been synced by Privilege Secure). This view shows
 cloud-only EntraID users.
 :::

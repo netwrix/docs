@@ -43,7 +43,7 @@ The Active Directory OU where Netwrix Privilege Secure users get created can be 
    }
    ```
 
-3. Example: if the desired OU's Distinguished Name (DN) is “OU=Prod,OU=PAM,OU=SbPAM Users,DC=lab,DC=local”, change `"SbPAM Users"` in the example above to `"Prod,OU=PAM,OU=SbPAM Users"`.
+3. Example: if the desired OU's Distinguished Name (DN) is “OU=Prod,OU=PAM,OU=SbPAM Users,DC=lab,DC=local”, change `"SbPAM Users"` in the preceding example to `"Prod,OU=PAM,OU=SbPAM Users"`.
 
    NOTE: The leading `OU=` and trailing `DC=` segments are dropped.
 
@@ -57,6 +57,6 @@ The Active Directory OU where Netwrix Privilege Secure users get created can be 
 
 4. Save the `appsettings.json` file.
 
-After this change, users created or managed by Netwrix Privilege Secure will be created or managed in the newly specified Active Directory OU.
+After this change, users created or managed by Netwrix Privilege Secure are created or managed in the newly specified Active Directory OU.
 
 NOTE: Activities that are run with Managed login accounts, and were run before this configuration change was made, may still create user account objects in the SbPAM Users OU. To circumvent this behavior, change the **Login Account Template** on the activity. This will prevent the activity from referencing any historical Postgres data referring to the SbPAM Users OU.

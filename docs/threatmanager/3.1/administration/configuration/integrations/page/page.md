@@ -19,18 +19,18 @@ authentication providers, if any.
 
 The table displays the provider name, as supplied during configuration, and an icon indicating if
 the integration is enabled. To view provider details or make modifications, select a provider from
-the table or select it from the Credential Profile drop-down in the navigation pane.
+the table or select it from the Credential Profile dropdown in the navigation pane.
 
 ## Add an Authentication Provider
 
-Follow the steps to add an authentication provider.
+To add an authentication provider:
 
 **Step 1 –** On the Integrations interface, click Add New Integration in the navigation pane. The
 Add New Integration window opens.
 
 ![Add New Integration window with Authentication Provider type selected](/images/threatprevention/7.5/reportingmodule/configuration/integrations/authenticationprovider/authenticationprovider.webp)
 
-**Step 2 –** In the Type drop-down list, select Authentication Provider.
+**Step 2 –** In the Type dropdown list, select Authentication Provider.
 
 **Step 3 –** Provide a unique name and description for the authentication provider.
 
@@ -45,7 +45,7 @@ authentication provider type, i.e., OpenID, RADIUS, or SAML.
 On the Integrations interface, select an authentication provider under the Authentication Provider
 node in the navigation pane or from the table to configure, view, or modify its details.
 
-![Integrations interface displaying the details for an Authentication Provider with the type drop-down menu open](/images/threatmanager/3.0/administration/configuration/integrations/authenticationprovider/types.webp)
+![Integrations interface displaying the details for an Authentication Provider with the type dropdown menu open](/images/threatmanager/3.0/administration/configuration/integrations/authenticationprovider/types.webp)
 
 The following authentication provider types are supported; you can configure an authentication
 provider for any of these:

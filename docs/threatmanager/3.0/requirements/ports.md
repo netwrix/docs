@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Ports Requirements
 
-Netwrix Threat Manager architecture and components interactions are shown in the figure below.
+The following figure shows Netwrix Threat Manager architecture and component interactions.
 
 
 ![threatmanagerserver](/images/threatmanager/3.0/requirements/threatmanagerserver.webp)
@@ -20,9 +20,9 @@ applications that provide the data stream:
 
 | Communication Direction | Protocol | Ports | Description                                                                                                                                                                                                            |
 | ----------------------- | -------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Inbound                 | UDP      | 10000 | Syslog messaging File System event data stream from Activity Monitor agent host(s)                                                                                                                                     |
-| Inbound                 | TCP      | 10001 | AMPQ Active Directory event data stream from Activity Monitor agent host(s) Active Directory event data stream from Threat Prevention agent host(s) File System event data stream from Threat Prevention agent host(s) |
-| Bidirectional           | TCP      | 8080  | Access Analyzer Console Host(s)                                                                                                                                                                                        |
+| Inbound                 | UDP      | 10000 | Syslog messaging File System event data stream from Activity Monitor agent hosts                                                                                                                                     |
+| Inbound                 | TCP      | 10001 | Advanced Message Queuing Protocol (AMQP) Active Directory event data stream from Activity Monitor agent hosts Active Directory event data stream from Threat Prevention agent hosts File System event data stream from Threat Prevention agent hosts |
+| Bidirectional           | TCP      | 8080  | Access Analyzer Console hosts                                                                                                                                                                                        |
 
 ## Application Services Firewall Rules
 
@@ -30,10 +30,10 @@ The following firewall settings are required for communication for the Threat Ma
 
 | Communication Direction | Protocol | Ports                             | Description                                                                      |
 | ----------------------- | -------- | --------------------------------- | -------------------------------------------------------------------------------- |
-| Bidirectional           | TCP      | 55555                             | Active Directory login to the application console                                |
-| Bidirectional           | TCP      | 55556                             | Active Directory login to the application console                                |
-| Bidirectional           | TCP      | 55557                             | Local host communication from the Event Service to the Job Service agent host(s) |
-| Bidirectional           | TCP      | Dynamically Configured on Startup | Local host communication from the Event Service to the Job Service agent host(s) |
+| Bidirectional           | TCP      | 55555                             | Active Directory authentication for the application console                                |
+| Bidirectional           | TCP      | 55556                             | Active Directory authentication for the application console                                |
+| Bidirectional           | TCP      | 55557                             | Local host communication from the Event Service to the Job Service agent hosts |
+| Bidirectional           | TCP      | Dynamically Configured on Startup | Local host communication from the Event Service to the Job Service agent hosts |
 
 ## Database Firewall Rules
 
@@ -41,7 +41,7 @@ The following firewall settings are required for communication between the Threa
 the database server, when it is installed on a separate server:
 
 :::note
-These firewall rules are only needed if using a remote PostgreSQL database. That is not
+These firewall rules are only needed if using a remote PostgreSQL database. That isn't
 recommended or the default.
 :::
 
@@ -83,7 +83,7 @@ Active Directory domain controllers:
 ## Remote Action Service Firewall Rules
 
 The following firewall settings are required for communication between the Threat Manager server and
-the remote Action Service server, when it is installed on additional server(s):
+the remote Action Service server, when it is installed on additional servers:
 
 | Communication Direction | Protocol | Ports | Description                                |
 | ----------------------- | -------- | ----- | ------------------------------------------ |

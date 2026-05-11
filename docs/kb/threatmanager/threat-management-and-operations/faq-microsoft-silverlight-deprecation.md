@@ -20,15 +20,15 @@ knowledge_article_id: kA04u0000000Hw5CAE
 
 **Q1:** When is Silverlight being deprecated?
 
-**A1:** Microsoft deprecated Silverlight on October 12, 2021. Learn more about the Silverlight deprecation in [Silverlight End of Support ⸱ Microsoft &#129125;](https://support.microsoft.com/en-us/windows/silverlight-end-of-support-0a3be3c7-bead-e203-2dfd-74f0a64f1788).
+**A1:** Microsoft deprecated Silverlight on October 12, 2021. See [Silverlight End of Support](https://support.microsoft.com/en-us/windows/silverlight-end-of-support-0a3be3c7-bead-e203-2dfd-74f0a64f1788) on the Microsoft support site for additional information.
 
 **Q2:** How did Netwrix handle Silverlight deprecation for Threat Prevention web reporting?
 
 **A2:** Netwrix handled the deprecation of Silverlight and its associated use within Threat Prevention by migrating existing web reporting functionality to the Netwrix Threat Manager Reporting Module, shared with Netwrix Threat Manager.
 
-**Q3:** When will Threat Manager Reporting Module be made available?
+**Q3:** When is Threat Manager Reporting Module available?
 
-**A3:** Threat Manager Reporting Module is available now. Refer to the following article for additional information: Reporting Module ⸱ v7.3.
+**A3:** Threat Manager Reporting Module is available now. See the following article for additional information: Reporting Module ⸱ v7.3.
 
 **Q4:** Do Threat Prevention users need a Threat Manager license?
 
@@ -36,13 +36,13 @@ knowledge_article_id: kA04u0000000Hw5CAE
 
 **Q5:** How will Threat Prevention web reporting be deprecated?
 
-**A5:** The support for Threat Prevention web reporting was discontinued in v7.3.6, on October 17, 2023. Make sure to update Threat Prevention to the latest version to switch to Threat Manager Reporting Module.
+**A5:** Support for Threat Prevention web reporting was discontinued in v7.3.6 on October 17, 2023. Update Threat Prevention to the latest version to switch to Threat Manager Reporting Module.
 
 **Q6:** Can Threat Manager Reporting Module be installed in the Threat Prevention server?
 
-**A6:** For customers that own the full Threat Manager version, it is recommended to install Reporting Module in a separate server. For customers that do not own the full Threat Manager version, Reporting Module can be installed alongside Threat Prevention in the same server.
+**A6:** For customers that own the full Threat Manager version, install Reporting Module on a separate server. For customers that do not own the full Threat Manager version, Reporting Module can be installed alongside Threat Prevention on the same server.
 
 ## Related articles
 
 - Reporting Module ⸱ v7.3
-- [Threat Manager Reporting Console Crashes](/docs/kb/threatmanager/licensing-and-system-issues/threat-manager-reporting-console-crashes.md)
+- [Threat Manager Reporting Console Crashes](../licensing-and-system-issues/threat-manager-reporting-console-crashes)

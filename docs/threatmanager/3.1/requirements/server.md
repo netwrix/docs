@@ -7,7 +7,7 @@ sidebar_position: 10
 # Application Server Requirements
 
 :::warning
-Netwrix Threat Manager cannot be installed on the same server as Netwrix Threat Manager
+Netwrix Threat Manager can't be installed on the same server as Netwrix Threat Manager
 Reporting Module.
 :::
 
@@ -21,12 +21,11 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English (United States) language installation
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the total number of daily events sent to Threat Manager. It is suggested to
-use the total events for a peak day of the week, by activity.
+These are dependent upon the total number of daily events sent to Threat Manager. Use the total events for a peak day of the week, by activity.
 
 | Environment      | Enterprise | Extra Large | Large  | Medium | Small | Extra Small |
 | ---------------- | ---------- | ----------- | ------ | ------ | ----- | ----------- |
@@ -43,9 +42,8 @@ All values are based upon a seven day event retention period in Threat Manager.
 
 
 Daily events to be monitored by Threat Manager can typically be discovered by using Netwrix Threat
-Prevention or Netwrix Activity Monitor. When planning a deployment where there is currently no
-Netwrix agent deployed, it can be more difficult to plan for scale. However, the following are
-estimations based on organization size can be used:
+Prevention or Netwrix Activity Monitor. When planning a deployment where no Netwrix agent is
+deployed, scaling is harder to plan. Use the following estimations based on organization size:
 
 - For fewer than 1,000 active users
 
@@ -70,7 +68,7 @@ estimations based on organization size can be used:
 
 The following are additional requirements for the application server:
 
-- .NET 8.0.11
+- .NET 8.0.11
 - .NET Desktop Runtime 8.0.11
 - ASP.NET Core 8.0.11
 - VC++ redist v14.28.29914
@@ -78,10 +76,10 @@ The following are additional requirements for the application server:
 
 **Additional Considerations when Database is on the Application Server**
 
-The following considerations must be accommodated for:
+Address the following considerations:
 
 - When running antivirus scans against the PostgreSQL v14 database, the PostgreSQL data folder must
-  be excluded from the scans in order to prevent database complications.
+  be excluded from the scans to prevent database complications.
 - For performance reasons, disable Windows File Indexing on the drive containing the Threat Manager
   database.
 - Disk Defragmentation jobs should never be performed on the drive containing Threat Manager
@@ -95,8 +93,8 @@ The following permissions are required to install and use the application:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, we fully support the use of virtual machines. This
-section contains special considerations when leveraging virtualization.
+Physical machines are preferred, but virtual machines are fully supported. This section
+contains special considerations when using virtualization.
 
 - VMWare® ESX® – If using ESX, the following specifications are recommended:
 

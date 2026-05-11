@@ -6,11 +6,9 @@ sidebar_position: 10
 
 # Install the PostgreSQL Database Application
 
-The PostgreSQL database application can be installed on the same server as the application or a
-different server. If it is installed on a different server, the location of the database server must
-be provided while installing the application.
+You can install the PostgreSQL database application on the same server as the application or on a different server. If installing on a different server, provide the location of the database server during installation.
 
-Follow the steps to install the PostgreSQL database application.
+ install the PostgreSQL database application.
 
 :::warning
 The PostgreSQL database application must be installed before the application.
@@ -19,7 +17,7 @@ The PostgreSQL database application must be installed before the application.
 
 :::note
 These steps assume you have launched the installer through the Netwrix Setup Launcher
-`(Netwrix_Setup.exe`). If you are not using the launcher, right-click on `NetwrixPostgreSQL14.exe`
+`(Netwrix_Setup.exe`). If you aren't using the launcher, right-click `NetwrixPostgreSQL14.exe`
 and select Run as administrator. Then skip to Step 2.
 :::
 
@@ -34,8 +32,8 @@ and select Run as administrator. Then skip to Step 2.
 
 ![Netwrix PostgreSQL Setup wizard on the EULA page](/images/activitymonitor/8.0/install/eula.webp)
 
-**Step 3 –** Read the End User License Agreement and select the I accept the license agreement
-checkbox. Click Next.
+**Step 3 –** Read the End User License Agreement and select the `I accept the license agreement`
+checkbox. Click **Next**.
 
 ![Netwrix PostgreSQL Setup wizard on the Folder Location page](/images/threatprevention/7.5/install/reportingmodule/folder.webp)
 
@@ -59,11 +57,9 @@ information.
 
 ## Optionally Configure the Postgres.conf File
 
-PostgreSQL has some unique memory management features that need to be configured specifically based
-on the specifications of the database server. PostgreSQL can easily be starved of resources and
-enter a failed state if careful consideration and configuration of the `postgres.conf` file is not
-taken under consideration. For larger environments or for those experiencing issues with PostgreSQL,
-the following changes are suggested.
+PostgreSQL has some unique memory management features that need to be configured based
+on the specifications of the database server. PostgreSQL enters a failed state if the `postgres.conf` file isn't configured correctly for the database server specifications. For larger environments or for those experiencing issues with PostgreSQL,
+apply the following changes.
 
 :::note
 When setting values, specifically when using a Memory unit, case sensitivity is required.

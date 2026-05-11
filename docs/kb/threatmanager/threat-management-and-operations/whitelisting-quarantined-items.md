@@ -19,7 +19,7 @@ knowledge_article_id: kA04u000000wnnDCAQ
 
 ## Question
 
-A file was quarantined and flagged as a high severity by CrowdStrike (file location: `E:\Program Files\STEALTHbits\StealthDEFEND\ActionService\PowerShell`). How can I fix it?
+A file was quarantined and flagged as a high severity by CrowdStrike (file location: `E:\Program Files\STEALTHbits\StealthDEFEND\ActionService\PowerShell`). This article explains how to resolve the issue.
 
 ## Answer
 

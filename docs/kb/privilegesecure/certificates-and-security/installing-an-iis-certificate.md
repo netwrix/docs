@@ -51,7 +51,7 @@ Netwrix Privilege Secure service configuration files will need to be updated to 
 ![User-added image](./../0-images/ka04u000001172V_0EM4u000004dDEz.png)
 
 Enter the FQDN that matches the name of your cert (e.g. `https://yourcert.company.com:6500`). Leave **Ignore HTTPS Certificate Errors** unchecked.
-Click the **Register Services** button. A "Services registered" pop-up will appear when the necessary changes have been made.
+Click the **Register Services** button. A "Services registered" pop-up appears when the necessary changes have been made.
 
 ### Updating Service Configuration Files (Netwrix Privilege Secure 3.5 or earlier)
 Netwrix Privilege Secure service configuration files will need to be updated to use the same DNS name as the certificate. The following files will need to be edited:
