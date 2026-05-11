@@ -55,12 +55,25 @@ The application registration must have the following Microsoft Graph access:
 
 |API / Permissions name|Type|Description|Admin consent required|Status|
 |----------------------|----|-----------|----------------------|------|
-|AdministrativeUnit.ReadWrite.All|Application|Read and write all administrative units|Yes|Granted|
-|Application.ReadWrite.All|Application|Read and write all applications|Yes|Granted|
-|Application.ReadWrite.OwnedBy|Application|Manage apps that this app creates or owns|Yes|Granted|
-|Directory.ReadWrite.All|Application|Read and write directory data|Yes|Granted|
-|Group.ReadWrite.All|Application|Read and write all groups|Yes|Granted|
-|User.DeleteRestore.All|Application|Delete and restore all users|Yes|Granted|
+|AccessReview.ReadWrite.All|Application Manage all access reviews|Yes|Granted|
+|AdministrativeUnit.ReadWrite.All|Application Read and write all administrative units|Yes|Granted|
+|Agreement.ReadWrite.All|Application Read and write all terms of use agreements|Yes|Granted|
+|Application.ReadWrite.All|Application Read and write all applications|Yes|Granted|
+|Application.ReadWrite.OwnedBy|Application Manage apps that this app creates or owns|Yes|Granted|
+|CrossTenantInformation.ReadBasic.All|Application Read cross-tenant basic information|Yes|Granted|
+|Device.ReadWrite.All|Application Read and write devices|Yes|Granted|
+|Directory.ReadWrite.All|Application Read and write directory data|Yes|Granted|
+|Domain.ReadWrite.All|Application Read and write domains|Yes|Granted|
+|Group.ReadWrite.All|Application Read and write all groups|Yes|Granted|
+|IdentityProvider.ReadWrite.All|Application Read and write identity providers|Yes|Granted|
+|Policy.Read.All|Application Read your organization's policies|Yes|Granted|
+|Policy.ReadWrite.ConditionalAccess Application|Read and write your organization's conditional access policies|Yes|Granted|
+|PrivilegedAccess.ReadWrite.AzureAD Application|Read and write privileged access to Azure AD roles|Yes|Granted|
+|PrivilegedAccess.ReadWrite.AzureADGroup|Application Read and write privileged access to Azure AD groups|Yes|Granted|
+|PrivilegedAccess.ReadWrite.AzureResources|Application Read and write privileged access to Azure resources|Yes|Granted|
+|RoleManagement.ReadWrite.Directory|Application Read and write all directory RBAC settings|Yes|Granted|
+|User.DeleteRestore.All|Application Delete and restore all users|Yes|Granted|
+|User.ReadWrite.All|Application Read and write all users' full profiles|Yes|Granted|
 
 :::
 
