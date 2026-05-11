@@ -33,7 +33,7 @@ Save the changes.
 
 1. On all Netwrix Privilege Secure servers, navigate to the following path:  
    `C:\ProgramData\Stealthbits\PAM\ProxyService\`
-2. **Optional:** If the `sbpam_ssh.json` file is missing from the target directory, create it and follow the steps below.
+2. **Optional:** If the `sbpam_ssh.json` file is missing from the target directory, create it and follow these steps.
 3. Locate the `sbpam_ssh.json` file and edit it using a text editor.
 4. Add the following node to the file:
 

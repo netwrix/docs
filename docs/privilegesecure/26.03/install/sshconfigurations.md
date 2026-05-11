@@ -9,7 +9,7 @@ When lauching an SSH session from the browser, a hook must be incorporated on th
 
 
 # SSH Encryption Algorithms
-SSH supports many encryption algorithms for key types, key exchange, and ciphers. As they become obsolete, some users demand that they be removed, but others need to keep them for backward compatiblity reasons.  Since Newrix can't know what every user wants to support, we made this configurable starting in version 26.03.0
+SSH supports many encryption algorithms for key types, key exchange, and ciphers. As they become obsolete, some users demand that they be removed, but others need to keep them for backward compatiblity reasons. Since Netwrix can't know what every user wants to support, this became configurable starting in version 26.03.0
 
 There are two places that have to be updated. The session client and proxy.
 
@@ -80,7 +80,7 @@ Here is a sample sbpam_sshclient.json
 
 2. The proxy for scanning.
 Located in ine NPS server at C:\ProgramData\Stealthbits\PAM\ProxyService\sbpam_ssh.json
-Add, Modify or update this file as required to match the needs of the servers/devices NPS is connecting to.
+Add, Modify, or update this file as required to match the needs of the servers/devices NPS is connecting to.
 
 ```
 {

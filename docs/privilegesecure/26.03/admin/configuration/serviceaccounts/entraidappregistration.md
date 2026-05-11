@@ -96,10 +96,10 @@ information.
 
 ## Rotate a Microsoft Entra ID Account Password in a Hybrid Tenant
 
-In order for existing account passwords to be rotated by Privilege Secure in hybrid Microsoft Entra
-ID tenants, the Password Writeback feature in Microsoft Entra ID must be enabled. Enabling Password
+For Privilege Secure to rotate existing account passwords in hybrid Microsoft Entra
+ID tenants, enable the Password Writeback feature in Microsoft Entra ID. Enabling Password
 Writeback allows hybrid account passwords to be updated either in on-prem AD or in Microsoft Entra
-ID, and the result will be synced to the other location. Without having this functionality enabled
+ID, and the result is synced to the other location. Without having this functionality enabled
 in a hybrid Microsoft Entra ID tenant, all attempts to change an account's password will fail.
 
 Enabling Password Writeback isn't specific to Privilege Secure. See the
@@ -112,7 +112,7 @@ Microsoft article for additional information.
 Sometime in early 2026, Microsoft tightened their security rules such that password rotation requires an additional role.
 
 **Password Administrator**
-Can reset passwords for non-admin users and other Password Administrators, but cannot reset passwords for users holding any privileged Entra roles - lower risk role.
+Can reset passwords for non-admin users and other Password Administrators, but can't reset passwords for users holding any privileged Entra roles - lower risk role.
 
 **Privileged Authentication Administrator** Can change password of any account
 
@@ -123,13 +123,13 @@ The proper choice will depend on the specific accounts NPS is trying to change p
 
 **Step 2 –**  In the left nav, go to Identity → Roles & admins → Roles & admins
 
-**Step 3 –** Search for and click Password Administrator (or Privileged Authentication Administrator, see note above)
+**Step 3 –** Search for and click Password Administrator (or Privileged Authentication Administrator — see the preceding note)
 
 **Step 4 –**  Click Add assignments
 
 **Step 5 –** In the "Select member" panel, search for the name of the app registration NPS uses for Entra ID (the same one they
   configured in NPS when setting up the Entra ID resource/tenant)
-    - It will appear as a service principal, not a user
+    - It appears as a service principal, not a user
     - If search doesn't find it, try searching by the application's client ID or check Enterprise applications to confirm the display name
 
 **Step 6 –** Select it, click Next, then Assign

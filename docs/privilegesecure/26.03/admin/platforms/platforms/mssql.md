@@ -10,7 +10,7 @@ The Microsoft SQL Server menu displays the configuration options for Microsoft S
 
 ![Microsoft SQL Server Platform Configuration](/images/privilegesecure/26.03/accessmanagement/admin/policy/page/platforms/mssql.webp)
 
-Details for the selected platform display on the right side of the page. Below are the
+Details for the selected platform display on the right side of the page. The following are the
 configuration options for a Microsoft SQL Server Platform.
 
 - Name — Displays the name of the policy

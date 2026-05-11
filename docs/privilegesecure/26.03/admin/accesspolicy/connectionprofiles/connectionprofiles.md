@@ -30,12 +30,12 @@ The selected profile details display in the main pane:
 - Proxy settings:
 
 - RDP Proxy — Specific proxy, format `host:port`, that should be used for RDP activities in an
-access policy. If the field is blank, the local Proxy on the Privilege Secure server will be
+access policy. If the field is blank, the local Proxy on the Privilege Secure server is
 used.
 - SSH Proxy — Specific proxy, format `host:port`, that should be used for SSH activities in an
-access policy. If the field is blank, the local Proxy on the Privilege Secure server will be
+access policy. If the field is blank, the local Proxy on the Privilege Secure server is
 used.
-- Allow Proxy Auto Connects — If disabled, the requester will be prompted for secondary
+- Allow Proxy Auto Connects — If disabled, the requester is prompted for secondary
 authentication (password and MFA) when executing proxy connects from the
 [Active Dashboard](/docs/privilegesecure/26.03/admin/dashboard/active/active.md).
 - Record Proxy Sessions — Specify if the proxy will record the session. This allows a user
@@ -46,15 +46,15 @@ information.
 
 - Session Control settings:
 
-- Max Duration (minutes) — Length of time that sessions will be scheduled for when making a new
+- Max Duration (minutes) — Length of time that sessions are scheduled for when making a new
 Activity Request
 - Session End Notification (minutes) — Determines the time before the end of the session that
-the requester will be notified within their RDP or SSH clients. This option will work whether
+the requester is notified within their RDP or SSH clients. This option works whether
 the requestor logs on directly to the Resource, or connects via the proxy.
 - Enable Session Extension — Check to allow user to extend their current session. See the
 [Start Activity Session](/docs/privilegesecure/26.03/enduser/dashboard/active/startsession/startsession.md) topic for additional
 information.
-- Extend By — The additional number of minutes that the session will be extended. See the
+- Extend By — The additional number of minutes that the session is extended. See the
 [Start Activity Session](/docs/privilegesecure/26.03/enduser/dashboard/active/startsession/startsession.md) topic for additional
 information.
 - Session Extension Limit — The number of times the user can extend their session.
@@ -71,7 +71,7 @@ for managed domain accounts with the “Delete After Use” option enabled:
 activity session ends
 - Disable — Permanently disable the cache value
 
-- Leave Existing Members in Group — If checked, a user will be left in a group for an activity
+- Leave Existing Members in Group — If checked, a user is left in a group for an activity
 if that user was already in the group before the activity started and the user wasn't added
 to the group by a different activity
 - Validate Users for SSH Sessions — When checked, the action service will connect to all valid

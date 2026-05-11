@@ -24,9 +24,9 @@ knowledge_article_id: kA0Qk0000001fcDKAQ
 
 ## Symptom
 
-No events are received because the agent is unable to hook into LSASS.
+The agent cannot hook into LSASS, so no events are received.
 
-Below is an example output found in the log:
+The following example shows output found in the log:
 
 ```text
 2024-10-01 17:24:07.269| Debug   | 0x09ac| executing NVInject, result: 6
@@ -38,10 +38,10 @@ Third-party security tools are blocking the agent from hooking into LSASS.
 
 ## Resolution
 
-To resolve this issue, follow the steps provided in the first resolution. If the issue persists, then proceed with the steps outlined in the second resolution:
+To resolve this issue, follow the steps in the first resolution. If the issue persists, follow the steps in the second resolution:
 
-- Correct the necessary endpoint protection exclusions. For more details, refer to the following article: https://docs.netwrix.com/docs/threatprevention/7_5 (Antivirus Software Considerations).
-- Check if **SI Agent Safe Mode** is enabled. If enabled, it could prevent the LSASS hook from mitigating host reboots. For more information, see https://docs.netwrix.com/docs/threatprevention/7_5 (SI Agent Safe Mode).
+- Correct the necessary endpoint protection exclusions. See [Antivirus Software Considerations](https://docs.netwrix.com/docs/threatprevention/7_5) in the Threat Prevention documentation.
+- Check if **SI Agent Safe Mode** is enabled. If enabled, it could prevent the LSASS hook from mitigating host reboots. See [SI Agent Safe Mode](https://docs.netwrix.com/docs/threatprevention/7_5) in the Threat Prevention documentation.
 
   1. To verify this setting, review the **AD Agent** column in the interface:
 
