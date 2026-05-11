@@ -25,7 +25,7 @@ Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 onto 2510 wi
 
 ## Restoring a 2509 Backup onto a 2510 Server
 
-Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. Once patched to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
+Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. Once you patch it to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
 
 ---
 
@@ -83,7 +83,7 @@ You may need to refresh Entra ID / SSO application registrations after migration
 
 **Steps:**
 1. Navigate to **System Configuration → SSO**.
-2. Verify Tenant ID, Client ID, and Client Secret are correctly populated.
+2. Verify Tenant ID, Client ID, and Client Secret are correct.
 3. Test login in an incognito browser window.
 4. If the issue persists, re-register the EPP application in your Azure AD / Entra ID tenant.
 
@@ -182,7 +182,7 @@ Air-gapped activation requires an **Offline Activation Patch** specific to 2510.
 
 ## ELS for PHP Installation Failing
 
-This can occur in some migration paths when the license isn't correctly recognized.
+This can occur in some migration paths when EPP doesn't correctly recognize the license.
 
 **Steps:**
 1. Verify your license file contains the `"php_els":"<value>"` field. If this field is missing, your license doesn't include ELS for PHP entitlement — contact Netwrix Support or your account team to request a refreshed license before proceeding.

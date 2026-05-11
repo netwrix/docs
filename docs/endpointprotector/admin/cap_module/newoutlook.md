@@ -51,7 +51,7 @@ The Endpoint Protector add-in requires the customer to host certain files and ma
 
    Hosting these files ensures that the add-in can communicate appropriately with the EPP system to enable its functionalities.
 
-   You are responsible for hosting these files. Host them at a publicly reachable URL. The URL of each hosted file must match the value configured in the manifest. The following chapters describe each requirement.
+   You are responsible for hosting these files. Host them at a publicly reachable URL. The URL of each hosted file must match the value you configure in the manifest. The following chapters describe each requirement.
 
    :::warning Important
    Any downtime affecting the hosted files (mainpage.html, validator.js) will prevent users with the add-in assigned from sending any emails.
@@ -71,7 +71,7 @@ Set up a standard Endpoint Protector (EPP) Content Aware Protection (CAP) policy
 Turn off the setting under Content Aware Protection → Deep Packet Inspection called "Block Unsupported Protocols in New Outlook". The EPP add-in makes this setting unnecessary.
 
 :::note
-On macOS, an EPP certificate is used to ensure secure communication between the add-in and the EppClient. Refer to the existing User Manual chapter for [detailed instructions](./deeppacket#dpi-certiﬁcate-on-macos). If you have configured the DPI certificate on macOS, you can ignore this note.
+On macOS, an EPP certificate ensures secure communication between the add-in and the EppClient. Refer to the existing User Manual chapter for [detailed instructions](./deeppacket#dpi-certiﬁcate-on-macos). If you have configured the DPI certificate on macOS, you can ignore this note.
 :::
 
 :::warning Important
@@ -112,7 +112,7 @@ The Microsoft add-in validator requires this. Replace the placeholder URLs with 
     ```
 
     Ensure that you add every domain in the URLs of the hosted files to the `<AppDomains>` list:
-    - If the same domain is used for all URLs, it only needs to be added once.
+    - If all URLs use the same domain, you only need to add it once.
     - Extend the existing list by adding your domain at the end between the `<AppDomain></AppDomain>` tags, and before the closing `</AppDomains>` tag.
 
 3. Define the validator location\

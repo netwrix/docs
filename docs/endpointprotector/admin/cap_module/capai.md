@@ -15,7 +15,7 @@ As artificial intelligence tools become increasingly integrated into everyday bu
 This new functionality enables businesses to maintain precise control over information exchanges with popular AI chat applications. By incorporating Data Loss Prevention for LLMs, EPP enhances security by:
 
 -   Letting administrators manage who can interact with AI prompts through web applications.
--   Offering tools to oversee sensitive content, whether typed directly or attached as a file.
+-   Offering tools to oversee sensitive content, whether users type it directly or attach it as a file.
 
 **Benefits**
 

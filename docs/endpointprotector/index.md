@@ -6,8 +6,8 @@ sidebar_position: 1
 
 # Netwrix Endpoint Protector
 
-Netwrix Endpoint Protector is a comprehensive Data Loss Prevention (DLP) solution designed to
-safeguard endpoint systems from data ex-filtration and loss. Portable storage devices and internet
+Netwrix Endpoint Protector is a comprehensive Data Loss Prevention (DLP) solution that safeguards
+endpoint systems from data ex-filtration and loss. Portable storage devices and internet
 connectivity are ubiquitous, making data theft and accidental loss a persistent risk.
 
 Traditional network security measures often struggle to prevent data breaches originating from
@@ -25,8 +25,8 @@ HIPAA, and GDPR through predefined discovery patterns and response strategies. I
 organizational needs, from protecting intellectual property and client lists to ensuring compliance
 with industry-specific regulations.
 
-With Endpoint Protector, administrators gain a centralized, web-based interface for seamless
-management and enforcement of security policies across all endpoints. Whether preventing accidental
+With Endpoint Protector, administrators gain a centralized, web-based interface for management
+and enforcement of security policies across all endpoints. Whether preventing accidental
 data leakage or mitigating risks from insider threats, Endpoint Protector offers essential tools to
 safeguard critical business data.
 
@@ -46,7 +46,7 @@ safeguard critical business data.
 
 **Limited Support** provides best-effort assistance for existing functionality and critical security updates only—no new features or non-critical bug fixes.
 
-**Discontinued Support** means no updates, patches, or technical support assistance will be available.
+**Discontinued Support** means Netwrix provides no updates, patches, or technical support assistance.
 
 ### Stay Protected
 

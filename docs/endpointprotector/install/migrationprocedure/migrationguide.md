@@ -211,7 +211,7 @@ Keep the VM snapshot active until you have fully validated the new 2510 environm
 1. Log in to Endpoint Protector Console.
 2. Navigate to **System Maintenance → System Backup**.
 3. Click **Create**, enter a name and description (include the date and version, e.g., `pre-upgrade-5942-2026-04-20`), click **Save**.
-4. **Save the System Backup Key** displayed in the prompt — you need this key for restoration and can't recover it if lost.
+4. **Save the System Backup Key** that appears in the prompt — you need this key for restoration and can't recover it if lost.
 5. Wait for the status to show **"Ready to download"**, then download the backup file.
 
 ![System Maintenance → System Backup — backup creation wizard](backup_wizard.webp)
@@ -359,7 +359,7 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 | DPI certificate trust broken | Content Aware Protection and DPI will fail until certificates regenerated |
 | CAP policy disruption | All Content Aware Protection rules break |
 | EE drives locked | Users must manually decrypt and re-encrypt every protected drive |
-| Root CA redistribution | New root CA must be pushed to all endpoints via GPO/MDM |
+| Root CA redistribution | You must push the new root CA to all endpoints via GPO/MDM |
 | High server load | Certificate regeneration for all endpoints creates a burst load spike |
 
 :::warning
@@ -421,7 +421,7 @@ With the license active, upgrade the fresh 2510 image to the current latest patc
 ![System Configuration → Software Update — patch upload and version progression](../../admin/systemconfiguration/softwareupdate.webp)
 
 :::tip
-For air-gapped environments, follow the same procedure using the 2604 cumulative patch file — this is the same patch used for online environments.
+For air-gapped environments, follow the same procedure using the 2604 cumulative patch file — this is the same patch as for online environments.
 :::
 
 3. After each patch, refresh the browser and verify the version in **Appliance → Server Information** before applying the next.
@@ -613,7 +613,7 @@ Generate deliberate test events on a known test machine for each active module. 
 
 If using Deep Packet Inspection or Content Aware Protection:
 
-1. Verify the root CA certificate is trusted on endpoints.
+1. Verify endpoints trust the root CA certificate.
 2. Test a known-blocked transfer to confirm CAP policy is active.
 3. If endpoints don't trust the certificates, and you used a **different IP/FQDN**, you may need to push the new root CA via GPO or MDM.
 
@@ -725,7 +725,7 @@ If using EPP's built-in upgrade:
 3. Select target computers carefully.
 
 :::warning
-EPP's built-in upgrade is rate-limited to **50 machines per hour**. For large deployments, plan accordingly or use external deployment tools.
+EPP's built-in upgrade limits the rate to **50 machines per hour**. For large deployments, plan accordingly or use external deployment tools.
 :::
 
 :::tip
