@@ -34,7 +34,7 @@ knowledge_article_id: kA0Qk0000001hHRKAY
 
 1. We do not recommend performing an in-place upgrade for the Netwrix Application server's Operation System. It has been known to cause issues. We suggest spinning up a new server with the new OS and migrating Netwrix to the new server.
 2. We recommend migrating Access Analyzer to the new server first. Then, after confirming everything is working as expected on the new server, upgrade to the latest version.
-3. You should keep all of Netwrix's databases on simple recovery mode. For mor information, please see the following article: SQL Server Requirements.
+3. You should keep all of Netwrix's databases on simple recovery mode. For more information, please see the following article: SQL Server Requirements.
 
 ## Related Articles
 
