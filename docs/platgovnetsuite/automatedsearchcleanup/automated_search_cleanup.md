@@ -30,6 +30,7 @@ The **Automated Search Clean Up** tool has two operating modes:
 
 These searches are excluded from clean up:
 
+- Locked searches
 - Searches from managed bundles
 - Searches from 3rd party bundles
 - Searches with script/script deployment dependencies, workflow dependencies, field/data sourcing
@@ -39,6 +40,8 @@ These searches are excluded from clean up:
 - Agent control searches
 - Searches with Change/Approval Policy requiring a Change Record
 - Search record types not in Suitescript Supported Records
+- Revenue Recognition Schedule
+- Revenue Recognition Plan
 
 Menu options are available to access the rules and lists:
 
