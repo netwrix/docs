@@ -16,6 +16,7 @@ disabled threats.
 The Threats list divides the threats into the following sections:
 
 - [Active Directory Threats](/docs/threatmanager/3.2/threats/activedirectory.md)
+- [Certificate Services Threats](/docs/threatmanager/3.2/threats/certificateservices.md)
 - [Entra ID Threats](/docs/threatmanager/3.2/threats/entraid.md)
 - [File System Threats](/docs/threatmanager/3.2/threats/filesystem.md)
 - [General Threats](/docs/threatmanager/3.2/threats/general.md)
