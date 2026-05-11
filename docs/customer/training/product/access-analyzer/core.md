@@ -10,7 +10,7 @@ import { NAAValue, NAAConcepts, NAAArchitecture, NAAIntro, AICIntro, NAASensitiv
 import { NAA, AIC } from '@site/src/training/products';
 
 
-Estimated length: 3.75 hours
+Estimated length: 3 hours 27 minutes
 
 In the <NAA /> – Core learning path, you will learn how to use this application, formerly Netwrix Enterprise Auditor / StealthAUDIT. It covers the core content of this application, the <AIC />, and the Sensitive Data Add-on and is applicable to all solutions. It contains the following courses:
 

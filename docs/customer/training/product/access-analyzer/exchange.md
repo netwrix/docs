@@ -10,7 +10,7 @@ import { NAAValue, NAAConcepts, NAAArchitecture, NAAIntro, AICIntro, NAAExchange
 import { NAA, AIC } from '@site/src/training/products';
 
 
-Estimated length: 3.75 hours
+Estimated length: 3 hours 57 minutes
 
 In the <NAA /> –  Exchange learning path, you will learn how to use the Exchange solution in this application, formerly Netwrix Enterprise Auditor / StealthAUDIT. It covers the core content of this application, the <AIC />, and the Sensitive Data Add-on and is applicable to all solutions. It contains the following courses:
 
