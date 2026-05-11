@@ -26,8 +26,11 @@ details for each components below.
 
 **NetwrixPostgreSQL14.exe**
 
-This executable is for installing the PostgreSQL database on a different server from the
-application.
+This executable is for installing the PostgreSQL 14 database. PostgreSQL 14 will become End-of-Life on November, 2026.  It is recommended to perform the [migration procedure](/docs/threatmanager/3.2/install/upgrade/upgrade_pg14_to_pg18.md) prior to this date.
+
+**NetwrixPostgreSQL18.exe**
+
+This executable is for installing the PostgreSQL 18 database. This is the latest recommended version and should be used for all installs going forward.
 
 **NetwrixThreatManager.exe**
 
@@ -35,6 +38,7 @@ This executable is for installing the application and its services:
 
 - Netwrix Threat Manager Action Service
 - Netwrix Threat Manager Active Directory Service
+- Netwrix Threat Manager Azure Service
 - Netwrix Threat Manager Email Service
 - Netwrix Threat Manager Event Service
 - Netwrix Threat Manager Integration Service
@@ -45,11 +49,10 @@ This executable is for installing the application and its services:
 
 The following prerequisites will be installed if they are not present:
 
-- .NET 8.0.11
-- .NET Desktop Runtime 8.0.11
-- ASP.NET Core 8.0.11
+- .NET 10
+- .NET Desktop Runtime 10
+- ASP.NET Core 10
 - VC++ redist v14.28.29914
-- Python v3.10.8x64
 
 **NetwrixThreatManager.ActionService.exe**
 
@@ -86,7 +89,11 @@ you should at least exclude postgres.exe and the data directories so the scanner
 
 Follow the steps to install the Threat Manager application on a single server.
 
-![setuplauncher](/images/threatmanager/3.0/install/setuplauncher.webp)
+![setuplauncher](/images/threatmanager/3.2/install/setuplauncher.webp)
+
+:::info
+The PostgreSQL 14 button is only displayed if PostgreSQL 14 is already installed on the host. PostgreSQL 18 is the recommended version for new installs.
+:::
 
 **Step 1 –** Right-click on `Netwrix_Setup.exe` and select Run as administrator. The Netwrix Setup
 launcher opens. You can now install the following components on the same server:
