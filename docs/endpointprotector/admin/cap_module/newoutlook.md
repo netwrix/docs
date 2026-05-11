@@ -6,7 +6,7 @@ sidebar_position: 50
 
 ## Content Aware Protection for New Outlook
 
-Starting from Endpoint Protector Clients version 5.9.4.3, you can fully manage New Outlook as a Content Aware Protection Exit Point via the Microsoft 365 Web Add-in. Unlike COM add-ins for classic Outlook, which install directly on individual endpoints, you must deploy Microsoft Web Add-ins centrally using the Microsoft 365 Admin Center or manually within the user account in the Outlook application.
+Starting from Endpoint Protector Clients version 5.9.4.3, you can fully manage New Outlook as a Content Aware Protection Exit Point via the Microsoft 365 Web Add-in. COM add-ins for classic Outlook install directly on individual endpoints. In contrast, you must deploy Microsoft Web Add-ins centrally using the Microsoft 365 Admin Center or manually within the user account in the Outlook application.
 
 Microsoft 365 Web Add-ins associate with user accounts rather than computers or devices. After you deploy an add-in to a user account, every device the user employs to access that account has the add-in available. This means you can't restrict it to just one device, such as the user's Mac computer only.
 

@@ -22,7 +22,7 @@ For the full support lifecycle and version status, see: [Netwrix Endpoint Protec
 
 ## Overview
 
-Endpoint Protector's new server platform runs on Ubuntu 22.04 LTS and requires a full image migration — not a simple patch. Two base images are available as starting points:
+Endpoint Protector's new server platform runs on Ubuntu 22.04 LTS and requires a full image migration rather than a simple patch. Two base images are available as starting points:
 
 - **2509** — The original release. No longer available for download. Customers already running 2509 don't need to switch to 2510 unless they require a larger initial storage disk size.
 - **2510** — Recommended for new deployments. Includes improvements to disk sizing and DHCP/DNS configuration.
@@ -181,7 +181,7 @@ EPP clients continue logging events locally during server downtime. The server r
 :::
 
 :::tip
-In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, allowing the server to focus on the upgrade and ensuring no logs remain unprocessed in the queue. Client communications can be disabled in several ways:
+In large enterprise environments with a high number of active EPP clients, Netwrix recommends **temporarily disabling client communications** before starting the upgrade. This prevents clients from sending EPP logs to the server during the process, allowing the server to focus on the upgrade and ensuring no logs remain unprocessed in the queue. You can disable client communications in several ways:
 - Blocking the EPP communication port on the perimeter or host-based firewall
 - Blocking the port at the virtual machine network stack level (vSwitch port group policy, NSX rule, or equivalent)
 
@@ -330,7 +330,7 @@ This backup at 5.9.4.2 is the **only** backup that will work on the 2510 platfor
 The Backup feature backs up all configuration details, excluding log evidence and File Shadows.
 :::
 
-Use [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.md#audit-log-backup) to back up logs and/or File Shadows (optional). Logs and file shadow backups aren't migrated to the new environment. See the notes in this section for an overview of how to preserve logs and/or File Shadows in an offline state before starting the upgrade process.
+Use [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.md#audit-log-backup) to back up logs and/or File Shadows (optional). The migration process doesn't transfer logs or file shadow backups to the new environment. See the notes in this section for an overview of how to preserve logs and/or File Shadows in an offline state before starting the upgrade process.
 
 
 #### My backup is bigger than 200 MB
@@ -468,7 +468,7 @@ Restore the 5.9.4.2 backup onto the fully patched 2604 server. The backup format
 
 7. Monitor the restore progress: the status will show **"Generating"** while restoring.
 
-8. Once complete, the status changes to **"Your back import file has been queued"**. 
+8. When the restore completes, the status changes to **"Your back import file has been queued"**. 
 
 ![System Backup list — Ready to download status confirming successful restore](backup_ready_restored.webp)
 
