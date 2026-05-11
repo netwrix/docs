@@ -12,7 +12,7 @@ import { Company, NIM } from '@site/src/training/products';
 
 Estimated length: 3 hours 5 minutes
 
-This learning path offers training to <Company /> partner Professional Services engineers on <NIM />, formerly Netwrix Usercube. However, certification isn't available at this time. When the final courses are available to grant certification, this learning path will include them. You can continue from your current progress. It contains the following courses:
+This learning path offers training to <Company /> partner Professional Services engineers on <NIM />, formerly Netwrix Usercube. However, certification isn't yet available. When the final courses are available to grant certification, this learning path will include them. You can continue from your current progress. It contains the following courses:
 
 * 1720 <NIM /> – Valuable Features
 * 1721 <NIM /> – Identity & Identity Life Cycle
