@@ -12,24 +12,24 @@ The following learning paths provide Partner certification for Presales Engineer
     * AI Governance
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
         * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
-        * [Netwrix Access Analyzer 26+ Presales Engineer](./access-analyzer-26+.md)
+        * [Netwrix Access Analyzer 26 Presales Engineer](./access-analyzer-26.md)
         * [Netwrix Endpoint Protector Presales Engineer](./endpoint-protector.md)
     * Data Security Posture Management
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
         * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
-        * [Netwrix Access Analyzer 26+ Presales Engineer](./access-analyzer-26+.md)
+        * [Netwrix Access Analyzer 26 Presales Engineer](./access-analyzer-26.md)
         * [Netwrix Endpoint Protector Presales Engineer](./endpoint-protector.md)
     * Data Access Governance
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
         * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
-        * [Netwrix Access Analyzer 26+ Presales Engineer](./access-analyzer-26+.md)
+        * [Netwrix Access Analyzer 26 Presales Engineer](./access-analyzer-26.md)
     * Data Loss Prevention
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
         * [Netwrix Endpoint Protector Presales Engineer](./endpoint-protector.md)
     * Data Discovery & Classification
         * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
         * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
-        * [Netwrix Access Analyzer 26+ Presales Engineer](./access-analyzer-26+.md)
+        * [Netwrix Access Analyzer 26 Presales Engineer](./access-analyzer-26.md)
         * [Netwrix Data Classification Presales Engineer](./data-classification.md)
 * Identity Security
     * Identity Threat Detection & Response

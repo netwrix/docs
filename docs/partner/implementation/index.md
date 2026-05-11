@@ -16,7 +16,7 @@ The following learning paths provide Partner certification for Professional Serv
 * [Netwrix Privilege Secure Professional Services Engineer](./privilege-secure.md)
 
 The following learning paths provide product training for Professional Services engineers, but certification isn't available:
-* [Netwrix Access Analyzer 26+ – Professional Services Engineer](./access-analyzer-26+.md)
+* [Netwrix Access Analyzer 26 – Professional Services Engineer](./access-analyzer-26.md)
 * [Netwrix Change Tracker – Professional Services Engineer](./change-tracker.md)
 * [Netwrix Identity Manager – Professional Services Engineer](./identity-manager.md)
 * [Netwrix Password Secure – Professional Services Engineer](./password-secure.md)
