@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Ports Requirements
 
-The following figure shows the Netwrix Threat Manager architecture and component interactions.
+The following figure shows Netwrix Threat Manager architecture and component interactions.
 
 ![threatmanagerserver](/images/threatmanager/3.0/requirements/threatmanagerserver.webp)
 
@@ -20,7 +20,7 @@ applications that provide the data stream:
 | Communication Direction | Protocol | Ports | Description                                                                                                                                                                                                            |
 | ----------------------- | -------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Inbound                 | UDP      | 10000 | Syslog messaging File System event data stream from Activity Monitor agent host(s)                                                                                                                                     |
-| Inbound                 | TCP      | 10001 | AMPQ Active Directory event data stream from Activity Monitor agent host(s) Active Directory event data stream from Threat Prevention agent host(s) File System event data stream from Threat Prevention agent host(s) |
+| Inbound                 | TCP      | 10001 | Advanced Message Queuing Protocol (AMQP) Active Directory event data stream from Activity Monitor agent hosts Active Directory event data stream from Threat Prevention agent hosts File System event data stream from Threat Prevention agent hosts |
 | Bidirectional           | TCP      | 8080  | Access Analyzer Console Host(s)                                                                                                                                                                                        |
 
 ## Database Firewall Rules
