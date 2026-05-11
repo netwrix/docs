@@ -544,84 +544,65 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    min-width: 42px;
-    height: 18px;
+    width: 44px;
+    min-width: 44px;
+    height: 20px;
     margin-right: 8px;
     font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     line-height: 1;
     text-transform: uppercase;
-    border-radius: 3px;
-    border: 1px solid;
+    border-radius: 4px;
+    color: #fff;
     flex-shrink: 0;
 }
 
+/* Light mode — solid fills */
 .menu__list-item.api-method.get > .menu__link::before {
     content: "get";
-    background-color: rgba(97, 175, 254, 0.1);
-    border-color: #2563eb;
-    color: #2563eb;
+    background-color: #1a3d7c;
 }
 
 .menu__list-item.api-method.post > .menu__link::before {
     content: "post";
-    background-color: rgba(73, 204, 144, 0.1);
-    border-color: #059669;
-    color: #059669;
+    background-color: #16a34a;
 }
 
 .menu__list-item.api-method.delete > .menu__link::before {
     content: "del";
-    background-color: rgba(249, 62, 62, 0.1);
-    border-color: #dc2626;
-    color: #dc2626;
+    background-color: #dc2626;
 }
 
 .menu__list-item.api-method.put > .menu__link::before {
     content: "put";
-    background-color: rgba(252, 161, 48, 0.1);
-    border-color: #d97706;
-    color: #d97706;
+    background-color: #c2760c;
 }
 
 .menu__list-item.api-method.patch > .menu__link::before {
     content: "patch";
-    background-color: rgba(80, 227, 194, 0.1);
-    border-color: #0d9488;
-    color: #0d9488;
+    background-color: #0d7377;
 }
 
-/* Dark mode badge colours */
+/* Dark mode — slightly lighter fills so they read on the dark sidebar */
 [data-theme='dark'] .menu__list-item.api-method.get > .menu__link::before {
-    background-color: rgba(97, 175, 254, 0.15);
-    border-color: #60a5fa;
-    color: #60a5fa;
+    background-color: #3b82f6;
 }
 
 [data-theme='dark'] .menu__list-item.api-method.post > .menu__link::before {
-    background-color: rgba(73, 204, 144, 0.15);
-    border-color: #34d399;
-    color: #34d399;
+    background-color: #22c55e;
 }
 
 [data-theme='dark'] .menu__list-item.api-method.delete > .menu__link::before {
-    background-color: rgba(249, 62, 62, 0.15);
-    border-color: #f87171;
-    color: #f87171;
+    background-color: #ef4444;
 }
 
 [data-theme='dark'] .menu__list-item.api-method.put > .menu__link::before {
-    background-color: rgba(252, 161, 48, 0.15);
-    border-color: #fbbf24;
-    color: #fbbf24;
+    background-color: #f59e0b;
 }
 
 [data-theme='dark'] .menu__list-item.api-method.patch > .menu__link::before {
-    background-color: rgba(80, 227, 194, 0.15);
-    border-color: #2dd4bf;
-    color: #2dd4bf;
+    background-color: #14b8a6;
 }
 
 /* ============================================================
