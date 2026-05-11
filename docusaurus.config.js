@@ -4,8 +4,32 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
+import { readFileSync, existsSync } from 'fs';
+import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion } from './src/config/products.js';
+
+// Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
+// Returns [] if the file doesn't exist yet (before gen-api-docs has run).
+// Runs in Node.js only (docusaurus.config.js is never bundled for the browser).
+function loadApiSidebarItems(sidebarTsPath) {
+  if (!existsSync(sidebarTsPath)) return [];
+  let content = readFileSync(sidebarTsPath, 'utf8');
+  content = content
+    .replace(/^import type[^\n]*\n/m, '')
+    .replace(/const sidebar:\s+\w+\s*=\s*\{/, 'const sidebar = {')
+    .replace(/export default sidebar\.apisidebar;/, 'return sidebar.apisidebar;');
+  return (new Function(content))();
+}
+
+const apiSidebars = {};
+PRODUCTS.forEach(product => {
+  product.versions.forEach(version => {
+    if (version.apiSidebarPath) {
+      apiSidebars[version.apiSidebarPath] = loadApiSidebarItems(resolve(version.apiSidebarPath));
+    }
+  });
+});
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -29,7 +53,7 @@ const config = {
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ['@docusaurus/theme-mermaid', 'docusaurus-theme-openapi-docs'],
 
   // Performance optimizations with Docusaurus Faster
   future: {
@@ -67,24 +91,6 @@ const config = {
           customCss: './src/css/custom.css',
         },
       }),
-    ],
-    [
-      'redocusaurus',
-      {
-        specs: [
-          {
-            id: 'changetracker-hub-8-1',
-            spec: 'static/openapi/changetracker-hub-8.1.yaml',
-            route: '/docs/changetracker/8_1/integration/api/reference',
-          },
-        ],
-        theme: {
-          options: {
-            // navbar (3.75rem ≈ 60px) + back-link bar (2.5rem = 40px)
-            scrollYOffset: 100,
-          },
-        },
-      },
     ],
   ],
 
@@ -135,7 +141,7 @@ const config = {
       },
     ],
     // Generate all product documentation plugins from centralized configuration
-    ...generateDocusaurusPlugins().map(([pluginName, config]) => [
+    ...generateDocusaurusPlugins({ apiSidebars }).map(([pluginName, config]) => [
       pluginName,
       {
         ...config,
@@ -144,6 +150,28 @@ const config = {
           : config.sidebarPath,
       },
     ]),
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi',
+        docsPluginId: 'changetracker8_1',
+        config: {
+          'changetracker-hub': {
+            specPath: 'static/openapi/changetracker-hub-8.1.yaml',
+            outputDir: 'docs/changetracker/8.1/integration/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/changetracker-hub-8.1.yaml',
+            version: '8.1',
+            label: 'ChangeTracker Hub 8.1 API',
+            baseUrl: '/docs/changetracker/8_1/integration/api/reference/',
+          },
+        },
+      },
+    ],
   ],
 
   themeConfig:
