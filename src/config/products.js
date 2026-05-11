@@ -810,6 +810,21 @@ export function hasKBContent(productId) {
   return kbProducts.includes(productId);
 }
 
+function camelToTitleCase(str) {
+  return str.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase()).trim();
+}
+
+function transformApiSidebarLabels(items) {
+  return items.map(item => {
+    if (item.type !== 'category') return item;
+    return {
+      ...item,
+      label: camelToTitleCase(item.label),
+      items: item.items ? transformApiSidebarLabels(item.items) : item.items,
+    };
+  });
+}
+
 /**
  * Generate all Docusaurus plugin configurations
  */
@@ -830,9 +845,10 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
       const routeBasePath = version.customRoutePath || generateRouteBasePath(product.path, version.version);
       const docPath = version.customDocPath || generateDocPath(product.path, version.version);
 
-      // Look up the pre-loaded API sidebar items for this version (loaded by docusaurus.config.js)
+      // Look up the pre-loaded API sidebar items for this version (loaded by docusaurus.config.js).
+      // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
       const apiSidebarItems = version.apiSidebarPath
-        ? (apiSidebars[version.apiSidebarPath] || [])
+        ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
         : [];
 
       // Build plugin configuration
