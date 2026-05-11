@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Frequently Asked Questions
 
-This page covers the most common questions and issues encountered during EPP server migrations.
+This page covers the most common questions and issues you may encounter during EPP server migrations.
 
 ---
 
@@ -25,7 +25,7 @@ Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 onto 2510 wi
 
 ## Restoring a 2509 Backup onto a 2510 Server
 
-Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. Once patched to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
+Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. Once you patch it to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
 
 ---
 
@@ -38,13 +38,13 @@ This most commonly occurs with large backups or under-resourced VMs.
 2. Verify the backup file isn't corrupted — re-download from the source server.
 3. Verify the backup was created on 5.9.4.2 (not another version).
 4. Try increasing PHP upload limits temporarily (see [Backup File Exceeds 200 MB Import Limit](troubleshooting#backup-file-exceeds-200-mb-import-limit)).
-5. If none of the above resolves it, contact Netwrix Support with the server logs from `/var/log/epp/`.
+5. If none of these steps resolves it, contact Netwrix Support with the server logs from `/var/log/epp/`.
 
 ---
 
 ## Network/IP Settings Not Saving on the New 2510 Server
 
-The IP configuration page fails to save if **only one DNS field is filled**. This is a known product issue affecting 2509 and early 2510 builds.
+The IP configuration page fails to save if **you fill only one DNS field**. This is a known product issue affecting 2509 and early 2510 builds.
 
 **Workaround:** Fill both the Primary and Secondary DNS fields. Use `8.8.8.8` (Primary) and `8.8.4.4` (Secondary) if you don't have a secondary internal DNS server.
 
@@ -83,7 +83,7 @@ You may need to refresh Entra ID / SSO application registrations after migration
 
 **Steps:**
 1. Navigate to **System Configuration → SSO**.
-2. Verify Tenant ID, Client ID, and Client Secret are correctly populated.
+2. Verify Tenant ID, Client ID, and Client Secret are correct.
 3. Test login in an incognito browser window.
 4. If the issue persists, re-register the EPP application in your Azure AD / Entra ID tenant.
 
@@ -98,11 +98,11 @@ You may need to refresh Entra ID / SSO application registrations after migration
 **Checklist:**
 1. Confirm the new server's IP/FQDN is reachable from endpoints (firewall, DNS).
 2. Confirm client communications are enabled on the server (**System Configuration → System Settings**).
-3. Confirm client packages are uploaded to the server — 5.9.4.3 (the required signature bridge) and 2602 (the target version).
+3. Confirm client packages are uploaded to the server — 5.9.4.3 (the required signature bridge) and 2605 (the target version).
 4. Check the **Device Control → Computers** page and sort by **Last Seen**.
-5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 first, they can't receive the 2602 client package directly — deploy 5.9.4.3 first via your software distribution tool before upgrading to 2602. See [Phase 3 — Uploading EPP & EE Client Packages](migrationguide#phase-3--uploading-epp--ee-client-packages) for the full client upgrade path.
+5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 first, they can't receive the 2605 client package directly — deploy 5.9.4.3 first via your software distribution tool before upgrading to 2605. See [Phase 3 — Uploading EPP & EE Client Packages](migrationguide#phase-3--uploading-epp--ee-client-packages) for the full client upgrade path.
 6. Verify that firewall rules allow HTTPS connections on the configured EPP communication port.
-7. Consider reinstalling the EPP Client if it appears to be corrupted.
+7. Consider reinstalling the EPP Client if it appears corrupted.
 
 ---
 
@@ -113,8 +113,8 @@ This is a known issue after migration to 2510/2601.
 **Steps:**
 1. Navigate to **System Maintenance → Audit Log Backups**.
 2. If a job has been running more than 4 hours, attempt to cancel it from the UI.
-3. If the cancel option is unresponsive, contact Netwrix Support — a backend intervention may be required to reset the job state.
-4. Don't start new Audit Log Backup jobs until the stuck job is resolved.
+3. If the cancel option is unresponsive, contact Netwrix Support — you may need a backend intervention to reset the job state.
+4. Don't start new Audit Log Backup jobs until you resolve the stuck job.
 
 ---
 
@@ -141,7 +141,7 @@ This can occur after migration due to backend indexing activity on the newly res
 **Steps:**
 1. Verify Content Aware Protection policies are active (**Content Aware Protection → Policies**).
 2. Check that the CAP Dashboard shows recent activity.
-3. Generate a test transfer that should be detected and confirm whether it appears in CAP logs.
+3. Generate a test transfer that the system should detect and confirm whether it appears in CAP logs.
 4. If policies are active but the server isn't generating or sending reports, contact Netwrix Support — this is a known post-migration defect.
 
 ---
@@ -164,7 +164,7 @@ This is a known product defect on 2601.
 **Steps:**
 1. Don't repeatedly attempt to apply backend updates if the server crashes on the first attempt.
 2. Take a VM snapshot before any retry.
-3. Contact Netwrix Support immediately — a targeted fix is required.
+3. Contact Netwrix Support immediately — you need a targeted fix.
 
 ---
 
@@ -182,7 +182,7 @@ Air-gapped activation requires an **Offline Activation Patch** specific to 2510.
 
 ## ELS for PHP Installation Failing
 
-This can occur in some migration paths when the license isn't correctly recognized.
+This can occur in some migration paths when EPP doesn't correctly recognize the license.
 
 **Steps:**
 1. Verify your license file contains the `"php_els":"<value>"` field. If this field is missing, your license doesn't include ELS for PHP entitlement — contact Netwrix Support or your account team to request a refreshed license before proceeding.
@@ -218,33 +218,33 @@ Approximate time estimates based on real migration experience:
 | **Total end-to-end** |  **~4–8 hours active work + 24h stabilization window** |
 
 :::tip
-Plan for a full business day of active migration work, plus a 24-hour monitoring period before the environment is considered fully stable.
+Plan for a full business day of active migration work, plus a 24-hour monitoring period before you consider the environment fully stable.
 :::
 
 ---
 
 ## Running the Old 5.9.4.2 Server Alongside the New 2510 Server
 
-**Yes, and it is recommended** — at least temporarily. The old server:
+**Yes, and Netwrix recommends it** — at least temporarily. The old server:
 - Retains all historical event logs and file shadows (not migrated to 2510).
-- Serves as your rollback if critical issues are discovered post-migration.
-- Can be consulted for compliance or forensic purposes if any applicable regulation requires retention of historical data.
+- Serves as your rollback if you discover critical issues post-migration.
+- Provides a source for compliance or forensic purposes if any applicable regulation requires retention of historical data.
 
 :::tip
-Keep the old server **offline** after the new 2510/2604 environment is validated. Activate access to it only on demand (e.g. for a compliance review or rollback). Leaving it online unnecessarily increases the attack surface, particularly given that 5.9.4.2 no longer receives security patches.
+Keep the old server **offline** after you validate the new 2510/2604 environment. Activate access to it only on demand (e.g. for a compliance review or rollback). Leaving it online unnecessarily increases the attack surface, particularly given that 5.9.4.2 no longer receives security patches.
 :::
 
 Decommission the old server only after:
-1. All endpoints are successfully communicating with 2510.
-2. All integrations are verified.
-3. Compliance and retention requirements for historical logs are satisfied (export or confirmed in SIEM).
-4. A full post-migration backup has been created on 2510 and stored securely.
+1. All endpoints successfully communicate with 2510.
+2. You verified all integrations.
+3. You satisfied compliance and retention requirements for historical logs (exported or confirmed in SIEM).
+4. You created a full post-migration backup on 2510 and stored it securely.
 
 ---
 
 ## Reverting from 2510 or a Later Version to a 5.x Server
 
-The migration from 5.x to 2510 is one-way — there is no supported downgrade path. If critical issues are discovered after migration, the only supported rollback method is restoring the pre-migration VM snapshot of your 5.9.4.2 server. This is why keeping the old server VM alive and taking a snapshot before migration is mandatory.
+The migration from 5.x to 2510 is one-way — there is no supported downgrade path. If you discover critical issues after migration, the only supported rollback method is restoring the pre-migration VM snapshot of your 5.9.4.2 server. This is why keeping the old server VM alive and taking a snapshot before migration is mandatory.
 
 Contact Netwrix Support before attempting any rollback.
 
