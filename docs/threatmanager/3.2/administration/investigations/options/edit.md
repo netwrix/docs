@@ -6,11 +6,11 @@ sidebar_position: 20
 
 # Edit or Duplicate an Investigation
 
-An investigation can be edited and even duplicated.
+You can edit and even duplicate an investigation.
 
 ## Edit an Investigation
 
-Follow the steps to edit an investigation.
+To edit an investigation:
 
 **Step 1 –** Click **Investigate** in the application header bar to open the Investigations
 interface. Then click a folder in the navigation pane to access a saved investigation. An
@@ -33,7 +33,7 @@ The investigation is saved with the modified settings.
 
 ## Duplicate an Investigation
 
-Follow the steps to duplicate an investigation.
+To duplicate an investigation:
 
 **Step 1 –** Click **Investigate** in the application header bar to open the Investigations
 interface. Then click a folder in the navigation pane to access a saved investigation. An
@@ -56,12 +56,12 @@ The Name box displays the investigation name with the word "copy" appended to it
 - Description – An optional description of the investigation
 - Folder – The folder in the navigation pane where the investigation is saved
 
-**Step 5 –** Select a user role from the **Owner** drop-down menu. All users assigned this role
+**Step 5 –** Select a user role from the **Owner** dropdown menu. All users assigned this role
 would own this investigation and they will be able to modify the report.
 
 **Step 6 –** In the Access box, type to search the role you want to give access of this
 investigation. A list of user roles matching the search string is displayed. Select a single or
-multiple user roles. All users belonging to the selected role(s) can view the report.
+multiple user roles. All users belonging to the selected roles can view the report.
 
 **Step 7 –** Click **Save**. The Save Investigation window closes.
 

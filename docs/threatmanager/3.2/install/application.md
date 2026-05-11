@@ -10,17 +10,16 @@ The application can be installed on the same server as the PostgreSQL databases 
 server. If installed on a different server, the location of the database server must be provided
 while installing the application.
 
-Follow the steps to install the application.
+To install the application:
 
 :::warning
-The PostgreSQL database application must be installed before the application is
-installed.
+Install the PostgreSQL database application before the application.
 :::
 
 
 :::note
 These steps assume you have launched the installer through the Netwrix Setup Launcher
-(`Netwrix_Setup.exe`). If you are not using it, right-click on `NetwrixThreatManager.exe` and select
+(`Netwrix_Setup.exe`). If you aren't using it, right-click `NetwrixThreatManager.exe` and select
 Run as administrator. Then skip to Step 2.
 :::
 
@@ -56,10 +55,10 @@ desired. Click **Test** to validate the connection information.
 For example, if you change the default database name from stealthdefend to threatmanager and click
 **Test**.
 
-![Warning message that the database does not exist, Create?](/images/threatmanager/3.0/install/databasecreatemessage.webp)
+![Warning message that the database doesn't exist, Create?](/images/threatmanager/3.0/install/databasecreatemessage.webp)
 
-**Step 6 –** If a successful connection is made, a message window displays confirming the database
-does not exist and you want to create it. Click **OK** and the window closes.
+**Step 6 –** If the connection succeeds, a message window displays confirming the database
+doesn't exist and you want to create it. Click **OK** and the window closes.
 
 **Step 7 –** A "Ready for installation" message appears on the Database page of the wizard and the
 Next button is enabled. Click **Next**.
@@ -73,7 +72,7 @@ updated accordingly.
 ![Netwrix Threat Manager Setup wizard Firewall Rules page](/images/threatmanager/3.0/install/firewallrules.webp)
 
 **Step 8 –** By default, the **Create Inbound Windows Firewall Rules** checkbox is selected,
-indicating that the installer will create these. Deselect the checkbox if you do not want the
+indicating that the installer will create these. Deselect the checkbox if you don't want the
 installer to automatically create these rules because you have already created them. Click **Next**.
 
 ![Netwrix Threat Manager Setup wizard Completed Successfully page](/images/threatmanager/3.0/install/completed.webp)

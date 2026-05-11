@@ -24,7 +24,7 @@ header.
 
 ## Import License
 
-Follow the steps to import a license key file.
+To import a license key file:
 
 ![License section of the Licensing page](/images/threatmanager/3.0/administration/configuration/systemsettings/licensingbrowse.webp)
 

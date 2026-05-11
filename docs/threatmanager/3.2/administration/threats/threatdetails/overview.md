@@ -55,14 +55,14 @@ The information displayed on this page is dependent upon the type of threat sele
 :::
 
 
-- _(Optional)_ Assigned To – Displays the user currently assigned to the threat. Assign or edit the
-  Assigned User using the drop-down list. The list populates with users granted access to the
+- _(Optional)_ Assigned To – Displays the user assigned to the threat. Assign or edit the
+  Assigned User using the dropdown list. The list populates with users granted access to the
   console on the User Access page of the System Settings interface. See the User Access Page topic
   for additional information.
-- Set Status – Select a status for the threat from the drop-down list:
+- Set Status – Select a status for the threat from the dropdown list:
 
     - Open – Default status for new threats
-    - Under Investigation – Threats that are currently under or pending investigation by an
+ - Under Investigation – Threats that are under or pending investigation by an
       administrator
     - Closed - Resolved – Legitimate threats that have been contained or dealt with
     - Closed - False Positive – Behavior that has been incorrectly identified by Threat Manager as a

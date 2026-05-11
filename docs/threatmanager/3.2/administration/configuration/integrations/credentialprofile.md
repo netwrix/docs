@@ -27,7 +27,7 @@ It is a best practice to:
 
 ## Add a Credential Profile
 
-Follow the steps to add a Credential Profile.
+To add a Credential Profile:
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -37,7 +37,7 @@ Add New Integration window opens.
 
 ![Add New Integration window with Credential Profile type selected](/images/threatprevention/7.5/reportingmodule/configuration/integrations/credentialprofile.webp)
 
-**Step 3 –** In the Type drop-down menu, select Credential Profile.
+**Step 3 –** In the Type dropdown menu, select Credential Profile.
 
 **Step 4 –** Enter the following information:
 
@@ -59,7 +59,7 @@ additional Credential Profiles.
 
 ## Credential Profile Details
 
-Follow the steps to view the details of a Credential Profile.
+To view the details of a Credential Profile:
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -87,13 +87,13 @@ Select the profile from the list to see details and modification options:
       Credential topic for additional information.
     - Delete Credential – The delete button to the right of the credentials opens the Delete
       Credential window to confirm the action
-    - Add Credential – This button allows you to add additional credentials to this profile. This
+    - Add Credential – Use this button to add additional credentials to this profile. This
       maybe applicable for action tasks. See the Add Additional Credential to a Profile topic for
       additional information.
 
 ## Edit Profile
 
-Follow the steps to edit a Credential Profile name and/or description.
+To edit a Credential Profile name or description:
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -117,8 +117,7 @@ The Credential Profile name and/or description have been modified.
 
 ## Edit Credential
 
-Follow the steps to edit a credential within a Credential Profile. This may be necessary if the
-account password needs to be updated.
+To edit a credential within a Credential Profile (for example, when the account password needs to be updated):
 
 **Step 1 –** On the Integrations interface, click **Credential Profile** in the navigation pane to
 view a list of the already created Credential Profiles, if any. Select a Credential Profile.
@@ -128,7 +127,7 @@ Credential Settings window opens.
 
 ![Credential Settings window](/images/threatprevention/7.5/reportingmodule/configuration/integrations/credentialsettingswindow.webp)
 
-**Step 3 –** To edit the platform type, select either SQL or Windows from the **Platform** drop-down
+**Step 3 –** To edit the platform type, select either SQL or Windows from the **Platform** dropdown
 menu.
 
 **Step 4 –** To edit the account user name, enter the account user name in the required format of
@@ -144,17 +143,17 @@ The credential within the Credential Profile has been modified.
 
 Multiple credentials can be added to a single profile. Credential stacking is when you add multiple
 credentials to a single profile. While doing certain actions, these credentials will be enumerated
-until one is found that is able to execute the task.
+until one is found that can execute the task.
 
 The following areas use stacking:
 
 - Active Directory Sync
 
-    - Enumerate the credentials in order until one is able to connect to the domain successfully
+    - Enumerate the credentials in order until one can connect to the domain successfully
 
 - Threat Prevention Integration
 
-    - Enumerate the credentials in order until one is able to connect to theThreat Prevention
+    - Enumerate the credentials in order until one can connect to theThreat Prevention
       database successfully
 
 - Actions
@@ -167,9 +166,9 @@ The following areas use stacking:
 
 - Honey Tokens
 
-    - The same logic as $Credential from the action section above
+    - The same logic as $Credential from the action section
 
-Follow the steps to add a credential to an existing Credential Profile.
+To add a credential to an existing Credential Profile:
 
 **Step 1 –** On the Integrations interface, click **Credential Profile** in the navigation pane to
 view a list of the already created Credential Profiles, if any.

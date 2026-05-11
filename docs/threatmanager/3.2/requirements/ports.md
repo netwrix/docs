@@ -19,9 +19,9 @@ applications that provide the data stream:
 
 | Communication Direction | Protocol | Ports | Description                                                                                                                                                                                                            |
 | ----------------------- | -------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Inbound                 | UDP      | 10000 | Syslog messaging File System event data stream from Activity Monitor agent host(s)                                                                                                                                     |
+| Inbound                 | UDP      | 10000 | Syslog messaging File System event data stream from Activity Monitor agent hosts                                                                                                                                     |
 | Inbound                 | TCP      | 10001 | Advanced Message Queuing Protocol (AMQP) Active Directory event data stream from Activity Monitor agent hosts Active Directory event data stream from Threat Prevention agent hosts File System event data stream from Threat Prevention agent hosts |
-| Bidirectional           | TCP      | 8080  | Access Analyzer Console Host(s)                                                                                                                                                                                        |
+| Bidirectional           | TCP      | 8080  | Access Analyzer Console Hosts                                                                                                                                                                                        |
 
 ## Database Firewall Rules
 

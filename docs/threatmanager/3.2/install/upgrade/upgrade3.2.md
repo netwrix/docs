@@ -19,7 +19,7 @@ see the [Upgrade PostgreSQL 14 to 18](/docs/threatmanager/3.2/install/upgrade/up
 
 ## Upgrade PostgreSQL
 
-Follow the steps to upgrade from PostgreSQL 14.13.x to 14.20.x.
+To upgrade from PostgreSQL 14.13.x to 14.20.x:
 
 **Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window is
 displayed.
@@ -28,7 +28,7 @@ displayed.
 
 **Step 2 –**  Click **PostgreSQL Setup** to upgrade the PostgreSQL version. The Netwrix PostgreSQL Setup wizard opens.
 
-![Netwrix Netwrix PostgreSQL Setup wizard](/images/threatmanager/3.2/intsall/upgrade/postgres-initial.webp)
+![Netwrix PostgreSQL Setup wizard](/images/threatmanager/3.2/intsall/upgrade/postgres-initial.webp)
 
 **Step 3 –**  Click **PostgreSQL Setup** to upgrade the PostgreSQL version. The Netwrix PostgreSQL Setup wizard opens.
 
@@ -43,7 +43,7 @@ PostgreSQL has been upgraded.
 
 :::note
 If you have any antivirus or Endpoint Detection and Response (EDR) software installed on
-your machine, make sure you have excluded all of the files from the following directories from all
+your machine, ensure you have excluded all of the files from the following directories from all
 antivirus scans:
 :::
 
@@ -65,7 +65,7 @@ window. The following window is displayed:
 
 ![Install Netwrix Threat Manager 3.2 page](/images/threatmanager/3.2/intsall/upgrade/ntm-eula.webp)
 
-**Step 3 –** On the End User License Agreement page, review and accept the licensing agreement and
+**Step 3 –** On the End User License Agreement page, review and accept the licensing agreement, and
 then click **Next**.
 
 ![Threat Manager 3.2 Default Setup Folder](/images/threatmanager/3.2/intsall/upgrade/ntm-location.webp)
@@ -94,7 +94,7 @@ it can be modified as desired.
 ![Firewall Rules Page of Threat Manager Installation wizard](/images/threatmanager/3.2/intsall/upgrade/ntm-opts.webp)
 
 **Step 8 –** By default, the installer will Create Inbound Windows Firewall Rules. Deselect the
-checkbox if you do not want the installer to automatically create these rules, because you have
+checkbox if you don't want the installer to automatically create these rules, because you have
 already created them. The installer will also by default install AD and Entra PowerShell modules. Click **Next**.
 
 ![Threat Manager Installation Progress page](/images/threatmanager/3.2/intsall/upgrade/ntm-progress.webp)

@@ -65,7 +65,7 @@ database.
 
 ## Step 4 – Move the Database to PostgreSQL 18
 
-With Threat Manager updated, re-run the installer to perform the database migration.  You will see this warning, it is safe to Install Again.
+With Threat Manager updated, re-run the installer to perform the database migration. You will see this warning, it is safe to Install Again.
 
 ![Netwrix Threat Manager installer — Move Database option](/images/threatmanager/3.2/install/upgrade/already_installed.webp)
 
@@ -81,7 +81,7 @@ With Threat Manager updated, re-run the installer to perform the database migrat
 **Step 3 –** Configure the following settings:
 
 - **Only transfer events associated with a threat** – Migrates only the events linked to detected
-  threats. Select this option to reduce the size of the migration if you do not need the full event
+  threats. Select this option to reduce the size of the migration if you don't need the full event
   history.
 
 - **Show Advanced Settings** – Expands the following additional parameters:
@@ -99,7 +99,7 @@ With Threat Manager updated, re-run the installer to perform the database migrat
         - **High** – Highest compression; requires the least disk space but takes longer.
 
         :::note
-        The compression setting applies only to the exported data file. It does not alter
+        The compression setting applies only to the exported data file. It doesn't alter
         the source or target database.
         :::
 
@@ -117,7 +117,7 @@ With Threat Manager updated, re-run the installer to perform the database migrat
       a degraded state.
 
         :::note
-        This option is not recommended. Use it only if you do not have enough free disk
+        This option isn't recommended. Use it only if you don't have enough free disk
         space to perform the migration with the default settings. The data in the old database is
         preserved, but the database will not function normally after the indexes are dropped.
         :::
@@ -132,7 +132,7 @@ With Threat Manager updated, re-run the installer to perform the database migrat
         :::
 
 :::note
-The migration requires significant free disk space. The export file does not need to reside
+The migration requires significant free disk space. The export file doesn't need to reside
 on the same disk as the database. The wizard will warn you if there is insufficient space to
 proceed safely.
 :::
@@ -189,7 +189,7 @@ Windows registry at:
 
 :::warning
 Verify that Threat Manager is fully operational on PostgreSQL 18 before deleting this
-directory. The data directory cannot be recovered after deletion.
+directory. The data directory can't be recovered after deletion.
 :::
 
 ## FAQ / Troubleshooting
@@ -204,24 +204,24 @@ other software. The formula is: `5432 + (major_version - 11)`. For PostgreSQL 14
 **What is port 5439?**
 
 Port 5439 is the port used by the Netwrix PostgreSQL 18 installation, following the same
-offset formula described above. Future major versions will follow the same convention — for
+offset formula. Future major versions will follow the same convention — for
 example, PostgreSQL 19 would use port 5440.
 
-**How much free disk space do I need?**
+**How much free disk space is needed?**
 
 As a general rule, ensure you have at least **1.5 times** the size of your current PostgreSQL 14
 data directory available as free disk space before starting the migration. The export file is a
 compressed or uncompressed dump of the entire database and must be written to disk before being
 imported into PostgreSQL 18. The migration wizard will check available space during the Validate
-step and warn you if there is not enough.
+step and warn you if there isn't enough.
 
-The export file does not need to reside on the same disk as either database. The migration wizard
-will prompt you if the default location does not have sufficient space.
+The export file doesn't need to reside on the same disk as either database. The migration wizard
+will prompt you if the default location doesn't have sufficient space.
 
-**Can I install PostgreSQL 18 on a different server than PostgreSQL 14?**
+**Can PostgreSQL 18 be installed on a different server than PostgreSQL 14?**
 
 Yes. The Move Database wizard accepts a hostname and port for the target database, so PostgreSQL 18
-does not need to be on the same machine as PostgreSQL 14. If using a remote server, ensure that
+doesn't need to be on the same machine as PostgreSQL 14. If using a remote server, ensure that
 port 5439 is open between the two servers and that the Threat Manager installer has network access
 to both instances during the migration.
 
@@ -235,7 +235,7 @@ Threat Manager to a new host running PostgreSQL 18, the recommended approach is:
 3. Use the **Move Database** option to copy the remote PostgreSQL 14 database to the local
    PostgreSQL 18 instance.
 
-**Can I roll back to PostgreSQL 14 after the migration?**
+**Is rollback to PostgreSQL 14 possible after the migration?**
 
 Yes, as long as you have not completed the Clean Up section. The PostgreSQL 14 instance and its
 data directory remain intact until you explicitly uninstall them. To roll back:
@@ -244,15 +244,15 @@ data directory remain intact until you explicitly uninstall them. To roll back:
    connection to use port **5435** and the original PostgreSQL 14 database name.
 2. Restart all Netwrix Threat Manager services.
 
-Once you have deleted the PostgreSQL 14 data directory as described in the Clean Up section,
+After you have deleted the PostgreSQL 14 data directory as described in the Clean Up section,
 rollback is no longer possible without a separate backup.
 
 If you enabled **Reduce Source Database Size**, the PostgreSQL 14 database
-indexes will have been dropped prior to the failure. The data is still present but the database will
+indexes will have been dropped before the failure. The data is still present but the database will
 not function normally. In this case, contact Netwrix Support before attempting to re-run the
 migration.
 
-**What if I accidentally pointed NTM at port 5439 in Step 2?**
+**What if NTM was accidentally pointed at port 5439 in Step 2?**
 
 If the Threat Manager installer was pointed at port 5439 during the update step, it will have
 created a new empty database on the PostgreSQL 18 instance. To recover:
@@ -270,11 +270,11 @@ created a new empty database on the PostgreSQL 18 instance. To recover:
 3. Reinstall Netwrix Threat Manager using `Netwrix Threat Manager Setup`, this time targeting the
    PostgreSQL 14 instance on port **5435**.
 
-**The migration failed mid-way — can I re-run it?**
+**The migration failed mid-way — can it be re-run?**
 
 Yes. The Move Database wizard can be re-run by launching `Netwrix Threat Manager Setup` again and
 selecting **Move Database**. If the import already started, the target database may already exist.
-If this is the case, use `pgAdmin` to drop the new database first.  Or choose a different name for
+If this is the case, use `pgAdmin` to drop the new database first. Or choose a different name for
 the new database.
 
     :::warning

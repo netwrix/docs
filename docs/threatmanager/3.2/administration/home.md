@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Home Page
 
-The Home page provides an "at a glance" overview of the possible threats detected in an
+The Home page provides a summary overview of the possible threats detected in an
 organization's environment for the past 24 hours.
 
 ![homepage](/images/threatmanager/3.0/administration/homepage.webp)
@@ -19,7 +19,7 @@ The daily activity summary bar graphs at the top of the page contains the follow
   increments.
 - Threats – Number of threats detected in the past 24 hours. The bar graph displays the threats
   detected over the past 24 in 1-hour increments.
-- Audit Events – Number of instances of activity that are not necessarily threats, but should be
+- Audit Events – Number of instances of activity that aren't necessarily threats, but should be
   monitored
 - Monitored Activities – Number of monitored activities. The bar graph displays the number of
   monitored activities in 1-hour increments.
@@ -33,16 +33,16 @@ The Threats by Severity chart displays all threats by threat level to give a vis
 of threat severity for the past 24 hours.
 
 The Threats chart displays each threat type detected in the past 24 hours. Each bar on the Threats
-chart filters the threats by an hour-long time frame. The bars are hyperlinks that can be clicked to
+chart filters the threats by an hour-long time frame. Click a bar to
 display the Threats page. The Threats page shows the threats detected for the selected time frame.
 
 ## Home Page Tables
 
 The Home page displays the following tables:
 
-- Notable Users – The Notable Users table displays users that are perpetrators of a threat. Click on
+- Notable Users – The Notable Users table displays users that are perpetrators of a threat. Click
   the user to go the User Details page for that user.
 - Notable Computers – The Notable Computers table displays computers where threatening activity has
-  occurred. Click on the computer to go to the Computer Details page.
+  occurred. Click the computer to go to the Computer Details page.
 - Watchlist – The Watchlist table displays users with the Watchlist tag and a count of any
   associated threats

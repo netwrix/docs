@@ -10,7 +10,7 @@ The following actions target the Threat Manager server.
 
 ## PowerShell Script
 
-The PowerShell Script action executes a specified PowerShell script. This action can be used to
+The PowerShell Script action executes a specified PowerShell script. Use this action to
 build a custom threat response, using PowerShell, to handle scenarios not covered by other
 preconfigured action steps.
 
@@ -19,7 +19,7 @@ preconfigured action steps.
 - PowerShell Script – Select the PowerShell script to execute. By default, the PowerShell script
   includes a comment section which includes Threat Manager threat variables that can be used in
   PowerShell script action steps.
-- Credential – Select a credential profile using the drop-down list. This will provide the
+- Credential – Select a credential profile using the dropdown list. This will provide the
   PowerShell action step with a PowerShell credential object, based upon the Threat Manager
   credential specified for use in the script. For example:
 
@@ -56,14 +56,14 @@ target client.
 ![endusersession](/images/threatmanager/3.0/administration/playbooks/action/endusersession.webp)
 
 - Users – The users to log out of RDP sessions. If not specified, only the perpetrator will be used.
-  Select the users from the drop-down list:
+  Select the users from the dropdown list:
 
     - Perpetrator – The account that initiated the threat
     - Both Users and Perpetrators Affected – The account that initiated the threat and also the
       users affected by the threat
 
 - Computers – The computers to log a user out of a RDP session. If not specified, only the
-  perpetrator client will be used. Select computers from the drop down list:
+  perpetrator client will be used. Select computers from the dropdown list:
 
     - Perpetrator Client – The computer that initiated the threat
     - Host – The host client that initiated the threat
@@ -71,6 +71,6 @@ target client.
 
 - Credential – The domain credential used to run the action. Domain credentials are populated by
   credential profiles that are created on the Integrations page. If not specified, the action will
-  be run under the credentials of the action. Select the credentials from the drop-down list. See
+  be run under the credentials of the action. Select the credentials from the dropdown list. See
   the [Credential Profile Page](/docs/threatmanager/3.2/administration/configuration/integrations/credentialprofile.md) topic for
   additional information.

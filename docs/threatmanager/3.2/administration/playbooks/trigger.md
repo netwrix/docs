@@ -6,10 +6,10 @@ sidebar_position: 60
 
 # Trigger a Playbook Manually
 
-If a playbook is configured to be allowed for a threat, a Threat Response button will be shown on
-the allowed threat.
+If you configure a playbook to be allowed for a threat, Threat Manager displays a Threat Response
+button on the allowed threat.
 
-Follow the steps to trigger a playbook manually.
+To trigger a playbook manually:
 
 ![threatresponsebutton](/images/threatmanager/3.0/administration/playbooks/threatresponsebutton.webp)
 
@@ -17,11 +17,11 @@ Follow the steps to trigger a playbook manually.
 playbook.
 
 **Step 2 –** Click the Threat Responsebutton. The Threat Response window opens. The window provides
-the ability to respond to the threat by selecting a playbook from the drop-down list. The window
+the ability to respond to the threat by selecting a playbook from the dropdown list. The window
 also provides a description of the playbook, the status, and the timestamp for when the playbook was
 last executed.
 
 **Step 3 –** Click Execute to execute the playbook.
 
-Once the playbook has been executed, the log file can be viewed on the Threat Response page in the
+After the playbook executes, you can view the log file on the Threat Response page in the
 Playbooks Execution History table.

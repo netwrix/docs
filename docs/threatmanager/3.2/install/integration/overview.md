@@ -20,7 +20,7 @@ The following Netwrix products can be configured to send data to Threat Manager:
   Threat Manager
     - Requires a unique App Token to be generated within Threat Manager.
 
-Configure the desired product to feed data into the Threat Manager Console. Depending upon the data
+Configure the product you want to feed data into the Threat Manager Console. Depending upon the data
 source, a Threat Manager app token may need to be generated. See the
 [App Tokens Page](/docs/threatmanager/3.2/administration/configuration/integrations/apptoken.md) topic for additional
 information.

@@ -29,7 +29,7 @@ the substantial amount of file access events and Active Directory events occurri
 environments on any given day. To overcome this challenge and achieve proper visibility into this
 otherwise significant blind spot in an organization's cyber security program, Threat Manager®
 provides built-in threat analytics to highlight the most unusual behaviors that occur within an
-organization each day. Threat Manager also provides a method to deep dive into activity data using a
+organization each day. Threat Manager also provides a method to investigate activity data in detail using a
 series of customizable filters to discover threats unique to their organization.
 
 ## Supported Platforms

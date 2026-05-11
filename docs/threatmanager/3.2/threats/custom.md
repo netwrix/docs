@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Custom Threats
 
-In additional to pre-configured threats, Threat Manager provides the ability to create custom
+In additional to pre-configured threats, Threat Manager lets you create custom
 threats. A user can create a custom threat if they consider certain events to be dangerous in their
 environment. For example, when one of the privileged users makes file changes.
 
@@ -17,9 +17,9 @@ Custom threats can be created in one of the following ways:
 
 ## Custom Option on the Threat Detection Page
 
-Follow the steps to create a custom threat.
+To create a custom threat:
 
-**Step 1 –** Click on the gear icon at the top right of the screen.
+**Step 1 –** Click the gear icon at the top right of the screen.
 
 **Step 2 –** Select **Threat Detection**. This opens the Threat Detection page.
 
@@ -73,10 +73,10 @@ information.
     - Count –The number of times that an event must occur before a threat is generated
     - Time – The time period over which the count must occur to generate a threat. Enter a value and
       set the units for the time period in the next field.
-    - Units – The time period units. Options in the drop-down menu include Minutes, Hours, or Days.
+    - Units – The time period units. Options in the dropdown menu include Minutes, Hours, or Days.
     - Group By Perpetrator – When checked, the threat criteria is evaluated on a per-user basis.
       This means that each perpetrating user's individual activity must match the investigation
-      criteria in order to generate a threat. The default is unchecked.
+      criteria to generate a threat. The default is unchecked.
 
 **Exclusions Tab**
 
@@ -92,5 +92,5 @@ to be defined for specific criteria to be excluded from threat detection for the
 For creating a custom threat from an Investigation page, the steps are as follows:
 
 1. Click Investigate in the application's header bar.
-2. select an investigation and follow the steps from the Step 5 in the Custom Option on the Threat
-   Detection Page section above.
+2. select an investigation and follow the steps from Step 5 in the Custom Option on the Threat
+   Detection Page section.

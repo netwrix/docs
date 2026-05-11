@@ -26,8 +26,8 @@ The header bar contains the following links on the top right side of the page:
 - Search – Enter a user, computer, or group and click the Search icon
 - [Configuration Menu](/docs/threatmanager/3.2/administration/configuration/overview.md) – Displays a menu with the configuration pages
 - Help – Accesses help
-- Logout – Click the person icon and select Logout from the drop-down list to log out of the Threat
-  Manager Console. The drop-down list also displays the user logged in.
+- Logout – Click the person icon and select Logout from the dropdown list to log out of the Threat
+  Manager Console. The dropdown list also displays the user logged in.
 
 A magenta alert banner will display below the navigation header if one of the following scenarios
 occurs:
@@ -42,27 +42,27 @@ This banner contains a link to the page relevant to the issue.
 
 ## Home Page
 
-The Threat Manager [Home Page](/docs/threatmanager/3.2/administration/home.md) provides an “at a glance” overview of the possible threats
+The Threat Manager [Home Page](/docs/threatmanager/3.2/administration/home.md) provides a summary overview of the possible threats
 detected in an organization's environment for the past 24 hours. This is displayed with interactive
-graphs and a rollup count that will allow easy tracking and response capabilities for new threats,
+graphs and a rollup count that allow tracking and response capabilities for new threats,
 and users with risky activity.
 
 ## Threats Page
 
 The Threat Manager [Threats Page](/docs/threatmanager/3.2/administration/threats/threats.md) is where end users and analysts investigate possible
 threats in their environment. This page displays a historical timeline of the detected threats and
-advanced filtering that allows users to find threats with ease. An end user can drill down into
+advanced filtering to help users find threats. An end user can explore
 threats and view additional details. Threats have a response workflow that enables teams to assign a
-user to evaluate the threat, set status updates on the threat, and add any desired comments to the
+user to evaluate the threat, set status updates on the threat, and add any comments they want to the
 threat.
 
 ## Investigate Page
 
 The Threat Manager allows customers to investigate all data previously sent to Threat Manager
 through a series of customizable filters designed to discover threats unique to their organization.
-These investigations can be saved so they can be run ad hoc at a later time. Investigations can also
-be "saved as a threat" which enables investigation criteria to function as a threat detection
-mechanism that will be monitored by Threat Manager like out-of-the-box threats.
+You can save these investigations to run ad hoc at a later time. You can also "save an
+investigation as a threat", which enables investigation criteria to function as a threat detection
+mechanism that Threat Manager monitors like built-in threats.
 
 ## Interactive Chart Elements
 
@@ -95,14 +95,14 @@ including any associated tags.
 
 ## Data Grids
 
-Data grids provide the ability to search for data and also to configure the presentation of data.
+Data grids let you search for data and also to configure the presentation of data.
 
 ![This screenshot displays interactive elements in a grid.](/images/threatmanager/3.0/administration/datagrids.webp)
 
 The top bar in a data grid contains the following options:
 
 - Search Box – Enter text in the search box to filter data in the table
-- Results Per Page – Click the drop-down list to select the number of results displayed per page.
+- Results Per Page – Click the dropdown list to select the number of results displayed per page.
   Options include:
     - 10 rows
     - 50 rows

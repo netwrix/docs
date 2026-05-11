@@ -39,12 +39,12 @@ Every investigation has the following options at the top of the page:
   See the [Investigation Reports](/docs/threatmanager/3.2/administration/investigations/reports.md) topic for additional information.
 - Filters – The Filters section provides options to build a filter statement by selecting the
   Attribute, Operator, and Filter value. A time period for the report data is also configured here.
-  If multiple data sources have been configured, there is also a Source drop-down menu. See the
+  If multiple data sources have been configured, there is also a Source dropdown menu. See the
   [Filters Section](/docs/threatmanager/3.2/administration/investigations/options/filters.md) topic for additional information.
 
 :::note
 For an investigations to return information on user display names, groups, or email
-addresses, the Active Directory Service must be running to collect Active Directory data prior to
+addresses, the Active Directory Service must be running to collect Active Directory data before
 running an investigation. See the
 [Active Directory Sync Page](/docs/threatmanager/3.2/administration/configuration/integrations/activedirectorysync.md) topic for
 additional information.
@@ -52,7 +52,7 @@ additional information.
 
 
 :::note
-For an investigation to return information on Entra ID users, groups, roles and
+For an investigation to return information on Entra ID users, groups, roles, and
 applications, the Entra ID Service must be running to collect Entra ID data before running an
 investigation. See the [Entra ID Sync Page](/docs/threatmanager/3.2/administration/configuration/integrations/entraidsync.md) topic
 for additional information.

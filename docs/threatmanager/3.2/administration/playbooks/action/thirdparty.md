@@ -61,7 +61,7 @@ This action posts to a Microsoft Teams channel.
 
 ## RADIUS Authentication
 
-This action utilizes RADIUS profiles to authenticate user activity.
+This action uses RADIUS profiles to authenticate user activity.
 
 ![radiusauthentication](/images/threatmanager/3.0/administration/playbooks/action/radiusauthentication.webp)
 
@@ -77,7 +77,7 @@ This action utilizes RADIUS profiles to authenticate user activity.
 
 ## Send Syslog
 
-This action sends a Syslog message to a server. This action utilizes the current SIEM settings,
+This action sends a Syslog message to a server. This action uses the current SIEM settings,
 specified on the [Integrations Interface](/docs/threatmanager/3.2/administration/configuration/integrations/overview.md), to send the
 threat information via Syslog.
 
@@ -117,7 +117,7 @@ This action sends an SMS message through Twilio.
 - SID – The Twilio SID
 - Twilio Number – The phone number provided by Twilio
 - Token – The Twilio token
-- Message – The optional custom SMS message to send. If a message is not specified, a default SMS
+- Message – The optional custom SMS message to send. If a message isn't specified, a default SMS
   message will be sent.
 
 ## VirusTotal Report
@@ -126,7 +126,7 @@ This action scans the file hashes against the VirusTotal API and emails the resu
 
 ![virustotalreport](/images/threatmanager/3.0/administration/playbooks/action/virustotalreport.webp)
 
-- Subject – The optional custom email subject. If a subject is not specified, a default email
+- Subject – The optional custom email subject. If a subject isn't specified, a default email
   subject will be used.
 - Key – The key provided by VirusTotal
 - To – The email addresses receiving the email
@@ -138,7 +138,7 @@ variety of web applications to trigger actions or receive data from external sou
 
 ![webhook](/images/threatmanager/3.0/administration/playbooks/action/webhook.webp)
 
-- Method – The HTTP method for the webhook. Select a method from the drop-down list:
+- Method – The HTTP method for the webhook. Select a method from the dropdown list:
     - GET
     - POST
     - DELETE

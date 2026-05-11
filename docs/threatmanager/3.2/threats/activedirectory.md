@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Active Directory Threats
 
-The following threats are monitored for Active Directory. definition of each threat is given below.
+Threat Manager monitors the following threats for Active Directory. Each section defines one threat.
 
 ## AdminSDHolder ACL Tampering
 
@@ -14,7 +14,7 @@ The following threats are monitored for Active Directory. definition of each thr
 
 ## AS-REP Roasted Users
 
- AS-REP roasting is a technique that allows retrieving password hashes for users that have 'Do not require Kerberos pre-authentication' property selected. Those hashes can then be cracked offline. 
+ AS-REP roasting is a technique that allows retrieving password hashes for users that have 'Don't require Kerberos pre-authentication' property selected. Those hashes can then be cracked offline. 
 
 ## DCShadow
 
@@ -25,7 +25,7 @@ The following threats are monitored for Active Directory. definition of each thr
  Replication from a non-domain controller account can be evidence of a Mimikatz DCSync attack. Performing a DCSync remotely extracts the NTLM password hash for the account that is the target of the attack. 
 
 :::note
-The domain monitoring policy must be configured to exclude domain controllers. See the
+Configure the domain monitoring policy to exclude domain controllers. See the
 [Integration with Other Netwrix Products](/docs/threatmanager/3.2/install/integration/overview.md) topic for additional
 information.
 :::
@@ -33,23 +33,23 @@ information.
 
 ## Domain Backup Key Compromise
 
-The Data Protection API (DPAPI) is used by Windows to encrypt user secrets such as saved credentials, browser cookies, website passwords, and other sensitive information. For computers joined to an Active Directory domain, secrets protected by the DPAPI are also encrypted with a domain backup key. This key is stored in Active Directory and enables recovery of DPAPI-protected secrets should the user lose their own backup key. Because the domain backup key cannot be rotated, its exposure is a significant event. 
+The Data Protection API (DPAPI) is used by Windows to encrypt user secrets such as saved credentials, browser cookies, website passwords, and other sensitive information. For computers joined to an Active Directory domain, secrets protected by the DPAPI are also encrypted with a domain backup key. This key is stored in Active Directory and enables recovery of DPAPI-protected secrets should the user lose their own backup key. Because the domain backup key can't be rotated, its exposure is a significant event. 
 
 ## Exposed Administrative Credentials
 
 Highly privileged accounts, groups, and systems have direct or indirect administrative control over the Active Directory forest/domain. Given the sensitive nature of these accounts, they should only be used on domain controllers. Pass-the-Hash attacks are successful because highly privileged credentials are used to access lower security systems. Having access to a privileged user's hash allows attackers to move laterally. 
  
-This threat aligns to best practices for securing Active Directory. If an organization does not enforce limiting privileged account access to only Domain Controllers, this threat should remain disabled to eliminate noise. 
+This threat aligns to best practices for securing Active Directory. If an organization doesn't enforce limiting privileged account access to only Domain Controllers, this threat should remain disabled to eliminate noise. 
 
 ## Golden Ticket
 
-By obtaining the password hash for the most powerful service account in Active Directory, the KRBTGT account, an attacker is able to compromise every account within Active Directory, giving them unlimited and virtually undetectable access to any system connected to Active Directory. 
+By obtaining the password hash for the most powerful service account in Active Directory, the KRBTGT account, an attacker can compromise every account within Active Directory, giving them unlimited and virtually undetectable access to any system connected to Active Directory. 
 
 ## Forged Ticket
 
 Definition: Forged Tickets provide a way for an attacker to elevate privileges by injecting additional group membership into their Kerberos tickets, giving them more privileges than they actually have in Active Directory. Threat Manager will compare PAC data in authentication to the user's actual group member and generate a threat when it finds a discrepancy. 
 
-Trigger: Perform Authentication using fabricated/invalid tickets with groups present in the authentication Ticket PAC data that does not match the users Active Directory group membership.  
+Trigger: Perform Authentication using fabricated/invalid tickets with groups present in the authentication Ticket PAC data that doesn't match the users Active Directory group membership.  
 
 ## GMSA Password Access
 
@@ -77,7 +77,7 @@ Kerberoasting is an attack method that allows an attacker to crack the passwords
 
 ## LDAP Reconnaissance
 
-When an attacker initially compromises a system on a network, they will have few to no privileges within the domain. However, due to the architecture of Active Directory, once an attacker has infiltrated any domain-joined computer, they are able to query the directory and its objects using LDAP, allowing them to locate sensitive accounts and assets to target in their attack. 
+When an attacker initially compromises a system on a network, they will have few to no privileges within the domain. However, due to the architecture of Active Directory, once an attacker has infiltrated any domain-joined computer, they can query the directory and its objects using LDAP, allowing them to locate sensitive accounts and assets to target in their attack. 
 
 ## LSASS Process Injection
 
@@ -93,7 +93,7 @@ Password Spraying indicates an attempt to gain access to credentials by using co
 
 ## Potential BadSuccessor Abuse
 
-Attackers can manipulate the msDS-ManagedAccountPrecededByLink of a dMSA account to any principal in the domain to leverage the access that account has.
+Attackers can manipulate the msDS-ManagedAccountPrecededByLink of a dMSA account to any principal in the domain to use the access that account has.
 
 ## Primary Group ID Modification
 
@@ -109,17 +109,17 @@ Sensitive Group Changes indicate that the membership of a group containing extre
 
 ## Service Account Misuse
 
-Indicates that a service account was used to log into a machine that is not listed in their service principal names attribute. 
+Indicates that a service account was used to log into a machine that isn't listed in their service principal names attribute. 
 
-This threat aligns to best practices for securing Active Directory. If an organization does not enforce service accounts to only authenticate to hosts within their servicePrincipalName values, this threat should remain disabled to eliminate noise. 
+This threat aligns to best practices for securing Active Directory. If an organization doesn't enforce service accounts to only authenticate to hosts within their servicePrincipalName values, this threat should remain disabled to eliminate noise. 
 
 ## SID History Tampering
 
-Mimikatz or other tools can be used to inject SID History into user accounts. This allows an account to effectively be given permissions, such as Domain Admin, even though it is not actually a member of Domain Admins. 
+Mimikatz or other tools can inject SID History into user accounts. This allows an account to effectively be given permissions, such as Domain Admin, even though it isn't actually a member of Domain Admins. 
 
 ## SPN Assigned to Privileged User
 
-An account is only vulnerable to Kerberoasting attacks if it has a service principal name. Service accounts should not have more privileges than required to perform their function. Visit [Netwrix Attack Catalog](https://www.netwrix.com/attack.html) to learn more about this threat. 
+An account is only vulnerable to Kerberoasting attacks if it has a service principal name. Service accounts shouldn't have more privileges than required to perform their function. Visit the [Netwrix Attack Catalog](https://www.netwrix.com/attack.html) for more about this threat. 
 
 ## Suspected Domain Controller Impersonation
 

@@ -13,7 +13,7 @@ configuration options for the threat.
 
 ![Threat Detection page](/images/threatmanager/3.0/administration/configuration/page.webp)
 
-Custom threats can also be created on this page.
+You can also create custom threats on this page.
 
 ## Threats Box
 
@@ -43,7 +43,7 @@ information:
 
 - Name – The threat name
 - Enabled – A green check mark indicates that the threat type is enabled for threat detection. A
-  gray x indicates that the threat type is not enabled for threat detection.
+  gray x indicates that the threat type isn't enabled for threat detection.
 - Level – The relative severity level, or risk level, of the threat. See the
   [Fine Tune a Threat](/docs/threatmanager/3.2/administration/configuration/threatdetection/threatconfiguration.md) topic for additional information.
 - Email – A green check mark indicates that email notifications will be sent when the threat is
@@ -54,7 +54,7 @@ information:
 - Playbook – A green check mark indicates that a Playbook is assigned to the threat. This means that
   a Playbook will be automatically executed every time a threat of this type is detected.
 - Rollup – A green check mark indicates that rollups are enabled. A gray x indicates that rollups
-  are not enabled. See the [Fine Tune a Threat](/docs/threatmanager/3.2/administration/configuration/threatdetection/threatconfiguration.md) topic for additional
+  aren't enabled. See the [Fine Tune a Threat](/docs/threatmanager/3.2/administration/configuration/threatdetection/threatconfiguration.md) topic for additional
   information.
 - Exclusions – A green check mark indicates that one or more exclusions are present for this threat
   type. A gray x indicates that no exclusions are present for this threat. See the

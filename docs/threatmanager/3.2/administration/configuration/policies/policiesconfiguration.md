@@ -9,7 +9,7 @@ sidebar_position: 10
 The Policy Details page displays information about the Honeytoken configuration.
 
 :::note
-Policies for Honeytokens must be enabled by configuring the settings on the Configuration
+To enable policies for Honeytokens, configure the settings on the Configuration
 tab.
 :::
 
@@ -48,7 +48,7 @@ The Configuration tab contains the following configuration options:
 
 
     :::info
-    Do not change the username of a Honeytoken after a successful deployment of
+    Don't change the username of a Honeytoken after a successful deployment of
     the token to a host.
     :::
 
@@ -58,23 +58,23 @@ The Configuration tab contains the following configuration options:
   random numbers.
 
     :::note
-    If the Honeytoken script cannot reach the Threat Manager URL, the Honeytoken will
+    If the Honeytoken script can't reach the Threat Manager URL, the Honeytoken will
     still be deployed but Threat Manager will be unaware of the Honeytoken deployment status.
     :::
 
 
 - Threat Manager URL – Specify the Threat Manager address to be used by the Honeytoken script to
   communicate with Threat Manager. Honeytoken hosts must be able to communicate via HTTP REST to
-  this address in order to report Honeytoken deployment status
+  this address to report Honeytoken deployment status
 - Token Domain – The domain to be used for the deployed Honeytoken. This can be selected from
   existing, known domains or a custom domain can be specified.
 - Select Credential Profile – Lists Credential Profiles added on the
   [Integrations Interface](/docs/threatmanager/3.2/administration/configuration/integrations/overview.md). Select a Credential Profile from the
-  drop-down list.
+  dropdown list.
 - Select Preferrred Action Service – Select the Action Service to be used for Honeytoken deployment.
 - Token Time to Reset Password – All Honeytokens for a policy will share common password. This value
   specifies how frequently a new password will be generated for the Honeytoken policy. Select a
-  value using the drop-down menu from the following options:
+  value using the dropdown menu from the following options:
     - 1 Day
     - 7 Days
     - 14 Days
@@ -110,7 +110,7 @@ properly configured to capture LDAP events for the Honeytoken policy.
   policy settings for Activity Monitor or Threat Prevention.
 
     :::note
-    This is a required configuration in order to detect LDAP-based Honeytoken threats.
+    This is a required configuration to detect LDAP-based Honeytoken threats.
     :::
 
 
@@ -126,17 +126,17 @@ following information:
 - Host – The host where the policy was deployed to create Honeytokens
 - Token Name – The name of the Honeytoken user
 - Token Status:
-    - Active – The token is currently deployed to the host and has an active process
-    - Decommissioned – The token is no longer valid and does not have an active process
+ - Active – The token is deployed to the host and has an active process
+    - Decommissioned – The token is no longer valid and doesn't have an active process
 - Process – The process ID of the process launched for the Honeytoken
 - Last Deployed – When the policy was last run and deployed a new token on the host
 - Created – The creation date and timestamp for the Honeytoken
 
 ## Deployment Tab
 
-The Deployment tab provides a variety of methods to deploy Honeytokens to computers. Threat Manager
-Action Service can be used to deploy Honeytokens to remote computers, or a PowerShell script can be
-downloaded to allow either an external mechanism to deploy Honeytokens or for manual deployment of
+The Deployment tab provides a variety of methods to deploy Honeytokens to computers. Use the Threat Manager
+Action Service to deploy Honeytokens to remote computers, or download a PowerShell script
+to allow either an external mechanism to deploy Honeytokens or manual deployment of
 the Honeytokens.
 
 ![deploymenttab](/images/threatmanager/3.0/administration/configuration/policies/deploymenttab.webp)
@@ -149,7 +149,7 @@ the Honeytokens.
 
         :::note
         The token's current username, domain, and password are automatically injected into
-        the script as a backup in case the Threat Manager address cannot be accessed by the
+        the script as a backup in case the Threat Manager address can't be accessed by the
         Honeytoken script.
         :::
 
@@ -173,7 +173,7 @@ the Honeytokens.
 ## Deployment Status Window
 
 When the Deploy Now button is clicked, Threat Manager will immediately deploy the Honeytoken to all
-hosts specified in the Hosts lists, utilizing the preferred action service selected for the
+hosts specified in the Hosts lists, using the preferred action service selected for the
 Honeytoken policy on the Configuration tab.
 
 ![honeytokeninprogress](/images/threatmanager/3.0/administration/configuration/policies/honeytokeninprogress.webp)

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Threat Response Page
 
-The Threat Response page provides the ability to create playbooks and add steps which contain
+The Threat Response page lets you create playbooks and add steps which contain
 actions that can be executed in response to detected threats. Threat Manager provides preconfigured
 actions for different targets.
 
@@ -19,14 +19,14 @@ Threat Manager Administrator when a threat is detected.
 ![threatresponse](/images/threatmanager/3.0/administration/configuration/threatresponse.webp)
 
 :::note
-Custom playbooks can be created using the PowerShell Script action. However, this feature
+You can create custom playbooks using the PowerShell Script action. However, this feature
 requires advanced scripting knowledge.
 :::
 
 
 ## Preconfigured Actions
 
-Threat Manager provides the following out-of-the-box actions:
+Threat Manager provides the following built-in actions:
 
 ### Active Directory Target Actions
 
@@ -93,7 +93,7 @@ Threat Manager has the following preconfigured third-party applications target a
 
 - Create ServiceNow®Incident – Creates an Incident in ServiceNow
 - Duo Authentication Push – Sends an Authentication Push to the Duo API
-- RADIUS Authentication – Utilizes RADIUS profiles to authenticate user activity
+- RADIUS Authentication – uses RADIUS profiles to authenticate user activity
 - Microsoft Teams – Posts messages to a Microsoft Teams channel
 - Send SYSLOG – Sends a Syslog message to a server
 - Set Forescout Property On Host – Adds a property to a Forescout host record

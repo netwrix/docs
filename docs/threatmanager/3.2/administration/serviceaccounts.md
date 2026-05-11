@@ -22,7 +22,7 @@ Use the **Columns** button to show or hide columns, and **Export** to download t
 
 ## Summary Charts
 
-Three charts appear at the top of the dashboard and reflect the data currently displayed in the table.
+Three charts appear at the top of the dashboard and reflect the data displayed in the table.
 
 **Vulnerable accounts** — A pie chart showing the count and percentage of accounts classified as Vulnerable versus Not Vulnerable.
 
@@ -55,7 +55,7 @@ The type of service account. Possible values include:
 - **dMSA** (3) — Domain Managed Service Account
 
 ### Status
-Indicates whether the service account is currently enabled or disabled in Active Directory.
+Indicates whether the service account is enabled or disabled in Active Directory.
 
 ### Vulnerable
 Indicates the vulnerability status of the service account based on its supported encryption types. An account is **Vulnerable** if RC4 or DES appears in the `msDS-SupportedEncryptionTypes` attribute, which makes it susceptible to Kerberoasting. An account is **Not vulnerable** if neither RC4 nor DES is present, or if the attribute is empty.

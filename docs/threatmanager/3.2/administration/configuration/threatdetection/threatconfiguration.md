@@ -27,8 +27,8 @@ The Processing tab contains the configuration options for processing the threat.
   **ON**, a dialog will display wherein which data will be processed is determined.
 
 - Threat Level – The relative severity level, or risk level, of the threat. Threat level controls
-  the visibility of the threat and can be used to sort, filter, and influence various dashboards and
-  visualizations throughout the console. This setting does not influence the behavior of the threat
+  the visibility of the threat and lets you sort, filter, and influence various dashboards and
+  visualizations throughout the console. This setting doesn't influence the behavior of the threat
   response.
     - High – Indicates a serious threat that should be investigated immediately. The high threat
       level setting can be used as a filter on the [Threats Page](/docs/threatmanager/3.2/administration/threats/threats.md).
@@ -37,7 +37,7 @@ The Processing tab contains the configuration options for processing the threat.
       [Threats Page](/docs/threatmanager/3.2/administration/threats/threats.md).
     - Low – Indicates activity that is a potential risk or a bad practice. The low threat level
       setting can be used as a filter on the [Threats Page](/docs/threatmanager/3.2/administration/threats/threats.md).
-    - Audit – Indicates activity that is not necessarily a threat, but should be monitored. The
+    - Audit – Indicates activity that isn't necessarily a threat, but should be monitored. The
       audit setting can be used as a filter on the [Threats Page](/docs/threatmanager/3.2/administration/threats/threats.md). Some threats will
       auto-escalate from audit to a higher level, for example, threats with a high threat event
       count or if the perpetrators of the threat are sensitive users. Audit events are also shown on
@@ -59,12 +59,12 @@ threat of this type is detected.
 **Rollup:**
 
 :::note
-Rollup is not available for all threat types.
+Rollup isn't available for all threat types.
 :::
 
 
 - Enabled – Enables rollups when set to ON. The default state is dependent on the threat type.
-- Rollup Time – The timeframe for the rollup. Select a timeframe from the drop-down list:
+- Rollup Time – The timeframe for the rollup. Select a timeframe from the dropdown list:
     - 1 Minute
     - 5 Minutes
     - 15 Minutes
@@ -83,7 +83,7 @@ the threat is initially detected regardless of rollup configuration. When a thre
 also update the detection time of the threat, which will push it to the top of the Threats Page
 timeline.
 
-![Image is a flow chart visually explaining how a threat is dealt with with or without Rollup enabled.](/images/threatmanager/3.0/administration/configuration/rollupexplanationgraphic.webp)
+![Image is a flow chart visually explaining how a threat is dealt with, with or without Rollup enabled.](/images/threatmanager/3.0/administration/configuration/rollupexplanationgraphic.webp)
 
 The diagram provides an outline of the rollup process.
 
@@ -107,13 +107,13 @@ exclusion.
 - Cancel – Click **Cancel** to close the exclusion details and disregard any changes made to the
   exclusion.
 - Delete Exclusion – Click the larger **Delete Icon** to the right of the Cancel button below the
-  filter(s) to delete the exclusion. A confirmation window will confirm deletion.
+  filters to delete the exclusion. A confirmation window will confirm deletion.
 
 Click **Add Exclusion** to Add a new Threat Detection Exclusion.
 
 #### Add Threat Detection Exclusions
 
-Follow the steps to add an exclusion to the threat type.
+To add an exclusion to the threat type:
 
 ![This screenshot displays the Add Exclusion for Threat Detection window.](/images/threatmanager/3.0/administration/configuration/addexclusion.webp)
 
@@ -121,16 +121,16 @@ Follow the steps to add an exclusion to the threat type.
 
 **Step 2 –** Select a Name for the exclusion
 
-**Step 3 –** Select an Attribute from the Attribute drop-down list:
+**Step 3 –** Select an Attribute from the Attribute dropdown list:
 
 - User
 - Host
 - Client
 - File
 
-**Step 4 –** Select an Operator from the Operator drop-down list.
+**Step 4 –** Select an Operator from the Operator dropdown list.
 
-**Step 5 –** Select a Filter by searching for the value and selecting it from the drop-down list.
+**Step 5 –** Select a Filter by searching for the value and selecting it from the dropdown list.
 Or, manually enter the value for the selected exclusion type in the following format:
 
 - Computer – [domain]\[hostname]

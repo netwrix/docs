@@ -13,7 +13,7 @@ recipients to receive this report as an email attachment in a specified format.
 ![Subscription window](/images/threatprevention/7.5/reportingmodule/investigations/options/subscription.webp)
 
 :::note
-This option requires an email server to be configured.If this requirement is not met, a
+This option requires an email server to be configured.If this requirement isn't met, a
 message will appear in the window. See the[Email Page](/docs/threatmanager/3.2/administration/configuration/integrations/email.md)
 section for additional information.
 :::
@@ -21,9 +21,9 @@ section for additional information.
 
 ## Subscribe to an Investigation
 
-Follow the steps to subscribe to an investigation.
+To subscribe to an investigation:
 
-**Step 1 –** From the desired investigation, click **Subscriptions**. The Subscription window opens.
+**Step 1 –** From the investigation you want, click **Subscriptions**. The Subscription window opens.
 
 The name of the respective investigation is displayed as a link. Click it to view the filter defined
 for the investigation.
@@ -40,12 +40,12 @@ Recipients box.
 
 **Step 5 –** Set the start date, time, and timezone for the selected frequency:
 
-- Start date – This field opens a calender. You can also type a date in the field.
-- Time – This field opens a clock. You can also type a date in the field.
-- Timezone – This field opens a drop-down menu. Select the desired timezone.
+- Start date – This field opens a calender. You can also enter a date in the field.
+- Time – This field opens a clock. You can also enter a date in the field.
+- Timezone – This field opens a dropdown menu. Select the timezone you want.
 
-**Step 6 –** Set a frequency. Options in the Frequency drop-down menu are: Once, Daily, Weekly, and
-Monthly. Ensure the frequency does not exceed the "Time to Retain" settings for the System Jobs
+**Step 6 –** Set a frequency. Options in the Frequency dropdown menu are: Once, Daily, Weekly, and
+Monthly. Ensure the frequency doesn't exceed the "Time to Retain" settings for the System Jobs
 configured in the System Settings interface.
 
 **Step 7 –** There are two additional settings in the Advanced Options section. Click the arrow to
@@ -60,7 +60,7 @@ field.
 is: `{{Investigation_Name}}_{{Date}}`. This variable will be replaced with the name of the
 investigation. The + button opens a variable menu for the field.
 
-**Step 10 –** Select the file format for the export from the drop-down menu: CSV, PDF, JSON, Excel
+**Step 10 –** Select the file format for the export from the dropdown menu: CSV, PDF, JSON, Excel
 Viewing.
 
 **Step 11 –** Click **Save**. The Subscription export window closes.

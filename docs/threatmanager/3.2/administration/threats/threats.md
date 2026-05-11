@@ -7,8 +7,8 @@ sidebar_position: 30
 # Threats Page
 
 The Threats page is where end-users and analysts investigate possible threats in their environment.
-This page displays an historical timeline of the detected threats and advanced filtering that allows
-users to find threats with ease.
+This page displays an historical timeline of the detected threats and advanced filtering to help
+users find threats.
 
 ## All Threats
 
@@ -22,7 +22,7 @@ Hover over the bar chart or pie chart to view the number of threats by threat ty
 
 ## Historical Events
 
-The Historical Events section provides a drop-down menu to select threats for a specific date range.
+The Historical Events section provides a dropdown menu to select threats for a specific date range.
 Threats can also be filtered by specifying a timeframe. A predefined time span can also be selected
 from the menu options in the right pane.
 
@@ -47,7 +47,7 @@ Edit button which opens the Edit Threats window. The View Details button opens t
 
 The left pane of the page, below Historical Events, lists filters that can be selected and applied
 to display the threats. The filters listed are based on the threat types detected. Each filter is a
-collapsible section that can be hidden or expanded using the arrow. To clear any currently-selected
+collapsible section that can be hidden or expanded using the arrow. To clear any -selected
 filters, click the **Clear Filters** button.
 
 ### Type
@@ -68,7 +68,7 @@ or configured on the [Threat Detection Page](/docs/threatmanager/3.2/administrat
 
 ### Tags
 
-The Tags section contains any tags associated with threats that are currently in the filtered time
+The Tags section contains any tags associated with threats that are in the filtered time
 range.
 
 #### Sensitive Data
@@ -110,7 +110,7 @@ box.
 The Status section may contain the following filters:
 
 - Open – Default status for new threats
-- Under Investigation – Threats that are currently under or pending investigation by an
+- Under Investigation – Threats that are under or pending investigation by an
   administrator
 - Closed - Resolved – Legitimate threats that have been contained or dealt with
 - Closed - False Positive – Behavior that has been incorrectly identified by Threat Manager as a
@@ -125,17 +125,17 @@ The Status section may contain the following filters:
 
 **Assignee**
 
-The Assignee section provides the ability to filter by user. Select one or more users.
+The Assignee section lets you filter by user. Select one or more users.
 
-- Unassigned – Threat does not have a user assigned
-- Assigned to me – Threat is assigned to the logged in user
+- Unassigned – Threat doesn't have a user assigned
+- Assigned to me – Threat is assigned to the user who is logged in
 
 ## Edit Threats
 
 Threats can be edited to assign a user, set a status, or ignore future threats of a specified type
 using Threat Manager’s Incident Detection Response (IDR) workflow.
 
-Follow the steps to edit a threat.
+To edit a threat:
 
 **Step 1 –** Select a threat from the list and click Edit. The Workflow window opens.
 
@@ -146,10 +146,10 @@ Follow the steps to edit a threat.
 - (Optional) Assigned To – Select a user who has a role assigned via the User Access page on the
   System Settings interface to assign to a threat to. See the User Access Page topic for additional
   information.
-- Set Status – Select the status for the threat from the drop-down list. Options include:
+- Set Status – Select the status for the threat from the dropdown list. Options include:
 
     - Open – Default status for new threats
-    - Under Investigation – Threats that are currently under or pending investigation by an
+ - Under Investigation – Threats that are under or pending investigation by an
       administrator
     - Closed - Resolved – Legitimate threats that have been contained or dealt with
     - Closed - False Positive – Behavior that has been incorrectly identified by Threat Manager as a

@@ -6,8 +6,8 @@ sidebar_position: 2
 
 # Getting Started with Threat Manager
 
-Once Threat Manager is installed, complete the following configuration to enable users to begin
-viewing threat analytics in an organization’s environment.
+After Threat Manager is installed, complete the following configuration so users can begin
+viewing threat analytics in an organization's environment.
 
 After installation, configuration is required for many of Threat Manager's additional capabilities.
 This includes the option to configure sensitive data from Netwrix Access Analyzer (formerly
@@ -36,7 +36,7 @@ information.
 ### Active Directory Activity
 
 Active Directory activity can be monitored by either the Activity Monitor or Threat Prevention.
-Deploy an Active Directory agent to domain controllers in order for Threat Manager to receive Active
+Deploy an Active Directory agent to domain controllers so that Threat Manager can receive Active
 Directory events:
 
 - Activity Monitor – Monitored domain must be configured to stream data through the domain
@@ -58,7 +58,7 @@ information.
 
 ### Sensitive Data Discovery
 
-Sensitive data is collected by Access Analyzer. It requires a license for the Access Analyzer File
+Access Analyzer collects sensitive data. It requires a license for the Access Analyzer File
 System Solution with the Sensitive Data Discovery Add-on. Access Analyzer has a custom job which can
 be added to the FileSystem > 0.Collection Job Group to stream data after the collection tasks
 complete. See the
@@ -82,5 +82,5 @@ pages are located under the [Configuration Menu](/docs/threatmanager/3.2/adminis
     - [SIEM Page](/docs/threatmanager/3.2/administration/configuration/integrations/siem.md)
     - [Netwrix Integrations Page](/docs/threatmanager/3.2/administration/configuration/integrations/netwrixintegrations.md)
     - [Tag Management Page](/docs/threatmanager/3.2/administration/configuration/integrations/tagmanagement.md)
-- The [Policies Page](/docs/threatmanager/3.2/administration/configuration/policies/overview.md) provides the ability to add
+- The [Policies Page](/docs/threatmanager/3.2/administration/configuration/policies/overview.md) lets you add
   and configure policies used for threat detection including Honeytoken threats

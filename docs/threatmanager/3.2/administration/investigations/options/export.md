@@ -13,7 +13,7 @@ exported in a specified format and can be downloaded, emailed, or scheduled as d
 ![Export option in the Investigation interface](/images/threatmanager/3.0/administration/investigations/options/export.webp)
 
 After running an investigation query, click **Export**. Then select one of the following from the
-drop-down menu:
+dropdown menu:
 
 - Export as CSV – Generates and downloads the report as a CSV file to your Downloads folder
 - Export as PDF – Generates and downloads the report as a PDF file to your Downloads folder
@@ -42,15 +42,14 @@ additional information.
 ## Send as Email
 
 :::note
-This option requires an email server to be configured. If this requirement is not met, a
+This option requires an email server to be configured. If this requirement isn't met, a
 message will appear in the window. See the[Email Page](/docs/threatmanager/3.2/administration/configuration/integrations/email.md)
 section for additional information.
 :::
 
 
 You can send the report data of an investigation as an attachment to an email. The attachment can be
-any of the file formats available for download. Follow the steps to send a report as an email
-attachment.
+any of the file formats available for download. To send a report as an email attachment:
 
 **Step 1 –** Click **Investigate** in the application header bar to open the Investigations
 interface. Then click a folder in the navigation pane to access a saved investigation. An
@@ -63,14 +62,14 @@ sections, click the **Export** menu and select **Send as Email**. The Send as Em
 
 **Step 3 –** Begin typing in the **Recipients** textbox. You can enter a user name or email address.
 Available email addresses read from Active Directory that match the text string will populate in the
-drop-down menu. Select a recipient.
+dropdown menu. Select a recipient.
 
 **Step 4 –** Repeat Step 3 to add additional recipients.
 
 **Step 5 –** Modify the subject line as desired in the Email Subject box. The default subject
 is: Export of Report '[NAME OF INVESTIGATION]'.
 
-**Step 6 –** Select the radio button for the desired file format: CSV, PDF, or JSON.
+**Step 6 –** Select the radio button for the file format you want: CSV, PDF, or JSON.
 
 **Step 7 –** Click **Send**. The Send as Email window closes.
 
@@ -79,7 +78,7 @@ The recipients will receive the report as an attachment to an email.
 ## Scheduled Export
 
 :::note
-This option requires a shared folder to be configured.If this requirement is not met, a
+This option requires a shared folder to be configured.If this requirement isn't met, a
 message will appear in the window. See the
 [Folder Settings Page](/docs/threatmanager/3.2/administration/configuration/integrations/foldersettings.md) section for additional
 information.
@@ -87,7 +86,7 @@ information.
 
 
 You can schedule to save the report data of an investigation to a shared folder. The file format can
-be any of the formats available for download. Follow the steps to schedule a report export.
+be any of the formats available for download. To schedule a report export:
 
 **Step 1 –** Click **Investigate** in the application header bar to open the Investigations
 interface. Then click a folder in the navigation pane to access a saved investigation. An
@@ -108,24 +107,24 @@ window name.
 `{{Investigation_Name}}`. This variable will be replaced with the name of the investigation. The +
 button opens a variable menu for the field.
 
-**Step 5 –** Select a shared folder from the **Publish folder** drop-down menu. Only folders
+**Step 5 –** Select a shared folder from the **Publish folder** dropdown menu. Only folders
 configured on the Folder Settings page of the Integrations interface will be listed here.
 
-**Step 6 –** Set a frequency. Options in the Frequency drop-down menu are: Once, Daily, Weekly, and
-Monthly. Ensure the frequency does not exceed the "Time to Retain" settings for the System Jobs
+**Step 6 –** Set a frequency. Options in the Frequency dropdown menu are: Once, Daily, Weekly, and
+Monthly. Ensure the frequency doesn't exceed the "Time to Retain" settings for the System Jobs
 configured in the System Settings interface.
 
 **Step 7 –** Set the start date, time, and timezone for the selected frequency:
 
-- Start date – This field opens a calender. You can also type a date in the field.
-- Time – This field opens a clock. You can also type a date in the field.
-- Timezone – This field opens a drop-down menu. Select the desired timezone.
+- Start date – This field opens a calender. You can also enter a date in the field.
+- Time – This field opens a clock. You can also enter a date in the field.
+- Timezone – This field opens a dropdown menu. Select the timezone you want.
 
 **Step 8 –** Set the file name in the File name field. The default name
 is: `{{Investigation_Name}}_{{Date}}`. This variable will be replaced with the name of the
 investigation. The + button opens a variable menu for the field.
 
-**Step 9 –** Select the file format for the export from the drop-down menu: CSV, PDF, JSON, Excel
+**Step 9 –** Select the file format for the export from the dropdown menu: CSV, PDF, JSON, Excel
 Viewing.
 
 **Step 10 –** Click **Save**. The Schedule export window closes.

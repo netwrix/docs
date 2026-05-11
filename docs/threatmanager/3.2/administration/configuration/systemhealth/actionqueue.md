@@ -11,5 +11,5 @@ Action Service.
 
 ![actionqueue](/images/threatmanager/3.0/administration/configuration/systemhealth/actionqueue.webp)
 
-This includes Honeytoken deployments and Threat Response Playbook executions. Any actions in the
-action queue may be stopped by clicking the **Stop** button.
+This includes Honeytoken deployments and Threat Response Playbook executions. To stop any action
+in the action queue, click the **Stop** button.
