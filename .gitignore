@@ -24,6 +24,7 @@ docs/*/*/kb/**
 # Ignore all generated files but keep _category_.json which is hand-authored
 docs/changetracker/8.1/integration/api/reference/*
 !docs/changetracker/8.1/integration/api/reference/_category_.json
+!docs/changetracker/8.1/integration/api/reference/index.md
 
 # KB copy script lockfile
 .kb-copy.lock
