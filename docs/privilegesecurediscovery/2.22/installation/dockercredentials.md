@@ -1,7 +1,7 @@
 ---
 title: "Docker Credentials Helper"
 description: "Docker Credentials Helper"
-sidebar_position: 50
+sidebar_position: 20
 ---
 
 # Docker Credentials Helper
@@ -11,7 +11,7 @@ sidebar_position: 50
 This guide sets up the official `docker-credential-pass` helper from
 [docker/docker-credential-helpers](https://github.com/docker/docker-credential-helpers) with
 `gopass` as the encrypted backend store. Instead of Docker writing base64-encoded credentials into
-`~/.docker/config.json`, credentials are encrypted with GPG and stored through `gopass`.
+`~/.docker/config.json`, GPG encrypts the credentials and `gopass` stores them.
 
 The main operational use case is deploying or upgrading NPS-D on a customer machine that needs to
 pull private images from a protected registry. The standard deployment model is local only: one
@@ -21,8 +21,7 @@ encrypted `gopass` store per engineer or per machine, with no Git remote require
 
 Docker calls the `docker-credential-pass` binary for credential storage and retrieval. That binary
 expects to talk to the `pass` CLI and read from `~/.password-store/`. Since `gopass` is
-CLI-compatible with `pass` and uses the same GPG-encrypted file format, two symlinks bridge the
-gap:
+CLI-compatible with `pass` and uses the same GPG-encrypted file format, two symlinks connect them:
 
 1. **`gopass` symlinked as `pass`** — so `docker-credential-pass` can find the binary it expects
 2. **gopass store symlinked to `~/.password-store/`** — so filesystem reads land in the right place
@@ -61,9 +60,9 @@ Repo assets:
 - `gopass`
 
 :::note
-A Git remote isn't required for the standard NPS-D customer-machine deployment flow. `git` is still
-installed in the validated path because `gopass` defaults to a local Git-backed store, even when no
-remote is configured.
+You don't need a Git remote for the standard NPS-D customer-machine deployment flow. The validated
+path still installs `git` because `gopass` defaults to a local Git-backed store, even when no
+remote exists.
 :::
 
 ### Production prerequisite
@@ -85,7 +84,7 @@ configuration so `gopass` can decrypt during `docker login`.
 - macOS (Apple Silicon and Intel)
 
 :::note
-Windows isn't supported by the official `docker-credential-pass` helper. For Windows environments,
+The official `docker-credential-pass` helper doesn't support Windows. For Windows environments,
 use WSL Ubuntu with the Linux binary.
 :::
 
@@ -139,9 +138,9 @@ Pulling NPS-D images requires authentication to the AWS ECR registry. Configure 
 before running `docker login`.
 
 :::note
-The AWS Access Key ID and Secret Access Key for customer deployments are provided by the CS team.
-This configuration is performed manually and is independent of the installer and validator scripts
-in the repository — those scripts don't interact with AWS or ECR.
+The CS team provides the AWS Access Key ID and Secret Access Key for customer deployments. You
+perform this configuration manually, independent of the installer and validator scripts in the
+repository — those scripts don't interact with AWS or ECR.
 :::
 
 **Step 1 –** Install the AWS CLI if not already present:
@@ -185,7 +184,7 @@ This command uses your AWS credentials to get a temporary ECR token (valid 12 ho
 directly to `docker login`. `docker-credential-pass` then stores the encrypted token —
 `~/.docker/config.json` receives no plain-text credentials.
 
-**Step 4 –** Verify the credential was stored correctly:
+**Step 4 –** Verify that `docker-credential-pass` stored the credential correctly:
 
 ```bash
 grep -q '"auth"' "$HOME/.docker/config.json" && echo "unexpected inline auth found"
@@ -209,7 +208,7 @@ Expected result:
 
 ## Recommended NPS-D Customer-Machine Workflow
 
-After the helper is installed and `gopass` is initialized for the operator account, the practical
+After you install the helper and initialize `gopass` for the operator account, the practical
 deployment flow is the same on Ubuntu, WSL Ubuntu, and macOS. This workflow is intentionally local
 only — it doesn't require a shared store or any Git remote.
 
@@ -231,7 +230,7 @@ For Ubuntu and WSL Ubuntu, the recommended path is the installer script:
 assumes the required packages are already present and only wires up the helper, the local `gopass`
 store, and the Docker config.
 
-### Step 1: Confirm Docker is configured to use the helper
+### Step 1: Confirm Docker uses the helper
 
 The active Docker client config for the current user should contain:
 
@@ -243,7 +242,7 @@ The active Docker client config for the current user should contain:
 
 Path on Linux, WSL, and macOS: `$HOME/.docker/config.json`
 
-### Step 2: Log in to the private registry used by the customer deployment
+### Step 2: Log in to the private registry the customer deployment uses
 
 Linux, WSL, or macOS:
 
@@ -303,8 +302,8 @@ During logout, Docker asks the helper to delete the stored credential entry.
 
 - Docker uses the helper automatically after you configure `credsStore: pass`. Operators
   don't need to invoke it directly during routine deployments.
-- Credentials are scoped to the registry hostname. Log in separately for each registry the customer
-  environment needs.
+- Docker scopes credentials to the registry hostname. Log in separately for each registry the
+  customer environment needs.
 - The standard deployment model is local only. One engineer account or one machine gets one local
   encrypted store. You don't need a remote repository.
 - `printf '%s' "$REGISTRY" | docker-credential-pass get` is a direct verification command when
@@ -314,7 +313,7 @@ During logout, Docker asks the helper to delete the stored credential entry.
   `pass` changes the active credential backend for that Docker client.
 - For customer-machine operators, prefer interactive `docker login` so you enter the token at
   Docker's password prompt instead of placing it in shell history or environment variables.
-- If unattended automation is required, only use `--password-stdin` from a secure secret source.
+- If you need unattended automation, only use `--password-stdin` from a secure secret source.
   Don't hardcode the token into the command line or export it in the shell profile.
 
 ---
@@ -352,7 +351,7 @@ The installer performs these actions:
 - Initializes a local `gopass` store
 - Creates a symlink from the gopass store to `~/.password-store/`
 - Configures Docker with `credsStore: pass`
-- Removes any existing inline Docker `auths` entries unless `--keep-inline-auths` is specified
+- Removes any existing inline Docker `auths` entries unless you specify `--keep-inline-auths`
 
 ### Manual step-by-step path
 
@@ -442,8 +441,8 @@ gpg --batch --generate-key "$HOME/gpg-batch"
 ```
 
 :::note
-To use a passphrase-protected key instead, remove `%no-protection` and ensure a working
-`pinentry` program is configured before using `docker login`.
+To use a passphrase-protected key instead, remove `%no-protection` and configure a working
+`pinentry` program before using `docker login`.
 :::
 
 **Step 7 –** Get the key ID:
@@ -463,7 +462,7 @@ gopass --yes init "$KEYID"
 ln -sfn "${XDG_DATA_HOME:-$HOME/.local/share}/gopass/stores/root" "$HOME/.password-store"
 ```
 
-This creates the local encrypted store used by the helper and symlinks it to `~/.password-store/`
+This creates the local encrypted store the helper uses and symlinks it to `~/.password-store/`
 where `docker-credential-pass` expects to find it. For the standard NPS-D deployment flow, stop here
 and don't add any remote.
 
@@ -521,7 +520,7 @@ This validator uses an Ubuntu 24.04 container plus a Docker-in-Docker sidecar an
 
 ## WSL Ubuntu
 
-Use the Ubuntu instructions above inside the WSL distro, with these differences:
+Use the Ubuntu instructions inside the WSL distro, with these differences:
 
 - Use the same installer script:
 
@@ -605,8 +604,8 @@ ln -sf "$(which gopass)" "$HOME/.local/bin/pass"
 
 Create the store symlink after gopass initialization in step 6.
 
-**Step 4 –** Configure Git identity for the local `gopass` store. A remote repository isn't
-required:
+**Step 4 –** Configure Git identity for the local `gopass` store. You don't need a remote
+repository:
 
 ```bash
 git config --global user.name "Your Name"
@@ -675,7 +674,7 @@ bash ./scripts/docker-credential-gopass/validate-macos-login.sh
 
 This validator downloads the official `docker-credential-pass` binary, uses a temporary Docker
 config and temporary GPG/gopass home, and confirms that the pre-existing default macOS Docker
-config is left untouched afterward.
+config remains untouched afterward.
 
 **Step 10 –** Validate a passphrase-protected GPG key path:
 
