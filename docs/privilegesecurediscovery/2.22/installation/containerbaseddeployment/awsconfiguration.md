@@ -53,7 +53,7 @@ error, re-run the login command above before retrying.
 :::
 
 :::tip
-To avoid storing Docker credentials as base64-encoded text in `~/.docker/config.json`, set up an
-encrypted credential store. See [Docker Credentials Helper](../dockercredentials.md) for
+For enhanced security, store Docker credentials in an encrypted credential store instead of the
+default configuration file. See [Docker Credentials Helper](../dockercredentials.md) for
 instructions.
 :::
