@@ -17,13 +17,20 @@ quickstart archive available on the Netwrix releases server.
 
 This method supports both single-node and three-node high-availability cluster deployments.
 
+The entire deployment process is transparent — the `secureone.sh` script contains all logic with
+no hidden components. The tarball (`secureone.tar.gz`) provides the installation directory
+structure and default configuration files.
+
 ## Deployment Steps
 
-1. Prepare Ubuntu machines and install [OS prerequisites](./prerequisites.md).
-2. Configure [AWS credentials](./awsconfiguration.md) on each machine to authenticate with the
+1. Create one Ubuntu machine (single-node) or three Ubuntu machines (cluster). These can be
+   virtual machines.
+2. Install [OS prerequisites](./prerequisites.md) on each machine.
+3. Configure [AWS credentials](./awsconfiguration.md) on each machine to authenticate with the
    Netwrix container registry (Amazon ECR).
-3. [Download the quickstart bundle and deploy](./deploysecureone.md) using `secureone.sh`.
-4. [Verify the deployment](./verifydeployment.md) using Docker Swarm monitoring commands.
+4. [Download the quickstart bundle](./deploysecureone.md) onto each machine and run `secureone.sh`
+   on the primary machine.
+5. [Verify the deployment](./verifydeployment.md) using Docker Swarm monitoring commands.
 
 ## Single-Node vs. Cluster
 
