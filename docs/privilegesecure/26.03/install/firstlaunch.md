@@ -45,7 +45,7 @@ account
 
 :::note
 You can skip this step during the wizard and add an MFA later,
-but we don't recommend it.
+but this isn't recommended.
 :::
 
 
@@ -156,7 +156,7 @@ See the [Getting Started](/docs/privilegesecure/26.03/gettingstarted.md) topic f
 ## Exit Wizard Early
 
 You can exit the Setup Wizard from Step 3, Step 4, and Step 5 pages. If you do that, then
-the Setup Wizard does not create the Activity Token for Domain Admin Access activity. Complete the
+the Setup Wizard doesn't create the Activity Token for Domain Admin Access activity. Complete the
 following to create your first access policy, depending on what page of the wizard
 you exited from:
 

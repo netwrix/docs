@@ -23,7 +23,7 @@ the database.
 
 :::note
 Selecting this checkbox removes all records of the resources from the database. It
-does not prevent the resource from being synced or added again.
+doesn't prevent the resource from being synced or added again.
 :::
 
 

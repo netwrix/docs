@@ -22,8 +22,6 @@ The Add Role window has the following features:
 - Save button — Saves the new role to the Users & Groups module.
 - Cancel button — Cancels the Add Role process and closes the window.
 
-Follow the steps below to add a role to the Users & Groups Role Management module.
-
 **Step 1 –** Navigate to the **Users & Groups** > **Role Management** page.
 
 **Step 2 –** Click the **Add Role** button.

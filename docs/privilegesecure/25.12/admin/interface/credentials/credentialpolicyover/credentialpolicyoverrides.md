@@ -8,7 +8,7 @@ sidebar_position: 70
 
 The Credential Policy Overrides page is accessible from the Policy Navigation pane under Credentials
 and displays the configured Credential Policy Overrides. If a credential is added to a Credential
-Policy Override, that credential's scheduled change policy and verification schedule will be
+Policy Override, that credential's scheduled change policy and verification schedule is
 inherited from the Credential Policy Override, rather than being inherited from the credential's
 platform.
 

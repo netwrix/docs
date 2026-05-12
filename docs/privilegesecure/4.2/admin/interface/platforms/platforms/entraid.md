@@ -11,7 +11,7 @@ Entra ID platforms.
 
 ![Azure AD Platform Configuration](/images/privilegesecure/4.2/accessmanagement/admin/policy/page/platforms/azuread.webp)
 
-Details for the selected platform appear on the right side of the page. Below are the
+Details for the selected platform appear on the right side of the page. The following are the
 configuration options for an Microsoft Entra ID Platform.
 
 - Name — Displays the name of the policy

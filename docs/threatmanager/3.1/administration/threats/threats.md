@@ -7,8 +7,8 @@ sidebar_position: 30
 # Threats Page
 
 The Threats page is where end-users and analysts investigate possible threats in their environment.
-This page displays an historical timeline of the detected threats and advanced filtering that allows
-users to find threats with ease.
+This page displays a historical timeline of the detected threats and advanced filtering that lets
+users find threats quickly.
 
 ## All Threats
 
@@ -22,13 +22,13 @@ Hover over the bar chart or pie chart to view the number of threats by threat ty
 
 ## Historical Events
 
-The Historical Events section provides a drop-down menu to select threats for a specific date range.
+The Historical Events section provides a dropdown to select threats for a specific date range.
 Threats can also be filtered by specifying a timeframe. A predefined time span can also be selected
 from the menu options in the right pane.
 
 ![historicalevents](/images/threatmanager/3.0/administration/historicalevents.webp)
 
-These threats are displayed in a list format below the Historical Events section.
+Threat Manager displays these threats in a list below the Historical Events section.
 
 ## Threats List
 
@@ -47,8 +47,7 @@ Edit button which opens the Edit Threats window. The View Details button opens t
 
 The left pane of the page, below Historical Events, lists filters that can be selected and applied
 to display the threats. The filters listed are based on the threat types detected. Each filter is a
-collapsible section that can be hidden or expanded using the arrow. To clear any currently-selected
-filters, click the **Clear Filters** button.
+collapsible section that can be hidden or expanded using the arrow. To clear any selected filters, click the **Clear Filters** button.
 
 ### Type
 
@@ -68,8 +67,7 @@ or configured on the [Threat Detection Page](/docs/threatmanager/3.1/administrat
 
 ### Tags
 
-The Tags section contains any tags associated with threats that are currently in the filtered time
-range.
+The Tags section contains any tags associated with threats in the filtered time range.
 
 #### Sensitive Data
 
@@ -79,7 +77,7 @@ Sensitive Data Discovery Add-on, Access Analyzer scans for sensitive data using 
 Sensitive Data Discovery Auditing. See the
 [Netwrix Access Analyzer (formerly Enterprise Auditor) Integration](/docs/threatmanager/3.1/install/integration/accessanalyzer.md)
 topic for additional information. See the File System Solution topic in the
-[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
+[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information on Access Analyzer Sensitive Data Discovery capabilities.
 
 When a threat event contains sensitive data, a Sensitive Data tag is displayed next to the threat:
@@ -87,7 +85,7 @@ When a threat event contains sensitive data, a Sensitive Data tag is displayed n
 ![threatsensitivedatafilter](/images/threatmanager/3.0/administration/threatsensitivedatafilter.webp)
 
 To view the type of sensitive data contain in a threat, click View Details on the threat containing
-a Sensitive Data tag. The type of sensitive data is displayed in the Sensitive Data column.
+a Sensitive Data tag. The type of sensitive data is displayed in the Sensitive Data column:
 
 The following tables contain a Sensitive Data column:
 
@@ -110,8 +108,7 @@ box.
 The Status section may contain the following filters:
 
 - Open – Default status for new threats
-- Under Investigation – Threats that are currently under or pending investigation by an
-  administrator
+- Under Investigation – Threats under or pending investigation by an administrator
 - Closed - Resolved – Legitimate threats that have been contained or dealt with
 - Closed - False Positive – Behavior that has been incorrectly identified by Threat Manager as a
   threat
@@ -125,19 +122,19 @@ The Status section may contain the following filters:
 
 **Assignee**
 
-The Assignee section provides the ability to filter by user. Select one or more users.
+The Assignee section lets you filter by user. Select one or more users.
 
-- Unassigned – Threat does not have a user assigned
-- Assigned to me – Threat is assigned to the logged in user
+- Unassigned – Threat doesn't have a user assigned
+- Assigned to the current user – Filters threats assigned to you as the logged-in user
 
 ## Edit Threats
 
 Threats can be edited to assign a user, set a status, or ignore future threats of a specified type
-using Threat Manager’s Incident Detection Response (IDR) workflow.
+using Threat Manager’s Incident Detection Response workflow.
 
-Follow the steps to edit a threat.
+To edit a threat.
 
-**Step 1 –** Select a threat from the list and click Edit. The Workflow window opens.
+**Step 1 –** Select a threat from the list and click Edit. The Workflow window opens:
 
 ![editthreats](/images/threatmanager/3.0/administration/editthreats.webp)
 
@@ -146,11 +143,10 @@ Follow the steps to edit a threat.
 - (Optional) Assigned To – Select a user who has a role assigned via the User Access page on the
   System Settings interface to assign to a threat to. See the User Access Page topic for additional
   information.
-- Set Status – Select the status for the threat from the drop-down list. Options include:
+- Set Status – Select the status for the threat from the dropdown. Options include:
 
     - Open – Default status for new threats
-    - Under Investigation – Threats that are currently under or pending investigation by an
-      administrator
+    - Under Investigation – Threats under or pending investigation by an administrator
     - Closed - Resolved – Legitimate threats that have been contained or dealt with
     - Closed - False Positive – Behavior that has been incorrectly identified by Threat Manager as a
       threat

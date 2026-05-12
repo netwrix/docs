@@ -20,7 +20,7 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English (United States) language installation
 
 **Additional Server Requirements**
 
@@ -36,8 +36,8 @@ The following are additional requirements for the database server:
 The following considerations must be accommodated for:
 
 - When running antivirus scans against the PostgreSQL v14 database, the PostgreSQL data folder must
-  be excluded from the scans in order to prevent database complications.
+  be excluded from the scans to prevent database complications.
 - For performance reasons, disable Windows File Indexing on the drive containing the Threat Manager
   database.
-- Disk Defragmentation jobs should never be performed on the drive containing Threat Manager
-  PostgreSQL database. This can cause operational issues with the PostgreSQL database.
+- Never run Disk Defragmentation jobs on the drive containing the Threat Manager
+  PostgreSQL database. Defragmentation can cause operational issues with the PostgreSQL database.

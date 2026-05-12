@@ -58,7 +58,7 @@ git commit -q -m "fix(vale): auto-fix substitutions and removals"
 
 # Run the anchor update function
 source "$SCRIPT_DIR/vale-autofix.sh" --test
-update_heading_anchors
+update_heading_anchors HEAD~1
 
 # Verify: guide.md should have updated anchor
 PASS=0
