@@ -14,15 +14,16 @@ keywords:
   - database recovery mode
   - Netwrix
 products:
-  - access-analyzer
-sidebar_label: Access Analyzer Upgrade FAQ
+  - accessanalyzer
+sidebar_label: Upgrade and Migration FAQ
 tags:
+  - kb
   - installation-and-upgrades
-title: "Access Analyzer Upgrade FAQ"
+title: "Upgrade and Migration FAQ"
 knowledge_article_id: kA0Qk0000001hHRKAY
 ---
 
-# Access Analyzer Upgrade FAQ
+# Upgrade and Migration FAQ
 
 ## Questions
 
@@ -32,10 +33,10 @@ knowledge_article_id: kA0Qk0000001hHRKAY
 
 ## Answers
 
-1. We do not recommend performing an in-place upgrade for the Netwrix Application server's Operation System. It has been known to cause issues. We suggest spinning up a new server with the new OS and migrating Netwrix to the new server.
-2. We recommend migrating Access Analyzer to the new server first. Then, after confirming everything is working as expected on the new server, upgrade to the latest version.
-3. You should keep all of Netwrix's databases on simple recovery mode. For mor information, please see the following article: SQL Server Requirements.
+1. Netwrix does not recommend in-place Operating System upgrades for the Access Analyzer host server. In-place upgrades have caused issues. Instead, deploy a new server with the target OS and migrate Access Analyzer to it.
+2. Netwrix recommends migrating Access Analyzer to the new server first. After confirming everything is working as expected on the new server, upgrade to the latest version.
+3. Keep all Netwrix databases in Simple Recovery Mode. For more information, see [SQL Server Requirements](pathname:///docs/accessanalyzer/12_0/requirements/overview#sql-server-requirements).
 
 ## Related Articles
 
-- SQL Server Requirements
+- [SQL Server Requirements](pathname:///docs/accessanalyzer/12_0/requirements/overview#sql-server-requirements)

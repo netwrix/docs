@@ -8,7 +8,7 @@ sidebar_position: 85
 
 ## Overview
 
-Access Analyzer integrates with **Netwrix Activity Monitor (NAM)** to ingest real-time file system, SharePoint Online, and Microsoft 365 Copilot activity events. Once configured, these events populate the activity reports in AA2601 and power anomaly detection and sensitive data activity tracking.
+Access Analyzer integrates with **Netwrix Activity Monitor (NAM)** to ingest real-time file system, SharePoint Online, and Microsoft 365 Copilot activity events. After you configure the integration, these events populate the activity reports in AA2601 and power anomaly detection and sensitive data activity tracking.
 
 The integration works through a built-in TCP listener that NAM agents connect to over a secure, mutually authenticated TLS 1.3 channel. Events stream continuously from NAM agents into AA2601's analytics database (ClickHouse), where they become available in reports.
 
@@ -40,7 +40,7 @@ AA2601 Reports (file system activity, SharePoint, Copilot)
 
 ### Security Model
 
-Authentication uses **mutual TLS with SPKI hash pinning**:
+Authentication uses **mutual TLS with Subject Public Key Info (SPKI) hash pinning**:
 
 - AA2601 requires TLS 1.3 and rejects older protocol versions.
 - Both products perform mutual authentication by matching hashes of each other's certificate public key (SPKI hash) against a persistent allowlist in their configuration.
@@ -54,7 +54,7 @@ SPKI hashes survive certificate renewal as long as the key pair is unchanged. Re
 Before connecting NAM agents to AA2601:
 
 - **Netwrix Activity Monitor** must be installed and monitoring the hosts or services for which you want real-time activity in AA2601. Confirm monitoring is active before adding the AA2601 output.
-- **TLS certificates** must be provisioned on the AA2601 server. The server certificate and private key paths are set via the environment variables `SYSLOG_TLS_CERT_PATH` and `SYSLOG_TLS_KEY_PATH`. Contact your infrastructure team if the listener isn't starting.
+- **TLS certificates** must be provisioned on the AA2601 server. The environment variables `SYSLOG_TLS_CERT_PATH` and `SYSLOG_TLS_KEY_PATH` specify the server certificate and private key paths. Contact your infrastructure team if the listener isn't starting.
 - **Network connectivity** must allow NAM agents to reach AA2601 on TCP port 4504 (default) through any firewalls or network policies.
 - You must have **Administrator** access to AA2601 to generate enrollment tokens and view enrolled agents.
 
@@ -142,8 +142,8 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 | Setting | Default | Range | Description |
 | --- | --- | --- | --- |
 | `activitymonitor_tcp_port` | 4504 | 1 – 65535 | TCP port the listener binds to. Must match the port configured in NAM agent settings. |
-| `activitymonitor_max_connections` | 100 | 10 – 1000 | Maximum simultaneous agent connections. Connections beyond this limit are rejected at the TCP layer. |
-| `activitymonitor_connection_timeout` | 900 | 5 – 3600 | Seconds of inactivity before an idle agent connection is dropped. Set this to be comfortably longer than your NAM polling interval. |
+| `activitymonitor_max_connections` | 100 | 10 – 1000 | Maximum simultaneous agent connections. AA2601 rejects connections beyond this limit at the TCP layer. |
+| `activitymonitor_connection_timeout` | 900 | 5 – 3600 | Seconds of inactivity before AA2601 drops an idle agent connection. Set this to be comfortably longer than your NAM polling interval. |
 
 ### Performance and Throughput Settings
 
@@ -151,7 +151,7 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 | --- | --- | --- | --- |
 | `activitymonitor_reactor_threads` | 0 (auto) | 0 – 32 | Async input/output threads for handling connections. `0` automatically uses one thread per CPU core — correct for almost all deployments. |
 | `activitymonitor_buffer_threads` | 8 | 1 – 16 | Writer threads that drain the in-memory event buffer to ClickHouse. More threads help sustain high write rates. |
-| `activitymonitor_buffer_max_size` | 10,000 | 1,000 – 500,000 | Maximum events held in memory at once. When full, new arrivals are held at the TCP layer (backpressure to agents) rather than dropped. |
+| `activitymonitor_buffer_max_size` | 10,000 | 1,000 – 500,000 | Maximum events held in memory at once. When full, AA2601 holds new arrivals at the TCP layer (backpressure to agents) rather than dropping them. |
 | `activitymonitor_batch_size` | 100 | 10 – 1,000 | Events grouped per internal processing batch. |
 | `activitymonitor_batch_interval_seconds` | 10 | 1 – 60 | Maximum seconds between batch flushes to ClickHouse. The primary control for **data freshness** — lower values mean events appear in reports sooner, at the cost of more frequent small writes. |
 | `activitymonitor_clickhouse_batch_size` | 10,000 | 1,000 – 100,000 | Events per ClickHouse write operation. Larger batches are more efficient but increase memory usage during the write. |
@@ -162,8 +162,8 @@ All Activity Monitor settings are at **Configuration > Application Settings > Ac
 | Setting | Default | Range | Description |
 | --- | --- | --- | --- |
 | `activitymonitor_enrollment_first_message_timeout_seconds` | 10 | 5 – 60 | Seconds AA2601 waits for the first message after a new connection is established. AA2601 closes connections that send nothing within this window. |
-| `activitymonitor_enrollment_ban_duration_seconds` | 10 | 5 – 300 | Seconds a source IP is blocked after a protocol violation (invalid enrollment code, malformed JSON, or unexpected message format). |
-| `activitymonitor_max_message_size` | 16,777,216 (16 MB) | 65,536 – 67,108,864 | Maximum byte size of a single message from a NAM agent. If exceeded without a line delimiter, AA2601 drops the connection. |
+| `activitymonitor_enrollment_ban_duration_seconds` | 10 | 5 – 300 | Seconds AA2601 blocks a source IP after a protocol violation (invalid enrollment code, malformed JSON, or unexpected message format). |
+| `activitymonitor_max_message_size` | 16,777,216 (16 MB) | 65,536 – 67,108,864 | Maximum byte size of a single message from a NAM agent. If a message exceeds this size without a line delimiter, AA2601 drops the connection. |
 
 ### Shutdown Settings
 
@@ -213,7 +213,7 @@ Start with defaults. Only adjust if you observe specific symptoms.
 **If you have many agents connecting simultaneously:**
 - Raise `activitymonitor_max_connections` to at least the number of expected concurrent agents, with 20–30% headroom.
 
-**Don't lower `activitymonitor_connection_timeout` below your NAM polling interval.** If NAM sends events every 5 minutes and the timeout is less than 300 seconds, agents will be dropped between batches and forced to reconnect constantly. The default of 900 seconds provides safe headroom for most polling configurations.
+**Don't lower `activitymonitor_connection_timeout` below your NAM polling interval.** If NAM sends events every 5 minutes and the timeout is less than 300 seconds, AA2601 drops agents between batches and forces them to reconnect constantly. The default of 900 seconds provides safe headroom for most polling configurations.
 
 ### Kubernetes Shutdown Considerations
 
@@ -242,7 +242,7 @@ Disabling and re-enabling doesn't cause data loss for events that occurred while
 
 - Verify `enable_activitymonitor_ingestion` is `true` in **Configuration > Application Settings > Feature Flags**.
 - Verify the TLS certificate environment variables (`SYSLOG_TLS_CERT_PATH`, `SYSLOG_TLS_KEY_PATH`) are set and the files are readable. The application logs report a specific error if a certificate is missing, unreadable, or expired.
-- Verify the configured port isn't already bound by another process.
+- Verify another process isn't already using the configured port.
 
 The listener retries startup up to 5 times with exponential backoff (starting at 0.5s, capping at 30s). Check logs for `"Failed to start NAM Listener"` messages with retry counts.
 
@@ -250,11 +250,11 @@ The listener retries startup up to 5 times with exponential backoff (starting at
 
 - Verify network connectivity from the agent host to AA2601 on the configured port (default: 4504).
 - Verify the agent is configured with the correct hostname and port. The port in NAM agent configuration must match `activitymonitor_tcp_port`.
-- Verify the agent has a valid TLS client certificate. Connections without a client certificate are rejected and the source IP is temporarily banned.
+- Verify the agent has a valid TLS client certificate. AA2601 rejects connections without a client certificate and temporarily bans the source IP.
 
 ### An agent connected but isn't sending data
 
-- Verify the agent was successfully enrolled. AA2601 silently rejects data connections from agents that have not completed enrollment because their SPKI hash isn't in the allowlist. Re-enroll using a new token.
+- Verify the agent enrolled successfully. AA2601 silently rejects data connections from agents that have not completed enrollment because their SPKI hash isn't in the allowlist. Re-enroll using a new token.
 - Verify `activitymonitor_connection_timeout` isn't shorter than the agent's event polling interval. If agents idle longer than the timeout, AA2601 drops them between batches and they must reconnect.
 
 ### Events aren't appearing in reports
@@ -274,7 +274,7 @@ Bans are short (default: 10 seconds) and reset on pod restart. For persistent is
 
 ### Enrolled agents list has stale entries
 
-Agents that have been decommissioned or reinstalled may leave stale entries in the allowlist. These are harmless — the old SPKI hash will never match a new agent's certificate. Remove them using the API:
+Decommissioned or reinstalled agents may leave stale entries in the allowlist. These are harmless — the old SPKI hash will never match a new agent's certificate. Remove them using the API:
 
 ```
 DELETE /api/v1/nam-listener/agents/:spki_hash
