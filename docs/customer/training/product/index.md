@@ -6,7 +6,7 @@ keywords: [training, course]
 description: "Learn about the courses you are enrolled in for the Netwrix product you own"
 ---
 
-You will be automatically enrolled in the product learning path for the products you own. Some products have solution-specific learning paths:
+The Learning Library automatically enrolls you in the product learning path for the products you own. Some products have solution-specific learning paths:
 
 * [Netwrix 1Secure Learning Path](./1secure.md)
 * [Netwrix Access Analyzer Learning Paths](./access-analyzer/index.md)
