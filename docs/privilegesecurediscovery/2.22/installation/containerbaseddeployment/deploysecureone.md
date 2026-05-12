@@ -151,6 +151,20 @@ After teardown, follow the full installation steps from [Step 1](#step-1-downloa
 
 ## Script Reference
 
+### Usage
+
+```
+sudo -E bash secureone.sh <command> [options]
+```
+
+### Prerequisites
+
+- Run as root with `sudo -E` to preserve environment variables (AWS credentials)
+- AWS CLI installed and authenticated with the Netwrix ECR registry (see [AWS Configuration](./awsconfiguration.md))
+- `python3` — installed automatically by `setup` if missing
+- Docker — installed automatically by `setup` if missing
+- Ubuntu 24.04 (other distributions not tested)
+
 ### Commands
 
 **`setup`** — Interactive guided setup for this node. Installs Docker if missing, extracts the
@@ -201,6 +215,25 @@ secondary nodes manually.
 | Variable | Description |
 |---|---|
 | `S1_TARBALL_URL` | URL to download `secureone.tar.gz` instead of looking for it in the current directory. Useful when the tarball is hosted on an internal server. |
+
+### Typical Workflows
+
+```bash
+# Single-node deployment (all-in-one):
+sudo -E bash secureone.sh setup
+
+# Three-node cluster (follow prompts to copy and run commands on secondary nodes):
+sudo -E bash secureone.sh setup --cluster --primary
+
+# Upgrade to a new version (run on the primary node):
+sudo -E bash secureone.sh upgrade --version 2.23.0
+
+# Re-deploy after a config change:
+sudo -E bash secureone.sh deploy --version 2.23.0
+
+# Full reset before a reinstall:
+sudo -E bash secureone.sh teardown
+```
 
 ## Installation Directory
 
