@@ -235,6 +235,18 @@ sudo -E bash secureone.sh deploy --version 2.23.0
 sudo -E bash secureone.sh teardown
 ```
 
+### Post-Deploy Checks
+
+```bash
+docker stack services s1          # replica counts and image versions
+docker stack ps s1                # per-task state across all nodes
+docker service logs s1_api -f     # live API logs
+curl -sk https://localhost/api/v1/health
+```
+
+See [Verify the Deployment](./verifydeployment.md) for a full health checklist and
+troubleshooting guide.
+
 ## Installation Directory
 
 After `setup` completes, all deployment files are under `/secureone/`:
