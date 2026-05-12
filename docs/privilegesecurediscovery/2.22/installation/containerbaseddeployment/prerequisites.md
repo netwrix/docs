@@ -53,6 +53,7 @@ The AWS Command Line Interface (AWS CLI) is required to authenticate with the Ne
 Container Registry (ECR) and pull NPS-D container images.
 
 ```bash
+# Install unzip:
 sudo apt install unzip
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"

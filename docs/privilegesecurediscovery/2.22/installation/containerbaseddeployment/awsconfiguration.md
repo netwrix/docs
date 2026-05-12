@@ -23,6 +23,7 @@ Run the following command and follow the prompts to enter the AWS Access Key ID,
 and region. Use the credentials provided to you by Netwrix Support.
 
 ```bash
+# Configure AWS:
 aws configure
 ```
 
@@ -40,6 +41,7 @@ When prompted:
 After configuring credentials, authenticate Docker with the Netwrix ECR registry:
 
 ```bash
+# Log in to ECR:
 aws ecr get-login-password --region us-west-2 | \
   sudo docker login --username AWS --password-stdin \
   176947481038.dkr.ecr.us-west-2.amazonaws.com
