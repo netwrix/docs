@@ -4,7 +4,7 @@ description: "Introduction to the Change Tracker Hub API Reference"
 sidebar_position: 1
 ---
 
-The Change Tracker Hub API Reference documents every REST API endpoint exposed by the Change Tracker Hub — the central management server. The reference is generated directly from the Hub's OpenAPI 3.0 specification and reflects the API for version 8.1.
+The Change Tracker Hub API Reference documents every REST API endpoint that the Change Tracker Hub (the central management server) exposes. The Hub generates this reference directly from its OpenAPI 3.0 specification, which reflects the API for version 8.1.
 
 Use this reference to:
 
@@ -15,7 +15,7 @@ Use this reference to:
 
 ## How this reference is organized
 
-Endpoints are grouped by tag (functional area). Each endpoint page includes the HTTP method and path, required and optional parameters, request body schema, response schemas, and a list of possible status codes.
+The reference groups endpoints by tag (functional area). Each endpoint page includes the HTTP method and path, parameters (required and optional), request body schema, response schemas, and a list of possible status codes.
 
 ## Authentication
 
