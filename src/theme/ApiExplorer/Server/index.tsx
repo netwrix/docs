@@ -140,7 +140,7 @@ function Server({ labelId }: ServerProps) {
                 padding: 0,
                 color: "var(--ifm-color-primary)",
                 cursor: "pointer",
-                fontSize: "var(--ifm-font-size-base)",
+                fontSize: "var(--openapi-explorer-font-size-input)",
                 textDecoration: "underline",
               }}
               onClick={() => {
@@ -164,8 +164,8 @@ function Server({ labelId }: ServerProps) {
               borderRadius: "var(--ifm-global-radius)",
               color: "var(--ifm-color-emphasis-100)",
               cursor: "pointer",
-              padding: "0.4rem 0.75rem",
-              fontSize: "var(--ifm-font-size-base)",
+              padding: "0.2rem 0.5rem",
+              fontSize: "var(--openapi-explorer-font-size-input)",
             }}
             onClick={() => setIsEditing(false)}
           >
