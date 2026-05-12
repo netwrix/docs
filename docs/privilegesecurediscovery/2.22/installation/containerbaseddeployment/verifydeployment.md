@@ -34,11 +34,9 @@ docker stack ps s1 | grep -v "Running"
 # 3. Is the API responding?
 curl -sk https://localhost/api/v1/health
 
-# 4. Is MongoDB up? (single-node)
-docker exec -it $(docker ps -q -f name=s1_db) mongo --eval 'db.stats()'
-
-# 4. Is MongoDB up? (cluster — check replica set)
-docker exec -it $(docker ps -q -f name=s1_mongo1) mongo --eval 'rs.isMaster()'
+# 4. Is MongoDB up? (tries single-node first, falls back to cluster)
+docker exec -it $(docker ps -q -f name=s1_db) mongo --eval 'db.stats()' 2>/dev/null \
+  || docker exec -it $(docker ps -q -f name=s1_mongo1) mongo --eval 'rs.isMaster()'
 
 # 5. Is the message queue healthy?
 docker exec -it $(docker ps -q -f name=s1_mq) rabbitmqctl list_queues name messages
@@ -197,6 +195,9 @@ rabbitmqctl list_queues name messages consumers
 
 # Check node health
 rabbitmqctl status
+
+# Check if the 'hello' queue (used by worker, scanner, expire) is backed up
+rabbitmqctl list_queues name messages | grep hello
 ```
 
 A large message count in the `hello` queue with no consumers usually means `worker` or `scanner`
@@ -205,9 +206,12 @@ is down.
 ## Connectivity Checks
 
 ```bash
-# Is the API responding over HTTPS?
+# Check the HTTPS API is responding (ignore self-signed cert)
 curl -sk https://localhost:443/api/v1/health
 curl -sk https://localhost:443/api/v1/_internal/health-report
+
+# HTTP endpoint
+curl -s http://localhost:80/
 
 # Confirm ports 443 and 80 are bound
 ss -tlnp | grep -E '443|80|5672|24224'
@@ -216,13 +220,17 @@ ss -tlnp | grep -E '443|80|5672|24224'
 From inside a container:
 
 ```bash
-# Check API can reach MongoDB
+# From the api container — check it can reach MongoDB
 docker exec -it $(docker ps -q -f name=s1_api) sh -c \
   'curl -s http://db:27017 || echo "no route to db"'
 
-# Check RabbitMQ is reachable
+# Check RabbitMQ is reachable on port 5672
 docker exec -it $(docker ps -q -f name=s1_api) sh -c \
   'nc -zv mq 5672 && echo "mq reachable"'
+
+# Check windows-bridge-proxy
+docker exec -it $(docker ps -q -f name=s1_api) sh -c \
+  'nc -zv windows-bridge-proxy 80 && echo "proxy reachable"'
 ```
 
 ## Resource Usage
@@ -247,11 +255,14 @@ Log file size limits configured by Fluentd:
 | `db` / `mongo*` | 500 MB × 3 files |
 | `mq` | 100 MB × 1 file |
 
+If disk is filling up, check `/secureone/data/logs/` first.
+
 ## Restart a Service
 
 ```bash
 # Force a rolling restart
 docker service update --force s1_api
+docker service update --force s1_worker
 
 # Scale down then back up (hard restart)
 docker service scale s1_api=0
