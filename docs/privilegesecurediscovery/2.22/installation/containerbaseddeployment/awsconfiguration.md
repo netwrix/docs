@@ -51,3 +51,9 @@ A `Login Succeeded` message confirms the authentication was successful.
 The ECR login token expires after 12 hours. If a deployment or upgrade fails with an authentication
 error, re-run the login command above before retrying.
 :::
+
+:::tip
+To avoid storing Docker credentials as base64-encoded text in `~/.docker/config.json`, set up an
+encrypted credential store. See [Docker Credentials Helper](../dockercredentials.md) for
+instructions.
+:::
