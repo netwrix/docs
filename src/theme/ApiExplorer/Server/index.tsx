@@ -14,6 +14,10 @@ interface ServerProps {
   labelId?: string;
 }
 
+function toLabel(key: string) {
+  return key.replace(/([A-Z])/g, " $1").replace(/^[a-z]/, (c) => c.toUpperCase());
+}
+
 function Server({ labelId }: ServerProps) {
   const [isEditing, setIsEditing] = useState(false);
   const value = useTypedSelector((state: any) => state.server.value);
@@ -64,10 +68,7 @@ function Server({ labelId }: ServerProps) {
 
   return (
     <div className="openapi-explorer__server-container">
-      <FloatingButton
-        onClick={() => setIsEditing(false)}
-        label={translate({ id: OPENAPI_SERVER.HIDE_BUTTON, message: "Hide" })}
-      >
+      <div style={{ padding: "0.5rem" }}>
         {options.length > 1 && (
           <FormItem>
             <FormSelect
@@ -84,9 +85,6 @@ function Server({ labelId }: ServerProps) {
               }}
               value={value?.url}
             />
-            <small className="openapi-explorer__server-description">
-              {value?.description}
-            </small>
           </FormItem>
         )}
         {value?.variables &&
@@ -95,7 +93,7 @@ function Server({ labelId }: ServerProps) {
               return (
                 <FormItem key={key}>
                   <FormSelect
-                    label={key}
+                    label={toLabel(key)}
                     options={value.variables[key].enum}
                     onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                       dispatch(
@@ -112,7 +110,7 @@ function Server({ labelId }: ServerProps) {
             return (
               <FormItem key={key}>
                 <FormTextInput
-                  label={key}
+                  label={toLabel(key)}
                   placeholder={value.variables?.[key].default}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                     dispatch(
@@ -126,8 +124,15 @@ function Server({ labelId }: ServerProps) {
               </FormItem>
             );
           })}
-        {value?.variables && (
-          <FormItem>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "0.25rem 0.5rem 0.25rem",
+          }}
+        >
+          {value?.variables ? (
             <button
               style={{
                 background: "none",
@@ -139,7 +144,9 @@ function Server({ labelId }: ServerProps) {
                 textDecoration: "underline",
               }}
               onClick={() => {
-                const original = options.find((s: any) => s.url === value.url);
+                const original = options.find(
+                  (s: any) => s.url === value.url
+                );
                 if (original) {
                   dispatch(setServer(JSON.stringify(original)));
                 }
@@ -147,9 +154,25 @@ function Server({ labelId }: ServerProps) {
             >
               Reset to default
             </button>
-          </FormItem>
-        )}
-      </FloatingButton>
+          ) : (
+            <span />
+          )}
+          <button
+            style={{
+              background: "var(--ifm-color-emphasis-900)",
+              border: "none",
+              borderRadius: "var(--ifm-global-radius)",
+              color: "var(--ifm-color-emphasis-100)",
+              cursor: "pointer",
+              padding: "0.4rem 0.75rem",
+              fontSize: "var(--ifm-font-size-base)",
+            }}
+            onClick={() => setIsEditing(false)}
+          >
+            Done
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
