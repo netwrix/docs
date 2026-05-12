@@ -351,7 +351,7 @@ The installer performs these actions:
 - Initializes a local `gopass` store
 - Creates a symlink from the gopass store to `~/.password-store/`
 - Configures Docker with `credsStore: pass`
-- Removes any existing inline Docker `auths` entries unless `--keep-inline-auths` is specified
+- Removes any existing inline Docker `auths` entries unless you specify `--keep-inline-auths`
 
 ### Manual step-by-step path
 
@@ -520,7 +520,7 @@ This validator uses an Ubuntu 24.04 container plus a Docker-in-Docker sidecar an
 
 ## WSL Ubuntu
 
-Use the Ubuntu instructions above inside the WSL distro, with these differences:
+Use the Ubuntu instructions inside the WSL distro, with these differences:
 
 - Use the same installer script:
 
@@ -674,7 +674,7 @@ bash ./scripts/docker-credential-gopass/validate-macos-login.sh
 
 This validator downloads the official `docker-credential-pass` binary, uses a temporary Docker
 config and temporary GPG/gopass home, and confirms that the pre-existing default macOS Docker
-config is left untouched afterward.
+config remains untouched afterward.
 
 **Step 10 –** Validate a passphrase-protected GPG key path:
 

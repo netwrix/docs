@@ -214,7 +214,7 @@ secondary nodes manually.
 
 | Variable | Description |
 |---|---|
-| `S1_TARBALL_URL` | URL to download `secureone.tar.gz` instead of looking for it in the current directory. Useful when the tarball is hosted on an internal server. |
+| `S1_TARBALL_URL` | URL to download `secureone.tar.gz` instead of looking for it in the current directory. Useful when the tarball lives on an internal server. |
 
 ### Typical Workflows
 

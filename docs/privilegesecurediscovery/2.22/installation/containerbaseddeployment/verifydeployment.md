@@ -22,7 +22,7 @@ The stack name is `s1`. Services differ slightly between single-node and cluster
 
 ## Quick Health Checklist
 
-Run these commands in sequence to get an at-a-glance picture of system health:
+Run these commands in sequence for a quick view of system health:
 
 ```bash
 # 1. Are all services running with the correct replica counts?
