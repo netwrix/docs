@@ -11,10 +11,16 @@ machine in the deployment must be authenticated with ECR before `secureone.sh` c
 
 Complete these steps on every node — primary and secondary — before running the deployment script.
 
+:::note
+The AWS Access Key ID and Secret Access Key required for this step are provided by Netwrix Support
+as part of the deployment onboarding process. Contact Netwrix Support if you have not received your
+credentials.
+:::
+
 ## Configure AWS Credentials
 
 Run the following command and follow the prompts to enter the AWS Access Key ID, Secret Access Key,
-and region. Use the credentials provided to you by Netwrix support or your internal deployment team.
+and region. Use the credentials provided to you by Netwrix Support.
 
 ```bash
 aws configure
