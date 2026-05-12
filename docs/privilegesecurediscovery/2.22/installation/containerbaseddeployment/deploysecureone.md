@@ -16,10 +16,12 @@ distributing it to all nodes, and running the deployment script.
 
 ## Step 1 — Download the Quickstart Bundle
 
-Download the versioned quickstart archive on the **primary node**. Replace `<version>` and
-`<major.minor>` with the target release, for example `2.22.14` and `2.22`:
+Log in to the **primary node** via SSH and run the following command from your **home directory**
+(`~/`). Replace `<version>` and `<major.minor>` with the target release, for example `2.22.14`
+and `2.22`:
 
 ```bash
+cd ~
 wget https://releases.netwrix.com/products/privilegesecure-discovery/<major.minor>/privilegesecure-discovery-quickstart-<version>.zip
 ```
 
@@ -37,11 +39,14 @@ wget https://releases.netwrix.com/products/privilegesecure-discovery/26.03/privi
 
 ## Step 2 — Extract the Bundle
 
-Extract the archive on each node. The zip contains two files: `secureone.sh` and `secureone.tar.gz`.
+Extract the archive. The zip contains two files: `secureone.sh` and `secureone.tar.gz`.
 
 ```bash
 unzip privilegesecure-discovery-quickstart-<version>.zip
 ```
+
+Both files are extracted into the current directory (`~/`). The setup script looks for
+`secureone.tar.gz` in the directory it is run from, so keep both files together in `~/`.
 
 For a **cluster deployment**, copy both extracted files to each secondary node before proceeding:
 
@@ -51,6 +56,12 @@ scp secureone.sh secureone.tar.gz <user>@<secondary-node-ip>:~/
 
 Repeat for each secondary node. Both files must be present in the home directory on every node
 before you run the setup script.
+
+:::note
+The setup script creates the `/secureone/` directory on the server to store the deployment
+configuration, stack files, data volumes, and logs. This is separate from `~/` where the
+quickstart files are downloaded.
+:::
 
 ## Step 3 — Run the Deployment Script
 
