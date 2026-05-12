@@ -48,14 +48,25 @@ unzip privilegesecure-discovery-quickstart-<version>.zip
 Both files are extracted into the current directory (`~/`). The setup script looks for
 `secureone.tar.gz` in the directory it is run from, so keep both files together in `~/`.
 
-For a **cluster deployment**, copy both extracted files to each secondary node before proceeding:
+For a **cluster deployment**, distribute the files to each secondary node. Use whichever method
+is more convenient:
+
+**Option A — copy from the primary node using `scp`:**
 
 ```bash
 scp secureone.sh secureone.tar.gz <user>@<secondary-node-ip>:~/
 ```
 
-Repeat for each secondary node. Both files must be present in the home directory on every node
-before you run the setup script.
+**Option B — download directly on each secondary node:**
+
+```bash
+cd ~
+wget https://releases.netwrix.com/products/privilegesecure-discovery/<major.minor>/privilegesecure-discovery-quickstart-<version>.zip
+unzip privilegesecure-discovery-quickstart-<version>.zip
+```
+
+Repeat for each secondary node. Both files must be present in the home directory (`~/`) on every
+node before you run the setup script.
 
 :::note
 The setup script creates the `/secureone/` directory on the server to store the deployment
