@@ -38,6 +38,6 @@ Before sending a request, you can edit the server URL directly in the explorer t
 
 ## Download the OpenAPI specification
 
-The raw OpenAPI 3.0 spec (YAML) is available for download. You can import it into API clients, code generators, or testing tools.
+You can download the raw OpenAPI 3.0 spec (YAML) and import it into API clients, code generators, or testing tools.
 
 [Download the OpenAPI spec](/openapi/changetracker-hub-8.1.yaml)

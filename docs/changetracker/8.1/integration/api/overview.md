@@ -14,7 +14,7 @@ All API endpoints require authentication. See [Authentication](/docs/changetrack
 
 ## API Reference
 
-For a complete interactive reference of all Netwrix Change Tracker Hub API endpoints, see the [Netwrix Change Tracker Hub API Reference](/docs/changetracker/8_1/integration/api/reference/). The Netwrix Change Tracker Hub (the central management server) generates this reference directly from its OpenAPI 3.0 spec, covering all available endpoints with request/response schemas.
+For an interactive reference of all Netwrix Change Tracker Hub API endpoints, see the [Netwrix Change Tracker Hub API Reference](/docs/changetracker/8_1/integration/api/reference/). The Netwrix Change Tracker Hub (the central management server) generates this reference directly from its OpenAPI 3.0 spec, covering all available endpoints with request/response schemas.
 
 The raw OpenAPI 3.0 spec (YAML) is also [available for download](/openapi/changetracker-hub-8.1.yaml).
 
@@ -38,7 +38,7 @@ When working with the Change Tracker API, consider the following best practices:
 
 3. **Authentication**: Store API credentials securely and never expose them in client-side code.
 
-4. **Data Filtering**: When retrieving large datasets, use the available filtering parameters to limit the amount of data returned.
+4. **Data Filtering**: When retrieving large datasets, use the available filtering parameters to limit how much data the endpoint returns.
 
 5. **Pagination**: For endpoints that return large collections, implement pagination to improve performance.
 
