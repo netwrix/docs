@@ -51,7 +51,7 @@ A `Login Succeeded` message confirms the authentication was successful.
 
 :::note
 The ECR login token expires after 12 hours. If a deployment or upgrade fails with an authentication
-error, re-run the login command above before retrying.
+error, re-run the login command before retrying.
 :::
 
 :::tip
