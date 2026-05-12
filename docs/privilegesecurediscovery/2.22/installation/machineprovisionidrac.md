@@ -1,14 +1,19 @@
 ---
-title: "(RETIRED INFO) Machine Provisioning - iDRAC"
+title: "(RETIRED) Machine Provisioning - iDRAC"
 description: "Machine Provisioning - iDRAC"
 sidebar_position: 20
 ---
 
-# Machine Provisioning - iDRAC
+# Machine Provisioning — iDRAC
 
 Machine Provisioning - iDRAC
 
-# Machine Provisioning - iDRAC
+# Machine Provisioning — iDRAC
+
+:::warning
+This page describes a retired hardware provisioning process for Dell PowerEdge appliances. For new
+deployments, use the [Container-Based Deployment](./containerbaseddeployment/overview.md) method.
+:::
 
 See the following article for information on machine provisioning:
 
