@@ -133,6 +133,22 @@ sudo -E bash secureone.sh deploy --version <version>
 
 Docker Swarm performs a rolling update of any changed services.
 
+## Full Reset Before a Reinstall
+
+:::warning
+`teardown` is a destructive operation. It removes the running stack, stops all containers, leaves
+the swarm, and deletes `/secureone` and `~/secureone.tar.gz`. All data in the MongoDB volume is
+lost. Run this only when you intend to fully reinstall the deployment.
+:::
+
+Run on the primary node (and repeat on each secondary node if it is a cluster):
+
+```bash
+sudo -E bash secureone.sh teardown
+```
+
+After teardown, follow the full installation steps from [Step 1](#step-1-download-the-quickstart-bundle) to redeploy.
+
 ## Script Reference
 
 ### Commands
