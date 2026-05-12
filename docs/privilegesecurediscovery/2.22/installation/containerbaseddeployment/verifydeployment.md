@@ -58,6 +58,16 @@ docker stack ps s1
 
 # Filter to only failing or stopped tasks
 docker stack ps s1 | grep -v "Running"
+docker stack ps s1 --filter "desired-state=shutdown"
+
+# Check replica counts across all services at a glance
+docker service ls --filter "name=s1"
+
+# Show all tasks (current and historical) for a specific service
+docker service ps s1_api
+
+# Show only running tasks for a specific service
+docker service ps s1_api --filter "desired-state=running"
 
 # Inspect a specific service (config, env vars, constraints)
 docker service inspect s1_api --pretty
@@ -117,7 +127,12 @@ Useful log flags:
 | `--timestamps` | Include timestamps |
 | `--no-task-ids` | Cleaner output when multiple replicas |
 
-Log files written to disk by Fluentd are in `/secureone/data/logs/`.
+To read log files written to disk by Fluentd:
+
+```bash
+ls /secureone/data/logs/
+tail -f /secureone/data/logs/<logfile>
+```
 
 ## Exec Into a Container
 
@@ -253,7 +268,11 @@ docker stack deploy -c /secureone/docker-stack.yml s1
 **Service stuck in "Starting" or restart loop:**
 
 ```bash
+# See the failure history and error messages
 docker service ps s1_<service> --no-trunc
+
+# Check exit codes for stopped containers
+docker inspect $(docker ps -aq -f name=s1_<service>) | grep -A5 '"ExitCode"'
 ```
 
 **`health_reporter` keeps restarting:**
