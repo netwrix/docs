@@ -147,7 +147,7 @@ Run on the primary node (and repeat on each secondary node if it is a cluster):
 sudo -E bash secureone.sh teardown
 ```
 
-After teardown, follow the full installation steps from [Step 1](#step-1-download-the-quickstart-bundle) to redeploy.
+After teardown, follow the full installation steps from the [beginning of this page](#download-and-deploy) to redeploy.
 
 ## Script Reference
 
