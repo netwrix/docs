@@ -1,7 +1,7 @@
 ---
 title: "Docker Credentials Helper"
 description: "Docker Credentials Helper"
-sidebar_position: 50
+sidebar_position: 20
 ---
 
 # Docker Credentials Helper

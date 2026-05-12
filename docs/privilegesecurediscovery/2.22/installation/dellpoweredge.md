@@ -1,7 +1,7 @@
 ---
-title: "Dell PowerEdge Default iDRAC Password"
+title: "(RETIRED) Dell PowerEdge Default iDRAC Password"
 description: "Dell PowerEdge Default iDRAC Password"
-sidebar_position: 10
+sidebar_position: 90
 ---
 
 # Dell PowerEdge Default iDRAC Password
