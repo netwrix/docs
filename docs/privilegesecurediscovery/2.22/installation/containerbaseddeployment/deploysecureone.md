@@ -6,8 +6,9 @@ sidebar_position: 40
 
 # Download and Deploy
 
-This page covers downloading the NPS-D quickstart bundle from the Netwrix releases server,
-distributing it to all nodes, and running the deployment script.
+This page covers downloading the Netwrix Privilege Secure for Discovery (NPS-D) quickstart
+bundle from the Netwrix releases server, distributing it to all nodes, and running the
+deployment script.
 
 ## Prerequisites
 
