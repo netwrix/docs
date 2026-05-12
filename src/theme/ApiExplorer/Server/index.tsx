@@ -126,6 +126,29 @@ function Server({ labelId }: ServerProps) {
               </FormItem>
             );
           })}
+        {value?.variables && (
+          <FormItem>
+            <button
+              style={{
+                background: "none",
+                border: "none",
+                padding: 0,
+                color: "var(--ifm-color-primary)",
+                cursor: "pointer",
+                fontSize: "var(--ifm-font-size-base)",
+                textDecoration: "underline",
+              }}
+              onClick={() => {
+                const original = options.find((s: any) => s.url === value.url);
+                if (original) {
+                  dispatch(setServer(JSON.stringify(original)));
+                }
+              }}
+            >
+              Reset to default
+            </button>
+          </FormItem>
+        )}
       </FloatingButton>
     </div>
   );
