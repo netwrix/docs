@@ -103,15 +103,50 @@ sudo -E bash secureone.sh upgrade --version <version>
 The script pins the API to the manager node, pulls the new images, performs a rolling update,
 runs database migrations, then unpins the API.
 
-## Common Script Commands
+## Re-Deploy After a Configuration Change
+
+```bash
+sudo -E bash secureone.sh deploy --version <version>
+```
+
+Docker Swarm performs a rolling update of any changed services.
+
+## Script Reference
+
+### Commands
 
 | Command | Description |
 |---|---|
-| `setup` | Guided initial setup for this node |
-| `setup --cluster --primary` | Initial setup for a cluster primary node |
-| `setup --cluster --join-token <token>` | Join an existing cluster swarm |
-| `upgrade --version <tag>` | Upgrade all services to a new version |
-| `deploy --version <tag>` | Re-deploy the stack after a configuration change |
-| `generate-join-token` | Print the join command for secondary nodes |
-| `promote` | Promote all worker nodes to managers |
-| `teardown` | Full destructive reset of this node |
+| `setup` | Guided initial setup for this node. Installs Docker if missing, configures the network, initializes Swarm, pulls images, creates the encryption secret, deploys the stack, runs DB migrations, and sets the default user. |
+| `setup --cluster --primary` | Cluster primary setup. Same as above, then labels nodes and initializes the MongoDB replica set. |
+| `setup --cluster --join-token <token>` | Join an existing cluster swarm as a manager after network setup. |
+| `upgrade --version <tag>` | Upgrade all services to a new version. Pins the API to the manager node, pulls new images, performs a rolling update, runs migrations, then unpins the API. |
+| `deploy --version <tag>` | Re-deploy the stack from `/secureone/docker-stack.yml`. Safe to re-run — Swarm rolling-updates changed services. |
+| `generate-join-token` | Print the exact join command for secondary nodes. Run on the primary after `setup --cluster --primary`. |
+| `promote` | Promote all worker nodes to managers. Run on the primary after all secondary nodes have joined. Safe to re-run. |
+| `init` | Initialize Docker Swarm on this node (primary only). Called automatically by `setup` — only use standalone if you need to re-initialize the swarm without repeating full setup. |
+| `teardown` | Destructive reset. Removes the running stack, stops all containers, leaves the swarm, and deletes `/secureone` and `~/secureone.tar.gz`. |
+
+### Options
+
+| Option | Description |
+|---|---|
+| `--cluster` | Treat this node as part of a cluster deployment. |
+| `--primary` | Treat this node as the cluster primary. Requires `--cluster`. |
+| `--join-token <TOKEN@HOST:PORT>` | Manager join token from `generate-join-token`. Requires `--cluster`. |
+| `--version <tag>` | Image tag to pull and deploy (for example `2.22.14`). Required for `setup`, `upgrade`, and `deploy`. |
+| `-h`, `--help` | Show help and exit. |
+
+## Installation Directory
+
+After `setup` completes, all deployment files are under `/secureone/`:
+
+```
+/secureone/
+  docker-stack.yml          Active stack file (single-node or cluster)
+  setup/                    Stack templates and helper scripts
+  data/db/                  MongoDB data volume
+  data/logs/                Application and Fluentd log files
+  conf/fluentd/fluent.conf  Fluentd logging configuration
+  conf/ssl/                 TLS certificate and key
+```
