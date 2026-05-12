@@ -153,17 +153,38 @@ After teardown, follow the full installation steps from [Step 1](#step-1-downloa
 
 ### Commands
 
-| Command | Description |
-|---|---|
-| `setup` | Guided initial setup for this node. Installs Docker if missing, configures the network, initializes Swarm, pulls images, creates the encryption secret, deploys the stack, runs DB migrations, and sets the default user. |
-| `setup --cluster --primary` | Cluster primary setup. Same as above, then labels nodes and initializes the MongoDB replica set. |
-| `setup --cluster --join-token <token>` | Join an existing cluster swarm as a manager after network setup. |
-| `upgrade --version <tag>` | Upgrade all services to a new version. Pins the API to the manager node, pulls new images, performs a rolling update, runs migrations, then unpins the API. |
-| `deploy --version <tag>` | Re-deploy the stack from `/secureone/docker-stack.yml`. Safe to re-run — Swarm rolling-updates changed services. |
-| `generate-join-token` | Print the exact join command for secondary nodes. Run on the primary after `setup --cluster --primary`. |
-| `promote` | Promote all worker nodes to managers. Run on the primary after all secondary nodes have joined. Safe to re-run. |
-| `init` | Initialize Docker Swarm on this node (primary only). Called automatically by `setup` — only use standalone if you need to re-initialize the swarm without repeating full setup. |
-| `teardown` | Destructive reset. Removes the running stack, stops all containers, leaves the swarm, and deletes `/secureone` and `~/secureone.tar.gz`. |
+**`setup`** — Interactive guided setup for this node. Installs Docker if missing, extracts the
+tarball, sets the hostname, and reconfigures the Docker bridge network. Behavior depends on the
+options passed:
+
+- **Single-node** — initializes Swarm, pulls images, creates the encryption secret, deploys the
+  stack, runs DB migrations, and sets the default user.
+- **Cluster primary** (`--cluster --primary`) — same as single-node, then labels nodes and
+  initializes the MongoDB replica set.
+- **Cluster secondary** (`--cluster --join-token`) — reconfigures the network, then joins the
+  swarm using the provided join token.
+
+**`upgrade --version <tag>`** — Upgrade all services to a new version. Pins the API to the
+manager node, pulls the new images, performs a rolling update, runs DB migrations, then unpins
+the API.
+
+**`deploy --version <tag>`** — Deploy or re-deploy the Docker stack from
+`/secureone/docker-stack.yml`. Safe to re-run — Docker Swarm rolling-updates any changed
+services. Waits 30 seconds then prints service status.
+
+**`generate-join-token`** — Print the exact command to run on each secondary node to join the
+swarm. Run on the primary node after `setup --cluster --primary`.
+
+**`promote`** — Promote all worker nodes in the swarm to managers. Run on the primary node after
+all secondary nodes have joined. Safe to re-run — nodes already at manager role are skipped.
+
+**`init`** — Initialize Docker Swarm on this node (primary only). Called automatically by
+`setup` — only run standalone if you need to re-initialize the swarm without repeating full
+setup.
+
+**`teardown`** — Destructive reset of this node. Removes the running stack, stops all containers,
+leaves the swarm, and deletes `/secureone` and `~/secureone.tar.gz`. Prompts you to reset
+secondary nodes manually.
 
 ### Options
 
@@ -171,9 +192,15 @@ After teardown, follow the full installation steps from [Step 1](#step-1-downloa
 |---|---|
 | `--cluster` | Treat this node as part of a cluster deployment. |
 | `--primary` | Treat this node as the cluster primary. Requires `--cluster`. |
-| `--join-token <TOKEN@HOST:PORT>` | Manager join token from `generate-join-token`. Requires `--cluster`. |
-| `--version <tag>` | Image tag to pull and deploy (for example `2.22.14`). Required for `setup`, `upgrade`, and `deploy`. |
+| `--join-token <TOKEN@HOST:PORT>` | Manager join token from `generate-join-token`. Requires `--cluster`. The node joins the swarm as a manager after network setup. |
+| `--version <tag>` | Image tag to pull and deploy (for example `2.22.14`). Required for commands that pull images: `setup` and `upgrade`. |
 | `-h`, `--help` | Show help and exit. |
+
+### Environment Variables
+
+| Variable | Description |
+|---|---|
+| `S1_TARBALL_URL` | URL to download `secureone.tar.gz` instead of looking for it in the current directory. Useful when the tarball is hosted on an internal server. |
 
 ## Installation Directory
 
