@@ -6,14 +6,14 @@ sidebar_position: 30
 
 # AWS Configuration
 
-NPS-D container images are hosted in a private Amazon Elastic Container Registry (ECR). Each Ubuntu
-machine in the deployment must be authenticated with ECR before `secureone.sh` can pull images.
+NPS-D container images are hosted in a private Amazon Elastic Container Registry (ECR). You must
+authenticate each Ubuntu machine in the deployment with ECR before `secureone.sh` can pull images.
 
 Complete these steps on every node — primary and secondary — before running the deployment script.
 
 :::note
-The AWS Access Key ID and Secret Access Key required for this step are provided by Netwrix Support
-as part of the deployment onboarding process. Contact Netwrix Support if you have not received your
+Netwrix Support provides the AWS Access Key ID and Secret Access Key required for this step as part
+of the deployment onboarding process. Contact Netwrix Support if you have not received your
 credentials.
 :::
 

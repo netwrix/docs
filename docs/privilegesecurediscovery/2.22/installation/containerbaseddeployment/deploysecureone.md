@@ -45,8 +45,8 @@ Extract the archive. The zip contains two files: `secureone.sh` and `secureone.t
 unzip privilegesecure-discovery-quickstart-<version>.zip
 ```
 
-Both files are extracted into the current directory (`~/`). The setup script looks for
-`secureone.tar.gz` in the directory it is run from, so keep both files together in `~/`.
+The unzip command extracts both files into the current directory (`~/`). The setup script looks
+for `secureone.tar.gz` in the directory you run it from, so keep both files together in `~/`.
 
 For a **cluster deployment**, distribute the files to each secondary node. Use whichever method
 is more convenient:
@@ -70,14 +70,14 @@ node before you run the setup script.
 
 :::note
 The setup script creates the `/secureone/` directory on the server to store the deployment
-configuration, stack files, data volumes, and logs. This is separate from `~/` where the
-quickstart files are downloaded.
+configuration, stack files, data volumes, and logs. This is separate from `~/` where you
+downloaded the quickstart files.
 :::
 
 ## Step 3 — Run the Deployment Script
 
 All deployment operations use `secureone.sh`. Run the script as root (with `-E` to preserve
-environment variables including the AWS credentials configured earlier).
+environment variables including the AWS credentials you configured earlier).
 
 ### Single-Node Deployment
 
@@ -137,8 +137,8 @@ Docker Swarm performs a rolling update of any changed services.
 
 :::warning
 `teardown` is a destructive operation. It removes the running stack, stops all containers, leaves
-the swarm, and deletes `/secureone` and `~/secureone.tar.gz`. All data in the MongoDB volume is
-lost. Run this only when you intend to fully reinstall the deployment.
+the swarm, and deletes `/secureone` and `~/secureone.tar.gz`. Teardown destroys all data in the
+MongoDB volume. Run this only when you intend to fully reinstall the deployment.
 :::
 
 Run on the primary node (and repeat on each secondary node if it is a cluster):
@@ -169,7 +169,7 @@ sudo -E bash secureone.sh <command> [options]
 
 **`setup`** — Interactive guided setup for this node. Installs Docker if missing, extracts the
 tarball, sets the hostname, and reconfigures the Docker bridge network. Behavior depends on the
-options passed:
+options you pass:
 
 - **Single-node** — initializes Swarm, pulls images, creates the encryption secret, deploys the
   stack, runs DB migrations, and sets the default user.
@@ -190,10 +190,10 @@ services. Waits 30 seconds then prints service status.
 swarm. Run on the primary node after `setup --cluster --primary`.
 
 **`promote`** — Promote all worker nodes in the swarm to managers. Run on the primary node after
-all secondary nodes have joined. Safe to re-run — nodes already at manager role are skipped.
+all secondary nodes have joined. Safe to re-run — the script skips nodes already at manager role.
 
-**`init`** — Initialize Docker Swarm on this node (primary only). Called automatically by
-`setup` — only run standalone if you need to re-initialize the swarm without repeating full
+**`init`** — Initialize Docker Swarm on this node (primary only). The `setup` command calls this
+automatically — only run standalone if you need to re-initialize the swarm without repeating full
 setup.
 
 **`teardown`** — Destructive reset of this node. Removes the running stack, stops all containers,

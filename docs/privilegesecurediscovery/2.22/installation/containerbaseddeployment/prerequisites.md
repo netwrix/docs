@@ -17,7 +17,7 @@ primary and secondary — in a single-node or cluster deployment.
 
 ## Install SSH
 
-If SSH is not already installed, run:
+If SSH isn't already installed, run:
 
 ```bash
 sudo apt install openssh-server
@@ -49,7 +49,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 ## Install the AWS CLI
 
-The AWS Command Line Interface (AWS CLI) is required to authenticate with the Netwrix Amazon Elastic
+You need the AWS Command Line Interface (AWS CLI) to authenticate with the Netwrix Amazon Elastic
 Container Registry (ECR) and pull NPS-D container images.
 
 ```bash

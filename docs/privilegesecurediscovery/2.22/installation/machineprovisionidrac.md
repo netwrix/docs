@@ -17,10 +17,10 @@ deployments, use the [Container-Based Deployment](./containerbaseddeployment/ove
 
 See the following article for information on machine provisioning:
 
-- [How to Setup and Manage Your iDRAC or CMC for Dell PowerEdge Servers and Blades](https://www.dell.com/support/kbdoc/en-us/000134243/how-to-setup-and-manage-your-idrac-or-cmc-for-dell-poweredge-servers-and-blades)
+- [How to set up and Manage Your iDRAC or CMC for Dell PowerEdge Servers and Blades](https://www.dell.com/support/kbdoc/en-us/000134243/how-to-setup-and-manage-your-idrac-or-cmc-for-dell-poweredge-servers-and-blades)
 
-    - One item to be aware of is that iDRAC has a password length max of **20 characters**, but
-      there is no indication that this has been exceeded.
+    - iDRAC has a password length max of **20 characters**, but gives no indication when you
+      exceed it.
 
 Dell recommended characters in user names and passwords:
 

@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # Verify the Deployment
 
-After running `secureone.sh setup`, confirm that the deployment is healthy using the commands below.
-All commands run on a swarm manager node.
+After running `secureone.sh setup`, confirm that the deployment is healthy using the following
+commands. All commands run on a swarm manager node.
 
 ## Service Overview
 
@@ -125,7 +125,7 @@ Useful log flags:
 | `--timestamps` | Include timestamps |
 | `--no-task-ids` | Cleaner output when multiple replicas |
 
-To read log files written to disk by Fluentd:
+To read log files that Fluentd writes to disk:
 
 ```bash
 ls /secureone/data/logs/
@@ -247,7 +247,7 @@ du -sh /secureone/data/db/
 du -sh /secureone/data/logs/
 ```
 
-Log file size limits configured by Fluentd:
+Fluentd configures these log file size limits:
 
 | Component | Limit |
 |---|---|
