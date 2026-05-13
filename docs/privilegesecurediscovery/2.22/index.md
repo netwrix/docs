@@ -16,8 +16,8 @@ lateral movement attacks, and significantly reducing an organization’s attack 
 :::note
 The 2.22 release line is approaching end of support. The current release line (26.03 and later)
 introduces new features and improvements, including native Microsoft Entra ID integration,
-container-based deployment on standard Ubuntu machines, enhanced high-availability cluster
-support, and ongoing security updates. Netwrix recommends upgrading to the latest release to
+container-based deployment on standard Ubuntu machines, and continued active development with
+new capabilities delivered in each release. Netwrix recommends upgrading to the latest release to
 take advantage of these capabilities and continued support. Contact your Netwrix account
 representative for upgrade guidance.
 :::
