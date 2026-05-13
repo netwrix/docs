@@ -18,7 +18,7 @@ deployment script.
 ## Step 1 — Download the Quickstart Bundle
 
 Log in to the **primary node** via SSH and run the following command from your **home directory**
-(`~/`). Replace `<version>` and `<major.minor>` with the target release, for example `2.22.14`
+(`~/`). Replace `<version>` and `<major.minor>` with the target release, for example `2.22.13`
 and `2.22`:
 
 ```bash
@@ -26,16 +26,16 @@ cd ~
 wget https://releases.netwrix.com/products/privilegesecure-discovery/<major.minor>/privilegesecure-discovery-quickstart-<version>.zip
 ```
 
-**Example for 2.22.14:**
+**Example for 2.22.13:**
 
 ```bash
-wget https://releases.netwrix.com/products/privilegesecure-discovery/2.22/privilegesecure-discovery-quickstart-2.22.14.zip
+wget https://releases.netwrix.com/products/privilegesecure-discovery/2.22/privilegesecure-discovery-quickstart-2.22.13.zip
 ```
 
-**Example for 26.03.2:**
+**Example for 26.03.1:**
 
 ```bash
-wget https://releases.netwrix.com/products/privilegesecure-discovery/26.03/privilegesecure-discovery-quickstart-26.03.2.zip
+wget https://releases.netwrix.com/products/privilegesecure-discovery/26.03/privilegesecure-discovery-quickstart-26.03.1.zip
 ```
 
 ## Step 2 — Extract the Bundle
@@ -208,7 +208,7 @@ secondary nodes manually.
 | `--cluster` | Treat this node as part of a cluster deployment. |
 | `--primary` | Treat this node as the cluster primary. Requires `--cluster`. |
 | `--join-token <TOKEN@HOST:PORT>` | Manager join token from `generate-join-token`. Requires `--cluster`. The node joins the swarm as a manager after network setup. |
-| `--version <tag>` | Image tag to pull and deploy (for example `2.22.14`). Required for commands that pull images: `setup` and `upgrade`. |
+| `--version <tag>` | Image tag to pull and deploy (for example `2.22.13`). Required for commands that pull images: `setup` and `upgrade`. |
 | `-h`, `--help` | Show help and exit. |
 
 ### Environment Variables

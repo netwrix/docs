@@ -1,6 +1,6 @@
 import { NAA } from '@site/src/training/products';
 
-## Additional <NAA /> 26+ Courses for Partners
+## Additional <NAA /> 26 Courses for Partners
 
 The following courses are available for self-enrollment through the Learning Library:
 

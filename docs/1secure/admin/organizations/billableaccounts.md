@@ -43,7 +43,7 @@ The system calculates:
 The number of synced users from on-prem is registered against the on-prem tenant reference. Netwrix
 1Secure uses the highest number out of on-prem users reported by the Agent and the number of hybrid
 users reported by the Microsoft Entra ID connector as the on-prem total. Then the Microsoft Entra ID
-users, which are not synced with on-prem envinronment, are added.
+users, which aren't synced with on-prem envinronment, are added.
 
 **Example:**
 
@@ -60,7 +60,7 @@ percentage = users calculated in the environment / users for which the license i
 
 ## Omits From the Accounts
 
-The accounts with the following attributes are not counted against a total number of Active
+The accounts with the following attributes aren't counted against a total number of Active
 Directory accounts by default:
 
 - \*\System\Policies\{\*}\*

@@ -13,7 +13,7 @@ your account. All data stored in the database is encrypted with an AES 256-bit e
 
 ## Data in transit
 
-Data will be transferred between the system components in a few different ways:
+Data is transferred between the system components in the following ways:
 
 - Agent -> API
 - API -> SQL Database

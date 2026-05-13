@@ -12,7 +12,7 @@ import { NAMIntro, NAMAdditional } from '@site/src/training/activity-monitor';
 import { Company, NAA, AIC, NAM } from '@site/src/training/products';
 
 
-Estimated length: 22.5 hours
+Estimated length: 21 hours 47 minutes
 
 This learning path grants <Company /> certification as a Professional Services Engineer for these products:
 
