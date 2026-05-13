@@ -7,7 +7,7 @@ sidebar_position: 10
 # Container-Based Deployment Overview
 
 :::note
-Container-based deployment is available in NPS-D 2.22.14, 26.03.2, or later.
+Container-based deployment is available in NPS-D 2.22.13, 26.03.1, or later.
 :::
 
 Container-based deployment lets you deploy Privilege Secure Discovery (NPS-D) on standard Ubuntu

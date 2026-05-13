@@ -6,8 +6,9 @@ sidebar_position: 40
 
 # Download and Deploy
 
-This page covers downloading the NPS-D quickstart bundle from the Netwrix releases server,
-distributing it to all nodes, and running the deployment script.
+This page covers downloading the Netwrix Privilege Secure for Discovery (NPS-D) quickstart
+bundle from the Netwrix releases server, distributing it to all nodes, and running the
+deployment script.
 
 ## Prerequisites
 
@@ -17,7 +18,7 @@ distributing it to all nodes, and running the deployment script.
 ## Step 1 — Download the Quickstart Bundle
 
 Log in to the **primary node** via SSH and run the following command from your **home directory**
-(`~/`). Replace `<version>` and `<major.minor>` with the target release, for example `2.22.14`
+(`~/`). Replace `<version>` and `<major.minor>` with the target release, for example `2.22.13`
 and `2.22`:
 
 ```bash
@@ -25,16 +26,16 @@ cd ~
 wget https://releases.netwrix.com/products/privilegesecure-discovery/<major.minor>/privilegesecure-discovery-quickstart-<version>.zip
 ```
 
-**Example for 2.22.14:**
+**Example for 2.22.13:**
 
 ```bash
-wget https://releases.netwrix.com/products/privilegesecure-discovery/2.22/privilegesecure-discovery-quickstart-2.22.14.zip
+wget https://releases.netwrix.com/products/privilegesecure-discovery/2.22/privilegesecure-discovery-quickstart-2.22.13.zip
 ```
 
-**Example for 26.03.2:**
+**Example for 26.03.1:**
 
 ```bash
-wget https://releases.netwrix.com/products/privilegesecure-discovery/26.03/privilegesecure-discovery-quickstart-26.03.2.zip
+wget https://releases.netwrix.com/products/privilegesecure-discovery/26.03/privilegesecure-discovery-quickstart-26.03.1.zip
 ```
 
 ## Step 2 — Extract the Bundle
@@ -84,7 +85,7 @@ environment variables including the AWS credentials you configured earlier).
 Run on the single node:
 
 ```bash
-sudo -E bash secureone.sh setup
+sudo -E bash secureone.sh setup --version <version>
 ```
 
 The script installs Docker if missing, extracts the configuration package, initializes Docker Swarm,
@@ -96,7 +97,7 @@ the default user.
 **On the primary node:**
 
 ```bash
-sudo -E bash secureone.sh setup --cluster --primary
+sudo -E bash secureone.sh setup --cluster --primary --version <version>
 ```
 
 Follow the prompts. The script initializes the swarm, deploys the stack, and then outputs the exact
@@ -105,7 +106,7 @@ command to run on secondary nodes.
 **On each secondary node** (use the command output by the primary):
 
 ```bash
-sudo -E bash secureone.sh setup --cluster --join-token <TOKEN@HOST:PORT>
+sudo -E bash secureone.sh setup --cluster --join-token <TOKEN@HOST:PORT> --version <version>
 ```
 
 After all secondary nodes have joined the swarm, promote them to managers from the primary node:
@@ -167,9 +168,9 @@ sudo -E bash secureone.sh <command> [options]
 
 ### Commands
 
-**`setup`** — Interactive guided setup for this node. Installs Docker if missing, extracts the
-tarball, sets the hostname, and reconfigures the Docker bridge network. Behavior depends on the
-options you pass:
+**`setup --version <tag>`** — Interactive guided setup for this node. Installs Docker if missing,
+extracts the tarball, sets the hostname, and reconfigures the Docker bridge network. Behavior
+depends on the options you pass:
 
 - **Single-node** — initializes Swarm, pulls images, creates the encryption secret, deploys the
   stack, runs DB migrations, and sets the default user.
@@ -207,7 +208,7 @@ secondary nodes manually.
 | `--cluster` | Treat this node as part of a cluster deployment. |
 | `--primary` | Treat this node as the cluster primary. Requires `--cluster`. |
 | `--join-token <TOKEN@HOST:PORT>` | Manager join token from `generate-join-token`. Requires `--cluster`. The node joins the swarm as a manager after network setup. |
-| `--version <tag>` | Image tag to pull and deploy (for example `2.22.14`). Required for commands that pull images: `setup` and `upgrade`. |
+| `--version <tag>` | Image tag to pull and deploy (for example `2.22.13`). Required for commands that pull images: `setup` and `upgrade`. |
 | `-h`, `--help` | Show help and exit. |
 
 ### Environment Variables
@@ -220,10 +221,10 @@ secondary nodes manually.
 
 ```bash
 # Single-node deployment (all-in-one):
-sudo -E bash secureone.sh setup
+sudo -E bash secureone.sh setup --version 2.23.0
 
 # Three-node cluster (follow prompts to copy and run commands on secondary nodes):
-sudo -E bash secureone.sh setup --cluster --primary
+sudo -E bash secureone.sh setup --cluster --primary --version 2.23.0
 
 # Upgrade to a new version (run on the primary node):
 sudo -E bash secureone.sh upgrade --version 2.23.0
