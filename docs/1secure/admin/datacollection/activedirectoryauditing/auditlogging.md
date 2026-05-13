@@ -13,24 +13,23 @@ Logging (AAL) settings are configured as follows:
 | Setting               | Value                                                                                                                                                                                                                                                                                                                                                  | Comment                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | AdminAuditLogEnabled  | True                                                                                                                                                                                                                                                                                                                                                   | Enables audit logging                                                            |
-| AdminAuditLogAgeLimit | 30                                                                                                                                                                                                                                                                                                                                                     | Determines how long audit log entries will be retained (default is 90 days)      |
-| AdminAuditLogCmdlets  | \*                                                                                                                                                                                                                                                                                                                                                     | Instructs the program to create a log entry for every cmdlet that is run.        |
+| AdminAuditLogAgeLimit | 30                                                                                                                                                                                                                                                                                                                                                     | Determines how long audit log entries are retained (default is 90 days)          |
+| AdminAuditLogCmdlets  | \*                                                                                                                                                                                                                                                                                                                                                     | Instructs the program to create a log entry for every cmdlet that runs.          |
 | LogLevel              | Verbose                                                                                                                                                                                                                                                                                                                                                | Sets logging level.                                                              |
-| ExcludedCmdlets       | \*-InboxRule, \*-MailboxAutoReplyConfiguration, Set-MailboxAuditBypassAssociation, Set-MailboxAutoReplyConfiguration, Set-MailboxCalendarConfiguration, Set-MailboxCalendarFolder, Set-MailboxFolderPermission, Set-MailboxJunkEmailConfiguration, Set-MailboxMessageConfiguration, Set-MailboxRegionalConfiguration, Set-MailboxSpellingConfiguration | This list of exclusions is set up as explained in step 3 of the procedure below. |
+| ExcludedCmdlets       | \*-InboxRule, \*-MailboxAutoReplyConfiguration, Set-MailboxAuditBypassAssociation, Set-MailboxAutoReplyConfiguration, Set-MailboxCalendarConfiguration, Set-MailboxCalendarFolder, Set-MailboxFolderPermission, Set-MailboxJunkEmailConfiguration, Set-MailboxMessageConfiguration, Set-MailboxRegionalConfiguration, Set-MailboxSpellingConfiguration | This list of exclusions is set up as explained in step 3 of the following procedure. |
 
-To configure these settings manually, refer to the procedure described below.
+To configure these settings manually, use the following procedure.
 
-You can perform this procedure on any of the Exchange servers, and these settings will then be
-replicated to all Exchange servers in the domain.
+You can perform this procedure on any of the Exchange servers, and these settings replicate to all Exchange servers in the domain.
 
-Follow the steps to configure Exchange Administrator Audit Logging settings.
+**To configure Exchange Administrator Audit Logging settings:**
 
 **Step 1 –** On the computer where the monitored Exchange server is installed, navigate to **Start →
 Programs → Exchange Management Shell**.
 
 **Step 2 –** Execute the following command depending on your Exchange version:
 
-- Exchange 2019, 2016 and 2013
+- Exchange 2019, 2016, and 2013
 
     `Set-AdminAuditLogConfig -AdminAuditLogEnabled $true -AdminAuditLogAgeLimit 30 -AdminAuditLogCmdlets * -LogLevel Verbose`
 
@@ -38,7 +37,7 @@ Programs → Exchange Management Shell**.
 
 `Set-AdminAuditLogConfig -AdminAuditLogEnabled $true -AdminAuditLogAgeLimit 30 -AdminAuditLogCmdlets *`
 
-1. To reduce server load, you can exclude the cmdlets listed in the table above from Exchange
+1. To reduce server load, you can exclude the cmdlets listed in the preceding table from Exchange
    logging. For that:
 
     1. On the computer where Netwrix 1Secure is installed, browse to the _%Netwrix Auditor Server
@@ -48,4 +47,4 @@ Programs → Exchange Management Shell**.
 
         `<Path_To_SetAALExcludedCmdlets_File>.\SetAALExcludedCmdlets.ps1`
 
-    Make sure your policies allow script execution.
+    Ensure your policies allow script execution.

@@ -9,7 +9,7 @@ sidebar_position: 20
 The Netwrix 1Secure dashboard provides an intuitive, single-pane-of-glass view of your clients
 organizations, enabling managing organizations, such as Managed Service Providers (MSPs), to quickly
 identify and prioritize what requires immediate attention. It displays the alerts triggered by
-specific events, offering drill-down capabilities that enable you to access detailed information on
+specific events, offering drill-down capabilities for accessing detailed information on
 specific alerts and issues, ensuring timely and effective responses. See the
 [Alerts](/docs/1secure/admin/alerts/alerts.md) topic for additional information on alerts.
 
@@ -73,7 +73,7 @@ This section lists all managed organizations with the following information:
   Progress, New, Update Recommended, Needs Attention, Experiencing Issues, Offline, Disabled, Not
   Configured, and Pending Deletion. Click the value to navigate to the Health Status for
   Organization: `<organization name>` pane.
-- Tags – Displays the user defined tag(s) applied to the organization.
+- Tags – Displays the user-defined tags applied to the organization.
 
 Click a column header to sort the data in the organizations list by that column in ascending order.
 An arrow appears next to the column name to indicate the sort order. Click the column header again
@@ -86,7 +86,7 @@ Click the Add Organization button to add a new organization. See the
 
 ## Filter Data
 
-Multiple filters are available on this page to enable you to filter data as desired. You can apply
+Multiple filters are available on this page. You can apply
 one or more filters at a time.
 
 :::note
@@ -95,12 +95,12 @@ Organizations list.
 :::
 
 
-- Filter by Keyword – Type a search string (only alpha characters allowed) in the Filter by keyword
+- Filter by Keyword – Enter a search string (only alpha characters allowed) in the Filter by keyword
   field and press Enter. The Organizations list displays the data that matches the specified
   keyword.
-- Alert – Select an alert type from the Alert drop-down menu. The organizations with alerts
+- Alert – Select an alert type from the Alert dropdown menu. The organizations with alerts
   triggered for the selected type are displayed in the list. By default, All is selected.
-- Health Status – Select a health status from the Health Status drop-down menu. The organizations
+- Health Status – Select a health status from the Health Status dropdown menu. The organizations
   with the selected heath status are displayed in the list. By default, All is selected . Other
   statuses are:
 
@@ -115,12 +115,12 @@ Organizations list.
     - Not configured
     - Pending deletion
 
-- Tag – Select a tag from the Tag drop-down menu. The bar charts and the organizations list on the
+- Tag – Select a tag from the Tag dropdown menu. The bar charts and the organizations list on the
   dashboard display data for the organizations the tag is associated with. By default, All is
   selected.
-- Timeframe – Select a time period from the Timeframe drop-down menu. The charts and the listing on
+- Timeframe – Select a time period from the Timeframe dropdown menu. The charts and the listing on
   the page display data for the selected time period. For example, if you select 7 Days, the data
-  will reflect information for the past 7 days. By default, 30 Days is selected. Options are:
+  reflects information for the past 7 days. By default, 30 Days is selected. Options are:
 
     - 7 Days
     - 30 Days

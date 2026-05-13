@@ -8,14 +8,12 @@ You can configure your Windows Server for monitoring in one of the following wa
 
 - Automatically when adding new Windows Server Activity conector:
 
-    This method is recommended for evaluation purposes in test environments. If any conflicts are
-    detected with your current audit settings, automatic audit configuration will not be
-    performed. For a full list of audit settings required for Netwrix 1Secure to collect
+    Use this method for evaluation purposes in test environments. If any conflicts are
+    detected with your current audit settings, automatic audit configuration isn't performed. For a full list of audit settings required for Netwrix 1Secure to collect
     comprehensive audit data and instructions on how to configure them, refer to
     [Configure IT Infrastructure for Auditing and Monitoring](/docs/1secure/configuration/configureitinfrastructure.md).
 
-    If you select to automatically configure audit in the target environment, your current audit
-    settings will be checked on each data collection and adjusted if necessary.
+    If you select to automatically configure audit in the target environment, 1Secure checks your current audit settings on each data collection and adjusts them if necessary.
 
    - Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
    reliable audit data. You can enable connector to continually enforce the relevant audit policies or
@@ -36,15 +34,14 @@ You can configure your Windows Server for monitoring in one of the following wa
           Change subcategories must be enabled for _"Success"_.
         - For Windows Server 2008 R2 / Windows 7 and above—Audit Security Group Management, Audit
           User Account Management, Audit Handle Manipulation, Audit Other Object Access Events,
-          Audit Registry, Audit File Share, and Audit Audit Policy Changeadvanced audit policies
+          Audit Registry, Audit File Share, and Audit Policy Change advanced audit policies
           must be set to _"Success"_.
         - See the [Configure Local Audit Policies](/docs/1secure/configuration/windowsserver/localpolicy.md) topic and the
           [Configure Advanced Audit Policies](/docs/1secure/configuration/windowsserver/advancedpolicy.md) topic for additional information.
 
     - The following legacy audit policies can be configured instead of advanced: Audit object
       access, Audit policy change, and **Audit account management** must be set to _"Success"_.
-    - The Enable Persistent Time Stamp local group policy must be enabled. This policy should be
-      configured manually since connector does not enable it automatically. See the
+    - The Enable Persistent Time Stamp local group policy must be enabled. Configure this policy manually; the connector doesn't enable it automatically. See the
       [Configure Enable Persistent Time Stamp Policy](/docs/1secure/configuration/windowsserver/persistenttimestamp.md) topic for additional
       information.
     - The Application, Security, and System event log maximum size must be set to 4 GB. The
