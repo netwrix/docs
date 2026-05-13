@@ -28,8 +28,8 @@ See [Authentication](/docs/changetracker/8.1/api/authentication.md) for a PowerS
 Each endpoint page includes a built-in API explorer. To use it:
 
 1. Obtain a session token by calling `POST /auth/credentials`. See [Authentication](/docs/changetracker/8.1/api/authentication.md).
-2. On any endpoint page, scroll to the **Auth** section in the right panel.
-3. Enter your token in the **Bearer Token** field.
+2. On any endpoint page, scroll to the **Auth** section in the right-hand panel that lists request details.
+3. Enter your token in the **Bearer Token** field. The token is applied automatically to all requests on the page.
 4. Fill in the required parameters and click **Send API Request**.
 
 :::tip
