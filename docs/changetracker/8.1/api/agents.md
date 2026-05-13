@@ -16,7 +16,7 @@ This call returns a list of agent details, including group and tracking template
 
 `https://<hub-url>/api/agentsRanked`
 
-```
+```json
 {
     "DeviceFilter": 
   {
@@ -65,7 +65,7 @@ AgentDeviceIds
 AgentDisplayNames
 
 - Filters by display names
-- Type –: Comma separated list of strings
+- Type – Comma separated list of strings
 - Example – ["NWX-4GMJGX3", "Azure 365 Cloud Reporting Group"]
 
 OnlineStatuses
@@ -79,7 +79,7 @@ ExcludeProxiedDevices
 - Specifies whether to exclude proxied devices from the result set
 - Type – Boolean
 
-### Json Response Elements
+### JSON Response Elements
 
 - AgentGroups – A list of agent device group memberships
 - GroupsLookup – A lookup list of group id/key to display name
@@ -106,7 +106,7 @@ The following PowerShell script outputs the response to a CSV file with the foll
 To trust self-signed certificates, each call to Invoke-RestMethod uses the
 -SkipCertificateCheck argument. This requires PowerShell 7.
 
-```
+```powershell
 # Declare script parameters and their default values. Override these defaults from the command line e.g. -HostUrl http://myliveserver/api
 param([string]$HostUrl = "https://localhost/api", [string]$AdminUser = "admin", [string]$AdminPwd = "password")
 # This script is intended to read and display agent details, including group and tracking templates
