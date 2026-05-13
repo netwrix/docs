@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Agents
 
-To pull data on agent statues, configurations and group memberships, use the agentsRanked endpoint.
+To pull data on agent statuses, configurations, and group memberships, use the agentsRanked endpoint.
 
 ## /api/agentsRanked
 
@@ -40,12 +40,12 @@ DeviceFilter
 
 GetAgentGroupDetails
 
-- Specifies a value indicating whether to get agent group details.
+- Specifies whether to get agent group details.
 - Type – Boolean
 
 GetRelatedTemplates
 
-- Specifies a value indicating whether to get templates applied to the returned agents.
+- Specifies whether to get templates applied to the returned agents.
 - Type – Boolean
 
 #### DeviceFilter
@@ -76,7 +76,7 @@ OnlineStatuses
 
 ExcludeProxiedDevices
 
-- A value indicating whether to exclude proxied devices from the result set
+- Specifies whether to exclude proxied devices from the result set
 - Type – Boolean
 
 ### Json Response Elements
@@ -90,7 +90,7 @@ ExcludeProxiedDevices
 
 ### Example PowerShell
 
-The following PowerShell script will output the response to a CSV file with the following headers:
+The following PowerShell script outputs the response to a CSV file with the following headers:
 
 - DeviceName
 - FQDN
@@ -103,7 +103,7 @@ The following PowerShell script will output the response to a CSV file with the 
 - IPv4
 - OnlineStatus
 
-To be able to trust self-signed certificates, each call to Invoke-RestMethod is made with the
+To trust self-signed certificates, each call to Invoke-RestMethod uses the
 -SkipCertificateCheck argument. This requires PowerShell 7.
 
 ```

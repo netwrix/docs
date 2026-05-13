@@ -8,9 +8,9 @@ sidebar_position: 11
 
 ## Overview
 
-The Agent Registration API allows you to register and manage agents with the ChangeTracker system. This API provides endpoints for registering new agents, which can be either direct agents installed on devices or proxied devices accessed through another agent. The API handles various device types including servers, desktops, network devices, and databases.
+Use the Agent Registration API to register and manage agents with the ChangeTracker system. This API provides endpoints for registering new agents, which can be either direct agents installed on devices or proxied devices accessed through another agent. The API handles various device types including servers, desktops, network devices, and databases.
 
-Agents are identified by a unique AgentDevice ID and include various parameters such as device name, host type, operating system details, and network information. The API requires authentication and the `DeviceRegister` permission to perform operations.
+Each agent has a unique AgentDevice ID and includes parameters such as device name, host type, operating system details, and network information. The API requires authentication and the `DeviceRegister` permission to perform operations.
 
 ## Endpoints
 
@@ -77,7 +77,7 @@ Requires authentication and the `DeviceRegister` permission.
 | KnownOsName | string | No | Specifies the Operating System from the list of known OS names |
 | OsUserSpecified | string | No | Specifies the operating system as entered by the user (overrides discovered OS in UI) |
 | PollPeriodSeconds | integer | No | Specifies the poll period in seconds |
-| ProxiedByAgentId | string | No | Specifies the agent ID of the proxy agent this device will be proxied by |
+| ProxiedByAgentId | string | No | Specifies the agent ID of the proxy agent that proxies this device |
 | Registered | boolean | No | Specifies whether the agent is registered |
 | UniqueId | string | No | Specifies a value uniquely identifying the agent independent of name or agent ID |
 | Version | integer | No | Specifies the request version |
@@ -141,7 +141,7 @@ Returns an Agent object with the following properties:
 
 ## Device Types
 
-The following device types are supported:
+ChangeTracker supports the following device types:
 
 | Type | Description |
 |------|-------------|
@@ -152,7 +152,7 @@ The following device types are supported:
 
 ## Host Types
 
-The following host types are supported:
+ChangeTracker supports the following host types:
 
 | Type | Description |
 |------|-------------|
@@ -176,7 +176,7 @@ The following online detection methods are available:
 
 ## Agent Types
 
-The following agent types are supported:
+ChangeTracker supports the following agent types:
 
 | Type | Description |
 |------|-------------|
