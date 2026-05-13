@@ -4,7 +4,7 @@ description: "Introduction to the Change Tracker Hub API Reference"
 sidebar_position: 1
 ---
 
-The Change Tracker Hub API Reference documents every REST API endpoint that the Change Tracker Hub (the central management server) exposes. This reference is generated from the Change Tracker Hub's OpenAPI 3.0 specification, which reflects the API for version 8.1.
+The Change Tracker Hub API Reference documents every REST API endpoint that the Change Tracker Hub (the central management server) exposes. This reference comes from the Change Tracker Hub's OpenAPI 3.0 specification, which reflects the API for version 8.1.
 
 Use this reference to:
 
