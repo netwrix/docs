@@ -14,13 +14,12 @@ on:
   issue_comment:
     types: [created]
 
-concurrency:
-  group: doc-pr-${{ github.event.pull_request.number || github.event.issue.number }}
-  cancel-in-progress: true
-
 jobs:
   doc-review:
     if: github.event_name == 'pull_request'
+    concurrency:
+      group: doc-pr-review-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -128,6 +127,9 @@ jobs:
       github.event.issue.pull_request &&
       contains(github.event.comment.body, '@claude') &&
       !startsWith(github.event.comment.user.login, 'github-actions')
+    concurrency:
+      group: doc-pr-followup-${{ github.event.issue.number }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     permissions:
       contents: write
