@@ -11,5 +11,5 @@ levels of security for these datacenters including compliance to the following s
 Data Protection Regulation (GDPR), ISO 27001, HIPAA, FedRAMP, SOC 1 and SOC 2, as well as
 country-specific standards, including Australia IRAP, UK G-Cloud, and Singapore MTCS.
 
-For more information, visit
-[https://azure.microsoft.com/en-us/overview/trusted-cloud/compliance/](https://azure.microsoft.com/en-us/overview/trusted-cloud/compliance/)
+For the full list of Azure compliance certifications, visit the
+[Microsoft Azure compliance documentation](https://azure.microsoft.com/en-us/overview/trusted-cloud/compliance/).

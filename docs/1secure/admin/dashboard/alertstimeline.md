@@ -36,14 +36,14 @@ exact number of alerts for that type.
 The legend maps the colors used in the pie chart to the names of the alert types along with the
 share percentage.
 
-Click an alert type on the legend to disable it. Disabled alert types are not displayed in the pie
-chart. Hence, the pie chart displays only the enabled alert types and their percentage shares with
-respect to each other. You can click a disabled alert type on the legend to enable it.
+Click an alert type on the legend to disable it. Disabled alert types aren't displayed in the pie
+chart. The pie chart displays only the enabled alert types and their percentage shares with
+respect to each other. Click a disabled alert type on the legend to re-enable it.
 
 **Alerts Timeline**
 
 This card displays a bar chart illustrating the number of alerts triggered for the period selected
-in the timeframe drop-down menu. Hover over a bar on the chart to view the exact number of alerts
+in the timeframe dropdown menu. Hover over a bar on the chart to view the exact number of alerts
 triggered on any specific date.
 
 **Alerts List**
@@ -85,20 +85,20 @@ information.
 
 ## Filter Data
 
-Multiple filters are available on this page to enable you to filter data as desired. You can apply
+Multiple filters are available on this page. You can apply
 one or more filters at a time.
 
-- Organizations – Select an organization from the Organizations drop-down menu to view its
+- Organizations – Select an organization from the Organizations dropdown menu to view its
   alert-related data.
-- Filter by Keyword – Type a search string (only alpha characters allowed) in the Filter by keyword
+- Filter by Keyword – Enter a search string (only alpha characters allowed) in the Filter by keyword
   field and press Enter. The Alerts list displays the data that matches the specified keyword.
-- Alert – Select an alert type from the Alert drop-down menu. The charts and the alerts list display
+- Alert – Select an alert type from the Alert dropdown menu. The charts and the alerts list display
   data specific to the selected alert type. By default, All is selected.
-- Item – Select an item from the Item drop-down menu. The charts and the alerts list display alert
+- Item – Select an item from the Item dropdown menu. The charts and the alerts list display alert
   data specific to the selected item. By default, All is selected.
-- Timeframe – Select a time period from the Timeframe drop-down menu. The charts and the listing on
+- Timeframe – Select a time period from the Timeframe dropdown menu. The charts and the listing on
   the page display data for the selected time period. For example, if you select 7 Days, the data
-  will reflect information for the past 7 days. By default, 30 Days is selected. Options are:
+  reflects information for the past 7 days. By default, 30 Days is selected. Options are:
 
     - 7 Days
     - 30 Days
