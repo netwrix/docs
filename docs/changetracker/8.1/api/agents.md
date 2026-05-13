@@ -14,7 +14,7 @@ This call returns a list of agent details, including group and tracking template
 
 ### POST Request
 
-https://<hub-url>/api/agentsRanked
+`https://<hub-url>/api/agentsRanked`
 
 ```
 {
