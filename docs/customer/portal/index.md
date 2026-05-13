@@ -23,7 +23,7 @@ To register for a Customer Portal account, complete the following steps:
     * First Name – Enter your first name
     * Last Name – Enter your last name
     * Business Email – Enter your corporate email address
-        * This needs to be the same email address known to <Company />.
+        * <Company /> must already know this email address.
     * Direct Phone – Enter your corporate phone number
     * Password – Enter a password in the Password and Confirm Password fields. It should be at least 15 characters and include at least one number, one uppercase letter, one lowercase letter, and one special character.
 
@@ -48,14 +48,14 @@ To register for a Customer Portal account, complete the following steps:
 
  9. The portal activates your account and redirects you to the Ready to use page. Click the **Sign In** link and enter the email address and password you provided in step 3. 
 
-After registration is complete, you can return to the main <Company /> website by clicking the logo in the upper left corner. From the <Company /> website, you can access the Customer Portal through the user icon.
+After registering, you can return to the main <Company /> website by clicking the logo in the upper left corner. From the <Company /> website, you can access the Customer Portal through the user icon.
 
 ## Troubleshooting Issues in the <Company /> Customer Portal
 
 If you have any trouble with the <Company /> Customer Portal, try the following:
 
 * Ensure you verified your email by clicking the Verify Your Account link in the email you received when you registered for the account
-* Confirm the corporate email address you used to register for a portal account is known to <Company /> by contacting your Account Manager
+* Contact your Account Manager to confirm <Company /> knows the corporate email address you used to register for a portal account
 * Clear your browser cache
 
 If you continue to have issues with any aspect of the <Company /> Customer Portal, email [customer.portal@netwrix.com](mailto:customer.portal@netwrix.com) for assistance.
