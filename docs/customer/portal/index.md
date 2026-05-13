@@ -8,7 +8,7 @@ description: "Register for a Netwrix Customer Portal account, access downloads, 
 
 import { Company } from '@site/src/training/products';
 
-To register for a Customer Portal account, complete the following steps:
+To register for a <Company /> Customer Portal account, complete the following steps:
 
  1. Navigate to the [Netwrix website](https://www.netwrix.com/).
 
@@ -23,7 +23,7 @@ To register for a Customer Portal account, complete the following steps:
     * First Name – Enter your first name
     * Last Name – Enter your last name
     * Business Email – Enter your corporate email address
-        * <Company /> must already know this email address.
+        * This should be an email address that <Company /> already has on file.
     * Direct Phone – Enter your corporate phone number
     * Password – Enter a password in the Password and Confirm Password fields. The password must:
         * Be at least 15 characters long
@@ -36,6 +36,7 @@ To register for a Customer Portal account, complete the following steps:
  6. Click **Sign Up**.
 
     ![Thank You for Signing Up Message](@site/static/images/customer-portal/thank-you.png)
+
 7. After registering, you will receive an email to activate your account. If you don't receive this email, click the **Resend Activation** link in the browser.
 
 :::danger[Warning]
@@ -50,16 +51,16 @@ To register for a Customer Portal account, complete the following steps:
 
    ![Customer Portal Home Page](@site/static/images/customer-portal/home.png)
 
- 9. The portal activates your account and redirects you to the Ready to use page. Click the **Sign In** link and enter the email address and password you provided during sign-up to access the Netwrix Customer Portal.
+ 9. The portal activates your account and redirects you to the Ready to use page. Click the **Sign In** link and enter the email address and password you provided during sign-up to access the <Company /> Customer Portal.
 
-After registering, you can return to the main <Company /> website by clicking the logo in the upper-left corner. From the <Company /> website, you can access the Customer Portal through the user icon.
+From the <Company /> Customer Portal, you can return to the main <Company /> website by clicking the logo in the upper-left corner. From the <Company /> website, you can access the Customer Portal through the user icon.
 
 ## Troubleshooting Issues in the <Company /> Customer Portal
 
 If you have any trouble with the <Company /> Customer Portal, try the following:
 
 * Ensure you verified your email by clicking the Verify Your Account link in the email you received when you registered for the account
-* Contact your Account Manager to confirm <Company /> knows the corporate email address you used to register for a portal account
+* Contact your Account Manager to confirm <Company /> has the corporate email address you used to register on file
 * Clear your browser cache
 
 If you continue to have issues with any aspect of the <Company /> Customer Portal, email [customer.portal@netwrix.com](mailto:customer.portal@netwrix.com) for assistance.
