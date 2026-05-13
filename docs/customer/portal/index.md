@@ -25,8 +25,12 @@ To register for a Customer Portal account, complete the following steps:
     * Business Email – Enter your corporate email address
         * <Company /> must already know this email address.
     * Direct Phone – Enter your corporate phone number
-    * Password – Enter a password in the Password and Confirm Password fields. It should be at least 15 characters and include at least one number, one uppercase letter, one lowercase letter, and one special character.
-
+    * Password – Enter a password in the Password and Confirm Password fields. The password must:
+        * Be at least 15 characters long
+        * Include at least one number
+        * Include at least one uppercase letter
+        * Include at least one lowercase letter
+        * Include at least one special character
  4. Check the **I'm not a robot** box.
  5. Read the [Netwrix Privacy Policy](https://www.netwrix.com/en/legal/privacy-policy) and then accept it by checking the box.
  6. Click **Sign Up**.
@@ -46,9 +50,9 @@ To register for a Customer Portal account, complete the following steps:
 
    ![Customer Portal Home Page](@site/static/images/customer-portal/home.png)
 
- 9. The portal activates your account and redirects you to the Ready to use page. Click the **Sign In** link and enter the email address and password you provided in step 3. 
+ 9. The portal activates your account and redirects you to the Ready to use page. Click the **Sign In** link and enter the email address and password you provided during sign-up to access the Netwrix Customer Portal.
 
-After registering, you can return to the main <Company /> website by clicking the logo in the upper left corner. From the <Company /> website, you can access the Customer Portal through the user icon.
+After registering, you can return to the main <Company /> website by clicking the logo in the upper-left corner. From the <Company /> website, you can access the Customer Portal through the user icon.
 
 ## Troubleshooting Issues in the <Company /> Customer Portal
 
