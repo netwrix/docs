@@ -65,8 +65,9 @@ If `$PROGRESS_COMMENT_ID` is empty for any reason, fall back to creating a new c
 
 ```bash
 if [ -z "${PROGRESS_COMMENT_ID:-}" ]; then
-  PROGRESS_COMMENT_ID=$(gh pr comment "$PR_NUMBER" --body "**Fix in progress:** ..." \
-    --format json | jq -r '.id' 2>/dev/null || echo "")
+  PROGRESS_COMMENT_ID=$(gh api "repos/$REPO_OWNER/$REPO_NAME/issues/$PR_NUMBER/comments" \
+    --method POST --field body="**Fix in progress:** ..." \
+    --jq '.id' 2>/dev/null || echo "")
 fi
 ```
 

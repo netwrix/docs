@@ -170,10 +170,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          COMMENT_ID=$(gh pr comment "${{ steps.pr-info.outputs.number }}" \
-            --repo "${{ github.repository }}" \
-            --body "**Acknowledged:** Analyzing your request — I'll update this comment with a task list shortly." \
-            --format json | jq -r '.id')
+          COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${{ steps.pr-info.outputs.number }}/comments" \
+            --method POST \
+            --field body="**Acknowledged:** Analyzing your request — I'll update this comment with a task list shortly." \
+            --jq '.id')
           echo "comment_id=$COMMENT_ID" >> "$GITHUB_OUTPUT"
 
       - name: Checkout repository
