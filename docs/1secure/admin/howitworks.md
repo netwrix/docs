@@ -21,8 +21,8 @@ Token-based authentication verifies communication between the Netwrix 1Secure AP
 The service behind the Netwrix stores the data in the Azure SQL Database, segregated by
 tenant (organization).
 
-All the activity records are stored in the Cosmos Database. The configuration settings, source
-management, alerts are stored in the Main Database.
+The Cosmos Database stores all the activity records. The Main Database stores the configuration settings, source
+management, and alerts.
 
 Netwrix 1Secure Website is the presentation layer of the product that retrieves data from the Azure
 SQL database and presents it to users. Users can access this web portal with their corporate

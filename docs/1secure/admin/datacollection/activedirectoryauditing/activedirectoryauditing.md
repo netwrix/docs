@@ -34,7 +34,7 @@ You can use group Managed Service Accounts (gMSA) as data collecting accounts. T
 the same requirements.
 
 :::note
-If you are using gMSA for data collection, consider that AAL event data collection from
+If you are using gMSA for data collection, consider that Administrator Audit Logging (AAL) event data collection from
 your on-premise Exchange server will not be possible. Thus, changes made to your Active Directory
 domain via that Exchange server will be reported with _domain\\Exchange_server_name$_ instead of the
 initiator (user) name in the "_Who_" field of reports, search results and activity summaries.

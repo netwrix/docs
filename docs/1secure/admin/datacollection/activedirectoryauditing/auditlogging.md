@@ -6,9 +6,9 @@ sidebar_position: 60
 
 # Configure Exchange Administrator Audit Logging Settings
 
-To be able to audit and report who made changes to the Exchange servers in your on-premises
-infrastructure, or to Active Directory via the Exchange, ensure the Exchange Administrator Audit
-Logging (AAL) settings are configured as follows:
+To audit and report who made changes to the Exchange servers in your on-premises
+infrastructure, or to Active Directory via the Exchange, configure the Exchange Administrator Audit
+Logging (AAL) settings as follows:
 
 | Setting               | Value                                                                                                                                                                                                                                                                                                                                                  | Comment                                                                          |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |

@@ -26,7 +26,7 @@ here to view the statistics for that Organization.
 ## Users
 
 The Users value displays the total number of users in the organization along with their percentage share
-with respect to the total number of users in the managed organizations (tenant) in 1Secure. Click
+relative to the total number of users in the managed organizations (tenant) in 1Secure. Click
 the value to navigate to the Billable Users page. See the
 [System Reports](/docs/1secure/admin/searchandreports/system.md) topic for additional information.
 

@@ -66,7 +66,7 @@ This section lists all managed organizations with the following information:
   [Risk Assessment Dashboard](/docs/1secure/admin/riskprofiles/riskassessmentdashboard.md) topic for additional
   information.
 - Users – Displays the total number of users in the organization along with their percentage share
-  with respect to the total number of users in the managed organizations (tenant) in 1Secure. Click
+  relative to the total number of users in the managed organizations (tenant) in 1Secure. Click
   the value to navigate to the Billable Users page. See the
   [System Reports](/docs/1secure/admin/searchandreports/system.md) topic for additional information.
 - Status – Displays the current health status of the organization, which can be: Healthy, Trial in

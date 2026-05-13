@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Risk Assessment Dashboard
 
-The Risk Assessment dashboard is designed as a diagnostic tool for Managed Service Providers (MSPs)
+The Risk Assessment dashboard serves as a diagnostic tool for Managed Service Providers (MSPs)
 and managed organization users to assess and monitor the security posture of an organization. By
 regularly reviewing this dashboard, you can get a comprehensive view of the security risks for an
 organization, track risk levels, address vulnerabilities, and ensure that your environment aligns

@@ -38,7 +38,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
                                 <p>If you have enabled automatic log backup for the Security log of your domain controller, you can instruct to clear the old backups automatically. For that, use the <b>CleanAutoBackupLogs</b> registry key</p>
                                 <p>Adjust the retention period for the backup files accordingly (default is <b>50</b> hours).</p>
                             </li>
-                            <li>To provide for event data collection, the <span>Secondary Logon</span> service must be up and running . Open <b>Administrative Tools</b><span>→</span><b>Services</b>, right-click the <b>Secondary Logon</b> service and on the <b>General</b> tab make sure that <b>Startup type</b> for this service is other than <i>Disabled</i>.</li>
+                            <li>To provide for event data collection, the <span>Secondary Logon</span> service must be running. Open <b>Administrative Tools</b><span>→</span><b>Services</b>, right-click the <b>Secondary Logon</b> service and on the <b>General</b> tab make sure that <b>Startup type</b> for this service is other than <i>Disabled</i>.</li>
                         </ul>
                     </td>
                 </tr>

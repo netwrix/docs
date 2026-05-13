@@ -71,11 +71,11 @@ dropdown menu.
 
 **Step 8 –** Select one of the following options from the **Grouped On** dropdown menu:
 
-- Who – Groups alerts with respect to the user who performed the activity (deleted an account,
+- Who – Groups alerts by the user who performed the activity (deleted an account,
   created a record, etc.)
-- Where – Groups alerts with respect to the location where the activity is performed. For example,
+- Where – Groups alerts by the location where the activity is performed. For example,
   SharePoint Online site, file server, etc.
-- What – Groups alerts with respect to the object the activity is performed on, such as a computer,
+- What – Groups alerts by the object the activity is performed on, such as a computer,
   file, etc.
 
 Example: You have two users, User 1 and User 2, each performing different actions. By setting

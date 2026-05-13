@@ -18,7 +18,7 @@ Add the following executables to the list of exclusions for your antivirus:
 
 Otherwise, significant delays and performance issues can occur while collecting data.
 
-This happens because these executables access a large number of file server objects (files,
+This happens because these executables access many file server objects (files,
 folders) while fetching audit data, and antivirus software can treat this as suspicious behavior.
 
 For some antivirus products (for example, Trend Micro), specify the folders to exclude, such as

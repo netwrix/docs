@@ -113,7 +113,7 @@ authentication.
 #### Register an App in Microsoft Entra ID For Authentication
 
 To configure Single Sign On (SSO) with Microsoft Entra ID authentication, register an application in
-the Microsoft Entra ID by following the steps mentioned below.
+the Microsoft Entra ID by following these steps.
 
 **Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
