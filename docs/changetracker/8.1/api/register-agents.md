@@ -73,8 +73,8 @@ Requires authentication and the `DeviceRegister` permission.
 | DiscoveryId | string | No | Specifies the internal discovery-based ID |
 | DiscoveryTaskId | string | No | Specifies the internal discovery task ID |
 | OnlineDetection | enum | No | Specifies the method to use when detecting if a proxied device is online (None, Ping, TcpConnect) |
-| Os | string | No | Specifies the Operating System full description that the device reports |
-| KnownOsName | string | No | Specifies the Operating System from the list of known OS names |
+| Os | string | No | Specifies the operating system full description that the device reports |
+| KnownOsName | string | No | Specifies the operating system from the list of known OS names |
 | OsUserSpecified | string | No | Specifies the operating system that the user enters (overrides discovered OS in UI) |
 | PollPeriodSeconds | integer | No | Specifies the poll period in seconds |
 | ProxiedByAgentId | string | No | Specifies the agent ID of the proxy agent that proxies this device |

@@ -103,8 +103,7 @@ The following PowerShell script outputs the response to a CSV file with the foll
 - IPv4
 - OnlineStatus
 
-To trust self-signed certificates, each call to Invoke-RestMethod uses the
--SkipCertificateCheck argument. This requires PowerShell 7.
+To trust self-signed certificates, each call to `Invoke-RestMethod` uses the `-SkipCertificateCheck` argument. This requires PowerShell 7.
 
 ```powershell
 # Declare script parameters and their default values. Override these defaults from the command line e.g. -HostUrl http://myliveserver/api
