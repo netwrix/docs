@@ -60,10 +60,10 @@ Requires authentication and the `DeviceRegister` permission.
 |-----------|------|----------|-------------|
 | AgentName | string | No | The name of the agent |
 | CanProxy | boolean | No | Specifies whether the agent can proxy connections to other devices |
-| CredentialKey | string | No | Specifies the credential key (only allowed for proxied devices) |
+| CredentialKey | string | No | Specifies the credential key (proxied devices only) |
 | DeviceName | string | No | Specifies the device name |
 | DeviceType | enum | No | Type of device (Unknown, Server, Desktop, Network, Database) |
-| GroupNames | array | No | Specifies the group names (only allowed for proxied devices) |
+| GroupNames | array | No | Specifies the group names (proxied devices only) |
 | HostName | string | No | Specifies the host name or IP address used for agentless access |
 | HostType | enum | No | Specifies the host type (Unknown, Unix, Windows, Network, Database, Cloud, ESX, Splunk) |
 | MacAddresses | string | No | Specifies the MAC addresses |
@@ -73,9 +73,9 @@ Requires authentication and the `DeviceRegister` permission.
 | DiscoveryId | string | No | Specifies the internal discovery-based ID |
 | DiscoveryTaskId | string | No | Specifies the internal discovery task ID |
 | OnlineDetection | enum | No | Specifies the method to use when detecting if a proxied device is online (None, Ping, TcpConnect) |
-| Os | string | No | Specifies the Operating System full description as reported by the device |
+| Os | string | No | Specifies the Operating System full description that the device reports |
 | KnownOsName | string | No | Specifies the Operating System from the list of known OS names |
-| OsUserSpecified | string | No | Specifies the operating system as entered by the user (overrides discovered OS in UI) |
+| OsUserSpecified | string | No | Specifies the operating system that the user enters (overrides discovered OS in UI) |
 | PollPeriodSeconds | integer | No | Specifies the poll period in seconds |
 | ProxiedByAgentId | string | No | Specifies the agent ID of the proxy agent that proxies this device |
 | Registered | boolean | No | Specifies whether the agent is registered |
