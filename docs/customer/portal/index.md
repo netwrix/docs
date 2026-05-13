@@ -26,11 +26,11 @@ To register for a <Company /> Customer Portal account, complete the following st
         * This should be an email address that <Company /> already has on file.
     * Direct Phone – Enter your corporate phone number
     * Password / Confirm Password – Enter a password that meets the following requirements:
-        * Be at least 15 characters long
-        * Include at least one number
-        * Include at least one uppercase letter
-        * Include at least one lowercase letter
-        * Include at least one special character
+        * Contain at least 15 characters
+        * Contain at least one number
+        * Contain at least one uppercase letter
+        * Contain at least one lowercase letter
+        * Contain at least one special character
  4. Check the **I'm not a robot** box.
  5. Read the [Netwrix Privacy Policy](https://www.netwrix.com/en/legal/privacy-policy) and then accept it by checking the box.
  6. Click **Sign Up**.
@@ -47,13 +47,13 @@ To register for a <Company /> Customer Portal account, complete the following st
 
     ![Activation Email](@site/static/images/customer-portal/activation.png)
 
-8.  Click **Verify Your Account** link in the email.
+8.  Open the email and click the **Verify Your Account** link.
 
    ![Customer Portal Home Page](@site/static/images/customer-portal/home.png)
 
  9. The portal activates your account and redirects you to the Ready to use page. Click the **Sign In** link and enter the email address and password you provided during sign-up to access the <Company /> Customer Portal.
 
-From the <Company /> Customer Portal, you can return to the main <Company /> website by clicking the logo in the upper-left corner. From the <Company /> website, you can access the Customer Portal through the user icon.
+From the <Company /> Customer Portal, you can return to the main <Company /> website by clicking the logo in the upper-left corner. Then you can access the <Company /> Customer Portal through the user icon.
 
 ## Troubleshooting Issues in the <Company /> Customer Portal
 
