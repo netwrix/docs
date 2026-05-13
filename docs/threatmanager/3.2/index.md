@@ -8,8 +8,8 @@ sidebar_position: 1
 
 Threat Manager detects and responds to abnormal behavior and advanced attacks against Active
 Directory and File Systems with unprecedented accuracy and speed. Threat Manager provides
-programmatic and automated response options when threats are identified. In addition to an extensive
-catalog of preconfigured response actions, Threat Manager can be configured to integrate with you
+programmatic and automated response options when it identifies threats. In addition to an extensive
+catalog of preconfigured response actions, you can configure Threat Manager to integrate with your
 own business processes using integrated PowerShell or webhook facilities.
 
 Threat Manager can also deliver threat data to administrators in their preferred applications,
@@ -24,7 +24,7 @@ physical implementation of Threat Manager components.
 
 ## Administration
 
-Organizations of virtually any size find it to be impossible, even counterproductive, to evaluate
+Organizations of virtually any size find it impossible, even counterproductive, to evaluate
 the substantial amount of file access events and Active Directory events occurring within their
 environments on any given day. To overcome this challenge and achieve proper visibility into this
 otherwise significant blind spot in an organization's cyber security program, Threat Manager®
@@ -34,8 +34,8 @@ series of customizable filters to discover threats unique to their organization.
 
 ## Supported Platforms
 
-Supported platforms include the Active Directory and File system platforms supported for monitoring
-by either Netwrix Threat Prevention or Netwrix Activity Monitor. See the following product
+Supported platforms include the Active Directory and File system platforms that either Netwrix
+Threat Prevention or Netwrix Activity Monitor can monitor. See the following product
 documentation for additional information:
 
 - [Netwrix Threat Prevention Documentation](https://helpcenter.netwrix.com/category/threatprevention)
