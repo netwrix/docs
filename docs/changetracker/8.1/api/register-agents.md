@@ -1,14 +1,14 @@
 ---
 title: "Register Agents"
-description: "Agent Registration API for managing device agents in ChangeTracker"
-sidebar_position: 11
+description: "Agent Registration API for managing device agents in Change Tracker"
+sidebar_position: 40
 ---
 
 # Register Agents
 
 ## Overview
 
-Use the Agent Registration API to register and manage agents with the ChangeTracker system. This API provides endpoints for registering new agents, which can be either direct agents installed on devices or proxied devices accessed through another agent. The API handles various device types including servers, desktops, network devices, and databases.
+Use the Agent Registration API to register and manage agents with the Change Tracker system. This API provides endpoints for registering new agents, which can be either direct agents installed on devices or proxied devices accessed through another agent. The API handles various device types including servers, desktops, network devices, and databases.
 
 Each agent has a unique AgentDevice ID and includes parameters such as device name, host type, operating system details, and network information. The API requires authentication and the `DeviceRegister` permission to perform operations.
 
@@ -141,7 +141,7 @@ Returns an Agent object with the following properties:
 
 ## Device Types
 
-ChangeTracker supports the following device types:
+Change Tracker supports the following device types:
 
 | Type | Description |
 |------|-------------|
@@ -152,7 +152,7 @@ ChangeTracker supports the following device types:
 
 ## Host Types
 
-ChangeTracker supports the following host types:
+Change Tracker supports the following host types:
 
 | Type | Description |
 |------|-------------|
@@ -176,7 +176,7 @@ The following online detection methods are available:
 
 ## Agent Types
 
-ChangeTracker supports the following agent types:
+Change Tracker supports the following agent types:
 
 | Type | Description |
 |------|-------------|

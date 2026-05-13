@@ -855,6 +855,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
       // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
       const apiSidebarItems = version.apiSidebarPath
         ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
+            .filter(item => !(item.type === 'doc' && item.id?.endsWith('/changetracker-hub')))
         : [];
 
       // Build plugin configuration

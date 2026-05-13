@@ -1,13 +1,13 @@
 ---
 title: "Authentication"
 description: "Authentication"
-sidebar_position: 10
+sidebar_position: 20
 ---
 
 # Authentication
 
-The following PowerShell script is an example of how to authenticate to the ChangeTracker API.
-It prompts the user for the URL and credentials. It also asks wether to skip certificate validation and then creates a new session.
+The following PowerShell script is an example of how to authenticate to the Change Tracker API.
+It prompts the user for the URL and credentials. It also asks whether to skip certificate validation and then creates a new session.
 Netwrix recommends trusted certificates for all environments, but if you are using self-signed certificates in a lab environment, you can skip certificate validation.
 
 The ```$NctSession``` variable stores the session information for use in subsequent API calls.

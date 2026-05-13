@@ -14,7 +14,7 @@ All API endpoints require authentication. See [Authentication](/docs/changetrack
 
 ## API Reference
 
-For an interactive reference of all Netwrix Change Tracker Hub API endpoints, see the [Netwrix Change Tracker Hub API Reference](/docs/changetracker/8_1/api/reference/). The Netwrix Change Tracker Hub (the central management server) generates this reference directly from its OpenAPI 3.0 spec, covering all available endpoints with request/response schemas.
+For an interactive reference of all Netwrix Change Tracker Hub API endpoints, see the [Netwrix Change Tracker Hub API Reference](/docs/changetracker/8_1/api/reference/). This reference is generated from the Change Tracker Hub's OpenAPI 3.0 spec and covers all available endpoints with request/response schemas.
 
 The raw OpenAPI 3.0 spec (YAML) is also [available for download](/openapi/changetracker-hub-8.1.yaml).
 
