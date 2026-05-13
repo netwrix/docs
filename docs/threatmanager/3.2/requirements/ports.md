@@ -36,7 +36,7 @@ recommended or the default.
 
 | Communication Direction | Protocol | Ports | Description                                                                           |
 | ----------------------- | -------- | ----- | ------------------------------------------------------------------------------------- |
-| Outbound                | TCP      | 5435  | Local Host and Remote communication from the PostgreSQL to the Threat Manager server. |
+| Outbound                | TCP      | 5435/5439  | Local Host and Remote communication from the PostgreSQL to the Threat Manager server. |
 
 ## Application Console Access Firewall Rules
 
