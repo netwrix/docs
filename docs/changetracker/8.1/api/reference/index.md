@@ -21,16 +21,16 @@ The reference groups endpoints by tag (functional area). Each endpoint page incl
 
 All endpoints require authentication. Before you can send requests — whether from the interactive explorer or your own code — you need a valid session.
 
-See [Authentication](/docs/changetracker/8.1/integration/api/authentication.md) for a PowerShell example that authenticates to the Hub and stores the session for subsequent calls.
+See [Authentication](/docs/changetracker/8.1/api/authentication.md) for a PowerShell example that authenticates to the Hub and stores the session for subsequent calls.
 
 ## Use the interactive explorer
 
 Each endpoint page includes a built-in API explorer. To use it:
 
-1. Obtain a session token by calling `POST /auth/credentials`. See [Authentication](/docs/changetracker/8.1/integration/api/authentication.md).
-2. Click **Authorize** at the top of any endpoint page.
-3. Enter your token in the **Bearer** field and click **Authorize**.
-4. Open an endpoint, fill in the required parameters, and click **Send API Request**.
+1. Obtain a session token by calling `POST /auth/credentials`. See [Authentication](/docs/changetracker/8.1/api/authentication.md).
+2. On any endpoint page, scroll to the **Auth** section in the right panel.
+3. Enter your token in the **Bearer Token** field.
+4. Fill in the required parameters and click **Send API Request**.
 
 :::tip
 Before sending a request, you can edit the server URL directly in the explorer to point to your Change Tracker Hub instance.
