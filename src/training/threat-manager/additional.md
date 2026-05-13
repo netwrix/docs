@@ -10,8 +10,8 @@ This product was formerly named Netwrix StealthDEFEND.
 
 :::
 
+* What's New in <NTM /> v3.2
 * New MCP Server for <NTM />
-* What's New in <NTM /> v3.1
 * Protect your Active Directory Against Common Cyber Threats
 * Top 5 Issues in <NTM />
 * <NTM /> Deployment Best Practices
