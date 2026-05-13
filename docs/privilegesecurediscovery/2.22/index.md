@@ -13,12 +13,22 @@ getting access to only the right resource, at the right moment and for the lengt
 need to complete their job. This approach eliminates standing privileges, effectively preventing
 lateral movement attacks, and significantly reducing an organization’s attack surface.
 
+## Release Lines
+
+NPS-D is available in two release lines:
+
+- **2.22** — Legacy release line, approaching end of support.
+- **26.03 and later** — Current release line, actively developed with new features delivered on
+  a quarterly basis (26.03, 26.06, 26.09, and so on). This is the recommended line for all
+  new and existing deployments.
+
+This documentation covers both release lines. Where a feature or procedure applies only to a
+specific release, it is noted inline.
+
 :::note
-The 2.22 release line is approaching end of support. The current release line (26.03 and later)
-introduces new features and improvements, including native Microsoft Entra ID integration,
-container-based deployment on standard Ubuntu machines, and continued active development with
-new capabilities delivered in each release. Netwrix recommends upgrading to the latest release to
-take advantage of these capabilities and continued support. Contact your Netwrix account
+Netwrix recommends upgrading from 2.22 to the latest release to take advantage of new
+capabilities, including native Microsoft Entra ID integration, container-based deployment on
+standard Ubuntu machines, and continued active development. Contact your Netwrix account
 representative for upgrade guidance.
 :::
 
