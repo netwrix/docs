@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Netwrix product documentation site — 27+ security products, built with Docusaurus v3.8.1. Hosted on Azure, deployed from `main`. Writing standards and doc-specific guidance are in `docs/CLAUDE.md` (loaded automatically when working in `docs/`).
+Netwrix product documentation site — 27+ security products, built with Docusaurus v3.10.1. Hosted on Azure, deployed from `main`. Writing standards and doc-specific guidance are in `docs/CLAUDE.md` (loaded automatically when working in `docs/`).
 
 ## Commands
 
