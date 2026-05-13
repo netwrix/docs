@@ -7,13 +7,11 @@ sidebar_position: 20
 # ServiceNow
 
 ServiceNow is a flexible platform for Managed Service Providers that provides integrated services.
-Integrated with Netwrix 1Secure, ServiceNow allows to deliver an alert as a ticket or a work note
-for help desk or tech services. Once a ticket is created, it is assigned to an IT agent to be
-resolved.
+Integrated with Netwrix 1Secure, With the ServiceNow integration, you can deliver an alert as a ticket or a work note
+for help desk or tech services. Once created, a ticket is assigned to an IT agent to be resolved.
 
-In ServiceNow, you can create a profile for your Managed Service Provider and then implement the
-delivery settings in Netwrix 1Secure. The tickets shall be delivered to specific assigned work
-group.
+In ServiceNow, you can create a profile for your Managed Service Provider and then configure the
+delivery settings in Netwrix 1Secure. Tickets are delivered to the assigned work group.
 
 Image keys:
 
@@ -25,7 +23,7 @@ Image keys:
 
 ## Add a ServiceNow Integration System
 
-Follow the steps to add a ServiceNow integration system.
+To add a ServiceNow integration system:
 
 **Step 1 –** Go to Configuration > **Integrations** and click the **Add** icon to add the system.
 
@@ -55,7 +53,7 @@ View Fields Here:
 
 **Step 4 –** Click **Finish**.
 
-The ServiceNow profile is added now. The status displays "Ok" in green.
+The ServiceNow profile is added. The status displays "Ok" in green.
 
 ![servicenowstatus](/images/1secure/integration/servicenowstatus.webp)
 
@@ -63,7 +61,7 @@ Click the **Edit** icon or the **Bin** icon to edit or delete the integration.
 
 ## Manage Delivery Settings
 
-Follow the steps to manage delivery settings for ServiceNow.
+To manage delivery settings for ServiceNow:
 
 **Step 1 –** Navigate to **Configuration** > **Alerts**.
 
@@ -72,7 +70,7 @@ panel displays.
 
 ![alerts_servicenowdeliverysettings](/images/1secure/integration/alerts_servicenowdeliverysettings.webp)
 
-**Step 3 –** Specify the Assignment Group, which should receive the tickets.
+**Step 3 –** Specify the Assignment Group that receives the tickets.
 
 **Step 4 –** Toggle on the **Enabled** field to enable the ServiceNow delivery.
 

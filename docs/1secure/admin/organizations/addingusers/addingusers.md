@@ -6,9 +6,8 @@ sidebar_position: 70
 
 # Add Users
 
-After you added the organization to your system, you may want to add users as part of your
-organization, depending on the role you would like to provide them. The users in Netwrix 1Secure
-include:
+After you add the organization to your system, you can add users to your organization and assign
+them a role. The users in Netwrix 1Secure include:
 
 - Administrator
 - Editor
@@ -26,9 +25,8 @@ Image keys:
 
 ## Add Users to Managing Organization
 
-The Users page allows a Managed Service Provider to provide the client's manager with access to
-review reports or other activities. In this case, the MSP shall assign the Viewer rights to the
-manager.
+The Users page allows a Managed Service Provider (MSP) to give the client's manager access to
+review reports or other activities. In this case, assign the Viewer rights to the manager.
 
 Follow the instructions to add a user.
 
@@ -71,38 +69,37 @@ Users**.
 | Managing/Configuring agent Self-update                  | +     | -      | -      |
 | Segregating access to child tenants for MSP users       | +     | -      | -      |
 
-**Step 3 –** Select the Grant user temporary access check box if you need to allow access to
+**Step 3 –** Select the Grant user temporary access checkbox if you need to allow access to
 specific user for certain period.
 
 For example, if you are a tenant administrator and you allowed a access to a member of your team who
 should edit 100 accounts before 08.03.2023, this member can manage these activities up to a certain
-period and the administrator does not need to suspend the rights manually.
+period and the administrator doesn't need to suspend the rights manually.
 
 ![Add Users pane](/images/1secure/admin/organizations/addusers.webp)
 
-**Step 4 –** Select one or more organization groups from the **Select organization group(s) for the
-user** drop-down menu. To specify multiple groups, select them one by one from the drop-down menu.
+**Step 4 –** Select one or more organization groups from the **Select organization groups for the
+user** dropdown menu. To specify multiple groups, select them one by one from the dropdown menu.
 
-The user can only view and/or manage the organizations assigned to the group(s) you select here.
+The user can only view and/or manage the organizations assigned to the groups you select here.
 
 :::note
-Administrators have access to all tenancies regardless of the organization group(s).
+Administrators have access to all tenancies regardless of the organization groups.
 :::
 
 
 **Step 5 –** Click Add.
 
-Follow the steps to review main options and statuses.
+**To review main options and statuses:**
 
 **Step 1 –** To delete the user, select the **Bin icon** for that user.
 
 **Step 2 –** To edit the user data, select the **Edit icon** for that user.
 
-In case the user received an invitation from your tenant and registered within a system, its status
-shall be Verified.
+If the user received an invitation from your tenant and registered, the status is Verified.
 
-If the user has not registered within a system, the status will be Pending Verification. The
-administrator may select Resend Invite to re-notify this user.
+If the user has not registered, the status is Pending Verification. The administrator can select
+Resend Invite to re-notify this user.
 
 ![Users List](/images/1secure/admin/organizations/users_status.webp)
 
@@ -111,12 +108,12 @@ When logging in, the users see the Home screen, on which they can do the followi
 - Add organization here by selecting **Add Organization**
 - Find the organization by populating the **Filtering the keyword** field
 - Select the required filters from the **Alert**, **Health Status**, **Tag**, **Time Filter**
-  drop-down lists. These filters will apply to available organizations.
+  dropdown lists. These filters apply to available organizations.
 
 ## Add the Business Viewer Role
 
 :::note
-This option is not available for End Customer Organizations.
+This option isn't available for End Customer Organizations.
 :::
 
 
@@ -133,15 +130,15 @@ The Business viewer role:
 
     - ag-test1
 
-Business viewer cannot add reports on their own. When creating the report, tick the option **Share
-with business users**. This way, all the business users can view the shared reports. See the
+Business viewers can't add reports on their own. When creating the report, select the option **Share
+with business users**. This way, all business users can view the shared reports. See the
 [ Custom Reports](/docs/1secure/admin/searchandreports/customreports.md) topic for additional information.
 
-As you add the business viewer, the created reports shall be automatically displayed.
+When you add the business viewer, the created reports are automatically displayed.
 
 ![Add Users pane](/images/1secure/admin/organizations/businessusers.webp)
 
-Follow the steps to add the Business Viewer role.
+**To add the Business Viewer role:**
 
 **Step 1 –** On the Managed Organizations page, select your organization and select to the **Users**
 tile.
@@ -165,7 +162,7 @@ organization.
 
 :::note
 When logging in, if the Business Viewer account is registered with multiple organizations,
-select the one you wish to access.
+select the one you want to access.
 :::
 
 
@@ -183,14 +180,14 @@ The Co-Managing Administrator role:
 - Can view predefined reports
 - Can view custom reports
 
-The Co-Managing Administrator role cannot add reports on their own. When creating the report, select
+The Co-Managing Administrator role can't add reports on their own. When creating the report, select
 the option **Share with business users**. This way, all the business users can view the shared
 reports. See the [ Custom Reports](/docs/1secure/admin/searchandreports/customreports.md) topic for additional
 information.
 
 ![Add Users pane](/images/1secure/admin/organizations/comanagingadministrator.webp)
 
-Follow the steps to add the Co-managing Administrator role.
+**To add the Co-managing Administrator role:**
 
 **Step 1 –** On the Manage Organizations page, select your organization and click the **Users**
 tile.
@@ -211,12 +208,12 @@ logged in organization.
 
 ## Delete a Managed Organization User
 
-Follow the steps to delete a user from a managed organization.
-
 :::note
-User(s) can only be deleted from a managed organization by tenant administrators or
-co-managing administrators.
+Only tenant administrators or co-managing administrators can delete users from a managed
+organization.
 :::
+
+**To delete a user from a managed organization:**
 
 
 **Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,

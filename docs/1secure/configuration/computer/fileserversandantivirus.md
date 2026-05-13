@@ -8,8 +8,7 @@ sidebar_position: 80
 
 ## File Servers and Antivirus
 
-It is strongly recommended that you add the following executables to the list of exclusions for your
-antivirus:
+Add the following executables to the list of exclusions for your antivirus:
 
 - C:\Windows\SysWOW64\NwxExeSvc\NwxExeSvc.exe
 - C:\Windows\SysWOW64\NwxExeSvc\NwxEventCollectorAgent.exe
@@ -17,10 +16,10 @@ antivirus:
 - C:\Windows\SysWOW64\NwxExeSvc\NwxSaclTunerAgent.exe
 - C:\ProgramData\Netwrix Cloud Agent
 
-Otherwise, significant delays and performance issues may occur while collecting data.
+Otherwise, significant delays and performance issues can occur while collecting data.
 
-This happens because these executables access a large number of file server objects (files,
-folders), fetching audit data — and your antivirus may treat this as a suspicious behavior.
+This happens because these executables access many file server objects (files,
+folders) while fetching audit data, and antivirus software can treat this as suspicious behavior.
 
-For some antiviruses (for example, Trend Micro) you may need to specify the folders to exclude, that
-is, `C:\Windows\SysWOW64\NwxExeSvc\`. Refer to your antivirus documentation for details.
+For some antivirus products (for example, Trend Micro), specify the folders to exclude, such as
+`C:\Windows\SysWOW64\NwxExeSvc\`. Refer to your antivirus documentation for details.

@@ -13,10 +13,9 @@ additional information.
 
 ## Configure Netwrix Cloud Agent
 
-To collect the data from the Computer and Active Directory you will need to install and configure
-the Netwrix Cloud Agent.
+To collect the data from the Computer and Active Directory, install, and configure the Netwrix Cloud Agent.
 
-Follow the steps to configure an agent.
+To configure an agent:
 
 **Step 1 –** In the Netwrix 1Secure Website, go to Home page and select the Add organization icon to
 add an organization. Specify the name of the organization, timezone, country, and tags.
@@ -37,7 +36,7 @@ configure with Netwrix Cloud Agent.
 ![installagent_copyagent](/images/1secure/install/installagent_copyagent.webp)
 
 **Step 6 –** Go back to your Netwrix 1Secure configuration panel and copy the agent connection
-details by selecting Copy Connection String. This information will be used for agent deployment.
+details by selecting Copy Connection String. Use this information for agent deployment.
 
 ![cloudagent_copyagent](/images/1secure/install/cloudagent_copyagent.webp)
 
@@ -50,11 +49,11 @@ The agent status has changed to **Connected** (green).
 
 
 **Step 8 –** Go back to the Netwrix 1Secure configuration panel and select **Retry connecting to the
-client**. The agent status shall change to Healthy.
+client**. The agent status changes to Healthy.
 
 ## Install the Agent
 
-Follow the steps to install the agent.
+To install the agent:
 
 **Step 1 –** Check the prerequisites.
 

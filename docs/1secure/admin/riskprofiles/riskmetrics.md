@@ -12,7 +12,7 @@ environment, such as disabled computer accounts, stale direct user permission, i
 accounts, etc. When you create a risk profile, risk thresholds are preconfigured for each risk
 metric. You can, however, modify the thresholds for a risk metric or even remove a risk metric.
 
-Follow the steps to view risk metrics within a risk profile.
+**To view risk metrics within a risk profile:**
 
 **Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
 that lists the managed organizations defined in 1Secure.
@@ -50,7 +50,7 @@ You can view the following for each risk metric:
 
 ## Modify Thresholds For a Number or Percentage Risk Metric
 
-Follow the steps to modify thresholds for a risk metric that is measured in numbers or percentage.
+**To modify thresholds for a risk metric measured in numbers or percentage:**
 
 **Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
 that lists the managed organizations defined in 1Secure.
@@ -71,7 +71,7 @@ that lists the managed organizations defined in 1Secure.
   the percentage of user accounts with password never expires).
 
 **Step 6 –** Specify a range of values to set the low risk threshold for the metric. For example, if
-you set the low risk threshold for inactive user accounts to 0-3, the risk level will be considered
+you set the low risk threshold for inactive user accounts to 0-3, the risk level is considered
 low as long as the number of inactive user accounts remains between 0 and 3.
 
 Follow these rules when setting the low risk threshold:
@@ -80,7 +80,7 @@ Follow these rules when setting the low risk threshold:
 - The maximum value of the low risk threshold is equal to the minimum value of the medium risk
   threshold.
 
-The medium risk threshold is calculated automatically and you cannot modify it. It follows these
+The medium risk threshold is calculated automatically and you can't modify it. It follows these
 rules:
 
 - The minimum value of the medium risk threshold is equal to the maximum value of the low risk
@@ -89,7 +89,7 @@ rules:
   threshold.
 
 **Step 7 –** Specify a range of values to set high risk threshold for a metric. For example, if you
-set the high risk threshold for inactive user accounts to 10 and above, the risk level will be
+set the high risk threshold for inactive user accounts to 10 and above, the risk level is
 considered high as long as the number of inactive user accounts exceeds 10.
 
 Follow this rule when setting the high risk threshold:
@@ -107,11 +107,11 @@ The risk thresholds have been modified for the metric.
 ## Modify Severity For a Boolean Risk Metric
 
 Some risks are evaluated based on a true/false condition. For example, if a third party application
-is not allowed and the system does not detect any, the risk level will be low. However, if the
-system detects one, the severity level will be set to medium or high, depending on what you set
+isn't allowed and the system doesn't detect any, the risk level is low. However, if the
+system detects one, the severity level is set to medium or high, depending on what you set
 here.
 
-Follow the steps to modify severity for a Boolean risk metric.
+**To modify severity for a Boolean risk metric:**
 
 **Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
 that lists the managed organizations defined in 1Secure.
@@ -131,12 +131,12 @@ displayed.
 - Medium – Set the risk severity level to Medium
 
 :::note
-When the risk is not detected, the severity level is automatically set to Low.
+When the risk isn't detected, the severity level is automatically set to Low.
 :::
 
 
-For example, if a third party application is not allowed and the system does not detect any, the
-risk level will be low. However, if the system detects one, the severity level will be set to medium
+For example, if a third party application isn't allowed and the system doesn't detect any, the
+risk level is low. However, if the system detects one, the severity level is set to medium
 or high, depending on what you set here.
 
 **Step 6 –** (Optional) Click the **Restore default** button to reset the risk metric to its default
@@ -154,7 +154,7 @@ no longer be assessed against this metric.
 :::
 
 
-Follow the steps to remove a risk metric from a risk profile.
+**To remove a risk metric from a risk profile:**
 
 **Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
 that lists the managed organizations defined in 1Secure.
@@ -171,9 +171,9 @@ prompting you to confirm the removal of the metric.
 ## Add a Number or Percentage Risk Metric to a Risk Profile
 
 If a risk metric is removed from a profile, you can add it back anytime. Re-adding the metric
-ensures that organizations using the profile will once again be assessed against that metric.
+ensures that organizations using the profile are once again assessed against that metric.
 
-Follow the steps to add a risk metric to a profile.
+**To add a risk metric to a profile:**
 
 **Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
 that lists the managed organizations defined in 1Secure.
@@ -186,7 +186,7 @@ that lists the managed organizations defined in 1Secure.
 
 ![Add new risk threshold pane](/images/1secure/admin/riskprofiles/addnumberthreshold.webp)
 
-**Step 5 –** In the Risk Metric drop-down menu, select a number or percentage risk metric you want
+**Step 5 –** In the Risk Metric dropdown, select a number or percentage risk metric you want
 to add.
 
 **Step 6 –** Use the Measure in option buttons to select a measurement type and specify risk
@@ -205,7 +205,7 @@ The risk metric is added back to the risk profile.
 
 If a Boolean risk metric is removed from a profile, you can add it back anytime.
 
-Follow the steps to add a risk metric to a profile.
+**To add a risk metric to a profile:**
 
 **Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
 that lists the managed organizations defined in 1Secure.
@@ -218,7 +218,7 @@ that lists the managed organizations defined in 1Secure.
 
 ![Add new risk threshold pane](/images/1secure/admin/riskprofiles/addbooleanriskmetric.webp)
 
-**Step 5 –** In the Risk Metric drop-down menu, select a Boolean risk metric you want to add.
+**Step 5 –** In the Risk Metric dropdown, select a Boolean risk metric you want to add.
 
 **Step 6 –** Select a severity level to apply when the risk is detected.
 
@@ -226,7 +226,7 @@ that lists the managed organizations defined in 1Secure.
 - Medium – Set the risk severity level to Medium
 
 :::note
-When the risk is not detected, the severity level is automatically set to Low.
+When the risk isn't detected, the severity level is automatically set to Low.
 :::
 
 

@@ -14,13 +14,12 @@ on:
   issue_comment:
     types: [created]
 
-concurrency:
-  group: doc-pr-${{ github.event.pull_request.number || github.event.issue.number }}
-  cancel-in-progress: true
-
 jobs:
   doc-review:
     if: github.event_name == 'pull_request'
+    concurrency:
+      group: doc-pr-review-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -128,6 +127,9 @@ jobs:
       github.event.issue.pull_request &&
       contains(github.event.comment.body, '@claude') &&
       !startsWith(github.event.comment.user.login, 'github-actions')
+    concurrency:
+      group: doc-pr-followup-${{ github.event.issue.number }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -168,10 +170,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          COMMENT_ID=$(gh pr comment "${{ steps.pr-info.outputs.number }}" \
-            --repo "${{ github.repository }}" \
-            --body "**Acknowledged:** Analyzing your request — I'll update this comment with a task list shortly." \
-            --format json | jq -r '.id')
+          COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${{ steps.pr-info.outputs.number }}/comments" \
+            --method POST \
+            --field body="**Acknowledged:** Analyzing your request — I'll update this comment with a task list shortly." \
+            --jq '.id')
           echo "comment_id=$COMMENT_ID" >> "$GITHUB_OUTPUT"
 
       - name: Checkout repository

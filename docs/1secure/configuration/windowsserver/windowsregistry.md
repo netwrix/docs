@@ -6,10 +6,7 @@ sidebar_position: 80
 
 # Configure Windows Registry Audit Settings
 
-Windows Registry audit permissions must be configured on each Windows server you want to audit so
-that the “Who” and “When” values are reported correctly for each change. For test environment, PoC
-or evaluation you can use automatic audit configuration. If you want to configure Windows Registry
-manually, follow the instructions below.
+Configure Windows Registry audit permissions on each Windows server you want to audit so that the product reports the “Who” and “When” values correctly for each change. For test environments, PoC, or evaluation, you can use automatic audit configuration. To configure Windows Registry manually, follow the instructions in this topic.
 
 The following audit permissions must be set to _"Successful"_ for the
 `HKEY_LOCAL_MACHINE\SOFTWARE and HKEY_LOCAL_MACHINE\SYSTEM` keys:
@@ -69,7 +66,7 @@ and click **Add**.
 **Step 5 –** Click **Select a principal link** and specify the **Everyone** group in the **Enter the
 object name to select** field.
 
-**Step 6 –** Set **Type** to _"Success"_ and **Applies to** to _"This key and subkeys_.
+**Step 6 –** Set **Type** to _"Success"_. In the **Applies to** field, select _"This key and subkeys_.
 
 **Step 7 –** Click **Show advanced permissions** and select the following access types:
 
@@ -83,5 +80,4 @@ object name to select** field.
 
 Repeat the same steps for the `HKEY_LOCAL_MACHINE\SYSTEM` key.
 
-Using Group Policy for configuring registry audit is not recommended, as registry DACL settings may
-be lost.
+Don't use Group Policy to configure registry audit; registry DACL settings may be lost.
