@@ -25,7 +25,7 @@ To register for a <Company /> Customer Portal account, complete the following st
     * Business Email – Enter your corporate email address
         * This should be an email address that <Company /> already has on file.
     * Direct Phone – Enter your corporate phone number
-    * Password – Enter a password in the Password and Confirm Password fields. The password must:
+    * Password / Confirm Password – Enter a password that meets the following requirements:
         * Be at least 15 characters long
         * Include at least one number
         * Include at least one uppercase letter
