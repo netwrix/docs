@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # API
 
-Netwrix Change Tracker provides a comprehensive REST API that customers can use to integrate with the platform programmatically. This is particularly useful for customers who run multiple instances of Netwrix Change Tracker in multiple regions, as they can use the API to pull data from each instance and build global reports containing data from all instances.
+Netwrix Change Tracker provides a comprehensive REST API that customers can use to integrate with the platform programmatically. This is particularly useful for customers who run multiple instances of Netwrix Change Tracker in multiple regions, as they can use the API to pull data from each instance and build global reports.
 
 ## Authentication
 
