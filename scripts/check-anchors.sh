@@ -67,9 +67,6 @@ check_file() {
   abs_source="$(realpath "$source_file")"
   source_dir="$(dirname "$abs_source")"
 
-  # Stored in variable so bash doesn't misparse ) in character class
-  local link_re='\]\(([^)]+)\)'
-
   local in_fence=false
   local line_num=0
 
