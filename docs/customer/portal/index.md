@@ -25,12 +25,13 @@ To register for a <Company /> Customer Portal account, complete the following st
     * Business Email – Enter your corporate email address
         * This should be an email address that <Company /> already has on file.
     * Direct Phone – Enter your corporate phone number
-    * Password / Confirm Password – Enter a password that meets the following requirements:
-        * Contain at least 15 characters
-        * Contain at least one number
-        * Contain at least one uppercase letter
-        * Contain at least one lowercase letter
-        * Contain at least one special character
+    * Password – Enter a password that meets the following requirements:
+        * At least 15 characters
+        * At least one number
+        * At least one uppercase letter
+        * At least one lowercase letter
+        * At least one special character
+    * Confirm Password – Renter the password
  4. Check the **I'm not a robot** box.
  5. Read the [Netwrix Privacy Policy](https://www.netwrix.com/en/legal/privacy-policy) and then accept it by checking the box.
  6. Click **Sign Up**.
