@@ -82,10 +82,8 @@ check_file() {
     $in_fence && continue
     [[ "$line" == *"]("* ]] || continue
 
-    local rest="$line"
-    while [[ "$rest" =~ $link_re ]]; do
-      local href="${BASH_REMATCH[1]}"
-      rest="${rest#*]($href)}"
+    while IFS= read -r href; do
+      [[ -z "$href" ]] && continue
 
       # Strip optional link title: path#anchor "title" -> path#anchor
       href="$(sed -E "s/[[:space:]]+[\"'][^\"']*[\"']$//" <<< "$href")"
@@ -143,7 +141,7 @@ check_file() {
         printf '\n'
         (( ERRORS++ )) || true
       fi
-    done
+    done < <(perl -ne 'while (/\]\(([^)]+)\)/g) { print "$1\n" }' <<< "$line" || true)
   done < "$abs_source"
 }
 
