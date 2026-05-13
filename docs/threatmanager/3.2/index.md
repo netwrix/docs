@@ -1,6 +1,6 @@
 ---
 title: "Netwrix Threat Manager v3.2 Documentation"
-description: "Netwrix Threat Manager v3.2"
+description: "Netwrix Threat Manager v3.2 documentation"
 sidebar_position: 1
 ---
 
