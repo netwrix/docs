@@ -63,4 +63,4 @@ If you have any trouble with the <Company /> Customer Portal, try the following:
 * Contact your Account Manager to confirm <Company /> has the corporate email address you used to register on file
 * Clear your browser cache
 
-If you continue to have issues with any aspect of the <Company /> Customer Portal, email [customer.portal@netwrix.com](mailto:customer.portal@netwrix.com) for assistance.
+If you continue to have issues with the <Company /> Customer Portal, email [customer.portal@netwrix.com](mailto:customer.portal@netwrix.com) for assistance.
