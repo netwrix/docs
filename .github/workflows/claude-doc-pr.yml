@@ -172,7 +172,7 @@ jobs:
         run: |
           COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${{ steps.pr-info.outputs.number }}/comments" \
             --method POST \
-            --field body="**Acknowledged:** Analyzing your request — I'll update this comment with a task list shortly." \
+            --field body="**On it.** I'll reply here shortly." \
             --jq '.id')
           echo "comment_id=$COMMENT_ID" >> "$GITHUB_OUTPUT"
 
@@ -189,12 +189,15 @@ jobs:
         uses: anthropics/claude-code-action@v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMENT_BODY: ${{ github.event.comment.body }}
-          PROGRESS_COMMENT_ID: ${{ steps.ack-comment.outputs.comment_id }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.VALE_TOKEN }}
           show_full_output: true
           prompt: |
-            /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
+            /doc-pr-fix
+            PR: ${{ steps.pr-info.outputs.number }}
+            Repo: ${{ github.repository }}
+            Progress comment ID: ${{ steps.ack-comment.outputs.comment_id }}
+
+            Writer's request: ${{ github.event.comment.body }}
           claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(doc-help)"'
