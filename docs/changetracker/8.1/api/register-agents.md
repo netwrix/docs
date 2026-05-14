@@ -1,16 +1,16 @@
 ---
 title: "Register Agents"
-description: "Agent Registration API for managing device agents in ChangeTracker"
-sidebar_position: 11
+description: "Agent Registration API for managing device agents in Change Tracker"
+sidebar_position: 40
 ---
 
 # Register Agents
 
 ## Overview
 
-The Agent Registration API allows you to register and manage agents with the ChangeTracker system. This API provides endpoints for registering new agents, which can be either direct agents installed on devices or proxied devices accessed through another agent. The API handles various device types including servers, desktops, network devices, and databases.
+Use the Agent Registration API to register and manage agents with the Change Tracker system. This API provides endpoints for registering new agents, which can be either direct agents installed on devices or proxied devices accessed through another agent. The API handles various device types including servers, desktops, network devices, and databases.
 
-Agents are identified by a unique AgentDevice ID and include various parameters such as device name, host type, operating system details, and network information. The API requires authentication and the `DeviceRegister` permission to perform operations.
+Each agent has a unique AgentDevice ID and includes parameters such as device name, host type, operating system details, and network information. The API requires authentication and the `DeviceRegister` permission to perform operations.
 
 ## Endpoints
 
@@ -60,10 +60,10 @@ Requires authentication and the `DeviceRegister` permission.
 |-----------|------|----------|-------------|
 | AgentName | string | No | The name of the agent |
 | CanProxy | boolean | No | Specifies whether the agent can proxy connections to other devices |
-| CredentialKey | string | No | Specifies the credential key (only allowed for proxied devices) |
+| CredentialKey | string | No | Specifies the credential key (proxied devices only) |
 | DeviceName | string | No | Specifies the device name |
 | DeviceType | enum | No | Type of device (Unknown, Server, Desktop, Network, Database) |
-| GroupNames | array | No | Specifies the group names (only allowed for proxied devices) |
+| GroupNames | array | No | Specifies the group names (proxied devices only) |
 | HostName | string | No | Specifies the host name or IP address used for agentless access |
 | HostType | enum | No | Specifies the host type (Unknown, Unix, Windows, Network, Database, Cloud, ESX, Splunk) |
 | MacAddresses | string | No | Specifies the MAC addresses |
@@ -73,11 +73,11 @@ Requires authentication and the `DeviceRegister` permission.
 | DiscoveryId | string | No | Specifies the internal discovery-based ID |
 | DiscoveryTaskId | string | No | Specifies the internal discovery task ID |
 | OnlineDetection | enum | No | Specifies the method to use when detecting if a proxied device is online (None, Ping, TcpConnect) |
-| Os | string | No | Specifies the Operating System full description as reported by the device |
-| KnownOsName | string | No | Specifies the Operating System from the list of known OS names |
-| OsUserSpecified | string | No | Specifies the operating system as entered by the user (overrides discovered OS in UI) |
+| Os | string | No | Specifies the operating system full description that the device reports |
+| KnownOsName | string | No | Specifies the operating system from the list of known OS names |
+| OsUserSpecified | string | No | Specifies the operating system that the user enters (overrides discovered OS in UI) |
 | PollPeriodSeconds | integer | No | Specifies the poll period in seconds |
-| ProxiedByAgentId | string | No | Specifies the agent ID of the proxy agent this device will be proxied by |
+| ProxiedByAgentId | string | No | Specifies the agent ID of the proxy agent that proxies this device |
 | Registered | boolean | No | Specifies whether the agent is registered |
 | UniqueId | string | No | Specifies a value uniquely identifying the agent independent of name or agent ID |
 | Version | integer | No | Specifies the request version |
@@ -141,7 +141,7 @@ Returns an Agent object with the following properties:
 
 ## Device Types
 
-The following device types are supported:
+Change Tracker supports the following device types:
 
 | Type | Description |
 |------|-------------|
@@ -152,7 +152,7 @@ The following device types are supported:
 
 ## Host Types
 
-The following host types are supported:
+Change Tracker supports the following host types:
 
 | Type | Description |
 |------|-------------|
@@ -176,7 +176,7 @@ The following online detection methods are available:
 
 ## Agent Types
 
-The following agent types are supported:
+Change Tracker supports the following agent types:
 
 | Type | Description |
 |------|-------------|

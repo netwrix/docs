@@ -57,7 +57,7 @@ const config = {
     // prev/next pagination label, so this cleans up navigation text site-wide.
     parseFrontMatter: async (params) => {
       const result = await params.defaultParseFrontMatter(params);
-      if (params.filePath.includes('/integration/api/reference/')) {
+      if (params.filePath.includes('/api/reference/')) {
         if (result.frontMatter.title) {
           result.frontMatter.title = result.frontMatter.title.replace(/\.$/, '');
         }
@@ -173,7 +173,7 @@ const config = {
         config: {
           'changetracker-hub': {
             specPath: 'static/openapi/changetracker-hub-8.1.yaml',
-            outputDir: 'docs/changetracker/8.1/integration/api/reference',
+            outputDir: 'docs/changetracker/8.1/api/reference',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
@@ -182,7 +182,7 @@ const config = {
             downloadUrl: '/openapi/changetracker-hub-8.1.yaml',
             version: '8.1',
             label: 'ChangeTracker Hub 8.1 API',
-            baseUrl: '/docs/changetracker/8_1/integration/api/reference/',
+            baseUrl: '/docs/changetracker/8_1/api/reference/',
           },
         },
       },
@@ -208,7 +208,7 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
-          autoCollapseCategories: false,
+          autoCollapseCategories: true,
         },
       },
       algolia: {
