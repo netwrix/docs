@@ -6,7 +6,7 @@ sidebar_position: 2
 
 # Getting Started with Threat Manager
 
-After Threat Manager is installed, complete the following configuration so users can begin viewing
+After Threat Manager is installed, complete the following configuration so that users can begin viewing
 threat analytics in an organization’s environment.
 
 After installation, configuration is required for many of Threat Manager's additional capabilities.
