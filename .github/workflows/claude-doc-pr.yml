@@ -164,17 +164,13 @@ jobs:
           gh pr comment ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} \
             --body "This PR is from a fork. Automated fixes cannot be pushed directly. I can still review and suggest changes — apply them manually from the comments."
 
-      - name: Post acknowledgment comment
-        id: ack-comment
+      - name: React with eyes
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          COMMENT_ID=$(gh api "repos/${{ github.repository }}/issues/${{ steps.pr-info.outputs.number }}/comments" \
-            --method POST \
-            --field body="**On it.** I'll reply here shortly." \
-            --jq '.id')
-          echo "comment_id=$COMMENT_ID" >> "$GITHUB_OUTPUT"
+          gh api repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions \
+            --method POST -f content="eyes"
 
       - name: Checkout repository
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
@@ -197,7 +193,6 @@ jobs:
             /doc-pr-fix
             PR: ${{ steps.pr-info.outputs.number }}
             Repo: ${{ github.repository }}
-            Progress comment ID: ${{ steps.ack-comment.outputs.comment_id }}
 
             Writer's request: ${{ github.event.comment.body }}
           claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(doc-help)"'
