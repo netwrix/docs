@@ -14,18 +14,18 @@ Remote Work Delivery Manager provides centralized software deployment and manage
 Complete documentation for using Remote Work Delivery Manager:
 - [**Cloud and MDM Integration**](/docs/policypak/components/remoteworkdeliverymanager/manual/cloudmdm.md) - Deploy via cloud services
 - [**Export Collections**](/docs/policypak/components/remoteworkdeliverymanager/manual/exportcollections.md) - Package and distribute software
-- [**Getting to Know**](/docs/policypak/components/remoteworkdeliverymanager/manual/gettoknow/) - Overview and basic concepts
+- [**Getting to Know**](/docs/policypak/components/remoteworkdeliverymanager/manual/gettoknow/gettoknow.md) - Overview and basic concepts
 
 ### Videos
 Video tutorials and demonstrations:
-- [Getting Started guides](/docs/policypak/components/remoteworkdeliverymanager/videos/gettingstarted/)
-- [Mass deployment methods](/docs/policypak/components/remoteworkdeliverymanager/videos/methods/)
-- [Tips and tricks](/docs/policypak/components/remoteworkdeliverymanager/videos/tipsandtricks/)
+- [Getting Started guides](/docs/policypak/components/remoteworkdeliverymanager/videos/gettingstarted/masscopy.md)
+- [Mass deployment methods](/docs/policypak/components/remoteworkdeliverymanager/videos/methods/cloud.md)
+- [Tips and tricks](/docs/policypak/components/remoteworkdeliverymanager/videos/tipsandtricks/azureblobstorage.md)
 
 ### Tech Notes
 Technical information and troubleshooting:
-- [Tips and tricks](/docs/policypak/components/remoteworkdeliverymanager/technotes/tipsandtricks/)
-- [Troubleshooting common issues](/docs/policypak/components/remoteworkdeliverymanager/technotes/troubleshooting/)
+- [Tips and tricks](/docs/policypak/components/remoteworkdeliverymanager/technotes/tipsandtricks/installsequentially.md)
+- Troubleshooting common issues
 
 ## Key Features
 

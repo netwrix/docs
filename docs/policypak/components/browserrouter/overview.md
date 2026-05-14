@@ -17,15 +17,15 @@ Browser Router is a powerful component of PolicyPak (PolicyPak) that automatical
 
 ## Documentation Sections
 
-- [Manual](/docs/policypak/components/browserrouter/manual/) - Comprehensive documentation and configuration guides
-- [Videos](/docs/policypak/components/browserrouter/videolearningcenter/) - Video tutorials and demonstrations
-- [Tech Notes](/docs/policypak/components/browserrouter/knowledgebase/) - Installation, troubleshooting, and tips
+- [Manual](/docs/policypak/components/browserrouter/manual/overview.md) - Comprehensive documentation and configuration guides
+- [Videos](/docs/policypak/components/browserrouter/videolearningcenter/videolearningcenter.md) - Video tutorials and demonstrations
+- [Tech Notes](/docs/policypak/components/browserrouter/knowledgebase/knowledgebase.md) - Installation, troubleshooting, and tips
 
 ## Quick Links
 
-- [Understanding Browser Routing Rules](/docs/policypak/components/browserrouter/manual/understandingdefaultbrowser/)
-- [Installation Guide](/docs/policypak/components/browserrouter/knowledgebase/installation/)
-- [Troubleshooting Guide](/docs/policypak/components/browserrouter/knowledgebase/troubleshooting/)
-- [Getting Started Videos](/docs/policypak/components/browserrouter/videolearningcenter/gettingstarted/)
+- [Understanding Browser Routing Rules](/docs/policypak/components/browserrouter/manual/understandingdefaultbrowser/osweb.md)
+- [Installation Guide](/docs/policypak/components/browserrouter/knowledgebase/installation/chromemanual.md)
+- [Troubleshooting Guide](/docs/policypak/components/browserrouter/knowledgebase/troubleshooting/adobelinks.md)
+- [Getting Started Videos](/docs/policypak/components/browserrouter/videolearningcenter/gettingstarted/blockwebsites.md)
 
 

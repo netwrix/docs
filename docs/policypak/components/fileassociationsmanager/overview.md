@@ -17,14 +17,14 @@ File Associations Manager is a component of PolicyPak (PolicyPak) that allows ad
 
 ## Documentation Sections
 
-- [Manual](/docs/policypak/components/fileassociationsmanager/manual/) - Configuration guides and reference documentation
-- [Videos](/docs/policypak/components/fileassociationsmanager/videolearningcenter/) - Video tutorials and demonstrations
-- [Tech Notes](/docs/policypak/components/fileassociationsmanager/knowledgebase/) - Troubleshooting and technical guidance
+- [Manual](/docs/policypak/components/fileassociationsmanager/manual/overview.md) - Configuration guides and reference documentation
+- [Videos](/docs/policypak/components/fileassociationsmanager/videolearningcenter/videolearningcenter.md) - Video tutorials and demonstrations
+- [Tech Notes](/docs/policypak/components/fileassociationsmanager/knowledgebase/knowledgebase.md) - Troubleshooting and technical guidance
 
 ## Quick Links
 
-- [Configuration Guide](/docs/policypak/components/fileassociationsmanager/manual/configuration/)
-- [Getting Started Videos](/docs/policypak/components/fileassociationsmanager/videolearningcenter/gettingstarted/)
-- [Troubleshooting](/docs/policypak/components/fileassociationsmanager/knowledgebase/troubleshooting/)
+- [Configuration Guide](/docs/policypak/components/fileassociationsmanager/manual/configuration/logs.md)
+- [Getting Started Videos](/docs/policypak/components/fileassociationsmanager/videolearningcenter/gettingstarted/applyonce.md)
+- [Troubleshooting](/docs/policypak/components/fileassociationsmanager/knowledgebase/troubleshooting/defaultassociationsconfiguration.md)
 
 

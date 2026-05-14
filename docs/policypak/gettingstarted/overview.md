@@ -13,15 +13,15 @@ working with Netwrix PolicyPak quickly.
 
 Select the deployment method that matches your environment:
 
-- [**Cloud**](/docs/policypak/gettingstarted/cloudmanual/) - For PolicyPak Cloud deployments
-- [**Group Policy**](/docs/policypak/deliverymethods/grouppolicy/) - For traditional Active Directory environments
-- [**MDM**](/docs/policypak/gettingstarted/mdmmanual/) - For mobile device management and modern management
-- [**Misc**](/docs/policypak/misc/) - General getting started information and support resources
+- [**Cloud**](/docs/policypak/gettingstarted/cloudmanual/overview.md) - For PolicyPak Cloud deployments
+- [**Group Policy**](/docs/policypak/deliverymethods/grouppolicy/knowledgebase/knowledgebase.md) - For traditional Active Directory environments
+- [**MDM**](/docs/policypak/gettingstarted/mdmmanual/overview.md) - For mobile device management and modern management
+- [**Misc**](/docs/policypak/misc/knowledgebase/knowledgebase.md) - General getting started information and support resources
 
 ## Quick Resources
 
-- [**Support and Resources**](/docs/policypak/gettingstarted/quickstart/) - Fast support options and important resources
-- [**General Getting Started Information**](/docs/policypak/gettingstarted/basicconcepts/) - Basic concepts, tips, and FAQs
+- [**Support and Resources**](/docs/policypak/gettingstarted/quickstart/overview.md) - Fast support options and important resources
+- [**General Getting Started Information**](/docs/policypak/gettingstarted/basicconcepts/basicconcepts.md) - Basic concepts, tips, and FAQs
 
 ## The Portal and Downloads
 

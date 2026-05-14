@@ -78,13 +78,12 @@ const config = {
       swcHtmlMinimizer: true,
       lightningCssMinimizer: true,
       rspackBundler: true,
-      rspackPersistentCache: true, // 2-5x faster rebuilds
+      rspackPersistentCache: true,
       mdxCrossCompilerCache: true,
-      ssgWorkerThreads: false, // 2x faster static generation
+      ssgWorkerThreads: false,
     },
     v4: {
-      removeLegacyPostBuildHeadAttribute: true, // Required for worker threads
-      // useCssCascadeLayers: true, // Temporarily disabled - may cause style conflicts
+      removeLegacyPostBuildHeadAttribute: true,
     },
   },
 

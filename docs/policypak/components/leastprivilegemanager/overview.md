@@ -12,8 +12,8 @@ Least Privilege Manager enables you to get out of the risky business of giving u
 
 ### Manual
 Complete documentation for using Least Privilege Manager:
-- [**Windows**](/docs/policypak/components/leastprivilegemanager/manual/windows/) - Windows-based privilege management
-- [**macOS**](/docs/policypak/components/leastprivilegemanager/manual/macos/) - macOS client configuration and management
+- [**Windows**](/docs/policypak/components/leastprivilegemanager/manual/windows/overview.md) - Windows-based privilege management
+- [**macOS**](/docs/policypak/components/leastprivilegemanager/manual/macos/overview.md) - macOS client configuration and management
 
 ### Tech Notes
 Implementation guides and technical documentation:

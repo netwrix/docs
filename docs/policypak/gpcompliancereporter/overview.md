@@ -12,21 +12,21 @@ GP Compliance Reporter is a powerful component of PolicyPak that provides compre
 
 ### Manual
 Complete documentation for using GP Compliance Reporter:
-- [**Installation and Setup**](/docs/policypak/gpcompliancereporter/technotes/gettingstarted/) - Get started with GP Compliance Reporter
-- [**Configuration**](/docs/policypak/gpcompliancereporter/manual/concepts/) - Configure reporting and compliance settings
-- [**Advanced Features**](/docs/policypak/gpcompliancereporter/manual/tuning/) - Leverage advanced reporting capabilities
+- [**Installation and Setup**](/docs/policypak/gpcompliancereporter/technotes/gettingstarted/install.md) - Get started with GP Compliance Reporter
+- [**Configuration**](/docs/policypak/gpcompliancereporter/manual/concepts/overview.md) - Configure reporting and compliance settings
+- [**Advanced Features**](/docs/policypak/gpcompliancereporter/manual/tuning/overview.md) - Leverage advanced reporting capabilities
 
 ### Videos
 Video tutorials and demonstrations:
-- [Getting Started guides](/docs/policypak/gpcompliancereporter/videos/gettingstarted/)
-- [Configuration tutorials](/docs/policypak/gpcompliancereporter/videos/using/)
-- [What does it do](/docs/policypak/gpcompliancereporter/videos/whatdoesitdo/)
-- [Troubleshooting scenarios](/docs/policypak/gpcompliancereporter/videos/troubleshooting/)
+- [Getting Started guides](/docs/policypak/gpcompliancereporter/videos/gettingstarted/install.md)
+- [Configuration tutorials](/docs/policypak/gpcompliancereporter/videos/using/existinggpos.md)
+- [What does it do](/docs/policypak/gpcompliancereporter/videos/whatdoesitdo/modeserver.md)
+- [Troubleshooting scenarios](/docs/policypak/gpcompliancereporter/technotes/troubleshooting/domainmultiple.md)
 
 ### Tech Notes
 Technical information and troubleshooting:
-- [Licensing and setup guides](/docs/policypak/gpcompliancereporter/technotes/gettinglicensed/)
-- [Installation troubleshooting](/docs/policypak/gpcompliancereporter/technotes/troubleshooting/)
+- [Licensing and setup guides](/docs/policypak/gpcompliancereporter/technotes/gettinglicensed/basis.md)
+- [Installation troubleshooting](/docs/policypak/gpcompliancereporter/technotes/troubleshooting/domainmultiple.md)
 
 ## Key Features
 
