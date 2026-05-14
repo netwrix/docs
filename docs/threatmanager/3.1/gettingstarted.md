@@ -6,62 +6,60 @@ sidebar_position: 2
 
 # Getting Started with Threat Manager
 
-After Threat Manager is installed, complete the following configuration so that users can begin viewing
-threat analytics in an organization’s environment.
+After installing Threat Manager, complete the following configuration so that users can begin
+viewing threat analytics in an organization’s environment.
 
-After installation, configuration is required for many of Threat Manager's additional capabilities.
-This includes the option to configure sensitive data from Netwrix Access Analyzer (formerly
-Enterprise Auditor). Features such as Active Directory data collection, email notifications, and
-SIEM service integration can be enabled in their respective configuration pages.
+After installation, many of Threat Manager's additional capabilities require configuration. This
+includes the option to configure sensitive data from Netwrix Access Analyzer (formerly Enterprise
+Auditor). You can enable features such as Active Directory data collection, email notifications,
+and SIEM service integration on their respective configuration pages.
 
 ## Send Data to Threat Manager
 
-Threat Manager threat detection requires file system and/or Active Directory and/or Microsoft Entra
-ID activity to be monitored by either the Activity Monitor or Threat Prevention. An agent must be
-deployed to the server being monitored, and the products must be configured to stream data to Threat
-Manager.
+Threat Manager threat detection requires either the Activity Monitor or Threat Prevention to
+monitor file system, Active Directory, or Microsoft Entra ID activity. Deploy an agent to the
+server you want to monitor, and configure the products to stream data to Threat Manager.
 
 See the [Integration with Other Netwrix Products](/docs/threatmanager/3.1/install/integration/overview.md) topic for additional
 information.
 
 ### File System Activity
 
-File system activity is monitored by the Activity Monitor or the Threat Prevention file system
-policy. Deploy an activity agent to every Windows file server to be monitored and/or to Windows
-proxy servers for every NAS device to be monitored. The monitored host must be configured to send
-events to Threat Manager. See the
+The Activity Monitor or the Threat Prevention file system policy monitors file system activity.
+Deploy an activity agent to every Windows file server you want to monitor and/or to Windows proxy
+servers for every NAS device you want to monitor. Configure the monitored host to send events to
+Threat Manager. See the
 [Netwrix Activity Monitor Integration](/docs/threatmanager/3.1/install/integration/activitymonitor.md) topic for additional
 information.
 
 ### Active Directory Activity
 
-Active Directory activity can be monitored by either the Activity Monitor or Threat Prevention.
-Deploy an Active Directory agent to domain controllers so Threat Manager can receive Active
-Directory events:
+Either the Activity Monitor or Threat Prevention can monitor Active Directory activity. Deploy an
+Active Directory agent to domain controllers so Threat Manager can receive Active Directory events:
 
-- Activity Monitor – Monitored domain must be configured to stream data through the domain
+- Activity Monitor – Configure the monitored domain to stream data through the domain
   properties > Threat Manager tab
     - See the [Netwrix Activity Monitor Integration](/docs/threatmanager/3.1/install/integration/activitymonitor.md) topic for
       additional information.
-- Threat Prevention – Threat Prevention Admin Console must be configured to stream data through the
+- Threat Prevention – Configure the Threat Prevention Admin Console to stream data through the
   Threat Manager Event Sink feature
     - See the [Netwrix Threat Prevention Integration](/docs/threatmanager/3.1/install/integration/threatprevention/threatprevention.md) topic
       for additional information.
 
 ### Microsoft Entra ID Activity
 
-Microsoft Entra ID activity can be monitored by Activity Monitor. Deploy an Activity Monitor agent
-to a Windows server and configure it to monitor an Microsoft Entra ID tenant to send events to
-Threat Manager. The monitored tenant must be configured to send events to Threat Manager. See the
+Activity Monitor can monitor Microsoft Entra ID activity. Deploy an Activity Monitor agent to a
+Windows server and configure it to monitor a Microsoft Entra ID tenant to send events to Threat
+Manager. Configure the monitored tenant to send events to Threat Manager. See the
 [Netwrix Activity Monitor Integration](/docs/threatmanager/3.1/install/integration/activitymonitor.md) topic for additional
 information.
 
 ### Sensitive Data Discovery
 
-Sensitive data is collected by Access Analyzer. It requires a license for the Access Analyzer File
-System Solution with the Sensitive Data Discovery Add-on. Access Analyzer has a custom job which can
-be added to the FileSystem > 0.Collection Job Group to stream data after the collection tasks
-complete. See the
+Access Analyzer collects sensitive data. It requires a license for the Access Analyzer File System
+Solution with the Sensitive Data Discovery Add-on. You can add the Access Analyzer custom job to
+the FileSystem > 0.Collection Job Group to stream data after the collection tasks complete. See
+the
 [Netwrix Access Analyzer (formerly Enterprise Auditor) Integration](/docs/threatmanager/3.1/install/integration/accessanalyzer.md) topic
 for additional information.
 
