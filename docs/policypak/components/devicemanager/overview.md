@@ -17,14 +17,14 @@ Device Manager is a component of PolicyPak (PolicyPak) that provides granular co
 
 ## Documentation Sections
 
-- Manual - Configuration guides and policy management
-- Videos - Video tutorials and demonstrations
-- Tech Notes - Technical guidance and troubleshooting
+- [Manual](/docs/policypak/components/devicemanager/manual/) - Configuration guides and policy management
+- [Videos](/docs/policypak/components/devicemanager/videolearningcenter/) - Video tutorials and demonstrations
+- [Tech Notes](/docs/policypak/components/devicemanager/knowledgebase/) - Technical guidance and troubleshooting
 
 ## Quick Links
 
-- Device Policies Configuration
-- Getting Started Videos
-- Troubleshooting Guide
+- [Device Policies Configuration](/docs/policypak/components/devicemanager/manual/configuration/)
+- [Getting Started Videos](/docs/policypak/components/devicemanager/videolearningcenter/gettingstarted/)
+- [Troubleshooting Guide](/docs/policypak/components/devicemanager/knowledgebase/troubleshooting/)
 
 

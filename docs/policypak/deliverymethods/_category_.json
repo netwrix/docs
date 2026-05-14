@@ -2,5 +2,8 @@
   "label": "Delivery Methods",
   "position": 19,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

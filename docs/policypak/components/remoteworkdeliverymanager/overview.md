@@ -10,25 +10,22 @@ Remote Work Delivery Manager provides centralized software deployment and manage
 
 ## Quick Links
 
-### 📖 Manual
+### Manual
 Complete documentation for using Remote Work Delivery Manager:
-- **Cloud and MDM Integration** - Deploy via cloud services
-- **Export Collections** - Package and distribute software
-- **Configuration** - Advanced deployment settings
+- [**Cloud and MDM Integration**](/docs/policypak/components/remoteworkdeliverymanager/manual/cloudmdm.md) - Deploy via cloud services
+- [**Export Collections**](/docs/policypak/components/remoteworkdeliverymanager/manual/exportcollections.md) - Package and distribute software
+- [**Getting to Know**](/docs/policypak/components/remoteworkdeliverymanager/manual/gettoknow/) - Overview and basic concepts
 
-### 🎥 Videos
+### Videos
 Video tutorials and demonstrations:
-- Getting Started guides
-- Mass deployment methods
-- SMB and web-based shares
-- Cloud integration tutorials
+- [Getting Started guides](/docs/policypak/components/remoteworkdeliverymanager/videos/gettingstarted/)
+- [Mass deployment methods](/docs/policypak/components/remoteworkdeliverymanager/videos/methods/)
+- [Tips and tricks](/docs/policypak/components/remoteworkdeliverymanager/videos/tipsandtricks/)
 
-### 🔧 Tech Notes
+### Tech Notes
 Technical information and troubleshooting:
-- Installation tips and tricks
-- Variable usage and configuration
-- Troubleshooting common issues
-- Sequential installation guides
+- [Tips and tricks](/docs/policypak/components/remoteworkdeliverymanager/technotes/tipsandtricks/)
+- [Troubleshooting common issues](/docs/policypak/components/remoteworkdeliverymanager/technotes/troubleshooting/)
 
 ## Key Features
 

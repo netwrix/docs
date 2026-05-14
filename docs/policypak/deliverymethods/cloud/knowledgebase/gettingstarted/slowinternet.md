@@ -45,7 +45,7 @@ Support for a download link.
 
 For more details about setting up machines for VDI environments please check the following topics.
 
-[Can I embed the PolicyPakClient Side Extension and/or PolicyPak Cloud client into a master image for VDI, MDT, Ghost, Citrix, etc?](/docs/policypak/gettingstarted/misc/knowledgebase/tipstricksandfaqs/embedclient.md)
+[Can I embed the PolicyPakClient Side Extension and/or PolicyPak Cloud client into a master image for VDI, MDT, Ghost, Citrix, etc?](/docs/policypak/misc/knowledgebase/tipstricksandfaqs/embedclient.md)
 
 [How to install the PolicyPak Cloud Client for use in an Azure Virtual Desktop image](/docs/policypak/deliverymethods/cloud/knowledgebase/clienttips/azurevirutaldesktop.md)
 

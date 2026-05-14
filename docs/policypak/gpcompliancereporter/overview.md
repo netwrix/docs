@@ -10,25 +10,23 @@ GP Compliance Reporter is a powerful component of PolicyPak that provides compre
 
 ## Quick Links
 
-### 📖 Manual
+### Manual
 Complete documentation for using GP Compliance Reporter:
-- **Installation and Setup** - Get started with GP Compliance Reporter
-- **Configuration** - Configure reporting and compliance settings
-- **Advanced Features** - Leverage advanced reporting capabilities
+- [**Installation and Setup**](/docs/policypak/gpcompliancereporter/technotes/gettingstarted/) - Get started with GP Compliance Reporter
+- [**Configuration**](/docs/policypak/gpcompliancereporter/manual/concepts/) - Configure reporting and compliance settings
+- [**Advanced Features**](/docs/policypak/gpcompliancereporter/manual/tuning/) - Leverage advanced reporting capabilities
 
-### 🎥 Videos
+### Videos
 Video tutorials and demonstrations:
-- Getting Started guides
-- Configuration tutorials
-- Best practices and tips
-- Troubleshooting scenarios
+- [Getting Started guides](/docs/policypak/gpcompliancereporter/videos/gettingstarted/)
+- [Configuration tutorials](/docs/policypak/gpcompliancereporter/videos/using/)
+- [What does it do](/docs/policypak/gpcompliancereporter/videos/whatdoesitdo/)
+- [Troubleshooting scenarios](/docs/policypak/gpcompliancereporter/videos/troubleshooting/)
 
-### 🔧 Tech Notes
+### Tech Notes
 Technical information and troubleshooting:
-- Licensing and setup guides
-- Installation troubleshooting
-- Advanced configuration tips
-- Common issues and solutions
+- [Licensing and setup guides](/docs/policypak/gpcompliancereporter/technotes/gettinglicensed/)
+- [Installation troubleshooting](/docs/policypak/gpcompliancereporter/technotes/troubleshooting/)
 
 ## Key Features
 

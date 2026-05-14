@@ -431,3 +431,8 @@ html {
 .DocSearch-Dropdown::-webkit-scrollbar-thumb:hover {
     background: var(--docsearch-primary-color);
 }
+
+/* Hide Previous/Next pagination on generated category index pages */
+[class*='generatedIndexPage'] > footer {
+    display: none;
+}

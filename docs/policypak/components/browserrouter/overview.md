@@ -17,15 +17,15 @@ Browser Router is a powerful component of PolicyPak (PolicyPak) that automatical
 
 ## Documentation Sections
 
-- Manual - Comprehensive documentation and configuration guides
-- Videos - Video tutorials and demonstrations
-- Tech Notes - Installation, troubleshooting, and tips
+- [Manual](/docs/policypak/components/browserrouter/manual/) - Comprehensive documentation and configuration guides
+- [Videos](/docs/policypak/components/browserrouter/videolearningcenter/) - Video tutorials and demonstrations
+- [Tech Notes](/docs/policypak/components/browserrouter/knowledgebase/) - Installation, troubleshooting, and tips
 
 ## Quick Links
 
-- Understanding Browser Routing Rules
-- Installation Guide
-- Troubleshooting Guide
-- Getting Started Videos
+- [Understanding Browser Routing Rules](/docs/policypak/components/browserrouter/manual/understandingdefaultbrowser/)
+- [Installation Guide](/docs/policypak/components/browserrouter/knowledgebase/installation/)
+- [Troubleshooting Guide](/docs/policypak/components/browserrouter/knowledgebase/troubleshooting/)
+- [Getting Started Videos](/docs/policypak/components/browserrouter/videolearningcenter/gettingstarted/)
 
 

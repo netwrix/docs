@@ -10,12 +10,12 @@ Preferences Manager enables administrators to harness the power of Microsoft's G
 
 ## Quick Links
 
-### 📖 Manual
+### Manual
 Complete documentation for using Preferences Manager:
-- **Overview** - Getting started with preferences management
-- **Setup** - Configuration and setup procedures
-- **Item Level Targeting** - Advanced targeting capabilities
-- **Getting Started** - Step-by-step deployment guides
-- **Preferences** - Detailed preferences configuration
+- [**Overview**](/docs/policypak/components/preferencesmanager/manual/overview.md) - Getting started with preferences management
+- [**Setup**](/docs/policypak/components/preferencesmanager/manual/setup.md) - Configuration and setup procedures
+- [**Item Level Targeting**](/docs/policypak/components/preferencesmanager/manual/itemleveltargeting.md) - Advanced targeting capabilities
+- [**Getting Started**](/docs/policypak/components/preferencesmanager/manual/gettingstarted/) - Step-by-step deployment guides
+- [**Preferences**](/docs/policypak/components/preferencesmanager/manual/preferences/) - Detailed preferences configuration
 
 
