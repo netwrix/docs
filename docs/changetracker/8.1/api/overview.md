@@ -6,15 +6,15 @@ sidebar_position: 20
 
 # API
 
-Netwrix Change Tracker provides a comprehensive REST API that customers can use to integrate with the platform programmatically. This is particularly useful for customers who run multiple instances of Netwrix Change Tracker in multiple regions, as they can use the API to pull data from each instance and build global reports containing data from all instances.
+Netwrix Change Tracker provides a comprehensive REST API that customers can use to integrate with the platform programmatically. This is particularly useful for customers who run multiple instances of Netwrix Change Tracker in multiple regions, as they can use the API to pull data from each instance and build global reports.
 
 ## Authentication
 
-All API endpoints require authentication. See [Authentication](/docs/changetracker/8.1/integration/api/authentication.md) for an example script.
+All API endpoints require authentication. See [Authentication](/docs/changetracker/8.1/api/authentication.md) for an example script.
 
 ## API Reference
 
-For an interactive reference of all Netwrix Change Tracker Hub API endpoints, see the [Netwrix Change Tracker Hub API Reference](/docs/changetracker/8_1/integration/api/reference/). The Netwrix Change Tracker Hub (the central management server) generates this reference directly from its OpenAPI 3.0 spec, covering all available endpoints with request/response schemas.
+For an interactive reference of all Netwrix Change Tracker Hub API endpoints, see the [Netwrix Change Tracker Hub API Reference](/docs/changetracker/8_1/api/reference/). This reference comes from the Change Tracker Hub (the central management server) OpenAPI 3.0 spec and covers all available endpoints with request/response schemas.
 
 The raw OpenAPI 3.0 spec (YAML) is also [available for download](/openapi/changetracker-hub-8.1.yaml).
 
@@ -22,11 +22,11 @@ The raw OpenAPI 3.0 spec (YAML) is also [available for download](/openapi/change
 
 The following API endpoints are available in Netwrix Change Tracker:
 
-- [Agents](/docs/changetracker/8.1/integration/api/agents.md) – Pull data on agent statuses, configurations, and group memberships using the agentsRanked endpoint. Use this API to retrieve detailed information about all agents in your environment, including their group memberships and applied tracking templates.
+- [Agents](/docs/changetracker/8.1/api/agents.md) – Pull data on agent statuses, configurations, and group memberships using the agentsRanked endpoint. Use this API to retrieve detailed information about all agents in your environment, including their group memberships and applied tracking templates.
 
-- [Register Agents](/docs/changetracker/8.1/integration/api/register-agents.md) – Agents normally use this API to register with the Hub, but you can also use it to register proxied devices accessed through a proxy agent.
+- [Register Agents](/docs/changetracker/8.1/api/register-agents.md) – Agents normally use this API to register with the Hub, but you can also use it to register proxied devices accessed through a proxy agent.
 
-- [Credentials](/docs/changetracker/8.1/integration/api/credentials.md) – Manage authentication credentials that Change Tracker uses to connect to various systems and services. This API provides endpoints for creating, retrieving, updating, and deleting credentials for different credential types including Shell, Database, FTP, Cloud, ESX, ITSM, and Splunk.
+- [Credentials](/docs/changetracker/8.1/api/credentials.md) – Manage authentication credentials that Change Tracker uses to connect to various systems and services. This API provides endpoints for creating, retrieving, updating, and deleting credentials for different credential types including Shell, Database, FTP, Cloud, ESX, ITSM, and Splunk.
 
 ## API Usage Best Practices
 

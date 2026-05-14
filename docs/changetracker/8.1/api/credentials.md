@@ -1,16 +1,16 @@
 ---
 title: "Credentials"
-description: "Credentials API for managing authentication credentials in ChangeTracker"
-sidebar_position: 10
+description: "Credentials API for managing authentication credentials in Change Tracker"
+sidebar_position: 30
 ---
 
 # Credentials
 
 ## Overview
 
-The Credentials API allows you to manage authentication credentials used by ChangeTracker to connect to various systems and services. This API provides endpoints for creating, retrieving, updating, and deleting credentials for different credential types including Shell, Database, FTP, Cloud, ESX, ITSM, and Splunk.
+Use the Credentials API to manage authentication credentials that Change Tracker uses to connect to various systems and services. This API provides endpoints for creating, retrieving, updating, and deleting credentials for different credential types including Shell, Database, FTP, Cloud, ESX, ITSM, and Splunk.
 
-Credentials are identified by a unique key and include various parameters specific to the credential type. The API requires authentication and the `CredentialsManage` permission to perform operations.
+Each credential has a unique key and includes parameters specific to the credential type. The API requires authentication and the `CredentialsManage` permission to perform operations.
 
 ## Endpoints
 
@@ -134,11 +134,11 @@ Requires authentication and the `CredentialsManage` permission.
 | type | string | Yes | Type of credentials to delete |
 
 **Response**
-Returns a success status code (200) if the credentials were successfully deleted.
+Returns a success status code (200) when the deletion succeeds.
 
 ## Credential Types
 
-The following credential types are supported:
+Change Tracker supports the following credential types:
 
 | Type | Description |
 |------|-------------|

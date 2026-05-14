@@ -1,0 +1,89 @@
+name: OpenAPI Method Dedup
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - dev
+    paths:
+      - 'static/openapi/**.yaml'
+      - 'static/openapi/**.yml'
+
+concurrency:
+  group: openapi-dedup-${{ github.event.pull_request.number }}
+
+jobs:
+  dedup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    steps:
+      - name: Check if triggered by this workflow's own commit
+        id: bot-check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COMMIT=$(gh api repos/${{ github.repository }}/commits/${{ github.event.pull_request.head.sha }} \
+            --jq '{author: .commit.author.name, message: .commit.message}')
+          MESSAGE=$(echo "$COMMIT" | jq -r '.message')
+          if echo "$MESSAGE" | grep -qE '^chore\(openapi\): deduplicate'; then
+            echo "Skipping: commit is from openapi-dedup workflow"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout PR branch
+        if: steps.bot-check.outputs.skip != 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.VALE_TOKEN }}
+
+      - name: Configure git identity
+        if: steps.bot-check.outputs.skip != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Set up Node.js
+        if: steps.bot-check.outputs.skip != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        if: steps.bot-check.outputs.skip != 'true'
+        run: npm ci --ignore-scripts
+
+      - name: Run deduplication
+        id: dedup
+        if: steps.bot-check.outputs.skip != 'true'
+        run: |
+          OUTPUT=$(node scripts/deduplicate-openapi-methods.mjs)
+          echo "$OUTPUT"
+          if echo "$OUTPUT" | grep -q 'already clean'; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "summary=$OUTPUT" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push deduplicated spec
+        if: steps.bot-check.outputs.skip != 'true' && steps.dedup.outputs.changed == 'true'
+        env:
+          VALE_TOKEN: ${{ secrets.VALE_TOKEN }}
+        run: |
+          git add static/openapi/
+          git commit -m "chore(openapi): deduplicate HTTP methods in Change Tracker Hub spec
+
+          ${{ steps.dedup.outputs.summary }}
+
+          Generated with AI
+
+          Co-Authored-By: Claude Code <ai@netwrix.com>"
+
+          git remote set-url origin "https://x-access-token:${VALE_TOKEN}@github.com/${{ github.repository }}.git"
+          git push

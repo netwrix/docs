@@ -183,7 +183,7 @@ export const PRODUCTS = [
         label: '8.1',
         isLatest: true,
         sidebarFile: './sidebars/changetracker/8.1.js',
-        apiSidebarPath: './docs/changetracker/8.1/integration/api/reference/sidebar.ts',
+        apiSidebarPath: './docs/changetracker/8.1/api/reference/sidebar.ts',
       },
       {
         version: '8.0',
@@ -861,6 +861,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
       // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
       const apiSidebarItems = version.apiSidebarPath
         ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
+            .filter(item => !(item.type === 'doc' && item.id?.endsWith('/changetracker-hub')))
         : [];
 
       // Build plugin configuration
