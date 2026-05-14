@@ -6,13 +6,11 @@ sidebar_position: 50
 
 # Add Secret Vault
 
-Secret Vaults can be used to store and securly provide Privilege Secure users with access to credentials and files.
-
-Follow the steps below to add a new secret vault to the console.
+Secret Vaults lets you store and securly provide Privilege Secure users with access to credentials and files.
 
 **Step 1 –** Navigate to the **Policy** > **Resources** page.
 
-**Step 2 –** Click the **+ Add** button and select New Secret Vault from the drop-down list.
+**Step 2 –** Click the **+ Add** button and select New Secret Vault from the dropdown list.
 
 ![Add secrete Vault Resource](/images/privilegesecure/25.12/accessmanagement/admin/configuration/add/addsecretvault.png)
 

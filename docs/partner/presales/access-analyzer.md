@@ -1,6 +1,6 @@
 ---
 title: Netwrix Access Analyzer Presales Engineer
-sidebar_position: 1400
+sidebar_position: 1240
 tags: [certification, partners, presales, access-analyzer, access-information-center, activity-monitor]
 keywords: [training, course, certification, partners, presales, access analyzer, access information center, activity monitor]
 description: "Become a certified Presales Engineer for Netwrix Access Analyzer"
@@ -12,7 +12,7 @@ import { NAMIntro, NAMAdditional } from '@site/src/training/activity-monitor';
 import { Company, NAA, AIC, NAM } from '@site/src/training/products';
 
 
-Estimated length: 8.5 hours
+Estimated length: 8 hours 54 minutes
 
 This learning path grants <Company /> certification as a Presales Engineer for these products:
 

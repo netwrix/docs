@@ -6,7 +6,7 @@ sidebar_position: 90
 
 # Managing Menus
 
-Menus can be personalized by hiding menu items you do not use. Hiding items only affects the current
+Menus can be personalized by hiding menu items you don't use. Hiding items only affects the current
 account.
 
 Menus and menu items not included in your License are automatically hidden. For example, if you have

@@ -52,13 +52,13 @@ The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set aut
 - Sidebars: `sidebars/<product>/<version>.js` — auto-generated, rarely need manual editing
 - Edits to one version do not propagate to others
 
-### Knowledge base
+### Knowledge Base
 
-`docs/kb/` is the canonical source for KB articles. The `scripts/copy-kb-to-versions.mjs` script copies KB content into versioned product folders at build time (runs as `prestart`/`prebuild`). Never manually copy KB files — they're gitignored in versioned folders. Use `kb_allowlist.json` to control which products get KB content.
+`docs/kb/` is the canonical source for Knowledge Base (KB) articles. The `scripts/copy-kb-to-versions.mjs` script copies KB content into versioned product folders at build time (runs as `prestart`/`prebuild`). Never manually copy KB files — they're gitignored in versioned folders. `kb_allowlist.json` is a generated artifact (written by the copy script) that records which products received KB content; do not edit it manually.
 
 ### Static assets
 
-Images go in `static/img/product_docs/<product>/` as `.webp` files. Reference with absolute paths: `/img/product_docs/<product>/image.webp`.
+Images go in `static/images/<product>/` as `.webp` files, organized by version and section (e.g., `static/images/passwordreset/3.3/administration/`). Reference with absolute paths: `/images/<product>/<version>/<image>.webp`. Some products share images across product boundaries (e.g., passwordreset images under `passwordpolicyenforcer/`).
 
 ## Branch Workflow
 
@@ -69,11 +69,11 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 | Workflow | Trigger | Purpose |
 |---|---|---|
 | `build-and-deploy.yml` | Push to main/dev, PRs to dev | Build and deploy to Azure |
-| `vale-linter.yml` | PRs with `.md` changes | Vale style checks as PR review comments |
-| `claude-doc-pr.yml` | PRs to dev with `docs/` changes | Vale + Dale + editorial review; `@claude` follow-up |
+| `vale-autofix.yml` | PRs with `.md` changes | Auto-fix Vale + Dale issues (script + AI), post summary comment |
+| `claude-doc-pr.yml` | PRs to dev with `docs/` changes | Editorial review; `@claude` follow-up |
 | `claude-documentation-reviewer.yml` | PRs with `.md` changes | AI review with inline suggestions |
 | `claude-documentation-fixer.yml` | `@claude` comment on PR | Apply fixes and push |
-| `claude-issue-labeler.yml` | Issues opened/edited | Security screening, CoC check, auto-labeling |
+| `claude-issue-labeler.yml` | Issues opened/edited | Security screening, CoC check, auto-labeling, content fix automation |
 | `sync-dev-to-main.yml` | Daily 8 AM PST | Auto-merge dev to main |
 | `reindex-algolia.yml` | After main deploy | Refresh search index |
 
@@ -81,11 +81,16 @@ PRs target `dev`. Never commit directly to `dev` or `main`. The `sync-dev-to-mai
 
 Skills (`.claude/skills/`) are invoked with `/skill-name`. Agents (`.claude/agents/`) are autonomous workers launched via the Agent tool.
 
+When a user asks for help with documentation, always use the appropriate tool:
+- **`/doc-help` skill** — Interactive tasks: reviewing content, suggesting improvements, discussing structure or flow, brainstorming, explaining style rules, incorporating external documents (e.g., `.docx` files) into existing markdown files, or any back-and-forth conversation about writing.
+- **`tech-writer` agent** — Autonomous end-to-end tasks: drafting new documents, rewriting files, fixing all Vale errors, or editing for style and clarity.
+
 | Component | Type | Purpose |
 |---|---|---|
 | `/dale` | Skill | Custom linter for Netwrix-specific writing patterns |
 | `/doc-help` | Skill | Interactive writing assistant (terminal sessions) |
-| `/doc-pr` | Skill | Automated PR review (Vale + Dale + editorial) |
+| `/doc-pr` | Skill | Automated PR editorial review |
+| `/content-fix` | Skill | Autonomous issue-to-PR fixer for content_fix issues |
 | `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
 | `tech-writer` | Agent | Autonomous end-to-end doc writing/editing |
 | `vale-rule-writer` | Agent | Creates new Vale rules |

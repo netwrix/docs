@@ -1,6 +1,6 @@
 ---
 title: Netwrix Platform Governance for Salesforce Sales Professional
-sidebar_position: 1220
+sidebar_position: 1170
 tags: [certification, partners, sales, platform-governance-for-salesforce]
 keywords: [training, course, certification, partners, sales, platform governance for salesforce]
 description: "Become a certified Sales Professional for Netwrix Platform Governance for Salesforce"

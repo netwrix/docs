@@ -34,7 +34,7 @@ The Threats tab for a group displays the threats detected for the group by timef
 
 ![Threats tab for on the Group Details page](/images/threatmanager/3.0/administration/threatdetails/threatstab.webp)
 
-A key for threat types is displayed below the chart.
+A key for threat types appears below the chart.
 
 ## Members Tab
 

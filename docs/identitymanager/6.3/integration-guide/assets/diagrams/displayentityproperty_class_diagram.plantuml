@@ -1,0 +1,62 @@
+@startuml component
+package "DisplayEntityProperty" {
+	class DisplayEntityProperty {
+		AddedMinutes : Int32
+		DisplayOrder : Int32
+		Format : String
+		IconCode : String
+		IsHidden : Boolean
+		IsReadOnly : Boolean
+		IsRequired : Boolean
+		MinSearchLength : Int32
+		PlaceHolderText_L1 : String
+		ToolTipText_L1 : String
+		--
+		AutocompleteBinding : Binding
+		DisplayEntityType : DisplayEntityType
+		DisplayTable : DisplayTable
+		Group : DisplayPropertyGroup
+		InputType : InputType
+		NavigationBinding : Binding
+		OutputType : OutputType
+		Tile : Tile
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "DisplayEntityType" {
+	class DisplayEntityType {
+	}
+}
+package "DisplayTable" {
+	class DisplayTable {
+	}
+}
+package "DisplayPropertyGroup" {
+	class DisplayPropertyGroup {
+	}
+}
+package "InputType" {
+	class InputType {
+	}
+}
+package "OutputType" {
+	class OutputType {
+	}
+}
+package "Tile" {
+	class Tile {
+	}
+}
+DisplayEntityProperty "0..*" --  "0..1"Binding
+DisplayEntityProperty "0..*" --  "1"DisplayEntityType
+DisplayEntityProperty "0..*" --  "0..1"DisplayTable
+DisplayEntityProperty "0..*" --  "0..1"DisplayPropertyGroup
+DisplayEntityProperty "0..*" --  "1"InputType
+DisplayEntityProperty "0..*" --  "0..1"Binding
+DisplayEntityProperty "0..*" --  "1"OutputType
+DisplayEntityProperty "0..*" --  "0..1"Tile
+hide empty members
+@enduml

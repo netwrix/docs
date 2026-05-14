@@ -1,0 +1,32 @@
+@startuml component
+package "AllowedNavigationBinding" {
+	class AllowedNavigationBinding {
+		--
+		Binding : Binding
+		EntityType : EntityType
+		OpenIdClient : OpenIdClient
+		Permission : AccessControlPermission
+	}
+}
+package "Binding" {
+	class Binding {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "OpenIdClient" {
+	class OpenIdClient {
+	}
+}
+package "AccessControlPermission" {
+	class AccessControlPermission {
+	}
+}
+AllowedNavigationBinding "0..*" --  "1"Binding
+AllowedNavigationBinding "0..*" --  "1"EntityType
+AllowedNavigationBinding "0..*" --  "1"OpenIdClient
+AllowedNavigationBinding "0..*" --  "1"AccessControlPermission
+hide empty members
+@enduml

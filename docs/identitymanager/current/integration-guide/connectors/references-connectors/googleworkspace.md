@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Google Workspace"
 description: "Google Workspace"
 sidebar_position: 70
@@ -10,11 +10,11 @@ This connector exports and fulfills users and groups from/to a [Google Workspace
 
 This page is about [Google Workspace](../../../integration-guide/connectors/references-packages/googleworkspace).
 
-![Package: Directory/Google Workspace](/images/identitymanager/integration-guide/connectors/references-connectors/googleworkspace/packages_workspace_v603.webp)
+![Package: Directory/Google Workspace](/images/identitymanager/packages_workspace_v603.webp)
 
 ## Overview
 
-Google Workspace provides a set of softwares and products developed by Google. The Google Workspace connector exports and fulfills users and groups from/to a Google Workspace instance. It exports user-group memberships too.
+Google Workspace provides a set of softwares and products developed by Google. The Google Workspace connector exports and fulfills users, groups, organizational units, roles, and role assignments from/to a Google Workspace instance. It exports user-group memberships too.
 
 ## Prerequisites
 
@@ -23,16 +23,20 @@ Implementing this connector requires:
 - reading first the
 [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent)documentation;
 - a service account impersonating the following permission scopes:
-[https://www.googleapis.com/auth/admin.directory. user](https://www.googleapis.com/auth/admin.directory.user) and [https://www.googleapis.com/auth/admin.directory.group](https://www.googleapis.com/auth/admin.directory.group).
+[https://www.googleapis.com/auth/admin.directory.user](https://www.googleapis.com/auth/admin.directory.user) and [https://www.googleapis.com/auth/admin.directory.group](https://www.googleapis.com/auth/admin.directory.group).
 
-See [Google's documentation](https://developers.google.com/workspace/guides/**create**-credentials#googles-documentation) Google's documentation to **create** the service account with the right impersonation.
+See [Google's documentation](https://developers.google.com/workspace/guides/create-credentials#service-account-credentials) to create the service account with the right impersonation.
 
 :::tip
  Remember, Google's documentation describes this procedure as optional, while the Google Workspace connector requires it. 
 :::
+
+:::note
+ To discover custom user schemas during schema refresh, the service account also requires the [https://www.googleapis.com/auth/admin.directory.userschema.readonly](https://www.googleapis.com/auth/admin.directory.userschema.readonly) scope. Without this scope, the schema refresh still returns all standard attributes but will not include custom schema columns.
+:::
 ## Export
 
-This connector extracts users, groups and user-group memberships from a Google Workspace instance, and write the output to CSV files.
+This connector extracts users, groups, organizational units, roles, role assignments and user-group memberships from a Google Workspace instance, and write the output to CSV files.
 
 ### Configuration
 
@@ -80,7 +84,7 @@ The identifier of the connection and thus the name of the subsection must:
 
  | Name | Details | 
  | --- | --- | 
- | CredentialsFilePath required | **Type** String **Description** Path of Google Workspace's JSON credentials file. [See Google's documentation to **create** these credentials](https://developers.google.com/workspace/guides/**create**-credentials#see-googles-documentation-to-**create**-these-credentials). | 
+ | CredentialsFilePath required | **Type** String **Description** Path of Google Workspace's JSON credentials file. [See Google's documentation to **create** these credentials](https://developers.google.com/workspace/guides/create-credentials#service-account-credentials). | 
  | User required | **Type** String **Description** Email address of the service account mentioned in the prerequisites section. | 
  | --- | --- | 
  | --- | --- | 
@@ -90,13 +94,13 @@ The identifier of the connection and thus the name of the subsection must:
 
 This connector is meant to generate to the [Application Settings](../../../integration-guide/network-configuration/agent-configuration/appsettings)Export Output folder the following CSV files:
 
-- `GoogleExportFulfillment_Users.csv` and `GoogleExportFulfillment_Groups.csv` whose headers come
-from the entity type mapping's `ConnectionColumn` and from the entity association mappings' columns which are not _members_ columns;
+- `GoogleExportFulfillment_Users.csv`, `GoogleExportFulfillment_Groups.csv`, `GoogleExportFulfillment_OrgUnits.csv`, `GoogleExportFulfillment_Roles.csv` and `GoogleExportFulfillment_RoleAssignments.csv` whose headers come
+from the entity type mapping's `ConnectionColumn` and from the entity association mappings' columns which aren't _members_ columns;
 - `GoogleExportFulfillment_Members.csv` with the following columns:
     - **value**: ID of the group;
     - **MemberId**: ID of the group member.
 
-If the connection column describes a sub-property, then the name should have the following pattern: `{property}:{sub-property}`. The character `":"` should not be used in other situations.
+If the connection column describes a sub-property, then the name should have the following pattern: `{property}:{sub-property}`. The character `":"` shouldn't be used in other situations.
 
 > For example:
 >
@@ -106,7 +110,7 @@ If the connection column describes a sub-property, then the name should have the
 >
 > ```
 >
-> Note that we have here `AgreedToTerms` which is a single property, and `FamilyName` which is a
+> In this example, `AgreedToTerms` is a single property, and `FamilyName` is a
 > sub-property of `Name`, hence the name `Name:FamilyName` as the `ConnectionColumn`.
 
 ## Fulfill
@@ -139,18 +143,18 @@ Same as for export, fulfill is configured through connections.
 
  | Name | Details | 
  | --- | --- | 
- | CredentialsFilePath required | **Type** String **Description** Path of Google Workspace's JSON credentials file. [See Google's documentation to **create** these credentials](https://developers.google.com/workspace/guides/**create**-credentials#see-googles-documentation-to-**create**-these-credentials). | 
+ | CredentialsFilePath required | **Type** String **Description** Path of Google Workspace's JSON credentials file. [See Google's documentation to **create** these credentials](https://developers.google.com/workspace/guides/create-credentials#service-account-credentials). | 
  | User required | **Type** String **Description** Email address of the service account mentioned in the prerequisites section. | 
 
 ## Authentication
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 
-This connector has no credential attributes, and therefore does not use [RSA Encryption](../../../integration-guide/network-configuration/agent-configuration/rsa-encryption), nor a [CyberArk's AAM Credential Providers ](../../../integration-guide/network-configuration/agent-configuration/cyberark-application-access-manager-credential-providers)Vault.
+This connector has no credential attributes, and therefore doesn't use [RSA Encryption](../../../integration-guide/network-configuration/agent-configuration/rsa-encryption), nor a [CyberArk's AAM Credential Providers ](../../../integration-guide/network-configuration/agent-configuration/cyberark-application-access-manager-credential-providers)Vault.
 
 Still, data protection can be ensured through an [Azure Key Vault](../../../integration-guide/network-configuration/agent-configuration/azure-key-vault) safe.
 

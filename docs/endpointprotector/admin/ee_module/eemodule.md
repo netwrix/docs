@@ -12,13 +12,10 @@ Enforced Encryption, Formerly known as EasyLock, is a cross-platform solution th
 
 Used in combination with Endpoint Protector, Enforced Encryption allows USB storage devices to be
 identiﬁed as Trusted Device™ Level 1. This can ensure that USB Enforced Encryption is used on
-protected computers. Accessing data stored on the device can be done via the password the user
-conﬁgured or via a Master Password set by the Endpoint Protector administrator. The encrypted data
-can be opened by any user only after it is decrypted, therefore requiring the user to copy the
-information out of Enforced Encryption.
+protected computers. The user can access data stored on the device via the password they configured or via a Master Password set by the Endpoint Protector administrator. Any user can open the encrypted data only after decrypting it, which requires copying the information out of Enforced Encryption.
 
 :::warning
-Enforced Encryption is not compatible with devices that have a write-protection
+Enforced Encryption isn't compatible with devices that have a write-protection
 mechanism in place, preventing the modiﬁcation or deletion of data. The write-protection mechanism
 can be enforced using a hardware component (for example a switch on the USB device) or a software
 component.
@@ -27,8 +24,8 @@ component.
 
 :::note
 While Endpoint Protector can detect any Enforced Encryption USB encrypted device as a
-Trusted Device™ Level 1, to use the Enforced Encryption feature, a speciﬁc Enforced Encryption
-version must be used. This is available for the Endpoint Protector User Interface.
+Trusted Device™ Level 1, to use the Enforced Encryption feature, you must use a specific Enforced Encryption
+version. This is available for the Endpoint Protector User Interface.
 :::
 
 
@@ -36,11 +33,17 @@ Enforced Encryption works on read-only mode if the device was formatted on Windo
 Encryption conﬁgured on Windows or some ﬁles were encrypted on Windows. On macOS, these ﬁles can be
 decrypted, except for NTFS due to incompatibility with Enforced Encryption.
 
+## Enforced Encryption Endpoint Application
+
+The Enforced Encryption application is available for two platforms: Windows and macOS. Both operating systems have the same interface, and data encrypted on one operating system can be read by the other.
+
+![Enforced Encryption interface](eeinterface.webp)
+
 
 ## Enforced Encryption 140-3 FIPS Validated Engine
 
 :::note
-Starting with Netwrix Enforced Encryption version 3.0.0.2 (5.9.4.2 release), a new encryption engine has been introduced, replacing the previous 256-bit AES CBC-mode encryption with FIPS 140-3 validated cryptography. This FIPS 140-3 validated encryption provides the highest standards of data protection, ensuring compliance with the latest industry regulations. While the new encryption engine is fully backward compatible for existing users, allowing for a seamless upgrade and continued use of previously encrypted drives, USB sticks encrypted with the FIPS 140-3 validated engine will not be compatible with older Enforced Encryption Clients. Therefore, we recommend updating EE Clients to ensure compatibility.
+Starting with Netwrix Enforced Encryption version 3.0.0.2 (5.9.4.2 release), a new encryption engine has been introduced, replacing the previous 256-bit AES CBC-mode encryption with FIPS 140-3 validated cryptography. This FIPS 140-3 validated encryption provides the highest standards of data protection, ensuring compliance with the latest industry regulations. While the new encryption engine is fully backward compatible for existing users, allowing for a seamless upgrade and continued use of previously encrypted drives, USB sticks encrypted with the FIPS 140-3 validated engine will not be compatible with older Enforced Encryption Clients. Therefore, Netwrix recommends updating EE Clients to ensure compatibility.
 :::
 
 To verify the version of the 140-3 FIPS validated engine and view certification details, check the "About" section in the Enforced Encryption application.
@@ -53,61 +56,62 @@ Enforced Encryption is supported for both Mac and Windows computers.
 
 ![Enforced Encryption is supported for both Mac and Windows computers](deployment.webp)
 
-Deployment can be done automatically if **Allow Access if Trusted Device™ Level 1+** is selected
-for the USB Storage Devices. This can be done by going to Device Control, Global Rights section, or
-using the quick links provided, as per the image above.
+**Deployment happens automatically** if you select **Allow Access if Trusted Device™ Level 1+**
+for USB Storage Devices. You can do this in Device Control, Global Rights section, or by using the quick links provided, as shown in the preceding image.
 
-Manual deployment is also available. Download links for both Windows and Mac are available in this
+You can also deploy the Enforced Encryption Client directly on a USB stick through the EPP Client Notifier.
+
+![Enforced Encryption deployment by EPP Client Notifier](deployment2.webp)
+
+![Enforced Encryption deployment by EPP Client Notifier](deployment3.webp)
+
+When you click it, an OS popup should appear indicating that the process has started.
+![Enforced Encryption deployment popup](deployment4.webp)
+
+**Manual deployment** is also available. Download links for both Windows and Mac are available in this
 section. The downloaded Enforced Encryption ﬁle must be copied onto the USB storage device and
 executed from the root of the device. Due to extended security features for manual deployment,
 Enforced Encryption will have to be redownloaded from the Endpoint Protector interface each time it
 will be used to encrypt a new USB storage device.
 
+
+After successful deployment, the application asks the user to configure the encryption password, as shown in the following image.
+![Enforced Encryption first run config](eeconfig.webp)
+
+If you configure everything correctly, the Enforced Encryption login screen should appear.
+![Enforced Encryption splash screen login](eelogin.webp)
+
+Both Enforced Encryption deployments require the user only to configure a password.
+
 :::note
-Starting with Endpoint Protector 5.2.0.0, manual deployment can also be made by the user
-if the device is set on Allow Access, by pressing the small USB icon- Encrypt Device with Enforced
-Encryption.
-:::
-
-
-Both Enforced Encryption deployments are straightforward and require the user only to conﬁgure a
-password.
-
-:::note
-On Macs, USB storage devices with multiple partitions are not supported by Enforced
+On Macs, USB storage devices with multiple partitions aren't supported by Enforced
 Encryption and Trusted Device™ Level 1.
 :::
 
-
 ## Enforced Encryption Settings
 
-This section allows you to remotely manage Enforced Encryption encrypted devices. Before being able
-to take advantage of these features, you must conﬁgure a Master Password.
+From this section, you can remotely manage Enforced Encryption encrypted devices. Before using these features, you must configure a Master Password.
 
 ![Enforced Encryption Settings](settings.webp)
 
-In the Settings section, the Master Password can be conﬁgured, the Enforced Encryption File Tracing
-enabled, as well as deﬁning the installation and execution of Enforced Encryption only on computers
-where the Endpoint Protector Client is present.
+In the Settings section, you can configure the Master Password, enable the Enforced Encryption File Tracing, and define the installation and execution of Enforced Encryption only on computers where the Endpoint Protector Client is present.
 
-For both the Master Password and the User Password, complex rules can be enforced. If these are
-enabled, the password lengths, minimum characters, validity, history, and other settings can be set.
+For both the Master Password and the User Password, you can enforce complex rules. If you enable these, you can set the password lengths, minimum characters, validity, history, and other settings.
 
 ![ Master Password Settings](masterpasswordsettings.webp)
 
-Endpoint Protector allows tracing of ﬁles copied and encrypted on portable devices using Enforced
-Encryption. This option can be activated from inside the Settings windows located under the Enforced
+Endpoint Protector allows tracing of files copied and encrypted on portable devices using Enforced
+Encryption. You can activate this option from inside the Settings window located under the Enforced
 Encryption tab.
 
 ![File Tracing Settings](filetracing.webp)
 
-By checking the File Tracing option, all data transferred to and from devices using Enforced
-Encryption is recorded and logged for later auditing. The logged information is automatically sent
-to the Endpoint Protector Server if the Endpoint Protector Client is present on that computer. This
+When you enable the File Tracing option, Endpoint Protector records and logs all data transferred to and from devices using Enforced
+Encryption for later auditing. If the Endpoint Protector Client is present on that computer, it automatically sends the logged information to the Endpoint Protector Server. This
 action takes place regardless of the File Tracing option being enabled or not for that speciﬁc
 computer through the Device Control module.
 
-In case the Endpoint Protector Client is not present, the information is stored locally in an
+In case the Endpoint Protector Client isn't present, the information is stored locally in an
 encrypted format on the device and it will be sent at a later time from any other computer with the
 Endpoint Protector Client installed.
 
@@ -131,14 +135,14 @@ After deploying the Enforced Encryption Client with Read-Only (RO) mode enabled,
 :::
 
 :::warning Important
-When an Enforced Encryption (EE) encrypted USB drive is used by multiple users or across different machines with varying EE settings, the settings will not update automatically. To apply individual computer or user settings, the EPP administrator must update the related EE settings on the EPP Server at the computer/user level each time the USB drive is used on a specific computer or by a particular user. These settings will remain stored in the EE USB drive's configuration until further modifications are made.
+When multiple users or different machines use an Enforced Encryption (EE) encrypted USB drive with varying EE settings, the settings will not update automatically. To apply individual computer or user settings, the EPP administrator must update the related EE settings on the EPP Server at the computer/user level each time the USB drive is used on a specific computer or by a particular user. These settings will remain stored in the EE USB drive's configuration until you make further modifications.
 :::
 
 ## Enforced Encryption in Read-Only mode
 
 Netwrix Enforced Encryption Read-Only Mode for unmanaged computers is an innovative feature designed to maintain data security standards across non-corporate devices. It allows administrators to grant access to EE encrypted drives on personal computers, conference room setups, or exhibition areas while ensuring security through a Read-Only configuration. This enables the seamless transfer of corporate data across different environments, providing robust protection without sacrificing accessibility.
 
-To activate this mode, navigate to the "Global Settings" section related to Enforced Encryption, and switch on the "EE Read-Only mode" toggle. Please refer to [Global Settings - EE configuration](/docs/endpointprotector/admin/dc_module/globalsettings#easylock-settings).
+To activate this mode, navigate to the "Global Settings" section related to Enforced Encryption, and switch on the "EE Read-Only mode" toggle. refer to [Global Settings - EE configuration](/docs/endpointprotector/admin/dc_module/globalsettings#enforced-encryption-easylock-settings).
 
 ![Enforced Encryption Read-Only Mode](eeromode.webp)
 
@@ -155,14 +159,13 @@ password, and more.
 
 Protecting Data in Transit is essential to ensure no third party has access to data in case a device
 is lost or stolen. The Enforced Encryption solution gives administrators the possibility to protect
-conﬁdential data on portable devices in case of loss or theft. Ensuring only encrypted devices can
-be used on computers where Endpoint Protector is present can be done by utilizing Trusted Device™.
+conﬁdential data on portable devices in case of loss or theft. Use Trusted Device™ to ensure only encrypted devices can be used on computers where Endpoint Protector is present.
 Trusted Device™ must receive authorization from the Endpoint Protector Server, otherwise, they will
 be unusable. There are four levels of security for Trusted Device™:
 
 - Level 1 – Minimum security for oﬃce and personal use with a focus on software-based encryption for
   data security. Any USB Flash Drive and most other portable storage devices can be turned into a
-  Trusted Device™ Level 1. It does not require any speciﬁc hardware but it does need an encryption
+  Trusted Device™ Level 1. It doesn't require any speciﬁc hardware but it does need an encryption
   solution such as Enforced Encryption
 - Level 2 – Medium security level with biometric data protection or advanced software-based data
   encryption. It requires special hardware that includes security software and has been tested for
@@ -180,7 +183,7 @@ be unusable. There are four levels of security for Trusted Device™:
   ProtectorEndpoint Protector Client is present.
 
 :::note
-If a Trusted Device™ Level 1 right is enabled and a Trusted Device™ level 2, 3 or 4 is
+If a Trusted Device™ Level 1 right is enabled and a Trusted Device™ level 2, 3, or 4 is
 connected, the right will apply accordingly.
 :::
 

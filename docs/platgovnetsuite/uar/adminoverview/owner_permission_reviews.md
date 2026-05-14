@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Permission Reviews
 
-This type of review is used to keep your role permissions up to date. When you click on a permission
+This type of review is used to keep your role permissions up to date. When you click a permission
 review, the permissions list is displayed. Access permission reviews from **UAR List** in your menu
 bar, or one of the review shortcuts.
 
@@ -21,7 +21,7 @@ review.
 
 Filters help you organize your Permissions review list:
 
-- **Level**: Permission Level can be **All** (default), **View**, **Create**, **Edit** or **Full**.
+- **Level**: Permission Level can be **All** (default), **View**, **Create**, **Edit**, or **Full**.
 - **Category**: Permission Category can be **All** (default), **Transactions**, **Reports**,
   **Lists**, **Setup**, or **Custom Records**.
 - **Role Permission**: Full list of all of your defined permissions. **All** is the default.
@@ -41,7 +41,7 @@ You can perform these actions as part of your review:
 - Add a Permission
 - Complete the Permission Review
 
-Once an action is taken, the Permission review changes to **In Progress**.
+After an action is taken, the Permission review changes to **In Progress**.
 
 Other available actions:
 
@@ -57,7 +57,7 @@ Other available actions:
 
 1. Select one or more **Role Permissions**.
 2. Review the **Permission** and the **Level** are appropriate for the role. If correct, click
-   **Mark Completed**. The status is updated. You cannot undo this action.
+   **Mark Completed**. The status is updated. You can't undo this action.
    ![Mark the Permission review complete](/images/platgovnetsuite/uar/uar_owner/permission_review_complete.webp)
 
 ### Change Permission Level
@@ -74,7 +74,7 @@ To change a permission level:
 
     ![Reason for change](/images/platgovnetsuite/uar/uar_owner/change_request_reason.webp)
 
-    A Change Request is generated for each level change. Status is changed to either **Change
+    A Change Request is generated for each level change. Status changes to either **Change
     Request** and the **Change Request ID** added, or **Waiting for CR** if there is an existing
     change request in progress as part of another review. Click the **Change Request ID** to open
     the Change Request.
@@ -85,7 +85,7 @@ To change a permission level:
     is rejected (**CR Rejected status**) or canceled (**CR Cancelled**), the permission row is
     returned to a pending state.
 
-5. You can click on the **Change Request ID** link and review the **Approver Notes**.
+5. You can click the **Change Request ID** link and review the **Approver Notes**.
 
 ### Add a Permission
 
@@ -98,7 +98,7 @@ To add a permission:
 4. Enter a brief description of why the change is requested when prompted for the **Reason for
    Change**. Click **Accept** when complete.
 
-    A Change Request is generated for each new permission. Status is changed to either **Change
+    A Change Request is generated for each new permission. Status changes to either **Change
     Request** and the **Change Request ID** added, or **Waiting for CR** if there is an existing
     change request in progress as part of another review. Click the **Change Request ID** to open
     the Change Request.
@@ -111,7 +111,7 @@ To add a permission:
 ### Complete the Permission Review
 
 Each permission must be in the **Complete** or **CR Complete status**, with all change requests
-finished before you can click **Complete Review**. Once a review is complete, no further changes can
+finished before you can click **Complete Review**. After a review is complete, no further changes can
 be made.
 
 ![Permission review complete when all rows are complete](/images/platgovnetsuite/uar/uar_owner/permission_review_complete.webp)

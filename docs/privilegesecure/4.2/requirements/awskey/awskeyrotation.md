@@ -11,12 +11,12 @@ rotate security keys. When creating an AWS KMS protection key for Privilege Secu
 must start by creating a policy in AWS. Once a AWS policy is created, a connection to the AWS policy
 can be configured using Privilege Secure Rotate AWS Key tool.
 
-The AWS KMS key is not used to encrypt the secret key, but will be used to encrypt the key that is
+The AWS KMS key isn't used to encrypt the secret key, but is used to encrypt the key that is
 used to encrypt the secret key.
 
 ## Rotate AWS Key
 
-Follow the steps to rotate a AWS KMS Key.
+To rotate a AWS KMS Key.
 
 **Step 1 –** Locate the KeyTools folder in the installation directory.
 
@@ -38,14 +38,14 @@ AWS KMS key into the AWS Connection settings fields.
 **Step 6 –** When all fields are completed, click the **Rotate** button to update all encrypted
 values in the Privilege Secure system.
 
-The tool will take a few minutes to run (especially on larger systems) and the log window will show
+The tool takes a few minutes to run (especially on larger systems) and the log window shows
 the results of the rotation.
 
 :::note
 If the AWS KMS key is rotated, there is no need to rotate the NPS key. Encrypted values
-will continue to be decrypted and any new encryption will use the updated AWS KMS key. If the AWS
-user Access Key is rotated it will be necessary to rotate the NPS key to update it to use the new
-Ids. Best practice for use of access keys is to rotate them regularly. **Do not** delete the AWS
+continues to be decrypted and any new encryption uses the updated AWS KMS key. If the AWS
+user Access Key is rotated, rotate the NPS key to update it to use the new
+Ids. Best practice for use of access keys is to rotate them regularly. **don't** delete the AWS
 user Access Key without rotating the NPS key first.
 :::
 

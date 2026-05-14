@@ -1,0 +1,10 @@
+{
+  "label": "Changes in the Server Manager",
+  "position": 10,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "changes_in_the_adminclient"
+  }
+}

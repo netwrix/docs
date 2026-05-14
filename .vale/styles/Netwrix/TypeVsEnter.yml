@@ -1,10 +1,9 @@
-extends: existence
-message: "Use 'enter' instead of 'type' when instructing users to input text into a field."
-level: suggestion
+extends: substitution
+message: "Use '%s' — 'enter' is hardware-neutral and preferred over 'type' when instructing users to supply text."
+level: warning
 ignorecase: true
-tokens:
-  - '\btype your\b'
-  - '\btype the\b'
-  - '\btype in\b'
-  - '\btype a\b'
-  - '\btype an\b'
+swap:
+  '\btype the\b': 'Enter the'
+  '\btype a\b': 'Enter a'
+  '\btype an\b': 'Enter an'
+  '\btype your\b': 'Enter your'

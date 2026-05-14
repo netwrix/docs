@@ -1,0 +1,10 @@
+{
+  "label": "Browser Add-ons",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "browser_add-ons"
+  }
+}

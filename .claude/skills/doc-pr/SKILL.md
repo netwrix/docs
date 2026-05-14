@@ -1,12 +1,14 @@
 ---
 name: doc-pr
-description: "Orchestrate a full documentation review for pull requests targeting dev. Runs Vale linting, Dale linting, and editorial review on changed markdown files, then posts a structured comment to the PR. Use this skill whenever a PR involves markdown files in docs/ and targets the dev branch — triggered automatically by the doc-pr GitHub Actions workflow on PR open, sync, or when invoked manually via /doc-pr."
+description: "Orchestrate an editorial review for pull requests targeting dev. Reviews changed markdown files and posts a structured comment to the PR. Vale and Dale issues are auto-fixed separately by the vale-autofix workflow. Use this skill whenever a PR involves markdown files in docs/ and targets the dev branch — triggered automatically by the doc-pr GitHub Actions workflow on PR open, sync, or when invoked manually via /doc-pr."
 argument-hint: "[changed-files-csv] [pr-number]"
 ---
 
 # Doc PR Review
 
-You orchestrate a three-stage documentation review pipeline for pull requests. Your job is to run each stage, collect the results, and post a single comprehensive review comment to the PR.
+You orchestrate an editorial review for pull requests. Your job is to review changed files and post a comprehensive review comment to the PR.
+
+Vale and Dale issues are auto-fixed separately by the vale-autofix workflow. Do not run Vale, Dale, or include their results in your review.
 
 Read `docs/CLAUDE.md` before starting — it contains the writing standards and Vale guidance you need for the editorial review stage.
 
@@ -24,80 +26,44 @@ If the environment variables are empty, check for positional arguments (`$1` = f
 
 Split the comma-separated file list into individual file paths for processing.
 
-## Stage 1: Vale Linting
+**Exclude KB files:** Skip any file under `docs/kb/`. KB articles have their own style conventions and are not subject to editorial review. If the file list contains only KB files, post a comment noting that no reviewable files were found and exit.
 
-Run Vale on each changed file and capture the output.
-
-```bash
-vale --output=line <file>
-```
-
-Collect all Vale output. If Vale finds no issues for a file, note that file as clean. If Vale is not installed, report that Vale was unavailable and skip to Stage 2.
-
-## Stage 2: Dale Linting
-
-For each changed file, invoke the Dale linter skill:
-
-```
-/dale <file>
-```
-
-Dale returns a table of rule violations or a clean report. Collect all Dale output.
-
-## Stage 3: Editorial Review
+## Editorial Review
 
 This stage applies the doc-help editing analysis to the PR changes — but non-interactively. You are producing a written review, not having a conversation.
 
-1. Run `gh pr diff $DOC_PR_NUMBER` to get the diff
-2. For each changed file, read the full file content
-3. Analyze ONLY the added or modified lines (lines starting with `+` in the diff) against these four priorities:
+1. The PR diff is already saved at `/tmp/pr-diff.txt` — read it with the Read tool. Identify the added lines (starting with `+`, excluding `+++` file headers) and note which file each change belongs to.
+2. For each changed file, **read the full file content**. This gives you the context needed to judge whether new content fits logically, whether a new term was already defined earlier, and whether a new step assumes knowledge established elsewhere in the document.
+3. Using the full file as context, analyze the **added lines only** against these priorities:
 
-   **Structure** — Is the order logical? Does the overview set up what follows? Are heading levels correct?
+   **Structure** — Does the new content fit logically in its position? Would a reader scanning the document find it where they expect it? If it introduces a new section or step, is the placement correct relative to surrounding content?
 
-   **Clarity** — Are there sentences that are hard to parse? Concepts introduced without examples? Ambiguous references?
+   **Clarity** — Is the new content easy to understand on its own? Does it use a term or concept that hasn't been defined yet in the document?
 
-   **Voice** — Passive constructions, first person, impersonal phrases, condescending language? Does it follow Netwrix style (active voice, present tense, second person for procedures)?
-
-   **Surface** — Word choice, wordiness, redundancy? Anything Vale or Dale might miss?
+   **Completeness** — Does the new content leave the reader with an unanswered question? If it introduces a new concept, term, step, or instruction, does it provide enough context — or does the reader need to look elsewhere?
 
 For each issue found, note:
 - The file path and line number
-- The priority category (Structure, Clarity, Voice, or Surface)
+- The priority category (Structure, Clarity, or Completeness)
 - A specific description of the problem
 - A concrete suggested fix
 
-Only report issues on lines that were added or modified in this PR. Do not flag preexisting issues.
+**Report issues only on added lines.** The full file is context for your judgment — not a source of additional issues to flag. Do not report problems on lines that were unchanged in this PR.
+
+**Idiom tagging:** When the editorial review catches an idiom or figurative expression, tag it with `[idiom]` at the start of the bullet so the fixer can identify it and add it to the Vale `Idioms.yml` rule. Example:
+
+- **Surface** — [idiom] Line 42: "get the ball rolling" is an idiom. Suggested fix: "begin the process"
 
 ## Output — MANDATORY: Post as PR Comment
 
-After completing all three stages, you MUST write the review to a file and post it as a PR comment. This is the most important step — the review is useless if it is not posted.
+After completing the review, you MUST write the results to a file and post it as a PR comment. This is the most important step — the review is useless if it is not posted.
 
 **Step 1: Write the review to a temporary file.**
 
-Write the full review body to `/tmp/doc-pr-review.md` using the Write tool. Follow this structure:
+Write the full review body to `/tmp/doc-pr-review.md` using the Write tool. Follow this structure exactly — the footer with `@claude` instructions MUST be included in every review:
 
 ```markdown
 ## Documentation PR Review
-
-### Vale Linting
-
-**path/to/file.md**
-
-| Line | Rule | Message | Offending Text |
-|------|------|---------|----------------|
-| N | `RuleName` | description of the issue | `offending text` |
-
-(Repeat for each file. Write "No issues found." if clean.)
-
-### Dale Linting
-
-**path/to/file.md**
-
-| Line | Rule | Message | Offending Text |
-|------|------|---------|----------------|
-| N | `rule-name` | description of the issue | `offending text` |
-
-(Repeat for each file. Write "No issues found." if clean.)
 
 ### Editorial Review
 
@@ -105,13 +71,13 @@ Write the full review body to `/tmp/doc-pr-review.md` using the Write tool. Foll
 
 - **Structure** — Line N: description. Suggested fix: "..."
 - **Clarity** — Line N: description. Suggested fix: "..."
-- **Voice** — Line N: description. Suggested fix: "..."
+- **Completeness** — Line N: description. Suggested fix: "..."
 
 (Repeat for each file. Write "No issues found." if clean.)
 
 ### Summary
 
-N Vale issues, N Dale issues, N editorial suggestions across N files.
+N editorial suggestions across N files. Vale and Dale issues are auto-fixed separately.
 
 ---
 
@@ -119,8 +85,7 @@ N Vale issues, N Dale issues, N editorial suggestions across N files.
 
 Comment `@claude` on this PR followed by your instructions to get help:
 
-- `@claude fix all issues` — fix all Vale, Dale, and editorial issues
-- `@claude fix only the Vale issues` — fix just the linting problems
+- `@claude fix all issues` — fix all editorial issues
 - `@claude help improve the flow of this document` — get writing assistance
 - `@claude explain the voice issues` — understand why something was flagged
 
@@ -140,6 +105,6 @@ If the `gh pr comment` command fails, report the error. Do NOT end your turn wit
 ## Behavioral Notes
 
 - Be thorough but not pedantic — focus on issues that genuinely affect reader comprehension or violate Netwrix standards
-- When Vale and your editorial review flag the same issue, include it only in the Vale section (Vale is more specific)
-- If a file has zero issues across all three stages, still list it with "No issues found." so the reviewer knows it was checked
+- Do not flag issues that Vale or Dale already catch (both auto-fixed separately) — focus on what linters miss
+- If a file has zero editorial issues, still list it with "No issues found." so the reviewer knows it was checked
 - Never modify the files — this is a read-only review

@@ -6,7 +6,7 @@ keywords: [training, course]
 description: "Learn about the courses you are enrolled in for the Netwrix product you own"
 ---
 
-You will be automatically enrolled in the product learning path for the products you own. Some products have solution-specific learning paths:
+The Learning Library automatically enrolls you in the product learning path for the products you own. Some products have solution-specific learning paths:
 
 * [Netwrix 1Secure Learning Path](./1secure.md)
 * [Netwrix Access Analyzer Learning Paths](./access-analyzer/index.md)
@@ -17,21 +17,23 @@ You will be automatically enrolled in the product learning path for the products
     * [Netwrix Access Analyzer – SharePoint Learning Path](./access-analyzer/sharepoint.md)
     * [Netwrix Access Analyzer – Windows Learning Path](./access-analyzer/windows.md)
     * [Netwrix Activity Monitor Learning Path](./access-analyzer/activity-monitor.md)
+* [Netwrix Access Analyzer 26 Learning Path](./access-analyzer-data.md)
 * [Netwrix Auditor Learning Path](./auditor.md)
 * [Netwrix Change Tracker Learning Path ](./change-tracker.md)
 * [Netwrix Data Classification Learning Path](./data-classification.md)
 * [Netwrix Directory Manager Learning Path](./directory-manager.md)
-* [Netwrix Endpoint Policy Manager Learning Path](./endpoint-policy-manager.md)
 * [Netwrix Endpoint Protector Learning Path](./endpoint-protector.md)
 * [Netwrix Identity Manager Learning Path](identity-manager.md)
 * [Netwrix Identity Recovery Learning Path](identity-recovery.md)
 * [Netwrix Password Policy Enforcer Learning Path](./password-policy-enforcer.md)
 * [Netwrix Password Reset Learning Path](./password-reset.md)
 * [Netwrix Password Secure Learning Path](./password-secure.md)
+* [Netwrix PingCastle Learning Path](./pingcastle.md)
 * [Netwrix Platform Governance for NetSuite Learning Paths](./platform-governance-for-netsuite/index.md)
     * [Netwrix Platform Governance for NetSuite Learning Path](./platform-governance-for-netsuite/core.md)
     * [Netwrix Platform Governance for NetSuite – Onboard New NetSuite Admins Learning Path](./platform-governance-for-netsuite/new-admin.md)
 * [Netwrix Platform Governance for Salesforce Learning Path](./platform-governance-for-salesforce.md)
+* [Netwrix PolicyPak Learning Path](./policypak.md)
 * [Netwrix Privilege Secure Learning Path](./privilege-secure.md)
 * [Netwrix Threat Manager Learning Path ](./threat-manager.md)
 * [Netwrix Threat Prevention Learning Path](./threat-prevention.md) 

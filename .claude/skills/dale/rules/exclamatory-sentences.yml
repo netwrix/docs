@@ -1,0 +1,3 @@
+message: "Don't use exclamatory sentences."
+level: warning
+reason: "This rule should trigger when the user or agent writes exclamatory sentences."

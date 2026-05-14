@@ -21,7 +21,7 @@ Directory domains, if any. Each added domain represents a sync policy.
 ![Integrations interface on the Active Directory Sync page](/images/threatmanager/3.0/administration/configuration/integrations/page.webp)
 
 A service named Active Directory Service continuously runs to collect data for the specified
-domain(s). It evaluates the USN value of an object and syncs when the object changes. The table
+domains. It evaluates the USN value of an object and syncs when the object changes. The table
 provides the following information:
 
 - Name – Name of the domain. This may be either the domain DNS name or domain controller hostname.
@@ -41,15 +41,13 @@ Directory Sync in the navigation pane.
 ## Add an Active Directory Sync Policy
 
 :::note
-Prior to adding an Active Directory Sync policy, you must first configure a Credential
+Before adding an Active Directory Sync policy, configure a Credential
 Profile with credentials properly provisioned for running the sync operation for the domain. See the
 [Application Server Requirements](/docs/threatmanager/3.0/requirements/server.md) topic for the permissions. See
 the [Credential Profile Page](/docs/threatmanager/3.0/administration/configuration/integrations/credentialprofile.md) topic for additional information on creating a
 profile.
 :::
 
-
-Follow the steps to add a domain/Active Directory sync policy.
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -59,13 +57,13 @@ Add New Integration window opens.
 
 ![Add New Integration window with Active Directory Sync type selected](/images/threatprevention/7.5/reportingmodule/configuration/integrations/activedirectorysync.webp)
 
-**Step 3 –** In the Type drop-down menu, select Active Directory Sync.
+**Step 3 –** In the Type dropdown menu, select Active Directory Sync.
 
 **Step 4 –** Enter the following information:
 
 - Domain – Enter the domain DNS name or domain controller hostname in the required format of
   [DOMAIN.COM], e.g. NT-DC03.NWXTech.com
-- Credential Profile – Select the Credential Profile by name from the drop-down menu. This was
+- Credential Profile – Select the Credential Profile by name from the dropdown menu. This was
   pre-created in the Credential Profiles page.
 - Enabled / Disabled – Toggle indicates if the policy is enabled to run the sync service. By default
   it is set to Enabled.
@@ -83,10 +81,7 @@ Add New Integration window opens.
   [5.1.1.2 Using SSL/TLS](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/8e73932f-70cf-46d6-88b1-8d9f86235e81#5112-using-ssltls)
   article for additional information.
 
-**Step 5 –** Click **Test Connection** to ensure connection to the domain. This will take a moment.
-Then a message will appear in the upper right corner of the console indicating a successful or
-failed connection.If successful, move on to the next step. If failed, recheck your entries for error
-and repeat this step until a successful connection is established.
+**Step 5 –** Click **Test Connection** to ensure connection to the domain. A message appears in the upper right corner of the console indicating a successful or failed connection. If successful, move on to the next step. If the connection fails, check your entries for errors and repeat this step.
 
 **Step 6 –** Click Add. The Add New Integration window closes.
 
@@ -94,8 +89,6 @@ The domain or domain controller (the Domain value supplied in Step 4) is listed 
 navigation pane. Repeat the process to add additional domains.
 
 ## Active Directory Sync Policy Details
-
-Follow the steps to view the details of an Active Directory sync policy.
 
 **Step 7 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -124,8 +117,7 @@ Select the domain from the list to see modification options:
 
 ### Domain Configuration Tab
 
-The Domain Configuration tab displays the sync policy settings entered for the selected domain. With
-the exception of the domain itself, these settings can be updated as needed.
+The Domain Configuration tab displays the sync policy settings entered for the selected domain. Except for the domain itself, these settings can be updated as needed.
 
 ![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatmanager/3.0/administration/configuration/integrations/domainconfigurationtab.webp)
 
@@ -135,8 +127,7 @@ The Domain Configuration tab displays the following settings:
   [DOMAIN.COM], e.g. NT-DC03.NWXTech.com
 - Credential Profile – Displays the Credential Profile by name
 - Enabled / Disabled – Toggle indicates if the policy is enabled to run the sync service
-- Max Renew Ticket Age (days) – Displays the value indicates the maximum number of days of the Renew
-  Ticket Age for the domain. This value must match the domain configuration. See the Microsoft
+- Max Renew Ticket Age (days) – The maximum number of days for the Renew Ticket Age for the domain. This value must match the domain configuration. See the Microsoft
   [Max-Renew-Age attribute](https://docs.microsoft.com/en-us/windows/win32/adschema/a-maxrenewage)
   article for additional information.
 
@@ -145,8 +136,7 @@ The Domain Configuration tab displays the following settings:
     :::
 
 
-- Max Ticket Age (hours) – Displays the value indicates the maximum number of hours of the Ticket
-  Age for the domain. This value must match the domain configuration. See the Microsoft
+- Max Ticket Age (hours) – The maximum number of hours for the Ticket Age for the domain. This value must match the domain configuration. See the Microsoft
   [Max-Ticket-Age attribute](https://docs.microsoft.com/en-us/windows/win32/adschema/a-maxticketage)
   article for additional information.
 
@@ -159,14 +149,12 @@ The Domain Configuration tab displays the following settings:
   Microsoft
   [5.1.1.2 Using SSL/TLS](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/8e73932f-70cf-46d6-88b1-8d9f86235e81#5112-using-ssltls)
   article for additional information.
-- Perform a full scan on next run – Indicates whether the next sync will only look for domain
-  changes or run a full scan of the domain. By default, this option is enabled for the first sync
-  executed when a new domain is added; however, it is disabled automatically after the first sync.
-  This can be used to fully refresh domain information, but is typically not needed for normal
+- Perform a full scan on next run – Indicates whether the next sync looks only for domain
+  changes or runs a full scan of the domain. By default, this option is enabled for the first sync
+  executed when a new domain is added; however, Threat Manager disables it automatically after the first sync.
+  Use this option to fully refresh domain information, though it is typically not needed for normal
   operation.
-- Test Connection – Click **Test Connection** to ensure connection to the domain. This will take a
-  moment. Then a message will appear in the upper right corner of the console indicating a
-  successful or failed connection.
+- Test Connection – Click **Test Connection** to ensure connection to the domain. A message appears in the upper right corner of the console indicating a successful or failed connection.
 
 The Save button is enabled when any settings are modified. Click it to commit the changes before
 leaving the page.
@@ -191,35 +179,31 @@ The table provides the following information:
 - Status – Event status for the sync task
 
 The table is designed to display 10 records at a time, by default. However, you can set this to 50,
-100, or 1,000 rows with the drop-down menu above the right corner of the table. There is a search
+100, or 1,000 rows with the dropdown menu above the right corner of the table. There is a search
 box above the left corner of the table. Page navigation buttons are below the table. You can also
 export the data from the current page using the **Export CSV** button.
 
 ## Modify Active Directory Sync Policy
 
-Follow the steps to modify the Active Directory Sync policy for the selected Active Directory
-domain.
-
 **Step 1 –** On the Integrations interface, click **Active Directory Sync** in the navigation pane
 to view a list of the already created Active Directory Sync policies, if any. A policy is
 represented by the domain for which it is created.
 
-**Step 2 –** The Domain Configuration tab opens, where you can make the desired modification.
+**Step 2 –** The Domain Configuration tab opens. Make the changes you want.
 
 :::tip
-Remember, the domain cannot be modified.
+The domain can't be modified.
 :::
 
 
 ![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatmanager/3.0/administration/configuration/integrations/domainconfigurationtab.webp)
 
 **Step 3 –** To modify the Credential Profile, select the Credential Profile by name from the
-drop-down menu. This was pre-created in the Credential Profiles page.
+dropdown menu. This was pre-created in the Credential Profiles page.
 
 :::note
 If you modify the Credential Profile for a domain, click **Test Connection** to ensure
-connection to the domain. This will take a moment. Then a message will appear in the upper right
-corner of the console indicating a successful or failed connection.
+connection to the domain. A message appears in the upper right corner of the console indicating a successful or failed connection.
 :::
 
 
@@ -229,7 +213,7 @@ corner of the console indicating a successful or failed connection.
 
 **Step 6 –** For the Max Ticket Age (hours) value, modify the value by typing in the textbox.
 
-**Step 7 –** Select or deselect the **Use SSL** box for the desired security state for communication
+**Step 7 –** Select or deselect the **Use SSL** box for the security state you want for communication
 with the domain.
 
 **Step 8 –** Select the **Perform a full scan on next run** checkbox to force the next sync to run a

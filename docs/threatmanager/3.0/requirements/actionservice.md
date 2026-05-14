@@ -22,7 +22,7 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English language installation
 
 **RAM, CPU, and Disk Space**
 

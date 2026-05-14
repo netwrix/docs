@@ -24,7 +24,7 @@ You can also include the username and/or domain in the URL:
 
 :::info
 Install the SSL Certificate the web server and use the HTTPS protocol if Password
-Policy Enforcer/Web will be used on an unencrypted network. See the
+Policy Enforcer/Web is used on an unencrypted network. See the
 [Installing and Using an SSL Certificate](/docs/passwordpolicyenforcer/10.2/web/securing_web.md)
 topic for additional information.
 :::
@@ -39,7 +39,7 @@ Enforcer/Web without the reminder message.
 
 ## Changing a Password
 
-Follow the steps below to change a password with Password Policy Enforcer/Web.
+Complete the following steps to change a password with Password Policy Enforcer/Web.
 
 **Step 1 –** Click **Change Password** on the Welcome page.
 

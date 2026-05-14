@@ -1,0 +1,22 @@
+@startuml component
+package "RecordProperty" {
+	class RecordProperty {
+		ExtensionKind : Int32
+		IsExcluded : Boolean
+		--
+		Property : EntityProperty
+		Section : RecordSection
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "RecordSection" {
+	class RecordSection {
+	}
+}
+RecordProperty "0..*" --  "1"EntityProperty
+RecordProperty "0..*" --  "1"RecordSection
+hide empty members
+@enduml

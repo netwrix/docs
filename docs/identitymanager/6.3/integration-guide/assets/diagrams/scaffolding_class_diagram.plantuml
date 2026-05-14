@@ -1,0 +1,69 @@
+@startuml component
+package "Scaffolding" {
+	class Scaffolding {
+		DisplayName_L1 : String
+		Generator : Int32
+		Identifier : String
+		IsEnabled : Boolean
+		IsIncremental : Boolean
+		JobIdentifier : String
+		OldAlgorithm : Boolean
+		--
+		Agent : Agent
+		Connector : Connector
+		EntityType : EntityType
+		Package : ConnectionPackage
+		Profile : Profile
+		Property : EntityProperty
+		ScaffoldingScaffoldingArguments : ScaffoldingArgument[]
+		Universe : Universe
+		Workflow : Workflow
+	}
+}
+package "Agent" {
+	class Agent {
+	}
+}
+package "Connector" {
+	class Connector {
+	}
+}
+package "EntityType" {
+	class EntityType {
+	}
+}
+package "ConnectionPackage" {
+	class ConnectionPackage {
+	}
+}
+package "Profile" {
+	class Profile {
+	}
+}
+package "EntityProperty" {
+	class EntityProperty {
+	}
+}
+package "ScaffoldingArgument" {
+	class ScaffoldingArgument {
+	}
+}
+package "Universe" {
+	class Universe {
+	}
+}
+package "Workflow" {
+	class Workflow {
+	}
+}
+Scaffolding "0..*" --  "0..1"Agent
+Scaffolding "0..*" --  "0..1"Connector
+Scaffolding "0..*" --  "0..1"EntityType
+Scaffolding "0..*" --  "0..1"ConnectionPackage
+Scaffolding "0..*" --  "0..1"Profile
+Scaffolding "0..*" --  "0..1"EntityProperty
+Scaffolding "1" --  "0..*"ScaffoldingArgument
+Scaffolding "0..*" --  "0..1"Universe
+Scaffolding "0..*" --  "0..1"Workflow
+hide empty members
+@enduml

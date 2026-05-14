@@ -12,7 +12,7 @@ reached in a Tier, the approvers in the next Tier are notified. Each Tier must a
 in sequence. See the Approvals Dashboard topic for additional information on how to approve a
 requested session.
 
-Follow the steps to add an approval workflow to the console.
+To add an approval workflow to the console.
 
 **Step 1 –** Navigate to the **Policy** > **Access Policies** > **Connection Profiles** page.
 
@@ -22,21 +22,21 @@ Follow the steps to add an approval workflow to the console.
 
 ![Add approval teir to workflow](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/addapprovalteirtoworkflow.webp)
 
-**Step 4 –** Once the policy has been created, click the **Add Tier** icon (green + in a circle) to add an Approval Tier.
+**Step 4 –** after the policy has been created, click the **Add Tier** icon (green + in a circle) to add an Approval Tier.
 
 ![Tier 1 Escalation Options](/images/privilegesecure/25.12/accessmanagement/admin/policy/add/tier1escalationoptions.webp)
 
-Workflow Tier(s) (only visible when Approval Type is set to Tiered):
+Workflow Tiers (only visible when Approval Type is set to Tiered):
 
-- Delete icon – Deletes the selected Workflow Tier (A confirmation window will display)
+- Delete icon – Deletes the selected Workflow Tier (A confirmation window displays)
 - Edit icon – Modify the escalation settings for the Workflow Tier
 - Escalation – The amount of time available to approve the request before it is escalated
-- Escalation Account – The user that the request will be escalated to
-- Escalation Group – The group that the request will be escalated to
-- Approvers – The user(s) or group(s) that can approve a request. See the Approvals Dashboard topic
-  for additional information on how to approve a requested session.
+- Escalation Account – The user that the request is escalated to
+- Escalation Group – The group that the request is escalated to
+- Approvers – The users or groups that can approve a request. See the Approvals Dashboard topic
+for additional information on how to approve a requested session.
 - Add Approver icon – Add a user or group as an approver
-- Remove Approver icon – Removes the selected approver (A confirmation window will display)
+- Remove Approver icon – Removes the selected approver (A confirmation window displays)
 - Approvals Required – The number of approvers required to approve the request
 
 **Step 5 –** Click the **Edit** icon to open the Tier Escalation window.
@@ -46,9 +46,9 @@ Workflow Tier(s) (only visible when Approval Type is set to Tiered):
 **Step 6 –** In the Tier Escalation window, enter the following information:
 
 - Escalation in Minutes – The amount of time available to approve the request before it is escalated
-  (default is 10 minutes)
-- Escalation Account – The user that the request will be escalated to
-- Escalation Group – The group that the request will be escalated to
+(default is 10 minutes)
+- Escalation Account – The user that the request is escalated to
+- Escalation Group – The group that the request is escalated to
 
 **Step 7 –** Click **Okay** to save the escalation settings.
 
@@ -61,16 +61,16 @@ Workflow Tier(s) (only visible when Approval Type is set to Tiered):
 The Add Users and Groups as Approvers window has the following features:
 
 - Search – Searches the table or list for matches to the search string. When matches are found, the
-  table or list is filtered to the matching results.
+table or list is filtered to the matching results.
 - Radio buttons to filter by users or groups
 - Available Users/Groups – Shows all users and groups added to the console
 - Users & Groups to Add – Shows the users and groups to be added to the Workflow Tier as Approvers
 - Column headers can be sorted in ascending or descending order:
 
-    - Type – User or group
-    - Name – Name of the user or group
-    - User Name – User or group SAM Account Name
-    - Email – User or group email address
+- Type – User or group
+- Name – Name of the user or group
+- User Name – User or group SAM Account Name
+- Email – User or group email address
 
 **Step 9 –** Filter by Users or Groups, or use the Search feature.
 
@@ -79,7 +79,7 @@ Available Users/Groups table and it is immediately moved to the Users & Groups t
 
 :::info
 It is usually desirable to add more approvers than required to approve the
-request, in order to ensure that approval is granted before the escalation timeout is reached.
+request, to ensure that approval is granted before the escalation timeout is reached.
 :::
 
 
@@ -93,18 +93,18 @@ Available Users/Groups table.
 **Step 13 –** Set the Approvals Required:
 
 - Click the **More** or **Less** icons to change the number of approvers required to approve the
-  request.
+request.
 
 Workflow Tier settings (only visible when Approval Type is set to Tiered):
 
-- Delete icon – Deletes the selected Workflow Tier (A confirmation window will display)
+- Delete icon – Deletes the selected Workflow Tier (A confirmation window displays)
 - Edit icon – Modify the escalation settings for the Workflow Tier
 - Escalation – The amount of time available to approve the request before it is escalated
-- Escalation Account – The user that the request will be escalated to
-- Escalation Group – The group that the request will be escalated to
-- Approvers – The user(s) or group(s) that can approve a request.
+- Escalation Account – The user that the request is escalated to
+- Escalation Group – The group that the request is escalated to
+- Approvers – The users or groups that can approve a request.
 - Add Approver icon – Add a user or group as an Approver.
-- Remove Approver icon – Removes the selected Approver (A confirmation window will display)
+- Remove Approver icon – Removes the selected Approver (A confirmation window displays)
 - Approvals Required – The number of Approvers required to approve the request
 
 :::tip
@@ -116,7 +116,7 @@ though it is usually desirable to have more than the minimum.
 **Step 14 –** To add an additional Approval Tier, click the **Add Tier** icon and repeat from Step 4.
 
 - Up to three Approval Tiers can be added. When the required numer of approvals is reached in a
-  Tier, the Approvers in the next Tier are notified. Each Tier must approve the request in sequence.
+Tier, the Approvers in the next Tier are notified. Each Tier must approve the request in sequence.
 
 :::note
 Connection profile approvals allow the same user that initiated the request to approve the

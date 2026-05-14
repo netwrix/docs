@@ -1,0 +1,93 @@
+@startuml component
+package "Category" {
+	class Category {
+		CompositeRoleCounter : Int32
+		CurrentNodeIndex : Guid
+		Description_L1 : String
+		DisplayName_L1 : String
+		FullName_L1 : String
+		Identifier : String
+		IsCollapsed : Boolean
+		NextNodeIndex : Guid
+		ResourceTypeCounter : Int32
+		SingleRoleCounter : Int32
+		--
+		AccessCertificationDataFilters : AccessCertificationDataFilter[]
+		AutomationRules : AutomationRule[]
+		Categories : Category[]
+		CategoryCompositeRolesCategories : CompositeRolesCategory[]
+		CategoryResourceTypesCategories : ResourceTypesCategory[]
+		CategorySingleRolesCategories : SingleRolesCategory[]
+		CompositeRoles : CompositeRole[]
+		MiningRules : MiningRule[]
+		Parent : Category
+		Policy : Policy
+		ProfileContexts : ProfileContext[]
+		ResourceTypes : ResourceType[]
+		RoleMappings : RoleMapping[]
+		SingleRoles : SingleRole[]
+	}
+}
+package "AccessCertificationDataFilter" {
+	class AccessCertificationDataFilter {
+	}
+}
+package "AutomationRule" {
+	class AutomationRule {
+	}
+}
+package "CompositeRolesCategory" {
+	class CompositeRolesCategory {
+	}
+}
+package "ResourceTypesCategory" {
+	class ResourceTypesCategory {
+	}
+}
+package "SingleRolesCategory" {
+	class SingleRolesCategory {
+	}
+}
+package "CompositeRole" {
+	class CompositeRole {
+	}
+}
+package "MiningRule" {
+	class MiningRule {
+	}
+}
+package "Policy" {
+	class Policy {
+	}
+}
+package "ProfileContext" {
+	class ProfileContext {
+	}
+}
+package "ResourceType" {
+	class ResourceType {
+	}
+}
+package "RoleMapping" {
+	class RoleMapping {
+	}
+}
+package "SingleRole" {
+	class SingleRole {
+	}
+}
+Category "0..1" --  "0..*"AccessCertificationDataFilter
+Category "0..1" --  "0..*"AutomationRule
+Category "0..1" --  "0..*"Category
+Category "1" --  "0..*"CompositeRolesCategory
+Category "1" --  "0..*"ResourceTypesCategory
+Category "1" --  "0..*"SingleRolesCategory
+Category "0..1" --  "0..*"CompositeRole
+Category "0..1" --  "0..*"MiningRule
+Category "0..*" --  "1"Policy
+Category "0..1" --  "0..*"ProfileContext
+Category "0..1" --  "0..*"ResourceType
+Category "0..1" --  "0..*"RoleMapping
+Category "0..1" --  "0..*"SingleRole
+hide empty members
+@enduml

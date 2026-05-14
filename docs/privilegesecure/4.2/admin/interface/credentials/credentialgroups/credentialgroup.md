@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Add Credential Groups
 
-Follow the steps to add credential groups to the Privilege Secure Console.
+To add credential groups to the Privilege Secure Console.
 
 **Step 1 –** Navigate to the **Policy** > **Credentials** > **Credential Groups** page.
 

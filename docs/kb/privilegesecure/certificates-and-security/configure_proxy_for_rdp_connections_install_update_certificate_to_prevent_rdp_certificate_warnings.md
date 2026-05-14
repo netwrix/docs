@@ -37,7 +37,7 @@ This article outlines the process for installing or updating a certificate to pr
 
 ### Generate Certificate
 
-> **NOTE:** If you already have a certificate to install, you can skip to the **Adding the Certificate to Each SbPAM Proxy Server** section below.
+> **NOTE:** If you already have a certificate to install, you can skip to the [Adding the Certificate to Each SbPAM Proxy Server](#adding-the-certificate-to-each-sbpam-proxy-server) section.
 
 1. Open **Certification Authority**, open your CA, right-click **Certificate Templates**, and click **Manage**.
    ![Certification Authority console with Certificate Templates context menu open](../0-images/servlet_image_ebb3b2e4c66a.png)

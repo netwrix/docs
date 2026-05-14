@@ -6,12 +6,9 @@ sidebar_position: 30
 
 # Configure Windows Firewall Inbound Connection Rules
 
-For successful data collection, Netwrix 1Secure may have to create inbound Firewall rules. If you do
-not enable the Network traffic compression option, the product will try creating these rules
-automatically and will notify you it fails to do so. In this case, you have to configure Windows
-Firewall inbound rules manually.
+For successful data collection, Netwrix 1Secure may need to create inbound Firewall rules. Without the Network Traffic Compression option enabled, the product attempts to create these rules automatically and notifies you if it fails. Configure Windows Firewall inbound rules manually when automatic creation fails.
 
-Follow the steps to configure Windows Firewall Inbound Connection Rules.
+**To configure Windows Firewall inbound connection rules:**
 
 **Step 1 –** On every domain controller, navigate to **Start** > **Control Panel** and select
 **Windows Firewall**.

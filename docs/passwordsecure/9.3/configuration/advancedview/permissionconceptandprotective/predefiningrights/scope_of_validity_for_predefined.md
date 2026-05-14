@@ -8,7 +8,7 @@ sidebar_position: 30
 
 In general, all of the predefined rights for an organisational structure are applied to all
 underlying objects. These objects could be passwords, forms, form fields documents, users,
-applications or also other nested organisational structures in the hierarchy. In the following
+applications, or also other nested organisational structures in the hierarchy. In the following
 example, the rights template **IT general** has been defined for the organisational unit **IT**.
 
 ![rights template](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/scope_of_validity/scope_of_validity_1-en.webp)

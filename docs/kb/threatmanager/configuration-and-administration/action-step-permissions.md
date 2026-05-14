@@ -13,7 +13,7 @@ knowledge_article_id: kA0Qk0000001lUjKAI
 What permissions does each Action Step require to use?
 
 ## Answer
-Below are the necessary permissions for each Action Step:
+The following permissions are required for each Action Step:
 
 ### Active Directory Group Membership
 - Scope to group objects

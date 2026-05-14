@@ -55,6 +55,6 @@ cd 'C:\Program Files\Stealthbits\Postgres12\bin\'
 
 7. Once satisfied with the **Pre-Installation Summary** window, click **Next** two more times to proceed with the installation.
 
-8. Once the installation is finished, you will be prompted to restart your server. Restart your server.
+8. Once the installation is finished, you are prompted to restart your server. Restart your server.
 
 9. To confirm the success of your installation, use the PowerShell commands from Step 1 to verify that your version number matches the installer.

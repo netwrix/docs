@@ -10,8 +10,8 @@ From this section, you can manage the entire system and specify what rights and 
 globally, to all Endpoint Protector entities.
 
 :::note
-If device rights or other settings will be conﬁgured granularly for entities, the priority
-order, starting with the highest, will be as follows:
+If you configure device rights or other settings granularly for entities, the priority
+order, starting with the highest, is as follows:
 :::
 
 
@@ -24,41 +24,58 @@ Global Settings.
 
 ## Device Types (Standard)
 
-Endpoint Protector supports a wide range of device types, which represent key sources of security
-breaches. These devices can be authorized, which makes it possible for the users to view, create, or
-modify their content and for administrators to view the data transferred to and from the authorized
-devices.
+Endpoint Protector supports a wide range of device types, which represent key sources of security breaches. These devices can be authorized. With authorization, users can view, create, or modify their content, and administrators can view the data transferred to and from the authorized devices.
 
-![Standard supported Devices](standarddevices.webp)
-
-- Removable Storage Devices
-- Normal USB Flash Drives, U3 and Autorun Drives, Disk on Key, etc.
-- USB 1.1, USB 2.0, USB 3.0
-- Memory Cards - SD Cards, MMC Cards, Compact Flash Cards, etc.
-- Card Readers - internal and external
-- CD/DVD-Player/Burner - internal and external
-- Digital Cameras
-- Smartphones / Handhelds / PDAs (includes Nokia N-Series, Blackberry, and Windows CE compatible
-  devices, Windows Mobile devices, etc.)
-- iPods / iPhones / iPads
-- MP3 Player / Media Player Devices
-- External HDDs / portable hard disks
-- FireWire Devices
-- PCMCIA Devices
-- Biometric Devices
-- Bluetooth
-- Printers (applies to serial, USB, and LTP connection methods)
-- Express Card (SSD)
-- Wireless USB
-- LPT/Parallel ports \*applies only to storage devices
-- Floppy disk drives
-- Serial ATA Controllers
+Current list of all Device Categories:
+- USB Storage Device
+- Internal CD or DVD RW
+- External CD or DVD RW
+- Internal Card Reader
+- Internal Floppy Drive
+- Local Printers
 - Network Printers
+- Windows Portable Device (Media Transfer Protocol)
+- Digital Camera
+- BlackBerry
+- Mobile Phones (Sony Ericsson, etc.)
+- SmartPhone (USB Sync)
+- SmartPhone (Windows CE)
+- SmartPhone (Symbian)
+- Webcam
+- iPhone
+- iPad
+- iPod
+- VM USB Device
+- Serial ATA Controller
+- WiFi
+- Bluetooth
+  - Bluetooth Radio
+  - Bluetooth Tablet
+  - Bluetooth Other
+  - Bluetooth Keyboard
+  - Bluetooth Mouse
+  - Bluetooth Smartphone
+  - Bluetooth Headphones
+- FireWire Bus
+- Serial Port
+- PCMCIA Device
+- Card Reader Device (MTD)
+- Card Reader Device (SCSI)
+- ZIP Drive
+- Teensy Board
+- Thunderbolt
+- Network Share
+- Infrared Dongle
+- Parallel Port (LPT)
+- Thin Client Storage (RDP Storage)
+- Additional Keyboard
+- USB Modem
+- Android Smartphone (Media Transfer Protocol)
+- Chip Card Device
+- Biometric Devices
+- Audio Device (Output)
 
-Depending on the device type, besides the Allow and Deny Access rights, additional rights are also
-available. These include Read-Only Access or multiple combinations of Allow Access but with various
-limitations, such as Allow access but exclude from CAP scanning or Allow Access if Trusted Device
-Level 1 to 4.
+![Device Type configuration](globalrights.webp)
 
 The Trusted Device™ technology integrated within Endpoint Protector is available in four security
 levels, depending on the degree of protection offered by a device (trusted devices using Enforced
@@ -70,26 +87,34 @@ For detailed information on Trusted Device™ and Enforced Encryption, refer to 
 :::note
 With the WiFi – Block if wired network is present option you can disable the WiFi
 connection, while a wired network connection is present. The WiFi connection will be available when
-the wired network is not present.
-:::
-
-
-:::note
-On macOS version 14 (Sonoma) and higher, Bluetooth devices are managed only when the
-device is connected and visible under ‘My Devices’ in the Bluetooth section of ‘System settings’.
+the wired network isn't present.
 :::
 
 :::note
-Occasionally, the EPP system may display a limitation where certain webcams can be activated in Zoom meetings, even when rights are set to DENY in computer settings. To enforce proper rights after configuration, a restart of the PC is mandatory in such cases.
+Audio Device Control for sound cards is supported only on Windows and applies only to the audio output channel. Audio input channels, whether analog or digital, aren't covered.
+::: 
+
+:::note
+Occasionally, the EPP system may display a limitation where certain webcams can activate in Zoom meetings, even when you set rights to DENY in computer settings. To enforce proper rights after configuration, you must restart the PC.
+:::
+
+### Bluetooth Low Energy Devices on macOS
+
+The standard Bluetooth protocol on macOS works accurately and with full granularity and feature parity to other operating systems.
+
+However, macOS handles Bluetooth Low Energy (BLE) devices differently. Due to the shortened handshake frame in the BLE protocol, macOS may misidentify the device category in rare edge cases, which can cause the EPP Client to behave unexpectedly. This behavior is a macOS limitation and is outside of Netwrix Endpoint Protector's control. To mitigate this, Netwrix Endpoint Protector provides predefined tailored BLE device categories.
+
+:::note
+On macOS version 14 (Sonoma) and higher, Bluetooth devices are managed only when the device is connected and visible under ‘My Devices’ in the Bluetooth section of ‘System settings’.
 :::
 
 ![Bluetooth Device Management on Mac](macbluetooth.webp)
 
-By default, the majority of device types are blocked. However, as a working internet connection or
-wireless keyboards are needed during the conﬁguration process, several devices are set to Allow
-Access. These include Wi-Fi, Bluetooth, Network Share, Additional Keyboard, and USB Modem.
+:::note
+Occasionally, the EPP system may display a limitation where certain webcams can activate in Zoom meetings, even when you set rights to DENY in computer settings. To enforce proper rights after configuration, you must restart the PC.
+:::
 
-![Device Type configuration](devicetypes.webp)
+By default, Endpoint Protector blocks the majority of device types. However, because you need a working internet connection or wireless keyboards during the conﬁguration process, Endpoint Protector sets several devices to Allow Access. These include Wi-Fi, Bluetooth, Network Share, Additional Keyboard, and USB Modem.
 
 ### VM USB Device Usage
 
@@ -98,15 +123,14 @@ environments.
 
 You can also use this option to manage USB access through the virtual environment.
 
-When using a virtual environment, the USB devices will not be displayed in the Endpoint Protector
-Notiﬁer with their original names, VID and PID information. Only the original information will
+When using a virtual environment, the Endpoint Protector Notiﬁer will not display the USB devices with their original names, VID, and PID information. Only the original information will
 remain the serial number.
 
-For example; in the below image, you can view the 3 devices detected by Endpoint Protector have
-different VID, PID and device code, but they all have the same serial number.
+For example; in the following image, you can view the 3 devices detected by Endpoint Protector have
+different VID, PID, and device code, but they all have the same serial number.
 
 :::note
-The Endpoint Protector Client does not distinguish between USB devices (e.g. USB hard
+The Endpoint Protector Client doesn't distinguish between USB devices (e.g. USB hard
 drive vs USB Webcam) by Device name/VID/PID.
 :::
 
@@ -117,7 +141,7 @@ drive vs USB Webcam) by Device name/VID/PID.
 
 From this section, you can manage access rights for a speciﬁc device.
 
-Device rights can be set either Globally or, per Group, User, or Computer, by using the Manage
+You can set device rights either Globally or per Group, User, or Computer by using the Manage
 Rights action from each section/entity.
 
 ![Manage access rights for a speciﬁc device.](specificdevices.webp)
@@ -142,9 +166,8 @@ adding devices:
 ![ Add multiple devices at the same time.](multipledevices.webp)
 
 :::note
-Although this feature can work in situations where the Serial Number range does not follow
-a noticeable pattern, this is not recommended. In this type of situation, some devices will be
-ignored by Endpoint Protector and will not have the expected effect.
+Although this feature can work in situations where the Serial Number range doesn't follow
+a noticeable pattern, this isn't recommended. In this type of situation, Endpoint Protector will ignore some devices, and they will not have the expected effect.
 :::
 
 

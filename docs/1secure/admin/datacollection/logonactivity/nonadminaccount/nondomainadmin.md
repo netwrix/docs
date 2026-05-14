@@ -6,16 +6,12 @@ sidebar_position: 10
 
 # Configure Non-Administrative Account to Collect Logon Activity
 
-This section contains instructions on how to configure an account to collect Logon Activity with
-minimum rights assignment. The instructions below apply only if you are going to set a source with
-disabled network traffic compression and do not want to adjust audit settings automatically. Do the
-following:
+This section contains instructions on configuring an account to collect Logon Activity with
+minimum rights assignment. These instructions apply only if you are configuring a source with
+network traffic compression disabled and you don't want to adjust audit settings automatically.
 
 Before creating an account, grant the _Read_ permission on the SECURITY registry key
-`(HKEY_LOCAL_MACHINE\SECURITY)` for an admin account under which you will make changes in Group
-Policy.
-
-Do the following:
+`(HKEY_LOCAL_MACHINE\SECURITY)` for the admin account you use to make changes in Group Policy.
 
 **Step 1 –** Create a domain user with the following privileges:
 
@@ -31,5 +27,4 @@ Do the following:
 - `HKEY_LOCAL_MACHINE`\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg
 - `HKEY_LOCAL_MACHINE`\SYSTEM\CurrentControlSet\Services\EventLog\Security
 
-[Assigning Permission To Read the Registry Key](/docs/1secure/admin/datacollection/activedirectoryauditing/permissionsregistrykeys.md) how
-to do it using Registry Editor.
+See [Assigning Permission To Read the Registry Key](/docs/1secure/admin/datacollection/activedirectoryauditing/permissionsregistrykeys.md) for instructions on using Registry Editor.

@@ -1,6 +1,6 @@
 ---
 name: doc-pr-fix
-description: "Autonomous fixer for documentation PRs. Triggered by @claude comments on PRs targeting dev. Reads the writer's request and the existing doc-pr review, then applies fixes, runs Vale and Dale until clean, and commits. Use this skill whenever a writer tags @claude on a documentation PR — not for interactive help (use doc-help for that), but for autonomous, single-shot fixes in CI."
+description: "Autonomous fixer for documentation PRs. Triggered by @claude comments on PRs targeting dev. Reads the writer's request and the doc-pr review comment, then applies fixes and commits. Use this skill whenever a writer tags @claude on a documentation PR — not for interactive help (use doc-help for that), but for autonomous, single-shot fixes in CI."
 argument-hint: "[pr-number] [writer-comment]"
 ---
 
@@ -12,16 +12,18 @@ Read `docs/CLAUDE.md` before starting. It contains the Netwrix writing standards
 
 ## Input
 
-You receive:
-- `$1`: The PR number
-- `$2`: The writer's comment text (everything after `@claude`)
+The prompt contains labeled fields — extract these values and use them as literals throughout:
+- `PR: <number>` — the PR number (e.g. `921`)
+- `Repo: <owner/name>` — the repository (e.g. `netwrix/docs`)
+- `Writer's request: <text>` — everything the writer wrote after `@claude`
+
+Do not use shell variable expansion (`$VAR`) in any commands — use the literal values you extracted from the prompt.
 
 ## Step 1: Understand the request
 
 Parse the writer's comment to determine what they want. Common patterns:
 
-- **Fix all issues** — apply every fix from the doc-pr review comment
-- **Fix only Vale/Dale issues** — apply only linting fixes
+- **Fix all issues** — apply every fix from the doc-pr review comment (editorial)
 - **Fix a specific issue** — apply one targeted fix
 - **Improve flow/clarity/structure** — editorial rewrite of specific content
 - **Explain something** — answer a question about a flagged issue (respond in a PR comment, don't edit files)
@@ -29,40 +31,76 @@ Parse the writer's comment to determine what they want. Common patterns:
 
 ## Step 2: Gather context
 
-1. Run `gh pr diff $PR_NUMBER` to see what changed in the PR
+1. Run `gh pr diff <pr-number>` (use the literal number from the prompt) to see what changed
 2. Read the full content of each changed markdown file
 3. Find the most recent "Documentation PR Review" comment on the PR:
    ```bash
-   gh api repos/{owner}/{repo}/issues/$PR_NUMBER/comments --jq '.[] | select(.body | contains("Documentation PR Review")) | .body' | tail -1
+   gh api repos/<owner>/<repo>/issues/<pr-number>/comments --jq '.[] | select(.body | contains("Documentation PR Review")) | .body' | tail -1
    ```
-   This tells you what Vale, Dale, and the editorial review already flagged.
+   This tells you what the editorial review flagged.
 
-## Step 3: Apply fixes
+## Step 3: Respond based on request type
+
+### If the request is a question or asks for an explanation
+
+Answer it directly. Do not create a todo list or edit any files. Post a comment with your answer:
+
+```bash
+gh pr comment <pr-number> --repo <owner>/<repo> --body "<your answer here>"
+```
+
+Then stop — skip Steps 4–7.
+
+### If the request requires file edits
+
+Use Todo to create a task for each discrete piece of work. Build the task list from Steps 1–2. Each task should be concrete and trackable. Mark each task complete as you finish it.
+
+Example tasks for a "fix all issues" request:
+- Apply editorial suggestions in `path/to/file.md`
+- Verify changes
+- Commit and push
+
+Only include tasks for what the writer actually asked for.
+
+Post a progress comment and capture its ID from the command output — you'll update this comment as work proceeds:
+
+```bash
+gh api repos/<owner>/<repo>/issues/<pr-number>/comments \
+  --method POST --field body="$(cat <<'EOF'
+**Fix in progress:**
+
+- [ ] Apply editorial suggestions in `path/to/file.md`
+- [ ] Verify changes
+- [ ] Commit and push
+EOF
+)" --jq '.id'
+```
+
+Use the literal ID from that output in subsequent update calls. Update the comment at natural milestones (after finishing each file, after committing) — not after every edit:
+
+```bash
+gh api repos/<owner>/<repo>/issues/comments/<id-from-above> \
+  -X PATCH -f body="<updated checklist>"
+```
+
+## Step 4: Apply fixes
 
 Work through the requested fixes methodically:
 
-- For **linting fixes** (Vale/Dale): fix each flagged issue in order, file by file
-- For **editorial fixes**: apply the suggested changes from the review, or if the writer asked for something broader ("improve the flow"), read the full document and apply edits that address the request while following Netwrix style
+- For **editorial fixes from the review**: apply the suggested changes from the review comment
+- For **broader editorial requests** ("improve the flow", "make this clearer", "help with structure"): invoke `/doc-help` with the file path and the writer's request. Doc-help will analyze the document using its structured editing framework (structure, clarity, voice, surface). Since this is running in CI without an interactive writer, apply all of doc-help's suggestions autonomously rather than waiting for feedback
 - For **explanations**: post a PR comment explaining the issue and how to fix it, then stop — don't edit files
 
 When editing:
 - Use the Edit tool for targeted changes, Write for larger rewrites
 - Preserve the author's meaning and intent — fix the style, don't rewrite the content
-- Only change what was requested; don't fix unreported issues unless they're in a line you're already editing
+- Only change what was requested; don't fix unrelated issues even if they're on the same line
 
-## Step 4: Verify
+## Step 5: Verify
 
-After all edits, run Vale on every file you changed:
+Review your edits to ensure they don't introduce new issues. Do NOT run Dale or any other skills during verification.
 
-```bash
-vale <file>
-```
-
-Fix any new Vale errors. Re-run until zero errors remain.
-
-Do NOT run Dale or any other skills during verification — just Vale.
-
-## Step 5: Commit and push
+## Step 6: Commit and push
 
 Stage only the files you changed:
 
@@ -76,25 +114,30 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 git push
 ```
 
-## Step 6: Report
+## Step 7: Final update
 
-Post a PR comment summarizing what you did:
+Replace the progress comment with a completion summary. Don't post a separate comment — update the same one using the ID you captured in Step 3:
 
-```markdown
-**Fixes applied:**
+```bash
+gh api repos/<owner>/<repo>/issues/comments/<id-from-step-3> \
+  -X PATCH -f body="$(cat <<'EOF'
+**Fix complete:**
 
+- [x] Apply editorial suggestions in `path/to/file.md`
+- [x] Verify changes
+- [x] Commit and push
+
+**Summary:**
 - `path/to/file.md`: <what was fixed>
 - `path/to/other.md`: <what was fixed>
-
-Vale and Dale checks pass on all edited files.
+EOF
+)"
 ```
-
-If you were asked to explain something rather than fix it, your comment IS the deliverable — no summary needed.
 
 ## Behavioral Notes
 
 - **Fix what's clear, ask about what isn't.** If a request has both obvious parts and ambiguous parts, apply the obvious fixes, commit and push those, then post a comment that summarizes what you did AND asks clarifying questions about the rest. The writer can reply with another `@claude` comment to continue.
-- **Never fix issues the writer didn't ask about.** If they said "fix the Vale issues," don't also rewrite sentences for clarity.
+- **Never fix issues the writer didn't ask about.** Only fix what was requested — don't rewrite sentences for clarity or fix unrelated issues, even if they're on the same line.
 - **If a fix would substantially change the author's meaning**, skip it and explain why in your summary comment. Ask the writer how they'd like to handle it.
 - **If the entire request is unclear**, don't edit anything — post a comment asking for clarification. It's better to ask one good question than to guess wrong and push unwanted changes.
 - **Each `@claude` comment is a fresh invocation.** You won't remember previous runs, so always re-read the PR diff and review comment for context.

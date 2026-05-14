@@ -1,0 +1,10 @@
+{
+  "label": "Setup",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "setup_mobile_device"
+  }
+}

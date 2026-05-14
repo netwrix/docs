@@ -51,7 +51,7 @@ function ProductCard({ product }) {
       <div className={styles.versionBadgesContainer}>
         {product.versions.map((version, idx) => (
           <Link key={idx} to={version.link} className={`${styles.versionBadge} ${version.isLatest ? styles.latestBadge : ''}`}>
-            v{version.version}
+            {version.version.toLowerCase() == 'current' ? version.version : `v${version.version}`}
           </Link>
         ))}
       </div>

@@ -11,13 +11,13 @@ The account used for data collection must meet the following requirements:
 - Member of the local Administrators group on the target server.
 - Member of the Domain Admins group on the target server.
 
-    **NOTE:** This covers all the required permissions below and is a mandatory setting if you want
-    to use network traffic compression for data collection.
+    **NOTE:** This covers all the required permissions listed in this section and is a mandatory
+    setting if you want to use network traffic compression for data collection.
 
     OR
 
 - The combination of the following rights and permissions if you plan to disable network traffic
-  compression for your monitoring plan or, for some reasons, do not want to add this account to the
+  compression for your monitoring plan or, for some reasons, don't want to add this account to the
   **Domain Admins** group:
 
     - **Manage auditing and security log** policy must be defined for this account.
@@ -38,19 +38,18 @@ The following is required if auto-backup is _enabled_ for the domain controller 
 
 ## Assign Permission to Read the Registry Key
 
-This permission is required only if the account selected for data collection is not a member of the
+This permission is required only if the account selected for data collection isn't a member of the
 Domain Admins group.
 
-This permission should be assigned on each domain controller in the audited domain, so if your
-domain contains multiple domain controllers, it is recommended to assign permissions through Group
-Policy, or automatically using
+Assign this permission on each domain controller in the audited domain. If your domain contains
+multiple domain controllers, assign permissions through Group Policy, or automatically using
 
 To assign permissions manually, use the Registry Editor snap-in or the Group Policy Management
 console.
 
 ### Assign Permission Via the Registry Editor Snap-in
 
-Follow the steps to assign permission via the Registry Editor snap-in:
+**To assign permission via the Registry Editor snap-in:**
 
 **Step 1 –** On your target server, open Registry Editor: navigate to **Start > Run** and type
 _"regedit"_.
@@ -69,7 +68,7 @@ _HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv_ registry key.
 
 ### Assign Permission Using the Group Policy Management Console
 
-Follow the steps to assign permission using the Group Policy Management console:
+**To assign permission using the Group Policy Management console:**
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
 navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools
@@ -94,7 +93,7 @@ press Enter.
 **Step 8 –** In the pop-up window, select Propagate inheritable permissions to all subkeys and click
 OK.
 
-**Step 9 –** Repeat the steps 4-8 for keys below:
+**Step 9 –** Repeat steps 4–8 for the following keys:
 
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg`;
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security`.
@@ -102,18 +101,18 @@ OK.
 **Step 10 –** Close Group Policy Management console.
 
 **Step 11 –** Navigate to Start > Run and type "_cmd_". Input the `gpupdate /force` command and
-press Enter. The group policy will be updated.
+press Enter. The group policy updates.
 
-**Step 12 –** Type `repadmin /syncall` command and press Enter for replicate GPO changes to other
-domain controllers.
+**Step 12 –** Type `repadmin /syncall` and press Enter to replicate GPO changes to other domain
+controllers.
 
-**Step 13 –** Ensure that new GPO settings were applied to the domain controllers.
+**Step 13 –** Verify that the new GPO settings are applied to the domain controllers.
 
 ## Service Account Best Practices
 
-When configuring the service account for Group Policy auditing in 1secure:
+When configuring the service account for Group Policy auditing in 1Secure:
 
-1. **Use Dedicated Accounts**: Create dedicated service accounts specifically for 1secure data collection
+1. **Use Dedicated Accounts**: Create dedicated service accounts specifically for 1Secure data collection
 2. **Follow Least Privilege**: Grant only the minimum permissions required for data collection
 3. **Regular Password Rotation**: Implement regular password rotation policies for service accounts
 4. **Monitor Account Usage**: Regularly monitor service account usage and access patterns

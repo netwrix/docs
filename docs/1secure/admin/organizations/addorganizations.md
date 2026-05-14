@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Add Organizations
 
-Follow the steps to add an organization.
+**To add an organization:**
 
 **Step 1 –** On the Netwrix 1Secure Website, on the **Home** page, select the Add organization icon
 to add an organization.
@@ -18,14 +18,14 @@ to add an organization.
 - Name – Specify a name for the organization
 - Timezone – Select a timezone for the organization
 - Country – Select a country for the organization
-- Tags – Select tag(s) for the organization. Tags provide a way of adding metadata to the tenancies
+- Tags – Select tags for the organization. Tags provide a way of adding metadata to the tenancies
   being managed. To specify multiple tags, select them one by one from the dropdown menu.
-- Alert profile – Select an alert profile for the organization. Alert profiles enable you to group
+- Alert profile – Select an alert profile for the organization. With alert profiles, you can group
   alert configurations and delivery notification settings together.
-- Risk Profile – Select a risk profile for the organization. Risk profiles enable you to group
+- Risk Profile – Select a risk profile for the organization. With risk profiles, you can group
   thresholds together.
 - Groups – Select a group for the organization. To assign an organization to multiple groups, select
-  the groups one by one from the drop-down menu.
+  the groups one by one from the dropdown menu.
 
 Click **Next**.
 
@@ -61,7 +61,7 @@ See the [Add Sites to an Organization](/docs/1secure/admin/organizations/addsite
 ![addorganizationsagent](/images/1secure/admin/organizations/addorganizationsagent.webp)
 
 **Step 5 –** On the Configure source details (Step 3 of 4) window, follow the instructions to
-install the agent. Please go to the [Install Agent](/docs/1secure/install/installagent.md) topic of the
+install the agent. Go to the [Install Agent](/docs/1secure/install/installagent.md) topic of the
 online help. Click **Next**.
 
 :::note

@@ -1,0 +1,16 @@
+@startuml component
+package "TaskDependOnTask" {
+	class TaskDependOnTask {
+		--
+		ChildTask : Task
+		ParentTask : Task
+	}
+}
+package "Task" {
+	class Task {
+	}
+}
+TaskDependOnTask "0..*" --  "1"Task
+TaskDependOnTask "0..*" --  "1"Task
+hide empty members
+@enduml
