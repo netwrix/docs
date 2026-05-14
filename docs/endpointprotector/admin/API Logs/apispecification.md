@@ -206,7 +206,7 @@ Returns a single event log entry by ID with the same fields as the list endpoint
 
 Online device tracking logs from the `olog` table, joined with `event`, `devicetype`, `clientmachine`, and `clientdevice` tables.
 
-**GET /device-control-logs**
+**GET /device-control**
 
 Date field: `eventtime`
 
@@ -249,7 +249,7 @@ Response fields:
 | `timestamp` | `olog.timestamp` | Unix timestamp |
 | `department_id` | `olog.department_id` | Department ID |
 
-**GET /device-control-logs/(id)**
+**GET /device-control/(id)**
 
 Returns a single device control log entry by ID with the same fields as the list endpoint.
 
@@ -288,7 +288,7 @@ Response fields: `id`, `sys_alert_name`, `sys_event_id`, `sys_event_opt_id`, `cr
 
 Content-Aware Protection logs and alerts, joined with `event` table for event names.
 
-**GET /content-filtering-logs**
+**GET /content-aware-protection**
 
 Date field: `eventtime`
 
@@ -307,7 +307,7 @@ Response fields: `id`, `loclogid`, `event_id`, `machine_id`, `machine_name`, `ip
 Hash columns (`loghash`, `loghasht`, etc.) are excluded from list responses for performance. Use the detail endpoint to retrieve all fields.
 :::
 
-**GET /content-filtering-logs/(id)**
+**GET /content-aware-protection/(id)**
 
 Returns a single content filtering log with all fields (including hash columns and `event_name`).
 
@@ -353,7 +353,7 @@ Response fields: `id`, `mm_alert_name`, `mm_device_type_id`, `mm_device_id`, `mm
 
 ### EasyLock Logs
 
-**GET /easylock-alert-logs**
+**GET /easy-lock**
 
 Date field: `created_at`
 
@@ -371,7 +371,7 @@ Response fields: `id`, `event_id`, `machine_id`, `user_id`, `group_id`, `status`
 
 ### Data at Rest
 
-**GET /data-rest-alerts/(id)**
+**GET /ediscovery/(id)**
 
 Returns a single Data-at-Rest alert with event name.
 
@@ -461,7 +461,7 @@ Response fields: `id`, `user_id`, `created_at`, `section`, `log_type`, `operatio
 ```bash
 curl -s -k \
   -H "X-Api-Key: YOUR_API_KEY" \
-  "https://epp-server/api/logs/device-control-logs?machine_name=WORKSTATION&sort_by=eventtime&sort_order=DESC&per_page=10"
+  "https://epp-server/api/logs/device-control?machine_name=WORKSTATION&sort_by=eventtime&sort_order=DESC&per_page=10"
 ```
 
 **Get content filtering logs for a date range**
@@ -469,7 +469,7 @@ curl -s -k \
 ```bash
 curl -s -k \
   -H "X-Api-Key: YOUR_API_KEY" \
-  "https://epp-server/api/logs/content-filtering-logs?start_date=2025-01-01&end_date=2025-01-31&content_policy=PCI"
+  "https://epp-server/api/logs/content-aware-protection?start_date=2025-01-01&end_date=2025-01-31&content_policy=PCI"
 ```
 
 **Get a specific event log entry**

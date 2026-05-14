@@ -86,7 +86,7 @@ If your Endpoint Protector server uses a self-signed certificate, add `-k` to th
 ```bash
 curl -s \
   -H "X-Api-Key: YOUR_API_KEY" \
-  "https://<epp-server>/api/logs/device-control-logs?sort_by=eventtime&sort_order=DESC&per_page=10"
+  "https://<epp-server>/api/logs/device-control?sort_by=eventtime&sort_order=DESC&per_page=10"
 ```
 
 ## Common query parameters
@@ -209,7 +209,7 @@ Returns a single event log entry by ID.
 
 Online device tracking logs.
 
-**GET /device-control-logs**
+**GET /device-control**
 
 Date field: `eventtime`
 
@@ -217,7 +217,7 @@ Filters (in addition to common params):
 - `machine_name` (partial match)
 - `client_name` (partial match)
 
-**GET /device-control-logs/(id)**
+**GET /device-control/(id)**
 
 Returns a single device control log entry by ID.
 
@@ -239,7 +239,7 @@ Lists system alert log entries. Date field: `created_at`
 
 ### Content Filtering (CAP)
 
-**GET /content-filtering-logs**
+**GET /content-aware-protection**
 
 Lists Content Aware Protection logs. Date field: `eventtime`
 
@@ -247,7 +247,7 @@ Common filters include:
 - `machine_name`
 - `client_name`
 
-**GET /content-filtering-logs/(id)**
+**GET /content-aware-protection/(id)**
 
 Returns a single log entry (includes fields excluded from list responses for performance).
 
@@ -275,7 +275,7 @@ Date field: `created_at`
 
 ### EasyLock (Enforced Encryption)
 
-**GET /easylock-alert-logs**
+**GET /easy-lock**
 
 Date field: `created_at`
 
@@ -285,7 +285,7 @@ Lists EasyLock send alert log entries.
 
 ### Data at Rest (eDiscovery)
 
-**GET /data-rest-alerts/(id)**
+**GET /ediscovery/(id)**
 
 Returns a single Data-at-Rest alert entry by ID.
 
