@@ -9,7 +9,7 @@ paths:
     get:
       tags:
         - command
-      summary: 'Called by the agent, this returns a list of AgentTasks and latest tracking template definition dates for all the devices the agent manages.'
+      summary: 'Poll agent tasks and template dates'
       description: 'Called by the agent, this returns a list of AgentTasks and latest tracking template definition dates for all the devices the agent manages.'
       operationId: GetAgentPolltaskspollAgentId_Get
       parameters:
@@ -118,7 +118,7 @@ paths:
     post:
       tags:
         - command
-      summary: 'Called by the agent, this returns a list of AgentTasks and latest tracking template definition dates for all the devices the agent manages.'
+      summary: 'Poll agent tasks and template dates'
       description: 'Called by the agent, this returns a list of AgentTasks and latest tracking template definition dates for all the devices the agent manages.'
       operationId: GetAgentPolltaskspollAgentId_Post
       requestBody:
@@ -142,7 +142,7 @@ paths:
     get:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentAgentId_Get
       parameters:
@@ -257,7 +257,7 @@ paths:
     post:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentAgentId_Post
       requestBody:
@@ -281,7 +281,7 @@ paths:
     post:
       tags:
         - submitAgentTaskResultStream
-      summary: Used to submit agent task result data to the hub as a stream.
+      summary: Stream agent task result data
       description: Used to submit agent task result data to the hub as a stream.
       operationId: SubmitAgentTaskResultStreamAgentIdDeviceIdTaskId_Post
       requestBody:
@@ -305,7 +305,7 @@ paths:
     get:
       tags:
         - submitAgentTaskResultData
-      summary: 'Adds report result data for the given agent report, called by the agent. This is the new format used by the Gen 7 agent.'
+      summary: 'Submit Gen 7 agent task data'
       description: 'Adds report result data for the given agent report, called by the agent. This is the new format used by the Gen 7 agent.'
       operationId: SubmitAgentTaskResultData_Get
       parameters:
@@ -364,7 +364,7 @@ paths:
     post:
       tags:
         - submitAgentTaskResultData
-      summary: 'Adds report result data for the given agent report, called by the agent. This is the new format used by the Gen 7 agent.'
+      summary: 'Submit Gen 7 agent task data'
       description: 'Adds report result data for the given agent report, called by the agent. This is the new format used by the Gen 7 agent.'
       operationId: SubmitAgentTaskResultData_Post
       requestBody:
@@ -386,7 +386,7 @@ paths:
     get:
       tags:
         - submitAgentTaskResult
-      summary: 'Adds task result data for the given agent task, called by the agent.'
+      summary: 'Submit agent task result'
       description: 'Adds task result data for the given agent task, called by the agent.'
       operationId: SubmitAgentTaskResult_Get
       parameters:
@@ -474,7 +474,7 @@ paths:
     post:
       tags:
         - submitAgentTaskResult
-      summary: 'Adds task result data for the given agent task, called by the agent.'
+      summary: 'Submit agent task result'
       description: 'Adds task result data for the given agent task, called by the agent.'
       operationId: SubmitAgentTaskResult_Post
       requestBody:
@@ -496,7 +496,7 @@ paths:
     get:
       tags:
         - credential
-      summary: Get specific credentials for requested type and key (name).
+      summary: Get credentials by type and key
       description: Get specific credentials for requested type and key (name).
       operationId: GetCredentials_Get
       parameters:
@@ -539,7 +539,7 @@ paths:
     post:
       tags:
         - credential
-      summary: Get specific credentials for requested type and key (name).
+      summary: Get credentials by type and key
       description: Get specific credentials for requested type and key (name).
       operationId: GetCredentials_Post
       requestBody:
@@ -736,7 +736,7 @@ paths:
     get:
       tags:
         - policyTemplateVariables
-      summary: A request to get a list of variable definitions from a named report to be collected by the agent.
+      summary: Get report variable definitions
       description: A request to get a list of variable definitions from a named report to be collected by the agent.
       operationId: GetPolicyTemplateVariables_Get
       parameters:
@@ -770,7 +770,7 @@ paths:
     post:
       tags:
         - policyTemplateVariables
-      summary: A request to get a list of variable definitions from a named report to be collected by the agent.
+      summary: Get report variable definitions
       description: A request to get a list of variable definitions from a named report to be collected by the agent.
       operationId: GetPolicyTemplateVariables_Post
       requestBody:
@@ -794,7 +794,7 @@ paths:
     get:
       tags:
         - deviceCredentials
-      summary: A request to get the names of credentials associated with an agent.
+      summary: Get agent credential names
       description: A request to get the names of credentials associated with an agent.
       operationId: GetCredentialsForAgentDevice_Get
       parameters:
@@ -825,7 +825,7 @@ paths:
     post:
       tags:
         - deviceCredentials
-      summary: A request to get the names of credentials associated with an agent.
+      summary: Get agent credential names
       description: A request to get the names of credentials associated with an agent.
       operationId: GetCredentialsForAgentDevice_Post
       requestBody:
@@ -852,7 +852,7 @@ paths:
     get:
       tags:
         - deviceDbCredentials
-      summary: A request to get the database credentials associated with a database proxied agent.
+      summary: Get proxied agent database credentials
       description: A request to get the database credentials associated with a database proxied agent.
       operationId: GetDbCredentialForDatabaseAgentDevice_Get
       parameters:
@@ -880,7 +880,7 @@ paths:
     post:
       tags:
         - deviceDbCredentials
-      summary: A request to get the database credentials associated with a database proxied agent.
+      summary: Get proxied agent database credentials
       description: A request to get the database credentials associated with a database proxied agent.
       operationId: GetDbCredentialForDatabaseAgentDevice_Post
       requestBody:
@@ -904,7 +904,7 @@ paths:
     get:
       tags:
         - groupMemberships
-      summary: 'A request to return groups this agent or group is a member of, including parents of parents etc.'
+      summary: 'Get agent or group memberships'
       description: 'A request to return groups this agent or group is a member of, including parents of parents etc.'
       operationId: GroupMemberships_Get
       parameters:
@@ -951,7 +951,7 @@ paths:
     post:
       tags:
         - groupMemberships
-      summary: 'A request to return groups this agent or group is a member of, including parents of parents etc.'
+      summary: 'Get agent or group memberships'
       description: 'A request to return groups this agent or group is a member of, including parents of parents etc.'
       operationId: GroupMemberships_Post
       requestBody:
@@ -978,7 +978,7 @@ paths:
     get:
       tags:
         - agents
-      summary: A request to return agents matching the device filter.
+      summary: List agents by device filter
       description: A request to return agents matching the device filter.
       operationId: GetAgents_Get
       parameters:
@@ -1088,7 +1088,7 @@ paths:
     post:
       tags:
         - agents
-      summary: A request to return agents matching the device filter.
+      summary: List agents by device filter
       description: A request to return agents matching the device filter.
       operationId: GetAgents_Post
       requestBody:
@@ -1112,7 +1112,7 @@ paths:
     get:
       tags:
         - agents
-      summary: Registers the details of an Agent with the system.
+      summary: Register agent details
       description: Registers the details of an Agent with the system.
       operationId: RegisterAgentregister_Get
       parameters:
@@ -1267,7 +1267,7 @@ paths:
     post:
       tags:
         - agents
-      summary: Registers the details of an Agent with the system.
+      summary: Register agent details
       description: Registers the details of an Agent with the system.
       operationId: RegisterAgentregister_Post
       requestBody:
@@ -1439,7 +1439,7 @@ paths:
     get:
       tags:
         - agents
-      summary: A request to find agents matching the device filter and search criteria.
+      summary: Find agents by filter and criteria
       description: A request to find agents matching the device filter and search criteria.
       operationId: SearchAgentssearch_Get
       parameters:
@@ -1512,7 +1512,7 @@ paths:
     post:
       tags:
         - agents
-      summary: A request to find agents matching the device filter and search criteria.
+      summary: Find agents by filter and criteria
       description: A request to find agents matching the device filter and search criteria.
       operationId: SearchAgentssearch_Post
       requestBody:
@@ -1536,7 +1536,7 @@ paths:
     get:
       tags:
         - agents
-      summary: Registers the details of the specified Agents with the system.
+      summary: Register specified agents
       description: Registers the details of the specified Agents with the system.
       operationId: PreRegisterAgentspreRegister_Get
       parameters:
@@ -1567,7 +1567,7 @@ paths:
     post:
       tags:
         - agents
-      summary: Registers the details of the specified Agents with the system.
+      summary: Register specified agents
       description: Registers the details of the specified Agents with the system.
       operationId: PreRegisterAgentspreRegister_Post
       requestBody:
@@ -1591,7 +1591,7 @@ paths:
     get:
       tags:
         - deviceConfig
-      summary: Get the tracking configuration template from the merged result of the group configurations for the groups the device is in.
+      summary: Get merged device tracking config
       description: Get the tracking configuration template from the merged result of the group configurations for the groups the device is in.
       operationId: GetDeviceConfig_Get
       parameters:
@@ -1636,7 +1636,7 @@ paths:
     post:
       tags:
         - deviceConfig
-      summary: Get the tracking configuration template from the merged result of the group configurations for the groups the device is in.
+      summary: Get merged device tracking config
       description: Get the tracking configuration template from the merged result of the group configurations for the groups the device is in.
       operationId: GetDeviceConfig_Post
       requestBody:
@@ -1660,7 +1660,7 @@ paths:
     get:
       tags:
         - deviceSettings
-      summary: 'Gets the device settings for the device or group, based on the global device settings and any group specific overrides.'
+      summary: 'Get device or group settings'
       description: 'Gets the device settings for the device or group, based on the global device settings and any group specific overrides.'
       operationId: GetDeviceSettings_Get
       parameters:
@@ -1698,7 +1698,7 @@ paths:
     post:
       tags:
         - deviceSettings
-      summary: 'Gets the device settings for the device or group, based on the global device settings and any group specific overrides.'
+      summary: 'Get device or group settings'
       description: 'Gets the device settings for the device or group, based on the global device settings and any group specific overrides.'
       operationId: GetDeviceSettings_Post
       requestBody:
@@ -1722,7 +1722,7 @@ paths:
     get:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEvents_Get
       parameters:
@@ -1899,7 +1899,7 @@ paths:
     post:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEvents_Post
       requestBody:
@@ -1923,7 +1923,7 @@ paths:
     get:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEventsstartStartUtc_Get
       parameters:
@@ -2100,7 +2100,7 @@ paths:
     post:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEventsstartStartUtc_Post
       requestBody:
@@ -2124,7 +2124,7 @@ paths:
     get:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEventsendEnd_Get
       parameters:
@@ -2301,7 +2301,7 @@ paths:
     post:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEventsendEnd_Post
       requestBody:
@@ -2325,7 +2325,7 @@ paths:
     get:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEventsstartStartUtcendEnd_Get
       parameters:
@@ -2502,7 +2502,7 @@ paths:
     post:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEventsstartStartUtcendEnd_Post
       requestBody:
@@ -2526,7 +2526,7 @@ paths:
     get:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEventsskipSkiptakeTake_Get
       parameters:
@@ -2703,7 +2703,7 @@ paths:
     post:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEventsskipSkiptakeTake_Post
       requestBody:
@@ -2727,7 +2727,7 @@ paths:
     get:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEventsEventId_Get
       parameters:
@@ -2904,7 +2904,7 @@ paths:
     post:
       tags:
         - events
-      summary: Retrieves a list of events from the hub service.
+      summary: Retrieve events from hub
       description: Retrieves a list of events from the hub service.
       operationId: GetEventsEventId_Post
       requestBody:
@@ -2928,7 +2928,7 @@ paths:
     get:
       tags:
         - alertEvents
-      summary: Adds a list of alert events to the system.
+      summary: Submit alert events
       description: Adds a list of alert events to the system.
       operationId: SubmitAlertEventsadd_Get
       parameters:
@@ -2957,7 +2957,7 @@ paths:
     post:
       tags:
         - alertEvents
-      summary: Adds a list of alert events to the system.
+      summary: Submit alert events
       description: Adds a list of alert events to the system.
       operationId: SubmitAlertEventsadd_Post
       requestBody:
@@ -2979,7 +2979,7 @@ paths:
     get:
       tags:
         - alertEvents
-      summary: Adds a list of alert events to the system. The response can indicate a rate-limiting back off time.
+      summary: Submit alert events with rate limiting
       description: Adds a list of alert events to the system. The response can indicate a rate-limiting back off time.
       operationId: SubmitAlertEventsLimitedlimitedAdd_Get
       parameters:
@@ -3010,7 +3010,7 @@ paths:
     post:
       tags:
         - alertEvents
-      summary: Adds a list of alert events to the system. The response can indicate a rate-limiting back off time.
+      summary: Submit alert events with rate limiting
       description: Adds a list of alert events to the system. The response can indicate a rate-limiting back off time.
       operationId: SubmitAlertEventsLimitedlimitedAdd_Post
       requestBody:
@@ -3034,7 +3034,7 @@ paths:
     get:
       tags:
         - baselineEvents
-      summary: Adds a list of baseline events to the system.
+      summary: Submit baseline events
       description: Adds a list of baseline events to the system.
       operationId: SubmitBaselineEventsadd_Get
       parameters:
@@ -3063,7 +3063,7 @@ paths:
     post:
       tags:
         - baselineEvents
-      summary: Adds a list of baseline events to the system.
+      summary: Submit baseline events
       description: Adds a list of baseline events to the system.
       operationId: SubmitBaselineEventsadd_Post
       requestBody:
@@ -3085,7 +3085,7 @@ paths:
     get:
       tags:
         - baselineEvents
-      summary: Adds a list of baseline events to the system. The response can indicate a rate-limiting back off time.
+      summary: Submit baseline events with rate limiting
       description: Adds a list of baseline events to the system. The response can indicate a rate-limiting back off time.
       operationId: SubmitBaselineEventsLimitedlimitedAdd_Get
       parameters:
@@ -3116,7 +3116,7 @@ paths:
     post:
       tags:
         - baselineEvents
-      summary: Adds a list of baseline events to the system. The response can indicate a rate-limiting back off time.
+      summary: Submit baseline events with rate limiting
       description: Adds a list of baseline events to the system. The response can indicate a rate-limiting back off time.
       operationId: SubmitBaselineEventsLimitedlimitedAdd_Post
       requestBody:
@@ -3140,7 +3140,7 @@ paths:
     get:
       tags:
         - deviceEvents
-      summary: Adds a list of device change events to the system.
+      summary: Submit device change events
       description: Adds a list of device change events to the system.
       operationId: SubmitDeviceEventsadd_Get
       parameters:
@@ -3169,7 +3169,7 @@ paths:
     post:
       tags:
         - deviceEvents
-      summary: Adds a list of device change events to the system.
+      summary: Submit device change events
       description: Adds a list of device change events to the system.
       operationId: SubmitDeviceEventsadd_Post
       requestBody:
@@ -3191,7 +3191,7 @@ paths:
     get:
       tags:
         - deviceEvents
-      summary: Adds a list of device change events to the system. The response can indicate a rate-limiting back off time.
+      summary: Submit device change events with rate limiting
       description: Adds a list of device change events to the system. The response can indicate a rate-limiting back off time.
       operationId: SubmitDeviceEventsLimitedlimitedAdd_Get
       parameters:
@@ -3222,7 +3222,7 @@ paths:
     post:
       tags:
         - deviceEvents
-      summary: Adds a list of device change events to the system. The response can indicate a rate-limiting back off time.
+      summary: Submit device change events with rate limiting
       description: Adds a list of device change events to the system. The response can indicate a rate-limiting back off time.
       operationId: SubmitDeviceEventsLimitedlimitedAdd_Post
       requestBody:
@@ -3246,7 +3246,7 @@ paths:
     get:
       tags:
         - status
-      summary: Gets whether system is booted and ready for login.
+      summary: Get system boot status
       description: Gets whether system is booted and ready for login.
       operationId: SystemReadyready_Get
       parameters:
@@ -3267,7 +3267,7 @@ paths:
     post:
       tags:
         - status
-      summary: Gets whether system is booted and ready for login.
+      summary: Get system boot status
       description: Gets whether system is booted and ready for login.
       operationId: SystemReadyready_Post
       requestBody:
@@ -3289,7 +3289,7 @@ paths:
     get:
       tags:
         - status
-      summary: Gets system version and config settings once logged in.
+      summary: Get system version and config
       description: Gets system version and config settings once logged in.
       operationId: SystemDetailssystem_Get
       parameters:
@@ -3312,7 +3312,7 @@ paths:
     post:
       tags:
         - status
-      summary: Gets system version and config settings once logged in.
+      summary: Get system version and config
       description: Gets system version and config settings once logged in.
       operationId: SystemDetailssystem_Post
       requestBody:
@@ -3336,7 +3336,7 @@ paths:
     get:
       tags:
         - status
-      summary: 'Retrieves a list of background, potentially long-running, tasks the hub has performed and their associated status.'
+      summary: 'List background task statuses'
       description: 'Retrieves a list of background, potentially long-running, tasks the hub has performed and their associated status.'
       operationId: GetBackgroundTaskStatusesbackgroundtasks_Get
       parameters:
@@ -3410,7 +3410,7 @@ paths:
     post:
       tags:
         - status
-      summary: 'Retrieves a list of background, potentially long-running, tasks the hub has performed and their associated status.'
+      summary: 'List background task statuses'
       description: 'Retrieves a list of background, potentially long-running, tasks the hub has performed and their associated status.'
       operationId: GetBackgroundTaskStatusesbackgroundtasks_Post
       requestBody:
@@ -3437,7 +3437,7 @@ paths:
     get:
       tags:
         - status
-      summary: Gets the number of events currently in the processing queue.
+      summary: Events in processing queue
       description: Gets the number of events currently in the processing queue.
       operationId: EventsOnIncomingQueueeventsOnIncomingQueue_Get
       parameters:
@@ -3462,7 +3462,7 @@ paths:
     post:
       tags:
         - status
-      summary: Gets the number of events currently in the processing queue.
+      summary: Events in processing queue
       description: Gets the number of events currently in the processing queue.
       operationId: EventsOnIncomingQueueeventsOnIncomingQueue_Post
       requestBody:
@@ -3488,7 +3488,7 @@ paths:
     get:
       tags:
         - status
-      summary: 'Returns the number of internal event notification messages received, processed or failed.'
+      summary: 'Count internal event notifications'
       description: 'Returns the number of internal event notification messages received, processed or failed.'
       operationId: EventMessageStatusmessageStatus_Get
       parameters:
@@ -3515,7 +3515,7 @@ paths:
     post:
       tags:
         - status
-      summary: 'Returns the number of internal event notification messages received, processed or failed.'
+      summary: 'Count internal event notifications'
       description: 'Returns the number of internal event notification messages received, processed or failed.'
       operationId: EventMessageStatusmessageStatus_Post
       requestBody:
@@ -3543,7 +3543,7 @@ paths:
     get:
       tags:
         - status
-      summary: 'Gets the pipeline status, returning a dictionary of pipeline components and their current status.'
+      summary: 'Get pipeline component statuses'
       description: 'Gets the pipeline status, returning a dictionary of pipeline components and their current status.'
       operationId: GetPipelineStatuspipeline_Get
       parameters:
@@ -3579,7 +3579,7 @@ paths:
     post:
       tags:
         - status
-      summary: 'Gets the pipeline status, returning a dictionary of pipeline components and their current status.'
+      summary: 'Get pipeline component statuses'
       description: 'Gets the pipeline status, returning a dictionary of pipeline components and their current status.'
       operationId: GetPipelineStatuspipeline_Post
       requestBody:
@@ -4048,7 +4048,7 @@ paths:
     get:
       tags:
         - reports
-      summary: Deletes a report layout template of the specified type and name
+      summary: Delete report layout template
       description: Deletes a report layout template of the specified type and name
       operationId: DeleteCustomReportTemplatedeletecustomreporttemplate_Get
       parameters:
@@ -4100,7 +4100,7 @@ paths:
     post:
       tags:
         - reports
-      summary: Deletes a report layout template of the specified type and name
+      summary: Delete report layout template
       description: Deletes a report layout template of the specified type and name
       operationId: DeleteCustomReportTemplatedeletecustomreporttemplate_Post
       requestBody:
@@ -4122,7 +4122,7 @@ paths:
     get:
       tags:
         - reports
-      summary: A request to gets the data for a device monitoring report
+      summary: Get device monitoring report data
       description: A request to gets the data for a device monitoring report
       operationId: DataSpecDeviceMonitoringReportdevicemonitoring_Get
       parameters:
@@ -4201,7 +4201,7 @@ paths:
     post:
       tags:
         - reports
-      summary: A request to gets the data for a device monitoring report
+      summary: Get device monitoring report data
       description: A request to gets the data for a device monitoring report
       operationId: DataSpecDeviceMonitoringReportdevicemonitoring_Post
       requestBody:
@@ -4410,7 +4410,7 @@ paths:
     get:
       tags:
         - stats
-      summary: 'Get report summaries by report, for either individual devices, or as group average.'
+      summary: 'Get device or group report summaries'
       description: 'Get report summaries by report, for either individual devices, or as group average.'
       operationId: GetComplianceDatacompliancedata_Get
       parameters:
@@ -4479,7 +4479,7 @@ paths:
     post:
       tags:
         - stats
-      summary: 'Get report summaries by report, for either individual devices, or as group average.'
+      summary: 'Get device or group report summaries'
       description: 'Get report summaries by report, for either individual devices, or as group average.'
       operationId: GetComplianceDatacompliancedata_Post
       requestBody:
@@ -4503,7 +4503,7 @@ paths:
     get:
       tags:
         - stats
-      summary: Get a list of groups or devices that have report data available for them
+      summary: List groups with available report data
       description: Get a list of groups or devices that have report data available for them
       operationId: GetAvailableComplianceDatagetavailablecompliancedata_Get
       parameters:
@@ -4526,7 +4526,7 @@ paths:
     post:
       tags:
         - stats
-      summary: Get a list of groups or devices that have report data available for them
+      summary: List groups with available report data
       description: Get a list of groups or devices that have report data available for them
       operationId: GetAvailableComplianceDatagetavailablecompliancedata_Post
       requestBody:
@@ -4550,7 +4550,7 @@ paths:
     get:
       tags:
         - stats
-      summary: Gets a list of inactive devices matching the filter.
+      summary: List inactive devices by filter
       description: Gets a list of inactive devices matching the filter.
       operationId: GetDeviceActivitydeviceActivity_Get
       parameters:
@@ -4573,7 +4573,7 @@ paths:
     post:
       tags:
         - stats
-      summary: Gets a list of inactive devices matching the filter.
+      summary: List inactive devices by filter
       description: Gets a list of inactive devices matching the filter.
       operationId: GetDeviceActivitydeviceActivity_Post
       requestBody:
@@ -4597,7 +4597,7 @@ paths:
     get:
       tags:
         - stats
-      summary: 'Gets a summary of event counts for the devices or groups specified by the DeviceFilter, for the specified time period.'
+      summary: 'Get event counts by device filter'
       description: 'Gets a summary of event counts for the devices or groups specified by the DeviceFilter, for the specified time period.'
       operationId: GetEventCountsevents_Get
       parameters:
@@ -4660,7 +4660,7 @@ paths:
     post:
       tags:
         - stats
-      summary: 'Gets a summary of event counts for the devices or groups specified by the DeviceFilter, for the specified time period.'
+      summary: 'Get event counts by device filter'
       description: 'Gets a summary of event counts for the devices or groups specified by the DeviceFilter, for the specified time period.'
       operationId: GetEventCountsevents_Post
       requestBody:
@@ -4684,7 +4684,7 @@ paths:
     get:
       tags:
         - stats
-      summary: 'Gets a summary of event counts for top N noisiest devices in the specified group, for the specified time period.'
+      summary: 'Get noisy device event counts'
       description: 'Gets a summary of event counts for top N noisiest devices in the specified group, for the specified time period.'
       operationId: GetNoisyDevicesnoisydevices_Get
       parameters:
@@ -4709,7 +4709,7 @@ paths:
     post:
       tags:
         - stats
-      summary: 'Gets a summary of event counts for top N noisiest devices in the specified group, for the specified time period.'
+      summary: 'Get noisy device event counts'
       description: 'Gets a summary of event counts for top N noisiest devices in the specified group, for the specified time period.'
       operationId: GetNoisyDevicesnoisydevices_Post
       parameters:
@@ -4992,7 +4992,7 @@ paths:
     get:
       tags:
         - reports
-      summary: Gets a previously generated report output file
+      summary: Get generated report output file
       description: Gets a previously generated report output file
       operationId: GetScheduledInstanceOutputscheduledinstancesrendereddownload_Get
       parameters:
@@ -5016,7 +5016,7 @@ paths:
     post:
       tags:
         - reports
-      summary: Gets a previously generated report output file
+      summary: Get generated report output file
       description: Gets a previously generated report output file
       operationId: GetScheduledInstanceOutputscheduledinstancesrendereddownload_Post
       requestBody:
@@ -5250,7 +5250,7 @@ paths:
     get:
       tags:
         - reports
-      summary: Adds a new schedulable report of the type specified by the Id parameter
+      summary: Add scheduled report
       description: Adds a new schedulable report of the type specified by the Id parameter
       operationId: AddScheduledReportscheduledadd_Get
       parameters:
@@ -5302,7 +5302,7 @@ paths:
     post:
       tags:
         - reports
-      summary: Adds a new schedulable report of the type specified by the Id parameter
+      summary: Add scheduled report
       description: Adds a new schedulable report of the type specified by the Id parameter
       operationId: AddScheduledReportscheduledadd_Post
       requestBody:
@@ -5608,7 +5608,7 @@ paths:
     get:
       tags:
         - updatehubdetails
-      summary: Update the HUbDetails.xml file for the specified agents / groups
+      summary: Update HubDetails.xml for agents/groups
       description: Update the HUbDetails.xml file for the specified agents / groups
       operationId: UpdateHubDetails_Get
       parameters:
@@ -5629,7 +5629,7 @@ paths:
     post:
       tags:
         - updatehubdetails
-      summary: Update the HUbDetails.xml file for the specified agents / groups
+      summary: Update HubDetails.xml for agents/groups
       description: Update the HUbDetails.xml file for the specified agents / groups
       operationId: UpdateHubDetails_Post
       requestBody:
@@ -5651,7 +5651,7 @@ paths:
     get:
       tags:
         - downloadAgentUpdate
-      summary: Download an update package for the agent.
+      summary: Download agent update package
       description: Download an update package for the agent.
       operationId: DownloadUpdateVersionRequested_Get
       parameters:
@@ -5702,7 +5702,7 @@ paths:
     post:
       tags:
         - downloadAgentUpdate
-      summary: Download an update package for the agent.
+      summary: Download agent update package
       description: Download an update package for the agent.
       operationId: DownloadUpdateVersionRequested_Post
       requestBody:
@@ -5726,7 +5726,7 @@ paths:
     get:
       tags:
         - downloadAgentUpdate
-      summary: Download an update package for the agent.
+      summary: Download agent update package
       description: Download an update package for the agent.
       operationId: DownloadUpdateVersionRequestedUpdateType_Get
       parameters:
@@ -5777,7 +5777,7 @@ paths:
     post:
       tags:
         - downloadAgentUpdate
-      summary: Download an update package for the agent.
+      summary: Download agent update package
       description: Download an update package for the agent.
       operationId: DownloadUpdateVersionRequestedUpdateType_Post
       requestBody:
@@ -5849,7 +5849,7 @@ paths:
     get:
       tags:
         - agentUpdates
-      summary: 'Gets a list of Agent updates, by version or specific ID.'
+      summary: 'List agent updates'
       description: 'Gets a list of Agent updates, by version or specific ID.'
       operationId: GetAgentUpdates_Get
       parameters:
@@ -5908,7 +5908,7 @@ paths:
     post:
       tags:
         - agentUpdates
-      summary: 'Gets a list of Agent updates, by version or specific ID.'
+      summary: 'List agent updates'
       description: 'Gets a list of Agent updates, by version or specific ID.'
       operationId: GetAgentUpdates_Post
       requestBody:
@@ -5935,7 +5935,7 @@ paths:
     get:
       tags:
         - agentSoftwareUpdateSchedules
-      summary: Gets the agent software update schedule for a group.
+      summary: Get group agent update schedule
       description: Gets the agent software update schedule for a group.
       operationId: GetAgentSoftwareUpdateScheduleForGroup_Get
       parameters:
@@ -5966,7 +5966,7 @@ paths:
     post:
       tags:
         - agentSoftwareUpdateSchedules
-      summary: Gets the agent software update schedule for a group.
+      summary: Get group agent update schedule
       description: Gets the agent software update schedule for a group.
       operationId: GetAgentSoftwareUpdateScheduleForGroup_Post
       requestBody:
@@ -5993,7 +5993,7 @@ paths:
     get:
       tags:
         - agentSoftwareUpdateSchedules
-      summary: Remove (delete) the agent software update schedule for a group.
+      summary: Remove group agent update schedule
       description: Remove (delete) the agent software update schedule for a group.
       operationId: DeleteAgentSoftwareUpdateScheduleFromGroupdelete_Get
       parameters:
@@ -6019,7 +6019,7 @@ paths:
     post:
       tags:
         - agentSoftwareUpdateSchedules
-      summary: Remove (delete) the agent software update schedule for a group.
+      summary: Remove group agent update schedule
       description: Remove (delete) the agent software update schedule for a group.
       operationId: DeleteAgentSoftwareUpdateScheduleFromGroupdelete_Post
       requestBody:
@@ -6041,7 +6041,7 @@ paths:
     get:
       tags:
         - agentSoftwareUpdateSchedules
-      summary: Update the agent software update schedule for a group.
+      summary: Update group agent update schedule
       description: Update the agent software update schedule for a group.
       operationId: UpdateAgentSoftwareUpdateScheduleForGroupupdate_Get
       parameters:
@@ -6072,7 +6072,7 @@ paths:
     post:
       tags:
         - agentSoftwareUpdateSchedules
-      summary: Update the agent software update schedule for a group.
+      summary: Update group agent update schedule
       description: Update the agent software update schedule for a group.
       operationId: UpdateAgentSoftwareUpdateScheduleForGroupupdate_Post
       requestBody:
@@ -6094,7 +6094,7 @@ paths:
     get:
       tags:
         - agentSoftwareUpdateSchedules
-      summary: Add (set) an agent update schedule for a specific group.  Only one schedule is permitted per group at the current time.
+      summary: Set agent update schedule for group
       description: Add (set) an agent update schedule for a specific group.  Only one schedule is permitted per group at the current time.
       operationId: SetAgentSoftwareUpdateScheduleForGroupadd_Get
       parameters:
@@ -6130,7 +6130,7 @@ paths:
     post:
       tags:
         - agentSoftwareUpdateSchedules
-      summary: Add (set) an agent update schedule for a specific group.  Only one schedule is permitted per group at the current time.
+      summary: Set agent update schedule for group
       description: Add (set) an agent update schedule for a specific group.  Only one schedule is permitted per group at the current time.
       operationId: SetAgentSoftwareUpdateScheduleForGroupadd_Post
       requestBody:
@@ -6157,7 +6157,7 @@ paths:
     get:
       tags:
         - syncServiceConfigItems
-      summary: Retrieves a list of SyncService configuration items.
+      summary: List SyncService configuration items
       description: Retrieves a list of SyncService configuration items.
       operationId: GetSyncServiceConfigItems_Get
       parameters:
@@ -6220,7 +6220,7 @@ paths:
     post:
       tags:
         - syncServiceConfigItems
-      summary: Retrieves a list of SyncService configuration items.
+      summary: List SyncService configuration items
       description: Retrieves a list of SyncService configuration items.
       operationId: GetSyncServiceConfigItems_Post
       requestBody:
@@ -6316,7 +6316,7 @@ paths:
     get:
       tags:
         - configItems
-      summary: Retrieves a list of hub configuration parameters.
+      summary: List hub configuration parameters
       description: Retrieves a list of hub configuration parameters.
       operationId: GetConfigItems_Get
       parameters:
@@ -6403,7 +6403,7 @@ paths:
     post:
       tags:
         - configItems
-      summary: Retrieves a list of hub configuration parameters.
+      summary: List hub configuration parameters
       description: Retrieves a list of hub configuration parameters.
       operationId: GetConfigItems_Post
       requestBody:
@@ -6427,7 +6427,7 @@ paths:
     get:
       tags:
         - configItems
-      summary: Add a list of hub configuration parameters.
+      summary: Add hub config parameters
       description: Add a list of hub configuration parameters.
       operationId: AddConfigItemsadd_Get
       parameters:
@@ -6463,7 +6463,7 @@ paths:
     post:
       tags:
         - configItems
-      summary: Add a list of hub configuration parameters.
+      summary: Add hub config parameters
       description: Add a list of hub configuration parameters.
       operationId: AddConfigItemsadd_Post
       requestBody:
@@ -6491,7 +6491,7 @@ paths:
     get:
       tags:
         - configItems
-      summary: Update a a list of hub configuration parameters.
+      summary: Update hub config parameters
       description: Update a a list of hub configuration parameters.
       operationId: UpdateConfigItemsupdate_Get
       parameters:
@@ -6520,7 +6520,7 @@ paths:
     post:
       tags:
         - configItems
-      summary: Update a a list of hub configuration parameters.
+      summary: Update hub config parameters
       description: Update a a list of hub configuration parameters.
       operationId: UpdateConfigItemsupdate_Post
       requestBody:
@@ -6542,7 +6542,7 @@ paths:
     get:
       tags:
         - configItems
-      summary: Remove a hub configuration parameter by either ID or Key.
+      summary: Remove hub config by ID
       description: Remove a hub configuration parameter by either ID or Key.
       operationId: DeleteConfigItemdelete_Get
       parameters:
@@ -6573,7 +6573,7 @@ paths:
     post:
       tags:
         - configItems
-      summary: Remove a hub configuration parameter by either ID or Key.
+      summary: Remove hub config by ID
       description: Remove a hub configuration parameter by either ID or Key.
       operationId: DeleteConfigItemdelete_Post
       requestBody:
@@ -6595,7 +6595,7 @@ paths:
     get:
       tags:
         - configItem
-      summary: Update a single hub configuration parameter by either ID or Key.
+      summary: Update config by ID or key
       description: Update a single hub configuration parameter by either ID or Key.
       operationId: UpdateConfigItemupdate_Get
       parameters:
@@ -6636,7 +6636,7 @@ paths:
     post:
       tags:
         - configItem
-      summary: Update a single hub configuration parameter by either ID or Key.
+      summary: Update config by ID or key
       description: Update a single hub configuration parameter by either ID or Key.
       operationId: UpdateConfigItemupdate_Post
       requestBody:
@@ -6658,7 +6658,7 @@ paths:
     get:
       tags:
         - configItem
-      summary: Add a hub configuration parameter by Key.
+      summary: Add hub config by Key
       description: Add a hub configuration parameter by Key.
       operationId: AddConfigItemadd_Get
       parameters:
@@ -6697,7 +6697,7 @@ paths:
     post:
       tags:
         - configItem
-      summary: Add a hub configuration parameter by Key.
+      summary: Add hub config by Key
       description: Add a hub configuration parameter by Key.
       operationId: AddConfigItemadd_Post
       requestBody:
@@ -6721,7 +6721,7 @@ paths:
     get:
       tags:
         - misc
-      summary: Echos the specified date/time value to ensure that no serialization issues exist between hub and client.
+      summary: Echo date/time serialization test
       description: Echos the specified date/time value to ensure that no serialization issues exist between hub and client.
       operationId: DateTransmissionTestdateTransmissionTest_Get
       parameters:
@@ -6753,7 +6753,7 @@ paths:
     post:
       tags:
         - misc
-      summary: Echos the specified date/time value to ensure that no serialization issues exist between hub and client.
+      summary: Echo date/time serialization test
       description: Echos the specified date/time value to ensure that no serialization issues exist between hub and client.
       operationId: DateTransmissionTestdateTransmissionTest_Post
       requestBody:
@@ -6779,7 +6779,7 @@ paths:
     get:
       tags:
         - credentials
-      summary: Add credentials for specified type and key.
+      summary: Add credentials for type and key.
       description: Add credentials for specified type and key.
       operationId: AddCredentialsadd_Get
       parameters:
@@ -6807,7 +6807,7 @@ paths:
     post:
       tags:
         - credentials
-      summary: Add credentials for specified type and key.
+      summary: Add credentials for type and key.
       description: Add credentials for specified type and key.
       operationId: AddCredentialsadd_Post
       requestBody:
@@ -6831,7 +6831,7 @@ paths:
     get:
       tags:
         - credentials
-      summary: Update credentials for specified type and key.
+      summary: Update credentials by type and key.
       description: Update credentials for specified type and key.
       operationId: UpdateCredentialsupdate_Get
       parameters:
@@ -6879,7 +6879,7 @@ paths:
     post:
       tags:
         - credentials
-      summary: Update credentials for specified type and key.
+      summary: Update credentials by type and key.
       description: Update credentials for specified type and key.
       operationId: UpdateCredentialsupdate_Post
       requestBody:
@@ -6903,7 +6903,7 @@ paths:
     get:
       tags:
         - credentials
-      summary: Remove credentials for specified type and key.
+      summary: Remove credentials by type and key
       description: Remove credentials for specified type and key.
       operationId: RemoveCredentialsdelete_Get
       parameters:
@@ -6944,7 +6944,7 @@ paths:
     post:
       tags:
         - credentials
-      summary: Remove credentials for specified type and key.
+      summary: Remove credentials by type and key
       description: Remove credentials for specified type and key.
       operationId: RemoveCredentialsdelete_Post
       requestBody:
@@ -6966,7 +6966,7 @@ paths:
     get:
       tags:
         - credentialsKeyedByType
-      summary: 'Get a list of all the known credentials, keyed by the type.'
+      summary: 'List credentials by type'
       description: 'Get a list of all the known credentials, keyed by the type.'
       operationId: GetCredentialsKeyedByType_Get
       parameters:
@@ -6995,7 +6995,7 @@ paths:
     post:
       tags:
         - credentialsKeyedByType
-      summary: 'Get a list of all the known credentials, keyed by the type.'
+      summary: 'List credentials by type'
       description: 'Get a list of all the known credentials, keyed by the type.'
       operationId: GetCredentialsKeyedByType_Post
       requestBody:
@@ -7025,7 +7025,7 @@ paths:
     get:
       tags:
         - credentials
-      summary: Gets a list of all credentials of the specified type.
+      summary: List credentials of specified type
       description: Gets a list of all credentials of the specified type.
       operationId: GetCredentialsList_Get
       parameters:
@@ -7071,7 +7071,7 @@ paths:
     post:
       tags:
         - credentials
-      summary: Gets a list of all credentials of the specified type.
+      summary: List credentials of specified type
       description: Gets a list of all credentials of the specified type.
       operationId: GetCredentialsList_Post
       requestBody:
@@ -7098,7 +7098,7 @@ paths:
     get:
       tags:
         - command
-      summary: 'Requests information about the given tasks'' status. If a PolicyRunId is supplied, the tasks associated with it are returned.'
+      summary: 'Get task status'
       description: 'Requests information about the given tasks'' status. If a PolicyRunId is supplied, the tasks associated with it are returned.'
       operationId: GetAgentTaskStatusestasksstatus_Get
       parameters:
@@ -7137,7 +7137,7 @@ paths:
     post:
       tags:
         - command
-      summary: 'Requests information about the given tasks'' status. If a PolicyRunId is supplied, the tasks associated with it are returned.'
+      summary: 'Get task status'
       description: 'Requests information about the given tasks'' status. If a PolicyRunId is supplied, the tasks associated with it are returned.'
       operationId: GetAgentTaskStatusestasksstatus_Post
       requestBody:
@@ -7161,7 +7161,7 @@ paths:
     get:
       tags:
         - command
-      summary: 'Requests information about the given tasks'' status. If a PolicyRunId is supplied, the tasks associated with it are returned.'
+      summary: 'Get task status'
       description: 'Requests information about the given tasks'' status. If a PolicyRunId is supplied, the tasks associated with it are returned.'
       operationId: GetAgentTaskStatusestasksstatusidsIds_Get
       parameters:
@@ -7200,7 +7200,7 @@ paths:
     post:
       tags:
         - command
-      summary: 'Requests information about the given tasks'' status. If a PolicyRunId is supplied, the tasks associated with it are returned.'
+      summary: 'Get task status'
       description: 'Requests information about the given tasks'' status. If a PolicyRunId is supplied, the tasks associated with it are returned.'
       operationId: GetAgentTaskStatusestasksstatusidsIds_Post
       requestBody:
@@ -7224,7 +7224,7 @@ paths:
     get:
       tags:
         - command
-      summary: Adds a list of tasks for the given agent.
+      summary: Add agent tasks
       description: Adds a list of tasks for the given agent.
       operationId: SubmitAgentTaskstasksaddagentAgentId_Get
       parameters:
@@ -7255,7 +7255,7 @@ paths:
     post:
       tags:
         - command
-      summary: Adds a list of tasks for the given agent.
+      summary: Add agent tasks
       description: Adds a list of tasks for the given agent.
       operationId: SubmitAgentTaskstasksaddagentAgentId_Post
       requestBody:
@@ -7279,7 +7279,7 @@ paths:
     get:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentlegacyLegacyId_Get
       parameters:
@@ -7394,7 +7394,7 @@ paths:
     post:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentlegacyLegacyId_Post
       requestBody:
@@ -7418,7 +7418,7 @@ paths:
     get:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentAgentIdallAllTasks_Get
       parameters:
@@ -7533,7 +7533,7 @@ paths:
     post:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentAgentIdallAllTasks_Post
       requestBody:
@@ -7557,7 +7557,7 @@ paths:
     get:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentAgentIdsingleTaskId_Get
       parameters:
@@ -7672,7 +7672,7 @@ paths:
     post:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentAgentIdsingleTaskId_Post
       requestBody:
@@ -7696,7 +7696,7 @@ paths:
     get:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentlegacyLegacyIdallAllTasks_Get
       parameters:
@@ -7811,7 +7811,7 @@ paths:
     post:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentlegacyLegacyIdallAllTasks_Post
       requestBody:
@@ -7835,7 +7835,7 @@ paths:
     get:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentlegacyLegacyIdsingleTaskId_Get
       parameters:
@@ -7950,7 +7950,7 @@ paths:
     post:
       tags:
         - command
-      summary: Requests information about tasks for the given agent.
+      summary: Get tasks for given agent
       description: Requests information about tasks for the given agent.
       operationId: GetAgentTaskstasksagentlegacyLegacyIdsingleTaskId_Post
       requestBody:
@@ -7974,7 +7974,7 @@ paths:
     get:
       tags:
         - downloadFileHash
-      summary: Download the filehasing utility app for remote monitoring.
+      summary: Download file hashing utility
       description: Download the filehasing utility app for remote monitoring.
       operationId: DownloadFileHashBinaryHostTypeOperatingSystemVariant_Get
       parameters:
@@ -8033,7 +8033,7 @@ paths:
     post:
       tags:
         - downloadFileHash
-      summary: Download the filehasing utility app for remote monitoring.
+      summary: Download file hashing utility
       description: Download the filehasing utility app for remote monitoring.
       operationId: DownloadFileHashBinaryHostTypeOperatingSystemVariant_Post
       requestBody:
@@ -8057,7 +8057,7 @@ paths:
     get:
       tags:
         - downloadFileHashById
-      summary: Download the filehasing utility app for remote monitoring.
+      summary: Download file hashing utility
       description: Download the filehasing utility app for remote monitoring.
       operationId: DownloadFileHashBinaryFileId_Get
       parameters:
@@ -8116,7 +8116,7 @@ paths:
     post:
       tags:
         - downloadFileHashById
-      summary: Download the filehasing utility app for remote monitoring.
+      summary: Download file hashing utility
       description: Download the filehasing utility app for remote monitoring.
       operationId: DownloadFileHashBinaryFileId_Post
       requestBody:
@@ -8140,7 +8140,7 @@ paths:
     get:
       tags:
         - getFileHashBinaries
-      summary: Retrieves the list of file hash binaries available to download from the hub.
+      summary: List file hash binaries
       description: Retrieves the list of file hash binaries available to download from the hub.
       operationId: GetFileHashBinaries_Get
       parameters:
@@ -8166,7 +8166,7 @@ paths:
     post:
       tags:
         - getFileHashBinaries
-      summary: Retrieves the list of file hash binaries available to download from the hub.
+      summary: List file hash binaries
       description: Retrieves the list of file hash binaries available to download from the hub.
       operationId: GetFileHashBinaries_Post
       requestBody:
@@ -8193,7 +8193,7 @@ paths:
     get:
       tags:
         - plannedChangeInstances
-      summary: Gets the group and device  members of the specified planned change instance.
+      summary: Get planned change instance members
       description: Gets the group and device  members of the specified planned change instance.
       operationId: GetPlannedChangeInstanceMembersmembers_Get
       parameters:
@@ -8222,7 +8222,7 @@ paths:
     post:
       tags:
         - plannedChangeInstances
-      summary: Gets the group and device  members of the specified planned change instance.
+      summary: Get planned change instance members
       description: Gets the group and device  members of the specified planned change instance.
       operationId: GetPlannedChangeInstanceMembersmembers_Post
       requestBody:
@@ -8246,7 +8246,7 @@ paths:
     get:
       tags:
         - plannedChangeInstances
-      summary: Deletes an instance of a planned change from the system.
+      summary: Delete a planned change instance
       description: Deletes an instance of a planned change from the system.
       operationId: DeletePlannedChangeInstancedelete_Get
       parameters:
@@ -8279,7 +8279,7 @@ paths:
     post:
       tags:
         - plannedChangeInstances
-      summary: Deletes an instance of a planned change from the system.
+      summary: Delete a planned change instance
       description: Deletes an instance of a planned change from the system.
       operationId: DeletePlannedChangeInstancedelete_Post
       requestBody:
@@ -8301,7 +8301,7 @@ paths:
     get:
       tags:
         - plannedChangeInstances
-      summary: Removes a group or device from a planned change
+      summary: Remove member from planned change
       description: Removes a group or device from a planned change
       operationId: DeletePlannedChangeInstanceMemberdeleteMember_Get
       parameters:
@@ -8338,7 +8338,7 @@ paths:
     post:
       tags:
         - plannedChangeInstances
-      summary: Removes a group or device from a planned change
+      summary: Remove member from planned change
       description: Removes a group or device from a planned change
       operationId: DeletePlannedChangeInstanceMemberdeleteMember_Post
       requestBody:
@@ -8720,7 +8720,7 @@ paths:
     get:
       tags:
         - plannedChangeInstances
-      summary: 'Gets planned change instances name and id, filtering by name, id or groups that are members.'
+      summary: 'Get planned change instance names'
       description: 'Gets planned change instances name and id, filtering by name, id or groups that are members.'
       operationId: GetPlannedChangeInstancesNameValuenameValue_Get
       parameters:
@@ -8856,7 +8856,7 @@ paths:
     post:
       tags:
         - plannedChangeInstances
-      summary: 'Gets planned change instances name and id, filtering by name, id or groups that are members.'
+      summary: 'Get planned change instance names'
       description: 'Gets planned change instances name and id, filtering by name, id or groups that are members.'
       operationId: GetPlannedChangeInstancesNameValuenameValue_Post
       requestBody:
@@ -8880,7 +8880,7 @@ paths:
     get:
       tags:
         - plannedChangeInstances
-      summary: Add a list of groups to a planned change
+      summary: Add groups to a planned change
       description: Add a list of groups to a planned change
       operationId: AddPlannedChangeInstanceMemberaddMembers_Get
       parameters:
@@ -8923,7 +8923,7 @@ paths:
     post:
       tags:
         - plannedChangeInstances
-      summary: Add a list of groups to a planned change
+      summary: Add groups to a planned change
       description: Add a list of groups to a planned change
       operationId: AddPlannedChangeInstanceMemberaddMembers_Post
       requestBody:
@@ -8945,7 +8945,7 @@ paths:
     get:
       tags:
         - plannedChangeInstances
-      summary: A request to add a new planned change and planned change instance based on the given events.
+      summary: Add planned change from events
       description: A request to add a new planned change and planned change instance based on the given events.
       operationId: AddOrUpdatePlannedChangeInstanceFromEventsaddOrUpdateFromEvents_Get
       parameters:
@@ -9049,7 +9049,7 @@ paths:
     post:
       tags:
         - plannedChangeInstances
-      summary: A request to add a new planned change and planned change instance based on the given events.
+      summary: Add planned change from events
       description: A request to add a new planned change and planned change instance based on the given events.
       operationId: AddOrUpdatePlannedChangeInstanceFromEventsaddOrUpdateFromEvents_Post
       requestBody:
@@ -9073,7 +9073,7 @@ paths:
     get:
       tags:
         - plannedChangeInstances
-      summary: A request to re-evaluate the events associated with the specified planned change.
+      summary: Re-evaluate planned change instance events
       description: A request to re-evaluate the events associated with the specified planned change.
       operationId: AddReEvaluationOfPlannedChangeInstanceEventsreevaluateEvents_Get
       parameters:
@@ -9117,7 +9117,7 @@ paths:
     post:
       tags:
         - plannedChangeInstances
-      summary: A request to re-evaluate the events associated with the specified planned change.
+      summary: Re-evaluate planned change instance events
       description: A request to re-evaluate the events associated with the specified planned change.
       operationId: AddReEvaluationOfPlannedChangeInstanceEventsreevaluateEvents_Post
       requestBody:
@@ -9139,7 +9139,7 @@ paths:
     get:
       tags:
         - plannedChangeInstances
-      summary: 'Gets planned change instances, filtering by name, id or groups that are members.'
+      summary: 'Get planned change instances'
       description: 'Gets planned change instances, filtering by name, id or groups that are members.'
       operationId: GetPlannedChangeInstances_Get
       parameters:
@@ -9281,7 +9281,7 @@ paths:
     post:
       tags:
         - plannedChangeInstances
-      summary: 'Gets planned change instances, filtering by name, id or groups that are members.'
+      summary: 'Get planned change instances'
       description: 'Gets planned change instances, filtering by name, id or groups that are members.'
       operationId: GetPlannedChangeInstances_Post
       requestBody:
@@ -9635,7 +9635,7 @@ paths:
     get:
       tags:
         - plannedChanges
-      summary: 'Create rule reduction plans, which can be used to simplify rulesets associated with the specified planned change.'
+      summary: 'Create planned change rule reduction'
       description: 'Create rule reduction plans, which can be used to simplify rulesets associated with the specified planned change.'
       operationId: AnalyzePlannedChangeanalyze_Get
       parameters:
@@ -9671,7 +9671,7 @@ paths:
     post:
       tags:
         - plannedChanges
-      summary: 'Create rule reduction plans, which can be used to simplify rulesets associated with the specified planned change.'
+      summary: 'Create planned change rule reduction'
       description: 'Create rule reduction plans, which can be used to simplify rulesets associated with the specified planned change.'
       operationId: AnalyzePlannedChangeanalyze_Post
       requestBody:
@@ -9695,7 +9695,7 @@ paths:
     get:
       tags:
         - plannedChanges
-      summary: 'Apply rule reduction plans to the specified planned change, simplifying the associated rulesets.'
+      summary: 'Apply planned change rule reduction'
       description: 'Apply rule reduction plans to the specified planned change, simplifying the associated rulesets.'
       operationId: ApplyPlannedChangePlanapplyPlan_Get
       parameters:
@@ -9734,7 +9734,7 @@ paths:
     post:
       tags:
         - plannedChanges
-      summary: 'Apply rule reduction plans to the specified planned change, simplifying the associated rulesets.'
+      summary: 'Apply planned change rule reduction'
       description: 'Apply rule reduction plans to the specified planned change, simplifying the associated rulesets.'
       operationId: ApplyPlannedChangePlanapplyPlan_Post
       requestBody:
@@ -9756,7 +9756,7 @@ paths:
     get:
       tags:
         - plannedChanges
-      summary: Updates a rule in a planned change
+      summary: Update planned change rule
       description: Updates a rule in a planned change
       operationId: UpdatePlannedChangeRuleupdateRule_Get
       parameters:
@@ -9777,7 +9777,7 @@ paths:
     post:
       tags:
         - plannedChanges
-      summary: Updates a rule in a planned change
+      summary: Update planned change rule
       description: Updates a rule in a planned change
       operationId: UpdatePlannedChangeRuleupdateRule_Post
       requestBody:
@@ -9799,7 +9799,7 @@ paths:
     get:
       tags:
         - plannedChanges
-      summary: Updates the entire rule set in a planned change
+      summary: Update planned change rule set
       description: Updates the entire rule set in a planned change
       operationId: UpdatePlannedChangeRulesupdateRules_Get
       parameters:
@@ -9837,7 +9837,7 @@ paths:
     post:
       tags:
         - plannedChanges
-      summary: Updates the entire rule set in a planned change
+      summary: Update planned change rule set
       description: Updates the entire rule set in a planned change
       operationId: UpdatePlannedChangeRulesupdateRules_Post
       requestBody:
@@ -9862,7 +9862,7 @@ paths:
     get:
       tags:
         - plannedChanges
-      summary: Removes a rule from a planned change
+      summary: Remove rule from planned change.
       description: Removes a rule from a planned change
       operationId: DeletePlannedChangeRuledeleteRule_Get
       parameters:
@@ -9893,7 +9893,7 @@ paths:
     post:
       tags:
         - plannedChanges
-      summary: Removes a rule from a planned change
+      summary: Remove rule from planned change.
       description: Removes a rule from a planned change
       operationId: DeletePlannedChangeRuledeleteRule_Post
       requestBody:
@@ -9915,7 +9915,7 @@ paths:
     get:
       tags:
         - plannedChanges
-      summary: Delete a planned change ruleset definition from the system.
+      summary: Delete a planned change ruleset
       description: Delete a planned change ruleset definition from the system.
       operationId: DeletePlannedChangedelete_Get
       parameters:
@@ -9941,7 +9941,7 @@ paths:
     post:
       tags:
         - plannedChanges
-      summary: Delete a planned change ruleset definition from the system.
+      summary: Delete a planned change ruleset
       description: Delete a planned change ruleset definition from the system.
       operationId: DeletePlannedChangedelete_Post
       requestBody:
@@ -9963,7 +9963,7 @@ paths:
     get:
       tags:
         - plannedChangeRule
-      summary: Add a rule to a planned change
+      summary: Add rule to a planned change.
       description: Add a rule to a planned change
       operationId: AddPlannedChangeRuleadd_Get
       parameters:
@@ -9996,7 +9996,7 @@ paths:
     post:
       tags:
         - plannedChangeRule
-      summary: Add a rule to a planned change
+      summary: Add rule to a planned change.
       description: Add a rule to a planned change
       operationId: AddPlannedChangeRuleadd_Post
       requestBody:
@@ -10020,7 +10020,7 @@ paths:
     get:
       tags:
         - plannedChanges
-      summary: 'Gets a list of planned change ruleset definitions, filtered by name or id.'
+      summary: 'Get planned change ruleset definitions'
       description: 'Gets a list of planned change ruleset definitions, filtered by name or id.'
       operationId: GetPlannedChanges_Get
       parameters:
@@ -10103,7 +10103,7 @@ paths:
     post:
       tags:
         - plannedChanges
-      summary: 'Gets a list of planned change ruleset definitions, filtered by name or id.'
+      summary: 'Get planned change ruleset definitions'
       description: 'Gets a list of planned change ruleset definitions, filtered by name or id.'
       operationId: GetPlannedChanges_Post
       requestBody:
@@ -10127,7 +10127,7 @@ paths:
     get:
       tags:
         - commandParser
-      summary: 'Attempts to parse the supplied commandline, returning a list of disallowed command fragments on failure.'
+      summary: 'Parse command line'
       description: 'Attempts to parse the supplied commandline, returning a list of disallowed command fragments on failure.'
       operationId: ParseCommandsparse_Get
       parameters:
@@ -10158,7 +10158,7 @@ paths:
     post:
       tags:
         - commandParser
-      summary: 'Attempts to parse the supplied commandline, returning a list of disallowed command fragments on failure.'
+      summary: 'Parse command line'
       description: 'Attempts to parse the supplied commandline, returning a list of disallowed command fragments on failure.'
       operationId: ParseCommandsparse_Post
       requestBody:
@@ -10205,7 +10205,7 @@ paths:
     post:
       tags:
         - commandParser
-      summary: Attempts to whitelist the supplied command component.
+      summary: Whitelists a command component.
       description: Attempts to whitelist the supplied command component.
       operationId: CreateWhitelistedCommandComponentwhitelist_Post
       requestBody:
@@ -10229,7 +10229,7 @@ paths:
     get:
       tags:
         - commandParser
-      summary: Attempts to get all the whitelisted command components.
+      summary: List whitelisted command components
       description: Attempts to get all the whitelisted command components.
       operationId: GetAllWhitelistedCommandComponentswhitelistall_Get
       parameters:
@@ -10295,7 +10295,7 @@ paths:
     post:
       tags:
         - commandParser
-      summary: Attempts to update the supplied command component by id.
+      summary: Update command component by ID
       description: Attempts to update the supplied command component by id.
       operationId: UpdateWhitelistedCommandComponentwhitelistupdate_Post
       requestBody:
@@ -10319,7 +10319,7 @@ paths:
     post:
       tags:
         - commandParser
-      summary: Attempts to bulk update the whitelisted command component with the supplied ids.
+      summary: Bulk update command components
       description: Attempts to bulk update the whitelisted command component with the supplied ids.
       operationId: UpdateWhitelistedCommandComponentswhitelistupdateMany_Post
       requestBody:
@@ -10343,7 +10343,7 @@ paths:
     post:
       tags:
         - commandParser
-      summary: Adds the given template(s) to a command component.
+      summary: Add templates to command component
       description: Adds the given template(s) to a command component.
       operationId: AddTemplatesToCommandComponentcommandComponentaddTemplates_Post
       requestBody:
@@ -10367,7 +10367,7 @@ paths:
     post:
       tags:
         - commandParser
-      summary: Attempts to remove the given template(s) from a command component.
+      summary: Remove templates from command component
       description: Attempts to remove the given template(s) from a command component.
       operationId: RemoveTemplatesFromCommandComponentcommandComponentremoveTemplates_Post
       requestBody:
@@ -10391,7 +10391,7 @@ paths:
     get:
       tags:
         - commandParser
-      summary: Gets all templates of a command component.
+      summary: Get templates for command component
       description: Gets all templates of a command component.
       operationId: GetAllCommandComponentTemplatescommandComponenttemplates_Get
       parameters:
@@ -10454,7 +10454,7 @@ paths:
     post:
       tags:
         - commandParser
-      summary: 'Attempts to set the given template(s) to a command component, clearing old templates if they exist.'
+      summary: 'Set command component templates'
       description: 'Attempts to set the given template(s) to a command component, clearing old templates if they exist.'
       operationId: SetAllTemplatesOfCommandComponentcommandComponenttemplates_Post
       requestBody:
@@ -10478,7 +10478,7 @@ paths:
     post:
       tags:
         - commandParser
-      summary: Gets all templates of multiple command components.
+      summary: Get templates for command components
       description: Gets all templates of multiple command components.
       operationId: GetAllCommandComponentsTemplatescommandComponentManytemplates_Post
       requestBody:
@@ -10502,7 +10502,7 @@ paths:
     get:
       tags:
         - cloudTemplate
-      summary: Provide a ProspectiveName for the Cloud System or a ReportSpecId to identify the associated cloud report but never both. Gets the state of progress in the creation of a new cloud report policy. For example it may be only partially configured and require the addition of credentials before it can be run.
+      summary: Get cloud template creation status
       description: Provide a ProspectiveName for the Cloud System or a ReportSpecId to identify the associated cloud report but never both. Gets the state of progress in the creation of a new cloud report policy. For example it may be only partially configured and require the addition of credentials before it can be run.
       operationId: GetCloudTemplateCreationStatusstatus_Get
       parameters:
@@ -10541,7 +10541,7 @@ paths:
     post:
       tags:
         - cloudTemplate
-      summary: Provide a ProspectiveName for the Cloud System or a ReportSpecId to identify the associated cloud report but never both. Gets the state of progress in the creation of a new cloud report policy. For example it may be only partially configured and require the addition of credentials before it can be run.
+      summary: Get cloud template creation status
       description: Provide a ProspectiveName for the Cloud System or a ReportSpecId to identify the associated cloud report but never both. Gets the state of progress in the creation of a new cloud report policy. For example it may be only partially configured and require the addition of credentials before it can be run.
       operationId: GetCloudTemplateCreationStatusstatus_Post
       requestBody:
@@ -10565,7 +10565,7 @@ paths:
     get:
       tags:
         - policyTemplate
-      summary: Ensures that the specified baseline template has the required source and members groups and related scheduled compliance report configured.
+      summary: Set up baseline policy template
       description: Ensures that the specified baseline template has the required source and members groups and related scheduled compliance report configured.
       operationId: SetupPolicyTemplatesetup_Get
       parameters:
@@ -10593,7 +10593,7 @@ paths:
     post:
       tags:
         - policyTemplate
-      summary: Ensures that the specified baseline template has the required source and members groups and related scheduled compliance report configured.
+      summary: Set up baseline policy template
       description: Ensures that the specified baseline template has the required source and members groups and related scheduled compliance report configured.
       operationId: SetupPolicyTemplatesetup_Post
       requestBody:
@@ -10617,7 +10617,7 @@ paths:
     get:
       tags:
         - policyTemplate
-      summary: Gets the state of progress in the creation of a new policy. For example it may be only partially configured and require the addition of rules before it can be applied to devices.
+      summary: Get policy creation status
       description: Gets the state of progress in the creation of a new policy. For example it may be only partially configured and require the addition of rules before it can be applied to devices.
       operationId: GetPolicyTemplateCreationStatusstatus_Get
       parameters:
@@ -10645,7 +10645,7 @@ paths:
     post:
       tags:
         - policyTemplate
-      summary: Gets the state of progress in the creation of a new policy. For example it may be only partially configured and require the addition of rules before it can be applied to devices.
+      summary: Get policy creation status
       description: Gets the state of progress in the creation of a new policy. For example it may be only partially configured and require the addition of rules before it can be applied to devices.
       operationId: GetPolicyTemplateCreationStatusstatus_Post
       requestBody:
@@ -10734,7 +10734,7 @@ paths:
     get:
       tags:
         - policyRecent
-      summary: Gets the most recent policy run results for each matching policy in the time range.
+      summary: Get most recent policy results
       description: Gets the most recent policy run results for each matching policy in the time range.
       operationId: GetMostRecentPolicyResults_Get
       parameters:
@@ -10839,7 +10839,7 @@ paths:
     post:
       tags:
         - policyRecent
-      summary: Gets the most recent policy run results for each matching policy in the time range.
+      summary: Get most recent policy results
       description: Gets the most recent policy run results for each matching policy in the time range.
       operationId: GetMostRecentPolicyResults_Post
       requestBody:
@@ -10863,7 +10863,7 @@ paths:
     get:
       tags:
         - policyTemplate
-      summary: Add a rules to a baseline policy based on events
+      summary: Add rules to baseline policy
       description: Add a rules to a baseline policy based on events
       operationId: AddPolicyTemplateRulesaddrules_Get
       parameters:
@@ -10922,7 +10922,7 @@ paths:
     post:
       tags:
         - policyTemplate
-      summary: Add a rules to a baseline policy based on events
+      summary: Add rules to baseline policy
       description: Add a rules to a baseline policy based on events
       operationId: AddPolicyTemplateRulesaddrules_Post
       requestBody:
@@ -10946,7 +10946,7 @@ paths:
     get:
       tags:
         - devicePolicyTemplate
-      summary: Adds a device policy template to the system. The specified template should be supplied as Xml.
+      summary: Add device policy template
       description: Adds a device policy template to the system. The specified template should be supplied as Xml.
       operationId: AddPolicyTemplateXmladd_Get
       parameters:
@@ -11034,7 +11034,7 @@ paths:
     post:
       tags:
         - devicePolicyTemplate
-      summary: Adds a device policy template to the system. The specified template should be supplied as Xml.
+      summary: Add device policy template
       description: Adds a device policy template to the system. The specified template should be supplied as Xml.
       operationId: AddPolicyTemplateXmladd_Post
       requestBody:
@@ -11058,7 +11058,7 @@ paths:
     get:
       tags:
         - devicePolicyTemplate
-      summary: Deletes a device policy template from the system.  The specified template can be either config or a compliance report template.
+      summary: Delete device policy template
       description: Deletes a device policy template from the system.  The specified template can be either config or a compliance report template.
       operationId: DeletePolicyTemplatedelete_Get
       parameters:
@@ -11089,7 +11089,7 @@ paths:
     post:
       tags:
         - devicePolicyTemplate
-      summary: Deletes a device policy template from the system.  The specified template can be either config or a compliance report template.
+      summary: Delete device policy template
       description: Deletes a device policy template from the system.  The specified template can be either config or a compliance report template.
       operationId: DeletePolicyTemplatedelete_Post
       requestBody:
@@ -11135,7 +11135,7 @@ paths:
     get:
       tags:
         - policyTemplateAsFile
-      summary: Returns a policy template as an xml file in the Http Response stream.
+      summary: Download policy template as XML
       description: Returns a policy template as an xml file in the Http Response stream.
       operationId: GetPolicyTemplateAsFile_Get
       parameters:
@@ -11168,7 +11168,7 @@ paths:
     post:
       tags:
         - policyTemplateAsFile
-      summary: Returns a policy template as an xml file in the Http Response stream.
+      summary: Download policy template as XML
       description: Returns a policy template as an xml file in the Http Response stream.
       operationId: GetPolicyTemplateAsFile_Post
       requestBody:
@@ -11192,7 +11192,7 @@ paths:
     get:
       tags:
         - agentProcesses
-      summary: Get the list of running processes from a specified agent / device.Used to enable 'white-listing' if existing processes from a running agent when building device config.
+      summary: Get agent running processes
       description: Get the list of running processes from a specified agent / device.Used to enable 'white-listing' if existing processes from a running agent when building device config.
       operationId: GetAgentProcesses_Get
       parameters:
@@ -11220,7 +11220,7 @@ paths:
     post:
       tags:
         - agentProcesses
-      summary: Get the list of running processes from a specified agent / device.Used to enable 'white-listing' if existing processes from a running agent when building device config.
+      summary: Get agent running processes
       description: Get the list of running processes from a specified agent / device.Used to enable 'white-listing' if existing processes from a running agent when building device config.
       operationId: GetAgentProcesses_Post
       requestBody:
@@ -11244,7 +11244,7 @@ paths:
     get:
       tags:
         - startAgentTracker
-      summary: Ask an agent to start a specified tracker.
+      summary: Start a tracker on an agent
       description: Ask an agent to start a specified tracker.
       operationId: StartAgentTracker_Get
       parameters:
@@ -11282,7 +11282,7 @@ paths:
     post:
       tags:
         - startAgentTracker
-      summary: Ask an agent to start a specified tracker.
+      summary: Start a tracker on an agent
       description: Ask an agent to start a specified tracker.
       operationId: StartAgentTracker_Post
       requestBody:
@@ -11306,7 +11306,7 @@ paths:
     get:
       tags:
         - agentServices
-      summary: Get the list of running Services from a specified agent/device.  Used to enable 'white - listing' if existing Service  from a running agent when building device config.
+      summary: Get agent running services
       description: Get the list of running Services from a specified agent/device.  Used to enable 'white - listing' if existing Service  from a running agent when building device config.
       operationId: GetAgentServices_Get
       parameters:
@@ -11334,7 +11334,7 @@ paths:
     post:
       tags:
         - agentServices
-      summary: Get the list of running Services from a specified agent/device.  Used to enable 'white - listing' if existing Service  from a running agent when building device config.
+      summary: Get agent running services
       description: Get the list of running Services from a specified agent/device.  Used to enable 'white - listing' if existing Service  from a running agent when building device config.
       operationId: GetAgentServices_Post
       requestBody:
@@ -11358,7 +11358,7 @@ paths:
     get:
       tags:
         - policyTemplates
-      summary: Sets a specific version of a named policy template as the active one.
+      summary: Set active policy template version
       description: Sets a specific version of a named policy template as the active one.
       operationId: SetActivePolicyTemplateactiveVersion_Get
       parameters:
@@ -11389,7 +11389,7 @@ paths:
     post:
       tags:
         - policyTemplates
-      summary: Sets a specific version of a named policy template as the active one.
+      summary: Set active policy template version
       description: Sets a specific version of a named policy template as the active one.
       operationId: SetActivePolicyTemplateactiveVersion_Post
       requestBody:
@@ -11615,7 +11615,7 @@ paths:
     get:
       tags:
         - deviceConfigTemplateNames
-      summary: 'Gets a list of device tracking template names, optionally filtering by trackers contained (e.g. find templates with a process tracker).'
+      summary: 'List device tracking template names'
       description: 'Gets a list of device tracking template names, optionally filtering by trackers contained (e.g. find templates with a process tracker).'
       operationId: GetDeviceConfigTemplateNames_Get
       parameters:
@@ -11657,7 +11657,7 @@ paths:
     post:
       tags:
         - deviceConfigTemplateNames
-      summary: 'Gets a list of device tracking template names, optionally filtering by trackers contained (e.g. find templates with a process tracker).'
+      summary: 'List device tracking template names'
       description: 'Gets a list of device tracking template names, optionally filtering by trackers contained (e.g. find templates with a process tracker).'
       operationId: GetDeviceConfigTemplateNames_Post
       requestBody:
@@ -11684,7 +11684,7 @@ paths:
     get:
       tags:
         - addDeviceConfigProcessRules
-      summary: Adds white/grey/black listing to process rules in the specified device tracking configuration template.
+      summary: Add process rules to tracking template
       description: Adds white/grey/black listing to process rules in the specified device tracking configuration template.
       operationId: AddDeviceConfigProcessRules_Get
       parameters:
@@ -11718,7 +11718,7 @@ paths:
     post:
       tags:
         - addDeviceConfigProcessRules
-      summary: Adds white/grey/black listing to process rules in the specified device tracking configuration template.
+      summary: Add process rules to tracking template
       description: Adds white/grey/black listing to process rules in the specified device tracking configuration template.
       operationId: AddDeviceConfigProcessRules_Post
       requestBody:
@@ -11740,7 +11740,7 @@ paths:
     get:
       tags:
         - groupPolicy
-      summary: Get the configured config policy template for the specified group or by individual template name.
+      summary: Get group policy template
       description: Get the configured config policy template for the specified group or by individual template name.
       operationId: GetGroupPolicy_Get
       parameters:
@@ -11821,7 +11821,7 @@ paths:
     post:
       tags:
         - groupPolicy
-      summary: Get the configured config policy template for the specified group or by individual template name.
+      summary: Get group policy template
       description: Get the configured config policy template for the specified group or by individual template name.
       operationId: GetGroupPolicy_Post
       requestBody:
@@ -11845,7 +11845,7 @@ paths:
     get:
       tags:
         - groupPolicyNames
-      summary: Get the configured config policy template names for the specified groups.
+      summary: Get group config policy template names
       description: Get the configured config policy template names for the specified groups.
       operationId: GetGroupPolicyConfigNames_Get
       parameters:
@@ -11882,7 +11882,7 @@ paths:
     post:
       tags:
         - groupPolicyNames
-      summary: Get the configured config policy template names for the specified groups.
+      summary: Get group config policy template names
       description: Get the configured config policy template names for the specified groups.
       operationId: GetGroupPolicyConfigNames_Post
       requestBody:
@@ -11912,7 +11912,7 @@ paths:
     get:
       tags:
         - groupPolicy
-      summary: Adds a config template to a group.
+      summary: Adds config template to a group.
       description: Adds a config template to a group.
       operationId: AddGroupPolicyadd_Get
       parameters:
@@ -11960,7 +11960,7 @@ paths:
     post:
       tags:
         - groupPolicy
-      summary: Adds a config template to a group.
+      summary: Adds config template to a group.
       description: Adds a config template to a group.
       operationId: AddGroupPolicyadd_Post
       requestBody:
@@ -11984,7 +11984,7 @@ paths:
     get:
       tags:
         - groupPolicy
-      summary: Removes a config template from a group.
+      summary: Remove template from group
       description: Removes a config template from a group.
       operationId: DeleteGroupPolicydelete_Get
       parameters:
@@ -12015,7 +12015,7 @@ paths:
     post:
       tags:
         - groupPolicy
-      summary: Removes a config template from a group.
+      summary: Remove template from group
       description: Removes a config template from a group.
       operationId: DeleteGroupPolicydelete_Post
       requestBody:
@@ -12187,7 +12187,7 @@ paths:
     get:
       tags:
         - agentsRanked
-      summary: A request to return agents matching the device filter.
+      summary: List agents by device filter
       description: A request to return agents matching the device filter.
       operationId: GetAgentsRanked_Get
       parameters:
@@ -12285,7 +12285,7 @@ paths:
     post:
       tags:
         - agentsRanked
-      summary: A request to return agents matching the device filter.
+      summary: List agents by device filter
       description: A request to return agents matching the device filter.
       operationId: GetAgentsRanked_Post
       requestBody:
@@ -12309,7 +12309,7 @@ paths:
     get:
       tags:
         - groupMembers
-      summary: A request to return group members matching the criteria.
+      summary: List group members by criteria
       description: A request to return group members matching the criteria.
       operationId: GroupMembers_Get
       parameters:
@@ -12387,7 +12387,7 @@ paths:
     post:
       tags:
         - groupMembers
-      summary: A request to return group members matching the criteria.
+      summary: List group members by criteria
       description: A request to return group members matching the criteria.
       operationId: GroupMembers_Post
       requestBody:
@@ -12532,7 +12532,7 @@ paths:
     get:
       tags:
         - groupsTree
-      summary: Gets a tree structure representing the groups hierarchy.
+      summary: Get groups hierarchy tree
       description: Gets a tree structure representing the groups hierarchy.
       operationId: GetGroupsTree_Get
       responses:
@@ -12547,7 +12547,7 @@ paths:
     post:
       tags:
         - groupsTree
-      summary: Gets a tree structure representing the groups hierarchy.
+      summary: Get groups hierarchy tree
       description: Gets a tree structure representing the groups hierarchy.
       operationId: GetGroupsTree_Post
       requestBody:
@@ -12571,7 +12571,7 @@ paths:
     get:
       tags:
         - groups
-      summary: Represents a request to delete a group matching the criteria.
+      summary: Delete matching group
       description: Represents a request to delete a group matching the criteria.
       operationId: DeleteGroupdelete_Get
       parameters:
@@ -12597,7 +12597,7 @@ paths:
     post:
       tags:
         - groups
-      summary: Represents a request to delete a group matching the criteria.
+      summary: Delete matching group
       description: Represents a request to delete a group matching the criteria.
       operationId: DeleteGroupdelete_Post
       requestBody:
@@ -12782,7 +12782,7 @@ paths:
     get:
       tags:
         - devices
-      summary: Represents a request to delete devices matching the criteria. Note that when a device is deleted it is moved to the Deleted group and is no longer included in the licensed device count.
+      summary: Delete devices to Deleted group
       description: Represents a request to delete devices matching the criteria. Note that when a device is deleted it is moved to the Deleted group and is no longer included in the licensed device count.
       operationId: DeleteDevicesdelete_Get
       parameters:
@@ -12811,7 +12811,7 @@ paths:
     post:
       tags:
         - devices
-      summary: Represents a request to delete devices matching the criteria. Note that when a device is deleted it is moved to the Deleted group and is no longer included in the licensed device count.
+      summary: Delete devices to Deleted group
       description: Represents a request to delete devices matching the criteria. Note that when a device is deleted it is moved to the Deleted group and is no longer included in the licensed device count.
       operationId: DeleteDevicesdelete_Post
       requestBody:
@@ -12833,7 +12833,7 @@ paths:
     get:
       tags:
         - devices
-      summary: Gets devices that have not polled in for the specified amount of time.
+      summary: List overdue devices
       description: Gets devices that have not polled in for the specified amount of time.
       operationId: GetOverdueDevicesoverdue_Get
       parameters:
@@ -12880,7 +12880,7 @@ paths:
     post:
       tags:
         - devices
-      summary: Gets devices that have not polled in for the specified amount of time.
+      summary: List overdue devices
       description: Gets devices that have not polled in for the specified amount of time.
       operationId: GetOverdueDevicesoverdue_Post
       requestBody:
@@ -12904,7 +12904,7 @@ paths:
     get:
       tags:
         - device
-      summary: 'Delete the specified Agent from the system. On first call the system will issue a challenge which must be answered and the response supplied on a repetition of the initial request. Contact NNT Support, supplying the text of the challenge, in order be be issued with an authorising response code.'
+      summary: 'Permanently delete agent (challenge required)'
       description: 'Delete the specified Agent from the system. On first call the system will issue a challenge which must be answered and the response supplied on a repetition of the initial request. Contact NNT Support, supplying the text of the challenge, in order be be issued with an authorising response code.'
       operationId: DeleteDevicePermanentlydeletePermanently_Get
       parameters:
@@ -12947,7 +12947,7 @@ paths:
     post:
       tags:
         - device
-      summary: 'Delete the specified Agent from the system. On first call the system will issue a challenge which must be answered and the response supplied on a repetition of the initial request. Contact NNT Support, supplying the text of the challenge, in order be be issued with an authorising response code.'
+      summary: 'Permanently delete agent (challenge required)'
       description: 'Delete the specified Agent from the system. On first call the system will issue a challenge which must be answered and the response supplied on a repetition of the initial request. Contact NNT Support, supplying the text of the challenge, in order be be issued with an authorising response code.'
       operationId: DeleteDevicePermanentlydeletePermanently_Post
       requestBody:
@@ -12971,7 +12971,7 @@ paths:
     get:
       tags:
         - device
-      summary: Represents a request to re-register a list of previously deleted devices matching the criteria.
+      summary: Re-register previously deleted devices
       description: Represents a request to re-register a list of previously deleted devices matching the criteria.
       operationId: ReRegisterDevicereRegister_Get
       parameters:
@@ -13000,7 +13000,7 @@ paths:
     post:
       tags:
         - device
-      summary: Represents a request to re-register a list of previously deleted devices matching the criteria.
+      summary: Re-register previously deleted devices
       description: Represents a request to re-register a list of previously deleted devices matching the criteria.
       operationId: ReRegisterDevicereRegister_Post
       requestBody:
@@ -13022,7 +13022,7 @@ paths:
     get:
       tags:
         - group
-      summary: 'Delete all the specified group members from the system. On first call the system will issue a challenge which must be answered and the response supplied on a repetition of the initial request. Contact NNT Support, supplying the text of the challenge, in order be be issued with an authorising response code.'
+      summary: 'Permanently delete group members'
       description: 'Delete all the specified group members from the system. On first call the system will issue a challenge which must be answered and the response supplied on a repetition of the initial request. Contact NNT Support, supplying the text of the challenge, in order be be issued with an authorising response code.'
       operationId: DeleteGroupMembersPermanentlydeleteMembersPermanently_Get
       parameters:
@@ -13055,7 +13055,7 @@ paths:
     post:
       tags:
         - group
-      summary: 'Delete all the specified group members from the system. On first call the system will issue a challenge which must be answered and the response supplied on a repetition of the initial request. Contact NNT Support, supplying the text of the challenge, in order be be issued with an authorising response code.'
+      summary: 'Permanently delete group members'
       description: 'Delete all the specified group members from the system. On first call the system will issue a challenge which must be answered and the response supplied on a repetition of the initial request. Contact NNT Support, supplying the text of the challenge, in order be be issued with an authorising response code.'
       operationId: DeleteGroupMembersPermanentlydeleteMembersPermanently_Post
       requestBody:
@@ -13079,7 +13079,7 @@ paths:
     get:
       tags:
         - deviceFilter
-      summary: Represents a request to add a DeviceFilter.
+      summary: Add DeviceFilter
       description: Represents a request to add a DeviceFilter.
       operationId: AddDeviceFilteradd_Get
       parameters:
@@ -13107,7 +13107,7 @@ paths:
     post:
       tags:
         - deviceFilter
-      summary: Represents a request to add a DeviceFilter.
+      summary: Add DeviceFilter
       description: Represents a request to add a DeviceFilter.
       operationId: AddDeviceFilteradd_Post
       requestBody:
@@ -13131,7 +13131,7 @@ paths:
     get:
       tags:
         - deviceFilter
-      summary: Represents a request to update a DeviceFilter matching the given id.
+      summary: Update DeviceFilter by ID
       description: Represents a request to update a DeviceFilter matching the given id.
       operationId: UpdateDeviceFilterupdate_Get
       parameters:
@@ -13164,7 +13164,7 @@ paths:
     post:
       tags:
         - deviceFilter
-      summary: Represents a request to update a DeviceFilter matching the given id.
+      summary: Update DeviceFilter by ID
       description: Represents a request to update a DeviceFilter matching the given id.
       operationId: UpdateDeviceFilterupdate_Post
       requestBody:
@@ -13188,7 +13188,7 @@ paths:
     get:
       tags:
         - deviceFilter
-      summary: 'Represents a request to bring the named filter to the head of the list, or to create it at the head of the list if it doesn''t exist.'
+      summary: 'Promote device filter to head'
       description: 'Represents a request to bring the named filter to the head of the list, or to create it at the head of the list if it doesn''t exist.'
       operationId: PromoteDeviceFilterpromote_Get
       parameters:
@@ -13216,7 +13216,7 @@ paths:
     post:
       tags:
         - deviceFilter
-      summary: 'Represents a request to bring the named filter to the head of the list, or to create it at the head of the list if it doesn''t exist.'
+      summary: 'Promote device filter to head'
       description: 'Represents a request to bring the named filter to the head of the list, or to create it at the head of the list if it doesn''t exist.'
       operationId: PromoteDeviceFilterpromote_Post
       requestBody:
@@ -13240,7 +13240,7 @@ paths:
     get:
       tags:
         - deviceFilter
-      summary: Represents a request to delete a DeviceFilter matching the criteria.
+      summary: Delete matching DeviceFilter
       description: Represents a request to delete a DeviceFilter matching the criteria.
       operationId: DeleteDeviceFilterdelete_Get
       parameters:
@@ -13266,7 +13266,7 @@ paths:
     post:
       tags:
         - deviceFilter
-      summary: Represents a request to delete a DeviceFilter matching the criteria.
+      summary: Delete matching DeviceFilter
       description: Represents a request to delete a DeviceFilter matching the criteria.
       operationId: DeleteDeviceFilterdelete_Post
       requestBody:
@@ -13288,7 +13288,7 @@ paths:
     get:
       tags:
         - deviceFilters
-      summary: Returns a paged list of DeviceFilter definitions matching the optional name criteria.
+      summary: List DeviceFilter definitions
       description: Returns a paged list of DeviceFilter definitions matching the optional name criteria.
       operationId: GetDeviceFilters_Get
       parameters:
@@ -13361,7 +13361,7 @@ paths:
     post:
       tags:
         - deviceFilters
-      summary: Returns a paged list of DeviceFilter definitions matching the optional name criteria.
+      summary: List DeviceFilter definitions
       description: Returns a paged list of DeviceFilter definitions matching the optional name criteria.
       operationId: GetDeviceFilters_Post
       requestBody:
@@ -13385,7 +13385,7 @@ paths:
     get:
       tags:
         - groupMembers
-      summary: A request to add the specified Groups and Agents group members to the named group.
+      summary: Add members to named group
       description: A request to add the specified Groups and Agents group members to the named group.
       operationId: AddGroupMembersadd_Get
       parameters:
@@ -13435,7 +13435,7 @@ paths:
     post:
       tags:
         - groupMembers
-      summary: A request to add the specified Groups and Agents group members to the named group.
+      summary: Add members to named group
       description: A request to add the specified Groups and Agents group members to the named group.
       operationId: AddGroupMembersadd_Post
       requestBody:
@@ -13457,7 +13457,7 @@ paths:
     get:
       tags:
         - groupMembers
-      summary: A request to remove group or device members from the named group.
+      summary: Remove members from named group
       description: A request to remove group or device members from the named group.
       operationId: DeleteGroupMembersdelete_Get
       parameters:
@@ -13499,7 +13499,7 @@ paths:
     post:
       tags:
         - groupMembers
-      summary: A request to remove group or device members from the named group.
+      summary: Remove members from named group
       description: A request to remove group or device members from the named group.
       operationId: DeleteGroupMembersdelete_Post
       requestBody:
@@ -13521,7 +13521,7 @@ paths:
     get:
       tags:
         - deviceOnlineStatus
-      summary: Gets an indication of the device's online/offline status
+      summary: Get device online/offline status
       description: Gets an indication of the device's online/offline status
       operationId: GetDeviceOnlineStatus_Get
       parameters:
@@ -13555,7 +13555,7 @@ paths:
     post:
       tags:
         - deviceOnlineStatus
-      summary: Gets an indication of the device's online/offline status
+      summary: Get device online/offline status
       description: Gets an indication of the device's online/offline status
       operationId: GetDeviceOnlineStatus_Post
       requestBody:
@@ -13580,7 +13580,7 @@ paths:
     get:
       tags:
         - deviceSettings
-      summary: 'Gets the device settings for the device, based on the global device settings and any device specific overrides.'
+      summary: 'Get device settings with overrides'
       description: 'Gets the device settings for the device, based on the global device settings and any device specific overrides.'
       operationId: UpdateDeviceSettingsupdate_Get
       parameters:
@@ -13623,7 +13623,7 @@ paths:
     post:
       tags:
         - deviceSettings
-      summary: 'Gets the device settings for the device, based on the global device settings and any device specific overrides.'
+      summary: 'Get device settings with overrides'
       description: 'Gets the device settings for the device, based on the global device settings and any device specific overrides.'
       operationId: UpdateDeviceSettingsupdate_Post
       requestBody:
@@ -13647,7 +13647,7 @@ paths:
     get:
       tags:
         - deviceCredentials
-      summary: A request to associate named credentials with an agent.
+      summary: Associate credentials with agent
       description: A request to associate named credentials with an agent.
       operationId: AddCredentialsToAgentDeviceadd_Get
       parameters:
@@ -13678,7 +13678,7 @@ paths:
     post:
       tags:
         - deviceCredentials
-      summary: A request to associate named credentials with an agent.
+      summary: Associate credentials with agent
       description: A request to associate named credentials with an agent.
       operationId: AddCredentialsToAgentDeviceadd_Post
       requestBody:
@@ -13700,7 +13700,7 @@ paths:
     get:
       tags:
         - deviceCredentials
-      summary: A request to remove named credentials from an agent.
+      summary: Remove agent credentials
       description: A request to remove named credentials from an agent.
       operationId: RemoveCredentialsFromAgentDevicedelete_Get
       parameters:
@@ -13731,7 +13731,7 @@ paths:
     post:
       tags:
         - deviceCredentials
-      summary: A request to remove named credentials from an agent.
+      summary: Remove agent credentials
       description: A request to remove named credentials from an agent.
       operationId: RemoveCredentialsFromAgentDevicedelete_Post
       requestBody:
@@ -13753,7 +13753,7 @@ paths:
     get:
       tags:
         - deviceName
-      summary: A request to update the display name of an agent.
+      summary: Update agent display name
       description: A request to update the display name of an agent.
       operationId: SetAgentDeviceNameupdate_Get
       parameters:
@@ -13784,7 +13784,7 @@ paths:
     post:
       tags:
         - deviceName
-      summary: A request to update the display name of an agent.
+      summary: Update agent display name
       description: A request to update the display name of an agent.
       operationId: SetAgentDeviceNameupdate_Post
       requestBody:
@@ -13806,7 +13806,7 @@ paths:
     get:
       tags:
         - deviceHostType
-      summary: A request to update the host type of an agent.
+      summary: Update agent host type
       description: A request to update the host type of an agent.
       operationId: SetAgentHostTypeupdate_Get
       parameters:
@@ -13840,7 +13840,7 @@ paths:
     post:
       tags:
         - deviceHostType
-      summary: A request to update the host type of an agent.
+      summary: Update agent host type
       description: A request to update the host type of an agent.
       operationId: SetAgentHostTypeupdate_Post
       requestBody:
@@ -13862,7 +13862,7 @@ paths:
     get:
       tags:
         - testAgentCredentials
-      summary: Ask an agent to test the credentials for a device it is proxying.
+      summary: Test proxied device credentials
       description: Ask an agent to test the credentials for a device it is proxying.
       operationId: TestAgentCredentials_Get
       parameters:
@@ -13890,7 +13890,7 @@ paths:
     post:
       tags:
         - testAgentCredentials
-      summary: Ask an agent to test the credentials for a device it is proxying.
+      summary: Test proxied device credentials
       description: Ask an agent to test the credentials for a device it is proxying.
       operationId: TestAgentCredentials_Post
       requestBody:
@@ -13914,7 +13914,7 @@ paths:
     get:
       tags:
         - ipBlocking
-      summary: Gets details of ip addresses that have been blocked.
+      summary: List blocked IP addresses
       description: Gets details of ip addresses that have been blocked.
       operationId: GetIpBlocking_Get
       parameters:
@@ -13940,7 +13940,7 @@ paths:
     post:
       tags:
         - ipBlocking
-      summary: Gets details of ip addresses that have been blocked.
+      summary: List blocked IP addresses
       description: Gets details of ip addresses that have been blocked.
       operationId: GetIpBlocking_Post
       requestBody:
@@ -13967,7 +13967,7 @@ paths:
     get:
       tags:
         - ipBlocking
-      summary: Adds manual blocking of a specified ip address until a specified time.
+      summary: Block IP address until time
       description: Adds manual blocking of a specified ip address until a specified time.
       operationId: AddIpBlockingadd_Get
       parameters:
@@ -14005,7 +14005,7 @@ paths:
     post:
       tags:
         - ipBlocking
-      summary: Adds manual blocking of a specified ip address until a specified time.
+      summary: Block IP address until time
       description: Adds manual blocking of a specified ip address until a specified time.
       operationId: AddIpBlockingadd_Post
       requestBody:
@@ -14090,7 +14090,7 @@ paths:
     get:
       tags:
         - discoverDevices
-      summary: Discovers devices to be added as proxied devices to a master device.
+      summary: Discover proxied devices
       description: Discovers devices to be added as proxied devices to a master device.
       operationId: DiscoverDevices_Get
       parameters:
@@ -14113,7 +14113,7 @@ paths:
     post:
       tags:
         - discoverDevices
-      summary: Discovers devices to be added as proxied devices to a master device.
+      summary: Discover proxied devices
       description: Discovers devices to be added as proxied devices to a master device.
       operationId: DiscoverDevices_Post
       requestBody:
@@ -14137,7 +14137,7 @@ paths:
     get:
       tags:
         - discoveredDevices
-      summary: Submits discovered devices as a response to a DiscoverDevices request.
+      summary: Submit discovered devices
       description: Submits discovered devices as a response to a DiscoverDevices request.
       operationId: SubmitDiscoveredDevices_Get
       parameters:
@@ -14158,7 +14158,7 @@ paths:
     post:
       tags:
         - discoveredDevices
-      summary: Submits discovered devices as a response to a DiscoverDevices request.
+      summary: Submit discovered devices
       description: Submits discovered devices as a response to a DiscoverDevices request.
       operationId: SubmitDiscoveredDevices_Post
       requestBody:
@@ -14180,7 +14180,7 @@ paths:
     get:
       tags:
         - acknowledgeEvents
-      summary: Acknowledge a list of events as 'planned'.
+      summary: Acknowledge events as planned
       description: Acknowledge a list of events as 'planned'.
       operationId: AcknowledgeEvents_Get
       parameters:
@@ -14254,7 +14254,7 @@ paths:
     post:
       tags:
         - acknowledgeEvents
-      summary: Acknowledge a list of events as 'planned'.
+      summary: Acknowledge events as planned
       description: Acknowledge a list of events as 'planned'.
       operationId: AcknowledgeEvents_Post
       requestBody:
@@ -14276,7 +14276,7 @@ paths:
     get:
       tags:
         - resubmitEvents
-      summary: 'Re-submit the specified events (i.e for re-consideration by the pipeline re: planned changes).'
+      summary: 'Resubmit events to pipeline'
       description: 'Re-submit the specified events (i.e for re-consideration by the pipeline re: planned changes).'
       operationId: ResubmitEvents_Get
       parameters:
@@ -14302,7 +14302,7 @@ paths:
     post:
       tags:
         - resubmitEvents
-      summary: 'Re-submit the specified events (i.e for re-consideration by the pipeline re: planned changes).'
+      summary: 'Resubmit events to pipeline'
       description: 'Re-submit the specified events (i.e for re-consideration by the pipeline re: planned changes).'
       operationId: ResubmitEvents_Post
       requestBody:
@@ -14324,7 +14324,7 @@ paths:
     get:
       tags:
         - event
-      summary: Get the event history for one specific event.
+      summary: Get event history
       description: Get the event history for one specific event.
       operationId: GetEventHistoryhistoryEventId_Get
       parameters:
@@ -14352,7 +14352,7 @@ paths:
     post:
       tags:
         - event
-      summary: Get the event history for one specific event.
+      summary: Get event history
       description: Get the event history for one specific event.
       operationId: GetEventHistoryhistoryEventId_Post
       requestBody:
@@ -14376,7 +14376,7 @@ paths:
     get:
       tags:
         - eventDeviceGroups
-      summary: 'Gets the list of groups that the devices associated with the given events are members of. If Intersection is true, only the groups of which all devices are a member are returned. This function is used to determine the possible groups to associate a new planned change with, such that the events will be covered by it.'
+      summary: 'Get device groups for events'
       description: 'Gets the list of groups that the devices associated with the given events are members of. If Intersection is true, only the groups of which all devices are a member are returned. This function is used to determine the possible groups to associate a new planned change with, such that the events will be covered by it.'
       operationId: GetEventDeviceGroups_Get
       parameters:
@@ -14449,7 +14449,7 @@ paths:
     post:
       tags:
         - eventDeviceGroups
-      summary: 'Gets the list of groups that the devices associated with the given events are members of. If Intersection is true, only the groups of which all devices are a member are returned. This function is used to determine the possible groups to associate a new planned change with, such that the events will be covered by it.'
+      summary: 'Get device groups for events'
       description: 'Gets the list of groups that the devices associated with the given events are members of. If Intersection is true, only the groups of which all devices are a member are returned. This function is used to determine the possible groups to associate a new planned change with, such that the events will be covered by it.'
       operationId: GetEventDeviceGroups_Post
       requestBody:
@@ -14526,7 +14526,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: Retrieves a list of inventory items from the hub service.
+      summary: List inventory items
       description: Retrieves a list of inventory items from the hub service.
       operationId: GetInventory_Get
       parameters:
@@ -14589,7 +14589,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: Retrieves a list of inventory items from the hub service.
+      summary: List inventory items
       description: Retrieves a list of inventory items from the hub service.
       operationId: GetInventory_Post
       requestBody:
@@ -14613,7 +14613,7 @@ paths:
     get:
       tags:
         - agentInventoryGrouped
-      summary: Retrieves a list of agent inventory items grouped by their inventory item ids from the hub service.
+      summary: List grouped agent inventory items
       description: Retrieves a list of agent inventory items grouped by their inventory item ids from the hub service.
       operationId: GetAgentInventoryItemsGrouped_Get
       parameters:
@@ -14681,7 +14681,7 @@ paths:
     post:
       tags:
         - agentInventoryGrouped
-      summary: Retrieves a list of agent inventory items grouped by their inventory item ids from the hub service.
+      summary: List grouped agent inventory items
       description: Retrieves a list of agent inventory items grouped by their inventory item ids from the hub service.
       operationId: GetAgentInventoryItemsGrouped_Post
       requestBody:
@@ -14705,7 +14705,7 @@ paths:
     get:
       tags:
         - agentInventoryAgentsDetail
-      summary: Retrieves a list of agents with a specific inventory item id from the hub service.
+      summary: List agents by inventory item ID
       description: Retrieves a list of agents with a specific inventory item id from the hub service.
       operationId: GetAgentInventoryAgentsDetail_Get
       parameters:
@@ -14773,7 +14773,7 @@ paths:
     post:
       tags:
         - agentInventoryAgentsDetail
-      summary: Retrieves a list of agents with a specific inventory item id from the hub service.
+      summary: List agents by inventory item ID
       description: Retrieves a list of agents with a specific inventory item id from the hub service.
       operationId: GetAgentInventoryAgentsDetail_Post
       requestBody:
@@ -14797,7 +14797,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: A request to return the vulnerability overview matching the device filter.
+      summary: Get vulnerability overview by filter
       description: A request to return the vulnerability overview matching the device filter.
       operationId: GetVulnerabilityOverviewvulnerabilityOverview_Get
       parameters:
@@ -14884,7 +14884,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: A request to return the vulnerability overview matching the device filter.
+      summary: Get vulnerability overview by filter
       description: A request to return the vulnerability overview matching the device filter.
       operationId: GetVulnerabilityOverviewvulnerabilityOverview_Post
       requestBody:
@@ -14908,7 +14908,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: A request to return the vulnerabilities in an estate matching the device and vulnerability filters.
+      summary: Get estate vulnerabilities by filter
       description: A request to return the vulnerabilities in an estate matching the device and vulnerability filters.
       operationId: GetVulnerabilityvulnerabilities_Get
       parameters:
@@ -14976,7 +14976,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: A request to return the vulnerabilities in an estate matching the device and vulnerability filters.
+      summary: Get estate vulnerabilities by filter
       description: A request to return the vulnerabilities in an estate matching the device and vulnerability filters.
       operationId: GetVulnerabilityvulnerabilities_Post
       requestBody:
@@ -15000,7 +15000,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: A request to return the software vulnerability matching the device filter.
+      summary: Get software vulnerabilities by filter
       description: A request to return the software vulnerability matching the device filter.
       operationId: GetSoftwareVulnerabilitysoftwareVulnerability_Get
       parameters:
@@ -15075,7 +15075,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: A request to return the software vulnerability matching the device filter.
+      summary: Get software vulnerabilities by filter
       description: A request to return the software vulnerability matching the device filter.
       operationId: GetSoftwareVulnerabilitysoftwareVulnerability_Post
       requestBody:
@@ -15099,7 +15099,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: Marks an inventory item a requiring an update / refresh.
+      summary: Mark inventory item for update
       description: Marks an inventory item a requiring an update / refresh.
       operationId: MarkInventoryItemsRequiringUpdateupdate_Get
       parameters:
@@ -15122,7 +15122,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: Marks an inventory item a requiring an update / refresh.
+      summary: Mark inventory item for update
       description: Marks an inventory item a requiring an update / refresh.
       operationId: MarkInventoryItemsRequiringUpdateupdate_Post
       requestBody:
@@ -15146,7 +15146,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: A request to return the software vulnerability matching the device filter.
+      summary: Get software vulnerabilities by filter
       description: A request to return the software vulnerability matching the device filter.
       operationId: GetSoftwareVulnerabilityDetailsoftwareVulnerabilityDetail_Get
       parameters:
@@ -15219,7 +15219,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: A request to return the software vulnerability matching the device filter.
+      summary: Get software vulnerabilities by filter
       description: A request to return the software vulnerability matching the device filter.
       operationId: GetSoftwareVulnerabilityDetailsoftwareVulnerabilityDetail_Post
       requestBody:
@@ -15243,7 +15243,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: A request to return the device vulnerability matching the device filter.
+      summary: Get device vulnerabilities by filter
       description: A request to return the device vulnerability matching the device filter.
       operationId: GetDeviceVulnerabilitydeviceVulnerability_Get
       parameters:
@@ -15318,7 +15318,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: A request to return the device vulnerability matching the device filter.
+      summary: Get device vulnerabilities by filter
       description: A request to return the device vulnerability matching the device filter.
       operationId: GetDeviceVulnerabilitydeviceVulnerability_Post
       requestBody:
@@ -15342,7 +15342,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: A request to return the device vulnerability matching the device filter.
+      summary: Get device vulnerabilities by filter
       description: A request to return the device vulnerability matching the device filter.
       operationId: GetDeviceVulnerabilityDetaildeviceVulnerabilityDetail_Get
       parameters:
@@ -15410,7 +15410,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: A request to return the device vulnerability matching the device filter.
+      summary: Get device vulnerabilities by filter
       description: A request to return the device vulnerability matching the device filter.
       operationId: GetDeviceVulnerabilityDetaildeviceVulnerabilityDetail_Post
       requestBody:
@@ -15434,7 +15434,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: Get a list of CVEs that are related to the specified CPE but not directly (e.g previous versions etc)
+      summary: Get related CVEs for CPE
       description: Get a list of CVEs that are related to the specified CPE but not directly (e.g previous versions etc)
       operationId: GetCvesForRelatedCpesrelatedSoftwareVulnerabilityDetail_Get
       parameters:
@@ -15473,7 +15473,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: Get a list of CVEs that are related to the specified CPE but not directly (e.g previous versions etc)
+      summary: Get related CVEs for CPE
       description: Get a list of CVEs that are related to the specified CPE but not directly (e.g previous versions etc)
       operationId: GetCvesForRelatedCpesrelatedSoftwareVulnerabilityDetail_Post
       parameters:
@@ -15521,7 +15521,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: A request to return the vulnerable devices matching the CVE.
+      summary: Get vulnerable devices by CVE
       description: A request to return the vulnerable devices matching the CVE.
       operationId: GetVulnerableDeviceDetailvulnerableDeviceDetail_Get
       parameters:
@@ -15589,7 +15589,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: A request to return the vulnerable devices matching the CVE.
+      summary: Get vulnerable devices by CVE
       description: A request to return the vulnerable devices matching the CVE.
       operationId: GetVulnerableDeviceDetailvulnerableDeviceDetail_Post
       requestBody:
@@ -15613,7 +15613,7 @@ paths:
     get:
       tags:
         - inventory
-      summary: A request to ignore one or more Cves until a given data.
+      summary: Ignore CVEs until given date
       description: A request to ignore one or more Cves until a given data.
       operationId: IgnoreCveItemignoreCves_Get
       parameters:
@@ -15636,7 +15636,7 @@ paths:
     post:
       tags:
         - inventory
-      summary: A request to ignore one or more Cves until a given data.
+      summary: Ignore CVEs until given date
       description: A request to ignore one or more Cves until a given data.
       operationId: IgnoreCveItemignoreCves_Post
       requestBody:
@@ -15660,7 +15660,7 @@ paths:
     get:
       tags:
         - vulnerabilityscanstatus
-      summary: A request to return the software vulnerability scan status.
+      summary: Get vulnerability scan status
       description: A request to return the software vulnerability scan status.
       operationId: GetVulnerabilityScanStatus_Get
       parameters:
@@ -15723,7 +15723,7 @@ paths:
     post:
       tags:
         - vulnerabilityscanstatus
-      summary: A request to return the software vulnerability scan status.
+      summary: Get vulnerability scan status
       description: A request to return the software vulnerability scan status.
       operationId: GetVulnerabilityScanStatus_Post
       requestBody:
@@ -15747,7 +15747,7 @@ paths:
     get:
       tags:
         - log4netConfigs
-      summary: Retrieves a list of log4net logger configurations
+      summary: List log4net logger configurations
       description: Retrieves a list of log4net logger configurations
       operationId: GetAllLog4NetConfigItemsall_Get
       responses:
@@ -15762,7 +15762,7 @@ paths:
     post:
       tags:
         - log4netConfigs
-      summary: Retrieves a list of log4net logger configurations
+      summary: List log4net logger configurations
       description: Retrieves a list of log4net logger configurations
       operationId: GetAllLog4NetConfigItemsall_Post
       requestBody:
@@ -15879,7 +15879,7 @@ paths:
     get:
       tags:
         - log4netConfigs
-      summary: Retrieves a list of log4net logger configurations with pagination support.
+      summary: List log4net logger configurations with pagination support.
       description: Retrieves a list of log4net logger configurations with pagination support.
       operationId: GetLog4NetConfigItems_Get
       parameters:
@@ -15942,7 +15942,7 @@ paths:
     post:
       tags:
         - log4netConfigs
-      summary: Retrieves a list of log4net logger configurations with pagination support.
+      summary: List log4net logger configurations with pagination support.
       description: Retrieves a list of log4net logger configurations with pagination support.
       operationId: GetLog4NetConfigItems_Post
       requestBody:
@@ -15966,7 +15966,7 @@ paths:
     get:
       tags:
         - reportDescription
-      summary: Returns a description for the specified report.
+      summary: Get report description
       description: Returns a description for the specified report.
       operationId: GetReportDescription_Get
       parameters:
@@ -15989,7 +15989,7 @@ paths:
     post:
       tags:
         - reportDescription
-      summary: Returns a description for the specified report.
+      summary: Get report description
       description: Returns a description for the specified report.
       operationId: GetReportDescription_Post
       requestBody:
@@ -16013,7 +16013,7 @@ paths:
     get:
       tags:
         - reportDifferences
-      summary: Get a list of differences between two reports runs.
+      summary: Differences between two report runs
       description: Get a list of differences between two reports runs.
       operationId: GetReportChangeDetails_Get
       parameters:
@@ -16039,7 +16039,7 @@ paths:
     post:
       tags:
         - reportDifferences
-      summary: Get a list of differences between two reports runs.
+      summary: Differences between two report runs
       description: Get a list of differences between two reports runs.
       operationId: GetReportChangeDetails_Post
       requestBody:
@@ -16066,7 +16066,7 @@ paths:
     get:
       tags:
         - reportData
-      summary: 'Gets report results for the specified agent, device or task id.'
+      summary: 'Get report results'
       description: 'Gets report results for the specified agent, device or task id.'
       operationId: GetReportDatareportId_Get
       parameters:
@@ -16129,7 +16129,7 @@ paths:
     post:
       tags:
         - reportData
-      summary: 'Gets report results for the specified agent, device or task id.'
+      summary: 'Get report results'
       description: 'Gets report results for the specified agent, device or task id.'
       operationId: GetReportDatareportId_Post
       requestBody:
@@ -16153,7 +16153,7 @@ paths:
     get:
       tags:
         - availableReports
-      summary: ' Gets a list of available reports for a specified group or agent.'
+      summary: 'List available reports'
       description: ' Gets a list of available reports for a specified group or agent.'
       operationId: GetAvailableReports_Get
       parameters:
@@ -16193,7 +16193,7 @@ paths:
     post:
       tags:
         - availableReports
-      summary: ' Gets a list of available reports for a specified group or agent.'
+      summary: 'List available reports'
       description: ' Gets a list of available reports for a specified group or agent.'
       operationId: GetAvailableReports_Post
       requestBody:
@@ -16269,7 +16269,7 @@ paths:
     get:
       tags:
         - userDashboard
-      summary: Gets the user dashboard widget layout by name.
+      summary: Get dashboard widget layout by name
       description: Gets the user dashboard widget layout by name.
       operationId: GetUserDashboardByNamenamed_Get
       parameters:
@@ -16297,7 +16297,7 @@ paths:
     post:
       tags:
         - userDashboard
-      summary: Gets the user dashboard widget layout by name.
+      summary: Get dashboard widget layout by name
       description: Gets the user dashboard widget layout by name.
       operationId: GetUserDashboardByNamenamed_Post
       requestBody:
@@ -16677,7 +16677,7 @@ paths:
     get:
       tags:
         - stats
-      summary: 'Get report summaries by report, for either individual devices, or as group average.'
+      summary: 'Get device or group report summaries'
       description: 'Get report summaries by report, for either individual devices, or as group average.'
       operationId: GetComplianceDatacompliancedatastartStart_Get
       parameters:
@@ -16746,7 +16746,7 @@ paths:
     post:
       tags:
         - stats
-      summary: 'Get report summaries by report, for either individual devices, or as group average.'
+      summary: 'Get device or group report summaries'
       description: 'Get report summaries by report, for either individual devices, or as group average.'
       operationId: GetComplianceDatacompliancedatastartStart_Post
       requestBody:
@@ -16770,7 +16770,7 @@ paths:
     get:
       tags:
         - stats
-      summary: 'Get report summaries by report, for either individual devices, or as group average.'
+      summary: 'Get device or group report summaries'
       description: 'Get report summaries by report, for either individual devices, or as group average.'
       operationId: GetComplianceDatacompliancedataendEnd_Get
       parameters:
@@ -16839,7 +16839,7 @@ paths:
     post:
       tags:
         - stats
-      summary: 'Get report summaries by report, for either individual devices, or as group average.'
+      summary: 'Get device or group report summaries'
       description: 'Get report summaries by report, for either individual devices, or as group average.'
       operationId: GetComplianceDatacompliancedataendEnd_Post
       requestBody:
@@ -16863,7 +16863,7 @@ paths:
     get:
       tags:
         - stats
-      summary: 'Get report summaries by report, for either individual devices, or as group average.'
+      summary: 'Get device or group report summaries'
       description: 'Get report summaries by report, for either individual devices, or as group average.'
       operationId: GetComplianceDatacompliancedatastartStartendEnd_Get
       parameters:
@@ -16932,7 +16932,7 @@ paths:
     post:
       tags:
         - stats
-      summary: 'Get report summaries by report, for either individual devices, or as group average.'
+      summary: 'Get device or group report summaries'
       description: 'Get report summaries by report, for either individual devices, or as group average.'
       operationId: GetComplianceDatacompliancedatastartStartendEnd_Post
       requestBody:
@@ -16956,7 +16956,7 @@ paths:
     get:
       tags:
         - stats
-      summary: Represents a request to invalidate the eventcount stats for a group for a specific set of periods.
+      summary: Invalidate group event count stats
       description: Represents a request to invalidate the eventcount stats for a group for a specific set of periods.
       operationId: InvalidateEventCountseventsinvalidate_Get
       parameters:
@@ -16977,7 +16977,7 @@ paths:
     post:
       tags:
         - stats
-      summary: Represents a request to invalidate the eventcount stats for a group for a specific set of periods.
+      summary: Invalidate group event count stats
       description: Represents a request to invalidate the eventcount stats for a group for a specific set of periods.
       operationId: InvalidateEventCountseventsinvalidate_Post
       requestBody:
@@ -17046,7 +17046,7 @@ paths:
     get:
       tags:
         - testFastConnection
-      summary: Tests the configured Fast service can be contacted.
+      summary: Test Fast service connection
       description: Tests the configured Fast service can be contacted.
       operationId: TestFastConnection_Get
       parameters:
@@ -17069,7 +17069,7 @@ paths:
     post:
       tags:
         - testFastConnection
-      summary: Tests the configured Fast service can be contacted.
+      summary: Test Fast service connection
       description: Tests the configured Fast service can be contacted.
       operationId: TestFastConnection_Post
       requestBody:
@@ -17093,7 +17093,7 @@ paths:
     get:
       tags:
         - testFastCustomerConnection
-      summary: Tests the configured Fast service can be contacted using customer credentials.
+      summary: Test Fast service with credentials
       description: Tests the configured Fast service can be contacted using customer credentials.
       operationId: TestFastCustomerConnection_Get
       parameters:
@@ -17116,7 +17116,7 @@ paths:
     post:
       tags:
         - testFastCustomerConnection
-      summary: Tests the configured Fast service can be contacted using customer credentials.
+      summary: Test Fast service with credentials
       description: Tests the configured Fast service can be contacted using customer credentials.
       operationId: TestFastCustomerConnection_Post
       requestBody:
@@ -17281,7 +17281,7 @@ paths:
     get:
       tags:
         - pipelineNodes
-      summary: Gets a list of pipeline node names.
+      summary: Lists pipeline node names.
       description: Gets a list of pipeline node names.
       operationId: GetPipelineNodeList_Get
       parameters:
@@ -17307,7 +17307,7 @@ paths:
     post:
       tags:
         - pipelineNodes
-      summary: Gets a list of pipeline node names.
+      summary: Lists pipeline node names.
       description: Gets a list of pipeline node names.
       operationId: GetPipelineNodeList_Post
       requestBody:
@@ -17381,7 +17381,7 @@ paths:
     post:
       tags:
         - users
-      summary: Represents a pre-authentication request to query the user's Two-factor authentication status. Counts as a sign-in attempt.
+      summary: Query user two-factor status
       description: Represents a pre-authentication request to query the user's Two-factor authentication status. Counts as a sign-in attempt.
       operationId: GetUserTwoFactorStatustwoFactorStatus_Post
       requestBody:
@@ -17403,7 +17403,7 @@ paths:
     post:
       tags:
         - users
-      summary: Represents a post-authentication request to elevate the user's Two-factor authentication status. Counts as a sign-in attempt.
+      summary: Elevate user two-factor status
       description: Represents a post-authentication request to elevate the user's Two-factor authentication status. Counts as a sign-in attempt.
       operationId: ElevateUserTwoFactorStatuselevateTwoFactorStatus_Post
       requestBody:
@@ -17556,7 +17556,7 @@ paths:
     get:
       tags:
         - users
-      summary: Updates stored user details. Note that UserManage permissions are required to manage any user other than the caller.
+      summary: Update stored user details
       description: Updates stored user details. Note that UserManage permissions are required to manage any user other than the caller.
       operationId: UpdateUserupdate_Get
       parameters:
@@ -17577,7 +17577,7 @@ paths:
     post:
       tags:
         - users
-      summary: Updates stored user details. Note that UserManage permissions are required to manage any user other than the caller.
+      summary: Update stored user details
       description: Updates stored user details. Note that UserManage permissions are required to manage any user other than the caller.
       operationId: UpdateUserupdate_Post
       requestBody:
@@ -17599,7 +17599,7 @@ paths:
     get:
       tags:
         - users
-      summary: Updates stored user password. CurrentPassword property should contain the password of the user attempting to make the change. Note that UserManage permissions are required to manage any user password other than caller's.
+      summary: Update user password
       description: Updates stored user password. CurrentPassword property should contain the password of the user attempting to make the change. Note that UserManage permissions are required to manage any user password other than caller's.
       operationId: UpdateUserPasswordupdatePassword_Get
       parameters:
@@ -17620,7 +17620,7 @@ paths:
     post:
       tags:
         - users
-      summary: Updates stored user password. CurrentPassword property should contain the password of the user attempting to make the change. Note that UserManage permissions are required to manage any user password other than caller's.
+      summary: Update user password
       description: Updates stored user password. CurrentPassword property should contain the password of the user attempting to make the change. Note that UserManage permissions are required to manage any user password other than caller's.
       operationId: UpdateUserPasswordupdatePassword_Post
       requestBody:
@@ -17642,7 +17642,7 @@ paths:
     get:
       tags:
         - users
-      summary: Resets a user. Note that UserManage permissions are required to manage any user other than the caller.
+      summary: Reset user
       description: Resets a user. Note that UserManage permissions are required to manage any user other than the caller.
       operationId: ResetUserreset_Get
       parameters:
@@ -17663,7 +17663,7 @@ paths:
     post:
       tags:
         - users
-      summary: Resets a user. Note that UserManage permissions are required to manage any user other than the caller.
+      summary: Reset user
       description: Resets a user. Note that UserManage permissions are required to manage any user other than the caller.
       operationId: ResetUserreset_Post
       requestBody:
@@ -17685,7 +17685,7 @@ paths:
     get:
       tags:
         - users
-      summary: Resets a user password. Note that this operation is intended to manage any user other than the caller.
+      summary: Reset user password
       description: Resets a user password. Note that this operation is intended to manage any user other than the caller.
       operationId: ResetUserPasswordresetPassword_Get
       parameters:
@@ -17708,7 +17708,7 @@ paths:
     post:
       tags:
         - users
-      summary: Resets a user password. Note that this operation is intended to manage any user other than the caller.
+      summary: Reset user password
       description: Resets a user password. Note that this operation is intended to manage any user other than the caller.
       operationId: ResetUserPasswordresetPassword_Post
       requestBody:
@@ -17732,7 +17732,7 @@ paths:
     post:
       tags:
         - users
-      summary: Generates a reset password for preview without applying it. Pass the returned PreviewToken to resetPassword to apply it.
+      summary: Generate preview reset password
       description: Generates a reset password for preview without applying it. Pass the returned PreviewToken to resetPassword to apply it.
       operationId: PreviewResetUserPasswordpreviewResetPassword_Post
       requestBody:
@@ -17756,7 +17756,7 @@ paths:
     get:
       tags:
         - users
-      summary: Resets a user's 2FA . Note that UserManage permissions are required to manage any user other than the caller.
+      summary: Reset user 2FA
       description: Resets a user's 2FA . Note that UserManage permissions are required to manage any user other than the caller.
       operationId: ResetUser2fareset2fa_Get
       parameters:
@@ -17777,7 +17777,7 @@ paths:
     post:
       tags:
         - users
-      summary: Resets a user's 2FA . Note that UserManage permissions are required to manage any user other than the caller.
+      summary: Reset user 2FA
       description: Resets a user's 2FA . Note that UserManage permissions are required to manage any user other than the caller.
       operationId: ResetUser2fareset2fa_Post
       requestBody:
@@ -17799,7 +17799,7 @@ paths:
     get:
       tags:
         - exportUserNotifications
-      summary: Export users and the notifications they are configured to receive
+      summary: Export user notifications
       description: Export users and the notifications they are configured to receive
       operationId: ExportUserNotifications_Get
       parameters:
@@ -17822,7 +17822,7 @@ paths:
     post:
       tags:
         - exportUserNotifications
-      summary: Export users and the notifications they are configured to receive
+      summary: Export user notifications
       description: Export users and the notifications they are configured to receive
       operationId: ExportUserNotifications_Post
       requestBody:
@@ -17846,7 +17846,7 @@ paths:
     get:
       tags:
         - timezones
-      summary: Gets a list of possible time zone names.
+      summary: List time zone names
       description: Gets a list of possible time zone names.
       operationId: GetTimeZoneIds_Get
       parameters:
@@ -17872,7 +17872,7 @@ paths:
     post:
       tags:
         - timezones
-      summary: Gets a list of possible time zone names.
+      summary: List time zone names
       description: Gets a list of possible time zone names.
       operationId: GetTimeZoneIds_Post
       requestBody:
@@ -17899,7 +17899,7 @@ paths:
     get:
       tags:
         - userHasChangedPassword
-      summary: Has the current user changed their password from any system assigned one?
+      summary: Check if user changed password
       description: Has the current user changed their password from any system assigned one?
       operationId: UserHasChangedPassword_Get
       parameters:
@@ -17923,7 +17923,7 @@ paths:
     post:
       tags:
         - userHasChangedPassword
-      summary: Has the current user changed their password from any system assigned one?
+      summary: Check if user changed password
       description: Has the current user changed their password from any system assigned one?
       operationId: UserHasChangedPassword_Post
       requestBody:
@@ -17948,7 +17948,7 @@ paths:
     get:
       tags:
         - groupAlerts
-      summary: Add a group alert to a user.
+      summary: Add group alert to user
       description: Add a group alert to a user.
       operationId: AddGroupAlertToUseradd_Get
       parameters:
@@ -17971,7 +17971,7 @@ paths:
     post:
       tags:
         - groupAlerts
-      summary: Add a group alert to a user.
+      summary: Add group alert to user
       description: Add a group alert to a user.
       operationId: AddGroupAlertToUseradd_Post
       requestBody:
@@ -17995,7 +17995,7 @@ paths:
     get:
       tags:
         - groupAlerts
-      summary: Remove a group notification from a user
+      summary: Remove group notification from user
       description: Remove a group notification from a user
       operationId: DeleteGroupAlertFromUserdelete_Get
       parameters:
@@ -18026,7 +18026,7 @@ paths:
     post:
       tags:
         - groupAlerts
-      summary: Remove a group notification from a user
+      summary: Remove group notification from user
       description: Remove a group notification from a user
       operationId: DeleteGroupAlertFromUserdelete_Post
       requestBody:
@@ -18048,7 +18048,7 @@ paths:
     get:
       tags:
         - groupAlerts
-      summary: Update a group notification from a user
+      summary: Update group notification for user
       description: Update a group notification from a user
       operationId: UpdateGroupAlertForUserupdate_Get
       parameters:
@@ -18069,7 +18069,7 @@ paths:
     post:
       tags:
         - groupAlerts
-      summary: Update a group notification from a user
+      summary: Update group notification for user
       description: Update a group notification from a user
       operationId: UpdateGroupAlertForUserupdate_Post
       requestBody:
@@ -18091,7 +18091,7 @@ paths:
     get:
       tags:
         - groupAlerts
-      summary: Get the configured notifications for the specified group.
+      summary: Get notifications for group
       description: Get the configured notifications for the specified group.
       operationId: GetGroupAlertsForGroup_Get
       parameters:
@@ -18117,7 +18117,7 @@ paths:
     post:
       tags:
         - groupAlerts
-      summary: Get the configured notifications for the specified group.
+      summary: Get notifications for group
       description: Get the configured notifications for the specified group.
       operationId: GetGroupAlertsForGroup_Post
       requestBody:
@@ -18197,7 +18197,7 @@ paths:
     get:
       tags:
         - resetAdminPassword
-      summary: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
+      summary: 'Reset admin account password'
       description: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
       operationId: ResetAdminPassword_Get
       parameters:
@@ -18218,7 +18218,7 @@ paths:
     post:
       tags:
         - resetAdminPassword
-      summary: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
+      summary: 'Reset admin account password'
       description: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
       operationId: ResetAdminPassword_Post
       requestBody:
@@ -18240,7 +18240,7 @@ paths:
     get:
       tags:
         - resetAdminPassword
-      summary: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
+      summary: 'Reset admin account password'
       description: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
       operationId: ResetAdminPasswordAdminName_Get
       parameters:
@@ -18261,7 +18261,7 @@ paths:
     post:
       tags:
         - resetAdminPassword
-      summary: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
+      summary: 'Reset admin account password'
       description: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
       operationId: ResetAdminPasswordAdminName_Post
       requestBody:
@@ -18283,7 +18283,7 @@ paths:
     get:
       tags:
         - resetAdminPassword
-      summary: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
+      summary: 'Reset admin account password'
       description: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
       operationId: ResetAdminPasswordOrganizationIdAdminName_Get
       parameters:
@@ -18304,7 +18304,7 @@ paths:
     post:
       tags:
         - resetAdminPassword
-      summary: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
+      summary: 'Reset admin account password'
       description: 'Resets the admin (or named account) password, returning a new temporary password in the response. Can only be called from the local hub console.'
       operationId: ResetAdminPasswordOrganizationIdAdminName_Post
       requestBody:
@@ -18326,7 +18326,7 @@ paths:
     get:
       tags:
         - userRoles
-      summary: Get a list of user roles defined in the system.
+      summary: List user roles
       description: Get a list of user roles defined in the system.
       operationId: GetUserRoles_Get
       parameters:
@@ -18349,7 +18349,7 @@ paths:
     post:
       tags:
         - userRoles
-      summary: Get a list of user roles defined in the system.
+      summary: List user roles
       description: Get a list of user roles defined in the system.
       operationId: GetUserRoles_Post
       requestBody:
@@ -18373,7 +18373,7 @@ paths:
     get:
       tags:
         - permissions
-      summary: Gets a list of permissions names defined in the system.
+      summary: List permission names
       description: Gets a list of permissions names defined in the system.
       operationId: GetPermissions_Get
       parameters:
@@ -18399,7 +18399,7 @@ paths:
     post:
       tags:
         - permissions
-      summary: Gets a list of permissions names defined in the system.
+      summary: List permission names
       description: Gets a list of permissions names defined in the system.
       operationId: GetPermissions_Post
       requestBody:
@@ -18673,7 +18673,7 @@ paths:
     get:
       tags:
         - licenseInfo
-      summary: Represents a request to get an Organization's license info.
+      summary: Get organization license info
       description: Represents a request to get an Organization's license info.
       operationId: GetLicenseInfo_Get
       parameters:
@@ -18696,7 +18696,7 @@ paths:
     post:
       tags:
         - licenseInfo
-      summary: Represents a request to get an Organization's license info.
+      summary: Get organization license info
       description: Represents a request to get an Organization's license info.
       operationId: GetLicenseInfo_Post
       requestBody:
@@ -18720,7 +18720,7 @@ paths:
     get:
       tags:
         - organization
-      summary: 'Represents a request to update an Organization, used to set the license.'
+      summary: 'Update organization license'
       description: 'Represents a request to update an Organization, used to set the license.'
       operationId: UpdateOrganizationupdate_Get
       parameters:
@@ -18752,7 +18752,7 @@ paths:
     post:
       tags:
         - organization
-      summary: 'Represents a request to update an Organization, used to set the license.'
+      summary: 'Update organization license'
       description: 'Represents a request to update an Organization, used to set the license.'
       operationId: UpdateOrganizationupdate_Post
       requestBody:
@@ -18774,7 +18774,7 @@ paths:
     get:
       tags:
         - userRolesPermisions
-      summary: 'Checks whether the caller, or the named user if supplied, has the specified roles and permissions.'
+      summary: 'Check user roles and permissions'
       description: 'Checks whether the caller, or the named user if supplied, has the specified roles and permissions.'
       operationId: HasRoleOrPermissioncheck_Get
       parameters:
@@ -18798,7 +18798,7 @@ paths:
     post:
       tags:
         - userRolesPermisions
-      summary: 'Checks whether the caller, or the named user if supplied, has the specified roles and permissions.'
+      summary: 'Check user roles and permissions'
       description: 'Checks whether the caller, or the named user if supplied, has the specified roles and permissions.'
       operationId: HasRoleOrPermissioncheck_Post
       requestBody:
@@ -18823,7 +18823,7 @@ paths:
     get:
       tags:
         - userRolesPermissions
-      summary: 'Checks whether the caller, or the named user if supplied, has the specified roles and permissions.'
+      summary: 'Check user roles and permissions'
       description: 'Checks whether the caller, or the named user if supplied, has the specified roles and permissions.'
       operationId: HasRoleOrPermissioncheck2_Get
       parameters:
@@ -18847,7 +18847,7 @@ paths:
     post:
       tags:
         - userRolesPermissions
-      summary: 'Checks whether the caller, or the named user if supplied, has the specified roles and permissions.'
+      summary: 'Check user roles and permissions'
       description: 'Checks whether the caller, or the named user if supplied, has the specified roles and permissions.'
       operationId: HasRoleOrPermissioncheck2_Post
       requestBody:
@@ -18872,7 +18872,7 @@ paths:
     get:
       tags:
         - userRolesPermisions
-      summary: 'Gets roles and permissions for the caller, or the named user if supplied.'
+      summary: 'Get user roles and permissions'
       description: 'Gets roles and permissions for the caller, or the named user if supplied.'
       operationId: GetRolesAndPermissions_Get
       parameters:
@@ -18895,7 +18895,7 @@ paths:
     post:
       tags:
         - userRolesPermisions
-      summary: 'Gets roles and permissions for the caller, or the named user if supplied.'
+      summary: 'Get user roles and permissions'
       description: 'Gets roles and permissions for the caller, or the named user if supplied.'
       operationId: GetRolesAndPermissions_Post
       requestBody:
@@ -18919,7 +18919,7 @@ paths:
     get:
       tags:
         - userRolesPermissions
-      summary: 'Gets roles and permissions for the caller, or the named user if supplied.'
+      summary: 'Get user roles and permissions'
       description: 'Gets roles and permissions for the caller, or the named user if supplied.'
       operationId: GetRolesAndPermissions2_Get
       parameters:
@@ -18942,7 +18942,7 @@ paths:
     post:
       tags:
         - userRolesPermissions
-      summary: 'Gets roles and permissions for the caller, or the named user if supplied.'
+      summary: 'Get user roles and permissions'
       description: 'Gets roles and permissions for the caller, or the named user if supplied.'
       operationId: GetRolesAndPermissions2_Post
       requestBody:
