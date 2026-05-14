@@ -4,7 +4,7 @@ The File System Access Analyzer (FSAA) data collector audits Windows, NFS, and A
 
 ### [Table Relationship Diagrams (ERD)](erd/overview.md)
 
-- [Top-level partitioning — every table hangs off SA_FSAA_Hosts](erd/overview.md#top-level-partitioning)
+- [Top-level partitioning — every table references SA_FSAA_Hosts](erd/overview.md#top-level-partitioning)
 - [Trustees — security-principal identity model](erd/overview.md#trustees)
 - [Resources & content aggregations](erd/overview.md#resources)
 - [Gates and permissions](erd/overview.md#gates-and-permissions)

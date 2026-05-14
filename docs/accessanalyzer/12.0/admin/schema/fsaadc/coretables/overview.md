@@ -831,7 +831,7 @@ Per-host catalog of the DLP criteria (patterns / classifiers) that produced matc
 |---|---|---|---|---|---|---|---|
 | HOST | int | | No | PK | FK → SA_FSAA_Hosts.ID | | Host partition |
 | ID | int | | No | PK | | | Per-host criterion ID |
-| Name | nvarchar | 256 | No | | | | Criterion name (e.g. "US Social Security Number") |
+| Name | nvarchar | 256 | No | | | | Criterion name (e.g. "United States Social Security Number") |
 | Risk | int | | No | | | `0` | Risk score |
 | pattern_guid | uniqueidentifier | | Yes | | | | Global criterion GUID |
 
@@ -951,7 +951,7 @@ Each DFS link maps a logical DFS path (e.g. `\\contoso.com\public\sales`) to a p
 | Timeout | int | | Yes | | | | DFS-link cache timeout |
 | DfsGuid | uniqueidentifier | | Yes | | | | DFS link's unique identifier |
 | Comment | nvarchar | 1024 | Yes | | | | Free-text comment |
-| IsRoot | bit | | No | | | | True if this link represents the namespace root rather than a sub-link |
+| IsRoot | bit | | No | | | | True if the DFS link represents the namespace root rather than a sub-link |
 
 **Primary Key:** `PK_SA_FSDFS_Links` — clustered on `(HOST, ID)`
 **Foreign Keys:**

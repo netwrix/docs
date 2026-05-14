@@ -468,7 +468,7 @@ Columns mirror `SA_FSAC_ExceptionsView` minus the per-host columns: `SID`, `ID`,
 
 ### SA_FSAC_PermissionChangesView {#sa_fsac_permissionchangesview}
 
-Per-permission-change view that joins each `SA_FSAC_PermissionChanges` detail row to its host and resolves the affected trustee via `SA_FSAA_GetTrusteeInformation`. Does not join to `SA_FSAC_ActivityEvents` or `SA_FSAA_Resources`; use `SA_FSAC_ActivityEventsView` joined to `SA_FSAC_PermissionChanges` when `AccessTime`, `ResourcePath`, or `ResourceType` are needed.
+Per-permission-change view that joins each `SA_FSAC_PermissionChanges` detail row to its host and resolves the affected trustee via `SA_FSAA_GetTrusteeInformation`. Doesn't join to `SA_FSAC_ActivityEvents` or `SA_FSAA_Resources`; use `SA_FSAC_ActivityEventsView` joined to `SA_FSAC_PermissionChanges` when `AccessTime`, `ResourcePath`, or `ResourceType` are needed.
 
 **Source tables:** `SA_FSAC_PermissionChanges`, `SA_FSAA_Hosts`, CROSS APPLY `SA_FSAA_GetTrusteeInformation`
 

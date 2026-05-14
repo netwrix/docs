@@ -8,7 +8,7 @@ Used in `SA_FSAA_Trustees.TrusteeType` and `SA_FSAA_LocalTrustees.TrusteeType`. 
 
 | Value | Name | Description |
 |---|---|---|
-| 0 | Unknown | Type could not be determined |
+| 0 | Unknown | Type couldn't be determined |
 | 1 | SecurityPrincipal | Built-in / well-known security principal (e.g. `Everyone`) |
 | 2 | LocalUser | Local user account |
 | 3 | LocalGroup | Local group account |
@@ -23,7 +23,7 @@ Used in `SA_FSAA_Trustees.TrusteeType` and `SA_FSAA_LocalTrustees.TrusteeType`. 
 | 20 | UnixUser | POSIX user |
 | 21 | UnixGroup | POSIX group |
 
-The `TrusteeTypeDescription` column in views covers values 0, 1, 2, 3, 4, 5, 8, 9, and 10. Values 6, 7, 11, 20, and 21 do not have a dedicated description string in the current view CASE expressions.
+The `TrusteeTypeDescription` column in views covers values 0, 1, 2, 3, 4, 5, 8, 9, and 10. Values 6, 7, 11, 20, and 21 don't have a dedicated description string in the current view CASE expressions.
 
 ## ResourceType {#resourcetype}
 
@@ -93,4 +93,4 @@ The full Windows access mask is stored separately in the `*Mask` columns. The fo
 | 1114112 | Delete |
 | 1179648 | Read Permissions |
 
-Additional special-permission decimal values are decoded by an extended `CASE` expression in the permission views; the values listed above cover the most commonly encountered masks.
+Additional special-permission decimal values are decoded by an extended `CASE` expression in the permission views; the listed values cover the most commonly encountered masks.

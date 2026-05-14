@@ -1,14 +1,14 @@
 # Table Relationship Diagrams (ERD)
 
-Relationship lines use standard crow's foot notation: a single vertical bar on the parent side and a crow's foot (fork) on the child side means "exactly one parent, zero or more children"; a single bar on each side with an open circle means one-to-zero-or-one (sidecar / extension table).
+Relationship lines use standard crow's foot notation: a single vertical bar on the parent side and a crow's foot (fork) on the child side means "exactly one parent and zero or more children"; a single bar on each side with an open circle means one-to-zero-or-one (sidecar / extension table).
 
 :::note
-Every core table includes a `HOST INT` column that is a foreign key to `SA_FSAA_Hosts.ID` with `ON DELETE CASCADE`. To keep the sub-diagrams readable, the host fan-out is shown only in the top-level diagrams below; in the other diagrams `HOST` is implicit on every relationship. Three tables are not shown in any diagram because they carry no foreign keys: `SA_FSAA_SchemaVer` (single-row config), `SA_FSAA_ScanHistory` (audit log), and `SA_FSAA_AzureStorageAccounts` (single-column lookup).
+Every core table includes a `HOST INT` column that is a foreign key to `SA_FSAA_Hosts.ID` with `ON DELETE CASCADE`. To keep the sub-diagrams readable, the host fan-out is shown only in the following top-level diagrams; in the other diagrams `HOST` is implicit on every relationship. Three tables aren't shown in any diagram because they carry no foreign keys: `SA_FSAA_SchemaVer` (single-row config), `SA_FSAA_ScanHistory` (audit log), and `SA_FSAA_AzureStorageAccounts` (single-column lookup).
 :::
 
 ## Top-level Partitioning {#top-level-partitioning}
 
-`SA_FSAA_Hosts` is the root of the schema. Every other table includes a `HOST` column whose foreign key cascades on delete, so removing a host atomically purges its entire data set. Because the host fan-out spans more than six child tables, it is split into two diagrams below.
+`SA_FSAA_Hosts` is the root of the schema. Every other table includes a `HOST` column whose foreign key cascades on delete, so removing a host atomically purges its entire data set. Because the host fan-out spans more than six child tables, it is split into the following two diagrams.
 
 **Core structural and permission tables:**
 
@@ -81,7 +81,7 @@ A "gate" is a way to reach a resource — an SMB share, NFS export, or LSA-polic
 ```
 
 :::note
-`SA_FSAA_Resources.RightsProxyID → SA_FSAA_Rights.RightsProxyID` and `SA_FSAA_Resources.GatesProxyID → SA_FSAA_GatesProxy.ID` are logical (un-enforced) references not shown above. These are denormalized pointers maintained by the import pipeline; no FK constraint is created so that bulk imports can stage rows in any order.
+`SA_FSAA_Resources.RightsProxyID → SA_FSAA_Rights.RightsProxyID` and `SA_FSAA_Resources.GatesProxyID → SA_FSAA_GatesProxy.ID` are logical (un-enforced) references not shown in the diagram. These are denormalized pointers maintained by the import pipeline; no FK constraint is created so that bulk imports can stage rows in any order.
 :::
 
 ## Tags {#tags}
@@ -119,7 +119,7 @@ Tags use a three-table dedup pattern. `SA_FSAA_Tags` holds each unique tag strin
 
 ## Activity Collection (SA_FSAC_*) {#activity-collection}
 
-`SA_FSAC_ActivityEvents` is the audit-event firehose; each row is one observed file-system operation. Every event references the resource (`PathID`), the trustee that performed the operation, and the process (`ProcessID`) that ran it. Three detail tables hang off `ActivityEvents`: `SA_FSAC_PermissionChanges`, `SA_FSAC_OwnerChanges`, and `SA_FSAC_RenameTargets`. `SA_FSAC_DailyActivity` is a daily aggregation rolled up by `(folder, trustee, operation)`. `SA_FSAC_Exceptions` records detected anomalies; `SA_FSAC_UserExceptions` is the per-user variant (partitioned by `SID` instead of by host).
+`SA_FSAC_ActivityEvents` is the audit-event firehose; each row is one observed file-system operation. Every event references the resource (`PathID`), the trustee that performed the operation, and the process (`ProcessID`) that ran it. Three detail tables reference `ActivityEvents`: `SA_FSAC_PermissionChanges`, `SA_FSAC_OwnerChanges`, and `SA_FSAC_RenameTargets`. `SA_FSAC_DailyActivity` is a daily aggregation rolled up by `(folder, trustee, operation)`. `SA_FSAC_Exceptions` records detected anomalies; `SA_FSAC_UserExceptions` is the per-user variant (partitioned by `SID` instead of by host).
 
 ```erDiagram
     SA_FSAA_Hosts ||--o{ SA_FSAC_ProcessNames : "HOST"
@@ -159,7 +159,7 @@ Tags use a three-table dedup pattern. `SA_FSAA_Tags` holds each unique tag strin
 ```
 
 :::note
-`SA_FSDLP_Matches.FileId → SA_FSAA_Resources.ID` is a logical (un-enforced) reference not shown above. The DLP collector populates `FileId` to match the FSAA resource ID but no SQL FK constraint is created, so DLP imports can run independently of structural scans. `SA_FSDLP_MatchHits_SubjectProfile` also has foreign keys into the central Subject Profile tables (`SA_SubjectProfile_Sources`, `SA_SubjectProfile_Identities`, `SA_SubjectProfile_AttributeValues`), which are owned by a separate module and not shown here.
+`SA_FSDLP_Matches.FileId → SA_FSAA_Resources.ID` is a logical (un-enforced) reference not shown in the diagram. The DLP collector populates `FileId` to match the FSAA resource ID but no SQL FK constraint is created, so DLP imports can run independently of structural scans. `SA_FSDLP_MatchHits_SubjectProfile` also has foreign keys into the central Subject Profile tables (`SA_SubjectProfile_Sources`, `SA_SubjectProfile_Identities`, `SA_SubjectProfile_AttributeValues`), which are owned by a separate module and not shown here.
 :::
 
 ## DFS Namespaces (SA_FSDFS_*) {#dfs-namespaces}

@@ -9,7 +9,7 @@ All functions and stored procedures live in the `dbo` schema. Most table-valued 
 **Signature:** `(@serverID INT, @resourceID BIGINT) RETURNS NVARCHAR(4000)`
 **Type:** Scalar function
 
-Walks the parent chain in `SA_FSAA_Resources` and concatenates names with the appropriate delimiter (`/` for Unix resources of type 5 or 6, `\` for everything else) to produce the full resource path. Returns NULL if the resource is not found.
+Walks the parent chain in `SA_FSAA_Resources` and concatenates names with the appropriate delimiter (`/` for Unix resources of type 5 or 6, `\` for everything else) to produce the full resource path. Returns NULL if the resource isn't found.
 
 ### SA_FSAA_GetTrusteeMembership
 
@@ -23,7 +23,7 @@ Recursively expands a group or principal into its effective members. Handles wel
 **Signature:** `(@serverID INT, @trusteeSID VARCHAR(184), @trusteeDomain NVARCHAR(256), @trusteeType INT, @groupSID VARCHAR(184), @groupDomain NVARCHAR(256), @groupType INT, @directlyApplied INT) RETURNS INT`
 **Type:** Scalar function
 
-Returns `1` if the trustee is a recursive member of the group, else `0`. Encodes fast paths for `Everyone (S-1-1-0)`, `Authenticated Users (S-1-5-11)` (excluding Guest, Anonymous, and Domain Computers), and `Domain Users (S-1-5-21-...-513)`. Falls back to `SA_FSAA_GetTrusteeMembership` when the relationship cannot be answered by a fast path.
+Returns `1` if the trustee is a recursive member of the group, else `0`. Encodes fast paths for `Everyone (S-1-1-0)`, `Authenticated Users (S-1-5-11)` (excluding Guest, Anonymous, and Domain Computers), and `Domain Users (S-1-5-21-...-513)`. Falls back to `SA_FSAA_GetTrusteeMembership` when the relationship can't be answered by a fast path.
 
 ### SA_FSAA_RecurseFolders
 
