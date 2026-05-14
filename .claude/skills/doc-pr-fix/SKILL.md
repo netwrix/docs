@@ -13,9 +13,8 @@ Read `docs/CLAUDE.md` before starting. It contains the Netwrix writing standards
 ## Input
 
 The prompt contains labeled fields — extract these values and use them as literals throughout:
-- `PR: <number>` — the PR number (e.g. `913`)
+- `PR: <number>` — the PR number (e.g. `921`)
 - `Repo: <owner/name>` — the repository (e.g. `netwrix/docs`)
-- `Progress comment ID: <id>` — ID of the "On it." comment already posted (may be empty)
 - `Writer's request: <text>` — everything the writer wrote after `@claude`
 
 Do not use shell variable expansion (`$VAR`) in any commands — use the literal values you extracted from the prompt.
@@ -44,14 +43,7 @@ Parse the writer's comment to determine what they want. Common patterns:
 
 ### If the request is a question or asks for an explanation
 
-Answer it directly. Do not create a todo list or edit any files. Update the "On it." comment with your answer:
-
-```bash
-gh api repos/<owner>/<repo>/issues/comments/<progress-comment-id> \
-  -X PATCH -f body="<your answer here>"
-```
-
-If the progress comment ID is empty, post a new comment instead:
+Answer it directly. Do not create a todo list or edit any files. Post a comment with your answer:
 
 ```bash
 gh pr comment <pr-number> --repo <owner>/<repo> --body "<your answer here>"
@@ -70,28 +62,26 @@ Example tasks for a "fix all issues" request:
 
 Only include tasks for what the writer actually asked for.
 
-Update the "On it." comment with your task list (use literal values from the prompt — no shell variables):
+Post a progress comment and capture its ID from the command output — you'll update this comment as work proceeds:
 
 ```bash
-gh api repos/<owner>/<repo>/issues/comments/<progress-comment-id> \
-  -X PATCH -f body="$(cat <<'EOF'
+gh api repos/<owner>/<repo>/issues/<pr-number>/comments \
+  --method POST --field body="$(cat <<'EOF'
 **Fix in progress:**
 
 - [ ] Apply editorial suggestions in `path/to/file.md`
 - [ ] Verify changes
 - [ ] Commit and push
 EOF
-)"
+)" --jq '.id'
 ```
 
-If the progress comment ID is empty, create a new comment and note its ID for the final update:
+Use the literal ID from that output in subsequent update calls. Update the comment at natural milestones (after finishing each file, after committing) — not after every edit:
 
 ```bash
-gh api repos/<owner>/<repo>/issues/<pr-number>/comments \
-  --method POST --field body="**Fix in progress:** ..." --jq '.id'
+gh api repos/<owner>/<repo>/issues/comments/<id-from-above> \
+  -X PATCH -f body="<updated checklist>"
 ```
-
-Update the comment at natural milestones (after finishing each file, after committing) — not after every edit.
 
 ## Step 4: Apply fixes
 
@@ -126,10 +116,10 @@ git push
 
 ## Step 7: Final update
 
-Replace the progress comment with a completion summary. Don't post a separate comment — update the same one:
+Replace the progress comment with a completion summary. Don't post a separate comment — update the same one using the ID you captured in Step 3:
 
 ```bash
-gh api repos/<owner>/<repo>/issues/comments/<progress-comment-id> \
+gh api repos/<owner>/<repo>/issues/comments/<id-from-step-3> \
   -X PATCH -f body="$(cat <<'EOF'
 **Fix complete:**
 
