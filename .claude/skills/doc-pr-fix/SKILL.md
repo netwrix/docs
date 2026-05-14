@@ -12,9 +12,13 @@ Read `docs/CLAUDE.md` before starting. It contains the Netwrix writing standards
 
 ## Input
 
-You receive:
-- `$1`: The PR number
-- `$2`: The writer's comment text (everything after `@claude`)
+The prompt contains labeled fields — extract these values and use them as literals throughout:
+- `PR: <number>` — the PR number (e.g. `913`)
+- `Repo: <owner/name>` — the repository (e.g. `netwrix/docs`)
+- `Progress comment ID: <id>` — ID of the "On it." comment already posted (may be empty)
+- `Writer's request: <text>` — everything the writer wrote after `@claude`
+
+Do not use shell variable expansion (`$VAR`) in any commands — use the literal values you extracted from the prompt.
 
 ## Step 1: Understand the request
 
@@ -28,29 +32,48 @@ Parse the writer's comment to determine what they want. Common patterns:
 
 ## Step 2: Gather context
 
-1. Run `gh pr diff $PR_NUMBER` to see what changed in the PR
+1. Run `gh pr diff <pr-number>` (use the literal number from the prompt) to see what changed
 2. Read the full content of each changed markdown file
 3. Find the most recent "Documentation PR Review" comment on the PR:
    ```bash
-   gh api repos/{owner}/{repo}/issues/$PR_NUMBER/comments --jq '.[] | select(.body | contains("Documentation PR Review")) | .body' | tail -1
+   gh api repos/<owner>/<repo>/issues/<pr-number>/comments --jq '.[] | select(.body | contains("Documentation PR Review")) | .body' | tail -1
    ```
    This tells you what the editorial review flagged.
 
-## Step 3: Plan your work and post a progress comment
+## Step 3: Respond based on request type
 
-Use Todo to create a task for each discrete piece of work you need to do. Build the task list from what you learned in Steps 1–2. Each task should be concrete and trackable. Mark each task as complete as you finish it.
+### If the request is a question or asks for an explanation
+
+Answer it directly. Do not create a todo list or edit any files. Update the "On it." comment with your answer:
+
+```bash
+gh api repos/<owner>/<repo>/issues/comments/<progress-comment-id> \
+  -X PATCH -f body="<your answer here>"
+```
+
+If the progress comment ID is empty, post a new comment instead:
+
+```bash
+gh pr comment <pr-number> --repo <owner>/<repo> --body "<your answer here>"
+```
+
+Then stop — skip Steps 4–7.
+
+### If the request requires file edits
+
+Use Todo to create a task for each discrete piece of work. Build the task list from Steps 1–2. Each task should be concrete and trackable. Mark each task complete as you finish it.
 
 Example tasks for a "fix all issues" request:
 - Apply editorial suggestions in `path/to/file.md`
 - Verify changes
 - Commit and push
 
-Only include tasks for what the writer actually asked for. The task list must reflect the writer's request exactly.
+Only include tasks for what the writer actually asked for.
 
-Then update the acknowledgment comment (already posted by the workflow) with your task list. The comment ID is in `$PROGRESS_COMMENT_ID`:
+Update the "On it." comment with your task list (use literal values from the prompt — no shell variables):
 
 ```bash
-gh api repos/{owner}/{repo}/issues/comments/$PROGRESS_COMMENT_ID \
+gh api repos/<owner>/<repo>/issues/comments/<progress-comment-id> \
   -X PATCH -f body="$(cat <<'EOF'
 **Fix in progress:**
 
@@ -61,24 +84,14 @@ EOF
 )"
 ```
 
-If `$PROGRESS_COMMENT_ID` is empty for any reason, fall back to creating a new comment:
+If the progress comment ID is empty, create a new comment and note its ID for the final update:
 
 ```bash
-if [ -z "${PROGRESS_COMMENT_ID:-}" ]; then
-  PROGRESS_COMMENT_ID=$(gh api "repos/$REPO_OWNER/$REPO_NAME/issues/$PR_NUMBER/comments" \
-    --method POST --field body="**Fix in progress:** ..." \
-    --jq '.id' 2>/dev/null || echo "")
-fi
+gh api repos/<owner>/<repo>/issues/<pr-number>/comments \
+  --method POST --field body="**Fix in progress:** ..." --jq '.id'
 ```
 
-As you complete each Todo task, also update the PR comment to check off the corresponding item:
-
-```bash
-gh api repos/{owner}/{repo}/issues/comments/$PROGRESS_COMMENT_ID \
-  -X PATCH -f body="<updated checklist>"
-```
-
-Update the PR comment at natural milestones (after finishing each file, after committing, etc.) — not after every single edit.
+Update the comment at natural milestones (after finishing each file, after committing) — not after every edit.
 
 ## Step 4: Apply fixes
 
@@ -116,7 +129,7 @@ git push
 Replace the progress comment with a completion summary. Don't post a separate comment — update the same one:
 
 ```bash
-gh api repos/{owner}/{repo}/issues/comments/$PROGRESS_COMMENT_ID \
+gh api repos/<owner>/<repo>/issues/comments/<progress-comment-id> \
   -X PATCH -f body="$(cat <<'EOF'
 **Fix complete:**
 
@@ -130,8 +143,6 @@ gh api repos/{owner}/{repo}/issues/comments/$PROGRESS_COMMENT_ID \
 EOF
 )"
 ```
-
-Skip progress tracking only for pure explanations (e.g., "why is this flagged?") where your PR comment IS the deliverable and no files are edited. All other requests — including editorial rewrites like "improve the flow" — should use progress tracking.
 
 ## Behavioral Notes
 
