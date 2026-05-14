@@ -1,6 +1,6 @@
 ---
 title: Netwrix Privileged Secure Professional Services Engineer
-sidebar_position: 1830
+sidebar_position: 1570
 tags: [certification, partners, professional-services, privilege-secure]
 keywords: [training, course, certification, partners, professional services, privilege secure]
 description: "Become a certified Professional Services Engineer for Netwrix Privileged Secure"

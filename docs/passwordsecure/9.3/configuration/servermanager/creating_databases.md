@@ -10,10 +10,10 @@ sidebar_position: 40
 
 [https://www.youtube.com/embed/md7_VEdVuWM?rel=0](https://www.youtube.com/embed/md7_VEdVuWM?rel=0)[https://www.youtube.com/embed/md7_VEdVuWM?rel=0](https://www.youtube.com/embed/md7_VEdVuWM?rel=0)
 
-## What are databases?
+## Databases overview
 
 Databases contain all information on users, records, documents, etc. The changes to objects in
-Netwrix Password Secure will also become part of the MSSQL database. Naturally, the regular creation
+Netwrix Password Secure will also become part of the MSSQL database. the regular creation
 of backups to secure this data should always have the highest priority. The **MSSQL** relational
 database management system is used in Netwrix Password Secure version 9.
 
@@ -26,7 +26,7 @@ ribbon. The individual tabs of the wizard are explained below:
 
 Database server
 
-The first tab can be used to manually select the database server. By default, the value defined in
+The first tab lets you manually select the database server. By default, the value defined in
 the Advanced settings is preset. A user can also be entered or the service user can be selected
 instead.
 
@@ -38,7 +38,7 @@ databases.
 
 Data
 
-This setting can be used to define whether a template should be used. The template will provide the
+This setting lets you define whether a template should be used. The template will provide the
 database with ready-made forms and dashboard settings that make it easier to get started. The user
 can select from English and German templates. However, it is also possible to proceed without a
 template – you will then start with a completely empty database. If you have a backup from Password

@@ -34,7 +34,7 @@ operating concept ensures efficient work and a minimum of training time.
 ## TABs
 
 Tabs offer yet another option within the to present related information in a separate area. This tab
-navigation enables you to display, quickly access and switch between relevant information. The
+navigation lets you display, quickly access and switch between relevant information. The
 results for a filter with specific criteria can thus be retained without the original result being
 overwritten
 
@@ -46,7 +46,7 @@ to your individual requirements.
 
 #### Standard tab
 
-Depending on the active module, the All passwords tab will be renamed to the corresponding module by
+Depending on the active module, the All passwords tab is renamed to the corresponding module by
 default. (All documents, all forms, etc.)
 
 ![Standard tab](/images/passwordsecure/9.2/configuration/advanced_view/operation_and_setup/standard-tab-en.webp)
@@ -78,7 +78,7 @@ information.
 
 ## Orientation
 
-It is possible to change the alignment of the following objects:
+You can change the alignment of the following objects:
 
 - [Active Directory link](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/active_directory_link.md)
 - [Applications](/docs/passwordsecure/9.2/configuration/advancedview/clientmodule/applications/applications.md)

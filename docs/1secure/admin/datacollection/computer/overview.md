@@ -20,8 +20,7 @@ Data Collection Accounts should meet the following policies and permissions:
 - The **Read** NTFS permission on all objects in the audited folders.
 
 :::note
-If you want to use network traffic compression, data collecting account on the target
-server must be a member of the local Administrators group.
+To use network traffic compression, the data collecting account on the target server must be a member of the local Administrators group.
 :::
 
 

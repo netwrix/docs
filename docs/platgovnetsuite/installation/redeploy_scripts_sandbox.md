@@ -8,7 +8,7 @@ sidebar_position: 120
 
 NetSuite has removed the scheduled status on scripts after a sandbox is refreshed. This stops the
 scripts required for environment compares, change requests built to push to production, and other
-activities. This suitelet enables you to automatically reset all of your Platform Governance for
+activities. Use this suitelet to automatically reset all of your Platform Governance for
 NetSuite scripts. If you have scheduled custom scripts in your sandbox, you must manually set the
 status after a sandbox refresh.
 
@@ -24,6 +24,6 @@ status after a sandbox refresh.
     ![Open the Deployment tab](/images/platgovnetsuite/release_notes/script_deploy_tab.webp)
 
 6. Click the Suitelet name: **Strongpoint Reset Schedule Deployments**.
-7. Click on the Script **URL**.
+7. Click the Script **URL**.
 
     ![Click the Script URL](/images/platgovnetsuite/release_notes/script_deploy_url.webp)

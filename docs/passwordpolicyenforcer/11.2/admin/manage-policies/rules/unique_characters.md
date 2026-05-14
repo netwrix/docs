@@ -1,0 +1,20 @@
+---
+title: "Unique Characters Rule"
+description: "Unique Characters Rule"
+sidebar_position: 120
+---
+
+# Unique Characters Rule
+
+The Unique Characters rule rejects passwords that don't contain a minimum number of unique
+characters. For example, the password "aaaaaaaa" only contains one unique character (a), whereas
+"mypassword" contains nine unique characters (mypasword). Increasing the number of unique characters
+in a password increases password strength by avoiding repetitive sequences.
+The Unique Characters rule is case sensitive, so "LoOpHole" contains seven unique characters
+(LoOpHle).
+
+![Unique characters rule](/images/passwordpolicyenforcer/11.2/administration/unique.webp)
+
+Select the **Unique characters** checkbox to enable the Unique Characters rule.
+
+Select the minimum number of unique characters that passwords must contain from the dropdown list.

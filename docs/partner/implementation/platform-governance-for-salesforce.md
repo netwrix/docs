@@ -1,6 +1,6 @@
 ---
 title: Netwrix Platform Governance for Salesforce  Professional Services Engineer
-sidebar_position: 1820
+sidebar_position: 1550
 tags: [certification, partners, professional-services, platform-governance-for-salesforce]
 keywords: [training, course, certification, partners, professional services, platform governance for salesforce]
 description: "Become a certified Professional Services Engineer for Netwrix Platform Governance for Salesforce "

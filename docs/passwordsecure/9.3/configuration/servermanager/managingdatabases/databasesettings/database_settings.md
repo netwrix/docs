@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Database settings
 
-To open the settings of a database, select it and click on "Settings" in the ribbon. Alternatively
-you can open the context menu with the right mouse button and click on "Properties". In the next
+To open the settings of a database, select it and click "Settings" in the ribbon. Alternatively
+you can open the context menu with the right mouse button and click "Properties". In the next
 step you will be asked to enter your admin password. After that a window with the settings will
 open.
 

@@ -9,7 +9,7 @@ sidebar_position: 20
 ## User rights for predefined rights
 
 The user rights section provides all of the basic information required for handling user rights .
-Nevertheless, the four user rights related to “predefining rights” are explained below.
+Nevertheless, the four user rights related to “predefining rights” are explained in the following sections.
 
 ![global user rights](/images/passwordsecure/9.2/configuration/advanced_view/permissionconcept/predefining_rights/relevant_user_rights/relevant_user_rights_1-en.webp)
 
@@ -25,7 +25,7 @@ Nevertheless, the four user rights related to “predefining rights” are expla
   selection function is displayed or not when creating new records. If this right has not been
   granted, the user is thus not able to see for which roles and users the user rights are being
   defined.
-- **Can remove members from rights templates:** Roles defined within the rights templates cannot be
+- **Can remove members from rights templates:** Roles defined within the rights templates can't be
   removed without this right. If this right has not been granted, the roles defined in the templates
   are always authorized for records in this organisational structure. If the user right is
   activated: The user can remove the roles via the “x” icon:

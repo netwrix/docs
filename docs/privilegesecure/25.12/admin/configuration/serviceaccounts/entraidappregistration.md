@@ -13,7 +13,7 @@ tenant to Privilege Secure, the following information is required:
 - App Secret (For service account)
 - Tenant ID (To add resource)
 
-Log in to Microsoft Entra ID and follow the steps to generate the required information for Privilege
+Log in to Microsoft Entra ID and To generate the required information for Privilege
 Secure.
 
 ## Create App Registration
@@ -29,17 +29,17 @@ Create an App Registration in Entra ID (Entra ID > App Registrations) as an admi
 **Step 4 –** Using this menu, grant the following Microsoft Graph API permissions:
 
 - Application Permissions:
-    - Directory.ReadWrite.All
-    - Group.ReadWrite.All
-    - User.ReadWrite.All
-    - RoleManagement.ReadWrite.Directory
+- Directory.ReadWrite.All
+- Group.ReadWrite.All
+- User.ReadWrite.All
+- RoleManagement.ReadWrite.Directory
 - Delegated Permissions:
-    - User.Read
+- User.Read
 
 **Step 5 –** Click **Grant Admin Consent**.
 
 Ensure the Grant Admin Consent was successful within the Configured permissions menu. A message at
-the top of the page will display the following message: Sucessfully granted admin consent for the
+the top of the page displays the following message: Sucessfully granted admin consent for the
 requested permissions.
 
 ## Generate Secret
@@ -66,7 +66,7 @@ displayed again.
 Add the App Registration to the User Administrators role.
 
 :::note
-User Administrator is the least privileged model and cannot manage Global Administrator.
+User Administrator is the least privileged model and can't manage Global Administrator.
 To manage the Global Administrator role, assign the Global Administrator role to the App
 registration instead of User Administrator.
 :::
@@ -76,11 +76,11 @@ registration instead of User Administrator.
 
 **Step 2 –** Click **Roles and Administrators**.
 
-**Step 3 –** Locate and click on the **User Administrator** role.
+**Step 3 –** Locate and click the **User Administrator** role.
 
 **Step 4 –** Click **Add Assignments**.
 
-**Step 5 –** Search for the name of the previously created App Registration, click on it, and click
+**Step 5 –** Search for the name of the previously created App Registration, click it, and click
 **Select**.
 
 **Step 6 –** Click **Next**, then select the **Setting** Tab and provide justification text before
@@ -94,14 +94,14 @@ Add the Microsoft Entra ID Tenant resource to Privilege Secure using the Tenant 
 [Add New Microsoft Entra ID Tenant](/docs/privilegesecure/25.12/admin/interface/resources/entraidtenant.md) topic for additional
 information.
 
-## Rotate a Microsoft Entra ID Account Password in a Hybrid Tenant
+## Rotate a Microsoft Entra ID Account Password in a Hybrid Tenant
 
-In order for existing account passwords to be rotated by Privilege Secure in hybrid Microsoft Entra
-ID tenants, the Password Writeback feature in Microsoft Entra ID must be enabled. Enabling Password
+For Privilege Secure to rotate existing account passwords in hybrid Microsoft Entra
+ID tenants, enable the Password Writeback feature in Microsoft Entra ID. Enabling Password
 Writeback allows hybrid account passwords to be updated either in on-prem AD or in Microsoft Entra
-ID, and the result will be synced to the other location. Without having this functionality enabled
+ID, and the result is synced to the other location. Without having this functionality enabled
 in a hybrid Microsoft Entra ID tenant, all attempts to change an account's password will fail.
 
-Enabling Password Writeback is not specific to Privilege Secure. See the
+Enabling Password Writeback isn't specific to Privilege Secure. See the
 [Open Enable Entra ID password writeback](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback)
 Microsoft article for additional information.

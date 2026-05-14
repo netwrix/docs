@@ -6,14 +6,14 @@ sidebar_position: 10
 
 # Configure DirectConnect for Remote Desktop Connection
 
-The Netwrix Privilege Secure proxy service can be used to launch DirectConnect sessions via
+The Netwrix Privilege Secure proxy service lets you launch DirectConnect sessions via
 third-party Remote Desktop Connection Management software. Passing a DirectConnect string to the
 proxy server will launch an RDP connection. This topic explains the formatting for the connection
 string, with specific examples given for some popular Remote Desktop Connection Management programs.
 
 :::note
 If a SAML or OIDC authentication connector is enabled for the requesting user,
-DirectConnect functionality cannot be used.
+DirectConnect functionality can't be used.
 :::
 
 
@@ -21,7 +21,7 @@ To configure the remote connection client, use a connection string with the foll
 separated by “+” to the appropriate port on the proxy:
 
 - Username – The user name used to sign into Active Directory in the following format:
-  domain\username, user@domain, user@domain.suffix
+domain\username, user@domain, user@domain.suffix
 - Activity – The activity to perform
 - Resource – The DNS host name of the resource to run the activity on
 - Access Policy (optional) – The Access Policy to invoke (if more than one)
@@ -37,12 +37,12 @@ Connection String Example:
 
 `JonSmith@netwrix.com+Local_Admin+SQL1.netwrix.com`
 
-Note that some clients require you to use the _“_”\_ (underscore) character as a replacement for a
+some clients require you to use the _“_”\_ (underscore) character as a replacement for a
 space in Activity names that are made up of multiple words, for example:
 
 `Netwrix\JonSmith+Add_to_Local_Administrators+SQL1`
 
-If you wish to add notes, make sure to add the appropriate number of “+” delimiters if you are not
+To add notes, ensure you add the appropriate number of “+” delimiters if you aren't
 defining an access policy:
 
 `Netwrix\JonSmith+Local Admin+SQL1.netwrix.com++Server Maintenance`
@@ -167,7 +167,7 @@ User Name Format:
 `\<connection string>`
 
 :::note
-The user name starts with \_\_ (back slash).
+The user name starts with \_\_ (back slash).
 :::
 
 
@@ -184,7 +184,7 @@ Configure Remote Desktop Connection to Prompt for Password topic for additional 
 
 ## Configure Remote Desktop Connection to Prompt for Password
 
-Follow the steps to configure the RDP Group Policy to always prompt for user credentials and
+To configure the RDP Group Policy to always prompt for user credentials and
 password.
 
 **Step 1 –** Open the Group Policy Management Editor.
@@ -194,7 +194,7 @@ Remote Desktop Services > Remote Desktop Connection Client
 
 ![Configure Remote Desktop Connection to Prompt for Password](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_9.webp)
 
-**Step 3 –** Right click on Prompt for credentials on the client computer and select Edit from the
+**Step 3 –** Right click Prompt for credentials on the client computer and select Edit from the
 context menu.
 
 ![appendices_stealthbits_privileged_10](/images/privilegesecure/25.12/accessmanagement/enduser/configure/appendices_stealthbits_privileged_10.webp)

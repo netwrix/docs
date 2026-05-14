@@ -1,6 +1,6 @@
 ---
 title: Netwrix PingCastle Learning Path
-sidebar_position: 230
+sidebar_position: 220
 tags: [getting-started, training, pingcastle]
 keywords: [training, course, pingcastle]
 description: "Learn to use Netwrix PingCastle through courses"

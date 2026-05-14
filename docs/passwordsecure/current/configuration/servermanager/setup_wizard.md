@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Setup wizard
 
-## What is the setup wizard?
+## Setup wizard overview
 
 The setup wizard contains all relevant settings for setting up Netwrix Password Secure. The
 individual points can also be changed later on. Separate sections are available for each.
@@ -20,12 +20,14 @@ and properly documented. It can be subsequently changed in the
 
 ![setup-wizard-ac-en](/images/passwordsecure/9.2/configuration/server_manager/setupwizard/setup-wizard-ac-en.webp)
 
-NOTE: The initial password is “admin”.
+:::note
+The initial password is “admin”.
+:::
 
 #### License settings
 
 The second step is to complete the configuration for successively connecting to the licence server.
-This step can also be carried out later “in the [License settings](/docs/passwordsecure/current/configuration/servermanager/mainmenu/license_settings.md)
+This step can also be performed later “in the [License settings](/docs/passwordsecure/current/configuration/servermanager/mainmenu/license_settings.md)
 
 ![setup-wizard-ac-2-en](/images/passwordsecure/9.2/configuration/server_manager/setupwizard/setup-wizard-ac-2-en.webp)
 
@@ -48,7 +50,7 @@ can copy the server name from the login window of the SQL server.
 
 The user that will be used to create the database on the SQL Server is also specified. The user
 therefore needs **dbCreator** rights. Alternatively, you can use the service user for this purpose.
-The “Advanced” button allows you to specify a **Connection String.**
+The “Advanced” button lets you specify a **Connection String.**
 
 #### SMTP server
 
@@ -58,17 +60,17 @@ later on.
 
 ![setup-wizard-ac-4-en](/images/passwordsecure/9.2/configuration/server_manager/setupwizard/setup-wizard-ac-4-en.webp)
 
-Once the data has been entered and successfully tested, the wizard can be completed by clicking on
+After the data has been entered and successfully tested, the wizard can be completed by clicking on
 “Finish”.
 
 Security notes
 
-As soon as the setup wizard has been completed, two security notes will be displayed in the
+As soon as the setup wizard has been completed, two security notes are displayed in the
 **Status**
 
 module that need to be confirmed.
 
-**CAUTION:** It is recommended that you only confirm the security notes when the corresponding point
-has actually been carried out. It is absolutely essential to ensure that regular
+**CAUTION:** Netwrix recommends that you only confirm the security notes when the corresponding point
+has actually been performed. It is absolutely essential to ensure that regular
 [Backup management](/docs/passwordsecure/current/configuration/servermanager/mainmenu/backupsettings/backup_management.md) are created
 and the [Certificates](/docs/passwordsecure/current/configuration/servermanager/certificates/certificates.md) are backed up.

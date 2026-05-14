@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Filters section provides options to build a filter statement by selecting the Attribute,
 Operator, and Filter value. A time period for the report data is also configured here. If multiple
-data sources have been configured, there is also a Source drop-down menu. Filter statements can be
+data sources have been configured, there is also a Source dropdown menu. Filter statements can be
 simple with one value statement or complex with multiple value statements.
 
 ![Filters section of an investigation](/images/threatmanager/3.0/administration/investigations/options/filterstm.webp)
@@ -41,7 +41,7 @@ You must set a timeframe for an investigation query. When you run a query, the a
 available data for activity events that match the set filters for the specified timeframe. By
 default, the timeframe is set for the "Last Hour" of activity.
 
-![Investigations Interface showing the Timeframe drop-down menu](/images/threatprevention/7.5/reportingmodule/investigations/options/timeframe.webp)
+![Investigations Interface showing the Timeframe dropdown menu](/images/threatprevention/7.5/reportingmodule/investigations/options/timeframe.webp)
 
 Click the displayed timeframeto open a window, which provides several timeframe options as well as a
 clock and a calendar for setting a custom range:
@@ -68,21 +68,21 @@ modified to run a query ad hoc with the same filter statement but a different ti
 
 **Configure a Custom Timeframe Range**
 
-Follow the steps to configure a custom timeframe range.
+ configure a custom timeframe range.
 
-**Step 1 –** On the Investigations interface, select the desired Investigation or start a new
+**Step 1 –** On the Investigations interface, select the Investigation you want or start a new
 investigation.
 
 **Step 2 –** Click the Timeframe displayed in the Filters section.
 
 **Step 3 –** Set the start date on the left. You can either type it in the box at the top or
-navigate through the calendar to select the desired date.
+navigate through the calendar to select the date you want.
 
 **Step 4 –** Set the start time on the left. You can either type it in the box at the top or click
 the clock icon within the box to get a menu for selecting the hour, minute, and period (AM or PM).
 
 **Step 5 –** Set the end date on the right. You can either type it in the box at the top or navigate
-through the calendar to select the desired date.
+through the calendar to select the date you want.
 
 **Step 6 –** Set the end time on the right. You can either type it in the box at the top or click
 the clock icon within the box to get a menu for selecting the hour, minute, and period (AM or PM).
@@ -101,7 +101,7 @@ attribute:
 
 - Event ( group header in the menu):
 
-    - Affected Object – The The name of the object in Active Directory that was affected by the
+    - Affected Object – The name of the object in Active Directory that was affected by the
       event
     - Attribute – The specific property or field of the object that was changed or accessed
     - Attribute New Value – The new value that the attribute was changed to after the event
@@ -117,11 +117,11 @@ attribute:
     - Event Type – The nature or source of the event data, indicating where or how the event
       originated
     - Perpetrator – The user or service account that initiated the event
-    - Perpetrator Type – The type of account (e.g., user, service) that carried out the event
+    - Perpetrator Type – The type of account (e.g., user, service) that performed the event
     - Success – Indicates whether the action associated with the event was successfully completed
     - Tag (Direct) – A label or classification directly applied to the object or event
     - Tag (Effective) – A label or classification that applies to an object due to inheritance from
-      a group or policy. For example, if a group has a tag, all its members will inherit that tag
+      a group or policy. For example, if a group has a tag, all its members inherit that tag
     - Target – The specific object, resource, or entity that was the focus of the event
     - Target Type – The type or classification of the object, resource, or entity that was targeted
     - Time of Day – The exact date and time when the event occurred
@@ -173,8 +173,8 @@ attribute:
 - File System (grayed-out category group header in the menu):
 
     - Extension – The file extension indicating the file type (e.g., .txt, .docx)
-    - File Path – The The full directory path to where the file is located
-    - File Size – The The size of the file, typically measured in bytes
+    - File Path – The full directory path to where the file is located
+    - File Size – The size of the file, typically measured in bytes
     - File Tag – A label or classification applied to the file for organizational or security
       purposes
 
@@ -195,7 +195,7 @@ Attribute. The following is a list of all possible operator options:
 - Equals
 - Not Equal To
 - Contains
-- Does Not Contain
+- Doesn't Contain
 - Starts With
 - Ends With
 
@@ -204,22 +204,22 @@ Attribute. The following is a list of all possible operator options:
 You can create a filter for a new investigation or modify a filter for a saved investigation. Follow
 the steps to build a filter statement.
 
-**Step 1 –** Navigate to the desired investigation's Filters section.
+**Step 1 –** Navigate to the investigation you want's Filters section.
 
 ![filtersimple](/images/threatprevention/7.5/reportingmodule/investigations/options/filtersimple.webp)
 
-**Step 2 –** If multiple data sources are configure, select a source from the **Source** drop-down
+**Step 2 –** If multiple data sources are configure, select a source from the **Source** dropdown
 menu.
 
 **Step 3 –** Set the timeframe for the event data to be returned in the report.
 
-**Step 4 –** Select an attribute from the Attribute drop-down menu.
+**Step 4 –** Select an attribute from the Attribute dropdown menu.
 
-**Step 5 –** Select an operator from the Operator drop-down menu.
+**Step 5 –** Select an operator from the Operator dropdown menu.
 
-**Step 6 –** Enter a value in the Filter box. Possible values available from the events will
-populate in a drop-down menu as you type. Select the desired value from the drop-down menu. If the
-value you type is not available in the drop-down menu, use the Add button to add it to the Filter
+**Step 6 –** Enter a value in the Filter box. Possible values available from the events
+appear in a dropdown menu as you type. Select the value you want from the dropdown menu. If the
+value you type isn't available in the dropdown menu, use the Add button to add it to the Filter
 box.
 
 :::note
@@ -233,7 +233,7 @@ attribute. For example:
     - Attribute = Perpetrator; Operator = Equals; Filter = nwxtech\ad.bruce.wayne,
       nwxtech\ad.robin.locksley
 
-- Then the query will return activity for nwxtech\ad.bruce.wayne OR nwxtech\ad.robin.locksley
+- Then the query returns activity for nwxtech\ad.bruce.wayne OR nwxtech\ad.robin.locksley
 
 **Step 7 –** To form a complex filter with multiple attributes, click **Add** to insert a new row
 and repeat steps 4-6. The AND operator is automatically applied to group multiple rows. For example:
@@ -246,14 +246,14 @@ and repeat steps 4-6. The AND operator is automatically applied to group multipl
 
     - Attribute = Perpetrator; Operator = Not Equal to; Filter = nwxtech\ad.bruce.wayne
 
-- Then the query will return activity for all domain admins except nwxtech\ad.bruce.wayne
+- Then the query returns activity for all domain admins except nwxtech\ad.bruce.wayne
 
 :::note
 Click the X at the end of a row to remove it from the statement.
 :::
 
 
-Once the filter is set, you can generate the report ad hoc by clicking **Run Query**. The allows you
+After the filter is set, you can generate the report ad hoc by clicking **Run Query**. The allows you
 to test if your filter statement is working as desired. Save the investigation for reuse. You can
 also add subscriptions or export the report data using the options above the Filters section.
 

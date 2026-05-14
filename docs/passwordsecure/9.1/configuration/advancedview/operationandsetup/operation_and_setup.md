@@ -34,12 +34,12 @@ operating concept ensures efficient work and a minimum of training time.
 ## TABs
 
 Tabs offer yet another option within the to present related information in a separate area. This tab
-navigation enables you to display, quickly access and switch between relevant information. The
+navigation lets you display, quickly access, and switch between relevant information. The
 results for a filter with specific criteria can thus be retained without the original result being
 overwritten
 
 when a new filter is applied. In parallel, detailed information about records can also be found in
-their own tabs. It is of course possible to adjust the order of the tabs via drag & drop according
+their own tabs. It's of course possible to adjust the order of the tabs via drag & drop according
 to your individual requirements.
 
 ![Dashboard](/images/passwordsecure/9.1/configuration/advanced_view/operation_and_setup/installation_with_parameters_2-en.webp)
@@ -69,7 +69,7 @@ information.
 
 ## Orientation
 
-It is possible to change the alignment of the following objects:
+It's possible to change the alignment of the following objects:
 
 - [Active Directory link](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/organisationalstructure/directoryservices/activedirectorylink/active_directory_link.md)
 - [Applications](/docs/passwordsecure/9.1/configuration/advancedview/clientmodule/applications/applications.md)

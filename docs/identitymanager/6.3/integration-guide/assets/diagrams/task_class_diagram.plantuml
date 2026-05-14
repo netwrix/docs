@@ -1,0 +1,99 @@
+@startuml component
+package "Task" {
+	class Task {
+		AllEntityType : Boolean
+		ApiUrl : String
+		AssignedResourceNavigationSQL : String
+		AssignedResourceScalarSQL : String
+		AssignedResourceTypeSQL : String
+		BatchInsertSize : Int32
+		BatchSelectSize : Int32
+		BatchSize : Int32
+		BatchUpdateSize : Int32
+		BlockProvisioning : Boolean
+		Check : Boolean
+		ConnectionIdentifier : String
+		ContinueOnError : Boolean
+		Dirty : Boolean
+		DisplayName_L1 : String
+		DoNotDeleteChanges : Boolean
+		GeneratedCodeNamespace : String
+		GeneratedCodePath : String
+		GeneratedFile : String
+		HttpCommand : Int16
+		Identifier : String
+		IgnoreCookieFile : Boolean
+		IgnoreHistorization : Boolean
+		InformationSystemIdentifier : String
+		InputPath : String
+		Level : Int32
+		LogLevel : Int32
+		Mode : Int32
+		OutputPath : String
+		ProvisioningJobIdentifier : String
+		SessionOff : Boolean
+		SplitSize : Int32
+		State : Int32
+		SynchronizationJobIdentifier : String
+		TaskType : Int32
+		--
+		Agent : Agent
+		Connector : Connector
+		DependOnChildTask : TaskDependOnTask[]
+		DependOnParentTask : TaskDependOnTask[]
+		JobStep : JobStep[]
+		OpenIdClient : OpenIdClient
+		TaskDimension : TaskDimension[]
+		TaskEntityType : TaskEntityType[]
+		TaskInstance : TaskInstance[]
+		TaskResourceType : TaskResourceType[]
+	}
+}
+package "Agent" {
+	class Agent {
+	}
+}
+package "Connector" {
+	class Connector {
+	}
+}
+package "TaskDependOnTask" {
+	class TaskDependOnTask {
+	}
+}
+package "JobStep" {
+	class JobStep {
+	}
+}
+package "OpenIdClient" {
+	class OpenIdClient {
+	}
+}
+package "TaskDimension" {
+	class TaskDimension {
+	}
+}
+package "TaskEntityType" {
+	class TaskEntityType {
+	}
+}
+package "TaskInstance" {
+	class TaskInstance {
+	}
+}
+package "TaskResourceType" {
+	class TaskResourceType {
+	}
+}
+Task "0..*" --  "0..1"Agent
+Task "0..*" --  "0..1"Connector
+Task "1" --  "0..*"TaskDependOnTask
+Task "1" --  "0..*"TaskDependOnTask
+Task "1" --  "0..*"JobStep
+Task "0..*" --  "0..1"OpenIdClient
+Task "1" --  "0..*"TaskDimension
+Task "1" --  "0..*"TaskEntityType
+Task "1" --  "0..*"TaskInstance
+Task "1" --  "0..*"TaskResourceType
+hide empty members
+@enduml

@@ -160,8 +160,10 @@ The settings are grouped according to categories to provide a better overview
 | Clear clipboard on minimising                                                                                   |         |
 | Clipboard gallery                                                                                               |         |
 
-NOTE: There is a version selection box in the settings. The options that were newly added in the
+:::note
+There is a version selection box in the settings. The options that were newly added in the
 selected version are correspondingly marked in the list.
+:::
 
 ![installation_with_parameters_115](/images/passwordsecure/9.2/configuration/advanced_view/mainmenu/user_rights/overview_user_rights/installation_with_parameters_115.webp)
 

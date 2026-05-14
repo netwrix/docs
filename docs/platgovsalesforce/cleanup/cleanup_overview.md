@@ -19,7 +19,7 @@ Clean up involves some or all of the following steps:
 
 ## Clean Up Tools
 
-There is a series of built in Clean Up Tools to enable Administrators to clean up their account in
+Platform Governance for Salesforce provides a series of built-in Clean Up Tools to enable Administrators to clean up their account in
 an organized and efficient manner. There are many types of clean up, but they generally follow the
 same steps:
 
@@ -43,34 +43,31 @@ Clean up:
 - Unused Scripts
 - Unused Reports
 
-Customizations that do not follow best practices:
+Customizations that don't follow best practices:
 
 - Customizations with No Related Process
 - Customizations with No Description
 - Customizations with No Help Text
 - Customizations with No Active Owner
 
-Depending on what you want to clean up, you can view clean up reports from the Strongpoint tab under
-Reports and then choosing Clean Up. You can also find the clean up reports at the bottom of the
-Strongpoint homepage under Strongpoint Features and Reports.
+To view clean up reports, open the Netwrix Lightning app and go to **Reports** > **Clean Up**. You can also find the clean up reports at the bottom of the Strongpoint Home Page under **Strongpoint Features and Reports**.
 
 You can clean up individual or multiple customizations by going to the Customization tab and
 selecting **Create New View**. Use the filters to generate your list.
 
 :::note
-Before moving on to other clean up activities, it is often a good idea to delete unused
-customizations that are highly likely safe to delete, such as fields that have not been used in
-years or that are not used by any other customization.
+Before moving on to other clean up activities, delete unused
+customizations that are safe to delete, such as fields that have not been used in
+years or that aren't used by any other customization.
 :::
 
 ### Analyze and Organize the Results
 
-Once you have selected the customizations that you want to clean up and have created a New View, you
-can analyze the results. You can then sort and filter the results and are required to group and
-manage the output for subsequent steps. You may chose to clean up based on Salesforce type and
+After selecting the customizations to clean up and creating a New View, analyze the results. Sort and filter the results and group and
+manage the output for subsequent steps. You can clean up based on Salesforce type and
 record type (among other options).
 
-Every Customization record has a Clean-Up Status field that enables us to track the status of the
+Every Customization record has a Clean-Up Status field that tracks the status of the
 clean-up process for that object.
 
 The statuses are:
@@ -81,7 +78,7 @@ The statuses are:
 - **Under Investigation**: Flags the customization as under investigation.
 - **Disabled/Hidden**: Tracks that the customization has been disabled.
 - **Archived**: Tracks that the data / set-up was archived.
-- **Deleted**: Tracks that the customization has been deleted. The doc will be inactivated.
+- **Deleted**: Tracks that the customization has been deleted. The doc is inactivated.
 - **Ignore**: Removes it from the searches.
 - **Fix ScriptID:** Changes the ID of the script.
 - **Reassign Owner**: Changes the owner.
@@ -89,17 +86,17 @@ The statuses are:
 
 ### Create Change Requests (if required)
 
-Some changes such as deletion, changes to scriptID and Help impact the customization itself. For
-these types of changes we recommend creating a Change Request. However, for clean up, you can create
+Some changes, such as deletion and changes to scriptID and Help, impact the customization itself. For
+these types of changes, Netwrix recommends creating a Change Request. For clean up, you can create
 new change requests and assign them to the customizations. In the results view, **Create Change
-Request** creates a new change request. Once that is added to that customization it appears under
+Request** creates a new change request. After that is added to that customization it appears under
 **Related Change Requests**. You can have multiple customizations assigned to multiple change
 requests as appropriate.
 
 ### Manage the Change or Clean Up
 
 You can find more information about how to use the Change Request under
-[Managing Change](/docs/platgovsalesforce/changemanagement/change_management_overview.md). Once the appropriate
+[Managing Change](/docs/platgovsalesforce/changemanagement/change_management_overview.md). After the appropriate
 investigations are conducted and approvals are obtained the customization can be changed as
 appropriate based on company policies and procedures.
 
@@ -109,6 +106,6 @@ edited like any other Salesforce data directly in a Platform Governance for Sale
 
 ### Run the Scanner
 
-At the end of the process of updating the customization record(s), the account should be scanned to
-update the documentation for the customization changes. It can be re-scanned for the specific
-record type that was changed.
+After updating customization records, scan the account to
+update the documentation for the customization changes. You can re-scan for the specific
+record type that changed.

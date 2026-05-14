@@ -12,7 +12,7 @@ policies to users directly, or indirectly through Active Directory security grou
 [Assigning Policies](/docs/passwordpolicyenforcer/10.2/administration/managingpolicies/assigning_policies.md)
 topic for additional information.
 
-The following topics explains how to create and configure Password Policy Enforcer password polices:
+The following topics explain how to create and configure Password Policy Enforcer password policies:
 
 - [Creating a Policy](/docs/passwordpolicyenforcer/10.2/administration/managingpolicies/creating_a_policy.md)
 - [Deleting a Policy](/docs/passwordpolicyenforcer/10.2/administration/managingpolicies/deleting_a_policy.md)

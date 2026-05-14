@@ -35,7 +35,7 @@ The Threats tab for a user displays the threats for the user by timeframe.
 
 ![Active Directory User Threats tab](/images/threatmanager/3.0/administration/threatdetails/aduserthreats.webp)
 
-A key for threat types is displayed below the chart.
+A key for threat types appears below the chart.
 
 ## Activity Summary Tab
 
@@ -46,8 +46,7 @@ The Activity Summary tab displays charts for a user's activity over different ti
 The Activity Overview (Past 12 Months) shows a color-coded heat map of user activity. Other metrics
 include, Average Activity by Day, and Events by Type.
 
-The Activity by Host, Activity by Client, and Activity Details tables are displayed below the
-charts.
+The page also displays the Activity by Host, Activity by Client, and Activity Details tables below the charts.
 
 **Activity by Host Table**
 

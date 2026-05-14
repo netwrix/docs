@@ -10,40 +10,40 @@ This guide explains how to configure Platform Governance for Salesforce using an
 
 ## Overview
 
-The legacy method uses user Session IDs which are incompatible with Profiles with High Assurance. The new configuration uses an External Client App with Named Credentials to access Salesforce APIs, providing a more secure and MFA-compatible authentication method.
+The new configuration uses an External Client App with Named Credentials to access Salesforce APIs, providing a more secure and MFA-compatible authentication method than the legacy Session ID approach.
 
 ## Why Use Named Credentials
 
-Using Named Credentials with External Client App OAuth authentication is the recommended approach over using user Session IDs for several critical reasons:
+Named Credentials with External Client App OAuth authentication are recommended over user Session IDs for several critical reasons:
 
 ### High Assurance Compatibility
 
-**This is the primary reason for using Named Credentials.** When Salesforce organizations have High Assurance enabled—which is increasingly required by Salesforce and security best practices—user Session IDs do not work properly for API calls. The Session ID authentication method fails because:
+**This is the primary reason for using Named Credentials.** When Salesforce organizations have High Assurance enabled—which is increasingly required by Salesforce and security best practices—user Session IDs don't work properly for API calls. The Session ID authentication method fails because:
 
 - **Enabling High Assurance Session on the Named Credential ensures that only Named Credentials work for authentication**, providing an additional security layer that ensures MFA compliance
 
 ### Enhanced Security
 
 - **Session IDs inherit all permissions** of the authenticated user, creating potential security risks
-- **External Client Apps with OAuth** allow you to define specific scopes and limit API access to only what's needed
+- **External Client Apps with OAuth** let you define specific scopes and limit API access to only what's needed
 - Named Credentials provide better audit trails and can be monitored independently
-- Credentials are stored securely by Salesforce and never exposed in code or logs
+- Salesforce stores credentials securely and never exposes them in code or logs
 
 ### Automation and Scheduled Jobs
 
-- Automated processes and scheduled jobs cannot rely on user Session IDs
+- Automated processes and scheduled jobs can't rely on user Session IDs
 - Named Credentials provide persistent authentication that works independently of user sessions
 - Ideal for background processes, scheduled scans, and continuous monitoring
 
 ## Prerequisites
 
 - Salesforce Administrator access
-- Access to Setup menu
+- Access to the Salesforce Setup menu
 
 ## Step 1: Create an External Client App
 
 :::important
-If this is not a new installation and your org already has an existing Connected App named **Netwrix** or **Strongpoint**, you don't need to create a new one.
+If this isn't a new installation and your org already has an existing Connected App named **Netwrix** or **Strongpoint**, you don't need to create a new one.
 
 You can use the existing app and continue to [Step 2: Create an Auth Provider](#step-2-create-an-auth-provider).
 
@@ -52,7 +52,7 @@ If you don't have the Consumer Key and Consumer Secret saved, go to [Retrieve Co
 
 Create a new External Client App to enable OAuth authentication:
 
-1. Navigate to **Setup** > **Apps** > **App Manager**
+1. In Salesforce, open **Setup** > **Apps** > **App Manager**
 2. Click **New External Client App**
 3. Configure the following settings:
    - **External Client App Name**: `Netwrix`
@@ -60,7 +60,7 @@ Create a new External Client App to enable OAuth authentication:
    - **Contact Email**: Enter your administrator email
       ![ExternalApp1](/images/platgovsalesforce/installing_strongpoint/ExternalApp1.webp)
 4. Under **API (Enable OAuth Settings)**:
-   - **Callback URL**: `https://www.localhost.com` (we will modify this parameter later)
+   - **Callback URL**: `https://www.localhost.com` (update this value in a later step)
    - **Selected OAuth Scopes**: Add the following scopes:
      - **Full access (full)**
      - **Perform requests at any time (refresh_token, offline_access)**
@@ -95,13 +95,13 @@ After creating the External Client App:
 2. Click **Consumer Key and Secret** From the OAuth Settings section
 ![ClickKeyAndSecret](/images/platgovsalesforce/installing_strongpoint/ClickKeyAndSecret.webp)
 3. Verify your identity (you may need to enter a verification code)
-4. Copy and save the **Consumer Key** and **Consumer Secret** - you'll need these in the next step
+4. Copy and save the **Consumer Key** and **Consumer Secret** — you need these in the next step.
 
 ## Step 2: Create an Auth Provider
 
 Create a new Authentication Provider to enable OAuth authentication:
 
-1. Navigate to **Setup** > **Identity** > **Auth. Providers**
+1. In Salesforce, open **Setup** > **Identity** > **Auth. Providers**
 2. Click **New**
 3. Configure the following settings:
    - **Provider Type**: Salesforce
@@ -125,7 +125,7 @@ After creating the Auth Provider:
 
 1. Copy the **Callback URL** displayed on the Auth Provider detail page
 ![AuthProviderView](/images/platgovsalesforce/installing_strongpoint/AuthProviderView.webp)
-2. Navigate back to **Setup** > **External Client Apps** > **External Client App Manager**
+2. In Salesforce, open **Setup** > **External Client Apps** > **External Client App Manager**
 3. Locate the **Netwrix** External Client App
 4. Click the dropdown and select **Edit Settings**
 5. Replace the **Callback URL** with the URL copied from the Auth Provider
@@ -136,7 +136,7 @@ After creating the Auth Provider:
 
 Create a Named Credential to establish the authentication connection:
 
-1. Navigate to **Setup** > **Security** > **Named Credentials**
+1. In Salesforce, open **Setup** > **Security** > **Named Credentials**
 2. Click **New Named Credential** (or **New Legacy** if using Enhanced Named Credentials)
 3. Configure the following settings:
    - **Label**: `Strongpoint MFA`
@@ -154,29 +154,29 @@ Create a Named Credential to establish the authentication connection:
 4. Click **Save**
 
 :::tip High Assurance Session
-Enabling **Require High Assurance Session** ensures that the Named Credential can only be used after a high-assurance authentication event. This setting enforces the use of Named Credentials and provides an additional layer of security. For more information, see [Salesforce High Assurance Sessions documentation](https://help.salesforce.com/s/articleView?id=xcloud.security_auth_require_ha_session.htm&type=5).
+Enabling **Require High Assurance Session** ensures that the Named Credential can only be used after a high-assurance authentication event. This setting enforces the use of Named Credentials and provides an additional layer of security. See [Salesforce High Assurance Sessions documentation](https://help.salesforce.com/s/articleView?id=xcloud.security_auth_require_ha_session.htm&type=5).
 :::
 
 ### Authenticate the Named Credential
 
 After saving:
 
-1. You will be redirected to the Salesforce login page
-2. Log in with your credentials
-3. Click **Allow** to grant access
+1. Salesforce redirects you to the login page.
+2. Log in with your credentials.
+3. Click **Allow** to grant access.
 ![ApproveUseOfNamedCredential](/images/platgovsalesforce/installing_strongpoint/ApproveUseOfNamedCredential.webp)
 ![ApproveUseOfNamedCredential2](/images/platgovsalesforce/installing_strongpoint/ApproveUseOfNamedCredential2.webp)
-4. You will be redirected back to the Named Credential record
+4. Salesforce redirects you back to the Named Credential record.
 5. Verify that the **Authentication Status** shows as **Authenticated**
 ![NamedCredentialView](/images/platgovsalesforce/installing_strongpoint/NamedCredentialView.webp)
 
 ## Verification
 
-Once all steps are completed:
+After completing all steps, verify the following:
 
-- The External Client App should have OAuth enabled with the correct scopes
-- The Auth Provider should be configured with the correct endpoints
-- The Named Credential should show an **Authenticated** status
+- The External Client App has OAuth enabled with the correct scopes.
+- The Auth Provider is configured with the correct endpoints.
+- The Named Credential shows an **Authenticated** status.
 
 Your Platform Governance for Salesforce is now configured to use External Client App authentication with Named Credentials.
 

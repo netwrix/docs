@@ -19,8 +19,8 @@ You are required to read and accept the terms of service. These can also be prin
 The next step is to define the location of the client. The suggested location can be retained.You
 can also define whether additional components should be installed.
 
-**CAUTION:** Please only install the Terminal Server Service (for Autofill Add-on) if terminal
-server operation is intended!
+**CAUTION:** only install the Terminal Server Service (for Autofill Add-on) if terminal
+server operation is intended.
 
 ![installation wizard page 2](/images/passwordsecure/9.2/installation/installation_client/installation-client-3-en.webp)
 
@@ -53,14 +53,14 @@ The Autofill Add-on is used for SSO applications.
 For connection to the database, the creation of a database profile is obligatory. The following
 information is required:
 
-- Profile name: The name of the profile. This will be displayed on the client in the future
+- Profile name: The name of the profile. This name appears on the client
 - IP address: The IP address of the Netwrix Password Secure V8 server is stored here
 - Database name: Specifies the name of the database
 
 ## Distributing database profiles via the registry
 
 There is also an option to distribute database profiles. The profiles are specified via a
-corresponding registry entry. The next time Netwrix Password Secure is started, the profiles will be
+corresponding registry entry. The next time Netwrix Password Secure starts, the profiles are
 saved in the local configuration file. The database connection can be made with the following keys:
 
 
@@ -95,6 +95,8 @@ HKEY_CURRENT_USER\SOFTWARE\MATESO\Password Safe and Repository 8\DatabaseProfile
 
 ```
 
-NOTE: When the corresponding registry entry is set and no related database profile exists, the
-profile will be created at the next start-up. Please note that profiles created like this cannot be
+:::note
+When the corresponding registry entry is set and no related database profile exists, the
+profile is created at the next start-up. Profiles created like this can't be
 edited or deleted in the client.
+:::

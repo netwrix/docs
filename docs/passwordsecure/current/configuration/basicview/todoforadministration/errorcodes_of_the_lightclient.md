@@ -42,10 +42,10 @@ required: Text, user name, password, URL.
 
 DefaultFormImpossiblePlausibility
 
-When creating a password for an application, there is a field which is not displayed. Therefore, the
+When creating a password for an application, there is a field which isn't displayed. Therefore, the
 plausibility in fields should be checked.
 
 NoValidOrganisation
 
 Is only relevant for the web view of the Basic view. It is activated if you want to create a
-password using the add-on and the user does not have an OU in which to create it.
+password using the add-on and the user doesn't have an OU in which to create it.

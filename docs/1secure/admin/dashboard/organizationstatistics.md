@@ -20,19 +20,19 @@ You can view the following insights for an organization.
 
 ## Organization
 
-This drop-down displays the name of the organization. You can choose a different organization from
+This dropdown displays the name of the organization. You can choose a different organization from
 here to view the statistics for that Organization.
 
 ## Users
 
-This link displays the total number of users in the organization along with their percentage share
-with respect to the total number of users in the managed organizations (tenant) in 1Secure. Click
+The Users value displays the total number of users in the organization along with their percentage share
+relative to the total number of users in the managed organizations (tenant) in 1Secure. Click
 the value to navigate to the Billable Users page. See the
 [System Reports](/docs/1secure/admin/searchandreports/system.md) topic for additional information.
 
 ## Health Status
 
-This link displays the current health status of the organization, which can be: Healthy, Trial in
+The Health Status value displays the current health status of the organization, which can be: Healthy, Trial in
 Progress, New, Update Recommended, Needs Attention, Experiencing Issues, Offline, Disabled, Not
 Configured, and Pending Deletion. Click the health status to navigate to the configuration page of
 the organization.

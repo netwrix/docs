@@ -5,6 +5,161 @@
 
 set -euo pipefail
 
+# --- Shared functions ---
+
+slugify() {
+  local heading="$1"
+
+  # Check for custom anchor ID: {#custom-id}
+  if [[ "$heading" =~ \{#([a-zA-Z0-9_-]+)\} ]]; then
+    echo "${BASH_REMATCH[1]}"
+    return
+  fi
+
+  echo "$heading" \
+    | sed -E 's/^#+ +//' \
+    | tr '[:upper:]' '[:lower:]' \
+    | sed -E "s/[^a-z0-9 -]//g" \
+    | sed -E 's/ +/-/g' \
+    | sed -E 's/-+/-/g' \
+    | sed -E 's/^-+//;s/-+$//'
+}
+
+_get_product_version_folder() {
+  local filepath="$1"
+  local rest="${filepath#docs/}"
+  local product="${rest%%/*}"
+  rest="${rest#*/}"
+  local version="${rest%%/*}"
+  if [[ "$version" =~ ^[0-9][0-9._]*$ ]]; then
+    echo "docs/${product}/${version}/"
+  else
+    echo "docs/${product}/"
+  fi
+}
+
+_word_overlap_score() {
+  local old_heading="$1" new_heading="$2"
+  local old_slug new_slug
+  old_slug=$(slugify "$old_heading")
+  new_slug=$(slugify "$new_heading")
+  [ "$old_slug" = "$new_slug" ] && echo 100 && return
+  local -a ow nw
+  IFS='-' read -ra ow <<< "$old_slug"
+  IFS='-' read -ra nw <<< "$new_slug"
+  local intersect=0 word nword
+  for word in "${ow[@]}"; do
+    [ -z "$word" ] && continue
+    for nword in "${nw[@]}"; do
+      [ -z "$nword" ] && continue
+      if [ "$word" = "$nword" ]; then intersect=$((intersect + 1)); break; fi
+    done
+  done
+  local maxlen=${#ow[@]}
+  [ ${#nw[@]} -gt "$maxlen" ] && maxlen=${#nw[@]}
+  [ "$maxlen" -eq 0 ] && echo 0 && return
+  echo $(( (intersect * 100) / maxlen ))
+}
+
+update_heading_anchors() {
+  local base_ref="${1:-HEAD}"
+  local files_list="${2:-}"
+  local -a files=()
+  if [ -n "$files_list" ] && [ -f "$files_list" ]; then
+    mapfile -t files < "$files_list"
+  else
+    mapfile -t files < <(git diff --name-only "${base_ref}" -- '*.md' 2>/dev/null || true)
+  fi
+  [ ${#files[@]} -eq 0 ] && return 0
+
+  local anchor_updates=0
+  local file
+  for file in "${files[@]}"; do
+    [ -f "$file" ] || continue
+    local base_content
+    base_content=$(git show "${base_ref}:${file}" 2>/dev/null || true)
+    [ -z "$base_content" ] && continue
+
+    local -a old_h=() new_h=()
+    local line in_fence=0
+    while IFS= read -r line; do
+      if [[ "$line" =~ ^(\`{3,}|~{3,}) ]]; then
+        in_fence=$(( 1 - in_fence )); continue
+      fi
+      [ "$in_fence" -eq 0 ] && [[ "$line" =~ ^#{1,6}[[:space:]] ]] && old_h+=("$line")
+    done <<< "$base_content"
+    in_fence=0
+    while IFS= read -r line; do
+      if [[ "$line" =~ ^(\`{3,}|~{3,}) ]]; then
+        in_fence=$(( 1 - in_fence )); continue
+      fi
+      [ "$in_fence" -eq 0 ] && [[ "$line" =~ ^#{1,6}[[:space:]] ]] && new_h+=("$line")
+    done < "$file"
+
+    local -a removed=() added=()
+    local h match n o
+    for h in "${old_h[@]}"; do
+      match=0
+      for n in "${new_h[@]}"; do [ "$h" = "$n" ] && match=1 && break; done
+      [ "$match" -eq 0 ] && removed+=("$h")
+    done
+    for h in "${new_h[@]}"; do
+      match=0
+      for o in "${old_h[@]}"; do [ "$h" = "$o" ] && match=1 && break; done
+      [ "$match" -eq 0 ] && added+=("$h")
+    done
+    if [ ${#removed[@]} -eq 0 ] || [ ${#added[@]} -eq 0 ]; then continue; fi
+
+    local folder
+    folder=$(_get_product_version_folder "$file")
+    [ -d "$folder" ] || continue
+
+    local -a used_new_idx=()
+    for h in "${removed[@]}"; do
+      local best_score=0 best_idx=-1 best_new="" idx=0 cand
+      for cand in "${added[@]}"; do
+        local already=0 ui
+        for ui in "${used_new_idx[@]}"; do [ "$ui" -eq "$idx" ] && already=1 && break; done
+        if [ "$already" -eq 0 ]; then
+          local score
+          score=$(_word_overlap_score "$h" "$cand")
+          if [ "$score" -gt "$best_score" ]; then
+            best_score=$score; best_idx=$idx; best_new="$cand"
+          fi
+        fi
+        idx=$((idx + 1))
+      done
+      [ "$best_score" -lt 50 ] && continue
+      local old_slug new_slug
+      old_slug=$(slugify "$h")
+      new_slug=$(slugify "$best_new")
+      if [ "$old_slug" != "$new_slug" ] && [ -n "$old_slug" ] && [ -n "$new_slug" ]; then
+        find "$folder" -name '*.md' -exec \
+          sed -i "s|#${old_slug}\([) ]\)|#${new_slug}\1|g" {} +
+        anchor_updates=$((anchor_updates + 1))
+        used_new_idx+=("$best_idx")
+      fi
+    done
+  done
+
+  [ "$anchor_updates" -gt 0 ] && echo "Updated $anchor_updates anchor link(s)"
+  return 0
+}
+
+# Allow sourcing for tests or running anchor-update only
+case "${1:-}" in
+  --test)
+    # Sourced for testing — define functions but skip main script logic
+    return 0 2>/dev/null || exit 0
+    ;;
+  --anchors-only)
+    update_heading_anchors "${2:-}" "${3:-}"
+    exit 0
+    ;;
+esac
+
+# --- Main autofix logic ---
+
 VIOLATIONS_FILE="${1:?Usage: vale-autofix.sh <violations.json>}"
 
 if [ ! -f "$VIOLATIONS_FILE" ]; then
@@ -135,7 +290,6 @@ for FILE in "${FILES_ARRAY[@]}"; do
         Netwrix.LatinAbbreviations)
           NEW_CONTENT=$(echo "$LINE_CONTENT" \
             | sed -E 's/\be\.g\./for example/g' \
-            | sed -E 's/\bi\.e\./that is/g' \
             | sed -E 's/\betc\./and so on/g')
           ;;
         Netwrix.Please)

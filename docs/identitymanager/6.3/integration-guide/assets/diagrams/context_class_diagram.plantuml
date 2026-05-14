@@ -1,0 +1,34 @@
+@startuml component
+package "Context" {
+	class Context {
+		Automatic : Boolean
+		DisplayName_L1 : String
+		--
+		D0 : Resource
+		ParametersAssignedCompositeRoles : AssignedCompositeRole[]
+		ParametersAssignedResourceTypes : AssignedResourceType[]
+		ParametersAssignedSingleRoles : AssignedSingleRole[]
+	}
+}
+package "Resource" {
+	class Resource {
+	}
+}
+package "AssignedCompositeRole" {
+	class AssignedCompositeRole {
+	}
+}
+package "AssignedResourceType" {
+	class AssignedResourceType {
+	}
+}
+package "AssignedSingleRole" {
+	class AssignedSingleRole {
+	}
+}
+Context "0..*" --  "0..1"Resource
+Context "1" --  "0..*"AssignedCompositeRole
+Context "1" --  "0..*"AssignedResourceType
+Context "1" --  "0..*"AssignedSingleRole
+hide empty members
+@enduml

@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # RADIUS authentication
 
-## What is the RADIUS authentication?
+## RADIUS authentication overview
 
 RADIUS (Remote Authentication Dial-In User Service) is a client-server protocol used primarily for
 authentication and authorization of users during dial-up connections in corporate networks. Netwrix

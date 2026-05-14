@@ -24,7 +24,7 @@ Select **customization** from the result form
 
 # Step 3 – Add Proposed Customizations
 
-Click **Add Proposed Customization** to add new or modified customizations that will be created or changed as part of this Change Request.
+Click **Add Proposed Customization** to add new or modified customizations created or changed as part of this Change Request.
 
 ![Add Proposed Customization](/images/platgovsalesforce/integrations/zendesk/Add_Proposed_Customization.webp)
 
@@ -40,13 +40,13 @@ Select the appropriate data records from the search results:
 
 # Step 5 – Add Proposed Data Records
 
-Click **Add Proposed Data Record** to include new data records that will be created or modified as part of this Change Request.
+Click **Add Proposed Data Record** to include new data records created or modified as part of this Change Request.
 
 ![Add Proposed Data Record](/images/platgovsalesforce/integrations/zendesk/Add_Proposed_Data_Record.webp)
 
 # Step 6 – Request Approval
 
-Once all required information is added, the operator can click **Request Approval** to move the CR into Pending Approval status.
+After you add all required information, the operator can click **Request Approval** to move the Change Request (CR) into Pending Approval status.
 
 ![Approve Process - Request Approval](/images/platgovsalesforce/integrations/zendesk/Approve_Process_-_Request_Approval.webp)
 
@@ -72,6 +72,6 @@ From the ticket sidebar, click the DRD link to open the Document Requirements vi
 
 # Step 10 – Open Impact Analysis
 
-Click the Impact Analysis link to view the detailed analysis of the Change Request in Salesforce. This shows how the proposed changes might affect other components in your Salesforce org.
+Click the Impact Analysis link to view the detailed analysis of the Change Request in Salesforce. This shows how the proposed changes affect other components in your Salesforce org.
 
 ![Impact Analysis](/images/platgovsalesforce/integrations/zendesk/Impact_Analysis.webp)

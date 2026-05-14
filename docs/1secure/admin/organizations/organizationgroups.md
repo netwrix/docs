@@ -11,13 +11,13 @@ assigned to it. Each group consists of assigned organizations and the users resp
 them.
 
 :::note
-Administrators have access to all tenancies regardless of the organization group(s).
+Administrators have access to all tenancies regardless of the organization groups.
 :::
 
 
 ## Add an Organization Group
 
-Follow the steps to add an organization group.
+**To add an organization group:**
 
 **Step 1 –** Navigate to the **Configuration** > **Organization groups** page.
 
@@ -31,11 +31,11 @@ Follow the steps to add an organization group.
 
 - Group name – Specify a name for the organization group
 - Select managed organizations – Select an organization to assign it to the group. To assign
-  multiple organizations, select them one by one from the drop-down menu. These organizations will
-  then be managed under the group.
+  multiple organizations, select them one by one from the dropdown menu. These organizations are
+  managed under the group.
 - Select users to manage this group – Select a user who is responsible for managing the
   organizations assigned to the group. To specify multiple users, select them one by one from the
-  drop-down menu.
+  dropdown menu.
 
 **Step 4 –** Click **Save**.
 
@@ -52,7 +52,7 @@ page. Group names containing the string are displayed as you type.
 
 ## Modify an Organization Group
 
-Follow the steps to modify an organization group.
+**To modify an organization group:**
 
 **Step 1 –** Navigate to the **Configuration** > **Organization groups** page.
 
@@ -68,7 +68,7 @@ Follow the steps to modify an organization group.
 
 ## Delete an Organization Group
 
-Follow the steps to delete an organization group.
+**To delete an organization group:**
 
 **Step 1 –** Navigate to the **Configuration** > **Organization groups** page.
 

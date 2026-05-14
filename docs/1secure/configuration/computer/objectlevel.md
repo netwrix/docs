@@ -6,13 +6,13 @@ sidebar_position: 20
 
 # Configure Object-Level Access Auditing
 
-Netwrix 1Secure can be configured to audit all the access types mentioned below:
+Netwrix 1Secure supports auditing for the following access types:
 
 ![Advanced Activity Selection options](/images/1secure/configuration/computer/objectlevelaccessaudit.webp)
 
 ## Configure Object-level Access Auditing on Windows Server 2012 and Above
 
-Follow the steps to configure Object-level access auditing on Windows Server 2012 and above.
+**To configure object-level access auditing on Windows Server 2012 and above:**
 
 **Step 1 –** Navigate to the target file share, right-click it and select **Properties**.
 
@@ -37,5 +37,5 @@ are members of the selected group.
 
 
 **Step 6 –** Apply settings to your Auditing Entries depending on the access types you want to
-audit. If you want to audit all access types, you need to add separate Auditing Entries for each
-file share. Otherwise, reports will contain limited data and warning messages.
+audit. To audit all access types, add separate Auditing Entries for each file share. Otherwise,
+reports contain limited data and warning messages.

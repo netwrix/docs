@@ -10,14 +10,14 @@ The Windows password policy rules can place restrictions on password history, ag
 complexity. If you enable the Password Policy Enforcer rules and the Windows rules, then users will
 have to comply with both sets of rules.
 
-Password Policy Enforcer has its own history, minimum and maximum age, length, and complexity rules.
+Password Policy Enforcer has its own history, minimum age, maximum age, length, and complexity rules.
 See the
 [Rules](/docs/passwordpolicyenforcer/10.2/administration/rules/rules.md)
 topic for additional information. You can use the Password Policy Enforcer and Windows rules
 together. A password is only accepted if it complies with the Windows and Password Policy Enforcer
 password policies.
 
-Follow the steps below to disable the Windows password policy rules:
+Complete the following steps to disable the Windows password policy rules:
 
 **Step 1 –** Start the Group Policy Management Console (gpmc.msc).
 
@@ -33,7 +33,7 @@ Settings**, **Account Policies**, and **Password Policy** items.
 
 **Step 6 –** Enter **0** in the text box, then click **OK**.
 
-**Step 7 –** Repeat the step above for the **Maximum password age**, **Minimum password age**, and
+**Step 7 –** Repeat the preceding step for the **Maximum password age**, **Minimum password age**, and
 **Minimum password length** policies.
 
 **Step 8 –** Double-click **Password must meet complexity requirements** in the right pane.
@@ -45,7 +45,7 @@ Settings**, **Account Policies**, and **Password Policy** items.
 ![installing_ppe_3](/images/passwordpolicyenforcer/10.2/evaluation/preparing_the_computer.webp)
 
 :::note
-You do not have to disable all the Windows password policy rules to use Password Policy
+You don't have to disable all the Windows password policy rules to use Password Policy
 Enforcer. You can use a combination of Password Policy Enforcer and Windows rules together if you
 like. Just remember that a password is only accepted if it complies with the rules enforced by both
 Windows and Password Policy Enforcer.

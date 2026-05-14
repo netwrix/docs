@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Roles module
 
-The following functions are currently available in the **roles module:**
+The following functions are available in the **roles module:**
 
 - Add
 - Delete

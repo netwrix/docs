@@ -32,4 +32,4 @@ The page displays the following information:
 - Status – Indicates if the service is running
 - Capabilities – This table employs the Name and Value columns to display the service capabilities
 
-In the event of a service outage, an alert is displayed below the navigation header.
+If there is a service outage, an alert is displayed below the navigation header.
