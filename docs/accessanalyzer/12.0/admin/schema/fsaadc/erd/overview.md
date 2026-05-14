@@ -119,7 +119,7 @@ Tags use a three-table dedup pattern. `SA_FSAA_Tags` holds each unique tag strin
 
 ## Activity Collection (SA_FSAC_*) {#activity-collection}
 
-`SA_FSAC_ActivityEvents` is the audit-event firehose; each row is one observed file-system operation. Every event references the resource (`PathID`), the trustee that performed the operation, and the process (`ProcessID`) that ran it. Three detail tables reference `ActivityEvents`: `SA_FSAC_PermissionChanges`, `SA_FSAC_OwnerChanges`, and `SA_FSAC_RenameTargets`. `SA_FSAC_DailyActivity` is a daily aggregation rolled up by `(folder, trustee, operation)`. `SA_FSAC_Exceptions` records detected anomalies; `SA_FSAC_UserExceptions` is the per-user variant (partitioned by `SID` instead of by host).
+`SA_FSAC_ActivityEvents` is the high-volume audit-event stream; each row is one observed file-system operation. Every event references the resource (`PathID`), the trustee that performed the operation, and the process (`ProcessID`) that ran it. Three detail tables reference `ActivityEvents`: `SA_FSAC_PermissionChanges`, `SA_FSAC_OwnerChanges`, and `SA_FSAC_RenameTargets`. `SA_FSAC_DailyActivity` is a daily aggregation rolled up by `(folder, trustee, operation)`. `SA_FSAC_Exceptions` records detected anomalies; `SA_FSAC_UserExceptions` is the per-user variant (partitioned by `SID` instead of by host).
 
 ```erDiagram
     SA_FSAA_Hosts ||--o{ SA_FSAC_ProcessNames : "HOST"

@@ -185,7 +185,7 @@ Membership of `Tags` in a `TagKeys` set: each row links one tag to one tag-proxy
 
 ### SA_FSAA_Resources {#sa_fsaa_resources}
 
-The structural backbone — every share, folder, and file the DC has seen on the host, plus its parent linkage, owner, ACL pointer, gate pointer, tag pointer, sizing, and timestamps. This is the largest table in the schema by row count and is created `WITH (DATA_COMPRESSION = ROW)` on Enterprise editions.
+The central resource inventory — every share, folder, and file the DC has seen on the host, plus its parent linkage, owner, ACL pointer, gate pointer, tag pointer, sizing, and timestamps. This is the largest table in the schema by row count and is created `WITH (DATA_COMPRESSION = ROW)` on Enterprise editions.
 
 `RightsProxyID`, `GatesProxyID`, and `TagProxyID` are logical (un-enforced) denormalized pointers; no FK constraints exist on them so that bulk imports can stage rows in any order.
 
@@ -608,7 +608,7 @@ Per-host lookup of process names observed in audit events. Activity events refer
 
 ### SA_FSAC_ActivityEvents {#sa_fsac_activityevents}
 
-The activity-event firehose. One row per audited file-system operation captured by an FSAC agent. `Operation` is a coded enumeration covering Read / Add / Update / Delete / PermissionChange / Rename. `Allow` is `1` for successful operations and `0` for denied operations.
+The high-volume activity-event stream. One row per audited file-system operation captured by an FSAC agent. `Operation` is a coded enumeration covering Read / Add / Update / Delete / PermissionChange / Rename. `Allow` is `1` for successful operations and `0` for denied operations.
 
 :::note
 The `AccessTime` column type differs by environment: fresh-install DDL uses `datetime2`; the Task-15 migration recreates the table with `datetime`. Post-migration environments have `datetime`.

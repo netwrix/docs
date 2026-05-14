@@ -1,6 +1,6 @@
 # Enumeration & Lookup Values
 
-This page documents all coded column values and lookup tables used in the FSAA DC schema. Views surface most of these codes as human-readable description columns, but the raw values appear in the underlying tables and are useful for writing direct queries or custom reports.
+This page documents all coded column values and lookup tables used in the File System Access Analyzer (FSAA) DC schema. Views surface most of these codes as human-readable description columns, but the raw values appear in the underlying tables and are useful for writing direct queries or custom reports.
 
 ## TrusteeType {#trusteetype}
 
