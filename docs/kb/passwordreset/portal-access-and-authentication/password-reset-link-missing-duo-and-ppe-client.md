@@ -11,10 +11,11 @@ keywords:
   - GUID
   - third-party credential provider
 products:
-  - password-reset
-sidebar_label: Password Reset Link Is Missing Duo and PPE Client
-tags: []
-title: "Password Reset Link Is Missing with Duo and PPE Client installed"
+  - passwordreset
+sidebar_label: Password Reset Link Missing with Duo and PPE Client
+tags:
+  - kb
+title: "Password Reset Link Is Missing with Duo and PPE Client Installed"
 knowledge_article_id: ""
 ---
 
@@ -38,7 +39,7 @@ Multiple Credential Providers in the environment can conflict when you do not co
 
 4. Install NPR Client
 
-5. Add a ProvidersWhitelist multi-string value of `{407DAD37-1BA1-49BB-8401-45B22F5EF77C}` following the Duo instructions here: https://help.duo.com/s/article/4041?language=en_US
+5. Add a ProvidersWhitelist multi-string value of `{407DAD37-1BA1-49BB-8401-45B22F5EF77C}` following the [Duo instructions ⸱ Duo 🡥](https://help.duo.com/s/article/4041?language=en_US).
 
 6. Press CTRL+ALT+DEL and select **Change Password**.
 
