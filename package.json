@@ -12,6 +12,7 @@
     "build": "cross-env NODE_OPTIONS=--max-old-space-size=16384 npx docusaurus build",
     "preci": "node scripts/copy-kb-to-versions.mjs && npx docusaurus gen-api-docs changetracker-hub",
     "ci": "npx docusaurus build",
+    "openapi:sync": "npx docusaurus clean-api-docs changetracker-hub && npx docusaurus gen-api-docs changetracker-hub && git checkout -- docs/changetracker/8.1/api/reference/_category_.json",
     "swizzle": "npx docusaurus swizzle",
     "clear": "npx docusaurus clear",
     "serve": "npx docusaurus serve --port 8080 --no-open",

@@ -3,12 +3,7 @@ info:
   title: ChangeTracker Hub
   version: '8.1'
 servers:
-  - url: '{serverUrl}'
-    description: Your Change Tracker server URL
-    variables:
-      serverUrl:
-        default: https://localhost:5001/api
-        description: 'Full base URL including /api (e.g., https://your-server/api)'
+  - url: https://localhost:5001/api
 paths:
   '/command/tasks/poll/{AgentId}':
     get:

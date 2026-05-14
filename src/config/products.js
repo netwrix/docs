@@ -183,7 +183,7 @@ export const PRODUCTS = [
         label: '8.1',
         isLatest: true,
         sidebarFile: './sidebars/changetracker/8.1.js',
-        apiSidebarPath: './docs/changetracker/8.1/integration/api/reference/sidebar.ts',
+        apiSidebarPath: './docs/changetracker/8.1/api/reference/sidebar.ts',
       },
       {
         version: '8.0',
@@ -620,19 +620,25 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '3.2',
+        label: '3.2',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.2.js',
+      },
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: false,
+        sidebarFile: './sidebars/threatmanager/3.1.js',
+      },
+      {
         version: '3.0',
         label: '3.0',
         isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.0.js',
       },
-      {
-        version: '3.1',
-        label: '3.1',
-        isLatest: true,
-        sidebarFile: './sidebars/threatmanager/3.1.js',
-      },
     ],
-    defaultVersion: '3.1',
+    defaultVersion: '3.2',
   },
   {
     id: 'threatprevention',
@@ -855,6 +861,7 @@ export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
       // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
       const apiSidebarItems = version.apiSidebarPath
         ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
+            .filter(item => !(item.type === 'doc' && item.id?.endsWith('/changetracker-hub')))
         : [];
 
       // Build plugin configuration
