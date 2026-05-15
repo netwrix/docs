@@ -130,5 +130,8 @@ In the Certificate Exchange Options section, configure the following options:
 - Port – Select the checkbox to specify the port number for certificate exchange. The Default port
   number is 8767.
 
+- [Enable SPN Mapping](docs/accessanalyzer/12.0/admin/datacollector/fsaa/spnmapping.md) - Netwrix Access Analyzer authenticates to each applet host using Kerberos with an automatically generated SPN. In environments where the applet host sits behind a proxy — or where applet services run under accounts whose SPNs don't match the default pattern — this automatic SPN will not exist in Active Directory and certificate exchange with the applet will fail.
+Use custom SPN mapping to tell the scan which SPN to use when connecting to each applet host.
+
 See the [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md) topic for additional
 information.
