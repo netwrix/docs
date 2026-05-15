@@ -33,17 +33,13 @@ Integrations should be designed to tolerate additive response fields, documented
 
 ## Authentication
 
-All requests require authentication via one of these methods (in order of preference):
+Authentication uses JWT (JSON Web Tokens) with HS256 signing.
 
-| Method | Format | Example |
+To authenticate, send a POST request to `/login` with your credentials. On success, you receive a token valid for 1 hour. Include the token in all subsequent requests using the `Authorization: Bearer` header.
+
+| Method | Header | Example |
 |---|---|---|
-| X-Api-Key header | `X-Api-Key: <key>` | `X-Api-Key: abc123def456` |
-| Bearer token | `Authorization: Bearer <key>` | `Authorization: Bearer abc123def456` |
-| Query parameter | `?api_key=<key>` | `?api_key=abc123def456` |
-
-API keys are validated against the `api_key` database table. The associated user must be active in `sf_guard_user`.
-
-If no API key is provided or validated, the API falls back to checking for an active Symfony session cookie (useful when calling the API from the EPP web interface).
+| Bearer token | `Authorization: Bearer <token>` | `Authorization: Bearer eyJ...` |
 
 Unauthenticated requests receive:
 
@@ -52,7 +48,7 @@ Unauthenticated requests receive:
   "success": false,
   "error": {
     "code": 401,
-    "message": "Missing API key. Provide via X-Api-Key header or api_key query parameter."
+    "message": "Unauthorized"
   }
 }
 ```
@@ -89,6 +85,14 @@ The date field used for filtering varies by endpoint (documented per endpoint be
 | Parameter | Type | Description |
 |---|---|---|
 | `search` | string | Full-text search across all filterable columns (uses LIKE matching) |
+
+### Partition filtering
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `use_last_partition` | boolean | `false` | When `true`, restricts the query to the most recent partition only, which improves performance on large tables |
+
+Available on: Device Control, Content-Aware Protection, eDiscovery, EasyLock.
 
 ## Response format
 
@@ -141,7 +145,7 @@ The date field used for filtering varies by endpoint (documented per endpoint be
 |---|---|
 | 200 | Success |
 | 400 | Bad request (invalid parameters) |
-| 401 | Unauthorized (missing or invalid API key) |
+| 401 | Unauthorized (missing or invalid token) |
 | 404 | Resource not found |
 | 405 | Method not allowed (only GET is supported) |
 | 429 | Rate limit exceeded |
@@ -149,58 +153,33 @@ The date field used for filtering varies by endpoint (documented per endpoint be
 
 ## Endpoints
 
-### Event Logs
+### Authentication
 
-Core device control event logs from the `log` table, joined with `event`, `clientmachine`, `clientuser`, `clientdevice`, and `devicetype` tables.
+**POST /login**
 
-**GET /event-logs**
+Authenticates with a username and password and returns a JWT token valid for 1 hour.
 
-Date field: `eventtime`
+Request body:
 
-Filters:
-
-| Parameter | Type | Description |
-|---|---|---|
-| `start_date` | string | Return records on or after this date |
-| `end_date` | string | Return records on or before this date |
-| `machine_name` | string | Filter by machine name (partial match) |
-| `client_name` | string | Filter by client name (partial match) |
-
-Response fields:
-
-| Field | Source | Description |
-|---|---|---|
-| `id` | `log.id` | Log entry ID |
-| `machine_id` | `log.machine_id` | Machine ID |
-| `machine_name` | `clientmachine.name` | Computer name (resolved via JOIN) |
-| `machine_ip` | `clientmachine.ip` | Computer IP address (resolved via JOIN) |
-| `client_id` | `log.client_id` | Client user ID |
-| `client_username` | `clientuser.username` | Username (resolved via JOIN) |
-| `device_type_id` | `log.device_type_id` | Device type ID |
-| `device_type_name` | `devicetype.name` | Device type name, e.g. "USB Storage" (resolved via JOIN) |
-| `device_id` | `log.device_id` | Device ID |
-| `device_name` | `clientdevice.name` | Device name (resolved via JOIN) |
-| `event_id` | `log.event_id` | Event ID |
-| `event_name` | `event.name` | Event name (resolved via JOIN) |
-| `eventtime` | `log.eventtime` | Event timestamp — server time (UTC) |
-| `eventtimelocal` | `log.eventtimelocal` | Event timestamp — client local time |
-| `filename` | `log.filename` | File name involved |
-| `filesize` | `log.filesize` | File size in bytes |
-| `filetype_extension` | `log.filetype_extension` | File extension |
-| `filenameduplicate` | `log.filenameduplicate` | Duplicate file name |
-| `filehash` | `log.filehash` | File hash (MD5) |
-| `created_at` | `log.created_at` | Record creation timestamp |
-| `created_by` | `log.created_by` | Record creator |
-
-Example:
-
-```bash
-GET /api/logs/event-logs?machine_name=WORKSTATION&start_date=2025-01-01&per_page=10
+```json
+{
+  "username": "admin",
+  "password": "secret"
+}
 ```
 
-**GET /event-logs/(id)**
+Response:
 
-Returns a single event log entry by ID with the same fields as the list endpoint.
+```json
+{
+  "success": true,
+  "data": {
+    "token": "eyJ..."
+  }
+}
+```
+
+Use the returned token in the `Authorization: Bearer` header for all subsequent requests.
 
 ### Device Control Logs
 
@@ -218,6 +197,7 @@ Filters:
 | `end_date` | string | Return records on or before this date |
 | `machine_name` | string | Filter by machine name (partial match) |
 | `client_name` | string | Filter by client name (partial match) |
+| `use_last_partition` | boolean | Restrict query to the most recent partition (default: `false`) |
 
 Response fields:
 
@@ -249,25 +229,7 @@ Response fields:
 | `timestamp` | `olog.timestamp` | Unix timestamp |
 | `department_id` | `olog.department_id` | Department ID |
 
-**GET /device-control/(id)**
-
-Returns a single device control log entry by ID with the same fields as the list endpoint.
-
-### Alert Statuses
-
-**GET /alert-statuses/(id)**
-
-Returns a single alert status entry by ID.
-
-Response fields: `id`, `alert_type`, `log_id`, `alert_id`, `status`, `email`, `timestamp`
-
 ### System Alerts
-
-**GET /system-alerts**
-
-Lists system alerts, joined with `sys_event` for event names.
-
-Response fields: `id`, `name`, `sys_event_id`, `event_name`
 
 **GET /system-alert-logs**
 
@@ -300,16 +262,9 @@ Filters:
 | `end_date` | string | Return records on or before this date |
 | `machine_name` | string | Filter by machine name (partial match) |
 | `client_name` | string | Filter by client name (partial match) |
+| `use_last_partition` | boolean | Restrict query to the most recent partition (default: `false`) |
 
 Response fields: `id`, `loclogid`, `event_id`, `machine_id`, `machine_name`, `ip`, `domain`, `client_id`, `client_name`, `destination_type`, `destination`, `filename`, `content_policy`, `content_policy_type`, `item_type`, `matched_item`, `item_details`, `eventtime`, `eventtimelocal`, `alert_flag`, `nr_reports`, `filesize`, `filehash`, `os_type`, `department_id`, `justification`, `event_name`
-
-:::note
-Hash columns (`loghash`, `loghasht`, etc.) are excluded from list responses for performance. Use the detail endpoint to retrieve all fields.
-:::
-
-**GET /content-aware-protection/(id)**
-
-Returns a single content filtering log with all fields (including hash columns and `event_name`).
 
 **GET /content-filtering-alerts**
 
@@ -335,47 +290,78 @@ Filters: `mm_device_id`, `action_ck`, `result_code`
 
 Response fields: `id`, `mm_device_id`, `action_ck`, `action`, `result_code`, `error_code`, `error_message`, `latitude`, `longitude`, `altitude`, `loctime`, `locqual`, `other`, `short_address`, `long_address`, `eventtime`
 
-**GET /mobile-management-alerts**
-
-Lists mobile management alert definitions.
-
-Filters: `mm_device_id`, `mm_event_id`
-
-Response fields: `id`, `name`, `mm_device_type_id`, `mm_device_id`, `mm_event_id`
-
-**GET /mobile-management-alert-logs**
-
-Date field: `created_at`
-
-Filters: `mm_device_type_id`, `mm_device_id`, `mm_event_id`
-
-Response fields: `id`, `mm_alert_name`, `mm_device_type_id`, `mm_device_id`, `mm_event_id`, `created_at`
-
 ### EasyLock Logs
 
 **GET /easy-lock**
 
-Date field: `created_at`
+Date field: `timestamp`
 
-Filters: `el_alert_name`, `el_event_name`, `el_client_name`, `el_device_machine`, `el_device_username`, `sent`
+Filters:
 
-Response fields: `id`, `el_alert_name`, `el_event_name`, `el_client_name`, `el_device_name`, `el_device_description`, `el_ip`, `el_device_vid`, `el_device_pid`, `el_device_serial`, `el_device_machine`, `el_device_username`, `sent`, `sent_at`, `created_at`
+| Parameter | Type | Description |
+|---|---|---|
+| `start_date` | string | Return records on or after this date |
+| `end_date` | string | Return records on or before this date |
+| `machine_name` | string | Filter by machine name (partial match) |
+| `client_name` | string | Filter by client name (partial match) |
+| `use_last_partition` | boolean | Restrict query to the most recent partition (default: `false`) |
 
-**GET /easylock-send-alert-logs**
+Response fields:
 
-Lists EasyLock send alert log entries, joined with `el_event` for event names.
+| Field | Description |
+|---|---|
+| `id` | Log entry ID |
+| `timestamp` | Unix timestamp of the event |
+| `machine_name` | Computer name |
+| `event_time_local` | Event timestamp in client local time |
+| `file_name` | File name involved |
+| `event_name` | Event name |
+| `file_type` | File type |
+| `ip` | Computer IP address |
+| `domain` | Computer domain |
+| `os_type` | Operating system type |
+| `device_name` | Device name |
+| `vid` | Device vendor ID |
+| `pid` | Device product ID |
+| `serial_no` | Device serial number |
+| `device_type_name` | Device type name |
+| `epp_client_version` | Endpoint Protector client version |
+| `os_version` | Operating system version |
 
-Filters: `event_id`, `machine_id`, `user_id`, `status`, `alert_flag`
+### eDiscovery (Data at Rest)
 
-Response fields: `id`, `event_id`, `machine_id`, `user_id`, `group_id`, `status`, `alert_flag`, `description`, `event_name`
+**GET /ediscovery**
 
-### Data at Rest
+Lists Data-at-Rest scan results.
 
-**GET /ediscovery/(id)**
+Date field: `timestamp`
 
-Returns a single Data-at-Rest alert with event name.
+Filters:
 
-Response fields: `id`, `name`, `dr_event_id`, `event_name`
+| Parameter | Type | Description |
+|---|---|---|
+| `start_date` | string | Return records on or after this date |
+| `end_date` | string | Return records on or before this date |
+| `machine_name` | string | Filter by machine name (partial match) |
+| `policy_name` | string | Filter by policy name (partial match) |
+| `file_name` | string | Filter by file name (partial match) |
+| `status` | string | Filter by scan result status (exact match) |
+| `use_last_partition` | boolean | Restrict query to the most recent partition (default: `false`) |
+
+Response fields:
+
+| Field | Description |
+|---|---|
+| `id` | Entry ID |
+| `timestamp` | Unix timestamp of the scan event |
+| `machine_name` | Computer name |
+| `event_time_local` | Event timestamp in client local time |
+| `file_name` | File name scanned |
+| `matched_item` | Matched content item |
+| `item_details` | Details of the matched item |
+| `policy_name` | Name of the policy that triggered the result |
+| `client_time` | Client-reported time |
+| `status` | Scan result status |
 
 ### SCIM Logs
 
@@ -395,32 +381,6 @@ Filters:
 | `resource_type` | string | Filter by resource type (User, Group, etc.) |
 
 Response fields: `id`, `timestamp`, `request_id`, `http_method`, `endpoint`, `status_code`, `actor`, `operation`, `resource_type`, `external_id`, `duration_ms`, `ip_address`, `user_agent`, `bulk_request_id`, `operation_index`
-
-:::note
-`request_body` and `response_body` are excluded from list responses. Use the detail endpoint.
-:::
-
-**GET /scim-logs/(id)**
-
-Returns a single SCIM log entry including `request_body` and `response_body`.
-
-### Authentication Logs
-
-**GET /auth-logs**
-
-Lists user authentication attempt logs, joined with `sf_guard_user` for usernames.
-
-Date field: `created_at`
-
-Filters:
-
-| Parameter | Type | Description |
-|---|---|---|
-| `user_id` | integer | Filter by user ID |
-| `ip` | string | Filter by IP address (partial match) |
-| `block` | integer | Filter by block status |
-
-Response fields: `id`, `user_id`, `ip`, `number_attempts`, `block`, `created_at`, `expire_at`, `username`
 
 ### Export Logs
 
@@ -456,44 +416,42 @@ Response fields: `id`, `user_id`, `created_at`, `section`, `log_type`, `operatio
 
 ## Usage examples
 
+**Authenticate and obtain a token**
+
+```bash
+TOKEN=$(curl -s -k -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"secret"}' \
+  "https://<epp-server>/api/logs/login" | jq -r '.data.token')
+```
+
 **List recent device control logs for a specific machine**
 
 ```bash
 curl -s -k \
-  -H "X-Api-Key: YOUR_API_KEY" \
-  "https://epp-server/api/logs/device-control?machine_name=WORKSTATION&sort_by=eventtime&sort_order=DESC&per_page=10"
+  -H "Authorization: Bearer ${TOKEN}" \
+  "https://<epp-server>/api/logs/device-control?machine_name=WORKSTATION&sort_by=eventtime&sort_order=DESC&per_page=10"
 ```
 
 **Get content filtering logs for a date range**
 
 ```bash
 curl -s -k \
-  -H "X-Api-Key: YOUR_API_KEY" \
-  "https://epp-server/api/logs/content-aware-protection?start_date=2025-01-01&end_date=2025-01-31&content_policy=PCI"
-```
-
-**Get a specific event log entry**
-
-```bash
-curl -s -k \
-  -H "X-Api-Key: YOUR_API_KEY" \
-  "https://epp-server/api/logs/event-logs/12345"
+  -H "Authorization: Bearer ${TOKEN}" \
+  "https://<epp-server>/api/logs/content-aware-protection?start_date=2025-01-01&end_date=2025-01-31&content_policy=PCI"
 ```
 
 ## Database tables reference
 
 | Endpoint Group | Primary Table | Joined Tables |
 |---|---|---|
-| Event Logs | `log` | `event`, `clientmachine`, `clientuser`, `clientdevice`, `devicetype` |
 | Device Control | `olog` | `event`, `devicetype`, `clientmachine`, `clientdevice` |
-| Alert Statuses | `alert_status` | — |
-| System Alerts | `sys_alert`, `sys_alert_log` | `sys_event` |
+| System Alerts | `sys_alert_log` | `sys_event` |
 | Content Filtering | `cf_log`, `cf_alert` | `event` |
-| Mobile Management | `mm_log`, `mm_alert`, `mm_alert_log` | — |
-| EasyLock | `el_alert_log`, `el_send_alert_log` | `el_event` |
-| Data at Rest | `dr_alert` | `dr_event` |
+| Mobile Management | `mm_log` | — |
+| EasyLock | `olog` | — |
+| eDiscovery | `dr_object` | — |
 | SCIM Logs | `scim_log` | — |
-| Auth Logs | `sf_guard_log` | `sf_guard_user` |
 | Export Logs | `export_log_list` | — |
 | Admin Actions | `admin_action` | `sf_guard_user` |
 
@@ -564,5 +522,5 @@ The API includes CORS headers allowing cross-origin requests from any origin. Th
 
 - `Access-Control-Allow-Origin: *`
 - `Access-Control-Allow-Methods: GET, OPTIONS`
-- `Access-Control-Allow-Headers: Content-Type, X-Api-Key, Authorization`
+- `Access-Control-Allow-Headers: Content-Type, Authorization`
 - `Access-Control-Max-Age: 86400`
