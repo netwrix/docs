@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # FSAA: Applet Settings
 
-The Applet Settings page is where the Applet Launch Mechanism and Applet Settings are configured. It
+The Applet Settings page is where you configure the Applet Launch Mechanism and Applet Settings. It
 is a wizard page for the categories of:
 
 - File System Access/Permission Auditing Scan
@@ -26,19 +26,19 @@ In the Applet Launch Mechanism section, choose one of three radio buttons:
 
 - MSTask Task Scheduler – Creates a scheduled task on the target host that runs the applet
 - Windows Service – Automatically installs the FSAA Applet as a proxy service
-    - The Applet service runs as a Connection Profile credential unless the Local System checkbox is
-      selected in the Applet Settings options below. Then it runs the service in Local mode.
-- Require applet to be running as a service on target (does not deploy or launch applet)
+    - The Applet service runs as a Connection Profile credential unless you select the Local System
+      checkbox in the Applet Settings options. Then it runs the service in Local mode.
+- Require applet to be running as a service on target (doesn't deploy or launch applet)
     - See the [File System Proxy Service Installation](/docs/accessanalyzer/12.0/install/filesystemproxy/wizard.md)
       topic for additional information.
-    - It requires the `FSAAAppletServer.exe` to run as a service on the proxy host in order to run a
-      successful scan. When this radio button is selected, Access Analyzer does not deploy an applet
-      on the target or proxy machine. Therefore, if the File System Proxy service is not running,
+    - It requires the `FSAAAppletServer.exe` to run as a service on the proxy host to run a
+      successful scan. When you select this radio button, Access Analyzer doesn't deploy an applet
+      on the target or proxy machine. Therefore, if the File System Proxy service isn't running,
       the FSAA scan will fail.
-    - To avoid a failed scan when an applet cannot be deployed or the File System Proxy service is
+    - To avoid a failed scan when an applet can't be deployed or the File System Proxy service is
       not running, the Applet Gathering Settings page contains the **Fallback to local mode if
       applet can’t start** option. This option allows the scan to run in local mode when an applet
-      cannot be deployed or the service is not running.
+      can't be deployed or the service isn't running.
 
 ![Applet Settings section of the Applet Settings page](/images/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettingsappletsettings.webp)
 
@@ -49,7 +49,7 @@ In the Applet Settings section, configure the following options:
       [Custom Parameters for File System Proxy Service](/docs/accessanalyzer/12.0/install/filesystemproxy/wizard.md#custom-parameters-for-file-system-proxy-service)
       topic for additional information.
 - Applet Log level – The type of log created on the target host. Checking the box to Enable Logging
-  enables the Applet log level drop-down menu. The **Set To Default** button resets the log level to
+  enables the Applet log level dropdown menu. The **Set To Default** button resets the log level to
   **Information**.
     - Debug – Most verbose logging method, records everything that happens while the applet is
       processing
@@ -58,34 +58,35 @@ In the Applet Settings section, configure the following options:
     - Warning – Record when the applet encounters both errors and warnings while processing
     - Error – Least verbose logging method, only records when the applet encounters an error while
       processing
-- Keep log files for last [number] scan(s) – Data retention period. The default is set to **15**.
+- Keep log files for last [number] scans – Data retention period. The default is **15**.
 - Run service as Local System (only applies to Windows Service)
-    - When this checkbox is selected, the applet is deployed to run as a service on the target host.
-      The credentials in the Connection Profile are used to deploy and run the service unless
-      **System Default** is selected as the Connection Profile.
-    - This option is active when the Windows Service radio button in the Applet Launch Mechanism
-      section is selected
+    - When you select this checkbox, Access Analyzer deploys the applet to run as a service on the
+      target host. Access Analyzer uses the credentials in the Connection Profile to deploy and run
+      the service unless you select **System Default** as the Connection Profile.
+    - This option is active when you select the Windows Service radio button in the Applet Launch
+      Mechanism section
 - Strong proxy affinity (only run scans on last proxy to scan host, unless no longer in proxy host
   list)
     - This is an optional setting when using proxy architecture
-    - If this checkbox is selected and a host was previously scanned with a given proxy, it will
-      only be rescanned with that same proxy. If that proxy is unreachable for any reason and no
-      connection can be made, Access Analyzer will not try another proxy on the host list and will
-      fail to scan that host. However, if that proxy is no longer on the host list, it will choose
-      another proxy on the list and rescan.
-    - If unchecked, proxy affinity is still considered, though rather than the scan failing if the
-      proxy is unreachable, a new proxy will be chosen and will scan the host
-    - If a host has not yet been scanned by a proxy server, the data collector should choose the
-      least loaded proxy at that time. After that host has been scanned, it will follow the proxy
-      affinity mapped out above.
+    - If you select this checkbox and a given proxy previously scanned a host, only that same proxy
+      will rescan it. If that proxy is unreachable for any reason and Access Analyzer can't make a
+      connection, Access Analyzer will not try another proxy on the host list and will fail to scan
+      that host. However, if that proxy is no longer on the host list, it will choose another proxy
+      on the list and rescan.
+    - If unchecked, Access Analyzer still considers proxy affinity, though rather than the scan
+      failing if the proxy is unreachable, Access Analyzer will choose a new proxy that will scan
+      the host
+    - If a proxy server has not yet scanned a host, the data collector should choose the least
+      loaded proxy at that time. After scanning that host, the data collector will follow the proxy
+      affinity logic described earlier.
 - Maximum concurrent scans [number] – This option dictates a set limit to the number of simultaneous
   scans allowed to run on a proxy host regardless of max threads set on the job
     - For example, if there are two proxy servers with max concurrent scans set to ten per proxy and
       one proxy is offline, the remaining proxy should never exceed the value set in the query
       configuration for this option, even if the job is configured with 20 threads
-- Strong proxy affinity timeout [number] minute(s) – This option determines the time a host waits,
+- Strong proxy affinity timeout [number] minutes – This option determines the time a host waits,
   while the proxy server is busy, before it gets pushed into the job engine queue
-- Applet communication timeout: [number] minute(s) – This option determines the length of time (in
+- Applet communication timeout: [number] minutes – This option determines the length of time (in
   minutes) the Access Analyzer Console attempts to reach the proxy before giving up. Depending on
   the job configuration, the data collector behaves in one of three ways after the timeout value has
   been exceeded:
@@ -102,8 +103,8 @@ In the Applet Settings section, configure the following options:
     - If either of these options on the Applet Gathering Settings page are checked with values
       higher than zero, the scan is suspended after the communication timeout value has been
       exceeded
-- Scan cancellation timeout: [number] minute(s) – When checked, this option will timeout the applet
-  if there is an attempt to pause the scan and the applet does not respond
+- Scan cancellation timeout: [number] minutes – When checked, this option will timeout the applet
+  if there is an attempt to pause the scan and the applet doesn't respond
 
 ![Certificate Exchange Options section of the Applet Settings page](/images/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettingscertificateexchangeoptions.webp)
 
@@ -111,7 +112,7 @@ In the Certificate Exchange Options section, configure the following options:
 
 - Mechanism – Select one of the following options:
 
-    - Automatic – Certificate exchange is handled automatically by the FSAA Data Collector. This is
+    - Automatic – The FSAA Data Collector handles certificate exchange automatically. This is
       the default option.
     - Manual – The FSSA Data Collector and applet server expect all certificates to be valid and in
       their respective stores beforehand. See the
@@ -120,17 +121,17 @@ In the Certificate Exchange Options section, configure the following options:
 
         :::note
         If the FSAA Data Collector and the applet server are on separate domains without a
-        trust, this option must be used.
+        trust, you must use this option.
         :::
 
 
-    - Provide Certificate Authority – Enables the **Select** button, which allows you to upload an
+    - Provide Certificate Authority – Enables the **Select** button. Use this button to upload an
       existing certificate. See the [FSAA Provide Certificate Authority Configuration](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificateauthority.md) topic for additional information.
 
 - Port – Select the checkbox to specify the port number for certificate exchange. The Default port
   number is 8767.
 
-- [Enable SPN Mapping](docs/accessanalyzer/12.0/admin/datacollector/fsaa/spnmapping.md) - Netwrix Access Analyzer authenticates to each applet host using Kerberos with an automatically generated SPN. In environments where the applet host sits behind a proxy — or where applet services run under accounts whose SPNs don't match the default pattern — this automatic SPN will not exist in Active Directory and certificate exchange with the applet will fail.
+- [Enable SPN Mapping](docs/accessanalyzer/12.0/admin/datacollector/fsaa/spnmapping.md) - Netwrix Access Analyzer authenticates to each applet host using Kerberos with an automatically generated Service Principal Name (SPN). In environments where the applet host sits behind a proxy — or where applet services run under accounts whose SPNs don't match the default pattern — this automatic SPN will not exist in Active Directory and certificate exchange with the applet will fail.
 Use custom SPN mapping to tell the scan which SPN to use when connecting to each applet host.
 
 See the [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md) topic for additional
