@@ -22,7 +22,7 @@ Path map for every resource. Implemented as a VIEW (not a table) — the Create-
 
 ### SA_FSAA_ResourcesView {#sa_fsaa_resourcesview}
 
-Surface view of `SA_FSAA_Resources` enriched with computed full path, resource-type description, three boolean permission flags (`PermissionChange`, `InheritedPermission`, `DirectPermission`), and Azure Files metadata. Two definitions exist; the Entra-aware variant is used when `SA_Entra_RmResources` exists.
+Surface view of `SA_FSAA_Resources` enriched with computed full path, resource-type description, three boolean permission flags (`PermissionChange`, `InheritedPermission`, `DirectPermission`), and Azure Files metadata. Two definitions exist; the Entra-aware variant applies when `SA_Entra_RmResources` exists.
 
 **Source tables:** `SA_FSAA_Resources`, `SA_FSAA_Hosts`, `SA_FSAA_Rights`, `SA_FSAA_AzureFilesShares`, `SA_Entra_RmResources` (when present)
 
@@ -468,7 +468,7 @@ Columns mirror `SA_FSAC_ExceptionsView` minus the per-host columns: `SID`, `ID`,
 
 ### SA_FSAC_PermissionChangesView {#sa_fsac_permissionchangesview}
 
-Per-permission-change view that joins each `SA_FSAC_PermissionChanges` detail row to its host and resolves the affected trustee via `SA_FSAA_GetTrusteeInformation`. Doesn't join to `SA_FSAC_ActivityEvents` or `SA_FSAA_Resources`; use `SA_FSAC_ActivityEventsView` joined to `SA_FSAC_PermissionChanges` when `AccessTime`, `ResourcePath`, or `ResourceType` are needed.
+Per-permission-change view that joins each `SA_FSAC_PermissionChanges` detail row to its host and resolves the affected trustee via `SA_FSAA_GetTrusteeInformation`. Doesn't join to `SA_FSAC_ActivityEvents` or `SA_FSAA_Resources`; use `SA_FSAC_ActivityEventsView` joined to `SA_FSAC_PermissionChanges` when you need `AccessTime`, `ResourcePath`, or `ResourceType`.
 
 **Source tables:** `SA_FSAC_PermissionChanges`, `SA_FSAA_Hosts`, CROSS APPLY `SA_FSAA_GetTrusteeInformation`
 

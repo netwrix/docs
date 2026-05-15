@@ -4,7 +4,7 @@ This page documents all coded column values and lookup tables used in the File S
 
 ## TrusteeType {#trusteetype}
 
-Used in `SA_FSAA_Trustees.TrusteeType` and `SA_FSAA_LocalTrustees.TrusteeType`. Identifies the class of security principal represented by a trustee row.
+Used in `SA_FSAA_Trustees.TrusteeType` and `SA_FSAA_LocalTrustees.TrusteeType`. Identifies the class of security principal that a trustee row represents.
 
 | Value | Name | Description |
 |---|---|---|

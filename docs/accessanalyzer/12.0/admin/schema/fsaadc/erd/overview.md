@@ -3,7 +3,7 @@
 Relationship lines use standard crow's foot notation: a single vertical bar on the parent side and a crow's foot (fork) on the child side means "exactly one parent and zero or more children"; a single bar on each side with an open circle means one-to-zero-or-one (sidecar / extension table).
 
 :::note
-Every core table includes a `HOST INT` column that is a foreign key to `SA_FSAA_Hosts.ID` with `ON DELETE CASCADE`. To keep the sub-diagrams readable, the host fan-out is shown only in the following top-level diagrams; in the other diagrams `HOST` is implicit on every relationship. Three tables aren't shown in any diagram because they carry no foreign keys: `SA_FSAA_SchemaVer` (single-row config), `SA_FSAA_ScanHistory` (audit log), and `SA_FSAA_AzureStorageAccounts` (single-column lookup).
+Every core table includes a `HOST INT` column that is a foreign key to `SA_FSAA_Hosts.ID` with `ON DELETE CASCADE`. To keep the sub-diagrams readable, the host fan-out appears only in the following top-level diagrams; in the other diagrams `HOST` is implicit on every relationship. Three tables don't appear in any diagram because they carry no foreign keys: `SA_FSAA_SchemaVer` (single-row config), `SA_FSAA_ScanHistory` (audit log), and `SA_FSAA_AzureStorageAccounts` (single-column lookup).
 :::
 
 ## Top-level Partitioning {#top-level-partitioning}

@@ -23,7 +23,7 @@ Recursively expands a group or principal into its effective members. Handles wel
 **Signature:** `(@serverID INT, @trusteeSID VARCHAR(184), @trusteeDomain NVARCHAR(256), @trusteeType INT, @groupSID VARCHAR(184), @groupDomain NVARCHAR(256), @groupType INT, @directlyApplied INT) RETURNS INT`
 **Type:** Scalar function
 
-Returns `1` if the trustee is a recursive member of the group, else `0`. Encodes fast paths for `Everyone (S-1-1-0)`, `Authenticated Users (S-1-5-11)` (excluding Guest, Anonymous, and Domain Computers), and `Domain Users (S-1-5-21-...-513)`. Falls back to `SA_FSAA_GetTrusteeMembership` when the relationship can't be answered by a fast path.
+Returns `1` if the trustee is a recursive member of the group, else `0`. Encodes fast paths for `Everyone (S-1-1-0)`, `Authenticated Users (S-1-5-11)` (excluding Guest, Anonymous, and Domain Computers), and `Domain Users (S-1-5-21-...-513)`. Falls back to `SA_FSAA_GetTrusteeMembership` when no fast path can answer the relationship.
 
 ### SA_FSAA_RecurseFolders
 
@@ -44,7 +44,7 @@ Helper that walks an effective-membership path and accumulates the membership ch
 **Signature:** `(@serverID INT, @trusteeID INT, @objectSID VARCHAR(184), @trusteeType SMALLINT) RETURNS TABLE (NTDomain, NTName, DisplayName, SID, TrusteeType, IsHistoricalSID, PrincipalId)`
 **Type:** Inline table-valued function
 
-Returns a single row of trustee identity. For local trustees the values come from `SA_FSAA_LocalTrustees`; for domain trustees they come from the AD inventory's `SA_ADInventory_*` tables matched by SID (handling SID History when `IsHistoricalSID = 1`). Two definitions exist in the script; the current version is chosen at runtime by the `#SA_ImportObject` helper.
+Returns a single row of trustee identity. For local trustees the values come from `SA_FSAA_LocalTrustees`; for domain trustees they come from the AD inventory's `SA_ADInventory_*` tables matched by SID (handling SID History when `IsHistoricalSID = 1`). Two definitions exist in the script; the `#SA_ImportObject` helper chooses the current version at runtime.
 
 ### SA_FSAA_GetTrusteeInformation
 
@@ -135,14 +135,14 @@ Resolves a backslash-delimited path string against the resource tree for a host 
 **Signature:** `(@path NVARCHAR(1024)) RETURNS @results TABLE (HostID INT NOT NULL, HostName NVARCHAR(256) NOT NULL, GateID INT NOT NULL, ResourceID BIGINT NULL, ...)`
 **Type:** Multi-statement table-valued function
 
-Parses a UNC path (`\\server\share\path`) and returns the matching host, gate, and resource. Used to map paths captured in DLP or Activity tables back into the FSAA structural keyspace.
+Parses a UNC path (`\\server\share\path`) and returns the matching host, gate, and resource. Maps paths captured in DLP or Activity tables back into the FSAA structural keyspace.
 
 ### SA_FSAA_UpdateStatistics
 
 **Signature:** `()`
 **Type:** Stored procedure (no parameters)
 
-Runs `UPDATE STATISTICS` on the FSAA tables. Invoked by the structural-import job after a bulk import to keep the SQL Server query optimizer's row-count estimates current. Long-running on large data sets.
+Runs `UPDATE STATISTICS` on the FSAA tables. The structural-import job invokes this procedure after a bulk import to keep the SQL Server query optimizer's row-count estimates current. Long-running on large data sets.
 
 ## Activity Collector Functions {#activity-collector-functions}
 
@@ -167,11 +167,11 @@ Translates a user's recent activity (within `@activityDays` days) on a folder su
 **Signature:** `(@path NVARCHAR(1024)) RETURNS @values TABLE (TargetHostID INT, TargetGateID INT, TargetResourceID BIGINT, TargetFolderPath NVARCHAR(1024) NOT NULL)`
 **Type:** Multi-statement table-valued function
 
-Resolves a DFS-style path (e.g. `\\contoso.com\public\sales\reports`) by walking `SA_FSDFS_Links` to find the matching link and returning the underlying physical target — the host, gate, resource, and remaining sub-folder path beneath the link. Used to translate DFS-relative report rows back into FSAA structural identifiers.
+Resolves a DFS-style path (e.g. `\\contoso.com\public\sales\reports`) by walking `SA_FSDFS_Links` to find the matching link and returning the underlying physical target — the host, gate, resource, and remaining sub-folder path beneath the link. Translates DFS-relative report rows back into FSAA structural identifiers.
 
 ## Shared Core Functions {#shared-core-functions}
 
-These functions are created by the FSAA Create-Schema job (Task 26) but live in the shared `dbo` schema used across multiple data collector modules. They handle domain group membership expansion and trustee-permission resolution by integrating with AD Inventory tables.
+The FSAA Create-Schema job (Task 26) creates these functions, but they live in the shared `dbo` schema used across multiple data collector modules. They handle domain group membership expansion and trustee-permission resolution by integrating with AD Inventory tables.
 
 ### SA_CORE_GetDomainGroupMembershipEx
 

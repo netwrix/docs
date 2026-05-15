@@ -2,7 +2,7 @@
 
 ## Complete Index Listing {#complete-index-listing}
 
-All indexes across the four FSAA DC collector modules. Clustered primary-key indexes are listed alongside nonclustered supporting indexes. Tables with no indexes beyond their clustered PK are noted at the end of this page.
+All indexes across the four FSAA DC collector modules. Clustered primary-key indexes are listed alongside nonclustered supporting indexes. Tables with no indexes beyond their clustered PK appear at the end of this page.
 
 | Table | Index Name | Type | Unique | Columns |
 |---|---|---|---|---|

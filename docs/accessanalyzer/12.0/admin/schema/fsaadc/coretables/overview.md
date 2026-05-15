@@ -422,7 +422,7 @@ Histogram of file age buckets within each resource subtree. The eleven `FileCoun
 
 ### SA_FSAA_FileTags {#sa_fsaa_filetags}
 
-Aggregated file count and size per `(resource, tag-set)`. Populated when AIP or sensitive-data tags are collected.
+Aggregated file count and size per `(resource, tag-set)`. Populated when Azure Information Protection (AIP) or sensitive-data tags are collected.
 
 | Column | Type | Size | Nullable | PK | FK | Default | Description |
 |---|---|---|---|---|---|---|---|
@@ -458,7 +458,7 @@ Append-only audit log of every scan run, including the FSAA configuration XML us
 
 ### SA_FSAA_AzureFilesShares {#sa_fsaa_azurefilesshares}
 
-Catalog of Azure Files shares discovered on a host. Each share is linked back to a `SA_FSAA_Resources` row (the share root) and a `SA_FSAA_Gates` row (the share gate). `StorageAccount` carries the FQDN of the storage account.
+Catalog of Azure Files shares discovered on a host. Each share links back to a `SA_FSAA_Resources` row (the share root) and a `SA_FSAA_Gates` row (the share gate). `StorageAccount` carries the FQDN of the storage account.
 
 | Column | Type | Size | Nullable | PK | FK | Default | Description |
 |---|---|---|---|---|---|---|---|
