@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # AWS Configuration
 
-Netwrix hosts NPS-D container images in a private Amazon Elastic Container Registry (ECR). You must
+Netwrix hosts Netwrix Privilege Secure for Discovery (NPS-D) container images in a private Amazon Elastic Container Registry (ECR). You must
 authenticate each Ubuntu machine in the deployment with ECR before `secureone.sh` can pull images.
 
 Complete these steps on every node — primary and secondary — before running the deployment script.
@@ -20,7 +20,7 @@ credentials.
 ## Configure AWS Credentials
 
 Run the following command and follow the prompts to enter the AWS Access Key ID, Secret Access Key,
-and region. Use the credentials provided to you by Netwrix Support.
+and region. Use the credentials Netwrix Support provides.
 
 ```bash
 # Configure AWS:
