@@ -123,7 +123,7 @@ Used by the `POST /login` endpoint.
 
 **Success (standard list with pagination)**
 
-Used by System Alerts and Content Filtering Alerts.
+Used by System Alerts, Content Filtering Alerts, and SCIM Logs.
 
 ```json
 {
@@ -216,7 +216,7 @@ Used by Admin Actions. Flat pagination with fewer metadata fields:
 | 400 | Bad request (invalid parameters) |
 | 401 | Unauthorized (missing or invalid token) |
 | 404 | Resource not found |
-| 405 | Method not allowed (only GET is supported) |
+| 405 | Method not allowed |
 | 429 | Rate limit exceeded |
 | 500 | Internal server error |
 
@@ -598,7 +598,7 @@ With defaults: 200 requests/minute globally, 60 requests/minute per user.
 
 ### Response headers
 
-Every API response includes per-user rate limit headers:
+Every authenticated request response includes per-user rate limit headers:
 
 | Header | Description |
 |---|---|
