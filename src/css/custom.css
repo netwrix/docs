@@ -531,6 +531,17 @@ html {
 }
 
 /* ============================================================
+   API Reference — sidebar collapse animation
+   Docusaurus calculates collapse transition duration proportional to
+   content height. With 112 tag groups (~4340px), the default formula
+   produces ~800ms — noticeably slow. Cap it to match --ifm-transition-fast.
+   !important is required to override the inline style set by useCollapsible.
+   ============================================================ */
+.theme-doc-sidebar-menu .menu__list {
+    transition-duration: 200ms !important;
+}
+
+/* ============================================================
    API Reference — HTTP method badges in sidebar
    Classes (e.g. "api-method get") come from docusaurus-plugin-openapi-docs
    generated sidebar.ts. The theme does not ship this CSS.
