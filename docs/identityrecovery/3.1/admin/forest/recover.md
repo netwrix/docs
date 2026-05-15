@@ -104,12 +104,6 @@ topic for additional information.
 **Step 6 –** From the **Backup** drop-down menu, select the backup to use for restoring the domain
 controller. The drop-down menu lists the backups available for the domain controller.
 
-:::note
-If you do not choose a backup for a domain controller, an attempt will be made to join the
-domain controller to the existing domain that was restored previously in the playbook using a backup
-of another domain controller.
-:::
-
 **Step 7 –** If the backup is encrypted, provide the password used for encryption in the Encryption
 Password field. This would allow the recovery process to decrypt the backup.
 
