@@ -21,31 +21,39 @@ knowledge_article_id: ""
 
 # Password Reset Link Is Missing with Duo and PPE Client Installed
 
-## Symptoms
+## Symptom
 
 The reset link is missing for Netwrix Password Reset when Duo MFA and Netwrix Password Policy Enforcer Client are installed.
 
 ## Cause
 
-Multiple Credential Providers in the environment can conflict when you do not configure them correctly.
+Multiple Credential Providers in the environment can conflict when you do not configure them correctly. 
+Ensure that the credential stacks are in the correct order. 
+The ProvidersWhitelist registry value must be added to the system to allow the Netwrix Password Reset Client and Netwrix Password Policy Enforcer Client to work together with Duo MFA.
 
 ## Resolution
 
-1. Uninstall all three: Duo MFA, Netwrix Password Reset (NPR) Client, and Netwrix Password Policy Enforcer (PPE) Client, and reboot the system.
+1. Uninstall the following in this exact order:
+   - Duo MFA
+   - Netwrix Password Reset (NPR) Client
+   - Netwrix Password Policy Enforcer (PPE) Client
 
-2. Install Duo and restore any Duo settings that the uninstallation process may have removed.
+2. Reboot the system.
 
-3. Install PPE Client
+3. Reinstall the following in this exact order:
+   - Duo MFA
+   - PPE Client
+   - NPR Client
 
-4. Install NPR Client
+   > **NOTE:** Restore any Duo settings that the uninstallation process may have removed before re-installing the PPE and NPR Clients.
 
-5. Add a ProvidersWhitelist multi-string value of `{407DAD37-1BA1-49BB-8401-45B22F5EF77C}` following the [Duo instructions ⸱ Duo 🡥](https://help.duo.com/s/article/4041?language=en_US).
+4. Add a ProvidersWhitelist multi-string value of `{407DAD37-1BA1-49BB-8401-45B22F5EF77C}` following the [Duo instructions ⸱ Duo 🡥](https://help.duo.com/s/article/4041?language=en_US).
 
-6. Press CTRL+ALT+DEL and select **Change Password**.
+5. Press CTRL+ALT+DEL and select **Change Password**.
 
-7. Verify that PPE policies appear and that the Password Reset link appears on the Lock Screen.
+6. Verify that PPE policies appear and that the Password Reset link appears on the Lock Screen.
 
-> **IMPORTANT:** If the Password Reset link is still missing or PPE Client is not showing policies, make sure the following registry values are not present on the machine.
+> **IMPORTANT:** If the Password Reset link is still missing or the PPE Client is not showing policies, confirm that the following registry values are not present on the machine.
 
 ```
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\ANIXIS\Password Reset Client]
