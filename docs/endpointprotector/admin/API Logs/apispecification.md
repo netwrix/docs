@@ -48,7 +48,19 @@ Unauthenticated requests receive:
   "success": false,
   "error": {
     "code": 401,
-    "message": "Unauthorized"
+    "message": "Missing authentication token. Provide via Authorization: Bearer <token> header."
+  }
+}
+```
+
+Requests with an invalid or expired token receive:
+
+```json
+{
+  "success": false,
+  "error": {
+    "code": 401,
+    "message": "Invalid or expired token."
   }
 }
 ```
@@ -90,7 +102,7 @@ The date field used for filtering varies by endpoint (documented per endpoint be
 
 | Parameter | Type | Default | Description |
 |---|---|---|---|
-| `use_last_partition` | boolean | `false` | When `true`, restricts the query to the most recent partition only, which improves performance on large tables |
+| `use_last_partition` | boolean | `false` | When `true`, restricts the query to the most recent partition only, which improves performance on large tables. Accepts `true`, `1`, `yes`, or `on` (case-insensitive). |
 
 Available on: Device Control, Content-Aware Protection, eDiscovery, EasyLock.
 
@@ -98,18 +110,20 @@ Available on: Device Control, Content-Aware Protection, eDiscovery, EasyLock.
 
 **Success (single resource)**
 
+Used by the `POST /login` endpoint.
+
 ```json
 {
   "success": true,
   "data": {
-    "id": "1",
-    "name": "Example",
-    "created_at": "2025-01-15 10:30:00"
+    "token": "eyJ..."
   }
 }
 ```
 
-**Success (list with pagination)**
+**Success (standard list with pagination)**
+
+Used by System Alerts and Content Filtering Alerts.
 
 ```json
 {
@@ -126,6 +140,61 @@ Available on: Device Control, Content-Aware Protection, eDiscovery, EasyLock.
   }
 }
 ```
+
+**Success (legacy list format)**
+
+Used by Device Control, Content-Aware Protection, eDiscovery, and EasyLock. Pagination fields are at the top level alongside `items`:
+
+```json
+{
+  "current_page": 1,
+  "items": [
+    { "id": "1", "machine_name": "DESKTOP-01" },
+    { "id": "2", "machine_name": "DESKTOP-02" }
+  ],
+  "num_items_per_page": 50,
+  "max_rows_limit": 10000,
+  "max_rows_limit_reached": false,
+  "page_count": 3,
+  "page_items_count": 2,
+  "total_count": 128
+}
+```
+
+| Field | Type | Description |
+|---|---|---|
+| `current_page` | integer | Current page number (1-based) |
+| `items` | array | Array of log entries |
+| `num_items_per_page` | integer | Requested items per page |
+| `max_rows_limit` | integer | Maximum rows scanned for COUNT (default: 10 000). When reached, the count stops and `max_rows_limit_reached` is set to `true`. |
+| `max_rows_limit_reached` | boolean | `true` if `total_count` >= `max_rows_limit` — apply more filters to narrow results |
+| `page_count` | integer | Total number of pages |
+| `page_items_count` | integer | Number of items on the current page |
+| `total_count` | integer | Total matching records (capped at `max_rows_limit`) |
+
+**Success (legacy list format — simple)**
+
+Used by Admin Actions. Flat pagination with fewer metadata fields:
+
+```json
+{
+  "current_page": 1,
+  "items": [
+    { "id": 1, "section": "Custom Content Denylists" }
+  ],
+  "page_count": 10,
+  "items_per_page": 10,
+  "total_item_count": 95
+}
+```
+
+| Field | Type | Description |
+|---|---|---|
+| `current_page` | integer | Current page number (1-based) |
+| `items` | array | Array of log entries |
+| `page_count` | integer | Total number of pages |
+| `items_per_page` | integer | Requested items per page |
+| `total_item_count` | integer | Total matching records |
 
 **Error**
 
@@ -157,27 +226,40 @@ Available on: Device Control, Content-Aware Protection, eDiscovery, EasyLock.
 
 **POST /login**
 
-Authenticates with a username and password and returns a JWT token valid for 1 hour.
+Authenticates with a username and password and returns a JWT token valid for 1 hour. This is the only public endpoint — no token is required.
+
+:::note
+The login endpoint is at `https://<epp-server>/api/login`, not under the `/api/logs/` base URL.
+:::
 
 Request body:
 
 ```json
 {
-  "username": "admin",
-  "password": "secret"
+  "username": "api_admin",
+  "password": "your_password"
 }
 ```
 
-Response:
+Success response:
 
 ```json
 {
   "success": true,
   "data": {
-    "token": "eyJ..."
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
   }
 }
 ```
+
+Error responses:
+
+| Scenario | HTTP Code | Message |
+|---|---|---|
+| Missing/invalid JSON body | 400 | `Missing required fields: username and password` |
+| Wrong credentials | 401 | `Invalid credentials.` |
+| Account disabled | 401 | `Account is disabled.` |
+| Account locked | 429 | `Account temporarily locked. Try again later.` |
 
 Use the returned token in the `Authorization: Bearer` header for all subsequent requests.
 
@@ -185,9 +267,11 @@ Use the returned token in the `Authorization: Bearer` header for all subsequent 
 
 Online device tracking logs from the `olog` table, joined with `event`, `devicetype`, `clientmachine`, and `clientdevice` tables.
 
+**Response format:** Legacy list (see [Success (legacy list format)](#response-format))
+
 **GET /device-control**
 
-Date field: `eventtime`
+Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
 Filters:
 
@@ -201,33 +285,25 @@ Filters:
 
 Response fields:
 
-| Field | Source | Description |
-|---|---|---|
-| `id` | `olog.id` | Log entry ID |
-| `loclogid` | `olog.loclogid` | Local log ID |
-| `machine_id` | `olog.machine_id` | Machine ID |
-| `machine_name` | `olog.machine_name` | Computer name (denormalized) |
-| `ip` | `olog.ip` | Computer IP address (denormalized) |
-| `domain` | `olog.domain` | Computer domain |
-| `client_id` | `olog.client_id` | Client user ID |
-| `client_name` | `olog.client_name` | Username (denormalized) |
-| `device_type_id` | `olog.device_type_id` | Device type ID |
-| `device_type_name` | `devicetype.name` | Device type name (resolved via JOIN) |
-| `device_id` | `olog.device_id` | Device ID |
-| `device_name` | `olog.device_name` | Device name (denormalized) |
-| `event_id` | `olog.event_id` | Event ID |
-| `event_name` | `event.name` | Event name (resolved via JOIN) |
-| `machine_serial_number` | `clientmachine.serial_number` | Machine serial number (resolved via JOIN) |
-| `device_serial_number` | `clientdevice.serialno` | Device serial number (resolved via JOIN) |
-| `eventtime` | `olog.eventtime` | Event timestamp — server time (UTC) |
-| `eventtimelocal` | `olog.eventtimelocal` | Event timestamp — client local time |
-| `nrfiles` | `olog.nrfiles` | Number of files |
-| `alert_flag` | `olog.alert_flag` | Alert flag |
-| `filename` | `olog.filename` | File name |
-| `filetype` | `olog.filetype` | File type |
-| `os_type` | `olog.os_type` | OS type |
-| `timestamp` | `olog.timestamp` | Unix timestamp |
-| `department_id` | `olog.department_id` | Department ID |
+| Field | Description |
+|---|---|
+| `id` | Log entry ID |
+| `timestamp` | Unix timestamp |
+| `machine_name` | Computer name |
+| `event_time_local` | Event timestamp — client local time |
+| `file_name` | File name involved |
+| `event_name` | Event name, e.g. "Blocked" |
+| `file_type` | File type |
+| `ip` | Computer IP address |
+| `domain` | Computer domain |
+| `os_type` | OS type identifier |
+| `device_name` | Device name |
+| `vid` | Device vendor ID |
+| `pid` | Device product ID |
+| `serial_no` | Device serial number |
+| `device_type_name` | Device type name, e.g. "Webcam" |
+| `epp_client_version` | EPP client version |
+| `os_version` | Full OS version string |
 
 ### System Alerts
 
@@ -252,7 +328,9 @@ Content-Aware Protection logs and alerts, joined with `event` table for event na
 
 **GET /content-aware-protection**
 
-Date field: `eventtime`
+**Response format:** Legacy list (see [Success (legacy list format)](#response-format))
+
+Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
 Filters:
 
@@ -264,7 +342,28 @@ Filters:
 | `client_name` | string | Filter by client name (partial match) |
 | `use_last_partition` | boolean | Restrict query to the most recent partition (default: `false`) |
 
-Response fields: `id`, `loclogid`, `event_id`, `machine_id`, `machine_name`, `ip`, `domain`, `client_id`, `client_name`, `destination_type`, `destination`, `filename`, `content_policy`, `content_policy_type`, `item_type`, `matched_item`, `item_details`, `eventtime`, `eventtimelocal`, `alert_flag`, `nr_reports`, `filesize`, `filehash`, `os_type`, `department_id`, `justification`, `event_name`
+Response fields:
+
+| Field | Description |
+|---|---|
+| `id` | Log entry ID |
+| `timestamp` | Unix timestamp |
+| `machine_name` | Computer name |
+| `client_name` | Client/user name |
+| `event_time_local` | Event timestamp — client local time |
+| `file_name` | File name involved |
+| `file_size` | File size |
+| `event_name` | Event name |
+| `ip` | Computer IP address |
+| `os_type` | OS type identifier |
+| `destination_type` | Destination type |
+| `content_policy` | Content policy name |
+| `item_type` | Matched item type |
+| `matched_item` | Matched content item |
+| `item_details` | Item details |
+| `file_hash` | File hash |
+| `destination_details` | Destination details |
+| `justification` | User justification |
 
 **GET /content-filtering-alerts**
 
@@ -276,25 +375,15 @@ Filters: `event_id`, `content_policy`, `department_id`
 
 Response fields: `id`, `name`, `department_id`, `group_id`, `machine_id`, `client_id`, `content_policy`, `event_id`, `old_alert`, `created_at`, `created_by_user_id`, `event_name`
 
-**GET /content-filtering-alerts/(id)**
-
-Returns a single content filtering alert by ID with event name.
-
-### Mobile Management Logs
-
-**GET /mobile-management-logs**
-
-Date field: `eventtime`
-
-Filters: `mm_device_id`, `action_ck`, `result_code`
-
-Response fields: `id`, `mm_device_id`, `action_ck`, `action`, `result_code`, `error_code`, `error_message`, `latitude`, `longitude`, `altitude`, `loctime`, `locqual`, `other`, `short_address`, `long_address`, `eventtime`
-
 ### EasyLock Logs
+
+EasyLock encryption and deployment logs, filtered to EasyLock-related events only. Uses the same response structure as Device Control Logs.
 
 **GET /easy-lock**
 
-Date field: `timestamp`
+**Response format:** Legacy list (see [Success (legacy list format)](#response-format))
+
+Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
 Filters:
 
@@ -330,11 +419,13 @@ Response fields:
 
 ### eDiscovery (Data at Rest)
 
+eDiscovery scan results. Uses the legacy list response format.
+
 **GET /ediscovery**
 
-Lists Data-at-Rest scan results.
+**Response format:** Legacy list (see [Success (legacy list format)](#response-format))
 
-Date field: `timestamp`
+Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
 Filters:
 
@@ -352,16 +443,16 @@ Response fields:
 
 | Field | Description |
 |---|---|
-| `id` | Entry ID |
-| `timestamp` | Unix timestamp of the scan event |
+| `id` | Log entry ID |
+| `timestamp` | Unix timestamp |
 | `machine_name` | Computer name |
-| `event_time_local` | Event timestamp in client local time |
-| `file_name` | File name scanned |
-| `matched_item` | Matched content item |
-| `item_details` | Details of the matched item |
-| `policy_name` | Name of the policy that triggered the result |
-| `client_time` | Client-reported time |
-| `status` | Scan result status |
+| `event_time_local` | Event timestamp — client local time |
+| `file_name` | Scanned file path |
+| `matched_item` | Matched content item (e.g. MIME type) |
+| `item_details` | Item details (e.g. file format) |
+| `policy_name` | eDiscovery policy name |
+| `client_time` | Client report time |
+| `status` | Object status |
 
 ### SCIM Logs
 
@@ -382,19 +473,17 @@ Filters:
 
 Response fields: `id`, `timestamp`, `request_id`, `http_method`, `endpoint`, `status_code`, `actor`, `operation`, `resource_type`, `external_id`, `duration_ms`, `ip_address`, `user_agent`, `bulk_request_id`, `operation_index`
 
-### Export Logs
-
-**GET /export-logs/(id)**
-
-Returns a single export log entry including the `description` field.
-
-Response fields: `id`, `name`, `log_type`, `status`, `date`, `from_date`, `to_date`, `partitions`, `export_type`, `sf_guard_user_id`, `description`
+:::note
+`request_body` and `response_body` are excluded from list responses for performance.
+:::
 
 ### Admin Actions
 
+Administrator action audit trail.
+
 **GET /admin-actions**
 
-Lists administrator action audit trail entries, joined with `sf_guard_user` for usernames.
+**Response format:** Legacy list — simple (see [Success (legacy list format — simple)](#response-format))
 
 Date field: `created_at`
 
@@ -403,26 +492,33 @@ Filters:
 | Parameter | Type | Description |
 |---|---|---|
 | `user_id` | integer | Filter by admin user ID |
-| `section` | string | Filter by section (e.g. "Device Control") |
+| `section` | string | Filter by section (e.g. "Device Control", "Content Aware Protection") |
 | `log_type` | string | Filter by log type |
 | `operation` | string | Filter by operation performed |
 | `search` | string | Search across section, log_type, operation, and username |
 
-Response fields: `id`, `user_id`, `created_at`, `section`, `log_type`, `operation`, `username`
+Response fields:
 
-:::note
-`before_desc` and `after_desc` LONGTEXT fields are excluded from list responses for performance.
-:::
+| Field | Description |
+|---|---|
+| `id` | Action ID |
+| `section` | Section name, e.g. "Custom Content Denylists" |
+| `operation` | Operation performed, e.g. "Login" |
+| `log_type` | Log type, e.g. "EDIT" |
+| `before_desc` | State before the action (JSON object) |
+| `after_desc` | State after the action (JSON object) |
+| `user` | User object with `id` and `username` |
+| `created_at` | Action timestamp |
 
 ## Usage examples
 
-**Authenticate and obtain a token**
+**Obtain a JWT token**
 
 ```bash
 TOKEN=$(curl -s -k -X POST \
   -H "Content-Type: application/json" \
-  -d '{"username":"admin","password":"secret"}' \
-  "https://<epp-server>/api/logs/login" | jq -r '.data.token')
+  -d '{"username": "admin", "password": "your_password"}' \
+  "https://<epp-server>/api/login" | python -c "import sys,json; print(json.load(sys.stdin)['data']['token'])")
 ```
 
 **List recent device control logs for a specific machine**
@@ -430,15 +526,39 @@ TOKEN=$(curl -s -k -X POST \
 ```bash
 curl -s -k \
   -H "Authorization: Bearer ${TOKEN}" \
-  "https://<epp-server>/api/logs/device-control?machine_name=WORKSTATION&sort_by=eventtime&sort_order=DESC&per_page=10"
+  "https://<epp-server>/api/logs/device-control?machine_name=WORKSTATION&sort_by=timestamp&sort_order=DESC&per_page=10"
 ```
 
-**Get content filtering logs for a date range**
+**List EasyLock logs**
 
 ```bash
 curl -s -k \
   -H "Authorization: Bearer ${TOKEN}" \
-  "https://<epp-server>/api/logs/content-aware-protection?start_date=2025-01-01&end_date=2025-01-31&content_policy=PCI"
+  "https://<epp-server>/api/logs/easy-lock?sort_by=timestamp&sort_order=DESC&per_page=20"
+```
+
+**List eDiscovery logs for a specific policy**
+
+```bash
+curl -s -k \
+  -H "Authorization: Bearer ${TOKEN}" \
+  "https://<epp-server>/api/logs/ediscovery?policy_name=Policy%201&sort_by=timestamp&sort_order=DESC&per_page=20"
+```
+
+**Fetch only the latest partition (delta sync)**
+
+```bash
+curl -s -k \
+  -H "Authorization: Bearer ${TOKEN}" \
+  "https://<epp-server>/api/logs/device-control?use_last_partition=true&sort_by=timestamp&sort_order=DESC&per_page=100"
+```
+
+**Get content-aware protection logs for a date range**
+
+```bash
+curl -s -k \
+  -H "Authorization: Bearer ${TOKEN}" \
+  "https://<epp-server>/api/logs/content-aware-protection?start_date=2025-01-01&end_date=2025-01-31"
 ```
 
 ## Database tables reference
@@ -448,11 +568,9 @@ curl -s -k \
 | Device Control | `olog` | `event`, `devicetype`, `clientmachine`, `clientdevice` |
 | System Alerts | `sys_alert_log` | `sys_event` |
 | Content Filtering | `cf_log`, `cf_alert` | `event` |
-| Mobile Management | `mm_log` | — |
-| EasyLock | `olog` | — |
+| EasyLock | `olog` | `event`, `devicetype`, `clientmachine`, `clientdevice` |
 | eDiscovery | `dr_object` | — |
 | SCIM Logs | `scim_log` | — |
-| Export Logs | `export_log_list` | — |
 | Admin Actions | `admin_action` | `sf_guard_user` |
 
 ## Rate limiting
@@ -518,9 +636,9 @@ The response also includes a `Retry-After` header (in seconds) indicating when t
 
 ## CORS
 
-The API includes CORS headers allowing cross-origin requests from any origin. The OPTIONS preflight response includes:
+The API includes CORS headers for browser-based integrations. Origins must be listed in the server's `cors_allowed_origins` configuration. The OPTIONS preflight response includes:
 
-- `Access-Control-Allow-Origin: *`
-- `Access-Control-Allow-Methods: GET, OPTIONS`
+- `Access-Control-Allow-Origin: <configured-origin>`
+- `Access-Control-Allow-Methods: GET, POST, OPTIONS`
 - `Access-Control-Allow-Headers: Content-Type, Authorization`
 - `Access-Control-Max-Age: 86400`

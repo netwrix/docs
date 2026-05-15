@@ -44,7 +44,7 @@ The Logs REST API provides a read-only interface to query Endpoint Protector log
 - Automation and integrations with internal tools
 
 :::info
-The Logs REST API is read-only. It supports GET (and OPTIONS for CORS preflight). Other methods return 405 Method Not Allowed.
+The Logs REST API is read-only for log data. The only write operation is `POST /login` to obtain an authentication token. All log endpoints are GET-only; other methods return 405 Method Not Allowed.
 :::
 
 ## Base URL and protocol
@@ -55,11 +55,15 @@ The Logs REST API is read-only. It supports GET (and OPTIONS for CORS preflight)
 
 ## Authentication
 
-Authentication uses JWT (JSON Web Tokens) with HS256 signing. Call `POST /login` with your credentials to receive a token valid for 1 hour, then include it in subsequent requests:
+Authentication uses JWT (JSON Web Tokens) with HS256 signing. Call `POST /login` at `https://<epp-server>/api/login` with your credentials to receive a token valid for 1 hour, then include it in subsequent requests:
 
 ```
 Authorization: Bearer <token>
 ```
+
+:::note
+The login endpoint is at `/api/login`, separate from the log endpoints at `/api/logs/`.
+:::
 
 ## Quick start
 
@@ -68,8 +72,8 @@ Authorization: Bearer <token>
 ```bash
 TOKEN=$(curl -s -k -X POST \
   -H "Content-Type: application/json" \
-  -d '{"username":"admin","password":"secret"}' \
-  "https://<epp-server>/api/logs/login" | jq -r '.data.token')
+  -d '{"username": "admin", "password": "your_password"}' \
+  "https://<epp-server>/api/login" | python -c "import sys,json; print(json.load(sys.stdin)['data']['token'])")
 ```
 
 :::note
@@ -81,7 +85,7 @@ If your Endpoint Protector server uses a self-signed certificate, add `-k` to th
 ```bash
 curl -s -k \
   -H "Authorization: Bearer ${TOKEN}" \
-  "https://<epp-server>/api/logs/device-control?sort_by=eventtime&sort_order=DESC&per_page=10"
+  "https://<epp-server>/api/logs/device-control?sort_by=timestamp&sort_order=DESC&per_page=10"
 ```
 
 ## Common query parameters
@@ -157,7 +161,7 @@ The date field used for filtering depends on the endpoint (documented in each en
   "success": false,
   "error": {
     "code": 401,
-    "message": "Unauthorized"
+    "message": "Missing authentication token. Provide via Authorization: Bearer <token> header."
   }
 }
 ```
@@ -168,9 +172,9 @@ The date field used for filtering depends on the endpoint (documented in each en
 |---|---|
 | 200 | Success |
 | 400 | Invalid parameters |
-| 401 | Missing/invalid API key |
+| 401 | Missing or invalid JWT token |
 | 404 | Resource not found |
-| 405 | Method not allowed (GET-only) |
+| 405 | Method not allowed |
 | 429 | Rate limit exceeded |
 | 500 | Internal error |
 
@@ -180,9 +184,9 @@ The date field used for filtering depends on the endpoint (documented in each en
 
 ### Authentication
 
-**POST /login**
+**POST /login** — `https://<epp-server>/api/login`
 
-Authenticates with a username and password and returns a JWT token.
+Authenticates with a username and password and returns a JWT token. This endpoint is at the `/api/` base, not under `/api/logs/`.
 
 ### Device Control Logs
 
@@ -190,7 +194,7 @@ Online device tracking logs.
 
 **GET /device-control**
 
-Date field: `eventtime`
+Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
 Filters (in addition to common params):
 - `machine_name` (partial match)
@@ -207,7 +211,7 @@ Lists system alert log entries. Date field: `created_at`
 
 **GET /content-aware-protection**
 
-Lists Content Aware Protection logs. Date field: `eventtime`
+Lists Content-Aware Protection logs. Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
 Filters (in addition to common params):
 - `machine_name` (partial match)
@@ -216,23 +220,13 @@ Filters (in addition to common params):
 
 **GET /content-filtering-alerts**
 
-Lists content filtering alert definitions.
-
-**GET /content-filtering-alerts/(id)**
-
-Returns a single alert definition.
-
-### Mobile Management
-
-**GET /mobile-management-logs**
-
-Date field: `eventtime`
+Lists content filtering alert definitions. Date field: `created_at`
 
 ### EasyLock (Enforced Encryption)
 
 **GET /easy-lock**
 
-Date field: `timestamp`
+Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
 Filters (in addition to common params):
 - `machine_name` (partial match)
@@ -243,7 +237,7 @@ Filters (in addition to common params):
 
 **GET /ediscovery**
 
-Lists Data-at-Rest scan results. Date field: `timestamp`
+Lists Data-at-Rest scan results. Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
 Filters (in addition to common params):
 - `machine_name` (partial match)
@@ -257,12 +251,6 @@ Filters (in addition to common params):
 **GET /scim-logs**
 
 Lists SCIM API request logs.
-
-### Export Logs
-
-**GET /export-logs/(id)**
-
-Returns a single export job log entry by ID.
 
 ### Admin Actions
 
@@ -280,8 +268,8 @@ The API enforces rate limiting to protect the server and ensure fair usage. When
 
 ## CORS
 
-CORS is enabled to support browser-based integrations:
+CORS is enabled to support browser-based integrations. Origins must be listed in the server's `cors_allowed_origins` configuration:
 
-- `Access-Control-Allow-Origin: *`
-- `Access-Control-Allow-Methods: GET, OPTIONS`
+- `Access-Control-Allow-Origin: <configured-origin>`
+- `Access-Control-Allow-Methods: GET, POST, OPTIONS`
 - `Access-Control-Allow-Headers: Content-Type, Authorization`
