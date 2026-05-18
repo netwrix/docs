@@ -2,6 +2,8 @@
 title: "Knowledge Base"
 description: "Knowledge Base"
 sidebar_position: 10
+pagination_prev: null
+pagination_next: null
 ---
 
 # Knowledge Base
@@ -19,10 +21,10 @@ See the following Knowledge Base articles for getting started with Group Policy.
 
 ## Tips, Tricks and FAQs
 
-- [How to insert User information in any Application via Group Policies?](/docs/policypak/deliverymethods/grouppolicy/knowledgebase/tipstricksfaq/insertuserinfo.md)
+- [How to insert User information in any Application via Group Policies?](/docs/policypak/deliverymethods/grouppolicy/knowledgebase/insertuserinfo.md)
 
 ## PolicyPak Group Policy
 
-- [How to use PDQ Deploy to collect PPLOGS from remote computers then save them to a network location](/docs/policypak/deliverymethods/grouppolicy/knowledgebase/grouppolicy/pdqdeploy.md)
+- [How to use PDQ Deploy to collect PPLOGS from remote computers then save them to a network location](/docs/policypak/deliverymethods/grouppolicy/knowledgebase/pdqdeploy.md)
 
 

@@ -2,6 +2,8 @@
 title: "Video Learning Center"
 description: "Video Learning Center"
 sidebar_position: 20
+pagination_prev: null
+pagination_next: null
 ---
 
 # Video Learning Center
@@ -10,15 +12,15 @@ See the following Video topics for more information on PolicyPak licensing.
 
 ## Licensing Request: All Methods
 
-- [How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/requestall/licenserequestkey.md)
+- [How to Request Licenses from PolicyPak by Creating a "License Request Key"](/docs/policypak/licensing/videolearningcenter/licenserequestkey.md)
 
 ## Licensing Install: All Methods (Universal Licenses for customers after 2021)
 
-- [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md)
+- [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md)
 
 ## Licensing Install: All Methods (Universal Licenses for customers before 2021)
 
-- [PolicyPak: Universal and Original Licensing Installation and Upgrades for Existing Customers](/docs/policypak/licensing/videolearningcenter/installalllegacy/upgrades.md)
+- [PolicyPak: Universal and Original Licensing Installation and Upgrades for Existing Customers](/docs/policypak/licensing/videolearningcenter/upgrades.md)
 
 ## Troubleshooting and Un-Licensing
 

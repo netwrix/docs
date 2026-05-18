@@ -56,7 +56,7 @@ Universal licenses solve a lot of problems around key generation:
 - Administrators may disable a specifically licensed component, without having to request PolicyPak support to re-cut the license.
   [How do I specifically exclude or prevent a component from performing processing by modifying the license file?](/docs/policypak/licensing/knowledgebase/activedirectorygposccm/componentsexclude.md)
 - The license may be wrapped up by the admin as a .MSI and re-deployed without contacting PolicyPak support to make a .MSI.
-  [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md)
+  [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md)
 
 ![861_5_hfkb-1130-img-05_950x431](/images/policypak/license/861_5_hfkb-1130-img-05_950x431.webp)
 

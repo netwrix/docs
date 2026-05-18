@@ -2,5 +2,8 @@
   "label": "Network Security Manager",
   "position": 9,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

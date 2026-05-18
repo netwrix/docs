@@ -2,5 +2,8 @@
   "label": "AppX Policies Items For AppX",
   "position": 10,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

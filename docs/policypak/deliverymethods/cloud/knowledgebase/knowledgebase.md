@@ -2,6 +2,8 @@
 title: "Knowledge Base"
 description: "Knowledge Base"
 sidebar_position: 10
+pagination_prev: null
+pagination_next: null
 ---
 
 # Knowledge Base
@@ -27,7 +29,7 @@ See the following Knowledge Base articles for getting started with Cloud.
 
 ## Cloud Licensing
 
-- [How is PolicyPak Cloud usage counted and calculated toward my True-Up?](/docs/policypak/deliverymethods/cloud/knowledgebase/cloudlicensing/usage.md)
+- [How is PolicyPak Cloud usage counted and calculated toward my True-Up?](/docs/policypak/deliverymethods/cloud/knowledgebase/usage.md)
 
 ## Client Troubleshooting
 
@@ -56,7 +58,7 @@ See the following Knowledge Base articles for getting started with Cloud.
 
 ## Cloud Portal Troubleshooting
 
-- [How do I fully reset my Azure AD connection between Azure and PolicyPak Cloud to start over?](/docs/policypak/deliverymethods/cloud/knowledgebase/cloudportaltroubleshooting/entraid.md)
+- [How do I fully reset my Azure AD connection between Azure and PolicyPak Cloud to start over?](/docs/policypak/deliverymethods/cloud/knowledgebase/entraid.md)
 
 ## Mac Integration
 

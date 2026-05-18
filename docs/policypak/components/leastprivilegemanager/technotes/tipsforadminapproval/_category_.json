@@ -2,5 +2,8 @@
   "label": "Tips For Admin Approval Self Elevate Apply On Demand SecureCopy And UI Branding",
   "position": 80,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

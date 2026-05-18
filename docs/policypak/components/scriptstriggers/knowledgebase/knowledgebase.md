@@ -1,6 +1,8 @@
 ---
 title: Scripts and Triggers Manager Technical Notes
 description: Technical documentation for Scripts and Triggers Manager
+pagination_prev: null
+pagination_next: null
 ---
 
 # Scripts and Triggers Manager Technical Notes
