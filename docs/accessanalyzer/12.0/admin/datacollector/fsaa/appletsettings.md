@@ -73,9 +73,8 @@ In the Applet Settings section, configure the following options:
       connection, Access Analyzer will not try another proxy on the host list and will fail to scan
       that host. However, if that proxy is no longer on the host list, it will choose another proxy
       on the list and rescan.
-    - If unchecked, Access Analyzer still considers proxy affinity, though rather than the scan
-      failing if the proxy is unreachable, Access Analyzer will choose a new proxy that will scan
-      the host
+    - If unchecked, Access Analyzer still considers proxy affinity, but if the assigned proxy is
+      unreachable it chooses a different proxy to scan the host instead of failing the scan
     - If a proxy server has not yet scanned a host, the data collector should choose the least
       loaded proxy at that time. After scanning that host, the data collector will follow the proxy
       affinity logic described earlier.
@@ -131,7 +130,7 @@ In the Certificate Exchange Options section, configure the following options:
 - Port – Select the checkbox to specify the port number for certificate exchange. The Default port
   number is 8767.
 
-- Enable SPN Mapping – Provide a custom SPN per applet host when the automatically generated SPN isn't valid (for example, when the applet host sits behind a proxy). See the [FSAA: SPN Mapping](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/spnmapping.md) topic for additional information.
+- Enable SPN Mapping – Provide a custom Service Principal Name (SPN) per applet host when the automatically generated SPN isn't valid (for example, when the applet host sits behind a proxy). See the [FSAA: SPN Mapping](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/spnmapping.md) topic for additional information.
 
 See the [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md) topic for additional
 information.
