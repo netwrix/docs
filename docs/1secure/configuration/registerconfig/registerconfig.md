@@ -11,15 +11,11 @@ Microsoft 365 data sources (SharePoint Online, Microsoft Entra ID, and Exchange 
 1Secure using modern authentication. This app enables secure access to the Netwrix 1Secure
 cloud-based infrastructure via Microsoft Graph and other modern APIs.
 
-You have to configure the app in Microsoft Entra ID once, as it can be used to audit multiple
-Microsoft 365 data sources, including SharePoint Online, Microsoft Entra ID, and Exchange Online.
+Configure the app in Microsoft Entra ID once. Use it to audit multiple Microsoft 365 data sources,
+including SharePoint Online, Microsoft Entra ID, and Exchange Online.
 
 :::note
-It is recommended to register a dedicated app in Microsoft Entra ID for each data source
-that you want to audit in Netwrix 1Secure. While sharing a single app across multiple data sources
-is allowed, it may lead to issues such as throttling. For example, if there are too many connections
-to Microsoft Graph, some connections may be temporarily stopped. Additionally, different data
-sources may require different permissions and you might not grant all permissions to a single app.
+Register a dedicated app in Microsoft Entra ID for each data source you want to audit in Netwrix 1Secure. Sharing a single app across multiple data sources is allowed but may cause issues such as throttling. For example, too many connections to Microsoft Graph may cause some connections to stop temporarily. Additionally, different data sources may require different permissions, and a single app may not support all of them.
 :::
 
 
@@ -42,10 +38,10 @@ article for additional information.
 
 ## Register an App in Microsoft Entra ID
 
-Follow the steps to register an application in Microsoft Entra ID.
+**To register an application in Microsoft Entra ID:**
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+The following steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -70,8 +66,7 @@ Register an application page is displayed.
 The Overview page for the newly registered application opens. The following settings of the
 registered application are required while adding a data source in Netwrix 1Secure. See the
 [Sources and Connectors](/docs/1secure/admin/organizations/sourcesandconnectors/overview.md) topic for
-additional information on adding a data source. It is recommended to copy these settings and keep
-them safe.
+additional information on adding a data source. Copy these settings and store them securely.
 
 - Application (client) ID – A client ID for the registered application
 - Directory (tenant) ID – A tenant ID for the registered application
@@ -84,7 +79,7 @@ them safe.
 You must grant the necessary permissions to the registered application in Microsoft Entra ID, based
 on the data sources you plan to audit in.
 
-Follow the steps to grant permissions to the application.
+**To grant permissions to the application:**
 
 **Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
@@ -116,7 +111,7 @@ source.
 - [Permissions to Audit SharePoint Online](permissions.md#permissions-to-audit-sharepoint-online)
 - [Permissions to Audit Exchange Online](permissions.md#permissions-to-audit-exchange-online)
 
-**Step 9 –** After selecting the required permission(s), click **Add Permissions** at the bottom.
+**Step 9 –** After selecting the required permissions, click **Add Permissions** at the bottom.
 You are navigated to the API Permissions page.
 
 **Step 10 –** Click **Grant admin consent for `<tenant>`** to grant the selected permissions to the
@@ -127,8 +122,9 @@ The API permissions are granted to the application.
 ## Assign Roles to the App
 
 The registered application must be assigned to the Global Administrator or Exchange Administrator
-role for Microsoft Entra ID state collection.  
-Follow the steps to assign role(s) to an application.
+role for Microsoft Entra ID state collection.
+
+**To assign roles to an application:**
 
 **Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
@@ -150,7 +146,7 @@ administrators page is displayed. From here, go to the All roles page.
   use Microsoft Entra identities
 - Exchange Administrator – Can manage all aspects of the Exchange product
 
-**Step 7 –** Click the desired role. The Assignments page is displayed for it.
+**Step 7 –** Click the role you want. The Assignments page is displayed for it.
 
 **Step 8 –** Click **Add assignments** in the top toolbar. The Add assignments pane is displayed.
 
@@ -161,7 +157,7 @@ page.
 
 ## Generate Client Secret Value
 
-Follow the steps to generate a client secret value.
+**To generate a client secret value:**
 
 **Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
@@ -181,7 +177,7 @@ page is displayed with the Client secrets tab selected by default.
 displayed.
 
 - Description – Enter a description for the secret
-- Expires – Select an expiration date for the secret key from the Expiry drop-down-menu. By default,
+- Expires – Select an expiration date for the secret key from the Expiry dropdown menu. By default,
   the Recommended: 180 days (6 months) option is selected.
 
 **Step 7 –** Click the **Add** button. The client secret is generated and the client secret value is
@@ -192,20 +188,17 @@ The client secret value is required while adding a data source in Netwrix 1Secu
 additional information on adding a data source.
 
 :::warning
-If you leave this page before copying the key, it cannot be retrieved, and you will
-need to repeat the process.
+If you leave this page before copying the key, it isn't retrievable, and you need to repeat the process.
 :::
 
 
 ## Upload a Certificate
 
-Certain connecters require a certificate rather than a client secret for authentication. This
-certificate is downloaded while configuring a data source in Netwrix 1Secure. Once downloaded, you
-need to upload the certificate to the registered application in Microsoft Entra ID. See the
+Certain connectors require a certificate rather than a client secret for authentication. 1Secure downloads this certificate while you configure a data source. Once downloaded, upload the certificate to the registered application in Microsoft Entra ID. See the
 [Add a Source and Connectors for SharePoint Online](/docs/1secure/admin/organizations/sourcesandconnectors/sharepointonline.md)topic
 for additional information on downloading a certificate.
 
-Follow the steps to upload a certificate to the registered application.
+**To upload a certificate to the registered application:**
 
 **Step 1 –** Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
@@ -236,8 +229,9 @@ The certificate is uploaded to the registered application.
 
 ## Assign Permissions to the App Using Manifest
 
-Follow the steps to assign permissions to the registered application by modifying its attribute
-values using the Manifest app. See the
+**To assign permissions to the registered application using the Manifest app:**
+
+See the
 [Microsoft Entra app manifest (Azure AD Graph format)](https://learn.microsoft.com/en-us/entra/identity-platform/reference-app-manifest#microsoft-entra-app-manifest-azure-ad-graph-format) article
 for additional information on Manifest.
 

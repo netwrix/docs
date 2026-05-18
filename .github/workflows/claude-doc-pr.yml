@@ -14,13 +14,12 @@ on:
   issue_comment:
     types: [created]
 
-concurrency:
-  group: doc-pr-${{ github.event.pull_request.number || github.event.issue.number }}
-  cancel-in-progress: true
-
 jobs:
   doc-review:
     if: github.event_name == 'pull_request'
+    concurrency:
+      group: doc-pr-review-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -128,6 +127,9 @@ jobs:
       github.event.issue.pull_request &&
       contains(github.event.comment.body, '@claude') &&
       !startsWith(github.event.comment.user.login, 'github-actions')
+    concurrency:
+      group: doc-pr-followup-${{ github.event.issue.number }}
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -162,6 +164,14 @@ jobs:
           gh pr comment ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} \
             --body "This PR is from a fork. Automated fixes cannot be pushed directly. I can still review and suggest changes — apply them manually from the comments."
 
+      - name: React with eyes
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions \
+            --method POST -f content="eyes"
+
       - name: Checkout repository
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         uses: actions/checkout@v4
@@ -175,11 +185,14 @@ jobs:
         uses: anthropics/claude-code-action@v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMENT_BODY: ${{ github.event.comment.body }}
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.VALE_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           show_full_output: true
           prompt: |
-            /doc-pr-fix ${{ steps.pr-info.outputs.number }} $COMMENT_BODY
+            /doc-pr-fix
+            PR: ${{ steps.pr-info.outputs.number }}
+            Repo: ${{ github.repository }}
+
+            Writer's request: ${{ github.event.comment.body }}
           claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(doc-help)"'

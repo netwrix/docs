@@ -319,30 +319,31 @@ Format external links with a middot and arrow after the company name:
 
 Use the following names in KB articles. Do not use abbreviations such as "NA" for Netwrix Auditor.
 
+Product IDs in the `products` field are used for Algolia search metadata. If a product ID below seems outdated, verify against `src/config/products.js` before using it — that file is the authoritative source for product IDs in this repo.
+
 | Full Product Name | Short Product Name | Product ID (for `products` field) |
 |---|---|---|
-| Netwrix Activity Monitor | Activity Monitor | `activity_monitor` |
-| Netwrix 1Secure | 1Secure | `onesecure` |
+| Netwrix 1Secure | 1Secure | `1secure` |
+| Netwrix Access Analyzer | Access Analyzer | `accessanalyzer` |
+| Netwrix Access Information Center | Access Information Center | `accessinformationcenter` |
+| Netwrix Activity Monitor | Activity Monitor | `activitymonitor` |
 | Netwrix Auditor | Auditor | `auditor` |
-| Netwrix Change Tracker | Change Tracker | `change_tracker` |
-| Netwrix Data Classification | Data Classification | `data_classification` |
-| Netwrix Directory Manager | Directory Manager | `groupid` |
-| Netwrix Endpoint Protector | Endpoint Protector | `endpoint_protector` |
-| Netwrix Log Tracker | Log Tracker | `log_tracker` |
-| Netwrix Password Policy Enforcer | Password Policy Enforcer | `password_policy_enforcer` |
-| Netwrix Password Reset | Password Reset | `password_reset_manager` |
-| Netwrix Password Secure | Password Secure | `password_secure` |
+| Netwrix Change Tracker | Change Tracker | `changetracker` |
+| Netwrix Data Classification | Data Classification | `dataclassification` |
+| Netwrix Directory Manager | Directory Manager | `directorymanager` |
 | Netwrix Endpoint Policy Manager | Endpoint Policy Manager | `policypak` |
-| Netwrix Endpoint Privilege Manager | Endpoint Privilege Manager | `privilege_secure_endpoints` |
-| Netwrix Privilege Secure for Access Management | Privilege Secure for Access Management | `privilege_secure` |
-| Netwrix Privilege Secure for Discovery | Privilege Secure for Discovery | `privilege_secure_discovery` |
-| Netwrix Recovery for Active Directory | Recovery for Active Directory | `recovery_ad` |
-| Netwrix Access Analyzer | Access Analyzer | `enterprise_auditor` |
-| Netwrix Threat Manager | Threat Manager | `threat_manager` |
-| Netwrix Threat Prevention | Threat Prevention | `threat_prevention` |
-| Netwrix Platform Governance for NetSuite | Platform Governance for NetSuite | `strongpoint_netsuite` |
-| Netwrix Platform Governance for Salesforce | Platform Governance for Salesforce | `strongpoint_salesforce` |
-| Netwrix Identity Manager | Identity Manager | `usercube` |
+| Netwrix Endpoint Protector | Endpoint Protector | `endpointprotector` |
+| Netwrix Identity Manager | Identity Manager | `identitymanager` |
+| Netwrix Password Policy Enforcer | Password Policy Enforcer | `passwordpolicyenforcer` |
+| Netwrix Password Reset | Password Reset | `passwordreset` |
+| Netwrix Password Secure | Password Secure | `passwordsecure` |
+| Netwrix Platform Governance for NetSuite | Platform Governance for NetSuite | `platgovnetsuite` |
+| Netwrix Platform Governance for Salesforce | Platform Governance for Salesforce | `platgovsalesforce` |
+| Netwrix Privilege Secure for Access Management | Privilege Secure for Access Management | `privilegesecure` |
+| Netwrix Privilege Secure for Discovery | Privilege Secure for Discovery | `privilegesecurediscovery` |
+| Netwrix Recovery for Active Directory | Recovery for Active Directory | `recoveryforactivedirectory` |
+| Netwrix Threat Manager | Threat Manager | `threatmanager` |
+| Netwrix Threat Prevention | Threat Prevention | `threatprevention` |
 | Netwrix Vulnerability Tracker by Greenbone | Vulnerability Tracker | `vulnerability_tracker_gb` |
 
 ### When to use long vs. short product names

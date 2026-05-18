@@ -1,0 +1,10 @@
+{
+  "label": "SQL Server Search Query",
+  "position": 80,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "sqlserver"
+  }
+}

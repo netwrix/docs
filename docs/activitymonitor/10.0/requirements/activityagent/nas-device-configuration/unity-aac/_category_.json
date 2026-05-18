@@ -1,0 +1,10 @@
+{
+  "label": "Dell Unity Activity Auditing Configuration",
+  "position": 50,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "unity-activity"
+  }
+}

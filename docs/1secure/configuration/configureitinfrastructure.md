@@ -8,8 +8,8 @@ sidebar_position: 60
 
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
-- Automatically when creating an organization. This is a recommended method.
-- Manually. The table below lists the native audit settings that must be adjusted manually to ensure
+- Automatically when creating an organization. This is the recommended method.
+- Manually. The following table lists the native audit settings that must be adjusted manually to ensure
   collecting comprehensive and reliable audit data. You can enable Netwrix 1Secure to continually
   enforce the relevant audit policies or configure them manually.
                                                                                                            
@@ -36,9 +36,9 @@ You can configure your IT Infrastructure for monitoring in one of the following
                         <ul>
                             <li>
                                 <p>If you have enabled automatic log backup for the Security log of your domain controller, you can instruct to clear the old backups automatically. For that, use the <b>CleanAutoBackupLogs</b> registry key</p>
-                                <p>It is recommended that you adjust retention period for the backup files accordingly (default is <b>50</b> hours). </p>
+                                <p>Adjust the retention period for the backup files accordingly (default is <b>50</b> hours).</p>
                             </li>
-                            <li>To provide for event data collection, the <span>Secondary Logon</span> service must be up and running . Open <b>Administrative Tools</b><span>→</span><b>Services</b>, right-click the <b>Secondary Logon</b> service and on the <b>General</b> tab make sure that <b>Startup type</b> for this service is other than <i>Disabled</i>.</li>
+                            <li>To provide for event data collection, the <span>Secondary Logon</span> service must be running. Open <b>Administrative Tools</b><span>→</span><b>Services</b>, right-click the <b>Secondary Logon</b> service and on the <b>General</b> tab make sure that <b>Startup type</b> for this service is other than <i>Disabled</i>.</li>
                         </ul>
                     </td>
                 </tr>

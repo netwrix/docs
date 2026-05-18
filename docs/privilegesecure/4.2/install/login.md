@@ -34,7 +34,7 @@ not exceed the license count, users is still able to log in. If a license is exp
 login attempt does exceed the license count, Privilege Secure prevents the login.
 
 :::warning
-If your license is expired, and you can still log in, you cannot create
+If your license is expired, and you can still log in, you can't create
 activity sessions or new users.
 :::
 

@@ -6,9 +6,9 @@ sidebar_position: 70
 
 # Configure Windows Firewall Inbound Connection Rules
 
-You need to configure the inbound connection rules in Windows Firewall on each target computer,
-where 'target computer' refers to a computer audited by 1Secure. These Windows Firewall settings can
-be managed through Group Policy settings. To do this, edit the GPO affecting your firewall settings.
+Configure the inbound connection rules in Windows Firewall on each target computer, where 'target
+computer' refers to a computer audited by 1Secure. You can manage these Windows Firewall settings
+through Group Policy. To do this, edit the GPO affecting your firewall settings.
 Navigate to:
 
 `Computer Configuration > Administrative Templates > Network > Network Connections > Windows Firewall`

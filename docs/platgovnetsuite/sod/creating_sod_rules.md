@@ -29,11 +29,11 @@ implementing your custom form.
 
 The following are general definitions of access levels for permissions in NetSuite.
 
-- **View**: The user has access to view existing files. The user cannot create, edit, or delete
+- **View**: The user has access to view existing files. The user can't create, edit, or delete
   existing files.
-- **Create**: The user can create new and view existing files. The user cannot edit or delete
+- **Create**: The user can create new and view existing files. The user can't edit or delete
   existing files.
-- **Edit**: The user has access to create, view, and edit files. The user cannot delete existing
+- **Edit**: The user has access to create, view, and edit files. The user can't delete existing
   files.
 - **Full**: The user can create, view, edit, and delete files.
 
@@ -45,14 +45,14 @@ The following are general definitions of access levels for permissions in NetSui
 
 2. **External ID** is assigned by Platform Governance for NetSuite. Custom rules are numbered 1000
    or above. External IDs for custom rules can be edited. SoD Library rule External IDs are 1
-   through 999 and cannot be edited.
+   through 999 and can't be edited.
 3. Add a Rule **Name** and **Description** and optional **Memo**.
 4. **Status** indicates the current state of the Rule: **Test on Roles**, **Disabled**, **Test on
    Employees**, **Approved**, **Pending for Approval**, **Disabled - Feature Not In Use**, or
    **Disabled - Compensating Control**. Only **Approved**and **Active** rules are applied.
 5. Select or add a new **Risk** (optional).
 6. Select the **Process** from the list. The rule pertains to the group of activities and
-   transactions defined for the selected **Process**. The **Process** for an SoD Library rule cannot
+   transactions defined for the selected **Process**. The **Process** for an SoD Library rule can't
    be edited.
 7. Check to make the rule **Inactive** if needed (optional).
 8. Check to **Block Conflict** to block the save attempt on the employee record if the employee
@@ -62,20 +62,20 @@ The following are general definitions of access levels for permissions in NetSui
     ![SoD Access Controls](/images/platgovnetsuite/sod/sod_access_controls.webp)
 
     - **Role-based** - Select one or more **Roles** from the displayed list. The Permissions and
-      Advanced Permission Controls are not available for this option.
+      Advanced Permission Controls aren't available for this option.
     - **Permission-based**
 
         1. Select **One-Sided Rule** (only Base Permissions/Levels) or **Two-Sided Rule** (both Base
            and Conflicting Permissions/Levels).
         2. Select one or more **Base Permissions** and one or more **Base Permission Levels**. For
            **Base Permission**, you can enter part of the name to see a matching list, or use the
-           drop down to view all of the permissions.
+           dropdown to view all of the permissions.
         3. Optionally add a **Base Permission Text Match** to filter for conflicts matching the base
            permission string. For example: **ADMI\_** matches all **ADMI** permissions. Can use
            **startswith** search operator.
         4. For Two-Sided Rules, select one or more **Conflicting Permissions** and one or more
            **Conflicting Permission Levels**. For **Conflict Permission**, you can enter part of the
-           name to see a matching list, or use the drop down to view all of the permissions.
+           name to see a matching list, or use the dropdown to view all of the permissions.
         5. Optionally add a **Conflict Permission Text Match** to filter for conflicts matching the
            conflicting permission string. For example: **ADMI\_** matches all **ADMI** permissions.
            Can use **startswith** search operator.
@@ -90,7 +90,7 @@ The following are general definitions of access levels for permissions in NetSui
 
 11. **Save** the rule.
 
-Once a Rule is saved, the **Change ID** and **Run Retroactive** functions are available.
+After a Rule is saved, the **Change ID** and **Run Retroactive** functions are available.
 
 There are four tabs to access details:
 
@@ -119,7 +119,7 @@ To view the updates to your SoD rules:
 
 ![Updates to SoD Rules report](/images/platgovnetsuite/sod/sod_rules_update_report.webp)
 
-With this report, you can easily identify modified pre-defined SoD rules. There is a saved import
+With this report, you can identify modified pre-defined SoD rules. There is a saved import
 SoD Rule Import available to enable bulk add or update SoD rules to your production environment.
 
 1. Create a **.csv** file with the following fields:
@@ -134,9 +134,9 @@ SoD Rule Import available to enable bulk add or update SoD rules to your product
     - Roles
     - Memo
     - Base Permission
-    - Base Permission Level(s)
+    - Base Permission Levels
     - Conflicting Permission
-    - Conflicting Permission Level(s)
+    - Conflicting Permission Levels
     - Base Permission Text Match
     - Conflict Permission Text Match
     - Subsidiaries

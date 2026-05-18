@@ -1,0 +1,139 @@
+---
+title: "Microsoft Entra ID App Registration"
+description: "Microsoft Entra ID App Registration"
+sidebar_position: 20
+---
+
+# Microsoft Entra ID App Registration
+
+To create a Microsoft Entra ID (formerly Azure AD) service account and add an Microsoft Entra ID
+tenant to Privilege Secure, the following information is required:
+
+- App ID (For service account)
+- App Secret (For service account)
+- Tenant ID (To add resource)
+
+Log in to Microsoft Entra ID and To generate the required information for Privilege
+Secure.
+
+## Create App Registration
+
+Create an App Registration in Entra ID (Entra ID > App Registrations) as an admin in Entra ID.
+
+**Step 1 –** Click **New Registration**.
+
+**Step 2 –** Name it, keep all default settings, and click **Register**.
+
+**Step 3 –** Expand the **Manage** menu, then click **API Permissions**.
+
+**Step 4 –** Using this menu, grant the following Microsoft Graph API permissions:
+
+- Application Permissions:
+- Directory.ReadWrite.All
+- Group.ReadWrite.All
+- User.ReadWrite.All
+- RoleManagement.ReadWrite.Directory
+- Delegated Permissions:
+- User.Read
+
+**Step 5 –** Click **Grant Admin Consent**.
+
+Ensure the Grant Admin Consent was successful within the Configured permissions menu. A message at
+the top of the page displays the following message: Sucessfully granted admin consent for the
+requested permissions.
+
+## Generate Secret
+
+Generate a secret for the App Registration
+
+**Step 1 –** In the App Registration section, click **Certificates & Secrets**.
+
+**Step 2 –** Click **New Client Secret**.
+
+**Step 3 –** Set any expiration date (your preference), and click **Add**.
+
+**Step 4 –** Copy the Secret Value before leaving the page. The Secret Value, which is the App
+Secret value required for adding an Entra ID Service Account to Netwrix Privilege Secure, is never
+displayed again.
+
+**Step 5 –** Return to the App Registration Overview page to get the following values:
+
+- Application (client) ID, required for the Netwrix Privilege Secure Entra ID Service Account
+- Directory (tenant) ID, required to add an Entra ID tenant resource to Netwrix Privilege Secure
+
+## Add App Registration to Admin Role
+
+Add the App Registration to the User Administrators role.
+
+:::note
+User Administrator is the least privileged model and can't manage Global Administrator.
+To manage the Global Administrator role, assign the Global Administrator role to the App
+registration instead of User Administrator.
+:::
+
+
+**Step 1 –** Navigate to **Entra ID**.
+
+**Step 2 –** Click **Roles and Administrators**.
+
+**Step 3 –** Locate and click the **User Administrator** role.
+
+**Step 4 –** Click **Add Assignments**.
+
+**Step 5 –** Search for the name of the previously created App Registration, click it, and click
+**Select**.
+
+**Step 6 –** Click **Next**, then select the **Setting** Tab and provide justification text before
+clicking **Assign**.
+
+The service account can now be added to Privilege Secure, using the Application (Client) ID and
+Client Secret. See the [Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional
+information.
+
+Add the Microsoft Entra ID Tenant resource to Privilege Secure using the Tenant ID. See the
+[Add New Microsoft Entra ID Tenant](/docs/privilegesecure/26.03/admin/resources/entraidtenant.md) topic for additional
+information.
+
+## Rotate a Microsoft Entra ID Account Password in a Hybrid Tenant
+
+For Privilege Secure to rotate existing account passwords in hybrid Microsoft Entra
+ID tenants, enable the Password Writeback feature in Microsoft Entra ID. Enabling Password
+Writeback allows hybrid account passwords to be updated either in on-prem AD or in Microsoft Entra
+ID, and the result is synced to the other location. Without having this functionality enabled
+in a hybrid Microsoft Entra ID tenant, all attempts to change an account's password will fail.
+
+Enabling Password Writeback isn't specific to Privilege Secure. See the
+[Open Enable Entra ID password writeback](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback)
+Microsoft article for additional information.
+
+## Add a Role that enables Password Rotation
+
+:::note
+Sometime in early 2026, Microsoft tightened their security rules such that password rotation requires an additional role.
+
+**Password Administrator**
+Can reset passwords for non-admin users and other Password Administrators, but can't reset passwords for users holding any privileged Entra roles - lower risk role.
+
+**Privileged Authentication Administrator** Can change password of any account
+
+The proper choice will depend on the specific accounts NPS is trying to change password and their privilege at that time.
+:::
+
+**Step 1 –** Go to EntraID and sign in as a Global Administrator
+
+**Step 2 –**  In the left nav, go to Identity → Roles & admins → Roles & admins
+
+**Step 3 –** Search for and click Password Administrator (or Privileged Authentication Administrator — see the preceding note)
+
+**Step 4 –**  Click Add assignments
+
+**Step 5 –** In the "Select member" panel, search for the name of the app registration NPS uses for Entra ID (the same one they
+  configured in NPS when setting up the Entra ID resource/tenant)
+    - It appears as a service principal, not a user
+    - If search doesn't find it, try searching by the application's client ID or check Enterprise applications to confirm the display name
+
+**Step 6 –** Select it, click Next, then Assign
+ 
+Depending on the specific users and their other privilege, the role may have to step up to Privileged Authentication Administrator
+
+

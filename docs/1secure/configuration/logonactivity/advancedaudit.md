@@ -9,7 +9,7 @@ sidebar_position: 10
 You can configure advanced audit policies instead of basic domain policies to collect Logon Activity
 changes with more granularity.
 
-Follow the steps to configure security options.
+**To configure security options:**
 
 Using both basic and advanced audit policies settings may lead to incorrect audit reporting. To
 force basic audit policies to be ignored and prevent conflicts, enable the Audit: Force audit policy
@@ -27,14 +27,14 @@ the left and navigate to Policies > Windows Settings > Security Settings > Local
 Options.
 
 **Step 4 –** Locate the Audit: Force audit policy subcategory settings to override audit policy
-category settings and make sure that policy setting is set to _"Enabled"_.
+category settings and ensure that policy setting is set to _"Enabled"_.
 
 ![manualconfig_ad_nla_audit_force_winserver2016](/images/1secure/configuration/ad/manualconfig_ad_nla_audit_force_winserver2016.webp)
 
 **Step 5 –** Navigate to **Start** > **Run** and type _"cmd"_. Input the `gpupdate /force` command
-and press **Enter**. The group policy will be updated.
+and press **Enter**. The group policy updates.
 
-Follow the steps to configure advanced audit policies.
+**To configure advanced audit policies:**
 
 **Step 6 –** Open the **Group Policy Management** console on any domain controller in the target
 domain: navigate to Start > Windows Administrative Tools> **Group Policy Management.**
@@ -137,4 +137,4 @@ Configuration > Audit Policies .
 **Step 11 –** Set the Audit Security State Change advanced audit policy to "_Success_".
 
 **Step 12 –** Navigate to **Start** > **Run** and type _"cmd"_. Input the `gpupdate /force` command
-and press **Enter**. The group policy will be updated.
+and press **Enter**. The group policy updates.

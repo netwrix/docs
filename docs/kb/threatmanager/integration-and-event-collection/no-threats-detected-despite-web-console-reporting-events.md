@@ -21,15 +21,15 @@ knowledge_article_id: kA04u000000wnnICAQ
 ## Symptoms
 
 - You see no threats detected for several days, but the web console continues to report events.
-- The backlog section of the Netwrix Threat Manager console is not populated. As a result, it's impossible to determine the status of the database maintenance job, as well as other components of the console.
+- The backlog section of the Netwrix Threat Manager console is not populated. As a result, it is not possible to determine the status of the database maintenance job, as well as other components of the console.
 
 ## Cause
 
-An EDR, XDR, or antivirus solution in your Netwrix Threat Manager environment conflicts with the PostgreSQL application.
+An Endpoint Detection and Response (EDR), Extended Detection and Response (XDR), or antivirus solution in your Netwrix Threat Manager environment conflicts with the PostgreSQL application.
 
 ## Resolution
 
-Create exclusions for the PostgreSQL file paths below:
+Create exclusions for the following PostgreSQL file paths:
 
 ```text
 \Program Files\Stealthbits\PostgreSQL14 
@@ -40,7 +40,9 @@ Create exclusions for the PostgreSQL file paths below:
 \Program Files\STEALTHbits\PostgreSQL14\bin\pg_ctl.exe
 ```
 
-**TIP:** Learn more about custom IOA rules in [How to Create Custom Rules ⸱ CrowdStrike](https://www.crowdstrike.com/blog/tech-center/custom-ioas/)
+:::tip
+See [How to Create Custom Rules](https://www.crowdstrike.com/blog/tech-center/custom-ioas/) on the CrowdStrike blog for additional information about custom IOA rules.
+:::
 
 ## Related articles
 

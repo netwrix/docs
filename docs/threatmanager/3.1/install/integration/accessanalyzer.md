@@ -9,7 +9,7 @@ the following job groups must be successfully run before running the FS_DEFEND_S
 - FileSystem > 7.Sensitive Data Job Group
 
 See the File System Solution section of the
-[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
+[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information.
 
 :::note
@@ -20,21 +20,21 @@ collection.
 
 ## Instantiate the FS_DEFEND_SDD Job in Access Analyzer
 
-Follow the steps to configure the FS_DEFEND_SDD Job to send sensitive data to Threat Manager. See
+To configure the FS_DEFEND_SDD Job to send sensitive data to Threat Manager. See
 the Instant Job Wizard section of the
-[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
+[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 instructions to add this instant job to the **Jobs** tree.
 
-In Access Analyzer, install the FS_DEFEND_SDD Job to the desired location. It is available through
+In Access Analyzer, install the FS_DEFEND_SDD Job to the location you want. It is available through
 the Instant Job Library under the File System library.
 
 **Step 1 –** In the Threat Manager Console, generate the app token (endpoint token) to be copied and
 pasted into the Connection Profile, and the host name (endpoint) to be used when creating the custom
 host list.
 
-In order for Access Analyzer to send data to Threat Manager, an app token must be created in Threat
-Manager. If multiple Access Analyzer Consoles are sending data to Threat Manager, an app token may
-be created for each Access Analyzer Console to grant individual access to Threat Manager from each
+For Access Analyzer to send data to Threat Manager, create an app token in Threat
+Manager. If multiple Access Analyzer Consoles are sending data to Threat Manager, create an app token
+for each Access Analyzer Console to grant individual access to Threat Manager from each
 Console.
 
 - Navigate to the Configuration > App Tokens page.
@@ -59,7 +59,7 @@ additional information.
 **Step 4 –** Assign the custom host list at the FS_DEFEND_SDD > Configure > Hosts node.
 
 See the FS_DEFEND_SDD Job section of the
-[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
+[Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information.
 
 :::info

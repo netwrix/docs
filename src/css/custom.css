@@ -530,17 +530,99 @@ html {
     background: var(--docsearch-primary-color);
 }
 
-/* Fix Redoc sidebar navigation: .api-content uses overflow:hidden + contain:layout
-   which intercepts scrollIntoView and prevents click-to-scroll from reaching the window.
-   Also, html has scroll-behavior:smooth (Docusaurus default) but Redoc's scroll correction
-   (scrollBy(0, -59)) fires synchronously after scrollIntoView(), cancelling the animation.
-   Forcing auto on the Redoc page makes the scroll instant so the offset correction applies
-   at the correct position. The html.plugin-redoc class is set only on the API reference page. */
-.api-content {
-    overflow: visible !important;
-    contain: none !important;
+/* ============================================================
+   API Reference — sidebar collapse animation
+   Docusaurus calculates collapse transition duration proportional to
+   content height. With 112 tag groups (~4340px), the default formula
+   produces ~800ms — noticeably slow. Cap it to match --ifm-transition-fast.
+   !important is required to override the inline style set by useCollapsible.
+   ============================================================ */
+.theme-doc-sidebar-menu .menu__list {
+    transition-duration: 200ms !important;
 }
 
-html.plugin-redoc {
-    scroll-behavior: auto !important;
+/* ============================================================
+   API Reference — HTTP method badges in sidebar
+   Classes (e.g. "api-method get") come from docusaurus-plugin-openapi-docs
+   generated sidebar.ts. The theme does not ship this CSS.
+   ============================================================ */
+.menu__list-item.api-method > .menu__link {
+    display: flex;
+    align-items: flex-start;
 }
+
+.menu__list-item.api-method > .menu__link::before {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    min-width: 44px;
+    height: 20px;
+    margin-right: 8px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    text-transform: uppercase;
+    border-radius: 4px;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+/* Light mode — solid fills */
+.menu__list-item.api-method.get > .menu__link::before {
+    content: "get";
+    background-color: #1a3d7c;
+}
+
+.menu__list-item.api-method.post > .menu__link::before {
+    content: "post";
+    background-color: #16a34a;
+}
+
+.menu__list-item.api-method.delete > .menu__link::before {
+    content: "del";
+    background-color: #dc2626;
+}
+
+.menu__list-item.api-method.put > .menu__link::before {
+    content: "put";
+    background-color: #c2760c;
+}
+
+.menu__list-item.api-method.patch > .menu__link::before {
+    content: "patch";
+    background-color: #0d7377;
+}
+
+/* Dark mode — slightly lighter fills so they read on the dark sidebar */
+[data-theme='dark'] .menu__list-item.api-method.get > .menu__link::before {
+    background-color: #3b82f6;
+}
+
+[data-theme='dark'] .menu__list-item.api-method.post > .menu__link::before {
+    background-color: #22c55e;
+}
+
+[data-theme='dark'] .menu__list-item.api-method.delete > .menu__link::before {
+    background-color: #ef4444;
+}
+
+[data-theme='dark'] .menu__list-item.api-method.put > .menu__link::before {
+    background-color: #f59e0b;
+}
+
+[data-theme='dark'] .menu__list-item.api-method.patch > .menu__link::before {
+    background-color: #14b8a6;
+}
+
+/* ============================================================
+   API Reference — truncate long titles in prev/next pagination
+   ============================================================ */
+.pagination-nav__label {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+

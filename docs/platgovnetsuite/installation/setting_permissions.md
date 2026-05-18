@@ -36,7 +36,7 @@ permission list for each role. The Strongpoint roles have the correct access lev
 
 5. **Save** the Permissions.
 
-Here are the Custom Permissions needed for each role.
+The following are the custom permissions needed for each role.
 
 #### Change Request Approvers
 
