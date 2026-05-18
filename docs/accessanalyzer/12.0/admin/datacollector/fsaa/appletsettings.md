@@ -14,7 +14,7 @@ is a wizard page for the categories of:
 - Sensitive Data Scan
 
 :::note
-This wizard page identifies options associated with the scan mode to be used. See the
+This wizard page identifies options associated with the scan mode. See the
 [File System Scan Options](/docs/accessanalyzer/12.0/requirements/filesystem/scanoptions/scanoptions.md) topic for
 additional information.
 :::
@@ -25,7 +25,7 @@ additional information.
 In the Applet Launch Mechanism section, choose one of three radio buttons:
 
 - MSTask Task Scheduler – Creates a scheduled task on the target host that runs the applet
-- Windows Service – Automatically installs the FSAA Applet as a proxy service
+- Windows Service – Automatically installs the File System Access Audit (FSAA) Applet as a proxy service
     - The Applet service runs as a Connection Profile credential unless you select the Local System
       checkbox in the Applet Settings options. Then it runs the service in Local mode.
 - Require applet to be running as a service on target (doesn't deploy or launch applet)
@@ -35,10 +35,10 @@ In the Applet Launch Mechanism section, choose one of three radio buttons:
       successful scan. When you select this radio button, Access Analyzer doesn't deploy an applet
       on the target or proxy machine. Therefore, if the File System Proxy service isn't running,
       the FSAA scan will fail.
-    - To avoid a failed scan when an applet can't be deployed or the File System Proxy service is
-      not running, the Applet Gathering Settings page contains the **Fallback to local mode if
-      applet can’t start** option. This option allows the scan to run in local mode when an applet
-      can't be deployed or the service isn't running.
+    - To avoid a failed scan when Access Analyzer can't deploy an applet or the File System Proxy
+      service is not running, the Applet Gathering Settings page contains the **Fallback to local
+      mode if applet can’t start** option. This option allows the scan to run in local mode when
+      Access Analyzer can't deploy an applet or the service isn't running.
 
 ![Applet Settings section of the Applet Settings page](/images/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettingsappletsettings.webp)
 

@@ -70,10 +70,10 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 
    ## Query requirements
 
-* The query must return columns named `Host` and `SPN` (aliases are allowed, e.g. `SELECT ServerName AS Host, …`).
+* The query must return columns named `Host` and `SPN` (you can use aliases, e.g. `SELECT ServerName AS Host, …`).
 * The `@host` parameter is available if you want to filter by scan target, but it's optional — if your query doesn't reference it, Access Analyzer will use every row returned.
 * Host matching is case-insensitive.
-* Host name format must be consistent. The format used in the table (FQDN, short name, or IP address) must exactly match the format used for the execution host. For example, if the execution host is configured using a fully qualified domain name (FQDN), then you must also use the FQDN in the table — don't mix formats (e.g., don't use a short hostname in the table when the execution host uses an FQDN)
+* Host name format must be consistent. The format you use in the table (FQDN, short name, or IP address) must exactly match the format you use for the execution host. For example, if the execution host uses a fully qualified domain name (FQDN), then you must also use the FQDN in the table — don't mix formats (e.g., don't use a short hostname in the table when the execution host uses an FQDN)
 
 
 ## Troubleshooting
