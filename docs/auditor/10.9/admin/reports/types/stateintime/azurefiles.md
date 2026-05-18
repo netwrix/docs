@@ -48,7 +48,7 @@ Before you can use Azure Files State-in-Time reports, you must:
 2. Enable the **Collect data for state-in-time reports** option in the monitoring plan settings.
 3. (Optional but recommended) Configure **Azure diagnostic settings** to send logs to a blob storage account. The "Times Accessed" data in the Excessive Access Permissions report requires this configuration.
 
-For configuration details, see [Configuring State-in-Time Data Collection for Azure Files](/docs/auditor/10_8//configuration/azurefiles/stateintime).
+For configuration details, see [Configuring State-in-Time Data Collection for Azure Files](/docs/auditor/10_9//configuration/azurefiles/stateintime).
 
 ## Snapshot dates and historical analysis
 
@@ -77,5 +77,5 @@ If you are familiar with File Server State-in-Time reports, note the following d
 
 ## Related topics
 
-- [Configuring State-in-Time Data Collection for Azure Files](/docs/auditor/10_8//configuration/azurefiles/stateintime)
-- [Azure Files Configuration Overview](/docs/auditor/10_8/configuration/azurefiles/overview)
+- [Configuring State-in-Time Data Collection for Azure Files](/docs/auditor/10_9//configuration/azurefiles/stateintime)
+- [Azure Files Configuration Overview](/docs/auditor/10_9/configuration/azurefiles/overview)

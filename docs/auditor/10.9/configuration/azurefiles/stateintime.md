@@ -4,7 +4,7 @@ This topic describes how to enable State-in-Time data collection for an Azure Fi
 
 ## Prerequisites
 
-- An Azure Files monitoring plan must already exist in Netwrix Auditor [Azure Files Configuration Overview](/docs/auditor/10_8/configuration/azurefiles/overview)
+- An Azure Files monitoring plan must already exist in Netwrix Auditor [Azure Files Configuration Overview](/docs/auditor/10_9/configuration/azurefiles/overview)
 - The monitoring plan must target Azure file shares mounted via SMB (Netwrix Auditor doesn't support Azure File Sync or NFS).
 - The service account that the monitoring plan uses must have sufficient permissions to enumerate file and folder ACLs on the Azure file shares.
 - To collect "Times Accessed" data for the Excessive Access Permissions report, you need an Azure storage account configured to receive diagnostic logs.
@@ -58,7 +58,7 @@ You can also define omit lists using plain text files:
 
 ## Configuring Azure diagnostic settings (optional)
 
-The **Times Accessed** column in the **Excessive Access Permissions in Azure Files** report requires Azure diagnostic settings. Without diagnostic settings, "Times Accessed" defaults to 0 for all objects. [Configuring Diagnostic Settings](docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
+The **Times Accessed** column in the **Excessive Access Permissions in Azure Files** report requires Azure diagnostic settings. Without diagnostic settings, "Times Accessed" defaults to 0 for all objects. [Configuring Diagnostic Settings](docs/auditor/10_9/configuration/azurefiles/overview#diagnostic-settings)
 
 > **Note:** The current version supports only **blob storage** as the destination, not Event Hub or Log Analytics Workspace.
 
@@ -89,6 +89,6 @@ Historical snapshots allow generating reports for past dates. A Global administr
 
 ## Related topics
 
-- [Azure Files State-in-Time Reports Overview](/docs/auditor/10_8/admin/reports/types/stateintime/azurefiles)
-- [Azure Files Configuration Overview](/docs/auditor/10_8/configuration/azurefiles/overview)
-- [Configuring Diagnostic Settings](docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
+- [Azure Files State-in-Time Reports Overview](/docs/auditor/10_9/admin/reports/types/stateintime/azurefiles)
+- [Azure Files Configuration Overview](/docs/auditor/10_9/configuration/azurefiles/overview)
+- [Configuring Diagnostic Settings](docs/auditor/10_9/configuration/azurefiles/overview#diagnostic-settings)
