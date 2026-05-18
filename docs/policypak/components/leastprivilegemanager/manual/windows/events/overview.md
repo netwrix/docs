@@ -41,7 +41,7 @@ multiple users are doing and look through the events for interesting ideas to co
   topic for additional information.
 - You can use Azure Log Analytics to store PolicyPak Least Privilege Manager events.
   See the
-  [Windows 10 (and Server) Event Logs to Azure Log Analytics Walkthru](/docs/policypak/gettingstarted/misc/knowledgebase/tipstricksandfaqs/eventlogs.md)
+  [Windows 10 (and Server) Event Logs to Azure Log Analytics Walkthru](/docs/policypak/misc/knowledgebase/tipstricksandfaqs/eventlogs.md)
   topic for additional information.
 - You can use PolicyPak Cloud to store PolicyPakLeast Privilege Manager
   events and make rules from stored events. See the

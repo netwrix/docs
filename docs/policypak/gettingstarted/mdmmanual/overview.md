@@ -30,7 +30,7 @@ Manager, and all the others) without using Group Policy as the delivery mechanis
 :::note
 For an overview of using PolicyPak Exporter with the PolicyPak
 components, please see the following video:
-[Deploying PolicyPakdirectives without Group Policy (PolicyPak Exporter Utility)](/docs/policypak/gettingstarted/misc/videos/methods/exporterutility.md).
+[Deploying PolicyPakdirectives without Group Policy (PolicyPak Exporter Utility)](/docs/policypak/misc/videos/methods/exporterutility.md).
 :::
 
 
