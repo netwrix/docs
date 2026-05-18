@@ -6,9 +6,8 @@ sidebar_position: 70
 
 # Alert Profiles
 
-Alert profiles provide a way to easily group alert configurations and delivery notification settings
-together. You can create an alert profile, enable relevant alerts for the profile, and assign it to
-organization(s). Additionally, you can customize delivery settings and specify which user(s) will
+Alert profiles group alert configurations and delivery notification settings together. You can create an alert profile, enable relevant alerts for the profile, and assign it to
+organizations. Additionally, you can customize delivery settings and specify which users will
 receive notifications when alerts in the profile are triggered.
 
 To view the alert profiles, navigate to Configuration > Alerts.
@@ -30,7 +29,7 @@ automatically applied to all managed organizations.
 
 ## Add an Alert Profile
 
-Follow the steps to add an alert profile.
+**To add an alert profile:**
 
 **Step 1 –** Navigate to Configuration > Alerts.
 
@@ -45,13 +44,13 @@ The alert profile is added to the list. You can:
 - Assign this profile to an organization. You can do this when creating a new organization or
   editing an organization. See the [Add Organizations](/docs/1secure/admin/organizations/addorganizations.md) topic
   for additional information.
-- Click the profile to review the list of alerts, enable the desired alerts, make necessary edits
+- Click the profile to review the list of alerts, enable the alerts you want, make necessary edits
   for alerts, and set delivery settings for the alert profile. See [Alerts](/docs/1secure/admin/alerts/alerts.md) topic for
   additional information.
 
 ## Modify the Name of an Alert Profile
 
-Follow the steps to modify the name of an alert profile.
+**To modify the name of an alert profile:**
 
 **Step 1 –** Navigate to Configuration > Alerts.
 
@@ -64,13 +63,13 @@ Follow the steps to modify the name of an alert profile.
 ## Delete an Alert Profile
 
 :::note
-(1) The alert profile named _Netwrix Profile (Default)_ cannot be deleted.
+(1) The alert profile named _Netwrix Profile (Default)_ can't be deleted.
 (2) When an alert profile is deleted, the _Netwrix Profile (Default)_ is automatically assigned to
 the organizations that were previously assigned the deleted profile.
 :::
 
 
-Follow the steps to delete an alert profile.
+**To delete an alert profile:**
 
 **Step 1 –** Navigate to Configuration > Alerts.
 
@@ -84,9 +83,9 @@ prompting you to confirm the deletion of the profile.
 You can receive alerts by email or through the third-party ticket service, as used by the Managed
 Service Providers.
 
-Follow the steps to configure alerts by email.
+**To configure alerts by email:**
 
-**Step 1 –** . Navigate to Configuration > Alerts.
+**Step 1 –** Navigate to Configuration > Alerts.
 
 **Step 2 –** Click an alert profile. The alerts for the profile are displayed in a list.
 
@@ -100,10 +99,10 @@ displayed.
 **Step 5 –** In the Email Addresses field, enter the email address of a recipient for alert
 notifications and click the Add icon. To specify multiple email addresses, add them one by one.
 
-**Step 6 –** Check the **Email Organization Admins** check box to send the alerts to all the
+**Step 6 –** Check the **Email Organization Admins** checkbox to send the alerts to all the
 organization admins by email.
 
 **Step 7 –** Click Save.
 
-You may also link to a third-party ticketing system. See the
+You can also link to a third-party ticketing system. See the
 [Third-party systems](/docs/1secure/integration/overview.md) topic for additional information.

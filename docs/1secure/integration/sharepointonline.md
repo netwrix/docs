@@ -6,9 +6,8 @@ sidebar_position: 30
 
 # SharePoint Online
 
-You can use the SharePoint Online integration for the report (Activity and Risk Assessment
-Dashboard) subscriptions. This way, the required reports shall be delivered to a specific folder in
-SharePoint Online.
+You can use the SharePoint Online integration for report (Activity and Risk Assessment
+Dashboard) subscriptions. Reports are delivered to a specific folder in SharePoint Online.
 
 | Icon                                                                                          | Description                                                                  |
 | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
@@ -17,7 +16,7 @@ SharePoint Online.
 
 ## Add a SharePoint Online Integration in a System
 
-Follow the steps to add the SharePoint Online integration in Netwrix 1Secure.
+To add the SharePoint Online integration in Netwrix 1Secure:
 
 **Step 1 –** Go to Configuration > **Integrations** and click the **Add** icon to add the SharePoint
 integration.
@@ -48,13 +47,13 @@ topic for additional information.
 **Step 4 –** Click **Finish**.
 
 :::note
-You must firstly add a Sites.ReadWrite.All permission in your Microsoft Entra admin
-center. See the [ Microsoft 365 Permissions](/docs/1secure/configuration/registerconfig/permissions.md) topic for
+You must add a Sites.ReadWrite.All permission in your Microsoft Entra admin
+center before completing this step. See the [ Microsoft 365 Permissions](/docs/1secure/configuration/registerconfig/permissions.md) topic for
 additional information.
 :::
 
 
-The SharePoint Online integration is added now. The status displays "Ok" in green.
+The SharePoint Online integration is added. The status displays "Ok" in green.
 
 ![Integrations list](/images/1secure/integration/integrationssharepointonline.webp)
 
