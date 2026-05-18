@@ -8,7 +8,7 @@ sidebar_position: 31
 
 ## When to use this
 
-Netwrix Access Analyzer authenticates to each applet host using Kerberos with an automatically generated SPN. In environments where the applet host sits behind a proxy — or where applet services run under accounts whose SPNs don't match the default pattern — this automatic SPN will not exist in Active Directory and certificate exchange with the applet will fail.
+Netwrix Access Analyzer authenticates to each applet host using Kerberos with an automatically generated Service Principal Name (SPN). In environments where the applet host sits behind a proxy — or where applet services run under accounts whose SPNs don't match the default pattern — this automatic SPN will not exist in Active Directory and certificate exchange with the applet will fail.
 
 Use custom SPN mapping to tell the scan which SPN to use when connecting to each applet host.
 
@@ -17,7 +17,7 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 ## Before you begin
 
 
-1. Identify the correct SPN for each execution host that needs an override. Verify the SPN is registered in Active Directory and that the scan account is permitted to authenticate against it:
+1. Identify the correct SPN for each execution host that needs an override. Verify the SPN is registered in Active Directory and that the scan account can authenticate against it:
 
 ```
    setspn -Q <spn>
@@ -66,24 +66,24 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 
 6. Click **OK**, then finish the wizard to save the job.
 
-   The next time the job runs, Access Analyzer will use the SPN returned by your query for each matching applet host. If an applet host has no matching row, the default SPN (DNS resolved FQDN) is used.
+   The next time the job runs, Access Analyzer will use the SPN your query returns for each matching applet host. If an applet host has no matching row, Access Analyzer uses the default SPN (DNS resolved FQDN).
 
    ## Query requirements
 
 * The query must return columns named `Host` and `SPN` (aliases are allowed, e.g. `SELECT ServerName AS Host, …`).
 * The `@host` parameter is available if you want to filter by scan target, but it's optional — if your query doesn't reference it, Access Analyzer will use every row returned.
 * Host matching is case-insensitive.
-* Host name format must be consistent. The format used in the table (FQDN, short name, or IP address) must exactly match the format used for the execution host. For example, if the execution host is configured using a fully qualified domain name (FQDN), then the FQDN must also be used in the table — do not mix formats (e.g., do not use a short hostname in the table when the execution host uses an FQDN)
+* Host name format must be consistent. The format used in the table (FQDN, short name, or IP address) must exactly match the format used for the execution host. For example, if the execution host is configured using a fully qualified domain name (FQDN), then the FQDN must also be used in the table — don't mix formats (e.g., don't use a short hostname in the table when the execution host uses an FQDN)
 
 
 ## Troubleshooting
 
 | Problem | What to check |
 |---------|---------------|
-| *Query must contain Host column / SPN column* | Make sure your `SELECT` returns **BOTH COLUMNS** with those names (or with aliases). |
+| *Query must contain Host column / SPN column* | ensure your `SELECT` returns **BOTH COLUMNS** with those names (or with aliases). |
 | *Error getting mapping query results* | Run the query manually using the job's SQL credentials to confirm it's valid and the table is accessible. |
 | Certificate exchange still fails after enabling the mapping | Verify the SPN is registered in AD (`setspn -Q <spn>`) and that the scan account can authenticate as it. |
 
 ## Turning it off
 
-To go back to the default SPN behavior, clear the **Enable SPN mapping** checkbox and save the job. Your query is retained so you can re-enable the feature later without re-entering it.
+To return to the default SPN behavior, clear the **Enable SPN mapping** checkbox and save the job. Access Analyzer retains your query so you can re-enable the feature later without re-entering it.
