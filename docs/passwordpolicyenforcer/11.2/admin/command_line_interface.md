@@ -1,7 +1,7 @@
 ---
 title: "Command Line Interface"
 description: "Command Line Interface"
-sidebar_position: 70
+sidebar_position: 55
 ---
 
 # Command Line Interface

@@ -1,7 +1,7 @@
 ---
 title: "HIBP Updater"
 description: "HIBP Updater"
-sidebar_position: 20
+sidebar_position: 45
 ---
 
 # HIBP Updater
