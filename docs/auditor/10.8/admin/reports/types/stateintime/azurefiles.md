@@ -1,6 +1,6 @@
 # Azure Files — State-in-Time Reports Overview
 
-Netwrix Auditor provides State-in-Time reports for Azure Files that allow you to generate reports on the permissions state of your Azure file shares at a specific moment in time. These reports complement change and activity reports by giving you a snapshot-based view of who has access to what, and the current state of files and folders across your Azure file shares.
+Netwrix Auditor provides State-in-Time reports for Azure Files. With these reports, you can view the permissions state of your Azure file shares at a specific moment in time. These reports complement change and activity reports by giving you a snapshot-based view of who has access to what, and the current state of files and folders across your Azure file shares.
 
 State-in-Time reports rely on daily configuration snapshots collected by Netwrix Auditor. Each snapshot captures the permissions state, folder structure, and file metadata of the monitored Azure file shares at the time of collection.
 
@@ -12,7 +12,7 @@ Netwrix Auditor connects to Azure Files via the SMB protocol and collects the fo
 - Folder structure, file sizes, and file metadata
 - Account information resolved via Microsoft Graph API (EntraID and ADDS identities)
 
-The effective permissions are calculated based on **NTFS ACLs + Share-level ACLs + RBAC (Azure Portal)**.
+Netwrix Auditor calculates the effective permissions based on **NTFS ACLs + Share-level ACLs + RBAC (Azure Portal)**.
 
 ## Supported configurations
 
@@ -26,7 +26,7 @@ Azure Files State-in-Time reports support the following authentication configura
 | NFS protocol | **No** (SMB only) |
 | Azure File Sync | **No** |
 
-Account identity (SSID) is resolved through the Microsoft Graph API.
+The Microsoft Graph API resolves account identity (SSID).
 
 ## Available reports
 
@@ -46,7 +46,7 @@ Before you can use Azure Files State-in-Time reports, you must:
 
 1. Have a configured **Azure Files monitoring plan** in Netwrix Auditor.
 2. Enable the **Collect data for state-in-time reports** option in the monitoring plan settings.
-3. (Optional but recommended) Configure **Azure diagnostic settings** to send logs to a blob storage account. This is required for the "Times Accessed" data in the Excessive Access Permissions report.
+3. (Optional but recommended) Configure **Azure diagnostic settings** to send logs to a blob storage account. The "Times Accessed" data in the Excessive Access Permissions report requires this configuration.
 
 For configuration details, see [Configuring State-in-Time Data Collection for Azure Files](/docs/auditor/10_8//configuration/azurefiles/stateintime).
 
@@ -58,7 +58,7 @@ By default, reports show the current (most recent) state. To view historical sna
 2. In the **Snapshot Date** filter, select the date you want to view.
 3. Click **View Report**.
 
-Historical snapshots must be imported by a Global administrator. Once imported, they are available for all State-in-Time reports for that monitoring plan.
+A Global administrator must import historical snapshots. Once imported, they are available for all State-in-Time reports for that monitoring plan.
 
 ## Export formats
 
@@ -71,8 +71,8 @@ Word, Excel, PowerPoint, PDF, Accessible PDF, TIFF, MHTML, CSV, XML, Data Feed.
 If you are familiar with File Server State-in-Time reports, note the following differences for Azure Files:
 
 - **"Item" filter** represents the monitoring scope: either a specific **Storage Account** or an **Azure Subscription** (not a file server or share).
-- **"Times Accessed" data** comes from Azure Monitor diagnostic logs. If diagnostic settings are not configured, this value defaults to 0.
-- **Local file server users and groups are not included** in Azure Files reports — only EntraID and ADDS identities.
+- **"Times Accessed" data** comes from Azure Monitor diagnostic logs. If you haven't configured diagnostic settings, this value defaults to 0.
+- **Local file server users and groups** don't appear in Azure Files reports — only EntraID and ADDS identities.
 - UNC paths follow the Azure file share format: `\\<storageaccount>.file.core.windows.net\<share>\<path>`.
 
 ## Related topics

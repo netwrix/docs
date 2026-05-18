@@ -4,9 +4,9 @@ This topic describes how to enable State-in-Time data collection for an Azure Fi
 
 ## Prerequisites
 
-- An Azure Files monitoring plan must already be created in Netwrix Auditor [Azure Files Configuration Overview](/docs/auditor/10_8/configuration/azurefiles/overview)
-- The monitoring plan must target Azure file shares mounted via SMB (Azure File Sync and NFS are not supported).
-- The service account used by the monitoring plan must have sufficient permissions to enumerate file and folder ACLs on the Azure file shares.
+- An Azure Files monitoring plan must already exist in Netwrix Auditor [Azure Files Configuration Overview](/docs/auditor/10_8/configuration/azurefiles/overview)
+- The monitoring plan must target Azure file shares mounted via SMB (Netwrix Auditor doesn't support Azure File Sync or NFS).
+- The service account that the monitoring plan uses must have sufficient permissions to enumerate file and folder ACLs on the Azure file shares.
 - To collect "Times Accessed" data for the Excessive Access Permissions report, you need an Azure storage account configured to receive diagnostic logs.
 
 ## Enabling State-in-Time data collection
@@ -17,16 +17,16 @@ This topic describes how to enable State-in-Time data collection for an Azure Fi
 2. Select the Azure Files monitoring plan and click **Edit**.
 3. On the **General** tab, locate the **State-in-Time** section.
 4. Select the **Collect data for state-in-time reports** checkbox.
-5. (Optional) Click **Modify** in the **Schedule** section to customize the snapshot collection schedule. By default, snapshots are collected daily.
+5. (Optional) Click **Modify** in the **Schedule** section to customize the snapshot collection schedule. By default, Netwrix Auditor collects snapshots daily.
 6. Click **Save** to apply the changes.
 
 After you save the monitoring plan, Netwrix Auditor will begin collecting State-in-Time snapshots according to the configured schedule.
 
-> **Note:** The first snapshot is collected at the next scheduled run. Reports will not contain data until the first snapshot is collected.
+> **Note:** Netwrix Auditor collects the first snapshot at the next scheduled run. Reports won't contain data until then.
 
 ## Configuring the monitoring scope (omit lists)
 
-Omit lists allow you to exclude specific folders or files from State-in-Time data collection, reducing collection time and storage requirements.
+Use omit lists to exclude specific folders or files from State-in-Time data collection, reducing collection time and storage requirements.
 
 Netwrix Auditor for Azure Files supports two types of omit lists:
 
@@ -58,9 +58,9 @@ You can also define omit lists using plain text files:
 
 ## Configuring Azure diagnostic settings (optional)
 
-Azure diagnostic settings are required to populate the **Times Accessed** column in the **Excessive Access Permissions in Azure Files** report. Without diagnostic settings, "Times Accessed" defaults to 0 for all objects. [Configuring Diagnostic Settings](docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
+The **Times Accessed** column in the **Excessive Access Permissions in Azure Files** report requires Azure diagnostic settings. Without diagnostic settings, "Times Accessed" defaults to 0 for all objects. [Configuring Diagnostic Settings](docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
 
-> **Note:** Only **blob storage** as the destination is supported in the current version. Event Hub and Log Analytics Workspace destinations are not supported.
+> **Note:** The current version supports only **blob storage** as the destination, not Event Hub or Log Analytics Workspace.
 
 ## Schedule management and historical snapshots
 
@@ -70,12 +70,12 @@ By default, Netwrix Auditor collects State-in-Time snapshots daily. To customize
 
 1. Edit the Azure Files monitoring plan.
 2. In the **State-in-Time** section, click **Modify**.
-3. Select the day(s) of the week for snapshot collection.
+3. Select the days of the week for snapshot collection.
 4. Save the changes.
 
 ### Importing historical snapshots
 
-Historical snapshots allow generating reports for past dates. Historical snapshots must be imported by a Global administrator.
+Historical snapshots allow generating reports for past dates. A Global administrator must import historical snapshots.
 
 **To import a historical snapshot:**
 
@@ -85,7 +85,7 @@ Historical snapshots allow generating reports for past dates. Historical snapsho
 4. Select the snapshots you want to import.
 5. Click **Import**.
 
-> **Note:** Historical snapshot import is not available for Office 365 data sources.
+> **Note:** Historical snapshot import isn't available for Office 365 data sources.
 
 ## Related topics
 
