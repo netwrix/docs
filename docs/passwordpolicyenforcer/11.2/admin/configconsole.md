@@ -1,108 +1,55 @@
 ---
 title: "Configuration Console"
-description: "Configuration Console"
+description: "Overview of the Password Policy Enforcer Configuration Console"
 sidebar_position: 10
 ---
 
 # Configuration Console
 
-The PPE Configuration Console manages Password Policy Enforcer across your domain. It can be
-installed on multiple servers/workstations as convenient.
+The Password Policy Enforcer (PPE) Configuration Console is a graphical user interface used to centrally configure and manage PPE. You can install the Configuration Console on any server or workstation.
 
-Open the Configuration Console:
-
-Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
-or
-Double click the **PPE Configuration** desktop shortcut.
+Use the **PPE Configuration** desktop shortcut or Start menu item to open the console. If these don't exist, then use the [server components installer](/docs/passwordpolicyenforcer/11.2/installation/installationserver.md) to install the Configuration Console.
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
-## Dashboard Controls
+Configuration changes made in the console replicate to all the domain controllers in a domain when connected to a [domain configuration](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md). Active Directory (AD) replication propagates the changes at normal replication intervals. The console applies configuration changes only to the local computer's registry when connected to a [local configuration](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md).
 
-The Configuration Console dashboard has all the tools you need to set up and manage Password Policy
-Enforcer.
+## Enable and Disable Password Policy Enforcer
 
-- Enable/Disable Password Policy Enforcer
-- Connected To
-- Help
-- [Settings](/docs/passwordpolicyenforcer/11.2/admin/settings.md) - General, Notifications, Mail Service, License
-
-In addition, there are tiles to access Password Policy Enforcer major features:
-
-- [Manage Policies](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md)
-- [Compromised Password Check](/docs/passwordpolicyenforcer/11.2/admin/compromisedpasswordcheck.md)
-- [System Audit and Support](/docs/passwordpolicyenforcer/11.2/admin/systemaudit.md) - Version Tracker, Support Tools, Property Editor
-
-See the specific topics for details.
-
-### Enable/Disable Password Policy Enforcer
-
-The toggle enables/disables Password Policy Enforcer on all domain controllers. It is enabled by
-default.
+Use the toggle switch in the upper-left corner of the home page to enable and disable Password Policy Enforcer. PPE is enabled by default, but it doesn't enforce any rules when first installed because you haven't defined any policies yet.
 
 ![Enable/Disable PPE](/images/passwordpolicyenforcer/11.2/administration/enabledisableppeconsole.webp)
 
-Click the toggle to disable PPE:
+## Get Help
 
-![Disable PPE](/images/passwordpolicyenforcer/11.2/administration/disable.webp)
+The Help menu contains the following items:
 
-If PPE  is disabled, click the toggle to enable:
+- **Netwrix Help Center** - displays the help documentation.
+- **About** - displays version information.
+- **Export Configuration Report** - creates a configuration report in HTML or text format. Netwrix Support may ask you to send a configuration report to help troubleshoot an issue.
+- **Open Property Editor** - opens the Property Editor to directly edit the configuration, including settings that aren't exposed in the user interface. Only use the Property Editor when Netwrix Support instructs you to.
 
-![Enable PPE](/images/passwordpolicyenforcer/11.2/administration/disabled.webp)
+## Set Global Settings
 
-### Connected To
+Click **Settings** to configure [global configuration settings](/docs/passwordpolicyenforcer/11.2/admin/settings.md).
 
-Sets the configuration for **Domain** (default) or **Local**. Password Policy Enforcer's
-configuration settings are stored in Active Directory or the registry. An Active Directory
-configuration is called a domain configuration, and it defines the password policies for domain user
-accounts. A registry configuration is called a local configuration, and it defines the password
-policies for local user accounts.
+## Connect To a Configuration
 
-Domain configurations are stored in the **CN=Password Policy Enforcer** _version\*\*_,CN=System
-object\*\*.
-
-Local configurations are stored in the **HKLM\SOFTWARE**ANIXIS**\Password Policy Enforcer**
-_version\*\*_\ registry key\*\*.
+Password Policy Enforcer can enforce password policies for [domain and local](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md) user accounts. Domain configurations contain password policies for domain user accounts. These configurations are stored in Active Directory. Local configurations are stored in the registry, and they contain the password policies for local user accounts. Click the **Connected to** selector to connect to a configuration. You can choose which domain controller to connect to when working on a domain configuration. A local configuration is always stored in the local computer's registry.
 
 :::note
-Users with write permission to these objects can configure Password Policy Enforcer.
+PPE stores domain configurations in the `CN=Password Policy Enforcer <version>,CN=System` container object. It stores local configurations in the `HKLM\SOFTWARE\ANIXIS\Password Policy Enforcer <version>` registry key. Only users with write permission to these objects can configure Password Policy Enforcer.
 :::
 
+:::tip
+You can distribute local configurations by exporting the configuration registry key and importing it into other computers. The [Domain and Local Policies](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md#distribute-the-local-configuration-with-group-policy) page shows how to distribute a local configuration with Group Policy.
+:::
 
-**Domain**
+## Add a policy
+Click **Add policy** to create and configure a new [password policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md).
 
-- Defines policies for domain user accounts.
-- Select a Domain Controller from the list of domain controllers where PPE is installed.
-- Configuration is replicated to all the domain controllers in the domain.
+## Check for Compromised and Reused Passwords
+Click **Password Scanner** to check for [compromised and reused passwords](/docs/passwordpolicyenforcer/11.2/admin/compromisedpasswordcheck.md).
 
-![Connect To Domain Configuration](/images/passwordpolicyenforcer/11.2/administration/connecttodomain.webp)
-
-**Local**
-
-- Defines policies for local user accounts.
-- Only affects the computer where it is set.
-- You can copy a local configuration to another computer by exporting the configuration from the
-  registry, and then importing it into the registry of the other computer. You can also use Group
-  Policy to distribute a local configuration to many computers. See the
-  [Domain and Local Policies](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md) topic for additional information.
-
-![Connected To Local Configuration](/images/passwordpolicyenforcer/11.2/administration/connecttolocal.webp)
-
-### Help
-
-Links to documentation and support tools.
-
-- **Netwrix Help Center** launches the Password Policy Enforcer help.
-- **About** displays the Configuration Console version.
-- **Export Configuration Report** opens an export dialog. You can export the configuration as an
-  html or txt file. Browse to the folder where you want the report.
-- **Open Property Editor** launches the Property Editor.
-
-    :::note
-    Properties should only be changed when advised by Netwrix Support.
-    :::
-
-
-### Settings
-
-See [Settings](/docs/passwordpolicyenforcer/11.2/admin/settings.md) for details on the General, Notifications, Mail Service, and License tabs.
+## Check your PPE installation
+Click **System Audit and Support** to [review and troubleshoot your PPE deployment](/docs/passwordpolicyenforcer/11.2/admin/systemaudit.md).
