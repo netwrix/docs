@@ -2,6 +2,8 @@
 title: "Video Learning Center"
 description: "Video Learning Center"
 sidebar_position: 20
+pagination_prev: null
+pagination_next: null
 ---
 
 # Video Learning Center
@@ -30,6 +32,6 @@ See the following Video topics for Java Enterprise Rules Manager.
 
 ## Troubleshooting
 
-- [PolicyPak Java Rules Manager: XML Surgery](/docs/policypak/components/javaenterpriserules/videos/troubleshooting/xmlsurgery.md)
+- [PolicyPak Java Rules Manager: XML Surgery](/docs/policypak/components/javaenterpriserules/videos/xmlsurgery.md)
 
 

@@ -73,7 +73,7 @@ Or you can export a whole category like this:
 
 You can also export settings en-mass across multiple GPOs using the PolicyPak Exporter
 Utility. The steps to do that are here
-[Deploying PolicyPakdirectives without Group Policy (PolicyPak Exporter Utility)](/docs/policypak/gettingstarted/misc/videos/methods/exporterutility.md)
+[Deploying PolicyPakdirectives without Group Policy (PolicyPak Exporter Utility)](/docs/policypak/misc/videos/methods/exporterutility.md)
 
 Then you can upload them straight into PolicyPak cloud using the Upload and link a new
 XML here. Or you can go to the XML Settings tab (not shown) and also upload them there for later
@@ -226,7 +226,7 @@ method of deploying policy.
 - For SCCM and MDM/Intune, perform an uninstall of the wrapped up XMLs / MSIs. You can also verify
   the XML settings are removed from your endpoint from the Users or Groups or Computer folder. See
   the
-  [What is the processing order of all policies and how are conflicts resolved (and how can I see the final RsOP) of those policies (between GPO, Cloud, XML, etc)?](/docs/policypak/gettingstarted/misc/knowledgebase/troubleshooting/conflictresolved.md) topic
+  [What is the processing order of all policies and how are conflicts resolved (and how can I see the final RsOP) of those policies (between GPO, Cloud, XML, etc)?](/docs/policypak/misc/knowledgebase/troubleshooting/conflictresolved.md) topic
   for additional information.
 
 ## Report using PolicyPak Cloud to verify expected settings are achieved

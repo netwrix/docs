@@ -21,7 +21,7 @@ as expected, see the following guide:
 Additionally, PolicyPak Browser Router has extensive logging, which needs to be turned
 on. You can do this using the PolicyPak Browser Router ADMX templates and turning on
 logging. A video of the process can be found here:
-[Troubleshooting with ADMX files](/docs/policypak/gettingstarted/misc/videos/troubleshooting/admxfiles.md).
+[Troubleshooting with ADMX files](/docs/policypak/misc/videos/troubleshooting/admxfiles.md).
 
 Log files for PolicyPak Browser Router are found in the two following places:
 

@@ -2,6 +2,8 @@
 title: "Knowledge Base"
 description: "Knowledge Base"
 sidebar_position: 10
+pagination_prev: null
+pagination_next: null
 ---
 
 # Knowledge Base
@@ -18,6 +20,6 @@ See the following Knowledge Base articles for Remote Work Delivery Manager.
 
 ## Troubleshooting
 
-- [My Dropbox link won't verify in Remote Work Delivery Manager](/docs/policypak/components/remoteworkdeliverymanager/technotes/troubleshooting/dropboxlink.md)
+- [My Dropbox link won't verify in Remote Work Delivery Manager](/docs/policypak/components/remoteworkdeliverymanager/technotes/dropboxlink.md)
 
 

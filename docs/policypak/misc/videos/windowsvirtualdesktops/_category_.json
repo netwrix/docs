@@ -1,0 +1,9 @@
+{
+  "label": "PolicyPak and Windows Virtual Desktops (WVD)",
+  "position": 60,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

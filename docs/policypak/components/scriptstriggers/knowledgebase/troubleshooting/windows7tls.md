@@ -10,7 +10,7 @@ First know that Windows 7 is not officially supported by Netwrix PolicyPak and m
 
 Pre-read the following to know what is known to NOT work in Windows 7 before continuing:
 
-[How does PolicyPak support (and not support) Windows 11?](/docs/policypak/gettingstarted/misc/knowledgebase/gettingstarted/windows11.md)
+[How does PolicyPak support (and not support) Windows 11?](/docs/policypak/misc/knowledgebase/gettingstarted/windows11.md)
 
 Then after that, if you still wish to use PolicyPak with Windows 7 and PolicyPak Cloud, you must update Windows 7 to be TLS 1.2 complaint.
 
