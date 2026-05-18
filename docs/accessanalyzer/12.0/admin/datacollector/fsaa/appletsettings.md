@@ -85,7 +85,7 @@ In the Applet Settings section, configure the following options:
       one proxy is offline, the remaining proxy should never exceed the value set in the query
       configuration for this option, even if the job is configured with 20 threads
 - Strong proxy affinity timeout [number] minutes – This option determines the time a host waits,
-  while the proxy server is busy, before it gets pushed into the job engine queue
+  while the proxy server is busy, before it enters the job engine queue
 - Applet communication timeout: [number] minutes – This option determines the length of time (in
   minutes) the Access Analyzer Console attempts to reach the proxy before giving up. Depending on
   the job configuration, the data collector behaves in one of three ways after the timeout value has
@@ -96,7 +96,7 @@ In the Applet Settings section, configure the following options:
       database files back, if the scan has finished, or display the current state of the scan in a
       **Running Job** node if it is still running.
     - If the communication timeout is reached and the **Stop scan on applet communication timeout**
-      option is checked, the remote scan is either automatically suspended or canceled. If the
+      option is checked, Access Analyzer automatically suspends or cancels the remote scan. If the
       **Restart incomplete scans after (0 always restarts) [number] days** option or the **Rescan
       unimported hosts after (0 always rescans) [number] days** option on the Applet Gathering
       Settings page are both set to zero or unchecked, the scan cancels.
@@ -131,7 +131,7 @@ In the Certificate Exchange Options section, configure the following options:
 - Port – Select the checkbox to specify the port number for certificate exchange. The Default port
   number is 8767.
 
-- Enable SPN Mapping – Provide a custom SPN per applet host when the automatically generated SPN is not valid (for example, when the applet host sits behind a proxy). See the [FSAA: SPN Mapping](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/spnmapping.md) topic for additional information.
+- Enable SPN Mapping – Provide a custom SPN per applet host when the automatically generated SPN isn't valid (for example, when the applet host sits behind a proxy). See the [FSAA: SPN Mapping](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/spnmapping.md) topic for additional information.
 
 See the [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md) topic for additional
 information.
