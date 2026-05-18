@@ -77,10 +77,10 @@ URLs to Group Policy management videos.
 
 | Product Name                                      | Video link to PolicyPak and the Group Policy Management Product                                                                                        |
 | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Microsoft AGPM (Advanced Group Policy Management) | [PolicyPak and AGPM](/docs/policypak/gettingstarted/misc/videos/changemanagementutilities/advancedgrouppolicymanagement.md)                                     |
-| Quest GPO Administrator                           | [PolicyPak and Quest's GPOADmin Tool](/docs/policypak/gettingstarted/misc/videos/changemanagementutilities/gpoadmintool.md)                                     |
-| Quest Active Administrator                        | [PolicyPak and Quest (ScriptLogic) ActiveAdministrator](/docs/policypak/gettingstarted/misc/videos/changemanagementutilities/scriptlogicactiveadministrator.md) |
-| NetIQ Group Policy Administrator                  | [PolicyPak Integrates with NetIQ GPA](/docs/policypak/gettingstarted/misc/videos/changemanagementutilities/netiq.md)                                            |
+| Microsoft AGPM (Advanced Group Policy Management) | [PolicyPak and AGPM](/docs/policypak/misc/videos/changemanagementutilities/advancedgrouppolicymanagement.md)                                     |
+| Quest GPO Administrator                           | [PolicyPak and Quest's GPOADmin Tool](/docs/policypak/misc/videos/changemanagementutilities/gpoadmintool.md)                                     |
+| Quest Active Administrator                        | [PolicyPak and Quest (ScriptLogic) ActiveAdministrator](/docs/policypak/misc/videos/changemanagementutilities/scriptlogicactiveadministrator.md) |
+| NetIQ Group Policy Administrator                  | [PolicyPak Integrates with NetIQ GPA](/docs/policypak/misc/videos/changemanagementutilities/netiq.md)                                            |
 
 ## MDM Method
 

@@ -21,7 +21,7 @@ request normally handled by **Run As Administrator** requests.
 Starting in PolicyPak CSE 3425, you can modify the Run As Administrator behavior
 depending on the goal you would like to accomplish. You can use PolicyPak ADMX
 settings to control it. Use this reference to get familiar with the PolicyPak ADMX
-first: [Troubleshooting with ADMX files](/docs/policypak/gettingstarted/misc/videos/troubleshooting/admxfiles.md)
+first: [Troubleshooting with ADMX files](/docs/policypak/misc/videos/troubleshooting/admxfiles.md)
 
 ![862_1_image-20230228200619-1_950x319](/images/policypak/leastprivilege/862_1_image-20230228200619-1_950x319.webp)
 

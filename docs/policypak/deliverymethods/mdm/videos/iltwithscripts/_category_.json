@@ -2,5 +2,8 @@
   "label": "ILT (With Scripts)",
   "position": 30,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

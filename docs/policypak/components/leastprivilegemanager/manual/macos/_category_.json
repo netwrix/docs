@@ -1,10 +1,9 @@
-{
+﻿{
   "label": "Least Privilege Manager (MacOS using PolicyPak Cloud)",
   "position": 30,
   "collapsed": true,
   "collapsible": true,
   "link": {
-    "type": "doc",
-    "id": "overview"
+    "type": "generated-index"
   }
 }

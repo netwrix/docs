@@ -33,7 +33,7 @@ have the word Computer in the name, and the computer will act fully licensed.
 
 
 Follow the
-[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md)
+[How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md)
 video to install a license file.
 
 Check the

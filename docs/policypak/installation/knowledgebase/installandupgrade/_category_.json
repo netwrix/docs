@@ -2,5 +2,8 @@
   "label": "Install And Upgrade Troubleshooting",
   "position": 60,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }
