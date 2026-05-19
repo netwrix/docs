@@ -34,7 +34,7 @@ jobs:
 
       - name: Checkout PR branch
         if: steps.bot-check.outputs.skip != 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
