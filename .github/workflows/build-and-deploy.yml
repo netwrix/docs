@@ -62,7 +62,7 @@ jobs:
           run: echo "dir=$(npm config get cache)" >> $GITHUB_OUTPUT
 
         - name: Cache Node.js dependencies
-          uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+          uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
           with:
             path: ${{ steps.npm-cache-dir.outputs.dir }}
             key: v2-${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -70,7 +70,7 @@ jobs:
               v2-${{ runner.os }}-node-
 
         - name: Cache Docusaurus build
-          uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+          uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
           id: cache-build
           with:
             path: |
@@ -80,7 +80,7 @@ jobs:
               v2-${{ runner.os }}-docusaurus-
 
         - name: Cache webpack
-          uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+          uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
           with:
             path: node_modules/.cache
             key: v2-${{ runner.os }}-webpack-${{ hashFiles('**/package-lock.json') }}
