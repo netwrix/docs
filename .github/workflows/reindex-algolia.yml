@@ -64,7 +64,7 @@ jobs:
           fi
       
       - name: Algolia crawler creation and crawl
-        uses: algolia/algoliasearch-crawler-github-actions@79db67cd7284bf4623324cd69e3cba49c7a85c4c # v1
+        uses: algolia/algoliasearch-crawler-github-actions@3ae4def15d82c60aa02b0e528b50167593cbaaf6 # v1.1.13
         id: algolia_crawler
         with:
           crawler-user-id: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
