@@ -42,7 +42,7 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 - The query must return columns named `Host` and `SPN` (you can use aliases, e.g. `SELECT ServerName AS Host, …`).
 - The `@host` parameter is available if you want to filter by scan target, but it's optional — if your query doesn't reference it, Access Analyzer will use every row returned.
 - Host matching is case-insensitive.
-- Host name format must be consistent. The format you use in the table (FQDN, short name, or IP address) must exactly match the format you use for the applet host. For example, if the applet host is configured using a fully qualified domain name (FQDN), use the FQDN in the table as well. Don't mix formats — for example, don't store a short hostname while the applet host uses an FQDN.
+- Host name format must be consistent. The format you use in the table (FQDN, short name, or IP address) must exactly match the format you use for the applet host. For example, if the applet host uses a fully qualified domain name (FQDN), use the FQDN in the table as well. Don't mix formats — for example, don't store a short hostname while the applet host uses an FQDN.
 
 ## Configure the mapping
 

@@ -1,10 +1,10 @@
 ---
-title: "FSAA: Applet Settings"
-description: "FSAA: Applet Settings"
+title: "FSAA: Applet Settings"
+description: "FSAA: Applet Settings"
 sidebar_position: 30
 ---
 
-# FSAA: Applet Settings
+# FSAA: Applet Settings
 
 The Applet Settings page is where you configure the Applet Launch Mechanism and Applet Settings. It
 is a wizard page for the categories of:
@@ -112,15 +112,15 @@ In the Certificate Exchange Options section, configure the following options:
 
 - Mechanism – Select one of the following options:
 
-    - Automatic – Certificate exchange is handled automatically by the FSAA Data Collector. This is
+    - Automatic – The FSAA Data Collector handles certificate exchange automatically. This is
       the default option.
-    - Manual – The FSSA Data Collector and applet server expect all certificates to be valid and in
+    - Manual – The FSSA Data Collector and applet server expect all certificates to be valid and in
       their respective stores beforehand. See the
       [FSAA Manual Certificate Configuration](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/certificatemanagement/manualcertificate.md)
       topic for additional information.
 
         :::note
-        If the FSAA Data Collector and the applet server are on separate domains without a
+        If the FSAA Data Collector and the applet server are on separate domains without a
         trust, you must use this option.
         :::
 
@@ -131,7 +131,7 @@ In the Certificate Exchange Options section, configure the following options:
 - Port – Select the checkbox to specify the port number for certificate exchange. The Default port
   number is 8767.
 
-- Enable SPN mapping – Provide a custom Service Principal Name (SPN) per applet host when the automatically generated SPN is not valid (for example, when the applet host sits behind a proxy). See the [FSAA: SPN Mapping](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/spnmapping.md) topic for additional information.
+- Enable SPN mapping – Provide a custom Service Principal Name (SPN) per applet host when the automatically generated SPN isn't valid (for example, when the applet host sits behind a proxy). See the [FSAA: SPN Mapping](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/spnmapping.md) topic for additional information.
 
 See the
 [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md)
