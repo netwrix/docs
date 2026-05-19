@@ -7,8 +7,8 @@ sidebar_position: 30
 # Compromised Password Check
 
 The Compromised Password Checker identifies weak or unsafe passwords, including compromised, reused, 
-or empty ones. Users can be notified via email and advised or forced to change their password. 
-The check can be scheduled to run at any time to verify existing passwords against security rules.
+or empty ones. It can notify users via email and advise or force them to change their password. 
+You can schedule the check to run at any time to verify existing passwords against security rules.
 
 :::note
 Create the **Compromised Passwords Base** file before enabling the Compromised Password
@@ -16,7 +16,7 @@ Check. See the [HIBP Updater](/docs/passwordpolicyenforcer/11.2/admin/hibpupdate
 :::
 
 
-The Compromised Password Checker is launched from the Configuration Console:
+Launch the Compromised Password Checker from the Configuration Console:
 
 Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
 or
@@ -54,7 +54,7 @@ Click the **Compromised Password Check** toggle to enable/disable the feature.
 
 Click **Save** to save your settings before running the check or setting up a schedule.
 
-Click **Run now** to run the check. Depending on your network, the check can take quite a while to
+Click **Run now** to run the check. Depending on your network, the check can take a long time to
 complete. You can schedule it for off hours instead of running it now.
 
 Here is an example of the compromised passwords report:
