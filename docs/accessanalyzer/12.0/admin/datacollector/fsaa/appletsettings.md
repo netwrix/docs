@@ -36,7 +36,7 @@ In the Applet Launch Mechanism section, choose one of three radio buttons:
       on the target or proxy machine. Therefore, if the File System Proxy service isn't running,
       the FSAA scan will fail.
     - To avoid a failed scan when Access Analyzer can't deploy an applet or the File System Proxy
-      service is not running, the Applet Gathering Settings page contains the **Fallback to local
+      service isn't running, the Applet Gathering Settings page contains the **Fallback to local
       mode if applet can’t start** option. This option allows the scan to run in local mode when
       Access Analyzer can't deploy an applet or the service isn't running.
 

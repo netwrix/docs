@@ -22,7 +22,7 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
    setspn -Q <spn>
    ```
 
-   If the SPN is registered, the command lists the account it's bound to. The message `No such SPN found` means the SPN is not yet registered in Active Directory.
+   If the SPN is registered, the command lists the account it's bound to. The message `No such SPN found` means the SPN isn't yet registered in Active Directory.
 
 2. Create a table the scan's SQL connection can read, containing at minimum the applet host name and its SPN. The table must reside in a database reachable by the scan job's SQL connection profile, and the account in that profile needs at least `SELECT` permission on the table. Example:
 
