@@ -6,8 +6,7 @@ sidebar_position: 30
 
 # FSAA: Applet Settings
 
-The Applet Settings page is where you configure the File System Access Audit (FSAA) Applet Launch Mechanism and Applet Settings. It
-is a wizard page for the categories of:
+The Applet Settings page configures how the File System Access Audit (FSAA) applet is launched and how it behaves during a scan. It is a wizard page for the categories of:
 
 - File System Access/Permission Auditing Scan
 - File System Activity Scan
@@ -130,7 +129,7 @@ In the Certificate Exchange Options section, configure the following options:
 - Port – Select the checkbox to specify the port number for certificate exchange. The Default port
   number is 8767.
 
-- Enable SPN mapping – Provide a custom Service Principal Name (SPN) per applet host when the automatically generated SPN isn't valid (for example, when the applet host sits behind a proxy). See the [FSAA: SPN Mapping](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/spnmapping.md) topic for additional information.
+- Enable SPN mapping – Provide a custom Service Principal Name (SPN) for each applet host whose automatically generated SPN isn't valid (for example, when the applet host is behind a proxy). See the [FSAA: SPN Mapping](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/spnmapping.md) topic for additional information.
 
 See the [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md) topic for additional
 information.

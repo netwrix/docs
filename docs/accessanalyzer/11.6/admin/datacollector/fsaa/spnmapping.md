@@ -8,9 +8,9 @@ sidebar_position: 31
 
 ## When to use SPN mapping
 
-Netwrix Access Analyzer authenticates to each applet host using Kerberos with an automatically generated Service Principal Name (SPN). In environments where the applet host sits behind a proxy — or where applet services run under accounts whose SPNs don't match the default pattern — this automatic SPN will not exist in Active Directory and certificate exchange with the applet will fail.
+Netwrix Access Analyzer authenticates to each applet host using Kerberos with an automatically generated Service Principal Name (SPN). In environments where the applet host sits behind a proxy — or where applet services run under accounts whose SPNs don't match the default pattern — this automatic SPN won't exist in Active Directory and certificate exchange with the applet will fail.
 
-Use custom SPN mapping to tell the scan which SPN to use when connecting to each applet host.
+Use custom SPN mapping to specify which SPN Access Analyzer should present when it connects to each applet host.
 
 ![Applet Setting Certificate Exchange Options](/images/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettingscertificateexchangeoptions.webp)
 
@@ -18,7 +18,7 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 
 1. Identify the correct SPN for each applet host that needs an override. Verify the SPN is registered in Active Directory and that the scan account can authenticate against it:
 
-   ```
+   ```cmd
    setspn -Q <spn>
    ```
 
@@ -40,7 +40,7 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 ## Query requirements
 
 - The query must return columns named `Host` and `SPN` (you can use aliases, e.g. `SELECT ServerName AS Host, …`).
-- The `@host` parameter is available if you want to filter by scan target, but it's optional — if your query doesn't reference it, Access Analyzer will use every row returned.
+- The `@host` parameter - supplied automatically by Access Analyzer as the proxy server - is available if you want to filter by applet host, but it's optional — if your query doesn't reference it, Access Analyzer will use every row returned.
 - Host matching is case-insensitive.
 - Host name format must be consistent. The format you use in the table (FQDN, short name, or IP address) must exactly match the format you use for the applet host. For example, if the applet host uses a fully qualified domain name (FQDN), use the FQDN in the table as well. Don't mix formats — for example, don't store a short hostname while the applet host uses an FQDN.
 
@@ -75,7 +75,7 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 
 6. Click **OK**, then finish the wizard to save the job.
 
-   The next time the job runs, Access Analyzer will use the SPN your query returns for each matching applet host. If an applet host has no matching row, Access Analyzer uses the default SPN (the DNS-resolved FQDN).
+   The next time the job runs, Access Analyzer uses the SPN your query returns for each matching applet host. If an applet host has no matching row, Access Analyzer uses the default SPN (the DNS-resolved FQDN).
 
 ## Troubleshooting
 

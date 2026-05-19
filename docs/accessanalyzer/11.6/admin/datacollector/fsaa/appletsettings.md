@@ -6,8 +6,7 @@ sidebar_position: 30
 
 # FSAA: Applet Settings
 
-The Applet Settings page is where you configure the Applet Launch Mechanism and Applet Settings. It
-is a wizard page for the categories of:
+The Applet Settings page configures how the File System Access Audit (FSAA) applet is launched and how it behaves during a scan. It is a wizard page for the categories of:
 
 - File System Access/Permission Auditing Scan
 - File System Activity Scan
@@ -25,7 +24,7 @@ topic for additional information.
 In the Applet Launch Mechanism section, choose one of three radio buttons:
 
 - MSTask Task Scheduler – Creates a scheduled task on the target host that runs the applet
-- Windows Service – Automatically installs the File System Access Audit (FSAA) Applet as a proxy service
+- Windows Service – Automatically installs the FSAA Applet as a proxy service
     - The Applet service runs as a Connection Profile credential unless you select the Local System
       checkbox in the Applet Settings options. Then it runs the service in Local mode.
 - Require applet to be running as a service on target (doesn't deploy or launch applet)
@@ -125,8 +124,7 @@ In the Certificate Exchange Options section, configure the following options:
         :::
 
 
-    - Provide Certificate Authority – Enables the **Select** button to upload an
-      existing certificate
+    - Enables the Select button. Use this button to upload an existing certificate.
 
 - Port – Select the checkbox to specify the port number for certificate exchange. The Default port
   number is 8767.
