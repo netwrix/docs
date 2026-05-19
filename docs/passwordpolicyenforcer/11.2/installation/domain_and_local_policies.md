@@ -27,7 +27,7 @@ Most of Password Policy Enforcer's rules and features work with both domain and 
 - The [Minimum Age](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/minimum_age_rule.md) and [Maximum Age](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/maximum_age_rule.md) rules (you can still use the Windows versions of these rules).
 - [Policy assignments](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) by groups and containers.
 
-PPE stores configuration information in Active Directory for domain password policies, and in the Windows registry for local password policies. Use the [**Connected to**](/docs/passwordpolicyenforcer/11.2/admin/configconsole.md#connected-to) box in the PPE Configuration Console's home page to choose a configuration source.
+PPE stores configuration information in Active Directory for domain password policies, and in the Windows registry for local password policies. Click the [**Connected to**](/docs/passwordpolicyenforcer/11.2/admin/configconsole.md#connect-to-a-configuration) selector in the PPE Configuration Console's home page to choose a configuration source.
 
 Changes to a domain configuration automatically replicate to all domain controllers in the domain. Changes to a local configuration apply only to the local computer. If you want to use the same local configuration for many computers, export the HKLM\SOFTWARE\ANIXIS\Password Policy Enforcer 11.0\ registry key from the configured computer, and import it into the other computers.
 
@@ -45,7 +45,7 @@ You can also use Group Policy to distribute a local configuration to many comput
 
 6. Select the computer that contains the Password Policy Enforcer local configuration you want to distribute, then click **Next**.
 7. Expand the **HKEY_LOCAL_MACHINE**, **SOFTWARE**, and **ANIXIS** items.
-8. Click the **Password Policy Enforcer 11.0** item, then select the check boxes beside each item in the bottom pane of the window.
+8. Click the **Password Policy Enforcer 11.0** item, then select the checkboxes beside each item in the bottom pane of the window.
 
    ![domain_and_local_policies_1](/images/passwordpolicyenforcer/11.2/administration/domain_and_local_policies_1.webp)
 
