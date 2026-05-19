@@ -7,13 +7,13 @@ sidebar_position: 60
 # Permissions for NetApp Auditing
 
 Before you start creating a monitoring plan to audit your NetApp file storage system, plan for the
-account that will be used for data collection – it should meet the requirements listed below.
+account you will use for data collection — it must meet the following requirements.
 
 If you want to authenticate with AD user account, you must enable it to access SVM through ONTAPI.
 See the Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section
 for additional information.
 
-The following permissions are required for the account on the target server:
+The account on the target server requires the following permissions:
 
 - The account must be a member of the NetApp BUILTIN\Administrators group.
 
@@ -33,8 +33,8 @@ The following permissions are required for the account on the target server:
     - Read permission on the audit logs folder and its content.
     - Delete permission on the audit log folder content.
 
-- To connect to NetApp Clustered Data ONTAP 8 or ONTAP 9, an account must be assigned a custom role
-  (e.g., netwrix_role) on SVM that has the following capabilities with access query levels:
+- To connect to NetApp Clustered Data ONTAP 8 or ONTAP 9, assign the account a custom role
+  (e.g., netwrix_role) on SVM with the following capabilities and access query levels:
 
   To connect using the ONTAPI
     |             API               |       Access Level     |
@@ -57,14 +57,14 @@ The following permissions are required for the account on the target server:
 See Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section for
 additional information.
 
-_Remember,_ that you can also assign the built-in vsadmin role instead of the permissions above.
+_Remember,_ that you can also assign the built-in vsadmin role instead of the permissions listed earlier.
 
 ## Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access
 
 **NOTE:** This article applies to NetApp 8.3.2 and later. You must be a **cluster administrator** to
-run the commands below.
+run the following commands.
 
-Follow the steps to create a role for enabling AD user access:
+To create a role for enabling AD user access:
 
 **Step 1 –** Create a new role (e.g., netwrix_role for ONTAPI and netwrix_rest_role for RESTAPI) on
 your SVM (e.g., svm1). For example:
@@ -88,7 +88,7 @@ security login rest-role create -role netwrix_rest_role -api /api/protocols/audi
 security login rest-role create -role netwrix_rest_role -api /api/protocols/cifs/shares -access readonly -vserver svm1
 ```
 
-**NOTE:** The commands in the first two lines above can be used on NetApp versions 9.11+. In earlier
+**NOTE:** The commands in the first two lines work on NetApp 9.11 and later. In earlier
 versions, use the following commands:
 
 ```
@@ -96,8 +96,8 @@ security login rest-role create -role netwrix_rest_role -api /api/svm/svms -acce
 security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access all -vserver svm1
 ```
 
-**Step 2 –** The capabilities must be assigned one by one. To review currently applied capabilities,
-you can use the following command:
+**Step 2 –** Assign the capabilities one by one. To review applied capabilities,
+use the following command:
 
 ONTAPI role:
 
@@ -111,12 +111,12 @@ RESTAPI role:
 security login rest-role show -vserver svm1 -role netwrix_rest_role
 ```
 
-**Step 3 –** Create a login for the account that is going to authenticate and collect data from
+**Step 3 –** Create a login for the account that will authenticate and collect data from
 NetApp. If you want to use an AD account for collecting data, enable it to access SVM through
 ONTAPI. For example:
 
-**NOTE:** In ONTAP 9.10 and higher, it is not possible to assign ONTAPI role (e.g. netwrix_role) and
-RESTAPI role (e.g. netwrix_rest_role) to one AD user. To allow a user access to both the ONTAPI and
+**NOTE:** In ONTAP 9.10 and higher, you can't assign an ONTAPI role (e.g., netwrix_role) and a
+RESTAPI role (e.g., netwrix_rest_role) to one AD user. To allow a user access to both the ONTAPI and
 RESTAPI, you can use different AD groups by assigning roles to them and including the user in these
 groups.
 
