@@ -192,6 +192,47 @@ jobs:
 
           echo "All MIME types set successfully!"
 
+      - name: Set public URL metadata on blobs
+        env:
+          APP_EXTERNAL_URL: ${{ secrets.APP_EXTERNAL_URL || vars.APP_EXTERNAL_URL }}
+        run: |
+          if [[ -z "$APP_EXTERNAL_URL" ]]; then
+            echo "APP_EXTERNAL_URL not configured, skipping public URL metadata"
+            exit 0
+          fi
+          PUBLIC_URL="${APP_EXTERNAL_URL%/}"
+
+          echo "Setting public_url metadata on blobs (base: $PUBLIC_URL)..."
+
+          ACCOUNT="${{ secrets.STORAGE_ACCOUNT_NAME }}"
+          KEY="${{ secrets.STORAGE_ACCOUNT_KEY }}"
+
+          blob_count=0
+          az storage blob list \
+            --account-name "$ACCOUNT" \
+            --account-key "$KEY" \
+            --container-name '$web' \
+            --query "[].name" -o tsv | \
+          while IFS= read -r blob; do
+            az storage blob metadata update \
+              --account-name "$ACCOUNT" \
+              --account-key "$KEY" \
+              --container-name '$web' \
+              --name "$blob" \
+              --metadata "public_url=${PUBLIC_URL}/${blob}" \
+              --output none &
+
+            blob_count=$((blob_count + 1))
+            # Run up to 20 concurrent updates, then wait for the batch
+            if (( blob_count % 20 == 0 )); then
+              wait
+              echo "  Processed $blob_count blobs..."
+            fi
+          done
+          wait
+
+          echo "Public URL metadata set on all blobs"
+
       - name: Purge CDN endpoint (if configured)
         run: |
           if [[ -n "${{ secrets.CDN_ENDPOINT_NAME }}" ]] && [[ -n "${{ secrets.CDN_PROFILE_NAME }}" ]] && [[ -n "${{ secrets.CDN_RESOURCE_GROUP }}" ]]; then
