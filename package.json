@@ -35,7 +35,7 @@
     "@docusaurus/preset-classic": "^3.10.1",
     "@docusaurus/theme-mermaid": "^3.10.1",
     "@mdx-js/react": "^3.0.0",
-    "cross-env": "^7.0.3",
+    "cross-env": "^10.1.0",
     "docusaurus-plugin-openapi-docs": "^5.0.2",
     "docusaurus-theme-openapi-docs": "^5.0.2",
     "prism-react-renderer": "^2.3.0",
