@@ -64,7 +64,7 @@ jobs:
           fi
       
       - name: Algolia crawler creation and crawl
-        uses: algolia/algoliasearch-crawler-github-actions@79db67cd7284bf4623324cd69e3cba49c7a85c4c # v1
+        uses: algolia/algoliasearch-crawler-github-actions@3ae4def15d82c60aa02b0e528b50167593cbaaf6 # v1.1.13
         id: algolia_crawler
         with:
           crawler-user-id: ${{ secrets.ALGOLIA_CRAWLER_USER_ID }}
@@ -78,7 +78,7 @@ jobs:
       - name: Get workflow run details
         if: github.event_name == 'workflow_run'
         id: get-pr
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -105,7 +105,7 @@ jobs:
           github.event_name == 'workflow_run' && 
           steps.get-pr.outputs.pr_found == 'true' &&
           steps.algolia_crawler.outcome == 'success'
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
