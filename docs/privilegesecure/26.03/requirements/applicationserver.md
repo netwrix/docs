@@ -8,10 +8,10 @@ sidebar_position: 10
 
 The requirements for the (Privilege Secure) application server are:
 
-- Windows Server 2016 R2 through Windows Server 2022
+- Windows Server 2016 R2 through Windows Server 2025
 
 :::info
-Windows Server 2022, non-domain-joined for security
+The NPS server should be non-domain-joined for additional security
 :::
 
 
