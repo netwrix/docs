@@ -15,8 +15,7 @@ for additional information.
 
 The following permissions are required for the account on the target server:
 
-- The account must be a member of the Local Administrators group.
-- The account must be a member of the BUILTIN\Administrators group.
+- The account must be a member of the NetApp BUILTIN\Administrators group.
 
 - The account requires the following **NTFS** permissions:
 
@@ -35,15 +34,25 @@ The following permissions are required for the account on the target server:
     - Delete permission on the audit log folder content.
 
 - To connect to NetApp Clustered Data ONTAP 8 or ONTAP 9, an account must be assigned a custom role
-  (e.g., fsa_role) on SVM that has the following capabilities with access query levels:
+  (e.g., netwrix_role) on SVM that has the following capabilities with access query levels:
 
-    |                                                                              |                                    |
-    | ---------------------------------------------------------------------------- | ---------------------------------- |
-    | - version - volume - vserver audit - vserver audit rotate-log - vserver cifs | readonly readonly all all readonly |
+  To connect using the ONTAPI
+    |             API               |       Access Level     |
+    | ----------------------------- | ---------------------- |
+    |   version                     |    readonly            |
+    |   volume                      |    readonly            |            
+    |   vserver audit               |    all                 |
+    |   vserver audit rotate-log    |    all                 |
+    |   vserver cifs                |    readonly            |
 
-The following permissions are required for the account on the Netwrix Auditor server:
+   To connect using the RestAPI
+    |             API               |       Access Level     |
+    | ----------------------------- | ---------------------- |
+    |  /api/svm/svms                |    read_create_modify  |
+    |  /api/storage/volumes         |    readonly            |            
+    |  /api/protocols/audit         |    read_create_modify  |
+    |  /api/protocols/cifs/shares   |    readonly            |
 
-- The account must be a member of the Local Administrators group.
 
 See Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section for
 additional information.
@@ -67,11 +76,6 @@ security login role create -role netwrix_role -cmddirname version -access readon
 security login role create -role netwrix_role -cmddirname volume -access readonly -vserver svm1
 security login role create -role netwrix_role -cmddirname "vserver audit" -access all -vserver svm1
 security login role create -role netwrix_role -cmddirname "vserver audit rotate-log" -access all -vserver svm1
-```
-
-**NOTE:** This option is required for auto audit configuration.
-
-```
 security login role create -role netwrix_role -cmddirname "vserver cifs" -access readonly -vserver svm1
 ```
 
@@ -79,8 +83,8 @@ Create RESTAPI role:
 
 ```
 security login rest-role create -role netwrix_rest_role -api /api/svm/svms -access read_create_modify -vserver svm1 
-security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access read_create_modify -vserver svm1 
 security login rest-role create -role netwrix_rest_role -api /api/storage/volumes -access readonly -vserver svm1 
+security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access read_create_modify -vserver svm1 
 security login rest-role create -role netwrix_rest_role -api /api/protocols/cifs/shares -access readonly -vserver svm1
 ```
 
@@ -130,18 +134,5 @@ security login create -vserver svm1 -user-or-group-name domain\user -application
 
 where `domain\user` is your data collecting account.
 
-_Remember,_ that to be able to add event policy for NetApp, the role you set up for working with
-ONTAPI must have the following attributes:
 
-- version readonly
-- volume readonly
-- vserver audit all (required for the product to adjust audit settings automatically)
-- vserver audit rotate-log all
-- vserver cifs readonly
 
-The role you set up for working with RESTAPI must have the following attributes:
-
-- /api/svm/svms read_create_modify
-- /api/protocols/audit read_create_modify
-- /api/storage/volumes readonly
-- /api/protocols/cifs/shares readonly
