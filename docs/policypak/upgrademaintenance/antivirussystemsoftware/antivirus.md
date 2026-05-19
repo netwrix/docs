@@ -13,7 +13,7 @@ conflict with some Antivirus programs. (McAfee, Sophos, etc.)
 
 Additionally, you can tell PolicyPak to avoid conflict with Antivirus and security
 engines if you know what processes are getting entangled. If you wish to do that, please see
-[PolicyPak: Exclude Processes via ADMX](/docs/policypak/gettingstarted/misc/videos/troubleshooting/admx.md)
+[PolicyPak: Exclude Processes via ADMX](/docs/policypak/misc/videos/troubleshooting/admx.md)
 for general how-to directions.
 
 We suggest proactively excluding the two processes below which could be blocked and prevented from

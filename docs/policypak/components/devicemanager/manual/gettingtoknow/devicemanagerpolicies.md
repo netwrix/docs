@@ -91,7 +91,7 @@ you're adding users not-joined to Active Directory, and only using an MDM servi
 :::note
 To get an overview of how to acquire SIDs with your MDM service and then use them with
 PolicyPak Device Manager, see the
-[How do I get Azure AD SIDs and use them with Item Level Targeting?](/docs/policypak/gettingstarted/misc/knowledgebase/tipstricksandfaqs/entraidsids.md)
+[How do I get Azure AD SIDs and use them with Item Level Targeting?](/docs/policypak/misc/knowledgebase/tipstricksandfaqs/entraidsids.md)
 and [Block and Allow USB and CD-ROMs with your MDM solution](/docs/policypak/components/devicemanager/videolearningcenter/methods/mdm.md) topics for
 additional information.
 :::

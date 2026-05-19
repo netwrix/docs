@@ -30,6 +30,7 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_non_write_users: '*'
           prompt: |
             Call the security screening skill:
             /identify-security-vuln-discussion
@@ -60,6 +61,7 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_non_write_users: '*'
           prompt: |
             Call the code of conduct check skill:
             /code-of-conduct-check
@@ -83,6 +85,7 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_non_write_users: '*'
           prompt: |
             Call the label assignment skill:
             /assign-label
@@ -108,6 +111,12 @@ jobs:
 
           if [ -z "$LABELS" ]; then
             echo "No labels found — skipping codeowner notification"
+            exit 0
+          fi
+
+          # Skip codeowner notification for KB PR review tracking issues
+          if echo "$LABELS" | grep -q "kb/review"; then
+            echo "Issue has kb/review label — skipping codeowner notification"
             exit 0
           fi
 

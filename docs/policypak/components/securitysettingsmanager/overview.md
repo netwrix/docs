@@ -10,10 +10,9 @@ Security Settings Manager enables administrators to harness the power of Microso
 
 ## Quick Links
 
-### 📖 Manual
+### Manual
 Complete documentation for using Security Settings Manager:
-- **Overview** - Getting started with security settings
-- **Export Wizard** - Exporting security settings for deployment
-- **Configuration** - Advanced security settings configuration
+- [**Overview**](/docs/policypak/components/securitysettingsmanager/manual/overview.md) - Getting started with security settings
+- [**Export Wizard**](/docs/policypak/components/securitysettingsmanager/manual/exportwizard.md) - Exporting security settings for deployment
 
 

@@ -2,5 +2,8 @@
   "label": "Firefox All Videos",
   "position": 140,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }
