@@ -16,7 +16,7 @@ or
 Double click the **PPE Configuration** desktop shortcut.
 
 Click the **System Audit and Support** tile on the Configuration Console dashboard. This feature is
-only available when **domain** is selected with the [Connected To](configconsole.md#connected-to)
+only available when **domain** is selected with the [Connect To a Configuration](configconsole.md#connect-to-a-configuration)
 configuration setting. System Audit and Support opens on the **Version Tracker** tab.
 
 ## Version Tracker
