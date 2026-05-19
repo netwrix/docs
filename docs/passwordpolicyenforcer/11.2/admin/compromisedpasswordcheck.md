@@ -23,7 +23,7 @@ or
 Double click the **PPE Configuration** desktop shortcut.
 
 Click the **Compromised Passwords** tile on the Configuration Console dashboard. This feature is
-only available when **domain** is selected with the [Connect To a Configuration](configconsole.md#connect-to-a-configuration)
+only available when you select **domain** with the [Connect To a Configuration](configconsole.md#connect-to-a-configuration)
 configuration setting. The Compromised Password Check is disabled by default, and the schedule is
 set to **None**.
 
@@ -36,7 +36,7 @@ Click the **Compromised Password Check** toggle to enable/disable the feature.
   Click **Browse** to navigate to the folder. Default is **C:\HIBP\DB**
 - **Domain Controller (FQDN)** specify the fully qualified domain controller name where you want to
   run the password check. Click **Browse** and select from the list.
-- **Log events in Windows Application Event Viewer** select this option if you want to log events.
+- **Log events in Windows Application Event Viewer** select this option to log events.
 - **Force users to change password** select this option to force users to change compromised
   passwords.
 - **Report password reuse by another account** select this option to generate password reuse report.

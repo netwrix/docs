@@ -16,7 +16,7 @@ or
 Double click the **PPE Configuration** desktop shortcut.
 
 Click the **System Audit and Support** tile on the Configuration Console dashboard. This feature is
-only available when **domain** is selected with the [Connect To a Configuration](configconsole.md#connect-to-a-configuration)
+only available when you select **domain** with the [Connect To a Configuration](configconsole.md#connect-to-a-configuration)
 configuration setting. System Audit and Support opens on the **Version Tracker** tab.
 
 ## Version Tracker
@@ -62,14 +62,14 @@ and open the property editor.
 - **Open Property Editor** launches the Property Editor.
 
     :::note
-    Change properties only when advised by Netwrix Support.
+    Change properties only when Netwrix Support advises you to do so.
     :::
 
 
 ### Property Editor
 
 The Property Editor lets you edit the Password Policy Enforcer configuration. Only use it
-when instructed by Netwrix Support. Access it from the Configuration Console:
+when Netwrix Support instructs you to. Access it from the Configuration Console:
 
 **Help** > **Open Property Editor**
 
