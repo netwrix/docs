@@ -131,7 +131,7 @@ In the Certificate Exchange Options section, configure the following options:
 - Port – Select the checkbox to specify the port number for certificate exchange. The Default port
   number is 8767.
 
-- Enable SPN Mapping – Provide a custom Service Principal Name (SPN) per applet host when the automatically generated SPN isn't valid (for example, when the applet host sits behind a proxy). See the [FSAA: SPN Mapping](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/spnmapping.md) topic for additional information.
+- Enable SPN mapping – Provide a custom Service Principal Name (SPN) per applet host when the automatically generated SPN is not valid (for example, when the applet host sits behind a proxy). See the [FSAA: SPN Mapping](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/spnmapping.md) topic for additional information.
 
 See the
 [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md)

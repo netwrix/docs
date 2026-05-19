@@ -16,7 +16,7 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 
 ## Before you begin
 
-1. Identify the correct SPN for each execution host that needs an override. Verify the SPN is registered in Active Directory and that the scan account can authenticate against it:
+1. Identify the correct SPN for each applet host that needs an override. Verify the SPN is registered in Active Directory and that the scan account can authenticate against it:
 
    ```
    setspn -Q <spn>
@@ -39,10 +39,10 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 
 ## Query requirements
 
-* The query must return columns named `Host` and `SPN` (you can use aliases, e.g. `SELECT ServerName AS Host, …`).
-* The `@host` parameter is available if you want to filter by scan target, but it's optional — if your query doesn't reference it, Access Analyzer will use every row returned.
-* Host matching is case-insensitive.
-* Host name format must be consistent. The format you use in the table (FQDN, short name, or IP address) must exactly match the format you use for the execution host. For example, if the execution host is configured using a fully qualified domain name (FQDN), use the FQDN in the table as well. Don't mix formats — for example, don't store a short hostname while the execution host uses an FQDN.
+- The query must return columns named `Host` and `SPN` (you can use aliases, e.g. `SELECT ServerName AS Host, …`).
+- The `@host` parameter is available if you want to filter by scan target, but it's optional — if your query doesn't reference it, Access Analyzer will use every row returned.
+- Host matching is case-insensitive.
+- Host name format must be consistent. The format you use in the table (FQDN, short name, or IP address) must exactly match the format you use for the applet host. For example, if the applet host is configured using a fully qualified domain name (FQDN), use the FQDN in the table as well. Don't mix formats — for example, don't store a short hostname while the applet host uses an FQDN.
 
 ## Configure the mapping
 
@@ -75,7 +75,7 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 
 6. Click **OK**, then finish the wizard to save the job.
 
-   The next time the job runs, Access Analyzer will use the SPN your query returns for each matching applet host. If an applet host has no matching row, Access Analyzer uses the default SPN (the DNS-resolved fully qualified domain name (FQDN)).
+   The next time the job runs, Access Analyzer will use the SPN your query returns for each matching applet host. If an applet host has no matching row, Access Analyzer uses the default SPN (the DNS-resolved FQDN).
 
 ## Troubleshooting
 
@@ -83,8 +83,8 @@ Use custom SPN mapping to tell the scan which SPN to use when connecting to each
 |---------|---------------|
 | *Query must contain Host column / SPN column* | Ensure your `SELECT` returns both columns with those names (or with aliases). |
 | *Error getting mapping query results* | Run the query manually using the job's SQL credentials to confirm it's valid and the table is accessible. |
-| Certificate exchange still fails after enabling the mapping | Verify the SPN is registered in AD (`setspn -Q <spn>`) and that the scan account can authenticate as it. |
+| Certificate exchange still fails after enabling the mapping | Verify the SPN is registered in Active Directory (`setspn -Q <spn>`) and that the scan account can authenticate as it. |
 
-## Turning it off
+## Disable SPN mapping
 
 To return to the default SPN behavior, clear the **Enable SPN mapping** checkbox and save the job. Access Analyzer retains your query so you can re-enable the feature later without re-entering it.
