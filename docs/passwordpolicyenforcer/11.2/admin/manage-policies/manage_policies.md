@@ -114,14 +114,6 @@ priorities** to save the new order.
 
 ![Set priorities](/images/passwordpolicyenforcer/11.2/administration/policypriority.webp)
 
-### Policy Selection Flowchart
-
-This flowchart shows how Password Policy Enforcer determines a policy for each user. Use the
-[Test Policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md) tool to quickly determine which policy Password Policy Enforcer is
-enforced for a particular user.
-
-![managing_policies](/images/passwordpolicyenforcer/11.2/administration/managing_policies.webp)
-
 ## Export
 
 Exports your policy configuration to **C:\Program Files\Netwrix\Password 
