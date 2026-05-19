@@ -16,7 +16,7 @@ or
 Double click the **PPE Configuration** desktop shortcut.
 
 Click the **System Audit and Support** tile on the Configuration Console dashboard. This feature is
-only available when **domain** is selected with the [Connected To](configconsole.md#connected-to)
+only available when you select **domain** with the [Connect To a Configuration](configconsole.md#connect-to-a-configuration)
 configuration setting. System Audit and Support opens on the **Version Tracker** tab.
 
 ## Version Tracker
@@ -34,11 +34,11 @@ set up the firewall to allow Password Policy Enforcer to communicate.
 ![System Audit results](/images/passwordpolicyenforcer/11.2/administration/systemauditversion.webp)
 
 You can click the export icon to download your results. The file name is
-**Audit\_\_**timestamp**\_.xlxs**, it is downloaded into the default **Downloads** folder. For large
+**Audit\_\_**timestamp**\_.xlxs**, and it downloads to the default **Downloads** folder. For large
 domains, you can apply filters or use the Search feature to make it easier to navigate your list.
 
 :::note
-**Debug logging** should only be enabled when you are actively debugging your system.
+Enable **debug logging** only when you are actively debugging your system.
 Leaving it enabled impacts Password Policy Enforcer performance and uses free disk space to create
 the logs.
 :::
@@ -58,18 +58,18 @@ and open the property editor.
     - **Export** exports the PPE settings to an xml file. Browse to the folder where you want the
       file. The default filename is **PPEExport.xml**.
     - Import imports the settings from an exported xml PPE Settings file. Browse to the location of
-      the **PPEExport.xml** file. Click **Open**. A status message is displayed when complete.
+      the **PPEExport.xml** file. Click **Open**. A status message appears when complete.
 - **Open Property Editor** launches the Property Editor.
 
     :::note
-    Properties should only be changed when advised by Netwrix Support.
+    Change properties only when Netwrix Support advises you to do so.
     :::
 
 
 ### Property Editor
 
-The Property Editor lets you edit the Password Policy Enforcer configuration. It should only
-be used instructed by Netwrix Support. It is accessed from the Configuration Console:
+The Property Editor lets you edit the Password Policy Enforcer configuration. Only use it
+when Netwrix Support instructs you to. Access it from the Configuration Console:
 
 **Help** > **Open Property Editor**
 
