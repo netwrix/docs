@@ -202,7 +202,7 @@ jobs:
 
       - name: Create GitHub issue for conflict
         if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'true'
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
             const conflictedFiles = require('fs').readFileSync('conflicts.txt', 'utf8');
