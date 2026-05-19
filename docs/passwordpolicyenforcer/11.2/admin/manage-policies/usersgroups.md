@@ -7,8 +7,8 @@ sidebar_position: 20
 # Assign Policies to Users & Groups
 
 Password Policy Enforcer uses policy assignments to decide which policy to enforce for each user.
-Domain policies can be assigned to users, groups, and containers (Organizational Units). Local
-policies can only be assigned to users. See the
+You can assign domain policies to users, groups, and containers (Organizational Units). You can
+assign local policies only to users. See the
 [Domain and Local Policies](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md) topic for additional information.
 
 **Step 1 –** Open the Configuration Console:
@@ -26,18 +26,18 @@ Double click the **PPE Configuration** desktop shortcut.
 When a domain policy is assigned to a user or group, Password Policy Enforcer stores the user or
 group SID in the configuration. The assignment remains valid even if the user or group is renamed.
 When a local policy is assigned to a user, Password Policy Enforcer stores the username in the
-configuration. The assignment is invalidated if the user is renamed.
+configuration. The assignment becomes invalid if the user is renamed.
 
 When a policy is assigned to a group, Password Policy Enforcer enforces the policy for all members
 of the group as well as any nested groups. For example, if the Helpdesk group is a member of the
 Info Tech group, then any policy assigned to the Info Tech group also applies to the members of the
-Helpdesk group. If this behavior isn't desired, then you can assign a different policy to the
+Helpdesk group. If you don't want this behavior, then you can assign a different policy to the
 Helpdesk group.
 
 When a policy is assigned to a container, Password Policy Enforcer enforces the policy for all users
 in the container as well as any child containers. For example, if the Helpdesk and Managers OUs are
 children of the Info Tech OU, then any policy assigned to the Info Tech OU also applies to the two
-child OUs. If this behavior isn't desired, then you can assign a different policy to a child OU.
+child OUs. If you don't want this behavior, then you can assign a different policy to a child OU.
 
 ![managing_policies_3](/images/passwordpolicyenforcer/11.2/administration/managing_policies_3.webp)
 
@@ -47,7 +47,7 @@ users to a policy by both OU and group at the same time.
 :::
 
 
-As you assign users and groups to the policy, they are displayed on the page.
+As you assign users and groups to the policy, they appear on the page.
 
 ![Policy assignments](/images/passwordpolicyenforcer/11.2/administration/usersandgroups2.webp)
 
@@ -87,7 +87,7 @@ enforces for a particular user.
 ## Policy Selection Flowchart
 
 This flowchart shows how Password Policy Enforcer determines a policy for each user. Use the
-[Test Policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md) tool to quickly determine which policy Password Policy Enforcer is
-enforced for a particular user.
+[Test Policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md) tool to quickly determine which policy Password Policy Enforcer
+enforces for a particular user.
 
 ![managing_policies](/images/passwordpolicyenforcer/11.2/administration/managing_policies.webp)

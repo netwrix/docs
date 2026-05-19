@@ -6,13 +6,13 @@ sidebar_position: 10
 
 # Configuration Console
 
-The Password Policy Enforcer (PPE) Configuration Console is a graphical user interface used to centrally configure and manage PPE. You can install the Configuration Console on any server or workstation.
+The Password Policy Enforcer (PPE) Configuration Console is a graphical user interface for centrally configuring and managing PPE. You can install the Configuration Console on any server or workstation.
 
 Use the **PPE Configuration** desktop shortcut or Start menu item to open the console. If these don't exist, then use the [server components installer](/docs/passwordpolicyenforcer/11.2/installation/installationserver.md) to install the Configuration Console.
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
-Configuration changes made in the console replicate to all the domain controllers in a domain when connected to a [domain configuration](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md). Active Directory (AD) replication propagates the changes at normal replication intervals. The console applies configuration changes only to the local computer's registry when connected to a [local configuration](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md).
+When the console is connected to a [domain configuration](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md), configuration changes made in the console replicate to all the domain controllers in the domain. Active Directory (AD) replication propagates the changes at normal replication intervals. The console applies configuration changes only to the local computer's registry when connected to a [local configuration](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md).
 
 ## Enable and Disable Password Policy Enforcer
 

@@ -19,8 +19,8 @@ Double click the **PPE Configuration** desktop shortcut.
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
-The Configuration Console dashboard shows **No password policies have been set up** when you are
-getting started with Password Policy Enforcer. After you **Add a policy**, the dashboard shows the
+The Configuration Console dashboard shows **No password policies have been set up** when you start
+using Password Policy Enforcer. After you **Add a policy**, the dashboard shows the
 defined policies and tool links. In this example, the Default Password Policy and CIS Password
 Policy Guide have been added.
 
@@ -93,7 +93,7 @@ most popular regulatory frameworks.
 
 ## Set Up a Policy
 
-After you add a policy, it needs to be set up or reviewed if you used a template. Click the policy
+After you add a policy, set it up — or review it if you used a template. Click the policy
 name to edit the policy. For each policy:
 
 - Set up [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md).
@@ -138,13 +138,12 @@ context menu items are also available when you are editing a policy.
 
 **Step 1 –** Click the context menu next to the policy to set as the default.
 
-**Step 2 –** Select **Make default** from the context menu. The policy is assigned to all domain
-users who don't have a specific policy assigned. **Default** is indicated in the policy list. The
-context menu changes to **Remove Default**.
+**Step 2 –** Select **Make default** from the context menu. PPE applies the policy to all domain
+users who don't have a specific policy assigned. **Default** appears next to the policy in the
+policy list. The context menu changes to **Remove Default**.
 
 :::note
-If you assign a different policy as the default you are prompted that an existing default
-is set.
+If you assign a different policy as the default, PPE warns you that a default already exists.
 :::
 
 
@@ -168,12 +167,12 @@ Deletes a policy. This context menu item is also available when you are editing 
 
 **Step 2 –** Select **Delete** from the context menu.
 
-**Step 3 –** Click **Delete**. A warning confirmation is displayed if you delete the default policy.
+**Step 3 –** Click **Delete**. A warning confirmation appears if you delete the default policy.
 
 ## Exempt Users from a Password Policy
 
-You can exempt users from having to comply with the password policy when a default policy is
-specified.
+You can exempt users from having to comply with the password policy when you specify a default
+policy.
 
 **Step 1 –** Create a new policy for these users.
 
