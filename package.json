@@ -27,7 +27,7 @@
   "dependencies": {
     "@docusaurus/babel": "^3.10.0",
     "@docusaurus/core": "^3.10.0",
-    "@docusaurus/faster": "^3.10.0",
+    "@docusaurus/faster": "^3.10.1",
     "@docusaurus/plugin-client-redirects": "^3.10.0",
     "@docusaurus/plugin-google-gtag": "^3.10.0",
     "@docusaurus/plugin-google-tag-manager": "^3.10.0",
