@@ -561,18 +561,6 @@ curl -s -k \
   "https://<epp-server>/api/logs/content-aware-protection?start_date=2025-01-01&end_date=2025-01-31"
 ```
 
-## Database tables reference
-
-| Endpoint Group | Primary Table | Joined Tables |
-|---|---|---|
-| Device Control | `olog` | `event`, `devicetype`, `clientmachine`, `clientdevice` |
-| System Alerts | `sys_alert_log` | `sys_event` |
-| Content Filtering | `cf_log`, `cf_alert` | `event` |
-| EasyLock | `olog` | `event`, `devicetype`, `clientmachine`, `clientdevice` |
-| eDiscovery | `dr_object` | — |
-| SCIM Logs | `scim_log` | — |
-| Admin Actions | `admin_action` | `sf_guard_user` |
-
 ## Rate limiting
 
 The API enforces two independent rate limits using a fixed-window counter:
