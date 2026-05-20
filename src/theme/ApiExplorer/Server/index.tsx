@@ -8,7 +8,11 @@ import FormTextInput from "@theme/ApiExplorer/FormTextInput";
 import { useTypedDispatch, useTypedSelector } from "@theme/ApiItem/hooks";
 import { OPENAPI_SERVER } from "@theme/translationIds";
 
-import { setServer, setServerVariable } from "@theme/ApiExplorer/Server/slice";
+import {
+  setServer,
+  setServerVariable,
+  setCustomServerUrl,
+} from "@theme/ApiExplorer/Server/slice";
 
 interface ServerProps {
   labelId?: string;
@@ -20,6 +24,7 @@ function toLabel(key: string) {
 
 function Server({ labelId }: ServerProps) {
   const [isEditing, setIsEditing] = useState(false);
+  const [draftUrl, setDraftUrl] = useState("");
   const value = useTypedSelector((state: any) => state.server.value);
   const options = useTypedSelector((state: any) => state.server.options);
   const dispatch = useTypedDispatch();
@@ -32,12 +37,31 @@ function Server({ labelId }: ServerProps) {
     dispatch(setServer(JSON.stringify(options[0])));
   }
 
-  if (value) {
+  // Only reset to default when there are multiple options and the selected URL
+  // no longer exists in the list. Skip for single-option case where a custom
+  // URL set by the user would otherwise be overwritten.
+  if (value && options.length > 1) {
     const urlExists = options.find((s: any) => s.url === value.url);
     if (!urlExists) {
       dispatch(setServer(JSON.stringify(options[0])));
     }
   }
+
+  const handleEditClick = () => {
+    setDraftUrl(value?.url ?? options[0]?.url ?? "");
+    setIsEditing(true);
+  };
+
+  const handleDoneClick = () => {
+    if (options.length === 1) {
+      try {
+        dispatch(setCustomServerUrl(draftUrl));
+      } catch {
+        // setCustomServerUrl requires a dev server restart to load
+      }
+    }
+    setIsEditing(false);
+  };
 
   if (!isEditing) {
     let url = "";
@@ -54,7 +78,7 @@ function Server({ labelId }: ServerProps) {
     }
     return (
       <FloatingButton
-        onClick={() => setIsEditing(true)}
+        onClick={handleEditClick}
         label={translate({ id: OPENAPI_SERVER.EDIT_BUTTON, message: "Edit" })}
       >
         <FormItem>
@@ -69,7 +93,7 @@ function Server({ labelId }: ServerProps) {
   return (
     <div className="openapi-explorer__server-container">
       <div style={{ padding: "0.5rem" }}>
-        {options.length > 1 && (
+        {options.length > 1 ? (
           <FormItem>
             <FormSelect
               ariaLabelledBy={labelId}
@@ -84,6 +108,16 @@ function Server({ labelId }: ServerProps) {
                 );
               }}
               value={value?.url}
+            />
+          </FormItem>
+        ) : (
+          <FormItem>
+            <FormTextInput
+              label="URL"
+              value={draftUrl}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setDraftUrl(e.target.value);
+              }}
             />
           </FormItem>
         )}
@@ -132,32 +166,34 @@ function Server({ labelId }: ServerProps) {
             padding: "0.25rem 0.5rem 0.25rem",
           }}
         >
-          {value?.variables ? (
-            <button
-              style={{
-                background: "none",
-                border: "none",
-                padding: 0,
-                color: "var(--ifm-color-primary)",
-                cursor: "pointer",
-                fontSize: "var(--openapi-explorer-font-size-input)",
-                textDecoration: "underline",
-              }}
-              onClick={() => {
+          <button
+            type="button"
+            style={{
+              background: "none",
+              border: "none",
+              padding: 0,
+              color: "var(--ifm-color-primary)",
+              cursor: "pointer",
+              fontSize: "var(--openapi-explorer-font-size-input)",
+              textDecoration: "underline",
+            }}
+            onClick={() => {
+              if (options.length === 1) {
+                setDraftUrl(options[0].url);
+              } else if (value?.variables) {
                 const original = options.find(
                   (s: any) => s.url === value.url
                 );
                 if (original) {
                   dispatch(setServer(JSON.stringify(original)));
                 }
-              }}
-            >
-              Reset to default
-            </button>
-          ) : (
-            <span />
-          )}
+              }
+            }}
+          >
+            Reset to default
+          </button>
           <button
+            type="button"
             style={{
               background: "var(--ifm-color-emphasis-900)",
               border: "none",
@@ -167,7 +203,7 @@ function Server({ labelId }: ServerProps) {
               padding: "0.2rem 0.5rem",
               fontSize: "var(--openapi-explorer-font-size-input)",
             }}
-            onClick={() => setIsEditing(false)}
+            onClick={handleDoneClick}
           >
             Done
           </button>
