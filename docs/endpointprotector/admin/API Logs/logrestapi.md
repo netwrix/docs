@@ -44,7 +44,7 @@ The Logs REST API provides a read-only interface to query Endpoint Protector log
 - Automation and integrations with internal tools
 
 :::info
-The Logs REST API is read-only. It supports GET (and OPTIONS for CORS preflight). Other methods return 405 Method Not Allowed.
+The Logs REST API is read-only for log data. The only write operation is `POST /login` to obtain an authentication token. All log endpoints are GET-only; other methods return 405 Method Not Allowed.
 :::
 
 ## Base URL and protocol
@@ -55,26 +55,25 @@ The Logs REST API is read-only. It supports GET (and OPTIONS for CORS preflight)
 
 ## Authentication
 
-All requests require authentication using an API key:
+Authentication uses JWT (JSON Web Tokens) with HS256 signing. Call `POST /login` at `https://<epp-server>/api/login` with your credentials to receive a token valid for 1 hour, then include it in subsequent requests:
 
-| Method | Header / Format | Example |
-|---|---|---|
-| Recommended | `X-Api-Key: <key>` | `X-Api-Key: abc123...` |
-| Alternative | `Authorization: Bearer <key>` | `Authorization: Bearer abc123...` |
-| Alternative | Query parameter | `?api_key=abc123...` |
+```
+Authorization: Bearer <token>
+```
 
 :::note
-When called from the Endpoint Protector web interface, the API can also use an active server session cookie. For external integrations, always use an API key.
+The login endpoint is at `/api/login`, separate from the log endpoints at `/api/logs/`.
 :::
 
 ## Quick start
 
-**1) List supported endpoints (discovery)**
+**1) Authenticate and obtain a token**
 
 ```bash
-curl -s \
-  -H "X-Api-Key: YOUR_API_KEY" \
-  "https://<epp-server>/api/logs/endpoints"
+TOKEN=$(curl -s -k -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"username": "admin", "password": "your_password"}' \
+  "https://<epp-server>/api/login" | python -c "import sys,json; print(json.load(sys.stdin)['data']['token'])")
 ```
 
 :::note
@@ -84,9 +83,9 @@ If your Endpoint Protector server uses a self-signed certificate, add `-k` to th
 **2) Query recent Device Control logs**
 
 ```bash
-curl -s \
-  -H "X-Api-Key: YOUR_API_KEY" \
-  "https://<epp-server>/api/logs/device-control-logs?sort_by=eventtime&sort_order=DESC&per_page=10"
+curl -s -k \
+  -H "Authorization: Bearer ${TOKEN}" \
+  "https://<epp-server>/api/logs/device-control?sort_by=timestamp&sort_order=DESC&per_page=10"
 ```
 
 ## Common query parameters
@@ -162,7 +161,7 @@ The date field used for filtering depends on the endpoint (documented in each en
   "success": false,
   "error": {
     "code": 401,
-    "message": "Missing API key. Provide via X-Api-Key header or api_key query parameter."
+    "message": "Missing authentication token. Provide via Authorization: Bearer <token> header."
   }
 }
 ```
@@ -173,9 +172,9 @@ The date field used for filtering depends on the endpoint (documented in each en
 |---|---|
 | 200 | Success |
 | 400 | Invalid parameters |
-| 401 | Missing/invalid API key |
+| 401 | Missing or invalid JWT token |
 | 404 | Resource not found |
-| 405 | Method not allowed (GET-only) |
+| 405 | Method not allowed |
 | 429 | Rate limit exceeded |
 | 500 | Internal error |
 
@@ -183,55 +182,26 @@ The date field used for filtering depends on the endpoint (documented in each en
 
 ## Logs REST API Technical Reference
 
-### Discovery
+### Authentication
 
-**GET /endpoints**
+**POST /login** — `https://<epp-server>/api/login`
 
-Returns API name/version and a list of supported routes for the current server build.
-
-### Event Logs
-
-Core device control event logs.
-
-**GET /event-logs**
-
-Date field: `eventtime`
-
-Filters (in addition to common params):
-- `machine_name` (partial match)
-- `client_name` (partial match)
-
-**GET /event-logs/(id)**
-
-Returns a single event log entry by ID.
+Authenticates with a username and password and returns a JWT token. This endpoint is at the `/api/` base, not under `/api/logs/`.
 
 ### Device Control Logs
 
 Online device tracking logs.
 
-**GET /device-control-logs**
+**GET /device-control**
 
-Date field: `eventtime`
+Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
 Filters (in addition to common params):
 - `machine_name` (partial match)
 - `client_name` (partial match)
-
-**GET /device-control-logs/(id)**
-
-Returns a single device control log entry by ID.
-
-### Alert Statuses
-
-**GET /alert-statuses/(id)**
-
-Returns a single alert status entry by ID.
+- `use_last_partition` (boolean, default: `false`)
 
 ### System Alerts
-
-**GET /system-alerts**
-
-Lists system alert definitions.
 
 **GET /system-alert-logs**
 
@@ -239,77 +209,48 @@ Lists system alert log entries. Date field: `created_at`
 
 ### Content Filtering (CAP)
 
-**GET /content-filtering-logs**
+**GET /content-aware-protection**
 
-Lists Content Aware Protection logs. Date field: `eventtime`
+Lists Content-Aware Protection logs. Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
-Common filters include:
-- `machine_name`
-- `client_name`
-
-**GET /content-filtering-logs/(id)**
-
-Returns a single log entry (includes fields excluded from list responses for performance).
+Filters (in addition to common params):
+- `machine_name` (partial match)
+- `client_name` (partial match)
+- `use_last_partition` (boolean, default: `false`)
 
 **GET /content-filtering-alerts**
 
-Lists content filtering alert definitions.
-
-**GET /content-filtering-alerts/(id)**
-
-Returns a single alert definition.
-
-### Mobile Management
-
-**GET /mobile-management-logs**
-
-Date field: `eventtime`
-
-**GET /mobile-management-alerts**
-
-Lists mobile management alert definitions.
-
-**GET /mobile-management-alert-logs**
-
-Date field: `created_at`
+Lists content filtering alert definitions. Date field: `created_at`
 
 ### EasyLock (Enforced Encryption)
 
-**GET /easylock-alert-logs**
+**GET /easy-lock**
 
-Date field: `created_at`
+Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
-**GET /easylock-send-alert-logs**
+Filters (in addition to common params):
+- `machine_name` (partial match)
+- `client_name` (partial match)
+- `use_last_partition` (boolean, default: `false`)
 
-Lists EasyLock send alert log entries.
+### eDiscovery (Data at Rest)
 
-### Data at Rest (eDiscovery)
+**GET /ediscovery**
 
-**GET /data-rest-alerts/(id)**
+Lists Data-at-Rest scan results. Date field: `timestamp` (unix timestamp, converted from user-supplied date strings)
 
-Returns a single Data-at-Rest alert entry by ID.
+Filters (in addition to common params):
+- `machine_name` (partial match)
+- `policy_name` (partial match)
+- `file_name` (partial match)
+- `status` (exact match)
+- `use_last_partition` (boolean, default: `false`)
 
 ### SCIM Provisioning Logs
 
 **GET /scim-logs**
 
 Lists SCIM API request logs.
-
-**GET /scim-logs/(id)**
-
-Returns a single SCIM log entry including request/response bodies.
-
-### Authentication Logs
-
-**GET /auth-logs**
-
-Lists authentication attempt logs. Date field: `created_at`
-
-### Export Logs
-
-**GET /export-logs/(id)**
-
-Returns a single export job log entry by ID.
 
 ### Admin Actions
 
@@ -327,8 +268,8 @@ The API enforces rate limiting to protect the server and ensure fair usage. When
 
 ## CORS
 
-CORS is enabled to support browser-based integrations:
+CORS is enabled to support browser-based integrations. Origins must be listed in the server's `cors_allowed_origins` configuration:
 
-- `Access-Control-Allow-Origin: *`
-- `Access-Control-Allow-Methods: GET, OPTIONS`
-- `Access-Control-Allow-Headers: Content-Type, X-Api-Key, Authorization`
+- `Access-Control-Allow-Origin: <configured-origin>`
+- `Access-Control-Allow-Methods: GET, POST, OPTIONS`
+- `Access-Control-Allow-Headers: Content-Type, Authorization`
