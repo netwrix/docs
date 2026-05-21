@@ -30,7 +30,7 @@ The grid displays the following columns for each computer:
 
 | Column | Description |
 |---|---|
-| **Server** | The hostname or IP address of the monitored computer. |
+| **Name** | The hostname or IP address of the monitored computer. |
 | **Item** | The source that included this computer in the plan — for example, an IP address, an IP range, or an AD container (OU). |
 | **Status** | A consolidated health indicator for the computer. See [Status Values](#status-values) below. |
 | **Last Activity Time** | The timestamp of the most recent data collection event for this computer. |
@@ -58,9 +58,9 @@ When you select a computer in the grid, the **Details panel** at the bottom of t
 
 **Filters** — Click **Filters** to open the Apply Filters dialog, where you can filter by:
 
-- **Computer status** — Show only computers with a *Healthy* status, only those requiring *Take action*, or both.
-- **Computer name** — Enter a partial or full computer name.
-- **Item name** — Select one or more items (IP ranges, OUs, or individual computers) from the dropdown list.
+- **Status** — Show only computers with a *Healthy* status, only those requiring *Take action*, or both.
+- **Name** — Enter a partial or full computer name.
+- **Items** — Select one or more items (IP ranges, OUs, or individual computers) from the dropdown list.
 
 ![Apply Filters dialog showing Computer status, Computer name, and Item name options](/images/auditor/10.9/admin/monitoringplans/windowsserver/monitored-computers-filters.webp)
 
