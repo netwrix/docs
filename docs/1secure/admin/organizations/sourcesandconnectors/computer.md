@@ -62,7 +62,7 @@ the dropdown menu or click the **Add** icon.
   then specify:
 
     - Domain Name – Specify the FQDN of the domain the container exists in.
-    - Container Name – Specify the name of the container to crawl its computers.
+    - Container Name – Specify the name of the container to crawl its computers. Use the format: `OU` or `OU/Sub OU`.
     - Detection Interval – Specify the time interval (in hours and minutes) after which the
       source group will automatically detect the computers for auditing.
     - Source Group – Specify a name for the group to which the data source will belong. Grouping
