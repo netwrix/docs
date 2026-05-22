@@ -430,7 +430,7 @@ html {
     display: none !important;
 }
 
-/* Custom controls (Typo Tolerance toggle + product filter) portaled into the search bar. */
+/* Custom controls (product filter) portaled into the search bar. */
 .search-custom-controls {
     display: flex;
     align-items: center;
