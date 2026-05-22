@@ -125,7 +125,9 @@ jobs:
 
       - name: Attach to branch
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
-        run: git checkout -B "${{ steps.pr-info.outputs.branch }}"
+        env:
+          BRANCH: ${{ steps.pr-info.outputs.branch }}
+        run: git checkout -B "$BRANCH"
 
       - name: Handle @claude request
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
