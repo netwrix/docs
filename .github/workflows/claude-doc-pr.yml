@@ -16,7 +16,7 @@ on:
 
 jobs:
   doc-review:
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false
     concurrency:
       group: doc-pr-review-${{ github.event.pull_request.number }}
       cancel-in-progress: true
@@ -143,10 +143,11 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER="${{ github.event.issue.number }}"
-          PR_DATA=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json headRefName,baseRefName,isCrossRepository)
+          PR_DATA=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json headRefName,baseRefName,isCrossRepository,headRefOid)
           BASE_BRANCH=$(echo "$PR_DATA" | jq -r '.baseRefName')
           echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
           echo "branch=$(echo "$PR_DATA" | jq -r '.headRefName')" >> "$GITHUB_OUTPUT"
+          echo "sha=$(echo "$PR_DATA" | jq -r '.headRefOid')" >> "$GITHUB_OUTPUT"
           echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
           # Check target branch using the shell variable to avoid
           # re-interpolating the output via expressions (code injection risk).
@@ -176,9 +177,13 @@ jobs:
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
-          ref: ${{ steps.pr-info.outputs.branch }}
+          ref: ${{ steps.pr-info.outputs.sha }}
           token: ${{ secrets.VALE_TOKEN }}
           fetch-depth: 0
+
+      - name: Attach to branch
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        run: git checkout -B "${{ steps.pr-info.outputs.branch }}"
 
       - name: Handle @claude request
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
