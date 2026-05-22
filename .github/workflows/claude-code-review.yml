@@ -24,7 +24,6 @@ jobs:
       contents: read
       pull-requests: write
       issues: write
-      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
@@ -38,7 +37,7 @@ jobs:
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
           COMMENT_IDS=$(gh api repos/${{ github.repository }}/issues/${PR_NUMBER}/comments --paginate \
-            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("Code Review"))) | .id] | .[]' 2>/dev/null || true)
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("## Code Review"))) | .id] | .[]' 2>/dev/null || true)
           for ID in $COMMENT_IDS; do
             gh api repos/${{ github.repository }}/issues/comments/${ID} -X DELETE 2>/dev/null || true
           done
@@ -71,7 +70,7 @@ jobs:
       github.event_name == 'issue_comment' &&
       github.event.issue.pull_request &&
       contains(github.event.comment.body, '@claude') &&
-      !startsWith(github.event.comment.user.login, 'github-actions') &&
+      github.event.comment.user.type != 'Bot' &&
       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)
     concurrency:
       group: code-followup-${{ github.event.issue.number }}
@@ -81,7 +80,6 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-      id-token: write
     steps:
       - name: Get PR info
         id: pr-info
@@ -124,6 +122,10 @@ jobs:
           ref: ${{ steps.pr-info.outputs.sha }}
           token: ${{ secrets.VALE_TOKEN }}
           fetch-depth: 0
+
+      - name: Attach to branch
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        run: git checkout -B "${{ steps.pr-info.outputs.branch }}"
 
       - name: Handle @claude request
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
