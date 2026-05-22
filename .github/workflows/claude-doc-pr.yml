@@ -11,12 +11,9 @@ on:
       - '!docs/**/SKILL.md'
       - '!docs/kb/**'
 
-  issue_comment:
-    types: [created]
-
 jobs:
   doc-review:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false
+    if: github.event.pull_request.head.repo.fork == false
     concurrency:
       group: doc-pr-review-${{ github.event.pull_request.number }}
       cancel-in-progress: true
@@ -74,7 +71,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER=${{ github.event.pull_request.number }}
-          # Delete previous review comments
           COMMENT_IDS=$(gh api repos/${{ github.repository }}/issues/${PR_NUMBER}/comments \
             --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | contains("Documentation PR Review"))) | .id] | .[]' 2>/dev/null || true)
           for ID in $COMMENT_IDS; do
@@ -120,86 +116,3 @@ jobs:
           if [ "$COMMENTS" = "0" ]; then
             echo "::warning::No review comment was posted by Claude"
           fi
-
-  doc-followup:
-    if: >-
-      github.event_name == 'issue_comment' &&
-      github.event.issue.pull_request &&
-      contains(github.event.comment.body, '@claude') &&
-      !startsWith(github.event.comment.user.login, 'github-actions')
-    concurrency:
-      group: doc-pr-followup-${{ github.event.issue.number }}
-      cancel-in-progress: false
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      issues: write
-      id-token: write
-    steps:
-      - name: Get PR info
-        id: pr-info
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          PR_NUMBER="${{ github.event.issue.number }}"
-          PR_DATA=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json headRefName,baseRefName,isCrossRepository,headRefOid)
-          BASE_BRANCH=$(echo "$PR_DATA" | jq -r '.baseRefName')
-          echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
-          echo "branch=$(echo "$PR_DATA" | jq -r '.headRefName')" >> "$GITHUB_OUTPUT"
-          echo "sha=$(echo "$PR_DATA" | jq -r '.headRefOid')" >> "$GITHUB_OUTPUT"
-          echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
-          # Check target branch using the shell variable to avoid
-          # re-interpolating the output via expressions (code injection risk).
-          if [ "$BASE_BRANCH" = "dev" ]; then
-            echo "targets_dev=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "targets_dev=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Post fork notice
-        if: steps.pr-info.outputs.is_fork == 'true' && steps.pr-info.outputs.targets_dev == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh pr comment ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} \
-            --body "This PR is from a fork. Automated fixes cannot be pushed directly. I can still review and suggest changes — apply them manually from the comments."
-
-      - name: React with eyes
-        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh api repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions \
-            --method POST -f content="eyes"
-
-      - name: Checkout repository
-        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
-        with:
-          ref: ${{ steps.pr-info.outputs.sha }}
-          token: ${{ secrets.VALE_TOKEN }}
-          fetch-depth: 0
-
-      - name: Attach to branch
-        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
-        env:
-          BRANCH: ${{ steps.pr-info.outputs.branch }}
-        run: git checkout -B "$BRANCH"
-
-      - name: Handle @claude request
-        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
-        uses: anthropics/claude-code-action@24492741e0ccfdef4c1d19da8e11e0f373d07494 # v1
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          show_full_output: true
-          prompt: |
-            /doc-pr-fix
-            PR: ${{ steps.pr-info.outputs.number }}
-            Repo: ${{ github.repository }}
-
-            Writer's request: ${{ github.event.comment.body }}
-          claude_args: '--max-turns 50 --allowedTools "Bash(gh:*),Bash(git:*),Read,Write,Edit,Glob,Grep,Skill(doc-pr-fix),Skill(doc-help)"'
