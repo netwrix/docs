@@ -39,7 +39,7 @@ represents the level of purchased Support (Standard or Premium)
 Endpoint Protector provides a one-time free, 30-day trial period, and by enabling the Free Trial
 option, you will automatically enable all modules for 50 computers. Endpoint Protector assigns endpoint licenses on a first-in, first-served basis.
 
-If one or more licensed Workstations have been permanently decommissioned, you can release and reassign their licenses. The system automatically reassigns released licenses to other active Workstations.
+If you have permanently decommissioned one or more licensed Workstations, you can release and reassign their licenses. The system automatically reassigns released licenses to other active Workstations.
 
 ## Import and Manage Licenses
 
@@ -49,7 +49,7 @@ Click **View Licenses** to manage endpoint licenses.
 
 ![Import and Manage Licenses](importmanagelicenses.webp)
 
-If one or more licensed Workstations have been permanently decommissioned, you can release and reassign their licenses. The system automatically reassigns released licenses to other active Workstations.
+If you have permanently decommissioned one or more licensed Workstations, you can release and reassign their licenses. The system automatically reassigns released licenses to other active Workstations.
 
 Use the automatic license release functionality to release licenses from decommissioned Workstations that have not been online for over a certain number of days (15, 30, 90 days, etc.).
 It isn't intended for frequent repeated reassignment of licenses among ephemeral or non-persistent virtual desktops, pooled sessions, or other temporary compute instances.
