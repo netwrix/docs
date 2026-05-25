@@ -51,6 +51,34 @@ To manage Content Aware Protection policies, you can:
 
 ![Manage the Content Aware Protection policies](policies.webp)
 
+## Policy processing order
+
+When multiple Content Aware Protection policies apply to the same transfer event, the EPP Server evaluates them using a two-level hierarchy: entity level first, then priority number within that level.
+
+**Entity level hierarchy**
+
+The entity level assigned to a policy determines its precedence over policies at other levels:
+
+| Entity level | Precedence |
+|---|---|
+| Computer / User | Highest |
+| Group | Medium |
+| Department | Lowest |
+
+A policy assigned directly to a computer or user always takes precedence over a policy assigned to the group or department that entity belongs to.
+
+**Priority within the same entity level**
+
+When two or more policies are assigned at the same entity level, the **Priority** value on the Policies list page determines the order. Priority 1 is the highest; higher numbers indicate lower priority. You can adjust the priority of a policy by clicking the left or right arrow on the Policies list page, or by double-clicking the value in the **Priority** column.
+
+**Policy action doesn't affect processing order**
+
+The policy action — Block & Report, Report Only, Block Only, or Block and Remediate — doesn't influence the processing order. Policies are always evaluated by entity level and priority number, regardless of the action configured.
+
+:::note
+You can configure the entity-level evaluation behavior in **System Configuration → System Settings**.
+:::
+
 ## Policy Information
 
 Starting with Endpoint Protector version 5.9.4, you can now create up to 300 Content Aware
