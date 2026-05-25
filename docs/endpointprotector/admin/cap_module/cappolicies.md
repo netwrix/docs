@@ -9,18 +9,21 @@ sidebar_position: 10
 Content Aware Policies are sets of rules for sensitive content detection that enforce ﬁle transfers
 management on selected entities (users, computers, groups, departments).
 
-From this section, you can create a new policy, edit or delete an existing policy, or create and
-apply a predeﬁned policy.
+From this section, you can:
+
+- Create a new policy
+- Edit or delete an existing policy
+- Create and apply a predeﬁned policy
 
 For example; Content Aware Policy can be set to only block Credit Cards AND Email Addresses. In this
-case, a ﬁle that contains a Credit Card AND an email address will be blocked, but if transferring a
-ﬁle that only contains Credit Cards, it will not be blocked.
+case, a ﬁle that contains a Credit Card AND an email address will be blocked, but a ﬁle that only
+contains Credit Cards will not be blocked.
 
 Each company can deﬁne its sensitive content data lists as Custom Content Dictionaries corresponding
 to their speciﬁc domain of activity, targeted industry, and roles.
 
-To ease this task, the Content Aware Protection module comes with a Predeﬁned Content Dictionary
-that covers the most used sets of conﬁdential terms and expressions.
+The Content Aware Protection module includes a Predeﬁned Content Dictionary that covers the most
+used sets of conﬁdential terms and expressions.
 
 For example; a policy can be set up for the Financial Department of the company to block Excel
 reports sent via E-mail or to report all transfers of ﬁles containing personally identiﬁable and
@@ -40,9 +43,8 @@ the computer disconnects from the company network.
 One or more Content Aware Policy can be enforced on the same computer, user, group, or department.
 To avoid any conﬂicts between the applied rules, a prioritization of policies is performed through a
 left-to-right ordering. The leftmost policy has the highest priority (Priority 1), while the
-rightmost policy has the lowest priority. Changing priorities for one or more policies can be
-performed by moving the policy to the right or the left with a simple click the left arrow for
-higher priority or on the right arrow for lower priority.
+rightmost policy has the lowest priority. To change the priority of one or more policies, click the
+left arrow for higher priority or the right arrow for lower priority.
 
 To manage Content Aware Protection policies, you can:
 
@@ -50,6 +52,34 @@ To manage Content Aware Protection policies, you can:
 - Edit policy priority by double-clicking on a policy listed in the Priority column
 
 ![Manage the Content Aware Protection policies](policies.webp)
+
+## Policy processing order
+
+When multiple Content Aware Protection policies apply to the same transfer event, the EPP Server evaluates them using a two-level hierarchy: entity level first, then priority number within that level.
+
+**Entity level hierarchy**
+
+The entity level assigned to a policy determines its precedence over policies at other levels:
+
+| Entity level | Precedence |
+|---|---|
+| Computer / User | Highest |
+| Group | Medium |
+| Department | Lowest |
+
+A policy assigned directly to a computer or user always takes precedence over a policy assigned to the group or department that entity belongs to.
+
+**Priority within the same entity level**
+
+When two or more policies are assigned at the same entity level, the **Priority** value on the Policies list page determines the order. Priority 1 is the highest; higher numbers indicate lower priority. You can adjust the priority of a policy by clicking the left or right arrow on the Policies list page, or by double-clicking the value in the **Priority** column.
+
+**Policy action doesn't affect processing order**
+
+The policy action — Block & Report, Report Only, Block Only, or Block and Remediate — doesn't influence the processing order. Policies are always evaluated by entity level and priority number, regardless of the action configured.
+
+:::note
+You can configure the entity-level evaluation behavior in **System Configuration → System Settings**.
+:::
 
 ## Policy Information
 
@@ -120,7 +150,7 @@ This setting doesn't apply for File Name and File Location.
 
 :::note
 The Threshold option applies only to multiple ﬁlters, including Predeﬁned Content, Custom
-Content, and Regular Expressions. As a general rule, place Block & Report policies that use the Threshold at higher priority than
+Content, and Regular Expressions. Place Block & Report policies that use the Threshold at higher priority than
 Report Only policies.
 :::
 
@@ -177,8 +207,8 @@ To distinguish OneDrive for Business from OneDrive, enable Deep Packet Inspectio
 :::warning
 If your policy uses **All Applications** and new applications are introduced in a server update,
 those applications will appear as selected but won't be enforced until the policy is re-saved.
-After upgrading, open any affected CAP policies and save them to apply monitoring to newly
-added applications.
+After upgrading, open any affected Content Aware Protection (CAP) policies and save them to apply
+monitoring to newly added applications.
 :::
 
 
