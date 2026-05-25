@@ -10,7 +10,7 @@ Getting Started
 
 First, download the Netwrix PolicyPak software from the portal at
 policypak.com. See the
-[PolicyPakPortal: How to download PolicyPak and get free training](/docs/policypak/gettingstarted/misc/videos/gettingstartedmisc/freetraining.md)
+[PolicyPakPortal: How to download PolicyPak and get free training](/docs/policypak/misc/videos/gettingstartedmisc/freetraining.md)
 topic for video details on downloading.
 
 Next, Netwrix PolicyPak enables you to deliver settings via Group

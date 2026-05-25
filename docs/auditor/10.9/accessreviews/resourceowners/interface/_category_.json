@@ -1,10 +1,15 @@
 {
+<<<<<<<< HEAD:docs/auditor/10.9/accessreviews/resourceowners/interface/_category_.json
   "label": "Resource Owners Interface",
   "position": 10,
+========
+  "label": "Authentication Provider Page",
+  "position": 40,
+>>>>>>>> origin/dev:docs/threatmanager/3.2/administration/configuration/integrations/page/_category_.json
   "collapsed": true,
   "collapsible": true,
   "link": {
     "type": "doc",
-    "id": "interface"
+    "id": "page"
   }
 }

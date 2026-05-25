@@ -1,6 +1,8 @@
 ---
 title: File Associations Manager Videos
 description: Video tutorials for File Associations Manager
+pagination_prev: null
+pagination_next: null
 ---
 
 # File Associations Manager Video Learning Center

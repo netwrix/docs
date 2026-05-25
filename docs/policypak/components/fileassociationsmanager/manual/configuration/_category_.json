@@ -2,6 +2,8 @@
   "label": "Configuration",
   "position": 3,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }
-

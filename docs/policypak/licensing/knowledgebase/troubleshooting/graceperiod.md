@@ -55,7 +55,7 @@ Renewals which covers the components you wish to cover and timeframe as per your
 implement the license file.
 
 - Here is how to implement a new
-  license: [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installall/installuniversal.md)
+  license: [How to install UNIVERSAL licenses for NEW Customers (via GPO, SCCM or MDM)](/docs/policypak/licensing/videolearningcenter/installuniversal.md)
 - Here is how to troubleshoot a new
   license: [How can I tell how a machine is licensed (by GPO, MDM, or XML file), and also know for what components it is licensed?](/docs/policypak/licensing/knowledgebase/troubleshooting/components.md)
 

@@ -2,6 +2,8 @@
 title: "Video Learning Center"
 description: "Video Learning Center"
 sidebar_position: 20
+pagination_prev: null
+pagination_next: null
 ---
 
 # Video Learning Center
@@ -104,7 +106,7 @@ See the following Video topics for Application Manager.
 
 ## Troubleshooting
 
-- [PolicyPak and "Chrome Incompatible apps"](/docs/policypak/components/applicationsettingsmanager/videos/troubleshooting/chrome.md)
+- [PolicyPak and "Chrome Incompatible apps"](/docs/policypak/components/applicationsettingsmanager/videos/chrome.md)
 
 ## Internet Explorer (all videos)
 

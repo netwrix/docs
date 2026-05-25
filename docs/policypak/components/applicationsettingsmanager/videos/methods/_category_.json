@@ -2,5 +2,8 @@
   "label": "Methods Cloud MDM SCCM PDQ",
   "position": 80,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

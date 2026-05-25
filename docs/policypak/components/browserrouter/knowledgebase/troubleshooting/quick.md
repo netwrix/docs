@@ -53,7 +53,7 @@ In DEFAULT PROGRAMS, verify that PPBRAgent is the Default Browser for HTTP and H
 :::warning
 For Non-Domain Joined machines, we (PolicyPak) cannot set this automatically. For more
 information on this
-problem, [Which PolicyPak items will not work when the computer is non-domain joined (or the computer is NEVER connected to the Internet)?](/docs/policypak/gettingstarted/misc/knowledgebase/nondomainjoined/limitations.md)
+problem, [Which PolicyPak items will not work when the computer is non-domain joined (or the computer is NEVER connected to the Internet)?](/docs/policypak/misc/knowledgebase/nondomainjoined/limitations.md)
 :::
 
 

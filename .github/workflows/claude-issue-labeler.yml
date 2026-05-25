@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           sparse-checkout: |
             .github
@@ -26,10 +26,11 @@ jobs:
 
       - name: Step 1 — Security vulnerability screening
         id: security-screen
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@24492741e0ccfdef4c1d19da8e11e0f373d07494 # v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_non_write_users: '*'
           prompt: |
             Call the security screening skill:
             /identify-security-vuln-discussion
@@ -56,10 +57,11 @@ jobs:
       - name: Step 2 — Code of conduct check
         if: steps.check-state.outputs.issue_state == 'OPEN'
         id: conduct-check
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@24492741e0ccfdef4c1d19da8e11e0f373d07494 # v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_non_write_users: '*'
           prompt: |
             Call the code of conduct check skill:
             /code-of-conduct-check
@@ -79,10 +81,11 @@ jobs:
         # Only run label assignment for issue events (not comments) and only if issue is still open
         if: steps.check-state.outputs.issue_state == 'OPEN' && github.event_name == 'issues'
         id: assign-label
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@24492741e0ccfdef4c1d19da8e11e0f373d07494 # v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          allowed_non_write_users: '*'
           prompt: |
             Call the label assignment skill:
             /assign-label
@@ -108,6 +111,12 @@ jobs:
 
           if [ -z "$LABELS" ]; then
             echo "No labels found — skipping codeowner notification"
+            exit 0
+          fi
+
+          # Skip codeowner notification for KB PR review tracking issues
+          if echo "$LABELS" | grep -q "kb/review"; then
+            echo "Issue has kb/review label — skipping codeowner notification"
             exit 0
           fi
 
@@ -167,7 +176,7 @@ jobs:
 
       - name: Checkout repository
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           token: ${{ secrets.ISSUE_TOKEN }}
           fetch-depth: 0
@@ -181,7 +190,7 @@ jobs:
       - name: Run content-fix skill
         id: content-fix
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@24492741e0ccfdef4c1d19da8e11e0f373d07494 # v1
         env:
           REPO: ${{ github.repository }}
         with:
@@ -297,7 +306,7 @@ jobs:
 
       - name: Checkout repository
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           token: ${{ secrets.ISSUE_TOKEN }}
           fetch-depth: 0
@@ -311,7 +320,7 @@ jobs:
       - name: Run content-fix skill
         id: content-fix-followup
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@24492741e0ccfdef4c1d19da8e11e0f373d07494 # v1
         env:
           REPO: ${{ github.repository }}
           COMMENT_BODY: ${{ github.event.comment.body }}

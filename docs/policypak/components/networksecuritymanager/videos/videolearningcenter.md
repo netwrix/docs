@@ -2,6 +2,8 @@
 title: "Video Learning Center"
 description: "Video Learning Center"
 sidebar_position: 10
+pagination_prev: null
+pagination_next: null
 ---
 
 # Video Learning Center

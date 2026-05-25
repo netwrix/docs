@@ -1,0 +1,9 @@
+{
+  "label": "Tips, Tricks, and FAQs",
+  "position": 23,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
+}

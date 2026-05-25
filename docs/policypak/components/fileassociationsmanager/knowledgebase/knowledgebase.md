@@ -1,6 +1,8 @@
 ---
 title: File Associations Manager Technical Notes
 description: Technical documentation for File Associations Manager
+pagination_prev: null
+pagination_next: null
 ---
 
 # File Associations Manager Technical Notes

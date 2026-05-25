@@ -34,7 +34,7 @@ So, when MIGHT you need both PolicyPak Cloud \*AND\* PolicyPak Group
 Policy Compliance reporter?
 
 When you acquire a PolicyPak Cloud license, you can get directives from PolicyPak Cloud -or- Group Policy (or both.)
-[[Can I use both PolicyPakOn Premise mode and PolicyPak Cloud simultaneously? Do they clash?](/docs/policypak/gettingstarted/misc/knowledgebase/tipstricksandfaqs/onpremisecloud.md)]
+[[Can I use both PolicyPakOn Premise mode and PolicyPak Cloud simultaneously? Do they clash?](/docs/policypak/misc/knowledgebase/tipstricksandfaqs/onpremisecloud.md)]
 
 As such, you might want to deliver some settings via PolicyPak Cloud and other
 settings using Group

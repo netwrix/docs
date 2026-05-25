@@ -8,6 +8,8 @@ sidebar_position: 30
 Want to take your Netwrix PolicyPak Cloud log files and get them
 into your own SEIM or similar system? Here's how to do it.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3l2dRpZQ8vw" title="PolicyPak Cloud Logs and Automatically Pushing via Email" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Hi, this is Jeremy Moskowitz. In this video I'm going to show you how you can push the PolicyPak
 Cloud Immutable Log Data to your own system for further processing. The idea is here you are in the
 PolicyPak Cloud console. Here are the company details. If you head over to Customer Log, you'll see

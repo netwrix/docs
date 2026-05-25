@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0  # Full history for merge
           token: ${{ secrets.SYNC_PAT }}
@@ -202,7 +202,7 @@ jobs:
 
       - name: Create GitHub issue for conflict
         if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
             const conflictedFiles = require('fs').readFileSync('conflicts.txt', 'utf8');
