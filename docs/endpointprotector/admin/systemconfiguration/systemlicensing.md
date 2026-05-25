@@ -28,7 +28,7 @@ Endpoint Protector Licensing is based on two main aspects:
 
 Your Endpoint Protector representative will provide a licensing file based on the selected Modules and Workstations.
 
-The Endpoint Protector **Server ID** uniquely identiﬁes each server and is linked to the license
+The Endpoint Protector **Server ID** uniquely identiﬁes each server and links to the license
 ﬁle. Provide it to the Endpoint Protector representative before purchasing licenses.
 
 The **License End Date** displays the validity of the licenses in the system, and **Support**
