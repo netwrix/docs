@@ -23,9 +23,10 @@ with the revised licensing model, categorizing all features as standard and acce
 Endpoint Protector Licensing is based on two main aspects:
 
 - Modules – all modules are licensed separately (Content Aware Protection, eDiscovery, etc.) and require the Device Control module
-- Workstations - A Workstation is defined as any single physical or virtual computing environment (including but not limited to laptops, desktops, or virtual desktop instances) on which the Endpoint Protector client software is installed or through which the software is accessed. Each Workstation must be uniquely identifiable (e.g., via hostname, serial number, UUID, or a similar mechanism) and is considered a distinct endpoint for licensing purposes, regardless of its persistence or lifecycle.
+- Workstations -  A Workstation is any device (physical or virtual) on which the Software is installed, maintained, or accessed or that otherwise engages with the Software. Workstation includes without limitation desktop computers, laptops, virtual desktop instances, mobile phones, tablets, servers, kiosks, or endpoints.
+- Counting with 30-Day Rolling Period - Each uniquely identifiable Workstation (e.g., via hostname, serial number, UUID, or a similar mechanism) is a single Workstation. The Customer must have an aggregate quantity of licenses for the maximum number of Workstation that interacts with the Software within each 30-day period of the Subscription Term (each a "License Window"). Any Workstation active during a License Window will count towards the total for that License Window.
 
-Based on the selected Modules and Workstations, your Endpoint Protector representative will provide a licensing file.
+Your Endpoint Protector representative will provide a licensing file based on the selected Modules and Workstations.
 
 The Endpoint Protector **Server ID** uniquely identiﬁes each server and is linked to the license
 ﬁle. Provide it to the Endpoint Protector representative before purchasing licenses.

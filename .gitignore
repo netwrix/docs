@@ -25,6 +25,8 @@ docs/*/*/kb/**
 docs/changetracker/8.1/api/reference/*
 !docs/changetracker/8.1/api/reference/_category_.json
 !docs/changetracker/8.1/api/reference/index.md
+# Legacy path — kept so leftover files from before the integration→api move are ignored
+docs/changetracker/8.1/integration/api/reference/*
 
 # KB copy script lockfile
 .kb-copy.lock

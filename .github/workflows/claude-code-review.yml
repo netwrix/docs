@@ -1,0 +1,63 @@
+name: Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - dev
+    paths-ignore:
+      - 'docs/**/*.md'
+      - 'docs/kb/**'
+      - 'static/**'
+
+jobs:
+  code-review:
+    if: github.event.pull_request.head.repo.fork == false
+    concurrency:
+      group: code-review-${{ github.event.pull_request.number }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+
+      - name: Delete previous bot review comments
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          COMMENT_IDS=$(gh api repos/${{ github.repository }}/issues/${PR_NUMBER}/comments --paginate \
+            --jq '[.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("## Code Review"))) | .id] | .[]' 2>/dev/null || true)
+          for ID in $COMMENT_IDS; do
+            gh api repos/${{ github.repository }}/issues/comments/${ID} -X DELETE 2>/dev/null || true
+          done
+
+      - name: Run code review
+        uses: anthropics/claude-code-action@24492741e0ccfdef4c1d19da8e11e0f373d07494 # v1
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          show_full_output: true
+          prompt: |
+            Review this PR for correctness issues. Focus on:
+            - Bugs, broken logic, or unintended side effects
+            - Security issues (injection, exposed secrets, unsafe eval, etc.)
+            - Docusaurus config changes that could break the build or routing (products.js, docusaurus.config.js, sidebars)
+            - Script changes that could break the KB copy pipeline or build process
+            - GitHub Actions workflow changes — correct triggers, permissions, and secret usage
+
+            Do NOT review documentation content or style — a separate workflow handles that.
+
+            Use `gh pr diff ${{ github.event.pull_request.number }}` to read the diff.
+            Post your findings as a single PR comment starting with "## Code Review".
+            If there are no issues, say so briefly.
+          claude_args: '--allowedTools "Bash(gh:*),Read,Glob,Grep"'
