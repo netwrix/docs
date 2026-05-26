@@ -9,9 +9,9 @@ description: "Learn how to access the Netwrix Customer Portal and Netwrix Univer
 import { Company } from '@site/src/training/products';
 
 
-The <Company /> Customer Portal on the <Company /> website provides you with access to detailed information about your <Company /> products. This will enable you to maximize the value of your investment and have the best user experience possible. 
+The <Company /> Customer Portal on the <Company /> website provides you with access to detailed information about your <Company /> products. With it, you can maximize the value of your investment and have the best user experience possible. 
 
-## What Can I Do in the <Company /> Customer Portal
+## What You Can Do in the <Company /> Customer Portal
 
 The <Company /> Customer Portal offers the following:
 
@@ -23,12 +23,12 @@ The <Company /> Customer Portal offers the following:
     * Request a renewal
     * Directly access to online documentation
 * My Training – Click Start Now to access to your personalized training dashboard in <Company /> University.
-    * You will already be enrolled in learning paths for the products you own.
-    * We recommend taking the 0001 <Company /> Customer Resources course first to understand how to use the available resources.
+    * Your dashboard already includes learning paths for the products you own.
+    * <Company /> recommends taking the 0001 <Company /> Customer Resources course first to understand how to use the available resources.
 * My Tickets – Opens the <Company /> Support Portal for creating and tracking a ticket.
 * My Profile
     * Change your password
     * Manage Email Preferences
     * Add a profile picture
 
-With the Customer Portal, you can manage your journey with us and leverage all the benefits offered by <Company />.
+With the Customer Portal, you can manage your journey with <Company /> and use all the available benefits.
