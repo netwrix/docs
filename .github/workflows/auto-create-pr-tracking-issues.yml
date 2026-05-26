@@ -20,6 +20,9 @@ jobs:
       github.event.requested_reviewer.login == 'hilram7'
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    concurrency:
+      group: pr-${{ github.event.pull_request.number }}-admin
+      cancel-in-progress: false
     steps:
       - name: Create tracking issue, link PR, add to project board
         uses: actions/github-script@v7
@@ -61,13 +64,20 @@ jobs:
             });
 
             // 3. Add issue to project board
-            const { addProjectV2ItemById: { item } } = await github.graphql(`
-              mutation($projectId: ID!, $contentId: ID!) {
-                addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
-                  item { id }
+            let item;
+            try {
+              ({ addProjectV2ItemById: { item } } = await github.graphql(`
+                mutation($projectId: ID!, $contentId: ID!) {
+                  addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
+                    item { id }
+                  }
                 }
-              }
-            `, { projectId: PROJECT_ID, contentId: issue.node_id });
+              `, { projectId: PROJECT_ID, contentId: issue.node_id }));
+            } catch (err) {
+              console.error(`✗ Failed to add issue #${issue.number} to project board: ${err.message}`);
+              console.error(`  Issue created and PR body updated — manually add to board: https://github.com/orgs/netwrix/projects/2`);
+              return;
+            }
 
             // Helper: set a single-select project field
             const setField = async (fieldId, optionId, label) => {
@@ -107,6 +117,9 @@ jobs:
       github.event.requested_team.slug == 'kb-docs'
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    concurrency:
+      group: pr-${{ github.event.pull_request.number }}-kb
+      cancel-in-progress: false
     steps:
       - name: Create tracking issue, link PR, add to project board
         uses: actions/github-script@v7
@@ -149,13 +162,20 @@ jobs:
             });
 
             // 3. Add issue to project board
-            const { addProjectV2ItemById: { item } } = await github.graphql(`
-              mutation($projectId: ID!, $contentId: ID!) {
-                addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
-                  item { id }
+            let item;
+            try {
+              ({ addProjectV2ItemById: { item } } = await github.graphql(`
+                mutation($projectId: ID!, $contentId: ID!) {
+                  addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
+                    item { id }
+                  }
                 }
-              }
-            `, { projectId: PROJECT_ID, contentId: issue.node_id });
+              `, { projectId: PROJECT_ID, contentId: issue.node_id }));
+            } catch (err) {
+              console.error(`✗ Failed to add issue #${issue.number} to project board: ${err.message}`);
+              console.error(`  Issue created and PR body updated — manually add to board: https://github.com/orgs/netwrix/projects/2`);
+              return;
+            }
 
             // Helper: set a single-select project field
             const setField = async (fieldId, optionId, label) => {
