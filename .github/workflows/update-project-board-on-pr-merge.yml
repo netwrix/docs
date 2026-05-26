@@ -1,0 +1,104 @@
+name: Update project board on PR merge
+
+on:
+  pull_request:
+    types: [closed]
+
+# Explicitly lock GITHUB_TOKEN to no permissions — all API calls use KB_OPS_PAT.
+permissions: {}
+
+jobs:
+  update-on-merge:
+    name: Set Status = Done and Pipeline Stage on linked tracking issue
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: pr-${{ github.event.pull_request.number }}-merge
+      cancel-in-progress: false
+    steps:
+      - name: Parse closing keywords and update project board
+        uses: actions/github-script@v7
+        with:
+          # KB_OPS_PAT requires repo + project scopes. SSO-authorized for netwrix and netwrix-corp orgs.
+          github-token: ${{ secrets.KB_OPS_PAT }}
+          script: |
+            const body = context.payload.pull_request.body || '';
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            // Project board: https://github.com/orgs/netwrix/projects/2
+            // Field/option IDs are stable in practice; if the project is recreated, update these.
+            const PROJECT_ID = 'PVT_kwDOB435Ds4A7py9';
+
+            // Match: Closes/Fixes/Resolves (all tenses) [owner/repo]#N
+            // Handles: Closes #N, Closes owner/repo#N
+            const pattern = /\b(?:close[sd]?|fix(?:es|ed)?|resolve[sd]?):?\s+([a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+)?#(\d+)/gi;
+
+            const seen = new Set();
+            const matches = [];
+            let match;
+            while ((match = pattern.exec(body)) !== null) {
+              const repoPath = match[1] || `${owner}/${repo}`;
+              const [iOwner, iRepo] = repoPath.split('/');
+              // Only process netwrix/netwrix-corp org issues — prevents stray cross-org references
+              // from landing on the project board
+              if (iOwner !== 'netwrix' && iOwner !== 'netwrix-corp') continue;
+              const key = `${iOwner}/${iRepo}#${parseInt(match[2], 10)}`;
+              if (seen.has(key)) continue;
+              seen.add(key);
+              matches.push({ owner: iOwner, repo: iRepo, issueNumber: parseInt(match[2], 10) });
+            }
+
+            if (matches.length === 0) {
+              console.log('No closing keywords found in PR body — nothing to do.');
+              return;
+            }
+
+            for (const { owner: iOwner, repo: iRepo, issueNumber } of matches) {
+              console.log(`Processing ${iOwner}/${iRepo}#${issueNumber}`);
+              try {
+                // Get issue node ID and labels
+                const { data: issue } = await github.rest.issues.get({
+                  owner: iOwner, repo: iRepo, issue_number: issueNumber
+                });
+
+                // addProjectV2ItemById is idempotent — returns existing item ID if already on board
+                const { addProjectV2ItemById: { item } } = await github.graphql(`
+                  mutation($projectId: ID!, $contentId: ID!) {
+                    addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
+                      item { id }
+                    }
+                  }
+                `, { projectId: PROJECT_ID, contentId: issue.node_id });
+
+                // Helper: set a single-select project field
+                const setField = async (fieldId, optionId, label) => {
+                  try {
+                    await github.graphql(`
+                      mutation($p: ID!, $i: ID!, $f: ID!, $o: String!) {
+                        updateProjectV2ItemFieldValue(input: {
+                          projectId: $p, itemId: $i, fieldId: $f,
+                          value: { singleSelectOptionId: $o }
+                        }) { projectV2Item { id } }
+                      }
+                    `, { p: PROJECT_ID, i: item.id, f: fieldId, o: optionId });
+                    console.log(`✓ ${label}`);
+                  } catch (err) {
+                    console.error(`✗ Failed to set ${label}: ${err.message}`);
+                  }
+                };
+
+                // Set Status = Done for all issue types
+                await setField('PVTSSF_lADOB435Ds4A7py9zgv4xF8', '98236657', 'Status = Done');
+
+                // Publishing Pipeline items are labeled kb/review — also set Pipeline Stage
+                const isPublishingPipeline = issue.labels.some(l => l.name === 'kb/review');
+                if (isPublishingPipeline) {
+                  await setField('PVTSSF_lADOB435Ds4A7py9zg_TaXY', '6aba5f78', 'Pipeline Stage = Merged/Published');
+                }
+
+                console.log(`✓ Updated project board for ${iOwner}/${iRepo}#${issueNumber}`);
+              } catch (err) {
+                console.error(`✗ Failed for ${iOwner}/${iRepo}#${issueNumber}: ${err.message}`);
+              }
+            }
