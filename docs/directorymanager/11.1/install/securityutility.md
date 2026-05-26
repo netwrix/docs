@@ -6,11 +6,11 @@ sidebar_position: 40
 
 # Security Utility
 
-The NDM11-ADV-2025-014 utility is used to:
+Use the NDM11-ADV-2025-014 utility to:
 
 - Restrict the IP addresses that can access Directory Manager services.
 - Generate and encrypt the password for the GroupID user account, which is a hard-coded account
-  hidden from end-users. This account is used to authenticate from Security Service for the
+  hidden from end-users. Security Service uses this account to authenticate for the
   Replication service, Email service, and Scheduler service.
 
 **Downloads**
@@ -27,18 +27,18 @@ The NDM11-ADV-2025-014 utility adds an IIS IP security rule to prevent remote ac
 Directory Manager services. To achieve this, the utility:
 
 1. Defines 127.0.0.1,::1, and the host's primary public address as an IIS IP security rule.
-2. Detects whether the primary public address is obtained from DHCP and alerts that dynamically
-   assigned addresses may present operational challenges. A DHCP Reservation or statically
-   configured IP should be used for the Directory Manager server.
-3. Allows you to add additional addresses to support remote Directory Manager servers.
-4. The following services/virtual directories have the IP rule applied:
+2. Detects whether DHCP provides the primary public address and alerts that dynamically
+   assigned addresses may present operational challenges. Use a DHCP Reservation or statically
+   configured IP for the Directory Manager server.
+3. Supports adding additional addresses for remote Directory Manager servers.
+4. The IP rule applies to the following services/virtual directories:
 
     - GroupIDDataService
     - GroupIDEmailService
     - GroupIDReplicationService
     - GroupIDSchedulerService
 
-Follow the steps to limit access to the Directory Manager services to specific IP addresses.
+To restrict Directory Manager service access to specific IP addresses, complete these steps:
 
 Step 1 – On the Directory Manager server, run the “NDM11-ADV-2025-014-Utility.exe” utility from the
 command line as an administrator. This will present the following options:
@@ -63,39 +63,39 @@ addresses you specify here to include in the IP security rules.
 :::
 
 
-Step 3 – After successful configuration, the following message is displayed.
+Step 3 – After successful configuration, the utility displays the following message.
 
 ![Success message](/images/directorymanager/11.1/install/success.webp)
 
-In the event of a Directory Manager multi-instance deployment, execute the above steps on each
+If you have a Directory Manager multi-instance deployment, execute the previous steps on each
 Directory Manager server in your environment.
 
 :::note
-In case you deploy a new Directory Manager server/instance, add the IP address of the new
+If you deploy a new Directory Manager server/instance, add the IP address of the new
 server to the primary server's IP security rule allowed list. Run the NDM11-ADV-2025-014 utility on
-the primary server to add the additional IP. This should be done before the new server connects to
+the primary server to add the additional IP. Do this before the new server connects to
 the Data service on the primary server (this connection is required while configuring the new
-server). Once the new server is configured, you can remove the IP from the allowed list of the
+server). After you configure the new server, you can remove the IP from the allowed list of the
 primary server.
 :::
 
 
 ## Generate a Secure Password
 
-Follow the steps to generate and encrypt the password for the GroupID user account.
+To generate and encrypt the password for the GroupID user account, complete these steps:
 
 Step 1 – On the Directory Manager server, run the “NDM11-ADV-2025-014-Utility.exe” utility from the
 command line as an administrator.
 
-Step 2 – Next, run the `NDM11-ADV-2025-014-Utility.exe GenerateSecurePassword` cmdlet.
+Step 2 – Run the `NDM11-ADV-2025-014-Utility.exe GenerateSecurePassword` cmdlet.
 
-Step 3 – After that, provide the database configurations in the following cmdlet according to your
+Step 3 – Provide the database configurations in the following cmdlet according to your
 environment:
 
 `NDM11-ADV-2025-014-Utility.exe GenerateSecurePassword -s "SQLSERVER" -i -u "sa" -d "NetwrixGroupIDDatabase"`
 
-Step 4 – You will be asked to provide the database connection password. On doing so, the password
-for the GroupID user account will be updated with the generated password.
+Step 4 – The utility prompts you to provide the database connection password. After you provide it, the utility
+updates the password for the GroupID user account with the generated password.
 
 ![Password generation and update message](/images/directorymanager/11.1/install/passwordgeneration.webp)
 
@@ -105,18 +105,18 @@ If you have multiple Directory Manager servers or distributed portals, you must 
 GroupIDPasswordTransfer utility to securely transport the password to distributed Directory Manager
 systems. When done, you must restart IIS on those systems.
 
-Follow the steps to export the generated password from the primary Directory Manager server to a
-secondary server/instance.
+To export the generated password from the primary Directory Manager server to a
+secondary server/instance, complete these steps:
 
 Step 1 – On the Directory Manager server, run the “directorymanagerPasswordTransferUtility.exe” utility from
 the command line as an administrator.
 
-Step 2 – Next, run the `directorymanagerPasswordTransferUtility.exe export -o "directory\filename"` cmdlet to
+Step 2 – Run the `directorymanagerPasswordTransferUtility.exe export -o "directory\filename"` cmdlet to
 export the encrypted password from the primary server.
 
 Step 3 – Copy the encrypted password displayed on cmd in response to this command.
 
-Step 4 – Then copy the file created at the directory path provided in the cmdlet and place it on
+Step 4 – Copy the file created at the directory path provided in the cmdlet and place it on
 another instance of Directory Manager.
 
 Step 5 – Run the following cmdlet on the instance where you placed the file to import the encrypted
