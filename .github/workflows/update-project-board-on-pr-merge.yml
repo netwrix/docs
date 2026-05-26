@@ -30,15 +30,22 @@ jobs:
             // Field/option IDs are stable in practice; if the project is recreated, update these.
             const PROJECT_ID = 'PVT_kwDOB435Ds4A7py9';
 
-            // Match: Closes/Fixes/Resolves [owner/repo]#N
+            // Match: Closes/Fixes/Resolves (all tenses) [owner/repo]#N
             // Handles: Closes #N, Closes owner/repo#N
-            const pattern = /(?:closes?|fixes?|resolves?)\s+([a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+)?#(\d+)/gi;
+            const pattern = /(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s+([a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+)?#(\d+)/gi;
 
+            const seen = new Set();
             const matches = [];
             let match;
             while ((match = pattern.exec(body)) !== null) {
               const repoPath = match[1] || `${owner}/${repo}`;
               const [iOwner, iRepo] = repoPath.split('/');
+              // Only process netwrix/netwrix-corp org issues — prevents stray cross-org references
+              // from landing on the project board
+              if (iOwner !== 'netwrix' && iOwner !== 'netwrix-corp') continue;
+              const key = `${iOwner}/${iRepo}#${parseInt(match[2], 10)}`;
+              if (seen.has(key)) continue;
+              seen.add(key);
               matches.push({ owner: iOwner, repo: iRepo, issueNumber: parseInt(match[2], 10) });
             }
 
