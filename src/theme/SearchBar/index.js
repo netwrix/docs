@@ -159,8 +159,8 @@ function useTransformItems(props) {
     return transformItems;
 }
 
-function useResultsFooterComponent({closeModal, selectedProductsRef}) {
-    // Create footer component ONCE - read selectedProducts from ref at render time
+function useResultsFooterComponent({closeModal, selectedProductsRef, selectedVersionsRef}) {
+    // Create footer component ONCE - read filters from refs at render time
     // This prevents resultsFooterComponent identity from changing when filters change
     return useMemo(
         () =>
@@ -169,8 +169,9 @@ function useResultsFooterComponent({closeModal, selectedProductsRef}) {
                     state={state}
                     onClose={closeModal}
                     selectedProductsRef={selectedProductsRef}
+                    selectedVersionsRef={selectedVersionsRef}
                 />,
-        [closeModal, selectedProductsRef],
+        [closeModal, selectedProductsRef, selectedVersionsRef],
     );
 }
 
@@ -178,17 +179,21 @@ function Hit({hit, children}) {
     return <Link to={hit.url}>{children}</Link>;
 }
 
-function ResultsFooter({state, onClose, selectedProductsRef}) {
+function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef}) {
     const createSearchLink = useSearchLinkCreator();
     const baseLink = createSearchLink(state.query);
 
-    // Read selected products from ref at render time
+    // Read filters from refs at render time
     const selectedProducts = selectedProductsRef?.current || [];
+    const selectedVersions = selectedVersionsRef?.current || [];
 
-    // Add product filters as URL parameters
+    // Add product and version filters as URL parameters
     const params = new URLSearchParams();
     if (selectedProducts.length > 0) {
         params.set('products', selectedProducts.join(','));
+    }
+    if (selectedVersions.length > 0) {
+        params.set('versions', selectedVersions.join(','));
     }
 
     const linkWithFilters = params.toString()
@@ -263,6 +268,20 @@ const PRODUCT_OPTIONS = [
 });
 
 // Helper to get versions for selected products
+function getVersionsForProducts(selectedProducts) {
+    if (!selectedProducts || selectedProducts.length === 0 || selectedProducts.includes('__all__')) {
+        return [];
+    }
+    const versionsSet = new Set();
+    selectedProducts.forEach(productName => {
+        const product = PRODUCTS.find(p => p.name === productName);
+        if (product && product.versions) {
+            product.versions.forEach(v => versionsSet.add(v.label));
+        }
+    });
+    return Array.from(versionsSet).sort();
+}
+
 // Multi-select dropdown component with checkboxes
 function MultiSelectDropdown({label, options, selectedValues, onChange, placeholder}) {
     const [isOpen, setIsOpen] = useState(false);
@@ -382,7 +401,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
     );
 }
 
-function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, ...props}) {
+function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, selectedVersionsRef, ...props}) {
     const {i18n: {currentLocale}} = useDocusaurusContext();
     // Use ref for navigator to prevent identity change when filters change
     const navigator = useNavigator({externalUrlRegex, selectedProductsRef});
@@ -434,6 +453,7 @@ function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, ...props
     const resultsFooterComponent = useResultsFooterComponent({
         closeModal,
         selectedProductsRef,
+        selectedVersionsRef,
     });
 
     useDocSearchKeyboardEvents({
@@ -504,12 +524,28 @@ export default function SearchBar() {
         }
     });
 
+    // Multi-select state for versions
+    const [selectedVersions, setSelectedVersions] = useState(() => {
+        if (typeof window === 'undefined') return [];
+        const saved = sessionStorage.getItem('docs_version_filter');
+        try {
+            return saved ? JSON.parse(saved) : [];
+        } catch {
+            return [];
+        }
+    });
+
     // Ref to access selectedProducts without causing re-renders
     // This is used by transformSearchClient to inject filters at request time
     const selectedProductsRef = useRef(selectedProducts);
     useEffect(() => {
         selectedProductsRef.current = selectedProducts;
     }, [selectedProducts]);
+
+    const selectedVersionsRef = useRef(selectedVersions);
+    useEffect(() => {
+        selectedVersionsRef.current = selectedVersions;
+    }, [selectedVersions]);
 
     // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
     useEffect(() => {
@@ -545,8 +581,15 @@ export default function SearchBar() {
             filters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
         }
 
+        // TODO: Version filtering disabled - 'version' facet not yet configured in Algolia
+        // To enable: add 'version' to attributesForFaceting in Algolia dashboard, re-index, then uncomment:
+        // const realVersions = selectedVersions.filter(v => v !== '__all__');
+        // if (realVersions.length > 0) {
+        //     filters.push(realVersions.map(v => `version:${v}`)); // Array within array = OR logic
+        // }
+
         return filters;
-    }, [selectedProducts]);
+    }, [selectedProducts, selectedVersions]);
 
     // Keep track of the search input value
     useEffect(() => {
@@ -601,6 +644,23 @@ export default function SearchBar() {
         refreshSearch(); // Re-run current query with updated filters
     }, [refreshSearch]);
 
+    const onChangeVersions = useCallback((newVersions) => {
+        selectedVersionsRef.current = newVersions;
+        setSelectedVersions(newVersions);
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(newVersions));
+        }
+        // Note: refreshSearch() not called here — version filtering is disabled until Algolia is updated
+    }, []);
+
+    const availableVersions = useMemo(() => {
+        const versions = getVersionsForProducts(selectedProducts);
+        return [
+            {label: 'All versions', value: '__all__'},
+            ...versions.map(v => ({label: v, value: v})),
+        ];
+    }, [selectedProducts]);
+
     // This is where we will portal the filters into the modal DOM.
     const [modalHeaderEl, setModalHeaderEl] = useState(null);
     // Holds the closeModal function passed up from the inner DocSearch component.
@@ -627,13 +687,14 @@ export default function SearchBar() {
                 {...siteConfig.themeConfig.algolia}
                 contextualSearch={contextualSearch}
                 selectedProductsRef={selectedProductsRef}
+                selectedVersionsRef={selectedVersionsRef}
                 onModalOpen={onModalOpen}
             />
 
             {modalHeaderEl &&
                 createPortal(
                     <>
-                        {/* Custom controls: product filter */}
+                        {/* Custom controls: product + version filters */}
                         <div className="search-custom-controls">
                             <MultiSelectDropdown
                                 label="Products"
@@ -641,6 +702,14 @@ export default function SearchBar() {
                                 selectedValues={selectedProducts}
                                 onChange={onChangeProducts}
                                 placeholder="All products"
+                            />
+                            {/* Version filter UI — non-functional until 'version' facet is configured in Algolia */}
+                            <MultiSelectDropdown
+                                label="Versions"
+                                options={availableVersions}
+                                selectedValues={selectedVersions}
+                                onChange={onChangeVersions}
+                                placeholder="All versions"
                             />
                         </div>
                         {/* Our own close button — replaces the DocSearch-Close button
