@@ -370,6 +370,17 @@ When the daemon starts, it checks for the presence of all expected files and rep
 | **Install files** | The full set of files expected to be present on the endpoint after a successful EPP Client installation. |
 | **Installation file missing** | One or more expected files could not be found during the startup check. This condition triggers a Client Integrity Failure event. |
 
+## Tamper mode
+
+Tamper mode provides increased self-protection for the EPP Client. When tamper mode is disabled, the EPP Client relies on standard self-protection mechanisms: watchdog, service auto-restart, and Client Integrity checks. When tamper mode is enabled, the EPP Client also blocks unauthorized termination and modification.
+
+With tamper mode enabled:
+
+- EPP Client installation folders on Windows and macOS have restricted access.
+- The EPP Client prevents unauthorized actors from unloading processes on Windows and daemons on macOS.
+
+To enable tamper mode, see [Client Mode](./dc_module/globalsettings.md#client-mode).
+
 ## Policy Received Events
 
 ### How Policy Synchronization Works

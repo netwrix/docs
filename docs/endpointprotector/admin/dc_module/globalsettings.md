@@ -52,12 +52,15 @@ the Client’s behavior for each specific entity (Global, Groups, and Computers)
 > With this enhanced language selection feature, Endpoint Protector provides a more accommodating
 > experience for users, making notifications and alerts more accessible and user-centric.
 
-- Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized
-  termination and modification
+- Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized termination and modification. When enabled, EPP Client installation folders on Windows and macOS have limited access. Processes on Windows and daemons on macOS are protected against unloading by unauthorized actors. 
 
-:::warning
-A machine or service reboot is mandatory after enabling this setting to work correctly.
-:::
+  :::important
+  Tamper Mode restricts access to EPP resources. Don't enable it during pilot deployments or when troubleshooting use cases.
+  :::
+
+  :::warning
+  A machine or service reboot is recommended after enabling this setting to work correctly.
+  :::
 
 - Policy Refresh Interval (sec) – enter the time interval at which the Client checks with the Server
   and updates with the latest settings, rights, and policies.
