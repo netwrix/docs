@@ -28,7 +28,7 @@ products:
 
 If one or more licensed Workstations have been permanently decommissioned, you can release and reassign their licenses. Endpoint Protector automatically reassigns released licenses to other active Workstations.
 
-The Automatic License Release feature releases licenses from decommissioned Workstations that have not been online for a defined number of days (15, 30, 90 days, etc.). This feature is not intended for frequent repeated reassignment of licenses among ephemeral or non-persistent virtual desktops, pooled sessions, or other temporary compute instances.
+The Automatic License Release feature releases licenses from decommissioned Workstations that have not been online for a defined number of days (e.g., 30 to 360 days). This feature is not intended for frequent repeated reassignment of licenses among ephemeral or non-persistent virtual desktops, pooled sessions, or other temporary compute instances.
 
 If you operate a non-persistent VDI (Virtual Desktop Infrastructure) environment, contact Netwrix to ensure your deployment and licensing model align with product use requirements.
 
