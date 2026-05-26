@@ -32,7 +32,7 @@ jobs:
 
             // Match: Closes/Fixes/Resolves [owner/repo]#N
             // Handles: Closes #N, Closes owner/repo#N
-            const pattern = /(?:closes?|fixes?|resolves?)\s+(?:https?:\/\/github\.com\/)?([a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+)?#(\d+)/gi;
+            const pattern = /(?:closes?|fixes?|resolves?)\s+([a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+)?#(\d+)/gi;
 
             const matches = [];
             let match;
