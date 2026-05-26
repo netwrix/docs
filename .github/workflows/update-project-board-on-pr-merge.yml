@@ -32,7 +32,7 @@ jobs:
 
             // Match: Closes/Fixes/Resolves (all tenses) [owner/repo]#N
             // Handles: Closes #N, Closes owner/repo#N
-            const pattern = /(?:close[sd]?|fix(?:es|ed)?|resolve[sd]?):?\s+([a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+)?#(\d+)/gi;
+            const pattern = /\b(?:close[sd]?|fix(?:es|ed)?|resolve[sd]?):?\s+([a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+)?#(\d+)/gi;
 
             const seen = new Set();
             const matches = [];
