@@ -52,7 +52,7 @@ the Client’s behavior for each specific entity (Global, Groups, and Computers)
 > With this enhanced language selection feature, Endpoint Protector provides a more accommodating
 > experience for users, making notifications and alerts more accessible and user-centric.
 
-- Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized termination and modification. When enabled, EPP Client installation folders on Windows and macOS have limited access. Processes on Windows and daemons on macOS are protected against unloading by unauthorized actors. 
+- Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized termination and modification. When enabled, EPP Client installation folders on Windows and macOS have limited access. The EPP Client prevents unauthorized actors from unloading processes on Windows and daemons on macOS. 
 
   :::note
   Requires EPP Client version 2605 hotfix 1 or later (2605.x.2.x) for the full feature set.
@@ -279,7 +279,7 @@ For more Deep Packet Inspection (DPI) description refer to dedicated chapter: [D
 
 In this section, you can manage the following settings:
 
-- Deep Packet Inspection - if enabled, network and browser traffic can be inspected for content. This
+- Deep Packet Inspection - if enabled, both network and browser traffic can be inspected for content. This
   option is required for both the Deep Packet Inspection Allowlists and URL and Domain Denylist
 
 - Use Stealthy DPI Driver – enable this driver to improve interoperability with independent software
@@ -421,7 +421,7 @@ In this section, you can manage the following settings:
   if available. Applicable only to EPP Clients for Linux with version 2.4.5.x or higher.
 
 
-![If enabled, network and browser traffic can be inspected for content](dpiconfiguration.png)
+![If enabled, both network and browser traffic can be inspected for content](dpiconfiguration.png)
 
 ### Intercept VPN Traffic
 
