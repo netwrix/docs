@@ -8,14 +8,13 @@ sidebar_position: 40
 
 This section provides a complete overview of your licensing status. Use it to manage licenses
 for Modules, such as Content Aware Protection and eDiscovery, as well as Endpoints, the computers
-you protect. You can import licenses, view details, and handle free trials, ensuring efficient and
-flexible license management.
+you protect. You can import licenses, view details, and handle free trials.
 
 ![Licensing](licensingpage.png)
 
 :::note
-As of Endpoint Protector Version 5.9.0.0, Endpoint Protector introduced a new subscription-based licensing system. This change removes the licensing restrictions on Premium features, granting
-unrestricted access to features like Contextual Detection for all customers. This adjustment aligns
+As of Endpoint Protector Version 5.9.0.0, Endpoint Protector introduced a new subscription-based licensing system. This change removes the licensing restrictions on Premium features, granting all
+customers unrestricted access to features like Contextual Detection. This adjustment aligns
 with the revised licensing model, categorizing all features as standard and accessible to all users.
 :::
 
