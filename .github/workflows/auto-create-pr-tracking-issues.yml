@@ -4,6 +4,9 @@ on:
   pull_request:
     types: [review_requested]
 
+# Explicitly lock GITHUB_TOKEN to no permissions — all API calls use KB_OPS_PAT.
+permissions: {}
+
 jobs:
   # -------------------------------------------------------
   # Job 1: Non-KB PR — hilram7 directly requested as reviewer
@@ -16,8 +19,7 @@ jobs:
       github.event.requested_reviewer != null &&
       github.event.requested_reviewer.login == 'hilram7'
     runs-on: ubuntu-latest
-    # Note: permissions block omitted — all API calls use KB_OPS_PAT, not GITHUB_TOKEN.
-    # GITHUB_TOKEN permissions have no effect here.
+    timeout-minutes: 5
     steps:
       - name: Create tracking issue, link PR, add to project board
         uses: actions/github-script@v7
@@ -104,8 +106,7 @@ jobs:
       github.event.requested_team != null &&
       github.event.requested_team.slug == 'kb-docs'
     runs-on: ubuntu-latest
-    # Note: permissions block omitted — all API calls use KB_OPS_PAT, not GITHUB_TOKEN.
-    # GITHUB_TOKEN permissions have no effect here.
+    timeout-minutes: 5
     steps:
       - name: Create tracking issue, link PR, add to project board
         uses: actions/github-script@v7
