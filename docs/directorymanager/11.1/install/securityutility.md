@@ -15,7 +15,7 @@ The NDM11-ADV-2025-014 utility is used to:
 
 **Downloads**
 
-- Click [here](https://releases.netwrix.com/products/directorymanager/11.1/NDM11-ADV-2025-014-Utility.zip) to
+- Click [here](https://releases.netwrix.com/products/groupid/11.1/NDM11-ADV-2025-014-Utility.zip) to
   download NDM11-ADV-2025-014-Utility.
 - Click
   [here](https://releases.netwrix.com/products/groupid/11.1/GroupIDPasswordTransferUtility.zip) to
