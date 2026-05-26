@@ -34,6 +34,21 @@ function stripHtmlTagsToText(input) {
     return input.replace(/[<>]/g, '');
 }
 
+// Helper to get versions for selected products
+function getVersionsForProducts(selectedProducts) {
+    if (!selectedProducts || selectedProducts.length === 0 || selectedProducts.includes('__all__')) {
+        return [];
+    }
+    const versionsSet = new Set();
+    selectedProducts.forEach(productName => {
+        const product = PRODUCTS.find(p => p.name === productName);
+        if (product && product.versions) {
+            product.versions.forEach(v => versionsSet.add(v.label));
+        }
+    });
+    return Array.from(versionsSet).sort();
+}
+
 // Generate product options from PRODUCTS config
 const PRODUCT_OPTIONS = [
     {label: 'All products', value: '__all__'},
@@ -231,6 +246,7 @@ function SearchPageContent() {
     const urlParams = new URLSearchParams(location.search);
     const queryFromUrl = urlParams.get('q') || '';
     const productsFromUrl = urlParams.get('products')?.split(',').filter(Boolean) || [];
+    const versionsFromUrl = urlParams.get('versions')?.split(',').filter(Boolean) || [];
     const resultsPerPageFromUrl = parseInt(urlParams.get('resultsPerPage'), 10) || 25;
     const pageFromUrl = parseInt(urlParams.get('page'), 10) || 1;
 
@@ -246,7 +262,16 @@ function SearchPageContent() {
             return [];
         }
     });
+    // Initialize from URL if present, otherwise from sessionStorage
+    const [selectedVersions, setSelectedVersions] = useState(() => {
+        if (versionsFromUrl.length > 0) return versionsFromUrl;
+        if (typeof window === 'undefined') return [];
+        const saved = sessionStorage.getItem('docs_version_filter');
+        try { return saved ? JSON.parse(saved) : []; } catch { return []; }
+    });
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
+
+    const availableVersions = useMemo(() => getVersionsForProducts(selectedProducts), [selectedProducts]);
 
     // Track if we're restoring from URL (e.g., browser back button)
     const restoringFromUrl = useRef(false);
@@ -266,6 +291,13 @@ function SearchPageContent() {
             }));
         }
     }, [selectedProducts]);
+
+    // Sync selectedVersions to sessionStorage
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(selectedVersions));
+        }
+    }, [selectedVersions]);
 
     // Listen for filter changes from SearchBar modal (same-tab sync)
     useEffect(() => {
@@ -292,11 +324,13 @@ function SearchPageContent() {
         const urlParams = new URLSearchParams(location.search);
         const newQuery = urlParams.get('q') || '';
         const newProducts = urlParams.get('products')?.split(',').filter(Boolean) || [];
+        const newVersions = urlParams.get('versions')?.split(',').filter(Boolean) || [];
         const newResultsPerPage = parseInt(urlParams.get('resultsPerPage'), 10) || 25;
         const newPage = parseInt(urlParams.get('page'), 10) || 1;
 
         setSearchQuery(newQuery);
         setSelectedProducts(newProducts);
+        setSelectedVersions(newVersions);
         setResultsPerPage(newResultsPerPage);
 
         // Store target page for restoration
@@ -466,6 +500,13 @@ function SearchPageContent() {
                 facetFilters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
             }
 
+            // TODO: Version filtering disabled - 'version' facet not yet configured in Algolia
+            // To enable: add 'version' to attributesForFaceting in Algolia dashboard, re-index, then uncomment:
+            // const realVersions = selectedVersions.filter(v => v !== '__all__');
+            // if (realVersions.length > 0) {
+            //     facetFilters.push(realVersions.map(v => `version:${v}`)); // Array within array = OR logic
+            // }
+
             // Always fetch page 0 — all results come back at once for client-side pagination
             algoliaHelper
                 .setQuery(searchQuery)
@@ -474,7 +515,7 @@ function SearchPageContent() {
                 .setPage(0)
                 .search();
         },
-        [searchQuery, algoliaHelper, currentLocale, selectedProducts],
+        [searchQuery, algoliaHelper, currentLocale, selectedProducts, selectedVersions],
     );
 
     // Navigate to a page client-side using already-fetched sorted results
@@ -497,7 +538,7 @@ function SearchPageContent() {
     );
 
     // Update URL when filters or pagination change
-    const prevFiltersRef = useRef({searchQuery: '', selectedProducts: [], resultsPerPage: 25, page: 1});
+    const prevFiltersRef = useRef({searchQuery: '', selectedProducts: [], selectedVersions: [], resultsPerPage: 25, page: 1});
 
     useEffect(() => {
         // Only update URL if values actually changed
@@ -507,6 +548,7 @@ function SearchPageContent() {
         if (
             prev.searchQuery !== searchQuery ||
             JSON.stringify(prev.selectedProducts) !== JSON.stringify(selectedProducts) ||
+            JSON.stringify(prev.selectedVersions) !== JSON.stringify(selectedVersions) ||
             prev.resultsPerPage !== resultsPerPage ||
             prev.page !== currentPage
         ) {
@@ -514,6 +556,8 @@ function SearchPageContent() {
             if (searchQuery) params.set('q', searchQuery);
             const urlProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
             if (urlProducts.length > 0) params.set('products', urlProducts.join(','));
+            const urlVersions = selectedVersions.filter(v => v !== '__all__');
+            if (urlVersions.length > 0) params.set('versions', urlVersions.join(','));
             if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
             if (currentPage > 1) params.set('page', String(currentPage));
 
@@ -521,10 +565,10 @@ function SearchPageContent() {
             isInternalNavigation.current = true;
             history.replace({search: params.toString()});
 
-            prevFiltersRef.current = {searchQuery, selectedProducts, resultsPerPage, page: currentPage};
+            prevFiltersRef.current = {searchQuery, selectedProducts, selectedVersions, resultsPerPage, page: currentPage};
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery, selectedProducts, resultsPerPage, searchResultState.lastPage]);
+    }, [searchQuery, selectedProducts, selectedVersions, resultsPerPage, searchResultState.lastPage]);
 
     // IntersectionObserver removed - using pagination buttons instead
 
@@ -538,7 +582,7 @@ function SearchPageContent() {
             }, 300);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery, selectedProducts, resultsPerPage]);
+    }, [searchQuery, selectedProducts, selectedVersions, resultsPerPage]);
 
     // Scroll to top when page changes (except initial load)
     const isInitialLoad = useRef(true);
@@ -765,6 +809,18 @@ function SearchPageContent() {
                             selectedValues={selectedProducts}
                             onChange={setSelectedProducts}
                         />
+                        {/* Version filter UI — non-functional until 'version' facet is configured in Algolia */}
+                        {availableVersions.length > 0 && (
+                            <MultiSelect
+                                label="Versions"
+                                options={[
+                                    {label: 'All versions', value: '__all__'},
+                                    ...availableVersions.map(v => ({label: v, value: v})),
+                                ]}
+                                selectedValues={selectedVersions}
+                                onChange={setSelectedVersions}
+                            />
+                        )}
                     </div>{/* closes filters div */}
 
                     {/* Results area */}
