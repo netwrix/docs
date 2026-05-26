@@ -87,10 +87,10 @@ the Client’s behavior for each specific entity (Global, Groups, and Computers)
   files are permanently deleted.
 - Log Size (MB) – enter the largest size of all logs stored on the Client. If the value is reached,
   new logs will overwrite the oldest ones. These circumstances occur only when the Client and Server
-  don't communicate for a large period of time.
+  don't communicate for an extended period.
 - Shadow Size (MB) – enter the largest size of all file shadows on the Client. If the value is
   reached, new shadows will overwrite the oldest ones. These circumstances occur only when the
-  Client and Server don't communicate for a large period of time.
+  Client and Server don't communicate for an extended period.
 - Min File Size for Shadowing (KB) – enter the smallest size of a file at which a File Shadow is
   created.
 - Max File Size for Shadowing (KB) – enter the largest size of a file at which a File Shadow is
@@ -558,7 +558,7 @@ Shadowing on all supported Removable Devices:
 - E-mail Body
 
 :::warning
-File Shadowing can't be used without File Tracing.
+File Shadowing requires File Tracing.
 :::
 
 
