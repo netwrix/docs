@@ -381,6 +381,10 @@ With tamper mode enabled:
 
 To enable tamper mode, see [Client Mode](./dc_module/globalsettings.md#client-mode).
 
+:::note
+Requires EPP Client version 2605 hotfix 1 or later (2605.x.2.x) for the full feature set.
+:::
+
 ## Policy Received Events
 
 ### How Policy Synchronization Works

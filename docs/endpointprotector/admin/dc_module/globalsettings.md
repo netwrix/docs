@@ -54,11 +54,15 @@ the Client’s behavior for each specific entity (Global, Groups, and Computers)
 
 - Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized termination and modification. When enabled, EPP Client installation folders on Windows and macOS have limited access. Processes on Windows and daemons on macOS are protected against unloading by unauthorized actors. 
 
+  :::note
+  Requires EPP Client version 2605 hotfix 1 or later (2605.x.2.x) for the full feature set.
+  :::
+
   :::important
   Tamper Mode restricts access to EPP resources. Don't enable it during pilot deployments or when troubleshooting use cases.
   :::
 
-  :::warning
+  :::note
   A machine or service reboot is recommended after enabling this setting to work correctly.
   :::
 
