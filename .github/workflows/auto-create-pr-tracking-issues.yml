@@ -36,11 +36,12 @@ jobs:
             // Field/option IDs are stable in practice; if the project is recreated, update these.
             const PROJECT_ID = 'PVT_kwDOB435Ds4A7py9';
 
-            // Idempotency: skip if tracking issue already exists for this PR.
-            // Note: search indexing has ~10–60s latency — this check is best-effort if the
-            // event fires twice in quick succession (e.g., reviewer removed and immediately re-added).
+            // Idempotency: skip if an open tracking issue already exists for this PR.
+            // state:open ensures a closed/deleted tracking issue doesn't block re-creation.
+            // Note: search indexing has ~10–60s latency — concurrency group reduces but does not
+            // fully eliminate the race if the event fires twice in very quick succession.
             const existing = await github.rest.search.issuesAndPullRequests({
-              q: `repo:${owner}/${repo} is:issue "Admin: PR review" "PR #${pr.number}" in:title`
+              q: `repo:${owner}/${repo} is:issue state:open "Admin: PR review" "PR #${pr.number}" in:title`
             });
             if (existing.data.total_count > 0) {
               console.log('Tracking issue already exists, skipping.');
@@ -48,20 +49,28 @@ jobs:
             }
 
             // 1. Create tracking issue
+            const prTitle = pr.title.length > 220 ? pr.title.slice(0, 220) + '…' : pr.title;
             const { data: issue } = await github.rest.issues.create({
               owner, repo,
-              title: `Admin: PR review — ${pr.title} (PR #${pr.number})`,
+              title: `Admin: PR review — ${prTitle} (PR #${pr.number})`,
               body: `Admin review of ${owner}/${repo} PR #${pr.number} (author: @${pr.user.login}).\n\nPR: ${pr.html_url}`,
               assignees: ['hilram7']
             });
 
-            // 2. Fetch current PR body (avoid clobbering edits made after the event fired)
-            const { data: freshPr } = await github.rest.pulls.get({ owner, repo, pull_number: pr.number });
-            await github.rest.pulls.update({
-              owner, repo,
-              pull_number: pr.number,
-              body: (freshPr.body || '') + `\n\nCloses #${issue.number}`
-            });
+            // 2. Fetch current PR body and append closing keyword
+            // Fetch avoids clobbering edits made after the event fired.
+            let freshPr;
+            try {
+              ({ data: freshPr } = await github.rest.pulls.get({ owner, repo, pull_number: pr.number }));
+              await github.rest.pulls.update({
+                owner, repo,
+                pull_number: pr.number,
+                body: (freshPr.body || '') + `\n\nCloses #${issue.number}`
+              });
+            } catch (err) {
+              console.error(`✗ Failed to update PR body: ${err.message}`);
+              console.error(`  Issue #${issue.number} created but not linked — manually append: Closes #${issue.number}`);
+            }
 
             // 3. Add issue to project board
             let item;
@@ -133,11 +142,12 @@ jobs:
             // Field/option IDs are stable in practice; if the project is recreated, update these.
             const PROJECT_ID = 'PVT_kwDOB435Ds4A7py9';
 
-            // Idempotency: skip if tracking issue already exists for this PR.
-            // Note: search indexing has ~10–60s latency — this check is best-effort if the
-            // event fires twice in quick succession (e.g., reviewer removed and immediately re-added).
+            // Idempotency: skip if an open tracking issue already exists for this PR.
+            // state:open ensures a closed/deleted tracking issue doesn't block re-creation.
+            // Note: search indexing has ~10–60s latency — concurrency group reduces but does not
+            // fully eliminate the race if the event fires twice in very quick succession.
             const existing = await github.rest.search.issuesAndPullRequests({
-              q: `repo:${owner}/${repo} is:issue "KB review:" "PR #${pr.number}" in:title`
+              q: `repo:${owner}/${repo} is:issue state:open "KB review:" "PR #${pr.number}" in:title`
             });
             if (existing.data.total_count > 0) {
               console.log('Tracking issue already exists, skipping.');
@@ -145,21 +155,29 @@ jobs:
             }
 
             // 1. Create tracking issue
+            const prTitle = pr.title.length > 220 ? pr.title.slice(0, 220) + '…' : pr.title;
             const { data: issue } = await github.rest.issues.create({
               owner, repo,
-              title: `KB review: ${pr.title} (PR #${pr.number})`,
+              title: `KB review: ${prTitle} (PR #${pr.number})`,
               body: `KB article PR review — ${owner}/${repo} PR #${pr.number} (author: @${pr.user.login}).\n\nPR: ${pr.html_url}`,
               assignees: ['hilram7'],
               labels: ['kb/review']
             });
 
-            // 2. Fetch current PR body (avoid clobbering edits made after the event fired)
-            const { data: freshPr } = await github.rest.pulls.get({ owner, repo, pull_number: pr.number });
-            await github.rest.pulls.update({
-              owner, repo,
-              pull_number: pr.number,
-              body: (freshPr.body || '') + `\n\nCloses #${issue.number}`
-            });
+            // 2. Fetch current PR body and append closing keyword
+            // Fetch avoids clobbering edits made after the event fired.
+            let freshPr;
+            try {
+              ({ data: freshPr } = await github.rest.pulls.get({ owner, repo, pull_number: pr.number }));
+              await github.rest.pulls.update({
+                owner, repo,
+                pull_number: pr.number,
+                body: (freshPr.body || '') + `\n\nCloses #${issue.number}`
+              });
+            } catch (err) {
+              console.error(`✗ Failed to update PR body: ${err.message}`);
+              console.error(`  Issue #${issue.number} created but not linked — manually append: Closes #${issue.number}`);
+            }
 
             // 3. Add issue to project board
             let item;
