@@ -44,7 +44,7 @@ The installer also verifies write access for `/var`, `/tmp`, and `/etc`.
 | **Architecture** | x86_64 (amd64) |
 | **Kernel** | 5.15 or later |
 
-**Compatible distributions (engineer-validated):** Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are compatible with the installer. Ubuntu is Debian-based, so Debian stable releases are also supported.
+**Compatible distributions (engineer-validated):** Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are compatible with the installer. Ubuntu is Debian-based, so Debian stable releases are also compatible.
 
 **Not supported:** AIX and other non-Linux operating systems aren't compatible. The installer requires a 64-bit Linux distribution with kernel capabilities including cgroups v1/v2, Linux namespaces, and overlay filesystem support.
 
@@ -97,7 +97,7 @@ Use hugepages for better memory performance. Add the following to your VM XML co
 | 32 GB or more | Optional |
 | Less than 32 GB | 2–4 GB recommended |
 
-If no swap is configured on a system with less than 32 GB of RAM, the installer issues a warning. To create a swap file:
+If a system with less than 32 GB of RAM has no swap, the installer issues a warning. To create a swap file:
 
 ```bash
 sudo fallocate -l 4G /swapfile
