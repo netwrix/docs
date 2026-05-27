@@ -96,17 +96,18 @@ For organized deployments, use device groups to control which agents receive upd
 
 1. Navigate to the group you created or selected.
 
-2. Click the **Agent Software Updates** tab.
+2. Click the **Agent Updates** tab.
 
 3. Click **+ Define the update schedule**.
 
 4. Configure the deployment:
    - **Agent version:** Select the uploaded agent version from the dropdown.
    - **Schedule:** Choose when the update should deploy:
-     - **Immediate:** Updates deploy as soon as agents check in.
-     - **Scheduled:** Specify a date and time for deployment.
-
-5. Click **Update** to save the schedule.
+     - **Update Start** Specify when the change window should start i.e. from what time agents can start to update.
+     - **Update End** Specify when the change window should end i.e. from what time agents can no longer update.
+   - **Upgrade to .NET Core** Select this option if you are upgrading your agent(s) from Gen7 to Gen7NetCore. If this option is not selected for that type of upgrade, the upgrade will fail.
+    
+5. Click **Save** to save the schedule.
 
 ### Step 4: Assign Agents to the Update Group
 
@@ -118,7 +119,7 @@ For organized deployments, use device groups to control which agents receive upd
 
 4. In the **Groups** field, add the update group you configured (e.g., "Agent Update - Pilot").
 
-5. Click **Update** to save the changes.
+5. Click **Save** to save the changes.
 
 6. The assigned agents will receive the update according to the defined schedule.
 
@@ -126,13 +127,15 @@ For organized deployments, use device groups to control which agents receive upd
 
 ### Step 5: Verify Update Deployment
 
-1. Navigate to **Settings > Agents & Devices**.
+1. Navigate to **Settings > Groups**.
 
-2. Check the **Devices** tab to monitor update progress.
+2. Navigate to the group you created. Review the **Devices** tab to monitor update progress.
 
-3. Verify that updated agents show the new version number.
+3. Verify that agents in the group show the new version number under the **Agent Version** column.
 
-4. Check that agents remain online and are communicating with the Hub.
+4. Check that agents remain online and are communicating with the Hub. 
+
+> **NOTE:** Agents temporarily disconnecting during the upgrade is expected, as the agent service will need to restart as part of the upgrade process.
 
 ## Phased Rollout Strategy
 
@@ -188,7 +191,7 @@ If issues occur during deployment:
    - Delete or modify the update schedule.
 
 2. **Assess Impact:**
-   - Check affected agent rolling logs.
+   - Check affected agent rolling-log.txt.
    - Review Hub server logs.
    - Identify common failure patterns.
 
@@ -293,17 +296,14 @@ The default IIS maxAllowedContentLength is too low for agent update files.
 
 ## FAQ
 
-**Q: Can I update Linux agents from the console?**
-A: No, this process applies to Windows agents only. Linux agents must be updated manually using RPM packages.
-
 **Q: How often should I update agents?**
 A: Update agents when new versions address security vulnerabilities or critical bugs. Review release notes for each version.
 
 **Q: Can I schedule updates for specific times?**
-A: Yes, use the schedule feature in the Agent Software Updates tab to specify deployment date and time.
+A: Yes, use the schedule feature in the Agent Updates tab to specify deployment date and time.
 
 **Q: What happens if an agent is offline during the scheduled update?**
-A: The agent will receive the update the next time it checks in with the Hub after the scheduled time.
+A: The agent will not receive the update. The agent needs to be online during the scheduled update time.
 
 **Q: Do agents need to reboot after updating?**
 A: Typically no, the agent service restarts automatically. However, some updates may require a system reboot (check release notes).
