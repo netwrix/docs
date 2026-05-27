@@ -73,7 +73,7 @@ function useNavigator({externalUrlRegex, selectedProductsRef}) {
     return navigator;
 }
 
-function useTransformSearchClient(selectedProductsRef, currentLocale) {
+function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, currentLocale) {
     const {
         siteMetadata: {docusaurusVersion},
     } = useDocusaurusContext();
@@ -83,16 +83,23 @@ function useTransformSearchClient(selectedProductsRef, currentLocale) {
 
             const originalSearch = searchClient.search.bind(searchClient);
 
-            // Override search to inject product filters at request time
+            // Override search to inject product and version filters at request time
             // This keeps searchParameters prop stable, preventing query reset
             searchClient.search = function(searchMethodParams, requestOptions) {
                 const products = selectedProductsRef.current || [];
+                const versions = selectedVersionsRef.current || [];
                 const typoTolerance = false;
 
                 // Build product filter (OR logic - any of selected products)
                 const realProducts = products.filter(p => p !== '__all__' && p !== '__none__');
                 const productFilter = realProducts.length > 0
                     ? realProducts.map(p => `product_name:${p}`)
+                    : null;
+
+                // Build version filter (OR logic - any of selected versions)
+                const realVersions = versions.filter(v => v !== '__all__');
+                const versionFilter = realVersions.length > 0
+                    ? realVersions.map(v => `product_version:${v}`)
                     : null;
 
                 // Language filter for internationalization
@@ -123,6 +130,11 @@ function useTransformSearchClient(selectedProductsRef, currentLocale) {
                             // Add product filter if we have selected products
                             if (productFilter) {
                                 newFilters.push(productFilter);
+                            }
+
+                            // Add version filter if we have selected versions
+                            if (versionFilter) {
+                                newFilters.push(versionFilter);
                             }
 
                             return {
@@ -409,7 +421,7 @@ function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, selected
     // Product filters are injected at request time via transformSearchClient
     const searchParameters = useSearchParameters({...props, productFacetFilters: []});
     const transformItems = useTransformItems(props);
-    const transformSearchClient = useTransformSearchClient(selectedProductsRef, currentLocale);
+    const transformSearchClient = useTransformSearchClient(selectedProductsRef, selectedVersionsRef, currentLocale);
     const searchContainer = useRef(null);
     const searchButtonRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -571,26 +583,6 @@ export default function SearchBar() {
         return () => window.removeEventListener('productFilterChange', handleFilterChange);
     }, [selectedProducts]);
 
-    // Generate facetFilters for products
-    const productFacetFilters = useMemo(() => {
-        const filters = [];
-
-        // Add product filters (OR logic - any of the selected products)
-        const realProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
-        if (realProducts.length > 0) {
-            filters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
-        }
-
-        // TODO: Version filtering disabled - 'version' facet not yet configured in Algolia
-        // To enable: add 'version' to attributesForFaceting in Algolia dashboard, re-index, then uncomment:
-        // const realVersions = selectedVersions.filter(v => v !== '__all__');
-        // if (realVersions.length > 0) {
-        //     filters.push(realVersions.map(v => `version:${v}`)); // Array within array = OR logic
-        // }
-
-        return filters;
-    }, [selectedProducts, selectedVersions]);
-
     // Keep track of the search input value
     useEffect(() => {
         const interval = setInterval(() => {
@@ -650,8 +642,8 @@ export default function SearchBar() {
         if (typeof window !== 'undefined') {
             sessionStorage.setItem('docs_version_filter', JSON.stringify(newVersions));
         }
-        // Note: refreshSearch() not called here — version filtering is disabled until Algolia is updated
-    }, []);
+        refreshSearch();
+    }, [refreshSearch]);
 
     const availableVersions = useMemo(() => {
         const versions = getVersionsForProducts(selectedProducts);
@@ -703,7 +695,6 @@ export default function SearchBar() {
                                 onChange={onChangeProducts}
                                 placeholder="All products"
                             />
-                            {/* Version filter UI — non-functional until 'version' facet is configured in Algolia */}
                             <MultiSelectDropdown
                                 label="Versions"
                                 options={availableVersions}

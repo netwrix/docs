@@ -500,12 +500,10 @@ function SearchPageContent() {
                 facetFilters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
             }
 
-            // TODO: Version filtering disabled - 'version' facet not yet configured in Algolia
-            // To enable: add 'version' to attributesForFaceting in Algolia dashboard, re-index, then uncomment:
-            // const realVersions = selectedVersions.filter(v => v !== '__all__');
-            // if (realVersions.length > 0) {
-            //     facetFilters.push(realVersions.map(v => `version:${v}`)); // Array within array = OR logic
-            // }
+            const realVersions = selectedVersions.filter(v => v !== '__all__');
+            if (realVersions.length > 0) {
+                facetFilters.push(realVersions.map(v => `product_version:${v}`)); // Array within array = OR logic
+            }
 
             // Always fetch page 0 — all results come back at once for client-side pagination
             algoliaHelper
@@ -809,7 +807,6 @@ function SearchPageContent() {
                             selectedValues={selectedProducts}
                             onChange={setSelectedProducts}
                         />
-                        {/* Version filter UI — non-functional until 'version' facet is configured in Algolia */}
                         {availableVersions.length > 0 && (
                             <MultiSelect
                                 label="Versions"
