@@ -46,7 +46,7 @@ HTTPS communication to the Change Tracker Console is by default on port 443. Thi
 - **Direction:** Outbound from agent to Change Tracker Hub
 - **Protocol:** HTTPS
 
-HTTPS communication between Change Tracker and the agent is controlled by the agent's HUBURL, defined during installation. The HUBURL will resemble `https://MY_CT_SERVER/api/`.
+HTTPS communication between Change Tracker and the agent is controlled by the agent's HUBURL, defined during installation. The HUBURL will resemble `https://MY_CT_SERVER/api/`. If custom HTTPS ports are in use, the HUBURL will need to include this, for example `https://MY_CT_SERVER:PORT/api/`..
 
 **Important:** Communication is one-way and will always be initiated by the agent connecting to the Hub server.
 
