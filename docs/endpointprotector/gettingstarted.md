@@ -17,9 +17,10 @@ accidental loss. Ensure compliance and protect sensitive information with Netwri
 
 Before starting, ensure that your environment meets the following requirements:
 
-- Operating Systems: Windows, macOS, Linux
-- Disk Space: Sufficient for agent installation
-- Network: Access to Endpoint Protector Server
+- Operating Systems: Windows, macOS, Linux,
+- CPU x86 64bit or ARM64 bit,
+- Disk Space: Sufficient for agent installation,
+- Network: Access to Endpoint Protector Server,
 
 See the [Requirements](/docs/endpointprotector/requirements/overview.md) topic for additional information.
 
@@ -146,9 +147,13 @@ topic for more information.
 
 - Manual Deployment:
 
-    - Download Enforced Encryption installer for Windows/macOS.
-    - Copy installer to USB root.
-    - Execute installer from USB to setup Enforced Encryption.
+    Method 1:
+    - Download the Enforced Encryption installer for Windows or macOS.
+    - Copy the installer to the USB root.
+    - Run the installer from the USB to set up Enforced Encryption.
+
+    Method 2:
+    - Click the EPP Notifier deploy button next to the USB drive in the device list.
 
 - Configuration:
 
