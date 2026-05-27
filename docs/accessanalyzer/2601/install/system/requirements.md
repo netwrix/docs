@@ -14,11 +14,12 @@ The installer enforces absolute minimums via preflight checks — the installer 
 
 **Absolute installer minimums (enforced by preflight):** 6 vCPUs, 24 GB RAM, 20 GB free disk.
 
-| Size | Recommended CPU | Recommended Memory | Recommended Disk | Typical Environment |
+| Size | Recommended CPU | Recommended Memory | Recommended Disk | Data Threshold |
 | --- | --- | --- | --- | --- |
-| **Small** | 8 cores | 24 GB | 1 TB SSD | Evaluation, pilots, up to ~1,000 assets |
-| **Medium** | 16 cores | 48 GB | 1 TB SSD | Up to ~5,000 assets |
-| **Large** | 32 cores | 64 GB | 1 TB SSD | 5,000+ assets / enterprise |
+| **Small** | 8 cores | 24 GB | 250 GB SSD | Up to 5 TB |
+| **Medium** | 16 cores | 48 GB | 500 GB SSD | 5 TB – 100 TB |
+| **Large** | 32 cores | 64 GB | 1 TB SSD | 100 TB – 1 PB |
+| **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD | 1 PB+ |
 
 
 ## Disk Space Requirements

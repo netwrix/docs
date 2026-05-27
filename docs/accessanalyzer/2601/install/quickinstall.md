@@ -27,11 +27,12 @@ Before running the installer, confirm the following:
 
 Choose a deployment size based on your environment:
 
-| Size | CPU | Memory | Disk | Typical Environment |
+| Size | CPU | Memory | Disk | Data Threshold |
 | --- | --- | --- | --- | --- |
-| **Small** | 8 cores | 24 GB | 1 TB SSD | Evaluation, pilots, up to ~1,000 assets |
-| **Medium** | 16 cores | 48 GB | 1 TB SSD | Up to ~5,000 assets |
-| **Large** | 32 cores | 64 GB | 1 TB SSD | 5,000+ assets / enterprise |
+| **Small** | 8 cores | 24 GB | 250 GB SSD | Up to 5 TB |
+| **Medium** | 16 cores | 48 GB | 500 GB SSD | 5 TB – 100 TB |
+| **Large** | 32 cores | 64 GB | 1 TB SSD | 100 TB – 1 PB |
+| **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD | 1 PB+ |
 
 **Disk space** — the installer validates free space on multiple paths:
 
