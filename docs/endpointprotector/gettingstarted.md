@@ -73,7 +73,7 @@ information.
     - Create custom scan policies to identify sensitive data at rest on endpoint systems.
     - Configure scan options and remediation actions (Encrypt, Decrypt, Delete).
 
-See the [eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md) topic for additional more information.
+See the [eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md) topic for more information.
 
 ## Configuring the User Experience
 
@@ -82,7 +82,7 @@ See the [eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md) topic 
     - Navigate to Device Control > Client Settings.
     - Configure Client Modes (Normal, Transparent, Stealth, etc.) and Notification Preferences.
 
-See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic for more information.
+See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic for details on client modes and notification preferences.
 
 ### Configuring User Remediation Settings
 
@@ -92,7 +92,7 @@ See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) to
     - Configure settings such as Time Interval for user actions and User Remediation Pop-up
       notifications.
 
-See the [System Parameters](/docs/endpointprotector/admin/systempar.md) topic for more information.
+See the [System Parameters](/docs/endpointprotector/admin/systempar.md) topic for user remediation configuration details.
 
 ### Setting Up Offline Temporary Password
 
@@ -110,9 +110,9 @@ information.
 
     - Access System Configuration > Client Software.
     - Download and deploy Endpoint Protector Client packages for Windows, macOS, and Linux systems.
-    - Utilize MDM software or other deployment tools for efficient agent deployment.
+    - use MDM software or other deployment tools for efficient agent deployment.
 
-See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic for more information.
+See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic for agent download and deployment details.
 
 ## Blocking Content Aware Protection Policies
 
@@ -134,7 +134,7 @@ information.
 
 See the
 [eDiscovery Scan Result and Actions](/docs/endpointprotector/admin/dc_module/dcmodule.md)
-topic for more information.
+topic for remediation action details.
 
 ## Deploying Enforced Encryption
 
@@ -161,4 +161,4 @@ topic for more information.
     - Monitoring Devices:
     - Manage Enforced Encryption devices in Clients list section.
 
-See the [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md) topic for more information.
+See the [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md) topic for deployment, configuration, and monitoring details.
