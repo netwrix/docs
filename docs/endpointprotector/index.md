@@ -32,13 +32,13 @@ safeguard critical business data.
 
 ## Supportability Notice
 
-**Netwrix Endpoint Protector 2602 is now the current supported version.** To ensure optimal security, performance, and access to the latest features, Netwrix recommends upgrading to version 2602 or later.
+**Netwrix Endpoint Protector 2605 is now the current supported version.** To ensure optimal security, performance, and access to the latest features, Netwrix recommends upgrading to version 2602 or later.
 
 ### Support Status Overview
 
 - **Current EPP Server Version (2604)**: Full active support with new features, security updates, and comprehensive technical assistance
 - **Current EPP Client & EE Version (2605)**: Full active support with new features, security updates, and comprehensive technical assistance
-- **Previous Versions (5.9.4.2 and earlier)**: All previous versions transition to discontinued support
+- **Previous versions (2602 and older, including legacy versions 5.9.4.2 and earlier)**: Discontinued support — no new features, security patches, or technical assistance.
 
 ### What This Means
 
