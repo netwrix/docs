@@ -71,9 +71,7 @@ NetApp ONTAP supports two API protocols for SVM access. The choice affects how r
 - The environment runs ONTAP 9.10 or later — REST API is the recommended interface in modern ONTAP versions.
 - The security or network policy prefers REST-based communication over the legacy ONTAPI (ZAPI) protocol.
 
-:::note
-In ONTAP 9.10 and higher, an ONTAPI role (e.g., `netwrix_role`) and a REST API role (e.g., `netwrix_rest_role`) cannot be assigned to the same AD user. To grant a single user access to both, assign the respective roles to separate AD groups and add the user to both groups.
-:::
+**NOTE:** In ONTAP 9.10 and higher, an ONTAPI role (e.g., `netwrix_role`) and a REST API role (e.g., `netwrix_rest_role`) cannot be assigned to the same AD user. To grant a single user access to both, assign the respective roles to separate AD groups and add the user to both groups.
 
 For more information, see [Migrate to the ONTAP REST API](https://docs.netapp.com/us-en/ontap-automation/migrate/overview.html) in the NetApp ONTAP Automation documentation.
 
