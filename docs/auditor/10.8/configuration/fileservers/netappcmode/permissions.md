@@ -9,7 +9,7 @@ sidebar_position: 60
 Before you start creating a monitoring plan to audit your NetApp file storage system, plan for the
 account you will use for data collection — it must meet the following requirements.
 
-If you want to authenticate with AD user account, you must enable it to access SVM through ONTAPI.
+If you want to authenticate with AD user account, you must enable it to access a Storage Virtual Machine (SVM) through ONTAPI.
 See the Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section
 for additional information.
 
@@ -68,7 +68,7 @@ NetApp ONTAP supports two API protocols for SVM access: ONTAPI (also known as ZA
 - The environment runs ONTAP 9.10 or later — REST API is the recommended interface from ONTAP 9.10 onward.
 - The security or network policy prefers REST-based communication over the legacy ONTAPI (ZAPI) protocol.
 
-**NOTE:** In ONTAP 9.10 and higher, you can't assign an ONTAPI role (such as the `netwrix_role` created below) and a REST API role (such as the `netwrix_rest_role` created below) to the same AD user. To grant a single user access to both, assign the respective roles to separate AD groups and add the user to both groups.
+**NOTE:** In ONTAP 9.10 and higher, you can't assign an ONTAPI role (such as the `netwrix_role` created in the following section) and a REST API role (such as the `netwrix_rest_role` created in the following section) to the same AD user. To grant a single user access to both, assign the respective roles to separate AD groups and add the user to both groups.
 
 If a simple setup without custom role configuration is acceptable, consider using the [NetApp Built-in vsadmin Role](#netapp-built-in-vsadmin-role) instead.
 
@@ -156,7 +156,7 @@ As an alternative to custom roles, you can assign the built-in **vsadmin** role 
 
 - Security is a priority — granular roles follow the least-privilege principle and limit the data collection account to only the permissions Netwrix Auditor requires.
 - The SVM is shared or has strict access controls.
-- An AD domain account is used for data collection — AD users must be granted access through a custom role on the SVM (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
+- The data collection account is an AD domain account — you must grant AD users access through a custom role on the SVM (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
 
 ## Related Resources
 
