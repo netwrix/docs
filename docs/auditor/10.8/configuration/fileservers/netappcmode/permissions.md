@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Permissions for NetApp Auditing
 
-Before you start creating a monitoring plan to audit your NetApp file storage system, plan for the
+Before you create a monitoring plan to audit your NetApp file storage system, plan for the
 account you will use for data collection — it must meet the following requirements.
 
 If you want to authenticate with an AD user account, you must enable it to access a Storage Virtual Machine (SVM) through ONTAPI or REST API (see [ONTAPI vs. REST API](#ontapi-vs-rest-api) and [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
@@ -156,7 +156,7 @@ As an alternative to custom roles, you can assign the built-in **vsadmin** role 
 
 - Security is a priority — granular roles follow the principle of least privilege and limit the data collection account to only the permissions Netwrix Auditor requires.
 - The SVM is shared or has strict access controls.
-- You use an AD domain account for data collection — AD accounts must be assigned a custom role because the vsadmin role can't be directly assigned to domain accounts via the ONTAPI or HTTP login mechanism (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
+- You use an AD domain account for data collection — AD accounts require a custom role because you can't directly assign the vsadmin role to domain accounts via the ONTAPI or HTTP login mechanism (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
 
 ## Related Resources
 
