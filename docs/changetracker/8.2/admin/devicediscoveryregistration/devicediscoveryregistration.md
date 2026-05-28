@@ -39,32 +39,7 @@ For ESXi/vCenter discovery, see [ESXi / vCenter Discovery](/docs/changetracker/8
 
 ### Supported Operating Systems
 
-The system supports discovery and management of the following operating systems:
-
-#### Windows
-- Windows 10
-- Windows 11
-- Windows Server 2016
-- Windows Server 2019
-- Windows Server 2022
-- Windows Server 2025
-
-#### Linux Distributions
-- **CentOS**: Versions 7, 8, 9, 10
-- **Red Hat Enterprise Linux (RHEL)**: Versions 7, 8, 9, 10
-- **Ubuntu**: Versions 16, 18, 20, 22, 24
-- **Debian**: Versions 10, 11, 12, 13, 14
-- **SUSE Linux Enterprise**: Versions 12, 15, 16
-- **Oracle Linux**: Versions 7, 8, 9, 10
-- **Amazon Linux**: Versions 1 (2018), 2, 2023
-- **Rocky Linux**: Versions 8, 9, 10
-- **Fedora**: Version 39
-
-#### Unix Systems
-- **Oracle Solaris**: Versions 10, 11
-- **FreeBSD**
-- **Mac OS X**
-- **AIX**: Version 7
+For the full list of supported operating systems, see the [Support Matrix](/docs/changetracker/8.2/requirements/supportmatrix.md).
 
 ### Operating System Detection Methods
 
@@ -174,33 +149,7 @@ When a device is first discovered or re-registered, it follows this sequence:
 
 ### Default Group Assignment
 
-The registration process uses the "New Device Registration Process" report to determine group placement. By default, devices are assigned to groups based on their operating system:
-
-#### Windows Groups
-- Windows (generic)
-- Windows 10
-- Windows 11
-- Windows 2016
-- Windows 2019
-- Windows 2022
-- Windows 2025
-
-#### Linux Groups
-- Linux (generic)
-- Linux Centos (versions 7-10)
-- Linux Redhat (versions 7-10)
-- Linux Debian (versions 10-14)
-- Linux Fedora (version 39)
-- Linux Suse (versions 12, 15, 16)
-- Linux Ubuntu (versions 16, 18, 20, 22, 24)
-- Linux Amazon (versions 1, 2, 2023)
-- Linux Oracle (versions 7-10)
-- Rocky Linux (versions 8-10)
-
-#### Other OS Groups
-- Oracle Solaris (versions 10, 11)
-- Mac OSX
-- AIX (version 7)
+The registration process uses the "New Device Registration Process" report to determine group placement. By default, devices are assigned to groups based on their operating system. Each supported OS maps to a corresponding device group (e.g., "Windows 2022", "Linux Ubuntu 24"). For the full list of supported operating systems and their group mappings, see the [Support Matrix](/docs/changetracker/8.2/requirements/supportmatrix.md).
 
 ### Custom Registration Scripts
 
@@ -211,7 +160,7 @@ Organizations can customize the registration process by providing a custom regis
 - Assign devices to multiple groups based on complex criteria
 - Override default OS-based group assignments
 
-When a custom script identifies multiple groups for a device, all identified groups will be assigned (subject to the `AllRegistrationGroupsExist` configuration setting).
+When a custom script identifies multiple groups for a device, all identified groups will be assigned (subject to the `AllRegistrationGroupsExist` and `CustomGroupNamePrefix` configuration settings).
 
 ### Group Assignment Sequence
 
@@ -231,13 +180,17 @@ The system follows this sequence when assigning groups:
    - If any group doesn't exist, the entire registration is aborted
    - Device remains in "New Devices" for manual intervention
 
-6. **Remove from Previous OS Groups**: If `EnableAutoReregisterAgentAfterOsChange` is enabled, the system removes the device from previous OS-specific groups (during re-registration scenarios)
+6. **Validate Group Name Prefix**: If `CustomGroupNamePrefix` is set, at least one returned group must start with the configured prefix and exist in the directory
+   - If no group matches the prefix, registration is blocked and an audit event is created
+   - If at least one prefix-matching group exists, registration proceeds (missing prefix groups are logged as warnings)
 
-7. **Add to Target Groups**: The system adds the device to all identified groups (if validation passed)
+7. **Remove from Previous OS Groups**: If `EnableAutoReregisterAgentAfterOsChange` is enabled, the system removes the device from previous OS-specific groups (during re-registration scenarios)
 
-8. **Add to All Devices**: Device is always added to the "All Devices" group
+8. **Add to Target Groups**: The system adds the device to all identified groups (if validation passed)
 
-9. **Handle New Devices Group**:
+9. **Add to All Devices**: Device is always added to the "All Devices" group
+
+10. **Handle New Devices Group**:
    - If custom or OS-specific groups were successfully assigned, device is removed from "New Devices"
    - If no groups were found or registration failed, device **remains in "New Devices"** as a safety net
    - This ensures administrators can always find devices that need manual group assignment
@@ -249,6 +202,8 @@ If the registration process encounters issues, the device remains in the "New De
 - **No Response**: If a device doesn't respond to the registration report, it remains in "New Devices" group (never removed from it)
 
 - **Missing Groups**: If `AllRegistrationGroupsExist` is enabled and any identified group doesn't exist, the device remains in "New Devices" and a warning is logged
+
+- **No Matching Prefix Group**: If `CustomGroupNamePrefix` is set and no returned group name starts with the configured prefix (or all prefix-matching groups are missing from the directory), the device remains in "New Devices" and an audit event is created
 
 - **Script Errors**: If the custom registration script fails, the device remains in "New Devices" by default and the error is logged
 
@@ -271,6 +226,30 @@ This fallback approach ensures that devices requiring manual intervention can al
 - When `false`: Device is added to groups that exist; missing groups are logged as errors but don't prevent registration
 
 **Use Case**: Enable this setting in production environments to ensure devices are only registered when all required groups are properly configured.
+
+### CustomGroupNamePrefix
+
+**Purpose**: Restricts agent registration to groups whose display name starts with a specified prefix. When set, at least one group returned by the registration script must match the prefix and exist in the directory. If no matching group is found, the device remains in "New Devices" and an audit event is created.
+
+**Default Value**: empty string (disabled)
+
+**Behaviour**:
+- When set (e.g. `TCM123_`): The Hub checks all group names returned by the registration script. At least one must start with the configured prefix (case-sensitive) **and** exist as a group in the directory. If no matching group exists, registration is blocked and the device remains in "New Devices".
+- When empty or not set: Existing registration behaviour is unchanged — no prefix validation is performed.
+
+**Matching rules**:
+- The comparison is **case-sensitive** and uses a **starts-with** check against each group's display name.
+- If the registration script returns multiple groups that match the prefix but only some exist in the directory, registration proceeds as long as at least one matching group exists. A warning is logged for the missing groups.
+- Groups that don't match the prefix (such as the default OS-type group) are still assigned normally — the prefix check only validates that at least one prefix-matching group is present.
+- When registration is blocked, an audit event of type **DeviceAdmin** is created with details of the device name, the configured prefix, and the groups that were returned.
+
+**Example**: An organization uses the naming convention `TCM123_` for all device groups. Setting `CustomGroupNamePrefix` to `TCM123_` ensures that agents only register into groups that follow this convention. If the registration script returns `TCM123_Linux Redhat 9` and that group exists, the agent is placed in both `TCM123_Linux Redhat 9` and the default OS group (`Linux Redhat 9`). If the script returns only `Linux Redhat 9` (no prefix match), the agent remains in "New Devices" for manual review.
+
+**Use Case**: Enable this setting when your organization uses a group naming convention and you want to prevent agents from registering into groups that don't follow the convention.
+
+:::note
+`CustomGroupNamePrefix` and `AllRegistrationGroupsExist` are independent checks that both run during registration. A device must pass both checks (if both are enabled) to be placed into its target groups.
+:::
 
 ### EnableAutoReregisterAgentAfterOsChange
 
@@ -410,8 +389,9 @@ For comprehensive troubleshooting, you may also want to enable DEBUG logging for
 **Possible Causes**:
 1. Custom registration script returned unexpected group names
 2. Target group doesn't exist and `AllRegistrationGroupsExist` is enabled
-3. Registration report didn't complete successfully
-4. Device didn't respond to registration report task
+3. `CustomGroupNamePrefix` is set and no returned group matches the prefix
+4. Registration report didn't complete successfully
+5. Device didn't respond to registration report task
 
 **Resolution Steps**:
 1. Enable DEBUG logging for `CollateComplianceReportDataBackgroundTaskWorker`
@@ -419,6 +399,25 @@ For comprehensive troubleshooting, you may also want to enable DEBUG logging for
 3. Verify all target groups exist in the system
 4. Review custom registration script logic if applicable
 5. Check that device responded to registration report task
+
+### Device Blocked by Group Name Prefix Check
+
+**Possible Causes**:
+1. `CustomGroupNamePrefix` is set but the registration script doesn't return any group whose display name starts with the configured prefix
+2. The prefix-matching group was returned by the script but doesn't exist in the directory
+3. The prefix value is case-sensitive and doesn't match the group name casing
+
+**Symptoms**:
+- Device remains in "New Devices" after registration
+- An audit event of type **DeviceAdmin** appears with a message such as: "Device 'TestAgent' has no registration group with prefix 'TCM123_'"
+- Hub log contains a warning from `CollateComplianceReportDataBackgroundTaskWorker` referencing the prefix
+
+**Resolution Steps**:
+1. Check the configured `CustomGroupNamePrefix` value in the Hub configuration
+2. Verify that the target group's display name starts with the exact prefix (case-sensitive)
+3. Confirm the group exists in the directory — if it was recently created, it may not yet be in the cache
+4. Review the registration script to ensure it returns the prefixed group name
+5. Enable DEBUG logging for `CollateComplianceReportDataBackgroundTaskWorker` to see the full list of groups returned by the registration script
 
 ### Device Stuck in "Awaiting Registration"
 
@@ -472,11 +471,13 @@ For comprehensive troubleshooting, you may also want to enable DEBUG logging for
 
 5. **Use Descriptive Group Names**: Use clear, descriptive group names that match your organizational structure
 
-6. **Document Custom Logic**: If using custom registration scripts, document the business rules and group assignment logic
+6. **Enforce Group Naming Conventions**: If your organization uses a naming convention for device groups, set `CustomGroupNamePrefix` to enforce it during registration and prevent agents from being placed in non-conforming groups
 
-7. **Plan for OS Upgrades**: If you perform OS upgrades, consider enabling `EnableAutoReregisterAgentAfterOsChange` to automatically reassign devices
+7. **Document Custom Logic**: If using custom registration scripts, document the business rules and group assignment logic
 
-8. **Regular Audits**: Periodically audit device group memberships to ensure they remain accurate
+8. **Plan for OS Upgrades**: If you perform OS upgrades, consider enabling `EnableAutoReregisterAgentAfterOsChange` to automatically reassign devices
+
+9. **Regular Audits**: Periodically audit device group memberships to ensure they remain accurate
 
 ---
 
