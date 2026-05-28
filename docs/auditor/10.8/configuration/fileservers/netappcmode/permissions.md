@@ -54,8 +54,28 @@ The account on the target server requires the following permissions:
     |  /api/protocols/cifs/shares   |    readonly            |
 
 
-See Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section for
+See [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access) for
 additional information.
+
+## ONTAPI vs. REST API
+
+NetApp ONTAP supports two API protocols for SVM access. The choice affects how roles are created and assigned.
+
+**ONTAPI is applicable when:**
+
+- The environment runs ONTAP 9.9 or earlier, where REST API support may be limited or unavailable.
+- The existing configuration already uses ONTAPI and migration is not needed.
+
+**REST API is applicable when:**
+
+- The environment runs ONTAP 9.10 or later — REST API is the recommended interface in modern ONTAP versions.
+- The security or network policy prefers REST-based communication over the legacy ONTAPI (ZAPI) protocol.
+
+:::note
+In ONTAP 9.10 and higher, an ONTAPI role (e.g., `netwrix_role`) and a REST API role (e.g., `netwrix_rest_role`) cannot be assigned to the same AD user. To grant a single user access to both, assign the respective roles to separate AD groups and add the user to both groups.
+:::
+
+For more information, see [Migrate to the ONTAP REST API](https://docs.netapp.com/us-en/ontap-automation/migrate/overview.html) in the NetApp ONTAP Automation documentation.
 
 ## Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access
 
@@ -113,10 +133,7 @@ security login rest-role show -vserver svm1 -role netwrix_rest_role
 NetApp. If you want to use an AD account for collecting data, enable it to access SVM through
 ONTAPI. For example:
 
-**NOTE:** In ONTAP 9.10 and higher, you can't assign an ONTAPI role (e.g., netwrix_role) and a
-RESTAPI role (e.g., netwrix_rest_role) to one AD user. To allow a user access to both the ONTAPI and
-RESTAPI, you can use different AD groups by assigning roles to them and including the user in these
-groups.
+See [ONTAPI vs. REST API](#ontapi-vs-rest-api) for guidance on choosing the right protocol and handling AD group assignments.
 
 Create login for ONTAPI role:
 
@@ -150,5 +167,6 @@ As an alternative to custom roles, the built-in **vsadmin** role can be assigned
 
 ## Related Resources
 
-- [Predefined roles for SVM administrators](https://docs.netapp.com/us-en/ontap/authentication/predefined-roles-svm-administrators-concept.html) — NetApp ONTAP documentation
+- [NetApp ONTAP documentation: Predefined roles for SVM administrators](https://docs.netapp.com/us-en/ontap/authentication/predefined-roles-svm-administrators-concept.html)
+- [NetApp ONTAP Automation documentation: Migrate to the ONTAP REST API](https://docs.netapp.com/us-en/ontap-automation/migrate/overview.html)
 - [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)
