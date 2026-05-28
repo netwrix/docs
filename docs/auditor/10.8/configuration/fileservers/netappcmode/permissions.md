@@ -54,9 +54,6 @@ The account on the target server requires the following permissions:
     |  /api/protocols/cifs/shares   |    readonly            |
 
 
-See [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access) for
-additional information.
-
 ## ONTAPI vs. REST API
 
 NetApp ONTAP supports two API protocols for SVM access. The choice affects how roles are created and assigned.
@@ -131,8 +128,6 @@ security login rest-role show -vserver svm1 -role netwrix_rest_role
 NetApp. If you want to use an AD account for collecting data, enable it to access SVM through
 ONTAPI. For example:
 
-See [ONTAPI vs. REST API](#ontapi-vs-rest-api) for guidance on choosing the right protocol and handling AD group assignments.
-
 Create login for ONTAPI role:
 
 ```
@@ -167,4 +162,3 @@ As an alternative to custom roles, the built-in **vsadmin** role can be assigned
 
 - [NetApp ONTAP documentation: Predefined roles for SVM administrators](https://docs.netapp.com/us-en/ontap/authentication/predefined-roles-svm-administrators-concept.html)
 - [NetApp ONTAP Automation documentation: Migrate to the ONTAP REST API](https://docs.netapp.com/us-en/ontap-automation/migrate/overview.html)
-- [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)
