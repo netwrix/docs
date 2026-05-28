@@ -59,7 +59,7 @@ NetApp ONTAP supports two API protocols for SVM access: ONTAPI (also known as ZA
 **ONTAPI is applicable when:**
 
 - The environment runs ONTAP 9.9 or earlier, where REST API support may be limited or unavailable.
-- The existing configuration already uses ONTAPI and you don't need to migrate. ONTAPI remains supported on ONTAP 9.10 and later for backward compatibility, but NetApp recommends transitioning to REST API for new deployments on 9.10+.
+- The existing configuration already uses ONTAPI and you don't need to migrate. NetApp continues to support ONTAPI on ONTAP 9.10 and later for backward compatibility but recommends transitioning to REST API for new deployments on 9.10+.
 
 **REST API is applicable when:**
 
