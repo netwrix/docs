@@ -151,3 +151,4 @@ As an alternative to custom roles, the built-in **vsadmin** role can be assigned
 ## Related Resources
 
 - [Predefined roles for SVM administrators](https://docs.netapp.com/us-en/ontap/authentication/predefined-roles-svm-administrators-concept.html) — NetApp ONTAP documentation
+- [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)
