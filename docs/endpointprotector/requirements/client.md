@@ -11,7 +11,7 @@ market. The resources it consumes or the bandwidth it uses is insignificant. The
 consumed, and bandwidth used by the Client depends on the functions, settings, policies used, and
 the endpoint’s hardware configuration. In an idle state, the base requirements are:
 
-- CPU: At least 1 GHz dual-core 64bit architecture CPU
+- CPU: At least 1 GHz dual-core x86 64bit  or ARM64bit architecture CPU.
 - RAM: 30 MB
 - Bandwidth: Less than 1 Kbs (Kilobit per second) when idle. This may increase depending on usage
   when sending logs or uploading shadow files.

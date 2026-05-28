@@ -18,7 +18,7 @@ accidental loss. Ensure compliance and protect sensitive information with Netwri
 Before starting, ensure that your environment meets the following requirements:
 
 - Operating Systems: Windows, macOS, Linux,
-- CPU x86 64bit or ARM64 bit,
+- CPU x86 64 bit or ARM64 bit,
 - Disk Space: Sufficient for agent installation,
 - Network: Access to Endpoint Protector Server,
 
