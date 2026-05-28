@@ -132,21 +132,21 @@ security login create -vserver svm1 -user-or-group-name domain\user -application
 
 where `domain\user` is your data collecting account.
 
-## Use the Built-in vsadmin Role
+## Built-in vsadmin Role
 
-You can assign the built-in **vsadmin** role instead of creating a custom role. The `vsadmin` role grants full SVM administrative access and covers all API capabilities that Netwrix Auditor requires.
+As an alternative to custom roles, the built-in **vsadmin** role can be assigned to the data collection account. The `vsadmin` role grants full SVM administrative access and covers all API capabilities that Netwrix Auditor requires.
 
-**Use vsadmin when:**
+**vsadmin is suitable when:**
 
-- You want a simple setup without custom role configuration.
+- A simple setup without custom role configuration is acceptable.
 - There are no restrictions on using a highly privileged SVM account.
-- You're troubleshooting collection issues to rule out insufficient permissions.
+- Troubleshooting collection issues — `vsadmin` helps rule out insufficient permissions as the cause.
 
-**Use granular roles when:**
+**Granular roles are preferable when:**
 
 - The environment follows a least-privilege security policy.
 - The SVM is shared or has strict access controls.
-- You're using an AD domain account for data collection (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
+- An AD domain account is used for data collection (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
 
 ## Related Resources
 
