@@ -35,6 +35,8 @@ For remote devices accessed through credentials, the system:
 - Collects basic platform information including device name and network details
 - Handles special cases for cloud, ESX, Splunk, and database connections
 
+For ESXi/vCenter discovery, see [ESXi / vCenter Discovery](/docs/changetracker/8.2/admin/devicediscoveryregistration/esxidiscovery.md).
+
 ### Supported Operating Systems
 
 The system supports discovery and management of the following operating systems:
