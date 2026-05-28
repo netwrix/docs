@@ -22,9 +22,9 @@ tracking**. Linux devices are unaffected.
 
 ## Prerequisites
 
-- Netwrix Activity Monitor installed on the monitored Windows server, with the `SBTService`
-  Windows service running.
-- Netwrix Change Tracker Gen 7 Agent (8.2 or later) installed on the same server.
+- Netwrix Change Tracker Gen 7 Agent (8.2 or later) installed on the same server. The Gen 7
+  Agent MSI installs Netwrix Activity Monitor (including the `SBTService` Windows service)
+  automatically as part of the agent installation.
 - A FIM policy with live tracking applied to the device from the Hub. See
   [Policy Templates: FIM File Integrity](/docs/changetracker/8.2/admin/settingstab/policytemplates/fimfiles.md)
   for additional information.
