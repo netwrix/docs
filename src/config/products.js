@@ -179,9 +179,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '8.2',
+        label: '8.2',
+        isLatest: true,
+        sidebarFile: './sidebars/changetracker/8.2.js',
+      },
+      {
         version: '8.1',
         label: '8.1',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/changetracker/8.1.js',
         apiSidebarPath: './docs/changetracker/8.1/api/reference/sidebar.ts',
       },
@@ -192,7 +198,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/changetracker/8.0.js',
       },
     ],
-    defaultVersion: '8.1',
+    defaultVersion: '8.2',
   },
   {
     id: 'customer',
