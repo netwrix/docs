@@ -7,7 +7,7 @@ sidebar_position: 20
 
 # Server Sizing
 
-These guidelines define the minimum server requirements according to Netwrix best practices. Assigning higher resources than the minimum is recommended for improved performance and stability. For migration plans or environments with regular data exports or API calls, increasing EPP Server sizing is recommended. When configuring storage, use SSD drives whenever possible. The following sections detail server sizing best practices based on the number of modules and connected clients.
+These guidelines define the minimum server requirements according to Netwrix best practices. Netwrix recommends assigning higher resources than the minimum for improved performance and stability. For migration plans or environments with regular data exports or API calls, Netwrix recommends increasing EPP Server sizing. When configuring storage, use SSD drives whenever possible. The following sections detail server sizing best practices based on the number of modules and connected clients.
 
 | **Number of endpoints** | **Modules**  | **CPU Cores** | **RAM** | **HDD** |
 |-------------------------|--------------|---------------|---------|---------|
@@ -48,5 +48,5 @@ eD = eDiscovery <br />
 EE = Enforced Encryption <br />
 
 :::note
-If your deployment exceeds 20,000 endpoints, please consult Netwrix Support to determine the appropriate server sizing for your environment.
+If your deployment exceeds 20,000 endpoints, consult Netwrix Support to determine the appropriate server sizing for your environment.
 :::
