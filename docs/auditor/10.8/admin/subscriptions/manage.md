@@ -10,18 +10,18 @@ On the main Netwrix Auditor page, navigate to Subscriptions to review a list of 
 
 ![subscription](/images/auditor/10.8/admin/subscriptions/subscription.webp)
 
-The table below provides instructions on how to manage your subscriptions.
+The following table provides instructions on how to manage your subscriptions.
 
 | To...                           | Do...                                                                                                                                                    |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Browse subscriptions            | Type the target subscription name in the search bar in the upper part of the Subscriptions window and click the Search icon to review results.           |
+| Browse subscriptions            | Enter the target subscription name in the search bar in the upper part of the Subscriptions window and click the Search icon to review results.          |
 | Enable or disable subscriptions | Pick a subscription and select On or Off in the Mode column.                                                                                             |
 | Modify subscriptions            | Select the subscription that you want to modify and click Edit at the bottom of the Subscriptions window. Update the subscription and save your changes. |
 | Remove subscriptions            | Click ![delete](/images/platgovnetsuite/integrations/delete.webp) icon next to the selected subscription.          |
 
 ## Configure Subscription Generation Time
 
-You can set the hour when Auditor starts generating subscriptions. Generation times are configured separately for SSRS and other subscription types.
+You can set the hour when Auditor starts generating subscriptions. You configure generation times separately for SSRS and other subscription types.
 
 To configure the generation time:
 
