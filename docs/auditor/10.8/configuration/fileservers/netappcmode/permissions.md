@@ -56,21 +56,21 @@ The account on the target server requires the following permissions:
 
 ## ONTAPI vs. REST API
 
-NetApp ONTAP supports two API protocols for SVM access. The choice affects how roles are created and assigned.
+NetApp ONTAP supports two API protocols for SVM access. The choice affects how you create and assign roles.
 
 **ONTAPI is applicable when:**
 
 - The environment runs ONTAP 9.9 or earlier, where REST API support may be limited or unavailable.
-- The existing configuration already uses ONTAPI and migration is not needed.
+- The existing configuration already uses ONTAPI and you don't need to migrate.
 
 **REST API is applicable when:**
 
-- The environment runs ONTAP 9.10 or later — REST API is the recommended interface in modern ONTAP versions.
+- The environment runs ONTAP 9.10 or later — NetApp recommends the REST API for modern ONTAP versions.
 - The security or network policy prefers REST-based communication over the legacy ONTAPI (ZAPI) protocol.
 
-**NOTE:** In ONTAP 9.10 and higher, an ONTAPI role (e.g., `netwrix_role`) and a REST API role (e.g., `netwrix_rest_role`) cannot be assigned to the same AD user. To grant a single user access to both, assign the respective roles to separate AD groups and add the user to both groups.
+**NOTE:** In ONTAP 9.10 and higher, you can't assign an ONTAPI role (e.g., `netwrix_role`) and a REST API role (e.g., `netwrix_rest_role`) to the same AD user. To grant a single user access to both, assign the respective roles to separate AD groups and add the user to both groups.
 
-For more information, see [Migrate to the ONTAP REST API](https://docs.netapp.com/us-en/ontap-automation/migrate/overview.html) in the NetApp ONTAP Automation documentation.
+For guidance on transitioning from ONTAPI to the REST API, see [Migrate to the ONTAP REST API](https://docs.netapp.com/us-en/ontap-automation/migrate/overview.html) in the NetApp ONTAP Automation documentation.
 
 ## Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access
 
@@ -109,7 +109,7 @@ security login rest-role create -role netwrix_rest_role -api /api/svm/svms -acce
 security login rest-role create -role netwrix_rest_role -api /api/protocols/audit -access all -vserver svm1
 ```
 
-**Step 2 –** Assign the capabilities one by one. To review applied capabilities,
+**Step 2 –** Assign the capabilities individually. To review applied capabilities,
 use the following command:
 
 ONTAPI role:
@@ -144,19 +144,19 @@ where `domain\user` is your data collecting account.
 
 ## NetApp Built-in vsadmin Role
 
-As an alternative to custom roles, the built-in **vsadmin** role can be assigned to the data collection account. The `vsadmin` role grants full SVM administrative access and covers all API capabilities that Netwrix Auditor requires.
+As an alternative to custom roles, you can assign the built-in **vsadmin** role to the data collection account. The `vsadmin` role grants full SVM administrative access and covers all API capabilities that Netwrix Auditor requires.
 
 **vsadmin is suitable when:**
 
 - A simple setup without custom role configuration is acceptable.
 - There are no restrictions on using a highly privileged SVM account.
-- Troubleshooting collection issues — `vsadmin` helps rule out insufficient permissions as the cause.
+- Troubleshooting collection issues — `vsadmin` helps eliminate insufficient permissions as the cause.
 
 **Granular roles are preferable when:**
 
 - Security is a priority — granular roles follow the least-privilege principle and limit the data collection account to only the permissions Netwrix Auditor requires.
 - The SVM is shared or has strict access controls.
-- An AD domain account is used for data collection (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
+- You use an AD domain account for data collection (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
 
 ## Related Resources
 
