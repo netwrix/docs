@@ -9,9 +9,7 @@ sidebar_position: 60
 Before you start creating a monitoring plan to audit your NetApp file storage system, plan for the
 account you will use for data collection — it must meet the following requirements.
 
-If you want to authenticate with AD user account, you must enable it to access a Storage Virtual Machine (SVM) through ONTAPI.
-See the Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section
-for additional information.
+If you want to authenticate with an AD user account, you must enable it to access a Storage Virtual Machine (SVM) through ONTAPI or REST API (see [ONTAPI vs. REST API](#ontapi-vs-rest-api) and [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
 
 The account on the target server requires the following permissions:
 
@@ -45,7 +43,7 @@ The account on the target server requires the following permissions:
     |   vserver audit rotate-log    |    all                 |
     |   vserver cifs                |    readonly            |
 
-   To connect using the RestAPI
+   To connect using the REST API
     |             API               |       Access Level     |
     | ----------------------------- | ---------------------- |
     |  /api/svm/svms                |    read_create_modify  |
@@ -56,7 +54,7 @@ The account on the target server requires the following permissions:
 
 ## ONTAPI vs. REST API
 
-NetApp ONTAP supports two API protocols for SVM access: ONTAPI (also known as ZAPI) and REST API. The choice affects how you create and assign roles.
+NetApp ONTAP supports two API protocols for SVM access: ONTAPI (also known as ZAPI) and REST API. The protocol you choose determines how you create and assign roles.
 
 **ONTAPI is applicable when:**
 
@@ -68,9 +66,9 @@ NetApp ONTAP supports two API protocols for SVM access: ONTAPI (also known as ZA
 - The environment runs ONTAP 9.10 or later — REST API is the recommended interface from ONTAP 9.10 onward.
 - The security or network policy prefers REST-based communication over the legacy ONTAPI (ZAPI) protocol.
 
-**NOTE:** In ONTAP 9.10 and higher, you can't assign an ONTAPI role (such as the `netwrix_role` created in the following section) and a REST API role (such as the `netwrix_rest_role` created in the following section) to the same AD user. To grant a single user access to both, assign the respective roles to separate AD groups and add the user to both groups.
+**NOTE:** In ONTAP 9.10 and higher, you can't assign an ONTAPI role (a custom role with ONTAPI capabilities) and a REST API role (a custom role with REST API capabilities) to the same AD user. To grant a single user access to both, assign the respective roles to separate AD groups and add the user to both groups.
 
-If a simple setup without custom role configuration is acceptable, consider using the [NetApp Built-in vsadmin Role](#netapp-built-in-vsadmin-role) instead.
+If you don't need granular permissions and prefer to skip custom role configuration, use the [NetApp Built-in vsadmin Role](#netapp-built-in-vsadmin-role) instead.
 
 ## Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access
 
@@ -79,7 +77,7 @@ run the following commands.
 
 To create a role for enabling AD user access:
 
-**Step 1 –** Create a new role (e.g., netwrix_role for ONTAPI and netwrix_rest_role for RESTAPI) on
+**Step 1 –** Create a new role (e.g., netwrix_role for ONTAPI and netwrix_rest_role for REST API) on
 your SVM (e.g., svm1). For example:
 
 Create ONTAPI role:
@@ -92,7 +90,7 @@ security login role create -role netwrix_role -cmddirname "vserver audit rotate-
 security login role create -role netwrix_role -cmddirname "vserver cifs" -access readonly -vserver svm1
 ```
 
-Create RESTAPI role:
+Create REST API role:
 
 ```
 security login rest-role create -role netwrix_rest_role -api /api/svm/svms -access read_create_modify -vserver svm1 
@@ -118,7 +116,7 @@ ONTAPI role:
 security login role show -vserver svm1 -role netwrix_role
 ```
 
-RESTAPI role:
+REST API role:
 
 ```
 security login rest-role show -vserver svm1 -role netwrix_rest_role
@@ -134,7 +132,7 @@ Create login for ONTAPI role:
 security login create -vserver svm1 -user-or-group-name domain\user -application ontapi -authmethod domain -role netwrix_role
 ```
 
-Create login for RESTAPI role:
+Create login for REST API role:
 
 ```
 security login create -vserver svm1 -user-or-group-name domain\user -application http -authmethod domain -role netwrix_rest_role
@@ -146,17 +144,19 @@ where `domain\user` is your data collecting account.
 
 As an alternative to custom roles, you can assign the built-in **vsadmin** role to the data collection account. The `vsadmin` role grants full SVM administrative access and covers all API capabilities that Netwrix Auditor requires.
 
+**NOTE:** The vsadmin role grants broad SVM administrative privileges beyond what Netwrix Auditor requires. Use granular custom roles in production environments following the principle of least privilege.
+
 **vsadmin is suitable when:**
 
 - A simple setup without custom role configuration is acceptable.
 - There are no restrictions on using a highly privileged SVM account.
-- Troubleshooting collection issues — `vsadmin` helps eliminate insufficient permissions as the cause.
+- You're troubleshooting collection issues and want to eliminate insufficient permissions as a cause.
 
 **Granular roles are preferable when:**
 
-- Security is a priority — granular roles follow the least-privilege principle and limit the data collection account to only the permissions Netwrix Auditor requires.
+- Security is a priority — granular roles follow the principle of least privilege and limit the data collection account to only the permissions Netwrix Auditor requires.
 - The SVM is shared or has strict access controls.
-- The data collection account is an AD domain account — you must grant AD users access through a custom role on the SVM (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
+- You use an AD domain account for data collection — AD accounts must be assigned a custom role because the vsadmin role can't be directly assigned to domain accounts via the ONTAPI or HTTP login mechanism (see [Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access](#create-role-on-netapp-clustered-data-ontap-8-or-ontap-9-and-enabling-ad-user-access)).
 
 ## Related Resources
 
