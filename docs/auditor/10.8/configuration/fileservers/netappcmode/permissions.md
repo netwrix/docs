@@ -57,8 +57,6 @@ The account on the target server requires the following permissions:
 See Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access section for
 additional information.
 
-_Remember,_ that you can also assign the built-in vsadmin role instead of the permissions listed earlier.
-
 ## Create Role on NetApp Clustered Data ONTAP 8 or ONTAP 9 and Enabling AD User Access
 
 **NOTE:** This article applies to NetApp 8.3.2 and later. You must be a **cluster administrator** to
@@ -134,5 +132,12 @@ security login create -vserver svm1 -user-or-group-name domain\user -application
 
 where `domain\user` is your data collecting account.
 
+## Use the Built-in vsadmin Role
 
+:::tip
+Instead of creating a custom role with granular permissions (such as `netwrix_role` for ONTAPI or `netwrix_rest_role` for REST API), you can assign the built-in **vsadmin** role to the data collection account.
 
+The `vsadmin` role is a NetApp predefined SVM-level role that grants full administrative access to the SVM. It covers all the API capabilities that Netwrix Auditor requires, so no manual role configuration is needed.
+
+For more information, see [Predefined roles for SVM administrators](https://docs.netapp.com/us-en/ontap/authentication/predefined-roles-svm-administrators-concept.html) in the NetApp ONTAP documentation.
+:::
