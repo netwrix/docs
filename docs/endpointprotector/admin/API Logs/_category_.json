@@ -1,0 +1,10 @@
+{
+  "label": "Logs REST API",
+  "position": 190,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "logrestapi"
+  }
+}

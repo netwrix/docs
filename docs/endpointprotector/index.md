@@ -32,7 +32,7 @@ safeguard critical business data.
 
 ## Supportability Notice
 
-**Netwrix Endpoint Protector 2605 is now the current supported version.** To ensure optimal security, performance, and access to the latest features, Netwrix recommends upgrading to version 2602 or later.
+To ensure optimal security, performance, and access to the latest features, Netwrix recommends upgrading to the latest versions of both the Server and Client components.
 
 ### Support Status Overview
 
