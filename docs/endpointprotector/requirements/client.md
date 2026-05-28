@@ -20,7 +20,7 @@ the endpoint’s hardware configuration. In an idle state, the base requirements
 For Content Aware Protection and eDiscovery scanning, more CPU and RAM are required.
 :::
 
-Below is a closer look at the resource consumption when all modules are enabled , function are
+The following table shows the resource consumption when all modules are enabled, functions are
 active, and policies are configured for a stress test:
 
 | Module    | Device Control                                                            | Content Aware Protection                                                  | eDiscovery                                                                |
@@ -48,11 +48,11 @@ attempt to scan each entry as it is written, which can lead to:
   performance.
 
 To prevent these conflicts and allow the Endpoint Protector Client to function without interference,
-add exclusions for specific files, folders, and processes on Windows, macOS, and Linux, as outlined
-below.
+add exclusions for specific files, folders, and processes on Windows, macOS, and Linux, as described
+in the following sections.
 
 :::warning Important
-Before escalating any Endpoint Client performance issue, please ensure that the security tool exclusions listed below for EPP have been configured and deployed on the affected endpoint, and that the computer has been rebooted.
+Before escalating any Endpoint Client performance issue, ensure that the security tool exclusions in the following sections for EPP are configured and deployed on the affected endpoint, and that you have rebooted the computer.
 :::
 
 ### Recommended Exclusions for Windows

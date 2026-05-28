@@ -6,7 +6,7 @@ sidebar_position: 180
 
 # Support
 
-For additional support resources, please visit our [website](https://www.netwrix.com/support.html)
+For additional support resources, visit our [website](https://www.netwrix.com/support.html)
 where you can read manuals, view FAQs, watch videos and tutorials, access direct e-mail support, and
 much more.
 
