@@ -329,7 +329,7 @@ Auditor supports monitoring the following versions:
 - Database 21c On-Premise
 - Database 19c On-Premise
 - Database 18c On-Premise
-- Database 12.2 On-Premise
+- Database 12c On-Premise
 - Oracle Database Cloud Service (Enterprise Edition)
 
 See the [Oracle Database](/docs/auditor/10.9/configuration/oracle/overview.md) topic for additional information.

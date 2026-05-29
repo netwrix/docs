@@ -62,7 +62,7 @@ Database version.
 
 | Version | Required SELECT privileges |
 | --- | --- |
-| Oracle Database 12.2, 18c, 19c, 21c, 23c | - `aud$` |
+| Oracle Database 12c, 18c, 19c, 21c, 23c | - `aud$` |
 | | - `gv_$xml_audit_trail` |
 | | - `dba_stmt_audit_opts` |
 | | - `v_$parameter` |
@@ -75,4 +75,4 @@ Database version.
 | | - `all_unified_audit_actions` |
 | | - `audit_unified_policies` |
 | | - `audit_unified_enabled_policies` |
-| | - `audsys.aud$unified` (Oracle Database 12.2 and later) |
+| | - `audsys.aud$unified` (Oracle Database 12c Release 2 (12.2.0.1) and later) |
