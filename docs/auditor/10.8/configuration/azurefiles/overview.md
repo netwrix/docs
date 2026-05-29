@@ -249,7 +249,7 @@ After completing the Azure Files configuration:
 
 1. **Test Connectivity**: Verify authentication and access to storage accounts
 2. **Create Monitoring Plan**: Configure Azure Files monitoring in Netwrix Auditor
-3. **Validate Data Collection**: Confirm audit events are being collected
+3. **Validate Data Collection**: Confirm that Netwrix Auditor collects audit events
 
 For detailed instructions on creating the monitoring plan, see the [Azure Files Monitoring Plan](/docs/auditor/10.8/admin/monitoringplans/azurefiles.md) documentation
 
