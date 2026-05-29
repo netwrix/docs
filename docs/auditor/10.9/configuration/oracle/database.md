@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Configure Oracle Database for Auditing
 
-This topic explains how to configure Oracle Database 12.2, 18c, 19c, Database 21c On-Premise, 23c for Auditing.
+This topic explains how to configure Oracle Database 12c, 18c, 19c, 21c, 23c for Auditing.
 
-## Configure Oracle Database 12.2, 18c, 19c, Database 21c On-Premise, 23c for Auditing
+## Configure Oracle Database 12c, 18c, 19c, 21c, 23c for Auditing
 
 The following auditing modes are available for Oracle Database:
 
@@ -32,7 +32,7 @@ The following auditing modes are available for Oracle Database:
 
     The product does not log any errors on these events to the Netwrix Auditor System Health log.
 
-To configure Oracle Database 12.2, 18c, 19c, Database 21c On-Premise, 23c Unified Auditing
+To configure Unified Auditing for Oracle Database 12c, 18c, 19c, 21c, and 23c:
 
 1. On the computer where your database is deployed, run the sqlplus tool.
 2. Connect to your Oracle Database—use Oracle account with the `SYSDBA` privilege. For example:
@@ -145,7 +145,7 @@ Oracle Database administration documents:
 
 Currently, Netwrix Auditor checks audit settings for Unified Auditing when compatibility is enabled
 for `ACTIONS`. If any of your current settings conflict with the audit configuration required for
-Netwrix Auditor,  lists these conflicts in the System Health event log.
+Netwrix Auditor lists these conflicts in the System Health event log.
 
 Also, remember to do the following:
 
