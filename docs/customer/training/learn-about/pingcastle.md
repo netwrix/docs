@@ -6,14 +6,17 @@ keywords: [training, course, pingcastle]
 description: "Learn about Netwrix PingCastle through introductory courses"
 ---
 
-import { NPCValue } from '@site/src/training/pingcastle';
+import { NPCValue, NPCConcepts } from '@site/src/training/pingcastle';
 import { Company, NPC } from '@site/src/training/products';
 
 
-Estimated length: 25 minutes
+Estimated length: 1 hour 5 minutes
 
 This learning path introduces you to <NPC />. It contains the following course:
 
 * 1680 <NPC /> – Valuable Features
+* 2680 <NPC /> – Concepts & Architecture
 
 <NPCValue />
+
+<NPCConcepts />
