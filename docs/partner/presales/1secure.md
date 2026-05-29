@@ -10,7 +10,7 @@ import { N1SValue, N1SConcepts, N1SIntroGS, N1SIntroMO, N1SIntroConf, N1SIntroDa
 import { Company, N1S } from '@site/src/training/products';
 
 
-Estimated length: 4 hours 2 minutes
+Estimated length: 4 hours 10 minutes
 
 This learning path grants <Company /> certification as a Presales Engineer for this product. It contains the following courses:
 
