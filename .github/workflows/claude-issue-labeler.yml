@@ -105,6 +105,7 @@ jobs:
         if: steps.check-state.outputs.issue_state == 'OPEN' && github.event_name == 'issues'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
           # Fetch current labels from the issue (post-Step 3)
           LABELS=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json labels --jq '.labels[].name')
@@ -117,6 +118,12 @@ jobs:
           # Skip codeowner notification for KB PR review tracking issues
           if echo "$LABELS" | grep -q "kb/review"; then
             echo "Issue has kb/review label — skipping codeowner notification"
+            exit 0
+          fi
+
+          # Skip codeowner notification for Admin Support PR review tracking issues
+          if echo "$ISSUE_TITLE" | grep -q "^Admin: PR review"; then
+            echo "Admin Support tracking issue — skipping codeowner notification"
             exit 0
           fi
 
