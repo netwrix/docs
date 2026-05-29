@@ -13,7 +13,7 @@ import { Company, NAA, NAM } from '@site/src/training/products';
 
 Estimated length: 1 hour 37 minutes
 
-This learning path grants <Company /> certification as a Presales Engineer for for this product. It contains the following courses:
+This learning path grants <Company /> certification as a Presales Engineer for this product. It contains the following courses:
 
 * 1020 <NAA /> 26 – Valuable Features
 * 2020 <NAA /> 26 – Concepts & Architecture
