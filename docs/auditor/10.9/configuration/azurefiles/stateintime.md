@@ -4,8 +4,8 @@ This topic describes how to enable State-in-Time data collection for an Azure Fi
 
 > **Note:** When Azure file shares use on-premises Active Directory (AD DS) authentication, the following limitations apply to State-in-Time permission reports:
 >
-> - **Group expansion is not supported for on-premises AD groups that are not synced to Microsoft Entra ID.** If access to a file or folder is granted through an on-premises AD security group, only the group SID appears in the report. The report does not list individual group members.
-> - **On-premises AD accounts that are not synced to Microsoft Entra ID appear as unresolved SIDs.** Netwrix Auditor cannot retrieve display names for accounts that exist only in on-premises Active Directory.
+> - **Group expansion is unavailable for on-premises AD groups that are not synced to Microsoft Entra ID.** If access to a file or folder is granted through such a group, the report does not list individual group members.
+> - **SID resolution is unavailable for on-premises AD groups and accounts that are not synced to Microsoft Entra ID.** These objects appear as unresolved SIDs instead of display names in permission reports.
 >
 > These limitations do not affect environments that use Microsoft Entra ID-only identities or fully synced hybrid identities.
 
