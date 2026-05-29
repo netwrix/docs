@@ -8,7 +8,7 @@ description: "Become a certified Presales Engineer for Netwrix Access Analyzer 2
 
 
 import { NAA26Value, NAA26Concepts, NAA26Demo, NAA26Additional } from '@site/src/training/access-analyzer-26';
-import { Company, NAA, NAM } from '@site/src/training/products';
+import { Company, NAA } from '@site/src/training/products';
 
 
 Estimated length: 1 hour 37 minutes
