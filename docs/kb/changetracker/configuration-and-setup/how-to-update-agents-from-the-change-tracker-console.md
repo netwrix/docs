@@ -17,13 +17,15 @@ keywords:
   - phased rollout
 products:
   - change-tracker
-sidebar_label: Updating Agents From the Console
-tags: []
-title: Updating Agents From the Change Tracker Console
+sidebar_label: Updating Agents from the Console
+tags:
+  - kb
+  - configuration-and-setup
+title: Updating Agents from the Console
 knowledge_article_id: ka0Qk000000DkufIAC
 ---
 
-# Updating Agents From the Change Tracker Console
+# Updating Agents from the Console
 
 ## Overview
 
@@ -56,7 +58,7 @@ Before updating agents, ensure you have:
    - To install: `sudo yum install at` or `sudo apt-get install at`
    - See [at Command ⸱ Red Hat 🡥](https://www.redhat.com/en/blog/linux-at-command) for more information.
 
-## Security Considerations
+### Security Considerations
 
 - **Update Integrity:** The `.upd` control file cryptographically signs the update to prevent tampering.
 - **HTTPS Communication:** All agent-to-Hub communication is encrypted via HTTPS.
@@ -137,37 +139,39 @@ For organized deployments, use device groups to control which agents receive upd
 
 > **NOTE:** Agents temporarily disconnecting during the upgrade is expected, as the agent service will need to restart as part of the upgrade process.
 
-## Phased Rollout Strategy
+## Deployment Best Practices
+
+### Phased Rollout Strategy
 
 For production environments, implement a phased rollout to minimize risk:
 
-### Phase 1: Initial Pilot
+#### Phase 1: Initial Pilot
 
 - Select 3-5 test devices representing different OS versions and configurations.
 - Create a group: "Agent Update - Pilot".
 - Deploy updates immediately.
 - Monitor agent status and logs before proceeding.
 
-### Phase 2: Early Adopters
+#### Phase 2: Early Adopters
 
 - Select 10-20% of production devices.
 - Create a group: "Agent Update - Early Adopters".
 - Schedule updates during a maintenance window.
 - Monitor for issues before broader deployment.
 
-### Phase 3: Staged Production Deployment
+#### Phase 3: Staged Production Deployment
 
 - Deploy to remaining devices in batches.
 - Create multiple groups by department, location, or criticality.
 - Stagger deployments to manage risk.
 
-### Phase 4: Post-Deployment Verification
+#### Phase 4: Post-Deployment Verification
 
 - Confirm all agents are updated.
 - Review agent logs for issues.
 - Document lessons learned.
 
-## Testing Checklist
+### Testing Checklist
 
 Before deploying to production, verify:
 
@@ -182,7 +186,7 @@ Before deploying to production, verify:
 - [ ] Event collection functioning normally
 - [ ] Rolling logs show no errors
 
-## Rollback Plan
+### Rollback Plan
 
 If issues occur during deployment:
 
@@ -207,7 +211,7 @@ If issues occur during deployment:
 
 ## Troubleshooting
 
-### Upload Fails with "System Error / An unknown error occurred"
+### Upload Fails with "System Error / An Unknown Error Occurred"
 
 **Symptom:**
 - Upload fails with error: `System Error: An unknown error occurred`
@@ -279,12 +283,12 @@ The default IIS maxAllowedContentLength is too low for agent update files.
 4. Test network connectivity to Hub.
 5. Check Windows Event Viewer for service errors.
 
-**If agent won't start:**
+**If agent will not start:**
 - Reinstall previous agent version.
 - Verify .NET dependencies are installed.
 - Check for conflicting software.
 
-## Version Compatibility
+### Version Compatibility
 
 | Agent Version | Hub Version | Release Date | Support Status |
 |---------------|-------------|--------------|----------------|
@@ -294,7 +298,7 @@ The default IIS maxAllowedContentLength is too low for agent update files.
 
 > **Important:** Always verify compatibility in the release notes before deploying updates.
 
-## FAQ
+### FAQ
 
 **Q: How often should I update agents?**
 A: Update agents when new versions address security vulnerabilities or critical bugs. Review release notes for each version.
@@ -309,7 +313,7 @@ A: The agent will not receive the update. The agent needs to be online during th
 A: Typically no, the agent service restarts automatically. However, some updates may require a system reboot (check release notes).
 
 **Q: Can I cancel an in-progress update?**
-A: Once an agent begins installing an update, it cannot be cancelled. However, you can remove devices from the update group to prevent additional deployments.
+A: Once an agent begins installing an update, you cannot cancel it. However, you can remove devices from the update group to prevent additional deployments.
 
 **Q: Where can I see the current agent version?**
 A: Navigate to Settings > Agents & Devices. The version is displayed in the Devices tab for each agent.

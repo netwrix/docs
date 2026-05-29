@@ -6,7 +6,7 @@ keywords:
   - IP address blocked
   - Login failures
 sidebar_label: 403 IP Address Blocked
-tags: [troubleshooting-and-errors]
+tags: [kb, troubleshooting-and-errors]
 title: "Rolling-Log Fix: Hub Connection Failed. 403 Server Message: IP Address Blocked: Login Failures"
 knowledge_article_id: ka0Qk000000DlfRIAS
 products:
@@ -24,6 +24,10 @@ This problem can occur when the Agent password being sent to the Hub Server is i
 ```text
 2017-09-06 14:22:43,230 [10] INFO Message - Hub connection failed (403 Server message: Ip Address Blocked: LoginFailures)
 ```
+
+## Cause
+
+The agent's `HubDetails.xml` file contains an incorrect password for the Hub Server account. After repeated authentication failures, the Hub Server blocks the agent's IP address to prevent brute-force login attempts.
 
 ## Resolution
 

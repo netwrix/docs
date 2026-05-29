@@ -15,13 +15,15 @@ keywords:
   - 7.7.4
 products:
   - change-tracker
-sidebar_label: 'How to Determine If the Default Agent Password Is '
-tags: []
-title: How to Determine If the Default Agent Password Is in Use
+sidebar_label: Determining If the Default Agent Password Is in Use
+tags:
+  - kb
+  - troubleshooting-and-errors
+title: Determining If the Default Agent Password Is in Use
 knowledge_article_id: ka0Qk00000078VVIAY
 ---
 
-# How to Determine If the Default Agent Password Is in Use
+# Determining If the Default Agent Password Is in Use
 
 > **LEGACY SYSTEM NOTE**
 >
@@ -35,11 +37,11 @@ knowledge_article_id: ka0Qk00000078VVIAY
 
 ## Overview
 
-An account named `agent` is created during the installation of the Netwrix Change Tracker Hub. In versions prior to 7.7.4, it was recommended that the `agent` account's default password be updated after installation of the Hub. Since the release of 7.7.4, a complex password for the `agent` account is required to be entered during installation.
+An account named `agent` is created during the installation of the Netwrix Change Tracker Hub. In versions prior to 7.7.4, Netwrix recommended updating the `agent` account's default password after installation of the Hub. Since the release of 7.7.4, you must enter a complex password for the `agent` account during installation.
 
 ## Instructions
 
-### Versions post-7.7.4
+### Versions Post-7.7.4
 
 Versions of the Hub from 7.7.4 will warn if any agent is using the default password by displaying the following warning in the bottom right of the screen.
 
@@ -49,7 +51,7 @@ The User Notifications page will also display the warning.
 
 ![Default password warning 2.png](../0-images/default-password-warning-2.jpg)
 
-### Versions pre-7.7.4
+### Versions Pre-7.7.4
 
 For users on versions prior to 7.7.4, the scripts below can be used to determine whether an agent is using the default password. These scripts can be rolled out by an IT automation system. However, if only one account is used by agents to authenticate, then manually running it on one device will be enough as all agents will be using the same authentication details.
 

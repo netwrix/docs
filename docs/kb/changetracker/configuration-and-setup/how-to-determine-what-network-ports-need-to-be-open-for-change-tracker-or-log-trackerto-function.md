@@ -15,12 +15,14 @@ keywords:
 products:
   - change-tracker
 sidebar_label: Network Ports for Change Tracker
-tags: []
-title: Determining which network ports should be open for Change Tracker to function
+tags:
+  - kb
+  - configuration-and-setup
+title: Determining Which Network Ports Need to Be Open
 knowledge_article_id: ka04u000000Hd8zAAC
 ---
 
-# Determining which network ports should be open for Change Tracker to function
+# Determining Which Network Ports Need to Be Open
 
 ## Overview
 
@@ -48,7 +50,7 @@ HTTPS communication to the Change Tracker Console is by default on port 443. Thi
 
 HTTPS communication between Change Tracker and the agent is controlled by the agent's HUBURL, defined during installation. The HUBURL will resemble `https://MY_CT_SERVER/api/`. If custom HTTPS ports are in use, the HUBURL will need to include this, for example `https://MY_CT_SERVER:PORT/api/`.
 
-**Important:** Communication is one-way and will always be initiated by the agent connecting to the Hub server.
+**Important:** The agent always initiates the connection to the Hub server; communication is one-way.
 
 ### Agentless Monitoring - Linux Systems
 
@@ -56,7 +58,7 @@ HTTPS communication between Change Tracker and the agent is controlled by the ag
 - **Direction:** Outbound from Change Tracker Proxy Agent to monitored Linux systems
 - **Protocol:** TCP/SSH
 
-One-way communication is initiated from the Change Tracker Proxy Agent to the monitored Linux systems. The proxy agent is typically collocated with Change Tracker but can be installed on a separate system if needed.
+The Change Tracker Proxy Agent initiates all communication to the monitored Linux systems. The proxy agent is typically collocated with Change Tracker but can be installed on a separate system if needed.
 
 ### Agentless Monitoring - Windows Systems
 
@@ -64,7 +66,7 @@ One-way communication is initiated from the Change Tracker Proxy Agent to the mo
 - **Direction:** Outbound from Change Tracker Proxy Agent to monitored Windows systems
 - **Protocol:** SMB
 
-One-way communication is initiated from the Change Tracker Proxy Agent to the Remote Registry Service on the Windows devices being monitored.
+The Change Tracker Proxy Agent initiates all communication to the Remote Registry Service on the monitored Windows devices.
 
 ### Network Devices (Routers, Switches, Firewalls)
 

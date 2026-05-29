@@ -18,6 +18,7 @@ products:
   - change-tracker
 sidebar_label: Corrupt ErrorEvent in Event Reports
 tags:
+  - kb
   - audit-and-logging
 title: "Corrupt ErrorEvent in Event Reports"
 knowledge_article_id: kA0Qk0000000ahpKAA
