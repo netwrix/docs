@@ -12,10 +12,10 @@ It supports two types of monitored items for Azure Files:
  - **Azure Subscription**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shares of all **storage accounts** of the specified **Azure Files subscription**
 
 
-> **Note:** For all **"data storage accounts"** used in the preceding list, you must configure [Diaggnostic settings](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
+> **Note:** For all **"data storage accounts"** used in the preceding list, you must configure [Diagnostic settings](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
 to save audit events on **"log storage accounts"**. Ensure you have the necessary access ([API permissions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#configure-api-permissions), [IAM Roles](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#assign-identity-and-access-management-iam-roles-to-the-app)) for [application](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#azure-application-registration) to read these events and access storage accounts metadata.
 
-> **Note:** Azure activity logs may take 3 to 20 minutes to become available for analysis after an event occurs. This is an [Azure platform limitation](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time#azure-metrics-resource-logs-activity-log) that applies to all services consuming Azure activity logs. As a result, some file share activities may appear in Netwrix Auditor reports with a delay. To include these delayed events, adjust report filters accordingly.
+> **Note:** Azure activity logs may take 3 to 20 minutes to become available for analysis after an event occurs. This is an [Azure platform limitation](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time#azure-metrics-resource-logs-activity-log) that applies to all services consuming Azure activity logs. As a result, some file share activities may appear in Netwrix Auditor reports with a delay. When generating reports shortly after activity occurs, extend the report time range by at least 20 minutes to capture events still in transit.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ to save audit events on **"log storage accounts"**. Ensure you have the necessar
 
 - **[Azure Application Registration](#azure-application-registration)** - Create Azure AD application
 - **[Configure API Permissions](#configure-api-permissions)** - Assign required permissions for created application in EntraID
-- **[Assign IAM Roles to the App](#assign-identity-and-access-management-iam-roles-to-the-app)**- Assigning roles to Resource Group, Data Storage Account and Log Storage Account
+- **[Assign Identity and Access Management (IAM) Roles to the App](#assign-identity-and-access-management-iam-roles-to-the-app)** - Assigning roles to Resource Group, Data Storage Account, and Log Storage Account
 - **[Diagnostic Settings](#diagnostic-settings)** - Configure audit logging
 
 ## Azure Application Registration
@@ -55,11 +55,11 @@ You should register an application so Netwrix Auditor can authenticate to Azure 
 1. In the Azure Portal, go to **Microsoft Entra ID > Manage > App registrations > + New registration**
 2. Enter:
    - **Name**: Name: `NetwrixAuditor-AzureFiles` (this is an example — you can use any descriptive name for the app)
-   - **Supported account types** (refer to [Account Types references](#account-types-references))
+   - **Supported account types** (refer to [Account types references](#account-types-references))
    - Leave **Redirect URI** blank
 3. Click **Register**
 
-**Account Types references:** {#account-types-references}
+#### Account types references
 
 - **[Supported account types – Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/v2-supported-account-types)**
 
@@ -257,13 +257,13 @@ For detailed instructions on creating the monitoring plan, see the [Azure Files 
 
 ### Netwrix documentation
 
-- [Azure Files Monitored Objects](/docs/auditor/10_8/configuration/azurefiles/monitoredobjects)
-- [Azure Files Monitoring Plan](/docs/auditor/10.8/admin/monitoringplans/azurefiles.md)
+- [Azure Files Monitored Objects](/docs/auditor/10.8/configuration/azurefiles/monitoredobjects.md) — list of audited actions for Azure Files
+- [Azure Files Monitoring Plan](/docs/auditor/10.8/admin/monitoringplans/azurefiles.md) — steps to create and configure a monitoring plan
 
 ### Microsoft documentation
 
-- [Create a storage account (Microsoft Learn)](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal)
-- [Azure Files identity-based access overview](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview)
-- [Supported account types — Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/v2-supported-account-types)
-- [Identity and account types for single- and multitenant apps](https://learn.microsoft.com/en-us/security/zero-trust/develop/identity-supported-account-types)
-- [Log data ingestion time in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time#azure-metrics-resource-logs-activity-log)
+- [Create a storage account](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal) — set up data and log storage accounts in Azure
+- [Azure Files identity-based access overview](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview) — configure AD-based authentication for file shares
+- [Supported account types — Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/v2-supported-account-types) — choose between single-tenant and multitenant app registrations
+- [Identity and account types for single- and multitenant apps](https://learn.microsoft.com/en-us/security/zero-trust/develop/identity-supported-account-types) — guidance on audience selection when registering the app
+- [Log data ingestion time in Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time#azure-metrics-resource-logs-activity-log) — Azure activity log latency details
