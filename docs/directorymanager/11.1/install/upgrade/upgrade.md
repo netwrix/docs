@@ -8,8 +8,6 @@ sidebar_position: 10
 
 The topic guides you to upgrade to Directory Manager 11.1 from Directory Manager 10.
 
-Follow the steps to upgrade.
-
 Step 1 – To launch the Upgrade wizard, click **Next** on the GroupID Successfully Configured page of
 the Configuration Tool.
 
@@ -22,6 +20,41 @@ Click **Start** > **Imanami** > **GroupID Upgrade Tool 11.0**.
 Step 2 – Read the welcome message and click **Next**.
 
 ![2-select_source_version](/images/directorymanager/11.1/install/upgrade/2-select_source_version.webp)
+
+Step 2.1: Verify SSL/TLS Certificates
+
+**CRITICAL PRE-UPGRADE STEP**
+
+Before proceeding with the upgrade, verify that all SSL/TLS certificates used for LDAP connections and authentication services are properly configured:
+
+**Verification Steps:**
+
+1. **Verify certificate installation:**
+   - Open Certificate Manager: `certlm.msc`
+   - Navigate to: **Trusted Root Certification Authorities** → **Certificates**
+   - Confirm all required certificates are present in this store
+
+2. **Check certificate validity:**
+   - Double-click each certificate
+   - Verify "Valid from" and "Valid to" dates
+   - Ensure certificates aren't expired
+![2-1-check_certificate_validity](/images/directorymanager/11.1/install/upgrade/2-1-check_certificate_validity.webp)
+
+3. **Verify certificate chain:**
+   - In certificate details, go to **Certification Path** tab
+   - Ensure all certificates in the chain show "This certificate is OK"
+   - Verify no revocation errors
+![2-1-verify_certificate_chain](/images/directorymanager/11.1/install/upgrade/2-1-verify_certificate_chain.webp)
+
+:::warning
+- Connections using self-signed certificates NOT in the Trusted Root CA store will FAIL after upgrade
+- Invalid certificates will block authentication and LDAP operations
+:::
+
+**If any certificates are missing or invalid:**
+- STOP the upgrade process
+- Install/update certificates
+- Re-verify all certificates before continuing
 
 Step 3 – From the Select the previous version to upgrade list, select the Directory Manager version
 to upgrade from.
@@ -46,17 +79,17 @@ can choose to upgrade all or selective data of the previous version. Options are
     ![3-select_modules-custom](/images/directorymanager/11.1/install/upgrade/3-select_modules-custom.webp)
 
     :::note
-    If later on, you wish to upgrade specific groups and their history via the Upgrade-Group
+    If you later want to upgrade specific groups and their history via the Upgrade-Group
     commandlet, then you must upgrade the Configuration and History in the first upgrade run. This
     will upgrade the history in the database as per Directory Manager 11.1 format and replicates it
-    to Elasticsearch. Later on, when you upgrade specific groups and their history using the
+    to Elasticsearch. Later, when you upgrade specific groups and their history using the
     Upgrade-Group commandlet, that will be done successfully. See the
     [Upgrade-Group](/docs/directorymanager/11.1/managementshell/smartgroup/upgradegroup.md) commandlet for additional
     information.
     :::
 
 
-    If you want to upgrade configurations, history and all groups using the Directory Manager
+    If you want to upgrade configurations, history, and all groups using the Directory Manager
     Upgrade wizard , then you must select the Configurations, History, and Groups checkboxes.
 
 Step 5 – Click **Next**.
@@ -99,7 +132,7 @@ connect to different child domains in a forest with different service accounts a
 messaging providers.
 
 - If an identity store already exists in Directory Manager 10 for the destination domains that the
-  jobs connect to, then jobs are moved to the respective identity stores in Directory Manager 11.1.
+  jobs connect to, the Upgrade wizard moves the jobs to the respective identity stores in Directory Manager 11.1.
 - When there is no identity store in Directory Manager 10 for the destination domain that the jobs
   connect to, the Upgrade wizard reads the FQDN of the destination domains used in the jobs and
   tries to create a forest structure. On identifying one, it proceeds to create an identity store
@@ -115,13 +148,13 @@ messaging providers.
     :::
 
 
-    The wizard does not create a separate identity store for each child domain in the same forest.
-    In case it cannot determine a forest structure, it creates separate identity stores for each
+    The wizard doesn't create a separate identity store for each child domain in the same forest.
+    In case it can't determine a forest structure, it creates separate identity stores for each
     domain.
 
 Step 10 – For Synchronize jobs that use Office 365 as messaging provider in Directory Manager 10,
-the wizard would require you to provide the PFX certificate. All Synchronize jobs that use Office
-365 as messaging provider will be listed on the wizard page. Expand each job and provide the PFX
+the wizard would require you to provide the PFX certificate. The wizard page lists all Synchronize jobs that use Office
+365 as messaging provider. Expand each job and provide the PFX
 certificate along with its password.
 
 ![Upgrade wizard Synchronize Messaging System page](/images/directorymanager/11.1/install/upgrade/entraidsynmessagingsystem.webp)
@@ -137,13 +170,13 @@ Provide the following information:
 
 Step 11 – Click **Next**.
 
-Step 12 – In Directory Manager 10 and earlier versions, reports were generated for the domain that
-the Directory Manager server was joined to. During upgrade, the wizard checks if an identity store
-for that domain exists or not.
+Step 12 – In Directory Manager 10 and earlier versions, Directory Manager generated reports for the domain that
+the Directory Manager server was joined to. During upgrade, the wizard checks whether an identity store
+for that domain exists.
 
-- If an identity store for that domain exists or if it being created for a Synchronize job in this
-  upgrade process, Directory Manager will bind the reports to it.
-- If an identity store for that domain does not exist, then you have to create an identity store for
+- If an identity store for that domain exists or if the upgrade process is creating one for a Synchronize job in this
+  upgrade, Directory Manager will bind the reports to it.
+- If an identity store for that domain doesn't exist, then you have to create an identity store for
   it. It must essentially be an Active Directory identity store. The wizard will bind the reports
   generated in Directory Manager 10 to the identity store, so you will be able to view them in
   Directory Manager 11.1.
@@ -155,13 +188,13 @@ will not be displayed.
 :::
 
 
-Step 13 – During upgrade, Synchronize schedules are also moved to identity stores.
+Step 13 – During upgrade, the Upgrade wizard also moves Synchronize schedules to identity stores.
 The Upgrade wizard will check the jobs added to a schedule. If the destination in a job is a
 directory provider, it will automatically move the schedule to the respective identity store.
 
 :::tip
-Remember, during upgrade, identity stores are created for destination directory providers of
-Synchronize jobs (i.e., for providers that do not have an identity store in the source version).
+Remember, during upgrade, the Upgrade wizard creates identity stores for destination directory providers of
+Synchronize jobs (i.e., for providers that don't have an identity store in the source version).
 :::
 
 
@@ -186,8 +219,8 @@ This page displays a complete summary of the data to be copied/upgraded for your
 These options were selected on the Select modules to upgrade page..
 
 :::note
-If there are any disabled identity store(s) in the source Directory Manager version, Directory
-Manager will not upgrade those identity store(s). However, data of those identity store(s) will
+If there are any disabled identity stores in the source Directory Manager version, Directory
+Manager will not upgrade those identity stores. However, data of those identity stores will
 remain intact in the source Directory Manager version.
 :::
 
@@ -196,8 +229,8 @@ Step 15 – Review the summary and click **Next**.
 
 ![Upgrade Progress page](/images/directorymanager/11.1/install/upgrade/6-upgrade_process_complete.webp)
 
-Directory Manager is upgraded while the Upgrade Process displays the upgrade progress. On successful
-upgrade, the Upgradce Completed message above the progress bar is displayed.
+The Upgrade Process upgrades Directory Manager while displaying the upgrade progress. On successful
+upgrade, Directory Manager displays the Upgrade Completed message above the progress bar.
 
 Step 16 – Click **Next**.
 
