@@ -12,7 +12,7 @@ import { Company, NPC } from '@site/src/training/products';
 
 Estimated length: 1 hour 5 minutes
 
-This learning path introduces you to <NPC />. It contains the following course:
+This learning path introduces you to <NPC />. It contains the following courses:
 
 * 1680 <NPC /> – Valuable Features
 * 2680 <NPC /> – Concepts & Architecture
