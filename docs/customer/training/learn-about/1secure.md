@@ -12,7 +12,7 @@ import { N1S } from '@site/src/training/products';
 
 Estimated length: 1 hour 35 minutes
 
-This learning path introduces you to <N1S />. It contains the following course:
+This learning path introduces you to <N1S />. It contains the following courses:
 
 * 1600 <N1S /> – Valuable Features
 * 2600 <N1S /> – Components & Architecture
