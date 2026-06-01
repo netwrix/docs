@@ -32,11 +32,11 @@ function importDocSearchModalIfNeeded() {
     });
 }
 
-function useNavigator({externalUrlRegex, selectedProductsRef}) {
+function useNavigator({externalUrlRegex, selectedProductsRef, selectedVersionsRef}) {
     const history = useHistory();
     const createSearchLink = useSearchLinkCreator();
 
-    // Create navigator ONCE and read selectedProducts from ref at navigation time
+    // Create navigator ONCE and read filters from refs at navigation time
     // This prevents navigator identity from changing when filters change
     const navigator = useMemo(() => {
         return {
@@ -47,8 +47,9 @@ function useNavigator({externalUrlRegex, selectedProductsRef}) {
                     document.querySelector('input[type="search"]');
                 const currentQuery = input ? input.value : '';
 
-                // Read selected products from ref at navigation time
+                // Read selected filters from refs at navigation time
                 const selectedProducts = selectedProductsRef?.current || [];
+                const selectedVersions = selectedVersionsRef?.current || [];
 
                 // If we have a search query, redirect to full search results page instead
                 if (currentQuery) {
@@ -56,6 +57,9 @@ function useNavigator({externalUrlRegex, selectedProductsRef}) {
                     const urlParams = new URLSearchParams();
                     if (selectedProducts.length > 0) {
                         urlParams.set('products', selectedProducts.join(','));
+                    }
+                    if (selectedVersions.length > 0) {
+                        urlParams.set('versions', selectedVersions.join(','));
                     }
                     const searchPageUrl = urlParams.toString()
                         ? `${baseLink}&${urlParams.toString()}`
@@ -68,7 +72,7 @@ function useNavigator({externalUrlRegex, selectedProductsRef}) {
                 }
             },
         };
-    }, [externalUrlRegex, history, createSearchLink, selectedProductsRef]);
+    }, [externalUrlRegex, history, createSearchLink, selectedProductsRef, selectedVersionsRef]);
 
     return navigator;
 }
@@ -217,9 +221,15 @@ function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef
     // Read refs at click time to guarantee current filter state
     const handleClick = useCallback((e) => {
         e.preventDefault();
+        // Snapshot filters into sessionStorage before navigation so SearchPage
+        // can fall back to them if URL params are lost for any reason
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProductsRef?.current || []));
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(selectedVersionsRef?.current || []));
+        }
         onClose();
         history.push(buildLink());
-    }, [onClose, history, buildLink]);
+    }, [onClose, history, buildLink, selectedProductsRef, selectedVersionsRef]);
 
     return (
         <Link to={buildLink()} onClick={handleClick}>
@@ -425,7 +435,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
 function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, selectedVersionsRef, ...props}) {
     const {i18n: {currentLocale}} = useDocusaurusContext();
     // Use ref for navigator to prevent identity change when filters change
-    const navigator = useNavigator({externalUrlRegex, selectedProductsRef});
+    const navigator = useNavigator({externalUrlRegex, selectedProductsRef, selectedVersionsRef});
     // Keep searchParameters stable - don't include product filters here
     // Product filters are injected at request time via transformSearchClient
     const searchParameters = useSearchParameters({...props, productFacetFilters: []});
@@ -534,27 +544,9 @@ export default function SearchBar() {
     // Store the current search query to preserve it across filter changes
     const searchQueryRef = useRef('');
 
-    // Multi-select state for products
-    const [selectedProducts, setSelectedProducts] = useState(() => {
-        if (typeof window === 'undefined') return [];
-        const saved = sessionStorage.getItem('docs_product_filter');
-        try {
-            return saved ? JSON.parse(saved) : [];
-        } catch {
-            return [];
-        }
-    });
-
-    // Multi-select state for versions
-    const [selectedVersions, setSelectedVersions] = useState(() => {
-        if (typeof window === 'undefined') return [];
-        const saved = sessionStorage.getItem('docs_version_filter');
-        try {
-            return saved ? JSON.parse(saved) : [];
-        } catch {
-            return [];
-        }
-    });
+    // Multi-select state — always starts empty; reset on every modal open
+    const [selectedProducts, setSelectedProducts] = useState([]);
+    const [selectedVersions, setSelectedVersions] = useState([]);
 
     // Ref to access selectedProducts without causing re-renders
     // This is used by transformSearchClient to inject filters at request time
@@ -579,18 +571,6 @@ export default function SearchBar() {
         }
     }, [selectedProducts]);
 
-    // Listen for filter changes from SearchPage (same-tab sync)
-    useEffect(() => {
-        const handleFilterChange = (e) => {
-            const newProducts = e.detail.products;
-            // Avoid infinite loop by checking if products actually changed
-            if (JSON.stringify(newProducts) !== JSON.stringify(selectedProducts)) {
-                setSelectedProducts(newProducts);
-            }
-        };
-        window.addEventListener('productFilterChange', handleFilterChange);
-        return () => window.removeEventListener('productFilterChange', handleFilterChange);
-    }, [selectedProducts]);
 
     // Keep track of the search input value
     useEffect(() => {
@@ -668,6 +648,13 @@ export default function SearchBar() {
     const closeModalRef = useRef(null);
 
     const onModalOpen = useCallback((closeModal) => {
+        // Reset filters to defaults each time the modal opens so stale
+        // state from a previous search or the full results page is cleared.
+        setSelectedProducts([]);
+        setSelectedVersions([]);
+        selectedProductsRef.current = [];
+        selectedVersionsRef.current = [];
+
         // Target .DocSearch-SearchBar so our controls are a sibling of .DocSearch-Form.
         // This lets us move them below the search row on mobile via flex-wrap.
         const el =
@@ -677,6 +664,41 @@ export default function SearchBar() {
         closeModalRef.current = closeModal ?? null;
         setModalHeaderEl(el || null);
     }, []);
+
+    // Navigate to full search results page with current filters
+    const history = useHistory();
+    const createSearchLink = useSearchLinkCreator();
+    const navigateToSearchPage = useCallback(() => {
+        const query = searchQueryRef.current;
+        if (!query) return;
+        const baseLink = createSearchLink(query);
+        const params = new URLSearchParams();
+        const products = selectedProductsRef.current || [];
+        const versions = selectedVersionsRef.current || [];
+        if (products.length > 0) params.set('products', products.join(','));
+        if (versions.length > 0) params.set('versions', versions.join(','));
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(products));
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(versions));
+        }
+        closeModalRef.current?.();
+        history.push(params.toString() ? `${baseLink}&${params.toString()}` : baseLink);
+    }, [createSearchLink, history]);
+
+    // Enter key anywhere in the modal (except the search input) → go to full results
+    useEffect(() => {
+        if (!modalHeaderEl) return;
+        const handler = (e) => {
+            if (e.key !== 'Enter') return;
+            // Let DocSearch handle Enter when focus is on its own input
+            const active = document.activeElement;
+            if (active && (active.classList.contains('DocSearch-Input') || active.tagName === 'INPUT' && active.type === 'search')) return;
+            e.preventDefault();
+            navigateToSearchPage();
+        };
+        document.addEventListener('keydown', handler);
+        return () => document.removeEventListener('keydown', handler);
+    }, [modalHeaderEl, navigateToSearchPage]);
 
     // Keep contextualSearch stable to prevent query reset
     // Product filters are handled via transformSearchClient instead
