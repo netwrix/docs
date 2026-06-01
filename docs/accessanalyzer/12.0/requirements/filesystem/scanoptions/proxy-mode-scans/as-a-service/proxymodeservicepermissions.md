@@ -69,7 +69,7 @@ For example:
 The best way to verify if you’re using Proxy Mode with Service scanning is via the FSAA Data Collector Query Settings::
 
 ### Pre-Install File System Proxy Service
-1. [Applet Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/fsaa/appletsettings) > Applet Launch Mechanism: Require applet to be running as a service on target
+1. [Applet Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/fsaa/appletsettings/appletsettings) > Applet Launch Mechanism: Require applet to be running as a service on target
 2. [Scan Server Selection](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/fsaa/scanserverselection) > “Specific Remote Server: “ **OR** “Specific Remote Servers by Host List”
 
 **_OR_**
