@@ -394,6 +394,7 @@ html {
     border-bottom: 1px solid var(--docsearch-subtle-color);
     border-radius: 4px 4px 0 0;
     align-items: center;
+    overflow: visible;
 }
 
 /* Fix .DocSearch-Title — the library sets line-height: 0.5em which causes
