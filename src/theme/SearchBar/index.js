@@ -616,6 +616,16 @@ export default function SearchBar() {
         if (typeof window !== 'undefined') {
             sessionStorage.setItem('docs_product_filter', JSON.stringify(newProducts));
         }
+        // Clear versions that don't exist for the new product selection
+        const validVersions = new Set(getVersionsForProducts(newProducts));
+        const cleaned = selectedVersionsRef.current.filter(v => validVersions.has(v));
+        if (cleaned.length !== selectedVersionsRef.current.length) {
+            selectedVersionsRef.current = cleaned;
+            setSelectedVersions(cleaned);
+            if (typeof window !== 'undefined') {
+                sessionStorage.setItem('docs_version_filter', JSON.stringify(cleaned));
+            }
+        }
         refreshSearch();
     }, [refreshSearch]);
 

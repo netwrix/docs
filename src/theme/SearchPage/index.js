@@ -277,9 +277,21 @@ function SearchPageContent() {
 
     const availableVersions = useMemo(() => getVersionsForProducts(selectedProducts), [selectedProducts]);
 
-    // Track if we're restoring from URL (e.g., browser back button)
-    const restoringFromUrl = useRef(false);
-    const targetPageRef = useRef(null);
+    // Clear orphan versions when products change
+    const handleProductChange = useCallback((newProducts) => {
+        setSelectedProducts(newProducts);
+        const validVersions = new Set(getVersionsForProducts(newProducts));
+        setSelectedVersions(prev => {
+            const cleaned = prev.filter(v => v === '__all__' || validVersions.has(v));
+            return cleaned.length > 0 ? cleaned : ['__all__'];
+        });
+    }, []);
+
+    // Track if we're restoring from URL (e.g., browser back button).
+    // Initialize from pageFromUrl so landing on /search?page=3 works
+    // even though the location.search effect skips initial mount.
+    const restoringFromUrl = useRef(pageFromUrl > 1);
+    const targetPageRef = useRef(pageFromUrl > 1 ? pageFromUrl - 1 : null);
     const isInternalNavigation = useRef(false);
     const isInitialMount = useRef(true);
 
@@ -805,7 +817,7 @@ function SearchPageContent() {
                             label="Products"
                             options={PRODUCT_OPTIONS}
                             selectedValues={selectedProducts}
-                            onChange={setSelectedProducts}
+                            onChange={handleProductChange}
                         />
                         {availableVersions.length > 0 && (
                             <MultiSelect
