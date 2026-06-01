@@ -277,6 +277,7 @@ function SearchPageContent() {
     const restoringFromUrl = useRef(false);
     const targetPageRef = useRef(null);
     const isInternalNavigation = useRef(false);
+    const isInitialMount = useRef(true);
 
     // All sorted results for client-side pagination
     const allItemsRef = useRef([]);
@@ -312,8 +313,14 @@ function SearchPageContent() {
         return () => window.removeEventListener('productFilterChange', handleFilterChange);
     }, [selectedProducts]);
 
-    // Update state when URL changes (e.g., when navigating from search modal or browser back)
+    // Update state when URL changes (e.g., browser back/forward)
+    // Skips initial mount — useState initializers already read URL params and sessionStorage
     useEffect(() => {
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+            return;
+        }
+
         // Skip if this was an internal navigation (we triggered the URL change ourselves)
         if (isInternalNavigation.current) {
             isInternalNavigation.current = false;

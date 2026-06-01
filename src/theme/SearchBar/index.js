@@ -193,27 +193,36 @@ function Hit({hit, children}) {
 
 function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef}) {
     const createSearchLink = useSearchLinkCreator();
-    const baseLink = createSearchLink(state.query);
+    const history = useHistory();
 
-    // Read filters from refs at render time
-    const selectedProducts = selectedProductsRef?.current || [];
-    const selectedVersions = selectedVersionsRef?.current || [];
+    // Build URL from refs — used for the href (right-click / middle-click)
+    const buildLink = useCallback(() => {
+        const baseLink = createSearchLink(state.query);
+        const selectedProducts = selectedProductsRef?.current || [];
+        const selectedVersions = selectedVersionsRef?.current || [];
 
-    // Add product and version filters as URL parameters
-    const params = new URLSearchParams();
-    if (selectedProducts.length > 0) {
-        params.set('products', selectedProducts.join(','));
-    }
-    if (selectedVersions.length > 0) {
-        params.set('versions', selectedVersions.join(','));
-    }
+        const params = new URLSearchParams();
+        if (selectedProducts.length > 0) {
+            params.set('products', selectedProducts.join(','));
+        }
+        if (selectedVersions.length > 0) {
+            params.set('versions', selectedVersions.join(','));
+        }
 
-    const linkWithFilters = params.toString()
-        ? `${baseLink}&${params.toString()}`
-        : baseLink;
+        return params.toString()
+            ? `${baseLink}&${params.toString()}`
+            : baseLink;
+    }, [state.query, createSearchLink, selectedProductsRef, selectedVersionsRef]);
+
+    // Read refs at click time to guarantee current filter state
+    const handleClick = useCallback((e) => {
+        e.preventDefault();
+        onClose();
+        history.push(buildLink());
+    }, [onClose, history, buildLink]);
 
     return (
-        <Link to={linkWithFilters} onClick={onClose}>
+        <Link to={buildLink()} onClick={handleClick}>
             <Translate id="theme.SearchBar.seeAll">
                 {'See all results'}
             </Translate>
