@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # 1-FSAC System Scans Job
 
-The 1-FSAC System Scans job is designed to collect activity events from the targeted file servers.
+The 1-FSAC System Scans job collects activity events from the targeted file servers.
 
 ## Query for the 1-FSAC System Scans Job
 
@@ -35,7 +35,8 @@ complete list of customizable settings. See the
 ### Configure the Activity Scan Query
 
 The 1-FSAC System Scans job has been preconfigured to run with the default settings with the
-category of File system activity Scan. Follow the steps to set any desired customizations.
+category of File system activity Scan. To customize the configuration, complete the following
+steps.
 
 **Step 1 –** Navigate to the **FileSystem** > **0.Collection** > **1-FSAC System Scans** >
 **Configure** node and select the **Queries** node.
@@ -47,7 +48,7 @@ opens.
 Data Collector Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 

@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # 1-SEEK System Scans Job
 
-The 1-SEEK System Scans job is designed to collect sensitive data from the targeted file servers.
+The 1-SEEK System Scans job collects sensitive data from the targeted file servers.
 
 ## Query for the 1-SEEK System Scans Job
 
@@ -25,7 +25,7 @@ The following default configurations are commonly customized:
 
 - Default Scoping Options page > Scan Settings tab:
 
-    - Set to **Limit subfolder scan depth to 2 level(s)**
+    - Set to **Limit subfolder scan depth to 2 levels**
     - Set to **Exclude system shares**
 
 - Scoping Options
@@ -56,7 +56,7 @@ instructions.
 ### Configure the (SEEK) File System Scan Query
 
 The 1-SEEK System Scans job has been preconfigured to run with the default settings with the
-category of Sensitive data Scan. Follow these steps to set any desired customizations.
+category of Sensitive data Scan. To customize the configuration, complete the following steps.
 
 **Step 1 –** Navigate to the **FileSystem** > **0.Collection** > **1-SEEK System Scans** >
 **Configure** node and select the **Queries** node.
@@ -68,7 +68,7 @@ opens.
 Data Collector Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 
@@ -121,13 +121,13 @@ additional information.
 
     - Action on failure to enable LAT Preservation – Before scanning each file, FSAA attempts to
       enable an operating system feature to preserve the LAT when accessing the file. This operation
-      may fail for a variety of reasons, which include but are not limited to: the operating system
-      or file system where the file is located does not support LAT preservation, or insufficient
+      may fail for a variety of reasons, which include but aren't limited to: the operating system
+      or file system where the file is located doesn't support LAT preservation, or insufficient
       permissions from the service account trying to access the file. The following configuration
       addresses a failure to enable the LAT preservation mode:
 
         - Continue to scan file silently – FSAA scans the file with the possibility that LAT
-          preservation is not possible. No warning will be shown.
+          preservation isn't possible. No warning will be shown.
         - Continue to scan file with warning – FSAA scans the file with the possibility that LAT
           will not be preserved. A warning will be shown for this file.
         - Skip file silently – FSAA will not scan the file. No warning will be shown.
@@ -170,7 +170,7 @@ information:
 - Scope to scan only Open shares
 
 :::note
-This option only works in conjunction with File System Access Auditing.
+This option only works with File System Access Auditing.
 :::
 
 
@@ -208,7 +208,7 @@ topic for additional information.
 
 ![SDD Criteria Settings](/images/accessanalyzer/12.0/solutions/filesystem/collection/seeksddcriteriasettings.webp)
 
-**Step 12 –** On the SDD Criteria Settings page, add or remove criteria as desired. See the
+**Step 12 –** Add or remove criteria on the SDD Criteria Settings page as desired. See the
 [FSAA: SDD Criteria Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/sddcriteria.md) topic for additional
 information.
 
@@ -217,7 +217,7 @@ information.
   for additional information
 
 :::note
-By default, discovered sensitive data strings are not stored in the Access Analyzer
+By default, discovered sensitive data strings aren't stored in the Access Analyzer
 database.
 :::
 
