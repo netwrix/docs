@@ -560,12 +560,17 @@ export default function SearchBar() {
         selectedVersionsRef.current = selectedVersions;
     }, [selectedVersions]);
 
-    // Sync selectedProducts to sessionStorage
+    // Sync filters to sessionStorage so SearchPage fallback stays current
     useEffect(() => {
         if (typeof window !== 'undefined') {
             sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
         }
     }, [selectedProducts]);
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(selectedVersions));
+        }
+    }, [selectedVersions]);
 
 
     // Keep track of the search input value

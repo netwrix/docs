@@ -553,9 +553,14 @@ function SearchPageContent() {
             if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
             if (currentPage > 1) params.set('page', String(currentPage));
 
-            // Mark this as an internal navigation so location.search effect ignores it
-            isInternalNavigation.current = true;
-            history.replace({search: params.toString()});
+            // Only set the flag when the URL actually changes — otherwise the
+            // location.search effect never fires to reset it, and the next
+            // external navigation (e.g. from the modal) gets skipped.
+            const newSearch = params.toString();
+            if (newSearch !== location.search.replace(/^\?/, '')) {
+                isInternalNavigation.current = true;
+                history.replace({search: newSearch});
+            }
 
             prevFiltersRef.current = {searchQuery, selectedProducts, selectedVersions, resultsPerPage, page: currentPage};
         }
