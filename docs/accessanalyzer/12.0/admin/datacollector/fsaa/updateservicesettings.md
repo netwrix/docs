@@ -23,4 +23,4 @@ Configure the settings for the targeted File System Proxy Service:
 - Scan cancellation timeout: [number] minute(s) – When selected, this option will timeout the applet
   if there is an attempt to pause the scan and the applet does not respond
 
-See the [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings.md) topic for additional information.
+See the [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings/appletsettings.md) topic for additional information.

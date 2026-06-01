@@ -61,7 +61,7 @@ purpose of this job.
 ![Applet Settings](/images/accessanalyzer/12.0/solutions/filesystem/collection/fsaaseekappletsettings.webp)
 
 **Step 4 –** The Applet Settings page applies to the applet and proxy mode scans. If employing proxy
-servers, see the [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings.md) topic
+servers, see the [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings/appletsettings.md) topic
 for configuration instructions.
 
 ![Scan Server Selection](/images/accessanalyzer/12.0/solutions/filesystem/collection/fsaaseekserverselection.webp)

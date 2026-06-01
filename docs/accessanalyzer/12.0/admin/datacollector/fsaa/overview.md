@@ -42,7 +42,7 @@ The FSAA Data Collector is configured through the File System Access Auditor Dat
 The wizard contains the following pages, which change based up on the query category selected:
 
 - [FSAA: Query Selection](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/queryselection.md)
-- [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings.md)
+- [FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings/appletsettings.md)
 - [FSAA: Scan Server Selection](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/scanserverselection.md)
 - [FSAA: Scan Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/scansettings.md)
 - [FSAA: Azure Tenant Mapping](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/azuretenantmapping.md)

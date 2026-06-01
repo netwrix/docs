@@ -56,7 +56,7 @@ purpose of this job.
 
 **Step 4 –** The Applet Settings page applies to the applet and proxy mode scans which are selected
 on the Scan Server Level Page. If employing proxy servers, see the
-[FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings.md) topic for configuration
+[FSAA: Applet Settings](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings/appletsettings.md) topic for configuration
 instructions.
 
 ![Scan Server Selection](/images/accessanalyzer/12.0/solutions/filesystem/collection/fsacscanserverselection.webp)

@@ -46,7 +46,7 @@ containing all on-premise Nasuni Edge Appliances and cloud filers.
 
 If using multiple proxy servers, these should also be configured within a different custom-created
 host list. Then assign the proxy servers host list on the
-[FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings.md)
+[FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings/appletsettings.md)
 page of the File System Access Auditor Data Collector Wizard within the following jobs in the
 0.Collection Job Group according to the type of auditing being conducted:
 
