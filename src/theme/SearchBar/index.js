@@ -432,7 +432,7 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
     );
 }
 
-function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, selectedVersionsRef, ...props}) {
+function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProductsRef, selectedVersionsRef, ...props}) {
     const {i18n: {currentLocale}} = useDocusaurusContext();
     // Use ref for navigator to prevent identity change when filters change
     const navigator = useNavigator({externalUrlRegex, selectedProductsRef, selectedVersionsRef});
@@ -458,7 +458,8 @@ function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, selected
         setIsOpen(false);
         searchButtonRef.current?.focus();
         setInitialQuery(undefined);
-    }, []);
+        onModalClose?.();
+    }, [onModalClose]);
 
     const openModal = useCallback(() => {
         prepareSearchContainer();
@@ -560,17 +561,6 @@ export default function SearchBar() {
         selectedVersionsRef.current = selectedVersions;
     }, [selectedVersions]);
 
-    // Sync filters to sessionStorage so SearchPage fallback stays current
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
-        }
-    }, [selectedProducts]);
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            sessionStorage.setItem('docs_version_filter', JSON.stringify(selectedVersions));
-        }
-    }, [selectedVersions]);
 
 
     // Keep track of the search input value
@@ -621,9 +611,12 @@ export default function SearchBar() {
     }, []);
 
     const onChangeProducts = useCallback((newProducts) => {
-        selectedProductsRef.current = newProducts; // Sync ref immediately so search uses new filters
+        selectedProductsRef.current = newProducts;
         setSelectedProducts(newProducts);
-        refreshSearch(); // Re-run current query with updated filters
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(newProducts));
+        }
+        refreshSearch();
     }, [refreshSearch]);
 
     const onChangeVersions = useCallback((newVersions) => {
@@ -693,13 +686,17 @@ export default function SearchBar() {
             if (e.key !== 'Enter') return;
             // Let DocSearch handle Enter when focus is on its own input
             const active = document.activeElement;
-            if (active && (active.classList.contains('DocSearch-Input') || active.tagName === 'INPUT' && active.type === 'search')) return;
+            if (active && (active.classList.contains('DocSearch-Input') || (active.tagName === 'INPUT' && active.type === 'search'))) return;
             e.preventDefault();
             navigateToSearchPage();
         };
         document.addEventListener('keydown', handler);
         return () => document.removeEventListener('keydown', handler);
     }, [modalHeaderEl, navigateToSearchPage]);
+
+    const onModalClose = useCallback(() => {
+        setModalHeaderEl(null);
+    }, []);
 
     // Keep contextualSearch stable to prevent query reset
     // Product filters are handled via transformSearchClient instead
@@ -713,6 +710,7 @@ export default function SearchBar() {
                 selectedProductsRef={selectedProductsRef}
                 selectedVersionsRef={selectedVersionsRef}
                 onModalOpen={onModalOpen}
+                onModalClose={onModalClose}
             />
 
             {modalHeaderEl &&

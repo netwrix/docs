@@ -256,8 +256,8 @@ function SearchPageContent() {
         const saved = sessionStorage.getItem('docs_product_filter');
         try {
             const parsed = saved ? JSON.parse(saved) : [];
-            // Normalize: empty array from modal means "all products"
-            return parsed.length === 0 ? ['__all__'] : parsed;
+            if (!Array.isArray(parsed) || parsed.length === 0) return ['__all__'];
+            return parsed;
         } catch {
             return ['__all__'];
         }
@@ -269,7 +269,8 @@ function SearchPageContent() {
         const saved = sessionStorage.getItem('docs_version_filter');
         try {
             const parsed = saved ? JSON.parse(saved) : [];
-            return parsed.length === 0 ? ['__all__'] : parsed;
+            if (!Array.isArray(parsed) || parsed.length === 0) return ['__all__'];
+            return parsed;
         } catch { return ['__all__']; }
     });
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
