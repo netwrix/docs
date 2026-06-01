@@ -65,7 +65,7 @@ the full text at rest. You can enable this mode by:
 1. Access the Administration Console;
 2. Select Config from the top navigation bar;
 3. On the Collector tab, enable the Encrypt Text (Text.cse) option (this is an advanced setting - 
-select the spanner icon in the bottom left to display it);
+select the wrench icon in the bottom left to display it);
 4. Select Save.
 
 The other index files cannot be reverse engineered to retrieve the full document text - however, do

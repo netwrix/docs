@@ -13,14 +13,14 @@ The Dashboard administration area provides a selection of tools to review applic
 The default screen shows a high-level overview of Netwrix Data Classification statistics, displaying
 the last active times of each service (with inactive services shown in red). Select the "i" icon
 next to each date to view the name of the active server as well as batch processing statistics.
-If you have  the Distributed Query Server functionality enabled, any instances that are missing their 
+If you have the Distributed Query Server functionality enabled, any instances that are missing their 
 encryption key will also be displayed. You will also be able to view the average processing throughput.
 
 The following statistics are available for each thread type:
 
 - Processing Time—The weighted average time for each thread (total batch time / number of documents
   processed)
-- Real Execution Time—The actual execution time of each thread (average of each threads' run time)
+- Real Execution Time—The actual execution time of each thread (an average of each thread's run time)
 
 Statistics shown on the Dashboard screen are cached and updated regularly by the Collector service.
 If the values are not being updated please ensure that the Collector service is running.
@@ -36,12 +36,12 @@ following meanings:
   typically mean that the full text for the affected documents will not be available
 - Collection Exclusions—Items that have been excluded due to a configured Collection Exclusion
 - Files Skipped—File share items that have been ignored due to the "Files Included" or "Files
-  Excluded" configuration (Sources → File)
+  Excluded" configuration
 - Deleted Automatically—Items that have been detected as removed from the source system
 - Deleted Manually—Items removed manually by an end-user via the administration console
 
 :::note
-A deleted document is not immediately removed from NDC in case it was incorrectly deleted. Users must click the Expunge option on Deleted Automatically and Deleted Manually to fully remove those documents from the system. Automatic expunging can be enabled via the [Administration configuration settings](/docs/dataclassification/5.7/systemconfigurationoverview/users/usermanagement.md).
+Deleted documents are retained as a safeguard against accidental deletion. Users must click the Expunge option on Deleted Automatically and Deleted Manually to fully remove those documents from the system. Automatic expunging can be enabled via the [Administration configuration settings](/docs/dataclassification/5.7/systemconfigurationoverview/users/usermanagement.md).
 :::
 
     ![dashboard_thumb_0_0](/images/dataclassification/5.7/admin/reporting/dashboard_thumb_0_0.webp)

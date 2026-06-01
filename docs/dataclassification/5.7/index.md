@@ -81,7 +81,7 @@ The NDC Collector is implemented as a Microsoft Windows Service.
 
 ## Indexer
 
-The Indexer takes each new document collected by the conceptCollector and indexes terms from 
+The Indexer takes each new document collected by the NDC Collector and indexes terms from 
 the extracted text within the NDC Index.
 
 The index can be read from concurrently with the indexing process. However, significant indexing
@@ -134,7 +134,7 @@ are collected.
 
 ## Classifier
 
-The Classifier is used to classify documents after they have been indexed. It can make use of the built-in
+The Classifier classifies collected documents against NDC taxonomies. It can make use of the built-in
 taxonomies and any custom taxonomies created by the user, and can be linked to SharePoint termsets to classify
 against them as well. It also runs user-configured workflows against any documents that meet the conditions
 of the workflow, and is used to perform Data Subject Access Requests.

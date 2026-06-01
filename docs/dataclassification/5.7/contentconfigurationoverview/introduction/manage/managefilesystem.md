@@ -87,7 +87,7 @@ To specify inclusions, do the following:
    **Add**.
 
 Two wildcards are supported:
-- \* - matches to one or more instances of any character
+- \* - matches one or more instances of any character
 - . - explicitly includes files with no extension
 
 

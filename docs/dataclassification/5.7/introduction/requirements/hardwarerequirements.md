@@ -68,7 +68,7 @@ use the NDC script-based [file scanning tool](https://www.netwrix.com/download/p
 
 **Exchange Mailboxes**
 
-If you plan on using NDC to crawl an on-premise Exchange server, you need to know the following:
+If you plan on using NDC to crawl an on-premises Exchange server, you need to know the following:
 
 - Number of Mailboxes
 - Mailbox retention policy (for how long users keep their emails before they are archived)

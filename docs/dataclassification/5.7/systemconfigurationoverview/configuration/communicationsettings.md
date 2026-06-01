@@ -18,7 +18,7 @@ configuring email groups and health service notifications. Review the following 
 Email servers can be configured to enable external communication. This can be used to send report
 subscriptions and health errors to users automatically.
 
-Servers can be amended post-configuration by selecting Edit, and new SMTP servers can be added by
+Servers can be modified after initial configuration by selecting Edit, and new SMTP servers can be added by
 selecting Add Email Server Configuration.
 
 ![configemailservers](/images/dataclassification/5.7/configuration/configemailservers.webp)

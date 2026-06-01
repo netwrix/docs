@@ -25,7 +25,7 @@ follows:
 
 **Step 2 –** Check that the Authentication settings are correct in IIS for Windows Authentication:
 
-The conceptQS web application should have these authentication methods enabled:
+The NDC web application should have these authentication methods enabled:
 
 - Anonymous Authentication
 - Windows Authentication
@@ -34,7 +34,7 @@ All other authentication methods should be disabled.
 
 ![iis_thumb_0_0](/images/dataclassification/5.7/security/iis_thumb_0_0.webp)
 
-**Step 3 –** If you wish to allow anonymous access to the conceptQS, edit the conceptQS web.config
+**Step 3 –** If you wish to allow anonymous access to NDC, edit the conceptQS web.config
 file and delete (or comment out) three lines:
 
 <!-- The following 3 lines are required for Windows Authentication. Remove to allow anonymous access to
@@ -89,13 +89,13 @@ usage of the QS administrative functions reverts to unrestricted.
 User accounts granted access to the REST APIs will still be restricted by their specific user
 permissions. A Superuser with REST API access will be able to run any API method, any normal user
 will be restricted by the same rules that govern the UI. Further API samples and documentation can
-be found at: /conceptQS/\_api
+be found at: /NDC/\_api
 
 ## Permission Management
 
 In order to allocate granular permissions to a user (non-Super Users), click Edit on their row in the Users table. The
 permissions for each section of the administrative web interface will be displayed as tabs. Each tab contains a top level
-checkbox ("Access [Section Name]”) which defines whether or not a user has access to each of the top level administrative areas.
+checkbox of the form "Access <Section Name>” (e.g. Access Sources) which defines whether or not a user has access to each of the top level administrative areas.
 
 When an area is enabled there are typically more granular permissions that can be enabled, such as:
 

@@ -48,17 +48,19 @@ to version 5.5, then perform a second upgrade to version 5.7.
 
 ## Upgrading a DQS environment
 
-When upgrading an NDC environment which utilises the **Distributed Query Server** functionality, the primary server
-should be upgraded first before upgrading the secondary instance(s).
+When upgrading an NDC environment which utilises the **Distributed Query Server** functionality to 5.7.10 or later, 
+the primary server should be upgraded first before upgrading the secondary instance(s). Secondary instances will 
+attempt to resynchronise with the primary instance during the upgrade process, which will fail if the primary 
+instance has not been upgraded.
 
-If you are upgrading to 5.7.10 or later from an earlier version of 5.7, if possible you should
-run the installer as the NDC service account. If this is not done, you will need to perform a DQS
+When upgrading to 5.7.10 or later from an earlier version of 5.7, you should
+run the installer as the NDC service account if possible. If this is not done, you will need to perform a DQS
 resynchronisation when upgrading each secondary DQS instance. For further details on this process,
 see the [DQS Instructions](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) page.
 
 ## After the Upgrade
 
-During the seamless upgrade from previous versions, Netwrix Data Classification preserves its
+During the upgrade from previous versions, Netwrix Data Classification preserves its
 configuration, so you will be able to classify your data right after finishing the upgrade. However,
 there are several steps you may need to take after upgrading.
 

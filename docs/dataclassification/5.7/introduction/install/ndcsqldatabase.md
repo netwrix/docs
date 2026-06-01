@@ -48,5 +48,5 @@ right-clicking, and selecting Properties.
 
     :::note
     Netwrix recommends that you do not change the recovery model to avoid excessive log file
-    growth.    
+    growth.
     :::

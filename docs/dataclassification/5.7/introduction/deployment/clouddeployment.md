@@ -25,7 +25,7 @@ It is recommended to create the NDC SQL database on a dedicated SQL Server inst
   Therefore, SQL Server Express edition is only suitable for evaluation and PoC environments
   (processing up to 1,000,000 documents).
 
-    **TIP:** Netwrix strongly recommends using SSD storage for both of the database and Netwrix Data Classification
+    **TIP:** Netwrix strongly recommends using SSD storage for both the database and Netwrix Data Classification
     servers.
 
 - If configuring database settings via SQL Server Management Studio, you will need to set

@@ -6,12 +6,12 @@ sidebar_position: 30
 
 # Add MySQL Server
 
-Once you choose to add SQL server source, you opt to add MySQL server as a source. For more
-information, go to the main article[SQL Server ](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md).
+When adding a SQL server source, you can choose to add a MySQL server as the source. For more
+information, see [SQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md).
 
 To connect to a MySQL server:
 
-1. On the **Source Configuration** screen, select **MS SQL**.
+1. On the **Source Configuration** screen, select **SQL Server**.
 2. Specify MySQL server, username, and password.
 
     ![sqlserver_source3](/images/dataclassification/5.7/admin/sources/sqlserver/sqlserver_source3.webp)

@@ -25,7 +25,7 @@ sidebar_position: 40
     | Password              | Provide the account password.                                                                                                   |
     | Database Name         | Enter the name of the NDC database. Netwrix recommends using NDC as the database name.                                   |
 
-  If the database does not yet exist, you'll need to click Create SQL Database before moving to the next step - this will automatically create the NDC database with the given name and default configuration.
+  If the database does not yet exist, you will need to click Create SQL Database before moving to the next step - this will automatically create the NDC database with the given name and default configuration.
 
     :::note
     The database is created automatically in basic configuration mode. For recommended
@@ -35,11 +35,11 @@ sidebar_position: 40
 
 7. If you are installing a secondary NDC instance to an [NDC Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md),
 you will be shown the DQS registration step. Complete the following steps:
-  a. Confirm that the Primary NDC Server URL displayed matches the QS Path of the primary NDC instance (the first entry in the DQS table in the administrative web console) and click Connect to connect the installer to the primary instance.
-  b. When the connection succeeds, an Authentication code will be generated and displayed in the Authentication Code textbox. Click Register - this will copy the Authentication code to the clipboard and open the administration console DQS configuration page in a browser window.
-  c. Click Register/Resync. The authentication code should automatically be inserted into the input box, paste the code if it hasn't been then click Submit.
-  d. Copy the verification code displayed and input it into the Verification code input box in the installer, then click Join.
-  e. Once the NDC instance has been successfully joined to the DQS configuration, you can click Next to move to the next installation step.
+    1. Confirm that the Primary NDC Server URL displayed matches the QS Path of the primary NDC instance (the first entry in the DQS table in the administrative web console) and click Connect to connect the installer to the primary instance.
+    1. When the connection succeeds, an Authentication code will be generated and displayed in the Authentication Code field. Click Register - this will copy the Authentication code to the clipboard and open the administration console DQS configuration page in a browser window.
+    1. Click Register/Resync. The authentication code should automatically be inserted into the input box. If the field has not been autofilled, paste it manually, then click Submit.
+    1. Copy the verification code displayed and input it into the Verification code input box in the installer, then click Join.
+    1. Once the NDC instance has been successfully joined to the DQS configuration, you can click Next to move to the next installation step.
 
 
 8. On the Licensing step, add your license. You can add the license as follows:

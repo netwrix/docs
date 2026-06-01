@@ -11,8 +11,8 @@ documents achieving the minimum score set for classification in the term.
 [See Classification Rules (Clues) for more information.](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/clues/clues.md)
 
 :::note
-This list will include the current classification status of each document and any changes
-made to the class since the last time each document was classified are not taken into account.
+This list will include the current classification status of each document. Any changes
+made to the classification clues since the last time each document was classified are not taken into account.
 
 To see how the classification of each document would change based on the current configuration 
 of the class, tick the Show Movements checkbox. When selected, any change in scoring of each 
@@ -44,7 +44,7 @@ You can use the Browse function to:
 
 :::note
 By default, results from sources that have not been indexed are not included in the Browse results. 
-To include these results, tick the Show Unindexed Documents checkbox.
+To include these results, select the Show Unindexed Documents checkbox.
 :::
 
 

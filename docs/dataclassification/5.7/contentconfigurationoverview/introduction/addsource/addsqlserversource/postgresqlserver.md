@@ -6,13 +6,13 @@ sidebar_position: 40
 
 # Add PostgreSQL Server
 
-Once you choose to add SQL server source, you opt to add PostgreSQL server as a source. For more
-information, go to the main article[SQL Server ](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md).
+When adding a SQL server source, you can choose to add a PostgreSQL server as a source. For more
+information, see [SQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md).
 
 To connect to a PostgreSQL server:
 
 1. On the **Source Configuration** screen, select **SQL Server**.
-2. Specify the address of the PostgreSQL server, the Master Database name, username, and password.
+2. Specify the address of the PostgreSQL server, the Master Database name (commonly `postgres`), username, and password.
 
     ![sqlserver_source3](/images/dataclassification/5.7/admin/sources/sqlserver/sqlserver_source3.webp)
 
