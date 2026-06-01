@@ -36,13 +36,11 @@ function stripHtmlTagsToText(input) {
 
 // Helper to get versions for selected products
 function getVersionsForProducts(selectedProducts) {
-    if (!selectedProducts || selectedProducts.length === 0 || selectedProducts.includes('__all__')) {
-        return [];
-    }
     const versionsSet = new Set();
-    selectedProducts.forEach(productName => {
-        const product = PRODUCTS.find(p => p.name === productName);
-        if (product && product.versions) {
+    const isAll = !selectedProducts || selectedProducts.length === 0 || selectedProducts.includes('__all__');
+    const source = isAll ? PRODUCTS : selectedProducts.map(name => PRODUCTS.find(p => p.name === name)).filter(Boolean);
+    source.forEach(product => {
+        if (product.versions) {
             product.versions.forEach(v => versionsSet.add(v.label));
         }
     });
@@ -254,20 +252,25 @@ function SearchPageContent() {
     // Initialize from URL if present, otherwise from localStorage
     const [selectedProducts, setSelectedProducts] = useState(() => {
         if (productsFromUrl.length > 0) return productsFromUrl;
-        if (typeof window === 'undefined') return [];
+        if (typeof window === 'undefined') return ['__all__'];
         const saved = sessionStorage.getItem('docs_product_filter');
         try {
-            return saved ? JSON.parse(saved) : [];
+            const parsed = saved ? JSON.parse(saved) : [];
+            // Normalize: empty array from modal means "all products"
+            return parsed.length === 0 ? ['__all__'] : parsed;
         } catch {
-            return [];
+            return ['__all__'];
         }
     });
     // Initialize from URL if present, otherwise from sessionStorage
     const [selectedVersions, setSelectedVersions] = useState(() => {
         if (versionsFromUrl.length > 0) return versionsFromUrl;
-        if (typeof window === 'undefined') return [];
+        if (typeof window === 'undefined') return ['__all__'];
         const saved = sessionStorage.getItem('docs_version_filter');
-        try { return saved ? JSON.parse(saved) : []; } catch { return []; }
+        try {
+            const parsed = saved ? JSON.parse(saved) : [];
+            return parsed.length === 0 ? ['__all__'] : parsed;
+        } catch { return ['__all__']; }
     });
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
 
@@ -282,14 +285,10 @@ function SearchPageContent() {
     // All sorted results for client-side pagination
     const allItemsRef = useRef([]);
 
-    // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
+    // Sync selectedProducts to sessionStorage
     useEffect(() => {
         if (typeof window !== 'undefined') {
             sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
-            // Dispatch custom event for same-tab synchronization
-            window.dispatchEvent(new CustomEvent('productFilterChange', {
-                detail: {products: selectedProducts}
-            }));
         }
     }, [selectedProducts]);
 
@@ -300,18 +299,6 @@ function SearchPageContent() {
         }
     }, [selectedVersions]);
 
-    // Listen for filter changes from SearchBar modal (same-tab sync)
-    useEffect(() => {
-        const handleFilterChange = (e) => {
-            const newProducts = e.detail.products;
-            // Avoid infinite loop by checking if products actually changed
-            if (JSON.stringify(newProducts) !== JSON.stringify(selectedProducts)) {
-                setSelectedProducts(newProducts);
-            }
-        };
-        window.addEventListener('productFilterChange', handleFilterChange);
-        return () => window.removeEventListener('productFilterChange', handleFilterChange);
-    }, [selectedProducts]);
 
     // Update state when URL changes (e.g., browser back/forward)
     // Skips initial mount — useState initializers already read URL params and sessionStorage
@@ -336,8 +323,8 @@ function SearchPageContent() {
         const newPage = parseInt(urlParams.get('page'), 10) || 1;
 
         setSearchQuery(newQuery);
-        setSelectedProducts(newProducts);
-        setSelectedVersions(newVersions);
+        setSelectedProducts(newProducts.length > 0 ? newProducts : ['__all__']);
+        setSelectedVersions(newVersions.length > 0 ? newVersions : ['__all__']);
         setResultsPerPage(newResultsPerPage);
 
         // Store target page for restoration

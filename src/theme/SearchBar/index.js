@@ -560,14 +560,10 @@ export default function SearchBar() {
         selectedVersionsRef.current = selectedVersions;
     }, [selectedVersions]);
 
-    // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
+    // Sync selectedProducts to sessionStorage
     useEffect(() => {
         if (typeof window !== 'undefined') {
             sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
-            // Dispatch custom event for same-tab synchronization
-            window.dispatchEvent(new CustomEvent('productFilterChange', {
-                detail: {products: selectedProducts}
-            }));
         }
     }, [selectedProducts]);
 
