@@ -10,7 +10,7 @@ import { N1SValue, N1SConcepts, N1SIntroGS, N1SIntroMO, N1SIntroConf, N1SIntroDa
 import { N1S } from '@site/src/training/products';
 
 
-Estimated length: 2.5 hours with optional course
+Estimated length: 2 hours 35 minutes
 
 In this learning path, you will learn how to use <N1S />. It contains the following course:
 
