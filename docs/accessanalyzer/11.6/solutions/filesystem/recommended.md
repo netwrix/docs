@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The File System Solution has been configured to inherit down from the **FileSystem** > **Settings**
 node for most jobs. However, as a best practice, assign the host list and the Connection Profile at the data collection
-level. Once you assign these to the job, you can run it manually or schedule it.
+level. After you assign these to the job, you can run it manually or schedule it.
 
 :::tip
 Remember, the credential permissions required for the scan and host lists are affected by the scan
@@ -33,8 +33,8 @@ topic for additional information.
 
 The host list assignment should be assigned under the **FileSystem** > **0.Collection** >
 **[job]** > **Host** node. The list should be a custom created list for the file system environments
-to be targeted. Check the box for the custom-created host list. It is necessary for the **…System
-Scans** jobs and the corresponding **…Bulk Import** jobs to be set to the same host lists.
+to be targeted. Check the box for the custom-created host list. The **…System
+Scans** jobs and the corresponding **…Bulk Import** jobs must use the same host lists.
 
 The 0-FSDFS System Scans Job is an exception and is set to the Default domain controller. For
 standalone namespaces, modify this host list to target the File Systems or Storage Controllers you

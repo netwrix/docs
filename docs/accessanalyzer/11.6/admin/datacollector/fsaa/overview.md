@@ -33,16 +33,15 @@ topic for additional information.
 **Sensitive Data Discovery Considerations**
 
 The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
+which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, you
+must increase the minimum amount of RAM. Each thread requires a minimum of 2
 additional GB of RAM per host. By default, SDD scans are configured to run two concurrent threads.
 For example, if the job is configured to scan 8 hosts at a time with two concurrent SDD threads,
 then an extra 32 GB of RAM are required (8x2x2=32).
 
 :::tip
-Remember, if employing either of the File System Proxy Mode as a Service scan mode options, it is
-also necessary for the Sensitive Data Discovery Add-on to be installed on the server where the proxy
-service is installed.
+Remember, if employing either of the File System Proxy Mode as a Service scan mode options, you must
+also install the Sensitive Data Discovery Add-on on the server where the proxy service is installed.
 :::
 
 

@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Proxy Mode with Applet Permissions
 
-When File System scans are run in proxy mode with applet, it means the File System applet is deployed to the Windows proxy server when the job is executed to conduct data collection. The data collection processing is initiated by the proxy server where the applet is deployed and leverages a local mode-type scan to each of the target hosts. The final step in data collection is to compress and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Access Analyzer Console server.
+When File System scans are run in proxy mode with applet, it means the File System applet is deployed to the Windows proxy server when the job is executed to conduct data collection. The data collection processing is initiated by the proxy server where the applet is deployed and uses a local mode-type scan to each of the target hosts. The final step in data collection is to compress and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Access Analyzer Console server.
 
-Configure the credential(s) with the following rights on the proxy server(s):
+Configure the credentials with the following rights on the proxy servers:
 
 - Group membership in the local Administrators group
 - Granted the Backup files and directories local policy privilege
@@ -24,7 +24,7 @@ the applet.
 
 
 :::warning
-The local policy, “Network access: Do not allow storage of passwords and credentials
+The local policy, “Network access: Don't allow storage of passwords and credentials
 for network authentication” must be disabled in order for the applet to start.
 :::
 
@@ -40,7 +40,7 @@ information.
 **Secure Proxy Communication Considerations**
 
 For Proxy Mode with Applet scans, the certificate exchange mechanism and certificate exchange port
-must be configured via the File System Access Auditing Data Collector Wizard prior to executing a
+must be configured via the File System Access Auditing Data Collector Wizard before executing a
 scan. See the
 [FSAA Applet Certificate Management Overview](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md)
 topic for additional information.
@@ -56,8 +56,8 @@ By default, the Applet will run as the connection profile account unless an addi
 
 The account used in the connection profile associated with the File System scan jobs, should have the appropriate permissions required to access the target host. See the [File System Supported Platforms](https://docs.netwrix.com/docs/accessanalyzer/12_0/requirements/filesystem/filesystems/) page for specific requirements per target file system.
 
-## **How do I determine if I’m using Proxy Mode with Applet scanning?**
+## Verify Proxy Mode with Applet scanning
 
-The best way to verify if you’re using Proxy Mode with Applet scanning is via the FSAA Data Collector Query Settings below:
+To verify Proxy Mode with Applet scanning, check the following FSAA Data Collector Query Settings:
 1. [Applet Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/fsaa/appletsettings/applets) > Applet Launch Mechanism: MSTask Task Scheduler
 2. [Scan Server Selection](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/fsaa/scanserverselection) > “Specific Remote Server: “ **OR** “Specific Remote Servers by Host List”

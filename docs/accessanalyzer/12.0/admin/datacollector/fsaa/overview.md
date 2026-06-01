@@ -31,7 +31,7 @@ available with a special Access Analyzer license. See the
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
+If running Sensitive Data Discovery (SDD) scans, you must increase the minimum amount
 of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. By default, SDD scans are
 configured to run two concurrent threads. For example, if the job is configured to scan 8 hosts at a
 time with two concurrent SDD threads, then an extra 32 GB of RAM are required (8x2x2=32).
