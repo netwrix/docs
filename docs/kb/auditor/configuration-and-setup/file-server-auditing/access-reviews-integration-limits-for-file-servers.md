@@ -28,7 +28,7 @@ This article describes the current limits and system requirements for the Access
 
 The Access Reviews integration collects permission data from monitored file servers and uploads it to the Access Reviews (AIC) database. The volume of permission data directly affects memory consumption on both the Auditor host and the SQL Server instance.
 
-Review the [Considerations & Limitations](/docs/auditor/10.8/accessreviews/accessreviews.md#considerations--limitations) section for general integration constraints.
+Review the [Considerations & Limitations](pathname:///docs/auditor/10_8/accessreviews/accessreviews#considerations--limitations) section for general integration constraints.
 
 ## Instructions
 
