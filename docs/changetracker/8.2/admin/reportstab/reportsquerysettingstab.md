@@ -23,7 +23,7 @@ extract these on a scheduled basis.
 :::
 
 
-![ReportTemplateQuerySettings](/images/changetracker/8.1/admin/tabs/reporttemplatequerysettings.webp)
+![ReportTemplateQuerySettings](/images/changetracker/8.2/admin/tabs/reporttemplatequerysettings.webp)
 
 :::note
 The **Table of Contents** treatment for the output. Links to sections are only supported
@@ -31,4 +31,4 @@ in the exported PDF, not the Web Browser-rendered report.
 :::
 
 
-![ReportTemplateTOC](/images/changetracker/8.1/admin/tabs/reporttemplatetoc.webp)
+![ReportTemplateTOC](/images/changetracker/8.2/admin/tabs/reporttemplatetoc.webp)

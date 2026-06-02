@@ -20,7 +20,7 @@ collated into a single screen.
   report**’ button.
 - Device inventory information and group membership.
 
-![DevicesTab](/images/changetracker/8.1/admin/tabs/devicestab.webp)
+![DevicesTab](/images/changetracker/8.2/admin/tabs/devicestab.webp)
 
 :::note
 Go to **Tracking Configuration** tab to see a ‘read-only’ representation of the tracking

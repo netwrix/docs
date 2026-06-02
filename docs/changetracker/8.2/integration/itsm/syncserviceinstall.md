@@ -42,13 +42,13 @@ backed up earlier. If no backup is available then enter new configuration during
 Under the “ITSM Integration” option, select one ITSM system to integrate with. For brevity this
 document describes the steps for a ServiceNow setup, but the steps vary little between ITSMs.
 
-![selectitsm](/images/changetracker/8.1/integration/itsm/selectitsm.webp)
+![selectitsm](/images/changetracker/8.2/integration/itsm/selectitsm.webp)
 
 ## Change Tracker Hub Connection
 
 Enter the required configuration values:
 
-![itsmurl](/images/changetracker/8.1/integration/itsm/itsmurl.webp)
+![itsmurl](/images/changetracker/8.2/integration/itsm/itsmurl.webp)
 
 - In the “Hub Server URL” field, specify the URL for your Change Tracker REST API endpoint, e.g.
   https://changetracker-server/api
@@ -61,7 +61,7 @@ Enter the required configuration values:
 
 Select which type of authorization to use:
 
-![authenticationtype](/images/changetracker/8.1/integration/itsm/authenticationtype.webp)
+![authenticationtype](/images/changetracker/8.2/integration/itsm/authenticationtype.webp)
 
 - Basic (provide Username / Password of a ServiceNow user account only). Use when OAuth
   authorization is not available. The encoded credentials are sent in the headers of every HTTP
@@ -76,7 +76,7 @@ Select which type of authorization to use:
 
 Enter the require configuration values:
 
-![servicenowconnection](/images/changetracker/8.1/integration/itsm/servicenowconnection.webp)
+![servicenowconnection](/images/changetracker/8.2/integration/itsm/servicenowconnection.webp)
 
 - In the “ServiceNow ITSM Server URL” field, specify the URL for your ServiceNow REST API endpoint,
   e.g. https://service-now-server/api
@@ -93,7 +93,7 @@ ServiceNow user, but it is possible to configure the Sync Service to use a diffe
 setting the serviceNow.timeZone element in the Sync Service configuration file (see the
 administration page for instructions).
 
-![servicenowcredentials](/images/changetracker/8.1/integration/itsm/servicenowcredentials.webp)
+![servicenowcredentials](/images/changetracker/8.2/integration/itsm/servicenowcredentials.webp)
 
 - In the “ServiceNow ITSM username” and “ServiceNow ITSM password” fields (not applicable if using
   OAuth2 Client Credentials), enter the credentials for the ServiceNow user account which the

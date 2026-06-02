@@ -10,7 +10,7 @@ The integration between Netwrix Change Tracker and Netwrix Auditor allows for an
 Tracker collects to be forwarded to Auditor. The type of event forwarded is controlled by the Change
 Tracker notification profile.
 
-![usernotifications_1122x481](/images/changetracker/8.1/integration/netwrixproducts/usernotifications_1122x481.webp)
+![usernotifications_1122x481](/images/changetracker/8.2/integration/netwrixproducts/usernotifications_1122x481.webp)
 
 In this example notification profile, unplanned changes for systems in the Windows 2019 Auditor
 group and compliance reports which are run against the Windows 2019 group will generate
@@ -20,13 +20,13 @@ Change events are pushed to Auditor via the it's API. Once in Auditor, these eve
 with the search functionality. Using the search option, information gathered by Change Tracker can
 be used to create reports and alerts or it can be merged with data natively gathered by Auditor.
 
-![auditorsearch_1117x430](/images/changetracker/8.1/integration/netwrixproducts/auditorsearch_1117x430.webp)
+![auditorsearch_1117x430](/images/changetracker/8.2/integration/netwrixproducts/auditorsearch_1117x430.webp)
 
 This integration allows Auditor to gather information on the monitored environment that it would not
 natively be able to collect. For example, monitoring the files of a website for change activity.
 
-![auditoroperator_1115x182](/images/changetracker/8.1/integration/netwrixproducts/auditoroperator_1115x182.webp)
+![auditoroperator_1115x182](/images/changetracker/8.2/integration/netwrixproducts/auditoroperator_1115x182.webp)
 
 Search criteria, like the one above, can be saved to generate reports or alerts.
 
-![auditorsearchresults_1090x638](/images/changetracker/8.1/integration/netwrixproducts/auditorsearchresults_1090x638.webp)
+![auditorsearchresults_1090x638](/images/changetracker/8.2/integration/netwrixproducts/auditorsearchresults_1090x638.webp)

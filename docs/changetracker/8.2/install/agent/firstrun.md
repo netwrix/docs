@@ -10,4 +10,4 @@ A local UI for the **Gen 7 Agent** provides visibility of operation for troubles
 is available from the hosting platform e.g. **http://localhost:8096** and requires credentials of
 username 'admin' and password 'password'.
 
-![AgentFirstRun](/images/changetracker/8.1/install/agent/agentfirstrun.webp)
+![AgentFirstRun](/images/changetracker/8.2/install/agent/agentfirstrun.webp)

@@ -131,7 +131,7 @@ Device registration is the process of placing newly discovered devices into appr
 When a device is first discovered or re-registered, it follows this sequence:
 
 1. **Initial Placement**: The system places the device in both the "New Devices" and "Awaiting Registration" groups
-   - The "New Devices" group provides a fallback — if the registration process fails for any reason, the device can still be found here
+   - The "New Devices" group provides a fallback: if the registration process fails for any reason, the device can still be found here
    - This ensures devices are never "lost" during the registration process
 
 2. **Registration Report Execution**: The system runs a registration report to collect device characteristics
@@ -235,12 +235,12 @@ This fallback approach ensures that devices requiring manual intervention can al
 
 **Behaviour**:
 - When set (e.g. `TCM123_`): The Hub checks all group names returned by the registration script. At least one must start with the configured prefix (case-sensitive) **and** exist as a group in the directory. If no matching group exists, registration is blocked and the device remains in "New Devices".
-- When empty or not set: Existing registration behaviour is unchanged — no prefix validation is performed.
+- When empty or not set: Existing registration behaviour is unchanged; no prefix validation is performed.
 
 **Matching rules**:
 - The comparison is **case-sensitive** and uses a **starts-with** check against each group's display name.
 - If the registration script returns multiple groups that match the prefix but only some exist in the directory, registration proceeds as long as at least one matching group exists. A warning is logged for the missing groups.
-- Groups that don't match the prefix (such as the default OS-type group) are still assigned normally — the prefix check only validates that at least one prefix-matching group is present.
+- Groups that don't match the prefix (such as the default OS-type group) are still assigned normally; the prefix check only validates that at least one prefix-matching group is present.
 - When registration is blocked, an audit event of type **DeviceAdmin** is created with details of the device name, the configured prefix, and the groups that were returned.
 
 **Example**: An organization uses the naming convention `TCM123_` for all device groups. Setting `CustomGroupNamePrefix` to `TCM123_` ensures that agents only register into groups that follow this convention. If the registration script returns `TCM123_Linux Redhat 9` and that group exists, the agent is placed in both `TCM123_Linux Redhat 9` and the default OS group (`Linux Redhat 9`). If the script returns only `Linux Redhat 9` (no prefix match), the agent remains in "New Devices" for manual review.
@@ -415,7 +415,7 @@ For comprehensive troubleshooting, you may also want to enable DEBUG logging for
 **Resolution Steps**:
 1. Check the configured `CustomGroupNamePrefix` value in the Hub configuration
 2. Verify that the target group's display name starts with the exact prefix (case-sensitive)
-3. Confirm the group exists in the directory — if it was recently created, it may not yet be in the cache
+3. Confirm the group exists in the directory; if it was recently created, it may not yet be in the cache
 4. Review the registration script to ensure it returns the prefixed group name
 5. Enable DEBUG logging for `CollateComplianceReportDataBackgroundTaskWorker` to see the full list of groups returned by the registration script
 

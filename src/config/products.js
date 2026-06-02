@@ -183,6 +183,7 @@ export const PRODUCTS = [
         label: '8.2',
         isLatest: true,
         sidebarFile: './sidebars/changetracker/8.2.js',
+        apiSidebarPath: './docs/changetracker/8.2/api/reference/sidebar.ts',
       },
       {
         version: '8.1',

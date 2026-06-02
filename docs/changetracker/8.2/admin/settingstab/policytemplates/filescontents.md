@@ -12,7 +12,7 @@ notifications of any changes, or via a periodically scheduled poll. Netwrix Chan
 a regular expression-based data-extraction operation to precisely focus the tracking on salient
 entries only.
 
-![PolicyTemplateFileContents](/images/changetracker/8.1/admin/settings/policytemplates/policytemplatefilecontents.webp)
+![PolicyTemplateFileContents](/images/changetracker/8.2/admin/settings/policytemplates/policytemplatefilecontents.webp)
 
 **Step 1 –** **Polling Frequency**. The default setting is to run a full poll (effectively a new
 baseline operation) only when the Agent has been restarted e.g., after a reboot but the Agent may be

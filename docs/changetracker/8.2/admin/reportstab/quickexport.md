@@ -15,4 +15,4 @@ apply further filter controls then export.
 :::
 
 
-![page_guide_4](/images/changetracker/8.1/admin/tabs/page_guide_4.webp)
+![page_guide_4](/images/changetracker/8.2/admin/tabs/page_guide_4.webp)

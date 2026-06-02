@@ -15,7 +15,7 @@ security. Without a consistent build how else can you expect security to be maxi
 The NERC CIP 010 process is shown in the diagram below and the Netwrix Baseline Configuration
 management process allows you to follow this cycle:
 
-![nerc_cip_010_lifecycle](/images/changetracker/8.1/baseline/nerc_cip_010_lifecycle.webp)
+![nerc_cip_010_lifecycle](/images/changetracker/8.2/baseline/nerc_cip_010_lifecycle.webp)
 
 Every configuration item that is included within the Baseline Policy must be essential and
 justified, since every decision regarding configuration will potentially increase your attack

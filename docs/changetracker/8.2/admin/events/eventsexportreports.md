@@ -9,13 +9,13 @@ sidebar_position: 20
 In order to export filtered events, just use the **Report/Export** button and menu presented. Most
 fields and settings are self-explanatory but those most likely to need explaining are covered below.
 
-![ReportsExportDisplayOptions](/images/changetracker/8.1/admin/tabs/reportsexportdisplayoptions.webp)
+![ReportsExportDisplayOptions](/images/changetracker/8.2/admin/tabs/reportsexportdisplayoptions.webp)
 
 These options provide control over the report display options. Where a condensed and simplified
 report is needed, these options can be unchecked, but generally the tables and analysis charts are
 useful for identifying sources of change noise.
 
-![ReportsExportScheduleAndEmail](/images/changetracker/8.1/admin/tabs/reportsexportscheduleandemail.webp)
+![ReportsExportScheduleAndEmail](/images/changetracker/8.2/admin/tabs/reportsexportscheduleandemail.webp)
 
 Set schedule for start and end time for reporting schedule, with frequency for repeating report
 delivery.
@@ -32,7 +32,7 @@ Press the **OK** button at the bottom of the window when done.
 
 ## Permission and Storage Settings Offered by the Event/Report Settings
 
-![ReportsExportPermissionsAndStorage](/images/changetracker/8.1/admin/tabs/reportsexportpermissionsandstorage.webp)
+![ReportsExportPermissionsAndStorage](/images/changetracker/8.2/admin/tabs/reportsexportpermissionsandstorage.webp)
 
 Netwrix Change Tracker gives greater control over storage usage. By default, reports generated are
 retained for a finite period after which they are removed. Typically reports are delivered by email

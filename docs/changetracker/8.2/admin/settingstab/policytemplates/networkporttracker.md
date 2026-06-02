@@ -29,7 +29,7 @@ This means that there are three scanning options available:
 The **NMAP** package must be installed to a default program file location (Windows: Program
 Files(x86)\Nmap), Linux: /usr/bin/)
 
-![PolicyTemplatesNetworkPortTrackerDiagram](/images/changetracker/8.1/admin/settings/policytemplates/policytemplatesnetworkporttrackerdiagram.webp)
+![PolicyTemplatesNetworkPortTrackerDiagram](/images/changetracker/8.2/admin/settings/policytemplates/policytemplatesnetworkporttrackerdiagram.webp)
 
 The **Network Port Tracker** is configured by specifying port ranges to include and exclude from the
 scan. In addition, the protocol used for each range can also be selected, either TCP, UDP or both.
@@ -40,4 +40,4 @@ approach which may result in scan times exceeding 24 hours.
 :::
 
 
-![PolicyTemplatesNetworkPortTrackerTab](/images/changetracker/8.1/admin/settings/policytemplates/policytemplatesnetworkporttrackertab.webp)
+![PolicyTemplatesNetworkPortTrackerTab](/images/changetracker/8.2/admin/settings/policytemplates/policytemplatesnetworkporttrackertab.webp)

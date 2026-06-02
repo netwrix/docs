@@ -51,13 +51,13 @@ Follow the steps to configure ESXi/vCenter credentials:
 **Step 1 –** From the Settings menu, select Credentials and scroll down to the ESXi / vCenter
 Credentials section.
 
-![esxicredentials](/images/changetracker/8.1/integration/vmware/esxicredentials.webp)
+![esxicredentials](/images/changetracker/8.2/integration/vmware/esxicredentials.webp)
 
 **Step 2 –** Click the Add button and enter the credential information. For vCenter / ESXi
 monitoring, it is recommended to use vCenter as the Host Type as it allows for ESXi node discovery,
 The ESXi Host Type option enables connections to stand alone ESXi servers.
 
-![esxicredentialform](/images/changetracker/8.1/integration/vmware/esxicredentialform.webp)
+![esxicredentialform](/images/changetracker/8.2/integration/vmware/esxicredentialform.webp)
 
 ## Device Discovery
 
@@ -70,7 +70,7 @@ frequently created, removed or even migrated between clusters.
 From the Settings menu, select Device Discovery. Select ESXi / vCenter Discovery from the drop down
 to configure the discovery job.
 
-![devicediscoverygrid](/images/changetracker/8.1/integration/vmware/devicediscoverygrid.webp)
+![devicediscoverygrid](/images/changetracker/8.2/integration/vmware/devicediscoverygrid.webp)
 
 Discovery Device is the device running the agent that will execute the commands to discover the ESXi
 nodes.
@@ -83,20 +83,20 @@ their discovered nodes under one proxy agent.
 The "Assign to Group" drop down is the group the discovered ESXi nodes will be assigned to. There is
 no automatic registration so a group must be chosen.
 
-![devicediscoveryform](/images/changetracker/8.1/integration/vmware/devicediscoveryform.webp)
+![devicediscoveryform](/images/changetracker/8.2/integration/vmware/devicediscoveryform.webp)
 
 Once configured a discovery job will automatically run and if successful, the devices will be
 visible in the grid.
 
-![devicediscoverystarted](/images/changetracker/8.1/integration/vmware/devicediscoverystarted.webp)
+![devicediscoverystarted](/images/changetracker/8.2/integration/vmware/devicediscoverystarted.webp)
 
-![devicediscoveryrunning](/images/changetracker/8.1/integration/vmware/devicediscoveryrunning.webp)
+![devicediscoveryrunning](/images/changetracker/8.2/integration/vmware/devicediscoveryrunning.webp)
 
-![devicediscoverycompleted](/images/changetracker/8.1/integration/vmware/devicediscoverycompleted.webp)
+![devicediscoverycompleted](/images/changetracker/8.2/integration/vmware/devicediscoverycompleted.webp)
 
 ## Compliance Reporting
 
 Under the Reports tab, it is now possible to configure and run the appropriate compliance report
 against the group that contains the ESXi devices.
 
-![esxicompliancereport](/images/changetracker/8.1/integration/vmware/esxicompliancereport.webp)
+![esxicompliancereport](/images/changetracker/8.2/integration/vmware/esxicompliancereport.webp)

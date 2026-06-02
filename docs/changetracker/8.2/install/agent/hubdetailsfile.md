@@ -14,7 +14,7 @@ hence it requiring your intervention to make sure settings are as needed.
 
 The key tags within the file are as follows:
 
-![AgentHubDetailsFile](/images/changetracker/8.1/install/agent/agenthubdetailsfile.webp)
+![AgentHubDetailsFile](/images/changetracker/8.2/install/agent/agenthubdetailsfile.webp)
 
 :::tip
 Remember, an unencrypted password means the Agent didn’t initialize and suggests a bad

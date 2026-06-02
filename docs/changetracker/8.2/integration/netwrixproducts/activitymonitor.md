@@ -11,7 +11,7 @@ service) as an alternative data source for file change attribution on Windows. W
 integration is enabled, the Gen 7 Agent reads user and process information from log files written
 by Activity Monitor instead of relying on the built-in kernel mini-filter driver (`NNTInfo.sys`).
 
-This is useful in environments where the kernel driver cannot be loaded — for example, systems
+This is useful in environments where the kernel driver cannot be loaded, for example systems
 with strict kernel security policies (Secure Boot / HVCI), certain hypervisor configurations, or
 where Activity Monitor is already deployed and you want a single audit trail for file activity.
 
@@ -36,8 +36,8 @@ When the integration is enabled:
 1. The Gen 7 Agent automatically generates a configuration file (`SBTFileMon.ChangeTracker.ini`)
    in the Activity Monitor configuration directory whenever it receives a FIM policy from the Hub.
    This file instructs Activity Monitor which paths to monitor and in what format to log events.
-2. Activity Monitor's `SBTService` writes file change events — including the user account and
-   process name responsible — to a daily JSON log file on the local disk. Files are named
+2. Activity Monitor's `SBTService` writes file change events, including the user account and
+   process name responsible, to a daily JSON log file on the local disk. Files are named
    `{hostname}_CT_Log_{YYYYMMDD}.json`.
 3. The Gen 7 Agent continuously reads these log files and caches attribution data keyed by file
    path.
@@ -104,7 +104,7 @@ HKLM\SYSTEM\CurrentControlSet\Services\SBTLogging\Parameters\ConfigPath
 
 The INI file instructs Activity Monitor to log file events to the directory specified by
 `activityMonitorChangeSourceDirectory`, using the path filters derived from the FIM policy
-configured in the Hub. You do not need to edit this file manually — it is regenerated each
+configured in the Hub. You do not need to edit this file manually, as it is regenerated each
 time the FIM policy changes.
 
 If the FIM policy is removed from a device, the agent disables the corresponding section in

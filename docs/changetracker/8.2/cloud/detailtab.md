@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Detail Tab
 
-![clouddetailtab](/images/changetracker/8.1/cloud/clouddetailtab.webp)
+![clouddetailtab](/images/changetracker/8.2/cloud/clouddetailtab.webp)
 
 Compliance Score Report:
 

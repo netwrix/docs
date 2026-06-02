@@ -25,7 +25,7 @@ Use the **Filter Control Panel** to allow focus on just the Devices or Groups of
 :::
 
 
-![Graphical user interface, application](/images/changetracker/8.1/admin/settings/page_guide_24.webp)
+![Graphical user interface, application](/images/changetracker/8.2/admin/settings/page_guide_24.webp)
 
 :::note
 Click on the ‘burger’ icon alongside any column heading to get a full list of column
@@ -33,6 +33,6 @@ options.
 :::
 
 
-![Graphical user interface, text, application, email](/images/changetracker/8.1/admin/settings/page_guide_25.webp)
+![Graphical user interface, text, application, email](/images/changetracker/8.2/admin/settings/page_guide_25.webp)
 
-![page_guide_26](/images/changetracker/8.1/admin/settings/page_guide_26.webp)
+![page_guide_26](/images/changetracker/8.2/admin/settings/page_guide_26.webp)

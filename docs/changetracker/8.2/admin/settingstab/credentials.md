@@ -28,42 +28,42 @@ delete specific credentials.
 These credentials are used to connect to an ITSM and discover devices to scan from the ITSM's
 configuration item catalog.
 
-![ITSM System Credentials](/images/changetracker/8.1/admin/settings/itsm_system_credentials.webp)
+![ITSM System Credentials](/images/changetracker/8.2/admin/settings/itsm_system_credentials.webp)
 
 ## Cloud System Credentials
 
 These credentials are used by the Cloud Tracker feature to track changes to cloud platform
 configuration.
 
-![Cloud System Credentials](/images/changetracker/8.1/admin/settings/cloud_system_credentials_1120x365.webp)
+![Cloud System Credentials](/images/changetracker/8.2/admin/settings/cloud_system_credentials_1120x365.webp)
 
 ## SSH / Telnet Credentials
 
 These credentials are used for agentless connections to devices (Linux, switches, routers, etc.) via
 SSH or Telnet. Credentials for Windows agentless connections are also stored here.
 
-![SSH Telnet Credentials](/images/changetracker/8.1/admin/settings/ssh_telnet_credentials_1118x372.webp)
+![SSH Telnet Credentials](/images/changetracker/8.2/admin/settings/ssh_telnet_credentials_1118x372.webp)
 
 ## Splunk Credentials
 
 These credentials are used to connect to the API of a Splunk instance and pull specific logs into
 Change Tracker as change events.
 
-![Splunk Credentials](/images/changetracker/8.1/admin/settings/splunk_credentials_1122x369.webp)
+![Splunk Credentials](/images/changetracker/8.2/admin/settings/splunk_credentials_1122x369.webp)
 
 ## ESXi / vCenter Credentials
 
 These credentials are used to connect to ESXi devices or to connect to a vSphere and discover all of
 it's ESXi nodes.
 
-![EXsi Credentials](/images/changetracker/8.1/admin/settings/esxi_credentials.webp)
+![EXsi Credentials](/images/changetracker/8.2/admin/settings/esxi_credentials.webp)
 
 ## Database Credentials
 
 These credentials are used by database compliance reports to connect directly to a database
 instance.
 
-![Database Credentials](/images/changetracker/8.1/admin/settings/database_credentials_1113x358.webp)
+![Database Credentials](/images/changetracker/8.2/admin/settings/database_credentials_1113x358.webp)
 
 **Note:** v1 database credentials are now deprecated and only maintained for backward compatibility. v2 database credentials should be used for any new connections.
 

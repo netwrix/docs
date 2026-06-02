@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Cloud Policy Tab
 
-![cloudpolicytab](/images/changetracker/8.1/cloud/cloudpolicytab.webp)
+![cloudpolicytab](/images/changetracker/8.2/cloud/cloudpolicytab.webp)
 
 ## Cloud Tab: Key Points
 

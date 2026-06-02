@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Description
 
-![ComplianceDetailsTab](/images/changetracker/8.1/admin/tabs/compliancedetailstab.webp)
+![ComplianceDetailsTab](/images/changetracker/8.2/admin/tabs/compliancedetailstab.webp)
 
 **Step 1 –** Adjust Score Filters to view other score ranges.
 
@@ -18,8 +18,8 @@ Description
 
 ## Compare View
 
-![CompliancePolicyRunChangeDetails](/images/changetracker/8.1/admin/tabs/compliancepolicyrunchangedetails.webp)
+![CompliancePolicyRunChangeDetails](/images/changetracker/8.2/admin/tabs/compliancepolicyrunchangedetails.webp)
 
 ## Full Report
 
-![ComplianceFullReport](/images/changetracker/8.1/admin/tabs/compliancefullreport.webp)
+![ComplianceFullReport](/images/changetracker/8.2/admin/tabs/compliancefullreport.webp)

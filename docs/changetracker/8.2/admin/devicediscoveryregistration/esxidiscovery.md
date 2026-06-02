@@ -33,7 +33,7 @@ to vCenter using VMware PowerCLI and returns the list of hosts to the Hub.
 | **Discovery Device** | The Gen 7 Agent that will execute the vCenter discovery. Click **Select Device** to choose an agent. |
 | **Parent Device in Hub** | *(Optional)* An existing device to use as the parent for discovered hosts. If left blank, defaults to the discovery device. |
 | **Credentials** | The stored credential used to authenticate to the vCenter server. |
-| **Device Name Prefix** | The prefix applied to each discovered host name. Defaults to `VM Host`. Discovered devices are named in the format `<prefix> (<hostname>)` — for example, `VM Host (esxi-host-01)`. Change this value to match your organization's naming conventions. If you clear the field, discovered devices are named using the hostname only. |
+| **Device Name Prefix** | The prefix applied to each discovered host name. Defaults to `VM Host`. Discovered devices are named in the format `<prefix> (<hostname>)`, for example `VM Host (esxi-host-01)`. Change this value to match your organization's naming conventions. If you clear the field, discovered devices are named using the hostname only. |
 | **Assign to Group** | The device group that discovered hosts are added to. |
 | **Add new VM Hosts to ChangeTracker** | When selected, hosts found on vCenter that don't already exist in Change Tracker are added as new devices. |
 | **Update existing VM Hosts in ChangeTracker** | When selected, hosts that already exist in Change Tracker are updated with the latest information from vCenter. |
@@ -52,5 +52,5 @@ following columns:
 - **IP Address** — the management IP address of the host.
 
 Review the results and confirm the devices were added to the correct group. You can re-run
-discovery at any time to synchronize the device list with vCenter — use the **Add new**,
+discovery at any time to synchronize the device list with vCenter. Use the **Add new**,
 **Update existing**, and **Delete missing** options to control how changes are merged.

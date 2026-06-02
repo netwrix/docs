@@ -18,4 +18,4 @@ The sample scripts provided in this section all include a Main Script and a Logo
 however, for Production Agentless Tracker’s, the Logon script only is used within the Credentials
 key with the Main Script commands being configured with the relevant Configuration Template.
 
-![AgentlessScriptSamples.](/images/changetracker/8.1/admin/agentlessscript/agentlessscriptsamples.webp)
+![AgentlessScriptSamples.](/images/changetracker/8.2/admin/agentlessscript/agentlessscriptsamples.webp)

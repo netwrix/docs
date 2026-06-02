@@ -18,4 +18,4 @@ Always click the **Save Changes** button after any edit.
 To configure additional File/Folder/Registry Match Pattern definitions, click on the **Show Advanced
 Options** button.
 
-![PolicyTemplatesAdministration](/images/changetracker/8.1/admin/settings/policytemplates/policytemplatesadministration.webp)
+![PolicyTemplatesAdministration](/images/changetracker/8.2/admin/settings/policytemplates/policytemplatesadministration.webp)

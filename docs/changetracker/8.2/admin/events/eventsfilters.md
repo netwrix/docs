@@ -9,7 +9,7 @@ sidebar_position: 10
 The **Filter** panel is extremely powerful for focusing attention on events of interest, even in
 large and complex estates with thousands of change/report events to manage.
 
-![EventsReportsFiltersGroupsDevices](/images/changetracker/8.1/admin/tabs/eventsreportsfiltersgroupsdevices.webp)
+![EventsReportsFiltersGroupsDevices](/images/changetracker/8.2/admin/tabs/eventsreportsfiltersgroupsdevices.webp)
 
 The new Event Filter in has several key improvements:
 
@@ -30,4 +30,4 @@ shown.
 Filter parameters set will also be shown at the top of the Events page even when the Filter Control
 panel is hidden.
 
-![page_guide_3](/images/changetracker/8.1/admin/tabs/page_guide_3.webp)
+![page_guide_3](/images/changetracker/8.2/admin/tabs/page_guide_3.webp)

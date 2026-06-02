@@ -19,7 +19,7 @@ Winlogon key, but exclude DCacheUpdate changes may be desirable.
 The '**All Registry Values**' Match Rule is available by default but to define the 'Isolate
 DCacheUpdate Value Changes' exclusion, the following Custom PathMatch Definition would be added:
 
-![RegistryInclusion](/images/changetracker/8.1/admin/matchrules/registryinclusion.webp)
+![RegistryInclusion](/images/changetracker/8.2/admin/matchrules/registryinclusion.webp)
 
 **Step 1 –** **KeyMatchType** - Available options are:
 

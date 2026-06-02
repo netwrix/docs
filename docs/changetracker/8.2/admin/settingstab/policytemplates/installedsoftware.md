@@ -20,4 +20,4 @@ the settings to the device. Changes will be detected on a scheduled, polled basi
 frequency governed by the **Repeat** setting. A **No Repeat** setting will ensure a poll only occurs
 on a server re-boot which may be appropriate for a host with tightly governed resources.
 
-![PolicyTemplateInstalledSoftware](/images/changetracker/8.1/admin/settings/policytemplates/policytemplateinstalledsoftware.webp)
+![PolicyTemplateInstalledSoftware](/images/changetracker/8.2/admin/settings/policytemplates/policytemplateinstalledsoftware.webp)

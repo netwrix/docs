@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Cloud Overview Tab
 
-![cloudoverviewtab](/images/changetracker/8.1/cloud/cloudoverviewtab.webp)
+![cloudoverviewtab](/images/changetracker/8.2/cloud/cloudoverviewtab.webp)
 
 Actions Button:
 

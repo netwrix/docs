@@ -10,4 +10,4 @@ This provides the detail behind individual report runs and specifically shows th
 decile or percentile selected. See the Reports topic for the additional information about passes and
 failures.
 
-![baselinedetailstab](/images/changetracker/8.1/baseline/baselinedetailstab.webp)
+![baselinedetailstab](/images/changetracker/8.2/baseline/baselinedetailstab.webp)

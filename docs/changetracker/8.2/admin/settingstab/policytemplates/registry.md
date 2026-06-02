@@ -26,7 +26,7 @@ can then paste the key name into the **Compliance Hub** field.
 Click **Add new registry key** and type or paste the Key into monitor. Once you have added a Key to
 monitor, click **Insert** then **Save Settings to Device**.
 
-![PolicyTemplateRegistry](/images/changetracker/8.1/admin/settings/policytemplates/policytemplateregistry.webp)
+![PolicyTemplateRegistry](/images/changetracker/8.2/admin/settings/policytemplates/policytemplateregistry.webp)
 
 Like the **File Integrity** settings covered earlier, exclusion rules can be used, and Registry
 Trackers can also be filtered using a **Registry Key/Value Match Rule** and a **Tracked Attributes**
@@ -36,4 +36,4 @@ Use the **Advanced Options** to create and edit new Definitions. See
 the[Registry Inclusion/Exclusion Match Rules ](/docs/changetracker/8.2/admin/matchrulesoverview/registryrules.md) topic for
 additional information.
 
-![PolicyTemplateRegistryExclude](/images/changetracker/8.1/admin/settings/policytemplates/policytemplateregistryexclude.webp)
+![PolicyTemplateRegistryExclude](/images/changetracker/8.2/admin/settings/policytemplates/policytemplateregistryexclude.webp)

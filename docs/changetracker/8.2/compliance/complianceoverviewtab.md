@@ -12,7 +12,7 @@ hardened build standard – is it being maintained or improved or in decline?
 Device compliance is displayed in the **Compliance Report** – all devices assigned the report
 selected will be displayed.
 
-![ComplianceOverviewTab](/images/changetracker/8.1/admin/tabs/complianceoverviewtab.webp)
+![ComplianceOverviewTab](/images/changetracker/8.2/admin/tabs/complianceoverviewtab.webp)
 
 - Device/Time Filters – Content is controlled by your Device/Group/Time filters.
 - **Dashboardlets per policy/grouping** – For each group and report, an additional Dashboardlet will
@@ -34,7 +34,7 @@ produced for new or updated platforms.
 To import a new template or update an existing one, just upload the template: select the
 **Overwrite** checkbox option if updating.
 
-![ComplianceReportsTemplates](/images/changetracker/8.1/admin/tabs/compliancereportstemplates.webp)
+![ComplianceReportsTemplates](/images/changetracker/8.2/admin/tabs/compliancereportstemplates.webp)
 
 ## Reports Layout Templates Administration
 
@@ -44,7 +44,7 @@ added to the system here. The Version and Change Date details for each report ar
 a new version is available, either after a Gen 7 version upgrade or by manually uploading a new
 template through the UI, this can be updated, or the current format preserved if necessary.
 
-![ComplianceReportsLayout](/images/changetracker/8.1/admin/tabs/compliancereportslayout.webp)
+![ComplianceReportsLayout](/images/changetracker/8.2/admin/tabs/compliancereportslayout.webp)
 
 For report template modifications or new formats, please contact
 [Netwrix Support](https://www.netwrix.com/support.html).

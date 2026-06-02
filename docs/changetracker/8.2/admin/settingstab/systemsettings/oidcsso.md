@@ -162,7 +162,7 @@ Using an auto-generated `ObjectId` causes the Hub to fail when deserialising the
 
 If the IdP includes an `amr` (Authentication Methods References) claim in the ID token,
 Change Tracker detects whether multi-factor authentication (MFA) was used during the login.
-The user's session reflects the MFA status — no additional configuration is required.
+The user's session reflects the MFA status. No additional configuration is required.
 
 ## Troubleshooting
 

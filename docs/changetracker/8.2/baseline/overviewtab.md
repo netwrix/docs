@@ -10,7 +10,7 @@ Once you have built your Baseline Policy and set-up the Baseline Report to run o
 then switch to the other Baseline Center tabs for general routine operation. You are ready to
 enforce compliance with your Baseline Configuration Standard!
 
-![baselineoverviewtab](/images/changetracker/8.1/baseline/baselineoverviewtab.webp)
+![baselineoverviewtab](/images/changetracker/8.2/baseline/baselineoverviewtab.webp)
 
 The Timeline:
 

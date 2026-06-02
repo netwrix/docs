@@ -38,7 +38,7 @@ The **Dashboard** shows recent System Events including:
 
 The local agent installed on the Netwrix Change Tracker host server will already be running and will
 have registered with the **Change Tracker Hub**. See the
-[Netwrix Change Tracker v8.1 Documentation](/docs/changetracker/8.2/index.md) topic for additional information.
+[Netwrix Change Tracker v8.2 Documentation](/docs/changetracker/8.2/index.md) topic for additional information.
 
 The auto-enrollment, or registration, process is described in more depth in the
 [Agent Updates](/docs/changetracker/8.2/admin/settingstab/agentsanddevices/agentupdates.md) topic. but depending on server speed the Local Agent

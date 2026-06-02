@@ -21,7 +21,7 @@ built-in Pathmatch Definition for this provided 'Linux temp files in folder'.
 
 However, by way of example, the example **Custom Pathmatch Definition** below provides this policy:
 
-![CustomPathmatchDefinition](/images/changetracker/8.1/admin/matchrules/custompathmatchdefinition.webp)
+![CustomPathmatchDefinition](/images/changetracker/8.2/admin/matchrules/custompathmatchdefinition.webp)
 
 **Step 1 –** **FolderMatchType** - Available options are:
 
