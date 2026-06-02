@@ -28,7 +28,9 @@ knowledge_article_id: ""
 
 ## Symptom
 
-When Thales SafeNet MFA and the Netwrix Password Policy Enforcer (PPE) Client are both installed on the same system, the PPE Client does not display policies.
+When Thales SafeNet MFA and the Netwrix Password Policy Enforcer (PPE) Client are both installed on the same system:
+- The PPE Client does not display password policies.
+- Thales SafeNet MFA may not function correctly.
 
 
 ## Cause
@@ -37,7 +39,7 @@ The Thales SafeNet agent installs a credential provider under `HKEY_LOCAL_MACHIN
 
 ## Resolution
 
-1.	Open Registry Editor and navigate to `HKEY_LOCAL_MACHINE\SOFTWARE\CRYPTOCard\AuthGINA`.
+1.	Open **Registry Editor** and navigate to `HKEY_LOCAL_MACHINE\SOFTWARE\CRYPTOCard\AuthGINA`.
 
 2.	Add the PPE Client GUID to the `DoNotFilter` registry value to allow the PPE Client to load alongside the Thales SafeNet credential provider:
 ```
