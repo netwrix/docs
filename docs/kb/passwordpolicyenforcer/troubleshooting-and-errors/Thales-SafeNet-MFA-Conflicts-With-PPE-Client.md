@@ -48,4 +48,4 @@ The Thales SafeNet agent installs a credential provider under `HKEY_LOCAL_MACHIN
 
 > **NOTE:** For more information on these registry settings, see [Registry Settings ⸱ Thales 🡥](https://thalesdocs.com/sta/agents/wla-windows_logon/wla-registry_settings/index.html).
 
-3.	Reboot, then press CTRL+ALT+DEL and select **Change Password** to verify that password policies now appear for the end user.
+3.	Reboot, then press **CTRL+ALT+DEL** and select **Change Password** to verify that password policies now appear for the end user.
