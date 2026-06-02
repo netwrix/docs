@@ -12,19 +12,23 @@ keywords:
   - memory requirements
   - Netwrix Auditor
   - SQL Server
+  - AIC Resource Estimation Tool
+  - NwxFileStorageAicManager.acinc
+  - packet size
+  - file server auditing
 products:
   - auditor
-sidebar_label: Understanding Access Reviews Integration Limits for File Servers
+sidebar_label: Managing Access Reviews Integration Limits for File Servers
 tags:
   - kb
-title: "Understanding Access Reviews Integration Limits for File Servers"
+title: "Managing Access Reviews Integration Limits for File Servers"
 ---
 
-# Understanding Access Reviews Integration Limits for File Servers
-
-This article describes the current limits and system requirements for the Access Reviews integration when collecting permission data from Windows File Servers in Netwrix Auditor.
+# Managing Access Reviews Integration Limits for File Servers
 
 ## Overview
+
+This article describes the current limits and system requirements for the Access Reviews integration when collecting permission data from Windows File Servers in Netwrix Auditor.
 
 The Access Reviews integration collects permission data from monitored file servers and uploads it to the Access Reviews (AIC) database. The volume of permission data directly affects memory consumption on both the Auditor host and the SQL Server instance.
 
@@ -59,8 +63,7 @@ The following table shows observed memory consumption during data collection for
 Before enabling the Access Reviews integration, verify that the total number of permissions per data source does not exceed the 800,000 limit. Download and run the AIC Resource Estimation Tool on the Auditor server to count permissions across all monitored file server shares.
 
 <!-- TODO: Replace placeholder URL once the pipeline publishes the artifact to releases.netwrix.com -->
-You can download the AIC Resource Estimation Tool by clicking
-[the download link](https://releases.netwrix.com/products/auditor/10.8/aic-resource-estimation-tool.zip).
+Download the [AIC Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.8/aic-resource-estimation-tool.zip) from releases.netwrix.com.
 
 #### Requirements
 
@@ -78,7 +81,7 @@ AicResourceEstimationTool.exe --html
 
 | Parameter | Description |
 |---|---|
-| `--countall` | Count permissions for all FSA plans, including plans without Access Reviews enabled |
+| `--countall` | Count permissions for all File Server Auditing (FSA) plans, including plans without Access Reviews enabled |
 | `--html` | Save results as an HTML report and open it in the default browser |
 | `--csv` | Save results as a CSV file |
 | `--depth N` | Override the AIC depth level for every plan (0 = shares only, 1 = shares + one subfolder level) |
