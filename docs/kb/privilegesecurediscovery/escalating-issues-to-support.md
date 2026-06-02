@@ -1,7 +1,8 @@
 ---
-title: "Gathering Information for Issue Escalation"
+title: "Escalating Issues to Support"
 description: "A template for gathering and providing information needed to investigate and escalate Privilege Secure Discovery (NPS-D) issues, including problem summary, evidence, timeline, and reproduction steps."
-sidebar_label: "Gathering Information for Issue Escalation"
+sidebar_label: "Escalating Issues to Support"
+sidebar_position: 0
 keywords:
 - NPS-D
 - Privilege Secure Discovery
@@ -15,25 +16,28 @@ products:
 - privilegesecurediscovery
 tags:
 - kb
-- troubleshooting-and-errors
 ---
 
-# Gathering Information for Issue Escalation
+# Escalating Issues to Support
 
-Provide the following information when reporting or escalating an NPS-D problem. Use this as a guideline for ticket submission.
+## Overview
+
+Use this article as a template when reporting or escalating a Privilege Secure Discovery issue to [Netwrix support](https://netwrix.com/en/support/). Provide as much of the following information as possible to help the support team investigate efficiently.
 
 ---
 
-## Problem Summary
+## Instructions
+
+### 1. Describe the Problem
 
 Provide a clear and concise description of the issue:
 
 - What is happening?
-- What is the expected behavior vs. actual behavior?
+- What is the expected vs. actual behavior?
 
 ---
 
-## Evidence
+### 2. Provide Evidence
 
 Include relevant screenshots of:
 
@@ -44,7 +48,7 @@ If possible, include timestamps.
 
 ---
 
-## Timeline
+### 3. Document the Timeline
 
 - When was the issue first noticed?
 - Is it:
@@ -54,7 +58,7 @@ If possible, include timestamps.
 
 ---
 
-## Recent Changes
+### 4. List Recent Changes
 
 List any changes made prior to the issue. Examples:
 
@@ -66,7 +70,7 @@ List any changes made prior to the issue. Examples:
 
 ---
 
-## Reproducibility
+### 5. Document Reproducibility Steps
 
 Can the issue be reproduced?
 
@@ -76,9 +80,9 @@ If yes, provide step-by-step reproduction:
 
 **Example:**
 
-- Navigate to *Grant Access*.
-- Search for systems ending in "tgt".
-- Select system.
-- UI displays error: *"Unable to retrieve web features…"* and hangs for 2+ minutes.
+The following steps were tested across multiple browsers with the same result.
 
-Tested across multiple browsers with the same result.
+1. Navigate to **Grant Access**.
+2. Search for systems ending in `tgt`.
+3. Select system(s).
+4. UI displays error: `"Unable to retrieve web features…"` and hangs for 2+ minutes.

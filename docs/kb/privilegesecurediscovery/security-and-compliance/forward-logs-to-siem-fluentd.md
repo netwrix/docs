@@ -20,13 +20,17 @@ tags:
 
 # Forward Logs to SIEM via Fluentd
 
+## Overview
+
 Complete the following steps during a scheduled downtime window or support call, in case the service restart causes any issues.
 
 Refer to [Forward Logs to Syslog Servers and SIEM Solutions](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/integrations/siem/forwardlogs) for the required configuration (stanza) details.
 
+> **IMPORTANT:** Before starting, confirm the host (FQDN or IP), port number, and protocol for your SIEM. Once these three values are confirmed, the update typically takes around 30 minutes in a scheduled window to complete.
+
 ## Instructions
 
-1. SSH into the server.
+1. SSH into the server running Privilege Secure Discovery using an account with sudo access.
 
 2. Back up the current configuration file:
 
@@ -78,5 +82,3 @@ sudo docker exec -it $(sudo docker ps | grep fluentd | cut -d' ' -f1) fluentd -c
 * Green indicates successfully loaded.
 * Yellow indicates warnings.
 * Red indicates failure to load.
-
-The configuration requires the host (FQDN or IP), port number, and protocol to be confirmed before the update. Once these three values are confirmed, the update typically takes around 30 minutes in a scheduled window to complete.

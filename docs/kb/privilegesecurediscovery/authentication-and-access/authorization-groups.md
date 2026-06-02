@@ -20,8 +20,6 @@ tags:
 
 # Authorization Groups Feature
 
-![Authorization Groups feature in the UI](../0-images/authorization-groups-overview.png)
-
 ## Overview
 
 The **Authorization Group(s)** feature is available in the UI and was introduced in version **2.20.5**.
@@ -32,9 +30,11 @@ It is associated with migration **47**:
 
 This feature requires a database toggle to be enabled after the migration is applied during an upgrade.
 
----
+![Authorization Groups feature in the UI](../0-images/authorization-groups-overview.png)
 
-## Enable the Feature
+## Instructions
+
+### Enable the Feature
 
 1. Verify migration status:
    ```bash
@@ -51,19 +51,11 @@ This feature requires a database toggle to be enabled after the migration is app
    )
    ```
 
----
-
-## Feature Behavior
-
-The original design targets persisting (locking down) AD groups that contain **Protect Mode** accounts.
-
-When configured:
+### Configure the Feature
 
 1. Set **Authorization Strategy** to `Group Account`.
 2. Add groups to the **Authorization Group(s)** field.
 3. Click **Save** under Domain Configuration.
-
----
 
 ## Resulting Behavior
 
@@ -77,9 +69,7 @@ After systems are refreshed or rescanned:
   * No modifications can be made by users or admins.
 * Account type is set to **SecureONE** (service account).
 
-> **WARNING:** This effectively grants **full access to all members of the group**. Using this feature outside its intended purpose is not recommended.
-
----
+> **WARNING:** This effectively grants **full access to all members of the group**. This feature is designed for service account protection scenarios only — misuse can unintentionally grant broad access. Use with caution and proper validation.
 
 ## Known Limitations
 
@@ -89,9 +79,9 @@ This feature is being used beyond its original design, so the full extent of lim
 * Behavior may vary depending on system refresh or rescan
 * Locks configuration, preventing further UI changes
 
----
+### Verify the Configuration
 
-## Testing: Group/Account Update Steps
+#### Group and Account Update Steps
 
 1. Log in to the UI using an AD account.
 2. Navigate to:
@@ -106,11 +96,9 @@ This feature is being used beyond its original design, so the full extent of lim
    Authorization Strategy = Group Account
    ```
 
----
+#### Bulk Group Testing
 
-## Bulk Group Testing
-
-Groups were added in batches using the format:
+Groups can be added in batches using the format:
 
 ```
 DOMAIN\GroupName
@@ -123,20 +111,9 @@ Tested batch sizes:
 * 90 groups
 * 200 groups
 
-Steps:
+To add a batch:
 
-1. Copy group list from a text editor.
-2. Paste into **Authorization Group(s)** field.
+1. Copy the group list from a text editor.
+2. Paste into the **Authorization Group(s)** field.
 3. Scroll down.
 4. Click **Save**.
-
-This process was repeated for each batch size.
-
----
-
-## Summary
-
-* Feature is powerful but risky if misused.
-* Designed for service account protection scenarios.
-* Can unintentionally grant broad access if applied incorrectly.
-* Use with caution and proper validation.
