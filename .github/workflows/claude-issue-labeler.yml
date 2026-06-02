@@ -115,9 +115,9 @@ jobs:
             exit 0
           fi
 
-          # Skip codeowner notification for KB PR review tracking issues
-          if echo "$LABELS" | grep -q "kb/review"; then
-            echo "Issue has kb/review label — skipping codeowner notification"
+          # Skip codeowner notification for KB Operations tracking issues (any kb/ label)
+          if echo "$LABELS" | grep -q "^kb/"; then
+            echo "Issue has kb/ label — skipping codeowner notification"
             exit 0
           fi
 
