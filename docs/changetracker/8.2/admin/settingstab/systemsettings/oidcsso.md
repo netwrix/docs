@@ -34,13 +34,13 @@ Collect the following from your identity provider before configuring Change Trac
 | **Authorization endpoint URL** | The URL users are redirected to for authentication | IdP documentation or discovery document |
 | **Token endpoint URL** | The URL Change Tracker calls to exchange an authorization code for tokens | IdP documentation or discovery document |
 | **UserInfo endpoint URL** | The URL Change Tracker calls to retrieve user profile claims | IdP documentation or discovery document |
-| **Roles claim key** | The claim key in the token or UserInfo response that contains role assignments | IdP documentation or token inspection — see [The rolesClaimKey setting](#the-rolesclaimkey-setting) |
+| **Roles claim key** | The claim key in the token or UserInfo response that contains role assignments | IdP documentation, or by [decoding a sample token](#verify-your-idp-configuration) — see [The rolesClaimKey setting](#the-rolesclaimkey-setting) |
 
 :::note
 Most OIDC-compliant IdPs publish a discovery document at
 `https://<your-idp>/.well-known/openid-configuration` that lists all endpoint URLs. Change Tracker
-doesn't use this document automatically — endpoint URLs must be supplied individually — but it can
-save time locating them manually.
+doesn't use this document automatically — endpoint URLs must be supplied individually. However,
+the discovery document can save time locating each URL.
 :::
 
 ## Set up your identity provider
@@ -73,6 +73,8 @@ Configure your IdP to include role or group membership in that response:
 3. Note the exact claim key under which roles appear. This is the `rolesClaimKey` value — see
    [The rolesClaimKey setting](#the-rolesclaimkey-setting).
 
+#### Provider-specific notes
+
 **Auth0**: Auth0 doesn't include role assignments in the OIDC token by default. Create a
 **Post-Login Action** in the Auth0 dashboard to inject the user's roles as a custom claim:
 
@@ -83,8 +85,9 @@ exports.onExecutePostLogin = async (event, api) => {
 };
 ```
 
-The namespace prefix can be any URL-shaped string. Set `rolesClaimKey` in Change Tracker to the
-full claim key, for example `https://your-domain.com/roles`.
+The namespace prefix can be any URL-like string, such as `https://your-domain.com/`. Set
+`rolesClaimKey` in Change Tracker to the full claim key, for example
+`https://your-domain.com/roles`.
 
 **Keycloak**: Role claims are typically available under `realm_access.roles` or
 `resource_access.<client-id>.roles` in the access token, but the UserInfo endpoint may not include
@@ -102,7 +105,7 @@ such as Postman, and verify that the roles claim is present with the expected va
 
 ## Configure OIDC in Change Tracker
 
-All OIDC settings live under the `security:oauth:oidc` section of the Hub's
+All OIDC settings are defined under the `security:oauth:oidc` section of the Hub's
 `appsettings.Production.json` configuration file.
 
 ### Configuration keys
@@ -127,7 +130,7 @@ All OIDC settings live under the `security:oauth:oidc` section of the Hub's
 Run the Maintenance App with `--updateAppSettings` and `--targetEnvironment Production` to write
 the values directly to `appsettings.Production.json`:
 
-```
+```bat
 NNT.Hub.Service.Maintenance.App.exe --updateAppSettings --targetEnvironment Production ^
   --oidc-enabled true ^
   --oidc-client-id "<your-client-id>" ^
@@ -335,18 +338,12 @@ To resolve: update the user's `preferred_username` in the IdP to a different val
 If the IdP returns a `preferred_username` that matches an existing Change Tracker account that you
 created locally (not via OIDC), Change Tracker rejects the login.
 
-To resolve, update the existing local account's email address to match the email returned by the
-IdP. Change Tracker will then recognise the account by email address on the next OIDC login and
-link the OIDC identity to it, rather than attempting to create a duplicate.
-
-**Step 1 –** Log in to Change Tracker as an administrator.
-
-**Step 2 –** Go to **Administration** > **Users**.
-
-**Step 3 –** Find the existing account and update its email address to match exactly what the IdP
-returns.
-
-The user can then log in via OIDC successfully.
+To resolve: update the existing local account's email address to match the email returned by the
+IdP. Change Tracker then recognizes the account by email address on the next OIDC login and links
+the OIDC identity to it, rather than attempting to create a duplicate. To update the email address,
+log in as an administrator, go to **Administration** > **Users**, find the existing account, and
+update its email address to match exactly what the IdP returns. The user can then log in via OIDC
+successfully.
 
 ---
 
@@ -400,7 +397,7 @@ The following items aren't supported in the current release:
 - Verify `enabled` is set to `"true"` under `security:oauth:oidc` in
   `appsettings.Production.json`.
 - Confirm the Hub service has been restarted after the configuration change.
-- OIDC SSO isn't available in SaaS deployments. Verify you're running an on-premises Hub.
+- OIDC SSO is unavailable in SaaS deployments; confirm you're running an on-premises Hub.
 
 **Login redirects to the IdP but fails to return**
 

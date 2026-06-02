@@ -179,6 +179,7 @@ The system follows this sequence when assigning groups:
 5. **Validate Groups**: If `AllRegistrationGroupsExist` is enabled, all identified groups must exist
    - If any group doesn't exist, the system aborts the entire registration
    - The device remains in "New Devices" for manual intervention
+   - If `CustomGroupNamePrefix` is set, an additional prefix-validation check runs as part of this step. See [Custom Group Name Prefix](./customgroupnameprefix.md) for details.
 
 6. **Remove from Previous OS Groups**: If `EnableAutoReregisterAgentAfterOsChange` is enabled, the system removes the device from previous OS-specific groups (during re-registration scenarios)
 
@@ -233,7 +234,9 @@ This fallback approach ensures you can always find devices requiring manual inte
 
 **Use Case**: Enable this setting if you want the system to automatically reassign devices to appropriate OS-specific groups after operating system upgrades.
 
-For information about enforcing a group naming convention during registration, see [Custom Group Name Prefix](./customgroupnameprefix.md).
+### CustomGroupNamePrefix
+
+Configure `CustomGroupNamePrefix` to require that at least one registration group follow a naming convention. See [Custom Group Name Prefix](./customgroupnameprefix.md).
 
 ---
 
