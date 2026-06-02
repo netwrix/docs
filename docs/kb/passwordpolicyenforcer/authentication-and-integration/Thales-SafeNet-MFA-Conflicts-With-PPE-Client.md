@@ -16,15 +16,15 @@ keywords:
   - AuthGINA
 
 products:
-  - password-policy-enforcer
-sidebar_label: Thales SafeNet MFA Conflicts with Password Policy Enforcer Client When Both Are Installed
+  - passwordpolicyenforcer
+sidebar_label: Credential Provider Conflict Prevents Password Policies from Displaying
 tags:
   - kb
-title: "Thales SafeNet MFA Conflicts with Password Policy Enforcer Client When Both Are Installed"
+title: "Credential Provider Conflict Prevents Password Policies from Displaying"
 knowledge_article_id: ""
 ---
 
-# Thales SafeNet MFA Conflicts with Password Policy Enforcer Client When Both Are Installed
+# Credential Provider Conflict Prevents Password Policies from Displaying
 
 ## Symptoms
 
