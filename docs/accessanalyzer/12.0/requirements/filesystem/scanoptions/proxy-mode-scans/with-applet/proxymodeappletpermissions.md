@@ -25,7 +25,7 @@ the applet.
 
 :::warning
 The local policy, “Network access: Don't allow storage of passwords and credentials
-for network authentication” must be disabled in order for the applet to start.
+for network authentication” must be disabled for the applet to start.
 :::
 
 

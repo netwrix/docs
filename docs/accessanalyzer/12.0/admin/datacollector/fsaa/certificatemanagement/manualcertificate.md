@@ -13,7 +13,7 @@ case-sensitive.
 
 ## Create and store the required certificates
 
-Follow the steps below to create and store the required certificates.
+Follow these steps to create and store the required certificates.
 
 :::note
 In these steps, some commands need to be run on the Access Analyzer console and some on
@@ -31,8 +31,8 @@ Remember, all commands in the `FSAACertificateManager.exe` tool are case-sensiti
 :::
 
 
-**Step 1 –** Create a Certificate Authority (CA). The CA is a self signed certificate that will be
-used to sign the client and server certificates. On the Access Analyzer console, run the following
+**Step 1 –** Create a Certificate Authority (CA). The CA is a self-signed certificate that signs
+the client and server certificates. On the Access Analyzer console, run the following
 command:
 
 ```
