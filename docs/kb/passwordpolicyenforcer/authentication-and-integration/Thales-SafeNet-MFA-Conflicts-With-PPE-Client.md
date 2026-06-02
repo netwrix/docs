@@ -26,24 +26,24 @@ knowledge_article_id: ""
 
 # Credential Provider Conflict Prevents Password Policies from Displaying
 
-## Symptoms
+## Symptom
 
 When Thales SafeNet MFA and the Netwrix Password Policy Enforcer (PPE) Client are both installed on the same system, the PPE Client does not display policies.
 
 
 ## Cause
 
-By default, the Thales SafeNet credential provider blocks all other credential providers, including the PPE Client, to prevent bypass.
+The Thales SafeNet agent installs a credential provider under `HKEY_LOCAL_MACHINE\SOFTWARE\CRYPTOCard\AuthGINA` (CRYPTOCard is the legacy Thales subsidiary whose agent manages this key). By default, the agent blocks all other credential providers to prevent MFA bypass. The `DoNotFilter` registry value acts as an allowlist — only credential providers whose GUIDs are listed there are permitted to load alongside the Thales SafeNet provider.
 
 ## Resolution
 
 1.	Open Registry Editor and navigate to `HKEY_LOCAL_MACHINE\SOFTWARE\CRYPTOCard\AuthGINA`.
 
-2.	Set the `DoNotFilter` registry value to the PPE Client GUID:
+2.	Add the PPE Client GUID to the `DoNotFilter` registry value to allow the PPE Client to load alongside the Thales SafeNet credential provider:
 ```
 {F347212E-AF6B-4726-92B3-E4DF3388D58C}
 ```
 
 > **NOTE:** For more information on these registry settings, see [Registry Settings ⸱ Thales 🡥](https://thalesdocs.com/sta/agents/wla-windows_logon/wla-registry_settings/index.html).
 
-3.	Reboot and verify that policies now appear for the end user on the CTRL+ALT+DEL Change Password screen.
+3.	Reboot, then press CTRL+ALT+DEL and select **Change Password** to verify that password policies now appear for the end user.
