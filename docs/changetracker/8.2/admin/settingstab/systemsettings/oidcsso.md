@@ -11,8 +11,8 @@ Netwrix Change Tracker supports single sign-on (SSO) through any standards-compl
 Directory Federation Services (ADFS), OneLogin, Okta, Auth0, and others.
 
 When OIDC is enabled, the login page displays an SSO button that redirects users to the IdP for
-authentication. After successful authentication, the IdP redirects back to the Hub and the user is
-logged in automatically. Standard username/password login remains available alongside it.
+authentication. After successful authentication, the IdP redirects back to the Hub, which logs the
+user in automatically. Standard username/password login remains available alongside it.
 
 On a user's first login, Change Tracker automatically creates a local account — no
 pre-registration is required. On subsequent logins, the user's roles are updated to reflect any
@@ -39,7 +39,7 @@ Collect the following from your identity provider before configuring Change Trac
 :::note
 Most OIDC-compliant IdPs publish a discovery document at
 `https://<your-idp>/.well-known/openid-configuration` that lists all endpoint URLs. Change Tracker
-does not use this document automatically — endpoint URLs must be supplied individually — but it can
+doesn't use this document automatically — endpoint URLs must be supplied individually — but it can
 save time locating them manually.
 :::
 
@@ -188,7 +188,7 @@ All values — including booleans — are strings in the configuration file (not
 
 ## The rolesClaimKey setting
 
-Role or group membership is not a standard OIDC claim — there is no single agreed-upon name for
+Role or group membership isn't a standard OIDC claim — there is no single agreed-upon name for
 it, and different identity providers use different keys. The `rolesClaimKey` setting tells Change
 Tracker which claim key to read when resolving a user's role assignments.
 
@@ -240,12 +240,14 @@ resolves each role to a Change Tracker role using this sequence:
    used.
 2. If no mapping exists but the IdP role name exactly matches a known Change Tracker role name, it
    is used directly.
-3. If neither condition is met, the role is discarded and a warning is written to the Hub log.
+3. If neither condition is met, Change Tracker discards the role and writes a warning to the Hub
+   log.
 
-If no valid roles remain after this process, the user is assigned the default `user` role.
+If no valid roles remain after this process, Change Tracker assigns the user the default `user`
+role.
 
-Role assignments are re-evaluated on every login. Role changes made in the IdP take effect the
-next time the user logs in to Change Tracker.
+Change Tracker re-evaluates role assignments on every login. Role changes made in the IdP take
+effect the next time the user logs in to Change Tracker.
 
 ### Change Tracker roles
 
@@ -269,8 +271,8 @@ Role mapping is needed when your IdP uses role or group names that don't match C
 names. For example, if your Active Directory group is named `CT-Administrators` but you want those
 users to get the Change Tracker `admin` role, define a mapping.
 
-Mappings are stored as key-value pairs in **System Settings**. Each mapping uses the key format
-`oidc:rolemap:<IdP-role-name>` with the value set to the target Change Tracker role name.
+Change Tracker stores mappings as key-value pairs in **System Settings**. Each mapping uses the key
+format `oidc:rolemap:<IdP-role-name>`, with the value set to the target Change Tracker role name.
 
 **Step 1 –** In Change Tracker, go to **Administration** > **System Settings**.
 
@@ -324,14 +326,14 @@ situations.
 **Conflict with a system account**
 
 If the IdP returns a `preferred_username` that matches a reserved Change Tracker system account
-name (such as `admin` or `agent`), the login is rejected.
+name (such as `admin` or `agent`), Change Tracker rejects the login.
 
 To resolve: update the user's `preferred_username` in the IdP to a different value.
 
 **Conflict with an existing local account**
 
-If the IdP returns a `preferred_username` that matches an existing Change Tracker account that was
-created locally (not via OIDC), the login is rejected.
+If the IdP returns a `preferred_username` that matches an existing Change Tracker account that you
+created locally (not via OIDC), Change Tracker rejects the login.
 
 To resolve, update the existing local account's email address to match the email returned by the
 IdP. Change Tracker will then recognise the account by email address on the next OIDC login and
@@ -364,12 +366,12 @@ IdP session in the browser.
 
 This is intentional behavior for a security monitoring product: Change Tracker is often deployed
 on shared workstations where multiple users may use the same browser. Without forced
-re-authentication, a second user could be silently authenticated as the previous user.
+re-authentication, the IdP could silently authenticate a second user as the previous user.
 
 ### Multi-factor authentication
 
 Change Tracker respects MFA enforced by the IdP. If your IdP requires MFA as part of the
-authentication flow, users are prompted for their second factor before being redirected back to
+authentication flow, the IdP prompts users for their second factor before redirecting them back to
 Change Tracker. MFA enforcement is the responsibility of the IdP — Change Tracker doesn't enforce
 its own MFA for OIDC-authenticated users.
 
@@ -380,14 +382,14 @@ Tracker reflects the MFA status in the user's session. No additional configurati
 
 ## Limitations
 
-The following items are not supported in the current release:
+The following items aren't supported in the current release:
 
 - **Automatic OIDC endpoint discovery**: Endpoint URLs must be supplied individually. Automatic
-  discovery from a `.well-known/openid-configuration` URL is not supported.
+  discovery from a `.well-known/openid-configuration` URL isn't supported.
 - **Multiple simultaneous OIDC providers**: Only one OIDC provider can be configured at a time.
 - **Group-to-device group mapping**: Role mapping assigns Change Tracker roles only. Mapping IdP
-  groups to Change Tracker device access groups is not supported.
-- **SAML**: SAML-based SSO is not supported.
+  groups to Change Tracker device access groups isn't supported.
+- **SAML**: SAML-based SSO isn't supported.
 
 ---
 
@@ -431,7 +433,7 @@ The following items are not supported in the current release:
   address in Change Tracker to match what the IdP returns — see
   [Username conflicts](#username-conflicts).
 
-**Roles are not updating after being changed in the IdP**
+**Roles aren't updating after being changed in the IdP**
 
 - Roles are re-synced on every login. The user must log out and log back in via OIDC for role
   changes to take effect.
