@@ -52,7 +52,7 @@ The following table shows observed memory consumption during data collection for
 | 600,000 | 6.5 GB | 19 GB |
 | 800,000 | 6.5 GB | 24 GB |
 
-> **NOTE:** At 600,000 permissions and above, the SQL Server instance requires significant free memory. If the SQL Server host does not have enough available RAM, the upload fails with an "insufficient system memory in resource pool" error.
+> **NOTE:** If the SQL Server host does not have enough available RAM for the permission count being processed, the upload fails with an "insufficient system memory in resource pool" error.
 
 ### Count Permissions Before Enabling Integration
 
