@@ -1,7 +1,7 @@
 ---
-title: "NPS-D Issue Investigation Guide"
+title: "Gathering Information for Issue Escalation"
 description: "A template for gathering and providing information needed to investigate and escalate Privilege Secure Discovery (NPS-D) issues, including problem summary, evidence, timeline, and reproduction steps."
-sidebar_label: "NPS-D Issue Investigation Guide"
+sidebar_label: "Gathering Information for Issue Escalation"
 keywords:
 - NPS-D
 - Privilege Secure Discovery
@@ -12,19 +12,19 @@ keywords:
 - screenshots
 - timeline
 products:
-- privilege-secure-discovery
+- privilegesecurediscovery
 tags:
 - kb
-- how-tos
+- troubleshooting-and-errors
 ---
 
-# NPS-D Issue Investigation Guide
+# Gathering Information for Issue Escalation
 
 Provide the following information when reporting or escalating an NPS-D problem. Use this as a guideline for ticket submission.
 
 ---
 
-## 1. Problem Summary
+## Problem Summary
 
 Provide a clear and concise description of the issue:
 
@@ -33,7 +33,7 @@ Provide a clear and concise description of the issue:
 
 ---
 
-## 2. Evidence
+## Evidence
 
 Include relevant screenshots of:
 
@@ -44,7 +44,7 @@ If possible, include timestamps.
 
 ---
 
-## 3. Timeline
+## Timeline
 
 - When was the issue first noticed?
 - Is it:
@@ -54,7 +54,7 @@ If possible, include timestamps.
 
 ---
 
-## 4. Recent Changes
+## Recent Changes
 
 List any changes made prior to the issue. Examples:
 
@@ -66,7 +66,7 @@ List any changes made prior to the issue. Examples:
 
 ---
 
-## 5. Reproducibility
+## Reproducibility
 
 Can the issue be reproduced?
 

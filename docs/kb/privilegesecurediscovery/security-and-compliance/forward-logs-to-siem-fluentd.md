@@ -12,10 +12,10 @@ keywords:
 - syslog
 - Docker
 products:
-- privilege-secure-discovery
+- privilegesecurediscovery
 tags:
 - kb
-- how-tos
+- security-and-compliance
 ---
 
 # Forward Logs to SIEM via Fluentd
@@ -24,7 +24,7 @@ Complete the following steps during a scheduled downtime window or support call,
 
 Refer to [Forward Logs to Syslog Servers and SIEM Solutions](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/integrations/siem/forwardlogs) for the required configuration (stanza) details.
 
-## Procedure
+## Instructions
 
 1. SSH into the server.
 
@@ -40,13 +40,11 @@ sudo cp -v /secureone/conf/fluentd/fluent.conf /secureone/conf/fluentd/fluent.co
 sudo grep -C4 host /secureone/conf/fluentd/fluent.conf
 ```
 
-:::note
-If the above command returns no results, review the full file to confirm the required entries exist:
-
-```
-sudo cat /secureone/conf/fluentd/fluent.conf
-```
-:::
+> **NOTE:** If the above command returns no results, review the full file to confirm the required entries exist:
+>
+> ```
+> sudo cat /secureone/conf/fluentd/fluent.conf
+> ```
 
 4. Update the IP/hostname, port(s), and protocol using a text editor (vi, vim, or nano). Example:
 

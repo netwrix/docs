@@ -12,13 +12,13 @@ keywords:
 - SecureONE
 - migration
 products:
-- privilege-secure-discovery
+- privilegesecurediscovery
 tags:
 - kb
-- how-tos
+- authentication-and-access
 ---
 
-# NPS-D Authorization Groups Feature
+# Authorization Groups Feature
 
 <img width="1421" height="751" alt="image" src="https://github.com/user-attachments/assets/2519f529-9fe0-4e31-8066-4ac1e4c9ec63" />
 
@@ -55,9 +55,7 @@ This feature requires a database toggle to be enabled after the migration is app
 
 ## Feature Behavior
 
-Originally, this feature was designed to:
-
-* Persist (lock down) AD groups that contain **Protect Mode** accounts.
+The original design targets persisting (locking down) AD groups that contain **Protect Mode** accounts.
 
 When configured:
 
@@ -79,15 +77,13 @@ After systems are refreshed or rescanned:
   * No modifications can be made by users or admins.
 * Account type is set to **SecureONE** (service account).
 
-:::warning
-This effectively grants **full access to all members of the group**. Using this feature outside its intended purpose is not recommended.
-:::
+> **WARNING:** This effectively grants **full access to all members of the group**. Using this feature outside its intended purpose is not recommended.
 
 ---
 
 ## Known Limitations
 
-This feature is being used beyond its original design, so limitations are not fully defined. Current unknowns:
+This feature is being used beyond its original design, so the full extent of limitations remains unknown. Current unknowns:
 
 * Maximum number of groups supported
 * Behavior may vary depending on system refresh or rescan
