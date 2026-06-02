@@ -21,7 +21,7 @@ the sources:
 
 - [Box](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addbox.md)
 - [Add Single Database](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsingledatabase/addsingledatabase.md) (Microsoft SQL Server, MySQL, PostgreSQL, or Oracle database)
-- [Add Database Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md) (All Microsoft SQL Server, MySQL, PostgreSQL, or Oracle databases on a server)
+- [Add SQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md) (All Microsoft SQL Server, MySQL, PostgreSQL, or Oracle databases on a server)
 - [Dropbox](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/adddropbox.md)
 - [Exchange Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeserver.md) or
   [Exchange Mailbox](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailbox.md)

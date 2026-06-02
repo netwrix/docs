@@ -6,12 +6,12 @@ sidebar_position: 20
 
 # Add MS SQL Server
 
-Once you choose to add SQL server source, you opt to add MS SQL server as a source. For more
-information, go to the main article[SQL Server ](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md).
+When adding a SQL server source, you can choose to add a MS SQL server as the source. For more
+information, see [SQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md).
 
 To connect to a MS SQL server:
 
-1. On the **Source Configuration** screen, select **MS SQL**.
+1. On the **Source Configuration** screen select **SQL Server**, then set **Connection Type** to **MS SQL**.
 2. Specify MS SQL server.
 3. Specify Authentication method:
 

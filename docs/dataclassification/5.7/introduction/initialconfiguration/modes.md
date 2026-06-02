@@ -30,7 +30,7 @@ data discovery and classification rules tuning.
 
 ## Compound Term
 
-In this mode you will get a fully featured index, supporting **Search** by compound term. Bear in mind
+In this mode you will get a fully featured index, supporting **Search** by compound term. Note
 that data storage for compound term processing will require significantly more space, and overall throughput 
 may decrease (compared to the Keyword mode). Recommended for knowledge management, data storage optimization, 
 legal search, other content services.

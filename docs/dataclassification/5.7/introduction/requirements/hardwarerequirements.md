@@ -38,7 +38,7 @@ See [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/o
 
 ## SQL Server
 
-The requirements in this section are for an SQL database supporting up to 4 linked NDC instances. The NDC database server should only be deployed on a dedicated machine, as sharing resources with additional databases on the same server will degrade performance.
+The requirements in this section are for an SQL database supporting up to 4 NDC Server instances in a DQS cluster. The NDC database server should only be deployed on a dedicated machine, as sharing resources with additional databases on the same server will degrade performance.
 
 | Hardware Component | Up to 16 M objects                                                                                                                                                                                                                                                                | Up to 32 M objects and up to 8 M objects for SharePoint | Up to 64 M objects and up to 16 M objects for SharePoint |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |

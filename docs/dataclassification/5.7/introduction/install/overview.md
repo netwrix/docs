@@ -19,7 +19,7 @@ sidebar_position: 40
 
     | Option                | Description                                                                                                              |
     | --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-    | Server Name           | Provide the name of the SQL Server instance that hosts or will host your NDC SQL database. For example, _"WORKSTATIONSQL\SQLSERVER"_. |
+    | Server Name           | Provide the name of the SQL Server instance that will host the NDC SQL database (or already hosts it, if you created the database manually). For example, _"WORKSTATIONSQL\SQLSERVER"_. |
     | Authentication Method | Select Windows or SQL Server authentication method.                                                                      |
     | Username              | Specify the account name.                                                                                                |
     | Password              | Provide the account password.                                                                                                   |
@@ -36,10 +36,10 @@ sidebar_position: 40
 7. If you are installing a secondary NDC instance to an [NDC Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md),
 you will be shown the DQS registration step. Complete the following steps:
     1. Confirm that the Primary NDC Server URL displayed matches the QS Path of the primary NDC instance (the first entry in the DQS table in the administrative web console) and click Connect to connect the installer to the primary instance.
-    1. When the connection succeeds, an Authentication code will be generated and displayed in the Authentication Code field. Click Register - this will copy the Authentication code to the clipboard and open the administration console DQS configuration page in a browser window.
-    1. Click Register/Resync. The authentication code should automatically be inserted into the input box. If the field has not been autofilled, paste it manually, then click Submit.
-    1. Copy the verification code displayed and input it into the Verification code input box in the installer, then click Join.
-    1. Once the NDC instance has been successfully joined to the DQS configuration, you can click Next to move to the next installation step.
+    2. When the connection succeeds, an Authentication code will be generated and displayed in the Authentication Code field. Click Register - this will copy the Authentication code to the clipboard and open the administration console DQS configuration page in a browser window.
+    3. Click Register/Resync. The authentication code should automatically be inserted into the input box. If the field has not been autofilled, paste it manually, then click Submit.    
+    4. Copy the verification code displayed and input it into the Verification code input box in the installer, then click Join.
+    5. Once the NDC instance has been successfully joined to the DQS configuration, you can click Next to move to the next installation step.
 
 
 8. On the Licensing step, add your license. You can add the license as follows:

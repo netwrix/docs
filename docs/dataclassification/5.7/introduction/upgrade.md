@@ -31,10 +31,12 @@ Classification resides. If not, download it from Microsoft website:
 - Locate the folder containing index files (the default location is _C:\Program
   Files\Netwrix\Data Classification\Index_) and back it up.
 
-**Step 4 –** For versions of 5.7 prior to 5.7.10, it was necessary to have all NDC services and the NDC
+:::note
+For versions of 5.7 prior to 5.7.10, it was necessary to have all NDC services and the NDC
 IIS Application Pool running as the same service account. For 5.7.10 onwards this is no longer necessary, but if upgrading
 from an earlier version of 5.7 you should complete the upgrade to 5.7.10 _before_ changing the service account
 to prevent any possible issues with the upgrade process.
+:::
 
 ## Upgrade Process
 
@@ -46,7 +48,7 @@ setup and follow the wizard steps. When finished, all solution components will b
 If you need to upgrade from an earlier version, you will need to perform a staged upgrade: first upgrade
 to version 5.5, then perform a second upgrade to version 5.7.
 
-## Upgrading a DQS environment
+## Upgrading a DQS Environment
 
 When upgrading an NDC environment which utilises the **Distributed Query Server** functionality to 5.7.10 or later, 
 the primary server should be upgraded first before upgrading the secondary instance(s). Secondary instances will 

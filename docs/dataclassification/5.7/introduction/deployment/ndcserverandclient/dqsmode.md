@@ -30,7 +30,7 @@ This functionality is implemented through the _Query Server_ application.
 
 DQS mode is configured via the administrative web console and, from version 5.7.10 onwards, the installer.
 
-If you want to implement DQS configuration for your NDC deployment, bear in mind that doing so 
+If you want to implement DQS configuration for your NDC deployment, be aware that doing so 
 cannot easily be undone. Netwrix recommends that before applying the DQS mode, a full backup of the current
 NDC deployment should be created. Also, read the DQS documentation sections thoroughly before you start.
 
@@ -53,7 +53,7 @@ DQS mode can only be configured by a user whose account has the **Superuser** ro
 4. Select Enable DQS.
 
 
-5. On the DQS tab, click Add to open the DQS addition menu, and input the details for the first additional NDC server.
+5. On the DQS tab, click Add to open the DQS addition menu, and input the details for the first secondary NDC server.
 
     ![dqs_mode_page_thumb_0_0](/images/dataclassification/5.7/requirements/dqs_mode_page_thumb_0_0.webp)
 
@@ -124,7 +124,7 @@ value to your clipboard, then paste it in the authentication code field in the N
     the Verification Code field in the installer, then click Join. The NDC installer will then perform
     the resynchronisation.
 13. Complete the installation.
-14. Repeat steps 6 - 13 for each other new NDC Server, then review the list of servers to make sure all new
+14. Repeat steps 6 - 13 for each additional NDC Server to be added, then review the list of servers to make sure all new
     servers have been successfully added.
 
 ![dqs_servers_list_thumb_0_0](/images/dataclassification/5.7/requirements/dqs_servers_list_thumb_0_0.webp)

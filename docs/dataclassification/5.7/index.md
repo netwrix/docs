@@ -51,8 +51,7 @@ You can view the app architecture and components in the figure below.
    content and metadata of the collected files.
 5. The NDC Classifier service performs data classification by matching collected files against
    pre-built taxonomies (the Netwrix compliance taxonomies) and/or customer-created taxonomies.
-6. If Classification Writing is enabled, the assigned classification labels are written to the custom metadata
-   columns for supported document types.
+6. If [Classification Writing](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/enablewriteclassifications.md) is enabled, the assigned classification labels are written to the custom metadata columns for supported document types.
 7. If any Workflows have been defined and are enabled, they are run on documents that meet the
    workflow conditions.
 
@@ -137,6 +136,6 @@ are collected.
 The Classifier classifies collected documents against NDC taxonomies. It can make use of the built-in
 taxonomies and any custom taxonomies created by the user, and can be linked to SharePoint termsets to classify
 against them as well. It also runs user-configured workflows against any documents that meet the conditions
-of the workflow, and is used to perform Data Subject Access Requests.
+of the workflow, and is used to perform [Data Subject Access Requests](/docs/dataclassification/5.7/dataanalysisoverview/dsar/overview.md).
 
 The Classifier is implemented as a Microsoft Windows Service.
