@@ -28,7 +28,7 @@ to save audit events on **"log storage accounts"**. Ensure you have the necessar
 
    - One for audit logs — Create a storage account [Create a storage account (Microsoft Learn)](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?utm_source=chatgpt.com&tabs=azure-portal)
 
-- Configure [Azure Files identity-based access](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview) for the data storage account in Azure Files
+- [Azure Files identity-based access](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview) configured for the data storage account in Azure Files
 
   Supported options:
    - Active Directory Domain Services (AD DS)
@@ -48,7 +48,7 @@ to save audit events on **"log storage accounts"**. Ensure you have the necessar
 
 ## Azure Application Registration
 
-Register an application to let Netwrix Auditor authenticate to Azure and read audit logs
+Register an application so Netwrix Auditor can authenticate to Azure and read audit logs.
 
 ### Step 1: Create the App Registration
 
@@ -97,12 +97,14 @@ Netwrix Auditor uses the **App ID** + **Client Secret** for authentication
 
 ### Step 1: Add Permissions
 
+The Purpose column references Microsoft Graph API endpoints that Netwrix Auditor calls to perform each resolution task.
+
 | Permission | Purpose |
 |------------|---------|
 | `User.Read` | Basic user information. Sign in and read user profile. *(default)* |
-| `User.Read.All` | Read all users' full profiles. Required to resolve user SIDs into display names and User Principal Names (UPNs), and to map group ACE entries via `/users/{id}/transitiveMemberOf` |
-| `Group.Read.All` | Resolve groups and search by SID from DACLs. Required to expand group membership via `/groups/{id}/transitiveMembers` and filter groups by `securityIdentifier` |
-| `Application.Read.All` | Resolve service principals (managed identities, enterprise apps) to display names in reports via `/servicePrincipals/{id}` |
+| `User.Read.All` | Read all users' full profiles. Required to resolve user security identifiers (SIDs) into display names and User Principal Names (UPNs), and to map access control entries (ACEs) from group membership via the Microsoft Graph endpoint `/users/{id}/transitiveMemberOf` |
+| `Group.Read.All` | Resolve groups and search by SID from discretionary access control lists (DACLs). Required to expand group membership via the Microsoft Graph endpoint `/groups/{id}/transitiveMembers` and filter groups by `securityIdentifier` |
+| `Application.Read.All` | Resolve service principals (managed identities, enterprise apps) to display names in reports via the Microsoft Graph endpoint `/servicePrincipals/{id}` |
 
 
 1. In your app in EntraID, go to **Manage > API permissions > + Add a permission**.
@@ -125,9 +127,11 @@ Click **Grant admin consent for TenantName**
 
 **Why this is required:**
 - By default, applications can't query Microsoft Graph for directory-wide information
-- Admin consent allows the app to use **User.Read.All**
-- This lets Netwrix Auditor query Azure AD and resolve **user SIDs → user accounts → display names**
-- Without admin consent, audit logs will only show unresolved SIDs instead of usernames, making reports incomplete and less useful
+- Admin consent allows the app to use **User.Read.All**, **Group.Read.All**, and **Application.Read.All**
+- **User.Read.All** lets Netwrix Auditor query Microsoft Entra ID and resolve **user SIDs → user accounts → display names**
+- **Group.Read.All** lets Netwrix Auditor resolve groups from DACLs and expand group membership so reports show which users inherit access through group ACEs
+- **Application.Read.All** lets Netwrix Auditor resolve service principals (managed identities and enterprise apps) to display names instead of object IDs
+- Without admin consent, audit logs will only show unresolved SIDs and object IDs instead of usernames, group names, and application names, making reports incomplete and less useful
 
 **At the end of this step, your app has granted Microsoft Graph API permissions**
 
