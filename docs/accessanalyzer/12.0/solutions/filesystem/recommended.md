@@ -20,7 +20,7 @@ additional information.
 
 **Dependencies**
 
-- The .Active Directory Inventory job froup needs to be executed before running the File System
+- The .Active Directory Inventory job group needs to be executed before running the File System
   solution
 - The .Entra ID Inventory job group needs to be executed before running the File System solution
   (for targeting Azure Files only)
@@ -286,7 +286,7 @@ following jobs:
 - **5.Activity** > **Forensics** > **FS_PermissionChanges** Job
 - **5.Activity** > **Suspicious Activity** > **FS_HighestHourlyActivity** Job
 
-see the appropriate topics for details on these tasks.
+See the appropriate topics for details on these tasks.
 
 **Additional Consideration**
 

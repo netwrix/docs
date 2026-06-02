@@ -75,5 +75,5 @@ To verify Proxy Mode with Service scanning, check the FSAA Data Collector Query 
 **_OR_**
 
 ### Deploy Service on Scan
-1. [Applet Settings](https://docs.netwrix.com/docs/accessanalyzer/11_6/admin/datacollector/fsaa/appletsettings) > Applet Launch Mechanism: Windows Service
+1. [Applet Settings](https://docs.netwrix.com/docs/accessanalyzer/11_6/admin/datacollector/fsaa/appletsettings/appletsettings) > Applet Launch Mechanism: Windows Service
 2. [Scan Server Selection](https://docs.netwrix.com/docs/accessanalyzer/11_6/admin/datacollector/fsaa/scanserverselection) > “Specific Remote Server: “ **OR** “Specific Remote Servers by Host List”

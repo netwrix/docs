@@ -296,7 +296,7 @@ following jobs:
 - **5.Activity** > **Forensics** > **FS_PermissionChanges** Job
 - **5.Activity** > **Suspicious Activity** > **FS_HighestHourlyActivity** Job
 
-see the appropriate topics for details on these tasks.
+See the appropriate topics for details on these tasks.
 
 **Additional Consideration**
 

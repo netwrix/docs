@@ -59,5 +59,5 @@ The account used in the connection profile associated with the File System scan 
 ## Verify Proxy Mode with Applet scanning
 
 To verify Proxy Mode with Applet scanning, check the following FSAA Data Collector Query Settings:
-1. [Applet Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/fsaa/appletsettings/applets) > Applet Launch Mechanism: MSTask Task Scheduler
+1. [Applet Settings](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/fsaa/appletsettings/appletsettings) > Applet Launch Mechanism: MSTask Task Scheduler
 2. [Scan Server Selection](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/datacollector/fsaa/scanserverselection) > “Specific Remote Server: “ **OR** “Specific Remote Servers by Host List”
