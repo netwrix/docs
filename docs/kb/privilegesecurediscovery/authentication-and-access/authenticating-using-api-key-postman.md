@@ -37,11 +37,10 @@ You need:
 1. Open Postman.
 
 2. Click the **eye icon** in the upper-right corner.
-   <img width="268" height="166" alt="image" src="https://github.com/user-attachments/assets/1313badd-86cb-41eb-9f1f-d28aad2b5b40" />
+   ![Postman eye icon in upper-right corner](../0-images/postman-globals-eye-icon.png)
 
 3. Click **Edit** next to **Globals**.
-<img width="705" height="363" alt="image" src="https://github.com/user-attachments/assets/f1a21342-ab16-4df5-8159-e703b8deb1a3" />
-<br />
+   ![Edit button next to Globals](../0-images/postman-globals-edit.png)
 
    Add the following variables:
 
@@ -51,20 +50,20 @@ You need:
 
    - *(Optional)* **base_url**
      - Enter the SecureONE environment URL if required.
-<img width="1600" height="355" alt="image" src="https://github.com/user-attachments/assets/5e6ed8a1-985a-430d-8fd9-dd95c5a138a5" />
+
+   ![Global variables with api_key and base_url configured](../0-images/postman-globals-variables.png)
 
 4. Navigate to the **SecureONE API collection**, expand **API Keys**, and select **Authenticate using an API key**.
-<img width="472" height="286" alt="image" src="https://github.com/user-attachments/assets/1fa66abe-28c8-4028-848d-e8452aafe43b" />
+   ![SecureONE API collection with Authenticate using an API key selected](../0-images/postman-api-collection.png)
 
 5. Click the **Body** tab and enter the **userId** associated with the API key.
 
 > **NOTE:** `{{api_key}}` automatically pulls from the global variable.
 
-<img width="505" height="207" alt="image" src="https://github.com/user-attachments/assets/01908c29-8ca1-48a9-847c-cf107cebaf65" />
+   ![Body tab with userId field](../0-images/postman-body-tab.png)
 
 6. Click the **Tests** tab.
-<img width="609" height="154" alt="image" src="https://github.com/user-attachments/assets/33b7cefc-bc32-4785-92d6-3256c4a719ad" />
-<br />
+   ![Tests tab](../0-images/postman-tests-tab.png)
 
    Paste the following:
 
@@ -74,10 +73,10 @@ You need:
    ```
 
 7. Click **Save**, or use **Save As** to store it separately.
-<img width="406" height="145" alt="image" src="https://github.com/user-attachments/assets/956c2c89-8c33-4f22-ae35-97c7ced4c2b6" />
+   ![Save button](../0-images/postman-save.png)
 
 8. Click **Send** and verify the response appears at the bottom. You should receive a token in the response.
-<img width="628" height="193" alt="image" src="https://github.com/user-attachments/assets/00b7b1c3-68f8-4148-9ae6-3325d23bd9db" />
+   ![Send button and response at the bottom](../0-images/postman-send-response.png)
 
 9. You can now send **GET** and **POST** requests using the stored `current_jwt` token.
 

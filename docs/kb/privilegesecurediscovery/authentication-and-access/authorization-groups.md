@@ -20,7 +20,7 @@ tags:
 
 # Authorization Groups Feature
 
-<img width="1421" height="751" alt="image" src="https://github.com/user-attachments/assets/2519f529-9fe0-4e31-8066-4ac1e4c9ec63" />
+![Authorization Groups feature in the UI](../0-images/authorization-groups-overview.png)
 
 ## Overview
 
