@@ -12,7 +12,7 @@ It supports two types of monitored items for Azure Files:
  - **Azure Subscription**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shares of all **storage accounts** of the specified **Azure Files subscription**
 
 
-**Note:** For all **"data storage accounts"** used in the points above, you must configure [Diaggnostic settings](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
+**Note:** For all **"data storage accounts"** listed in the monitored item types, you must configure [Diaggnostic settings](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
 to save audit events on **"log storage account(s)"**. Ensure you have the necessary access ([API permissions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#configure-api-permissions), [IAM Roles](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#assign-iam-roles-to-the-app)) for [application](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#azure-application-registration) to read these events and access storage accounts metadata.
 
 ## Prerequisites
@@ -26,7 +26,7 @@ to save audit events on **"log storage account(s)"**. Ensure you have the necess
 
    - One for audit logs — Create a storage account [Create a storage account (Microsoft Learn)](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?utm_source=chatgpt.com&tabs=azure-portal)
 
-- [Azure Files identity-based access](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview) is configured for data storage account in Azure Files
+- Configure [Azure Files identity-based access](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview) for the data storage account in Azure Files
 
   Supported options:
    - Active Directory Domain Services (AD DS)
@@ -35,7 +35,7 @@ to save audit events on **"log storage account(s)"**. Ensure you have the necess
 
   **Netwrix Auditor** relies on **identity-based access** to correctly map file operations to real user accounts. Without it:
    - Audit logs may not contain accurate user information
-   - Activity may be shown as system or anonymous accounts
+   - Azure may report activity under system or anonymous accounts
 
 ## Configuration Scope Overview
 
@@ -46,18 +46,18 @@ to save audit events on **"log storage account(s)"**. Ensure you have the necess
 
 ## Azure Application Registration
 
-You should register an application so Netwrix Auditor can authenticate to Azure and read audit logs
+Register an application to let Netwrix Auditor authenticate to Azure and read audit logs
 
 ### Step 1: Create the App Registration
 
 1. In the Azure Portal, go to **Microsoft Entra ID > Manage > App registrations > + New registration**
 2. Enter:
    - **Name**: Name: `NetwrixAuditor-AzureFiles` (this is an example — you can use any descriptive name for the app)
-   - **Supported account types** (see below)
+   - **Supported account types** (see [Account Types references](#account-types-references))
    - Leave **Redirect URI** blank
 3. Click **Register**
 
-**Account Types references:**
+#### Account Types references
 
 - **[Supported account types – Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/v2-supported-account-types)**
 
@@ -78,7 +78,7 @@ After registration, go to the **Overview** page of your new app and copy:
 2. Click **+ New client secret**
 3. Enter a description (e.g., `NetwrixSecret`) and select expiration
 4. Click **Add**
-5. Copy the **secret value** immediately — it won't be shown again
+5. Copy the **secret value** immediately — Azure displays it only once
 
 Netwrix Auditor uses the **App ID** + **Client Secret** for authentication
 
@@ -98,7 +98,9 @@ Netwrix Auditor uses the **App ID** + **Client Secret** for authentication
 | Permission | Purpose |
 |------------|---------|
 | `User.Read` | Basic user information. Sign in and read user profile. *(default)* |
-| `User.Read.All` | Read all users' profiles. Required to resolve SIDs into usernames in reports |
+| `User.Read.All` | Read all users' full profiles. Required to resolve user SIDs into display names and User Principal Names (UPNs), and to map group ACE entries via `/users/{id}/transitiveMemberOf` |
+| `Group.Read.All` | Resolve groups and search by SID from DACLs. Required to expand group membership via `/groups/{id}/transitiveMembers` and filter groups by `securityIdentifier` |
+| `Application.Read.All` | Resolve service principals (managed identities, enterprise apps) to display names in reports via `/servicePrincipals/{id}` |
 
 
 1. In your app in EntraID, go to **Manage > API permissions > + Add a permission**.
@@ -106,9 +108,13 @@ Netwrix Auditor uses the **App ID** + **Client Secret** for authentication
 3. Add:
    - **User.Read (default)**
    - **User.Read.All**
+   - **Group.Read.All**
+   - **Application.Read.All**
 
 - *User.Read* – "Sign in and read user profile." *(default)*
 - *User.Read.All* – "Read all users' full profiles"
+- *Group.Read.All* – "Read all groups"
+- *Application.Read.All* – "Read all applications"
 
 
 ### Step 2: Grant Admin Consent
@@ -236,7 +242,7 @@ Azure Files audit logs will now be archived into your **Log Storage Account**
 ## Checklist
 
 - [Azure Application registered](#azure-application-registration) with App ID + Secret
-- [API permissions](#configure-api-permissions) (User.Read, User.Read.All) granted
+- [API permissions](#configure-api-permissions) (User.Read, User.Read.All, Group.Read.All, Application.Read.All) granted
 - [IAM roles assigned](#assign-iam-roles-to-the-app) (Reader, Storage File Data Privileged Reader, Storage Blob Data Reader)
 - [Diagnostic Settings configured](#diagnostic-settings) to log to a Log Storage Account
 
