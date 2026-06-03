@@ -12,7 +12,7 @@ System Permission Tracking monitors and detects changes in System Permissions ac
 
 ### Tracked permissions scope
 
-System Permission Tracking only monitors permissions listed under the System section of Salesforce's System Permissions page. Permissions grouped under the Users section (such as Assign Permission Sets, Manage Roles, and others) are not currently included in change detection or the generated Change Log.
+System Permission Tracking only monitors permissions listed under the System section of Salesforce's System Permissions page. System Permission Tracking excludes permissions grouped under the Users section (such as Assign Permission Sets, Manage Roles, and others) from change detection and the generated Change Log.
 
 ## Accessing System Permission Tracking
 
@@ -49,17 +49,17 @@ You can enable Email Notifications to receive reports showing System Permission 
 
 #### Email Frequency & Timing
 
-Choose whether the report should be sent daily, weekly, or monthly, and configure the corresponding delivery time or date.
+Choose whether to send the report daily, weekly, or monthly, and configure the corresponding delivery time or date.
 
 #### Recipients
 
-Add users to receive notification emails. Recipients must have the required Permission Set to access the internal components used by this feature. After saving, the recipients are automatically subscribed to the System Permission Change Log report.
+Add users to receive notification emails. Recipients must have the required Permission Set to access the internal components used by this feature. After you save, the system automatically subscribes the recipients to the System Permission Change Log report.
 
 ![Weekly Report Example](/images/platgovsalesforce/sys_perm_tracking/Report_Weekly.webp)
 
 ### In-App Notifications
 
-If In-App Notifications are enabled, each scan creates a record in the Downloaded Files component on the Netwrix Dashboard. This provides links to reports showing all detected System Permission changes. An Export Attachment record is also created, but users typically don't need to access it directly.
+If In-App Notifications are enabled, each scan creates a record in the Downloaded Files component on the Netwrix Dashboard. This provides links to reports showing all detected System Permission changes. The system also creates an Export Attachment record, but users typically don't need to access it directly.
 
 **Example of a System Permission Change in Downloaded Files:**
 
@@ -140,7 +140,7 @@ Export change logs for further analysis or compliance reporting:
 
 - Tracking too many permissions can increase scan times
 - Some Salesforce permissions may behave differently depending on org configuration
-- Historical data is limited to the period since tracking was enabled
+- Historical data covers only the period since you enabled tracking
 - Change detection requires at least two scans to establish a baseline
 
 ## Troubleshooting
@@ -162,9 +162,9 @@ Export change logs for further analysis or compliance reporting:
 
 **Solutions**:
 - Ensure Email Notifications are enabled
-- Verify at least one valid recipient is added
+- Verify you have added at least one valid recipient
 - Check that recipients have the required Permission Set ('Netwrix Grant Permissions')
-- Ensure a valid schedule is configured
+- Ensure you have configured a valid schedule
 - Verify email addresses are correct in Salesforce
 - Check spam/junk folders for notification emails
 
@@ -195,11 +195,11 @@ Export change logs for further analysis or compliance reporting:
 **Issue**: Change logs contain entries that don't match expected changes
 
 **Solutions**:
-- Verify the baseline scan was completed successfully
+- Verify the baseline scan completed successfully
 - Check for bulk permission changes or user assignments
 - Review the time range of the changes
 - Ensure no other administrators made concurrent changes
-- Validate that the tracked permissions are correctly configured
+- Validate that you have correctly configured the tracked permissions
 
 ## Related Topics
 
