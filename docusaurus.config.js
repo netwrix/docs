@@ -186,6 +186,28 @@ const config = {
         },
       },
     ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi-8-2',
+        docsPluginId: 'changetracker8_2',
+        config: {
+          'changetracker-hub-8-2': {
+            specPath: 'static/openapi/changetracker-hub-8.2.yaml',
+            outputDir: 'docs/changetracker/8.2/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/changetracker-hub-8.2.yaml',
+            version: '8.2',
+            label: 'ChangeTracker Hub 8.2 API',
+            baseUrl: '/docs/changetracker/8_2/api/reference/',
+          },
+        },
+      },
+    ],
   ],
 
   themeConfig:
