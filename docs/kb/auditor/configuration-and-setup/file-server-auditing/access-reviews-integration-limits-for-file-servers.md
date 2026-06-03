@@ -38,7 +38,7 @@ Review the [Considerations & Limitations](pathname:///docs/auditor/10_8/accessre
 
 ### Permission Upload Limit
 
-The maximum number of permissions that can be uploaded to the Access Reviews database in a single data collection is **800,000** per data source. The `NwxFileStorageAicManager.acinc` configuration file on the Auditor server defines this limit.
+The default limit for permissions uploaded to the Access Reviews database in a single data collection is **200,000**. To increase this limit, contact [Netwrix Support](https://www.netwrix.com/support.html). The current maximum that can be configured is **800,000** permissions.
 
 If the number of permissions exceeds this limit, the upload fails with a connection error due to SQL Server packet size restrictions.
 
