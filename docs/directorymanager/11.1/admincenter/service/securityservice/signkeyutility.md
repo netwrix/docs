@@ -31,11 +31,11 @@ following URLs:
 
 - Pre v11.1 (2.1, 2.2, 2.3, 2.4)
 
-    [https://releases.netwrix.com/products/directorymanager/11.0/directorymanager-Signing-Key-Utility-11.0.0.zip](https://releases.netwrix.com/products/directorymanager/11.0/directorymanager-Signing-Key-Utility-11.0.0.zip)
+    [https://releases.netwrix.com/products/groupid/11.0/groupid-Signing-Key-Utility-11.0.0.zip](https://releases.netwrix.com/products/groupid/11.0/groupid-Signing-Key-Utility-11.0.0.zip)
 
 - For v11.1
 
-    [https://releases.netwrix.com/products/directorymanager/11.1/directorymanager-Signing-Key-Utility-11.1.0.zip](https://releases.netwrix.com/products/directorymanager/11.1/directorymanager-Signing-Key-Utility-11.1.0.zip)
+    [https://releases.netwrix.com/products/groupid/11.1/groupid-Signing-Key-Utility-11.1.0.zip](https://releases.netwrix.com/products/groupid/11.1/groupid-Signing-Key-Utility-11.1.0.zip)
 
 The file is downloaded into a folder as per your browser’s download settings. Unzip the file into a
 folder.
