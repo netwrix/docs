@@ -46,14 +46,14 @@ If the number of permissions exceeds this limit, the upload fails with a connect
 
 ### System Requirements by Permission Count
 
-The following table shows observed memory consumption during data collection for different permission counts. Testing used Auditor 10.8 with a dedicated SQL Server instance.
+The following table shows approximate **memory consumption** observed during data collection for different permission counts. Testing used Auditor 10.8 with a dedicated SQL Server instance.
 
 | Permissions | Auditor host (RAM) | SQL instance (RAM) |
 |---|---|---|
 | 200,000 | 3.2 GB | 6.5 GB |
 | 400,000 | 4.1 GB | 12 GB |
 | 500,000 | 5 GB | 15.5 GB |
-| 600,000 | 6.5 GB | 19 GB |
+| 600,000 | 5.6 GB | 19 GB |
 | 800,000 | 6.5 GB | 24 GB |
 
 > **NOTE:** If the SQL Server host does not have enough available RAM for the permission count being processed, the upload fails with an `insufficient system memory in resource pool` error.
@@ -64,7 +64,7 @@ The following table shows observed memory consumption during data collection for
 2. Download and copy the AIC Resource Estimation Tool to the machine where Auditor is installed.
 
    <!-- TODO: Replace placeholder URL once the pipeline publishes the artifact to releases.netwrix.com -->
-   Download the [AIC Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.8/aic-resource-estimation-tool.zip), a Netwrix permission-counting utility.
+   Download the [AIC Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.8/auditor-aic-estimation-tool-tool-1.0.1.zip), a Netwrix permission-counting utility.
 
    The executing account must have:
    - Local administrator rights.
