@@ -10,6 +10,10 @@ sidebar_position: 112
 
 System Permission Tracking monitors and detects changes in System Permissions across Permission Sets and Profiles in your Salesforce environment. Each scan compares the selected permissions against previous snapshots and generates a Change Log for any detected differences. When a permission changes—either because a Permission Set/Profile is modified or because a user gains or loses an assignment—the system records the impact at the user level, creating an individual Change Log entry for every affected user.
 
+### Tracked permissions scope
+
+System Permission Tracking only monitors permissions listed under the System section of Salesforce's System Permissions page. Permissions grouped under the Users section (such as Assign Permission Sets, Manage Roles, and others) are not currently included in change detection or the generated Change Log.
+
 ## Accessing System Permission Tracking
 
 Navigate to: **Tools** > **Access** > **System Permission Tracking**
