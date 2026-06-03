@@ -12,7 +12,7 @@ It supports two types of monitored items for Azure Files:
  - **Azure Subscription**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shares of all **storage accounts** of the specified **Azure Files subscription**
 
 
-> **Note:** For all **"data storage accounts"** used in the preceding list, you must configure [Diagnostic settings](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
+> **Note:** For all **"data storage accounts"**, you must configure [Diagnostic settings](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
 to save audit events on **"log storage accounts"**. Ensure you have the necessary access ([API permissions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#configure-api-permissions), [IAM Roles](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#assign-identity-and-access-management-iam-roles-to-the-app)) for [application](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#azure-application-registration) to read these events and access storage accounts metadata.
 
 > **Note:** Azure activity logs may take 3 to 20 minutes to become available for analysis after an event occurs. This is an [Azure platform limitation](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-ingestion-time#azure-metrics-resource-logs-activity-log) that applies to all services consuming Azure activity logs. As a result, some file share activities may appear in Netwrix Auditor reports with a delay. When generating reports shortly after activity occurs, extend the report time range by at least 20 minutes to capture events still in transit.
@@ -159,7 +159,7 @@ You should assign Azure IAM roles so that Netwrix Auditor can:
    - "View everything, but not make any changes"
 5. Click **Next**
 6. Under **Members**, click **+ Select members**
-7. In the search window, find and select the **App you registered earlier**
+7. In the search window, select the **App you registered earlier**
 8. Click **Select → Review + assign**
 
 
