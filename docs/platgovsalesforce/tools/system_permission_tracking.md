@@ -138,6 +138,7 @@ Export change logs for further analysis or compliance reporting:
 
 ## Limitations
 
+- Tracking is limited to the **System** section of the Salesforce **System Permissions** page; permissions in the **Users** section are excluded (see [Tracked permissions scope](#tracked-permissions-scope))
 - Tracking too many permissions can increase scan times
 - Some Salesforce permissions may behave differently depending on org configuration
 - Historical data covers only the period since you enabled tracking
