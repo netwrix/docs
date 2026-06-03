@@ -12,7 +12,7 @@ System Permission Tracking monitors and detects changes in System Permissions ac
 
 ### Tracked permissions scope
 
-System Permission Tracking only monitors permissions listed under the **System** section of the Salesforce **System Permissions** page (**Setup** > **Users** > **Profiles** > select a profile > **System Permissions**). System Permission Tracking excludes permissions grouped under the **Users** section (such as Assign Permission Sets, Manage Roles, and others) from change detection and the generated Change Log.
+System Permission Tracking only monitors permissions listed under the **System** section of the Salesforce **System Permissions** page (**Setup** > **Users** > **Profiles** > select a profile > **System Permissions**). System Permission Tracking excludes all permissions listed under the **Users** section from change detection and the generated Change Log.
 
 ## Accessing System Permission Tracking
 
