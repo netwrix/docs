@@ -63,7 +63,6 @@ The following table shows approximate **memory consumption** observed during dat
 1. Verify that the total number of permissions per data source does not exceed the 800,000 limit.
 2. Download and copy the AIC Resource Estimation Tool to the machine where Auditor is installed.
 
-   <!-- TODO: Replace placeholder URL once the pipeline publishes the artifact to releases.netwrix.com -->
    Download the [AIC Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.8/auditor-aic-estimation-tool-tool-1.0.1.zip), a Netwrix permission-counting utility.
 
    The executing account must have:
