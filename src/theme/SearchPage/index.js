@@ -41,7 +41,7 @@ function getVersionsForProducts(selectedProducts) {
     const source = isAll ? PRODUCTS : selectedProducts.map(name => PRODUCTS.find(p => p.name === name)).filter(Boolean);
     source.forEach(product => {
         if (product.versions) {
-            product.versions.forEach(v => versionsSet.add(v.label));
+            product.versions.forEach(v => versionsSet.add(v.version));
         }
     });
     return Array.from(versionsSet).sort();

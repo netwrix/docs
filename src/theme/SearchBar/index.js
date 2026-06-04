@@ -307,7 +307,7 @@ function getVersionsForProducts(selectedProducts) {
     selectedProducts.forEach(productName => {
         const product = PRODUCTS.find(p => p.name === productName);
         if (product && product.versions) {
-            product.versions.forEach(v => versionsSet.add(v.label));
+            product.versions.forEach(v => versionsSet.add(v.version));
         }
     });
     return Array.from(versionsSet).sort();
