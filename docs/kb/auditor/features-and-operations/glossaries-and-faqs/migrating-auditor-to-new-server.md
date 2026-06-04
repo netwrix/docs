@@ -94,6 +94,14 @@ cd C:\Program Files (x86)\Netwrix Auditor\Audit Core
 configserverDbProcessor.exe import -source %PATH_OF_EXPORTED_NACONFIG.XML% -target "C:\ProgramData\Netwrix Auditor\AuditCore\ConfigServer\Configuration.xml"
 ```
 
+> **NOTE:** The `-target` path above assumes the Working Folder is in the default location (`C:\ProgramData\Netwrix Auditor`). If the Working Folder location was changed, this path will need to be modified. To verify your Working Folder location, run the following command in PowerShell:
+>
+> ```powershell
+> Get-ItemPropertyValue -Path "HKLM:SOFTWARE\Wow6432Node\Netwrix Auditor\DataPathOverride" -Name "(Default)"
+> ```
+>
+> If this command returns no value, no changes are needed. If it returns a custom path (e.g., `D:\Working Folder`), replace `C:\ProgramData\Netwrix Auditor` in the `-target` parameter with that path. For example: `-target "D:\Working Folder\AuditCore\ConfigServer\Configuration.xml"`.
+
 3. Run PowerShell as administrator and execute the following command to start all Netwrix Auditor services:
 
 ```powershell
