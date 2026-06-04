@@ -13,8 +13,6 @@ case-sensitive.
 
 ## Create and store the required certificates
 
-Follow these steps to create and store the required certificates.
-
 :::note
 In these steps, some commands need to be run on the Enterprise Auditor console and some on
 the Proxy host. In the provided example commands:
@@ -115,11 +113,11 @@ Successfully wrote CER certificate to .\My Certificates\MyFSAACA.cer
 ```
 
 **Step 6 –** Copy `FSAACertficateManager.exe` and the CA CER file (`.\My Certificates\MyFSAACA.cer`)
-to the proxy host that will be running `FSAAAppletServer.exe`. These files must be copied to the
-same directory.
+to the proxy host that will be running `FSAAAppletServer.exe`. Place both files in the same
+directory.
 
 :::note
-These copied files will be deleted from the destination directory later in Step 12.
+You will delete these copied files from the destination directory later in Step 12.
 :::
 
 

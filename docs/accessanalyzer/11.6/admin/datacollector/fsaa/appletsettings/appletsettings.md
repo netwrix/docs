@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # FSAA: Applet Settings
 
-The Applet Settings page configures how the File System Access Audit (FSAA) applet is launched and how it behaves during a scan. This wizard page applies to these scan categories:
+The Applet Settings page configures how the File System Access Audit (FSAA) applet launches and how it behaves during a scan. This wizard page applies to these scan categories:
 
 - File System Access/Permission Auditing Scan
 - File System Activity Scan

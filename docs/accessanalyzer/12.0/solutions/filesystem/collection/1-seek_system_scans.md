@@ -95,7 +95,7 @@ additional information.
 information.
 
 :::note
-If streaming is enabled, the **2-SEEK Bulk Import** job is no longer needed as part of the
+If you enable streaming, you no longer need the **2-SEEK Bulk Import** job as part of the
 **0.Collection** job group.
 :::
 

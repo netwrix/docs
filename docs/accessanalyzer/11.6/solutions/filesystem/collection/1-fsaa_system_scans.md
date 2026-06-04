@@ -79,7 +79,7 @@ for additional information.
 for additional information.
 
 :::note
-If streaming is enabled, the **2-FSAA Bulk Import** job is no longer needed as part of the
+If you enable streaming, you no longer need the **2-FSAA Bulk Import** job as part of the
 **0.Collection** job group.
 :::
 
@@ -147,8 +147,8 @@ scans. See the
 [File Details Tab](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/defaultscopingoptions/filedetails.md)
 
 :::info
-Carefully consider configuring the following settings. Applying filters when file
-detail scanning has been enabled reduces the impact on the database.
+Carefully consider configuring the following settings. Applying filters once you enable
+file detail scanning reduces the impact on the database.
 :::
 
 
