@@ -11,8 +11,8 @@ node for most jobs. However, as a best practice, assign the host list and the Co
 level. After you assign these to the job, you can run it manually or schedule it.
 
 :::tip
-Remember, the credential permissions required for the scan and host lists are affected by the scan
-mode selected. See the
+Remember, the scan mode you select affects the credential permissions required for the scan and
+host lists. See the
 [File System Scan Options](/docs/accessanalyzer/12.0/requirements/filesystem/scanoptions/scanoptions.md) topic for
 additional information.
 :::

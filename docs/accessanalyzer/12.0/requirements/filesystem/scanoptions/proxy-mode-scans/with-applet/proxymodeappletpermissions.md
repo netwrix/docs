@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Proxy Mode with Applet Permissions
 
-When File System scans are run in proxy mode with applet, it means the File System applet is deployed to the Windows proxy server when the job is executed to conduct data collection. The data collection processing is initiated by the proxy server where the applet is deployed and uses a local mode-type scan to each of the target hosts. The final step in data collection is to compress and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Access Analyzer Console server.
+When File System scans are run in proxy mode with applet, it means the File System applet is deployed to the Windows proxy server when the job is executed to conduct data collection. The proxy server where the applet is deployed initiates data collection processing and uses a local mode-type scan to each of the target hosts. The final step in data collection is to compress and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Access Analyzer Console server.
 
 Configure the credentials with the following rights on the proxy servers:
 

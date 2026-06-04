@@ -142,7 +142,7 @@ scans. See the
 [File Details Tab](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/defaultscopingoptions/filedetails.md)
 
 :::info
-Carefully consider configuring the following settings. Applying filters once you enable
+Carefully consider configuring the following settings. Applying filters after you enable
 file detail scanning reduces the impact on the database.
 :::
 

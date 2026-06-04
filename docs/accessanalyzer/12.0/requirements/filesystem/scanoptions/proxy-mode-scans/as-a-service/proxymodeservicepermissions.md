@@ -11,7 +11,7 @@ When File System scans are run in proxy mode as a service, there are two methods
 * Pre-Installed File System Proxy Service – File System Proxy Service installation package must be installed on the Windows proxy servers before executing the scans. This is the recommended method.
 * Ad Hoc File System Proxy Service Deployment – File System Proxy Service is installed on the Windows proxy server when the job is executed
 
-The data collection processing is conducted by the proxy server where the service is running and uses a local mode-type scan to each of the target hosts. The final step in data collection is to compress and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Access Analyzer Console server.
+The proxy server where the service runs conducts data collection processing and uses a local mode-type scan to each of the target hosts. The final step in data collection is to compress and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Access Analyzer Console server.
 
 
 **File System Proxy Service Credentials**
@@ -32,9 +32,9 @@ Sensitive Data Discovery Auditing scans require .NET Framework 4.7.2 or later. I
 
 For secure proxy communication via https, a credential is supplied during installation to provide
 secure communications between the Access Analyzer server and the proxy server. This credential must
-be a domain account, but no additional permissions are required. It is recommended to use the same
-domain account configured to run the proxy service as a credential in the Connection Profile to be
-used by the File System Solution
+be a domain account, but no additional permissions are required. Use the same domain account
+configured to run the proxy service as the credential in the Connection Profile that the File
+System Solution uses.
 
 **Secure Proxy Communication and Certificate Exchange**
 
