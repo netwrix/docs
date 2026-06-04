@@ -12,7 +12,7 @@ alternative data source for file change attribution on Windows. When you enable 
 the Gen 7 Agent reads user and process information from log files that Activity Monitor produces
 instead of relying on the built-in kernel mini-filter driver (`NNTInfo.sys`).
 
-This is useful in environments where the system can't load the kernel driver, for example systems
+This is useful in environments where the kernel driver can't load, for example systems
 with strict kernel security policies (Secure Boot / HVCI), certain hypervisor configurations, or
 where you already deploy Activity Monitor and want a single audit trail for file activity.
 
@@ -63,6 +63,7 @@ Add or update the following keys in the `<appSettings>` section:
 | `useActivityMonitorChangeSource` | `true` | Enables Activity Monitor as the attribution source. Set to `false` (or omit) to use the default kernel driver. |
 | `activityMonitorChangeSourceDirectory` | Path to log directory | The folder where Activity Monitor writes its log files. The default is `C:\ProgramData\Netwrix\Activity Monitor\Agent\ActivityLogs`. Must match the `LOG_FILE` directory in the [auto-generated INI file](#auto-generated-ini-file). |
 | `changeSourceFileFormat` | `json` (default) or `tsv` | Log file format that Activity Monitor writes. Leave as `json` unless you explicitly configure Activity Monitor for TSV output. |
+| `loaddriver` | `true` (default) or `false` | Controls whether the agent loads the kernel mini-filter driver (`NNTInfo.sys`) for file change attribution. Mutually exclusive with `useActivityMonitorChangeSource`. When both are `true`, Activity Monitor takes precedence and the agent doesn't load the driver. |
 
 Example `<appSettings>` entries:
 
@@ -88,7 +89,7 @@ privileges and add the preceding keys with the appropriate values for your envir
 Restart-Service Gen7AgentCore
 ```
 
-**Step 3 –** Confirm that the Hub applies a FIM live-tracking policy to the device. The
+**Step 3 –** Confirm that the device has a FIM live-tracking policy assigned from the Hub. The
 agent generates the Activity Monitor INI file the next time it receives a device configuration
 update. To trigger this immediately, navigate to **Settings > Agents and Devices**, select the
 device, and click **Refresh Configuration**.
@@ -113,7 +114,7 @@ section in the INI file.
 
 :::note
 The `SBTFileMon.ChangeTracker.ini` file is separate from Activity Monitor's main
-`SBTFileMon.ini`. This file doesn't change other monitoring sections in the main INI.
+`SBTFileMon.ini`. The agent doesn't modify other monitoring sections in `SBTFileMon.ini`.
 :::
 
 ## Troubleshooting
@@ -138,7 +139,7 @@ The `SBTFileMon.ChangeTracker.ini` file is separate from Activity Monitor's main
 
 **Both driver and Activity Monitor appear active**
 
-- If you set both `loaddriver` and `useActivityMonitorChangeSource` to `true` in
-  `Gen7Agent.App.NetCore.dll.config`, the agent automatically uses Activity Monitor and
-  disables the kernel driver. You can optionally set `loaddriver` to `false` to make the
-  configuration explicit.
+- If you set both `loaddriver` and `useActivityMonitorChangeSource` to `true` in the
+  `<appSettings>` section of `Gen7Agent.App.NetCore.dll.config` (see [Configuration](#configuration)),
+  the agent automatically uses Activity Monitor and disables the kernel driver. You can
+  optionally set `loaddriver` to `false` to make the configuration explicit.
