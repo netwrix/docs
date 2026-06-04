@@ -159,6 +159,7 @@ const config = {
             const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;
             if (existingPath.startsWith(versionedPrefix)) {
               const rest = existingPath.slice(versionedPrefix.length);
+              if (!rest) return undefined;
               return [`/docs/${productId}/${rest}`];
             }
           }
