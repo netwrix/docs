@@ -787,6 +787,25 @@ export function getDefaultVersion(product) {
 }
 
 /**
+ * Build a map of product ID → latest URL-version string.
+ * Used by the evergreen-links redirect config to generate version-less aliases.
+ * Skips single-version 'current' products (their URLs are already version-less).
+ */
+export function getLatestVersionUrlMap() {
+  const map = {};
+  for (const product of PRODUCTS) {
+    if (product.versions.length === 1 && product.versions[0].version === 'current') continue;
+    const latest = getDefaultVersion(product);
+    if (!latest) continue;
+    const urlVersion = latest.customRoutePath
+      ? latest.customRoutePath.split('/').pop()
+      : versionToUrl(latest.version);
+    map[product.id] = urlVersion;
+  }
+  return map;
+}
+
+/**
  * Create product map for route matching (used by ProductMetaTags)
  */
 export function createProductMap() {
