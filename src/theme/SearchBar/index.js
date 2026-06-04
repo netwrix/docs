@@ -32,11 +32,11 @@ function importDocSearchModalIfNeeded() {
     });
 }
 
-function useNavigator({externalUrlRegex, selectedProductsRef}) {
+function useNavigator({externalUrlRegex, selectedProductsRef, selectedVersionsRef}) {
     const history = useHistory();
     const createSearchLink = useSearchLinkCreator();
 
-    // Create navigator ONCE and read selectedProducts from ref at navigation time
+    // Create navigator ONCE and read filters from refs at navigation time
     // This prevents navigator identity from changing when filters change
     const navigator = useMemo(() => {
         return {
@@ -47,8 +47,9 @@ function useNavigator({externalUrlRegex, selectedProductsRef}) {
                     document.querySelector('input[type="search"]');
                 const currentQuery = input ? input.value : '';
 
-                // Read selected products from ref at navigation time
+                // Read selected filters from refs at navigation time
                 const selectedProducts = selectedProductsRef?.current || [];
+                const selectedVersions = selectedVersionsRef?.current || [];
 
                 // If we have a search query, redirect to full search results page instead
                 if (currentQuery) {
@@ -56,6 +57,9 @@ function useNavigator({externalUrlRegex, selectedProductsRef}) {
                     const urlParams = new URLSearchParams();
                     if (selectedProducts.length > 0) {
                         urlParams.set('products', selectedProducts.join(','));
+                    }
+                    if (selectedVersions.length > 0) {
+                        urlParams.set('versions', selectedVersions.join(','));
                     }
                     const searchPageUrl = urlParams.toString()
                         ? `${baseLink}&${urlParams.toString()}`
@@ -68,12 +72,12 @@ function useNavigator({externalUrlRegex, selectedProductsRef}) {
                 }
             },
         };
-    }, [externalUrlRegex, history, createSearchLink, selectedProductsRef]);
+    }, [externalUrlRegex, history, createSearchLink, selectedProductsRef, selectedVersionsRef]);
 
     return navigator;
 }
 
-function useTransformSearchClient(selectedProductsRef, currentLocale) {
+function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, currentLocale) {
     const {
         siteMetadata: {docusaurusVersion},
     } = useDocusaurusContext();
@@ -83,16 +87,23 @@ function useTransformSearchClient(selectedProductsRef, currentLocale) {
 
             const originalSearch = searchClient.search.bind(searchClient);
 
-            // Override search to inject product filters at request time
+            // Override search to inject product and version filters at request time
             // This keeps searchParameters prop stable, preventing query reset
             searchClient.search = function(searchMethodParams, requestOptions) {
                 const products = selectedProductsRef.current || [];
+                const versions = selectedVersionsRef.current || [];
                 const typoTolerance = false;
 
                 // Build product filter (OR logic - any of selected products)
                 const realProducts = products.filter(p => p !== '__all__' && p !== '__none__');
                 const productFilter = realProducts.length > 0
                     ? realProducts.map(p => `product_name:${p}`)
+                    : null;
+
+                // Build version filter (OR logic - any of selected versions)
+                const realVersions = versions.filter(v => v !== '__all__');
+                const versionFilter = realVersions.length > 0
+                    ? realVersions.map(v => `product_version:${v}`)
                     : null;
 
                 // Language filter for internationalization
@@ -123,6 +134,11 @@ function useTransformSearchClient(selectedProductsRef, currentLocale) {
                             // Add product filter if we have selected products
                             if (productFilter) {
                                 newFilters.push(productFilter);
+                            }
+
+                            // Add version filter if we have selected versions
+                            if (versionFilter) {
+                                newFilters.push(versionFilter);
                             }
 
                             return {
@@ -159,8 +175,8 @@ function useTransformItems(props) {
     return transformItems;
 }
 
-function useResultsFooterComponent({closeModal, selectedProductsRef}) {
-    // Create footer component ONCE - read selectedProducts from ref at render time
+function useResultsFooterComponent({closeModal, selectedProductsRef, selectedVersionsRef}) {
+    // Create footer component ONCE - read filters from refs at render time
     // This prevents resultsFooterComponent identity from changing when filters change
     return useMemo(
         () =>
@@ -169,8 +185,9 @@ function useResultsFooterComponent({closeModal, selectedProductsRef}) {
                     state={state}
                     onClose={closeModal}
                     selectedProductsRef={selectedProductsRef}
+                    selectedVersionsRef={selectedVersionsRef}
                 />,
-        [closeModal, selectedProductsRef],
+        [closeModal, selectedProductsRef, selectedVersionsRef],
     );
 }
 
@@ -178,25 +195,44 @@ function Hit({hit, children}) {
     return <Link to={hit.url}>{children}</Link>;
 }
 
-function ResultsFooter({state, onClose, selectedProductsRef}) {
+function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef}) {
     const createSearchLink = useSearchLinkCreator();
-    const baseLink = createSearchLink(state.query);
+    const history = useHistory();
 
-    // Read selected products from ref at render time
-    const selectedProducts = selectedProductsRef?.current || [];
+    // Build URL from refs — used for the href (right-click / middle-click)
+    const buildLink = useCallback(() => {
+        const baseLink = createSearchLink(state.query);
+        const selectedProducts = selectedProductsRef?.current || [];
+        const selectedVersions = selectedVersionsRef?.current || [];
 
-    // Add product filters as URL parameters
-    const params = new URLSearchParams();
-    if (selectedProducts.length > 0) {
-        params.set('products', selectedProducts.join(','));
-    }
+        const params = new URLSearchParams();
+        if (selectedProducts.length > 0) {
+            params.set('products', selectedProducts.join(','));
+        }
+        if (selectedVersions.length > 0) {
+            params.set('versions', selectedVersions.join(','));
+        }
 
-    const linkWithFilters = params.toString()
-        ? `${baseLink}&${params.toString()}`
-        : baseLink;
+        return params.toString()
+            ? `${baseLink}&${params.toString()}`
+            : baseLink;
+    }, [state.query, createSearchLink, selectedProductsRef, selectedVersionsRef]);
+
+    // Read refs at click time to guarantee current filter state
+    const handleClick = useCallback((e) => {
+        e.preventDefault();
+        // Snapshot filters into sessionStorage before navigation so SearchPage
+        // can fall back to them if URL params are lost for any reason
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProductsRef?.current || []));
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(selectedVersionsRef?.current || []));
+        }
+        onClose();
+        history.push(buildLink());
+    }, [onClose, history, buildLink, selectedProductsRef, selectedVersionsRef]);
 
     return (
-        <Link to={linkWithFilters} onClick={onClose}>
+        <Link to={buildLink()} onClick={handleClick}>
             <Translate id="theme.SearchBar.seeAll">
                 {'See all results'}
             </Translate>
@@ -263,6 +299,20 @@ const PRODUCT_OPTIONS = [
 });
 
 // Helper to get versions for selected products
+function getVersionsForProducts(selectedProducts) {
+    if (!selectedProducts || selectedProducts.length === 0 || selectedProducts.includes('__all__')) {
+        return [];
+    }
+    const versionsSet = new Set();
+    selectedProducts.forEach(productName => {
+        const product = PRODUCTS.find(p => p.name === productName);
+        if (product && product.versions) {
+            product.versions.forEach(v => versionsSet.add(v.version));
+        }
+    });
+    return Array.from(versionsSet).sort();
+}
+
 // Multi-select dropdown component with checkboxes
 function MultiSelectDropdown({label, options, selectedValues, onChange, placeholder}) {
     const [isOpen, setIsOpen] = useState(false);
@@ -382,15 +432,15 @@ function MultiSelectDropdown({label, options, selectedValues, onChange, placehol
     );
 }
 
-function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, ...props}) {
+function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProductsRef, selectedVersionsRef, ...props}) {
     const {i18n: {currentLocale}} = useDocusaurusContext();
     // Use ref for navigator to prevent identity change when filters change
-    const navigator = useNavigator({externalUrlRegex, selectedProductsRef});
+    const navigator = useNavigator({externalUrlRegex, selectedProductsRef, selectedVersionsRef});
     // Keep searchParameters stable - don't include product filters here
     // Product filters are injected at request time via transformSearchClient
     const searchParameters = useSearchParameters({...props, productFacetFilters: []});
     const transformItems = useTransformItems(props);
-    const transformSearchClient = useTransformSearchClient(selectedProductsRef, currentLocale);
+    const transformSearchClient = useTransformSearchClient(selectedProductsRef, selectedVersionsRef, currentLocale);
     const searchContainer = useRef(null);
     const searchButtonRef = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -408,7 +458,8 @@ function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, ...props
         setIsOpen(false);
         searchButtonRef.current?.focus();
         setInitialQuery(undefined);
-    }, []);
+        onModalClose?.();
+    }, [onModalClose]);
 
     const openModal = useCallback(() => {
         prepareSearchContainer();
@@ -434,6 +485,7 @@ function DocSearch({externalUrlRegex, onModalOpen, selectedProductsRef, ...props
     const resultsFooterComponent = useResultsFooterComponent({
         closeModal,
         selectedProductsRef,
+        selectedVersionsRef,
     });
 
     useDocSearchKeyboardEvents({
@@ -493,16 +545,9 @@ export default function SearchBar() {
     // Store the current search query to preserve it across filter changes
     const searchQueryRef = useRef('');
 
-    // Multi-select state for products
-    const [selectedProducts, setSelectedProducts] = useState(() => {
-        if (typeof window === 'undefined') return [];
-        const saved = sessionStorage.getItem('docs_product_filter');
-        try {
-            return saved ? JSON.parse(saved) : [];
-        } catch {
-            return [];
-        }
-    });
+    // Multi-select state — always starts empty; reset on every modal open
+    const [selectedProducts, setSelectedProducts] = useState([]);
+    const [selectedVersions, setSelectedVersions] = useState([]);
 
     // Ref to access selectedProducts without causing re-renders
     // This is used by transformSearchClient to inject filters at request time
@@ -511,42 +556,12 @@ export default function SearchBar() {
         selectedProductsRef.current = selectedProducts;
     }, [selectedProducts]);
 
-    // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
+    const selectedVersionsRef = useRef(selectedVersions);
     useEffect(() => {
-        if (typeof window !== 'undefined') {
-            sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
-            // Dispatch custom event for same-tab synchronization
-            window.dispatchEvent(new CustomEvent('productFilterChange', {
-                detail: {products: selectedProducts}
-            }));
-        }
-    }, [selectedProducts]);
+        selectedVersionsRef.current = selectedVersions;
+    }, [selectedVersions]);
 
-    // Listen for filter changes from SearchPage (same-tab sync)
-    useEffect(() => {
-        const handleFilterChange = (e) => {
-            const newProducts = e.detail.products;
-            // Avoid infinite loop by checking if products actually changed
-            if (JSON.stringify(newProducts) !== JSON.stringify(selectedProducts)) {
-                setSelectedProducts(newProducts);
-            }
-        };
-        window.addEventListener('productFilterChange', handleFilterChange);
-        return () => window.removeEventListener('productFilterChange', handleFilterChange);
-    }, [selectedProducts]);
 
-    // Generate facetFilters for products
-    const productFacetFilters = useMemo(() => {
-        const filters = [];
-
-        // Add product filters (OR logic - any of the selected products)
-        const realProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
-        if (realProducts.length > 0) {
-            filters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
-        }
-
-        return filters;
-    }, [selectedProducts]);
 
     // Keep track of the search input value
     useEffect(() => {
@@ -596,10 +611,40 @@ export default function SearchBar() {
     }, []);
 
     const onChangeProducts = useCallback((newProducts) => {
-        selectedProductsRef.current = newProducts; // Sync ref immediately so search uses new filters
+        selectedProductsRef.current = newProducts;
         setSelectedProducts(newProducts);
-        refreshSearch(); // Re-run current query with updated filters
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(newProducts));
+        }
+        // Clear versions that don't exist for the new product selection
+        const validVersions = new Set(getVersionsForProducts(newProducts));
+        const cleaned = selectedVersionsRef.current.filter(v => validVersions.has(v));
+        if (cleaned.length !== selectedVersionsRef.current.length) {
+            selectedVersionsRef.current = cleaned;
+            setSelectedVersions(cleaned);
+            if (typeof window !== 'undefined') {
+                sessionStorage.setItem('docs_version_filter', JSON.stringify(cleaned));
+            }
+        }
+        refreshSearch();
     }, [refreshSearch]);
+
+    const onChangeVersions = useCallback((newVersions) => {
+        selectedVersionsRef.current = newVersions;
+        setSelectedVersions(newVersions);
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(newVersions));
+        }
+        refreshSearch();
+    }, [refreshSearch]);
+
+    const availableVersions = useMemo(() => {
+        const versions = getVersionsForProducts(selectedProducts);
+        return [
+            {label: 'All versions', value: '__all__'},
+            ...versions.map(v => ({label: v, value: v})),
+        ];
+    }, [selectedProducts]);
 
     // This is where we will portal the filters into the modal DOM.
     const [modalHeaderEl, setModalHeaderEl] = useState(null);
@@ -607,6 +652,13 @@ export default function SearchBar() {
     const closeModalRef = useRef(null);
 
     const onModalOpen = useCallback((closeModal) => {
+        // Reset filters to defaults each time the modal opens so stale
+        // state from a previous search or the full results page is cleared.
+        setSelectedProducts([]);
+        setSelectedVersions([]);
+        selectedProductsRef.current = [];
+        selectedVersionsRef.current = [];
+
         // Target .DocSearch-SearchBar so our controls are a sibling of .DocSearch-Form.
         // This lets us move them below the search row on mobile via flex-wrap.
         const el =
@@ -615,6 +667,45 @@ export default function SearchBar() {
 
         closeModalRef.current = closeModal ?? null;
         setModalHeaderEl(el || null);
+    }, []);
+
+    // Navigate to full search results page with current filters
+    const history = useHistory();
+    const createSearchLink = useSearchLinkCreator();
+    const navigateToSearchPage = useCallback(() => {
+        const query = searchQueryRef.current;
+        if (!query) return;
+        const baseLink = createSearchLink(query);
+        const params = new URLSearchParams();
+        const products = selectedProductsRef.current || [];
+        const versions = selectedVersionsRef.current || [];
+        if (products.length > 0) params.set('products', products.join(','));
+        if (versions.length > 0) params.set('versions', versions.join(','));
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem('docs_product_filter', JSON.stringify(products));
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(versions));
+        }
+        closeModalRef.current?.();
+        history.push(params.toString() ? `${baseLink}&${params.toString()}` : baseLink);
+    }, [createSearchLink, history]);
+
+    // Enter key anywhere in the modal (except the search input) → go to full results
+    useEffect(() => {
+        if (!modalHeaderEl) return;
+        const handler = (e) => {
+            if (e.key !== 'Enter') return;
+            // Let DocSearch handle Enter when focus is on its own input
+            const active = document.activeElement;
+            if (active && (active.classList.contains('DocSearch-Input') || (active.tagName === 'INPUT' && active.type === 'search'))) return;
+            e.preventDefault();
+            navigateToSearchPage();
+        };
+        document.addEventListener('keydown', handler);
+        return () => document.removeEventListener('keydown', handler);
+    }, [modalHeaderEl, navigateToSearchPage]);
+
+    const onModalClose = useCallback(() => {
+        setModalHeaderEl(null);
     }, []);
 
     // Keep contextualSearch stable to prevent query reset
@@ -627,13 +718,15 @@ export default function SearchBar() {
                 {...siteConfig.themeConfig.algolia}
                 contextualSearch={contextualSearch}
                 selectedProductsRef={selectedProductsRef}
+                selectedVersionsRef={selectedVersionsRef}
                 onModalOpen={onModalOpen}
+                onModalClose={onModalClose}
             />
 
             {modalHeaderEl &&
                 createPortal(
                     <>
-                        {/* Custom controls: product filter */}
+                        {/* Custom controls: product + version filters */}
                         <div className="search-custom-controls">
                             <MultiSelectDropdown
                                 label="Products"
@@ -641,6 +734,13 @@ export default function SearchBar() {
                                 selectedValues={selectedProducts}
                                 onChange={onChangeProducts}
                                 placeholder="All products"
+                            />
+                            <MultiSelectDropdown
+                                label="Versions"
+                                options={availableVersions}
+                                selectedValues={selectedVersions}
+                                onChange={onChangeVersions}
+                                placeholder="All versions"
                             />
                         </div>
                         {/* Our own close button — replaces the DocSearch-Close button
