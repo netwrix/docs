@@ -32,7 +32,7 @@ Add a `createRedirects` callback to the existing `@docusaurus/plugin-client-redi
 ### Data flow
 
 1. Docusaurus generates all route paths during build (e.g., `/docs/auditor/10_8/overview/gettingstarted`)
-2. The `createRedirects` callback is invoked for each path
+2. Docusaurus invokes the `createRedirects` callback for each path
 3. The callback parses the path, identifies the product and version segment
 4. It checks whether this version is the product's latest
 5. If yes, it returns a version-less path as the redirect source (e.g., `/docs/auditor/overview/gettingstarted`)
@@ -75,13 +75,13 @@ createRedirects(existingPath) {
 },
 ```
 
-The `latestVersionMap` is computed once at config load time using the new helper.
+The new helper computes `latestVersionMap` once at config load time.
 
 ### Conflict avoidance
 
 - The existing `redirects` array handles product root paths (`/docs/auditor` -> `/docs/auditor/10_8`).
 - The `createRedirects` callback handles deep pages (`/docs/auditor/overview/X` -> `/docs/auditor/10_8/overview/X`).
-- These do not conflict: `createRedirects` only fires for paths that contain a version segment, and root paths are already covered by the explicit `redirects` entries.
+- These don't conflict: `createRedirects` only fires for paths that contain a version segment, and the explicit `redirects` entries already cover root paths.
 
 ## Build impact
 

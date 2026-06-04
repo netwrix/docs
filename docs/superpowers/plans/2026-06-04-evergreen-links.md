@@ -4,7 +4,7 @@
 
 **Goal:** Add version-less redirect URLs that always point to the latest version of each product page, so external links like `/docs/auditor/overview/gettingstarted` redirect to `/docs/auditor/10_8/overview/gettingstarted`.
 
-**Architecture:** A `getLatestVersionUrlMap()` helper in `products.js` builds a lookup from product ID to latest URL-version string. A `createRedirects` callback in the existing `plugin-client-redirects` config uses this map to generate version-less redirect aliases for every page in the latest version of multi-version products. Single-version `current` products are skipped (already version-less).
+**Architecture:** A `getLatestVersionUrlMap()` helper in `products.js` builds a lookup from product ID to latest URL-version string. A `createRedirects` callback in the existing `plugin-client-redirects` config uses this map to generate version-less redirect aliases for every page in the latest version of multi-version products. The helper skips single-version `current` products (already version-less).
 
 **Tech Stack:** Docusaurus 3.8.1, `@docusaurus/plugin-client-redirects` 3.10.1, Node.js ESM
 
@@ -107,7 +107,7 @@ After line 32 (the closing of the `apiSidebars` loop), add:
 const latestVersionMap = getLatestVersionUrlMap();
 ```
 
-This runs once when `docusaurus.config.js` is loaded, not per-redirect.
+This runs once at config load time, not per-redirect.
 
 - [ ] **Step 3: Add `createRedirects` to the plugin-client-redirects config**
 
@@ -195,7 +195,7 @@ Expected: A small HTML file containing:
 - `<meta http-equiv="refresh" content="0; url=/docs/auditor/10_8/overview/gettingstarted">`
 - `window.location.href = '/docs/auditor/10_8/overview/gettingstarted'`
 
-- [ ] **Step 3: Verify old versions do NOT get redirect files**
+- [ ] **Step 3: Verify old versions don't get redirect files**
 
 ```bash
 ls build/docs/auditor/10_7/overview/gettingstarted/index.html 2>/dev/null && echo "EXISTS (expected - this is the real page)"
