@@ -7,7 +7,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap } from './src/config/products.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -30,6 +30,8 @@ PRODUCTS.forEach(product => {
     }
   });
 });
+
+const latestVersionMap = getLatestVersionUrlMap();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -152,6 +154,16 @@ const config = {
             to: `/${targetPath}`,
           };
         }),
+        createRedirects(existingPath) {
+          for (const [productId, latestUrlVersion] of Object.entries(latestVersionMap)) {
+            const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;
+            if (existingPath.startsWith(versionedPrefix)) {
+              const rest = existingPath.slice(versionedPrefix.length);
+              return [`/docs/${productId}/${rest}`];
+            }
+          }
+          return undefined;
+        },
       },
     ],
     // Generate all product documentation plugins from centralized configuration
