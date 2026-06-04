@@ -28,13 +28,16 @@ Create an App Registration in Entra ID (Entra ID > App Registrations) as an admi
 
 **Step 4 –** Using this menu, grant the following Microsoft Graph API permissions:
 
-- Application Permissions:
+Application Permissions:
 - Directory.ReadWrite.All
 - Group.ReadWrite.All
-- User.ReadWrite.All
+- GroupMember.ReadWrite.All
 - RoleManagement.ReadWrite.Directory
-- Delegated Permissions:
-- User.Read
+- User-PasswordProfile.ReadWrite.All
+- UserEnableDisableAccount.All
+- User.ReadWrite.All
+- UserAuthenticationMethod.ReadWrite.All
+
 
 **Step 5 –** Click **Grant Admin Consent**.
 
@@ -63,7 +66,7 @@ displayed again.
 
 ## Add App Registration to Admin Role
 
-Add the App Registration to the User Administrators role.
+Add the App Registration to the User Administrators and Privilged Authentication Administrator role.
 
 :::note
 User Administrator is the least privileged model and can't manage Global Administrator.
@@ -76,15 +79,22 @@ registration instead of User Administrator.
 
 **Step 2 –** Click **Roles and Administrators**.
 
-**Step 3 –** Locate and click the **User Administrator** role.
+**Step 3 –** Locate and click the **User Administrator** role. (Not the chekcbox, the name itself).
 
 **Step 4 –** Click **Add Assignments**.
 
-**Step 5 –** Search for the name of the previously created App Registration, click it, and click
+**Step 5 –** Under Select Members, click **No member selected** 
+
+**Step 6 -** Search for the name of the previously created App Registration, click it, and click
 **Select**.
 
-**Step 6 –** Click **Next**, then select the **Setting** Tab and provide justification text before
-clicking **Assign**.
+**Step 6 –** Click **Next** to get to the Setting tab, ensure Assignment type is Active, Duration is Permantly assigned, and provide justification text before clicking **Assign**.
+
+**Repeat this process** to add the **Privileged Authentication Administrator** role.
+
+:::note
+Sometime in early 2026, Microsoft tightened their security rules such that password rotation requires the Privileged Authentication Administrator role, which is why it might not have been required previously
+:::
 
 The service account can now be added to Privilege Secure, using the Application (Client) ID and
 Client Secret. See the [Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional
@@ -105,35 +115,3 @@ in a hybrid Microsoft Entra ID tenant, all attempts to change an account's passw
 Enabling Password Writeback isn't specific to Privilege Secure. See the
 [Open Enable Entra ID password writeback](https://learn.microsoft.com/en-us/entra/identity/authentication/tutorial-enable-sspr-writeback)
 Microsoft article for additional information.
-
-## Add a Role that enables Password Rotation
-
-:::note
-Sometime in early 2026, Microsoft tightened their security rules such that password rotation requires an additional role.
-
-**Password Administrator**
-Can reset passwords for non-admin users and other Password Administrators, but can't reset passwords for users holding any privileged Entra roles - lower risk role.
-
-**Privileged Authentication Administrator** Can change password of any account
-
-The proper choice will depend on the specific accounts NPS is trying to change password and their privilege at that time.
-:::
-
-**Step 1 –** Go to EntraID and sign in as a Global Administrator
-
-**Step 2 –**  In the left nav, go to Identity → Roles & admins → Roles & admins
-
-**Step 3 –** Search for and click Password Administrator (or Privileged Authentication Administrator — see the preceding note)
-
-**Step 4 –**  Click Add assignments
-
-**Step 5 –** In the "Select member" panel, search for the name of the app registration NPS uses for Entra ID (the same one they
-  configured in NPS when setting up the Entra ID resource/tenant)
-    - It appears as a service principal, not a user
-    - If search doesn't find it, try searching by the application's client ID or check Enterprise applications to confirm the display name
-
-**Step 6 –** Select it, click Next, then Assign
- 
-Depending on the specific users and their other privilege, the role may have to step up to Privileged Authentication Administrator
-
-
