@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # 1-FSAA System Scans Job
 
-The 1-FSAA System Scans job is designed to collect access information from the targeted file
-servers.
+The 1-FSAA System Scans job collects access information from the targeted file servers.
 
 ## Query for the 1-FSAA System Scans Job
 
@@ -30,7 +29,7 @@ The following default configurations are commonly customized:
 
 - Default Scoping Options page > Scan Settings tab:
 
-    - Set to **Limit subfolder scan depth to 2 level(s)**
+    - Set to **Limit subfolder scan depth to 2 levels**
 
 See the
 [Recommended Configuration for the File System Solution](/docs/accessanalyzer/11.6/solutions/filesystem/recommended.md)
@@ -41,8 +40,8 @@ additional information.
 ### Configure the (FSAA) File System Scan Query
 
 The 1-FSAA System Scans job has been preconfigured to run with the default settings with the
-category of File system access/permission auditing Scan. Follow the steps to set any desired
-customizations.
+category of File system access/permission auditing Scan. To customize the configuration, complete
+the following steps.
 
 **Step 1 –** Navigate to the **FileSystem** > **0.Collection** > **1-FSAA System Scans** >
 **Configure** node and select the **Queries** node.
@@ -54,7 +53,7 @@ opens.
 Data Collector Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 
@@ -63,7 +62,7 @@ purpose of this job.
 
 **Step 4 –** The Applet Settings page applies to the applet and proxy mode scans. If employing proxy
 servers, see the
-[FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings.md)
+[FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings/appletsettings.md)
 topic for configuration instructions.
 
 ![Scan Server Selection](/images/accessanalyzer/11.6/solutions/filesystem/collection/fsaaseekserverselection.webp)
@@ -80,7 +79,7 @@ for additional information.
 for additional information.
 
 :::note
-If streaming is enabled, the **2-FSAA Bulk Import** job is no longer needed as part of the
+If you enable streaming, you no longer need the **2-FSAA Bulk Import** job as part of the
 **0.Collection** job group.
 :::
 
@@ -106,13 +105,13 @@ topic for additional information.
 
     - Action on failure to enable LAT Preservation – Before scanning each file, FSAA attempts to
       enable an operating system feature to preserve the LAT when accessing the file. This operation
-      may fail for a variety of reasons, which include but are not limited to: the operating system
-      or file system where the file is located does not support LAT preservation, or insufficient
+      may fail for a variety of reasons, which include but aren't limited to: the operating system
+      or file system where the file is located doesn't support LAT preservation, or insufficient
       permissions from the service account trying to access the file. The following configuration
       addresses a failure to enable the LAT preservation mode:
 
         - Continue to scan file silently – FSAA scans the file with the possibility that LAT
-          preservation is not possible. No warning will be shown.
+          preservation isn't possible. No warning will be shown.
         - Continue to scan file with warning – FSAA scans the file with the possibility that LAT
           will not be preserved. A warning will be shown for this file.
         - Skip file silently – FSAA will not scan the file. No warning will be shown.
@@ -148,8 +147,8 @@ scans. See the
 [File Details Tab](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/defaultscopingoptions/filedetails.md)
 
 :::info
-Carefully consider configuring the following settings. Applying filters when file
-detail scanning has been enabled reduces the impact on the database.
+Carefully consider configuring the following settings. Applying filters after you enable
+file detail scanning reduces the impact on the database.
 :::
 
 
@@ -197,7 +196,7 @@ View the analysis task by navigating to the **FileSystem** > **0.Collection** > 
 Scans** > **Configure** node and selecting **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
