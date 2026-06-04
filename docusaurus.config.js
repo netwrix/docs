@@ -158,7 +158,7 @@ const config = {
           for (const [productId, latestUrlVersion] of Object.entries(latestVersionMap)) {
             const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;
             if (existingPath.startsWith(versionedPrefix)) {
-              const rest = existingPath.slice(versionedPrefix.length);
+              const rest = existingPath.slice(versionedPrefix.length).replace(/\/$/, '');
               if (!rest) return undefined;
               return [`/docs/${productId}/${rest}`];
             }
