@@ -31,7 +31,7 @@ topic for additional information.
 
 **Targeted Hosts**
 
-The host list assignment should be assigned under the **FileSystem** > **0.Collection** >
+Assign the host list under the **FileSystem** > **0.Collection** >
 **[job]** > **Host** node. The list should be a custom created list for the file system environments
 to be targeted. Check the box for the custom-created host list. The **…System
 Scans** jobs and the corresponding **…Bulk Import** jobs must use the same host lists.
@@ -40,7 +40,7 @@ The 0-FSDFS System Scans Job is an exception and is set to the Default domain co
 standalone namespaces, modify this host list to target the File Systems or Storage Controllers you
 want to scan.
 
-If targeting Nasuni Edge Appliances, the 0-FS_Nasuni Job needs to be assigned a custom host list
+If you target Nasuni Edge Appliances, assign the 0-FS_Nasuni Job a custom host list
 containing all on-premise Nasuni Edge Appliances and cloud filers.
 
 If using multiple proxy servers, these should also be configured within a different custom-created
@@ -108,7 +108,7 @@ user defined profiles** option and select the appropriate Connection Profile dro
 Remember, if targeting Nasuni Edge Appliances, the 0-FS_Nasuni Job needs to be assigned a custom
 Connection Profile containing the **API Access Key** and **Passcode** for each on-premise Nasuni
 Edge Appliance and cloud filer in the target environment. Nasuni API key names are case sensitive.
-When providing them, ensure they are entered in the exact same case as generated.
+When providing them, enter them in the exact same case as generated.
 :::
 
 
