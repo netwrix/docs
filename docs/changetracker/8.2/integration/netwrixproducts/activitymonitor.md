@@ -7,18 +7,18 @@ sidebar_position: 20
 # Netwrix Activity Monitor Integration
 
 Netwrix Change Tracker can use the **Netwrix Activity Monitor** (via its `SBTService` Windows
-service, displayed as **Netwrix Windows File Monitoring Service** in `services.msc`) as an
+service, which appears as **Netwrix Windows File Monitoring Service** in `services.msc`) as an
 alternative data source for file change attribution on Windows. When you enable this integration,
 the Gen 7 Agent reads user and process information from log files that Activity Monitor produces
 instead of relying on the built-in kernel mini-filter driver (`NNTInfo.sys`).
 
-This is useful in environments where the system cannot load the kernel driver, for example systems
+This is useful in environments where the system can't load the kernel driver, for example systems
 with strict kernel security policies (Secure Boot / HVCI), certain hypervisor configurations, or
 where you already deploy Activity Monitor and want a single audit trail for file activity.
 
 :::note
 This feature applies to **Windows only** and to **file integrity monitoring (FIM) with live
-tracking**. This feature does not affect Linux devices.
+tracking**. This feature doesn't affect Linux devices.
 :::
 
 ## Prerequisites
@@ -46,7 +46,7 @@ When you enable the integration:
    data to the event before sending it to the Hub.
 
 The agent and the kernel driver are mutually exclusive as attribution sources. If you configure
-both, Activity Monitor takes precedence and the agent does not load the kernel driver.
+both, Activity Monitor takes precedence and the agent doesn't load the kernel driver.
 
 ## Configuration
 
@@ -80,7 +80,7 @@ can do so to make the configuration clearer.
 :::
 
 **Step 1 –** Open `Gen7Agent.App.NetCore.dll.config` in a text editor with administrator
-privileges and add the keys above with the appropriate values for your environment.
+privileges and add the preceding keys with the appropriate values for your environment.
 
 **Step 2 –** Restart the Gen 7 Agent service for the changes to take effect:
 
@@ -103,8 +103,8 @@ file. The agent discovers the correct directory by reading the registry key:
 HKLM\SYSTEM\CurrentControlSet\Services\SBTLogging\Parameters\ConfigPath
 ```
 
-The INI file instructs Activity Monitor to log file events to the directory specified by
-`activityMonitorChangeSourceDirectory`, using the path filters that the Hub's FIM policy
+The INI file instructs Activity Monitor to log file events to the directory that
+`activityMonitorChangeSourceDirectory` specifies, using the path filters that the Hub's FIM policy
 defines. You don't need to manually edit this file, as the agent regenerates it each
 time the FIM policy changes.
 
@@ -113,7 +113,7 @@ section in the INI file.
 
 :::note
 The `SBTFileMon.ChangeTracker.ini` file is separate from Activity Monitor's main
-`SBTFileMon.ini`. This file does not change other monitoring sections in the main INI.
+`SBTFileMon.ini`. This file doesn't change other monitoring sections in the main INI.
 :::
 
 ## Troubleshooting
@@ -125,7 +125,7 @@ The `SBTFileMon.ChangeTracker.ini` file is separate from Activity Monitor's main
 - Verify the `activityMonitorChangeSourceDirectory` path exists and contains files matching
   the pattern `*_CT_Log_{YYYYMMDD}.json`.
 - Check the agent's `rolling-log.txt` for warnings from `ActivityMonitorChangeSource`. Look
-  for messages indicating the directory or log file cannot be found.
+  for messages indicating the directory or log file can't be found.
 
 **INI file not generated**
 
