@@ -54,14 +54,14 @@ information). This user must create an identity store and configure security rol
 users can sign in and use the application. The Super Admin can choose to configure further settings
 or let another admin user in an identity store do so.
 
-The following settings must be configured in Admin Center, so that administrators and users can
+Configure the following settings in Admin Center so that administrators and users can
 perform identity and access management tasks using Directory Manager:
 
 - Create and configure identity stores - An identity store is built on an identity provider and
   lets you manage objects and object permissions in the provider. See the
   [Identity Stores](/docs/directorymanager/11.1/admincenter/identitystore/overview.md) topic for additional information.
 - Create data sources - A data source is built on a provider, such as directories, databases, and
-  files. Data sources are used as source and destination in Synchronize jobs, in query-based
+  files. Data sources serve as source and destination in Synchronize jobs, in query-based
   searches, and in group membership queries. See the
   [ Data Sources](/docs/directorymanager/11.1/admincenter/datasource/overview.md) topic for additional information.
 - Create a portal - Create a web-based Directory Manager portal and link it to an identity store, so
@@ -85,9 +85,9 @@ This section lists the browsers, devices, and languages that Directory Manager s
 
 ## Localization
 
-The following languages are supported:
+Directory Manager supports the following languages:
 
-- English US (default)
+- U.S. English (default)
 - French (Password Center, Portal)
 
 Directory Manager detects the language setting in your web browser and displays content in that language when available. However, some services or features may not be fully localized in your language—these parts display in English. If your browser’s language isn’t supported or can’t be detected, all content displays in English.
