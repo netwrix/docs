@@ -6,9 +6,10 @@ sidebar_position: 20
 
 # Requirements
 
-This topic provides the requirements for installing Netwrix Cloud Agent and the prerequisites for
-configuring data sources to collect data from various environments.
+Review the Netwrix Cloud Agent software requirements and the prerequisites for each data source you plan to monitor.
 
-See the following topics for additional information:
-- [Agent Software Requirements](/docs/1secure/requirements/CloudAgentRequirements.md)
-- [Prerequisites for Data Sources](/docs/1secure/requirements/prerequisitesfordatasources.md)
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+```

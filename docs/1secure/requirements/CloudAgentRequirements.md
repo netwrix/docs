@@ -7,7 +7,7 @@ sidebar_position: 20
 # Netwrix Cloud Agent Requirements
 
 :::warning
-Deploy only one Netwrix Cloud Agent per audited on-premises AD domain. If both Netwrix Auditor and Netwrix 1Secure audit the same domain, ensure that at most one product has network traffic compression service enabled for any of the audited sources.
+Deploy only one Netwrix Cloud Agent per audited on-premises AD domain. If both Netwrix Auditor and Netwrix 1Secure audit the same domain, enable network traffic compression for at most one product across the shared sources.
 :::
 
 
@@ -29,7 +29,7 @@ Netwrix Cloud Agent requires the following software:
 - Windows Installer 3.1 or later
 - Windows PowerShell 3.0 or later
 
-The machine where you plan to deploy the agent must meet the following requirements.
+The agent host must meet the following hardware requirements.
 
 | Hardware component | Evaluation, PoC, or starter environment | Regular environment (up to 1m Activity Records/day) | Large environment (1-10m Activity Records/day) | XLarge environment (10m Activity Records/day or more) |
 | ------------------ | -------------------------------------- | --------------------------------------------------- | ---------------------------------------------- | ----------------------------------------------------- |
@@ -38,12 +38,10 @@ The machine where you plan to deploy the agent must meet the following requireme
 | Disk space         | 200 GB—System drive                    | 200 GB—System drive                                 | 2 TB—System drive                              | 1 TB + 1 TB per year —System drive                    |
 | Others             | —                                      | —                                                   | Network capacity 1 Gbit                        | Network capacity 1 Gbit                               |
 
-## Requirements for outbound communications with a Netwrix Cloud Agent
+## Outbound communication requirements
 
-To review the security incorporated by the agent in your system, examine the target URL in the
-Configuration.xml file, which is located on the agent host at:
+To review agent security settings, examine the target URL in Configuration.xml, located on the agent host at:
 
 `C:\ProgramData\Netwrix Cloud Agent\AgentCore\ConfigServer\Configuration.xml`
 
-You must also open the outbound TCP port 443 on the server where the Netwrix Cloud Agent resides.
-See the [Install Agent](/docs/1secure/install/installagent.md) topic
+Open outbound TCP port 443 on the agent host. See [Install Agent](/docs/1secure/install/installagent.md) for installation steps.
