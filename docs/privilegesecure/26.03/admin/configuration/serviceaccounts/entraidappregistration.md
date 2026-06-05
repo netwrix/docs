@@ -26,9 +26,8 @@ Create an App Registration in Entra ID (Entra ID > App Registrations) as an admi
 
 **Step 3 –** Expand the **Manage** menu, then click **API Permissions**.
 
-**Step 4 –** Using this menu, grant the following Microsoft Graph API permissions:
+**Step 4 –** Using this menu, grant the following Microsoft Graph API Application permissions:
 
-Application Permissions:
 - Directory.ReadWrite.All
 - Group.ReadWrite.All
 - GroupMember.ReadWrite.All
@@ -66,7 +65,7 @@ displayed again.
 
 ## Add App Registration to Admin Role
 
-Add the App Registration to the User Administrators and Privilged Authentication Administrator role.
+Add the App Registration to the User Administrator and Privilged Authentication Administrator roles.
 
 :::note
 User Administrator is the least privileged model and can't manage Global Administrator.
@@ -79,26 +78,25 @@ registration instead of User Administrator.
 
 **Step 2 –** Click **Roles and Administrators**.
 
-**Step 3 –** Locate and click the **User Administrator** role. (Not the chekcbox, the name itself).
+**Step 3 –** Locate and click the **User Administrator** role name. Don't select the checkbox next to it.
 
 **Step 4 –** Click **Add Assignments**.
 
-**Step 5 –** Under Select Members, click **No member selected** 
+**Step 5 –** Under Select Members, click the ***No member selected*** link to open the member selector.
 
-**Step 6 -** Search for the name of the previously created App Registration, click it, and click
+**Step 6 –** Search for the name of the previously created App Registration, click it, and click
 **Select**.
 
-**Step 6 –** Click **Next** to get to the Setting tab, ensure Assignment type is Active, Duration is Permantly assigned, and provide justification text before clicking **Assign**.
+**Step 7 –** CClick **Next*** to open the Setting tab. Set Assignment type to **Active** and Duration to **Permanently assigned**, provide justification text, then click **Assign**.
 
-**Repeat this process** to add the **Privileged Authentication Administrator** role.
+**Repeat steps 2 -7** to add the **Privileged Authentication Administrator** role.
 
 :::note
-Sometime in early 2026, Microsoft tightened their security rules such that password rotation requires the Privileged Authentication Administrator role, which is why it might not have been required previously
+Microsoft requires the Privileged Authentication Administrator role for password rotation. Earlier deployments may not have needed this role.
 :::
 
 You can now add the service account to Privilege Secure using the Application (Client) ID and
-Client Secret. See the [Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional
-information.
+Client Secret. See the [Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional information.
 
 Add the Microsoft Entra ID Tenant resource to Privilege Secure using the Tenant ID. See the
 [Add New Microsoft Entra ID Tenant](/docs/privilegesecure/26.03/admin/resources/entraidtenant.md) topic for additional
