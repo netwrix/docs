@@ -12,19 +12,20 @@ keywords:
   - Audit Core
   - migrate Auditor
   - validation checklist
+  - Working Folder
 products:
   - auditor
-sidebar_label: Migrating Auditor to New Server
-tags: []
-title: "Migrating Auditor to New Server"
+sidebar_label: Migrating to a New Server
+tags: [kb]
+title: "Migrating to a New Server"
 knowledge_article_id: kA00g000000H9ebCAC
 ---
 
-# Migrating Auditor to New Server
+# Migrating to a New Server
 
 ## Overview
 
-This article outlines a step-by-step process for how to migrate a Netwrix Auditor instance to a new server.
+This article describes how to migrate a Netwrix Auditor instance to a new server.
 
 ## Instructions
 
@@ -46,7 +47,7 @@ When moving Netwrix Auditor to a new server, ensure the version and build of the
 - [Software Requirements](https://docs.netwrix.com/docs/auditor/10_8/requirements/software)
 - [Hardware Requirements](https://docs.netwrix.com/docs/auditor/10_8/requirements/console)
 
-### Exporting the Netwrix Auditor configuration file
+### Exporting the Netwrix Auditor Configuration File
 
 1. Stop and disable all Netwrix Auditor services except for **Netwrix Auditor Configuration Server Service** and **Netwrix Auditor Core Service** running in your original Netwrix Auditor server. This prevents Netwrix Auditor from running collections during the migration process.
 2. Disable any scheduled tasks for your Netwrix Auditor instance. These will be present in case any monitoring plan for Netwrix Password Reset, Netwrix Inactive Users Tracker, or Event Log Manager have ever been set up.
@@ -65,19 +66,19 @@ configserverDbProcessor.exe export -target "C:\naconfig.xml"
 
 > **NOTE:** You can use any target path to export the config file. Make sure to include the file name **naconfig.xml** to the end of the export path.
 
-The configuration file has been successfully exported. Navigate to the target path to copy the config file to your new server. The file will be imported to the new Netwrix Auditor instance towards the end of the migration process.
+You have successfully exported the configuration file. Navigate to the target path to copy the config file to your new server. The file will be imported to the new Netwrix Auditor instance towards the end of the migration process.
 
 ### Long-Term Archive
 
 By default, Long-Term Archive is located at `C:\ProgramData\Netwrix Auditor\Data`. If you have previously migrated your Long-Term Archive, you can find the location in your main Netwrix Auditor menu > **Settings** > **Long-Term Archive**.
 
-Navigate to your Long-Term Archive location and copy the entire folder. Proceed by transferring Long-Term Archive to the new Netwrix Auditor server. While you can migrate it to the default location, it is recommended to keep Long-Term Archive on a separate drive. This will prevent rapid storage consumption on the C drive. Take note of where you have placed Long-Term Archive on the new Netwrix Auditor server.
+Navigate to your Long-Term Archive location and copy the entire folder. Proceed by transferring Long-Term Archive to the new Netwrix Auditor server. While you can migrate it to the default location, keep Long-Term Archive on a separate drive to prevent rapid storage consumption on the C drive. Note the Long-Term Archive location on the new Netwrix Auditor server.
 
-> **NOTE:** You can split the Long-Term Archive migration into two steps if the size of your ActivityRecords folder doesn't allow for a quick migration. For additional information, refer to the following article: How to Move Long-Term Archive to a New Location: [How to Move Long-Term Archive to a New Location](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-move-long-term-archive-to-a-new-location)
+> **NOTE:** You can split the Long-Term Archive migration into two steps if the size of your ActivityRecords folder does not allow for a quick migration. For additional information, refer to the following article: How to Move Long-Term Archive to a New Location: [How to Move Long-Term Archive to a New Location](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-move-long-term-archive-to-a-new-location)
 
 ### SQL Databases
 
-It is important to decide on migration of your SQL databases or keeping them in your current SQL Server instance during the Netwrix Auditor migration. In case you'd like to migrate your SQL Server databases, refer to the following article for additional information:[How to Migrate Netwrix Auditor Databases to Another SQL Server Instance](/docs/kb/auditor/configuration-and-setup/sql-server-auditing/how-to-migrate-netwrix-auditor-databases-to-another-sql-server-instance)
+Decide whether to migrate your SQL Server databases or keep them in your current SQL Server instance before proceeding with the Netwrix Auditor migration. In case you'd like to migrate your SQL Server databases, refer to the following article for additional information:[How to Migrate Netwrix Auditor Databases to Another SQL Server Instance](/docs/kb/auditor/configuration-and-setup/sql-server-auditing/how-to-migrate-netwrix-auditor-databases-to-another-sql-server-instance)
 Once SQL migration is complete, refer to the following article for additional information on Report Server Database deployment:[Deploying the Report Server Database](/docs/kb/auditor/system-administration/database-management/deploying-the-report-server-database)
 
 ### Final Steps
@@ -122,8 +123,8 @@ Start-Service -Displayname Netwrix*
 
 ### Important Notes Post-Migration
 
-- If you've previously had any omit lists configured, you will have to either copy the contents of these omit lists or copy the files to the new server. For additional information on omit lists and their locations, refer to the following article: [How to Use Omit Lists](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-use-omit-lists)
-- You cannot migrate Event Log Manager or its configuration files. Remember to manually copy the configuration over to the new server. Event Log Manager data will be migrated in case you've migrated SQL databases.
+- If you have previously had any omit lists configured, you will have to either copy the contents of these omit lists or copy the files to the new server. For additional information on omit lists and their locations, refer to the following article: [How to Use Omit Lists](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-use-omit-lists)
+- You cannot migrate Event Log Manager or its configuration files. Remember to manually copy the configuration over to the new server. Event Log Manager data will be migrated in case you have migrated SQL databases.
 - Netwrix Password Expiration Notifier and Netwrix Inactive Users Tracker do not store any data — their reports are sent daily via email. For more information on how to migrate these Netwrix tools, refer to the following articles:
   - [Migrate PEN to a Different Server](/docs/kb/auditor/monitoring-plans/password-expiration-notifier/migrate-netwrix-password-expiration-notifier-to-a-different-server)
   - How to migrate Netwrix Inactive Users Tracker to other servers: [How to Migrate Netwrix Inactive Users Tracker to Other Servers](/docs/kb/auditor/monitoring-plans/user-activity-monitoring/how-to-migrate-netwrix-inactive-users-tracker-to-other-servers)
@@ -140,7 +141,7 @@ Run the following checks for your migrated Netwrix Auditor instance:
 
 > **IMPORTANT:** The SSL certificate previously used for Integration API will be missing from the certificate store in your new Netwrix Auditor server. Generate a new SSL certificate for Netwrix Auditor Integration API − refer to the following article for additional information: [Integration API](https://docs.netwrix.com/docs/auditor/10_8/api/overview)
 
-Monitor the system over the next few days to confirm the migration has been completed successfully. As long as the system is operable and you can view migrated data, you can delete all traces of Netwrix Auditor from your former server, including the software uninstallation.
+Monitor the system over the next few days to confirm the migration has been completed successfully. As long as the system is operable and you can view migrated data, you can delete all traces of Netwrix Auditor from your former server, including uninstalling the software.
 
 ## Related Articles
 
