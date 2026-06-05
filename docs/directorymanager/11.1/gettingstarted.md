@@ -85,11 +85,9 @@ This section lists the browsers, devices, and languages that Directory Manager s
 
 ## Localization
 
-Directory Manager Admin Center and the portals detect the language settings of the web browser
-accessing them, and attempt to serve content in that language. Supported languages are:
+The following languages are supported:
 
-- English (default)
-- French (Password Center)
+- English US (default)
+- French (Password Center, Portal)
 
-If Directory Manager does not support the browser’s language set or if it cannot detect it, English
-is used to serve the content.
+Directory Manager detects the language setting in your web browser and displays content in that language when available. However, some services or features may not be fully localized in your language—these parts display in English. If your browser’s language isn’t supported or can’t be detected, all content displays in English.
