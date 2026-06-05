@@ -13,7 +13,7 @@ tenant to Privilege Secure, you need the following information:
 - App Secret (For service account)
 - Tenant ID (To add resource)
 
-Log in to Microsoft Entra ID and To generate the required information for Privilege
+Log in to Microsoft Entra ID to generate the required information for Privilege
 Secure.
 
 ## Create App Registration
