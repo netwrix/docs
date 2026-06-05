@@ -37,7 +37,6 @@ Create an App Registration in Entra ID (Entra ID > App Registrations) as an admi
 - User.ReadWrite.All
 - UserAuthenticationMethod.ReadWrite.All
 
-
 **Step 5 –** Click **Grant Admin Consent**.
 
 Ensure the Grant Admin Consent was successful within the Configured permissions menu. A message at
@@ -63,9 +62,7 @@ displayed again.
 - Application (client) ID, required for the Netwrix Privilege Secure Entra ID Service Account
 - Directory (tenant) ID, required to add an Entra ID tenant resource to Netwrix Privilege Secure
 
-## Add App Registration to Admin Role
-
-Add the App Registration to the User Administrator and Privilged Authentication Administrator roles.
+## Add the App Registration to the User Administrator and Privileged Authentication Administrator roles.
 
 :::note
 User Administrator is the least privileged model and can't manage Global Administrator.
@@ -82,17 +79,17 @@ registration instead of User Administrator.
 
 **Step 4 –** Click **Add Assignments**.
 
-**Step 5 –** Under Select Members, click the ***No member selected*** link to open the member selector.
+**Step 5 –** Under Select Members, click the **No member selected** link to open the member selector.
 
 **Step 6 –** Search for the name of the previously created App Registration, click it, and click
 **Select**.
 
-**Step 7 –** CClick **Next*** to open the Setting tab. Set Assignment type to **Active** and Duration to **Permanently assigned**, provide justification text, then click **Assign**.
+**Step 7 –** Click **Next*** to open the Setting tab. Set Assignment type to **Active** and Duration to **Permanently assigned**, provide justification text, then click **Assign**.
 
-**Repeat steps 2 -7** to add the **Privileged Authentication Administrator** role.
+**Repeat steps 2 - 7** to add the **Privileged Authentication Administrator** role.
 
 :::note
-Microsoft requires the Privileged Authentication Administrator role for password rotation. Earlier deployments may not have needed this role.
+Microsoft requires the Privileged Authentication Administrator role for password rotation. Deployments before 2026 may not have needed this role.
 :::
 
 You can now add the service account to Privilege Secure using the Application (Client) ID and
