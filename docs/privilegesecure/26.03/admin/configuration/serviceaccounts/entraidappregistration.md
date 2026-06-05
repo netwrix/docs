@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Microsoft Entra ID App Registration
 
-To create a Microsoft Entra ID (formerly Azure AD) service account and add an Microsoft Entra ID
-tenant to Privilege Secure, the following information is required:
+To create a Microsoft Entra ID (formerly Azure AD) service account and add a Microsoft Entra ID
+tenant to Privilege Secure, you need the following information:
 
 - App ID (For service account)
 - App Secret (For service account)
@@ -96,7 +96,7 @@ registration instead of User Administrator.
 Sometime in early 2026, Microsoft tightened their security rules such that password rotation requires the Privileged Authentication Administrator role, which is why it might not have been required previously
 :::
 
-The service account can now be added to Privilege Secure, using the Application (Client) ID and
+You can now add the service account to Privilege Secure using the Application (Client) ID and
 Client Secret. See the [Service Accounts Page](/docs/privilegesecure/26.03/admin/configuration/serviceaccounts/serviceaccounts.md) topic for additional
 information.
 
