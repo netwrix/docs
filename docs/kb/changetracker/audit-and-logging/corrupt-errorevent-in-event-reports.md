@@ -26,7 +26,7 @@ knowledge_article_id: kA0Qk0000000ahpKAA
 
 # Corrupt ErrorEvent in Event Reports
 
-## Symptoms
+## Symptom
 
 - The events report in Netwrix Change Tracker contains one or more `ErrorEvent` events. Their description states `Corrupt`.
 - Agent logs (see [Rolling-Log File Location](/docs/changetracker/8_1/install/agent/rollinglogfile)) contain the following line:

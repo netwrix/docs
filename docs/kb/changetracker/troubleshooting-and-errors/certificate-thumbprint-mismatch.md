@@ -15,7 +15,7 @@ products:
 
 # Rolling-Log Fix: "ERROR NNT.Hub.ServiceClient.HubAdapter - Certificate Thumbprint Does Not Match Trusted"
 
-## Symptoms
+## Symptom
 
 The following error occurs when using a custom or unrecognized IIS Certificate:
 

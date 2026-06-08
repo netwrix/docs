@@ -30,7 +30,9 @@ knowledge_article_id: ""
 
 When browsing to the Netwrix Change Tracker **Dashboard** tab or the **Device** tab, a red error message appears:
 
-> **Error, the requested event counts summary size cannot be smaller than the system event count window size**
+```text
+Error, the requested event counts summary size cannot be smaller than the system event count window size
+```
 
 ## Cause
 
