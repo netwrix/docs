@@ -32,10 +32,10 @@ This article describes how to re-register a device that you previously deleted f
 
 ## Instructions
 
-1. Log in to the Netwrix Change Tracker console.
+1. Log in to the Change Tracker console.
 2. Navigate to **Settings** > **Agents & Devices**.
 3. Change the filter in the top-left corner to **[No Group Filter]**.
 4. The deleted devices are now visible in the **Agents & Devices** page with a **Re-Register** option.
 5. Click **Re-Register** next to the device to restore it.
 
-The device should now appear online in the Netwrix Change Tracker console.
+The device should now appear online in the Change Tracker console.

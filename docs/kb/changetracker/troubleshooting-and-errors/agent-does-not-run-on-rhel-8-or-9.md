@@ -42,7 +42,7 @@ The id for this license is '<id>'
 
 ## Cause
 
-The Netwrix Change Tracker agent cannot run due to cryptographic policy changes that Red Hat Enterprise Linux (RHEL) 8 or 9 applies by default.
+The Change Tracker agent cannot run due to cryptographic policy changes that Red Hat Enterprise Linux (RHEL) 8 or 9 applies by default.
 
 ## Resolution
 
@@ -77,4 +77,4 @@ The Netwrix Change Tracker agent cannot run due to cryptographic policy changes 
 
 5. Reboot the RHEL system hosting the agent.
 
-The Netwrix Change Tracker agent should run after you apply the subpolicies.
+The Change Tracker agent should run after you apply the subpolicies.

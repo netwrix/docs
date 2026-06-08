@@ -33,7 +33,7 @@ You can forward Netwrix Change Tracker events to a Security Information and Even
 
 ### Configuring the Syslog Server
 
-1. In the Netwrix Change Tracker console, navigate to **Settings** > **System Settings**.
+1. In the Change Tracker console, navigate to **Settings** > **System Settings**.
 2. Configure the **Syslog Server** settings according to your SIEM server's requirements:
    - Set the syslog version to one that your SIEM supports, or to Common Event Format (CEF).
    - Specify a UDP port for common default settings.
@@ -43,5 +43,6 @@ You can forward Netwrix Change Tracker events to a Security Information and Even
 
 Once the syslog server is configured, set up alerts to forward specific events to your SIEM:
 
-1. In the Netwrix Change Tracker console, navigate to **Settings** > **User Notifications**.
+1. In the Change Tracker console, navigate to **Settings** > **User Notifications**.
 2. Configure the specific event types to send to your SIEM, such as Device Offline, Unplanned Changes, and others.
+3. Click **Save** to apply the notification settings.

@@ -16,7 +16,7 @@ keywords:
   - event resubmission
 products:
   - change-tracker
-sidebar_label: Resubmitting Unplanned Changes in Bulk
+sidebar_label: Resubmitting Unplanned Changes
 tags:
   - kb
   - configuration-and-setup

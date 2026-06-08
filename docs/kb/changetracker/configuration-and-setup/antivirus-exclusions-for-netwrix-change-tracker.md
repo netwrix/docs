@@ -21,11 +21,11 @@ sidebar_label: Antivirus Exclusions
 tags:
   - kb
   - configuration-and-setup
-title: Antivirus Exclusions for Netwrix Change Tracker
+title: Adding Antivirus Exclusions for Netwrix Change Tracker
 knowledge_article_id: ""
 ---
 
-# Antivirus Exclusions for Netwrix Change Tracker
+# Adding Antivirus Exclusions for Netwrix Change Tracker
 
 ## Overview
 
@@ -33,7 +33,7 @@ Antivirus (AV) and endpoint detection and response (EDR) solutions may negativel
 
 ## Instructions
 
-### Exclusions for Netwrix Change Tracker Agents
+### Exclusions for Change Tracker Agents
 
 | Name/Platform | Service | Process | Folder |
 |---|---|---|---|
@@ -41,7 +41,7 @@ Antivirus (AV) and endpoint detection and response (EDR) solutions may negativel
 | Linux NetCore Agent | `nntgen7agentcore` | `/opt/nnt/gen7agentcore/bin/Gen7Agent.App.NetCore` | - `/var/nnt/gen7agent.app.netcore/`<br />- `/opt/nnt/gen7agentcore/` |
 | Linux Express Agent | `nntexpressagent` | `/opt/nnt/expressagent/expressAgent` | - `/var/nnt/expressagent/`<br />- `/opt/nnt/expressagent/` |
 
-### Exclusions for Netwrix Change Tracker Hub
+### Exclusions for Change Tracker Hub
 
 | Service | Process | Folder |
 |---|---|---|

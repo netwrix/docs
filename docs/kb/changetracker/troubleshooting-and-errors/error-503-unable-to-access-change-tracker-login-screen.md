@@ -38,7 +38,7 @@ Server unavailable since <datestamp> (local),
 
 ## Cause
 
-The Netwrix Change Tracker web application pool is not running. The application pool may fail to start if the custom **Identity** user has incorrect credentials.
+The Change Tracker web application pool is not running. The application pool may fail to start if the custom **Identity** user has incorrect credentials.
 
 ## Resolution
 

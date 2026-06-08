@@ -38,9 +38,9 @@ The `<path_to_file>` may differ depending on the affected report. For example: `
 
 ## Cause
 
-An antivirus (AV) or endpoint detection and response (EDR) solution in the environment is conflicting with Netwrix Change Tracker.
+An antivirus (AV) or endpoint detection and response (EDR) solution in the environment is conflicting with Change Tracker.
 
 ## Resolution
 
 - Exclude the top-level folder of the affected path from the monitoring scope of your AV or EDR solution to prevent further conflicts. This applies to real-time scans and backups. For the example path above, exclude `C:\Windows\TEMP`.
-- Exclude Netwrix Change Tracker folders, services, and processes from the monitoring scope of your AV and EDR. Refer to [Antivirus Exclusions for Netwrix Change Tracker](../configuration-and-setup/antivirus-exclusions-for-netwrix-change-tracker.md) for additional information.
+- Exclude Change Tracker folders, services, and processes from the monitoring scope of your AV and EDR. Refer to [Antivirus Exclusions for Netwrix Change Tracker](../configuration-and-setup/antivirus-exclusions-for-netwrix-change-tracker.md) for additional information.

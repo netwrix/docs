@@ -20,11 +20,11 @@ sidebar_label: Special Characters in Passwords
 tags:
   - kb
   - configuration-and-setup
-title: Supported Special Characters for User and Agent Passwords
+title: Using Special Characters in Passwords
 knowledge_article_id: ""
 ---
 
-# Supported Special Characters for User and Agent Passwords
+# Using Special Characters in Passwords
 
 ## Overview
 
@@ -42,4 +42,4 @@ When creating passwords that include special characters, use only the characters
 
 ### Configuring Local Password Requirements
 
-If you cannot integrate Netwrix Change Tracker with your Active Directory server, configure local user password requirements through **Settings** > **System Settings**, under the **User Password Settings** heading.
+If you cannot integrate Change Tracker with your Active Directory server, configure local user password requirements through **Settings** > **System Settings**, under the **User Password Settings** heading.

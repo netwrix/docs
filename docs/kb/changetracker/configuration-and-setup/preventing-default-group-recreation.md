@@ -34,7 +34,7 @@ The Netwrix Change Tracker console recreates default groups and their attached c
 
 To prevent default groups from being recreated:
 
-1. Log in to Netwrix Change Tracker.
+1. Log in to Change Tracker.
 2. Navigate to **Settings** > **System Settings**.
 3. Click **Show Advanced Options**.
 4. Click **Add Config Item**.

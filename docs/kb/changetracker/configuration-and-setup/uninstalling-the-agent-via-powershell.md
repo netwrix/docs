@@ -43,4 +43,4 @@ Run the following command:
 .\unins000.exe /SP-- /VERYSILENT /SUPPRESSMSGBOXES
 ```
 
-> **NOTE:** Netwrix Change Tracker does not have a built-in silent uninstall feature. This method uses the installer's silent mode switches.
+> **NOTE:** Change Tracker does not have a built-in silent uninstall feature. This method uses the installer's silent mode switches.

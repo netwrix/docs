@@ -29,7 +29,7 @@ knowledge_article_id: ""
 
 ## Overview
 
-When the Events page contains more than 50,000 events, Change Tracker disables the export button. Use the **Export and Import** feature in Settings to export large event sets.
+When the Events page contains more than 50,000 events, Netwrix Change Tracker disables the export button. Use the **Export and Import** feature in Settings to export large event sets.
 
 ## Instructions
 

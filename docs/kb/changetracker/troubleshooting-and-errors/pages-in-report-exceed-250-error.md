@@ -44,7 +44,7 @@ The estimated page count for the report exceeds the predefined limit.
 
 Increase the maximum allowed page count:
 
-1. In Netwrix Change Tracker, navigate to **Settings** > **System Settings** > **Show Advanced Options**.
+1. In Change Tracker, navigate to **Settings** > **System Settings** > **Show Advanced Options**.
 2. In the **Configuration Settings** section, click **Add Config Item**. In the **Description** field, enter `MaxPagesInReport`. In the **Value** field, enter `2000`.
 
    > **NOTE:** You can enter any value to cover the required target page count. The value `2000` is used as an example.
