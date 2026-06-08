@@ -25,20 +25,16 @@ knowledge_article_id: kA00g000000H9ebCAC
 
 ## Overview
 
-This article describes how to migrate a Netwrix Auditor instance to a new server.
+This article describes how to migrate a Netwrix Auditor instance to a new server. The migration covers the following phases:
+
+1. Installing Netwrix Auditor on the new server
+2. Exporting and importing the Netwrix Auditor configuration
+3. Migrating the Long-Term Archive
+4. Migrating SQL databases
+   - Optional — skip if keeping SQL on the original server or a remote host
+5. Final setup and validation
 
 ## Instructions
-
-### Planning the Migration
-
-1. Installing Netwrix Auditor on the new server.
-2. Exporting and importing Netwrix Auditor Configuration.
-3. Migration of Long-Term Archive.
-4. Migration of SQL databases.
-   - Migration of SQL databases is not required if you plan to keep SQL hosted on the original Netwrix Auditor Server or in case SQL is already hosted remotely.
-5. Final setup.
-6. Important Notes Post-Migration.
-7. Validation checklist.
 
 ### Installing Netwrix Auditor on the New Server
 
@@ -49,45 +45,47 @@ When moving Netwrix Auditor to a new server, ensure the version and build of the
 
 ### Exporting the Netwrix Auditor Configuration File
 
-1. Stop and disable all Netwrix Auditor services except for **Netwrix Auditor Configuration Server Service** and **Netwrix Auditor Core Service** running in your original Netwrix Auditor server. This prevents Netwrix Auditor from running collections during the migration process.
+1. Stop and disable all Netwrix Auditor services on your original server, **except the following**:
+   - Netwrix Auditor Configuration Server Service
+   - Netwrix Auditor Core Service
+
+  > **IMPORTANT:** This prevents Netwrix Auditor from running collections during the migration process.
 2. Disable any scheduled tasks for your Netwrix Auditor instance. These will be present in case any monitoring plan for Netwrix Password Reset, Netwrix Inactive Users Tracker, or Event Log Manager have ever been set up.
 
-Now you can safely export the configuration by following the next steps:
-
-1. Run **Command Prompt** as administrator.
-2. Execute the following commands:
+3. Run **Command Prompt** as administrator and execute the following commands. You can use any target path for the export; the path must end with `naconfig.xml`:
 
 ```text
 cd C:\Program Files (x86)\Netwrix Auditor\Audit Core
 configserverDbProcessor.exe export -target "C:\naconfig.xml"
 ```
 
-3. Input an encryption password for the backup file.
-
-> **NOTE:** You can use any target path to export the config file. Make sure to include the file name `naconfig.xml` to the end of the export path.
+4. Input an encryption password for the backup file.
 
 You have successfully exported the configuration file. Navigate to the target path to copy the config file to your new server. The file will be imported to the new Netwrix Auditor instance towards the end of the migration process.
 
 ### Long-Term Archive
 
-By default, Long-Term Archive is located at `C:\ProgramData\Netwrix Auditor\Data`. If you have previously migrated your Long-Term Archive, you can find the location in your main Netwrix Auditor menu > **Settings** > **Long-Term Archive**.
+By default, Long-Term Archive is located at `C:\ProgramData\Netwrix Auditor\Data`. If you have previously migrated it, check **Settings** > **Long-Term Archive** to find the current location.
 
-Navigate to your Long-Term Archive location and copy the entire folder. Proceed by transferring Long-Term Archive to the new Netwrix Auditor server. While you can migrate it to the default location, keep Long-Term Archive on a separate drive to prevent rapid storage consumption on the C drive. Note the Long-Term Archive location on the new Netwrix Auditor server.
+1. Navigate to your Long-Term Archive location and copy the entire folder.
+2. Transfer the folder to the new Netwrix Auditor server. Keep Long-Term Archive on a separate drive rather than the default location to prevent rapid storage consumption on the C drive.
+3. Note the Long-Term Archive location on the new server — you will need it during the Final Steps.
 
-> **NOTE:** You can split the Long-Term Archive migration into two steps if the size of your ActivityRecords folder does not allow for a quick migration. For additional information, refer to the following article: How to Move Long-Term Archive to a New Location: [How to Move Long-Term Archive to a New Location](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-move-long-term-archive-to-a-new-location).
+> **NOTE:** You can split the Long-Term Archive migration into two steps if the size of your `ActivityRecords` folder does not allow for a quick migration. See [How to Move Long-Term Archive to a New Location](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/how-to-move-long-term-archive-to-a-new-location) for more information.
 
 ### SQL Databases
 
-Decide whether to migrate your SQL Server databases or keep them in your current SQL Server instance before proceeding with the Netwrix Auditor migration. In case you'd like to migrate your SQL Server databases, refer to the following article for additional information: [How to Migrate Netwrix Auditor Databases to Another SQL Server Instance](/docs/kb/auditor/configuration-and-setup/sql-server-auditing/how-to-migrate-netwrix-auditor-databases-to-another-sql-server-instance).
-Once SQL migration is complete, refer to the following article for additional information on Report Server Database deployment: [Deploying the Report Server Database](/docs/kb/auditor/system-administration/database-management/deploying-the-report-server-database).
+Decide whether to migrate your SQL Server databases or keep them in your current SQL Server instance before proceeding with the Netwrix Auditor migration.
+- Refer to the following article if you want to migrate your SQL Server databases: [How to Migrate Netwrix Auditor Databases to Another SQL Server Instance](/docs/kb/auditor/configuration-and-setup/sql-server-auditing/how-to-migrate-netwrix-auditor-databases-to-another-sql-server-instance).
+- Then see [Deploying the Report Server Database](/docs/kb/auditor/system-administration/database-management/deploying-the-report-server-database) for additional information once the SQL migration is complete.
 
 ### Final Steps
 
-> **NOTE:** All further steps should be performed in your new Netwrix Auditor server instance.
+All further steps should be performed on your new Netwrix Auditor server instance.
 
 **Step 1 — Stop Netwrix Services**
 
-Stop all Netwrix services on the new server except:
+Stop all Netwrix services on the new server, **except the following**:
 
 - Netwrix Auditor Configuration Server Service
 - Netwrix Auditor Core Service
@@ -120,9 +118,7 @@ Start-Service -Displayname Netwrix*
 
 **Step 4 — Update the Long-Term Archive Path**
 
-Launch Netwrix Auditor and proceed to **Settings** > **Long-Term Archive**. Change the path to reflect the migrated Long-Term Archive location.
-
-> **NOTE:** If you did not migrate the SQL databases, skip Step 5 and proceed to the next section.
+Launch Netwrix Auditor and proceed to **Settings** > **Long-Term Archive**. Change the path to reflect the migrated Long-Term Archive location. If you did not migrate SQL databases, skip Step 5 and proceed to the Validation Checklist.
 
 **Step 5 — Update the SQL Server Reference**
 
