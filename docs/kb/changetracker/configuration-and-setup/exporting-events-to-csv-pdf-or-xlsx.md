@@ -37,4 +37,4 @@ This article describes how to export Netwrix Change Tracker events to CSV, PDF, 
 4. Review the active filters displayed at the top of the Events page. Remove any unwanted filters by clicking the **X** next to them.
 5. Click **Export** and select the preferred output format.
 
-> **NOTE:** You can export up to 50,000 events at a time. To export more than 50,000 events, see [Exporting More Than 50k Events](how-to-export-more-than-50k-events.md).
+> **NOTE:** You can export up to 50,000 events at a time. To export more than 50,000 events, see [Exporting More Than 50k Events](exporting-more-than-50k-events.md).
