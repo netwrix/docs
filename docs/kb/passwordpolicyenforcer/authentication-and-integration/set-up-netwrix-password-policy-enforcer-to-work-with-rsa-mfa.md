@@ -15,19 +15,19 @@ keywords:
   - ADMX
 
 products:
-  - password-policy-enforcer
-sidebar_label: RSA MFA Bypass When Password Policy Client Is Installed
+  - passwordpolicyenforcer
+sidebar_label: RSA MFA Bypass When Password Policy Enforcer Client Is Installed
 tags:
   - kb
-title: "RSA MFA Bypass When Password Policy Client Is Installed"
+title: "RSA MFA Bypass When Password Policy Enforcer Client Is Installed"
 knowledge_article_id: ""
 ---
 
-# RSA MFA Bypass When Password Policy Client Is Installed
+# RSA MFA Bypass When Password Policy Enforcer Client Is Installed
 
-## Symptoms
+## Symptom
 
-When Netwrix Password Policy Enforcer Client is installed on endpoints with RSA MFA, users can bypass RSA MFA by allowing users to log in to the machine using username and password.
+When Netwrix Password Policy Enforcer Client is installed on endpoints with RSA MFA, users can bypass RSA MFA and log in to the machine using only a username and password.
 
 
 ## Cause
@@ -37,7 +37,7 @@ By default, the Windows Logon Screen calls Password Policy Enforcer Client, whic
 ## Resolution
 
 Option 1:
-Use the "Enable Password Policy Client for Logon usage scenario" option in the Password Policy Enforcer Client Administrative Template (ADMX) for GPO and set it to "Disabled".
+Use the "Enable Password Policy Client for Logon usage scenario" option in the Password Policy Enforcer Client Administrative Template (ADMX) for Group Policy Object (GPO) and set it to "Disabled".
 
 > **NOTE:** For the Password Policy Enforcer Client ADMX Template, see [Configuring the password policy client 🡥](https://docs.netwrix.com/docs/passwordpolicyenforcer/11_2/admin/password-policy-client/configuring_the_password_policy_client).
 
