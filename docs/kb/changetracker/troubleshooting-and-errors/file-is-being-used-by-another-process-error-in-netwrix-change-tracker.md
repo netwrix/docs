@@ -43,4 +43,4 @@ An antivirus (AV) or endpoint detection and response (EDR) solution in the envir
 ## Resolution
 
 - Exclude the top-level folder of the affected path from the monitoring scope of your AV or EDR solution to prevent further conflicts. This applies to real-time scans and backups. For the example path above, exclude `C:\Windows\TEMP`.
-- Exclude Netwrix Change Tracker folders, services, and processes from the monitoring scope of your AV and EDR. Refer to [Antivirus Exclusions for Netwrix Change Tracker](https://helpcenter.netwrix.com/bundle/z-kb-articles-salesforce/page/kA04u00000111HFCAY.html) for additional information.
+- Exclude Netwrix Change Tracker folders, services, and processes from the monitoring scope of your AV and EDR. Refer to [Antivirus Exclusions for Netwrix Change Tracker](../configuration-and-setup/antivirus-exclusions-for-netwrix-change-tracker.md) for additional information.
