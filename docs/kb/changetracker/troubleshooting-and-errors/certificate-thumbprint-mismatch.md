@@ -7,13 +7,13 @@ keywords:
   - Hub Server
 sidebar_label: Certificate Thumbprint Mismatch
 tags: [kb, troubleshooting-and-errors]
-title: 'Rolling-Log Fix: "ERROR NNT.Hub.ServiceClient.HubAdapter - Certificate Thumbprint Does Not Match Trusted"'
+title: "Certificate Thumbprint Mismatch"
 knowledge_article_id: kA04u0000000JaGCAU
 products:
   - change-tracker
 ---
 
-# Rolling-Log Fix: "ERROR NNT.Hub.ServiceClient.HubAdapter - Certificate Thumbprint Does Not Match Trusted"
+# Certificate Thumbprint Mismatch
 
 ## Symptom
 
