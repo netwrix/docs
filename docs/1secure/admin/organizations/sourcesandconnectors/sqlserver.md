@@ -14,36 +14,33 @@ that lists the managed organizations defined in 1Secure.
 **Step 2 –** Click an organization to define a data source and connectors for it. The properties
 page for the organization is displayed with the Sources tab selected by default.
 
-**Step 3 –** On the Sources tab, click **Add** to add a source. The Select Data Source (Step 1 of 3)
+**Step 3 –** On the Sources tab, click **Add** to add a source. The Select Data Source (Step 1 of 5)
 pane is displayed.
 
-![Select Data Source %28Step 1 of 3%29 pane](/images/1secure/admin/organizations/sourcesandconnectors/addsources_exchange.webp)
+{/* TODO: Screenshot of Select Data Source (Step 1 of 5) pane showing source type tiles */}
 
 **Step 4 –** Select **SQL Server** and click **Next**.
 
-![Configure Source Details %28Step 2 of 3%29 pane](/images/1secure/admin/organizations/sourcesandconnectors/configuresourcedetails_step2-3.webp)
-
-**Step 5 –** On the Configure source details (Step 2 of 3) pane, use the Site dropdown menu to
+**Step 5 –** On the Select Site (Step 2 of 5) pane, use the Site dropdown menu to
 select an existing site or add a new one. To add a new site, select the **Add new site** option from
 the dropdown menu or click the **Add** icon.
 
 - When you choose to add a new site, you have to provide a name for it in the New site name field.
-  Then click **Next** to proceed with configuring the agent for the site. See the
-  [Install Agent](/docs/1secure/install/installagent.md) topic for details on configuring the agent,
-  starting at Step 6.
-- When you select an existing site from the dropdown menu, one of the following happens:
 
-    - If the agent has not been configured for the site, the system proceeds with the agent
-      configuration when you click _Next_. See the [Install Agent](/docs/1secure/install/installagent.md)
-      topic for details on configuring the agent, starting at Step 6.
-    - If the agent has already been configured for the site, the system proceeds with the SQL
-      Server source and connector settings when you click _Next_.
+{/* TODO: Screenshot of Select Site (Step 2 of 5) pane */}
 
 **Step 6 –** Click **Next**.
 
-![Configure Source Details %28Step 2 of 3%29 pane](/images/1secure/admin/organizations/sourcesandconnectors/configuresourcedetails_step2-3a.webp)
+**Step 7 –** If the agent has not been configured for the selected site, the Agent Setup (Step 3 of 5) pane is displayed. Follow the instructions to install and connect the agent. The wizard polls for the agent connection status automatically. See the
+[Install Agent](/docs/1secure/install/installagent.md) topic for details on configuring the agent.
 
-**Step 7 –** Specify the following settings:
+- If the agent has already been configured for the site, this step is skipped automatically.
+
+{/* TODO: Screenshot of Agent Setup (Step 3 of 5) pane showing connection polling */}
+
+**Step 8 –** Click **Next**.
+
+**Step 9 –** On the Configure Source Details (Step 4 of 5) pane, specify the following settings:
 
 - Source Group – Specify a name for the group to which the data source will belong. Grouping
   sources, such as computers, allows them to share a common configuration and makes it easier to
@@ -51,7 +48,7 @@ the dropdown menu or click the **Add** icon.
 - SQL Server Name – Specify the name of the SQL Server instance, for example, StationDB\SQLExpress
   or StationSQL
 - Crawl Source – Toggle this option to ON to enable data collection for the source
-- Credentials – Displays the crdentials that have already been added, while also providing the
+- Credentials – Displays the credentials that have already been added, while also providing the
   option to add new credentials. Netwrix 1Secure uses these credentials to connect to the data
   source. You can select existing credentials or add new ones. To add new credentials, select **Add
   new Credentials** from the dropdown menu or click the **Add** icon, then specify the following:
@@ -61,16 +58,18 @@ the dropdown menu or click the **Add** icon.
 
         The newly added credentials are also displayed in the dropdown menu.
 
-**Step 8 –** Click **Next**.
+{/* TODO: Screenshot of Configure Source Details (Step 4 of 5) pane for SQL Server */}
 
-![Choose New Connector %28Step 3 of 3%29 pane](/images/1secure/admin/organizations/sourcesandconnectors/choosenewconnector_step3of3.webp)
+**Step 10 –** Click **Next**. The system validates the source configuration. If validation takes
+longer than 45 seconds or fails, a **Skip Validation** button appears allowing you to proceed
+without waiting for validation to complete.
 
-**Step 9 –** The Choose new connector (Step 3 of 3) pane lists one connector for SQL Server. Toggle
+**Step 11 –** The Configure Connectors (Step 5 of 5) pane lists one connector for SQL Server. Toggle
 the **SQL Logons** switch to ON to collect and monitor data for this connector. With this, you can
 generate logon reports on SQL Server data. See the
 [SQL Database](/docs/1secure/admin/searchandreports/activity.md#sql-database) topic for additional information.
 
-**Step 10 –** Choose one option from the following:
+**Step 12 –** Choose one option from the following:
 
 - Audit all accounts – Select this option to audit all accounts within the connector
 - Audit specific accounts – Select this option to audit only specific accounts within the
@@ -93,7 +92,8 @@ generate logon reports on SQL Server data. See the
     To exclude all accounts in a domain, use the format: _MYDOMAIN\\\*_.
     :::
 
+{/* TODO: Screenshot of Configure Connectors (Step 5 of 5) pane for SQL Server */}
 
-**Step 11 –** Click **Finish**.
+**Step 13 –** Click **Finish**.
 
 The SQL Server data source and connector have been configured.

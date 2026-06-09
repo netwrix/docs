@@ -36,7 +36,7 @@ information.
 
 ![addsourcessite](/images/1secure/admin/organizations/addsourcessite.webp)
 
-**Step 2 –** On the Configure source details window (Step 2 of 3) window, add a new site. In the
+**Step 2 –** On the Select Site (Step 2 of 5) window, add a new site. In the
 "New site name" field, specify the name for your site. This could be a geographical location like
 'Barcelona' or a cluster of servers from which a single agent collects data. Click **Next**.
 

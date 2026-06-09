@@ -9,12 +9,14 @@ sidebar_position: 10
 In Netwrix 1Secure, you can add data sources and their connectors to collect data from the following
 environments:
 
-- Active Drectory
+- Active Directory
 - Computer
 - Exchange Online
+- File Server
 - Microsoft Entra ID
 - SharePoint Online
 - SQL Server
+- Windows Device
 
 Using connectors, Netwrix 1Secure can:
 

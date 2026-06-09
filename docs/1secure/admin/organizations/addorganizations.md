@@ -38,7 +38,10 @@ organization:
 - Azure AD (now Microsoft Entra ID)
 - Computer
 - Exchange Online
+- File Server
 - SharePoint Online
+- SQL Server
+- Windows Device
 
 :::note
 See the [Sources and Connectors](/docs/1secure/admin/organizations/sourcesandconnectors/overview.md) topic for detailed
