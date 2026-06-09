@@ -35,7 +35,7 @@ sidebar_position: 40
 
     :::note
     When installing a secondary instance as part of a DQS environment, you may see an extra step here for synchronising the new instance with the primary instance. 
-    The instructions for adding instances to a DQS environment can be found in the [NDC Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) article.
+    The instructions for adding instances to a DQS environment can be found in [NDC Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md).
     :::
 
 7. On the Licensing step, add your license. You can add the license as follows:

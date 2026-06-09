@@ -22,7 +22,7 @@ It is recommended to create the NDC SQL database on a dedicated SQL Server inst
 - Minimal requirement is SQL Server 2008 R2 Standard Edition.
 - Estimate required disk space assuming _10 - 12 KB_ per indexed object. For example, for _5, 000,
   000_ objects, the database size will be approximately _50 GB_.
-  Therefore, SQL Server Express edition is only suitable for evaluation and PoC environments
+  Due to built-in limitations of size and capacity, SQL Server Express edition is only suitable for evaluation and PoC environments
   (processing up to 1,000,000 documents).
 
     **TIP:** Netwrix strongly recommends using SSD storage for both the database and Netwrix Data Classification

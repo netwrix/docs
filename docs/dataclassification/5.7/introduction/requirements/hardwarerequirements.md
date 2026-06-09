@@ -90,7 +90,7 @@ Provide the total amount of data and total number of files stored on Office 365.
 
 In case your scope includes databases, the following details are required:
 
-- Database type (MS SQL, Oracle, MySQL)
+- Database type (MS SQL, Oracle, MySQL, PostgreSQL)
 - What applications and systems those databases support
 - How many databases the data needs to be classified in
 
