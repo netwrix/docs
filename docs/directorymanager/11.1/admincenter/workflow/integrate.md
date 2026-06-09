@@ -9,40 +9,41 @@ sidebar_position: 40
 You can link an identity store in Directory Manager to Power Automate to achieve the following:
 
 - **Trigger a flow from** Directory Manager - To achieve this, you have to link a workflow in an
-  identity store to a Power Automate flow. When the Directory Manager workflow is triggered, the
-  linked flow is auto triggered.
+  identity store to a Power Automate flow. When the Directory Manager workflow triggers, the
+  linked flow triggers automatically.
 
 ## Trigger a Flow from Directory Manager
 
-You can link a workflow in an identity store to a flow. Both system and user-defined workflows can
-be linked to flows.
+You can link a workflow in an identity store to a flow. You can link both system and user-defined
+workflows to flows.
 
-- As a one-time process, connect your identity store to Microsoft Power Automate .See the Connect an
+- As a one-time process, connect your identity store to Microsoft Power Automate. See the Connect an
   Identity Store to Power Automate topic.
 - Link a workflow to a flow by providing the URL of that flow in the workflow .See the Link an
   Identity Store Workflow to a Flow topic.
 
-Consequently, when the identity store workflow is triggered, the linked flow is auto triggered.
+Consequently, when the identity store workflow triggers, the linked flow triggers automatically.
 
 :::note
-When the flow is approved in Power Automate, the identity store workflow request is auto
-approved. However, if the identity store workflow request is approved first, the flow would not be
-auto approved.
+When you approve the flow in Power Automate, Directory Manager automatically approves the
+identity store workflow request. However, if you approve the identity store workflow request
+first, Power Automate does not automatically approve the flow.
 :::
+
+
+### Before you begin
+
+1. Check the SSL certificate for the Directory Manager server and ensure it is valid. If the certificate is invalid, replace it before proceeding.
+2. Ensure the Directory Manager server is deployed on a machine that is exposed over the
+   Internet, as Power Automate needs to communicate with the Directory Manager server for processing
+   requests. Power Automate can't communicate with a server deployed on a machine behind NAT.
 
 
 ### Connect an Identity Store to Power Automate
 
-To connect an identity tore to Power Automate, you must configure a Power Automate client for that
+To connect an identity store to Power Automate, you must configure a Power Automate client for that
 identity store. This will establish a communication channel between the Directory Manager Data
 service and the Power Automate platform.
-
-:::note
-Make sure the Directory Manager server is deployed on a machine that is exposed over the
-Internet, as Power Automate needs to communicate with the Directory Manager server for processing
-requests. Power Automate cannot communicate with a server deployed on a machine behind NAT.
-:::
-
 
 **To configure a Power Automate client for an identity store:**
 
@@ -55,20 +56,22 @@ requests. Power Automate cannot communicate with a server deployed on a machine 
 6. Enter the following information:
 
     - **Organization Code** - the unique name for the environment that stores your flows in Power
-      Automate.
+      Automate (the segment before the first period; for example, myorg in myorg.crm.dynamics.com).
     - **Region** - the location of your environment.
-    - **Directory Manager Data Service URL** - the URL of the Data service. Requests from Power
-      Automate will communicate with the Data service endpoint. The URL is as:
-      `https://<GroupID server name>/<Data service name>` For example:
-      https://powerautomate-netwrix1.msappproxy.net/directorymanagerdataservice
     - **Tenant ID** - the tenant ID assigned to the Directory Manager application when you
       registered it in Microsoft Entra Admin Center.
     - **Client ID** - the application ID assigned to the Directory Manager application when you
       registered it in Microsoft Entra Admin Center.
-
+    - **Client Secret** - the client secret value to the Directory Manager application when you
+      registered it in Microsoft Entra Admin Center.      
+    - **Proxy Callback URL** - the URL of the Reverse Proxy. Requests from Power Automate will communicate 
+      with the Reverse Proxy which will redirect request to Data service endpoint. The URL is as:
+      `https://<proxy-host>:<proxy-port>` For example: https://powerautomate-proxy:5555
+    
     :::note
     The Directory Manager application in Microsoft Entra Admin Center must have the following
     permissions for Power Automate:
+
     ![pa_permissions](/images/directorymanager/11.1/admincenter/workflow/pa_permissions.webp)
     :::
 
@@ -78,8 +81,8 @@ requests. Power Automate cannot communicate with a server deployed on a machine 
 ### Link an Identity Store Workflow to a Flow
 
 To link an identity store workflow to a Power Automate flow, generate a flow template from an
-identity store workflow and provide the URL of the flow in workflow settings. When the workflow is
-triggered, the linked flow is auto triggered.
+identity store workflow and provide the URL of the flow in workflow settings. When the workflow
+triggers, the linked flow triggers automatically.
 
 **To link a workflow to a flow:**
 
@@ -90,13 +93,7 @@ triggered, the linked flow is auto triggered.
 4. On the **Configure Workflows** tab of the **Workflows** page, click the ellipsis button for a
    workflow and select **Edit**.
 5. On the **Edit Workflow** page, click **Power Automate Settings** in the top right corner.
-6. On the **Power Automate Settings** dialog box, provide the username and password of a Microsoft
-   Entra ID account for managing flows in the Microsoft Power Automate portal. This account must
-   have the following permissions on the Entra tenant:
-
-    ![pa_permissions](/images/directorymanager/11.1/admincenter/workflow/pa_permissions.webp)
-
-7. Click **Create Template**. Directory Manager creates a basic flow in Power Automate with the same
+6. Click **Create Template**. Directory Manager creates a basic flow in Power Automate with the same
    name as the workflow, and displays the following message:
 
     ![pa_template_message](/images/directorymanager/11.1/admincenter/workflow/pa_template_message.webp)
@@ -104,27 +101,25 @@ triggered, the linked flow is auto triggered.
 8. The next step is to copy the flow URL from Power Automate and provide it here. To copy the URL,
    do the following:
 
-    1. Launch Power Automate and navigate to **Environments > GroupID application > My Flows**. This
-       page displays the flow you created in Power Automate from the Directory Manager workflow.
+    1. Launch Power Automate, choose your environment, and navigate to **My Flows**. This page displays the 
+      flow you created in Power Automate from the Directory Manager workflow.
     2. Hover the mouse over the flow to display the ellipsis button. Click it and select **Edit**.
-    3. Expand the **Connections** area.
 
-        ![connections_area](/images/directorymanager/11.1/admincenter/workflow/connections_area.webp)
+    ![connections_area](/images/directorymanager/11.1/admincenter/workflow/connections_area.webp)
 
-    4. Click **Approvals** in the **Connections** area. The approver of the Directory Manager
-       workflow is auto added here. Click **Save**.
-    5. Expand the **When a HTTP request is received** area and copy the URL displayed for **HTTP
-       POST URL**.
+    3. Expand the **Manual** area and set **Who can trigger the flow**.
+    4. Expand the **Start and wait for an approval** area and set up a new connection field, signing in with your Microsoft account when prompted. Click **Save**.
+    5. Navigate back to the **Edit** window. Expand the **Manual** area and copy the URL displayed for **HTTP URL**.
 
-9. In Directory Manager, return to the workflow being linked to the flow, and click **Configure a
-   Request URL** on the **Power Automate Settings** dialog box.
-10. Enter the copied HTTP POST URL in the **Request URL** box.
-11. Click **Authenticate** and then **Save**.
+9. In Directory Manager, return to the workflow you are linking to the flow, and click 
+   **Configure a Request URL** on the **Power Automate Settings** dialog box.
+10. Enter the copied HTTP URL in the **Request URL** box.
+11. Close the **Power Automate Settings** dialog box.
 12. Click **Update Workflow** on the **Edit Workflow** page to save the settings.
 13. Click **Save** on the **Workflows** page.
 14. Next, enable the linked flow in Power Automate. To do so:
 
-    1. In Power Automate, navigate to **Environments > GroupID application > My Flows**. This page
+    1. In Power Automate, choose your environment and navigate to **My Flows**. This page
        displays the flow you created in Power Automate from the Directory Manager workflow.
     2. Hover the mouse over the flow to display the ellipsis button. Click it and select **Turn
        on**.
