@@ -34,7 +34,7 @@ the dropdown menu or click the **Add** icon.
 **Step 7 –** If the agent has not been configured for the selected site, the Agent Setup (Step 3 of 5) pane is displayed. Follow the instructions to install and connect the agent. The wizard polls for the agent connection status automatically. See the
 [Install Agent](/docs/1secure/install/installagent.md) topic for details on configuring the agent.
 
-- If the agent has already been configured for the site, this step is skipped automatically.
+- If you have already configured the agent for the site, the wizard skips this step automatically.
 
 {/* TODO: Screenshot of Agent Setup (Step 3 of 5) pane showing connection polling */}
 
@@ -109,4 +109,4 @@ Directory. Specify the following:
 
 **Step 13 –** Click **Finish**.
 
-The Active Directory data source and connectors have been configured.
+You have configured the Active Directory data source and connectors.

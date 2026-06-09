@@ -122,4 +122,4 @@ This increases the processing time for data classification.
 
 **Step 8 –** Click **Finish**.
 
-The SharePoint Online data source and connectors have been configured.
+You have configured the SharePoint Online data source and connectors.

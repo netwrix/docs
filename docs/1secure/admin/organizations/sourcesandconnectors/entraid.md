@@ -87,4 +87,4 @@ ID. Specify the following:
 
 **Step 8 –** Click **Finish**.
 
-The Microsoft Entra ID data source and connectors have been configured.
+You have configured the Microsoft Entra ID data source and connectors.

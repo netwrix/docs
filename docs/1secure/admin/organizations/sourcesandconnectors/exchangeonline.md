@@ -81,4 +81,4 @@ Specify the following:
 
 **Step 8 –** Click **Finish**.
 
-The Exchange Online data source and connector have been configured.
+You have configured the Exchange Online data source and connector.

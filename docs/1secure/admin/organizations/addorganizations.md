@@ -52,7 +52,7 @@ information.
 ![addorganizationssites](/images/1secure/admin/organizations/addorganizationssites.webp)
 
 **Step 4 –** On the Configure source details (Step 3 of 4) window, add a site for your organization.
-Sites are used to signify physical groupings within the organization. Click **Next**.
+Sites signify physical groupings within the organization. Click **Next**.
 
 :::note
 This step is displayed only when adding Active Directory and Computer sources.

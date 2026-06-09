@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Add Sites to an Organization
 
-Sites are used to signify physical groupings within the organization. The feature is helpful for
+Sites signify physical groupings within the organization. The feature is helpful for
 Managed Service Providers with clients in multiple office locations from different cities. Once they
 set up an organization, install an agent for the on-prem sources (Active Directory or Computer), you
 can track the agent status for the organization's site, the agent connection, server name, and check
