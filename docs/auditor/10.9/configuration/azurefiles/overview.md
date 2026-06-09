@@ -95,10 +95,13 @@ Netwrix Auditor uses the **App ID** + **Client Secret** for authentication
 
 ### Step 1: Add Permissions
 
+The Purpose column references Microsoft Graph API endpoints that Netwrix Auditor calls to perform each resolution task.
+
 | Permission | Purpose |
 |------------|---------|
 | `User.Read` | Basic user information. Sign in and read user profile. *(default)* |
-| `User.Read.All` | Read all users' profiles. Required to resolve SIDs into usernames in reports |
+| `User.Read.All` | Read all users' full profiles. Required to resolve user security identifiers (SIDs) into display names and User Principal Names (UPNs), and to map access control entries (ACEs) from group membership via the Microsoft Graph endpoint `/users/{id}/transitiveMemberOf` |
+| `Group.Read.All` | Resolve groups and search by SID from discretionary access control lists (DACLs). Required to expand group membership via the Microsoft Graph endpoint `/groups/{id}/transitiveMembers` and filter groups by `securityIdentifier` |
 
 
 1. In your app in EntraID, go to **Manage > API permissions > + Add a permission**.
@@ -106,9 +109,11 @@ Netwrix Auditor uses the **App ID** + **Client Secret** for authentication
 3. Add:
    - **User.Read (default)**
    - **User.Read.All**
+   - **Group.Read.All**
 
 - *User.Read* – "Sign in and read user profile." *(default)*
 - *User.Read.All* – "Read all users' full profiles"
+- *Group.Read.All* – "Read all groups"
 
 
 ### Step 2: Grant Admin Consent
@@ -117,9 +122,10 @@ Click **Grant admin consent for TenantName**
 
 **Why this is required:**
 - By default, applications cannot query Microsoft Graph for directory-wide information
-- Admin consent allows the app to use **User.Read.All**
-- This lets Netwrix Auditor query Azure AD and resolve **user SIDs → user accounts → display names**
-- Without admin consent, audit logs will only show unresolved SIDs instead of usernames, making reports incomplete and less useful
+- Admin consent allows the app to use **User.Read.All** and **Group.Read.All**
+- **User.Read.All** lets Netwrix Auditor query Microsoft Entra ID and resolve **user SIDs → user accounts → display names**
+- **Group.Read.All** lets Netwrix Auditor resolve groups from DACLs and expand group membership so reports show which users inherit access through group ACEs
+- Without admin consent, audit logs will only show unresolved SIDs and object IDs instead of usernames and group names, making reports incomplete and less useful
 
 **At the end of this step, your app has granted Microsoft Graph API permissions**
 
@@ -236,7 +242,7 @@ Azure Files audit logs will now be archived into your **Log Storage Account**
 ## Checklist
 
 - [Azure Application registered](#azure-application-registration) with App ID + Secret
-- [API permissions](#configure-api-permissions) (User.Read, User.Read.All) granted
+- [API permissions](#configure-api-permissions) (User.Read, User.Read.All, Group.Read.All) granted
 - [IAM roles assigned](#assign-iam-roles-to-the-app) (Reader, Storage File Data Privileged Reader, Storage Blob Data Reader)
 - [Diagnostic Settings configured](#diagnostic-settings) to log to a Log Storage Account
 
