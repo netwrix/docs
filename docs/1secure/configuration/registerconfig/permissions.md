@@ -16,39 +16,114 @@ audit the following Microsoft 365 data sources:
 ## Permissions to Audit Microsoft Entra ID
 
 :::note
-The registered application must be assigned to the Global Administrator or Exchange
-Administrator role for Microsoft Entra ID state collection.
+The registered application must be assigned the Global Administrator or Exchange
+Administrator role for Microsoft Entra ID state collection. See the
+[Assign Roles to the App](/docs/1secure/configuration/registerconfig/registerconfig.md#assign-roles-to-the-app) section for instructions.
 :::
 
+The following permissions are required to audit Microsoft Entra ID. Add each group of permissions
+separately using the steps in
+[Grant Permissions to the App](/docs/1secure/configuration/registerconfig/registerconfig.md#grant-permissions-to-the-app).
 
-| API | Permissions |
-| ---| ---|
-| Microsoft Graph | Directory <br /><ul><li>Directory.Read.All – Read directory data</li></ul> <br /> AuditLog <br /> <ul><li>AuditLog.Read.All – Read all audit log data</li></ul> <br />Policy <br /><ul><li>Policy.Read.All – Read your organization's policies. This permission is required to collect state-in-time reports.</li></ul> |
-| Office 365 Management APIs | ActivityFeed <br /><ul><li>ActivityFeed.Read – Read activity data for your organization</li></ul>                                                                                                                                                            |
-| Office 365 Exchange Online | Exchange<ul><li>Exchange.ManageAsApp – Manage Exchange As Application This permission is required to collect state-in-time reports.</li></ul>                                                                                                          |
+### Microsoft Graph
+
+Go to **API Permissions** > **Add a permission** > **Microsoft Graph** > **Application permissions**. Add each scope below, then click **Add permissions**.
+
+| Category | Permission | Description |
+| --- | --- | --- |
+| Directory | Directory.Read.All | Read directory data |
+| AuditLog | AuditLog.Read.All | Read all audit log data |
+| Policy | Policy.Read.All | Read your organization's policies. This permission is required to collect state-in-time reports. |
+
+### Office 365 Management APIs
 
 :::note
-To access the Office 365 Exchange Online API, click the **APIs your organization uses** tab
-on the Request API Permissions pane and search this API by entering its name in the search box.
+Office 365 Management APIs permissions are required by all cloud connectors.
 :::
+
+Go to **API Permissions** > **Add a permission** > **Office 365 Management APIs** > **Application permissions**. Add each scope below, then click **Add permissions**.
+
+| Category | Permission | Description |
+| --- | --- | --- |
+| ActivityFeed | ActivityFeed.Read | Read activity data for your organization |
+
+### Office 365 Exchange Online
+
+:::note
+To access the Office 365 Exchange Online API, click the **APIs my organization uses** tab
+on the Request API Permissions pane and search for **Office 365 Exchange Online**.
+:::
+
+Go to **API Permissions** > **Add a permission** > **APIs my organization uses** > search for **Office 365 Exchange Online** > **Application permissions**. Add each scope below, then click **Add permissions**.
+
+| Category | Permission | Description |
+| --- | --- | --- |
+| Exchange | Exchange.ManageAsApp | Manage Exchange As Application. This permission is required to collect state-in-time reports. |
+<!-- END UPDATED -->
 
 
 ## Permissions to Audit SharePoint Online
 
-| API | Permissions |
-| ---| --- |
-| Microsoft Graph | Sites <br /> <ul><li>Sites.Read.All – Read items in all site collections</li><li>Sites.ReadWrite.All – Read and write items in all site collections</li></ul> <br /> Directory <br /><ul><li>Directory.Read.All – Read directory data</li></ul> |
-| SharePoint | Sites <br /><ul><li>Sites.FullControl.All – Have full control of all site collections. This permission is required to collect state-in-time reports.</li></ul>                                              |
-| Office 365 Management APIs | ActivityFeed <br /><ul><li>ActivityFeed.Read – Read activity data for your organization</li></ul> |
+The following permissions are required to audit SharePoint Online. Add each group of permissions
+separately using the steps in
+[Grant Permissions to the App](/docs/1secure/configuration/registerconfig/registerconfig.md#grant-permissions-to-the-app).
+
+### Microsoft Graph
+
+Go to **API Permissions** > **Add a permission** > **Microsoft Graph** > **Application permissions**. Add each scope below, then click **Add permissions**.
+
+| Category | Permission | Description |
+| --- | --- | --- |
+| Sites | Sites.Read.All | Read items in all site collections |
+| Sites | Sites.ReadWrite.All | Read and write items in all site collections |
+| Directory | Directory.Read.All | Read directory data |
 
 :::note
 The Sites.ReadWrite.All permission is only required for SharePoint Online integration (for
 example, when you have to save subscriptions to a SharePoint location).
 :::
 
+### SharePoint
+
+:::note
+To access the SharePoint API, click the **APIs my organization uses** tab on the Request API Permissions pane and search for **SharePoint**.
+:::
+
+Go to **API Permissions** > **Add a permission** > **APIs my organization uses** > search for **SharePoint** > **Application permissions**. Add each scope below, then click **Add permissions**.
+
+| Category | Permission | Description |
+| --- | --- | --- |
+| Sites | Sites.FullControl.All | Have full control of all site collections. This permission is required to collect state-in-time reports. |
+
+### Office 365 Management APIs
+
+:::note
+Office 365 Management APIs permissions are required by all cloud connectors.
+:::
+
+Go to **API Permissions** > **Add a permission** > **Office 365 Management APIs** > **Application permissions**. Add each scope below, then click **Add permissions**.
+
+| Category | Permission | Description |
+| --- | --- | --- |
+| ActivityFeed | ActivityFeed.Read | Read activity data for your organization |
+<!-- END UPDATED -->
+
 
 ## Permissions to Audit Exchange Online
 
-| API                        | Permissions                                                                 |
-| -------------------------- | --------------------------------------------------------------------------- |
-| Office 365 Management APIs | ActivityFeed <br /> <ul><li>ActivityFeed.Read – Read activity data for your organization</li></ul> |
+The following permissions are required to audit Exchange Online. Add each group of permissions
+separately using the steps in
+[Grant Permissions to the App](/docs/1secure/configuration/registerconfig/registerconfig.md#grant-permissions-to-the-app).
+
+### Office 365 Management APIs
+
+:::note
+Office 365 Management APIs permissions are required by all cloud connectors.
+:::
+
+Go to **API Permissions** > **Add a permission** > **Office 365 Management APIs** > **Application permissions**. Add each scope below, then click **Add permissions**.
+
+| Category | Permission | Description |
+| --- | --- | --- |
+| ActivityFeed | ActivityFeed.Read | Read activity data for your organization |
+<!-- END UPDATED -->

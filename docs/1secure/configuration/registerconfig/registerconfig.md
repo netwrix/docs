@@ -95,29 +95,82 @@ Overview page of the application is displayed.
 **Step 5 –** Click **API permissions** under the Manage section. The API permissions page is
 displayed.
 
+
+:::note
+The registered application must be assigned the Global Administrator or Exchange Administrator role for Microsoft Entra ID state collection. See the [Assign Roles to the App](#assign-roles-to-the-app) section for instructions.
+:::
+
+Add the required API permissions for each provider listed below. The specific permissions depend on
+the data sources you plan to audit. See the
+[Microsoft 365 Permissions](permissions.md) page for the full list of permissions required for each
+data source.
+
+**Microsoft Graph**
+
 **Step 6 –** On the API permissions page, click **Add a permission**. The Request API permissions
-pane is displayed with the Microsoft APIs tab selected. The tab lists all the APIs available in
-Microsoft Entra ID.
+pane is displayed with the Microsoft APIs tab selected.
 
-**Step 7 –** Click an API to access its permissions. The permission types are displayed for it.
+**Step 7 –** Click **Microsoft Graph**. The permission types are displayed for it.
 
-**Step 8 –** Click the **Application permissions** tab. The permission categories are listed. Click
-a category and select the required permissions under it.
+**Step 8 –** Click **Application permissions**. The permission categories are listed. Click a
+category and select the required Microsoft Graph permissions for your data sources.
 
-See the following topics for the list of API permissions required to audit the respective data
-source.
+See the following topics for the list of Microsoft Graph permissions required for each data source:
 
 - [Permissions to Audit Microsoft Entra ID](permissions.md#permissions-to-audit-microsoft-entra-id)
 - [Permissions to Audit SharePoint Online](permissions.md#permissions-to-audit-sharepoint-online)
-- [Permissions to Audit Exchange Online](permissions.md#permissions-to-audit-exchange-online)
 
-**Step 9 –** After selecting the required permissions, click **Add Permissions** at the bottom.
+**Step 9 –** After selecting the required permissions, click **Add permissions** at the bottom.
 You are navigated to the API Permissions page.
 
-**Step 10 –** Click **Grant admin consent for `<tenant>`** to grant the selected permissions to the
-applcation.
+**Office 365 Management APIs**
+
+:::note
+Office 365 Management APIs permissions are required by all cloud connectors.
+:::
+
+**Step 10 –** Click **Add a permission** again. The Request API permissions pane is displayed.
+
+**Step 11 –** Click **Office 365 Management APIs**. The permission types are displayed for it.
+
+**Step 12 –** Click **Application permissions**. Select the **ActivityFeed.Read** permission.
+
+**Step 13 –** Click **Add permissions** at the bottom. You are navigated to the API Permissions page.
+
+**Office 365 Exchange Online**
+
+:::note
+Office 365 Exchange Online permissions are required when auditing Microsoft Entra ID or Exchange Online. To access this API, click the **APIs my organization uses** tab on the Request API Permissions pane and search for **Office 365 Exchange Online**.
+:::
+
+**Step 14 –** Click **Add a permission** again. The Request API permissions pane is displayed.
+
+**Step 15 –** Click the **APIs my organization uses** tab and search for **Office 365 Exchange Online**. Click it in the results. The permission types are displayed for it.
+
+**Step 16 –** Click **Application permissions**. Select the **Exchange.ManageAsApp** permission.
+
+**Step 17 –** Click **Add permissions** at the bottom. You are navigated to the API Permissions page.
+
+**SharePoint**
+
+:::note
+SharePoint permissions are only required when auditing SharePoint Online. To access this API, click the **APIs my organization uses** tab on the Request API Permissions pane and search for **SharePoint**.
+:::
+
+**Step 18 –** Click **Add a permission** again. The Request API permissions pane is displayed.
+
+**Step 19 –** Click the **APIs my organization uses** tab and search for **SharePoint**. Click it in the results. The permission types are displayed for it.
+
+**Step 20 –** Click **Application permissions**. Select the **Sites.FullControl.All** permission.
+
+**Step 21 –** Click **Add permissions** at the bottom. You are navigated to the API Permissions page.
+
+**Grant admin consent**
+
+**Step 22 –** After adding all required permissions, click **Grant admin consent for `<tenant>`** on the API Permissions page to grant the selected permissions to the application.
 
 The API permissions are granted to the application.
+<!-- END UPDATED -->
 
 ## Assign Roles to the App
 
