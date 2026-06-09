@@ -30,7 +30,7 @@ registered application.
 
 
 :::note
-Unified audit log must be enabled for a tenant. See the Microsoft
+Enable the unified audit log for the tenant. See the Microsoft
 [Turn auditing on or off](https://learn.microsoft.com/en-us/purview/audit-log-enable-disable?view=o365-worldwide&tabs=microsoft-purview-portal)
 article for additional information.
 :::
@@ -97,10 +97,10 @@ displayed.
 
 
 :::note
-The registered application must be assigned the Global Administrator or Exchange Administrator role for Microsoft Entra ID state collection. See the [Assign Roles to the App](#assign-roles-to-the-app) section for instructions.
+Assign the Global Administrator or Exchange Administrator role to the registered application for Microsoft Entra ID state collection. See the [Assign Roles to the App](#assign-roles-to-the-app) section for instructions.
 :::
 
-Add the required API permissions for each provider listed below. The specific permissions depend on
+Add the required API permissions for each of the following providers. The specific permissions depend on
 the data sources you plan to audit. See the
 [Microsoft 365 Permissions](permissions.md) page for the full list of permissions required for each
 data source.
@@ -121,7 +121,7 @@ See the following topics for the list of Microsoft Graph permissions required fo
 - [Permissions to Audit SharePoint Online](permissions.md#permissions-to-audit-sharepoint-online)
 
 **Step 9 –** After selecting the required permissions, click **Add permissions** at the bottom.
-You are navigated to the API Permissions page.
+You return to the API Permissions page.
 
 **Office 365 Management APIs**
 
@@ -135,7 +135,7 @@ Office 365 Management APIs permissions are required by all cloud connectors.
 
 **Step 12 –** Click **Application permissions**. Select the **ActivityFeed.Read** permission.
 
-**Step 13 –** Click **Add permissions** at the bottom. You are navigated to the API Permissions page.
+**Step 13 –** Click **Add permissions** at the bottom. You return to the API Permissions page.
 
 **Office 365 Exchange Online**
 
@@ -149,7 +149,7 @@ Office 365 Exchange Online permissions are required when auditing Microsoft Entr
 
 **Step 16 –** Click **Application permissions**. Select the **Exchange.ManageAsApp** permission.
 
-**Step 17 –** Click **Add permissions** at the bottom. You are navigated to the API Permissions page.
+**Step 17 –** Click **Add permissions** at the bottom. You return to the API Permissions page.
 
 **SharePoint**
 
@@ -163,7 +163,7 @@ SharePoint permissions are only required when auditing SharePoint Online. To acc
 
 **Step 20 –** Click **Application permissions**. Select the **Sites.FullControl.All** permission.
 
-**Step 21 –** Click **Add permissions** at the bottom. You are navigated to the API Permissions page.
+**Step 21 –** Click **Add permissions** at the bottom. You return to the API Permissions page.
 
 **Grant admin consent**
 
@@ -174,7 +174,7 @@ The API permissions are granted to the application.
 
 ## Assign Roles to the App
 
-The registered application must be assigned to the Global Administrator or Exchange Administrator
+Assign the registered application to the Global Administrator or Exchange Administrator
 role for Microsoft Entra ID state collection.
 
 **To assign roles to an application:**
@@ -205,7 +205,7 @@ administrators page is displayed. From here, go to the All roles page.
 
 **Step 9 –** On the Add assignments pane, search your application and select it.
 
-**Step 10 –** Click the **Add** button at the bottom. The application is listed on the Assignments
+**Step 10 –** Click the **Add** button at the bottom. The application appears on the Assignments
 page.
 
 ## Generate Client Secret Value

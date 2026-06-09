@@ -16,8 +16,8 @@ audit the following Microsoft 365 data sources:
 ## Permissions to Audit Microsoft Entra ID
 
 :::note
-The registered application must be assigned the Global Administrator or Exchange
-Administrator role for Microsoft Entra ID state collection. See the
+Assign the Global Administrator or Exchange Administrator role to the registered
+application for Microsoft Entra ID state collection. See the
 [Assign Roles to the App](/docs/1secure/configuration/registerconfig/registerconfig.md#assign-roles-to-the-app) section for instructions.
 :::
 
@@ -27,7 +27,7 @@ separately using the steps in
 
 ### Microsoft Graph
 
-Go to **API Permissions** > **Add a permission** > **Microsoft Graph** > **Application permissions**. Add each scope below, then click **Add permissions**.
+Go to **API Permissions** > **Add a permission** > **Microsoft Graph** > **Application permissions**. Add each of the following scopes, then click **Add permissions**.
 
 | Category | Permission | Description |
 | --- | --- | --- |
@@ -38,10 +38,10 @@ Go to **API Permissions** > **Add a permission** > **Microsoft Graph** > **Appli
 ### Office 365 Management APIs
 
 :::note
-Office 365 Management APIs permissions are required by all cloud connectors.
+All cloud connectors require Office 365 Management APIs permissions.
 :::
 
-Go to **API Permissions** > **Add a permission** > **Office 365 Management APIs** > **Application permissions**. Add each scope below, then click **Add permissions**.
+Go to **API Permissions** > **Add a permission** > **Office 365 Management APIs** > **Application permissions**. Add each of the following scopes, then click **Add permissions**.
 
 | Category | Permission | Description |
 | --- | --- | --- |
@@ -54,7 +54,7 @@ To access the Office 365 Exchange Online API, click the **APIs my organization u
 on the Request API Permissions pane and search for **Office 365 Exchange Online**.
 :::
 
-Go to **API Permissions** > **Add a permission** > **APIs my organization uses** > search for **Office 365 Exchange Online** > **Application permissions**. Add each scope below, then click **Add permissions**.
+Go to **API Permissions** > **Add a permission** > **APIs my organization uses** > search for **Office 365 Exchange Online** > **Application permissions**. Add each of the following scopes, then click **Add permissions**.
 
 | Category | Permission | Description |
 | --- | --- | --- |
@@ -70,7 +70,7 @@ separately using the steps in
 
 ### Microsoft Graph
 
-Go to **API Permissions** > **Add a permission** > **Microsoft Graph** > **Application permissions**. Add each scope below, then click **Add permissions**.
+Go to **API Permissions** > **Add a permission** > **Microsoft Graph** > **Application permissions**. Add each of the following scopes, then click **Add permissions**.
 
 | Category | Permission | Description |
 | --- | --- | --- |
@@ -89,7 +89,7 @@ example, when you have to save subscriptions to a SharePoint location).
 To access the SharePoint API, click the **APIs my organization uses** tab on the Request API Permissions pane and search for **SharePoint**.
 :::
 
-Go to **API Permissions** > **Add a permission** > **APIs my organization uses** > search for **SharePoint** > **Application permissions**. Add each scope below, then click **Add permissions**.
+Go to **API Permissions** > **Add a permission** > **APIs my organization uses** > search for **SharePoint** > **Application permissions**. Add each of the following scopes, then click **Add permissions**.
 
 | Category | Permission | Description |
 | --- | --- | --- |
@@ -98,10 +98,10 @@ Go to **API Permissions** > **Add a permission** > **APIs my organization uses**
 ### Office 365 Management APIs
 
 :::note
-Office 365 Management APIs permissions are required by all cloud connectors.
+All cloud connectors require Office 365 Management APIs permissions.
 :::
 
-Go to **API Permissions** > **Add a permission** > **Office 365 Management APIs** > **Application permissions**. Add each scope below, then click **Add permissions**.
+Go to **API Permissions** > **Add a permission** > **Office 365 Management APIs** > **Application permissions**. Add each of the following scopes, then click **Add permissions**.
 
 | Category | Permission | Description |
 | --- | --- | --- |
@@ -118,10 +118,10 @@ separately using the steps in
 ### Office 365 Management APIs
 
 :::note
-Office 365 Management APIs permissions are required by all cloud connectors.
+All cloud connectors require Office 365 Management APIs permissions.
 :::
 
-Go to **API Permissions** > **Add a permission** > **Office 365 Management APIs** > **Application permissions**. Add each scope below, then click **Add permissions**.
+Go to **API Permissions** > **Add a permission** > **Office 365 Management APIs** > **Application permissions**. Add each of the following scopes, then click **Add permissions**.
 
 | Category | Permission | Description |
 | --- | --- | --- |
