@@ -19,7 +19,7 @@ the following steps to enable MIP labels:
     | Application Name            | Display name                                                                                                                    |
     | Tenant                      | Directory (tenant) ID                                                                                                           |
     | Certificate Thumbprint      | The certificate thumbprint you copied and stored on this step: [Upload the .CER file to Azure](/docs/dataclassification/5.7/introduction/introduction/configureinfrastructure.md). |
-    | Azure Cloud | The Azure Cloud instance to connect to - this must be the instance your tenant is in |
+    | Azure Cloud | The Azure Cloud instance to connect to. |
 
 :::note
 Any labels and policies in API should be migrated / synced with O365 Security &

@@ -19,7 +19,7 @@ sidebar_position: 40
 
     | Option                | Description                                                                                                              |
     | --------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-    | Server Name           | Provide the name of the SQL Server instance that will host the NDC SQL database (or already hosts it, if you created the database manually). For example, _"WORKSTATIONSQL\SQLSERVER"_. |
+    | Server Name           | Provide the name of the SQL Server instance that will host the NDC SQL database. For example, _"WORKSTATIONSQL\SQLSERVER"_. |
     | Authentication Method | Select Windows or SQL Server authentication method.                                                                      |
     | Username              | Specify the account name.                                                                                                |
     | Password              | Provide the account password.                                                                                                   |
@@ -33,16 +33,12 @@ sidebar_position: 40
     to [Configure NDC SQL database](/docs/dataclassification/5.7/introduction/install/ndcsqldatabase.md) section.
     :::
 
-7. If you are installing a secondary NDC instance to an [NDC Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md),
-you will be shown the DQS registration step. Complete the following steps:
-    1. Confirm that the Primary NDC Server URL displayed matches the QS Path of the primary NDC instance (the first entry in the DQS table in the administrative web console) and click Connect to connect the installer to the primary instance.
-    2. When the connection succeeds, an Authentication code will be generated and displayed in the Authentication Code field. Click Register - this will copy the Authentication code to the clipboard and open the administration console DQS configuration page in a browser window.
-    3. Click Register/Resync. The authentication code should automatically be inserted into the input box. If the field has not been autofilled, paste it manually, then click Submit.    
-    4. Copy the verification code displayed and input it into the Verification code input box in the installer, then click Join.
-    5. Once the NDC instance has been successfully joined to the DQS configuration, you can click Next to move to the next installation step.
+    :::note
+    When installing a secondary instance as part of a DQS environment, you may see an extra step here for synchronising the new instance with the primary instance. 
+    The instructions for adding instances to a DQS environment can be found in the [NDC Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) article.
+    :::
 
-
-8. On the Licensing step, add your license. You can add the license as follows:
+7. On the Licensing step, add your license. You can add the license as follows:
 
     - Click the Import button and browse for your license file
 
@@ -51,8 +47,8 @@ you will be shown the DQS registration step. Complete the following steps:
     - Open your license file with any text editor, e.g. Notepad, and paste the license text into the
       License field.
 
-9. On the Administration Web Application step, review the default IIS configuration. If you select to run the Administration Web Application as a local or domain user, you will need to input the credentials for that user.
-10. On the Services step, configure Netwrix Data Classification services:
+8. On the Administration Web Application step, review the default IIS configuration. If you select to run the Administration Web Application as a local or domain user, you will need to input the credentials for that user.
+9. On the Services step, configure Netwrix Data Classification services:
 
     - Select all services to be installed.
     - File System Path—Use the default path or provide a custom one to store Netwrix Data

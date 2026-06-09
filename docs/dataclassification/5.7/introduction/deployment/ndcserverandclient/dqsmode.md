@@ -39,10 +39,10 @@ visible to each other across the network. Adjust your firewall settings if neces
 
 DQS mode can only be configured by a user whose account has the **Superuser** role.
 
-    :::note
-    Once DQS mode is enabled, you cannot roll back your configuration. Netwrix
-    strongly recommends ensuring that you have taken a full backup of your environment prior to enabling DQS.
-    :::
+:::note
+Once DQS mode is enabled, you cannot roll back your configuration. Netwrix
+strongly recommends ensuring that you have taken a full backup of your environment prior to enabling DQS.
+:::
 
 ### Enabling DQS Mode (5.7.9 and earlier versions)
 
@@ -77,8 +77,7 @@ DQS mode can only be configured by a user whose account has the **Superuser** ro
 9. On the SQL Database step, provide connection details for the SQL Server instance that hosts the NDC SQL database
    you configured for the first NDC Server. A popup will inform you that an existing NDC schema exists in the database, ignore this and continue.
 10. Complete the installation.
-11. Repeat steps 2 - 6 for every NDC Server, then review the list of servers to make sure the new
-    server has been added.
+11. Repeat steps 7 - 10 for each NDC Server to be added.
 
 ![dqs_servers_list_thumb_0_0](/images/dataclassification/5.7/requirements/dqs_servers_list_thumb_0_0.webp)
 
@@ -101,10 +100,12 @@ DQS mode can only be configured by a user whose account has the **Superuser** ro
    that the new install will be added to the existing DQS environment - click OK.
 
 :::note
-When upgrading an existing NDC instance the installer will attempt to resynchronise the DQS instances in the
-background and, if successful, will skip the DQS Synchronisation step. You can then skip ahead in these instructions
-to step 13. The DQS Synchronisation step will only display for an upgrade if this process fails - this is not an issue, 
-simply follow the steps below to resynchronise the NDC instance with the primary NDC server.
+When upgrading an existing NDC instance the installer will attempt to resynchronize the DQS instances in the
+background and, if successful, will skip the DQS Synchronization step. You can then skip ahead in these instructions
+to step 13. 
+
+The DQS Synchronization step will only display for an upgrade if this process fails - this is not an issue, 
+simply follow the steps below to resynchronize the NDC instance with the primary NDC server.
 :::
 
 9. The Primary NDC Server Url field should have the server url of the primary NDC server (i.e. the first row in the DQS table)

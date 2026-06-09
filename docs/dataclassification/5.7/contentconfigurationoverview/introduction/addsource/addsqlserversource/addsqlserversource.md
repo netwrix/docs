@@ -7,8 +7,8 @@ sidebar_position: 110
 # SQL Server
 
 The SQL Server source configuration screen allows you to enable the crawling and classification of
-content stored in your MS SQL, MySQL, PostgreSQL, and Oracle servers. Where the **SQL database** source crawls a single database,
-the **SQL Server** source crawls all databases found on a given server.
+content stored in your MS SQL, MySQL, PostgreSQL, and Oracle servers. The **SQL Server** source crawls 
+all databases found on a given server.
 
 Once connected it is possible to create an intelligent content mapping, crawling certain fields as
 unstructured index text, and other fields as mapped metadata.
@@ -17,7 +17,7 @@ To crawl SQL server:
 
 1. Go to **Content → Sources** and select **Add**.
 2. Select **SQL Server**.
-3. Specify the server type: [MS SQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/mssqlserver.md), [MySql Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/mysqlserver.md), [Oracle Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/oracleserver.md), [PostGreSQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/postgresqlserver.md).
+3. Specify the server type: [MS SQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/mssqlserver.md), [MySQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/mysqlserver.md), [Oracle Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/oracleserver.md), [PostgreSQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/postgresqlserver.md).
 
     ![sqlserver_source](/images/dataclassification/5.7/admin/sources/sqlserver/sqlserver_source.webp)
 4. Complete the following fields:

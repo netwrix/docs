@@ -50,7 +50,7 @@ You can view the app architecture and components in the figure below.
 4. The NDC Indexer service builds and maintains a full-text search index (NDC Index) based on the
    content and metadata of the collected files.
 5. The NDC Classifier service performs data classification by matching collected files against
-   pre-built taxonomies (the Netwrix compliance taxonomies) and/or customer-created taxonomies.
+   pre-built taxonomies (the Netwrix compliance taxonomies) and customer-created taxonomies.
 6. If [Classification Writing](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/enablewriteclassifications.md) is enabled, the assigned classification labels are written to the custom metadata columns for supported document types.
 7. If any Workflows have been defined and are enabled, they are run on documents that meet the
    workflow conditions.
@@ -126,7 +126,7 @@ The current release of Netwrix Data Classification supports SQL Server 2008 R2 o
 The NDC Index contains a probabilistic index for all documents that have been indexed by the system. The index files
 use the extension “.cse”, but temporary files (extension “.tmp”) are used when merging changes into the index.
 
-The NDC Index Database files should be located on the same server as the Netwrix Data
+The NDC Index files should be located on the same server as the Netwrix Data
 Classification server due to the fact that the query and indexing processes can be highly disk-intensive.
 Note that “text.cse” is not supplied since it will be created automatically when the first documents
 are collected.

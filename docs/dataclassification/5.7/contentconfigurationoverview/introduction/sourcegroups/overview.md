@@ -7,10 +7,7 @@ sidebar_position: 60
 # Source Groups
 
 Source groups provide a way of logically grouping specific sources, perhaps by type, or perhaps by
-an internal business specification. Selecting the option Add to Group on the main sources grid
-screen will present the following pop-up:
-
-![addtogroup](/images/dataclassification/5.7/admin/sources/sourcegroups/addtogroup.webp)
+an internal business specification. 
 
 A group can either be "mixed", which allows it to contain all source types, or source specific. In
 the example above a group would be created entitled "Demo Content", which only supports the addition

@@ -12,11 +12,11 @@ This article applies to version 5.7.10 and later.
 
 In a distributed NDC environment, if the encryption key has been removed from the registry on a secondary instance, the key can be recovered by retrieving it from the primary instance and storing it securely on the secondary instance.
 
-When this occurs, a health error will be displayed on the NDC stats screen and the services will halt.
+When this occurs, a health error will be logged and displayed on the NDC Stats dashboard and the services will halt.
 
 The primary instance will self-recover on startup of the collector, so long as the encryption key is stored in the database. 
 
-If the database key is also no longer present but the key still exists on at least one secondary instance, the services on the primary instance will halt. If this occurs, contact Netwrix support for remediation.
+If the database key is also no longer present but the key still exists on at least one secondary instance, the services on the primary instance will halt. If this occurs, contact Netwrix support for assistance with recovering the encryption key from the secondary instance to the primary instance.
 
 ## Recovering the Encryption Key
 

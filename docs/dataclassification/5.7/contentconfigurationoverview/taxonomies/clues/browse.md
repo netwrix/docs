@@ -13,13 +13,12 @@ documents achieving the minimum score set for classification in the term.
 :::note
 This list will include the current classification status of each document. Any changes
 made to the classification clues since the last time each document was classified are not taken into account.
-
-To see how the classification of each document would change based on the current configuration 
-of the class, tick the Show Movements checkbox. When selected, the results will display any change 
-in document scoring between the current stored document score and how the document would be scored 
-against the current classification clues for each document.
 :::
 
+To see how the classification of each document would change based on the current term configuration, 
+tick the Show Movements checkbox. When selected, the results will display any change 
+in document scoring between the current stored document score and how the document would be scored 
+against the current classification clues for each document.
 
 The document text will be highlighted based upon the clues configured for the term. Highlighting
 will include regular expression matches when configured (Config→Query Server→Enable Regex Browse
@@ -44,8 +43,7 @@ You can use the Browse function to:
 ![browsetab_thumb_0_0](/images/dataclassification/5.7/admin/reporting/browsetab_thumb_0_0.webp)
 
 :::note
-By default, results from sources that have not been, or are not, indexed are not included in the Browse results. 
-This includes certain sources that are not indexed by default, such as Exchange.
+By default, results from sources that have not been indexed, or that are not indexed, are not included in the Browse results. 
 To include these results, select the Show Unindexed Documents checkbox.
 :::
 

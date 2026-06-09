@@ -50,15 +50,15 @@ to version 5.5, then perform a second upgrade to version 5.7.
 
 ## Upgrading a DQS Environment
 
-When upgrading an NDC environment which utilises the **Distributed Query Server** functionality to 5.7.10 or later, 
+When upgrading an NDC environment which utilizes the **Distributed Query Server** functionality to 5.7.10 or later, 
 the primary server should be upgraded first before upgrading the secondary instance(s). Secondary instances will 
-attempt to resynchronise with the primary instance during the upgrade process, which will fail if the primary 
+attempt to resynchronize with the primary instance during the upgrade process, which will fail if the primary 
 instance has not been upgraded.
 
 When upgrading to 5.7.10 or later from an earlier version of 5.7, you should
-run the installer as the NDC service account if possible. If this is not done, you will need to perform a DQS
-resynchronisation when upgrading each secondary DQS instance. For further details on this process,
-see the [DQS Instructions](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) page.
+run the installer as the NDC service account if possible so that the installer can synchronize the DQS instances automatically. 
+If this is not done, you will need to perform a DQS resynchronization when upgrading each secondary DQS instance. For further details on this process,
+see the [Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) page.
 
 ## After the Upgrade
 

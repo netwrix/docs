@@ -36,6 +36,5 @@ All your content sources will be listed in the **Sources** section.
 When adding a source or managing source configuration, the most commonly used source
 settings are displayed by default. However, some source types have additional configuration options
 that can be displayed by clicking the Advanced Settings ("wrench" icon) in the bottom left. You can
-set the Advanced Settings to display by default in User Preferences.
-[Users and Security Settings](/docs/dataclassification/5.7/systemconfigurationoverview/users/users.md)
+set the Advanced Settings to display by default in User Preferences, accessible by clicking on the username in the top right.
 :::

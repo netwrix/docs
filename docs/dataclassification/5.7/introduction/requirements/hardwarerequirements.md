@@ -34,7 +34,7 @@ See [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/o
 | Cores              | 8 Cores                        |
 | RAM                | 32 GB                          |
 | Hard disk          | UP TO 35% of all data in scope |
-| Hard drive type    | SSD storage      |
+| Hard drive type    | SSD storage                    |
 
 ## SQL Server
 
@@ -82,7 +82,7 @@ results to calculate the average number of emails per mailbox or provide the tot
 Get-Mailbox -ResultSize Unlimited | Get-MailboxStatistics SelectItemCount | ForEach {$totalItems+=$_.ItemCount}
 ```
 
-**Office 365: Exchange Online, SharePoint Online and One Drive**
+**Office 365: Exchange Online, SharePoint Online and OneDrive**
 
 Provide the total amount of data and total number of files stored on Office 365. You can use the usage statistics numbers for 180 days period from the O365 Admin Center dashboard. Refer to the following Microsoft article for additional information: [Microsoft 365 Reports in the admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports?view=o365-worldwide)
 

@@ -128,7 +128,7 @@ You can restrict permissions for a user to the following areas:
 
 ## Super Users
 
-Super Users have access to all Query Server administrative functions.
+Super Users have access to all QS administrative functions.
 
 Non-Super Users must have their access rights specifically configured and all rights are disabled by
 default. See User Management section for details about configuring the access rights for non-Super

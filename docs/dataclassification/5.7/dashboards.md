@@ -13,8 +13,7 @@ The Dashboard administration area provides a selection of tools to review applic
 The default screen shows a high-level overview of Netwrix Data Classification statistics, displaying
 the last active times of each service (with inactive services shown in red). Select the "i" icon
 next to each date to view the name of the active server as well as batch processing statistics.
-If you have the [Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) functionality enabled, any instances that are missing their copy of the NDC
-encryption key will also be displayed. You will also be able to view the average processing throughput.
+If you have the [Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) functionality enabled, any instances that are missing their copy of the NDC encryption key will also be displayed here. You will also be able to view the average processing throughput.
 
 The following statistics are available for each thread type:
 

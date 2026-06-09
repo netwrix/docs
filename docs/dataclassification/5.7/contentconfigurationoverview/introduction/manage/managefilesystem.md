@@ -62,10 +62,10 @@ classifications attributes to the classified documents:
 
 1. Go to the **Sources** view, select the source you wish to enable classifications for and click the "pencil" symbol on
    the right side of the table.
-2. The list of global taxonomy configurations will be displayed. To apply these settings globally,
+2. The list of global taxonomy configurations will be displayed. To use the global taxonomy writing settings,
    select the **Use Global Configuration** checkbox at the top of the page. To configure settings for the selected source specifically, make sure
    this checkbox is unchecked.
-3. Select the taxonomy you wish to write back and click **Edit**.
+3. Select the desired taxonomy and click **Edit**.
 4. In the taxonomy properties, select the **Enabled** checkbox and specify the settings described in
    the table above.
 
