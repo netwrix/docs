@@ -35,8 +35,6 @@ The tables in both sections have the following columns:
 
 ## Add Role Users
 
-Follow the steps below to add a role user to a custom role.
-
 **Step 1 –** Navigate to the **Users & Groups** > **Role Management** page.
 
 **Step 2 –** In the Role list, click the name of the custom you want role to open the

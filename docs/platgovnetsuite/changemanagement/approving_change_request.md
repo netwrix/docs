@@ -19,22 +19,18 @@ NetSuite users and have the correct
 2. When the Change Request opens, **Approve** and **Reject** buttons are available at the top of the
    form:
 
-    - If all approvers approve the Change Request, the status is changed to **Approved** or
-      **Approved (Override)** if an administrator approved it. Implement the changes specified by
-      the Change Request.
-    - If an approver rejects the Change Request, the status is changed to **Rejected**. You can
-      return the Change Request to **In Progress**, edit it, and reset it to **Pending Approval** if
-      there are errors or omissions.
+    - If all approvers approve the Change Request, the status changes to **Approved** or **Approved (Override)** if an administrator approved it. Implement the changes specified by the Change Request.
+    - If an approver rejects the Change Request, the status changes to **Rejected**. Return the Change Request to **In Progress**, edit it, and reset it to **Pending Approval** if there are errors or omissions.
 
 3. Change Request owner
    [Completes and Validates the Change Request](/docs/platgovnetsuite/changemanagement/completing_validating_change_request.md).
 
 :::note
 Administrators can approve a Change Request. The status is set to **Approved (Override)** and the
-administrator's name is displayed in the **Approval Override By** field. If the **Block Approval of Own Change Request** is enabled, Administrators cannot override their own change requests.
+administrator's name is displayed in the **Approval Override By** field. If the **Block Approval of Own Change Request** is enabled, Administrators can't override their own change requests.
 :::
 
 :::note
-Once the Change Request is approved, you cannot change the customizations attached to the Change
+After the Change Request is approved, you can't change the customizations attached to the Change
 Request.
 :::

@@ -57,7 +57,7 @@ This matrix refers to clients from the 5.9.0.0 release and higher.
 :::
 
 
-Please see the table below for a detailed view of the events.
+The following table provides a detailed view of the events.
 
 **File Tracing Events Matrix by Direction**
 
@@ -97,7 +97,7 @@ When using the latestEndpoint Protector client, you can view log details structu
 Expand each entry from the log report list to view the Log Details expanded section, providing the
 following information:
 
-- Policy – select an active policy from the drop-down list
+- Policy – select an active policy from the dropdown list
 - Policy name – the name of the selected policy
 - Policy type – the type of the selected policy
 - Items type – the Policy Denylist category selected
@@ -110,21 +110,22 @@ following information:
 
 ![Count – the number of matched items](matcheditemscount.webp)
 
-From the Filters section, check the **Include old logs prior to 5.7** upgrade option from the ﬁlter
-section to include all logs in your searches. If the option is not selected, the ﬁlters will apply
-only to the new structure of logs.
+Use the **Show/Hide Columns** dropdown to customize which columns are visible in the report. The **Date/Time(Client UTC)** column is available in this dropdown but is hidden by default.
+
+From the Filters section, check the **Include old logs before 5.7** upgrade option from the filter
+section to include all logs in your searches. If the option isn't selected, the filters will apply
+only to the new structure of logs. The **Date/Time(Client UTC)** field is also available as a filter option.
 
 ![Content Aware Protection Filters](capfilters.webp)
 
 For Mac users, when the Deep Packet Inspection feature is enabled on the Endpoint Protector agent
-for Mac, there might be certain scenarios where the agent does not provide full destination details
+for Mac, there might be certain scenarios where the agent doesn't provide full destination details
 for ﬁles being transferred from a network share through monitored applications, such as browsers. In
 such cases, the destination information may not be fully captured in the monitoring process
 
-For Linux users, it's important to note that the Endpoint Protector agent does not currently support
-network share visibility, except in situations where ﬁles are being transferred from a network share
-through Deep Packet Inspection monitored applications, like browsers. In other scenarios, network
-share visibility might not be available.
+For Linux users, the Endpoint Protector agent doesn't support network share visibility, except when
+files are transferred from a network share through Deep Packet Inspection monitored applications,
+such as browsers. In other scenarios, network share visibility isn't available.
 
 ### Export Content Aware Reports
 
@@ -132,7 +133,7 @@ You can export Content Aware Logs as an Excel, PDF, or CSV or create and export 
 report as a CSV or XLSX ﬁle.
 
 Excel/PDF/CSV – situated above the Content Aware Reports list, this will export only the default
-columns
+columns. The **Date/Time(Client UTC)** column is included in exports when selected via Show/Hide Columns.
 
 ![Export Content Aware Reports](exportreports.webp)
 
@@ -148,6 +149,36 @@ click View Export List to open the list of Reports, where you can download or de
 ![Viewing Export List ](viewexportlist.webp)
 
 ![Export List Results ](exportlistresults.webp)
+
+## Export List
+
+The Export List shows all exports you have created, regardless of log type. Access it at any time by clicking **View Export List** in any log report section.
+
+From the Export List you can download completed exports or delete entries you no longer need.
+
+### Background processing
+
+When you click **Create Export**, Endpoint Protector queues the request and processes it in the background. The server processes one export at a time. This means:
+
+- You don't need to stay on the page while the export runs.
+- If an export is already running, your new request waits in the queue.
+- You can't create additional exports while the banner is showing.
+
+When an export is in progress, a banner appears at the top of the page:
+
+<!-- vale Netwrix.TemporalHedges = NO -->
+> *A log Report Export is currently running and will be ready soon. Until then, no additional Exports can be created and the displaying Log Report Results may be slower.*
+<!-- vale Netwrix.TemporalHedges = YES -->
+
+Wait for the current export to finish before starting a new one. The banner disappears when processing is complete. Large exports may take several minutes depending on the number of records and the load on the server.
+
+:::note
+If a system backup is running at the same time as an export, queued exports are cancelled automatically. Create the export again after the backup completes.
+:::
+
+### Export retention
+
+Completed exports are automatically deleted after 7 days.
 
 ## Admin Actions
 

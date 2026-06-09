@@ -2,6 +2,8 @@
 title: "Knowledge Base"
 description: "Knowledge Base"
 sidebar_position: 10
+pagination_prev: null
+pagination_next: null
 ---
 
 # Knowledge Base
@@ -39,7 +41,7 @@ See the following Knowledge Base articles for Application Manager.
 
 ## Central Store and Sharing
 
-- [Can I store the DLL extensions in a central location AND locally on the machine I create my Paks on and if so which one is utilized?](/docs/policypak/components/applicationsettingsmanager/technotes/centralstoresharing/dllstorage.md)
+- [Can I store the DLL extensions in a central location AND locally on the machine I create my Paks on and if so which one is utilized?](/docs/policypak/components/applicationsettingsmanager/technotes/dllstorage.md)
 
 ## PreConfigured AppSets
 

@@ -2,5 +2,9 @@
   "label": "Knowledge Base",
   "position": 3,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "knowledgebase"
+  }
 }

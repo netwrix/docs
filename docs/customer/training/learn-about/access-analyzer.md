@@ -10,9 +10,9 @@ import { NAAValue, NAAConcepts, NAAArchitecture, NAAIntro, AICIntro } from '@sit
 import { NAA, AIC } from '@site/src/training/products';
 
 
-Estimated length: 2.25 hours
+Estimated length: 2 hours 22 minutes
 
-In this learning path, you will be introduced to <NAA />, formerly Netwrix Enterprise Auditor. It contains the following courses:
+This learning path introduces you to <NAA />, formerly Netwrix Enterprise Auditor. It contains the following courses:
 
 * 1000 <NAA /> – Valuable Features
 * 2000 <NAA /> – Concepts

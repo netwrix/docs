@@ -109,7 +109,7 @@ displays a message that indicates the session will expire in the predeﬁned cou
 
 You can choose to log out or continue your session, resetting the session timeout interval.
 
-![Choose to log out or continue your session, resetting the session timeout interval](/images/privilegesecure/4.1/accessmanagement/enduser/sessiontimeout.webp)
+![Choose to log out or continue your session, resetting the session timeout interval](/images/privilegesecure/26.03/accessmanagement/enduser/sessiontimeout.webp)
 
 **Endpoint Protector Rights Functionality**
 

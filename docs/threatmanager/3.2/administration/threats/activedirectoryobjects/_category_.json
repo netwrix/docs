@@ -1,0 +1,10 @@
+{
+  "label": "Active Directory Object Details Pages",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "activedirectoryobjects"
+  }
+}

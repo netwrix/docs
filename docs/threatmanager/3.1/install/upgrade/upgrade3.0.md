@@ -14,15 +14,14 @@ The upgrade process from Threat Manager 2.8 to 3.0 involves the following steps:
 
 ## Upgrade PostgreSQL
 
-Follow the steps to upgrade from PostgreSQL 14.8.x to 14.13.x.
+To upgrade from PostgreSQL 14.8.x to 14.13.x:
 
-**Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window is
-displayed.
+**Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window opens.
 
 ![Netwrix Threat Manager Setup window](/images/threatprevention/7.5/install/upgrade/tm3installation.webp)
 
-**Step 2 –** Click **PostgreSQL Setup** to upgrade the PostgreSQL version. The following message is
-displayed, indicating the currently installed version:
+**Step 2 –** Click **PostgreSQL Setup** to upgrade the PostgreSQL version. The following message appears,
+indicating the installed version:
 
 ![Threat Manager Reporting - Upgrade DB Confirmation dialog box](/images/threatprevention/7.5/install/upgrade/upgradedbprompt.webp)
 
@@ -34,7 +33,7 @@ displayed, indicating the currently installed version:
 
 ![Netwrix PostgreSQL Setup wizard on the EULA page](/images/activitymonitor/8.0/install/eula.webp)
 
-**Step 5 –** Read the End User License Agreement and select the I accept the license agreement checkbox. Click Next.
+**Step 5 –** Read the End User License Agreement, select the license agreement acceptance checkbox, and click **Next**.
 
 **Step 6 –** The installation begins and the installer displays a Setup Progress window. Click Exit
 when the installation is successful to close the wizard.
@@ -43,7 +42,7 @@ PostgreSQL has been upgraded.
 
 :::note
 If you have any antivirus or Endpoint Detection and Response (EDR) software installed on
-your machine, make sure you have excluded all of the files from the following directories from all
+your machine, ensure you have excluded all of the files from the following directories from all
 antivirus scans:
 :::
 
@@ -61,7 +60,7 @@ window. The following message displays:
 
 ![Existing Threat Manager version message](/images/threatmanager/3.0/install/existingtmvver.webp)
 
-**Step 2 –** Click **OK**. The following window is displayed:
+**Step 2 –** Click **OK**. The following window opens:
 
 ![Install Threat Manager 3.0 Page](/images/threatmanager/3.0/install/installtm3.0.webp)
 
@@ -69,7 +68,7 @@ window. The following message displays:
 
 ![Install Netwrix Threat Manager 3.0 page](/images/threatmanager/3.0/install/tm3eula.webp)
 
-**Step 4 –** On the End User License Agreement page, review and accept the licensing agreement and
+**Step 4 –** On the End User License Agreement page, review, accept the licensing agreement, and
 then click **Next**.
 
 ![Threat Manager 3.0 Defalt Setup Folder](/images/threatmanager/3.0/install/tm3defaultfolder.webp)
@@ -86,7 +85,7 @@ Enter a new path or use the Browse button to modify as desired. Click **Next**.
 
 :::note
 If installing on the same server where the PostgreSQL database application was installed,
-this information will be accurate by default. The default database name is stealthdefend; however,
+this information is accurate by default. The default database name is stealthdefend; however,
 it can be modified as desired.
 :::
 
@@ -97,13 +96,13 @@ it can be modified as desired.
 
 ![Firewall Rules Page of Threat Manager Installation wizard](/images/threatmanager/3.0/install/firewallrules.webp)
 
-**Step 9 –** By default, the installer will Create Inbound Windows Firewall Rules. Deselect the
-checkbox if you do not want the installer to automatically create these rules, because you have
+**Step 9 –** By default, the installer creates Inbound Windows Firewall Rules. Deselect the
+checkbox if you don't want the installer to automatically create these rules, because you have
 already created them. Click **Next**.
 
 ![Threat Manager Installation Progress page](/images/threatmanager/3.0/install/installprogress.webp)
 
-**Step 10 –** The installation process will begin and the Setup wizard will display the progress.
+**Step 10 –** The installation process begins and the Setup wizard displays the progress.
 
 ![Threat Manager 3.0 Installed Successfully page](/images/threatmanager/3.0/install/completed.webp)
 

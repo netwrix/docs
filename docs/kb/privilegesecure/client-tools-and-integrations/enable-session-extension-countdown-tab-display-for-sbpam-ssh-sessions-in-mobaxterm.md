@@ -30,7 +30,7 @@ Netwrix Privilege Secure’s SSH Session Extension countdown does not display in
 
 ## Instructions
 
-As shown in the screenshot below, the SSH session’s **"Lock terminal title"** setting should be disabled in the session’s **Bookmark Settings** within MobaXTerm.
+As shown in the following screenshot, the SSH session’s **"Lock terminal title"** setting should be disabled in the session’s **Bookmark Settings** within MobaXTerm.
 
 1. In MobaXTerm, right-click the session in the **Sessions** sidebar.
 2. Click **Edit Settings**.

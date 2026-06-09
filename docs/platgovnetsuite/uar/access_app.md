@@ -10,7 +10,7 @@ The User Access Review bundle must be [installed](/docs/platgovnetsuite/uar/inst
 accounts and a UAR license to access User Access Review.
 
 **User Access Review** is available on the NetSuite menu bar if you have a
-[license](/docs/platgovnetsuite/uar/install_app.md). If it is not on your menu, contact your Netwrix or NetSuite
+[license](/docs/platgovnetsuite/uar/install_app.md). If it isn't on your menu, contact your Netwrix or NetSuite
 administrator.
 
 ![User Access Review menu](/images/platgovnetsuite/uar/uar_menu.webp)
@@ -20,7 +20,7 @@ administrator.
 
     ![Select your role](/images/platgovnetsuite/uar/uar_role.webp)
 
-Here is an example of the UAR Admin dashboard:
+The following is an example of the UAR Admin dashboard:
 
 ![UAR Admin Dashboard](/images/platgovnetsuite/uar/dashboard_admin.webp)
 
@@ -30,8 +30,8 @@ Dashboards are role specific. There are common elements for all the dashboards.
 
 - **Menu bar**: Home icon, current role, and **Logout** are present for all roles. Lists and History
   options depend on the role.
-- **Shortcuts**: Drill down into the specifics when you click on a shortcut. Available for all
+- **Shortcuts**: Expand the details when you click a shortcut. Available for all
   roles.
 - **Charts**: Visual representation of the current reviews. Admin and Owner only.
-- **Notifications**: system notifications about your reviews. Admin, Owner and Additional Reviewer
+- **Notifications**: system notifications about your reviews. Admin, Owner, and Additional Reviewer
   only.

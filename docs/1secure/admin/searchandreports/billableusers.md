@@ -12,11 +12,11 @@ Directory/Microsoft Entra ID (formerly Azure AD) accounts for your organization
 
 | Icon                                                                                                            | Description                                                                                                                                                                      |
 | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![businessuserslock](/images/1secure/admin/searchandreports/businessuserslock.webp) | Lock Icon. It shows that the business users cannot view the report. See the [Add Users](/docs/1secure/admin/organizations/addingusers/addingusers.md) topic for additional information on the business users. |
+| ![businessuserslock](/images/1secure/admin/searchandreports/businessuserslock.webp) | Lock Icon. It shows that the business users can't view the report. See the [Add Users](/docs/1secure/admin/organizations/addingusers/addingusers.md) topic for additional information on the business users. |
 
 ## Review a Report
 
-Follow the steps to review a billable users report.
+**To review a billable users report:**
 
 **Step 1 –** On the Home page, click the **Users** of your organization. The **System** > **Billable
 Users** page opens. By default, it populates the data with the Users of your organization.
@@ -37,10 +37,10 @@ You can also access the report by navigating to the **Reports** > **System** pag
 ![BU Report screen](/images/1secure/admin/searchandreports/billableusersreport.webp)
 
 **Step 2 –** If necessary, you can filter the provided data. Select a filter, operator, and value
-from the Filter, Operator, and Value drop-down menus respectively.
+from the Filter, Operator, and Value dropdown menus respectively.
 
 :::note
-You must specify three columns: Filter, Operator, and Value. You may also select more than
+You must specify three columns: Filter, Operator, and Value. You can also select more than
 one filter. To review the Operator filter options, see the
 [Filter Operators ](/docs/1secure/admin/searchandreports/filteroperators.md)topic for additional information.
 :::
@@ -50,7 +50,7 @@ one filter. To review the Operator filter options, see the
 
 :::note
 You can also export a report to your email by clicking **Export** in the upper right
-corner of the page. You shall receive a report in XLSX to your login email.
+corner of the page. The report is sent as an XLSX file to your login email.
 :::
 
 

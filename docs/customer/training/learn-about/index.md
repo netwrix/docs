@@ -9,10 +9,11 @@ description: "Learn about Netwrix products through introductory courses"
 import { Company } from '@site/src/training/products';
 
 
-You can choose to self-enroll in "Learn About" learning paths available within the Learning Library. These learning paths introduce other <Company /> products you may find useful:
+You can self-enroll in "Learn About" learning paths available within the Learning Library. These learning paths introduce other <Company /> products you may find useful:
 
 * [Learn About Netwrix 1Secure Learning Path](./1secure.md)
 * [Learn About Netwrix Access Analyzer Learning Path](./access-analyzer.md)
+* [Learn About Netwrix Access Analyzer 26 Learning Path](./access-analyzer-data.md)
 * [Learn About Netwrix Activity Monitor Learning Path](./activity-monitor.md)
 * [Learn About Netwrix Auditor Learning Path](./auditor.md)
 * [Learn About Netwrix Change Tracker Learning Path](./change-tracker.md)

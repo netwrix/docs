@@ -6,18 +6,17 @@ sidebar_position: 20
 
 # Permissions for SQL Server Auditing
 
-Before you create a monitoring plan to audit your SQL Server, make sure the account to be used for
-data collection meets the requirements listed below. You have to provide this account in the
-Monitoring Plan wizard.
+Before you create a monitoring plan to audit your SQL Server, ensure the account to be used for
+data collection meets the following requirements. Provide this account in the Monitoring Plan wizard.
 
 You can also use a Group Managed Service Account (gMSA) for collecting data.
 
 To grant permissions to the account for SQL Server audit, do the following on the target SQL Server.
 
-- To access SQL Server, Windows authentication will be used, so the data collection account should
+- To access SQL Server, the product uses Windows authentication, so the data collection account must
   be a Windows account specified in the _domain\user_ format (_domain\user$_ for Managed Service
   Account).
-  SQL Server logins and authentication method are not supported.
+  SQL Server logins and authentication method aren't supported.
 - The account must be assigned the _System Administrator_ server role for this SQL Server. See the
   [Assign 'System Administrator' Role](#assign-system-administrator-role) topic for additional
   information.

@@ -2,5 +2,8 @@
   "label": "Exporting Group Policy Security Settings Using PolicyPak Security Settings Manager",
   "position": 50,
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": {
+    "type": "generated-index"
+  }
 }

@@ -23,7 +23,3 @@ For this package, the default isolation level is **ReadCommitted**.
 
 To use this package, `Oracle.ManagedDataAccess.Core` needs to be [downloaded from the Oracle website](https://www.oracle.com/database/technologies/net-downloads.html) (selecting the `ODP.NET` release) and copied to the `Runtime` folder.
 
-:::note
- The DLL in the "Oracle.ManagedDataAccess" package isn't compatible with .NET 8
-
-:::

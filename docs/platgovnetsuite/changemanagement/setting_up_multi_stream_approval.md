@@ -6,10 +6,7 @@ sidebar_position: 60
 
 # Setting Up Multi-Stream Approval
 
-This process enables an administrator to select approvers other than the IT Approvers outlined on
-the Policy. The administrator selects the approvers in the order they will approve the request. The
-process owner is the final approver. This differs from selecting Additional Approvers from the
-Change Request, where the mandated approvers are included.
+This process enables an administrator to select approvers other than the IT Approvers outlined on the Policy. The administrator selects the approvers in the order they approve the request. The process owner is the final approver. This differs from selecting Additional Approvers from the Change Request, where the mandated approvers are included.
 
 ## Configure Multi-Stream Approval
 
@@ -23,7 +20,7 @@ Change Request, where the mandated approvers are included.
 1. Open **Strongpoint** > **Manage Processes** > **Process** > **New**
 2. Enter the **Name** and **Owner** for the process. For this example, the name is **Provision
    Multi-Stream Approval**.
-3. **Custom Form** and **Step Type** should be set to **Process**.
+3. Set **Custom Form** and **Step Type** to **Process**.
 4. Ctrl-Click to select one or more **Additional Approvers**. NOTE: Select the additional approvers
    in the order you want them to approve.
 
@@ -42,7 +39,7 @@ Change Request, where the mandated approvers are included.
    Only**.
 3. Set the Change Levels on the **Change Controls** tab.
 4. Leave the fields blank on the **IT Policies** tab.
-5. Make sure **Require Affected Process Approval** is selected on the **Process Policies** tab.
+5. Ensure **Require Affected Process Approval** is selected on the **Process Policies** tab.
 6. Click **Save**. Leave the new policy open and continue with the next steps.
 
     ![multi_stream_new_policy](/images/platgovnetsuite/change_management/multi_stream_new_policy.webp)

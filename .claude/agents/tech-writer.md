@@ -1,7 +1,7 @@
 ---
 name: tech-writer
-description: "Autonomous end-to-end documentation agent: drafting from specs, editing for style and clarity, or incorporating external documents. Dispatch with opus for drafting; sonnet for style edits and document incorporation."
-model: opus
+description: "Autonomous end-to-end documentation agent: drafting from specs, editing for style and clarity, or incorporating external documents."
+model: sonnet
 color: purple
 memory: project
 ---

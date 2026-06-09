@@ -21,29 +21,28 @@ Follow the instructions to enable SIEM notifications.
 - Enabled – Sends threat configuration settings to the configured SIEM service if set to ON. The
   default is ON.
 - Server – The IP address of the SIEM server. This field is blank and turned off by default.
-- Type – Select a protocol type from the drop-down list to use when sending a Syslog message to a
+- Type – Select a protocol type from the dropdown to use when sending a Syslog message to a
   SIEM application:
     - UDP
     - TCP
 - Port – The port of the SIEM server.
-- Template – Select the desired template from the drop-down list
+- Template – Select the template you want from the dropdown
 
-    - LEEF template – Threat data is sent to the SIEM application in the standard LEEF format
-    - CEF template – Threat data is sent to the SIEM application in the standard CEF format
-    - Custom template – Threat data is sent to the SIEM application in a customized format
+    - LEEF template – Sends threat data to the SIEM application in the standard Log Event Extended Format (LEEF) format
+    - CEF template – Sends threat data to the SIEM application in the standard Common Event Format (CEF) format
+    - Custom template – Sends threat data to the SIEM application in a customized format
 
         :::note
         Only one custom template can be implemented.
         :::
 
 
-    - Notification template – Threat data is sent to the SIEM application in a basic notification
+    - Notification template – Sends threat data to the SIEM application in a basic notification
       format:
 
     `%SYSLOG_DATE%|%HOST%|%COMPANY%|%PRODUCT%|%PRODUCT_VERSION%|%MESSAGE_TYPE%|%MESSAGE%`
 
-- Template Format – Selecting Custom template from the Template drop-down list enables this box. It
-  displays the variables in Threat Manager that can be used to create a custom SIEM template:
+- Template Format – Selecting Custom template from the Template dropdown enables this box. Use it to create a custom SIEM template with the variables available in Threat Manager:
 
   All template variables are case-insensitive and wrapped in `%` delimiters (e.g., `%VARIABLE_NAME%`). The template replaces unresolved variables with an empty string.
 

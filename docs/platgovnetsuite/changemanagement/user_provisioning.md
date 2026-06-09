@@ -12,7 +12,7 @@ remove access, or grant temporary access. You can specify the access by **Affect
 **Affected Roles**. The existing approval process is used.
 
 :::note
-The **administrator** role cannot be automatically provisioned.
+The **administrator** role can't be automatically provisioned.
 :::
 
 The new form is accessed from **Strongpoint** > **Change Management Tools** > **User Provisioning
@@ -58,9 +58,7 @@ custom form.
 6. **Save** the change request.
 7. Click **Pending Approval** in the status bar.
 
-Once the request is approved, the roles are automatically added if you enabled
-**Auto-Provisioning**. The change request status is shown as **Complete**. Otherwise, once the
-request is approved, you need to manually add the roles and update the status.
+After the request is approved, the roles are automatically added if **Auto-Provisioning** is enabled. The change request status shows as **Complete**. Otherwise, after the request is approved, manually add the roles and update the status.
 
 A compliant Change Log is generated:
 
@@ -73,8 +71,7 @@ The **Values** tab shows the details of the role changes.
 1. Open **Strongpoint** > **Change Management Tools** > **User Provisioning Change Request**.
 2. Enter a descriptive **Name** and **Change Overview**.
 3. Select **Role Reductions** for **Access type**. The Offboarding detail fields are now visible.
-4. Check **Inactivate After Removal** if the affected employees should be inactivated. This should
-   only be checked if you are removing all of the employee's roles.
+4. Check **Inactivate After Removal** if the affected employees should be inactivated. Only check this if you are removing all of the employee's roles.
 5. Enter one or more **Affected Employees**. The **Get Roles for Affected Employees** button is now
    visible.
 
@@ -91,9 +88,7 @@ The **Values** tab shows the details of the role changes.
 10. **Save** the change request.
 11. Click **Pending Approval** in the status bar.
 
-Once the request is approved, the roles are automatically removed at the specified time if you
-enabled **Auto-Role Removal**. The change request status is shown as **Complete**. Otherwise, once
-the request is approved, you need to manually remove the roles and update the status.
+After the request is approved, the roles are automatically removed at the specified time if **Auto-Role Removal** is enabled. The change request status shows as **Complete**. Otherwise, after the request is approved, manually remove the roles and update the status.
 
 A compliant Change Log is generated. The **Values** tab shows the details of the role changes.
 

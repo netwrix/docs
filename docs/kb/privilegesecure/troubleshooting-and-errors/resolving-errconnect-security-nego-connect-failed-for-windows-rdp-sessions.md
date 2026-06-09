@@ -84,7 +84,7 @@ The following links provide additional information about **SecurityLayer** and *
 
 ## Additional Troubleshooting
 
-If the above configuration on the remote computer does not resolve the issue, apply the following configuration change to Netwrix Privilege Secure.  
+If the preceding configuration on the remote computer does not resolve the issue, apply the following configuration change to Netwrix Privilege Secure.  
 
 1. Open the `sbpam_rdp.json` proxy configuration file in a text editor: `C:\ProgramData\Stealthbits\PAM\ProxyService\sbpam_rdp.json`  
 2. Edit the file to ensure that the following setting is configured. Note: if the file already exists, ensure that all lines in the file are properly comma-separated after editing the file.
@@ -102,4 +102,4 @@ sbpam-proxy.exe cfg -c sbpam_rdp
 ```
 
 Notes:
-- Preserve file paths and executable names exactly as shown above when you edit or run commands.
+- Preserve file paths and executable names exactly as shown earlier when you edit or run commands.

@@ -2,6 +2,8 @@
 title: "Knowledge Base"
 description: "Knowledge Base"
 sidebar_position: 10
+pagination_prev: null
+pagination_next: null
 ---
 
 # Knowledge Base
@@ -17,11 +19,11 @@ See the following Knowledge Base articles for all things installation and upkeep
 
 ## Method SCCM: Initial Install (or other systems)
 
-- [How do I deploy the PolicyPak CSE via SCCM (or other systems management system) ?](/docs/policypak/installation/knowledgebase/sccminitialinstall/sccm.md)
+- [How do I deploy the PolicyPak CSE via SCCM (or other systems management system) ?](/docs/policypak/installation/knowledgebase/sccm.md)
 
 ## Method PDQ Deploy (recommended)
 
-- [Managing Group Policy using PolicyPak and PDQ Deploy](/docs/policypak/installation/knowledgebase/methodpdqdeploy/pdqdeploy.md)
+- [Managing Group Policy using PolicyPak and PDQ Deploy](/docs/policypak/installation/knowledgebase/pdqdeploy.md)
 
 ## AntiVirus and other System Software
 
@@ -67,7 +69,7 @@ See the following Knowledge Base articles for all things installation and upkeep
 
 ## Backup and Restore
 
-- [PolicyPak details with GPO contents appear deleted. How can I restore them?](/docs/policypak/installation/knowledgebase/backupandrestore/restoredetails.md)
+- [PolicyPak details with GPO contents appear deleted. How can I restore them?](/docs/policypak/installation/knowledgebase/restoredetails.md)
 
 ## Uninstallation or Rollback of PolicyPak
 

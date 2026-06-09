@@ -8,11 +8,9 @@ sidebar_position: 50
 
 Netwrix 1Secure relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
-and on the Netwrix 1Secure console computer. It is recommended to configure the IT infrastructure
-for automatic monitoring; however, you can also configure it manually if needed. You may also need
-to enable certain built-in Windows services, etc.
+and on the Netwrix 1Secure console computer. Configure the IT infrastructure for automatic monitoring; you can also configure it manually if needed. You may also need to enable certain built-in Windows services.
 
-Your current audit settings will be checked on each data collection and adjusted if necessary.
+1Secure checks your current audit settings on each data collection and adjusts them if necessary.
 Proper audit configuration is required to ensure audit data integrity, otherwise your change reports
 may contain warnings, errors, or incomplete audit data.
 

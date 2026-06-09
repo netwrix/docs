@@ -20,23 +20,23 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English (United States) language installation
 
 **Additional Server Requirements**
 
 The following are additional requirements for the database server:
 
-- .NET 8.0.11
+- .NET 8.0.11
 - .NET Desktop Runtime 8.0.11
 - ASP.NET Core 8.0.11
 - VC++ redist v14.28.29914
 
 **Additional Considerations**
 
-The following considerations must be accommodated for:
+Address the following considerations:
 
 - When running antivirus scans against the PostgreSQL v14 database, the PostgreSQL data folder must
-  be excluded from the scans in order to prevent database complications.
+  be excluded from the scans to prevent database complications.
 - For performance reasons, disable Windows File Indexing on the drive containing the Threat Manager
   database.
 - Disk Defragmentation jobs should never be performed on the drive containing Threat Manager

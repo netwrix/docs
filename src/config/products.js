@@ -115,9 +115,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '10.0',
+        label: '10.0',
+        isLatest: true,
+        sidebarFile: './sidebars/activitymonitor/10.0.js',
+      },
+      {
         version: '9.0',
         label: '9.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/activitymonitor/9.0.js',
       },
       {
@@ -133,7 +139,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/activitymonitor/7.1.js',
       },
     ],
-    defaultVersion: '9.0',
+    defaultVersion: '10.0',
   },
   {
     id: 'auditor',
@@ -173,10 +179,18 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '8.2',
+        label: '8.2',
+        isLatest: true,
+        sidebarFile: './sidebars/changetracker/8.2.js',
+        apiSidebarPath: './docs/changetracker/8.2/api/reference/sidebar.ts',
+      },
+      {
         version: '8.1',
         label: '8.1',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/changetracker/8.1.js',
+        apiSidebarPath: './docs/changetracker/8.1/api/reference/sidebar.ts',
       },
       {
         version: '8.0',
@@ -185,7 +199,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/changetracker/8.0.js',
       },
     ],
-    defaultVersion: '8.1',
+    defaultVersion: '8.2',
   },
   {
     id: 'customer',
@@ -344,9 +358,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '11.2',
+        label: '11.2',
+        isLatest: true,
+        sidebarFile: './sidebars/passwordpolicyenforcer/11.2.js',
+      },
+      {
         version: '11.1',
         label: '11.1',
-        isLatest: true,
+        isLatest: false,
+        hidden: true,
         sidebarFile: './sidebars/passwordpolicyenforcer/11.1.js',
       },
       {
@@ -364,7 +385,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/passwordpolicyenforcer/10.2.js',
       },
     ],
-    defaultVersion: '11.1',
+    defaultVersion: '11.2',
   },
   {
     id: 'passwordreset',
@@ -511,9 +532,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '26.03',
+        label: '26.03',
+        isLatest: true,
+        sidebarFile: './sidebars/privilegesecure/26.03.js',
+      },
+      {
         version: '25.12',
         label: '25.12',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/privilegesecure/25.12.js',
       },
       {
@@ -522,14 +549,8 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/privilegesecure/4.2.js',
       },
-      {
-        version: '4.1',
-        label: '4.1',
-        isLatest: false,
-        sidebarFile: './sidebars/privilegesecure/4.1.js',
-      },
     ],
-    defaultVersion: '25.12',
+    defaultVersion: '26.03',
   },
   {
     id: 'privilegesecurediscovery',
@@ -606,19 +627,25 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '3.2',
+        label: '3.2',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.2.js',
+      },
+      {
+        version: '3.1',
+        label: '3.1',
+        isLatest: false,
+        sidebarFile: './sidebars/threatmanager/3.1.js',
+      },
+      {
         version: '3.0',
         label: '3.0',
         isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.0.js',
       },
-      {
-        version: '3.1',
-        label: '3.1',
-        isLatest: true,
-        sidebarFile: './sidebars/threatmanager/3.1.js',
-      },
     ],
-    defaultVersion: '3.1',
+    defaultVersion: '3.2',
   },
   {
     id: 'threatprevention',
@@ -760,6 +787,25 @@ export function getDefaultVersion(product) {
 }
 
 /**
+ * Build a map of product ID → latest URL-version string.
+ * Used by the evergreen-links redirect config to generate version-less aliases.
+ * Skips single-version 'current' products (their URLs are already version-less).
+ */
+export function getLatestVersionUrlMap() {
+  const map = {};
+  for (const product of PRODUCTS) {
+    if (product.versions.length === 1 && product.versions[0].version === 'current') continue;
+    const latest = getDefaultVersion(product);
+    if (!latest) continue;
+    const urlVersion = latest.customRoutePath
+      ? latest.customRoutePath.split('/').pop()
+      : versionToUrl(latest.version);
+    map[product.id] = urlVersion;
+  }
+  return map;
+}
+
+/**
  * Create product map for route matching (used by ProductMetaTags)
  */
 export function createProductMap() {
@@ -796,10 +842,31 @@ export function hasKBContent(productId) {
   return kbProducts.includes(productId);
 }
 
+function camelToTitleCase(str) {
+  return str.replace(/([A-Z])/g, ' $1').replace(/^./, s => s.toUpperCase()).trim();
+}
+
+function transformApiSidebarLabels(items) {
+  return items.map(item => {
+    if (item.type === 'category') {
+      return {
+        ...item,
+        label: camelToTitleCase(item.label),
+        items: item.items ? transformApiSidebarLabels(item.items) : item.items,
+      };
+    }
+    if (item.type === 'doc' && item.label) {
+      return { ...item, label: item.label.replace(/\.$/, '') };
+    }
+    return item;
+  });
+}
+
+
 /**
  * Generate all Docusaurus plugin configurations
  */
-export function generateDocusaurusPlugins() {
+export function generateDocusaurusPlugins({ apiSidebars = {} } = {}) {
   const plugins = [];
 
   // Filter products if DOCS_PRODUCT environment variable is set
@@ -816,6 +883,13 @@ export function generateDocusaurusPlugins() {
       const routeBasePath = version.customRoutePath || generateRouteBasePath(product.path, version.version);
       const docPath = version.customDocPath || generateDocPath(product.path, version.version);
 
+      // Look up the pre-loaded API sidebar items for this version (loaded by docusaurus.config.js).
+      // Transform camelCase tag-category labels (e.g. "agentProcesses") → Title Case ("Agent Processes").
+      const apiSidebarItems = version.apiSidebarPath
+        ? transformApiSidebarLabels(apiSidebars[version.apiSidebarPath] || [])
+            .filter(item => !(item.type === 'doc' && item.id?.endsWith('/changetracker-hub')))
+        : [];
+
       // Build plugin configuration
       const pluginConfig = {
         id: pluginId,
@@ -824,23 +898,44 @@ export function generateDocusaurusPlugins() {
         sidebarPath: version.sidebarFile,
         editUrl: 'https://github.com/netwrix/docs/tree/main/',
         exclude: ['**/CLAUDE.md', '**/docs-staging/**', '**/_partials/**'],
+        // Use ApiItem as the doc renderer when this plugin contains API reference docs.
+        // ApiItem sets up the Redux Provider required by the API explorer components.
+        // It falls back to normal DocItem layout for pages without `api` frontmatter.
+        ...(version.apiSidebarPath && { docItemComponent: '@theme/ApiItem' }),
         sidebarItemsGenerator: async function({ defaultSidebarItemsGenerator, ...args }) {
           const sidebarItems = await defaultSidebarItemsGenerator(args);
-          // Recursively filter out items from _partials folder
+
+          // Replace the autogenerated flat listing for API reference directories
+          // with the structured sidebar produced by docusaurus-plugin-openapi-docs.
+          // The directory is marked via _category_.json customProps.isGeneratedApiSidebar.
+          function injectApiSidebar(items) {
+            return items.map(item => {
+              if (item.customProps?.isGeneratedApiSidebar && apiSidebarItems.length > 0) {
+                return { ...item, items: apiSidebarItems };
+              }
+              if (item.items) {
+                return { ...item, items: injectApiSidebar(item.items) };
+              }
+              return item;
+            });
+          }
+
           function filterPartials(items) {
             return items.filter(item => {
-              // Filter out if label or id contains _partials
               if (item.label?.includes('_partials') || item.id?.includes('_partials')) {
                 return false;
               }
-              // Recursively filter nested items
               if (item.items) {
                 item.items = filterPartials(item.items);
               }
               return true;
             });
           }
-          return filterPartials(sidebarItems);
+
+          const processed = apiSidebarItems.length > 0
+            ? injectApiSidebar(sidebarItems)
+            : sidebarItems;
+          return filterPartials(processed);
         },
         versions: {
           current: {

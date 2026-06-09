@@ -6,27 +6,21 @@ sidebar_position: 80
 
 # Network Traffic Compression
 
-To reduce network traffic in distributed deployments, multi-site networks and other environments
-with remote locations that have limited bandwidth, it is recommended to use network traffic
-compression. For that purpose, special Netwrix utilities should be installed in the audited
-environment. These utilities will run on the target computers, collect, pre-filter data and send it
-to Netwrix Cloud Agent in a highly compressed format.
+To reduce network traffic in distributed deployments, multi-site networks, and other environments
+with remote locations that have limited bandwidth, use network traffic compression. Install special Netwrix utilities in the audited environment for this purpose. These utilities run on the target computers, collect, and pre-filter data, and send it to Netwrix Cloud Agent in a highly compressed format.
 
-With network traffic compression, data from the target machines is collected simultaneously,
-providing for network load balance and minimizing data collection time. (Unlike that, without
-network traffic compression the target machines will be processed sequentially, i.e. one at a time.)
-So, network traffic compression helps to increase scalability and optimize network traffic.
+With network traffic compression, the product collects data from target machines simultaneously, balancing network load and reducing data collection time. Without network traffic compression, the product processes target machines sequentially, one at a time. Network traffic compression increases scalability and optimizes network traffic.
 
 :::warning
-If Netwrix Auditor and Netwrix 1Secure audit the same domain, make sure that the
+If Netwrix Auditor and Netwrix 1Secure audit the same domain, ensure that the
 network traffic compression service is enabled for only one of the products or neither product for
-any of the audited services. It cannot be enabled for both products.
+any of the audited services. It can't be enabled for both products.
 :::
 
 
 Its key capabilities are as follows:
 
-- Allows Netwrix 1Secure to collect detailed metrics for the servers, log files, hardware and
+- Allows Netwrix 1Secure to collect detailed metrics for the servers, log files, hardware, and
   individual processes
 - Collects audit data with no recognizable load on the server
 - Communicates with Netwrix Cloud Agent at predefined intervals, relaying data back to a central

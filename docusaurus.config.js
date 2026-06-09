@@ -4,8 +4,34 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
+import { readFileSync, existsSync } from 'fs';
+import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap } from './src/config/products.js';
+
+// Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
+// Returns [] if the file doesn't exist yet (before gen-api-docs has run).
+// Runs in Node.js only (docusaurus.config.js is never bundled for the browser).
+function loadApiSidebarItems(sidebarTsPath) {
+  if (!existsSync(sidebarTsPath)) return [];
+  let content = readFileSync(sidebarTsPath, 'utf8');
+  content = content
+    .replace(/^import type[^\n]*\n/m, '')
+    .replace(/const sidebar:\s+\w+\s*=\s*\{/, 'const sidebar = {')
+    .replace(/export default sidebar\.apisidebar;/, 'return sidebar.apisidebar;');
+  return (new Function(content))();
+}
+
+const apiSidebars = {};
+PRODUCTS.forEach(product => {
+  product.versions.forEach(version => {
+    if (version.apiSidebarPath) {
+      apiSidebars[version.apiSidebarPath] = loadApiSidebarItems(resolve(version.apiSidebarPath));
+    }
+  });
+});
+
+const latestVersionMap = getLatestVersionUrlMap();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -28,8 +54,23 @@ const config = {
   // Set Mermaid
   markdown: {
     mermaid: true,
+    // Strip trailing periods from title/sidebar_label in generated API operation pages.
+    // The OpenAPI summaries often end with a period; Docusaurus uses title as the
+    // prev/next pagination label, so this cleans up navigation text site-wide.
+    parseFrontMatter: async (params) => {
+      const result = await params.defaultParseFrontMatter(params);
+      if (params.filePath.includes('/api/reference/')) {
+        if (result.frontMatter.title) {
+          result.frontMatter.title = result.frontMatter.title.replace(/\.$/, '');
+        }
+        if (result.frontMatter.sidebar_label) {
+          result.frontMatter.sidebar_label = result.frontMatter.sidebar_label.replace(/\.$/, '');
+        }
+      }
+      return result;
+    },
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ['@docusaurus/theme-mermaid', 'docusaurus-theme-openapi-docs'],
 
   // Performance optimizations with Docusaurus Faster
   future: {
@@ -39,13 +80,12 @@ const config = {
       swcHtmlMinimizer: true,
       lightningCssMinimizer: true,
       rspackBundler: true,
-      rspackPersistentCache: true, // 2-5x faster rebuilds
+      rspackPersistentCache: true,
       mdxCrossCompilerCache: true,
-      ssgWorkerThreads: false, // 2x faster static generation
+      ssgWorkerThreads: false,
     },
     v4: {
-      removeLegacyPostBuildHeadAttribute: true, // Required for worker threads
-      // useCssCascadeLayers: true, // Temporarily disabled - may cause style conflicts
+      removeLegacyPostBuildHeadAttribute: true,
     },
   },
 
@@ -114,10 +154,21 @@ const config = {
             to: `/${targetPath}`,
           };
         }),
+        createRedirects(existingPath) {
+          for (const [productId, latestUrlVersion] of Object.entries(latestVersionMap)) {
+            const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;
+            if (existingPath.startsWith(versionedPrefix)) {
+              const rest = existingPath.slice(versionedPrefix.length).replace(/\/$/, '');
+              if (!rest) return undefined;
+              return [`/docs/${productId}/${rest}`];
+            }
+          }
+          return undefined;
+        },
       },
     ],
     // Generate all product documentation plugins from centralized configuration
-    ...generateDocusaurusPlugins().map(([pluginName, config]) => [
+    ...generateDocusaurusPlugins({ apiSidebars }).map(([pluginName, config]) => [
       pluginName,
       {
         ...config,
@@ -126,6 +177,50 @@ const config = {
           : config.sidebarPath,
       },
     ]),
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi',
+        docsPluginId: 'changetracker8_1',
+        config: {
+          'changetracker-hub': {
+            specPath: 'static/openapi/changetracker-hub-8.1.yaml',
+            outputDir: 'docs/changetracker/8.1/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/changetracker-hub-8.1.yaml',
+            version: '8.1',
+            label: 'ChangeTracker Hub 8.1 API',
+            baseUrl: '/docs/changetracker/8_1/api/reference/',
+          },
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi-8-2',
+        docsPluginId: 'changetracker8_2',
+        config: {
+          'changetracker-hub-8-2': {
+            specPath: 'static/openapi/changetracker-hub-8.2.yaml',
+            outputDir: 'docs/changetracker/8.2/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/changetracker-hub-8.2.yaml',
+            version: '8.2',
+            label: 'ChangeTracker Hub 8.2 API',
+            baseUrl: '/docs/changetracker/8_2/api/reference/',
+          },
+        },
+      },
+    ],
   ],
 
   themeConfig:
@@ -147,7 +242,7 @@ const config = {
       docs: {
         sidebar: {
           hideable: true,
-          autoCollapseCategories: false,
+          autoCollapseCategories: true,
         },
       },
       algolia: {

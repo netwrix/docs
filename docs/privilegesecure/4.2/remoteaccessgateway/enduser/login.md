@@ -40,7 +40,7 @@ enter. Instead there's just a single button to login.
 
 - Clicking the authentication connector redirects the user to the IdP login screen, which logs the user in (with whatever MFA is set up in the IdP) and then reverts the user back to the Privilege Secure dashboard once authenticated. Steps 4-7 are skipped when using an IdP login.
 
-**Step 4 –** Click Login to proceed.
+**Step 4 –** Click **Log in** to proceed.
 
 **Step 5 –** A QR code displays to register with an authenticator application.
 

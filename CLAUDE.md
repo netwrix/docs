@@ -54,7 +54,7 @@ The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set aut
 
 ### Knowledge Base
 
-`docs/kb/` is the canonical source for Knowledge Base (KB) articles. The `scripts/copy-kb-to-versions.mjs` script copies KB content into versioned product folders at build time (runs as `prestart`/`prebuild`). Never manually copy KB files — they're gitignored in versioned folders. Use `kb_allowlist.json` to control which products get KB content.
+`docs/kb/` is the canonical source for Knowledge Base (KB) articles. The `scripts/copy-kb-to-versions.mjs` script copies KB content into versioned product folders at build time (runs as `prestart`/`prebuild`). Never manually copy KB files — they're gitignored in versioned folders. `kb_allowlist.json` is a generated artifact (written by the copy script) that records which products received KB content; do not edit it manually.
 
 ### Static assets
 

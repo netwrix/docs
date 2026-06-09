@@ -10,6 +10,10 @@ sidebar_position: 112
 
 System Permission Tracking monitors and detects changes in System Permissions across Permission Sets and Profiles in your Salesforce environment. Each scan compares the selected permissions against previous snapshots and generates a Change Log for any detected differences. When a permission changes—either because a Permission Set/Profile is modified or because a user gains or loses an assignment—the system records the impact at the user level, creating an individual Change Log entry for every affected user.
 
+### Tracked permissions scope
+
+System Permission Tracking only monitors permissions listed under the **System** section of the Salesforce **System Permissions** page (**Setup** > **Users** > **Profiles** > select a profile > **System Permissions**). System Permission Tracking excludes all permissions listed under the **Users** section from change detection and the generated Change Log.
+
 ## Accessing System Permission Tracking
 
 Navigate to: **Tools** > **Access** > **System Permission Tracking**
@@ -39,23 +43,23 @@ Automates the scanning process. You can choose between three scheduling options�
 
 ### Email Notifications
 
-You can enable Email Notifications to receive reports showing System Permission changes. Select a notification frequency and define the list of recipients. Users do not need to manually subscribe—the system handles this automatically. Recipients must have the 'Netwrix Grant Permissions' Permission Set assigned.
+You can enable Email Notifications to receive reports showing System Permission changes. Select a notification frequency and define the list of recipients. The system automatically handles subscriptions. Recipients must have the 'Netwrix Grant Permissions' Permission Set assigned.
 
 ![Enable Notifications](/images/platgovsalesforce/sys_perm_tracking/Enable_Notifications.webp)
 
 #### Email Frequency & Timing
 
-Choose whether the report should be sent daily, weekly, or monthly, and configure the corresponding delivery time or date.
+Choose whether to send the report daily, weekly, or monthly, and configure the corresponding delivery time or date.
 
 #### Recipients
 
-Add users who will receive notification emails. Recipients must have the required Permission Set to access the internal components used by this feature. After saving, the recipients are automatically subscribed to the System Permission Change Log report.
+Add users to receive notification emails. Recipients must have the required Permission Set to access the internal components used by this feature. After you save, the system automatically subscribes the recipients to the System Permission Change Log report.
 
 ![Weekly Report Example](/images/platgovsalesforce/sys_perm_tracking/Report_Weekly.webp)
 
 ### In-App Notifications
 
-If In-App Notifications are enabled, each scan creates a record in the Downloaded Files component on the Netwrix Dashboard. This provides links to reports showing all detected System Permission changes. An Export Attachment record is also created, but users typically do not need to access it directly.
+If In-App Notifications are enabled, each scan creates a record in the Downloaded Files component on the Netwrix Dashboard. This provides links to reports showing all detected System Permission changes. The system also creates an Export Attachment record, but users typically don't need to access it directly.
 
 **Example of a System Permission Change in Downloaded Files:**
 
@@ -85,7 +89,7 @@ Allows searching and selecting System Permissions not included in the recommende
 
 ## Selected Permissions
 
-Displays all System Permissions currently selected for tracking, whether selected from Recommended Permissions or All Permissions. You can remove all tracked permissions or selectively remove only specific ones.
+Displays all System Permissions selected for tracking, whether selected from Recommended Permissions or All Permissions. You can remove all tracked permissions or selectively remove only specific ones.
 
 ![Selected Permissions](/images/platgovsalesforce/sys_perm_tracking/Selected_Permissions.webp)
 
@@ -115,9 +119,9 @@ The Change Log provides a detailed record of each detected change. Key fields in
 
 ### Exporting Change Logs
 
-Change logs can be exported for further analysis or compliance reporting:
+Export change logs for further analysis or compliance reporting:
 
-1. Select the desired change log entries
+1. Select the change log entries you want
 2. Click **Export** to download the data
 3. The export includes all relevant details about the permission changes
 
@@ -134,9 +138,10 @@ Change logs can be exported for further analysis or compliance reporting:
 
 ## Limitations
 
+- Tracking is limited to the **System** section of the Salesforce **System Permissions** page; permissions in the **Users** section are excluded (see [Tracked permissions scope](#tracked-permissions-scope))
 - Tracking too many permissions can increase scan times
 - Some Salesforce permissions may behave differently depending on org configuration
-- Historical data is limited to the period since tracking was enabled
+- Historical data covers only the period since you enabled tracking
 - Change detection requires at least two scans to establish a baseline
 
 ## Troubleshooting
@@ -154,23 +159,23 @@ Change logs can be exported for further analysis or compliance reporting:
 
 ### Email Notifications Not Being Received
 
-**Issue**: Configured recipients are not receiving email notifications
+**Issue**: Configured recipients aren't receiving email notifications
 
 **Solutions**:
 - Ensure Email Notifications are enabled
-- Verify at least one valid recipient is added
+- Verify you have added at least one valid recipient
 - Check that recipients have the required Permission Set ('Netwrix Grant Permissions')
-- Make sure a valid schedule is configured
+- Ensure you have configured a valid schedule
 - Verify email addresses are correct in Salesforce
 - Check spam/junk folders for notification emails
 
 ### Permissions Not Appearing in All Permissions
 
-**Issue**: Expected permissions are not showing in the All Permissions list
+**Issue**: Expected permissions aren't showing in the All Permissions list
 
 **Solutions**:
 - Clear any applied search filters
-- Permissions already marked as selected will not appear in search results
+- Permissions already marked as selected don't appear in search results
 - Use **Refresh** to reload the list
 - Verify the permission exists in your Salesforce org
 - Check if the permission is already in the Recommended Permissions list
@@ -191,11 +196,11 @@ Change logs can be exported for further analysis or compliance reporting:
 **Issue**: Change logs contain entries that don't match expected changes
 
 **Solutions**:
-- Verify the baseline scan was completed successfully
+- Verify the baseline scan completed successfully
 - Check for bulk permission changes or user assignments
 - Review the time range of the changes
 - Ensure no other administrators made concurrent changes
-- Validate that the tracked permissions are correctly configured
+- Validate that you have correctly configured the tracked permissions
 
 ## Related Topics
 

@@ -45,7 +45,7 @@ jobs:
 
       - name: Checkout PR branch
         if: steps.bot-check.outputs.skip != 'true'
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           token: ${{ secrets.VALE_TOKEN }}
@@ -74,24 +74,6 @@ jobs:
             echo "count=$(echo "$CHANGED_MD_FILES" | wc -l | tr -d ' ')" >> "$GITHUB_OUTPUT"
             echo "$CHANGED_MD_FILES" > /tmp/changed-files.txt
           fi
-
-      - name: Check anchor links
-        id: anchor-check
-        if: steps.changed-files.outputs.count > 0
-        continue-on-error: true
-        run: |
-          chmod +x scripts/check-anchors.sh
-          touch /tmp/anchor-errors.txt
-          BROKEN=0
-          mapfile -t FILES < /tmp/changed-files.txt
-          ./scripts/check-anchors.sh "${FILES[@]}" > /tmp/anchor-check-output.txt 2>&1 || BROKEN=1
-          if [ "$BROKEN" -eq 1 ]; then
-            grep '^\s' /tmp/anchor-check-output.txt > /tmp/anchor-errors.txt || true
-            BROKEN=$(wc -l < /tmp/anchor-errors.txt | tr -d ' ')
-            echo "Broken anchors found:"
-            cat /tmp/anchor-check-output.txt
-          fi
-          echo "broken=$BROKEN" >> "$GITHUB_OUTPUT"
 
       - name: Install Vale
         if: steps.changed-files.outputs.count > 0
@@ -135,28 +117,6 @@ jobs:
           echo "fixed=$PHASE1_TOTAL" >> "$GITHUB_OUTPUT"
           echo "Phase 1 fixed $PHASE1_TOTAL issue(s)"
 
-      - name: Commit Phase 1 fixes
-        id: phase1-commit
-        if: steps.phase1.outputs.fixed > 0
-        run: |
-          if git diff --quiet; then
-            echo "committed=false" >> "$GITHUB_OUTPUT"
-          else
-            git add -A docs/
-            git commit -m "fix(vale): auto-fix substitutions and removals"
-            echo "committed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Update heading anchors (Phase 1)
-        if: steps.phase1-commit.outputs.committed == 'true'
-        run: |
-          RESULT=$(bash scripts/vale-autofix.sh --anchors-only 2>&1 || true)
-          echo "$RESULT"
-          if ! git diff --quiet; then
-            git add -A docs/
-            git commit -m "fix(vale): update anchor links for changed headings"
-          fi
-
       - name: Re-run Vale for remaining violations
         id: vale-remaining
         if: steps.vale-initial.outputs.total > 0
@@ -184,7 +144,7 @@ jobs:
         id: phase2
         if: steps.vale-remaining.outputs.remaining > 0
         continue-on-error: true
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@bbfaf8e1ffe3e688f7ab65ceee78de241e24a238 # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -207,25 +167,7 @@ jobs:
             2. Apply a fix that resolves the Vale rule while preserving the author's meaning
             3. If you are NOT confident in a fix (ambiguous context, multiple valid interpretations, fix would change meaning) SKIP it
 
-            HEADING ANCHOR UPDATES:
-            When you modify a heading line (any line starting with #), you MUST update all anchor links that reference the old heading.
-
-            1. Before editing a heading, record the original heading text
-            2. Compute the old anchor slug:
-               - If the heading has a {#custom-id} suffix, use custom-id as the slug
-               - Otherwise: strip the # prefix and whitespace, lowercase, remove everything except [a-z0-9 -], replace spaces with hyphens, collapse consecutive hyphens, trim leading/trailing hyphens
-               - Examples: "## Do Not Click" → do-not-click, "## Step 1: Install" → step-1-install, "## Setup {#setup}" → setup
-            3. After editing, compute the new anchor slug the same way
-            4. If the slug changed, determine the product/version folder from the file path:
-               - Multi-version: docs/<product>/<version>/ (e.g., docs/accessanalyzer/12.0/)
-               - Single-version: docs/<product>/ (e.g., docs/threatprevention/)
-               - The folder is the first 2 or 3 segments of the path after docs/. If the second segment is a version number (digits/dots), include it.
-            5. Search ALL .md files in that folder (not just PR-changed files) for link patterns containing #old-slug:
-               - ](#old-slug) — same-page links
-               - ](filename#old-slug) — relative links
-               - ](path/to/filename#old-slug) — deeper relative links
-            6. Replace #old-slug with #new-slug in every match
-            7. Include each anchor update in the fixed array of your summary JSON, using the same check value as the heading fix that caused it, with action like "updated anchor link from #old-slug to #new-slug"
+            Note: if your fixes change any heading text, do not update anchor links — the workflow repairs all anchor links automatically after all fixes are complete.
 
             After fixing, write a JSON summary to /tmp/phase2-summary.json with this structure:
             ```json
@@ -239,20 +181,14 @@ jobs:
             }
             ```
 
-            After writing the summary, stage and commit your changes:
-            ```bash
-            git add -A docs/
-            git commit -m "fix(vale): auto-fix rewrites (AI-assisted)"
-            ```
-
-            IMPORTANT: Write the summary JSON file BEFORE committing. Do NOT run git push — the workflow handles pushing. Do not post any PR comments.
+            IMPORTANT: Write the summary JSON file, then stop. Do NOT run any git commands — the workflow handles staging, committing, and pushing. Do not post any PR comments.
           claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
 
       - name: Phase 3 — Dale fixes
         id: phase3
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
         continue-on-error: true
-        uses: anthropics/claude-code-action@v1
+        uses: anthropics/claude-code-action@bbfaf8e1ffe3e688f7ab65ceee78de241e24a238 # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -274,25 +210,7 @@ jobs:
 
             Step 4: Fix each violation in-place, preserving the author's meaning. If you are NOT confident in a fix (ambiguous context, multiple valid interpretations, fix would change meaning), SKIP it.
 
-            HEADING ANCHOR UPDATES:
-            When you modify a heading line (any line starting with #), you MUST update all anchor links that reference the old heading.
-
-            1. Before editing a heading, record the original heading text
-            2. Compute the old anchor slug:
-               - If the heading has a {#custom-id} suffix, use custom-id as the slug
-               - Otherwise: strip the # prefix and whitespace, lowercase, remove everything except [a-z0-9 -], replace spaces with hyphens, collapse consecutive hyphens, trim leading/trailing hyphens
-               - Examples: "## Do Not Click" → do-not-click, "## Step 1: Install" → step-1-install, "## Setup {#setup}" → setup
-            3. After editing, compute the new anchor slug the same way
-            4. If the slug changed, determine the product/version folder from the file path:
-               - Multi-version: docs/<product>/<version>/ (e.g., docs/accessanalyzer/12.0/)
-               - Single-version: docs/<product>/ (e.g., docs/threatprevention/)
-               - The folder is the first 2 or 3 segments of the path after docs/. If the second segment is a version number (digits/dots), include it.
-            5. Search ALL .md files in that folder (not just PR-changed files) for link patterns containing #old-slug:
-               - ](#old-slug) — same-page links
-               - ](filename#old-slug) — relative links
-               - ](path/to/filename#old-slug) — deeper relative links
-            6. Replace #old-slug with #new-slug in every match
-            7. Include each anchor update in the fixed array of your summary JSON, using the same rule value as the heading fix that caused it, with action like "updated anchor link from #old-slug to #new-slug"
+            Note: if your fixes change any heading text, do not update anchor links — the workflow repairs all anchor links automatically after all fixes are complete.
 
             Step 5: Write a JSON summary to /tmp/dale-summary.json with this structure:
             ```json
@@ -307,14 +225,43 @@ jobs:
             ```
             If no issues found, write: {"fixed": [], "skipped": []}
 
-            Step 6: Stage and commit your changes:
-            ```bash
-            git add -A docs/
-            git commit -m "fix(dale): auto-fix documentation issues (AI-assisted)"
-            ```
+            Step 6: Write the summary JSON file (see Step 5 format above), then stop.
 
-            IMPORTANT: Write the summary JSON file BEFORE committing. Do NOT run git push — the workflow handles pushing. Do not post any PR comments.
+            IMPORTANT: Do NOT run any git commands — the workflow handles staging, committing, and pushing. Do not post any PR comments.
           claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
+
+      - name: Fix heading anchors
+        if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
+        run: |
+          bash scripts/vale-autofix.sh --anchors-only origin/dev /tmp/changed-files.txt
+
+      - name: Check anchor links
+        id: anchor-check
+        if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
+        continue-on-error: true
+        run: |
+          chmod +x scripts/check-anchors.sh
+          touch /tmp/anchor-errors.txt
+          BROKEN=0
+          mapfile -t FILES < /tmp/changed-files.txt
+          ./scripts/check-anchors.sh "${FILES[@]}" > /tmp/anchor-check-output.txt 2>&1 || BROKEN=1
+          if [ "$BROKEN" -eq 1 ]; then
+            grep '^\s' /tmp/anchor-check-output.txt > /tmp/anchor-errors.txt || true
+            BROKEN=$(grep -oE 'Found [0-9]+' /tmp/anchor-check-output.txt | grep -oE '[0-9]+' | tail -1 || echo "0")
+            echo "Broken anchors found:"
+            cat /tmp/anchor-check-output.txt
+          fi
+          echo "broken=$BROKEN" >> "$GITHUB_OUTPUT"
+
+      - name: Commit all fixes
+        if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
+        run: |
+          git add -A docs/
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "fix(vale): auto-fix style issues (Vale + Dale)"
+          fi
 
       - name: Push all fixes
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
@@ -408,9 +355,9 @@ jobs:
           # Collect anchor check results
           BROKEN_ANCHORS=0
           ANCHOR_BODY=""
-          if [ -f /tmp/anchor-errors.txt ] && [ -s /tmp/anchor-errors.txt ]; then
-            BROKEN_ANCHORS=$(wc -l < /tmp/anchor-errors.txt | tr -d ' ')
-            ANCHOR_BODY=$(cat /tmp/anchor-errors.txt)
+          if [ -f /tmp/anchor-check-output.txt ] && [ -s /tmp/anchor-check-output.txt ]; then
+            BROKEN_ANCHORS=$(grep -oE 'Found [0-9]+' /tmp/anchor-check-output.txt | grep -oE '[0-9]+' | tail -1 || echo "0")
+            ANCHOR_BODY=$(cat /tmp/anchor-errors.txt 2>/dev/null || true)
           fi
 
           # Build the summary comment
