@@ -22,9 +22,9 @@ to vCenter using VMware PowerCLI and returns the list of hosts to the Hub.
 
 ## Run an ESXi / vCenter discovery
 
-**Step 1 –** Navigate to **Settings > Agents and Devices** and click **Discover Devices**.
+**Step 1 –** Navigate to **Settings > Device Discovery**.
 
-**Step 2 –** Select **ESXi / vCenter Discovery** from the discovery type menu.
+**Step 2 –** Select **New Discovery Run > ESXi / vCenter Discovery**.
 
 **Step 3 –** Configure the discovery dialog:
 
