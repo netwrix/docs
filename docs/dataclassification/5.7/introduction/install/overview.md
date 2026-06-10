@@ -25,7 +25,7 @@ sidebar_position: 40
     | Password              | Provide the account password.                                                                                                   |
     | Database Name         | Enter the name of the NDC database. Netwrix recommends using NDC as the database name.                                   |
 
-  If the database doesn't yet exist, you will need to click Create SQL Database before moving to the next step - this will automatically create the NDC database with the given name and default configuration.
+    If the database doesn't yet exist, you will need to click Create SQL Database before moving to the next step - this will automatically create the NDC database with the given name and default configuration.
 
     :::note
     The database is created automatically in basic configuration mode. For recommended
@@ -63,7 +63,7 @@ sidebar_position: 40
 
     - Select additional service options, if necessary.
 
-11. On the Pre-Installation Tasks and Checks step, review your configuration and select Install.
-12. After the installation completes, open a web browser and navigate to the following URL:
+10. On the Pre-Installation Tasks and Checks step, review your configuration and select Install.
+11. After the installation completes, open a web browser and navigate to the following URL:
     _http://SITENAME/NDC_ where SITENAME is the name or IP address of the computer where
     Netwrix Data Classification is installed. For example, _http://workstationndc/NDC_.

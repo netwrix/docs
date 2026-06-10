@@ -14,7 +14,7 @@ To connect to a MySQL server:
 1. On the **Source Configuration** screen select **SQL Server**, then set **Connection Type** to **MySQL**.
 2. Specify MySQL server, username, and password.
 
-    ![sqlserver_source3](/images/dataclassification/5.7/admin/sources/sqlserver/sqlserver_source3.webp)
+    ![sqlserver_source3](/images/dataclassification/5.7/admin/sources/sqlserver/sqlserver_source4.webp)
 
 
 3. Select Save.

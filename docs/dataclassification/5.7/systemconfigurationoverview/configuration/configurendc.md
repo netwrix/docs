@@ -28,7 +28,7 @@ Compliance. See the Microsoft article
 :::
 
 :::note
-The majority of Azure tenancies use the Public cloud, including GCC. The U.S. Government cloud is used for GCC High and DoD tenancies.
+The majority of Azure tenancies use the Public cloud, including Government Community Cloud (GCC). The U.S. Government cloud is used for GCC High and Department of Defense (DoD) tenancies.
 :::
 
 

@@ -7,7 +7,7 @@ sidebar_position: 10
 # General Options
 
 The **General** section contains general classification engine settings, e.g. . By default, only
-standard options are displayed. To view advanced options, click the screwdriver icon at **Settings**
+standard options are displayed. To view advanced options, click the wrench icon at **Settings**
 in the bottom-right corner.
 
 Each option has an associated information popup (the “**i**” symbol next to the option name) which describes what the setting does and how it works.

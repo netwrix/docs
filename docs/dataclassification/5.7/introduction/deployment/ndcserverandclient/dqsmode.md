@@ -34,7 +34,7 @@ If you want to implement DQS configuration for your NDC deployment, be aware tha
 can't easily be undone. Netwrix recommends that before applying the DQS mode, a full backup of the current
 NDC deployment should be created. Also, read the DQS documentation sections thoroughly before you start.
 
-ensure all servers you plan to add to the DQS cluster have a network connection and are
+Ensure all servers you plan to add to the DQS cluster have a network connection and are
 visible to each other across the network. Adjust your firewall settings if necessary.
 
 DQS mode can only be configured by a user whose account has the **Superuser** role.
@@ -68,7 +68,7 @@ strongly recommends ensuring that you have taken a full backup of your environme
 
 6. Click **Save** to close the dialog. Repeat steps 5 and 6 for each server you intend to add.
 7. Prepare to install the other Netwrix Data Classification Server instances on their dedicated servers. To make best use of resources, each NDC server
-   requires a dedicated machine. ensure they meet the
+   requires a dedicated machine. Ensure they meet the
    [Hardware Requirements](/docs/dataclassification/5.7/introduction/requirements/hardwarerequirements.md) and general
    [Software Requirements](/docs/dataclassification/5.7/introduction/requirements/softwarerequirements.md)
 8. On each server, follow the installation steps as described in the
@@ -88,7 +88,7 @@ strongly recommends ensuring that you have taken a full backup of your environme
 2. Open the administrative web console.
 3. Navigate to Settings → Config → Utilities → DQS.
 4. Select Enable DQS.
-5. Prepare to install other Netwrix Data Classification Server instances. ensure each NDC server meets the
+5. Prepare to install other Netwrix Data Classification Server instances. Ensure each NDC server meets the
    [Hardware Requirements](/docs/dataclassification/5.7/introduction/requirements/hardwarerequirements.md) and general
    [Software Requirements](/docs/dataclassification/5.7/introduction/requirements/softwarerequirements.md)
 6. On each server, follow the installation steps as described in the
@@ -99,16 +99,16 @@ strongly recommends ensuring that you have taken a full backup of your environme
 8. When you click next, a message box should appear stating that an NDC configuration was detected and
    that the new install will be added to the existing DQS environment - click OK.
 
-:::note
-When upgrading an existing NDC instance the installer will attempt to resynchronize the DQS instances in the
-background and, if successful, will skip the DQS Synchronization step. You can then skip ahead in these instructions
-to step 13. 
+   :::note
+   When upgrading an existing NDC instance the installer will attempt to resynchronize the DQS instances in the
+   background and, if successful, will skip the DQS Synchronization step. You can then skip ahead in these instructions
+   to step 13. 
 
-The DQS Synchronization step will only display for an upgrade if this process fails - this isn't an issue, 
-simply follow the steps below to resynchronize the NDC instance with the primary NDC server.
-:::
+   The DQS Synchronization step will only display for an upgrade if this process fails. Follow the steps below to 
+   resynchronize the NDC instance with the primary NDC server.
+   :::
 
-9. The Primary NDC Server Url field should have the server url of the primary NDC server (i.e. the first row in the DQS table)
+9. The Primary NDC Server URL field should have the server URL of the primary NDC server (i.e. the first row in the DQS table)
    automatically inserted. If it isn't present or is incorrect, enter the address from the QS Path column of the corresponding row of
    the DQS table. Then click Connect to connect the installer to that server.
 10. After the installer has successfully connected to the primary NDC server, it will generate an authentication

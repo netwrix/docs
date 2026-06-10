@@ -7,7 +7,7 @@ sidebar_position: 30
 # conceptClassifier App Options
 
 This section contains the settings related to conceptClassifier application. As these are advanced
-options, you should click the screwdriver icon at **Settings** in the bottom-right corner to view
+options, you should click the wrench icon at **Settings** in the bottom-right corner to view
 them.
 
 Each option has an associated information popup (the “**i**” symbol next to the option name) which describes what the setting does and how it works.

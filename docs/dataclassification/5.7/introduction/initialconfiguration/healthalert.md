@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Configure Health Alerting
 
-On this step, you will be prompted to email settings for health reporting and select immediate
+On this step, you will be prompted to configure email settings for health reporting and select immediate
 health alerts.
 
 ![initial_config_health](/images/dataclassification/5.7/install/initialconfiguration/initial_config_health.webp)

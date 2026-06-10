@@ -44,10 +44,10 @@ You can use the Browse function to:
 
 :::note
 By default, results from sources that have not been indexed, or that aren't indexed, aren't included in the Browse results. 
-To include these results, select the Show Unindexed Documents checkbox.
+To include these results, tick the Show Unindexed Documents checkbox.
 :::
 
 
 To restrict the browsing scope, you can either add a URL filter, or add a custom filter, as well as
-select to show document movements. These options are configured in the same way as for
+select to show document movements and include unindexed documents. These options are configured in the same way as for
 [Search Documents by Clue](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/clues/search.md).

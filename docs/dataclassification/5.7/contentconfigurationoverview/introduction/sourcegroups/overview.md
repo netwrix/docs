@@ -9,10 +9,12 @@ sidebar_position: 60
 Source groups provide a way of logically grouping specific sources, perhaps by type, or perhaps by
 an internal business specification. 
 
-A group can either be "mixed", which allows it to contain all source types, or source specific. In
-the example above a group would be created entitled "Demo Content", which only supports the addition
-of SharePoint sources. If a supporting source group already exists, this can be selected from the
-dropdown list provided. See [Dynamic Source Groups](#dynamic-source-groups) for the available group types and configuration options.
+A group can either be "mixed", which allows it to contain all source types, or source specific. For example, you could create a 
+source group named "Demo Content", which only supports the addition of SharePoint sources. When creating a source, any existing source 
+groups that support that source type will be displayed in a dropdown in the source configuration screen. 
+
+Certain source types are treated as source groups. See [Dynamic Source Groups](#dynamic-source-groups) for the available 
+group types and configuration options.
 
 Select the cog icon on the main sources grid screen for a source group to amend the
 group settings:

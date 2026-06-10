@@ -52,8 +52,8 @@ Related content source settings can be configured at a global level (default), o
 Assume you selected the _Agriculture_ taxonomy; it has _Farming_ (_ClassID: 11_) and _Produce_
 (_ClassID: 32_) properties.
 
-If you configure tagging as in the screenshot above, the program will write the following
-classifications attributes to the classified documents:
+If you configure tagging as described, the program will write the following
+classification attributes to the classified documents:
 
 - Property Name: _Agriculture_
 - Property Value: _[Farming|11;Produce|32]_

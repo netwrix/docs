@@ -52,7 +52,7 @@ The following figure shows the app architecture and components.
 5. The NDC Classifier service performs data classification by matching collected files against
    pre-built taxonomies (the Netwrix compliance taxonomies) and customer-created taxonomies.
 6. If [Classification Writing](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/enablewriteclassifications.md) is enabled, the assigned classification labels are written to the custom metadata columns for supported document types.
-7. If any Workflows have been defined and are enabled, they are run on documents that meet the
+7. If [Workflows](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/overview.md) have been defined and are enabled, they are run on documents that meet the
    workflow conditions.
 
 ## QueryServer

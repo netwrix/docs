@@ -79,9 +79,10 @@ clue – or a search term.
 
 [](#)OCR Language Mapping
 
-The OCR language mapping configuration screen can be used if you want to OCR non-English images via
-Tesseract/Apache Tika. File paths (including parts of paths) can be mapped to specific Tesseract language packs.
-The Page Segmentation Mode used by the Apache Tika OCR engine can also be overridden here for a given file path.
+The OCR language mapping configuration screen can be used if you want to OCR non-English images using
+Tesseract and the Apache Tika OCR engine. File paths (including parts of paths) can be mapped to specific Tesseract language packs.
+You can also override the OCR processing mode, enable conversion of PDF files to images for improved text extraction, and override 
+the Page Segmentation mode used by Tika to identify text.
 
 ![configocrlanguagemapping](/images/dataclassification/5.7/configuration/configocrlanguagemapping.webp)
 

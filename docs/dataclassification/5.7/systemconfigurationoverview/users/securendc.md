@@ -68,7 +68,7 @@ the full text at rest. You can enable this mode by:
 select the wrench icon in the bottom left to display it).
 4. Select Save.
 
-The other index files can't be reverse-engineered to retrieve the full document text - however, do
+The other index files can't be reverse-engineered to retrieve the full document text - however, they do
 contain the weightings and terms within the text. Netwrix recommends restricting access to all files at
 the file system level as well as considering file system encryption.
 

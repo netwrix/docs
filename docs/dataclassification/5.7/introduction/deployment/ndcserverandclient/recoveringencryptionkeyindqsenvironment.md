@@ -24,7 +24,7 @@ To recover the encryption key on a secondary instance:
 
 1. Stop all services on the secondary instance.
 2. Start the NDC installer and select **Repair**.
-3. Run through to the DQS sync step.
-4. Follow the instructions listed in the 5.7.10 onwards section of [Configuring an NDC Server Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md).
+3. Continue through to the DQS sync step.
+4. Follow the instructions listed in steps 9 through 12 of the [Enabling DQS Mode (5.7.10 and later versions) section of Configuring an NDC Server Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md#enabling-dqs-mode-5710-and-later-versions).
 
 Once all steps have been performed, the key will be restored to the secondary instance. Start the services again and they should load the key and function correctly.

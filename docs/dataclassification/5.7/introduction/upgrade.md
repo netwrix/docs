@@ -51,7 +51,7 @@ to version 5.5, then perform a second upgrade to version 5.7.
 ## Upgrading a DQS Environment
 
 When upgrading an NDC environment which uses the **Distributed Query Server** functionality to 5.7.10 or later, 
-the primary server should be upgraded first before upgrading the secondary instances. Secondary instances will 
+the primary server must be upgraded before upgrading the secondary instances. Secondary instances will 
 attempt to resynchronize with the primary instance during the upgrade process, which will fail if the primary 
 instance has not been upgraded.
 

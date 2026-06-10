@@ -87,15 +87,15 @@ If the only user defined is a Super User and that user is deleted then all secur
 usage of the QS administrative functions reverts to unrestricted.
 
 User accounts granted access to the REST APIs will still be restricted by their specific user
-permissions. A Superuser with REST API access will be able to run any API method, any normal user
+permissions. A Super User with REST API access will be able to run any API method, any normal user
 will be restricted by the same rules that govern the UI. Further API samples and documentation can
 be found at: /NDC/\_api
 
 ## Permission Management
 
-to allocate granular permissions to a user (non-Super Users), click Edit on their row in the Users table. The
+To allocate granular permissions to a user (non-Super Users), click Edit on their row in the Users table. The
 permissions for each section of the administrative web interface will be displayed as tabs. Each tab contains a top level
-checkbox of the form "Access <Section Name>” (e.g. Access Sources) which defines whether a user has access to each of the top level administrative areas.
+checkbox of the form "Access [Area Name]” (e.g. Access Sources) which defines whether a user has access to each of the top level administrative areas.
 
 When an area is enabled there are typically more granular permissions that can be enabled, such as:
 
@@ -128,7 +128,7 @@ You can restrict permissions for a user to the following areas:
 
 ## Super Users
 
-Super Users have access to all QS administrative functions.
+Super Users have access to all Query Server administrative functions.
 
 Non-Super Users must have their access rights specifically configured and all rights are disabled by
 default. See User Management section for details about configuring the access rights for non-Super
