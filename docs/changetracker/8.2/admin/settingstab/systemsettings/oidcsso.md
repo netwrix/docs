@@ -161,7 +161,8 @@ After running the Maintenance App, restart the Hub service for the changes to ta
 
 **Option 2 — Edit appsettings.Production.json directly**
 
-Open `<Hub install directory>\Configs\appsettings.Production.json` and add or update the OIDC
+Open `\inetpub\wwwroot\Change Tracker Generation 7
+(NetCore) Hub\Configs\appsettings.Production.json` and add or update the OIDC
 section:
 
 ```json
