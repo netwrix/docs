@@ -102,7 +102,7 @@ When an area is enabled there are typically more granular permissions that can b
 - Within the Taxonomies area, you can also assign permissions at a specific Term Set or
   Term branch level. A full user permission summary (for all Term/Set level permissions) can be
   viewed by selecting the View Taxonomy Permissions button (shown below).
-- Within the Sources area it is possible to restrict a user’s access to specific source groups, as
+- Within the Sources area, you can restrict a user’s access to specific source groups, as
   shown below.
 
 ![userpermissions_thumb_0_0](/images/dataclassification/5.7/security/userpermissions_thumb_0_0.webp)

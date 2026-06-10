@@ -108,7 +108,7 @@ to also index terms that would normally be discarded.
 The StartTag and EndTag values are case sensitive strings used to identify the content to be
 managed, the content is then managed based on the filter type.
 
-There are three tag types that can be used to assist in the cleanup:
+You can use three tag types to assist in the cleanup:
 
 - FILTER—Extracts a subset of the HTML page, before extracting the plain text. Only a single
   section will be extracted for each TextFilter processed.
