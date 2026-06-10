@@ -29,7 +29,7 @@ When you first open AI Chat, a welcome screen displays the greeting:
 > **Hi, I'm Neo**
 > The One for 1Secure. Ask me about your security posture, alerts, identities, and compliance.
 
-Below the greeting, suggestion cards are organized into three categories to help you get started.
+Below the greeting, suggestion cards appear in three categories to help you get started.
 
 ### Investigate
 
@@ -59,8 +59,8 @@ Click any suggestion card to send that query to the assistant.
 ## Prerequisites
 
 - The **AiChat** feature flag must be enabled for your tenant.
-- Data availability depends on the connectors configured for your organizations and the data
-  that has been collected. If no data sources are configured, the assistant will have limited
+- Data availability depends on the connectors you configure for your organizations and the data
+  they collect. If you have not configured any data sources, the assistant has limited
   information to work with.
 
 ## Related Topics

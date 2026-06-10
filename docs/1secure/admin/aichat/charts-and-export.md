@@ -13,9 +13,9 @@ export chart data to CSV files for further analysis.
 
 The assistant can generate the following chart types when responding to data-oriented questions:
 
-- **Bar charts** -- Used for comparing values across categories, such as risk scores by
+- **Bar charts** -- Compare values across categories, such as risk scores by
   organization.
-- **Line charts** -- Used for displaying trends over time, such as compliance percentages.
+- **Line charts** -- Display trends over time, such as compliance percentages.
 
 {/* TODO: Screenshot of an inline bar chart in a chat response */}
 
@@ -41,6 +41,6 @@ The CSV file contains the data points used to render the chart, suitable for imp
 spreadsheet applications or other analysis tools.
 
 :::note
-The **Export CSV** button is available on each individual chart. If a response contains multiple
+The **Export CSV** button is available on each chart. If a response contains multiple
 charts, each chart has its own export button.
 :::

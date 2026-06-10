@@ -14,7 +14,7 @@ and use the available keyboard shortcuts and interface controls.
 **Step 1 --** Open AI Chat by clicking **Ask AI** in the header bar or pressing **Ctrl+K** /
 **Cmd+K**.
 
-**Step 2 --** Type your question in the text field at the bottom of the chat panel. The placeholder
+**Step 2 --** Enter your question in the text field at the bottom of the chat panel. The placeholder
 text reads "Ask or describe what to do...". The text field automatically resizes as you type.
 
 **Step 3 --** Click the **Send message** button or press **Enter** to submit your question.
@@ -23,15 +23,15 @@ text reads "Ask or describe what to do...". The text field automatically resizes
 
 ## Streaming Responses
 
-After you send a question, the assistant streams its response token by token. While the response
-is being generated:
+After you send a question, the assistant streams its response token by token. While the assistant
+generates the response:
 
 - A progress indicator displays a status such as "Analyzing..." or "Checking {tool name}...".
 - A **Stop generation** button appears in place of the send button. Click it to cancel the
   response.
 
-When the response is complete, a summary line appears showing how many data sources were consulted,
-for example "Queried 3 data source(s)".
+When the response is complete, a summary line appears showing how many data sources the assistant
+consulted, for example "Queried 3 data sources".
 
 ## Follow-Up Suggestions
 
@@ -57,13 +57,13 @@ panel header. A new, empty chat opens.
 
 ### Switch Between Conversations
 
-Click a conversation in the conversations list to open it. Your current conversation is saved
+Click a conversation in the conversations list to open it. AI Chat saves your current conversation
 automatically.
 
 ### Rename a Conversation
 
 Click the **Rename** button (edit icon) next to a conversation in the list. The title becomes
-editable. Type a new name and press **Enter** to save.
+editable. Enter a new name and press **Enter** to save.
 
 :::note
 AI Chat automatically generates a title of 3-7 words after your first exchange in a new
@@ -72,8 +72,8 @@ conversation. You can rename it at any time.
 
 ### Delete a Conversation
 
-Click the **Delete** button (trash icon) next to a conversation in the list. The conversation
-is permanently removed.
+Click the **Delete** button (trash icon) next to a conversation in the list. This permanently
+deletes the conversation.
 
 ## Maximized Mode
 
@@ -81,7 +81,7 @@ To expand the chat panel to full screen, click the **Maximize** button in the ch
 In maximized mode:
 
 - The chat panel expands to fill the screen (98vw x 96vh).
-- The conversations sidebar is displayed persistently on the left side.
+- The conversations sidebar appears persistently on the left side.
 
 Click the **Restore** button to return to the standard panel view.
 
@@ -115,7 +115,7 @@ If an error occurs, the assistant displays one of the following messages:
 
 | Error | Message |
 | --- | --- |
-| Rate limit | "You've reached the usage limit. Please wait a moment before sending another message." |
+| Rate limit | "You've reached the usage limit. wait a moment before sending another message." |
 | Timeout | "The request took too long. Check your connection and try again." |
-| Generic error | "Something went wrong. Please try again." A **Try again** button is displayed. |
-| Stopped | "Response stopped" is displayed with a dashed separator. |
+| Generic error | "Something went wrong. try again." A **Try again** button appears. |
+| Stopped | The "Response stopped" message appears with a dashed separator. |
