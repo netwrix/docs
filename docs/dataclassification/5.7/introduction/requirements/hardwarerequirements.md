@@ -16,18 +16,20 @@ on the corresponding virtualization platform, in particular:
 - Microsoft Hyper-V
 - Nutanix AHV
 
-Note that Netwrix Data Classification supports only Windows OS versions listed in the
+:::note
+Netwrix Data Classification supports only Windows OS versions listed in the
 [Software Requirements](/docs/dataclassification/5.7/introduction/requirements/softwarerequirements.md) section.
+:::
 
 ## Netwrix Data Classification Server
 
 The requirements in this section apply to a single Netwrix Data Classification server.
 
-To deploy a server cluster, make sure all planned cluster nodes meet the requirements listed below.
+To deploy a server cluster, ensure all planned cluster nodes meet the following requirements.
 Consider deploying 1 Netwrix Data Classification Server per approx. 16, 000, 000 objects to process.
 
 See [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/overview.md) and
-[Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) for more information.
+[Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) for cluster sizing guidance.
 
 | Hardware Component | 1 Server per 16 M objects      |
 | ------------------ | ------------------------------ |
@@ -74,8 +76,7 @@ If you plan on using NDC to crawl an on-premises Exchange server, you need to kn
 - Mailbox retention policy (for how long users keep their emails before they are archived)
 - The average number of emails per Mailbox or total number in all mailboxes.
 
-The number of emails in all mailboxes can be obtained with the PowerShell script for the Exchange
-Management Shell bellow. The script will return email stats for every mailbox. Use the script
+Run the following PowerShell script for the Exchange Management Shell to obtain the number of emails in all mailboxes. The script returns email stats for every mailbox. Use the script
 results to calculate the average number of emails per mailbox or provide the total number.
 
 ```
@@ -84,7 +85,7 @@ Get-Mailbox -ResultSize Unlimited | Get-MailboxStatistics SelectItemCount | ForE
 
 **Office 365: Exchange Online, SharePoint Online and OneDrive**
 
-Provide the total amount of data and total number of files stored on Office 365. You can use the usage statistics numbers for 180 days period from the O365 Admin Center dashboard. Refer to the following Microsoft article for additional information: [Microsoft 365 Reports in the admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports?view=o365-worldwide)
+Provide the total amount of data and total number of files stored on Office 365. You can use the usage statistics numbers for 180 days period from the O365 Admin Center dashboard. See the Microsoft article [Microsoft 365 Reports in the admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/activity-reports/activity-reports?view=o365-worldwide) for additional information.
 
 **Databases**
 
@@ -105,8 +106,7 @@ Provide the total file count and storage usage from the BOX Admin Dashboard
 **Plan the Production Deployment**
 
 To size servers for your Netwrix Data Classification setup, use the metrics produced during the
-scoping stage. Apply the total number of files, documents, emails from all data sources to the table
-below to obtain corresponding hardware requirements.
+scoping stage. Apply the total number of files, documents, emails from all data sources to the following table to obtain corresponding hardware requirements.
 
 :::warning
 Netwrix Data Classification servers and SQL servers require high-performance SSD drives

@@ -23,12 +23,12 @@ the following steps to enable MIP labels:
 
 :::note
 Any labels and policies in API should be migrated / synced with O365 Security &
-Compliance. Review the following Microsoft article for more information:
-[To migrate Azure Information Protection labels](https://docs.microsoft.com/en-us/azure/information-protection/configure-policy-migrate-labels#to-migrate-azure-information-protection-labels)
+Compliance. See the Microsoft article
+[To migrate Azure Information Protection labels](https://docs.microsoft.com/en-us/azure/information-protection/configure-policy-migrate-labels#to-migrate-azure-information-protection-labels) for migration instructions.
 :::
 
 :::note
-The majority of Azure tenancies use the Public cloud, including GCC. The US Government cloud is used for GCC High and DoD tenancies.
+The majority of Azure tenancies use the Public cloud, including GCC. The U.S. Government cloud is used for GCC High and DoD tenancies.
 :::
 
 

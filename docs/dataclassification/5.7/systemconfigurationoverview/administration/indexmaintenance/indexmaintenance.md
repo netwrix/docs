@@ -13,7 +13,7 @@ after a large amount of content has been deleted, or after configuring a DQS env
 scenarios, the index should also be maintained — to ensure data consistency. To automate maintenance
 operations, you can use the built-in Index Cleaner tool.
 
-Follow these steps to launch the Index Cleaner tool.
+To launch the Index Cleaner tool:
 
 1. Open NDC Management Web Console.
 2. Navigate to **Settings** > **Config** and click **Run Cleaner**.

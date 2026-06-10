@@ -14,8 +14,8 @@ On this step, you are prompted to choose how access to the administrative web co
   of the administrative web console on a user-by-user basis. Users can be set as Super Users, granting
   full access, or can have their access granularly controlled using the Users settings page.
 
-  When selected, you will be prompted to add Super Users. Type the name of any Super User you wish to add and click + on
-  the right. Users with restricted access to NDC will need to be added via the Users configuration page once initial configuration is completed.
+  When selected, you will be prompted to add Super Users. Enter the name of any Super User you want to add and click + on
+  the right. Users with restricted access to NDC will need to be added via the Users configuration page after initial configuration is completed.
 
 - Allow access for all users – select to allow any user access to the administrative web console. All users connecting to the web 
   interface will have full access, equivalent to a Super User.

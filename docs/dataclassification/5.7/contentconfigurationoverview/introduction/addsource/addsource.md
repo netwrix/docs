@@ -9,7 +9,7 @@ sidebar_position: 10
 To start processing your data, you need to add a corresponding content source to the Netwrix Data
 Classification scope.
 
-Follow the steps to add a content source.
+To add a content source:
 
 **Step 1 –** In administrative web console, navigate to **Content** →Sources → General and click
 **Add** to launch the Add source wizard.
@@ -30,7 +30,7 @@ the sources:
 - [Outlook Mail Archive](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/outlookmailarchive.md)
 - [SharePoint](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/overview_1.md) or [SharePoint Online](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/sharepointonline.md)
 
-All your content sources will be listed in the **Sources** section.
+The **Sources** section lists all your content sources.
 
 :::note
 When adding a source or managing source configuration, the most commonly used source

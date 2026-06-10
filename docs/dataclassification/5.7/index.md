@@ -7,7 +7,7 @@ sidebar_position: 1
 # Features and Benefits
 
 Netwrix Data Classification is a platform that identifies data that’s important for your
-organization and enables you to reduce risk and unleash the true value of this data.
+organization, helping you reduce risk and unleash the true value of this data.
 
 Powered by unique compound term processing technology, it enriches your enterprise content with
 accurate and consistent metadata empowering you to work with data more confidently. By seeing which
@@ -35,7 +35,7 @@ Netwrix Data Classification identifies and classifies sensitive and business-cri
 your organization, mitigating the risk of data breaches. The program also helps you meet
 compliance requirements with less effort and expense.
 
-You can view the app architecture and components in the figure below.
+The following figure shows the app architecture and components.
 
 ![how_it_works_thumb_0_0](/images/dataclassification/5.7/admin/how_it_works_thumb_0_0.webp)
 
@@ -128,8 +128,11 @@ use the extension “.cse”, but temporary files (extension “.tmp”) are use
 
 The NDC Index files should be located on the same server as the Netwrix Data
 Classification server due to the fact that the query and indexing processes can be highly disk-intensive.
-Note that “text.cse” is not supplied since it will be created automatically when the first documents
+
+:::note
+"text.cse" isn't supplied since it will be created automatically when the first documents
 are collected.
+:::
 
 ## Classifier
 

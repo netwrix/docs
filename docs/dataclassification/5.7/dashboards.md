@@ -22,7 +22,7 @@ The following statistics are available for each thread type:
 - Real Execution Time—The actual execution time of each thread (an average of each thread's run time)
 
 Statistics shown on the Dashboard screen are cached and updated regularly by the Collector service.
-If the values are not being updated please ensure that the Collector service is running.
+If the values aren't being updated ensure that the Collector service is running.
 
 New content will be shown as Awaiting Collection, and progress through to Fully Processed.
 
@@ -62,13 +62,13 @@ outstanding system issues.
 
     ![health_config_notifications](/images/dataclassification/5.7/admin/reporting/health_config_notifications.webp)
 
-2. Select Only dismiss health notifications that are older than one week, if you do not want to be
+2. Select Only dismiss health notifications that are older than one week, if you don't want to be
    notified on outdated issues.
 3. Select what you want to dismiss – warnings and all security notifications.
 
 ## Netwrix Data Classification Service Viewer
 
-From the Netwrix Data Classification Service Viewer it is possible to view a live stream of the
+The Netwrix Data Classification Service Viewer displays a live stream of the
 current work being processed by the NDC services. As the services progress each document, the
 display will change. Once all work is complete, "Idle..." will be displayed.
 

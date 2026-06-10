@@ -6,13 +6,13 @@ sidebar_position: 50
 
 # Browse
 
-To view the documents classified for each term, click on the Browse tab. This will display a list of
+To view the documents classified for each term, click the Browse tab. This will display a list of
 documents achieving the minimum score set for classification in the term.
-[See Classification Rules (Clues) for more information.](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/clues/clues.md)
+See [Classification Rules (Clues)](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/clues/clues.md) for details on how clues control classification scoring.
 
 :::note
 This list will include the current classification status of each document. Any changes
-made to the classification clues since the last time each document was classified are not taken into account.
+made to the classification clues since the last time each document was classified aren't taken into account.
 :::
 
 To see how the classification of each document would change based on the current term configuration, 
@@ -34,7 +34,7 @@ You can use the Browse function to:
 
 - Identify documents that are receiving a score, but are "missing" being classified because they do
   not quite reach the terms threshold. For example, changing the mode to "Near Misses `<20%`" for a
-  term with a threshold of 50, will find any documents that scored 40 or more, but did not reach the
+  term with a threshold of 50, will find any documents that scored 40 or more, but didn't reach the
   threshold.
 - Identify low scoring documents that are only just reaching the classification threshold. For
   example, changing the mode to "Low Scoring Documents `<20%`" for a term with a threshold of 50
@@ -43,7 +43,7 @@ You can use the Browse function to:
 ![browsetab_thumb_0_0](/images/dataclassification/5.7/admin/reporting/browsetab_thumb_0_0.webp)
 
 :::note
-By default, results from sources that have not been indexed, or that are not indexed, are not included in the Browse results. 
+By default, results from sources that have not been indexed, or that aren't indexed, aren't included in the Browse results. 
 To include these results, select the Show Unindexed Documents checkbox.
 :::
 

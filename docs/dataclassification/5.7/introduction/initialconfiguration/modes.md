@@ -18,7 +18,7 @@ Review the short description below and select mode:
 
 In this mode, the core search index will be disabled, heavily reducing the disk space requirements
 for the CSE files and improving overall document throughput for classification. Under this mode
-Search is not available and Browse functionality is not subject to security trimming. Recommended
+Search isn't available and Browse functionality isn't subject to security trimming. Recommended
 for data discovery, data security governance and compliance use cases.
 
 ## Keyword

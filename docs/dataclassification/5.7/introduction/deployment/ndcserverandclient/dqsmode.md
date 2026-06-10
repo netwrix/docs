@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Configuring an NDC Server Cluster and Load Balancing with DQS Mode
 
-The Distributed Query Server (DQS) mode allows you to balance the processing load of data collection,
-indexing and classification over multiple NDC Servers with a single shared database.
+The Distributed Query Server (DQS) mode lets you balance the processing load of data collection,
+indexing, and classification over multiple NDC Servers with a single shared database.
 This approach is strongly recommended if you need to process large data volumes, for example:
 
 - File Servers — Recommended if processing over 16m objects,
@@ -31,17 +31,17 @@ This functionality is implemented through the _Query Server_ application.
 DQS mode is configured via the administrative web console and, from version 5.7.10 onwards, the installer.
 
 If you want to implement DQS configuration for your NDC deployment, be aware that doing so 
-cannot easily be undone. Netwrix recommends that before applying the DQS mode, a full backup of the current
+can't easily be undone. Netwrix recommends that before applying the DQS mode, a full backup of the current
 NDC deployment should be created. Also, read the DQS documentation sections thoroughly before you start.
 
-Make sure all servers you plan to add to the DQS cluster have a network connection and are
+ensure all servers you plan to add to the DQS cluster have a network connection and are
 visible to each other across the network. Adjust your firewall settings if necessary.
 
 DQS mode can only be configured by a user whose account has the **Superuser** role.
 
 :::note
-Once DQS mode is enabled, you cannot roll back your configuration. Netwrix
-strongly recommends ensuring that you have taken a full backup of your environment prior to enabling DQS.
+Once DQS mode is enabled, you can't roll back your configuration. Netwrix
+strongly recommends ensuring that you have taken a full backup of your environment before enabling DQS.
 :::
 
 ### Enabling DQS Mode (5.7.9 and earlier versions)
@@ -68,7 +68,7 @@ strongly recommends ensuring that you have taken a full backup of your environme
 
 6. Click **Save** to close the dialog. Repeat steps 5 and 6 for each server you intend to add.
 7. Prepare to install the other Netwrix Data Classification Server instances on their dedicated servers. To make best use of resources, each NDC server
-   requires a dedicated machine. Make sure they meet the
+   requires a dedicated machine. ensure they meet the
    [Hardware Requirements](/docs/dataclassification/5.7/introduction/requirements/hardwarerequirements.md) and general
    [Software Requirements](/docs/dataclassification/5.7/introduction/requirements/softwarerequirements.md)
 8. On each server, follow the installation steps as described in the
@@ -88,7 +88,7 @@ strongly recommends ensuring that you have taken a full backup of your environme
 2. Open the administrative web console.
 3. Navigate to Settings → Config → Utilities → DQS.
 4. Select Enable DQS.
-5. Prepare to install other Netwrix Data Classification Server instances. Make sure each NDC server meets the
+5. Prepare to install other Netwrix Data Classification Server instances. ensure each NDC server meets the
    [Hardware Requirements](/docs/dataclassification/5.7/introduction/requirements/hardwarerequirements.md) and general
    [Software Requirements](/docs/dataclassification/5.7/introduction/requirements/softwarerequirements.md)
 6. On each server, follow the installation steps as described in the
@@ -104,20 +104,20 @@ When upgrading an existing NDC instance the installer will attempt to resynchron
 background and, if successful, will skip the DQS Synchronization step. You can then skip ahead in these instructions
 to step 13. 
 
-The DQS Synchronization step will only display for an upgrade if this process fails - this is not an issue, 
+The DQS Synchronization step will only display for an upgrade if this process fails - this isn't an issue, 
 simply follow the steps below to resynchronize the NDC instance with the primary NDC server.
 :::
 
 9. The Primary NDC Server Url field should have the server url of the primary NDC server (i.e. the first row in the DQS table)
-   automatically inserted. If it is not present or is incorrect, enter the address from the QS Path column of the corresponding row of
+   automatically inserted. If it isn't present or is incorrect, enter the address from the QS Path column of the corresponding row of
    the DQS table. Then click Connect to connect the installer to that server.
-10. Once the installer has successfully connected to the primary NDC server, it will generate an authentication
+10. After the installer has successfully connected to the primary NDC server, it will generate an authentication
     code and display it in the Authentication Code field. Click Sync to open the NDC DQS settings page in a web browser.
-11. On the web page, click on Register/Resync. This will open the authentication code entry tab - the authentication code generated by the installer
+11. On the web page, click Register/Resync. This will open the authentication code entry tab - the authentication code generated by the installer
     should be present in the input field. Click Submit to submit the authentication code.
 
 :::note
-If the authentication code is not autofilled, click on the Authentication Code field in the installer to copy the
+If the authentication code isn't autofilled, click the Authentication Code field in the installer to copy the
 value to your clipboard, then paste it in the authentication code field in the NDC UI.
 :::
 
@@ -125,14 +125,14 @@ value to your clipboard, then paste it in the authentication code field in the N
     the Verification Code field in the installer, then click Join. The NDC installer will then perform
     the resynchronisation.
 13. Complete the installation.
-14. Repeat steps 6 - 13 for each additional NDC Server to be added, then review the list of servers to make sure all new
+14. Repeat steps 6 - 13 for each additional NDC Server to be added, then review the list of servers to ensure all new
     servers have been successfully added.
 
 ![dqs_servers_list_thumb_0_0](/images/dataclassification/5.7/requirements/dqs_servers_list_thumb_0_0.webp)
 
 
 If you were configuring the DQS mode for an existing NDC deployment, you will be prompted to
-re-collect data from the data sources in order to re-distribute the content index across all
+re-collect data from the data sources to re-distribute the content index across all
 NDC Servers in the cluster. **This will result in all data sources being recollected**, which may
 take a significant amount of time.
 
@@ -143,4 +143,4 @@ after clicking **Run Cleaner** button on the **Settings > Core > Collector** tab
 
 
 To review system health and check your configuration, use the product dashboards.
-[See Operations and Health Dashboards for more information.](/docs/dataclassification/5.7/dashboards.md)
+See [Operations and Health Dashboards](/docs/dataclassification/5.7/dashboards.md) for details on monitoring system status.

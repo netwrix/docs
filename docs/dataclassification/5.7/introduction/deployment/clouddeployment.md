@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Data Storages and Sizing
 
-Netwrix Data Classification utilizes two forms of data storage:
+Netwrix Data Classification uses two forms of data storage:
 
 - NDC SQL database — SQL Server database that stores product configuration and metadata for the data
   sources.
@@ -15,7 +15,7 @@ Netwrix Data Classification utilizes two forms of data storage:
 
 ### NDC SQL database
 
-Make sure you have NDC Server and **NDC SQL database** deployed on different machines.
+ensure you have NDC Server and **NDC SQL database** deployed on different machines.
 
 It is recommended to create the NDC SQL database on a dedicated SQL Server instance.
 
@@ -33,7 +33,7 @@ It is recommended to create the NDC SQL database on a dedicated SQL Server inst
     - **File growth**: _128 MB_ - recommended value for small to medium environment, _512 MB_ - for
       large environment, i.e. if planning to index data sources containing 16, 000, 000+ objects.
     - **Maximum File Size** - select _Unlimited_.
-- Make sure that the **Recovery model** for this database is set to _Simple_. Do not change the
+- ensure that the **Recovery model** for this database is set to _Simple_. Don't change the
   recovery model — to avoid log files growth.
 
 ### NDC Index
@@ -41,7 +41,7 @@ It is recommended to create the NDC SQL database on a dedicated SQL Server inst
 Required disk space for the NDC Index file storage will depend, in particular, on the data
 processing mode you plan to use (_No Index_, _Keyword_ or _Compound Term_).
 
-As a rule of thumb, required space can be calculated as 35% of the total size of the data you
+As a general estimate, required space can be calculated as 35% of the total size of the data you
 plan to be indexed. For example, if you have 45 GB of files, they will require up to 15 GB for
 the NDC Index files.
 
