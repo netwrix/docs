@@ -13,6 +13,8 @@ specific events, offering drill-down capabilities for accessing detailed informa
 specific alerts and issues, ensuring timely and effective responses. See the
 [Alerts](/docs/1secure/admin/alerts/alerts.md) topic for additional information on alerts.
 
+You can also use [AI Chat](/docs/1secure/admin/aichat/overview.md) to ask natural-language questions about your dashboard data, including alerts, risk levels, and organization health.
+
 Click **Home** at the top of the page to access the dashboard. This page is also the default landing
 page of the application when you sign in.
 

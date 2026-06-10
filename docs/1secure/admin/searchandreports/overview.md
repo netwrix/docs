@@ -9,6 +9,10 @@ sidebar_position: 40
 Netwrix 1Secure provides a convenient search interface for investigating incidents and suspicious
 activities across the entire IT infrastructure. Use flexible searches to get precise results on _who_ changed _what_, _when_, or _where_.
 
+:::tip
+For conversational investigation, you can also use [AI Chat](/docs/1secure/admin/aichat/overview.md) to ask questions about your security data in natural language.
+:::
+
 Based on your filter preferences, you can create your customized report or choose the report from
 the list with the predefined filter settings.
 

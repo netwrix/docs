@@ -15,3 +15,4 @@ Major benefits:
 - Detect system alerts — on premises and in the cloud
 - Increase productivity of IT Managed Service Provider teams
 - Generate reports based on search parameters
+- Investigate security data using an AI-powered chat assistant
