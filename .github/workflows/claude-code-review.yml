@@ -12,7 +12,7 @@ on:
 
 jobs:
   code-review:
-    if: github.event.pull_request.head.repo.fork == false
+    if: github.event.pull_request.head.repo.fork == false && github.actor != 'dependabot[bot]'
     concurrency:
       group: code-review-${{ github.event.pull_request.number }}
       cancel-in-progress: true
