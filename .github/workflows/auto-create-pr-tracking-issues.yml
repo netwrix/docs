@@ -1,0 +1,220 @@
+name: Auto-create PR tracking issues on review request
+
+on:
+  pull_request:
+    types: [review_requested]
+
+# Explicitly lock GITHUB_TOKEN to no permissions — all API calls use KB_OPS_PAT.
+permissions: {}
+
+jobs:
+  # -------------------------------------------------------
+  # Job 1: Non-KB PR — hilram7 directly requested as reviewer
+  # Creates Admin Support tracking issue
+  # -------------------------------------------------------
+  create-admin-issue:
+    name: Non-KB PR — create Admin Support issue
+    if: |
+      github.event.pull_request.head.repo.fork == false &&
+      github.event.requested_reviewer != null &&
+      github.event.requested_reviewer.login == 'hilram7'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: pr-${{ github.event.pull_request.number }}-admin
+      cancel-in-progress: false
+    steps:
+      - name: Create tracking issue, link PR, add to project board
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.KB_OPS_PAT }}
+          script: |
+            const pr = context.payload.pull_request;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            // Project board: https://github.com/orgs/netwrix/projects/2
+            // Field/option IDs are stable in practice; if the project is recreated, update these.
+            const PROJECT_ID = 'PVT_kwDOB435Ds4A7py9';
+
+            // Idempotency: skip if an open tracking issue already exists for this PR.
+            // state:open ensures a closed/deleted tracking issue doesn't block re-creation.
+            // Note: search indexing has ~10–60s latency — concurrency group reduces but does not
+            // fully eliminate the race if the event fires twice in very quick succession.
+            const existing = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${owner}/${repo} is:issue state:open "Admin: PR review" "PR #${pr.number}" in:title`
+            });
+            if (existing.data.total_count > 0) {
+              console.log('Tracking issue already exists, skipping.');
+              return;
+            }
+
+            // 1. Create tracking issue
+            const prTitle = pr.title.length > 220 ? pr.title.slice(0, 220) + '…' : pr.title;
+            const { data: issue } = await github.rest.issues.create({
+              owner, repo,
+              title: `Admin: PR review — ${prTitle} (PR #${pr.number})`,
+              body: `Admin review of ${owner}/${repo} PR #${pr.number} (author: @${pr.user.login}).\n\nPR: ${pr.html_url}`,
+              assignees: ['hilram7']
+            });
+
+            // 2. Fetch current PR body and append closing keyword
+            // Fetch avoids clobbering edits made after the event fired.
+            let freshPr;
+            try {
+              ({ data: freshPr } = await github.rest.pulls.get({ owner, repo, pull_number: pr.number }));
+              await github.rest.pulls.update({
+                owner, repo,
+                pull_number: pr.number,
+                body: (freshPr.body || '') + `\n\nCloses #${issue.number}`
+              });
+            } catch (err) {
+              console.error(`✗ Failed to update PR body: ${err.message}`);
+              console.error(`  Issue #${issue.number} created but not linked — manually append: Closes #${issue.number}`);
+            }
+
+            // 3. Add issue to project board
+            let item;
+            try {
+              ({ addProjectV2ItemById: { item } } = await github.graphql(`
+                mutation($projectId: ID!, $contentId: ID!) {
+                  addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
+                    item { id }
+                  }
+                }
+              `, { projectId: PROJECT_ID, contentId: issue.node_id }));
+            } catch (err) {
+              console.error(`✗ Failed to add issue #${issue.number} to project board: ${err.message}`);
+              console.error(`  Issue created and PR body updated — manually add to board: https://github.com/orgs/netwrix/projects/2`);
+              return;
+            }
+
+            // Helper: set a single-select project field
+            const setField = async (fieldId, optionId, label) => {
+              try {
+                await github.graphql(`
+                  mutation($p: ID!, $i: ID!, $f: ID!, $o: String!) {
+                    updateProjectV2ItemFieldValue(input: {
+                      projectId: $p, itemId: $i, fieldId: $f,
+                      value: { singleSelectOptionId: $o }
+                    }) { projectV2Item { id } }
+                  }
+                `, { p: PROJECT_ID, i: item.id, f: fieldId, o: optionId });
+                console.log(`✓ ${label}`);
+              } catch (err) {
+                console.error(`✗ Failed to set ${label}: ${err.message}`);
+              }
+            };
+
+            // 4. Set project fields
+            await setField('PVTSSF_lADOB435Ds4A7py9zg_TaXU', 'c0f74161', 'Work Category = Admin Support');
+            await setField('PVTSSF_lADOB435Ds4A7py9zgv4xOU', '5280356b', 'Priority = P2');
+
+            console.log(`✓ Created issue #${issue.number} linked to PR #${pr.number}`);
+
+  # -------------------------------------------------------
+  # Job 2: KB PR — kb-docs team requested via CODEOWNERS
+  # Creates Publishing Pipeline tracking issue
+  # Note: if hilram7 is also directly requested on the same KB PR, both jobs will fire
+  # and create separate tracking issues. In practice this shouldn't happen — CODEOWNERS
+  # auto-requests kb-docs; hilram7 is only directly requested on non-KB PRs.
+  # -------------------------------------------------------
+  create-kb-issue:
+    name: KB PR — create Publishing Pipeline issue
+    if: |
+      github.event.pull_request.head.repo.fork == false &&
+      github.event.requested_team != null &&
+      github.event.requested_team.slug == 'kb-docs'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    concurrency:
+      group: pr-${{ github.event.pull_request.number }}-kb
+      cancel-in-progress: false
+    steps:
+      - name: Create tracking issue, link PR, add to project board
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.KB_OPS_PAT }}
+          script: |
+            const pr = context.payload.pull_request;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            // Project board: https://github.com/orgs/netwrix/projects/2
+            // Field/option IDs are stable in practice; if the project is recreated, update these.
+            const PROJECT_ID = 'PVT_kwDOB435Ds4A7py9';
+
+            // Idempotency: skip if an open tracking issue already exists for this PR.
+            // state:open ensures a closed/deleted tracking issue doesn't block re-creation.
+            // Note: search indexing has ~10–60s latency — concurrency group reduces but does not
+            // fully eliminate the race if the event fires twice in very quick succession.
+            const existing = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${owner}/${repo} is:issue state:open "KB review:" "PR #${pr.number}" in:title`
+            });
+            if (existing.data.total_count > 0) {
+              console.log('Tracking issue already exists, skipping.');
+              return;
+            }
+
+            // 1. Create tracking issue
+            const prTitle = pr.title.length > 220 ? pr.title.slice(0, 220) + '…' : pr.title;
+            const { data: issue } = await github.rest.issues.create({
+              owner, repo,
+              title: `KB review: ${prTitle} (PR #${pr.number})`,
+              body: `KB article PR review — ${owner}/${repo} PR #${pr.number} (author: @${pr.user.login}).\n\nPR: ${pr.html_url}`,
+              assignees: ['hilram7'],
+              labels: ['kb/review']
+            });
+
+            // 2. Fetch current PR body and append closing keyword
+            // Fetch avoids clobbering edits made after the event fired.
+            let freshPr;
+            try {
+              ({ data: freshPr } = await github.rest.pulls.get({ owner, repo, pull_number: pr.number }));
+              await github.rest.pulls.update({
+                owner, repo,
+                pull_number: pr.number,
+                body: (freshPr.body || '') + `\n\nCloses #${issue.number}`
+              });
+            } catch (err) {
+              console.error(`✗ Failed to update PR body: ${err.message}`);
+              console.error(`  Issue #${issue.number} created but not linked — manually append: Closes #${issue.number}`);
+            }
+
+            // 3. Add issue to project board
+            let item;
+            try {
+              ({ addProjectV2ItemById: { item } } = await github.graphql(`
+                mutation($projectId: ID!, $contentId: ID!) {
+                  addProjectV2ItemById(input: { projectId: $projectId, contentId: $contentId }) {
+                    item { id }
+                  }
+                }
+              `, { projectId: PROJECT_ID, contentId: issue.node_id }));
+            } catch (err) {
+              console.error(`✗ Failed to add issue #${issue.number} to project board: ${err.message}`);
+              console.error(`  Issue created and PR body updated — manually add to board: https://github.com/orgs/netwrix/projects/2`);
+              return;
+            }
+
+            // Helper: set a single-select project field
+            const setField = async (fieldId, optionId, label) => {
+              try {
+                await github.graphql(`
+                  mutation($p: ID!, $i: ID!, $f: ID!, $o: String!) {
+                    updateProjectV2ItemFieldValue(input: {
+                      projectId: $p, itemId: $i, fieldId: $f,
+                      value: { singleSelectOptionId: $o }
+                    }) { projectV2Item { id } }
+                  }
+                `, { p: PROJECT_ID, i: item.id, f: fieldId, o: optionId });
+                console.log(`✓ ${label}`);
+              } catch (err) {
+                console.error(`✗ Failed to set ${label}: ${err.message}`);
+              }
+            };
+
+            // 4. Set project fields
+            await setField('PVTSSF_lADOB435Ds4A7py9zg_TaXU', '7d3f2431', 'Work Category = Publishing Pipeline');
+            await setField('PVTSSF_lADOB435Ds4A7py9zgv4xOU', '5280356b', 'Priority = P2');
+            await setField('PVTSSF_lADOB435Ds4A7py9zg_TaXY', '8f39fde1', 'Pipeline Stage = PR Open');
+
+            console.log(`✓ Created issue #${issue.number} linked to PR #${pr.number}`);

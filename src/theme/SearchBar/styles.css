@@ -1,6 +1,16 @@
 :root {
   --docsearch-primary-color: var(--ifm-color-primary);
   --docsearch-text-color: var(--ifm-font-color-base);
+  --docsearch-muted-color: rgba(150, 159, 175, 0.5);
+  --docsearch-modal-background: #f5f7fa;
+  --docsearch-hit-background: rgba(150, 159, 175, 0.1);
+  --docsearch-hit-active-color: rgba(150, 159, 175, 0.2);
+}
+
+[data-theme='dark'] {
+  --docsearch-modal-background: #1c1e21;
+  --docsearch-hit-background: rgba(255, 255, 255, 0.05);
+  --docsearch-hit-active-color: rgba(255, 255, 255, 0.1);
 }
 
 .DocSearch-Button {
@@ -11,4 +21,56 @@
 
 .DocSearch-Container {
   z-index: calc(var(--ifm-z-index-fixed) + 1);
+}
+
+/* Multi-select dropdown styling */
+.DocSearch-MultiSelect {
+  font-family: inherit;
+}
+
+.DocSearch-MultiSelect-Button {
+  font-family: inherit;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.DocSearch-MultiSelect-Button:hover {
+  border-color: var(--docsearch-primary-color);
+}
+
+.DocSearch-MultiSelect-Button:focus {
+  outline: 2px solid var(--docsearch-primary-color);
+  outline-offset: 2px;
+}
+
+.DocSearch-MultiSelect-Dropdown {
+  animation: fadeIn 0.15s ease;
+}
+
+.DocSearch-MultiSelect-Dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+
+.DocSearch-MultiSelect-Dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.DocSearch-MultiSelect-Dropdown::-webkit-scrollbar-thumb {
+  background: var(--docsearch-muted-color);
+  border-radius: 4px;
+}
+
+.DocSearch-MultiSelect-Dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--docsearch-primary-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
