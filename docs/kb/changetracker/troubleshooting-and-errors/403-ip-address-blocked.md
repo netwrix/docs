@@ -7,15 +7,15 @@ keywords:
   - Login failures
 sidebar_label: 403 IP Address Blocked
 tags: [kb, troubleshooting-and-errors]
-title: "Rolling-Log Fix: Hub Connection Failed. 403 Server Message: IP Address Blocked: Login Failures"
+title: "403 IP Address Blocked"
 knowledge_article_id: ka0Qk000000DlfRIAS
 products:
   - change-tracker
 ---
 
-# Rolling-Log Fix: Hub Connection Failed. 403 Server Message: IP Address Blocked: Login Failures
+# 403 IP Address Blocked
 
-## Symptoms
+## Symptom
 
 This problem can occur when the Agent password being sent to the Hub Server is incorrect.
 
