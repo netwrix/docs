@@ -10,7 +10,7 @@ import { NPCValue, NPCConcepts, NPCIntro } from '@site/src/training/pingcastle';
 import { Company, NPC } from '@site/src/training/products';
 
 
-Estimated length: 2 hour 30 minutes
+Estimated length: 2 hours 30 minutes
 
 This learning path introduces you to <NPC />. It contains the following courses:
 
