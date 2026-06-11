@@ -40,8 +40,8 @@ Third-party security tools are blocking the agent from hooking into LSASS.
 
 To resolve this issue, follow the steps in the first resolution. If the issue persists, follow the steps in the second resolution:
 
-- Correct the necessary endpoint protection exclusions. See [Antivirus Software Considerations](https://docs.netwrix.com/docs/threatprevention/7_5) in the Threat Prevention documentation.
-- Check if **SI Agent Safe Mode** is enabled. If enabled, it could prevent the LSASS hook from mitigating host reboots. See [SI Agent Safe Mode](https://docs.netwrix.com/docs/threatprevention/7_5) in the Threat Prevention documentation.
+- Correct the necessary endpoint protection exclusions. See [Antivirus Software Considerations](https://docs.netwrix.com/docs/threatprevention/7_5/install/overview#antivirus-software-considerations) in the Threat Prevention documentation.
+- Check if **SI Agent Safe Mode** is enabled. If enabled, it could prevent the LSASS hook from mitigating host reboots. See [SI Agent Safe Mode](https://docs.netwrix.com/docs/threatprevention/7_5/admin/agents/safemode) in the Threat Prevention documentation.
 
   1. To verify this setting, review the **AD Agent** column in the interface:
 
@@ -52,7 +52,7 @@ To resolve this issue, follow the steps in the first resolution. If the issue pe
 
 ## Related Articles
 
-- https://docs.netwrix.com/docs/threatprevention/7_5 (Netwrix Threat Manager v7.3 - Antivirus Software Considerations)
-- https://docs.netwrix.com/docs/threatprevention/7_5 (Netwrix Threat Manager v7.3 - SI Agent Safe Mode)
-- https://docs.netwrix.com/docs/threatprevention/7_5 (Netwrix Threat Manager v7.3 - Set Options Window)
-- https://docs.netwrix.com/docs/threatprevention/7_5 (Netwrix Threat Manager v7.3 - Update Agent Settings)
+- https://docs.netwrix.com/docs/threatprevention/7_5/install/overview#antivirus-software-considerations (Netwrix Threat Manager v7.5 - Antivirus Software Considerations)
+- https://docs.netwrix.com/docs/threatprevention/7_5/admin/agents/safemode (Netwrix Threat Manager v7.5 - SI Agent Safe Mode)
+- https://docs.netwrix.com/docs/threatprevention/7_5/admin/agents/deploy/setoptions (Netwrix Threat Manager v7.5 - Set Options Window)
+- https://docs.netwrix.com/docs/threatprevention/7_5/admin/agents/deploy/overview#update-agent-settings (Netwrix Threat Manager v7.5 - Update Agent Settings)
