@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Search Documents by Clue
 
-You can search for documents based on the class clues. For that, click on the name of any single
+You can search for documents based on the class clues. For that, click the name of any single
 clue in the clue list in the management console (or even any suggested clue), go to the **Search**
 tab and configure search settings.
 
@@ -18,7 +18,7 @@ tab and configure search settings.
     - Clue itself (clue body) - enter the required keyword or phrase in the **Find** field.
 
     :::note
-    [See Classification Rules (Clues) for more information.](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/clues/clues.md)
+    See [Classification Rules (Clues)](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/clues/clues.md) for details on clue types and configuration.
     :::
 
 
@@ -27,7 +27,7 @@ tab and configure search settings.
    by quickly examining its usage within the corpus. Consider the following:
 
     - The URL filter must end on a folder boundary.
-    - Use custom filter to specify a number of complex filters: boolean, datetime and numeric.
+    - Use custom filter to specify a number of complex filters: boolean, datetime, and numeric.
 
     :::note
     Full description of all filters can be found in the API Reference Guide.
@@ -35,8 +35,8 @@ tab and configure search settings.
 
 
 3. To view how recent changes to the term will affect the document classifications, select Show
-   document movements. As a result, the “movement” of the document since the last classification
-   will be shown. Possible scenarios are:
+   document movements. When selected, the results will show any change in scoring of each document since the last time that document was classified. 
+   For example:
 
 ![movementskey](/images/dataclassification/5.7/admin/taxonomies/movementskey.webp)
 
