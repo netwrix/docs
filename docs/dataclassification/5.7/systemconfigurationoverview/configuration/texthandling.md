@@ -46,7 +46,7 @@ services. A number of built-in processing methods are available, where there is 
 the processing will default to running through standard Microsoft Search iFilter processing.
 
 You can alter the methods by clicking Edit and then selecting the preferred processing
-method. It is also possible to specify that an iFilter should be used if the primary method
+method. You can also specify an iFilter as a backup if the primary method
 fails to extract text from the document – the backup method will be used if the extraction fails to
 find more than 5 characters of text.
 

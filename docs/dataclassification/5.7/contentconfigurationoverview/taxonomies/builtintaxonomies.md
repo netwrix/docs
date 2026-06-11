@@ -157,7 +157,7 @@ Combines the PHI and PII (U.S. social security numbers) taxonomies.
 
 ##### Credentials
 
-Includes sensitive credentials data, such as tokens, private or public keys, passwords, generic
+Includes sensitive credentials data, such as tokens, public keys, private keys, passwords, generic
 certificates, and others.
 
 ##### Cybersecurity Maturity Model Certification (CMMC)

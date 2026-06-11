@@ -47,8 +47,8 @@ the back-end SQL Server database:
     3. Click Save.
 
 - Transparent Data Encryption (TDE)—Protects your data at rest within SQL Server. Netwrix Data
-  Classification supports the use of TDE, it should of course be noted that this does incur a
-  performance overhead. TDE should be managed and configured by your database administrators.
+  Classification supports the use of TDE; however, this incurs a performance overhead. Your database
+  administrators should manage and configure TDE.
 
 ## Secure Search Index (CSE File)
 

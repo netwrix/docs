@@ -30,9 +30,9 @@ This functionality is implemented through the _Query Server_ application.
 
 DQS mode is configured via the administrative web console and, from version 5.7.10 onwards, the installer.
 
-If you want to implement DQS configuration for your NDC deployment, be aware that doing so 
-can't easily be undone. Netwrix strongly recommends ensuring that you have taken a full backup 
-of your environment before enabling DQS. Also, read the DQS documentation sections thoroughly before you start.
+If you want to implement DQS configuration for your NDC deployment, be aware that you can't easily
+undo it. Netwrix strongly recommends taking a full backup of your environment before enabling DQS.
+Also, read the DQS documentation sections thoroughly before you start.
 
 Ensure all servers you plan to add to the DQS cluster have a network connection and are
 visible to each other across the network. Adjust your firewall settings if necessary.

@@ -57,7 +57,7 @@ environments can be ranged as follows:
 | Up to 64, 000, 000            | Large-size environment                      |                                                                            |
 | More than 64, 000, 000        | Extra-large environment                     | System architect's assistance is required for deployment planning requires |
 
-Again, consider that for the large-size and extra-large environments, it is strongly recommended to
-configure a cluster of several NDC Servers and apply DQS mode to these clustered servers. See
+Again, consider that for the large-size and extra-large environments, Netwrix strongly recommends
+configuring a cluster of several NDC Servers and applying DQS mode to these clustered servers. See
 [Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md)
 for details.

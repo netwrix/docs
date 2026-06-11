@@ -14,5 +14,5 @@ policies in place to change passwords on a rolling basis.
 
 To amend the passwords for a username record first select Passwords from the main display. Then
 either click Edit to change a specific password or click Add Password to add a new password for the
-account. It isn't possible to have overlapping date ranges for the defined passwords, nor is it
-possible to remove all passwords from a user record.
+account. You can't have overlapping date ranges for the defined passwords, and you can't remove all
+passwords from a user record.

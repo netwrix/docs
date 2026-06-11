@@ -56,7 +56,7 @@ page to display more detailed information.
 You will then see the list of reported issues, with the ability to view a detailed description of
 the problem and suggested resolution steps.
 
-It is also possible to configure notifications of system issues, along with daily reports of
+You can also configure notifications of system issues, along with daily reports of
 outstanding system issues.
 
 1. Click Dismiss at the bottom.

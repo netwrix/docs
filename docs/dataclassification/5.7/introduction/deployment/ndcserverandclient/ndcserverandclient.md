@@ -30,6 +30,6 @@ Remember that for production environments, your NDC Server and database server m
 The virtual appliance configuration is insufficient for production and isn't recommended for that purpose.
 
 To balance processing load while collecting, indexing, and classifying data in large-size and extra-large
-environments (i.e. 16m+ objects to process), it is strongly recommended to deploy
+environments (i.e. 16m+ objects to process), Netwrix strongly recommends deploying
 multiple NDC Servers in **Distributed Query Server** mode.
 See [Configuring NDC Server Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) for instructions on setting up a multi-server cluster.

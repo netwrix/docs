@@ -17,14 +17,14 @@ Before you start the upgrade, Netwrix strongly recommends taking the following s
 Classification resides. If not, download it from Microsoft website:
 [Download .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472).
 
-**Step 2 –** Back up NDC SQL database. It is recommended to do the following:
+**Step 2 –** Back up NDC SQL database. Netwrix recommends the following:
 
 - Start Microsoft SQL Server Management Studio and connect to SQL Server instance hosting this
   database.
 - In the Object Explorer, right-click the database and select **Tasks** > **Back Up**.
 - Wait for the process to complete.
 
-**Step 3 –** Back up the Index files. It is recommended to do the following:
+**Step 3 –** Back up the Index files. Netwrix recommends the following:
 
 - On the computer where Netwrix Data Classification is installed, start the Netwrix Data
   Classification Service Viewer tool. Select **Stop** next to each service.
@@ -40,7 +40,7 @@ to prevent any possible issues with the upgrade process.
 
 ## Upgrade Process
 
-It is only possible to upgrade directly to Netwrix Data Classification 5.7 from versions 5.5 and newer.
+You can upgrade directly to Netwrix Data Classification 5.7 only from versions 5.5 and newer.
 
 To upgrade your deployment, after taking the preparatory steps described above, run the product
 setup and follow the wizard steps. When finished, all solution components will be running.
@@ -63,7 +63,7 @@ see the [Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs
 ## After the Upgrade
 
 During the upgrade from previous versions, Netwrix Data Classification preserves its
-configuration, so you will be able to classify your data right after finishing the upgrade. However,
+configuration, so you can classify your data right after finishing the upgrade. However,
 there are several steps you may need to take after upgrading.
 
 To update taxonomies manually:
