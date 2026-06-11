@@ -16,7 +16,7 @@ on:
 
 jobs:
   doc-review:
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false
     concurrency:
       group: doc-pr-review-${{ github.event.pull_request.number }}
       cancel-in-progress: true
@@ -93,7 +93,7 @@ jobs:
 
       - name: Run editorial review
         if: steps.changed-files.outputs.count > 0
-        uses: anthropics/claude-code-action@24492741e0ccfdef4c1d19da8e11e0f373d07494 # v1
+        uses: anthropics/claude-code-action@bbfaf8e1ffe3e688f7ab65ceee78de241e24a238 # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOC_PR_FILES: ${{ steps.changed-files.outputs.files }}
@@ -143,10 +143,11 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER="${{ github.event.issue.number }}"
-          PR_DATA=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json headRefName,baseRefName,isCrossRepository)
+          PR_DATA=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json headRefName,baseRefName,isCrossRepository,headRefOid)
           BASE_BRANCH=$(echo "$PR_DATA" | jq -r '.baseRefName')
           echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
           echo "branch=$(echo "$PR_DATA" | jq -r '.headRefName')" >> "$GITHUB_OUTPUT"
+          echo "sha=$(echo "$PR_DATA" | jq -r '.headRefOid')" >> "$GITHUB_OUTPUT"
           echo "is_fork=$(echo "$PR_DATA" | jq -r '.isCrossRepository')" >> "$GITHUB_OUTPUT"
           # Check target branch using the shell variable to avoid
           # re-interpolating the output via expressions (code injection risk).
@@ -176,13 +177,19 @@ jobs:
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          ref: ${{ steps.pr-info.outputs.branch }}
+          ref: ${{ steps.pr-info.outputs.sha }}
           token: ${{ secrets.VALE_TOKEN }}
           fetch-depth: 0
 
+      - name: Attach to branch
+        if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
+        env:
+          BRANCH: ${{ steps.pr-info.outputs.branch }}
+        run: git checkout -B "$BRANCH"
+
       - name: Handle @claude request
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
-        uses: anthropics/claude-code-action@24492741e0ccfdef4c1d19da8e11e0f373d07494 # v1
+        uses: anthropics/claude-code-action@bbfaf8e1ffe3e688f7ab65ceee78de241e24a238 # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

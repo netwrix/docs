@@ -10,30 +10,30 @@ The following learning paths provide Partner certification for Presales Engineer
 
 * Data Security
     * AI Governance
-        * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix 1Secure Presales Engineer](./1secure.md)
         * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
         * [Netwrix Access Analyzer 26 Presales Engineer](./access-analyzer-26.md)
         * [Netwrix Endpoint Protector Presales Engineer](./endpoint-protector.md)
     * Data Security Posture Management
-        * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix 1Secure Presales Engineer](./1secure.md)
         * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
         * [Netwrix Access Analyzer 26 Presales Engineer](./access-analyzer-26.md)
         * [Netwrix Endpoint Protector Presales Engineer](./endpoint-protector.md)
     * Data Access Governance
-        * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix 1Secure Presales Engineer](./1secure.md)
         * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
         * [Netwrix Access Analyzer 26 Presales Engineer](./access-analyzer-26.md)
     * Data Loss Prevention
-        * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix 1Secure Presales Engineer](./1secure.md)
         * [Netwrix Endpoint Protector Presales Engineer](./endpoint-protector.md)
     * Data Discovery & Classification
-        * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix 1Secure Presales Engineer](./1secure.md)
         * [Netwrix Access Analyzer Presales Engineer](./access-analyzer.md)
         * [Netwrix Access Analyzer 26 Presales Engineer](./access-analyzer-26.md)
         * [Netwrix Data Classification Presales Engineer](./data-classification.md)
 * Identity Security
     * Identity Threat Detection & Response
-        * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix 1Secure Presales Engineer](./1secure.md)
         * [Netwrix Identity Recovery Presales Engineer](./identity-recovery.md)
         * [Netwrix Identity Threat Detection & Response Solution Presales Engineer](./identity-threat-detection-and-response.md)
         * [Netwrix Threat Manager Presales Engineer](./threat-manager.md)
@@ -42,13 +42,13 @@ The following learning paths provide Partner certification for Presales Engineer
         * [Netwrix Directory Manager Presales Engineer](./directory-manager.md)
         * [Netwrix Identity Manager Presales Engineer](./identity-manager.md)
     * Identity Security Posture Management
-        * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix 1Secure Presales Engineer](./1secure.md)
         * [Netwrix Auditor Presales Engineer](./auditor.md)
         * [Netwrix PingCastle Presales Engineer](./pingcastle.md)
     * Privileged Access Management
         * [Netwrix Privileged Secure Presales Engineer](./privilege-secure.md)
     * Directory Security
-        * [Netwrix 1Secure Core Presales Engineer](./1secure-core.md)
+        * [Netwrix 1Secure Presales Engineer](./1secure.md)
         * [Netwrix Auditor Presales Engineer](./auditor.md)
         * [Netwrix Directory Manager Presales Engineer](./directory-manager.md)
         * [Netwrix Identity Recovery Presales Engineer](./identity-recovery.md)

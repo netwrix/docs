@@ -34,6 +34,19 @@ function stripHtmlTagsToText(input) {
     return input.replace(/[<>]/g, '');
 }
 
+// Helper to get versions for selected products
+function getVersionsForProducts(selectedProducts) {
+    const versionsSet = new Set();
+    const isAll = !selectedProducts || selectedProducts.length === 0 || selectedProducts.includes('__all__');
+    const source = isAll ? PRODUCTS : selectedProducts.map(name => PRODUCTS.find(p => p.name === name)).filter(Boolean);
+    source.forEach(product => {
+        if (product.versions) {
+            product.versions.forEach(v => versionsSet.add(v.version));
+        }
+    });
+    return Array.from(versionsSet).sort();
+}
+
 // Generate product options from PRODUCTS config
 const PRODUCT_OPTIONS = [
     {label: 'All products', value: '__all__'},
@@ -163,48 +176,6 @@ function MultiSelect({label, options, selectedValues, onChange}) {
     );
 }
 
-function ToggleSwitch({checked, onChange, small}) {
-    const width = small ? 32 : 48;
-    const height = small ? 18 : 26;
-    const thumbSize = small ? 12 : 18;
-    const thumbOffset = small ? 3 : 4;
-    const thumbOn = width - thumbSize - thumbOffset;
-    return (
-        <button
-            type="button"
-            role="switch"
-            aria-checked={checked}
-            onClick={(e) => { e.preventDefault(); onChange(!checked); }}
-            style={{
-                position: 'relative',
-                display: 'inline-flex',
-                alignItems: 'center',
-                width: `${width}px`,
-                height: `${height}px`,
-                borderRadius: `${height / 2}px`,
-                background: checked ? 'var(--ifm-color-primary)' : 'var(--ifm-color-emphasis-400)',
-                border: 'none',
-                cursor: 'pointer',
-                padding: 0,
-                flexShrink: 0,
-                transition: 'background 0.2s ease',
-            }}
-        >
-            <span style={{
-                position: 'absolute',
-                top: `${thumbOffset}px`,
-                left: checked ? `${thumbOn}px` : `${thumbOffset}px`,
-                width: `${thumbSize}px`,
-                height: `${thumbSize}px`,
-                borderRadius: '50%',
-                background: 'white',
-                transition: 'left 0.2s ease',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
-            }} />
-        </button>
-    );
-}
-
 function useDocumentsFoundPlural() {
     const {selectMessage} = usePluralForm();
     return (count) =>
@@ -273,6 +244,7 @@ function SearchPageContent() {
     const urlParams = new URLSearchParams(location.search);
     const queryFromUrl = urlParams.get('q') || '';
     const productsFromUrl = urlParams.get('products')?.split(',').filter(Boolean) || [];
+    const versionsFromUrl = urlParams.get('versions')?.split(',').filter(Boolean) || [];
     const resultsPerPageFromUrl = parseInt(urlParams.get('resultsPerPage'), 10) || 25;
     const pageFromUrl = parseInt(urlParams.get('page'), 10) || 1;
 
@@ -280,83 +252,75 @@ function SearchPageContent() {
     // Initialize from URL if present, otherwise from localStorage
     const [selectedProducts, setSelectedProducts] = useState(() => {
         if (productsFromUrl.length > 0) return productsFromUrl;
-        if (typeof window === 'undefined') return [];
+        if (typeof window === 'undefined') return ['__all__'];
         const saved = sessionStorage.getItem('docs_product_filter');
         try {
-            return saved ? JSON.parse(saved) : [];
+            const parsed = saved ? JSON.parse(saved) : [];
+            if (!Array.isArray(parsed) || parsed.length === 0) return ['__all__'];
+            return parsed;
         } catch {
-            return [];
+            return ['__all__'];
         }
+    });
+    // Initialize from URL if present, otherwise from sessionStorage
+    const [selectedVersions, setSelectedVersions] = useState(() => {
+        if (versionsFromUrl.length > 0) return versionsFromUrl;
+        if (typeof window === 'undefined') return ['__all__'];
+        const saved = sessionStorage.getItem('docs_version_filter');
+        try {
+            const parsed = saved ? JSON.parse(saved) : [];
+            if (!Array.isArray(parsed) || parsed.length === 0) return ['__all__'];
+            return parsed;
+        } catch { return ['__all__']; }
     });
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
 
-    // Typo tolerance — off by default, shared with SearchBar via sessionStorage + events
-    const [typoTolerance, setTypoTolerance] = useState(() => {
-        if (typeof window === 'undefined') return false;
-        const saved = sessionStorage.getItem('docs_typo_tolerance');
-        try {
-            return saved ? JSON.parse(saved) : false;
-        } catch {
-            return false;
-        }
-    });
+    const availableVersions = useMemo(() => getVersionsForProducts(selectedProducts), [selectedProducts]);
 
-    // Track if we're restoring from URL (e.g., browser back button)
-    const restoringFromUrl = useRef(false);
-    const targetPageRef = useRef(null);
+    // Clear orphan versions when products change
+    const handleProductChange = useCallback((newProducts) => {
+        setSelectedProducts(newProducts);
+        const validVersions = new Set(getVersionsForProducts(newProducts));
+        setSelectedVersions(prev => {
+            const cleaned = prev.filter(v => v === '__all__' || validVersions.has(v));
+            return cleaned.length > 0 ? cleaned : ['__all__'];
+        });
+    }, []);
+
+    // Track if we're restoring from URL (e.g., browser back button).
+    // Initialize from pageFromUrl so landing on /search?page=3 works
+    // even though the location.search effect skips initial mount.
+    const restoringFromUrl = useRef(pageFromUrl > 1);
+    const targetPageRef = useRef(pageFromUrl > 1 ? pageFromUrl - 1 : null);
     const isInternalNavigation = useRef(false);
+    const isInitialMount = useRef(true);
 
     // All sorted results for client-side pagination
     const allItemsRef = useRef([]);
 
-    // Sync selectedProducts to sessionStorage and dispatch custom event for same-tab sync
+    // Sync selectedProducts to sessionStorage
     useEffect(() => {
         if (typeof window !== 'undefined') {
             sessionStorage.setItem('docs_product_filter', JSON.stringify(selectedProducts));
-            // Dispatch custom event for same-tab synchronization
-            window.dispatchEvent(new CustomEvent('productFilterChange', {
-                detail: {products: selectedProducts}
-            }));
         }
     }, [selectedProducts]);
 
-    // Listen for filter changes from SearchBar modal (same-tab sync)
-    useEffect(() => {
-        const handleFilterChange = (e) => {
-            const newProducts = e.detail.products;
-            // Avoid infinite loop by checking if products actually changed
-            if (JSON.stringify(newProducts) !== JSON.stringify(selectedProducts)) {
-                setSelectedProducts(newProducts);
-            }
-        };
-        window.addEventListener('productFilterChange', handleFilterChange);
-        return () => window.removeEventListener('productFilterChange', handleFilterChange);
-    }, [selectedProducts]);
-
-    // Sync typoTolerance to sessionStorage and dispatch event for same-tab sync
+    // Sync selectedVersions to sessionStorage
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            sessionStorage.setItem('docs_typo_tolerance', JSON.stringify(typoTolerance));
-            window.dispatchEvent(new CustomEvent('typoToleranceChange', {
-                detail: {typoTolerance},
-            }));
+            sessionStorage.setItem('docs_version_filter', JSON.stringify(selectedVersions));
         }
-    }, [typoTolerance]);
+    }, [selectedVersions]);
 
-    // Listen for typo tolerance changes from SearchBar modal (same-tab sync)
-    useEffect(() => {
-        const handler = (e) => {
-            const newVal = e.detail.typoTolerance;
-            if (newVal !== typoTolerance) {
-                setTypoTolerance(newVal);
-            }
-        };
-        window.addEventListener('typoToleranceChange', handler);
-        return () => window.removeEventListener('typoToleranceChange', handler);
-    }, [typoTolerance]);
 
-    // Update state when URL changes (e.g., when navigating from search modal or browser back)
+    // Update state when URL changes (e.g., browser back/forward)
+    // Skips initial mount — useState initializers already read URL params and sessionStorage
     useEffect(() => {
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+            return;
+        }
+
         // Skip if this was an internal navigation (we triggered the URL change ourselves)
         if (isInternalNavigation.current) {
             isInternalNavigation.current = false;
@@ -367,11 +331,13 @@ function SearchPageContent() {
         const urlParams = new URLSearchParams(location.search);
         const newQuery = urlParams.get('q') || '';
         const newProducts = urlParams.get('products')?.split(',').filter(Boolean) || [];
+        const newVersions = urlParams.get('versions')?.split(',').filter(Boolean) || [];
         const newResultsPerPage = parseInt(urlParams.get('resultsPerPage'), 10) || 25;
         const newPage = parseInt(urlParams.get('page'), 10) || 1;
 
         setSearchQuery(newQuery);
-        setSelectedProducts(newProducts);
+        setSelectedProducts(newProducts.length > 0 ? newProducts : ['__all__']);
+        setSelectedVersions(newVersions.length > 0 ? newVersions : ['__all__']);
         setResultsPerPage(newResultsPerPage);
 
         // Store target page for restoration
@@ -541,15 +507,20 @@ function SearchPageContent() {
                 facetFilters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
             }
 
+            const realVersions = selectedVersions.filter(v => v !== '__all__');
+            if (realVersions.length > 0) {
+                facetFilters.push(realVersions.map(v => `product_version:${v}`)); // Array within array = OR logic
+            }
+
             // Always fetch page 0 — all results come back at once for client-side pagination
             algoliaHelper
                 .setQuery(searchQuery)
                 .setQueryParameter('facetFilters', facetFilters)
-                .setQueryParameter('typoTolerance', typoTolerance)
+                .setQueryParameter('typoTolerance', false)
                 .setPage(0)
                 .search();
         },
-        [searchQuery, algoliaHelper, currentLocale, selectedProducts, typoTolerance],
+        [searchQuery, algoliaHelper, currentLocale, selectedProducts, selectedVersions],
     );
 
     // Navigate to a page client-side using already-fetched sorted results
@@ -572,7 +543,7 @@ function SearchPageContent() {
     );
 
     // Update URL when filters or pagination change
-    const prevFiltersRef = useRef({searchQuery: '', selectedProducts: [], resultsPerPage: 25, page: 1});
+    const prevFiltersRef = useRef({searchQuery: '', selectedProducts: [], selectedVersions: [], resultsPerPage: 25, page: 1});
 
     useEffect(() => {
         // Only update URL if values actually changed
@@ -582,6 +553,7 @@ function SearchPageContent() {
         if (
             prev.searchQuery !== searchQuery ||
             JSON.stringify(prev.selectedProducts) !== JSON.stringify(selectedProducts) ||
+            JSON.stringify(prev.selectedVersions) !== JSON.stringify(selectedVersions) ||
             prev.resultsPerPage !== resultsPerPage ||
             prev.page !== currentPage
         ) {
@@ -589,17 +561,24 @@ function SearchPageContent() {
             if (searchQuery) params.set('q', searchQuery);
             const urlProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
             if (urlProducts.length > 0) params.set('products', urlProducts.join(','));
+            const urlVersions = selectedVersions.filter(v => v !== '__all__');
+            if (urlVersions.length > 0) params.set('versions', urlVersions.join(','));
             if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
             if (currentPage > 1) params.set('page', String(currentPage));
 
-            // Mark this as an internal navigation so location.search effect ignores it
-            isInternalNavigation.current = true;
-            history.replace({search: params.toString()});
+            // Only set the flag when the URL actually changes — otherwise the
+            // location.search effect never fires to reset it, and the next
+            // external navigation (e.g. from the modal) gets skipped.
+            const newSearch = params.toString();
+            if (newSearch !== location.search.replace(/^\?/, '')) {
+                isInternalNavigation.current = true;
+                history.replace({search: newSearch});
+            }
 
-            prevFiltersRef.current = {searchQuery, selectedProducts, resultsPerPage, page: currentPage};
+            prevFiltersRef.current = {searchQuery, selectedProducts, selectedVersions, resultsPerPage, page: currentPage};
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery, selectedProducts, resultsPerPage, searchResultState.lastPage]);
+    }, [searchQuery, selectedProducts, selectedVersions, resultsPerPage, searchResultState.lastPage]);
 
     // IntersectionObserver removed - using pagination buttons instead
 
@@ -613,7 +592,7 @@ function SearchPageContent() {
             }, 300);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [searchQuery, selectedProducts, resultsPerPage, typoTolerance]);
+    }, [searchQuery, selectedProducts, selectedVersions, resultsPerPage]);
 
     // Scroll to top when page changes (except initial load)
     const isInitialLoad = useRef(true);
@@ -798,28 +777,6 @@ function SearchPageContent() {
                             </div>
                         </div>
 
-                        <div style={{display: 'flex', justifyContent: 'flex-start', marginBottom: '12px'}}>
-                            <label
-                                title="When enabled, search results include near-matches for typos and spelling variations."
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '7px',
-                                    cursor: 'pointer',
-                                    userSelect: 'none',
-                                    fontSize: '12px',
-                                    color: 'var(--ifm-color-emphasis-600)',
-                                }}
-                            >
-                                <ToggleSwitch
-                                    checked={typoTolerance}
-                                    onChange={setTypoTolerance}
-                                    small
-                                />
-                                Typo Tolerance
-                            </label>
-                        </div>
-
                         {!!searchResultState.totalResults && (
                             <div
                                 style={{
@@ -860,8 +817,19 @@ function SearchPageContent() {
                             label="Products"
                             options={PRODUCT_OPTIONS}
                             selectedValues={selectedProducts}
-                            onChange={setSelectedProducts}
+                            onChange={handleProductChange}
                         />
+                        {availableVersions.length > 0 && (
+                            <MultiSelect
+                                label="Versions"
+                                options={[
+                                    {label: 'All versions', value: '__all__'},
+                                    ...availableVersions.map(v => ({label: v, value: v})),
+                                ]}
+                                selectedValues={selectedVersions}
+                                onChange={setSelectedVersions}
+                            />
+                        )}
                     </div>{/* closes filters div */}
 
                     {/* Results area */}

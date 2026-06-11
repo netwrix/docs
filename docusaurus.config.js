@@ -7,7 +7,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap } from './src/config/products.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -30,6 +30,8 @@ PRODUCTS.forEach(product => {
     }
   });
 });
+
+const latestVersionMap = getLatestVersionUrlMap();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -152,6 +154,17 @@ const config = {
             to: `/${targetPath}`,
           };
         }),
+        createRedirects(existingPath) {
+          for (const [productId, latestUrlVersion] of Object.entries(latestVersionMap)) {
+            const versionedPrefix = `/docs/${productId}/${latestUrlVersion}/`;
+            if (existingPath.startsWith(versionedPrefix)) {
+              const rest = existingPath.slice(versionedPrefix.length).replace(/\/$/, '');
+              if (!rest) return undefined;
+              return [`/docs/${productId}/${rest}`];
+            }
+          }
+          return undefined;
+        },
       },
     ],
     // Generate all product documentation plugins from centralized configuration
@@ -182,6 +195,28 @@ const config = {
             version: '8.1',
             label: 'ChangeTracker Hub 8.1 API',
             baseUrl: '/docs/changetracker/8_1/api/reference/',
+          },
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: 'openapi-8-2',
+        docsPluginId: 'changetracker8_2',
+        config: {
+          'changetracker-hub-8-2': {
+            specPath: 'static/openapi/changetracker-hub-8.2.yaml',
+            outputDir: 'docs/changetracker/8.2/api/reference',
+            sidebarOptions: {
+              groupPathsBy: 'tag',
+              categoryLinkSource: 'tag',
+              sidebarCollapsed: true,
+            },
+            downloadUrl: '/openapi/changetracker-hub-8.2.yaml',
+            version: '8.2',
+            label: 'ChangeTracker Hub 8.2 API',
+            baseUrl: '/docs/changetracker/8_2/api/reference/',
           },
         },
       },

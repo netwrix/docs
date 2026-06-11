@@ -8,14 +8,13 @@ sidebar_position: 40
 
 This section provides a complete overview of your licensing status. Use it to manage licenses
 for Modules, such as Content Aware Protection and eDiscovery, as well as Endpoints, the computers
-you protect. You can import licenses, view details, and handle free trials, ensuring efficient and
-flexible license management.
+you protect. You can import licenses, view details, and handle free trials.
 
 ![Licensing](licensingpage.png)
 
 :::note
-As of Endpoint Protector Version 5.9.0.0, Endpoint Protector introduced a new subscription-based licensing system. This change removes the licensing restrictions on Premium features, granting
-unrestricted access to features like Contextual Detection for all customers. This adjustment aligns
+As of Endpoint Protector Version 5.9.0.0, Endpoint Protector introduced a new subscription-based licensing system. This change removes the licensing restrictions on Premium features, granting all
+customers unrestricted access to features like Contextual Detection. This adjustment aligns
 with the revised licensing model, categorizing all features as standard and accessible to all users.
 :::
 
@@ -23,11 +22,12 @@ with the revised licensing model, categorizing all features as standard and acce
 Endpoint Protector Licensing is based on two main aspects:
 
 - Modules – all modules are licensed separately (Content Aware Protection, eDiscovery, etc.) and require the Device Control module
-- Workstations - A Workstation is defined as any single physical or virtual computing environment (including but not limited to laptops, desktops, or virtual desktop instances) on which the Endpoint Protector client software is installed or through which the software is accessed. Each Workstation must be uniquely identifiable (e.g., via hostname, serial number, UUID, or a similar mechanism) and is considered a distinct endpoint for licensing purposes, regardless of its persistence or lifecycle.
+- Workstations -  A Workstation is any device (physical or virtual) on which the Software is installed, maintained, or accessed or that otherwise engages with the Software. Workstation includes without limitation desktop computers, laptops, virtual desktop instances, mobile phones, tablets, servers, kiosks, or endpoints.
+- Counting with 30-Day Rolling Period - Each uniquely identifiable Workstation (e.g., via hostname, serial number, UUID, or a similar mechanism) is a single Workstation. The Customer must have an aggregate quantity of licenses for the maximum number of Workstation that interacts with the Software within each 30-day period of the Subscription Term (each a "License Window"). Any Workstation active during a License Window will count towards the total for that License Window.
 
-Based on the selected Modules and Workstations, your Endpoint Protector representative will provide a licensing file.
+Your Endpoint Protector representative will provide a licensing file based on the selected Modules and Workstations.
 
-The Endpoint Protector **Server ID** uniquely identiﬁes each server and is linked to the license
+The Endpoint Protector **Server ID** uniquely identiﬁes each server and links to the license
 ﬁle. Provide it to the Endpoint Protector representative before purchasing licenses.
 
 The **License End Date** displays the validity of the licenses in the system, and **Support**
@@ -38,7 +38,7 @@ represents the level of purchased Support (Standard or Premium)
 Endpoint Protector provides a one-time free, 30-day trial period, and by enabling the Free Trial
 option, you will automatically enable all modules for 50 computers. Endpoint Protector assigns endpoint licenses on a first-in, first-served basis.
 
-If one or more licensed Workstations have been permanently decommissioned, you can release and reassign their licenses. The system automatically reassigns released licenses to other active Workstations.
+If you have permanently decommissioned one or more licensed Workstations, you can release and reassign their licenses. The system automatically reassigns released licenses to other active Workstations.
 
 ## Import and Manage Licenses
 
@@ -48,7 +48,7 @@ Click **View Licenses** to manage endpoint licenses.
 
 ![Import and Manage Licenses](importmanagelicenses.webp)
 
-If one or more licensed Workstations have been permanently decommissioned, you can release and reassign their licenses. The system automatically reassigns released licenses to other active Workstations.
+If you have permanently decommissioned one or more licensed Workstations, you can release and reassign their licenses. The system automatically reassigns released licenses to other active Workstations.
 
 Use the automatic license release functionality to release licenses from decommissioned Workstations that have not been online for over a certain number of days (15, 30, 90 days, etc.).
 It isn't intended for frequent repeated reassignment of licenses among ephemeral or non-persistent virtual desktops, pooled sessions, or other temporary compute instances.
