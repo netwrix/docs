@@ -33,6 +33,6 @@ data discovery and classification rules tuning.
 In this mode you will get a fully featured index, supporting **Search** by compound term. Note
 that data storage for compound term processing will require significantly more space, and overall throughput 
 may decrease (compared to the Keyword mode). Recommended for knowledge management, data storage optimization, 
-legal search, other content services.
+legal search, and other content services.
 
 Proceed with configuring processing settings. See [Processing Settings](/docs/dataclassification/5.7/introduction/initialconfiguration/processingsettings.md) next.

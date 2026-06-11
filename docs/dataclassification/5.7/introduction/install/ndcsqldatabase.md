@@ -40,7 +40,7 @@ right-click, and select Properties.
 
     | Option            | Description                                        |
     | ----------------- | -------------------------------------------------- |
-    | File Growth       | - Recommended—128 MB. - Large environment— 512 MB. |
+    | File Growth       | - Recommended — 128 MB. - Large environment — 512 MB. |
     | Maximum File Size | Select Unlimited.                                  |
 
 5. Select the Options page and ensure the Recovery model is set to "_Simple_".

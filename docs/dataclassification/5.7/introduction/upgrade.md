@@ -13,7 +13,7 @@ latest version available to take advantage of new features and fixes.
 
 Before you start the upgrade, Netwrix strongly recommends taking the following steps:
 
-**Step 1 –** ensure you have .NET Framework 4.7.2 installed on the computer where Netwrix Data
+**Step 1 –** Ensure you have .NET Framework 4.7.2 installed on the computer where Netwrix Data
 Classification resides. If not, download it from Microsoft website:
 [Download .NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472).
 
@@ -69,7 +69,7 @@ there are several steps you may need to take after upgrading.
 To update taxonomies manually:
 
 **Step 1 –** In administrative web console, navigate to **Taxonomies** > **Global
-Settings**.Settings.
+Settings**.
 
 **Step 2 –** Click **Update** in the right corner next to each taxonomy.
 

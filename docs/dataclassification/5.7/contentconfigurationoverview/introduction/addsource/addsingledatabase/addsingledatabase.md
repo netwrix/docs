@@ -19,8 +19,7 @@ After connecting, you can create an intelligent content mapping, crawling certai
 unstructured index text, and other fields as mapped metadata. See the
 [Database Configuration Wizard](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsingledatabase/databaseconfigwizard.md) section for instructions on configuring field mappings.
 
-If you want to make other configuration changes before collection of the source occurs ensure you
-tick the checkbox "_Pause source on creation_".
+If you want to make other configuration changes before collection of the source occurs, select the **Pause source on creation** checkbox.
 
 ![add_database_thumb_0_0](/images/dataclassification/5.7/admin/sources/database/add_database_thumb_0_0.webp)
 

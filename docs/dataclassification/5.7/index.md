@@ -127,7 +127,7 @@ The NDC Index contains a probabilistic index for all documents that have been in
 use the extension “.cse”, but temporary files (extension “.tmp”) are used when merging changes into the index.
 
 The NDC Index files should be located on the same server as the Netwrix Data
-Classification server due to the fact that the query and indexing processes can be highly disk-intensive.
+Classification server because the query and indexing processes can be highly disk-intensive.
 
 :::note
 "text.cse" isn't supplied since it will be created automatically when the first documents

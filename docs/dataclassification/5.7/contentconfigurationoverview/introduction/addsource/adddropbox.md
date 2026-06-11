@@ -9,7 +9,7 @@ sidebar_position: 20
 Use the Dropbox source configuration screen to enable the crawling and classification of
 content stored in Dropbox cloud storage.
 
-**IMPORTANT:** Ensure you created and configured a Dropbox app before adding the source. See [Configure Dropbox for Crawling](/docs/dataclassification/5.7/introduction/introduction/dropbox.md) page for app requirements.
+**IMPORTANT:** Ensure you created and configured a Dropbox app before adding the source. See [Configure Dropbox for Crawling](/docs/dataclassification/5.7/introduction/introduction/dropbox.md) for app requirements.
 
 ![source_dropbox_thumb_0_0](/images/dataclassification/5.7/admin/sources/dropbox/source_dropbox_thumb_0_0.webp)
 

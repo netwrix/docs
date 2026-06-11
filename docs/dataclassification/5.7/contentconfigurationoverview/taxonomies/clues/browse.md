@@ -17,8 +17,8 @@ made to the classification clues since the last time each document was classifie
 
 To see how the classification of each document would change based on the current term configuration, 
 tick the Show Movements checkbox. When selected, the results will display any change 
-in document scoring between the current stored document score and how the document would be scored 
-against the current classification clues for each document.
+in document scoring between the current stored document score and the score it would receive 
+against the current classification clues.
 
 The document text will be highlighted based upon the clues configured for the term. Highlighting
 will include regular expression matches when configured (Config→Query Server→Enable Regex Browse
@@ -43,7 +43,7 @@ You can use the Browse function to:
 ![browsetab_thumb_0_0](/images/dataclassification/5.7/admin/reporting/browsetab_thumb_0_0.webp)
 
 :::note
-By default, results from sources that have not been indexed, or that aren't indexed, aren't included in the Browse results. 
+By default, results from sources that have not yet been indexed, or that aren't configured to be indexed, aren't included in the Browse results. 
 To include these results, tick the Show Unindexed Documents checkbox.
 :::
 

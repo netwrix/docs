@@ -11,9 +11,9 @@ permissions and manage existing users.
 
 ## Authentication Mechanisms
 
-On first install the QS will be configured for Windows authentication. To set up the QS to use an
-ADFS server follow the "Installation and Configuration" guide using the section "ADFS". To
-use forms based authentication disable all other authentication methods in IIS other than:
+On first install, the QS will be configured for Windows authentication. To set up the QS to use an
+ADFS server, follow the "Installation and Configuration" guide using the section "ADFS". To
+use forms based authentication, disable all other authentication methods in IIS other than:
 Anonymous and Forms:
 
 To use authentication forms:
@@ -57,8 +57,8 @@ to the "`<appsettings>`" section of the web.config file in the QS directory:
 - `<add key="ida:AzureClientId" value="NewAzureADClientID (GUID)" />`
 - `<add key="ida:AzureAuthority" value="AzureADAuthorityValue such as: https://login.windows.net/mytenant.onmicrosoft.com" />`
 
-The Netwrix Data Classification REST APIs also support Bearer based authentication, to enable this
-mode add one further appSetting entry into the web.config file:
+The Netwrix Data Classification REST APIs also support Bearer-based authentication. To enable this
+mode, add one further appSetting entry into the web.config file:
 
 - `<add key="ida:AzureTenant" value="Tenant Name such as: netwrix.com" />`
 
@@ -87,14 +87,14 @@ If the only user defined is a Super User and that user is deleted then all secur
 usage of the QS administrative functions reverts to unrestricted.
 
 User accounts granted access to the REST APIs will still be restricted by their specific user
-permissions. A Super User with REST API access will be able to run any API method, any normal user
+permissions. A Super User with REST API access will be able to run any API method. Any normal user
 will be restricted by the same rules that govern the UI. Further API samples and documentation can
 be found at: /NDC/\_api
 
 ## Permission Management
 
 To allocate granular permissions to a user (non-Super Users), click Edit on their row in the Users table. The
-permissions for each section of the administrative web interface will be displayed as tabs. Each tab contains a top level
+permissions for each section of the administrative web interface will be displayed as tabs. Each tab contains a top-level
 checkbox of the form "Access [Area Name]” (e.g. Access Sources) which defines whether a user has access to each of the top level administrative areas.
 
 When an area is enabled there are typically more granular permissions that can be enabled, such as:
@@ -137,7 +137,7 @@ Users.
 Regardless of the authentication mode selected the usage of the QS administrative functions will
 continue to be unrestricted until at least one user is added. The first user must be a Super User.
 If Windows or ADFS Authentication are being used then the first user will default to the 
-logged in user, although this can be changed if required.
+logged-in user, although this can be changed if required.
 
 If Non-Windows Authentication is enabled then additional information must be entered to define the
 non-Windows user.

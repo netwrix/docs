@@ -31,5 +31,5 @@ The virtual appliance configuration is insufficient for production and isn't rec
 
 To balance processing load while collecting, indexing, and classifying data in large-size and extra-large
 environments (i.e. 16m+ objects to process), it is strongly recommended to deploy
-multiple NDC Servers and configure them as a **Distributed Query Server**.
-See [Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) for instructions on setting up a multi-server cluster.
+multiple NDC Servers in **Distributed Query Server** mode.
+See [Configuring NDC Server Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) for instructions on setting up a multi-server cluster.

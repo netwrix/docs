@@ -59,14 +59,13 @@ groupings to this engine:
 - All other files—Stores the compound term processing search index, identifying which documents
   should be returned for a given query
 
-Text.cse can be optionally encrypted, this uses AES/SHA256 to further improve the security of
-the full text at rest. You can enable this mode by:
+Text.cse can be optionally encrypted using AES/SHA256 to further improve the security of the full text at rest. You can enable this by:
 
-1. Access the Administration Console.
-2. Select Config from the top navigation bar.
-3. On the Collector tab, enable the Encrypt Text (Text.cse) option (this is an advanced setting - 
+1. Accessing the Administration Console.
+2. Selecting **Config** from the top navigation bar.
+3. On the Collector tab, enabling the **Encrypt Text** (Text.cse) option (this is an advanced setting - 
 select the wrench icon in the bottom left to display it).
-4. Select Save.
+4. Selecting **Save**.
 
 The other index files can't be reverse-engineered to retrieve the full document text - however, they do
 contain the weightings and terms within the text. Netwrix recommends restricting access to all files at

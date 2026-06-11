@@ -13,7 +13,9 @@ The Dashboard administration area provides a selection of tools to review applic
 The default screen shows a high-level overview of Netwrix Data Classification statistics, displaying
 the last active times of each service (with inactive services shown in red). Select the "i" icon
 next to each date to view the name of the active server as well as batch processing statistics.
-If you have the [Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) functionality enabled, any instances that are missing their copy of the NDC encryption key will also be displayed here. See [Recovering the Encryption Key in Secondary NDC Instances](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/recoveringencryptionkeyindqsenvironment.md) for instructions on remediating missing encryption keys. You will also be able to view the average processing throughput.
+You will also be able to view the average processing throughput.
+
+If you have the [Distributed Query Server](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) functionality enabled, any instances that are missing their copy of the NDC encryption key will also be displayed here. See [Recovering the Encryption Key in Secondary NDC Instances](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/recoveringencryptionkeyindqsenvironment.md) for instructions on remediating missing encryption keys. 
 
 The following statistics are available for each thread type:
 
@@ -40,7 +42,7 @@ following meanings:
 - Deleted Manually—Items removed manually by an end-user via the administration console
 
 :::note
-Deleted documents are retained as a safeguard against accidental deletion. Users must click the Expunge option located on the Deleted Automatically and Deleted Manually rows to fully remove those documents from the system. Automatic expunging can be enabled via the [Administration configuration settings](/docs/dataclassification/5.7/systemconfigurationoverview/configuration/coreconfiguration/administration.md). The Expunge option is only displayed if there are documents to be expunged.
+Deleted documents are retained as a safeguard against accidental deletion. Click the Expunge option located on the Deleted Automatically and Deleted Manually rows to fully remove those documents from the system. Automatic expunging can be enabled via the [Administration configuration settings](/docs/dataclassification/5.7/systemconfigurationoverview/configuration/coreconfiguration/administration.md). The Expunge option is only displayed if there are documents to be expunged.
 :::
 
     ![dashboard_thumb_0_0](/images/dataclassification/5.7/admin/reporting/dashboard_thumb_0_0.webp)

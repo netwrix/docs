@@ -10,10 +10,10 @@ The Distributed Query Server (DQS) mode lets you balance the processing load of 
 indexing, and classification over multiple NDC Servers with a single shared database.
 This approach is strongly recommended if you need to process large data volumes, for example:
 
-- File Servers — Recommended if processing over 16m objects,
-supports up to 64m objects per cluster of 4 servers.
-- SharePoint — Recommended if processing over 8m objects,
-supports up to 32m objects per cluster of 4 servers.
+- File Servers — Recommended if processing over 16M objects,
+supports up to 64M objects per cluster of 4 servers.
+- SharePoint — Recommended if processing over 8M objects,
+supports up to 32M objects per cluster of 4 servers.
 
 To make use of Distributed Query Server mode, you need to arrange your NDC Servers in a 'cluster' for load
 distribution as described below. Each clustered NDC Server will store its own set of .CSE index files,
@@ -31,18 +31,13 @@ This functionality is implemented through the _Query Server_ application.
 DQS mode is configured via the administrative web console and, from version 5.7.10 onwards, the installer.
 
 If you want to implement DQS configuration for your NDC deployment, be aware that doing so 
-can't easily be undone. Netwrix recommends that before applying the DQS mode, a full backup of the current
-NDC deployment should be created. Also, read the DQS documentation sections thoroughly before you start.
+can't easily be undone. Netwrix strongly recommends ensuring that you have taken a full backup 
+of your environment before enabling DQS. Also, read the DQS documentation sections thoroughly before you start.
 
 Ensure all servers you plan to add to the DQS cluster have a network connection and are
 visible to each other across the network. Adjust your firewall settings if necessary.
 
 DQS mode can only be configured by a user whose account has the **Superuser** role.
-
-:::note
-Once DQS mode is enabled, you can't roll back your configuration. Netwrix
-strongly recommends ensuring that you have taken a full backup of your environment before enabling DQS.
-:::
 
 ### Enabling DQS Mode (5.7.9 and earlier versions)
 
@@ -51,8 +46,6 @@ strongly recommends ensuring that you have taken a full backup of your environme
 2. Open the administrative web console.
 3. Navigate to Settings → Config → Utilities → DQS.
 4. Select Enable DQS.
-
-
 5. On the DQS tab, click Add to open the DQS addition menu, and input the details for the first secondary NDC server.
 
     ![dqs_mode_page_thumb_0_0](/images/dataclassification/5.7/requirements/dqs_mode_page_thumb_0_0.webp)
@@ -75,7 +68,7 @@ strongly recommends ensuring that you have taken a full backup of your environme
    [Install Netwrix Data Classification](/docs/dataclassification/5.7/introduction/install/overview.md) section up to the SQL Database
    configuration step.
 9. On the SQL Database step, provide connection details for the SQL Server instance that hosts the NDC SQL database
-   you configured for the first NDC Server. A popup will inform you that an existing NDC schema exists in the database, ignore this and continue.
+   you configured for the first NDC Server. A popup will inform you that an existing NDC schema exists in the database. Ignore this and continue.
 10. Complete the installation.
 11. Repeat steps 7 - 10 for each NDC Server to be added.
 
@@ -96,8 +89,8 @@ strongly recommends ensuring that you have taken a full backup of your environme
    configuration step.
 7. On the SQL Database step, provide the details of the SQL Server instance that hosts the NDC SQL database
    you configured for the first NDC Server.
-8. When you click next, a message box should appear stating that an NDC configuration was detected and
-   that the new install will be added to the existing DQS environment - click OK.
+8. When you click **Next**, a message box should appear stating that an NDC configuration was detected and
+   that the new install will be added to the existing DQS environment. Click OK.
 
    :::note
    When upgrading an existing NDC instance the installer will attempt to resynchronize the DQS instances in the
@@ -118,7 +111,7 @@ strongly recommends ensuring that you have taken a full backup of your environme
 
 :::note
 If the authentication code isn't autofilled, click the Authentication Code field in the installer to copy the
-value to your clipboard, then paste it in the authentication code field in the NDC UI.
+value to your clipboard, then paste it in the Authentication Code field in the NDC UI.
 :::
 
 12. The Register/Resync tab should now display an 8-digit verification code. Copy this, paste it into

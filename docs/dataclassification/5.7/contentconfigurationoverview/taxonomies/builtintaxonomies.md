@@ -101,8 +101,8 @@ systems:
 
 ##### Patient Health Information (PHI)
 
-Medical forms, treatment records, prescription drugs, decease names/codes, allergies, social, and
-insurance numbers.
+Medical forms, treatment records, prescription drugs, social and insurance numbers, 
+decease names/codes, allergies.
 
 ## Derived Taxonomies
 
@@ -157,7 +157,7 @@ Combines the PHI and PII (U.S. social security numbers) taxonomies.
 
 ##### Credentials
 
-Includes sensitive credentials data, such as tokens, private, or public keys, passwords, generic
+Includes sensitive credentials data, such as tokens, private or public keys, passwords, generic
 certificates, and others.
 
 ##### Cybersecurity Maturity Model Certification (CMMC)

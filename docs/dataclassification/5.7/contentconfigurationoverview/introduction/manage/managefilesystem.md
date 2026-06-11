@@ -84,12 +84,8 @@ To specify inclusions, do the following:
    Included.
 2. Select the necessary extensions to be used as including filter when processing files.
 3. To modify an extension (for example, add a wildcard), click **Edit**. To add a new one, click
-   **Add**.
-
-Two wildcards are supported:
-- \* - matches one or more instances of any character
-- . - explicitly includes files with no extension
-
+   **Add**. The "\*" wildcard can be added to an inclusion filter to match one or more characters. 
+   Files without extensions can be included by adding "." as an inclusion filter.
 
 :::note
 Inclusions are case-insensitive.

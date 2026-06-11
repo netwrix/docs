@@ -25,7 +25,7 @@ sidebar_position: 40
     | Password              | Provide the account password.                                                                                                   |
     | Database Name         | Enter the name of the NDC database. Netwrix recommends using NDC as the database name.                                   |
 
-    If the database doesn't yet exist, you will need to click Create SQL Database before moving to the next step - this will automatically create the NDC database with the given name and default configuration.
+    If the database doesn't yet exist, you will need to click **Create** to create the SQL Database before moving to the next step. This will automatically create the NDC database with the given name and default configuration.
 
     :::note
     The database is created automatically in basic configuration mode. For recommended

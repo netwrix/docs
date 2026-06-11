@@ -9,8 +9,8 @@ sidebar_position: 60
 Source groups provide a way of logically grouping specific sources, perhaps by type, or perhaps by
 an internal business specification. 
 
-A group can either be "mixed", which allows it to contain all source types, or source specific. For example, you could create a 
-source group named "Demo Content", which only supports the addition of SharePoint sources. When creating a source, any existing source 
+A group can either be "mixed", which allows it to contain all source types, or source-specific. For example, you could create a 
+source group named "Demo Content", which only supports the addition of SharePoint sources. When you create a source, any existing source 
 groups that support that source type will be displayed in a dropdown in the source configuration screen. 
 
 Certain source types are treated as source groups. See [Dynamic Source Groups](#dynamic-source-groups) for the available 
@@ -38,11 +38,11 @@ Here you can:
   metadata. See [Step 3. Specify Conditions for Processing](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/manage/addworkflowwizard/step3specifyconditions.md) for instructions on configuring metadata-only workflows.
 
 :::note
-Credentials will only be supported if the source group is type specific.
+Credentials will only be supported if the source group is type-specific.
 :::
 
 Deleting a group will remove all existing items from the group leaving them unassigned. You can also
-remove a specific sources from a group by selecting the source group in the grid and then
+remove specific sources from a group by selecting the source group in the grid and then
 selecting Remove from Group for the required sources. Source groups can also be created and
 assigned as part of the source creation process.
 

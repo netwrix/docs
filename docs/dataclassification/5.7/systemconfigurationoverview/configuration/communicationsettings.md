@@ -26,8 +26,7 @@ selecting Add Email Server Configuration.
 The SMTP details should be entered based on the values provided by your network team. 
 NDC supports SMTP servers with and without SSL configured. Anonymous SMTP server authentication is also supported.
 
-A test email address can be supplied which will be used to test the configuration
-settings.
+You can supply a test email address to test the configuration settings
 
 ![configemailserveradd](/images/dataclassification/5.7/configuration/configemailserveradd.webp)
 

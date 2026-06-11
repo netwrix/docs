@@ -33,8 +33,8 @@ Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server instan
     - **File growth**: _128 MB_ - recommended value for small to medium environment, _512 MB_ - for
       large environment, i.e. if planning to index data sources containing 16, 000, 000+ objects.
     - **Maximum File Size** - select _Unlimited_.
-- Ensure that the **Recovery model** for this database is set to _Simple_. Don't change the
-  recovery model — to avoid log files growth.
+- Ensure that the **Recovery model** for this database is set to _Simple_. To prevent log files from 
+  growing excessively, don't change the recovery model.
 
 ### NDC Index
 
