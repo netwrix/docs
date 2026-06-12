@@ -16,7 +16,9 @@ Risk assessment dashboard can be accessed by clicking the Risk assessment tile i
 Netwrix Auditor. For details about using the dashboard, see
 [IT Risk Assessment Dashboard](/docs/auditor/10.9/admin/riskassessment/dashboard.md).
 
-For details about metrics calculation, see [How Risk Levels Are Estimated ](/docs/auditor/10.9/admin/riskassessment/levels.md).
+For details about metrics calculation, see [How Risk Levels Are Estimated](/docs/auditor/10.9/admin/riskassessment/levels.md).
+
+For details about how hybrid account data is collected and merged across Active Directory and Entra ID for inactive user risk metrics, see [Hybrid Account Data for Inactive User Risks](/docs/auditor/10.9/admin/riskassessment/hybrid-accounts.md).
 
 ## Providing Data for Risk Assessment
 
@@ -29,7 +31,8 @@ have at least one item added. See the following table for the certain reports:
 | Users and Computers                                                     | User accounts with "Password never expires"   | AD domain           |
 | User accounts with "Password not required"                              | AD domain                                     |                     |
 | Disabled computer accounts                                              | AD domain                                     |                     |
-| Inactive user accounts                                                  | AD domain                                     |                     |
+| Inactive user accounts (hybrid + on-premises)                           | AD domain                                     |                     |
+| Inactive user accounts (hybrid + cloud)                                 | Microsoft Entra ID                            |                     |
 | Inactive computer accounts                                              | AD domain                                     |                     |
 | Servers with Guest account enabled                                      | Windows Server                                |                     |
 | Servers that have local user accounts with "Password never expires"     | Windows Server                                |                     |
