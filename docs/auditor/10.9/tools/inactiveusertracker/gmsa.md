@@ -8,12 +8,12 @@ sidebar_position: 20
 
 Inactive User Tracker supports a group Managed Service Account (gMSA) as the data collecting account. With a gMSA, Active Directory generates and rotates the password automatically, so you do not maintain a password for the account or rotate it on a schedule.
 
-See the [Use Group Managed Service Account (gMSA)](/docs/auditor/10.8/requirements/gmsa.md) topic for the general prerequisites that apply to every Auditor data source: create the KDS root key, create the gMSA with the `New-ADServiceAccount` cmdlet, install it on the Auditor Server with `Install-ADServiceAccount`, and add it to the local **Administrators** group on the Auditor Server.
+See the [Use Group Managed Service Account (gMSA)](/docs/auditor/10.9/requirements/gmsa.md) topic for the general prerequisites that apply to every Auditor data source: create the KDS root key, create the gMSA with the `New-ADServiceAccount` cmdlet, install it on the Auditor Server with `Install-ADServiceAccount`, and add it to the local **Administrators** group on the Auditor Server.
 
 After you complete those prerequisites, delegate the Active Directory permissions described below and specify the gMSA in the Inactive User Tracker monitoring plan.
 
 :::note
-The [Data Collecting Account](/docs/auditor/10.8/admin/monitoringplans/dataaccounts.md) topic lists membership in the Domain Admins group as the requirement for Inactive User Tracker. As an alternative, you can delegate only the minimum Active Directory permissions that correspond to the actions enabled in the monitoring plan. Adding the gMSA to the Domain Admins group is not required if you delegate the permissions described in this topic.
+The [Data Collecting Account](/docs/auditor/10.9/admin/monitoringplans/dataaccounts.md) topic lists membership in the Domain Admins group as the requirement for Inactive User Tracker. As an alternative, you can delegate only the minimum Active Directory permissions that correspond to the actions enabled in the monitoring plan. Adding the gMSA to the Domain Admins group is not required if you delegate the permissions described in this topic.
 :::
 
 ## Minimum Active Directory Permissions
@@ -91,7 +91,7 @@ The script reports one of the following statuses for each check:
 
 Follow the steps to use the gMSA in an Inactive User Tracker monitoring plan.
 
-**Step 1 –** On the Auditor Server, launch Inactive User Tracker and open an existing monitoring plan for editing, or create a new one. See the [Create Monitoring Plan to Audit Inactive Users](/docs/auditor/10.8/tools/inactiveusertracker/inactiveusertracker.md#create-monitoring-plan-to-audit-inactive-users) section for the full monitoring plan procedure.
+**Step 1 –** On the Auditor Server, launch Inactive User Tracker and open an existing monitoring plan for editing, or create a new one. See the [Create Monitoring Plan to Audit Inactive Users](/docs/auditor/10.9/tools/inactiveusertracker/inactiveusertracker.md#create-monitoring-plan-to-audit-inactive-users) section for the full monitoring plan procedure.
 
 **Step 2 –** On the **General** tab, in the **User name** field, enter the gMSA account name in one of the supported formats:
 
