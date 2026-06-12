@@ -56,6 +56,8 @@ endpoint data
 All communication to and from the client machines with PolicyPak Cloud is always
 encrypted.
 
+PolicyPak Cloud customer data is stored exclusively in USA datacenters. Data is redundant and split between East and West coast USA datacenters to ensure availability in the event of an outage. There is no option to select an alternative data residency region — locations such as Ireland or Germany are not available at this time.
+
 At rest, we store all the data in SQL Azure, and have Transparent Data Encryption option enabled.
 
 See Microsoft's
