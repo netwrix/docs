@@ -1,10 +1,10 @@
 ---
-title: "Assign Policies to Users & Groups"
-description: "Assign Policies to Users & Groups"
+title: "Assign Policies to Users"
+description: "Assign Policies to Users"
 sidebar_position: 20
 ---
 
-# Assign Policies to Users & Groups
+# Assign Policies to Users
 
 Password Policy Enforcer uses policy assignments to decide which policy to enforce for each user.
 You can assign domain policies to users, groups, and containers (Organizational Units). You can
