@@ -41,7 +41,7 @@ to save audit events on **"log storage accounts"**. Ensure you have the necessar
 
 ## Configuration Scope Overview
 
-- **[Azure Application Registration](#azure-application-registration)** - Create Azure AD application
+- **[Azure Application Registration](#azure-application-registration)** - Create Microsoft Entra ID application
 - **[Configure API Permissions](#configure-api-permissions)** - Assign required permissions for created application in EntraID
 - **[Assign Identity and Access Management (IAM) Roles to the App](#assign-identity-and-access-management-iam-roles-to-the-app)** - Assigning roles to Resource Group, Data Storage Account, and Log Storage Account
 - **[Diagnostic Settings](#diagnostic-settings)** - Configure audit logging
@@ -120,7 +120,7 @@ Click **Grant admin consent for TenantName**
 **Why this is required:**
 - By default, applications can't query Microsoft Graph for directory-wide information
 - Admin consent allows the app to use **User.Read.All**
-- This lets Netwrix Auditor query Azure AD and resolve **user SIDs → user accounts → display names**
+- This lets Netwrix Auditor query Microsoft Entra ID and resolve **user SIDs → user accounts → display names**
 - Without admin consent, audit logs will only show unresolved SIDs instead of usernames, making reports incomplete and less useful
 
 **At the end of this step, your app has granted Microsoft Graph API permissions**
