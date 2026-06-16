@@ -8,7 +8,7 @@ sidebar_position: 10
 
 **Step 1 –** New Policy: Use the Actions button to start a new Cloud Tracker system set-up.
 
-**Step 2 –** Cloud Report Template: The templates shown here include all Cloud reports available in
+**Step 2 –** Cloud Report Template: The following templates include all Cloud reports available in
 your system.
 
 ![cloudsystemsetup](/images/changetracker/8.0/cloud/cloudsystemsetup.webp)
@@ -75,8 +75,8 @@ file was found in any module directory".
 In this case, run the following PowerShell setup on the host running the
 Gen7Agent NETCore used for Cloud Tracker work:
 
-**Step 1 –** Install PowerShell NETCore version 7.x (NB this isn't the old PowerShell that ships
-with Windows, but a new cross-platform version based on NETCore). See the Microsoft
+**Step 1 –** Install PowerShell NETCore version 7.x (this is the new cross-platform version of
+PowerShell based on NETCore, separate from the PowerShell that ships with Windows). See the Microsoft
 [Installing the MIS package](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#installing-the-mis-package)
 article for additional information.
 
@@ -112,8 +112,8 @@ file was found".
 In this case, run the following PowerShell setup on the host running the
 Gen7Agent NETCore used for Cloud Tracker work:
 
-**Step 1 –** Install PowerShell NETCore version 7.x (NB this isn't the old PowerShell that ships
-with Windows, but a new cross-platform version based on NETCore). See the Microsoft
+**Step 1 –** Install PowerShell NETCore version 7.x (this is the new cross-platform version of
+PowerShell based on NETCore, separate from the PowerShell that ships with Windows). See the Microsoft
 [Installing the MIS package](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows#installing-the-mis-package)
 article for additional information.
 
