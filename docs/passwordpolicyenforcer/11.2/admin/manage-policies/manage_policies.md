@@ -23,7 +23,7 @@ Policies you create are added to the policy list. Use the buttons above the poli
 3. Select a **Policy template** from the list if you want the default settings in the policy to match a standard password policy like HIPAA, PCI, NIST, and others. Select **None** to start with a blank policy.
 4. Click **Create policy**.
 
-The Policy Editor opens. There are many settings in the Policy Editor. The following pages explain the settings in each tab:
+The policy editor opens. There are many settings in the policy editor. The following pages explain the settings in each tab:
    - [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md)
    - [Users & Groups](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md)
    - [Passphrase](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/passphrases.md)
@@ -63,7 +63,7 @@ Click the policy options menu to perform one of the following actions on the pol
 
 ### Copy a Policy
 
-Click **Make copy** in the policy options menu to create a new policy with the same default settings as the existing policy. Policy names must be unique, so PPE prompts you to enter a new name. The Policy Editor opens so that you can make changes to the new policy immediately.
+Click **Make copy** in the policy options menu to create a new policy with the same default settings as the existing policy. Policy names must be unique, so PPE prompts you to enter a new name. The policy editor opens so that you can make changes to the new policy immediately.
 
 ### Set the Default Policy
 
