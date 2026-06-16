@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # Creating and Using Executable Combo Rules
 
-In previous examples, we reviewed Simple rules and started to dip our toes into Combo Rules.
+Previous examples covered Simple rules and introduced Combo Rules.
 
-Simple rules are often all you need to get the job done. However, sometimes you need a bit more
-tuning. In previous examples, PolicyPak Least Privilege Manager UI prompted you to
-create Combo rules, because it was detecting a non-Best Practice.
+Simple rules often suffice. However, sometimes you need more tuning. In previous examples, PolicyPak
+Least Privilege Manager UI prompted you to create Combo rules, because it detected a non-Best
+Practice.
 
 A Simple rule can be any one of these items:
 
@@ -22,7 +22,7 @@ A Simple rule can be any one of these items:
 This can be limiting if, for instance, you want to elevate an application by its name and ensure the
 file is digitally signed by a publisher. Combo rules exist for this reason.
 
-However, you can start off on the right foot by making your own Combo rules.
+However, you can begin correctly by making your own Combo rules.
 
 :::note
 See the
@@ -42,13 +42,13 @@ elevate an application to allow it to run or install. You can do this based on i
 and inner product info. You could use all four conditions if you want to make the tightest match
 possible.
 
-To do this, simply create a Combo rule and select the two (or more) types of characteristics. Again,
-the most secure method is **Signature** and **File Info**.
+To do this, create a Combo rule and select the two (or more) types of characteristics. Again, the
+most secure method is **Signature** and **File Info**.
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_2.webp)
 
-The Combo rule wizard is different from the Simple rule wizard. For this combo rule we will need to
-complete two steps. As you can see, a specific file as a reference file for Signature Condition.
+The Combo rule wizard is different from the Simple rule wizard. This combo rule requires two steps
+to complete. As you can see, a specific file as a reference file for Signature Condition.
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_3.webp)
 
