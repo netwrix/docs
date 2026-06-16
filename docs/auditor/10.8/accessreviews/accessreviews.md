@@ -29,7 +29,7 @@ ensure that you have the Access Reviews license enabled in Auditor.
 
 See the [Licenses](/docs/auditor/10.8/admin/settings/licenses.md) topic for additional information.
 
-_Remember,_ there is one single Access Review license for all data sources that can send data to the
+_Remember,_ one Access Review license covers all data sources that can send data to the
 application.
 
 To use Netwrix Auditor Access Reviews with Auditor, complete the following steps.
@@ -80,10 +80,10 @@ Review the following considerations:
    status of items and data sources in Auditor.
 5. Permissions-related considerations:
 
-    - For Windows File Servers, permission data for all items in this data source is sent to the
-      Access Reviews application;
-    - Only effective top-level permissions are sent (share+NTFS);
-    - Permission data is sent per file server (entirely for each server);
+    - For Windows File Servers, Auditor sends permission data for all items in this data source to
+      the Access Reviews application;
+    - Auditor sends only effective top-level permissions (share+NTFS);
+    - Auditor sends permission data per file server (entirely for each server);
     - Transfer of permission data to the Access Reviews application starts when you enable the
       integration for a data source.
 
@@ -160,6 +160,6 @@ Review the following considerations:
 
     **_RECOMMENDED:_** Set expectations for response time from owners.
 
-    Reviews can be run multiple times, maintaining a historical record for each instance. See the
+    You can run reviews multiple times, maintaining a historical record for each instance. See the
     [Reviews Overview](/docs/auditor/10.8/accessreviews/entitlementreviews/overview.md) topic for additional
     information.
