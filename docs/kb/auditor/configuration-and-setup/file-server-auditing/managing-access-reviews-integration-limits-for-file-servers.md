@@ -42,7 +42,7 @@ The default limit for permissions uploaded to the Access Reviews database in a s
 
 If the number of permissions exceeds this limit, the upload fails with a connection error due to SQL Server packet size restrictions.
 
-> **NOTE:** SQL Server imposes the 800,000 permission limit as a hard constraint. Attempting to upload more than 820,000 permissions results in a `maximum packet count exceeded` error that cannot be resolved through SQL Server configuration changes.
+> **NOTE:** SQL Server imposes the 800,000 permission limit as a hard constraint. Attempting to upload more than 820,000 permissions results in a `maximum packet count exceeded` error that SQL Server configuration changes cannot resolve.
 
 ### System Requirements by Permission Count
 
@@ -61,7 +61,7 @@ The following table shows approximate **memory consumption** observed during dat
 ### Count Permissions Before Enabling Integration
 
 1. Verify that the total number of permissions per data source does not exceed the 800,000 limit.
-2. Download and copy the AIC Resource Estimation Tool to the machine where Auditor is installed.
+2. Download and copy the AIC Resource Estimation Tool to the machine running Auditor.
 
    Download the [AIC Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.8/auditor-aic-estimation-tool-1.0.7.zip), a Netwrix permission-counting utility.
 
