@@ -107,7 +107,8 @@ The application has four areas:
 
 - The account / user management
 
-![A logo with a triangle and dots Description automatically generated](/images/pingcastle/enterpriseuser/image10.webp)![](/images/pingcastle/enterpriseuser/image11.webp)
+![A logo with a triangle and dots Description automatically
+generated](/images/pingcastle/enterpriseuser/image10.webp)![](/images/pingcastle/enterpriseuser/image11.webp)
 
 **Configuration**
 
@@ -727,12 +728,14 @@ For instance, the page for PingCastle Enterprise entity:
 This part enables administrator to configure remediation schedule so it
 can be displayed into reports.
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseuser/image51.webp)
+![Une image contenant texte Description générée
+automatiquement](/images/pingcastle/enterpriseuser/image51.webp)
 
 It is actionable directly in the domain details where the rules are
 being displayed:
 
-![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseuser/image52.webp)
+![Une image contenant texte Description générée
+automatiquement](/images/pingcastle/enterpriseuser/image52.webp)
 
 pay attention to the next chart. It represents the evolution of
 the number of rules per maturity level. Because an action plan has been
@@ -916,7 +919,8 @@ Follow the instructions to access the Manage My Account window.
 3.  Select **Manage My Account** from the dropdown menu. This opens the
     Manage Your Account Window.
 
-![A screenshot of the "Manage My Account" button](/images/pingcastle/enterpriseuser/image67.webp)
+![A screenshot of the "Manage My Account"
+button](/images/pingcastle/enterpriseuser/image67.webp)
 
 ### Navigation
 

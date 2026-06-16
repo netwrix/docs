@@ -40,7 +40,10 @@ Machine. To create a disk, follow these steps.
 **Step 5 –** Click Review + Create and wait for the Successfully created disk message to be
 displayed.
 
-![A screenshot of a computer Description automatically generated](createmanageddisk.webp)
+![A screenshot of a computer
+
+Description automatically
+generated](createmanageddisk.webp)
 
 ## Creating the Virtual Machine
 
@@ -60,7 +63,10 @@ To start the Endpoint Protector Virtual Machine in Azure, follow these steps:
     - Size - select a virtual machine profile based closest to the recommended requirements for the
       disk file used
 
-![A screenshot of a computer Description automatically generated](newvm.webp)
+![A screenshot of a computer
+
+Description automatically
+generated](newvm.webp)
 
 - On the Networking tab, fill in the following:
 
@@ -75,7 +81,10 @@ payments for an unused SSD attached to the Virtual Machine.
 :::
 
 
-![A screenshot of a computer Description automatically generated](publicip.webp)
+![A screenshot of a computer
+
+Description automatically
+generated](publicip.webp)
 
 **Step 9 –** Once the deployment has finished, go to Virtual Machines on the right side and select
 the Endpoint Protector image.

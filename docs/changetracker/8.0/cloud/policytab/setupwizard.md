@@ -19,7 +19,10 @@ presented with next.
 
 Google Cloud Platform Credentials example:
 
-![Graphical user interface, text, application, email Description automatically generated](/images/changetracker/8.0/cloud/cloudgoogleplatformcredentials.webp)
+![Graphical user interface, text, application, email
+
+Description automatically
+generated](/images/changetracker/8.0/cloud/cloudgoogleplatformcredentials.webp)
 
 :::note
 Just click the Query icon to get a quick tip on what the Credential field requires.
@@ -94,7 +97,10 @@ PowerShell NETCore command prompt (PowerShell 7(x64) Start menu item, Run As Adm
 
 Azure Platform Credentials Example:
 
-![Graphical user interface, text, application Description automatically generated](/images/changetracker/8.0/cloud/cloudazure-credentials.webp)
+![Graphical user interface, text, application
+
+Description automatically
+generated](/images/changetracker/8.0/cloud/cloudazure-credentials.webp)
 
 - Credential Name – Enter a name to uniquely identify these credentials
 - Cloud Platform – Select from the drop-down options presented
