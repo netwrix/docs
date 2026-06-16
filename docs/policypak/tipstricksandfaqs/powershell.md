@@ -172,8 +172,5 @@ PolicyPak, you can use cmdlets like the following examples:
 - `>Get-PPGPOs -cse "Security" | Select -ExpandProperty "GPO"`: shows all GPOs with any PolicyPak products with "security" in the title
 - `>Get-PPGPOs -cse "E0088A46-AB54-4FBD-A733-303C58244C5E"`: shows all GPOs based on CSE GUID
 
-![Text
-
-Description automatically
-generated](/images/policypak/install/endpointpolicymanager_and_powershell_9_850x594.webp)
+![Text Description automatically generated](/images/policypak/install/endpointpolicymanager_and_powershell_9_850x594.webp)
 

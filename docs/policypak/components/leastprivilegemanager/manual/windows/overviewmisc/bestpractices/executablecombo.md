@@ -31,17 +31,11 @@ overview of using PolicyPak Least Privilege Manager and Combo rules.
 :::
 
 
-![A screenshot of a computer
-
-Description automatically
-generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable.webp)
+![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable.webp)
 
 With Combo rules turned on, you can match more than one condition.
 
-![A screenshot of a computer
-
-Description automatically
-generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_1.webp)
+![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_1.webp)
 
 Combo rules are useful in a variety of situations. The most common situation occurs when you want to
 elevate an application to allow it to run or install. You can do this based on its digital signature
@@ -51,35 +45,23 @@ possible.
 To do this, simply create a Combo rule and select the two (or more) types of characteristics. Again,
 the most secure method is **Signature** and **File Info**.
 
-![A screenshot of a computer
-
-Description automatically
-generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_2.webp)
+![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_2.webp)
 
 The Combo rule wizard is different from the Simple rule wizard. For this combo rule we will need to
 complete two steps. As you can see, a specific file as a reference file for Signature Condition.
 
-![A screenshot of a computer
-
-Description automatically
-generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_3.webp)
+![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_3.webp)
 
 In the next step of the wizard for File Info, select the same file. You could also select a
 different file, but this isn’t normally done.
 
-![A screenshot of a computer
-
-Description automatically
-generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_4.webp)
+![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_4.webp)
 
 Then choose the same actions as before, such as **Run with elevated privileges**. When the wizard is
 complete, the MMC list will demonstrate the multiple conditions in the **Condition** column with
 **Signature, File Info**.
 
-![A screenshot of a computer
-
-Description automatically
-generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_5.webp)
+![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_executable_5.webp)
 
 
 

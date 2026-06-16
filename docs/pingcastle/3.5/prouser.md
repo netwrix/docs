@@ -71,8 +71,7 @@ The application is divided is 2 different areas:
 
 - The configuration
 
-> ![A logo with a triangle and dots Description automatically
-generated](/images/pingcastle/prouser/image4.webp)
+> ![A logo with a triangle and dots Description automatically generated](/images/pingcastle/prouser/image4.webp)
 
 # Technical view (\"Audit data\")
 

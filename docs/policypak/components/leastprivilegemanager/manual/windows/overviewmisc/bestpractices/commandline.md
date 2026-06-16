@@ -67,10 +67,7 @@ shown).
 For the Command-line Arguments, select **Strict equality**, and then specify the location of the
 .REG file, perhaps on a secure file server, as demonstrated here.
 
-![A screenshot of a computer
-
-Description automatically
-generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command_4.webp)
+![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command_4.webp)
 
 Since the arguments are being specified, a user cannot add their own .REG files; they can only add
 those specified by the admin (e.g., on a server where they could only read and not modify it).

@@ -21,10 +21,7 @@ well as the underscore that precedes it - EPPClientSetup.5.6.3.1_x86_64.msi
 :::
 
 
-![A black text on a white background
-
-Description automatically
-generated](msipackage.webp)
+![A black text on a white background Description automatically generated](msipackage.webp)
 
 **Step 3 –** Go to the Microsoft Endpoint Manager admin center and sign in;
 
