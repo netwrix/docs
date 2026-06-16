@@ -18,7 +18,7 @@ so the Cloud Platform you select determines the Credentials dialogue that appear
 
 Google Cloud Platform Credentials example:
 
-![Graphical user interface, text, application, email Description automatically generated](/images/changetracker/8.0/cloud/cloudgoogleplatformcredentials.webp)
+![Google Cloud Platform credentials dialog showing Credential Name, Cloud Platform, and Description fields](/images/changetracker/8.0/cloud/cloudgoogleplatformcredentials.webp)
 
 :::note
 Click the Query icon to get a quick tip on what the Credential field requires.
@@ -92,7 +92,7 @@ PowerShell NETCore command prompt (PowerShell 7(x64) Start menu item, Run As Adm
 
 Azure Platform Credentials Example:
 
-![Graphical user interface, text, application Description automatically generated](/images/changetracker/8.0/cloud/cloudazure-credentials.webp)
+![Azure Platform credentials dialog showing Credential Name, Cloud Platform, Tenant ID, Application ID, and Client Secret fields](/images/changetracker/8.0/cloud/cloudazure-credentials.webp)
 
 - Credential Name – Enter a name to uniquely identify these credentials
 - Cloud Platform – Select from the dropdown options presented
