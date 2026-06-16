@@ -33,7 +33,7 @@ The Help menu contains the following items:
 
 Click **Settings** to configure [global configuration settings](/docs/passwordpolicyenforcer/11.2/admin/settings.md).
 
-## Connect To a Configuration
+## Connect to a Configuration
 
 Password Policy Enforcer can enforce password policies for [domain and local](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md) user accounts. Domain configurations contain password policies for domain user accounts. These configurations are stored in Active Directory. Local configurations are stored in the registry, and they contain the password policies for local user accounts. Click the **Connected to** selector to connect to a configuration. You can choose which domain controller to connect to when working on a domain configuration. A local configuration is always stored in the local computer's registry.
 
@@ -45,11 +45,14 @@ PPE stores domain configurations in the `CN=Password Policy Enforcer <version>,C
 You can distribute local configurations by exporting the configuration registry key and importing it into other computers. The [Domain and Local Policies](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md#distribute-the-local-configuration-with-group-policy) page shows how to distribute a local configuration with Group Policy.
 :::
 
-## Add a policy
+## Add a Policy
+
 Click **Add policy** to create and configure a new [password policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md).
 
 ## Check for Compromised and Reused Passwords
+
 Click **Password Scanner** to check for [compromised and reused passwords](/docs/passwordpolicyenforcer/11.2/admin/compromisedpasswordcheck.md).
 
-## Check your PPE installation
+## Check Your PPE Installation
+
 Click **System Audit and Support** to [review and troubleshoot your PPE deployment](/docs/passwordpolicyenforcer/11.2/admin/systemaudit.md).

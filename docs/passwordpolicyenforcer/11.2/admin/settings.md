@@ -24,9 +24,10 @@ Use the [Test Policy by User](/docs/passwordpolicyenforcer/11.2/admin/manage-pol
 
 **Enforce policy when password is reset**. Select this option to enforce the assigned password policy whenever someone resets a password or creates a new user account. This option doesn't change the behavior of the [Minimum Age rule](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/minimum_age_rule.md), as PPE never enforces this rule during a reset. PPE only enforces the [History rule](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/history_rule.md) during a reset if you select this checkbox, and also select the History Rule's **Enforce this rule when a password is reset** checkbox.
 
-**Accept encrypted client request only**. Select this option to have Password Policy Enforcer reject any unencrypted requests from very old versions of the Password [Policy Client](/docs/passwordpolicyenforcer/11.2/admin/password-policy-client/password_policy_client.md), Netwrix Password Reset, and [PPE Web](/docs/passwordpolicyenforcer/11.2/web-overview/web_overview.md). These requests don't contain passwords or password hashes, but Netwrix still recommends requiring encryption for all requests. This setting applies only to the legacy UDP protocol. The newer RPC protocol always uses encryption.
+**Accept encrypted client request only**. Select this option to have Password Policy Enforcer reject any unencrypted requests from very old versions of the [Password Policy Client](/docs/passwordpolicyenforcer/11.2/admin/password-policy-client/password_policy_client.md), Netwrix Password Reset, and [PPE Web](/docs/passwordpolicyenforcer/11.2/web-overview/web_overview.md). These requests don't contain passwords or password hashes, but Netwrix still recommends requiring encryption for all requests. This setting applies only to the legacy UDP protocol. The newer RPC protocol always uses encryption.
 
 **Log event when password not checked by service**. Select this option to log an event to the Windows Application Event Log whenever PPE doesn't check a password. This can happen if:
+
 - Password Policy Enforcer is disabled.
 - The policy [assigned](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) to a user is disabled.
 - No policy is assigned to a user, or an error occurs when determining the assigned policy, and a default policy isn't specified.
@@ -61,7 +62,7 @@ Notification settings are only available when you're [connected to](/docs/passwo
 :::tip
 The PPE Mailer sends emails at 2:00 AM every day (local server time). Check the Windows Application Event Log to monitor it. You can also run `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPEMail.exe` to troubleshoot problems. Run it without arguments to simulate a run without delivering email. If there are no warnings or errors, then run it again with the /send argument to conduct a full run with delivery. Use /send judiciously to avoid sending duplicate emails to users.
 
-The default Google OAuth2 timeout is 60 seconds. You can change this by setting `Configuration.GoogleOAuthTimeout` in `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPEConfiguration.json`
+The default Google OAuth2 timeout is 60 seconds. You can change this by setting `Configuration.GoogleOAuthTimeout` in `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPEConfiguration.json`.
 :::
 
 ## Mail Service
@@ -83,4 +84,4 @@ Use the **License** tab to view and update your license key.
 
 **Paste license from clipboard**. Copy your new license key to the clipboard, then click **Paste license from clipboard** to update the license key.
 
-The **Users** number on this tab shows how many users are licensed to use PPE with the installed license key. **AD Users** is the total number of Active Directory user accounts in the domain, and the **In use** number is the total number of user accounts, less disabled accounts.
+The **Users** number on this tab shows how many users are licensed to use PPE with the installed license key. **AD Users** is the total number of Active Directory user accounts in the domain, and the **In use** number is the total number of user accounts, excluding disabled accounts.
