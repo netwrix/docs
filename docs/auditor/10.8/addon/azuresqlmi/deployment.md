@@ -124,7 +124,7 @@ Create a login for the Entra ID application to access audit configuration.
 ### 3.1 Connect to SQL Managed Instance
 
 Use SQL Server Management Studio (SSMS) or Azure Data Studio with an account that has:
-- Azure AD admin privileges on the SQL MI
+- Microsoft Entra ID admin privileges on the SQL MI
 - `sysadmin` server role or equivalent permissions
 
 ### 3.2 Create Login from External Provider
@@ -339,7 +339,7 @@ Run the Netwrix Auditor Add-on Setup Wizard and follow these configuration steps
   your-sql-instance.public.<region>.database.windows.net,1433
   ```
 - **Database Name**: `master` (for audit collection)
-- **Authentication**: Azure Active Directory
+- **Authentication**: Microsoft Entra ID
 - **Blob Path**: Full path to audit logs container:
   ```
   https://stnetwrixsqlmi001.blob.core.windows.net/audit-logs/<managed-instance-name>
