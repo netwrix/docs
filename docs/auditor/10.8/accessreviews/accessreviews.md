@@ -91,7 +91,7 @@ Review the following considerations:
    per data collection cycle, with a configurable maximum of **800,000**. Exceeding these limits
    causes upload failures. Before enabling the integration for FSA plans, verify your permission
    count using the
-   [AIC Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.8/auditor-aic-estimation-tool-tool-1.0.1.zip)
+   [AIC Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.8/auditor-aic-estimation-tool-1.0.7.zip)
    and ensure sufficient system resources. For details on FSA-specific limits, memory requirements,
    and the estimation tool usage, see
    [Managing Access Reviews Integration Limits for File Servers](/docs/kb/auditor/configuration-and-setup/file-server-auditing/managing-access-reviews-integration-limits-for-file-servers).
