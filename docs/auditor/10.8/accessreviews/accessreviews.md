@@ -25,7 +25,7 @@ This workflow assumes you already have Netwrix Auditor installed with configured
 for a supported data source.
 
 **NOTE:** Access Reviews is a separately licensed product and isn't included with Netwrix Auditor.
-ensure that you have the Access Reviews license enabled in Auditor.
+ensure you have the Access Reviews license enabled in Auditor.
 
 See the [Licenses](/docs/auditor/10.8/admin/settings/licenses.md) topic for additional information.
 
@@ -57,7 +57,7 @@ information.
 
 **NOTE:** The [Owners & Access Reviews](/docs/auditor/10.8/accessreviews/owneroverview/owneroverview.md) topic and
 subtopics are written for the assigned owners. You can distribute the URL to this topic or download
-a PDF to be distributed to your assigned resource owners.
+a PDF to distribute to your assigned resource owners.
 
 **Step 5 –** Configure and run reviews. The Entitlement Reviews interface is available to users with
 either the Security Team or Administrator role. See the
@@ -109,7 +109,7 @@ Review the following considerations:
           [Modify the Builtin Administrator Account](/docs/auditor/10.8/accessreviews/admin/configuration/consoleaccess.md#modify-the-builtin-administrator-account)
           topic for additional information.
 
-    - Notification — Configure the Notification settings required in order for the application to
+    - Notification — Configure the Notification settings required for the application to
       send email. See the
       [Notifications Page](/docs/auditor/10.8/accessreviews/admin/configuration/notifications.md) topic for
       information.
