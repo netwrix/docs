@@ -72,8 +72,8 @@ operation. The issues listed below apply to upgrade from 9.96 and 10.
     - [Permissions for Teams Auditing](/docs/auditor/10.9/configuration/microsoft365/teams/permissions/permissions.md)
 
 - For auditing cloud-based applications (Microsoft Entra ID, Exchange Online, SharePoint Online, and
-  MS Teams) with Netwrix Auditor using modern authentication: additional configuration of the Azure
-  AD app permissions is required. Review the following for more information about required rights
+  MS Teams) with Netwrix Auditor using modern authentication: additional configuration of the Entra
+  ID app permissions is required. Review the following for more information about required rights
   and permissions:
 
     - [Permissions for Microsoft Entra ID Auditing](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/permissions/permissions.md)
