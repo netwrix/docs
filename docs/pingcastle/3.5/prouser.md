@@ -6,40 +6,35 @@ sidebar_position: 7
 ## Description
 
 PingCastle Pro is a tool designed to improve and follow the Active
-Directory overall security level. This software has been developed to be
-compatible with most of the possible existing configurations. The goal
-(when the tool was created) wasn't to aim for perfection, but to
-provide reliable data to present the situation to the management, thus
-improving over time.
+Directory overall security level. This software is compatible with most
+existing configurations. The goal of the tool is to provide reliable data
+that presents the situation to management for improvement over time.
 
 # PingCastle built-in security
 
-PingCastle Pro is a tool dedicated to improve the AD security, so
-security has been a major priority alongside every step of the creation
-and improvement.
+PingCastle Pro is a tool dedicated to improving Active Directory (AD) security,
+so security is a major priority at every step of creation and improvement.
 
-First, the application has been designed in a framework where most
-common attacks such as XSS or SQL Injection are prohibited by design.
+First, the application uses a framework that prohibits most common attacks
+such as XSS or SQL Injection by design.
 
-Because such protections can be sometimes avoided, the application has
-an additional layer of protection with all known HTTP security headers
-and including the header \"Content Security Policy\" in strict mode.
-That means that all the JavaScript code of the application is stored in
-separate files and that JavaScript included in the page via injection
-will not run in the browser. This protection can be checked via third
-party service such as \"security headers\". It means that
-\"unsafe-inline\" and \"unsafe-eval\" aren't accepted.
+Because attackers can sometimes bypass such protections, the application
+includes an additional layer of protection with all known HTTP security headers,
+including the \"Content Security Policy\" header in strict mode. The application
+stores all JavaScript code in separate files, so JavaScript injected into the
+page doesn't run in the browser. You can verify this protection with a
+third-party service such as \"security headers\". The application doesn't
+accept \"unsafe-inline\" and \"unsafe-eval\".
 
 ![](/images/pingcastle/prouser/image3.webp)
 
-The application uses enforced controls which force parameters to be
-checked twice against a model (in the browser then in the server
-application) and all queries to the database are parameterized. There is
-no SQL string built by the application.
+The application uses enforced controls that check parameters twice against a
+model (in the browser, then in the server application), and parameterizes all
+database queries. The application never builds SQL strings.
 
-Then each access to the database is verified by a filter which controls
-the data to be queried before a database query is sent. This code is
-tested by unit tests to lower the risk of a misconception in the filter.
+A filter verifies each database access by controlling the data to query before
+sending the database query. Unit tests cover this code to lower the risk of a
+misconception in the filter.
 
 The application is based mainly on the following frameworks:
 

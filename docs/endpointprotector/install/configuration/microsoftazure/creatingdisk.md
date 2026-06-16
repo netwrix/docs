@@ -70,14 +70,14 @@ To start the Endpoint Protector Virtual Machine in Azure, follow these steps:
 **Step 8 –** Click Review + create and then Create.
 
 :::note
-For Additional Features, we recommend selecting HDD instead of SSD to avoid unnecessary
+For Additional Features, Netwrix recommends selecting HDD instead of SSD to avoid unnecessary
 payments for an unused SSD attached to the Virtual Machine.
 :::
 
 
 ![A screenshot of a computer Description automatically generated](publicip.webp)
 
-**Step 9 –** Once the deployment has finished, go to Virtual Machines on the right side and select
+**Step 9 –** After the deployment finishes, go to Virtual Machines on the right side and select
 the Endpoint Protector image.
 
 ![connetctip](connetctip.webp)

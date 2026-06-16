@@ -16,8 +16,8 @@ Protector MSI package;
 ![Downloading the Windows Endpoint Protector MSI Package](msipackagedownload.webp)
 
 :::warning
-When deploying the .msi package, delete the information contained in the brackets as
-well as the underscore that precedes it - EPPClientSetup.5.6.3.1_x86_64.msi
+When deploying the .msi package, delete the information in the brackets and
+the underscore that precedes it - EPPClientSetup.5.6.3.1_x86_64.msi
 :::
 
 

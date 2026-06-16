@@ -5,7 +5,7 @@ sidebar_position: 3
 
 ## Description
 
-PingCastle Enterprise is a tool that helps you improve and follow your overall Active Directory security level. The software is compatible with most existing configurations. The goal of the tool isn't perfection, but to provide reliable data that presents the situation to management for improvement over time.
+PingCastle Enterprise is a tool that helps you improve and follow your overall Active Directory security level. The software is compatible with most existing configurations. The goal of the tool is to provide reliable data that presents the situation to management for improvement over time.
 
 # PingCastle built-in security
 

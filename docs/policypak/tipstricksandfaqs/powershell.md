@@ -38,7 +38,7 @@ component that requires the following commands:
 - Importing cmdlet '`New-PPLicenseRequestFile`'
 
 To generate a new PolicyPak license request, there are two methods. Method 1 requires
-using the existing Microsoft cmdlet Get-ADOrganizationalUnit as shown below.
+using the existing Microsoft cmdlet Get-ADOrganizationalUnit as follows.
 
 `># New-PPLicenseRequest`
 
@@ -52,7 +52,7 @@ using the existing Microsoft cmdlet Get-ADOrganizationalUnit as shown below.
 
 `>New-PPLicenseRequestfile "C:\Temp\request1.xml" -Scope $scope -Som $som -Verbose `
 
-The request output is shownbelow.
+The following shows the request output.
 
 ![policypak_and_powershell_2](/images/policypak/install/endpointpolicymanager_and_powershell_2.webp)
 
@@ -62,9 +62,9 @@ To understand scope versus SOM, see
 :::
 
 
-Method 2 requires indicating specific organizational units (OUs), as shown below. In this example,
-the scope is the whole domain, but the SOM is the Sales OU within the Fabrikam.com domain. Below is
-an example script which requests a new license file from a specific SOM and scope.
+Method 2 requires indicating specific organizational units (OUs), as follows. In this example,
+the scope is the whole domain, but the SOM is the Sales OU within the Fabrikam.com domain. The
+following example script requests a new license file from a specific SOM and scope.
 
 `># New-PPLicenseRequest`
 
@@ -82,7 +82,7 @@ an example script which requests a new license file from a specific SOM and scop
 
 ![policypak_and_powershell_3_1200x833](/images/policypak/install/endpointpolicymanager_and_powershell_3_1200x833.webp)
 
-The next cmdlet enables you to determine how many computers are not active.
+Use the next cmdlet to determine how many computers aren't active.
 
 `># Get-InactiveComputers`
 
@@ -92,7 +92,7 @@ The next cmdlet enables you to determine how many computers are not active.
 
 `>#---`
 
-The result from this cmdlet is shown below.
+The following shows the result from this cmdlet.
 
 ![policypak_and_powershell_4_950x333](/images/policypak/install/endpointpolicymanager_and_powershell_4_950x333.webp)
 
@@ -108,8 +108,11 @@ You can then see the machines are disabled:
 ![policypak_and_powershell_5_1200x561](/images/policypak/install/endpointpolicymanager_and_powershell_5_1200x561.webp)
 
 When the next cmdlet is run, you can see if the license file you got from PolicyPak
-was valid. Note that you might have to run the cmdlet on each PolicyPak license file
-you get.
+was valid.
+
+:::note
+You might have to run the cmdlet on each PolicyPak license file you get.
+:::
 
 ```
 ># Test-PPlicense>Import-Module PolicyPak
@@ -151,7 +154,7 @@ The next cmdlet will specify a GPO by GUID.
 >#---
 ```
 
-The result is shown below. You can see the GPO name, scope, expiration date of the license, PolicyPak license version type, and validation status of the license.
+The following shows the result. You can see the GPO name, scope, expiration date of the license, PolicyPak license version type, and validation status of the license.
 
 ![policypak_and_powershell_8_1200x803](/images/policypak/install/endpointpolicymanager_and_powershell_8_1200x803.webp)
 

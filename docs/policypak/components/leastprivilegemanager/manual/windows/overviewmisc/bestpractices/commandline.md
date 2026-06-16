@@ -26,13 +26,13 @@ A Combo rule addresses this issue, by using Path and Command-line argument rules
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command.webp)
 
-The first step, as shown here, is to specify the Path Condition, such as
+The first step is to specify the Path Condition, such as
 `%SYSTEMROOT%\System32\sc.exe`.
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command_1.webp)
 
-For the command-line arguments in this example, the argument **stop wsearch**, which stops the
-Windows Search Service, is specified.
+For the command-line arguments in this example, specify the argument **stop wsearch**, which stops
+the Windows Search Service.
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command_2.webp)
 
@@ -65,12 +65,12 @@ make a Combo rule, which starts with the Path Condition running `%SYSTEMROOT%\Sy
 shown).
 
 For the Command-line Arguments, select **Strict equality**, and then specify the location of the
-.REG file, perhaps on a secure file server, as demonstrated here.
+.REG file, perhaps on a secure file server.
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command_4.webp)
 
-Since the arguments are being specified, a user cannot add their own .REG files; they can only add
-those specified by the admin (e.g., on a server where they could only read and not modify it).
+Since you specify the arguments, a user can't add their own .REG files; they can only add
+those the admin specifies (e.g., on a server where they could only read and not modify it).
 
 
 

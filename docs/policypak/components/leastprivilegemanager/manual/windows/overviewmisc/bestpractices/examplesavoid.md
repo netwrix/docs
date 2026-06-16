@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # What Not to Do (Some Examples)
 
-Let's say you want to allow users to install Google Earth on their machines. To make it easy, you
+Suppose you want users to install Google Earth on their machines. To make it easy, you
 could select the application's **Signature** as the rule condition and then check **Apply to child
 processes** (which is the default.
 
@@ -25,15 +25,15 @@ warning and a recommendation against attempting this.
 Saying **Yes** generates an additional rule match for File info condition enabling you to get more
 specific than just **Signature** alone. This is the PolicyPak
 Least Privilege Manager Best Practice: **Signature Condition** and **File Info condition**. PolicyPak Least Privilege Manager UI is requesting you create a Combo Rule
-(more details later.)
+(see the following section for more details).
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/what_not_to_do_some_examples_2.webp)
 
 Therefore, it is important not to take shortcuts. Size your privilege levels accordingly, allocating
-the least amount of privilege possible in order to get the job done.
+the least amount of privilege possible to get the job done.
 
 Additionally, and similarly, don’t create rules which automatically elevate “Everything by Microsoft
-by certificate.” Most applications, including most of Windows and Office, are not designed to be
+by certificate.” Most applications, including most of Windows and Office, aren't designed to be
 running elevated all the time. As such you are breaking applications and opening up to attack
 vectors.
 
