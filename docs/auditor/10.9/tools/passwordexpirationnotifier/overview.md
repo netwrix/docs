@@ -103,7 +103,7 @@ Click Generate next to Generate report on users with expired account or password
 users passwords immediately. In the Maximum Password Age Setting dialog that opens, select domain
 policy settings or specify the maximum password age in days.
 
-![passwordexpiration](/images/auditor/10.7/tools/passwordexpirationnotifier/passwordexpiration.webp)
+![passwordexpiration](/images/auditor/10.9/tools/passwordexpirationnotifier/passwordexpiration.webp)
 
 ## Registry Key Configuration
 
