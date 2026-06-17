@@ -26,24 +26,24 @@ knowledge_article_id: kA04u000000PcvZCAS
 
 # Backing Up the Netwrix Data Classification Index
 
-This article details steps to back up the Netwrix Data Classification (NDC) index. You should back up the index to provide a safety net in case of index corruption. Maintaining a proper NDC index reduces the time lost if an index becomes corrupted.
+This article details steps to back up the Netwrix Data Classification (NDC) index. You should back up the index to create a recovery point in case of index corruption. Maintaining a proper NDC index reduces the time lost if an index becomes corrupted.
 
 ## What Causes Index Corruption?
 
 Corruption within the index occurs when one of two situations happens:
 
-1. The Indexer process is terminated without being allowed to stop gracefully, for example by a power interruption or by using the **End Task** option in Task Manager.
+1. The Indexer process terminates abruptly without shutting down gracefully — for example, due to a power interruption or because a user selects **End Task** in Task Manager.
 2. The Indexer is prevented from editing the files by another utility (ransomware protection, anti-virus, etc.) during that same window, or the utility modifies those files itself.
 
 ## How Do You Prevent Index Corruption?
 
 You can reduce the risk of index corruption by doing the following:
 
-1. Ensure that automatic restarts are disabled on the server.
-2. Ensure that the CSE files are excluded from any running anti-virus. (Default CSE location: `C:\Program Files\ConceptSearching\ConceptDB\`)
+1. Disable automatic restarts on the server.
+2. Exclude the CSE files from any running anti-virus. (Default CSE location: `C:\Program Files\ConceptSearching\ConceptDB\`)
 3. Educate users of the Netwrix Data Classification product to avoid manually stopping the Indexer process.
 
-## My Index Has Corrupted — Can I Perform a Root Cause Analysis?
+## How Do You Perform a Root Cause Analysis on a Corrupted Index?
 
 Yes. Logs are generally the best method for root cause analysis, though it may be difficult if considerable time has passed. One option is to review the following SQL data:
 
@@ -51,7 +51,7 @@ Yes. Logs are generally the best method for root cause analysis, though it may b
 SELECT * FROM ApplicationLog WHERE Operation = 1 AND ModuleID = 2 ORDER BY LogDateTime DESC
 ```
 
-If the service was improperly shut down, you would expect to see a **Started** entry without a corresponding **Shutdown** entry.
+If the service shut down improperly, you would expect to see a **Started** entry without a corresponding **Shutdown** entry.
 
 ## How Do You Back Up the Index?
 
@@ -59,7 +59,7 @@ Follow these steps to back up the index:
 
 1. Stop all services: **Collector**, **Indexer**, **Classifier**. If you are using a Distributed Query Server (DQS), stop all three services on each server in the cluster.
 2. Take a backup of the CSE file folder on each server. (Default CSE location: `C:\Program Files\ConceptSearching\ConceptDB\`)
-3. Take a backup of the SQL database. It is very important that the SQL database is in sync with the CSE files — stop the services first to ensure consistency.
+3. Take a backup of the SQL database. The SQL database must be in sync with the CSE files — stop the services first to ensure consistency.
 4. Start all services.
 
 For best results, perform these steps weekly to ensure minimal data loss in the event of index corruption.
