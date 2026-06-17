@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           sparse-checkout: |
             .github
@@ -26,7 +26,7 @@ jobs:
 
       - name: Step 1 — Security vulnerability screening
         id: security-screen
-        uses: anthropics/claude-code-action@787c5a0ce96a9a6cfb050ea0c8f4c05f2447c251 # v1
+        uses: anthropics/claude-code-action@41ea7642c1436fa0ee57aae58347904b71a5af27 # v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -57,7 +57,7 @@ jobs:
       - name: Step 2 — Code of conduct check
         if: steps.check-state.outputs.issue_state == 'OPEN'
         id: conduct-check
-        uses: anthropics/claude-code-action@787c5a0ce96a9a6cfb050ea0c8f4c05f2447c251 # v1
+        uses: anthropics/claude-code-action@41ea7642c1436fa0ee57aae58347904b71a5af27 # v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -81,7 +81,7 @@ jobs:
         # Only run label assignment for issue events (not comments) and only if issue is still open
         if: steps.check-state.outputs.issue_state == 'OPEN' && github.event_name == 'issues'
         id: assign-label
-        uses: anthropics/claude-code-action@787c5a0ce96a9a6cfb050ea0c8f4c05f2447c251 # v1
+        uses: anthropics/claude-code-action@41ea7642c1436fa0ee57aae58347904b71a5af27 # v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -183,7 +183,7 @@ jobs:
 
       - name: Checkout repository
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           token: ${{ secrets.ISSUE_TOKEN }}
           fetch-depth: 0
@@ -197,7 +197,7 @@ jobs:
       - name: Run content-fix skill
         id: content-fix
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
-        uses: anthropics/claude-code-action@787c5a0ce96a9a6cfb050ea0c8f4c05f2447c251 # v1
+        uses: anthropics/claude-code-action@41ea7642c1436fa0ee57aae58347904b71a5af27 # v1
         env:
           REPO: ${{ github.repository }}
         with:
@@ -313,7 +313,7 @@ jobs:
 
       - name: Checkout repository
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           token: ${{ secrets.ISSUE_TOKEN }}
           fetch-depth: 0
@@ -327,7 +327,7 @@ jobs:
       - name: Run content-fix skill
         id: content-fix-followup
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
-        uses: anthropics/claude-code-action@787c5a0ce96a9a6cfb050ea0c8f4c05f2447c251 # v1
+        uses: anthropics/claude-code-action@41ea7642c1436fa0ee57aae58347904b71a5af27 # v1
         env:
           REPO: ${{ github.repository }}
           COMMENT_BODY: ${{ github.event.comment.body }}
