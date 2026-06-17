@@ -6,10 +6,9 @@ sidebar_position: 40
 
 # Creating and Using Command Line Rules
 
-From time to time, you may encounter a situation in which an application only runs from the command
-line, or there is an application that you want to run with specific command-line arguments. This
-could occur in day-to-day use or with items that must run from a logon script and perform the task
-with elevated rights.
+Sometimes an application only runs from the command line, or you want to run an application with
+specific command-line arguments. This can occur in day-to-day use or with items that must run from a
+logon script and perform the task with elevated rights.
 
 :::note
 See the
@@ -19,20 +18,20 @@ and command-line arguments.
 :::
 
 
-A good example would be enabling standard users to start and stop services with a command line, or
-to run the Performance Monitor’s Resource Monitor. Both must be executed from the command line.
+For example, you can enable standard users to start and stop services with a command line, or to
+run the Performance Monitor’s Resource Monitor. Both run from the command line.
 
 A Combo rule addresses this issue, by using Path and Command-line argument rules.
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command.webp)
 
-The first step, as shown here, is to specify the Path Condition, such as
+The first step is to specify the Path Condition, such as
 `%SYSTEMROOT%\System32\sc.exe`.
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command_1.webp)
 
-For the command-line arguments in this example, the argument **stop wsearch**, which stops the
-Windows Search Service, is specified.
+For the command-line arguments in this example, specify **stop wsearch**, which stops the Windows
+Search Service.
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command_2.webp)
 
@@ -60,20 +59,17 @@ elevated rights.
 
 ![A computer screen with a black and white text Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command_3.webp)
 
-Another example would be to enable Standard Users to perform their own Registry merge. To do this,
-make a Combo rule, which starts with the Path Condition running `%SYSTEMROOT%\System32\reg.exe` (not
+For example, you can enable Standard Users to perform their own Registry merge. To do this, make a
+Combo rule, which starts with the Path Condition running `%SYSTEMROOT%\System32\reg.exe` (not
 shown).
 
 For the Command-line Arguments, select **Strict equality**, and then specify the location of the
-.REG file, perhaps on a secure file server, as demonstrated here.
+.REG file, perhaps on a secure file server.
 
-![A screenshot of a computer
+![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command_4.webp)
 
-Description automatically
-generated](/images/policypak/leastprivilege/bestpractices/rules/creating_and_using_command_4.webp)
-
-Since the arguments are being specified, a user cannot add their own .REG files; they can only add
-those specified by the admin (e.g., on a server where they could only read and not modify it).
+Since the admin specifies the arguments, a user can't add their own .REG files; they can only add
+those the admin specifies (e.g., on a server where they can only read and not modify it).
 
 
 
