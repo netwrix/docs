@@ -627,9 +627,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '3.3',
+        label: '3.3',
+        isLatest: true,
+        sidebarFile: './sidebars/threatmanager/3.3.js',
+      },
+      {
         version: '3.2',
         label: '3.2',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatmanager/3.2.js',
       },
       {
@@ -645,7 +651,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/threatmanager/3.0.js',
       },
     ],
-    defaultVersion: '3.2',
+    defaultVersion: '3.3',
   },
   {
     id: 'threatprevention',
