@@ -46,9 +46,6 @@ Set\Services\EventLog\Security_.
 
 **Step 5 –** Check **Allow** next to the **Read** permission.
 
-**NOTE:** For auditing Logon Activity, you also need to assign the Read permission to the
-_HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv_ registry key.
-
 ### Assign Permission using the Group Policy Management Console
 
 Follow the steps to assign permission using the Group Policy Management console;
@@ -66,7 +63,7 @@ the left and navigate to Policies > Windows Settings > Security Settings > Regis
 
 **Step 4 –** Right-click in the pane and select Add Key.
 
-**Step 5 –** Navigate to `HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv` and click OK.
+**Step 5 –** Navigate to `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg` and click OK.
 
 **Step 6 –** Click Add and enter the name of the user that you want to grant permissions to and
 press Enter.
@@ -77,7 +74,6 @@ In the pop-up window, select Propagate inheritable permissions to all subkeys an
 
 Repeat the steps 4-7 for keys below:
 
-- `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg`;
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security`.
 
 **Step 8 –** Close Group Policy Management console.
