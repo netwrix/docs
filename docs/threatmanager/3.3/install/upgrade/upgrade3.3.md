@@ -6,6 +6,13 @@ sidebar_position: 40
 
 # Upgrade Threat Manager from 3.2 to 3.3
 
+:::note
+Threat Manager 3.3 requires new Microsoft Entra ID application permissions. After upgrading,
+update the credential used for Entra ID Sync. See
+[Application Permissions for Entra ID Sync](/docs/threatmanager/3.3/requirements/permissions/entraidsync.md)
+for the full permissions list.
+:::
+
 The upgrade process from Threat Manager 3.2 to 3.3 involves the following steps:
 
 - Upgrade PostgreSQL
