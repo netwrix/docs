@@ -12,9 +12,19 @@ ID Sync. See the
 topic for additional information about syncing the configured Microsoft Entra ID tenants in Threat
 Manager.
 
+:::tip The following permissions are new in Threat Manager 3.3:
+
+- AgentIdentity.Read.All
+- AgentIdentityBlueprint.Read.All
+- AgentIdentityBlueprintPrincipal.Read.All
+:::
+
 | Object Type                      | Function                                                   | Access Requirements                         |
 | -------------------------------- | ---------------------------------------------------------- | ------------------------------------------- |
 | Administrative Unit              | Retrieve all administrative units                          | AdministrativeUnit.Read.All                 |
+| Agent Identity                   | Retrieve all agent identities                              | AgentIdentity.Read.All                      |
+| Agent Identity Blueprint         | Retrieve all agent identity blueprints                     | AgentIdentityBlueprint.Read.All             |
+| Agent Identity Blueprint Principal | Retrieve all agent identity blueprint principals         | AgentIdentityBlueprintPrincipal.Read.All    |
 | Application                      | Retrieve all applications                                  | Application.Read.All                        |
 | Device                           | Retrieve all devices                                       | Device.Read.All                             |
 | Group                            | Retrieve all groups                                        | Group.Read.All                              |
