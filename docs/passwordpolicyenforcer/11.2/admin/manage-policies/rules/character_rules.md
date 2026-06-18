@@ -81,7 +81,7 @@ You can customize character sets with the Characters option for a selected set.
 
 **Step 4 –** Click **Apply**.
 
-If you save and test the policy, you see **vowels** is listed as a requirement.
+If you save and test the policy, **vowels** appears as a requirement.
 
 To remove a custom set, click **Characters** and delete the information. Click **Apply**.
 
@@ -91,7 +91,7 @@ Character rules can be combined to enforce complex password requirements. For ex
 to enforce a policy such as "passwords must contain a numeric character, but not in the first two
 positions" to ensure compatibility with some other system.
 
-This is done by using two of the Character rules:
+Use two of the Character rules to do this:
 
 Set **Characters (Complexity)** to require 1 Numeric character.
 

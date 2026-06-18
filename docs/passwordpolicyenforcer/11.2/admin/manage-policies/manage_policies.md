@@ -57,7 +57,7 @@ Click **Export** to create an HTML configuration report in `%ProgramFiles%\Netwr
 
 ## Policy Options Menu
 
-Click the policy options menu to perform one of the following actions on the policy. The policy options menu is shown as three vertical dots (**⋮**) to the right of each policy in the policy list.
+Click the policy options menu to perform one of the following actions on the policy. The policy options menu appears as three vertical dots (**⋮**) to the right of each policy in the policy list.
 
 ![Policy Options Menu](/images/passwordpolicyenforcer/11.2/administration/policy_options_menu.webp)
 
