@@ -11,7 +11,10 @@ keywords:
 - Netwrix Threat Manager
 - KnownExtensions
 products:
-- threat-manager
+- threatmanager
+sidebar_label: 'Update Ransomware Extension List with No Internet'
+tags:
+- kb
 title: 'Update Ransomware Extension List with No Internet'
 knowledge_article_id: kA04u0000000HuTCAU
 ---
@@ -20,7 +23,7 @@ knowledge_article_id: kA04u0000000HuTCAU
 
 ## Question
 
-How to update the ransomware extension list without internet connection in Netwrix Threat Manager?
+How can you update the ransomware extension list when Netwrix Threat Manager has no internet access?
 
 ## Answer
 
@@ -34,8 +37,4 @@ How to update the ransomware extension list without internet connection in Netwr
 C:\Program Files\STEALTHbits\StealthDEFEND\JobService\Python\pydefend\pydefend\data
 ```
 
-3. Increment the version number in the `filters.metadata` file in `pydefend\data` for old files to be reprocessed.
-
-## Related links
-
-- https://raw.githubusercontent.com/DFFspace/CryptoBlocker/master/KnownExtensions.txt (CryptoBlocker − Known Extensions · GitHub)
+3. Increment the version number in the `filters.metadata` file in `pydefend\data` to trigger reprocessing of existing files.
