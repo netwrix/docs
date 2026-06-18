@@ -87,7 +87,7 @@ To remove a custom set, click **Characters** and delete the information. Click *
 
 ### Enforcing Complex Character Requirements
 
-Character rules can be combined to enforce complex password requirements. For example, you may need
+You can combine Character rules to enforce complex password requirements. For example, you may need
 to enforce a policy such as "passwords must contain a numeric character, but not in the first two
 positions" to ensure compatibility with some other system.
 
