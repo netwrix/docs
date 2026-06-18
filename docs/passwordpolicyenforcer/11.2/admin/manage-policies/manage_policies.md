@@ -24,6 +24,7 @@ PPE adds the policies you create to the policy list. Use the buttons above the p
 4. Click **Create policy**.
 
 The policy editor opens. The policy editor has many settings. The following pages explain the settings in each tab:
+
 - [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md)
 - [Users & Groups](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md)
 - [Passphrase](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/passphrases.md)

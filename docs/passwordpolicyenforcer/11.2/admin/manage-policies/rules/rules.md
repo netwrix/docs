@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Rules"
 description: "Use Password Policy Enforcer rules to accept or reject passwords."
 sidebar_position: 10
@@ -7,6 +7,7 @@ sidebar_position: 10
 # Rules
 
 Password Policy Enforcer (PPE) uses rules to accept or reject passwords. Each [policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md) has rules that are configured independently of the rules in other policies. To configure the rules for a policy:
+
 1. Open the PPE configuration console.
 2. Click the name of a policy in the policy list. The **Rules** tab opens by default.
 
