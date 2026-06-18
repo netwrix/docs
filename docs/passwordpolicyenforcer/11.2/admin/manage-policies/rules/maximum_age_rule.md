@@ -36,7 +36,7 @@ Password Policy Enforcer always prompts users with expired passwords to change t
 
 PPE expires passwords at 1:00 AM every day on the domain controller holding the PDC emulator operations master role. It sets "User must change password at next logon" for users whose password expired, or is due to expire on that day. PPE doesn't expire passwords if the Maximum Age rule is in Warning mode, or for users with "Password never expires" set in Active Directory. Some passwords won't expire immediately when the Maximum Age rule is in a Transitional mode.
 
-Select **Send email reminders at** if you want PPE to send email reminders to users before their passwords expire. PPE can send up to three email reminders before a password expires. Use the **days before password expiration** dropdowns to choose when each email is sent. If you want to send fewer than three emails, then select the first, empty item from the dropdown.
+Select **Send email reminders at** if you want PPE to send email reminders to users before their passwords expire. PPE can send up to three email reminders before a password expires. Use the **days before password expiration** dropdowns to choose when PPE sends each email. If you want to send fewer than three emails, then select the first, empty item from the dropdown.
 
 Click **Set up email** to edit the email template for the email reminders.
 

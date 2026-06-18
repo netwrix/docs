@@ -35,7 +35,7 @@ Click **Settings** to configure [global configuration settings](/docs/passwordpo
 
 ## Connect to a Configuration
 
-Password Policy Enforcer can enforce password policies for [domain and local](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md) user accounts. Domain configurations contain password policies for domain user accounts. These configurations are stored in Active Directory. Local configurations are stored in the registry, and they contain the password policies for local user accounts. Click the **Connected to** selector to connect to a configuration. You can choose which domain controller to connect to when working on a domain configuration. A local configuration is always stored in the local computer's registry.
+Password Policy Enforcer can enforce password policies for [domain and local](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md) user accounts. Domain configurations contain password policies for domain user accounts. Active Directory stores these configurations. The registry stores local configurations, which contain the password policies for local user accounts. Click the **Connected to** selector to connect to a configuration. You can choose which domain controller to connect to when working on a domain configuration. PPE always stores a local configuration in the local computer's registry.
 
 :::note
 PPE stores domain configurations in the `CN=Password Policy Enforcer <version>,CN=System` container object. It stores local configurations in the `HKLM\SOFTWARE\ANIXIS\Password Policy Enforcer <version>` registry key. Only users with write permission to these objects can configure Password Policy Enforcer.

@@ -71,7 +71,7 @@ changes and resets for the **PPETestUser** and **PPETestAdmin** accounts. Passwo
 should enforce the Eval policy for **PPETestUser**, and the Admins policy for **PPETestAdmin**.
 
 :::note
-The [Set Priorities](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md#set-priorities) topic contains
+The [Set Priorities](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md#set-policy-priorities) topic contains
 more information about policy assignments, and how Password Policy Enforcer resolves policy
 assignment conflicts that occur when more than one policy is assigned to a user.
 

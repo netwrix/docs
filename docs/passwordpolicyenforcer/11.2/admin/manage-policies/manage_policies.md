@@ -12,7 +12,7 @@ PPE doesn't enforce any policies when it is first installed, so the policy list 
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
-Policies you create are added to the policy list. Use the buttons above the policy list to [test policies](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md), set policy priorities, and export the configuration. Use the options menu (**⋮**) to the right of each policy to perform actions on that policy.
+PPE adds the policies you create to the policy list. Use the buttons above the policy list to [test policies](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md), set policy priorities, and export the configuration. Use the options menu (**⋮**) to the right of each policy to perform actions on that policy.
 
 ![Dashboard with Policies](/images/passwordpolicyenforcer/11.2/administration/ppedashboardpolicies.webp)
 
@@ -23,7 +23,7 @@ Policies you create are added to the policy list. Use the buttons above the poli
 3. Select a **Policy template** from the list if you want the default settings in the policy to match a standard password policy like HIPAA, PCI, NIST, and others. Select **None** to start with a blank policy.
 4. Click **Create policy**.
 
-The policy editor opens. There are many settings in the policy editor. The following pages explain the settings in each tab:
+The policy editor opens. The policy editor has many settings. The following pages explain the settings in each tab:
    - [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md)
    - [Users & Groups](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md)
    - [Passphrase](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/passphrases.md)
@@ -49,7 +49,7 @@ Click **Set priorities** to view or modify policy priorities. This button is onl
 
 Select the policy you want to reprioritize, then click **Higher** or **Lower** to move the policy up or down. Click **Apply priorities** to accept the new priority order.
 
-The [Assign Policies to Users](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) page has more information about how policies are assigned and conflicts resolved when assigning policies. You can also click **Test Policy** to quickly see which policy PPE enforces for a particular user.
+The [Assign Policies to Users](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also click **Test Policy** to quickly see which policy PPE enforces for a particular user.
 
 ## Export Configuration
 
@@ -67,7 +67,7 @@ Click **Make copy** in the policy options menu to create a new policy with the s
 
 ### Set the Default Policy
 
-Password Policy Enforcer enforces the default policy for users who don't have a password policy assigned to them. Click **Make default** or **Remove default** in the policy options menu to toggle the default state of a policy. There can only be one default policy. 
+Password Policy Enforcer enforces the default policy for users who don't have an assigned password policy. Click **Make default** or **Remove default** in the policy options menu to toggle the default state of a policy. There can only be one default policy. 
 
 Netwrix doesn't recommend using PPE without a default policy because it might leave some passwords unchecked. If you want to have a default policy, but still exempt some users from having to comply with PPE's rules:
 1. Create a new policy for the exempted users.

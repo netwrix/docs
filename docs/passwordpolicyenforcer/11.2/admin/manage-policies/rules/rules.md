@@ -20,7 +20,7 @@ Several PPE rules have **Detect character substitution** and **Tolerance** setti
 
 ## Detecting Character Substitution
 
-Character substitution is a technique used by some users to improve password quality. They replace some alphabetic characters with non-alphabetic characters that have a similar appearance. For example, "sold" becomes "$old". Many of these substitutions are well known and do little to improve password strength.
+Character substitution is a technique that some users apply to improve password quality. They replace some alphabetic characters with non-alphabetic characters that have a similar appearance. For example, "sold" becomes "$old". Many of these substitutions are well known and do little to improve password strength.
 
 Some rules have a **Detect character substitution** checkbox. PPE tests passwords with and without character substitution when you select this checkbox. This stops users from circumventing the rule by substituting some characters. PPE detects these common substitutions:
 
