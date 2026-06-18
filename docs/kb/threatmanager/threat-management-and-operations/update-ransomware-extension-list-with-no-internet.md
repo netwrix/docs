@@ -23,7 +23,7 @@ knowledge_article_id: kA04u0000000HuTCAU
 
 ## Question
 
-How can I update the ransomware extension list when Netwrix Threat Manager has no internet access?
+How can you update the ransomware extension list when Netwrix Threat Manager has no internet access?
 
 ## Answer
 
