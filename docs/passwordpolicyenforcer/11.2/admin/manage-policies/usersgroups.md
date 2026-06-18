@@ -76,8 +76,7 @@ the policy assigned to the nearest parent container.
 
 If a policy assignment conflict still exists, then Password Policy Enforcer checks the priority of
 each remaining policy, and enforces the policy with the highest priority. See the
-[Policy Selection Flowchart](#policy-selection-flowchart) section for a diagrammatic
-representation of this algorithm.
+[Policy Selection Flowchart](#policy-selection-flowchart) section for a diagram of this algorithm.
 
 Click **Test Policy** and expand the **View log** to see which policy Password Policy Enforcer
 enforces for a particular user.

@@ -31,7 +31,7 @@ For each selected character set, select whether they **Contain** or **Not contai
 number of characters.
 
 Select the **contain** option if this rule should ensure that new passwords contain certain
-characters. Only one character is required by default, but you can specify a different value by
+characters. By default, the rule requires only one character, but you can specify a different value by
 choosing the required number of characters from the dropdown list beside the **contain** option.
 
 Select the **not contain any...** option if this rule should ensure that new passwords don't
@@ -56,7 +56,7 @@ Click the + sign by the character set.
 
 Select **Embedded**.
 
-Select the **Embedded** checkbox if users are required to embed these characters within their
+Select the **Embedded** checkbox to require users to embed these characters within their
 passwords. For example, the passwords "12hello", "1hello", and "hello$987" don't contain any
 embedded numeric characters, but these passwords do contain embedded numeric characters (shown in
 bold type): "he**7**llo", "4he**3**llo", "23hello**7**$45". Embedded numeric and special characters
