@@ -15,7 +15,7 @@ keywords:
   - argocd sync
   - check version
 products:
-  - access-analyzer
+  - accessanalyzer
 tags:
   - kb
 knowledge_article_id: kA0Qk000000XXXXKAA
@@ -25,16 +25,16 @@ knowledge_article_id: kA0Qk000000XXXXKAA
 
 ## Overview
 
-Netwrix Access Analyzer 2601 is deployed through ArgoCD and updated using the `dspmctl` command-line tool over an SSH connection to the host server. The update procedure depends on how the application was originally installed:
+ArgoCD deploys Netwrix Access Analyzer 2601, and you update it using the `dspmctl` command-line tool over an SSH connection to the host server. How you update Access Analyzer depends on how it was originally installed:
 
-- **Auto-update installation** — ArgoCD automatically applies new releases as they become available. No manual update steps are required; you only need to verify that the update was applied.
-- **Targeted version installation** — A specific version was pinned at install time. You must manually set the new target version and trigger a sync.
+- **Auto-update installation** — ArgoCD automatically applies new releases as they become available. You do not need to perform any manual update steps; you only need to verify that ArgoCD applied the update.
+- **Targeted version installation** — The original installation pinned a specific version. You must manually set the new target version and trigger a sync.
 
-If you are not sure which installation type applies to your environment, run `sudo dspmctl version` and compare the output to the latest announced release. If they match, the application is already current.
+If you are not sure which installation type applies to your environment, run `sudo dspmctl version` and compare the output to the latest announced release. If they match, the application is already current. For system requirements, see [System Requirements](/docs/accessanalyzer/2601/install/system/requirements).
 
 ## Instructions
 
-### Auto-update installations
+### Auto-Update Installations
 
 1. Connect to the Access Analyzer host server over SSH.
 2. Run the following command to check the currently installed version:
@@ -45,7 +45,7 @@ If you are not sure which installation type applies to your environment, run `su
 
 3. Compare the output to the latest announced release version. If the versions match, no further action is required.
 
-### Targeted version installations
+### Targeted Version Installations
 
 1. Connect to the Access Analyzer host server over SSH.
 2. Run the following command to check the currently installed version:
@@ -75,10 +75,4 @@ If you are not sure which installation type applies to your environment, run `su
 
    The output should match the version you set in step 3.
 
-:::note
-If the version does not update after five minutes, wait an additional two to three minutes and run `sudo dspmctl version` again. Pod restarts can take longer depending on system load.
-:::
-
-## Related Links
-
-- [System Requirements](/docs/accessanalyzer/2601/install/system/requirements)
+> **NOTE:** If the version does not update after five minutes, wait an additional two to three minutes and run `sudo dspmctl version` again. Pod restarts can take longer depending on system load.
