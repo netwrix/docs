@@ -21,7 +21,7 @@ This release brings in some **breaking changes** related both to the PKCS#11 int
 
 ### Web application: Advanced view and Windows Application
 - Some option names related to the browser extension now appear in a new category called "Browser extension".
-- When creating API keys, it is no longer possible to select a "Custom" scope without defining object types.
+- When creating API keys, you can no longer select a "Custom" scope without defining object types.
 - This release adds a new user right, "Can manage user rights and options from third users and roles". Users without this right can no longer see or update the user rights and settings from other users, organizational units, and roles. Additionally, reading the user rights and options of other users, organizational units, and roles requires "Read" rights on those objects.
 - Some text labels throughout the solution now use clearer, shorter wording.
 
@@ -56,7 +56,7 @@ This release brings in some **breaking changes** related both to the PKCS#11 int
 ### Web application
 - Several design issues from the latest web application redesign no longer appear.
 - The CSV import in the web application now works correctly in both the advanced and basic views.
-- It is now possible to store IPv6 values in fields of type "IP address".
+- You can now store IPv6 values in fields of type "IP address".
 
 ### Windows Application
 - The column headers of data printouts are now visible again when you run them via the Windows Application.
