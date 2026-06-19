@@ -16,7 +16,7 @@ All the Character rules work identically, but each has their own default charact
 set is the collection of characters that each rule searches for when checking a password. You can
 use the Character rules with their default character sets, or define your own. By default, the
 Password Policy Enforcer selects the Password Policy Enforcer character on the
-[Set Priorities](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md#set-priorities) page.
+[Set Priorities](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md#set-policy-priorities) page.
 
 :::note
 Only Password Policy Enforcer 11 and later contain the Windows character set.
@@ -31,7 +31,7 @@ For each selected character set, select whether they **Contain** or **Not contai
 number of characters.
 
 Select the **contain** option if this rule should ensure that new passwords contain certain
-characters. Only one character is required by default, but you can specify a different value by
+characters. By default, the rule requires only one character, but you can specify a different value by
 choosing the required number of characters from the dropdown list beside the **contain** option.
 
 Select the **not contain any...** option if this rule should ensure that new passwords don't
@@ -56,7 +56,7 @@ Click the + sign by the character set.
 
 Select **Embedded**.
 
-Select the **Embedded** checkbox if users are required to embed these characters within their
+Select the **Embedded** checkbox to require users to embed these characters within their
 passwords. For example, the passwords "12hello", "1hello", and "hello$987" don't contain any
 embedded numeric characters, but these passwords do contain embedded numeric characters (shown in
 bold type): "he**7**llo", "4he**3**llo", "23hello**7**$45". Embedded numeric and special characters
@@ -81,17 +81,17 @@ You can customize character sets with the Characters option for a selected set.
 
 **Step 4 –** Click **Apply**.
 
-If you save and test the policy, you see **vowels** is listed as a requirement.
+If you save and test the policy, **vowels** appears as a requirement.
 
 To remove a custom set, click **Characters** and delete the information. Click **Apply**.
 
 ### Enforcing Complex Character Requirements
 
-Character rules can be combined to enforce complex password requirements. For example, you may need
+You can combine Character rules to enforce complex password requirements. For example, you may need
 to enforce a policy such as "passwords must contain a numeric character, but not in the first two
 positions" to ensure compatibility with some other system.
 
-This is done by using two of the Character rules:
+Use two of the Character rules to do this:
 
 Set **Characters (Complexity)** to require 1 Numeric character.
 

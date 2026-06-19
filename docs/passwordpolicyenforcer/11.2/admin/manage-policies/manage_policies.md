@@ -1,196 +1,88 @@
 ---
 title: "Manage Policies"
-description: "Manage Policies"
+description: "Add, configure, prioritize, and manage password policies in Netwrix Password Policy Enforcer"
 sidebar_position: 20
 ---
 
 # Manage Policies
 
-Netwrix Password Policy Enforcer can enforce up to 256 different password policies. You can assign
-policies to users directly, or indirectly through Active Directory security groups and containers
-(Organizational Units). See the [Assign Policies to Users & Groups](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) topic for
-additional information.
+Password Policy Enforcer (PPE) can enforce up to 256 different password policies per domain. Password policies are collections of rules that users must comply with when choosing a new password. You can [assign policies](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) to users directly, or indirectly through Active Directory security groups and containers (Organizational Units).
 
-Open the Configuration Console:
-
-Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
-or
-Double click the **PPE Configuration** desktop shortcut.
+PPE doesn't enforce any policies when it is first installed, so the policy list is empty when you open the configuration console for the first time.
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
-The Configuration Console dashboard shows **No password policies have been set up** when you start
-using Password Policy Enforcer. After you **Add a policy**, the dashboard shows the
-defined policies and tool links. In this example, the Default Password Policy and CIS Password
-Policy Guide have been added.
+PPE adds the policies you create to the policy list. Use the buttons above the policy list to [test policies](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md), set policy priorities, and export the configuration. Use the options menu (**⋮**) to the right of each policy to perform actions on that policy.
 
 ![Dashboard with Policies](/images/passwordpolicyenforcer/11.2/administration/ppedashboardpolicies.webp)
 
-The policy management links are all on the Password Policies tile:
-
-- [Add a Policy.](#add-a-policy)
-- [Set Up a Policy](#set-up-a-policy) (click existing policy name).
-- [Test Policy.](#test-policy)
-- [Set Priorities.](#set-priorities)
-- [Export.](#export)
-- Context menu (3 stacked dots) beside each defined policy [Make Copy](#make-copy), [Make Default/Remove Default](#make-defaultremove-default), [Rename](#rename), and [Delete](#delete).
-
 ## Add a Policy
 
-**Step 1 –** Click **Add policy** from the Configuration Console.
+1. Click **Add policy** to create a new password policy.
+2. Enter a unique name for the policy.
+3. Select a **Policy template** from the list if you want the default settings in the policy to match a standard password policy like HIPAA, PCI, NIST, and others. Select **None** to start with a blank policy.
+4. Click **Create policy**.
 
-**Step 2 –** Enter a unique policy name. Maximum is 32 characters.
+The policy editor opens. The policy editor has many settings. The following pages explain the settings in each tab:
 
-**Step 3 –** Select a Policy template or **None** if you are creating your own.
+- [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md)
+- [Users & Groups](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md)
+- [Passphrase](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/passphrases.md)
+- [Properties](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/policy_properties.md)
+- [Messages](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/messages.md)
 
-**Step 4 –** Click **Create policy**.
 
-Alternatively, you can select an existing policy and use the Context menu Make Copy option to start
-with the selected policy.
+## Edit a Policy
 
-### Policy Templates
+Click the name of a policy in the policy list to make changes to the policy.
 
-Password Policy Enforcer contains Built-in Policy Templates based on the requirements of the
-most popular regulatory frameworks.
+## Test Policies
 
-- Center for Internet Security (CIS) Password Policy Guide – See the
-  [CIS Password Policy Guide](https://www.cisecurity.org/insights/white-papers/cis-password-policy-guide)
-  article for additional information.
-- Center for Internet Security (CIS) Password Policy Guide MFA – See the
-  [CIS Password Policy Guide](https://www.cisecurity.org/insights/white-papers/cis-password-policy-guide)
-  article for additional information.
-- Cybersecurity Information Sharing Act (CISA)
-- Criminal Justice Information Services (CJIS) Security Policy
-- Cybersecurity Maturity Model Certification (CMMC)
-- Defense Federal Acquisition Regulation Supplement (DFARS)
-- Gramm-Leach-Bliley Act (FedRAMP)
-- Federal Information Security Management Act (FISMA)
-- Health Insurance Portability and Accountability Act (HIPPA) – HIPAA Security Rule requires that
-  organizations must implement procedures for creating, changing, and safeguarding passwords.
+Click **Test Policy** to check if Password Policy Enforcer's current configuration accepts or rejects specific passwords. The [Test Policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md) feature is a useful troubleshooting tool when PPE isn't accepting or rejecting passwords as you expect.
 
-    - It also recommends training the workforce on ways to safeguard password information and
-      establish guidelines to create and change passwords in a periodic cycle.
-    - HIPAA doesn’t offer any specific password complexity guidelines. To comply with HIPAA,
-      organizations are better off following NIST password guidelines.
-    - Most of healthcare institutions use the NIST framework.
+## Set Policy Priorities
 
-- International Organization for Standardization (ISO/IEC) 27002 – See the
-  [NIST Special Publication 800-63B](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf) article
-  for additional information.
-- North American Electric Reliability Corporation Critical Infrastructure Protection (NERC CIP) –
-  See the
-  [CIP-007-6 — Cyber Security – Systems Security Management](https://www.nerc.com/_layouts/15/PrintStandard.aspx?standardnumber=CIP-007-6&title=Cyber%20Security%20-%20System%20Security%20Management&Jurisdiction=United%20States) article
-  for additional information.
-- National Institute of Standards and Technology (NIST) Special Publication 800-171
-- National Institute of Standards and Technology (NIST) Special Publication 800-53
-- National Institute of Standards and Technology (NIST) Special Publication 800-63b – See the
-  [NIST Special Publication 800-63B](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63b.pdf) article
-  for additional information.
-- Payment Card Industry Data Security Standard (PCI DSS) – See the
-  [PCI Document Library](https://www.pcisecuritystandards.org/document_library?category=pcidss&document=pci_dss) web
-  site for additional information.
-- Payment Card Industry Data Security Standard (PCI DSS) (version 4)
+Policy priorities help Password Policy Enforcer resolve [policy assignment conflicts](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md#policy-assignment-conflicts). If more than one policy is assigned to a user, and PPE can't decide which policy to enforce using the other conflict resolution rules, then PPE always enforces the policy with the highest priority.
 
-## Set Up a Policy
-
-After you add a policy, set it up — or review it if you used a template. Click the policy
-name to edit the policy. For each policy:
-
-- Set up [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md).
-- [Assign Policies to Users & Groups](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md).
-- Enable the use of an optional [Passphrase](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/passphrases.md).
-- Set up [Policy Properties](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/policy_properties.md).
-- Set up [Messages](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/messages.md) for your users.
-
-## Test Policy
-
-Launches the Test policy tool in a separate window. You can test **By user** and by **Password bulk
-test**. See the [Test Policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md) topic for additional information.
-
-## Set Priorities
-
-Set priorities determines which policy to enforce if users have more than one policy. Click **Apply
-priorities** to save the new order.
+Click **Set priorities** to view or modify policy priorities. This button is only visible if you have more than one password policy.
 
 ![Set priorities](/images/passwordpolicyenforcer/11.2/administration/policypriority.webp)
 
-## Export
+Select the policy you want to reprioritize, then click **Higher** or **Lower** to move the policy up or down. Click **Apply priorities** to accept the new priority order.
 
-Exports your policy configuration to **C:\Program Files\Netwrix\Password 
-Policy Enforcer\Report\report.html**
+The [Assign Policies to Users](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also click **Test Policy** to quickly see which policy PPE enforces for a particular user.
 
-## Make Copy
+## Export Configuration
 
-Duplicates a policy. This context menu item is also available when you are editing a policy.
+Click **Export** to create an HTML configuration report in `%ProgramFiles%\Netwrix\Password Policy Enforcer\Report\report.html`.
 
-**Step 1 –** Click the context menu next to the policy to copy.
+## Policy Options Menu
 
-**Step 2 –** Select **Make copy** from the context menu.
+Click the policy options menu to perform one of the following actions on the policy. The policy options menu appears as three vertical dots (**⋮**) to the right of each policy in the policy list.
 
-**Step 3 –** Enter a unique name for the policy.
+![Policy Options Menu](/images/passwordpolicyenforcer/11.2/administration/policy_options_menu.webp)
 
-**Step 4 –** Click **Make copy**.
+### Copy a Policy
 
-## Make Default/Remove Default
+Click **Make copy** in the policy options menu to create a new policy with the same default settings as the existing policy. Policy names must be unique, so PPE prompts you to enter a new name. The policy editor opens so that you can make changes to the new policy immediately.
 
-Assigns the selected policy as the default, or removes the selected policy as the default. These
-context menu items are also available when you are editing a policy.
+### Set the Default Policy
 
-**Step 1 –** Click the context menu next to the policy to set as the default.
+Password Policy Enforcer enforces the default policy for users who don't have an assigned password policy. Click **Make default** or **Remove default** in the policy options menu to toggle the default state of a policy. There can only be one default policy. 
 
-**Step 2 –** Select **Make default** from the context menu. PPE applies the policy to all domain
-users who don't have a specific policy assigned. **Default** appears next to the policy in the
-policy list. The context menu changes to **Remove Default**.
-
-:::note
-If you assign a different policy as the default, PPE warns you that a default already exists.
-:::
-
-
-## Rename
-
-Renames a policy.
-
-**Step 1 –** Click the context menu next to the policy to rename.
-
-**Step 2 –** Select **Rename** from the context menu.
-
-**Step 3 –** Enter a unique name for the policy.
-
-**Step 4 –** Click **Rename**.
-
-## Delete
-
-Deletes a policy. This context menu item is also available when you are editing a policy.
-
-**Step 1 –** Click the context menu next to the policy to delete.
-
-**Step 2 –** Select **Delete** from the context menu.
-
-**Step 3 –** Click **Delete**. A warning confirmation appears if you delete the default policy.
-
-## Exempt Users from a Password Policy
-
-You can exempt users from having to comply with the password policy when you specify a default
-policy.
-
-**Step 1 –** Create a new policy for these users.
-
-**Step 2 –** Leave all the rules disabled for this policy.
-
-**Step 3 –** Assign this policy to the users who don't have to comply with any Password Policy
-Enforcer rules.
+Netwrix doesn't recommend using PPE without a default policy because it might leave some passwords unchecked. If you want to have a default policy, but still exempt some users from having to comply with PPE's rules:
+1. Create a new policy for the exempted users.
+2. Leave all the rules disabled for this policy.
+3. Assign the policy to the users who don't have to comply with any PPE rules.
 
 :::warning
-If Password Policy Enforcer has only one policy and that policy is also the default
-policy, then Password Policy Enforcer enforces the policy for all users.
+If Password Policy Enforcer has only one policy, and that policy is also the default policy, then PPE enforces the policy for all users. If you want to deploy a single policy gradually, don't make it the default until the deployment is complete.
 :::
 
+### Rename a Policy
 
-The Password Policy Client and Password Policy Server communicate over UDP port 1333 by default. If
-you need to change the default port, then enter the new port number in the **Password Policy Server
-Port** text box. Setting the port number to zero stops Password Policy Enforcer from accepting
-client requests. If you change the port number, then you must also:
+Click **Rename** in the policy options menu to rename a policy.
 
-- Restart all the Password Policy Server computers.
-- Configure the Password Policy Client to use the new port.
+### Delete a Policy
+
+Click **Delete** in the policy options menu to delete a policy. Password Policy Enforcer displays a second confirmation prompt if you try to delete the default policy. PPE doesn't assign a new default policy after you delete the default policy. You must set a new default policy manually.
