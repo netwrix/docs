@@ -21,7 +21,7 @@ You can view the following insights for an organization.
 
 The Users value displays the total number of unique identities discovered in the organization. For
 organizations managed by an MSP, the percentage share of users relative to all managed
-organizations is also displayed. Click the value to navigate to the Billable Users page. See the
+organizations also appears. Click the value to navigate to the Billable Users page. See the
 [System Reports](/docs/1secure/admin/searchandreports/system.md) topic for additional information.
 
 ## Health Status
@@ -39,7 +39,7 @@ where you can review the status of all configured data sources and connectors.
 ## Risk Assessment
 
 This card displays the risk level for the organization broken down by severity: High, Medium, and
-Low. It also lists the top three highest risks currently detected. Click a severity count or
+Low. It also lists the top three highest risks detected. Click a severity count or
 **View full risk assessment** to navigate to the Risk Assessment page for the selected
 organization. See the
 [Risk Assessment Dashboard](/docs/1secure/admin/riskprofiles/riskassessmentdashboard.md) topic for
@@ -78,7 +78,7 @@ following metrics:
 ## Most Logon Activity
 
 This card displays a bar chart highlighting the accounts with the highest number of logon attempts
-to the environment during the past 7 days. Each account is represented by a bar. Hover over a bar
+to the environment during the past 7 days. A bar represents each account. Hover over a bar
 to view the exact number of logon attempts for that account. Click a bar to navigate to the
 Activity page, where you can view the complete All Logon Activity report. See the
 [Activity Reports](/docs/1secure/admin/searchandreports/activity.md) topic for additional information
@@ -87,7 +87,7 @@ on the All Logon Activity report.
 ## Who Made Most Changes
 
 This card displays a bar chart highlighting the users who made the most changes to the environment
-during the past 7 days. Each user account is represented by a bar. Hover over a bar to view the
+during the past 7 days. A bar represents each user account. Hover over a bar to view the
 exact number of changes by that user account. Click a bar to navigate to the Activity page, where
 you can view the complete Changes by User report. See the
 [Activity Reports](/docs/1secure/admin/searchandreports/activity.md) topic for additional information

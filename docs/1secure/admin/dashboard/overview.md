@@ -99,9 +99,9 @@ Organizations list.
   field and press Enter. The Organizations list displays the data that matches the specified
   keyword.
 - Alert – Select an alert type from the Alert dropdown menu. The organizations with alerts
-  triggered for the selected type are displayed in the list. By default, All is selected.
+  triggered for the selected type appear in the list. By default, All is selected.
 - Health Status – Select a health status from the Health Status dropdown menu. The organizations
-  with the selected heath status are displayed in the list. By default, All is selected . Other
+  with the selected health status appear in the list. By default, All is selected . Other
   statuses are:
 
     - Healthy

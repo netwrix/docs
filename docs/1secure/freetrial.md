@@ -34,7 +34,7 @@ During the free trial, the following object limits apply:
 | Windows File Server | 10,000 |
 | SQL Server | 10,000 |
 
-Self-serve trials cannot be paused.
+You can't pause self-serve trials.
 
 ## Onboarding
 
@@ -80,8 +80,8 @@ if you have particular data residency requirements.
 ## Security
 
 1Secure uses encryption, role-based access controls, and MFA support to protect your data. It holds
-SOC 2 Type I certification. For more information, visit the
-[Netwrix Trust Center](https://trust.netwrix.com/).
+SOC 2 Type I certification. For details on Netwrix security, compliance, and privacy practices,
+visit the [Netwrix Trust Center](https://trust.netwrix.com/).
 
 ## Support During the Trial
 
@@ -97,7 +97,7 @@ Netwrix website to reach the field success team.
 ## After the Trial
 
 If you purchase a subscription, your data and configurations transition seamlessly to production.
-If you don't continue, your data is permanently deleted 14 days after the trial ends.
+If you don't continue, Netwrix permanently deletes your data 14 days after the trial ends.
 [Contact Sales](https://netwrix.com/en/contact/) to discuss next steps.
 
 The following packages are available for purchase:

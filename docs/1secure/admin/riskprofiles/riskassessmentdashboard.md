@@ -140,7 +140,7 @@ Other options are:
       configured.
 
 - Filter by keyword – Enter a search string in the Filter by keyword field. Risk names containing the
-  string are displayed as you type.
+  string appear as you type.
 
 ## View the Risks List
 
@@ -196,7 +196,7 @@ The Risk Assessment dashboard provides detailed information about each risk face
 organization, including the risk name, severity level, tags, risk history graph, and more. You can
 also review the measure of the risk - "%" (percentage) or "k" (thousands).
 
-On the Risk Assessment dashboard, click a risk in the Risks list; its details are displayed in the
+On the Risk Assessment dashboard, click a risk in the Risks list; its details appear in the
 left pane.
 
 **Enumerated Risk Details**
@@ -234,7 +234,7 @@ The left pane displays the following details for an enumerated risk:
 
   - Open Report – Click this button to navigate to the State In Time Risk Reports page, where you can view a detailed report for that risk metric. See the [State In Time Risks Reports](/docs/1secure/admin/searchandreports/stateintime.md) topic for additional information.
   - Export PingCastle report - Click this button to navigate to the full PingCastle HTML report to review the details of the specific risk and all other PingCastle risks. This option is only available on risks from the PingCastle data source.
-  - Remediate – On clicking this button, the Remediate `<risk name>` pane is displayed, which provides
+  - Remediate – When you click this button, the Remediate `<risk name>` pane appears, which provides
   AI-generated step-by-step guidance to help you remediate the risk.
 - Edit risk settings – Click [Manage Risk Profiles](/docs/1secure/admin/riskprofiles/riskprofiles.md) to manage the risk profiles.
 
@@ -253,7 +253,7 @@ The left pane displays the following details for a Boolean risk:
 **Description – A description of the risk metric**
 
 - NIST Regulations – Displays the NIST regulation names associated with the risk metric
-- Remediate – On clicking this button, the Remediate `<risk name>` pane is displayed, which provides
+- Remediate – When you click this button, the Remediate `<risk name>` pane appears, which provides
   AI-generated step-by-step guidance to help you remediate the risk.
 - Edit risk settings – Click [Manage Risk Profiles](/docs/1secure/admin/riskprofiles/riskprofiles.md) to manage the risk profiles.
 
@@ -268,8 +268,8 @@ exported report is sent to you as a .PPTX file by email.
 view its risk-related data. An organization is selected by default, but you can choose a different
 one if needed.
 
-**Step 2 –** Click **Export** in the upper right corner; the Exporting Risk Assessment pane is
-displayed.
+**Step 2 –** Click **Export** in the upper right corner; the Exporting Risk Assessment pane
+appears.
 
 ![Exporting Risk Assessment pane](/images/1secure/admin/riskprofiles/export_riskassessment.webp)
 
@@ -302,7 +302,7 @@ view its risk-related data. An organization is selected by default, but you can 
 one if needed.
 
 **Step 2 –** Click **Subscribe** in the upper right corner; the Subscription to
-`<organization name>` Risk Assessment pane is displayed. See the
+`<organization name>` Risk Assessment pane appears. See the
 [Add a Subscription](/docs/1secure/admin/searchandreports/subscriptions.md#add-a-subscription) topic for additional
 information on adding a subscription, starting at Step 6. Remember to select the Include Low Risks
 checkbox if you want to include low risks in the report.
