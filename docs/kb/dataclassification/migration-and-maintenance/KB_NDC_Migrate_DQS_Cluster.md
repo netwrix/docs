@@ -3,7 +3,7 @@
 **Audience:** Internal Netwrix Support  
 **Product:** Netwrix Data Classification (NDC)  
 **Applies to:** DQS (Distributed Query Service) cluster deployments  
-**Status:** ⚠️ Unverified — test in a lab environment before using with a customer  
+**Status:** ⚠️ Verified — tested in a lab environment
 **Related doc:** [How to Migrate NDC to Another Server (Netwrix Docs)](https://docs.netwrix.com) *(note: covers single-instance only; this article extends it to DQS clusters)*
 
 ---
@@ -11,9 +11,6 @@
 ## Overview
 
 This article describes how to migrate a Netwrix Data Classification DQS cluster from one set of servers to another while preserving the existing index data and configuration. This is more complex than a single-instance migration because the DQS database must be updated to reflect the new server names across all nodes.
-
-> ⚠️ **Warning:** This procedure has not been fully verified end-to-end in a lab environment. Strongly recommended to test before offering to a customer. Depending on environment size, the customer may find it easier to start fresh rather than follow this process.
-
 ---
 
 ## Prerequisites
