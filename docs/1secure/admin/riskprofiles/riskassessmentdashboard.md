@@ -38,8 +38,8 @@ of the following:
   dashboard that displays risk-related data for the organization .
 - In the organizations list, click the risk value for an organization. It opens the Risk Assessment
   dashboard that displays risk-related data for the organization.
-- In the organizations list, click an organization name to navigate to the Organization Statistics
-  page, then click the Risk Assessment card. It opens the Risk Assessment dashboard that displays
+- In the organizations list, click an organization name to navigate to the Organization Dashboard,
+  then click the Risk Assessment card. It opens the Risk Assessment dashboard that displays
   risk-related data for the organization.
 
 ![Risk Assessment Dashboard](/images/1secure/admin/riskprofiles/riskassessmentdashboard.webp)

@@ -13,7 +13,7 @@ posture of the organization and identify any potential vulnerabilities or areas 
 To view the Organization Dashboard, click **Dashboard** in the left navigation pane to open the
 MSP dashboard, then click an organization name to open the Organization Dashboard for it.
 
-![Organization Statistics Page](/images/1secure/admin/dashboard/organizationstatistics.webp)
+![Organization Dashboard](/images/1secure/1secure-org-dashboard.webp)
 
 You can view the following insights for an organization.
 

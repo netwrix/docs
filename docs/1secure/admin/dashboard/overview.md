@@ -19,7 +19,7 @@ page of the application when you sign in.
 ![Dashboard Page for managing user](/images/1secure/admin/dashboard/dashboardpage.webp)
 
 If you are a managed organization user, this page displays insights specific to your organization.
-See the [Organization Statistics](/docs/1secure/admin/dashboard/organizationstatistics.md) topic for additional information.
+See the [Organization Dashboard](/docs/1secure/admin/dashboard/organizationstatistics.md) topic for additional information.
 
 If you are a managing organization (MSP) user, this page provides insights for all your
 organizations.
@@ -55,7 +55,7 @@ along with the number of organizations associated with each status.
 This section lists all managed organizations with the following information:
 
 - Name – Displays the name of an organization. Click an organization name to navigate to the
-  Organization Statistics page. See the [Organization Statistics](/docs/1secure/admin/dashboard/organizationstatistics.md) topic
+  Organization Dashboard page. See the [Organization Dashboard](/docs/1secure/admin/dashboard/organizationstatistics.md) topic
   for additional information.
 
 - Alerts – Displays the total number of alerts triggered for the organization. Click the value to
