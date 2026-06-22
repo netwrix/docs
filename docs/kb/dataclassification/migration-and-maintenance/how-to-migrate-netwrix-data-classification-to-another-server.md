@@ -33,11 +33,13 @@ This article describes how to change or replace the server on which Netwrix Data
 
 1. Stop and disable **all NDC services** on the application server (`conceptClassifier`, `conceptIndexer`, `conceptCollector`).
 
-   ![Service viewer showing NDC services](./../0-images/ka0Qk0000007H0v_0EM4u000002Qwyh.png)
+<img width="1257" height="446" alt="image" src="https://github.com/user-attachments/assets/05351069-7f95-473c-adf2-f388c27f0905" />
 
-   > **NOTE:** You can also disable the NDC services using the **Service Viewer** located at: `C:\Program Files\ConceptSearching\ServiceViewer` (by default).
 
-2. Back up the **NDC database** and the files in the **NDC Index** at `C:\Program Files\ConceptSearching\ConceptDB` (by default).
+   > **NOTE:** You can also disable the NDC services using the **Service Viewer** located at: `C:\Program Files\ConceptSearching\ServiceViewer` or 'C:\Program Files\Netwrix\Data Classification\ServiceViewer'
+  (by default).
+
+2. Back up the **NDC database** and the files in the **NDC Index** at `C:\Program Files\ConceptSearching\ConceptDB` or 'C:\Program Files\Netwrix\Data Classification\ConceptDB' (by default).
 
 3. Before installation, ensure the necessary software [prerequisites](https://docs.netwrix.com/docs/dataclassification/5_7) are in place.
 
@@ -47,7 +49,7 @@ This article describes how to change or replace the server on which Netwrix Data
 
 5. During the install, select the checkbox to stop services on application start.
 
-6. Copy the **backed-up Index files** from the old server to the new server's index location (`C:\Program Files\ConceptSearching\ConceptDB` by default).
+6. Copy the **backed-up Index files** from the old server to the new server's index location (`C:\Program Files\NDC\ConceptDB` by default).
 
 7. If you are migrating with 5.7.10.1 onwards, you could run into this error.
 <img width="551" height="345" alt="image" src="https://github.com/user-attachments/assets/731ac109-f8a6-49a8-bc75-8f240e3c6ae0" />
