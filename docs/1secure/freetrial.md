@@ -63,7 +63,7 @@ You'll see initial results within minutes of connecting a source. Risk assessmen
 available as soon as the initial scans complete, depending on the size of your environment.
 You'll receive an email notification when the risk assessment is complete.
 
-![1Secure Organization Dashboard](/images/1secure/1secure-org-dashboard.png)
+![1Secure Organization Dashboard](/images/1secure/1secure-org-dashboard.webp)
 
 ## Risk Assessment
 
