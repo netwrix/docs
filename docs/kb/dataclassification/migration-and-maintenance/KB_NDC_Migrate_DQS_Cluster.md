@@ -3,7 +3,7 @@
 **Audience:** Internal Netwrix Support  
 **Product:** Netwrix Data Classification (NDC)  
 **Applies to:** DQS (Distributed Query Service) cluster deployments  
-**Status:** ⚠️ Verified — tested in a lab environment
+**Status:** ⚠️ Verified — tested in a lab environment 
 **Related doc:** [How to Migrate NDC to Another Server (Netwrix Docs)](https://docs.netwrix.com) *(note: covers single-instance only; this article extends it to DQS clusters)*
 
 ---
