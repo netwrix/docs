@@ -49,7 +49,7 @@ This article describes how to change or replace the server on which Netwrix Data
 
 5. During the install, select the checkbox to stop services on application start.
 
-6. Copy the **backed-up Index files** from the old server to the new server's index location (`C:\Program Files\NDC\ConceptDB` by default).
+6. Copy the **backed-up Index files** from the old server to the new server's index location (`C:\Program Files\ConceptSearching\ConceptDB` or or 'C:\Program Files\Netwrix\Data Classification\ConceptDB' by default).
 
 7. If you are migrating with 5.7.10.1 onwards, you could run into this error.
 <img width="551" height="345" alt="image" src="https://github.com/user-attachments/assets/731ac109-f8a6-49a8-bc75-8f240e3c6ae0" />
