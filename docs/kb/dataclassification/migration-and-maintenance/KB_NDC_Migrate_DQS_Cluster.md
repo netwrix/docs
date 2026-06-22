@@ -122,7 +122,7 @@ Before handing back to the customer, verify the following on each new instance:
 
 - The public Netwrix documentation ([How to Migrate NDC to Another Server](https://docs.netwrix.com)) covers **single-instance** migration only and may be out of date. This article supplements it for DQS cluster scenarios.
 - For large environments, evaluate with the customer whether a **clean reinstall** (with fresh crawls) is more practical than this migration path.
-- If you cannot locate **NDCRegistryApp**, contact **Ben Hayman**. It is also available on the SWAT SharePoint under Data Classification.
+- If you cannot locate **NDCRegistryApp**, contact **Denis Temchenko**. It is also available on the SWAT SharePoint under Data Classification.
 
 ---
 
