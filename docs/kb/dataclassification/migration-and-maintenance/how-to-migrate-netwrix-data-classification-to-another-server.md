@@ -49,4 +49,17 @@ This article describes how to change or replace the server on which Netwrix Data
 
 6. Copy the **backed-up Index files** from the old server to the new server's index location (`C:\Program Files\ConceptSearching\ConceptDB` by default).
 
-7. Start **all services** on the new server, and collection resumes as normal. The `conceptCollector`, `conceptIndexer`, and `conceptClassifier` services must stay disabled on the **old server** to prevent re-connecting to the database. NDC can be uninstalled once the migration is successful.
+7. If you are migrating with 5.7.10.1 onwards, you could run into this error.
+<img width="551" height="345" alt="image" src="https://github.com/user-attachments/assets/731ac109-f8a6-49a8-bc75-8f240e3c6ae0" />
+
+You need to change the value of the primary Collector, Indexer and Classifier server in the NDC DB.
+
+The query should be run against NDC Database as follows
+
+Update DBStats 
+SET 
+Collector1 = 'NewServerName',
+Indexer1 = 'NewServerName',
+Classifier1 = 'NewServerName'
+
+8. Start **all services** on the new server, and collection resumes as normal. The `conceptCollector`, `conceptIndexer`, and `conceptClassifier` services must stay disabled on the **old server** to prevent re-connecting to the database. NDC can be uninstalled once the migration is successful.
