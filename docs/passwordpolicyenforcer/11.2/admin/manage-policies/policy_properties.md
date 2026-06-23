@@ -29,12 +29,23 @@ Select the **Default characters set**. The default value (Netwrix Password Polic
 users to comply with rules that use the Password Policy Enforcer character set. Choose the alternate
 option (Windows) to have users comply with rules that use the Windows character set.
 
+PPE's default character sets are:
+
+| Character Set | Default characters                                                       |
+| ------------- | ------------------------------------------------------------------------ |
+| Alpha Lower   | Lowercase alphabetic (a-z)                                               |
+| Alpha Upper   | Uppercase alphabetic (A-Z)                                               |
+| Alpha         | Uppercase and lowercase alphabetic (a-z and A-Z)                         |
+| Numeric       | Numerals (0-9)                                                           |
+| Special       | All characters not included above                                        |
+| High          | All characters above ANSI 126                                            |
+| Custom        | No default characters                                                    |
+
 :::note
 Only Password Policy Enforcer 10.0 and higher contain the Windows character set. Password
 Policy Enforcer 9, Netwrix Password Reset and Password Policy Enforcer/Web 7 (and older for all
 products) always use the Password Policy Enforcer character set.
 :::
-
 
 - Some languages such as Japanese don't distinguish between uppercase and lowercase. These
   characters are in the Windows Alpha set, but not in the Upper or Lower sets.
