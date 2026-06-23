@@ -1,5 +1,5 @@
 ---
-title: "Age (Max) Rule"
+title: "Age (Max)"
 description: "Configure the Maximum Age rule, the Standard, Transitional, and Warning expiration modes, and email reminders."
 sidebar_position: 10
 ---

@@ -1,6 +1,6 @@
 ---
-title: "History Rule"
-description: "History Rule"
+title: "History"
+description: "History"
 sidebar_position: 70
 ---
 

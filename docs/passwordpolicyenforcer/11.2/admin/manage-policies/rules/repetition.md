@@ -1,6 +1,6 @@
 ---
-title: "Repetition Rule"
-description: "Repetition Rule"
+title: "Repetition"
+description: "Repetition"
 sidebar_position: 100
 ---
 

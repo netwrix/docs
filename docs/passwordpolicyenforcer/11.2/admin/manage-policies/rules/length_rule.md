@@ -1,6 +1,6 @@
 ---
-title: "Length Rule"
-description: "Length Rule"
+title: "Length"
+description: "Length"
 sidebar_position: 80
 ---
 

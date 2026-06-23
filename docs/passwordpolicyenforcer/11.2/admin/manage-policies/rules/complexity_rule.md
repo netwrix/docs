@@ -1,6 +1,6 @@
 ---
-title: "Characters (Complexity) Rule"
-description: "Characters (Complexity) Rule"
+title: "Characters (Complexity)"
+description: "Characters (Complexity)"
 sidebar_position: 30
 ---
 

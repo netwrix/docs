@@ -1,6 +1,6 @@
 ---
-title: "Dictionary Rule"
-description: "Dictionary Rule"
+title: "Dictionary"
+description: "Dictionary"
 sidebar_position: 60
 ---
 

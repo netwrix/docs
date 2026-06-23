@@ -1,6 +1,6 @@
 ---
-title: "Similarity Rule"
-description: "Similarity Rule"
+title: "Similarity"
+description: "Similarity"
 sidebar_position: 110
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Age (Min) Rule"
+title: "Age (Min)"
 description: "Configure the Minimum Age rule to stop users from cycling through passwords to bypass the History and Similarity rules."
 sidebar_position: 20
 ---

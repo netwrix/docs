@@ -1,6 +1,6 @@
 ---
-title: "Character (Granular) Rules"
-description: "Character (Granular) Rules"
+title: "Characters (Granular)"
+description: "Characters (Granular)"
 sidebar_position: 40
 ---
 

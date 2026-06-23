@@ -1,6 +1,6 @@
 ---
-title: "Compromised Rule"
-description: "Compromised Rule"
+title: "Compromised"
+description: "Compromised"
 sidebar_position: 50
 ---
 

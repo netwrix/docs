@@ -1,6 +1,6 @@
 ---
-title: "Patterns Rule"
-description: "Patterns Rule"
+title: "Patterns"
+description: "Patterns"
 sidebar_position: 90
 ---
 
