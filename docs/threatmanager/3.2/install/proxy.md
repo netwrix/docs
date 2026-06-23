@@ -37,11 +37,11 @@ Add or update the `Proxy` section in `appsettings.json`:
 }
 ```
 
-The table below describes each setting.
+The following table describes each setting.
 
 | Property | Config Key | Type | Description |
 |---|---|---|---|
-| Enabled | `Proxy:Enabled` | bool | Whether the proxy is active. If `false`, all other settings are ignored and direct connections are made. |
+| Enabled | `Proxy:Enabled` | bool | Whether the proxy is active. If `false`, the service ignores all other settings and connects directly. |
 | Address | `Proxy:Address` | string | The proxy server URL, e.g. `http://proxy.contoso.com:8080`. Required when `Enabled` is `true`. |
 | BypassProxyOnLocal | `Proxy:BypassProxyOnLocal` | bool | Whether to skip the proxy for local and intranet addresses. |
 | UseDefaultCredentials | `Proxy:UseDefaultCredentials` | bool | Whether to authenticate to the proxy using the Windows identity of the service account. Suitable for NTLM/Kerberos-authenticated proxies. |
@@ -54,7 +54,7 @@ The table below describes each setting.
 
 **C:\Program Files\STEALTHbits\StealthDEFEND\AzureService\appsettings.json**
 
-**Step 2 –** Locate the `Proxy` section. If it doesn't exist, add it as shown in the example above.
+**Step 2 –** Locate the `Proxy` section. If it doesn't exist, add it as shown in the preceding example.
 
 **Step 3 –** Set `Enabled` to `true`.
 

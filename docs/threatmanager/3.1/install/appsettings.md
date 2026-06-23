@@ -12,11 +12,11 @@ settings at startup from `appsettings.json` in the service's installation direct
 ## Configuration Files
 
 Each service ships with an `appsettings.default.json` file that contains the default settings used
-when no override is present. This file is replaced on every upgrade and should not be edited
+when no override is present. Every upgrade replaces this file, so don't edit it
 directly. Use it as a reference to see what settings are available for a given service.
 
-To override settings for a service, create an `appsettings.json` file in the same directory. This
-file is not created by the installer — you must create it yourself. Settings in `appsettings.json`
+To override settings for a service, create an `appsettings.json` file in the same directory. The
+installer doesn't create this file — you must create it yourself. Settings in `appsettings.json`
 take precedence over those in `appsettings.default.json`.
 
 The following services support configuration overrides via `appsettings.json`:
@@ -36,7 +36,7 @@ The following services support configuration overrides via `appsettings.json`:
 
 ## Override Specific Settings
 
-Only include the settings you want to change in `appsettings.json`. Do not copy the entire contents
+Only include the settings you want to change in `appsettings.json`. Don't copy the entire contents
 of `appsettings.default.json` into `appsettings.json`. Copying all defaults prevents Threat Manager
 upgrades from applying updated default values for settings you haven't intentionally changed.
 
@@ -58,7 +58,7 @@ Settings not present in `appsettings.json` continue to use the values from
 
 ## Apply Configuration Changes
 
-Changes to `appsettings.json` do not take effect until the service is restarted. To restart a
+Changes to `appsettings.json` don't take effect until you restart the service. To restart a
 service, open the Windows Services management console (`services.msc`), locate the service by name,
 and select **Restart**.
 
