@@ -6,13 +6,13 @@ sidebar_position: 20
 
 # Manage Policies
 
-Password Policy Enforcer (PPE) can enforce up to 256 different password policies per domain. Password policies are collections of rules that users must comply with when choosing a new password. You can [assign policies](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) to users directly, or indirectly through Active Directory security groups and containers (Organizational Units).
+Password Policy Enforcer (PPE) can enforce up to 256 different password policies per domain. Password policies are collections of rules that users must comply with when choosing a new password. You can [assign policies](usersgroups.md) to users directly, or indirectly through Active Directory security groups and containers (Organizational Units).
 
 PPE doesn't enforce any policies when it is first installed, so the policy list is empty when you open the configuration console for the first time.
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
-PPE adds the policies you create to the policy list. Use the buttons above the policy list to [test policies](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md), set policy priorities, and export the configuration. Use the options menu (**⋮**) to the right of each policy to perform actions on that policy.
+PPE adds the policies you create to the policy list. Use the buttons above the policy list to [test policies](testpolicy.md), set policy priorities, and export the configuration. Use the options menu (**⋮**) to the right of each policy to perform actions on that policy.
 
 ![Dashboard with Policies](/images/passwordpolicyenforcer/11.2/administration/ppedashboardpolicies.webp)
 
@@ -25,11 +25,11 @@ PPE adds the policies you create to the policy list. Use the buttons above the p
 
 The policy editor opens. The policy editor has many settings. The following pages explain the settings in each tab:
 
-- [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md)
-- [Users & Groups](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md)
-- [Passphrase](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/passphrases.md)
-- [Properties](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/policy_properties.md)
-- [Messages](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/messages.md)
+- [Rules](rules/rules.md)
+- [Users & Groups](usersgroups.md)
+- [Passphrase](passphrases.md)
+- [Properties](policy_properties.md)
+- [Messages](messages.md)
 
 
 ## Edit a Policy
@@ -38,11 +38,11 @@ Click the name of a policy in the policy list to make changes to the policy.
 
 ## Test Policies
 
-Click **Test Policy** to check if Password Policy Enforcer's current configuration accepts or rejects specific passwords. The [Test Policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md) feature is a useful troubleshooting tool when PPE isn't accepting or rejecting passwords as you expect.
+Click **Test Policy** to check if Password Policy Enforcer's current configuration accepts or rejects specific passwords. The [Test Policy](testpolicy.md) feature is a useful troubleshooting tool when PPE isn't accepting or rejecting passwords as you expect.
 
 ## Set Policy Priorities
 
-Policy priorities help Password Policy Enforcer resolve [policy assignment conflicts](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md#policy-assignment-conflicts). If more than one policy is assigned to a user, and PPE can't decide which policy to enforce using the other conflict resolution rules, then PPE always enforces the policy with the highest priority.
+Policy priorities help Password Policy Enforcer resolve [policy assignment conflicts](usersgroups.md#policy-assignment-conflicts). If more than one policy is assigned to a user, and PPE can't decide which policy to enforce using the other conflict resolution rules, then PPE always enforces the policy with the highest priority.
 
 Click **Set priorities** to view or modify policy priorities. This button is only visible if you have more than one password policy.
 
@@ -50,7 +50,7 @@ Click **Set priorities** to view or modify policy priorities. This button is onl
 
 Select the policy you want to reprioritize, then click **Higher** or **Lower** to move the policy up or down. Click **Apply priorities** to accept the new priority order.
 
-The [Assign Policies to Users](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also click **Test Policy** to quickly see which policy PPE enforces for a particular user.
+The [Assign Policies to Users](usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also click **Test Policy** to quickly see which policy PPE enforces for a particular user.
 
 ## Export Configuration
 

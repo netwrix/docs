@@ -6,12 +6,12 @@ sidebar_position: 30
 
 # Install the Password Policy Client
 
-The Password Policy Client (PPC) is an optional component that helps users choose a compliant password. It shows users which rules they need to comply with while they enter their new password. The PPC also displays a detailed rejection reason message if PPE rejects the new password. You typically install the PPC on users' computers, virtual desktops, and Remote Desktop Session Hosts. The list of supported operating systems is in the [introduction](/docs/passwordpolicyenforcer/11.2/index.md).
+The Password Policy Client (PPC) is an optional component that helps users choose a compliant password. It shows users which rules they need to comply with while they enter their new password. The PPC also displays a detailed rejection reason message if PPE rejects the new password. You typically install the PPC on users' computers, virtual desktops, and Remote Desktop Session Hosts. The list of supported operating systems is in the [introduction](../index.md).
 
 :::note
 The Password Policy Client doesn't store or send passwords or password hashes over the network. The protocol is encrypted for additional security, but even if an attacker compromised the encryption, it wouldn't reveal any passwords or password hashes.
 
-PPE only enforces the [Similarity rule](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/similarity_rule.md) if the user changes their password from the PPC, [PPE Web](/docs/passwordpolicyenforcer/11.2/web-overview/web_overview.md), or Netwrix Password Reset.
+PPE only enforces the [Similarity rule](../admin/manage-policies/rules/similarity_rule.md) if the user changes their password from the PPC, [PPE Web](../web-overview/web_overview.md), or Netwrix Password Reset.
 :::
 
 ## Manual Installation
@@ -43,7 +43,7 @@ The Password Policy Client runs automatically during a password change. There is
 
 ## Automated Deployment
 
-Use a software deployment tool or [Group Policy](/docs/passwordpolicyenforcer/11.2/installation/installationgpm.md) to automate deployment across many computers. You can also run msiexec to install from the command line. For example, run this command with elevated permissions to silently install the 64-bit Password Policy Client:
+Use a software deployment tool or [Group Policy](installationgpm.md) to automate deployment across many computers. You can also run msiexec to install from the command line. For example, run this command with elevated permissions to silently install the 64-bit Password Policy Client:
 
 ```batch
 msiexec /i Netwrix_PPE_Client_11.2.0.148_x64.msi /q
@@ -56,9 +56,9 @@ Add an exclusion for `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPEClt.DLL
 ## Testing the Password Policy Client
 
 Test the Password Policy Client by logging on to a computer, pressing **Ctrl+Alt+Del**, and clicking **Change a password**. You should see the password policy rules on the password change screen. If you don't see the rules, then ensure that:
-- The [Password Policy Server (PPS)](/docs/passwordpolicyenforcer/11.2/installation/installationserver.md) is installed on all domain controllers in the domain.
+- The [Password Policy Server (PPS)](installationserver.md) is installed on all domain controllers in the domain.
 - You restarted all domain controllers after installing the PPS.
-- A PPE policy is [assigned](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) to the logged on user account.
+- A PPE policy is [assigned](../admin/manage-policies/usersgroups.md) to the logged on user account.
 
 ## Uninstalling
 
