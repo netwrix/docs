@@ -42,7 +42,7 @@ The following learning paths provide Partner certification for Presales Engineer
         * [Netwrix Directory Manager Presales Engineer](./directory-manager.md)
         * [Netwrix Identity Manager Presales Engineer](./identity-manager.md)
     * Identity Security Posture Management
-        * [Netwrix 1Secure Presales Engineer](./1secure.md)
+        * [Netwrix 1Secure Pro Presales Engineer](./1secure.md)
         * [Netwrix Auditor Presales Engineer](./auditor.md)
         * [Netwrix PingCastle Presales Engineer](./pingcastle.md)
     * Privileged Access Management
