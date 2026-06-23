@@ -25,7 +25,7 @@ To disable the Windows password policy rules:
 
 ![installing_ppe_3](/images/passwordpolicyenforcer/11.2/evaluation/preparing_the_computer.webp)
 
-:::tip
+:::note
 Don't set the Windows policies to **Not Configured** as that leaves the previously enforced value in place and doesn't disable the rule. Instead, follow the steps above to explicitly set each numeric policy to **0** and set the complexity policy to **Disabled**.
 :::
 
