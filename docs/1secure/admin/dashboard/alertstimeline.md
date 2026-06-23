@@ -17,8 +17,8 @@ To access the Alerts Timeline page, click **Home** at the top and do one of the 
   that displays alert-related data for the organization represented by the selected bar.
 - On the Top 5 Triggered Alerts by Type chart, click a bar. It opens the Alerts Timeline page that
   displays alert-related data for all managed organizations.
-- In the organizations list, click an organization name to navigate to the Organization Statistics
-  page, then click the Alerts Timeline chart. It opens the Alerts Timeline page that displays
+- In the organizations list, click an organization name to navigate to the Organization Dashboard,
+  then click the Alerts Timeline chart. It opens the Alerts Timeline page that displays
   alert-related data for the organization selected in the organizations list.
 
 ![Alerts Timeline Page](/images/1secure/admin/dashboard/alertstimeline.webp)
@@ -36,8 +36,7 @@ exact number of alerts for that type.
 The legend maps the colors used in the pie chart to the names of the alert types along with the
 share percentage.
 
-Click an alert type on the legend to disable it. Disabled alert types aren't displayed in the pie
-chart. The pie chart displays only the enabled alert types and their percentage shares with
+Click an alert type on the legend to disable it. The pie chart hides disabled alert types. The pie chart displays only the enabled alert types and their percentage shares with
 respect to each other. Click a disabled alert type on the legend to re-enable it.
 
 **Alerts Timeline**
@@ -51,8 +50,8 @@ triggered on any specific date.
 This section lists all the triggered alerts with the following information:
 
 - Organization – Displays the name of the organization the alert belongs to. Click an organization
-  name to view its alert-related data on the Alerts Timeline page. On filtering data by
-  organization, the Organization column is hidden from the Alerts list.
+  name to view its alert-related data on the Alerts Timeline page. When you filter data by
+  organization, the Alerts list hides the Organization column.
 - Alert time – Displays the date and time when the alert is triggered
 - Source type – Displays the origin or type of data that triggers the alert. Source types are:
 
