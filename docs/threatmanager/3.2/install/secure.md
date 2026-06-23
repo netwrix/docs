@@ -6,6 +6,10 @@ sidebar_position: 40
 
 # Secure the Threat Manager Console
 
+:::warning
+Before editing configuration files, review the [Modify Service Configuration Settings](/docs/threatmanager/3.2/install/appsettings.md) topic for important guidance on the correct approach.
+:::
+
 To support HTTPS, do the following:
 
 - Import an SSL certificate to the server
