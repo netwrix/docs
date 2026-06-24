@@ -36,7 +36,8 @@ Change Tracker updates the Splunk credentials.
 ## Policy Templates
 
 Use policy templates to configure what to monitor on the target devices. Splunk requires a policy
-template that defines an SPL query. Splunk's SPL query language is similar to SQL: it's flexible in
+template that defines an SPL query. Splunk's SPL query language is similar to Structured Query
+Language (SQL): it's flexible in
 defining the data to query, how to filter it, and what transformations to apply, such as column
 aliases.
 
@@ -145,7 +146,7 @@ instance.
 
 :::note
 Change events coming into Change Tracker (from Splunk or any agentless monitoring) must
-match a device in Change Tracker. Change Tracker ignores events without a matching device
+match a device in Change Tracker. Change Tracker ignores events without a matching device.
 :::
 
 
