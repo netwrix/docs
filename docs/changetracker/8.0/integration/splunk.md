@@ -112,7 +112,7 @@ and click **Add an Existing Template**.
 
 ![group2](/images/changetracker/8.0/integration/splunk/group2.webp)
 
-Any device in this group of the type Splunk will execute the Splunk tracking policy created earlier.
+Any device of the type Splunk in this group will execute the Splunk tracking policy created earlier.
 
 ![group](/images/changetracker/8.0/integration/splunk/group.webp)
 

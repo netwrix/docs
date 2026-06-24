@@ -83,7 +83,7 @@ no automatic registration, so you must choose a group.
 
 ![devicediscoveryform](/images/changetracker/8.0/integration/vmware/devicediscoveryform.webp)
 
-Once configured a discovery job will automatically run and if successful, the devices will be
+Once configured, a discovery job will automatically run, and if it succeeds, the devices will be
 visible in the grid.
 
 ![devicediscoverystarted](/images/changetracker/8.0/integration/vmware/devicediscoverystarted.webp)
