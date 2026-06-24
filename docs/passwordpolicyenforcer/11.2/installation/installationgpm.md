@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Deploy with Group Policy
 
-You can use Group Policy to deploy the [Password Policy Enforcer server components](installationserver.md) or the [Password Policy Client (PPC)](installationclient.md). Microsoft Endpoint Configuration Manager (MECM) and other software deployment tools can also be used.
+You can use Group Policy to deploy the [Password Policy Enforcer server components](installationserver.md) or the [Password Policy Client (PPC)](installationclient.md). You can also use Microsoft Endpoint Configuration Manager (MECM) and other software deployment tools.
 
 ## Create a distribution point
 

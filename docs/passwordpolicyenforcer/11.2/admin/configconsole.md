@@ -12,7 +12,7 @@ Use the **PPE Configuration** desktop shortcut or Start menu item to open the co
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
-When the console is connected to a [domain configuration](../installation/domain_and_local_policies.md), the configuration changes you make in the console replicate to all the domain controllers in the domain. Active Directory (AD) replication propagates the changes at normal replication intervals. The console applies configuration changes only to the local computer's registry when connected to a [local configuration](../installation/domain_and_local_policies.md).
+When you connect the console to a [domain configuration](../installation/domain_and_local_policies.md), the configuration changes you make in the console replicate to all the domain controllers in the domain. Active Directory (AD) replication propagates the changes at normal replication intervals. The console applies configuration changes only to the local computer's registry when connected to a [local configuration](../installation/domain_and_local_policies.md).
 
 ## Enable and disable Password Policy Enforcer
 

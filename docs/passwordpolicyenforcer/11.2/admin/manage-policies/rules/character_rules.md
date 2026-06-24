@@ -21,7 +21,7 @@ A description of the default character set appears beside each rule's name. For 
 
 Select the **Characters (Granular)** checkbox at the top of the page, then select the checkbox beside a rule's name to enable that rule.
 
-These rules require passwords to contain certain characters by default. This is indicated by the word **Contain** below the rule's name. If you want the rule to stop certain characters from being used in passwords, then select **Not contain** from the dropdown.
+These rules require passwords to contain certain characters by default. This is indicated by the word **Contain** below the rule's name. If you want the rule to stop users from using certain characters in passwords, then select **Not contain** from the dropdown.
 
 When **Contain** is selected, PPE defaults to requiring at least one character from this character set. If you want to require more than one character, select the required number from the dropdown beside **Contain**. For example, you might want to specify that passwords must contain at least two special characters.
 

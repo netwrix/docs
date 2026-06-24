@@ -7,8 +7,8 @@ sidebar_position: 80
 # Length Rule
 
 The Length rule rejects passwords that contain too few or too many characters. Longer passwords are
-generally stronger, so only specify a maximum password length if password compatibility must be
-maintained with a system that can't accept long passwords.
+generally stronger, so only specify a maximum password length if you must maintain password
+compatibility with a system that can't accept long passwords.
 
 ![Length rule](/images/passwordpolicyenforcer/11.2/administration/length.webp)
 

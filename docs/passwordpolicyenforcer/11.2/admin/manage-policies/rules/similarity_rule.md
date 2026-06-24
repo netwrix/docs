@@ -14,8 +14,8 @@ similarity may indicate that a user is serializing their passwords. For example,
 
 Select the **Similarity** checkbox to enable the Similarity rule.
 
-Select **Current password** to apply the similarity rules the user's existing password. The Password
-Policy Enforcer client must be installed on the user's machine to enforce this rule.
+Select **Current password** to apply the similarity rules the user's existing password. You must install
+the Password Policy Enforcer client on the user's machine to enforce this rule.
 
 Select **User display name** to reject passwords that are similar to a user's Active Directory
 display name (full name for local accounts).

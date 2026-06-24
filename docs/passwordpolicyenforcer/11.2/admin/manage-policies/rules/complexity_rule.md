@@ -16,7 +16,7 @@ Select a number from the **Must contain at least** dropdown. This rule rejects p
 
 Select the checkbox beside each required character set. Password Policy Enforcer (PPE) has seven character sets. The [Policy Properties](../policy_properties.md) page has more information about PPE's character sets. You can also use the [Characters (Granular)](character_rules.md) rules to customize the default character sets.
 
-If the number in the dropdown is less than the number of selected character sets, then users have some flexibility in their choice of characters. For example, in the screenshot above, the password must contain only three of the four selected character sets.
+If the number in the dropdown is less than the number of selected character sets, then users have some flexibility in their choice of characters. For example, in the preceding screenshot, the password must contain only three of the four selected character sets.
 
 :::note
 This rule uses custom character set definitions from the [Characters (Granular)](character_rules.md) rules, even if you disable the granular rules.

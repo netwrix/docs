@@ -63,8 +63,8 @@ Disable Password Policy Enforcer's History rule if you don't want Password Polic
 the password history.
 
 :::note
-Password Policy Enforcer doesn't store passwords in the password history, it only stores
-the Argon2 or SHA-256 hashes. A salt protects the hashes from precomputed attacks, including rainbow
+Password Policy Enforcer stores only the Argon2 or SHA-256 hashes in the password history,
+not the passwords themselves. A salt protects the hashes from precomputed attacks, including rainbow
 tables. If you don't want Password Policy Enforcer to store a password history, then leave the
 History rule disabled. You can use the Windows History rule together with Password Policy Enforcer's
 other rules to enforce your password policy.
