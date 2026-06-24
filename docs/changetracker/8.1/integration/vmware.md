@@ -6,7 +6,8 @@ sidebar_position: 50
 
 # VMware
 
-vSphere is VMware's virtualization platform. Change Tracker includes CIS certified compliance
+vSphere is VMware's virtualization platform. Change Tracker includes Center for Internet Security
+(CIS) certified compliance
 tracking templates to ensure secure configuration of vSphere clusters and their ESXi nodes.
 
 ## vSphere/ESXi
