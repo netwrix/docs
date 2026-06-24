@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Characters (Granular) rules
 
-Selecting the **Characters (Granular)** item in the rules pane displays the settings for nine related rules. Unlike the [Complexity rule](complexity_rule.md), these rules offer granular control over which characters are required or rejected, and can even require certain character types at specific character positions. Use these rules to increase password strength or to ensure password compatibility with other systems.
+Selecting the **Characters (Granular)** item in the rules pane displays the settings for nine related rules. Unlike the [Complexity rule](complexity_rule.md), these rules offer granular control over which characters to require or reject, and can even require certain character types at specific character positions. Use these rules to increase password strength or to ensure password compatibility with other systems.
 
 ![Character (Granular) Rule](/images/passwordpolicyenforcer/11.2/administration/chargranular.webp)
 
@@ -22,9 +22,9 @@ A description of the default character set appears beside each rule's name. For 
 
 Select the **Characters (Granular)** checkbox at the top of the page, then select the checkbox beside a rule's name to enable that rule.
 
-These rules require passwords to contain certain characters by default. This is indicated by the word **Contain** below the rule's name. If you want the rule to stop users from using certain characters in passwords, then select **Not contain** from the dropdown.
+These rules require passwords to contain certain characters by default. The word **Contain** below the rule's name indicates this. If you want the rule to stop users from using certain characters in passwords, then select **Not contain** from the dropdown.
 
-When **Contain** is selected, PPE defaults to requiring at least one character from this character set. If you want to require more than one character, select the required number from the dropdown beside **Contain**. For example, you might want to specify that passwords must contain at least two special characters.
+When you select **Contain**, PPE defaults to requiring at least one character from this character set. If you want to require more than one character, select the required number from the dropdown beside **Contain**. For example, you might want to specify that passwords must contain at least two special characters.
 
 ![Passwords must contain at least two special characters](/images/passwordpolicyenforcer/11.2/administration/characters_granular_must_contain_two_special.webp)
 
@@ -64,7 +64,7 @@ The First and Last Character rules reject passwords that don't begin or end with
 
 Select the **Characters (Granular)** checkbox at the top of the page, then select **Characters (First)** or **Characters (Last)** to enable that rule.
 
-These rules require passwords to begin or end with certain characters by default. This is indicated by **Begin** (First Character rule) or **End** (Last Character rule) below the rule's name. If you don't want certain characters to appear at the beginning or end of a password, select **Not begin** or **Not end** from the dropdown.
+These rules require passwords to begin or end with certain characters by default. **Begin** (First Character rule) or **End** (Last Character rule) below the rule's name indicates this. If you don't want certain characters to appear at the beginning or end of a password, select **Not begin** or **Not end** from the dropdown.
 
 Click the character set names to select them. A checkmark appears next to the selected character sets. For example, selecting **Not end** with **Numeric** and **Special** rejects passwords that end with a numeric or special character:
 

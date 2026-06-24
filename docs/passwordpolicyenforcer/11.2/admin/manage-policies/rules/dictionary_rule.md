@@ -8,7 +8,7 @@ sidebar_position: 60
 
 The Dictionary rule rejects passwords that are vulnerable to guessing, hybrid, and precomputed
 attacks. These attacks can crack weak passwords in seconds, and they can be very effective if
-passwords are based on common words.
+users base their passwords on common words.
 
 ![Dicitonary Rule](/images/passwordpolicyenforcer/11.2/administration/dictionary.webp)
 
@@ -89,9 +89,9 @@ wildcard template formats:
 </table>
 
 
-Password Policy Enforcer performs partial matching even if Wildcard analysis is disabled. For example, the dictionary
+Password Policy Enforcer performs partial matching even if you disable Wildcard analysis. For example, the dictionary
 word "password" rejects the passwords "My**Password**$", "**Password**100", and
-"12**password**34" even if Wildcard analysis is disabled.
+"12**password**34" even if you disable Wildcard analysis.
 
 Use Wildcard analysis only to limit matching to the characters at the start or end of a
 password.
@@ -115,13 +115,13 @@ computers sharing a common Password Policy Enforcer configuration.
 
 
 Click the **Sort** button if you are using the dictionary file with Password Policy Enforcer for the
-first time, or if you have added words to the file since it was last sorted. The Password Policy
+first time, or if you have added words to the file since you last sorted it. The Password Policy
 Enforcer Configuration Console will sort and reformat the file so that Password Policy Enforcer can use
 it. Sorting also removes duplicate words, so the sorted file may be smaller than the original.
 
 Click the **Messages** tab to customize the Password Policy Client rule inserts. If both Dictionary
-rules have identical inserts, then only one of the inserts is shown in the corresponding Password
-Policy Client message if both rules reject the password.
+rules have identical inserts, then the corresponding Password
+Policy Client message shows only one of the inserts if both rules reject the password.
 
 ## Creating a Custom Dictionary
 

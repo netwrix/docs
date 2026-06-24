@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Windows has its own password policy rules for password history, age, length, and complexity. If you enable both Password Policy Enforcer (PPE) rules and Windows rules, users must comply with both the PPE and Windows rules.
 
-PPE has its own rules for password [history](../admin/manage-policies/rules/history_rule.md), [minimum age](../admin/manage-policies/rules/minimum_age_rule.md), [maximum age](../admin/manage-policies/rules/maximum_age_rule.md), [length](../admin/manage-policies/rules/length_rule.md), and [complexity](../admin/manage-policies/rules/complexity_rule.md). While it's possible, and sometimes beneficial, to use PPE and Windows rules together, it can also be confusing when testing PPE. It is therefore recommended to disable the Windows password policy rules while you are experimenting with and testing your PPE configuration.
+PPE has its own rules for password [history](../admin/manage-policies/rules/history_rule.md), [minimum age](../admin/manage-policies/rules/minimum_age_rule.md), [maximum age](../admin/manage-policies/rules/maximum_age_rule.md), [length](../admin/manage-policies/rules/length_rule.md), and [complexity](../admin/manage-policies/rules/complexity_rule.md). While it's possible, and sometimes beneficial, to use PPE and Windows rules together, it can also be confusing when testing PPE. Netwrix therefore recommends disabling the Windows password policy rules while you experiment with and test your PPE configuration.
 
 To disable the Windows password policy rules:
 

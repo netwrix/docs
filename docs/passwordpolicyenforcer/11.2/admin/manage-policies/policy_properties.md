@@ -60,14 +60,13 @@ products) always use the Password Policy Enforcer character set.
 Select the number of rules for **Passwords must comply with** from the dropdown list to specifiy
 the required compliance level for this policy. The default value **(all the rules**) requires users
 to comply with all enabled rules. Choose an alternative option if Password Policy Enforcer should
-enforce a more lenient password policy. The Minimum Age and Maximum Age rules are excluded from
-compliance level calculations. See the [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md) topic for additional information.
+enforce a more lenient password policy. Compliance level calculations exclude the Minimum Age and Maximum Age rules. See the [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md) topic for additional information.
 
 When setting the compliance level, consider that some rules may be disabled when a user enters a
 passphrase. See the [Passphrase](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/passphrases.md) topic for additional information. Password Policy
 Enforcer accepts passphrases that comply with all enabled rules, irrespective of the compliance
-level. This ensures that passphrases can be used, even if they don't meet the compliance level when
-Password Policy Enforcer is configured to disable one or more rules for passphrases.
+level. This ensures that users can use passphrases, even if they don't meet the compliance level when you
+configure Password Policy Enforcer to disable one or more rules for passphrases.
 
 Password Policy Enforcer can start a password synchronization application or script whenever a user
 successfully changes their password. Enter the full path to the executable in the **Execute the
@@ -88,11 +87,11 @@ This script is shown as an example only. You shouldn't store user passwords.
 :::
 
 
-The command can now include the [USERNAME] and [PASSWORD] macros. If neither is specified, then the
-command is executed with both parameters to maintain compatibility with existing programs/scripts.
+The command can now include the [USERNAME] and [PASSWORD] macros. If you specify neither, then PPE executes the
+command with both parameters to maintain compatibility with existing programs/scripts.
 
 :::info
-Use the [USERNAME] parameter if the password isn't needed by the program/script
-so that the password isn't unnecessarily sent to the change notification command/script.
+Use the [USERNAME] parameter if the program/script doesn't need the password,
+so that PPE doesn't unnecessarily send the password to the change notification command/script.
 
 :::

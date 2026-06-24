@@ -29,10 +29,10 @@ instead of "abcde".
 Choose a value from the **Tolerance** dropdown list to specify the longest pattern that Password
 Policy Enforcer allows before rejecting a password. For example, the password "password**wxyz**"
 contains a four-character pattern (shown in bold type). Password Policy Enforcer rejects this
-password if the tolerance is set to three (or lower), and accept it if the tolerance is set to four
-(or higher). Choose the **Auto** value if passwords should be rejected if they only contain a
-single, continuous, character pattern. For example, "abcde" would be rejected, but "abcdz" and
-"abc123" wouldn't.
+password if you set the tolerance to three (or lower), and accepts it if you set the tolerance to four
+(or higher). Choose the **Auto** value to reject passwords that contain only a
+single, continuous character pattern. For example, PPE would reject "abcde", but not "abcdz" or
+"abc123".
 
 Select **Reject keyboard patterns like "qwerty"** to check for keyboard patterns.
 
@@ -47,5 +47,5 @@ Select **Detect key repeat** for repeated keys, based on the **Tolerance** value
 
 Select **Detect key skip** for skipped keys, such as **qetuo**.
 
-Set **Tolerance** for the number of characters in a keyboard pattern is allowed before the password
-is rejected.
+Set **Tolerance** to the number of characters allowed in a keyboard pattern before Password Policy
+Enforcer rejects the password.

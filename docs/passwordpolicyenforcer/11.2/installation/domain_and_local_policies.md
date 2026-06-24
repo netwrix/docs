@@ -31,7 +31,7 @@ PPE stores configuration information in Active Directory for domain password pol
 
 Changes to a domain configuration automatically replicate to all domain controllers in the domain. Changes to a local configuration apply only to the local computer. If you want to use the same local configuration for many computers, export the HKLM\SOFTWARE\ANIXIS\Password Policy Enforcer 11.0\ registry key from the configured computer, and import it into the other computers.
 
-You can also use Group Policy to distribute a local configuration to many computers in a domain. This is only necessary for local password policies. Domain password policies automatically replicate to the domain controllers because they're stored in Active Directory.
+You can also use Group Policy to distribute a local configuration to many computers in a domain. This is only necessary for local password policies. Domain password policies automatically replicate to the domain controllers because Active Directory stores them.
 
 ### Distribute the local configuration with Group Policy
 
