@@ -6,90 +6,73 @@ sidebar_position: 70
 
 # Permissions for Oracle Database Auditing
 
-When creating a monitoring plan for your Oracle Database, you should specify the account that has
-sufficient privileges to collect data from the database. At least, the following privileges are
-required:
+When creating a monitoring plan for your Oracle Database, you must specify an account with
+sufficient privileges to collect audit data. You can either grant the required privileges
+individually or assign the default DBA role to the account.
 
-- CREATE SESSION — Allows an account to connect to a database.
-- SELECT — Allows an account to retrieve data from one or more tables, views, etc.
+## Prerequisites
 
-Alternatively, you can assign the default administrator role to that account.
+- The `sqlplus` tool is installed and accessible on the computer where the database is deployed.
+- You have an Oracle account with the `SYSDBA` privilege.
 
-You can grant the required privileges to the existing account, or create a new one. Follow the
-procedure described below.
+## Grant CREATE SESSION and SELECT Privileges
 
-Follow the steps to grant CREATE SESSION and SELECT privileges to the account.
+At minimum, the following privileges are required:
 
-**Step 1 –** On the computer where your database is deployed, run the sqlplus tool.
+- `CREATE SESSION` — allows the account to connect to the database.
+- `SELECT` — allows the account to retrieve data from the required objects.
 
-**Step 2 –** Connect to your Oracle Database.
+1. On the computer where your database is deployed, run the `sqlplus` tool.
 
-**NOTE:** Use Oracle account with the `SYSDBA` privilege, for example:
+2. Connect to your Oracle Database using an account with the `SYSDBA` privilege. For example:
 
-`OracleUser as sysdba`
+    `OracleUser as sysdba`
 
-**Step 3 –** Enter the account password.
+3. Enter the account password.
 
-**Step 4 –** Decide on the account that will be used to access this database for audit data
-collection. You can:
+4. Decide on the account to use for audit data collection. You can use an existing account or
+   create a new one. To create a new account, execute:
 
-- Use the account that already exists
+    `CREATE USER <account_name> IDENTIFIED BY <password>;`
 
-    - OR -
+5. Grant the `CREATE SESSION` system privilege to the account:
 
-- Create a new account. To create a new account, use the following command::  
-  `CREATE USER <account_name> IDENTIFIED BY PASSWORD;`
+    `GRANT CREATE SESSION TO <account_name>;`
 
-**Step 5 –** Grant `CREATE SESSION` system privilege to that account. For that, execute:  
-`GRANT CREATE SESSION TO <account_name>;`
+6. Grant the `SELECT` privilege on the required objects to the account. See
+   [Required Object Privileges](#required-object-privileges) for the full list. For example:
 
-**Step 6 –** Grant `SELECT` privilege on the required object to that account. See the For Oracle
-Database Auditing topic for the detailed object list. For that, execute:
-`GRANT SELECT ON <object> TO <account_name>;`  
-For example:  
-`GRANT SELECT ON aud$ TO OracleUser;`
+    `GRANT SELECT ON aud$ TO <account_name>;`
 
-CREATE SESSION and SELECT privileges now granted to the account.
+## Grant the DBA Role
 
-Alternatively, you can grant the default administrator role to that account. For that, execute:  
-`GRANT DBA TO <account_name>; `
+As an alternative to granting individual privileges, you can assign the default administrator role
+to the account:
 
-## For Oracle Database Auditing
+`GRANT DBA TO <account_name>;`
 
-Before you start creating a monitoring plan to audit your Oracle Database, plan for the account that
-will be used for data collection – it should meet the requirements listed below. Then you will
-provide this account in the monitoring plan wizard.
+**CAUTION:** The DBA role grants broad administrative access to the database. Use this option only
+where your security policy permits it.
 
-1. The `CREATE SESSION` system privilege must be granted to the account used to connect to Oracle
-   Database for data collection.
-2. Depending on your Oracle Database version, the `SELECT` privilege on the certain objects must be
-   granted to that account:
+## Required Object Privileges
 
-| Version                  | Privileges Required                                                                                                               |
-|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| Oracle Database 12c, 18c, 19c | Grant SELECT privilege on the following objects:                                                                               |
-|                          | - aud$                                                                                                                            |
-|                          | - gv_$xml_audit_trail                                                                                                              |
-|                          | - dba_stmt_audit_opts                                                                                                              |
-|                          | - v_$parameter                                                                                                                     |
-|                          | - dba_obj_audit_opts                                                                                                               |
-|                          | - dba_audit_policies                                                                                                               |
-|                          | - dba_audit_mgmt_clean_events                                                                                                      |
-|                          | - gv_$instance                                                                                                                     |
-|                          | - fga_log$                                                                                                                         |
-|                          | - gv_$unified_audit_trail                                                                                                          |
-|                          | - all_unified_audit_actions                                                                                                        |
-|                          | - audit_unified_policies                                                                                                           |
-|                          | - audit_unified_enabled_policies                                                                                                   |
-|                          | - audsys.aud$unified (for Oracle Database 12c Release 2 and higher)                                                                |
-| Oracle Database 11g      | Starting with version 10.5, Netwrix Auditor provides limited support of Oracle Database 11g.                                       |
-|                          | Grant SELECT privilege on the following objects:                                                                                   |
-|                          | - aud$                                                                                                                            |
-|                          | - gv_$xml_audit_trail                                                                                                              |
-|                          | - dba_stmt_audit_opts                                                                                                              |
-|                          | - v_$parameter                                                                                                                     |
-|                          | - dba_obj_audit_opts                                                                                                               |
-|                          | - dba_audit_policies                                                                                                               |
-|                          | - dba_audit_mgmt_clean_events                                                                                                      |
-|                          | - gv_$instance                                                                                                                     |
-|                          | - fga_log$                                                                                                                         |
+Before creating a monitoring plan, ensure the data collecting account has the `CREATE SESSION`
+system privilege and `SELECT` privilege on the objects listed below, depending on your Oracle
+Database version.
+
+| Version | Required SELECT privileges |
+| --- | --- |
+| Oracle Database 12c, 18c, 19c, 21c, 23c | - `aud$` |
+| | - `gv_$xml_audit_trail` |
+| | - `dba_stmt_audit_opts` |
+| | - `v_$parameter` |
+| | - `dba_obj_audit_opts` |
+| | - `dba_audit_policies` |
+| | - `dba_audit_mgmt_clean_events` |
+| | - `gv_$instance` |
+| | - `fga_log$` |
+| | - `gv_$unified_audit_trail` |
+| | - `all_unified_audit_actions` |
+| | - `audit_unified_policies` |
+| | - `audit_unified_enabled_policies` |
+| | - `audsys.aud$unified` (Oracle Database 12c Release 2 (12.2.0.1) and later) |
