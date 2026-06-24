@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Rules
 
-Password Policy Enforcer (PPE) uses rules to accept or reject passwords. Each [policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md) has rules that you configure independently of the rules in other policies. To configure the rules for a policy:
+Password Policy Enforcer (PPE) uses rules to accept or reject passwords. Each [policy](../manage_policies.md) has rules that you configure independently of the rules in other policies. To configure the rules for a policy:
 
 1. Open the PPE configuration console.
 2. Click the name of a policy in the policy list. The **Rules** tab opens by default.
@@ -19,9 +19,9 @@ Click **Save** in the upper-right corner of the policy editor to apply your chan
 
 Several PPE rules have **Detect character substitution** and **Tolerance** settings. Understanding how these settings work helps you fine-tune your policies.
 
-## Detecting Character Substitution
+## Detecting character substitution
 
-Character substitution is a technique that some users apply to improve password quality. They replace some alphabetic characters with non-alphabetic characters that have a similar appearance. For example, "sold" becomes "$old". Many of these substitutions are well known and do little to improve password strength.
+Character substitution is a technique that some users apply to improve password quality. They replace some alphabetic characters with non-alphabetic characters that have a similar appearance. For example, sold becomes $old. Many of these substitutions are well known and do little to improve password strength.
 
 Some rules have a **Detect character substitution** checkbox. PPE tests passwords with and without character substitution when you select this checkbox. This stops users from circumventing the rule by substituting some characters. PPE detects these common substitutions:
 
