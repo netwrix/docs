@@ -1,6 +1,6 @@
 ---
-title: "Dictionary Rule"
-description: "Dictionary Rule"
+title: "Dictionary"
+description: "Dictionary"
 sidebar_position: 60
 ---
 
@@ -8,7 +8,7 @@ sidebar_position: 60
 
 The Dictionary rule rejects passwords that are vulnerable to guessing, hybrid, and precomputed
 attacks. These attacks can crack weak passwords in seconds, and they can be very effective if
-passwords are based on common words.
+users base their passwords on common words.
 
 ![Dicitonary Rule](/images/passwordpolicyenforcer/11.2/administration/dictionary.webp)
 
@@ -89,11 +89,11 @@ wildcard template formats:
 </table>
 
 
-Password Policy Enforcer performs partial matching even if Wildcard analysis is disabled. For example, the dictionary
+Password Policy Enforcer performs partial matching even if you disable Wildcard analysis. For example, the dictionary
 word "password" rejects the passwords "My**Password**$", "**Password**100", and
-"12**password**34" even if Wildcard analysis is disabled.
+"12**password**34" even if you disable Wildcard analysis.
 
-Wildcard analysis should only be used to limit matching to the characters at the start or end of a
+Use Wildcard analysis only to limit matching to the characters at the start or end of a
 password.
 
 Enabling Wildcard analysis slightly increases search times, so only enable this option if the
@@ -114,14 +114,14 @@ computers sharing a common Password Policy Enforcer configuration.
 :::
 
 
-Click the **Sort** button if the dictionary file is being used with Password Policy Enforcer for the
-first time, or if words have been added to the file since it was last sorted. The Password Policy
+Click the **Sort** button if you are using the dictionary file with Password Policy Enforcer for the
+first time, or if you have added words to the file since you last sorted it. The Password Policy
 Enforcer Configuration Console will sort and reformat the file so that Password Policy Enforcer can use
 it. Sorting also removes duplicate words, so the sorted file may be smaller than the original.
 
 Click the **Messages** tab to customize the Password Policy Client rule inserts. If both Dictionary
-rules have identical inserts, then only one of the inserts is shown in the corresponding Password
-Policy Client message if the password is rejected by both rules.
+rules have identical inserts, then the corresponding Password
+Policy Client message shows only one of the inserts if both rules reject the password.
 
 ## Creating a Custom Dictionary
 
@@ -137,7 +137,7 @@ The custom dictionary should meet the following requirements:
 
 :::note
 If you are using a custom dictionary, use a different filename. The default
-dictionary file (dict.txt) may be replaced during an upgrade.
+dictionary file (dict.txt). An upgrade may replace it.
 :::
 
 
@@ -149,7 +149,7 @@ dictionary file. Copy the dictionary file into the Sysvol share on one domain co
 Distributed File System will copy the file into the Sysvol share of all other domain controllers.
 Configure the Dictionary rule to read the file from \\127.0.0.1\sysvol\your.domain\filename.txt
 
-The path above only works if the computer has a Sysvol share. This won't be the case if you are
+This path only works if the computer has a Sysvol share. This won't be the case if you are
 using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
 local polices. If you are using Password Policy Enforcer for local policies and want all computers
 to receive dictionary file updates, then use the Sysvol share for file replication and a script or
