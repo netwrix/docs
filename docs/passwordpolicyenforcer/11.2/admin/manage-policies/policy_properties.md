@@ -33,8 +33,8 @@ PPE's default character sets are:
 
 | Character Set | Default characters                                                       |
 | ------------- | ------------------------------------------------------------------------ |
-| Alpha Lower   | Lowercase alphabetic (a-z)                                               |
-| Alpha Upper   | Uppercase alphabetic (A-Z)                                               |
+| Lower Alpha   | Lowercase alphabetic (a-z)                                               |
+| Upper Alpha   | Uppercase alphabetic (A-Z)                                               |
 | Alpha         | Uppercase and lowercase alphabetic (a-z and A-Z)                         |
 | Numeric       | Numerals (0-9)                                                           |
 | Special       | All characters not included above                                        |
