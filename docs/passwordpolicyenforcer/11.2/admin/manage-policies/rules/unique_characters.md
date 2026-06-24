@@ -1,6 +1,6 @@
 ---
-title: "Unique Characters Rule"
-description: "Unique Characters Rule"
+title: "Unique Characters"
+description: "Unique Characters"
 sidebar_position: 120
 ---
 

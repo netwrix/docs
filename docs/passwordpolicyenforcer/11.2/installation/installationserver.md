@@ -4,18 +4,18 @@ description: "Install the Password Policy Enforcer server components with the Se
 sidebar_position: 10
 ---
 
-# Install the Server Components
+# Install the server components
 
 The Password Policy Enforcer (PPE) server installer includes the following components:
-- **Password Policy Server (PPS)** — also known as the _PPE Service for DCs_. This component is typically installed on all the domain controllers in a domain. See [Domain and Local Policies](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md) for more information if your domain includes read-only domain controllers, or if you intend to enforce password policies for local user accounts.
+- **Password Policy Server (PPS)** — also known as the _PPE Service for DCs_. You typically install this component on all the domain controllers in a domain. See [Domain and Local Policies](domain_and_local_policies.md) if your domain includes read-only domain controllers, or if you intend to enforce password policies for local user accounts.
 - **Configuration Console** — Graphical and command-line tools to configure PPE. Install this component on any computer that you want to configure Password Policy Enforcer from. This could be a domain controller, a management server, or your computer.
-- **Mailer Service** — Sends email on behalf of PPE. It is typically installed on one server in the domain.
+- **Mailer Service** — Sends email on behalf of PPE. You typically install it on one server in the domain.
 
 :::note
-The [introduction](/docs/passwordpolicyenforcer/11.2/index.md) has more information about these components, including their system requirements.
+The [introduction](../index.md) has more information about these components, including their system requirements.
 :::
 
-## Manual Installation
+## Manual installation
 
 To manually install one or more server components:
 
@@ -41,9 +41,9 @@ To manually install one or more server components:
 
 6. Click **Finish** when installation is complete. If prompted to restart the computer, then restart before using the installed components.
 
-## Automated Deployment
+## Automated deployment
 
-If you have many domain controllers, use a software deployment tool or [Group Policy](/docs/passwordpolicyenforcer/11.2/installation/installationgpm.md) to automate the deployment. You can also run msiexec to install from the command line. For example, run this command with elevated permissions to silently install only the PPS component and immediately restart the computer:
+If you have many domain controllers, use a software deployment tool or [Group Policy](installationgpm.md) to automate the deployment. You can also run msiexec to install from the command line. For example, run this command with elevated permissions to silently install only the PPS component and immediately restart the computer:
 
  ```batch
 msiexec /i Netwrix_PPE_Server_11.2.0.148_x64.msi ADDLOCAL=FeatureServerPPE /q
