@@ -4,7 +4,7 @@ description: "How to disable the Windows password policy rules to avoid conflict
 sidebar_position: 20
 ---
 
-# Disable Windows Rules
+# Disable Windows rules
 
 Windows has its own password policy rules for password history, age, length, and complexity. If you enable both Password Policy Enforcer (PPE) rules and Windows rules, users must comply with both the PPE and Windows rules.
 

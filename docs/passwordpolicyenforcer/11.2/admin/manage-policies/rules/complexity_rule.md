@@ -4,7 +4,7 @@ description: "Configure the Characters (Complexity) rule to require passwords to
 sidebar_position: 30
 ---
 
-# Characters (Complexity) Rule
+# Characters (Complexity) rule
 
 The Complexity rule rejects passwords that don't contain characters from a variety of character sets. A complex password takes longer to brute-force crack than a simple password of the same length.
 

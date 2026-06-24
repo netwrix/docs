@@ -4,7 +4,7 @@ description: "Configure the Maximum Age rule, the Standard, Transitional, and Wa
 sidebar_position: 10
 ---
 
-# Age (Max) Rule
+# Age (Max) rule
 
 The Maximum Age rule forces users to change their passwords regularly. This decreases the likelihood of an attacker finding a password that is still in use. Only [domain policies](../../../installation/domain_and_local_policies.md) can enforce this rule.
 

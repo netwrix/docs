@@ -4,7 +4,7 @@ description: "Install the Password Policy Enforcer server components with the Se
 sidebar_position: 10
 ---
 
-# Install the Server Components
+# Install the server components
 
 The Password Policy Enforcer (PPE) server installer includes the following components:
 - **Password Policy Server (PPS)** — also known as the _PPE Service for DCs_. This component is typically installed on all the domain controllers in a domain. See [Domain and Local Policies](domain_and_local_policies.md) for more information if your domain includes read-only domain controllers, or if you intend to enforce password policies for local user accounts.
@@ -15,7 +15,7 @@ The Password Policy Enforcer (PPE) server installer includes the following compo
 The [introduction](../index.md) has more information about these components, including their system requirements.
 :::
 
-## Manual Installation
+## Manual installation
 
 To manually install one or more server components:
 
@@ -41,7 +41,7 @@ To manually install one or more server components:
 
 6. Click **Finish** when installation is complete. If prompted to restart the computer, then restart before using the installed components.
 
-## Automated Deployment
+## Automated deployment
 
 If you have many domain controllers, use a software deployment tool or [Group Policy](installationgpm.md) to automate the deployment. You can also run msiexec to install from the command line. For example, run this command with elevated permissions to silently install only the PPS component and immediately restart the computer:
 

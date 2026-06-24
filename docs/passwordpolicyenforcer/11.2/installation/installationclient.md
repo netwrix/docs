@@ -14,7 +14,7 @@ The Password Policy Client doesn't store or send passwords or password hashes ov
 PPE only enforces the [Similarity rule](../admin/manage-policies/rules/similarity_rule.md) if the user changes their password from the PPC, [PPE Web](../web-overview/web_overview.md), or Netwrix Password Reset.
 :::
 
-## Manual Installation
+## Manual installation
 
 To manually install the Password Policy Client:
 
@@ -41,7 +41,7 @@ To manually install the Password Policy Client:
 The Password Policy Client runs automatically during a password change. There is no associated desktop icon or start menu item.
 :::
 
-## Automated Deployment
+## Automated deployment
 
 Use a software deployment tool or [Group Policy](installationgpm.md) to automate deployment across many computers. You can also run msiexec to install from the command line. For example, run this command with elevated permissions to silently install the 64-bit Password Policy Client:
 

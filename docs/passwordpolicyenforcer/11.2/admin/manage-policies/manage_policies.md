@@ -4,7 +4,7 @@ description: "Add, configure, prioritize, and manage password policies in Netwri
 sidebar_position: 20
 ---
 
-# Manage Policies
+# Manage policies
 
 Password Policy Enforcer (PPE) can enforce up to 256 different password policies per domain. Password policies are collections of rules that users must comply with when choosing a new password. You can [assign policies](usersgroups.md) to users directly, or indirectly through Active Directory security groups and containers (Organizational Units).
 
@@ -16,7 +16,7 @@ PPE adds the policies you create to the policy list. Use the buttons above the p
 
 ![Dashboard with Policies](/images/passwordpolicyenforcer/11.2/administration/ppedashboardpolicies.webp)
 
-## Add a Policy
+## Add a policy
 
 1. Click **Add policy** to create a new password policy.
 2. Enter a unique name for the policy.
@@ -32,15 +32,15 @@ The policy editor opens. The policy editor has many settings. The following page
 - [Messages](messages.md)
 
 
-## Edit a Policy
+## Edit a policy
 
 Click the name of a policy in the policy list to make changes to the policy.
 
-## Test Policies
+## Test policies
 
 Click **Test Policy** to check if Password Policy Enforcer's current configuration accepts or rejects specific passwords. The [Test Policy](testpolicy.md) feature is a useful troubleshooting tool when PPE isn't accepting or rejecting passwords as you expect.
 
-## Set Policy Priorities
+## Set policy priorities
 
 Policy priorities help Password Policy Enforcer resolve [policy assignment conflicts](usersgroups.md#policy-assignment-conflicts). If more than one policy is assigned to a user, and PPE can't decide which policy to enforce using the other conflict resolution rules, then PPE always enforces the policy with the highest priority.
 
@@ -52,21 +52,21 @@ Select the policy you want to reprioritize, then click **Higher** or **Lower** t
 
 The [Assign Policies to Users](usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also click **Test Policy** to quickly see which policy PPE enforces for a particular user.
 
-## Export Configuration
+## Export configuration
 
 Click **Export** to create an HTML configuration report in `%ProgramFiles%\Netwrix\Password Policy Enforcer\Report\report.html`.
 
-## Policy Options Menu
+## Policy options menu
 
 Click the policy options menu to perform one of the following actions on the policy. The policy options menu appears as three vertical dots (**⋮**) to the right of each policy in the policy list.
 
 ![Policy Options Menu](/images/passwordpolicyenforcer/11.2/administration/policy_options_menu.webp)
 
-### Copy a Policy
+### Copy a policy
 
 Click **Make copy** in the policy options menu to create a new policy with the same default settings as the existing policy. Policy names must be unique, so PPE prompts you to enter a new name. The policy editor opens so that you can make changes to the new policy immediately.
 
-### Set the Default Policy
+### Set the default policy
 
 Password Policy Enforcer enforces the default policy for users who don't have an assigned password policy. Click **Make default** or **Remove default** in the policy options menu to toggle the default state of a policy. There can only be one default policy. 
 
@@ -79,10 +79,10 @@ Netwrix doesn't recommend using PPE without a default policy because it might le
 If Password Policy Enforcer has only one policy, and that policy is also the default policy, then PPE enforces the policy for all users. If you want to deploy a single policy gradually, don't make it the default until the deployment is complete.
 :::
 
-### Rename a Policy
+### Rename a policy
 
 Click **Rename** in the policy options menu to rename a policy.
 
-### Delete a Policy
+### Delete a policy
 
 Click **Delete** in the policy options menu to delete a policy. Password Policy Enforcer displays a second confirmation prompt if you try to delete the default policy. PPE doesn't assign a new default policy after you delete the default policy. You must set a new default policy manually.

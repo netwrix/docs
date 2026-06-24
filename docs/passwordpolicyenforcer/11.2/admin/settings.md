@@ -65,7 +65,7 @@ The PPE Mailer sends emails at 2:00 AM every day (local server time). Check the 
 The default Google OAuth2 timeout is 60 seconds. You can change this by setting `Configuration.GoogleOAuthTimeout` in `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPEConfiguration.json`.
 :::
 
-## Mail Service
+## Mail service
 
 Install the Password Policy Enforcer Mailer Service on one server in the domain. Use the settings in the **Mail Service** tab to allow PPE to locate the mailer service.
 

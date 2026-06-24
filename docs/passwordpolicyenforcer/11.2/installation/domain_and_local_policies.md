@@ -4,7 +4,7 @@ description: "Use Password Policy Enforcer to enforce domain and local password 
 sidebar_position: 50
 ---
 
-# Domain and Local Policies
+# Domain and local policies
 
 Netwrix Password Policy Enforcer (PPE) enforces password policies for both domain and local user accounts.
 
@@ -14,13 +14,13 @@ Local user accounts exist in the SAM database of workstations and servers. The w
 
 A typical Windows network has both domain and local user accounts, but you might not want to enforce PPE policies for both account types. If your users normally log on with a domain account, you'll most likely only enforce password policies for domain accounts.
 
-## Installation Differences
+## Installation differences
 
 Install Password Policy Enforcer on all the domain controllers in the domain to enforce password policies for domain user accounts. You don't need to install it on read-only domain controllers unless you're using the [Maximum Age rule](../admin/manage-policies/rules/maximum_age_rule.md), [Password Policy Client](../admin/password-policy-client/password_policy_client.md), [PPE Web](../web-overview/web_overview.md), or Netwrix Password Reset.
 
 To enforce password policies for local user accounts, install Password Policy Enforcer on the computers that contain the user accounts you want to enforce password policies for. These computers can be workstations or servers, and they can be standalone or domain members. You don't normally need to install PPE on the workstations and servers in a domain because most users log on with a domain account. If this is the case, you'll most likely only need to install PPE on the domain controllers.
 
-## Operational Differences
+## Operational differences
 
 Most of Password Policy Enforcer's rules and features work with both domain and local policies, but there are some differences. These differences are due to password filter technical limitations, and also because some information isn't in the SAM. You can't use the following rules and features with local password policies:
 

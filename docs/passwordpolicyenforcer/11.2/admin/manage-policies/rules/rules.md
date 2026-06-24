@@ -19,7 +19,7 @@ Click **Save** in the upper-right corner of the policy editor to apply your chan
 
 Several PPE rules have **Detect character substitution** and **Tolerance** settings. Understanding how these settings work helps you fine-tune your policies.
 
-## Detecting Character Substitution
+## Detecting character substitution
 
 Character substitution is a technique that some users apply to improve password quality. They replace some alphabetic characters with non-alphabetic characters that have a similar appearance. For example, sold becomes $old. Many of these substitutions are well known and do little to improve password strength.
 

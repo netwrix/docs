@@ -4,7 +4,7 @@ description: "Configure the Minimum Age rule to stop users from cycling through 
 sidebar_position: 20
 ---
 
-# Age (Min) Rule
+# Age (Min) rule
 
 The Minimum Age rule stops users from quickly cycling through a series of passwords to evade the [History](history_rule.md) and [Similarity](similarity_rule.md) rules. Only [domain policies](../../../installation/domain_and_local_policies.md) can enforce this rule.
 

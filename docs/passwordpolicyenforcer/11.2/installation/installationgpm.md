@@ -8,7 +8,7 @@ sidebar_position: 40
 
 You can use Group Policy to deploy the [Password Policy Enforcer server components](installationserver.md) or the [Password Policy Client (PPC)](installationclient.md). Microsoft Endpoint Configuration Manager (MECM) and other software deployment tools can also be used.
 
-## Create a Distribution Point
+## Create a distribution point
 
 A distribution point can be a UNC path to a server share, or a Distributed File System (DFS) path. To create a distribution point:
 
@@ -48,7 +48,7 @@ A distribution point can be a UNC path to a server share, or a Distributed File 
 7. Click **OK**.
 8. Close the Group Policy Management Editor.
 
-## Complete the Installation
+## Complete the installation
 
 Allow time for the GPO to replicate to all domain controllers before proceeding, then restart each target computer to complete the installation. Windows installs the component during startup, then restarts the computer a second time if necessary.
 

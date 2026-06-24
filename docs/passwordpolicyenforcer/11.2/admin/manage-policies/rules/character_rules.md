@@ -4,7 +4,7 @@ description: "Use the granular character rules to control which character types 
 sidebar_position: 40
 ---
 
-# Character (Granular) Rules
+# Character (Granular) rules
 
 Selecting the **Characters (Granular)** item in the rules pane displays the settings for nine related rules. Unlike the [Complexity rule](complexity_rule.md), these rules offer granular control over which characters are required or rejected, and can even require certain character types at specific character positions. Use these rules to increase password strength or to ensure password compatibility with other systems.
 
@@ -14,7 +14,7 @@ Selecting the **Characters (Granular)** item in the rules pane displays the sett
 You must select the **Characters (Granular)** checkbox at the top of the page before you can enable any of the other rules on the page.
 :::
 
-## Character Set Rules
+## Character set rules
 The first seven rules work identically; they differ only in their default character set. A character set is the collection of characters that each rule searches for when checking a password. The first seven rules are named after their default character set: Alpha, Upper Alpha, Lower Alpha, Numeric, Special, High, and Custom.
 
 A description of the default character set appears beside each rule's name. For example, the Alpha set's description is **(a-z and A-Z)**. This description is for the Password Policy Enforcer (PPE) default character set. The default characters will be different if you configure the policy to use the Windows character set. The [Policy Properties](../policy_properties.md) page has more information about character sets.
@@ -57,7 +57,7 @@ Other rules use custom character set names and character sets even if you disabl
 
 The character set rules are flexible, but reserve them for cases where the [Complexity](complexity_rule.md) and First and Last Character rules can't enforce your desired policy. These other rules are easier to configure and easier for users to understand.
 
-## First and Last Character Rules
+## First and Last Character rules
 The First and Last Character rules reject passwords that don't begin or end with an allowed character.
 
 Select the **Characters (Granular)** checkbox at the top of the page, then select **Characters (First)** or **Characters (Last)** to enable that rule.
