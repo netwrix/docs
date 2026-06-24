@@ -1,12 +1,12 @@
 ---
-title: "VMWare"
-description: "VMWare"
+title: "VMware"
+description: "VMware"
 sidebar_position: 50
 ---
 
-# VMWare
+# VMware
 
-vSphere is VMWare's virtualization platform. Change Tracker includes CIS certified compliance
+vSphere is VMware's virtualization platform. Change Tracker includes CIS certified compliance
 tracking templates to ensure secure configuration of vSphere clusters and their ESXi nodes.
 
 ## vSphere/ESXi
@@ -19,7 +19,7 @@ proxied devices.
 
 - .NET 6
 - PowerShell 7
-- PowerShell Module VMWare.PowerCLI
+- PowerShell Module VMware.PowerCLI
 - Gen 7 Agent
 
 ## Installation
