@@ -31,7 +31,7 @@ section.
 
 **Step 3 –** Click **Update**.
 
-The Splunk credentials are updated.
+Change Tracker updates the Splunk credentials.
 
 ## Policy Templates
 
