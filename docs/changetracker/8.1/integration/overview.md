@@ -12,4 +12,4 @@ Netwrix Change Tracker supports the following integrations:
 - [API](/docs/changetracker/8.1/api/overview.md)
 - [IT Service Management](/docs/changetracker/8.1/integration/itsm/overview.md)
 - [Splunk](/docs/changetracker/8.1/integration/splunk.md)
-- [VMWare](/docs/changetracker/8.1/integration/vmware.md)
+- [VMware](/docs/changetracker/8.1/integration/vmware.md)
