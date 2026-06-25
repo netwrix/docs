@@ -1,0 +1,96 @@
+name: Validate Branch History
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!main'
+      - '!dev'
+  pull_request:
+    branches:
+      - main
+      - dev
+    types: [opened, synchronize, reopened]
+
+env:
+  SECURITY_CONTACT: 'netwrix/docs-admins'
+
+jobs:
+  validate-history:
+    name: Validate Clean History
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check branch ancestry
+        id: check_ancestry
+        run: |
+          # Valid root commits
+          VALID_ROOTS=(
+            "97e73c5cc4a29296024f23499ef5e60bc7db755b"
+          )
+
+          echo "🔍 Validating branch ancestry..."
+
+          # Get ALL root commits (handles merged branches with multiple roots)
+          BRANCH_ROOTS=$(git rev-list --max-parents=0 HEAD)
+
+          echo "Found root commit(s):"
+          echo "$BRANCH_ROOTS"
+
+          # Check each root commit
+          INVALID_ROOTS=()
+          while IFS= read -r branch_root; do
+            # Skip empty lines
+            [[ -z "$branch_root" ]] && continue
+
+            VALID=false
+            for valid_root in "${VALID_ROOTS[@]}"; do
+              if [ "$branch_root" = "$valid_root" ]; then
+                VALID=true
+                break
+              fi
+            done
+
+            if [ "$VALID" = false ]; then
+              INVALID_ROOTS+=("$branch_root")
+            fi
+          done <<< "$BRANCH_ROOTS"
+
+          # If any invalid roots found, fail
+          if [ ${#INVALID_ROOTS[@]} -gt 0 ]; then
+            echo "❌ ERROR: This branch contains invalid root commits"
+            echo ""
+            echo "Expected all root commits to be one of:"
+            for root in "${VALID_ROOTS[@]}"; do
+              echo "  - $root"
+            done
+            echo ""
+            echo "Found invalid root commit(s):"
+            for invalid in "${INVALID_ROOTS[@]}"; do
+              echo "  - $invalid"
+            done
+            echo ""
+            echo "This repository was re-initialized to remove sensitive data from git history."
+            echo "Branches must be created from the current dev/main branches."
+            echo ""
+            echo "To fix this:"
+            echo "1. Save your changes as a patch: git diff origin/dev > my-changes.patch"
+            echo "2. Create a fresh branch from current dev: git checkout -b my-branch origin/dev"
+            echo "3. Apply your patch: git apply my-changes.patch"
+            echo "4. Commit and push the clean branch"
+            echo "5. Delete the invalid branch (replace BRANCH_NAME with your branch name):"
+            echo "   git push origin --delete BRANCH_NAME"
+            echo ""
+            echo "Contact @${{ env.SECURITY_CONTACT }} if you need assistance."
+            exit 1
+          fi
+
+          echo "✅ Branch ancestry validation passed"
