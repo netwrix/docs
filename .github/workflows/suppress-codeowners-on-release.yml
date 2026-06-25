@@ -1,0 +1,48 @@
+name: Suppress CODEOWNERS on release branches
+
+# Release branches are cut from `dev` and inherit its full CODEOWNERS map.
+# GitHub resolves code owners from a pull request's BASE branch, so any large
+# or cross-wired PR targeting a release branch auto-requests every doc team.
+# Emptying CODEOWNERS once, at branch creation, scopes code-owner auto-requests
+# to PRs targeting `dev` (where the full ownership map lives).
+on:
+  create:
+
+permissions:
+  contents: write
+
+jobs:
+  empty-codeowners:
+    # The `create` event can't be ref-filtered in `on:`, so gate the job here.
+    if: github.event.ref_type == 'branch' && startsWith(github.event.ref, 'release/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.ref }}
+
+      - name: Empty the CODEOWNERS file
+        run: |
+          mkdir -p .github
+          printf '%s\n' \
+            '# Intentionally empty on release branches.' \
+            '# GitHub resolves code owners from the PR base branch, so an empty' \
+            '# file here suppresses doc-team auto-tagging for PRs targeting this' \
+            '# release branch. The full ownership map lives on dev.' \
+            > .github/CODEOWNERS
+
+      - name: Commit and push if changed
+        env:
+          # Pass the ref through the environment rather than interpolating it
+          # into the shell (GitHub script-injection hardening).
+          TARGET_REF: ${{ github.event.ref }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git diff --quiet -- .github/CODEOWNERS; then
+            echo 'CODEOWNERS already empty; nothing to do.'
+          else
+            git add .github/CODEOWNERS
+            git commit -m 'chore: empty CODEOWNERS on release branch (suppress doc-team auto-tagging)'
+            git push origin "HEAD:$TARGET_REF"
+          fi
