@@ -8,14 +8,14 @@ sidebar_position: 30
 
 **To add a Computer data source and connectors to your organization:**
 
-**Step 1 –** Click **Configuration** in the top bar. The Managed organizations page is displayed,
-that lists the managed organizations defined in 1Secure.
+**Step 1 –** Click **Configuration** in the top bar. The Managed organizations page appears,
+listing the managed organizations defined in 1Secure.
 
 **Step 2 –** Click an organization to define a data source and connectors for it. The properties
-page for the organization is displayed with the Sources tab selected by default.
+page for the organization appears with the Sources tab selected by default.
 
 **Step 3 –** On the Sources tab, click **Add** to add a source. The Select Data Source (Step 1 of 3)
-pane is displayed.
+pane appears.
 
 ![Select Data Source %28Step 1 of 3%29 pane](/images/1secure/admin/organizations/sourcesandconnectors/addsources_exchange.webp)
 
@@ -33,10 +33,10 @@ the dropdown menu or click the **Add** icon.
   starting at Step 6.
 - When you select an existing site from the dropdown menu, one of the following happens:
 
-    - If the agent has not been configured for the site, the system proceeds with the agent
+    - If you have not configured the agent for the site, the system proceeds with the agent
       configuration when you click _Next_. See the [Install Agent](/docs/1secure/install/installagent.md)
       topic for details on configuring the agent, starting at Step 6.
-    - If the agent has already been configured for the site, the system proceeds with the
+    - If you have already configured the agent for the site, the system proceeds with the
       Computer source and connector settings when you click _Next_.
 
 **Step 6 –** Click **Next**.
@@ -51,8 +51,8 @@ the dropdown menu or click the **Add** icon.
     - Endpoint – Specify the IP address, fully qualified domain name (FQDN), or NetBIOS name of the
       computer to crawl. If you specify a FQDN, 1Secure crawls all computers within that domain.
     - Source Name – Specify a name for the data source
-    - Computer source group – Displays the computer source groups that have already been added,
-      while also providing the option to add a new source group. Grouping sources, such as
+    - Computer source group – Displays the computer source groups you have already added and
+      provides the option to add a new source group. Grouping sources, such as
       computers, allows them to share a common configuration and makes it easier to manage related
       sources together. Select an existing source group or add a new one. To add a new source group,
       select **Add new computer source group** from the dropdown menu or click the **Add** icon,
@@ -62,7 +62,7 @@ the dropdown menu or click the **Add** icon.
   then specify:
 
     - Domain Name – Specify the FQDN of the domain the container exists in.
-    - Container Name – Specify the name of the container to crawl its computers.
+    - Container Name – Specify the name of the container to crawl its computers. Use the format: `OU` or `OU/Sub OU`.
     - Detection Interval – Specify the time interval (in hours and minutes) after which the
       source group will automatically detect the computers for auditing.
     - Source Group – Specify a name for the group to which the data source will belong. Grouping
@@ -70,8 +70,8 @@ the dropdown menu or click the **Add** icon.
       manage related sources together.
 
 - Crawl Source – Toggle this option to ON to enable data collection for the source
-- Credentials – Displays the crdentials that have already been added, while also providing the
-  option to add new credentials. Netwrix 1Secure uses these credentials to connect to the data
+- Credentials – Displays the crdentials you have already added and provides the option to add
+  new credentials. Netwrix 1Secure uses these credentials to connect to the data
   source. You can select existing credentials or add new ones. To add new credentials, select **Add
   new Credentials** from the dropdown menu or click the **Add** icon, then specify the following:
 
@@ -97,9 +97,9 @@ the following:
   additional information.
 
     :::warning
-    If Netwrix Auditor and Netwrix 1Secure audit the same domain, ensure that the
-    network traffic compression service is enabled for only one of the products or neither product
-    for any of the audited services. It can't be enabled for both products.
+    If Netwrix Auditor and Netwrix 1Secure audit the same domain, enable the
+    network traffic compression service for only one of the products or neither product
+    for any of the audited services. You can't enable it for both products.
     :::
 
 
@@ -112,7 +112,7 @@ the following:
   computer.
 
     :::note
-    Administrative hidden shares such as admin$ aren't monitored.
+    1Secure doesn't monitor administrative hidden shares such as admin$.
     :::
 
 
@@ -123,4 +123,4 @@ the following:
 
 **Step 10 –** Click **Finish**.
 
-The Computer data source and connector have been configured.
+You have configured the Computer data source and connector.
