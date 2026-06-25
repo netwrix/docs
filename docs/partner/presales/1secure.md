@@ -1,9 +1,9 @@
 ---
-title: Netwrix 1Secure Presales Engineer
+title: Netwrix 1Secure Pro Presales Engineer
 sidebar_position: 1230
 tags: [certification, partners, presales, 1secure]
 keywords: [training, course, certification, partners, presales, 1secure]
-description: "Become a certified Presales Engineer for Netwrix 1Secure"
+description: "Become a certified Presales Engineer for Netwrix 1Secure Pro"
 ---
 
 import { N1SValue, N1SConcepts, N1SIntroGS, N1SIntroMO, N1SIntroConf, N1SIntroData, N1SIntroReport, N1SIntroAlertRisk, N1SDemo, N1SAdditional } from '@site/src/training/1secure';
