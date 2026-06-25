@@ -10,7 +10,7 @@ Netwrix Password Policy Enforcer (PPE) helps you secure your network by ensuring
 A typical Windows network has both domain and local user accounts. Password Policy Enforcer can enforce password policies for both account types, but you will most likely use it for domain accounts in Active Directory.
 
 
-## System Requirements
+## System requirements
 - Windows Server 2016, 2019, 2022, and 2025
 - Windows 10 and 11
 - 50 megabytes free disk space
@@ -21,7 +21,7 @@ The disk space requirement doesn't include the compromised database. If you want
 :::
 
 
-## System Components
+## System components
 
 ### Password Policy Server (PPS)
 The Password Policy Server is the component that enforces the password policy. Install it on all the domain controllers to enforce a password policy for Active Directory user accounts. You can also install the PPS on individual servers and workstations to enforce a password policy for local user accounts on those computers.

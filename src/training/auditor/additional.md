@@ -4,7 +4,7 @@ import { NA, NPS } from '@site/src/training/products';
 
 The following courses are available for self-enrollment through the Learning Library:
 
-* What's New in <NA /> v10.8
+* What's New in <NA /> v10.9
 * NEW MCP Server for <NA />
 * New <NA /> for Microsoft Copilot Add-on
 * <NA /> Add-on for Azure Files

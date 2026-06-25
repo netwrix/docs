@@ -10,7 +10,7 @@ import { N1SValue, N1SConcepts, N1SIntroGS, N1SIntroReport, N1SIntroAlertRisk } 
 import { N1S } from '@site/src/training/products';
 
 
-Estimated length: 1 hour 35 minutes
+Estimated length: 1 hour 40 minutes
 
 This learning path introduces you to <N1S />. It contains the following courses:
 

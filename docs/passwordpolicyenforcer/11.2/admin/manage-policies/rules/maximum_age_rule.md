@@ -1,12 +1,12 @@
 ---
-title: "Age (Max) Rule"
+title: "Age (Max)"
 description: "Configure the Maximum Age rule, the Standard, Transitional, and Warning expiration modes, and email reminders."
 sidebar_position: 10
 ---
 
-# Age (Max) Rule
+# Age (Max) rule
 
-The Maximum Age rule forces users to change their passwords regularly. This decreases the likelihood of an attacker finding a password that is still in use. Only [domain policies](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md) can enforce this rule.
+The Maximum Age rule forces users to change their passwords regularly. This decreases the likelihood of an attacker finding a password that is still in use. Only [domain policies](../../../installation/domain_and_local_policies.md) can enforce this rule.
 
 ![Maximum Age rule](/images/passwordpolicyenforcer/11.2/administration/agemax.webp)
 
@@ -32,7 +32,7 @@ Use the Warning and Transitional modes to gradually introduce a new password pol
 It takes approximately 50 days for PPE to force all users with expired passwords to change them in the 2% Transitional mode (2% every day). The 5% Transitional mode reduces this to 20 days, and the 10% Transitional mode further reduces it to 10 days. PPE selects users randomly, so these are estimates only. You must eventually switch to the Standard mode to ensure that all old passwords expire. Don't leave PPE in the Transitional or Warning modes permanently as this won't give you predictable, forced password expirations.
 :::
 
-Password Policy Enforcer always prompts users with expired passwords to change them, even in the Transitional and Warning modes. Users can ignore the prompt to change their password unless PPE forces them to change it. Windows clients display the prompt even if the [Password Policy Client](/docs/passwordpolicyenforcer/11.2/admin/password-policy-client/password_policy_client.md) isn't installed. Windows displays the prompt five days before passwords expire by default. You can change this value with Group Policy: [Interactive logon: Prompt user to change password before expiration](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/interactive-logon-prompt-user-to-change-password-before-expiration).
+Password Policy Enforcer always prompts users with expired passwords to change them, even in the Transitional and Warning modes. Users can ignore the prompt to change their password unless PPE forces them to change it. Windows clients display the prompt even if the [Password Policy Client](../../password-policy-client/password_policy_client.md) isn't installed. Windows displays the prompt five days before passwords expire by default. You can change this value with Group Policy: [Interactive logon: Prompt user to change password before expiration](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/interactive-logon-prompt-user-to-change-password-before-expiration).
 
 PPE expires passwords at 1:00 AM every day on the domain controller holding the PDC emulator operations master role. It sets "User must change password at next logon" for users whose password expired, or is due to expire on that day. PPE doesn't expire passwords if the Maximum Age rule is in Warning mode, or for users with "Password never expires" set in Active Directory. Some passwords won't expire immediately when the Maximum Age rule is in a Transitional mode.
 
@@ -45,7 +45,7 @@ Click **Set up email** to edit the email template for the email reminders.
 The correct format for the **From** text box is `"Display Name" <mailbox@domain.com>`. You can edit the email body with a visual editor or raw HTML editor by clicking **Visual** or **HTML**.
 
 :::tip
-If the email body is too long to fit in the text box, then enter a file path with the "file:" prefix in the body text box: `file:C:\path\filename.ext`. The file path can include environment variables like %ProgramFiles%. Don't use quotes for long filenames and don't include any other text. The [Mailer Service](/docs/passwordpolicyenforcer/11.2/installation/installationserver.md) reads the email body from the specified file.
+If the email body is too long to fit in the text box, then enter a file path with the "file:" prefix in the body text box: `file:C:\path\filename.ext`. The file path can include environment variables like %ProgramFiles%. Don't use quotes for long filenames and don't include any other text. The [Mailer Service](../../../installation/installationserver.md) reads the email body from the specified file.
 
 If users aren't receiving their email reminders, then ensure the **From** address is a valid sending address for your mail server.
 :::
@@ -66,6 +66,6 @@ The email's subject and body can contain various macros. Click **&lt;#&gt;** whe
 | [EXPIRY_MONTH_NAME] | Expiry month (January, February, ...) |
 | [EXPIRY_YEAR]       | Expiry year (2026, 2027, ...)         |
 
-Click **Set up SMTP** to configure your [mail delivery settings](/docs/passwordpolicyenforcer/11.2/admin/settings.md#notifications).
+Click **Set up SMTP** to configure your [mail delivery settings](../../settings.md#notifications).
 
 Click **Log event for every expired password** if you want PPE to log an event to the Windows Application Event Log whenever it expires a password.

@@ -123,7 +123,7 @@ If you want to review the Event Log Collection Status email, the Event Log Colle
 shows whether data collection for your monitoring plan completed successfully or with warnings and
 errors.
 
-![changesummary_eventlog](/images/auditor/10.7/tools/changesummary_eventlog.webp)
+![changesummary_eventlog](/images/auditor/10.8/tools/changesummary_eventlog.webp)
 
 ## Configure Audit Archiving Filters for Event Log
 

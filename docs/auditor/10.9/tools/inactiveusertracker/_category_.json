@@ -1,0 +1,10 @@
+{
+  "label": "Inactive User Tracker",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "inactiveusertracker"
+  }
+}
