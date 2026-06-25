@@ -58,7 +58,7 @@ You can also define omit lists using plain text files:
 
 ## Configuring Azure diagnostic settings (optional)
 
-The **Times Accessed** column in the **Excessive Access Permissions in Azure Files** report requires Azure diagnostic settings. Without diagnostic settings, "Times Accessed" defaults to 0 for all objects. [Configuring Diagnostic Settings](docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
+The **Times Accessed** column in the **Excessive Access Permissions in Azure Files** report requires Azure diagnostic settings. Without diagnostic settings, "Times Accessed" defaults to 0 for all objects. [Configuring Diagnostic Settings](/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
 
 > **Note:** The current version supports only **blob storage** as the destination, not Event Hub or Log Analytics Workspace.
 
@@ -91,4 +91,4 @@ Historical snapshots allow generating reports for past dates. A Global administr
 
 - [Azure Files State-in-Time Reports Overview](/docs/auditor/10_9/admin/reports/types/stateintime/azurefiles)
 - [Azure Files Configuration Overview](/docs/auditor/10_9/configuration/azurefiles/overview)
-- [Configuring Diagnostic Settings](docs/auditor/10_9/configuration/azurefiles/overview#diagnostic-settings)
+- [Configuring Diagnostic Settings](/docs/auditor/10_9/configuration/azurefiles/overview#diagnostic-settings)
