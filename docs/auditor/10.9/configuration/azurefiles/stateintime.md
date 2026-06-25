@@ -2,6 +2,13 @@
 
 This topic describes how to enable State-in-Time data collection for an Azure Files monitoring plan in Netwrix Auditor, configure the monitoring scope using omit lists, and set up optional Azure diagnostic settings for activity-based reports.
 
+> **Note:** When Azure file shares use on-premises Active Directory (AD DS) authentication, the following limitations apply to State-in-Time permission reports:
+>
+> - **Group expansion is unavailable for on-premises AD groups that are not synced to Microsoft Entra ID.** If access to a file or folder is granted through such a group, the report does not list individual group members.
+> - **SID resolution is unavailable for on-premises AD groups and accounts that are not synced to Microsoft Entra ID.** These objects appear as unresolved SIDs instead of display names in permission reports.
+>
+> These limitations do not affect environments that use Microsoft Entra ID-only identities or fully synced hybrid identities.
+
 ## Prerequisites
 
 - An Azure Files monitoring plan must already exist in Netwrix Auditor [Azure Files Configuration Overview](/docs/auditor/10_8/configuration/azurefiles/overview)
@@ -58,7 +65,7 @@ You can also define omit lists using plain text files:
 
 ## Configuring Azure diagnostic settings (optional)
 
-The **Times Accessed** column in the **Excessive Access Permissions in Azure Files** report requires Azure diagnostic settings. Without diagnostic settings, "Times Accessed" defaults to 0 for all objects. [Configuring Diagnostic Settings](docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
+The **Times Accessed** column in the **Excessive Access Permissions in Azure Files** report requires Azure diagnostic settings. Without diagnostic settings, "Times Accessed" defaults to 0 for all objects. [Configuring Diagnostic Settings](/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
 
 > **Note:** The current version supports only **blob storage** as the destination, not Event Hub or Log Analytics Workspace.
 
@@ -91,4 +98,4 @@ Historical snapshots allow generating reports for past dates. A Global administr
 
 - [Azure Files State-in-Time Reports Overview](/docs/auditor/10_9/admin/reports/types/stateintime/azurefiles)
 - [Azure Files Configuration Overview](/docs/auditor/10_9/configuration/azurefiles/overview)
-- [Configuring Diagnostic Settings](docs/auditor/10_9/configuration/azurefiles/overview#diagnostic-settings)
+- [Configuring Diagnostic Settings](/docs/auditor/10_9/configuration/azurefiles/overview#diagnostic-settings)
