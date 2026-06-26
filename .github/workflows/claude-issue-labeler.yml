@@ -26,7 +26,7 @@ jobs:
 
       - name: Step 1 — Security vulnerability screening
         id: security-screen
-        uses: anthropics/claude-code-action@56fa348258fbcb1aeb8d3954d5799b5991098481 # v1
+        uses: anthropics/claude-code-action@51705da45eecce209d4700538bf8377d5b5fc695 # v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -57,7 +57,7 @@ jobs:
       - name: Step 2 — Code of conduct check
         if: steps.check-state.outputs.issue_state == 'OPEN'
         id: conduct-check
-        uses: anthropics/claude-code-action@56fa348258fbcb1aeb8d3954d5799b5991098481 # v1
+        uses: anthropics/claude-code-action@51705da45eecce209d4700538bf8377d5b5fc695 # v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -81,7 +81,7 @@ jobs:
         # Only run label assignment for issue events (not comments) and only if issue is still open
         if: steps.check-state.outputs.issue_state == 'OPEN' && github.event_name == 'issues'
         id: assign-label
-        uses: anthropics/claude-code-action@56fa348258fbcb1aeb8d3954d5799b5991098481 # v1
+        uses: anthropics/claude-code-action@51705da45eecce209d4700538bf8377d5b5fc695 # v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -197,7 +197,7 @@ jobs:
       - name: Run content-fix skill
         id: content-fix
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
-        uses: anthropics/claude-code-action@56fa348258fbcb1aeb8d3954d5799b5991098481 # v1
+        uses: anthropics/claude-code-action@51705da45eecce209d4700538bf8377d5b5fc695 # v1
         env:
           REPO: ${{ github.repository }}
         with:
@@ -327,7 +327,7 @@ jobs:
       - name: Run content-fix skill
         id: content-fix-followup
         if: steps.check-issue.outputs.issue_state == 'OPEN' && steps.check-issue.outputs.has_content_fix == 'true'
-        uses: anthropics/claude-code-action@56fa348258fbcb1aeb8d3954d5799b5991098481 # v1
+        uses: anthropics/claude-code-action@51705da45eecce209d4700538bf8377d5b5fc695 # v1
         env:
           REPO: ${{ github.repository }}
           COMMENT_BODY: ${{ github.event.comment.body }}
