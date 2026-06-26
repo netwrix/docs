@@ -37,12 +37,6 @@ https://releases.netwrix.com/products/privilegesecure-discovery/<major.minor>/pr
 https://releases.netwrix.com/products/privilegesecure-discovery/26.06/privilegesecure-discovery-quickstart-tools-26.06.0.zip
 ```
 
-**Example for 26.03.1:**
-
-```
-https://releases.netwrix.com/products/privilegesecure-discovery/26.03/privilegesecure-discovery-quickstart-tools-26.03.1.zip
-```
-
 Extract the contents of the zip file. The archive contains the script files, `requirements.txt`,
 and a usage guide.
 
