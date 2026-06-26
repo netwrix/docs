@@ -202,7 +202,7 @@ The **Computer Data** sheet contains columns reporting the system's OAM policy:
 To change policy options, set **Set OAM Enabled** to `TRUE` or `FALSE` as appropriate.
 
 If you leave **OAM Strategy** blank, it defaults to the current value or to `OS-BEST-PRACTICE` if
-no previous policy was set. If you leave **OAM Name Template** blank, it defaults to the current
+no previous policy exists. If you leave **OAM Name Template** blank, it defaults to the current
 value or to `S1_ALT_ADMIN`.
 
 ### Default Settings by Strategy
