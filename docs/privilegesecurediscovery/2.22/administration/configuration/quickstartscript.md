@@ -24,8 +24,24 @@ see [QuickStart Advanced Fields](./advancedfields.md).
 
 ## Step 1 — Download the QuickStart Script
 
-Download the QuickStart script zip archive:
-[QS Script zip](https://github.com/user-attachments/files/26806261/s1_tools.1.zip)
+Download the QuickStart tools archive from the Netwrix releases server. Replace `<version>` and
+`<major.minor>` with the target release:
+
+```
+https://releases.netwrix.com/products/privilegesecure-discovery/<major.minor>/privilegesecure-discovery-quickstart-tools-<version>.zip
+```
+
+**Example for 26.06.0:**
+
+```
+https://releases.netwrix.com/products/privilegesecure-discovery/26.06/privilegesecure-discovery-quickstart-tools-26.06.0.zip
+```
+
+**Example for 26.03.1:**
+
+```
+https://releases.netwrix.com/products/privilegesecure-discovery/26.03/privilegesecure-discovery-quickstart-tools-26.03.1.zip
+```
 
 Extract the contents of the zip file. The archive contains the script files, `requirements.txt`,
 and a usage guide.
