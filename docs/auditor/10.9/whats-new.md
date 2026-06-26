@@ -6,9 +6,13 @@ sidebar_position: 2
 
 # What's New in Netwrix Auditor v10.9
 
-## State-in-Time for Azure Files
+## New Features
 
-Netwrix Auditor delivers a full suite of State-in-Time permission reports for Azure file shares mounted via SMB, using the same layout as on-premises file server reports. See [State-in-Time Reports for Azure Files](/docs/auditor/10.9/admin/reports/types/stateintime/azurefiles.md) for additional information.
+### State-in-Time for Azure Files
+
+Netwrix Auditor delivers a full suite of State-in-Time permission reports for Azure file shares mounted via Server Message Block (SMB), using the same layout as on-premises file server reports. See [State-in-Time Reports for Azure Files](/docs/auditor/10.9/admin/reports/types/stateintime/azurefiles.md) for additional information.
+
+The available reports include:
 
 - Account Permissions
 - Folder and File Permission Details
@@ -18,7 +22,7 @@ Netwrix Auditor delivers a full suite of State-in-Time permission reports for Az
 - Largest Files
 - Stale Data by Folder
 
-## Risk Assessment for Azure Files
+### Risk Assessment for Azure Files
 
 Netwrix Auditor extends Risk Assessment coverage to Azure Files alongside on-premises file shares. See [Risk Assessment Overview](/docs/auditor/10.9/admin/riskassessment/overview.md) for additional information.
 
@@ -29,7 +33,7 @@ Risk calculations cover:
 - Direct permissions
 - File and folder names containing sensitive data
 
-## Hybrid Inactive User Risk: Active Directory and Entra ID Combined
+### Hybrid Inactive User Risk: Active Directory and Entra ID Combined
 
 The Inactive Users risk calculation now correlates logon activity from both on-premises Active Directory and Microsoft Entra ID simultaneously. This eliminates false positives where cloud-only authentication was not recognized as user activity. See [Hybrid Accounts](/docs/auditor/10.9/admin/riskassessment/hybrid-accounts.md) for additional information.
 
