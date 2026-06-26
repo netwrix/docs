@@ -71,17 +71,3 @@ Inactive Users Tracker supports group Managed Service Accounts (gMSA) as the dat
 
 - **No manual rotation**: Eliminates manual password rotation
 - **Least privilege**: Aligns with least-privilege security practices
-
-## Bug Fixes
-
-- Fixed incorrect hostname resolution in User Activity Video Recording caused by extra entries in the local hosts file — the Workstation field in Activity Records now shows the actual computer name instead of vmware-plugin.
-- Fixed missing Workstation field data in Activity Records collected from Isilon data sources — Netwrix Auditor for File Servers now correctly populates it from Isilon audit logs.
-- Fixed a configuration validation bug where Netwrix Auditor for File Servers (Isilon) ignored the configured access zone name, triggering false "unconfigured audit settings" errors on non-default zones.
-- Fixed SQL deadlocks that occurred when running SQL Server Reporting Services (SSRS)-based reports (e.g., Failed Activity) due to a lock conflict between long-running report queries and the Management Service background update routine.
-- Fixed a silent failure on Windows Server 2012 R2 where clicking Export in predefined SSRS reports did nothing — caused by incorrect browser environment detection that prevented the save dialog from opening.
-- Fixed an issue where Netwrix Auditor still deployed agents to target computers even when the User Activity Video Recording data source was disabled in a monitoring plan.
-- Fixed a broken footer link in SSRS reports — clicking the Netwrix link no longer shows an "Inconsistent Reports Server URL" error.
-- Fixed alert filters with detail-level conditions not firing for Group Policy, owner, and non-owner mailbox activities in Exchange Online, which caused missed alert notifications.
-- Fixed a suboptimal join order in audit database views that caused unnecessary performance overhead when running reports covering Group Policy or Exchange mailbox activities.
-- Fixed an unhandled exception crash in the Exchange Online mailbox owner audit collector when required application permissions are missing — it now logs a clear error and continues gracefully.
-- Fixed incorrect report type classification — the Netwrix Auditor console now correctly displays State-in-Time reports for Entra ID, Exchange Online, and SharePoint Online as State-in-Time reports.
