@@ -281,7 +281,7 @@ reports.py --linux-reg-file linux_register.xlsx --insecure --dry-run
 ```
 
 See the example template:
-[linux_register.xlsx](/static/files/privilegesecure/discovery/attachments/360042878654_linux_register.xlsx)
+[linux_register.xlsx](/files/privilegesecure/discovery/attachments/360042878654_linux_register.xlsx)
 
 | Column | Description |
 |---|---|
