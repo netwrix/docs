@@ -7,5 +7,3 @@ The following courses are available for self-enrollment through the Learning Lib
 * What's New in <NDC /> v5.7.10
 * <NDC /> Dropbox Solution
 * <NDC /> Box Solution
-* What's New in <NDC /> v5.7
-* Top 5 Support Issues for <NDC />
