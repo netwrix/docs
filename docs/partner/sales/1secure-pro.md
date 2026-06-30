@@ -36,7 +36,7 @@ The Selling <N1S /> Pro course helps sellers and presales get acquainted with an
 
 By the end of the course, learners will be able to:
 
-* Understand the capabilities of the <N1S /> Pro.
+* Understand the capabilities of <N1S /> Pro.
 * Identify the key business drivers.
 * Recognize the main challenges of customers that <N1S /> Pro can resolve.
 * Get acquainted with the pricing structure.
