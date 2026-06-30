@@ -1,0 +1,40 @@
+---
+title: How to Upload a Compliance Template to Change Tracker
+description: >-
+  This article shows how to upload a compliance template to Netwrix Change
+  Tracker using the Settings > Compliance Reports Templates page, with
+  step-by-step instructions.
+sidebar_label: Upload Compliance Template
+keywords:
+  - Netwrix Change Tracker
+  - compliance template
+  - upload template
+  - compliance reports
+  - templates
+  - Compliance Reports Templates
+  - settings
+  - overwrite template
+  - configuration
+  - compliance reporting
+products:
+  - change-tracker
+tags:
+  - kb
+  - configuration-and-setup
+knowledge_article_id:
+---
+
+# How to Upload a Compliance Template to Change Tracker
+
+## Overview
+
+This guide provides step-by-step instructions on how to upload a compliance template into Netwrix Change Tracker.
+
+## Instructions
+
+1. Click on the **Settings** tile.
+2. On the left Navigation Menu, select **Compliance Reports Templates**.
+3. Click on the **Upload Templates** button and browse to your template.
+4. Once your template is selected, you can decide if you want Netwrix Change Tracker to automatically overwrite templates of the same name. If you do, check the corresponding box; if not, do not check it.
+5. Click the **Upload Template** button.
+6. The progress bar shows 100% once it has completed uploading.
