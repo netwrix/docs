@@ -18,7 +18,7 @@ This learning path grants <Company /> certification as a Sales Professional for 
 
 ## Selling <N1S /> Core Platform
 
-The Selling <N1S /> Core Platform course is designed to help sellers and presales get acquainted with and confidently navigate <N1S /> core platform. 
+The Selling <N1S /> Core Platform course helps sellers and presales get acquainted with and confidently navigate the <N1S /> core platform. 
 
 By the end of the course, learners will be able to:
 
@@ -32,13 +32,13 @@ Estimated length: 50 minutes
 
 ## Selling <N1S /> Pro
 
-The Selling <N1S /> Pro course is designed to help sellers and presales get acquainted with and confidently navigate <N1S /> Pro.
+The Selling <N1S /> Pro course helps sellers and presales get acquainted with and confidently navigate <N1S /> Pro.
 
 By the end of the course, learners will be able to:
 
 * Understand the capabilities of the <N1S /> Pro.
-* Learn more about the key business drivers.
-* Recognize the main challenges of customers that can be resolved by <N1S /> Pro.
+* Identify the key business drivers.
+* Recognize the main challenges of customers that <N1S /> Pro can resolve.
 * Get acquainted with the pricing structure.
 * Recognize prospects for <N1S /> Pro and be prepared to conduct a discovery session.
 
