@@ -24,8 +24,8 @@ By the end of the course, learners will be able to:
 
 * Understand what is driving and accelerating cloud adoption.
 * Recognize the security challenges in Microsoft cloud-based and on-prem environments.
-* Learn what the <N1S /> Core platform's role is in addressing these challenges.
-* Understand how the platform is licensed and positioned.
+* Learn the <N1S /> Core platform's role in addressing these challenges.
+* Understand the platform's licensing and positioning.
 * Recognize prospects for <N1S /> core platform and be prepared to conduct a discovery session.
 
 Estimated length: 50 minutes
