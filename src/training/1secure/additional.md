@@ -4,6 +4,7 @@ import { N1S } from '@site/src/training/products';
 
 The following courses are available for self-enrollment through the Learning Library:
 
+* NEW <N1S /> - NEO the AI Chatbot
 * NEW <N1S /> Pro - June 2026
 * What's New in <N1S /> - February 2026 (Core + DSPM)
 * What's New in <N1S /> ITDR - Netwrix Identity Recovery (Recovery for AD Features)
