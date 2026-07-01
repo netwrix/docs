@@ -17,18 +17,20 @@ lateral movement attacks, and significantly reducing an organization’s attack 
 
 NPS-D is available in two release lines:
 
-- **2.22** — Legacy release line, approaching end of support.
 - **26.03 and later** — Current release line, actively developed with new features delivered
   quarterly (26.03, 26.06, 26.09, and so on). This is the recommended line for all new and
   existing deployments.
+- **2.22** — Legacy release line. Version 2.22.13 is the final release in this line. The 2.22.x
+  line receives no further feature work, security updates, or dependency upgrades.
 
 This documentation covers both release lines. Where a feature or procedure applies only to a
 specific release, an inline note calls this out.
 
 :::note
-Netwrix recommends upgrading from 2.22 to the latest release to take advantage of new
-capabilities, including native Microsoft Entra ID integration, container-based deployment on
-standard Ubuntu machines, and continued active development. Contact your Netwrix account
-representative for upgrade guidance.
+The 2.22.x release line has reached end of life. Netwrix recommends upgrading to the latest
+release of NPS-D (26.06 or later) to receive security updates and new capabilities, including
+native Microsoft Entra ID integration, container-based deployment on standard Ubuntu machines,
+and continued active development. Customers requiring bug fixes or security updates must upgrade
+to the latest supported release. Contact your Netwrix account representative for upgrade guidance.
 :::
 
