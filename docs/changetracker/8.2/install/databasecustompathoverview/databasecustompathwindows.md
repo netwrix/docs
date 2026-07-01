@@ -17,7 +17,7 @@ Management Console**, or **Windows Services Console**.
 
 **Step 4 –** Edit the parameters for `dbpath` to change the location for DB files.
 
-**--INSERT SCREENSHOT OF UP TO DATE MONGO.CFG FILE--**
+<img width="685" height="487" alt="image" src="https://github.com/user-attachments/assets/06d4c67c-865a-45aa-867f-a8f3b22aa727" />
 
 **Step 5 –** Start the **MongoDB Server (MongoDB)** service using the **Windows Services Console**.
 
