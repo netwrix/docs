@@ -36,7 +36,8 @@ To prevent default groups from being recreated:
 
 1. Log in to Change Tracker.
 2. Navigate to **Settings** > **System Settings**.
-3. Click **Show Advanced Options**.
-4. Click **Add Config Item**.
-5. In the **Description** field, enter `CreateDefaultGroups`. In the **Value** field, enter `No`.
-6. Click **Update**.
+3. Scroll to the bottom of the page.
+4. Click **Show Advanced Options**.
+5. Click **Add Config Item**.
+6. In the **Description** field, enter `CreateDefaultGroups`. In the **Value** field, enter `No`.
+7. Click **Save**.
