@@ -6,9 +6,9 @@ sidebar_position: 1
 
 # Netwrix Privilege Secure for Discovery Documentation
 
-Netwrix Privilege Secure for Discovery (formerly Remediant SecureONE) enables IT administrators
-and security analysts to have dynamic and continuous visibility into their organization’s privileged
-accounts and manage them from a single interface. Users then self-administer privilege access,
+Netwrix Privilege Secure for Discovery (formerly Remediant SecureONE) gives IT administrators
+and security analysts dynamic and continuous visibility into their organization’s privileged
+accounts and lets them manage those accounts from a single interface. Users then self-administer privilege access,
 getting access to only the right resource, at the right moment and for as long as they
 need to complete their job. This approach eliminates standing privileges, effectively preventing
 lateral movement attacks, and significantly reducing an organization’s attack surface.
@@ -17,8 +17,8 @@ lateral movement attacks, and significantly reducing an organization’s attack 
 
 NPS-D is available in two release lines:
 
-- **26.03 and later** — Current release line, actively developed with new features delivered
-  quarterly (26.03, 26.06, 26.09, and so on). This is the recommended line for all new and
+- **26.03 and later** — Current release line that Netwrix actively develops, delivering new
+  features quarterly (26.03, 26.06, 26.09, and so on). This is the recommended line for all new and
   existing deployments.
 - **2.22** — Legacy release line. Version 2.22.13 is the final release in this line. The 2.22.x
   line receives no further feature work, security updates, or dependency upgrades.
