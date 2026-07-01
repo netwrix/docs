@@ -7,15 +7,15 @@ keywords:
   - Hub Server
 sidebar_label: Certificate Thumbprint Mismatch
 tags: [kb, troubleshooting-and-errors]
-title: 'Rolling-Log Fix: "ERROR NNT.Hub.ServiceClient.HubAdapter - Certificate Thumbprint Does Not Match Trusted"'
+title: "Certificate Thumbprint Mismatch"
 knowledge_article_id: kA04u0000000JaGCAU
 products:
   - change-tracker
 ---
 
-# Rolling-Log Fix: "ERROR NNT.Hub.ServiceClient.HubAdapter - Certificate Thumbprint Does Not Match Trusted"
+# Certificate Thumbprint Mismatch
 
-## Symptoms
+## Symptom
 
 The following error occurs when using a custom or unrecognized IIS Certificate:
 
@@ -36,7 +36,7 @@ This means that you are using a custom or unrecognized IIS Certificate. You need
 If you are receiving this error, the Netwrix Agent is NOT reporting to your hub. This is a critical error — resolve it to restore monitoring. To resolve this error:
 
 1. Stop the **Netwrix Agent Service**.
-2. Navigate to your Netwrix Agent Directory, which contains the Rolling-Log Files (see [Agent Rolling-Log File Location](/docs/changetracker/8_1/install/agent/rollinglogfile) for more details):
+2. Navigate to your Netwrix Agent Directory, which contains the Rolling-Log Files (see [Agent Rolling-Log File Location](/docs/changetracker/8_2/install/agent/rollinglogfile) for more details):
    - **Windows:** `C:\ProgramData\NNT\gen7agent.app.netcore\`
    - **Linux:** `/var/nnt/gen7agent.app.netcore/`
 3. Edit the **HubDetails.xml** file.

@@ -7,15 +7,15 @@ keywords:
   - Login failures
 sidebar_label: 403 IP Address Blocked
 tags: [kb, troubleshooting-and-errors]
-title: "Rolling-Log Fix: Hub Connection Failed. 403 Server Message: IP Address Blocked: Login Failures"
+title: "403 IP Address Blocked"
 knowledge_article_id: ka0Qk000000DlfRIAS
 products:
   - change-tracker
 ---
 
-# Rolling-Log Fix: Hub Connection Failed. 403 Server Message: IP Address Blocked: Login Failures
+# 403 IP Address Blocked
 
-## Symptoms
+## Symptom
 
 This problem can occur when the Agent password being sent to the Hub Server is incorrect.
 
@@ -31,8 +31,8 @@ The agent's `HubDetails.xml` file contains an incorrect password for the Hub Ser
 
 ## Resolution
 
-1. Stop the **Netwrix Agent Service**.
-2. Navigate to your Netwrix Agent Directory, which contains the Rolling-Log Files (see [Agent Rolling-Log File Location](/docs/changetracker/8_1/install/agent/rollinglogfile) for more details):
+1. Stop the **Netwrix ChangeTracker Gen7 Agent NetCore** Service.
+2. Navigate to your Netwrix Agent Directory, which contains the Rolling-Log Files (see [Agent Rolling-Log File Location](/docs/changetracker/8_2/install/agent/rollinglogfile) for more details):
    - **Windows:** `C:\ProgramData\NNT\gen7agent.app.netcore\`
    - **Linux:** `/var/nnt/gen7agent.app.netcore/`
 3. Edit the **HubDetails.xml** file.
