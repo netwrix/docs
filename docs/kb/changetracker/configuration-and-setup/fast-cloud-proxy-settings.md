@@ -21,7 +21,7 @@ products:
 tags:
   - kb
   - configuration-and-setup
-knowledge_article_id:
+knowledge_article_id: ka0Qk000000D34vIAC
 ---
 
 # How to Configure the FAST Cloud Integration with Proxy Internet Settings
