@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Windows
 
-To change the location of the Change Tracker database files, follow the steps below:
+To change the location of the Change Tracker database files, follow these steps:
 
 **Step 1 –** Stop the **IIS Web server** using command line iisreset /stop or use the **IIS
 Management Console**, or **Windows Services Console**.
