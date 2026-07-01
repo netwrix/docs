@@ -16,7 +16,7 @@ keywords:
   - troubleshooting
   - Windows registry
   - HKEY_LOCAL_MACHINE
-knowledge_article_id:
+knowledge_article_id: ka04u000000Hd99AAC
 products:
   - change-tracker
 sidebar_label: Registry Key Permissions Error

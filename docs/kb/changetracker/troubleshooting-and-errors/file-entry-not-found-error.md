@@ -16,7 +16,7 @@ keywords:
   - troubleshooting
   - file entry
   - permissions
-knowledge_article_id:
+knowledge_article_id: ka04u000000Hd9NAAS
 products:
   - change-tracker
 sidebar_label: File Entry Not Found Error

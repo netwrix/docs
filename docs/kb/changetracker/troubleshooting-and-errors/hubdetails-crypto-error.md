@@ -16,7 +16,7 @@ keywords:
   - password encryption
   - hub connection
   - troubleshooting
-knowledge_article_id:
+knowledge_article_id: ka0Qk000000DlabIAC
 products:
   - change-tracker
 sidebar_label: HubDetails Crypto Error
@@ -36,9 +36,9 @@ The following error appears in the agent Rolling Log, typically followed by addi
 2019-01-04 07:02:35,644 [4] ERROR HubDetails - Crypto error. Has the agent process account changed since the password data was entered?
 System.Security.Cryptography.CryptographicException: Key not valid for use in specified state.
 
-2019-01-04 07:02:35,675 [4] ERROR ConfigurationLoader - Hub details cannot be read successfully from: C:\ProgramData\NNT\gen7agent.service\HubDetails.xml. Error: Key not valid for use in specified state.
-2019-01-04 07:02:35,675 [4] INFO  Message - Application core shutting down due to error, please restart service: Hub details cannot be read successfully from: C:\ProgramData\NNT\gen7agent.service\HubDetails.xml. Error: Key not valid for use in specified state.
-2019-01-04 07:02:35,691 [4] INFO  Message - Application starting shutdown due to: FatalError - Hub details cannot be read successfully from: C:\ProgramData\NNT\gen7agent.service\HubDetails.xml. Error: Key not valid for use in specified state.
+2019-01-04 07:02:35,675 [4] ERROR ConfigurationLoader - Hub details cannot be read successfully from: C:\ProgramData\NNT\gen7agent.app.netcore\HubDetails.xml. Error: Key not valid for use in specified state.
+2019-01-04 07:02:35,675 [4] INFO  Message - Application core shutting down due to error, please restart service: Hub details cannot be read successfully from: C:\ProgramData\NNT\gen7agent.app.netcore\HubDetails.xml. Error: Key not valid for use in specified state.
+2019-01-04 07:02:35,691 [4] INFO  Message - Application starting shutdown due to: FatalError - Hub details cannot be read successfully from: C:\ProgramData\NNT\gen7agent.app.netcore\HubDetails.xml. Error: Key not valid for use in specified state.
 ```
 
 ## Cause
@@ -51,17 +51,17 @@ The information in the `HubDetails.xml` file cannot be decrypted by the current 
 
 If you are receiving this error, the agent is NOT reporting to your hub. This is a critical error and monitoring will not continue until it is resolved.
 
-1. Stop the <!-- SME: Verify correct service name for this context --> Netwrix Agent Service.
+1. Stop the **Netwrix ChangeTracker Gen7 Agent NetCore** service.
 
    On Linux:
 
    ```bash
-   service nntgen7agent stop
+   service nntgen7agentcore stop
    ```
 
 2. Navigate to the agent service data folder:
-   - **Windows:** `C:\ProgramData\NNT\gen7agent.service`
-   - **Linux:** `/var/nnt/gen7agent.service/`
+   - **Windows:** `C:\ProgramData\NNT\gen7agent.app.netcore`
+   - **Linux:** `/var/nnt/gen7agent.app.netcore/`
 
 3. Delete all files in this folder **except** for the `HubDetails.xml` file.
 
@@ -81,14 +81,14 @@ If you are receiving this error, the agent is NOT reporting to your hub. This is
 
    <!-- Image removed: Screenshot showing a correctly formatted HubDetails.xml file -->
 
-   For more information about the `HubDetails.xml` file, refer to the [Agent HubDetails File](/docs/changetracker/8_2/install/agent/hubdetailsfile.htm) documentation.
+   For more information about the `HubDetails.xml` file, refer to the [Agent HubDetails File](/docs/changetracker/8.2/install/agent/hubdetailsfile) documentation.
 
-8. Start the <!-- SME: Verify correct service name for this context --> Netwrix Agent Service.
+8. Start the **Netwrix ChangeTracker Gen7 Agent NetCore** service.
 
    On Linux:
 
    ```bash
-   service nntgen7agent start
+   service nntgen7agentcore start
    ```
 
 9. Check the Rolling Log to verify the agent was able to read the information and connect to the hub.

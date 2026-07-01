@@ -16,7 +16,7 @@ keywords:
   - IncomingEventQueue
   - BackgroundTaskQueue
   - troubleshooting
-knowledge_article_id:
+knowledge_article_id: ka0Qk0000001R2zIAE
 products:
   - change-tracker
 sidebar_label: Duplicate Events in Syslogs
@@ -51,10 +51,10 @@ The pending notifications queue in the MongoDB database contains notifications f
 
    ```text
    use NNTHubService
-   db.IncomingEventQueue.count()
-   db.NotificationQueue.count()
-   db.PendingNotifications.count()
-   db.BackgroundTaskQueue.count()
+   db.IncomingEventQueue.countDocuments()
+   db.NotificationQueue.countDocuments()
+   db.PendingNotifications.countDocuments()
+   db.BackgroundTaskQueue.countDocuments()
    ```
 
 4. To clean up the queued notifications, run the following commands:
