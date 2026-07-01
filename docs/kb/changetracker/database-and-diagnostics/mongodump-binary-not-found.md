@@ -36,6 +36,10 @@ Mongodump binary does not exist in specified location
 
 <!-- Image removed: Screenshot of the mongodump binary error message -->
 
+## Cause
+
+The `MongoDumpPath` configuration setting is missing or points to the wrong location. Netwrix Change Tracker uses this setting to locate the mongodump binary when exporting a database.
+
 ## Resolution
 
 1. Open **Settings**.

@@ -35,6 +35,7 @@ This guide provides step-by-step instructions on how to upload a compliance temp
 1. Click on the **Settings** tile.
 2. On the left Navigation Menu, select **Compliance Reports Templates**.
 3. Click on the **Upload Templates** button and browse to your template.
-4. Once your template is selected, you can decide if you want Netwrix Change Tracker to automatically overwrite templates of the same name. If you do, check the corresponding box; if not, do not check it.
+4. If you wish to automatically overwrite existing templates with the same name, check the corresponding box.
 5. Click the **Upload Template** button.
-6. The progress bar shows 100% once it has completed uploading.
+
+The progress bar should show 100% once the upload completes.

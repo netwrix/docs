@@ -25,13 +25,18 @@ knowledge_article_id: ka04u000000HdBHAA0
 
 # How to Change the Location of the Express Agent's Database and Log Files
 
+<!-- SME REVIEW NEEDED: This article is thin. The source KB body only had the config snippet below, though the original had broken screenshot attachments suggesting a fuller procedure (stop service, back up file, edit, restart service, verify log). Please decide:
+  1. EXPAND — add an Overview section and full numbered steps (prerequisites, exact service name, verification step)
+  2. RETIRE — if this doesn't warrant a standalone KB
+-->
+
 ## Instructions
 
-Change the Express Agent's database and log files location by editing the `ConfigPath` switch in `expressAgent.ini`:
+1. Change the Express Agent's database and log files location by editing the `ConfigPath` switch in `expressAgent.ini`:
 
 ```ini
 [ExpressAgent]
 ConfigPath=/var/nnt/expressagent/
 ```
 
-Set the `ConfigPath` value to the desired directory where the Express Agent should store its database and log files.
+2. Set the `ConfigPath` value to the desired directory where the Express Agent should store its database and log files.

@@ -56,4 +56,4 @@ If you are receiving this error, the Netwrix Change Tracker database and Hub Ser
 9. Click **OK**.
 10. In some scenarios, it may be best to reboot the server.
 
-> **NOTE:** MongoDB has garbage collection which cleans up physical and virtual memory. MongoDB tries to reserve as much memory as possible, even though it is not using it. It gladly gives up this memory to the systems that need it. Any queries run get stored into the page file for easy access. If this is not system managed, when it reaches the limit, it crashes the MongoDB database service. Having the C drive set to system managed is the best way to ensure excellent performance from both the system and the database itself.
+> **NOTE:** MongoDB reserves as much memory as it can and stores queries in the page file for quick access. When the page file is not set to system managed, it can hit its size limit and crash MongoDB. System managed sizing lets Windows expand the page file as needed.

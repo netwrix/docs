@@ -33,7 +33,7 @@ knowledge_article_id: ka04u000000HdAGAA0
 
 ## Symptom
 
-Netwrix Change Tracker lets you log in; however, when you go to **Settings > Groups** you receive the following error:
+You can log in to Netwrix Change Tracker, but when you go to **Settings > Groups**, you receive the following error:
 
 ```text
 System Error - Object Reference not set to an instance of an object
@@ -47,15 +47,16 @@ This error occurs when your account does not have the correct user rights to vie
 
 ## Resolution
 
-1. Log out of the Netwrix Change Tracker user account that you are currently logged in as.
+1. Log out of the Netwrix Change Tracker user account that you are currently using.
 2. Log in as the default **admin** account in Netwrix Change Tracker.
 3. Navigate to the **Groups** tab in the **Settings** tile.
-4. Do you see the groups? You should be able to. This means that the account you previously had logged in as did not have the user rights to view the device groups.
+4. Verify that the groups are visible. If they are, the previous account lacks the user rights required to view device groups.
 5. Go to **Settings > Users**.
-6. Do you have Active Directory integration enabled? If so, does your AD integration require you to supply the FQDN in order to log in?
+6. Check whether Active Directory integration is enabled and whether it requires a fully qualified domain name (FQDN) for login.
 
    <!-- Image removed: Screenshot showing AD Integration example requiring FQDN for login -->
 
-7. If the above is true, view the username in **Settings > Users** of Netwrix Change Tracker. This needs to be the same as the exact username you provide during login. The username must include the full domain prefix (e.g., `DOMAIN\username`) to match what Active Directory expects.
+7. If AD integration requires an FQDN, review the username in **Settings > Users**.
+8. Verify that the username matches exactly what the user provides at login, including the domain prefix (for example, `DOMAIN\username`).
 
    <!-- Image removed: Screenshot showing correct vs incorrect username format — DOMAIN\username (correct) vs username without domain (incorrect) -->

@@ -41,7 +41,7 @@ This error is linked to a Windows issue rather than a MongoDB issue. The error o
 
 ## Resolution
 
-Review the Microsoft guidance on this issue:
+1. Review the Microsoft guidance on this issue:
 [https://learn.microsoft.com/en-GB/troubleshoot/windows-client/networking/connect-tcp-greater-than-5000-error-wsaenobufs-10055](https://learn.microsoft.com/en-GB/troubleshoot/windows-client/networking/connect-tcp-greater-than-5000-error-wsaenobufs-10055)
 
-If possible, implement the steps the Microsoft article recommends and then re-run the MongoDump task.
+2. If possible, implement the steps the Microsoft article recommends and then re-run the MongoDump task.

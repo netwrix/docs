@@ -15,7 +15,6 @@ keywords:
   - CSV
   - event filter
   - approved changes
-  - Comma Separated Text
 products:
   - change-tracker
 tags:
@@ -38,10 +37,10 @@ This article shows how to run a report that displays Created Planned Changes, Ch
 
    <!-- Image removed: Screenshot of the Events filter window with Planned Change text search and Audit event type selected -->
 
-4. To export these reports, click **Export** and select your preferred file type.
+4. To export the report, click **Export** and select your preferred file type.
+
+   > **NOTE:** For details on available export formats, see [Exporting Events to CSV, PDF, or XLSX](/docs/kb/changetracker/configuration-and-setup/exporting-events-to-csv-pdf-or-xlsx). The exported report includes Created Planned Changes, Approved Changes, and the user who performed each action.
 
    <!-- Image removed: Screenshot of the Export button and file type options -->
-
-The exported report includes details such as Created Planned Changes, Approved Changes, and the user who performed each action. The available file types include Comma Separated Text (CSV).
 
 <!-- Image removed: Example of an exported planned changes report in CSV format -->
