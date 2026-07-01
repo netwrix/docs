@@ -32,13 +32,18 @@ This article describes how to resubmit unplanned changes in bulk in Netwrix Chan
 
 ## Instructions
 
-1. Navigate to the **Planned Changes** tab and click **Actions** > **Planned Change Wizard**.
-2. Click **Next** and proceed with the **Create a new Planned Change Rule Set** option.
-3. Create a rule to match the events. You can match all events using `Any` for all options, or specify a path for the events.
-4. Once the rules are created, click **Next** and proceed with customizing the planned change.
-5. Select the **Group of Devices** and the **Date/Time** range during which the events occurred.
-6. Continue through the wizard and customize the name and description.
-7. After the planned change is created, navigate to the **Events** tab and filter the events.
-8. On the **Events** page, select the **All Events** option and click **Actions** > **Resubmit selected events**.
+1. Log in to the Change Tracker web console with an admin account.
+2. Click the Settings tab and select from the dropdown, the **Planned Change Schedules** option.
+3. At the top right of the screen, click **Actions** > **Planned Change Wizard**.
+4. In the new window that appears, select **Next** > **Create a new Planned Change Rule set** > **Next**.
+5. Click **Add Planned Change Rule**. In the new window, create a rule(s) to match the events you wish to capture as planned. You can match all events using `Any` for all options, or specify a path for the events.
+6. Click **Save** and then click **Next**.
+7. In the new window, click into the **Groups** field and select the groups of devices in which generated the events. Then configure the **Start and End Date/Time** range during which the events occurred and then click **Next**.
+8. In the new window, provide a **Name** and a **Description**.
+9. Click **Next**.
+10. Click **Next**.
+11. Click **Finish**.
+12. After the planned change is created, navigate to the **Events** tab and filter the events to see the events you would like to resubmit.
+13. On the **Events** page, select the **All Events** option and click **Actions** > **Resubmit selected events**.
 
-Change Tracker verifies the resubmitted events against the planned change rules.
+Change Tracker verifies the resubmitted events against the planned change rule(s).
