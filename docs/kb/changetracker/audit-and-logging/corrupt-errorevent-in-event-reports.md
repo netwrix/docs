@@ -64,7 +64,7 @@ Perform an agent reset to reconfigure affected agents:
 1. Stop the Netwrix Change Tracker Agent Service:
 
 ```bash
-service nntgen7agent stop
+service nntgen7agentcore stop
 ```
 
 2. Navigate to the agent directory (see [Rolling-Log File Location](/docs/changetracker/8_1/install/agent/rollinglogfile)): `/var/nnt/gen7agent.app.netcore/`
@@ -76,5 +76,5 @@ service nntgen7agent stop
 5. Start the Agent Service:
 
 ```bash
-service nntgen7agent start
+service nntgen7agentcore start
 ```
