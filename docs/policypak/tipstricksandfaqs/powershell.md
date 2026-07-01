@@ -12,8 +12,8 @@ discover PolicyPak items within a Group Policy Object (GPO). The PolicyPak Power
 
 ![policypak_and_powershell_1200x787](/images/policypak/install/endpointpolicymanager_and_powershell_1200x787.webp)
 
-Run the PolicyPak PowerShell Tools installer. The PolicyPak PowerShell
-modules will be installed to `>c:\Program Files\PolicyPak1\Tools\Modules\PolicyPak`.
+Run the PolicyPak PowerShell Tools installer. The installer places the PolicyPak PowerShell modules
+in `>c:\Program Files\PolicyPak1\Tools\Modules\PolicyPak`.
 
 At a Powershell prompt run the command `>Import-Module endpointpolicymanager.psd1.` If you add the
 `>-verbose `command you will see all of the available cmdlets.
@@ -37,8 +37,8 @@ component that requires the following commands:
 - Importing cmdlet '`Register-PPLicense`'
 - Importing cmdlet '`New-PPLicenseRequestFile`'
 
-To generate a new PolicyPak license request, there are two methods. Method 1 requires
-using the existing Microsoft cmdlet Get-ADOrganizationalUnit as shown below.
+To generate a new PolicyPak license request, there are two methods. Method 1 uses the existing
+Microsoft cmdlet Get-ADOrganizationalUnit, as the following example shows.
 
 `># New-PPLicenseRequest`
 
@@ -52,19 +52,19 @@ using the existing Microsoft cmdlet Get-ADOrganizationalUnit as shown below.
 
 `>New-PPLicenseRequestfile "C:\Temp\request1.xml" -Scope $scope -Som $som -Verbose `
 
-The request output is shownbelow.
+The following image shows the request output.
 
 ![policypak_and_powershell_2](/images/policypak/install/endpointpolicymanager_and_powershell_2.webp)
 
 :::note
 To understand scope versus SOM, see
-[Why does License Tool ask Who am I and Where do I want to use PolicyPak?](/docs/policypak/licensing/knowledgebase/faqactivedirectory/scope.md).
+[How the License Tool determines scope and Scope of Management (SOM)](/docs/policypak/licensing/knowledgebase/faqactivedirectory/scope.md).
 :::
 
 
-Method 2 requires indicating specific organizational units (OUs), as shown below. In this example,
-the scope is the whole domain, but the SOM is the Sales OU within the Fabrikam.com domain. Below is
-an example script which requests a new license file from a specific SOM and scope.
+Method 2 requires indicating specific organizational units (OUs). In this example, the scope is the
+whole domain, but the SOM is the Sales OU within the Fabrikam.com domain. The following is an
+example script that requests a new license file from a specific SOM and scope.
 
 `># New-PPLicenseRequest`
 
@@ -82,7 +82,7 @@ an example script which requests a new license file from a specific SOM and scop
 
 ![policypak_and_powershell_3_1200x833](/images/policypak/install/endpointpolicymanager_and_powershell_3_1200x833.webp)
 
-The next cmdlet enables you to determine how many computers are not active.
+Use the following cmdlet to determine how many computers aren't active.
 
 `># Get-InactiveComputers`
 
@@ -92,7 +92,7 @@ The next cmdlet enables you to determine how many computers are not active.
 
 `>#---`
 
-The result from this cmdlet is shown below.
+The following image shows the result from this cmdlet.
 
 ![policypak_and_powershell_4_950x333](/images/policypak/install/endpointpolicymanager_and_powershell_4_950x333.webp)
 
@@ -107,9 +107,12 @@ You can then see the machines are disabled:
 
 ![policypak_and_powershell_5_1200x561](/images/policypak/install/endpointpolicymanager_and_powershell_5_1200x561.webp)
 
-When the next cmdlet is run, you can see if the license file you got from PolicyPak
-was valid. Note that you might have to run the cmdlet on each PolicyPak license file
-you get.
+When you run the following cmdlet, you can see if the license file you got from PolicyPak was
+valid.
+
+:::note
+You might have to run the cmdlet on each PolicyPak license file you get.
+:::
 
 ```
 ># Test-PPlicense>Import-Module PolicyPak
@@ -128,7 +131,7 @@ You can then see that the license is valid:
 
 ![policypak_and_powershell_6_950x148](/images/policypak/install/endpointpolicymanager_and_powershell_6_950x148.webp)
 
-When the next cmdlet is run, you can create a new GPO and link it to the scope.
+When you run the following cmdlet, you can create a new GPO and link it to the scope.
 
 ```
 ># Register-PPlicense>Import-Module PolicyPak
@@ -140,7 +143,7 @@ You can then see the successful installation:
 
 ![policypak_and_powershell_7_1200x328](/images/policypak/install/endpointpolicymanager_and_powershell_7_1200x328.webp)
 
-The next cmdlet will specify a GPO by GUID.
+The following cmdlet specifies a GPO by GUID.
 
 ```
 >#Register-PPlicense >"C:\Users\server\Desktop_licenses\license1.xml" -e $True -mgpo "96A61654-8363-444B-97AC-47D466FE12EE" -verbose 
@@ -151,15 +154,14 @@ The next cmdlet will specify a GPO by GUID.
 >#---
 ```
 
-The result is shown below. You can see the GPO name, scope, expiration date of the license, PolicyPak license version type, and validation status of the license.
+The following image shows the result. You can see the GPO name, scope, expiration date of the license, PolicyPak license version type, and validation status of the license.
 
 ![policypak_and_powershell_8_1200x803](/images/policypak/install/endpointpolicymanager_and_powershell_8_1200x803.webp)
 
 ## PolicyPak PowerShell and Discovery
 
-PolicyPak can help you discover which GPOs contain PolicyPak directives.
-After you have performed the import of the PolicyPak module with Import-Module
-PolicyPak, you can use cmdlets like the following examples:
+PolicyPak can help you discover which GPOs contain PolicyPak directives. After you import the
+PolicyPak module with Import-Module PolicyPak, you can use cmdlets like the following examples:
 
 - `>Get-PPCses`: shows PolicyPak client-side extension (CSE) names and guids
 - `>Get-PPGPOs -cse "Security"`: same as above, but searches for CSEs with "security" in the name
@@ -172,8 +174,5 @@ PolicyPak, you can use cmdlets like the following examples:
 - `>Get-PPGPOs -cse "Security" | Select -ExpandProperty "GPO"`: shows all GPOs with any PolicyPak products with "security" in the title
 - `>Get-PPGPOs -cse "E0088A46-AB54-4FBD-A733-303C58244C5E"`: shows all GPOs based on CSE GUID
 
-![Text
-
-Description automatically
-generated](/images/policypak/install/endpointpolicymanager_and_powershell_9_850x594.webp)
+![Text Description automatically generated](/images/policypak/install/endpointpolicymanager_and_powershell_9_850x594.webp)
 

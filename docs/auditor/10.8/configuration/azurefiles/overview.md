@@ -41,7 +41,7 @@ to save audit events on **"log storage accounts"**. Ensure you have the necessar
 
 ## Configuration Scope Overview
 
-- **[Azure Application Registration](#azure-application-registration)** - Create Azure AD application
+- **[Azure Application Registration](#azure-application-registration)** - Create Microsoft Entra ID application
 - **[Configure API Permissions](#configure-api-permissions)** - Assign required permissions for created application in EntraID
 - **[Assign Identity and Access Management (IAM) Roles to the App](#assign-identity-and-access-management-iam-roles-to-the-app)** - Assigning roles to Resource Group, Data Storage Account, and Log Storage Account
 - **[Diagnostic Settings](#diagnostic-settings)** - Configure audit logging

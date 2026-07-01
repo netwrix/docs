@@ -1,44 +1,25 @@
 ---
-title: "Characters (Complexity) Rule"
-description: "Characters (Complexity) Rule"
+title: "Characters (Complexity)"
+description: "Configure the Characters (Complexity) rule to require passwords to contain characters from a minimum number of character sets, such as uppercase, lowercase, numeric, and special characters."
 sidebar_position: 30
 ---
 
-# Characters (Complexity) Rule
+# Characters (Complexity) rule
 
-The Complexity rule rejects passwords that don't contain characters from a variety of character
-sets. Using several character types can make passwords more difficult to crack.
+The Complexity rule rejects passwords that don't contain characters from a variety of character sets. A complex password takes longer to brute-force crack than a simple password of the same length.
 
 ![Character Complexity Rule](/images/passwordpolicyenforcer/11.2/administration/charcomplexity.webp)
 
-Select the **Characters (Complexity)** checkbox to enable the Character Complexity rule.
+Select the **Characters (Complexity)** checkbox to enable the Complexity rule.
 
-Select the number of required character sets. Passwords are rejected if they don't contain
-characters from at least the specified number of character sets.
+Select a number from the **Must contain at least** dropdown. This rule rejects passwords if they don't contain characters from at least the specified number of character sets. This number must be less than or equal to the number of character sets selected below it.
 
-Select the available character sets. The number of available character sets must be equal to or
-greater than the number of required character sets.
+Select the checkbox beside each required character set. Password Policy Enforcer (PPE) has seven character sets. The [Policy Properties](../policy_properties.md) page has more information about PPE's character sets. You can also use the [Characters (Granular)](character_rules.md) rules to customize the default character sets.
 
-Select the **Passwords must always comply with this rule** checkbox to make the Complexity rule
-mandatory. Password Policy Enforcer rules are mandatory by default, but can be made optional by
-changing the Reject passwords that don't comply with value in the Policy Properties page. A
-mandatory rule can still be disabled when a passphrase is used. See the [Passphrase](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/passphrases.md)
-topic for additional information.
+If the number in the dropdown is less than the number of selected character sets, then users have some flexibility in their choice of characters. For example, in the preceding screenshot, the password must contain only three of the four selected character sets.
 
 :::note
-The Complexity rule uses custom character set definitions from the Character rules, even
-if the Character rules are disabled.
+This rule uses custom character set definitions from the [Characters (Granular)](character_rules.md) rules, even if you disable the granular rules.
 :::
 
-
-This default character set contains the following:
-
-| Rule        | Default character set                                                    |
-| ----------- | ------------------------------------------------------------------------ |
-| Alpha Lower | Lowercase alphabetic (a-z)  |
-| Alpha Upper | Uppercase alphabetic (A-Z) |
-| Alpha       | Uppercase and lowercase alphabetic (a-z & A-Z) |
-| Numeric     | Numerals (0-9) |
-| Special     | All characters not included above                                        |
-| High        | All characters above ANSI 126                                            |
-| Custom      | No default characters                                                    |
+Select the **Passwords must always comply with this rule** checkbox to make the Complexity rule mandatory. Rules are mandatory by default, but you can make some of them optional by changing the **Passwords must comply with** setting on the policy's [**Properties**](../policy_properties.md) tab. The [Passphrase](../passphrases.md) feature can still disable a mandatory rule.
