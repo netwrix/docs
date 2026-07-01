@@ -22,7 +22,7 @@ products:
 tags:
   - kb
   - database-and-diagnostics
-knowledge_article_id:
+knowledge_article_id: ka04u000000QmlUAAS
 ---
 
 # MongoDB Log Fix: Error Reading Collection — An Operation on a Socket Could Not Be Performed

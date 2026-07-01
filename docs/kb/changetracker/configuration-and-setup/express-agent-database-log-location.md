@@ -20,7 +20,7 @@ products:
 tags:
   - kb
   - configuration-and-setup
-knowledge_article_id:
+knowledge_article_id: ka04u000000HdBHAA0
 ---
 
 # How to Change the Location of the Express Agent's Database and Log Files

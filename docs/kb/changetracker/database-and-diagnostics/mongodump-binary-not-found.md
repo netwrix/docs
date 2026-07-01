@@ -21,7 +21,7 @@ products:
 tags:
   - kb
   - database-and-diagnostics
-knowledge_article_id:
+knowledge_article_id: ka04u000000Hd9lAAC
 ---
 
 # How to Fix: Mongodump Binary Does Not Exist in Specified Location Error

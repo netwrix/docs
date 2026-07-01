@@ -26,7 +26,7 @@ products:
 tags:
   - kb
   - troubleshooting-and-errors
-knowledge_article_id:
+knowledge_article_id: ka04u000000HdAGAA0
 ---
 
 # System Error — Object Reference Not Set to an Instance of an Object — Cannot View Groups Page in Netwrix Change Tracker

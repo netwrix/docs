@@ -21,7 +21,7 @@ products:
 tags:
   - kb
   - database-and-diagnostics
-knowledge_article_id:
+knowledge_article_id: ka04u000000QmjwAAC
 ---
 
 # MongoDB Log Fix: Out of Memory

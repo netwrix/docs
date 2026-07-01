@@ -21,7 +21,7 @@ products:
 tags:
   - kb
   - configuration-and-setup
-knowledge_article_id:
+knowledge_article_id: ka04u000000Hd9XAAS
 ---
 
 # How to Upload a Compliance Template to Change Tracker

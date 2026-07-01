@@ -21,7 +21,7 @@ products:
 tags:
   - kb
   - audit-and-logging
-knowledge_article_id:
+knowledge_article_id: ka04u000000Hd9zAAC
 ---
 
 # How to Run a Report That Shows Created Planned Changes and Who Made Them
