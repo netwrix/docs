@@ -38,5 +38,7 @@ Typically, the agent performs a baseline scan of the file system after the agent
 
 3. Navigate to **Settings** > **Agents & Devices**.
 4. Select the device and click **Edit**.
+5. In the new window, check the box for **Baseline Source**.
+6. Select **Save**.
 
 Once you enable these options, the agent or server sends baseline events on the next poll.
