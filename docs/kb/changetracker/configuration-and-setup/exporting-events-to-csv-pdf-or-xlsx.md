@@ -32,9 +32,12 @@ This article describes how to export Netwrix Change Tracker events to CSV, PDF, 
 ## Instructions
 
 1. Click the **Events** tile.
-2. Select the device to export events for. To export events for all devices, do not select a specific device.
-3. Click **Filter** and adjust the filter criteria for the event types you want to export.
-4. Review the active filters displayed at the top of the Events page. Remove any unwanted filters by clicking the **X** next to them.
-5. Click **Export** and select the preferred output format.
+2. If you would like to export events for a specific device, select this device using the toolbar on the left of the screen. You can select the device from the **Search Devices** dropdown menu.
+3. If you would like to export events for a group of devices, select this group using the toolbar on the left of the screen. You can select the grouo from the **Search Groups** dropdown menu.
+4. Once a device or group has been selected, using the toolbar on the left of the screen, adjust the filter criteria for the date/time range and event type(s) you wish to query to ensure they meet your requirements. All filters are applied automatically and the events in view will match the criteria set.
+5. When ready, click **Query/Report** at the top right of the screen and select **Export Now**.
+6. You will be automatically taken to the **Reports** tab where the sepcified events query/filter will be running.
+7. Once the query has compelted, use the **Download** option and select your preferred format e.g. CSV, PDF, or XLSX.
+8. The report, in the preferred format will be generated and the file automatically downloaded in your browser for offline review.
 
 > **NOTE:** You can export up to 50,000 events at a time. To export more than 50,000 events, see [Exporting More Than 50k Events](exporting-more-than-50k-events.md).
