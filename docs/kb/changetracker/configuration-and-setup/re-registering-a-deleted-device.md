@@ -32,10 +32,10 @@ This article describes how to re-register a device that you previously deleted f
 
 ## Instructions
 
-1. Log in to the Change Tracker console.
+1. Log in to the Change Tracker console with the default admin user or a user that has the ability to see the **Deleted** devices group.
 2. Navigate to **Settings** > **Agents & Devices**.
-3. Change the filter in the top-left corner to **[No Group Filter]**.
-4. The deleted devices are now visible in the **Agents & Devices** page with a **Re-Register** option.
-5. Click **Re-Register** next to the device to restore it.
+3. On the toolbar on the left of the screen, select **Deleted** from the **Search Groups** dropdown menu.
+4. All deleted devices should now be visible in the **Agents & Devices** page with a **Re-Register** option.
+5. For any deleted device that needs to be active, click **Re-Register** button next to the device to restore it.
 
 The device should now appear online in the Change Tracker console.
