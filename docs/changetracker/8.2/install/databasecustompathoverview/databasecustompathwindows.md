@@ -6,19 +6,20 @@ sidebar_position: 20
 
 # Windows
 
-To change the DB location or to switch to ‘smallfiles’ operation, do the following:
+To change the location of the Change Tracker database files, follow the steps below:
 
 **Step 1 –** Stop the **IIS Web server** using command line iisreset /stop or use the **IIS
 Management Console**, or **Windows Services Console**.
 
-**Step 2 –** Stop the **Mongo DB** service using the **Windows Services Console**.
+**Step 2 –** Stop the **MongoDB Server (MongoDB)** service using the **Windows Services Console**.
 
-**Step 3 –** Edit the **mongod.conf** file located in C:\Program Files\NNT Change Tracker™
-Suite\Gen7\MongoDB\conf
+**Step 3 –** Edit the **mongod.cfg** file located in **"C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin"**
 
-**Step 4 –** Edit the parameters for `dbpath `to change the location for DB files. If you prefer to
-invoke ‘**smallfiles**’ operation then add the config line as below.
+**Step 4 –** Edit the parameters for `dbpath` to change the location for DB files.
 
-![CustomDatabasePathWindows](/images/changetracker/8.2/install/deployment/customdatabasepathwindows.webp)
+**--INSERT SCREENSHOT OF UP TO DATE MONGO.CFG FILE--**
 
-5. Then start the **Mongod** service, followed by an `iisreset /start`.
+**Step 5 –** Start the **MongoDB Server (MongoDB)** service using the **Windows Services Console**.
+
+**Step 6 –** Start the **IIS Web server** using command line iisreset /start or use the **IIS
+Management Console**, or **Windows Services Console**.
