@@ -10,7 +10,7 @@ keywords:
   - file not found
   - Netwrix Change Tracker
   - agent
-  - configuration template
+  - policy template
   - content tracking
   - yum.conf
   - troubleshooting
@@ -36,9 +36,9 @@ The following error appears in the agent Rolling Log:
 2017-10-02 07:42:42,082 [5] ERROR FileContentTrackerDataCollectorLocal - couldn't locate File entry for /etc/yum.conf
 ```
 
-## Explanation
+## Cause
 
-This error occurs when a configuration template in Netwrix Change Tracker is set to track file contents for a specific file, but the agent cannot locate that file on the monitored device.
+This error occurs when a policy template in Netwrix Change Tracker is set to track file contents for a specific file, but the agent cannot locate that file on the monitored device.
 
 ## Resolution
 
@@ -50,8 +50,8 @@ If you are receiving this error for a file that does not exist on the device, it
 
 ### If the file should exist
 
-If you are positive the file exists but are still getting this error, check the following:
+If the file exists but the error still appears, verify the following:
 
-1. **Check your configuration template.** Is it looking for the file in the same location where the file is stored?
-2. **Is this a file that is in different locations on different servers?** If so, define all of the potential locations in the template.
-3. **Does this file have special permissions** that do not allow it to be read by the agent? If so, adjust the file permissions, or adjust the privileges of the account the agent uses.
+1. Verify the policy template is looking for the file in the correct location.
+2. If the file is stored in different locations on different servers, define all potential locations in the template.
+3. Check whether the file has special permissions that prevent the agent from reading it. If so, adjust the file permissions or the privileges of the account the agent uses.

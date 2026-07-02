@@ -10,7 +10,7 @@ keywords:
   - Netwrix Change Tracker
   - rolling log
   - agent
-  - configuration template
+  - policy template
   - registry tracking
   - key does not exist
   - troubleshooting
@@ -36,9 +36,9 @@ The following error appears in the agent Rolling Log:
 2017-10-02 09:14:38,759 [9] ERROR RegistryTrackerDataCollector - check the agent process has the required permissions to access the registry key. (HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\ExampleService\Parameters, error: The specified registry key does not exist.)
 ```
 
-## Explanation
+## Cause
 
-This error occurs when a configuration template in Netwrix Change Tracker is set to track a registry key and the agent cannot access the registry key because it does not exist or the agent does not have the required permissions.
+This error occurs when a policy template in Netwrix Change Tracker is set to track a registry key and the agent cannot access the registry key because it does not exist or the agent does not have the required permissions.
 
 ## Resolution
 
@@ -50,8 +50,8 @@ If you are receiving this error for a registry key that does not exist on the de
 
 ### If the registry key should exist
 
-If you are positive the registry key exists but are still getting this error, check the following:
+If the registry key exists but the error still appears, verify the following:
 
-1. **Check your configuration template.** Is it looking for the key in the correct location?
-2. **Is this a registry key that is in different locations on different servers?** If so, define all of the potential locations in the template.
-3. **Does the agent have the required permissions** to access the registry key? If not, adjust the permissions to allow access.
+1. Verify the policy template is looking for the key in the correct location.
+2. If the key is stored in different locations on different servers, define all potential locations in the template.
+3. Check whether the agent has the required permissions to access the registry key. If not, adjust the permissions to allow access.

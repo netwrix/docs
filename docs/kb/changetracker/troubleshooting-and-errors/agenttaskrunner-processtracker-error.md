@@ -2,7 +2,7 @@
 description: >-
   This article explains how to resolve the "AgentTaskRunner - task execution
   failed for task 11 - TrackerPollTask-Baseline-processtracker-88" error in
-  the Rolling Log by adjusting the configuration template in Netwrix Change
+  the Rolling Log by adjusting the policy template in Netwrix Change
   Tracker.
 keywords:
   - rolling log
@@ -10,14 +10,14 @@ keywords:
   - TrackerPollTask
   - processtracker
   - Netwrix Change Tracker
-  - configuration template
+  - policy template
   - process tracker
   - agent error
   - task execution failed
   - data collector
   - baseline
   - troubleshooting
-knowledge_article_id:
+knowledge_article_id: ka04u000000Hd9iAAC
 products:
   - change-tracker
 sidebar_label: AgentTaskRunner ProcessTracker Error
@@ -48,14 +48,14 @@ NNT.Agent.Tracking.TrackerException: no data collector registered for: processtr
 
 ## Cause
 
-This error occurs because the process tracker in Netwrix Change Tracker is enabled in the configuration template, but no specific processes are configured for tracking. The agent cannot execute the tracker poll task without at least one process defined.
+This error occurs because the process tracker in Netwrix Change Tracker is enabled in the policy template, but no specific processes are configured for tracking. The agent cannot execute the tracker poll task without at least one process defined.
 
 ## Resolution
 
-Edit the configuration template assigned to the affected device and either add processes to track or disable the process tracker.
+Edit the policy template assigned to the affected device and either add processes to track or disable the process tracker.
 
-1. Log into Netwrix Change Tracker and navigate to **Devices** > select the device experiencing the error > select the configuration template that is causing the issue.
-2. Either uncheck the **"Track processes and services in this template"** box, or add at least one service to be tracked.
+1. Log into Netwrix Change Tracker and navigate to **Devices** > select the device experiencing the error > select the policy template that is causing the issue.
+2. Either uncheck the **Track processes and services in this template** box, or add at least one service to be tracked.
 
 <!-- Image removed: Screenshot showing the process tracker configuration with the "Track processes and services in this template" checkbox -->
 

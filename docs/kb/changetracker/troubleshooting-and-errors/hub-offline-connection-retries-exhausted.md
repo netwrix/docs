@@ -16,7 +16,7 @@ keywords:
   - Netwrix Change Tracker
   - remote server
   - troubleshooting
-knowledge_article_id:
+knowledge_article_id: ka0Qk000000DldpIAC
 products:
   - change-tracker
 sidebar_label: Hub Offline Connection Retries Exhausted
@@ -40,19 +40,27 @@ The following error appears in the agent Rolling Log:
 
 This error occurs when the agent cannot reach the Netwrix Server. Common causes include:
 
-1. The Netwrix Server may be powered off, IIS is not running, or MongoDB is not running.
-2. The Netwrix Server may not be on the domain, does not have a network connection, or is in the wrong subnet.
-3. The port the agent is using is currently being used by another application, causing a conflict.
-4. A firewall is blocking the connection to the Netwrix Server over the specified port.
-5. Network routes are not configured to allow communication between the Netwrix Server and the agent.
-6. If the agent was configured using a Fully Qualified Domain Name instead of an IP address, the issue could be DNS-related.
-7. If the agent is on a WAN or a different LAN, port forwarding may need to be configured.
-8. If the agent is on a WAN or a different LAN, NAT settings may need to be modified to allow communication.
-9. If the agent is on a WAN or a different LAN, proxy settings may need to be modified if a web or other proxy is in use.
-10. If the agent is on a cloud provider network, the cloud provider's traffic rules may need to be modified to allow communication.
+- The Netwrix Server may be powered off, IIS is not running, or MongoDB is not running.
+- The Netwrix Server may not be on the domain, does not have a network connection, or is in the wrong subnet.
+- The port the agent is using is currently being used by another application, causing a conflict.
+- A firewall is blocking the connection to the Netwrix Server over the specified port.
+- Network routes are not configured to allow communication between the Netwrix Server and the agent.
+- If the agent was configured using an FQDN instead of an IP address, the issue could be DNS-related.
+- If the agent is on a cloud provider network, the cloud provider's traffic rules may need to be modified to allow communication.
+- If the agent is on a WAN or a different LAN:
+    - Port forwarding may need to be configured.
+    - NAT settings may need to be modified to allow communication.
+    - Proxy settings may need to be modified if a web or other proxy is in use.
 
 ## Resolution
 
-If you are receiving this error, the agent is currently not sending any logs to the Netwrix Server. Review the causes listed above and verify that each item is functioning properly.
+If you are receiving this error, the agent is currently not sending any logs to the Netwrix Server. Verify the following common causes:
 
-> **NOTE:** In most cases, resolving the underlying connectivity issue will fix this error. If the issue persists after the root cause is addressed, restart the agent service.
+- **Confirm the Netwrix Server is running.** Verify that IIS and MongoDB services are running on the Netwrix Change Tracker Hub server.
+- **Test connectivity from the agent host.** From the agent, attempt to reach the Hub URL (for example, using `ping`, `curl`, or `Test-NetConnection`). If the Hub URL uses an FQDN, confirm the agent can resolve it via DNS.
+- **Verify firewall and port configuration.** Confirm the port defined in the agent's `HubDetails.xml` (typically 443) is open between the agent and the Netwrix Server. See [Network Ports for Change Tracker](/docs/kb/changetracker/configuration-and-setup/network-ports-for-change-tracker) or the [Agent and Device Ports](/docs/changetracker/8_2/requirements/agentdeviceports) product doc.
+
+After correcting the underlying issue, restart the agent service to force a reconnection.
+
+<!-- SME REVIEW NEEDED: Please confirm the troubleshooting steps above and expand with any product-specific commands, additional guidance, or missing scenarios (e.g., WAN/LAN-specific steps). -->
+

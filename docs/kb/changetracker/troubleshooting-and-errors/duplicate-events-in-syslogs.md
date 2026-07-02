@@ -37,7 +37,7 @@ The pending notifications queue in the MongoDB database contains notifications f
 
 ## Resolution
 
-1. Install MongoDB Shell — download the MongoDB Shell `.zip` and place the contents into `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`. Download MongoDB Shell from the [MongoDB Shell download page](https://www.mongodb.com/try/download/shell).
+1. Download the MongoDB Shell `.zip` from the [MongoDB Shell download page](https://www.mongodb.com/try/download/shell) and place the contents into `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`.
 
 2. Once copied, run the `mongosh.exe` application to connect to your MongoDB database. Run the following command:
 

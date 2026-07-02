@@ -49,7 +49,7 @@ The information in the `HubDetails.xml` file cannot be decrypted by the current 
 
 ## Resolution
 
-If you are receiving this error, the agent is NOT reporting to your hub. This is a critical error and monitoring will not continue until it is resolved.
+If you are receiving this error, the agent is not reporting to your hub. This is a critical error and monitoring will not continue until it is resolved.
 
 1. Stop the **Netwrix ChangeTracker Gen7 Agent NetCore** service.
 
@@ -67,7 +67,7 @@ If you are receiving this error, the agent is NOT reporting to your hub. This is
 
 4. Edit the `HubDetails.xml` file using a text editor such as Notepad (Windows) or Nano (Linux).
 
-5. Inside the `HubDetails.xml` file, remove the entire line containing data within the `<E1>` tags.
+5. Remove the entire line containing the `<E1>` tags.
 
    <!-- Image removed: Screenshot showing the E1 encrypted password tags to remove from HubDetails.xml -->
 
@@ -81,7 +81,7 @@ If you are receiving this error, the agent is NOT reporting to your hub. This is
 
    <!-- Image removed: Screenshot showing a correctly formatted HubDetails.xml file -->
 
-   For more information about the `HubDetails.xml` file, refer to the [Agent HubDetails File](/docs/changetracker/8.2/install/agent/hubdetailsfile) documentation.
+   For more information about the `HubDetails.xml` file, refer to the [Agent HubDetails File](/docs/changetracker/8_2/install/agent/hubdetailsfile) documentation.
 
 8. Start the **Netwrix ChangeTracker Gen7 Agent NetCore** service.
 
@@ -95,6 +95,6 @@ If you are receiving this error, the agent is NOT reporting to your hub. This is
 
    <!-- Image removed: Screenshot showing successful agent connection in the Rolling Log -->
 
-10. You may also confirm that the device is registered via the Netwrix Change Tracker web console.
+10. You can also confirm that the device is registered via the Netwrix Change Tracker web console.
 
     <!-- Image removed: Screenshot showing the device registered in the Netwrix Change Tracker web console -->
