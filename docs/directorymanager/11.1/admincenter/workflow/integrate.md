@@ -14,8 +14,8 @@ You can link an identity store in Directory Manager to Power Automate to achieve
 
 ## Trigger a Flow from Directory Manager
 
-You can link a workflow in an identity store to a flow. Both system and user-defined workflows can
-be linked to flows.
+You can link a workflow in an identity store to a flow. You can link both system and user-defined
+workflows to flows.
 
 - As a one-time process, connect your identity store to Microsoft Power Automate. See the Connect an
   Identity Store to Power Automate topic.
@@ -25,9 +25,9 @@ be linked to flows.
 Consequently, when the identity store workflow triggers, the linked flow triggers automatically.
 
 :::note
-When the flow is approved in Power Automate, the identity store workflow request is auto
-approved. However, if the identity store workflow request is approved first, the flow wouldn't be
-auto approved.
+When you approve the flow in Power Automate, Directory Manager automatically approves the
+identity store workflow request. However, if you approve the identity store workflow request
+first, Power Automate does not automatically approve the flow.
 :::
 
 
@@ -111,7 +111,7 @@ triggers, the linked flow triggers automatically.
     4. Expand the **Start and wait for an approval** area and set up a new connection field, signing in with your Microsoft account when prompted. Click **Save**.
     5. Navigate back to the **Edit** window. Expand the **Manual** area and copy the URL displayed for **HTTP URL**.
 
-9. In Directory Manager, return to the workflow being linked to the flow, and click 
+9. In Directory Manager, return to the workflow you are linking to the flow, and click 
    **Configure a Request URL** on the **Power Automate Settings** dialog box.
 10. Enter the copied HTTP URL in the **Request URL** box.
 11. Close the **Power Automate Settings** dialog box.
