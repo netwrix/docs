@@ -4,11 +4,11 @@ description: "How to disable the Windows password policy rules to avoid conflict
 sidebar_position: 20
 ---
 
-# Disable Windows Rules
+# Disable Windows rules
 
 Windows has its own password policy rules for password history, age, length, and complexity. If you enable both Password Policy Enforcer (PPE) rules and Windows rules, users must comply with both the PPE and Windows rules.
 
-PPE has its own rules for password [history](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/history_rule.md), [minimum age](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/minimum_age_rule.md), [maximum age](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/maximum_age_rule.md), [length](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/length_rule.md), and [complexity](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/complexity_rule.md). While it's possible, and sometimes beneficial, to use PPE and Windows rules together, it can also be confusing when testing PPE. It is therefore recommended to disable the Windows password policy rules while you are experimenting with and testing your PPE configuration.
+PPE has its own rules for password [history](../admin/manage-policies/rules/history_rule.md), [minimum age](../admin/manage-policies/rules/minimum_age_rule.md), [maximum age](../admin/manage-policies/rules/maximum_age_rule.md), [length](../admin/manage-policies/rules/length_rule.md), and [complexity](../admin/manage-policies/rules/complexity_rule.md). While it's possible, and sometimes beneficial, to use PPE and Windows rules together, it can also be confusing when testing PPE. Netwrix therefore recommends disabling the Windows password policy rules while you experiment with and test your PPE configuration.
 
 To disable the Windows password policy rules:
 
@@ -25,8 +25,8 @@ To disable the Windows password policy rules:
 
 ![installing_ppe_3](/images/passwordpolicyenforcer/11.2/evaluation/preparing_the_computer.webp)
 
-:::tip
-Don't set the Windows policies to **Not Configured** as that leaves the previously enforced value in place and doesn't disable the rule. Instead, follow the steps above to explicitly set each numeric policy to **0** and set the complexity policy to **Disabled**.
+:::note
+Don't set the Windows policies to **Not Configured** as that leaves the previously enforced value in place and doesn't disable the rule. Instead, follow the preceding steps to explicitly set each numeric policy to **0** and set the complexity policy to **Disabled**.
 :::
 
 :::note

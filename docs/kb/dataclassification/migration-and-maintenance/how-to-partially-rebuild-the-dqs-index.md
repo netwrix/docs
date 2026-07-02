@@ -13,19 +13,20 @@ keywords:
   - IndexerChecksum
   - DQSID
 products:
-  - data-classification
-sidebar_label: How to Partially Rebuild the DQS Index
+  - dataclassification
+sidebar_label: Partially Rebuilding the DQS Index
 tags:
+  - kb
   - migration-and-maintenance
-title: "How to Partially Rebuild the DQS Index"
+title: "Partially Rebuilding the DQS Index"
 knowledge_article_id: kA04u000000wniXCAQ
 ---
 
-# How to Partially Rebuild the DQS Index
+# Partially Rebuilding the DQS Index
 
 ## Overview
 
-This article describes how to rebuild corrupted indexes on a single server. This process is designed to avoid the effort-intensive method of rebuilding indexes on multiple servers.
+This article describes how to rebuild corrupted indexes on a single Distributed Query Server (DQS) in a Netwrix Data Classification (NDC) deployment. This process avoids rebuilding indexes on all servers.
 
 ## Instructions
 

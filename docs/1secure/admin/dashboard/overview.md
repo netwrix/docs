@@ -19,7 +19,7 @@ page of the application when you sign in.
 ![Dashboard Page for managing user](/images/1secure/admin/dashboard/dashboardpage.webp)
 
 If you are a managed organization user, this page displays insights specific to your organization.
-See the [Organization Statistics](/docs/1secure/admin/dashboard/organizationstatistics.md) topic for additional information.
+See the [Organization Dashboard](/docs/1secure/admin/dashboard/organizationstatistics.md) topic for additional information.
 
 If you are a managing organization (MSP) user, this page provides insights for all your
 organizations.
@@ -55,7 +55,7 @@ along with the number of organizations associated with each status.
 This section lists all managed organizations with the following information:
 
 - Name – Displays the name of an organization. Click an organization name to navigate to the
-  Organization Statistics page. See the [Organization Statistics](/docs/1secure/admin/dashboard/organizationstatistics.md) topic
+  Organization Dashboard page. See the [Organization Dashboard](/docs/1secure/admin/dashboard/organizationstatistics.md) topic
   for additional information.
 
 - Alerts – Displays the total number of alerts triggered for the organization. Click the value to
@@ -99,9 +99,9 @@ Organizations list.
   field and press Enter. The Organizations list displays the data that matches the specified
   keyword.
 - Alert – Select an alert type from the Alert dropdown menu. The organizations with alerts
-  triggered for the selected type are displayed in the list. By default, All is selected.
+  triggered for the selected type appear in the list. By default, All is selected.
 - Health Status – Select a health status from the Health Status dropdown menu. The organizations
-  with the selected heath status are displayed in the list. By default, All is selected . Other
+  with the selected health status appear in the list. By default, All is selected . Other
   statuses are:
 
     - Healthy

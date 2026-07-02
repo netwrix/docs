@@ -25,11 +25,11 @@ This workflow assumes you already have Netwrix Auditor installed with configured
 for a supported data source.
 
 **NOTE:** Access Reviews is a separately licensed product and isn't included with Netwrix Auditor.
-ensure that you have the Access Reviews license enabled in Auditor.
+ensure you have the Access Reviews license enabled in Auditor.
 
 See the [Licenses](/docs/auditor/10.8/admin/settings/licenses.md) topic for additional information.
 
-_Remember,_ there is one single Access Review license for all data sources that can send data to the
+_Remember,_ one Access Review license covers all data sources that can send data to the
 application.
 
 To use Netwrix Auditor Access Reviews with Auditor, complete the following steps.
@@ -57,7 +57,7 @@ information.
 
 **NOTE:** The [Owners & Access Reviews](/docs/auditor/10.8/accessreviews/owneroverview/owneroverview.md) topic and
 subtopics are written for the assigned owners. You can distribute the URL to this topic or download
-a PDF to be distributed to your assigned resource owners.
+a PDF to distribute to your assigned resource owners.
 
 **Step 5 –** Configure and run reviews. The Entitlement Reviews interface is available to users with
 either the Security Team or Administrator role. See the
@@ -80,10 +80,10 @@ Review the following considerations:
    status of items and data sources in Auditor.
 5. Permissions-related considerations:
 
-    - For Windows File Servers, permission data for all items in this data source is sent to the
-      Access Reviews application;
-    - Only effective top-level permissions are sent (share+NTFS);
-    - Permission data is sent per file server (entirely for each server);
+    - For Windows File Servers, Auditor sends permission data for all items in this data source to
+      the Access Reviews application;
+    - Auditor sends only effective top-level permissions (share+NTFS);
+    - Auditor sends permission data per file server (entirely for each server);
     - Transfer of permission data to the Access Reviews application starts when you enable the
       integration for a data source.
 
@@ -91,7 +91,7 @@ Review the following considerations:
    per data collection cycle, with a configurable maximum of **800,000**. Exceeding these limits
    causes upload failures. Before enabling the integration for FSA plans, verify your permission
    count using the
-   [AIC Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.8/auditor-aic-estimation-tool-tool-1.0.1.zip)
+   [AIC Resource Estimation Tool](https://releases.netwrix.com/products/auditor/10.8/auditor-aic-estimation-tool-1.0.7.zip)
    and ensure sufficient system resources. For details on FSA-specific limits, memory requirements,
    and the estimation tool usage, see
    [Managing Access Reviews Integration Limits for File Servers](/docs/kb/auditor/configuration-and-setup/file-server-auditing/managing-access-reviews-integration-limits-for-file-servers).
@@ -109,7 +109,7 @@ Review the following considerations:
           [Modify the Builtin Administrator Account](/docs/auditor/10.8/accessreviews/admin/configuration/consoleaccess.md#modify-the-builtin-administrator-account)
           topic for additional information.
 
-    - Notification — Configure the Notification settings required in order for the application to
+    - Notification — Configure the Notification settings required for the application to
       send email. See the
       [Notifications Page](/docs/auditor/10.8/accessreviews/admin/configuration/notifications.md) topic for
       information.
@@ -160,6 +160,6 @@ Review the following considerations:
 
     **_RECOMMENDED:_** Set expectations for response time from owners.
 
-    Reviews can be run multiple times, maintaining a historical record for each instance. See the
+    You can run reviews multiple times, maintaining a historical record for each instance. See the
     [Reviews Overview](/docs/auditor/10.8/accessreviews/entitlementreviews/overview.md) topic for additional
     information.

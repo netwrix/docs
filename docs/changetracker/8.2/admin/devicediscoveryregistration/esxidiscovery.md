@@ -22,22 +22,22 @@ to vCenter using VMware PowerCLI and returns the list of hosts to the Hub.
 
 ## Run an ESXi / vCenter discovery
 
-**Step 1 –** Navigate to **Settings > Agents and Devices** and click **Discover Devices**.
+**Step 1 –** Navigate to **Settings > Device Discovery**.
 
-**Step 2 –** Select **ESXi / vCenter Discovery** from the discovery type menu.
+**Step 2 –** Select **New Discovery Run > ESXi / vCenter Discovery**.
 
 **Step 3 –** Configure the discovery dialog:
 
 | Field | Description |
 |---|---|
-| **Discovery Device** | The Gen 7 Agent that will execute the vCenter discovery. Click **Select Device** to choose an agent. |
+| **Discovery Device** | The Gen 7 Agent that executes the vCenter discovery. Click **Select Device** to choose an agent. |
 | **Parent Device in Hub** | *(Optional)* An existing device to use as the parent for discovered hosts. If left blank, defaults to the discovery device. |
 | **Credentials** | The stored credential used to authenticate to the vCenter server. |
-| **Device Name Prefix** | The prefix applied to each discovered host name. Defaults to `VM Host`. Discovered devices are named in the format `<prefix> (<hostname>)`, for example `VM Host (esxi-host-01)`. Change this value to match your organization's naming conventions. If you clear the field, discovered devices are named using the hostname only. |
-| **Assign to Group** | The device group that discovered hosts are added to. |
-| **Add new VM Hosts to ChangeTracker** | When selected, hosts found on vCenter that don't already exist in Change Tracker are added as new devices. |
-| **Update existing VM Hosts in ChangeTracker** | When selected, hosts that already exist in Change Tracker are updated with the latest information from vCenter. |
-| **Delete missing VM Hosts from ChangeTracker** | When selected, hosts that exist in Change Tracker but are no longer found on vCenter are removed. |
+| **Device Name Prefix** | The prefix applied to each discovered host name. Defaults to `VM Host`. Discovered devices use the format `<prefix> (<hostname>)`, for example `VM Host (esxi-host-01)`. Change this value to match your organization's naming conventions. If you clear the field, discovered devices use only the hostname. |
+| **Assign to Group** | The device group that receives discovered hosts. |
+| **Add new VM Hosts to ChangeTracker** | When selected, Change Tracker adds hosts found on vCenter that don't already exist as new devices. |
+| **Update existing VM Hosts in ChangeTracker** | When selected, Change Tracker updates existing hosts with the latest information from vCenter. |
+| **Delete missing VM Hosts from ChangeTracker** | When selected, Change Tracker removes hosts that no longer appear on vCenter. |
 
 **Step 4 –** Click **Run** to start the discovery. The discovery status grid shows the progress
 and results of each discovery task.
@@ -51,6 +51,6 @@ following columns:
 - **Operating System** — the ESXi version reported by vCenter (e.g., `ESXi 8.0`).
 - **IP Address** — the management IP address of the host.
 
-Review the results and confirm the devices were added to the correct group. You can re-run
+Review the results and confirm Change Tracker added the devices to the correct group. You can re-run
 discovery at any time to synchronize the device list with vCenter. Use the **Add new**,
-**Update existing**, and **Delete missing** options to control how changes are merged.
+**Update existing**, and **Delete missing** options to control how Change Tracker merges changes.

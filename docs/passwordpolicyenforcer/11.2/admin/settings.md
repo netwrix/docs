@@ -14,21 +14,22 @@ Most Password Policy Enforcer (PPE) settings are policy-specific, but there are 
 
 **Default policy**. Users must comply with the default password policy if you haven't assigned another policy to them. You can use PPE without a default policy, but Netwrix doesn't recommend this because it might leave some passwords unchecked. If you need to exclude some users from PPE's checking, then it's better to set a default policy and explicitly exclude some users:
 
-1. [Add a policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md) for the excluded users.
+1. [Add a policy](manage-policies/manage_policies.md#add-a-policy) for the excluded users.
 2. Leave all the rules disabled for the new policy.
-3. [Assign the policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) to the users who don't have to comply with any PPE rules.
+3. [Assign the policy](manage-policies/usersgroups.md) to the users who don't have to comply with any PPE rules.
 
 :::tip
-Use the [Test Policy by User](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md) feature to see which policy PPE enforces for a particular user. You can also review the [Policy Selection Flowchart](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
+Use the [Test Policy by User](manage-policies/testpolicy.md) feature to see which policy PPE enforces for a particular user. You can also review the [Policy Selection Flowchart](manage-policies/usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
 :::
 
-**Enforce policy when password is reset**. Select this option to enforce the assigned password policy whenever someone resets a password or creates a new user account. This option doesn't change the behavior of the [Minimum Age rule](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/minimum_age_rule.md), as PPE never enforces this rule during a reset. PPE only enforces the [History rule](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/history_rule.md) during a reset if you select this checkbox, and also select the History Rule's **Enforce this rule when a password is reset** checkbox.
+**Enforce policy when password is reset**. Select this option to enforce the assigned password policy whenever someone resets a password or creates a new user account. This option doesn't change the behavior of the [Minimum Age rule](manage-policies/rules/minimum_age_rule.md), as PPE never enforces this rule during a reset. PPE only enforces the [History rule](manage-policies/rules/history_rule.md) during a reset if you select this checkbox, and also select the History Rule's **Enforce this rule when a password is reset** checkbox.
 
-**Accept encrypted client request only**. Select this option to have Password Policy Enforcer reject any unencrypted requests from very old versions of the Password [Policy Client](/docs/passwordpolicyenforcer/11.2/admin/password-policy-client/password_policy_client.md), Netwrix Password Reset, and [PPE Web](/docs/passwordpolicyenforcer/11.2/web-overview/web_overview.md). These requests don't contain passwords or password hashes, but Netwrix still recommends requiring encryption for all requests. This setting applies only to the legacy UDP protocol. The newer RPC protocol always uses encryption.
+**Accept encrypted client request only**. Select this option to have Password Policy Enforcer reject any unencrypted requests from very old versions of the [Password Policy Client](password-policy-client/password_policy_client.md), Netwrix Password Reset, and [PPE Web](../web-overview/web_overview.md). These requests don't contain passwords or password hashes, but Netwrix still recommends requiring encryption for all requests. This setting applies only to the legacy UDP protocol. The newer RPC protocol always uses encryption.
 
 **Log event when password not checked by service**. Select this option to log an event to the Windows Application Event Log whenever PPE doesn't check a password. This can happen if:
+
 - Password Policy Enforcer is disabled.
-- The policy [assigned](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/usersgroups.md) to a user is disabled.
+- The policy [assigned](manage-policies/usersgroups.md) to a user is disabled.
 - No policy is assigned to a user, or an error occurs when determining the assigned policy, and a default policy isn't specified.
 - Someone resets a password, and **Enforce policy when password is reset** isn't selected.
 
@@ -42,7 +43,7 @@ The Password Policy Client and the Password Policy Server each enforce most PPE 
 
 **Use old icons in Live Policy Feedback**. Select this option if you don't want to use the new, colored icons on the change password screen when the Password Policy Client is installed.
 
-**RPC Port**. The Password Policy Client communicates with the server over a Remote Procedure Call (RPC) port. Enter a different port number if another service uses the default port in your environment. The default port number is 1344. You must also [configure the Password Policy Client](/docs/passwordpolicyenforcer/11.2/admin/password-policy-client/configuring_the_password_policy_client.md) to use the new port.
+**RPC Port**. The Password Policy Client communicates with the server over a Remote Procedure Call (RPC) port. Enter a different port number if another service uses the default port in your environment. The default port number is 1344. You must also [configure the Password Policy Client](password-policy-client/configuring_the_password_policy_client.md) to use the new port.
 
 ## Notifications
 
@@ -55,16 +56,16 @@ Password Policy Enforcer sends notification emails to users and administrators. 
 **Save email to a pickup folder**. Select this option if you want PPE to send email notifications to a pickup folder for collection and delivery by a mail server. Configure the mail server to monitor this folder. Enter the path to the pickup folder, or click **Browse** to select it.
 
 :::note
-Notification settings are only available when you're [connected to](/docs/passwordpolicyenforcer/11.2/admin/configconsole.md#connect-to-a-configuration) a domain configuration.
+Notification settings are only available when you're [connected to](configconsole.md#connect-to-a-configuration) a domain configuration.
 :::
 
 :::tip
 The PPE Mailer sends emails at 2:00 AM every day (local server time). Check the Windows Application Event Log to monitor it. You can also run `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPEMail.exe` to troubleshoot problems. Run it without arguments to simulate a run without delivering email. If there are no warnings or errors, then run it again with the /send argument to conduct a full run with delivery. Use /send judiciously to avoid sending duplicate emails to users.
 
-The default Google OAuth2 timeout is 60 seconds. You can change this by setting `Configuration.GoogleOAuthTimeout` in `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPEConfiguration.json`
+The default Google OAuth2 timeout is 60 seconds. You can change this by setting `Configuration.GoogleOAuthTimeout` in `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPEConfiguration.json`.
 :::
 
-## Mail Service
+## Mail service
 
 Install the Password Policy Enforcer Mailer Service on one server in the domain. Use the settings in the **Mail Service** tab to allow PPE to locate the mailer service.
 
@@ -83,4 +84,4 @@ Use the **License** tab to view and update your license key.
 
 **Paste license from clipboard**. Copy your new license key to the clipboard, then click **Paste license from clipboard** to update the license key.
 
-The **Users** number on this tab shows how many users are licensed to use PPE with the installed license key. **AD Users** is the total number of Active Directory user accounts in the domain, and the **In use** number is the total number of user accounts, less disabled accounts.
+The **Users** number on this tab shows how many users are licensed to use PPE with the installed license key. **AD Users** is the total number of Active Directory user accounts in the domain, and the **In use** number is the total number of user accounts, excluding disabled accounts.

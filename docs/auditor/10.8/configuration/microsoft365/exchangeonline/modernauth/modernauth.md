@@ -109,7 +109,7 @@ service principal using Microsoft Entra ID Admin portal:
 Follow the steps to grant the required Microsoft Entra ID (formerly Azure AD) roles to the new
 application.
 
-**Step 1 –** In the Entra portal, click **View** under Manage Azure Active Directory.
+**Step 1 –** In the Entra portal, click **View** under Manage Microsoft Entra ID.
 
 **Step 2 –** Select **Roles and admins** under Applications .
 
@@ -121,8 +121,8 @@ application.
 and click Add.
 
 See the following Microsoft article for additional information on how to create an application and
-service principal using Azure AD Admin portal:
-[Create an Azure Active Directory application and service principal that can access resources](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal).
+service principal using Microsoft Entra ID Admin portal:
+[Create a Microsoft Entra ID application and service principal that can access resources](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal).
 
 ### Configure Client Secret
 

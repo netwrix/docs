@@ -15,7 +15,7 @@ authentication. After successful authentication, the IdP redirects back to the H
 user in automatically. Standard username/password login remains available alongside it.
 
 On a user's first login, Change Tracker automatically creates a local account — no
-pre-registration is required. On subsequent logins, the user's roles are updated to reflect any
+pre-registration is required. On subsequent logins, Change Tracker updates the user's roles to reflect any
 changes made in the IdP since their last login.
 
 :::note
@@ -39,7 +39,7 @@ Collect the following from your identity provider before configuring Change Trac
 :::note
 Most OIDC-compliant IdPs publish a discovery document at
 `https://<your-idp>/.well-known/openid-configuration` that lists all endpoint URLs. Change Tracker
-doesn't use this document automatically — endpoint URLs must be supplied individually. However,
+doesn't use this document automatically — you must supply endpoint URLs individually. However,
 the discovery document can save time locating each URL.
 :::
 
@@ -161,7 +161,8 @@ After running the Maintenance App, restart the Hub service for the changes to ta
 
 **Option 2 — Edit appsettings.Production.json directly**
 
-Open `<Hub install directory>\Configs\appsettings.Production.json` and add or update the OIDC
+Open `\inetpub\wwwroot\Change Tracker Generation 7
+(NetCore) Hub\Configs\appsettings.Production.json` and add or update the OIDC
 section:
 
 ```json
@@ -229,7 +230,7 @@ key that contains a list of role or group names. Use that exact string as `roles
 }
 ```
 
-`rolesClaimKey` must be set to `https://your-domain.com/roles` — the entire string including the
+Set `rolesClaimKey` to `https://your-domain.com/roles` — the entire string including the
 URL prefix.
 
 ---
@@ -239,11 +240,10 @@ URL prefix.
 When a user logs in through OIDC, Change Tracker reads the roles claim from the IdP response and
 resolves each role to a Change Tracker role using this sequence:
 
-1. If an explicit mapping is configured for the IdP role name, the mapped Change Tracker role is
-   used.
-2. If no mapping exists but the IdP role name exactly matches a known Change Tracker role name, it
-   is used directly.
-3. If neither condition is met, Change Tracker discards the role and writes a warning to the Hub
+1. If an explicit mapping exists for the IdP role name, Change Tracker uses the mapped role.
+2. If no mapping exists but the IdP role name exactly matches a known Change Tracker role name,
+   Change Tracker uses it directly.
+3. If neither condition applies, Change Tracker discards the role and writes a warning to the Hub
    log.
 
 If no valid roles remain after this process, Change Tracker assigns the user the default `user`
@@ -270,7 +270,7 @@ The `agent` role is reserved for device monitoring agents and can't be assigned 
 
 ### Configure role mappings
 
-Role mapping is needed when your IdP uses role or group names that don't match Change Tracker role
+You need role mapping when your IdP uses role or group names that don't match Change Tracker role
 names. For example, if your Active Directory group is named `CT-Administrators` but you want those
 users to get the Change Tracker `admin` role, define a mapping.
 
@@ -305,7 +305,7 @@ in the token. For example, `oidc:rolemap:CT-Administrators` matches only `CT-Adm
 When an OIDC user logs in for the first time, Change Tracker automatically creates a local account
 for them. No pre-registration is required.
 
-The new account is created with:
+Change Tracker creates the new account with:
 
 | Field | Source |
 |---|---|
@@ -381,9 +381,9 @@ Tracker reflects the MFA status in the user's session. No additional configurati
 
 The following items aren't supported in the current release:
 
-- **Automatic OIDC endpoint discovery**: Endpoint URLs must be supplied individually. Automatic
-  discovery from a `.well-known/openid-configuration` URL isn't supported.
-- **Multiple simultaneous OIDC providers**: Only one OIDC provider can be configured at a time.
+- **Automatic OIDC endpoint discovery**: You must supply endpoint URLs individually. Change
+  Tracker doesn't support automatic discovery from a `.well-known/openid-configuration` URL.
+- **Multiple simultaneous OIDC providers**: You can configure only one OIDC provider at a time.
 - **Group-to-device group mapping**: Role mapping assigns Change Tracker roles only. Mapping IdP
   groups to Change Tracker device access groups isn't supported.
 - **SAML**: SAML-based SSO isn't supported.
@@ -396,7 +396,7 @@ The following items aren't supported in the current release:
 
 - Verify `enabled` is set to `"true"` under `security:oauth:oidc` in
   `appsettings.Production.json`.
-- Confirm the Hub service has been restarted after the configuration change.
+- Confirm you've restarted the Hub service after the configuration change.
 - OIDC SSO is unavailable in SaaS deployments; confirm you're running an on-premises Hub.
 
 **Login redirects to the IdP but fails to return**
@@ -432,6 +432,6 @@ The following items aren't supported in the current release:
 
 **Roles aren't updating after being changed in the IdP**
 
-- Roles are re-synced on every login. The user must log out and log back in via OIDC for role
-  changes to take effect.
+- Change Tracker re-syncs roles on every login. The user must log out and log back in via OIDC
+  for role changes to take effect.
 - Verify that the updated roles are present in the IdP's token or UserInfo response.

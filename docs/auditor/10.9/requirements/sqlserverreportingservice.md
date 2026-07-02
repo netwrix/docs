@@ -1,0 +1,104 @@
+---
+title: "SQL Server Reporting Services"
+description: "SQL Server Reporting Services"
+sidebar_position: 50
+---
+
+# SQL Server Reporting Services
+
+Netwrix Auditor uses SQL Server Reporting Services (SSRS) engine for report generation.
+
+If you want to generate reports and run search queries against data collected by Netwrix Auditor,
+you should configure SQL Server Reporting Services (2012 R2 and above required).
+
+**NOTE:** Starting with SQL Server 2025, Microsoft has discontinued SSRS and replaced it with
+**Power BI Report Server (PBIRS)** as the default on-premises reporting solution. PBIRS is a superset of SSRS and supports all existing SSRS (RDL) capabilities. See the [Reporting Services consolidation FAQ](https://learn.microsoft.com/en-us/sql/reporting-services/reporting-services-consolidation-faq) for details about the discontinuation and migration options.
+
+Consider the following:
+
+- SQL Server and SQL Server Reporting Services (or Power BI Report Server for SQL Server 2025+)
+  can be deployed on separate machines only in commercial edition. SQL Server Express Edition
+  with Advanced Services doesn't support such deployment scenario.
+- Power BI Report Server is available for SQL Server 2025 Enterprise and Standard editions.
+  For SQL Server 2022 and earlier Enterprise editions, PBIRS usage rights apply only to core
+  licenses with active Software Assurance (SA).
+- SSRS can still be used, and its databases can be hosted on Microsoft SQL Server, including SQL Server 2025.
+
+**NOTE:** Netwrix recommends using HTTPS instead of HTTP. Also configure HTTPS for the Reporting Service.
+
+If you plan, however, not to use Netwrix Auditor built-in intelligence (search, alerts, or reports)
+but only to receive e-mail notifications on audit data collection results, you may not need to
+configure SSRS/PBIRS or audit database settings.
+
+## Configure SSRS / PBIRS Account
+
+An account used to upload data to the SQL Server Reporting Services (SSRS) or Power BI Report
+Server (PBIRS) must be granted the Content Manager role on the report server **Home** folder.
+
+**NOTE:** You can't use gMSA to access SSRS/PBIRS. Use a standard account for that purpose.
+
+To assign the Content Manager role:
+
+**Step 1 –** Navigate to your **Report Manager** URL.
+
+**Step 2 –** On the Home page, navigate to **Folder Settings** and click **New Role Assignment**
+(the path can slightly vary depending on your SQL Server version).
+
+**Step 3 –** Specify an account in the following format: _domain\user_. The account must belong to
+the same domain where Netwrix Auditor is installed, or to a trusted domain.
+
+**Step 4 –** Select **Content Manager**.
+
+## Grant Additional Permissions on Report Server
+
+To be able to generate a report, any user assigned the Global administrator, Global reviewer, or
+Reviewer role must have the Browser role on the Report Server. Netwrix Auditor grants this
+role automatically when adding a user. If for some reason the product was unable to grant the role,
+do it manually.
+
+To assign the Browser role to a user:
+
+**Step 1 –** Open the **Report Manager** URL in your web browser.
+
+**Step 2 –** Depending on the user's delegated scope, select the entire Home folder or drill-down to
+specific data sources or event reports.
+
+**Step 3 –** Navigate to **Manage Folder** (the path can slightly vary depending on your SQL Server
+version) and select Add group or user.
+
+**Step 4 –** Specify an account in the following format: _domain\user_. The account must belong to
+the same domain where Netwrix Auditor Server is installed, or to a trusted domain.
+
+**Step 5 –** Select **Browser**.
+
+In general, Auditor can use Reporting Services with the default settings. However, to ensure that
+Reporting Services is properly configured, perform the following procedure:
+
+Log in as a member of the local Administrators group on the computer where SQL Server
+2016 Express is installed.
+
+To verify Reporting Services installation:
+
+**Step 6 –** Navigate to **Start >All Apps > SQL Server Reporting Services Configuration Manager** (for SSRS) or **Power BI Report Server Configuration Manager** (for PBIRS on SQL Server 2025+).
+
+**Step 7 –** In the Reporting Services Configuration Connection dialog, ensure that your local
+report server instance (for example, _SQLExpress_) is selected, and click **Connect**.
+
+**Step 8 –** In the **Reporting Services Configuration Manager** left pane, select **Web Service
+URL**. Ensure that:
+
+- **Virtual Directory** is set to _ReportServer_`<YourSqlServerInstanceName>`_ (e.g.,
+  \_ReportServer_SQLEXPRESS_ for _SQLEXPRESS_ instance)
+- **TCP Port** is set to _80_
+
+**Step 9 –** In the Reporting Services Configuration Manager left pane, select **Database**. Make
+sure that the SQL Server Name and Database Name fields contain correct values. If necessary, click
+**Change Database** and complete the Report Server Database Configuration wizard.
+
+**Step 10 –** In the Reporting Services Configuration Manager left pane, select **Report Manager
+URL**. Ensure **Virtual Directory** is set correctly, and that the URL is valid.
+
+**NOTE:** If you use a **Group Managed Service Account (gMSA)** to access the SQL Server instance that hosts the Netwrix Auditor database, Netwrix Auditor can't generate SSRS-based reports.
+This limitation occurs because SQL Server Reporting Services doesn't support using gMSA for the Unattended Execution Account.
+For more details, see the Microsoft documentation:
+[Configure the Unattended Execution Account (Report Server Configuration Manager)](https://docs.microsoft.com/en-us/sql/reporting-services/install-windows/configure-the-unattended-execution-account-ssrs-configuration-manager?view=sql-server-ver15).	

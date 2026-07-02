@@ -10,13 +10,12 @@ The **Classifier** configuration tab contains the classification engine settings
 standard options are displayed. To view advanced options, click the "wrench" icon at **Settings** in
 the bottom-right corner.
 
-Each option has an associated “**i**” which describes the nature of the setting.
+Each option has an associated information popup (the “**i**” symbol next to the option name) which describes what the setting does and how it works.
 
 ![core_thumb_0_0](/images/dataclassification/5.7/configuration/core_thumb_0_0.webp)
 
 :::note
-To view a complete list of the **Config** settings, click the Details tab. The list also
-has an indication of the values that have been changed from the default setting.
+To view a complete list of the **Config** settings for your NDC instance, click the Details tab. The list indicates if a setting has been changed from the default value.
 :::
 
 
@@ -31,5 +30,5 @@ You can also use the following option buttons:
 
 - Start Product Tour—Run a product tour taking you around the key areas of the product.
 - Run Cleaner—Run built-in tool to automate maintenance operations.
-  [See Index Maintenance for more information.](/docs/dataclassification/5.7/systemconfigurationoverview/administration/indexmaintenance/indexmaintenance.md)
+  See [Index Maintenance](/docs/dataclassification/5.7/systemconfigurationoverview/administration/indexmaintenance/indexmaintenance.md) for instructions on using the Index Cleaner tool.
 - Reset Cache—Force the QS caches to be reset.

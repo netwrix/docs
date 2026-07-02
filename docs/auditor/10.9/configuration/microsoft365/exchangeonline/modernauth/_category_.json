@@ -1,0 +1,10 @@
+{
+  "label": "Access Exchange Online Using Modern Authentication",
+  "position": 30,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "modernauth"
+  }
+}
