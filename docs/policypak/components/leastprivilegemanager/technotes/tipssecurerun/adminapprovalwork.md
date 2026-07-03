@@ -15,7 +15,7 @@ As of CSE version 23.8.xxxx and higher, if the **Show Admin Approval dialog for 
 applications** is disabled,then the decision on whether to show the Admin Approval dialog will be
 based on the following:
 
-SCENARIO 1: If SecureRun is disabledthen the Admin Approval dialog must notbe shown.
+SCENARIO 1: If SecureRun is disabled, the checkbox makes no difference. The Admin Approval dialog will not appear for processes based on image file ownership. It will still appear for processes that require elevation.
 
 SCENARIO 2: If SecureRun is enabled:
 
