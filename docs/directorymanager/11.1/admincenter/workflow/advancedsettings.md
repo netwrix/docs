@@ -17,17 +17,17 @@ Functions discussed in this topic are licensed under different add-ons. See the
 
 ## Specify a Default Approver
 
-You can designate a recipient as the default approver for workflow requests. Requests are routed to
-this recipient based on the following rules:
+You can designate a recipient as the default approver for workflow requests. Directory Manager routes
+requests to this recipient based on the following rules:
 
-- When approver acceleration is not enabled, the applicable rules are discussed in the
+- When approver acceleration isn't enabled, the applicable rules are discussed in the
   [Workflow Approval Scenarios](overview.md#workflow-approval-scenarios) topic.
 - When approver acceleration is enabled:
 
-    - A request is sent to the default approver when the last approver in the acceleration chain
-      does not approve or deny it within the specific number of days.
-    - A request is routed to the default approver when the hierarchy breaks at any point in the
-      acceleration chain. For example, if the maximum acceleration level is set to 3 but there is no
+    - Directory Manager sends a request to the default approver when the last approver in the
+      acceleration chain doesn't approve or deny it within the specific number of days.
+    - Directory Manager routes a request to the default approver when the hierarchy breaks at any
+      point in the acceleration chain. For example, if the maximum acceleration level is set to 3 but there is no
       recipient to accelerate the request after second level acceleration, the request goes to the
       default approver.
 

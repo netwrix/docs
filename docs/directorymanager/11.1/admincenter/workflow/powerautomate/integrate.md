@@ -90,7 +90,7 @@ triggers, the linked flow triggers automatically.
 
     ![pa_template_message](/images/directorymanager/11.1/admincenter/workflow/pa_template_message.webp)
 
-7. The next step is to copy the flow URL from Power Automate and provide it here. To copy the URL,
+7. Next, copy the flow URL from Power Automate and provide it here. To copy the URL,
    do the following:
 
     1. Launch Power Automate, choose your environment, and navigate to **My Flows**. This page displays the 
