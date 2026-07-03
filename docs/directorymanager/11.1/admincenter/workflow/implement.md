@@ -211,8 +211,8 @@ approver acceleration, and link it to a Power Automate flow.
    update the required information.
 6. To link this workflow to a Power Automate flow, click **Power Automate Settings** in the top
    right corner; the **Power Automate Settings** dialog box is displayed. Follow step
-   [6](/docs/directorymanager/11.1/admincenter/workflow/integrate.md) and onwards in the
-   [Link an Identity Store Workflow to a Flow](integrate.md#link-an-identity-store-workflow-to-a-flow)
+   [6](/docs/directorymanager/11.1/admincenter/workflow/powerautomate/integrate.md) and onwards in the
+   [Link an Identity Store Workflow to a Flow](powerautomate/integrate.md#link-an-identity-store-workflow-to-a-flow)
    topic to complete the task.
 7. After making the required changes, click **Update Workflow** on the **Edit Workflow** page to
    save the settings.

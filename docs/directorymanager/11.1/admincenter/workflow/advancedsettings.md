@@ -92,4 +92,4 @@ example, you can delete the ‘denied’ requests that are old by 30 days or mor
 ## Integrate with Microsoft Power Automate
 
 You can also link your Power Automate flows to Directory Manager workflows. For details, see the
-[Integrate with Power Automate](/docs/directorymanager/11.1/admincenter/workflow/integrate.md) topic.
+[Integrate with Power Automate](/docs/directorymanager/11.1/admincenter/workflow/powerautomate/integrate.md) topic.

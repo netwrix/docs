@@ -17,26 +17,28 @@ You can link an identity store in Directory Manager to Power Automate to achieve
 You can link a workflow in an identity store to a flow. You can link both system and user-defined
 workflows to flows.
 
-- As a one-time process, connect your identity store to Microsoft Power Automate. See the Connect an
-  Identity Store to Power Automate topic.
-- Link a workflow to a flow by providing the URL of that flow in the workflow .See the Link an
-  Identity Store Workflow to a Flow topic.
+- As a one-time process, connect your identity store to Microsoft Power Automate. See the
+  [Connect an Identity Store to Power Automate](#connect-an-identity-store-to-power-automate) topic.
+- Link a workflow to a flow by providing the URL of that flow in the workflow. See the
+  [Link an Identity Store Workflow to a Flow](#link-an-identity-store-workflow-to-a-flow) topic.
 
 Consequently, when the identity store workflow triggers, the linked flow triggers automatically.
 
 :::note
 When you approve the flow in Power Automate, Directory Manager automatically approves the
 identity store workflow request. However, if you approve the identity store workflow request
-first, Power Automate does not automatically approve the flow.
+first, Power Automate doesn't automatically approve the flow.
 :::
 
 
 ### Before you begin
 
-1. Check the SSL certificate for the Directory Manager server and ensure it is valid. If the certificate is invalid, replace it before proceeding.
-2. Ensure the Directory Manager server is deployed on a machine that is exposed over the
-   Internet, as Power Automate needs to communicate with the Directory Manager server for processing
-   requests. Power Automate can't communicate with a server deployed on a machine behind NAT.
+1. Check the SSL certificate for the Directory Manager server and ensure it is valid and issued by a
+   publicly trusted CA, as Power Automate runs in Microsoft's cloud and validates the proxy's TLS
+   certificate against the Microsoft Trusted Root Program. Power Automate silently rejects
+   certificates from internal or private CAs.
+2. Ensure that Power Automate Reverse Proxy is deployed on the same machine as Directory Manager. If
+   not, [install Reverse Proxy](installproxy.md) before proceeding.
 
 
 ### Connect an Identity Store to Power Automate
@@ -57,24 +59,14 @@ service and the Power Automate platform.
 
     - **Organization Code** - the unique name for the environment that stores your flows in Power
       Automate (the segment before the first period; for example, myorg in myorg.crm.dynamics.com).
-    - **Region** - the location of your environment.
+    - **Region** - the location of your environment (the segment before the second period; 
+      for example, crm in myorg.crm.dynamics.com).
     - **Tenant ID** - the tenant ID assigned to the Directory Manager application when you
       registered it in Microsoft Entra Admin Center.
     - **Client ID** - the application ID assigned to the Directory Manager application when you
       registered it in Microsoft Entra Admin Center.
     - **Client Secret** - the client secret value to the Directory Manager application when you
-      registered it in Microsoft Entra Admin Center.      
-    - **Proxy Callback URL** - the URL of the Reverse Proxy. Requests from Power Automate will communicate 
-      with the Reverse Proxy which will redirect request to Data service endpoint. The URL is as:
-      `https://<proxy-host>:<proxy-port>` For example: https://powerautomate-proxy:5555
-    
-    :::note
-    The Directory Manager application in Microsoft Entra Admin Center must have the following
-    permissions for Power Automate:
-
-    ![pa_permissions](/images/directorymanager/11.1/admincenter/workflow/pa_permissions.webp)
-    :::
-
+      registered it in Microsoft Entra Admin Center.
 
 7. Click **Save** on the **Advanced Workflow Settings** page.
 
@@ -98,11 +90,11 @@ triggers, the linked flow triggers automatically.
 
     ![pa_template_message](/images/directorymanager/11.1/admincenter/workflow/pa_template_message.webp)
 
-8. The next step is to copy the flow URL from Power Automate and provide it here. To copy the URL,
+7. The next step is to copy the flow URL from Power Automate and provide it here. To copy the URL,
    do the following:
 
     1. Launch Power Automate, choose your environment, and navigate to **My Flows**. This page displays the 
-      flow you created in Power Automate from the Directory Manager workflow.
+       flow you created in Power Automate from the Directory Manager workflow.
     2. Hover the mouse over the flow to display the ellipsis button. Click it and select **Edit**.
 
     ![connections_area](/images/directorymanager/11.1/admincenter/workflow/connections_area.webp)
@@ -111,13 +103,13 @@ triggers, the linked flow triggers automatically.
     4. Expand the **Start and wait for an approval** area and set up a new connection field, signing in with your Microsoft account when prompted. Click **Save**.
     5. Navigate back to the **Edit** window. Expand the **Manual** area and copy the URL displayed for **HTTP URL**.
 
-9. In Directory Manager, return to the workflow you are linking to the flow, and click 
+8. In Directory Manager, return to the workflow you are linking to the flow, and click 
    **Configure a Request URL** on the **Power Automate Settings** dialog box.
-10. Enter the copied HTTP URL in the **Request URL** box.
-11. Close the **Power Automate Settings** dialog box.
-12. Click **Update Workflow** on the **Edit Workflow** page to save the settings.
-13. Click **Save** on the **Workflows** page.
-14. Next, enable the linked flow in Power Automate. To do so:
+9. Enter the copied HTTP URL in the **Request URL** box.
+10. Close the **Power Automate Settings** dialog box.
+11. Click **Update Workflow** on the **Edit Workflow** page to save the settings.
+12. Click **Save** on the **Workflows** page.
+13. Next, enable the linked flow in Power Automate. To do so:
 
     1. In Power Automate, choose your environment and navigate to **My Flows**. This page
        displays the flow you created in Power Automate from the Directory Manager workflow.
