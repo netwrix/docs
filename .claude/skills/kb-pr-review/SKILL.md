@@ -113,7 +113,7 @@ Run Vale against each file in `KB_FILES`:
 vale --config .vale.ini <file>
 ```
 
-Capture the full output per file. Vale will apply both `Netwrix` and `NetwrixKB` rules based on the path. KB files under `docs/kb/` should fire `NetwrixKB.*` rules.
+Capture the full output per file. `.vale.ini` scopes `BasedOnStyles = NetwrixKB` to `docs/kb/**/*.md`, which replaces (not merges with) the repo-wide `Netwrix` style — so KB files fire `NetwrixKB.*` rules only. Any KB-relevant checks from `Netwrix` are re-implemented in `NetwrixKB`.
 
 If Vale is not installed or returns an error, note this in the report and continue to Step 7.
 
