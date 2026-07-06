@@ -95,9 +95,17 @@ Stay on the PR branch for the rest of the session. All fixes and commits will be
 
 ---
 
-### Step 5 — File placement check
+### Step 5 — Validate file list and check placement
 
-For each file in `KB_FILES`, check whether the path contains a nested `kb/` subfolder pattern inside a non-KB parent — for example `docs/kb/product/kb/article.md`. A file placed at any depth below a second `kb/` segment is misplaced.
+First, drop any files from `KB_FILES` that don't exist on disk. `gh pr diff --name-only` (Step 3) includes files deleted in the PR — after checkout those paths are gone, so Vale/Dale/Derek would error on them:
+
+```bash
+for f in $KB_FILES; do [ -f "$f" ] && echo "$f"; done
+```
+
+If any files were dropped, note them in the report under `Files deleted in PR (not reviewed):` and list the paths. If `KB_FILES` is empty after filtering, output: `All KB files in PR #<PR> were deletions — nothing to review.` and stop.
+
+Then, for each remaining file in `KB_FILES`, check whether the path contains a nested `kb/` subfolder pattern inside a non-KB parent — for example `docs/kb/product/kb/article.md`. A file placed at any depth below a second `kb/` segment is misplaced.
 
 Flag any such files with:
 
