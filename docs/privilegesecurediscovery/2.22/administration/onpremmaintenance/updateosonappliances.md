@@ -6,10 +6,6 @@ sidebar_position: 40
 
 # Update Privilege Secure OS on Appliances
 
-Update Privilege Secure OS on Appliances
-
-# Update Privilege Secure OS on Appliances
-
 The best practice for installing Privilege Secure OS updates is to do so during a scheduled
 maintenance window. This prevents a potential issue should an
 update require a reboot of the server or Docker service.
@@ -27,7 +23,7 @@ Privilege Secure will be offline for 30-60 minutes.
 - 30-60 minute scheduled maintenance window with expected downtime
 - [Install the S1 CLI Helper Utility ](../../installation/s1clihelperutility.md)
 
-## Use Case: Cluster In-Place (1 node at a Time, No Downtime)
+## Use Case: Cluster In-Place (1 Node at a Time, No Downtime)
 
 For a 3-node clustered Netwrix Privilege Secure Discovery (NPSD) deployment, a failover is optional.
 Complete the following high-level steps during the change window.
@@ -36,10 +32,7 @@ Check DB replication status, "stateStr" should be "PRIMARY" or "SECONDARY"; and 
 difference, a few seconds is acceptable:
 
 ```
-mEvl="sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongo SecureONESecureONE --quiet --eval"; $mEvl 'rs.status()' | grep "name\|stateStr\|lastHeartbeatRecv\|
-\|lastHeartbeatMessage" | column -t; echo; $mEvl 'rs.printSlaveReplicationInfo()'; unset
-mEvl
-
+mEvl="sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongo SecureONE --quiet --eval"; $mEvl 'rs.status()' | grep "name\|stateStr\|lastHeartbeatRecv\|lastHeartbeatMessage" | column -t; echo; $mEvl 'rs.printSlaveReplicationInfo()'; unset mEvl
 ```
 
 **NOTE:** If the database replication isn't in a healthy state, resolve that before continuing.
@@ -50,7 +43,7 @@ Primary node only: Check Privilege Secure services and nodes status:
 s1 status; s1 nodes
 ```
 
-SSH to the node being updated
+SSH to the node being updated.
 
 **Step 1 –** Confirm the Docker version on each node.
 ```
@@ -62,7 +55,7 @@ Ensure the Docker version isn't at or above 29.x.x. If the version is 29.x.x or 
 proceed with the update; contact Netwrix support before continuing.
 :::
 
-**Step 2 –** On each node, confirm that the following 3 Docker packages have a hold on them.
+**Step 2 –** On each node, confirm that the following three Docker packages have a hold on them.
 ```
 sudo apt-mark showhold
 ```
@@ -72,8 +65,8 @@ If the command doesn't return any results, then go to Step 3.
 ```
 sudo apt-mark hold docker-ce docker-ce-cli containerd.io
 ```
-  
-**Step 4 –** Download Update Package Information.
+
+**Step 4 –** Download update package information.
 ```
 sudo apt update; sudo apt list --upgradable
 ```
@@ -122,7 +115,7 @@ sudo cat /var/run/reboot-required
 **Step 8 –** Check Privilege Secure services and nodes status.
 
 ```
-s1 status; s1 node
+s1 status; s1 nodes
 ```
 
 **Step 9 –** Move on to the next node.
@@ -133,13 +126,13 @@ s1 status; s1 node
 
 ## Use Case: Single-Node (Downtime During Reboot)
 
-**Step 1 –** Check Privilege Secure services and nodes' status.
+**Step 1 –** Check Privilege Secure services and nodes status.
 
 ```
 s1 status; s1 nodes
 ```
 
-**Step 2 –** Confirm the Docker version on the node, with the following command.
+**Step 2 –** Confirm the Docker version on the node.
 ```
 docker --version
 ```
@@ -149,7 +142,7 @@ Ensure the Docker version isn't at or above 29.x.x. If the version is 29.x.x or 
 proceed with the update; contact Netwrix support before continuing.
 :::
 
-**Step 3 –** On the node, confirm that the following 3 Docker packages have a hold on them via the command.
+**Step 3 –** On the node, confirm that the following three Docker packages have a hold on them.
 ```
 sudo apt-mark showhold
 ```
@@ -160,8 +153,8 @@ If the command doesn't return any results, then go to Step 4.
 ```
 sudo apt-mark hold docker-ce docker-ce-cli containerd.io
 ```
-  
-**Step 5 –** Download Update Package Information.
+
+**Step 5 –** Download update package information.
 ```
 sudo apt update; sudo apt list --upgradable
 ```
@@ -170,8 +163,8 @@ sudo apt update; sudo apt list --upgradable
 ```
 sudo apt -y upgrade
 ```
-- If prompted to replace a configuration file or setting, always use the option to keep the existing
-  configurations, setting, or file.
+**NOTE:** If prompted to replace a configuration file or setting, always use the option to keep the
+existing configurations, settings, or files.
 
 **Step 7 –** Reboot if required.
 
@@ -182,7 +175,7 @@ sudo cat /var/run/reboot-required
 - Result if reboot is required:  "\*\*\* System restart required \*\*\*"
 - Result if reboot not required:  "cat: /var/run/reboot-required: No such file or directory"
 - If required, reboot node.
-    
+
 ```
 sudo reboot
 ```
