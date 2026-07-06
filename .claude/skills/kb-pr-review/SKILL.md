@@ -24,15 +24,13 @@ Follow every step in order. Do not skip steps or reorder them.
 
 ### Step 0 — Confirm context
 
-Verify you are in the docs repo root before proceeding:
+Confirm you are at the docs repo root before proceeding:
 
 ```bash
-pwd
+git rev-parse --show-toplevel
 ```
 
-Expected: `/Users/hilaryramirez/Documents/KB projects/docs`
-
-If you are not there, `cd` to it before continuing. All paths below are relative to this root.
+If the returned path is not your local `netwrix/docs` clone root, `cd` to that root before continuing. All paths below are relative to this root.
 
 ---
 
@@ -63,26 +61,37 @@ gh pr diff <PR> --name-only | grep "^docs/kb/.*\.md$"
 
 ---
 
-### Step 4 — Check out the PR branch
+### Step 4 — Prepare a clean working tree, refresh dev, and check out the PR
 
-First, make sure you are on `dev` and that it is fully up to date:
+Reviews should start from a clean working tree so uncommitted work does not silently travel onto other branches. Check the working tree first:
+
+```bash
+git status
+```
+
+If there are uncommitted changes (tracked or untracked), pause and ask the reviewer:
+
+> Your working tree has uncommitted changes. Stash them and continue? Answering yes will run `git stash push -u -m "pre-kb-pr-review"` so you have a clean tree for the review; you can restore the work with `git stash pop` after Step 13. Answering no will stop the skill so you can commit or handle the changes manually.
+
+If yes, stash before continuing:
+
+```bash
+git stash push -u -m "pre-kb-pr-review"
+```
+
+Refresh local dev, then check out the PR branch:
 
 ```bash
 git checkout dev
 git pull
-```
-
-Then check out the PR branch and stay on it for the remainder of the session:
-
-```bash
 gh pr checkout <PR>
 ```
 
-`gh pr checkout` is preferred over `git checkout <branch>` because it fetches the branch from remote if not already local and sets up proper tracking automatically.
+`gh pr checkout` fetches the branch from remote if not already local and sets up proper tracking automatically. If checkout fails, stop and report the error to the user. Do not proceed with stale or missing file content.
 
-If checkout fails, stop and report the error to the user. Do not proceed with stale or missing file content.
+Stay on the PR branch for the rest of the session. All fixes and commits will be made here.
 
-Stay on this branch for the rest of the session. All fixes and commits will be made here.
+**Remember:** if you stashed work in this step, remind the reviewer at the very end of the review (after Step 13) to run `git stash pop` to restore it. The stash message is `pre-kb-pr-review`.
 
 ---
 
@@ -288,6 +297,8 @@ gh pr review <PR> --approve --body "<approved comment>"
 ```
 
 This posts the review comment and approves the PR in a single action.
+
+Note: this approval counts toward branch protection requirements in `netwrix/docs`. The person running the skill must have KB codeowner status for the approval to be meaningful.
 
 ---
 
