@@ -1,0 +1,303 @@
+# KB PR Review Skill
+
+## Purpose
+
+Reviews a GitHub PR for KB article quality. For each changed KB file, runs Vale (NetwrixKB styles), applies Dale prose rules, and performs a Derek KB writing quality review. Presents findings to the reviewer, applies fixes with approval, then drafts a concise PR review comment for the reviewer to copy/paste into GitHub.
+
+## Invocation
+
+```
+/kb-pr-review <PR number or URL>
+```
+
+Examples:
+- `/kb-pr-review 812`
+- `/kb-pr-review https://github.com/netwrix/docs/pull/812`
+
+---
+
+## Instructions
+
+Follow every step in order. Do not skip steps or reorder them.
+
+---
+
+### Step 0 — Confirm context
+
+Verify you are in the docs repo root before proceeding:
+
+```bash
+pwd
+```
+
+Expected: `/Users/hilaryramirez/Documents/KB projects/docs`
+
+If you are not there, `cd` to it before continuing. All paths below are relative to this root.
+
+---
+
+### Step 1 — Parse the PR number
+
+Extract the PR number from the invocation argument. Accept either a bare integer (`812`) or a full GitHub pull request URL. Store it as `PR`.
+
+---
+
+### Step 2 — Get PR metadata
+
+```bash
+gh pr view <PR> --json number,title,author,headRefName,baseRefName,body
+```
+
+Note the head branch name — you will need it in Step 4.
+
+---
+
+### Step 3 — Identify changed KB files
+
+```bash
+gh pr diff <PR> --name-only | grep "^docs/kb/.*\.md$"
+```
+
+- If this returns no files, output: `No KB files changed in PR #<PR>.` and stop.
+- Store the list of files as `KB_FILES`.
+
+---
+
+### Step 4 — Check out the PR branch
+
+First, make sure you are on `dev` and that it is fully up to date:
+
+```bash
+git checkout dev
+git pull
+```
+
+Then check out the PR branch and stay on it for the remainder of the session:
+
+```bash
+gh pr checkout <PR>
+```
+
+`gh pr checkout` is preferred over `git checkout <branch>` because it fetches the branch from remote if not already local and sets up proper tracking automatically.
+
+If checkout fails, stop and report the error to the user. Do not proceed with stale or missing file content.
+
+Stay on this branch for the rest of the session. All fixes and commits will be made here.
+
+---
+
+### Step 5 — File placement check
+
+For each file in `KB_FILES`, check whether the path contains a nested `kb/` subfolder pattern inside a non-KB parent — for example `docs/kb/product/kb/article.md`. A file placed at any depth below a second `kb/` segment is misplaced.
+
+Flag any such files with:
+
+> ⚠️ **File placement issue:** `<path>` — file appears to be in a nested `kb/` subfolder. Expected location: `docs/kb/<product>/<article>.md`
+
+---
+
+### Step 6 — Run Vale on each file
+
+Run Vale against each file in `KB_FILES`:
+
+```bash
+vale --config .vale.ini <file>
+```
+
+Capture the full output per file. Vale will apply both `Netwrix` and `NetwrixKB` rules based on the path. KB files under `docs/kb/` should fire `NetwrixKB.*` rules.
+
+If Vale is not installed or returns an error, note this in the report and continue to Step 7.
+
+---
+
+### Step 7 — Apply Dale rules to each file
+
+Read all Dale rule files from `.claude/skills/dale/rules/*.yml`. Each rule has `name`, `description`, `severity`, `reason`, and `example` fields.
+
+For each file in `KB_FILES`:
+1. Read the full article content.
+2. Apply every Dale rule semantically, the same way `/dale` would.
+3. Record violations as: `rule-name | message | offending text (line reference if possible)`.
+
+Dale handles: passive voice, vague language, business jargon, idioms, undefined acronyms, and similar prose-quality issues. Do not flag items already covered by Vale (contractions, heading case).
+
+---
+
+### Step 8 — Perform Derek KB quality review on each file
+
+Read `kb_style_guide.md` from the repo root in full before beginning. Then, for each review area below, re-read the named section of the style guide and apply its rules to the article. The style guide is the source of truth — do not substitute your own rules.
+
+For each file in `KB_FILES`:
+1. Read the full article content.
+2. Work through each area in the table below. For each area, read the named style guide section, then apply it to the article.
+
+**Review areas:**
+
+| Area | Read this section of `kb_style_guide.md` | Supplementary notes (not in the style guide) |
+|------|------------------------------------------|-----------------------------------------------|
+| **frontmatter** | **Frontmatter** (Required fields, The `tags: [kb]` requirement) | If `knowledge_article_id` is present but contains a placeholder value (e.g., `kA0Qk000000PLACEHOLDER`), flag it — the author must replace it with the real Salesforce ID or remove the field. Absence of the field is fine for natively written articles. `sidebar_label` must not be truncated vs. `title`. |
+| **article-type** | **Article Types** | None. |
+| **title-format** | **Article Titles** and the title format rules within **Article Types** | Do NOT flag `> **NOTE:**` blockquote callouts — this is correct KB format, not a Docusaurus `:::note` admonition. If a product component name appears in the title (e.g., a client, agent, or add-on) and is essential to distinguishing the article from others about the same product, flag it as a judgment call rather than a required fix. |
+| **product-names** | **Product Names** | Always cross-check product IDs against `src/config/products.js` — the style guide table may be outdated. The config file is authoritative. |
+| **keywords-quality** | **Frontmatter > Required fields > keywords** | If a keyword does not appear in the article body but is a plausible legacy or alternate search term (e.g., an old product acronym), note it as a low-priority observation rather than a required fix. |
+| **images** | **Screenshots** | KB image structure is not in the style guide — apply this rule: images must be stored as PNG files in `0-images/` at the **product level** (`docs/kb/<product>/0-images/`), not inside category subfolders. Articles in category subfolders reference them with `../0-images/filename.png`. Flag any images linked from external sources (e.g., GitHub CDN URLs) — they must be downloaded and committed to the repo. |
+| **formatting** | **Markup Conventions** and **Lists** | The style guide's "single backticks for inline code" applies to error codes (e.g., `0x80070005`) — flag any error code in plain text. Sequential procedures must be numbered lists — this applies to Resolution sections and all sub-sections within them (e.g., verification steps), not just top-level procedures. |
+| **prose-directness** | **Voice and Tone > Impersonal constructions** and **Words and phrases to avoid** | Flag sentences where an impersonal subject ("the operation", "the process", "the system") could be replaced with the actual actor for a cleaner, more direct sentence. Example: "the operation fails with an error" → "Clicking **X** fails with an error". Apply judgment — not every impersonal subject is wrong. |
+
+Do NOT flag contractions, heading case, passive voice, jargon, or undefined acronyms — those belong to Vale and Dale respectively.
+
+Record each finding as: `area | finding | recommendation`.
+
+---
+
+### Step 9 — Compile and present the report
+
+Format the full report exactly as shown below and present it to the reviewer. Use the per-file sections in the same order as `KB_FILES`.
+
+```markdown
+## KB PR Review — PR #<PR>
+
+**<PR title>** · `<headBranch>` → `<baseBranch>` · submitted by @<author>
+
+_<N> KB file(s) reviewed. Ran Vale + Dale + Derek._
+
+---
+
+### `<file path>`
+
+#### Vale (NetwrixKB)
+
+<!-- If no violations: -->
+✅ No Vale violations.
+
+<!-- If violations: -->
+| Line | Rule | Message |
+|------|------|---------|
+| 14 | NetwrixKB.Contractions | Use "do not" instead of "don't" |
+
+#### Dale
+
+<!-- If no violations: -->
+✅ No Dale violations.
+
+<!-- If violations: -->
+| Rule | Message | Offending Text |
+|------|---------|----------------|
+| undefined-acronyms | "NEA" used without definition on first use | NEA |
+
+#### Derek (KB Writing Quality)
+
+<!-- If no issues: -->
+✅ No Derek issues.
+
+<!-- If issues: -->
+| Area | Finding | Recommendation |
+|------|---------|----------------|
+| frontmatter | `tags: []` — missing required `kb` value | Change to `tags: [kb]` |
+| title-format | Title includes product name "Auditor" | Remove product name; it is already in metadata |
+| product-names | `products: auditor-cloud` — not a valid product ID | Use `auditor` per the Product Names table |
+
+---
+
+<!-- Repeat the above block for each additional file -->
+
+---
+
+### Summary
+
+| File | Vale | Dale | Derek | Total |
+|------|------|------|-------|-------|
+| `article.md` | 2 | 1 | 3 | 6 |
+| **Total** | **2** | **1** | **3** | **6** |
+
+<!-- If any file placement issues were found: -->
+### ⚠️ File Placement Issues
+- `docs/kb/product/kb/article.md` — nested `kb/` subfolder detected. Move to `docs/kb/product/article.md`.
+```
+
+---
+
+### Step 10 — Apply fixes with reviewer approval
+
+After presenting the report, ask the reviewer:
+
+> Ready to apply fixes? You can share any feedback or adjustments first, or say yes to proceed.
+
+Wait for the reviewer's response. Incorporate any feedback, then apply all fixes to the affected files.
+
+Once fixes are applied, draft a commit message and present it to the reviewer for approval before committing. The commit message should summarize what was fixed and which tools identified the issues (Vale, Dale, Derek). Do not commit until the reviewer approves the message.
+
+After approval:
+
+```bash
+git add <affected files>
+git commit -m "<approved commit message>"
+```
+
+---
+
+### Step 11 — Local testing
+
+After the commit, prompt the reviewer to run local dev or production build tests:
+
+> Please run your local tests (dev server or full build) and let me know the results when you're ready.
+
+Wait for the reviewer to report back with test results before proceeding.
+
+---
+
+### Step 12 — Push the branch
+
+After the reviewer confirms tests pass, push the branch to the remote:
+
+```bash
+git push
+```
+
+If the push fails (e.g., no upstream set), use `git push -u origin <branch>`. Do not proceed to the review comment until the push succeeds — the fixes must be on the remote before approving.
+
+---
+
+### Step 13 — Draft and post the PR review comment
+
+Using the findings from Steps 6–8 and the test results from Step 11, draft a PR review comment.
+
+**Format requirements:**
+- Markdown only — no emojis
+- Concise — do not reproduce the full findings table; summarize what was found and fixed
+- Structure:
+
+```markdown
+## KB Review
+
+**Files reviewed:** <N>
+
+### Changes applied
+
+<Brief bullet list of fixes made, grouped by tool (Vale, Dale, Derek) if helpful. One line per logical change or group of related changes.>
+
+### Local testing
+
+<Brief bullet list of tests run (dev server, full build, etc.) and the result of each.>
+```
+
+Present the draft to the reviewer. Once approved, post it as an approving review:
+
+```bash
+gh pr review <PR> --approve --body "<approved comment>"
+```
+
+This posts the review comment and approves the PR in a single action.
+
+---
+
+## Output rules
+
+- Every section must appear for every file in the report, even if it contains only a ✅ pass line. Do not omit sections.
+- Use the exact column names shown: `Line | Rule | Message` for Vale; `Rule | Message | Offending Text` for Dale; `Area | Finding | Recommendation` for Derek.
+- Keep findings specific and actionable. Do not write vague observations.
+- Do not merge Vale, Dale, and Derek findings into a single table.
+- The Summary table must appear at the end of the report, after all per-file sections.
+- If Vale is unavailable, note it in the Vale section: `⚠️ Vale not available — skipped.`
+- Do not run this skill on files outside `docs/kb/`. If non-KB `.md` files appear in the diff, ignore them silently.
+- The final PR review comment (Step 13) must use markdown only with no emojis.
