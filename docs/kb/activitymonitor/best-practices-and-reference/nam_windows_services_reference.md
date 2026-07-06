@@ -34,7 +34,7 @@ Activity Monitor installs a set of Windows services on each agent host. The serv
 
 ### Core Services
 
-These services provide the infrastructure the NAM agent depends on to run, communicate, and resolve activity data. They run on every agent host regardless of which monitoring modules are configured.
+These services form the operational backbone of the NAM agent, handling process management, event output routing, API access, and hostname resolution. Most agent hosts run all of these, though `SBTService` and `SBTApiServer` are only active when their respective modules are configured.
 
 - **Netwrix Activity Monitor Agent Service** (`SBFileMonAgentSvc`): The central hub of the NAM agent. It starts and manages all the other monitoring plugins, and exposes the channel the Console and API Server use to push configuration and check agent status. Without it, nothing else runs.
 
