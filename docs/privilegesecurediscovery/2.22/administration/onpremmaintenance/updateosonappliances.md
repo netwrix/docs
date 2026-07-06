@@ -30,7 +30,7 @@ Privilege Secure will be offline for 30-60 minutes.
 ## Use Case: Cluster In-Place (1 node at a Time, No Downtime)
 
 For a 3-node clustered Netwrix Privilege Secure Discovery (NPSD) deployment, a failover is optional.
-Complete the high-level steps below during the change window.
+Complete the following high-level steps during the change window.
 
 Check DB replication status, "stateStr" should be "PRIMARY" or "SECONDARY"; and replication time
 difference, a few seconds is acceptable:
@@ -58,7 +58,7 @@ docker --version
 ```
 
 :::note
-Ensure the Docker version isn't at or above 29.x.x. If the version is 29.x.x or higher, do not
+Ensure the Docker version isn't at or above 29.x.x. If the version is 29.x.x or higher, don't
 proceed with the update; contact Netwrix support before continuing.
 :::
 
@@ -145,7 +145,7 @@ docker --version
 ```
 
 :::note
-Ensure the Docker version isn't at or above 29.x.x. If the version is 29.x.x or higher, do not
+Ensure the Docker version isn't at or above 29.x.x. If the version is 29.x.x or higher, don't
 proceed with the update; contact Netwrix support before continuing.
 :::
 
