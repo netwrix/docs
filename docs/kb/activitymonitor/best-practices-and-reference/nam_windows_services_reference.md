@@ -26,7 +26,7 @@ products:
 
 ## Question
 
-What Windows services does Netwrix Activity Monitor install on agent hosts, and what does each one do?
+What Windows services does Netwrix Activity Monitor (NAM) install on agent hosts, and what does each one do?
 
 ## Answer
 
@@ -40,11 +40,11 @@ The central hub of the NAM agent. It starts and manages all the other monitoring
 
 #### Netwrix Logging Service (`SBTLoggingSvc`)
 
-Takes activity events from all the monitoring plugins and delivers them to your configured outputs: log files, syslog, AMQP, Access Analyzer 2026, or 1Secure. Every plugin funnels its events here rather than handling output on its own, so there's one place to configure where your data goes.
+Takes activity events from all the monitoring plugins and delivers them to your configured outputs: log files, syslog, Advanced Message Queuing Protocol (AMQP), Access Analyzer 2026, or 1Secure. Every plugin funnels its events here rather than handling output on its own, so there is one place to configure where your data goes.
 
 #### Netwrix Windows File Monitoring Service (`SBTService`)
 
-Monitors file system activity on the Windows server where the agent is installed. It captures file opens, reads, writes, deletes, renames, and permission changes using a kernel-level driver that sits directly on the file system stack. That means it sees everything at the source, before it hits the network.
+Monitors file system activity on the Windows server where the agent is installed. It captures file opens, reads, writes, deletes, renames, and permission changes using a kernel-level driver that sits directly on the file system stack. That means it sees everything at the source, before the data reaches the network.
 
 #### Netwrix API Server Service (`SBTApiServer`)
 
@@ -56,7 +56,7 @@ Resolves IP addresses to hostnames for the Activity Monitor agent. File server a
 
 When the agent needs to resolve an IP, it queries this service on localhost first. If the answer is already cached, it replies instantly. If not, it goes to DNS, caches the result, and uses it next time. It also refreshes cached entries in the background before they expire.
 
-The service saves the cache to disk, so when it restarts it already has answers loaded and ready. There's no waiting for the cache to rebuild from scratch.
+The service saves the cache to disk, so when it restarts it already has answers loaded and ready. There is no delay while the cache rebuilds.
 
 ### NAS / File System Services
 
@@ -68,15 +68,15 @@ Collects file system events from NetApp NAS appliances using NetApp's FPolicy fr
 
 #### Netwrix Dell File Monitoring Service (`CelerraServerSvc`)
 
-Collects file system events from Dell EMC NAS appliances (VNX, Celerra, Unity, Isilon/PowerScale, PowerStore). Dell appliances don't push directly to NAM. Instead, they push to the Dell Common Event Enabler (CEE), a separate Dell component that must be installed in the environment, which then forwards events to this service.
+Collects file system events from Dell EMC NAS appliances (VNX, Celerra, Unity, Isilon/PowerScale, PowerStore). Dell appliances do not push directly to NAM. Instead, they push to the Dell Common Event Enabler (CEE), a separate Dell component that administrators must install in the environment, which then forwards events to this service.
 
 #### Netwrix Hitachi NAS File Monitoring Service (`SBHitachiNasSrv`)
 
-Monitors file system activity on Hitachi NAS appliances. Rather than receiving pushed events, it reads binary audit log files that the appliance writes to a CIFS share. It keeps track of where it left off so it doesn't re-process events after a restart.
+Monitors file system activity on Hitachi NAS appliances. Rather than receiving pushed events, it reads binary audit log files that the appliance writes to a CIFS share. It keeps track of where it left off so it does not re-process events after a restart.
 
 #### Netwrix Nasuni Monitoring Service (`SBTNasuniService`)
 
-Collects file system events from Nasuni CloudFS appliances. Nasuni nodes push events to the agent over an encrypted AMQP connection. The agent also uses the Nasuni REST API to configure auditing on the appliance, so you don't have to set that up manually on the Nasuni side.
+Collects file system events from Nasuni CloudFS appliances. Nasuni nodes push events to the agent over an encrypted AMQP connection. The agent also uses the Nasuni REST API to configure auditing on the appliance, so you do not have to set that up manually on the Nasuni side.
 
 #### Netwrix Huawei OceanStor 9000 Monitoring Service (`SBTOceanStorService`)
 
@@ -92,7 +92,7 @@ Collects file system events from Panzura CloudFS appliances. Panzura nodes push 
 
 #### Netwrix Nutanix Monitoring Service (`SBTNutanixService`)
 
-Collects file system events from Nutanix Files (AFS) NAS. The agent registers as a peer with Nutanix Files over TCP, and Nutanix pushes events to it directly. It also periodically checks the cluster for new file servers, so newly added servers get picked up automatically without restarting the agent.
+Collects file system events from Nutanix Files (AFS) NAS. The agent registers as a peer with Nutanix Files over TCP, and Nutanix pushes events to it directly. It also periodically checks the cluster for new file servers, so it automatically picks up newly added servers without restarting.
 
 #### Netwrix Qumulo Monitoring Service (`SBTQumuloService`)
 
@@ -116,7 +116,7 @@ Collects file access activity from Azure Files storage accounts, which are SMB a
 
 #### Netwrix Entra ID and Office 365 Monitoring Service (`SBTAzureService`)
 
-Monitors user activity across Microsoft 365: Entra ID, SharePoint Online, Exchange Online, and Microsoft 365 Copilot. The agent pulls audit events from the Microsoft Graph API and the Office 365 Management Activity API. Each service is polled independently, and multiple tenants are supported.
+Monitors user activity across Microsoft 365: Entra ID, SharePoint Online, Exchange Online, and Microsoft 365 Copilot. The agent pulls audit events from the Microsoft Graph API and the Office 365 Management Activity API, polling each service independently and supporting multiple tenants.
 
 #### Netwrix Active Directory Monitoring Service (`SBTActiveDirectoryService`)
 
@@ -128,4 +128,4 @@ Monitors user activity in on-premises SharePoint farms (2010 through 2019). The 
 
 #### Netwrix MS SQL Server Monitoring Service (`SBTSqlServerService`)
 
-Monitors activity on SQL Server instances: queries, logins, permission changes, stored procedure execution, and more. The agent connects to SQL Server and uses Extended Events sessions to capture data activity, plus a logon trigger to capture login events. Supports filtering by database, schema, table, user, and operation type so you're not drowning in noise.
+Monitors activity on SQL Server instances: queries, logins, permission changes, stored procedure execution, and more. The agent connects to SQL Server and uses Extended Events sessions to capture data activity, plus a logon trigger to capture login events. Supports filtering by database, schema, table, user, and operation type so you can focus on relevant activity instead of the full event volume.
