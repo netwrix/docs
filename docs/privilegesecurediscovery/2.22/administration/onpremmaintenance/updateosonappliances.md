@@ -12,7 +12,7 @@ Update Privilege Secure OS on Appliances
 
 The best practice for installing Privilege Secure OS updates is to do so during a scheduled
 maintenance window. For a 3-node clustered NPSD deployment a failover is optional. During that change window, 
-the below high level steps are to be completed. This prevents a potential issue should an
+complete the following high-level steps. This prevents a potential issue should an
 update require a reboot of the server or Docker service.
 
 There are different options to fit your environment or downtime tolerance.
@@ -55,15 +55,15 @@ SSH to the node being updated
 docker --version
 ```
 
-**NOTE: Ensure it is not at/above the 29.x.x versions.**
+**NOTE: Ensure it isn't at/above the 29.x.x versions.**
 
-**Step 2 –** On each node, confirm that below 3 Docker packages have a hold placed on them.
+**Step 2 –** On each node, confirm that the following 3 Docker packages have a hold on them.
 ```
 sudo apt-mark showhold
 ```
 If the command doesn't return any results, then go to Step 3.
 
-**Step 3 –** Run the command below to add the packages to the holds list.
+**Step 3 –** Run the following command to add the packages to the holds list.
 ```
 sudo apt-mark hold docker-ce docker-ce-cli containerd.io
 ```
@@ -134,21 +134,21 @@ s1 status; s1 node
 s1 status; s1 nodes
 ```
 
-**Step 2 –** Confirm the Docker version on each node, with the below command.
+**Step 2 –** Confirm the Docker version on each node, with the following command.
 ```
 docker --version
 ```
 
-**Note: Make sure it is not at/above the 29.x.x versions.**
+**Note: ensure it isn't at/above the 29.x.x versions.**
 
-**Step 3 –** On each node, confirm that below 3 Docker packages have a hold placed on them via the command.
+**Step 3 –** On each node, confirm that the following 3 Docker packages have a hold on them via the command.
 ```
 sudo apt-mark showhold
 ```
 
 If the command doesn't return any results, then go to Step 3.
 
-**Step 4 –** Run the command below to add the packages to the holds list.
+**Step 4 –** Run the following command to add the packages to the holds list.
 ```
 sudo apt-mark hold docker-ce docker-ce-cli containerd.io
 ```
