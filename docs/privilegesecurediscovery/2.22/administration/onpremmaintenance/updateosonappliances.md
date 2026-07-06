@@ -11,8 +11,7 @@ Update Privilege Secure OS on Appliances
 # Update Privilege Secure OS on Appliances
 
 The best practice for installing Privilege Secure OS updates is to do so during a scheduled
-maintenance window. For a 3-node clustered NPSD deployment a failover is optional. During that change window, 
-complete the following high-level steps. This prevents a potential issue should an
+maintenance window. This prevents a potential issue should an
 update require a reboot of the server or Docker service.
 
 There are different options to fit your environment or downtime tolerance.
@@ -29,6 +28,9 @@ Privilege Secure will be offline for 30-60 minutes.
 - [Install the S1 CLI Helper Utility ](../../installation/s1clihelperutility.md)
 
 ## Use Case: Cluster In-Place (1 node at a Time, No Downtime)
+
+For a 3-node clustered Netwrix Privilege Secure Discovery (NPSD) deployment, a failover is optional.
+Complete the high-level steps below during the change window.
 
 Check DB replication status, "stateStr" should be "PRIMARY" or "SECONDARY"; and replication time
 difference, a few seconds is acceptable:
@@ -55,7 +57,10 @@ SSH to the node being updated
 docker --version
 ```
 
-**NOTE: Ensure it isn't at/above the 29.x.x versions.**
+:::note
+Ensure the Docker version isn't at or above 29.x.x. If the version is 29.x.x or higher, do not
+proceed with the update; contact Netwrix support before continuing.
+:::
 
 **Step 2 –** On each node, confirm that the following 3 Docker packages have a hold on them.
 ```
@@ -70,10 +75,10 @@ sudo apt-mark hold docker-ce docker-ce-cli containerd.io
   
 **Step 4 –** Download Update Package Information.
 ```
-sudo apt update; sudp apt list --upgradable
+sudo apt update; sudo apt list --upgradable
 ```
 
-**Step 5 –** Install Package Updates.
+**Step 5 –** Install package updates.
 
 ```
 sudo apt -y upgrade
@@ -134,19 +139,22 @@ s1 status; s1 node
 s1 status; s1 nodes
 ```
 
-**Step 2 –** Confirm the Docker version on each node, with the following command.
+**Step 2 –** Confirm the Docker version on the node, with the following command.
 ```
 docker --version
 ```
 
-**Note: ensure it isn't at/above the 29.x.x versions.**
+:::note
+Ensure the Docker version isn't at or above 29.x.x. If the version is 29.x.x or higher, do not
+proceed with the update; contact Netwrix support before continuing.
+:::
 
-**Step 3 –** On each node, confirm that the following 3 Docker packages have a hold on them via the command.
+**Step 3 –** On the node, confirm that the following 3 Docker packages have a hold on them via the command.
 ```
 sudo apt-mark showhold
 ```
 
-If the command doesn't return any results, then go to Step 3.
+If the command doesn't return any results, then go to Step 4.
 
 **Step 4 –** Run the following command to add the packages to the holds list.
 ```
@@ -155,7 +163,7 @@ sudo apt-mark hold docker-ce docker-ce-cli containerd.io
   
 **Step 5 –** Download Update Package Information.
 ```
-sudo apt update; sudp apt list --upgradable
+sudo apt update; sudo apt list --upgradable
 ```
 
 **Step 6 –** Install package updates.
