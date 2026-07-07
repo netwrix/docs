@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Update Privilege Secure OS on Appliances
 
-The best practice for installing Privilege Secure OS updates is to do so during a scheduled
+As a best practice, install Privilege Secure OS updates during a scheduled
 maintenance window. This prevents a potential issue should an
 update require a reboot of the server or Docker service.
 
@@ -118,7 +118,7 @@ sudo cat /var/run/reboot-required
 s1 status; s1 nodes
 ```
 
-**Step 9 –** Move on to the next node.
+**Step 9 –** Proceed to the next node.
 
 **Step 10 –** After all nodes completed, check Privilege Secure services and nodes status:
 
