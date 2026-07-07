@@ -59,7 +59,7 @@ proceed with the update; contact Netwrix support before continuing.
 ```
 sudo apt-mark showhold
 ```
-If the command doesn't return any results, then go to Step 3.
+If the command doesn't return any results, go to Step 3.
 
 **Step 3 –** Run the following command to add the packages to the holds list.
 ```
@@ -147,7 +147,7 @@ proceed with the update; contact Netwrix support before continuing.
 sudo apt-mark showhold
 ```
 
-If the command doesn't return any results, then go to Step 4.
+If the command doesn't return any results, go to Step 4.
 
 **Step 4 –** Run the following command to add the packages to the holds list.
 ```
