@@ -7,22 +7,22 @@ sidebar_position: 150
 # Nutanix AHV
 
 Netwrix Auditor is a visibility platform for user behavior analysis and risk mitigation that enables
-control over changes, configurations and access in hybrid IT environments to protect data regardless
+control over changes, configurations, and access in hybrid IT environments to protect data regardless
 of its location. The platform provides security analytics to detect anomalies in user behavior and
 investigate threat patterns before a data breach occurs.
 
 Nutanix AHV is a virtualization platform within the Nutanix Enterprise Cloud architecture. It
-provides facilities for VM deployment, operation and centralized management. Nutanix AHV is a fully
+provides facilities for VM deployment, operation, and centralized management. Nutanix AHV is a fully
 integrated component of the Nutanix Enterprise Cloud.
 
 Virtualization teams, Managed Service Providers and other IT professionals need to detect who does
-what in the Nutanix Hyperconverged infrastructure. For that, a unified audit trail is required,
-supporting detailed Nutanix monitoring and effective response to changes.
+what in the Nutanix Hyperconverged infrastructure. This requires a unified audit trail that
+supports detailed Nutanix monitoring and effective response to changes.
 
 For that purpose, you can use a specially designed add-on that supports audit for Nutanix AHV and
 Nutanix Prism/Element. The add-on works in collaboration with Auditor, supplying data about
 operations on your Nutanix AHV to Netwrix database. Aggregating data into a single audit trail
-simplifies analysis, makes activity monitoring more cost-effective, and helps you keep tabs on your
+simplifies analysis, makes activity monitoring more cost-effective, and helps you keep track of your
 IT infrastructure.
 
 Major benefits:
@@ -42,8 +42,8 @@ On a high level, the solution works as follows:
 1. An IT administrator configures the Integration API settings to enable data collection and storage
    to Netwrix database for further reporting, search, etc.
 
-    It is recommended to create a dedicated monitoring plan in Netwrix Auditor and add a dedicated
-    item of **Integration** type to it — then you will be able to filter data in reports and search
+    Netwrix recommends creating a dedicated monitoring plan in Netwrix Auditor and adding a dedicated
+    item of **Integration** type to it — then you can filter data in reports and search
     results by monitoring plan/item name.
 
 2. On Nutanix side, the IT administrator prepares a dedicated user account for accessing Nutanix
@@ -59,7 +59,7 @@ On a high level, the solution works as follows:
 
     Syslog event data communication uses the UDP version of the Syslog protocol. See the
     [Monitoring Scope](/docs/auditor/10.9/addon/nutanixahv/monitoredevents.md) topic for the default
-    list of events supported out of the box.
+    list of supported events.
 
 6. The add-on processes the incoming Syslog messages and REST API data into Netwrix
    Auditor-compatible format (Activity Records). Each Activity Record contains
@@ -110,7 +110,7 @@ connection to Nutanix Prism are encrypted and stored securely.
 
 - By default, the add-on is targeted at a single Nutanix Prism Central/Element server.
 - Netwrix add-on must be deployed in the same subnet as Nutanix Prism Central/Element server.
-- Please be aware that monitoring of actions performed on the add-on installation server is not
+- Monitoring of actions performed on the add-on installation server isn't
   supported.
 
 ### Upgrade Path

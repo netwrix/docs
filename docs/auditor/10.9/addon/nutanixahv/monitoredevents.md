@@ -19,7 +19,7 @@ Review a full list of object types and activities monitored on Nutanix Prism wit
 
 Notes on Host events:
 
-- **Host add:** the "Who" field is not populated (user not applicable). The IP recorded is the
+- **Host add:** the "Who" field isn't populated (user not applicable). The IP recorded is the
   Controller VM IP, not the host IP.
 - **Host remove:** consists of two events — "Host marked for removal" (has a "Who") and "Host
   deleted" (occurs when the host deletion task completes).

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Deploy the Add-On
 
-Follow the steps to deploy the Add-On:
+Deploying the add-on involves the following steps:
 
 **Step 1 –** Prepare Auditor for data processing.
 
@@ -20,16 +20,16 @@ Follow the steps to deploy the Add-On:
 
 In Auditor client, go to the Integrations section and verify Integration API settings:
 
-1. Make sure the **Leverage Integration API** is switched to **ON**.
+1. ensure the **Leverage Integration API** is switched to **ON**.
 2. Check the TCP communication port number – default is **9699**.
 
 See the [Prerequisites](/docs/auditor/10.9/api/prerequisites.md) topic for additional information.
 
-By default, activity records are written to _Netwrix_Auditor_API_ database which is not associated
-with a specific monitoring plan.
+By default, Auditor writes activity records to the _Netwrix_Auditor_API_ database, which isn't
+associated with a specific monitoring plan.
 
-Optionally, you can create a dedicated monitoring plan in Auditor. In this case, data will be
-written to a database linked to this plan. Target it at Netwrix API data source and enable for
+Optionally, you can create a dedicated monitoring plan in Auditor. In this case, Auditor writes
+data to a database linked to this plan. Target it at Netwrix API data source and enable for
 monitoring. Add a dedicated item of _Integration_ type to the plan for data to be filtered by item
 name. See the [Integration API](/docs/auditor/10.9/api/overview.md) topic for additional information.
 
@@ -39,10 +39,10 @@ details.
 
 ## Step 2: Configure Message Forwarding for Nutanix Prism
 
-To provide for interaction and data flow between Nutanix Prism and the Add-On, you should set up the
+To enable interaction and data flow between Nutanix Prism and the add-on, set up the
 add-on installation server as a remote Syslog listener for Nutanix Prism. For that remote Syslog
 server, you will need to specify the IP address and port for inbound messages. Depending on Nutanix
-Prism server you are using (Element/Central), follow the related procedure below.
+Prism server you are using (Element/Central), follow the related procedure.
 
 ### Procedure for Nutanix Prism Element
 
@@ -55,8 +55,8 @@ article and connect to a Controller VM in your cluster.
 To find the Controller VM IP address, open the Nutanix web console and go to **Settings** >
 **General** > **Configure CVM**.
 
-**Step 1 –** Disable syslog forwarding temporarily until the new remote Syslog listener is
-configured (it is enabled by default):
+**Step 1 –** Disable syslog forwarding temporarily until you configure the new remote Syslog
+listener (it is enabled by default):
 
 `ncli> rsyslog-config set-status enable=false`
 
@@ -83,7 +83,7 @@ where:
 
 `ncli> rsyslog-config set-status enable=true`
 
-The remote syslog server is added to the cluster automatically.
+Nutanix adds the remote syslog server to the cluster automatically.
 
 ### Procedure for Nutanix Prism Central
 
@@ -140,7 +140,7 @@ _C:\ProgramData\Add-on for Nutanix AHV\_.
 
 ## Step 4: Configure Add-On Parameters
 
-After installation, the configuration wizard opens in your default web browser. If it does not,
+After installation, the configuration wizard opens in your default web browser. If it doesn't,
 launch it manually from the Start menu shortcut. The wizard guides you through six configuration
 steps.
 
