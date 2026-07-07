@@ -15,7 +15,7 @@ There are different options to fit your environment or downtime tolerance.
 - Cluster:  No downtime
 - Single-Node:  Downtime during reboot
 
-This is a guide to updating the OS on Privilege Secure node with that best practice in mind.
+This guide explains how to update the OS on a Privilege Secure node using this best practice.
 Privilege Secure will be offline for 30-60 minutes.
 
 ## Requirements
@@ -43,7 +43,7 @@ Primary node only: Check Privilege Secure services and nodes status:
 s1 status; s1 nodes
 ```
 
-SSH to the node being updated.
+SSH to the node you're updating.
 
 **Step 1 –** Confirm the Docker version on each node.
 ```
@@ -103,7 +103,7 @@ sudo cat /var/run/reboot-required
   watch s1 nodes
   ```
 
-  - Verify "Availability" is set to "Active" on updated node.
+  - Verify that "Availability" shows "Active" on the updated node.
 
 - After the updated node is reachable, press Ctrl+C to stop the watch command
 - Check DB replication status, "stateStr" should be "PRIMARY" or "SECONDARY"; and replication time
