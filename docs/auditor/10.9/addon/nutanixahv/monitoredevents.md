@@ -8,27 +8,18 @@ sidebar_position: 40
 
 Review a full list of object types and activities monitored on Nutanix Prism with the add-on.
 
-| Object                        | Action                                                                                                                         | Property                                                                                                                         |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| Virtual Machine1              | Create/Delete Clone Migrate Rename State change (Power off/on, Pause etc.) Restore from snapshot Hardware Configuration change | Name MAC Address VLAN Name Connection State Number Of Processors Cores Per Processor Memory Size (MiB) Disk Size (Bytes) Host IP |
-| Host (Node) 2                 | Add3/Remove4                                                                                                                   | IP5                                                                                                                              |
-| Host Cluster                  | -                                                                                                                              | -                                                                                                                                |
-| VM Network (Subnet)           | -                                                                                                                              | -                                                                                                                                |
-| Local User2                   | • Create/Delete • Properties change6 • Roles change6 • Log in/out • Password Change                                            | • Username • First Name6 • Last Name6 • Email6 • Language6 • Roles6                                                              |
-| Authentication Configuration2 | • Authentication type change                                                                                                   | • Authentication Types                                                                                                           |
+| Object                       | Source            | Action                                                                                                                                        | Property                                                                                                                                       |
+| ---------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Virtual Machine              | Syslog            | Create/Delete, Clone, Migrate, Rename, State change (Power off/on, Pause, etc.), Restore from snapshot, Hardware configuration change         | Name, MAC Address, VLAN Name, Connection State, Number of Processors, Cores per Processor, Memory Size (MiB), Disk Size (Bytes), Host IP       |
+| Host (Node)                  | Events (API v2.0) | Add, Remove                                                                                                                                   | IP                                                                                                                                             |
+| Cluster Configuration        | Events (API v2.0) | Modified                                                                                                                                      | NTP Servers, DNS Servers, HTTP Proxy, SNMP, SMTP, Remote Syslog, SSL Certificate                                                               |
+| VM Network (Subnet)          | Events (API v2.0) | —                                                                                                                                             | —                                                                                                                                              |
+| Local User                   | Events (API v2.0) | Create/Delete, Properties change (UI API), Roles change (UI API), Log in/out, Password change                                                 | Username, First Name (UI API), Last Name (UI API), Email (UI API), Language (UI API), Roles (UI API)                                           |
+| Authentication Configuration | Events (API v2.0) | Authentication type change                                                                                                                    | Authentication Types                                                                                                                           |
 
-1 — Syslog
+Notes on Host events:
 
-2 — Events (API v2.0)
-
-3 — User not applicable
-
-4 — Host remove event consist of 2 events (see Appendix B):
-
-- Host marked for removal: this event has a “Who”
-- Host deleted: this event occurs when the host deletion task completes.
-
-5 — The host add event contains the IP address of the host Controller VM, and not the host IP
-address.
-
-6 — UI API.
+- **Host add:** the "Who" field is not populated (user not applicable). The IP recorded is the
+  Controller VM IP, not the host IP.
+- **Host remove:** consists of two events — "Host marked for removal" (has a "Who") and "Host
+  deleted" (occurs when the host deletion task completes).
