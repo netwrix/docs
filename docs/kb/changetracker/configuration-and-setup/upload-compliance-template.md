@@ -12,7 +12,7 @@ keywords:
   - upload template
   - compliance reports
   - templates
-  - Compliance Reports Templates
+  - Policy Templates
   - settings
   - overwrite template
   - configuration
@@ -33,9 +33,9 @@ This guide provides step-by-step instructions on how to upload a compliance/trac
 
 ## Instructions
 
-1. Click on the **Settings** dropdown, then click **Policy Templates**.
-2. Click the **Actions** dropdown, then click **Upload Templates** button and browse to your template.
-4. If you wish to automatically overwrite existing templates with the same name, check the corresponding box.
-5. Click the **Upload Template** button.
+1. Click the **Settings** dropdown, then click **Policy Templates**.
+2. Click the **Actions** dropdown, then click the **Upload Templates** button and browse to your template.
+3. If you wish to automatically overwrite existing templates with the same name, check the corresponding box.
+4. Click the **Upload Template** button.
 
 The progress bar should show 100% once the upload completes.
