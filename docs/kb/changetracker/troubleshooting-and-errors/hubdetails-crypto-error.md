@@ -53,6 +53,11 @@ If you are receiving this error, the agent is not reporting to your hub. This is
 
 1. Stop the **Netwrix ChangeTracker Gen7 Agent NetCore** service.
 
+   On Windows:
+
+  1. Open Services.msc
+  2. Stop the service called: Netwrix ChangeTracker Gen7 Agent NetCore
+
    On Linux:
 
    ```bash
@@ -85,16 +90,21 @@ If you are receiving this error, the agent is not reporting to your hub. This is
 
 8. Start the **Netwrix ChangeTracker Gen7 Agent NetCore** service.
 
+   On Windows:
+
+  1. Open Services.msc
+  2. Start the service called: Netwrix ChangeTracker Gen7 Agent NetCore
+
    On Linux:
 
    ```bash
    service nntgen7agentcore start
    ```
 
-9. Check the Rolling Log to verify the agent was able to read the information and connect to the hub.
+10. Check the Rolling Log to verify the agent was able to read the information and connect to the hub.
 
    <!-- Image removed: Screenshot showing successful agent connection in the Rolling Log -->
 
-10. You can also confirm that the device is registered via the Netwrix Change Tracker web console.
+11. You can also confirm that the device is registered and online via the Netwrix Change Tracker web console.
 
     <!-- Image removed: Screenshot showing the device registered in the Netwrix Change Tracker web console -->
