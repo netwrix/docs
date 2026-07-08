@@ -33,11 +33,12 @@ This article shows how to run a report that displays Created Planned Changes, Ch
 
 1. Go to **Events**.
 2. Select specific or all devices and click **Filter**.
-3. In the **Event Filter** window, enter `Planned Change` in the Text Search field. Select **Audit** in Event Type and click **Apply**.
+3. In the **Date & Time** Window, select the time period for which you'd like to view created planned changes.
+4. In the **Event Filter** window, enter `Planned Change` in the Text Search field. Select **Audit** in Event Type and click **Apply**.
 
    <!-- Image removed: Screenshot of the Events filter window with Planned Change text search and Audit event type selected -->
 
-4. To export the report, click **Export** and select your preferred file type.
+5. To export the report, click **Query/Report** > **Export Now** and select your preferred file type.
 
    > **NOTE:** For details on available export formats, see [Exporting Events to CSV, PDF, or XLSX](/docs/kb/changetracker/configuration-and-setup/exporting-events-to-csv-pdf-or-xlsx). The exported report includes Created Planned Changes, Approved Changes, and the user who performed each action.
 
