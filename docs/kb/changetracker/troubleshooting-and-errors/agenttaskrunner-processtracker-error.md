@@ -52,11 +52,20 @@ This error occurs because the process tracker in Netwrix Change Tracker is enabl
 
 ## Resolution
 
-Edit the policy template assigned to the affected device and either add processes to track or disable the process tracker.
+Edit the policy template assigned to the affected device(s) and either add processes to track or disable the process tracker.
 
-1. Log into Netwrix Change Tracker and navigate to **Devices** > select the device experiencing the error > select the policy template that is causing the issue.
-2. Either uncheck the **Track processes and services in this template** box, or add at least one service to be tracked.
+1. Log into Netwrix Change Tracker
+2. Navigate to **Devices**
+3. Select the device experiencing the error
+4. Select the policy template that is causing the issue (devices can have multiple templatesd assigned, so select the template(s) where the "Processess and Services" tracker is enabled)
+5. Select "Processess and Services" tracker
+6. To resolve the issue:
+6a. Uncheck the **Track processes and services in this template** box
+OR
+6b. Add at least one service to be tracked.
 
-<!-- Image removed: Screenshot showing the process tracker configuration with the "Track processes and services in this template" checkbox -->
+6a Exmaple
+<img width="1157" height="135" alt="image" src="https://github.com/user-attachments/assets/0db8a0b7-a1e7-46a4-a2fe-4c36b49fed41" />
 
-<!-- Image removed: Screenshot showing an example of services added to the process tracker configuration -->
+6b Exmaple
+<img width="1912" height="333" alt="image" src="https://github.com/user-attachments/assets/e2d8a428-8534-42ca-93f5-b4df662dca57" />
