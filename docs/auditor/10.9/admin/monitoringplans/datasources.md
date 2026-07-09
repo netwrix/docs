@@ -49,7 +49,7 @@ Review the following for additional information:
 - [SharePoint](/docs/auditor/10.9/admin/monitoringplans/sharepoint/overview.md)
 - [SharePoint Online](/docs/auditor/10.9/admin/monitoringplans/sharepointonline/overview.md)
 - [SQL Server](/docs/auditor/10.9/admin/monitoringplans/sqlserver/overview.md)
-- [User Activity](/docs/auditor/10.9/admin/monitoringplans/overview_1.md)
+- [User Activity](/docs/auditor/10.9/admin/monitoringplans/useractivity/overview.md)
 - [VMware](/docs/auditor/10.9/admin/monitoringplans/vmware/overview.md)
 - [Windows File Share](fileservers/scope.md#windows-file-share)
 
