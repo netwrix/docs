@@ -1,0 +1,56 @@
+---
+description: >-
+  When you run the Netwrix Change Tracker Gen 7 Agent installer and test the Hub
+  connection, you may receive a WinHttp.WinHttpRequest error stating the
+  connection was terminated abnormally. Install Microsoft's Easy Fix update to
+  enable TLS 1.1/TLS 1.2 for WinHTTP to resolve the issue.
+keywords:
+  - Netwrix Change Tracker
+  - Gen 7 Agent
+  - WinHttp.WinHttpRequest
+  - TLS 1.2
+  - Easy Fix
+  - Hub connection
+  - installer error
+  - Windows hotfix
+products:
+  - changetracker
+knowledge_article_id: ka0Qk000000DZWDIA4
+sidebar_label: 'Netwrix Gen 7 Agent Error: WinHttp Connection Terminated Abnormally'
+tags: [kb, troubleshooting-and-errors]
+title: >-
+  Netwrix Change Tracker Gen 7 Agent Error. WinHttp.WinHttpRequest: The
+  Connection With the Server Was Terminated Abnormally
+---
+
+# Netwrix Change Tracker Gen 7 Agent Error. WinHttp.WinHttpRequest: The Connection With the Server Was Terminated Abnormally
+
+## Symptom
+
+Running the **Netwrix Change Tracker Gen 7 Agent** installer on a Windows system and entering the correct Hub credentials produces an error when testing the **Hub connection** before proceeding with the full setup.
+
+## Cause
+
+On older Windows systems, WinHTTP does not use TLS 1.1 or TLS 1.2 as a default secure protocol. Because the Netwrix Change Tracker Hub requires a modern TLS version, the connection is terminated during the installer's Hub connection test.
+
+## Resolution
+
+1. Download the Easy Fix tool from [Microsoft: Update to enable TLS 1.1 and TLS 1.2 as default secure protocols in WinHTTP in Windows](https://support.microsoft.com/en-us/topic/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-winhttp-in-windows-c4bd73d2-31d7-761e-0178-11268bb10392).
+2. Run through the hotfix installation.
+3. Close the **Netwrix Change Tracker Gen 7 Agent** installer if it is still open.
+4. Try to install the **Netwrix Change Tracker Gen 7 Agent** again and test the **Hub connection**.
+
+## Related Articles
+
+- [How to Configure the FAST Cloud Integration with Proxy Internet Settings](/docs/kb/changetracker/configuration-and-setup/fast-cloud-proxy-settings)
+- [How to Fix the "Check Log for Details" Message in the Event Details](/docs/kb/changetracker/troubleshooting-and-errors/check-log-for-details-message)
+
+<!--
+Additional related articles pending migration to the public docs site. Re-add
+each link below to this Related articles list when the target article is
+migrated in a future batch:
+
+- Add Palo Alto Device to a Proxy Agent as a Proxy Device in Change Tracker Gen 7 (kA04u0000000JXHCA2)
+- Supporting Documents for Hub Server Problems (kA04u0000000JdtCAE) — SME meeting flagged; article has "INSERT LOCATION HERE" placeholder
+- Change Tracker Gen 7 Change Log / Update Log / ReadMe.txt Documents for Agent/Hub (kA04u0000000JkGCAU)
+-->
