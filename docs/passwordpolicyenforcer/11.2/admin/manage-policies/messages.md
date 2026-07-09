@@ -64,3 +64,5 @@ If you don't see the **Preview**, contact your network administrator to set up t
 firewall to allow Password Policy Enforcer to communicate.
 
 :::
+
+<!-- If both Dictionary rules have identical inserts and both rules reject the password, the Password Policy Client message shows only one of the inserts. -->
