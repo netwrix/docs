@@ -58,7 +58,7 @@ If you are receiving this error, the agent is currently not sending any logs to 
 
 - **Confirm the Netwrix Server is running.** Verify that IIS and MongoDB services are running on the Netwrix Change Tracker Hub server.
 - **Test connectivity from the agent host.** From the agent, attempt to reach the Hub URL (for example, using `ping`, `curl`, or `Test-NetConnection`). If the Hub URL uses an FQDN, confirm the agent can resolve it via DNS.
-- **Verify firewall and port configuration.** Confirm the port defined in the agent's `HubDetails.xml` (typically 443) is open between the agent and the Netwrix Server. See [Network Ports for Change Tracker](/docs/kb/changetracker/configuration-and-setup/how-to-determine-what-network-ports-need-to-be-open-for-change-tracker-or-log-trackerto-function) or the [Agent and Device Ports](/docs/changetracker/8_2/requirements/agentdeviceports) product doc.
+- **Verify firewall and port configuration.** Confirm the port defined in the agent's `HubDetails.xml` (typically 443) is open between the agent and the Netwrix Server. See [Network Ports for Change Tracker](/docs/kb/changetracker/configuration-and-setup/network-ports-for-change-tracker) or the [Agent and Device Ports](/docs/changetracker/8_2/requirements/agentdeviceports) product doc.
 
 After correcting the underlying issue, restart the agent service to force a reconnection.
 
