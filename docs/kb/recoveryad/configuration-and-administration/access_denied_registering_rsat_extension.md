@@ -89,3 +89,9 @@ An account with control over the Configuration partition — such as a Domain Ad
    ```
 
 After completing these steps, the delegated account can register the RSAT Extension without error.
+
+## Related Links
+
+- [Registering the RSAT Extension Across Multiple Domains or Forests](registering-the-rsat-extension-across-multiple-domains-or-forests.md)
+- [RSAT Extension Registered Status Is Scoped to the Current Forest](rsat-extension-registered-status-is-scoped-to-the-current-forest.md)
+- [Identifying Identity Recovery Service Accounts and Permissions](identifying-identity-recovery-service-accounts-and-permissions.md)
