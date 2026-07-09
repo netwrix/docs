@@ -45,7 +45,7 @@ Click **Set up email** to edit the email template for the email reminders.
 The correct format for the **From** text box is `"Display Name" <mailbox@domain.com>`. You can edit the email body with a visual editor or raw HTML editor by clicking **Visual** or **HTML**.
 
 :::tip
-If the email body is too long to fit in the text box, then enter a file path with the "file:" prefix in the body text box: `file:C:\path\filename.ext`. The file path can include environment variables like %ProgramFiles%. Don't use quotes for long filenames and don't include any other text. The [Mailer Service](../../../installation/installationserver.md) reads the email body from the specified file.
+If the email body is too long to fit in the text box, then enter a file path with the "file:" prefix in the body text box: `file:C:\<path>\<filename>.ext`. The file path can include environment variables like %ProgramFiles%. Don't use quotes for long filenames and don't include any other text. The [Mailer Service](../../../installation/installationserver.md) reads the email body from the specified file.
 
 If users aren't receiving their email reminders, then ensure the **From** address is a valid sending address for your mail server.
 :::
