@@ -51,18 +51,15 @@ The `ProxiedDevices.json` file on the Netwrix Change Tracker Gen 7 Agent did not
    - Linux: `/var/nnt/gen7agent.service`
 3. Stop the **nntgen7agent** service on the server.
 4. Edit the `ProxiedDevices.json` file.
-5. Within the `[]` brackets, manually fill in the proxy device details. Use the following example as a guide.
+5. Within the `[]` brackets, manually fill in the proxy device details. On the Netwrix Change Tracker Console, edit the proxy device in question to view its details, then fill out the fields as shown in the following example.
 
-On the Netwrix Change Tracker Console, edit the proxy device in question to view its details.
+    > **NOTE:** You can find the AgentID and DeviceID of the proxy device in the rolling log file.
 
-Using the console, fill out the details as shown in the following example.
+    Example proxied device JSON:
 
-> **NOTE:** You can find the AgentID and DeviceID of the proxy device in the rolling log file.
-
-Example proxied device JSON:
-```json
-[{"AgentId":"1","DeviceId":"28","DeviceName":"ORCL","PollPeriodSeconds":30,"PingTimeoutSeconds":15,"HostType":"Database","HostNameOrIp":"ORCL"}]
-```
+    ```json
+    [{"AgentId":"1","DeviceId":"28","DeviceName":"ORCL","PollPeriodSeconds":30,"PingTimeoutSeconds":15,"HostType":"Database","HostNameOrIp":"ORCL"}]
+    ```
 
 6. After you have entered the details of the proxy device manually, save the file.
 7. Start the **nntgen7agent** service.

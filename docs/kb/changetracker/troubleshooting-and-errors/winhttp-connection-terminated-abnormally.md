@@ -50,7 +50,6 @@ Additional related articles pending migration to the public docs site. Re-add
 each link below to this Related articles list when the target article is
 migrated in a future batch:
 
-- Add Palo Alto Device to a Proxy Agent as a Proxy Device in Change Tracker Gen 7 (kA04u0000000JXHCA2)
-- Supporting Documents for Hub Server Problems (kA04u0000000JdtCAE) — SME meeting flagged; article has "INSERT LOCATION HERE" placeholder
-- Change Tracker Gen 7 Change Log / Update Log / ReadMe.txt Documents for Agent/Hub (kA04u0000000JkGCAU)
+- Add Palo Alto Device to a Proxy Agent as a Proxy Device in Change Tracker Gen 7 (kA04u0000000JXHCA2) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (steps are outdated); Batch 4 candidate
+- Supporting Documents for Hub Server Problems (kA04u0000000JdtCAE) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (remove Linux-related content); Batch 4 candidate
 -->

@@ -67,7 +67,7 @@ To resolve this error:
 1. Check whether anything is using Port `8095` or `8096`.
 2. Determine whether that port number can be changed.
 3. Change the port of the conflicting application, or if you cannot change it, disable the local UI port altogether:
-   1. Modify the `NNTAgentService.exe.config` file (`C:\Program Files\NNT Change Tracker Suite\Agent\NNTAgentService.exe.config` or `/opt/nnt/agent/bin/NNTAgentService.exe.config`).
-   2. Change the value to `0` to disable the port, or assign a new, available port.
+   - Modify the `NNTAgentService.exe.config` file (`C:\Program Files\NNT Change Tracker Suite\Agent\NNTAgentService.exe.config` or `/opt/nnt/agent/bin/NNTAgentService.exe.config`).
+   - Change the value to `0` to disable the port, or assign a new, available port.
    <!-- SME: config snippet needed here — what exact XML lines should the user add to NNTAgentService.exe.config to disable the local UI port? -->
 4. Restart the Netwrix Change Tracker agent service.

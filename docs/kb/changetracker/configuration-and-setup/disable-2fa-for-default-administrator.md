@@ -34,7 +34,7 @@ To use **Allowed Commands**, a one-time password is required. Follow the steps p
 > **IMPORTANT:** This method works only for the default administrator user and does not apply to administrator role users or users with no administrator permissions.
 
 1. Connect to the Netwrix Change Tracker server via RDP.
-2. Stop IIS running on the server. Run the following command in an elevated Command Prompt:
+2. Stop IIS running on the server. Run the following command in an elevated **Command Prompt**:
    ```text
    iisreset /stop
    ```

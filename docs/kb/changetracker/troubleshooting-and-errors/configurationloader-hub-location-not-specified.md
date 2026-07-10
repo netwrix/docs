@@ -49,24 +49,26 @@ The agent could not locate the `HubDetails.xml` file, which tells the agent how 
 If you receive this error, the Netwrix Change Tracker Agent is NOT reporting to the hub. This is a critical error and, for monitoring to continue, you must resolve it. To resolve this error:
 
 1. Stop the Netwrix Change Tracker Agent Service.
-2. Run the Netwrix Change Tracker Connection Script by issuing the following command: `sudo sh /opt/nnt/gen7agent/configure-gen7agent.sh` - Complete the requested details.
+2. Run the Netwrix Change Tracker Connection Script by issuing the following command, then complete the requested details:
+
+   ```bash
+   sudo sh /opt/nnt/gen7agent/configure-gen7agent.sh
+   ```
 3. Start the Service.
 
 If the preceding steps do not work:
 
 1. Stop the Netwrix Change Tracker Agent Service.
-2. Navigate to the Netwrix Change Tracker Agent directory that contains the Rolling-Log files. <!-- link removed: kb.netwrix.com/8048 -->
+2. Navigate to the Netwrix Change Tracker Agent directory that contains the [Rolling-Log files](pathname:///docs/changetracker/8_2/install/agent/rollinglogfile).
 3. Modify the `HubDetails.xml` file. A known good `HubDetails.xml` example is shown in the following section.
 4. Modify the `HubURL` and insert your URL in its place.
-5. Remove the `<Password>` tags — these contain the encrypted agent password, if any exist.
-6. In the place of the `<Password>` tags, enter the password tags shown in the following example. The default password is used as an example.
-7. Between the password entries, enter your Agent Account password as defined on the Netwrix Change Tracker Hub Server.
-8. Between the `Thumbprint` entries, enter your custom certificate thumbprint if you have one. If you do not have a custom certificate and are using the default, leave it blank.
-9. Save the file, replacing the old one.
+5. Replace the existing `<Password>` tags (which contain the encrypted agent password, if any) with the password tags shown in the following example, then enter your Agent Account password (as defined on the Netwrix Change Tracker Hub Server) between them. The default password is used as an example.
+6. Between the `Thumbprint` entries, enter your custom certificate thumbprint if you have one. If you do not have a custom certificate and are using the default, leave it blank.
+7. Save the file, replacing the old one.
 
    > **NOTE:** You may need to save this to the desktop and copy and paste it back, replacing the old file in the directory.
 
-10. Restart the agent service.
+8. Restart the agent service.
 
 > **NOTE:** When you start the service, the agent automatically re-encrypts your password, and the E1 tags replace the password tags. There is also a ten-minute cool-off when this happens. Now that the username and password have been corrected, the agent should register after the ten minutes have elapsed. This cool-off period is counted at the Netwrix Change Tracker Hub Server and does not take effect at the agent level. If you have stopped the service, you do not have to wait 10 minutes after restarting it.
 

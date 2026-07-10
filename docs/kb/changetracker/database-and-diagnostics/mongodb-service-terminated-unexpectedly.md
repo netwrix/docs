@@ -33,16 +33,12 @@ The issue occurs when a database is corrupted. Corruption can happen when a serv
 
 1. On the computer that hosts **Netwrix Change Tracker** software, stop the **MongoDB** service.
 2. Open a **Command Prompt** as an Administrator.
-3. Enter the following command:
+3. Enter the following commands in order:
+
    ```bat
    cd "C:\Program Files\NNT Change Tracker Suite (Netcore)\Gen7\MongoDB\bin"
-   ```
-4. Enter the following command:
-   ```bat
    mongod.exe --dbpath "C:\ProgramData\Change Tracker Generation 7 (Netcore)\MongoDB\db" --repair
-   ```
-5. Enter the following command:
-   ```bat
    iisreset
    ```
-6. Close the command prompt window.
+
+4. Close the Command Prompt window.
