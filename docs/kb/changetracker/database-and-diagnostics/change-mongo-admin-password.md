@@ -33,9 +33,9 @@ If authentication is enabled in MongoDB and the admin password is lost, use this
 1. Stop the MongoDB service using `services.msc` or `sc stop MongoDB`.
 
 2. Disable MongoDB authentication:
-   1. Navigate to `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\conf`.
-   2. Edit the `mongo.conf` file.
-   3. Comment each line out using the `#` symbol except for `logpath`, `dbpath`, and `storageEngine`.
+   - Navigate to `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\conf`.
+   - Edit the `mongo.conf` file.
+   - Comment each line out using the `#` symbol except for `logpath`, `dbpath`, and `storageEngine`.
 
    <!-- Image removed: mongo.conf file open in a text editor with all lines commented out except logpath, dbpath, and storageEngine -->
 
@@ -61,8 +61,8 @@ If authentication is enabled in MongoDB and the admin password is lost, use this
 6. Close the `mongo.exe` window and stop the MongoDB service in Task Manager.
 
 7. Re-enable MongoDB authentication:
-   1. Navigate to `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\conf`.
-   2. In the `mongo.conf` file, remove all `#` symbols from each of the lines. Save the changes.
+   - Navigate to `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\conf`.
+   - In the `mongo.conf` file, remove all `#` symbols from each of the lines. Save the changes.
 
       <!-- Image removed: mongo.conf file open in a text editor with the # symbols removed to re-enable authentication -->
 
