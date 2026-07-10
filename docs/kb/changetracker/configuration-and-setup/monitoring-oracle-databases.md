@@ -26,7 +26,7 @@ title: Monitoring Oracle Databases Using Change Tracker
 
 ## Overview
 
-This article describes how to configure Netwrix Change Tracker to monitor an Oracle database. It covers the required connection details, credential creation, proxy device setup, running test compliance reports, and troubleshooting common Oracle errors. If you need additional assistance, contact Netwrix Support via the web.
+This article describes how to configure Netwrix Change Tracker to monitor an Oracle database. It covers the required connection details, credential creation, proxy device setup, running test compliance reports, and troubleshooting common Oracle errors. If you need additional assistance, contact [Netwrix Support](https://www.netwrix.com/support.html).
 
 To monitor a database successfully, obtain the required connection information described in the Prerequisites section.
 
@@ -99,7 +99,7 @@ ORACLE_HOME=/u01/app/oracle/product/19.0.0/db_1
 Create an account for the databases being monitored. The account requires enough privileges to access the information that Netwrix Change Tracker queries. You can adjust this level of privilege depending on the monitoring requirement. For example, the following privileges for the `c##ntx` account have been used in previous engagements to monitor databases successfully:
 
 ```sql
-CREATE USER c##ntx IDENTIFIED BY password;
+CREATE USER c##ntx IDENTIFIED BY <password>;
 GRANT SELECT_CATALOG_ROLE TO c##ntx;
 GRANT SELECT ANY TABLE TO c##ntx;
 GRANT EXECUTE ANY PROCEDURE TO c##ntx;
@@ -116,7 +116,7 @@ GRANT CREATE SESSION TO c##ntx WITH ADMIN OPTION;
 
 Once you have obtained all of the required information, create a Change Tracker Credential String that Netwrix Change Tracker uses to connect to and authenticate with the database. An example credential string:
 
-`Server=192.168.1.85;Port=1521;User Id=c##ntx;Password=password;Direct=True;`
+`Server=192.168.1.85;Port=1521;User Id=c##ntx;Password=<password>;Direct=True;`
 
 Enter the connection string into the following section of the Netwrix Change Tracker web console:
 
@@ -124,9 +124,9 @@ Enter the connection string into the following section of the Netwrix Change Tra
 
 In the pop-up menu that appears, enter the following:
 
-1. **Credential Name:** XE (this is personal preference).
-2. **Database Platform:** Oracle.
-3. **Connection String:** Copy in your string (as shown in the preceding example).
+- **Credential Name:** XE (this is personal preference).
+- **Database Platform:** Oracle.
+- **Connection String:** Copy in your string (as shown in the preceding example).
 
 <!-- Image removed: Add Database Credential dialog with Credential Name, Database Platform, and Connection String fields -->
 
@@ -186,11 +186,11 @@ Once configured, you can run a Netwrix Change Tracker Compliance Report against 
 - **Number of columns within a specified table**
 - **Names of columns within a specified table**
 
-At this stage, contact the **Netwrix Support Team** for assistance. Support can help you build a Netwrix Change Tracker Compliance Report that meets your requirements and works for the database you want to monitor.
+At this stage, contact [Netwrix Support](https://www.netwrix.com/support.html) for assistance. Support can help you build a Netwrix Change Tracker Compliance Report that meets your requirements and works for the database you want to monitor.
 
 ### Step 8: Troubleshoot Oracle Connection Errors
 
-If, after the Netwrix Support Team has provided you with a compliance report, you receive error messages when running the report against your database, the following error messages and descriptions may help you diagnose the issue. If the error message you receive is not listed here, refer to [Oracle Database Error Messages · Oracle](https://docs.oracle.com/cd/B19306_01/server.102/b14219.pdf) for a full list of error messages provided by Oracle.
+If, after Netwrix Support has provided you with a compliance report, you receive error messages when running the report against your database, the following error messages and descriptions may help you diagnose the issue. If the error message you receive is not listed here, refer to [Oracle Database Error Messages · Oracle](https://docs.oracle.com/cd/B19306_01/server.102/b14219.pdf) for a full list of error messages provided by Oracle.
 
 - **ORA-12541: TNS:no listener**
   **Cause**: The connection request could not be completed because the listener is not running.
@@ -204,4 +204,4 @@ If, after the Netwrix Support Team has provided you with a compliance report, yo
   **Cause**: Sufficient memory could not be allocated to perform the desired activity.
   **Action**: Either free some resource for TNS or add more memory to the machine. For further details, turn on tracing and rerun the operation.
 
-If you require more information or assistance with the setup of your Oracle database, contact the **Netwrix Support Team**.
+If you require more information or assistance with the setup of your Oracle database, contact [Netwrix Support](https://www.netwrix.com/support.html).

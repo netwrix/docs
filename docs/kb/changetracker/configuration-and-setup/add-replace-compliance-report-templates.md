@@ -25,51 +25,61 @@ title: Adding or Replacing Configuration and Compliance Report Templates
 
 ## Overview
 
-Use this article when a client has replaced or edited a template and needs to upload it to Netwrix Change Tracker.
+Netwrix Change Tracker uses two types of templates:
+
+1. Configuration templates, which define the file, folder, and registry monitoring policy.
+2. Compliance report templates, which map to CIS Benchmarks and score devices against a hardened build standard.
+
+This article describes how to upload a new template of either type, overwrite an existing default template, and assign the template to a device group.
 
 ## Instructions
 
 ### Configuration Template
 
-1. Go to **Settings**.
-2. Go to **Configuration Templates**.
-3. Click **Upload Template(s)**.
-4. Browse your local files and select the template you want to upload. For example, `Windows Server 2012 R2 CIS Monitoring Template`. <!-- SME: Windows Server 2012 R2 is EOL — consider refreshing example to a currently supported OS (e.g., Server 2022) -->
-5. If you are replacing a default template, select the **Overwrite any existing config with the same name.** check box. (Skip this step if you are not replacing a template.)
-6. Click **Upload files**.
-7. The following screenshot shows an example.
+1. Go to **Settings** > **Configuration Templates**, then click **Upload Templates**.
+2. Browse your local files and select the template you want to upload.
+
+   For example, `Windows Server 2012 R2 CIS Monitoring Template`. <!-- SME: Windows Server 2012 R2 is EOL — consider refreshing example to a currently supported OS (e.g., Server 2022) -->
 
 <!-- Image removed: Upload Templates dialog showing the file browse control and Overwrite existing config checkbox -->
 
-8. If you are not replacing a default template, assign the template to its matching group of devices:
+#### Replacing a Default Template
 
-   1. Go to **Settings**.
-   2. Go to **Groups**.
-   3. Select the group of devices and click **Device Templates**.
-   4. Delete the Default Template.
-   5. Click **Add a Template to the Group**.
-   6. In the pop-up window, select the template you uploaded and click **Update**.
+1. Select the **Overwrite any existing config with the same name** check box.
+2. Click **Upload files**.
+
+#### Not Replacing a Default Template
+
+1. Click **Upload files**.
+2. Go to **Settings** > **Groups**.
+3. Select the group of devices and click **Device Templates**.
+4. Delete the **Default Template**.
+5. Click **Add a Template to the Group**.
+6. In the pop-up window, select the template you uploaded and click **Update**.
 
 <!-- Image removed: Device Templates tab on a Group showing Add a Template to the Group control -->
 
 ### Compliance Report Template
 
-1. Go to **Settings**.
-2. Go to **Compliance Report Templates**.
-3. Click **Upload Template(s)**.
-4. Browse your local files and select the template you want to upload. For example: `NNT_CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.2.1 - Level 1 Member Server`.
-5. If you are replacing a default template, select the **Overwrite any existing config with the same name.** check box. (Skip this step if you are not replacing a template.)
-6. Click **Upload files**.
+1. Go to **Settings** > **Compliance Report Templates**, then click **Upload Templates**.
+2. Browse your local files and select the template you want to upload.
+
+   For example: `NNT_CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.2.1 - Level 1 Member Server`.
 
 <!-- Image removed: Compliance Report Templates upload dialog with the CIS Windows Server benchmark example selected -->
 
-7. If you are not replacing a default template, assign the report to its matching group of devices:
+#### Replacing a Default Template
 
-   1. Go to **Settings**.
-   2. Go to **Groups**.
-   3. Select the group of devices and click **Scheduled Reports**.
-   4. Delete the Default Report.
-   5. Click **Schedule a New Report**.
-   6. In the pop-up window, select the template you uploaded, enter the information you want, and click **Update**.
+1. Select the **Overwrite any existing config with the same name** check box.
+2. Click **Upload files**.
+
+#### Not Replacing a Default Template
+
+1. Click **Upload files**.
+2. Go to **Settings** > **Groups**.
+3. Select the group of devices and click **Scheduled Reports**.
+4. Delete the **Default Report**.
+5. Click **Schedule a New Report**.
+6. In the pop-up window, select the template you uploaded, enter the information you want, then click **Update**.
 
 <!-- Image removed: Schedule a New Report dialog on a Group with the newly-uploaded compliance report selected -->

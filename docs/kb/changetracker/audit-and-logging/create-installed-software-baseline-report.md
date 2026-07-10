@@ -18,33 +18,32 @@ products:
 knowledge_article_id: ka0Qk000000DnqvIAC
 sidebar_label: Creating an Installed Software Baseline Report
 tags: [kb, audit-and-logging]
-title: Creating an Installed Software Baseline Report
+title: Creating an Installed Software Baseline Report from a Gold-Standard System
 ---
 
-# Creating an Installed Software Baseline Report
+# Creating an Installed Software Baseline Report from a Gold-Standard System
 
 ## Overview
 
 If a system in your environment represents the gold standard of required installed software, you can use Netwrix Change Tracker to build a report that checks whether other systems match the gold standard machine.
 
-The approach in the following steps isolates the gold standard machine within its own group and applies its own templates. This lets you gather the information from the gold standard system without impacting the templates applied to the wider production environment.
+This approach isolates the gold standard machine within its own group and applies its own templates. This lets you gather the information from the gold standard system without impacting the templates applied to the wider production environment.
+
+For background on Netwrix Change Tracker's broader baselining and hardened build standard concepts, refer to the [Baseline](pathname:///docs/changetracker/8_2/baseline/overview) overview.
 
 ## Instructions
 
 ### Create a Template
 
-Identify the system to be used for the gold standard baseline report and confirm that this system is registered with Netwrix Change Tracker. Use the **Device** tile to find the template applied to the system, because you will copy this template. In this example, the template is `CIS Win 8 L1 Base`. <!-- SME: example uses Windows 8 (EOL) — consider refreshing to a currently supported OS/CIS template -->
+1. Identify the system to use for the gold standard baseline report and confirm that it is registered with Netwrix Change Tracker. Use the **Device** tile to find the template applied to the system, because you will copy this template. In this example, the template is `CIS Win 8 L1 Base`. <!-- SME: example uses Windows 8 (EOL) — consider refreshing to a currently supported OS/CIS template -->
 
-<!-- Image removed: Device tile in Netwrix Change Tracker showing the gold-standard system and its applied configuration template -->
+   <!-- Image removed: Device tile in Netwrix Change Tracker showing the gold-standard system and its applied configuration template -->
 
-While logged on with an admin account, go to **Settings > Configuration Template**.
+2. While logged on with an admin account, go to **Settings > Configuration Template** and find the template applied to the system by default. In this example, the located template is `CIS Win 8 L1 Base`.
 
-Find the template applied to the system by default. In the following example, you review a Windows 8 system, and the located template is `CIS Win 8 L1 Base`.
+   <!-- Image removed: Configuration Template list with the CIS Win 8 L1 Base template highlighted -->
 
-<!-- Image removed: Configuration Template list with the CIS Win 8 L1 Base template highlighted -->
-
-1. Click the **Copy Config** button and give the template a suitable name.
-   - In this example, the template is named `CIS Win 8 L1 Base Gold Standard`.
+3. Click the **Copy Config** button and give the template a suitable name. In this example, the template is named `CIS Win 8 L1 Base Gold Standard`.
 
 ### Turn on Baselining
 
@@ -58,7 +57,7 @@ Within the created gold standard template, configure the template to collect the
 
 ### Create a Group Structure
 
-While still logged in with the admin account, go to **Settings > Groups** and create a group for your gold standard systems. In the following example, a group is created for a Windows 8 system.
+While still logged in with the admin account, go to **Settings > Groups** and create a group for your gold standard systems. This example creates a group for a Windows 8 system.
 
 <!-- Image removed: Settings > Groups view showing the newly created gold-standard Windows 8 group -->
 
@@ -93,12 +92,14 @@ A baseline report for all software and patches installed on your gold standard s
 
 With the report created, you can add the report to an existing group to run the report against all members of that group, or run the report ad hoc from the **Device** tile.
 
-Schedule the report within a group:
+To schedule the report within a group:
 
 <!-- Image removed: Scheduled Reports tab on a group with the new baseline report added to the schedule -->
 
-Run the report ad hoc from the **Device** tile:
+To run the report ad hoc from the **Device** tile:
 
 <!-- Image removed: Device tile ad-hoc report run controls with the baseline report selected -->
+
+Either method produces a result that compares each device against the gold standard baseline and shows which devices pass or fail.
 
 <!-- Image removed: Ad-hoc baseline report results showing pass/fail comparison against the gold standard -->

@@ -41,9 +41,7 @@ If authentication is enabled in MongoDB and the admin password is lost, use this
 
 3. Start the MongoDB service using `services.msc` or `sc start MongoDB`.
 
-4. Open the Mongo shell by running the following program: `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin\mongo.exe`
-
-   The Mongo shell window opens.
+4. Open the **Mongo shell** by running the following program: `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin\mongo.exe`.
 
    <!-- Image removed: Mongo shell window after launching mongo.exe -->
 

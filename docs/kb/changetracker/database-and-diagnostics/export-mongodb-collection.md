@@ -34,9 +34,9 @@ This article explains how to export or back up specific collections from MongoDB
 3. Run:
    - `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`
    - (If you need to change drives, enter the command `X:`, replacing `X` with your drive letter.)
-4. Enter the following command to start the Mongo shell:
+4. Enter the following command to start the **Mongo shell**:
    - `.\mongo.exe`
-5. In the Mongo shell, enter:
+5. In the **Mongo shell**, enter:
    - `show dbs`
 6. Switch to the hub database:
    - `use NNTHubService`
@@ -46,7 +46,7 @@ This article explains how to export or back up specific collections from MongoDB
    <!-- Image removed: Mongo shell output listing all collections after running `show collections` -->
 
 8. All collections located in MongoDB appear in the output.
-9. Exit the Mongo shell:
+9. Exit the **Mongo shell**:
    - `exit`
 10. To export a collection, run the following command (edit the placeholders as needed):
     - `mongodump -d NNTHubService -c ENTER-COLLECTION-NAME -o "C:\ENTER PATH HERE"`
@@ -55,10 +55,18 @@ This article explains how to export or back up specific collections from MongoDB
 
     <!-- Image removed: Example mongodump command with collection name and output path filled in -->
 
-> **NOTE:** The following is a list of all collections in MongoDB:
+> **NOTE:** The following are all collections in MongoDB.
 
-AgentTaskQueue, AgentTasks, BackgroundTaskQueue, BackgroundTasks, Counters, DefaultFilters, EventStats, Events, Hashes, HubBackups, HubConfigData,
-
-IncomingEventQueue, IpAddressActivity, Licensing, NotificationQueue, Organizations, PendingNotifications, PerformanceData, PlannedChangeDefinitions, PlannedChangeInstances,
-
-Policy, RemoteCredentials, SavedUserData, Scheduled Policy, Sequences, SystemDirectory, UserAuth, UserAuthDetails, UserRoles, fs.chunks, fs.files
+```
+AgentTaskQueue        IncomingEventQueue        SavedUserData
+AgentTasks            IpAddressActivity         ScheduledPolicy
+BackgroundTaskQueue   Licensing                 Sequences
+BackgroundTasks       NotificationQueue         SystemDirectory
+Counters              PendingNotifications      UserAuth
+DefaultFilters        PerformanceData           UserAuthDetails
+EventStats            PlannedChangeDefinitions  UserRoles
+Events                PlannedChangeInstances    fs.chunks
+Hashes                Policy                    fs.files
+HubBackups            RemoteCredentials
+HubConfigData
+```

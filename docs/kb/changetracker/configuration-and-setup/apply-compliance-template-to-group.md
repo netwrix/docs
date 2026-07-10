@@ -23,29 +23,30 @@ title: Applying a Compliance Template to a Group for Automated Reporting
 
 ## Overview
 
-This article shows how to apply a compliance template to a group in Netwrix Change Tracker for automated reporting.
+A compliance template defines a hardened build standard that Netwrix Change Tracker uses to score devices for compliance. Applying a template to a device group lets you schedule automated compliance reports against that standard.
 
-> **NOTE:** If you need to upload a template, refer to the article "How to Upload a Compliance Template to Netwrix Change Tracker". <!-- link removed: kb.netwrix.com/8187 -->
+This article describes how to apply a compliance template to a device group and schedule automated reporting. Identify the template you want to apply and the group of devices you want to apply it to, then follow the steps below.
+
+> **NOTE:** If you need to upload a template, refer to [Adding or Replacing Compliance Report Templates](./add-replace-compliance-report-templates.md).
 
 ## Instructions
 
-Identify a template you want to apply and the group of devices you want to apply it to, then follow these steps:
-
-1. Click the **Settings** tile.
-2. On the left navigation menu, click the **Groups** tab.
-3. Select the group that you want the template applied to by clicking it.
+1. Click the **Settings** tile, then click the **Groups** tab on the left navigation menu.
+2. Select the group that you want the template applied to by clicking it.
 
    > **NOTE:** If you attach a template to a parent group, all child objects also inherit this template.
 
-4. On the right side of the screen, select the **Scheduled Reports** tab.
-5. Click **+Schedule a New Report**.
-6. Select your compliance report policy.
-7. Define a start and end date.
+3. On the right side of the screen, select the **Scheduled Reports** tab.
+4. Click **+Schedule a New Report**.
+5. Select your compliance report policy.
+6. Define a start and end date.
 
-   > **NOTE:** Leaving these fields blank makes the schedule open-ended, and the schedule runs indefinitely.
+   > **IMPORTANT:** Leaving these fields blank makes the schedule open-ended, and the schedule runs indefinitely.
 
-8. Select the **Schedule** increment in minutes. Preset options exist for Hourly, Daily, and Weekly. If none of these suit your needs, enter an interval in minutes.
-9. Define the passing score by typing in a percentage. The system provides a pass or fail result depending on whether the report scores higher or lower than the defined percentage.
-10. Click **Update**.
+7. Select a **Schedule** increment: **Hourly**, **Daily**, **Weekly**, or a custom interval in minutes.
+8. Enter a passing score percentage. Reports pass or fail depending on whether the score is above or below this percentage.
+9. Click **Update**.
 
 <!-- Image removed: Schedule a New Report dialog showing compliance policy, start/end date, schedule interval, and passing score fields -->
+
+The report appears in the **Scheduled Reports** list and runs automatically according to the schedule you defined.
