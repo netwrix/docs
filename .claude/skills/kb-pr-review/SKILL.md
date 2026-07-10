@@ -164,6 +164,23 @@ For each file in `KB_FILES`:
 
 Do NOT flag contractions, heading case, passive voice, jargon, or undefined acronyms — those belong to Vale and Dale respectively.
 
+**KB Editing Conventions Scan (Derek subsection).** In addition to the areas table above, run the checklist below on every file. These are mechanical scan patterns codified during batch reviews; they map to the canonical rulebook maintained by the reviewer (`feedback_kb_editing_conventions.md` in the reviewer's memory). Do not duplicate the rulebook's full text here — treat the checklist as the minimum sweep. If a batch surfaces a new pattern, add it here in the next PR.
+
+| # | Scan pattern | What to flag / fix |
+|---|--------------|--------------------|
+| 1 | `:::note`/`:::important`/`:::warning`/`:::tip` or `> **NOTE:**` / `> **IMPORTANT:**` / `> **WARNING:**` blockquote inside a numbered list item | The callout must be indented **4 spaces** to attach to the preceding step. Fewer than 4 spaces breaks the list at CommonMark render time — this is a build-breaker, not a style nit. |
+| 2 | `## Overview` that restates the title or reads as a bare symptom/condition | Rewrite to pull sourced facts from product docs and state the goal (`This article describes how to...`). |
+| 3 | Literal string `<!-- link removed -->` in the article body | Search `docs/kb/**/*.md` and `docs/<product>/<version>/**/*.md` for a plausible target before shipping. If a real target exists, restore the cross-link; otherwise leave the comment and note it as unresolved. |
+| 4 | Same UI element or app name bolded in some places and unbolded in others within the same file | Normalize to consistent bolding across all occurrences in that article. |
+| 5 | Trailing periods inside markdown table cells | Strip them. Vale and Dale skip table content, so these slip through unless caught here. |
+| 6 | Numbered step ending on a bare `Click **X**.` with no observable result | Add a closing sentence describing what happens (dialog appears, list updates, etc.) OR combine with the next click step using `..., then click **Y**`. |
+| 7 | Any "contact Netwrix Support" phrasing without the standard link | Standard form is `[Netwrix Support](https://www.netwrix.com/support.html)`. Link only the first "contact" mention per article. |
+| 8 | `## Instructions` section with 3+ sequential subheadings | Rename to `Step N — <Label>` (em dash, not colon). Normalize any pre-existing `Step N:` to em dash. Does NOT apply to parallel-alternative subheadings (Windows/Linux) — keep those descriptive. Apply companion condensation opportunities at the same time (hoist repeated prerequisites into one NOTE, combine consecutive UI actions with "X, then Y" phrasing). |
+| 9 | 2+ consecutive numbered steps that each read `Enter the following command: X.` | Condense into a single step: `Enter the following commands in order:` followed by a bulleted list or a fenced multi-line code block. Applies even at 2-3 repetitions for within-file consistency. |
+| 10 | A numbered "step" that describes a result rather than an action ("All collections appear in the output.") sitting between real action steps | Pull it out of the numbering — fold as a parenthetical on the preceding action, or set as unnumbered prose beneath it. |
+| 11 | A subheading under `## Instructions` whose content is purely descriptive/observational (no action for the reader to perform) | Restructure it into its own labeled section (e.g., `Reviewing X`) using prose or a bulleted fact list — not fake numbered "steps." Every subheading under Instructions must contain an actual action. |
+| 12 | A numbered step whose sub-list uses nested `1.` `2.` `3.` numbering | Convert the nested sub-list to `-` dashes. Numbered-inside-numbered renders ambiguously and reads as a restart; dashes make the parent/child relationship explicit. |
+
 Record each finding as: `area | finding | recommendation`.
 
 ---
