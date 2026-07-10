@@ -49,7 +49,7 @@ The `ProxiedDevices.json` file on the Netwrix Change Tracker Gen 7 Agent did not
 2. Navigate to the agent service folder:
    - Windows: `C:\ProgramData\NNT\gen7agent.service`
    - Linux: `/var/nnt/gen7agent.service`
-3. Stop the **nntgen7agent** service on the server.
+3. Stop the `nntgen7agent` service on the server.
 4. Edit the `ProxiedDevices.json` file.
 5. Within the `[]` brackets, manually fill in the proxy device details. On the Netwrix Change Tracker Console, edit the proxy device in question to view its details, then fill out the fields as shown in the following example.
 
@@ -62,5 +62,5 @@ The `ProxiedDevices.json` file on the Netwrix Change Tracker Gen 7 Agent did not
     ```
 
 6. After you have entered the details of the proxy device manually, save the file.
-7. Start the **nntgen7agent** service.
+7. Start the `nntgen7agent` service.
 8. Check whether the proxy device appears online on the Netwrix Change Tracker Console and operates as expected.

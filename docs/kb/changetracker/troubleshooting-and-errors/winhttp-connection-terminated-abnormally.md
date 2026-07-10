@@ -16,14 +16,12 @@ keywords:
 products:
   - changetracker
 knowledge_article_id: ka0Qk000000DZWDIA4
-sidebar_label: 'Netwrix Gen 7 Agent Error: WinHttp Connection Terminated Abnormally'
+sidebar_label: 'Error: WinHTTP Connection Terminated Abnormally (Gen 7 Agent)'
 tags: [kb, troubleshooting-and-errors]
-title: >-
-  Netwrix Change Tracker Gen 7 Agent Error. WinHttp.WinHttpRequest: The
-  Connection With the Server Was Terminated Abnormally
+title: 'Error: WinHTTP Connection Terminated Abnormally (Gen 7 Agent)'
 ---
 
-# Netwrix Change Tracker Gen 7 Agent Error. WinHttp.WinHttpRequest: The Connection With the Server Was Terminated Abnormally
+# Error: WinHTTP Connection Terminated Abnormally (Gen 7 Agent)
 
 ## Symptom
 
@@ -35,15 +33,14 @@ On older Windows systems, WinHTTP does not use TLS 1.1 or TLS 1.2 as a default s
 
 ## Resolution
 
-1. Download the Easy Fix tool from [Microsoft: Update to enable TLS 1.1 and TLS 1.2 as default secure protocols in WinHTTP in Windows](https://support.microsoft.com/en-us/topic/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-winhttp-in-windows-c4bd73d2-31d7-761e-0178-11268bb10392).
+1. Download the Easy Fix tool from [Update to enable TLS 1.1 and TLS 1.2 as default secure protocols in WinHTTP in Windows ⸱ Microsoft 🡥](https://support.microsoft.com/en-us/topic/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-winhttp-in-windows-c4bd73d2-31d7-761e-0178-11268bb10392).
 2. Run through the hotfix installation.
 3. Close the **Netwrix Change Tracker Gen 7 Agent** installer if it is still open.
 4. Try to install the **Netwrix Change Tracker Gen 7 Agent** again and test the **Hub connection**.
 
 ## Related Articles
 
-- [How to Configure the FAST Cloud Integration with Proxy Internet Settings](/docs/kb/changetracker/configuration-and-setup/fast-cloud-proxy-settings)
-- [How to Fix the "Check Log for Details" Message in the Event Details](/docs/kb/changetracker/troubleshooting-and-errors/check-log-for-details-message)
+- [How to Configure the FAST Cloud Integration with Proxy Internet Settings](/docs/kb/changetracker/configuration-and-setup/fast-cloud-proxy-settings.md)
 
 <!--
 Additional related articles pending migration to the public docs site. Re-add
@@ -52,4 +49,5 @@ migrated in a future batch:
 
 - Add Palo Alto Device to a Proxy Agent as a Proxy Device in Change Tracker Gen 7 (kA04u0000000JXHCA2) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (steps are outdated); Batch 4 candidate
 - Supporting Documents for Hub Server Problems (kA04u0000000JdtCAE) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (remove Linux-related content); Batch 4 candidate
+- Fixing the "Check Log for Details" Message in the Event Details (docs/kb/changetracker/troubleshooting-and-errors/check-log-for-details-message.md) — pending merge of batch 3b PR #1209; re-add once merged to dev. Link text updated to match the article's current (batch 3b) title (dropped stale "How to Fix" phrasing).
 -->

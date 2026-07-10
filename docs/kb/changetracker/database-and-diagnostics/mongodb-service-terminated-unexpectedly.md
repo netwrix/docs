@@ -27,11 +27,11 @@ The MongoDB service does not stay running and stops after each startup.
 
 ## Cause
 
-The issue occurs when a database is corrupted. Corruption can happen when a server is shut down unexpectedly, because MongoDB does not have time to shut down safely.
+The issue occurs when a database is corrupted. Corruption can happen when a server shuts down unexpectedly, because MongoDB does not have time to shut down safely.
 
 ## Resolution
 
-1. On the computer that hosts **Netwrix Change Tracker** software, stop the **MongoDB** service.
+1. On the computer that hosts Netwrix Change Tracker software, stop the MongoDB service.
 2. Open a **Command Prompt** as an Administrator.
 3. Enter the following commands in order:
 

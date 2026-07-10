@@ -75,8 +75,7 @@ Follow these steps:
 
 ## Related Articles
 
-- [How to Configure the FAST Cloud Integration with Proxy Internet Settings](/docs/kb/changetracker/configuration-and-setup/fast-cloud-proxy-settings)
-- [How to Change the Admin Password of Your Mongo Database](/docs/kb/changetracker/database-and-diagnostics/change-mongo-admin-password)
+- [How to Configure the FAST Cloud Integration with Proxy Internet Settings](/docs/kb/changetracker/configuration-and-setup/fast-cloud-proxy-settings.md)
 
 <!--
 Additional related articles pending migration to the public docs site. Re-add
@@ -85,4 +84,5 @@ migrated in a future batch:
 
 - How to Move Your Linux Server MongoDB Database to a Windows Server (kb.netwrix.com/8283) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (refresh steps and screenshots); Batch 4 candidate
 - Add Palo Alto Device to a Proxy Agent as a Proxy Device in Change Tracker Gen 7 (kA04u0000000JXHCA2) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (steps are outdated); Batch 4 candidate
+- Changing the Admin Password for MongoDB (docs/kb/changetracker/database-and-diagnostics/change-mongo-admin-password.md) — pending merge of batch 3b PR #1209; re-add once merged to dev. Link text updated to match the article's current (batch 3b) title.
 -->

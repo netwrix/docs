@@ -16,12 +16,12 @@ keywords:
 products:
   - changetracker
 knowledge_article_id: ka04u00000116rcAAA
-sidebar_label: How to Disable 2FA for Default Administrator
+sidebar_label: Disabling 2FA for the Default Administrator
 tags: [kb, configuration-and-setup]
-title: How to Disable 2FA for Default Administrator User in Netwrix Change Tracker
+title: Disabling 2FA for the Default Administrator
 ---
 
-# How to Disable 2FA for Default Administrator User in Netwrix Change Tracker
+# Disabling 2FA for the Default Administrator
 
 ## Question
 
@@ -29,7 +29,7 @@ How do you disable two-factor authentication (2FA) for the default administrator
 
 ## Answer
 
-To use **Allowed Commands**, a one-time password is required. Follow the steps provided to disable two-factor authentication and have Netwrix Change Tracker generate one-time codes in the application log file instead.
+**Allowed Commands** requires a one-time password. Follow these steps to disable two-factor authentication so Netwrix Change Tracker generates one-time codes in the application log file instead.
 
 > **IMPORTANT:** This method works only for the default administrator user and does not apply to administrator role users or users with no administrator permissions.
 
@@ -50,7 +50,7 @@ To use **Allowed Commands**, a one-time password is required. Follow the steps p
    iisreset /start
    ```
 
-> **NOTE:** Setting `registerAdmin` to `false` prevents the system from logging the root admin in using two-factor authentication. Some operations in **Allowed Commands** can be performed only after the user has passed two-factor authentication during the session (that is, has presented a one-time password). With `registerAdmin` set to `false`, the system uses a one-time password written to the log file.  
+> **NOTE:** Setting `registerAdmin` to `false` prevents the system from logging the root admin in using two-factor authentication. You can perform some operations in **Allowed Commands** only after you pass two-factor authentication during the session (that is, present a one-time password). With `registerAdmin` set to `false`, the system uses a one-time password written to the log file.  
 > This feature can be disabled via `fallbackEnabled`, but doing so prevents the user from using **Allowed Commands**.
 
 Refer to the following steps for the updated login workflow:

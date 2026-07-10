@@ -20,12 +20,12 @@ knowledge_article_id: ka0Qk000000Dlh3IAC
 sidebar_label: 'Rolling-Log Fix: TraceLogger Address Already In Use'
 tags: [kb, troubleshooting-and-errors]
 title: >-
-  Rolling-Log Fix: "FATAL TraceLogger - AplicationInstance.Start() Fatal error,
+  Rolling-Log Fix: "FATAL TraceLogger - ApplicationInstance.Start() Fatal error,
   Application shutting down. Error: Address already in use
   System.Net.Sockets.SocketException: Address already in use"
 ---
 
-# Rolling-Log Fix: "FATAL TraceLogger - AplicationInstance.Start() Fatal error, Application shutting down. Error: Address already in use System.Net.Sockets.SocketException: Address already in use"
+# Rolling-Log Fix: "FATAL TraceLogger - ApplicationInstance.Start() Fatal error, Application shutting down. Error: Address already in use System.Net.Sockets.SocketException: Address already in use"
 
 ## Symptom
 
@@ -60,7 +60,7 @@ Another application is using the local agent UI port (6.5 Agent - Port `8095` or
 
 ## Resolution
 
-If you receive this error, the Netwrix Change Tracker agent is NOT reporting to the hub. This is a critical error; monitoring does not continue until you resolve it.
+If you receive this error, the Netwrix Change Tracker agent is not reporting to the hub. This is a critical error, and monitoring does not continue until you resolve it.
 
 To resolve this error:
 

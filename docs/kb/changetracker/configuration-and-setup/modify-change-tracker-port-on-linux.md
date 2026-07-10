@@ -31,33 +31,37 @@ Use this article when you have already installed Netwrix Change Tracker on a RHE
 
 ## Instructions
 
-1. Stop `nnthubservice`, `nginx`, and `mongod` in order. Use either `service` or `systemctl`:
+1. Stop `nnthubservice`, `nginx`, and `mongod` in order:
 
-   ```bash
-   # service nnthubservice stop
-   # service nginx stop
-   # service mongod stop
-   ```
+   - **Option 1 (`service`):**
 
-   Or:
+     ```bash
+     # service nnthubservice stop
+     # service nginx stop
+     # service mongod stop
+     ```
 
-   ```bash
-   # systemctl stop nnthubservice
-   # systemctl stop nginx
-   # systemctl stop mongod
-   ```
+   - **Option 2 (`systemctl`):**
+
+     ```bash
+     # systemctl stop nnthubservice
+     # systemctl stop nginx
+     # systemctl stop mongod
+     ```
 
 2. Edit `/etc/nginx/conf.d/nnt.conf` using a text editor with root permissions:
 
-   ```bash
-   # sudo vi /etc/nginx/conf.d/nnt.conf
-   ```
+   - **Option 1 (`vi`):**
 
-   Or:
+     ```bash
+     # sudo vi /etc/nginx/conf.d/nnt.conf
+     ```
 
-   ```bash
-   # sudo nano /etc/nginx/conf.d/nnt.conf
-   ```
+   - **Option 2 (`nano`):**
+
+     ```bash
+     # sudo nano /etc/nginx/conf.d/nnt.conf
+     ```
 
 3. Find the `listen` directive and change the port to the desired value. This example changes port `443` to port `3443`:
 

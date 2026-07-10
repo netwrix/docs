@@ -49,10 +49,7 @@ Place your certificate and private key in `/etc/nginx/nnt_ssl`. Example filename
 
 ### Step 3 — Change the Nginx Config to Use the Custom Certificate
 
-1. Edit the Nginx configuration file:
-
-   - `vi /etc/nginx/conf.d/nnt.conf`
-
+1. Edit the Nginx configuration file: `vi /etc/nginx/conf.d/nnt.conf`.
 2. Update the server block to reference your certificate and key. Example contents:
 
    ```
@@ -97,4 +94,4 @@ To resolve the mismatch, add the custom thumbprint to `HubDetails.xml` on each a
 2. Edit the `HubDetails.xml` file (preserve the filename exactly) and add or update the `Thumbprint` value with the server certificate thumbprint.
 3. Restart the agent service on the agent machine. The agent registers successfully after the thumbprint in `HubDetails.xml` matches the server certificate.
 
-<!-- Image removed: [screenshot of HubDetails.xml showing the Thumbprint entry filled in with the server certificate value] -->
+<!-- Image removed: screenshot of HubDetails.xml showing the Thumbprint entry filled in with the server certificate value -->

@@ -46,7 +46,7 @@ The agent could not locate the `HubDetails.xml` file, which tells the agent how 
 
 ## Resolution
 
-If you receive this error, the Netwrix Change Tracker Agent is NOT reporting to the hub. This is a critical error and, for monitoring to continue, you must resolve it. To resolve this error:
+If you receive this error, the Netwrix Change Tracker Agent is not reporting to the hub. This is a critical error, and you must resolve it for monitoring to continue. To resolve this error:
 
 1. Stop the Netwrix Change Tracker Agent Service.
 2. Run the Netwrix Change Tracker Connection Script by issuing the following command, then complete the requested details:
@@ -66,7 +66,7 @@ If the preceding steps do not work:
 6. Between the `Thumbprint` entries, enter your custom certificate thumbprint if you have one. If you do not have a custom certificate and are using the default, leave it blank.
 7. Save the file, replacing the old one.
 
-   > **NOTE:** You may need to save this to the desktop and copy and paste it back, replacing the old file in the directory.
+    > **NOTE:** You may need to save this to the desktop and copy and paste it back, replacing the old file in the directory.
 
 8. Restart the agent service.
 

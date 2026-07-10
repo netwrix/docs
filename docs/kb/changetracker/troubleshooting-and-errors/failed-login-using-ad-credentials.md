@@ -66,7 +66,7 @@ Using the information listed in the following table, you can see what each error
 | Code | Description | Resolution |
 |---|---|---|
 | `Data 525` | The user could not be found | Ensure the correct username has been specified for the bind account |
-| `Data 52e` | The credentials (username and password) are invalid | Ensure the credentials are correct, and that the correct server is being used |
+| `Data 52e` | The credentials (username and password) are invalid | Ensure the credentials are correct, and that you are using the correct server |
 | `Data 530` | The user is not permitted to logon at this time | Remove any Log on Hours from the user's "Account" tab in Active Directory |
 | `Data 531` | The user is not permitted to logon at this workstation | Allow the application server as a permitted log on workstation from the user's "Account" tab in Active Directory |
 | `Data 532` | The user's password has expired | Reset the user's password. If necessary, update your application(s) with the new password |
@@ -75,7 +75,7 @@ Using the information listed in the following table, you can see what each error
 | `Data 773` | The user account must have its password reset | Reset the user's password. If necessary, update your application(s) with the new password |
 | `Data 775` | The user account is locked | Unlock the user account from the user's "Account" tab in Active Directory |
 
-If you find that the error code you receive is not included in the preceding list, you can download the [Microsoft Error Code Look-up application](https://www.microsoft.com/en-us/download/details.aspx?id=100432) to troubleshoot further.
+If you find that the error code you receive is not included in the preceding list, you can download the [Microsoft Error Code Look-up application ⸱ Microsoft 🡥](https://www.microsoft.com/en-us/download/details.aspx?id=100432) to troubleshoot further.
 
 After the application has been downloaded, run it, extract the files as instructed, and then follow these steps:
 
@@ -84,4 +84,4 @@ After the application has been downloaded, run it, extract the files as instruct
 3. Run the `Err.exe` along with the data error code you receive. Example: `Err.exe 528`
 4. Review the output to obtain an error message description.
 
-<!-- Image removed: [screenshot of Err.exe output showing the AD error code description] -->
+<!-- Image removed: screenshot of Err.exe output showing the AD error code description -->
