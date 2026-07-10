@@ -49,7 +49,7 @@ PPE performs partial matching even if you disable wildcard analysis. For example
 Select a value from the **Tolerance** dropdown to specify the maximum number of consecutive matching characters that PPE tolerates before rejecting a password. For example, the dictionary word sword and the password 4my**sword**% contain five consecutive matching characters (shown in bold). PPE rejects this password if the tolerance is four or lower, and accepts it if the tolerance is five or higher.
 
 :::tip
-Increase the tolerance if [testing](../testpolicy.md#by-user) shows that this rule rejects too many acceptable passwords. Decrease it if the rule is too permissive.
+Increase the tolerance if [testing](../testpolicy.md#by-user) shows that this rule rejects too many acceptable passwords. Decrease it if the rule is too permissive. The [Rules](rules.md#tolerance) page has more information about how PPE implements tolerance.
 :::
 
 Click **Add dictionary** if you want PPE to use a secondary dictionary file. This is useful if you want to keep your own words in a separate file, or if you need different settings for the second file. Clicking **Add dictionary** displays a second group of identical configuration settings for the secondary file.
