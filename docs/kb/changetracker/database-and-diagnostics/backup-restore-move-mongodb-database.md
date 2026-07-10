@@ -24,7 +24,7 @@ title: Backing Up, Restoring, or Moving Your MongoDB Database
 
 ## Overview
 
-This article describes how to back up MongoDB, restore MongoDB, or set up a new server to host your Netwrix Change Tracker software while retaining all previous data (events, agents, configuration, and so on).
+This article describes how to back up MongoDB, restore MongoDB, or set up a new server to host your Netwrix Change Tracker software while retaining all previous data, such as events, agents, configuration, etc.
 
 > **IMPORTANT:** Verify that the MongoDB versions match on your current and target servers. For additional Netwrix Change Tracker installation prerequisites, refer to the [Requirements](pathname:///docs/changetracker/8_2/requirements/overview) article.
 
@@ -34,9 +34,10 @@ This article describes how to back up MongoDB, restore MongoDB, or set up a new 
 
 1. Connect to the server that hosts your Netwrix Change Tracker software via RDP.
 2. Open a **Command Prompt** and run it as an **Administrator**.
-3. Enter the following command: `iisreset /stop`.
-4. Enter the following command: `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`.
-5. Enter the following command: `mongodump.exe -d NNTHubService -o C:\MongoDump --gzip`.
+3. Enter the following commands in order:
+   - `iisreset /stop`
+   - `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`
+   - `mongodump.exe -d NNTHubService -o C:\MongoDump --gzip`
 
 <!-- Image removed: Command Prompt output from running mongodump.exe against NNTHubService with --gzip -->
 
@@ -59,15 +60,15 @@ Copy the following folders and transfer them to the new server:
 These steps apply whether you are restoring to an existing server or moving to a new server:
 
 1. Open a **Command Prompt** and run it as an **Administrator**.
-2. Enter the following command: `iisreset /stop`.
-3. Enter the following command: `sc stop MongoDB`.
-4. Enter the following command: `cd C:\ProgramData\Change Tracker Generation 7 (NetCore)\MongoDB`.
-5. Enter the following command: `rmdir db /s`.
-6. Enter `Y` and `Enter` when prompted.
-7. Enter the following command: `mkdir db`.
-8. Enter the following command: `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`.
-9. Enter the following command: `sc start MongoDB`.
-10. Enter the following command: `mongorestore.exe C:\MongoDump\NNTHubService -d NNTHubService --gzip`.
+2. Enter the following commands in order:
+   - `iisreset /stop`
+   - `sc stop MongoDB`
+   - `cd C:\ProgramData\Change Tracker Generation 7 (NetCore)\MongoDB`
+   - `rmdir db /s` (enter `Y` and **Enter** when prompted)
+   - `mkdir db`
+   - `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`
+   - `sc start MongoDB`
+   - `mongorestore.exe C:\MongoDump\NNTHubService -d NNTHubService --gzip`
 
 <!-- Image removed: Command Prompt output from running mongorestore.exe against the MongoDump folder -->
 
@@ -90,16 +91,17 @@ If you see the following error on the **Settings** screen, follow the troublesho
 ### Reset the Remote Credentials Password
 
 1. Open a **Command Prompt** and run it as an **Administrator**.
-2. Enter the following command: `iisreset /stop`.
-3. Enter the following command: `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`.
-4. Enter the following command: `mongo.exe`.
-5. Enter the following command: `show dbs`.
-6. Enter the following command: `use NNTHubService`.
-7. Enter the following command: `db.RemoteCredentials.update({},{$set: { "pa.Password": "" }}, { multi: true });`.
-8. Enter the following command: `exit`.
-9. Enter the following command: `iisreset /start`.
-10. Close the Command Prompt window.
-11. Confirm that you can log in to Netwrix Change Tracker.
+2. Enter the following commands in order:
+   - `iisreset /stop`
+   - `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`
+   - `mongo.exe`
+   - `show dbs`
+   - `use NNTHubService`
+   - `db.RemoteCredentials.update({},{$set: { "pa.Password": "" }}, { multi: true });`
+   - `exit`
+   - `iisreset /start`
+3. Close the Command Prompt window.
+4. Confirm that you can log in to Netwrix Change Tracker.
 
 <!-- Image removed: Mongo shell output confirming the RemoteCredentials password reset command completed -->
 
@@ -110,13 +112,14 @@ If you see the following error on the **Settings** screen, follow the troublesho
 If this does not resolve the issue and you still see the `Key not valid in specified state` error, try the following steps:
 
 1. Open a **Command Prompt** and run it as an **Administrator**.
-2. Enter the following command: `iisreset /stop`.
-3. Enter the following command: `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`.
-4. Enter the following command: `mongo.exe`.
-5. Enter the following command: `show dbs`.
-6. Enter the following command: `use NNTHubService`.
-7. Enter the following command: `db.HubConfigData.remove({ "Key" : "SMTP Password" });`.
-8. Enter the following command: `db.HubConfigData.remove({ "Key" : "SMTP Password2" });`.
-9. Enter the following command: `exit`.
-10. Enter the following command: `iisreset /start`.
-11. Close the Command Prompt window.
+2. Enter the following commands in order:
+   - `iisreset /stop`
+   - `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`
+   - `mongo.exe`
+   - `show dbs`
+   - `use NNTHubService`
+   - `db.HubConfigData.remove({ "Key" : "SMTP Password" });`
+   - `db.HubConfigData.remove({ "Key" : "SMTP Password2" });`
+   - `exit`
+   - `iisreset /start`
+3. Close the Command Prompt window.

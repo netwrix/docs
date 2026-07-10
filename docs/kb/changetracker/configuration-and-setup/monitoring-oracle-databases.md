@@ -96,71 +96,69 @@ ORACLE_HOME=/u01/app/oracle/product/19.0.0/db_1
 
 ### Step 3 — Create a Monitoring Account
 
-Create an account for the databases being monitored. The account requires enough privileges to access the information that Netwrix Change Tracker queries. You can adjust this level of privilege depending on the monitoring requirement. For example, the following privileges for the `c##ntx` account have been used in previous engagements to monitor databases successfully:
+1. Create an account for the databases being monitored.
+2. Adjust the level of privilege depending on the monitoring requirement.
 
-```sql
-CREATE USER c##ntx IDENTIFIED BY <password>;
-GRANT SELECT_CATALOG_ROLE TO c##ntx;
-GRANT SELECT ANY TABLE TO c##ntx;
-GRANT EXECUTE ANY PROCEDURE TO c##ntx;
-GRANT CREATE ANY TRIGGER TO c##ntx;
-ALTER USER c##ntx DEFAULT ROLE ALL;
-GRANT SELECT ON DBA_USERS_WITH_DEFPWD TO c##ntx;
-GRANT CONNECT TO c##ntx;
-GRANT CONNECT, RESOURCE, DBA TO c##ntx;
-GRANT UNLIMITED TABLESPACE TO c##ntx;
-GRANT CREATE SESSION TO c##ntx WITH ADMIN OPTION;
-```
+   > **NOTE:** The account requires enough privileges to access the information that Netwrix Change Tracker queries.
+
+   For example, the following privileges for the `c##ntx` account have been used in previous engagements to monitor databases successfully:
+
+   ```sql
+   CREATE USER c##ntx IDENTIFIED BY <password>;
+   GRANT SELECT_CATALOG_ROLE TO c##ntx;
+   GRANT SELECT ANY TABLE TO c##ntx;
+   GRANT EXECUTE ANY PROCEDURE TO c##ntx;
+   GRANT CREATE ANY TRIGGER TO c##ntx;
+   ALTER USER c##ntx DEFAULT ROLE ALL;
+   GRANT SELECT ON DBA_USERS_WITH_DEFPWD TO c##ntx;
+   GRANT CONNECT TO c##ntx;
+   GRANT CONNECT, RESOURCE, DBA TO c##ntx;
+   GRANT UNLIMITED TABLESPACE TO c##ntx;
+   GRANT CREATE SESSION TO c##ntx WITH ADMIN OPTION;
+   ```
 
 ### Step 4 — Create a Change Tracker Credential String
 
-Once you have obtained all of the required information, create a Change Tracker Credential String that Netwrix Change Tracker uses to connect to and authenticate with the database. An example credential string:
+1. Once you have obtained all of the required information, create a Change Tracker Credential String that Netwrix Change Tracker uses to connect to and authenticate with the database. An example credential string:
 
-`Server=192.168.1.85;Port=1521;User Id=c##ntx;Password=<password>;Direct=True;`
+   `Server=192.168.1.85;Port=1521;User Id=c##ntx;Password=<password>;Direct=True;`
 
-Enter the connection string into the following section of the Netwrix Change Tracker web console:
+2. Enter the connection string into **Settings > Credentials > Database Credentials > Add Database Credential**.
+3. In the pop-up menu that appears, enter the following:
 
-**Settings > Credentials > Database Credentials > Add Database Credential**
+   - **Credential Name:** XE (this is personal preference).
+   - **Database Platform:** Oracle.
+   - **Connection String:** Copy in your string (as shown in the preceding example).
 
-In the pop-up menu that appears, enter the following:
+   <!-- Image removed: Add Database Credential dialog with Credential Name, Database Platform, and Connection String fields -->
 
-- **Credential Name:** XE (this is personal preference).
-- **Database Platform:** Oracle.
-- **Connection String:** Copy in your string (as shown in the preceding example).
-
-<!-- Image removed: Add Database Credential dialog with Credential Name, Database Platform, and Connection String fields -->
-
-Click **Update**.
+4. Click **Update**.
 
 ### Step 5 — Create the Database Group and Proxied Device
 
-Once you have created a credential string, navigate to **Settings > Groups > Select "All Devices"** and click **Add** to create a **Databases** group and the type of database group underneath to configure compliance reporting later:
+1. To configure compliance reporting later, go to **Settings > Groups**, then select **All Devices**, and click **Add** to create a **Databases** group and the type of database group underneath.
 
-<!-- Image removed: Settings > Groups view creating a Databases parent group and Oracle database subgroup -->
+   <!-- Image removed: Settings > Groups view creating a Databases parent group and Oracle database subgroup -->
 
-Use the group to create a Netwrix Change Tracker Proxied Device. Specify the name of the database that you want to monitor on the Oracle server.
+2. Use the group to create a Netwrix Change Tracker Proxied Device. Specify the name of the database that you want to monitor on the Oracle server.
+3. To configure the proxied device, go to **Settings > Agents & Devices**, highlight a device that can communicate with the database over the network (default port is 1521), then select **Add Proxied Device**.
+4. In the pop-up menu that appears, enter the following:
 
-Configure the proxied device in the following section of the Netwrix Change Tracker web console:
+   - **Name:** XE (the display name of the database and how Netwrix Change Tracker presents it).
+   - **Host/Database Name:** XE (the name of the database or its SID name).
+   - **Device Type:** Database.
+   - **Operating System:** Oracle (personal preference).
+   - **Credentials:** XE (must match the name of the credentials you created previously).
+   - **Groups:** OracleDB (personal preference; no out-of-the-box group in Netwrix Change Tracker covers Oracle databases, so you may need to create your own).
+   - **Online Detection:** None or Auto.
+     - If set to **None**, Netwrix Change Tracker automatically assumes the device is online and attempts to communicate with it.
+     - If set to **Auto**, Netwrix Change Tracker attempts to ping the device and waits for a response before showing the device as online.
+     - Recommendation: set this option to **None**.
+   - **Diagnostic Mode:** Yes or No.
+     - If enabled, more verbose logging is available on the Netwrix Change Tracker web console for this device, which aids troubleshooting.
+     - Recommendation: enable this option.
 
-**Settings > Agents & Devices > Highlight a device that can communicate with the database over the network (default port is 1521) > Select the Add Proxied Device button**
-
-In the pop-up menu that appears, enter the following:
-
-- **Name:** XE (the display name of the database and how Netwrix Change Tracker presents it).
-- **Host/Database Name:** XE (the name of the database or its SID name).
-- **Device Type:** Database.
-- **Operating System:** Oracle (personal preference).
-- **Credentials:** XE (must match the name of the credentials you created previously).
-- **Groups:** OracleDB (personal preference; no out-of-the-box group in Netwrix Change Tracker covers Oracle databases, so you may need to create your own).
-- **Online Detection:** None or Auto.
-  - If set to **None**, Netwrix Change Tracker automatically assumes the device is online and attempts to communicate with it.
-  - If set to **Auto**, Netwrix Change Tracker attempts to ping the device and waits for a response before showing the device as online.
-  - Recommendation: set this option to **None**.
-- **Diagnostic Mode:** Yes or No.
-  - If enabled, more verbose logging is available on the Netwrix Change Tracker web console for this device, which aids troubleshooting.
-  - Recommendation: enable this option.
-
-<!-- Image removed: Add Proxied Device dialog with the Oracle database configuration example filled in -->
+   <!-- Image removed: Add Proxied Device dialog with the Oracle database configuration example filled in -->
 
 ### Step 6 — Run a Test Compliance Report
 

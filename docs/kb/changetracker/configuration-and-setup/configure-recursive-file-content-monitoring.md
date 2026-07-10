@@ -57,4 +57,4 @@ This article describes how to enable the FIM/file-content option on the web cons
 
 <!-- Image removed: FIM tracker configuration screen showing the Tracked Attributes dropdown with "File attributes (including contents) only" selected -->
 
-> **NOTE:** After the saved template changes take effect, the agent runs a new baseline scan. Allow the scan to complete before testing file changes in the directory — otherwise the baseline may capture your test changes and not report them as changes.
+> **IMPORTANT:** After the saved template changes take effect, the agent runs a new baseline scan. Allow the scan to complete before testing file changes in the directory — otherwise the baseline may capture your test changes and not report them as changes.

@@ -45,35 +45,30 @@ If authentication is enabled in MongoDB and the admin password is lost, use this
 
    <!-- Image removed: Mongo shell window after launching mongo.exe -->
 
-5. Enter the following command:
+5. Enter the following commands in the Mongo shell, in order:
 
    ```bash
    use admin
-   ```
-
-6. Enter the following command:
-
-   ```bash
    db.changeUserPassword("admin", "<YourAgentPassword>")
    ```
 
    > **NOTE:** Replace `<YourAgentPassword>` with the new password you wish to use.
 
-   Changing the password returns you to a new line without an output:
+   Changing the password returns you to a new line without an output.
 
    <!-- Image removed: Mongo shell showing the db.changeUserPassword command completing without output -->
 
-7. Close the `mongo.exe` window and stop the MongoDB service in Task Manager.
+6. Close the `mongo.exe` window and stop the MongoDB service in Task Manager.
 
-8. Re-enable MongoDB authentication:
+7. Re-enable MongoDB authentication:
    1. Navigate to `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\conf`.
    2. In the `mongo.conf` file, remove all `#` symbols from each of the lines. Save the changes.
 
       <!-- Image removed: mongo.conf file open in a text editor with the # symbols removed to re-enable authentication -->
 
-9. Start the MongoDB service using `services.msc` or `sc start MongoDB`.
+8. Start the MongoDB service using `services.msc` or `sc start MongoDB`.
 
-10. Open Command Prompt and verify your Mongo logon using your authentication command. The following is an example:
+9. Open Command Prompt and verify your Mongo logon using your authentication command. The following is an example:
 
     ```bash
     "C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin\mongo" --ssl --sslCAFile C:\mongo.crt --host 192.168.1.X --port 27017 -u admin -p <YourAgentPassword> --authenticationDatabase admin --sslAllowInvalidCertificates
