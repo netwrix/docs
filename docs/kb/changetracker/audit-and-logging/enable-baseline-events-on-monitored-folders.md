@@ -29,34 +29,31 @@ This example uses the Netwrix Change Tracker File Integrity Monitoring (FIM) tra
 
 Enabling the **Send baseline events** option on the FIM tracker (or any tracker that supports it) causes the agent to send an event to the hub when a baseline scan completes. The event lets you see the files and folders captured as part of the baseline and the state of each file or folder (that is, its attributes).
 
-## Instructions
-
-### Review the Files on the Server
+This example uses a folder containing three files that the baseline scan captures.
 
 <!-- Image removed: Windows Explorer view of the monitored folder containing the three example files -->
 
-The example folder on the server contains the three files that the baseline scan captures.
+## Instructions
 
-### Enable Send Baseline Events on the Configuration Template
+### Enable Send Baseline Events
+
+1. In the configuration template, open the FIM tracker.
+2. Enable the **Send baseline events** option for the tracked folder.
 
 <!-- Image removed: FIM tracker in a configuration template showing the Tracked Folder with the Send baseline events option enabled -->
 
-In the configuration template, open the FIM tracker and enable the **Send baseline events** option for the tracked folder.
+## Reviewing Baseline Events
 
-### Review the Baseline Events Sent to the Hub
+After baselining completes, the agent sends baseline events to the hub, which you can review to see what the baseline captured.
 
-<!-- Image removed: Event list on the hub showing baseline events returned from the agent after the scan completed -->
+- **Event list:** The hub's event list shows baseline events for the monitored device once baselining completes.
 
-After baselining completes, the agent sends baseline events to the hub. The events appear in the event list for the monitored device.
+  <!-- Image removed: Event list on the hub showing baseline events returned from the agent after the scan completed -->
 
-### Review the File Attributes Captured in the Baseline
+- **File attributes:** Opening a baseline event shows the attributes captured for that file, such as size, timestamps, and security details.
 
-<!-- Image removed: Event detail view showing captured attributes for a single file in the baseline -->
+  <!-- Image removed: Event detail view showing captured attributes for a single file in the baseline -->
 
-Opening a baseline event shows the attributes captured for that file, such as size, timestamps, and security details.
+- **Historical and current baselines:** Whenever changes occur to the files or folders, the baseline updates and sends additional baseline events. These events show the original baseline as **Historical** and the updated baseline as **Current**.
 
-### Review Historical and Current Baselines After Changes
-
-Whenever changes occur to the files or folders, the baseline is updated and additional baseline events are sent to the hub. These events show the original baseline as **Historical** and the updated baseline as **Current**.
-
-<!-- Image removed: Event detail view comparing a Historical baseline against the Current baseline after a change -->
+  <!-- Image removed: Event detail view comparing a Historical baseline against the Current baseline after a change -->

@@ -42,7 +42,7 @@ Gather the following information before configuring monitoring:
 
 ## Instructions
 
-### Step 1: Identify the Database Name
+### Step 1 — Identify the Database Name
 
 To obtain the name of the database you wish to monitor, run a query against your Oracle database. You can do this using an application like Oracle SQL Developer or through the server itself using `sqlplus` on the command line. Examples:
 
@@ -56,7 +56,7 @@ Images showing example outputs:
 <!-- Image removed: Oracle SQL Developer query result showing the global_name output -->
 <!-- Image removed: Oracle SQL Developer query result showing the v$database name output -->
 
-### Step 2: Identify the SID and Port
+### Step 2 — Identify the SID and Port
 
 Identify an SID value. This is normally the same as the database name, but you can find this value, along with the port the database is using, by looking at the following file:
 
@@ -94,7 +94,7 @@ ORACLE_BASE=/u01/app/oracle
 ORACLE_HOME=/u01/app/oracle/product/19.0.0/db_1
 ```
 
-### Step 3: Create a Monitoring Account
+### Step 3 — Create a Monitoring Account
 
 Create an account for the databases being monitored. The account requires enough privileges to access the information that Netwrix Change Tracker queries. You can adjust this level of privilege depending on the monitoring requirement. For example, the following privileges for the `c##ntx` account have been used in previous engagements to monitor databases successfully:
 
@@ -112,7 +112,7 @@ GRANT UNLIMITED TABLESPACE TO c##ntx;
 GRANT CREATE SESSION TO c##ntx WITH ADMIN OPTION;
 ```
 
-### Step 4: Create a Change Tracker Credential String
+### Step 4 — Create a Change Tracker Credential String
 
 Once you have obtained all of the required information, create a Change Tracker Credential String that Netwrix Change Tracker uses to connect to and authenticate with the database. An example credential string:
 
@@ -132,7 +132,7 @@ In the pop-up menu that appears, enter the following:
 
 Click **Update**.
 
-### Step 5: Create the Database Group and Proxied Device
+### Step 5 — Create the Database Group and Proxied Device
 
 Once you have created a credential string, navigate to **Settings > Groups > Select "All Devices"** and click **Add** to create a **Databases** group and the type of database group underneath to configure compliance reporting later:
 
@@ -162,7 +162,7 @@ In the pop-up menu that appears, enter the following:
 
 <!-- Image removed: Add Proxied Device dialog with the Oracle database configuration example filled in -->
 
-### Step 6: Run a Test Compliance Report
+### Step 6 — Run a Test Compliance Report
 
 Once you have configured the proxy, run a test report to validate the credentials:
 
@@ -177,7 +177,7 @@ Once you have configured the proxy, run a test report to validate the credential
 
 <!-- Image removed: Compliance Report Query Settings screen showing the Database Credential Test selection -->
 
-### Step 7: Run Compliance Reports Against Your Database
+### Step 7 — Run Compliance Reports Against Your Database
 
 Once configured, you can run a Netwrix Change Tracker Compliance Report against your database or databases to track data such as:
 
@@ -188,7 +188,7 @@ Once configured, you can run a Netwrix Change Tracker Compliance Report against 
 
 At this stage, contact [Netwrix Support](https://www.netwrix.com/support.html) for assistance. Support can help you build a Netwrix Change Tracker Compliance Report that meets your requirements and works for the database you want to monitor.
 
-### Step 8: Troubleshoot Oracle Connection Errors
+### Step 8 — Troubleshoot Oracle Connection Errors
 
 If, after Netwrix Support has provided you with a compliance report, you receive error messages when running the report against your database, the following error messages and descriptions may help you diagnose the issue. If the error message you receive is not listed here, refer to [Oracle Database Error Messages · Oracle](https://docs.oracle.com/cd/B19306_01/server.102/b14219.pdf) for a full list of error messages provided by Oracle.
 

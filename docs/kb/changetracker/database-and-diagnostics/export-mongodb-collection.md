@@ -43,15 +43,16 @@ This article explains how to export or back up specific collections from MongoDB
 7. Enter the command to list collections:
    - `show collections`
 
+   All collections located in MongoDB appear in the output.
+
    <!-- Image removed: Mongo shell output listing all collections after running `show collections` -->
 
-8. All collections located in MongoDB appear in the output.
-9. Exit the **Mongo shell**:
+8. Exit the **Mongo shell**:
    - `exit`
-10. To export a collection, run the following command (edit the placeholders as needed):
-    - `mongodump -d NNTHubService -c ENTER-COLLECTION-NAME -o "C:\ENTER PATH HERE"`
-11. In the `ENTER-COLLECTION-NAME` field, enter the collection you wish to export.
-12. In the `C:\ENTER PATH HERE` field, enter the path you wish to export to.
+9. To export a collection, run the following command (edit the placeholders as needed):
+   - `mongodump -d NNTHubService -c ENTER-COLLECTION-NAME -o "C:\ENTER PATH HERE"`
+10. In the `ENTER-COLLECTION-NAME` field, enter the collection you wish to export.
+11. In the `C:\ENTER PATH HERE` field, enter the path you wish to export to.
 
     <!-- Image removed: Example mongodump command with collection name and output path filled in -->
 
