@@ -18,7 +18,7 @@ A typical Windows network has both domain and local user accounts, but you might
 
 Install Password Policy Enforcer on all the domain controllers in the domain to enforce password policies for domain user accounts. You don't need to install it on read-only domain controllers unless you're using the [Maximum Age rule](../admin/manage-policies/rules/maximum_age_rule.md), [Password Policy Client](../admin/password-policy-client/password_policy_client.md), [PPE Web](../web-overview/web_overview.md), or Netwrix Password Reset.
 
-To enforce password policies for local user accounts, install Password Policy Enforcer on the computers that contain the user accounts you want to enforce password policies for. These computers can be workstations or servers, and they can be standalone or domain members. You don't normally need to install PPE on the workstations and servers in a domain because most users log on with a domain account. If this is the case, you'll most likely only need to install PPE on the domain controllers.
+To enforce password policies for local user accounts, install PPE on the computers that contain the user accounts you want to enforce password policies for. These computers can be workstations or servers, and they can be standalone or domain members. You don't normally need to install PPE on the workstations and servers in a domain because most users log on with a domain account. If this is the case, you'll most likely only need to install PPE on the domain controllers.
 
 ## Operational differences
 

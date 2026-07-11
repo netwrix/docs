@@ -28,13 +28,13 @@ Dictionary files should be on a local disk. Shared dictionary files degrade perf
 Future versions of Password Policy Enforcer might overwrite `dict.txt` during an upgrade, so rename the file or put it in a different folder if you modify it.
 :::
 
-Select the **Detect inclusion of non-alpha characters** checkbox if PPE should ignore non-alphabetic characters in passwords. For example, the password myp8asswor8d will also be evaluated as mypassword.
+Select the **Detect inclusion of non-alpha characters** checkbox if you want PPE to ignore non-alphabetic characters in passwords. For example, the password myp8asswor8d will also be evaluated as mypassword.
 
-Select the **Detect character substitution** checkbox if PPE should apply [character substitutions](rules.md#detecting-character-substitution) when checking passwords.
+Select the **Detect character substitution** checkbox if you want PPE to apply [character substitutions](rules.md#detecting-character-substitution) when checking passwords.
 
-Select the **Detect words typed backwards** checkbox if PPE should test passwords with their characters reversed. For example, the password drowssapym will also be evaluated as mypassword.
+Select the **Detect words typed backwards** checkbox if you want PPE to test passwords with their characters reversed. For example, PPE also evaluates the password drowssapym as mypassword.
 
-Select the **Wildcard analysis** checkbox if PPE should search for wildcard templates in dictionary files. Wildcard templates are specially formatted dictionary words that PPE uses to reject a range of passwords. There are two wildcard template formats:
+Select the **Wildcard analysis** checkbox if you want PPE to search for wildcard templates in dictionary files. Wildcard templates are specially formatted dictionary words that PPE uses to reject a range of passwords. There are two wildcard template formats:
 
 | Format | Example | Description |
 |---|---|---|
