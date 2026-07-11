@@ -14,8 +14,8 @@ Password Policy Client messages.
 - [POLICY] – Customize the text for the active rules.
 - [LIVE_POLICY] – You can configure Password Policy Client (10.2 and above) messages to display live
   feedback for the active rules as users enter their passwords. This feature enables users
-  to see if their passwords meet the requirements of the policy set by the organization. Here is an
-  example of a live policy message.
+  to see if their passwords meet the requirements of the policy set by the organization. The following
+  is an example of a live policy message:
 
     ![Messages](/images/passwordpolicyenforcer/11.2/administration/mesages2.webp)
 
