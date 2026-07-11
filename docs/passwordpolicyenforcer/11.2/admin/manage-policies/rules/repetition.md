@@ -22,7 +22,7 @@ Select the **Repetition** checkbox at the top of the page, then select the **Rej
 
 Select the **Detect character substitution** checkbox if you want PPE to apply [character substitutions](rules.md#detecting-character-substitution) when checking passwords.
 
-Select the **Detect words typed backwards** checkbox if you want PPE to test passwords with their characters reversed. This stops users from circumventing this rule by reversing the order of characters in the repeated pattern. For example, PPE detects that password@drowssap contains two instances of password, even though the characters are reversed. The match does not need to be a real word, just a matching pattern of characters.
+Select the **Detect words typed backwards** checkbox if you want PPE to test passwords with their characters reversed. This stops users from circumventing this rule by reversing the order of characters in the repeated pattern. For example, PPE detects that password@drowssap contains two instances of password, even though the characters are reversed. The match doesn't need to be a real word, just a matching pattern of characters.
 
 Select a value from the **Tolerance** dropdown to specify the maximum number of consecutive matching characters that PPE tolerates before rejecting a password. For example, the password **mypwd**4**mypwd**5 contains a five-character repeating pattern (shown in bold). PPE rejects this password if the tolerance is four or lower, and accepts it if the tolerance is five or higher. This rule isn't case sensitive, so the password **mypwd**4**MYPWD**5 still contains a five-character repeating pattern.
 

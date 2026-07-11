@@ -18,7 +18,7 @@ Select the **Detect character substitution** checkbox if you want Password Polic
 
 Select the **Detect words typed backwards** checkbox if you want PPE to test passwords with their characters reversed. For example, PPE also evaluates the password zyxwdrowssap as passwordwxyz.
 
-Select a value from the **Tolerance** dropdown to specify the maximum number of consecutive matching characters that PPE tolerates before rejecting a password. For example, the password password**wxyz** contains a four-character sequential pattern (shown in bold). PPE rejects this password if the tolerance is three or lower, and accepts it if the tolerance is four or higher. The **Auto** value rejects passwords only if the entire password is a sequential character pattern. For example, PPE rejects the password abcde, but not abcdez or abcd123.
+Select a value from the **Tolerance** dropdown to specify the maximum number of consecutive matching characters that PPE tolerates before rejecting a password. For example, password**wxyz** contains a four-character sequential pattern (shown in bold). PPE rejects this password if the tolerance is three or lower, and accepts it if the tolerance is four or higher. The **Auto** value rejects passwords only if the entire password is a sequential character pattern. For example, PPE rejects the password abcde, but not abcdez or abcd123.
 
 :::tip
 Increase the tolerance if [testing](../testpolicy.md#by-user) shows that this rule rejects too many acceptable passwords. Decrease it if the rule is too permissive. The [Rules](rules.md#tolerance) page has more information about how PPE implements tolerance.
