@@ -18,9 +18,9 @@ Select the **Similarity** checkbox at the top of the page, then select the types
 
 - Select the **User logon name** checkbox if you want PPE to reject passwords that are similar to a user's logon name (user name).
 
-  :::note
-  **Current password** similarity detection only works when users change passwords from the [Password Policy Client](../../password-policy-client/password_policy_client.md), [Password Policy Enforcer Web](../../../web-overview/web_overview.md), or Netwrix Password Reset. This feature doesn't store or transmit passwords or password hashes. It complements the [History rule](history_rule.md), but doesn't replace it because it only compares the current password with the new one.
-  :::
+:::note
+**Current password** similarity detection only works when users change passwords from the [Password Policy Client](../../password-policy-client/password_policy_client.md), [Password Policy Enforcer Web](../../../web-overview/web_overview.md), or Netwrix Password Reset. This feature doesn't store or transmit passwords or password hashes. It complements the [History rule](history_rule.md), but doesn't replace it because it only compares the current password with the new one.
+:::
 
 Select **Yes** from the corresponding **Character substitution** dropdown if you want PPE to apply [character substitutions](rules.md#detecting-character-substitution) when checking passwords.
 

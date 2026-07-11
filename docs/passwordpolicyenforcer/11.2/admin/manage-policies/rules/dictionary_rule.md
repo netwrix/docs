@@ -25,7 +25,7 @@ Ensure that all computers have a local copy of the updated and sorted file. The 
 :::warning
 Dictionary files should be on a local disk. Shared dictionary files degrade performance and might jeopardize security.
 
-Future versions of Password Policy Enforcer might overwrite `dict.txt` during an upgrade, so rename the file or put it in a different folder if you modify it.
+Future versions of Password Policy Enforcer might overwrite `Dict.txt` during an upgrade, so rename the file or put it in a different folder if you modify it.
 :::
 
 Select the **Detect inclusion of non-alpha characters** checkbox if you want PPE to ignore non-alphabetic characters in passwords. For example, PPE also evaluates the password myp8asswor8d as mypassword.
