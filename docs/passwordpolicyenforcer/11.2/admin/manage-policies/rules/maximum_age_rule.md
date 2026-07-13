@@ -24,7 +24,7 @@ When you configure this rule to delay the expiry of longer passwords, Password P
 PPE caches the group information in memory. If you move or rename the group, then change any PPE configuration setting to trigger a cache refresh. PPE recreates the group if you delete it. Ensure the two days values are equal in all policies if you don't want PPE to recreate the group.
 :::
 
-Select a value from the **Mode** dropdown to specify how Password Policy Enforcer handles expired passwords. The **Standard** mode is the default. It forces users to change their expired password during their next logon. The **Transitional** modes are similar, but they only force a percentage of users with expired passwords to change them during their next logon. The **Warning** mode warns users that their password is expired without forcing them to change it.
+Select a value from the **Mode** dropdown to specify how PPE handles expired passwords. The **Standard** mode is the default. It forces users to change their expired password during their next logon. The **Transitional** modes are similar, but they only force a percentage of users with expired passwords to change them during their next logon. The **Warning** mode warns users that their password is expired without forcing them to change it.
 
 Use the Warning and Transitional modes to gradually introduce a new password policy. These modes reduce the number of forced password changes, allowing the help desk to manage any additional support calls from the policy change. Switch to the Standard mode after most users have had a chance to change their password.
 
@@ -32,7 +32,7 @@ Use the Warning and Transitional modes to gradually introduce a new password pol
 It takes approximately 50 days for PPE to force all users with expired passwords to change them in the 2% Transitional mode (2% every day). The 5% Transitional mode reduces this to 20 days, and the 10% Transitional mode further reduces it to 10 days. PPE selects users randomly, so these are estimates only. You must eventually switch to the Standard mode to ensure that all old passwords expire. Don't leave PPE in the Transitional or Warning modes permanently as this won't give you predictable, forced password expirations.
 :::
 
-Password Policy Enforcer always prompts users with expired passwords to change them, even in the Transitional and Warning modes. Users can ignore the prompt to change their password unless PPE forces them to change it. Windows clients display the prompt even if the [Password Policy Client](../../password-policy-client/password_policy_client.md) isn't installed. Windows displays the prompt five days before passwords expire by default. You can change this value with Group Policy: [Interactive logon: Prompt user to change password before expiration](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/interactive-logon-prompt-user-to-change-password-before-expiration).
+PPE always prompts users with expired passwords to change them, even in the Transitional and Warning modes. Users can ignore the prompt to change their password unless PPE forces them to change it. Windows clients display the prompt even if the [Password Policy Client](../../password-policy-client/password_policy_client.md) isn't installed. Windows displays the prompt five days before passwords expire by default. You can change this value with Group Policy: [Interactive logon: Prompt user to change password before expiration](https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/interactive-logon-prompt-user-to-change-password-before-expiration).
 
 PPE expires passwords at 1:00 AM every day on the domain controller holding the PDC emulator operations master role. It sets "User must change password at next logon" for users whose password expired, or is due to expire on that day. PPE doesn't expire passwords if the Maximum Age rule is in Warning mode, or for users with "Password never expires" set in Active Directory. Some passwords won't expire immediately when the Maximum Age rule is in a Transitional mode.
 
@@ -45,7 +45,7 @@ Click **Set up email** to edit the email template for the email reminders.
 The correct format for the **From** text box is `"Display Name" <mailbox@domain.com>`. You can edit the email body with a visual editor or raw HTML editor by clicking **Visual** or **HTML**.
 
 :::tip
-If the email body is too long to fit in the text box, then enter a file path with the "file:" prefix in the body text box: `file:C:\path\filename.ext`. The file path can include environment variables like %ProgramFiles%. Don't use quotes for long filenames and don't include any other text. The [Mailer Service](../../../installation/installationserver.md) reads the email body from the specified file.
+If the email body is too long to fit in the text box, then enter a file path with the "file:" prefix in the body text box: `file:C:\<path>\<filename>.ext`. The file path can include environment variables like %ProgramFiles%. Don't use quotes for long filenames and don't include any other text. The [Mailer Service](../../../installation/installationserver.md) reads the email body from the specified file.
 
 If users aren't receiving their email reminders, then ensure the **From** address is a valid sending address for your mail server.
 :::
