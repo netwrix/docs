@@ -88,7 +88,7 @@ SigningKeyUtility.exe UpdateSchedulers -u “<DB username>” -s “<SQLServer n
 
 ## Export a Signing Key
 
-If you are using multiple instances of Directory Manager, then you need to export the newly
+If you are using multiple instances of Directory Manager, you need to export the newly
 generated signing key to other instances of Directory Manager. Enter the following command at the
 Windows Command prompt to export the signing key in .pfx. encrypted format with a password:
 
@@ -100,8 +100,8 @@ SigningKeyUtility.exe ExportSigningKey -o “<Folder location for signingkey exp
 
 - -o — provide folder location where the utility will export the signing key
 
-This command generates a password for the encrypted signing key. Copy it and keep it safe for later
-use. The utility saves the encrypted signing key in the specified folder.
+This command generates a password for the encrypted signing key. Copy it and store it securely for
+later use. The utility saves the encrypted signing key in the specified folder.
 
 ## Import a Signing Key
 
