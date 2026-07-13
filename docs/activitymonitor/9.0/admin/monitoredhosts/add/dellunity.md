@@ -75,6 +75,12 @@ monitored are All, CIFS, or NIFS. Click **Next**.
 Operations** to be monitored. Additional options include:
 
 :::warning
+**Limitation: Permission Change details not available for Dell devices**
+For Dell devices, Activity Monitor reports that a permission change occurred, but cannot report the specifics of the change
+(e.g., which permissions were added or removed, owner changes, or inheritance changes).
+:::
+
+:::warning
 Suppress Microsoft Office operations on temporary files – Filters out events for
 Microsoft Office temporary files. When Microsoft Office files are saved or edited, many temporary
 files are created. With this option enabled, events for these temporary files are ignored. This
