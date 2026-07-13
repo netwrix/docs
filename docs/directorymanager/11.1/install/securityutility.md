@@ -52,7 +52,7 @@ Step 2 – Run the `NDM11-ADV-2025-014-Utility.exe AddIpSecurity` cmdlet. This w
 Security feature in Directory Manager and ask if there is any machine other than the local one that
 accesses GroupIDDataService. If yes, provide the IP of that machine. Press Enter.
 
-In case of multiple machines, use a comma to separate the IP addresses with no space after the
+For multiple machines, use a comma to separate the IP addresses with no space after the
 comma.
 
 ![Restrict IP Addresses](/images/directorymanager/11.1/install/iprestrict.webp)
