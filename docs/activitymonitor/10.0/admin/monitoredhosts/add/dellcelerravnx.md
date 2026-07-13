@@ -74,7 +74,7 @@ Operations** to be monitored. Additional options include:
 
 :::warning
 **Limitation: Permission Change details not available for Dell devices**
-For Dell devices, Activity Monitor reports that a permission change occurred, but cannot report the specifics of the change
+For Dell devices, Activity Monitor reports that a permission change occurred, but can't report the specifics of the change
 (e.g., which permissions were added or removed, owner changes, or inheritance changes).
 :::
 
