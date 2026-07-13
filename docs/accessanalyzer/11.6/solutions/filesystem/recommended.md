@@ -57,8 +57,8 @@ Windows clusters have special needs for the host list and host inventory data. Y
 Windows File Server Cluster (name of the cluster) of interest when running a scan against a Windows
 File System Cluster. Within the Enterprise Auditor Master Host Table, there
 should be a host entry for the cluster as well as for each node. Additionally, each of these host
-entries must have the name of the cluster in the WinCluster column in the host inventory data. This
-may need to be updated manually. See the
+entries must have the name of the cluster in the WinCluster column in the host inventory data. You
+may need to update this manually. See the
 [Host Inventory](/docs/accessanalyzer/11.6/admin/settings/hostinventory.md)
 topic for additional information.
 
@@ -305,7 +305,7 @@ The Ad Hoc Audits Job Group works independently from the rest of the solution bu
 within an analysis task.
 
 The jobs contained in the group use custom SQL scripts to render views on collected data. SQL views
-are used to populate report element tables and graphs. Changing or modifying the group, job, or
+populate report element tables and graphs. Changing or modifying the group, job, or
 table names result in no data displayed within the reports or the AIC.
 
 :::tip

@@ -56,7 +56,7 @@ purpose of this job.
 
 ![Applet Settings](/images/accessanalyzer/11.6/solutions/filesystem/collection/fsacappletsettings.webp)
 
-**Step 4 –** The Applet Settings page applies to the applet and proxy mode scans which are selected
+**Step 4 –** The Applet Settings page applies to the applet and proxy mode scans which you select
 on the Scan Server Level Page. If employing proxy servers, see the
 [FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings/appletsettings.md)
 topic for configuration instructions.
@@ -80,7 +80,6 @@ See the
 [FSAA: Activity Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/activitysettings.md) topic
 for additional information.
 
-**Step 7 –** Click **Finish** to save any setting modifications or click **Cancel** if no changes
-were made. Then click **OK** to close the Query Properties window.
+**Step 7 –** Click **Finish** to save any setting modifications or click **Cancel** if you made no changes. Then click **OK** to close the Query Properties window.
 
-If changes were made, the 1-FSAC System Scans job is now customized.
+If you made changes, the 1-FSAC System Scans job is now customized.

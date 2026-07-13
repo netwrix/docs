@@ -7,7 +7,7 @@ sidebar_position: 220
 # FileSystemAccess Data Collector
 
 The FileSystemAccess (FSAA) Data Collector collects permissions, content, and activity, and
-sensitive data information for Windows and NAS file systems. The FSAA Data Collector has been
+sensitive data information for Windows and NAS file systems. The FSAA Data Collector comes
 preconfigured within the File System Solution. Both this data collector and the solution are
 available with a special Enterprise Auditor license. See the
 [File System Solution](/docs/accessanalyzer/11.6/solutions/filesystem/overview.md)
@@ -32,7 +32,7 @@ topic for additional information.
 
 **Sensitive Data Discovery Considerations**
 
-The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
+You must install the Sensitive Data Discovery Add-On on the Enterprise Auditor Console server,
 which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, you
 must increase the minimum amount of RAM. Each thread requires a minimum of 2
 additional GB of RAM per host. By default, SDD scans are configured to run two concurrent threads.

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Proxy Mode as a Service Permissions
 
-When File System scans are run in proxy mode as a service, there are two methods available for deploying the service:
+When you run File System scans in proxy mode as a service, two methods are available for deploying the service:
 
 * Pre-Installed File System Proxy Service – File System Proxy Service installation package must be installed on the Windows proxy servers before executing the scans. This is the recommended method.
 * Ad Hoc File System Proxy Service Deployment – File System Proxy Service is installed on the Windows proxy server when the job is executed
@@ -16,7 +16,7 @@ The proxy server where the service runs conducts data collection processing and 
 
 **File System Proxy Service Credentials**
 
-The service can be run either as LocalSystem or with a domain account supplied during the installation of the File System Proxy Service with the following permission on the proxy server:
+You can run the service either as LocalSystem or with a domain account supplied during the installation of the File System Proxy Service with the following permission on the proxy server:
 
 * Membership in the local Administrators group
 * Granted the Log on as a service privilege (**Local Security Policies** > **Local Policies** > **User Rights Assignment** > **Log on as a service**)

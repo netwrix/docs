@@ -76,7 +76,7 @@ purpose of this job.
 
 ![Applet Settings](/images/accessanalyzer/11.6/solutions/filesystem/collection/fsaaseekappletsettings.webp)
 
-**Step 4 –** The Applet Settings page applies to the applet and proxy mode scans which are selected
+**Step 4 –** The Applet Settings page applies to the applet and proxy mode scans which you select
 on the Scan Server Level page. If employing proxy servers, see the
 [FSAA: Applet Settings](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings/appletsettings.md)
 topic for configuration instructions.
@@ -128,28 +128,28 @@ topic for additional information.
       addresses a failure to enable the LAT preservation mode:
 
         - Continue to scan file silently – FSAA scans the file with the possibility that LAT
-          preservation isn't possible. No warning will be shown.
+          preservation isn't possible. No warning appears.
         - Continue to scan file with warning – FSAA scans the file with the possibility that LAT
-          will not be preserved. A warning will be shown for this file.
-        - Skip file silently – FSAA will not scan the file. No warning will be shown.
-        - Skip file with warning – FSAA will not scan the file. A warning will be shown indicating
+          will not be preserved. A warning appears for this file.
+        - Skip file silently – FSAA will not scan the file. No warning appears.
+        - Skip file with warning – FSAA will not scan the file. A warning appears indicating
           the file was skipped.
         - Abort the scan – FSAA will abort the scan. No further files will be processed.
 
     - Action on changed LAT After scan – Before scanning each file, the LAT of the current file is
-      recorded. After scanning, it is verified whether the LAT has changed since then (likely
+      recorded. After scanning, FSAA verifies whether the LAT has changed since then (likely
       scenarios are either that the LAT preservation mechanism failed to function as intended, or
       that the file was accessed by someone while the scan was occurring). The following
       configuration addresses a changed LAT:
 
         - Continue scan silently – The scan will move on to the next file while updating the LAT for
-          the processed file. No warning will be shown.
+          the processed file. No warning appears.
         - Continue scan with warning – The scan will continue on to the next file. LAT will be
-          updated for the processed file. A warning will be shown.
+          updated for the processed file. A warning appears.
         - Force-reset file LAT silently – The scan will reset the file's LAT to its original state
-          before processing. No warning will be shown. The scan will proceed to the next file.
+          before processing. No warning appears. The scan will proceed to the next file.
         - Force-reset file LAT with warning – The scan will Reset the file's LAT to its original
-          state before processing. A warning will be shown. The scan will proceed to the next file.
+          state before processing. A warning appears. The scan will proceed to the next file.
         - Abort the scan – FSAA will abort the scan. LAT will be updated for the processed file. No
           other files will be processed
 
@@ -226,7 +226,6 @@ database.
 :::
 
 
-**Step 13 –** Click **Finish** to save any setting modifications or click **Cancel** if no changes
-were made. Then click **OK** to close the Query Properties window.
+**Step 13 –** Click **Finish** to save any setting modifications or click **Cancel** if you made no changes. Then click **OK** to close the Query Properties window.
 
-If changes were made, the **1-SEEK System Scans** Job has now been customized.
+If you made changes, the **1-SEEK System Scans** Job is now customized.

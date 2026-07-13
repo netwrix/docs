@@ -7,7 +7,7 @@ sidebar_position: 230
 # FileSystemAccess Data Collector
 
 The FileSystemAccess (FSAA) Data Collector collects permissions, content, and activity, and
-sensitive data information for Windows and NAS file systems. The FSAA Data Collector has been
+sensitive data information for Windows and NAS file systems. The FSAA Data Collector comes
 preconfigured within the File System Solution. Both this data collector and the solution are
 available with a special Access Analyzer license. See the
 [File System Solution](/docs/accessanalyzer/12.0/solutions/filesystem/overview.md) topic for additional information.
