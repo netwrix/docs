@@ -37,8 +37,8 @@ The tab contains the following settings and features:
 
 - Monitor Sign-Ins activity – Indicates if user sign-ins activity is monitored
 - Monitor Audit activity – Indicates if audit for all operations is monitored
-- Service – Filter the table by Service using the drop-down menu
-- Category – Filter the table by Category using the drop-down menu
+- Service – Filter the table by Service using the dropdown menu
+- Category – Filter the table by Category using the dropdown menu
 - Operation – Filter the table by Operation using the textbox
 
 The table lists operations being monitored, displaying columns for Service, Category, and Operation.
@@ -70,7 +70,7 @@ The tab contains the following settings and features:
 
 :::warning
 **Limitation: Permission Change details not available for Dell devices**
-For Dell devices, Activity Monitor reports that a permission change occurred, but cannot report the specifics of the change
+For Dell devices, Activity Monitor reports that a permission change occurred, but can't report the specifics of the change
 (e.g., which permissions were added or removed, owner changes, or inheritance changes).
 :::
 
@@ -155,7 +155,7 @@ Properties window closes.
 
 ## For SharePoint Online Host
 
-The tab contains a subset of tabs. Each tab has a **Select All** check box to include all events for
+The tab contains a subset of tabs. Each tab has a **Select All** checkbox to include all events for
 that tab.
 
 ![Operations Tab for SharePoint Online Properties](/images/activitymonitor/9.0/admin/outputs/operationstab.webp)
@@ -372,4 +372,4 @@ The tab contains the following settings and features:
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
 Properties window closes.
 
-See[Suppress Windows Explorer Activity](/docs/activitymonitor/9.0/admin/outputs/operations/suppress.md) topic for more information.
+See the [Suppress Windows Explorer Activity](/docs/activitymonitor/9.0/admin/outputs/operations/suppress.md) topic for additional information.
