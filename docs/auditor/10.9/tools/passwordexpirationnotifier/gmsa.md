@@ -6,7 +6,7 @@ sidebar_position: 5
 
 # Use a Group Managed Service Account (gMSA)
 
-Password Expiration Notifier supports a group Managed Service Account (gMSA) as the data collecting account. With a gMSA, Active Directory generates and rotates the password automatically, so you do not maintain a password for the account or rotate it on a schedule.
+Password Expiration Notifier supports a group Managed Service Account (gMSA) as the data collecting account. With a gMSA, Active Directory generates and rotates the password automatically, so you don't maintain a password for the account or rotate it on a schedule.
 
 See the [Use Group Managed Service Account (gMSA)](/docs/auditor/10.9/requirements/gmsa.md) topic for the general prerequisites that apply to every Auditor data source: create the KDS root key, create the gMSA with the `New-ADServiceAccount` cmdlet, install it on the Auditor Server with `Install-ADServiceAccount`, and add it to the local **Administrators** group on the Auditor Server.
 
@@ -26,7 +26,7 @@ In a default Active Directory configuration, the built-in **Authenticated Users*
 
 ## Specify the gMSA in the Monitoring Plan
 
-Follow the steps to use the gMSA in a Password Expiration Notifier monitoring plan.
+To use the gMSA in a Password Expiration Notifier monitoring plan:
 
 **Step 1 –** On the Auditor Server, launch Password Expiration Notifier and open an existing monitoring plan for editing, or create a new one. See the [Configure Password Expiration Alerting](/docs/auditor/10.9/tools/passwordexpirationnotifier/overview.md#configure-password-expiration-alerting) section for the full monitoring plan procedure.
 
@@ -46,14 +46,14 @@ When you save the monitoring plan, Password Expiration Notifier creates a Window
 ## Limitations
 
 :::warning
-The **Select OUs**, **Select Groups**, and **Generate** buttons in the Password Expiration Notifier UI do not work when a gMSA is configured. These buttons issue an LDAP request at the time you click them from the interactive session of the user who launched Password Expiration Notifier, and gMSA impersonation is not supported in interactive sessions. Use the scheduled task and the email reports to view password expiration data when the monitoring plan uses a gMSA.
+The **Select OUs**, **Select Groups**, and **Generate** buttons in the Password Expiration Notifier UI don't work when a gMSA is configured. These buttons issue an LDAP request at the time you click them from the interactive session of the user who launched Password Expiration Notifier, and gMSA impersonation isn't supported in interactive sessions. Use the scheduled task and the email reports to view password expiration data when the monitoring plan uses a gMSA.
 :::
 
 ## Troubleshooting
 
-The table below lists common issues you may encounter when configuring a gMSA for Password Expiration Notifier.
+The following table lists common issues you may encounter when configuring a gMSA for Password Expiration Notifier.
 
 | Symptom | Likely cause | Resolution |
 | ------- | ------------ | ---------- |
 | `Cannot find an account...` error when specifying the account | The gMSA name was entered without the trailing `$` or with the wrong domain. | Use the `<domain>\<gmsa-name>$` format, for example `CONTOSO\penGmsa$`. |
-| The **Select OUs**, **Select Groups**, or **Generate** buttons do not work; the log shows `failed to create impersonation token` | Known gMSA limitation in interactive sessions. | See the Limitations section. Use the scheduled task and email reports instead. |
+| The **Select OUs**, **Select Groups**, or **Generate** buttons don't work; the log shows `failed to create impersonation token` | Known gMSA limitation in interactive sessions. | See the Limitations section. Use the scheduled task and email reports instead. |
