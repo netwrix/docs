@@ -1,18 +1,33 @@
 # KB Editing Conventions
 
-Comprehensive KB editing rulebook covering structure, step condensation, list types, sentence-level rules, callouts, bolding, overview quality, links, placeholders, and formatting.
+Comprehensive KB editing rulebook covering structure, step condensation, list types, sentence-level rules, callouts, bolding, overview quality, links, placeholders, formatting, cross-section consistency, and titles.
 
 Apply during the `kb-pr-open` preemptive scan and the `kb-pr-review` Derek review pass on every KB batch. This document is the canonical rulebook — both skills reference it rather than duplicating its content. Amend it via PR when a batch surfaces a new pattern.
 
 ## 1. Heading/step structure
 
-- **`Step N — <Label>` format** for Instructions sections with 3+ sequential subheadings. Em dash, not colon — normalize any pre-existing `Step N:` to match. See also [[feedback_kb_step_subheadings]].
-- **Merge tightly-related subheadings** into one step (e.g., "Create a Group" + "Add Your Device" → one step).
+**Right-size step groups before applying `Step N —` normalization.** This is a two-gate rule.
+
+- **Gate A — Consolidate first.** Before applying any `Step N — <Label>` normalization, evaluate each candidate subheading against a substance test. A subheading is a merge candidate when it contains ≤1 action step *and* that action reads as prep/cleanup for an adjacent group — e.g., "Stop Services" or "Start Services" bracketing an install step, "Save and Exit" trailing a config edit, a lone "Restart the Agent" after a settings change. Fold merge candidates into the neighboring subheading. Only substantive subheadings count toward Gate B.
+- **Gate B — Normalize.** If ≥3 substantive subheadings remain after Gate A **and represent sequential steps of the same procedure**, apply `Step N — <Label>` (em dash, not colon) to that set. The count excludes subheadings that are a categorically different kind of section — most commonly a `Troubleshooting`/exception-handling subheading — even when it sits at the exact same heading depth as the procedural subheadings it follows. Troubleshooting content isn't a step in the sequence; it doesn't count toward the Gate B threshold, and it doesn't receive a `Step N —` label itself (nor does anything nested beneath it). Normalize any pre-existing `Step N:` to match. Does NOT apply to parallel-alternative subheadings (Windows/Linux) — keep those descriptive. See also [[feedback_kb_step_subheadings]].
+- **Under-fragmentation — the mirror problem.** A single `## Instructions` or `## Resolution` section holding two or more distinct activities (locate a log, then look up an error code; edit a config, then verify the login flow) with no subheadings is as broken as over-fragmentation. Split by distinct activity; use subheadings once there are two or more real activities.
+- **Action described as trailing prose** — an action that logically belongs in the numbered sequence but sits as a trailing paragraph (e.g., a "start the services" instruction written as prose after the last numbered step) gets pulled into the sequence as its own numbered step, matching the structure of parallel actions in the article.
+- **Subheading wrapping a single trivial element** — a subheading like `### Example Error Message` that exists only to label a single code block adds structure without content. Remove the subheading and lead in with a short sentence ("Example error:") followed by the code block. A heading implies a navigable, standalone unit; a lone error block is not one.
 - **Nested if/then branches** get split into their own subsections instead of nested lettered/roman sub-lists.
 - **Prerequisite repeated across steps/sections** gets hoisted into one NOTE near the top of Instructions instead of restated per step.
 - **Numbered list broken by intervening paragraph** silently restarts at 1 in rendered output. Fix with a heading boundary or 4-space indent to attach the paragraph to the preceding step — not by fiddling with numbers.
 - **Every subheading under Instructions must contain an actual action.** If a subsection is purely descriptive/observational ("the events appear in the event list," "opening a baseline event shows...") with no step for the reader to perform, it doesn't belong under Instructions. Restructure into its own labeled section (e.g., "Reviewing X") using prose or a bulleted list of facts, not fake numbered "steps."
 - **Result descriptions inside numbered lists** — a step that's actually a result rather than an action ("All collections appear in the output" sitting between real actions) gets pulled out of the numbering. Either fold as a parenthetical on the preceding action or set as unnumbered prose beneath it.
+
+### Worked example — Gate A over-fragmentation
+
+`add-ssl-certificate-on-linux.md` (Change Tracker batch 3a) originally used four subheadings under Instructions: Stop Services / Copy .crt and .key / Change Nginx Config / Start Services. Stop-Services and Start-Services are single-action prep/cleanup for the install and configure groups. The right structure is two substantive groups plus troubleshooting:
+
+- `### Install the Custom SSL Certificate` (stopping services + copying files as numbered steps within)
+- `### Configure Nginx to Use the Certificate` (editing config + starting services as numbered steps within)
+- `### Troubleshooting` → `#### Resolve Agent Certificate Thumbprint Mismatches` (thumbprint mismatch)
+
+All three are `###` siblings under `## Instructions`, but `Troubleshooting` is a different kind of section — exception-handling, not a sequential setup step — so only `Install` and `Configure` count toward the Gate B threshold. Two substantive subheadings → Gate B does not fire — no `Step N —` labels on `Install`/`Configure`, and `Troubleshooting` (plus its nested `####` subheading) is exempt from the count and from labeling in the first place, regardless of matching heading depth. Applying `Step N —` to the four thin original subheadings would have preserved the fragmentation instead of fixing it.
 
 ## 2. Condensing repetitive steps
 
@@ -75,3 +90,23 @@ Apply during the `kb-pr-open` preemptive scan and the `kb-pr-review` Derek revie
 - **A flat list of data** becomes a monospace code-block grid, not comma-separated prose or a fake table.
 - **Trailing image-removed comments** don't need their own anchoring sentence, but excess consecutive blank lines around them get trimmed to one.
 - **KB headings are Title Case** (verified against `kb_style_guide.md`, not assumed) — override of the docs-wide sentence-case rule.
+
+## 11. Cross-section consistency
+
+Rules that compare two sections of the same article against each other. Section-local scans miss these because each individual section reads correctly on its own.
+
+- **Symptom vs Cause overlap.** Symptom describes what the user *observes* — error text, UI behavior, timing. Cause describes the *mechanism* — why the observed behavior occurs. When Symptom restates the mechanism ("the operation fails because X"), trim it to observation only and move the mechanism into Cause. When Cause repeats the observed behavior instead of explaining why, treat as thin and route to `kb-writer`.
+- **Acronym defined but long form reused.** If the article defines an acronym on first use — e.g., "two-factor authentication (2FA)" — subsequent references in body/headings/notes should use the acronym, not the long form. Dale only catches *undefined* acronyms; this is the opposite half of consistent-use.
+- **Product name over-repetition after first use.** After the product's full name has established context (typically in Overview or the first Symptom sentence), later mentions can drop the "Netwrix" prefix or the full name entirely where context makes it unambiguous. Flag runs of "Netwrix Change Tracker … Netwrix Change Tracker … Netwrix Change Tracker" that read as boilerplate.
+- **Related Articles link with no topical anchor in body.** Every link in a Related Articles section (or bullet at the bottom) should have some topical mention in the article body — the linked topic came up, was compared, was ruled out, etc. Links to unrelated topics that were never mentioned are orphaned defaults; remove them.
+
+## 12. Titles
+
+Content-of-title rules (surface style — gerund form, title case — lives in the kb-pr-open SKILL title-format rules).
+
+- **Raw log line or error dump as title.** Titles like `ConfigurationLoader FATAL Hub Location Details Have Not Been Specified in HubDetails.xml at ...` — literal log lines with level tokens (FATAL, ERROR), stack noise, file paths, or truncation fragments — are unreadable and unsearchable. Normalize to the pattern `<Component> Error - <core diagnostic phrase>`, keeping only the searchable message.
+  - Examples of the fix:
+    - `ConfigurationLoader FATAL Hub Location Details Have Not Been Specified` → `ConfigurationLoader Error - Hub Location Details Have Not Been Specified`
+    - `TraceLogger ERROR System.Net.Sockets.SocketException Address already in use` → `TraceLogger Error - Address Already in Use`
+    - `RemotePlatformDiscovery Could not get credentials from ...` → `Remote Platform Discovery Error - Could Not Get Credentials`
+  - This is separate from the retired `Error:` *prefix* convention. That rule was about not prepending `Error:` to every troubleshooting title. This rule is about the title itself being a log dump — a different anti-pattern. The pattern `<Component> Error - <phrase>` uses an inline `Error` word for disambiguation, not a leading prefix.
