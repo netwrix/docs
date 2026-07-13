@@ -56,7 +56,7 @@ You can combine Character rules to enforce complex password requirements. For ex
 Other rules use custom character set names and character sets even if you disable the corresponding granular rule. You can redefine character sets even if you don't need to use the granular rules.
 :::
 
-The character set rules are flexible, but reserve them for cases where the [Complexity](complexity_rule.md) and First and Last Character rules can't enforce your desired policy. These other rules are easier to configure and easier for users to understand.
+The character set rules are flexible, but reserve them for cases where the [Complexity](complexity_rule.md) and [First and Last Character rules](#first-and-last-character-rules) can't enforce your desired policy. These other rules are easier to configure and easier for users to understand.
 
 ## First and Last Character rules
 

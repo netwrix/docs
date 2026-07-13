@@ -5,7 +5,7 @@ sidebar_position: 1
 ---
 
 # Netwrix Password Policy Enforcer v11.2
-Netwrix Password Policy Enforcer (PPE) helps you secure your network by ensuring users choose strong passwords. Password Policy Enforcer rejects new passwords that don't comply with your password policy. If you install the optional Password Policy Client, users can also see which rules their password didn't comply with.
+Netwrix Password Policy Enforcer (PPE) helps you secure your network by ensuring users choose strong passwords. PPE rejects new passwords that don't comply with your password policy. If you install the optional Password Policy Client, users can also see which rules their password didn't comply with.
 
 A typical Windows network has both domain and local user accounts. Password Policy Enforcer can enforce password policies for both account types, but you will most likely use it for domain accounts in Active Directory.
 
@@ -43,5 +43,5 @@ The Password Policy Client helps users to choose a compliant password by showing
 Password Policy Enforcer Web is an optional component that runs on Microsoft Internet Information Services (IIS). It has similar features to the Password Policy Client, but via a web interface. Use Password Policy Enforcer Web if you prefer not to install the Password Policy Client, or if you want to integrate Active Directory password changes into your own applications.
 
 :::note
-The [Similarity rule](admin/manage-policies/rules/similarity_rule.md) only works when users change passwords from the Password Policy Client, Password Policy Enforcer Web, or Netwrix Password Reset.
+The [Similarity rule](admin/manage-policies/rules/similarity_rule.md) only works when users change passwords from the [Password Policy Client](admin/password-policy-client/password_policy_client.md), [Password Policy Enforcer Web](web-overview/web_overview.md), or Netwrix Password Reset.
 :::

@@ -40,7 +40,7 @@ jobs:
           done
 
       - name: Run code review
-        uses: anthropics/claude-code-action@a92e7c70a4da9793dc164451d829089dc057a464 # v1
+        uses: anthropics/claude-code-action@558b1d6cab4085c7753fe402c10bef0fbb92ac7a # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
