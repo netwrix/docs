@@ -1,7 +1,7 @@
 ---
 title: "Service Account Permissions"
 description: "Service Account Permissions"
-sidebar_position: 60
+sidebar_position: 70
 ---
 
 # Service Account Permissions

@@ -14,12 +14,12 @@ re-installation or upgrade.
 
 | If you use...        | Do the following...                                                                                                                                                                                                                                                                                                                                                                             |
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Windows Firewall     | If you are running Windows Firewall on the computer where Auditor Server is going to be installed, the 135, 9004, 9699, 9011, and one dynamic port will be opened automatically for inbound connections during Auditor installation. For outbound rules, create or enable predefined Windows Firewall rules. Before installing Auditor, make sure that the Windows Firewall service is started. |
+| Windows Firewall     | If you are running Windows Firewall on the computer where you will install Auditor Server, Auditor automatically opens ports 135, 9004, 9699, 9011, and one dynamic port for inbound connections during installation. For outbound rules, create or enable predefined Windows Firewall rules. Before installing Auditor, ensure that the Windows Firewall service is running. |
 | Third-party Firewall | If you use a third-party firewall, you must create rules manually.                                                                                                                                                                                                                                                                                                                              |
 
-Follow the steps to create Firewall rules manually.
+## Create Firewall rules manually
 
-The example below applies to Windows Firewall and explains how to create a rule for inbound
+The following example applies to Windows Firewall and explains how to create a rule for inbound
 connection.
 
 **Step 1 –** Start the Windows Firewall service.
@@ -38,13 +38,13 @@ left.
 - On the Protocol and Ports step, select TCP or UDP. In the Specific local ports field specify the
   port number.
 - On the Action step, select the Allow the connection action.
-- On the Profile step, make sure that the rule applies to all profiles (Domain, Private, Public).
+- On the Profile step, ensure that the rule applies to all profiles (Domain, Private, Public).
 - On the Name step, specify the rule's name, for example Netwrix Auditor TCP port_number Access.
 
 In most cases, this configuration is enough to ensure successful data collection and processing. If
 your organization policy requires you to provide a justification for each particular port, review
-the following for a full list of ports to be opened on the computer where Auditor Server is going to
-be installed and on your target servers.
+the following for a full list of ports to open on the computer where you will install Auditor
+Server and on your target servers.
 
 - [Active Directory Ports](/docs/auditor/10.8/configuration/activedirectory/ports.md)
 - [AD FS Ports](/docs/auditor/10.8/configuration/activedirectoryfederatedservices/ports.md)
@@ -72,7 +72,7 @@ be installed and on your target servers.
 
 During installation, Netwrix Auditor automatically creates inbound Windows Firewall rules for the
 essential ports required for the product to function properly. If you use a third-party firewall,
-make sure to allow inbound connections to local ports on the target and outbound connections to
+ensure to allow inbound connections to local ports on the target and outbound connections to
 remote ports on the source.
 
 Tip for reading the table: For example, on the computer where Netwrix Auditor client is installed
@@ -85,12 +85,12 @@ Server resides (target), allow inbound connections to local 135 TCP port.
 | 9004                               | TCP      | Monitored computers                                                             | Netwrix Auditor Server | Network Traffic Compression Services responsible for user activity monitoring                                                                           |
 | 9011                               | TCP      | Computers where Netwrix Auditor for Windows Server Compression Services reside  | Netwrix Auditor Server | Network traffic compression and interaction with hubs and services                                                                                      |
 | 9699                               | TCP      | Script / query host                                                             | Netwrix Auditor Server | Netwrix Auditor Integration API                                                                                                                         |
-| Dynamic: 1024 -65535               | TCP      | Computers where Netwrix Auditor Server and Netwrix Auditor client are installed | Netwrix Auditor Server | Netwrix Auditor internal components interaction. Allow C:\Program Files (x86)\Netwrix Auditor\Audit Core\NwCoreSvc.exe to use the port.                 |
+| Dynamic: 49152 -65535               | TCP      | Computers where Netwrix Auditor Server and Netwrix Auditor client are installed | Netwrix Auditor Server | Netwrix Auditor internal components interaction. Allow C:\Program Files (x86)\Netwrix Auditor\Audit Core\NwCoreSvc.exe to use the port.                 |
 | For Managed Service Providers: 443 | TCP      | Netwrix Auditor Server                                                          | Netwrix Partner Portal | Reporting on active MSP licenses                                                                                                                        |
-| - 80 for http - 443 for https      | TCP      | SSRS                                                                            | Netwrix Auditor Server | Reports If your environment is configured differently, we recommend that you check with your DBA or the SSRS settings through the Configuration Manage. |
+| - 80 for http - 443 for https      | TCP      | SSRS                                                                            | Netwrix Auditor Server | Reports. If your environment is configured differently, check with your DBA or review the SSRS settings through the Configuration Manager. |
 
-In most environments, the rules are created automatically and you do not need to open more ports to
-ensure successful data collection.
+In most environments, Auditor creates the rules automatically and you don't need to open more ports
+to ensure successful data collection.
 
 In rare cases, for example if your security policies require you to provide a justification for
 opening each particular port, you might need a more detailed overview.

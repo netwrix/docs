@@ -1,156 +1,63 @@
 ---
-title: "Dictionary Rule"
-description: "Dictionary Rule"
+title: "Dictionary"
+description: "Configure the Dictionary rule to reject passwords that contain dictionary words, or variants of dictionary words."
 sidebar_position: 60
 ---
 
-# Dictionary Rule
+# Dictionary rule
 
-The Dictionary rule rejects passwords that are vulnerable to guessing, hybrid, and precomputed
-attacks. These attacks can crack weak passwords in seconds, and they can be very effective if
-passwords are based on common words.
+The Dictionary rule rejects passwords that are vulnerable to guessing, hybrid, and precomputed attacks. These attacks can crack weak passwords in seconds, and they are very effective if users base their passwords on common words.
 
-![Dicitonary Rule](/images/passwordpolicyenforcer/11.2/administration/dictionary.webp)
-
-There are two Dictionary rules in each password policy. You can use the second rule with a different
-dictionary file, or to enforce a more tolerant policy for passphrases by disabling the primary rule
-for long passwords.
+![Dictionary rule configuration options](/images/passwordpolicyenforcer/11.2/administration/dictionary.webp)
 
 Select the **Dictionary** checkbox to enable the Dictionary rule.
 
-Browse to a dictionary file. Password Policy Enforcer installs a sample file **Dict.txt** in the **\Program Files\Netwrix\Password Policy Enforcer\\** folder. This file is sorted and ready to use. It contains
-approximately 257,000 words, names, and acronyms.
-
-Select the **Detect inclusion of non-alpha characters** checkbox if Password Policy Enforcer should
-remove all non-alphabetic characters during analysis. This allows Password Policy Enforcer to reject
-passwords such as "myp8asswor8d."
-
-Select the **Detect character substitution** checkbox if Password Policy Enforcer should reject
-passwords that rely on character substitution to comply with this rule.
-
-Select the **Detect words typed backwards** checkbox if Password Policy Enforcer should
-additionally test passwords with their characters reversed. Enabling bi-directional analysis stops
-users from circumventing this rule by reversing the order of characters in their password. For
-example, a user may enter "drowssapym" instead of "mypassword".
-
-Select the **Wildcard analysis** checkbox if Password Policy Enforcer should search for wildcard
-templates in the dictionary file. Wildcard templates are specially formatted dictionary words that
-Password Policy Enforcer uses to reject a range of passwords. The Dictionary rule supports two
-wildcard template formats:
-
-<table>
-<thead>
-<tr>
-<th>Format</th>
-			    <th>Example</th>
-			    <th>Description</th>
-		    </tr>
-	  </thead>
-	    <tbody>
-		  <tr>
-			  <td valign="top">Prefix</td>
-			  <td>
-			    <table>
-			      <tbody>
-						  <tr>
-							  <td>!!BAN*!!</td>
-						  </tr>
-						  <tr>
-							  <td>!!2*!!</td>
-						  </tr>
-			      </tbody>
-			    </table>
-			  </td>
-			  <td>
-				  <table>
-				    <tbody>
-					    <tr>
-					      <td>Rejects passwords that start with BAN. For example:&#160;band, banish, ban, bank, etc.</td>
-					    </tr>
-					    <tr>
-						    <td>Rejects passwords that start with the numeric character 2. For example: 2ABC, 2123, etc. </td>
-					    </tr>
-					  </tbody>
-				  </table>
-			  </td>
-		  </tr>
-		<tr>
-			<td valign="Top">
-				Suffix
-			</td>
-			<td valign="Top">
-				!!*ING!!
-			</td>
-			<td>
-				Rejects passwords that end with ING. For example:&#160;pushing, howling, trying, etc.
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-
-Password Policy Enforcer performs partial matching even if Wildcard analysis is disabled. For example, the dictionary
-word "password" rejects the passwords "My**Password**$", "**Password**100", and
-"12**password**34" even if Wildcard analysis is disabled.
-
-Wildcard analysis should only be used to limit matching to the characters at the start or end of a
-password.
-
-Enabling Wildcard analysis slightly increases search times, so only enable this option if the
-dictionary file contains wildcard templates. The sample dictionary file included with Password
-Policy Enforcer doesn't contain any wildcard templates.
-
-Choose a value from the Tolerance dropdown list to specify the maximum number of consecutive matching characters that Password Policy Enforcer tolerates before rejecting a password. For example, the dictionary word "**sword**" and the password "4my**sword**%" contain five consecutive matching characters (shown in bold). Password Policy Enforcer rejects this password if the tolerance is four or lower, and accepts it if the tolerance is five or higher.
-
-Click the **Browse** button to select a dictionary file, or enter a path into the text box. The path
-can contain environment variables like %SystemRoot%. Password Policy Enforcer installs a sample dictionary in the
-\Program Files (x86)\Password Policy Enforcer\ folder. Read the dictionary file from a
-local disk. Using a shared dictionary degrades performance, and could jeopardize security.
+Click **Browse** to select a dictionary file, or enter a path to a file in the **Dictionary file** text box. The path can include environment variables. Password Policy Enforcer (PPE) installs a file called `Dict.txt` in the `%ProgramFiles%\Netwrix\Password Policy Enforcer\` folder. This file contains approximately 278,000 words, names, and acronyms.
 
 :::note
-The `\Program Files (x86)\` folder doesn't exist on 32-bit Windows, so move the
-dictionary into the `\Program Files\Netwrix\Password Policy Enforcer\` folder if you have 32-bit and 64-bit
-computers sharing a common Password Policy Enforcer configuration.
+Dictionary files are UTF-8-encoded text files with a specific format. They must begin and end with a blank line, contain one fully capitalized word per line, and list words in ascending alphabetical order.
+
+Click **Sort** to format and sort the current dictionary file. You only need to do this once after adding words to the file or creating a new file. Sorting also removes duplicate words, so the sorted file may be smaller than the original. The included dictionary is ready to use, so there's no need to sort it.
+
+Ensure that all computers have a local copy of the updated and sorted file. The [Dictionary file replication](#dictionary-file-replication) section explains how to automate this.
 :::
 
+:::warning
+Dictionary files should be on a local disk. Shared dictionary files degrade performance and might jeopardize security.
 
-Click the **Sort** button if the dictionary file is being used with Password Policy Enforcer for the
-first time, or if words have been added to the file since it was last sorted. The Password Policy
-Enforcer Configuration Console will sort and reformat the file so that Password Policy Enforcer can use
-it. Sorting also removes duplicate words, so the sorted file may be smaller than the original.
-
-Click the **Messages** tab to customize the Password Policy Client rule inserts. If both Dictionary
-rules have identical inserts, then only one of the inserts is shown in the corresponding Password
-Policy Client message if the password is rejected by both rules.
-
-## Creating a Custom Dictionary
-
-You can add words to the sample dictionary file, or download larger dictionary files from the
-Internet. Always sort a dictionary file before using it with Password Policy Enforcer, and ensure
-that all computers have a local copy of the updated and sorted file.
-
-The custom dictionary should meet the following requirements:
-
-1. The dictionary should begin and end with a blank line.
-2. Capitalize all words.
-3. Press the Sort button after pointing to a file in the dictionary rule.
-
-:::note
-If you are using a custom dictionary, use a different filename. The default
-dictionary file (dict.txt) may be replaced during an upgrade.
+Future versions of Password Policy Enforcer might overwrite `Dict.txt` during an upgrade, so rename the file or put it in a different folder if you modify it.
 :::
 
+Select the **Detect inclusion of non-alpha characters** checkbox if you want PPE to ignore non-alphabetic characters in passwords. For example, PPE also evaluates the password myp8asswor8d as mypassword.
 
-## Dictionary File Replication
+Select the **Detect character substitution** checkbox if you want PPE to apply [character substitutions](rules.md#detecting-character-substitution) when checking passwords.
 
-Password Policy Enforcer doesn't distribute dictionary file updates to other computers, but you can
-use the Windows Distributed File System to ensure that all domain controllers have the latest
-dictionary file. Copy the dictionary file into the Sysvol share on one domain controller, and the
-Distributed File System will copy the file into the Sysvol share of all other domain controllers.
-Configure the Dictionary rule to read the file from \\127.0.0.1\sysvol\your.domain\filename.txt
+Select the **Detect words typed backwards** checkbox if you want PPE to test passwords with their characters reversed. For example, PPE also evaluates the password drowssapym as mypassword.
 
-The path above only works if the computer has a Sysvol share. This won't be the case if you are
-using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
-local polices. If you are using Password Policy Enforcer for local policies and want all computers
-to receive dictionary file updates, then use the Sysvol share for file replication and a script or
-scheduled task to copy the file to a local folder.
+Select the **Wildcard analysis** checkbox if you want PPE to search for wildcard templates in dictionary files. Wildcard templates are specially formatted dictionary words that PPE uses to reject a range of passwords. There are two wildcard template formats:
+
+| Format | Example | Description |
+|---|---|---|
+| Prefix | `!!BAN*!!` | Rejects passwords that start with BAN. For example, band, banish, ban, bank, etc. |
+| | `!!2*!!` | Rejects passwords that start with the numeric character 2. For example, 2ABC, 2123, etc. |
+| Suffix | `!!*ING!!` | Rejects passwords that end with ING. For example, pushing, howling, trying, etc. |
+
+Wildcard analysis increases search times slightly, so only enable it if the dictionary file contains wildcard templates. The dictionary file included with PPE doesn't contain any wildcard templates.
+
+PPE performs partial matching even if you disable wildcard analysis. For example, the dictionary word password rejects the passwords My**Password**$, **Password**100, and 12**password**34 even if you disable wildcard analysis.
+
+Select a value from the **Tolerance** dropdown to specify the maximum number of consecutive matching characters that PPE tolerates before rejecting a password. For example, the dictionary word sword and the password 4my**sword**% contain five consecutive matching characters (shown in bold). PPE rejects this password if the tolerance is four or lower, and accepts it if the tolerance is five or higher.
+
+:::tip
+Increase the tolerance if [testing](../testpolicy.md#by-user) shows that this rule rejects too many acceptable passwords. Decrease it if the rule is too permissive. The [Rules](rules.md#tolerance) page has more information about how PPE implements tolerance.
+:::
+
+Click **Add dictionary** if you want PPE to use a secondary dictionary file. This is useful if you want to keep your own words in a separate file, or if you need different settings for the second file. Clicking **Add dictionary** displays a second group of identical configuration settings for the secondary file.
+
+:::tip
+A secondary dictionary can be combined with the [passphrase](../passphrases.md) feature to enforce a password policy that allows dictionary words in passphrases, while still rejecting certain words such as the organization's name, seasons, local sporting teams, etc. Configure the passphrase feature to disable only the primary dictionary file for passphrases, and keep the secondary (smaller) dictionary file enabled for all passwords.
+:::
+
+## Dictionary file replication
+
+Password Policy Enforcer doesn't distribute dictionary file updates to other computers, but you can use Distributed File System Replication (DFSR) to ensure that all domain controllers use the same file. Copy the dictionary file into the Sysvol share on one domain controller, and configure the Dictionary rule to read the file from the local Sysvol path (`%SystemRoot%\SYSVOL\domain\<your.domain>\filename.txt`). DFSR copies the file into the Sysvol share of all the other domain controllers in the domain, so all domain controllers read their local copy of the distributed file.

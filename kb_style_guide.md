@@ -64,7 +64,7 @@ Articles should not exceed five main H2 headings.
 
 **Related Query / Related Queries** — place as the first section when applicable. Include exact wording from customer support ticket subjects (correcting only typos). Helps with searchability and surfaces real customer language.
 
-**Related Links** — place at the end. List all relevant links referenced in the article.
+**Related Links** — place at the end. Include only when the article body already contains three or more links. If the article has fewer than three links, the inline links are sufficient — do not add a Related Links section.
 
 ### Heading hierarchy
 

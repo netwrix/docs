@@ -22,3 +22,8 @@ Directory Manager supports the following Microsoft Windows Servers:
 
 - Windows Server 2022 Standard
 - Windows Server 2022 Datacenter
+
+**Microsoft Windows Server 2025 Family**
+
+- Windows Server 2025 Standard
+- Windows Server 2025 Datacenter

@@ -13,7 +13,7 @@ The Activity Monitor can be configured to monitor the following:
 - Ability to collect all or specific file activity for specific values or specific combinations of
   values
 
-It provides the ability to feed activity data to SIEM products. The following dashboards have been
+It lets you feed activity data to SIEM products. The following dashboards have been
 specifically created for Activity Monitor event data:
 
 - For IBM® QRadar®, see the
@@ -22,13 +22,13 @@ specifically created for Activity Monitor event data:
 - For Splunk®, see the [File Activity Monitor App for Splunk](/docs/activitymonitor/9.0/siem/splunk/overview.md) for
   additional information.
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Access Analyzer
 - Netwrix Threat Prevention
 - Netwrix Threat Manager
 
-Prior to adding a Dell Celerra or VNX host to the Activity Monitor, the prerequisites for the target
+Before adding a Dell Celerra or VNX host to the Activity Monitor, the prerequisites for the target
 environment must be met. See the
 [Dell Celerra & Dell VNX Activity Auditing Configuration](/docs/activitymonitor/9.0/requirements/activityagent/nas-device-configuration/celerra-vnx-aac/celerra-vnx-activity.md)
 topic for additional information.
@@ -41,7 +41,7 @@ monitoring the target environment.
 
 ## Add Dell VNX/Celerra Host
 
-Follow the steps to add a Dell Celerra or VNX host to be monitored.
+To add a Dell Celerra or VNX host to be monitored, complete the following steps:
 
 **Step 1 –** Navigate to the Monitored Hosts & Services tab and click Add. The Add New Host window opens.
 
@@ -57,7 +57,7 @@ Server NetBIOS Name** for the device. If desired, add a **Comment**. Click **Nex
 
 :::note
 All Dell event source types must have the CEE Monitor Service installed on the agent in
-order to collect events. Activity Monitor will detect if the CEE Monitor is not installed and
+order to collect events. Activity Monitor will detect if the CEE Monitor isn't installed and
 display a warning to install the service. If the CEE Monitor service is installed on a remote
 machine, manual configuration is required. See the
 [Dell CEE Options Tab](/docs/activitymonitor/9.0/admin/agents/properties/dellceeoptions.md) topic for additional information.
@@ -75,6 +75,12 @@ can be monitored are All, CIFS, or NIFS. Click **Next**.
 Operations** to be monitored. Additional options include:
 
 :::warning
+**Limitation: Permission Change details not available for Dell devices**
+For Dell devices, Activity Monitor reports that a permission change occurred, but can't report the specifics of the change
+(e.g., which permissions were added or removed, owner changes, or inheritance changes).
+:::
+
+:::warning
 Suppress Microsoft Office operations on temporary files – Filters out events for
 Microsoft Office temporary files. When Microsoft Office files are saved or edited, many temporary
 files are created. With this option enabled, events for these temporary files are ignored. This
@@ -87,7 +93,7 @@ Click **Next**.
 ![Configure Basic Options Page](/images/activitymonitor/9.0/admin/monitoredhosts/add/configurebasicoptions.webp)
 
 **Step 6 –** On the Configure Basic Options page, choose which settings to enable. The "Log files"
-are the activity logs created by the activity agent on the proxy host. Select the desired options:
+are the activity logs created by the activity agent on the proxy host. Select the options you want:
 
 - Report account names – Adds an **Account Name** column in the generated TSV files
 - Add C:\ to the beginning of the reported file paths – Adds 'C:\" to file paths to be displayed
@@ -106,7 +112,7 @@ are the activity logs created by the activity agent on the proxy host. Select th
       through the UNC Path. If a file is accessed locally, these columns are empty. These columns
       have also been added as Syslog macros.
     - When this option is selected, the user needs to provide credentials in the Auditing tab. If
-      credentials are not provided, the following warning message is displayed:
+      credentials aren't provided, the following warning message is displayed:
         - Credentials are required for this feature. Provide the credentials in the Auditing tab.
 - Report operations with millisecond precision – Changes the timestamps of events being recorded in
   the TSV log file for better ordering of events if multiple events occur within the same second
@@ -149,19 +155,19 @@ Click **Next**.
 **Step 9 –** If Syslog Server is selected on the **Where To Log The Activity** page, the Syslog
 Output page can be configured.
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the text box.
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization's environment can resolve the name format used. The Event stream is the activity
       being monitored according to this configuration for the monitored host.
-- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The drop-down
+- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The dropdown
   menu includes:
 
     - UDP
     - TCP
     - TLS
 
-    The TCP and TLS protocols add the Message framing drop-down menu. See the
+    The TCP and TLS protocols add the Message framing dropdown menu. See the
     [Syslog Tab](/docs/activitymonitor/9.0/admin/outputs/syslog/syslog.md) topic for additional information.
 
 - Syslog message template – Click the ellipsis (…) to open the Syslog Message Template window. The
@@ -178,7 +184,7 @@ Output page can be configured.
       template for Threat Manager. See the
       [Netwrix Threat Manager Documentation](https://helpcenter.netwrix.com/category/stealthdefend)
       for additional information.
-    - Custom templates can be created. Select the desired template or create a new template by
+    - Custom templates can be created. Select the template you want or create a new template by
       modifying an existing template within the Syslog Message Template window. The new message
       template will be named Custom.
 - Add C:\ to the beginning of the reported file paths – Adds 'C:\" to file paths to be displayed
@@ -197,13 +203,13 @@ Output page can be configured.
       through the UNC Path. If a file is accessed locally, these columns are empty. These columns
       have also been added as Syslog macros.
     - When this option is selected, the user needs to provide credentials in the Auditing tab. If
-      credentials are not provided, the following warning message is displayed:
+      credentials aren't provided, the following warning message is displayed:
         - Credentials are required for this feature. Provide the credentials in the Auditing tab.
 - The Test button – Sends a test message to the Syslog server to check the connection. A green check
   mark or red will determine whether the test message has been sent or failed to send. Messages vary
   by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -214,7 +220,7 @@ Click **Finish**.
 ![activitymonitoremcvnxcelerra](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitoremcvnxcelerra.webp)
 
 The added Dell Celerra or VNX host is displayed in the Monitored Hosts & Services table. Once a host has been
-added for monitoring, configure the desired outputs. See the
+added for monitoring, configure the outputs you want. See the
 [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic for additional information.
 
 ## Host Properties for Dell Celerra or VNX

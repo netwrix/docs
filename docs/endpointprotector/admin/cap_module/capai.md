@@ -8,7 +8,7 @@ sidebar_position: 60
 
 **Introduction**
 
-As artificial intelligence tools become increasingly integrated into everyday business processes, Netwrix Endpoint Protector (EPP), a leader in Data Loss Prevention (DLP) technology, has addressed the need for enhanced visibility and control. With the introduction of EPP Client version 2511, users now have access to a feature that extends Data Loss Prevention to Large Language Models (LLMs).
+As artificial intelligence tools become increasingly integrated into everyday business processes, Netwrix Endpoint Protector (EPP), a leader in Data Loss Prevention (DLP) technology, has addressed the need for enhanced visibility and control. Starting with EPP Client release 2511, Netwrix introduced a set of features that extends Data Loss Prevention to Large Language Models (LLMs).
 
 **Key Features**
 
@@ -23,7 +23,7 @@ By implementing these controls, organizations can protect sensitive information 
 
 ## AI Interaction Visibility and Control in Netwrix Endpoint Protector: Data Loss Prevention for LLMs
 
-Endpoint Protector extends Data Loss Prevention to the most widely used AI technologies — including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X Grok, Claude, Meta AI, and Perplexity — ensuring secure and compliant use across your organization. Coverage includes the embedded Microsoft Copilot add-in in Windows 11, New Outlook, New Teams, and Edge. Endpoint Protector also provides visibility and control over ChatGPT, Claude, and Copilot native clients.
+Endpoint Protector extends Data Loss Prevention to the most widely used AI technologies — including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X Grok, Claude, Meta AI, Perplexity and Cursor — ensuring secure and compliant use across your organization. Coverage includes the embedded Microsoft Copilot add-in in Windows 11, New Outlook, New Teams, and Edge. Endpoint Protector also provides visibility and control over ChatGPT, Claude, and Copilot native clients.
 
 ## Configure Netwrix EPP to Monitor AI Prompt Transactions
 

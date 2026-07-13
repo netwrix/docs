@@ -1,0 +1,10 @@
+{
+  "label": "Netwrix Auditor Settings",
+  "position": 20,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

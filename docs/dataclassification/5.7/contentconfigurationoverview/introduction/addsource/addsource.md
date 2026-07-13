@@ -9,7 +9,7 @@ sidebar_position: 10
 To start processing your data, you need to add a corresponding content source to the Netwrix Data
 Classification scope.
 
-Follow the steps to add a content source.
+To add a content source:
 
 **Step 1 –** In administrative web console, navigate to **Content** →Sources → General and click
 **Add** to launch the Add source wizard.
@@ -20,7 +20,8 @@ Follow the steps to add a content source.
 the sources:
 
 - [Box](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addbox.md)
-- [Add Single Database](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsingledatabase/addsingledatabase.md) (Microsoft SQL Server or Oracle database)
+- [Add Single Database](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsingledatabase/addsingledatabase.md) (Microsoft SQL Server, MySQL, PostgreSQL, or Oracle database)
+- [Add SQL Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/addsqlserversource/addsqlserversource.md) (All Microsoft SQL Server, MySQL, PostgreSQL, or Oracle databases on a server)
 - [Dropbox](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/adddropbox.md)
 - [Exchange Server](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangeserver.md) or
   [Exchange Mailbox](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/exchangemailbox.md)
@@ -29,13 +30,11 @@ the sources:
 - [Outlook Mail Archive](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/outlookmailarchive.md)
 - [SharePoint](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/overview_1.md) or [SharePoint Online](/docs/dataclassification/5.7/contentconfigurationoverview/introduction/addsource/sharepointonline.md)
 
-All your content sources will be listed in the **Sources** section.
+The **Sources** section lists all your content sources.
 
 :::note
 When adding a source or managing source configuration, the most commonly used source
 settings are displayed by default. However, some source types have additional configuration options
-that can be displayed by clicking the Advanced Settings ("wrench" icon). You can allow these
-advanced settings to be always shown to authorized users.
-[Users and Security Settings](/docs/dataclassification/5.7/systemconfigurationoverview/users/users.md)
-
+that can be displayed by clicking the Advanced Settings ("wrench" icon) in the bottom left. You can
+set the Advanced Settings to display by default in User Preferences, accessible by clicking on the username in the top right.
 :::

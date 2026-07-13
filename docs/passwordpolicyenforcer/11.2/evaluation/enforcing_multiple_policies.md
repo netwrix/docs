@@ -34,7 +34,7 @@ Create an additional password policy.
 **Step 5 –** Click the **+** in the **Groups** list and enter **Domain Admins**. Specify a Domain or
 local **Location** depending on your evaluation set up.
 
-**Step 6 –** Click **OK**. Domain Admins are added to the **Groups**.
+**Step 6 –** Click **OK**. Domain Admins appear in the **Groups** list.
 
 ![Domain Admins added](/images/passwordpolicyenforcer/11.2/evaluation/evaldomainadmins.webp)
 
@@ -60,8 +60,7 @@ to nine characters.
 
 **Step 5 –** Click **Test policy**.
 
-**Step 6 –** Select the **PPETestAdmin** user. The results pane shows the **Admins Policy** is being
-applied, and the password must **contain at least 9 characters**.
+**Step 6 –** Select the **PPETestAdmin** user. The results pane shows that the **Admins Policy** applies, and that the password must **contain at least 9 characters**.
 
 ![Admins policy is being tested](/images/passwordpolicyenforcer/11.2/evaluation/evaladmin.webp)
 
@@ -71,7 +70,7 @@ changes and resets for the **PPETestUser** and **PPETestAdmin** accounts. Passwo
 should enforce the Eval policy for **PPETestUser**, and the Admins policy for **PPETestAdmin**.
 
 :::note
-The [Set Priorities](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md#set-priorities) topic contains
+The [Set Priorities](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md#set-policy-priorities) topic contains
 more information about policy assignments, and how Password Policy Enforcer resolves policy
 assignment conflicts that occur when more than one policy is assigned to a user.
 

@@ -11,12 +11,12 @@ permissions and manage existing users.
 
 ## Authentication Mechanisms
 
-On first install the QS will be configured for Windows authentication. To setup the QS to use an
-ADFS server please follow the "Installation and Configuration" guide using the section "ADFS". To
-use forms based authentication please disable all other authentication methods in IIS other than:
+On first install, the QS will be configured for Windows authentication. To set up the QS to use an
+ADFS server, follow the "Installation and Configuration" guide using the section "ADFS". To
+use forms based authentication, disable all other authentication methods in IIS other than:
 Anonymous and Forms:
 
-Follow the steps to use authentication forms.
+To use authentication forms:
 
 **Step 1 –** Check that the “authentication mode” setting in conceptQS/web.config file is set as
 follows:
@@ -25,7 +25,7 @@ follows:
 
 **Step 2 –** Check that the Authentication settings are correct in IIS for Windows Authentication:
 
-The conceptQS web application should have these authentication methods enabled:
+The NDC web application should have these authentication methods enabled:
 
 - Anonymous Authentication
 - Windows Authentication
@@ -34,7 +34,7 @@ All other authentication methods should be disabled.
 
 ![iis_thumb_0_0](/images/dataclassification/5.7/security/iis_thumb_0_0.webp)
 
-**Step 3 –** If you wish to allow anonymous access to the conceptQS, edit the conceptQS web.config
+**Step 3 –** If you want to allow anonymous access to NDC, edit the conceptQS web.config
 file and delete (or comment out) three lines:
 
 <!-- The following 3 lines are required for Windows Authentication. Remove to allow anonymous access to
@@ -51,14 +51,14 @@ If these lines are present then users will be required to login using their Wind
 
 ## Configure Microsoft Entra ID Authentication
 
-To configure Microsoft Entra ID you need to create aclient application and add two new appSettings
+To configure Microsoft Entra ID you need to create a client application and add two new appSettings
 to the "`<appsettings>`" section of the web.config file in the QS directory:
 
 - `<add key="ida:AzureClientId" value="NewAzureADClientID (GUID)" />`
 - `<add key="ida:AzureAuthority" value="AzureADAuthorityValue such as: https://login.windows.net/mytenant.onmicrosoft.com" />`
 
-The Netwrix Data Classification REST APIs also support Bearer based authentication, to enable this
-mode please add one further appSetting entry into the web.config file:
+The Netwrix Data Classification REST APIs also support Bearer-based authentication. To enable this
+mode, add one further appSetting entry into the web.config file:
 
 - `<add key="ida:AzureTenant" value="Tenant Name such as: netwrix.com" />`
 
@@ -76,8 +76,7 @@ Classification via Microsoft Entra ID authentication:
 
 ## Add or Remove Users
 
-More users can be added at any time from the default Users screen, as well as allowing for users to
-be removed.
+Users can be added and removed via the Users screen at any time.
 
 ![adduser](/images/dataclassification/5.7/security/adduser.webp)
 
@@ -88,31 +87,29 @@ If the only user defined is a Super User and that user is deleted then all secur
 usage of the QS administrative functions reverts to unrestricted.
 
 User accounts granted access to the REST APIs will still be restricted by their specific user
-permissions. A Superuser with REST API access will be able to run any API method, any normal user
+permissions. A Super User with REST API access will be able to run any API method. Any normal user
 will be restricted by the same rules that govern the UI. Further API samples and documentation can
-be found at: /conceptQS/\_api
+be found at: /NDC/\_api
 
 ## Permission Management
 
-In order to allocate granular permissions to a user (non-Super Users), simply select their username
-from the main grid.
-
-Each tab contains a top level checkbox (“Allow Access”) which defines whether or not a user has
-access to each of the top level administrative areas.
+To allocate granular permissions to a user (non-Super Users), click Edit on their row in the Users table. The
+permissions for each section of the administrative web interface will be displayed as tabs. Each tab contains a top-level
+checkbox of the form "Access [Area Name]” (e.g. Access Sources) which defines whether a user has access to each of the top level administrative areas.
 
 When an area is enabled there are typically more granular permissions that can be enabled, such as:
 
-- Within the Taxonomies area it is also possible to assign permissions at a specific Term Set or
+- Within the Taxonomies area, you can also assign permissions at a specific Term Set or
   Term branch level. A full user permission summary (for all Term/Set level permissions) can be
   viewed by selecting the View Taxonomy Permissions button (shown below).
-- Within the Sources area it is possible to restrict a user’s access to specific source groups, as
+- Within the Sources area, you can restrict a user’s access to specific source groups, as
   shown below.
 
 ![userpermissions_thumb_0_0](/images/dataclassification/5.7/security/userpermissions_thumb_0_0.webp)
 
-### Taxonomy Permissions Summary
+### Permissions Summary
 
-The Permissions window lets you restruct permissions for a user.
+The Permissions window lets you set permissions for the selected user.
 
 ![viewtaxonomypermissionssummary_thumb_0_0](/images/dataclassification/5.7/security/viewtaxonomypermissionssummary_thumb_0_0.webp)
 
@@ -131,7 +128,7 @@ You can restrict permissions for a user to the following areas:
 
 ## Super Users
 
-Super Users always have access to all Query Server administrative functions.
+Super Users have access to all Query Server administrative functions.
 
 Non-Super Users must have their access rights specifically configured and all rights are disabled by
 default. See User Management section for details about configuring the access rights for non-Super
@@ -139,8 +136,8 @@ Users.
 
 Regardless of the authentication mode selected the usage of the QS administrative functions will
 continue to be unrestricted until at least one user is added. The first user must be a Super User.
-If Windows or ADFS Authentication are being used then the first user will default to the currently
-logged in user, although this can be changed if required.
+If Windows or ADFS Authentication are being used then the first user will default to the 
+logged-in user, although this can be changed if required.
 
 If Non-Windows Authentication is enabled then additional information must be entered to define the
 non-Windows user.

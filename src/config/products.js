@@ -150,9 +150,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '10.9',
+        label: '10.9',
+        isLatest: true,
+        sidebarFile: './sidebars/auditor/10.9.js',
+      },
+      {
         version: '10.8',
         label: '10.8',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/auditor/10.8.js',
       },
       {
@@ -168,7 +174,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/auditor/10.6.js',
       },
     ],
-    defaultVersion: '10.8',
+    defaultVersion: '10.9',
   },
   {
     id: 'changetracker',
@@ -179,9 +185,16 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '8.2',
+        label: '8.2',
+        isLatest: true,
+        sidebarFile: './sidebars/changetracker/8.2.js',
+        apiSidebarPath: './docs/changetracker/8.2/api/reference/sidebar.ts',
+      },
+      {
         version: '8.1',
         label: '8.1',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/changetracker/8.1.js',
         apiSidebarPath: './docs/changetracker/8.1/api/reference/sidebar.ts',
       },
@@ -192,7 +205,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/changetracker/8.0.js',
       },
     ],
-    defaultVersion: '8.1',
+    defaultVersion: '8.2',
   },
   {
     id: 'customer',
@@ -777,6 +790,25 @@ export function getDefaultVersion(product) {
     return product.versions.find((v) => v.version === product.defaultVersion);
   }
   return product.versions.find((v) => v.isLatest) || product.versions[0];
+}
+
+/**
+ * Build a map of product ID → latest URL-version string.
+ * Used by the evergreen-links redirect config to generate version-less aliases.
+ * Skips single-version 'current' products (their URLs are already version-less).
+ */
+export function getLatestVersionUrlMap() {
+  const map = {};
+  for (const product of PRODUCTS) {
+    if (product.versions.length === 1 && product.versions[0].version === 'current') continue;
+    const latest = getDefaultVersion(product);
+    if (!latest) continue;
+    const urlVersion = latest.customRoutePath
+      ? latest.customRoutePath.split('/').pop()
+      : versionToUrl(latest.version);
+    map[product.id] = urlVersion;
+  }
+  return map;
 }
 
 /**

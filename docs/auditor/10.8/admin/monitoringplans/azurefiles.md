@@ -66,7 +66,7 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 ### Step 5: Test Connection
 
 Click **Test Connection** to verify:
-- Azure Active Directory authentication
+- Microsoft Entra ID authentication
 - Storage account access
 - Audit log collection
 

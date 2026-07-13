@@ -4,9 +4,9 @@ import { NEP } from '@site/src/training/products';
 
 The following courses are available for self-enrollment through the Learning Library:
 
-* What's New in Netwrix Endpoint Protector v2605
-* What's New in Netwrix Endpoint Protector v2604
-* What's New in Netwrix Endpoint Protector v2602
-* What's New in Netwrix Endpoint Protector v2601
-* What's New in Netwrix Endpoint Protector — Client v2511
+* What's New in <NEP /> v2605
+* What's New in <NEP /> v2604
+* What's New in <NEP /> v2602
+* What's New in <NEP /> v2601
+* What's New in <NEP /> — Client v2511
 * What's New in <NEP /> v2509
