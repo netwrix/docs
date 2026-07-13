@@ -77,6 +77,12 @@ to be monitored.
 - Suppress reporting of File Explorer's excessive directory traversal activity – Filters out events
   of excessive directory traversal in File Explorer.
 
+:::warning
+**Limitation: Permission Change details not available for Dell devices**
+For Dell devices, Activity Monitor reports that a permission change occurred, but cannot report the specifics of the change
+(e.g., which permissions were added or removed, owner changes, or inheritance changes).
+:::
+
 Click **Next**.
 
 ![powerstoreaddhost04](/images/activitymonitor/9.0/admin/monitoredhosts/add/powerstoreaddhost04.webp)

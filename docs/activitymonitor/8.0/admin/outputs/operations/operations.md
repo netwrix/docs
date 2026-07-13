@@ -46,6 +46,37 @@ The table lists operations being monitored, displaying columns for Service, Cate
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
 Properties window closes.
 
+## For Dell Hosts
+
+The tab contains the following settings and features:
+
+- File Operations – Scope by file operation events: Add, Delete, Rename, Permission change, Read,
+  Update
+- Directory Operations – Scope by directory operation events: Add, Delete, Rename, Permission
+  change, Read / List
+- Suppress reporting of File Explorer's excessive directory traversal activity – When you open a
+  folder, Windows File Explorer tends to read all sub-folders to display proper icons and meta-data.
+  This activity occurs without the explicit intent of the user. This option tries to suppress such
+  automatic activity. It is only available when the Read / List option for Directory Operations is
+  selected.
+- Suppress reporting of File Explorer's excessive file read activity – When you open a folder,
+  Windows File Explorer tends to read files in the folder to display proper icons and meta-data.
+  This activity occurs without the explicit intent of the user. This option tries to suppress such
+  automatic activity. It is only available when the Read option for File Operations is selected.
+- Suppress Microsoft Office operations on temporary files – Filters out events for Microsoft Office
+  temporary files. When Microsoft Office files are saved or edited, many temporary files are
+  created. With this option enabled, events for these temporary files are ignored.
+- Suppress duplicate operations for [VALUE] seconds
+
+:::warning
+**Limitation: Permission Change details not available for Dell devices**
+For Dell devices, Activity Monitor reports that a permission change occurred, but cannot report the specifics of the change
+(e.g., which permissions were added or removed, owner changes, or inheritance changes).
+:::
+
+Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The output
+Properties window closes.
+
 ## For Nasuni Hosts
 
 The tab contains the following settings and features:
