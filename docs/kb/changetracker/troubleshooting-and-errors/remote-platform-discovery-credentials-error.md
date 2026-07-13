@@ -15,24 +15,20 @@ keywords:
 products:
   - changetracker
 knowledge_article_id: ka0Qk000000DlnVIAS
-sidebar_label: 'Rolling-Log Fix: Could Not Get Credentials for Remote Platform Discovery'
+sidebar_label: 'Remote Platform Discovery Error - Could Not Get Credentials'
 tags: [kb, troubleshooting-and-errors]
-title: 'Rolling-Log Fix: "Could Not Get Credentials for Remote Platform Discovery On"'
+title: 'Remote Platform Discovery Error - Could Not Get Credentials'
 ---
 
-# Rolling-Log Fix: "Could Not Get Credentials for Remote Platform Discovery On"
+# Remote Platform Discovery Error - Could Not Get Credentials
 
 ## Symptom
 
-The rolling log on a Netwrix Change Tracker Gen 7 Agent used as a proxy contains an error indicating that the agent could not get credentials for remote platform discovery. This problem can occur when the Netwrix Change Tracker Gen 7 Agent's `ProxiedDevices.json` file does not automatically update its fields with the proxy device you have configured on the console.
+The rolling log on a Netwrix Change Tracker Gen 7 Agent used as a proxy contains an error indicating that the agent could not get credentials for remote platform discovery.
 
 ### Example Error Message
 
-```
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#                                                   Example Message:                                                      #
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
+```text
 2019-11-19 09:40:54,551 [9] INFO  Message - Hub connection failed  (403 Server message: Invalid Permission)
 2019-11-19 09:40:54,551 [9] INFO  Message - Couldn't get credentials for remote platform discovery on 1,28 HostNameOrIp: ORCL. Returning a default platform with OSType.Unspecified
 2019-11-19 09:40:54,552 [9] INFO  Message - task 370 - DeviceConfigTask-28 cannot execute, cannot discover proxied device platform details: 1,28 HostNameOrIp: ORCL

@@ -17,15 +17,12 @@ keywords:
 products:
   - changetracker
 knowledge_article_id: ka0Qk000000Dlh3IAC
-sidebar_label: 'Rolling-Log Fix: TraceLogger Address Already In Use'
+sidebar_label: 'TraceLogger Error - Address Already in Use'
 tags: [kb, troubleshooting-and-errors]
-title: >-
-  Rolling-Log Fix: "FATAL TraceLogger - ApplicationInstance.Start() Fatal error,
-  Application shutting down. Error: Address already in use
-  System.Net.Sockets.SocketException: Address already in use"
+title: 'TraceLogger Error - Address Already in Use'
 ---
 
-# Rolling-Log Fix: "FATAL TraceLogger - ApplicationInstance.Start() Fatal error, Application shutting down. Error: Address already in use System.Net.Sockets.SocketException: Address already in use"
+# TraceLogger Error - Address Already in Use
 
 ## Symptom
 
@@ -33,11 +30,7 @@ The Netwrix Change Tracker agent fails to start, and the rolling log contains a 
 
 ### Example Error Message
 
-```
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#                                                          Example Message:												        #
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
-
+```text
 2018-03-26 10:31:37,607 [AgentService.WorkerThread] FATAL TraceLogger - ApplicationInstance.Start() 
 Fatal error, Application shutting down. Error: Address already in use 
 System.Net.Sockets.SocketException: Address already in use

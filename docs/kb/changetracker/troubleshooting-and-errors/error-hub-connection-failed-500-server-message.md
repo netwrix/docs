@@ -73,14 +73,10 @@ Follow these steps:
 7. Save the `HubDetails.xml` file.
 8. Start the nntgen7agent Service. The new device should now be registered using its original device name.
 
-## Related Articles
-
-- [How to Configure the FAST Cloud Integration with Proxy Internet Settings](/docs/kb/changetracker/configuration-and-setup/fast-cloud-proxy-settings.md)
-
 <!--
-Additional related articles pending migration to the public docs site. Re-add
-each link below to this Related articles list when the target article is
-migrated in a future batch:
+Additional related articles pending migration to the public docs site. When
+any of the following target articles are migrated in a future batch,
+re-create the "## Related Articles" section and add the corresponding link:
 
 - How to Move Your Linux Server MongoDB Database to a Windows Server (kb.netwrix.com/8283) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (refresh steps and screenshots); Batch 4 candidate
 - Add Palo Alto Device to a Proxy Agent as a Proxy Device in Change Tracker Gen 7 (kA04u0000000JXHCA2) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (steps are outdated); Batch 4 candidate

@@ -25,7 +25,7 @@ title: 'Error: WinHTTP Connection Terminated Abnormally (Gen 7 Agent)'
 
 ## Symptom
 
-Running the **Netwrix Change Tracker Gen 7 Agent** installer on a Windows system and entering the correct Hub credentials produces an error when testing the **Hub connection** before proceeding with the full setup.
+On a Windows system, the **Netwrix Change Tracker Gen 7 Agent** installer produces an error during the **Hub connection** test, even with correct Hub credentials.
 
 ## Cause
 
@@ -33,19 +33,15 @@ On older Windows systems, WinHTTP does not use TLS 1.1 or TLS 1.2 as a default s
 
 ## Resolution
 
-1. Download the Easy Fix tool from [Update to enable TLS 1.1 and TLS 1.2 as default secure protocols in WinHTTP in Windows ⸱ Microsoft 🡥](https://support.microsoft.com/en-us/topic/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-winhttp-in-windows-c4bd73d2-31d7-761e-0178-11268bb10392).
+1. Download the Easy Fix tool from [Update to enable TLS 1.1 and TLS 1.2 as default secure protocols in WinHTTP in Windows ⸱ Microsoft](https://support.microsoft.com/en-us/topic/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-winhttp-in-windows-c4bd73d2-31d7-761e-0178-11268bb10392).
 2. Run through the hotfix installation.
 3. Close the **Netwrix Change Tracker Gen 7 Agent** installer if it is still open.
 4. Try to install the **Netwrix Change Tracker Gen 7 Agent** again and test the **Hub connection**.
 
-## Related Articles
-
-- [How to Configure the FAST Cloud Integration with Proxy Internet Settings](/docs/kb/changetracker/configuration-and-setup/fast-cloud-proxy-settings.md)
-
 <!--
-Additional related articles pending migration to the public docs site. Re-add
-each link below to this Related articles list when the target article is
-migrated in a future batch:
+Additional related articles pending migration to the public docs site. When
+any of the following target articles are migrated in a future batch,
+re-create the "## Related Articles" section and add the corresponding link:
 
 - Add Palo Alto Device to a Proxy Agent as a Proxy Device in Change Tracker Gen 7 (kA04u0000000JXHCA2) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (steps are outdated); Batch 4 candidate
 - Supporting Documents for Hub Server Problems (kA04u0000000JdtCAE) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (remove Linux-related content); Batch 4 candidate

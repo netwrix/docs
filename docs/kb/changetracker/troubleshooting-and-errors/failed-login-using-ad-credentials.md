@@ -26,13 +26,17 @@ title: Failed Login Using AD Credentials
 
 ## Symptom
 
-A user configured with an `AD Login` on the Netwrix Change Tracker web console cannot log in using their Active Directory domain credentials. The Netwrix Change Tracker `hubservice-log.txt` file contains an `AcceptSecurityContext` error entry recorded when the login attempt reached the AD server.
+The following circumstances are present in your environemnt: 
+- A user configured with an `AD Login` on the Netwrix Change Tracker web console cannot log in using their Active Directory domain credentials. 
+- The Netwrix Change Tracker `hubservice-log.txt` file contains an `AcceptSecurityContext` error entry recorded when the login attempt reached the AD server.
 
 ## Cause
 
 Active Directory rejected the authentication request. Common reasons include incorrect credentials, a disabled or locked account, logon-hour or workstation restrictions on the account, or an expired password. The specific reason is indicated by the `AcceptSecurityContext` data code in the `hubservice-log.txt` entry.
 
 ## Resolution
+
+### Locate and Review the Hub Service Log
 
 If a user cannot log in to the Netwrix Change Tracker server using their domain login credentials, Netwrix Change Tracker logs the response from the AD server. These logs help you identify where the issue lies. The log that contains this information is the Netwrix Change Tracker `hubservice-log.txt` file. You can find this log in the following locations:
 
@@ -55,6 +59,8 @@ at System.DirectoryServices.DirectoryEntry.get_NativeObject()
 at NNT.Hub.Service.Authentication.CustomCredentialsAuthProvider.LoginActiveDirectoryInternal(String ldapPath, String user, String password) in C:\TeamCity\buildAgent\work\5e46fbf5785c9042\Agent\NNT.Hub.Service\Authentication\CustomCredentialsAuthProvider.cs:line 279
 ```
 
+### Identify the Error Code
+
 To help identify why the user cannot log in, review the line that states the `AcceptSecurityContext` error, in particular the number that follows. From the preceding example log, the error and number received in this scenario was:
 
 ```text
@@ -74,6 +80,8 @@ Using the information listed in the following table, you can see what each error
 | `Data 701` | The user's account has expired | Ensure that "Never" is set as the account expiration option in Active Directory |
 | `Data 773` | The user account must have its password reset | Reset the user's password. If necessary, update your application(s) with the new password |
 | `Data 775` | The user account is locked | Unlock the user account from the user's "Account" tab in Active Directory |
+
+### Look Up an Error Code Not Listed
 
 If you find that the error code you receive is not included in the preceding list, you can download the [Microsoft Error Code Look-up application ⸱ Microsoft 🡥](https://www.microsoft.com/en-us/download/details.aspx?id=100432) to troubleshoot further.
 

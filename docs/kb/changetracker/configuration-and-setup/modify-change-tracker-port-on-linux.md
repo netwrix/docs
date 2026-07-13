@@ -33,7 +33,7 @@ Use this article when you have already installed Netwrix Change Tracker on a RHE
 
 1. Stop `nnthubservice`, `nginx`, and `mongod` in order:
 
-   - **Option 1 (`service`):**
+   - Option 1 (**`service`**):
 
      ```bash
      # service nnthubservice stop
@@ -41,7 +41,7 @@ Use this article when you have already installed Netwrix Change Tracker on a RHE
      # service mongod stop
      ```
 
-   - **Option 2 (`systemctl`):**
+   - Option 2 (**`systemctl`**):
 
      ```bash
      # systemctl stop nnthubservice
@@ -51,13 +51,13 @@ Use this article when you have already installed Netwrix Change Tracker on a RHE
 
 2. Edit `/etc/nginx/conf.d/nnt.conf` using a text editor with root permissions:
 
-   - **Option 1 (`vi`):**
+   - Option 1 (**`vi`**):
 
      ```bash
      # sudo vi /etc/nginx/conf.d/nnt.conf
      ```
 
-   - **Option 2 (`nano`):**
+   - Option 2 (**`nano`**):
 
      ```bash
      # sudo nano /etc/nginx/conf.d/nnt.conf
@@ -82,4 +82,20 @@ Use this article when you have already installed Netwrix Change Tracker on a RHE
    # reboot
    ```
 
-After the reboot completes, start the services stopped in step 1. Use the same commands, but replace `stop` with `start`.
+6. Start `nnthubservice`, `nginx`, and `mongod` in order:
+
+   - Option 1 (**`service`**):
+
+     ```bash
+     # service nnthubservice start
+     # service nginx start
+     # service mongod start
+     ```
+
+   - Option 2 (**`systemctl`**):
+
+     ```bash
+     # systemctl start nnthubservice
+     # systemctl start nginx
+     # systemctl start mongod
+     ```

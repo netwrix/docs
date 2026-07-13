@@ -27,27 +27,25 @@ title: Adding an SSL Certificate to Netwrix Change Tracker on Linux
 
 Netwrix Change Tracker on Linux uses Nginx to serve the hub over HTTPS, and each agent stores the expected server certificate thumbprint in its `HubDetails.xml` file so it can verify the hub during registration. This article describes how to:
 
-- Install a custom SSL certificate on the Linux server hosting Netwrix Change Tracker.
-- Configure Nginx to use the new certificate and key.
-- Update `HubDetails.xml` on each agent so agents accept the new server certificate and continue to register successfully.
+1. Install a custom SSL certificate on the Linux server hosting Netwrix Change Tracker.
+2. Configure Nginx to use the new certificate and key.
+3. Update `HubDetails.xml` on each agent so agents accept the new server certificate and continue to register successfully.
 
 ## Instructions
 
-### Step 1 — Stop Services
+### Install the Custom SSL Certificate
 
 1. Stop the hub and Nginx services:
 
    - `service nnthubservice stop`
    - `service nginx stop`
 
-### Step 2 — Copy the Custom .crt and .key to the Server Hosting Netwrix Change Tracker
+2. Place your certificate and private key in `/etc/nginx/nnt_ssl`. Example filenames:
 
-Place your certificate and private key in `/etc/nginx/nnt_ssl`. Example filenames:
+   - `changetracker.demo.crt`
+   - `changetracker.demo.key`
 
-- `changetracker.demo.crt`
-- `changetracker.demo.key`
-
-### Step 3 — Change the Nginx Config to Use the Custom Certificate
+### Configure Nginx to Use the Certificate
 
 1. Edit the Nginx configuration file: `vi /etc/nginx/conf.d/nnt.conf`.
 2. Update the server block to reference your certificate and key. Example contents:
@@ -69,17 +67,14 @@ Place your certificate and private key in `/etc/nginx/nnt_ssl`. Example filename
    ```
 
 3. Save and exit `vi` (for example, `:wq`).
-
-### Step 4 — Start Services
-
-1. Start Nginx and the hub service:
+4. Start Nginx and the hub service:
 
    - `service nginx start`
    - `service nnthubservice start`
 
-## Troubleshooting
+### Troubleshooting
 
-### Resolve Agent Certificate Thumbprint Mismatches
+#### Resolve Agent Certificate Thumbprint Mismatches
 
 When agents attempt to register, they may fail with an error indicating that the server certificate thumbprint does not match the trusted thumbprint. Example error:
 
