@@ -10,8 +10,5 @@ This product was formerly named Netwrix Usercube.
 
 :::
 
-* What's New in Netwrix Identity Manager v7.0 – Customer Training Webinar
-* What's New in Netwrix Identity Manager v7.0 (French) – Customer Training Webinar
 * What's New in <NIM /> v7.0
 * <NIM /> Integrations with <Company /> Products (September 2025) - Specifically focuses on integration with <NAA /> and <NPS />
-* Cyber Security Boot Camp: Secure Active Directory Identity Infrastructure

@@ -12,22 +12,17 @@ the domain account for data collection.
 When selecting the domain account, consider the following:
 
 - If network traffic compression is enabled, the account must belong to the Domain Admins group.
-- If network traffic compression is disabled, the account can belong to the Domain Admins group or be a non-administrative account configured with minimum rights (see below).
+- If network traffic compression is disabled, the account can belong to the Domain Admins group or be a non-administrative account configured with minimum rights (see [Configure Account to Collect Logon Activity](#configure-account-to-collect-logon-activity)).
 - For the data collection account, use a different account than the one Auditor uses to access the database.
 - If you use a group Managed Service Account (gMSA), the data collection account must be a member of the local Administrators group on the Netwrix Auditor host.
 
 ## Configure Account to Collect Logon Activity
 
 This section explains how to configure an account to collect Logon Activity with
-minimum rights assignment. The following instructions apply only if you plan to create a monitoring
-plan with network traffic compression disabled and don't want to adjust audit settings
-automatically.
+minimum rights. These instructions apply only if you disable network traffic compression in the
+monitoring plan and don't want to automatically adjust audit settings.
 
 **NOTE:** If the account is a member of the Domain Admins group, you can skip these steps.
-
-Before creating an account, grant the _Read_ permission on the SECURITY registry key
-`(HKEY_LOCAL_MACHINE\SECURITY)` for an admin account under which you will make changes in Group
-Policy.
 
 **Step 1 –** Create a domain user with the following privileges:
 
@@ -42,7 +37,6 @@ Policy.
 
 **Step 2 –** Grant the _Read_ permission on the following registry keys to this user:
 
-- `HKEY_LOCAL_MACHINE\SECURITY\Policy\PolAdtEv`
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\winreg`
 - `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\Security`
 

@@ -6,19 +6,16 @@ sidebar_position: 40
 
 # Security
 
-On this step, you are prompted to restrict access to administrative web console by adding users.
+On this step, you are prompted to choose how access to the administrative web console is controlled.
 
 ![initial_config_users](/images/dataclassification/5.7/install/initialconfiguration/initial_config_users.webp)
 
-- Enable user management – select to add super users and prevent unauthorized access to
-  administrative web console. By default, any authenticated users have access to the console.
+- Enable User Management (Strongly recommended) - This enables control over access to different sections
+  of the administrative web console on a user-by-user basis. Users can be set as Super Users for
+  full access, or restrict their access using the Users settings page.
 
-    :::note
-    Netwrix recommends enabling this option.
-    :::
+  When selected, you will be prompted to add Super Users. Enter the name of any Super User you want to add and click + on
+  the right. Users with restricted access to NDC will need to be added via the Users configuration page after initial configuration is completed.
 
-
-    When selected, you are prompted to add super users. Type the name of the new user and click + on
-    the right.
-
-- Allow access for all users – select to allow any user access administrative web console.
+- Allow access for all users – select to allow any user to access the administrative web console. All users connecting to the web 
+  interface will have full access, equivalent to a Super User.

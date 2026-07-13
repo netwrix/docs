@@ -110,7 +110,7 @@ Follow the steps to review report on inactive users.
 
 **Step 1 –** Click Generate next to Generate report on inactive users to view report immediately.
 
-![inactiveusersactivedirectory](/images/auditor/10.7/tools/inactiveusersactivedirectory.webp)
+![inactiveusersactivedirectory](/images/auditor/10.8/tools/inactiveusersactivedirectory.webp)
 
 ## Registry Keys
 

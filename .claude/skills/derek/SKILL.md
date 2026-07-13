@@ -58,7 +58,9 @@ Check that all required fields are present and valid:
 | `keywords` | Present, contains 8–12 items |
 | `products` | Present, contains at least one product ID |
 | `tags` | Present and includes `kb` |
-| `knowledge_article_id` | If present, must not be empty — a non-empty value must start with `kA` followed by alphanumeric characters. If absent, do not flag. |
+| `knowledge_article_id` | If present and non-empty, it must start with `kA` followed by alphanumeric characters. If present but empty (`""`), output a soft reminder (see note below) — do not count it as an issue or add it to the issue count. If absent, do not flag. |
+
+**Soft reminder for empty `knowledge_article_id`:** After the table (or after "Derek found no issues"), add one line: `> **Note:** \`knowledge_article_id\` is blank. If this article originated from a Salesforce or Zendesk ticket, add the Knowledge Article ID here.` Do not add this to the issue count or the table.
 
 Flag each missing or invalid field as a separate row in the output table.
 
@@ -92,14 +94,27 @@ Check that Netwrix product names follow the correct pattern from `kb_style_guide
 - All subsequent mentions: short product name (e.g., "Auditor")
 - No unapproved abbreviations (e.g., "NA" for Netwrix Auditor)
 
-## 5. Admonition Format
+## 5. Path Formatting
+
+Registry paths, file paths, and directory paths in the article body must be wrapped in backticks (inline code) or a fenced code block. Flag any plain-text path that is not formatted as code.
+
+Patterns to look for:
+- Registry paths starting with `HKEY_`, `Computer\`, or `HKLM\`
+- Windows file paths containing `C:\`, `\\`, or multiple backslash-separated segments
+- Unix/Linux paths with multiple forward-slash segments (e.g., `/etc/netwrix/...`)
+
+## 6. Resolution Option Structure
+
+When the `## Resolution` section contains multiple options labeled as inline text — e.g., `Option 1:`, `Option 2:` — flag it and tell the writer to convert them to `### Option 1` and `### Option 2` H3 subheadings for scannability.
+
+## 7. Admonition Format
 
 KB articles use blockquote callouts, not Docusaurus admonition syntax. Flag any `:::note`, `:::tip`, `:::warning`, or `:::danger` blocks and tell the writer to convert them:
 
 - `> **NOTE:**` — for supplementary information
 - `> **IMPORTANT:**` — for critical information that could cause issues if ignored
 
-## 6. Keywords and Description Quality
+## 8. Keywords and Description Quality
 
 **Keywords:** The 8–12 keywords should be specific and searchable — error codes, product names, technical terms, and phrases a customer would type into a search bar. Flag if keywords are too generic, simply repeat the title, or are missing obvious terms visible in the article body.
 

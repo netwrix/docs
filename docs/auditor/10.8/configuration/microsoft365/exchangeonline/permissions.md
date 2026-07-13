@@ -78,7 +78,7 @@ data will be collected by the newly registered app). Go to the **new app setting
 permissions** and click **Grant admin consent for** *`<tenant name>`*. When prompted to confirm
 granting, click **Yes**.
 
-**Step 7 –** Go to **Azure Active Directory** — **Roles and administrators** and assign **Exchange
+**Step 7 –** Go to **Microsoft Entra ID** — **Roles and administrators** and assign **Exchange
 Administrator** role.
 
 ## Non-owner Mailbox Access Audit: Manual Configuration

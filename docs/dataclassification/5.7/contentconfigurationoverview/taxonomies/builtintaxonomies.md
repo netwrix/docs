@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Built-in Taxonomies Overview
 
-Netwrix Data Classification comes with eight taxonomies with hundreds of classification rules
-out-of-the-box.
+Netwrix Data Classification comes with eight taxonomies with hundreds of built-in classification rules.
 
 The four core taxonomies cover a broad range of sensitive personal, financial, and health-related
 information. The remaining four taxonomies derive from the core set. They are tailored to meet the
@@ -21,8 +20,7 @@ This section contains the full list of built-in taxonomies supported by Netwrix 
 
 :::note
 Netwrix Data Classification users can see only the taxonomies they have permissions to
-use. See the [User Management](/docs/dataclassification/5.7/systemconfigurationoverview/users/usermanagement.md) section for more information on
-users' permissions.
+use. See [User Management](/docs/dataclassification/5.7/systemconfigurationoverview/users/usermanagement.md) for details on configuring user permissions.
 :::
 
 
@@ -90,7 +88,7 @@ users' permissions.
 
 ##### Payment Card Industry Data Security Standard (PCI DSS)
 
-Cardholder data (holder name, card number, expiration and security code) for the major payment
+Cardholder data (holder name, card number, expiration, and security code) for the major payment
 systems:
 
 - American Express
@@ -103,8 +101,8 @@ systems:
 
 ##### Patient Health Information (PHI)
 
-Medical forms, treatment records, prescription drugs, decease names/codes, allergies, social and
-insurance numbers.
+Medical forms, treatment records, prescription drugs, social and insurance numbers, 
+decease names/codes, allergies.
 
 ## Derived Taxonomies
 
@@ -151,15 +149,15 @@ information (GDPR Article 9):
 
 ##### Gramm-Leach-Bliley Act (GLBA)
 
-Combines the Financial Records, PCI DSS and PII (US social security numbers) taxonomies.
+Combines the Financial Records, PCI DSS, and PII (U.S. social security numbers) taxonomies.
 
 ##### Health Insurance Portability and Accountability Act (HIPAA)
 
-Combines the PHI and PII (US social security numbers) taxonomies.
+Combines the PHI and PII (U.S. social security numbers) taxonomies.
 
 ##### Credentials
 
-Includes sensitive credentials data, such as tokens, private or public keys, passwords, generic
+Includes sensitive credentials data, such as tokens, public keys, private keys, passwords, generic
 certificates, and others.
 
 ##### Cybersecurity Maturity Model Certification (CMMC)
@@ -174,16 +172,16 @@ consumers and businesses.
 
 ## Sensitive and Non-Sensitive Taxonomies
 
-While creating your own reports, you can specify whether a taxonomy is sensitive (finance,
-сredentials) or non-sensitive (file size, language).
+While creating your own reports, you can specify whether a taxonomy is sensitive (e.g. financial details,
+credentials) or non-sensitive (e.g. file size, language).
 
 :::note
-This applies only to customized taxonomies, which you add by yourself. You cannot change
+This applies only to customized taxonomies, which you add by yourself. You can't change
 the sensitivity settings for the pre-defined taxonomies.
 :::
 
 
-Follow the steps to specify sensitive taxonomy.
+To specify a sensitive taxonomy:
 
 **Step 1 –** Add a new taxonomy. See the [Add a Taxonomy](/docs/dataclassification/5.7/contentconfigurationoverview/taxonomies/add.md) topic for additional information.
 
