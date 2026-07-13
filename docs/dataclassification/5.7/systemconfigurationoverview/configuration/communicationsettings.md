@@ -15,19 +15,18 @@ configuring email groups and health service notifications. Review the following 
 
 [](#)Email Servers
 
-Email servers can be configured to enable external communication. For instance when the health
-service identifies an issue.
+Email servers can be configured to enable external communication. Use email servers to send report
+subscriptions and health errors to users automatically.
 
-Servers can be amended post configuration by selecting Edit, or, new SMTP servers can be added by
+Servers can be modified after initial configuration by selecting Edit, and new SMTP servers can be added by
 selecting Add Email Server Configuration.
 
 ![configemailservers](/images/dataclassification/5.7/configuration/configemailservers.webp)
 
-The SMTP details should be entered based on the values provided by your network team. Each
-configuration supports both SSL enabled SMTP servers, and those without SSL enabled.
+The SMTP details should be entered based on the values provided by your network team. 
+NDC supports SMTP servers with and without SSL configured. Anonymous SMTP server authentication is also supported.
 
-It is also possible to supply a test email address which will be used to test the configuration
-settings.
+You can supply a test email address to test the configuration settings
 
 ![configemailserveradd](/images/dataclassification/5.7/configuration/configemailserveradd.webp)
 

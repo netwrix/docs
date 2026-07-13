@@ -12,10 +12,10 @@ Password Policy Client messages.
 - Password Policy – Displays the password policy guidelines on clients that have the Netwrix
   Password Policy Enforcer Client installed.
 - [POLICY] – Customize the text for the active rules.
-- [LIVE_POLICY] – Password Policy Client (10.2 and above) messages can be configured to display live
-  feedback for the active rules to users as they enter their passwords. This feature enables users
-  to see if their passwords meet the requirements of the policy set by the organization. Here is an
-  example of a live policy message.
+- [LIVE_POLICY] – You can configure Password Policy Client (10.2 and above) messages to display live
+  feedback for the active rules as users enter their passwords. This feature enables users
+  to see if their passwords meet the requirements of the policy set by the organization. The following
+  is an example of a live policy message:
 
     ![Messages](/images/passwordpolicyenforcer/11.2/administration/mesages2.webp)
 
@@ -26,7 +26,7 @@ Password Policy Client messages.
     :::
 
 
-- Rejection Reason – Displays why an intended password was rejected on clients that have the Netwrix
+- Rejection Reason – Displays why PPE rejected an intended password on clients that have the Netwrix
   Password Policy Enforcer Client installed
 - Generic Rejection – Displays if Password Policy Enforcer doesn't have a specific reason for the
   rejection, generally because the password doesn't comply with the Windows password policy
@@ -46,8 +46,8 @@ Double click the **PPE Configuration** desktop shortcut.
 **Step 4 –** Select the message language from the dropdown list. You can set messages for multiple
 languages. You don't have to create a Password Policy Enforcer policy for each language. To set
 multiple languages, pick one, edit the message templates. Select another language, and edit the
-message templates. Repeat for each language you want to implement. The correct message is displayed
-to users based on their selected language.
+message templates. Repeat for each language you want to implement. PPE displays the correct message
+to each user based on their selected language.
 
 **Step 5 –** Edit the message templates in the Password policy, [POLICY], [LIVE_POLICY], Rejection
 Reason, and Generic rejection messages for any of the components you want to use.
@@ -64,3 +64,5 @@ If you don't see the **Preview**, contact your network administrator to set up t
 firewall to allow Password Policy Enforcer to communicate.
 
 :::
+
+<!-- If both Dictionary rules have identical inserts and both rules reject the password, the Password Policy Client message shows only one of the inserts. -->

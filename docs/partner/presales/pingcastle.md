@@ -10,7 +10,7 @@ import { NPCValue, NPCConcepts, NPCIntro, NPCDemo, NPCAdditional } from '@site/s
 import { Company, NPC } from '@site/src/training/products';
 
 
-Estimated length: 2 hours 52 minutes
+Estimated length: 3 hours 7 minutes
 
 Prerequisite: <NPC /> Sales Professional learning path
 

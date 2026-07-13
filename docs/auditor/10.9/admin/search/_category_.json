@@ -1,0 +1,10 @@
+{
+  "label": "View and Search Collected Data",
+  "position": 40,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

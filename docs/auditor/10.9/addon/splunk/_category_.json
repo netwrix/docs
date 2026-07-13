@@ -1,0 +1,10 @@
+{
+  "label": "Splunk",
+  "position": 250,
+  "collapsed": true,
+  "collapsible": true,
+  "link": {
+    "type": "doc",
+    "id": "overview"
+  }
+}

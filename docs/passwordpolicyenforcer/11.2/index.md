@@ -5,12 +5,12 @@ sidebar_position: 1
 ---
 
 # Netwrix Password Policy Enforcer v11.2
-Netwrix Password Policy Enforcer (PPE) helps you secure your network by ensuring users choose strong passwords. Password Policy Enforcer rejects new passwords that don't comply with your password policy. If you install the optional Password Policy Client, users can also see which rules their password didn't comply with.
+Netwrix Password Policy Enforcer (PPE) helps you secure your network by ensuring users choose strong passwords. PPE rejects new passwords that don't comply with your password policy. If you install the optional Password Policy Client, users can also see which rules their password didn't comply with.
 
 A typical Windows network has both domain and local user accounts. Password Policy Enforcer can enforce password policies for both account types, but you will most likely use it for domain accounts in Active Directory.
 
 
-## System Requirements
+## System requirements
 - Windows Server 2016, 2019, 2022, and 2025
 - Windows 10 and 11
 - 50 megabytes free disk space
@@ -21,7 +21,7 @@ The disk space requirement doesn't include the compromised database. If you want
 :::
 
 
-## System Components
+## System components
 
 ### Password Policy Server (PPS)
 The Password Policy Server is the component that enforces the password policy. Install it on all the domain controllers to enforce a password policy for Active Directory user accounts. You can also install the PPS on individual servers and workstations to enforce a password policy for local user accounts on those computers.
@@ -43,5 +43,5 @@ The Password Policy Client helps users to choose a compliant password by showing
 Password Policy Enforcer Web is an optional component that runs on Microsoft Internet Information Services (IIS). It has similar features to the Password Policy Client, but via a web interface. Use Password Policy Enforcer Web if you prefer not to install the Password Policy Client, or if you want to integrate Active Directory password changes into your own applications.
 
 :::note
-The [Similarity rule](admin/manage-policies/rules/similarity_rule.md) only works when users change passwords from the Password Policy Client, Password Policy Enforcer Web, or Netwrix Password Reset.
+The [Similarity rule](admin/manage-policies/rules/similarity_rule.md) only works when users change passwords from the [Password Policy Client](admin/password-policy-client/password_policy_client.md), [Password Policy Enforcer Web](web-overview/web_overview.md), or Netwrix Password Reset.
 :::

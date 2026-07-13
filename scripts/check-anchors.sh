@@ -9,7 +9,27 @@ set -euo pipefail
 
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 ERRORS=0
-declare -A HEADING_CACHE
+# Bash 3-compatible heading cache: parallel arrays of keys and values
+HEADING_CACHE_KEYS=()
+HEADING_CACHE_VALS=()
+
+# Lookup: sets _CACHE_RESULT to the value, returns 1 if not found
+_cache_get() {
+  local key="$1" i
+  for i in "${!HEADING_CACHE_KEYS[@]}"; do
+    if [[ "${HEADING_CACHE_KEYS[$i]}" == "$key" ]]; then
+      _CACHE_RESULT="${HEADING_CACHE_VALS[$i]}"
+      return 0
+    fi
+  done
+  return 1
+}
+
+_cache_set() {
+  local key="$1" val="$2"
+  HEADING_CACHE_KEYS+=("$key")
+  HEADING_CACHE_VALS+=("$val")
+}
 
 slugify() {
   local heading="$1"
@@ -29,7 +49,7 @@ slugify() {
 
 load_headings() {
   local file="$1"
-  [[ -v HEADING_CACHE["$file"] ]] && return
+  _cache_get "$file" && return
   local slugs=" "
   local in_fence=false
   while IFS= read -r line; do
@@ -42,19 +62,21 @@ load_headings() {
       slugs+="$(slugify "$line") "
     fi
   done < "$file"
-  HEADING_CACHE["$file"]="$slugs"
+  _cache_set "$file" "$slugs"
 }
 
 anchor_exists() {
   local file="$1" anchor="$2"
   load_headings "$file"
-  [[ "${HEADING_CACHE[$file]}" == *" $anchor "* ]]
+  _cache_get "$file"
+  [[ "$_CACHE_RESULT" == *" $anchor "* ]]
 }
 
 list_anchors() {
   local file="$1"
   load_headings "$file"
-  local slugs="${HEADING_CACHE[$file]:-}" result=""
+  _cache_get "$file"
+  local slugs="${_CACHE_RESULT:-}" result=""
   for slug in $slugs; do
     result="${result:+$result · }#$slug"
   done
