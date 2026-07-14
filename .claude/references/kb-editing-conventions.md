@@ -18,6 +18,7 @@ Apply during the `kb-pr-open` preemptive scan and the `kb-pr-review` Derek revie
 - **Numbered list broken by intervening paragraph** silently restarts at 1 in rendered output. Fix with a heading boundary or 4-space indent to attach the paragraph to the preceding step — not by fiddling with numbers.
 - **Every subheading under Instructions must contain an actual action.** If a subsection is purely descriptive/observational ("the events appear in the event list," "opening a baseline event shows...") with no step for the reader to perform, it doesn't belong under Instructions. Restructure into its own labeled section (e.g., "Reviewing X") using prose or a bulleted list of facts, not fake numbered "steps."
 - **Result descriptions inside numbered lists** — a step that's actually a result rather than an action ("All collections appear in the output" sitting between real actions) gets pulled out of the numbering. Either fold as a parenthetical on the preceding action or set as unnumbered prose beneath it.
+- **Descriptive facts belong as intro prose, not trailing bullets.** When a numbered configuration procedure is preceded or followed by descriptive "what this account/service/component does" bullets, those facts belong as short intro prose *before* the numbered steps — framing the reader on what they're configuring — not as trailing bullets after the actions. Distinct from the result-in-numbered-list rule above: that pulls result-steps out of numbering; this rule places background facts in the correct relative position to the action steps.
 
 ### Worked example — Gate A over-fragmentation
 
@@ -44,12 +45,17 @@ All three are `###` siblings under `## Instructions`, but `Troubleshooting` is a
 - **Bulleted lists** for alternatives/options and for field-value pairs — per KB style guide ("use unordered lists for unordered recommendations or options"). Numbered lists wrongly imply order for things that are alternatives.
 - **Minimize nesting** — one either/or choice can nest under its step; multi-step branches get their own subsection.
 - **Nested sub-lists under a numbered step use `-` dashes**, never nested `1.` `2.` `3.` numbering. Numbered-inside-numbered renders ambiguously and reads as a restart; dashes make the parent/child relationship explicit.
+- **Single-action numbered lists are a code smell.** A numbered list must contain 2+ steps. A single action is written as a plain imperative sentence, not as `1. Do X.` with no step 2. Numbered lists imply a sequence; a one-item sequence is a mislabeled sentence.
+- **Semicolon-run list items get broken into nested sub-bullets.** When a single list item contains 3+ comma- or semicolon-separated clauses (e.g., "Full control of the application, including adding domains, forests, and tenants; configuring notifications; and managing other users..."), break it into a lead-in phrase plus nested `-` sub-bullets. Long run-on list items are unscannable.
+- **List-item grammatical parallelism and end-punctuation consistency.** All items in a list must be grammatically parallel — all complete sentences, or all fragments, not a mix. End punctuation is consistent: either every item ends with a period, or none does. Per `kb_style_guide.md`.
 
 ## 4. Sentence-level rules
 
 - **Full imperative sentences** ending in a command/path need a period; **bare file-path bullets** (fragments) do not.
 - **Intro sentences before a list** end in a colon. Cut them if they just restate the heading directly above.
+- **Missing intro sentence before a list.** The opposite failure — a list that appears with no lead-in at all, reading disjointed from the surrounding prose. Add a short intro sentence ending in a colon. Companion to the "cut redundant intros" rule above: cut when the intro restates the heading; add when there's no context anchoring the list.
 - **"The following"** is fine as a positional reference immediately before an adjacent code block/list/breadcrumb — don't strip reflexively. Only cut when vague/unanchored or duplicative.
+- **Positional references to same-file sections become anchor links, not just reworded.** When a positional reference ("above"/"below"/"the section on X") points to a named section in the same file, replace it with `[Section Name](#section-slug)` rather than rewording to eliminate the positional word. This is the concrete execution of Dale's `positional-references` suggestion — reviewers otherwise have to add the anchors by hand.
 - **Redundant/duplicate sentences** saying the same thing twice get merged — often into a final numbered step plus a NOTE.
 - **Abrupt UI-click endings** — steps ending on a bare "Click X." get a closing sentence describing the observable result, or get combined with the next click.
 - **Passive/conditional phrasing** reworded into direct imperative form where it changes nothing factually (e.g., "You can adjust this level of privilege..." → "Adjust the level of privilege...").
@@ -77,6 +83,8 @@ All three are `###` siblings under `## Instructions`, but `Troubleshooting` is a
 - **`<!-- link removed -->` comments** deserve a real-target search before shipping. If a valid internal replacement exists in `docs/kb/**/*.md` or `docs/<product>/<version>/**/*.md`, restore the cross-link.
 - **"Contact Netwrix Support"** → `[Netwrix Support](https://www.netwrix.com/support.html)`. Only link the first "contact" action per article.
 - **Internal `pathname://` links** use the version-with-underscore format (`8_2` not `8.2`) and must resolve to a real file.
+- **Dense multi-link "see X, see Y, see Z" prose → single NOTE.** When a paragraph contains 3+ inline cross-reference clauses stacked in one sentence, collapse them into a single NOTE block with the links listed cleanly (compact enumeration or short bulleted list under the NOTE). Multiple inline "see also" clauses in one sentence read as noise; a NOTE with clean bullets is scannable.
+- **Title change → link-text sweep across the repo.** When a KB article's title changes, do a repo-wide search for internal links whose visible text uses the *old* title, and update the link text to the new title. URL resolution alone is not sufficient — the visible link text must describe the current target, per the style guide's link-text rule. The existing links-review check (URL resolves on disk) does not catch stale link text.
 
 ## 9. Placeholders & data hygiene
 
@@ -99,6 +107,7 @@ Rules that compare two sections of the same article against each other. Section-
 - **Acronym defined but long form reused.** If the article defines an acronym on first use — e.g., "two-factor authentication (2FA)" — subsequent references in body/headings/notes should use the acronym, not the long form. Dale only catches *undefined* acronyms; this is the opposite half of consistent-use.
 - **Product name over-repetition after first use.** After the product's full name has established context (typically in Overview or the first Symptom sentence), later mentions can drop the "Netwrix" prefix or the full name entirely where context makes it unambiguous. Flag runs of "Netwrix Change Tracker … Netwrix Change Tracker … Netwrix Change Tracker" that read as boilerplate.
 - **Related Articles link with no topical anchor in body.** Every link in a Related Articles section (or bullet at the bottom) should have some topical mention in the article body — the linked topic came up, was compared, was ruled out, etc. Links to unrelated topics that were never mentioned are orphaned defaults; remove them.
+- **Capitalization consistency for named permission types and access rights.** Named permission types (Domain Admin, Read, Write, Read/Write, Full Control, Modify, and similar) must be capitalized consistently within a single article. Flag runs like "Write permission" (capitalized) alongside "read and write access" (lowercase) referring to the same named right within the same file. Pick one convention and apply throughout.
 
 ## 12. Titles
 
