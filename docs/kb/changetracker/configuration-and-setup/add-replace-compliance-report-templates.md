@@ -28,7 +28,7 @@ title: Adding or Replacing Configuration and Compliance Report Templates
 Netwrix Change Tracker uses two types of templates:
 
 1. Configuration templates, which define the file, folder, and registry monitoring policy.
-2. Compliance report templates, which map to CIS Benchmarks and score devices against a hardened build standard.
+2. Compliance Report templates, which map to CIS Benchmarks and score devices against a hardened build standard.
 
 This article describes how to upload a new template of either type, overwrite an existing default template, and assign the template to a device group.
 
@@ -36,50 +36,51 @@ This article describes how to upload a new template of either type, overwrite an
 
 ### Configuration Template
 
-1. Go to **Settings** > **Configuration Templates**, then click **Upload Templates**.
+1. Go to **Settings** > **Policy Templates**, then click **Upload Templates**.
 2. Browse your local files and select the template you want to upload.
 
-   For example, `Windows Server 2012 R2 CIS Monitoring Template`. <!-- SME: Windows Server 2012 R2 is EOL — consider refreshing example to a currently supported OS (e.g., Server 2022) -->
+   For example, `CIS Windows Server 2025 Base Template`.
 
-<!-- Image removed: Upload Templates dialog showing the file browse control and Overwrite existing config checkbox -->
+<img width="890" height="333" alt="image" src="https://github.com/user-attachments/assets/43009746-a9b4-471d-a820-8518bbdb940a" />
 
 #### Replacing a Default Template
 
-1. Select the **Overwrite any existing config with the same name** check box.
-2. Click **Upload files**.
+1. Uploading a new template with the same name will overwrite the existing template present within the system.
 
 #### Not Replacing a Default Template
 
 1. Click **Upload files**.
 2. Go to **Settings** > **Groups**.
-3. Select the group of devices and click **Device Templates**.
+3. Select the group of devices and click **Policy Templates**.
 4. Delete the **Default Template**.
-5. Click **Add a Template to the Group**.
+5. Click **Add an Existing Template**.
 6. In the pop-up window, select the template you uploaded and click **Update**.
 
-<!-- Image removed: Device Templates tab on a Group showing Add a Template to the Group control -->
+<img width="2559" height="1305" alt="image" src="https://github.com/user-attachments/assets/b7d6945d-09c7-4d3b-88c0-6ed9f2a357f0" />
 
 ### Compliance Report Template
 
-1. Go to **Settings** > **Compliance Report Templates**, then click **Upload Templates**.
+1. Go to **Settings** > **Policy Templates**, then click **Upload Templates**.
 2. Browse your local files and select the template you want to upload.
 
-   For example: `NNT_CIS_Microsoft_Windows_Server_2012_R2_Benchmark_v2.2.1 - Level 1 Member Server`.
+   For example: `NNT CIS Microsoft Windows Server 2025 Benchmark - Level 1 Member Server`.
 
-<!-- Image removed: Compliance Report Templates upload dialog with the CIS Windows Server benchmark example selected -->
+<img width="892" height="333" alt="image" src="https://github.com/user-attachments/assets/e38ca75d-d2e2-433e-8111-3ba1c64e8cae" />
 
 #### Replacing a Default Template
 
-1. Select the **Overwrite any existing config with the same name** check box.
-2. Click **Upload files**.
+1. Uploading a new template with the same name will overwrite the existing template present within the system.
 
 #### Not Replacing a Default Template
 
 1. Click **Upload files**.
-2. Go to **Settings** > **Groups**.
-3. Select the group of devices and click **Scheduled Reports**.
-4. Delete the **Default Report**.
-5. Click **Schedule a New Report**.
-6. In the pop-up window, select the template you uploaded, enter the information you want, then click **Update**.
+2. Go to **Reports** > **Actions** > **Add Compliance Report**
+3. Go to **Query Settings** then select the device group and template
 
-<!-- Image removed: Schedule a New Report dialog on a Group with the newly-uploaded compliance report selected -->
+<img width="1170" height="777" alt="image" src="https://github.com/user-attachments/assets/b590aea7-a08a-4b7a-af94-96bcfcb4d7e1" />
+
+4. Go to **Schedule & Email** and configure the preferred settings. See Sample Below
+
+<img width="1167" height="778" alt="image" src="https://github.com/user-attachments/assets/02b8080a-c8a9-4e11-bd0f-254ec2bb7267" />
+
+
