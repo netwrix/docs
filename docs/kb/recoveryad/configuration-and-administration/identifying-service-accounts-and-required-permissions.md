@@ -109,7 +109,7 @@ The RSAT Extension registration does not use a dedicated service account — it 
 
 The account running the Configuration Utility requires Write permission on the `adminContextMenu` attribute for `displaySpecifier` objects in that forest's Configuration partition. Full Domain Admin access is not required; an administrator can delegate this narrower permission instead.
 
-> **NOTE:** See [RSAT Extension Registered Status Is Scoped to the Current Forest](/docs/kb/recoveryad/operations-and-troubleshooting/recycle-bin-access-denied-despite-rsat-extension-registered) for why the "Registered" label can be misleading, [Error: Access Denied (0x80070005) Registering the RSAT Extension](/docs/kb/recoveryad/configuration-and-administration/access_denied_registering_rsat_extension) for details on delegating the required permission, and [Registering the RSAT Extension Across Multiple Domains or Forests](/docs/kb/recoveryad/configuration-and-administration/registering-the-rsat-extension-across-multiple-domains-or-forests) for registering across more than one forest.
+> **NOTE:** See [Recycle Bin Access Denied Despite RSAT Extension Registered Status](/docs/kb/recoveryad/operations-and-troubleshooting/recycle-bin-access-denied-despite-rsat-extension-registered) for why the "Registered" label can be misleading, [Error: Access Denied (0x80070005) Registering the RSAT Extension](/docs/kb/recoveryad/configuration-and-administration/access_denied_registering_rsat_extension) for details on delegating the required permission, and [Registering the RSAT Extension Across Multiple Domains or Forests](/docs/kb/recoveryad/configuration-and-administration/registering-the-rsat-extension-across-multiple-domains-or-forests) for registering across more than one forest.
 
 ### Forest and Domain Controller Backup Accounts
 
@@ -180,4 +180,4 @@ In every case above, confirm the account's permissions are granted directly in t
 
 - [Error: Access Denied (0x80070005) Registering the RSAT Extension](/docs/kb/recoveryad/configuration-and-administration/access_denied_registering_rsat_extension)
 - [Registering the RSAT Extension Across Multiple Domains or Forests](/docs/kb/recoveryad/configuration-and-administration/registering-the-rsat-extension-across-multiple-domains-or-forests)
-- [RSAT Extension Registered Status Is Scoped to the Current Forest](/docs/kb/recoveryad/operations-and-troubleshooting/recycle-bin-access-denied-despite-rsat-extension-registered)
+- [Recycle Bin Access Denied Despite RSAT Extension Registered Status](/docs/kb/recoveryad/operations-and-troubleshooting/recycle-bin-access-denied-despite-rsat-extension-registered)
