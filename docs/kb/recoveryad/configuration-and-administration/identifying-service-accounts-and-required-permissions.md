@@ -29,13 +29,13 @@ title: "Identifying Service Accounts and Required Permissions"
 
 ## Overview
 
-This article identifies each account Netwrix Identity Recovery uses for installation, configuration, and daily operation, including which task each one handles and what permissions it requires, particularly across multiple domains or forests joined by a trust.
+This article identifies each account Netwrix Identity Recovery uses for installation, configuration, and daily operation—including which task each one handles and what permissions it requires, particularly across multiple domains or forests joined by a trust.
 
 ## Instructions
 
 Identity Recovery uses a separate, scoped service account for each job. Permissions granted to one account do not transfer to another, even when the accounts are used together in the same environment.
 
-> **IMPORTANT:** A trust between two domains or forests allows accounts to authenticate across the trust boundary. It does not grant permissions across that boundary. Each account below still needs its permissions assigned natively in whatever domain, forest, or tenant it operates against.
+> **IMPORTANT:** A trust between two domains or forests allows accounts to authenticate across the trust boundary. It does not grant permissions across that boundary. Each account below still needs its permissions assigned natively in whichever domain, forest, or tenant it operates against.
 
 ### Installation-Time Accounts
 
@@ -43,21 +43,17 @@ The Identity Recovery Setup wizard collects three accounts during installation: 
 
 #### SQL Server Database Account
 
+This account creates and connects to the Identity Recovery database. It requires Read and Write access to the database tables and permission to execute stored procedures.
+
 1. Configure this account on the **SQL Server Configuration** page.
 2. Select either Windows Authentication or SQL Server Authentication.
 
-- Creates and connects to the Identity Recovery database
-- Requires read and write access to the database tables and permission to execute stored procedures
-
 #### Identity Recovery Service Account
+
+This account starts and runs two separate Windows services: **Netwrix Recovery Server** (`TaskServer.exe`), which handles scheduling and job management and performs domain backups, and **Netwrix Recovery Web Console** (`RecoveryWebConsole.exe`), the browser-based console UI.
 
 1. Configure this account on the **Netwrix Recovery Server Configuration** page.
 2. Assign the **Log On As A Service** right in Local Security Policy on the application server.
-
-This account starts and runs two separate Windows services:
-
-- **Netwrix Recovery Server** (`TaskServer.exe`) — handles scheduling and job management, and performs domain backups
-- **Netwrix Recovery Web Console** (`RecoveryWebConsole.exe`) — the browser-based console UI
 
 > **NOTE:** If the database uses Windows Authentication, this account also connects to the database after setup completes.
 
@@ -73,10 +69,11 @@ Add additional console users on the **Users and Roles** page.
 
 - **Administrator**
     - Full control of the application
-    - Can add domains, forests, and tenants
-    - Can configure notifications
-    - Can manage other users
-    - Only this role has access to the Configuration section of the console
+    - Only role with access to Configuration section of console
+    - Can do the following:
+      - Add domains, forests, and tenants
+      - Configure notifications
+      - Manage other users
 - **Operator**
     - Access to the Active Directory and Forest nodes to perform rollback and recovery tasks
     - Does not have access to Configuration settings
@@ -89,19 +86,21 @@ Configure this account on the **Domains** page. It performs the backup, rollback
 
 > **NOTE:** This account is configured separately for each domain. Adding a second domain does not reuse the account or permissions configured for the first domain. The new domain requires its own account with permissions granted natively in that domain.
 
-- Requires Domain Admin privileges in its target domain
-- An account with read-only access can still perform backups, but rollback and restore operations, including Recycle Bin recovery, fail with an access denied error
+This account has the following permission requirements:
+
+- It requires Domain Admin privileges in its target domain.
+- An account with read-only access can still perform backups, but rollback and restore operations, including Recycle Bin recovery, fail with an access denied error.
 - Organizations that cannot grant Domain Admin privileges for policy reasons can use the least privilege access model instead, which defines a narrower set of permissions on:
     - The domain naming context
     - The DomainDnsZones and ForestDnsZones partitions
     - The Sites container
     - Group Policy objects
 
-To supply a different Domain Admin account for a single rollback or restore operation without changing the account configured on the **Domains** page, select the **Use alternate credentials** checkbox on the **Credentials** page of the wizard.
+Select the **Use alternate credentials** checkbox on the **Credentials** page of the wizard to supply a different Domain Admin account for a single rollback or restore operation. This does not change the account configured on the **Domains** page.
 
 ### RSAT Extension Registration Account
 
-The RSAT Extension registration does not use a dedicated service account — it uses whatever account is logged into the machine when that account clicks **Register** in the Recovery Configuration Utility.
+The RSAT Extension registration does not use a dedicated service account — it uses whichever account is logged into the machine when that account clicks **Register** in the Recovery Configuration Utility.
 
 - Registration does not modify the local registry. It writes the RSAT Extension GUID to the `adminContextMenu` attribute on `displaySpecifier` objects under `CN=DisplaySpecifiers` in the Active Directory Configuration partition.
 - The Configuration partition is forest-wide, but each forest maintains its own, so registering the extension in one forest has no effect in a different forest across a trust.
@@ -126,7 +125,7 @@ Configure this account per domain controller in the **Server Backup Configuratio
 - Validates the domain controller
 - Installs the **Netwrix Recovery Server Backup Agent** (product: Netwrix Identity Recovery Server Backup)
 - Writes backup data to a network share
-- Requires read and write access to that network share
+- Requires Read and Write access to that network share
 
 #### Target Server Restore Account
 
@@ -167,14 +166,14 @@ Integrating with Netwrix Threat Prevention requires either a dedicated SQL accou
 
 The following table maps common access denied symptoms to the account most likely responsible.
 
+> **IMPORTANT:** For every symptom in this table, confirm the account's permissions are granted directly in the domain or forest where the operation is failing. Do not assume a two-way trust extends permissions from one domain or forest to another.
+
 | Symptom | Account to Check | Required Permission |
 |---|---|---|
 | RSAT Extension will not register in a second domain or forest | Account running the Configuration Utility | Write on `adminContextMenu` in that forest's Configuration partition |
 | Recycle Bin shows access denied in a specific domain | Per-domain account on the Domains page | Domain Admin in that specific domain |
 | Object rollback or restore fails despite a successful backup | Per-domain account on the Domains page | Domain Admin, or alternate credentials supplied during the operation |
 | Domain controller restore fails on the target server | Target server restore account | Administrator on the target server |
-
-In every case above, confirm the account's permissions are granted directly in the domain or forest where the operation is failing. Do not assume a two-way trust extends permissions from one domain or forest to another.
 
 ## Related Links
 

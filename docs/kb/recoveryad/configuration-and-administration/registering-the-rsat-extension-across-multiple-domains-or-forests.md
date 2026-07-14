@@ -39,7 +39,7 @@ How to register the RSAT Extension in the second forest depends on whether the t
 
 ### Same Forest
 
-If both domains belong to the same forest (for example, a parent and child domain), the Configuration partition is already shared and replicated forest-wide. Registration only needs to happen once. If the second domain still shows access denied on the Recycle Bin, the problem is not RSAT registration. Check the per-domain account configured on the **Domains** page instead. That account needs Domain Admin privileges natively in the second domain; a trust does not grant it.
+If both domains belong to the same forest (for example, a parent and child domain), the Configuration partition is already shared and replicated forest-wide. Registration only needs to happen once. If the second domain still shows access denied on the Recycle Bin, the problem is not RSAT registration. Check the per-domain account configured on the **Domains** page instead. That account needs Domain Admin privileges natively in the second domain — a trust does not grant it.
 
 ### Separate Forests Joined by a Trust
 
@@ -53,8 +53,8 @@ To register the RSAT Extension in the second forest:
 
     > **NOTE:** Domain Admin rights in Forest B are not sufficient on their own, because the Configuration partition sits above the domain level.
 2. If the current logon session belongs to Forest A, use one of the following options to run the Configuration Utility under a Forest B account:
-    - Relaunch the utility as a different user with **Run as a different user** (`runas`)
-    - Run the utility from a machine that is joined to Forest B while logged in with the Forest B account
+    - Relaunch the utility as a different user with **Run as a different user** (`runas`).
+    - Run the utility from a machine that is joined to Forest B while logged in with the Forest B account.
 3. Click **Register** again to meet the requirement for Forest B, since running it once against Forest A does not suffice.
 
 ### Confirming Which Scenario Applies
@@ -66,17 +66,19 @@ Run `Get-ADForest` from PowerShell against each domain, then compare the results
 
 ### Related Symptom Check
 
-Confirm both the per-domain account and the RSAT Extension registration are correctly configured before troubleshooting further. Access denied on the Recycle Bin view can also be caused by an incomplete per-domain registration on the **Domains** page, independent of whether the RSAT Extension itself is registered. Match the specific symptom below to identify which troubleshooting article to follow next:
+Confirm both the per-domain account and the RSAT Extension registration are correctly configured before troubleshooting further. `Access Denied` on the Recycle Bin view can also be caused by an incomplete per-domain registration on the **Domains** page, independent of whether the RSAT Extension itself is registered. Match the specific symptom below to identify which troubleshooting article to follow next:
 
-- **Recycle Bin access denied in a domain, but the RSAT Extension is already confirmed registered in its forest**
+- **Recycle Bin access denied in a domain, but the RSAT Extension is already confirmed registered in its forest —**
     - This is a per-domain account issue, not an RSAT Extension issue.
     - See the troubleshooting table in [Identifying Service Accounts and Required Permissions](/docs/kb/recoveryad/configuration-and-administration/identifying-service-accounts-and-required-permissions).
-- **Recycle Bin access denied because the second domain is in a different forest**
+- **Recycle Bin access denied because the second domain is in a different forest —**
     - This is the scenario covered in [Separate Forests Joined by a Trust](#separate-forests-joined-by-a-trust) above.
-- **Configuration Utility shows "Registered" but the Recycle Bin still fails in the second forest**
+- **Configuration Utility shows "Registered" but the Recycle Bin still fails in the second forest —**
     - The "Registered" status only reflects the forest of whoever is currently logged in, and can be misleading.
     - See [Recycle Bin Access Denied Despite RSAT Extension Registered Status](/docs/kb/recoveryad/operations-and-troubleshooting/recycle-bin-access-denied-despite-rsat-extension-registered).
-- **Register fails with Access Denied (`0x80070005`) in the current forest**: this is a permission delegation issue, not a multi-forest issue. See [Error: Access Denied (0x80070005) Registering the RSAT Extension](/docs/kb/recoveryad/configuration-and-administration/access_denied_registering_rsat_extension).
+- **Register fails with Access Denied (`0x80070005`) in the current forest —** 
+    - This is a permission delegation issue, not a multi-forest issue. 
+    - See [Error: Access Denied (0x80070005) Registering the RSAT Extension](/docs/kb/recoveryad/configuration-and-administration/access_denied_registering_rsat_extension).
 
 ## Related Links
 

@@ -27,7 +27,7 @@ title: "Recycle Bin Access Denied Despite RSAT Extension Registered Status"
 
 ## Symptom
 
-The Recovery Configuration Utility shows **RSAT Extension: Registered**, but the Recycle Bin view in Active Directory Users and Computers (ADUC) still returns access denied for a domain in a second forest.
+The Recovery Configuration Utility shows **RSAT Extension: Registered**, but the Recycle Bin view in Active Directory Users and Computers (ADUC) still returns `Access Denied` for a domain in a second forest.
 
 ## Cause
 
@@ -43,11 +43,11 @@ This produces a confusing result in multi-forest environments. An administrator 
 
 1. Confirm which forest the currently logged-in account belongs to. Run `Get-ADForest` in PowerShell to check.
 2. Log into the Configuration Utility machine with an account belonging to the other forest, using **Run as a different user** if needed, then check the status:
-    - **Register** available means the extension is not yet registered in that forest
-    - **Unregister** available means the extension is already registered in that forest
+    - **Register** available means the extension is not yet registered in that forest.
+    - **Unregister** available means the extension is already registered in that forest.
 3. Repeat for each additional forest in the environment before assuming the extension is fully deployed.
 
-> **IMPORTANT:** Do not rely on a single "Registered" status check to confirm coverage across more than one forest. If the utility reports **Registered** for the current forest but the Recycle Bin still fails for a domain confirmed to belong to that same forest, the RSAT Extension itself is not the problem; see [Identifying Service Accounts and Required Permissions](/docs/kb/recoveryad/configuration-and-administration/identifying-service-accounts-and-required-permissions) for the per-domain account that governs Recycle Bin access.
+> **IMPORTANT:** Do not rely on a single "Registered" status check to confirm coverage across more than one forest. If the utility reports **Registered** for the current forest but the Recycle Bin still fails for a domain confirmed to belong to that same forest, the RSAT Extension itself is not the problem. See [Identifying Service Accounts and Required Permissions](/docs/kb/recoveryad/configuration-and-administration/identifying-service-accounts-and-required-permissions) for the per-domain account that governs Recycle Bin access.
 
 ## Related Links
 
