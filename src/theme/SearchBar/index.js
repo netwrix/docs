@@ -159,16 +159,38 @@ function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, curr
     );
 }
 
+// DocSearch groups hits by hierarchy.lvl0 and caps each group at maxResultsPerGroup.
+// The Algolia crawler sets lvl0 to "Product > Version", so hits get bucketed per product:
+// later hits of an already-seen product jump ahead of higher-ranked hits from other
+// products, and anything past the cap is dropped. Collapsing lvl0 to one value leaves a
+// single group, so hits render in the order Algolia ranked them.
+//
+// This is the crawler's `lvl0: {defaultValue: ...}` applied client-side. Set lvl0 to a
+// constant in the crawler config and this whole block can be deleted.
+const ONE_GROUP = {value: 'Results', matchLevel: 'none', matchedWords: []};
+
+function ungroup(items) {
+    return items.map((item) => ({
+        ...item,
+        _highlightResult: {
+            ...item._highlightResult,
+            hierarchy: {...item._highlightResult?.hierarchy, lvl0: ONE_GROUP},
+        },
+    }));
+}
+
 function useTransformItems(props) {
     const processSearchResultUrl = useSearchResultUrlProcessor();
     const [transformItems] = useState(() => {
         return (items) =>
-            props.transformItems
-                ? props.transformItems(items)
-                : items.map((item) => ({
-                    ...item,
-                    url: processSearchResultUrl(item.url),
-                }));
+            ungroup(
+                props.transformItems
+                    ? props.transformItems(items)
+                    : items.map((item) => ({
+                        ...item,
+                        url: processSearchResultUrl(item.url),
+                    })),
+            );
     });
     return transformItems;
 }
@@ -525,6 +547,9 @@ function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProduct
                         transformItems={transformItems}
                         hitComponent={Hit}
                         transformSearchClient={transformSearchClient}
+                        // One group now, so this caps the whole list. DocSearch defaults it
+                        // to 5, which would drop every hit past the fifth.
+                        maxResultsPerGroup={searchParameters.hitsPerPage}
                         {...(props.searchPagePath && {resultsFooterComponent})}
                         placeholder={translations.placeholder}
                         {...props}
