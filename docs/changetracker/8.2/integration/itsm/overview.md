@@ -9,7 +9,7 @@ sidebar_position: 30
 Integrating Change Tracker with an IT Service Management (ITSM) system correlates the
 change events observed in your environment with the changes you planned and
 approved through your change management process. Change Tracker marks approved changes
-as planned, and unplanned changes become the events that actually need review.
+as planned, and unplanned changes become the events that need review.
 
 ## How the Sync Service works
 
