@@ -27,13 +27,13 @@ title: "Identifying Service Accounts and Required Permissions"
 
 # Identifying Service Accounts and Required Permissions
 
-## Question
+## Overview
 
-Netwrix Identity Recovery uses several different accounts during installation, configuration, and daily operation. Which account handles which task, and what permissions does each one require, particularly across multiple domains or forests joined by a trust?
+This article identifies each account Netwrix Identity Recovery uses for installation, configuration, and daily operation, including which task each one handles and what permissions it requires, particularly across multiple domains or forests joined by a trust.
 
-## Answer
+## Instructions
 
-Identity Recovery does not use a single service account for everything. Each account is scoped to a specific job, and permissions granted to one account do not transfer to another, even when the accounts are used together in the same environment.
+Identity Recovery uses a separate, scoped service account for each job. Permissions granted to one account do not transfer to another, even when the accounts are used together in the same environment.
 
 > **IMPORTANT:** A trust between two domains or forests allows accounts to authenticate across the trust boundary. It does not grant permissions across that boundary. Each account below still needs its permissions assigned natively in whatever domain, forest, or tenant it operates against.
 
@@ -41,9 +41,9 @@ Identity Recovery does not use a single service account for everything. Each acc
 
 The Identity Recovery Setup wizard collects three accounts during installation.
 
-- **SQL Server database account**: Configured on the **SQL Server Configuration** page. Creates and connects to the Identity Recovery database. Requires read and write access to the database tables and permission to execute stored procedures. Use either Windows Authentication or SQL Server Authentication.
-- **Identity Recovery service account**: Configured on the **Netwrix Recovery Server Configuration** page. Starts and runs two separate Windows services under this account: **Netwrix Recovery Server** (`TaskServer.exe`, which handles scheduling and job management and is what actually performs domain backups) and **Netwrix Recovery Web Console** (`RecoveryWebConsole.exe`, the browser-based console UI). Requires the **Log On As A Service** right in Local Security Policy on the application server. If the database uses Windows Authentication, this account also connects to the database after setup completes.
-- **Administrator Role account**: Configured on the **Administrator Role** page. Becomes the first account or group with Administrator access to the Recovery Console. This setting is locked after installation and cannot be changed later.
+- **SQL Server database account**: Configure this account on the **SQL Server Configuration** page. It creates and connects to the Identity Recovery database. It requires read and write access to the database tables and permission to execute stored procedures. Use either Windows Authentication or SQL Server Authentication.
+- **Identity Recovery service account**: Configure this account on the **Netwrix Recovery Server Configuration** page. It starts and runs two separate Windows services: **Netwrix Recovery Server** (`TaskServer.exe`, which handles scheduling and job management and is what actually performs domain backups) and **Netwrix Recovery Web Console** (`RecoveryWebConsole.exe`, the browser-based console UI). It requires the **Log On As A Service** right in Local Security Policy on the application server. If the database uses Windows Authentication, this account also connects to the database after setup completes.
+- **Administrator Role account**: Configure this account on the **Administrator Role** page. It becomes the first account or group with Administrator access to the Recovery Console. This setting is locked after installation and cannot be changed later.
 
 ### Recovery Console Login Roles
 
@@ -76,9 +76,9 @@ The account running the Configuration Utility requires Write permission on the `
 
 Identity Recovery backs up and restores entire domain controllers using accounts configured on the **Forest** page, separate from the per-domain account used for object-level recovery.
 
-- **Forest connection account**: Configured when adding a forest. Connects to the forest to discover its domains and domain controllers.
-- **Domain controller backup account**: Configured per domain controller in the **Server Backup Configuration** wizard. Validates the domain controller, installs the **Netwrix Recovery Server Backup Agent** (product: Netwrix Identity Recovery Server Backup), and writes backup data to a network share. This account requires read and write access to that network share.
-- **Target server restore account**: Configured when adding a domain controller to a recovery playbook. Logs into the target server during a forest recovery. This account must be an administrator account on the target server itself, not on the source domain.
+- **Forest connection account**: Configure this account when adding a forest. It connects to the forest to discover its domains and domain controllers.
+- **Domain controller backup account**: Configure this account per domain controller in the **Server Backup Configuration** wizard. It validates the domain controller, installs the **Netwrix Recovery Server Backup Agent** (product: Netwrix Identity Recovery Server Backup), and writes backup data to a network share. This account requires read and write access to that network share.
+- **Target server restore account**: Configure this account when adding a domain controller to a recovery playbook. It logs into the target server during a forest recovery. This account must be an administrator account on the target server itself, not on the source domain.
 
 ### Entra ID Accounts
 

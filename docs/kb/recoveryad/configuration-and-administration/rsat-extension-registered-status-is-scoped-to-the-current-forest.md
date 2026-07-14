@@ -25,11 +25,11 @@ title: "RSAT Extension Registered Status Is Scoped to the Current Forest"
 
 # RSAT Extension Registered Status Is Scoped to the Current Forest
 
-## Question
+## Symptom
 
-The Recovery Configuration Utility shows **RSAT Extension: Registered**, but the Recycle Bin view in Active Directory Users and Computers (ADUC) still returns access denied for a domain in a second forest. If it already says "Registered," why does it still fail?
+The Recovery Configuration Utility shows **RSAT Extension: Registered**, but the Recycle Bin view in Active Directory Users and Computers (ADUC) still returns access denied for a domain in a second forest.
 
-## Answer
+## Cause
 
 The **Registered**/**Unregister** label reflects whether the RSAT Extension is registered in the Configuration partition of the forest belonging to whoever last ran the check, not a global status across every forest in the environment. See [Registering the RSAT Extension Across Multiple Domains or Forests](/docs/kb/recoveryad/configuration-and-administration/registering-the-rsat-extension-across-multiple-domains-or-forests) for why registration does not carry over between forests.
 
@@ -39,7 +39,7 @@ This produces a confusing result in multi-forest environments. An administrator 
 
 > **NOTE:** If clicking **Register** in the other forest returns an outright error instead of silently succeeding, that is a separate permission delegation issue. See [Error: Access Denied (0x80070005) Registering the RSAT Extension](/docs/kb/recoveryad/configuration-and-administration/access_denied_registering_rsat_extension).
 
-### How to Verify
+## Resolution
 
 1. Confirm which forest the currently logged-in account belongs to. Run `Get-ADForest` in PowerShell to check.
 2. Log into the Configuration Utility machine with an account belonging to the other forest, using **Run as a different user** if needed, and check the status again. A status of **Register** available (extension not yet registered) versus **Unregister** available (already registered) reflects that specific forest only.
