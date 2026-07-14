@@ -5,12 +5,17 @@ keywords:
   - Netwrix Agent
   - certificate thumbprint
   - Hub Server
+  - IIS Certificate
+  - HubDetails.xml
+  - Netwrix Agent Service
+  - Hub Adapter
+  - trusted thumbprint
 sidebar_label: Certificate Thumbprint Mismatch
 tags: [kb, troubleshooting-and-errors]
 title: "Certificate Thumbprint Mismatch"
 knowledge_article_id: kA04u0000000JaGCAU
 products:
-  - change-tracker
+  - changetracker
 ---
 
 # Certificate Thumbprint Mismatch
@@ -19,11 +24,7 @@ products:
 
 The following error occurs when using a custom or unrecognized IIS Certificate:
 
-```
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#                                                   Example Message:													  #
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
+```text
 2017-10-08 11:17:36,935 [Threadpool worker] ERROR NNT.Hub.ServiceClient.HubAdapter - Certificate thumbprint does not match trusted (BAD1067FBAB59CCED21786657C672F6AB5BE824C/6F7F11707C0C93CD0F7E92D5BC0F1C9345D68A64). Consider setting Thumbprint in HubDetails.xml. Server certificate details
 ```
 
