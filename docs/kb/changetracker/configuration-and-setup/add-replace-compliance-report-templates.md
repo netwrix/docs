@@ -12,7 +12,7 @@ keywords:
   - overwrite template
   - device groups
   - CIS benchmark
-  - Windows Server 2012 R2
+  - Windows Server 2025
 products:
   - changetracker
 knowledge_article_id: ka0Qk000000DligIAC
