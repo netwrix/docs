@@ -61,11 +61,11 @@ Access denied on the Recycle Bin view can also be caused by an incomplete per-do
 
 - **Recycle Bin access denied in a domain, but the RSAT Extension is already confirmed registered in its forest**: this is a per-domain account issue, not an RSAT Extension issue. See the troubleshooting table in [Identifying Service Accounts and Required Permissions](/docs/kb/recoveryad/configuration-and-administration/identifying-service-accounts-and-required-permissions).
 - **Recycle Bin access denied because the second domain is in a different forest**: this is the scenario this article covers above.
-- **Configuration Utility shows "Registered" but the Recycle Bin still fails in the second forest**: the "Registered" status only reflects the forest of whoever is currently logged in, and can be misleading. See [RSAT Extension Registered Status Is Scoped to the Current Forest](/docs/kb/recoveryad/configuration-and-administration/rsat-extension-registered-status-is-scoped-to-the-current-forest).
+- **Configuration Utility shows "Registered" but the Recycle Bin still fails in the second forest**: the "Registered" status only reflects the forest of whoever is currently logged in, and can be misleading. See [RSAT Extension Registered Status Is Scoped to the Current Forest](/docs/kb/recoveryad/operations-and-troubleshooting/recycle-bin-access-denied-despite-rsat-extension-registered).
 - **Register fails with Access Denied (`0x80070005`) in the current forest**: this is a permission delegation issue, not a multi-forest issue. See [Error: Access Denied (0x80070005) Registering the RSAT Extension](/docs/kb/recoveryad/configuration-and-administration/access_denied_registering_rsat_extension).
 
 ## Related Links
 
 - [Error: Access Denied (0x80070005) Registering the RSAT Extension](/docs/kb/recoveryad/configuration-and-administration/access_denied_registering_rsat_extension)
 - [Identifying Service Accounts and Required Permissions](/docs/kb/recoveryad/configuration-and-administration/identifying-service-accounts-and-required-permissions)
-- [RSAT Extension Registered Status Is Scoped to the Current Forest](/docs/kb/recoveryad/configuration-and-administration/rsat-extension-registered-status-is-scoped-to-the-current-forest)
+- [RSAT Extension Registered Status Is Scoped to the Current Forest](/docs/kb/recoveryad/operations-and-troubleshooting/recycle-bin-access-denied-despite-rsat-extension-registered)
