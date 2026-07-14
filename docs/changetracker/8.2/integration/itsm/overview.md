@@ -92,5 +92,5 @@ process. The incident routes to the owner of the matching
 CI, providing a ready-made workflow for investigation and resolution. You configure this
 as a Hub notification action under **Settings** in Change Tracker; it's not part of the
 Sync Service polling loop. See
-[Sync Service Administration](/docs/changetracker/8.2/integration/itsm/syncserviceadmin.md)
-for the steps to set up incident raising.
+[Raise a ServiceNow Incident](/docs/changetracker/8.2/integration/itsm/syncserviceadmin.md#raise-a-servicenow-incident)
+for the setup steps.
