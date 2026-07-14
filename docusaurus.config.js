@@ -289,21 +289,6 @@ const config = {
         // Placeholder text for the search box
         placeholder: 'Search the Netwrix docs...',
 
-        // Transform items before displaying (optional)
-        transformItems: (items) => {
-          return items.map((item) => {
-            // Add product badges or modify display as needed
-            return {
-              ...item,
-              // Example: Add custom badges based on product
-              _highlightResult: {
-                ...item._highlightResult,
-                // Customize highlighted results if needed
-              },
-            };
-          });
-        },
-
         // Replace paths if you're using different deployments
         // replaceSearchResultPathname: {
         //   from: '/docs/',

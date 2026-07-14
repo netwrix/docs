@@ -159,38 +159,50 @@ function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, curr
     );
 }
 
-// DocSearch groups hits by hierarchy.lvl0 and caps each group at maxResultsPerGroup.
-// The Algolia crawler sets lvl0 to "Product > Version", so hits get bucketed per product:
-// later hits of an already-seen product jump ahead of higher-ranked hits from other
-// products, and anything past the cap is dropped. Collapsing lvl0 to one value leaves a
-// single group, so hits render in the order Algolia ranked them.
+// DocSearch (@docsearch/react 4.6.3) buckets results twice before rendering, and both passes must
+// be defeated to show Algolia's relevance order:
+//   outer: groupBy(_highlightResult.hierarchy.lvl0) -> one section per group, capped at
+//          maxResultsPerGroup. The Algolia crawler sets lvl0 to "Product > Version", so results get
+//          bucketed per product and a product's hits past the cap are dropped.
+//   inner: groupBy(hierarchy.lvl1) -> reorders hits that share a page title ("Install" exists in
+//          every product); the key is only unique because the outer pass scoped it to one product.
+// So each hit gets one shared lvl0 (single section) and a unique raw lvl1 = url (no inner
+// clustering). But DocSearch renders the title from `_snippetResult.hierarchy.lvl1.value || raw
+// hierarchy.lvl1` — so overwriting raw lvl1 with the url makes title-match hits (which lack a
+// _snippetResult) display the url. We therefore copy the highlighted title from _highlightResult
+// into _snippetResult; that value is Algolia-escaped, so it is safe as innerHTML. Raw
+// hierarchy.lvl0 is kept and shown per-hit as the product label.
 //
-// This is the crawler's `lvl0: {defaultValue: ...}` applied client-side. Set lvl0 to a
-// constant in the crawler config and this whole block can be deleted.
-const ONE_GROUP = {value: 'Results', matchLevel: 'none', matchedWords: []};
+// This shims around the crawler putting the product in lvl0, and depends on DocSearch grouping on
+// lvl0/lvl1 and resolving the title via _snippetResult. If a future @docsearch/react bump changes
+// either, the modal silently reverts to product order — re-verify the Ctrl+K modal renders one flat
+// list after any Docusaurus upgrade. The real fix is to stop putting the product in lvl0 in the
+// crawler config, after which this whole shim deletes.
+const ONE_GROUP = {value: '', matchLevel: 'none', matchedWords: []};
 
 function ungroup(items) {
-    return items.map((item) => ({
-        ...item,
-        _highlightResult: {
-            ...item._highlightResult,
-            hierarchy: {...item._highlightResult?.hierarchy, lvl0: ONE_GROUP},
-        },
-    }));
+    return items.map((item) => {
+        const title = item._highlightResult?.hierarchy?.lvl1?.value ?? item.hierarchy?.lvl1 ?? '';
+        return {
+            ...item,
+            hierarchy: {...item.hierarchy, lvl1: item.url},
+            _snippetResult: {
+                ...item._snippetResult,
+                hierarchy: {...item._snippetResult?.hierarchy, lvl1: {value: title, matchLevel: 'full'}},
+            },
+            _highlightResult: {
+                ...item._highlightResult,
+                hierarchy: {...item._highlightResult?.hierarchy, lvl0: ONE_GROUP},
+            },
+        };
+    });
 }
 
-function useTransformItems(props) {
+function useTransformItems() {
     const processSearchResultUrl = useSearchResultUrlProcessor();
     const [transformItems] = useState(() => {
         return (items) =>
-            ungroup(
-                props.transformItems
-                    ? props.transformItems(items)
-                    : items.map((item) => ({
-                        ...item,
-                        url: processSearchResultUrl(item.url),
-                    })),
-            );
+            ungroup(items.map((item) => ({...item, url: processSearchResultUrl(item.url)})));
     });
     return transformItems;
 }
@@ -212,7 +224,16 @@ function useResultsFooterComponent({closeModal, selectedProductsRef, selectedVer
 }
 
 function Hit({hit, children}) {
-    return <Link to={hit.url}>{children}</Link>;
+    return (
+        <Link to={hit.url}>
+            {children}
+            {/* lvl0 ("Product > Version") was the group heading until ungroup() collapsed it.
+                Shown per-hit so four versions of one page aren't four indistinguishable rows. */}
+            {hit.hierarchy?.lvl0 && (
+                <span className="DocSearch-Hit-product">{hit.hierarchy.lvl0}</span>
+            )}
+        </Link>
+    );
 }
 
 function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef}) {
@@ -459,7 +480,7 @@ function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProduct
     // Keep searchParameters stable - don't include product filters here
     // Product filters are injected at request time via transformSearchClient
     const searchParameters = useSearchParameters({...props, productFacetFilters: []});
-    const transformItems = useTransformItems(props);
+    const transformItems = useTransformItems();
     const transformSearchClient = useTransformSearchClient(selectedProductsRef, selectedVersionsRef, currentLocale);
     const searchContainer = useRef(null);
     const searchButtonRef = useRef(null);
@@ -547,14 +568,14 @@ function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProduct
                         transformItems={transformItems}
                         hitComponent={Hit}
                         transformSearchClient={transformSearchClient}
-                        // One group now, so this caps the whole list. DocSearch defaults it
-                        // to 5, which would drop every hit past the fifth.
-                        maxResultsPerGroup={searchParameters.hitsPerPage}
                         {...(props.searchPagePath && {resultsFooterComponent})}
                         placeholder={translations.placeholder}
                         {...props}
                         translations={props.translations?.modal ?? translations.modal}
                         searchParameters={searchParameters}
+                        // One group now (see ungroup), so this caps the whole list. DocSearch
+                        // defaults it to 5, which would drop every hit past the fifth.
+                        maxResultsPerGroup={searchParameters.hitsPerPage ?? 20}
                     />,
                     searchContainer.current,
                 )}
