@@ -31,22 +31,14 @@ This article describes how to apply a compliance template to a device group and 
 
 ## Instructions
 
-1. Click the **Settings** tile, then click the **Groups** tab on the left navigation menu.
-2. Select the group that you want the template applied to by clicking it.
+1. Click the **Reports** tile, then click the **Actions** > **Add Compliance Report**.
+2. Click the **Query Settings** tab, then select the group and template within the drop down options.
+3. Once selected, click the **Update Report Title** option to automatically update the title of this report
 
-   > **NOTE:** If you attach a template to a parent group, all child objects also inherit this template.
+<img width="1170" height="778" alt="image" src="https://github.com/user-attachments/assets/2bd11aa8-57cd-4a6b-883c-f539708b79a3" />
 
-3. On the right side of the screen, select the **Scheduled Reports** tab.
-4. Click **+Schedule a New Report**.
-5. Select your compliance report policy.
-6. Define a start and end date.
+4. Click the **Schedule & Email** tab to configure the start/end date and interval:
 
-   > **IMPORTANT:** Leaving these fields blank makes the schedule open-ended, and the schedule runs indefinitely.
+<img width="1169" height="778" alt="image" src="https://github.com/user-attachments/assets/b866174a-6486-4b92-b7c1-ffe2bf7826df" />
 
-7. Select a **Schedule** increment: **Hourly**, **Daily**, **Weekly**, or a custom interval in minutes.
-8. Enter a passing score percentage. Reports pass or fail depending on whether the score is above or below this percentage.
-9. Click **Update**.
-
-<!-- Image removed: Schedule a New Report dialog showing compliance policy, start/end date, schedule interval, and passing score fields -->
-
-The report appears in the **Scheduled Reports** list and runs automatically according to the schedule you defined.
+5. Once completed, click **Update** on the bottom to save this report configuration. This report will now run on its scheduled interval against the specified group of devices.
