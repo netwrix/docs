@@ -30,8 +30,7 @@ Default polling interval is 30 seconds for most connectors. ManageEngine Service
 Plus polls every 5 minutes. Both are configurable in the connector settings.
 
 Each connector authenticates with the source system's REST API (OAuth or basic auth,
-depending on the platform), and stores its per-CR sync state locally so that clearing
-the state forces a full re-import.
+depending on the platform), and stores its per-CR sync state locally.
 
 :::note
 Change Tracker links change events to a Planned Change only after the CR is approved in
@@ -58,13 +57,13 @@ for details on how Change Tracker matches Planned Changes against change events.
 The following capabilities are available only when you integrate with ServiceNow, except
 for RFC task synchronization, which OpenText SMAX also supports.
 
-### Device Discovery
+### Device discovery
 
 Instead of maintaining a device list in both ServiceNow and Change Tracker, you can
 synchronize CIs from ServiceNow into Change Tracker as devices. ServiceNow becomes the
 single place to maintain the inventory, and Change Tracker's initial setup is faster.
 
-When Change Tracker imports devices through Device Discovery, it records the
+When Change Tracker imports devices through device discovery, it records the
 ServiceNow `sys_id` on each device. Later, when Change Tracker imports a Planned Change,
 it matches the affected CIs to devices on `sys_id` rather than name — an exact match
 every time.
@@ -92,4 +91,6 @@ when it detects an unplanned change, returning that change to your change manage
 process. The incident routes to the owner of the matching
 CI, providing a ready-made workflow for investigation and resolution. You configure this
 as a Hub notification action under **Settings** in Change Tracker; it's not part of the
-Sync Service polling loop.
+Sync Service polling loop. See
+[Sync Service Administration](/docs/changetracker/8.2/integration/itsm/syncserviceadmin.md)
+for the steps to set up incident raising.
