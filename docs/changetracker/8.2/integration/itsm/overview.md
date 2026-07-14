@@ -15,7 +15,8 @@ as planned, and unplanned changes become the events that need review.
 
 The Sync Service is a Windows service, installed alongside the Change Tracker Hub (the
 central management server), that polls a supported ITSM system for Change Requests
-(CRs, RFCs, or the equivalent) and imports them into Change Tracker as Planned Changes.
+(CRs) — also called Requests for Change (RFCs) in some systems, or the equivalent — and
+imports them into Change Tracker as Planned Changes.
 On each poll, the service:
 
 1. Requests only the CRs created or modified since the previous poll.
@@ -30,7 +31,7 @@ Default polling interval is 30 seconds for most connectors. ManageEngine Service
 Plus polls every 5 minutes. Both are configurable in the connector settings.
 
 Each connector authenticates with the source system's REST API (OAuth or basic auth,
-depending on the platform), and stores its per-CR sync state locally.
+depending on the platform), and stores its per-CR sync state on the Change Tracker Hub.
 
 :::note
 Change Tracker links change events to a Planned Change only after the CR is approved in
@@ -54,8 +55,7 @@ for details on how Change Tracker matches Planned Changes against change events.
 
 ## ServiceNow-specific capabilities
 
-The following capabilities are available only when you integrate with ServiceNow, except
-for RFC task synchronization, which OpenText SMAX also supports.
+The following capabilities are available only when you integrate with ServiceNow.
 
 ### Device discovery
 
