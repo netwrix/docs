@@ -92,7 +92,6 @@ function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, curr
             searchClient.search = function(searchMethodParams, requestOptions) {
                 const products = selectedProductsRef.current || [];
                 const versions = selectedVersionsRef.current || [];
-                const typoTolerance = false;
 
                 // Build product filter (OR logic - any of selected products)
                 const realProducts = products.filter(p => p !== '__all__' && p !== '__none__');
@@ -144,7 +143,6 @@ function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, curr
                             return {
                                 ...req,
                                 facetFilters: newFilters.length > 0 ? newFilters : undefined,
-                                typoTolerance,
                             };
                         })
                     };
