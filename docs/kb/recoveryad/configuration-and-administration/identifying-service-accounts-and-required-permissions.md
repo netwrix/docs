@@ -85,11 +85,12 @@ Add additional console users on the **Users and Roles** page.
 Configure this account on the **Domains** page. It performs the backup, rollback, and recovery operations for a specific domain, including the actions that populate the Recycle Bin view in Active Directory Users and Computers (ADUC).
 
 > **NOTE:** This account is configured separately for each domain. Adding a second domain does not reuse the account or permissions configured for the first domain. The new domain requires its own account with permissions granted natively in that domain.
+>
+> Also, an account with read-only access can still perform backups, but rollback and restore operations—including Recycle Bin recovery—fail with an `Access Denied` error.
 
 This account has the following permission requirements:
 
 - It requires Domain Admin privileges in its target domain.
-- An account with read-only access can still perform backups, but rollback and restore operations, including Recycle Bin recovery, fail with an access denied error.
 - Organizations that cannot grant Domain Admin privileges for policy reasons can use the least privilege access model instead, which defines a narrower set of permissions on:
     - The domain naming context
     - The DomainDnsZones and ForestDnsZones partitions
@@ -149,9 +150,7 @@ Configure this application registration on the **Entra ID Configuration** page.
 
 #### Azure Storage Application Registration
 
-Applies only if domain controller backups are stored in Azure Storage instead of a local network share.
-
-Configure this application registration on the **Azure Storage** page.
+Applies only if domain controller backups are stored in Azure Storage instead of a local network share. Configure this application registration on the **Azure Storage** page.
 
 - Requires a separate tenant name, Client ID, and secret
 - Requires access to the target storage container
