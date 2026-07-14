@@ -8,14 +8,15 @@ sidebar_position: 30
 
 Integrating Change Tracker with an IT Service Management (ITSM) system correlates the
 change events observed in your environment with the changes that were planned and
-approved through your change management process. Change Tracker marks approved changes as planned, and unplanned changes become the
-events that actually need review.
+approved through your change management process. Change Tracker marks approved changes
+as planned, and unplanned changes become the events that actually need review.
 
 ## How the Sync Service works
 
-The Sync Service is a Windows service, installed alongside the Change Tracker Hub, that
-polls a supported ITSM system for Change Requests (CRs, RFCs, or the equivalent) and
-imports them into Change Tracker as Planned Changes. On each poll, the service:
+The Sync Service is a Windows service, installed alongside the Change Tracker Hub (the
+central management server), that polls a supported ITSM system for Change Requests
+(CRs, RFCs, or the equivalent) and imports them into Change Tracker as Planned Changes.
+On each poll, the service:
 
 1. Requests only the CRs that were created or modified since the previous poll.
 2. Creates a Planned Change for each new CR, or updates the existing Planned Change if
@@ -26,7 +27,11 @@ imports them into Change Tracker as Planned Changes. On each poll, the service:
    it reclassifies events matching an approved change from unplanned to planned.
 
 Default polling interval is 30 seconds for most connectors. ManageEngine ServiceDesk
-Plus polls every 5 minutes. Both are configurable.
+Plus polls every 5 minutes. Both are configurable in the connector settings.
+
+Each connector authenticates with the source system's REST API (OAuth or basic auth,
+depending on the platform), and stores its per-CR sync state locally so that clearing
+the state forces a full re-import.
 
 :::note
 Change Tracker links change events to a Planned Change only after the CR is approved in
@@ -48,14 +53,10 @@ for details on how Planned Changes are matched against change events.
 - ServiceNow IT Service Management
 - SunView ChangeGear
 
-Each connector authenticates with the source system's REST API (OAuth or basic auth,
-depending on the platform), and stores its per-CR sync state locally so that clearing
-the state forces a full re-import.
-
 ## ServiceNow-specific capabilities
 
-The following capabilities are available only when you integrate with ServiceNow. OpenText
-SMAX supports RFC task synchronization; the remaining capabilities are ServiceNow-only.
+The following capabilities are available only when you integrate with ServiceNow, except
+for RFC task synchronization, which OpenText SMAX also supports.
 
 ### Device Discovery
 
@@ -89,6 +90,6 @@ Change Tracker can raise a ServiceNow
 [incident](https://docs.servicenow.com/bundle/washingtondc-it-service-management/page/product/incident-management/concept/work-on-incidents.html)
 when it detects an unplanned change, returning that change to your change management
 process. The incident routes to the owner of the matching
-CI, providing a ready-made workflow for investigation and resolution. This is a Hub
-notification action configured in Change Tracker, not part of the Sync Service polling
-loop.
+CI, providing a ready-made workflow for investigation and resolution. You configure this
+as a Hub notification action under **Settings** in Change Tracker; it's not part of the
+Sync Service polling loop.
