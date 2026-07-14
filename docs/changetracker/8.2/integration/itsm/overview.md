@@ -7,7 +7,7 @@ sidebar_position: 30
 # IT Service Management
 
 Integrating Change Tracker with an IT Service Management (ITSM) system correlates the
-change events observed in your environment with the changes that were planned and
+change events observed in your environment with the changes you planned and
 approved through your change management process. Change Tracker marks approved changes
 as planned, and unplanned changes become the events that actually need review.
 
@@ -18,11 +18,11 @@ central management server), that polls a supported ITSM system for Change Reques
 (CRs, RFCs, or the equivalent) and imports them into Change Tracker as Planned Changes.
 On each poll, the service:
 
-1. Requests only the CRs that were created or modified since the previous poll.
+1. Requests only the CRs created or modified since the previous poll.
 2. Creates a Planned Change for each new CR, or updates the existing Planned Change if
    the CR has changed.
 3. Links the Planned Change to any devices or groups whose names match the
-   Configuration Items (CIs) referenced by the CR.
+   Configuration Items (CIs) the CR references.
 4. Reassesses any recent change events that fall within the Planned Change's scope, so
    it reclassifies events matching an approved change from unplanned to planned.
 
@@ -41,7 +41,7 @@ planned, but Change Tracker has already sent any unplanned-change alerts.
 :::
 
 See [Planned Changes Tab](/docs/changetracker/8.2/admin/plannedchanges/plannedchanges.md)
-for details on how Planned Changes are matched against change events.
+for details on how Change Tracker matches Planned Changes against change events.
 
 ## Supported ITSM platforms
 
@@ -75,7 +75,7 @@ For most connectors, a Planned Change includes the CR's identifier, planned star
 end dates, and configuration item. For ServiceNow, the Sync Service also imports the
 `AssignedTo` field. When change events include the user who made the change, you can
 build a Planned Change ruleset that requires a match on date, device, *and* user before
-an event is marked as planned.
+Change Tracker marks an event as planned.
 
 ### RFC task synchronization
 
