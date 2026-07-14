@@ -21,10 +21,8 @@ well as the underscore that precedes it - EPPClientSetup.5.6.3.1_x86_64.msi
 :::
 
 
-![A black text on a white background
+![When deploying the .msi package, delete the information contained in the brackets as well as the underscore that precedes it - EPPClientSetup.5.6.3.1_x86_64.msi](msipackage.webp)
 
-Description automatically
-generated](msipackage.webp)
 
 **Step 3 –** Go to the Microsoft Endpoint Manager admin center and sign in;
 
