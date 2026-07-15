@@ -209,7 +209,49 @@ Record each finding as: `area | finding | recommendation`.
 
 ### Step 9 — Compile and present the report
 
-Format the full report exactly as shown below and present it to the reviewer. Use the per-file sections in the same order as `KB_FILES`.
+**Compact report format.** Do not print a row per rule with "Clean" / "N/A" / "Not present" verdicts. Verbosity has been a real cost — the report surfaces *what needs a decision*, not exhaustive proof of coverage. Coverage is enforced by the row inventory in the Overview table (below), not by expanding every clean rule into a full sub-table.
+
+Per-file structure:
+
+**1. Overview table (always).** A compact table listing every check category and its status — findings count or ✓ Clean. Clean verdicts live only here; they do not reappear in the sections below.
+
+Every Derek area must appear as its own row: frontmatter, article-type, title/H1/sidebar_label, product-names, keywords quality, images, links, formatting, prose-directness. Plus one row for the kb-editing-conventions scan and one for the cross-section consistency scan. That row inventory is the coverage receipt.
+
+Example shape:
+
+```markdown
+| Check | Status |
+|---|---|
+| Vale | 2 findings |
+| Dale | 2 findings |
+| Derek — frontmatter | 3 required fixes |
+| Derek — title / H1 / sidebar_label | 1 required fix |
+| Derek — links | 1 required fix |
+| Derek — article-type / structure | ✓ Clean |
+| Derek — product-names | ✓ Clean |
+| Derek — keywords quality | ✓ Clean |
+| Derek — images | ✓ Clean |
+| Derek — formatting | ✓ Clean |
+| Derek — prose directness | ✓ Clean |
+| kb-editing-conventions scan (rows 1–23) | ✓ Clean |
+| Cross-section consistency (all patterns) | ✓ Clean |
+```
+
+**2. Findings sections (only for non-clean checks).** For every row in the Overview table whose status is not ✓ Clean, add one short table below listing only the findings that need a decision. One section per tool (Vale / Dale / Derek). Do not add sections for tools that are entirely clean.
+
+- Vale columns: `Line | Rule | Severity | Finding`
+- Dale columns: `Location | Rule | Finding + suggested rewrite`
+- Derek columns: `Area | Line/Location | Finding | Suggested fix`
+
+Group all Derek findings — regardless of area — into one table with the area named per row. Do not repeat "Clean" areas.
+
+**3. Report contract.**
+- No rule-by-rule "Clean" / "N/A" rows in the findings sections. The Overview table is the coverage receipt.
+- No filler sentences confirming what wasn't found. If a check is clean, the Overview table says so; nothing else is required.
+- Every finding row must be actionable — specific location, specific problem, specific fix or specific question.
+- For multi-file PR reviews: repeat the Overview table + findings sections per file. Then close with one grand summary table across all files (counts only).
+
+**Skeleton (single file):**
 
 ```markdown
 ## KB PR Review — PR #<PR>
@@ -222,52 +264,48 @@ _<N> KB file(s) reviewed. Ran Vale + Dale + Derek._
 
 ### `<file path>`
 
-#### Vale (NetwrixKB)
+#### Overview
 
-<!-- If no violations: -->
-✅ No Vale violations.
+| Check | Status |
+|---|---|
+| Vale | 2 findings |
+| Dale | 1 finding |
+| Derek — frontmatter | 2 required fixes |
+| ... | ... |
 
-<!-- If violations: -->
-| Line | Rule | Message |
-|------|------|---------|
-| 14 | NetwrixKB.Contractions | Use "do not" instead of "don't" |
+#### Vale
+
+| Line | Rule | Severity | Finding |
+|---|---|---|---|
+| 14 | NetwrixKB.Contractions | Required | Use "do not" instead of "don't" |
 
 #### Dale
 
-<!-- If no violations: -->
-✅ No Dale violations.
+| Location | Rule | Finding + suggested rewrite |
+|---|---|---|
+| Step 2 | passive-voice | "…is looked up in `X`" → "Look up … in `X`" |
 
-<!-- If violations: -->
-| Rule | Message | Offending Text |
-|------|---------|----------------|
-| undefined-acronyms | "NEA" used without definition on first use | NEA |
+#### Derek
 
-#### Derek (KB Writing Quality)
-
-<!-- If no issues: -->
-✅ No Derek issues.
-
-<!-- If issues: -->
-| Area | Finding | Recommendation |
-|------|---------|----------------|
-| frontmatter | `tags: []` — missing required `kb` value | Change to `tags: [kb]` |
-| title-format | Title includes product name "Auditor" | Remove product name; it is already in metadata |
-| product-names | `products: auditor-cloud` — not a valid product ID | Use `auditor` per the Product Names table |
+| Area | Location | Finding | Suggested fix |
+|---|---|---|---|
+| frontmatter | `tags:` | Missing required `kb` value | Add `kb` to tags |
+| title-format | H1 | "How to Configure Granular Permissions..." → gerund form | Rewrite to "Configuring Granular Permissions..." |
 
 ---
 
-<!-- Repeat the above block for each additional file -->
+<!-- Repeat Overview + findings sections per file -->
 
 ---
 
-### Summary
+### Summary (multi-file PRs)
 
 | File | Vale | Dale | Derek | Total |
-|------|------|------|-------|-------|
+|---|---|---|---|---|
 | `article.md` | 2 | 1 | 3 | 6 |
 | **Total** | **2** | **1** | **3** | **6** |
 
-<!-- If any file placement issues were found: -->
+<!-- File placement issues, if any -->
 ### ⚠️ File Placement Issues
 - `docs/kb/product/kb/article.md` — nested `kb/` subfolder detected. Move to `docs/kb/product/article.md`.
 ```
@@ -352,11 +390,14 @@ Note: this approval counts toward branch protection requirements in `netwrix/doc
 
 ## Output rules
 
-- Every section must appear for every file in the report, even if it contains only a ✅ pass line. Do not omit sections.
-- Use the exact column names shown: `Line | Rule | Message` for Vale; `Rule | Message | Offending Text` for Dale; `Area | Finding | Recommendation` for Derek.
-- Keep findings specific and actionable. Do not write vague observations.
-- Do not merge Vale, Dale, and Derek findings into a single table.
-- The Summary table must appear at the end of the report, after all per-file sections.
-- If Vale is unavailable, note it in the Vale section: `⚠️ Vale not available — skipped.`
+- **Overview table is the coverage receipt.** Every Derek area, plus the two scan groups, must appear as a row on every file — with either a findings count or ✓ Clean. This is where coverage is enforced, not by expanding "Clean" verdicts into full sub-tables.
+- **Findings sections omit clean checks entirely.** For a tool that fired no findings, no findings section appears — the Overview row is sufficient. Do NOT include "✅ No X violations" placeholder sections in the findings area.
+- **No rule-by-rule "Clean" / "N/A" / "Not present" rows** in findings sections. Do not print a per-rule table showing which rules found nothing. If more granular coverage is needed for debugging, use `+ verbose` on invocation (future).
+- **No filler sentences confirming what wasn't found** (e.g., "No hits for minimizing-difficulty, idioms, ..."). If the Overview row says ✓ Clean, that's the whole statement.
+- Column names: Vale `Line | Rule | Severity | Finding`; Dale `Location | Rule | Finding + suggested rewrite`; Derek `Area | Location | Finding | Suggested fix`.
+- Keep findings specific and actionable. Vague observations don't belong in the report.
+- Do not merge Vale, Dale, and Derek findings into a single table — each tool gets its own.
+- The multi-file Summary table appears at the end, after all per-file sections.
+- If Vale is unavailable, note it in the Vale Overview row: `Vale | ⚠️ Not available — skipped`.
 - Do not run this skill on files outside `docs/kb/`. If non-KB `.md` files appear in the diff, ignore them silently.
 - The final PR review comment (Step 13) must use markdown only with no emojis.
