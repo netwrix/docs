@@ -125,6 +125,8 @@ Capture the full output per file. `.vale.ini` scopes `BasedOnStyles = NetwrixKB`
 
 If Vale is not installed or returns an error, note this in the report and continue to Step 7.
 
+**`WeakLinkText` / `BoilerplateCrossRef` fixes require a search, not just a rewrite.** Before proposing any fix for a Vale `WeakLinkText` or `BoilerplateCrossRef` finding, grep `docs/kb/**/*.md` and `docs/<product>/<version>/**/*.md` for a plausible real target based on the referenced topic (e.g., "Accounts and Required Permissions" → search for `accountreqs`, `account.*permission`). If a real target resolves, convert the prose into a proper link to it. Only rewrite the sentence to remove the implied reference if the search turns up nothing. Do not skip the search because the phrasing already implies no real link exists — the trigger already fired precisely because the phrasing looks like an implied reference, and the target often does exist on disk.
+
 ---
 
 ### Step 7 — Apply Dale rules to each file
