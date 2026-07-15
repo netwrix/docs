@@ -752,15 +752,15 @@ Use "enter" when instructing users to input text into a field.
 
 **"select" vs. "choose"**
 Use "select" for choosing items from a list, menu, checkbox, or radio button. Reserve "choose" for non-UI contexts.
-- Do: "Select the monitoring plan from the drop-down."
+- Do: "Select the monitoring plan from the dropdown."
 - Do: "Select the **Enable auditing** checkbox."
-- Don't: "Choose the monitoring plan from the drop-down."
+- Don't: "Choose the monitoring plan from the dropdown."
 
-**"drop-down"**
-Use "drop-down" (hyphenated) as a noun or adjective.
-- Do: "Select the option from the drop-down."
-- Do: "Open the drop-down menu."
-- Don't: "Select the option from the dropdown."
+**"dropdown"**
+Use "dropdown" (one word) as a noun or adjective.
+- Do: "Select the option from the dropdown."
+- Do: "Open the dropdown menu."
+- Don't: "Select the option from the drop-down."
 - Don't: "Open the drop down menu."
 
 **"checkbox"**
