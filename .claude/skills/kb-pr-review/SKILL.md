@@ -157,7 +157,7 @@ For each file in `KB_FILES`:
 | **title-format** | **Article Titles** and the title format rules within **Article Types** | Do NOT flag `> **NOTE:**` blockquote callouts — this is correct KB format, not a Docusaurus `:::note` admonition. If a product component name appears in the title (e.g., a client, agent, or add-on) and is essential to distinguishing the article from others about the same product, flag it as a judgment call rather than a required fix. **Raw log line / error dump titles** (rulebook §12): titles containing literal log-level tokens (FATAL, ERROR), stack noise, file paths, or truncation fragments are Required fixes — normalize to `<Component> Error - <core diagnostic phrase>`, keeping only the searchable message. Examples: `ConfigurationLoader Error - Hub Location Details Have Not Been Specified`; `TraceLogger Error - Address Already in Use`. Separate from the retired `Error:` prefix convention. |
 | **product-names** | **Product Names** | Always cross-check product IDs against `src/config/products.js` — the style guide table may be outdated. The config file is authoritative. |
 | **keywords-quality** | **Frontmatter > Required fields > keywords** | If a keyword does not appear in the article body but is a plausible legacy or alternate search term (e.g., an old product acronym), note it as a low-priority observation rather than a required fix. |
-| **images** | **Screenshots** | KB image structure is not in the style guide — apply this rule: images must be stored as PNG files in `0-images/` at the **product level** (`docs/kb/<product>/0-images/`), not inside category subfolders. Articles in category subfolders reference them with `../0-images/filename.png`. Flag any images linked from external sources (e.g., GitHub CDN URLs) — they must be downloaded and committed to the repo. |
+| **images** | **Screenshots** | KB image structure is not in the style guide — apply this rule: images must be stored as PNG files in `0-images/` at the **product level** (`docs/kb/<product>/0-images/`), not inside category subfolders. Articles in category subfolders reference them with `../0-images/filename.png`. Flag any images linked from external sources (e.g., GitHub CDN URLs) — they must be downloaded and committed to the repo. **Alt text must be descriptive, not just the filename.** Flag any image where the alt text is only the raw filename (e.g., `![index_files_location.png](path)`) — rewrite as a short description of what the image shows, per the Screenshots section. |
 | **links** | (not in style guide) | Find every internal markdown link in the article body — `[text](/docs/...)` patterns to other KB articles and to versioned product docs. For each, resolve the actual target file on disk: check for a `slug` frontmatter override on the target first; if none, the URL segment must match the target's real path/filename (not its `sidebar_label` or `title`). Flag any link whose URL does not resolve to a real file on disk as a Required fix, and correct it to the real path. External links (non-`/docs` URLs) are out of scope. Backstop is `npm run build` (`onBrokenLinks: 'throw'` in `docusaurus.config.js`), but that runs late — this check catches broken links before submission. |
 | **formatting** | **Markup Conventions** and **Lists** | The style guide's "single backticks for inline code" applies to error codes (e.g., `0x80070005`) — flag any error code in plain text. Sequential procedures must be numbered lists — this applies to Resolution sections and all sub-sections within them (e.g., verification steps), not just top-level procedures. |
 | **prose-directness** | **Voice and Tone > Impersonal constructions** and **Words and phrases to avoid** | Flag sentences where an impersonal subject ("the operation", "the process", "the system") could be replaced with the actual actor for a cleaner, more direct sentence. Example: "the operation fails with an error" → "Clicking **X** fails with an error". Apply judgment — not every impersonal subject is wrong. |
@@ -190,7 +190,7 @@ Do NOT flag contractions, heading case, passive voice, jargon, or undefined acro
 | 20 | A list that appears with no lead-in sentence, reading disjointed from surrounding prose | Add a short intro sentence ending in a colon. Route to `kb-writer` when the intro needs content judgment; apply here when the missing context is obvious from the surrounding prose. Rulebook §4. |
 | 21 | A paragraph with 3+ inline cross-reference clauses ("see X, see Y, see Z") stacked in one sentence | Collapse into a single NOTE block with the links listed cleanly (compact enumeration or short bulleted list under the NOTE). Rulebook §8. |
 | 22 | A positional reference ("above"/"below"/"the section on X") that points to a named section in the same file | Replace with `[Section Name](#section-slug)` rather than rewording the positional term away. This is the concrete execution of Dale's `positional-references` suggestion. Rulebook §4. |
-| 23 | After a title change is applied, internal links elsewhere in the repo may still use the old title as link text | Search the repo (`grep -r`) for internal links whose visible text uses the *old* title and update the link text to match the new title. URL resolution alone is not sufficient — visible link text must describe the current target. Rulebook §8. |
+<!-- Row 23 removed — the title-change link-text sweep is post-fix, not part of the pre-fix scan. It now lives under Step 10 (Apply fixes with reviewer approval). See "Post-fix sweeps" there. -->
 
 **Cross-section consistency scan.** Run these checks in addition to the row-based table. These compare two sections of the same article against each other — section-local scans miss them. Rulebook §11.
 
@@ -209,7 +209,18 @@ Record each finding as: `area | finding | recommendation`.
 
 ### Step 9 — Compile and present the report
 
-**Compact report format.** Do not print a row per rule with "Clean" / "N/A" / "Not present" verdicts. Verbosity has been a real cost — the report surfaces *what needs a decision*, not exhaustive proof of coverage. Coverage is enforced by the row inventory in the Overview table (below), not by expanding every clean rule into a full sub-table.
+#### Coverage discipline (mandatory before composing the report)
+
+Before composing the Overview table or any findings sections, work through each named/numbered rule explicitly. Enumerate:
+
+1. **Dale rules** — one at a time, by name, using the `.yml` files loaded from `.claude/skills/dale/rules/`. Count them; that count is N for the Dale N/N scanned status.
+2. **kb-editing-conventions scan** — walk each row of the scan table by row number. Mark hit/clean for each.
+3. **Cross-section consistency patterns** — walk each of the 5 patterns one at a time. Mark hit/clean for each.
+4. **Derek areas** — walk every area listed in Step 8's areas table (frontmatter sub-fields, article-type, title/H1/sidebar_label, product-names, keywords quality, images, links, formatting, prose-directness). Mark hit/clean for each.
+
+Only after this per-item scratch pass — never before — compose the Overview table and the findings sections. **Skipping the enumeration to write the table first is a coverage regression, however clean the output looks.** The reason the frontmatter sub-field row format catches misses is that it forces the model to account for each sub-field explicitly; the enumeration pass extends that discipline to Dale, the scan-table rows, and the cross-section patterns, where "Clean" and "unscanned" are otherwise visually identical.
+
+**Compact report format.** Do not print a row per rule with "Clean" / "N/A" / "Not present" verdicts. Verbosity has been a real cost — the report surfaces *what needs a decision*, not exhaustive proof of coverage. Coverage is enforced by the discipline above and by the row inventory of the Overview table, not by expanding every clean rule into a full sub-table.
 
 Per-file structure:
 
@@ -231,7 +242,7 @@ Example shape:
 | Check | Status |
 |---|---|
 | Vale | 2 findings |
-| Dale | 3 findings |
+| Dale (N rules) | N/N scanned, 3 findings |
 | Derek — frontmatter: title | see title row below |
 | Derek — frontmatter: description | ✓ Clean |
 | Derek — frontmatter: sidebar_label | 1 required fix |
@@ -246,9 +257,11 @@ Example shape:
 | Derek — links | 1 required fix |
 | Derek — formatting | ✓ Clean |
 | Derek — prose directness | ✓ Clean |
-| kb-editing-conventions scan (rows 1–23) | 2 findings |
-| Cross-section consistency (all patterns) | 1 finding |
+| kb-editing-conventions scan (22 rows) | 22/22 scanned, 2 findings (rows §7, §8) |
+| Cross-section consistency (5 patterns) | 5/5 scanned, 1 finding (product-name repetition) |
 ```
+
+**N/N scanned discipline.** The Dale row, the kb-editing-conventions scan row, and the cross-section consistency row must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "22/22" without having walked all 22 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files.
 
 **2. Findings sections (only for non-clean checks).** For every row in the Overview table whose status is not ✓ Clean, add one short table below listing only the findings that need a decision. One section per tool (Vale / Dale / Derek). Do not add sections for tools that are entirely clean.
 
@@ -333,7 +346,13 @@ After presenting the report, ask the reviewer:
 
 Wait for the reviewer's response. Incorporate any feedback, then apply all fixes to the affected files.
 
-Once fixes are applied, draft a commit message and present it to the reviewer for approval before committing. The commit message should summarize what was fixed and which tools identified the issues (Vale, Dale, Derek). Do not commit until the reviewer approves the message.
+#### Post-fix sweeps
+
+Some checks only make sense *after* fixes have landed. Run these once the fix loop has closed:
+
+- **Title-change → link-text sweep (rulebook §8).** If a title fix was applied to any file, run a repo-wide search for internal markdown links whose visible text uses the *old* title and update the link text to match the new title. URL resolution alone is not sufficient — visible link text must describe the current target. Concrete: `grep -rE '\[<old title>\]\(/docs/' docs/` (adjust for slashes/special chars). Apply the link-text updates as part of the same commit as the title fix.
+
+Once fixes and post-fix sweeps are applied, draft a commit message and present it to the reviewer for approval before committing. The commit message should summarize what was fixed and which tools identified the issues (Vale, Dale, Derek). Do not commit until the reviewer approves the message.
 
 After approval:
 
