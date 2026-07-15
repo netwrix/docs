@@ -20,6 +20,7 @@ This walkthrough is one example based on a test account. You must install and co
 - View Entity Relation Diagram
 - Ready for Development
 - Deploy Changes and Complete the Ticket
+- Change Request Status Bar Transitions
 - Other notable features
 
 ### Create a Jira Ticket
@@ -297,6 +298,29 @@ After completing this section, you can:
 
 ![Jira Forge Change Request NetSuite 2](/images/platgovnetsuite/integrations/jira_forge_itgc_cr_2.webp) 
 - If the Jira status is Done, the Change Request shows as Completed.
+
+### Change Request Status Bar Transitions
+
+The Change Request status transitions can be dynamic based on the current status of the Change Request record. The current status can transition to any of the statuses defined in the status matrix below:
+
+- If the Change Request status is **Not Started** these are the statuses that it can transition to: **In Progress, Pending Approval, Completed, Cancelled**
+
+- If the Change Request status is **In Progress** these are the statuses that it can transition to: **Not Started, Pending Approval, Completed, Cancelled**
+
+- If the Change Request status is **Pending Approval** these are the statuses that it can transition to: **Not Started, In Progress, Approved, Rejected, Completed, Cancelled**
+
+- If the Change Request status is **Approved** these are the statuses that it can transition to: **Not Started, In Progress, Pending Approval, Completed, Cancelled**
+
+- If the Change Request status is **Rejected** these are the statuses that it can transition to: **Not started, In Progress, Pending Approval, Complete, Cancelled**
+
+- If the Change Request status is **Completed** these are the statuses that it can transition to: **Not Started, In Progress, Pending Approval, Approved, Cancelled**
+
+- If the Change Request status is **Cancelled** these are the statuses that it can transition to: **Not Started, In Progress, Pending Approval, Completed**
+
+- If the Change Request status is **Approved Override** these are the statuses that it can transition to: **Not Started, In Progress, Pending Approval, Completed, Cancelled**
+
+Please **DO NOTE** that **IF** the statuses mentioned above is **NOT** mapped as defined in [Set up Jira Status Mapping](/docs/platgovnetsuite/ticketingintegrations/jiraforgeintegration/jira_forge_set_up#set-up-jira-status-mapping), the transition cannot proceed. Please review the status mapping carefully.
+
 
 ### Other notable features
 
