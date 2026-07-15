@@ -30,7 +30,7 @@ The agent cannot connect to the Netwrix Change Tracker Hub Server, and the rolli
 
 ```text
 2017-07-10 19:49:59,891 [1] ERROR ConfigurationLoader - Hub location details have not been specified. 
-Please edit the following file to specify hub location and account details: /var/nnt/gen7agent.service/HubDetails.xml
+Please edit the following file to specify hub location and account details: C:\ProgramData\NNT\gen7agent.app.netcore\HubDetails.xml
 ```
 
 ## Cause
@@ -39,48 +39,41 @@ The agent could not locate the `HubDetails.xml` file, which tells the agent how 
 
 ## Resolution
 
-If you receive this error, the Netwrix Change Tracker Agent is not reporting to the hub. This is a critical error, and you must resolve it for monitoring to continue. To resolve this error:
+If you receive this error, the Netwrix ChangeTracker Gen7 Agent NetCore is not reporting to the hub. This is a critical error, and you must resolve it for monitoring to continue. To resolve this error:
 
-1. Stop the Netwrix Change Tracker Agent Service.
-2. Run the Netwrix Change Tracker Connection Script by issuing the following command, then complete the requested details:
+1. Stop the Netwrix ChangeTracker Gen7 Agent NetCore Service.
+2. Navigate to C:\ProgramData\NNT\gen7agent.app.netcore.
+3. Modify the `HubDetails.xml` file. (A known good `HubDetails.xml` example is shown at the bottom of the article).
+4. Modify the `<Url>` and insert your URL in its place.
+5. Modify the `<Username>` and insert your user account name in its place.
+6. Replace the `<Password />` and `<E1>` tags (which contain the encrypted agent password) with `<Password></Password>`.
+8. Modify the `<Password>` and insert your user account pasword in its place.
 
-   ```bash
-   sudo sh /opt/nnt/gen7agent/configure-gen7agent.sh
-   ```
-3. Start the Service.
-
-If the preceding steps do not work:
-
-1. Stop the Netwrix Change Tracker Agent Service.
-2. Navigate to the Netwrix Change Tracker Agent directory that contains the [Rolling-Log files](pathname:///docs/changetracker/8_2/install/agent/rollinglogfile).
-3. Modify the `HubDetails.xml` file. A known good `HubDetails.xml` example is shown in the following section.
-4. Modify the `HubURL` and insert your URL in its place.
-5. Replace the existing `<Password>` tags (which contain the encrypted agent password, if any) with the password tags shown in the following example. 
-6. Enter your Agent Account password (as defined on the Netwrix Change Tracker Hub Server) between them. The default password is used as an example.
-7. Between the `Thumbprint` entries, enter your custom certificate thumbprint if you have one. If you do not have a custom certificate and are using the default, leave it blank.
-8. Save the file, replacing the old one.
+    > **NOTE:** At a minimum, the agent only requires the Hub's URL, an agent user and password in order to connect to Change Tracker. However, if your environment requires a proxy, proxy credentials, certificate thumbprints and/or plublic key strings, you can what is required by reviewing the HubDetails.xml file of an agent that is already installed on another server and is successfully connected to Change Tracker.
+    
+9. Once the HubDetails.xml file has been configured, save the file, replacing the old version.
 
     > **NOTE:** You may need to save this to the desktop and copy and paste it back, replacing the old file in the directory.
 
-9. Restart the agent service.
-
-> **IMPORTANT:** When you start the service, the agent automatically re-encrypts your password, and the E1 tags replace the password tags. There is also a ten-minute cool-off when this happens. Now that the username and password have been corrected, the agent should register after the ten minutes have elapsed. This cool-off period is counted at the Netwrix Change Tracker Hub Server and does not take effect at the agent level. If you have stopped the service, you do not have to wait 10 minutes after restarting it.
+10. Start the Netwrix ChangeTracker Gen7 Agent NetCore Service.
 
 ### Example HubDetails.xml
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <HubDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-       <Url>https://myserver.mydomain.local/api</Url>
-       <Username>agent</Username>
-       <Password><YourAgentPassword></Password>
-       <Proxy />
-       <ProxyDomain />
-       <ProxyUsername />
-       <ProxyPassword />
-       <UseDefaultProxy>false</UseDefaultProxy>
-       <NamePrefix></NamePrefix>
-       <NameSuffix></NameSuffix>
-       <Thumbprint>BCD1067FBAB59CCED21786657C672F6AB5BE824C</Thumbprint>
+  <Url>https://SERVER-HERE/api/</Url>
+  <Username>USER-HERE</Username>
+  <Password>PASSWORD-HERE</Password>
+  <Proxy />
+  <ProxyDomain />
+  <ProxyUsername />
+  <ProxyPassword />
+  <UseDefaultProxy>false</UseDefaultProxy>
+  <NamePrefix />
+  <NameSuffix />
+  <UseDeterministicGuid>false</UseDeterministicGuid>
+  <Thumbprint />
+  <PublicKeyString />
 </HubDetails>
 ```
