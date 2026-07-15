@@ -265,6 +265,8 @@ Example shape:
 
 **N/N scanned discipline.** The Dale row, the kb-editing-conventions scan row, and the cross-section consistency row must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "22/22" without having walked all 22 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files.
 
+**Count-consistency discipline (arithmetic check).** Whenever a status cell shows a total finding count *and* a parenthetical breakdown (e.g., `10/10 scanned, 5 findings (passive-voice ×2, undefined-acronyms ×3)`), the top-line total must equal the sum of the breakdown counts. `2 findings (passive-voice ×2, undefined-acronyms ×3)` is a bug — that's 5, not 2. Same rule applies to every row that shows a breakdown: Vale, Dale, Derek, the scan-table row, cross-section row. Additionally, the number of rows in each findings section table below must equal the count claimed by the corresponding Overview row. Do the arithmetic before writing the row; do not paper over a mismatch by picking one number and hoping the reader doesn't add.
+
 **2. Findings sections (only for non-clean checks).** For every row in the Overview table whose status is not ✓ Clean, add one short table below listing only the findings that need a decision. One section per tool (Vale / Dale / Derek). Do not add sections for tools that are entirely clean.
 
 - Vale columns: `Line | Rule | Severity | Finding`
