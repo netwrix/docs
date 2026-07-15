@@ -802,7 +802,13 @@ function SearchPageContent() {
                                     fontWeight: '500',
                                 }}
                             >
-                                {documentsFoundPlural(searchResultState.totalMatches)}
+                                {/* Algolia caps pagination (paginationLimitedTo, ~1000 hits) and
+                                    nbHits is an estimate, so when more match than are reachable, say
+                                    so instead of implying every match can be paged to. */}
+                                {searchResultState.totalPages * resultsPerPage < searchResultState.totalMatches
+                                    ? `Showing the top ${(searchResultState.totalPages * resultsPerPage).toLocaleString()} of ${searchResultState.totalMatches.toLocaleString()} matches — refine your search to narrow results`
+                                    : documentsFoundPlural(searchResultState.totalMatches)
+                                }
                             </div>
                         )}
                     </div>{/* closes controls div */}
