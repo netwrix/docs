@@ -171,7 +171,7 @@ Do NOT flag contractions, heading case, passive voice, jargon, or undefined acro
 | # | Scan pattern | What to flag / fix |
 |---|--------------|--------------------|
 | 1 | `:::note`/`:::important`/`:::warning`/`:::tip` or `> **NOTE:**` / `> **IMPORTANT:**` / `> **WARNING:**` blockquote inside a numbered list item | The callout must be indented **4 spaces** to attach to the preceding step. Fewer than 4 spaces breaks the list at CommonMark render time — this is a build-breaker, not a style nit. |
-| 2 | `## Overview` that restates the title or reads as a bare symptom/condition | Rewrite to pull sourced facts from product docs and state the goal (`This article describes how to...`). |
+| 2 | `## Overview` that opens with rationale/context rather than an explicit goal sentence, OR restates the title verbatim, OR reads as a bare symptom/condition | Rewrite so the first sentence states the goal: `This article describes how to <goal>` or equivalent (`explains...`, `shows how to...`). Rationale/context is fine as follow-on, but must not come first. |
 | 3 | Literal string `<!-- link removed -->` in the article body | Search `docs/kb/**/*.md` and `docs/<product>/<version>/**/*.md` for a plausible target before shipping. If a real target exists, restore the cross-link; otherwise leave the comment and note it as unresolved. |
 | 4 | Same UI element or app name bolded in some places and unbolded in others within the same file | Normalize to consistent bolding across all occurrences in that article. |
 | 5 | Trailing periods inside markdown table cells | Strip them. Vale and Dale skip table content, so these slip through unless caught here. |
@@ -215,7 +215,7 @@ Record each finding as: `area | finding | recommendation`.
 
 Before composing the Overview table or any findings sections, work through each named/numbered rule explicitly. Enumerate:
 
-1. **Dale rules** — one at a time, by name, using the `.yml` files loaded from `.claude/skills/dale/rules/`. Count them; that count is N for the Dale N/N scanned status.
+1. **Dale rules** — anchor the total N with a real shell command *before* the scratch pass, not model recall: `ls .claude/skills/dale/rules/*.yml | wc -l`. Use that number verbatim in the Dale row's `N/N scanned` status. Then walk each rule file by name, one at a time, marking hit/clean. If the number of rules you walk differs from N from the shell command, that's the bug surfacing — do NOT silently reconcile by lowering N to match what you enumerated. Fix the scratch pass so all N are covered.
 2. **kb-editing-conventions scan** — walk each row of the scan table by row number. Mark hit/clean for each.
 3. **Cross-section consistency patterns** — walk each of the 5 patterns one at a time. Mark hit/clean for each.
 4. **Derek areas** — walk every area listed in Step 8's areas table (frontmatter sub-fields, article-type, title/H1/sidebar_label, product-names, keywords quality, images, links, formatting, prose-directness). Mark hit/clean for each.

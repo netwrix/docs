@@ -74,8 +74,9 @@ All three are `###` siblings under `## Instructions`, but `Troubleshooting` is a
 
 ## 7. Overview quality
 
-- **Never let Overview restate the title** or read as a symptom/condition.
-- **Pull concrete, sourced facts** from product docs, then state the goal: "This article describes how to..."
+- **Overview must open with the goal.** The first sentence states what the article does — canonical form is `This article describes how to <goal>` or an equivalent explicit-goal opener (`This article explains...`, `This article shows how to...`). Stating rationale (why the reader might want to do the thing) or context (background on the feature) without a leading goal sentence is NOT sufficient — flag as a Required rewrite. Goal-first framing is what tells the reader "yes, this is the article for what I need to do"; rationale-first buries that signal.
+- **Never let Overview restate the title** verbatim, or read as a symptom/condition.
+- **Pull concrete, sourced facts** from product docs to expand beyond the goal sentence when there's substance to add.
 - **Link to product-doc background** where it exists (pathname://...) instead of just defining a term inline.
 
 ## 8. Links
