@@ -30,6 +30,12 @@ This article describes how to back up MongoDB, restore MongoDB, or set up a new 
 
 ## Instructions
 
+## Pre-Requisites - 
+
+1. Download MongoDB Shell Tool (https://www.mongodb.com/try/download/shell)
+2. Download MongoDB Command Line Tools (https://www.mongodb.com/try/download/database-tools)
+3. Extract each of these into the MongoDB Bin folder (C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin)
+
 ### Step 1 — Back Up the MongoDB Database
 
 1. Connect to the server that hosts your Netwrix Change Tracker software via RDP.
@@ -39,7 +45,9 @@ This article describes how to back up MongoDB, restore MongoDB, or set up a new 
    - `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`
    - `mongodump.exe -d NNTHubService -o C:\MongoDump --gzip`
 
-<!-- Image removed: Command Prompt output from running mongodump.exe against NNTHubService with --gzip -->
+<img width="1256" height="209" alt="image" src="https://github.com/user-attachments/assets/e6047d12-1326-4890-8a31-1d2a25c73cdd" />
+
+<img width="1255" height="273" alt="image" src="https://github.com/user-attachments/assets/8d524a31-3a32-4269-9399-c00395d698e3" />
 
 Copy the following folders and transfer them to the new server:
 
@@ -51,9 +59,6 @@ Copy the following folders and transfer them to the new server:
 
 1. Connect to the server where Netwrix Change Tracker will be installed via RDP.
 2. Run the **Change Tracker** installer and install the same version that you used on the old server.
-3. On the **Database Storage Engine** step, select the same storage engine used on the old server. If you are unsure which engine to select, contact [Netwrix Support](https://www.netwrix.com/support.html).
-
-<!-- Image removed: Change Tracker installer Database Storage Engine step showing the storage engine option -->
 
 ### Step 3 — Restore the MongoDB Database
 
@@ -70,7 +75,7 @@ These steps apply whether you are restoring to an existing server or moving to a
    - `sc start MongoDB`
    - `mongorestore.exe C:\MongoDump\NNTHubService -d NNTHubService --gzip`
 
-<!-- Image removed: Command Prompt output from running mongorestore.exe against the MongoDump folder -->
+<img width="976" height="512" alt="image" src="https://github.com/user-attachments/assets/10e4c2b9-7ae0-47ba-b1b4-0877be9a0681" />
 
 ### Step 4 — Finish the Restore
 
@@ -103,7 +108,7 @@ If you see the following error on the **Settings** screen, follow the troublesho
 3. Close the Command Prompt window.
 4. Confirm that you can log in to Netwrix Change Tracker.
 
-<!-- Image removed: Mongo shell output confirming the RemoteCredentials password reset command completed -->
+<img width="974" height="511" alt="image" src="https://github.com/user-attachments/assets/e4124dcc-b3f7-4311-b4e5-465abca59183" />
 
 > **NOTE:** If you changed the admin user's password on the old server, that password still works.
 
@@ -123,3 +128,6 @@ If this does not resolve the issue and you still see the `Key not valid in speci
    - `exit`
    - `iisreset /start`
 3. Close the Command Prompt window.
+
+<img width="976" height="509" alt="image" src="https://github.com/user-attachments/assets/3be061b1-67b9-4a0a-89be-3e9fbf169afb" />
+
