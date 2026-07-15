@@ -215,7 +215,15 @@ Per-file structure:
 
 **1. Overview table (always).** A compact table listing every check category and its status — findings count or ✓ Clean. Clean verdicts live only here; they do not reappear in the sections below.
 
-Every Derek area must appear as its own row: frontmatter, article-type, title/H1/sidebar_label, product-names, keywords quality, images, links, formatting, prose-directness. Plus one row for the kb-editing-conventions scan and one for the cross-section consistency scan. That row inventory is the coverage receipt.
+**Rows required on every file:**
+
+- One row per Vale, Dale.
+- **Frontmatter sub-fields — one row each:** `title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`. Every sub-field must appear as its own row on every file, with an explicit ✓ Clean or a findings count. A single "Derek — frontmatter | 2 required fixes" row hides sub-field misses (e.g., a missing `kb` tag going unflagged because two other sub-fields already filled the count). Sub-field rows make coverage visually auditable at a glance.
+- One row per other Derek area: `article-type / structure`, `title / H1 / sidebar_label`, `product-names`, `images`, `links`, `formatting`, `prose directness`.
+- One row for the `kb-editing-conventions scan (rows 1–23)`.
+- One row for `Cross-section consistency (all patterns)`.
+
+That row inventory is the coverage receipt.
 
 Example shape:
 
@@ -223,18 +231,23 @@ Example shape:
 | Check | Status |
 |---|---|
 | Vale | 2 findings |
-| Dale | 2 findings |
-| Derek — frontmatter | 3 required fixes |
-| Derek — title / H1 / sidebar_label | 1 required fix |
-| Derek — links | 1 required fix |
+| Dale | 3 findings |
+| Derek — frontmatter: title | see title row below |
+| Derek — frontmatter: description | ✓ Clean |
+| Derek — frontmatter: sidebar_label | 1 required fix |
+| Derek — frontmatter: keywords | ✓ Clean |
+| Derek — frontmatter: products | 1 required fix |
+| Derek — frontmatter: tags | 1 required fix (missing `kb`) |
+| Derek — frontmatter: knowledge_article_id | ✓ Clean |
 | Derek — article-type / structure | ✓ Clean |
+| Derek — title / H1 / sidebar_label | 1 required fix |
 | Derek — product-names | ✓ Clean |
-| Derek — keywords quality | ✓ Clean |
-| Derek — images | ✓ Clean |
+| Derek — images | 1 required fix |
+| Derek — links | 1 required fix |
 | Derek — formatting | ✓ Clean |
 | Derek — prose directness | ✓ Clean |
-| kb-editing-conventions scan (rows 1–23) | ✓ Clean |
-| Cross-section consistency (all patterns) | ✓ Clean |
+| kb-editing-conventions scan (rows 1–23) | 2 findings |
+| Cross-section consistency (all patterns) | 1 finding |
 ```
 
 **2. Findings sections (only for non-clean checks).** For every row in the Overview table whose status is not ✓ Clean, add one short table below listing only the findings that need a decision. One section per tool (Vale / Dale / Derek). Do not add sections for tools that are entirely clean.
@@ -390,7 +403,7 @@ Note: this approval counts toward branch protection requirements in `netwrix/doc
 
 ## Output rules
 
-- **Overview table is the coverage receipt.** Every Derek area, plus the two scan groups, must appear as a row on every file — with either a findings count or ✓ Clean. This is where coverage is enforced, not by expanding "Clean" verdicts into full sub-tables.
+- **Overview table is the coverage receipt.** Every frontmatter sub-field (`title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`), every other Derek area, and the two scan groups must appear as their own row on every file — with either a findings count or ✓ Clean. A single collapsed "frontmatter" row is NOT sufficient; it hides sub-field misses. This is where coverage is enforced, not by expanding "Clean" verdicts into full sub-tables.
 - **Findings sections omit clean checks entirely.** For a tool that fired no findings, no findings section appears — the Overview row is sufficient. Do NOT include "✅ No X violations" placeholder sections in the findings area.
 - **No rule-by-rule "Clean" / "N/A" / "Not present" rows** in findings sections. Do not print a per-rule table showing which rules found nothing. If more granular coverage is needed for debugging, use `+ verbose` on invocation (future).
 - **No filler sentences confirming what wasn't found** (e.g., "No hits for minimizing-difficulty, idioms, ..."). If the Overview row says ✓ Clean, that's the whole statement.
