@@ -205,6 +205,16 @@ Account) in the Password box.
 
 Step 18 – Provide password for the Directory Manager Administrator account in the **Password** box.
 
+:::note Password Requirements
+The Directory Manager Administrator password must meet the following complexity requirements:
+- Be at least **16 characters** in length
+- Contain at least **3 out of 4** of the following:
+  - At least one uppercase letter (A-Z)
+  - At least one lowercase letter (a-z)
+  - At least one digit (0-9)
+  - At least one special character (`!@#$%^&*?_~-£().,`)
+:::
+
 Step 19 – Click **Configure**.
 
 ![Configuring GroupID page](/images/directorymanager/11.1/install/configure/configuring.webp)
