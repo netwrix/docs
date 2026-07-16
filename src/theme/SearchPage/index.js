@@ -16,6 +16,7 @@ import {useAlgoliaThemeConfig, useSearchResultUrlProcessor} from '@docusaurus/th
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import {PRODUCTS} from '../../config/products';
+import {getVersionsForProducts, dedupeToLatestVersion} from '../searchUtils';
 
 // Safely strip HTML tags to plain text
 function stripHtmlTagsToText(input) {
@@ -30,19 +31,6 @@ function stripHtmlTagsToText(input) {
     // Fallback for non-DOM environments (SSR): remove all angle brackets to prevent tags
     // This avoids multi-character tag patterns and ensures no HTML elements can be formed.
     return input.replace(/[<>]/g, '');
-}
-
-// Helper to get versions for selected products
-function getVersionsForProducts(selectedProducts) {
-    const versionsSet = new Set();
-    const isAll = !selectedProducts || selectedProducts.length === 0 || selectedProducts.includes('__all__');
-    const source = isAll ? PRODUCTS : selectedProducts.map(name => PRODUCTS.find(p => p.name === name)).filter(Boolean);
-    source.forEach(product => {
-        if (product.versions) {
-            product.versions.forEach(v => versionsSet.add(v.version));
-        }
-    });
-    return Array.from(versionsSet).sort();
 }
 
 // Generate product options from PRODUCTS config
@@ -451,7 +439,7 @@ function SearchPageContent() {
     // restored ?page=N overshoots the result set. A ref breaks the definition cycle.
     const makeSearchRef = useRef(null);
 
-    const handleResult = useCallback(({results: {query, hits, nbHits, page, nbPages}}) => {
+    const handleResult = useCallback(({results: {query, hits, nbHits, page, nbPages}, state}) => {
         if (query === '' || !Array.isArray(hits)) {
             searchResultStateDispatcher({type: 'reset'});
             return;
@@ -470,7 +458,15 @@ function SearchPageContent() {
         const sanitizeValue = (value) =>
             value.replace(/algolia-docsearch-suggestion--highlight/g, 'search-result-match');
 
-        const items = hits.map(({url, _highlightResult: {hierarchy}, _snippetResult: snippet = {}, product_name, product_version}) => {
+        // makeSearch enforces the activation rule, so a product_version facet on this
+        // request means a real version filter was active (R3) — de-dupe off. Gating on
+        // the response's own request state (not current UI state) means a filter change
+        // with a response in flight can never mis-gate de-dupe.
+        const versionFilterActive = (state.facetFilters || []).some(
+            (f) => (Array.isArray(f) ? f : [f]).some((x) => String(x).startsWith('product_version:')));
+        const pageHits = versionFilterActive ? hits : dedupeToLatestVersion(hits);
+
+        const items = pageHits.map(({url, _highlightResult: {hierarchy}, _snippetResult: snippet = {}, product_name, product_version}) => {
             const levels = Object.keys(hierarchy).map((key) => sanitizeValue(hierarchy[key].value));
 
             return {
@@ -521,7 +517,9 @@ function SearchPageContent() {
                 facetFilters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
             }
 
-            const realVersions = selectedVersions.filter(v => v !== '__all__');
+            // A version filter is only active while a product filter is active — stale
+            // URL/sessionStorage versions must not silently filter while the panel is hidden.
+            const realVersions = realProducts.length > 0 ? selectedVersions.filter(v => v !== '__all__') : [];
             if (realVersions.length > 0) {
                 facetFilters.push(realVersions.map(v => `product_version:${v}`)); // Array within array = OR logic
             }
@@ -568,7 +566,8 @@ function SearchPageContent() {
             if (searchQuery) params.set('q', searchQuery);
             const urlProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
             if (urlProducts.length > 0) params.set('products', urlProducts.join(','));
-            const urlVersions = selectedVersions.filter(v => v !== '__all__');
+            // Same activation rule as makeSearch: never advertise a version filter the UI doesn't show.
+            const urlVersions = urlProducts.length > 0 ? selectedVersions.filter(v => v !== '__all__') : [];
             if (urlVersions.length > 0) params.set('versions', urlVersions.join(','));
             if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
             if (currentPage > 1) params.set('page', String(currentPage));

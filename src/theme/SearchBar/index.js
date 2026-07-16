@@ -16,6 +16,7 @@ import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import translations from '@theme/SearchTranslations';
 import {PRODUCTS} from '../../config/products';
+import {getVersionsForProducts, dedupeToLatestVersion} from '../searchUtils';
 
 let DocSearchModal = null;
 
@@ -198,11 +199,16 @@ function ungroup(items) {
     });
 }
 
-function useTransformItems() {
+function useTransformItems(selectedVersionsRef) {
     const processSearchResultUrl = useSearchResultUrlProcessor();
-    const [transformItems] = useState(() => {
-        return (items) =>
-            ungroup(items.map((item) => ({...item, url: processSearchResultUrl(item.url)})));
+    const [transformItems] = useState(() => (items) => {
+        const mapped = items.map((item) => ({...item, url: processSearchResultUrl(item.url)}));
+        // Modal version state never holds the '__all__' sentinel (MultiSelectDropdown
+        // maps the All toggle to []) and can't hold versions without a product
+        // (filters reset on open; onChangeProducts prunes orphan versions), so
+        // non-empty means a real version filter is active — de-dupe off (R3).
+        const versionFilterActive = (selectedVersionsRef.current || []).length > 0;
+        return ungroup(versionFilterActive ? mapped : dedupeToLatestVersion(mapped));
     });
     return transformItems;
 }
@@ -281,6 +287,18 @@ function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef
     );
 }
 
+// DocSearch 4.6.3 replaces its default attributesToRetrieve wholesale when
+// searchParameters provides one, so the defaults must be re-listed here.
+// product_name/product_version are what dedupeToLatestVersion keys on.
+// Re-verify this list against DocSearch's defaults on any @docsearch/react
+// bump (same caveat as ungroup()).
+const ATTRIBUTES_TO_RETRIEVE = [
+    'hierarchy.lvl0', 'hierarchy.lvl1', 'hierarchy.lvl2', 'hierarchy.lvl3',
+    'hierarchy.lvl4', 'hierarchy.lvl5', 'hierarchy.lvl6',
+    'content', 'type', 'url',
+    'product_name', 'product_version',
+];
+
 function useSearchParameters({contextualSearch, productFacetFilters = [], ...props}) {
     function mergeFacetFilters(f1, f2) {
         const normalize = (f) => (typeof f === 'string' ? [f] : f);
@@ -317,6 +335,7 @@ function useSearchParameters({contextualSearch, productFacetFilters = [], ...pro
     return useMemo(() => ({
         ...props.searchParameters,
         facetFilters,
+        attributesToRetrieve: ATTRIBUTES_TO_RETRIEVE,
     }), [
         contextualSearch,
         JSON.stringify(facetFilters),
@@ -338,21 +357,6 @@ const PRODUCT_OPTIONS = [
     if (b.value === '__all__') return 1;
     return a.label.localeCompare(b.label);
 });
-
-// Helper to get versions for selected products
-function getVersionsForProducts(selectedProducts) {
-    if (!selectedProducts || selectedProducts.length === 0 || selectedProducts.includes('__all__')) {
-        return [];
-    }
-    const versionsSet = new Set();
-    selectedProducts.forEach(productName => {
-        const product = PRODUCTS.find(p => p.name === productName);
-        if (product && product.versions) {
-            product.versions.forEach(v => versionsSet.add(v.version));
-        }
-    });
-    return Array.from(versionsSet).sort();
-}
 
 // Multi-select dropdown component with checkboxes
 function MultiSelectDropdown({label, options, selectedValues, onChange, placeholder}) {
@@ -480,7 +484,7 @@ function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProduct
     // Keep searchParameters stable - don't include product filters here
     // Product filters are injected at request time via transformSearchClient
     const searchParameters = useSearchParameters({...props, productFacetFilters: []});
-    const transformItems = useTransformItems();
+    const transformItems = useTransformItems(selectedVersionsRef);
     const transformSearchClient = useTransformSearchClient(selectedProductsRef, selectedVersionsRef, currentLocale);
     const searchContainer = useRef(null);
     const searchButtonRef = useRef(null);
@@ -779,13 +783,17 @@ export default function SearchBar() {
                                 onChange={onChangeProducts}
                                 placeholder="All products"
                             />
-                            <MultiSelectDropdown
-                                label="Versions"
-                                options={availableVersions}
-                                selectedValues={selectedVersions}
-                                onChange={onChangeVersions}
-                                placeholder="All versions"
-                            />
+                            {/* availableVersions always holds the '__all__' sentinel at index 0,
+                                so length > 1 means a specific product is selected (R2). */}
+                            {availableVersions.length > 1 && (
+                                <MultiSelectDropdown
+                                    label="Versions"
+                                    options={availableVersions}
+                                    selectedValues={selectedVersions}
+                                    onChange={onChangeVersions}
+                                    placeholder="All versions"
+                                />
+                            )}
                         </div>
                         {/* Our own close button — replaces the DocSearch-Close button
                             (which is hidden via CSS) so we avoid mutating React-owned
