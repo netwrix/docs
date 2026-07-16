@@ -27,18 +27,18 @@ Follow the instructions to enable SIEM notifications.
     - TCP
 - Port – The port of the SIEM server.
 - Template – Select the template you want from the dropdown list
+  - **CEF template** – Common Event Format, with a standard syslog date/host prefix
+  - **ISO CEF template** – Common Event Format, with an ISO 8601 timestamp prefix
+  - **Raw CEF template** – Common Event Format, with no date/host prefix (use when your syslog transport or collector already adds its own framing)
+  - **CEF rsyslog template** – Common Event Format, with an rsyslog-compatible timestamp (no colon separator in the date)
+  - **LEEF template** – Log Event Extended Format, used by SIEMs such as IBM QRadar
+  - **Custom template** – An editable starting point (based on the LEEF layout) for building a customer-specific format
+   
+    :::note
+    You can implement only one custom template.
+    :::
 
-    - LEEF template – Threat data is sent to the SIEM application in the standard LEEF format
-    - CEF template – Threat data is sent to the SIEM application in the standard CEF format
-    - Custom template – Threat data is sent to the SIEM application in a customized format
-
-        :::note
-        You can implement only one custom template.
-        :::
-
-
-    - Notification template – Threat data is sent to the SIEM application in a basic notification
-      format:
+  - **Notification template** – A simple pipe-delimited format used for generic notifications, not threat events
 
     `%SYSLOG_DATE%|%HOST%|%COMPANY%|%PRODUCT%|%PRODUCT_VERSION%|%MESSAGE_TYPE%|%MESSAGE%`
 
