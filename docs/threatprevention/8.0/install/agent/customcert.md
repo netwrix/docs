@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Create Custom Managed Certificates for Each Agent
 
-If "custom-managed" is selected for the CA certificate configuration during
-[Manual Agent Deployment](/docs/threatprevention/7.5/install/agent/manual/manual.md), use the `SIAgentCert.exe` command line utility to facilitate
+Use the `SIAgentCert.exe` command line utility to facilitate
 the creation of certificates for each Agent.
 
 :::note
@@ -22,7 +21,7 @@ following:
 - Agent
 
 See the
-[Administration Console and Agent Not Communicating with the Enterprise Manager ](/docs/threatprevention/7.5/troubleshooting/enterprisemanagercommunication.md)topics
+[Administration Console and Agent Not Communicating with the Enterprise Manager ](/docs/threatprevention/8.0/troubleshooting/enterprisemanagercommunication.md)topics
 for additional information.
 
 The `SIAgentCert.exe` utility is located in the following folder:
@@ -51,8 +50,7 @@ certificate authority to create a signed file.
 :::
 
 
-**Step 3 –** Copy the `agent-crt.pem` file created and signed by the customer's certificate
-authority to the CertsInfo folder on the machine where the Agent is deployed:
+**Step 3 –** Copy the `agent-crt.pem` file created and signed by the customer's certificate authority to the CertsInfo folder on the machine where the Agent is deployed:
 
 `…\Netwrix\Netwrix Threat Prevention\SIWindowsAgent\CertsInfo`
 
@@ -70,6 +68,6 @@ Console. Upgrades and configuration changes will continue to use the existing ce
 :::
 
 
-See the [Upgrade Procedure](/docs/threatprevention/7.5/install/upgrade/overview.md) topic for upgrade considerations. See the
-[Upgrade Agent](/docs/threatprevention/7.5/install/upgrade/agent.md) topic for instructions on upgrading an Agent from the
+See the [Upgrade Procedure](/docs/threatprevention/8.0/install/upgrade/overview.md) topic for upgrade considerations. See the
+[Upgrade Agent](/docs/threatprevention/8.0/install/upgrade/agent.md) topic for instructions on upgrading an Agent from the
 Administration Console.
