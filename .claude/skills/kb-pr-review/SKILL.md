@@ -217,7 +217,7 @@ Before composing the Overview table or any findings sections, work through each 
 
 1. **Dale rules** — anchor the total N with a real shell command *before* the scratch pass, not model recall: `ls .claude/skills/dale/rules/*.yml | wc -l`. Use that number verbatim in the Dale row's `N/N scanned` status. Then walk each rule file by name, one at a time, marking hit/clean. If the number of rules you walk differs from N from the shell command, that's the bug surfacing — do NOT silently reconcile by lowering N to match what you enumerated. Fix the scratch pass so all N are covered.
 2. **kb-editing-conventions scan** — walk each row of the scan table by row number. Mark hit/clean for each.
-3. **Cross-section consistency patterns** — walk each of the 5 patterns one at a time. Mark hit/clean for each.
+3. **Cross-section consistency patterns** — walk each of the 6 patterns one at a time. Mark hit/clean for each.
 4. **Derek areas** — walk every area listed in Step 8's areas table (frontmatter sub-fields, article-type, title/H1/sidebar_label, product-names, keywords quality, images, links, formatting, prose-directness). Mark hit/clean for each.
 
 Only after this per-item scratch pass — never before — compose the Overview table and the findings sections. **Skipping the enumeration to write the table first is a coverage regression, however clean the output looks.** The reason the frontmatter sub-field row format catches misses is that it forces the model to account for each sub-field explicitly; the enumeration pass extends that discipline to Dale, the scan-table rows, and the cross-section patterns, where "Clean" and "unscanned" are otherwise visually identical.
@@ -260,7 +260,7 @@ Example shape:
 | Derek — formatting | ✓ Clean |
 | Derek — prose directness | ✓ Clean |
 | kb-editing-conventions scan (22 rows) | 22/22 scanned, 2 findings (rows §7, §8) |
-| Cross-section consistency (5 patterns) | 5/5 scanned, 1 finding (product-name repetition) |
+| Cross-section consistency (6 patterns) | 6/6 scanned, 1 finding (product-name repetition) |
 ```
 
 **N/N scanned discipline.** The Dale row, the kb-editing-conventions scan row, and the cross-section consistency row must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "22/22" without having walked all 22 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files.
