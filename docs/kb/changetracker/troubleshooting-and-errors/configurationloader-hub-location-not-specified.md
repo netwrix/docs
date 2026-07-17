@@ -41,21 +41,21 @@ The agent could not locate the `HubDetails.xml` file, which tells the agent how 
 
 If you receive this error, the Netwrix ChangeTracker Gen7 Agent NetCore is not reporting to the hub. This is a critical error, and you must resolve it for monitoring to continue. To resolve this error:
 
-1. Stop the Netwrix ChangeTracker Gen7 Agent NetCore Service.
-2. Navigate to C:\ProgramData\NNT\gen7agent.app.netcore.
+1. Stop the **Netwrix ChangeTracker Gen7 Agent NetCore Service**.
+2. Navigate to `C:\ProgramData\NNT\gen7agent.app.netcore`.
 3. Modify the `HubDetails.xml` file. (A known good `HubDetails.xml` example is shown at the bottom of the article).
 4. Modify the `<Url>` and insert your URL in its place.
 5. Modify the `<Username>` and insert your user account name in its place.
 6. Replace the `<Password />` and `<E1>` tags (which contain the encrypted agent password) with `<Password></Password>`.
-8. Modify the `<Password>` and insert your user account pasword in its place.
+7. Modify the `<Password>` and insert your user account password in its place.
 
-    > **NOTE:** At a minimum, the agent only requires the Hub's URL, an agent user and password in order to connect to Change Tracker. However, if your environment requires a proxy, proxy credentials, certificate thumbprints and/or plublic key strings, you can what is required by reviewing the HubDetails.xml file of an agent that is already installed on another server and is successfully connected to Change Tracker.
-    
-9. Once the HubDetails.xml file has been configured, save the file, replacing the old version.
+    > **NOTE:** At a minimum, the agent only requires the Hub's URL, an agent user and password in order to connect to Change Tracker. However, if your environment requires a proxy, proxy credentials, certificate thumbprints, and/or public key strings, you can determine what is required by reviewing the HubDetails.xml file of an agent that is already installed on another server and is successfully connected to Change Tracker.
+
+8. Once the HubDetails.xml file has been configured, save the file, replacing the old version.
 
     > **NOTE:** You may need to save this to the desktop and copy and paste it back, replacing the old file in the directory.
 
-10. Start the Netwrix ChangeTracker Gen7 Agent NetCore Service.
+9. Start the **Netwrix ChangeTracker Gen7 Agent NetCore Service**.
 
 ### Example HubDetails.xml
 

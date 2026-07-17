@@ -45,29 +45,29 @@ This problem occurs when a device that has the same name as an already registere
 
 Follow these steps:
 
-1. Stop the Netwrix ChangeTracker Gen7 Agent NetCore Service.
-2. Browse to C:\ProgramData\NNT\gen7agent.app.netcore folder.
+1. Stop the **Netwrix ChangeTracker Gen7 Agent NetCore Service**.
+2. Browse to the `C:\ProgramData\NNT\gen7agent.app.netcore` folder.
 3. Open the `rolling-log.txt` file and search for an error that looks like the following example: `Hub connection failed (500 Error, requested Agent name is in use by device with uniqueId: 123456a6-ffee-78a9-927e-34921d59ce64)`.
 4. If you can find the error message, the information you require is the `uniqueId: 123456a6-ffee-78a9-927e-34921d59ce64)` value.
 5. Open the `agent.id` file stored in `C:\ProgramData\NNT\gen7agent.app.netcore` using Notepad. Erase the uniqueId currently in that file and paste in the uniqueId identified in the previous step (123456a6-ffee-78a9-927e-34921d59ce64). Ensure there are no spaces at the beginning or end of the text string.
 6. Close and save the `agent.id` file.
-7. Start the Netwrix ChangeTracker Gen7 Agent NetCore Service.
+7. Start the **Netwrix ChangeTracker Gen7 Agent NetCore Service**.
 
- This should resolve the uniqueId conflict and the device should now be registered on Change Tracker successfully.
+This should resolve the uniqueId conflict and the device should now be registered on Change Tracker successfully.
 
 ### For RHEL/CentOS Linux-Based OS
 
 Follow these steps:
 
-1. Stop the Netwrix ChangeTracker Gen7 Agent NetCore Service.
-2. Browse to /var/nnt/gen7agent.app.netcore folder.
+1. Stop the **Netwrix ChangeTracker Gen7 Agent NetCore Service**.
+2. Browse to the `/var/nnt/gen7agent.app.netcore` folder.
 3. Open the `rolling-log.txt` file and search for an error that looks like the following example: `Hub connection failed (500 Error, requested Agent name is in use by device with uniqueId: 123456a6-ffee-78a9-927e-34921d59ce64)`.
 4. If you can find the error message, the information you require is the `uniqueId: 123456a6-ffee-78a9-927e-34921d59ce64)` value.
-5. Open the `agent.id` file stored in `/var/nnt/gen7agent.app.netcore` using an text editor (`nano` or `vi`). Erase the uniqueId currently in that file and paste in the uniqueId identified in the previous step (123456a6-ffee-78a9-927e-34921d59ce64). Ensure there are no spaces at the beginning or end of the text string.
+5. Open the `agent.id` file stored in `/var/nnt/gen7agent.app.netcore` using a text editor (`nano` or `vi`). Erase the uniqueId currently in that file and paste in the uniqueId identified in the previous step (123456a6-ffee-78a9-927e-34921d59ce64). Ensure there are no spaces at the beginning or end of the text string.
 6. Close and save the `agent.id` file.
-7. Start the Netwrix ChangeTracker Gen7 Agent NetCore Service.
+7. Start the **Netwrix ChangeTracker Gen7 Agent NetCore Service**.
 
- This should resolve the uniqueId conflict and the device should now be registered on Change Tracker successfully.
+This should resolve the uniqueId conflict and the device should now be registered on Change Tracker successfully.
 
 <!--
 Additional related articles pending migration to the public docs site. When
