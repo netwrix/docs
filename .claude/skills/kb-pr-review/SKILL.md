@@ -233,7 +233,7 @@ Per-file structure:
 - One row per Vale, Dale.
 - **Frontmatter sub-fields — one row each:** `title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`. Every sub-field must appear as its own row on every file, with an explicit ✓ Clean or a findings count. A single "Derek — frontmatter | 2 required fixes" row hides sub-field misses (e.g., a missing `kb` tag going unflagged because two other sub-fields already filled the count). Sub-field rows make coverage visually auditable at a glance.
 - One row per other Derek area: `article-type / structure`, `title / H1 / sidebar_label`, `product-names`, `images`, `links`, `formatting`, `prose directness`.
-- One row for the `kb-editing-conventions scan (rows 1–23)`.
+- One row for the `kb-editing-conventions scan (rows 1–22)`.
 - One row for `Cross-section consistency (all patterns)`.
 
 That row inventory is the coverage receipt.
