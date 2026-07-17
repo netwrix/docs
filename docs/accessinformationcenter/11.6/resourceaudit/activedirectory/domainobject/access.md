@@ -9,7 +9,7 @@ sidebar_position: 10
 The Access report at the domain object level provides information on the level of access trustees
 have at the domain object level. This report includes a Permission Source table.
 
-![Access report at the domain object level](/images/directorymanager/11.0/admincenter/datasource/excel_-_one_drive.webp)
+![Access report at the domain object level](/images/accessinformationcenter/11.6/resourceaudit/activedirectory/domainobject/access.webp)
 
 This report is comprised of the following columns:
 
