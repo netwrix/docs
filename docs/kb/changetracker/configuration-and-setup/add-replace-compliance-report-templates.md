@@ -45,7 +45,7 @@ This article describes how to upload a new template of either type, overwrite an
 
 #### Replacing a Default Template
 
-1. Uploading a new template with the same name will overwrite the existing template present within the system.
+Uploading a new template with the same name overwrites the existing template already present in the system.
 
 #### Not Replacing a Default Template
 
@@ -69,7 +69,7 @@ This article describes how to upload a new template of either type, overwrite an
 
 #### Replacing a Default Template
 
-1. Uploading a new template with the same name will overwrite the existing template present within the system.
+Uploading a new template with the same name overwrites the existing template already present in the system.
 
 #### Not Replacing a Default Template
 
