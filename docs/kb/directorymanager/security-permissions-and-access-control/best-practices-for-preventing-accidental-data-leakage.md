@@ -52,7 +52,7 @@ For more information on how to set up a New Object policy for specific security 
 ### Importing Membership via Netwrix Directory Manager Bulk Membership Import Feature for Groups
 Many times, organizations create groups (Security and Distribution) in advance, i.e., before the actual usage of groups. To avoid leaking critical information, create such groups without populating membership upon creation.
 
-Instead, you can use the **Bulk Import Membership** feature of Netwrix Directory Manager to update groups with the correct memberships just before their actual usage starts. Bulk import allows for external source files like a CSV or an Excel sheet to import membership when it is needed.
+Instead, you can use the bulk import membership feature of Netwrix Directory Manager to update groups with the correct memberships just before their actual usage starts. Bulk import allows for external source files like a CSV or an Excel sheet to import membership when it is needed.
 
 In Netwrix Directory Manager, bulk import of memberships is possible using the Import Wizard available in the Netwrix Directory Manager Portal. The following KB article provides step-by-step instructions to bulk import members into a group:
 
@@ -116,3 +116,4 @@ In addition to these best practices for keeping the production environment secur
 - [How To Import Members to a Group Using Self-Service Import Wizard](/docs/kb/directorymanager/workflows-automation-and-lifecycle-management/how-to-import-members-to-a-group-using-self-service-import-wizard)
 - [How to Trigger a Workflow When a User Creates a Group](/docs/kb/directorymanager/workflows-automation-and-lifecycle-management/how_to_trigger_a_workflow_when_a_user_сreates_a_group)
 - [How To Add Message Approvers in Group Properties in Netwrix Directory Manager Portal](/docs/kb/directorymanager/configuration-and-integration/how-to-add-message-approvers-in-group-properties-in-groupid-portal)
+- [Best Practices for Controlling Changes to Group Membership](/docs/kb/directorymanager/reporting-export-and-data-management/best-practices-for-controlling-changes-to-group-membership)

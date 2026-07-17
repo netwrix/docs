@@ -60,16 +60,16 @@ Follow these steps to uninstall Netwrix Directory Manager for an upgrade or to c
 
 On the Directory Manager machine, complete the following cleanup steps:
 
-1. Delete the installation directory: navigate to `X:\Program Files\Imanami` (where X represents the installation drive) and delete the directory named **Directory Manager [version]** (for example, Directory Manager 11).
-2. Delete other relevant directories: right-click the Windows button, select **Run**, type `%ALLUSERSPROFILE%\Imanami`, press Enter, and delete the **Directory Manager** folder from the location referenced in the command.
-3. Delete the Directory Manager DLLs: navigate to `C:\Windows`, search for all DLL files with names starting with **Netwrix** (type `Netwrix*.dll` in the Windows Explorer Search box to find them), and delete these files.
+1. Delete the installation directory: navigate to `X:\Program Files\Imanami` (where X represents the installation drive) and delete the directory named `Directory Manager [version]` (for example, `Directory Manager 11`).
+2. Delete other relevant directories: right-click the Windows button, select **Run**, type `%ALLUSERSPROFILE%\Imanami`, press Enter, and delete the `Directory Manager` folder from the location referenced in the command.
+3. Delete the Directory Manager DLLs: navigate to `C:\Windows`, search for all DLL files with names starting with `Netwrix` (type `Netwrix*.dll` in the Windows Explorer Search box to find them), and delete these files.
 4. Delete the registry keys: open **Registry Editor** and delete the following registry key (for Directory Manager 11.0):
 
    ```text
    HKEY_LOCAL_MACHINE\SOFTWARE\Imanami\GroupID\Version 11.0
    ```
 
-5. Delete the services files: navigate to `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files` and delete the **root** folder.
+5. Delete the services files: navigate to `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files` and delete the `root` folder.
 
 #### Remove IIS Portal Files, the Application Pool, and Certificates
 
