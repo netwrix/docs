@@ -28,7 +28,7 @@ title: Adding or Replacing Configuration and Compliance Report Templates
 Netwrix Change Tracker uses two types of templates:
 
 1. Configuration templates, which define the file, folder, and registry monitoring policy.
-2. Compliance Report templates, which map to CIS Benchmarks and score devices against a hardened build standard.
+2. Compliance report templates, which map to CIS Benchmarks and score devices against a hardened build standard.
 
 This article describes how to upload a new template of either type, overwrite an existing default template, and assign the template to a device group.
 
@@ -41,7 +41,7 @@ This article describes how to upload a new template of either type, overwrite an
 
    For example, `CIS Windows Server 2025 Base Template`.
 
-<img width="890" height="333" alt="image" src="https://github.com/user-attachments/assets/43009746-a9b4-471d-a820-8518bbdb940a" />
+![Uploading a configuration template with a CIS benchmark name](../0-images/upload-compliance-report-template-name.png)
 
 #### Replacing a Default Template
 
@@ -56,16 +56,16 @@ This article describes how to upload a new template of either type, overwrite an
 5. Click **Add an Existing Template**.
 6. In the pop-up window, select the template you uploaded and click **Update**.
 
-<img width="2559" height="1305" alt="image" src="https://github.com/user-attachments/assets/b7d6945d-09c7-4d3b-88c0-6ed9f2a357f0" />
+![Selecting an existing template to add to a device group](../0-images/add-existing-template-selection.png)
 
 ### Compliance Report Template
 
 1. Go to **Settings** > **Policy Templates**, then click **Upload Templates**.
 2. Browse your local files and select the template you want to upload.
 
-   For example: `NNT CIS Microsoft Windows Server 2025 Benchmark - Level 1 Member Server`.
+   For example, `NNT CIS Microsoft Windows Server 2025 Benchmark - Level 1 Member Server`.
 
-<img width="892" height="333" alt="image" src="https://github.com/user-attachments/assets/e38ca75d-d2e2-433e-8111-3ba1c64e8cae" />
+![Uploading a compliance report template with a CIS benchmark name](../0-images/compliance-report-template-name-example.png)
 
 #### Replacing a Default Template
 
@@ -74,13 +74,11 @@ This article describes how to upload a new template of either type, overwrite an
 #### Not Replacing a Default Template
 
 1. Click **Upload files**.
-2. Go to **Reports** > **Actions** > **Add Compliance Report**
-3. Go to **Query Settings** then select the device group and template
+2. Go to **Reports** > **Actions** > **Add Compliance Report**.
+3. Go to **Query Settings**, then select the device group and template.
 
-<img width="1170" height="777" alt="image" src="https://github.com/user-attachments/assets/b590aea7-a08a-4b7a-af94-96bcfcb4d7e1" />
+![Query Settings tab for a new compliance report](../0-images/add-compliance-report-query-settings.png)
 
-4. Go to **Schedule & Email** and configure the preferred settings. See Sample Below
+4. Go to **Schedule & Email** and configure the preferred settings. See the sample below.
 
-<img width="1167" height="778" alt="image" src="https://github.com/user-attachments/assets/02b8080a-c8a9-4e11-bd0f-254ec2bb7267" />
-
-
+![Schedule and Email tab for a new compliance report](../0-images/add-compliance-report-schedule-and-email.png)

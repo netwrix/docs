@@ -30,11 +30,11 @@ This article describes how to back up MongoDB, restore MongoDB, or set up a new 
 
 ## Instructions
 
-## Pre-Requisites - 
+### Prerequisites
 
-1. Download MongoDB Shell Tool (https://www.mongodb.com/try/download/shell)
-2. Download MongoDB Command Line Tools (https://www.mongodb.com/try/download/database-tools)
-3. Extract each of these into the MongoDB Bin folder (C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin)
+1. Download the [MongoDB Shell Tool](https://www.mongodb.com/try/download/shell).
+2. Download the [MongoDB Command Line Tools](https://www.mongodb.com/try/download/database-tools).
+3. Extract each of these into the MongoDB Bin folder `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`.
 
 ### Step 1 — Back Up the MongoDB Database
 
@@ -45,9 +45,9 @@ This article describes how to back up MongoDB, restore MongoDB, or set up a new 
    - `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`
    - `mongodump.exe -d NNTHubService -o C:\MongoDump --gzip`
 
-<img width="1256" height="209" alt="image" src="https://github.com/user-attachments/assets/e6047d12-1326-4890-8a31-1d2a25c73cdd" />
+![First part of the mongodump command output](../0-images/mongodump-backup-command-output-1.png)
 
-<img width="1255" height="273" alt="image" src="https://github.com/user-attachments/assets/8d524a31-3a32-4269-9399-c00395d698e3" />
+![Second part of the mongodump command output](../0-images/mongodump-backup-command-output-2.png)
 
 Copy the following folders and transfer them to the new server:
 
@@ -75,7 +75,7 @@ These steps apply whether you are restoring to an existing server or moving to a
    - `sc start MongoDB`
    - `mongorestore.exe C:\MongoDump\NNTHubService -d NNTHubService --gzip`
 
-<img width="976" height="512" alt="image" src="https://github.com/user-attachments/assets/10e4c2b9-7ae0-47ba-b1b4-0877be9a0681" />
+![mongorestore command output](../0-images/mongorestore-command-output.png)
 
 ### Step 4 — Finish the Restore
 
@@ -108,7 +108,7 @@ If you see the following error on the **Settings** screen, follow the troublesho
 3. Close the Command Prompt window.
 4. Confirm that you can log in to Netwrix Change Tracker.
 
-<img width="974" height="511" alt="image" src="https://github.com/user-attachments/assets/e4124dcc-b3f7-4311-b4e5-465abca59183" />
+![Change Tracker login screen after restoring the database](../0-images/change-tracker-login-after-restore.png)
 
 > **NOTE:** If you changed the admin user's password on the old server, that password still works.
 
@@ -129,5 +129,5 @@ If this does not resolve the issue and you still see the `Key not valid in speci
    - `iisreset /start`
 3. Close the Command Prompt window.
 
-<img width="976" height="509" alt="image" src="https://github.com/user-attachments/assets/3be061b1-67b9-4a0a-89be-3e9fbf169afb" />
+![iisreset command output](../0-images/iisreset-command-output.png)
 

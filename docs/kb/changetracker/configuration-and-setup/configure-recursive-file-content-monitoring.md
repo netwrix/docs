@@ -28,8 +28,6 @@ The File Integrity Monitoring (FIM) tracker in Netwrix Change Tracker monitors c
 
 This article describes how to enable the FIM/file-content option on the web console, then apply it to a device configuration template.
 
-<!-- SME: confirm the correct install path — this article uses "Change Tracker Generation 7 Hub" but other articles use "NNT Change Tracker Suite\Gen7". Verify which is canonical for 8.x. -->
-
 ## Instructions
 
 ### Enable the FIM/File-content Option on the Web Console
@@ -55,6 +53,6 @@ This article describes how to enable the FIM/file-content option on the web cons
 6. Under the **Tracked Attributes** column, select the drop-down menu, then select the **File attributes (including contents) only** option.
 7. Click **Update**, then click **Save Changes** at the top of the screen.
 
-<img width="1171" height="779" alt="image" src="https://github.com/user-attachments/assets/1763a48d-c23a-4a3c-8626-6e0a6cd93b39" />
+![Save Changes button after selecting the file attributes option](../0-images/recursive-file-content-monitoring-save-changes.png)
 
 > **IMPORTANT:** After the saved template changes take effect, the agent runs a new baseline scan. Allow the scan to complete before testing file changes in the directory — otherwise the baseline may capture your test changes and not report them as changes.

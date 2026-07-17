@@ -31,14 +31,14 @@ This article describes how to apply a compliance template to a device group and 
 
 ## Instructions
 
-1. Click the **Reports** tile, then click the **Actions** > **Add Compliance Report**.
+1. Go to **Reports** > **Actions** > **Add Compliance Report**.
 2. Click the **Query Settings** tab, then select the group and template within the drop down options.
-3. Once selected, click the **Update Report Title** option to automatically update the title of this report
+3. Once selected, click the **Update Report Title** option to automatically update the title of this report.
 
-<img width="1170" height="778" alt="image" src="https://github.com/user-attachments/assets/2bd11aa8-57cd-4a6b-883c-f539708b79a3" />
+![Update Report Title option in Query Settings](../0-images/apply-template-query-settings-update-title.png)
 
 4. Click the **Schedule & Email** tab to configure the start/end date and interval:
 
-<img width="1169" height="778" alt="image" src="https://github.com/user-attachments/assets/b866174a-6486-4b92-b7c1-ffe2bf7826df" />
+![Schedule and Email tab when applying a template to a group](../0-images/apply-template-schedule-and-email.png)
 
 5. Once completed, click **Update** on the bottom to save this report configuration. This report will now run on its scheduled interval against the specified group of devices.

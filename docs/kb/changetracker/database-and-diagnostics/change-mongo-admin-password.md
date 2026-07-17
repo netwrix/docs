@@ -7,8 +7,8 @@ keywords:
   - MongoDB
   - admin password
   - reset password
-  - mongo.conf
-  - mongo.exe
+  - mongod.cfg
+  - mongosh.exe
   - Change Tracker
   - authentication
   - db.changeUserPassword
@@ -35,15 +35,15 @@ If authentication is enabled in MongoDB and the admin password is lost, use this
 2. Disable MongoDB authentication:
    - Navigate to `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`.
    - Edit the `mongod.cfg` file.
-   - Comment each line out using the `#` symbol except for `logpath`, `dbpath`, `net`, `port`, `bindIp` and `storageEngine`.
+   - Comment each line out using the `#` symbol except for `logpath`, `dbpath`, `net`, `port`, `bindIp`, and `storageEngine`.
 
-   <img width="785" height="578" alt="image" src="https://github.com/user-attachments/assets/6d3bdc96-d99b-413c-9f95-d23832d9b7dc" />
+   ![mongod.cfg file with lines commented out](../0-images/mongod-cfg-commented-lines.png)
 
 3. Start the MongoDB service using `services.msc` or `sc start MongoDB`.
 
 4. Open the **Mongo shell** by running the following program: `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin\mongosh.exe`.
 
-   <img width="977" height="509" alt="image" src="https://github.com/user-attachments/assets/059ce8e8-d65f-473c-959c-1456077b42f8" />
+   ![Mongo shell open and ready for commands](../0-images/mongo-shell-open.png)
 
 5. Enter the following commands in the Mongo shell, in order:
 
@@ -56,7 +56,7 @@ If authentication is enabled in MongoDB and the admin password is lost, use this
 
    Changing the password returns you to a new line without an output.
 
-   <img width="976" height="510" alt="image" src="https://github.com/user-attachments/assets/fce34fef-b612-4a68-aad2-3e41a3831b12" />
+   ![Mongo shell after changing the admin password](../0-images/mongo-shell-password-changed.png)
 
 6. Close the `mongosh.exe` window and stop the MongoDB service in Task Manager.
 
@@ -64,7 +64,7 @@ If authentication is enabled in MongoDB and the admin password is lost, use this
    - Navigate to `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`.
    - In the `mongod.cfg` file, remove all `#` symbols from each of the lines. Save the changes.
 
-      <img width="748" height="578" alt="image" src="https://github.com/user-attachments/assets/f07ab983-8cf2-422c-9333-93b09dd826df" />
+      ![mongod.cfg file with the number sign symbols removed](../0-images/mongod-cfg-uncommented-lines.png)
 
 8. Start the MongoDB service using `services.msc` or `sc start MongoDB`.
 

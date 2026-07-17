@@ -118,11 +118,11 @@ ORACLE_HOME=/u01/app/oracle/product/19.0.0/db_1
 2. In the pop-up menu that appears, enter the following:
 
    - **Credential Name:** Oracle-Cred (this is personal preference).
-   - **Db Credential Type:** V2
+   - **Database Credential Type:** V2
    - **Username:** netwrix-db
-   - **Password:**
+   - **Password:** Enter the password for the netwrix-db account.
 
-   <img width="833" height="356" alt="image" src="https://github.com/user-attachments/assets/dcb15b93-8b7a-4ad5-b084-bfbd1e92c72a" />
+   ![Password field for the Oracle database credential](../0-images/oracle-database-credential-password-field.png)
 
 3. Click **Update**.
 
@@ -130,7 +130,7 @@ ORACLE_HOME=/u01/app/oracle/product/19.0.0/db_1
 
 1. To configure compliance reporting later, go to **Settings > Groups**, then select **All Devices**, and click **Add** to create a **Databases** group and the type of database group underneath.
 
-   <img width="2556" height="1307" alt="image" src="https://github.com/user-attachments/assets/66c95052-6654-45f3-93f6-3cc753ae505b" />
+   ![Adding a Databases group for Oracle monitoring](../0-images/add-databases-group-oracle.png)
 
 2. Use the group to create a Netwrix Change Tracker Proxied Device. Specify the name of the database that you want to monitor on the Oracle server.
 3. To configure the proxied device, go to **Settings > Agents & Devices**, highlight a device that can communicate with the database over the network (default port is 1521), then select **Add Proxied Device**.
@@ -153,7 +153,7 @@ ORACLE_HOME=/u01/app/oracle/product/19.0.0/db_1
      - If enabled, more verbose logging is available on the Netwrix Change Tracker web console for this device, which aids troubleshooting.
      - Recommendation: enable this option.
 
-   <img width="834" height="928" alt="image" src="https://github.com/user-attachments/assets/ce319251-4c76-4f32-ae3b-f579254490b1" />
+   ![Verbose logging option for an Oracle database device](../0-images/oracle-verbose-logging-option.png)
 
 ### Step 6 — Run a Test Compliance Report
 
@@ -168,7 +168,7 @@ Once you have configured the proxy, run a test report to validate the credential
 7. Click **Update**.
 8. Run the report to confirm the connection succeeds.
 
-<img width="1170" height="781" alt="image" src="https://github.com/user-attachments/assets/bb3496ec-87e1-40b0-b792-42e8be661b0d" />
+![Report confirming a successful Oracle database connection](../0-images/oracle-database-report-connection-success.png)
 
 ### Step 7 — Run Compliance Reports Against Your Database
 

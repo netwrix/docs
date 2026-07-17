@@ -28,11 +28,11 @@ This article explains how to export or back up specific collections from MongoDB
 
 ## Instructions
 
-1. Download the MongoDB Shell Tool (https://www.mongodb.com/try/download/shell)
-2. Download the MongoDB Command Line Database Tools (https://www.mongodb.com/try/download/database-tools)
+1. Download the [MongoDB Shell Tool](https://www.mongodb.com/try/download/shell).
+2. Download the [MongoDB Command Line Database Tools](https://www.mongodb.com/try/download/database-tools).
 3. Access the Hub machine and determine where MongoDB is installed. The default location is:
    - `C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`
-4. Open each of the downloaded MongoDB Tool ZIP files and extract all files within their dedicated "bin" folder into the default location above.
+4. Open each of the downloaded MongoDB Tool ZIP files and extract all files within their dedicated `bin` folder into the default location above.
 5. Open **Command Prompt** as Administrator.
 6. Enter the following commands in order to open the **Mongo shell**:
    - `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin` (if you need to change drives first, enter `X:`, replacing `X` with your drive letter)
@@ -42,7 +42,7 @@ This article explains how to export or back up specific collections from MongoDB
    - `use NNTHubService`
    - `show collections` (all collections located in MongoDB appear in the output)
 
-    <img width="976" height="1035" alt="image" src="https://github.com/user-attachments/assets/773b7a73-9c84-4de6-9a94-a6c79cb73daa" />
+    ![Mongo shell output listing database collections](../0-images/mongo-shell-show-collections.png)
 
    - `exit`
 8. To export a collection, run the following command from Command Prompt (edit the placeholders as needed):
@@ -50,7 +50,7 @@ This article explains how to export or back up specific collections from MongoDB
 9. In the `ENTER-COLLECTION-NAME` field, enter the collection you wish to export.
 10. In the `C:\ENTER PATH HERE` field, enter the path you wish to export to.
 
-    <img width="1058" height="179" alt="image" src="https://github.com/user-attachments/assets/a69ddc9d-2df9-4be3-8d90-aabe788f1134" />
+    ![Collection name and export path fields for exporting a collection](../0-images/export-collection-name-and-path-fields.png)
 
 > **NOTE:** The following are all collections in MongoDB.
 
@@ -63,7 +63,7 @@ BackgroundTaskQueue   NotificationQueue          SavedUserData
 BackgroundTasks       Organizations              ScheduledPolicy
 CommandWhitelist      PendingNotifications       Sequences
 Counters              PerformanceData            SystemDirectory
-DefaultFilters        PlannedChangeDefinitons    UserAuth
+DefaultFilters        PlannedChangeDefinitions    UserAuth
 Events                PlannedChangeInstances     UserAuthDetails
 EventStats            Policy                     UserRoles
 ```

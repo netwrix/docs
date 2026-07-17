@@ -35,7 +35,7 @@ This message usually occurs when the "Who made the change" driver, called the `N
 
 The following screenshot shows `NNTInfo` in the `fltmc` output:
 
-<img width="977" height="358" alt="image" src="https://github.com/user-attachments/assets/24ca3842-731b-4b86-af59-3484412c74c6" />
+![NNTInfo entry shown in the fltmc output](../0-images/fltmc-output-nntinfo.png)
 
 ### If the Driver Is Not Running
 
@@ -48,7 +48,7 @@ If `NNTInfo` does not appear in the `fltmc` output, reinstall the driver from th
 
 Screenshot of the driver folder and Install file:
 
-<img width="1124" height="372" alt="image" src="https://github.com/user-attachments/assets/af515618-a59c-4943-ab55-afba5a3e958b" />
+![Driver folder showing the Install file](../0-images/driver-folder-install-file.png)
 
 > **NOTE:** In some cases, the NNTInfo driver is running but you experience intermittent interruption of "who made the change" information.
 >
