@@ -24,7 +24,7 @@ The Threat Prevention Agent can be deployed through any of the following methods
 - Manually through the Windows Agent Setup Wizard – Run the Agent executable to launch this wizard
 
 See the [Deploy Agents](/docs/threatprevention/8.0/admin/agents/deploy/overview.md) and
-[Manual Agent Deployment](/docs/threatprevention/8.0/install/agent/manual/manual.md) topics for additional information.
+[Manual Agent Deployment](/docs/threatprevention/8.0/install/agent/manual.md) topics for additional information.
 
 Click **Agents** in the left pane to open the Agents interface.
 
