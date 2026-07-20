@@ -14,10 +14,15 @@ keywords:
   - module update
   - data collector
   - Netwrix Access Analyzer
-  - Netwrix Enterprise Auditor
-products: [enterprise_auditor, access_analyzer]
+  - Netwrix Auditor
+products: [auditor, accessanalyzer]
+tags:
+  - kb
+  - exchange-online-integration
 knowledge_article_id: kA0Qk0000003Fc1KAE
 ---
+
+# ExchangePS Error: The WinRM Shell Client Cannot Process the Request
 
 ## Related Queries
 
@@ -41,11 +46,11 @@ This issue occurs when one or both of the following PowerShell modules are outda
 - `PackageManagement` module version is earlier than `1.0.0.1`
 - `ExchangeOnlineManagement` module version is `2.0.5` or earlier
 
-These versions are known to cause instability with remote sessions using `New-ExoPSSession`.
+These versions cause instability with remote sessions using `New-ExoPSSession`.
 
 ## Resolution
 
-### Step 1: Verify Installed Module Versions
+### Step 1 — Verify Installed Module Versions
 
 Open a PowerShell session and run:
 
@@ -54,7 +59,7 @@ Get-Module -ListAvailable PackageManagement
 Get-Module -ListAvailable ExchangeOnlineManagement
 ```
 
-### Step 2: Update Modules Using PowerShell (Preferred Method)
+### Step 2 — Update Modules Using PowerShell (Preferred Method)
 
 - Update `PackageManagement` module:
   ```powershell
@@ -69,7 +74,7 @@ Get-Module -ListAvailable ExchangeOnlineManagement
 > **IMPORTANT:**
 > Close and reopen all PowerShell sessions after updating modules.
 
-### Step 3: Manual Update (If Unable to Install via PowerShell)
+### Step 3 — Manual Update (If Unable to Install via PowerShell)
 
 If the environment prevents direct downloads from PowerShell, update the modules manually.
 
@@ -107,7 +112,7 @@ Place the renamed folders in the correct directories:
 - For ExchangeOnlineManagement:
   `C:\Program Files\WindowsPowerShell\Modules\ExchangeOnlineManagement\3.4.0`
 
-### Step 4: Confirm Module Versions
+### Step 4 — Confirm Module Versions
 
 Re-run the version checks:
 
