@@ -188,7 +188,7 @@ create a basic flow template there. On providing the URL of the flow template in
 are linked. As a result, the flow auto triggers when the Directory Manager workflow is triggered.
 
 For details on linking a workflow to a flow, see the
-[Trigger a Flow from Directory Manager ](integrate.md#trigger-a-flow-from-directory-manager) topic.
+[Trigger a Flow from Directory Manager ](powerautomate/integrate.md#trigger-a-flow-from-directory-manager) topic.
 
 ## Modify a Workflow
 
