@@ -1,44 +1,27 @@
 ---
-title: "Passphrase"
-description: "Passphrase"
+title: "Passphrases"
+description: "Configure Password Policy Enforcer to relax specific password rules for passphrases."
 sidebar_position: 30
 ---
 
-# Passphrase
+# Passphrases
 
-Passphrases have gained popularity in recent years as they can be more difficult to crack and easier
-to remember than passwords. The difference between passwords and passphrases is their length.
-Passwords are rarely longer than 15 characters, but passphrases commonly contain 20 or more
-characters.
+Passphrases have gained popularity in recent years because they can be more difficult to crack and easier to remember than passwords. The difference between passwords and passphrases is their length. Passwords are typically 12 to 20 characters, but passphrases commonly contain 20 or more characters.
 
-Complexity and dictionary rules are less important for passphrases as passphrases rely primarily on
-length for security. You may want to relax some password policy requirements for passphrases.
+Rules like [Complexity](rules/complexity_rule.md) and [Dictionary](rules/dictionary_rule.md) are less important for passphrases because passphrases rely primarily on length for security. You can relax some password policy requirements for passphrases by configuring Password Policy Enforcer (PPE) to disable some rules when passwords reach a certain length.
 
-**Step 1 –** Open the Configuration Console:
+1. Open the [PPE Configuration Console](../configconsole.md).
+2. Click the name of a policy in the policy list to open the policy editor.
+3. Select the **Passphrase** tab.
+4. Select the **Passphrase** checkbox to enable this feature.
 
-Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
-or
-Double click the **PPE Configuration** desktop shortcut.
+   ![Enable Passphrases](/images/passwordpolicyenforcer/11.2/administration/passphrase.webp)
 
-**Step 2 –** Click a policy name to open the policy configuration page.
+5. Select the minimum number of characters from the **contains** dropdown. PPE disables the specified rules when a password contains at least this many characters.
+6. Select the rules you want to disable for passphrases.
 
-**Step 3 –** Open the **Passphrase** tab.
+PPE excludes disabled rules when calculating the compliance level (the **Passwords must comply with** setting on the policy's [**Properties**](policy_properties.md) tab). PPE accepts a passphrase that complies with all enabled rules, even if it doesn't meet the compliance level.
 
-![Enable Passphrases](/images/passwordpolicyenforcer/11.2/administration/passphrase.webp)
-
-**Step 4 –** Select the number of characters the password must contain before the selected rules are
-disabled.
-
-**Step 5 –** Select the rules to be disabled.
-
-Disabled rules aren't counted when calculating the compliance level, but Password Policy Enforcer
-accepts passphrases that comply with all enabled rules, irrespective of the compliance level. This
-ensures that passphrases can be used, even if they don't meet the compliance level when Password
-Policy Enforcer is configured to disable one or more rules for passphrases.
-
-:::note
-Opinions differ on how long a passphrase needs to be. Even a 30 character passphrase can
-be weaker than a well-chosen password. Don't disable too many rules under the assumption that
-length alone makes up for the reduced complexity.
-
+:::warning
+Opinions differ on how long a passphrase needs to be. Even a 30-character passphrase can be weaker than a well-chosen password. Don't disable too many rules under the assumption that length alone makes up for reduced complexity.
 :::
