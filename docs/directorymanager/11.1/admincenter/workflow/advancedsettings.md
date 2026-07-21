@@ -20,8 +20,8 @@ Functions discussed in this topic are licensed under different add-ons. See the
 You can designate a recipient as the default approver for workflow requests. Directory Manager routes
 requests to this recipient based on the following rules:
 
-- When approver acceleration isn't enabled, the applicable rules are discussed in the
-  [Workflow Approval Scenarios](overview.md#workflow-approval-scenarios) topic.
+- When approver acceleration isn't enabled, see the
+  [Workflow Approval Scenarios](overview.md#workflow-approval-scenarios) topic for the applicable rules.
 - When approver acceleration is enabled:
 
     - Directory Manager sends a request to the default approver when the last approver in the
@@ -44,7 +44,7 @@ owners.
 5. On th **Advanced Workflow Settings** tab, use the **Default Approver** box to specify a recipient
    as the default approver. To search for a recipient:
 
-    - Enter a search string in the box. Group and user names starting with the string are displayed
+    - Enter a search string in the box. Group and user names starting with the string appear
       as you type. Select a user or group to set as the default approver.
 
 **Or**
@@ -52,7 +52,7 @@ owners.
     - Click **Advanced** to search an object by different parameters, such as name, department,
       company, and email.  
       In the _advanced search_ box, enter a search string and click **Search**. User and group
-      objects matching the string are displayed. Select the required object.
+      objects matching the string appear. Select the required object.
 
     To remove the default approver, click **Delete** for it.
 
@@ -77,8 +77,8 @@ example, you can delete the ‘denied’ requests that are old by 30 days or mor
 3. Click **Workflows** under **Settings** in the left pane.
 4. On the **Workflows** page, click the **Advanced Workflow Settings** tab. Go to the **Workflow
    Requests** section.
-5. In the **Delete requests that are x or more days old** box, specify a number, say 30. Workflow
-   requests that are 30 days old and older will be auto deleted.
+5. In the **Delete requests that are x or more days old** box, specify a number, say 30. Directory Manager
+   auto-deletes workflow requests that are 30 days old and older.
 6. Select the type of requests you want to delete.
 
     - **Pending:** to delete requests that are pending, including your own.

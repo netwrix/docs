@@ -52,7 +52,7 @@ attribute, it triggers the workflow.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Workflows** under **Settings** in the left pane. On the **Configure Workflows** tab of
-   the **Workflows** page, the following information is displayed for a workflow:
+   the **Workflows** page, the following information appears for a workflow:
 
     | Label       | Description                                                                                                                                                                                  |
     | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -91,8 +91,8 @@ attribute, it triggers the workflow.
 
 8. Select the **Mail Approval** checkbox to enable the approver to approve or deny a workflow
    request from within the workflow email notification. These notifications contain the **Accept**
-   and **Deny** buttons. On clicking any of these, the approver is redirected and auto-authenticated
-   on the Directory Manager portal, where he or she can approve or deny the request.  
+   and **Deny** buttons. On clicking any of these, Directory Manager redirects and auto-authenticates the approver
+   on the Directory Manager portal, where the approver can approve or deny the request.  
    When this checkbox isn't selected, the **Accept** and **Deny** buttons aren't available in the
    email notifications. Approvers have to sign into the Directory Manager portal to manage workflow
    requests.
@@ -110,8 +110,7 @@ attribute, it triggers the workflow.
     action on a request, such as approve or deny it.  
     The list contains URLs of Directory Manager portals linked with the identity store.
 12. Click **Add Approvers** in the **Approvers** section to select the users and groups to
-    approve the requests generated for this workflow: The **Add Approvers** dialog box is
-    displayed.
+    approve the requests generated for this workflow: The **Add Approvers** dialog box appears.
 
     1. Fields on the **Add Approvers** dialog box vary, depending on the object and event
        selected. Then select one or more of the available options:
@@ -122,7 +121,7 @@ attribute, it triggers the workflow.
         | Owner and Additional Owner of the Group | _Edit_ and _delete_ events of the _Group_ object | Select it to specify the group’s primary and additional owners as the request approvers. |
         | Manager of User | _Edit_ and _Delete_ events of the _User_ and _Contact_ objects | Select it to specify the user’s or contact’s primary manager as the request approver. |
         | Manager and Additional Manager of User | _Edit_ and _Delete_ events of the _User_ and _Contact_ objects | Select it to specify the user’s/contact’s primary and additional managers as the request approvers. |
-        | Search Container Include Sub-Containers Search box | For all objects and events | You can specify one or more users and groups as approvers. In case of a group, all its members are set as approvers. Specify a container to search for the objects you want; then perform a search to locate and select the object. <br /><ul><li>Click the down arrow in the **Search Container** box and select a container to limit the search scope to it.</li><li>Select the **Include Sub-Containers** checkbox to include the sub-containers within the selected container to search for the object.</li><li>Enter a search string in the search box; objects starting with the string are displayed as you type. Click **Add** for an object to select it. <br />You can also perform an advanced search to locate the object. Click **Advanced** in the search box and use the search fields to enter a search string. On clicking **Search**, objects matching the string are displayed. Select the user or group you want to add as approver.</li></ul> |
+        | Search Container Include Sub-Containers Search box | For all objects and events | You can specify one or more users and groups as approvers. In case of a group, all its members are set as approvers. Specify a container to search for the objects you want; then perform a search to locate and select the object. <br /><ul><li>Click the down arrow in the **Search Container** box and select a container to limit the search scope to it.</li><li>Select the **Include Sub-Containers** checkbox to include the sub-containers within the selected container to search for the object.</li><li>Enter a search string in the search box; objects starting with the string appear as you type. Click **Add** for an object to select it. <br />You can also perform an advanced search to locate the object. Click **Advanced** in the search box and use the search fields to enter a search string. On clicking **Search**, objects matching the string appear. Select the user or group you want to add as approver.</li></ul> |
 
     2. Click **Add** to close the **Add Approvers** dialog box.
 
@@ -135,8 +134,7 @@ attribute, it triggers the workflow.
     This workflow will trigger when a security group is deleted. However, when a group object with
     type other than ‘Security’ is deleted, this workflow will not trigger.
 
-    1. In the **Filters** section, click **Add Filters**. The **Add Filter** dialog box is
-       displayed.
+    1. In the **Filters** section, click **Add Filters**. The **Add Filter** dialog box appears.
     2. Select a schema attribute from the _field_ list.
     3. Select an operator to evaluate the attribute from the _operator_ list.
 
