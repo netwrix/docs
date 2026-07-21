@@ -33,7 +33,7 @@ first, Power Automate doesn't automatically approve the flow.
 
 ### Before you begin
 
-1. Check the SSL certificate for the Directory Manager server and ensure it is valid and issued by a
+1. Check the SSL certificate for the Power Automate Reverse Proxy and ensure it is valid and issued by a
    publicly trusted CA, as Power Automate runs in Microsoft's cloud and validates the proxy's TLS
    certificate against the Microsoft Trusted Root Program. Power Automate silently rejects
    certificates from internal or private CAs.

@@ -10,8 +10,8 @@ sidebar_position: 10
 
 The **Power Automate Reverse Proxy** is a required component for the Netwrix Directory Manager (NDM)
 integration with Microsoft Power Automate. When a Power Automate workflow needs to approve or deny a 
-directory request, it calls back into your NDM environment to deliver the decision. 
-Because Power Automate runs in Microsoft's cloud, your NDM DataService must be reachable over the public internet.
+directory request, it calls back into NDM environment to deliver the decision. 
+Because Power Automate runs in Microsoft's cloud, NDM must be reachable from the public internet.
 
 The reverse proxy is a lightweight service you install on your NDM server. 
 It sits in front of the DataService and acts as a hardened entry point.
@@ -23,11 +23,11 @@ Before running the installer, ensure the following are in place:
 | Requirement | Details |
 |-------------|---------|
 | Administrator access | The installer must be run as Administrator |
-| NDM DataService running | The proxy forwards to it; it must be reachable on the same machine or network |
+| NDM DataService running | The proxy forwards to it; it must be reachable on the same machine |
 | NDM Security Token Service (STS) running | Used for internal authentication |
 | SQL Server access | The installer registers the proxy in the NDM database. Windows Authentication is recommended; SQL login is also supported |
 | A publicly trusted TLS certificate | See **TLS Certificate Requirements** |
-| An available public-facing port | A TCP port that is reachable from the internet and not used by another service |
+| An available public-facing port | A TCP port that is reachable from the internet and not used by another service, including NDM e.g. 4443 |
 
 ### TLS Certificate Requirements
 
@@ -49,14 +49,14 @@ The installer expects two PEM files:
 
 ### 1. Obtain the installer package
 
-Extract the archive — it contains the proxy binaries and `Imanami.PowerAutomateProxy.Installer.exe`.
+Extract the archive — it contains `PowerAutomateProxy-<version>.exe`.
 
 ### 2. Run the installer
 
 Open **PowerShell 7 as Administrator** on the target server and run:
 
 ```powershell
-.\Imanami.PowerAutomateProxy.Installer.exe `
+.\PowerAutomateProxy-<version>.exe `
     --cert-path  "C:\certs\fullchain.pem" `
     --key-path   "C:\certs\privkey.pem" `
     --port       443 `
@@ -73,7 +73,6 @@ If Windows Authentication isn't available for the NDM database, add `--sql-user 
 | `--key-path` | Yes | Path to the PEM private key file |
 | `--port` | Yes | HTTPS port the proxy will listen on. Must be reachable from the internet |
 | `--sql-server` | Yes | SQL Server hostname or instance (e.g. `localhost` or `SERVER\SQLEXPRESS`) |
-| `--zip-path` | No | Path to the proxy zip archive. Defaults to `PowerAutomateProxy.zip` next to the installer |
 | `--sql-database` | No | NDM database name. Defaults to `GroupID` |
 | `--sql-user` | No | SQL login name. Omit to use Windows Authentication (recommended) |
 | `--sql-trust-server-certificate` | No | Flag. Skip SQL Server TLS validation. Use only if SQL Server uses a self-signed certificate |
@@ -96,7 +95,6 @@ Re-run the installer with the same parameters. It safely handles existing instal
 
 - If the proxy is already registered in the NDM database, the installer reuses the existing registration.
 - If the IIS site and app pool already exist, the installer preserves them and only updates the binaries.
-- The installer always replaces the proxy binaries with the contents of the new zip archive.
 
 ## Manual cleanup after a failed install
 
@@ -135,10 +133,6 @@ The installer validates the certificate chain before proceeding. Common causes:
 - The PEM file contains only the leaf certificate, not the full chain — use the full-chain file (e.g. `fullchain.pem` from Let's Encrypt, not `cert.pem`).
 - The certificate was issued by an internal or private CA. Power Automate will also reject it — a publicly trusted certificate is required.
 
-### `STS token request failed: invalid_client` at runtime
-
-The proxy's `appsettings.json` has a missing or blank client ID. This typically happens when the proxy binaries were redeployed (e.g. during an upgrade) without re-running the installer. Always run `Imanami.PowerAutomateProxy.Installer.exe` after replacing the proxy zip — it updates `appsettings.json` in place.
-
 ### IIS site fails to start (HTTP 503)
 
 - Check the `DirectoryManager_PowerAutomateReverseProxy` application pool is started in IIS Manager.
@@ -146,10 +140,10 @@ The proxy's `appsettings.json` has a missing or blank client ID. This typically 
 
 ### STS or DataService URL auto-discovery failed
 
-The installer looks up the NDM service URLs from the database automatically. If your server hosts multiple NDM deployments or the URLs aren't registered, provide them explicitly:
+The installer looks up the NDM service URLs from the database automatically. If your server hosts multiple NDM deployments or the URLs aren't registered, provide the URLs for the instances on the same machine as the proxy explicitly:
 
 ```powershell
-.\Imanami.PowerAutomateProxy.Installer.exe `
+.\PowerAutomateProxy-<version>.exe `
     --sts-authority    https://<ndm-host>:<port>/GroupIDSecurityService `
     --data-service-url https://<ndm-host>:<port>/GroupIDDataService `
     ... (other parameters)
