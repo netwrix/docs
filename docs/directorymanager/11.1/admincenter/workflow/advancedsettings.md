@@ -17,17 +17,17 @@ Functions discussed in this topic are licensed under different add-ons. See the
 
 ## Specify a Default Approver
 
-You can designate a recipient as the default approver for workflow requests. Requests are routed to
-this recipient based on the following rules:
+You can designate a recipient as the default approver for workflow requests. Directory Manager routes
+requests to this recipient based on the following rules:
 
-- When approver acceleration is not enabled, the applicable rules are discussed in the
-  [Workflow Approval Scenarios](overview.md#workflow-approval-scenarios) topic.
+- When approver acceleration isn't enabled, see the
+  [Workflow Approval Scenarios](overview.md#workflow-approval-scenarios) topic for the applicable rules.
 - When approver acceleration is enabled:
 
-    - A request is sent to the default approver when the last approver in the acceleration chain
-      does not approve or deny it within the specific number of days.
-    - A request is routed to the default approver when the hierarchy breaks at any point in the
-      acceleration chain. For example, if the maximum acceleration level is set to 3 but there is no
+    - Directory Manager sends a request to the default approver when the last approver in the
+      acceleration chain doesn't approve or deny it within the specific number of days.
+    - Directory Manager routes a request to the default approver when the hierarchy breaks at any
+      point in the acceleration chain. For example, if the maximum acceleration level is set to 3 but there is no
       recipient to accelerate the request after second level acceleration, the request goes to the
       default approver.
 
@@ -44,7 +44,7 @@ owners.
 5. On th **Advanced Workflow Settings** tab, use the **Default Approver** box to specify a recipient
    as the default approver. To search for a recipient:
 
-    - Enter a search string in the box. Group and user names starting with the string are displayed
+    - Enter a search string in the box. Group and user names starting with the string appear
       as you type. Select a user or group to set as the default approver.
 
 **Or**
@@ -52,7 +52,7 @@ owners.
     - Click **Advanced** to search an object by different parameters, such as name, department,
       company, and email.  
       In the _advanced search_ box, enter a search string and click **Search**. User and group
-      objects matching the string are displayed. Select the required object.
+      objects matching the string appear. Select the required object.
 
     To remove the default approver, click **Delete** for it.
 
@@ -77,13 +77,13 @@ example, you can delete the ‘denied’ requests that are old by 30 days or mor
 3. Click **Workflows** under **Settings** in the left pane.
 4. On the **Workflows** page, click the **Advanced Workflow Settings** tab. Go to the **Workflow
    Requests** section.
-5. In the **Delete requests that are x or more days old** box, specify a number, say 30. Workflow
-   requests that are 30 days old and older will be auto deleted.
+5. In the **Delete requests that are x or more days old** box, specify a number, say 30. Directory Manager
+   auto-deletes workflow requests that are 30 days old and older.
 6. Select the type of requests you want to delete.
 
-    - **Pending:** to delete requests that are pending, including your own.
-    - **Approved:** to delete requests that have been approved.
-    - **Denied:** to delete requests that have been denied.
+    - **Pending:** to delete pending requests, including your own.
+    - **Approved:** to delete approved requests.
+    - **Denied:** to delete denied requests.
 
 7. Click **Delete**. Directory Manager deletes requests of the selected type that are old or older
    than the specified number of days.
@@ -92,4 +92,4 @@ example, you can delete the ‘denied’ requests that are old by 30 days or mor
 ## Integrate with Microsoft Power Automate
 
 You can also link your Power Automate flows to Directory Manager workflows. For details, see the
-[Integrate with Power Automate](/docs/directorymanager/11.1/admincenter/workflow/integrate.md) topic.
+[Integrate with Power Automate](/docs/directorymanager/11.1/admincenter/workflow/powerautomate/integrate.md) topic.
