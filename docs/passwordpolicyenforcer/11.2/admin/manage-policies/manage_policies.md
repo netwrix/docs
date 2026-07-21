@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Password Policy Enforcer (PPE) can enforce up to 256 different password policies per domain. Password policies are collections of rules that users must comply with when choosing a new password. You can [assign policies](usersgroups.md) to users directly, or indirectly through Active Directory security groups and containers (Organizational Units).
 
-PPE doesn't enforce any policies when it is first installed, so the policy list is empty when you open the configuration console for the first time.
+PPE doesn't enforce any policies when it is first installed, so the policy list is empty when you open the [configuration console](../configconsole.md) for the first time.
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
@@ -38,7 +38,7 @@ Click the name of a policy in the policy list to make changes to the policy.
 
 ## Test policies
 
-Click **Test Policy** to check if Password Policy Enforcer's current configuration accepts or rejects specific passwords. The [Test Policy](testpolicy.md) feature is a useful troubleshooting tool when PPE isn't accepting or rejecting passwords as you expect.
+Click **Test Policy** to check if Password Policy Enforcer's current configuration accepts or rejects specific passwords. The [Test Policy](testpolicy.md) page is a useful troubleshooting tool when PPE isn't accepting or rejecting passwords as you expect.
 
 ## Set policy priorities
 
@@ -73,10 +73,14 @@ Password Policy Enforcer enforces the default policy for users who don't have an
 Netwrix doesn't recommend using PPE without a default policy because it might leave some passwords unchecked. If you want to have a default policy, but still exempt some users from having to comply with PPE's rules:
 1. Create a new policy for the exempted users.
 2. Leave all the rules disabled for this policy.
-3. Assign the policy to the users who don't have to comply with any PPE rules.
+3. [Assign the policy](usersgroups.md) to the users who don't have to comply with any PPE rules.
 
 :::warning
 If Password Policy Enforcer has only one policy, and that policy is also the default policy, then PPE enforces the policy for all users. If you want to deploy a single policy gradually, don't make it the default until the deployment is complete.
+:::
+
+:::tip
+Use the [Test Policy by User](testpolicy.md) feature to see which policy PPE enforces for a particular user. You can also review the [Policy selection flowchart](usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
 :::
 
 ### Rename a policy
