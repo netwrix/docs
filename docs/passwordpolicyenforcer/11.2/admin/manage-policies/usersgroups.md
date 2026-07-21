@@ -1,92 +1,73 @@
 ---
 title: "Assign Policies to Users"
-description: "Assign Policies to Users"
+description: "Assign password policies to users, groups, and containers with Netwrix Password Policy Enforcer."
 sidebar_position: 20
 ---
 
-# Assign Policies to Users
+# Assign policies to users
 
-Password Policy Enforcer uses policy assignments to decide which policy to enforce for each user.
-You can assign domain policies to users, groups, and containers (Organizational Units). You can
-assign local policies only to users. See the
-[Domain and Local Policies](/docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md) topic for additional information.
+Password Policy Enforcer (PPE) uses policy assignments to decide which policy to enforce for a user. You can assign domain policies to users, groups, and containers (Organizational Units, or OUs). You can assign local policies only to users. See [Domain and Local Policies](../../installation/domain_and_local_policies.md) to learn how domain and local policies differ.
 
-**Step 1 –** Open the Configuration Console:
+:::warning
+Domain policy assignments for users and groups reference the object's Security Identifier (SID), so they remain valid even if the user or group is renamed. Local policy assignments reference the username directly, so renaming the user invalidates the assignment.
+:::
 
-Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
-or
-Double click the **PPE Configuration** desktop shortcut.
+## Add a policy assignment
 
-**Step 2 –** Click a policy name to open the policy configuration page.
+1. Open the [PPE Configuration Console](../configconsole.md).
+2. Click the name of a policy in the policy list.
+3. Select the **Users & Groups** tab.
 
-**Step 3 –** Open the **Users & Groups** tab.
+   ![Assign policies to Users and Groups](/images/passwordpolicyenforcer/11.2/administration/usersandgroups.webp)
 
-![Assign policies to Users and Groups](/images/passwordpolicyenforcer/11.2/administration/usersandgroups.webp)
+4. Click the **+** beside **Users**, **Groups**, or **Containers/OUs** to add an assignment of that type. The Configuration Console displays a selection dialog box to help you select the users, groups, or OUs you want.
+5. Click **OK** to add the assignment. The entry appears under the corresponding list.
 
-When you assign a domain policy to a user or group, Password Policy Enforcer stores the user or
-group SID in the configuration. The assignment remains valid even if the user or group is renamed.
-When you assign a local policy to a user, Password Policy Enforcer stores the username in the
-configuration. The assignment becomes invalid if the user is renamed.
+   ![Policy assignments](/images/passwordpolicyenforcer/11.2/administration/usersandgroups2.webp)
 
-When you assign a policy to a group, Password Policy Enforcer enforces the policy for all members
-of the group as well as any nested groups. For example, if the Helpdesk group is a member of the
-Info Tech group, then any policy assigned to the Info Tech group also applies to the members of the
-Helpdesk group. If you don't want this behavior, then you can assign a different policy to the
-Helpdesk group.
+:::tip
+You can have different assignment types for a policy. For example, you may assign users to a policy by both OU and group at the same time.
+:::
 
-When you assign a policy to a container, Password Policy Enforcer enforces the policy for all users
-in the container as well as any child containers. For example, if the Helpdesk and Managers OUs are
-children of the Info Tech OU, then any policy assigned to the Info Tech OU also applies to the two
-child OUs. If you don't want this behavior, then you can assign a different policy to a child OU.
+## Remove a policy assignment
+
+1. Select the names of the users, groups, or OUs that you want to remove.
+2. Click the trash can beside **Users**, **Groups**, or **Containers/OUs** to remove the selected assignments of that type.
+
+## Policy assignment inheritance
+
+When you assign a policy to a group, PPE enforces the policy for all members of the group as well as any nested groups. For example, if the Helpdesk group is a member of the Info Tech group, then any policy assigned to the Info Tech group also applies to the members of the Helpdesk group. If you want to override the inherited policy, then assign a different policy to the Helpdesk group directly.
+
+When you assign a policy to an OU, PPE enforces the policy for all users in the OU as well as any child OUs. For example, if the Helpdesk and Managers OUs are children of the Info Tech OU, then any policy assigned to the Info Tech OU also applies to the two child OUs. If you want to override the inherited policy, then assign a different policy to a child OU directly.
 
 ![managing_policies_3](/images/passwordpolicyenforcer/11.2/administration/managing_policies_3.webp)
 
-:::note
-You can use different assignment types for a single policy. For example, you may assign
-users to a policy by both OU and group at the same time.
+## Policy assignment conflicts
+
+A policy assignment conflict occurs when more than one policy is assigned to a user. Password Policy Enforcer can resolve these conflicts and choose one policy for each user.
+
+PPE first tries to resolve a policy assignment conflict by examining the assignment type. Assignments by user take precedence over assignments by group, and assignments by group take precedence over assignments by container. For example, if you assign Policy A to a user by group, and Policy B to the same user by container, then PPE enforces Policy A because assignments by group take precedence over assignments by container.
+
+If you assign all the policies to the user by container, then PPE enforces the policy assigned to the nearest parent container. For example, if you assign Policy A to the Users OU, and Policy B to the Users\Students OU, then PPE enforces Policy B for all users in the Users\Students and Users\Students\Science OUs because it's the policy assigned to the nearest parent container.
+
+If a policy assignment conflict still exists, then PPE checks the priority of each remaining policy, and enforces the policy with the [highest priority](manage_policies.md#set-policy-priorities).
+
+## The default policy
+
+Password Policy Enforcer enforces the default policy for any user who doesn't have a policy assigned to them through a user, group, or container assignment. See [Set the default policy](manage_policies.md#set-the-default-policy) to learn how PPE uses the default policy and how to exempt specific users from it.
+
+:::warning
+If Password Policy Enforcer has only one policy, and that policy is also the default policy, then PPE enforces the policy for all users. If you want to deploy a single policy gradually, don't make it the default until the deployment is complete.
 :::
 
+## Checking which policy is enforced for a user
 
-As you assign users and groups to the policy, they appear on the page.
+Use the [**Test Policy by User** feature](testpolicy.md#by-user) to check which policy PPE enforces for a user. Enter a username on the left, and the right pane shows the enforced policy.
 
-![Policy assignments](/images/passwordpolicyenforcer/11.2/administration/usersandgroups2.webp)
+![testviewlog](/images/passwordpolicyenforcer/11.2/administration/testviewlog.webp)
 
-To remove a policy assignment:
+## Policy selection flowchart
 
-**Step 1 –** Select the user, group, or container. For example, **Administrators** under **Groups**.
-
-**Step 2 –** Click the trash can icon in the appropriate header. For example, **Groups**.
-
-## Policy Assignment Conflicts
-
-A policy assignment conflict occurs when more than one policy is assigned to a user. Password Policy
-Enforcer can resolve these conflicts and choose one policy for each user.
-
-Password Policy Enforcer first tries to resolve a policy assignment conflict by examining the
-assignment type. Assignments by user take precedence over assignments by group, which in turn take
-precedence over assignments by container. For example, if Policy A is assigned to a user by group,
-and Policy B is assigned to the same user by container, then Password Policy Enforcer enforces
-Policy A because assignments by group take precedence over assignments by container.
-
-If all the policies are assigned to the user by container, then Password Policy Enforcer enforces
-the policy that is assigned to the nearest parent container. For example, if Policy A is assigned to
-the Users OU, and Policy B is assigned to the Users\Students OU, then Password Policy Enforcer
-enforces Policy B for all users in the Users\Students and Users\Students\Science OUs because it is
-the policy assigned to the nearest parent container.
-
-If a policy assignment conflict still exists, then Password Policy Enforcer checks the priority of
-each remaining policy, and enforces the policy with the highest priority. See the
-[Policy Selection Flowchart](#policy-selection-flowchart) section for a diagram of this algorithm.
-
-Click **Test Policy** and expand the **View log** to see which policy Password Policy Enforcer
-enforces for a particular user.
-
-![Expand View log under Test to see which policy is enforced](/images/passwordpolicyenforcer/11.2/administration/testviewlog.webp)
-
-## Policy Selection Flowchart
-
-This flowchart shows how Password Policy Enforcer determines a policy for each user. Use the
-[Test Policy](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md) tool to quickly determine which policy Password Policy Enforcer
-enforces for a particular user.
+This flowchart shows how Password Policy Enforcer determines which policy to enforce for a user.
 
 ![managing_policies](/images/passwordpolicyenforcer/11.2/administration/managing_policies.webp)
