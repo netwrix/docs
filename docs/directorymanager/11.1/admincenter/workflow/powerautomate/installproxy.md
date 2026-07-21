@@ -22,7 +22,7 @@ Before running the installer, ensure the following are in place:
 
 | Requirement | Details |
 |-------------|---------|
-| Administrator access | The installer must be run as Administrator |
+| Administrator access | You must run the installer as Administrator |
 | NDM DataService running | The proxy forwards to it; it must be reachable on the same machine |
 | NDM Security Token Service (STS) running | Used for internal authentication |
 | SQL Server access | The installer registers the proxy in the NDM database. Windows Authentication is recommended; SQL login is also supported |
@@ -63,7 +63,7 @@ Open **PowerShell 7 as Administrator** on the target server and run:
     --sql-server localhost
 ```
 
-If Windows Authentication isn't available for the NDM database, add `--sql-user <login>` — the password will be prompted interactively.
+If Windows Authentication isn't available for the NDM database, add `--sql-user <login>` — the installer prompts for the password interactively.
 
 #### All parameters
 
@@ -98,7 +98,7 @@ Re-run the installer with the same parameters. It safely handles existing instal
 
 ## Manual cleanup after a failed install
 
-If the installer stopped partway through, remove the components that were created before retrying:
+If the installer stopped partway through, remove the components it created before retrying:
 
 1. **Remove the HTTP.sys certificate binding** (PowerShell):
    ```powershell

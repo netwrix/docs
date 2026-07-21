@@ -81,9 +81,9 @@ example, you can delete the ‘denied’ requests that are old by 30 days or mor
    auto-deletes workflow requests that are 30 days old and older.
 6. Select the type of requests you want to delete.
 
-    - **Pending:** to delete requests that are pending, including your own.
-    - **Approved:** to delete requests that have been approved.
-    - **Denied:** to delete requests that have been denied.
+    - **Pending:** to delete pending requests, including your own.
+    - **Approved:** to delete approved requests.
+    - **Denied:** to delete denied requests.
 
 7. Click **Delete**. Directory Manager deletes requests of the selected type that are old or older
    than the specified number of days.

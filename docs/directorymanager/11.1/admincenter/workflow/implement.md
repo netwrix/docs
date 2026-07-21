@@ -31,9 +31,9 @@ Consider a workflow where:
 - Field: criteria
 - Approver: Group owner
 
-It implies that when a user edits the values stored in the _criteria_ attribute of a group, a
-workflow request is sent to the group owner, who is the workflow approver. Changes are applied after
-the request is approved.
+It implies that when a user edits the values stored in the _criteria_ attribute of a group,
+Directory Manager sends a workflow request to the group owner, who is the workflow approver.
+Directory Manager applies the changes after the approver approves the request.
 
 But if you add a filter as:
 
@@ -84,7 +84,7 @@ attribute, it triggers the workflow.
 
     :::note
     (1) For the Create event, you can define only one workflow for an object.  
-    (2) A workflow for the Group object with the Delete event will be triggered when the group is
+    (2) A workflow for the Group object with the Delete event triggers when the group is
     manually deleted.
     :::
 
@@ -182,19 +182,20 @@ You can define Power-Automate settings for a workflow to link that workflow to a
 flow.
 
 Use these settings to connect to Power Automate from within a workflow (say Workflow1) and
-create a basic flow template there. On providing the URL of the flow template in Workflow1, the two
-are linked. As a result, the flow auto triggers when the Directory Manager workflow is triggered.
+create a basic flow template there. When you provide the URL of the flow template in Workflow1,
+Directory Manager links the two. As a result, the flow auto triggers when the Directory Manager
+workflow triggers.
 
 For details on linking a workflow to a flow, see the
 [Trigger a Flow from Directory Manager ](powerautomate/integrate.md#trigger-a-flow-from-directory-manager) topic.
 
 ## Modify a Workflow
 
-Workflows for an identity store are differentiated by their type. Predefined workflows (also called
-system workflows), by default, are displayed at the top; user-defined workflows follow.
+Workflows for an identity store differ by type. Predefined workflows (also called
+system workflows) appear at the top by default; user-defined workflows follow.
 
-You can update all details for a user-defined workflow. A system workflow, however, can be modified
-to a limited extent. You can only update the approvers, enable/disable mail approval, enable/disable
+You can update all details for a user-defined workflow. You can modify a system workflow, however,
+only to a limited extent. You can only update the approvers, enable/disable mail approval, enable/disable
 approver acceleration, and link it to a Power Automate flow.
 
 **To modify a workflow:**
@@ -205,10 +206,10 @@ approver acceleration, and link it to a Power Automate flow.
 3. Click **Workflows** under **Settings** in the left pane.
 4. On the **Configure Workflows** tab of the **Workflows** page, click the ellipsis button for a
    workflow and select **Edit**.
-5. The **Edit Workflow** page is displayed. Follow steps 5-15 in the Create a New Workflow topic to
+5. The **Edit Workflow** page appears. Follow steps 5-15 in the Create a New Workflow topic to
    update the required information.
 6. To link this workflow to a Power Automate flow, click **Power Automate Settings** in the top
-   right corner; the **Power Automate Settings** dialog box is displayed. Follow step
+   right corner; the **Power Automate Settings** dialog box appears. Follow step
    [6](/docs/directorymanager/11.1/admincenter/workflow/powerautomate/integrate.md) and onwards in the
    [Link an Identity Store Workflow to a Flow](powerautomate/integrate.md#link-an-identity-store-workflow-to-a-flow)
    topic to complete the task.
@@ -218,7 +219,7 @@ approver acceleration, and link it to a Power Automate flow.
 
 ## Enable or Disable a Workflow
 
-Workflows in an identity store can be disabled to prevent them from triggering.
+You can disable workflows in an identity store to prevent them from triggering.
 
 You can enable or disable a workflow in any of the following ways.
 
@@ -247,7 +248,7 @@ You can enable or disable a workflow in any of the following ways.
 ## Delete a User-defined Workflow
 
 Workflows in an identity store can have their type as _System_ or _User Defined_. You can delete
-user-defined workflows; system workflows can't be deleted.
+user-defined workflows; you can't delete system workflows.
 
 **To delete a workflow:**
 
