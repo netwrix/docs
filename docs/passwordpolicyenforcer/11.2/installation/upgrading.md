@@ -15,9 +15,9 @@ You can upgrade PPE by running the installer manually, with [Group Policy](insta
 The Password Policy Enforcer server installer detects existing installations and upgrades them to version 11.2. Follow the [Install the Server Components](installationserver.md) instructions to upgrade an existing installation. You don't need to uninstall the old version first.
 
 :::warning
-If the upgrade is major, for example, from 10.x to 11.x, then you should immediately open the PPE Configuration Console after upgrading the first domain controller in each domain. This automatically imports the configuration settings from the old version to the new one.
+If the upgrade is major, for example, from 10.x to 11.x, then you should immediately open the [PPE Configuration Console](../admin/configconsole.md) after upgrading the first domain controller in each domain. This automatically imports the configuration settings from the old version to the new one.
 
-You should also click the [**License** tab of the **Settings** page](../admin/settings.md#license) in the Configuration Console to check your license key. If the **License type** is _Evaluation_, then you must install a new license key before the **Valid to** date. You can download your license key from the [Netwrix Customer Portal](https://customer.netwrix.com/sign_in.html?rf=customer-portal.html). If you don't install a new key, then PPE will stop checking passwords when the evaluation license expires.
+You should also review the [**License** tab of the **Settings** page](../admin/settings.md#license) in the Configuration Console to check your license key. If the **License type** is _Evaluation_, then you must install a new license key before the **Valid to** date. You can download your license key from the [Netwrix Customer Portal](https://customer.netwrix.com/sign_in.html?rf=customer-portal.html). If you don't install a new key, then PPE will stop checking passwords when the evaluation license expires.
 
 Upgrade and restart all the Password Policy Servers in a domain before upgrading the Password Policy Clients. The Password Policy Server handles backwards compatibility for older clients, but newer clients may not communicate with an older server.
 
