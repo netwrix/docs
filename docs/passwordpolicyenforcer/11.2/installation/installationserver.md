@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Password Policy Enforcer (PPE) server installer includes the following components:
 - **Password Policy Server (PPS)** — also known as the _PPE Service for DCs_. You typically install this component on all the domain controllers in a domain. See [Domain and Local Policies](domain_and_local_policies.md) if your domain includes read-only domain controllers, or if you intend to enforce password policies for local user accounts.
-- **Configuration Console** — Graphical and command-line tools to configure PPE. Install this component on any computer that you want to configure Password Policy Enforcer from. This could be a domain controller, a management server, or your computer.
+- **[Configuration Console](../admin/configconsole.md)** — Graphical and command-line tools to configure PPE. Install this component on any computer that you want to configure PPE from. This could be a domain controller, a management server, or your computer.
 - **Mailer Service** — Sends email on behalf of PPE. You typically install it on one server in the domain.
 
 :::note
