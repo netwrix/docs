@@ -24,7 +24,7 @@ To enforce password policies for local user accounts, install PPE on the compute
 
 Most of Password Policy Enforcer's rules and features work with both domain and local policies, but there are some differences. These differences are due to password filter technical limitations, and also because some information isn't in the SAM. You can't use the following rules and features with local password policies:
 
-- The [Minimum Age](../admin/manage-policies/rules/minimum_age_rule.md) and [Maximum Age](../admin/manage-policies/rules/maximum_age_rule.md) rules (you can still use the Windows versions of these rules).
+- The [Minimum Age rule](../admin/manage-policies/rules/minimum_age_rule.md) and [Maximum Age rule](../admin/manage-policies/rules/maximum_age_rule.md) (you can still use the Windows versions of these rules).
 - [Policy assignments](../admin/manage-policies/usersgroups.md) by groups and containers.
 
 PPE stores configuration information in Active Directory for domain password policies, and in the Windows registry for local password policies. Click the [**Connected to**](../admin/configconsole.md#connect-to-a-configuration) selector in the PPE Configuration Console's home page to choose a configuration source.

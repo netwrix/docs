@@ -11,7 +11,7 @@ Passphrases have gained popularity in recent years because they can be more diff
 Rules like [Complexity](rules/complexity_rule.md) and [Dictionary](rules/dictionary_rule.md) are less important for passphrases because passphrases rely primarily on length for security. You can relax some password policy requirements for passphrases by configuring Password Policy Enforcer (PPE) to disable some rules when passwords reach a certain length.
 
 1. Open the [PPE Configuration Console](../configconsole.md).
-2. Click the name of a policy in the policy list to open the policy editor.
+2. Click the name of a policy in the policy list.
 3. Select the **Passphrase** tab.
 4. Select the **Passphrase** checkbox to enable this feature.
 

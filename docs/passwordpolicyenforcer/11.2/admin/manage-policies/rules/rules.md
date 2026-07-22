@@ -9,7 +9,7 @@ sidebar_position: 10
 Password Policy Enforcer (PPE) uses rules to accept or reject passwords. Each [policy](../manage_policies.md) has rules that you configure independently of the rules in other policies. To configure the rules for a policy:
 
 1. Open the [PPE configuration console](../../configconsole.md).
-2. Click the name of a policy in the policy list. The **Rules** tab opens by default.
+2. Click the name of a policy in the policy list.
 
 The left pane of the policy editor lists the available rules. A check mark appears beside enabled rules. Click a rule to configure its settings in the right pane. The first setting is always a checkbox with the same name as the rule. Select the checkbox to enable the rule.
 
