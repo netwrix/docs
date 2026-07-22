@@ -1,97 +1,62 @@
 ---
 title: "Policy Properties"
-description: "Policy Properties"
+description: "Configure policy properties, including name, notes, default character set, compliance level, and password synchronization script."
 sidebar_position: 40
 ---
 
-# Policy Properties
+# Policy properties
 
-Sets the properties for the selected policy.
+The **Properties** tab contains general settings for the displayed policy.
 
-**Step 1 –** Open the Configuration Console:
-
-Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
-or
-Double click the **PPE Configuration** desktop shortcut.
-
-**Step 2 –** Click a policy name to open the policy configuration page.
-
-**Step 3 –** Open the **Properties** tab.
+1. Open the [PPE Configuration Console](../configconsole.md).
+2. Click the name of a policy in the policy list.
+3. Select the **Properties** tab.
 
 ![Set the Policy Properties](/images/passwordpolicyenforcer/11.2/administration/properties.webp)
 
-Each policy must have a unique name. To change the name of a policy, enter the new name in the text
-box.
+**Name**. Every policy must have a unique name. You can change the name in this text box if you want to rename the policy.
 
-Enter any **Notes** about the policy
+**Notes**. This is an optional field that you can use to keep notes about the policy.
 
-Select the **Default characters set**. The default value (Netwrix Password Policy Enforcer) requires
-users to comply with rules that use the Password Policy Enforcer character set. Choose the alternate
-option (Windows) to have users comply with rules that use the Windows character set.
+**Default character set**. Password Policy Enforcer (PPE) has seven character sets. Some rules use these character sets to classify characters. For example, the [Complexity rule](rules/complexity_rule.md) needs to classify the characters in a password to determine if the required number of character types is present. This dropdown controls how PPE populates the default character sets. Select **Netwrix Password Policy Enforcer** from the dropdown to use PPE's internal defaults, based on the basic Latin letters and digits shown in the following table. This option works best for English-language passwords, or any password that contains only unaccented Latin characters. Select **Windows** from the dropdown to use Windows' built-in character classification. This option is suitable for all languages, but isn't fully backward compatible with PPE's default character sets.
 
-PPE's default character sets are:
-
-| Character Set | Default characters                                                       |
+| Character Set | Password Policy Enforcer default characters                              |
 | ------------- | ------------------------------------------------------------------------ |
-| Lower Alpha   | Lowercase alphabetic (a-z)                                               |
-| Upper Alpha   | Uppercase alphabetic (A-Z)                                               |
-| Alpha         | Uppercase and lowercase alphabetic (a-z and A-Z)                         |
-| Numeric       | Numerals (0-9)                                                           |
+| Lower Alpha   | Lowercase letters (a-z)                                                  |
+| Upper Alpha   | Uppercase letters (A-Z)                                                  |
+| Alpha         | Uppercase and lowercase letters (a-z and A-Z)                            |
+| Numeric       | Digits (0-9)                                                             |
 | Special       | All characters not included above                                        |
 | High          | All characters above ANSI 126                                            |
 | Custom        | No default characters                                                    |
 
+You can use the [Characters (Granular) rules](rules/character_rules.md) to override the default characters in any character set. This is especially important for the Custom set as it is empty by default.
+
 :::note
-Only Password Policy Enforcer 10.0 and higher contain the Windows character set. Password
-Policy Enforcer 9, Netwrix Password Reset and Password Policy Enforcer/Web 7 (and older for all
-products) always use the Password Policy Enforcer character set.
+PPE 10.0 was the first version to include the Windows default character set. Don't select **Windows** if you are using an older [Password Policy Client](../password-policy-client/password_policy_client.md), [PPE Web](../../web-overview/web_overview.md) 7.x or older, or Netwrix Password Reset. Always use the PPE character set with these products as it's the only supported option.
+
+- Some languages such as Japanese don't distinguish between uppercase and lowercase. When you select **Windows**, these characters are in the Alpha set, but not in the Upper Alpha or Lower Alpha sets.
+- When you select **Windows**, PPE puts characters that Windows classifies as a space, punctuation, control, or blank in the Special set. This is true even if Windows also classifies them as another character type. For example, a superscript one is both a decimal digit and a punctuation character according to Windows. PPE only puts it in the Special character set because of the punctuation classification.
+- When you select **Netwrix Password Policy Enforcer**, PPE puts all characters above ANSI 126 in the High set. When you select **Windows**, PPE only puts a character in the High set if the character is above ANSI 126 and Windows doesn't classify it as any other character type.
 :::
 
-- Some languages such as Japanese don't distinguish between uppercase and lowercase. These
-  characters are in the Windows Alpha set, but not in the Upper or Lower sets.
-- Characters classified as a space, punctuation, control, or blank by Windows are included in the
-  Special character set. If these characters are also included in some other set by Windows (for
-  example, a superscript one is both a decimal digit and punctuation), then Password Policy Enforcer
-  only includes them in the Special character set when the Windows character set is selected.
-- When using the Password Policy Enforcer character set, all characters above ANSI 126 are included
-  in the High set. When using the Windows character set, a character is only included in the High
-  set if it is above ANSI 126 and not included in any other set by Windows.
+**Passwords must comply with**. Select the number of rules that users must comply with (compliance level) from this dropdown. The default value, **all the rules**, requires users to comply with all enabled rules in this policy. Select a different option if you want PPE to enforce a more lenient password policy. For example, you may want to enable five rules, but only require users to comply with four of them. You can keep the [Complexity rule](rules/complexity_rule.md) mandatory after lowering the compliance level by selecting **Passwords must always comply with this rule** in the rule's settings.
 
-Select the number of rules for **Passwords must comply with** from the dropdown list to specifiy
-the required compliance level for this policy. The default value **(all the rules**) requires users
-to comply with all enabled rules. Choose an alternative option if Password Policy Enforcer should
-enforce a more lenient password policy. Compliance level calculations exclude the Minimum Age and Maximum Age rules. See the [Rules](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/rules.md) topic for additional information.
+PPE excludes the [Minimum Age rule](rules/minimum_age_rule.md) and [Maximum Age rule](rules/maximum_age_rule.md) from the compliance level calculation because these rules don't evaluate the password's content. PPE may also disable some rules when a user enters a [passphrase](passphrases.md). PPE accepts a passphrase that complies with all enabled rules, even if it doesn't meet the compliance level.
 
-When setting the compliance level, consider that some rules may be disabled when a user enters a
-passphrase. See the [Passphrase](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/passphrases.md) topic for additional information. Password Policy
-Enforcer accepts passphrases that comply with all enabled rules, irrespective of the compliance
-level. This ensures that users can use passphrases, even if they don't meet the compliance level when you
-configure Password Policy Enforcer to disable one or more rules for passphrases.
+**Execute the program when password is changed**. Password Policy Enforcer can execute a password synchronization program or script after every successful password change. Enter the full path to the executable and required parameters in this text box. This text box can include environment variables like `%ProgramFiles%`. Every computer running PPE should have a local copy of the program or script.
 
-Password Policy Enforcer can start a password synchronization application or script whenever a user
-successfully changes their password. Enter the full path to the executable in the **Execute the
-program when password is changed** text box. The path can contain environment variables like
-`%SystemRoot%`. Every computer running Password Policy Enforcer should have a local copy of the
-program, and only authorized users should have access to it, or any of its components.
+PPE sends the user logon name and new password as command-line parameters. For example, if you add the following commands to a batch file, PPE records each user's logon name and new password in `c:\passwords.txt`:
 
-Password Policy Enforcer sends the user logon name and new password to the program as command-line parameters. For
-example, if you add the following commands to a batch file, Password Policy Enforcer records each user's
-logon name and new password in a text file named **passwords.txt**:
-
-**echo Username: %1 >> c:\passwords.txt**
-
+```
+echo Username: %1 >> c:\passwords.txt
 echo Password: %2 >> c:\passwords.txt
+```
 
 :::warning
-This script is shown as an example only. You shouldn't store user passwords.
+This script is an example only. You shouldn't store user passwords.
+
+Secure the program or script and its related components so that no one can tamper with them. Someone could capture user passwords if they can modify or monitor its execution.
 :::
 
-
-The command can now include the [USERNAME] and [PASSWORD] macros. If you specify neither, then PPE executes the
-command with both parameters to maintain compatibility with existing programs/scripts.
-
-:::info
-Use the [USERNAME] parameter if the program/script doesn't need the password,
-so that PPE doesn't unnecessarily send the password to the change notification command/script.
-
-:::
+You can also include the `[USERNAME]` and `[PASSWORD]` macros in the command to explicitly define where PPE inserts these parameters. If you specify neither, then PPE sends the username as the first parameter and the password as the second. If your program or script only needs the username, then include only the `[USERNAME]` macro so that PPE doesn't unnecessarily send the password.
