@@ -16,7 +16,7 @@ Self-Service Password Reset portal.
 :::
 
 
-Default values for all advanced settings are specified for a portal. You can update any setting as
+A portal has default values for all advanced settings. You can update any setting as
 required. You can also import these advanced settings for a portal from a previous Directory Manager
 version. See step 14 in the
 [Create a Portal in Native IIS](/docs/directorymanager/11.1/admincenter/applications/portal/create.md#create-a-portal-in-native-iis) topic.
