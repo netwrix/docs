@@ -60,7 +60,7 @@ Password Policy Enforcer enforces the default policy for any user who doesn't ha
 If Password Policy Enforcer has only one policy, and that policy is also the default policy, then PPE enforces the policy for all users. If you want to deploy a single policy gradually, don't make it the default until the deployment is complete.
 :::
 
-## Checking which policy is enforced for a user
+## Check which policy is enforced for a user
 
 Use the [**Test Policy by User** feature](testpolicy.md#by-user) to check which policy PPE enforces for a user. Enter a username on the left, and the right pane shows the enforced policy.
 
