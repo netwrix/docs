@@ -26,7 +26,7 @@ The **Properties** tab contains general settings for the displayed policy.
 | Upper Alpha   | Uppercase letters (A-Z)                                                  |
 | Alpha         | Uppercase and lowercase letters (a-z and A-Z)                            |
 | Numeric       | Digits (0-9)                                                             |
-| Special       | All characters not included above                                        |
+| Special       | All characters not included in the preceding rows                        |
 | High          | All characters above ANSI 126                                            |
 | Custom        | No default characters                                                    |
 
