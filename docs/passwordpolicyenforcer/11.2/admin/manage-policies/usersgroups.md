@@ -1,5 +1,5 @@
 ---
-title: "Assign Policies to Users"
+title: "Users & Groups"
 description: "Assign password policies to users, groups, and containers with Netwrix Password Policy Enforcer."
 sidebar_position: 20
 ---

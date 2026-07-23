@@ -1,5 +1,5 @@
 ---
-title: "Policy Properties"
+title: "Properties"
 description: "Configure policy properties, including name, notes, default character set, compliance level, and password synchronization script."
 sidebar_position: 40
 ---
