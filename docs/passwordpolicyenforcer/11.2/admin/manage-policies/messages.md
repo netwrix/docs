@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Messages
 
-The [Password Policy Client](../password-policy-client/password_policy_client.md) (PPC) displays customizable messages when users change their password. You can customize these messages from the **Messages** tab.
+The [Password Policy Client](../password-policy-client/password_policy_client.md) displays customizable messages when users change their password. You can customize these messages from the **Messages** tab.
 
 1. Open the [PPE Configuration Console](../configconsole.md).
 2. Click the name of a policy in the policy list.
@@ -48,7 +48,7 @@ You can insert macros into the policy message template by positioning the text c
 
 ### Rejection reason template
 
-The **Rejection reason** template editor also has a multiline text box for the template, but no preview. The default message text includes only one macro, `[REASON]`. PPE populates this macro with the list of rules that the password doesn't comply with. PPE generates the reason text for each rule from the policy settings, but you can override the default rule insert text by entering your own text in the relevant text box below the template text box. See the TIP box in [Message macros](#message-macros) for how to format rule inserts.
+The **Rejection reason** template editor also has a multiline text box for the template, but no preview. The default message text includes only one macro, `[REASON]`. PPE populates this macro with the list of rules that the password doesn't comply with. PPE generates the reason text for each rule from the policy settings, but you can override the default rule insert text by entering your own text in the relevant text box below the template text box. See the tip in [Message macros](#message-macros) for how to format rule inserts.
 
 ![Rejection reason template](/images/passwordpolicyenforcer/11.2/administration/message_rejection_reason_template.webp)
 
