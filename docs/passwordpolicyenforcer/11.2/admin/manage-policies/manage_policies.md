@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Password Policy Enforcer (PPE) can enforce up to 256 different password policies per domain. Password policies are collections of rules that users must comply with when choosing a new password. You can [assign policies](usersgroups.md) to users directly, or indirectly through Active Directory security groups and containers (Organizational Units).
 
-PPE doesn't enforce any policies when it is first installed, so the policy list is empty when you open the [configuration console](../configconsole.md) for the first time.
+PPE doesn't enforce any policies when you first install it, so the policy list is empty when you open the [configuration console](../configconsole.md) for the first time.
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 

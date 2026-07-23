@@ -64,7 +64,7 @@ The **Generic rejection** template editor has only a multiline text box for the 
 
 ## Message macros
 
-Select **[POLICY]** or **[LIVE_POLICY]** in the left pane to edit the rule inserts for these macros. Enter the text you want inserted by the respective rules in the right pane. The **[LIVE_POLICY]** editor has three additional text boxes below the rule inserts. Use these text boxes to define the legend text for the three icons in the live policy.
+Select **[POLICY]** or **[LIVE_POLICY]** in the left pane to edit the rule inserts for these macros. In the right pane, enter the text you want the respective rules to insert. The **[LIVE_POLICY]** editor has three additional text boxes below the rule inserts. Use these text boxes to define the legend text for the three icons in the live policy.
 
 ![Live policy macro](/images/passwordpolicyenforcer/11.2/administration/message_live_policy_macro.webp)
 
