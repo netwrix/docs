@@ -80,7 +80,7 @@ If Password Policy Enforcer has only one policy, and that policy is also the def
 :::
 
 :::tip
-Use the [Test Policy by User](testpolicy.md) feature to see which policy PPE enforces for a particular user. You can also review the [Policy selection flowchart](usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
+Use the [Test Policy by User](testpolicy.md#by-user) feature to see which policy PPE enforces for a particular user. You can also review the [Policy selection flowchart](usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
 :::
 
 ### Rename a policy
