@@ -50,7 +50,7 @@ Click **Set priorities** to view or modify policy priorities. This button is onl
 
 Select the policy you want to reprioritize, then click **Higher** or **Lower** to move the policy up or down. Click **Apply priorities** to accept the new priority order.
 
-The [Assign Policies to Users](usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also click **Test Policy** to quickly see which policy PPE enforces for a particular user.
+The [Assign Policies to Users](usersgroups.md) page has more information about how PPE assigns policies and resolves conflicts. You can also use the [**Test Policy by User** feature](testpolicy.md#by-user) to see which policy PPE enforces for a particular user.
 
 ## Export configuration
 
@@ -80,7 +80,7 @@ If Password Policy Enforcer has only one policy, and that policy is also the def
 :::
 
 :::tip
-Use the [Test Policy by User](testpolicy.md#by-user) feature to see which policy PPE enforces for a particular user. You can also review the [Policy selection flowchart](usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
+Use the [**Test Policy by User** feature](testpolicy.md#by-user) to see which policy PPE enforces for a particular user. You can also review the [Policy selection flowchart](usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
 :::
 
 ### Rename a policy
