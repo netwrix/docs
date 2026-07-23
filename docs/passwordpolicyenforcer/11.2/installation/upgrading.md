@@ -21,7 +21,7 @@ You should also review the [**License** tab of the **Settings** page](../admin/s
 
 Upgrade and restart all the Password Policy Servers in a domain before upgrading the Password Policy Clients. The Password Policy Server handles backwards compatibility for older clients, but newer clients may not communicate with an older server.
 
-Don't run multiple versions of the Password Policy Server in a domain for an extended time. Maintain both versions only for a short time while you roll out the new version. Configuration changes you make in the Configuration Console apply only to that console's major version. If you have more than one major version of PPE running in a domain and need to make a configuration change, then make the same change for every major version. Failure to do so may lead to inconsistent enforcement of the password policy.
+Don't run multiple versions of the Password Policy Server in a domain for an extended time. Maintain both versions only for a short time while you deploy the new version. Configuration changes you make in the Configuration Console apply only to that console's major version. If you have more than one major version of PPE running in a domain and need to make a configuration change, then make the same change for every major version. Failure to do so may lead to inconsistent enforcement of the password policy.
 :::
 
 ## Upgrade the Password Policy Client

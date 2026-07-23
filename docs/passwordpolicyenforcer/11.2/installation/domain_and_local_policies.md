@@ -10,7 +10,7 @@ Netwrix Password Policy Enforcer (PPE) enforces password policies for both domai
 
 Domain user accounts exist in Active Directory. The domain controllers store information about these accounts and replicate changes among themselves.
 
-Local user accounts exist in the SAM database of workstations and servers. The workstations and servers can be standalone or domain members. The host computer stores information about these accounts locally and doesn't replicate it to any other computers.
+Local user accounts exist in the Security Account Manager (SAM) database of workstations and servers. The workstations and servers can be standalone or domain members. The host computer stores information about these accounts locally and doesn't replicate it to any other computers.
 
 A typical Windows network has both domain and local user accounts, but you might not want to enforce PPE policies for both account types. If your users normally log on with a domain account, you'll most likely only enforce password policies for domain accounts.
 
