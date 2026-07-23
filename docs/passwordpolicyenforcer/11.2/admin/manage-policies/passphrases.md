@@ -23,5 +23,5 @@ Rules like [Complexity](rules/complexity_rule.md) and [Dictionary](rules/diction
 PPE excludes disabled rules when calculating the compliance level (the **Passwords must comply with** setting on the policy's [**Properties**](policy_properties.md) tab). PPE accepts a passphrase that complies with all enabled rules, even if it doesn't meet the compliance level.
 
 :::warning
-Opinions differ on how long a passphrase needs to be. Even a 30-character passphrase can be weaker than a well-chosen password. Don't disable too many rules under the assumption that length alone makes up for reduced complexity.
+Opinions differ on how long a passphrase needs to be. Even a 30-character passphrase can be weaker than a well-chosen password. Don't disable too many rules under the assumption that length alone compensates for reduced complexity.
 :::
