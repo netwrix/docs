@@ -57,19 +57,19 @@ Follow the steps to configure Office 365 tenant as a monitored item.
 
 - If you are going to use **Basic authentication**, you can proceed to the next step – **Tenant
   name** will be filled in automatically after it.
-
-- **NOTE:** Basic authentication is no longer possible for Exchange Online. For the already existing
-  tenants it is still possible to use basic authentication for SharePoint Online and Microsoft Entra
-  ID monitoring.
-
 - If you are going to use **Modern authentication**, paste the obtained name. See the
   [Using Modern Authentication with Microsoft Entra ID](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/permissions/modernauth/modernauth.md)
   topic for additional information.
+- If you are using a government tenant, click the **Tenant Environment** tab and select the
+  desired tenant environment.
+
+:::note
+Basic authentication is no longer possible for Exchange Online. For the already existing tenants,
+it is still possible to use basic authentication for SharePoint Online and Microsoft Entra ID
+monitoring.
+:::
 
 ![tenantenvironment](/images/auditor/10.9/admin/monitoringplans/tenantenvironment.webp)
-
-If you are using a government tenant, please click the **Tenant Environment** tab and select the
-desired tenant environment.
 
 **Step 2 –** Select authentication method that will be used when accessing Office 365 services:
 
@@ -88,9 +88,8 @@ desired tenant environment.
     - Selected, Office 365 organization will be accessed using the Microsoft Entra ID (formerly
       Azure AD) app you prepared. Enter:
 
-        - **Application ID**;
-
-            - **Application secret**.
+        - **Application ID**
+        - **Application secret**
 
     - See the
       [Using Modern Authentication with Microsoft Entra ID](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/permissions/modernauth/modernauth.md)
