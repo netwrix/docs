@@ -355,6 +355,9 @@ It is advised, that due to recent changes applied by cloud providers, to not
 apply any changes in the JSON parser, unless Monitor Webmail isn't working
 :::
 
+:::warning
+For Monitor webmail events, the Email Sender and Email Subject columns in the Content Aware Report populate only when the Body field contains content.
+:::
 
 ## Deep Packet Inspection Applications
 
