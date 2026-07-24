@@ -18,4 +18,4 @@ The following learning paths provide Partner certification for Professional Serv
 * [Netwrix Platform Governance for Salesforce Professional Services Engineer](./platform-governance-for-salesforce.md)
 * [Netwrix Privilege Secure Professional Services Engineer](./privilege-secure.md)
 
-Courses are available for other <Company /> products through the Learning Library, but certification for Professional Services Engineers is not available for those products. 
+Courses are available for other <Company /> products through the Learning Library, but certification for Professional Services Engineers isn't available for those products. 
