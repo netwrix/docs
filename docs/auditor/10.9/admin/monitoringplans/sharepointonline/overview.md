@@ -6,8 +6,8 @@ sidebar_position: 160
 
 # SharePoint Online
 
-**NOTE:** Prior to configuring your monitoring plan, please read and complete the instructions in
-the following topics:
+**NOTE:** Read and complete the instructions in the following topics before configuring your
+monitoring plan:
 
 - [Protocols and Ports Required](/docs/auditor/10.9/requirements/ports.md) – To ensure successful data
   collection and activity monitoring configure necessary protocols and ports for inbound and
@@ -23,7 +23,7 @@ To configure SharePoint Online data source settings, complete the following fiel
 | Option                                                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Monitor this data source and collect activity data        | Enable monitoring of the selected data source and configure Auditor to collect and store audit data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Audit SharePoint Online configuration and content changes | Configuration and content changes are always audited.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Audit SharePoint Online configuration and content changes | Auditor always audits configuration and content changes.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | Audit SharePoint Online read access                       | Configure Auditor to monitor SharePoint Online read access.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | Collect data for state-in-time reports                    | Configure Netwrix Auditor to store daily snapshots of your SharePoint Online configuration required for further state-in-time reports generation. See the [State–In–Time Reports](/docs/auditor/10.9/admin/reports/types/stateintime/overview.md) topic for additional information. The product updates the latest snapshot on the regular basis to keep users up-to-date on actual system state. Only the latest snapshot is available for reporting in Netwrix Auditor. If you want to generate reports based on different snapshots, you must import snapshots to the Audit Database. For that, in the Manage historical snapshots section, click **Manage** and select the snapshots that you want to import. To import snapshots, you must be assigned the Global administrator or the Global reviewer role . Move the selected snapshots to the Snapshots available for reporting list using the arrow button. When finished, click **OK**. |
 | Skip inaccessible SharePoint Online sites                 | When enabled, Netwrix Auditor skips SharePoint Online sites that are inaccessible to the data collecting account and continues data collection for the remaining sites.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -41,17 +41,17 @@ This instruction shows how to collect audit data from the Microsoft 365 tenant.
 If you plan to use modern authentication, see the
 [Configuring Microsoft Entra ID App for Auditing Microsoft Entra ID](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/permissions/modernauth/modernauth.md#configuring-microsoft-entra-id-app-for-auditing-microsoft-entra-id)
 topic for additional information on how to prepare Microsoft Entra ID app with required permissions.
-Make sure you have the following at hand:
+Ensure you have the following available:
 
 - Tenant name
 - For modern authentication: Application (client) ID
 - Application secret
 - For basic authentication: User name and password
 
-Types of data that can be collected by Netwrix Auditor from the Microsoft 365 tenant depend on the
+The types of data Netwrix Auditor can collect from the Microsoft 365 tenant depend on the
 authentication option you choose.
 
-Follow the steps to configure Office 365 tenant as a monitored item.
+To configure Office 365 tenant as a monitored item, complete the following steps.
 
 **Step 1 –** On the **General** page of the item properties, specify **Tenant name**:
 
@@ -71,7 +71,7 @@ monitoring.
 
 ![tenantenvironment](/images/auditor/10.9/admin/monitoringplans/tenantenvironment.webp)
 
-**Step 2 –** Select authentication method that will be used when accessing Office 365 services:
+**Step 2 –** Select the authentication method to use when accessing Office 365 services:
 
 - Basic authentication:
 
@@ -79,7 +79,7 @@ monitoring.
     - Enter **User name** and **password**; use any of the following formats: _user@domain.com_ or
       _user@domain.onmicrosoft.com_.
     - The **Tenant name** field then will be filled in automatically.
-    - Make sure this user account has sufficient access rights. See
+    - ensure this user account has sufficient access rights. See
       [Using Basic Authentication with Microsoft Entra ID](/docs/auditor/10.9/configuration/microsoft365/microsoftentraid/permissions/basicauth.md)
       topic for additional information.
 
