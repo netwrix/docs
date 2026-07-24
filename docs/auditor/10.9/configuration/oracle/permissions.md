@@ -62,7 +62,7 @@ Database version.
 
 | Version | Required SELECT privileges |
 | --- | --- |
-| Oracle Database 12c, 18c, 19c, 21c, 23c | - `aud$` |
+| Oracle Database 12c, 18c, 19c, 21c, 23ai, 26ai | - `aud$` |
 | | - `gv_$xml_audit_trail` |
 | | - `dba_stmt_audit_opts` |
 | | - `v_$parameter` |

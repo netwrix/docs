@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Configure Oracle Database for Auditing
 
-This topic explains how to configure Oracle Database 12c, 18c, 19c, 21c, 23c for Auditing.
+This topic explains how to configure Oracle Database 12c, 18c, 19c, 21c, 23ai, 26ai for Auditing.
 
-## Configure Oracle Database 12c, 18c, 19c, 21c, 23c for Auditing
+## Configure Oracle Database 12c, 18c, 19c, 21c, 23ai, 26ai for Auditing
 
 The following auditing modes are available for Oracle Database:
 
