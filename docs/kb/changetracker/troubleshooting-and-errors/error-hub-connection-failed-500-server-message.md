@@ -69,12 +69,15 @@ Follow these steps:
 
 This should resolve the uniqueId conflict and the device should now be registered on Change Tracker successfully.
 
+## Related Articles
+
+- [Adding a Palo Alto Device as a Proxied Device](../configuration-and-setup/add-palo-alto-proxied-device.md)
+
 <!--
 Additional related articles pending migration to the public docs site. When
 any of the following target articles are migrated in a future batch,
 re-create the "## Related Articles" section and add the corresponding link:
 
-- How to Move Your Linux Server MongoDB Database to a Windows Server (kb.netwrix.com/8283) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (refresh steps and screenshots); Batch 4 candidate
-- Add Palo Alto Device to a Proxy Agent as a Proxy Device in Change Tracker Gen 7 (kA04u0000000JXHCA2) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (steps are outdated); Batch 4 candidate
+- How to Move Your Linux Server MongoDB Database to a Windows Server (kb.netwrix.com/8283) — SME decision 2026-07-10 (Ben): KEEP + UPDATE (refresh steps and screenshots); descoped from Batch 4a pending product-fact clarification from Ben/Denis on whether Linux Hub is retired (nnthubservice reference). Hold for a later batch.
 - Changing the Admin Password for MongoDB (docs/kb/changetracker/database-and-diagnostics/change-mongo-admin-password.md) — pending merge of batch 3b PR #1209; re-add once merged to dev. Link text updated to match the article's current (batch 3b) title.
 -->
