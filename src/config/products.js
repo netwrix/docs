@@ -457,13 +457,19 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '4.0',
+        label: '4.0',
+        isLatest: true,
+        sidebarFile: './sidebars/pingcastle/4.0.js',
+      },
+      {
         version: '3.5',
         label: '3.5',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/pingcastle/3.5.js',
       },
     ],
-    defaultVersion: '3.5',
+    defaultVersion: '4.0',
   },
   {
     id: 'platgovnetsuite',
