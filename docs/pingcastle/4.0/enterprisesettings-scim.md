@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 ---
-# Settings: SCIM and Provisioning
+# Settings: Provisioning
 
 Most settings on this page take effect within about 30 seconds, without a restart. A few settings require a restart, which PingCastle Enterprise schedules automatically.
 
@@ -15,11 +15,11 @@ For example, when you assign a user to the group your identity provider uses for
 
 ## Enabling SCIM and generating a token
 
-Your identity provider needs a bearer token to authenticate to the SCIM endpoint. Generate one from the SCIM & Provisioning screen.
+Your identity provider needs a bearer token to authenticate to the SCIM endpoint. Generate one from the Provisioning screen.
 
 To enable SCIM and generate a token:
 
-1. Go to **Settings** > **Provisioning** > **SCIM**.
+1. Go to **Configuration** > **Settings** > **Provisioning**.
 2. Turn on **SCIM Enabled**.
 3. Click **Generate Token**.
 4. In the dialog, enter a label to identify the token (for example, `Okta production`) and select a system.

@@ -6,7 +6,7 @@ sidebar_position: 3
 PingCastle Enterprise 4.0 adds Entra scanning, a data source that assesses a Microsoft Entra ID tenant and its connected Microsoft 365 services for security risks. Entra scanning works the same way the Active Directory scanner does: it collects data from the tenant, evaluates it against a set of risk definitions, and reports the results in PingCastle Enterprise so you can review and remediate findings alongside your Active Directory data.
 
 :::note
-Entra scanning is distinct from Entra ID Authentication. Entra ID Authentication is a login method that lets administrators and users sign in to PingCastle Enterprise through OpenID Connect. Entra scanning is a data source that assesses your Entra tenant for security risks. See [Authentication](enterpriseinstall.md#authentication) for the login method.
+Entra scanning is distinct from Entra ID Authentication. Entra ID Authentication is a login method that lets administrators and users sign in to PingCastle Enterprise through OpenID Connect. Entra scanning is a data source that assesses your Entra tenant for security risks. See [Authentication](enterpriseauthsetup.md#authentication) for the login method.
 :::
 
 ## Architecture

@@ -32,4 +32,4 @@ Not every audit log entry has a linkable target. Changes to global settings, suc
 
 ## Audit log settings
 
-The **Settings** page exposes two audit-log-related settings: the retention period, which controls how long entries stay in the log, and the maximum export size, which limits the number of rows included when you export the log. See [Logging and retention settings](enterprisesettings-logging.md) for how to configure these settings.
+The **Settings** page exposes two audit-log-related settings: the retention period, which controls how long entries stay in the log, and the maximum export size, which limits the number of rows included when you export the log. See [Data retention settings](enterprisesettings-logging.md) for how to configure these settings.

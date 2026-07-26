@@ -44,8 +44,7 @@ These methods can be used separately or in coordination, meaning you can
 either use a Dual-Factor authentication (recommended) or a single factor
 authentication.
 
-To disable password authentication, set `disablePasswordLogin` to `true`. OpenID is automatically
-enabled when the OpenID section is completed in `appsettings.json`.
+To disable password authentication, enable **Disable Password Login** on **Configuration** > **Settings** > **Login options**. Enabling OIDC on the **OIDC Connect** screen automatically turns on OpenID login.
 
 Authentication using OpenID:
 
@@ -95,7 +94,7 @@ see what claims have been pushed to PingCastle Enterprise.
 ![Une image contenant texte, capture d'écran, Police, conception Description générée automatiquement](/images/pingcastle/enterpriseuser/image9.webp)
 
 :::note
-Users provisioned automatically through SAML or OIDC just-in-time (JIT) provisioning are created with no permissions by default. An administrator must assign claims or user permissions to these accounts before they can access domains or Entra tenants. See [SCIM and provisioning settings](enterprisesettings-scim.md) for JIT provisioning configuration.
+Users provisioned automatically through SAML or OIDC just-in-time (JIT) provisioning are created with no permissions by default. An administrator must assign claims or user permissions to these accounts before they can access domains or Entra tenants. See [Provisioning settings](enterprisesettings-scim.md) for JIT provisioning configuration.
 :::
 
 # Ping Castle Enterprise features
@@ -491,9 +490,7 @@ This export produces a csv file with the user or computer name and many
 properties such as the creation date or operating system as seen by
 PingCastle.
 
-The other alternative is to set the setting MaxNumberUsersInHtmlReport
-at the root of the appsettings.Production.json file to any other value
-(default to 100)
+The other alternative is to change this limit on **Configuration** > **Settings** > **Data retention**, using the **Limit user list output** toggle (default to 100 users).
 
 History tab:
 
