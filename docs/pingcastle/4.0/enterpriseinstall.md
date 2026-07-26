@@ -17,7 +17,7 @@ PingCastle Enterprise is a tool that helps you improve and follow your overall A
 
 PingCastle Enterprise requires:
 
-- Windows Server operating systems that support ASP.NET 8.0
+- Windows Server operating systems that support ASP.NET 10.0
   - Windows Server 2012 R2
   - Windows Server 2016
   - Windows Server 2019
@@ -26,7 +26,7 @@ PingCastle Enterprise requires:
 
 To check Windows Server support lifecycle details, refer to the [Windows Lifecycle Fact Sheet](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet).
 
-For ASP.NET 8.0 operating system compatibility, refer to the [.NET 8.0 supported OS documentation](https://learn.microsoft.com/en-us/dotnet/core/install/windows#supported-versions).
+For ASP.NET 10.0 operating system compatibility, refer to the [.NET 10.0 supported OS documentation](https://learn.microsoft.com/en-us/dotnet/core/install/windows#supported-versions).
 
 **PingCastle.exe**
 
@@ -48,11 +48,11 @@ PingCastle Enterprise uses Entity Framework Core 2 for database operations. Part
 
 PingCastle Enterprise requires:
 
-- **ASP.NET 8.0 Hosting Bundle**: Required for hosting the web application
+- **ASP.NET 10.0 Hosting Bundle**: Required for hosting the web application
 - **IIS (Internet Information Services)**: Used as the web server with Windows Authentication enabled by default
 
 :::info
-The ASP.NET 8.0 Hosting Bundle should be installed before configuring IIS to ensure proper module registration. If installed in the wrong order, run a repair on the ASP.NET 8.0 Hosting Bundle to resolve any issues.
+PingCastleEnterpriseInstaller.exe installs and configures IIS, Windows Authentication, and the ASP.NET 10.0 Hosting Bundle automatically. Manual installation is only necessary if you're preparing a server ahead of time or troubleshooting.
 :::
 
 ### Logon Providers
@@ -211,41 +211,66 @@ Follow these steps for a production-ready installation of PingCastle Enterprise.
 2. Windows Server (see [Requirements](#requirements) section)
 3. SQL Server (Express, Standard, or Enterprise)
 
-#### Installation Steps
-
-#### Step 1 Install IIS with Windows Authentication
-
-Install the IIS Web Server Role with Windows Authentication feature:
-
-```powershell
-dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-WebServerManagementTools /featurename:IIS-ManagementConsole /featurename:IIS-WindowsAuthentication
-```
-
-#### Step 2 Install ASP.NET 8 Hosting Bundle
-
-Download and install the [ASP.NET 8 Hosting Bundle](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
-
-:::warning
-IIS must be installed **before** the ASP.NET 8.0 Hosting Bundle. If installed in the wrong order, repair the Hosting Bundle installation to ensure proper module registration.
+:::info
+PingCastleEnterpriseInstaller.exe installs and configures IIS, Windows Authentication, and the ASP.NET 10.0 Hosting Bundle for you. You don't need to install these components manually before running the installer.
 :::
 
-#### Step 3 Install SQL Server
+#### Installation Steps
+
+#### Step 1 - Install SQL Server
 
 Install SQL Server (Express, Standard, or Enterprise edition) based on your needs. See the [Database](#database) section for guidance on which edition to choose.
 
 For SQL Express, visit [SQL Server Express Downloads](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16).
 
-#### Step 4 Run PingCastleEnterpriseInstaller.exe
+#### Step 2 - Run PingCastleEnterpriseInstaller.exe
 
-1. Run PingCastleEnterpriseInstaller.exe
-2. Accept the license terms
-3. Enter your license key (provided by PingCastle support or licensing teams)
+The installer wizard walks you through prerequisite checks, licensing, and configuration screens in the following order.
 
-:::info
-If the license key is missing, contact PingCastle support or your account manager.
+1. **Prerequisite check**: the installer checks the server for IIS and the ASP.NET 10.0 Hosting Bundle. If either is missing, it offers to install them for you.
+
+   :::warning
+   Installing IIS or the ASP.NET 10.0 Hosting Bundle can require a server restart. If the installer prompts you to restart, restart the server and run the installer again to continue.
+   :::
+
+2. **License agreement**: review the license agreement and select the checkbox to accept it. You can't proceed until you accept.
+3. **License key**: enter your license key, or browse to the license file provided by Netwrix.
+
+   :::info
+   If the license key is missing, contact Netwrix support or your account manager.
+   :::
+
+4. **Install type**: choose **Simple** or **Custom**.
+   - **Simple** (default): installs to `C:\Program Files\Netwrix\PingCastleEnterprise` and skips the directory picker.
+   - **Custom**: choose your own install directory. You can't select a path inside a system directory, such as `Windows` or `System32`.
+5. **Application pool identity**: choose the Windows identity the IIS application pool runs as.
+   - **ApplicationPoolIdentity** (default, recommended): no credentials needed.
+   - **Local System**.
+   - **Custom account**: specify a domain or local account. This account needs local administrator rights to use the built-in task scheduler. If you're using Windows Authentication against a remote SQL Server, use a domain service account.
+6. **Database connection**: choose how PingCastle Enterprise connects to SQL Server. See [Step 3 - Configure Database Connection](#step-3-configure-database-connection) for the two available options.
+7. **Authentication method**: enable **Windows Authentication**, **OpenID Connect**, **SAML2**, or a combination, and optionally disable local password login. See [Authentication](#authentication) for full configuration details for each method.
+
+   :::warning
+   If you enable Windows Authentication, don't select a broadly scoped group such as "Domain Admins" as the restriction group. Windows strips these groups from the token it presents to the application, so authentication always fails for members of that group. Run `whoami /all` to confirm which groups appear in your token before choosing one.
+   :::
+
+8. **HTTPS configuration**: HTTPS is enabled by default. Choose a certificate source:
+   - **Self-signed** (default): the installer generates a 10-year self-signed certificate. Use this for proof-of-concept environments only.
+   - **Existing certificate file**: provide a `.pfx` file and its password.
+   - **Existing certificate from the certificate store**: select the certificate from a list.
+
+   See [Configuring HTTPS](#configuring-https) for guidance on using a CA-issued certificate in production.
+
+9. **Email configuration**: choose **SMTP**, **Microsoft Graph**, or **None**. See [Email](#email) for configuration details for each provider.
+10. **Ready to install**: review your selections, then click **Install**. The installer applies your configuration and shows a progress bar. Click **Finish** to close the wizard.
+
+:::note
+- The installer removes the IIS Default Web Site to free up ports 80 and 443 for PingCastle Enterprise. If you need the Default Web Site for something else, plan accordingly before installing.
+
+- On upgrades, the installer skips most of these screens and preserves your existing configuration.
 :::
 
-#### Step 5 Configure Database Connection
+#### Step 3 - Configure Database Connection
 
 During installation, choose one of two database configuration options:
 
@@ -282,30 +307,13 @@ This simplified setup is recommended for **testing only**. For production enviro
 2. Windows Server or Windows 10/11
 3. Administrative PowerShell access
 
+:::info
+PingCastleEnterpriseInstaller.exe installs and configures IIS, Windows Authentication, and the ASP.NET 10.0 Hosting Bundle for you. You don't need to install these components manually before running the installer.
+:::
+
 #### Installation Steps
 
-#### Step 1 Install IIS with Windows Authentication
-
-```powershell
-dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-WebServerManagementTools /featurename:IIS-ManagementConsole /featurename:IIS-WindowsAuthentication
-```
-
-#### Step 2 Install ASP.NET 8 Hosting Bundle
-
-```powershell
-$ProgressPreference = "SilentlyContinue" # Quicker download
-# Direct Download Link 8.0.23
-$Uri = "https://builds.dotnet.microsoft.com/dotnet/aspnetcore/Runtime/8.0.23/dotnet-hosting-8.0.23-win.exe"
-$DownloadDirectory = "C:\Tools"
-$Executable = "$DownloadDirectory\aspnet8.exe"
-if(-Not (Test-Path $DownloadDirectory)){ mkdir $DownloadDirectory }
-# Download
-Invoke-WebRequest -Uri $Uri -OutFile "$Executable"
-# Install
-& $Executable /install /quiet
-```
-
-#### Step 3 Install SQL Server Express with Chocolatey
+#### Step 1 - Install SQL Server Express with Chocolatey
 
 For test and POC systems, you can use [Chocolatey](https://chocolatey.org/) to automate SQL Server Express installation:
 
@@ -318,12 +326,25 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco install sql-server-express
 ```
 
-#### Step 4 Run PingCastleEnterpriseInstaller.exe
+#### Step 2 - Run PingCastleEnterpriseInstaller.exe
 
-1. Run PingCastleEnterpriseInstaller.exe
-2. Follow the installation wizard
-3. Enter your license key
-4. Configure the database connection (typically using the local SQL Express instance)
+1. Run PingCastleEnterpriseInstaller.exe. The installer checks for IIS and the ASP.NET 10.0 Hosting Bundle and offers to install them if they're missing.
+
+   :::warning
+   Installing missing prerequisites can require a server restart. If prompted, restart the server and run the installer again to continue.
+   :::
+
+2. Accept the license agreement and enter your license key.
+3. Choose the **Simple** install type to use the default install path, or **Custom** to pick your own directory.
+4. Choose an application pool identity. **ApplicationPoolIdentity** (default) doesn't need credentials.
+5. Configure the database connection, typically using the local SQL Express instance you installed in Step 1.
+6. Choose your authentication method and, if you keep HTTPS enabled (the default), your certificate source.
+7. Configure email settings, or select **None** to skip email configuration.
+8. Review your selections and click **Install**.
+
+:::tip
+For a detailed description of each wizard screen, see the Production Installation tab.
+:::
 
 :::tip Remote SQL Server Setup
 If you're configuring a remote SQL Server instead of using the local instance, see the [Remote Database Configuration](#remote-database-configuration) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
@@ -455,7 +476,7 @@ See [Enterprise Scheduling](enterprisescheduling.md) for configuring credential 
 
 ## External Database Configuration
 
-PingCastleEnterpriseInstaller.exe handles database creation and permissions automatically when it creates the database itself (see [Configure Database Connection](#step-5-configure-database-connection), Option A). Use this section when connecting to an existing SQL Server database instead, such as a remote or pre-provisioned instance.
+PingCastleEnterpriseInstaller.exe handles database creation and permissions automatically when it creates the database itself (see [Configure Database Connection](#step-3-configure-database-connection), Option A). Use this section when connecting to an existing SQL Server database instead, such as a remote or pre-provisioned instance.
 
 ### General Database Requirements
 
