@@ -25,11 +25,14 @@ Where applicable, an audit log entry links directly to the object it describes. 
 
 - A change to a domain links to that domain's detail page.
 - A change to a user account links to that account.
-- A change to an agent or credential profile links to that agent or credential profile.
-- A change to a scheduled scan job links to that job.
 
-Not every audit log entry has a linkable target. Changes to global settings, such as authentication configuration or retention settings, don't correspond to a specific object in PingCastle Enterprise, so these entries appear in the log without a link.
+Not every audit log entry has a linkable target. Entries for deleted objects also appear without a link, since the object no longer exists.
 
 ## Audit log settings
 
-The **Settings** page exposes two audit-log-related settings: the retention period, which controls how long entries stay in the log, and the maximum export size, which limits the number of rows included when you export the log. See [Data retention settings](enterprisesettings-logging.md) for how to configure these settings.
+The **Data retention** screen on the **Settings** page exposes two audit-log-related settings:
+
+- **Audit log retention (days)** — How long audit log entries stay in the log before PingCastle Enterprise deletes them.
+- **Audit log export row limit** — The maximum number of rows included when you export the log.
+
+See [Settings: Logging, Application, Data Retention, Action Plans, and Scanning and Scheduling](enterprisesettings-logging.md) for how to configure these settings.
