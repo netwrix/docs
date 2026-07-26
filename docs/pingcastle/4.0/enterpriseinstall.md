@@ -189,6 +189,13 @@ graph LR
 | SMB | 445 | TCP | |
 | ADWS | 9389 | TCP | Active Directory Web Services for performant scans |
 
+##### Entra Scanning
+
+| Service | Port | Protocol | Notes |
+|---------|------|----------|-------|
+| Microsoft Graph | 443 | TCP | HTTPS outbound from the CloudAPI service |
+| Microsoft 365 (SharePoint, Teams, Exchange, Azure RBAC) | 443 | TCP | HTTPS outbound from the CloudAPI service |
+
 
 ## Quick Installation
 
