@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+sidebar_label: Upgrade guide
 ---
 # PingCastle Enterprise Upgrade Guide
 

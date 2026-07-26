@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+sidebar_label: Installation and configuration
 ---
 # PingCastle Enterprise Installation and Configuration
 
@@ -84,14 +85,22 @@ graph LR
         direction TB
         Enterprise["🏢 PingCastle Enterprise<br/>IIS + SQL Server<br/>HTTPS: 443"]
         DB[("💾 SQL Server<br/>Database")]
-        Scheduler["⚙️ Scheduler<br/>PingCastle.exe"]
+        CloudAPI["☁️ CloudAPI<br/>Entra Scanner Microservice"]
+        Scheduler["⚙️ PingCastleSchedulerService<br/>Quartz.NET"]
         LocalAD{{"🌐 Local<br/>Active Directory"}}
         
         Users["👥 Users"] -->|HTTPS| Enterprise
         Enterprise -->|Stores| DB
-        Scheduler -->|Scans| LocalAD
+        Enterprise <-->|API| CloudAPI
+        Scheduler -->|Schedules Scans| LocalAD
         Scheduler -->|Uploads| Enterprise
     end
+
+    subgraph EntraTenant["Microsoft Entra ID Tenant"]
+        Entra{{"☁️ Entra ID &<br/>Microsoft 365"}}
+    end
+
+    CloudAPI -->|Scans| Entra
     
     subgraph Trusted["Trusted Domains"]
         TrustedAD{{"🔗 External Domains<br/>via AD Trusts"}}
@@ -111,11 +120,13 @@ graph LR
     
     style Enterprise fill:#2196F3,color:#fff,stroke:#1976D2,stroke-width:3px
     style DB fill:#4CAF50,color:#fff,stroke:#388E3C,stroke-width:2px
+    style CloudAPI fill:#03A9F4,color:#fff,stroke:#0288D1,stroke-width:2px
     style Scheduler fill:#FF9800,color:#fff,stroke:#F57C00,stroke-width:2px
     style RemoteScanner fill:#FF9800,color:#fff,stroke:#F57C00,stroke-width:2px
     style LocalAD fill:#9C27B0,color:#fff,stroke:#7B1FA2,stroke-width:2px
     style TrustedAD fill:#9C27B0,color:#fff,stroke:#7B1FA2,stroke-width:2px
     style IsolatedAD fill:#E91E63,color:#fff,stroke:#C2185B,stroke-width:2px
+    style Entra fill:#9C27B0,color:#fff,stroke:#7B1FA2,stroke-width:2px
 
 ```
 
@@ -127,7 +138,14 @@ graph LR
 - Requires SQL Server database for data storage
 - Accessible via HTTP/HTTPS (ports 80/443)
 - Provides web interface for administrators and users
-- Built-in scheduler that uses Windows Task Scheduler for automated scanning of local and trusted domains
+- Scheduled scans of local and trusted domains are handled by `PingCastleSchedulerService` (see [Scheduling scans](#scheduling-scans))
+
+#### CloudAPI Service
+
+- Standalone microservice that performs Entra ID scanning
+- Runs as its own IIS application pool in a `CloudAPI` subfolder under the PingCastle Enterprise installation path
+- Communicates with the Enterprise server via HTTPS API connections, authenticated using the `CloudServiceAPIKey`
+- See [Entra Scanning](enterpriseentrascan.md) for architecture and setup details
 
 #### PingCastle.exe Scanner
 
@@ -239,7 +257,7 @@ When the software is uninstalled, the database is **not** automatically removed.
 :::
 
 :::tip Remote SQL Server Setup
-If you're configuring a remote SQL Server (not on the local machine), see the [Remote Database Configuration](#remote-database-configuration-for-manual-installation) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
+If you're configuring a remote SQL Server (not on the local machine), see the [Remote Database Configuration](#remote-database-configuration) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
 :::
 
   </TabItem>
@@ -301,7 +319,7 @@ choco install sql-server-express
 4. Configure the database connection (typically using the local SQL Express instance)
 
 :::tip Remote SQL Server Setup
-If you're configuring a remote SQL Server instead of using the local instance, see the [Remote Database Configuration](#remote-database-configuration-for-manual-installation) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
+If you're configuring a remote SQL Server instead of using the local instance, see the [Remote Database Configuration](#remote-database-configuration) section for detailed setup instructions including SQL Authentication and Windows Authentication options.
 :::
 
   </TabItem>
@@ -428,81 +446,19 @@ PingCastle Enterprise 4.0 replaces the Windows Task Scheduler-based scheduling u
 
 See [Enterprise Scheduling](enterprisescheduling.md) for configuring credential profiles, scheduled scans, and migrating scheduled tasks from a 3.5.1 installation.
 
-## Manual Installation Without the Installer
+## External Database Configuration
 
-:::info When to Use Manual Installation
-This section is for advanced users who can't use or prefer not to use PingCastleEnterpriseInstaller.exe. Manual installation is typically required for:
-- **Linux deployments** with Nginx or Apache
-- **Azure App Service** deployments using `az webapp deploy`
-- **Custom Windows configurations** requiring non-standard setup
-- Environments where PingCastleEnterpriseInstaller.exe isn't available or can't be used
+PingCastleEnterpriseInstaller.exe handles database creation and permissions automatically when it creates the database itself (see [Configure Database Connection](#step-5-configure-database-connection), Option A). Use this section when connecting to an existing SQL Server database instead, such as a remote or pre-provisioned instance.
 
-For standard Windows Server deployments, PingCastleEnterpriseInstaller.exe is the recommended and supported installation method.
-:::
-
-PingCastle Enterprise can be manually installed as a standard ASP.NET Core 8.0 application. Manual installation involves:
-
-**Windows Manual Installation:**
-1. Extract the application ZIP file to a target directory
-2. Create an IIS website and application pool
-3. Disable the Default Web Site if it conflicts with PingCastle Enterprise
-4. Configure the application pool identity
-5. Grant SQL Server permissions to the application pool account
-
-**Linux Manual Installation:**
-- Netwrix hasn't fully documented Linux installation procedures
-- Requires configuration of Nginx or Apache as a reverse proxy
-- Requires PostgreSQL database setup
-- See [Hosting](#hosting) section for Microsoft's official ASP.NET Core hosting documentation
-
-**Azure App Service Deployment:**
-- Use `az webapp deploy` command to deploy the application package
-- Configure Azure Database for PostgreSQL as the backend
-- Use the same deployment method for initial installation and subsequent updates
-
-:::warning Limited Support for Alternative Configurations
-While PingCastle Enterprise can run on Linux with PostgreSQL or in Azure App Service environments, **Netwrix doesn't fully support these configurations**. These setups are possible but not guaranteed for future releases. Customer support for non-Windows/non-SQL Server configurations will be provided on a **best-effort basis only**.
-
-The fully supported configuration is Windows Server with IIS and Microsoft SQL Server, installed via PingCastleEnterpriseInstaller.exe.
-:::
-
-### Hosting
-
-PingCastle Enterprise can run on any infrastructure that supports ASP.NET Core 8.0. When performing a manual installation, refer to Microsoft's documentation for hosting procedures:
-
-**Windows with IIS (Manual Installation)**
-- [Host ASP.NET Core on Windows with IIS](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/)
-- Follow the preceding steps: extract ZIP, create IIS website, disable Default Web Site, configure app pool, and set SQL permissions
-
-**Linux (Limited Support - Manual Installation)**
-- [Host ASP.NET Core on Linux with Nginx](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-nginx)
-- [Host ASP.NET Core on Linux with Apache](https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache)
-- Netwrix hasn't fully documented these installation procedures
-
-:::tip IIS Configuration
-For IIS deployments, if the "Default Web Site" conflicts with PingCastle Enterprise, stop the default website and configure it to not start automatically.
-:::
-
-### Database Configuration for Manual Installation
-
-#### General Database Requirements
+### General Database Requirements
 
 Database backups are the customer's responsibility.
 
 PingCastle Enterprise requires a database user account with database owner permissions. The application automatically creates and updates database tables during initial setup and software updates.
 
-:::note PingCastleEnterpriseInstaller.exe Handles This Automatically
-PingCastleEnterpriseInstaller.exe handles database setup automatically. This section is only relevant for manual installations.
-:::
+### SQL Server Permissions
 
-<Tabs>
-<TabItem value="sqlserver" label="SQL Server" default>
-
-#### SQL Server Permissions for IIS
-
-When manually installing on Windows with IIS, the application pool requires database access. The application pool uses a special Windows account for which permissions must be granted manually.
-
-Grant permissions with the following SQL:
+When connecting to an existing database, the account used by PingCastle Enterprise requires database owner permissions. If PingCastle Enterprise runs under the IIS application pool's Windows account, grant permissions with the following SQL:
 
 ```sql
 IF NOT EXISTS (SELECT loginname FROM master.dbo.syslogins
@@ -515,41 +471,7 @@ USE PingCastleEnterprise;
 EXEC sp_addrolemember 'db_owner', 'IIS APPPOOL\PingCastleEnterprise';
 ```
 
-</TabItem>
-<TabItem value="postgresql" label="PostgreSQL (Limited Support)">
-
-#### PostgreSQL Configuration
-
-:::warning
-PostgreSQL support is limited and provided on a best-effort basis only. This is primarily used for Linux and Azure App Service deployments.
-:::
-
-Example PostgreSQL setup on Ubuntu (for Linux manual installation):
-
-```bash
-sudo apt-get install postgresql postgresql-contrib
-sudo /etc/init.d/postgresql start
-
-# Create user and database
-sudo -u postgres createuser pingcastle
-sudo -u postgres psql
-```
-
-In the PostgreSQL prompt:
-
-```sql
-ALTER USER pingcastle WITH PASSWORD 'pingcastle';
-CREATE DATABASE pingcastle OWNER pingcastle;
-```
-
-:::note
-By default, the postgres user has no password. PostgreSQL collation may not handle special characters as expected, which can affect sorting of container names like [Default].
-:::
-
-</TabItem>
-</Tabs>
-
-### Remote Database Configuration for Manual Installation
+### Remote Database Configuration
 
 <Tabs>
 <TabItem value="local" label="SQL Authentication" default>
@@ -623,54 +545,6 @@ Server=tcp:server.fqdn.com;Database=PingCastle;Trusted_Connection=True;MultipleA
 
 </TabItem>
 </Tabs>
-
-### Application Configuration for Manual Installation
-
-For manual installations, configure the `appsettings.json` file in the application root directory.
-
-:::note PingCastleEnterpriseInstaller.exe Handles This Automatically
-PingCastleEnterpriseInstaller.exe configures these settings automatically. This section is only for manual installations.
-:::
-
-![](/images/pingcastle/enterpriseinstall/image31.webp)
-
-#### Required Settings
-
-Configure these three settings in `appsettings.json`:
-
-**1. Database Type**
-
-Set the `database` parameter:
-- `sqlserver` (recommended)
-- `postgres` (limited support)
-
-**2. Connection String**
-
-Set the `DefaultConnection` parameter with your database connection string.
-
-:::important
-Escape special characters in JSON strings:
-- Backslash: `\` becomes `\\`
-- Double quotes: `"` becomes `\"`
-:::
-
-**3. License Key**
-
-Set the `License` parameter with your license key.
-
-#### Connection String Examples
-
-**SQL Server Local DB**
-
-```json
-"DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=aspnet-PingCastleEnterprise-9521AD04-BA3A-41DC-A454-F2BD464E9391;Trusted_Connection=True;MultipleActiveResultSets=true"
-```
-
-**PostgreSQL**
-
-```json
-"DefaultConnection": "Server=localhost;Username=pingcastle;Password=pingcastle;Database=pingcastle"
-```
 
 ## Authentication
 
@@ -2177,82 +2051,23 @@ found.
 
 When troubleshooting issues with PingCastle Enterprise, you need to view error messages and logs to diagnose problems.
 
-<Tabs>
-<TabItem value="debug" label="Debug Logging" default>
+Configure logging from the web portal at **Configuration** > **Settings** > **Logging**:
 
-Enable persistent debug logging to capture detailed application behavior:
+- **Write log to file**: Enables or disables file logging
+- **Logging levels**: Control how much detail is captured
+- Additional logging settings are also available on this page
 
-1. Log in to the PingCastle Enterprise Server.
-
-2. Locate the appsettings.json file (usually at C:\\PingCastleEnterprise).
-
-3. Edit the **appsettings.json** file so the Logging section looks like this:
-
-```json
-"Logging": {
-  "IncludeScopes": false,
-  "LogLevel": {
-    "Default": "Debug",
-    "System": "Information",
-    "Microsoft": "Information"
-  }
-}
-```
-
-4. From the same directory, open the **web.config** file and edit the **aspNetCore** tag to enable stdout logging:
-
-```xml
-<aspNetCore processPath="dotnet"
-  arguments=".\PingCastleEnterprise.dll" stdoutLogEnabled="true"
-  stdoutLogFile=".\logs\stdout" hostingModel="InProcess" />
-```
-
-5. Open PowerShell as Administrator and run **IISRESET** to restart the web services.
-
-6. Log in and perform actions in the PingCastle Enterprise web portal. Check C:\\PingCastleEnterprise\\logs\\ to review the logs.
-
-</TabItem>
-<TabItem value="manual" label="Run Application Manually">
-
-Run the application manually from the command line to view immediate error output:
-
-```bash
-dotnet.exe PingCastleEnterprise.dll
-```
-
-**(dotnet.exe is stored by default on c:\\program files\\dotnet)**
-
-To open the application on the network, use the `--server.urls` parameter:
-
-```bash
-dotnet.exe PingCastleEnterprise.dll --server.urls=http://*:8080
-```
+See [Log Files](#log-files) for how to download the generated logs.
 
 :::note
-Running manually has limitations. Database permission errors may not appear because the application runs under your user context rather than the IIS application pool identity (typically IIS APPPool\\AppName). For database permission issues, see [this guide](https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login) on granting rights to the application pool account.
+The PingCastleSchedulerService doesn't use Serilog. If you need to troubleshoot the scheduler, check the Windows Event Log on the server instead.
 :::
 
-</TabItem>
-</Tabs>
+#### Log Files
 
-#### Platform-Specific Logs
+PingCastle Enterprise and the CloudAPI service (used for Entra ID scanning) use Serilog for logging. Each service writes its logs to a `logs` folder under its own installation location.
 
-<Tabs>
-<TabItem value="windows" label="Windows" default>
-
-- **Event Viewer** stores application errors and warnings
-- **Debug logs** are written to the logs directory when enabled (C:\\PingCastleEnterprise\\logs\\)
-
-</TabItem>
-<TabItem value="linux" label="Linux">
-
-- Check service status: `service <name-of-service> status`
-- Service logs show startup errors if the service fails to start
-
-![](/images/pingcastle/enterpriseinstall/image88.webp)
-
-</TabItem>
-</Tabs>
+To download logs from the web portal, go to **Configuration** > **Settings** > **Logging** and click **Download Today's Logs** or **Download All Logs**.
 
 ### Common Errors and Solutions
 

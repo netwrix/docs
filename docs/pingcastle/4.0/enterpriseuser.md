@@ -1,5 +1,6 @@
 ---
 sidebar_position: 12
+sidebar_label: User manual
 ---
 # PingCastle Enterprise User Manual
 
