@@ -28,12 +28,12 @@ knowledge_article_id: ""
 
 ## Symptom
 
-When you attempt to load a page, Netwrix Password Policy Enforcer Web downloads PPEWeb.dll instead.
+When you attempt to load a page, Netwrix Password Policy Enforcer Web downloads `PPEWeb.dll` instead.
 
 
 ## Cause
 
-The IIS server role does not include Internet Server API (ISAPI) Extensions, and the ISAPI and CGI Restrictions feature in IIS Manager does not list PPEWeb.dll as an allowed entry.
+The IIS server role does not include Internet Server API (ISAPI) Extensions, and the ISAPI and CGI Restrictions feature in IIS Manager does not list `PPEWeb.dll` as an allowed entry.
 
 
 ## Resolution
@@ -41,41 +41,41 @@ The IIS server role does not include Internet Server API (ISAPI) Extensions, and
 ### Enable ISAPI Extensions
 
 1. Open Server Manager on the server hosting IIS:
-   1. press Windows Key + R
-   2. type "servermanager" in the open field and click OK
-2. In Server Manager click "Manage" and click "Add Roles and Features"
+   - press Windows Key + R
+   - type `servermanager` in the open field and click **OK**
+2. In Server Manager click **Manage**, then click **Add Roles and Features**, which opens the Add Roles and Features Wizard.
 
-![Server Manager](0-images/ServerManager.png)
+![Server Manager](../0-images/ServerManager.png)
 
 3. In **Before You Begin**, **Installation Type**, and **Server Selection**, accept the defaults and click **Next**.
-   1. On **Server Roles**, expand **Web Server (IIS)** > **Web Server** > **Application Development** and select **ISAPI Extensions**.
-   2. Complete the wizard to install. If IIS already includes ISAPI Extensions, continue to the next step.
+   - On **Server Roles**, expand **Web Server (IIS)** > **Web Server** > **Application Development** and select **ISAPI Extensions**.
+   - Complete the wizard to install. If IIS already includes ISAPI Extensions, continue to the next step.
 
-![ISAPI and CGI Restrictions IIS](0-images/ISAPIandCGIRestrictionsIIS1.png)
+![ISAPI and CGI Restrictions list in IIS Manager](../0-images/ISAPIandCGIRestrictionsIIS1.png)
 
 4. Close IIS Manager if it is open, then run `iisreset` from a command prompt.
 
-![CMD iisreset](0-images/CMDiisreset.png)
+![CMD iisreset](../0-images/CMDiisreset.png)
 
 ### Allow PPEWeb.dll in ISAPI and CGI Restrictions
 
 1. Open IIS Manager and navigate to the server name in the **Connections** pane. In **Features View**, select **ISAPI and CGI Restrictions**.
 
-![ISAPI and CGI Restrictions IIS](0-images/ISAPIandCGIRestrictionsIIS1.png)
+![ISAPI and CGI Restrictions list in IIS Manager](../0-images/ISAPIandCGIRestrictionsIIS1.png)
 
-2. In **ISAPI and CGI Restrictions**, locate **PPEWeb**. Set the restriction to **Allowed** and set the path to PPEWeb.dll.
+2. In **ISAPI and CGI Restrictions**, locate **PPEWeb**. Set the restriction to **Allowed** and set the path to `PPEWeb.dll`.
 
-![ISAPI and CGI Restrictions IIS](0-images/ISAPIandCGIRestrictionsIIS2.png)
+![PPEWeb restriction set to Allowed with path to PPEWeb.dll](../0-images/ISAPIandCGIRestrictionsIIS2.png)
 
-3. If PPEWeb.dll does not appear in the list, use **Add** or **Edit** in the **Actions** pane. Enter the path to PPEWeb.dll, add a description to identify the entry, and select **Allow extension path to execute**.
+3. If `PPEWeb.dll` does not appear in the list, use **Add** or **Edit** in the **Actions** pane. Enter the path to `PPEWeb.dll`, add a description to identify the entry, and select **Allow extension path to execute**.
 
-![ISAPI and CGI Restrictions IIS](0-images/ISAPIandCGIRestrictionsIIS3.png)
+![Add or Edit dialog for the PPEWeb.dll restriction](../0-images/ISAPIandCGIRestrictionsIIS3.png)
 
 4. Close IIS Manager and run `iisreset` from a command prompt.
 
-![CMD iisreset](0-images/CMDiisreset.png)
+![CMD iisreset](../0-images/CMDiisreset.png)
 
 ### Verify the Fix
 
 1. Clear the browser cache. 
-2. Verify that clicking **Change Password** in the web GUI loads the change password page instead of downloading PPEWeb.dll.
+2. Verify that clicking **Change Password** in the web GUI loads the change password page instead of downloading `PPEWeb.dll`.
