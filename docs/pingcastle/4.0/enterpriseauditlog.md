@@ -35,4 +35,4 @@ The **Data retention** screen on the **Settings** page exposes two audit-log-rel
 - **Audit log retention (days)** — How long audit log entries stay in the log before PingCastle Enterprise deletes them.
 - **Audit log export row limit** — The maximum number of rows included when you export the log.
 
-See [Settings: Logging, Application, Data Retention, Action Plans, and Scanning and Scheduling](enterprisesettings-logging.md) for how to configure these settings.
+See [Settings: Data Retention](enterprisesettings-dataretention.md) for how to configure these settings.

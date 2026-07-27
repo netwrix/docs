@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 ---
-# Settings: Provisioning
+# Provisioning
 
 Most settings on this page take effect within about 30 seconds, without a restart. A few settings require a restart, which PingCastle Enterprise schedules automatically.
 
@@ -22,8 +22,10 @@ To enable SCIM and generate a token:
 1. Go to **Configuration** > **Settings** > **Provisioning**.
 2. Turn on **SCIM Enabled**.
 3. Click **Generate Token**.
-4. In the dialog, enter a label to identify the token (for example, `Okta production`) and select a system.
+4. In the dialog, enter a label to identify the token (for example, `Okta production`), select a connector type, and set an expiration.
 5. Copy the token.
+
+By default, tokens expire after 90 days. If you want to reduce maintenance burden, set a longer expiration, such as one year, when creating the token.
 
 <!-- TODO: screenshot -->
 
@@ -31,11 +33,23 @@ To enable SCIM and generate a token:
 PingCastle Enterprise displays the token only once. If you close the dialog without copying it, generate a new token — you can't retrieve the original value again.
 :::
 
-Configure your identity provider with the token and the `/api/SCIM` base URL. Most identity providers also ask you to define a userName strategy, which determines how the identity provider matches an incoming SCIM user to a PingCastle Enterprise account — for example, by email address. Refer to your identity provider's SCIM documentation for that configuration.
+### Recommended IdP configuration
 
-### The system field is a label, not a connector selector
+Configure your identity provider with the token and the `/api/SCIM` base URL. Most identity providers also ask you to define a userName strategy, which determines how the identity provider matches an incoming SCIM user to a PingCastle Enterprise account. Netwrix recommends the following settings:
 
-When you generate a token, the system field (for example, Okta, Azure AD, or OneLogin) is for your own reference only. It helps you remember which identity provider each token belongs to when you're managing multiple tokens. Selecting a system doesn't change how the SCIM connector behaves — PingCastle Enterprise processes all SCIM requests the same way regardless of which system you select.
+- **Base URL**: `/api/SCIM`.
+- **userName strategy**: Use the email field as the matching attribute.
+- **Deprovisioning action**: Delete the account rather than deactivate it. Deletion removes access immediately and reduces the risk of a stale account being reactivated or otherwise misused.
+
+Refer to your identity provider's SCIM documentation for how to configure these settings.
+
+### The connector type field is just a label
+
+When you generate a token, the connector type field (for example, Okta, Azure AD, or OneLogin) is for your own reference only. It helps you remember which identity provider each token belongs to when you're managing multiple tokens. Selecting a connector type doesn't change how the SCIM connector behaves — PingCastle Enterprise processes all SCIM requests the same way regardless of which connector type you select.
+
+:::note
+If your identity provider isn't in the list, select **Other** or any connector type. It's only for reference.
+:::
 
 ## Restricting SCIM requests
 

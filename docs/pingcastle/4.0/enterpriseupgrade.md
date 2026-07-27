@@ -10,11 +10,7 @@ This guide covers upgrading PingCastle Enterprise from version 3.5.1 to version 
 
 **Check the current version**
 
-Check the installed version using the **About** link at the bottom of each page.
-
-![The About link at the bottom of a PingCastle Enterprise page](/images/pingcastle/enterpriseupgrade/rid9.webp)
-
-![The About page showing the installed PingCastle Enterprise version](/images/pingcastle/enterpriseupgrade/rid12.webp)
+Check the installed version by clicking the user icon in the top-right corner and selecting **About**.
 
 This guide applies only to upgrades from version 3.5.1. If you're running an earlier version, upgrade to 3.5.1 first.
 
@@ -28,13 +24,13 @@ Test the upgrade in a non-production environment first if one is available. This
 
 ## Performing the upgrade
 
-PingCastle Enterprise 4.0 replaces the MSI-based installer with a single installer executable, `PingCastleEnterpriseInstaller.exe`. Upgrading from 3.5.1 to 4.0 is an in-place upgrade: you run the new installer on top of your existing 3.5.1 installation, and it detects and upgrades that installation automatically.
+PingCastle Enterprise 4.0 replaces the MSI-based installer with a single installer executable, `PingCastleEnterpriseInstaller.exe`. Upgrading from 3.5.1 to 4.0 is an in-place upgrade: you run the new installer on top of your existing 3.5.1 installation, and it detects and upgrades that installation automatically. The installer also detects and applies any prerequisite changes 4.0 requires, such as the correct ASP.NET Hosting Bundle version, so you don't need to update prerequisites manually.
 
 To upgrade PingCastle Enterprise from 3.5.1 to 4.0:
 
 1. Download `PingCastleEnterpriseInstaller.exe` for version 4.0.
 2. Run `PingCastleEnterpriseInstaller.exe` on the server where PingCastle Enterprise 3.5.1 is installed.
-3. The installer detects the existing 3.5.1 installation and performs an in-place upgrade. Follow the on-screen prompts to complete the upgrade.
+3. The installer detects the existing 3.5.1 installation, checks for and applies any required prerequisite changes, and performs an in-place upgrade. Because this is an upgrade, it skips most configuration screens, preserves your existing settings, and shows only a minimal set of prompts.
 
 ## Configuration migration
 
@@ -49,7 +45,7 @@ As part of this migration, the installer backs up the original `appsettings.prod
 After the upgrade completes:
 
 1. Confirm the application starts successfully.
-2. Check the **About** page to confirm the version now shows 4.0.
+2. Click the user icon in the top-right corner, select **About**, and confirm the version now shows 4.0.
 3. Confirm your monitoring plans and configuration settings appear as expected, since these now come from the database instead of `appsettings.production.json`.
 
 If a setting is missing or incorrect, check the backed-up file in `config-backups/` to compare it against the current configuration.

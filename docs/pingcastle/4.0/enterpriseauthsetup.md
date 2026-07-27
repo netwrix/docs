@@ -384,6 +384,15 @@ Ensure the user account login matches one of the preceding certificate identifie
   </TabItem>
 </Tabs>
 
+### Login options
+
+The **Login options** screen also includes these fields:
+
+| Field | Description |
+|---|---|
+| Minimum Password Length | The minimum number of characters required for local authentication passwords. Applies only when Local Authentication is enabled. |
+| Session Timeout | The number of minutes a user session can remain idle before PingCastle Enterprise logs the user out. |
+
 ### Custom Login Message
 
 You can display a custom message on the login page, such as an internal notice or an authorized-use banner, by setting **Custom Login Message** on **Configuration** > **Settings** > **Login options**.

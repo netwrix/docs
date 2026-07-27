@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
 ---
-# Settings: Security
+# Security
 
 The **Security** screen controls two areas of PingCastle Enterprise's web application defenses: antiforgery (cross-site request forgery, or CSRF) protection and password rate limiting. Both areas work the same way: repeated failures from a client trigger a temporary block, and PingCastle Enterprise automatically lifts that block after a configurable period.
 
