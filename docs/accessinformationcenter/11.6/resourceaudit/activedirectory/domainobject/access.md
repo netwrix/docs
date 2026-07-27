@@ -7,11 +7,11 @@ sidebar_position: 10
 # Access Report
 
 The Access report at the domain object level provides information on the level of access trustees
-have at the domain object level. This report includes a Permission Source table.
+have. This report includes a Permission Source table.
 
-![Access report at the domain object level](/images/directorymanager/11.0/admincenter/datasource/excel_-_one_drive.webp)
+![Access report at the domain object level](/images/accessinformationcenter/11.6/resourceaudit/activedirectory/domainobject/access.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Trustee Type – Type of the trustee (for example, Domain User or Domain Group)
 - Trustee Name – Owner of the trustee account
@@ -39,8 +39,8 @@ This report is comprised of the following columns:
 If the selected trustee in the top section of the report is a group, the Group Membership pane
 displays the group membership, including nested groups.
 
-There is one table at the bottom displaying Permission Source for the select trustee. It contains
-all of the ways the selected trustee has been granted rights to the selected resource.
+One table at the bottom displays Permission Source for the selected trustee. It contains
+all the ways the selected trustee has been granted rights to the selected resource.
 
 - Source Path – Location for which the audited object was granted rights to the selected resource,
   which can be represented two ways:
