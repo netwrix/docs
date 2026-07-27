@@ -30,6 +30,34 @@ termination or modification of the Endpoint Protector Agent.
 When enabling Debug logging, deploying a fresh installation, or during upgrade processes where critical drivers/services (such as DPI, browser plugins, or Outlook add-ins) must be reloaded, restart the operating system. This mandatory first step in troubleshooting ensures that all dependencies are properly initialized."
 :::
 
+## Lightweight, Cross-Platform Architecture
+
+The Endpoint Protector Agent doesn't require OS kernel-level integration. This reduces the risk of
+conflicts with other security software, such as antivirus, EDR, and HIPS solutions, and keeps the
+Agent's footprint on the endpoint to a minimum.
+
+### Kernel Independence
+
+The Agent doesn't inject kernel-level drivers or extensions on Windows, macOS, or Linux. This avoids
+the stability and compatibility risks associated with kernel-mode components, such as system crashes
+from driver conflicts or extension issues after an OS update.
+
+On Linux specifically, this also means the Agent isn't dependent on Dynamic Kernel Module Support
+(DKMS) or a rebuild each time the kernel is updated, removing the operational risk — common with
+kernel-module-based agents — of endpoint protection breaking after a routine kernel update.
+
+### Cross-OS Feature Parity
+
+The Agent maintains feature parity across Windows, macOS, and Linux for Device Control (DC),
+Content Aware Protection (CAP), and eDiscovery. The Enforced Encryption Client, which provides FIPS
+140-3 validated removable media encryption, offers full parity between Windows and macOS.
+
+Endpoint Protector is designed for full feature parity across Windows, macOS, and Linux from
+initial release, rather than treating Linux as a delayed follow-up to Windows and macOS support. The
+only differences between operating systems are in the specific applications covered by content
+inspection, since the native applications and file-handling behaviors on each OS are inherently
+platform-specific.
+
 ## Agent install parameters
 
 To improve the Endpoint Protector installation process, use the Endpoint Protector tool that allows
@@ -42,7 +70,7 @@ Use the following commands:
 - u - uninstall
 - rn - release notes
 - l - distribution list
-
+ 
 **Optional CLI commands for installers**
 
 
@@ -316,11 +344,13 @@ Based on each distribution, follow the corresponding method:
 
 ![Setting the Endpoint Protector Server IP](setserveriptwo.webp)
 
-## The Windows Subsystem for Linux
+## WSL - Windows Subsystem for Linux
 
-With the Windows Subsystem for Linux (WSL), you can run native Linux distributions directly within
-your Windows environment. However, due to its nature, the Endpoint Protector Client can't be
-directly installed as an application within WSL.
+With the Windows Subsystem for Linux (WSL), you can run native Linux distributions directly within your Windows environment. 
+
+### WSL 1
+
+The Endpoint Protector Client can't be installed directly as an application within WSL.
 
 While direct installation isn't possible, you can still manage and control the usage of WSL
 applications through the Application Denylist feature in Endpoint Protector. With this feature, you can
@@ -344,6 +374,19 @@ This could be:
 :::note
 Endpoint Protector Client can't directly control the usage of WSL Bash command-line tools
 on Windows.
+:::
+
+### WSL2
+
+WSL2 lets you start a lightweight virtual machine with a specific Linux distribution, and offers two options for controlling it:
+
+- Configure an Application Denylist, as with [WSL 1](#wsl-1), to block WSL2 usage entirely.
+- Deploy a dedicated Linux EPP Client inside the WSL2 Linux machine to gain EPP visibility into it.
+  The installed instance is treated as a separate machine in the EPP Server, which lets you apply
+  more granular policies.
+
+:::note
+Netwrix has only tested Ubuntu 26.04 (ARM and x64) and RHEL 10 (x64) in its lab.
 :::
 
 ## EPP Client Integrity Checks

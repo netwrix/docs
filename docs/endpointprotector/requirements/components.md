@@ -37,7 +37,30 @@ The diagram below illustrates the network architecture for the Endpoint Protecto
 enables comprehensive Data Loss Prevention (DLP) across both local and remote users, securing
 sensitive information and ensuring compliance with security policies.
 
-![Architecture Overview](networkarchitecture.webp)
+![Architecture Overview](networkarchitecture.webp) 
+
+### Client to Server Communication
+
+This section describes how TLS encrypts communication between the Endpoint Protector Server and the Endpoint Protector Client.
+
+- On the Endpoint Protector Server, TLS 1.2 and TLS 1.3 are enabled by default. Endpoint Protector always negotiates the highest TLS version available on both the Client and the Server, and selects the strongest cipher suite TLS 1.3 offers.
+- Netwrix Support can can enable TLS 1.1 upon request for backward compatibility with older agents and appliances.
+
+### Endpoint Protector Client TLS
+
+**TLS 1.3 Compatibility**
+
+| OS      | Older version                                                         | Newer version                                                        | Endpoint Protector Client Features                                                                                                                    |
+| ------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows | Not compatible with Windows 7, XP, and versions older than Windows 10 | Compatible with Windows 10, version 1903 and higher, and Windows 11 | Version 2608 and later uses a custom bundled OpenSSL package. <br/> Version 2605 and earlier uses Windows' built-in TLS encryption engine (Schannel). |
+| macOS   | Compatible                                                              | Compatible                                                                | Uses a custom bundled OpenSSL package shipped with the Endpoint Protector Client.                                                                       |
+| Linux   | Not compatible                                                          | Compatible                                                                | Uses Linux's built-in OpenSSL engine.                                                                                                                     |
+
+### Endpoint Protector PQC Encryption
+
+Starting with the 2608 Client and Server release, Endpoint Protector supports Post-Quantum Cryptography (PQC) encryption for Client to Server communication.
+
+Endpoint Protector automatically negotiates PQC as the highest available encryption option when both the Client and the Server run a version that supports it. If either side runs an older version, Endpoint Protector falls back to the highest TLS version both sides support.
 
 ### Key Components and Data Flow
 
