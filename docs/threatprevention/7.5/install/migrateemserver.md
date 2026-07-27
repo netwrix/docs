@@ -73,7 +73,7 @@ update the Enterprise Manager info for each Agent as follows:
    Address/Name field and click **Next**.
 4. Verify that the update task completes for each Agent successfully.
 
-At this point, the Agents should get displayed in the Administration Console on the new Enterprise
+At this point, the Agents should appear in the Administration Console on the new Enterprise
 Manager machine.
 
 :::note

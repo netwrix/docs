@@ -48,7 +48,7 @@ information for an Agent:
 
     ![Warning Symbol for an Agent](/images/threatprevention/7.5/admin/agents/warningsymbol.webp)
 
-  - AD Event Latency – Time difference between when the event was detected by the Agent and when
+  - AD Event Latency – Time difference between when the Agent detected the event and when
     the Enterprise Manager received it
 
     :::note

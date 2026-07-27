@@ -88,7 +88,7 @@ was successful. See the [Installing Window ](/docs/threatprevention/8.0/admin/ag
 
 **Step 8 –** When the task is successfully completed, click **Finish** to close the window.
 
-The Agent will be listed in the table on the Agents interface.
+The Agent appears in the table on the Agents interface.
 
 :::note
 If the server where the Agent is deployed has multiple network adapters (multi-homed),
@@ -125,7 +125,7 @@ either succeed or fail during a prerequisites or verification check. See the
 status messages display:
 
 - Failed – Read the failure message and either click **Back** to provide new credentials or click
-  **Finish** to close the window and ensure any error messages are taken care of before the next
+  **Finish** to close the window and resolve any error messages before the next
   attempt
 - Completed – Indicates that the Agent has been successfully updated
 
