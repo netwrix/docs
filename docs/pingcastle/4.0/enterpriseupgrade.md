@@ -34,11 +34,7 @@ To upgrade PingCastle Enterprise from 3.5.1 to 4.0:
 
 ## Configuration migration
 
-In previous versions, PingCastle Enterprise stored configuration settings in `appsettings.production.json`. Starting with version 4.0, PingCastle Enterprise stores these settings in the database instead.
-
-When you start the application for the first time after the upgrade, PingCastle Enterprise automatically migrates the settings from `appsettings.production.json` into the database. You don't need to manually port any values from the old file.
-
-As part of this migration, the installer backs up the original `appsettings.production.json` file to a `config-backups/` subfolder in the install directory. Reference this backup if you need to verify a setting after the upgrade.
+Starting with version 4.0, PingCastle Enterprise stores configuration settings in the database instead of `appsettings.production.json`. The application migrates these settings automatically during the upgrade. See [Configuration migration from appsettings.production.json](enterprisesettings.md#configuration-migration-from-appsettingsproductionjson) for details.
 
 ## Post-upgrade verification
 

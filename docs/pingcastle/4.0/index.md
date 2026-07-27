@@ -625,7 +625,7 @@ The configuration file format changed in version 3.5 due to the ASP.NET 8 upgrad
 
 ### Settings Migration from pingcastle.exe.config
 
-The `PingCastleAutoUpdater.exe` includes an automatic migration process:
+This migration happened in version 3.5 and applies only if you're upgrading from an earlier version. The `PingCastleAutoUpdater.exe` includes an automatic migration process:
 
 1. **Run PingCastleAutoUpdater.exe** to download the update
 2. **Verify the version** of PingCastle.exe matches the expected version
