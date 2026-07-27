@@ -41,8 +41,8 @@ The IIS server role does not include Internet Server API (ISAPI) Extensions, and
 ### Enable ISAPI Extensions
 
 1. Open Server Manager on the server hosting IIS:
-   - press Windows Key + R
-   - type `servermanager` in the open field and click **OK**
+   - Press Windows Key + R.
+   - Type `servermanager` in the open field and click **OK**.
 2. In Server Manager click **Manage**, then click **Add Roles and Features**, which opens the Add Roles and Features Wizard.
 
 ![Server Manager](../0-images/ServerManager.png)
