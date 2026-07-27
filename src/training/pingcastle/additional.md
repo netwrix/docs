@@ -4,4 +4,4 @@ import { NPC } from '@site/src/training/products';
 
 The following course is available for self-enrollment through the Learning Library:
 
-* What's New in <NPC /> v3.5
+* What's New in <NPC /> v4.0

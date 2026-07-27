@@ -1,51 +1,55 @@
 ---
 title: "Patterns"
-description: "Patterns"
+description: "Configure the Patterns rule to reject passwords that contain sequential character patterns like abcde or keyboard patterns like qwerty."
 sidebar_position: 90
 ---
 
-# Patterns Rule
+# Patterns rule
 
-The Patterns rule rejects passwords that contain character patterns such as "abcde". Character
-patterns weaken the password.
+The Patterns rule rejects passwords that contain sequential character patterns like abcde and keyboard patterns like qwerty. Passwords with predictable character patterns are easier to guess and crack.
 
 ![Patterns rule](/images/passwordpolicyenforcer/11.2/administration/patterns.webp)
 
-Select the **Patterns** checkbox to enable the Patterns rule.
+## Sequential character patterns
 
-Select **Reject character patterns like "abcde"** to check for character patterns.
+Select the **Patterns** checkbox at the top of the page, then select the **Reject character patterns like "abcde"** checkbox to reject passwords containing sequential character patterns.
 
-Select **Character patterns** to set the patterns to apply. Default is both **English alphabet
-(a-z)** and **Numbers (0-9)**.
+Select the **Detect character substitution** checkbox if you want Password Policy Enforcer (PPE) to apply [character substitutions](rules.md#detecting-character-substitution) when checking passwords.
 
-Select **Detect character substitution** if Password Policy Enforcer should reject passwords that
-rely on character substitution to comply with this rule.
+Select the **Detect words typed backwards** checkbox if you want PPE to test passwords with their characters reversed. For example, PPE also evaluates the password zyxwdrowssap as passwordwxyz.
 
-Select **Detect words typed backwards** if Password Policy Enforcer should additionally test
-passwords with their characters reversed. Enabling this analysis stops users from circumventing this
-rule by reversing the order of characters in their password. For example, a user may enter "edcba"
-instead of "abcde".
+Select a value from the **Tolerance** dropdown to specify the maximum number of consecutive matching characters that PPE tolerates before rejecting a password. For example, password**wxyz** contains a four-character sequential pattern (shown in bold). PPE rejects this password if the tolerance is three or lower, and accepts it if the tolerance is four or higher. The **Auto** value rejects passwords only if the entire password is a sequential character pattern. For example, PPE rejects the password abcde, but not abcdez or abcd123.
 
-Choose a value from the **Tolerance** dropdown list to specify the longest pattern that Password
-Policy Enforcer allows before rejecting a password. For example, the password "password**wxyz**"
-contains a four-character pattern (shown in bold type). Password Policy Enforcer rejects this
-password if you set the tolerance to three (or lower), and accepts it if you set the tolerance to four
-(or higher). Choose the **Auto** value to reject passwords that contain only a
-single, continuous character pattern. For example, PPE would reject "abcde", but not "abcdz" or
-"abc123".
+:::tip
+Increase the tolerance if [testing](../testpolicy.md#by-user) shows that this rule rejects too many acceptable passwords. Decrease it if the rule is too permissive. The [Rules](rules.md#tolerance) page has more information about how PPE implements tolerance.
+:::
 
-Select **Reject keyboard patterns like "qwerty"** to check for keyboard patterns.
+Click **Character patterns** to select which sequential character patterns PPE detects.
 
-Select **Keyboard layouts** to set the keyboard type. Default is **United States**.
+![Character patterns](/images/passwordpolicyenforcer/11.2/administration/character_patterns.webp)
 
-Select the type of keyboard pattern: **Horizontal**, **Vertical**, or **Horizontal and Vertical**.
+## Keyboard patterns
 
-Select **Detect direction change** for entries that change direction. For example, **qweewq**.
+Select the **Patterns** checkbox at the top of the page, then select the **Reject keyboard patterns like "qwerty"** checkbox to reject passwords containing keyboard patterns.
 
-Select **Detect key repeat** for repeated keys, based on the **Tolerance** value. If Tolerance is 4,
-**aaaa** is accepted and **aaaaa** is rejected.
+Select a value from the **Detect** dropdown to specify the types of keyboard patterns PPE detects. The **Horizontal** value only detects horizontal patterns like qwerty and zxcvbn. The **Vertical** value only detects vertical patterns like 4esz and 4rfc. The **Horizontal or vertical** value detects patterns in both directions.
 
-Select **Detect key skip** for skipped keys, such as **qetuo**.
+Select the **Detect direction change** checkbox if you want PPE to detect direction changes in keyboard patterns. For example, PPE recognizes qwewq and 4rfr4 as five-character keyboard patterns if you select **Detect direction change**.
 
-Set **Tolerance** to the number of characters allowed in a keyboard pattern before Password Policy
-Enforcer rejects the password.
+:::note
+PPE detects direction changes in both directions if you select **Horizontal or vertical**. For example, PPE identifies qawsed, qwedsa, qwedcv, and qwsazx as six-character keyboard patterns if you select **Detect direction change** and set **Detect** to **Horizontal or vertical**.
+:::
+
+Select the **Detect key repeat** checkbox if you want PPE to continue matching the keyboard pattern when a key is repeated. For example, PPE recognizes qwwert and qwwwer as six-character keyboard patterns if you select **Detect key repeat**.
+
+Select the **Detect key skip** checkbox if you want PPE to continue matching the keyboard pattern when a key is skipped horizontally or vertically. For example, PPE recognizes qwryui as a six-character keyboard pattern if you select **Detect key skip**.
+
+Select a value from the **Tolerance** dropdown to specify the maximum number of consecutive matching characters that PPE tolerates before rejecting a password. For example, the password pass**qwer**word contains a four-character keyboard pattern (shown in bold). PPE rejects this password if the tolerance is three or lower, and accepts it if the tolerance is four or higher.
+
+:::tip
+Increase the tolerance if [testing](../testpolicy.md#by-user) shows that this rule rejects too many acceptable passwords. Decrease it if the rule is too permissive. The [Rules](rules.md#tolerance) page has more information about how PPE implements tolerance.
+:::
+
+Click **Keyboard layouts** to select which international keyboard layouts PPE detects.
+
+![Keyboard layouts](/images/passwordpolicyenforcer/11.2/administration/keyboard_layouts.webp)

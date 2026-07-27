@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Install the Password Policy Client
 
-The Password Policy Client (PPC) is an optional component that helps users choose a compliant password. It shows users which rules they need to comply with while they enter their new password. The PPC also displays a detailed rejection reason message if PPE rejects the new password. You typically install the PPC on users' computers, virtual desktops, and Remote Desktop Session Hosts. The list of supported operating systems is in the [introduction](../index.md).
+The Password Policy Client (PPC) is an optional component that helps users choose a compliant password. It shows users which rules they need to comply with while they enter their new password. The PPC also displays a detailed rejection reason message if Password Policy Enforcer (PPE) rejects the new password. You typically install the PPC on users' computers, virtual desktops, and Remote Desktop Session Hosts. The list of supported operating systems is in the [introduction](../index.md).
 
 :::note
 The Password Policy Client doesn't store or send passwords or password hashes over the network. The protocol is encrypted for additional security, but even if an attacker compromised the encryption, it wouldn't reveal any passwords or password hashes.

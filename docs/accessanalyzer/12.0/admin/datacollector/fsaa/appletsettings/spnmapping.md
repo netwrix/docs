@@ -1,7 +1,7 @@
 ---
 title: "Configuring Custom SPN Mapping for Applet Hosts"
 description: "FSAA: SPN Mapping"
-sidebar_position: 31
+sidebar_position: 20
 ---
 
 # Configuring Custom SPN Mapping for Applet Hosts
@@ -12,7 +12,7 @@ Netwrix Access Analyzer authenticates to each applet host using Kerberos with an
 
 Use custom SPN mapping to specify which SPN Access Analyzer should present when it connects to each applet host.
 
-![Applet Setting Certificate Exchange Options](/images/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettingscertificateexchangeoptions.webp)
+![Applet Setting Certificate Exchange Options](/images/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettingscertificateexchangeoptions.webp)
 
 ## Before you begin
 
@@ -52,7 +52,7 @@ Use custom SPN mapping to specify which SPN Access Analyzer should present when 
 4. Click **Configure Query**.
 5. Enter a SQL query that returns the columns `Host` and `SPN`. You can either filter the results by scan target using the `@host` parameter, or omit the parameter and return the full mapping for all applet hosts.
 
-   ![FSAA Data Collector SPN Mapping Query](/images/accessanalyzer/11.6/admin/datacollector/fsaa/SPNMappingQuery.webp)
+   ![FSAA Data Collector SPN Mapping Query](/images/accessanalyzer/12.0/admin/datacollector/fsaa/SPNMappingQuery.webp)
 
    **Filter by scan target** — useful when the mapping table contains entries for many scan targets and you only want to return the one relevant to the current job:
 
@@ -71,11 +71,11 @@ Use custom SPN mapping to specify which SPN Access Analyzer should present when 
 
    The query results pane shows the host and SPN columns returned by your query:
 
-   ![FSAA Data Collector SPN Mapping Query Result](/images/accessanalyzer/11.6/admin/datacollector/fsaa/SPNMappingQueryresult.webp)
+   ![FSAA Data Collector SPN Mapping Query Result](/images/accessanalyzer/12.0/admin/datacollector/fsaa/SPNMappingQueryresult.webp)
 
 6. Click **OK**, then finish the wizard to save the job.
 
-   The next time the job runs, Access Analyzer uses the SPN your query returns for each matching applet host. If an applet host has no matching row, Access Analyzer uses the default SPN (the DNS-resolved FQDN).
+   The next time the job runs, Access Analyzer will use the SPN your query returns for each matching applet host. If an applet host has no matching row, Access Analyzer uses the default SPN (the DNS-resolved FQDN).
 
 ## Troubleshooting
 

@@ -6,82 +6,91 @@ sidebar_position: 30
 
 # IT Service Management
 
-The aim of integration with IT Service Management (ITSM) systems is to correlate change events, that
-occur within the IT environment, with those that were planned and approved in the ITSM system.
-Change Management is a quintessential component of any service management strategy. Change
-Management is the process of implementing changes relative to an authorized work order that
-incorporates a release, build, test, schedule, and deployment plan.
+Integrating Change Tracker with an IT Service Management (ITSM) system correlates the
+change events observed in your environment with the changes you planned and
+approved through your change management process. Change Tracker marks approved changes
+as planned, and unplanned changes become the events that need review.
 
-By integrating Netwrix Change Tracker with ITSM systems, organizations can address Change Management
-while eliminating the change noise. This way, unplanned change alerts become a prioritized list of
-potentially malicious events to be reviewed and remediated.
+## How the Sync Service works
 
-## The Sync Service
+The Sync Service is a Windows service, installed alongside the Change Tracker Hub (the
+central management server), that polls a supported ITSM system for Change Requests
+(CRs) — also called Requests for Change (RFCs) in some systems, or the equivalent — and
+imports them into Change Tracker as Planned Changes.
+On each poll, the service:
 
-The Gen 7 Sync Service synchronizes Change Requests (CR’s, RFC’s, etc) into Change Tracker from one
-of several supported ITSM systems. These CRs take the form of a Planned Change once imported into
-Change Tracker.
+1. Requests only the CRs created or modified since the previous poll.
+2. Creates a Planned Change for each new CR, or updates the existing Planned Change if
+   the CR has changed.
+3. Links the Planned Change to any devices or groups whose names match the
+   Configuration Items (CIs) the CR references.
+4. Reassesses any recent change events that fall within the Planned Change's scope, so
+   it reclassifies events matching an approved change from unplanned to planned.
 
-Change Tracker will attempt to link existing Devices and Groups to a Planned Change where similar
-names are found to Configuration Items (CMDB items) in the ITSM system. See the
-[Planned Changes Tab](/docs/changetracker/8.2/admin/plannedchanges/plannedchanges.md) topic for additional information.
+Default polling interval is 30 seconds for most connectors. ManageEngine ServiceDesk
+Plus polls every 5 minutes. Both are configurable in the connector settings.
 
-The service works by periodically polling the source ITSM system for Change Requests which have been
-modified since the most recent poll. A new Planned Change is created in Change Tracker if a new CR
-has been added to the source system; modifications to an existing CR will be used to update the
-corresponding Planned Change. In either case, any events which fall within the scope of the Planned
-Change will be reassessed.
+Each connector authenticates with the source system's REST API (OAuth or basic auth,
+depending on the platform), and stores its per-CR sync state on the Change Tracker Hub.
 
-Change events will not be linked to a planned change until the RFC has been approved in the ITSM.
-For this reason, RFCs should be created and approved before any changes are made, otherwise they
-will appear as unplanned. Retrospectively approving an RFC will cause the change events to be
-reassessed and marked as planned in Change Tracker, but the alerts would already have been sent.
+:::note
+Change Tracker links change events to a Planned Change only after the CR is approved in
+the ITSM system. Create and approve CRs before the work starts. If a CR is approved
+retrospectively, Change Tracker reassesses the matching events and marks them as
+planned, but Change Tracker has already sent any unplanned-change alerts.
+:::
 
-### Supported ITSM Platforms
+See [Planned Changes Tab](/docs/changetracker/8.2/admin/plannedchanges/plannedchanges.md)
+for details on how Change Tracker matches Planned Changes against change events.
 
-- BMC Remedy Service Management
+## Supported ITSM platforms
+
+- BMC Remedy IT Service Management
 - Cherwell Service Management
 - ManageEngine ServiceDesk Plus
+- OpenText Service Management Automation X (SMAX)
 - Samanage Service Platform
-- ServiceNow ServiceManagement
+- ServiceNow IT Service Management
 - SunView ChangeGear
-- OpenText Service Management
 
-### ServiceNow Features
+## ServiceNow-specific capabilities
 
-The following features are currently exclusive to the ServiceNow integration.
+The following capabilities are available only when you integrate with ServiceNow.
 
-Device Discovery
+### Device discovery
 
-Instead of maintaining a list of all your servers, desktops and switches in ServiceNow and Change
-Tracker, it is possible to synchronize configuration items from ServiceNow to Change Tracker as
-devices. Not only does this give you a single place to maintain that list (ServiceNow), it also
-speeds up initial setup of Change Tracker.
+Instead of maintaining a device list in both ServiceNow and Change Tracker, you can
+synchronize CIs from ServiceNow into Change Tracker as devices. ServiceNow becomes the
+single place to maintain the inventory, and Change Tracker's initial setup is faster.
 
-When devices are created via Device Discovery from ServiceNow, the configuration items from RFCs are
-matched to devices in Change Tracker on their ServiceNow Id, ensuring a perfect match.
+When Change Tracker imports devices through device discovery, it records the
+ServiceNow `sys_id` on each device. Later, when Change Tracker imports a Planned Change,
+it matches the affected CIs to devices on `sys_id` rather than name — an exact match
+every time.
 
-Synchronization of the AssignedTo field
+### AssignedTo synchronization
 
-Typically the Sync Service will create a planned change in Change Tracker that includes the
-following fields from the ITSM: Id, planned start date, planned end date and configuration item. For
-ServiceNow the AssignedTo field can be synchronized to planned changes. If change events are
-recording who made the change, then a planned change ruleset can be created that will ensure that
-change events are only marked as planned when they match an planned change on date, device, and
-user.
+For most connectors, a Planned Change includes the CR's identifier, planned start and
+end dates, and configuration item. For ServiceNow, the Sync Service also imports the
+`AssignedTo` field. When change events include the user who made the change, you can
+build a Planned Change ruleset that requires a match on date, device, *and* user before
+Change Tracker marks an event as planned.
 
-RFC Task Synchronization
+### RFC task synchronization
 
-In ServiceNow it is possible to add tasks for different people to an RFC. If the Sync Service
-detects an RFC with tasks it will create a planned change for each task. If the planned start date,
-planned end date, configuration item or assigned to fields are empty on the task then the matching
-values at the parent RFC level will be used.
+ServiceNow lets you break an RFC into tasks assigned to different people. When you enable RFC task
+synchronization, the Sync Service creates a separate Planned Change for each
+task. If a task has no planned start date, end date, configuration item, or assignee,
+the task inherits the value from the parent RFC. OpenText SMAX supports the same behavior.
 
-Raising Incidents
+### Raising incidents in ServiceNow
 
-To close the loop of change management someone who can act must be alerted of unplanned changes so
-they can be investigated and resolved appropriately. A great option for unplanned change alerts is
-to raise an
-[incident in ServiceNow](https://docs.servicenow.com/bundle/washingtondc-it-service-management/page/product/incident-management/concept/work-on-incidents.html)
-which will alert the owner of the matching configuration item and provide a work flow to resolve the
-situation.
+Change Tracker can raise a ServiceNow
+[incident](https://docs.servicenow.com/bundle/washingtondc-it-service-management/page/product/incident-management/concept/work-on-incidents.html)
+when it detects an unplanned change, returning that change to your change management
+process. The incident routes to the owner of the matching
+CI, providing a ready-made workflow for investigation and resolution. You configure this
+as a Hub notification action under **Settings** in Change Tracker; it's not part of the
+Sync Service polling loop. See
+[Raise a ServiceNow Incident](/docs/changetracker/8.2/integration/itsm/syncserviceadmin.md#raise-a-servicenow-incident)
+for the setup steps.

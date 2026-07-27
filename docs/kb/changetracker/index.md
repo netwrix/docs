@@ -14,5 +14,5 @@ Use the search function above to find specific articles or browse through all Ch
 
 If you cannot find what you are looking for:
 1. Use the search function above
-2. Check the main [Change Tracker documentation](/docs/changetracker/8_1/)
+2. Check the main [Change Tracker documentation](/docs/changetracker/8_2/)
 3. Contact [Netwrix support](https://www.netwrix.com/support.html)
