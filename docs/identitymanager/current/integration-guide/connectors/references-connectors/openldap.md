@@ -1,7 +1,7 @@
 ---
 title: "OpenLDAP"
 description: "OpenLDAP"
-sidebar_position: 180
+sidebar_position: 190
 ---
 
 # OpenLDAP
