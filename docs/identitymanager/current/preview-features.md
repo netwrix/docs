@@ -38,87 +38,6 @@ Preview features are not activated in production.
 
 ## What's currently in Preview Mode?
 
-### Multi-Certifier in Certification Campaigns
-
-:::note
-This feature is currently in preview. See [Activating Preview Features](#activating-preview-features) for setup instructions and safety guidance.
-:::
-
-#### Overview
-
-Multi-certifier support allows multiple reviewers to be assigned to the same item during a certification campaign. All assigned certifiers receive the review request simultaneously, and can act on it.  The last certifier to make a decision and confirm it, will be recorded as the Reviewer.  Once a decision is confirmed, the item is automatically removed from the queues of all other assigned certifiers.
-
-This behavior mirrors the existing multi-approver logic used in access requests and reconciliation tasks, bringing consistency to certification workflows.
-
-#### Why Multi-Certifier?
-
-Previously, only a single certifier could be assigned to a permission during a campaign. When multiple application owners existed, this created ambiguity about who was responsible, often resulting in:
-
-- Bottlenecks and missed deadlines
-- Unnecessary reassignment steps
-- Lower campaign completion rates
-
-With multi-certifier, all eligible reviewers can act immediately without waiting for a reassignment, improving both speed and clarity.
-
-#### How It Works
-
-##### Configuring the Reviewer Mode
-
-The reviewer mode is configured at the campaign level. When creating a campaign, a **Reviewer Mode** field offers two options:
-
-- **Single Reviewer**: The default behavior. NIM assigns the campaign item to the first eligible certifier it finds.
-- **Multiple Reviewers**: All users with permission rights to certify the item are notified and can act on it simultaneously.
-
-:::warning
-The Reviewer Mode is set at the time of campaign creation and **cannot be modified once the campaign has launched**. Make sure to select the appropriate mode before starting the campaign.
-:::
-
-##### Review Workflow
-
-1. **Notification**: All assigned certifiers receive a notification when a campaign item requires review.
-2. **Decisions remain visible**: Even after an item has been reviewed, other certifiers can still find it by filtering on **Approved** or **Refused**. The name of the certifier who made the most recent decision is shown in the **Reviewer** column.
-3. **Editing before confirmation**: As long as decisions have not been confirmed, any reviewer can edit and change a decision made by another certifier.
-4. **Confirmation locks decisions**: Once a reviewer confirms decisions, the decision can no longer be modified.
-
-:::note
-**On simultaneous conflicting decisions**: In rare cases where two certifiers submit conflicting decisions at the same moment, the system resolves the conflict by applying the **last received decision**, consistent with how conflicts are handled in role reviews elsewhere in the product.
-:::
-
-##### Confirming Decisions
-
-When a certifier clicks **Confirm Decisions**:
-
-- Only the decisions **that the certifier has personally made** are finalized.
-- Decisions made by other certifiers are confirmed independently when those certifiers confirm their own decisions.
-- Confirmed decisions **cannot be modified**.
-
-In the **Confirm Decisions** tab, each certifier can see a summary that includes:
-
-- Items **approved by me**
-- Items **approved by others**
-- Items **refused by me**
-- Items **refused by others**
-
-##### Campaign Reports
-
-Campaign reports show:
-
-| Scenario | Reviewer Column |
-|--|--|
-| Item has not yet been reviewed | Blank   |
-| Item has been confirmed        | Name of the certifier who acted  |
-
-
-##### Audit Logs
-
-All certification actions are recorded in the system database, including:
-
-- The name of the certifier who made the decision
-- The decision that was made (approved or refused)
-- The date and time the decision was recorded
-
----
-
 ### Right-to-Left Language Support
 
 :::note
@@ -139,6 +58,22 @@ RTL support requires:
 2. **Activate the RTL preview feature** in the Preview section of the Settings in the UI, following the steps in the [Activating Preview Features](#activating-preview-features) section above.
 
 Once activated, the UI will adapt its layout to support right-to-left reading direction based on the language defined in your translation files.
+
+---
+
+### Filter Role in Access Certification Reviews
+
+:::note
+This feature is currently in preview. See [Activating Preview Features](#activating-preview-features) for setup instructions and safety guidance.
+:::
+
+#### Overview
+
+With this preview feature activated, reviewers can filter by role when certifying permissions in an Access Certification campaign, making it faster to focus a review on the roles that matter.
+
+#### How It Works
+
+The role filter is applied against the entire role catalogue, not just the roles visible in the active campaign. Reviewers select a role from the filter to narrow the certification list to permissions granted through that role.
 
 ---
 

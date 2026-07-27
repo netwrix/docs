@@ -11,7 +11,7 @@ Netwrix Identity Manager is available as a **SaaS** offering and an **on-premise
 - **SaaS**: Netwrix hosts and operates the server. You install and manage only the agent on your infrastructure.
 - **On-premises**: You install and manage the server, agent, and database on your own infrastructure.
 
-Both deployment models require an agent installed on your premises. The following sections organize prerequisites by deployment model.
+Both deployment models require an agent installed on your premises. The prerequisites below are organized accordingly.
 
 ## Both SaaS and On-Premises Deployments (Agent)
 
@@ -31,12 +31,13 @@ Each machine hosting an agent requires at minimum:
 
 | Component | Requirement |
 |---|---|
+| OS | Windows Server 2022 or later |
 | .NET Runtime | [ASP.NET Core Runtime 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) (Windows hosting bundle) |
 | Web browser | Chrome, Firefox, Safari, or Edge Chromium (latest 2 versions) |
 
 ### Accounts and Permissions
 
-- **Local administrator account** on the Windows Server machine where you will install the agent
+- **Local administrator account** on the Windows Server machine where the agent will be installed
 - **Agent service account** with read/write permissions on the working directory
 - **Managed system service accounts**: one per target managed system, with read and/or write permissions as required by each connector
 
@@ -76,14 +77,14 @@ A valid Netwrix Identity Manager license key is required. License keys are avail
 - **Disk**: scales with data volume — approximately 15 GB per 100,000 identities
 
 :::note
-SQL Server Express has a maximum database size of 10 GB. For production use, Netwrix recommends a full SQL Server edition.
+SQL Server Express has a maximum database size of 10 GB. For production use, a full SQL Server edition is recommended.
 :::
 
 ### Software
 
 | Component | Requirement |
 |---|---|
-| SQL Server | 2016 or later |
+| SQL Server | 2022 or later |
 | SQL tooling | [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms) or [`sqlcmd`](https://docs.microsoft.com/en-us/sql/ssms/scripting/sqlcmd-use-the-utility) |
 | IIS | 10.0 or later (recommended for hosting the server) |
 
@@ -92,12 +93,12 @@ SQL Server Express has a maximum database size of 10 GB. For production use, Net
 - **Server service account** with:
   - `db_owner` (database-level) and `bulkadmin` (server-level) roles on the SQL Server database
   - Read/write permissions on the working directory
-- Netwrix recommends a **Domain account** over IIS application pool identity when the server connects to a remote SQL Server instance
-- Setup requires an account with `sysadmin` or `securityadmin` server-level role to grant the `bulkadmin` role
+- **Domain account** recommended over IIS application pool identity when the server connects to a remote SQL Server instance
+- An account with `sysadmin` or `securityadmin` server-level role is required during setup to grant the `bulkadmin` role
 
 ### Certificates
 
-- **SSL certificate**: required for HTTPS communication between end-users and the server, and between the server and agents. All client browsers must trust it — typically a certificate signed by the organization's PKI root CA.
+- **SSL certificate**: required for HTTPS communication between end-users and the server, and between the server and agents. Must be trusted by all client browsers — typically signed by the organization's PKI root CA.
 - **Encryption key pair**: RSA-2048 (.pfx file or Windows certificate store entry) — used for server encryption operations and identity server authentication
 
 ### Network
