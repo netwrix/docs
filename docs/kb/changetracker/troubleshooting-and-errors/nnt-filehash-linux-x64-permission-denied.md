@@ -43,7 +43,7 @@ The `NNT_FILEHASH_LINUX_X64` binary does not have execute permission for the acc
    chmod 775 /usr/bin/NNT_FILEHASH_LINUX_X64
    ```
 
-   > **IMPORTANT:** Confirm the binary's ownership matches an account the Proxy Agent's connection credentials can execute as. Set ownership with `chown` if needed, using a user and group that exist on this device.
+   > **IMPORTANT:** Confirm that the binary's ownership matches an account with which the Proxy Agent's connection credentials can execute. Set ownership with `chown` if needed, using a user and group that exist on this device.
 
 3. Confirm the fix by running the binary directly from the command line. This hashes the `/etc` directory:
 

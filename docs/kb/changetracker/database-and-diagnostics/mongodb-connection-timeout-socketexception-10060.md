@@ -31,29 +31,30 @@ The hub service log for Netwrix Change Tracker shows the following error:
 MongoDB.Driver.MongoConnectionException: An exception occurred while receiving a message from the server.
 
 System.IO.IOException: Unable to read data from the transport connection:
-A connection attempt failed because the connected party did not properly respond after a period of time,
-or established connection failed because connected host has failed to respond.
+A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
 
 System.Net.Sockets.SocketException (10060):
-A connection attempt failed because the connected party did not properly respond after a period of time,
-or established connection failed because connected host has failed to respond.
+A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
 ```
 
 ## Cause
 
-Under load, the number of concurrent requests to the MongoDB instance can exceed the driver's connection pool size (`maxPoolSize`), causing new requests to queue for an available connection. If a request waits longer than the driver's connection timeout (`connectTimeoutMS`) for a connection to become available, it fails with this error.
+Under load, the number of concurrent requests to the MongoDB instance can exceed the driver's connection pool size (`maxPoolSize`), causing new requests to queue for an available connection. If a request waits longer than the driver's connection timeout (`connectTimeoutMS`) for a connection to become available, it fails with this error. [See the SME Review Needed note in the pull request description and confirm whether this standard MongoDB .NET driver behavior explains what's happening here.]
 
 ## Resolution
 
 Increase the IIS pool size and the MongoDB connection timeout to prevent requests from timing out:
 
-1. Open an elevated Command Prompt and stop IIS:
+1. Open an elevated **Command Prompt** and stop IIS:
 
-   ```text
+   ```bat
    iisreset /stop
    ```
 
-2. Navigate to `C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) Hub\Configs\` and open `appsettings.Production.json`. Back up the file before editing it.
+2. Navigate to `C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) Hub\Configs\` and open `appsettings.Production.json`.
+
+   > **IMPORTANT:** Back up the file before editing it.
+
 3. Locate the `connectionString` line:
 
    ```text
@@ -68,7 +69,7 @@ Increase the IIS pool size and the MongoDB connection timeout to prevent request
 
 4. Save the changes and start IIS:
 
-   ```text
+   ```bat
    iisreset /start
    ```
 

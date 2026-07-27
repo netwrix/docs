@@ -33,7 +33,7 @@ Cannot add duplicate collection entry of type 'add' with unique key attribute 'n
 
 ## Cause
 
-The upgrade leaves a duplicate `X-Frame-Options` collection entry in `web.config`. IIS rejects the duplicate key, which prevents the site from loading.
+The upgrade leaves a duplicate `X-Frame-Options` collection entry in `web.config`. IIS rejects the duplicate key, which prevents the site from loading. [See the SME Review Needed note in the pull request description and confirm why the upgrade produces a duplicate entry instead of replacing the existing one, and the exact `X-Frame-Options` value involved.]
 
 ## Resolution
 
@@ -43,7 +43,7 @@ The upgrade leaves a duplicate `X-Frame-Options` collection entry in `web.config
 4. Comment out one of the two duplicate `X-Frame-Options` entries so only one remains active.
 5. Save the file.
 
-   > **NOTE:** You may need to save the file to the desktop first, then copy it back into the directory above, replacing the original.
+   > **NOTE:** You may need to save the file to the desktop first, then copy it back into the WebUI `html` directory, replacing the original.
 
 6. Start IIS and open the Netwrix Change Tracker console.
 
