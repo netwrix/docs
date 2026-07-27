@@ -5,7 +5,7 @@ sidebar_position: 15
 
 <!-- TODO: screenshot -->
 
-The **Scanning and Scheduling** screen configures the connection settings and limits that the scheduler service and agents use to run scans. See [Enterprise Scheduling](enterprisescheduling.md) for how credential profiles and scheduled scans use these settings.
+The **Scanning and Scheduling** screen configures the connection settings and limits that the scheduler service and agents use to run scans. See [Scheduling](enterprisescheduling.md) for how credential profiles and scheduled scans use these settings.
 
 Changes to these settings take effect within about 30 seconds, without a restart.
 

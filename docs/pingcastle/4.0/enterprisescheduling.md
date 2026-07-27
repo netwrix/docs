@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 ---
-# Enterprise Scheduling
+# Scheduling
 
 ## Overview
 
@@ -14,6 +14,12 @@ Most configuration changes you make in PingCastle Enterprise, including schedule
 ## Credential profiles
 
 A credential profile bundles the information PingCastle Enterprise needs to run an unattended scan: an Agent, an API key, and the configuration for a specific scan type. You create a credential profile once, then select it whenever you set up a scheduled scan.
+
+:::note
+The scheduled scan wizard labels this field "execution profile." Credential profile and execution profile refer to the same thing.
+:::
+
+Manage credential profiles from **Configuration** > **Scheduler** > **Credential Profiles**. Click **Create profile** to add one.
 
 The fields a credential profile needs depend on the scan type.
 
@@ -32,7 +38,9 @@ The fields a credential profile needs depend on the scan type.
 
 ## Scheduled scans
 
-A scheduled scan job ties a credential profile to a recurring schedule. Each job has:
+A scheduled scan job ties a credential profile to a recurring schedule. Manage scheduled scans from **Configuration** > **Scheduler** > **Scheduled scans**. Click **Create schedule** to add one.
+
+Each job has:
 
 - **Job name**: the name you use to identify the job in the scheduler list.
 - **Execution profile**: the credential profile the job runs under.
@@ -53,7 +61,7 @@ If you're upgrading from PingCastle Enterprise 3.5.1, migrate your existing Task
 
 To migrate your scheduled scans:
 
-1. Go to the **Enterprise Scheduling** page in PingCastle Enterprise.
+1. Go to the **Scheduling** page in PingCastle Enterprise.
 2. Click **Migrate from Task Scheduler**.
 3. Review the verification table. It matches the Agents and Domains from your 3.5.1 scheduled tasks against the Agents and Domains you've configured in PingCastle Enterprise 4.0.
 

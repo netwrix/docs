@@ -116,11 +116,30 @@ PingCastle.exe --healthcheck --server *.domain.fqdn --Level Full --api-endpoint 
 The wildcard pattern `*.domain.fqdn` will automatically discover and scan all child domains within the specified forest, eliminating the need to configure individual domain scans.
 :::
 
-### Scheduling scans
+### Scheduling your first scan
 
-PingCastle Enterprise 4.0 replaces the Windows Task Scheduler-based scheduling used in previous versions with the PingCastleSchedulerService Windows service. The installer configures this service automatically.
+PingCastle Enterprise runs scheduled scans through **Configuration** > **Scheduler**. See [Scheduling](enterprisescheduling.md) for the full field reference.
 
-See [Enterprise Scheduling](enterprisescheduling.md) for configuring credential profiles, scheduled scans, and migrating scheduled tasks from a 3.5.1 installation.
+:::note
+The scheduled scan wizard labels the credential profile field "execution profile." Credential profile and execution profile refer to the same thing.
+:::
+
+#### Scheduling an Active Directory scan
+
+1. If the domain isn't already in PingCastle Enterprise, go to **Infrastructure** > **Domains** and create it with just the name. The SID auto-populates when you import a report.
+2. Go to **Configuration** > **Scheduler**.
+3. Click **Credential Profiles**, then **Create profile**.
+4. Enter a profile name, select **Active Directory** as the scan type, select the Agent (use the default Agent), and select the domain. Toggle the run-as account switch if you're using a custom account, and add a description if needed.
+5. Click **Create profile** to save the profile.
+6. Click **Scheduled scans**, then **Create schedule**.
+7. Enter a unique job name, select the execution profile you just created, set the scan frequency and time, toggle **Privileged Scan** depending on whether you want to run a privileged scan, set any advanced options you need, then click **Create schedule**.
+
+#### Scheduling an Entra scan
+
+Entra scans follow a different process for tenant setup:
+
+1. Go to **Configuration** > **Entra Scan Config** and use the **Add tenant** wizard to add your tenant. See [Entra scanning](enterpriseentrascan.md) for tenant setup and permission requirements.
+2. Follow the same steps as [Scheduling an Active Directory scan](#scheduling-an-active-directory-scan), except in the credential profile select **Entra ID** as the scan type, then select the tenant you added.
 
 ## Initial startup
 

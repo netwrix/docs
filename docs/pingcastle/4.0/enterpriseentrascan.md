@@ -34,7 +34,7 @@ If you plan to scan SharePoint Online, use certificate authentication. The Share
 
 To connect a tenant:
 
-1. Go to the tenant configuration page in PingCastle Enterprise.
+1. Go to **Configuration** > **Entra Scan Config** and click **Add tenant**.
 2. Enter the tenant ID for the Entra ID tenant you want to scan.
 3. Select the app registration authentication method: **Client secret** or **Certificate**.
 4. Provide the client secret or certificate for the app registration.

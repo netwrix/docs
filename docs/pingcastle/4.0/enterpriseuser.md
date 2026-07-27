@@ -868,7 +868,7 @@ The API can be browsed using the link found in the agent page:
 
 ## Scheduler
 
-The PingCastle Scheduler Service and credential profiles manage scan scheduling. See [Enterprise Scheduling](enterprisescheduling.md) for details on configuring credential profiles and scheduled scans.
+The PingCastle Scheduler Service and credential profiles manage scan scheduling. See [Scheduling](enterprisescheduling.md) for details on configuring credential profiles and scheduled scans.
 
 ## Reports
 
