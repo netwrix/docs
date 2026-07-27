@@ -22,12 +22,12 @@ large networks.
 :::note
 Starting with Endpoint Protector Server version 5.8.0.0, an additional security feature is
 available to protect the integrity of the Agent. This feature, accessible via Device Control on the
-Global Settings page, is known as the Tamper Mode setting. It is designed to prevent unauthorized
+Global Settings page, is the Tamper Mode setting. It prevents unauthorized
 termination or modification of the Endpoint Protector Agent.
 :::
 
 :::note
-When enabling Debug logging, deploying a fresh installation, or during upgrade processes where critical drivers/services (such as DPI, browser plugins, or Outlook add-ins) must be reloaded, restart the operating system. This mandatory first step in troubleshooting ensures that all dependencies are properly initialized."
+When enabling Debug logging, deploying a fresh installation, or during upgrade processes where critical drivers/services (such as Deep Packet Inspection (DPI), browser plugins, or Outlook add-ins) must be reloaded, restart the operating system. This mandatory first step in troubleshooting ensures that all dependencies are properly initialized."
 :::
 
 ## Lightweight, Cross-Platform Architecture
@@ -276,7 +276,7 @@ Inspection Certiﬁcate**, and download the **CA Certiﬁcate**.
 
 **Step 15 –** **Save** the changes.
 
-**Step 16 –** The following pop-up will be displayed informing the end-user that a System Extension
+**Step 16 –** The following pop-up displays, informing the end-user that a System Extension
 is blocked and needs to be allowed.
 
 ![System Extension is blocked and needs to be allowed](systemextensionblocked.webp)
@@ -411,7 +411,7 @@ When the daemon starts, it checks for the presence of all expected files and rep
 | Term | Meaning |
 |---|---|
 | **Install files** | The full set of files expected to be present on the endpoint after a successful EPP Client installation. |
-| **Installation file missing** | One or more expected files couldn't be found during the startup check. This condition triggers a Client Integrity Failure event. |
+| **Installation file missing** | The startup check couldn't find one or more expected files. This condition triggers a Client Integrity Failure event. |
 
 ## Tamper mode
 
@@ -451,4 +451,4 @@ If the EPP Client service wasn't stopped cleanly, the agent evaluates the state 
 | **Forced Uninstall Attempt** | The service was stopped or killed, and one or more files, registry keys, or drivers were found in an unexpected state — indicating a partial or unauthorized removal attempt. |
 | **Uninstall Attempt** | A deliberate uninstall of the EPP Client was initiated — either directly on the endpoint (e.g. via Add/Remove Programs) or triggered remotely from the EPP Server using the **Uninstall Client** action. |
 
-These three event types are reported by the EPP Client agent and are visible in the EPP Server event log for the relevant endpoint.
+The EPP Client agent reports these three event types, which appear in the EPP Server event log for the relevant endpoint.
