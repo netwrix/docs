@@ -11,7 +11,7 @@ network requirements. If choosing the Create Windows Firewall Rules option eithe
 [Application Server Install](/docs/threatprevention/7.5/install/application.md), in step 6 of the
 [Administration Console Remote Install](/docs/threatprevention/7.5/install/adminconsole.md), on the Set Options page of the
 [Deploy Agents Wizard](/docs/threatprevention/7.5/admin/agents/deploy/overview.md#deploy-agents-wizard), or in step 7 of a
-[Manual Agent Deployment](/docs/threatprevention/7.5/install/agent/manual/manual.md), then Threat Prevention will create the
+[Manual Agent Deployment](/docs/threatprevention/7.5/install/agent/manual.md), then Threat Prevention will create the
 necessary Windows firewall rules. If using a third party firewall, it will be necessary to manually
 set these.
 
@@ -138,7 +138,7 @@ are required for communication between the Agent server and the Netwrix Activity
 
 The Windows firewall rules need to be configured on the Windows server, which require certain
 inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+port range, which can't be specified via an inbound rule. For guidance on connecting to WMI on a remote computer, see the Microsoft
 [Connecting to WMI on a Remote Computer](<https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx>)
 article.
 
@@ -202,7 +202,7 @@ Agent server and the target NetApp Data ONTAP 7-Mode device:
 Activity Monitor.
 
 :::note
-If either HTTP or HTTPS are not enabled, the FPolicy on the NetApp Data ONTAP 7-Mode
+If either HTTP or HTTPS aren't enabled, the FPolicy on the NetApp Data ONTAP 7-Mode
 device must be configured manually. Also, the External Engine will not reconnect automatically in
 the case of a server reboot or service restart.
 :::
@@ -223,7 +223,7 @@ Agent server and the target NetApp Data ONTAP Cluster-Mode device:
 Activity Monitor.
 
 :::note
-If either HTTP or HTTPS are not enabled, the FPolicy on the NetApp Data ONTAP 7-Mode
+If either HTTP or HTTPS aren't enabled, the FPolicy on the NetApp Data ONTAP 7-Mode
 device must be configured manually. Also, the External Engine will not reconnect automatically in
 the case of a server reboot or service restart.
 :::
@@ -237,7 +237,7 @@ Agent server and the target Panzura device:
 | Communication Direction                    | Protocol      | Ports | Description             |
 | ------------------------------------------ | ------------- | ----- | ----------------------- |
 | Activity Agent Server to Panzura           | HTTPS         | 443   | Panzura API             |
-| Panzura filers to to Activity Agent Server | AMQP over TCP | 4497  | Panzura Event Reporting |
+| Panzura filers to Activity Agent Server | AMQP over TCP | 4497  | Panzura Event Reporting |
 
 Protect the port with a username and password. The credentials will be configured in Panzura.
 
