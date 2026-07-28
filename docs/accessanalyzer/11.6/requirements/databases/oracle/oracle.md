@@ -43,7 +43,7 @@ This solution employs the following data collector to scan the target environmen
 
 **For Oracle Data Collection**
 
-- User with SYSDBA role
+- **Recommmended** User with SYSDBA role OR [Least Privilege Model](/docs/accessanalyzer/11.6/requirements/databases/oracle/leastprivilege.md)
 - Local Administrator on the target servers – Only applies to Windows Servers and not on Linux or
   Unix operating systems
 
