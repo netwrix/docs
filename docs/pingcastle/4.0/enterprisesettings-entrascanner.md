@@ -3,8 +3,6 @@ sidebar_position: 13
 ---
 # Entra Scanner
 
-![A screenshot of the Entra Scanner section's API settings tab, showing the Enable Swagger in production toggle.](/images/pingcastle/enterprisesettings-entrascanner/entrascanner-settings.webp)
-
 The **Entra Scanner** section syncs its settings from the Entra Scanner microservice. See [Entra scanning](enterpriseentrascan.md) for the scanning feature itself.
 
 - **Api** — Enables or disables the Swagger API documentation in production.
