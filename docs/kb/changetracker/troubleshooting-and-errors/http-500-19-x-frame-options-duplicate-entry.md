@@ -40,6 +40,9 @@ The upgrade leaves a duplicate `X-Frame-Options` collection entry in `web.config
 1. Open IIS and stop the IIS server.
 2. Navigate to `C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) WebUI\html\`.
 3. Open `web.config` in a text editor and locate the two `X-Frame-Options` entries.
+```text
+<add name="X-Frame-Options" value="SAMEORIGIN"/>
+```
 4. Comment out one of the two duplicate `X-Frame-Options` entries so only one remains active.
 5. Save the file.
 
