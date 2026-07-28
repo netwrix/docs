@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Target Oracle Requirements, Permissions, and Ports
 
-The Access Analyzer for Databases Solution provides the ability to audit and monitor Oracle database
+The Access Analyzer for Databases Solution lets you audit and monitor Oracle database
 environments to collect permissions, sensitive data, and activity events. It scans:
 
 - Oracle Database 12c
@@ -52,7 +52,7 @@ There is a least privilege model for scanning your domain. See the
 
 ## Ports
 
-The following firewall ports are needed:
+Open the following firewall ports:
 
 **For ADInventory Data Collector**
 
