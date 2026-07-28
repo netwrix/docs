@@ -215,4 +215,4 @@ Successful page is displayed.
 
 If the certificates are managed by Threat Prevention, Agent deployment is completed. If the
 custom-managed certificate option was selected, see the
-[Create Custom Managed Certificates for Each Agent](/docs/threatprevention/8.0/install/agent/manual/customcert.md) topic for additional information.
+[Create Custom Managed Certificates for Each Agent](/docs/threatprevention/8.0/install/agent/customcert.md) topic for additional information.

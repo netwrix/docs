@@ -34,6 +34,10 @@ choco install vale
 # KB management
 npm run kb:clean         # Remove copied KB files from versioned folders
 npm run kb:dry           # Dry run of KB copy script
+
+# Single-product builds (faster iteration — only generates plugins/routes for one product)
+DOCS_PRODUCT=pingcastle npm run build
+DOCS_PRODUCT=pingcastle npm run start
 ```
 
 The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set automatically by npm scripts). Broken links, markdown links, and anchors all throw build errors (`onBrokenLinks: 'throw'`).
@@ -43,6 +47,8 @@ The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set aut
 ### Central configuration
 
 `src/config/products.js` is the single source of truth. It defines every product's ID, name, versions, categories, and paths. Docusaurus plugins, routes, navbar dropdowns, and sidebars are all auto-generated from this file. To add a product or version, edit this file — don't manually create plugin entries in `docusaurus.config.js`.
+
+Setting the `DOCS_PRODUCT` environment variable (matching a product's `id`) filters plugin generation down to that single product, speeding up local builds and dev server startup. See `generateDocusaurusPlugins()` in `src/config/products.js`.
 
 ### Versioning
 

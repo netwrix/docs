@@ -17,7 +17,7 @@ The database disk storage requirements depend on multiple factors as the databas
 :::
 ## Software
 
-Identity Manager uses a [SQL Server database](https://www.microsoft.com/en-us/sql-server/sql-server-2019) and supports SQL Server 2016 or later.
+Identity Manager uses a [SQL Server database](https://www.microsoft.com/en-us/sql-server) and supports SQL Server 2022 or later.
 
 The [database requirements](https://docs.microsoft.com/en-us/sql/sql-server/install/hardware-and-software-requirements-for-installing-sql-server?view=sql-server-ver15) may depend on the chosen SQL Server edition and version.
 
@@ -26,13 +26,13 @@ The [database requirements](https://docs.microsoft.com/en-us/sql/sql-server/inst
 The following features are also highly recommended:
 
 - [Always On availability groups](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server):
-only available in the Enterprise edition of SQL Server 2016 or later
+only available in the Enterprise edition of SQL Server 2022 or later
 
     > **FAQ**:
     > [How to enable Always On availability groups in SQL Server?](https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/enable-and-disable-always-on-availability-groups-sql-server?view=sql-server-ver15)
 
 - [Database Mirroring](https://docs.microsoft.com/en-us//sql/database-engine/database-mirroring/database-mirroring-sql-server?view=sqlallproducts-allversions):
-available in all editions of SQL Server 2016 or later
+available in all editions of SQL Server 2022 or later
 
     > **FAQ**:
     > [How to enable database mirroring in SQL Server?](https://docs.microsoft.com/en-us/sql/database-engine/database-mirroring/setting-up-database-mirroring-sql-server?view=sql-server-ver15)
@@ -51,7 +51,7 @@ Database performance is greatly improved by enabling the [Table Partitioning](ht
  | UP_AssignedNavigationRules | 
  | UP_AssignedScalarRules | 
 
-This feature is available and enabled by default in SQL Server 2016 or later.
+This feature is available and enabled by default in SQL Server 2022 or later.
 
     > **FAQ**:
     > [How to create partitioned tables and indexes?](https://docs.microsoft.com/en-us/sql/relational-databases/partitions/create-partitioned-tables-and-indexes?view=sql-server-ver15)
