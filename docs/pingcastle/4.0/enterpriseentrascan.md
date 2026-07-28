@@ -55,7 +55,7 @@ Each permission maps to specific risk checks. The **Used by** column in the Micr
 
 ### Download script to set up all permissions
 
-This script provisions the app registration and grants every permission and role listed below in one run. Use it instead of the manual steps if you want an automated setup.
+This script provisions the app registration and grants every permission and role listed in the following sections in one run. Use it instead of the manual steps if you want an automated setup.
 
 Download: [Setup-EntraScannerApp.ps1](/files/pingcastle/Setup-EntraScannerApp.ps1)
 
