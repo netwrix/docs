@@ -4,6 +4,7 @@ description: "Devices and Computers"
 sidebar_position: 10
 ---
 
+
 # Devices and Computers
 
 ## Devices
@@ -111,6 +112,26 @@ Any new computer that has the Endpoint Protector Client deployed will be automat
 database, thus making it manageable.
 
 ![Filter, create, uninstall or delete a computer ](computers.webp)
+
+### DPI Status
+
+The Computers list includes an optional **DPI Status** column that shows the Deep Packet Inspection
+status for each computer. This column is hidden by default.
+
+To display the DPI Status column, click **Show/Hide Columns** and select **DPI Status**.
+
+:::note
+DPI Status reflects the status only for computers that are actively communicating with the server.
+Real-time status isn't available — the value updates at each policy refresh interval.
+:::
+
+### Filtering by migration status
+
+The **Status** filter in the Computers list includes migration-specific values (for example,
+"Migration successful"). Use these values to filter the list and identify computers at each stage of
+a client migration.
+
+The migration status is also included in SIEM export events as the `migration_status` attribute.
 
 The Endpoint Protector Client has a self-registration mechanism. This process is run once after the
 Client software is installed on a client computer. The Client will then communicate to the Server

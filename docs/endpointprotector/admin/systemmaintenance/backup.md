@@ -4,6 +4,7 @@ description: "Backup and Recovery Solutions"
 sidebar_position: 10
 ---
 
+
 # Backup and Recovery Solutions
 
 Implementing effective backup and recovery solutions is essential for safeguarding your system data
@@ -22,7 +23,7 @@ Before creating a migration backup and restoring it on a new Endpoint Protector 
 items below to avoid failed imports/restores.
 
 #### Source appliance (current server)
-- Ensure you can successfully create a **System Backup v2 (Migration)** and that you securely save
+- Ensure you can successfully create a **System Backup (Migration)** and that you securely save
   the **System Backup Key** (required for restore).
 - Download any **previous System Backups** or **Audit Log Backups** you want to keep (these are not
   preserved through the migration process).
@@ -41,11 +42,11 @@ If your migration involves upgrading the server from a pre-5206 version to 5.7.0
 must be enabled prior to the upgrade. Contact Customer Support for assistance.
 :::
 
-### Creating a System Backup v2 (Migration)
+### Creating a System Backup (Migration)
 
-You can create a new migration backup from the System Maintenance, System Backup v2 section.
+You can create a new migration backup from the System Maintenance, System Backup section.
 
-![Creating a System Backup v2 (Migration)](createsystembackupone.webp)
+![Creating a System Backup (Migration)](createsystembackupone.webp)
 
 :::note
 For security purposes, the System Backup Key will not be stored by the Endpoint Protector.
@@ -53,7 +54,7 @@ Before proceeding, make sure it is properly saved.
 :::
 
 
-![Creating a System Backup v2 (Migration)](createsystembackuptwo.webp)
+![Creating a System Backup (Migration)](createsystembackuptwo.webp)
 
 ### Importing and Restore (Migrate)
 
@@ -75,10 +76,40 @@ deployed Endpoint Protector Clients to start communicating with the new Applianc
 
 ![Importing and Restore (Migrate)](importingrestore.webp)
 
+### Backup Scheduler
+
+The Backup Scheduler allows you to configure automatic, recurring backups without manual
+intervention. You can access the Backup Scheduler from **System Maintenance** > **System Backup**,
+next to the **Import and Restore (Migrate)** option.
+
+To configure the Backup Scheduler:
+
+1. Go to **System Maintenance** > **System Backup** > **Backup Scheduler**.
+2. Enable the scheduler.
+3. Configure the backup frequency and retention settings.
+4. Enter a **Backup Key**. This key is used for all scheduled backups.
+
+   :::note
+   A single backup key is used for all scheduled backups. Store this key securely — you'll need
+   it to restore any backup created by the scheduler.
+   :::
+
+5. Click **Save** to apply the schedule.
+
+Scheduled backups run automatically based on the configured frequency. You can view the status
+and history of scheduled backups in the **List of Backups** table.
+
 :::warning
 Once deleted, a backup cannot be recovered.
 :::
 
 :::info
 The Endpoint Protector Server cannot process backup files larger than 200 MB. If a created backup file exceeds this limit, we recommend that you contact Customer Support for assistance.
+:::
+
+:::note
+eDiscovery logs aren't included in the Audit Log Backup. eDiscovery scan results are
+exported through the **Reports and Analysis** > **Export Logs** section. When a scan action
+is set to "Stop and Clear Logs", eDiscovery logs are automatically exported to the Export Log
+List before deletion.
 :::
