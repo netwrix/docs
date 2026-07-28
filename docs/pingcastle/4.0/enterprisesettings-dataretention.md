@@ -3,7 +3,7 @@ sidebar_position: 13
 ---
 # Data Retention
 
-<!-- TODO: screenshot -->
+![A screenshot of the Data retention settings tab, showing report archiving and audit log retention fields.](/images/pingcastle/enterprisesettings-dataretention/dataretention-settings.webp)
 
 The **Data retention** screen controls how long PingCastle Enterprise keeps generated data.
 

@@ -3,7 +3,7 @@ sidebar_position: 12
 ---
 # Application
 
-<!-- TODO: screenshot -->
+![A screenshot of the Application settings tab, showing the support link, HTTPS redirection toggle, and allowed hosts fields.](/images/pingcastle/enterprisesettings-application/application-settings.webp)
 
 The **Application** screen controls a few application-level settings.
 

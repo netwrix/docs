@@ -7,7 +7,7 @@ sidebar_position: 5
 
 PingCastle Enterprise 4.0 replaces Task Scheduler-based scanning with `PingCastleSchedulerService`, a dedicated Windows service built on Quartz.NET. The installer sets up and starts `PingCastleSchedulerService` automatically, so there's nothing to configure at the operating system level. You manage every scheduled scan from the PingCastle Enterprise web interface instead of the Windows Task Scheduler console.
 
-<!-- TODO: screenshot -->
+![A screenshot of the Scheduled scans overview page, listing scan jobs with their type, target, next run time, and last status.](/images/pingcastle/enterprisescheduling/scheduler-overview.webp)
 
 Most configuration changes you make in PingCastle Enterprise, including scheduler settings, take effect within about 30 seconds. A small number of settings require a service restart, and the application schedules that restart automatically. See the settings documentation for the restart behavior of individual settings.
 
@@ -34,7 +34,7 @@ The fields a credential profile needs depend on the scan type.
 - An Agent.
 - A configured tenant. Set up the tenant connection before you create the credential profile. See [Entra scanning](enterpriseentrascan.md) for tenant configuration steps.
 
-<!-- TODO: screenshot -->
+![A screenshot of the credential profile creation screen with the Entra ID scan type selected, showing the Agent selection field.](/images/pingcastle/enterprisescheduling/credential-profile-create.webp)
 
 ## Scheduled scans
 
@@ -53,7 +53,7 @@ Each job also supports the following options:
 - **Scan Timeout**: sets the maximum time the scan can run before `PingCastleSchedulerService` stops it.
 - **Include trace logging**: turns on verbose diagnostic logging for the scan run, useful when troubleshooting a failed or stalled job.
 
-<!-- TODO: screenshot -->
+![A screenshot of the scheduled scan job creation screen with advanced options expanded, showing the Privileged scan toggle, timeout, and target specific DC fields.](/images/pingcastle/enterprisescheduling/scheduled-scan-job-create.webp)
 
 ## Migrating scheduled scans from PingCastle Enterprise 3.5.1
 
@@ -65,7 +65,7 @@ To migrate your scheduled scans:
 2. Click **Migrate from Task Scheduler**.
 3. Review the verification table. It matches the Agents and Domains from your 3.5.1 scheduled tasks against the Agents and Domains you've configured in PingCastle Enterprise 4.0.
 
-   <!-- TODO: screenshot -->
+   ![A screenshot of the legacy task migration verification table, matching a Windows Task Scheduler task's domain and agent against PingCastle Enterprise 4.0 configuration.](/images/pingcastle/enterprisescheduling/migration-verification-table.webp)
 
 4. Confirm the migration. PingCastle Enterprise creates a scheduled scan job and credential profile for each matched task and stops managing the old Task Scheduler tasks.
 

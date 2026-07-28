@@ -11,7 +11,7 @@ PingCastle Enterprise exposes a System for Cross-domain Identity Management (SCI
 
 For example, when you assign a user to the group your identity provider uses for PingCastle Enterprise access, the identity provider creates a matching account through the SCIM endpoint. When you remove that user from the group, the identity provider deactivates or deletes the account, depending on how you configure the deprovisioning behavior in the identity provider.
 
-<!-- TODO: screenshot -->
+![A screenshot of the Provisioning settings tab with SCIM enabled, showing the rate limit fields, permitted connector types, and the SCIM tokens table.](/images/pingcastle/enterprisesettings-scim/scim-overview.webp)
 
 ## Enabling SCIM and generating a token
 
@@ -27,7 +27,7 @@ To enable SCIM and generate a token:
 
 By default, tokens expire after 90 days. If you want to reduce maintenance burden, set a longer expiration, such as one year, when creating the token.
 
-<!-- TODO: screenshot -->
+![A screenshot of the Generate SCIM token dialog, showing the label, connector type, and expiration fields with the default 90-day expiration.](/images/pingcastle/enterprisesettings-scim/scim-token-generation.webp)
 
 :::warning
 PingCastle Enterprise displays the token only once. If you close the dialog without copying it, generate a new token — you can't retrieve the original value again.

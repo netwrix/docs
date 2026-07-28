@@ -30,7 +30,7 @@ The app registration can authenticate using either a client secret or a certific
 If you plan to scan SharePoint Online, use certificate authentication. The SharePoint Online admin REST endpoint rejects client-secret tokens. See [SharePoint Online](#sharepoint-online).
 :::
 
-<!-- TODO: screenshot -->
+![A screenshot of the Add Entra tenant wizard's Tenant details step, showing the tenant ID field and the entity assignment dropdown.](/images/pingcastle/enterpriseentrascan/connect-tenant.webp)
 
 To connect a tenant:
 
@@ -39,7 +39,7 @@ To connect a tenant:
 3. Select the app registration authentication method: **Client secret** or **Certificate**.
 4. Provide the client secret or certificate for the app registration.
 
-<!-- TODO: screenshot -->
+![A screenshot of the Add Entra tenant wizard's App credentials step, showing the application client ID field and the client secret or certificate authentication method options.](/images/pingcastle/enterpriseentrascan/app-registration-credentials.webp)
 
 For the full list of Microsoft Graph, Exchange, SharePoint, Teams, and Azure role-based access control (RBAC) permissions the app registration needs, see [Entra scanner permissions](#entra-scanner-permissions).
 

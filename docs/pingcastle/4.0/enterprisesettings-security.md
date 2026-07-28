@@ -7,7 +7,7 @@ The **Security** screen controls two areas of PingCastle Enterprise's web applic
 
 Changes to these settings take effect within about 30 seconds, without a restart.
 
-<!-- TODO: screenshot -->
+![A screenshot of the Security settings tab, showing the antiforgery validation and password rate limiting sections.](/images/pingcastle/enterprisesettings-security/security-settings.webp)
 
 ## Antiforgery protection
 
@@ -32,7 +32,7 @@ Three settings control this behavior:
 
 For example, if a client repeatedly enters the wrong password, PingCastle Enterprise blocks it for the duration of the backoff block period. If the client stays idle past the idle reset period, its failure count resets to zero and it can attempt to log in again without restriction.
 
-<!-- TODO: screenshot -->
+![A screenshot of the password rate limiting fields, showing the backoff block duration and idle reset period settings.](/images/pingcastle/enterprisesettings-security/login-backoff-settings.webp)
 
 ## Choosing values for your environment
 

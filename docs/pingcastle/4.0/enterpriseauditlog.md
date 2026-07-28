@@ -7,7 +7,7 @@ The audit log tracks every administrative change made in PingCastle Enterprise. 
 
 The audit log records administrative changes to objects such as domains, agents, credential profiles, and scheduled scans. It also records authentication-related changes, such as updates to login options or single sign-on (SSO) configuration. For example, if an administrator switches the login method from password authentication to SSO, that change appears in the audit log with the administrator's name, the timestamp, and the property that changed.
 
-<!-- TODO: screenshot of the audit log list view -->
+![A screenshot of the audit log list view showing rows of administrative changes with columns for timestamp, severity, user, category, action, target, property, before, after, and IP address.](/images/pingcastle/enterpriseauditlog/audit-log-list.webp)
 
 ## How audit log rows are structured
 
@@ -17,7 +17,7 @@ For example, if you open a scheduled scan's settings and update both its schedul
 
 This row-per-property structure means you can filter or scan the log for a specific property change without needing to parse a single row that bundles several unrelated changes together.
 
-<!-- TODO: screenshot of the audit log detail or filter view -->
+![A screenshot of the audit log filtered by category, showing a single row-per-property change with its before and after values.](/images/pingcastle/enterpriseauditlog/audit-log-detail.webp)
 
 ## Linked targets
 

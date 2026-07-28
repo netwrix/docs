@@ -3,7 +3,7 @@ sidebar_position: 15
 ---
 # Scanning and Scheduling
 
-<!-- TODO: screenshot -->
+![A screenshot of the Scanning and Scheduling settings tab, showing the agent export level, Enterprise API URL, and shared data directory fields.](/images/pingcastle/enterprisesettings-scanningscheduling/scanningscheduling-settings.webp)
 
 The **Scanning and Scheduling** screen configures the connection settings and limits that the scheduler service and agents use to run scans. See [Scheduling](enterprisescheduling.md) for how credential profiles and scheduled scans use these settings.
 
