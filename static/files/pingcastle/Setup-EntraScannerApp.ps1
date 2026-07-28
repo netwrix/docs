@@ -26,6 +26,14 @@
     Path to an existing certificate (.pfx or .cer) to use for Certificate auth. If omitted,
     the script generates a self-signed certificate.
 
+.PARAMETER PfxOutputPath
+    Path to export the generated self-signed certificate as a .pfx file, including the
+    private key. Ignored if CertificatePath is supplied. Defaults to
+    ".\<DisplayName>.pfx" in the current directory.
+
+.PARAMETER PfxPassword
+    Password to protect the exported .pfx file. If omitted, the script prompts for one.
+
 .PARAMETER UseExisting
     If an app registration with the given DisplayName already exists, reuse it without
     prompting. Use for non-interactive runs.
@@ -57,6 +65,12 @@ param(
     [string]$CertificatePath,
 
     [Parameter(Mandatory = $false)]
+    [string]$PfxOutputPath,
+
+    [Parameter(Mandatory = $false)]
+    [securestring]$PfxPassword,
+
+    [Parameter(Mandatory = $false)]
     [switch]$UseExisting,
 
     [Parameter(Mandatory = $false)]
@@ -85,6 +99,19 @@ $GraphPermissions = @(
     'UserAuthenticationMethod.Read.All'
 )
 
+function Grant-AppRoleIfMissing {
+    param($ServicePrincipal, $ResourceServicePrincipal, [string]$AppRoleId)
+
+    $existing = Get-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $ServicePrincipal.Id |
+        Where-Object { $_.ResourceId -eq $ResourceServicePrincipal.Id -and $_.AppRoleId -eq $AppRoleId }
+
+    if ($existing) {
+        return
+    }
+
+    New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $ServicePrincipal.Id -PrincipalId $ServicePrincipal.Id -ResourceId $ResourceServicePrincipal.Id -AppRoleId $AppRoleId | Out-Null
+}
+
 function Ensure-Module {
     param([string]$Name)
 
@@ -106,7 +133,7 @@ function Ensure-Module {
     }
 }
 
-foreach ($module in @('Microsoft.Graph.Applications', 'ExchangeOnlineManagement', 'Az.Resources')) {
+foreach ($module in @('Microsoft.Graph.Applications', 'Microsoft.Graph.Identity.DirectoryManagement', 'ExchangeOnlineManagement', 'Az.Resources')) {
     Ensure-Module -Name $module
 }
 
@@ -150,6 +177,14 @@ if ($AuthMethod -eq 'Certificate') {
     }
     else {
         $cert = New-SelfSignedCertificate -Subject "CN=$DisplayName" -CertStoreLocation 'Cert:\CurrentUser\My' -KeySpec KeyExchange
+
+        if (-not $PfxOutputPath) {
+            $PfxOutputPath = ".\$DisplayName.pfx"
+        }
+        if (-not $PfxPassword) {
+            $PfxPassword = Read-Host -Prompt "Enter a password to protect $PfxOutputPath" -AsSecureString
+        }
+        Export-PfxCertificate -Cert $cert -FilePath $PfxOutputPath -Password $PfxPassword | Out-Null
     }
 
     $certThumbprint = $cert.Thumbprint
@@ -171,18 +206,36 @@ else {
 $graphSp = Get-MgServicePrincipal -Filter "appId eq '$GraphAppId'"
 foreach ($permission in $GraphPermissions) {
     $appRole = $graphSp.AppRoles | Where-Object Value -eq $permission
-    New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -PrincipalId $sp.Id -ResourceId $graphSp.Id -AppRoleId $appRole.Id | Out-Null
+    Grant-AppRoleIfMissing -ServicePrincipal $sp -ResourceServicePrincipal $graphSp -AppRoleId $appRole.Id
 }
 
 # --- Exchange.ManageAsApp and Exchange Online RBAC role ---
 
 $exchangeSp = Get-MgServicePrincipal -Filter "appId eq '$ExchangeAppId'"
 $exchangeAppRole = $exchangeSp.AppRoles | Where-Object Value -eq 'Exchange.ManageAsApp'
-New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -PrincipalId $sp.Id -ResourceId $exchangeSp.Id -AppRoleId $exchangeAppRole.Id | Out-Null
+Grant-AppRoleIfMissing -ServicePrincipal $sp -ResourceServicePrincipal $exchangeSp -AppRoleId $exchangeAppRole.Id
 
-Connect-ExchangeOnline
+if (-not (Get-ConnectionInformation)) {
+    Connect-ExchangeOnline
+}
 New-ServicePrincipal -AppId $app.AppId -ObjectId $sp.Id -DisplayName $DisplayName
-Add-RoleGroupMember -Identity 'View-Only Organization Management' -MemberType ServicePrincipal -Member $sp.Id
+
+$retries = 0
+do {
+    try {
+        Add-RoleGroupMember -Identity 'View-Only Organization Management' -Member $sp.Id
+        break
+    }
+    catch {
+        $retries++
+        if ($retries -ge 10) {
+            throw
+        }
+        Write-Host 'Waiting for Exchange Online to replicate the new service principal...'
+        Start-Sleep -Seconds 15
+    }
+} while ($true)
+
 Disconnect-ExchangeOnline -Confirm:$false
 
 # --- SharePoint Online Sites.FullControl.All ---
@@ -190,7 +243,7 @@ Disconnect-ExchangeOnline -Confirm:$false
 if ($AuthMethod -eq 'Certificate') {
     $sharePointSp = Get-MgServicePrincipal -Filter "appId eq '$SharePointAppId'"
     $sharePointAppRole = $sharePointSp.AppRoles | Where-Object Value -eq 'Sites.FullControl.All'
-    New-MgServicePrincipalAppRoleAssignment -ServicePrincipalId $sp.Id -PrincipalId $sp.Id -ResourceId $sharePointSp.Id -AppRoleId $sharePointAppRole.Id | Out-Null
+    Grant-AppRoleIfMissing -ServicePrincipal $sp -ResourceServicePrincipal $sharePointSp -AppRoleId $sharePointAppRole.Id
 }
 else {
     Write-Warning 'Skipping SharePoint Online Sites.FullControl.All grant because ClientSecret authentication is selected.'
@@ -207,8 +260,23 @@ if (-not $SubscriptionId) {
     $SubscriptionId = Read-Host 'Enter the Azure subscription ID to assign Reader and Key Vault Reader roles at'
 }
 
-New-AzRoleAssignment -ApplicationId $app.AppId -RoleDefinitionName 'Reader' -Scope "/subscriptions/$SubscriptionId"
-New-AzRoleAssignment -ApplicationId $app.AppId -RoleDefinitionName 'Key Vault Reader' -Scope "/subscriptions/$SubscriptionId"
+# Az and Microsoft.Graph load conflicting Azure.Core versions in the same process,
+# so the Az role assignments run in a separate PowerShell process (with its own window,
+# so interactive browser sign-in still works) to avoid a TypeLoadException.
+$azScriptPath = Join-Path $env:TEMP "pingcastle-az-rbac-$([guid]::NewGuid()).ps1"
+@'
+param($AppId, $SubscriptionId)
+Import-Module Az.Resources
+if (-not (Get-AzContext)) {
+    Connect-AzAccount -Subscription $SubscriptionId | Out-Null
+}
+New-AzRoleAssignment -ApplicationId $AppId -RoleDefinitionName 'Reader' -Scope "/subscriptions/$SubscriptionId"
+New-AzRoleAssignment -ApplicationId $AppId -RoleDefinitionName 'Key Vault Reader' -Scope "/subscriptions/$SubscriptionId"
+'@ | Set-Content -Path $azScriptPath
+
+$currentExePath = [System.Diagnostics.Process]::GetCurrentProcess().Path
+Start-Process -FilePath $currentExePath -ArgumentList @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', $azScriptPath, $app.AppId, $SubscriptionId) -Wait
+Remove-Item -Path $azScriptPath -Force
 
 # --- Summary ---
 
@@ -220,6 +288,9 @@ Write-Host "Service Principal Id: $($sp.Id)"
 Write-Host "Auth method: $AuthMethod"
 if ($certThumbprint) {
     Write-Host "Certificate thumbprint: $certThumbprint"
+}
+if ($PfxOutputPath -and -not $CertificatePath) {
+    Write-Host "Certificate exported to: $PfxOutputPath"
 }
 if ($clientSecret) {
     Write-Host "Client secret (record this now, it isn't shown again): $clientSecret"
