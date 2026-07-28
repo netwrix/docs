@@ -7,7 +7,7 @@ keywords:
   - Netwrix Change Tracker
   - email notifications
   - bulk email
-  - localhost.json
+  - appsettings.json
   - enableBulkNotifications
   - real-time notifications
   - IIS
@@ -34,17 +34,17 @@ This article describes how to configure Netwrix Change Tracker to send each chan
    iisreset /stop
    ```
 
-2. Navigate to `C:\inetpub\wwwroot\Change Tracker Generation 7 Hub\bin\Configs`.
-3. Open the `localhost.json` file and add the following lines at the end of the file:
+2. Navigate to `C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) Hub\Configs`.
+3. Open the `appsettings.json` file and edit the following lines within the file:
 
    ```json
    ,
-   "pipeline" : {
+   "roleSettings" : {
        "enableBulkNotifications" : "no"
    }
    ```
 
-   > **NOTE:** If your MongoDB database has been split off to a different server, edit the existing `localhost.json` file directly using these steps rather than replacing it.
+   > **NOTE:** If your MongoDB database has been split off to a different server, edit the existing `appsettings.json` file directly using these steps rather than replacing it.
 
 4. Save the file.
 5. Start IIS:
