@@ -4,9 +4,9 @@ title: NPS-D Health Checks
 
 # Perform a Health Check on NPS-D
 
-This article walks through the standard health check procedure for NPS-D (formerly known as
-SecureONE). It covers the application, database, DR, Docker, and OS checks that should be reviewed
-to confirm a healthy environment, and calls out items that should be followed up with Support.
+This article describes the standard health check procedure for NPS-D (formerly known as
+SecureONE). It covers the application, database, DR, Docker, and OS checks to review to confirm a
+healthy environment, and highlights items to follow up on with Support.
 
 ### Services and Nodes
 
@@ -25,8 +25,8 @@ sudo docker node ls
 ```
 
 Confirm every service shows the expected replica count (for example `1/1` or `6/6`) and every node
-shows `Ready`/`Active`. A replica count mismatch or a `Down`/`Drain` node should be investigated
-before continuing.
+shows `Ready`/`Active`. Investigate a replica count mismatch or a `Down`/`Drain` node before
+continuing.
 
 ### MongoDB Replica Status
 
@@ -39,7 +39,7 @@ s1 database-status
 ```
 
 This runs the same `rs.status()` and `rs.printSlaveReplicationInfo()` queries against MongoDB
-internally and prints the parsed result, so no manual container lookup is needed.
+internally and prints the parsed result, so you don't need to look up the container manually.
 
 On NPS-D 2.21.x and earlier:
 
@@ -52,12 +52,12 @@ unset mEvl
 ```
 
 Look for each node reporting a healthy `stateStr` (for example `PRIMARY` or `SECONDARY`) and recent
-heartbeat timestamps. Delayed or missing heartbeats indicate replication issues that should be
-investigated before proceeding.
+heartbeat timestamps. Delayed or missing heartbeats indicate replication issues to investigate
+before proceeding.
 
 ### DR Functions (Backup and Restore)
 
-If the environment has no DR configuration, this section can be skipped and noted as N/A.
+If the environment has no DR configuration, skip this section and note it as N/A.
 
 Confirm the configuration of `backup_v1.sh` on PROD:
 
@@ -168,13 +168,16 @@ for i in $(sudo find /secureone/data/logs/ -iname "*.log*"); do
 done
 ```
 
-Confirm log files are present, actively being written to, and review any recurring error or
-failure messages. Note that the `find` pattern needs the wildcards (`*.log*`) to match filenames,
-and the `grep` pattern needs `-E` for `|` to work as an alternation between `error` and `fail`.
+Confirm log files are present and actively receiving writes, and review any recurring error or
+failure messages.
+
+:::note
+The `find` pattern needs the wildcards (`*.log*`) to match filenames, and the `grep` pattern needs `-E` for `|` to work as an alternation between `error` and `fail`.
+:::
 
 ### Fluentd/Log Forwarding to SIEM
 
-If log forwarding is not configured, the customer can create a Support ticket to enable it. Reference the SIEM log forwarding documentation:
+If log forwarding isn't configured, the customer can create a Support ticket to enable it. Reference the SIEM log forwarding documentation:
 
 [Forward Logs to SIEM]( https://docs.netwrix.com/docs/kb/privilegesecurediscovery/security-and-compliance/forward-logs-to-siem-fluentd)
 
