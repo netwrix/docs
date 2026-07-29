@@ -89,11 +89,10 @@ Enter the following login script:
 StripCtrl,ON
 ExcludeMatchesWithComment,**Uptime Line Removed**,uptime\:
 ExcludeMatchesWithComment,**Current time Line Removed**,time\:
-Execute,\n
 Sleep,2
-Execute,set cli pager off
+WaitForPrompt
 Sleep,2
-Execute,set cli config-output-format set
+Execute,set cli scripting-mode on
 Sleep,2
 ```
 
