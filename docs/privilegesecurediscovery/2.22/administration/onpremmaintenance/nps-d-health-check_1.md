@@ -9,7 +9,7 @@ This article describes the standard health check procedure for Netwrix Privilege
 Docker, and operating system (OS) checks that confirm a healthy environment, and it highlights items
 to follow up on with Support.
 
-The checks are grouped in the same order the intro lists them. Work through each group in turn, and
+This article groups the checks in the same order the intro lists them. Work through each group in turn, and
 run the commands on every node in the cluster unless a step says otherwise.
 
 ## Application Checks
