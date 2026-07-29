@@ -37,7 +37,7 @@ The current Gen 7 NetCore agent stores its working data in the following locatio
 
 ### Agent Files
 
-agent.id — Contains the unique identifier assigned to the agent during its first registration with the Hub. If the agent is reinstalled or re-registered on the same device with a different ID, the Hub validates that the agent ID matches the stored device name; mismatches trigger a registration error — see Error: Hub Connection Failed (500 Server Message) to resolve it.
+agent.id — Contains the unique identifier assigned to the agent during its first registration with the Hub. If the agent is reinstalled or re-registered on the same device with a different ID, the Hub validates that the agent ID matches the stored device name; mismatches trigger a registration error — see [Error: Hub Connection Failed (500 Server Message)](../troubleshooting-and-errors/error-hub-connection-failed-500-server-message.md) to resolve it.
 
 MasterDevice.json — Stores the agent's master device record, including the AgentID, DeviceID, device name, configuration date, and platform details. This is the agent's primary identity and is populated after the first successful Hub registration. Used by the agent to send events and receive configuration updates.
 
