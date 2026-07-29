@@ -7,7 +7,11 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
+import dotenv from 'dotenv';
 import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap } from './src/config/products.js';
+
+// Loads local secrets (e.g. ALGOLIA_SEARCH_API_KEY) for dev builds; CI supplies these via env directly.
+dotenv.config({ path: '.env.local' });
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -248,7 +252,8 @@ const config = {
       algolia: {
         // Your Algolia credentials
         appId: 'KPMSCF6G6J',
-        apiKey: '1b20f30f13a874cd46f9d5c30b01d99c', // Use the search-only API key, not the admin key
+        // Search-only API key (not the admin key) — set via ALGOLIA_SEARCH_API_KEY
+        apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
         indexName: 'Production Docs',
 
         // Enable contextual search (already great that you have product/version meta tags!)
