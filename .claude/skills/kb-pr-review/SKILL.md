@@ -125,6 +125,8 @@ Capture the full output per file. `.vale.ini` scopes `BasedOnStyles = NetwrixKB`
 
 If Vale is not installed or returns an error, note this in the report and continue to Step 7.
 
+**Known Vale false positive — `NetwrixKB.HeadingCase` on version designators.** Lowercase `v` in version designators (e.g., `v2.8`, `v5.7`, `v2.8+`) is correct title case per Chicago-style convention. When Vale's heading-case rule fires on a heading whose only "violation" is a lowercase `v` followed by digits, treat it as a false positive — note it in the Vale findings table with severity "False positive (no action)" and do NOT propose a rewrite.
+
 **`WeakLinkText` / `BoilerplateCrossRef` fixes require a search, not just a rewrite.** Before proposing any fix for a Vale `WeakLinkText` or `BoilerplateCrossRef` finding, grep `docs/kb/**/*.md` and `docs/<product>/<version>/**/*.md` for a plausible real target based on the referenced topic (e.g., "Accounts and Required Permissions" → search for `accountreqs`, `account.*permission`). If a real target resolves, convert the prose into a proper link to it. Only rewrite the sentence to remove the implied reference if the search turns up nothing. Do not skip the search because the phrasing already implies no real link exists — the trigger already fired precisely because the phrasing looks like an implied reference, and the target often does exist on disk.
 
 ---
@@ -155,16 +157,46 @@ For each file in `KB_FILES`:
 | Area | Read this section of `kb_style_guide.md` | Supplementary notes (not in the style guide) |
 |------|------------------------------------------|-----------------------------------------------|
 | **frontmatter** | **Frontmatter** (Required fields, The `tags: [kb]` requirement) | If `knowledge_article_id` is present but contains a placeholder value (e.g., `kA0Qk000000PLACEHOLDER`), flag it — the author must replace it with the real Salesforce ID or remove the field. Absence of the field is fine for natively written articles. `sidebar_label` must not be truncated vs. `title`. |
-| **article-type** | **Article Types** | **Wrong-shape check:** verify the article's structure fits its content, not just that a recognized structure exists. Q&A form is for simple procedures with one procedure and minimal caveat content. An article using Q&A form that actually contains two or more distinct procedures, multi-step workflows, or substantial caveat/note content should be flagged as a Required structural fix — recommend restructuring to `## Overview` + `## Instructions` with H3 subheadings per procedure. |
-| **title-format** | **Article Titles** and the title format rules within **Article Types** | Do NOT flag `> **NOTE:**` blockquote callouts — this is correct KB format, not a Docusaurus `:::note` admonition. If a product component name appears in the title (e.g., a client, agent, or add-on) and is essential to distinguishing the article from others about the same product, flag it as a judgment call rather than a required fix. **Raw log line / error dump titles** (rulebook §12): titles containing literal log-level tokens (FATAL, ERROR), stack noise, file paths, or truncation fragments are Required fixes — normalize to `<Component> Error - <core diagnostic phrase>`, keeping only the searchable message. Examples: `ConfigurationLoader Error - Hub Location Details Have Not Been Specified`; `TraceLogger Error - Address Already in Use`. Separate from the retired `Error:` prefix convention. |
+| **article-type: structure** | **Article Types** | **Wrong-shape check:** verify the article's structure fits its content, not just that a recognized structure exists. Q&A form is for simple procedures with one procedure and minimal caveat content. An article using Q&A form that actually contains two or more distinct procedures, multi-step workflows, or substantial caveat/note content should be flagged as a Required structural fix — recommend restructuring to `## Overview` + `## Instructions` with H3 subheadings per procedure. |
+| **article-type: qa-format** | **Article Types** | **Q&A question format:** In Q&A articles, content under `## Question` (and interrogative sub-headings in FAQ-style articles) must be a complete interrogative sentence — starts with an interrogative word (How do you / How can you / How should you / How will you / Can you / Should you / What / When / Where / Why / Which / Who / Does / Is / Are) and ends with `?`. Use second person ("you"), not first person ("I"), per `kb_style_guide.md`. "How to..." patterns (e.g., "How to export X?") are Required fixes — rewrite as "How do you export X?" or "Can you X?" as appropriate. Mark N/A if the article isn't Q&A form. |
+| **article-type: heading-labels** | **Article Types** | **Resolution section heading pluralization:** Section headings in Symptom Resolution articles are always singular — `## Symptom`, `## Cause`, `## Resolution` — even when the section contains multiple items. Flag `## Symptoms`, `## Causes`, `## Resolutions` as Required fixes. |
+| **title: mechanical** | **Article Titles** and the title format rules within **Article Types** | See "Title-format rules — two categories" below. Required fixes, apply on approval, low ambiguity: gerund-form titles for How-To Instructions articles, title case correction, raw log-line/error-dump title normalization (rulebook §12), and the H1/`sidebar_label`-consistency check (`sidebar_label` must not be truncated vs. `title`). |
+| **title: semantic** | **Article Titles** and the title format rules within **Article Types** | See "Title-format rules — two categories" below. Soft reminders / judgment calls — surface with suggested alternatives and reasoning, never auto-apply: product-name-in-title and article-type/title mismatch. Do NOT flag `> **NOTE:**` blockquote callouts — this is correct KB format, not a Docusaurus `:::note` admonition. |
 | **product-names** | **Product Names** | Always cross-check product IDs against `src/config/products.js` — the style guide table may be outdated. The config file is authoritative. |
 | **keywords-quality** | **Frontmatter > Required fields > keywords** | If a keyword does not appear in the article body but is a plausible legacy or alternate search term (e.g., an old product acronym), note it as a low-priority observation rather than a required fix. |
-| **images** | **Screenshots** | KB image structure is not in the style guide — apply this rule: images must be stored as PNG files in `0-images/` at the **product level** (`docs/kb/<product>/0-images/`), not inside category subfolders. Articles in category subfolders reference them with `../0-images/filename.png`. Flag any images linked from external sources (e.g., GitHub CDN URLs) — they must be downloaded and committed to the repo. **Alt text must be descriptive, not just the filename.** Flag any image where the alt text is only the raw filename (e.g., `![index_files_location.png](path)`) — rewrite as a short description of what the image shows, per the Screenshots section. |
+| **images: location** | **Screenshots** | KB image structure is not in the style guide — apply this rule: images must be stored as PNG files in `0-images/` at the **product level** (`docs/kb/<product>/0-images/`), not inside category subfolders. Articles in category subfolders reference them with `../0-images/filename.png`. |
+| **images: external-refs** | **Screenshots** | Flag any images linked from external sources (e.g., GitHub CDN URLs) — they must be downloaded and committed to the repo. |
+| **images: alt-text** | **Screenshots** | Alt text must be descriptive, not just the filename. Flag any image where the alt text is only the raw filename (e.g., `![index_files_location.png](path)`) — rewrite as a short description of what the image shows, per the Screenshots section. |
 | **links** | (not in style guide) | Find every internal markdown link in the article body — `[text](/docs/...)` patterns to other KB articles and to versioned product docs. For each, resolve the actual target file on disk: check for a `slug` frontmatter override on the target first; if none, the URL segment must match the target's real path/filename (not its `sidebar_label` or `title`). Flag any link whose URL does not resolve to a real file on disk as a Required fix, and correct it to the real path. External links (non-`/docs` URLs) are out of scope. Backstop is `npm run build` (`onBrokenLinks: 'throw'` in `docusaurus.config.js`), but that runs late — this check catches broken links before submission. |
-| **formatting** | **Markup Conventions** and **Lists** | The style guide's "single backticks for inline code" applies to error codes (e.g., `0x80070005`) — flag any error code in plain text. Sequential procedures must be numbered lists — this applies to Resolution sections and all sub-sections within them (e.g., verification steps), not just top-level procedures. |
+| **formatting: bold/backticks** | **Markup Conventions** | Registry paths, registry value names, registry data, error codes (e.g., `0x80070005`, `0x80004005`), commands, and executable names use inline code (backticks). UI element names (button labels, menu items, field names) use **bold** only when they are action targets in the current step (buttons being clicked, fields being filled, dropdowns being selected, menu items being chosen) — a UI element mentioned as context only (not acted on in this step) does not get bold. Flag bolded UI elements that are not action targets as Required fixes. ✓ "Click **Save**." ✓ "Select **PDF** from the **Save as type** dropdown." ✗ "The file appears under the Save as type column." — no bold on contextual reference. |
+| **formatting: lists** | **Lists** | Sequential procedures must be numbered lists — this applies to Resolution sections and all sub-sections within them (e.g., verification steps), not just top-level procedures. |
 | **prose-directness** | **Voice and Tone > Impersonal constructions** and **Words and phrases to avoid** | Flag sentences where an impersonal subject ("the operation", "the process", "the system") could be replaced with the actual actor for a cleaner, more direct sentence. Example: "the operation fails with an error" → "Clicking **X** fails with an error". Apply judgment — not every impersonal subject is wrong. |
 
 Do NOT flag contractions, heading case, passive voice, jargon, or undefined acronyms — those belong to Vale and Dale respectively.
+
+#### Title-format rules — two categories
+
+Title findings split into two categories based on whether the change is mechanical or semantic.
+
+**Mechanical style corrections — Required fixes (surface, apply on approval):**
+
+- **gerund-for-How-To-Instructions:** "How to..." prefix → gerund form (e.g., "How to Export Event Logs" → "Exporting Event Logs"). Applies only to How-To Instructions form articles (`## Overview` + `## Instructions` structure). Does NOT apply to How-To Q&A articles — Q&A titles describe the topic, not the action, and the interrogative form lives in the `## Question` section.
+- **Title case correction** (e.g., "configure stopwords" → "Configuring Stopwords"). Applies to all article types.
+- **Raw log line / error dump titles** (rulebook §12): titles containing literal log-level tokens (FATAL, ERROR, WARN), stack noise, file paths, or truncation fragments (e.g., `ConfigurationLoader FATAL Hub Location Details Have Not Been Specified in HubDetails.xml at ...`) → normalize to `<Component> Error - <core diagnostic phrase>`, keeping only the searchable message. Examples: `ConfigurationLoader Error - Hub Location Details Have Not Been Specified`; `TraceLogger Error - Address Already in Use`; `Remote Platform Discovery Error - Could Not Get Credentials`. Separate from the retired `Error:` prefix convention — the pattern uses an inline `Error` word for disambiguation, not a leading prefix.
+- **H1 / `sidebar_label` consistency:** `sidebar_label` must not be truncated vs. `title`.
+
+These changes are low-ambiguity and preserve reader recognition — the article is still "the one about X," just with corrected surface form. Apply them per the normal fix loop.
+
+**Semantic reframes — soft reminders / judgment calls (reviewer decides, never auto-apply):**
+
+- Product name in title (e.g., "Antivirus Exclusions for Netwrix Data Classification" → drop "for Netwrix Data Classification"). If a product component name (client, agent, add-on) is essential to distinguishing the article from others about the same product, flag it as a judgment call rather than a required fix.
+- Article-type / title mismatch (e.g., Symptom Resolution structured article with a procedural-sounding title).
+
+These changes alter what the article appears to be *about* from the reader's perspective. They can break recognition for users searching by remembered title. The file path doesn't change so bookmarks survive, but readers don't navigate by URL — they navigate by name. For every semantic reframe finding:
+
+1. Flag the specific issue.
+2. Suggest one or more alternative titles with reasoning. Multiple options are welcome.
+3. Defer to the reviewer/author. Don't auto-apply. Don't argue if they leave the title alone — established titles often carry recognition weight that style purity doesn't outweigh.
 
 **KB Editing Conventions Scan (Derek subsection).** In addition to the areas table above, run the checklist below on every file. These are mechanical scan patterns codified during batch reviews; they map to the canonical rulebook at `.claude/references/kb-editing-conventions.md`. Do not duplicate the rulebook's full text here — treat the checklist as the minimum sweep. If a batch surfaces a new pattern, amend the rulebook and add the corresponding scan row here in the next PR.
 
@@ -218,7 +250,14 @@ Before composing the Overview table or any findings sections, work through each 
 1. **Dale rules** — anchor the total N with a real shell command *before* the scratch pass, not model recall: `ls .claude/skills/dale/rules/*.yml | wc -l`. Use that number verbatim in the Dale row's `N/N scanned` status. Then walk each rule file by name, one at a time, marking hit/clean. If the number of rules you walk differs from N from the shell command, that's the bug surfacing — do NOT silently reconcile by lowering N to match what you enumerated. Fix the scratch pass so all N are covered.
 2. **kb-editing-conventions scan** — walk each row of the scan table by row number. Mark hit/clean for each.
 3. **Cross-section consistency patterns** — walk each of the 6 patterns one at a time. Mark hit/clean for each.
-4. **Derek areas** — walk every area listed in Step 8's areas table (frontmatter sub-fields, article-type, title/H1/sidebar_label, product-names, keywords quality, images, links, formatting, prose-directness). Mark hit/clean for each.
+4. **Derek areas** — walk every area listed in Step 8's areas table (frontmatter sub-fields, article-type: structure, article-type: qa-format, article-type: heading-labels, title: mechanical, title: semantic, product-names, keywords quality, images: location, images: external-refs, images: alt-text, links, formatting: bold/backticks, formatting: lists, prose-directness). Mark hit/clean for each.
+5. **Formatting sub-rows — extraction pass.** Before scoring either formatting sub-row:
+   - Extract every UI action target and literal value in the article into a flat list (button/menu/field names being acted on, filenames, typed values, registry paths, commands, error codes).
+   - Extract every list block (numbered or bulleted) into a flat list of blocks.
+   - Walk each extracted item individually — bold/backtick check for item type 1, capitalization/punctuation/parallelism check for item type 2 — marking hit/clean per item, not per file.
+   - Each formatting sub-row gets an N/N scanned count from this extraction, the same mechanism as Dale's rule count.
+   
+   This is the actual fix for the root cause: today the model only re-checks bold/backtick and list rules on lines already flagged by something else, instead of running an independent sweep.
 
 Only after this per-item scratch pass — never before — compose the Overview table and the findings sections. **Skipping the enumeration to write the table first is a coverage regression, however clean the output looks.** The reason the frontmatter sub-field row format catches misses is that it forces the model to account for each sub-field explicitly; the enumeration pass extends that discipline to Dale, the scan-table rows, and the cross-section patterns, where "Clean" and "unscanned" are otherwise visually identical.
 
@@ -232,7 +271,7 @@ Per-file structure:
 
 - One row per Vale, Dale.
 - **Frontmatter sub-fields — one row each:** `title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`. Every sub-field must appear as its own row on every file, with an explicit ✓ Clean or a findings count. A single "Derek — frontmatter | 2 required fixes" row hides sub-field misses (e.g., a missing `kb` tag going unflagged because two other sub-fields already filled the count). Sub-field rows make coverage visually auditable at a glance.
-- One row per other Derek area: `article-type / structure`, `title / H1 / sidebar_label`, `product-names`, `images`, `links`, `formatting`, `prose directness`.
+- One row per other Derek area: `article-type: structure`, `article-type: qa-format`, `article-type: heading-labels`, `title: mechanical`, `title: semantic`, `product-names`, `images: location`, `images: external-refs`, `images: alt-text`, `links`, `formatting: bold/backticks`, `formatting: lists`, `prose directness`.
 - One row for the `kb-editing-conventions scan (rows 1–22)`.
 - One row for `Cross-section consistency (all patterns)`.
 
@@ -252,18 +291,24 @@ Example shape:
 | Derek — frontmatter: products | 1 required fix |
 | Derek — frontmatter: tags | 1 required fix (missing `kb`) |
 | Derek — frontmatter: knowledge_article_id | ✓ Clean |
-| Derek — article-type / structure | ✓ Clean |
-| Derek — title / H1 / sidebar_label | 1 required fix |
+| Derek — article-type: structure | ✓ Clean |
+| Derek — article-type: qa-format | N/A |
+| Derek — article-type: heading-labels | ✓ Clean |
+| Derek — title: mechanical | 1 required fix |
+| Derek — title: semantic | ✓ Clean |
 | Derek — product-names | ✓ Clean |
-| Derek — images | 1 required fix |
+| Derek — images: location | 1 required fix |
+| Derek — images: external-refs | ✓ Clean |
+| Derek — images: alt-text | ✓ Clean |
 | Derek — links | 1 required fix |
-| Derek — formatting | ✓ Clean |
+| Derek — formatting: bold/backticks | 8/8 scanned, ✓ Clean |
+| Derek — formatting: lists | 8/8 scanned, ✓ Clean |
 | Derek — prose directness | ✓ Clean |
 | kb-editing-conventions scan (22 rows) | 22/22 scanned, 2 findings (rows §7, §8) |
 | Cross-section consistency (6 patterns) | 6/6 scanned, 1 finding (product-name repetition) |
 ```
 
-**N/N scanned discipline.** The Dale row, the kb-editing-conventions scan row, and the cross-section consistency row must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "22/22" without having walked all 22 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files.
+**N/N scanned discipline.** The Dale row, the kb-editing-conventions scan row, the cross-section consistency row, and the two formatting sub-rows (`formatting: bold/backticks`, `formatting: lists`) must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "22/22" without having walked all 22 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files. The formatting rows' `N` comes from the extraction pass (Step 9, item 5) — the count of extracted UI-action-target/literal-value items for `bold/backticks`, and the count of extracted list blocks for `lists`.
 
 **Count-consistency discipline (arithmetic check).** Whenever a status cell shows a total finding count *and* a parenthetical breakdown (e.g., `10/10 scanned, 5 findings (passive-voice ×2, undefined-acronyms ×3)`), the top-line total must equal the sum of the breakdown counts. `2 findings (passive-voice ×2, undefined-acronyms ×3)` is a bug — that's 5, not 2. Same rule applies to every row that shows a breakdown: Vale, Dale, Derek, the scan-table row, cross-section row. Additionally, the number of rows in each findings section table below must equal the count claimed by the corresponding Overview row. Do the arithmetic before writing the row; do not paper over a mismatch by picking one number and hoping the reader doesn't add.
 
@@ -343,6 +388,8 @@ _<N> KB file(s) reviewed. Ran Vale + Dale + Derek._
 ---
 
 ### Step 10 — Apply fixes with reviewer approval
+
+**All-clean fast path.** Before asking about fixes, check whether every row in every file's Overview table is ✓ Clean. If so, skip the apply-fixes / local-testing / push steps entirely — nothing to fix, nothing to test, nothing new to push — and go straight to Step 13 (draft and post the PR review comment), noting the PR is clean as submitted. Otherwise proceed normally.
 
 After presenting the report, ask the reviewer:
 
