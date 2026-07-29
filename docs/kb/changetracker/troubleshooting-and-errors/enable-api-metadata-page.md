@@ -33,12 +33,12 @@ The `plugins.metadataenabled` key in `appSettings.config` controls the API Metad
 
 1. On the Netwrix Change Tracker Hub server, open the following file in a text editor:
 
-   `C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) Hub\appSettings.config`
+   `C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) Hub\Configs\appSettings.config`
 
-2. Find the `plugins.metadataenabled` key and change its value from `false` to `true`.
+2. Find the `options.serviceStackPlugins.metadataenabled` key and change its value from `false` to `true`.
 3. Save the file.
 4. Restart IIS.
 
 `https://<hub-address>/api/metadata` now loads without a 404 error.
 
-> **NOTE:** The related `plugins.swaggerenabled` key controls the Swagger API documentation page in the same way. Enable it if you also need access to Swagger.
+> **NOTE:** The related `options.serviceStackPlugins.swaggerenabled` key controls the Swagger API documentation page in the same way. Enable it if you also need access to Swagger.
