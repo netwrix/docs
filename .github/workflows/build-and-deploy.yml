@@ -48,7 +48,6 @@ jobs:
         contents: read
       env:
         APP_EXTERNAL_URL: ${{ secrets.APP_EXTERNAL_URL || vars.APP_EXTERNAL_URL }}
-        ALGOLIA_SEARCH_API_KEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
       steps:
         - name: Check out source code
           uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
