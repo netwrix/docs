@@ -40,9 +40,12 @@ The script detailed in this article can be used to zero the USN for an impacted 
 
 ### Notes
 
-- MongoDB shell command to check USNs by netbios. Script runs this before and after zero for the
+- Command to check USNs by NetBIOS. Script runs this before and after zero for the
   domain zerored. Including here for manual runs:
-  `db.discovery_config.find({type:"ldap_config"},{_id:0, domain_netbios:1,"sync.previous_usn":1,"sync.highest_usn":1})`
+  
+``` 
+  sudo docker exec -it $(sudo docker ps | grep mongo | cut -d' ' -f1) mongo SecureONE --eval 'DBQuery.shellBatchSize = 999999999; db.secureone_config.find(   {     type: "ldap_config"} ).pretty()' | grep "fqdn\|highest\|previous"
+```
 
 ### Command to Create Script File, Open in VIM, and Make Executable
 
