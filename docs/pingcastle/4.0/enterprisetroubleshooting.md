@@ -111,7 +111,7 @@ When the application fails to start, generic error messages appear in the browse
 
 ![Event log error 1000](/images/pingcastle/enterpriseinstall/image100.webp)
 
-More detailed error messages can be found in the event log or by running the application manually:
+You can find more detailed error messages in the event log or by running the application manually:
 
 ![Event log error 1026 - license invalid](/images/pingcastle/enterpriseinstall/image101.webp)
 

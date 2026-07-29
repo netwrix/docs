@@ -371,7 +371,7 @@ logging is enabled).
 To verify the connection is properly configured, you can sync a domain using
 the button described earlier.
 
-If there is an error, it will be displayed as an exception.
+If there is an error, PingCastle Enterprise displays it as an exception.
 
 ![](/images/pingcastle/enterpriseinstall/image86.webp)
 

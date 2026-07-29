@@ -72,7 +72,7 @@ graph LR
 - Requires SQL Server database for data storage
 - Accessible via HTTP/HTTPS (ports 80/443)
 - Provides web interface for administrators and users
-- Scheduled scans of local and trusted domains are handled by `PingCastleSchedulerService` (see [Scheduling scans](enterprisepostinstall.md#scheduling-scans))
+- `PingCastleSchedulerService` handles scheduled scans of local and trusted domains (see [Scheduling scans](enterprisepostinstall.md#scheduling-scans))
 
 #### CloudAPI Service
 
