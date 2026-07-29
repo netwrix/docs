@@ -37,8 +37,6 @@ To continue using PingCastle after the built-in license expires, you must purcha
 
 The PingCastle tool is one part of a global methodology for securing Active Directories.
 
-![](/images/pingcastle/basicuser/image1.webp)
-
 You can get more information about this methodology by visiting the
 website https://www.pingcastle.com/methodology/
 
