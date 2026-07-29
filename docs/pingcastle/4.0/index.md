@@ -233,8 +233,8 @@ This consolidates all available XML reports and generates summary reports with t
 Three HTML files are generated during consolidation:
 
 - **ad_hc_summary.html** - Summary of all reports with the same structure as detailed reports but at a higher level. [Example](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary.html)
-- **ad_hc_summary_full_node_map.html** - Complete trust relationship map showing all discovered domains and trusts. [Example](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary_full_node_map.html)
-- **ad_hc_summary_simple_node_map.html** - Simplified trust relationship map for easier visualization. [Example](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary_simple_node_map.html)
+- **ad_hc_summary_full_node_map.html** - Complete trust relationship map showing all discovered domains and trusts.
+- **ad_hc_summary_simple_node_map.html** - Simplified trust relationship map for easier visualization.
 
 ### Option 3: Quick Domain Cartography
 
