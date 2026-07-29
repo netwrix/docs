@@ -59,9 +59,9 @@ PingCastle Enterprise uses the "asp.net core 8.0 framework" but still relies on 
 PingCastle relies on the Windows account to perform scans and doesn't
 use third party authentication system.
 
-PingCastle Pro requires Azure Active Directory (Azure AD) or a Windows Active Directory to
-perform authentication. If Azure AD is used, the application must be
-allowed to get the token from Azure AD (typically `login.microsoftonline.com`).
+PingCastle Pro requires Microsoft Entra ID or a Windows Active Directory to
+perform authentication. If Entra ID is used, the application must be
+allowed to get the token from Entra ID (typically `login.microsoftonline.com`).
 
 ## License
 
@@ -92,7 +92,7 @@ confidentiality of the data.
 
 PingCastle Pro then provides services around the data and stores it in the database.
 
-# Minimal AzureAD Configuration
+# Minimal Entra ID Configuration
 
 At the end of the procedure, you receive a **Tenant ID** and a **Client ID**.
 

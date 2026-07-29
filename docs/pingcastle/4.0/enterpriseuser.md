@@ -38,7 +38,7 @@ You can view the up-to-date list of explicit components on the about page of the
 
 # Authentication and user management
 
-PingCastle Enterprise provides two mechanisms for authentication by default: classic login password and external authentication. External authentication supports widely used providers such as Azure AD, Google, or professional web SSO such as Okta.
+PingCastle Enterprise provides two mechanisms for authentication by default: classic login password and external authentication. External authentication supports widely used providers such as Entra ID, Google, or professional web SSO such as Okta.
 
 These methods can be used separately or in coordination, meaning you can
 either use a Dual-Factor authentication (recommended) or a single factor
@@ -62,13 +62,13 @@ method are provided.
 
 ## Authorization
 
-PingCastle lets you set up permissions on Entities, or objects (Domains or AzureAD).
+PingCastle lets you set up permissions on Entities, or objects (Domains or Entra ID).
 
 The permissions can be set on the detail of the Entities
 
 ![Une image contenant texte, capture d'écran, logiciel, Page web Description générée automatiquement](/images/pingcastle/enterpriseuser/image5.webp)
 
-**And on the Domain / AzureAD objects**
+**And on the Domain / Entra ID objects**
 
 ![Une image contenant texte, capture d'écran, logiciel, Page web Description générée automatiquement](/images/pingcastle/enterpriseuser/image6.webp)
 

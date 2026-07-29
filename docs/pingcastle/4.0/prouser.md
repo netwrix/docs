@@ -59,7 +59,7 @@ PingCastle Pro provides authentication through:
 
 - Windows Auth
 
-- EntraID (formerly AzureAD)
+- Entra ID (formerly Azure AD)
 
 # Ping Castle Pro features
 

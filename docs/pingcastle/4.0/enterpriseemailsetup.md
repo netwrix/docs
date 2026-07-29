@@ -40,8 +40,8 @@ When you select **SMTP** as the email provider, configure these fields:
 
 When you select **Microsoft Graph** as the email provider, configure these fields:
 
-- **Tenant ID** — The Azure AD tenant ID for your organization.
-- **Client ID** — The application (client) ID from the Azure AD app registration that PingCastle uses to send email.
+- **Tenant ID** — The Entra ID tenant ID for your organization.
+- **Client ID** — The application (client) ID from the Entra ID app registration that PingCastle uses to send email.
 - **Authentication Method** — The credential type the app registration uses: a client secret or a certificate.
 - **Client Secret** — The application's client secret. This field applies only when you set **Authentication Method** to client secret.
 - Certificate fields (location, file, thumbprint, store location, and store name) — These fields apply only when you set **Authentication Method** to certificate. They identify which certificate PingCastle uses to authenticate.
@@ -79,7 +79,7 @@ This configuration uses **RBAC for Applications** (Role-Based Access Control for
 Before starting this configuration, ensure you have:
 
 - **Global Administrator** or **Exchange Administrator** permissions
-- **Application Developer** permissions in Azure AD
+- **Application Developer** permissions in Entra ID
 - **Exchange Online PowerShell** module installed or use the Cloud Management Shell
 - **Microsoft Graph PowerShell** module installed (optional, for PowerShell automation)
 
@@ -121,7 +121,7 @@ For production environments, use certificates issued by your organization's Cert
 <Tabs>
 <TabItem value="manual" label="Manual Configuration" default>
 
-#### Part 1 Create Azure AD App Registration
+#### Part 1 Create Entra ID App Registration
 
 ##### Step 1 Access Microsoft Entra Admin Center
 
@@ -303,7 +303,7 @@ This confirms the application can only send from the designated shared mailbox.
 
 #### Automated Configuration with PowerShell
 
-This PowerShell function automates the complete process of creating an Azure AD app registration, shared mailbox, and configuring RBAC for Applications in Exchange Online.
+This PowerShell function automates the complete process of creating an Entra ID app registration, shared mailbox, and configuring RBAC for Applications in Exchange Online.
 
 ```powershell
 <#
@@ -311,13 +311,13 @@ This PowerShell function automates the complete process of creating an Azure AD 
     Advanced PowerShell function to automate RBAC for Applications setup in Exchange Online
 
 .DESCRIPTION
-    This function automates the complete process of creating an Azure AD app registration,
+    This function automates the complete process of creating an Entra ID app registration,
     shared mailbox, and configuring RBAC for Applications in Exchange Online.
 
     Specifically designed for PingCastle-Email configuration.
 
 .PARAMETER TenantId
-    The Azure AD tenant identifier (GUID) where the application and service principal will be created.
+    The Entra ID tenant identifier (GUID) where the application and service principal will be created.
 
 .PARAMETER ClientSecretExpiration
     The lifetime of the client secret in months. Defaults to 12.
@@ -332,7 +332,7 @@ This PowerShell function automates the complete process of creating an Azure AD 
     File system path to the certificate (PFX) to use when CertificateAuth is enabled.
 
 .PARAMETER AppName
-    The display name of the Azure AD application to create. Defaults to "PingCastle-Email".
+    The display name of the Entra ID application to create. Defaults to "PingCastle-Email".
 
 .PARAMETER ServicePrincipalName
     The name of the service principal for the application. Defaults to "PingCastle-Email".
@@ -434,8 +434,8 @@ function Set-PingCastleEmailRBAC {
 
         Connect-MgGraph -TenantId $TenantId -Scopes $GraphScopes
 
-        # Step 3: Create Azure AD App Registration
-        Write-Host "Step 3: Creating Azure AD App Registration..." -ForegroundColor Yellow
+        # Step 3: Create Entra ID App Registration
+        Write-Host "Step 3: Creating Entra ID App Registration..." -ForegroundColor Yellow
 
         $AppRegistration = New-MgApplication -DisplayName $AppName -SignInAudience "AzureADMyOrg"
 
@@ -670,7 +670,7 @@ The function performs the following steps automatically:
 
 1. Checks and installs required PowerShell modules
 2. Connects to Microsoft Graph
-3. Creates the Azure AD App Registration
+3. Creates the Entra ID App Registration
 4. Creates the Service Principal
 5. Creates authentication credentials (client secret or certificate)
 6. Connects to Exchange Online
@@ -695,7 +695,7 @@ After completing either the manual or PowerShell configuration, go to **Configur
 
 - Set **Email Provider** to **Microsoft Graph**.
 - Set **From Address** to the shared mailbox address (e.g., `pingcastle@yourdomain.com`).
-- Set **Tenant ID** and **Client ID** to the values from your Azure AD app registration.
+- Set **Tenant ID** and **Client ID** to the values from your Entra ID app registration.
 - Set **Authentication Method** to **Client Secret** or **Certificate**, matching how you created the app registration's credential.
   - For **Client Secret**, set **Client Secret** to the secret value you copied during app registration.
   - For **Certificate**, set the certificate location to **File** or **Store**, then fill in the matching fields: the certificate file path and password for **File** mode, or the thumbprint, store location, and store name for **Store** mode.

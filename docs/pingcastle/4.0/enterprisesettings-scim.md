@@ -45,7 +45,7 @@ Refer to your identity provider's SCIM documentation for how to configure these 
 
 ### The connector type field is just a label
 
-When you generate a token, the connector type field (for example, Okta, Azure AD, or OneLogin) is for your own reference only. It helps you remember which identity provider each token belongs to when you're managing multiple tokens. Selecting a connector type doesn't change how the SCIM connector behaves — PingCastle Enterprise processes all SCIM requests the same way regardless of which connector type you select.
+When you generate a token, the connector type field (for example, Okta, Entra ID, or OneLogin) is for your own reference only. It helps you remember which identity provider each token belongs to when you're managing multiple tokens. Selecting a connector type doesn't change how the SCIM connector behaves — PingCastle Enterprise processes all SCIM requests the same way regardless of which connector type you select.
 
 :::note
 If your identity provider isn't in the list, select **Other** or any connector type. It's only for reference.

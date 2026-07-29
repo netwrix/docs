@@ -260,7 +260,7 @@ If TLS 1.2 is enabled on the server, ensure the TLS 1.2 client package is instal
 
 PingCastle Enterprise supports a synchronization mode to implement a
 security zone model (commonly used within Defense sectors). Only domains are
-synchronized (Azure AD isn't supported).
+synchronized (Entra ID isn't supported).
 
 **PingCastle Enterprise high trust**
 

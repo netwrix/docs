@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 ---
-# Enterprise Audit Log
+# Audit Log
 
 The audit log tracks every administrative change made in PingCastle Enterprise. Use it to see who changed what and when, whether you're investigating an unexpected configuration change or confirming that a change you made took effect.
 
