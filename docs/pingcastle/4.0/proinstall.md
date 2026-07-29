@@ -318,7 +318,7 @@ Microsoft has procedures to install the dotnet core 2 framework:
   https://docs.microsoft.com/en-us/dotnet/core/windows-prerequisites?tabs=netcore2x
 
 Microsoft has procedures to set up the hosting of the application that
-are referenced bellow:
+are referenced in the following list:
 
 > Host ASP.NET Core on Windows with IIS\
 > https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?tabs=aspnetcore2x
