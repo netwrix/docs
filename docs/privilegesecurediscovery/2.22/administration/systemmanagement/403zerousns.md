@@ -11,19 +11,19 @@ sidebar_position: 40
 # 403 - Zero USNs by Domain
 
 Privilege Secure must point to a single Domain Controller (DC). This is because Privilege Secure
-uses the USN values from Active Directory to determine when a group has been changed. These do no
+uses the USN values from Active Directory to determine when a group changes. These do no
 propagate between DCs.
 
-When a DC is unavailable, a new one can be connected to by using the Privilege Secure UI.
+When a DC is unavailable, you can connect to a new one using the Privilege Secure UI.
 However, when this occurs, if the USN number is lower, Privilege Secure will not be aware of changes
 to groups. This will impact access from changed groups.
 
 ![image.webp](/images/privilegesecure/4.2/discovery/admin/systemmanagement/4405051526935_image_384x376.webp)
 
-It is recommended to force a re-sync of Privilege Secure's LDAP information when a DC is changed.
-This is suggested during the next available maintenance window at the end of the day.
+Netwrix recommends forcing a re-sync of Privilege Secure's LDAP information when a DC changes.
+Perform the re-sync during the next available maintenance window.
 
-The script detailed in this article can be used to zero the USN for an impacted domain.
+Use the script detailed in this article to zero the USN for an impacted domain.
 
 ### Script Flow
 
@@ -63,7 +63,7 @@ The script detailed in this article can be used to zero the USN for an impacted 
 sudo /secureone/setup/zero_domain_usns.sh
 ```
 
-The Customer Success Team can assist with setting this up prior to utilization.
+The Customer Success Team can assist with setting this up before use.
 
 Here is an example of a successful run against the CSTEST domain in one of the Customer Support
 labs:
