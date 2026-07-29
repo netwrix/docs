@@ -22,13 +22,41 @@ large networks.
 :::note
 Starting with Endpoint Protector Server version 5.8.0.0, an additional security feature is
 available to protect the integrity of the Agent. This feature, accessible via Device Control on the
-Global Settings page, is known as the Tamper Mode setting. It is designed to prevent unauthorized
+Global Settings page, is the Tamper Mode setting. It prevents unauthorized
 termination or modification of the Endpoint Protector Agent.
 :::
 
 :::note
-When enabling Debug logging, deploying a fresh installation, or during upgrade processes where critical drivers/services (such as DPI, browser plugins, or Outlook add-ins) must be reloaded, restart the operating system. This mandatory first step in troubleshooting ensures that all dependencies are properly initialized."
+When enabling Debug logging, deploying a fresh installation, or during upgrade processes where critical drivers/services (such as Deep Packet Inspection (DPI), browser plugins, or Outlook add-ins) must be reloaded, restart the operating system. This mandatory first step in troubleshooting ensures that all dependencies are properly initialized."
 :::
+
+## Lightweight, Cross-Platform Architecture
+
+The Endpoint Protector Agent doesn't require OS kernel-level integration. This reduces the risk of
+conflicts with other security software, such as antivirus, EDR, and HIPS solutions, and keeps the
+Agent's footprint on the endpoint to a minimum.
+
+### Kernel Independence
+
+The Agent doesn't inject kernel-level drivers or extensions on Windows, macOS, or Linux. This avoids
+the stability and compatibility risks associated with kernel-mode components, such as system crashes
+from driver conflicts or extension issues after an OS update.
+
+On Linux specifically, this also means the Agent isn't dependent on Dynamic Kernel Module Support
+(DKMS) or a rebuild each time the kernel is updated, removing the operational risk — common with
+kernel-module-based agents — of endpoint protection breaking after a routine kernel update.
+
+### Cross-OS Feature Parity
+
+The Agent maintains feature parity across Windows, macOS, and Linux for Device Control (DC),
+Content Aware Protection (CAP), and eDiscovery. The Enforced Encryption Client, which provides FIPS
+140-3 validated removable media encryption, offers full parity between Windows and macOS.
+
+Endpoint Protector is designed for full feature parity across Windows, macOS, and Linux from
+initial release, rather than treating Linux as a delayed follow-up to Windows and macOS support. The
+only differences between operating systems are in the specific applications covered by content
+inspection, since the native applications and file-handling behaviors on each OS are inherently
+platform-specific.
 
 ## Agent install parameters
 
@@ -42,7 +70,7 @@ Use the following commands:
 - u - uninstall
 - rn - release notes
 - l - distribution list
-
+ 
 **Optional CLI commands for installers**
 
 
@@ -248,7 +276,7 @@ Inspection Certiﬁcate**, and download the **CA Certiﬁcate**.
 
 **Step 15 –** **Save** the changes.
 
-**Step 16 –** The following pop-up will be displayed informing the end-user that a System Extension
+**Step 16 –** The following pop-up displays, informing the end-user that a System Extension
 is blocked and needs to be allowed.
 
 ![System Extension is blocked and needs to be allowed](systemextensionblocked.webp)
@@ -316,11 +344,13 @@ Based on each distribution, follow the corresponding method:
 
 ![Setting the Endpoint Protector Server IP](setserveriptwo.webp)
 
-## The Windows Subsystem for Linux
+## WSL - Windows Subsystem for Linux
 
-With the Windows Subsystem for Linux (WSL), you can run native Linux distributions directly within
-your Windows environment. However, due to its nature, the Endpoint Protector Client can't be
-directly installed as an application within WSL.
+With the Windows Subsystem for Linux (WSL), you can run native Linux distributions directly within your Windows environment. 
+
+### WSL 1
+
+The Endpoint Protector Client can't be installed directly as an application within WSL.
 
 While direct installation isn't possible, you can still manage and control the usage of WSL
 applications through the Application Denylist feature in Endpoint Protector. With this feature, you can
@@ -346,6 +376,19 @@ Endpoint Protector Client can't directly control the usage of WSL Bash command-l
 on Windows.
 :::
 
+### WSL2
+
+WSL2 lets you start a lightweight virtual machine with a specific Linux distribution, and offers two options for controlling it:
+
+- Configure an Application Denylist, as with [WSL 1](#wsl-1), to block WSL2 usage entirely.
+- Deploy a dedicated Linux EPP Client inside the WSL2 Linux machine to gain EPP visibility into it.
+  The installed instance is treated as a separate machine in the EPP Server, which lets you apply
+  more granular policies.
+
+:::note
+Netwrix has only tested Ubuntu 26.04 (ARM and x64) and RHEL 10 (x64) in its lab.
+:::
+
 ## EPP Client Integrity Checks
 
 This article explains key EPP Client behaviors related to integrity checking, policy synchronization, and service termination. It covers how the EPP Client validates itself at startup, how policy changes are communicated and downloaded, and how different types of client termination are classified and reported.
@@ -368,7 +411,7 @@ When the daemon starts, it checks for the presence of all expected files and rep
 | Term | Meaning |
 |---|---|
 | **Install files** | The full set of files expected to be present on the endpoint after a successful EPP Client installation. |
-| **Installation file missing** | One or more expected files couldn't be found during the startup check. This condition triggers a Client Integrity Failure event. |
+| **Installation file missing** | The startup check couldn't find one or more expected files. This condition triggers a Client Integrity Failure event. |
 
 ## Tamper mode
 
@@ -408,4 +451,4 @@ If the EPP Client service wasn't stopped cleanly, the agent evaluates the state 
 | **Forced Uninstall Attempt** | The service was stopped or killed, and one or more files, registry keys, or drivers were found in an unexpected state — indicating a partial or unauthorized removal attempt. |
 | **Uninstall Attempt** | A deliberate uninstall of the EPP Client was initiated — either directly on the endpoint (e.g. via Add/Remove Programs) or triggered remotely from the EPP Server using the **Uninstall Client** action. |
 
-These three event types are reported by the EPP Client agent and are visible in the EPP Server event log for the relevant endpoint.
+The EPP Client agent reports these three event types, which appear in the EPP Server event log for the relevant endpoint.

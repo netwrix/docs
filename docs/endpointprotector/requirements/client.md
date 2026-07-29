@@ -6,6 +6,37 @@ sidebar_position: 20
 
 # Client
 
+## Lightweight, Cross-Platform Design
+
+The Endpoint Protector Client doesn't require OS kernel-level integration. This design reduces the
+risk of conflicts with other security applications, such as antivirus, EDR, and HIPS solutions, and
+keeps the Client's footprint on the endpoint to a minimum.
+
+### Kernel Independence
+
+The Client doesn't inject kernel-level drivers or extensions on Windows, macOS, or Linux. This
+avoids the stability and compatibility risks associated with kernel-mode components, such as system
+crashes from driver conflicts or extension issues after an OS update.
+
+On Linux specifically, this also means the Client isn't dependent on Dynamic Kernel Module Support
+(DKMS) or a rebuild each time the kernel is updated, removing the operational risk — common with
+kernel-module-based agents — of endpoint protection breaking after a routine kernel update.
+
+### Cross-OS Feature Parity
+
+The Client maintains feature parity across Windows, macOS, and Linux for Device Control (DC),
+Content Aware Protection (CAP), and eDiscovery. The Enforced Encryption Client, which provides FIPS
+140-3 validated removable media encryption, offers full parity between Windows and macOS. Enforced
+Encryption Client isn't available for Linux; Linux endpoints are protected through Device Control
+policies instead.
+
+:::note
+For the supported operating systems and lifecycle policy for each platform, see
+[Client Supportability](/docs/endpointprotector/supportability/client-supportability.md).
+:::
+
+## Resource Consumption
+
 The Endpoint Protector Client has one of the smallest footprints of any similar solution on the
 market. The resources it consumes or the bandwidth it uses is insignificant. The processing power
 consumed, and bandwidth used by the Client depends on the functions, settings, policies used, and

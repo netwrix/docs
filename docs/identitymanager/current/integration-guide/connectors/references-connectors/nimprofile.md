@@ -1,7 +1,7 @@
 ---
 title: "NIM Profile"
 description: "NIM Profile"
-sidebar_position: 110
+sidebar_position: 160
 ---
 
 # NIM Profile

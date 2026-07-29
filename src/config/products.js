@@ -319,16 +319,10 @@ export const PRODUCTS = [
         customDocPath: 'docs/identitymanager/current',
       },
       {
-        version: '6.3',
-        label: '6.3',
+        version: '7.0',
+        label: '7.0',
         isLatest: false,
-        sidebarFile: './sidebars/identitymanager/6.3.js',
-      },
-      {
-        version: '6.2',
-        label: '6.2',
-        isLatest: false,
-        sidebarFile: './sidebars/identitymanager/6.2.js',
+        sidebarFile: './sidebars/identitymanager/7.0.js',
       },
       {
         version: '6.1',
