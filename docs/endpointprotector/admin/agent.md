@@ -348,7 +348,7 @@ Based on each distribution, follow the corresponding method:
 
 With the Windows Subsystem for Linux (WSL), you can run native Linux distributions directly within your Windows environment. 
 
-### WSL 1
+### WSL1
 
 The Endpoint Protector Client can't be installed directly as an application within WSL.
 
