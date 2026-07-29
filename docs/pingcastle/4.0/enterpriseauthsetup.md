@@ -400,7 +400,7 @@ You can display a custom message on the login page, such as an internal notice o
 **Example:**
 
 ```html
-<p>The PingCastle UK Instance for consto</p>
+<p>The PingCastle UK Instance for Consto</p>
 ```
 
 The custom message appears on the login page within about 30 seconds:

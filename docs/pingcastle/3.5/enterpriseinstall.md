@@ -2176,7 +2176,7 @@ You can display a custom message on the login page by adding the `customLoginMes
 **Example Configuration:**
 
 ```json
-"customLoginMessage": "<p>The PingCastle UK Instance for consto</p>"
+"customLoginMessage": "<p>The PingCastle UK Instance for Consto</p>"
 ```
 
 After performing an `iisreset`, the custom message will appear on the login page:
