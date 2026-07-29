@@ -7,12 +7,13 @@ Reviews a GitHub PR for KB article quality. For each changed KB file, runs Vale 
 ## Invocation
 
 ```
-/kb-pr-review <PR number or URL>
+/kb-pr-review <PR number or URL> [+ verbose]
 ```
 
 Examples:
 - `/kb-pr-review 812`
 - `/kb-pr-review https://github.com/netwrix/docs/pull/812`
+- `/kb-pr-review 812 + verbose` — restores a full per-area Overview breakdown (see Step 9) for debugging or spot-checking the skill itself.
 
 ---
 
@@ -261,23 +262,36 @@ Before composing the Overview table or any findings sections, work through each 
 
 Only after this per-item scratch pass — never before — compose the Overview table and the findings sections. **Skipping the enumeration to write the table first is a coverage regression, however clean the output looks.** The reason the frontmatter sub-field row format catches misses is that it forces the model to account for each sub-field explicitly; the enumeration pass extends that discipline to Dale, the scan-table rows, and the cross-section patterns, where "Clean" and "unscanned" are otherwise visually identical.
 
-**Compact report format.** Do not print a row per rule with "Clean" / "N/A" / "Not present" verdicts. Verbosity has been a real cost — the report surfaces *what needs a decision*, not exhaustive proof of coverage. Coverage is enforced by the discipline above and by the row inventory of the Overview table, not by expanding every clean rule into a full sub-table.
+**Compact report format.** The Overview table shows exactly one row per tool — Vale, Dale, Derek, the kb-editing-conventions scan, and cross-section consistency — never a row per sub-check. Derek's per-area detail (which frontmatter sub-field, which article-type/title/images/formatting sub-row) belongs only in the Derek findings table below, where the Area column already names it. Do not print a row per rule/area with "Clean" / "N/A" / "Not present" verdicts in the Overview table. Verbosity has been a real cost — the report surfaces *what needs a decision*, not exhaustive proof of coverage. Coverage is enforced by the Coverage discipline enumeration above, not by expanding every clean check into its own row. (Exception: `+ verbose` invocation — see below.)
 
 Per-file structure:
 
 **1. Overview table (always).** A compact table listing every check category and its status — findings count or ✓ Clean. Clean verdicts live only here; they do not reappear in the sections below.
 
-**Rows required on every file:**
+**Rows required on every file (default mode):**
 
-- One row per Vale, Dale.
-- **Frontmatter sub-fields — one row each:** `title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`. Every sub-field must appear as its own row on every file, with an explicit ✓ Clean or a findings count. A single "Derek — frontmatter | 2 required fixes" row hides sub-field misses (e.g., a missing `kb` tag going unflagged because two other sub-fields already filled the count). Sub-field rows make coverage visually auditable at a glance.
-- One row per other Derek area: `article-type: structure`, `article-type: qa-format`, `article-type: heading-labels`, `title: mechanical`, `title: semantic`, `product-names`, `images: location`, `images: external-refs`, `images: alt-text`, `links`, `formatting: bold/backticks`, `formatting: lists`, `prose directness`.
+- One row each for Vale and Dale.
+- One row for `Derek (N checks)` — a single roll-up covering every frontmatter sub-field (`title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`) and every other named area (`article-type: structure`, `article-type: qa-format`, `article-type: heading-labels`, `title: mechanical`, `title: semantic`, `product-names`, `keywords-quality`, `images: location`, `images: external-refs`, `images: alt-text`, `links`, `formatting: bold/backticks`, `formatting: lists`, `prose directness`). N is the total count of sub-fields + areas — 21 as of this writing; recount if the areas table changes. Status cell: `N/N scanned, <total findings> findings in <count> areas` (or `✓ Clean` if zero findings).
 - One row for the `kb-editing-conventions scan (rows 1–22)`.
 - One row for `Cross-section consistency (all patterns)`.
 
-That row inventory is the coverage receipt.
+No per-area or per-sub-field rows appear in the Overview table in default mode, under any circumstance — that detail lives only in the Derek findings table below. The Overview table is a fixed 5 rows regardless of file size; that fixed shape is the coverage receipt for the tool level, backed by the Coverage discipline enumeration for the check level.
 
-Example shape:
+**`+ verbose` invocation.** Append `+ verbose` to the invocation (e.g., `/kb-pr-review 812 + verbose`) to restore a full per-area breakdown in the Overview table — every Derek sub-field/area gets its own row with an explicit ✓ Clean / N/A / findings count, the same ~21-row format this skill used before this roll-up. Use this only for debugging the skill itself or spot-checking coverage, not for normal reviewer-facing reports.
+
+Example shape (default mode):
+
+```markdown
+| Check | Status |
+|---|---|
+| Vale | 2 findings |
+| Dale (N rules) | N/N scanned, 3 findings |
+| Derek (21 checks) | 21/21 scanned, 4 findings in 3 areas |
+| kb-editing-conventions scan (22 rows) | 22/22 scanned, 2 findings (rows §7, §8) |
+| Cross-section consistency (6 patterns) | 6/6 scanned, 1 finding (product-name repetition) |
+```
+
+Example shape (`+ verbose`):
 
 ```markdown
 | Check | Status |
@@ -297,6 +311,7 @@ Example shape:
 | Derek — title: mechanical | 1 required fix |
 | Derek — title: semantic | ✓ Clean |
 | Derek — product-names | ✓ Clean |
+| Derek — keywords-quality | ✓ Clean |
 | Derek — images: location | 1 required fix |
 | Derek — images: external-refs | ✓ Clean |
 | Derek — images: alt-text | ✓ Clean |
@@ -308,7 +323,7 @@ Example shape:
 | Cross-section consistency (6 patterns) | 6/6 scanned, 1 finding (product-name repetition) |
 ```
 
-**N/N scanned discipline.** The Dale row, the kb-editing-conventions scan row, the cross-section consistency row, and the two formatting sub-rows (`formatting: bold/backticks`, `formatting: lists`) must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "22/22" without having walked all 22 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files. The formatting rows' `N` comes from the extraction pass (Step 9, item 5) — the count of extracted UI-action-target/literal-value items for `bold/backticks`, and the count of extracted list blocks for `lists`.
+**N/N scanned discipline.** The Dale row, the `Derek (N checks)` row, the kb-editing-conventions scan row, and the cross-section consistency row must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "22/22" without having walked all 22 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files. For Derek, N is the total across all sub-fields and areas from the enumeration (item 4), including the formatting sub-rows' own extraction-pass counts (item 5) — those individual N/N counts still get computed during the scratch pass every time; in default mode they fold into the single `Derek (N checks)` row's total, and reappear as their own rows only under `+ verbose`.
 
 **Count-consistency discipline (arithmetic check).** Whenever a status cell shows a total finding count *and* a parenthetical breakdown (e.g., `10/10 scanned, 5 findings (passive-voice ×2, undefined-acronyms ×3)`), the top-line total must equal the sum of the breakdown counts. `2 findings (passive-voice ×2, undefined-acronyms ×3)` is a bug — that's 5, not 2. Same rule applies to every row that shows a breakdown: Vale, Dale, Derek, the scan-table row, cross-section row. Additionally, the number of rows in each findings section table below must equal the count claimed by the corresponding Overview row. Do the arithmetic before writing the row; do not paper over a mismatch by picking one number and hoping the reader doesn't add.
 
@@ -345,8 +360,9 @@ _<N> KB file(s) reviewed. Ran Vale + Dale + Derek._
 |---|---|
 | Vale | 2 findings |
 | Dale | 1 finding |
-| Derek — frontmatter | 2 required fixes |
-| ... | ... |
+| Derek (21 checks) | 21/21 scanned, 2 findings in 1 area |
+| kb-editing-conventions scan (22 rows) | 22/22 scanned, 0 findings |
+| Cross-section consistency (6 patterns) | 6/6 scanned, 0 findings |
 
 #### Vale
 
@@ -473,9 +489,9 @@ Note: this approval counts toward branch protection requirements in `netwrix/doc
 
 ## Output rules
 
-- **Overview table is the coverage receipt.** Every frontmatter sub-field (`title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`), every other Derek area, and the two scan groups must appear as their own row on every file — with either a findings count or ✓ Clean. A single collapsed "frontmatter" row is NOT sufficient; it hides sub-field misses. This is where coverage is enforced, not by expanding "Clean" verdicts into full sub-tables.
+- **Overview table is exactly 5 rows in default mode** — Vale, Dale, `Derek (N checks)`, kb-editing-conventions scan, cross-section consistency — regardless of file size. Derek's per-sub-field and per-area detail never gets its own Overview row in default mode; it lives only in the Derek findings table below, via the Area column. Coverage at the check level is enforced by the Coverage discipline enumeration (the mandatory scratch pass), not by expanding rows. Use `+ verbose` on invocation to restore the full per-area breakdown for debugging or spot-checking the skill itself.
 - **Findings sections omit clean checks entirely.** For a tool that fired no findings, no findings section appears — the Overview row is sufficient. Do NOT include "✅ No X violations" placeholder sections in the findings area.
-- **No rule-by-rule "Clean" / "N/A" / "Not present" rows** in findings sections. Do not print a per-rule table showing which rules found nothing. If more granular coverage is needed for debugging, use `+ verbose` on invocation (future).
+- **No rule-by-rule "Clean" / "N/A" / "Not present" rows** in findings sections. Do not print a per-rule table showing which rules found nothing.
 - **No filler sentences confirming what wasn't found** (e.g., "No hits for minimizing-difficulty, idioms, ..."). If the Overview row says ✓ Clean, that's the whole statement.
 - Column names: Vale `Line | Rule | Severity | Finding`; Dale `Location | Rule | Finding + suggested rewrite`; Derek `Area | Location | Finding | Suggested fix`.
 - Keep findings specific and actionable. Vague observations don't belong in the report.
