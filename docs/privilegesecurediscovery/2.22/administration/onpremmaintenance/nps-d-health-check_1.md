@@ -1,12 +1,20 @@
 ---
-title: NPS-D Health Checks 
+title: NPS-D Health Checks
 ---
 
 # Perform a Health Check on NPS-D
 
-This article describes the standard health check procedure for NPS-D (formerly known as
-SecureONE). It covers the application, database, DR, Docker, and OS checks to review to confirm a
-healthy environment, and highlights items to follow up on with Support.
+This article describes the standard health check procedure for Netwrix Privilege Secure Discovery
+(NPS-D), formerly known as SecureONE. It covers application, database, disaster recovery (DR),
+Docker, and operating system (OS) checks that confirm a healthy environment, and it highlights items
+to follow up on with Support.
+
+The checks are grouped in the same order the intro lists them. Work through each group in turn, and
+run the commands on every node in the cluster unless a step says otherwise.
+
+## Application Checks
+
+Confirm that the NPS-D services, nodes, and logging are healthy.
 
 ### Services and Nodes
 
@@ -27,6 +35,38 @@ sudo docker node ls
 Confirm every service shows the expected replica count (for example `1/1` or `6/6`) and every node
 shows `Ready`/`Active`. Investigate a replica count mismatch or a `Down`/`Drain` node before
 continuing.
+
+### Service Local Logging Files and Content
+
+Run on each node in the cluster:
+
+```bash
+sudo ls -alh /secureone/data/logs/ | grep svc
+
+for i in $(sudo find /secureone/data/logs/ -iname "*.log*"); do
+  echo "File: $i"
+  sudo grep -iE "error|fail" "$i" | wc -l
+  sudo grep -iE "error|fail" "$i" | grep -o "message[^,]*" | sort | uniq -c | sort -nk1 | tail
+  echo "----------"
+done
+```
+
+Confirm log files are present and actively receiving writes, and review any recurring error or
+failure messages.
+
+:::note
+The `find` pattern needs the wildcards (`*.log*`) to match filenames, and the `grep` pattern needs `-E` for `|` to work as an alternation between `error` and `fail`.
+:::
+
+### Fluentd/Log Forwarding to SIEM
+
+If log forwarding isn't configured, the customer can create a Support ticket to enable it. Reference the SIEM log forwarding documentation:
+
+[Forward Logs to SIEM](https://docs.netwrix.com/docs/kb/privilegesecurediscovery/security-and-compliance/forward-logs-to-siem-fluentd)
+
+## Database Checks
+
+Confirm that MongoDB replication is healthy across the cluster.
 
 ### MongoDB Replica Status
 
@@ -54,6 +94,10 @@ unset mEvl
 Look for each node reporting a healthy `stateStr` (for example `PRIMARY` or `SECONDARY`) and recent
 heartbeat timestamps. Delayed or missing heartbeats indicate replication issues to investigate
 before proceeding.
+
+## Disaster Recovery (DR) Checks
+
+Confirm that backup and restore functions are configured and running.
 
 ### DR Functions (Backup and Restore)
 
@@ -101,37 +145,15 @@ Check the crontab entry:
 sudo crontab -l | tail
 ```
 
-Reference: DR Scripts Setup Tracking documentation.
+## Docker Checks
 
-### Disk Space and Time Sync
-
-Run on each node in the cluster:
-
-```bash
-date && echo "------" && df -h && echo "------" && timedatectl status
-```
-
-Confirm sufficient free disk space and that time sync is active and healthy on every node. If a
-node shows an unsynced or unreachable NTP source, resolve that before continuing, since time drift
-can cause replica set and TLS issues.
+Confirm that the Docker engine, images, and networking are healthy on every node.
 
 ### Docker Version
 
 ```bash
 docker --version
 ```
-
-### APIPA Networks
-
-Run on one node in the cluster:
-
-```bash
-sudo docker network inspect docker_gwbridge bridge ingress s1_default | grep '"Name": "docker_gwbridge"\|"Name": "bridge"\|"Name": "ingress"\|"Name": "s1_default"\|Subnet\|Gateway'
-```
-
-Confirm none of the reported subnets fall in the 169.254.0.0/16 (APIPA/link-local) range. Overlay
-networks that have fallen back to link-local addressing are a sign of Docker Swarm networking
-issues.
 
 ### Docker Daemon Status
 
@@ -153,33 +175,33 @@ Confirm the expected images are present and versions are consistent across every
 cluster. A mismatched tag on one node (for example after a partial upgrade) is a common source of
 crash loops.
 
-### Service Local Logging Files and Content
+### APIPA (Link-Local) Networks
+
+Run on one node in the cluster:
+
+```bash
+sudo docker network inspect docker_gwbridge bridge ingress s1_default | grep '"Name": "docker_gwbridge"\|"Name": "bridge"\|"Name": "ingress"\|"Name": "s1_default"\|Subnet\|Gateway'
+```
+
+Confirm none of the reported subnets fall in the 169.254.0.0/16 (Automatic Private IP Addressing,
+or APIPA/link-local) range. Overlay networks that have fallen back to link-local addressing are a
+sign of Docker Swarm networking issues.
+
+## OS Checks
+
+Confirm that disk space, time sync, and the operating system are healthy on every node.
+
+### Disk Space and Time Sync
 
 Run on each node in the cluster:
 
 ```bash
-sudo ls -alh /secureone/data/logs/ | grep svc
-
-for i in $(sudo find /secureone/data/logs/ -iname "*.log*"); do
-  echo "File: $i"
-  sudo grep -iE "error|fail" "$i" | wc -l
-  sudo grep -iE "error|fail" "$i" | grep -o "message[^,]*" | sort | uniq -c | sort -nk1 | tail
-  echo "----------"
-done
+date && echo "------" && df -h && echo "------" && timedatectl status
 ```
 
-Confirm log files are present and actively receiving writes, and review any recurring error or
-failure messages.
-
-:::note
-The `find` pattern needs the wildcards (`*.log*`) to match filenames, and the `grep` pattern needs `-E` for `|` to work as an alternation between `error` and `fail`.
-:::
-
-### Fluentd/Log Forwarding to SIEM
-
-If log forwarding isn't configured, the customer can create a Support ticket to enable it. Reference the SIEM log forwarding documentation:
-
-[Forward Logs to SIEM]( https://docs.netwrix.com/docs/kb/privilegesecurediscovery/security-and-compliance/forward-logs-to-siem-fluentd)
+Confirm sufficient free disk space and that time sync is active and healthy on every node. If a
+node shows an unsynced or unreachable NTP source, resolve that before continuing, since time drift
+can cause replica set and TLS issues.
 
 ### Ubuntu Version
 
@@ -201,4 +223,3 @@ sudo apt update && apt list --upgradable
 
 Confirm the number and nature of pending OS package updates. Flag any packages that are
 significantly out of date or that address known security issues.
-
