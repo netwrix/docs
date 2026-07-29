@@ -45,7 +45,7 @@ Import the license on the fresh 2510 image **before** applying patches. Without 
 
 ## Understanding the Migration Architecture
 
-### Why 5.9.4.2 Is a Required Stepping Stone
+### Why 5.9.4.2 Is a Required Intermediate Step
 
 The 2510 base image (and any patch version built on top of it, such as 2604) accepts configuration backups exclusively from version **5.9.4.2**. This is because:
 
@@ -129,7 +129,7 @@ Confirm hypervisor version compatibility **before** scheduling a migration maint
 :::
 
 :::note
-The preceding hypervisor recommendations reflect the best available guidance based on the EPP image format and known compatibility. However, hypervisor provisioning, configuration, and ongoing maintenance fall outside the scope of Netwrix support. Netwrix can't assist with hypervisor-side issues — customers are responsible for their own virtualisation infrastructure.
+These hypervisor recommendations reflect the best available guidance based on the EPP image format and known compatibility. However, hypervisor provisioning, configuration, and ongoing maintenance fall outside the scope of Netwrix support. Netwrix can't assist with hypervisor-side issues — customers are responsible for their own virtualisation infrastructure.
 :::
 
 ### System Resource Assessment

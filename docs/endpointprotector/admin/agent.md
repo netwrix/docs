@@ -185,7 +185,7 @@ The main supported Linux distributions include:
 - Ubuntu
 - RedHat
 
-Optional distributions will be provided on the product portal and are available upon request after validation by the Netwrix Product Team. The following are examples of on-demand distributions:
+Netwrix provides optional distributions on the product portal upon request, after the Netwrix Product Team validates them. The following are examples of on-demand distributions:
 - Debian
 - Fedora
 - Pardus OS
@@ -400,9 +400,9 @@ The Client Integrity check runs automatically at EPP service/daemon startup. It 
 - The existence of all expected EPP component files on the endpoint.
 - The validity of file signatures *(signature validation applies to Windows only)*.
 
-If the check passes without issue, the status is reported as **Client Integrity OK**, confirming all EPP component files are present and their signatures are valid (on Windows).
+If the check passes without issue, the EPP Client reports the status as **Client Integrity OK**, confirming all EPP component files are present and their signatures are valid (on Windows).
 
-If the check fails for any reason, a **Client Integrity Failure** event is reported in the EPP Server.
+If the check fails for any reason, the EPP Client reports a **Client Integrity Failure** event in the EPP Server.
 
 ### File Existence vs. Missing Installation File
 
@@ -443,7 +443,7 @@ Any change to Computer or User settings — including configuration items, right
 
 ### How the EPP Client Classifies Termination
 
-If the EPP Client service wasn't stopped cleanly, the agent evaluates the state of relevant files, registry keys, and drivers to determine what happened. Based on the results, one of three events is reported:
+If the EPP Client service didn't stop cleanly, the agent evaluates the state of relevant files, registry keys, and drivers to determine what happened. Based on the results, one of three events is reported:
 
 | Event Type | Condition & Meaning |
 |---|---|

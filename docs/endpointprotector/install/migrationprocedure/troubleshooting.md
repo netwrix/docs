@@ -106,7 +106,7 @@ Back up files before deleting them from `/tmp`. Deleting `cflog_initial*` files 
 
 **Symptom:** Predefined HIPAA (or other predefined) dictionary downloads fail, or the policy references a stale server address, after migration or after a server hostname/IP change.
 
-**Root cause:** The dictionary download link is generated and cached at the time you save the policy. The server reuses this cached link as-is on every subsequent request instead of regenerating it on each client check-in ("Ping"). If the server's hostname or IP changes after the policy was last saved — for example, during a migration — the cached link still points to the old address.
+**Root cause:** The server generates and caches the dictionary download link when you save the policy. The server reuses this cached link as-is on every subsequent request instead of regenerating it on each client check-in ("Ping"). If the server's hostname or IP changes after the policy was last saved — for example, during a migration — the cached link still points to the old address.
 
 **Resolution:** Edit the affected HIPAA policy and save it again — any no-op change is sufficient to trigger regeneration. The policy's next Ping rebuilds the download link using the current server address.
 
