@@ -364,7 +364,7 @@ the user to the detail of the report.
 ![](/images/pingcastle/enterpriseuser/image29.webp)
 
 :::note
-The "View Action Plans" option changes the color of the items and enables the user to see quickly what the status of the action plans are.
+The "View Action Plans" option changes the color of the items and enables the user to quickly see the status of the action plans.
 :::
 
 The first step of a remediation is to request domain owners to set up an action plan without enforcing it.

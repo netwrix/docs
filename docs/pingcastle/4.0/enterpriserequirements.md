@@ -34,7 +34,7 @@ Supported database editions:
 - **SQL Server Standard**: Recommended for production environments as needed
 - **SQL Server Enterprise**: Supported for high-availability production environments
 
-PingCastle Enterprise uses Entity Framework Core 2 for database operations. Partial support for PostgreSQL is provided on a best effort basis at this stage. Other database engines aren't specifically supported.
+PingCastle Enterprise uses Entity Framework Core 2 for database operations. PingCastle Enterprise provides partial support for PostgreSQL on a best-effort basis at this stage. Other database engines aren't specifically supported.
 
 ### External System Dependencies
 

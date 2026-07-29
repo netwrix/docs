@@ -63,7 +63,7 @@ Open **Server Manager** > **Manage** > **Add Roles and Features** > **Server Rol
 
 </details>
 
-Windows Authentication uses Active Directory groups to provision access to PingCastle Enterprise. Create two security groups in Active Directory. These can be called whatever you like. The following names are used as examples in this document:
+Windows Authentication uses Active Directory groups to provision access to PingCastle Enterprise. Create two security groups in Active Directory. You can call these whatever you like. This document uses the following names as examples:
 - **PingCastle_Users**: Members of this group can log in and access PingCastle Enterprise
 - **PingCastle_Admins**: Members of this group have administrator privileges
 
@@ -226,7 +226,7 @@ Header authentication delegates authentication to a reverse proxy, which sets a 
 
 On **Configuration** > **Settings** > **Header authentication**, enable **Header Authentication** and enter the header name your reverse proxy sets.
 
-When the login page is accessed, PingCastle checks for the specified header. If present, PingCastle considers the user authenticated and uses the header value as the username.
+When a user accesses the login page, PingCastle checks for the specified header. If present, PingCastle considers the user authenticated and uses the header value as the username.
 
 :::danger Security Requirement
 The PingCastle application **must** be isolated by a reverse proxy that prevents unauthenticated users from setting their own authentication header. Failure to properly secure this configuration allows authentication bypass.
@@ -342,7 +342,7 @@ Configure IIS to require or accept client certificates. This requires HTTPS acce
 
 ![IIS Require SSL Certificate](/images/pingcastle/enterpriseinstall/Authentication/iis-require-ssl-cert.webp)
 
-The server will request a certificate when the website is accessed.
+The server requests a certificate when a user accesses the website.
 
 ![SSL Certificate Request](/images/pingcastle/enterpriseinstall/Authentication/ssl-cert-request.webp)
 
@@ -375,7 +375,7 @@ Create a user account with a login matching the certificate subject (DNS form). 
 
 **Troubleshooting**
 
-If the certificate can't be recognized, an error is displayed:
+If PingCastle can't recognize the certificate, it displays an error:
 
 ![Certificate Not Recognized](/images/pingcastle/enterpriseinstall/Authentication/cert-not-recognized.webp)
 
