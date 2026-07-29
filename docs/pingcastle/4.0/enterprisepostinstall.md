@@ -43,7 +43,7 @@ The **Webhost** setting is used for links sent to users via email and other noti
 
 ### IIS Maximum Upload Configuration
 
-The default IIS upload limit may need to be increased to accommodate large report files. While there are multiple methods to configure this setting (web.config, IIS Manager), the simplest approach is using PowerShell:
+You may need to increase the default IIS upload limit to accommodate large report files. While there are multiple methods to configure this setting (web.config, IIS Manager), the simplest approach is using PowerShell:
 
 ```powershell
 Import-Module WebAdministration
@@ -223,7 +223,7 @@ You can manually trigger archiving on-demand:
 - Personal data is stripped from the reports
 - Reports are converted to "Normal" detail level
 - Domain scores, statistics, and summary data are preserved
-- This is a one-way transformation and can't be reversed
+- You can't reverse this one-way transformation
 
 
 ## PingCastle agent deployment

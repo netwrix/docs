@@ -95,7 +95,7 @@ The installer wizard walks you through prerequisite checks, licensing, and confi
 For testing and proof-of-concept environments, you can streamline the installation process using automation tools such as Chocolatey.
 
 :::warning
-This simplified setup is recommended for **testing only**. For production environments, use the Production Installation tab for proper configuration and upgrade support.
+Use this simplified setup for **testing only**. For production environments, use the Production Installation tab for proper configuration and upgrade support.
 :::
 
 #### Prerequisites
@@ -197,7 +197,7 @@ EXEC sp_addrolemember 'db_owner', 'IIS APPPOOL\PingCastleEnterprise';
 ![](/images/pingcastle/enterpriseinstall/image22.webp)
 
 :::tip TCP/IP Configuration
-A common configuration issue is TCP/IP connectivity. TCP/IP is disabled by default in SQL Server and must be enabled manually in SQL Server Configuration Manager.
+A common configuration issue is TCP/IP connectivity. TCP/IP is disabled by default in SQL Server, so you must enable it manually in SQL Server Configuration Manager.
 :::
 
 ![](/images/pingcastle/enterpriseinstall/image23.webp)
@@ -210,7 +210,7 @@ Server=tcp:server.fqdn.com;Database=PingCastle;User Id=pingcastle;Password=pingc
 ```
 
 :::note
-The database schema isn't created during installation. Any connection issues will appear on first run. Check the Windows Event Log and the Serilog logs in the `logs` folder of the CloudAPI and PingCastle Enterprise installation directories for detailed error messages. You can update the connection string after installation by editing `appsettings.production.json`. Remember to escape special characters in JSON strings (e.g., `\` becomes `\\`).
+Installation doesn't create the database schema. Any connection issues will appear on first run. Check the Windows Event Log and the Serilog logs in the `logs` folder of the CloudAPI and PingCastle Enterprise installation directories for detailed error messages. You can update the connection string after installation by editing `appsettings.production.json`. Remember to escape special characters in JSON strings (e.g., `\` becomes `\\`).
 :::
 
 ![](/images/pingcastle/enterpriseinstall/image25.webp)

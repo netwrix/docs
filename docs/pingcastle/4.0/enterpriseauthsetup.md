@@ -126,7 +126,7 @@ On **Configuration** > **Settings** > **Windows authentication**, enter the SIDs
 PingCastle Enterprise also removes a user's access automatically if they no longer belong to the group set in **Windows Group** at their next login.
 
 :::note
-Windows Authentication doesn't provide an email address when creating accounts. Email addresses are set to a default value that disables notifications.
+Windows Authentication doesn't provide an email address when creating accounts. PingCastle Enterprise sets email addresses to a default value that disables notifications.
 :::
 
 ![Windows accounts have no email](/images/pingcastle/enterpriseinstall/Authentication/windows-no-email.webp)
@@ -158,7 +158,7 @@ Proxy settings rely on the current user proxy configuration, which can be define
 <details>
 <summary>Configuring Entra ID for OpenIDConnect Authentication</summary>
 
-Entra ID can be configured as an OpenID Connect provider.
+You can configure Entra ID as an OpenID Connect provider.
 
 **Entra ID Portal Configuration**
 

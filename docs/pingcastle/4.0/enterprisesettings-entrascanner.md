@@ -11,6 +11,6 @@ The **Entra Scanner** section syncs its settings from the Entra Scanner microser
 - **Scanning** — Tuning for the scan worker pool: queue capacity, worker count, maximum concurrent scans per tenant, and drain rate.
 - **Azure scanning** — Maximum parallelism for Azure and Entra scan operations.
 - **HTTP resilience** — Retry attempts, backoff delay, request and client timeouts, and circuit breaker thresholds for outbound HTTP calls.
-- **Audit store** — Where audit events are stored (file, database, or none), the file path, and the retention period.
+- **Audit store** — Where the Entra Scanner stores audit events (file, database, or none), the file path, and the retention period.
 - **Maintenance** — Interval for background maintenance jobs.
 - **Telemetry** — Telemetry exporter (OTLP, Console, or None) and the tracing toggle.

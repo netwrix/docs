@@ -18,7 +18,7 @@ Two settings control this behavior:
 - **Antiforgery failure threshold** — The number of antiforgery validation failures PingCastle Enterprise allows from a client before blocking it. For example, a threshold of 5 means the sixth consecutive failure triggers a block.
 - **Antiforgery reset interval (seconds)** — How long PingCastle Enterprise waits, in seconds, before resetting a client's failure count back to zero. If the client doesn't fail validation again within this window, PingCastle Enterprise clears its failure history.
 
-A low failure threshold combined with a short reset interval makes PingCastle Enterprise more sensitive to potential CSRF attacks, but it can also block legitimate users who hit transient issues, such as an expired browser tab that resubmits an outdated form.
+A low failure threshold combined with a short reset interval makes PingCastle Enterprise more sensitive to potential CSRF attacks, but it can also block legitimate users who encounter transient issues, such as an expired browser tab that resubmits an outdated form.
 
 ## Password rate limiting
 

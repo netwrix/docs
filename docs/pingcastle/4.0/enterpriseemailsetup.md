@@ -70,7 +70,7 @@ For example, setting **Default Domain Reminder Days** to 7 sends a reminder emai
 
 ### Modern Authentication with Office 365 Using Graph API
 
-PingCastle Enterprise supports sending emails using Microsoft Graph API with modern authentication. This method is recommended for Office 365 environments as it provides enhanced security through OAuth 2.0 authentication.
+PingCastle Enterprise supports sending emails using Microsoft Graph API with modern authentication. Netwrix recommends this method for Office 365 environments, as it provides enhanced security through OAuth 2.0 authentication.
 
 This configuration uses **RBAC for Applications** (Role-Based Access Control for Applications) in Exchange Online, which allows the application to send emails from a specific shared mailbox without requiring a user account with mailbox access permissions.
 
@@ -84,7 +84,7 @@ Before starting this configuration, ensure you have:
 - **Microsoft Graph PowerShell** module installed (optional, for PowerShell automation)
 
 :::note
-"PingCastle-Email" is used throughout this configuration as an example name. This can be substituted with any name that fits your organization's naming conventions.
+This configuration uses "PingCastle-Email" throughout as an example name. You can substitute any name that fits your organization's naming conventions.
 :::
 
 <details>
@@ -156,7 +156,7 @@ For production environments, use certificates issued by your organization's Cert
 3. Add a description: `PingCastle-Email Secret`
 4. Set expiration to **12 months** (or as per your policy)
 5. Click **Add**
-6. **Important**: Copy the secret **Value** immediately - it won't be shown again
+6. **Important**: Copy the secret **Value** immediately - you won't see it again
 7. Paste it in Notepad or a password manager for later use
 
 :::warning
@@ -683,7 +683,7 @@ The function performs the following steps automatically:
 13. Displays a summary with all configuration details
 
 :::tip
-Save the output, especially the Client Secret if using secret-based authentication. The secret can't be retrieved again after the function completes.
+Save the output, especially the Client Secret if using secret-based authentication. You can't retrieve the secret again after the function completes.
 :::
 
 </TabItem>

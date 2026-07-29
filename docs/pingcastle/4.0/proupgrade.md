@@ -18,13 +18,13 @@ each page.
 
 Netwrix highly recommends backing up the data before proceeding with an upgrade.
 
-The data is stored in the database. No data is stored outside of the DB.
+PingCastle Pro stores the data in the database. No data exists outside the database.
 
 # Software requirements
 
-Before performing the upgrade, the software requirements for the new
-version need to be met. The following table lays out the different
-requirements for versions.
+Before performing the upgrade, you must meet the software requirements
+for the new version. The following table lists the requirements for each
+version.
 
 2.x All versions have same requirements
 

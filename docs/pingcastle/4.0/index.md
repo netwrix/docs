@@ -24,21 +24,20 @@ The binary code may not be included as part of a commercial package unless a lic
 
 PingCastle only runs until the built-in license expiration date. After this date, the program stops functioning.
 
-This date is surfaced as the End of Support date in the tool.
+The tool surfaces this date as the End of Support date.
 
 **Licensing Options**
 
 To continue using PingCastle after the built-in license expires, you must purchase one of the following:
 
 - **PingCastle Standard**: Traditional licensing model for ongoing use
-- **PingCastle For Service Providers**: Per-assessment licensing where each license is valid for 2 weeks for specific Active Directory domains and forests. Forest-level assessments can be performed using wildcard notation (e.g., `*.domain.local` to scan all subdomains within a forest)
+- **PingCastle For Service Providers**: Per-assessment licensing where each license is valid for 2 weeks for specific Active Directory domains and forests. You can perform forest-level assessments using wildcard notation (e.g., `*.domain.local` to scan all subdomains within a forest)
 
 ## Methodology
 
 The PingCastle tool is one part of a global methodology for securing Active Directories.
 
-You can get more information about this methodology by visiting the
-website https://www.pingcastle.com/methodology/
+For more information about this methodology, visit https://www.pingcastle.com/methodology/
 
 ## Requirements
 
@@ -155,7 +154,7 @@ When a healthcheck scan completes, PingCastle generates two files:
 
 ### Risk Scoring
 
-PingCastle calculates an overall security score based on four categories. The overall score is determined by the **maximum** score across these categories (maximum 100 points per category):
+PingCastle calculates an overall security score based on four categories. The **maximum** score across these categories determines the overall score (maximum 100 points per category):
 
 | Category | Description |
 |----------|-------------|
@@ -168,7 +167,7 @@ Each triggered rule displays its severity level and point value. Clicking on a r
 
 ### Report Structure
 
-The healthcheck report is organized into the following sections:
+PingCastle organizes the healthcheck report into the following sections:
 
 **1. Overview**
 - Overall security score
@@ -215,7 +214,7 @@ This scans all reachable domains, enables reachable mode, and automatically crea
 
 If you already have multiple XML healthcheck reports, you can consolidate them to generate overview reports and trust maps.
 
-**Prerequisites**: All XML report files must be in the current directory (or subdirectories). If duplicate reports exist, only the most recent is used.
+**Prerequisites**: All XML report files must be in the current directory (or subdirectories). If duplicate reports exist, PingCastle uses only the most recent.
 
 **Interactive Mode**: Select "conso" from the menu.
 
@@ -224,13 +223,13 @@ If you already have multiple XML healthcheck reports, you can consolidate them t
 PingCastle.exe --hc-conso
 ```
 
-This consolidates all available XML reports and generates summary reports with trust relationship maps. XML reports generated from multiple locations can be combined to create a comprehensive view of your infrastructure.
+This consolidates all available XML reports and generates summary reports with trust relationship maps. You can combine XML reports generated from multiple locations to create a comprehensive view of your infrastructure.
 
 **Note**: PingCastle performs consolidation automatically when using `--server *` for automatic domain discovery.
 
 **Output Files**
 
-Three HTML files are generated during consolidation:
+Consolidation generates three HTML files:
 
 - **ad_hc_summary.html** - Summary of all reports with the same structure as detailed reports but at a higher level. [Example](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary.html)
 - **ad_hc_summary_full_node_map.html** - Complete trust relationship map showing all discovered domains and trusts.
@@ -249,7 +248,7 @@ PingCastle.exe --carto
 
 This option discovers all reachable domains, performs a lightweight scan, and generates trust relationship maps. The SID Filtering status is accurate, but individual domain scores aren't available. Scans run in parallel for speed.
 
-**Note**: Cartography reports can't be combined when run from multiple locations. For comprehensive multi-location data, use Option 1 or Option 2 instead.
+**Note**: You can't combine cartography reports run from multiple locations. For comprehensive multi-location data, use Option 1 or Option 2 instead.
 
 ## Trust Relationship Maps
 
@@ -269,7 +268,7 @@ The full domain map displays all trust relationships between discovered domains.
 
 **File**: `xxx_simple_node_map.html`
 
-The simplified map presents a cleaner, hierarchical view where each domain appears only once and is connected by a single trust relationship. The domain with the most trusts is automatically placed at the center, though this can be manually specified if needed.
+The simplified map presents a cleaner, hierarchical view where each domain appears only once and is connected by a single trust relationship. PingCastle automatically places the domain with the most trusts at the center, though you can specify this manually if needed.
 
 ### Hilbert Map
 
@@ -407,7 +406,7 @@ PingCastle.exe --reload-report encrypted-report.xml
 
 ### Email Delivery
 
-PingCastle can automatically send reports via SMTP. If encryption is enabled, PingCastle encrypts reports before sending.
+PingCastle can automatically send reports via SMTP. If you enable encryption, PingCastle encrypts reports before sending.
 
 **SMTP Configuration**:
 
@@ -446,7 +445,7 @@ For authenticated SMTP, provide values for `UserName` and `Password`. For TLS/SS
 
 ### API
 
-PingCastle can send reports in XML format (encrypted or not) to an API endpoint using the `--api-endpoint` and `--api-key` command line options. This is primarily used with PingCastle Enterprise, where PingCastle.exe runs in "agent" mode to automatically perform scans and send reports to the Enterprise web UI. Scans are typically scheduled using Windows Task Scheduler.
+PingCastle can send reports in XML format (encrypted or not) to an API endpoint using the `--api-endpoint` and `--api-key` command line options. This is primarily used with PingCastle Enterprise, where PingCastle.exe runs in "agent" mode to automatically perform scans and send reports to the Enterprise web UI. You typically schedule scans using Windows Task Scheduler.
 
 ![https://www.pingcastle.com/wp/wp-content/uploads/2018/09/pingcastle-swagger.webp](/images/pingcastle/basicuser/image26.webp)
 
@@ -619,7 +618,7 @@ The version 3.5 size increase is due to the migration from .NET Framework 4.7.2 
 
 ### pingcastle.exe.config File Location
 
-The configuration file format changed in version 3.5 due to the ASP.NET 8 upgrade. The legacy `PingCastle.exe.config` XML file has been replaced with `appsettings.console.json` using JSON format.
+The configuration file format changed in version 3.5 due to the ASP.NET 8 upgrade. The `appsettings.console.json` file, which uses JSON format, replaces the legacy `PingCastle.exe.config` XML file.
 
 ### Settings Migration from pingcastle.exe.config
 
@@ -709,7 +708,7 @@ The list of components used by PingCastle, but not limited to, is:
 
 ## Scheduling PingCastle Scans
 
-PingCastle can be automated using Windows Task Scheduler to run regular security assessments. The tool supports Managed Service Accounts (available since Windows Server 2008 R2).
+You can automate PingCastle using Windows Task Scheduler to run regular security assessments. The tool supports Managed Service Accounts (available since Windows Server 2008 R2).
 
 ### Quick Setup
 
@@ -739,7 +738,7 @@ If the scheduled task fails to run, verify the service account has the "Log on a
 2. Navigate to: **Local Policies → User Rights Assignment**
 3. Open **"Log on as batch job"** and add the service account
 
-**Note**: If "Add User or Group" is grayed out, the setting is controlled by a Group Policy Object (typically the Default Domain Controllers Policy). Use `rsop.msc` to identify the controlling GPO and modify it accordingly.
+**Note**: If "Add User or Group" is grayed out, a Group Policy Object (typically the Default Domain Controllers Policy) controls the setting. Use `rsop.msc` to identify the controlling GPO and modify it accordingly.
 
 ### Example Command for Scheduled Scans
 
