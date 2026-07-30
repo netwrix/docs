@@ -380,7 +380,7 @@ on Windows.
 
 WSL2 lets you start a lightweight virtual machine with a specific Linux distribution, and offers two options for controlling it:
 
-- Configure an Application Denylist, as with [WSL 1](#wsl-1), to block WSL2 usage entirely.
+- Configure an Application Denylist, as with [WSL1](#wsl1), to block WSL2 usage entirely.
 - Deploy a dedicated Linux EPP Client inside the WSL2 Linux machine to gain EPP visibility into it.
   The installed instance is treated as a separate machine in the EPP Server, which lets you apply
   more granular policies.
