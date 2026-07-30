@@ -38,7 +38,7 @@ The PingCastle tool is one part of a global methodology for securing Active Dire
 
 ![](/images/pingcastle/basicuser/image1.webp)
 
-For more information about this methodology, visit https://www.pingcastle.com/methodology/
+The PingCastle methodology page explains how the tool fits into the broader process of securing Active Directory: https://www.pingcastle.com/methodology/
 
 ## Requirements
 

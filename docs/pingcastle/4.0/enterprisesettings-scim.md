@@ -7,7 +7,7 @@ Most settings on this page take effect within about 30 seconds, without a restar
 
 ## SCIM provisioning overview
 
-PingCastle Enterprise exposes a System for Cross-domain Identity Management (SCIM) 2.0 endpoint at `/api/SCIM` that external identity providers can use to provision and deprovision user accounts automatically. Instead of creating and removing PingCastle Enterprise accounts by hand, you connect your identity provider to this endpoint so it keeps user accounts in sync.
+PingCastle Enterprise exposes a System for Cross-domain Identity Management (SCIM) 2.0 endpoint at `/api/SCIM` that external identity providers can use to provision and deprovision user accounts automatically. Instead of creating and removing PingCastle Enterprise accounts manually, you connect your identity provider to this endpoint so it keeps user accounts in sync.
 
 For example, when you assign a user to the group your identity provider uses for PingCastle Enterprise access, the identity provider creates a matching account through the SCIM endpoint. When you remove that user from the group, the identity provider deactivates or deletes the account, depending on how you configure the deprovisioning behavior in the identity provider.
 

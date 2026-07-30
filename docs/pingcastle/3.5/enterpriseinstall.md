@@ -602,7 +602,7 @@ The Task Scheduler folder in which to create the task.
 Defaults to:
 \PingCastle
 
-The folder is created automatically if it does not exist.
+The folder is created automatically if it doesn't exist.
 
 .PARAMETER ProgramPath
 Full path to PingCastle.exe.
@@ -2939,7 +2939,7 @@ After completing either the manual or PowerShell configuration, update your Ping
 
 ## Initial startup
 
-At the first run of the application, the application creates the database. If there
+On the first run, the application creates the database. If there
 is an error with the database (missing right, invalid connection string)
 or hosting, the application won't display the next screen.
 

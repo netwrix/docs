@@ -237,8 +237,7 @@ To change the group, select the browse button. A new dialog appears.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image23.webp)
 
-For Azure, the tenantID and the client ID collected before has to be
-entered here.
+For Azure, enter the tenant ID and client ID you collected earlier here.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image24.webp)
 
@@ -626,7 +625,7 @@ By default, PingCastle is running as a limited user. It can't access
 the network nor modify system settings. To use the scheduler, you
 must change permissions.
 
-The easiest way is to change the user from Application to LocalSystem.
+One approach is to change the user from Application to LocalSystem.
 
 Open the IIS console and go to the application pools settings. Go to
 advanced settings.

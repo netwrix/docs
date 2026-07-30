@@ -21,21 +21,19 @@ and improvement.
 First, the application uses a framework that prohibits most common
 attacks such as XSS or SQL Injection by design.
 
-Because such protections can be sometimes avoided, the application has
+Because attackers can sometimes bypass such protections, the application has
 an additional layer of protection with all known HTTP security headers
 and including the header \"Content Security Policy\" in strict mode.
 That means the application stores all its JavaScript code in separate
 files, and injected JavaScript will not run in the browser. You can
 check this protection via a third-party service such as \"security
-headers\". It means that
-\"unsafe-inline\" and \"unsafe-eval\" aren't accepted.
+headers\". The application doesn't accept \"unsafe-inline\" and \"unsafe-eval\".
 
 ![](/images/pingcastle/prouser/image3.webp)
 
 The application uses enforced controls that check parameters twice
 against a model (in the browser then in the server
-application) and all queries to the database are parameterized. There is
-no SQL string built by the application.
+application) and all queries to the database are parameterized. The application never builds SQL strings.
 
 Then a filter verifies each access to the database and controls the data
 to be queried before sending a database query. Unit tests cover this
@@ -208,8 +206,8 @@ to reach the creation page.
 To map the agent to a responsible, complete the Owner field. It
 can be an entity or a domain, such as the \"default\" entity.
 
-The API key is generated automatically, but you can change it if the
-complexity requirements are met
+PingCastle Pro generates the API key automatically, but you can change it if it meets the
+complexity requirements
 
 After you set this up correctly, you can upload reports
 automatically using the command:

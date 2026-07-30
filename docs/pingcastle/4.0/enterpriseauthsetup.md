@@ -17,7 +17,7 @@ Most changes on these screens take effect within about 30 seconds, without a res
 :::
 
 :::note
-Entra ID Authentication is a login method, configured through OpenID Connect. It's distinct from Entra scanning, which is a data source that assesses your Entra tenant for security risks. See [Entra scanning](enterpriseentrascan.md) for the scanning feature. Users signing in through OpenID Connect or SAML2 for the first time can be provisioned automatically through just-in-time (JIT) provisioning; see [Provisioning settings](enterprisesettings-scim.md) for the JIT provisioning toggle.
+Entra ID Authentication is a login method, configured through OpenID Connect. It's distinct from Entra scanning, which is a data source that assesses your Entra tenant for security risks. See [Entra scanning](enterpriseentrascan.md) for the scanning feature. PingCastle Enterprise can automatically provision users the first time they sign in through OpenID Connect or SAML2, using just-in-time (JIT) provisioning; see [Provisioning settings](enterprisesettings-scim.md) for the JIT provisioning toggle.
 :::
 
 <Tabs>

@@ -143,7 +143,7 @@ Entra scans follow a different process for tenant setup:
 
 ## Initial startup
 
-At the first run of the application, the application creates the database. If there
+When the application first runs, it creates the database. If there
 is an error with the database (missing right, invalid connection string)
 or hosting, the application won't display the next screen.
 
