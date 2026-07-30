@@ -13,8 +13,6 @@ import { fileURLToPath } from 'url';
 const repoRoot = resolve(fileURLToPath(import.meta.url), '../../');
 
 const staleDirs = [
-  // Moved to docs/changetracker/8.1/api/reference/ in PR #901
-  'docs/changetracker/8.1/integration/api/reference',
   // Change Tracker de-versioned to docs/changetracker/ (single "current" version)
   'docs/changetracker/8.0',
   'docs/changetracker/8.1',
