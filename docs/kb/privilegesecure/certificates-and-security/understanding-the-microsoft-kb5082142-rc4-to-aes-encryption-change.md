@@ -1,0 +1,50 @@
+---
+description: >-
+  Explains what Microsoft KB5082142 changes in Kerberos encryption defaults,
+  why most environments are unaffected, and where accounts can still be
+  relying on RC4.
+keywords:
+  - KB5082142
+  - RC4
+  - AES
+  - Kerberos
+  - Authentication
+products:
+  - privilege-secure-access-management
+sidebar_label: Understanding the Microsoft KB5082142 RC4-to-AES Encryption Change
+tags: []
+title: "Understanding the Microsoft KB5082142 RC4-to-AES Encryption Change"
+knowledge_article_id:
+---
+
+# Understanding the Microsoft KB5082142 RC4-to-AES Encryption Change
+
+## Question
+
+What does Microsoft KB5082142 change, and should I be concerned about it in my environment?
+
+## Answer
+
+### What KB5082142 Does, and Why
+
+KB5082142, released by Microsoft on April 14, 2026, changes a core default in how Active Directory's Kerberos Key Distribution Center (KDC) issues authentication tickets. Specifically, it changes the default value of DefaultDomainSupportedEncTypes so that any account without an explicit encryption-type configuration is now assumed to support AES-SHA1 encryption only, rather than falling back to the legacy RC4-HMAC cipher.
+
+This change is part of Microsoft's phased response to CVE-2026-20833, a Kerberos information disclosure vulnerability. The underlying risk is that RC4-encrypted service tickets can be captured by an authenticated attacker and cracked offline—a technique known as Kerberoasting—to recover the plaintext password of the account the ticket was issued for. Because service accounts are frequently privileged and rarely rotated, they have historically been an attractive target for this style of attack. Removing RC4 as an implicit fallback closes that avenue for any account that hasn't been explicitly configured to require it.
+
+The rollout has been staged deliberately: an audit-only phase beginning in January 2026 to surface RC4 dependencies without breaking anything, followed by the April 2026 default change addressed in KB5082142, with full enforcement arriving in July 2026.
+
+### Why Microsoft Expects Minimal Impact
+
+Microsoft's stated rationale for expecting this change to affect a small minority of accounts is straightforward: Windows has generated and stored an AES key alongside the RC4 key for any account automatically since Windows Server 2008, whenever that account's password is set or changed. In other words, the AES key material has quietly existed in Active Directory for the large majority of accounts in any reasonably current environment—this update simply changes which key the KDC prefers by default, rather than requiring new key generation for most accounts.
+
+For any account whose password has been set or reset at any point since AES support was introduced, this change should be invisible. The login or service authentication continues to work exactly as before, just using AES instead of RC4 under the hood.
+
+### Where Accounts Can Still Be Stuck on RC4
+
+Despite the above, a subset of accounts and devices can still end up without a usable AES key, or without AES support at all. The most common causes we see are:
+
+-   **Accounts predating Windows Server 2008 that have never had a password reset.** If an account was created prior to AES support being introduced and its password has genuinely never been changed since, no AES key was ever generated for it. This is rare for interactive user accounts (which typically rotate on a policy), but common for service accounts configured with "password never expires," and for old administrative or break-glass accounts that were created once and left untouched.
+
+-   **Legacy or third-party devices that only support RC4.** Some non-Windows Kerberos clients—older network appliances, embedded devices, older Unix/Linux Kerberos implementations, and similar hardware—were never built with AES-SHA1 support in the first place. These devices aren't a matter of an unrotated password; they structurally cannot generate or use an AES key, and will need an explicit exception or a hardware/software upgrade path.
+
+If you use Netwrix Privilege Secure for Access Management (NPS-AM) and are troubleshooting an authentication issue after installing this update, see [Netwrix Privilege Secure Authentication Failures After Microsoft KB5082142](/docs/kb/privilegesecure/troubleshooting-and-errors/netwrix-privilege-secure-authentication-failures-after-microsoft-kb5082142.md).
