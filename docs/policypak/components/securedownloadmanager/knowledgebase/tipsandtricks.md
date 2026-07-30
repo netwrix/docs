@@ -41,20 +41,6 @@ Use wildcards to accommodate these patterns without over-broad exclusions:
 This matches any file served from the Netwrix Azure DevOps organization, regardless of the
 project or path, without opening up the entire `dev.azure.com` domain.
 
-## Choose Process Mode Based on the Download's Lifecycle
-
-The **Process Mode** setting controls how many times an exclusion is applied for a matched file.
-Choose the mode that fits how the file is used:
-
-| Scenario | Recommended mode |
-|---|---|
-| Auto-updater or installer that re-downloads on every run | `always` |
-| One-time setup executable (run once, then discard) | `once` |
-| Managed deployments where IT may need to re-run on demand | `onceOrForced` |
-
-Using `once` for one-time executables adds a second layer of protection: even if a user keeps
-the file in their Downloads folder, they can't re-run it after the initial execution.
-
 ## Use Item Level Targeting to Scope Exclusions by Role
 
 Each Exclusions Policy supports Item Level Targeting. Use it to restrict an exclusion to
@@ -108,7 +94,6 @@ deployment, generate an ADM report and filter for Secure Download Manager to aud
 
 - Which machines have the component enabled.
 - Which Exclusions Policies are active and what URL patterns and file extensions they allow.
-- Which Process Mode is configured for each exclusion.
 
 This is especially useful in environments where multiple admins manage GPOs, as the report
 gives a consolidated view of the effective configuration across all collections.

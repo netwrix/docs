@@ -38,7 +38,7 @@ If `gpresult` shows the GPO under **Denied GPOs**, review the GPO's **Security F
 
 1. Open **Specify Global Settings P...** and confirm **Show Management Notifications** is set
    to **YES** on the **General** tab.
-2. If **Notification message should close in** is set to a very short value, for example
+2. If **Block notification should close in seconds** is set to a very short value, for example
    1–2 seconds, the notification may be dismissed before the user notices it. Increase the
    timeout or uncheck the option to require manual dismissal.
 3. Confirm the PolicyPak notification service is running. On the endpoint, open **Services**
@@ -56,10 +56,8 @@ If `gpresult` shows the GPO under **Denied GPOs**, review the GPO's **Security F
    browser's download history for the exact file URL and use that in **URL Pattern**.
    Wildcards (`*`) can help, for example `*cdn.vendor.com/*`.
 3. Confirm the Exclusions Policy **State** is set to **Enabled**.
-4. Check the **Process Mode** setting. If set to `once`, the exclusion applies only on the
-   first execution attempt. Subsequent attempts for the same file are blocked.
-5. Run `gpupdate /force` on the endpoint and test again.
-6. Enable **Enable logging for this policy** in the Exclusions Policy Editor, reproduce the
+4. Run `gpupdate /force` on the endpoint and test again.
+5. Enable **Enable logging for this policy** in the Exclusions Policy Editor, reproduce the
    issue, and review the PolicyPak event log to confirm whether the exclusion is being matched.
 
 ## Item Level Targeting Is Not Filtering as Expected
@@ -83,11 +81,13 @@ shouldn't, or doesn't apply where expected.
 
 **Steps to resolve:**
 
-1. Check **Open the message in Notepad instead** temporarily and test a block event. If a
+1. Confirm **Enable Secure Download Manager** is set to **YES** on the **General** tab. Email
+   settings are only evaluated when the component itself is enabled.
+2. Check **Open the message in Notepad instead** temporarily and test a block event. If a
    Notepad file opens with alert content, the issue is with email delivery, not with PolicyPak.
-2. Confirm **Use of email** isn't set to **Not Configured**.
-3. Confirm **Send To** contains valid addresses separated by semicolons (`;`).
-4. Confirm outbound SMTP traffic from the endpoint isn't blocked by a firewall rule.
+3. Confirm **Use of email** isn't set to **Not Configured**.
+4. Confirm **Send To** contains valid addresses separated by semicolons (`;`).
+5. Confirm outbound SMTP traffic from the endpoint isn't blocked by a firewall rule.
 
 ## ADM Report Does Not Show Secure Download Manager Settings
 
@@ -110,4 +110,4 @@ When contacting Netwrix Support, include the following:
 - Output of `gpresult /h report.html` from the affected endpoint
 - PolicyPak event log: open **Event Viewer | Applications and Services Logs | PolicyPak**
   and export the log
-- A description of the file type, source URL, and Process Mode setting involved in the issue
+- A description of the file type and source URL involved in the issue

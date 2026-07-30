@@ -149,5 +149,7 @@ topics via our How-To videos:
   [PolicyPak Network Security Manager - Applications and Ports](/docs/policypak/components/networksecuritymanager/videos/gettingstarted/applicationsports.md)
 - Deeper Dive into Customizations & Notifications:
   [PolicyPak Network Security Manager - Global settings](/docs/policypak/components/networksecuritymanager/videos/gettingstarted/globalsettings.md)
+- Controlling RSoP scope evaluation order:
+  [Configure RSoP Scope Priority Order](/docs/policypak/components/networksecuritymanager/manual/rsopscopepriorityorder.md)
 
 

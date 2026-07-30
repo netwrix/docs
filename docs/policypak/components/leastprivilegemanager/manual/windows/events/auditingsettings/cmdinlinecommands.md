@@ -54,25 +54,26 @@ blocked by SecureRun™.
 
 ### Trigger Conditions
 
-Event 6211 is written when **all three** of the following conditions are met simultaneously:
+Event 6211 requires both of the following to be true:
 
 1. **Audit Command Prompt inline commands** is set to **Enabled** in the Global Settings Policy.
 2. **SecureRun™** is **Disabled** or **Not Configured**.
-3. The ADMX policy **"Use legacy (less secure) Endpoint Privilege Manager SecureRun™ Command
-   Prompt Inline Commands Processing Method"** is **Disabled** or **Not Configured**.
 
-Additionally, the event is generated when a command prompt inline command runs and any of
-the following parent process conditions is true:
+Beyond that, whether the event fires depends on the ADMX policy **"Use legacy (less secure)
+Endpoint Privilege Manager SecureRun™ Command Prompt Inline Commands Processing Method"**:
 
-- **Apply if parent process is elevated** is configured for the policy, but the parent process
-  isn't elevated.
-- **Apply if parent process is signed** is configured for the policy, but the parent process
-  isn't signed.
-- **Apply if parent process is trusted** is configured for the policy, but the parent process
-  isn't trusted.
+- **Disabled or Not Configured (default):** Event 6211 is written every time a command prompt
+  inline command runs. Parent process conditions (elevated, signed, trusted) aren't evaluated
+  in this mode.
+- **Enabled:** Event 6211 is written only when a command prompt inline command runs and a
+  parent process condition configured for the policy isn't met, for example:
 
-In each case, the condition expected by the policy isn't met, indicating that the inline command
-would be blocked when SecureRun™ enforcement is active.
+  - **Apply if parent process is elevated** is configured, but the parent process isn't elevated.
+  - **Apply if parent process is signed** is configured, but the parent process isn't signed.
+  - **Apply if parent process is trusted** is configured, but the parent process isn't trusted.
+
+  In each case, the condition expected by the policy isn't met, indicating that the inline
+  command would be blocked when SecureRun™ enforcement is active.
 
 ### Event Message Format
 
@@ -107,10 +108,12 @@ parent process conditions (elevated, signed, trusted) that weren't satisfied.
 ## Limitation: Legacy SecureRun™ Processing Method
 
 :::note
-**Audit Command Prompt inline commands** doesn't perform auditing if the ADMX policy
-**"Use legacy (less secure) Endpoint Privilege Manager SecureRun™ Command Prompt Inline Commands
-Processing Method"** is set to **Enabled**. Ensure this ADMX policy isn't enabled on machines
-where you intend to use this audit setting.
+When the ADMX policy **"Use legacy (less secure) Endpoint Privilege Manager SecureRun™ Command
+Prompt Inline Commands Processing Method"** is set to **Enabled**, **Audit Command Prompt inline
+commands** only writes Event 6211 for commands that fail a configured parent process condition
+(elevated, signed, or trusted) — it doesn't audit every inline command the way it does when
+legacy mode is disabled. If you want the broadest discovery coverage, disable this ADMX policy
+on machines where you use the audit setting.
 :::
 
 ## Next Steps

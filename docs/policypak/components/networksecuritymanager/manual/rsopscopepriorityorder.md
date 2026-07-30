@@ -1,21 +1,21 @@
 ---
 title: "Configure RSoP Scope Priority Order"
-description: "Use the Configure RSoP Scope Priority Order ADMX setting to control the evaluation order of Machine, Switched, and User policy scopes in PolicyPak."
-sidebar_position: 30
+description: "Use the Configure RSoP Scope Priority Order ADMX setting to control the evaluation order of Machine, Switched, and User policy scopes for Network Security Manager."
+sidebar_position: 40
 ---
 
 # Configure RSoP Scope Priority Order
 
 ## Overview
 
-PolicyPak evaluates policies across three scopes when calculating the Resultant Set of Policy
-(RSoP) for an endpoint:
+Network Security Manager evaluates policies across three scopes when calculating the Resultant
+Set of Policy (RSoP) for an endpoint:
 
 - **Machine** — policies applied at the computer level
 - **Switched** — policies applied through loopback processing (switched scope)
 - **User** — policies applied at the user level
 
-By default, PolicyPak evaluates these scopes in the following order:
+By default, Network Security Manager evaluates these scopes in the following order:
 
 **Machine → Switched → User**
 
@@ -40,7 +40,7 @@ The setting is located in the PolicyPak ADMX at the following path:
 
 ```
 Computer Configuration | Policies | Administrative Templates |
-PolicyPak ADMX Settings | Client-side Extensions |
+PolicyPak ADMX Settings | Network Security Manager |
 Configure RSoP Scope Priority Order
 ```
 
@@ -57,8 +57,8 @@ The setting supports three states:
 
 | State | Behavior |
 |---|---|
-| **Not Configured** | PolicyPak uses the default evaluation order: Machine → Switched → User. |
-| **Disabled** | PolicyPak uses the default evaluation order: Machine → Switched → User. |
+| **Not Configured** | Network Security Manager uses the default evaluation order: Machine → Switched → User. |
+| **Disabled** | Network Security Manager uses the default evaluation order: Machine → Switched → User. |
 | **Enabled** | The evaluation order dropdown becomes active. Select one of the six available permutations. |
 
 When set to **Enabled**, select the desired evaluation order from the dropdown:
@@ -76,9 +76,10 @@ When set to **Enabled**, select the desired evaluation order from the dropdown:
 
 ## How Scope Precedence Works
 
-PolicyPak merges all active policy scopes and evaluates them in the configured order. When the
-same setting is defined in more than one scope, the value from the scope evaluated **last**
-takes effect on the endpoint. Scopes evaluated earlier are overwritten by scopes evaluated later.
+Network Security Manager merges its active policy scopes and evaluates them in the configured
+order. When the same setting is defined in more than one scope, the value from the scope
+evaluated **last** takes effect on the endpoint. Scopes evaluated earlier are overwritten by
+scopes evaluated later.
 
 For example, with the order **Switched, User, Machine**:
 
@@ -108,5 +109,5 @@ precedence over each other.
 
 :::note
 This is a **Computer Configuration** setting. It applies to the machine regardless of which
-user is logged on, and affects how PolicyPak resolves all component policies on that machine.
+user is logged on, and affects only Network Security Manager's RSoP evaluation on that machine.
 :::

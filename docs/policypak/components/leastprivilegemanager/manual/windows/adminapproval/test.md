@@ -78,23 +78,23 @@ The **Action** dropdown contains two options:
 
 | Option | Behavior |
 |---|---|
-| **Run as current User** | The application launches in the user's current security context without elevation. This is the **default** selection. |
+| **Allow** | The application launches without elevation, using its normal, unelevated security context. |
 | **Run as Administrator** | The application launches elevated, regardless of whether a Least Privilege Manager elevation rule is in place. |
 
-### Default Behavior and Reset
+### Default Behavior
 
-- **Run as current User** is selected by default each time the Admin Approval Tool opens.
-- The **Action** value resets to **Run as current User** automatically each time the request code
-  field changes, that is, each time the administrator pastes or types a new request code from a
-  user. This prevents accidentally applying a previously selected **Run as Administrator** action
-  to a different user's request.
+The Action value isn't fixed to a single default. When you enter a valid request code, the
+Admin Approval Tool inspects the underlying task and pre-selects **Run as Administrator** if the
+task requires elevation or has enforced elevation, otherwise it pre-selects **Allow**. Review the
+pre-selected value before assigning the Response Code, and change it if you want a different
+outcome than what the tool suggests.
 
 ### Compatibility
 
-The **Action** dropdown is fully forward and backward compatible with the PolicyPak CSE.
-Administrators can safely use an updated Admin Approval Tool against endpoints running older CSE
-versions without breaking the approval workflow. Older CSE versions process the response code as
-a standard approval, equivalent to **Run as current User**, and produce no errors.
+The **Action** dropdown is designed to be forward and backward compatible with the PolicyPak
+CSE, so administrators can use an updated Admin Approval Tool against endpoints running older
+CSE versions without breaking the approval workflow. Older CSE versions process the response
+code as a standard approval, equivalent to **Allow**.
 
 
 After filling in these options, assign a value to the **Response Code** and the application will

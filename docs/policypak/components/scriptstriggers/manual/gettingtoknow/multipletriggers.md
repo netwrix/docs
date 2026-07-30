@@ -25,6 +25,13 @@ the top:
 
 **Multiply** is the default and recommended mode for new policies.
 
+:::note
+If a script is already running for a policy when another one of its triggers fires, PolicyPak
+suppresses the duplicate execution rather than queuing or retrying it — this applies per policy,
+not per trigger, so a second trigger firing while any trigger's script for that policy is still
+running is skipped.
+:::
+
 ## Available Trigger Types
 
 Click **New Item** to add a trigger. The following trigger types are available:
@@ -42,6 +49,17 @@ Click **New Item** to add a trigger. The following trigger types are available:
 | **VPN disconnect** | A VPN connection is terminated |
 | **Schedule** | A configured schedule fires |
 | **Event log** | A specified Windows Event Log event occurs |
+
+:::note
+You can add **Logoff**, **Session locked**, **Session unlocked**, and **Shutdown** only once
+each per policy, even in **Multiply** mode. Trigger types not in this list can be added more
+than once, for example to configure multiple Process start triggers for different processes.
+:::
+
+:::note
+Software Package Manager doesn't support the **Shutdown** trigger. The wizard for Software
+Package Manager policies doesn't offer it as an option.
+:::
 
 ## Configuring the Schedule Trigger
 
@@ -87,6 +105,11 @@ script waits for the next scheduled occurrence.
 Enable **Run as soon as possible after a scheduled start is missed** for any maintenance or
 compliance script where it's important that the script runs at least once per cycle, even if
 the machine was offline at the scheduled time.
+:::
+
+:::note
+**Run as soon as possible after a scheduled start is missed** applies to Scripts & Triggers
+Manager policies only. Software Package Manager Schedule triggers don't offer this option.
 :::
 
 ## Adding Multiple Triggers
