@@ -274,6 +274,10 @@ Permission to be automatically assigned to an access certification item correspo
 
 Permission to be manually assigned to an access certification item corresponding to an access right owned by an object of type entityType_identifier.
 
+- /Custom/AccessCertification/DelegationAssigned/`{entityType_identifier}`
+
+Permission to be selected as a delegated reviewer for an access certification item corresponding to an access right owned by an object of type entityType_identifier.
+
 - /Custom/ManageAccounts/`{entityType_identifier}`
 
 Permission to display the Manage Accounts menu for resources corresponding to an access right owned by an object of type entityType_identifier.

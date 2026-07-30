@@ -322,6 +322,23 @@ Returns all the connection tables according to the provided query.
 
 ### /api/Connectors/Connector
 
+#### Post
+##### Summary:
+
+Creates a connector.
+
+##### Parameters:
+
+| Name | Description | Required | Type | Reference |
+| --- | --- | --- | --- | --- |
+| api-version | The requested API version | True |  |  |
+
+##### Responses:
+
+| Code | Description | Reference |
+| --- | --- | --- |
+| 200 | The result of the connector creation. | ConnectorCreatedResult |
+
 #### Get
 ##### Summary:
 
@@ -347,48 +364,7 @@ Returns all the connectors according to the provided query.
 | --- | --- | --- |
 | 200 | The connector list. | List of Connector |
 
-#### Post
-##### Summary:
-
-Creates a connector.
-
-##### Parameters:
-
-| Name | Description | Required | Type | Reference |
-| --- | --- | --- | --- | --- |
-| api-version | The requested API version | True |  |  |
-
-##### Responses:
-
-| Code | Description | Reference |
-| --- | --- | --- |
-| 200 | The result of the connector creation. | ConnectorCreatedResult |
-
 ### /api/Connectors/Connector/\{id\}
-
-#### Get
-##### Summary:
-
-Returns a connector corresponding to the provided identifier and its information according to the provided query.
-
-##### Parameters:
-
-| Name | Description | Required | Type | Reference |
-| --- | --- | --- | --- | --- |
-| id | Identifier of the connector. | True |  |  |
-| squery | Query compliant to the API query grammar. | False |  |  |
-| Path | Represents the permission path. | False |  |  |
-| QueryRootEntityType | Defines the query root entity type. | False |  |  |
-| QueryBinding | Defines the query binding. | False |  |  |
-| ApplyPostCondition | If true, use PostCondition access control rules. | False |  |  |
-| AllowedAllJoinQuery |  | False |  |  |
-| api-version | The requested API version | True |  |  |
-
-##### Responses:
-
-| Code | Description | Reference |
-| --- | --- | --- |
-| 200 | The connector. | Connector |
 
 #### Put
 ##### Summary:
@@ -426,6 +402,30 @@ Deletes a connector.
 | Code | Description | Reference |
 | --- | --- | --- |
 | 200 | The result of the connector delete. | ConnectorDeletedResult |
+
+#### Get
+##### Summary:
+
+Returns a connector corresponding to the provided identifier and its information according to the provided query.
+
+##### Parameters:
+
+| Name | Description | Required | Type | Reference |
+| --- | --- | --- | --- | --- |
+| id | Identifier of the connector. | True |  |  |
+| squery | Query compliant to the API query grammar. | False |  |  |
+| Path | Represents the permission path. | False |  |  |
+| QueryRootEntityType | Defines the query root entity type. | False |  |  |
+| QueryBinding | Defines the query binding. | False |  |  |
+| ApplyPostCondition | If true, use PostCondition access control rules. | False |  |  |
+| AllowedAllJoinQuery |  | False |  |  |
+| api-version | The requested API version | True |  |  |
+
+##### Responses:
+
+| Code | Description | Reference |
+| --- | --- | --- |
+| 200 | The connector. | Connector |
 
 ### /api/Connectors/Connector/ResourceTypes/\{id\}
 
@@ -577,6 +577,25 @@ Returns all the password reset settings according to the provided query.
 | --- | --- | --- |
 | 200 | The password reset setting list. | List of PasswordResetSetting |
 
+### /api/Connectors/Provisioning/ProvisioningResults
+
+#### Put
+##### Summary:
+
+Update the status of the provisioned resources.
+
+##### Parameters:
+
+| Name | Description | Required | Type | Reference |
+| --- | --- | --- | --- | --- |
+| api-version | The requested API version | True |  |  |
+
+##### Responses:
+
+| Code | Description | Reference |
+| --- | --- | --- |
+| 200 | OK | ProvisioningResultsReceivedResult |
+
 ### /api/Connectors/Provisioning/ProvisioningData/\{id\}
 
 #### Get
@@ -596,25 +615,6 @@ Get provisioning orders from server for a connector.
 | Code | Description | Reference |
 | --- | --- | --- |
 | 200 | OK |  |
-
-### /api/Connectors/Provisioning/ProvisioningResults
-
-#### Put
-##### Summary:
-
-Update the status of the provisioned resources.
-
-##### Parameters:
-
-| Name | Description | Required | Type | Reference |
-| --- | --- | --- | --- | --- |
-| api-version | The requested API version | True |  |  |
-
-##### Responses:
-
-| Code | Description | Reference |
-| --- | --- | --- |
-| 200 | OK | ProvisioningResultsReceivedResult |
 
 ### /api/Connectors/Mapping/ResourceTypeMapping
 
