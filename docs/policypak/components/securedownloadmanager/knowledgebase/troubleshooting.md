@@ -19,7 +19,7 @@ sidebar_position: 30
    Secure Download Manager GPO appears under **Applied GPOs**.
 3. Confirm **Enable Secure Download Manager** is set to **YES** in Global Settings
    (**Specify Global Settings P...** in the Actions panel, **General** tab).
-4. Confirm the PolicyPak CSE is installed on the endpoint: open **Settings | Apps** and look
+4. Confirm the PolicyPak client-side extension (CSE) is installed on the endpoint: open **Settings | Apps** and look
    for **PolicyPak Client-Side Extension**.
 5. Run `gpupdate /force` and test again.
 6. Confirm the browser is in the supported list: Google Chrome, Microsoft Edge, Opera, or

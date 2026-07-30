@@ -41,11 +41,11 @@ Security Manager.
 
 ### Creating a Global Settings Policy
 
-Your first stop is to create a **New Global settings policy**, as shown here.
+First, create a **New Global settings policy**, as shown here.
 
 ![nsm01](/images/policypak/scriptstriggers/nsm01.webp)
 
-Once you select it, you can see your configurable options for the machines.
+After you select it, you can see your configurable options for the machines.
 
 ![nsm02](/images/policypak/scriptstriggers/nsm02.webp)
 
@@ -100,7 +100,7 @@ Click **Next** to continue. Accept the defaults on the final Wizard page and cli
 
 ### Testing your Policy Out
 
-On your endpoint which has the PolicyPak CSE installed and licensed, run GPupdate or
+On your endpoint which has the PolicyPak client-side extension (CSE) installed and licensed, run GPupdate or
 reboot the machine to acquire the policies.
 
 When Edge launches, end users can't go to any network location, like

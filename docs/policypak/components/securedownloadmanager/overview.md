@@ -39,7 +39,7 @@ topics, which cover:
 
 ## Delivery Methods
 
-Secure Download Manager policies can be delivered using any standard PolicyPak delivery method:
+You can deliver Secure Download Manager policies using any standard PolicyPak delivery method:
 
 - **On-premises Group Policy** — the approach demonstrated in this manual
 - **Microsoft Intune / SCCM** — export directives as XML and wrap with the PolicyPak Exporter tool

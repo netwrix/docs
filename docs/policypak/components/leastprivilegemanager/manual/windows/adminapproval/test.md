@@ -21,7 +21,7 @@ If you (the admin) are on the machine, you may use your credentials by clicking 
 **Approve with alternate Admin Credentials**.
 :::
 
-The Admin Approval Tool can be run in three ways:
+You can run the Admin Approval Tool in three ways:
 
 - As a standalone tool in the Extras folder from the PolicyPak download (shown here)
 - Directly from a machine where the PolicyPak MMC Admin console is installed
@@ -87,8 +87,7 @@ outcome than what the tool suggests.
 
 ### Compatibility
 
-The **Action** dropdown is designed to be forward and backward compatible with the PolicyPak
-CSE, so administrators can use an updated Admin Approval Tool against endpoints running older
+The **Action** dropdown is designed to be forward and backward compatible with the PolicyPak client-side extension (CSE), so administrators can use an updated Admin Approval Tool against endpoints running older
 CSE versions without breaking the approval workflow. Older CSE versions process the response
 code as a standard approval, equivalent to **Allow**.
 

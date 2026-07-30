@@ -44,7 +44,7 @@ Firefox. It uses the same PolicyPak CSE already deployed for other components â€
 installation is required on endpoints.
 :::
 
-## Moving Parts
+## Components
 
 Before configuring Secure Download Manager, understand its components:
 

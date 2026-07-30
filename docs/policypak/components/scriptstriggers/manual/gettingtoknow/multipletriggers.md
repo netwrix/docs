@@ -19,7 +19,7 @@ the top:
 | Mode | Behavior |
 |---|---|
 | **Multiply (recommended)** | The policy runs once for **each** matching trigger that fires. If two triggers are configured and both fire during a session, the script runs twice. |
-| **Single (old version compatible)** | The policy runs only once, even if multiple configured triggers fire. Use this mode when compatibility with older CSE versions is required. |
+| **Single (old version compatible)** | The policy runs only once, even if multiple configured triggers fire. Use this mode when you need compatibility with older client-side extension (CSE) versions. |
 
 **Multiply** is the default and recommended mode for new policies.
 
