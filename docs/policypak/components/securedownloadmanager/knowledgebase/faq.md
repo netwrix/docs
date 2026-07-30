@@ -42,7 +42,7 @@ Yes. You can configure Exclusions Policies under **Computer Configuration** as w
 **User Configuration**. Computer-side policies apply to every user who logs on to the machine.
 Global Settings, however, are always Computer-side only.
 
-## Can I customize the user notification?
+## Can you customize the user notification?
 
 Yes. Open **Specify Global Settings P...** and go to the **General** tab. Under
 **Text Customization**, enable any combination of the three fields: window title, notification
@@ -69,7 +69,7 @@ user sees a notification dialog. The notification auto-closes after the configur
 seconds (default: 60), or the user can dismiss it manually. The file remains in the Downloads
 folder.
 
-## Can I send email alerts for blocked files?
+## Can you send email alerts for blocked files?
 
 Yes. Open **Specify Global Settings P...**, go to the **Email** tab, and configure the
 **Use of email** dropdown and the **Send To** field. The alert contains extended information
