@@ -102,8 +102,8 @@ report alongside other component settings.
 
 ## Exclusions Policies
 
-An Exclusions Policy is a permissive rule that allows users to execute a downloaded file when
-it matches a specific source URL and/or file extension. Without a matching exclusion, Secure
+An Exclusions Policy is a permissive rule that permits execution of a downloaded file that
+matches a specific source URL and/or file extension. Without a matching exclusion, Secure
 Download Manager blocks all files marked as downloaded from the internet.
 
 You can apply Exclusions Policies per machine or per user, and they support Item Level Targeting.

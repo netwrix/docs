@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # PolicyPak Network Security Manager
 
-Network Security Manager enables you to restrict processes to communicate with specific IP addresses
+With Network Security Manager, you can restrict processes to communicate with specific IP addresses
 or DNS addresses. This increases the security of applications (or browsers) so end-users (or
-anonymous users) on the endpoints cannot use programs to connect to unwanted network addresses.
+anonymous users) on the endpoints can't use programs to connect to unwanted network addresses.
 
 Some examples of use are:
 
@@ -27,25 +27,25 @@ topic for additional information.
 :::
 
 
-Pick an application you wish to restrict, like a browser (such as Edge, Firefox, PaleMoon, etc) or a
-networking application (like Telnet, WinSCP, etc.). Then pick the destinations you wish for that
-application to be restricted to.
+Pick an application you want to restrict, like a browser (such as Edge, Firefox, PaleMoon, etc) or a
+networking application (like Telnet, WinSCP, etc.). Then pick the destinations you want to restrict
+that application to.
 
-In this example, we'll restrict the Edge browser to only be allowed to communicate with
-[www.Netwrix.com](http://www.netwrix.com/). All other communication will be rejected.
+This example restricts the Edge browser to communicate only with
+[www.Netwrix.com](http://www.netwrix.com/). Network Security Manager rejects all other communication.
 
-Start out by creating a GPO and linking it over to where your computer objects are.
+Start by creating a GPO and linking it to where your computer objects are.
 
 Then use Computer Configuration | Netwrix PolicyPak | Desktop Automation Pak | Network
 Security Manager.
 
 ### Creating a Global Settings Policy
 
-Your first stop is to create a **New Global settings policy** like what's seen here.
+Your first stop is to create a **New Global settings policy**, as shown here.
 
 ![nsm01](/images/policypak/scriptstriggers/nsm01.webp)
 
-Once selected you can see your configurable options for the machines.
+Once you select it, you can see your configurable options for the machines.
 
 ![nsm02](/images/policypak/scriptstriggers/nsm02.webp)
 
@@ -54,17 +54,17 @@ Once selected you can see your configurable options for the machines.
   PolicyPak Network Security Manager (or not)
 - Notification message should close in X seconds – Provides a countdown in seconds before the
   message is removed.
-- Disable recurring notifications after X impressions – Useful to set so the user can get the idea
-  that there is control; but eventually you can tamp down the number of pop-ups.
+- Disable recurring notifications after X impressions – Useful to set so the user understands
+  there is control, but eventually you can reduce the number of pop-ups.
 - Text Customization (Window Title, Notification Title, Customized Message) – Various settings to
   configure the dialog
 
 ### Creating a Process Matching Policy
 
-Next you'll want to create a process matching policy. Again, in our examples, we'll match on
+Next you'll want to create a process matching policy. Again, these examples match on
 Microsoft Edge.
 
-Create a New Policy like what's seen here.
+Create a New Policy, as shown here.
 
 ![nsm03](/images/policypak/scriptstriggers/nsm03.webp)
 
@@ -103,7 +103,7 @@ Click **Next** to continue. Accept the defaults on the final Wizard page and cli
 On your endpoint which has the PolicyPak CSE installed and licensed, run GPupdate or
 reboot the machine to acquire the policies.
 
-The results will be that when Edge is launched, end users cannot go to any network location, like
+When Edge launches, end users can't go to any network location, like
 Microsoft.com, but are restricted to the specific network location you specified, www.Netwrix.com.
 
 ![nsm09](/images/policypak/scriptstriggers/nsm09.webp)
@@ -117,33 +117,33 @@ topic for additional information.
 :::
 
 
-Auditing Events can be useful if you want to determine if your rules are working. Each rule may be
-individually enabled like what's seen here.
+Auditing Events can be useful if you want to determine if your rules are working. You can enable
+each rule individually, as shown here.
 
 ![nsm10](/images/policypak/scriptstriggers/nsm10.webp)
 
-In this example I'll have both rules set to Log.
+In this example, both rules are set to Log.
 
 ![nsm11](/images/policypak/scriptstriggers/nsm11.webp)
 
-The results can be pretty noisy depending on the application. In this case whenever Edge is run you
-will get a myriad of Blocked events like what's seen here.
+The results can be pretty noisy depending on the application. In this case, whenever Edge runs, you
+get many Blocked events, as shown here.
 
 ![nsm12](/images/policypak/scriptstriggers/nsm12.webp)
 
-You may wish to audit for blocks for a while then change gears to audit only for successes later to
-reduce the amount of noise.
+You may want to audit for blocks for a while, then switch to auditing only successes later to
+reduce the noise.
 
 ## Additional Topics & References
 
 Because Network Security Manager uses the same basic UI as PolicyPak Least Privilege
-Manager, you can learn more about Simple rules here:
+Manager, the following topics describe Simple rules:
 
 - [Elevating Executables](/docs/policypak/components/leastprivilegemanager/manual/windows/rules/executables.md)
 - [Creating and Using Executable Combo Rules](/docs/policypak/components/leastprivilegemanager/manual/windows/overviewmisc/bestpractices/executablecombo.md)
 
-You can learn more about the following additional PolicyPak Network Security manager
-topics via our How-To videos:
+The following How-To videos cover additional PolicyPak Network Security Manager
+topics:
 
 - Understanding Applications & Ports:
   [PolicyPak Network Security Manager - Applications and Ports](/docs/policypak/components/networksecuritymanager/videos/gettingstarted/applicationsports.md)

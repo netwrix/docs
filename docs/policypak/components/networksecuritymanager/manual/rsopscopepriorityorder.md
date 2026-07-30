@@ -61,7 +61,7 @@ The setting supports three states:
 | **Disabled** | Network Security Manager uses the default evaluation order: Machine → Switched → User. |
 | **Enabled** | The evaluation order dropdown becomes active. Select one of the six available permutations. |
 
-When set to **Enabled**, select the desired evaluation order from the dropdown:
+When set to **Enabled**, select the evaluation order you want from the dropdown:
 
 | Order | Evaluation sequence | Last scope wins |
 |---|---|---|
@@ -78,8 +78,8 @@ When set to **Enabled**, select the desired evaluation order from the dropdown:
 
 Network Security Manager merges its active policy scopes and evaluates them in the configured
 order. When the same setting is defined in more than one scope, the value from the scope
-evaluated **last** takes effect on the endpoint. Scopes evaluated earlier are overwritten by
-scopes evaluated later.
+evaluated **last** takes effect on the endpoint. Scopes evaluated later overwrite scopes
+evaluated earlier.
 
 For example, with the order **Switched, User, Machine**:
 
@@ -102,8 +102,8 @@ precedence over each other.
 
 1. Open the **Group Policy Management Console (GPMC)** and edit or create a GPO linked to the
    target computers.
-2. Navigate to the setting path shown above.
-3. Set the policy to **Enabled** and select the desired scope order from the dropdown.
+2. Navigate to the setting path listed in the **Setting Location** section.
+3. Set the policy to **Enabled** and select the scope order you want from the dropdown.
 4. Click **OK**.
 5. Run `gpupdate /force` on the target endpoints, or wait for the next Group Policy refresh.
 

@@ -62,10 +62,10 @@ Event 6211 requires both of the following to be true:
 Beyond that, whether the event fires depends on the ADMX policy **"Use legacy (less secure)
 Endpoint Privilege Manager SecureRun™ Command Prompt Inline Commands Processing Method"**:
 
-- **Disabled or Not Configured (default):** Event 6211 is written every time a command prompt
+- **Disabled or Not Configured (default):** PolicyPak writes Event 6211 every time a command prompt
   inline command runs. Parent process conditions (elevated, signed, trusted) aren't evaluated
   in this mode.
-- **Enabled:** Event 6211 is written only when a command prompt inline command runs and a
+- **Enabled:** PolicyPak writes Event 6211 only when a command prompt inline command runs and a
   parent process condition configured for the policy isn't met, for example:
 
   - **Apply if parent process is elevated** is configured, but the parent process isn't elevated.
@@ -127,5 +127,5 @@ After collecting audit events from your pilot machines:
    required parent process conditions.
 4. Once all necessary rules are in place, enable SecureRun™ enforcement.
 
-For more information on creating rules based on audit events, see
+To create rules based on audit events, see
 [Creating Policy from Audit Event](/docs/policypak/components/leastprivilegemanager/manual/windows/events/audit.md).

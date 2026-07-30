@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Troubleshooting
 
-## Policy Is Not Applying
+## Policy Isn't Applying
 
-**Symptom:** Files downloaded from the browser execute normally even after the policy is configured.
+**Symptom:** Files downloaded from the browser execute normally even after you configure the policy.
 
 **Steps to resolve:**
 
@@ -30,7 +30,7 @@ If `gpresult` shows the GPO under **Denied GPOs**, review the GPO's **Security F
 **WMI Filter** settings to confirm the target computer object isn't excluded.
 :::
 
-## Block Notification Does Not Appear
+## Block Notification Doesn't Appear
 
 **Symptom:** Execution is blocked, but the user sees no notification dialog.
 
@@ -39,7 +39,7 @@ If `gpresult` shows the GPO under **Denied GPOs**, review the GPO's **Security F
 1. Open **Specify Global Settings P...** and confirm **Show Management Notifications** is set
    to **YES** on the **General** tab.
 2. If **Block notification should close in seconds** is set to a very short value, for example
-   1–2 seconds, the notification may be dismissed before the user notices it. Increase the
+   1–2 seconds, the notification may close before the user notices it. Increase the
    timeout or uncheck the option to require manual dismissal.
 3. Confirm the PolicyPak notification service is running. On the endpoint, open **Services**
    (`services.msc`) and look for **PolicyPak Notification Service**. Start it if stopped.
@@ -60,7 +60,7 @@ If `gpresult` shows the GPO under **Denied GPOs**, review the GPO's **Security F
 5. Enable **Enable logging for this policy** in the Exclusions Policy Editor, reproduce the
    issue, and review the PolicyPak event log to confirm whether the exclusion is being matched.
 
-## Item Level Targeting Is Not Filtering as Expected
+## Item Level Targeting Isn't Filtering as Expected
 
 **Symptom:** An Exclusions Policy with Item Level Targeting applies to machines or users it
 shouldn't, or doesn't apply where expected.
@@ -72,10 +72,10 @@ shouldn't, or doesn't apply where expected.
    OS version, and so on).
 2. Run `gpresult /h report.html` on an affected endpoint and confirm the GPO is being received.
    Item Level Targeting is evaluated client-side — the GPO must reach the endpoint first.
-3. Note that Global Settings don't support Item Level Targeting. Only Exclusions Policies
-   support ILT. If you need different Global Settings behavior per machine, use separate GPOs.
+3. Global Settings don't support Item Level Targeting. Only Exclusions Policies
+   support it. If you need different Global Settings behavior per machine, use separate GPOs.
 
-## Email Alerts Are Not Being Received
+## Email Alerts Aren't Being Received
 
 **Symptom:** The **Email** tab in Global Settings is configured, but no alerts arrive.
 
@@ -89,7 +89,7 @@ shouldn't, or doesn't apply where expected.
 4. Confirm **Send To** contains valid addresses separated by semicolons (`;`).
 5. Confirm outbound SMTP traffic from the endpoint isn't blocked by a firewall rule.
 
-## ADM Report Does Not Show Secure Download Manager Settings
+## ADM Report Doesn't Show Secure Download Manager Settings
 
 **Symptom:** The ADM report is missing Global Settings or Exclusions Policy entries.
 

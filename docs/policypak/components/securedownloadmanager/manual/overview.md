@@ -22,7 +22,7 @@ deploy Secure Download Manager directives. If you don't want to use Group Policy
 [MDM & UEM Tools](/docs/policypak/gettingstarted/mdmmanual/overview.md) topics for additional
 information on how to deploy your directives.
 
-PolicyPak Secure Download Manager enables you to do the following:
+With PolicyPak Secure Download Manager, you can do the following:
 
 - Prevent users from executing files immediately after downloading them from the internet.
 - Apply download execution protection globally across all supported browsers from a single
@@ -35,8 +35,8 @@ PolicyPak Secure Download Manager enables you to do the following:
 
 For example, a user downloads an installer from an untrusted site and tries to run it directly
 from the browser's download bar. Without Secure Download Manager, that file executes
-immediately. With the policy enabled, the execution is blocked and the user sees a
-configurable notification — the file itself remains available in the Downloads folder.
+immediately. With the policy enabled, Secure Download Manager blocks the execution, and the user
+sees a configurable notification — the file itself remains available in the Downloads folder.
 
 :::note
 Secure Download Manager is supported for Google Chrome, Microsoft Edge, Opera, and Mozilla
@@ -61,7 +61,7 @@ Before configuring Secure Download Manager, understand its components:
   standard PolicyPak licensing methods.
 
 - **Supported Browsers.** Secure Download Manager intercepts download execution events in
-  Google Chrome, Microsoft Edge, Opera, and Mozilla Firefox. Other browsers aren't affected.
+  Google Chrome, Microsoft Edge, Opera, and Mozilla Firefox. Secure Download Manager doesn't affect other browsers.
 
 ## Policy Types
 

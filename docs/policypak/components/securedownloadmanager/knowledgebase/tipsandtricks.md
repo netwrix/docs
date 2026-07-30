@@ -39,7 +39,7 @@ Use wildcards to accommodate these patterns without over-broad exclusions:
 ```
 
 This matches any file served from the Netwrix Azure DevOps organization, regardless of the
-project or path, without opening up the entire `dev.azure.com` domain.
+project or path, without opening the entire `dev.azure.com` domain.
 
 ## Use Item Level Targeting to Scope Exclusions by Role
 
