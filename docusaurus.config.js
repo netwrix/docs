@@ -96,6 +96,7 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  clientModules: ['./src/clientModules/scrollBehavior.js'],
   presets: [
     [
       'classic',
