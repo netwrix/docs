@@ -20,7 +20,7 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- United States English language installation
 
 **Additional Server Requirements**
 

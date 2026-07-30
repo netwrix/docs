@@ -41,7 +41,7 @@ displayed.
 
 ![Netwrix PostgreSQL Setup wizard on the EULA page](/images/threatmanager/3.3/intsall/upgrade/postgres-eula.webp)
 
-**Step 4 –** Read the End User License Agreement and select the I accept the license agreement checkbox. Click Next.
+**Step 4 –** Read the End User License Agreement and select the checkbox to accept the license agreement. Click Next.
 
 **Step 5 –** The installation begins and the installer displays a Setup Progress window. Click Exit
 when the installation is successful to close the wizard.
@@ -72,7 +72,7 @@ window. The following window is displayed:
 
 ![Install Netwrix Threat Manager 3.3 page](/images/threatmanager/3.3/intsall/upgrade/ntm-eula.webp)
 
-**Step 3 –** On the End User License Agreement page, review and accept the licensing agreement, and
+**Step 3 –** Review and accept the licensing agreement on the End User License Agreement page, and
 then click **Next**.
 
 ![Threat Manager 3.3 Default Setup Folder](/images/threatmanager/3.3/intsall/upgrade/ntm-location.webp)

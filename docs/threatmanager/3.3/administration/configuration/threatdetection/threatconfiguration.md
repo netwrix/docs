@@ -83,7 +83,7 @@ the threat is initially detected regardless of rollup configuration. When a thre
 also update the detection time of the threat, which will push it to the top of the Threats Page
 timeline.
 
-![Image is a flow chart visually explaining how a threat is dealt with, with or without Rollup enabled.](/images/threatmanager/3.0/administration/configuration/rollupexplanationgraphic.webp)
+![Image is a flow chart visually explaining how a threat is handled with or without Rollup enabled.](/images/threatmanager/3.0/administration/configuration/rollupexplanationgraphic.webp)
 
 The diagram provides an outline of the rollup process.
 
