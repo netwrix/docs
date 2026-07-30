@@ -57,6 +57,10 @@ Enabling these settings will write special events to the event logs.
   application will be blocked when SecureRun is turned on.
 - Audit unsigned applications - Discovers rules needed when SecureRun™ is turned on and the “Block
   all unsigned” option would block unsigned applications.
+- Audit Command Prompt inline commands - Makes an audit log entry when a command prompt inline
+  command would be blocked by SecureRun™. See
+  [Discovery of CMD Inline Commands Blocked by SecureRun™](/docs/policypak/components/leastprivilegemanager/manual/windows/events/auditingsettings/cmdinlinecommands.md)
+  for details.
 
 The next sections discuss each of these auditing events.
 

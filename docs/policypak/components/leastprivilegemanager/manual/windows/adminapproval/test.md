@@ -64,11 +64,11 @@ The Admin Approval Tool may be branded. See the section **Branding and Customiza
 this guide.
 :::
 
-## The Admin Approval Tool — Action Dropdown
+## The Admin Approval Tool Action Dropdown
 
-When an administrator uses the Admin Approval Tool to respond to a user's request code (short or
-long), the tool includes an **Action** dropdown that controls how the approved application
-launches on the endpoint.
+When an administrator uses the Admin Approval Tool to respond to a user's request code, the tool
+includes an **Action** dropdown that controls how the approved application launches on the
+endpoint.
 
 The **Action** dropdown contains two options:
 

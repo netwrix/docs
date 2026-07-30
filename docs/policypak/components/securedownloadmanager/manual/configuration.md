@@ -11,9 +11,11 @@ sidebar_position: 20
 Global Settings control whether Secure Download Manager is active, how the block notification
 appears to users, and whether email alerts are sent when a file is blocked.
 
-**Important:** Global Settings are collection-level settings and apply to the **Computer side
-only**. They don't support Scope or Item Level Targeting. Only one Global Settings instance
-is allowed per collection.
+:::note
+Global Settings are collection-level settings and apply to the **Computer side only**. They
+don't support Scope or Item Level Targeting. Only one Global Settings instance is allowed per
+collection.
+:::
 
 To open Global Settings:
 
