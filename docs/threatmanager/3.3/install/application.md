@@ -34,8 +34,8 @@ Run as administrator. Then skip to Step 2.
 
 ![Netwrix Threat Manager Setup wizard EULA page](/images/threatmanager/3.0/install/tm3eula.webp)
 
-**Step 3 –** Read the End User License Agreement and select the I accept the license agreement
-checkbox. Click **Next**.
+**Step 3 –** Read the End User License Agreement and select the checkbox to accept the license
+agreement. Click **Next**.
 
 ![Netwrix Threat Manager Setup wizard Install Folder page](/images/threatmanager/3.0/install/folder.webp)
 

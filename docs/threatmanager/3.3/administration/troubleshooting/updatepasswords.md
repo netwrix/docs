@@ -18,7 +18,7 @@ be updated.
 
 ## Updating a Credential Profile Password
 
-Follow these steps to update passwords for a Credential Profile.
+To update the password for a Credential Profile:
 
 **Step 1 –** Navigate to the Integrations menu **Settings** > **Integrations**.
 
