@@ -1,4 +1,4 @@
-# CLAUDE.md — Change Tracker 8.2 API Reference
+# CLAUDE.md — Change Tracker API Reference
 
 This file provides guidance for working in `docs/changetracker/api/`.
 
