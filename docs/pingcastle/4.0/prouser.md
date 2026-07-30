@@ -6,8 +6,8 @@ sidebar_position: 16
 ## Description
 
 PingCastle Pro is a tool designed to improve and follow the Active
-Directory overall security level. This software has been developed to be
-compatible with most of the possible existing configurations. The goal
+Directory overall security level. This software is compatible with most
+existing configurations. The goal
 (when the tool was created) wasn't to aim for perfection, but to
 provide reliable data to present the situation to the management, thus
 improving over time.
@@ -18,28 +18,28 @@ PingCastle Pro is a tool dedicated to improve the AD security, so
 security has been a major priority alongside every step of the creation
 and improvement.
 
-First, the application has been designed in a framework where most
-common attacks such as XSS or SQL Injection are prohibited by design.
+First, the application uses a framework that prohibits most common
+attacks such as XSS or SQL Injection by design.
 
 Because such protections can be sometimes avoided, the application has
 an additional layer of protection with all known HTTP security headers
 and including the header \"Content Security Policy\" in strict mode.
-That means that all the JavaScript code of the application is stored in
-separate files and that JavaScript included in the page via injection
-will not run in the browser. This protection can be checked via third
-party service such as \"security headers\". It means that
+That means the application stores all its JavaScript code in separate
+files, and injected JavaScript will not run in the browser. You can
+check this protection via a third-party service such as \"security
+headers\". It means that
 \"unsafe-inline\" and \"unsafe-eval\" aren't accepted.
 
 ![](/images/pingcastle/prouser/image3.webp)
 
-The application uses enforced controls which force parameters to be
-checked twice against a model (in the browser then in the server
+The application uses enforced controls that check parameters twice
+against a model (in the browser then in the server
 application) and all queries to the database are parameterized. There is
 no SQL string built by the application.
 
-Then each access to the database is verified by a filter which controls
-the data to be queried before a database query is sent. This code is
-tested by unit tests to lower the risk of a misconception in the filter.
+Then a filter verifies each access to the database and controls the data
+to be queried before sending a database query. Unit tests cover this
+code to lower the risk of a misconception in the filter.
 
 The application is based mainly on the following frameworks:
 
@@ -65,7 +65,7 @@ PingCastle Pro provides authentication through:
 
 **Main pages overview**
 
-The application is divided is 2 different areas:
+The application has two areas:
 
 - The Audit data view
 
@@ -85,7 +85,7 @@ and its data.
 
 This view displays detailed information on the domain, as well as many
 other information such the results of the last report, some history,
-timeline, and cartography. This can be modified by selecting a tab.
+timeline, and cartography. You can modify this by selecting a tab.
 
 Last report tab:
 
@@ -107,15 +107,14 @@ The events that you can view are the following:
 Domain event:
 
 There has been a change on a domain within a specific perimeter in the
-PingCastle Pro solution. It can be a domain that has been added by a
-user, a domain that has been discovered after importing a report, a
-status change, etc.
+PingCastle Pro solution. It can be a domain that a user added, a domain discovered after
+importing a report, a status change, and so on.
 
 Risk event:
 
 There has been a change in the risks followed by the PingCastle Pro
 solution. It either means that a new risk has been discovered and that
-it should be followed by the user, or that a risk has been cleared and
+the user should follow it, or that a risk has cleared and
 that the overall level of security improved. It can also mean that a
 risk is set on an exception status.
 
@@ -129,8 +128,8 @@ that an existing trust has been modified.
 Technical event:
 
 There has been a significant technical change modifying the global level
-of security, but which isn't yet covered by the existing rules. This is
-a very rare event and it isn't likely that you have this kind of event.
+of security, but which the existing rules don't yet cover. This is
+a very rare event and you are unlikely to have this kind of event.
 
 Cartography tab:
 
@@ -138,25 +137,23 @@ Cartography tab:
 
 # Tool configuration (\"Configuration\")
 
-The \"Configuration\" view of the PingCastle Pro application allows the
-user to set up all the tool to be able to use it completely. It
-is also in this view that the user will be able to personalize settings
-so that the tool fits more the Company needs.
+The \"Configuration\" view of the PingCastle Pro application lets the
+user set up the tool completely. In this view, the user can also
+personalize settings so the tool better fits the company's needs.
 
 ## Exceptions management
 
 This part enables administrator to configure PingCastle Pro so that it
-adapts to the company specific context. It is indeed possible to
-configure how PingCastle Pro handles exceptions specific to your
-perimeter.
+adapts to the company specific context. You can configure how
+PingCastle Pro handles exceptions specific to your perimeter.
 
 ![](/images/pingcastle/prouser/image9.webp)
 
 **Rule exceptions**
 
-\"Rule exceptions\" can be set to completely disable a rule
-within a specific domain. It means that this rule will not be applied
-for a certain period, that you have to specify. This should be use only
+You can set \"rule exceptions\" to completely disable a rule
+within a specific domain. This means PingCastle Pro will not apply this
+rule for a period that you specify. This should be use only
 when for very specific reasons, such as when a rule doesn't apply in
 your organization. Contact the PingCastle editors if you have doubts or require extra assistance about exception management.
 
@@ -164,19 +161,18 @@ your organization. Contact the PingCastle editors if you have doubts or require 
 
 In the same idea you can set exceptions for specific domain, you can
 inform it in the application when one of your domains is migrating. It
-will automatically put in place a set of exceptions during the timetable
-the migration is happening.
+automatically applies a set of exceptions during the timetable the
+migration is happening.
 
 ## Importing data
 
 PingCastle Pro allows administrators to consult all report data and make decisions.
 
-1.  Therefore, it isn't yet possible to launch scans and so directly
-    from the application, so it is required to launch the PingCastle
-    tool in standalone mode and to then import the report that are
-    produced that way.
+1.  Therefore, you can't yet launch scans directly from the
+    application, so you must launch the PingCastle tool in standalone
+    mode and then import the reports it produces.
 
-There are two way for doing so:
+There are two ways to do so:
 
 - Option 1: Importing the file manually
 
@@ -185,11 +181,11 @@ After you are on the page, you can drag and drop any file produced
 by the PingCastle standalone executable and it will upload to the
 PingCastle Pro solution.
 
-After it is done, the file will be marked with either a success or a
-failure.
+After it is done, PingCastle Pro marks the file with either a success or
+a failure.
 
 In case of a failure, a mouse over can display the associated error
-message to help you in the process of uploading the file.
+message to help you upload the file.
 
 Import **page**
 
@@ -209,13 +205,13 @@ to reach the creation page.
 
 ![](/images/pingcastle/prouser/image13.webp)
 
-To map the agent to a responsible, the Owner field must be completed. It
+To map the agent to a responsible, complete the Owner field. It
 can be an entity or a domain, such as the \"default\" entity.
 
-The API key is generated automatically but can be changed if the
+The API key is generated automatically, but you can change it if the
 complexity requirements are met
 
-After this is set up correctly, you can directly upload reports
+After you set this up correctly, you can upload reports
 automatically using the command:
 
 ```bash
@@ -225,14 +221,14 @@ pingcastle --healthcheck --api-endpoint <endpoint> --api-key <key>
 ![](/images/pingcastle/prouser/image14.webp)
 
 :::note
-By default, all detailed information will be filtered.
-To avoid this behavior, the command line can to be changed as follows.
+By default, PingCastle Pro filters all detailed information.
+To avoid this behavior, change the command line as follows.
 :::
 
 ```bash
 pingcastle --healthcheck --api-endpoint <endpoint> --api-key <key> --level Full
 ```
 
-The API can be browsed using the link found in the agent page:
+You can browse the API using the link found on the agent page:
 
 ![](/images/pingcastle/prouser/image15.webp)

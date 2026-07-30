@@ -44,7 +44,7 @@ PingCastle Enterprise requires:
 - **IIS (Internet Information Services)**: Used as the web server with Windows Authentication enabled by default
 
 :::info
-PingCastleEnterpriseInstaller.exe installs and configures IIS, Windows Authentication, and the ASP.NET 10.0 Hosting Bundle automatically. Manual installation is only necessary if you're preparing a server ahead of time or troubleshooting.
+PingCastleEnterpriseInstaller.exe installs and configures IIS, Windows Authentication, and the ASP.NET 10.0 Hosting Bundle automatically. Manual installation is only necessary if you're preparing a server in advance or troubleshooting.
 :::
 
 ### Logon Providers

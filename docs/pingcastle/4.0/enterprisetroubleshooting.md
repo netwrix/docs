@@ -59,7 +59,7 @@ Here are common errors, their causes, and how to fix them.
 <details>
 <summary>Incorrect ASP.NET Core Middleware Version</summary>
 
-These error messages appear when the wrong version of ASP.NET Core is installed:
+These error messages appear when you install the wrong version of ASP.NET Core:
 
 ![ASP.NET Core error - HTTP 502.5](/images/pingcastle/enterpriseinstall/image90.webp)
 
@@ -82,7 +82,7 @@ Command line error messages:
 Identify the correct version of the ASP.NET Core framework and install it. If deploying to IIS, install the ASP.NET Core Hosting Bundle.
 
 :::note
-The last error was related to the missing KB KB2533623
+The last error relates to the missing KB KB2533623
 :::
 
 </details>

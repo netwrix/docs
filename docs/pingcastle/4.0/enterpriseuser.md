@@ -40,11 +40,9 @@ You can view the up-to-date list of explicit components on the about page of the
 
 PingCastle Enterprise provides two mechanisms for authentication by default: classic login password and external authentication. External authentication supports widely used providers such as Entra ID, Google, or professional web SSO such as Okta.
 
-These methods can be used separately or in coordination, meaning you can
-either use a Dual-Factor authentication (recommended) or a single factor
-authentication.
+You can use these methods separately or together, either as dual-factor authentication (recommended) or single-factor authentication.
 
-To disable password authentication, enable **Disable Password Login** on **Configuration** > **Settings** > **Login options**. Enabling OIDC on the **OIDC Connect** screen automatically turns on OpenID login.
+To disable password authentication, enable **Disable Password Login** on **Configuration** > **Settings** > **Login options**. Enabling OpenID Connect (OIDC) on the **OIDC Connect** screen automatically turns on OpenID login.
 
 Authentication using OpenID:
 
@@ -64,7 +62,7 @@ method are provided.
 
 PingCastle lets you set up permissions on Entities, or objects (Domains or Entra ID).
 
-The permissions can be set on the detail of the Entities
+You can set permissions on the detail of the Entities
 
 ![Une image contenant texte, capture d'écran, logiciel, Page web Description générée automatiquement](/images/pingcastle/enterpriseuser/image5.webp)
 
@@ -74,20 +72,17 @@ The permissions can be set on the detail of the Entities
 
 The permissions are of 2 types:
 
-- the classic user assignment where users are assigned to objects.
+- the classic user assignment, where you assign users to objects.
 
 ![Une image contenant texte, capture d'écran, Police, nombre Description générée automatiquement](/images/pingcastle/enterpriseuser/image7.webp)
 
 - using claims permissions
 
-In this case, the user rights are managed dynamically based on the
-claims submitted by the authentication application (Windows, OpenID,
-Saml2, ...)
+In this case, the application manages user rights dynamically based on the claims submitted by the authentication application (Windows, OpenID, Saml2, ...)
 
 ![Une image contenant texte, capture d'écran, Police, nombre Description générée automatiquement](/images/pingcastle/enterpriseuser/image8.webp)
 
-Claims permission is the way to assign dynamically permissions based on
-Windows group. Claims are case sensitive. You can
+Claims permission assigns permissions dynamically based on Windows group. Claims are case sensitive. You can
 also open the user's claims page (available under **Manage your account**) to
 see what claims have been pushed to PingCastle Enterprise.
 
@@ -188,9 +183,7 @@ When a user doesn't have access to the root of the organization and
 have access to multiple area of the organization, the application
 display by default the first organization that the user can access.
 
-Following the same idea, most pages from the \"Maturity Assessment\"
-section are built in a common structure, allowing to visualize KPI
-efficiently
+Following the same idea, most pages from the \"Maturity Assessment\" section use a common structure, allowing you to visualize KPI efficiently
 
 ![](/images/pingcastle/enterpriseuser/image14.webp)
 
@@ -200,7 +193,7 @@ said KPI evolves since you first started monitoring them.
 
 # Management view (\"Dashboards\")
 
-The dashboard view is divided in two areas: The "Maturity Assessment"
+The dashboard view has two areas: The "Maturity Assessment"
 and the "Advanced views".
 
 ![](/images/pingcastle/enterpriseuser/image15.webp)
@@ -213,10 +206,7 @@ This view is primarily for company management, notably the
 \"Maturity Assessment\" part, which shows KPIs as well as objectives
 and goals to improve the overall level of AD security.
 
-Nonetheless, it can also be used by Technical stakeholder such as AD
-administrator, as it can greatly assist in the technical remediation.
-Indeed, a lot of detailed analysis can be performed through the
-\"Advanced\" section.
+Technical stakeholders such as AD administrators can also use it, as it can greatly assist in the technical remediation. You can perform a lot of detailed analysis through the \"Advanced\" section.
 
 ## Maturity Assessment
 
@@ -227,12 +217,11 @@ several steps. To summarize, it consists 5 main areas, each containing 4
 major measures, giving a total of 20 measures.
 
 Each measure for which the company AD is compliant gives 1 point in the
-total, ending in a score on 20 that can be viewed in a radar chart.
+total, ending in a score on 20 that you can view in a radar chart.
 
 ![](/images/pingcastle/enterpriseuser/image16.webp)
 
-To go into more details, this score is computed on the 2 first levels of
-the CMMI methodology applied to the AD:
+To go into more details, the tool computes this score on the first two levels of the Capability Maturity Model Integration (CMMI) methodology applied to the AD:
 
 **Initial**
 
@@ -266,9 +255,7 @@ Detailed view of the breakdown for a major area:
 
 ![](/images/pingcastle/enterpriseuser/image18.webp)
 
-3.  The purpose of these general pages is to assist users understand
-    more fully the current level of protection of the company Active
-    Directory.
+3.  These general pages help users understand the current level of protection of the company Active Directory.
 
 Use this page to understand the work performed and the remaining work for AD security.
 
@@ -280,21 +267,18 @@ This section covers the following pages:
 
 ![](/images/pingcastle/enterpriseuser/image19.webp)
 
-4.  The purpose of these general pages is to assist users understand
-    more fully the current level of protection of the company Active
-    Directory.
+4.  These general pages help users understand the current level of protection of the company Active Directory.
 
 Use this page to understand the work performed and the remaining work for AD security.
 
 **Detailed view per area**
 
-Each area has its dedicated page, with a lot of information regarding
-what is being well done and what can be improved.
+Each area has a dedicated page with a lot of information about what you do well and what you can improve.
 
 The first section of the page always shows a global explanation of the
 objective of the area.
 
-Then, it displays a few KPI that compose the maturity evaluation. If the objective is reached, the KPI appears in green; otherwise, it appears in red. A "Detail" button takes you directly to the technical view, with advanced information on how to remediate and improve the KPI.
+Then, it displays a few KPI that compose the maturity evaluation. If you reach the objective, the KPI appears in green; otherwise, it appears in red. A "Detail" button takes you directly to the technical view, with advanced information on how to remediate and improve the KPI.
 
 ![](/images/pingcastle/enterpriseuser/image20.webp)
 
@@ -306,8 +290,7 @@ bit more the situation, a breakdown of the information shown by entity
 within the selected perimeter, or an history graph representing how the
 KPI evolved in the past.
 
-Each chart is dynamic, and a category can be filtered out by clicking on
-it in the legend.
+Each chart is dynamic, and you can filter out a category by clicking it in the legend.
 
 Moreover, a click certain data can forward you directly to the page
 containing the data that were used to elaborate the chart.
@@ -330,15 +313,13 @@ Entities Details for the related tab:
 
 ## Remediation / Rule Matrix
 
-The "Rule Matrix" view aggregates every rule used in the 4 categories to calculate the Global Risk score. With this feature, you can identify the main points of failure within your Active Directory and then put the associated remediation plan in place.
+The "Rule Matrix" view aggregates every rule used in the 4 categories to calculate the Global Risk score. With this feature, you can identify the main points of failure within your Active Directory and then implement the associated remediation plan.
 
 It takes the form of a double entry table, with on one side all the
 domains within your perimeter, and on the other side all the rules and
-if they are OK or not. It can be filtered to only show relevant
-information (a.k.a. what affects your security negatively), and it can
-also be download in CSV format.
+if they are OK or not. You can filter it to show only relevant information (that is, what affects your security negatively), and you can also download it in CSV format.
 
-This dashboard is used to set up a taskforce and a remediation project.
+Use this dashboard to set up a taskforce and a remediation project.
 
 The first view is a matrix where there are all the rules in columns and
 all the domain in lines.
@@ -348,8 +329,7 @@ Global problems appear as a vertical line (affecting a rule), and local problems
 ![](/images/pingcastle/enterpriseuser/image26.webp)
 
 PingCastle recommends working on a unit consisting of 10 to 15 domains.
-After the selection is done, PingCastle recommends ordering the items by
-Maturity levels and to remove the bank items.
+After you make the selection, PingCastle recommends ordering the items by Maturity levels and removing the bank items.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseuser/image27.webp)
 
@@ -358,8 +338,7 @@ which matched.
 
 ![](/images/pingcastle/enterpriseuser/image28.webp)
 
-The detail can be viewed by pointing on the cell and a click forwards
-the user to the detail of the report.
+You can view the detail by pointing at the cell, and a click forwards the user to the detail of the report.
 
 ![](/images/pingcastle/enterpriseuser/image29.webp)
 
@@ -369,7 +348,7 @@ The "View Action Plans" option changes the color of the items and enables the us
 
 The first step of a remediation is to request domain owners to set up an action plan without enforcing it.
 
-To see the top rules that need to be fixed to improve the maturity or
+To see the top rules to fix to improve the maturity or
 the score, a selection of the 2 tab "Maturity" or "Priority" enables the
 user to see the data.
 
@@ -393,7 +372,7 @@ It consists of the following pages:
 Consolidation of all the possible reports that PingCastle Enterprise can
 generate with the information it has in the selected perimeter. There
 are a lot of features enabling the user to filter data if needed.
-Additional reports may be added in the future or if requested.
+PingCastle Enterprise may add more reports in the future or on request.
 
 **Staled Objects**
 
@@ -430,12 +409,9 @@ domains and its data.
 
 ![](/images/pingcastle/enterpriseuser/image32.webp)
 
-The list of domains is shown in the \"Domains\" page and a \"Forests\"
-page exists where only forests containing more than 2 domains are
-listed.
+The \"Domains\" page shows the list of domains, and a \"Forests\" page lists only forests containing more than 2 domains.
 
-Then cartography pages are used to explore the topology of the area
-monitored.
+Then you use cartography pages to explore the topology of the monitored area.
 
 6.  Pages with more detailed analysis such as domain events or analytics
     can show data from cross domain to investigate specific questions.
@@ -445,13 +421,10 @@ monitored.
 **List of domains**
 
 The objective of this page is to display the list of all the domains in
-the perimeter. This list can be filtered based on parameter to switch
-between the management view and the technical view. This filter can be
-customized by clicking on \"Advanced Filter\". Use the \"Search\" function
+the perimeter. You can filter this list based on parameter to switch between the management view and the technical view. You can customize this filter by clicking \"Advanced Filter\". Use the \"Search\" function
 to dynamically filter domains by name, SID, or Entity.
 
-Furthermore, by default, Domains with status Removed or Out of scope are
-filtered by default.
+Furthermore, the application filters out domains with status Removed or Out of scope by default.
 
 ![](/images/pingcastle/enterpriseuser/image33.webp)
 
@@ -462,7 +435,7 @@ full name open the management view for the entity.
 
 This view displays detailed information on the domain, as well as many
 other information such the results of the last report, some history,
-timeline, and cartography. This can be modified by selecting a tab.
+timeline, and cartography. You can modify this by selecting a tab.
 
 ![](/images/pingcastle/enterpriseuser/image34.webp)
 
@@ -473,8 +446,7 @@ Last report tab:
 The full detail of the last report performed is accessible in this tab,
 though it isn't shown here.
 
-By default when there is a list of users, the output is limited to 100
-users.
+By default, when there is a list of users, the application limits the output to 100 users.
 
 ![](/images/pingcastle/enterpriseuser/image36.webp)
 
@@ -508,25 +480,19 @@ Cartography tab:
 
 There are two ways to create a Domain in PingCastle Enterprise:
 
-- Automatic creation is performed when a report is imported within the
-  solution. Its status is then automatically set on \"Auto-Created\",
-  which is something that needs to be changed manually (see the
-  \"Status\" chapter for more details)
+- The application creates a domain automatically when you import a report into the solution. It then sets the status to \"Auto-Created\", which you must change manually (see the \"Status\" chapter for more details)
 
-- Manual creation of a domain, when you want to import a report for this
-  domain for instance. It is done by clicking on the related button.
+- Manual creation of a domain, when you want to import a report for this domain for instance. You do this by clicking the related button.
 
 ![](/images/pingcastle/enterpriseuser/image41.webp)
 
-It brings the user on a page with information that needs to be filled :
+It brings the user to a page with information to fill in:
 
 - Domain FQDN(\*): Name of the domain. If you want to import related to
-  this domain, it is best to set the same name so the information will
-  be updated automatically
+  this domain, it is best to set the same name so the application updates the information automatically
 
 - Domain SID: Only used to differentiate rare cases where two domains
-  have the same FQDN. Status: Status of the domain, that need to be
-  modified by the user when needed. See next chapter for full
+  have the same FQDN. Status: Status of the domain, which the user must modify when needed. See next chapter for full
   explanation
 
 - Entity: Entity to which the created domains belongs. Assigning
@@ -538,48 +504,35 @@ It brings the user on a page with information that needs to be filled :
 
 ![](/images/pingcastle/enterpriseuser/image42.webp)
 
-A domain can't be hard-deleted (unless it has been added manually by
-mistake, meaning that it is in no way connected to any other existing
-domain or report). Though, you can soft-delete a domain by
-changing its status.
+You can't hard-delete a domain (unless you added it manually by mistake, meaning it is in no way connected to any other existing domain or report). However, you can soft-delete a domain by changing its status.
 
 **Status of a domain**
 
 The domain status follows a basic lifecycle, as shown in the following graph.
 
-The default status is \"Auto Created\", and every change must be done
-manually when required.
+The default status is \"Auto Created\", and you must make every change manually when required.
 
 ![](/images/pingcastle/enterpriseuser/image43.webp)
 
-- Auto Created: The domain has been created automatically by the
-  PingCastle Enterprise solution, which means it is connected to another
-  domain which you are monitoring. It is mandatory that you act on this
-  domain status, as the \"Auto Created\" status shouldn't remain.
+- Auto Created: The PingCastle Enterprise solution created the domain automatically, which means it is connected to another domain you are monitoring. You must act on this domain status, as the \"Auto Created\" status shouldn't remain.
 
 - Active: Normal status of a domain when it is monitored by the
   PingCastle Enterprise solution
 
-- Derogation: Special status used to identify domains that will be
-  ignored in the statistics and score calculation. This should be use
+- Derogation: Special status used to identify domains that the application ignores in the statistics and score calculation. This should be use
   cautiously and only in very specific cases, such as when a domain is
   being deleted or during a migration.
 
-- Removed: Status used to simulate a hard-deletion. This status should
-  be set when the domain no longer exists within your AD.
+- Removed: Status used to simulate a hard-deletion. Set this status when the domain no longer exists within your AD.
 
-- Out of Scope: Status used to simulate a hard-deletion. This status
-  should be set when the domain is no actually belonging to your
-  organization and shouldn't be followed by your company.
+- Out of Scope: Status used to simulate a hard-deletion. Set this status when the domain doesn't actually belong to your organization and your company shouldn't follow it.
 
 ## Forest
 
-A Forest is a set of domains, containing a root and child domains. When
-a child domain is discovered, the root domain is set as a root of a
-forest and is displayed in the Domains -\> Forests. A list of forest
-discovered is displayed and a special view is available.
+A Forest is a set of domains, containing a root and child domains. When the application discovers a child domain, it sets the root domain as a root of a
+forest and displays it in Domains -\> Forests. It displays a list of discovered forests, and a special view is available.
 
-7.  Use this area to understand how the domains are interconnected with each other.
+7.  Use this area to understand how the domains are interconnected.
 
 ## Cartography
 
@@ -587,19 +540,16 @@ discovered is displayed and a special view is available.
 
 Use each cartography to navigate between domains. A mouse over on
 a domain displays a tooltip containing many information regarding the
-domain like its score or its entity. A double click opens the domain if
-the user is authorized to access to it.
+domain like its score or its entity. A double click opens the domain if the user can access it.
 
-The cartography is domain relative, which means that one cartography is
-created for each report. Doing so, PingCastle Enterprise can display the
+The cartography is domain relative, which means the application creates one cartography for each report. Doing so, PingCastle Enterprise can display the
 list of all the domains that a specific domain can see.
 
 **Methodology used to build the maps**
 
 PingCastle uses the data in the report from the most reliable source to the least reliable source, in the following order:
 
-1.  The most reliable source is domain where the report has been
-    generated.
+1.  The most reliable source is the domain where PingCastle generated the report.
 
 2.  The tool uses direct [trust
     data](https://msdn.microsoft.com/en-us/library/cc223765.aspx).
@@ -616,7 +566,7 @@ PingCastle uses the data in the report from the most reliable source to the leas
     examining trusts. This information can add the Netbios name or the
     forest name of a trusted domain.
 
-5.  If the "reachable" option is set when producing a report, the
+5.  If you set the "reachable" option when producing a report, the
     tool uses domain SIDs found (in [foreign security
     principals](https://msdn.microsoft.com/en-us/library/cc223700.aspx) or [sid
     history](<https://msdn.microsoft.com/en-us/library/ms679833(v=vs.85).aspx>))
@@ -638,8 +588,7 @@ view exists. The program identifies by default the domain with the most
 trust relationships and put it at the center. Then it proceeds by radius
 by selecting its direct neighbors.
 
-Therefore, only domains connected directly through one trust to the main
-domain are shown.
+Therefore, the view shows only domains connected directly through one trust to the main domain.
 
 ## Domain events
 
@@ -652,16 +601,12 @@ The events that you can view are the following:
 Domain event:
 
 There has been a change on a domain within a specific perimeter in the
-PingCastle Enterprise solution. It can be a domain that has been added
-by a user, a domain that has been discovered after importing a report, a
-status change, etc.
+PingCastle Enterprise solution. It can be a domain that a user added, a domain discovered after importing a report, a status change, etc.
 
 Risk event:
 
 There has been a change in the risks followed by the PingCastle
-Enterprise solution. It either means that a new risk has been discovered
-and that it should be followed by the user, or that a risk has been
-cleared and that the overall level of security improved. It can also
+Enterprise solution. It either means the application discovered a new risk that the user should follow, or cleared a risk so the overall level of security improved. It can also
 mean that a risk is set on an exception status.
 
 Trust event:
@@ -673,16 +618,11 @@ that an existing trust has been modified.
 
 Technical event:
 
-There has been a significant technical change modifying the global level
-of security, but which isn't yet covered by the existing rules. This is
-a very rare event and it isn't likely that you have this kind of event.
+There has been a significant technical change modifying the global level of security, but which the existing rules don't yet cover. This is a very rare event, and you probably won't see this kind of event.
 
 # Tool configuration (\"Configuration\")
 
-The \"Configuration\" view of the PingCastle Enterprise application
-allows the user to set up all the tool to be able to use it
-completely. It is also in this view that the user will be able to
-personalize settings so that the tool fits more the Company needs.
+The \"Configuration\" view of the PingCastle Enterprise application lets the user set up the tool completely. In this view, the user can also personalize settings so the tool better fits the Company needs.
 
 ## Entities
 
@@ -694,8 +634,7 @@ entities within the company.
 Use entities to best represent the company organization, so that the AD configuration matches the company
 configuration.
 
-8.  You can also use entities to identify administrators for specific perimeters, meaning that these
-    administrators will be operating on defined domains.
+8.  You can also use entities to identify administrators for specific perimeters, meaning these administrators will operate on defined domains.
 
 **Add new entity**
 
@@ -715,11 +654,7 @@ Example to show how to reorganize entities:
 
 **Details of an Entity**
 
-Each entity has a dedicated \"Details\" page that contains information.
-It is on this page that you can have access to all the information of
-the Entity, including the Owner permissions. It is also here that you
-can edit these rights, to establish which key people will be
-accountable for a specified entity.
+Each entity has a dedicated \"Details\" page that contains information. On this page, you can access all the information of the Entity, including the Owner permissions. Here you can also edit these rights to establish which key people will be accountable for a specified entity.
 
 For instance, the page for PingCastle Enterprise entity:
 
@@ -727,21 +662,18 @@ For instance, the page for PingCastle Enterprise entity:
 
 ## Action plans management
 
-This part enables administrator to configure remediation schedule so it
-can be displayed into reports.
+This part enables administrator to configure remediation schedule so reports can display it.
 
 ![Une image contenant texte Description générée
 automatiquement](/images/pingcastle/enterpriseuser/image51.webp)
 
-It is actionable directly in the domain details where the rules are
-being displayed:
+It is actionable directly in the domain details where the rules appear:
 
 ![Une image contenant texte Description générée
 automatiquement](/images/pingcastle/enterpriseuser/image52.webp)
 
 pay attention to the next chart. It represents the evolution of
-the number of rules per maturity level. Because an action plan has been
-defined, a vertifical line represents today. Everything at the right is
+the number of rules per maturity level. Because you defined an action plan, a vertical line represents today. Everything at the right is
 the projected evolution of the maturity level based on the action items.
 
 ![](/images/pingcastle/enterpriseuser/image53.webp)
@@ -749,51 +681,39 @@ the projected evolution of the maturity level based on the action items.
 **Exceptions management**
 
 This part enables administrator to configure PingCastle Enterprise so
-that it adapts to the company specific context. It is indeed possible to
-configure how PingCastle Enterprise handles exceptions specific to your
-perimeter.
+that it adapts to the company specific context. You can configure how PingCastle Enterprise handles exceptions specific to your perimeter.
 
 ![](/images/pingcastle/enterpriseuser/image54.webp)
 
 **Rule exceptions**
 
-\"Rule exceptions\" can be set to completely disable a rule
-within a specific domain. It means that this rule will not be applied
-for a certain period, that you have to specify.
+You can set \"Rule exceptions\" to completely disable a rule within a specific domain. It means the application will not apply this rule for a certain period that you specify.
 
-1.  This should be use only when for very specific reasons, such as when
+1.  Use this only for very specific reasons, such as when
     a rule doesn't apply in your organization.
 
 Contact the PingCastle editors if you have doubts or require extra assistance about exception management.
 
-As a precision: if no start date and no end date is defined, the
-exception is applied for all reports. If a start date is defined but no
-end date, the exception is applied starting the start date. Same for the
-opposite case. When both start and end date are defined, the exception
-is applied only during a limited moment.
+For clarity: if you define no start date and no end date, the exception applies to all reports. If you define a start date but no end date, the exception applies starting from the start date. The same holds for the opposite case. When you define both start and end dates, the exception applies only during a limited period.
 
 **Migration**
 
 In the same idea you can set exceptions for specific domain, you can
 inform it in the application when one of your domains is migrating. It
-will automatically put in place a set of exceptions during the timetable
-the migration is happening.
+automatically applies a set of exceptions during the timetable the migration is happening.
 
 **Bulk actions**
 
-If many exceptions needs to be created or removed, there is an option
-available to create or remove exceptions in bulk.
+If you need to create or remove many exceptions, an option is available to create or remove exceptions in bulk.
 
 :::note
-If an exception already exists, it will not be created again.
+If an exception already exists, the application will not create it again.
 :::
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseuser/image55.webp)
 
 :::note
-Since PingCastle 2.11, all exceptions, migration, or action plans
-are tracked with their creation or last modification date and the user
-which performed this change.
+Since PingCastle 2.11, the application tracks all exceptions, migration, or action plans with their creation or last modification date and the user who performed this change.
 :::
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseuser/image56.webp)
@@ -802,10 +722,7 @@ which performed this change.
 
 PingCastle Enterprise allows administrators to consult all report data and make decisions.
 
-9.  Therefore, it isn't yet possible to launch scans and so directly
-    from the application, so it is required to launch the PingCastle
-    tool in standalone mode and to then import the report that are
-    produced that way.
+9.  Therefore, you can't yet launch scans directly from the application, so you must launch the PingCastle tool in standalone mode and then import the reports it produces that way.
 
 There are two way for doing so:
 
@@ -816,11 +733,9 @@ After you are on the page, you can drag and drop any file produced
 by the PingCastle standalone executable and it will upload to the
 PingCastle Enterprise solution.
 
-After it is done, the file will be marked with either a success or a
-failure.
+After it is done, the application marks the file with either a success or a failure.
 
-In case of a failure, a mouse over can display the associated error
-message to help you in the process of uploading the file.
+In case of a failure, a mouse over can display the associated error message to help you upload the file.
 
 Import page:
 
@@ -840,14 +755,11 @@ to reach the creation page.
 
 ![](/images/pingcastle/enterpriseuser/image60.webp)
 
-To map the agent to a responsible, the Owner field must be completed. It
-can be an entity or a domain, such as the \"default\" entity.
+To map the agent to a responsible, complete the Owner field. It can be an entity or a domain, such as the \"default\" entity.
 
-The API key is generated automatically but can be changed if the
-complexity requirements are met.
+The application generates the API key automatically, but you can change it if it meets the complexity requirements.
 
-After this is set up correctly, you can directly upload reports
-automatically using the command:
+After you set this up correctly, you can upload reports automatically using the command:
 
 ```bash
 pingcastle --healthcheck --api-endpoint <endpoint> --api-key <key>
@@ -855,14 +767,13 @@ pingcastle --healthcheck --api-endpoint <endpoint> --api-key <key>
 
 ![](/images/pingcastle/enterpriseuser/image61.webp)
 
-10. By default, all detailed information will be filtered. To avoid this
-    behavior, the command line can to be changed to:
+10. By default, the application filters all detailed information. To avoid this behavior, change the command line to:
 
 ```bash
 pingcastle --healthcheck --api-endpoint <endpoint> --api-key <key> --level Full
 ```
 
-The API can be browsed using the link found in the agent page:
+You can browse the API using the link found in the agent page:
 
 ![](/images/pingcastle/enterpriseuser/image62.webp)
 
@@ -881,8 +792,7 @@ all reports\" to reach the page:
 
 # Manage Accounts
 
-In this section, you will be introduced to how to manage your own
-account as well as how administrators can manage other accounts.
+This section introduces how to manage your own account and how administrators can manage other accounts.
 
 ## Manage My Account
 

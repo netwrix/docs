@@ -113,7 +113,7 @@ Click **New registration** from the toolbar at the top. A **Register an app** di
 Add a name but also the redirect Uri.
 
 :::note
-The redirect URI must point to the fully qualified domain name (FQDN) of the server that is being accessed. It must start with HTTPS and end with `/signin-oidc`.
+The redirect URI must point to the fully qualified domain name (FQDN) of the server you are accessing. It must start with HTTPS and end with `/signin-oidc`.
 :::
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image7.webp)
@@ -123,7 +123,7 @@ flows".
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image8.webp)
 
-After the app is created, open the app by clicking on its name and copy
+After you create the app, open the app by clicking on its name and copy
 ClientID and TenantID and keep it with you.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image9.webp)
@@ -155,8 +155,8 @@ Select "Basic"and let the installation proceed.
 
 # Quick Installation
 
-PingCastle Pro supports a setup where the requirements and manipulations
-have been minimized. This scenario is recommended for tests but not in
+PingCastle Pro supports a setup that minimizes the requirements and
+manipulations. Netwrix recommends this scenario for tests but not in
 production because all IIS and SQL Server upgrade mechanisms aren't
 supported.
 
@@ -176,9 +176,8 @@ It requires:
 
 > ![A screenshot of a computer Description automatically generated](/images/pingcastle/proinstall/image13.webp)
 
-1.  IIS should be installed before the ASP.NET 8.0 Hosting Bundle. If
-    not, then the Hosting Bundle installation may be required to be
-    repaired.
+1.  Install IIS before the ASP.NET 8.0 Hosting Bundle. If you don't, you
+    may need to repair the Hosting Bundle installation.
 
 ![A screenshot of a computer Description automatically generated](/images/pingcastle/proinstall/image14.webp)
 
@@ -186,8 +185,8 @@ It requires:
 
 Before starting the setup, provide the Tenant ID and Client ID of the application.
 
-The Client Secret, Notification group, and SMTP configuration is
-optional and can be modified later in the appsettings.Production.json
+The Client Secret, Notification group, and SMTP configuration are
+optional; you can modify them later in the appsettings.Production.json
 file.
 
 ## Procedure
@@ -198,12 +197,12 @@ The Windows Installer (MSI) file guides the installation of the software:
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image16.webp)
 
-After the license terms are accepted, the software requires a license key
-which should have been distributed alongside the MSI files.
+After you accept the license terms, the software requires a license key
+that should have been distributed alongside the MSI files.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image17.webp)
 
-3.  If the license key is missing, reach out PingCastle support.
+3.  If the license key is missing, contact PingCastle support.
 
 There are two options to configure the database:
 
@@ -222,7 +221,7 @@ Option with the direct connection string:
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image20.webp)
 
-Then the authentication configuration is asked.
+Then the setup asks for the authentication configuration.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image21.webp)
 
@@ -243,9 +242,9 @@ entered here.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image24.webp)
 
-To send email notification, the SMTP configuration can be set. The email
-addresses that will received the email notifications has to be entered
-here as "destination email".
+To send email notifications, you can set the SMTP configuration. Enter
+the email addresses that will receive the email notifications here as
+"destination email".
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image25.webp)
 
@@ -253,11 +252,11 @@ Then the setup is ready to perform its activity.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image26.webp)
 
-The setup configures automatically the website, the database, the
-application and if the database is being created, grant the permission
-to the database to IIS (application pool)
+The setup automatically configures the website, the database, and the
+application, and if it creates the database, grants the database
+permission to IIS (application pool)
 
-4.  When the software is removed, the setup doesn't remove the
+4.  When you remove the software, the setup doesn't remove the
     database.
 
 # Post installation
@@ -329,7 +328,7 @@ are referenced in the following list:
 > Host ASP.NET Core on Linux with Apache\
 > https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/linux-apache
 
-5.  Upload quota may be changed to allow large file upload in the
+5.  You can change the upload quota to allow large file uploads in
     Interoperability mode
 
 :::note
@@ -343,25 +342,24 @@ start automatically.
 
 ## Database
 
-Configuring the backup of the database is under the responsibility of
-the customer.
+Configuring the database backup is the customer's responsibility.
 
 PingCastle Pro requires a user account on this database. By default,
 PingCastle Pro creates the tables at the initial run and can add or
-modify existing tables when a software update is designed. If this
-default pattern is used, the database user MUST be owner of the
+modify existing tables when a software update is designed. If you use
+this default pattern, the database user MUST be owner of the
 database.
 
 PingCastle Pro supports limited privileges on the database (only read /
-modify / delete data is required) on demand. In this case, a Sql script
-is provided to apply database change before a software update is
-applied.
+modify / delete data is required) on demand. In this case, Netwrix
+provides a SQL script to apply database changes before you apply a
+software update.
 
-When run on IIS, PingCastle run in an application pool which needs to be
-granted privileges on the database.
+When run on IIS, PingCastle runs in an application pool that needs
+privileges on the database.
 
 :::note
-The application pool uses a special Windows account that needs to be created manually.
+The application pool uses a special Windows account that you must create manually.
 :::
 
 The following SQL can grant these permissions:
@@ -410,7 +408,7 @@ Select SQL Server authentication.
 
 Be sure to uncheck "user must change password at the next login" as
 PingCastleEnterprise doesn't support password rotation. (you can change
-later the password inside the application.Production.json file)
+the password later inside the application.Production.json file)
 
 ![Une image contenant texte, capture d'écran, logiciel, Icône d'ordinateur Description générée automatiquement](/images/pingcastle/proinstall/image36.webp)
 
@@ -430,7 +428,7 @@ before continuing.
 ![Une image contenant texte, capture d'écran, nombre, affichage Description générée automatiquement](/images/pingcastle/proinstall/image39.webp)
 
 In SQL Server configuration, a typical mistake is to use tcp connection.
-TCP/IP needs to be enabled manually in SQL Server as it is disabled by
+You must enable TCP/IP manually in SQL Server because it is disabled by
 default.
 
 ![Une image contenant texte, capture d'écran, Police, logiciel Description générée automatiquement](/images/pingcastle/proinstall/image40.webp)
@@ -447,7 +445,7 @@ Server=tcp:server.fqdn.com;Database=PingCastle;User Id=pingcastle;password=pingc
 ```
 
 The server doesn't create the database at installation time. Any issues appear on first run. Check the event log for the full error message. You can
-change the connection string after installation by editing `appsettings.production.json`. Special characters in the connection string must be escaped because the value is inside a JSON string.
+change the connection string after installation by editing `appsettings.production.json`. You must escape special characters in the connection string because the value is inside a JSON string.
 
 ![Une image contenant texte, capture d'écran, Police Description générée automatiquement](/images/pingcastle/proinstall/image42.webp)
 
@@ -483,7 +481,7 @@ Server=tcp:server.fqdn.com;Database=PingCastle;Trusted_Connection=True;MultipleA
 
 The installation continues.
 
-After the installation, another steep need to be done: you need to
+After the installation, you need to
 change the Application Pool identity.\
 Go to IIS and select the application pool. Go to the advanced settings
 
@@ -506,14 +504,14 @@ Two settings are needed for the application: the database and the
 license information.
 
 To change the database type, change the \"database\" settings. 
-the following values are supported:
+PingCastle Pro supports the following values:
 
 - sqlserver
 
 - postgres
 
-To connect to the database a \"connection string\" must be used and
-provided in the \"DefaultConnection\" parameter.
+To connect to the database, provide a \"connection string\" in the
+\"DefaultConnection\" parameter.
 
 7.  The connection string are stored in json and must be properly
     escaped like \"\\\" into \"\\\\\". Same for double quotes.
@@ -549,25 +547,25 @@ server. This isn't mandatory.
 
 The host and port is the address of the smtp server.
 
-The email functionality is used send notification such as weekly
+The email functionality sends notifications such as weekly
 reports.
 
 ## Azure hosting
 
-PingCastle Pro is known to work with Azure. In that case a managed
-application has to be created and a database.
+PingCastle Pro is known to work with Azure. In that case, you must
+create a managed application and a database.
 
-Then the configuration of the application needs to be replicated into
+Then you must replicate the application configuration into
 the Azure Configuration page.
 
-The minimal required fields to be configured are: database, license, and
-the connection string, named as "DefaultConnection".
+The minimal required fields are: database, license, and
+the connection string, named "DefaultConnection".
 
 ![](/images/pingcastle/proinstall/image50.webp)
 
 # Initial startup
 
-At the first run of the application, the database is created. If there
+At the first run, the application creates the database. If there
 is an error with the database (missing right, invalid connection string)
 or hosting, the next screen doesn't appear.
 
@@ -620,13 +618,13 @@ pingcastle.exe --upload-all-reports --api-endpoint https://endpoint.com --api-ke
 
 **Quick installation**
 
-PingCastle allows the possibility to the administrator of the
-application to schedule scans. It is useful when the solution is
-installed in a central forest and the need is to scan all child domains.
+PingCastle lets the application administrator schedule scans. It is
+useful when you install the solution in a central forest and need to
+scan all child domains.
 
 By default, PingCastle is running as a limited user. It can't access
-the network nor modify system settings. To use the scheduler,
-permissions need to be changed.
+the network nor modify system settings. To use the scheduler, you
+must change permissions.
 
 The easiest way is to change the user from Application to LocalSystem.
 
@@ -655,9 +653,9 @@ the access to the task scheduler can't be delegated.
 PingCastle uses a folder named "PingCastle" in the task scheduler. The COM API exposes the security descriptor, which the native PowerShell API doesn't.
 :::
 
-If you want PingCastle to be able to start or stop tasks but not being
-able to edit them (it requires that the account is local admin), you
-need to delegate the permission to start and run tasks. You can perform
+If you want PingCastle to start or stop tasks but not edit them (which
+requires the account to be local admin), you need to delegate the
+permission to start and run tasks. You can perform
 the following actions as admin in powershell:
 
 ```powershell
@@ -674,27 +672,26 @@ $PingCastleFolder.GetTasks(1) | Foreach-Object {
 }
 ```
 
-8.  ;S-1-XXX-XXX-XXX need to be replaced by the SID of the account
+8.  Replace ;S-1-XXX-XXX-XXX with the SID of the account
     running the PingCastle web application.
 
 ## Task edition
 
-Tasks can be modified outside of the PingCastle application. To be
+You can modify tasks outside of the PingCastle application. To be
 listed here, the application checks that this is a weekly schedule on
 one selected day and that the action is matching classical command line
-options. That means that \--server can be modified, or additional
-parameters added (for example \--log-console). The identity running the
-scheduled task can also be modified (default is system)
+options. That means you can modify \--server or add additional
+parameters (for example \--log-console). You can also modify the identity
+running the scheduled task (default is system)
 
-However if the task is edited within the web application, customization
-will be overwritten.
+However, if you edit the task within the web application, it overwrites
+your customizations.
 
 # PingCastle "agent" deployment
 
-To avoid any hole in security architecture, it was chosen to allow
-PingCastle to run scans outside the web application. That means that in
-this case the local domains have to push their information into
-PingCastle Enterprise.
+To avoid any gap in the security architecture, PingCastle can run scans
+outside the web application. That means that in this case the local
+domains have to push their information into PingCastle Enterprise.
 
 ## Program
 
@@ -703,7 +700,7 @@ PingCastle.exe program delivered in the same directory than the
 PingCastleEnterprise is suitable for use.
 
 :::note
-PingCastle Enterprise supports running the PingCastle audit program at a higher or lower version. If new features have been added, they will not be visible unless the PingCastle Enterprise program is updated, but no data will be lost in the mean time.
+PingCastle Enterprise supports running the PingCastle audit program at a higher or lower version. If new features have been added, they will not be visible unless you update the PingCastle Enterprise program, but you lose no data meanwhile.
 :::
 
 ## Schedule
@@ -752,7 +749,7 @@ dotnet.exe PingCastlePro.dll
 
 **(dotnet.exe is stored by default on c:\\program files\\dotnet)**
 
-Additionnally, you can choose to open the application on the network by
+Additionnally, you can open the application on the network by
 specifying the \--server.urls parameter:
 
 ```bash
@@ -760,13 +757,13 @@ dotnet.exe PingCastlePro.dll --server.urls=http://*:8080
 ```
 
 However, if there is a permission problem in the database, this method
-won\'t display an error because the database will be connected under the
-user context and not the system context. Typically on Windows, the IIS
+won\'t display an error because the database connects under the user
+context, not the system context. Typically on Windows, the IIS
 service connect under IIS APPPool\\AppName. To grant rights to the application pool account on SQL Server, see [How to add the ApplicationPoolIdentity to a SQL Server login](https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login).
 
 Then depending on the platform additional logs can be stored.
 
-On Windows, the web.config file at the root can be edited to generate
+On Windows, you can edit the web.config file at the root to generate
 debug logs. The event viewer is also a place where debugging data can be
 stored.
 
@@ -776,8 +773,8 @@ service, the log is shown.
 
 ![](/images/pingcastle/proinstall/image56.webp)
 
-When no log is available, the program can be run manually outside of the
-service scope to have a more detailed error message.
+When no log is available, you can run the program manually outside of the
+service scope to get a more detailed error message.
 
 Example:
 
@@ -802,8 +799,8 @@ And the message when running on the command line:
 
 ![](/images/pingcastle/proinstall/image62.webp)Solution:
 
-identify the correct version of the framework and install it. Don't
-forget to install the IIS middleware is you are installing on IIS.
+identify the correct version of the framework and install it. Install
+the IIS middleware if you are installing on IIS.
 
 :::note
 The last error was related to the missing KB KB2533623
@@ -811,26 +808,26 @@ The last error was related to the missing KB KB2533623
 
 ## Error at the application startup
 
-When the application is unable to start, the following message are
-shown:
+When the application is unable to start, the following messages
+appear:
 
 ![C:\Users\Adiant\AppData\Local\Temp\brower_error.webp](/images/pingcastle/proinstall/image63.webp)
 
 ![C:\Users\Adiant\AppData\Local\Temp\event1000.webp](/images/pingcastle/proinstall/image64.webp)
 
-A more detailed message are shown in the event log or directly on the
+A more detailed message appears in the event log or directly on the
 command line:
 
 ![C:\Users\Adiant\AppData\Local\Temp\event1026.webp](/images/pingcastle/proinstall/image65.webp)
 
-In this case, the license was invalid and need to be replaced in the
+In this case, the license was invalid and you must replace it in the
 file appsettings.Production.json.
 
 ## Accurate permissions on the database
 
 When the database doesn\'t contain the table needed, the application
-tries to create them. If the permissions aren't granted, a message will
-be generated and the application will not be able to start.
+tries to create them. If you haven't granted the permissions, PingCastle
+generates a message and the application can't start.
 
 ![C:\Users\Adiant\AppData\Local\Temp\sql_auth_error.webp](/images/pingcastle/proinstall/image66.webp)
 
@@ -842,7 +839,7 @@ create this table. This script is available on demand.
 The inability to create tables is a symptom of insufficient permissions. If the application pool identity can't add or remove records in the database, the application can't start.
 
 If you are running PingCastle from another SQL Server, the default
-identity used by the application pool will not be granted access.
+identity used by the application pool won't have access.
 
 Be sure you can connect from another computer than your SQL
 database server. Indeed, by default you have a firewall preventing
@@ -855,8 +852,8 @@ forbidden because TCP/IP is disabled)
 You have 2 solutions to grant PingCastle an identity allowed on SQL
 Server:
 
-- Changing the application pool identity to match an active directory
-  user which are granted permissions to the database
+- Changing the application pool identity to match an Active Directory
+  user that has permissions to the database
 
 ![](/images/pingcastle/proinstall/image68.webp)
 
