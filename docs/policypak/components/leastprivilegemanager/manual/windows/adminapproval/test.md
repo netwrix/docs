@@ -21,7 +21,6 @@ If you (the admin) are on the machine, you may use your credentials by clicking 
 **Approve with alternate Admin Credentials**.
 :::
 
-
 The Admin Approval Tool can be run in three ways:
 
 - As a standalone tool in the Extras folder from the PolicyPak download (shown here)
@@ -44,7 +43,6 @@ open the Admin machine from which the tool was run and use regedit.exe to
 remove the two keys located at `HKEY_CURRENT_USER\SOFTWARE\PolicyPak` named `GlobalSecurityKey` and
 `GlobalSecurityKeyChecksum`.
 :::
-
 
 After you click **OK**, you’ll be in the main Admin Approval Tool, seen here. Here is where you can
 accept the Request (Challenge) Code from the user and return a **Response Code**. Type
@@ -72,8 +70,6 @@ When an administrator uses the Admin Approval Tool to respond to a user's reques
 long), the tool includes an **Action** dropdown that controls how the approved application
 launches on the endpoint.
 
-<!-- TODO: Add screenshot of the Admin Approval Tool showing the Action dropdown -->
-
 The **Action** dropdown contains two options:
 
 | Option | Behavior |
@@ -96,7 +92,6 @@ CSE, so administrators can use an updated Admin Approval Tool against endpoints 
 CSE versions without breaking the approval workflow. Older CSE versions process the response
 code as a standard approval, equivalent to **Allow**.
 
-
 After filling in these options, assign a value to the **Response Code** and the application will
 launch.
 
@@ -114,6 +109,4 @@ You can also see and launch the Admin Approval Tool from within a GPO, provided 
 key inside the GPO, as seen here.
 
 ![A computer screen shot of a computer screen Description automatically generated](/images/policypak/leastprivilege/adminapproval/testing_admin_approval_4.webp)
-
-
 

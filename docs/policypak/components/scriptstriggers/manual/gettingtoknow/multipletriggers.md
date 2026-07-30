@@ -16,8 +16,6 @@ creating separate duplicate policies for each event.
 The **Trigger settings** page of the wizard includes two modes, selected via radio buttons at
 the top:
 
-<!-- TODO: Add screenshot of Trigger settings page showing the Multiply and Single radio buttons and the New Item dropdown with all available trigger types -->
-
 | Mode | Behavior |
 |---|---|
 | **Multiply (recommended)** | The policy runs once for **each** matching trigger that fires. If two triggers are configured and both fire during a session, the script runs twice. |
@@ -66,8 +64,6 @@ Package Manager policies doesn't offer it as an option.
 The **Schedule** trigger fires a script at a specific date and time rather than in response to a
 system event. When you add a Schedule trigger, a configuration panel appears in the lower half of
 the page.
-
-<!-- TODO: Add screenshot of Schedule trigger configuration showing One time selected, Start at date and time, Use time zone option with timezone dropdown, Use local PC time option, and the Run as soon as possible after a scheduled start is missed checkbox -->
 
 ### Schedule Type
 
@@ -126,8 +122,6 @@ To add more than one trigger to a policy:
 trigger you want to add.
 
 Each added trigger appears as a row in the list with a short description of when it fires.
-
-<!-- TODO: Add screenshot of Trigger settings page showing two triggers added: Logon and Logoff, each with its description -->
 
 **Step 5 –** To remove a trigger, select its row and click **Delete**.
 

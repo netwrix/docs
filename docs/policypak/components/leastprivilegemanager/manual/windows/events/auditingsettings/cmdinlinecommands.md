@@ -32,8 +32,6 @@ of the Global Settings Policy editor. It supports three states:
 | **Disabled** | Auditing is explicitly turned off, overriding any inherited configuration. |
 | **Enabled** | PolicyPak writes an audit event to the event log each time a command prompt inline command runs that would be blocked by SecureRun™. The command isn't blocked at this stage — events are for discovery only. |
 
-<!-- TODO: Add screenshot of Global Settings — Logging and Audit tab showing Audit Command Prompt inline commands set to Not Configured alongside the other four audit settings -->
-
 To enable the setting:
 
 1. In the **Local Group Policy Editor**, navigate to
@@ -102,8 +100,6 @@ Use the **Command Line** field to identify the exact inline command that would h
 and the **Owner SID / Owner Name** and **User SID / User Name** fields to understand which user
 context triggered the event. The **Process Path** and **Parent Id** fields help identify the
 parent process conditions (elevated, signed, trusted) that weren't satisfied.
-
-<!-- TODO: Add screenshot of Event 6211 in the PolicyPak event log -->
 
 ## Limitation: Legacy SecureRun™ Processing Method
 

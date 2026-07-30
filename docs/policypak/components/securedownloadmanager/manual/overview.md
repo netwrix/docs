@@ -52,8 +52,6 @@ Before configuring Secure Download Manager, understand its components:
   you create GPOs. Once installed, you see the **PolicyPak | Secure Download Manager** node
   under **Computer Configuration** in the Group Policy editor.
 
-<!-- TODO: Add screenshot of the Secure Download Manager node in the Local Group Policy Editor, under Computer Configuration > PolicyPak -->
-
 - **PolicyPak CSE.** The client-side extension runs on each target endpoint and is the same CSE
   used by all PolicyPak components. No separate CSE is required for Secure Download Manager.
 

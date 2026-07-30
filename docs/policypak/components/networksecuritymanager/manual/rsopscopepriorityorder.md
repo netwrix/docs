@@ -72,8 +72,6 @@ When set to **Enabled**, select the evaluation order you want from the dropdown:
 | **User, Machine, Switched** | User first, Switched last | Switched |
 | **User, Switched, Machine** | User first, Machine last | Machine |
 
-<!-- TODO: Add screenshot of the ADMX setting dialog showing the dropdown with all six permutations -->
-
 ## How Scope Precedence Works
 
 Network Security Manager merges its active policy scopes and evaluates them in the configured

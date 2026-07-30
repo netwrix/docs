@@ -24,8 +24,6 @@ To open Global Settings:
 
 ### General Tab
 
-<!-- TODO: Add screenshot of Secure Download Manager General Settings — General tab showing Enable toggle, Notification options, and Text customization fields -->
-
 The **General** tab contains three groups of settings.
 
 #### Main Settings
@@ -81,8 +79,6 @@ helpdesk request.
 
 ### Email Tab
 
-<!-- TODO: Add screenshot of Secure Download Manager General Settings — Email tab showing Use of email dropdown and Send To field -->
-
 The **Email** tab configures automatic alerts sent when a file execution is blocked. The alert
 contains extended information about the process and the blocked network activity.
 
@@ -112,8 +108,6 @@ To create an Exclusions Policy:
 
 1. In the **Actions** panel, click **Add New Exclusions Policy**.
 2. The **Secure Download Manager Exclusions Policy Editor** dialog opens.
-
-<!-- TODO: Add screenshot of Secure Download Manager Exclusions Policy Editor showing Policy Name, State, Scope, URL Pattern, File Extensions, and Item Level Targeting -->
 
 ### Exclusions Policy Fields
 
