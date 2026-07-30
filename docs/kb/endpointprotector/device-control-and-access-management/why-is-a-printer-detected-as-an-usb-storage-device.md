@@ -12,10 +12,11 @@ keywords:
   - operating system
   - data remanence
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Why Is a Printer Detected as an USB Storage Device
 tags:
   - device-control-and-access-management
+  - kb
 title: "Why Is a Printer Detected as an USB Storage Device?"
 knowledge_article_id: kA0Qk0000002BLzKAM
 ---

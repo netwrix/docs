@@ -16,11 +16,12 @@ keywords:
   - global settings
   - manage rights
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: Managing Network Share Rights in Device Control
 tags:
   - device-control-and-access-management
+  - kb
 title: "Managing Network Share Rights in Device Control"
 knowledge_article_id: kA0Qk0000002BHBKA2
 ---

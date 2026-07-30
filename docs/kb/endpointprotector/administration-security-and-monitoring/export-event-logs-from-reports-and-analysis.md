@@ -12,10 +12,11 @@ keywords:
   - logs
   - troubleshooting
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Export Event Logs from Reports and Analysis
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "Export Event Logs from Reports and Analysis"
 knowledge_article_id: kA0Qk0000002B13KAE
 ---

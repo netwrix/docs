@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Resolve HSTS Errors
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Resolve HSTS Web Browser Errors When Accessing Websites"
 knowledge_article_id: kA0Qk0000002B6dKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Resolve HSTS Web Browser Errors When Accessing Websites

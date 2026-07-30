@@ -9,11 +9,12 @@ keywords:
   - Linux
 sidebar_label: Restart EPP Client
 tags:
-  - enforced-encryption-and-easylock
+  - enforced-encryption-easylock
+  - kb
 title: "Restart the Client Without Restarting the Computer"
 knowledge_article_id: kA0Qk0000002B6QKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Restart the Client Without Restarting the Computer

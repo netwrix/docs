@@ -5,7 +5,7 @@ description: >-
   Enforced Encryption file tracing (including Offline File Tracing and File
   Shadowing).
 keywords:
-  - endpoint-protector
+  - endpointprotector
   - enforced-encryption
   - file-tracing
   - offline-file-tracing
@@ -16,10 +16,11 @@ keywords:
   - Endpoint-Protector-Client
   - auditing
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Managing Enforced Encryption and File Tracing Sett
 tags:
-  - enforced-encryption-and-easylock
+  - enforced-encryption-easylock
+  - kb
 title: "Managing Enforced Encryption and File Tracing Settings"
 knowledge_article_id: kA0Qk0000002BCkKAM
 ---
@@ -29,6 +30,8 @@ knowledge_article_id: kA0Qk0000002BCkKAM
 ## Overview
 
 The **Enforced Encryption Settings** section in Endpoint Protector allows remote management of encrypted devices. Before you use these features, you must configure a master password.
+
+For the full reference, see [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule) and [File Tracing and Shadowing](/docs/endpointprotector/admin/dc_module/globalsettings#file-tracing-and-shadowing) in the Global Settings documentation.
 
 ![Enforced Encryption Settings section in Endpoint Protector](./../0-images/ka0Qk000000FAYX_0EMQk00000CAOoY.png)
 
@@ -54,4 +57,6 @@ The **Offline File Tracing** option extends this functionality by storing inform
 
 Additionally, EasyLock performs file shadowing for files transferred if the Endpoint Protector Client is present and the **File Shadowing** option is enabled on the computer through the **Device Control** module. This is a real-time event, and no shadowing information is stored on the device.
 
-**NOTE:** Enabling global File Tracing does not automatically activate the File Tracing option on Enforced Encryption Trusted Device™ and vice versa.
+:::note
+Enabling global File Tracing does not automatically activate the File Tracing option on Enforced Encryption Trusted Device™ and vice versa. See [File Tracing and Shadowing](/docs/endpointprotector/admin/dc_module/globalsettings#file-tracing-and-shadowing) for the full set of related Device Control settings, including Advanced Printer and MTP Scanning, Advanced Scanning Exceptions, and Exclude Extensions from Shadowing.
+:::
