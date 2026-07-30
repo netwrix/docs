@@ -11,7 +11,7 @@ turn on SecureRun™ is going to make your machines more secure. However, that a
 users might not be able to perform some actions with these two security measures in place. To
 mitigate this, you may need to do some research to find out just what privileges your users require.
 PolicyPak Global Settings Policy lets you set up auditing to find out what
-applications require extra privileges from standard users. There are four choices:
+applications require extra privileges from standard users. There are five choices:
 
 - Audit applications requiring elevation - Help you learn, in advance of a transition, which items
   require rules and what items will need rules to overcome UAC prompts.
@@ -22,6 +22,10 @@ applications require extra privileges from standard users. There are four choice
   rules to overcome.
 - Audit unsigned applications - Help you learn, in advance or after a transition, which items that
   would be automatically blocked by SecureRun™ if trapping for unsigned applications.
+- Audit Command Prompt inline commands - Help you learn, in advance or after a transition, which
+  command prompt inline commands would be blocked by SecureRun™. See
+  [Discovery of CMD Inline Commands Blocked by SecureRun™](/docs/policypak/components/leastprivilegemanager/manual/windows/events/auditingsettings/cmdinlinecommands.md)
+  for details.
 
 To begin the discovery process you will add a New Global Settings Policy, which can be done on
 either user or computer side.

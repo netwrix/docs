@@ -22,4 +22,8 @@ Watch this video for an overview of See PolicyPak Software Package Manager:
 [PolicyPak Software Package Manager: AppX Manager](/docs/policypak/components/softwarepackage/videos/appxpoliciesitems/appxmanager.md)
 for additional information.
 
-
+:::note
+Software Package Manager supports assigning multiple triggers to a single policy. See
+[Using Multiple Triggers](/docs/policypak/components/scriptstriggers/manual/gettingtoknow/multipletriggers.md)
+for details.
+:::

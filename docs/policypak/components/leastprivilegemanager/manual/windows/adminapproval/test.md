@@ -56,6 +56,8 @@ in the **Request Code**, then pick the option that makes sense. The items you ca
 - Apply to child processes - Decide if you want the application to be able to launch child processes
   as Admin.
 - Expires - Choose if this code will expire in 10 minutes, 1 hour, 12 hours, or never.
+- Action - Choose how the approved application launches on the endpoint. See
+  [The Admin Approval Tool Action Dropdown](#the-admin-approval-tool-action-dropdown) below.
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/adminapproval/testing_admin_approval_2.webp)
 
@@ -63,6 +65,36 @@ in the **Request Code**, then pick the option that makes sense. The items you ca
 The Admin Approval Tool may be branded. See the section **Branding and Customization** in
 this guide.
 :::
+
+## The Admin Approval Tool — Action Dropdown
+
+When an administrator uses the Admin Approval Tool to respond to a user's request code (short or
+long), the tool includes an **Action** dropdown that controls how the approved application
+launches on the endpoint.
+
+<!-- TODO: Add screenshot of the Admin Approval Tool showing the Action dropdown -->
+
+The **Action** dropdown contains two options:
+
+| Option | Behavior |
+|---|---|
+| **Run as current User** | The application launches in the user's current security context without elevation. This is the **default** selection. |
+| **Run as Administrator** | The application launches elevated, regardless of whether a Least Privilege Manager elevation rule is in place. |
+
+### Default Behavior and Reset
+
+- **Run as current User** is selected by default each time the Admin Approval Tool opens.
+- The **Action** value resets to **Run as current User** automatically each time the request code
+  field changes, that is, each time the administrator pastes or types a new request code from a
+  user. This prevents accidentally applying a previously selected **Run as Administrator** action
+  to a different user's request.
+
+### Compatibility
+
+The **Action** dropdown is fully forward and backward compatible with the PolicyPak CSE.
+Administrators can safely use an updated Admin Approval Tool against endpoints running older CSE
+versions without breaking the approval workflow. Older CSE versions process the response code as
+a standard approval, equivalent to **Run as current User**, and produce no errors.
 
 
 After filling in these options, assign a value to the **Response Code** and the application will
