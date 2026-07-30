@@ -45,7 +45,7 @@ Follow the instructions to enable SIEM notifications.
 - Template Format – Selecting Custom template from the Template dropdown list enables this box. It
   displays the variables in Threat Manager that you can use to create a custom SIEM template:
 
-  All template variables are case-insensitive and wrapped in `%` delimiters (e.g., `%VARIABLE_NAME%`). The template replaces unresolved variables with an empty string.
+  The template treats all variables as case-insensitive and wraps them in `%` delimiters (e.g., `%VARIABLE_NAME%`). The template replaces unresolved variables with an empty string.
 
   **General Variables**
 
