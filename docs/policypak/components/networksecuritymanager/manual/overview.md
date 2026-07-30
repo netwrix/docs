@@ -61,14 +61,14 @@ After you select it, you can see your configurable options for the machines.
 
 ### Creating a Process Matching Policy
 
-Next you'll want to create a process matching policy. Again, these examples match on
+Next, create a process matching policy. Again, these examples match on
 Microsoft Edge.
 
 Create a New Policy, as shown here.
 
 ![nsm03](/images/policypak/scriptstriggers/nsm03.webp)
 
-Next you'll want to match a specific application. You can do this via Simple or Combo rules. This
+Next, match a specific application. You can do this via Simple or Combo rules. This
 example will use a Simple rule.
 
 :::info
@@ -104,7 +104,7 @@ On your endpoint which has the PolicyPak client-side extension (CSE) installed 
 reboot the machine to acquire the policies.
 
 When Edge launches, end users can't go to any network location, like
-Microsoft.com, but are restricted to the specific network location you specified, www.Netwrix.com.
+Microsoft.com, but can reach only the specific network location you specified, www.Netwrix.com.
 
 ![nsm09](/images/policypak/scriptstriggers/nsm09.webp)
 
@@ -126,7 +126,7 @@ In this example, both rules are set to Log.
 
 ![nsm11](/images/policypak/scriptstriggers/nsm11.webp)
 
-The results can be pretty noisy depending on the application. In this case, whenever Edge runs, you
+The results can be noisy depending on the application. In this case, whenever Edge runs, you
 get many Blocked events, as shown here.
 
 ![nsm12](/images/policypak/scriptstriggers/nsm12.webp)

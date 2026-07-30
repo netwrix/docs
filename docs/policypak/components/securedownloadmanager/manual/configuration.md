@@ -100,7 +100,7 @@ report alongside other component settings.
 
 ## Exclusions Policies
 
-An Exclusions Policy is a permissive rule that permits execution of a downloaded file that
+An Exclusions Policy is a rule that permits execution of a downloaded file that
 matches a specific source URL and/or file extension. Without a matching exclusion, Secure
 Download Manager blocks all files marked as downloaded from the internet.
 
@@ -127,7 +127,7 @@ for example `Allow downloads from Azure DevOps` or `Allow Office document types`
 
 **Scope**
 
-Controls which processes are covered by this exclusion:
+Controls which processes this exclusion covers:
 
 | Value | Behavior |
 |---|---|

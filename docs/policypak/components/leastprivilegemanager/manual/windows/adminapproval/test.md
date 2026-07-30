@@ -96,8 +96,8 @@ launch.
 
 ![A screenshot of a computer Description automatically generated](/images/policypak/leastprivilege/adminapproval/testing_admin_approval_3.webp)
 
-In this example, the code was set to be used one time, so if the user tries to rerun the
-same application, they are prompted again.
+In this example, you set the code to be used one time, so if the user tries to rerun the
+same application, PolicyPak prompts them again.
 
 Remember that an admin can run the Admin Approval Tool if the PolicyPak MMC snap-in is
 installed.
