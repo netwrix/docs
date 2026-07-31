@@ -42,11 +42,14 @@ Netwrix Privilege Secure for Access Management (NPS-AM) shows an authentication-
 
 ## Cause
 
-For customers running NPS-AM, RC4 dependency is most likely to affect one of two identities: the domain service account NPS-AM uses to communicate with Active Directory, or the NPS-AM resource's own computer account.
+For customers running NPS-AM, RC4 dependency is most likely to affect one of two identities:
+
+-   The domain service account NPS-AM uses to communicate with Active Directory
+-   The NPS-AM resource's own computer account
 
 ### The Domain Service Account NPS-AM Uses to Communicate with Active Directory
 
-This account follows the same risk profile as any other service account: if an administrator provisioned it long ago and configured it with a non-expiring password, it may still be carrying only an RC4-derived key regardless of how recently NPS-AM itself was upgraded or reconfigured. Conveniently, this account is easy to rule in or out: if it is stuck on RC4 and can no longer authenticate under an AES-only policy, NPS-AM will not just show a subtle symptom—it will typically fail to perform an AD sync entirely. A failed or failing AD sync immediately after you install KB5082142 is a strong, direct signal to check this account's `PasswordLastSet` and `msDS-SupportedEncryptionTypes` values first.
+This account follows the same risk profile as any other service account: if an administrator provisioned it long ago and configured it with a non-expiring password, it may still be carrying only an RC4-derived key regardless of how recently NPS-AM itself was upgraded or reconfigured. Conveniently, this account is easy to rule in or out. If it is stuck on RC4 and can no longer authenticate under an AES-only policy, NPS-AM will not just show a subtle symptom—it will typically fail to perform an AD sync entirely. A failed or failing AD sync immediately after you install KB5082142 is a strong, direct signal to check this account's `PasswordLastSet` and `msDS-SupportedEncryptionTypes` values first.
 
 ### The NPS-AM Resource Computer Account
 
