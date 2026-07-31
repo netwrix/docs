@@ -52,11 +52,12 @@ custom form.
     ![New User Access Change Request form](/images/platgovnetsuite/change_management/user_access_change_request.webp)
 
 2. Enter a descriptive **Name** and **Change Overview**.
-3. Select **Role Additions** for **Access type**.
+3. Select **Role / Global Permissions Additions** for **Access type**.
 4. Enter one or more **Affected Employees**.
 5. Enter one or more **Affected Roles**.
-6. **Save** the change request.
-7. Click **Pending Approval** in the status bar.
+6. Enter one or more **Global Permissions**.
+7. **Save** the change request.
+8. Click **Pending Approval** in the status bar.
 
 After the request is approved, the roles are automatically added if **Auto-Provisioning** is enabled. The change request status shows as **Complete**. Otherwise, after the request is approved, manually add the roles and update the status.
 
@@ -70,8 +71,8 @@ The **Values** tab shows the details of the role changes.
 
 1. Open **Strongpoint** > **Change Management Tools** > **User Provisioning Change Request**.
 2. Enter a descriptive **Name** and **Change Overview**.
-3. Select **Role Reductions** for **Access type**. The Offboarding detail fields are now visible.
-4. Check **Inactivate After Removal** if the affected employees should be inactivated. Only check this if you are removing all of the employee's roles.
+3. Select **Role / Global Reductions** for **Access type**. The Offboarding detail fields are now visible.
+4. Check **Inactivate After Removal** if the affected employees should be inactivated. Only check this if you are removing all of the employee's Roles and Global Permissions.
 5. Enter one or more **Affected Employees**. The **Get Roles for Affected Employees** button is now
    visible.
 
