@@ -32,7 +32,7 @@ Review the following for additional information:
 When you select any two results, either for the same device or for two different devices, the
 **Compare Results** button becomes available.
 
-This runs a comparison of the two reports, which helps you see what caused a score to drop or
+This compares the two reports, which helps you see what caused a score to drop or
 identify the configuration differences between two devices.
 
 ## Compliance report templates
