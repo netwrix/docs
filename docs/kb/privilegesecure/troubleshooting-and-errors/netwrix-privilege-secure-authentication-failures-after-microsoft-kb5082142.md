@@ -32,7 +32,10 @@ For background on what Microsoft KB5082142 changes and why most environments are
 Netwrix Privilege Secure for Access Management (NPS-AM) shows an authentication-related failure after Microsoft KB5082142 is installed. Depending on which identity is affected, this can include:
 
 -   Active Directory (AD) sync fails to complete.
--   > **OPEN ITEM FOR AUTHOR:** What does the reader see when the NPS-AM resource's computer account cannot authenticate under the new default — a specific error, a failed session launch, an agent-to-server communication failure, something else?
+-   RDP Session Fails
+      [WRN]Failed to verify RDP X509 certificate
+      [WRN]Unexpected RDP Thumbprint
+      [WRN]ERRCONNECT_AUTHENTICATION_FAILED
 
 ## Cause
 
@@ -111,6 +114,8 @@ Treat this as a documented, deliberate, and ideally temporary exception—not a 
 
 Set `DefaultDomainSupportedEncTypes` in the registry on all domain controllers to a value that includes RC4 (commonly `0x1C`). This restores the pre-KB5082142 fallback behavior for every account without an explicit override, while keeping the security update itself installed. This is a supported and fully reversible configuration, but it is intentionally broad: it re-exposes every account in the domain that lacks an explicit `msDS-SupportedEncryptionTypes` value, not just the specific ones causing trouble. It will also generate a recurring audit event (Event ID 205) on every domain controller restart or KDC service restart as a reminder that the configuration is insecure. This option is best used only to stabilize an environment quickly while the affected accounts identified in Step 1 are remediated individually, and should be reverted once that remediation is complete.
 
-> **OPEN ITEM FOR AUTHOR:** Add a confirmation step describing what to check after applying a fix (for example, re-running the Step 1 query and confirming msDS-SupportedEncryptionTypes/PasswordLastSet updated, absence of the relevant KDC audit event, or a successful AD sync/logon) so the reader knows the issue is resolved.
+## Resolution
+AD Sync completes
+RDP Session successful
 
 > **NOTE:** If you continue to see authentication failures after working through the steps above, contact [Netwrix Support](https://www.netwrix.com/support.html) with the specific account name(s), the relevant Event IDs from your domain controller logs, and confirmation of the `msDS-SupportedEncryptionTypes` and `PasswordLastSet` values for the accounts involved—this will help pinpoint the cause more quickly.
