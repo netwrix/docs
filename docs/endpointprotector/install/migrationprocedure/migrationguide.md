@@ -45,7 +45,7 @@ Import the license on the fresh 2510 image **before** applying patches. Without 
 
 ## Understanding the Migration Architecture
 
-### Why 5.9.4.2 Is a Required Stepping Stone
+### Why 5.9.4.2 Is a Required Intermediate Step
 
 The 2510 base image (and any patch version built on top of it, such as 2604) accepts configuration backups exclusively from version **5.9.4.2**. This is because:
 
@@ -54,12 +54,12 @@ The 2510 base image (and any patch version built on top of it, such as 2604) acc
 - The migration process validates the backup format and version checksum before restoring.
 
 :::note
-Restore the backup **after** you fully patch the 2510 image to 2602. The 5.9.4.2 backup format remains compatible across all patch versions of the new image (2510, 2511, …, 2604).
+Restore the backup **after** you fully patch the 2510 image to 2604. The 5.9.4.2 backup format remains compatible across all patch versions of the new image (2510, 2511, …, 2604).
 :::
 
 **Version compatibility matrix:**
 
-| Backup Source Version | Can Be Restored to 2602 |
+| Backup Source Version | Can Be Restored to 2604 |
 |---|---|
 | Older than 5.7.0.0 | ❌ Step-by-step upgrade path required first |
 | 5.7.0.0 – 5.9.4.1 | ❌ Must reach 5.9.4.2 first via cumulative patch |
@@ -129,7 +129,7 @@ Confirm hypervisor version compatibility **before** scheduling a migration maint
 :::
 
 :::note
-The preceding hypervisor recommendations reflect the best available guidance based on the EPP image format and known compatibility. However, hypervisor provisioning, configuration, and ongoing maintenance fall outside the scope of Netwrix support. Netwrix can't assist with hypervisor-side issues — customers are responsible for their own virtualisation infrastructure.
+These hypervisor recommendations reflect the best available guidance based on the EPP image format and known compatibility. However, hypervisor provisioning, configuration, and ongoing maintenance fall outside the scope of Netwrix support. Netwrix can't assist with hypervisor-side issues — customers are responsible for their own virtualisation infrastructure.
 :::
 
 ### System Resource Assessment
@@ -248,7 +248,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 | 7 | Maintenance window communicated | ☐ |
 | 8 | Appliance → Server Information screenshot taken | ☐ |
 | 9 | Updated license file obtained (with `php_els`) | ☐ |
-| 10 | EPP Client 5.9.4.3 (for customers not migrated yet) or latest packages downloaded | ☐ |
+| 10 | EPP Client 5.9.4.3 Hotfix 1 (for customers not migrated yet) or latest packages downloaded | ☐ |
 | 11 | Enforced Encryption (EE) Client 2509+ packages downloaded (if applicable) | ☐ |
 
 ---
@@ -348,7 +348,7 @@ This doesn't change the EPP Server version — it remains 5.9.4.2.
 
 ---
 
-## Phase 2 — Deploy 2510 Base Image and Migrate to 2602
+## Phase 2 — Deploy 2510 Base Image and Migrate to 2604
 
 ### Choosing Your IP/FQDN Strategy
 
@@ -487,6 +487,10 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 3. Verify the backup file isn't corrupted (re-download from the source server if needed).
 4. Contact Netwrix Support if the error persists.
 :::
+
+:::note
+This is a one-time 500 error during import. If 500 errors instead recur every few days after migration is complete and are resolved only by a full server reboot, see [Recurring HTTP 500 Errors Resolved Only by a Full Reboot](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#recurring-http-500-errors-resolved-only-by-a-full-reboot).
+:::
 ### Import License on the Upgraded EPP server image with restore configuration
 
 1. Navigate to **System Configuration → System Licensing → Import License**.
@@ -540,10 +544,10 @@ Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and tran
 | Client Version | Trusted Signatures | Notes |
 |---|---|---|
 | 5.9.4.1 and older | CoSoSys only | Can't verify Netwrix-signed packages |
-|5.9.4.3 | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
+|5.9.4.3 Hotfix 1 | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
 | 2511 and newer | Netwrix only | Can't be pushed to 5.9.4.1 clients directly |
 
-Clients on 5.9.4.1 or older **can't** upgrade directly to 2605. They must first upgrade to **5.9.4.3** (which trusts both signature types), then proceed to 2605:
+Clients on 5.9.4.1 or older **can't** upgrade directly to 2605. They must first upgrade to **5.9.4.3 Hotfix 1** (which trusts both signature types), then proceed to 2605:
 
 ![EPP Client Migration — end-to-end process diagram](clientupgradediagram.webp)
 
@@ -555,8 +559,8 @@ The packages you need to upload depend on your current EPP client population and
 |---|---|
 | EPP Client 2605 (Windows) | Latest — primary target for all endpoints |
 | EPP Client 2605 (macOS) | Latest — primary target for all endpoints |
-| EPP Client 5.9.4.3 Hotfix 1 (Windows) | Bridge client — required only for endpoints still below 5.9.4.3 |
-| EPP Client 5.9.4.3 Hotfix 1 (macOS) | Bridge client — required only for endpoints still below 5.9.4.3 |
+| EPP Client 5.9.4.3 Hotfix 1 (Windows) | Bridge client — required only for endpoints still below 5.9.4.3 Hotfix 1 |
+| EPP Client 5.9.4.3 Hotfix 1 (macOS) | Bridge client — required only for endpoints still below 5.9.4.3 Hotfix 1 |
 | Checksum file for each client | Required for integrity verification |
 | EE Client 2605 (Windows) | Latest — required if Enforced Encryption is in use |
 | EE Client 2605 (macOS) | Latest — required if Enforced Encryption is in use |

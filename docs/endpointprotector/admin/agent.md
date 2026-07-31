@@ -6,7 +6,7 @@ sidebar_position: 160
 
 # Agent
 
-The Endpoint Protector Agent enforces the Rights and Settings received from the Endpoint Protector
+The Endpoint Protector Agent enforces the Rights and Settings it receives from the Endpoint Protector
 Server on the protected endpoints (Windows, Mac, and Linux).
 
 You can download the Endpoint Protector Agent directly from the Endpoint Protector UI. For detailed
@@ -185,7 +185,7 @@ The main supported Linux distributions include:
 - Ubuntu
 - RedHat
 
-Optional distributions will be provided on the product portal and are available upon request after validation by the Netwrix Product Team. The following are examples of on-demand distributions:
+Netwrix provides optional distributions on the product portal upon request, after the Netwrix Product Team validates them. The following are examples of on-demand distributions:
 - Debian
 - Fedora
 - Pardus OS
@@ -348,7 +348,7 @@ Based on each distribution, follow the corresponding method:
 
 With the Windows Subsystem for Linux (WSL), you can run native Linux distributions directly within your Windows environment. 
 
-### WSL 1
+### WSL1
 
 The Endpoint Protector Client can't be installed directly as an application within WSL.
 
@@ -380,7 +380,7 @@ on Windows.
 
 WSL2 lets you start a lightweight virtual machine with a specific Linux distribution, and offers two options for controlling it:
 
-- Configure an Application Denylist, as with [WSL 1](#wsl-1), to block WSL2 usage entirely.
+- Configure an Application Denylist, as with [WSL1](#wsl1), to block WSL2 usage entirely.
 - Deploy a dedicated Linux EPP Client inside the WSL2 Linux machine to gain EPP visibility into it.
   The installed instance is treated as a separate machine in the EPP Server, which lets you apply
   more granular policies.
@@ -400,9 +400,9 @@ The Client Integrity check runs automatically at EPP service/daemon startup. It 
 - The existence of all expected EPP component files on the endpoint.
 - The validity of file signatures *(signature validation applies to Windows only)*.
 
-If the check passes without issue, the status is reported as **Client Integrity OK**, confirming all EPP component files are present and their signatures are valid (on Windows).
+If the check passes without issue, the EPP Client reports the status as **Client Integrity OK**, confirming all EPP component files are present and their signatures are valid (on Windows).
 
-If the check fails for any reason, a **Client Integrity Failure** event is reported in the EPP Server.
+If the check fails for any reason, the EPP Client reports a **Client Integrity Failure** event in the EPP Server.
 
 ### File Existence vs. Missing Installation File
 
@@ -434,7 +434,7 @@ Requires EPP Client version 2605 hotfix 1 or later (2605.x.2.x) for the full fea
 
 Each time the EPP Client communicates with the EPP Server, it presents the hash of its current configuration XML. The server compares this hash against the current expected configuration:
 
-- If the hashes **match**, no action is taken.
+- If the hashes **match**, the server takes no action.
 - If the hashes **differ**, the server exposes the updated configuration with a new hash for the client to download, and raises a **Policy Received** event. The EPP Client then automatically downloads and applies the new settings.
 
 Any change to Computer or User settings — including configuration items, rights, or policies — modifies the configuration XML and its hash, which triggers this process.
@@ -443,7 +443,7 @@ Any change to Computer or User settings — including configuration items, right
 
 ### How the EPP Client Classifies Termination
 
-If the EPP Client service wasn't stopped cleanly, the agent evaluates the state of relevant files, registry keys, and drivers to determine what happened. Based on the results, one of three events is reported:
+If the EPP Client service didn't stop cleanly, the agent evaluates the state of relevant files, registry keys, and drivers to determine what happened. Based on the results, the agent reports one of three events:
 
 | Event Type | Condition & Meaning |
 |---|---|
