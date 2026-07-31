@@ -17,25 +17,28 @@ keywords:
   - Computer Account
 products:
   - privilegesecure
-sidebar_label: Netwrix Privilege Secure Authentication Failures After Microsoft KB5082142
+sidebar_label: NPS-AM Authentication Failures After Microsoft KB5082142
 tags: [kb, troubleshooting-and-errors]
-title: "Netwrix Privilege Secure Authentication Failures After Microsoft KB5082142"
+title: "NPS-AM Authentication Failures After Microsoft KB5082142"
 knowledge_article_id:
 ---
 
-# Netwrix Privilege Secure Authentication Failures After Microsoft KB5082142
+# NPS-AM Authentication Failures After Microsoft KB5082142
 
-For background on what Microsoft KB5082142 changes and why most environments are unaffected, see [Understanding the Microsoft KB5082142 RC4-to-AES Encryption Change](/docs/kb/privilegesecure/certificates-and-security/understanding-the-microsoft-kb5082142-rc4-to-aes-encryption-change.md).
+For background on what Microsoft KB5082142 changes and why most environments are unaffected, see [Understanding the Microsoft KB5082142 RC4-to-AES Encryption Change](/docs/kb/privilegesecure/certificates-and-security/understanding-the-microsoft-kb5082142-rc4-to-aes-encryption-change).
 
 ## Symptom
 
 Netwrix Privilege Secure for Access Management (NPS-AM) shows an authentication-related failure after Microsoft KB5082142 is installed. Depending on which identity is affected, this can include:
 
 -   Active Directory (AD) sync fails to complete.
--   RDP Session Fails
-      [WRN]Failed to verify RDP X509 certificate
-      [WRN]Unexpected RDP Thumbprint
-      [WRN]ERRCONNECT_AUTHENTICATION_FAILED
+-   RDP sessions fail with the following errors:
+
+    ```
+    [WRN]Failed to verify RDP X509 certificate
+    [WRN]Unexpected RDP Thumbprint
+    [WRN]ERRCONNECT_AUTHENTICATION_FAILED
+    ```
 
 ## Cause
 
@@ -43,21 +46,21 @@ For customers running NPS-AM, RC4 dependency is most likely to affect one of two
 
 ### The Domain Service Account NPS-AM Uses to Communicate with Active Directory
 
-This account follows the same risk profile as any other service account: if an administrator provisioned it long ago and configured it with a non-expiring password, it may still be carrying only an RC4-derived key regardless of how recently NPS-AM itself was upgraded or reconfigured. Conveniently, this account is easy to rule in or out: if it is stuck on RC4 and can no longer authenticate under an AES-only policy, NPS-AM will not just show a subtle symptom—it will typically fail to perform an AD sync entirely. A failed or failing AD sync immediately after KB5082142 was installed is a strong, direct signal to check this account's `PasswordLastSet` and `msDS-SupportedEncryptionTypes` values first.
+This account follows the same risk profile as any other service account: if an administrator provisioned it long ago and configured it with a non-expiring password, it may still be carrying only an RC4-derived key regardless of how recently NPS-AM itself was upgraded or reconfigured. Conveniently, this account is easy to rule in or out: if it is stuck on RC4 and can no longer authenticate under an AES-only policy, NPS-AM will not just show a subtle symptom—it will typically fail to perform an AD sync entirely. A failed or failing AD sync immediately after you install KB5082142 is a strong, direct signal to check this account's `PasswordLastSet` and `msDS-SupportedEncryptionTypes` values first.
 
 ### The NPS-AM Resource Computer Account
 
-This is the most likely culprit. Like any domain-joined machine, the NPS-AM resource has a computer account in Active Directory, and computer account passwords do rotate automatically—by default, roughly every 30 days. But because that rotation depends on the machine being online, having a healthy secure channel to a domain controller, and not having been cloned or restored from an old snapshot without proper de-provisioning, it is the identity most prone to silently falling out of its normal rotation cycle. If the NPS-AM server itself has been offline for an extended stretch, was provisioned from an older template or image, or has had secure channel issues in the past, its computer account is the first place to check for a stale RC4-only key.
+This is the most likely culprit. Like any domain-joined machine, the NPS-AM resource has a computer account in Active Directory, and computer account passwords do rotate automatically—by default, roughly every 30 days. But that rotation depends on the machine being online, having a healthy secure channel to a domain controller, and not having been cloned or restored from an old snapshot without proper de-provisioning. As a result, this is the identity most prone to silently missing its normal rotation cycle. If the NPS-AM server itself has been offline for an extended stretch, was provisioned from an older template or image, or has had secure channel issues in the past, its computer account is the first place to check for a stale RC4-only key.
 
-> **NOTE:** NPS-AM's own login accounts—requestor, ephemeral, and managed—are unlikely sources of this issue. A stale requestor account would typically cause broader authentication failures elsewhere in the environment first; ephemeral accounts are always created after KB5082142 takes effect, so they get AES key material from the outset; and managed accounts have their password (and AES key) rotated by NPS-AM at the start and end of every session.
+> **NOTE:** NPS-AM's own login accounts—requestor, ephemeral, and managed—are unlikely sources of this issue. A stale requestor account would typically cause broader authentication failures elsewhere in the environment first; ephemeral accounts are always created after KB5082142 takes effect, so they get AES key material from the outset; and NPS-AM rotates the password (and AES key) of managed accounts at the start and end of every session.
 
 ## Resolution
 
-If you are experiencing authentication issues that align with the above, here are the paths forward, from most targeted to most broad.
+If your authentication issue matches the causes described in [Cause](#cause), here are the paths forward, from most targeted to most broad.
 
 ### Step 1 — Identify the Specific Accounts Involved
 
-1. Check the Windows Security Event Log on your domain controllers for KDC audit events (Event IDs 201, 202, 206, and 207 during the audit/warning phase; 208 and 209 once a domain controller is enforcing AES-only behavior). These events identify exactly which accounts or devices are requesting or requiring RC4.
+1. Check the Windows Security Event Log on your domain controllers for Key Distribution Center (KDC) audit events (Event IDs 201, 202, 206, and 207 during the audit/warning phase; 208 and 209 once a domain controller is enforcing AES-only behavior). These events identify exactly which accounts or devices are requesting or requiring RC4.
 2. Query an account's current encryption support:
 
    ```powershell
@@ -108,14 +111,17 @@ Set-ADUser -Identity <account> -Replace @{"msDS-SupportedEncryptionTypes" = 28}
 Set-ADComputer -Identity <account> -Replace @{"msDS-SupportedEncryptionTypes" = 28}
 ```
 
-Treat this as a documented, deliberate, and ideally temporary exception—not a permanent configuration—with a plan to retire or upgrade the underlying legacy dependency where possible.
+Treat this as a documented, deliberate, temporary exception, with a plan to retire or upgrade the underlying legacy dependency where possible.
 
 ### Step 4 — Temporarily Roll Back the Domain-Wide Default as a Last Resort
 
 Set `DefaultDomainSupportedEncTypes` in the registry on all domain controllers to a value that includes RC4 (commonly `0x1C`). This restores the pre-KB5082142 fallback behavior for every account without an explicit override, while keeping the security update itself installed. This is a supported and fully reversible configuration, but it is intentionally broad: it re-exposes every account in the domain that lacks an explicit `msDS-SupportedEncryptionTypes` value, not just the specific ones causing trouble. It will also generate a recurring audit event (Event ID 205) on every domain controller restart or KDC service restart as a reminder that the configuration is insecure. This option is best used only to stabilize an environment quickly while the affected accounts identified in Step 1 are remediated individually, and should be reverted once that remediation is complete.
 
-## Resolution
-AD Sync completes
-RDP Session successful
+### Verifying the Fix
 
-> **NOTE:** If you continue to see authentication failures after working through the steps above, contact [Netwrix Support](https://www.netwrix.com/support.html) with the specific account name(s), the relevant Event IDs from your domain controller logs, and confirmation of the `msDS-SupportedEncryptionTypes` and `PasswordLastSet` values for the accounts involved—this will help pinpoint the cause more quickly.
+Confirm the fix worked:
+
+-   AD sync completes.
+-   RDP sessions succeed.
+
+> **NOTE:** If you continue to see authentication failures after working through the steps in [Resolution](#resolution), contact [Netwrix Support](https://www.netwrix.com/support.html) with the specific account name(s), the relevant Event IDs from your domain controller logs, and confirmation of the `msDS-SupportedEncryptionTypes` and `PasswordLastSet` values for the accounts involved—this will help pinpoint the cause more quickly.
