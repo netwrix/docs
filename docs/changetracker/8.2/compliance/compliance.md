@@ -65,9 +65,9 @@ After you download a template from the Customer Portal, upload it to Change Trac
 
 Review the following for additional information:
 
-- [How to Upload a Compliance/Tracking Template to Change Tracker](/docs/changetracker/8.2/kb/configuration-and-setup/upload-compliance-template.md)
-- [Adding or Replacing Configuration and Compliance Report Templates](/docs/changetracker/8.2/kb/configuration-and-setup/add-replace-compliance-report-templates.md)
-- [Applying a Compliance Template to a Group for Automated Reporting](/docs/changetracker/8.2/kb/configuration-and-setup/apply-compliance-template-to-group.md)
+- [How to Upload a Compliance/Tracking Template to Change Tracker](/docs/kb/changetracker/configuration-and-setup/upload-compliance-template)
+- [Adding or Replacing Configuration and Compliance Report Templates](/docs/kb/changetracker/configuration-and-setup/add-replace-compliance-report-templates)
+- [Applying a Compliance Template to a Group for Automated Reporting](/docs/kb/changetracker/configuration-and-setup/apply-compliance-template-to-group)
 
 ### CIS
 
