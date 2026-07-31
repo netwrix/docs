@@ -42,9 +42,10 @@ templates.
 
 :::info
 Only Center for Internet Security (CIS) benchmark reports ship bundled with the Hub Server
-installer and are ready to select when you create a compliance report. Every other report on this
-page — PCI DSS, HIPAA, SOX, DISA STIG, NIST, ISO 27001, and NERC CIP-007-6 — is available through
-the Compliance Benchmarks download on the
+installer (the Change Tracker management server) and are ready to select when you create a
+compliance report. Every other report on this page — PCI DSS, HIPAA, SOX, DISA STIG, NIST 800-53,
+NIST 800-171, ISO 27001, and NERC CIP-007-6 — is available through the Compliance Benchmarks
+download on the
 [Customer Portal](https://customer.netwrix.com/my_products.html), which you import into Change
 Tracker.
 
@@ -59,7 +60,7 @@ After you download a template from the Customer Portal, upload it to Change Trac
 1. Go to **Settings** > **Policy Templates**.
 2. Click the **Actions** dropdown, then click **Upload Templates**.
 3. Browse to the downloaded XML file and select it.
-4. To overwrite an existing template with the same name, select the corresponding checkbox.
+4. To replace an existing template that has the same name, select the checkbox that overwrites templates on upload.
 5. Click **Upload Template**.
 
 Review the following for additional information:
@@ -68,7 +69,7 @@ Review the following for additional information:
 - [Adding or Replacing Configuration and Compliance Report Templates](/docs/changetracker/8.2/kb/configuration-and-setup/add-replace-compliance-report-templates.md)
 - [Applying a Compliance Template to a Group for Automated Reporting](/docs/changetracker/8.2/kb/configuration-and-setup/apply-compliance-template-to-group.md)
 
-## CIS
+### CIS
 
 Change Tracker's CIS compliance reports map directly to the prescriptive configuration
 recommendations in the Center for Internet Security (CIS)
@@ -84,7 +85,7 @@ of the underlying CIS benchmark document version — for example, some template 
 CIS-published specification version, such as the `(2.0.0)` in "NNT CIS Amazon Web Services
 Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Version.
 
-### Cloud
+#### Cloud
 
 <table>
   <thead>
@@ -98,7 +99,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-### Windows
+#### Windows
 
 <table>
   <thead>
@@ -281,7 +282,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-### Linux
+#### Linux
 
 <table>
   <thead>
@@ -399,7 +400,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-### Databases
+#### Databases
 
 <table>
   <thead>
@@ -442,7 +443,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-### Network Devices
+#### Network Devices
 
 <table>
   <thead>
@@ -463,7 +464,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-### Cisco
+#### Cisco
 
 <table>
   <thead>
@@ -482,7 +483,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-### Unix
+#### Unix
 
 <table>
   <thead>
@@ -496,7 +497,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-### Apple OSX
+#### Apple OSX
 
 <table>
   <thead>
@@ -508,7 +509,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-### Desktop Office
+#### Desktop Office
 
 <table>
   <thead>
@@ -534,7 +535,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-### Virtualization
+#### Virtualization
 
 <table>
   <thead>
@@ -558,7 +559,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-### Web Servers
+#### Web Servers
 
 <table>
   <thead>
@@ -580,7 +581,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
   </tbody>
 </table>
 
-## PCI DSS
+### PCI DSS
 
 Payment Card Industry Data Security Standard (PCI DSS) reports.
 
@@ -613,7 +614,7 @@ Payment Card Industry Data Security Standard (PCI DSS) reports.
 | VMware ESXi 5.5 | NNT PCI DSS VMware ESXi 5.5 |
 | Microsoft Windows 10 Enterprise 1709 | NNT PCI DSS Windows 10 Enterprise 1709 v1217 |
 
-## HIPAA
+### HIPAA
 
 Health Insurance Portability and Accountability Act (HIPAA) reports.
 
@@ -631,7 +632,7 @@ Health Insurance Portability and Accountability Act (HIPAA) reports.
 | Windows Server 2022 | NNT HIPAA Windows Server 2022 Benchmark |
 | Windows Server 2025 | NNT HIPAA Windows Server 2025 Benchmark |
 
-## SOX
+### SOX
 
 Sarbanes-Oxley Act (SOX) reports.
 
@@ -644,7 +645,7 @@ Sarbanes-Oxley Act (SOX) reports.
 | Microsoft Windows 7 | NNT SOX Microsoft Windows 7 |
 | Microsoft Windows 10 Enterprise 1709 | NNT SOX Windows 10 Enterprise 1709 |
 
-## DISA STIG
+### DISA STIG
 
 Defense Information Systems Agency (DISA) Security Technical Implementation Guide (STIG) reports.
 
@@ -670,7 +671,7 @@ Defense Information Systems Agency (DISA) Security Technical Implementation Guid
 | Microsoft Windows 8 – 8.1 | NNT Windows 8 - 8.1 Security Technical Implementation Guide V1R14 |
 | Microsoft Internet Explorer 11 | NNT_U_MS_IE11_STIG_V1R19_Manual |
 
-## NIST 800-53
+### NIST 800-53
 
 National Institute of Standards and Technology (NIST) Special Publication 800-53 reports.
 
@@ -696,7 +697,7 @@ National Institute of Standards and Technology (NIST) Special Publication 800-53
 | VMware ESXi 5.5 | NNT NIST 800-53 VMware ESXi 5.5 Benchmark |
 | VMware ESXi 8.0 | NNT NIST 800-53 VMware ESXi 8.0 Benchmark |
 
-## NIST 800-171
+### NIST 800-171
 
 NIST Special Publication 800-171 reports.
 
@@ -723,7 +724,7 @@ NIST Special Publication 800-171 reports.
 | VMware ESXi 5.5 | NNT NIST 800-171 VMware ESXi 5.5 Benchmark |
 | VMware ESXi 8.0 | NNT NIST 800-171 VMware ESXi 8.0 Benchmark |
 
-## ISO 27001
+### ISO 27001
 
 International Organization for Standardization (ISO)/International Electrotechnical Commission
 (IEC) 27001 reports.
@@ -748,7 +749,7 @@ International Organization for Standardization (ISO)/International Electrotechni
 | Red Hat Enterprise Linux 6 | NNT ISO27K Red Hat Enterprise Linux 6 Benchmark |
 | Red Hat Enterprise Linux 7 | NNT ISO27K Red Hat Enterprise Linux 7 Benchmark |
 
-## NERC CIP-007-6
+### NERC CIP-007-6
 
 North American Electric Reliability Corporation (NERC) Critical Infrastructure Protection (CIP)
 CIP-007-6 reports, each covering a specific requirement table for Windows devices.
