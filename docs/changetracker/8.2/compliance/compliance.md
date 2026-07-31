@@ -17,8 +17,8 @@ Hardened Build Standard. View estate/device compliance by selecting a different 
 from the Compliance Report selector then drill into report results by clicking on the Report Score
 for any Device.
 
-Any individual report can be viewed by clicking the result score, and reports selected using the
-checkboxes can be exported in a range of formats (pdf, excel or csv) with an option to select more
+You can view any individual report by clicking the result score, and export the reports you select
+with the checkboxes in a range of formats (pdf, excel, or csv), with an option to select more
 detailed results.
 
 Review the following for additional information:
@@ -29,11 +29,11 @@ Review the following for additional information:
 
 ## Comparing Results
 
-By selecting any two results, either for the same device or for two different devices, the **Compare
-Results** button becomes available.
+When you select any two results, either for the same device or for two different devices, the
+**Compare Results** button becomes available.
 
-This will run a compare of the two reports, useful for seeing what has caused a score to drop, or to
-establish what the difference is in configuration between two devices.
+This runs a comparison of the two reports, which helps you see what caused a score to drop or
+identify the configuration differences between two devices.
 
 ## Compliance report templates
 
