@@ -16,12 +16,12 @@ keywords:
 products:
   - changetracker
 knowledge_article_id: kA0Qk0000000bHJKAY
-sidebar_label: 'Rolling-Log Fix: MongoDB Connection Timeout (SocketException 10060)'
+sidebar_label: 'MongoDB Log Fix: Connection Timeout (SocketException 10060)'
 tags: [kb, database-and-diagnostics]
-title: 'Rolling-Log Fix: MongoDB Connection Timeout (SocketException 10060)'
+title: 'MongoDB Log Fix: Connection Timeout (SocketException 10060)'
 ---
 
-# Rolling-Log Fix: MongoDB Connection Timeout (SocketException 10060)
+# MongoDB Log Fix: Connection Timeout (SocketException 10060)
 
 ## Symptom
 
@@ -39,7 +39,7 @@ A connection attempt failed because the connected party did not properly respond
 
 ## Cause
 
-Under load, the number of concurrent requests to the MongoDB instance can exceed the driver's connection pool size (`maxPoolSize`), causing new requests to queue for an available connection. If a request waits longer than the driver's connection timeout (`connectTimeoutMS`) for a connection to become available, it fails with this error. [See the SME Review Needed note in the pull request description and confirm whether this standard MongoDB .NET driver behavior explains what's happening here.]
+Under load, concurrent requests to the MongoDB instance can exceed the driver's connection pool size (`maxPoolSize`), causing new requests to queue for an available connection. If a request waits longer than the driver's connection timeout (`connectTimeoutMS`) for a connection to become available, it fails with this error.
 
 ## Resolution
 

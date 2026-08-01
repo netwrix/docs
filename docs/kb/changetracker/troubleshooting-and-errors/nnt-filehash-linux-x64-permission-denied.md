@@ -14,12 +14,12 @@ keywords:
 products:
   - changetracker
 knowledge_article_id: ka0Qk000000DnvlIAC
-sidebar_label: 'Rolling-Log Fix: NNT_FILEHASH_LINUX_X64 Permission Denied'
+sidebar_label: 'NNT_FILEHASH_LINUX_X64 Log Fix: Permission Denied'
 tags: [kb, troubleshooting-and-errors]
-title: 'Rolling-Log Fix: NNT_FILEHASH_LINUX_X64 Permission Denied'
+title: 'NNT_FILEHASH_LINUX_X64 Log Fix: Permission Denied'
 ---
 
-# Rolling-Log Fix: NNT_FILEHASH_LINUX_X64 Permission Denied
+# NNT_FILEHASH_LINUX_X64 Log Fix: Permission Denied
 
 ## Symptom
 
@@ -36,14 +36,14 @@ The `NNT_FILEHASH_LINUX_X64` binary does not have execute permission for the acc
 
 ## Resolution
 
-1. On the monitored device, navigate to the location where the `NNT_FILEHASH_LINUX_X64` binary is stored. By default, this is `/usr/bin`.
+1. On the monitored device, navigate to the location that stores the `NNT_FILEHASH_LINUX_X64` binary. By default, this is `/usr/bin`.
 2. Grant execute permission on the binary to the account the Proxy Agent uses to connect to this device:
 
    ```bash
    chmod 775 /usr/bin/NNT_FILEHASH_LINUX_X64
    ```
 
-   > **IMPORTANT:** Confirm that the binary's ownership matches an account with which the Proxy Agent's connection credentials can execute. Set ownership with `chown` if needed, using a user and group that exist on this device.
+   > **IMPORTANT:** Confirm the binary's owner matches the account the Proxy Agent's connection credentials use. Set ownership with `chown` if needed, using a user and group that exist on this device.
 
 3. Confirm the fix by running the binary directly from the command line. This hashes the `/etc` directory:
 
@@ -51,6 +51,6 @@ The `NNT_FILEHASH_LINUX_X64` binary does not have execute permission for the acc
    /usr/bin/NNT_FILEHASH_LINUX_X64 -l10 -r -t -x /etc/*
    ```
 
-4. In the Netwrix Change Tracker console, go to the **Devices** tab and select **Start Tracker** on the agentless device.
+4. In the Change Tracker console, go to the **Devices** tab and select **Start Tracker** on the agentless device.
 
-Once the tracker starts successfully, Netwrix Change Tracker can hash files on this device without the permission error.
+Once the tracker starts successfully, Change Tracker can hash files on this device without the permission error.

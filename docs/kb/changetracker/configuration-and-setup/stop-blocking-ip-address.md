@@ -2,8 +2,8 @@
 description: >-
   Shows how to configure Netwrix Change Tracker to lock a user account after
   repeated failed login attempts, by setting lockoutenabled to true in
-  appsettings.json. By default, Change Tracker blocks the failing device's IP
-  address instead of locking the account.
+  appsettings.json. This overrides the previous IP-blocking behavior, which
+  is no longer used.
 keywords:
   - Netwrix Change Tracker
   - IP blocking
@@ -27,7 +27,7 @@ title: Enabling Account Lockout for Failed Login Attempts
 
 This article describes how to configure Netwrix Change Tracker to lock a user account after repeated failed login attempts, instead of blocking the device's IP address.
 
-By default, if a user fails to log in three times from a remote device, Netwrix Change Tracker blocks that device's IP address. Setting `lockoutenabled` to `true` locks the account after repeated failed logins. [See the SME Review Needed note in the pull request description and confirm the relationship between account lockout and IP blocking.]
+Netwrix Change Tracker no longer uses IP blocking. Setting `lockoutenabled` to `true` locks the user account instead after repeated failed logins.
 
 ## Instructions
 

@@ -24,7 +24,7 @@ title: Turning Off Bulk Email Notifications
 
 ## Overview
 
-This article describes how to configure Netwrix Change Tracker to send each change as a separate email instead of compiling multiple changes into one. By default, Change Tracker compiles multiple changes into a single real-time email notification. [See the SME Review Needed note in the pull request description and confirm the current file and key name for disabling bulk email notifications.]
+This article describes how to configure Netwrix Change Tracker to send each change as a separate email instead of compiling multiple changes into one. By default, Change Tracker groups all changes detected during a single tracking cycle into one bulk email rather than sending a separate email per change. Turning off bulk notifications increases email volume, since Change Tracker sends one email per detected change instead of one email per tracking cycle. Consider your notification infrastructure's capacity before disabling this setting. Disable it only if you need per-change alerting, such as for a compliance workflow.
 
 ## Instructions
 
@@ -44,7 +44,7 @@ This article describes how to configure Netwrix Change Tracker to send each chan
    }
    ```
 
-   > **NOTE:** If your MongoDB database has been split off to a different server, edit the existing `appsettings.json` file directly using these steps rather than replacing it.
+   > **NOTE:** If you split off your MongoDB database to a different server, edit the existing `appsettings.json` file directly using these steps rather than replacing it.
 
 4. Save the file.
 5. Start IIS:
