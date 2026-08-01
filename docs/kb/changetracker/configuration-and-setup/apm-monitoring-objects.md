@@ -18,16 +18,18 @@ products:
 knowledge_article_id: ka04u000000Hd9DAAS
 sidebar_label: APM Monitoring Objects
 tags: [kb, configuration-and-setup]
-title: What Change Tracker Gen7 Objects to Monitor Using Application Performance Monitoring (APM) Tools
+title: What Gen7 Objects to Monitor Using Application Performance Monitoring (APM) Tools
 ---
 
-# What Change Tracker Gen7 Objects to Monitor Using Application Performance Monitoring (APM) Tools
+# What Gen7 Objects to Monitor Using Application Performance Monitoring (APM) Tools
 
 ## Overview
 
 This article lists the services, processes, paths, and log files to monitor with application performance monitoring (APM) tools to track the health of your Netwrix Change Tracker Hub server and agents.
 
-## Services
+## Services and Processes
+
+### Services
 
 | Service | Monitor On | Purpose |
 |---|---|---|
@@ -36,7 +38,7 @@ This article lists the services, processes, paths, and log files to monitor with
 | `Gen7AgentCore` | Windows NetCore agents and Hub server | Confirms the Change Tracker agent service is running |
 | `nntgen7agentcore` | Linux and Red Hat/Debian-based NetCore agents | Confirms the Change Tracker agent service is running |
 
-## Processes
+### Processes
 
 | Process | Monitor On | Purpose |
 |---|---|---|
@@ -44,7 +46,9 @@ This article lists the services, processes, paths, and log files to monitor with
 | `w3wp.exe` | Hub server | Confirms the IIS worker process is running |
 | `mongod.exe` | Hub server | Confirms the MongoDB database process is running |
 
-## Default Software Paths
+## Paths and Drivers
+
+### Default Software Paths
 
 - `C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) Hub`
 - `C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) WebUI`
@@ -52,11 +56,13 @@ This article lists the services, processes, paths, and log files to monitor with
 - `C:\ProgramData\NNT\gen7agent.app.netcore`
 - `C:\ProgramData\Change Tracker Generation 7 (NetCore)`
 
-## Drivers and Dependencies
+### Drivers and Dependencies
 
 - Netwrix "who made the change" driver: `C:\Windows\System32\drivers\NNTInfo.sys` — confirms the kernel mini-filter driver that captures "who made the change" attribution for Windows file integrity monitoring (FIM) with live tracking is loaded. If the driver stops running, this attribution data may be lost or intermittently missing on affected Windows FIM trackers; other tracker types and Linux devices are unaffected.
 
-## Potential Syslog Thresholds and Messages
+## Logs and Alerts
+
+### Potential Syslog Thresholds and Messages
 
 Build a threshold mechanism that alerts the appropriate response team when the Change Tracker server generates any of the following message types:
 
@@ -72,9 +78,9 @@ Build a threshold mechanism that alerts the appropriate response team when the C
 - **Event Type: Communications** — Communication between an agent and the Hub server.
 - **Event Type: Audit** — Audit information, such as user account management or configuration changes.
 
-## Log Files
+### Log Files
 
-### Change Tracker NetCore Agent
+#### Change Tracker NetCore Agent
 
 **On Windows**
 
@@ -86,19 +92,19 @@ Build a threshold mechanism that alerts the appropriate response team when the C
 - `/var/nnt/gen7agent.app.netcore/rolling-log.txt`
 - `/var/nnt/gen7agent.app.netcore/HubDetails.xml`
 
-### Change Tracker Hub and Database
+#### Change Tracker Hub and Database
 
 - Hub service log (Windows): `C:\inetpub\wwwroot\Change Tracker Generation 7 (NetCore) Hub\log\hubservice-log.txt`
 - MongoDB log (Windows): `C:\ProgramData\Change Tracker Generation 7 (NetCore)\MongoDB\log\mongod.log`
 
 ## Things to Keep in Mind
 
-### Netwrix Change Tracker Hub Server
+### Change Tracker Hub Server
 
 The percentage of memory in use on a server should not be monitored, because MongoDB reserves as much memory as possible. This reserved memory is the "Commit Size." The memory actually in use is the "Working Set" — monitor this value instead.
 
-### Netwrix Change Tracker Agents
+### Change Tracker Agents
 
 Memory usage for the Change Tracker agent is a difficult metric to gauge. The agent's garbage collection process determines when to release memory banks it no longer needs, so the agent rarely uses all the memory assigned to it at any given time.
 
-Contact Netwrix Support for the latest agent performance metrics and footprint guide.
+Contact [Netwrix Support](https://www.netwrix.com/support.html) for the latest agent performance metrics and footprint guide.

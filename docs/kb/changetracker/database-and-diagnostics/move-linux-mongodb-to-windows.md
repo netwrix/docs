@@ -26,7 +26,9 @@ title: Moving Your Linux Server MongoDB Database to a Windows Server
 
 ## Overview
 
-Netwrix Change Tracker no longer supports the Linux Hub. If you are still running a Linux Hub, use this procedure to migrate its MongoDB database to a new Windows Hub server while retaining all existing data, such as events, agents, and configuration.
+This article describes how to migrate a Linux Hub's MongoDB database to a new Windows Hub server, retaining all existing data such as events, agents, and configuration.
+
+Netwrix Change Tracker no longer supports the Linux Hub, so use this procedure if you are still running one.
 
 > **IMPORTANT:** Verify that the MongoDB versions match on your current and target servers. For additional Netwrix Change Tracker installation prerequisites, refer to the [Requirements](pathname:///docs/changetracker/8_2/requirements/overview) article.
 
@@ -62,7 +64,7 @@ Netwrix Change Tracker no longer supports the Linux Hub. If you are still runnin
 1. Connect to the server where Netwrix Change Tracker will be installed via RDP.
 2. Run the **Change Tracker** installer and install the same version that was running on the Linux Hub.
 
-   > **NOTE:** If the installer prompts you for a database storage engine, select the option that matches the storage engine of your existing database. Contact Netwrix Support if you are unsure which one your Linux Hub used.
+    > **NOTE:** If the installer prompts you for a database storage engine, select the option that matches the storage engine of your existing database. Contact [Netwrix Support](https://www.netwrix.com/support.html) if you are unsure which one your Linux Hub used.
 
 ### Step 3 — Restore the Database on Windows
 
@@ -79,7 +81,7 @@ Netwrix Change Tracker no longer supports the Linux Hub. If you are still runnin
 3. Allow time for the database to re-index. Once the re-index completes, the word **done** appears in the Command Prompt window.
 4. Enter the following command: `iisreset /start`.
 5. Close the Command Prompt window.
-6. Confirm that you can log in to **Netwrix Change Tracker** and open the **Settings** page. If you changed the admin user's password on the Linux Hub, that password still works.
+6. Confirm that you can log in to Netwrix Change Tracker and open the **Settings** page. If you changed the admin user's password on the Linux Hub, that password still works.
 
 ## Troubleshooting
 

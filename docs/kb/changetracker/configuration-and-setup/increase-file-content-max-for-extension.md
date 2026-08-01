@@ -24,6 +24,8 @@ title: Increasing File Content Max for Extension
 
 ## Overview
 
+This article describes how to increase the file content max limit when file contents are not tracked because a file exceeds the configured size.
+
 Netwrix Change Tracker agents enforce a maximum file size for file content tracking. If a monitored file exceeds this limit, the agent logs the following message and does not track the file's contents:
 
 ```text
@@ -46,12 +48,10 @@ Increasing this limit lets the agent track larger files, but raises the resource
 5. Save and close the file.
 6. Start the **Gen7Agent** service.
 
-> **TIP:** To apply the same limit across multiple agents on the same version and in a default configuration state, copy the edited file to each agent, then stop and start the **Gen7Agent** service on each one for the change to take effect.
+> **NOTE:** To apply the same limit across multiple agents on the same version and in a default configuration state, copy the edited file to each agent, then stop and start the **Gen7Agent** service on each one for the change to take effect.
 
-After the service restarts, trigger a change on the file that previously exceeded the limit, or wait for the next scheduled tracking cycle. Confirm the fix worked by checking that the agent's rolling log no longer logs the `filecontentmaxforextension` message for that file, and that the file's content change is now tracked with a hash value instead of being flagged as untracked.
+After the service restarts, trigger a change on the file that previously exceeded the limit, or wait for the next scheduled tracking cycle. Confirm the fix worked by checking that the agent's rolling log no longer logs the `filecontentmaxforextension` message for that file, and that the agent now tracks the file's content change with a hash value instead of flagging it as untracked.
 
 ## Related Articles
 
-- [Moving Your Linux Server MongoDB Database to a Windows Server](../database-and-diagnostics/move-linux-mongodb-to-windows)
 - [Increasing File Hash Max for Extension](./increase-file-hash-max-for-extension)
-- [Fixing the "Check Log for Details" Message in the Event Details](../troubleshooting-and-errors/check-log-for-details-message)

@@ -11,6 +11,7 @@ keywords:
   - Gen7Agent.Service.exe.config
   - agent
   - hashing
+  - file size limit
 products:
   - changetracker
 knowledge_article_id: ka04u000000HdASAA0
@@ -22,6 +23,8 @@ title: Increasing File Hash Max for Extension
 # Increasing File Hash Max for Extension
 
 ## Overview
+
+This article describes how to increase the file hash max limit when a file hash is not calculated because a file exceeds the configured size.
 
 Netwrix Change Tracker agents enforce a maximum file size for file hash calculation. If a monitored file exceeds this limit, the agent logs a message similar to the following and does not calculate a hash for the file:
 
@@ -45,9 +48,9 @@ Increasing this limit lets the agent hash larger files, but raises the resources
 5. Save and close the file.
 6. Start the **Gen7Agent** service.
 
-> **TIP:** To apply the same limit across multiple agents on the same version and in a default configuration state, copy the edited file to each agent, then stop and start the **Gen7Agent** service on each one for the change to take effect.
+> **NOTE:** To apply the same limit across multiple agents on the same version and in a default configuration state, copy the edited file to each agent, then stop and start the **Gen7Agent** service on each one for the change to take effect.
 
-After the service restarts, trigger a change on the file that previously exceeded the limit, or wait for the next scheduled tracking cycle. Confirm the fix worked by checking that the agent's rolling log no longer logs the `filehashmaxforextension` message for that file, and that a hash value now populates for the file instead of it being flagged as unhashed.
+After the service restarts, trigger a change on the file that previously exceeded the limit, or wait for the next scheduled tracking cycle. Confirm the fix worked by checking that the agent's rolling log no longer logs the `filehashmaxforextension` message for that file, and that the agent now populates a hash value for the file instead of flagging it as unhashed.
 
 ## Related Articles
 
