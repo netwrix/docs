@@ -15,7 +15,7 @@ keywords:
   - report stuck
 products:
   - changetracker
-knowledge_article_id: ka04u000000Hd9SAAS
+knowledge_article_id: kA04u0000000JYPCA2
 sidebar_label: 'Compliance Reports Stuck in Processing'
 tags: [kb, troubleshooting-and-errors]
 title: 'Compliance Reports Stuck in Processing'
@@ -41,7 +41,6 @@ If UrlScan is installed on the Hub server, stop it from blocking `Transfer-Encod
 4. Comment out the entry by adding a `;` at the start of the line, so the line reads `;Transfer-Encoding:`.
 5. Save and close the `.ini` file.
 6. Restart IIS.
-
-After IIS restarts, run the report again. It should now reach `100%` instead of remaining in `Processing`.
+7. Run the report again. It should now reach `100%` instead of remaining in `Processing`.
 
 > **NOTE:** If UrlScan is not installed, check for another IIS request-filtering or security module on the Hub server that may be blocking the `Transfer-Encoding` header, and apply the equivalent exclusion for it.

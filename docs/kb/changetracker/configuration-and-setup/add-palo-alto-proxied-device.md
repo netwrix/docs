@@ -37,14 +37,14 @@ A Gen 7 agent acting as a proxy agent can monitor devices that cannot run the ag
 Before adding the device in the console, complete the following on the Palo Alto device:
 
 1. Set up SSH credentials with at least enough privilege to run `show system info` and `show config running`.
-2. Turn off the Palo Alto confirmation prompt so its text cannot be mistaken for the device's command prompt. Add a login banner in its place if a banner is required for policy.
+2. Turn off the Palo Alto confirmation prompt so Netwrix Change Tracker does not mistake its text for the device's command prompt. Add a login banner in its place if policy requires a banner.
 
     > **NOTE:** If the confirmation prompt contains a character that matches the configured prompt regex (such as a bare `>`), Netwrix Change Tracker may treat it as the full prompt and end the tracking session before it captures the complete output. For more detail on prompt regex matching, refer to [Advanced Configuration](pathname:///docs/changetracker/8_2/admin/agentlessscript/advancedconfiguration/).
 3. Test the credentials using an SSH client. Note the exact command prompt string, since a later step needs it. For example, in the prompt `username@localhost> show config running`, the prompt itself is `username@localhost>`.
 
 ### Step 2 — Add the Proxied Device
 
-1. Log in to the Netwrix Change Tracker console and go to **Settings**.
+1. Log in to the Change Tracker console and go to **Settings**.
 2. On the left navigation, select **Agents & Devices**, locate the proxy agent to use, and click **+Add Proxied Device**.
 3. Enter the following details:
    - **Name** — enter the name to display for the device in the console.
@@ -76,12 +76,12 @@ Before adding the device in the console, complete the following on the Palo Alto
      ```
 
    Replace `username` and `hostname` with the actual credential username and device hostname.
-8. Configure the **Login Script** using the directives in the next section.
+8. Configure the **Login Script** using the directives in [Step 4 — Configure the Login Script](#step-4-configure-the-login-script).
 9. Click **Update** to save the credential, then click **Update** again on the proxied device to save the device.
 
 ### Step 4 — Configure the Login Script
 
-Palo Alto configurations export in XML format by default. The `set cli config-output-format set` command switches the output to `set` format, which is easier for Netwrix Change Tracker to parse.
+Palo Alto configurations export in XML format by default. The `set cli config-output-format set` command switches the output to `set` format, which is easier for Change Tracker to parse.
 
 Enter the following login script:
 
@@ -105,7 +105,7 @@ Each directive does the following:
 
 ### Alternate Login Script for Command-Capture Devices
 
-The primary login script relies on the tracker's default behavior: it scrapes everything between matched prompts as the tracked session output. Use the alternate script below instead when you need to build the tracked output from specific command results only, by capturing each command's output explicitly into the `$$RESULTS$$` variable with `ExecuteAndCapture`, rather than the full scraped session:
+By default, the login script scrapes everything between matched prompts as the tracked session output. Use the following alternate script instead to capture specific command results explicitly into the `$$RESULTS$$` variable with `ExecuteAndCapture`:
 
 ```text
 ExcludeMatchesWithComment,,^time.+|^uptime.+|^app-.+|^av-.+|^threat.+|^wf-.+|^url-.+|^wildfire-.+|^global-.+|^Unkn.+

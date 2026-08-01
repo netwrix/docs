@@ -27,7 +27,7 @@ title: Using Baseline Data Beyond Change Detection
 
 This article explains additional uses for baseline data beyond change detection and points to the Baseline Center documentation for building and running a Baseline Policy.
 
-Netwrix Change Tracker uses baseline data to detect changes, but the same data has uses beyond change detection for an individual host. Enabling **Send Baseline Events** on a tracker gives you a full, retained record of a device's configuration that you can use to:
+Netwrix Change Tracker uses baseline data to detect changes, but that data has uses beyond detecting change on a single host. Enabling **Send Baseline Events** on a tracker gives you a full, retained record of a device's configuration that you can use to:
 
 - Retain a record of a device's configuration, such as a router configuration, a firewall rule set, or a full software inventory.
 - Compare one host's build standard against another. Built-in Center for Internet Security (CIS) Benchmark compliance reports assess a host's configuration against a hardened build standard, but other configuration attributes may also need comparison, such as:
@@ -42,7 +42,7 @@ Netwrix Change Tracker uses baseline data to detect changes, but the same data h
 
 ### Baseline Data for Non-File Trackers
 
-For a tracker that captures text output rather than individual files, such as the Network Ports tracker, the baseline data is the tracker's full scan output at the time of the baseline. For a firewall or router tracked through a proxied device, the baseline captures the full configuration record, and later Device Events capture the interim changes made to that configuration. You can use a device configured with one of these trackers as the source device when building a Baseline Policy, the same as any other tracked device.
+For a tracker that captures text output rather than individual files, such as the Network Ports tracker, the baseline is the tracker's full scan output captured at that point in time. For a firewall or router tracked through a proxied device, the baseline captures the full configuration record, and later Device Events capture the interim changes made to that configuration. You can use a device configured with one of these trackers as the source device when building a Baseline Policy, the same as any other tracked device.
 
 ## Instructions
 

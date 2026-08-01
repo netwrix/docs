@@ -14,7 +14,7 @@ keywords:
   - uptime
 products:
   - changetracker
-knowledge_article_id: ka04u000000HdAlAAK
+knowledge_article_id: kA04u0000000JdjCAE
 sidebar_label: Excluding Information from Process Output Tracking (Agentless)
 tags: [kb, configuration-and-setup]
 title: Excluding or Editing Information from Process Output Tracking (Agentless)
