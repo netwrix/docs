@@ -76,7 +76,7 @@ Before adding the device in the console, complete the following on the Palo Alto
      ```
 
    Replace `username` and `hostname` with the actual credential username and device hostname.
-8. Configure the **Login Script** using the directives in [Step 4 — Configure the Login Script](#step-4-configure-the-login-script).
+8. Configure the **Login Script** using the directives in [Step 4 — Configure the Login Script](#step-4--configure-the-login-script).
 9. Click **Update** to save the credential, then click **Update** again on the proxied device to save the device.
 
 ### Step 4 — Configure the Login Script
