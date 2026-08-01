@@ -89,6 +89,8 @@ If you see the following error on the **Settings** page, follow the troubleshoot
 Error: Key not valid in specified state
 ```
 
+Change Tracker encrypts the Remote Credentials password and SMTP password entries using a key tied to the specific Hub server that stored them. Restoring the database on a different server — as in this migration — means the new server cannot decrypt those fields, which is why the Settings page shows this error. Clearing the affected entries removes the ciphertext the new server cannot read, but you must re-enter the Remote Credentials password and SMTP settings afterward.
+
 ### Reset the Remote Credentials Password
 
 1. Open a **Command Prompt** and run it as an **Administrator**.

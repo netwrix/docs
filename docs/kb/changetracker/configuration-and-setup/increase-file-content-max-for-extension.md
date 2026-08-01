@@ -48,6 +48,8 @@ Increasing this limit lets the agent track larger files, but raises the resource
 
 > **TIP:** To apply the same limit across multiple agents on the same version and in a default configuration state, copy the edited file to each agent, then stop and start the **Gen7Agent** service on each one for the change to take effect.
 
+After the service restarts, trigger a change on the file that previously exceeded the limit, or wait for the next scheduled tracking cycle. Confirm the fix worked by checking that the agent's rolling log no longer logs the `filecontentmaxforextension` message for that file, and that the file's content change is now tracked with a hash value instead of being flagged as untracked.
+
 ## Related Articles
 
 - [Moving Your Linux Server MongoDB Database to a Windows Server](../database-and-diagnostics/move-linux-mongodb-to-windows)

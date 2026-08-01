@@ -47,7 +47,9 @@ Increasing this limit lets the agent hash larger files, but raises the resources
 
 > **TIP:** To apply the same limit across multiple agents on the same version and in a default configuration state, copy the edited file to each agent, then stop and start the **Gen7Agent** service on each one for the change to take effect.
 
+After the service restarts, trigger a change on the file that previously exceeded the limit, or wait for the next scheduled tracking cycle. Confirm the fix worked by checking that the agent's rolling log no longer logs the `filehashmaxforextension` message for that file, and that a hash value now populates for the file instead of it being flagged as unhashed.
+
 ## Related Articles
 
 - [Increasing File Content Max for Extension](./increase-file-content-max-for-extension)
-- [Rolling-Log Fix: NNT_FILEHASH_LINUX_X64 Permission Denied (Agentless Linux)](../troubleshooting-and-errors/nnt-filehash-linux-x64-permission-denied)
+- [NNT_FILEHASH_LINUX_X64 Log Fix: Permission Denied](../troubleshooting-and-errors/nnt-filehash-linux-x64-permission-denied)

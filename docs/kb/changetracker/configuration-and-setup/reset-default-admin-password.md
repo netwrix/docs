@@ -22,7 +22,7 @@ title: Resetting the Default Admin Password on Netwrix Change Tracker
 
 ## Overview
 
-Netwrix Change Tracker's password reset function is only accessible from the localhost, so you must run it as a high-privilege user with logon rights to the Hub server itself.
+Netwrix Change Tracker's password reset function is only accessible from the localhost, so you must be able to log on to the Hub server itself — locally or via RDP — and open a browser there. No Windows administrator rights or Change Tracker admin role is required by the reset endpoint itself.
 
 ## Instructions
 

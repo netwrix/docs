@@ -54,7 +54,7 @@ This article lists the services, processes, paths, and log files to monitor with
 
 ## Drivers and Dependencies
 
-- Netwrix "who made the change" driver: `C:\Windows\System32\drivers\NNTInfo.sys`
+- Netwrix "who made the change" driver: `C:\Windows\System32\drivers\NNTInfo.sys` — confirms the kernel mini-filter driver that captures "who made the change" attribution for Windows file integrity monitoring (FIM) with live tracking is loaded. If the driver stops running, this attribution data may be lost or intermittently missing on affected Windows FIM trackers; other tracker types and Linux devices are unaffected.
 
 ## Potential Syslog Thresholds and Messages
 
