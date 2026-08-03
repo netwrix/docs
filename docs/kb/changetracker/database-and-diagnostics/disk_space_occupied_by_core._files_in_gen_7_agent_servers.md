@@ -27,7 +27,7 @@ products:
 
 ## Question
 
-The `/opt/nnt/gen7agentcore/bin/` directory (see [Linux Agent Installation](/docs/changetracker/8_2/install/agent/linuxos)) in Gen 7 Agent servers (Linux) contains multiple `core.*` files.
+The `/opt/nnt/gen7agentcore/bin/` directory (see [Linux Agent Installation](/docs/changetracker/install/agent/linuxos)) in Gen 7 Agent servers (Linux) contains multiple `core.*` files.
 
 1. What are these files?
 2. Is it safe to delete these files?
