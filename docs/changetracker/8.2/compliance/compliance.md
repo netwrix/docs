@@ -18,7 +18,7 @@ from the Compliance Report selector then drill into report results by clicking o
 for any Device.
 
 You can view any individual report by clicking the result score, and export the reports you select
-with the checkboxes in a range of formats (pdf, excel, or csv), with an option to select more
+with the checkboxes in a range of formats (PDF, Excel, or CSV), with an option to select more
 detailed results.
 
 Review the following for additional information:
@@ -53,7 +53,7 @@ The Customer Portal download also contains newer CIS benchmark templates ahead o
 Tracker release, so you can adopt an updated benchmark without waiting for a product upgrade.
 :::
 
-### Adding a downloaded template
+### Add a downloaded template
 
 After you download a template from the Customer Portal, upload it to Change Tracker:
 
@@ -585,7 +585,7 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
 
 Payment Card Industry Data Security Standard (PCI DSS) reports.
 
-| Operating System | Template |
+| Platform | Template |
 | --- | --- |
 | IBM AIX 7.1 | NNT PCI DSS AIX 7.1 |
 | Apache Tomcat 5.5-6.0 | NNT PCI DSS Apache Tomcat 5.5-6.0 |
@@ -649,7 +649,7 @@ Sarbanes-Oxley Act (SOX) reports.
 
 Defense Information Systems Agency (DISA) Security Technical Implementation Guide (STIG) reports.
 
-| Operating System | Template |
+| Platform | Template |
 | --- | --- |
 | Adobe Acrobat Reader X | NNT Adobe Acrobat Reader X Secure Configuration Benchmark |
 | Google Chrome | NNT U Google Chrome STIG V1R19 Manual |
@@ -729,7 +729,7 @@ NIST Special Publication 800-171 reports.
 International Organization for Standardization (ISO)/International Electrotechnical Commission
 (IEC) 27001 reports.
 
-| Operating System | Template |
+| Platform | Template |
 | --- | --- |
 | Microsoft SQL Server 2008R2 | NNT ISO 27K Microsoft SQL Server 2008R2 Database Engine Benchmark |
 | Microsoft SQL Server 2012 | NNT ISO 27K Microsoft SQL Server 2012 Database Engine Benchmark |
