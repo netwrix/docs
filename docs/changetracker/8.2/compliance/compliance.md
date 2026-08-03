@@ -58,7 +58,7 @@ Tracker release, so you can adopt an updated benchmark without waiting for a pro
 After you download a template from the Customer Portal, upload it to Change Tracker:
 
 1. Go to **Settings** > **Policy Templates**.
-2. Click the **Actions** dropdown, then click **Upload Templates**.
+2. Click the **Action** button, then click **Upload Template**.
 3. Browse to the downloaded XML file and select it.
 4. To replace an existing template that has the same name, select the checkbox that overwrites templates on upload.
 5. Click **Upload Template**.
