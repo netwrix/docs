@@ -6,9 +6,7 @@ sidebar_position: 10
 
 # Create Custom Managed Certificates for Each Agent
 
-If "custom-managed" is selected for the CA certificate configuration during
-[Manual Agent Deployment](/docs/threatprevention/8.0/install/agent/manual/manual.md), use the `SIAgentCert.exe` command line utility to facilitate
-the creation of certificates for each Agent.
+Use the `SIAgentCert.exe` command line utility to create certificates for each Agent.
 
 :::note
 As a requirement for using custom managed certificates, you must provide the Enterprise
@@ -22,14 +20,14 @@ following:
 - Agent
 
 See the
-[Administration Console and Agent Not Communicating with the Enterprise Manager ](/docs/threatprevention/8.0/troubleshooting/enterprisemanagercommunication.md)topics
+[Administration Console and Agent Not Communicating with the Enterprise Manager ](/docs/threatprevention/7.5/troubleshooting/enterprisemanagercommunication.md)topics
 for additional information.
 
 The `SIAgentCert.exe` utility is located in the following folder:
 
 `…\Netwrix\Netwrix Threat Prevention\SIWindowsAgent`
 
-Follow the steps to run the `SIAgentCert.exe` utility.
+To run the `SIAgentCert.exe` utility:
 
 **Step 1 –** Open a command prompt on the machine where the Agent is deployed and run the
 SIAgentCert.exe utility as an Administrator. The utility checks for the following files in the
@@ -39,14 +37,14 @@ SIAgentCert.exe utility as an Administrator. The utility checks for the followin
 - agentcsr.pem
 - key.pem
 
-If these files are not present because no certificates were previously created, the utility
+If these files aren't present because no certificates were previously created, the utility
 generates an `agent-key.pem` file and an `agent-csr.pem` and places them in the CertsInfo folder.
 
 **Step 2 –** The `SIAgentCert.exe` utility prompts you to sign the certificate using the generated
 `agent-csr.pem` file.
 
 :::note
-It is the customer's responsibility to supply the `agent-csr.pem` file to their
+The customer must supply the `agent-csr.pem` file to their
 certificate authority to create a signed file.
 :::
 
@@ -70,6 +68,6 @@ Console. Upgrades and configuration changes will continue to use the existing ce
 :::
 
 
-See the [Upgrade Procedure](/docs/threatprevention/8.0/install/upgrade/overview.md) topic for upgrade considerations. See the
-[Upgrade Agent](/docs/threatprevention/8.0/install/upgrade/agent.md) topic for instructions on upgrading an Agent from the
+See the [Upgrade Procedure](/docs/threatprevention/7.5/install/upgrade/overview.md) topic for upgrade considerations. See the
+[Upgrade Agent](/docs/threatprevention/7.5/install/upgrade/agent.md) topic for instructions on upgrading an Agent from the
 Administration Console.

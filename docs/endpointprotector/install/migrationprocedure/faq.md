@@ -25,13 +25,13 @@ Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 onto 2510 wi
 
 ## Restoring a 2509 Backup onto a 2510 Server
 
-Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. Once you patch it to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
+Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. After you patch it to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
 
 ---
 
 ## Backup Import Returns a 500 Error
 
-This most commonly occurs with large backups or under-resourced VMs.
+This most commonly occurs with large backups or under-resourced VMs, specifically during backup import.
 
 **Steps:**
 1. Verify you have at least 2 GB of free disk space on the 2510 VM.
@@ -39,6 +39,10 @@ This most commonly occurs with large backups or under-resourced VMs.
 3. Verify the backup was created on 5.9.4.2 (not another version).
 4. Try increasing PHP upload limits temporarily (see [Backup File Exceeds 200 MB Import Limit](troubleshooting#backup-file-exceeds-200-mb-import-limit)).
 5. If none of these steps resolves it, contact Netwrix Support with the server logs from `/var/log/epp/`.
+
+:::note
+If 500 errors continue to occur after migration is complete — recurring every few days and resolved only by a full server reboot — see [Recurring HTTP 500 Errors Resolved Only by a Full Reboot](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#recurring-http-500-errors-resolved-only-by-a-full-reboot) instead. That's a different, ongoing issue rather than a one-time import failure.
+:::
 
 ---
 
@@ -95,12 +99,16 @@ You may need to refresh Entra ID / SSO application registrations after migration
 
 ## EPP Clients Not Communicating After Migration
 
+:::note
+See also [Endpoints Not Checking In After Migration](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#endpoints-not-checking-in-after-migration) in Troubleshooting for a same-IP-strategy and firewall-focused checklist for this scenario.
+:::
+
 **Checklist:**
 1. Confirm the new server's IP/FQDN is reachable from endpoints (firewall, DNS).
 2. Confirm client communications are enabled on the server (**System Configuration → System Settings**).
-3. Confirm client packages are uploaded to the server — 5.9.4.3 (the required signature bridge) and 2605 (the target version).
+3. Confirm client packages are uploaded to the server — 5.9.4.3 Hotfix 1 (the required signature bridge) and 2605 (the target version).
 4. Check the **Device Control → Computers** page and sort by **Last Seen**.
-5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 first, they can't receive the 2605 client package directly — deploy 5.9.4.3 first via your software distribution tool before upgrading to 2605. See [Phase 3 — Uploading EPP & EE Client Packages](migrationguide#phase-3--uploading-epp--ee-client-packages) for the full client upgrade path.
+5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 Hotfix 1 first, they can't receive the 2605 client package directly — deploy 5.9.4.3 Hotfix 1 first via your software distribution tool before upgrading to 2605. See [Phase 3 — Uploading EPP & EE Client Packages](migrationguide#phase-3--uploading-epp--ee-client-packages) for the full client upgrade path.
 6. Verify that firewall rules allow HTTPS connections on the configured EPP communication port.
 7. Consider reinstalling the EPP Client if it appears corrupted.
 

@@ -1,10 +1,10 @@
 {
-  "label": "Manual Agent Deployment",
-  "position": 10,
+  "label": "Knowledge Base",
+  "position": 2,
   "collapsed": true,
   "collapsible": true,
   "link": {
     "type": "doc",
-    "id": "manual"
+    "id": "knowledgebase"
   }
 }
