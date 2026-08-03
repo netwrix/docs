@@ -181,43 +181,21 @@ const config = {
     [
       'docusaurus-plugin-openapi-docs',
       {
-        id: 'openapi',
-        docsPluginId: 'changetracker8_1',
+        id: 'openapi-changetracker',
+        docsPluginId: 'changetracker',
         config: {
           'changetracker-hub': {
-            specPath: 'static/openapi/changetracker-hub-8.1.yaml',
-            outputDir: 'docs/changetracker/8.1/api/reference',
-            sidebarOptions: {
-              groupPathsBy: 'tag',
-              categoryLinkSource: 'tag',
-              sidebarCollapsed: true,
-            },
-            downloadUrl: '/openapi/changetracker-hub-8.1.yaml',
-            version: '8.1',
-            label: 'ChangeTracker Hub 8.1 API',
-            baseUrl: '/docs/changetracker/8_1/api/reference/',
-          },
-        },
-      },
-    ],
-    [
-      'docusaurus-plugin-openapi-docs',
-      {
-        id: 'openapi-8-2',
-        docsPluginId: 'changetracker8_2',
-        config: {
-          'changetracker-hub-8-2': {
             specPath: 'static/openapi/changetracker-hub-8.2.yaml',
-            outputDir: 'docs/changetracker/8.2/api/reference',
+            outputDir: 'docs/changetracker/api/reference',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
               sidebarCollapsed: true,
             },
             downloadUrl: '/openapi/changetracker-hub-8.2.yaml',
-            version: '8.2',
-            label: 'ChangeTracker Hub 8.2 API',
-            baseUrl: '/docs/changetracker/8_2/api/reference/',
+            version: 'current',
+            label: 'Change Tracker Hub API',
+            baseUrl: '/docs/changetracker/api/reference/',
           },
         },
       },
