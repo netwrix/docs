@@ -27,6 +27,12 @@ knowledge_article_id: kA0Qk0000000000AAD
 
 A configured SIEM integration on the Netwrix Endpoint Protector Server stops receiving events. In rare cases, this can happen after a [server migration](/docs/endpointprotector/install/migrationprocedure/migrationguide), since the SIEM integration may require reconfiguration after restore. It can also occur independently of any migration.
 
+## Cause
+
+`syslog-ng` is a standard Ubuntu OS daemon that runs independently of the Endpoint Protector Server application. Like any OS-level service, it can stop running because of a daemon crash, service corruption, or an operating system patch or update that affects daemon startup. There is no single confirmed root cause.
+
+To restore SIEM event delivery, follow the check and restart procedure in Resolution.
+
 ## Resolution
 
 1. Verify the SIEM integration settings under **System Configuration → SIEM Settings**, and reconfigure the destination if needed. See [SIEM Integration](/docs/endpointprotector/admin/appliance#siem-integration) for the full configuration reference.

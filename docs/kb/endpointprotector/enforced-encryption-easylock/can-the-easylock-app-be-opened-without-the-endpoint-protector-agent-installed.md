@@ -43,5 +43,7 @@ For a middle-ground option, consider **Enforced Encryption Read-Only Mode** inst
 :::
 
 :::important
-After deploying the Enforced Encryption Client with Read-Only mode enabled, launch the EE Client for the first time on an EPP Client-managed computer to complete the configuration process.
+Enforced Encryption Read-Only mode requires the EE Client to establish policy context with the Endpoint Protector Server at least once. After deploying the Enforced Encryption Client with Read-Only mode enabled, launch the EE Client for the first time on an EPP Client-managed computer. This first launch lets the EE Client synchronize with the server so it can apply user-, computer-, and group-specific Enforced Encryption settings instead of only the account-wide Global Settings defaults.
+
+If a customer skips this step, the EE Client can still configure itself as long as it can reach the Endpoint Protector Server — for example, over the internet from an unmanaged computer. In that case, it applies only the Global Settings defaults, with no user, computer, or group-level granularity.
 :::

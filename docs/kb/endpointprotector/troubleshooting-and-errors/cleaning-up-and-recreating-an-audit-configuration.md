@@ -28,6 +28,18 @@ knowledge_article_id: kA0Qk0000000000AAC
 
 The Audit Log Backup job on the Netwrix Endpoint Protector Server is stuck, unresponsive, or otherwise needs to be reset, and you need to recreate the Audit configuration.
 
+## Cause
+
+The Audit Log Backup job most commonly stalls due to insufficient disk space or performance issues on the Endpoint Protector Server, for example, when `/tmp` or `/var/eppfiles/logbackup/jsdata/` fill up with accumulated export and log backup files.
+
+:::warning
+The initial storage location for Audit Log Backup export files is not suitable for long-term storage. Download and store export files in a secure location to prevent data loss. In SaaS environments, the upgrade process can remove export files, so download and store them regularly.
+:::
+
+If disk space and performance are not the cause, a later release likely fixed the underlying product defect. Update to the latest Endpoint Protector Server version and confirm whether the issue persists. See [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability) for current version information.
+
+If the Audit Log Backup job remains stuck after updating to the latest version, contact Netwrix Support: https://www.netwrix.com/support.html
+
 ## Resolution
 
 Clean up the existing Audit configuration and set up a new one.

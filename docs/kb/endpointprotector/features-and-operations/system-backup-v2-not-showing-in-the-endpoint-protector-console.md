@@ -1,8 +1,8 @@
 ---
 description: >-
-  Explains why System Backup V2 may not appear in the Netwrix Endpoint Protector
-  console for virtual appliances hosted on the Netwrix SaaS platform and
-  instructs you to contact Netwrix Support for remediation.
+  Explains that System Backup V2 is a Self-Hosted-only feature, unavailable on
+  the Netwrix SaaS platform because backup for SaaS deployments is managed by
+  the Netwrix team.
 keywords:
   - endpoint protector
   - System Backup V2
@@ -31,7 +31,7 @@ Why is System Backup V2 not showing up in the Netwrix Endpoint Protector console
 
 ## Answer
 
-This scenario applies to Netwrix Endpoint Protector virtual appliances hosted on the Netwrix SaaS platform. If System Backup V2 is not visible in the console, you will need intervention from a Netwrix Support engineer.
+System Backup V2 is not available in the Netwrix Endpoint Protector console for virtual appliances hosted on the Netwrix SaaS platform. This is expected behavior: the Netwrix team manages backup for SaaS deployments directly, so the self-service System Backup V2 feature is available only to Customer-managed Self-Hosted (On-Premises) deployments.
 
 For the full reference, see [System Backup](/docs/endpointprotector/admin/systemmaintenance/backup).
 
@@ -39,4 +39,4 @@ For the full reference, see [System Backup](/docs/endpointprotector/admin/system
 Netwrix Endpoint Protector is available in two deployment models: **Netwrix-hosted SaaS** and **Customer-managed Self-Hosted (On-Premises)**. On the SaaS platform, Netwrix manages more of the underlying infrastructure directly, which is why System Backup V2 visibility can differ from what a Self-Hosted appliance shows in the console. See [Deployment Models: SaaS vs. Self-Hosted Update Cadence](/docs/endpointprotector/supportability/server-supportability#deployment-models-saas-vs-self-hosted-update-cadence) for the full comparison.
 :::
 
-Please create a support ticket via the Netwrix Support portal for assistance: https://www.netwrix.com/support.html
+If you are on a Self-Hosted deployment and System Backup V2 is not visible in the console, create a support ticket via the Netwrix Support portal for assistance: https://www.netwrix.com/support.html
