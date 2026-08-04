@@ -141,3 +141,25 @@ query at another time.
 
 Both options close the Host Discovery Wizard and return to the Host Discovery Queries view on the
 Host Discovery node. If **Yes** is selected, the **Query State** indicates the running query.
+
+## Required Permissions
+
+Scanning an IP range for active hosts does not require any authenticated credentials. Host
+detection uses ICMP echo (ping), ARP, and NetBIOS name resolution to identify active hosts, and
+standard DNS to resolve their names — none of these steps authenticate to the target host.
+
+:::info
+The Connection Profile selected on the Query page is not required for the IP sweep step itself. It
+only becomes relevant if Host Inventory Refresh is also enabled (see below).
+:::
+
+If **Only include host with the following ports open** is selected, Enterprise Auditor only
+verifies that the specified TCP ports accept a connection. This confirms network reachability, not
+that any particular service is running or that any credential would succeed against it.
+
+If **Refresh inventory every time the host discovery query completes** is enabled on the Inventory
+page, each discovered host is also queried for inventory data. This requires the Remote Registry
+service to be running on the target and the account used to have local administrator rights (or an
+account explicitly delegated Remote Registry and WMI namespace permissions) on that host. See the
+[Host Inventory](/docs/accessanalyzer/11.6/admin/settings/hostinventory.md) topic for details on
+what inventory data is collected and how.

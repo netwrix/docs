@@ -110,3 +110,22 @@ query at another time.
 
 Both options close the Host Discovery Wizard and return to the Host Discovery Queries view on the
 Host Discovery node. If **Yes** is selected, the **Query State** indicates the running query.
+
+## Required Permissions
+
+This query only requires an authenticated domain user account — no Exchange administrative role
+(such as Organization Management or View-Only Organization Management) is needed to read Exchange
+server objects from Active Directory.
+
+Because the search targets the Exchange Configuration container
+(`CN=Microsoft Exchange,CN=Services,CN=Configuration`), which is part of the forest-wide
+Configuration partition, the account must be able to reach a domain controller capable of
+servicing a query against the Configuration naming context. Any domain controller in the forest
+holds a copy of this partition, so this is not limited to domain controllers local to the
+Enterprise Auditor Console.
+
+If **Refresh inventory every time the host discovery query completes** is enabled on the Inventory
+page, each discovered Exchange server is also queried for inventory data (including Exchange role
+and version), which requires local administrator rights (or explicitly delegated Remote Registry
+and WMI access, including the Exchange WMI provider) on that host. See the
+[Host Inventory](/docs/accessanalyzer/11.6/admin/settings/hostinventory.md) topic for details.

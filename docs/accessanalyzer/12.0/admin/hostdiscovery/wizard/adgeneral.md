@@ -132,3 +132,21 @@ query at another time.
 
 Both options close the Host Discovery Wizard and return to the Host Discovery Queries view on the
 Host Discovery node. If **Yes** is selected, the **Query State** indicates the running query.
+
+## Required Permissions
+
+Querying Active Directory for computer objects only requires an authenticated domain user
+account — no elevated Active Directory rights (such as Domain Admin or specific delegated
+permissions) are needed to read computer objects in a standard Active Directory environment. This
+applies regardless of which Connection Profile option is selected.
+
+:::info
+If the targeted OUs have restricted read access (for example, hardened Tier 0 OUs in a tiered
+administration model), the account used must be explicitly granted read access to those OUs.
+:::
+
+If **Refresh inventory every time the host discovery query completes** is enabled on the Inventory
+page, each discovered computer is also queried for inventory data, which requires local
+administrator rights (or explicitly delegated Remote Registry and WMI access) on that host in
+addition to the Active Directory read access described above. See the
+[Host Inventory](/docs/accessanalyzer/12.0/admin/settings/hostinventory.md) topic for details.

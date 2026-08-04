@@ -148,3 +148,26 @@ query at another time.
 
 Both options close the Host Discovery Wizard and return to the Host Discovery Queries view on the
 Host Discovery node. If **Yes** is selected, the **Query State** indicates the running query.
+
+## Required Permissions
+
+The account configured in the Data Link Properties window only needs permission to connect to the
+database and read (`SELECT`) from the single table used by the query. No write access, additional
+tables, or server-level roles are required.
+
+:::info
+Access Analyzer does not restrict the query to the selected table/column at the database
+permission level — that scoping happens in the wizard, not in SQL Server. For least privilege,
+grant the account `SELECT` only on the specific table (or a view exposing just the needed column)
+rather than reusing a broader-access account.
+:::
+
+If **Use Windows NT Integrated security** is selected, the query reuses whatever database access
+the Access Analyzer Console's service account already has, which may be broader than this query
+needs. A dedicated SQL authentication account scoped to this one table is generally the safer
+choice.
+
+If **Refresh inventory every time the host discovery query completes** is enabled on the Inventory
+page, each imported host is also queried for inventory data, which requires local administrator
+rights (or explicitly delegated Remote Registry and WMI access) on that host. See the
+[Host Inventory](/docs/accessanalyzer/12.0/admin/settings/hostinventory.md) topic for details.

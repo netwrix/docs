@@ -130,3 +130,22 @@ query at another time.
 
 Both options close the Host Discovery Wizard and return to the Host Discovery Queries view on the
 Host Discovery node. If **Yes** is selected, the **Query State** indicates the running query.
+
+## Required Permissions
+
+This query only requires an authenticated domain user account — no elevated Active Directory
+administrative role (such as Domain Admin or Enterprise Admin) is needed to enumerate domain
+controllers, domains, or sites.
+
+Because domain and site information is read from the forest-wide Configuration partition (the
+`CN=Sites` and `CN=Partitions` containers), the account must be able to reach a domain controller
+capable of servicing a query against the Configuration naming context.
+
+:::info
+Domain Controllers are a high-value target class. If **Refresh inventory every time the host
+discovery query completes** is enabled on the Inventory page, the account used for inventory needs
+local administrator rights on every discovered domain controller — effectively equivalent to
+Domain Admin. Use a dedicated, tightly scoped service account for this purpose rather than an
+existing Domain Admin credential. See the
+[Host Inventory](/docs/accessanalyzer/11.6/admin/settings/hostinventory.md) topic for details.
+:::
