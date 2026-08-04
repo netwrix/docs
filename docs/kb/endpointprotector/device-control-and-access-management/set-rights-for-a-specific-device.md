@@ -13,10 +13,11 @@ keywords:
   - allow list
   - permissions
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Set Rights for a Specific Device
 tags:
   - device-control-and-access-management
+  - kb
 title: "Set Rights for a Specific Device"
 knowledge_article_id: kA0Qk0000002B6rKAE
 ---

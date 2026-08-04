@@ -14,10 +14,11 @@ keywords:
   - installation
   - troubleshooting
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Installing a Monitoring Agent on the Virtual Appli
 tags:
   - deployment-and-installation
+  - kb
 title: "Installing a Monitoring Agent on the Virtual Appliance"
 knowledge_article_id: kA0Qk0000002B2vKAE
 ---

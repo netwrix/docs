@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Change Default Credentials
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "How to Locate and Change the Default Credentials for the Console"
 knowledge_article_id: kA0Qk0000002B6cKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Locate and Change the Default Credentials for the Console

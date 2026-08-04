@@ -10,10 +10,11 @@ keywords:
 sidebar_label: Manually Uninstall the Agent
 tags:
   - deployment-and-installation
+  - kb
 title: "How to Manually Uninstall the Agent"
 knowledge_article_id: kA0Qk0000002B6xKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Manually Uninstall the Agent

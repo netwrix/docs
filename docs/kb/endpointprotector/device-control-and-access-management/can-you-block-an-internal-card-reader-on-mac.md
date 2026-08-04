@@ -12,10 +12,11 @@ keywords:
   - user remediation
   - device control
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Can You Block an Internal Card Reader on Mac?
 tags:
   - device-control-and-access-management
+  - kb
 title: "Can You Block an Internal Card Reader on Mac?"
 knowledge_article_id: kA0Qk0000002BHKKA2
 ---

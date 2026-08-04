@@ -12,11 +12,12 @@ keywords:
   - endpoint protector
   - mobile device management
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: How to Set Access Rights for an iPhone
 tags:
   - device-control-and-access-management
+  - kb
 title: "How to Set Access Rights for an iPhone"
 knowledge_article_id: kA0Qk0000002BHIKA2
 ---
