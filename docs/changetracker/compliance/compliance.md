@@ -39,7 +39,8 @@ identify the configuration differences between two devices.
 
 Netwrix Change Tracker scores devices against a hardened build standard using compliance report
 templates. The tables below list the templates available for each compliance standard and the
-platforms they support.
+platforms they support. Template names appear exactly as shown in Change Tracker; the `NNT` prefix
+(and the `Netwrix` prefix on some templates) is part of the name.
 
 :::info
 Only Center for Internet Security (CIS) benchmark reports ship bundled with the Hub Server
@@ -75,10 +76,7 @@ Review the following for additional information:
 Change Tracker's CIS compliance reports map directly to the prescriptive configuration
 recommendations in the Center for Internet Security (CIS)
 [Benchmarks List](https://www.cisecurity.org/cis-benchmarks). Each Change Tracker compliance report
-is [CIS approved](https://www.cisecurity.org/partner/netwrix), and every one ships bundled with the
-Hub Server installer. Only a benchmark published after your installed version — for example, a
-benchmark for a newly released operating system — requires a manual download and upload; the next
-Change Tracker release bundles it automatically.
+is [CIS approved](https://www.cisecurity.org/partner/netwrix).
 
 **CIS Version** is the template's own revision number. Netwrix tracks it internally and uses it to
 determine whether a newer template should overwrite an existing one during import. It's independent
