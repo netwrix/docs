@@ -13,10 +13,11 @@ keywords:
   - webmail scanning
   - endpoint protector
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: "How to Monitor Webmail for Gmail, Outlook, and Yahoo"
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: 'How to Monitor Webmail for Gmail, Outlook, and Yahoo'
 knowledge_article_id: kA0Qk0000002Ay4KAE
 ---
@@ -35,3 +36,7 @@ This article explains how you can enable the **Monitor webmail** setting in Netw
 When you enable this setting, it allows monitoring of the subject and body fields for Gmail, Outlook, and Yahoo webmail accessed through browsers.
 
 ![Deep Packet Inspection settings page with Monitor webmail option highlighted](./../0-images/ka0Qk000000Drsv_0EMQk00000CB41O.png)
+
+:::note
+If a webmail provider changes its page structure and subject or body extraction stops working, Endpoint Protector uses a JSON parser to locate these fields. See [Monitor Webmail JSON Format Parser Usage](/docs/endpointprotector/admin/cap_module/deeppacket#monitor-webmail-json-format-parser-usage) for the parser syntax and examples. Only adjust the parser if Monitor webmail stops working — don't change it otherwise.
+:::

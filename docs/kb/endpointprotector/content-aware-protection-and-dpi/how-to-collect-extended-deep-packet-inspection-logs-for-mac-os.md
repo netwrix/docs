@@ -15,10 +15,11 @@ keywords:
   - logs
   - troubleshooting
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: How to Collect Extended Deep Packet Inspection Log
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "How to Collect Extended Deep Packet Inspection Logs for Mac OS"
 knowledge_article_id: kA0Qk0000002B2nKAE
 ---
@@ -28,6 +29,12 @@ knowledge_article_id: kA0Qk0000002B2nKAE
 ## Overview
 
 This article explains how to collect extended Deep Packet Inspection (DPI) logs on MacOS to assist with troubleshooting and support requests.
+
+:::tip
+Starting with EPP Server and Client version 2608, DPI debug logs are included automatically in Agent Debugging, so the manual script described in this article is no longer necessary. Netwrix recommends upgrading to the latest EPP version so you can collect DPI logs directly from the Admin console instead of running a script on each endpoint. See [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) for the console-driven Manual and Automatic Logging procedures.
+:::
+
+While the automated method is available starting with version 2608, you can still use the manual procedure below to gather DPI logs if you prefer.
 
 ## Instructions
 

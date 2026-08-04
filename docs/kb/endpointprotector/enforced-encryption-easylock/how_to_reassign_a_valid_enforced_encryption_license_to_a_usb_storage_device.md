@@ -7,11 +7,12 @@ keywords:
   - USB storage device
 sidebar_label: Reassign Enforced Encryption License
 tags:
-  - enforced-encryption-and-easylock
+  - enforced-encryption-easylock
+  - kb
 title: "How to Reassign a Valid Enforced Encryption License to a USB Storage Device"
 knowledge_article_id: kA0Qk0000002B7BKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Reassign a Valid Enforced Encryption License to a USB Storage Device

@@ -7,11 +7,12 @@ keywords:
   - data security
 sidebar_label: Backup Restore
 tags:
-  - enforced-encryption-and-easylock
+  - deployment-and-installation
+  - kb
 title: "How to Perform a Backup Restore"
 knowledge_article_id: kA0Qk0000002BAfKAM
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Perform a Backup Restore
@@ -19,6 +20,8 @@ products:
 ## Overview
 
 Performing a backup restore for Endpoint Protector is essential for maintaining data security and system integrity, especially when using the eDiscovery module. This article outlines the steps and considerations for a successful backup and restore process.
+
+For the full reference, see [System Backup](/docs/endpointprotector/admin/systemmaintenance/backup).
 
 ## Instructions
 
@@ -32,9 +35,15 @@ Performing a backup restore for Endpoint Protector is essential for maintaining 
 6. Confirm that you have saved the System Backup Key by selecting **Yes, I saved the System Backup Key**.
 7. The system backup (excluding logs) will be created and listed in the **List of System Backups**. You can view, download, or delete the backup as needed.
 
+:::warning
+For security purposes, Endpoint Protector doesn't store the System Backup Key. If you lose it, you can't recover it and won't be able to restore this backup.
+:::
+
 ### Restore Process
 
-> **NOTE:** Before restoring, use the Audit Log Backup feature because logs will not be retained. Download any previous system backups, as only the backup you import and restore will remain.
+:::note
+Before restoring, use the Audit Log Backup feature because logs will not be retained. Download any previous system backups, as only the backup you import and restore will remain.
+:::
 
 1. On the Endpoint Protector Server, navigate to **System Maintenance** > **System Backup v2** > **System Backup Information**.
 2. Click **Import and Restore (Migrate)**.
@@ -46,9 +55,13 @@ Performing a backup restore for Endpoint Protector is essential for maintaining 
 8. If necessary, use the Audit Log Backup feature to restore logs.
 9. For eDiscovery module users: After restoring the backup, use the **re-read rights and settings for all computers** feature (**Dashboard** > **System Status** > **System Functionality**). This ensures accurate correlation between previously discovered items and actions (such as Encrypt, Decrypt, Delete, etc.) that can be performed on these files.
 
+:::info
+The Endpoint Protector Server can't process backup files larger than 200 MB. If your backup exceeds this limit, contact Netwrix Customer Support for assistance.
+:::
+
 By following these steps, you can successfully perform a backup and restore for Endpoint Protector, ensuring data accuracy and integrity throughout the process.
 
 ## Related Links
 
-- [System Backup V2](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/admin/systemmaintenance/backup)
-- [Create a System Backup V2](/docs/kb/endpointprotector/enforced-encryption-and-easylock/create_a_system_backup_v2)
+- [System Backup](/docs/endpointprotector/admin/systemmaintenance/backup)
+- [Create a System Backup V2](/docs/kb/endpointprotector/deployment-and-installation/create_a_system_backup_v2)

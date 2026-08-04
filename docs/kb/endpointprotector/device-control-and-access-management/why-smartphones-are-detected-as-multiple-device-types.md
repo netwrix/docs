@@ -14,11 +14,12 @@ keywords:
   - mobile devices
   - Android
 products:
-  - endpoint-protector
-sidebar_label: Why Smartphones Are Detected as Multiple Device Ty
+  - endpointprotector
+sidebar_label: Why Smartphones Are Detected as Multiple Device Types
 tags:
   - device-control-and-access-management
-title: "Why Smartphones Are Detected as Multiple Device Ty"
+  - kb
+title: "Why Smartphones Are Detected as Multiple Device Types"
 knowledge_article_id: kA0Qk0000002B96KAE
 ---
 
