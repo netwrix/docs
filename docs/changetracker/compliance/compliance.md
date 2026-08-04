@@ -38,7 +38,7 @@ identify the configuration differences between two devices.
 ## Compliance report templates
 
 Netwrix Change Tracker scores devices against a hardened build standard using compliance report
-templates. The tables below list the templates available for each compliance standard and the
+templates. The following tables list the templates available for each compliance standard and the
 platforms they support. Template names appear exactly as shown in Change Tracker; the `NNT` prefix
 (and the `Netwrix` prefix on some templates) is part of the name.
 
