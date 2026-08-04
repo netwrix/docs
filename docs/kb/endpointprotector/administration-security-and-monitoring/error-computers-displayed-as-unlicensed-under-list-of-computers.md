@@ -13,10 +13,11 @@ keywords:
   - client connection
   - reinstall
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: 'Error: Computers Displayed as "Unlicensed" Under List of Computers'
 tags:
   - administration-security-and-monitoring
+  - kb
 title: 'Error: Computers Displayed as "Unlicensed" Under List of Computers'
 knowledge_article_id: kA0Qk0000002B6HKAU
 ---

@@ -15,7 +15,10 @@ sidebar_label: How to Expand Disk Space on Endpoint Protector On-Prem Appliance
 title: How to Expand Disk Space on Endpoint Protector On-Prem Appliance
 knowledge_article_id: kA0Qk000000XXXXKAA
 products:
-  - endpoint-protector
+  - endpointprotector
+tags:
+  - deployment-and-installation
+  - kb
 ---
 
 | The procedures and instructions provided in this document are intended for use by experienced administrators. Proceeding with these steps is done entirely at your own risk. Netwrix is not responsible for any data loss, system instability, or other issues that may arise from following these instructions. Ensure that you have a complete backup of your system before making any changes. |

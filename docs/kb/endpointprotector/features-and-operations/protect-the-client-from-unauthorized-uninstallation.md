@@ -12,10 +12,11 @@ keywords:
   - endpoint security
   - EPP agent
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Protect the Client from Unauthorized Uninstallatio
 tags:
-  - enforced-encryption-and-easylock
+  - features-and-operations
+  - kb
 title: "Protect the Client from Unauthorized Uninstallation"
 knowledge_article_id: kA0Qk0000002B5yKAE
 ---
@@ -27,7 +28,13 @@ knowledge_article_id: kA0Qk0000002B5yKAE
 This article explains how you can secure the Netwrix Endpoint Protector (EPP) client on endpoint machines against unauthorized uninstallation. To address this matter, there are two security measures available:
 
 - Set an Uninstall Password: Requires users to enter a password defined by the EPP system administrator before uninstalling the EPP client. This applies to Windows, Linux, and macOS endpoint machines.
-- Enable Tamper Mode: Available starting with Netwrix Endpoint Protector Server version `5.8.0.0`, this feature safeguards agent integrity and prevents unauthorized termination or alteration of the Netwrix Endpoint Protector Agent. Tamper Mode is available for Windows endpoints only and can be enabled from the **Device Control > Global Settings** page.
+- Enable Tamper Mode: This feature safeguards agent integrity and prevents unauthorized termination or alteration of the Netwrix Endpoint Protector Client. Tamper Mode is available for **Windows and macOS** endpoints and can be enabled from the **Device Control > Global Settings** page.
+
+For the full reference, see [Security Password for Uninstall Protection](/docs/endpointprotector/admin/systemconfiguration/systemsecurity#security-password-for-uninstall-protection) and [Tamper mode](/docs/endpointprotector/admin/agent#tamper-mode).
+
+:::note
+Tamper Mode requires EPP Client version 2605 Hotfix 1 or later (2605.x.2.x) for the full feature set.
+:::
 
 ## Instructions
 
@@ -49,3 +56,8 @@ This article explains how you can secure the Netwrix Endpoint Protector (EPP) cl
 ![Screenshot showing Tamper Mode settings in EPP client](./../0-images/ka0Qk000000E7fx_0EMQk00000C51as.png)
 
 3. Update the policies on the endpoint manually or wait for the policies to be automatically updated based on the time set for **Policy Refresh Interval**.
+4. A machine or service reboot is recommended after enabling Tamper Mode for the setting to work correctly.
+
+:::important
+Tamper Mode restricts access to EPP resources. Don't enable it during pilot deployments or when troubleshooting use cases — enabling it can interfere with the diagnostic access those scenarios require.
+:::

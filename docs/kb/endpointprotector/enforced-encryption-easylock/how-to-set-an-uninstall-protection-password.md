@@ -11,11 +11,12 @@ keywords:
   - endpoint security
   - client management
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: How to Set an Uninstall Protection Password
 tags:
-  - enforced-encryption-and-easylock
+  - enforced-encryption-easylock
+  - kb
 title: "How to Set an Uninstall Protection Password"
 knowledge_article_id: kA0Qk0000002B2mKAE
 ---

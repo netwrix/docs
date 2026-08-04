@@ -14,10 +14,11 @@ keywords:
   - endpoint client
   - ui
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Why Do Various Linux System Users Appear in the En
 tags:
   - features-and-operations
+  - kb
 title: "Why Do Various Linux System Users Appear in the Endpoint Protector User Interface?"
 knowledge_article_id: kA0Qk0000002BCgKAM
 ---

@@ -13,11 +13,12 @@ keywords:
   - content aware protection
   - device control policies
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: File Shadow Format for Documents Sent to Printers
 tags:
-  - enforced-encryption-and-easylock
+  - enforced-encryption-easylock
+  - kb
 title: "File Shadow Format for Documents Sent to Printers"
 knowledge_article_id: kA0Qk0000002B98KAE
 ---

@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Whitelisting a Device
 tags:
   - device-control-and-access-management
+  - kb
 title: "How to Whitelist a Device for Global Access"
 knowledge_article_id: kA0Qk0000002BB8KAM
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Whitelist a Device for Global Access

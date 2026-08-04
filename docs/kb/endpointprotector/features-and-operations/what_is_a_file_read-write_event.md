@@ -6,10 +6,11 @@ keywords:
   - Endpoint Protector
   - alert setup
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: File Read-Write Event Overview
 tags:
-  - enforced-encryption-and-easylock
+  - enforced-encryption-easylock
+  - kb
 title: What Is a "File Read-Write" Event?
 knowledge_article_id: kA0Qk0000002BAiKAM
 ---

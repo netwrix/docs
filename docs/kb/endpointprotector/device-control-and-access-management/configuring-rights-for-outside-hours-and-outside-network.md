@@ -13,10 +13,11 @@ keywords:
   - Content Aware Policies
   - working hours
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Configuring Rights for Outside Hours and Outside N
 tags:
   - device-control-and-access-management
+  - kb
 title: "Configuring Rights for Outside Hours and Outside Network"
 knowledge_article_id: kA0Qk0000002B6ZKAU
 ---

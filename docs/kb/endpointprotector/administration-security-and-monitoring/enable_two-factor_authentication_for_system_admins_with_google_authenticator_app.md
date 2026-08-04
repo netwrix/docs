@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Enable 2FA for System Admins
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "Enable Two-Factor Authentication for System Admins with Google Authenticator App"
 knowledge_article_id: kA0Qk0000002B34KAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Enable Two-Factor Authentication for System Admins with Google Authenticator App

@@ -8,10 +8,11 @@ keywords:
 sidebar_label: iOS Device Recognition
 tags:
   - device-control-and-access-management
+  - kb
 title: "Are iOS Devices Recognized When Connected to a Windows PC?"
 knowledge_article_id: kA0Qk0000002B9HKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Are iOS Devices Recognized When Connected to a Windows PC?

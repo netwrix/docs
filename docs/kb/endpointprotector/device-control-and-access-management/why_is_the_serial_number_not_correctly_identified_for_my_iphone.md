@@ -8,10 +8,11 @@ keywords:
 sidebar_label: iPhone Serial Number Identification
 tags:
   - troubleshooting-and-errors
+  - kb
 title: "Why Is the Serial Number Not Correctly Identified for My iPhone?"
 knowledge_article_id: kA0Qk0000002BIoKAM
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Why Is the Serial Number Not Correctly Identified for My iPhone?

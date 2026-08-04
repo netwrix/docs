@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Set Up AD Administrator Synchronization
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "How to Set Up Active Directory Administrator Synchronization"
 knowledge_article_id: kA0Qk0000002B77KAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Set Up Active Directory Administrator Synchronization

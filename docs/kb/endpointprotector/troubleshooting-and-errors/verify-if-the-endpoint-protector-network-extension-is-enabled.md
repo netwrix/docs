@@ -13,11 +13,12 @@ keywords:
   - systemextensionsctl list
   - verify
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: Verify if the Endpoint Protector Network Extension
 tags:
   - troubleshooting-and-errors
+  - kb
 title: "Verify if the Endpoint Protector Network Extension Is Enabled"
 knowledge_article_id: kA0Qk0000002B6TKAU
 ---

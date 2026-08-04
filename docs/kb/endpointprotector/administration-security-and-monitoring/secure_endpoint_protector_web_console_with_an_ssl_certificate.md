@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Secure Endpoint Protector with SSL
 tags:
   - administration-security-and-monitoring
-title: "Secure Endpoint Protector Web Console with an SSL Certificate"
+  - kb
+title: "Secure Endpoint Protector Server Web Console with an SSL Certificate"
 knowledge_article_id: kA0Qk0000002B6XKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Secure Endpoint Protector Web Console with an SSL Certificate

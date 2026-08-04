@@ -11,10 +11,11 @@ keywords:
   - log partition
   - report results
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Locate Logs in Content Aware Report When Using Par
 tags:
-  - enforced-encryption-and-easylock
+  - enforced-encryption-easylock
+  - kb
 title: "Locate Logs in Content Aware Report When Using Partitions"
 knowledge_article_id: kA0Qk0000002B5wKAE
 ---

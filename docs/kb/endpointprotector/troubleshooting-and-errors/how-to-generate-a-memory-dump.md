@@ -14,10 +14,11 @@ keywords:
   - system crash
   - debugging
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: How to Generate a Memory Dump
 tags:
   - troubleshooting-and-errors
+  - kb
 title: "How to Generate a Memory Dump"
 knowledge_article_id: kA0Qk0000002B6RKAU
 ---
