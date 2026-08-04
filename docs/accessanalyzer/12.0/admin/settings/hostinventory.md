@@ -174,3 +174,36 @@ Solution.
 The single sub-group is:
 
 - ALL WINDOWS WORKSTATIONS
+
+## Required Permissions
+
+The host inventory process collects the four property groups above using different mechanisms,
+each with its own permission requirement on the target host:
+
+- **Operating System properties** (version, service pack, product type, and related items) are
+  read from the target's registry. This requires the Remote Registry service to be running on the
+  target, and the account used must have local administrator rights (or be explicitly delegated
+  Remote Registry access).
+- **Application properties** (for example, SQL Server, IIS, clustering, and Exchange role/version)
+  are read from a mix of registry, WMI, and Active Directory, depending on the specific property.
+  WMI-sourced properties require WMI namespace access on the target (local administrator by
+  default). Exchange role and version are read from Active Directory first, and only fall back to
+  WMI if that lookup does not return a result.
+- **Network properties** (for example, domain/workgroup name and AD site) are primarily read using
+  low-privilege network APIs that do not require administrative rights, with a WMI fallback for
+  some properties if the primary method does not return a result.
+- **Hardware properties** (manufacturer, model, serial number) are read from WMI and require the
+  same administrative-equivalent access as other WMI-sourced properties.
+
+:::info
+Because Operating System and Hardware properties depend on Remote Registry and WMI access, the
+account used for host inventory should be provisioned as a local administrator (or with explicitly
+delegated Remote Registry and WMI namespace permissions) on the hosts being inventoried. A standard
+authenticated domain account without local admin rights is sufficient for Network properties and
+the Active Directory-based portion of Application properties, but not for the registry- and
+WMI-based properties.
+:::
+
+If the account used lacks the required access on a given host, the properties normally supplied by
+the denied mechanism are expected to be left blank rather than causing the entire host inventory
+record to fail.
