@@ -120,7 +120,8 @@ The schedule is displayed under **Reports**. See the
 [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store)topic
 for details.
 
-:::Configure Meaningful Report File Names in Email Notifications
+:::note 
+Configure Meaningful Report File Names in Email Notifications
 
 By default, report attachments included in email notifications may use a generic filename. To include a more descriptive filename with a timestamp, add the following configuration value to the Netwrix Directory Manager database.
 
