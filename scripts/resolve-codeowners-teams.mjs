@@ -37,6 +37,9 @@ function parseCodeowners(content) {
   return rules;
 }
 
+// Only plain directory/file prefixes are supported — no glob support (`*`,
+// `**`, `*.md`). Every active CODEOWNERS rule today is a plain prefix; a
+// future wildcard rule would silently match nothing here.
 function matchFile(rules, filePath) {
   let matchedOwners = null;
 

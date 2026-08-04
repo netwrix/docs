@@ -19,7 +19,9 @@ permissions:
 
 jobs:
   notify:
-    if: ${{ !github.event.issue.pull_request }}
+    # Bot-authored comments (Vale autofix, Claude reviewers, etc.) are
+    # excluded to avoid Slack spam from automated commentary.
+    if: ${{ !github.event.issue.pull_request && (github.event_name != 'issue_comment' || github.event.comment.user.type != 'Bot') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
