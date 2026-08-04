@@ -119,3 +119,16 @@ Step 13 – On the Schedules page, click **Save**.
 The schedule is displayed under **Reports**. See the
 [View the Schedules in an Identity Store ](manage.md#view-the-schedules-in-an-identity-store)topic
 for details.
+
+:::note
+If you want to have a meaningful report file name in your email notification, please apply next sql statement on your Netwrix Directory Manager database 
+IF NOT EXISTS (
+    SELECT 1 FROM [GroupID].[GlobalSystemConfiguration]
+    WHERE [Attribute] = N'IncludeLongDateTimeFormatInReportName'
+)
+BEGIN
+    INSERT INTO [GroupID].[GlobalSystemConfiguration] ([Attribute], [AttributeValue])
+    VALUES (N'IncludeLongDateTimeFormatInReportName', N'True')
+END
+GO
+:::
