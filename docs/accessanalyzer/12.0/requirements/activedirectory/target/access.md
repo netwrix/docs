@@ -46,8 +46,8 @@ passwords, permissions, group policies, and domain information:
 
 - Member of the Domain Administrators group
 
-The majority of jobs in the Active Directory solutions rely on tables with queried data from the
-data collectors mentioned above to perform analysis and generate reports. The remaining jobs utilize
+Most jobs in the Active Directory solutions rely on tables with queried data from the
+data collectors listed earlier to perform analysis and generate reports. The remaining jobs use
 data collectors to scan environments, and require additional permissions on the target host.
 
 :::info
@@ -104,8 +104,8 @@ The following firewall ports are needed:
 
 ## Least Privilege Model
 
-A least privilege model can be configured based on your auditing needs and the data collection jobs
-you will be using. The following jobs and their corresponding data collectors can be run with a
+You can configure a least privilege model based on your auditing needs and the data collection jobs
+you use. The following jobs and their corresponding data collectors can be run with a
 least privilege permissions model.
 
 **1-AD_Scan Job Permissions**
@@ -141,15 +141,15 @@ requirements:
 **AD_CPassword Job Permissions**
 
 While the PowerShell Data Collector typically requires Domain Administrator permissions when
-targeting a domain controller, that level of access is not required to run the 4.Group Policy >
+targeting a domain controller, that level of access isn't required to run the 4.Group Policy >
 AD_CPasswords job. The minimum requirements for running this job are:
 
-- Read access to SYSVOL on the targeted Domain Controller(s) and all of its children
+- Read access to SYSVOL on the targeted Domain Controllers and all of its children
 
 **AD_GroupPolicy Job Permissions**
 
 While the GroupPolicy Data Collector typically requires Domain Administrator permissions when
-targeting a domain controller, that level of access is not required to run the 4.Group Policy >
+targeting a domain controller, that level of access isn't required to run the 4.Group Policy >
 AD_GroupPolicy Job. The minimum requirements for running this job are:
 
 - Requires Read permissions on Group Policy Objects
@@ -157,7 +157,7 @@ AD_GroupPolicy Job. The minimum requirements for running this job are:
 **AD_PasswordPolicies Job Permissions**
 
 While the LDAP Data Collector typically requires Domain Administrator permissions when targeting a
-domain controller, that level of access is not required to run the 4.Group Policy >
+domain controller, that level of access isn't required to run the 4.Group Policy >
 AD_PasswordPolicies Job. The minimum requirements for running this job are:
 
 - Requires Read permissions on the Password Settings Container
@@ -165,7 +165,7 @@ AD_PasswordPolicies Job. The minimum requirements for running this job are:
 **AD_DomainControllers Job Permissions**
 
 While the LDAP Data Collector and Active Directory Data Collector typically requires Domain
-Administrator permissions when targeting a domain controller, that level of access is not required
+Administrator permissions when targeting a domain controller, that level of access isn't required
 to run the 5.Domains > 0.Collection > AD_DomainControllers Job. The minimum requirements for running
 this job are:
 
@@ -179,7 +179,7 @@ See the [Variable Definitions](#variable-definitions) for variable definitions.
 **AD_DSRM Job Permissions**
 
 While the Registry Data Collector typically requires Domain Administrator permissions when targeting
-a domain controller, that level of access is not required to run the 5.Domains > 0.Collection >
+a domain controller, that level of access isn't required to run the 5.Domains > 0.Collection >
 AD_DSRM Job. The minimum requirements for running this job are:
 
 - Requires read access to the following Registry key and its children:
@@ -192,7 +192,7 @@ Alternatively, granting access to the Server Operators group also allows read-on
 **AD_TimeSync Job Permissions**
 
 While the Registry Data Collector typically requires Domain Administrator permissions when targeting
-a domain controller, that level of access is not required to run the 5.Domains > 0.Collection >
+a domain controller, that level of access isn't required to run the 5.Domains > 0.Collection >
 AD_TimeSync Job. The minimum requirements for running this job are:
 
 - Requires Read access to the following Registry keys and its children:
@@ -205,7 +205,7 @@ Alternatively, granting access to the Network Configuration Operators group also
 **AD_DomainInfo Job Permissions**
 
 While the LDAP Data Collector and Active Directory Data Collector typically requires Domain
-Administrator permissions when targeting a domain controller, that level of access is not required
+Administrator permissions when targeting a domain controller, that level of access isn't required
 to run the 5.Domains > AD_DomainInfo Job. The minimum requirements for running this job, which must
 be configured at the Domain level in Active Directory, are:
 
@@ -234,7 +234,7 @@ the following minimum requirements:
 - Read permission on the Certification Authority, granted through the Certification Authority
   console's Security tab
 
-No local administrator rights are required on the Certification Authority server.
+The Certification Authority server does not require local administrator rights.
 
 :::info
 If the job fails to collect Certification Authority security, registry, or enrollment agent data
