@@ -27,7 +27,7 @@ Review the following for additional information:
 - [Policy Tab](/docs/changetracker/compliance/compliancepolicy.md)
 - [Details Tab ](/docs/changetracker/compliance/compliancedetails.md)
 
-## Comparing Results
+## Comparing results
 
 When you select any two results, either for the same device or for two different devices, the
 **Compare Results** button becomes available.
@@ -38,7 +38,8 @@ identify the configuration differences between two devices.
 ## Compliance report templates
 
 Netwrix Change Tracker scores devices against a hardened build standard using compliance report
-templates.
+templates. The tables below list the templates available for each compliance standard and the
+platforms they support.
 
 :::info
 Only Center for Internet Security (CIS) benchmark reports ship bundled with the Hub Server
