@@ -41,12 +41,28 @@ Tenant Configuration wizard.
 
 ![Add Tenant Configuration wizard - Entra Id page](/images/identityrecovery/3.1/product/configuration/entra_id/entra_id_configuration_page1.png)
 
-**Step 2 –** Enter a tenant [example.tenant.com] in the Tenant field.
+**Step 2 –** Select the Microsoft cloud environment for this tenant from the **Cloud Environment**
+dropdown. The following options are available:
 
-**Step 3 –** Enter the Client Id [CLIENTID] for backups, rollbacks, and
+- Commercial (Global) – Standard Microsoft cloud. This is the default for most organizations.
+- US Government (GCC High / L4) – Microsoft Azure Government cloud for US government agencies and
+  contractors at Impact Level 4.
+- US Government DoD (L5) – Microsoft Azure Government DoD cloud for US Department of Defense
+  environments at Impact Level 5.
+- China (21Vianet) – Microsoft Azure operated by 21Vianet for organizations in China.
+
+:::note
+The cloud environment determines the authentication and Microsoft Graph endpoints used for all
+backup, rollback, and recovery operations for this tenant. Select the environment that matches where
+your Entra tenant is hosted before entering credentials.
+:::
+
+**Step 3 –** Enter a tenant [example.tenant.com] in the Tenant field.
+
+**Step 4 –** Enter the Client Id [CLIENTID] for backups, rollbacks, and
 recoveries in the Client ID field.
 
-**Step 4 –** Enter the secret for the application registration in the Secret field.
+**Step 5 –** Enter the secret for the application registration in the Secret field.
 
 :::note
 The application registration must have the following Microsoft Graph access:
@@ -75,17 +91,17 @@ The application registration must have the following Microsoft Graph access:
 
 :::
 
-**Step 5 –** Click **Next**.
+**Step 6 –** Click **Next**.
 
 ![Add Tenant Configuration wizard - Backup Schedule page](/images/identityrecovery/3.1/product/configuration/entra_id/entra_id_configuration_page2.png)
 
-**Step 6 –** Select the days of the week in the Run the backup on section to indicate when to run
+**Step 7 –** Select the days of the week in the Run the backup on section to indicate when to run
 backups.
 
-**Step 7 –** Select a start time (UTC) in the Start the backup at field to begin the backup. The
+**Step 8 –** Select a start time (UTC) in the Start the backup at field to begin the backup. The
 default time is 12:00 AM.
 
-**Step 8 –** In the Repeat every field, enter a frequency, in minutes, to set the time between the
+**Step 9 –** In the Repeat every field, enter a frequency, in minutes, to set the time between the
 start of each domain backup. Consider the size of the environment when configuring this option.
 Click **Next**.
 
@@ -97,18 +113,18 @@ time.
 
 ![Add Tenant Configuration wizard - Notifications page](/images/identityrecovery/3.1/product/configuration/entra_id/entra_id_configuration_page3.png)
 
-**Step 9 –** To set notifications, select the Send email notifications checkbox and enter the
+**Step 10 –** To set notifications, select the Send email notifications checkbox and enter the
 email address of one or more users and/or groups to receive the job start and end notifications. Use
 a semicolon (;) to separate multiple recipients. See the [Notifications Page](/docs/identityrecovery/3.1/admin/configuration/notifications.md)
 topic for additional information.
 
 If you don't want notifications, skip this step.
 
-**Step 10 –** Click **Next**.
+**Step 11 –** Click **Next**.
 
 ![Add Tenant Configuration wizard - Confirm page](/images/identityrecovery/3.1/product/configuration/entra_id/entra_id_configuration_page4.png)
 
-**Step 11 –** The Confirm page displays a summary of the settings you provided on the pages of the
+**Step 12 –** The Confirm page displays a summary of the settings you provided on the pages of the
 wizard. Use the Back button to return to a previous page and change any setting. Click **Done**
 to finish the wizard.
 
