@@ -110,12 +110,12 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
     <tr><td>NNT CIS Azure Compute Microsoft Windows Server 2022 Benchmark - Level 1 Member Server</td><td>1.0.0</td></tr>
     <tr><td>NNT CIS Azure Compute Microsoft Windows Server 2022 Benchmark - NxGen Security - Level 1 Domain Controller</td><td>1.0.0</td></tr>
     <tr><td>NNT CIS Azure Compute Microsoft Windows Server 2022 Benchmark - NxGen Security - Level 1 Member Server</td><td>1.0.0</td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - Level 1 Domain Controller</td><td><mark>5.1.0</mark></td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - Level 1 Member Server</td><td><mark>5.1.0</mark></td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - Level 2 Domain Controller</td><td><mark>5.1.0</mark></td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - Level 2 Member Server</td><td><mark>5.1.0</mark></td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - NxGen Security - Domain Controller</td><td><mark>5.1.0</mark></td></tr>
-    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - NxGen Security - Member Server</td><td><mark>5.1.0</mark></td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - Level 1 Domain Controller</td><td>5.1.0</td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - Level 1 Member Server</td><td>5.1.0</td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - Level 2 Domain Controller</td><td>5.1.0</td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - Level 2 Member Server</td><td>5.1.0</td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - NxGen Security - Domain Controller</td><td>5.1.0</td></tr>
+    <tr><td>NNT CIS Microsoft Windows Server 2022 Benchmark - NxGen Security - Member Server</td><td>5.1.0</td></tr>
     <tr><td rowspan="4">Windows 10 Enterprise 1511</td><td>NNT CIS Microsoft Windows 10 Enterprise (Release 1511) Benchmark - Level 1</td><td>1.1.0.2</td></tr>
     <tr><td>NNT CIS Microsoft Windows 10 Enterprise (Release 1511) Benchmark - Level 1 + Bitlocker</td><td>1.1.0.2</td></tr>
     <tr><td>NNT CIS Microsoft Windows 10 Enterprise (Release 1511) Benchmark - Level 2</td><td>1.1.0.3</td></tr>
@@ -431,9 +431,9 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
     <tr><td>NNT CIS Oracle Database 12c Benchmark - Level 1 - RDBMS using Unified Auditing</td><td>3.0.2</td></tr>
     <tr><td>NNT CIS Oracle Database 12c Benchmark - Level 1 - Windows Server Host OS using Traditional Auditing</td><td>3.0.0</td></tr>
     <tr><td>NNT CIS Oracle Database 12c Benchmark - Level 1 - Windows Server Host OS using Unified Auditing</td><td>3.0.0</td></tr>
-    <tr><td rowspan="3"><mark>Oracle Database 19c</mark></td><td><mark>NNT CIS Oracle Database 19c - Level 1 - RDBMS</mark></td><td><mark>2.0.0</mark></td></tr>
-    <tr><td><mark>NNT CIS Oracle Database 19c - Level 1 - RDBMS On Host OS - Windows</mark></td><td><mark>2.0.0</mark></td></tr>
-    <tr><td><mark>NNT CIS Oracle Database 19c - Level 1 - RDBMS On Host OS - Linux</mark></td><td><mark>2.0.0</mark></td></tr>
+    <tr><td rowspan="3">Oracle Database 19c</td><td>NNT CIS Oracle Database 19c - Level 1 - RDBMS</td><td>2.0.0</td></tr>
+    <tr><td>NNT CIS Oracle Database 19c - Level 1 - RDBMS On Host OS - Windows</td><td>2.0.0</td></tr>
+    <tr><td>NNT CIS Oracle Database 19c - Level 1 - RDBMS On Host OS - Linux</td><td>2.0.0</td></tr>
   </tbody>
 </table>
 
@@ -474,10 +474,10 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
     <tr><td>NNT CIS Cisco IOS 16 - Level 2</td><td>2.0.0</td></tr>
     <tr><td rowspan="2">Cisco IOS 17.x</td><td>NNT CIS Cisco IOS 17.x - Level 1</td><td>2.0.0</td></tr>
     <tr><td>NNT CIS Cisco IOS 17.x - Level 2</td><td>2.0.0</td></tr>
-    <tr><td rowspan="2"><mark>Cisco IOS XE 17.x</mark></td><td><mark>NNT CIS Cisco IOS XE 17.x - Level 1</mark></td><td><mark>2.2.1</mark></td></tr>
-    <tr><td><mark>NNT CIS Cisco IOS XE 17.x - Level 2</mark></td><td><mark>2.2.1</mark></td></tr>
-    <tr><td rowspan="2"><mark>Cisco NX-OS</mark></td><td><mark>NNT CIS Cisco NX-OS - Level 1</mark></td><td><mark>1.2.0</mark></td></tr>
-    <tr><td><mark>NNT CIS Cisco NX-OS - Level 2</mark></td><td><mark>1.2.0</mark></td></tr>
+    <tr><td rowspan="2">Cisco IOS XE 17.x</td><td>NNT CIS Cisco IOS XE 17.x - Level 1</td><td>2.2.1</td></tr>
+    <tr><td>NNT CIS Cisco IOS XE 17.x - Level 2</td><td>2.2.1</td></tr>
+    <tr><td rowspan="2">Cisco NX-OS</td><td>NNT CIS Cisco NX-OS - Level 1</td><td>1.2.0</td></tr>
+    <tr><td>NNT CIS Cisco NX-OS - Level 2</td><td>1.2.0</td></tr>
   </tbody>
 </table>
 
@@ -492,8 +492,8 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
     <tr><td>NNT CIS IBM AIX 5.3-6.1 Benchmark - Level 2</td><td>1.1.0.2</td></tr>
     <tr><td rowspan="2">IBM AIX 7.2</td><td>NNT CIS IBM AIX 7.2 Benchmark - Level 1</td><td>1.1.0</td></tr>
     <tr><td>NNT CIS IBM AIX 7.2 Benchmark - Level 2</td><td>1.1.0</td></tr>
-    <tr><td rowspan="2"><mark>IBM AIX 7</mark></td><td><mark>NNT CIS IBM AIX 7 Benchmark - Level 1</mark></td><td><mark>1.2.0</mark></td></tr>
-    <tr><td><mark>NNT CIS IBM AIX 7 Benchmark - Level 2</mark></td><td><mark>1.2.0</mark></td></tr>
+    <tr><td rowspan="2">IBM AIX 7</td><td>NNT CIS IBM AIX 7 Benchmark - Level 1</td><td>1.2.0</td></tr>
+    <tr><td>NNT CIS IBM AIX 7 Benchmark - Level 2</td><td>1.2.0</td></tr>
   </tbody>
 </table>
 
@@ -554,8 +554,8 @@ Foundations Benchmark (2.0.0)," which can differ from that template's own CIS Ve
     <tr><td>NNT CIS VMware ESXi 7.0 Benchmark - Level 2</td><td>1.1.0</td></tr>
     <tr><td>Netwrix CIS VMware ESXi 7.0 Benchmark v1.1.0 - Level 1</td><td>1.0.0.2</td></tr>
     <tr><td>Netwrix CIS VMware ESXi 7.0 Benchmark v1.1.0 - Level 2</td><td>1.0.0.2</td></tr>
-    <tr><td rowspan="2">VMware ESXi 8.0</td><td>NNT CIS VMware ESXi 8.0 Benchmark - Level 1</td><td><mark>1.3.0</mark></td></tr>
-    <tr><td>NNT CIS VMware ESXi 8.0 Benchmark - Level 2</td><td><mark>1.3.0</mark></td></tr>
+    <tr><td rowspan="2">VMware ESXi 8.0</td><td>NNT CIS VMware ESXi 8.0 Benchmark - Level 1</td><td>1.3.0</td></tr>
+    <tr><td>NNT CIS VMware ESXi 8.0 Benchmark - Level 2</td><td>1.3.0</td></tr>
   </tbody>
 </table>
 
