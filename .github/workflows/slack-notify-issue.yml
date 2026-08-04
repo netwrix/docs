@@ -84,11 +84,14 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           NOTIFY_TEAMS: ${{ steps.codeowners.outputs.teams }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          COMMENT_URL: ${{ github.event.comment.html_url }}
         run: |
           if [ "${{ github.event_name }}" = "issues" ]; then
-            MESSAGE="Issue created: ${{ github.event.issue.html_url }}"
+            MESSAGE="Issue created: $ISSUE_URL"
           else
-            MESSAGE="Comment on Issue #${{ github.event.issue.number }}: ${{ github.event.comment.html_url }}"
+            MESSAGE="Comment on Issue #$ISSUE_NUMBER: $COMMENT_URL"
           fi
 
           node scripts/notify-slack.mjs --message "$MESSAGE" --teams "$NOTIFY_TEAMS" || echo "Failed to send Slack notification"

@@ -56,7 +56,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           FILES=$(gh pr view ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} --json files --jq '.files[].path')
-          TEAMS=$(node scripts/resolve-codeowners-teams.mjs $(echo "$FILES" | tr '\n' ' '))
+          mapfile -t FILE_ARRAY <<< "$FILES"
+          TEAMS=$(node scripts/resolve-codeowners-teams.mjs "${FILE_ARRAY[@]}")
           echo "teams=$TEAMS" >> "$GITHUB_OUTPUT"
 
       - name: Build message
