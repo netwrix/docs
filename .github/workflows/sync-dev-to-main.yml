@@ -69,7 +69,7 @@ jobs:
         run: |
           echo "⏳ Waiting for 'build-and-deploy.yml' workflow to complete on ${{ env.SOURCE_BRANCH }}..."
 
-          MAX_WAIT=1800  # 30 minutes max wait
+          MAX_WAIT=2700  # 45 minutes max wait
           WAIT_INTERVAL=30  # Check every 30 seconds
           ELAPSED=0
 
