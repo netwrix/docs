@@ -67,6 +67,11 @@ jobs:
           echo "message=$MESSAGE" >> "$GITHUB_OUTPUT"
 
       - name: Send Slack notification
+        # Fork PRs don't have access to repo secrets on `pull_request` (by
+        # design, to prevent secret exfiltration) — skip cleanly instead of
+        # attempting and failing. Comments on a PR (issue_comment) aren't
+        # fork code execution, so secrets are available there regardless.
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           NOTIFY_MESSAGE: ${{ steps.build-message.outputs.message }}

@@ -41,14 +41,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
-          # Fetch current labels from the issue
+          # Fetch current labels from the issue. Labels may not be applied yet
+          # (auto-labeling runs asynchronously), so an empty result here just
+          # means no team mention — it does not skip the notification itself.
           LABELS=$(gh issue view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json labels --jq '.labels[].name')
-
-          if [ -z "$LABELS" ]; then
-            echo "No labels found — skipping Slack notification"
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
 
           # Skip for KB Operations tracking issues (any kb/ label)
           if echo "$LABELS" | grep -q "^kb/"; then

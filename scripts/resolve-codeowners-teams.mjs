@@ -30,7 +30,8 @@ function parseCodeowners(content) {
     if (owners.length === 0) continue;
 
     const anchored = pattern.startsWith('/') ? pattern.slice(1) : pattern;
-    rules.push({ pattern: anchored, isDir: anchored.endsWith('/'), owners });
+    const stripped = anchored.endsWith('/') ? anchored.slice(0, -1) : anchored;
+    rules.push({ pattern: stripped, owners });
   }
 
   return rules;
@@ -40,11 +41,9 @@ function matchFile(rules, filePath) {
   let matchedOwners = null;
 
   for (const rule of rules) {
-    if (rule.isDir) {
-      if (filePath === rule.pattern.slice(0, -1) || filePath.startsWith(rule.pattern)) {
-        matchedOwners = rule.owners;
-      }
-    } else if (filePath === rule.pattern) {
+    // CODEOWNERS treats a non-wildcard pattern as matching both the exact
+    // path and, recursively, everything under it — trailing slash or not.
+    if (filePath === rule.pattern || filePath.startsWith(`${rule.pattern}/`)) {
       matchedOwners = rule.owners;
     }
   }
