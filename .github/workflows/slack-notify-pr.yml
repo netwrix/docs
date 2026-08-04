@@ -69,5 +69,7 @@ jobs:
       - name: Send Slack notification
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          NOTIFY_MESSAGE: ${{ steps.build-message.outputs.message }}
+          NOTIFY_TEAMS: ${{ steps.resolve-teams.outputs.teams }}
         run: |
-          node scripts/notify-slack.mjs --message "${{ steps.build-message.outputs.message }}" --teams "${{ steps.resolve-teams.outputs.teams }}" || echo "Failed to send Slack notification"
+          node scripts/notify-slack.mjs --message "$NOTIFY_MESSAGE" --teams "$NOTIFY_TEAMS" || echo "Failed to send Slack notification"
