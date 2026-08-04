@@ -225,6 +225,25 @@ following minimum requirements:
 - Netwrix Activity Monitor API Read
 - Read access to the Netwrix Activity Monitor Log Archive location
 
+**AD_CACollection Job Permissions**
+
+The PowerShell Data Collector in the 7.Certificate Authority > Collection > AD_CACollection Job has
+the following minimum requirements:
+
+- Read access to directory tree (for certificate template and enrollment service discovery)
+- Read permission on the Certification Authority, granted through the Certification Authority
+  console's Security tab
+
+No local administrator rights are required on the Certification Authority server.
+
+:::info
+If the job fails to collect Certification Authority security, registry, or enrollment agent data
+under a Read-only account, escalate incrementally (Read, then Enroll, then Officer, then Manage CA)
+rather than defaulting to Manage CA or a Domain Admin-equivalent account. If a permission change does
+not appear to take effect, restart Certificate Services (CertSvc) on the Certification Authority
+server before concluding the permission level is insufficient.
+:::
+
 ### Variable Definitions
 
 The following variables are referenced for Active Directory Least Privileged Models:
