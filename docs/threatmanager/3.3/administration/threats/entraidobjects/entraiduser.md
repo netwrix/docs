@@ -25,13 +25,16 @@ the user:
 - Tags, with an option to add additional tags
 
 :::info
-If the user is an [Agent User](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md) (a Microsoft Entra ID user account that represents an AI agent), the profile card
-also displays:
+If the user is an Agent User (a Microsoft Entra ID user account that represents an AI agent), the
+profile card also displays:
 
 - Agent Identity – Links to the [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
-  for the agent identity associated with this Agent User
+  for the Agent Identity associated with this Agent User
 - Agent Blueprint – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
   for the Agent Identity Blueprint that defines this Agent User
+
+To view the sponsors accountable for the agent, open its
+[Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md).
 
 Threat Manager tags Agent Users with the built-in Agent User tag. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
