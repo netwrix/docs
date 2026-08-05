@@ -24,7 +24,7 @@ Since you're already on the image-based platform, migrating to 2608 doesn't requ
 | **2604** | Migrate directly to 2608 — this is the best-tested path |
 
 :::tip
-2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. However, Netwrix recommends upgrading to **2604** before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs. Other source versions in that range are less extensively tested for this specific migration.
+2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. However, Netwrix recommends upgrading to **2604** before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs. Netwrix has tested other source versions in that range less extensively for this specific migration.
 :::
 
 If you're not yet on 2604, apply the 2604 cumulative patch through **Dashboard → Live Update** (or the Offline Patch Uploader for air-gapped environments) before continuing with this article.
@@ -36,7 +36,7 @@ If you're not yet on 2604, apply the 2604 cumulative patch through **Dashboard �
 Complete **all** items in this checklist before beginning any migration activity. This list is shorter than the legacy 5.x path — items specific to upgrading from an old 5.x release (cumulative patch planning, first-time license verification, etc.) don't apply, since your server already has a valid license and is already on the current platform.
 
 :::note
-If your current license includes the `php_els` field (used on the 2509–2604 image line to unlock OS patch updates), 2608 no longer requires it and simply ignores it. No action is needed regarding `php_els` specifically.
+If your current license includes the `php_els` field (used on the 2509–2604 image line to unlock OS patch updates), 2608 no longer requires it and ignores it. You don't need to do anything about `php_els`.
 :::
 
 ### Hypervisor Compatibility Check
@@ -46,14 +46,14 @@ If your current license includes the `php_els` field (used on the 2509–2604 im
 - VMware ESXi 7.0+
 - Microsoft Hyper-V (Windows Server 2016+)
 - AWS, Azure, GCP (cloud deployments — snapshot behavior differs per provider)
-- Proxmox VE — not officially supported; see note below
+- Proxmox VE — not officially supported; see the following note
 
 :::note
 **Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after manually adjusting networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
 :::
 
 :::warning TBD
-The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS used by 2509/2510/2604. Confirm minimum hypervisor version requirements for Ubuntu 26.04 guests before publishing — they may be stricter than the vSphere 6.7+/ESXi 7.0+ minimums listed above.
+The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS used by 2509/2510/2604. Confirm minimum hypervisor version requirements for Ubuntu 26.04 guests before publishing — they may be stricter than the vSphere 6.7+/ESXi 7.0+ minimums listed under **Verified compatible hypervisors**.
 :::
 
 :::tip
@@ -81,7 +81,7 @@ You can verify disk space and current server versions in Appliance → Server In
 For authoritative CPU, RAM, and disk minimum recommendations, refer to the official User Manual: [Netwrix Endpoint Protector — Server Requirements](/docs/endpointprotector/requirements/server)
 
 :::warning TBD
-Confirm updated minimum disk/RAM/CPU recommendations for the 2608 image before publishing — the addition of CrateDB may change the recommended baseline even though no historical data is migrated into it at deployment time.
+Confirm updated minimum disk/RAM/CPU recommendations for the 2608 image before publishing — the addition of CrateDB may change the recommended baseline even though the migration doesn't move historical data into it at deployment time.
 :::
 
 :::tip
@@ -106,7 +106,7 @@ These times reflect laboratory test results and may vary in your environment dep
 - File Shadow and log generation
 
 :::tip
-EPP clients continue logging events locally during server downtime. The server receives all queued events once communication resumes. No endpoint data is lost.
+EPP clients continue logging events locally during server downtime. The server receives all queued events once communication resumes. You don't lose any endpoint data.
 :::
 
 :::tip
@@ -122,7 +122,7 @@ Re-enable communications after you verify the upgraded server and it's ready to 
 **This step is non-negotiable. Don't proceed without completing both.**
 
 :::note
-VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, Netwrix considers a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot means there is no rollback path — if there is a failure, recovery may be impossible without one, and Netwrix Support will be unable to assist with restoring the environment.
+VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, Netwrix considers a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot leaves you with no rollback path — if a failure occurs, recovery may be impossible, and Netwrix Support can't help restore the environment.
 :::
 
 **Step 1 — Create a VM snapshot** on your hypervisor (VMware, Hyper-V, ESXi, AWS, Azure, etc.).
@@ -155,7 +155,7 @@ Store backup files in a secure repository with limited access. The backup contai
 
 **Step 3 — Export logs and file shadows separately (optional but recommended):**
 
-The System Configuration Backup doesn't include logs and file shadows — and CrateDB on the new 2608 server starts empty, so historical log data isn't carried forward either way. If you need historical logs for compliance or forensics:
+The System Configuration Backup doesn't include logs and file shadows — and CrateDB on the new 2608 server starts empty, so no path carries historical log data forward. If you need historical logs for compliance or forensics:
 
 - Use **System Maintenance → Audit Log Backups** to export logs to an external location. See [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup) for export steps.
 - Retain the old server VM after migration for log access.
@@ -210,7 +210,7 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 
 | Risk | Impact |
 |---|---|
-| DPI certificate trust broken | Content Aware Protection and DPI will fail until certificates regenerated |
+| DPI certificate trust broken | Content Aware Protection and DPI will fail until you regenerate the certificates |
 | CAP policy disruption | All Content Aware Protection rules break |
 | EE drives locked | Users must manually decrypt and re-encrypt every protected drive |
 | Root CA redistribution | You must push the new root CA to all endpoints via GPO/MDM |
@@ -311,7 +311,7 @@ Complete all items in this checklist after you finish the migration.
 
 ### Re-Enabling Client Communications
 
-After the restore is verified and client packages are uploaded (see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade)):
+After you verify the restore and upload the client packages (see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade)):
 
 1. Navigate to **System Configuration → System Settings**.
 2. Re-enable client communications.

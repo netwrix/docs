@@ -9,7 +9,7 @@ sidebar_position: 10
 ---
 
 :::tip Need to Migrate Before 2608 Ships?
-Netwrix expects to release **2608** in **late August 2026**. If you're on a legacy 5.x server and need to migrate sooner, the previous target platform (2510/2604) is still a valid, supported path — see [Migrating from a Legacy 5.x Server to 2510/2604 (Temporary)](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). **If your timeline allows waiting, Netwrix recommends migrating directly to 2608 instead** — migrating to 2510/2604 now means a second migration shortly afterward. This temporary article will be retired once 2608 is generally available.
+Netwrix expects to release **2608** in **late August 2026**. If you're on a legacy 5.x server and need to migrate sooner, the previous target platform (2510/2604) is still a valid, supported path — see [Migrating from a Legacy 5.x Server to 2510/2604 (Temporary)](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). **If your timeline allows waiting, Netwrix recommends migrating directly to 2608 instead** — migrating to 2510/2604 now means a second migration shortly afterward. Netwrix will retire this temporary article once 2608 is generally available.
 :::
 
 ---
@@ -25,7 +25,7 @@ For the full support lifecycle and version status, see: [Netwrix Endpoint Protec
 :::
 
 :::note
-This guide covers **on-premises (Self-Hosted)** deployments only. Netwrix-hosted **SaaS** appliances are migrated directly by the Netwrix team — no customer action is required. Unlike the self-hosted paths in this guide, historical log data **is** carried over for SaaS as part of that Netwrix-managed migration — after migration, SaaS customers see two tabs in the Reports menu: one for historical data still held in MySQL, and one for current data captured and stored in CrateDB going forward. See [Deployment Models: SaaS vs. Self-Hosted Update Cadence](/docs/endpointprotector/supportability/server-supportability#deployment-models-saas-vs-self-hosted-update-cadence).
+This guide covers **on-premises (Self-Hosted)** deployments only. The Netwrix team migrates Netwrix-hosted **SaaS** appliances directly, so customers don't need to take any action. Unlike the self-hosted paths in this guide, SaaS migrations **do** carry historical log data over as part of that Netwrix-managed process — after migration, SaaS customers see two tabs in the Reports menu: one for historical data still held in MySQL, and one for current data captured and stored in CrateDB going forward. See [Deployment Models: SaaS vs. Self-Hosted Update Cadence](/docs/endpointprotector/supportability/server-supportability#deployment-models-saas-vs-self-hosted-update-cadence).
 :::
 
 ---
@@ -37,7 +37,7 @@ Endpoint Protector's server platform requires a full image migration rather than
 Every on-premises EPP Server — whether it's still on a legacy 5.x release or already migrated to the current image-based platform (2509–2604) — needs to migrate again to reach 2608.
 
 :::note
-CrateDB ships empty on a freshly deployed 2608 server. No historical log data is migrated into it — this matches today's behavior, where System Configuration Backup carries over policies, users, groups, and device rules, but never log data or file shadows. If you need historical logs for compliance or forensics, export them separately (see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup)) or retain your old server VM, exactly as described in each migration article's prerequisites.
+CrateDB ships empty on a freshly deployed 2608 server. The migration doesn't move any historical log data into it — this matches today's behavior, where System Configuration Backup carries over policies, users, groups, and device rules, but never log data or file shadows. If you need historical logs for compliance or forensics, export them separately (see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup)) or retain your old server VM, exactly as described in each migration article's prerequisites.
 :::
 
 The migration path depends on where you're starting from:
@@ -83,7 +83,7 @@ Check your current server version under **Appliance → Server Information**, th
 | Any version from **2509 to 2604** (2509, 2510, 2601, 2602, 2604) | [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image) |
 
 :::tip Need to Migrate Before 2608 Ships?
-Netwrix expects to release **2608** in **late August 2026**. If you're on a legacy 5.x server and need to migrate sooner, the previous target platform (2510/2604) is still a valid, supported path — see [Migrating from a Legacy 5.x Server to 2510/2604 (Temporary)](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). **If your timeline allows waiting, Netwrix recommends migrating directly to 2608 instead** — migrating to 2510/2604 now means a second migration shortly afterward. This temporary article will be retired once 2608 is generally available.
+Netwrix expects to release **2608** in **late August 2026**. If you're on a legacy 5.x server and need to migrate sooner, the previous target platform (2510/2604) is still a valid, supported path — see [Migrating from a Legacy 5.x Server to 2510/2604 (Temporary)](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). **If your timeline allows waiting, Netwrix recommends migrating directly to 2608 instead** — migrating to 2510/2604 now means a second migration shortly afterward. Netwrix will retire this temporary article once 2608 is generally available.
 :::
 
 Both articles converge on the same two final phases, common to every migration regardless of your starting version:
@@ -100,7 +100,7 @@ The 2608 base image accepts configuration backups from a fixed set of source ver
 - The internal database schema at 5.9.4.2 is the last known-compatible schema for import into the new image platform.
 - The migration process validates the backup format and version checksum before restoring.
 
-Once you're on exactly 5.9.4.2, you deploy the 2608 image directly and restore your backup there — there's no need to route through the older 2510/2604 platform first.
+After you reach exactly 5.9.4.2, you deploy the 2608 image directly and restore your backup there — there's no need to route through the older 2510/2604 platform first.
 
 :::note
 If you're already on the current image-based platform (2509–2604), a different rule applies — see [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image#backup-compatibility).
@@ -117,12 +117,12 @@ If you're already on the current image-based platform (2509–2604), a different
 | **2604** | ✅ **Yes — the best-tested source version for 2608** |
 
 :::tip
-If you're currently on 2509, 2510, 2601, or 2602, Netwrix recommends upgrading to **2604** before migrating to 2608. The 2604 → 2608 path is the most thoroughly tested in Netwrix labs; other source versions in that range aren't as extensively validated yet.
+If you're on 2509, 2510, 2601, or 2602, Netwrix recommends upgrading to **2604** before migrating to 2608. The 2604 → 2608 path is the most thoroughly tested in Netwrix labs; Netwrix hasn't validated other source versions in that range as extensively yet.
 :::
 
 ### New EPP Client and Server Versioning
 
-Starting with the 2509 EPP Server release in October 2025, Netwrix introduced a new versioning scheme. For details, see [Unified EPP Clients and Server Versioning](/docs/endpointprotector/install/overview.md#unified-epp-clients-and-server-versioning). With the 2608 release, EPP Server and EPP/EE Client versions share the same number for the first time — both are released as **2608**.
+Starting with the 2509 EPP Server release in October 2025, Netwrix introduced a new versioning scheme. For details, see [Unified EPP Clients and Server Versioning](/docs/endpointprotector/install/overview.md#unified-epp-clients-and-server-versioning). With the 2608 release, EPP Server and EPP/EE Client versions share the same number for the first time — Netwrix releases both as **2608**.
 
 ---
 

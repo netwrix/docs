@@ -9,19 +9,19 @@ sidebar_position: 30
 This page covers the most common questions and issues you may encounter during EPP server migrations.
 
 :::info Temporary — Two Migration Targets Until Late August 2026
-This page primarily covers migrating to **2608**. Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customers who need to migrate sooner can still follow the temporary [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510) path instead. Entries below that differ between the two targets are marked **2510/2604 path:**. This distinction, and these marked notes, will be removed once 2608 ships.
+This page primarily covers migrating to **2608**. Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customers who need to migrate sooner can still follow the temporary [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510) path instead. Entries that differ between the two targets carry a **2510/2604 path:** marker. Netwrix will remove this distinction, and these marked notes, once 2608 ships.
 :::
 
 ---
 
-## 1. Can I Migrate Directly from 5.9.4.2 to 2608? {#can-i-migrate-directly-from-5942-to-2608}
+## 1. Migrating Directly from 5.9.4.2 to 2608 {#can-i-migrate-directly-from-5942-to-2608}
 
 **Yes.** Once your server is on exactly 5.9.4.2, you can deploy the 2608 base image directly and restore your backup onto it — there's no need to route through the older 2510/2604 platform first. See [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x).
 
 If you're on any version older than 5.9.4.2 (5.7.0.0–5.9.4.1), you must first apply the cumulative patch to reach 5.9.4.2, create the backup there, and then deploy 2608. Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 directly onto 2608 will fail at the import step.
 
 :::tip
-**Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, it may be worth evaluating a clean deployment of the 2608 image rather than going through the full migration path. Reconfiguring EPP on a fresh base installation can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where historical log data isn't required. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
+**Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, consider a clean deployment of the 2608 image rather than the full migration path. Reconfiguring EPP on a fresh base installation can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where historical log data isn't required. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
 :::
 
 :::note
@@ -30,23 +30,23 @@ If you're on any version older than 5.9.4.2 (5.7.0.0–5.9.4.1), you must first 
 
 ---
 
-## 2. Do I Need to Reach 2604 Before Migrating to 2608? {#do-i-need-to-reach-2604-before-migrating-to-2608}
+## 2. Reaching 2604 Before Migrating to 2608 {#do-i-need-to-reach-2604-before-migrating-to-2608}
 
-Not strictly, but Netwrix **recommends it**. If you're currently on 2509, 2510, 2601, or 2602, 2608 accepts a direct backup restore from your current version — but the 2604 → 2608 path is the most thoroughly tested in Netwrix labs. Other source versions in that range are less extensively validated for this specific migration. See [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image#backup-compatibility).
+Not strictly, but Netwrix **recommends it**. If you're on 2509, 2510, 2601, or 2602, 2608 accepts a direct backup restore from your current version — but the 2604 → 2608 path is the most thoroughly tested in Netwrix labs. Netwrix has validated other source versions in that range less extensively for this specific migration. See [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image#backup-compatibility).
 
 If you're already on 2604, migrate directly to 2608.
 
 ---
 
-## 3. What Happens to My Log Data When Migrating to 2608? {#what-happens-to-my-log-data-when-migrating-to-2608}
+## 3. Log Data Handling When Migrating to 2608 {#what-happens-to-my-log-data-when-migrating-to-2608}
 
 :::note
-This answer applies to **self-hosted** deployments — on-premises or customer-managed cloud-hosted (AWS, Azure, GCP). **SaaS** is the one exception: since Netwrix migrates SaaS appliances directly, historical log data is carried over as part of that Netwrix-managed migration. After migration, SaaS customers see two tabs in the Reports menu: one for historical data still held in MySQL, and one for current data captured and stored in CrateDB going forward. Everything below applies only to the self-hosted migration paths covered in this guide.
+This answer applies to **self-hosted** deployments — on-premises or customer-managed cloud-hosted (AWS, Azure, GCP). **SaaS** is the one exception: since Netwrix migrates SaaS appliances directly, Netwrix carries historical log data over as part of that managed migration. After migration, SaaS customers see two tabs in the Reports menu: one for historical data still held in MySQL, and one for current data captured and stored in CrateDB going forward. Everything in this answer applies only to the self-hosted migration paths covered in this guide.
 :::
 
-Nothing is migrated automatically, and this isn't new behavior. The System Configuration Backup used for migration has never included log data or file shadows — only policies, users, groups, and device rules.
+The migration doesn't carry log data over automatically, and this isn't new behavior. The System Configuration Backup used for migration has never included log data or file shadows — only policies, users, groups, and device rules.
 
-2608 introduces **CrateDB**, a new database component dedicated to log storage. CrateDB ships **empty** on a freshly deployed 2608 server; MySQL continues to own configuration and EPP objects (Computers, Users, Groups), and CrateDB only stores *new* log data going forward. No historical log data from your old server is converted or copied into it.
+2608 introduces **CrateDB**, a new database component dedicated to log storage. CrateDB ships **empty** on a freshly deployed 2608 server; MySQL continues to own configuration and EPP objects (Computers, Users, Groups), and CrateDB only stores *new* log data going forward. The migration doesn't convert or copy any historical log data from your old server into it.
 
 If you need historical logs for compliance or forensics, export them via **System Maintenance → Audit Log Backups** before migrating, or keep your old server VM available. See the prerequisites section of either migration article for the full guidance.
 
@@ -56,11 +56,11 @@ If you need historical logs for compliance or forensics, export them via **Syste
 
 ---
 
-## 4. Is a Client Bridge Version Required to Upgrade to the 2608 Client? {#is-a-client-bridge-version-required-to-upgrade-to-the-2608-client}
+## 4. Client Bridge Version Requirement for the 2608 Client {#is-a-client-bridge-version-required-to-upgrade-to-the-2608-client}
 
-**No.** Any client currently on **5.9.4.3 Hotfix 1** or on any **2511–2605** client version can upgrade directly to the 2608 client — there's no new intermediate/bridge version for this jump.
+**No.** Any client on **5.9.4.3 Hotfix 1** or on any **2511–2605** client version can upgrade directly to the 2608 client — there's no new intermediate/bridge version for this jump.
 
-The historical CoSoSys-to-Netwrix signature bridge (5.9.4.3 Hotfix 1) still applies only to endpoints that have never been upgraded past an old CoSoSys-signed client (5.9.4.1 or older). See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#is-a-bridge-client-required-for-2608) for the full compatibility table.
+The historical CoSoSys-to-Netwrix signature bridge (5.9.4.3 Hotfix 1) still applies only to endpoints still running an old CoSoSys-signed client (5.9.4.1 or older). See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#is-a-bridge-client-required-for-2608) for the full compatibility table.
 
 :::note
 **2510/2604 path:** The target client here is **2605**, not 2608, but the bridge logic is identical — clients on 5.9.4.1 or older still need 5.9.4.3 Hotfix 1 first before they can receive the 2605 client. See the Certificate Bridge section in [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510#certificate-bridge-and-upgrade-path).
@@ -68,9 +68,9 @@ The historical CoSoSys-to-Netwrix signature bridge (5.9.4.3 Hotfix 1) still appl
 
 ---
 
-## 5. Do EE Clients Need to Be Updated Immediately After Migration? {#do-ee-clients-need-to-be-updated-immediately-after-migration}
+## 5. Updating EE Clients Immediately After Migration {#do-ee-clients-need-to-be-updated-immediately-after-migration}
 
-**Yes.** Since the **2509** release, Enforced Encryption changed its communication logic with the Endpoint Protector Server. Unlike regular EPP clients, which can remain on an older supported version for a period after migration, EE clients must be updated to the latest version immediately after the server migration completes — don't treat this as a lower-priority, staged rollout.
+**Yes.** Since the **2509** release, Enforced Encryption changed its communication logic with the Endpoint Protector Server. Regular EPP clients can remain on an older supported version for a period after migration, but you must update EE clients to the latest version immediately after the server migration completes — don't treat this as a lower-priority, staged rollout.
 
 Delaying the EE client upgrade can cause EE-protected drives to lose synchronization with the server or fail to communicate correctly. See [Enforced Encryption Client Requires Immediate Update](/docs/endpointprotector/install/migrationprocedure/clientupgrade#enforced-encryption-client-requires-immediate-update) in Client Upgrade Management for the full guidance.
 
@@ -79,7 +79,7 @@ Delaying the EE client upgrade can cause EE-protected drives to lose synchroniza
 ## 6. Restoring a 2509 Backup onto a 2510 Server {#restoring-a-2509-backup-onto-a-2510-server}
 
 :::note
-This entry applies only if you're still deploying on the older 2509/2510 image line. If you're migrating to **2608**, see the questions above instead.
+This entry applies only if you're still deploying on the older 2509/2510 image line. If you're migrating to **2608**, see the other questions on this page instead.
 :::
 
 Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. After you patch it to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
@@ -93,19 +93,19 @@ This most commonly occurs with large backups or under-resourced VMs, specificall
 **Steps:**
 1. Verify you have sufficient free disk space on the target VM.
 2. Verify the backup file isn't corrupted — re-download from the source server.
-3. Verify the backup was created on a version your target accepts. **2608:** 5.9.4.2 for the legacy path, or 2509/2510/2601/2602/2604 for the current-image path. **2510/2604 path:** only exactly 5.9.4.2 is accepted.
+3. Verify you created the backup on a version your target accepts. **2608:** 5.9.4.2 for the legacy path, or 2509/2510/2601/2602/2604 for the current-image path. **2510/2604 path:** only exactly 5.9.4.2 is accepted.
 4. Try increasing PHP upload limits temporarily (see [Backup File Exceeds 200 MB Import Limit](troubleshooting#backup-file-exceeds-200-mb-import-limit)).
 5. If none of these steps resolves it, contact Netwrix Support with the server logs from `/var/log/epp/`.
 
 :::note
-If 500 errors continue to occur after migration is complete — recurring every few days and resolved only by a full server reboot — see [Recurring HTTP 500 Errors Resolved Only by a Full Reboot](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#recurring-http-500-errors-resolved-only-by-a-full-reboot) instead. That's a different, ongoing issue rather than a one-time import failure.
+If 500 errors continue after you complete the migration — recurring every few days and clearing only after a full server reboot — see [Recurring HTTP 500 Errors Resolved Only by a Full Reboot](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#recurring-http-500-errors-resolved-only-by-a-full-reboot) instead. That's a different, ongoing issue rather than a one-time import failure.
 :::
 
 ---
 
 ## 8. Network/IP Settings Not Saving on the New Server {#networkip-settings-not-saving-on-the-new-server}
 
-This is a known product issue that affected 2509 and early 2510 builds, where the IP configuration page fails to save if **you fill only one DNS field**. It was fixed in patch **2604** — this workaround only applies if you're on an unpatched 2509/early 2510 environment.
+This is a known product issue that affected 2509 and early 2510 builds, where the IP configuration page fails to save if **you fill only one DNS field**. Netwrix fixed it in patch **2604** — this workaround only applies if you're on an unpatched 2509/early 2510 environment.
 
 **Workaround (unpatched 2509/early 2510 only):** Fill both the Primary and Secondary DNS fields. Use `8.8.8.8` (Primary) and `8.8.4.4` (Secondary) if you don't have a secondary internal DNS server.
 
@@ -261,10 +261,10 @@ This can occur in some migration paths onto 2509–2604 when EPP doesn't correct
 
 ## 21. The Effective Rights Report Is Empty After Migration. {#the-effective-rights-report-is-empty-after-migration}
 
-This is a known reporting layer issue that doesn't affect actual policies or enforcement. It's fixed as of **2608** — migrate to 2608 to resolve it. If you're not yet ready to migrate, contact Netwrix Support for interim guidance.
+This is a known reporting layer issue that doesn't affect actual policies or enforcement. Netwrix fixed it in **2608** — migrate to 2608 to resolve it. If you're not yet ready to migrate, contact Netwrix Support for interim guidance.
 
 :::note
-**2510/2604 path:** This issue is still present on 2510/2604 — it's only fixed starting with 2608.
+**2510/2604 path:** This issue is still present on 2510/2604 — the fix ships only in 2608.
 :::
 
 ---
@@ -317,7 +317,7 @@ Keeping two live EPP Server instances in production at the same time can have li
 :::
 
 :::note
-**2510/2604 path:** Everything above applies the same way — substitute "2510/2604" for "2608" until 2608 ships in late August 2026.
+**2510/2604 path:** Everything in this answer applies the same way — substitute "2510/2604" for "2608" until 2608 ships in late August 2026.
 :::
 
 ---
@@ -326,7 +326,7 @@ Keeping two live EPP Server instances in production at the same time can have li
 
 Netwrix doesn't support reverting or downgrading an EPP Server to an older version, on any migration or upgrade path. If you discover critical issues after migrating, you can only rely on your own backups — specifically, the pre-migration VM snapshot of your old server. This is why keeping the old server VM alive and taking a snapshot before migration is mandatory.
 
-Keep in mind that whatever version you roll back to must still be a supported version. Rolling back to a version that's already past its support lifecycle leaves you without security patches or Netwrix Support — see [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability) before deciding to roll back.
+Whatever version you roll back to must still be a supported version. Rolling back to a version that's already past its support lifecycle leaves you without security patches or Netwrix Support — see [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability) before deciding to roll back.
 
 Contact Netwrix Support before attempting any rollback.
 

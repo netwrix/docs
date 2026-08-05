@@ -7,7 +7,7 @@ sidebar_position: 20
 # Troubleshooting Common Issues
 
 :::info Temporary — Two Migration Targets Until Late August 2026
-This page primarily covers migrating to **2608**. Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customers who need to migrate sooner can still follow the temporary [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510) path instead. Entries below that differ between the two targets are marked **2510/2604 path:**. This distinction, and these marked notes, will be removed once 2608 ships.
+This page primarily covers migrating to **2608**. Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customers who need to migrate sooner can still follow the temporary [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510) path instead. Entries that differ between the two targets carry a **2510/2604 path:** marker. Netwrix will remove this distinction, and these marked notes, once 2608 ships.
 :::
 
 ## EPP Server
@@ -42,7 +42,7 @@ A CPU spike following a mass reconnect event is expected behavior, not a defect.
 3. Create a new backup on the accepted source version and retry.
 
 :::note
-**2510/2604 path:** Only exactly **5.9.4.2** is accepted as a source — see [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510).
+**2510/2604 path:** The 2510/2604 platform accepts only exactly **5.9.4.2** as a source — see [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510).
 :::
 
 ---
@@ -51,7 +51,7 @@ A CPU spike following a mass reconnect event is expected behavior, not a defect.
 
 **Symptom:** IP configuration changes don't save; error appears after clicking Save.
 
-**Root cause:** Known bug in 2509/early 2510 where the settings page requires you to fill both DNS fields. Fixed in patch 2604 — this only affects unpatched 2509/early 2510 environments.
+**Root cause:** Known bug in 2509/early 2510 where the settings page requires you to fill both DNS fields. Netwrix fixed this in patch 2604 — it only affects unpatched 2509/early 2510 environments.
 
 **Resolution:** Enter a value in **both** DNS fields (use `8.8.8.8` and `8.8.4.4` if no secondary DNS is available).
 
@@ -63,7 +63,7 @@ A CPU spike following a mass reconnect event is expected behavior, not a defect.
 
 **Resolution:**
 1. Clean up the database using the Audit Log Backup feature, if possible (see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.md#audit-log-backup)). This removes obsolete data and can reduce the backup file size below 200 MB.
-2. If the file is still over 200 MB, contact Netwrix Support and request the **5.9.4.2 backup export fix**. This script trims the backup file by dropping unnecessary legacy tables from the export that migration doesn't require. This is the preferred resolution and requires no backend access on your part.
+2. If the file is still over 200 MB, contact Netwrix Support and request the **5.9.4.2 backup export fix**. This script trims the backup file by dropping legacy tables that migration doesn't require. This is the preferred resolution and requires no backend access on your part.
 3. If the fix script still doesn't bring the file below 200 MB, contact Netwrix Support for the manual upload limit adjustment procedure.
 
 ---
@@ -98,8 +98,8 @@ If `syslog-ng` isn't running, restart the service and confirm SIEM event deliver
 The following steps require backend (SSH) access to the EPP Server. If you don't have backend access, contact Netwrix Support and request that they perform this cleanup.
 :::
 
-Before cleanup, back up any audit-related files so no log data is lost:
-1. If server disk space allows, move the files under `/tmp` related to the audit export (filenames starting with `cflog_initial`) to a secure, external location.
+Before cleanup, back up any audit-related files so you don't lose any log data:
+1. If server disk space allows, move the audit export files under `/tmp` (filenames starting with `cflog_initial`) to a secure, external location.
 2. After confirming the backup, delete these files from `/tmp` to free disk space.
 3. To reclaim additional disk space, remove the oldest directories under `/var/eppfiles/logbackup/jsdata/` (named `logs_<timestamp>`), keeping only what your retention policy requires.
 4. Recreate the Audit configuration (**System Maintenance → Audit Log Backups**).
@@ -114,23 +114,23 @@ Back up files before deleting them from `/tmp`. Deleting `cflog_initial*` files 
 
 **Symptom:** Predefined HIPAA (or other predefined) dictionary downloads fail, or the policy references a stale server address, after migration or after a server hostname/IP change.
 
-**Root cause:** The server generates and caches the dictionary download link when you save the policy. The server reuses this cached link as-is on every subsequent request instead of regenerating it on each client check-in ("Ping"). If the server's hostname or IP changes after the policy was last saved — for example, during a migration — the cached link still points to the old address.
+**Root cause:** The server generates and caches the dictionary download link when you save the policy. The server reuses this cached link as-is on every subsequent request instead of regenerating it on each client check-in ("Ping"). If the server's hostname or IP changes after you last saved the policy — for example, during a migration — the cached link still points to the old address.
 
-**Resolution:** Edit the affected HIPAA policy and save it again — any no-op change is sufficient to trigger regeneration. The policy's next Ping rebuilds the download link using the current server address.
+**Resolution:** Edit the affected HIPAA policy and save it again — any no-op change triggers regeneration. The policy's next Ping rebuilds the download link using the current server address.
 
 :::note
-This caching behavior is specific to the legacy communication flow. The 2608 server release fixes this by making these links independent of the server's hostname — this workaround is only needed on servers still below 2608.
+This caching behavior is specific to the legacy communication flow. The 2608 server release fixes this by making these links independent of the server's hostname — you only need this workaround on servers still below 2608.
 :::
 
 :::note
-**2510/2604 path:** This workaround is still required — the fix ships only in 2608, not 2510/2604.
+**2510/2604 path:** You still need this workaround — the fix ships only in 2608, not 2510/2604.
 :::
 
 ---
 
 ### Recurring HTTP 500 Errors Resolved Only by a Full Reboot
 
-**Symptom:** The EPP Server UI intermittently returns HTTP 500 errors, recurring every 1–3 days. Server load average is very high (600+) even though CPU and RAM utilization aren't fully used. Restarting individual services doesn't resolve the error — only a full server reboot restores UI access, until the issue recurs.
+**Symptom:** The EPP Server UI intermittently returns HTTP 500 errors, recurring every 1–3 days. Server load average is very high (600+) even though CPU and RAM aren't fully used. Restarting individual services doesn't resolve the error — only a full server reboot restores UI access, until the issue recurs.
 
 **Resolution:**
 1. Verify the server's assigned resources meet at least the minimum sizing in [Server Requirements](/docs/endpointprotector/requirements/server) — undersized VMs are a common contributor to this pattern.
@@ -196,7 +196,7 @@ If errors appear instead:
 **Resolution:**
 - If you used the same IP/FQDN: verify that the backup restored the certificates (check **System Configuration → Certificates**).
 - If you used a different IP/FQDN: users must decrypt their drives, reconnect to the new server, and re-encrypt.
-- Verify the EE client is on the latest version. Since the **2509** release, Enforced Encryption changed its communication logic with the server, so EE clients must be updated immediately after migration rather than left on an older version. See [Enforced Encryption Client Requires Immediate Update](/docs/endpointprotector/install/migrationprocedure/clientupgrade.md#enforced-encryption-client-requires-immediate-update) in Client Upgrade Management.
+- Verify the EE client is on the latest version. Since the **2509** release, Enforced Encryption changed its communication logic with the server, so you must update EE clients immediately after migration rather than leaving them on an older version. See [Enforced Encryption Client Requires Immediate Update](/docs/endpointprotector/install/migrationprocedure/clientupgrade.md#enforced-encryption-client-requires-immediate-update) in Client Upgrade Management.
 
 ---
 
@@ -207,7 +207,7 @@ If errors appear instead:
 **Checklist:**
 1. Verify that you have re-enabled client communications on the new server.
 2. Confirm the new server is reachable on the expected IP/FQDN from endpoints.
-3. Check that the 2608 client package is uploaded to the server (**2510/2604 path:** the 2605 client instead).
+3. Check that you uploaded the 2608 client package to the server (**2510/2604 path:** the 2605 client instead).
 4. Verify the old server is no longer running on the same IP if using same-IP strategy.
 5. Check endpoint firewall rules allow outbound on ports 443 and any other configured EPP ports.
 6. Test with a clean install of the latest EPP Client to eliminate potential issues caused by a corrupted existing client.
@@ -220,15 +220,15 @@ If clients were on 5.9.4.1 or older, they also require the 5.9.4.3 Hotfix 1 sign
 
 ### Endpoints Not Upgrading via EPP Server Client Upgrade tool
 
-**Symptom:** Endpoints Upgrade seems stuck to pending
+**Symptom:** Endpoint upgrades appear stuck in pending status.
 
 **Checklist:**
-1. Verify that you have the latest EPP Server in use.
+1. Verify you're running the latest EPP Server.
 2. Clean up all old Client Upgrade tasks existing on EPP Server.
-3. Check version of EPP Client used in upgrade process vs Client version which you want to upgrade - to eliminate the Certificate Bridge issue ([2608 target](/docs/endpointprotector/install/migrationprocedure/clientupgrade.md#certificate-bridge--historical-context) / **2510/2604 path:** [2605 target](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510#certificate-bridge-and-upgrade-path)).
+3. Check the EPP Client version used in the upgrade process against the Client version you want to upgrade, to rule out the Certificate Bridge issue ([2608 target](/docs/endpointprotector/install/migrationprocedure/clientupgrade.md#certificate-bridge--historical-context) / **2510/2604 path:** [2605 target](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510#certificate-bridge-and-upgrade-path)).
 4. Create a new task.
 5. Ensure the affected endpoint with current EPP Client is communicating, and refresh policy.
-6. Ensure that the affected Windows endpoint is restarted; the installer uses msiexec, which can be blocked by any other previous failed installations.
+6. Restart the affected Windows endpoint; the installer uses msiexec, which any previous failed installation can block.
 
 ---
 

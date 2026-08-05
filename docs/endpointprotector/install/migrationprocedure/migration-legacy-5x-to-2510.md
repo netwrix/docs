@@ -13,7 +13,7 @@ Netwrix expects to release the **2608** image in **late August 2026**. This arti
 
 **If your timeline allows waiting, Netwrix recommends migrating directly to 2608 instead** — see [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x). Migrating to 2510/2604 now means migrating a second time shortly afterward to reach 2608.
 
-This article will be retired once 2608 is generally available. For the full picture of which article applies to you, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
+Netwrix will retire this article once 2608 is generally available. For the full picture of which article applies to you, start at the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide).
 :::
 
 ---
@@ -32,7 +32,7 @@ For the full support lifecycle and version status, see: [Netwrix Endpoint Protec
 
 ## Overview
 
-Endpoint Protector's new server platform runs on Ubuntu 22.04 LTS and requires a full image migration rather than a simple patch. Two base images are available as starting points:
+Endpoint Protector's new server platform runs on Ubuntu 22.04 LTS and requires a full image migration rather than a simple patch. Two base images serve as starting points:
 
 - **2509** — The original release. No longer available for download. Customers already running 2509 don't need to switch to 2510 unless they require a larger initial storage disk size.
 - **2510** — Recommended for new deployments. Includes improvements to disk sizing and DHCP/DNS configuration.
@@ -44,7 +44,7 @@ The complete migration process follows this sequence:
 ![EPP Server Migration — end-to-end process diagram](eppmigrationdiagram.webp)
 
 :::warning
-The server doesn't accept backups from versions **other than 5.9.4.2**. The intermediate upgrade step to 5.9.4.2 is **mandatory** — skipping it will result in a failed restoration.
+The server doesn't accept backups from versions **other than 5.9.4.2**. The intermediate upgrade step to 5.9.4.2 is **mandatory** — skipping it causes the restoration to fail.
 :::
 
 :::warning
@@ -117,7 +117,7 @@ If the `php_els` field is missing:
 - Contact Netwrix Support or your account team to request a refreshed license before proceeding.
 
 :::warning
-Without a valid `php_els` license, the new server's underlying OS components will **not** receive updates after migration. Don't proceed without confirming this field exists.
+Without a valid `php_els` license, the new server's underlying OS components **don't** receive updates after migration. Don't proceed without confirming this field exists.
 :::
 
 ### Hypervisor Compatibility Check
@@ -128,7 +128,7 @@ Without a valid `php_els` license, the new server's underlying OS components wil
 - VMware ESXi 7.0+
 - Microsoft Hyper-V (Windows Server 2016+)
 - AWS, Azure, GCP (cloud deployments — snapshot behavior differs per provider)
-- Proxmox VE — not officially supported; see note below
+- Proxmox VE — not officially supported; see the following note
 
 :::note
 **Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after manually adjusting networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
@@ -191,7 +191,7 @@ These times reflect laboratory test results and may vary in your environment dep
 - File Shadow and log generation
 
 :::tip
-EPP clients continue logging events locally during server downtime. The server receives all queued events once communication resumes. No endpoint data is lost.
+EPP clients continue logging events locally during server downtime. The server receives all queued events once communication resumes. You don't lose any endpoint data.
 :::
 
 :::tip
@@ -207,7 +207,7 @@ Re-enable communications after you verify the upgraded server and it's ready to 
 **This step is non-negotiable. Don't proceed without completing both.**
 
 :::note
-VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, Netwrix considers a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot means there is no rollback path — if there is a failure, recovery may be impossible without one, and Netwrix Support will be unable to assist with restoring the environment.
+VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, Netwrix considers a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot leaves you with no rollback path — if a failure occurs, recovery may be impossible, and Netwrix Support can't help restore the environment.
 :::
 
 **Step 1 — Create a VM snapshot** on your hypervisor (VMware, Hyper-V, ESXi, AWS, Azure, etc.).
@@ -334,7 +334,7 @@ After confirming the upgrade to 5.9.4.2 is stable (wait for the 24-hour backgrou
 2. Click **Create** and name it clearly: `migration-to-2510-YYYY-MM-DD`.
 3. Save the backup key securely.
 4. Download the backup file once status shows **"Ready to download"**.
-5. Check the size of the backup. If it's larger than 200 MB, refer to the [next subchapter](#my-backup-is-bigger-than-200-mb).
+5. Check the size of the backup. If it's larger than 200 MB, refer to [My backup is bigger than 200 MB](#my-backup-is-bigger-than-200-mb).
 
 :::tip
 This backup at 5.9.4.2 is the **only** backup that will work on the 2510 platform. Label it clearly and store it separately from previous backups to avoid any confusion during the restoration step.
@@ -352,7 +352,7 @@ Use [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.
 If your 5.9.4.2 backup export is larger than 200 MB, follow these steps:
 1. Consider cleaning up the database using the Audit Log Backup feature if possible (refer to the [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.md#audit-log-backup) chapter). This removes obsolete data and can decrease the backup file size.
 2. Contact EPP Support and report that your "5.9.4.2 backup is bigger than 200 MB." Request an individual offline patch file to fix the backup export size. You can also request assistance with the manual procedure.
-3. Apply the mentioned patch, which adds several backup export improvements on top of the 5.9.4.2 backup functionality. 
+3. Apply the patch, which adds several backup export improvements on top of the 5.9.4.2 backup functionality. 
 :::note
 This doesn't change the EPP Server version — it remains 5.9.4.2.
 :::
@@ -391,7 +391,7 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 
 | Risk | Impact |
 |---|---|
-| DPI certificate trust broken | Content Aware Protection and DPI will fail until certificates regenerated |
+| DPI certificate trust broken | Content Aware Protection and DPI will fail until you regenerate the certificates |
 | CAP policy disruption | All Content Aware Protection rules break |
 | EE drives locked | Users must manually decrypt and re-encrypt every protected drive |
 | Root CA redistribution | You must push the new root CA to all endpoints via GPO/MDM |
@@ -417,7 +417,7 @@ You can upgrade both the **2509** and **2510** base images directly to 2604. **N
    - Configure DNS
 
 :::note
-⚠️ **Known Issue:** IP network settings may not save correctly if you fill only one DNS field. **Workaround:** Fill **both** DNS fields. Use for example Google's public DNS (`8.8.8.8` and `8.8.4.4`) as a secondary if you don't have a second internal DNS server. This is fixed in patch 2604 — the workaround only applies to unpatched 2509/early 2510 environments.
+⚠️ **Known Issue:** IP network settings may not save correctly if you fill only one DNS field. **Workaround:** Fill **both** DNS fields. Use for example Google's public DNS (`8.8.8.8` and `8.8.4.4`) as a secondary if you don't have a second internal DNS server. Netwrix fixed this in patch 2604 — the workaround only applies to unpatched 2509/early 2510 environments.
 :::
 
 ![2510 Network Configuration — IP, subnet, gateway, both DNS fields filled](2510_network_config.webp)
@@ -503,7 +503,7 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 :::
 
 :::note
-This is a one-time 500 error during import. If 500 errors instead recur every few days after migration is complete and are resolved only by a full server reboot, see [Recurring HTTP 500 Errors Resolved Only by a Full Reboot](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#recurring-http-500-errors-resolved-only-by-a-full-reboot).
+This is a one-time 500 error during import. If 500 errors instead recur every few days after you complete the migration and clear only after a full server reboot, see [Recurring HTTP 500 Errors Resolved Only by a Full Reboot](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#recurring-http-500-errors-resolved-only-by-a-full-reboot).
 :::
 ### Import License on the Upgraded EPP server image with restore configuration
 
@@ -524,7 +524,7 @@ If errors appear:
 ![Appliance → Server Information — ELS for PHP = Error after license import](els_error.webp)
 
 :::danger
-If ELS for PHP is **not Active**, stop and resolve this before proceeding. The server can't receive patches without it, and the subsequent upgrade step will not complete successfully.
+If ELS for PHP is **not Active**, stop and resolve this before proceeding. The server can't receive patches without it, and the subsequent upgrade step won't complete successfully.
 :::
 
 ## Phase 3 — Uploading EPP & EE Client Packages
@@ -539,7 +539,7 @@ Download the Endpoint Protector Clients from the [My Products portal on netwrix.
 The EPP Server Client Upgrade feature doesn't support Linux client upgrades — administrators must upgrade Linux clients manually.
 :::
 
-The average size of EPP Clients update is:
+The average update sizes are:
 
 - Endpoint Protector Client for Windows ~ 50 MB
 - Endpoint Protector Client for macOS ~ 50 MB
@@ -551,7 +551,7 @@ For environments where the payload of an update is a concern, you can save bandw
 
 ### Certificate Bridge and Upgrade Path
 
-Understanding the required package set requires knowing why a direct upgrade from older 5.x clients to 2605 isn't possible.
+To understand the required package set, you first need to know why older 5.x clients can't upgrade directly to 2605.
 
 Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and transitioned all code signing certificates from **CoSoSys signatures** to **Netwrix signatures**. This transition affects how endpoint clients verify server-pushed updates:
 
@@ -559,14 +559,14 @@ Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and tran
 |---|---|---|
 | 5.9.4.1 and older | CoSoSys only | Can't verify Netwrix-signed packages |
 |5.9.4.3 Hotfix 1 | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
-| 2511 and newer | Netwrix only | Can't be pushed to 5.9.4.1 clients directly |
+| 2511 and newer | Netwrix only | The server can't push these to 5.9.4.1 clients directly |
 
 Clients on 5.9.4.1 or older **can't** upgrade directly to 2605. They must first upgrade to **5.9.4.3 Hotfix 1** (which trusts both signature types), then proceed to 2605:
 
 ![EPP Client Migration — end-to-end process diagram](clientupgradediagram.webp)
 
 :::note
-This same Enforced Encryption client applies going forward — EE clients must also be kept current on this platform. Since the **2509** release, Enforced Encryption changed its communication logic with the server, so EE clients must be updated to the latest version immediately after migration rather than left on an older version.
+This same Enforced Encryption client applies going forward — you must also keep EE clients current on this platform. Since the **2509** release, Enforced Encryption changed its communication logic with the server, so you must update EE clients to the latest version immediately after migration rather than leaving them on an older version.
 :::
 
 ### Required Packages
@@ -619,7 +619,7 @@ Complete all items in this checklist after you finish the migration.
 
 ### Re-Enabling Client Communications
 
-After the restore is verified and client packages are uploaded:
+After you verify the restore and upload the client packages:
 
 1. Navigate to **System Configuration → System Settings**.
 2. Re-enable client communications.

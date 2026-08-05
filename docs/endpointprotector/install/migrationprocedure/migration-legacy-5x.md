@@ -14,10 +14,10 @@ This article covers on-premises EPP Servers running any version from **5.7.0.0 t
 
 ## Overview
 
-Migrating a legacy 5.x server to 2608 is a two-step journey:
+Migrating a legacy 5.x server to 2608 is a two-step process:
 
 1. **Reach exactly 5.9.4.2** — if you're on any earlier 5.x version, apply the cumulative patch first.
-2. **Deploy the 2608 image and restore your backup** — once you're on 5.9.4.2, deploy the 2608 base image directly and restore your 5.9.4.2 backup onto it. There's no need to route through the older 2510/2604 platform.
+2. **Deploy the 2608 image and restore your backup** — after you're on 5.9.4.2, deploy the 2608 base image directly and restore your 5.9.4.2 backup onto it. There's no need to route through the older 2510/2604 platform.
 
 ---
 
@@ -34,7 +34,7 @@ Complete **all** items in this checklist before beginning any upgrade or migrati
 Confirm your Endpoint Protector license is valid and current before migrating.
 
 :::note
-Licenses for the 2509–2604 image line included a `php_els` field, used to unlock OS patch updates on that platform. **2608 no longer requires this field.** If your existing license still contains it, 2608 simply ignores it — no action is needed regarding `php_els` specifically.
+Licenses for the 2509–2604 image line included a `php_els` field, used to unlock OS patch updates on that platform. **2608 no longer requires this field.** If your existing license still contains it, 2608 ignores it — you don't need to do anything about `php_els`.
 :::
 
 **How to verify your license:**
@@ -52,14 +52,14 @@ If you're unsure whether your license is current, contact Netwrix Support or you
 - VMware ESXi 7.0+
 - Microsoft Hyper-V (Windows Server 2016+)
 - AWS, Azure, GCP (cloud deployments — snapshot behavior differs per provider)
-- Proxmox VE — not officially supported; see note below
+- Proxmox VE — not officially supported; see the following note
 
 :::note
 **Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after manually adjusting networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
 :::
 
 :::warning TBD
-The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS used by 2510/2604. Confirm minimum hypervisor version requirements for Ubuntu 26.04 guests before publishing — they may be stricter than the vSphere 6.7+/ESXi 7.0+ minimums listed above.
+The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS used by 2510/2604. Confirm minimum hypervisor version requirements for Ubuntu 26.04 guests before publishing — they may be stricter than the vSphere 6.7+/ESXi 7.0+ minimums listed under **Verified compatible hypervisors**.
 :::
 
 :::tip
@@ -93,7 +93,7 @@ You can verify disk space and current server versions in Appliance → Server In
 For authoritative CPU, RAM, and disk minimum recommendations, refer to the official User Manual: [Netwrix Endpoint Protector — Server Requirements](/docs/endpointprotector/requirements/server)
 
 :::warning TBD
-Confirm updated minimum disk/RAM/CPU recommendations for the 2608 image before publishing — the addition of CrateDB may change the recommended baseline even though no historical data is migrated into it at deployment time.
+Confirm updated minimum disk/RAM/CPU recommendations for the 2608 image before publishing — the addition of CrateDB may change the recommended baseline even though the migration doesn't move historical data into it at deployment time.
 :::
 
 :::tip
@@ -119,7 +119,7 @@ These times reflect laboratory test results and may vary in your environment dep
 - File Shadow and log generation
 
 :::tip
-EPP clients continue logging events locally during server downtime. The server receives all queued events once communication resumes. No endpoint data is lost.
+EPP clients continue logging events locally during server downtime. The server receives all queued events once communication resumes. You don't lose any endpoint data.
 :::
 
 :::tip
@@ -135,7 +135,7 @@ Re-enable communications after you verify the upgraded server and it's ready to 
 **This step is non-negotiable. Don't proceed without completing both.**
 
 :::note
-VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, Netwrix considers a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot means there is no rollback path — if there is a failure, recovery may be impossible without one, and Netwrix Support will be unable to assist with restoring the environment.
+VM backup and snapshot management is the full responsibility of the customer's administrators. Netwrix doesn't manage, verify, or maintain hypervisor-level snapshots. However, Netwrix considers a valid VM snapshot an **obligatory prerequisite** before starting any upgrade or migration activity. Proceeding without a snapshot leaves you with no rollback path — if a failure occurs, recovery may be impossible, and Netwrix Support can't help restore the environment.
 :::
 
 **Step 1 — Create a VM snapshot** on your hypervisor (VMware, Hyper-V, ESXi, AWS, Azure, etc.).
@@ -259,7 +259,7 @@ After confirming the upgrade to 5.9.4.2 is stable (wait for the 24-hour backgrou
 2. Click **Create** and name it clearly: `migration-to-2608-YYYY-MM-DD`.
 3. Save the backup key securely.
 4. Download the backup file once status shows **"Ready to download"**.
-5. Check the size of the backup. If it's larger than 200 MB, refer to the [next subchapter](#my-backup-is-bigger-than-200-mb).
+5. Check the size of the backup. If it's larger than 200 MB, refer to [My backup is bigger than 200 MB](#my-backup-is-bigger-than-200-mb).
 
 :::tip
 This backup at 5.9.4.2 is the **only** backup that will work directly on the 2608 platform. Label it clearly and store it separately from previous backups to avoid any confusion during the restoration step.
@@ -276,7 +276,7 @@ Use [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.
 If your 5.9.4.2 backup export is larger than 200 MB, follow these steps:
 1. Consider cleaning up the database using the Audit Log Backup feature if possible (refer to the [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.md#audit-log-backup) chapter). This removes obsolete data and can decrease the backup file size.
 2. Contact EPP Support and report that your "5.9.4.2 backup is bigger than 200 MB." Request an individual offline patch file to fix the backup export size. You can also request assistance with the manual procedure.
-3. Apply the mentioned patch, which adds several backup export improvements on top of the 5.9.4.2 backup functionality.
+3. Apply the patch, which adds several backup export improvements on top of the 5.9.4.2 backup functionality.
 
 :::note
 This doesn't change the EPP Server version — it remains 5.9.4.2.
@@ -315,7 +315,7 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 
 | Risk | Impact |
 |---|---|
-| DPI certificate trust broken | Content Aware Protection and DPI will fail until certificates regenerated |
+| DPI certificate trust broken | Content Aware Protection and DPI will fail until you regenerate the certificates |
 | CAP policy disruption | All Content Aware Protection rules break |
 | EE drives locked | Users must manually decrypt and re-encrypt every protected drive |
 | Root CA redistribution | You must push the new root CA to all endpoints via GPO/MDM |
@@ -335,7 +335,7 @@ If using Enforced Encryption and you change the IP/FQDN, every user with an EE-p
    - Configure DNS
 
 :::note
-This was fixed in patch 2604. On unpatched 2509/early 2510 environments, IP network settings didn't save correctly unless you filled in both DNS fields — that workaround doesn't apply here.
+Netwrix fixed this in patch 2604. On unpatched 2509/early 2510 environments, IP network settings didn't save correctly unless you filled in both DNS fields — that workaround doesn't apply here.
 :::
 
 4. Power on the new VM and access the console at `https://<new-ip-or-fqdn>:443`.
@@ -413,7 +413,7 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 :::
 
 :::note
-This is a one-time 500 error during import. If 500 errors instead recur every few days after migration is complete and are resolved only by a full server reboot, see [Recurring HTTP 500 Errors Resolved Only by a Full Reboot](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#recurring-http-500-errors-resolved-only-by-a-full-reboot).
+This is a one-time 500 error during import. If 500 errors instead recur every few days after you complete the migration and clear only after a full server reboot, see [Recurring HTTP 500 Errors Resolved Only by a Full Reboot](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#recurring-http-500-errors-resolved-only-by-a-full-reboot).
 :::
 
 ### Import License on the Upgraded EPP Server Image with Restored Configuration
@@ -445,7 +445,7 @@ Complete all items in this checklist after you finish the migration.
 
 ### Re-Enabling Client Communications
 
-After the restore is verified and client packages are uploaded (see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade)):
+After you verify the restore and upload the client packages (see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade)):
 
 1. Navigate to **System Configuration → System Settings**.
 2. Re-enable client communications.

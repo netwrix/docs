@@ -24,7 +24,7 @@ Download the Endpoint Protector Clients from the [My Products portal on netwrix.
 The EPP Server Client Upgrade feature doesn't support Linux client upgrades — administrators must upgrade Linux clients manually.
 :::
 
-The average size of EPP Clients update is:
+The average update sizes are:
 
 - Endpoint Protector Client for Windows ~ 50 MB
 - Endpoint Protector Client for macOS ~ 50 MB
@@ -34,13 +34,13 @@ The average size of EPP Clients update is:
 
 For environments where the payload of an update is a concern, you can save bandwidth by using Offline Patches. You can also deploy Endpoint Protector Clients manually, directly on each endpoint.
 
-## Is a Bridge Client Required for 2608?
+## Bridge Client Requirement for 2608 {#is-a-bridge-client-required-for-2608}
 
-**No.** Unlike the earlier CoSoSys-to-Netwrix signature transition, the 2608 client release doesn't introduce a new trust or signature requirement. Any client currently on **5.9.4.3 Hotfix 1** or on any **2511–2605** client version can upgrade directly to the 2608 client with no intermediate hop.
+**No.** Unlike the earlier CoSoSys-to-Netwrix signature transition, the 2608 client release doesn't introduce a new trust or signature requirement. Any client on **5.9.4.3 Hotfix 1** or on any **2511–2605** client version can upgrade directly to the 2608 client with no intermediate hop.
 
 ### Certificate Bridge — Historical Context
 
-This certificate bridge still applies to any endpoint that has **never** been upgraded past an old CoSoSys-signed client (5.9.4.1 or older). If all your endpoints are already on 5.9.4.3 Hotfix 1 or later, you can skip this section.
+This certificate bridge still applies to any endpoint **still running** an old CoSoSys-signed client (5.9.4.1 or older). If all your endpoints are already on 5.9.4.3 Hotfix 1 or later, you can skip this section.
 
 Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and transitioned all code signing certificates from **CoSoSys signatures** to **Netwrix signatures**. This transition affects how endpoint clients verify server-pushed updates:
 
@@ -48,7 +48,7 @@ Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and tran
 |---|---|---|
 | 5.9.4.1 and older | CoSoSys only | Can't verify Netwrix-signed packages |
 | 5.9.4.3 Hotfix 1 | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
-| 2511 and newer (including 2608) | Netwrix only | Can't be pushed to 5.9.4.1 clients directly |
+| 2511 and newer (including 2608) | Netwrix only | The server can't push these to 5.9.4.1 clients directly |
 
 Clients on 5.9.4.1 or older **can't** upgrade directly to 2608. They must first upgrade to **5.9.4.3 Hotfix 1** (which trusts both signature types), then proceed directly to 2608:
 
@@ -84,7 +84,7 @@ The packages you need to upload depend on your current EPP client population and
 | EE Client 2608 (macOS) | Latest — required if Enforced Encryption is in use |
 
 :::note
-Starting with the Windows 2608 client, Endpoint Protector uses a custom bundled OpenSSL package instead of Windows' built-in Schannel TLS engine, and both the 2608 Client and Server support Post-Quantum Cryptography (PQC) for Client-to-Server communication. PQC is negotiated automatically as the highest available option when both sides support it; otherwise, Endpoint Protector falls back to the highest TLS version both sides support. See [Endpoint Protector Client TLS](/docs/endpointprotector/requirements/components#endpoint-protector-client-tls) for details.
+Starting with the Windows 2608 client, Endpoint Protector uses a custom bundled OpenSSL package instead of Windows' built-in Schannel TLS engine, and both the 2608 Client and Server support Post-Quantum Cryptography (PQC) for Client-to-Server communication. Endpoint Protector negotiates PQC automatically as the highest available option when both sides support it; otherwise, it falls back to the highest TLS version both sides support. See [Endpoint Protector Client TLS](/docs/endpointprotector/requirements/components#endpoint-protector-client-tls) for details.
 :::
 
 ## Upload Procedure
@@ -102,13 +102,13 @@ Upload **both** EE clients for Windows and macOS if your organization uses both 
 
 ### Enforced Encryption Client Requires Immediate Update
 
-Starting with the **2509** release, Enforced Encryption changed its communication logic with the Endpoint Protector Server. Unlike regular EPP clients, which can remain on an older supported version for a period after a server migration, **EE clients must be updated to the latest version immediately** after the server migration completes.
+Starting with the **2509** release, Enforced Encryption changed its communication logic with the Endpoint Protector Server. Regular EPP clients can remain on an older supported version for a period after a server migration, but **you must update EE clients to the latest version immediately** after the server migration completes.
 
 :::warning
 Don't leave EE clients on an older version after migrating the server. Delaying the EE client upgrade can cause EE-protected drives to lose synchronization with the server or fail to communicate correctly.
 :::
 
-Upload the latest EE client packages as part of the same upload batch as the EPP client packages (see Required Packages above), enable auto-update, or prioritize manually re-deploying them to every endpoint using Enforced Encryption immediately after migration completes — don't treat this as a lower-priority, staged rollout the way you might for regular EPP clients.
+Upload the latest EE client packages as part of the same upload batch as the EPP client packages (see [Required Packages](#required-packages)), enable auto-update, or prioritize manually re-deploying them to every endpoint using Enforced Encryption immediately after migration completes — don't treat this as a lower-priority, staged rollout the way you might for regular EPP clients.
 
 For the full reference on Enforced Encryption configuration and modes, see [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule).
 
