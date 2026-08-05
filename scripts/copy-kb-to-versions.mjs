@@ -26,7 +26,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { PRODUCTS } from '../src/config/products.js';
+import { PRODUCTS, getActiveVersions } from '../src/config/products.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -565,14 +565,24 @@ function main() {
     // Acquire lock
     acquireLock(isDryRun);
 
-    // Read environment filters (CLI flags override env vars)
+    // Read environment filters (CLI flags override env vars).
+    // COPY_KB_PRODUCTS/COPY_KB_VERSIONS win if explicitly set; otherwise derive
+    // defaults from DOCS_PRODUCT/DOCS_PRODUCT_LATEST_ONLY so a single-product
+    // build scopes KB copy automatically without a separate env var.
     let filterProducts = process.env.COPY_KB_PRODUCTS
       ? process.env.COPY_KB_PRODUCTS.split(',').map(p => p.trim()).filter(Boolean)
-      : null;
+      : (process.env.DOCS_PRODUCT && process.env.DOCS_PRODUCT !== 'kb'
+          ? [process.env.DOCS_PRODUCT]
+          : null);
 
     let filterVersions = process.env.COPY_KB_VERSIONS
       ? process.env.COPY_KB_VERSIONS.split(',').map(v => v.trim()).filter(Boolean)
-      : null;
+      : (filterProducts?.length === 1 && process.env.DOCS_PRODUCT_LATEST_ONLY === 'true'
+          ? (() => {
+              const targetProduct = PRODUCTS.find(p => p.id === filterProducts[0]);
+              return targetProduct ? getActiveVersions(targetProduct).map(v => v.version) : null;
+            })()
+          : null);
 
     // CLI flags override environment variables
     args.forEach(arg => {

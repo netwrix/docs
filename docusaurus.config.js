@@ -7,7 +7,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions } from './src/config/products.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -33,6 +33,18 @@ PRODUCTS.forEach(product => {
 
 const latestVersionMap = getLatestVersionUrlMap();
 
+// Match the product filtering generateDocusaurusPlugins() applies, so redirects
+// never target a product whose pages weren't built for this DOCS_PRODUCT run.
+const redirectProducts = getActiveProducts();
+
+// Passed to the client via customFields: React components are bundled by
+// rspack/webpack, which polyfill `process` with an empty env in that context,
+// so process.env.DOCS_PRODUCT isn't readable from component code directly.
+const activeProductIds = redirectProducts.map(product => product.id);
+const activeVersionsByProduct = Object.fromEntries(
+  redirectProducts.map(product => [product.id, getActiveVersions(product).map(v => v.version)])
+);
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Netwrix Product Documentation',
@@ -47,7 +59,11 @@ const config = {
   baseUrl: '/',
 
   // throw on anything that is not configured correctly
-  onBrokenLinks: 'throw',
+  // (onBrokenLinks is relaxed to 'warn' for DOCS_PRODUCT single-product builds,
+  // since those filter out other products' pages and cross-product absolute
+  // links will 404 on purpose. Markdown link and anchor mistakes are always
+  // real bugs within the built product, so those always throw.)
+  onBrokenLinks: process.env.DOCS_PRODUCT ? 'warn' : 'throw',
   onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
 
@@ -96,6 +112,10 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  customFields: {
+    activeProductIds,
+    activeVersionsByProduct,
+  },
   presets: [
     [
       'classic',
@@ -136,7 +156,7 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: PRODUCTS.filter(product => {
+        redirects: redirectProducts.filter(product => {
           // Only create redirects for products with multiple versions (not just 'current')
           return !(product.versions.length === 1 && product.versions[0].version === 'current');
         }).map(product => {
