@@ -50,8 +50,8 @@ for the fields specific to each object.
 
 ## Tabs
 
-Depending on the selected user, group, application, or role, the page may display the following
-tabs:
+Depending on the selected user, group, application, service principal, or role, the page may
+display the following tabs:
 
 ![Tabs](/images/threatmanager/3.0/administration/threatdetails/tabs.webp)
 
@@ -88,6 +88,7 @@ To add a tag to a user, group, or computer:
 
 **Step 2 –** Click the tag you want to add from the list of existing tags.
 
-Threat Manager adds the selected tag to the user, group, application, or role. See the
+Threat Manager adds the selected tag to the user, group, application, service principal, or role.
+See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for additional
 information.

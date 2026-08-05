@@ -14,9 +14,9 @@ built-in and custom tags. You can add tags and assign objects to those tags.
 The built-in tags include:
 
 - Administrator – An administrator user account
-- Agent Blueprint – An application registered in Microsoft Entra ID that serves as an
-  Agent Identity Blueprint. Agent Blueprints define the identity configuration for AI agents,
-  enabling them to authenticate and operate within the Microsoft identity platform.
+- Agent Blueprint – An application registered in Microsoft Entra ID that defines the identity
+  configuration for an AI agent, enabling it to authenticate and operate within the Microsoft
+  identity platform.
 - Agent Identity – A service principal registered in Microsoft Entra ID that acts as the identity
   for an AI agent. Agent Identity service principals enable agents to authenticate and access
   resources within the Microsoft identity platform.
@@ -29,9 +29,9 @@ The built-in tags include:
 - Certificate Authority – A server that issues and manages the digital certificates used in a
   public key infrastructure (PKI)
 - Computer Account – A computer account
-- Disabled – A disabled account or object. You can't use disabled objects to
-  authenticate or access resources, but they may still hold role assignments, group memberships, and
-  permissions.
+- Disabled – An account or object that has been disabled in Active Directory or Microsoft Entra ID.
+  You can't use disabled objects to authenticate or access resources, but they may still hold role
+  assignments, group memberships, and permissions.
 - Domain Admin – An Active Directory domain administrator account
 - Domain Controller – An Active Directory domain controller account
 - Global Catalog – An Active Directory global catalog object
@@ -102,8 +102,8 @@ This page provides the following information:
 
 - Name – The tag name. Type in the field to modify the name.
 - Description – The tag description. Type in the field to modify the description.
-- Delete Tag button – This button is available only for custom tags. You can't delete built-in
-  tags. You must confirm the action.
+- Delete Tag button – Available only for custom tags; you can't delete built-in tags. When you
+  click it, you must confirm the deletion.
 - Search box – Search for objects in the Untagged Items box and the Tagged Items box by typing in
   the textbox. You can search for user objects, group objects, file objects, or computer objects.
 - Types – The dropdown menu provides object type filter options that apply to the search box
@@ -130,7 +130,7 @@ The following types are available:
 - Files – File objects
 - Computers – Active Directory computer objects
 
-The window filters the _tagged items_ and _untagged items_ lists to the selected object
+The window filters the _tagged items_ and _untagged items_ lists by the selected object
 types.
 
 ## Apply Tags to Objects

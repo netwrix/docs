@@ -23,9 +23,10 @@ application:
 :::info
 If the application is an Agent Identity Blueprint (an application registered in Microsoft Entra ID
 that defines the identity configuration for an AI agent), the page displays the Sponsors and Agent
-Identities tabs described in the following sections, in addition to the standard tabs. Threat
-Manager tags Agent Identity Blueprints with the built-in Agent Blueprint tag. See the
-[Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
+Identities tabs described in the following sections, in addition to the standard tabs. Microsoft
+Entra ID creates Agent Identity service principals and Agent User accounts from an Agent Identity
+Blueprint. Threat Manager tags Agent Identity Blueprints with the built-in Agent Blueprint tag. See
+the [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
 additional information about built-in tags.
 :::
 
@@ -55,13 +56,13 @@ The Activity Overview (Past 12 Months) shows a color-coded heat map of user acti
 
 ## Owners Tab
 
-The Owners tab shows which objects can manage the application. These objects are the owners.
+The Owners tab lists the objects that can manage the application, known as owners.
 
 The table displays the following columns:
 
 - Name – The display name of the owner
 - Type – The type of Entra ID object
-- Email – The email associated with the owners object
+- Email – The email address associated with the owner object
 
 ## Group Membership Tab
 
@@ -151,10 +152,11 @@ Identity Blueprint.
 
 ![Agent Identities Tab](/images/threatmanager/3.3/administration/threatdetails/agentidentitiestab.webp)
 
-It has the following sub-tabs:
+The tab has the following sub-tabs:
 
-- Agent Identities – Lists the Agent Identity service principals instantiated from this blueprint.
-- Agent Users – Lists the Agent Users tied to this blueprint.
+- Agent Identities – Lists the Agent Identity service principals created from this Agent Identity
+  Blueprint.
+- Agent Users – Lists the Agent Users associated with this Agent Identity Blueprint.
 
 Each sub-tab table has the following columns:
 
