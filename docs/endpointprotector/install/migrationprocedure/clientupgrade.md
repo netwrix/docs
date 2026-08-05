@@ -36,7 +36,7 @@ For environments where the payload of an update is a concern, you can save bandw
 
 ## Bridge Client Requirement for 2608 {#is-a-bridge-client-required-for-2608}
 
-**No.** Unlike the earlier change of code signing certificates from CoSoSys to Netwrix (explained below), the 2608 client release doesn't introduce a new trust or signature requirement. Any client on **5.9.4.3 Hotfix 1** or on any **2511–2605** client version can upgrade directly to the 2608 client with no intermediate hop.
+**No.** Unlike the earlier change of code signing certificates from CoSoSys to Netwrix (explained in the following section), the 2608 client release doesn't introduce a new trust or signature requirement. Any client on **5.9.4.3 Hotfix 1** or on any **2511–2605** client version can upgrade directly to the 2608 client with no intermediate hop.
 
 ### Certificate Bridge — Historical Context
 
@@ -48,7 +48,7 @@ Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and tran
 | 5.9.4.3 Hotfix 1 | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
 | 2511 and newer (including 2608) | Netwrix only | The server can't push these to 5.9.4.1 clients directly |
 
-This certificate bridge still applies to any endpoint **still running** an old CoSoSys-signed client (5.9.4.1 or older). If all your endpoints are already on 5.9.4.3 Hotfix 1 or later, you can skip the rest of this section.
+This certificate bridge applies to any endpoint **still running** an old CoSoSys-signed client (5.9.4.1 or older). If all your endpoints are already on 5.9.4.3 Hotfix 1 or later, you can skip the rest of this section.
 
 Clients on 5.9.4.1 or older **can't** upgrade directly to 2608. They must first upgrade to **5.9.4.3 Hotfix 1** (which trusts both signature types), then proceed directly to 2608:
 

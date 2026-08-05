@@ -140,7 +140,7 @@ Keep the VM snapshot active until you have fully validated the new 2608 environm
 1. Log in to Endpoint Protector Console.
 2. Navigate to **System Maintenance → System Backup v2**.
 3. Click **Create**, enter a name and description (include the date and version, e.g., `pre-upgrade-2604-2026-04-20`), click **Save**.
-4. **Save the System Backup Key** that appears in the prompt — you need this key for restoration and can't recover it if lost.
+4. **Save the System Backup Key** that appears in the prompt — you need this key for restoration and can't recover it if you lose it.
 5. Wait for the status to show **"Ready to download"**, then download the backup file.
 
 ![System Maintenance → System Backup — backup creation wizard](backup_wizard.webp)
@@ -193,7 +193,7 @@ Before deploying the new VM, decide whether the new 2608 server will use the **s
 |---|---|
 | Certificate trust | Preserved — no changes required on endpoints |
 | Enforced Encryption (EE) | No user action required — drives remain encrypted |
-| DPI / CAP functionality | Works immediately after migration |
+| Deep Packet Inspection (DPI) / Content Aware Protection (CAP) functionality | Works immediately after migration |
 | Client reconnection | Automatic — endpoints find server at same address |
 | Recommended for | All environments, especially EE deployments |
 
@@ -259,7 +259,7 @@ After successful activation, you should see a green banner at the top.
 ![System Maintenance → System Backup v2 — Import and Restore (Migrate) button](backup_v2_import.webp)
 
 4. In the wizard, select the backup file you created from your 2604 (or 2509/2510/2601/2602) server.
-5. Enter the **System Backup Key** saved during backup creation.
+5. Enter the **System Backup Key** you saved during backup creation.
 6. Click **Import**.
 
 ![Import and Restore wizard — file selection, key entry, and Import button](import_restore_wizard.webp)

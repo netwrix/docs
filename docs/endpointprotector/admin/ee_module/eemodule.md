@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Enforced Encryption
 
-Enforced Encryption, Formerly known as EasyLock, is a cross-platform solution that protects data with government-approved FIPS 140-3 validated encryption. For USB devices, you must deploy it on the root of the device. With the intuitive Drag & Drop interface, you can quickly copy ﬁles to and from the device.
+Enforced Encryption, Formerly known as EasyLock, is a cross-platform solution that protects data with government-approved FIPS 140-3 validated encryption. For USB devices, you must deploy it on the root of the device. Use the Drag & Drop interface to copy ﬁles to and from the device.
 
 Because Enforced Encryption uses FIPS 140-3 validated cryptography, it helps organizations meet regulatory frameworks that require validated encryption for removable media. This includes the Cybersecurity Maturity Model Certification (CMMC), which enforces security standards that defense contractors must meet to handle Controlled Unclassified Information (CUI).
 

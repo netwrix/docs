@@ -78,7 +78,7 @@ Restore the backup **after** you fully patch the 2510 image to 2604. The 5.9.4.2
 
 
 :::warning
-From a legacy 5.x server, only a backup created on exactly 5.9.4.2 is accepted.
+From a legacy 5.x server, the platform accepts only a backup created on exactly 5.9.4.2.
 Always verify your source server version before creating the migration backup.
 :::
 
@@ -225,7 +225,7 @@ Keep the VM snapshot active until you have fully validated the new 2510 environm
 1. Log in to Endpoint Protector Console.
 2. Navigate to **System Maintenance → System Backup**.
 3. Click **Create**, enter a name and description (include the date and version, e.g., `pre-upgrade-5942-2026-04-20`), click **Save**.
-4. **Save the System Backup Key** that appears in the prompt — you need this key for restoration and can't recover it if lost.
+4. **Save the System Backup Key** that appears in the prompt — you need this key for restoration and can't recover it if you lose it.
 5. Wait for the status to show **"Ready to download"**, then download the backup file.
 
 ![System Maintenance → System Backup — backup creation wizard](backup_wizard.webp)
@@ -374,7 +374,7 @@ Before deploying the new VM, decide whether the new 2510 server will use the **s
 |---|---|
 | Certificate trust | Preserved — no changes required on endpoints |
 | Enforced Encryption (EE) | No user action required — drives remain encrypted |
-| DPI / CAP functionality | Works immediately after migration |
+| Deep Packet Inspection (DPI) / Content Aware Protection (CAP) functionality | Works immediately after migration |
 | Client reconnection | Automatic — endpoints find server at same address |
 | Recommended for | All environments, especially EE deployments |
 
@@ -417,7 +417,7 @@ You can upgrade both the **2509** and **2510** base images directly to 2604. **N
    - Configure DNS
 
 :::note
-⚠️ **Known Issue:** IP network settings may not save correctly if you fill only one DNS field. **Workaround:** Fill **both** DNS fields. Use for example Google's public DNS (`8.8.8.8` and `8.8.4.4`) as a secondary if you don't have a second internal DNS server. Netwrix fixed this in patch 2604 — the workaround only applies to unpatched 2509/early 2510 environments.
+⚠️ **Known Issue:** IP network settings may not save correctly if you fill only one DNS field. **Workaround:** Fill **both** DNS fields. For example, use Google's public DNS (`8.8.8.8` and `8.8.4.4`) as the secondary if you don't have a second internal DNS server. Netwrix fixed this in patch 2604 — the workaround only applies to unpatched 2509/early 2510 environments.
 :::
 
 ![2510 Network Configuration — IP, subnet, gateway, both DNS fields filled](2510_network_config.webp)
@@ -475,7 +475,7 @@ Restore the 5.9.4.2 backup onto the fully patched 2604 server. The backup format
 ![System Maintenance → System Backup v2 — Import and Restore (Migrate) button](backup_v2_import.webp)
 
 4. In the wizard, select the 5.9.4.2 backup file you created in Phase 1.
-5. Enter the **System Backup Key** saved during backup creation.
+5. Enter the **System Backup Key** you saved during backup creation.
 6. Click **Import**.
 
 ![Import and Restore wizard — file selection, key entry, and Import button](import_restore_wizard.webp)

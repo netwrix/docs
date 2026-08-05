@@ -34,7 +34,7 @@ Complete **all** items in this checklist before beginning any upgrade or migrati
 Confirm your Endpoint Protector license is valid and current before migrating.
 
 :::note
-Licenses for the 2509–2604 image line included a `php_els` field, used to unlock OS patch updates on that platform. **2608 no longer requires this field.** If your existing license still contains it, 2608 ignores it — you don't need to do anything about `php_els`.
+Licenses for the 2509–2604 image line included a `php_els` field that unlocked OS patch updates on that platform. **2608 no longer requires this field.** If your existing license still contains it, 2608 ignores it — you don't need to do anything about `php_els`.
 :::
 
 **How to verify your license:**
@@ -153,7 +153,7 @@ Keep the VM snapshot active until you have fully validated the new 2608 environm
 1. Log in to Endpoint Protector Console.
 2. Navigate to **System Maintenance → System Backup**.
 3. Click **Create**, enter a name and description (include the date and version, e.g., `pre-upgrade-5942-2026-04-20`), click **Save**.
-4. **Save the System Backup Key** that appears in the prompt — you need this key for restoration and can't recover it if lost.
+4. **Save the System Backup Key** that appears in the prompt — you need this key for restoration and can't recover it if you lose it.
 5. Wait for the status to show **"Ready to download"**, then download the backup file.
 
 ![System Maintenance → System Backup — backup creation wizard](backup_wizard.webp)
@@ -298,7 +298,7 @@ Before deploying the new VM, decide whether the new 2608 server will use the **s
 |---|---|
 | Certificate trust | Preserved — no changes required on endpoints |
 | Enforced Encryption (EE) | No user action required — drives remain encrypted |
-| DPI / CAP functionality | Works immediately after migration |
+| Deep Packet Inspection (DPI) / Content Aware Protection (CAP) functionality | Works immediately after migration |
 | Client reconnection | Automatic — endpoints find server at same address |
 | Recommended for | All environments, especially EE deployments |
 
@@ -386,7 +386,7 @@ For air-gapped environments, follow the same procedure using the 2608 cumulative
 ![System Maintenance → System Backup v2 — Import and Restore (Migrate) button](backup_v2_import.webp)
 
 4. In the wizard, select the 5.9.4.2 backup file you created in Phase 1.
-5. Enter the **System Backup Key** saved during backup creation.
+5. Enter the **System Backup Key** you saved during backup creation.
 6. Click **Import**.
 
 ![Import and Restore wizard — file selection, key entry, and Import button](import_restore_wizard.webp)

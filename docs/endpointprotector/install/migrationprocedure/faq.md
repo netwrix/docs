@@ -21,7 +21,7 @@ This page primarily covers migrating to **2608**. Until Netwrix releases 2608 (e
 If you're on any version older than 5.9.4.2 (5.7.0.0–5.9.4.1), you must first apply the cumulative patch to reach 5.9.4.2, create the backup there, and then deploy 2608. Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 directly onto 2608 will fail at the import step.
 
 :::tip
-**Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, consider a clean deployment of the 2608 image rather than the full migration path. Reconfiguring EPP on a fresh base installation can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where historical log data isn't required. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
+**Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, consider a clean deployment of the 2608 image rather than the full migration path. Reconfiguring EPP on a fresh base installation can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where you don't need historical log data. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
 :::
 
 :::note
@@ -38,13 +38,13 @@ If you're already on 2604, migrate directly to 2608.
 
 ---
 
-## 3. Log Data Handling When Migrating to 2608 {#what-happens-to-my-log-data-when-migrating-to-2608}
+## 3. Log Data Handling When Migrating to 2608 {#what-happens-to-log-data-when-migrating-to-2608}
 
 :::note
 This answer applies to **self-hosted** deployments — on-premises or customer-managed cloud-hosted (AWS, Azure, GCP). **SaaS** is the one exception: since Netwrix migrates SaaS appliances directly, Netwrix carries historical log data over as part of that managed migration. After migration, SaaS customers see two tabs in the Reports menu: one for historical data still held in MySQL, and one for current data captured and stored in CrateDB going forward. Everything in this answer applies only to the self-hosted migration paths covered in this guide.
 :::
 
-The migration doesn't carry log data over automatically, and this isn't new behavior. The System Configuration Backup used for migration has never included log data or file shadows — only policies, users, groups, and device rules.
+The migration doesn't carry log data over automatically, and this isn't new behavior. The System Configuration Backup for migration has never included log data or file shadows — only policies, users, groups, and device rules.
 
 2608 introduces **CrateDB**, a new database component dedicated to log storage. CrateDB ships **empty** on a freshly deployed 2608 server; MySQL continues to own configuration and EPP objects (Computers, Users, Groups), and CrateDB only stores *new* log data going forward. The migration doesn't convert or copy any historical log data from your old server into it.
 
@@ -60,7 +60,7 @@ If you need historical logs for compliance or forensics, export them via **Syste
 
 **No.** Any client on **5.9.4.3 Hotfix 1** or on any **2511–2605** client version can upgrade directly to the 2608 client — there's no new intermediate/bridge version for this jump.
 
-The historical CoSoSys-to-Netwrix signature bridge (5.9.4.3 Hotfix 1) still applies only to endpoints still running an old CoSoSys-signed client (5.9.4.1 or older). See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#is-a-bridge-client-required-for-2608) for the full compatibility table.
+The historical CoSoSys-to-Netwrix signature bridge (5.9.4.3 Hotfix 1) applies only to endpoints still running an old CoSoSys-signed client (5.9.4.1 or older). See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#is-a-bridge-client-required-for-2608) for the full compatibility table.
 
 :::note
 **2510/2604 path:** The target client here is **2605**, not 2608, but the bridge logic is identical — clients on 5.9.4.1 or older still need 5.9.4.3 Hotfix 1 first before they can receive the 2605 client. See the Certificate Bridge section in [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510#certificate-bridge-and-upgrade-path).
@@ -162,8 +162,8 @@ See also [Endpoints Not Checking In After Migration](/docs/endpointprotector/ins
 
 **Checklist:**
 1. Confirm the new server's IP/FQDN is reachable from endpoints (firewall, DNS).
-2. Confirm client communications are enabled on the server (**System Configuration → System Settings**).
-3. Confirm client packages are uploaded to the server — 2608 (the target version), plus 5.9.4.3 Hotfix 1 only if any endpoints are still below that bridge version.
+2. Confirm you enabled client communications on the server (**System Configuration → System Settings**).
+3. Confirm you uploaded the client packages to the server — 2608 (the target version), plus 5.9.4.3 Hotfix 1 only if any endpoints are still below that bridge version.
 4. Check the **Device Control → Computers** page and sort by **Last Seen**.
 5. If clients were on 5.9.4.1 or older and you didn't deploy 5.9.4.3 Hotfix 1 first, they can't receive the 2608 client package directly — deploy 5.9.4.3 Hotfix 1 first via your software distribution tool before upgrading to 2608. See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade) for the full client upgrade path.
 6. Verify that firewall rules allow HTTPS connections on the configured EPP communication port.
@@ -240,7 +240,7 @@ Air-gapped activation requires an **Offline Activation Patch** specific to 2608.
 **Steps:**
 1. Contact Netwrix Support or your account team before the migration maintenance window.
 2. Request the Offline Activation Patch for 2608 for your specific environment.
-3. Also request any offline CAP / eDiscovery activation patches if those modules are licensed.
+3. Also request any offline CAP / eDiscovery activation patches if your license includes those modules.
 4. Stage all offline patches and have them ready before taking the server offline for migration.
 
 :::note
@@ -313,7 +313,7 @@ Decommission the old server only after:
 4. You created a full post-migration backup on 2608 and stored it securely.
 
 :::note
-Keeping two live EPP Server instances in production at the same time can have licensing implications. Reach out to your Netwrix account team to adjust licensing accordingly before running the old and new servers in parallel for an extended period.
+Keeping two live EPP Server instances in production at the same time can have licensing implications. Contact your Netwrix account team to adjust licensing accordingly before running the old and new servers in parallel for an extended period.
 :::
 
 :::note

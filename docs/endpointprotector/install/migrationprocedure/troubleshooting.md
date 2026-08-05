@@ -25,7 +25,7 @@ This page primarily covers migrating to **2608**. Until Netwrix releases 2608 (e
 4. For future mass reinstalls or outages, stagger reconnection in batches instead of restoring communication for the entire fleet at once.
 
 :::note
-A CPU spike following a mass reconnect event is expected behavior, not a defect. It doesn't indicate an issue with SIEM, Audit, or other integrations, which operate independently of client check-in load.
+A CPU spike following a mass reconnect event is expected behavior. It doesn't indicate an issue with SIEM, Audit, or other integrations, which operate independently of client check-in load.
 :::
 
 ---
@@ -224,7 +224,7 @@ If clients were on 5.9.4.1 or older, they also require the 5.9.4.3 Hotfix 1 sign
 
 **Checklist:**
 1. Verify you're running the latest EPP Server.
-2. Clean up all old Client Upgrade tasks existing on EPP Server.
+2. Clean up all old Client Upgrade tasks on the EPP Server.
 3. Check the EPP Client version used in the upgrade process against the Client version you want to upgrade, to rule out the [Certificate Bridge](/docs/endpointprotector/install/migrationprocedure/clientupgrade.md#certificate-bridge--historical-context) issue.
 4. Create a new task.
 5. Ensure the affected endpoint with current EPP Client is communicating, and refresh policy.

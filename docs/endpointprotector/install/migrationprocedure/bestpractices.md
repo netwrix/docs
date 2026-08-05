@@ -18,10 +18,10 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 |---|---|
 | 01 | **Migrate immediately** — support for all 5.x versions ended 14 February 2026. Every day on a 5.x server is a day without security coverage. See [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability). |
 | 02 | Test the complete migration procedure in a lab environment before executing in production. |
-| 03 | Plan a maintenance window that is at least 2× your estimated migration duration. |
+| 03 | Plan a maintenance window at least 2× your estimated migration duration. |
 | 04 | Communicate the maintenance window to all affected stakeholders and end users in advance. |
 | 05 | Verify your license is valid and reflects your current entitlements before starting any migration activity, and again after backup import. `php_els` was strictly a 2509–2604 requirement — 2608 no longer needs it and ignores it if present. **2510/2604 path:** `php_els` is still required. |
-| 06 | Keep the old server VM alive until the new environment is fully validated. Never decommission prematurely. |
+| 06 | Keep the old server VM alive until you fully validate the new environment. Never decommission prematurely. |
 | 07 | Verify that the target server's assigned CPU, RAM, and disk meet at least the minimum sizing in [Server Requirements](/docs/endpointprotector/requirements/server) before starting migration — undersized environments are a common root cause of post-migration performance issues, including recurring server errors. |
 | 08 | If you're on 2509, 2510, 2601, or 2602, upgrade to **2604 first** before migrating to 2608 — 2604 → 2608 is the most thoroughly tested path in Netwrix labs. |
 
@@ -63,7 +63,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 | 25 | The 2608 client requires no new bridge version — any client on 5.9.4.3 Hotfix 1 or on any 2511–2605 client version can upgrade directly. If you are using the EPP Server Client Upgrade feature and still have clients on 5.9.4.1 or older, upgrade them to 5.9.4.3 Hotfix 1 first as the signature bridge before proceeding to 2608. **2510/2604 path:** the target client is 2605, not 2608, but the same 5.9.4.3 Hotfix 1 bridge requirement applies for clients on 5.9.4.1 or older. |
 | 26 | Use enterprise deployment tools (Intune, SCCM, Jamf) for client upgrades rather than relying solely on EPP's built-in client upgrade feature, which limits uploads to 50 machines per hour. |
 | 27 | Always run a pilot deployment of 10–20 endpoints before mass client rollout. |
-| 28 | For Enforced Encryption (EE) environments, upload both Windows and macOS EE clients to the server before enabling client communications — the server requires both packages to be present regardless of which OS your endpoints use. |
+| 28 | For Enforced Encryption (EE) environments, upload both Windows and macOS EE clients to the server before enabling client communications — the server requires both packages regardless of which OS your endpoints use. |
 | 29 | Update EE clients to the latest version **immediately** after migration — don't leave them on an older version the way you might stage regular EPP client rollouts. Since the **2509** release, Enforced Encryption changed its communication logic with the server, so a delayed EE client update can cause EE-protected drives to lose synchronization or fail to communicate. |
 | 30 | Plan client updates for off-peak hours to minimize end-user disruption. |
 | 31 | If a Client Upgrade task is stuck, clean up all existing Client Upgrade tasks on the EPP Server and create a new task — stale tasks can block the upgrade queue. |
