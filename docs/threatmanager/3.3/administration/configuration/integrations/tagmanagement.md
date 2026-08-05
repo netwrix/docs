@@ -15,8 +15,8 @@ The built-in tags include:
 
 - Administrator – An administrator user account
 - Agent Blueprint – An application registered in Microsoft Entra ID that defines the identity
-  configuration for an AI agent, enabling it to authenticate and operate within the Microsoft
-  identity platform.
+  configuration for an AI agent. This configuration lets the agent authenticate and operate within
+  the Microsoft identity platform.
 - Agent Identity – A service principal registered in Microsoft Entra ID that acts as the identity
   for an AI agent. Agent Identity service principals enable agents to authenticate and access
   resources within the Microsoft identity platform.
@@ -29,13 +29,13 @@ The built-in tags include:
 - Certificate Authority – A server that issues and manages the digital certificates used in a
   public key infrastructure (PKI)
 - Computer Account – A computer account
-- Disabled – An account or object that has been disabled in Active Directory or Microsoft Entra ID.
+- Disabled – An account or object that's disabled in Active Directory or Microsoft Entra ID.
   You can't use disabled objects to authenticate or access resources, but they may still hold role
   assignments, group memberships, and permissions.
 - Domain Admin – An Active Directory domain administrator account
 - Domain Controller – An Active Directory domain controller account
 - Global Catalog – An Active Directory global catalog object
-- Honeypot – Tags objects for inclusion in Honeypot detection
+- Honeypot – Tags objects for Honeypot detection
 - Privileged – A member of a sensitive group. These users typically have access to sensitive systems
   and data and can execute actions that could impact the security, stability, and operation of the
   network or domain.

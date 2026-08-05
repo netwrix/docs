@@ -79,8 +79,8 @@ The Activity by Host table displays the user's activity by host.
 The table has the following columns:
 
 - Server – Server where the activity occurred
-- First Access – First date and time that the server was accessed
-- Last Access – Last date and time that the server was accessed
+- First Access – First date and time the user accessed the server
+- Last Access – Last date and time the user accessed the server
 - Number of Events – Total number of activity events on the server
 
 Use the Search icon to search for data in any column. Click the Export button to export the rows
@@ -95,8 +95,8 @@ The Activity by Client table displays the user's activity by client.
 The table has the following columns:
 
 - Client – Client where the activity occurred
-- First Access – First date and time that the client was accessed
-- Last Access – Last date and time that the client was accessed
+- First Access – First date and time the user accessed the client
+- Last Access – Last date and time the user accessed the client
 - Number of Events – Total number of activity events on the client
 
 Use the Search icon to search for data in any column. Click the Export button to export the rows
