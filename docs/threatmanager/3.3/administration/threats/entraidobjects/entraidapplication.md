@@ -56,7 +56,7 @@ The Activity Overview (Past 12 Months) shows a color-coded heat map of user acti
 
 ## Owners Tab
 
-The Owners tab lists the objects that can manage the application, known as owners.
+The Owners tab lists the objects, known as owners, that can manage the application.
 
 The table displays the following columns:
 

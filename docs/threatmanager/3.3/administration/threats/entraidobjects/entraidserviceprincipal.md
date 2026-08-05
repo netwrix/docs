@@ -46,8 +46,8 @@ The page has the following tabs:
 - Sponsors Tab (Agent Identity service principals only)
 - Agent Users Tab (Agent Identity service principals only)
 
-The Sponsors and Agent Users tabs are displayed for Agent Identity service principals only. Agent
-Identity Blueprint Principals display only the standard Threats and Activity Summary tabs.
+The Sponsors and Agent Users tabs appear for Agent Identity service principals only. Agent Identity
+Blueprint Principals display only the standard Threats and Activity Summary tabs.
 
 ## Threats Tab
 
@@ -68,8 +68,8 @@ include Average Activity by Day, and Events by Type.
 
 ## Owners Tab
 
-The Owners tab lists the objects that can manage the service principal, known as owners. This tab
-isn't displayed for Agent Identity Blueprint Principals.
+The Owners tab lists the objects, known as owners, that can manage the service principal. This tab
+doesn't appear for Agent Identity Blueprint Principals.
 
 The table displays the following columns:
 
