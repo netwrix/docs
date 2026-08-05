@@ -14,8 +14,24 @@ built-in and custom tags. You can add tags and assign objects to those tags.
 The built-in tags include:
 
 - Administrator – An administrator user account
+- Agent Blueprint – An application registered in Microsoft Entra ID that has been designated as an
+  Agent Identity Blueprint. Agent Blueprints define the identity configuration for AI agents,
+  enabling them to authenticate and operate within the Microsoft identity platform.
+- Agent Identity – A service principal registered in Microsoft Entra ID that acts as the identity
+  for an AI agent. Agent Identity service principals enable agents to authenticate and access
+  resources within the Microsoft identity platform.
+- Agent User – A user account in Microsoft Entra ID that represents an AI agent. Agent Users are a
+  specialized subtype of user identity designed for AI-powered applications that need to function
+  as digital workers, enabling them to access APIs and services that require user identities.
 - Automated Account – An account with automated authentication behavior detected
+- Azure Files Storage Account – A computer account created in Active Directory by Azure Files to
+  enable Kerberos-based SMB authentication. This isn't a physical or virtual machine, it represents
+  an Azure storage account.
+- Certificate Authority – A Certificate Authority server
 - Computer Account – A computer account
+- Disabled – An account or object that has been disabled. Disabled objects can't be used to
+  authenticate or access resources, but may still hold role assignments, group memberships, and
+  permissions.
 - Domain Admin – An Active Directory domain administrator account
 - Domain Controller – An Active Directory domain controller account
 - Global Catalog – An Active Directory global catalog object
