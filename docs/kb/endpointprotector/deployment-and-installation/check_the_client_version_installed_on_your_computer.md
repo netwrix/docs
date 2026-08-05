@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Check Client Version
 tags:
   - deployment-and-installation
+  - kb
 title: "Check the Client Version Installed on Your Computer"
 knowledge_article_id: kA0Qk0000002BAuKAM
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Check the Client Version Installed on Your Computer

@@ -86,7 +86,7 @@ If you are receiving this error, the agent is not reporting to your hub. This is
 
    <!-- Image removed: Screenshot showing a correctly formatted HubDetails.xml file -->
 
-   For more information about the `HubDetails.xml` file, refer to the [Agent HubDetails File](/docs/changetracker/8_2/install/agent/hubdetailsfile) documentation.
+   For more information about the `HubDetails.xml` file, refer to the [Agent HubDetails File](/docs/changetracker/install/agent/hubdetailsfile) documentation.
 
 8. Start the **Netwrix ChangeTracker Gen7 Agent NetCore** service.
 

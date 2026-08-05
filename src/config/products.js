@@ -185,27 +185,13 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
-        version: '8.2',
-        label: '8.2',
+        version: 'current',
+        label: 'Current',
         isLatest: true,
-        sidebarFile: './sidebars/changetracker/8.2.js',
-        apiSidebarPath: './docs/changetracker/8.2/api/reference/sidebar.ts',
-      },
-      {
-        version: '8.1',
-        label: '8.1',
-        isLatest: false,
-        sidebarFile: './sidebars/changetracker/8.1.js',
-        apiSidebarPath: './docs/changetracker/8.1/api/reference/sidebar.ts',
-      },
-      {
-        version: '8.0',
-        label: '8.0',
-        isLatest: false,
-        sidebarFile: './sidebars/changetracker/8.0.js',
+        sidebarFile: './sidebars/changetracker.js',
+        apiSidebarPath: './docs/changetracker/api/reference/sidebar.ts',
       },
     ],
-    defaultVersion: '8.2',
   },
   {
     id: 'customer',

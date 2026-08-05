@@ -13,10 +13,11 @@ keywords:
   - department code
   - Windows endpoint
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Update the Endpoint Protector Server IP Address on
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "Update the Endpoint Protector Server IP Address on a Windows Endpoint"
 knowledge_article_id: kA0Qk0000002B6EKAU
 ---

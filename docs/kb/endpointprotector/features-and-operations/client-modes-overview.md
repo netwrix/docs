@@ -15,10 +15,11 @@ keywords:
   - Device Control
   - Content Aware Protection
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Client Modes Overview
 tags:
   - features-and-operations
+  - kb
 title: "Client Modes Overview"
 knowledge_article_id: kA0Qk0000002BCRKA2
 ---
@@ -29,11 +30,19 @@ knowledge_article_id: kA0Qk0000002BCRKA2
 
 The Netwrix Endpoint Protector Client offers several modes that define its behavior on an end user's system. There are six modes available, and you can change them at any time by a Netwrix Endpoint Protector administrator. The summary below describes each mode and its key characteristics.
 
+For the full reference, see [Client Mode](/docs/endpointprotector/admin/dc_module/globalsettings#client-mode).
+
+:::note
+Certain Linux distributions (such as SLED) lack system tray support, so the Endpoint Protector Notifier icon doesn't appear regardless of the selected mode. To receive notifications on these systems, keep the Endpoint Protector Notifier window open.
+:::
+
 ## Client Modes
 
 1. **Normal:** The default and recommended setting. Normal mode does not apply to Content Aware Protection; all other client modes, except Silent mode, are specific to Device Control.
 
-   > **NOTE:** If Normal mode does not suit your needs, consider using Hidden Icon or Silent modes as alternatives.
+   :::note
+   If Normal mode does not suit your needs, consider using Hidden Icon or Silent modes as alternatives.
+   :::
 
 2. **Transparent:** Blocks all devices while keeping users unaware of restrictions or the presence of the Netwrix Endpoint Protector Client. Does not apply to Content Aware Protection.
    - **System tray icon** is not displayed.
@@ -47,7 +56,9 @@ The Netwrix Endpoint Protector Client offers several modes that define its behav
 
 3. **Stealth:** Discreetly monitors users and computers with a focus on Device Control and file tracing. Does not apply to Content Aware Protection.
 
-   > **NOTE:** All activity is allowed, so there are no disruptions to daily user activities.
+   :::note
+   All activity is allowed, so there are no disruptions to daily user activities.
+   :::
 
    - **System tray icon** is not displayed.
    - **System tray notifications** are not displayed.
@@ -57,7 +68,9 @@ The Netwrix Endpoint Protector Client offers several modes that define its behav
 
 4. **Panic:** Should be used in extreme situations when malicious intent or activity is detected. Does not apply to Content Aware Protection.
 
-   > **RECOMMENDED:** Use this mode for selected users, groups, or computers only, as it will block all devices and generate a high volume of logs.
+   :::tip
+   Use this mode for selected users, groups, or computers only, as it will block all devices and generate a high volume of logs.
+   :::
 
    - **System tray icon** is displayed.
    - **System tray notifications** are displayed.
@@ -74,12 +87,16 @@ The Netwrix Endpoint Protector Client offers several modes that define its behav
    - **System tray notifications** are not displayed.
    - All rights and settings are applied as configured.
 
+   :::note
+   When Hidden Icon mode is selected, the **Show notifications in Hidden Icon mode** setting becomes available under the Client Mode section. This setting is disabled by default — enable it to display client notifications while the Endpoint Protector Client icon remains hidden.
+   :::
+
 6. **Silent:** Similar to Normal mode, but pop-up notifications are not visible to the user.
    - **System tray icon** is displayed.
    - **System tray notifications** are not displayed.
    - All rights and settings are applied as configured.
 
-For more information about Modes, please refer to this documentation: Netwrix Endpoint Protector Client Modes Documentation
+For more information about Modes, see [Client Mode](/docs/endpointprotector/admin/dc_module/globalsettings#client-mode).
 
 ## Recommendations
 
@@ -88,4 +105,4 @@ For more information about Modes, please refer to this documentation: Netwrix En
 
 ## Related Links
 
-- Netwrix Endpoint Protector Client Modes Documentation
+- [Client Mode](/docs/endpointprotector/admin/dc_module/globalsettings#client-mode)

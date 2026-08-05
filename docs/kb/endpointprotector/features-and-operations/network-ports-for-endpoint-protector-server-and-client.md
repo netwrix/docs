@@ -13,10 +13,11 @@ keywords:
   - agent deployment
   - client-server communication
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Network Ports for Endpoint Protector Server and Cl
 tags:
   - features-and-operations
+  - kb
 title: "Network Ports for Endpoint Protector Server and Client"
 knowledge_article_id: kA0Qk0000002BDyKAM
 ---

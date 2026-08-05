@@ -3,7 +3,7 @@ description: >-
   Explains whether Endpoint Protector can inspect email content sent through
   Thunderbird and how Thunderbird version affects inspection capabilities.
 keywords:
-  - endpoint-protector
+  - endpointprotector
   - Thunderbird
   - content inspection
   - attachments
@@ -12,10 +12,11 @@ keywords:
   - add-ons
   - version 38.0
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Does Endpoint Protector Inspect Content Sent Throu
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Does Endpoint Protector Inspect Content Sent Through Thunderbird?"
 knowledge_article_id: kA0Qk0000002BCdKAM
 ---
