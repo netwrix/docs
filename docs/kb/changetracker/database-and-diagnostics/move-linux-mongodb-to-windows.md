@@ -37,11 +37,11 @@ Netwrix Change Tracker no longer supports the Linux Hub, so use this procedure i
 ### Step 1 — Export the Database on the Linux Hub
 
 1. Connect to the Linux server that hosts your Netwrix Change Tracker Hub.
-2. Stop the `nnthubservice` and `nntgen7agent` services:
+2. Stop the `nnthubservice` and `nntgen7agentcore` services:
 
    ```bash
    service nnthubservice stop
-   service nntgen7agent stop
+   service nntgen7agentcore stop
    ```
 
 3. Create a directory to hold the mongodump output, and change to it. For example:
@@ -99,7 +99,7 @@ Change Tracker encrypts the Remote Credentials password and SMTP password entrie
 2. Enter the following commands in order:
    - `iisreset /stop`
    - `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`
-   - `mongo.exe`
+   - `mongosh.exe`
    - `show dbs`
    - `use NNTHubService`
    - `db.RemoteCredentials.update({},{$set: { "pa.Password": "" }}, { multi: true });`
@@ -116,7 +116,7 @@ If the error persists, try the following steps:
 2. Enter the following commands in order:
    - `iisreset /stop`
    - `cd C:\Program Files\NNT Change Tracker Suite\Gen7\MongoDB\bin`
-   - `mongo.exe`
+   - `mongosh.exe`
    - `show dbs`
    - `use NNTHubService`
    - `db.HubConfigData.remove({ "Key" : "SMTP Password" });`
