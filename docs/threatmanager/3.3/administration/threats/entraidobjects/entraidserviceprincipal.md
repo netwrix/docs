@@ -27,9 +27,9 @@ AI agent) or an Agent Identity Blueprint Principal (the service principal instan
 Identity Blueprint application), the profile card also displays:
 
 - Agent Blueprint – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
-  for the Agent Identity Blueprint that this service principal is associated with
+  for this service principal's Agent Identity Blueprint
 
-Agent Identity service principals are tagged with the built-in Agent Identity tag. See the
+Threat Manager tags Agent Identity service principals with the built-in Agent Identity tag. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
 additional information about built-in tags.
 :::
@@ -46,7 +46,7 @@ The page has the following tabs:
 The Threats tab for a service principal displays the threats for the service principal by
 timeframe.
 
-A key for threat types is displayed below the chart.
+A key for threat types appears below the chart.
 
 ## Activity Summary Tab
 
@@ -58,7 +58,7 @@ include Average Activity by Day, and Events by Type.
 
 ## Sponsors Tab
 
-This tab is only displayed for Agent Identity service principals.
+This tab appears only for Agent Identity service principals.
 
 The Sponsors tab displays a table of the directory objects that sponsor the Agent Identity. A
 sponsor is a user or group in Microsoft Entra ID that's accountable for the AI agent.
@@ -71,7 +71,7 @@ The table has the following columns:
 
 ## Agent Users Tab
 
-This tab is only displayed for Agent Identity service principals.
+This tab appears only for Agent Identity service principals.
 
 The Agent Users tab displays a table of the Agent Users linked to this Agent Identity.
 
