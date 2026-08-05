@@ -52,7 +52,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 | # | Best Practice |
 |---|---|
 | 21 | Always reuse the same IP/FQDN for the new server (2608, or 2510/2604 on the temporary path). Changing it creates cascading certificate and Enforced Encryption (EE) trust failures. |
-| 22 | No action needed on 2608 — Netwrix fixed the DNS field-saving bug affecting 2509/early 2510 (which required filling both DNS fields) in patch 2604. Only fill both DNS fields if you're on an unpatched 2509/early 2510 environment. |
+| 22 | Fill both DNS fields only on unpatched 2509 or early 2510 environments. Patch 2604 fixed the DNS field-saving bug, so 2608 needs no workaround. |
 | 23 | Disable client communications on the new server before restoring a backup to prevent partial-state registrations. |
 | 24 | After migration, monitor SIEM connectivity — it may require reconfiguration and Netwrix Support may need to provide a restoration script. |
 
@@ -75,7 +75,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 |---|---|
 | 33 | If migrating from a legacy 5.x server, create the migration backup on **exactly version 5.9.4.2** — not 5.9.4.1, not 5.9.4.0. Both 2608 and the temporary 2510/2604 path reject any other legacy version and may cause OS regression. |
 | 34 | Label every backup file with the server version and date in the filename (e.g., `epp-5942-backup-2026-04-21.bak`). Mislabelled backups are a leading cause of wrong-version import errors. |
-| 35 | If migrating from the current image platform, 2608 accepts a direct backup from 2509, 2510, 2601, 2602, or 2604 — but reaching 2604 first is the recommended, best-tested path (see Planning, #08). |
+| 35 | If migrating from the current image platform, 2608 accepts a direct backup from 2509, 2510, 2601, 2602, or 2604 — but reaching 2604 first is the recommended, best-tested path (see [Planning](#planning)). |
 | 36 | After applying the 5.9.4.2 cumulative patch, wait 24 hours for background DB tasks to complete before creating the migration backup. |
 
 ## 3rd-Party Integrations

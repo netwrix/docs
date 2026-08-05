@@ -89,7 +89,7 @@ Netwrix expects to release **2608** in **late August 2026**. If you're on a lega
 Both articles converge on the same two final phases, common to every migration regardless of your starting version:
 
 1. [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade) — upgrading EPP and Enforced Encryption (EE) clients to the 2608 release.
-2. Post-Migration Verification — confirming the new 2608 server and all integrations are healthy (covered at the end of each migration article).
+2. Post-Migration Verification — see the final section of [your migration article](#which-article-applies-to-you).
 
 ## Understanding the Migration Architecture
 

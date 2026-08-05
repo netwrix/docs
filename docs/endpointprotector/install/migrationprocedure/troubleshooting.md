@@ -47,7 +47,7 @@ A CPU spike following a mass reconnect event is expected behavior, not a defect.
 
 ---
 
-### Network Settings Won't Save on 2509/Early 2510
+### Network Settings Won't Save on 2509/Early 2510 {#network-settings-wont-save-on-2510}
 
 **Symptom:** IP configuration changes don't save; error appears after clicking Save.
 
@@ -142,7 +142,7 @@ This is a recurring, ongoing issue distinct from the one-time 500 error that can
 
 ---
 
-### Verifying the php_els License Entitlement (2509-2604 Only) {#verifying-the-php_els-license-entitlement-2509-2604-only}
+### Verifying the php_els License Entitlement (2509–2604 Only) {#verifying-the-php_els-license-entitlement-2509-2604-only}
 
 :::note
 This applies only to the **2509–2604** image line — including the temporary [5.x → 2510/2604 path](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). **2608 no longer uses the `php_els` entitlement** — if your license still contains that field, 2608 ignores it, and this section doesn't apply.
@@ -225,7 +225,7 @@ If clients were on 5.9.4.1 or older, they also require the 5.9.4.3 Hotfix 1 sign
 **Checklist:**
 1. Verify you're running the latest EPP Server.
 2. Clean up all old Client Upgrade tasks existing on EPP Server.
-3. Check the EPP Client version used in the upgrade process against the Client version you want to upgrade, to rule out the Certificate Bridge issue ([2608 target](/docs/endpointprotector/install/migrationprocedure/clientupgrade.md#certificate-bridge--historical-context) / **2510/2604 path:** [2605 target](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510#certificate-bridge-and-upgrade-path)).
+3. Check the EPP Client version used in the upgrade process against the Client version you want to upgrade, to rule out the [Certificate Bridge](/docs/endpointprotector/install/migrationprocedure/clientupgrade.md#certificate-bridge--historical-context) issue.
 4. Create a new task.
 5. Ensure the affected endpoint with current EPP Client is communicating, and refresh policy.
 6. Restart the affected Windows endpoint; the installer uses msiexec, which any previous failed installation can block.

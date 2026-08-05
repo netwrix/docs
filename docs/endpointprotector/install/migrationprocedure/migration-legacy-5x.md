@@ -48,9 +48,9 @@ If you're unsure whether your license is current, contact Netwrix Support or you
 ### Hypervisor Compatibility Check
 
 **Verified compatible hypervisors:**
-- VMware vSphere 6.7+
-- VMware ESXi 7.0+
-- Microsoft Hyper-V (Windows Server 2016+)
+- VMware vSphere
+- VMware ESXi
+- Microsoft Hyper-V
 - AWS, Azure, GCP (cloud deployments — snapshot behavior differs per provider)
 - Proxmox VE — not officially supported; see the following note
 
@@ -58,8 +58,8 @@ If you're unsure whether your license is current, contact Netwrix Support or you
 **Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after manually adjusting networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
 :::
 
-:::warning TBD
-The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS used by 2510/2604. Confirm minimum hypervisor version requirements for Ubuntu 26.04 guests before publishing — they may be stricter than the vSphere 6.7+/ESXi 7.0+ minimums listed under **Verified compatible hypervisors**.
+:::warning
+The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS used by 2510/2604. Verify Ubuntu 26.04 LTS guest support with your hypervisor vendor before scheduling a migration maintenance window.
 :::
 
 :::tip
@@ -92,8 +92,8 @@ You can verify disk space and current server versions in Appliance → Server In
 
 For authoritative CPU, RAM, and disk minimum recommendations, refer to the official User Manual: [Netwrix Endpoint Protector — Server Requirements](/docs/endpointprotector/requirements/server)
 
-:::warning TBD
-Confirm updated minimum disk/RAM/CPU recommendations for the 2608 image before publishing — the addition of CrateDB may change the recommended baseline even though the migration doesn't move historical data into it at deployment time.
+:::warning
+The 2608 image adds CrateDB, which may raise the minimum disk, RAM, and CPU baseline above the values listed here, even though migration doesn't move historical data into CrateDB at deployment time. Check the linked Server Requirements documentation for current minimums before starting migration.
 :::
 
 :::tip
@@ -189,7 +189,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 | 6 | Server resource counters noted (baseline) | ☐ |
 | 7 | Maintenance window communicated | ☐ |
 | 8 | Appliance → Server Information screenshot taken | ☐ |
-| 9 | EPP Client 5.9.4.3 Hotfix 1 (for customers not migrated yet) or latest packages downloaded | ☐ |
+| 9 | EPP Client 5.9.4.3 Hotfix 1 downloaded (only if any endpoints are still on 5.9.4.1 or older), plus the latest 2608 client packages | ☐ |
 | 10 | Enforced Encryption (EE) Client 2608 packages downloaded (if applicable) | ☐ |
 
 ---
@@ -259,7 +259,7 @@ After confirming the upgrade to 5.9.4.2 is stable (wait for the 24-hour backgrou
 2. Click **Create** and name it clearly: `migration-to-2608-YYYY-MM-DD`.
 3. Save the backup key securely.
 4. Download the backup file once status shows **"Ready to download"**.
-5. Check the size of the backup. If it's larger than 200 MB, refer to [My backup is bigger than 200 MB](#my-backup-is-bigger-than-200-mb).
+5. Check the size of the backup. If it's larger than 200 MB, refer to [Backups Larger Than 200 MB](#backups-larger-than-200-mb).
 
 :::tip
 This backup at 5.9.4.2 is the **only** backup that will work directly on the 2608 platform. Label it clearly and store it separately from previous backups to avoid any confusion during the restoration step.
@@ -271,7 +271,7 @@ The Backup feature backs up all configuration details, excluding log evidence an
 
 Use [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.md#audit-log-backup) to back up logs and/or File Shadows (optional). The migration process doesn't transfer logs or file shadow backups to the new environment. See the notes in this section for an overview of how to preserve logs and/or File Shadows in an offline state before starting the upgrade process.
 
-### My backup is bigger than 200 MB
+### Backups Larger Than 200 MB
 
 If your 5.9.4.2 backup export is larger than 200 MB, follow these steps:
 1. Consider cleaning up the database using the Audit Log Backup feature if possible (refer to the [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview.md#audit-log-backup) chapter). This removes obsolete data and can decrease the backup file size.
@@ -335,7 +335,7 @@ If using Enforced Encryption and you change the IP/FQDN, every user with an EE-p
    - Configure DNS
 
 :::note
-Netwrix fixed this in patch 2604. On unpatched 2509/early 2510 environments, IP network settings didn't save correctly unless you filled in both DNS fields — that workaround doesn't apply here.
+On unpatched 2509 and early 2510 environments, IP network settings didn't save unless you filled in both DNS fields. Patch 2604 fixed this, so the workaround doesn't apply to 2608.
 :::
 
 4. Power on the new VM and access the console at `https://<new-ip-or-fqdn>:443`.

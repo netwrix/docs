@@ -14,13 +14,13 @@ This article covers on-premises EPP Servers already running the current image-ba
 
 ## Overview
 
-Since you're already on the image-based platform, migrating to 2608 doesn't require the intermediate version step that legacy 5.x servers need. The procedure is the same overall shape as before: back up your configuration, deploy the new 2608 image, and restore the backup onto it.
+Since you're already on the image-based platform, migrating to 2608 doesn't require the intermediate version step that legacy 5.x servers need. The procedure has the same three parts as your last image migration: back up your configuration, deploy the new 2608 image, and restore the backup onto it.
 
 ### Backup Compatibility
 
 | Your Current Version | Recommendation |
 |---|---|
-| 2509, 2510, 2601, 2602 | Upgrade to **2604 first**, then migrate to 2608 |
+| 2509, 2510, 2601, 2602 | Upgrade to **2604 first** (recommended), then migrate to 2608 — a direct restore from your current version also works |
 | **2604** | Migrate directly to 2608 — this is the best-tested path |
 
 :::tip
@@ -42,9 +42,9 @@ If your current license includes the `php_els` field (used on the 2509–2604 im
 ### Hypervisor Compatibility Check
 
 **Verified compatible hypervisors:**
-- VMware vSphere 6.7+
-- VMware ESXi 7.0+
-- Microsoft Hyper-V (Windows Server 2016+)
+- VMware vSphere
+- VMware ESXi
+- Microsoft Hyper-V
 - AWS, Azure, GCP (cloud deployments — snapshot behavior differs per provider)
 - Proxmox VE — not officially supported; see the following note
 
@@ -52,8 +52,8 @@ If your current license includes the `php_els` field (used on the 2509–2604 im
 **Proxmox VE** isn't an officially supported hypervisor for Endpoint Protector. Based on customer feedback, Proxmox VE can host the EPP Server image after manually adjusting networking and IP configuration post-deployment. Converting the provided OVF image for use on Proxmox, along with any such adjustments, is entirely the customer's responsibility and falls outside Netwrix support.
 :::
 
-:::warning TBD
-The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS used by 2509/2510/2604. Confirm minimum hypervisor version requirements for Ubuntu 26.04 guests before publishing — they may be stricter than the vSphere 6.7+/ESXi 7.0+ minimums listed under **Verified compatible hypervisors**.
+:::warning
+The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS used by 2509/2510/2604. Verify Ubuntu 26.04 LTS guest support with your hypervisor vendor before scheduling a migration maintenance window.
 :::
 
 :::tip
@@ -80,8 +80,8 @@ You can verify disk space and current server versions in Appliance → Server In
 
 For authoritative CPU, RAM, and disk minimum recommendations, refer to the official User Manual: [Netwrix Endpoint Protector — Server Requirements](/docs/endpointprotector/requirements/server)
 
-:::warning TBD
-Confirm updated minimum disk/RAM/CPU recommendations for the 2608 image before publishing — the addition of CrateDB may change the recommended baseline even though the migration doesn't move historical data into it at deployment time.
+:::warning
+The 2608 image adds CrateDB, which may raise the minimum disk, RAM, and CPU baseline above the values listed here, even though migration doesn't move historical data into CrateDB at deployment time. Check the linked Server Requirements documentation for current minimums before starting migration.
 :::
 
 :::tip
@@ -168,7 +168,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 
 | # | Task | Status |
 |---|---|---|
-| 1 | On 2604 (or explicitly accepting the lower-confidence path from 2509/2510/2601/2602) | ☐ |
+| 1 | On 2604, or accepting that 2509/2510/2601/2602 as a source is less extensively tested | ☐ |
 | 2 | VM snapshot created and confirmed | ☐ |
 | 3 | System backup created and key saved | ☐ |
 | 4 | Backup file downloaded to secure location | ☐ |
@@ -388,6 +388,8 @@ After reconfiguration, verify each integration is functioning:
 :::warning
 AD Sync may appear to complete successfully but only import a partial set of users or groups. Always cross-check the imported object count against your directory — don't rely solely on the "success" status message.
 :::
+
+If an integration fails verification, see [Troubleshooting Failed Integrations](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x#troubleshooting-failed-integrations).
 
 ### Audit Log Backup Verification
 

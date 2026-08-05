@@ -145,10 +145,10 @@ multiple partitions.
 The **Update EasyLock** toggle controls whether Enforced Encryption clients update automatically when a new version is available on the Endpoint Protector Server, instead of requiring users to manually redownload and redeploy Enforced Encryption on each USB storage device.
 
 :::warning
-Since the **2509** release, Enforced Encryption changed its communication logic with the Endpoint Protector Server. Regular EPP clients can remain on an older supported version for a period after a server migration, but **you must update EE clients to the latest version immediately** after the server migration completes — don't treat this as a lower-priority, staged rollout. Delaying the EE client upgrade can cause EE-protected drives to lose synchronization with the server or fail to communicate correctly.
+Since the **Endpoint Protector Server 2509** release, Enforced Encryption changed its communication logic with the Endpoint Protector Server. Regular EPP clients can remain on an older supported version for a period after a server migration, but **you must update EE clients to the latest version immediately** after the server migration completes — don't treat this as a lower-priority, staged rollout. Delaying the EE client upgrade can cause EE-protected drives to lose synchronization with the server or fail to communicate correctly.
 :::
 
-Enable the **Update EasyLock** toggle so EE clients update automatically rather than relying on manual redeployment. If you're migrating the Endpoint Protector Server, see [Enforced Encryption Client Requires Immediate Update](/docs/endpointprotector/install/migrationprocedure/clientupgrade#enforced-encryption-client-requires-immediate-update) for the full migration-specific guidance.
+You'll find the **Update EasyLock** toggle in [Global Settings — Enforced Encryption configuration](/docs/endpointprotector/admin/dc_module/globalsettings#enforced-encryption-easylock-settings). If you're migrating the Endpoint Protector Server, see [Enforced Encryption Client Requires Immediate Update](/docs/endpointprotector/install/migrationprocedure/clientupgrade#enforced-encryption-client-requires-immediate-update) for the full migration-specific guidance.
 
 ## Enforced Encryption in Read-Only mode
 

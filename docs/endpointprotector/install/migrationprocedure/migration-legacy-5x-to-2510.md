@@ -73,16 +73,16 @@ Restore the backup **after** you fully patch the 2510 image to 2604. The 5.9.4.2
 |---|---|
 | Older than 5.7.0.0 | ❌ Step-by-step upgrade path required first |
 | 5.7.0.0 – 5.9.4.1 | ❌ Must reach 5.9.4.2 first via cumulative patch |
-| **5.9.4.2** | ✅ **Yes — the only accepted source version from historical image appliances** |
-| **2509, 2510, 2601, 2602, 2604** | ✅ **Yes - Possible** |
+| **5.9.4.2** | ✅ **Yes — the only accepted legacy 5.x source version** |
+| **2509, 2510, 2601, 2602, 2604** | ✅ **Yes** |
 
 
 :::warning
-The server accepts only backups created on **exactly version 5.9.4.2**.
+From a legacy 5.x server, only a backup created on exactly 5.9.4.2 is accepted.
 Always verify your source server version before creating the migration backup.
 :::
 
-### New EPP Client and Server versioning
+### New EPP Client and Server Versioning
 
 Starting with the 2509 EPP Server release in October 2025, Netwrix introduced a new versioning scheme. For details, see [Unified EPP Clients and Server Versioning](/docs/endpointprotector/install/overview.md).
 
@@ -436,7 +436,7 @@ Immediately after you provision the new VM and it's reachable, disable client co
 Disabling client communications prevents endpoints from registering with an incomplete server configuration. Re-enable only after the full restoration and verification is complete.
 :::
 
-### Activate trial license on a newly deployed image
+### Activate Trial License on a Newly Deployed Image
 
 To upgrade a clean appliance, activate at least a Trial license. Go to **System Configuration** → **Licensing** and choose **Free Trial**. You'll import the proper license in a later step, after the upgrade and backup restore process.
 After successful activation, you should see a green banner at the top.
@@ -505,7 +505,7 @@ Large backups on under-resourced VMs can cause **server unresponsiveness or a 50
 :::note
 This is a one-time 500 error during import. If 500 errors instead recur every few days after you complete the migration and clear only after a full server reboot, see [Recurring HTTP 500 Errors Resolved Only by a Full Reboot](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#recurring-http-500-errors-resolved-only-by-a-full-reboot).
 :::
-### Import License on the Upgraded EPP server image with restore configuration
+### Import License on the Upgraded EPP Server Image with Restored Configuration
 
 1. Navigate to **System Configuration → System Licensing → Import License**.
 2. Upload the license file that contains the `php_els` field.
@@ -596,7 +596,7 @@ The client update mechanism controls how the server distributes and updates EPP 
 Upload **both** EE clients for Windows and macOS if your organization uses both operating systems. Missing even one platform's EE client can break encryption enforcement on that platform.
 :::
 
-### Obsolete OS limitations
+### Obsolete OS Limitations
 
 As defined in the [Client Supportability Statement](/docs/endpointprotector/supportability/client-supportability.md), the latest EPP Client versions don't support obsolete and discontinued operating systems. If you must continue using the EPP Client on an unsupported operating system, use the last available Client version compatible with that operating system. While such Client versions may retain the ability to communicate with the EPP Server, the standard support agreement no longer covers them. Netwrix provides no warranty, guarantee, or obligation for EPP Client functionality on unsupported operating systems. Netwrix provides support in such cases on a best-effort basis only. For example, the last EPP Client version for obsolete operating systems such as Windows XP, Windows 7, and Windows 8 is 5.9.4.0 release one (6.2.4.2000).
 

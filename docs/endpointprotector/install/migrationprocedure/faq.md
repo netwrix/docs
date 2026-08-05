@@ -79,7 +79,7 @@ Delaying the EE client upgrade can cause EE-protected drives to lose synchroniza
 ## 6. Restoring a 2509 Backup onto a 2510 Server {#restoring-a-2509-backup-onto-a-2510-server}
 
 :::note
-This entry applies only if you're still deploying on the older 2509/2510 image line. If you're migrating to **2608**, see the other questions on this page instead.
+This entry applies only if you're still deploying on the older 2509/2510 image line. If you're migrating to **2608**, see [Migrating Directly from 5.9.4.2 to 2608](#can-i-migrate-directly-from-5942-to-2608) and [Reaching 2604 Before Migrating to 2608](#do-i-need-to-reach-2604-before-migrating-to-2608) instead.
 :::
 
 Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server migrates the configuration — the OS remains 2510. After you patch it to 2604, the result is functionally equivalent to a native 2510-based deployment at 2604. The only practical difference is disk sizing, as the 2509 base image has a smaller default disk allocation than 2510. If disk capacity is sufficient, this path is fully valid.
@@ -91,10 +91,10 @@ Netwrix supports this. Restoring a 2509 configuration backup onto a 2510 server 
 This most commonly occurs with large backups or under-resourced VMs, specifically during backup import.
 
 **Steps:**
-1. Verify you have sufficient free disk space on the target VM.
+1. Verify the target VM meets the free-disk minimum in [Server Requirements](/docs/endpointprotector/requirements/server).
 2. Verify the backup file isn't corrupted — re-download from the source server.
 3. Verify you created the backup on a version your target accepts. **2608:** 5.9.4.2 for the legacy path, or 2509/2510/2601/2602/2604 for the current-image path. **2510/2604 path:** only exactly 5.9.4.2 is accepted.
-4. Try increasing PHP upload limits temporarily (see [Backup File Exceeds 200 MB Import Limit](troubleshooting#backup-file-exceeds-200-mb-import-limit)).
+4. Try increasing PHP upload limits temporarily (see [Backup File Exceeds 200 MB Import Limit](/docs/endpointprotector/install/migrationprocedure/troubleshooting#backup-file-exceeds-200-mb-import-limit)).
 5. If none of these steps resolves it, contact Netwrix Support with the server logs from `/var/log/epp/`.
 
 :::note
@@ -123,7 +123,7 @@ The backup doesn't always fully restore SMTP credentials, and you typically need
 
 ---
 
-## 10. Active Directory Sync Is Broken After Migration. Users/Groups Are Missing. {#active-directory-sync-is-broken-after-migration-usersgroups-are-missing}
+## 10. Active Directory Sync Is Broken After Migration, Users/Groups Are Missing {#active-directory-sync-is-broken-after-migration-usersgroups-are-missing}
 
 AD/LDAP connectivity credentials may need re-entry after migration.
 
@@ -138,7 +138,7 @@ AD Sync can complete without errors but only import a partial set of users or gr
 
 ---
 
-## 11. SSO / Entra ID Login Fails After Migration to 2608. {#sso--entra-id-login-fails-after-migration-to-2608}
+## 11. SSO / Entra ID Login Fails After Migration to 2608 {#sso--entra-id-login-fails-after-migration-to-2608}
 
 You may need to refresh Entra ID / SSO application registrations after migration.
 
@@ -173,7 +173,7 @@ See also [Endpoints Not Checking In After Migration](/docs/endpointprotector/ins
 
 ## 13. Audit Log Backup Running Without Completing {#audit-log-backup-running-without-completing}
 
-This is a known issue that can occur after migration to the image-based platform.
+This is a known issue on 2510 with 2604 patch. Netwrix fixed it in 2608.
 
 **Steps:**
 1. Navigate to **System Maintenance → Audit Log Backups**.
@@ -189,7 +189,7 @@ This is a known issue. Contact Netwrix Support for the latest fix status and rem
 
 ---
 
-## 15. The Log Report Page Isn't Loading / Export Is Failing. {#the-log-report-page-isnt-loading--export-is-failing}
+## 15. The Log Report Page Isn't Loading / Export Is Failing {#the-log-report-page-isnt-loading--export-is-failing}
 
 This can occur after migration due to backend indexing activity on the newly restored database.
 
@@ -201,7 +201,7 @@ This can occur after migration due to backend indexing activity on the newly res
 
 ---
 
-## 16. The Server Isn't Sending CAP (Content Aware Protection) Reports After Migration. {#the-server-isnt-sending-cap-content-aware-protection-reports-after-migration}
+## 16. The Server Isn't Sending CAP (Content Aware Protection) Reports After Migration {#the-server-isnt-sending-cap-content-aware-protection-reports-after-migration}
 
 **Steps:**
 1. Verify Content Aware Protection policies are active (**Content Aware Protection → Policies**).
@@ -211,7 +211,7 @@ This can occur after migration due to backend indexing activity on the newly res
 
 ---
 
-## 17. eDiscovery Is Showing a Token Error After Migration. {#ediscovery-is-showing-a-token-error-after-migration}
+## 17. eDiscovery Is Showing a Token Error After Migration {#ediscovery-is-showing-a-token-error-after-migration}
 
 This is a known product defect that can appear after migration.
 
@@ -222,7 +222,7 @@ This is a known product defect that can appear after migration.
 
 ---
 
-## 18. Backend Security Updates Are Crashing the Server After Upgrading to 2601. {#backend-security-updates-are-crashing-the-server-after-upgrading-to-2601}
+## 18. Backend Security Updates Are Crashing the Server After Upgrading to 2601 {#backend-security-updates-are-crashing-the-server-after-upgrading-to-2601}
 
 This is a known product defect on 2601.
 
@@ -259,7 +259,7 @@ This can occur in some migration paths onto 2509–2604 when EPP doesn't correct
 
 ---
 
-## 21. The Effective Rights Report Is Empty After Migration. {#the-effective-rights-report-is-empty-after-migration}
+## 21. The Effective Rights Report Is Empty After Migration {#the-effective-rights-report-is-empty-after-migration}
 
 This is a known reporting layer issue that doesn't affect actual policies or enforcement. Netwrix fixed it in **2608** — migrate to 2608 to resolve it. If you're not yet ready to migrate, contact Netwrix Support for interim guidance.
 
@@ -286,11 +286,11 @@ Approximate time estimates based on real migration experience. The legacy 5.x pa
 | Client package uploads | 10–20 minutes | Both paths |
 | Integration reconfiguration and testing | 30–90 minutes | Both paths |
 | Endpoint check-in verification | 30–60 minutes after re-enabling communications | Both paths |
-| **Total end-to-end (legacy 5.x)** | **~4–8 hours active work + 24h stabilization window** | |
-| **Total end-to-end (current-image)** | **~3–6 hours active work** | |
+| **Total end-to-end** | **~4–8 hours active work + 24h stabilization window** | Legacy 5.x path |
+| **Total end-to-end** | **~3–6 hours active work + 24h stabilization window** | Current-image path |
 
 :::tip
-Plan for a full business day of active migration work, plus (for the legacy 5.x path) a 24-hour monitoring period before you consider the environment fully stable.
+Plan for a full business day of active migration work, plus a 24-hour monitoring period before you consider the environment fully stable, regardless of which path you take.
 :::
 
 ---
@@ -326,7 +326,7 @@ Keeping two live EPP Server instances in production at the same time can have li
 
 Netwrix doesn't support reverting or downgrading an EPP Server to an older version, on any migration or upgrade path. If you discover critical issues after migrating, you can only rely on your own backups — specifically, the pre-migration VM snapshot of your old server. This is why keeping the old server VM alive and taking a snapshot before migration is mandatory.
 
-Whatever version you roll back to must still be a supported version. Rolling back to a version that's already past its support lifecycle leaves you without security patches or Netwrix Support — see [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability) before deciding to roll back.
+Check that the version on your pre-migration snapshot is still supported before you roll back to it. Rolling back to a version past its support lifecycle leaves you without security patches or Netwrix Support — see [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability) before deciding to roll back.
 
 Contact Netwrix Support before attempting any rollback.
 
