@@ -245,6 +245,7 @@ The installer checks the following before installation begins. The installer wri
 | **SELinux** | — | SELinux in enforcing mode |
 | **Antivirus** | — | Known antivirus software detected |
 | **Network** | DNS resolution fails for a required domain | TCP connection timeout to a required domain |
+| **Clock sync** | — | No clock sync daemon detected |
 
 A **FAIL** result stops the installer. Resolve it before retrying. A **WARN** result also stops the installer by default — see [If the Installer Stops with Warnings](#if-the-installer-stops-with-warnings).
 
@@ -266,6 +267,7 @@ Before using this option, identify which warning the installer reports and revie
 | Unrecognized Linux distribution | The installer didn't recognize your OS as a supported RHEL or Debian variant. | Verify your OS is a supported version before accepting. Contact Netwrix Support if unsure. |
 | SELinux in enforcing mode | SELinux may block k3s container operations. | Accept only if you have confirmed your SELinux policy permits k3s. If unsure, set SELinux to permissive mode first. |
 | Antivirus software detected | An antivirus agent is running and may interfere with container storage paths. | Configure exclusions for the k3s paths listed in the warning output before accepting. |
+| No clock sync daemon detected | Kerberos authentication requires the host's clock to stay within 5 minutes of the Active Directory domain controller. Without a clock sync daemon, clock drift can break Kerberos authentication. | Install `chronyd`, `ntpd`, or `systemd-timesyncd` before accepting. If your environment already keeps the clock synchronized through another method, you can accept the warning. |
 
 If you're unsure whether a warning is safe to accept, contact Netwrix Support before proceeding.
 
