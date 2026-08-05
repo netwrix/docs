@@ -6,6 +6,10 @@ sidebar_position: 20
 
 # Troubleshooting Common Issues
 
+:::info Temporary — Two Migration Targets Until Late August 2026
+This page primarily covers migrating to **2608**. Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customers who need to migrate sooner can still follow the temporary [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510) path instead. Entries below that differ between the two targets are marked **2510/2604 path:**. This distinction, and these marked notes, will be removed once 2608 ships.
+:::
+
 ## EPP Server
 
 ### High CPU Usage After Mass Client Reconnect
@@ -30,20 +34,24 @@ A CPU spike following a mass reconnect event is expected behavior, not a defect.
 
 **Symptom:** The import wizard rejects the backup file or shows an error.
 
-**Root cause:** The backup originates from a server version **other than 5.9.4.2**.
+**Root cause:** The backup originates from a server version 2608 doesn't accept directly. 2608 accepts backups only from **5.9.4.2** (legacy path) or from **2509, 2510, 2601, 2602, 2604** (current-image path).
 
 **Resolution:**
-1. Verify the source server is on 5.9.4.2 (Appliance → Server Information).
-2. If not, complete Phase 1 (cumulative patch to 5.9.4.2) first.
-3. Create a new backup on the 5.9.4.2 server and retry.
+1. Verify the source server version (Appliance → Server Information) against the accepted versions named in the root cause.
+2. If the source is an older 5.x version, complete the cumulative patch to 5.9.4.2 first — see [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x).
+3. Create a new backup on the accepted source version and retry.
+
+:::note
+**2510/2604 path:** Only exactly **5.9.4.2** is accepted as a source — see [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510).
+:::
 
 ---
 
-### Network Settings Won't Save on 2510
+### Network Settings Won't Save on 2509/Early 2510
 
 **Symptom:** IP configuration changes don't save; error appears after clicking Save.
 
-**Root cause:** Known bug in 2510 where the settings page requires you to fill both DNS fields.
+**Root cause:** Known bug in 2509/early 2510 where the settings page requires you to fill both DNS fields. Fixed in patch 2604 — this only affects unpatched 2509/early 2510 environments.
 
 **Resolution:** Enter a value in **both** DNS fields (use `8.8.8.8` and `8.8.4.4` if no secondary DNS is available).
 
@@ -111,7 +119,11 @@ Back up files before deleting them from `/tmp`. Deleting `cflog_initial*` files 
 **Resolution:** Edit the affected HIPAA policy and save it again — any no-op change is sufficient to trigger regeneration. The policy's next Ping rebuilds the download link using the current server address.
 
 :::note
-This caching behavior is specific to the legacy communication flow. Netwrix plans to address it in the 2608 server release, which makes these links independent of the server's hostname.
+This caching behavior is specific to the legacy communication flow. The 2608 server release fixes this by making these links independent of the server's hostname — this workaround is only needed on servers still below 2608.
+:::
+
+:::note
+**2510/2604 path:** This workaround is still required — the fix ships only in 2608, not 2510/2604.
 :::
 
 ---
@@ -130,17 +142,61 @@ This is a recurring, ongoing issue distinct from the one-time 500 error that can
 
 ---
 
+### Verifying the php_els License Entitlement (2509-2604 Only) {#verifying-the-php_els-license-entitlement-2509-2604-only}
+
+:::note
+This applies only to the **2509–2604** image line — including the temporary [5.x → 2510/2604 path](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). **2608 no longer uses the `php_els` entitlement** — if your license still contains that field, 2608 ignores it, and this section doesn't apply.
+:::
+
+**Symptom:** On a 2509–2604 server, the underlying OS components don't receive updates, or **ELS for PHP** doesn't show as **Active** in **Appliance → Server Information**.
+
+**Root cause:** The 2509–2604 image line requires a license that includes a `php_els` field to unlock OS patch updates. Without it, the server can't receive OS and patch updates.
+
+**How to verify your license contains the field:**
+
+1. Open the EPP Server console.
+2. Navigate to **System Configuration → System Licensing**.
+3. Download or view the license file content.
+4. Verify that the license file contains a field ending with: `"php_els":"your-unique-value"`, as shown in the following example.
+
+![EPP License file — php_els component](licensefile_php_els.webp)
+
+If the `php_els` field is missing:
+- Licenses issued **after January 1, 2025** typically include the `php_els` field.
+- Contact Netwrix Support or your account team to request a refreshed license.
+
+**How to verify ELS for PHP is active after import:**
+
+1. Navigate to **System Configuration → System Licensing → Import License** and upload the license file that contains the `php_els` field.
+2. After import, go to **Appliance → Server Information**.
+3. Confirm that **"ELS for PHP = Active"** appears.
+
+![Appliance → Server Information — license](server_info_license_2510.webp)
+
+If you imported the license successfully, the Server Information page shows:
+
+![Appliance → Server Information — ELS for PHP = Active after license import](els_active_highlighted.webp)
+
+If errors appear instead:
+
+![Appliance → Server Information — ELS for PHP = Error after license import](els_error.webp)
+
+**Resolution:** If ELS for PHP isn't Active after import, contact Netwrix Support or your account team for a refreshed license — the server can't receive OS and patch updates without it.
+
+---
+
 ## EPP Client
 
 ### EE Clients Can't Connect After Migration
 
 **Symptom:** Enforced Encryption clients fail to connect or show as untrusted.
 
-**Most likely cause:** The new server IP/FQDN is different from the old server.
+**Most likely cause:** The new server IP/FQDN is different from the old server, or the EE client is outdated.
 
 **Resolution:**
 - If you used the same IP/FQDN: verify that the backup restored the certificates (check **System Configuration → Certificates**).
 - If you used a different IP/FQDN: users must decrypt their drives, reconnect to the new server, and re-encrypt.
+- Verify the EE client is on the latest version. Since the **2509** release, Enforced Encryption changed its communication logic with the server, so EE clients must be updated immediately after migration rather than left on an older version. See [Enforced Encryption Client Requires Immediate Update](/docs/endpointprotector/install/migrationprocedure/clientupgrade.md#enforced-encryption-client-requires-immediate-update) in Client Upgrade Management.
 
 ---
 
@@ -151,13 +207,13 @@ This is a recurring, ongoing issue distinct from the one-time 500 error that can
 **Checklist:**
 1. Verify that you have re-enabled client communications on the new server.
 2. Confirm the new server is reachable on the expected IP/FQDN from endpoints.
-3. Check that client packages (5.9.4.3 Hotfix 1) are uploaded to the server.
+3. Check that the 2608 client package is uploaded to the server (**2510/2604 path:** the 2605 client instead).
 4. Verify the old server is no longer running on the same IP if using same-IP strategy.
 5. Check endpoint firewall rules allow outbound on ports 443 and any other configured EPP ports.
 6. Test with a clean install of the latest EPP Client to eliminate potential issues caused by a corrupted existing client.
 
 :::note
-If clients were on 5.9.4.1 or older, they also require the 5.9.4.3 Hotfix 1 signature bridge before they can receive the 2605 client package. See [EPP Clients Not Communicating After Migration](/docs/endpointprotector/install/migrationprocedure/faq.md#epp-clients-not-communicating-after-migration) in the FAQ for the full checklist, including the signature bridge requirement.
+If clients were on 5.9.4.1 or older, they also require the 5.9.4.3 Hotfix 1 signature bridge before they can receive the 2608 client package — any client already on 5.9.4.3 Hotfix 1 or later can go straight to 2608. See [EPP Clients Not Communicating After Migration](/docs/endpointprotector/install/migrationprocedure/faq.md#epp-clients-not-communicating-after-migration) in the FAQ for the full checklist, including the signature bridge requirement. **2510/2604 path:** the same bridge requirement applies for reaching the 2605 client.
 :::
 
 ---
@@ -169,7 +225,7 @@ If clients were on 5.9.4.1 or older, they also require the 5.9.4.3 Hotfix 1 sign
 **Checklist:**
 1. Verify that you have the latest EPP Server in use.
 2. Clean up all old Client Upgrade tasks existing on EPP Server.
-3. Check version of EPP Client used in upgrade process vs Client version which you want to upgrade - to eliminate the [Certificate Bridge issue](/docs/endpointprotector/install/migrationprocedure/migrationguide.md#certificate-bridge-and-upgrade-path).
+3. Check version of EPP Client used in upgrade process vs Client version which you want to upgrade - to eliminate the Certificate Bridge issue ([2608 target](/docs/endpointprotector/install/migrationprocedure/clientupgrade.md#certificate-bridge--historical-context) / **2510/2604 path:** [2605 target](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510#certificate-bridge-and-upgrade-path)).
 4. Create a new task.
 5. Ensure the affected endpoint with current EPP Client is communicating, and refresh policy.
 6. Ensure that the affected Windows endpoint is restarted; the installer uses msiexec, which can be blocked by any other previous failed installations.

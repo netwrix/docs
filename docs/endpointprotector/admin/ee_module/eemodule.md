@@ -8,6 +8,8 @@ sidebar_position: 70
 
 Enforced Encryption, Formerly known as EasyLock, is a cross-platform solution that protects data with government-approved FIPS 140-3 validated encryption. For USB devices, it needs to be deployed on the root of the device. With the intuitive Drag & Drop interface, ﬁles can be quickly copied to and from the device.
 
+Because Enforced Encryption uses FIPS 140-3 validated cryptography, it helps organizations meet regulatory frameworks that require validated encryption for removable media. This includes the Cybersecurity Maturity Model Certification (CMMC), which enforces security standards that defense contractors must meet to handle Controlled Unclassified Information (CUI).
+
 ![Enforced Encryption, Formerly known as EasyLock](enforcedencryption.webp)
 
 Used in combination with Endpoint Protector, Enforced Encryption allows USB storage devices to be
@@ -49,44 +51,6 @@ Starting with Netwrix Enforced Encryption version 3.0.0.2 (5.9.4.2 release), a n
 To verify the version of the 140-3 FIPS validated engine and view certification details, check the "About" section in the Enforced Encryption application.
 
 ![Enforced Encryption FIPS engine details](eeaboutfips.webp)
-
-## Enforced Encryption Deployment
-
-Enforced Encryption is supported for both Mac and Windows computers.
-
-![Enforced Encryption is supported for both Mac and Windows computers](deployment.webp)
-
-**Deployment happens automatically** if you select **Allow Access if Trusted Device™ Level 1+**
-for USB Storage Devices. You can do this in Device Control, Global Rights section, or by using the quick links provided, as shown in the preceding image.
-
-You can also deploy the Enforced Encryption Client directly on a USB stick through the EPP Client Notifier.
-
-![Enforced Encryption deployment by EPP Client Notifier](deployment2.webp)
-
-![Enforced Encryption deployment by EPP Client Notifier](deployment3.webp)
-
-When you click it, an OS popup should appear indicating that the process has started.
-![Enforced Encryption deployment popup](deployment4.webp)
-
-**Manual deployment** is also available. Download links for both Windows and Mac are available in this
-section. The downloaded Enforced Encryption ﬁle must be copied onto the USB storage device and
-executed from the root of the device. Due to extended security features for manual deployment,
-Enforced Encryption will have to be redownloaded from the Endpoint Protector interface each time it
-will be used to encrypt a new USB storage device.
-
-
-After successful deployment, the application asks the user to configure the encryption password, as shown in the following image.
-![Enforced Encryption first run config](eeconfig.webp)
-
-If you configure everything correctly, the Enforced Encryption login screen should appear.
-![Enforced Encryption splash screen login](eelogin.webp)
-
-Both Enforced Encryption deployments require the user only to configure a password.
-
-:::note
-On Macs, USB storage devices with multiple partitions aren't supported by Enforced
-Encryption and Trusted Device™ Level 1.
-:::
 
 ## Enforced Encryption Settings
 
@@ -137,6 +101,54 @@ After deploying the Enforced Encryption Client with Read-Only (RO) mode enabled,
 :::warning Important
 When multiple users or different machines use an Enforced Encryption (EE) encrypted USB drive with varying EE settings, the settings will not update automatically. To apply individual computer or user settings, the EPP administrator must update the related EE settings on the EPP Server at the computer/user level each time the USB drive is used on a specific computer or by a particular user. These settings will remain stored in the EE USB drive's configuration until you make further modifications.
 :::
+
+## Enforced Encryption Deployment
+
+Enforced Encryption is supported for both Mac and Windows computers.
+
+![Enforced Encryption is supported for both Mac and Windows computers](deployment.webp)
+
+**Deployment happens automatically** if you select **Allow Access if Trusted Device™ Level 1+**
+for USB Storage Devices. You can do this in Device Control, Global Rights section, or by using the quick links provided, as shown in the preceding image.
+
+You can also deploy the Enforced Encryption Client directly on a USB stick through the EPP Client Notifier.
+
+![Enforced Encryption deployment by EPP Client Notifier](deployment2.webp)
+
+![Enforced Encryption deployment by EPP Client Notifier](deployment3.webp)
+
+When you click it, an OS popup should appear indicating that the process has started.
+![Enforced Encryption deployment popup](deployment4.webp)
+
+**Manual deployment** is also available. Download links for both Windows and Mac are available in this
+section. The downloaded Enforced Encryption ﬁle must be copied onto the USB storage device and
+executed from the root of the device. Due to extended security features for manual deployment,
+Enforced Encryption will have to be redownloaded from the Endpoint Protector interface each time it
+will be used to encrypt a new USB storage device.
+
+
+After successful deployment, the application asks the user to configure the encryption password, as shown in the following image.
+![Enforced Encryption first run config](eeconfig.webp)
+
+If you configure everything correctly, the Enforced Encryption login screen should appear.
+![Enforced Encryption splash screen login](eelogin.webp)
+
+Both Enforced Encryption deployments require the user only to configure a password.
+
+:::note
+On Macs, USB storage devices with multiple partitions aren't supported by Enforced
+Encryption and Trusted Device™ Level 1.
+:::
+
+## Automatic Updates (Update EasyLock)
+
+The **Update EasyLock** toggle controls whether Enforced Encryption clients update automatically when a new version is available on the Endpoint Protector Server, instead of requiring users to manually redownload and redeploy Enforced Encryption on each USB storage device.
+
+:::warning
+Since the **2509** release, Enforced Encryption changed its communication logic with the Endpoint Protector Server. Unlike regular EPP clients, which can remain on an older supported version for a period after a server migration, **EE clients must be updated to the latest version immediately** after the server migration completes — don't treat this as a lower-priority, staged rollout. Delaying the EE client upgrade can cause EE-protected drives to lose synchronization with the server or fail to communicate correctly.
+:::
+
+Enable the **Update EasyLock** toggle so EE clients update automatically rather than relying on manual redeployment. If you're migrating the Endpoint Protector Server, see [Enforced Encryption Client Requires Immediate Update](/docs/endpointprotector/install/migrationprocedure/clientupgrade#enforced-encryption-client-requires-immediate-update) for the full migration-specific guidance.
 
 ## Enforced Encryption in Read-Only mode
 
