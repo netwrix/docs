@@ -37,16 +37,13 @@ Netwrix Change Tracker's password reset function is only accessible from the loc
    https://localhost/api/resetadminpassword
    ```
 
-2. The browser displays the new password. At your next logon to the Netwrix Change Tracker web console, you can log on with the reset password. The console then prompts you to change it to a password of your choice.
-
-   If the console does not prompt you to change your password, follow the steps in [If You Are Not Prompted to Change Your Password](#if-you-are-not-prompted-to-change-your-password).
-
-### If You Are Not Prompted to Change Your Password
+2. The browser displays the new password. At your next logon to the Netwrix Change Tracker web console, you can log on with the newly created password. The console does not prompt you to change the password on login. If you wish to generate a new password:
 
 1. Log on using the reset password.
 2. Go to the **Settings** tile, then click **Users** in the left navigation panel.
 3. On the User Administration page, click the paperclip icon next to the account you want to reset (for example, `admin`).
-4. Type a new password, confirm it, then click **Apply**. The new password takes effect immediately.
+4. Change Tracker will generate another new password for you in line with the password complexity settings that are configured. Take note of or copy this password and log out of Change Tracker.
+6. Log on using the reset password and you will then be prompted to specify a new password. Type a new password, confirm it, then click **Next>**. The new password takes effect immediately.
 
 ## Related Articles
 
