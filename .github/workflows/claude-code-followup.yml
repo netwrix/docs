@@ -72,7 +72,7 @@ jobs:
 
       - name: Handle @claude request
         if: steps.pr-info.outputs.is_fork == 'false' && steps.pr-info.outputs.targets_dev == 'true'
-        uses: anthropics/claude-code-action@700e7f8316990de46bed556429765647af760efc # v1
+        uses: anthropics/claude-code-action@be7b93b1907a4abad570368f3c74b6fe3807510b # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
