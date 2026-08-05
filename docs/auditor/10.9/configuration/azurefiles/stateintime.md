@@ -2,12 +2,7 @@
 
 This topic describes how to enable State-in-Time data collection for an Azure Files monitoring plan in Netwrix Auditor, configure the monitoring scope using omit lists, and set up optional Azure diagnostic settings for activity-based reports.
 
-> **Note:** When Azure file shares use on-premises Active Directory (AD DS) authentication, the following limitations apply to State-in-Time permission reports:
->
-> - **Group expansion is unavailable for on-premises AD groups that are not synced to Microsoft Entra ID.** If access to a file or folder is granted through such a group, the report does not list individual group members.
-> - **SID resolution is unavailable for on-premises AD groups and accounts that are not synced to Microsoft Entra ID.** These objects appear as unresolved SIDs instead of display names in permission reports.
->
-> These limitations do not affect environments that use Microsoft Entra ID-only identities or fully synced hybrid identities.
+> **Note:** By default, Azure Files permission reports show display names only for Entra ID accounts, and Netwrix Auditor doesn't expand on-premises AD groups that aren't synced to Microsoft Entra ID. To show display names for on-premises accounts and list individual members of AD groups, see [Configuring Active Directory integration (optional)](#configuring-active-directory-integration-optional).
 
 ## Prerequisites
 
@@ -30,6 +25,28 @@ This topic describes how to enable State-in-Time data collection for an Azure Fi
 After you save the monitoring plan, Netwrix Auditor will begin collecting State-in-Time snapshots according to the configured schedule.
 
 > **Note:** Netwrix Auditor collects the first snapshot at the next scheduled run. Reports won't contain data until then.
+
+## Configuring Active Directory integration (optional)
+
+By default, only Entra ID accounts appear with display names in Azure Files reports. If your environment uses on-premises Active Directory (AD DS), you can provide read-only AD credentials so that Netwrix Auditor can:
+
+- Resolve display names for on-premises accounts not synced to Microsoft Entra ID.
+- List individual members of on-premises AD groups (including members of nested groups, resolved transitively) as separate rows in permission reports.
+
+If you don't provide credentials, report output remains identical to earlier versions — this is a fully optional, additive capability.
+
+**To configure Active Directory integration:**
+
+1. In Netwrix Auditor, navigate to **Configuration → Monitoring Plans**.
+2. Select the Azure Files monitoring plan and click **Edit**.
+3. Open a monitored item (Azure Subscription or Azure Storage Account) and click **Edit**.
+4. Go to the **Active Directory Integration** tab. (The **Learn more…** link on this tab points to this section.)
+5. Turn on the toggle under **Specify Active Directory account**.
+6. In the **User name** field, enter an AD account with read access to Active Directory. Use the format `domain\user` or `user@domain.local`.
+7. Enter the **Password** for the account.
+8. Click **Save**.
+
+> **Note:** If Netwrix Auditor cannot authenticate with the configured AD account, it records a collection error in the System Health log and continues snapshot collection using cloud-resolved identities only. Netwrix Auditor records transient AD connectivity issues as warnings and doesn't stop collection for these issues.
 
 ## Configuring the monitoring scope (omit lists)
 
