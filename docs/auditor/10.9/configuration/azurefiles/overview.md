@@ -65,6 +65,8 @@ Register an application so Netwrix Auditor can authenticate to Azure and read au
 
 **Note:** Switching audiences later may cause errors
 
+**Recommendation:** Use a separate, dedicated application for Azure Files data collection rather than reusing an application for other purposes. By default, Netwrix Auditor omits its own collection application's activity from auditing — if the collection app is shared with other workloads, that other activity will not be captured.
+
 
 ### Step 2: Gather App Details
 
@@ -102,6 +104,7 @@ The Purpose column references Microsoft Graph API endpoints that Netwrix Auditor
 | `User.Read` | Basic user information. Sign in and read user profile. *(default)* |
 | `User.Read.All` | Read all users' full profiles. Required to resolve user security identifiers (SIDs) into display names and User Principal Names (UPNs), and to map access control entries (ACEs) from group membership via the Microsoft Graph endpoint `/users/{id}/transitiveMemberOf` |
 | `Group.Read.All` | Resolve groups and search by SID from discretionary access control lists (DACLs). Required to expand group membership via the Microsoft Graph endpoint `/groups/{id}/transitiveMembers` and filter groups by `securityIdentifier` |
+| `Application.Read.All` | Resolve service principal (application) identities in audit records. Required when file or folder activity is performed by a service principal rather than a user — these objects have no SID and no UPN, so they cannot be resolved by `User.Read.All` or `Group.Read.All`. Without this permission, such records show a raw object ID instead of a display name, and the collector logs a "no SID and no UPN available to resolve the identity" error in the monitoring plan log. |
 
 
 1. In your app in EntraID, go to **Manage > API permissions > + Add a permission**.
@@ -110,10 +113,12 @@ The Purpose column references Microsoft Graph API endpoints that Netwrix Auditor
    - **User.Read (default)**
    - **User.Read.All**
    - **Group.Read.All**
+   - **Application.Read.All**
 
 - *User.Read* – "Sign in and read user profile." *(default)*
 - *User.Read.All* – "Read all users' full profiles"
 - *Group.Read.All* – "Read all groups"
+- *Application.Read.All* – "Read all applications" — required to resolve service principal display names
 
 
 ### Step 2: Grant Admin Consent
@@ -122,10 +127,11 @@ Click **Grant admin consent for TenantName**
 
 **Why this is required:**
 - By default, applications cannot query Microsoft Graph for directory-wide information
-- Admin consent allows the app to use **User.Read.All** and **Group.Read.All**
+- Admin consent allows the app to use **User.Read.All**, **Group.Read.All**, and **Application.Read.All**
 - **User.Read.All** lets Netwrix Auditor query Microsoft Entra ID and resolve **user SIDs → user accounts → display names**
 - **Group.Read.All** lets Netwrix Auditor resolve groups from DACLs and expand group membership so reports show which users inherit access through group ACEs
-- Without admin consent, audit logs will only show unresolved SIDs and object IDs instead of usernames and group names, making reports incomplete and less useful
+- **Application.Read.All** lets Netwrix Auditor resolve **service principal (application) identities** that have no SID and no UPN, so activity performed by applications — not just users — shows a display name instead of a raw object ID
+- Without admin consent, audit logs will only show unresolved SIDs and object IDs instead of usernames, group names, and application names, making reports incomplete and less useful
 
 **At the end of this step, your app has granted Microsoft Graph API permissions**
 
@@ -242,7 +248,7 @@ Azure Files audit logs will now be archived into your **Log Storage Account**
 ## Checklist
 
 - [Azure Application registered](#azure-application-registration) with App ID + Secret
-- [API permissions](#configure-api-permissions) (User.Read, User.Read.All, Group.Read.All) granted
+- [API permissions](#configure-api-permissions) (User.Read, User.Read.All, Group.Read.All, Application.Read.All) granted
 - [IAM roles assigned](#assign-iam-roles-to-the-app) (Reader, Storage File Data Privileged Reader, Storage Blob Data Reader)
 - [Diagnostic Settings configured](#diagnostic-settings) to log to a Log Storage Account
 
