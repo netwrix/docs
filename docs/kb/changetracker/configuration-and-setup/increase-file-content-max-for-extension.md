@@ -38,11 +38,11 @@ Increasing this limit lets the agent track larger files, but raises the resource
 
 1. Stop the **Netwrix ChangeTracker Gen7 Agent NetCore** service.
 2. Open `C:\Program Files\NNT Change Tracker Suite\Gen7Agent (NetCore)\Gen7Agent.App.NetCore.dll.config` in a text editor.
-3. Locate the `filecontentmaxforextension` key.
+3. Locate the `filecontentmaxforextension_default` key.
 4. Set the value to the size, in bytes, that you want to allow. For example, to allow 1 MB:
 
    ```xml
-   filecontentmaxforextension="1048576"
+   <add key="filecontentmaxforextension_default" value="1048576" />
    ```
 
 5. Save and close the file.
