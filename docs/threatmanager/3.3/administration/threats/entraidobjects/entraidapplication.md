@@ -23,8 +23,8 @@ application:
 :::info
 If the application is an Agent Identity Blueprint (an application registered in Microsoft Entra ID
 that defines the identity configuration for an AI agent), the page displays the Sponsors and Agent
-Identities tabs described below, in addition to the standard tabs. Agent Identity Blueprints are
-tagged with the built-in Agent Blueprint tag. See the
+Identities tabs described in the following sections, in addition to the standard tabs. Threat
+Manager tags Agent Identity Blueprints with the built-in Agent Blueprint tag. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
 additional information about built-in tags.
 :::
@@ -71,18 +71,17 @@ Each table has the following columns:
 - Membership Type - How the group membership was assigned
 
 - Security Enabled - Shows whether the "Security Enabled" flag is enabled within Microsoft
-  Entra ID, if enabled it means that this type of group is used to manage user and computer access
-  to shared resources for a group of users.
+  Entra ID. When enabled, this type of group manages user and computer access to shared resources
+  for a group of users.
 
-- Role Assignments Allowed - This flag shows whether a group can be assigned a role within
-  Microsoft Entra ID
+- Role Assignments Allowed - This flag shows whether Microsoft Entra ID can assign a role to a
+  group
 
 - Tags - The tags associated with the group Image
 
 ## Roles Tab
 
-The role assignments tab displays a table that lists the roles that have been assigned to the Entra
-ID application.
+The Roles tab displays a table of the roles assigned to the Microsoft Entra ID application.
 
 ![Entra ID User Role Assignment Eligible page](/images/threatmanager/3.0/administration/threatdetails/entraiduserrolestabeligible.webp)
 
@@ -90,8 +89,8 @@ ID application.
 
 The Roles tab displays two tables:
 
-- Eligible Assignments – Lists the roles that the user is eligible for. An eligible assignment
-  refers to a role assignment that a user or group can activate when needed but isn't permanently
+- Eligible Assignments – Lists the roles that the user is eligible for. An eligible assignment is a
+  role assignment that a user or group can activate when needed but that isn't permanently
   active
 
 - Active Assignments – Lists roles that are active and usable to a user.
@@ -119,7 +118,7 @@ The active assignments table has the following columns:
 
 ## Sponsors Tab
 
-This tab is only displayed for Agent Identity Blueprint applications.
+This tab appears only for Agent Identity Blueprint applications.
 
 The Sponsors tab displays a table of the directory objects that sponsor the Agent Identity
 Blueprint. A sponsor is a user or group in Microsoft Entra ID that's accountable for the AI agent.
@@ -132,7 +131,7 @@ The table has the following columns:
 
 ## Agent Identities Tab
 
-This tab is only displayed for Agent Identity Blueprint applications.
+This tab appears only for Agent Identity Blueprint applications.
 
 The Agent Identities tab displays the Agent Identities and Agent Users created from the Agent
 Identity Blueprint. It has the following sub-tabs:

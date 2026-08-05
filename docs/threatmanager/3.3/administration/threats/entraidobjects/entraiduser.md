@@ -33,7 +33,7 @@ also displays:
 - Agent Blueprint – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
   for the Agent Identity Blueprint that defines this Agent User
 
-Agent Users are tagged with the built-in Agent User tag. See the
+Threat Manager tags Agent Users with the built-in Agent User tag. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
 additional information about built-in tags.
 :::
@@ -52,7 +52,7 @@ The Threats tab for a user displays the threats for the user by timeframe.
 
 ![threats](/images/threatmanager/3.0/administration/threatdetails/threats.webp)
 
-A key for threat types is displayed below the chart.
+A key for threat types appears below the chart.
 
 ## Activity Summary Tab
 
@@ -63,7 +63,7 @@ The Activity Summary tab displays charts for a user's activity over different ti
 The Activity Overview (Past 12 Months) shows a color-coded heat map of user activity. Other metrics
 include Average Activity by Day, and Events by Type.
 
-The Activity by Host and Activity by Client tables are displayed below the charts.
+The Activity by Host and Activity by Client tables appear below the charts.
 
 **Activity by Host Table**
 
@@ -78,7 +78,7 @@ The table has the following columns:
 - Last Access – Last date and time that the server was accessed
 - Number of Events – Total number of activity events on the server
 
-Use the Search icon to search for data contained in any column. Click the Export button to export
+Use the Search icon to search for data in any column. Click the Export button to export
 the current rows displayed on the page into a CSV file.
 
 **Activity by Client Table**
@@ -94,7 +94,7 @@ The table has the following columns:
 - Last Access – Last date and time that the client was accessed
 - Number of Events – Total number of activity events on the client
 
-Use the Search icon to search for data contained in any column. Click the Export button to export
+Use the Search icon to search for data in any column. Click the Export button to export
 the current rows displayed on the page into a CSV file.
 
 ## Group Membership Tab
@@ -116,18 +116,17 @@ Each table has the following columns:
 - Membership Type - How the group membership was assigned
 
 - Security Enabled - Shows whether the "Security Enabled" flag is enabled within Microsoft
-  Entra ID, if enabled it means that this type of group is used to manage user and computer access
-  to shared resources for a group of users.
+  Entra ID. When enabled, this type of group manages user and computer access to shared resources
+  for a group of users.
 
-- Role Assignments Allowed - This flag shows whether a group can be assigned a role within
-  Microsoft Entra ID
+- Role Assignments Allowed - This flag shows whether Microsoft Entra ID can assign a role to a
+  group
 
 - Tags - The tags associated with the group Image
 
 ## Roles Tab
 
-The role assignments tab displays a table that lists the roles that have been assigned to the
-Microsoft Entra ID user.
+The Roles tab displays a table of the roles assigned to the Microsoft Entra ID user.
 
 ![Entra ID User Role Assignment Eligible page](/images/threatmanager/3.0/administration/threatdetails/entraiduserrolestabeligible.webp)
 
@@ -135,8 +134,8 @@ Microsoft Entra ID user.
 
 The Roles tab displays two tables:
 
-- Eligible Assignments – Lists the roles that the user is eligible for. An eligible assignment
-  refers to a role assignment that a user or group can activate when needed but isn't permanently
+- Eligible Assignments – Lists the roles that the user is eligible for. An eligible assignment is a
+  role assignment that a user or group can activate when needed but that isn't permanently
   active
 
 - Active Assignments – Lists roles that are active and usable to a user.
@@ -148,7 +147,7 @@ The eligible assignments table has the following columns:
 - Inherited from - How the eligible assignment was inherited
 - Start Time - When the member is eligible for the role
 - End Time - When the role eligibility expires
-- Privileged - If the role is privileged or not. A privileged role in Microsoft Entra ID grants
+- Privileged - Whether the role is privileged. A privileged role in Microsoft Entra ID grants
   elevated permissions for high-level administrative tasks
 
 The active assignments table has the following columns:
@@ -159,5 +158,5 @@ The active assignments table has the following columns:
 - Assignment Type - How was the active role assignment assigned
 - Start Time - When the member is eligible for the role
 - End Time - When the role eligibility expires
-- Privileged - If the role is privileged or not. A privileged role in Microsoft Entra ID grants
+- Privileged - Whether the role is privileged. A privileged role in Microsoft Entra ID grants
   elevated permissions for high-level administrative tasks

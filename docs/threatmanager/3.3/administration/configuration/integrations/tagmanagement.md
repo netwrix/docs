@@ -6,7 +6,7 @@ sidebar_position: 100
 
 # Tag Management Page
 
-The Tag Management page displays all tags that are managed by the application, including
+The Tag Management page displays all tags that the application manages, including
 built-in and custom tags. You can add tags and assign objects to those tags.
 
 ![Integrations interface on the Tag Management page](/images/threatmanager/3.0/administration/configuration/integrations/page_6.webp)
@@ -14,7 +14,7 @@ built-in and custom tags. You can add tags and assign objects to those tags.
 The built-in tags include:
 
 - Administrator – An administrator user account
-- Agent Blueprint – An application registered in Microsoft Entra ID that has been designated as an
+- Agent Blueprint – An application registered in Microsoft Entra ID that serves as an
   Agent Identity Blueprint. Agent Blueprints define the identity configuration for AI agents,
   enabling them to authenticate and operate within the Microsoft identity platform.
 - Agent Identity – A service principal registered in Microsoft Entra ID that acts as the identity
@@ -24,32 +24,32 @@ The built-in tags include:
   specialized subtype of user identity designed for AI-powered applications that need to function
   as digital workers, enabling them to access APIs and services that require user identities.
 - Automated Account – An account with automated authentication behavior detected
-- Azure Files Storage Account – A computer account created in Active Directory by Azure Files to
-  enable Kerberos-based SMB authentication. This isn't a physical or virtual machine, it represents
-  an Azure storage account.
+- Azure Files Storage Account – A computer account that Azure Files creates in Active Directory to
+  enable Kerberos-based SMB authentication. It represents an Azure storage account rather than a
+  physical or virtual machine.
 - Certificate Authority – A Certificate Authority server
 - Computer Account – A computer account
-- Disabled – An account or object that has been disabled. Disabled objects can't be used to
-  authenticate or access resources, but may still hold role assignments, group memberships, and
+- Disabled – A disabled account or object. You can't use disabled objects to
+  authenticate or access resources, but they may still hold role assignments, group memberships, and
   permissions.
 - Domain Admin – An Active Directory domain administrator account
 - Domain Controller – An Active Directory domain controller account
 - Global Catalog – An Active Directory global catalog object
-- Honeypot – Tags objects to be included in Honeypot detection
+- Honeypot – Tags objects for inclusion in Honeypot detection
 - Privileged – A member of a sensitive group. These users typically have access to sensitive systems
   and data and can execute actions that could impact the security, stability, and operation of the
   network or domain.
 - Read-Only Domain Controller – A read-only Active Directory domain controller account
-- Sensitive – A group that has elevated permissions or administrative rights. A member of these
-  groups have the ability to perform critical tasks that can affect the security, configuration, and
+- Sensitive – A group that has elevated permissions or administrative rights. Members of these
+  groups can perform critical tasks that affect the security, configuration, and
   operation of the entire network or domain.
 - Service Account – An Active Directory service account
 - Stale – An Active Directory user account marked as stale
 - Watchlist – Watchlist users
 
 :::note
-Any users with the Watchlist tag will be displayed on the Threat Manager
-[Home Page](/docs/threatmanager/3.3/administration/home.md) Watchlist.
+The Threat Manager [Home Page](/docs/threatmanager/3.3/administration/home.md) Watchlist
+displays any users with the Watchlist tag.
 :::
 
 
@@ -82,7 +82,7 @@ Add New Integration window opens.
 
 **Step 5 –** Click Add. The Add New Integration window closes.
 
-The tag is listed in the Integrations navigation pane. It can now be applied to objects.
+The tag appears in the Integrations navigation pane. You can now apply it to objects.
 
 ## Tag Details Page
 
@@ -102,14 +102,14 @@ This page provides the following information:
 
 - Name – The tag name. Type in the field to modify the name.
 - Description – The tag description. Type in the field to modify the description.
-- Delete Tag button – This button is only enabled for custom tags. Built-in tags can't be
-  deleted. You will be asked to confirm the action.
+- Delete Tag button – This button is available only for custom tags. You can't delete built-in
+  tags. You must confirm the action.
 - Search box – Search for objects in the Untagged Items box and the Tagged Items box by typing in
   the textbox. You can search for user objects, group objects, file objects, or computer objects.
 - Types – The dropdown menu provides object type filter options that apply to the search box
-  results. When a search isn't being conducted, the filter types apply to the Tagged Items box.
-- Untagged Items box – Displays objects that match the search text. This box is blank when a search
-  isn't performed.
+  results. When you aren't searching, the filter types apply to the Tagged Items box.
+- Untagged Items box – Displays objects that match the search text. This box is blank until you
+  perform a search.
 - Tagged Items box – Lists objects with this tag applied
 
 ## Use the Type Filter
@@ -130,7 +130,7 @@ The following types are available:
 - Files – File objects
 - Computers – Active Directory computer objects
 
-The _tagged items_ and _untagged items_ lists on the window will be filtered to the selected object
+The window filters the _tagged items_ and _untagged items_ lists to the selected object
 types.
 
 ## Apply Tags to Objects
@@ -144,7 +144,7 @@ a list of tags.
 
 **Step 2 –** Select a tag from the table or the navigation pane.
 
-**Step 3 –** On the Tag details page, use the search box to conduct a search for the object name.
+**Step 3 –** On the Tag details page, use the search box to search for the object name.
 
 **Step 4 –** Use the Type dropdown menu to apply the object type filter you want to the search
 results.
@@ -154,7 +154,7 @@ results.
 **Step 6 –** Click the arrow () between the Untagged Items box and the Tagged Items box to add the
 tag to the selected objects.
 
-The tag is applied to the selected objects.
+Threat Manager applies the tag to the selected objects.
 
 ## Remove Tags From Objects
 
@@ -167,7 +167,7 @@ a list of tags.
 
 **Step 2 –** Select a tag from the table or the navigation pane.
 
-**Step 3 –** On the Tag details page, use the search box to conduct a search for the object name.
+**Step 3 –** On the Tag details page, use the search box to search for the object name.
 
 **Step 4 –** Use the Type dropdown menu to apply the object type filter you want to the search
 results.
@@ -177,4 +177,4 @@ results.
 **Step 6 –** Click the arrow (`<`) between the Untagged Items box and the Tagged Items box to remove
 the tag from the selected objects.
 
-The tag is removed from the selected objects.
+Threat Manager removes the tag from the selected objects.

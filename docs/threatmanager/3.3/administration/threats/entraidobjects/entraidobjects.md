@@ -48,7 +48,8 @@ The profile card displays information about the selected user, application, grou
 
 ## Tabs
 
-Depending on the selected user, group, application, or role, the following tabs may be displayed:
+Depending on the selected user, group, application, or role, the page may display the following
+tabs:
 
 ![Tabs](/images/threatmanager/3.0/administration/threatdetails/tabs.webp)
 
@@ -85,6 +86,6 @@ To add a tag to a user, group, or computer:
 
 **Step 2 –** Click the tag you want to add from the list of existing tags.
 
-The selected tag is added to the user, group, application, or role. See the
+Threat Manager adds the selected tag to the user, group, application, or role. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for additional
 information.
