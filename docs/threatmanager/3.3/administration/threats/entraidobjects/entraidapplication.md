@@ -20,16 +20,6 @@ application:
 - Tenant
 - Add Tag button
 
-:::info
-If the application is an Agent Identity Blueprint (an application registered in Microsoft Entra ID
-that defines the identity configuration for an AI agent), the page displays the Sponsors and Agent
-Identities tabs described in the following sections, in addition to the standard tabs. Microsoft
-Entra ID creates Agent Identity service principals and Agent User accounts from an Agent Identity
-Blueprint. Threat Manager tags Agent Identity Blueprints with the built-in Agent Blueprint tag. See
-the [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
-additional information about built-in tags.
-:::
-
 The page has the following tabs:
 
 - Threats Tab
@@ -39,6 +29,14 @@ The page has the following tabs:
 - Roles Tab
 - Sponsors Tab (Agent Identity Blueprint applications only)
 - Agent Identities Tab (Agent Identity Blueprint applications only)
+
+:::info
+An Agent Identity Blueprint is an application registered in Microsoft Entra ID that defines the
+identity configuration for an AI agent. Microsoft Entra ID creates Agent Identity service
+principals and Agent User accounts from an Agent Identity Blueprint. Threat Manager tags Agent
+Identity Blueprints with the built-in Agent Blueprint tag, described on the
+[Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md).
+:::
 
 ## Threats Tab
 
@@ -60,7 +58,7 @@ The Owners tab lists the objects, known as owners, that can manage the applicati
 
 The table displays the following columns:
 
-- Name – The display name of the owner
+- Name – The display name of the owner. Click the name to open its details page.
 - Type – The type of Entra ID object
 - Email – The email address associated with the owner object
 
@@ -101,15 +99,15 @@ The Roles tab displays a table of the roles assigned to the Microsoft Entra ID a
 
 The Roles tab displays two tables:
 
-- Eligible Assignments – Lists the roles that the user is eligible for. An eligible assignment is a
-  role assignment that a user or group can activate when needed but that isn't permanently
-  active
+- Eligible Assignments – Lists the roles that the application is eligible for. An eligible
+  assignment is a role assignment that an object can activate when needed but that isn't
+  permanently active
 
-- Active Assignments – Lists roles that are active and usable to a user.
+- Active Assignments – Lists roles that are active and usable to the application.
 
 The eligible assignments table has the following columns:
 
-- Role - Roles the user is eligible for
+- Role - Roles the application is eligible for
 - Scope - Defines the boundary within which the assigned role permissions are valid
 - Inherited from - How the eligible assignment was inherited
 - Start Time - When the member is eligible for the role

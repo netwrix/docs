@@ -6,22 +6,25 @@ sidebar_position: 100
 
 # Tag Management Page
 
-The Tag Management page displays all tags that the application manages, including
-built-in and custom tags. You can add tags and assign objects to those tags.
+The Tag Management page displays all tags that Threat Manager manages, including built-in and
+custom tags. You can add tags and assign objects to those tags.
 
 ![Integrations interface on the Tag Management page](/images/threatmanager/3.0/administration/configuration/integrations/page_6.webp)
 
 The built-in tags include:
 
 - Administrator – An administrator user account
-- Agent Blueprint – An application registered in Microsoft Entra ID that defines the identity
-  configuration for an AI agent. This configuration lets the agent authenticate and operate within
-  the Microsoft identity platform.
+- Agent Blueprint – Applied to an Agent Identity Blueprint, an application registered in Microsoft
+  Entra ID that defines the identity configuration for an AI agent (a software process that
+  authenticates and acts within Microsoft Entra ID without a human user). For example, an agent
+  that monitors support tickets and drafts responses authenticates using an Agent Identity
+  Blueprint.
 - Agent Identity – A service principal registered in Microsoft Entra ID that acts as the identity
-  for an AI agent. Agent Identity service principals enable agents to authenticate and access
-  resources within the Microsoft identity platform.
+  for an AI agent. For example, an agent that runs scheduled maintenance tasks authenticates using
+  its Agent Identity.
 - Agent User – A user account in Microsoft Entra ID that represents an AI agent. Agent Users let an
-  agent access APIs and services that require a user identity.
+  agent access APIs and services that require a user identity, such as a shared mailbox or a Teams
+  channel.
 - Automated Account – An account with automated authentication behavior detected
 - Azure Files Storage Account – A computer account that Azure Files creates in Active Directory to
   enable Kerberos-based SMB authentication. It represents an Azure storage account rather than a
@@ -48,7 +51,7 @@ The built-in tags include:
 - Watchlist – Watchlist users
 
 :::note
-The Threat Manager [Home Page](/docs/threatmanager/3.3/administration/home.md) Watchlist
+The Watchlist on the Threat Manager [Home Page](/docs/threatmanager/3.3/administration/home.md)
 displays any users with the Watchlist tag.
 :::
 
@@ -102,8 +105,8 @@ This page provides the following information:
 
 - Name – The tag name. Type in the field to modify the name.
 - Description – The tag description. Type in the field to modify the description.
-- Delete Tag button – Available only for custom tags; you can't delete built-in tags. When you
-  click it, you must confirm the deletion.
+- Delete Tag button – Available only for custom tags; you can't delete built-in tags. Click Delete
+  Tag, then confirm the deletion.
 - Search box – Search for objects in the Untagged Items box and the Tagged Items box by typing in
   the textbox. You can search for user objects, group objects, file objects, or computer objects.
 - Types – The dropdown menu provides object type filter options that apply to the search box
@@ -130,8 +133,7 @@ The following types are available:
 - Files – File objects
 - Computers – Active Directory computer objects
 
-The window filters the _tagged items_ and _untagged items_ lists by the selected object
-types.
+The window filters the Tagged Items and Untagged Items lists by the selected object types.
 
 ## Apply Tags to Objects
 
