@@ -146,8 +146,7 @@ a list of tags.
 
 **Step 3 –** On the Tag details page, use the search box to search for the object name.
 
-**Step 4 –** Use the Type dropdown menu to apply the object type filter you want to the search
-results.
+**Step 4 –** Use the Type dropdown menu to apply an object type filter to the search results.
 
 **Step 5 –** In the Untagged Items box, check the box to the left of the objects you want.
 
@@ -169,8 +168,7 @@ a list of tags.
 
 **Step 3 –** On the Tag details page, use the search box to search for the object name.
 
-**Step 4 –** Use the Type dropdown menu to apply the object type filter you want to the search
-results.
+**Step 4 –** Use the Type dropdown menu to apply an object type filter to the search results.
 
 **Step 5 –** In the Tagged Items box, check the box to the left of the objects you want.
 

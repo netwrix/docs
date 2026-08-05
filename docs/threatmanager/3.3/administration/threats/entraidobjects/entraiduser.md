@@ -81,8 +81,8 @@ The table has the following columns:
 - Last Access – Last date and time that the server was accessed
 - Number of Events – Total number of activity events on the server
 
-Use the Search icon to search for data in any column. Click the Export button to export
-the current rows displayed on the page into a CSV file.
+Use the Search icon to search for data in any column. Click the Export button to export the rows
+displayed on the page to a CSV file.
 
 **Activity by Client Table**
 
@@ -97,8 +97,8 @@ The table has the following columns:
 - Last Access – Last date and time that the client was accessed
 - Number of Events – Total number of activity events on the client
 
-Use the Search icon to search for data in any column. Click the Export button to export
-the current rows displayed on the page into a CSV file.
+Use the Search icon to search for data in any column. Click the Export button to export the rows
+displayed on the page to a CSV file.
 
 ## Group Membership Tab
 
@@ -106,7 +106,7 @@ The Group Membership tab displays groups in which the user is a member.
 
 ![Entra ID User Group Membership page](/images/threatmanager/3.0/administration/threatdetails/entraidusergroupmembershiptab.webp)
 
-The Group Membership tab displays the groups the user is a member of. It has the following sub-tabs:
+It has the following sub-tabs:
 
 - Direct Member Of – Lists groups the user is a direct member of
 - Indirect Member Of – Lists groups the user is a member of via membership in a nested group
