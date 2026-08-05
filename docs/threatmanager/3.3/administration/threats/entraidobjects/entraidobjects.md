@@ -18,6 +18,8 @@ about the various resources related to threats and events in Threat Manager. Pag
 
 - [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
 
+- [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
+
 ![threatlist](/images/threatmanager/3.0/administration/threatlist.webp)
 
 The [Threats Page](/docs/threatmanager/3.3/administration/threats/threats.md) contains a threats list with hyperlinks to
@@ -25,8 +27,8 @@ access these pages.
 
 **Common Details Page Elements**
 
-The User Details, Group Details, Application details, and Role details pages contain some common page
-elements.
+The User Details, Group Details, Application Details, Service Principal Details, and Role Details
+pages contain some common page elements.
 
 ## Profile Card
 
