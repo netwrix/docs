@@ -20,14 +20,14 @@ The built-in tags include:
 - Agent Identity – A service principal registered in Microsoft Entra ID that acts as the identity
   for an AI agent. Agent Identity service principals enable agents to authenticate and access
   resources within the Microsoft identity platform.
-- Agent User – A user account in Microsoft Entra ID that represents an AI agent. Agent Users are a
-  specialized subtype of user identity designed for AI-powered applications that need to function
-  as digital workers, enabling them to access APIs and services that require user identities.
+- Agent User – A user account in Microsoft Entra ID that represents an AI agent. Agent Users let an
+  agent access APIs and services that require a user identity.
 - Automated Account – An account with automated authentication behavior detected
 - Azure Files Storage Account – A computer account that Azure Files creates in Active Directory to
   enable Kerberos-based SMB authentication. It represents an Azure storage account rather than a
   physical or virtual machine.
-- Certificate Authority – A Certificate Authority server
+- Certificate Authority – A server that issues and manages the digital certificates used in a
+  public key infrastructure (PKI)
 - Computer Account – A computer account
 - Disabled – A disabled account or object. You can't use disabled objects to
   authenticate or access resources, but they may still hold role assignments, group memberships, and

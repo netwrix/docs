@@ -33,6 +33,7 @@ The page has the following tabs:
 
 - Threats Tab
 - Activity Summary Tab
+- Owners Tab
 - Group Membership Tab
 - Roles Tab
 - Sponsors Tab (Agent Identity Blueprint applications only)
@@ -51,6 +52,16 @@ The Activity Summary tab displays charts for an application's activity over diff
 The Activity Overview (Past 12 Months) shows a color-coded heat map of user activity.
 
 ![Entra ID Application Activity Summary Tab](/images/threatmanager/3.0/administration/threatdetails/activitysummarytab.webp)
+
+## Owners Tab
+
+The Owners tab shows which objects can manage the application, these are the "owners".
+
+The table displays the following columns:
+
+- Name – The display name of the owner
+- Type – The type of Entra ID object
+- Email – The email associated with the owners object
 
 ## Group Membership Tab
 
@@ -123,6 +134,8 @@ This tab appears only for Agent Identity Blueprint applications.
 The Sponsors tab displays a table of the directory objects that sponsor the Agent Identity
 Blueprint. A sponsor is a user or group in Microsoft Entra ID that's accountable for the AI agent.
 
+![Agent Identity Blueprint Sponsors Tab](/images/threatmanager/3.3/administration/threatdetails/agentblueprintsponsorstab.webp)
+
 The table has the following columns:
 
 - Name – The name of the sponsor
@@ -134,16 +147,19 @@ The table has the following columns:
 This tab appears only for Agent Identity Blueprint applications.
 
 The Agent Identities tab displays the Agent Identities and Agent Users created from the Agent
-Identity Blueprint. It has the following sub-tabs:
+Identity Blueprint.
+
+![Agent Identities Tab](/images/threatmanager/3.3/administration/threatdetails/agentidentitiestab.webp)
+
+It has the following sub-tabs:
 
 - Agent Identities – Lists the Agent Identity service principals instantiated from this blueprint.
-  Click a link in the table to view its
-  [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md).
-- Agent Users – Lists the Agent Users tied to this blueprint. Click a link in the table to view its
-  [User Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraiduser.md).
+- Agent Users – Lists the Agent Users tied to this blueprint.
 
 Each sub-tab table has the following columns:
 
-- Name – The name of the agent identity or agent user
+- Name – The name of the Agent Identity or Agent User. Click the name to open its
+  [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
+  or [User Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraiduser.md).
 - Type – The object type
 - Email – The email address associated with the object, if any

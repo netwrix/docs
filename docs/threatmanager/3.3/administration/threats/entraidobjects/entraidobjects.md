@@ -7,7 +7,7 @@ sidebar_position: 30
 # Entra ID Object Details Pages
 
 The Microsoft Entra ID Object details pages provide details on Microsoft Entra ID objects including
-users, groups, applications, devices, and roles. Use these pages to discover more information
+users, groups, applications, service principals, devices, and roles. Use these pages to discover more information
 about the various resources related to threats and events in Threat Manager. Pages include:
 
 - [User Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraiduser.md)
@@ -32,7 +32,9 @@ pages contain some common page elements.
 
 ## Profile Card
 
-The profile card displays information about the selected user, application, group, or role.
+The profile card displays information about the selected user, application, service principal,
+group, or role. The fields displayed vary by object type. See the individual details page topics
+for the fields specific to each object.
 
 ![Entra ID User Profile Card](/images/threatmanager/3.0/administration/threatdetails/entraiduserprofilecard.webp)
 
