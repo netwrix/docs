@@ -46,7 +46,7 @@ sudo dspm-installer
 
 Run `dspm-installer [command] --help` to view usage and available options for any command.
 
-**To pin to a specific release** — recommended when you want to control when upgrades happen during your organization's patching cycle — export the version before downloading and running the installer:
+Netwrix recommends pinning to a specific release when you want to control when upgrades happen during your organization's patching cycle. **To pin to a specific release**, export the version before downloading and running the installer:
 
 ```bash
 # Set the Keygen license key variable
@@ -291,4 +291,4 @@ The exit code indicates which phase failed:
 | `70` | App startup | Applications didn't become healthy within 30 minutes. Run `kubectl get pods -n access-analyzer` to check pod status, then contact Netwrix Support |
 | `71` | App startup | A pod entered a permanent failure state. Run `kubectl get pods -A` to identify it, then contact Netwrix Support |
 | `80` | Preflight | Resolve the reported system requirement and retry |
-| `90` | IdP configuration | IdP setup failed after the cluster was deployed. Check the log for the specific error, then use `--configure-idp-only` to retry |
+| `90` | IdP configuration | IdP setup failed after the installer deployed the cluster. Check the log for the specific error, then use `--configure-idp-only` to retry |
