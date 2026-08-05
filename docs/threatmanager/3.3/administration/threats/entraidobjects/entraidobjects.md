@@ -7,8 +7,8 @@ sidebar_position: 30
 # Entra ID Object Details Pages
 
 The Microsoft Entra ID Object details pages provide details on Microsoft Entra ID objects including
-users, groups, applications, service principals, devices, and roles. Use these pages to discover more information
-about the various resources related to threats and events in Threat Manager. Pages include:
+users, groups, applications, service principals, devices, and roles. Use these pages to learn more
+about the resources related to threats and events in Threat Manager. Pages include:
 
 - [User Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraiduser.md)
 
@@ -75,8 +75,8 @@ tabs:
 
 ## Add Tag Button
 
-Use the Add Tag button to assign existing tags to a user, group, or host computer. It also
-provides the option to create new tags.
+Use the Add Tag button to assign existing tags to a user, group, or host computer. You can also
+create new tags.
 
 **Add an Existing Tag**
 

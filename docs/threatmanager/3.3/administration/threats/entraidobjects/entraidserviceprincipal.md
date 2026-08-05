@@ -31,9 +31,9 @@ Identity Blueprint application), the profile card also displays:
 - Agent Blueprint – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
   for this service principal's Agent Identity Blueprint
 
-The Sponsors and Agent Users tabs described below are displayed for Agent Identity service
-principals only. Agent Identity Blueprint Principals display the standard Threats and Activity
-Summary tabs.
+The Sponsors and Agent Users tabs described in the following sections appear for Agent Identity
+service principals only. Agent Identity Blueprint Principals display the standard Threats and
+Activity Summary tabs.
 
 Threat Manager tags Agent Identity service principals with the built-in Agent Identity tag. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
@@ -44,7 +44,7 @@ The page has the following tabs:
 
 - Threats Tab
 - Activity Summary Tab
-- Owners Tab (not displayed for Agent Identity Blueprint Principals)
+- Owners Tab (doesn't appear for Agent Identity Blueprint Principals)
 - Sponsors Tab (Agent Identity service principals only)
 - Agent Users Tab (Agent Identity service principals only)
 
@@ -67,8 +67,8 @@ include Average Activity by Day, and Events by Type.
 
 ## Owners Tab
 
-The Owners tab shows which objects can manage the service principal, these are the "owners". This
-tab isn't displayed for Agent Identity Blueprint Principals.
+The Owners tab shows which objects can manage the service principal. These objects are the owners.
+This tab doesn't appear for Agent Identity Blueprint Principals.
 
 The table displays the following columns:
 
