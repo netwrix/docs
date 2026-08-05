@@ -7,8 +7,8 @@ sidebar_position: 50
 # Service Principal Details Page
 
 The Service Principal Details page provides information about a service principal (Enterprise
-Application) registered in Microsoft Entra ID, including its Agent Identity information if
-applicable.
+Application) registered in Microsoft Entra ID. For service principals that act as the identity for
+an AI agent, the page also displays Agent Identity details.
 
 ![Service Principal Details Page](/images/threatmanager/3.3/administration/threatdetails/entraidserviceprincipalpage.webp)
 
@@ -25,15 +25,13 @@ service principal:
 
 :::info
 If the service principal is an Agent Identity (a service principal that acts as the identity for an
-AI agent) or an Agent Identity Blueprint Principal (the service principal instance of an Agent
-Identity Blueprint application), the profile card also displays:
+AI agent, created from an Agent Identity Blueprint) or an Agent Identity Blueprint Principal (the
+service principal that Microsoft Entra ID automatically creates for each Agent Identity Blueprint
+application, distinct from the Agent Identity service principals the blueprint creates), the
+profile card also displays:
 
 - Agent Blueprint – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
   for this service principal's Agent Identity Blueprint
-
-The Sponsors and Agent Users tabs described in the following sections appear for Agent Identity
-service principals only. Agent Identity Blueprint Principals display the standard Threats and
-Activity Summary tabs.
 
 Threat Manager tags Agent Identity service principals with the built-in Agent Identity tag. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
@@ -47,6 +45,9 @@ The page has the following tabs:
 - Owners Tab (doesn't appear for Agent Identity Blueprint Principals)
 - Sponsors Tab (Agent Identity service principals only)
 - Agent Users Tab (Agent Identity service principals only)
+
+The Sponsors and Agent Users tabs are displayed for Agent Identity service principals only. Agent
+Identity Blueprint Principals display only the standard Threats and Activity Summary tabs.
 
 ## Threats Tab
 
@@ -67,14 +68,14 @@ include Average Activity by Day, and Events by Type.
 
 ## Owners Tab
 
-The Owners tab shows which objects can manage the service principal. These objects are the owners.
-This tab doesn't appear for Agent Identity Blueprint Principals.
+The Owners tab lists the objects that can manage the service principal, known as owners. This tab
+isn't displayed for Agent Identity Blueprint Principals.
 
 The table displays the following columns:
 
 - Name – The display name of the owner
 - Type – The type of Entra ID object
-- Email – The email associated with the owners object
+- Email – The email address associated with the owner object
 
 ## Sponsors Tab
 
@@ -104,4 +105,4 @@ The table has the following columns:
 - Name – The name of the Agent User. Click the name to open its
   [User Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraiduser.md).
 - Type – The object type
-- Email – The email address associated with the agent user, if any
+- Email – The email address associated with the Agent User, if any
