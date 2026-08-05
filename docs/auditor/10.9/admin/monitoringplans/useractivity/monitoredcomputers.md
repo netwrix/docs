@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Monitored Computers
 
-The **Monitored Computers** tab in a User Activity monitoring plan gives you a detailed, per-host view of every computer being monitored. Instead of a single summary status for the entire plan, you can see the health of each individual computer, identify issues quickly, and drill into diagnostic details without leaving the interface.
+The **Monitored Computers** tab in a User Activity monitoring plan gives you a detailed, per-host view of every monitored computer. Instead of showing a single summary status for the entire plan, the tab reports the health of each computer, so you can identify issues quickly and drill into diagnostic details without leaving the interface.
 
 **To access the Monitored Computers tab:**
 
@@ -20,7 +20,7 @@ The **Monitored Computers** tab in a User Activity monitoring plan gives you a d
 
 When you add computers to a monitoring plan using an IP range or an AD container, Netwrix Auditor resolves and tracks each host individually. The Monitored Computers tab lists all resolved computers with their current health status, so you can immediately see which hosts are collecting data normally and which ones require your attention.
 
-**NOTE:** Computers excluded from monitoring via the **Exclude these objects** or **Exclude subranges** setting in the item settings are not displayed in the Monitored Computers tab.
+**NOTE:** The Monitored Computers tab doesn't display computers that you exclude from monitoring with the **Exclude these objects** or **Exclude subranges** setting in the item settings.
 
 ![Monitored Computers tab with details for a selected computer](/images/auditor/10.9/admin/monitoringplans/useractivity/monitored-computers-details1.webp)
 
@@ -47,11 +47,11 @@ The grid displays the following columns for each computer:
 
 ![Apply Filters dialog showing Computer status, Computer name, and Item name options](/images/auditor/10.9/admin/monitoringplans/useractivity/monitored-computers-filter.webp)
 
-Search and filters can be combined. The label next to **Filters** shows a summary of the active filters. To remove all active filters at once, click **Clear All** in the Filters dialog.
+You can combine search and filters. The label next to **Filters** shows a summary of the active filters. To remove all active filters at once, click **Clear All** in the Filters dialog.
 
 ## Exporting the List
 
-Click **Export** above the grid to save the currently displayed computers to a file. The export respects any active search term and filters, and includes the following columns: **Name**, **Item**, **Status**, and **Last Activity Time**.
+Click **Export** above the grid to save the displayed computers to a file. The export respects any active search term and filters, and includes the following columns: **Name**, **Item**, **Status**, and **Last Activity Time**.
 
 ## Related Topics
 
