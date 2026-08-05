@@ -33,7 +33,7 @@ By default, only Entra ID accounts appear with display names in Azure Files repo
 - Resolve display names for on-premises accounts not synced to Microsoft Entra ID.
 - List individual members of on-premises AD groups (including members of nested groups, resolved transitively) as separate rows in permission reports.
 
-If you don't provide credentials, report output remains identical to earlier versions — this is a fully optional, additive capability.
+If you don't provide credentials, report output remains identical to earlier versions — this capability is optional and additive.
 
 **To configure Active Directory integration:**
 
@@ -46,7 +46,7 @@ If you don't provide credentials, report output remains identical to earlier ver
 7. Enter the **Password** for the account.
 8. Click **Save**.
 
-> **Note:** If Netwrix Auditor cannot authenticate with the configured AD account, it records a collection error in the System Health log and continues snapshot collection using cloud-resolved identities only. Netwrix Auditor records transient AD connectivity issues as warnings and doesn't stop collection for these issues.
+> **Note:** If Netwrix Auditor can't authenticate with the configured AD account, it records a collection error in the System Health log and continues snapshot collection using cloud-resolved identities only. Netwrix Auditor records transient AD connectivity issues as warnings and doesn't stop collection for these issues.
 
 ## Configuring the monitoring scope (omit lists)
 
@@ -99,7 +99,7 @@ By default, Netwrix Auditor collects State-in-Time snapshots daily. To customize
 
 ### Importing historical snapshots
 
-Historical snapshots allow generating reports for past dates. A Global administrator must import historical snapshots.
+Historical snapshots let you generate reports for past dates. A Global administrator must import historical snapshots.
 
 **To import a historical snapshot:**
 
