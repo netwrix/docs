@@ -36,8 +36,8 @@ Increasing this limit lets the agent track larger files, but raises the resource
 
 ## Instructions
 
-1. Stop the **Gen7Agent** service.
-2. Open `C:\Program Files\NNT Change Tracker Suite\Gen7Agent\Gen7Agent.Service.exe.config` in a text editor.
+1. Stop the **Netwrix ChangeTracker Gen7 Agent NetCore** service.
+2. Open `C:\Program Files\NNT Change Tracker Suite\Gen7Agent (NetCore)\Gen7Agent.App.NetCore.dll.config` in a text editor.
 3. Locate the `filecontentmaxforextension` key.
 4. Set the value to the size, in bytes, that you want to allow. For example, to allow 1 MB:
 
@@ -46,9 +46,9 @@ Increasing this limit lets the agent track larger files, but raises the resource
    ```
 
 5. Save and close the file.
-6. Start the **Gen7Agent** service.
+6. Start the **Netwrix ChangeTracker Gen7 Agent NetCore** service.
 
-> **NOTE:** To apply the same limit across multiple agents on the same version and in a default configuration state, copy the edited file to each agent, then stop and start the **Gen7Agent** service on each one for the change to take effect.
+> **NOTE:** To apply the same limit across multiple agents on the same version and in a default configuration state, copy the edited file to each agent, then stop and start the **Netwrix ChangeTracker Gen7 Agent NetCore** service on each one for the change to take effect.
 
 After the service restarts, trigger a change on the file that previously exceeded the limit, or wait for the next scheduled tracking cycle. Confirm the fix worked by checking that the agent's rolling log no longer logs the `filecontentmaxforextension` message for that file, and that the agent now tracks the file's content change with a hash value instead of flagging it as untracked.
 
