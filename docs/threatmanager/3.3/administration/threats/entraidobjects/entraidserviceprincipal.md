@@ -7,8 +7,10 @@ sidebar_position: 50
 # Service Principal Details Page
 
 The Service Principal Details page provides information about a service principal (Enterprise
-Application) registered in Microsoft Entra ID. For service principals that act as the identity for
-an AI agent, the page also displays Agent Identity details.
+Application) registered in Microsoft Entra ID. A service principal is the local representation of
+an application in a Microsoft Entra ID tenant, and it defines what the application can access in
+that tenant. For service principals that act as the identity for an AI agent, the page also
+displays Agent Identity details.
 
 ![Service Principal Details Page](/images/threatmanager/3.3/administration/threatdetails/entraidserviceprincipalpage.webp)
 
@@ -24,18 +26,19 @@ service principal:
 - Add Tag button
 
 :::info
-If the service principal is an Agent Identity (a service principal that acts as the identity for an
-AI agent, created from an Agent Identity Blueprint) or an Agent Identity Blueprint Principal (the
-service principal that Microsoft Entra ID automatically creates for each Agent Identity Blueprint
-application, distinct from the Agent Identity service principals the blueprint creates), the
-profile card also displays:
+The profile card displays an additional field for two kinds of service principal: an Agent
+Identity, which acts as the identity for an AI agent and is created from an Agent Identity
+Blueprint; and an Agent Identity Blueprint Principal, which Microsoft Entra ID creates
+automatically for each Agent Identity Blueprint application. Both display:
 
 - Agent Blueprint – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
   for this service principal's Agent Identity Blueprint
 
-Threat Manager tags Agent Identity service principals with the built-in Agent Identity tag. See the
-[Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
-additional information about built-in tags.
+To tell the two apart, check the tag: Threat Manager tags Agent Identity service principals with
+the built-in Agent Identity tag, and tags Agent Identity Blueprint Principals with the Agent
+Blueprint tag instead, the same tag applied to the parent Agent Identity Blueprint application. See
+the [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) to view or manage
+all built-in and custom tags.
 :::
 
 The page has the following tabs:
@@ -45,9 +48,6 @@ The page has the following tabs:
 - Owners Tab (doesn't appear for Agent Identity Blueprint Principals)
 - Sponsors Tab (Agent Identity service principals only)
 - Agent Users Tab (Agent Identity service principals only)
-
-The Sponsors and Agent Users tabs appear for Agent Identity service principals only. Agent Identity
-Blueprint Principals display only the standard Threats and Activity Summary tabs.
 
 ## Threats Tab
 

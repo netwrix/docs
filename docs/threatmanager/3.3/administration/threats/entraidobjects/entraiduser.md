@@ -29,7 +29,7 @@ If the user is an Agent User (a Microsoft Entra ID user account that represents 
 profile card also displays:
 
 - Agent Identity – Links to the [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
-  for the Agent Identity, the service principal that acts as this agent's runtime identity
+  for the Agent Identity, the service principal that acts as the identity for this agent
 - Agent Blueprint – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
   for the Agent Identity Blueprint, the Entra ID application that defines this agent's identity
   configuration
@@ -39,8 +39,8 @@ To view the sponsors accountable for the agent, open the
 for its Agent Identity.
 
 Threat Manager tags Agent Users with the built-in Agent User tag. See the
-[Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for
-additional information about built-in tags.
+[Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) to view or manage
+all built-in and custom tags.
 :::
 
 The page has the following tabs:
@@ -108,7 +108,7 @@ The Group Membership tab displays groups in which the user is a member.
 
 ![Entra ID User Group Membership page](/images/threatmanager/3.0/administration/threatdetails/entraidusergroupmembershiptab.webp)
 
-It has the following sub-tabs:
+The Group Membership tab has the following sub-tabs:
 
 - Direct Member Of – Lists groups the user is a direct member of
 - Indirect Member Of – Lists groups the user is a member of via membership in a nested group
