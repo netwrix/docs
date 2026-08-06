@@ -14,11 +14,10 @@ custom tags. You can add tags and assign objects to those tags.
 The built-in tags include:
 
 - Administrator – An administrator user account
-- Agent Blueprint – Identifies an Agent Identity Blueprint, an application registered in Microsoft
-  Entra ID that defines the identity configuration for an AI agent (a software process that
-  authenticates and acts within Microsoft Entra ID without a human user). For example, an agent
-  that monitors support tickets and drafts responses authenticates using an Agent Identity
-  Blueprint.
+- Agent Blueprint – An Agent Identity Blueprint, an application registered in Microsoft Entra ID
+  that defines the identity configuration for an AI agent (a software process that authenticates
+  and acts within Microsoft Entra ID without a human user). For example, an agent that monitors
+  support tickets and drafts responses authenticates using an Agent Identity Blueprint.
 - Agent Identity – A service principal registered in Microsoft Entra ID that acts as the identity
   for an AI agent. For example, an agent that runs scheduled maintenance tasks authenticates using
   its Agent Identity.
@@ -108,7 +107,8 @@ This page provides the following information:
 - Delete Tag button – Available only for custom tags; you can't delete built-in tags. Click Delete
   Tag, then confirm the deletion.
 - Search box – Search for objects in the Untagged Items box and the Tagged Items box by typing in
-  the textbox. You can search for user objects, group objects, file objects, or computer objects.
+  the textbox. You can search for users, groups, files, computers, applications, service
+  principals, or roles.
 - Types – The dropdown menu provides object type filter options that apply to the search box
   results. When you aren't searching, the filter types apply to the Tagged Items box.
 - Untagged Items box – Displays objects that match the search text. This box is blank until you
@@ -128,10 +128,13 @@ Apply the Type filters you want when searching for objects to tag.
 
 The following types are available:
 
-- Users – Active Directory user objects
-- Groups – Active Directory group objects
+- Users – User objects
+- Groups – Group objects
 - Files – File objects
-- Computers – Active Directory computer objects
+- Computers – Computer objects
+- Applications – Application objects
+- Service Principals – Service principal objects
+- Roles – Role objects
 
 The window filters the Tagged Items and Untagged Items lists by the selected object types.
 

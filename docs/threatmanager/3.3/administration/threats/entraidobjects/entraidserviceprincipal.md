@@ -9,7 +9,8 @@ sidebar_position: 50
 The Service Principal Details page provides information about a service principal (Enterprise
 Application) registered in Microsoft Entra ID. A service principal is the local representation of
 an application in a Microsoft Entra ID tenant, and it defines what the application can access in
-that tenant. For service principals that act as the identity for an AI agent, the page also
+that tenant. For service principals that act as the identity for an AI agent (a software process
+that authenticates and acts within Microsoft Entra ID without a human user), the page also
 displays Agent Identity details.
 
 ![Service Principal Details Page](/images/threatmanager/3.3/administration/threatdetails/entraidserviceprincipalpage.webp)
@@ -26,13 +27,12 @@ service principal:
 - Add Tag button
 
 :::info
-The profile card displays an additional field for two kinds of service principal: an Agent
-Identity, which acts as the identity for an AI agent and which Microsoft Entra ID creates from an
-Agent Identity Blueprint; and an Agent Identity Blueprint Principal, which Microsoft Entra ID
-creates automatically for each Agent Identity Blueprint application. Both display:
-
-- Agent Blueprint – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
-  for this service principal's Agent Identity Blueprint
+Two kinds of service principal display an additional Agent Blueprint field: an Agent Identity,
+which acts as the identity for an AI agent and is created from an Agent Identity Blueprint, and an
+Agent Identity Blueprint Principal, which Microsoft Entra ID creates automatically for each Agent
+Identity Blueprint application. The Agent Blueprint field links to the
+[Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
+for the service principal's Agent Identity Blueprint.
 
 To tell the two apart, check the tag: Threat Manager tags Agent Identity service principals with
 the built-in Agent Identity tag, and tags Agent Identity Blueprint Principals with the Agent
@@ -54,7 +54,7 @@ The page has the following tabs:
 The Threats tab displays a chart of the threats detected for the service principal by timeframe. A
 key for threat types appears below the chart.
 
-![Application Threat Tab](/images/threatmanager/3.0/administration/threatdetails/threatstab.webp)
+![Service Principal Threats Tab](/images/threatmanager/3.0/administration/threatdetails/threatstab.webp)
 
 ## Activity Summary Tab
 
@@ -64,7 +64,7 @@ periods.
 The Activity Overview (Past 12 Months) shows a color-coded heat map of activity. Other metrics
 include Average Activity by Day, and Events by Type.
 
-![Entra ID Application Activity Summary Tab](/images/threatmanager/3.0/administration/threatdetails/activitysummarytab.webp)
+![Service Principal Activity Summary Tab](/images/threatmanager/3.0/administration/threatdetails/activitysummarytab.webp)
 
 ## Owners Tab
 
@@ -73,7 +73,7 @@ doesn't appear for Agent Identity Blueprint Principals.
 
 The table displays the following columns:
 
-- Name – The display name of the owner
+- Name – The display name of the owner. Click the name to open its details page.
 - Type – The type of Entra ID object
 - Email – The email address associated with the owner object
 

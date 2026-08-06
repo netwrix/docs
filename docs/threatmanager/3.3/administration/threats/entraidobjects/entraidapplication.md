@@ -32,7 +32,8 @@ The page has the following tabs:
 
 :::info
 An Agent Identity Blueprint is an application registered in Microsoft Entra ID that defines the
-identity configuration for an AI agent. Microsoft Entra ID creates Agent Identity service
+identity configuration for an AI agent (a software process that authenticates and acts within
+Microsoft Entra ID without a human user). Microsoft Entra ID creates Agent Identity service
 principals and Agent User accounts from an Agent Identity Blueprint. Threat Manager tags Agent
 Identity Blueprints with the built-in Agent Blueprint tag, which the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md)
@@ -101,10 +102,10 @@ The Roles tab displays a table of the roles assigned to the Microsoft Entra ID a
 The Roles tab displays two tables:
 
 - Eligible Assignments – Lists the roles that the application is eligible for. An eligible
-  assignment is a role assignment that an object can activate when needed but that isn't
+  assignment is a role assignment that the application can activate when needed but that isn't
   permanently active
 
-- Active Assignments – Lists roles that are active and usable to the application.
+- Active Assignments – Lists roles that are active and available to the application.
 
 The eligible assignments table has the following columns:
 
