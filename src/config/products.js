@@ -167,12 +167,6 @@ export const PRODUCTS = [
         isLatest: false,
         sidebarFile: './sidebars/auditor/10.7.js',
       },
-      {
-        version: '10.6',
-        label: '10.6',
-        isLatest: false,
-        sidebarFile: './sidebars/auditor/10.6.js',
-      },
     ],
     defaultVersion: '10.9',
   },
