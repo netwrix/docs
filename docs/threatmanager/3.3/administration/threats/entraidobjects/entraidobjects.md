@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Entra ID Object Details Pages
 
-The Microsoft Entra ID Object details pages provide details on Microsoft Entra ID objects including
-users, groups, applications, service principals, and roles. Use these pages to review the
+The Microsoft Entra ID Object details pages provide information about Microsoft Entra ID objects,
+including users, groups, applications, service principals, and roles. Use these pages to review the
 resources related to threats and events in Threat Manager. Pages include:
 
 - [User Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraiduser.md)

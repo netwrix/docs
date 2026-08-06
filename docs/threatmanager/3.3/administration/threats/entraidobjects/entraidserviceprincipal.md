@@ -34,7 +34,7 @@ automatically for each Agent Identity Blueprint application. The Agent Blueprint
 [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
 for the service principal's Agent Identity Blueprint.
 
-To tell the two apart, check the tag: Threat Manager tags Agent Identity service principals with
+To distinguish the two, check the tag: Threat Manager tags Agent Identity service principals with
 the built-in Agent Identity tag, and tags Agent Identity Blueprint Principals with the Agent
 Blueprint tag instead — the same tag it applies to the parent Agent Identity Blueprint application.
 See the [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md)
