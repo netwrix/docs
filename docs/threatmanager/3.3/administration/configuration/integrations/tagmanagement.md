@@ -26,8 +26,8 @@ The built-in tags include:
   channel.
 - Automated Account – An account where Threat Manager detected automated authentication behavior
 - Azure Files Storage Account – A computer account that Azure Files creates in Active Directory to
-  enable Kerberos-based SMB authentication. It represents an Azure storage account rather than a
-  physical or virtual machine.
+  enable Kerberos-based Server Message Block (SMB) authentication. It represents an Azure storage
+  account rather than a physical or virtual machine.
 - Certificate Authority – A server that issues and manages digital certificates for a public key
   infrastructure (PKI)
 - Computer Account – A computer account
@@ -128,13 +128,13 @@ Apply the Type filters you want when searching for objects to tag.
 
 The following types are available:
 
-- Users – User objects
-- Groups – Group objects
+- Users – Active Directory and Microsoft Entra ID user objects
+- Groups – Active Directory and Microsoft Entra ID group objects
 - Files – File objects
-- Computers – Computer objects
-- Applications – Application objects
-- Service Principals – Service principal objects
-- Roles – Role objects
+- Computers – Active Directory computer objects
+- Applications – Microsoft Entra ID application objects
+- Service Principals – Microsoft Entra ID service principal objects
+- Roles – Microsoft Entra ID role objects
 
 The window filters the Tagged Items and Untagged Items lists by the selected object types.
 

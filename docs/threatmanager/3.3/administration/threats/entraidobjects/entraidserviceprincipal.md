@@ -9,9 +9,9 @@ sidebar_position: 50
 The Service Principal Details page provides information about a service principal (Enterprise
 Application) registered in Microsoft Entra ID. A service principal is the local representation of
 an application in a Microsoft Entra ID tenant, and it defines what the application can access in
-that tenant. For service principals that act as the identity for an AI agent (a software process
-that authenticates and acts within Microsoft Entra ID without a human user), the page also
-displays Agent Identity details.
+that tenant. For service principals related to AI agents (a software process that authenticates
+and acts within Microsoft Entra ID without a human user), the page also displays Agent Identity
+details.
 
 ![Service Principal Details Page](/images/threatmanager/3.3/administration/threatdetails/entraidserviceprincipalpage.webp)
 
