@@ -33,8 +33,8 @@ pages contain some common page elements.
 ## Profile Card
 
 The profile card displays information about the selected user, application, service principal,
-group, or role. The fields displayed vary by object type. See the individual details page topics
-for the fields specific to each object.
+group, or role. The fields displayed vary by object type. See the details page topics listed above
+for the fields specific to each object type.
 
 ![Entra ID User Profile Card](/images/threatmanager/3.0/administration/threatdetails/entraiduserprofilecard.webp)
 
@@ -74,6 +74,12 @@ display the following tabs:
     - group - displays a table that lists the users that belong to that group
 
 - Roles - roles assigned to the group or user
+
+Some tabs display only for AI agent objects. See the
+[Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
+and [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
+for definitions of these object types.
+
 - Owners Tab – Lists the objects that can manage the application or service principal. Doesn't
   appear for Agent Identity Blueprint Principals
 - Sponsors Tab – Lists the directory objects that sponsor an Agent Identity or Agent Identity

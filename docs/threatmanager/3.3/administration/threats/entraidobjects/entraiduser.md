@@ -25,7 +25,8 @@ the user:
 - Tags, with an option to add additional tags
 
 :::info
-If the user is an Agent User (a Microsoft Entra ID user account that represents an AI agent), the
+If the user is an Agent User (a Microsoft Entra ID user account that represents an AI agent, a
+software process that authenticates and acts within Microsoft Entra ID without a human user), the
 profile card also displays:
 
 - Agent Identity – Links to the [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
@@ -41,6 +42,10 @@ for its Agent Identity.
 Threat Manager tags Agent Users with the built-in Agent User tag. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) to view or manage
 all built-in and custom tags.
+
+An Agent User page displays the same tabs as any other user page. To view the Agent Users linked
+to an Agent Identity, open the
+[Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md).
 :::
 
 The page has the following tabs:
