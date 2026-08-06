@@ -31,9 +31,9 @@ the user:
 - Tags, with an option to add more tags
 
 :::info
-If the user is an Agent User (a Microsoft Entra ID user account that represents an AI agent, a
-software process that authenticates and acts within Microsoft Entra ID without a human user),
-Threat Manager tags the account with the built-in Agent User tag. See the
+An Agent User is a Microsoft Entra ID user account that represents an AI agent — a software process
+that authenticates and acts within Microsoft Entra ID without a human user. Threat Manager tags
+Agent User accounts with the built-in Agent User tag. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) to view or manage
 all built-in and custom tags.
 

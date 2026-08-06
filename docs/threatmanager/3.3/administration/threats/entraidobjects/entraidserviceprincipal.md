@@ -27,16 +27,16 @@ service principal:
 - Add Tag button
 
 :::info
-Two kinds of service principal display an additional Agent Blueprint field: an Agent Identity,
-which acts as the identity for an AI agent and which Microsoft Entra ID creates from an Agent
-Identity Blueprint, and an Agent Identity Blueprint Principal, which Microsoft Entra ID creates
+Two kinds of service principal display an additional Agent Blueprint field. An Agent Identity acts
+as the identity for an AI agent, and Microsoft Entra ID creates it from an Agent Identity Blueprint.
+An Agent Identity Blueprint Principal is the service principal that Microsoft Entra ID creates
 automatically for each Agent Identity Blueprint application. The Agent Blueprint field links to the
 [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
 for the service principal's Agent Identity Blueprint.
 
-To distinguish the two, check the tag: Threat Manager tags Agent Identity service principals with
-the built-in Agent Identity tag, and tags Agent Identity Blueprint Principals with the Agent
-Blueprint tag instead — the same tag it applies to the parent Agent Identity Blueprint application.
+To distinguish the two, check the tag. Threat Manager tags Agent Identity service principals with
+the built-in Agent Identity tag. It tags Agent Identity Blueprint Principals with the Agent
+Blueprint tag — the same tag it applies to the parent Agent Identity Blueprint application.
 See the [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md)
 to view or manage all built-in and custom tags.
 :::
