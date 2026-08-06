@@ -14,7 +14,7 @@ custom tags. You can add tags and assign objects to those tags.
 The built-in tags include:
 
 - Administrator – An administrator user account
-- Agent Blueprint – Applied to an Agent Identity Blueprint, an application registered in Microsoft
+- Agent Blueprint – Identifies an Agent Identity Blueprint, an application registered in Microsoft
   Entra ID that defines the identity configuration for an AI agent (a software process that
   authenticates and acts within Microsoft Entra ID without a human user). For example, an agent
   that monitors support tickets and drafts responses authenticates using an Agent Identity
@@ -25,7 +25,7 @@ The built-in tags include:
 - Agent User – A user account in Microsoft Entra ID that represents an AI agent. Agent Users let an
   agent access APIs and services that require a user identity, such as a shared mailbox or a Teams
   channel.
-- Automated Account – An account with automated authentication behavior detected
+- Automated Account – An account where Threat Manager detected automated authentication behavior
 - Azure Files Storage Account – A computer account that Azure Files creates in Active Directory to
   enable Kerberos-based SMB authentication. It represents an Azure storage account rather than a
   physical or virtual machine.
@@ -60,7 +60,7 @@ The table displays the following information for available tags:
 
 - Name – The name of the tag
 - Description – The description for the tag
-- Created – Date timestamp when the tag was created
+- Created – The date and time the tag was created
 - Created By – The user account that created the tag
 - Members – Number of tagged objects
 

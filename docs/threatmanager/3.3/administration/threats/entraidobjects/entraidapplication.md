@@ -34,13 +34,14 @@ The page has the following tabs:
 An Agent Identity Blueprint is an application registered in Microsoft Entra ID that defines the
 identity configuration for an AI agent. Microsoft Entra ID creates Agent Identity service
 principals and Agent User accounts from an Agent Identity Blueprint. Threat Manager tags Agent
-Identity Blueprints with the built-in Agent Blueprint tag, described on the
-[Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md).
+Identity Blueprints with the built-in Agent Blueprint tag, which the
+[Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md)
+describes.
 :::
 
 ## Threats Tab
 
-The Threats tab for an application displays the threats for the application by timeframe.
+The Threats tab displays the application's threats by timeframe.
 
 ![Application Threat Tab](/images/threatmanager/3.0/administration/threatdetails/threatstab.webp)
 
