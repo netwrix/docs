@@ -35,8 +35,8 @@ The page has the following tabs:
 - Threats Tab
 - Activity Summary Tab
 - Owners Tab
-- Group Membership Tab
-- Roles Tab
+- Group Membership Tab (doesn't appear for Agent Identity Blueprint applications)
+- Roles Tab (doesn't appear for Agent Identity Blueprint applications)
 - Sponsors Tab (Agent Identity Blueprint applications only)
 - Agent Identities Tab (Agent Identity Blueprint applications only)
 
@@ -67,6 +67,8 @@ The table displays the following columns:
 
 ## Group Membership Tab
 
+This tab doesn't appear for Agent Identity Blueprint applications.
+
 The Group Membership tab displays groups in which the application is a member.
 
 ![Entra ID Group Membership Tab](/images/threatmanager/3.0/administration/threatdetails/groupmembershiptab_3.webp)
@@ -93,6 +95,8 @@ Each table has the following columns:
 - Tags - The tags associated with the group Image
 
 ## Roles Tab
+
+This tab doesn't appear for Agent Identity Blueprint applications.
 
 The Roles tab displays the roles assigned to the Microsoft Entra ID application.
 
