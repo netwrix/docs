@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Prerequisites
 
-Netwrix Auditor Integration API uses HTTPS (Hypertext Transfer Protocol Secure) for communication with the automatically generated
-certificate. The default communication port is 9699.
+Netwrix Auditor Integration API uses HTTPS (Hypertext Transfer Protocol Secure) with the automatically generated
+certificate for communication. The default communication port is 9699.
 
 Refer to the [Security](/docs/auditor/10.9/api/security.md) topic for detailed instructions on how to disable HTTPS and
 manage other API settings.
