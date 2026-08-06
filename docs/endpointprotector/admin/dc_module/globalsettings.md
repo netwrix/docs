@@ -53,11 +53,11 @@ the Client's behavior for each specific entity (Global, Groups, and Computers).
 > With this enhanced language selection feature, Endpoint Protector provides a more accommodating
 > experience for users, making notifications and alerts more accessible and user-centric.
 
-- Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized termination and modification. When enabled, EPP Client installation folders have limited access and the EPP Client prevents unauthorized actors from unloading its processes and daemons. 
+- Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized termination and modification. When enabled, EPP Client installation folders have limited access and the EPP Client prevents unauthorized actors from unloading its processes on Windows and daemons macOS. 
 Tamper Mode applies to all supported operating systems (Windows, macOS, and Linux).
 
   :::note
-  Requires EPP Client version 2605 hotfix 1 or later (2605.x.2.x) for the full feature set on Windows and macOS.
+  Requires EPP Client version 2605 hotfix 1 or later (2605.x.2.x) for the full feature set.
   :::
 
   :::important
