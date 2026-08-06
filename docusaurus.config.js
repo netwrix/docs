@@ -230,7 +230,8 @@ const config = {
         apiKey: '1b20f30f13a874cd46f9d5c30b01d99c', // Use the search-only API key, not the admin key
         indexName: 'Production Docs',
 
-        // Enable contextual search (already great that you have product/version meta tags!)
+        // NOTE: overridden to false by the custom SearchBar (src/theme/SearchBar), which
+        // injects product/version facet filters itself. Kept here for theme compatibility.
         contextualSearch: true,
 
         // Search parameters for better results
@@ -266,21 +267,6 @@ const config = {
 
         // Placeholder text for the search box
         placeholder: 'Search the Netwrix docs...',
-
-        // Transform items before displaying (optional)
-        transformItems: (items) => {
-          return items.map((item) => {
-            // Add product badges or modify display as needed
-            return {
-              ...item,
-              // Example: Add custom badges based on product
-              _highlightResult: {
-                ...item._highlightResult,
-                // Customize highlighted results if needed
-              },
-            };
-          });
-        },
 
         // Replace paths if you're using different deployments
         // replaceSearchResultPathname: {

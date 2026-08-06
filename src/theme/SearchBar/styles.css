@@ -23,6 +23,25 @@
   z-index: calc(var(--ifm-z-index-fixed) + 1);
 }
 
+/* ungroup() gives every hit an empty lvl0, so DocSearch renders one empty section heading.
+   :empty scopes this to that heading — the start screen's "Recent"/"Favorite" headings survive. */
+.DocSearch-Hit-source:empty {
+  display: none;
+}
+
+/* Product > version on each hit, replacing the per-product group headings ungroup() collapsed.
+   Without it, four versions of the same page are four indistinguishable rows. */
+.DocSearch-Hit-product {
+  display: block;
+  padding: 0 16px 8px 56px;
+  margin-top: -4px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--docsearch-primary-color);
+  opacity: 0.8;
+}
+
 /* Multi-select dropdown styling */
 .DocSearch-MultiSelect {
   font-family: inherit;

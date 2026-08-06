@@ -16,6 +16,7 @@ import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import translations from '@theme/SearchTranslations';
 import {PRODUCTS} from '../../config/products';
+import {getVersionsForProducts, dedupeToLatestVersion} from '../searchUtils';
 
 let DocSearchModal = null;
 
@@ -92,7 +93,6 @@ function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, curr
             searchClient.search = function(searchMethodParams, requestOptions) {
                 const products = selectedProductsRef.current || [];
                 const versions = selectedVersionsRef.current || [];
-                const typoTolerance = false;
 
                 // Build product filter (OR logic - any of selected products)
                 const realProducts = products.filter(p => p !== '__all__' && p !== '__none__');
@@ -144,7 +144,6 @@ function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, curr
                             return {
                                 ...req,
                                 facetFilters: newFilters.length > 0 ? newFilters : undefined,
-                                typoTolerance,
                             };
                         })
                     };
@@ -161,16 +160,55 @@ function useTransformSearchClient(selectedProductsRef, selectedVersionsRef, curr
     );
 }
 
-function useTransformItems(props) {
+// DocSearch (@docsearch/react 4.6.3) buckets results twice before rendering, and both passes must
+// be defeated to show Algolia's relevance order:
+//   outer: groupBy(_highlightResult.hierarchy.lvl0) -> one section per group, capped at
+//          maxResultsPerGroup. The Algolia crawler sets lvl0 to "Product > Version", so results get
+//          bucketed per product and a product's hits past the cap are dropped.
+//   inner: groupBy(hierarchy.lvl1) -> reorders hits that share a page title ("Install" exists in
+//          every product); the key is only unique because the outer pass scoped it to one product.
+// So each hit gets one shared lvl0 (single section) and a unique raw lvl1 = url (no inner
+// clustering). But DocSearch renders the title from `_snippetResult.hierarchy.lvl1.value || raw
+// hierarchy.lvl1` — so overwriting raw lvl1 with the url makes title-match hits (which lack a
+// _snippetResult) display the url. We therefore copy the highlighted title from _highlightResult
+// into _snippetResult; that value is Algolia-escaped, so it is safe as innerHTML. Raw
+// hierarchy.lvl0 is kept and shown per-hit as the product label.
+//
+// This shims around the crawler putting the product in lvl0, and depends on DocSearch grouping on
+// lvl0/lvl1 and resolving the title via _snippetResult. If a future @docsearch/react bump changes
+// either, the modal silently reverts to product order — re-verify the Ctrl+K modal renders one flat
+// list after any Docusaurus upgrade. The real fix is to stop putting the product in lvl0 in the
+// crawler config, after which this whole shim deletes.
+const ONE_GROUP = {value: '', matchLevel: 'none', matchedWords: []};
+
+function ungroup(items) {
+    return items.map((item) => {
+        const title = item._highlightResult?.hierarchy?.lvl1?.value ?? item.hierarchy?.lvl1 ?? '';
+        return {
+            ...item,
+            hierarchy: {...item.hierarchy, lvl1: item.url},
+            _snippetResult: {
+                ...item._snippetResult,
+                hierarchy: {...item._snippetResult?.hierarchy, lvl1: {value: title, matchLevel: 'full'}},
+            },
+            _highlightResult: {
+                ...item._highlightResult,
+                hierarchy: {...item._highlightResult?.hierarchy, lvl0: ONE_GROUP},
+            },
+        };
+    });
+}
+
+function useTransformItems(selectedVersionsRef) {
     const processSearchResultUrl = useSearchResultUrlProcessor();
-    const [transformItems] = useState(() => {
-        return (items) =>
-            props.transformItems
-                ? props.transformItems(items)
-                : items.map((item) => ({
-                    ...item,
-                    url: processSearchResultUrl(item.url),
-                }));
+    const [transformItems] = useState(() => (items) => {
+        const mapped = items.map((item) => ({...item, url: processSearchResultUrl(item.url)}));
+        // Modal version state never holds the '__all__' sentinel (MultiSelectDropdown
+        // maps the All toggle to []) and can't hold versions without a product
+        // (filters reset on open; onChangeProducts prunes orphan versions), so
+        // non-empty means a real version filter is active — de-dupe off (R3).
+        const versionFilterActive = (selectedVersionsRef.current || []).length > 0;
+        return ungroup(versionFilterActive ? mapped : dedupeToLatestVersion(mapped));
     });
     return transformItems;
 }
@@ -192,7 +230,16 @@ function useResultsFooterComponent({closeModal, selectedProductsRef, selectedVer
 }
 
 function Hit({hit, children}) {
-    return <Link to={hit.url}>{children}</Link>;
+    return (
+        <Link to={hit.url}>
+            {children}
+            {/* lvl0 ("Product > Version") was the group heading until ungroup() collapsed it.
+                Shown per-hit so four versions of one page aren't four indistinguishable rows. */}
+            {hit.hierarchy?.lvl0 && (
+                <span className="DocSearch-Hit-product">{hit.hierarchy.lvl0}</span>
+            )}
+        </Link>
+    );
 }
 
 function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef}) {
@@ -240,6 +287,18 @@ function ResultsFooter({state, onClose, selectedProductsRef, selectedVersionsRef
     );
 }
 
+// DocSearch 4.6.3 replaces its default attributesToRetrieve wholesale when
+// searchParameters provides one, so the defaults must be re-listed here.
+// product_name/product_version are what dedupeToLatestVersion keys on.
+// Re-verify this list against DocSearch's defaults on any @docsearch/react
+// bump (same caveat as ungroup()).
+const ATTRIBUTES_TO_RETRIEVE = [
+    'hierarchy.lvl0', 'hierarchy.lvl1', 'hierarchy.lvl2', 'hierarchy.lvl3',
+    'hierarchy.lvl4', 'hierarchy.lvl5', 'hierarchy.lvl6',
+    'content', 'type', 'url',
+    'product_name', 'product_version',
+];
+
 function useSearchParameters({contextualSearch, productFacetFilters = [], ...props}) {
     function mergeFacetFilters(f1, f2) {
         const normalize = (f) => (typeof f === 'string' ? [f] : f);
@@ -276,6 +335,7 @@ function useSearchParameters({contextualSearch, productFacetFilters = [], ...pro
     return useMemo(() => ({
         ...props.searchParameters,
         facetFilters,
+        attributesToRetrieve: ATTRIBUTES_TO_RETRIEVE,
     }), [
         contextualSearch,
         JSON.stringify(facetFilters),
@@ -297,21 +357,6 @@ const PRODUCT_OPTIONS = [
     if (b.value === '__all__') return 1;
     return a.label.localeCompare(b.label);
 });
-
-// Helper to get versions for selected products
-function getVersionsForProducts(selectedProducts) {
-    if (!selectedProducts || selectedProducts.length === 0 || selectedProducts.includes('__all__')) {
-        return [];
-    }
-    const versionsSet = new Set();
-    selectedProducts.forEach(productName => {
-        const product = PRODUCTS.find(p => p.name === productName);
-        if (product && product.versions) {
-            product.versions.forEach(v => versionsSet.add(v.version));
-        }
-    });
-    return Array.from(versionsSet).sort();
-}
 
 // Multi-select dropdown component with checkboxes
 function MultiSelectDropdown({label, options, selectedValues, onChange, placeholder}) {
@@ -439,7 +484,7 @@ function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProduct
     // Keep searchParameters stable - don't include product filters here
     // Product filters are injected at request time via transformSearchClient
     const searchParameters = useSearchParameters({...props, productFacetFilters: []});
-    const transformItems = useTransformItems(props);
+    const transformItems = useTransformItems(selectedVersionsRef);
     const transformSearchClient = useTransformSearchClient(selectedProductsRef, selectedVersionsRef, currentLocale);
     const searchContainer = useRef(null);
     const searchButtonRef = useRef(null);
@@ -532,6 +577,9 @@ function DocSearch({externalUrlRegex, onModalOpen, onModalClose, selectedProduct
                         {...props}
                         translations={props.translations?.modal ?? translations.modal}
                         searchParameters={searchParameters}
+                        // One group now (see ungroup), so this caps the whole list. DocSearch
+                        // defaults it to 5, which would drop every hit past the fifth.
+                        maxResultsPerGroup={searchParameters.hitsPerPage ?? 20}
                     />,
                     searchContainer.current,
                 )}
@@ -735,13 +783,17 @@ export default function SearchBar() {
                                 onChange={onChangeProducts}
                                 placeholder="All products"
                             />
-                            <MultiSelectDropdown
-                                label="Versions"
-                                options={availableVersions}
-                                selectedValues={selectedVersions}
-                                onChange={onChangeVersions}
-                                placeholder="All versions"
-                            />
+                            {/* availableVersions always holds the '__all__' sentinel at index 0,
+                                so length > 1 means a specific product is selected (R2). */}
+                            {availableVersions.length > 1 && (
+                                <MultiSelectDropdown
+                                    label="Versions"
+                                    options={availableVersions}
+                                    selectedValues={selectedVersions}
+                                    onChange={onChangeVersions}
+                                    placeholder="All versions"
+                                />
+                            )}
                         </div>
                         {/* Our own close button — replaces the DocSearch-Close button
                             (which is hidden via CSS) so we avoid mutating React-owned
