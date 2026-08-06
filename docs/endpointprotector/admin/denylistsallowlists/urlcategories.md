@@ -4,12 +4,15 @@ description: "URL Categories"
 sidebar_position: 30
 ---
 
+
 # URL Categories
 
 URL Categories are custom-deﬁned lists of web domains that can be set on Content Aware Policies to
 limit the Deep Packet Inspection monitoring of the web traﬃc. If no Deep Packet Inspection Monitored
 URL Category is set on a policy, the Endpoint Protector Client will monitor all web domains by
 default.
+
+You can create up to 1,000 URL category lists, with up to 50,000 entries per list.
 
 :::warning
 URL Categories only apply when the Deep Packet Inspection feature is active.

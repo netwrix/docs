@@ -4,6 +4,7 @@ description: "System Parameters"
 sidebar_position: 150
 ---
 
+
 # System Parameters
 
 ## Device Types and Notiﬁcations
@@ -132,154 +133,18 @@ Computers and Groups.
 
 ![Custom Device Control User Remediation Notiﬁcations](userremediationnotif.webp)
 
+
 ## Contextual Detection
 
-From this section, you can manage the contextual detection for the entire system. If enabled, the
-conﬁdential information detected by Endpoint Protector will be inspected for both content and
-context.
-
-In addition to the function that detects sensitive information (e.g.: Credit Cards, IDs, Passports,
-Driving Licenses, etc.), the context will also be taken into consideration (e.g.: proximity to other
-relevant keywords, other related functions, regular expressions, etc.).
-
-In addition to providing context to the detected sensitive information, this functionality also
-helps decrease false positives.
-
 :::note
-This feature applies at a global level, for both Content Aware Protection and eDiscovery
-Policies. If enabled, the context detection will supersede the content only detection through the
-system. Please ensure the accuracy of the rules and the relevance for your scenarios before enabling
-this functionality.
+Global Contextual Detection has been removed in version 5.9.6.0. Contextual detection rules are
+now configured at the policy level only. Each policy can have its own set of up to 15 contextual
+detection rules with independent AND/OR logic.
+
+To configure contextual detection for a Content Aware Protection policy, go to
+**Content Aware Protection** > **Content Aware Policy** > edit a policy > **Contextual Detection**
+tab. For eDiscovery policies, see [eDiscovery policies and scans](ed_module/edpolicies.md).
 :::
-
-
-Once the Contextual Detection feature is enabled, it will apply at a global level, based on the
-rules deﬁned in the Contextual XML (but also linked to the conﬁgured Content Aware Protection and
-eDiscovery policies).
-
-There are two options to create the Contextual rules:
-
-- creating it directly from the Endpoint Protector Server
-- manually editing the Contextual XML and then uploading it to the Endpoint Protector Server
-
-:::note
-To address conﬂicts between Global and per-policy Contextual Rules, Endpoint Protector
-Clients no longer receive Global Contextual Rules if at least one policy has its individual
-Contextual Rule set. This marks the deprecation of Global Contextual Rules, emphasizing the
-prioritization of individual policy conﬁgurations.
-:::
-
-
-### Creating the XML
-
-This method is recommended for general use as it is the easiest method and it can cover most use
-cases.
-
-![Creating the XML](contextualdetectionone.webp)
-
-![Creating the XML](contextualdetectiontwo.webp)
-
-For each category of Predeﬁned Content (e.g.: Credit Cards, IDs, Passports, Driving Licenses, etc.),
-contextual detection can be conﬁgured by clicking on the **Add** button and selecting options such
-as:
-
-- Category and Type – the content aware detection function.
-- Surrounding text – the number of characters of the search interval to determine the context.
-- Related Dictionary – a set of keywords related to the PII.
-- Related Regular Expression – an additional way of adding a related rule that is not among the
-  content aware detection functions.
-- Related File Type – the related ﬁle type.
-- Related File Size (MB) – the related ﬁle size, in megabytes.
-- Minimum Matches – the minimum number of items to match to validate the detection rule.
-- Unrelated Dictionary – a set of keywords not related to the PII.
-- Unrelated Regular Expression – an additional way of adding a non-related rule that is not among
-  the content aware detection functions.
-- Unrelated File Type – the unrelated ﬁle type.
-- Unrelated File Size (MB) – the unrelated ﬁle size, in megabytes.
-- Maximum Matches – the value above which the rule will not be validated (recommended value is 0).
-
-:::warning
-Do not forget to Generate the Contextual XML after creating or making changes to
-contextual rules!
-:::
-
-
-### Uploading the XML
-
-This method is recommended for advanced Administrators as it offers extended functionalities but it
-also requires a deeper understanding of the XML syntax.
-
-Advanced contextual functionalities are also available. For this method, the Contextual XML ﬁle has
-to be edited manually by the Administrator and then uploaded to the Endpoint Protector Server.
-
-Proximity, Dictionaries, Regex, etc. have to be deﬁned within the XML document. In addition to the
-functionalities described in the previous chapter, there are more complex options available like:
-Conﬁdence Level, additional Functions to consider when determining the Main Function, etc.
-
-Study the examples provided within Endpoint Protector Server to understand the syntax needed in the
-Contextual XML.
-
-**Example**
-
-```
-<Rules>
- <!-- SSN / Canada this is an example with multiple patterns -->
- <Entity id="ssn/canada" patternsProximity="300" recommendedConfidence="75">
-  <Pattern confidenceLevel="75">
-   <Any minMatches="2">
-   <Match idRef="keywords_Canada_SSN_1" />
-     <Match idRef="keywords_Canada_SSN_2" />
-   <Match idRef="validate_date_fct" />
-     <Match idRef="regex_email_id" /> <!-- This is just an example -->
-   </Any>
-      <Any maxMatches="0">
-   <Match idRef="keywords_exclude_Canada_SSN" />
-     </Any>
-  </Pattern>
-</Entity>
-  <Function id="validate_date_fct" name="SEARCH_DATE_INTRL" /> <!-- name should be the
-same with the one on the client -->
-  <Function id="func_dlp_is_valid_ssn" name="SEARCH_SSN_Canada" /> <!-- name
-should be the same with the one on the client -->
-```
-
-**Example**
-
-```
-<Keyword id="keywords_Canada_SSN_1">
-  <Group matchStyle="word">
-    <Term>sin</Term>
-    <Term>social insurance</Term>
-    <Term>numero d'assurance sociale</Term>
-    <Term>sins</Term>
-    <Term>ssn</Term>
-    <Term>ssns</Term>
-    <Term>social security</Term>
-    <Term>numero d'assurance sociale</Term>
-    <Term>national identiﬁcation number</Term>
-    <Term>national id</Term>
-    <Term>sin#</Term>
- </Group>
-</Keyword>
-<Keyword id="keywords_Canada_SSN_2">
-  <Group matchStyle="word">
-    <Term>driver's license</Term>
-    <Term>drivers license</Term>
-    <Term>driver's license</Term>
-    <Term>drivers license</Term>
-    <Term>DOB</Term>
-    <Term>Birthdate</Term>
- </Group>
-</Keyword>
-<Keyword id="keywords_exclude_Canada_SSN">
-  <Group matchStyle="word">
-     <Term>random word</Term>
- </Group>
-</Keyword>
-<Regex id="regex_email_id">[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}</Regex>
-</Rules>
-</RulePackage>
-```
 
 ## Advanced Scanning Detection
 

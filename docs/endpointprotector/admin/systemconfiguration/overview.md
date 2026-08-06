@@ -155,6 +155,11 @@ When updating your operating system to the latest macOS Ventura, eppclient.log a
 eppsslsplit.log will be deleted from private/var/log.
 :::
 
+:::note
+The Client Software Upgrade mechanism supports Windows ARM client packages. When a combined
+package containing both x64 and ARM installers is uploaded, the server automatically selects the
+correct installer for each client's architecture during upgrade.
+:::
 
 :::warning
 The feature is not compatible for Endpoint Protector instances that are running on
