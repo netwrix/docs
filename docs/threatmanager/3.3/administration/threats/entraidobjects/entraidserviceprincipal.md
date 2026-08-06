@@ -28,9 +28,9 @@ service principal:
 
 :::info
 Two kinds of service principal display an additional Agent Blueprint field: an Agent Identity,
-which acts as the identity for an AI agent and is created from an Agent Identity Blueprint, and an
-Agent Identity Blueprint Principal, which Microsoft Entra ID creates automatically for each Agent
-Identity Blueprint application. The Agent Blueprint field links to the
+which acts as the identity for an AI agent and which Microsoft Entra ID creates from an Agent
+Identity Blueprint, and an Agent Identity Blueprint Principal, which Microsoft Entra ID creates
+automatically for each Agent Identity Blueprint application. The Agent Blueprint field links to the
 [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
 for the service principal's Agent Identity Blueprint.
 
