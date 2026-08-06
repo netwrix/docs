@@ -20,7 +20,7 @@ On this page, you can view the current port settings and restrictions on the TLS
 2. Ensure the **Leverage Integration API** option is enabled.
 3. Click **Modify settings** under the API settings section.
 4. Specify a port number. The product automatically creates a Windows firewall rule.
-5. Select the minimum TLS version from the list.
+5. Select the minimum TLS version from the list. For a new installation, this defaults to 1.2.
 6. If you use a third-party firewall, create a rule for inbound connections manually.
 
 ![Integration API Settings](/images/auditor/10.9/addon/connectwise/integrations_thumb_0_0.webp)
