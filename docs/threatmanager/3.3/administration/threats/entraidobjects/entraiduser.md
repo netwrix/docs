@@ -22,30 +22,22 @@ the user:
 - Object Type
 - Tenant
 - On-premises synced accounts (will appear if a synced account exists)
+- Agent Identity (Agent Users only) – Links to the [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
+  for the Agent Identity, the service principal that acts as the identity for this agent. Open its
+  Service Principal Details Page to view the sponsors accountable for the agent.
+- Agent Blueprint (Agent Users only) – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
+  for the Agent Identity Blueprint, the Entra ID application that defines this agent's identity
+  configuration
 - Tags, with an option to add additional tags
 
 :::info
 If the user is an Agent User (a Microsoft Entra ID user account that represents an AI agent, a
-software process that authenticates and acts within Microsoft Entra ID without a human user), the
-profile card also displays:
-
-- Agent Identity – Links to the [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
-  for the Agent Identity, the service principal that acts as the identity for this agent
-- Agent Blueprint – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
-  for the Agent Identity Blueprint, the Entra ID application that defines this agent's identity
-  configuration
-
-To view the sponsors accountable for the agent, open the
-[Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
-for its Agent Identity.
-
-Threat Manager tags Agent Users with the built-in Agent User tag. See the
+software process that authenticates and acts within Microsoft Entra ID without a human user),
+Threat Manager tags the account with the built-in Agent User tag. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) to view or manage
 all built-in and custom tags.
 
-An Agent User page displays the same tabs as any other user page. To view the Agent Users linked
-to an Agent Identity, open the
-[Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md).
+An Agent User page displays the same tabs as any other user page.
 :::
 
 The page has the following tabs:
@@ -136,7 +128,7 @@ Each table has the following columns:
 
 ## Roles Tab
 
-The Roles tab displays a table of the roles assigned to the Microsoft Entra ID user.
+The Roles tab displays the roles assigned to the Microsoft Entra ID user.
 
 ![Entra ID User Role Assignment Eligible page](/images/threatmanager/3.0/administration/threatdetails/entraiduserrolestabeligible.webp)
 

@@ -7,7 +7,7 @@ sidebar_position: 30
 # Entra ID Object Details Pages
 
 The Microsoft Entra ID Object details pages provide details on Microsoft Entra ID objects including
-users, groups, applications, service principals, devices, and roles. Use these pages to review the
+users, groups, applications, service principals, and roles. Use these pages to review the
 resources related to threats and events in Threat Manager. Pages include:
 
 - [User Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraiduser.md)
@@ -74,14 +74,14 @@ display the following tabs:
     - group - displays a table that lists the users that belong to that group
 
 - Roles - roles assigned to the group or user
+- Owners Tab – Lists the objects that can manage the application or service principal. Doesn't
+  appear for Agent Identity Blueprint Principals
 
 Some tabs display only for AI agent objects. See the
 [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
 and [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
 for definitions of these object types.
 
-- Owners Tab – Lists the objects that can manage the application or service principal. Doesn't
-  appear for Agent Identity Blueprint Principals
 - Sponsors Tab – Lists the directory objects that sponsor an Agent Identity or Agent Identity
   Blueprint. Appears only for those object types
 - Agent Identities Tab – Lists the Agent Identities and Agent Users created from an Agent Identity

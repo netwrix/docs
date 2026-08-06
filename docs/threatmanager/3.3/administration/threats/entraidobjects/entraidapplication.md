@@ -20,16 +20,6 @@ application:
 - Tenant
 - Add Tag button
 
-The page has the following tabs:
-
-- Threats Tab
-- Activity Summary Tab
-- Owners Tab
-- Group Membership Tab
-- Roles Tab
-- Sponsors Tab (Agent Identity Blueprint applications only)
-- Agent Identities Tab (Agent Identity Blueprint applications only)
-
 :::info
 An Agent Identity Blueprint is an application registered in Microsoft Entra ID that defines the
 identity configuration for an AI agent (a software process that authenticates and acts within
@@ -39,6 +29,16 @@ Identity Blueprints with the built-in Agent Blueprint tag, which the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md)
 describes.
 :::
+
+The page has the following tabs:
+
+- Threats Tab
+- Activity Summary Tab
+- Owners Tab
+- Group Membership Tab
+- Roles Tab
+- Sponsors Tab (Agent Identity Blueprint applications only)
+- Agent Identities Tab (Agent Identity Blueprint applications only)
 
 ## Threats Tab
 
@@ -56,7 +56,8 @@ The Activity Overview (Past 12 Months) shows a color-coded heat map of user acti
 
 ## Owners Tab
 
-The Owners tab lists the objects, known as owners, that can manage the application.
+The Owners tab lists the objects, known as owners, that can manage the application. This tab
+appears for all applications.
 
 The table displays the following columns:
 
@@ -93,7 +94,7 @@ Each table has the following columns:
 
 ## Roles Tab
 
-The Roles tab displays a table of the roles assigned to the Microsoft Entra ID application.
+The Roles tab displays the roles assigned to the Microsoft Entra ID application.
 
 ![Entra ID User Role Assignment Eligible page](/images/threatmanager/3.0/administration/threatdetails/entraiduserrolestabeligible.webp)
 
@@ -102,8 +103,8 @@ The Roles tab displays a table of the roles assigned to the Microsoft Entra ID a
 The Roles tab displays two tables:
 
 - Eligible Assignments – Lists the roles that the application is eligible for. An eligible
-  assignment is a role assignment that the application can activate when needed but that isn't
-  permanently active
+  assignment is a role assignment that Microsoft Entra ID can activate for the application when
+  needed but that isn't permanently active
 
 - Active Assignments – Lists roles that are active and available to the application.
 
