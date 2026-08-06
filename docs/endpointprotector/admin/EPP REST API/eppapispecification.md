@@ -219,7 +219,7 @@ Lists endpoint users. Soft-deleted users are excluded.
 | `department_id` | integer | Exact department match |
 | `domain` | string | Exact domain match |
 
-### GET /device-control/users/{id}
+### GET /device-control/users/`{id}`
 
 Returns a single user. Responds 404 if the user does not exist or has been deleted.
 
@@ -242,11 +242,11 @@ Request body (`username` required):
 | `sid` | string | No | — |
 | `department_id` | integer | No | Defaults to the default department when omitted |
 
-### PATCH /device-control/users/{id}
+### PATCH /device-control/users/`{id}`
 
 Partial update. Only the fields present in the body change. Pass `department_id: null` to clear the department. If the resulting `username` (plus `domain`) collides with a different active user, the API returns 400 with `A user with this identity already exists.`
 
-### DELETE /device-control/users/{id}
+### DELETE /device-control/users/`{id}`
 
 Soft-deletes a single user. Returns `{ "response": "allok" }`, or 404 if the user is absent or already deleted.
 
@@ -291,7 +291,7 @@ Lists endpoint computers. Soft-deleted computers are excluded.
 | `department_id` | integer | Exact department match |
 | `os_type` | integer | 1 (Windows), 2 (macOS), 3 (Linux) |
 
-### GET /device-control/computers/{id}
+### GET /device-control/computers/`{id}`
 
 Returns a single computer, or 404 if absent or deleted.
 
@@ -311,11 +311,11 @@ Request body (`name` required):
 | `department_id` | integer | No | Defaults to the default department when omitted |
 | `owner_id` | integer | No | ID of the owning user |
 
-### PATCH /device-control/computers/{id}
+### PATCH /device-control/computers/`{id}`
 
 Partial update of admin-managed metadata. Agent-managed fields cannot be changed. An identity collision returns 400 with `A computer with this identity already exists.`
 
-### DELETE /device-control/computers/{id}
+### DELETE /device-control/computers/`{id}`
 
 Soft-deletes a single computer.
 
@@ -362,7 +362,7 @@ Lists endpoint devices. Soft-deleted devices are excluded.
 | `department_id` | integer | Exact match |
 | `online` | integer | 0 = offline, 1 = online |
 
-### GET /device-control/devices/{id}
+### GET /device-control/devices/`{id}`
 
 Returns a single device, or 404 if absent or deleted.
 
@@ -387,11 +387,11 @@ Request body (`name` and `device_type_id` required):
 
 An unknown `device_type_id` returns 400 with `Unknown device type.`
 
-### PATCH /device-control/devices/{id}
+### PATCH /device-control/devices/`{id}`
 
 Partial update of admin-managed metadata (`name`, `description`, `friendly_name`, `friendly_description`, `department_id`, `owner_id`). Identity fields (`device_type_id`, `vid`, `pid`, `serial_no`) and agent-managed fields cannot be changed.
 
-### DELETE /device-control/devices/{id}
+### DELETE /device-control/devices/`{id}`
 
 Soft-deletes a single device.
 
@@ -450,7 +450,7 @@ Lists endpoint groups. Soft-deleted groups are excluded.
 | `department_id` | integer | Exact match |
 | `group_type` | integer | 0, 1, 2, or 3 |
 
-### GET /device-control/groups/{id}
+### GET /device-control/groups/`{id}`
 
 Returns a single group, or 404 if absent or deleted.
 
@@ -469,11 +469,11 @@ Request body (`name` required):
 | `priority` | integer | No | Non-negative; defaults to 999 |
 | `group_type` | integer | No | 0, 1, 2, or 3; defaults to 0 |
 
-### PATCH /device-control/groups/{id}
+### PATCH /device-control/groups/`{id}`
 
 Partial update. `name` must remain unique across active groups.
 
-### DELETE /device-control/groups/{id}
+### DELETE /device-control/groups/`{id}`
 
 Soft-deletes a single group. The global group cannot be deleted (returns 403).
 
@@ -525,7 +525,7 @@ Lists OTPs.
 | `revoke_sent` | integer | 0, 1, 2, or 3 |
 | `otp_code`, `justification`, `device_name`, `machine_name`, `username` | string | Partial match |
 
-### GET /offline-temporary-passwords/{id}
+### GET /offline-temporary-passwords/`{id}`
 
 Returns a single OTP, or 404 if absent.
 
@@ -548,11 +548,11 @@ Request body (`otp_type`, `duration`, and `justification` required):
 
 Returns 201 with the created OTP. Validation failures (including a referenced computer or user that does not exist) return 400.
 
-### PATCH /offline-temporary-passwords/{id}
+### PATCH /offline-temporary-passwords/`{id}`
 
 Revokes an OTP. This marks the OTP for revocation (`revoke_sent` = 2, To be revoked). The EPP agent processes the revocation and sets `revoke_sent` = 3 (Revoke sent) on its next sync. Returns 200, or 404 if the OTP is absent.
 
-### DELETE /offline-temporary-passwords/{id}
+### DELETE /offline-temporary-passwords/`{id}`
 
 Soft-deletes a single OTP.
 
@@ -624,7 +624,7 @@ Filters: `http_method`, `endpoint`, `status_code`, `actor`, `operation`, `resour
 
 Response fields: `id`, `timestamp`, `request_id`, `http_method`, `endpoint`, `status_code`, `actor`, `operation`, `resource_type`, `external_id`, `duration_ms`, `ip_address`, `user_agent`, `bulk_request_id`, `operation_index`.
 
-### GET /logs/scim-logs/{id}
+### GET /logs/scim-logs/`{id}`
 
 Returns a single SCIM log entry, wrapped in a `data` property, including the full `request_body` and `response_body` payloads.
 
