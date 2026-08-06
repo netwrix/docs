@@ -28,7 +28,7 @@ the user:
 - Agent Blueprint (Agent Users only) – Links to the [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
   for the Agent Identity Blueprint, the Entra ID application that defines this agent's identity
   configuration
-- Tags, with an option to add additional tags
+- Tags, with an option to add more tags
 
 :::info
 If the user is an Agent User (a Microsoft Entra ID user account that represents an AI agent, a
@@ -50,7 +50,7 @@ The page has the following tabs:
 
 ## Threats Tab
 
-The Threats tab for a user displays the threats for the user by timeframe.
+The Threats tab displays the user's threats by timeframe.
 
 ![threats](/images/threatmanager/3.0/administration/threatdetails/threats.webp)
 

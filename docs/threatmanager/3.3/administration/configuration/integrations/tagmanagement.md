@@ -106,9 +106,8 @@ This page provides the following information:
 - Description – The tag description. Type in the field to modify the description.
 - Delete Tag button – Available only for custom tags; you can't delete built-in tags. Click Delete
   Tag, then confirm the deletion.
-- Search box – Search for objects in the Untagged Items box and the Tagged Items box by typing in
-  the textbox. You can search for users, groups, files, computers, applications, service
-  principals, or roles.
+- Search box – Search for objects in the Untagged Items box and the Tagged Items box. You can
+  search for users, groups, files, computers, applications, service principals, or roles.
 - Types – The dropdown menu provides object type filter options that apply to the search box
   results. When you aren't searching, the filter types apply to the Tagged Items box.
 - Untagged Items box – Displays objects that match the search text. This box is blank until you
