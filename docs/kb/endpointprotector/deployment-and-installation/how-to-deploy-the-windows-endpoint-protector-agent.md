@@ -24,7 +24,7 @@ knowledge_article_id: kA0Qk0000001FTFKA2
 
 # How to Deploy the Windows Endpoint Protector Agent
 
-For the full reference, see [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation) and [Agent Install Parameters](/docs/endpointprotector/admin/agent#agent-install-parameters) in the Agent documentation. For deploying via Active Directory Group Policy without an MSI transform, see the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide#phase-3--uploading-epp--ee-client-packages) and [Active Directory](/docs/endpointprotector/install/activedirectory/overview).
+For the full reference, see [Agent Installation](/docs/endpointprotector/admin/agent#agent-installation) and [Agent Install Parameters](/docs/endpointprotector/admin/agent#agent-install-parameters) in the Agent documentation. For deploying via Active Directory Group Policy without an MSI transform, see [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#upload-procedure) and [Active Directory](/docs/endpointprotector/install/activedirectory/overview).
 
 ## Manual Installation
 

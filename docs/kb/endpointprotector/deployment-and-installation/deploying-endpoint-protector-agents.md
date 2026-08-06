@@ -30,7 +30,7 @@ This article explains how to deploy Endpoint Protector agents to endpoint system
 For the full reference, see [Client Software](/docs/endpointprotector/admin/systemconfiguration/overview#client-software).
 
 :::warning
-Only the latest Endpoint Protector and Enforced Encryption Clients are available for download from Client Software. If you're deploying to endpoints still running client version 5.9.4.1 or older, they can't receive the latest client package directly — you must deploy the 5.9.4.3 Hotfix 1 signature bridge client first. See [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide#certificate-bridge-and-upgrade-path) for the full certificate bridge explanation and required package list.
+Only the latest Endpoint Protector and Enforced Encryption Clients are available for download from Client Software. If you're deploying to endpoints still running client version 5.9.4.1 or older, they can't receive the latest client package directly — you must deploy the 5.9.4.3 Hotfix 1 signature bridge client first. See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#certificate-bridge--historical-context) for the full certificate bridge explanation and required package list.
 :::
 
 ## Instructions
