@@ -34,7 +34,7 @@ Deployment methods include:
 - **Active Directory Integration**: Leveraging Group Policy Objects for efficient client deployment.
 - **Third-party Management Tools**: Utilizing JAMF and Microsoft Intune for streamlined deployment.
 
-For the list of supported hypervisors and cloud platforms for the server appliance, see [Hypervisor Compatibility Check](/docs/endpointprotector/install/migrationprocedure/migrationguide#hypervisor-compatibility-check) in the Migration Guide.
+For the list of supported hypervisors and cloud platforms for the server appliance, see [Hypervisor Compatibility Check](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x#hypervisor-compatibility-check) in the Migration Guide.
 
 ## Version and OS Support Policy
 
