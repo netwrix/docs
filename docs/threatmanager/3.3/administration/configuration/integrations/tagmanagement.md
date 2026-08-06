@@ -32,8 +32,6 @@ The built-in tags include:
   infrastructure (PKI)
 - Computer Account – A computer account
 - Disabled – An account or object that's disabled in Active Directory or Microsoft Entra ID.
-  You can't use disabled objects to authenticate or access resources, but they may still hold role
-  assignments, group memberships, and permissions.
 - Domain Admin – An Active Directory domain administrator account
 - Domain Controller – An Active Directory domain controller account
 - Global Catalog – An Active Directory global catalog object
