@@ -110,7 +110,7 @@ For the full reference on Enforced Encryption configuration and modes, see [Enfo
 
 ## Client TLS Changes in 2608
 
-Starting with the Windows 2608 client, Endpoint Protector uses a custom bundled OpenSSL package instead of Windows' built-in Schannel TLS engine, and both the 2608 Client and Server support Post-Quantum Cryptography (PQC) for Client-to-Server communication. Endpoint Protector negotiates PQC automatically as the highest available option when both sides support it; otherwise, it falls back to the highest TLS version both sides support. See [Endpoint Protector Client TLS](/docs/endpointprotector/requirements/components#endpoint-protector-client-tls) for details.
+Starting with the Windows 2608 client, Endpoint Protector uses a custom bundled OpenSSL package instead of Windows' built-in Schannel TLS engine, and both the 2608 Client and Server support Post-Quantum Cryptography (PQC) for Client-to-Server communication. Endpoint Protector negotiates PQC automatically as the highest available option when both sides support it; otherwise, it falls back to the highest TLS version both sides support.
 
 ## Obsolete OS Limitations
 

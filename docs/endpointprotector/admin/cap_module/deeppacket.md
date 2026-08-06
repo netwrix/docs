@@ -4,6 +4,7 @@ description: "Deep Packet Inspection"
 sidebar_position: 40
 ---
 
+
 # Deep Packet Inspection
 
 The Deep Packet Inspection functionality provides a certain degree of granularity, allowing you to
@@ -27,7 +28,7 @@ alternative conﬁgurations for optimal functionality.
 
 :::warning
 To ensure consistent DPI behavior after enabling or disabling the feature or upgrading
-the Endpoint Protector, restart your computer.
+the Endpoint Protector, a restart of your computer is required.
 :::
 
 :::note
@@ -50,7 +51,7 @@ How do Stealthy DPI and Redirect-Based DPI compare in terms of EPP Client functi
 
 When should you choose Stealthy DPI over Regular DPI (Redirect-Based)?
 
--   Third-Party DLP or Firewall Software: If third-party software has trouble handling or blocking network traffic originating from a local proxy, consider switching to Stealthy DPI.
+-   Third-Party DLP or Firewall Software: If third-party software has trouble handling or blocking network traffic originating from a local proxy, switching to Stealthy DPI is recommended.
 -   Security-Enhanced Applications: If certain applications experience connectivity issues with Regular DPI (Redirect-Based), opting for Stealthy DPI can resolve these issues.
 
 ## Deep Packet Inspection Diagrams
@@ -99,31 +100,33 @@ Auto-refresh Certiﬁcate** and chose **Automatically** option
 
 ![Conﬁguring the Deep Packet Inspection - Auto-refresh Certiﬁcate feature](autorefreshcert.webp)
 
-EPP DPI module generates a certificate only at the first time a user visits a website and caches that certificate for subsequent visits to the same website. You can configure the certificate cache deletion interval in EPP Server versions 5.8.0.0 and above (refer to the following User Manual section [System Settings - DPI certificate](/docs/endpointprotector/admin/systemconfiguration/systemsettings) . Alternatively, Endpoint Protector clears the certificate cache upon computer reboot or when you disable the DPI feature.
+EPP DPI module generates a certificate only at the first time a user visits a website and caches that certificate for subsequent visits to the same website. The certificate cache deletion interval can be configured in EPP Server versions 5.8.0.0 and above (refer to this UM section [System Settings - DPI certificate](/docs/endpointprotector/admin/systemconfiguration/systemsettings) . Alternatively, the certificate cache is cleared either upon computer reboot or when the DPI feature is disabled.
 
 Endpoint Protector employs the same criteria as the Chromium open-source web browser for verifying website certificates, referencing the corporate CA certificates found in the system certificate stores. You can assess this validation by using diagnostic websites like https://badssl.com/.
 
-If needed, you can configure this feature through the DPI Bypass option described here [Global Settings - DPI configuration](/docs/endpointprotector/admin/dc_module/globalsettings#dpi-configuration).
+If needed, this feature can be configured through the DPI Bypass option described here [Global Settings - DPI configuration](/docs/endpointprotector/admin/dc_module/globalsettings#dpi-configuration).
 
 ### DPI on Windows
 
 :::note
-The Endpoint Protector Client issues the Deep Packet Inspection Certificate on Windows automatically and transparently. No additional steps are required.
+Issuing the Deep Packet Inspection Certificate on Windows is handled automatically and
+transparently by the Endpoint Protector Client. No additional steps are required.
 :::
 
 ### DPI Certiﬁcate on macOS
 
-Due to the latest changes in macOS 11.0 that affect Deep Packet Inspection, the Deep Packet
-Inspection feature requires a new Root Certificate to work on the mentioned macOS version.
+Due to the latest changes in the macOS 11.0 that affect Deep Packet Inspection, a new Root
+Certiﬁcate is needed in order for the Deep Packet Inspection feature to work on the mentioned macOS
+version.
 
 :::note
-Deep Packet Inspection will only work on macOS 11.0 and newer if you add the Deep Packet Inspection
-Certiﬁcate for the Endpoint Protector Client.
+Deep Packet Inspection will only work on macOS 11.0 and newer if Deep Packet Inspection
+Certiﬁcate is added for the Endpoint Protector Client.
 :::
 
 
-You can download this certiﬁcate from System Conﬁguration, System Settings, and Deep Packet
-Inspection Certiﬁcate, then add it manually or automatically through deployment solutions.
+This certiﬁcate can be downloaded from System Conﬁguration, System Settings, and Deep Packet
+Inspection Certiﬁcate and added manually or automatically through deployment solutions.
 
 To add it manually, follow these steps.
 
@@ -153,8 +156,8 @@ select **Always Trust**.
 
 :::warning
 be aware that regenerating the Server Certificate Stack will require macOS and
-Linux users to manually add the new certificate into the keychain. On Windows, Endpoint Protector
-updates the certificate automatically.
+Linux users to manually add the new certificate into the keychain. On Windows, the certificate will
+be updated automatically.
 :::
 
 ### DPI Certificate on Linux
@@ -165,12 +168,12 @@ inspection for printing and file transfers to MTP devices. The process differs s
 Debian-based and Red Hat-based systems.
 
 :::note
-Ensure you download the cacert.pem certificate from the Endpoint Protector Server and
-configure it properly for your Linux distribution.
+Ensure the cacert.pem certificate is downloaded from the Endpoint Protector Server and
+properly configured for your Linux distribution.
 :::
 
 
-Follow these steps, specific to your Linux distribution, to configure the certificate manually.
+Follow the steps below, specific to your Linux distribution, to configure the certificate manually.
 
 **Debian-based Systems (e.g., Ubuntu)**
 
@@ -213,9 +216,9 @@ For more details on certificate installation and management on Linux, see the fo
 - [Managing CA Certificates on Linux](https://www.baeldung.com/linux/ca-certificate-management)
 
 :::warning
-Ensure you add the certificate correctly for the Endpoint Protector Client to function
-properly. If you regenerate the Server Certificate Stack, Linux users must manually reconfigure the
-certificate using the preceding steps.
+Ensure the certificate is added correctly for the Endpoint Protector Client to function
+properly. If the Server Certificate Stack is regenerated, Linux users must manually reconfigure the
+certificate using the steps above.
 :::
 
 
@@ -227,7 +230,7 @@ manage settings and add allowed domains for the Gmail provider.
 By default, the Deep Packet Inspection functionality comes with a list of predeﬁned ports (80, 443,
 8080, etc.). You can add ports from this section, if custom ports are used in a speciﬁc network,
 particularly by one of the monitored applications deﬁned as an Exit Point within a Content Aware
-Protection (CAP) Policy.
+Protection Policy.
 
 ![Deep Packet Inspection Ports and Settings](dpiports.webp)
 
@@ -249,8 +252,8 @@ In this section you can also manage the following settings:
 
 
     :::warning
-    In blocking mode, platforms such as Slack and Google Chat might generate Instant Messaging
-    events multiple times. This behavior results from the tools'
+    In blocking mode, Instant Messaging events related to platforms such as Slack and
+    Google Chat might be generated multiple times. This behavior is attributed to the tools'
     inherent retry mechanisms when a message is blocked. Endpoint Protector is designed to block all
     such retry attempts for enhanced security.
     :::
@@ -275,7 +278,7 @@ In this section you can also manage the following settings:
     When using Yahoo, the email recipients whitelist for attachments will work only if
     the attachment is uploaded after the recipients are added. If the recipients are modiﬁed after
     the attachment has been added, the ﬁle will not be scanned again and validated against the new
-    recipients list. You may experience inconsistent behavior on Linux machines.
+    recipients list. Inconsistent behavior may be experienced on Linux machines.
     :::
 
 
@@ -294,13 +297,13 @@ In this section you can also manage the following settings:
     To specify the allowed business accounts, enter a value in the Add allowed Business accounts field and
     then click **+**
 
-    The new entry appears on the Allowed Business accounts list, where you can delete it
+    The new entry will be displayed on the Allowed Business accounts list, from where you can delete
     by clicking **X**.
 
     :::warning
     Endpoint Protector will block access to all Google domains (business and private)
     used for Gmail, Google Drive, Google Docs, etc. that aren't listed here. If the list remains
-    empty, Endpoint Protector doesn't block any Google domain.
+    empty, no Google domain will be blocked.
     :::
 
 
@@ -313,7 +316,7 @@ In this section you can also manage the following settings:
 
 To use this setting, you must be familiar with JSON concepts and structures.
 
-Review the following Syntax examples considering the values used are the default values from the
+Go over the following Syntax examples considering the values used are the default values from the
 Endpoint Protector Server UI:
 
 - You can specify multiple paths, separated by a comma "," inside the curly brackets. The paths will
@@ -349,13 +352,10 @@ Endpoint Protector Server UI:
 ![Monitor Webmail JSON Format Parser Usage](webmailjson.webp)
 
 :::info
-Due to recent changes that cloud providers applied, don't
-apply any changes in the JSON parser unless Monitor Webmail isn't working
+It is advised, that due to recent changes applied by cloud providers, to not
+apply any changes in the JSON parser, unless Monitor Webmail isn't working
 :::
 
-:::warning
-For Monitor webmail events, the Email Sender and Email Subject columns in the Content Aware Report populate only when the Body field contains content.
-:::
 
 ## Deep Packet Inspection Applications
 
@@ -363,7 +363,7 @@ From this section, you can enable or disable the Deep Packet Inspection function
 application that is subject to this functionality.
 
 :::note
-Only the applications that support Deep Packet Inspection are available in the list.
+Only the applications that support Deep Packet Inspection are available in the list below.
 :::
 
 
@@ -375,6 +375,21 @@ Control** > **Settings** (Global, Groups, Computers, etc.). For detailed informa
 the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic.
 :::
 
+### Command-line tools
+
+Starting with version 5.9.6.0, the following command-line tools are available in the Deep Packet
+Inspection Applications list for all operating systems:
+
+- **WGET**
+- **CURL**
+- **AWS CLI**
+
+These tools were previously monitored as file system transfer channels (Content Aware Protection
+only). With this change, they are inspected at the network level by DPI, providing visibility
+into data transfers made through these tools.
+
+To enable or disable DPI for these applications, go to **Content Aware Protection** > **Deep Packet
+Inspection Applications** and select or clear the corresponding checkboxes.
 
 ## Certiﬁcate status matrix
 

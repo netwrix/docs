@@ -4,6 +4,7 @@ description: "Policy Configuration and Application"
 sidebar_position: 10
 ---
 
+
 # Policy Configuration and Application
 
 Content Aware Policies are sets of rules for sensitive content detection that enforce ﬁle transfers
@@ -181,7 +182,7 @@ platforms and channels. The following exit points are available for monitoring.
 
 ### Applications
 
-- Web Browsers (e.g., Internet Explorer, Chrome, Firefox, Safari, etc.)
+- Web Browsers (e.g., Chrome, Firefox, Safari, DuckDuckGo, etc.)
 - E-mail (e.g., Outlook, Thunderbird, Lotus Notes, etc.)
 
 :::warning
@@ -191,8 +192,9 @@ with Windows Mail set as Exit Point to block restricted ﬁle transfers.
 :::
 
 
-- Instant Messaging (e.g., Skype, Pidgin, Google Talk, etc.)
+- Instant Messaging (e.g., Pidgin, Google Talk, etc.)
 - Cloud Services / File Sharing (e.g., Google Drive Client, iCloud, Dropbox, DC++, etc.)
+- AI/LLMs (e.g., Claude, ChatGPT, Microsoft Copilot)
 - Social Media / Others (e.g., iTunes, Total Commander, GoToMeeting, etc.)
 
 :::note
@@ -382,7 +384,7 @@ security, content blocking occurs during the copy operation.
 Newer Linux Ubuntu versions have 'snap'-based applications installed by default, affecting Endpoint
 Protector Client functionality. This may result in missing ﬁle-related events in Content Aware
 Protection scans. The reliance on 'snap'-based applications also affects ﬁle-related web browser
-activities, exacerbating this limitation. Consider non-’snap’-based applications (where possible) as
+activities, exacerbating this limitation. Consider non-'snap'-based applications (where possible) as
 alternative conﬁgurations for optimal functionality.
 
 The following are additional settings found under Policy Exit Points:
@@ -398,4 +400,13 @@ The following are additional settings found under Policy Exit Points:
 When enabled, it is recommended to enable the **Advanced Printer** and **MTP
 Scanning** option in Settings (Global, Groups, Computers, etc.)
 
+:::
+
+## MIME Type Allowlist defaults
+
+:::warning
+Starting with version 5.9.6.0, archive file types in the global MIME Type Allowlist are unchecked
+by default on new instances. Existing instances with defined policies retain their current
+configuration. After upgrading, review the MIME Type Allowlist and enable archive types if your
+policies require them.
 :::
