@@ -28,8 +28,8 @@ The built-in tags include:
 - Azure Files Storage Account – A computer account that Azure Files creates in Active Directory to
   enable Kerberos-based SMB authentication. It represents an Azure storage account rather than a
   physical or virtual machine.
-- Certificate Authority – A server that issues and manages the digital certificates used in a
-  public key infrastructure (PKI)
+- Certificate Authority – A server that issues and manages digital certificates for a public key
+  infrastructure (PKI)
 - Computer Account – A computer account
 - Disabled – An account or object that's disabled in Active Directory or Microsoft Entra ID.
   You can't use disabled objects to authenticate or access resources, but they may still hold role
@@ -59,7 +59,7 @@ The table displays the following information for available tags:
 
 - Name – The name of the tag
 - Description – The description for the tag
-- Created – The date and time the tag was created
+- Created – The tag's creation date and time
 - Created By – The user account that created the tag
 - Members – Number of tagged objects
 
@@ -113,7 +113,7 @@ This page provides the following information:
   results. When you aren't searching, the filter types apply to the Tagged Items box.
 - Untagged Items box – Displays objects that match the search text. This box is blank until you
   perform a search.
-- Tagged Items box – Lists objects with this tag applied
+- Tagged Items box – Lists objects that have this tag
 
 ## Use the Type Filter
 

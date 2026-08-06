@@ -33,8 +33,8 @@ pages contain some common page elements.
 ## Profile Card
 
 The profile card displays information about the selected user, application, service principal,
-group, or role. The fields displayed vary by object type. See the details page topics listed above
-for the fields specific to each object type.
+group, or role. The fields vary by object type. See the individual details page topics for the
+fields specific to each object type.
 
 ![Entra ID User Profile Card](/images/threatmanager/3.0/administration/threatdetails/entraiduserprofilecard.webp)
 
