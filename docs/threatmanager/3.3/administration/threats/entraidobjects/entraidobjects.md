@@ -74,13 +74,13 @@ display the following tabs:
     - group - displays a table that lists the users that belong to that group
 
 - Roles - roles assigned to the group or user
-- Owners Tab – Lists the objects that can manage the application or service principal. Not
-  displayed for Agent Identity Blueprint Principals
+- Owners Tab – Lists the objects that can manage the application or service principal. Doesn't
+  appear for Agent Identity Blueprint Principals
 - Sponsors Tab – Lists the directory objects that sponsor an Agent Identity or Agent Identity
-  Blueprint. Displayed only for those object types
+  Blueprint. Appears only for those object types
 - Agent Identities Tab – Lists the Agent Identities and Agent Users created from an Agent Identity
-  Blueprint. Displayed only on Agent Identity Blueprint applications
-- Agent Users Tab – Lists the Agent Users linked to an Agent Identity. Displayed only on Agent
+  Blueprint. Appears only on Agent Identity Blueprint applications
+- Agent Users Tab – Lists the Agent Users linked to an Agent Identity. Appears only on Agent
   Identity service principals
 
 ## Add Tag Button
