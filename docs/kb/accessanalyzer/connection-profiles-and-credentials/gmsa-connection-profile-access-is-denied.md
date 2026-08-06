@@ -56,8 +56,4 @@ By default, only the account that created the gMSA, or an account or group expli
 
 > **NOTE:** The console account only needs `PrincipalsAllowedToRetrieveManagedPassword` permission long enough to add the connection profile. After the profile is added, you can remove the console account from that property. The Netwrix Access Analyzer console server's computer account still needs permission to retrieve the gMSA password, since that is the account the connection actually authenticates as at runtime.
 
-Review the full set of gMSA prerequisites before configuring the connection profile.
-
-## Related Link
-
-- [Group Managed Service Accounts (gMSA) Configuration ⸱ Netwrix](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/connection/gmsa)
+Review the full set of gMSA prerequisites when configuring the connection profile [Group Managed Service Accounts (gMSA) Configuration ⸱ Netwrix](https://docs.netwrix.com/docs/accessanalyzer/12_0/admin/settings/connection/gmsa).
