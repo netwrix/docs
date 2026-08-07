@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-07T23:09:52.333Z",
+  "auditStartedAt": "2026-08-07",
+  "product": "accessanalyzer",
+  "since": "90 days ago",
+  "churnThreshold": 0.5,
+  "counts": {
+    "scanned": 2980,
+    "included": 2964,
+    "excludedByChurn": 14,
+    "excludedByDraft": 2,
+    "duplicateRows": 604
+  }
+}

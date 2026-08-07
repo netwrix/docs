@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-07T23:09:52.671Z",
+  "auditStartedAt": "2026-08-07",
+  "product": "identitymanager",
+  "since": "90 days ago",
+  "churnThreshold": 0.5,
+  "counts": {
+    "scanned": 2098,
+    "included": 2084,
+    "excludedByChurn": 14,
+    "excludedByDraft": 0,
+    "duplicateRows": 650
+  }
+}

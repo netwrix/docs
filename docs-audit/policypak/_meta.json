@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-07T23:09:52.595Z",
+  "auditStartedAt": "2026-08-07",
+  "product": "policypak",
+  "since": "90 days ago",
+  "churnThreshold": 0.5,
+  "counts": {
+    "scanned": 1675,
+    "included": 1646,
+    "excludedByChurn": 29,
+    "excludedByDraft": 0,
+    "duplicateRows": 0
+  }
+}

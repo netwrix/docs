@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-07T23:09:52.676Z",
+  "auditStartedAt": "2026-08-07",
+  "product": "partner",
+  "since": "90 days ago",
+  "churnThreshold": 0.5,
+  "counts": {
+    "scanned": 44,
+    "included": 40,
+    "excludedByChurn": 4,
+    "excludedByDraft": 0,
+    "duplicateRows": 0
+  }
+}
