@@ -13,12 +13,17 @@ generation, Reporting Services (or Advanced Services) are also required.
 The following table lists supported SQL Server versions and editions.
 
 Due to limited database size, Netwrix recommends Express Edition (with Reporting Services) only for
-evaluation, PoC, or small environments. For production environment, consider using Standard or
-Enterprise Edition.
+evaluation, PoC, or small environments **when using SQL Server 2022 or earlier**. For production
+environments, consider using Standard or Enterprise Edition.
+
+**NOTE:** SQL Server 2025 Express Edition does not include Power BI Report Server (PBIRS) or any
+built-in reporting services. If reporting functionality is required, use Standard or Enterprise
+Edition with SQL Server 2025, or remain on SQL Server Express 2022 or earlier. See the SQL Server
+2025 row in the table below for details.
 
 | Version                                                                      | Edition                                                                                                                                                                                                                                                       |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SQL Server 2025                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/sql-server/sql-server-downloads?msockid=112beb089ec7691328c3fc2e9fa568c1) with [Power BI Report Server](https://www.microsoft.com/en-us/download/details.aspx?id=105944) (for evaluation, PoC, and small environments) |
+| SQL Server 2025                                                              | - Standard or Enterprise Edition<br/>**NOTE:** Express Edition is supported for SQL Server 2025, but does not include Power BI Report Server (PBIRS) or any built-in reporting services. Reporting functionality is not available with SQL Server 2025 Express. If reporting is required, use Standard or Enterprise Edition with SQL Server 2025, or remain on [SQL Server 2022 Express](https://www.microsoft.com/en-us/download/details.aspx?id=104781) with [SQL Server Reporting Services 2022](https://www.microsoft.com/en-us/download/details.aspx?id=104502). Note that using SSRS 2022 (or earlier) with SQL Server 2025 Express is not an officially supported configuration and may break if Microsoft introduces incompatible changes in a future update. |
 | SQL Server 2022                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/download/details.aspx?id=104781) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC, and small environments) |
 | SQL Server 2019 (on-premises Windows version) cumulative update 10 and above | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/download/details.aspx?id=101064) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC, and small environments)                  |
 | SQL Server 2017                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/download/details.aspx?id=55994) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=55252) (for evaluation, PoC, and small environments)                  |
@@ -114,7 +119,8 @@ Consider the following:
 - Supported versions are 2012 and later.
 - Reporting Services supports only English-language operating systems.
 - Supported editions are Enterprise, Standard, and Express with Advanced Services (it includes
-  Reporting Services).
+  Reporting Services). **Note:** SQL Server 2025 Express Edition does not include any reporting
+  services. For SQL Server 2025, only Standard and Enterprise Editions support report generation.
 - If downloading SQL Server Express Edition with Advanced Services from Microsoft site, ensure
   you download the file whose name contains SQLEXPRADV. Otherwise, the installer won't deploy Reporting Services, and you won't be able to analyze and report on collected data.
 
