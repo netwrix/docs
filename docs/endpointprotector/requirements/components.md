@@ -52,7 +52,7 @@ user activity logs, and incident reports. MySQL handles agent registration, poli
 
 **CrateDB**
 
-CrateDB is a distributed SQL database optimized for time-series log data. Endpoint Protector uses CrateDB to store Device Control, Content Aware Protection, and eDiscovery logs. You can deploy CrateDB as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. You can add cluster nodes without downtime.
+CrateDB is a distributed SQL database optimized for time-series log data. Endpoint Protector uses CrateDB to store Device Control, Content Aware Protection, and eDiscovery logs. You can deploy CrateDB as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. Cluster nodes can be added with minimal downtime and availability impact.
 
 **Redis**
 
