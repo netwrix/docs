@@ -57,3 +57,4 @@ verify_dimensions.py
 git_status.txt
 touch_all_modified.py
 touch_files.py
+.gstack/
