@@ -52,7 +52,7 @@ user activity logs, and incident reports. MySQL handles agent registration, poli
 
 **CrateDB**
 
-CrateDB is a distributed SQL database optimized for time-series log data. Endpoint Protector uses CrateDB to store Device Control, Content Aware Protection, and eDiscovery logs. CrateDB can be deployed as a single node on the EPP server appliance or as a multi-node cluster for environments that generate high log volumes. Cluster nodes can be added without downtime.
+CrateDB is a distributed SQL database optimized for time-series log data. Endpoint Protector uses CrateDB to store Device Control, Content Aware Protection, and eDiscovery logs. CrateDB can be deployed as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. Cluster nodes can be added without downtime.
 
 **Redis**
 
@@ -85,3 +85,35 @@ The Endpoint Protector server runs on the following runtime components:
 | Redis | 7.x |
 | Nginx | Web server and reverse proxy |
 | Ubuntu | Server operating system |
+
+### Client to server communication
+
+This section describes how TLS encrypts communication between the Endpoint Protector Server and the Endpoint Protector Client.
+
+- On the Endpoint Protector Server, TLS 1.2 and TLS 1.3 are enabled by default. Endpoint Protector always negotiates the highest TLS version available on both the Client and the Server, and selects the strongest cipher suite TLS 1.3 offers.
+- Netwrix Support can enable TLS 1.1 upon request for backward compatibility with older agents and appliances.
+
+### Endpoint Protector Client TLS
+
+**TLS 1.3 Compatibility**
+
+**Endpoint Protector (EPP)**
+
+| OS      | Older version                                                         | Newer version                                                        | Endpoint Protector Client Features                                                                                                                    |
+| ------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows | Not compatible with Windows 7, XP, and versions older than Windows 10 | Compatible with Windows 10, version 1903 and higher, and Windows 11 | Version 2608 and later uses a custom bundled OpenSSL package. <br/> Version 2605 and earlier uses Windows' built-in TLS encryption engine (Schannel). |
+| macOS   | Compatible                                                              | Compatible                                                                | Uses a custom bundled OpenSSL package shipped with the Endpoint Protector Client.                                                                       |
+| Linux   | Not compatible                                                          | Compatible                                                                | Uses Linux's built-in OpenSSL engine.                                                                                                                     |
+
+**Enforced Encryption (EE)**
+
+| OS      | Enforced Encryption Client Features          |
+| ------- | --------------------------------------------- |
+| Windows | TLS over wolfCrypt SSL, FIPS 140-3 Validated   |
+| macOS   | TLS over wolfCrypt SSL, FIPS 140-3 Validated   |
+
+### Endpoint Protector PQC encryption
+
+Starting with the 2608 Client and Server release, Endpoint Protector supports Post-Quantum Cryptography (PQC) encryption for Client to Server communication.
+
+No admin action is required to enable PQC. Endpoint Protector negotiates it transparently and automatically as the highest available encryption option when both the Client and the Server are on version **2608.x.x.x** or later. If either side runs an older version, Endpoint Protector falls back to the highest TLS version both sides support.

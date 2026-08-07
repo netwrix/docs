@@ -122,7 +122,7 @@ To display the DPI Status column, click **Show/Hide Columns** and select **DPI S
 
 :::note
 DPI Status reflects the status only for computers that are actively communicating with the server.
-Real-time status isn't available — the value updates at each policy refresh interval.
+Real-time status isn't available — the value updates at each policy refresh interval and represents the last reported state.
 :::
 
 ### Filtering by migration status

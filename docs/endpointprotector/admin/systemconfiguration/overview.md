@@ -33,40 +33,12 @@ Click on the "Offline Patch Upload" button to begin the EPP Server patching proc
 ![Select the oﬄine patches from your computer and successively install them to the latest](offlinepatch.webp)
 
 :::note
-Customers using environments with version 5.9.4.2 or older should familiarize themselves with the [EPP Server 2509 release announcement](https://community.netwrix.com/t/major-version-announcement-endpoint-protector-server-version-2509/114025) and the associated [migration procedure for self hosted (on premises) customers](https://community.netwrix.com/t/on-premises-migration-procedures-for-endpoint-protector-server-v2509/114021).
+Customers running EPP Server version 5.9.4.2 or older should review the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide) for the current migration path to 2608, and follow [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) for the on-premises migration procedure.
 :::
 
->**This functionality and section have been removed starting with EPP Server version 2509. It is retained in the User Manual solely as guidance for customers using older server versions, until limited supportability expires.** <br />
->Click **Conﬁgure Live Update** to select manual or automatic live updates check, the number of
->retries, and manage the Automatic Reporting to the LiveUpdate Server.
->![Configuring Live Updates](configliveupdate.webp)
->
->Click **Check Now** to search for the Endpoint Protector Server updates displayed in the Available
->Updates section. You can select and install an update with **Apply Updates**, or all updates with
->**Apply all updates**. To view the latest installed updates, click **View Applied Updates**.
->
->You can also schedule an update. Select an entry from the available updates, click **Schedule
->update** and then use the calendar to select the date and conﬁrm your selection.
->
->![Checking for available EPP server Updates](availableupdates.webp)
->
->Use the Oﬄine Patch upload option to select the oﬄine patches from your computer and successively
->install them to the latest Endpoint Protector version.
->
->:::note
->To request the Offline Patch, submit a support ticket through the
->[Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html).
->:::
->
->
->![Select the oﬄine patches from your computer and successively install them to the latest](offlinepatch.webp)
->
->:::warning
->Before upgrading your Endpoint Protector server to the 5.7.0.0 server version from a
->pre-5206 version and adjacent OS image, you need to enable database partitions. For assistance,
->submit a support ticket through the
->[Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html).[](https://support.endpointprotector.com/hc/en-us/requests/new)
->:::
+:::note
+Starting with EPP Server version 2509, EPP Server no longer offers the Live Update feature. Apply patches only through the Offline Patch upload option in the Software Update section. Customers still running a 5.x legacy appliance can find the legacy Live Update procedure in [Using the Live Update Feature on 5.x Legacy Appliances](/docs/kb/endpointprotector/deployment-and-installation/using-the-live-update-feature-on-5x-legacy-appliances).
+:::
 
 ### Security Updates
 
