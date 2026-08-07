@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-07T23:09:52.681Z",
+  "auditStartedAt": "2026-08-07",
+  "product": "passwordpolicyenforcer",
+  "since": "90 days ago",
+  "churnThreshold": 0.5,
+  "counts": {
+    "scanned": 77,
+    "included": 54,
+    "excludedByChurn": 23,
+    "excludedByDraft": 0,
+    "duplicateRows": 0
+  }
+}

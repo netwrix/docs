@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-08-07T23:09:52.798Z",
+  "auditStartedAt": "2026-08-07",
+  "product": "threatprevention",
+  "since": "90 days ago",
+  "churnThreshold": 0.5,
+  "counts": {
+    "scanned": 577,
+    "included": 577,
+    "excludedByChurn": 0,
+    "excludedByDraft": 0,
+    "duplicateRows": 257
+  }
+}
