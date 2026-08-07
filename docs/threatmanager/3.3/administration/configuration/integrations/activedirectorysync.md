@@ -120,6 +120,9 @@ Select the domain from the list to see modification options:
   information.
 - Sync History – Displays the information on each synchronization event. See the Sync History Tab
   topic for additional information.
+- Service Accounts – Displays rules that tag standard user accounts as service accounts based on
+  Organizational Unit or SAM Account Name. See the Service Accounts Tab topic for additional
+  information.
 
 ### Domain Configuration Tab
 
@@ -192,6 +195,56 @@ By default, the table displays 10 records at a time. However, you can set this t
 100, or 1,000 rows with the dropdown menu above the right corner of the table. There is a search
 box above the left corner of the table. Page navigation buttons are below the table. You can also
 export the data from the current page using the **Export CSV** button.
+
+### Service Accounts Tab
+
+The Service Accounts tab lets you define rules that tag standard user accounts as service
+accounts based on their Organizational Unit (OU) or SAM Account Name. Use this tab to close the
+classification gap for accounts that Netwrix Threat Manager can't already identify through Active
+Directory object type — Managed Service Account (MSA), group Managed Service Account (gMSA), or
+Delegated Managed Service Account (DMSA) — or through User and Entity Behavior Analytics (UEBA)
+behavioral classification. For
+example, if your organization houses service accounts in a dedicated OU or names them with a
+consistent prefix such as `SVC_`, you can define a rule that tags every matching account without
+provisioning each one as a managed service account.
+
+Accounts tagged as service accounts, whether tagged by a rule on this tab or by another
+classification method, appear on the [Service Accounts](/docs/threatmanager/3.3/administration/serviceaccounts.md)
+dashboard.
+
+![Active Directory Sync details page for a specific domain showing the Service Accounts tab](/images/threatmanager/3.3/administration/configuration/integrations/serviceaccountstab.webp)
+
+To add a service account rule:
+
+**Step 1 –** Click **Add Rule**. A new rule card opens.
+
+**Step 2 –** For Attribute, select **Organizational Unit** or **SAM Account Name**.
+
+**Step 3 –** For Operator, select **Equals**, **Not Equal To**, **Contains**, **Does Not
+Contain**, **Starts With**, or **Ends With**.
+
+**Step 4 –** For Value, enter or select the value to match.
+
+- If Attribute is set to Organizational Unit, start typing to see autocomplete suggestions of OUs
+  that exist in the domain. Select **Add OU** to enter an OU that isn't in the list.
+- If Attribute is set to SAM Account Name, start typing to see autocomplete suggestions of account
+  names that exist in the domain, or enter a value directly. For example, select the Starts With
+  operator and enter `SVC_` to match every account name that begins with `SVC_`.
+
+**Step 5 –** To add another condition to the rule, click **+ Add** and select an attribute.
+
+**Step 6 –** Click **Save**. Netwrix Threat Manager tags matching accounts as service accounts on
+the next Active Directory sync.
+
+Repeat this process to add additional rules. Click **Add Rule** to create another rule, or select
+an existing rule to expand, edit, or delete it.
+
+:::note
+Removing a rule or a condition doesn't untag accounts that are already tagged as service accounts.
+To remove the Service Account tag from an account manually, use the
+[Tag Management](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md)
+page.
+:::
 
 ## Modify Active Directory Sync Policy
 
