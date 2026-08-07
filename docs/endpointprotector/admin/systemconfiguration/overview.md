@@ -6,9 +6,9 @@ sidebar_position: 140
 # System Configuration
 
 This section includes essential elements such as Endpoint Protector Clients, Licensing, and
-advanced configurations. These settings are critical for maintaining the system's performance,
-stability, and compliance, as they directly influence both the operational efficiency and
-reliability of the Endpoint Protector solution.
+advanced configurations. These settings maintain the system's performance, stability, and
+compliance, and they directly influence the operational efficiency and reliability of Endpoint
+Protector.
 
 ## Server Update
 
@@ -21,15 +21,15 @@ updates.
 
 ![Management of software updates](softwareupdate.webp)
 
-Starting with the EPP 5.9.4.2 release, EPP server patches are offered only as Offline Patch files. Use the Offline Patch upload option to select the patch files from your computer and install them to update Endpoint Protector to the latest version.
+Starting with the EPP 5.9.4.2 release, Netwrix offers EPP server patches only as Offline Patch files. Use the Offline Patch upload option to select the patch files from your computer and install them to update Endpoint Protector to the latest version.
 
-Beginning with EPP Server version 2509, all patches are delivered as cumulative updates, bringing your server directly to the latest version regardless of your current patch level.
+Beginning with EPP Server version 2509, all patches are cumulative updates that bring your server directly to the latest version regardless of your current patch level.
 
 :::note
 Download the latest offline patches from the Netwrix My Products portal:
 [Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html).
 :::
-Click on the "Offline Patch Upload" button to begin the EPP Server patching procedure, and select the downloaded patch file.
+Click the "Offline Patch Upload" button to begin the EPP Server patching procedure, and select the downloaded patch file.
 ![Select the oﬄine patches from your computer and successively install them to the latest](offlinepatch.webp)
 
 :::note
@@ -51,11 +51,11 @@ AWS, Goggle, etc.) with the exception for Operating System and Kernel upgrades.
 :::
 
 :::warning
-Netwrix does not allow on-premise (self-hosted) customers to perform backend security updates by any method other than the web UI. Any violation of this rule is outside of Netwrix support and may cause EPP Server malfunction.
+Netwrix doesn't allow on-premise (self-hosted) customers to perform backend security updates by any method other than the web UI. Any violation of this rule is outside of Netwrix support and may cause EPP Server malfunction.
 :::
 
 :::note
-Updates are not tested beforehand but are pulled from the oﬃcial Linux repository.
+Netwrix doesn't test updates beforehand. Endpoint Protector pulls them from the official Linux repository.
 :::
 
 
@@ -92,7 +92,7 @@ server or other sub-services in the background
 From this section, you can download the Endpoint Protector and Enforced Encryption Clients corresponding to
 your operating system.
 
-When using a custom WebUI port, please contact
+When using a custom WebUI port, contact
 [Netwrix Support](https://www.netwrix.com/support.html) to assist in conﬁguring the Nginx
 conﬁguration ﬁle.
 
@@ -100,7 +100,7 @@ conﬁguration ﬁle.
 Only the latest Endpoint Protector and Enforced Encryption Clients are available for download.
 :::
 
-When installing, you can simply click Generate to download a client with the configuration in the UI or
+When installing, you can click **Generate** to download a client with the configuration in the UI or
 copy the following details from this screen using the Copy button:
 
 - Endpoint Protector Server IP
@@ -111,30 +111,30 @@ copy the following details from this screen using the Copy button:
 ![Download and install the Endpoint Protector Client corresponding to your operating system](ClientSoftwarePage.webp)
 
 :::note
-Starting with the current release - 2509.0.1.0 - Endpoint Protector Client versions are displayed in the format XXXX.X.X.X on endpoints.
+Starting with release 2509.0.1.0, endpoints display Endpoint Protector Client versions in the format XXXX.X.X.X.
 :::
 
-For more client install options, please refer to the dedicated article on [Agent Installation Options](/docs/endpointprotector/admin/agent.md)
+For more client install options, refer to the dedicated article on [Agent Installation Options](/docs/endpointprotector/admin/agent.md)
 
 ## Client Software Upgrade
 
-From this section, you can upload the latest clients previously downloaded from the **Client Software** section in order to upgrade
+From this section, you can upload the latest clients previously downloaded from the **Client Software** section to upgrade
 the Endpoint Protector & Enforced Encryption Client and manage the upgraded jobs. The Client Software Upgrade feature is only available
 for Windows and macOS Clients.To upgrade your Linux Clients, submit a request using the [online form](https://www.endpointprotector.com/linux).
 
 :::note
-When updating your operating system to the latest macOS Ventura, eppclient.log and
-eppsslsplit.log will be deleted from private/var/log.
+When you update your operating system to the latest macOS Ventura, the eppclient.log and
+eppsslsplit.log files are deleted from private/var/log.
 :::
 
 :::note
-The Client Software Upgrade mechanism supports Windows ARM client packages. When a combined
-package containing both x64 and ARM installers is uploaded, the server automatically selects the
+The Client Software Upgrade mechanism supports Windows ARM client packages. When you upload a
+combined package containing both x64 and ARM installers, the server automatically selects the
 correct installer for each client's architecture during upgrade.
 :::
 
 :::warning
-The feature is not compatible for Endpoint Protector instances that are running on
+The feature isn't compatible for Endpoint Protector instances that are running on
 32-bit versions of Windows.
 :::
 
@@ -142,7 +142,7 @@ The feature is not compatible for Endpoint Protector instances that are running 
 ![Client Software Upgrade](ClientSoftwareUpdatePage.png)
 
 :::note
-Starting with release 2509.0.1.0 - Endpoint Protector Client versions are displayed in the format XXXX.X.X.X on endpoints.
+Starting with release 2509.0.1.0, endpoints display Endpoint Protector Client versions in the format XXXX.X.X.X.
 :::
 
 
@@ -151,7 +151,7 @@ Starting with release 2509.0.1.0 - Endpoint Protector Client versions are displa
 To upgrade your Endpoint Protector Client, you need to create a new upgrade job, following these
 steps:
 
-**Step 1 –** Select the OS version from the drop-down list and then click **Next**.
+**Step 1 –** Select the OS version from the dropdown list and then click **Next**.
 
 ![Create New Upgrade Job](createnewupgradejob.webp)
 
@@ -159,10 +159,10 @@ steps:
 click **Next**. You will view a summary of your selection above the table with endpoints.
 
 :::note
-Only computers that use the operating system you previously selected will be upgraded. If
-you selected a group that has an endpoint using a different operating system, it will not be
-upgraded. If you selected a mixed group, with both computers and users, only the computers will be
-upgraded.
+Endpoint Protector upgrades only computers that use the operating system you selected. If
+you selected a group that has an endpoint using a different operating system, Endpoint Protector
+doesn't upgrade that endpoint. If you selected a mixed group, with both computers and users,
+Endpoint Protector upgrades only the computers.
 :::
 
 
@@ -172,7 +172,7 @@ upgraded.
 clicking **Start Upgrade job**. You will view the upgrade as an entry on the Upgrade jobs section.
 
 :::note
-The upgrade process for the Endpoint Protector Client is impacted by a dedicated cron.
+A dedicated cron drives the upgrade process for the Endpoint Protector Client.
 Running every 5 minutes, the cron sets the upgrade process status to Pending and every 15 minutes
 checks and updates process status to Completed or Completed with failures.
 :::
@@ -183,7 +183,7 @@ checks and updates process status to Completed or Completed with failures.
 ### Manage Upgrade Jobs
 
 From this section you can view the upgraded jobs and use the Actions column to view job details,
-cancel, pause, retry, archive or delete an entry on the list.
+cancel, pause, retry, archive, or delete an entry on the list.
 
 To continue upgrading canceled Client Upgrade jobs, use the **Retry** option from the Actions
 column.
@@ -202,18 +202,17 @@ From this section, you can perform a remote uninstall of the Endpoint Protector 
 computers will receive the uninstall command at the same time they receive the next set of commands
 from the server.
 
-If the computer is oﬄine, it will receive the uninstall command the ﬁrst time it will come online.
-When the uninstall button is pressed the computer(s) will be grayed out until the action will be
-performed.
+If the computer is offline, it receives the uninstall command the first time it comes online.
+When you press the uninstall button, the computers are grayed out until the action completes.
 
-The uninstall command can be canceled if it was not already executed.
+You can cancel the uninstall command if it hasn't already run.
 
 ![Client Uninstall](clientuninstall.webp)
 
 :::note
 If the server and Endpoint Protector client can't communicate due to missing server
-certiﬁcation validation (when the certiﬁcation validation setting is enabled), uninstall commands
-can't be executed from the Endpoint Protector Server. In such cases, if you're unable to manually
+certiﬁcation validation (when the certiﬁcation validation setting is enabled), you can't run
+uninstall commands from the Endpoint Protector Server. In such cases, if you're unable to manually
 install the certiﬁcate on the Endpoint Protector Client computer, you can temporarily disable the
 certiﬁcation validation setting on the Endpoint Protector Server and synchronize the Endpoint
 Protector Client to retrieve an uninstall command.

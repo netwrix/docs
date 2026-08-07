@@ -9,7 +9,7 @@ sidebar_position: 10
 
 ## Devices
 
-From this section, you can view, sort, and export in Excel, PDF or CSV format any devices from the
+From this section, you can view, sort, and export in Excel, PDF, or CSV format any devices from the
 system. Use the Actions column to edit, manage rights, view device history and delete a speciﬁc
 device.
 
@@ -20,27 +20,27 @@ You can view the right for each device based on the color code from the Status c
 - Yellow indicates the device is allowed for some users or computers with restrictions
 
 :::note
-Any new device connected to a protected computer is automatically added to the database
-and assigned to its ﬁrst user which can be changed later.
+Endpoint Protector automatically adds any new device connected to a protected computer to the
+database and assigns it to its first user, which you can change later.
 :::
 
 
-![View, sort, and export in Excel, PDF or CSV format any devices from the system](devices.webp)
+![View, sort, and export in Excel, PDF, or CSV format any devices from the system](devices.webp)
 
 Click **Create** to manually add a new device on the list by providing device information: name,
 friendly name, type PID, department, description, friendly description, VID, serial number and
 custom class.
 
-Use **Choose action** to export list of devices, schedule a list export, export or import in JSON
-format or refresh the device codes.
+Use **Choose action** to export the list of devices, schedule a list export, or refresh the device
+codes. You can also export or import devices in JSON format.
 
-The **Export/Import Devices** in JSON format feature allows you to manage device lists from one
-Endpoint Protector Server to another and aims to correlate the device rights and the Groups.
+With the **Export/Import Devices** in JSON format feature, you can manage device lists from one
+Endpoint Protector Server to another, correlating the device rights and the Groups.
 
 - If the same Groups exist on both Servers, the imported devices will also maintain the access
   rights
-- If the Groups do not exist, the devices will still be imported but the access rights will be
-  ignored
+- If the Groups don't exist, Endpoint Protector still imports the devices but ignores the access
+  rights
 
 You can also import the devices directly from Active Directory.
 
@@ -52,8 +52,8 @@ For detailed information on Active Directory, refer to the
 
 ### Priority order
 
-If you do not conﬁgure the devices, the rights are inherited from the default Global Rights that are
-set per Device Types (USB Storage Device, Digital Camera, iPod, Thunderbolt, Chip Card Device,
+If you don't configure the devices, the devices inherit rights from the default Global Rights set
+per Device Type (USB Storage Device, Digital Camera, iPod, Thunderbolt, Chip Card Device,
 etc.).
 
 :::note
@@ -67,8 +67,8 @@ starting with the highest:
 
 ![Priority order whech configuring device rights](priortyorder.webp)
 
-For example, If global rights indicate that no computer on the system has access to a speciﬁc
-device, and for one computer that device has been authorized, then that computer will have access to
+For example, if global rights indicate that no computer on the system has access to a specific
+device, and you authorize that device for one computer, then that computer has access to
 that device.
 
 ### Device Rights
@@ -80,7 +80,7 @@ Actions column.
 
 ![Managing device rights](devicerights.webp)
 
-After selecting a device and assigning rights to speciﬁc users, computers or groups follow these
+After selecting a device and assigning rights to speciﬁc users, computers, or groups, follow these
 steps:
 
 **Step 1 –** Select the **Entity** and the **Device** right.
@@ -100,18 +100,18 @@ will display the Logs Report page ﬁltered for the respective device.
 
 ## Computers
 
-From this section, you can ﬁlter, create, uninstall or delete a computer and use the Choose action
+From this section, you can ﬁlter, create, uninstall, or delete a computer and use the Choose action
 option to create a Settings Report, Export List of Computers and Schedule Export list.
 
 You can download the Settings Report from System Maintenance, the
 [Exported Entities](/docs/endpointprotector/admin/systemmaintenance/overview.md#exported-entities) topic to view the Deep
-Packet Inspection status for each entity (Computer/User/Group) and the entity from which Deep Packet
-Inspection is used.
+Packet Inspection (DPI) status for each entity (Computer/User/Group) and the entity from which Deep
+Packet Inspection is used.
 
-Any new computer that has the Endpoint Protector Client deployed will be automatically added to the
-database, thus making it manageable.
+Endpoint Protector automatically adds any new computer that has the Endpoint Protector Client
+deployed to the database, making it manageable.
 
-![Filter, create, uninstall or delete a computer ](computers.webp)
+![Filter, create, uninstall, or delete a computer ](computers.webp)
 
 ### DPI Status
 
@@ -131,37 +131,38 @@ The **Status** filter in the Computers list includes migration-specific values (
 "Migration successful"). Use these values to filter the list and identify computers at each stage of
 a client migration.
 
-The migration status is also included in SIEM export events as the `migration_status` attribute.
+Endpoint Protector also includes the migration status in SIEM export events as the
+`migration_status` attribute.
 
-The Endpoint Protector Client has a self-registration mechanism. This process is run once after the
-Client software is installed on a client computer. The Client will then communicate to the Server
-its existence in the system. The Server will store the information regarding the Computer in the
-database and it will assign a License.
+The Endpoint Protector Client has a self-registration mechanism. This process runs once after you
+install the Client software on a client computer. The Client then communicates its existence in the
+system to the Server. The Server stores the information regarding the Computer in the database and
+assigns a License.
 
 :::note
-The self-registration mechanism acts whenever a change in the Computer licensing module is
-made, and also each time the application Client is reinstalled. The owner of the computer is not
-saved in the process of self-registration.
+The self-registration mechanism acts whenever you make a change in the Computer licensing
+module, and also each time you reinstall the application Client. Self-registration doesn't save
+the owner of the computer.
 :::
 
 
 For more details about Licensing, go to the
 [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic.
 
-A Computer is identiﬁed by the computer parameters (Main IP, IP List, MAC, Domain, Workgroup,
-Computer Serial Number or MachineUUID, OS version) but information like Name and Description is also
-essential.
+Endpoint Protector identifies a Computer by the computer parameters (Main IP, IP List, MAC, Domain,
+Workgroup, Computer Serial Number or MachineUUID, OS version) but information like Name and
+Description is also essential.
 
-By default, the computer is assigned to the ﬁrst user that handles the computer. This can later be
-changed and is updated automatically based on whoever logs into the computer.
+By default, Endpoint Protector assigns the computer to the first user that handles the computer. You
+can change this later, and it updates automatically based on whoever logs into the computer.
 
 :::note
-Computer MachineUUID may not be taken for Virtual Machines due to System Limitations.
+Endpoint Protector may not collect the MachineUUID for virtual machines due to system limitations.
 :::
 
 
-You can manually create a new computer at any time by providing the computer parameters and
-information mentioned above or import computers from Active Directory.
+You can manually create a new computer at any time by providing these computer parameters and
+information, or import computers from Active Directory.
 
 For more details about Active Directory, go to the
 [Directory Services](/docs/endpointprotector/admin/directoryserv.md) topic. You can also assign the computers to
@@ -173,37 +174,37 @@ the following for a better organization:
 ### Computer Rights
 
 You can manage computer rights from the Actions column for a speciﬁc computer by selecting **Manage
-Rights**. This section is built around the computers, allowing you to specify which Device Types and
-Speciﬁc Devices can be accessible.
+Rights**. This section focuses on the computers and lets you specify which Device Types and
+Specific Devices are accessible.
 
 ![Specifies which Device Types and Speciﬁc Devices can be accessible](computerrights.webp)
 
 The Standard device control rights include the Device Types and Already Existing Devices sections.
 These are generally the only device rights used.
 
-In addition to the Standard device control rights, if enabled from the Global Settings, you can
-create fallback policies for Outside Network and Outside Hours circumstances.
+In addition to the Standard device control rights, if you enable them in the Global Settings, you
+can create fallback policies for Outside Network and Outside Hours circumstances.
 
 For detailed information on Device Types and Speciﬁc Devices (Standard, Outside Network, and Outside
 Hours), refer to the Devices and Computers topic.
 
 :::note
-Use Restore Global Rights to revert to a lower level of rights. Once enabled, all rights
-on that level will be set to preserve global settings and the system will use the next level of
+Use Restore Global Rights to revert to a lower level of rights. Once you enable it, Endpoint
+Protector sets all rights on that level to preserve global settings and uses the next level of
 rights.
 :::
 
 
-All Existing Devices that were added on that level will be deleted when the restore is used.
+Endpoint Protector deletes all Existing Devices added on that level when you use the restore.
 
 ### Computer Settings
 
-This section allows you to edit the settings for each computer.
+Use this section to edit the settings for each computer.
 
-Deﬁning custom settings for all computers is not necessary since a computer is perfectly capable of
-functioning correctly without any manual settings deﬁned.
+You don't need to define custom settings for all computers, because a computer functions correctly
+without any manual settings.
 
-It will do this by either inheriting the settings from the group it belongs to or, if not possible,
+The computer inherits the settings from the group it belongs to or, if that isn't possible, from
 the global settings, which are mandatory and exist in the system with default values from
 installation.
 
@@ -218,8 +219,8 @@ This will display the Logs Report page ﬁltered for the respective computer.
 
 ### Terminal Servers and Thin Clients
 
-The capability to control ﬁle transfers on RDP storage between Thin Clients and Windows Terminal
-Servers can be enforced through Endpoint Protector, as detailed below.
+Endpoint Protector can control file transfers on RDP storage between Thin Clients and Windows
+Terminal Servers, as described in the following sections.
 
 #### Initial Conﬁguration
 
@@ -228,20 +229,19 @@ Terminal Server
 ![Mark as Terminal Server Action](terminalserver_19x14.webp)
 .
 
-After you selected the computer in the system as a Terminal Server, “Yes” will be displayed for ease
-of identiﬁcation, as seen below:
+After you select the computer in the system as a Terminal Server, Endpoint Protector displays “Yes”
+for ease of identification, as shown in the following image:
 
 ![Displays List of computers](computers.webp)
 
 :::note
-The computers that can be targeted by this action are strictly Windows Servers with
-Terminal Server roles properly conﬁgured
+This action targets only Windows Servers with Terminal Server roles properly configured.
 :::
 
 
-Make sure that there is at least one Terminal Server license available when the action Mark as
-Terminal Server is performed. If the Terminal Server is successfully marked, a new device type will
-appear when choosing to Edit it under Device Control, Computers, Computer Rights.
+Ensure that at least one Terminal Server license is available when you perform the Mark as
+Terminal Server action. If you successfully mark the Terminal Server, a new device type
+appears when choosing to Edit it under Device Control, Computers, Computer Rights.
 
 The settings for the Terminal Server-speciﬁc Device Types are: Preserve Global Settings, Allow
 Access, Deny Access, and Read-Only Access.
@@ -267,13 +267,13 @@ all the users in Endpoint Protector, namely Thin Client Storage (RDP Storage).
 
 ![Thin Client Storage (RDP Storage) device type](thinclientstorage.webp)
 
-Multiple users can be recognized as active users on any given Terminal Server, and so, the setting
-of this right can be used as a powerful tool to create access policies for speciﬁc users, as
-detailed in the use case below.
+Endpoint Protector can recognize multiple users as active users on any given Terminal Server, so
+you can use this right to create access policies for specific users, as described in the following
+use case.
 
 ![Illustrate tool to create access policies for speciﬁc users](thingrouptools.webp)
 
-On a Windows Terminal Server, the Endpoint Protector Client will display RDP Storage disks shared by
-one or multiple Thin Clients as seen below.
+On a Windows Terminal Server, the Endpoint Protector Client displays RDP Storage disks shared by
+one or multiple Thin Clients, as shown in the following image.
 
 ![Client version displays RDP Storage disks shared by one or multiple Thin Clients](clientversiondc.webp)

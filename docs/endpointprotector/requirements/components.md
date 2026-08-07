@@ -16,22 +16,22 @@ Endpoint Protector is designed around several physical entities:
 The server side of Endpoint Protector has several parts working together:
 
 - **Endpoint Protector Hardware or Virtual Appliance**—contains the operating system, database, and supporting services
-- **MySQL Database**—stores configuration data, agent provisioning settings, user and group information, and policy definitions
+- **MySQL Database**—stores configuration data, agent provisioning settings, information about users and groups, and policy definitions
 - **CrateDB**—a distributed SQL database that stores Device Control, Content Aware Protection, and eDiscovery logs. CrateDB is optimized for time-series log data and provides faster queries and horizontal scalability for environments with high log volumes
-- **Redis**—an in-memory data store used as a cache buffer for incoming agent logs before they're ingested into CrateDB
+- **Redis**—an in-memory data store that buffers incoming agent logs before Endpoint Protector ingests them into CrateDB
 - **Web Service**—communicates with the Endpoint Protector Clients and stores the information received from them
 - **Endpoint Protector User Interface**—manages the existing devices, computers, users, groups, and their behavior in the system
 
 The client side of Endpoint Protector has two components:
 
 - **Endpoint Protector Client**—enforces the rights and settings received from the server on Windows, macOS, and Linux computers. The client also automatically deploys Enforced Encryption on USB storage devices.
-- **Enforced Encryption Client**—enforces FIPS 140-3 validated encryption on USB storage devices as specified from the server. This is a standalone application compatible with Windows and macOS computers.
+- **Enforced Encryption Client**—enforces FIPS 140-3 validated encryption on USB storage devices as the server specifies. This is a standalone application compatible with Windows and macOS computers.
 
 ![Main Components](maincomponents.webp)
 
 ## Architecture overview
 
-The diagram below illustrates the network architecture for the Endpoint Protector system. This setup
+The following diagram illustrates the network architecture for the Endpoint Protector system. This setup
 enables comprehensive Data Loss Prevention (DLP) across both local and remote users, securing
 sensitive information and ensuring compliance with security policies.
 
@@ -52,11 +52,11 @@ user activity logs, and incident reports. MySQL handles agent registration, poli
 
 **CrateDB**
 
-CrateDB is a distributed SQL database optimized for time-series log data. Endpoint Protector uses CrateDB to store Device Control, Content Aware Protection, and eDiscovery logs. CrateDB can be deployed as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. Cluster nodes can be added without downtime.
+CrateDB is a distributed SQL database optimized for time-series log data. Endpoint Protector uses CrateDB to store Device Control, Content Aware Protection, and eDiscovery logs. You can deploy CrateDB as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. You can add cluster nodes without downtime.
 
 **Redis**
 
-Redis serves as an in-memory buffer for incoming agent logs. When endpoints send log data to the server, the logs are temporarily cached in Redis before being ingested into CrateDB. This replaces the previous disk-based caching mechanism, eliminating filesystem I/O bottlenecks and enabling higher throughput.
+Redis serves as an in-memory buffer for incoming agent logs. When endpoints send log data to the server, Redis temporarily caches the logs before Endpoint Protector ingests them into CrateDB. This replaces the previous disk-based caching mechanism, eliminating filesystem read and write bottlenecks and enabling higher throughput.
 
 **Firewall/gateway device**
 
@@ -70,8 +70,8 @@ The Data Loss Prevention (DLP) administrator manages the Endpoint Protector infr
 
 **DLP users (LAN and Remote):**
 
-- LAN Users—internal users connected to the organization's Local Area Network (LAN), with devices monitored by the Endpoint Protector server to prevent unauthorized data transfers
-- Remote Users—remote employees who access the network through secure channels via the firewall/gateway, with activities monitored by Endpoint Protector to ensure consistent policy enforcement
+- LAN Users—internal users connected to the organization's Local Area Network (LAN), whose devices the Endpoint Protector server monitors to prevent unauthorized data transfers
+- Remote Users—remote employees who access the network through secure channels via the firewall/gateway, whose activities Endpoint Protector monitors to ensure consistent policy enforcement
 
 ### Server runtime requirements
 
@@ -90,7 +90,7 @@ The Endpoint Protector server runs on the following runtime components:
 
 This section describes how TLS encrypts communication between the Endpoint Protector Server and the Endpoint Protector Client.
 
-- On the Endpoint Protector Server, TLS 1.2 and TLS 1.3 are enabled by default. Endpoint Protector always negotiates the highest TLS version available on both the Client and the Server, and selects the strongest cipher suite TLS 1.3 offers.
+- The Endpoint Protector Server enables TLS 1.2 and TLS 1.3 by default. Endpoint Protector always negotiates the highest TLS version available on both the Client and the Server, and selects the strongest cipher suite TLS 1.3 offers.
 - Netwrix Support can enable TLS 1.1 upon request for backward compatibility with older agents and appliances.
 
 ### Endpoint Protector Client TLS
@@ -116,4 +116,4 @@ This section describes how TLS encrypts communication between the Endpoint Prote
 
 Starting with the 2608 Client and Server release, Endpoint Protector supports Post-Quantum Cryptography (PQC) encryption for Client to Server communication.
 
-No admin action is required to enable PQC. Endpoint Protector negotiates it transparently and automatically as the highest available encryption option when both the Client and the Server are on version **2608.x.x.x** or later. If either side runs an older version, Endpoint Protector falls back to the highest TLS version both sides support.
+You don't need to take any action to enable PQC. Endpoint Protector negotiates it transparently and automatically as the highest available encryption option when both the Client and the Server are on version **2608.x.x.x** or later. If either side runs an older version, Endpoint Protector falls back to the highest TLS version both sides support.
