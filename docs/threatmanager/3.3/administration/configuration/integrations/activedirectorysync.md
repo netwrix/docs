@@ -17,7 +17,7 @@ select **Integrations** to open the Integrations interface.
 Click **Active Directory Sync** in the navigation pane to view a list of the already added Active
 Directory domains, if any. Each added domain represents a sync policy.
 
-![Integrations interface on the Active Directory Sync page](/images/threatmanager/3.0/administration/configuration/integrations/page.webp)
+![Integrations interface on the Active Directory Sync page](/images/threatmanager/3.3/administration/configuration/integrations/page.webp)
 
 A service named Active Directory Service continuously runs to collect data for the specified
 domains. It evaluates the Update Sequence Number (USN) of an object and syncs when the object changes. The table
@@ -56,7 +56,7 @@ menu. Then select **Integrations** to open the Integrations interface.
 **Step 2 –** On the Integrations interface, click Add New Integration in the navigation pane. The
 Add New Integration window opens.
 
-![Add New Integration window with Active Directory Sync type selected](/images/threatprevention/7.5/reportingmodule/configuration/integrations/activedirectorysync.webp)
+![Add New Integration window with Active Directory Sync type selected](/images/threatmanager/3.3/administration/configuration/integrations/addnewactivedirectorysync.webp)
 
 **Step 3 –** In the Type dropdown menu, select Active Directory Sync.
 
@@ -106,7 +106,7 @@ represented by the domain for which it is created.
 **Step 9 –** Select a domain from the table or the navigation pane to view the details of the Active
 Directory Sync policy created for that domain.
 
-![Active Directory Sync details page for a specific domain](/images/threatmanager/3.0/administration/configuration/integrations/details.webp)
+![Active Directory Sync details page for a specific domain](/images/threatmanager/3.3/administration/configuration/integrations/details.webp)
 
 Select the domain from the list to see modification options:
 
@@ -120,13 +120,16 @@ Select the domain from the list to see modification options:
   information.
 - Sync History – Displays the information on each synchronization event. See the Sync History Tab
   topic for additional information.
+- Service Accounts – Displays rules that tag standard user accounts as service accounts based on
+  Organizational Unit or SAM Account Name. See the Service Accounts Tab topic for additional
+  information.
 
 ### Domain Configuration Tab
 
 The Domain Configuration tab displays the sync policy settings entered for the selected domain. With
 the exception of the domain itself, these settings can be updated as needed.
 
-![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatmanager/3.0/administration/configuration/integrations/domainconfigurationtab.webp)
+![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatmanager/3.3/administration/configuration/integrations/domainconfigurationtab.webp)
 
 The Domain Configuration tab displays the following settings:
 
@@ -174,7 +177,7 @@ The Save button activates when you modify any settings. Click it to commit the c
 The Sync History tab displays the information on each synchronization event. This includes general
 information about user, group, and computer objects within the selected domain.
 
-![Active Directory Sync details page for a specific domain showing the Sync History tab](/images/threatmanager/3.0/administration/configuration/integrations/synchistorytab.webp)
+![Active Directory Sync details page for a specific domain showing the Sync History tab](/images/threatmanager/3.3/administration/configuration/integrations/synchistorytab.webp)
 
 The table provides the following information:
 
@@ -193,6 +196,56 @@ By default, the table displays 10 records at a time. However, you can set this t
 box above the left corner of the table. Page navigation buttons are below the table. You can also
 export the data from the current page using the **Export CSV** button.
 
+### Service Accounts Tab
+
+The Service Accounts tab lets you define rules that tag standard user accounts as service
+accounts based on their Organizational Unit (OU) or SAM Account Name. Use this tab to close the
+classification gap for accounts that Netwrix Threat Manager can't already identify through Active
+Directory object type — Managed Service Account (MSA), group Managed Service Account (gMSA), or
+Delegated Managed Service Account (DMSA) — or through User and Entity Behavior Analytics (UEBA)
+behavioral classification. For
+example, if your organization houses service accounts in a dedicated OU or names them with a
+consistent prefix such as `SVC_`, you can define a rule that tags every matching account without
+provisioning each one as a managed service account.
+
+Accounts tagged as service accounts, whether tagged by a rule on this tab or by another
+classification method, appear on the [Service Accounts](/docs/threatmanager/3.3/administration/serviceaccounts.md)
+dashboard.
+
+![Active Directory Sync details page for a specific domain showing the Service Accounts tab](/images/threatmanager/3.3/administration/configuration/integrations/serviceaccountstab.webp)
+
+To add a service account rule:
+
+**Step 1 –** Click **Add Rule**. A new rule card opens.
+
+**Step 2 –** For Attribute, select **Organizational Unit** or **SAM Account Name**.
+
+**Step 3 –** For Operator, select **Equals**, **Not Equal To**, **Contains**, **Does Not
+Contain**, **Starts With**, or **Ends With**.
+
+**Step 4 –** For Value, enter or select the value to match.
+
+- If Attribute is set to Organizational Unit, start typing to see autocomplete suggestions of OUs
+  that exist in the domain. Select **Add OU** to enter an OU that isn't in the list.
+- If Attribute is set to SAM Account Name, start typing to see autocomplete suggestions of account
+  names that exist in the domain, or enter a value directly. For example, select the Starts With
+  operator and enter `SVC_` to match every account name that begins with `SVC_`.
+
+**Step 5 –** To add another condition to the rule, click **+ Add** and select an attribute.
+
+**Step 6 –** Click **Save**. Netwrix Threat Manager tags matching accounts as service accounts on
+the next Active Directory sync.
+
+Repeat this process to add additional rules. Click **Add Rule** to create another rule, or select
+an existing rule to expand, edit, or delete it.
+
+:::note
+Removing a rule or a condition doesn't untag accounts that are already tagged as service accounts.
+To remove the Service Account tag from an account manually, use the
+[Tag Management](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md)
+page.
+:::
+
 ## Modify Active Directory Sync Policy
 
 To modify the Active Directory Sync policy for the selected Active Directory domain:
@@ -208,7 +261,7 @@ Remember, the domain can't be modified.
 :::
 
 
-![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatmanager/3.0/administration/configuration/integrations/domainconfigurationtab.webp)
+![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatmanager/3.3/administration/configuration/integrations/domainconfigurationtab.webp)
 
 **Step 3 –** To modify the Credential Profile, select the Credential Profile by name from the
 dropdown menu. This was pre-created in the Credential Profiles page.
