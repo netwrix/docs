@@ -42,12 +42,12 @@ Starting with EPP Server version 2509, EPP Server no longer offers the Live Upda
 
 ### Security Updates
 
-You can use this section to check and apply different types of security updates, view information on
-recent updates checked or installed, and a list of updates available.
+Use this section to check and apply different types of security updates, view information on
+recent updates checked or installed, and view a list of available updates.
 
 :::note
-The security update options will only be available for customer-hosted instances (e.g.
-AWS, Goggle, etc.) with the exception for Operating System and Kernel upgrades.
+The security update options are available only for customer-hosted instances (for example,
+AWS or Google), except for Operating System and Kernel upgrades.
 :::
 
 :::warning
@@ -59,18 +59,18 @@ Netwrix doesn't test updates beforehand. Endpoint Protector pulls them from the 
 :::
 
 
-To ensure the updates will not harm the system, follow these actions:
+To ensure the updates don't harm the system, take these steps:
 
 - test the updates in a test environment ﬁrst
 - make a VM snapshot
 - make a system backup from the System Maintenance, the System Backup v2 section
 
-Select one of the security updates type available and then click **Check Updates**:
+Select one of the available security update types and then click **Check Updates**:
 
-- Security – this will update all security-related updates of installed packages (Critical and High)
-- Other – this will download and apply any update available to 3rd party libraries, kernel, OS
-  packages and MySQL database
-- All Updates – this will download and apply Informational and Optional/Unclassiﬁed updates
+- Security – applies all security-related updates for installed packages (Critical and High)
+- Other – downloads and applies any available update for third-party libraries, the kernel, OS
+  packages, and the MySQL database
+- All Updates – downloads and applies Informational and Optional/Unclassiﬁed updates
 
 If there are updates available, click **Apply Updates**.
 
@@ -92,8 +92,8 @@ server or other sub-services in the background
 From this section, you can download the Endpoint Protector and Enforced Encryption Clients corresponding to
 your operating system.
 
-When using a custom WebUI port, contact
-[Netwrix Support](https://www.netwrix.com/support.html) to assist in conﬁguring the Nginx
+If you use a custom WebUI port, contact
+[Netwrix Support](https://www.netwrix.com/support.html) for help conﬁguring the Nginx
 conﬁguration ﬁle.
 
 :::warning
@@ -123,8 +123,8 @@ the Endpoint Protector & Enforced Encryption Client and manage the upgraded jobs
 for Windows and macOS Clients.To upgrade your Linux Clients, submit a request using the [online form](https://www.endpointprotector.com/linux).
 
 :::note
-When you update your operating system to the latest macOS Ventura, the eppclient.log and
-eppsslsplit.log files are deleted from private/var/log.
+When you update your operating system to the latest macOS Ventura, macOS deletes the eppclient.log
+and eppsslsplit.log files from private/var/log.
 :::
 
 :::note
@@ -134,7 +134,7 @@ correct installer for each client's architecture during upgrade.
 :::
 
 :::warning
-The feature isn't compatible for Endpoint Protector instances that are running on
+The feature isn't compatible with Endpoint Protector instances running on
 32-bit versions of Windows.
 :::
 
@@ -148,7 +148,7 @@ Starting with release 2509.0.1.0, endpoints display Endpoint Protector Client ve
 
 ### Create New Upgrade Job
 
-To upgrade your Endpoint Protector Client, you need to create a new upgrade job, following these
+To upgrade your Endpoint Protector Client, create a new upgrade job by following these
 steps:
 
 **Step 1 –** Select the OS version from the dropdown list and then click **Next**.
@@ -203,7 +203,7 @@ computers will receive the uninstall command at the same time they receive the n
 from the server.
 
 If the computer is offline, it receives the uninstall command the first time it comes online.
-When you press the uninstall button, the computers are grayed out until the action completes.
+When you press the uninstall button, the computers appear grayed out until the action completes.
 
 You can cancel the uninstall command if it hasn't already run.
 
@@ -212,7 +212,7 @@ You can cancel the uninstall command if it hasn't already run.
 :::note
 If the server and Endpoint Protector client can't communicate due to missing server
 certiﬁcation validation (when the certiﬁcation validation setting is enabled), you can't run
-uninstall commands from the Endpoint Protector Server. In such cases, if you're unable to manually
+uninstall commands from the Endpoint Protector Server. In such cases, if you can't manually
 install the certiﬁcate on the Endpoint Protector Client computer, you can temporarily disable the
 certiﬁcation validation setting on the Endpoint Protector Server and synchronize the Endpoint
 Protector Client to retrieve an uninstall command.

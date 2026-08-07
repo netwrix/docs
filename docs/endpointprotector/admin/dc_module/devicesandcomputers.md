@@ -9,8 +9,8 @@ sidebar_position: 10
 
 ## Devices
 
-From this section, you can view, sort, and export in Excel, PDF, or CSV format any devices from the
-system. Use the Actions column to edit, manage rights, view device history and delete a speciﬁc
+From this section, you can view, sort, and export any devices in the system in Excel, PDF, or CSV
+format. Use the Actions column to edit, manage rights, view device history, and delete a speciﬁc
 device.
 
 You can view the right for each device based on the color code from the Status column:
@@ -93,8 +93,8 @@ steps:
 
 ### Device History
 
-From this section, you can view the device history by selecting the View Device History action. This
-will display the Logs Report page ﬁltered for the respective device.
+From this section, you can view the device history by selecting the View Device History action.
+Endpoint Protector then displays the Logs Report page ﬁltered for the respective device.
 
 ![ Logs Report page ﬁltered for the respective device](logsreport.webp)
 
@@ -121,8 +121,8 @@ status for each computer. This column is hidden by default.
 To display the DPI Status column, click **Show/Hide Columns** and select **DPI Status**.
 
 :::note
-DPI Status reflects the status only for computers that are actively communicating with the server.
-Real-time status isn't available — the value updates at each policy refresh interval and represents the last reported state.
+DPI Status reflects the status only for computers actively communicating with the server.
+The value updates at each policy refresh interval and represents the last reported state rather than real-time status.
 :::
 
 ### Filtering by migration status
@@ -189,7 +189,7 @@ For detailed information on Device Types and Speciﬁc Devices (Standard, Outsid
 Hours), refer to the Devices and Computers topic.
 
 :::note
-Use Restore Global Rights to revert to a lower level of rights. Once you enable it, Endpoint
+Use Restore Global Rights to revert to a lower level of rights. After you enable it, Endpoint
 Protector sets all rights on that level to preserve global settings and uses the next level of
 rights.
 :::
@@ -213,7 +213,7 @@ installation.
 ### Computer History
 
 From this section, you can view the computer history by selecting the View Computer History action.
-This will display the Logs Report page ﬁltered for the respective computer.
+Endpoint Protector then displays the Logs Report page ﬁltered for the respective computer.
 
 ![This will display the Logs Report page ﬁltered for the respective computer](logsreport.webp)
 
@@ -241,19 +241,19 @@ This action targets only Windows Servers with Terminal Server roles properly con
 
 Ensure that at least one Terminal Server license is available when you perform the Mark as
 Terminal Server action. If you successfully mark the Terminal Server, a new device type
-appears when choosing to Edit it under Device Control, Computers, Computer Rights.
+appears when you edit that computer under Device Control, Computers, Computer Rights.
 
 The settings for the Terminal Server-speciﬁc Device Types are: Preserve Global Settings, Allow
 Access, Deny Access, and Read-Only Access.
 
 ![ Preserves Global Settings, Allow Access, Deny Access, and Read-Only Access.](rdpstorage.webp)
 
-An Allow Access right set to the RDP Storage device type will enable all users that connect to the
-Terminal Server by RDP to transfer ﬁles to and from their local disk volume or shared storage
+An Allow Access right set on the RDP Storage device type lets all users who connect to the
+Terminal Server by RDP transfer ﬁles to and from their local disk volume or shared storage
 devices such as USBs.
 
-By contrast, a Deny Access right set to the RDP Storage will not allow any user that connects to the
-Terminal Server by RDP to transfer ﬁles to and from their local disk volume or shared storage
+By contrast, a Deny Access right set on the RDP Storage prevents any user who connects to the
+Terminal Server by RDP from transferring ﬁles to and from their local disk volume or shared storage
 devices such as USBs.
 
 :::note
