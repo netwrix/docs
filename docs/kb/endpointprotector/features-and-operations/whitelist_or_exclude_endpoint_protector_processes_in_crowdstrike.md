@@ -10,10 +10,11 @@ keywords:
 sidebar_label: Whitelist or Exclude EPP Processes
 tags:
   - features-and-operations
+  - kb
 title: "Whitelist or Exclude Endpoint Protector Processes in CrowdStrike"
 knowledge_article_id: kA0Qk0000002B7GKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Whitelist or Exclude Endpoint Protector Processes in CrowdStrike
@@ -22,16 +23,9 @@ products:
 
 This article explains how to whitelist or exclude Endpoint Protector (EPP) processes in CrowdStrike. This ensures that Endpoint Protector functions correctly and is not blocked or interfered with by CrowdStrike security policies.
 
-## Instructions
+Configuring security exclusions isn't specific to CrowdStrike — it's a general requirement for running Endpoint Protector alongside **any** antivirus, EDR, or HIPS solution. The EPP Client logs data in small, frequent increments, and third-party security software that scans each entry can cause timeouts, increased CPU/RAM usage, client stability issues, and reduced Deep Packet Inspection visibility. For the complete, authoritative exclusion list for Windows, macOS, and Linux, see [Security Exclusions](/docs/endpointprotector/requirements/client#security-exclusions).
 
-Follow these steps to add EPP processes to the CrowdStrike whitelist or exclusion list, based on your operating system:
+:::important
+Before escalating any EPP Client performance issue, confirm that the exclusions below are configured and deployed on the affected endpoint, and that the computer has been rebooted afterward.
+:::
 
-### For Windows
-
-- **Path:** `C:\Program Files\CoSoSys\Endpoint Protector\EPPService.exe`
-- **Application:** `EPPService.exe`
-
-### For macOS
-
-- **Path:** `/Applications/EndpointProtectorClient.app/Contents/MacOS/EppClient`
-- **Application:** `EndpointProtectorClient.app`

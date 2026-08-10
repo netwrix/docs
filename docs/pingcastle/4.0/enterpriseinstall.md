@@ -32,7 +32,7 @@ Install SQL Server (Express, Standard, or Enterprise edition) based on your need
 
 For SQL Express, visit [SQL Server Express Downloads](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/sql-server-express-localdb?view=sql-server-ver16).
 
-#### Step 2 - Run PingCastleEnterpriseInstaller.exe
+#### Step 2 - Run PingCastleEnterpriseInstaller.exe (production)
 
 The installer wizard walks you through prerequisite checks, licensing, and configuration screens in the following order.
 
@@ -123,7 +123,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 choco install sql-server-express
 ```
 
-#### Step 2 - Run PingCastleEnterpriseInstaller.exe
+#### Step 2 - Run PingCastleEnterpriseInstaller.exe (test/POC)
 
 1. Run PingCastleEnterpriseInstaller.exe. The installer checks for IIS and the ASP.NET 10.0 Hosting Bundle and offers to install them if they're missing.
 
@@ -152,7 +152,7 @@ If you're configuring a remote SQL Server instead of using the local instance, s
 
 ## External Database Configuration
 
-PingCastleEnterpriseInstaller.exe handles database creation and permissions automatically when it creates the database itself (see [Step 2 - Run PingCastleEnterpriseInstaller.exe](#step-2-run-pingcastleenterpriseinstallerexe), database connection step). Use this section when connecting to an existing SQL Server database instead, such as a remote or pre-provisioned instance.
+PingCastleEnterpriseInstaller.exe handles database creation and permissions automatically when it creates the database itself (see [Step 2 - Run PingCastleEnterpriseInstaller.exe (production)](#step-2---run-pingcastleenterpriseinstallerexe-production), database connection step). Use this section when connecting to an existing SQL Server database instead, such as a remote or pre-provisioned instance.
 
 ### General Database Requirements
 

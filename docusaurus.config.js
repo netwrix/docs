@@ -116,6 +116,7 @@ const config = {
     activeProductIds,
     activeVersionsByProduct,
   },
+  clientModules: ['./src/clientModules/scrollBehavior.js'],
   presets: [
     [
       'classic',
@@ -200,43 +201,21 @@ const config = {
     [
       'docusaurus-plugin-openapi-docs',
       {
-        id: 'openapi',
-        docsPluginId: 'changetracker8_1',
+        id: 'openapi-changetracker',
+        docsPluginId: 'changetracker',
         config: {
           'changetracker-hub': {
-            specPath: 'static/openapi/changetracker-hub-8.1.yaml',
-            outputDir: 'docs/changetracker/8.1/api/reference',
-            sidebarOptions: {
-              groupPathsBy: 'tag',
-              categoryLinkSource: 'tag',
-              sidebarCollapsed: true,
-            },
-            downloadUrl: '/openapi/changetracker-hub-8.1.yaml',
-            version: '8.1',
-            label: 'ChangeTracker Hub 8.1 API',
-            baseUrl: '/docs/changetracker/8_1/api/reference/',
-          },
-        },
-      },
-    ],
-    [
-      'docusaurus-plugin-openapi-docs',
-      {
-        id: 'openapi-8-2',
-        docsPluginId: 'changetracker8_2',
-        config: {
-          'changetracker-hub-8-2': {
             specPath: 'static/openapi/changetracker-hub-8.2.yaml',
-            outputDir: 'docs/changetracker/8.2/api/reference',
+            outputDir: 'docs/changetracker/api/reference',
             sidebarOptions: {
               groupPathsBy: 'tag',
               categoryLinkSource: 'tag',
               sidebarCollapsed: true,
             },
             downloadUrl: '/openapi/changetracker-hub-8.2.yaml',
-            version: '8.2',
-            label: 'ChangeTracker Hub 8.2 API',
-            baseUrl: '/docs/changetracker/8_2/api/reference/',
+            version: 'current',
+            label: 'Change Tracker Hub API',
+            baseUrl: '/docs/changetracker/api/reference/',
           },
         },
       },
@@ -271,7 +250,8 @@ const config = {
         apiKey: '1b20f30f13a874cd46f9d5c30b01d99c', // Use the search-only API key, not the admin key
         indexName: 'Production Docs',
 
-        // Enable contextual search (already great that you have product/version meta tags!)
+        // NOTE: overridden to false by the custom SearchBar (src/theme/SearchBar), which
+        // injects product/version facet filters itself. Kept here for theme compatibility.
         contextualSearch: true,
 
         // Search parameters for better results
@@ -307,21 +287,6 @@ const config = {
 
         // Placeholder text for the search box
         placeholder: 'Search the Netwrix docs...',
-
-        // Transform items before displaying (optional)
-        transformItems: (items) => {
-          return items.map((item) => {
-            // Add product badges or modify display as needed
-            return {
-              ...item,
-              // Example: Add custom badges based on product
-              _highlightResult: {
-                ...item._highlightResult,
-                // Customize highlighted results if needed
-              },
-            };
-          });
-        },
 
         // Replace paths if you're using different deployments
         // replaceSearchResultPathname: {

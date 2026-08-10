@@ -8,10 +8,11 @@ keywords:
 sidebar_label: View Scanner in Controlled Device List
 tags:
   - device-control-and-access-management
+  - kb
 title: "How to View a Scanner in the Controlled Device List"
 knowledge_article_id: kA0Qk0000002BAxKAM
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to View a Scanner in the Controlled Device List

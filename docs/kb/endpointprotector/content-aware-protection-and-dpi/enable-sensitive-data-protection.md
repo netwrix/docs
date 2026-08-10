@@ -12,10 +12,11 @@ keywords:
   - reports protection
   - system maintenance
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Enable Sensitive Data Protection
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Enable Sensitive Data Protection"
 knowledge_article_id: kA0Qk0000002B5uKAE
 ---

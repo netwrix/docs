@@ -21,7 +21,7 @@ Entra ID Authentication is a login method, configured through OpenID Connect. It
 :::
 
 :::tip
-You can enable OpenID Connect, SAML2, Windows Authentication, and Disable Password Login during installation, on the Authentication method screen of the installer. See [Step 2 - Run PingCastleEnterpriseInstaller.exe](enterpriseinstall.md#step-2-run-pingcastleenterpriseinstallerexe). The instructions on this page apply whether you configure a method during installation or afterward on the **Configuration** > **Settings** screens.
+You can enable OpenID Connect, SAML2, Windows Authentication, and Disable Password Login during installation, on the Authentication method screen of the installer. See [Step 2 - Run PingCastleEnterpriseInstaller.exe (production)](enterpriseinstall.md#step-2---run-pingcastleenterpriseinstallerexe-production). The instructions on this page apply whether you configure a method during installation or afterward on the **Configuration** > **Settings** screens.
 :::
 
 <Tabs>

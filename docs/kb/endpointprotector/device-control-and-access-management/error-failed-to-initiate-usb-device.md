@@ -14,10 +14,11 @@ keywords:
   - Finder
   - Notifier
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: "Error: Failed to Initiate USB device"
 tags:
   - device-control-and-access-management
+  - kb
 title: 'Error: Failed to Initiate USB device'
 knowledge_article_id: kA0Qk0000002BCHKA2
 ---
