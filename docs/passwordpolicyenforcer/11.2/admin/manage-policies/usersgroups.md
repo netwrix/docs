@@ -62,7 +62,7 @@ If Password Policy Enforcer has only one policy, and that policy is also the def
 
 ## Check which policy is enforced for a user
 
-Use the [**Test Policy by User** feature](testpolicy.md#by-user) to check which policy PPE enforces for a user. Enter a username on the left, and the right pane shows the enforced policy.
+Use the [**By user**](testpolicy.md#by-user) test to check which policy PPE enforces for a user. Enter a username on the left, and the right pane shows the enforced policy.
 
 ![testviewlog](/images/passwordpolicyenforcer/11.2/administration/testviewlog.webp)
 

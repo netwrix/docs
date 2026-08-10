@@ -5,7 +5,7 @@ sidebar_position: 1
 ---
 
 # Netwrix Password Policy Enforcer v11.2
-Netwrix Password Policy Enforcer (PPE) helps you secure your network by ensuring users choose strong passwords. PPE rejects new passwords that don't comply with your password policy. If you install the optional Password Policy Client, users can also see which rules their password didn't comply with.
+Netwrix Password Policy Enforcer (PPE) helps you secure your network by ensuring users choose strong passwords. PPE rejects new passwords that don't comply with your password policy. If you install the optional [Password Policy Client](#password-policy-client-ppc), users can also see which rules their password didn't comply with.
 
 A typical Windows network has both domain and local user accounts. Password Policy Enforcer can enforce password policies for both account types, but you will most likely use it for domain accounts in Active Directory.
 
@@ -37,7 +37,7 @@ The Configuration Console has some additional requirements:
 This component sends email from Password Policy Enforcer to your mail server. Although not required, this component supports several PPE features, so you'll most likely want to install it on one server in the domain. This component requires the [.NET Desktop Runtime 10.0 or later](https://aka.ms/dotnet/10.0/windowsdesktop-runtime-win-x64.exe).
 
 ### Password Policy Client (PPC)
-The Password Policy Client helps users to choose a compliant password by showing them the password policy rules, and also which rules they don't comply with. This component is optional, but very beneficial. It works on all operating systems listed in the System Requirements section, but you'll typically only install it on users' computers, virtual desktops, and Remote Desktop Session Hosts.
+The Password Policy Client helps users to choose a compliant password by showing them the password policy rules, and also which rules they don't comply with. This component is optional, but very beneficial. It works on all operating systems listed in the [System requirements](#system-requirements) section, but you'll typically only install it on users' computers, virtual desktops, and Remote Desktop Session Hosts.
 
 ### Password Policy Enforcer Web
 Password Policy Enforcer Web is an optional component that runs on Microsoft Internet Information Services (IIS). It has similar features to the Password Policy Client, but via a web interface. Use Password Policy Enforcer Web if you prefer not to install the Password Policy Client, or if you want to integrate Active Directory password changes into your own applications.
