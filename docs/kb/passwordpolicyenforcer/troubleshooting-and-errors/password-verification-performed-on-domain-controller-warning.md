@@ -38,7 +38,7 @@ Password verification will be performed on the domain controller %DC_FQDN%.
 
 ## Resolutions
 
-- Netwrix Password Policy Enforcer Mailer is required for Compromised Password Checker to operate. If it was not installed previously, refer to the following article for additional information on installation: Administration − Mailer ⸱ v10.2: https://docs.netwrix.com/docs/passwordpolicyenforcer/11_0
+- Netwrix Password Policy Enforcer Mailer is required for Compromised Password Checker to operate. If it was not installed previously, refer to the following article for additional information on installation: Administration − Mailer: https://docs.netwrix.com/docs/passwordpolicyenforcer
 
 - Review the FQDN of the domain controller the Netwrix Password Policy Enforcer Mailer was installed to:
 

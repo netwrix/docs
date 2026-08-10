@@ -140,7 +140,7 @@ installation folder. (`\Program Files\Netwrix Password Reset\` by default).
 
 **Step 7 –** Select **NPRClt.adm**, and then click **Open**.
 
-![the_password_reset_client_2](/images/passwordpolicyenforcer/11.0/passwordreset/administration/the_password_reset_client_2.webp)
+![the_password_reset_client_2](/images/passwordpolicyenforcer/passwordreset/administration/the_password_reset_client_2.webp)
 
 **Step 8 –** Click **Close**.
 
@@ -157,12 +157,12 @@ domain level.
 Templates**, **Classic Administrative Templates (ADM)**, **Netwrix Password Reset**, and **Password
 Reset Client** items.
 
-![the_password_reset_client_3](/images/passwordpolicyenforcer/11.0/passwordreset/administration/the_password_reset_client_3.webp)
+![the_password_reset_client_3](/images/passwordpolicyenforcer/passwordreset/administration/the_password_reset_client_3.webp)
 
 **Step 4 –** Double-click the **Browser settings** item in the right pane of the Group Policy
 Management Editor.
 
-![the_password_reset_client_4](/images/passwordpolicyenforcer/11.0/passwordreset/administration/the_password_reset_client_4.webp)
+![the_password_reset_client_4](/images/passwordpolicyenforcer/passwordreset/administration/the_password_reset_client_4.webp)
 
 **Step 5 –** Select the **Enabled**option.
 
@@ -263,7 +263,7 @@ Editor.
 
 **Step 10 –** Click inside the **License key** text box, then paste the license key.
 
-![the_password_reset_client_5](/images/passwordpolicyenforcer/11.0/passwordreset/administration/the_password_reset_client_5.webp)
+![the_password_reset_client_5](/images/passwordpolicyenforcer/passwordreset/administration/the_password_reset_client_5.webp)
 
 **Step 11 –** Click **OK**.
 

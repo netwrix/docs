@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Use the **Enroll** tab to maintain the list of enrollment questions and options.
 
-![configuring_npr_2](/images/passwordpolicyenforcer/11.0/passwordreset/administration/configuring_npr_2.webp)
+![configuring_npr_2](/images/passwordpolicyenforcer/passwordreset/administration/configuring_npr_2.webp)
 
 ### Question List
 

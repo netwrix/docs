@@ -9,7 +9,7 @@ sidebar_position: 50
 Use the **Security** tab to configure the inactivity timeout, password reset policies, and the
 lockout threshold.
 
-![configuring_npr_8](/images/passwordpolicyenforcer/11.0/passwordreset/administration/configuring_npr_8.webp)
+![configuring_npr_8](/images/passwordpolicyenforcer/passwordreset/administration/configuring_npr_8.webp)
 
 ### Inactivity Timeout
 

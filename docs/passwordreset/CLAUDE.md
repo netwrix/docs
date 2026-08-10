@@ -30,8 +30,8 @@ Both versions share the same top-level sections: `administration/`, `evaluation/
 
 All images live under `static/images/` at the repo root. In markdown, paths start with `/images/...` (Docusaurus serves `static/` at the root). Many passwordreset images are stored under `static/images/passwordpolicyenforcer/`, not `static/images/passwordreset/`. This is by design — the products were historically bundled together.
 
-- **3.3 docs** → files on disk at `static/images/passwordpolicyenforcer/11.0/passwordreset/`, referenced in markdown as `/images/passwordpolicyenforcer/11.0/passwordreset/...`
-- **3.23 docs** → files on disk at `static/images/passwordpolicyenforcer/10.2/password_reset/`, referenced in markdown as `/images/passwordpolicyenforcer/10.2/password_reset/...` (note the underscore)
+- **3.3 docs** → files on disk at `static/images/passwordpolicyenforcer/passwordreset/`, referenced in markdown as `/images/passwordpolicyenforcer/passwordreset/...`
+- **3.23 docs** → files on disk at `static/images/passwordpolicyenforcer/password_reset/`, referenced in markdown as `/images/passwordpolicyenforcer/password_reset/...` (note the underscore)
 - Some images are under `static/images/passwordreset/3.3/` and `static/images/passwordreset/3.23/` as expected
 
 When adding or updating images, check existing references in the file to determine which image directory path convention to follow.

@@ -19,7 +19,7 @@ every day. You can click the bars to see a filtered view of the events for that 
 The Audit Log tab contains all the events recorded by Password Reset. You can create filters to show
 only some of the events. Filters are flexible.
 
-![the_data_console_1](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_9.webp)
+![the_data_console_1](/images/passwordpolicyenforcer/passwordreset/administration/using_the_data_console_9.webp)
 
 The Users tab contains information about each user. You can export the data in the Audit Log and
 Users tabs from the File menu.

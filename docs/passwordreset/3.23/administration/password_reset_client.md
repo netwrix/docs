@@ -248,7 +248,7 @@ Editor.
 
 **Step 10 –** Click inside the **License key** text box, then paste the license key.
 
-![the_password_reset_client_5](/images/passwordpolicyenforcer/10.2/password_reset/administration/the_password_reset_client_5.webp)
+![the_password_reset_client_5](/images/passwordpolicyenforcer/password_reset/administration/the_password_reset_client_5.webp)
 
 **Step 11 –** Click **OK**.
 

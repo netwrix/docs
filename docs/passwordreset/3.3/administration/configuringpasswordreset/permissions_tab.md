@@ -8,7 +8,7 @@ sidebar_position: 60
 
 Use the **Permissions** tab to control which users can use Password Reset.
 
-![configuring_npr_9](/images/passwordpolicyenforcer/11.0/passwordreset/administration/configuring_npr_9.webp)
+![configuring_npr_9](/images/passwordpolicyenforcer/passwordreset/administration/configuring_npr_9.webp)
 
 ### Enroll
 

@@ -221,7 +221,7 @@ Reset**, and **3.0** registry keys.
 **Step 12 –** Set the **ServerIP** registry value to the IP address of the computer that you
 installed the Password Reset Server onto.
 
-![installing_npr_1](/images/passwordpolicyenforcer/11.0/passwordreset/administration/installing_npr_1.webp)
+![installing_npr_1](/images/passwordpolicyenforcer/passwordreset/administration/installing_npr_1.webp)
 
 The Password Reset Setup wizard only installs one Web Interface on each server, but you can copy the
 files to another directory and publish several Web Interfaces from one server. Each directory can
