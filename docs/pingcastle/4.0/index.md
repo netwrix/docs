@@ -71,16 +71,16 @@ The following table shows which rules benefit from privileged mode and the permi
 
 PingCastle has no specific server-side requirements.
 
-For optimal performance, install Active Directory Web Services (ADWS) on your domain controllers. ADWS is installed by default on Windows Server 2008 R2 and later. When available, ADWS can significantly reduce scan times—often by a factor of 10 or more.
+For optimal performance, install Active Directory Web Services (ADWS) on your domain controllers. Windows Server 2008 R2 and later install ADWS by default. When available, ADWS can significantly reduce scan times—often by a factor of 10 or more.
 
 ### Client Side
 
-Starting with PingCastle 3.5, the .NET runtime is bundled directly with the application, eliminating the need for any prerequisites or manual .NET framework installation.
+Starting with PingCastle 3.5, PingCastle bundles the .NET runtime directly with the application, eliminating the need for any prerequisites or manual .NET framework installation.
 
 **System Requirements**:
 - PingCastle runs on any system that supports .NET 8
 - No local administrator privileges required
-- No additional components or frameworks need to be installed
+- No need to install additional components or frameworks
 
 **Previous Versions**: PingCastle versions before 3.5 required a separate installation of .NET Framework 4.7.2.
 
@@ -92,7 +92,7 @@ PingCastle can also read its own machine-readable report files to build consolid
 
 ### Getting Started
 
-PingCastle is provided as a zip file. Extract the zip file and run `PingCastle.exe`—no installation required.
+PingCastle ships as a zip file. Extract the zip file and run `PingCastle.exe`—no installation required.
 
 ## Running PingCastle
 
@@ -127,7 +127,7 @@ PingCastle.exe --healthcheck --server domain.local --privileged
 
 To enable detailed logging for troubleshooting or support requests, use the `--log` switch.
 
-When using command line arguments, interactive mode is automatically disabled. To enable logging while keeping interactive mode active:
+When you use command line arguments, PingCastle automatically disables interactive mode. To enable logging while keeping interactive mode active:
 
 ```
 PingCastle.exe --log --interactive
@@ -274,7 +274,7 @@ The simplified map presents a cleaner, hierarchical view where each domain appea
 
 **File**: `xxx_hilbert_map.html`
 
-The Hilbert map provides a visual representation of network IP address space using fractal functions to compress IP addresses into a 2D visualization. Each square represents a network, making it easy to identify unused address space or overlapping networks.
+The Hilbert map provides a visual representation of network IP address space using fractal functions to compress IP addresses into a 2D visualization. Each square represents a network, so you can identify unused address space or overlapping networks.
 
 **Report Layout**:
 - **Network Overview**: High-level view of all networks
@@ -453,7 +453,7 @@ If you're using PingCastle Enterprise or Pro, sending reports this way (via `Pin
 
 ### API
 
-PingCastle can send reports in XML format (encrypted or not) to an API endpoint using the `--api-endpoint` and `--api-key` command line options. This is primarily used with PingCastle Enterprise, where PingCastle.exe runs in "agent" mode to automatically perform scans and send reports to the Enterprise web UI. You typically schedule scans using Windows Task Scheduler.
+PingCastle can send reports in XML format (encrypted or not) to an API endpoint using the `--api-endpoint` and `--api-key` command line options. You primarily use this with PingCastle Enterprise, where PingCastle.exe runs in "agent" mode to automatically perform scans and send reports to the Enterprise web UI. You typically schedule scans using Windows Task Scheduler.
 
 ![https://www.pingcastle.com/wp/wp-content/uploads/2018/09/pingcastle-swagger.webp](/images/pingcastle/basicuser/image26.webp)
 
@@ -638,17 +638,17 @@ This migration happened in version 3.5 and applies only if you're upgrading from
 4. **Run PingCastleAutoUpdater.exe a second time** to trigger automatic migration
 
 During migration:
-- Settings are automatically converted from `PingCastle.exe.config` (XML) to `appsettings.console.json` (JSON)
-- The original `PingCastle.exe.config` is renamed to `PingCastle.exe.config.bak` as a backup
-- A **Configuration Migration Report** is generated detailing which sections were migrated
+- The updater automatically converts settings from `PingCastle.exe.config` (XML) to `appsettings.console.json` (JSON)
+- The updater renames the original `PingCastle.exe.config` to `PingCastle.exe.config.bak` as a backup
+- The updater generates a **Configuration Migration Report** detailing which sections it migrated
 
-**Important**: Visually review the migrated settings in `appsettings.console.json` to ensure they are correct. No configuration context is lost if the upgrade fails.
+**Important**: Visually review the migrated settings in `appsettings.console.json` to ensure they're correct. The upgrade doesn't lose any configuration context if it fails.
 
 ### PingCastle AntiVirus Detections
 
 Attackers have used PingCastle as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and EDR products to flag it as malicious.
 
-**Recommended Action**: Whitelist PingCastle.exe on specific systems and/or users where it is authorized for security assessments. Normal end users shouldn't be running PingCastle.
+**Recommended Action**: Whitelist PingCastle.exe on the specific systems and users your organization authorizes for security assessments. Normal end users shouldn't be running PingCastle.
 
 #### Changes Made to Reduce False Positives
 
@@ -656,7 +656,7 @@ Netwrix is actively working to reduce false positive detections:
 
 **Packaging Changes**:
 - Removed `changelog.txt` from .zip packages, which some AV engines misinterpret
-- Release notes are now documented on GitHub, with detailed changelogs at [community.netwrix.com](https://community.netwrix.com)
+- Netwrix now documents release notes on GitHub, with detailed changelogs at [community.netwrix.com](https://community.netwrix.com)
 
 **Auto-Updater Improvements**:
 - Previously made two network calls on first run (GitHub API and `release-assets.githubusercontent.com`), which triggered AV detections

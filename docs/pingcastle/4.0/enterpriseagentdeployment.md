@@ -29,7 +29,7 @@ Optionally specify a different domain:
 
 **Common issues**
 
-If TLS 1.2 is enabled on the server, ensure the TLS 1.2 client package is installed on the system running the audit.
+If the server requires TLS 1.2, install the TLS 1.2 client package on the system running the audit.
 
 ## Automatic Forest Exploration Setup
 

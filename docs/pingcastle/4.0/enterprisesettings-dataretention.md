@@ -25,8 +25,8 @@ Archiving converts "Full" detail level reports to "Normal" detail level, removin
 
 The archiving process runs automatically every day at 8:00 AM:
 
-- All "Full" detail level reports older than the configured delay are processed.
-- Personal data is removed while maintaining domain scores and summary statistics.
+- PingCastle Enterprise processes all "Full" detail level reports older than the configured delay.
+- The process removes personal data while maintaining domain scores and summary statistics.
 - The process runs in the background without user intervention.
 
 </TabItem>
@@ -50,6 +50,6 @@ Manual archiving requires the admin role or a role with the "ManageDecryptionKey
 What gets archived:
 
 - Reports with `ReportDetailLevel = "Full"` older than the configured delay.
-- Personal data is stripped from the reports.
-- Reports are converted to "Normal" detail level.
-- Domain scores, statistics, and summary data are preserved.
+- PingCastle Enterprise strips personal data from the reports.
+- PingCastle Enterprise converts the reports to "Normal" detail level.
+- Domain scores, statistics, and summary data stay intact.

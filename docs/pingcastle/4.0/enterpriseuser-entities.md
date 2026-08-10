@@ -13,7 +13,7 @@ On the "Entities" page, you can create and configure the entities within the com
 
 Use entities to best represent the company organization, so that the AD configuration matches the company configuration.
 
-PingCastle Enterprise configures a default entity named "Default" where auto-created domains are assigned. You can create additional entities and build a hierarchy by setting parent relationships.
+PingCastle Enterprise configures a default entity named "Default" where it assigns auto-created domains. You can create additional entities and build a hierarchy by setting parent relationships.
 
 You can also use entities to identify administrators for specific perimeters, meaning these administrators operate on defined domains.
 
@@ -79,7 +79,7 @@ In the same way you can set exceptions for a specific domain, you can inform the
 
 **Bulk actions**
 
-If you need to create or remove many exceptions, an option is available to create or remove exceptions in bulk.
+If you need to create or remove many exceptions, you can do so in bulk.
 
 :::note
 If an exception already exists, the application doesn't create it again.

@@ -5,7 +5,7 @@ sidebar_position: 14
 
 ## Description
 
-PingCastle Pro is a tool that helps you improve and follow your overall Active Directory security level. The software is compatible with most existing configurations. The goal of the tool isn't perfection, but to provide reliable data that presents the situation to management for improvement over time.
+PingCastle Pro is a tool that helps you improve and follow your overall Active Directory security level. The software is compatible with most existing configurations and provides reliable data that presents the situation to management for improvement over time.
 
 # Requirements
 
@@ -65,12 +65,11 @@ allowed to get the token from Entra ID (typically `login.microsoftonline.com`).
 
 ## License
 
-PingCastle Pro is licensed based on the number of domains managed and
-allows up to a maximum of five domains to be managed. The number of
+PingCastle Pro licensing depends on the number of domains you manage, up
+to a maximum of five domains. The number of
 domains include subdomains of a forest.
 
-2.  The number of Domain Controllers aren't used for licensing, only
-    domains.
+2.  Licensing counts only domains, not Domain Controllers.
 
 **Example**
 
@@ -83,10 +82,10 @@ PingCastle uses a distributed architecture.
 
 PingCastle Basic acts as a standalone agent. The program assesses the Active Directory and produces a report in two forms: an XML file and an HTML file. These two files provide two representations of the same data. By default, PingCastle filters the XML file to remove potential private data such as account names from this collected data. To deactivate this filter, run the program with the `--level Full` flag.
 
-Then the data contained in the xml file is pushed into PingCastle Pro
-directly via the API, or indirectly via an indirect import such as
-email. In this case the data may be encrypted to ensure the
-confidentiality of the data.
+You then push the data contained in the xml file into PingCastle Pro
+directly via the API, or indirectly via an import such as
+email. In this case, you can encrypt the data to ensure its
+confidentiality.
 
 ![](/images/pingcastle/proinstall/image3.webp)
 
@@ -129,8 +128,8 @@ ClientID and TenantID and keep it with you.
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image9.webp)
 
 :::note
-The permission can be granted implicitly by the first user
-connecting to the application.
+The first user connecting to the application can grant the permission
+implicitly.
 :::
 
 # SQL Express installation
@@ -157,8 +156,8 @@ Select "Basic"and let the installation proceed.
 
 PingCastle Pro supports a setup that minimizes the requirements and
 manipulations. Netwrix recommends this scenario for tests but not in
-production because all IIS and SQL Server upgrade mechanisms aren't
-supported.
+production, because it doesn't support all IIS and SQL Server upgrade
+mechanisms.
 
 ## Requirements
 
@@ -198,7 +197,7 @@ The Windows Installer (MSI) file guides the installation of the software:
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image16.webp)
 
 After you accept the license terms, the software requires a license key
-that should have been distributed alongside the MSI files.
+that Netwrix distributes alongside the MSI files.
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/proinstall/image17.webp)
 
@@ -228,10 +227,11 @@ Then the setup asks for the authentication configuration.
 For Windows, default group which is allowed to PingCastle is everyone.
 To change the group, select the browse button. A new dialog appears.
 
-2.  If you select "Domain admins" this group won't work. Indeed, it will
-    be stripped in the restricted token and the user won't be seen as
-    "Domain admins" even if it belongs to the group. Run whoami /all in
-    a command prompt to see the groups presented to the application.
+2.  If you select "Domain admins" this group won't work. Windows strips
+    the group from the restricted token, so the application doesn't see
+    the user as a "Domain admins" member even if the user belongs to the
+    group. Run whoami /all in a command prompt to see the groups the
+    token presents to the application.
 
 ![](/images/pingcastle/proinstall/image22.webp)
 
@@ -297,7 +297,7 @@ the one you create before.
 
 # Custom installation
 
-PingCastle Pro can be installed like a classic asp.net core application.
+You can install PingCastle Pro like a classic asp.net core application.
 
 That means copy all the files in a directory, configure the proxy (IIS,
 apache, Nginx), prepare a database and configure the application.
@@ -315,8 +315,8 @@ Microsoft has procedures to install the dotnet core 2 framework:
 - Windows installation\
   https://docs.microsoft.com/en-us/dotnet/core/windows-prerequisites?tabs=netcore2x
 
-Microsoft has procedures to set up the hosting of the application that
-are referenced in the following list:
+The following list references Microsoft's procedures for setting up the
+hosting of the application:
 
 > Host ASP.NET Core on Windows with IIS\
 > https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?tabs=aspnetcore2x
@@ -331,7 +331,7 @@ are referenced in the following list:
     Interoperability mode
 
 :::note
-For IIS, a \"Default Web Site\" is installed by default and may conflict with the PingCastle Pro application.
+IIS installs a \"Default Web Site\" by default, which may conflict with the PingCastle Pro application.
 :::
 
 The solution is to stop the default website and configure it to not
@@ -354,7 +354,7 @@ modify / delete data is required) on demand. In this case, Netwrix
 provides a SQL script to apply database changes before you apply a
 software update.
 
-When run on IIS, PingCastle runs in an application pool that needs
+On IIS, PingCastle runs in an application pool that needs
 privileges on the database.
 
 :::note
@@ -494,12 +494,12 @@ Restart IIS.
 
 ## Configuration of PingCastle Pro
 
-The settings are located in the appsettings.Production.json located at
+The settings are in the appsettings.Production.json file at
 the root of the application folder.
 
 ![](/images/pingcastle/proinstall/image48.webp)
 
-Two settings are needed for the application: the database and the
+The application needs two settings: the database and the
 license information.
 
 To change the database type, change the \"database\" settings. 
@@ -512,8 +512,9 @@ PingCastle Pro supports the following values:
 To connect to the database, provide a \"connection string\" in the
 \"DefaultConnection\" parameter.
 
-7.  The connection string are stored in json and must be properly
-    escaped like \"\\\" into \"\\\\\". Same for double quotes.
+7.  PingCastle Pro stores the connection string in json, so you must
+    escape it properly, like \"\\\" into \"\\\\\". The same applies to
+    double quotes.
 
 For the license, the parameter is stored in the \"License\" setting.
 
@@ -533,16 +534,16 @@ Here are some connection string examples:
 
 **Email**
 
-PingCastle requires a configuration to be able to send emails.
+PingCastle requires configuration to send emails.
 
-It is located in the appsettings.Production.json file.
+This configuration is in the appsettings.Production.json file.
 
 ![](/images/pingcastle/proinstall/image49.webp)
 
-The Email is the address used to send email,.
+The Email is the address PingCastle uses to send email.
 
-The login and password is the credential use to connect to the smtp
-server. This isn't mandatory.
+The login and password are the credentials PingCastle uses to connect to
+the smtp server. These aren't mandatory.
 
 The host and port is the address of the smtp server.
 
@@ -621,7 +622,7 @@ PingCastle lets the application administrator schedule scans. It is
 useful when you install the solution in a central forest and need to
 scan all child domains.
 
-By default, PingCastle is running as a limited user. It can't access
+By default, PingCastle runs as a limited user. It can't access
 the network nor modify system settings. To use the scheduler, you
 must change permissions.
 
@@ -643,8 +644,8 @@ Then restart the application pool.
 
 If you are using a custom identity for the application pool (to access a
 database hosted in another server), you have to promote this user as
-local admin. This is a Windows restriction of the permission model and
-the access to the task scheduler can't be delegated.
+local admin. This is a Windows restriction of the permission model, and
+you can't delegate access to the task scheduler.
 
 ## Custom installation
 
@@ -676,9 +677,9 @@ $PingCastleFolder.GetTasks(1) | Foreach-Object {
 
 ## Task edition
 
-You can modify tasks outside of the PingCastle application. To be
-listed here, the application checks that this is a weekly schedule on
-one selected day and that the action is matching classical command line
+You can modify tasks outside of the PingCastle application. For a task to
+appear here, the application checks that this is a weekly schedule on
+one selected day and that the action matches classical command line
 options. That means you can modify \--server or add additional
 parameters (for example \--log-console). You can also modify the identity
 running the scheduled task (default is system)
@@ -699,7 +700,7 @@ PingCastle.exe program delivered in the same directory than the
 PingCastleEnterprise is suitable for use.
 
 :::note
-PingCastle Enterprise supports running the PingCastle audit program at a higher or lower version. If new features have been added, they will not be visible unless you update the PingCastle Enterprise program, but you lose no data meanwhile.
+PingCastle Enterprise supports running the PingCastle audit program at a higher or lower version. If a newer version adds features, they won't appear unless you update the PingCastle Enterprise program, but you lose no data meanwhile.
 :::
 
 ## Schedule
@@ -760,15 +761,14 @@ won\'t display an error because the database connects under the user
 context, not the system context. Typically on Windows, the IIS
 service connect under IIS APPPool\\AppName. To grant rights to the application pool account on SQL Server, see [How to add the ApplicationPoolIdentity to a SQL Server login](https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login).
 
-Then depending on the platform additional logs can be stored.
+Then, depending on the platform, PingCastle can store additional logs.
 
 On Windows, you can edit the web.config file at the root to generate
-debug logs. The event viewer is also a place where debugging data can be
-stored.
+debug logs. The event viewer can also store debugging data.
 
 On Linux, the command `service <name-of-service> status` can indicate if
-the service is running or not. If an error prohibit the start of the
-service, the log is shown.
+the service is running or not. If an error prevents the service from
+starting, the command shows the log.
 
 ![](/images/pingcastle/proinstall/image56.webp)
 
@@ -784,7 +784,7 @@ solution
 
 ## Incorrect version of the asp.net core middleware
 
-Here are the messages displayed when running under a service:
+Here are the messages that appear when the application runs under a service:
 
 ![](/images/pingcastle/proinstall/image58.webp)
 
@@ -837,8 +837,8 @@ create this table. This script is available on demand.
 
 The inability to create tables is a symptom of insufficient permissions. If the application pool identity can't add or remove records in the database, the application can't start.
 
-If you are running PingCastle from another SQL Server, the default
-identity used by the application pool won't have access.
+If you're running PingCastle from another SQL Server, the default
+identity the application pool uses won't have access.
 
 Be sure you can connect from another computer than your SQL
 database server. Indeed, by default you have a firewall preventing
@@ -904,4 +904,4 @@ add `;User ID=sa;Password=pass123`
     the web services.
 
 7.  Log in and perform actions in the PingCastle Pro web portal. Check
-    C:\\PingCastlePro\\logs\\ to ensure logs are being written.
+    C:\\PingCastlePro\\logs\\ to ensure PingCastle Pro is writing logs.

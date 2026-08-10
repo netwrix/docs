@@ -33,7 +33,7 @@ Last report tab:
 
 ![](/images/pingcastle/enterpriseuser/image35.webp)
 
-The full detail of the last report performed is accessible in this tab, though it isn't shown here.
+The full detail of the last report performed is accessible in this tab, though this page doesn't show it.
 
 By default, when there's a list of users, the application limits the output to 100 users.
 
@@ -41,11 +41,11 @@ By default, when there's a list of users, the application limits the output to 1
 
 This limit prevents large HTML pages from blocking navigation.
 
-The recommended solution to overcome this limit is to use the local PingCastle client and export the list of accounts needed for detailed analysis.
+To overcome this limit, use the local PingCastle client and export the list of accounts you need for detailed analysis.
 
 ![Une image contenant texte, capture d'écran, écran, argent Description générée automatiquement](/images/pingcastle/enterpriseuser/image37.webp)
 
-This export produces a CSV file with the user or computer name and many properties, such as the creation date or operating system as seen by PingCastle.
+This export produces a CSV file with the user or computer name and many properties, such as the creation date or operating system as PingCastle sees them.
 
 The other alternative is to change this limit on **Configuration** > **Settings** > **Data retention**, using the **Limit user list output** toggle (default to 100 users).
 
@@ -75,7 +75,7 @@ It brings you to a page with information to fill in:
 
 - Domain FQDN(\*): Name of the domain. If you want to import a report related to this domain, it's best to set the same name so the application updates the information automatically.
 
-- Domain SID: Only used to differentiate rare cases where two domains have the same FQDN.
+- Domain SID: Differentiates the rare cases where two domains have the same FQDN.
 
 - Status: Status of the domain, which you must modify when needed. See the next section for a full explanation.
 
@@ -99,7 +99,7 @@ The default status is "Auto Created", and you must make every change manually wh
 
 - Active: Normal status of a domain when the PingCastle Enterprise solution monitors it.
 
-- Derogation: Special status used to identify domains that the application ignores in the statistics and score calculation. Use this status cautiously and only in specific cases, such as when a domain is being deleted or during a migration.
+- Derogation: Special status used to identify domains that the application ignores in the statistics and score calculation. Use this status cautiously and only in specific cases, such as while you're deleting a domain or during a migration.
 
 - Removed: Status used to simulate a hard-deletion. Set this status when the domain no longer exists within your AD.
 
@@ -159,11 +159,11 @@ There has been a change on a domain within a specific perimeter in the PingCastl
 
 Risk event:
 
-There has been a change in the risks followed by the PingCastle Enterprise solution. It either means the application discovered a new risk that you should follow, or cleared a risk so the overall level of security improved. It can also mean that a risk is set to an exception status.
+There has been a change in the risks followed by the PingCastle Enterprise solution. It either means the application discovered a new risk that you should follow, or cleared a risk so the overall level of security improved. It can also mean that someone set a risk to an exception status.
 
 Trust event:
 
-There has been a change in the trust between several monitored domains. It implies that a new trust between two domains has been established, that an existing trust between two domains has been deleted, or that an existing trust has been modified.
+There has been a change in the trust between several monitored domains. It implies that someone established a new trust between two domains, deleted an existing trust between two domains, or modified an existing trust.
 
 Technical event:
 

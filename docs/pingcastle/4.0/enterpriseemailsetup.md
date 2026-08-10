@@ -683,7 +683,7 @@ The function performs the following steps automatically:
 13. Displays a summary with all configuration details
 
 :::tip
-Save the output, especially the Client Secret if using secret-based authentication. You can't retrieve the secret again after the function completes.
+Save the output, especially the Client Secret if you're using secret-based authentication. You can't retrieve the secret again after the function completes.
 :::
 
 </TabItem>

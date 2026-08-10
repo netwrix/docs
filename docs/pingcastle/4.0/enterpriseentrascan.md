@@ -132,7 +132,7 @@ Microsoft Graph permissions cover most risk checks that the scanner performs, ei
 `Sites.FullControl.All` is a broad permission — it grants full control over every site collection in the tenant. It enables three risk checks: `SharePointModernAuthNotEnabled`, `SharePointSharedLinksNeverExpire`, and `SharingInvitationsNotMonitored`. If you don't grant it, those three checks show as unable to run, but the rest of the scan, including the other SharePoint and OneDrive checks, still works.
 
 :::warning
-SharePoint Online only accepts certificate-based authentication for the scanner app. If the app registration uses a client secret, SharePoint risk checks fail even when the correct permissions are granted. Configure certificate authentication for specific sharepoint online checks to work correctly.
+SharePoint Online only accepts certificate-based authentication for the scanner app. If the app registration uses a client secret, SharePoint risk checks fail even when you grant the correct permissions. Configure certificate authentication for specific sharepoint online checks to work correctly.
 :::
 
 #### Grant the SharePoint Online permission from the Entra admin center

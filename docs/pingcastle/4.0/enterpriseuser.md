@@ -22,11 +22,11 @@ All users can access their personal account settings. Internal users can also re
 
 The product implements three main layers of permission:
 
-- Roles — Used to assign specific administrative capabilities. The "Admin" role grants full access to all system data and features.
+- Roles — Assign specific administrative capabilities. The "Admin" role grants full access to all system data and features.
 
 - Entities — Group multiple domains and are the only way to delegate access to the Dashboard. Assigning a user to an entity grants access to all domains within that entity, as well as the dashboard and associated management views.
 
-- Domains — Represent the lowest level of access. A user with domain-level access can only view reports for that specific domain. They don't have access to other domains or to the dashboard unless assigned through an entity or elevated role.
+- Domains — Represent the lowest level of access. A user with domain-level access can only view reports for that specific domain. They don't have access to other domains or to the dashboard unless an entity or elevated role grants it.
 
 ![](/images/pingcastle/enterpriseuser/image12.webp)
 
@@ -50,12 +50,12 @@ The permissions are of two types:
 
 ![Une image contenant texte, capture d'écran, Police, nombre Description générée automatiquement](/images/pingcastle/enterpriseuser/image8.webp)
 
-Claims permission assigns permissions dynamically based on Windows group. Claims are case sensitive. You can also open the user's claims page (available under **Manage your account**) to see what claims have been pushed to PingCastle Enterprise.
+Claims permission assigns permissions dynamically based on Windows group. Claims are case sensitive. You can also open the user's claims page (available under **Manage your account**) to see which claims the authentication application pushed to PingCastle Enterprise.
 
 ![Une image contenant texte, capture d'écran, Police, conception Description générée automatiquement](/images/pingcastle/enterpriseuser/image9.webp)
 
 :::note
-Users provisioned automatically through SAML or OIDC just-in-time (JIT) provisioning are created with no permissions by default. An administrator must assign claims or user permissions to these accounts before they can access domains or Entra tenants. See [Provisioning settings](enterprisesettings-scim.md) for JIT provisioning configuration.
+Accounts that SAML or OIDC just-in-time (JIT) provisioning creates automatically have no permissions by default. An administrator must assign claims or user permissions to these accounts before they can access domains or Entra tenants. See [Provisioning settings](enterprisesettings-scim.md) for JIT provisioning configuration.
 :::
 
 ## Main pages overview

@@ -13,17 +13,17 @@ Configuration > Settings > Licensing shows which model the current license uses,
 <Tabs>
 <TabItem value="user" label="Per-user licensing" default>
 
-Per-user licenses are based on the number of users managed.
+Per-user licenses depend on the number of users you manage.
 
 ![](/images/pingcastle/enterpriselicense/License-userbased.webp)
 
 </TabItem>
 <TabItem value="domain" label="Per-domain licensing (legacy)">
 
-Per-domain licenses are based on the number of domains managed, with licenses available up to unlimited. The number of domains includes subdomains of a forest.
+Per-domain licenses depend on the number of domains you manage, with licenses available up to unlimited. The number of domains includes subdomains of a forest.
 
-- Domain Controllers aren't counted for licensing purposes, only domains
-- Licenses are bundled in packs of 10 domains, up to 60, with an unlimited license thereafter
+- Licensing counts only domains, not Domain Controllers
+- Licenses come in packs of 10 domains, up to 60, with an unlimited license thereafter
 
 **Example**: If you have `contoso.com` with two subdomains called `uk.contoso.com` and `us.contoso.com`, this would require a 10-domain licensing pack.
 

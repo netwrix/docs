@@ -28,8 +28,8 @@ version.
 
 2.x All versions have same requirements
 
-2.x to 3.2 ASP.NET must be upgraded from 3.1
+2.x to 3.2 You must upgrade ASP.NET from 3.1
 to 6.0
 
-3.2 to 3.x ASP.NET must be upgraded from 6.0
+3.2 to 3.x You must upgrade ASP.NET from 6.0
 to 8.0

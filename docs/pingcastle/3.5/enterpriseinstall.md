@@ -1633,7 +1633,7 @@ You can deploy PingCastle Enterprise on Microsoft Azure, though Netwrix doesn't 
 - Installation, configuration, and troubleshooting are the customer's responsibility
 - Customers must provide their own Azure architecture and deployment blueprint
 - **Always test upgrades and updates in a non-production environment before deploying to production**
-- An Azure architect or Azure expert is recommended for deployment and maintenance
+- Netwrix recommends an Azure architect or Azure expert for deployment and maintenance
 :::
 
 #### Deployment overview
@@ -1664,7 +1664,7 @@ az webapp deploy --resource-group <group-name> --name <app-name> --src-path <zip
 Use the `az webapp` command to view your created application. See the [Azure App Service deployment documentation](https://docs.microsoft.com/en-us/azure/app-service/deploy-zip?tabs=cli) for deployment configuration options.
 
 :::note
-Additional steps may be required depending on your Azure configuration.
+Your Azure configuration may require additional steps.
 :::
 
 #### Creating the App Service
@@ -1737,7 +1737,7 @@ When `disablePasswordLogon` is set to `true` and Windows Authentication is enabl
 
 **Step 1: Install Windows Authentication Package**
 
-Ensure the Windows Authentication package is installed. It may not be part of the default IIS installation on older Windows Server versions.
+Ensure you have installed the Windows Authentication package. It may not be part of the default IIS installation on older Windows Server versions.
 
 Open **Server Manager** > **Manage** > **Add Roles and Features** > **Server Roles** > **Web Server (IIS)** > **Web Server** > **Security** and select **Windows Authentication**.
 
@@ -1822,7 +1822,7 @@ Add the following to `appsettings.json` replacing the SIDs with your Active Dire
 |---------|-------------|
 | `WindowsGroup` | SID of the group that grants login access (e.g., PingCastle_Users) |
 | `WindowsGroupAdmin` | SID of the group that grants administrator access (e.g., PingCastle_Admins) |
-| `RemoveUserIfNotInWindowsGroupAnymore` | When `true`, users are removed if they no longer belong to `WindowsGroup` at their next login |
+| `RemoveUserIfNotInWindowsGroupAnymore` | When `true`, PingCastle Enterprise removes users who no longer belong to `WindowsGroup` at their next login |
 
 :::note
 Windows Authentication doesn't provide an email address when creating accounts. The application sets email addresses to a default value that disables notifications.
@@ -1859,7 +1859,7 @@ Proxy settings rely on the current user proxy configuration, which can be define
 <details>
 <summary>Configuring Entra ID for OpenIDConnect Authentication</summary>
 
-Entra ID can be configured as an OpenID Connect provider.
+You can configure Entra ID as an OpenID Connect provider.
 
 **Entra ID Portal Configuration**
 
@@ -1943,7 +1943,7 @@ Add the following to `appsettings.json`:
 "authenticationHeader": "PingCastleAuth"
 ```
 
-When the login page is accessed, PingCastle checks for the specified header. If present, PingCastle considers the user authenticated and uses the header value as the username.
+When a user accesses the login page, PingCastle checks for the specified header. If present, PingCastle considers the user authenticated and uses the header value as the username.
 
 :::danger Security Requirement
 A reverse proxy **must** isolate the PingCastle application to prevent unauthenticated users from setting their own authentication header. Failure to properly secure this configuration allows authentication bypass.
@@ -2239,7 +2239,7 @@ The Email configuration section in appsettings.json supports both providers:
 - **Login**: Login credentials for the SMTP server (leave empty if not required)
 - **Password**: Password for the SMTP server (leave empty if not required)
 - **Host**: FQDN or IP address of the SMTP server
-- **Port**: Port of the SMTP server (25 is default, 465, and 587 for TLS/SSL. Encryption will be enabled unless port is 25)
+- **Port**: Port of the SMTP server (25 is default, 465, and 587 for TLS/SSL. PingCastle enables encryption unless the port is 25)
 
 **Graph Provider Parameters:**
 - **TenantId**: Azure AD tenant ID (mandatory for Graph)
@@ -2259,7 +2259,7 @@ For detailed instructions on configuring Modern Authentication with Office 365, 
 
 ### Modern Authentication with Office 365 Using Graph API
 
-PingCastle Enterprise supports sending emails using Microsoft Graph API with modern authentication. This method is recommended for Office 365 environments as it provides enhanced security through OAuth 2.0 authentication.
+PingCastle Enterprise supports sending emails using Microsoft Graph API with modern authentication. Netwrix recommends this method for Office 365 environments, as it provides enhanced security through OAuth 2.0 authentication.
 
 This configuration uses **RBAC for Applications** (Role-Based Access Control for Applications) in Exchange Online, which allows the application to send emails from a specific shared mailbox without requiring a user account with mailbox access permissions.
 
@@ -2345,7 +2345,7 @@ For production environments, use certificates issued by your organization's Cert
 3. Add a description: `PingCastle-Email Secret`
 4. Set expiration to **12 months** (or as per your policy)
 5. Click **Add**
-6. **Important**: Copy the secret **Value** immediately - it won't be shown again
+6. **Important**: Copy the secret **Value** immediately - you won't see it again
 7. Paste it in Notepad or a password manager for later use
 
 :::warning
@@ -2872,7 +2872,7 @@ The function performs the following steps automatically:
 13. Displays a summary with all configuration details
 
 :::tip
-Save the output, especially the Client Secret if using secret-based authentication. The secret can't be retrieved again after the function completes.
+Save the output, especially the Client Secret if you're using secret-based authentication. You can't retrieve the secret again after the function completes.
 :::
 
 </TabItem>
@@ -2945,7 +2945,7 @@ or hosting, the application won't display the next screen.
 
 For security reasons, there is no default account or password.
 
-When there is no user configured in the application, a special screen appears
+When the application has no configured user, a special screen appears
 to create the first user. This user receives the \"Admin\" role.
 
 ![First user creation screen](/images/pingcastle/enterpriseinstall/image79.webp)
@@ -3021,8 +3021,8 @@ Edit the `appsettings.json` file in your PingCastle Enterprise installation dire
 
 The archiving process runs automatically every day at 8:00 AM:
 
-- All "Full" detail level reports older than the configured delay are processed
-- Personal data is removed while maintaining domain scores and summary statistics
+- PingCastle Enterprise processes all "Full" detail level reports older than the configured delay
+- The process removes personal data while maintaining domain scores and summary statistics
 - The process runs in the background without user intervention
 
 </TabItem>
@@ -3044,9 +3044,9 @@ You can manually trigger archiving on-demand:
 #### What Gets Archived
 
 - Reports with `ReportDetailLevel = "Full"` older than the configured delay
-- Personal data is stripped from the reports
-- Reports are converted to "Normal" detail level
-- Domain scores, statistics, and summary data are preserved
+- PingCastle Enterprise strips personal data from the reports
+- PingCastle Enterprise converts the reports to "Normal" detail level
+- Domain scores, statistics, and summary data stay intact
 - This is a one-way transformation that you can't reverse
 
 
@@ -3078,7 +3078,7 @@ Optionally specify a different domain:
 
 **Common issues**
 
-If TLS 1.2 is enabled on the server, ensure the TLS 1.2 client package is installed on the system running the audit.
+If the server requires TLS 1.2, install the TLS 1.2 client package on the system running the audit.
 
 ## Synchronization feature
 
@@ -3158,7 +3158,7 @@ the sync button.
 
 ![Domain sync button interface](/images/pingcastle/enterpriseinstall/image84.webp)
 
-PingCastle shows the Sync button if the sync link is configured and the user
+PingCastle shows the Sync button if you configured the sync link and the user
 has permission to edit the domain. When you perform a sync, PingCastle
 synchronizes the domain properties (status, etc.) along with past reports.
 
@@ -3167,8 +3167,8 @@ information about the latest audit with the lower instance. The lower instance c
 choose to upload only missing reports.
 
 If a user creates a domain locally, PingCastle synchronizes it.
-However, if the user removes it locally (which is allowed when no
-reports are present), the application will attempt to remove it from the
+However, if the user removes it locally (which PingCastle allows when no
+reports exist), the application will attempt to remove it from the
 higher instance. Removal can't complete if reports
 already exist, so the higher instance may deny the remove request silently.
 
@@ -3188,7 +3188,7 @@ If the check denies the import, the lower instance doesn't import the report and
 After this check completes, the lower instance performs the import and then
 synchronizes the report to the higher instance. If there is any network issue
 during this step, the instance ignores the error (but logs it if
-logging is enabled).
+you enable logging).
 
 ### Connection tests
 
@@ -3275,7 +3275,7 @@ Running manually has limitations. Database permission errors may not appear beca
 <TabItem value="windows" label="Windows" default>
 
 - **Event Viewer** stores application errors and warnings
-- **Debug logs** are written to the logs directory when enabled (C:\\PingCastleEnterprise\\logs\\)
+- PingCastle Enterprise writes **debug logs** to the logs directory when you enable them (C:\\PingCastleEnterprise\\logs\\)
 
 </TabItem>
 <TabItem value="linux" label="Linux">
@@ -3295,7 +3295,7 @@ Here are common errors, their causes, and how to fix them.
 <details>
 <summary>Incorrect ASP.NET Core Middleware Version</summary>
 
-These error messages appear when the wrong version of ASP.NET Core is installed:
+These error messages appear when you install the wrong version of ASP.NET Core:
 
 ![ASP.NET Core error - HTTP 502.5](/images/pingcastle/enterpriseinstall/image90.webp)
 
@@ -3315,7 +3315,7 @@ Command line error messages:
 
 **Solution:**
 
-Identify the correct version of the ASP.NET Core framework and install it. If deploying to IIS, install the ASP.NET Core Hosting Bundle.
+Identify the correct version of the ASP.NET Core framework and install it. If you're deploying to IIS, install the ASP.NET Core Hosting Bundle.
 
 :::note
 The last error was related to the missing KB KB2533623
@@ -3377,7 +3377,7 @@ The application requires database permissions to create tables and modify data. 
 - TCP/IP connectivity enabled on SQL Server
 - Firewall configured to allow remote connections (if SQL Server is on a different machine)
 
-**Important:** The application pool identity needs these permissions, not your user account. When running under IIS, the identity is typically `IIS APPPool\AppName`.
+**Important:** The application pool identity needs these permissions, not your user account. When the application runs under IIS, the identity is typically `IIS APPPool\AppName`.
 
 ![SQL Server TCP/IP disabled in configuration](/images/pingcastle/enterpriseinstall/image103.webp)
 

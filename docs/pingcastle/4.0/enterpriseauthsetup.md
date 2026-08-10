@@ -47,7 +47,7 @@ When **Disable Password Login** is enabled and Windows Authentication is enabled
 
 **Step 1: Install Windows Authentication Package**
 
-Ensure the Windows Authentication package is installed. It may not be part of the default IIS installation on older Windows Server versions.
+Ensure you have installed the Windows Authentication package. It may not be part of the default IIS installation on older Windows Server versions.
 
 Open **Server Manager** > **Manage** > **Add Roles and Features** > **Server Roles** > **Web Server (IIS)** > **Web Server** > **Security** and select **Windows Authentication**.
 

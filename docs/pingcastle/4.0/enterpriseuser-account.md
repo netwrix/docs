@@ -9,11 +9,11 @@ This section introduces how to manage your own account and how administrators ca
 
 The Manage My Account menu opens the Manage Your Account window. This window serves as a centralized hub for managing your user profile, security settings, notifications, and account information.
 
-Follow these steps to access the Manage My Account window:
+To access the Manage My Account window:
 
 1. Log in to your account.
 
-2. Click your profile icon located in the top-right corner of the application.
+2. Click your profile icon in the top-right corner of the application.
 
 3. Select **Manage My Account** from the dropdown menu. This opens the Manage Your Account window.
 

@@ -33,7 +33,7 @@ Ensure the certificate Subject and Subject Alternative Name (SAN) DNS entries ma
 5. **Update Application Configuration**: Set the **Webhost** setting to your HTTPS URL (e.g., `https://pingcastle.yourdomain.com`). See [Configuring the web host](enterpriseemailsetup.md#configuring-the-web-host).
 
 :::important
-The **Webhost** setting is used for links sent to users via email and other notifications. Ensure this matches your HTTPS URL to avoid mixed content warnings and ensure users receive secure links.
+PingCastle Enterprise uses the **Webhost** setting for links it sends to users via email and other notifications. Ensure this matches your HTTPS URL to avoid mixed content warnings and ensure users receive secure links.
 :::
 
 ## IIS Maximum Upload Configuration
@@ -72,7 +72,7 @@ If you need to import reports larger than 200MB manually, you'll need to adjust 
    ```
 
 :::warning
-This setting only affects the client-side validation. Ensure your IIS upload limit (configured earlier) is set appropriately to handle files of this size.
+This setting only affects the client-side validation. Ensure your IIS upload limit (configured earlier) can handle files of this size.
 :::
 
 :::note

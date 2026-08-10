@@ -4,8 +4,8 @@ sidebar_label: Synchronization
 # Synchronization for PingCastle Enterprise
 
 PingCastle Enterprise supports a synchronization mode to implement a
-security zone model (commonly used within Defense sectors). Only domains are
-synchronized (Entra ID isn't supported).
+security zone model (commonly used within Defense sectors). PingCastle Enterprise
+synchronizes only domains; it doesn't support Entra ID.
 
 **PingCastle Enterprise high trust**
 
@@ -25,15 +25,15 @@ The data synchronized between high trust and low trust instances includes:
   Normal = recomputed for Full report, as-is for normal report; Light =
   stripped from Normal and Full, etc.)
 
-The following data isn't synchronized: exceptions, action plans,
+PingCastle Enterprise doesn't synchronize the following data: exceptions, action plans,
 maturity changes, etc.
 
 ## Configuration
 
 You need to configure an API key with synchronization rights on the server side.
 
-You must assign the Agent to an entity. You can't assign it to a domain, as the entity will be used as the root to
-assign the newly forwarded domains.
+You must assign the Agent to an entity. You can't assign it to a domain, as PingCastle Enterprise uses the entity as the root for
+assigning the newly forwarded domains.
 
 ![API key configuration showing Agent assignment to entity with synchronization rights](/images/pingcastle/enterpriseinstall/image81.webp)
 
@@ -56,11 +56,11 @@ Specify the Uri as the FQDN of the recipient server and the API key.
 ```
 
 The export level is the one defined in the classic PingCastle Agent configuration.
-If information needs to be removed, the data will be recomputed (this can
+If the level requires removing information, PingCastle Enterprise recomputes the data (this can
 result in information loss if the instance is processing a more
-recent report). If the level doesn't need to be restricted, the
-information will be forwarded as-is. If the report version is
-more recent, no information will be lost.
+recent report). If the level doesn't restrict the information, PingCastle Enterprise
+forwards it as-is. If the report version is
+more recent, no information is lost.
 
 Available export levels:
 - `Full` - No filter applied, all data included
@@ -71,27 +71,27 @@ Available export levels:
 ## Synchronization patterns
 
 PingCastle Enterprise will attempt to retrieve the
-license from the higher instance at startup. If it can't be retrieved, it will use the locally
+license from the higher instance at startup. If it can't retrieve the license, it uses the locally
 configured license.
 
-PingCastle Enterprise will sync a domain when the domain is edited or when
-the sync button is pressed.
+PingCastle Enterprise will sync a domain when you edit the domain or when
+you click the sync button.
 
 ![Domain sync button interface](/images/pingcastle/enterpriseinstall/image84.webp)
 
-The Sync button is shown if the sync link is configured AND if the user
-has permission to edit the domain. When a sync is performed, the domain
-properties (status, etc.) will be synchronized along with past reports.
+The Sync button appears if you configured the sync link AND if the user
+has permission to edit the domain. During a sync, PingCastle Enterprise synchronizes the domain
+properties (status, etc.) along with past reports.
 
-To avoid loading older reports with each change, information about
-the latest audit is shared with the lower instance. The lower instance can
+To avoid loading older reports with each change, the higher instance shares information about
+the latest audit with the lower instance. The lower instance can
 choose to upload only missing reports.
 
-If a domain is created by a user locally, it will be synchronized.
-However, if it is removed locally (which is allowed when no
-reports are present), the application will attempt to remove it from the
-higher instance. Removal can't be completed if reports
-already exist, so the remove request may be denied silently.
+If a user creates a domain locally, PingCastle Enterprise synchronizes it.
+However, if the user removes it locally (which PingCastle Enterprise allows when no
+reports exist), the application will attempt to remove it from the
+higher instance. The higher instance can't complete the removal if reports
+already exist, so it may deny the remove request silently.
 
 You can also force synchronization of all domains from the
 Interoperability page.
@@ -109,7 +109,7 @@ If the check denies the import, the lower instance doesn't import the report and
 After this check completes, the lower instance performs the import and then
 synchronizes the report to the higher instance. If there is any network issue
 during this step, the instance ignores the error (but logs it if
-logging is enabled).
+you enabled logging).
 
 ## Connection tests
 
@@ -120,8 +120,8 @@ If there is an error, PingCastle Enterprise displays it as an exception.
 
 ![](/images/pingcastle/enterpriseinstall/image86.webp)
 
-Note: The error details may be contained in an inner exception
-shown in the following screenshot. In this example, this is a DNS issue where the host can't be
+Note: An inner exception may contain the error details, as the following screenshot
+shows. In this example, this is a DNS issue where the host can't be
 found.
 
 ![](/images/pingcastle/enterpriseinstall/image87.webp)
