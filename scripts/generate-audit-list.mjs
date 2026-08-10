@@ -15,7 +15,7 @@
  *   docs-audit/<product>/_meta.json          - scan counts and exclusion reasons
  *   docs-audit/_orphans.csv                   - tracked files in no registered version
  *
- * Review status (reviewer/audited/fixed/corrections) lives in the imported
+ * Review status (reviewer/audited/fixed/notes) lives in the imported
  * spreadsheet, not in this repo, so regenerating never risks reviewer data —
  * every run produces a fresh, complete review-list.csv.
  *
@@ -44,6 +44,24 @@ const PROJECT_ROOT = path.resolve(__dirname, '..');
 const SITE_BASE_URL = 'https://docs.netwrix.com';
 const EXCLUDED_BASENAMES = new Set(['CLAUDE.md', 'SKILL.md']);
 const EXCLUDED_SEGMENTS = new Set(['kb', '_partials', 'docs-staging']);
+
+// Products excluded from the audit entirely.
+const AUDIT_EXCLUDED_PRODUCTS = new Set(['partner', 'customer']);
+
+// recoveryforactivedirectory is the old name for identityrecovery (it's
+// hideFromNavbar in products.js, "superseded by Identity Recovery") — file its
+// pages under identityrecovery instead of giving it its own tab. Note this
+// means `--product=recoveryforactivedirectory` alone produces no output;
+// use `--product=identityrecovery` to regenerate the merged tab.
+const PRODUCT_ALIASES = { recoveryforactivedirectory: 'identityrecovery' };
+
+// Path prefixes excluded per-product. PolicyPak's knowledge base articles are
+// authored directly inside its own doc tree instead of the usual copied-in
+// `kb/` folder (which EXCLUDED_SEGMENTS already catches), so they need their
+// own exclusion.
+const PRODUCT_EXCLUDED_PREFIXES = {
+  policypak: ['docs/policypak/knowledgebase/'],
+};
 
 // ============================================================================
 // CLI args
@@ -108,7 +126,8 @@ function listTrackedDocFiles() {
  * under oldpath, since git log walks newest-to-oldest.
  */
 function computeChurnMap(since, pathScope) {
-  const out = git(['log', `--since=${since}`, '--no-merges', '--find-renames', '--numstat', '-z', '--format=', '--', pathScope]);
+  const pathScopes = Array.isArray(pathScope) ? pathScope : [pathScope];
+  const out = git(['log', `--since=${since}`, '--no-merges', '--find-renames', '--numstat', '-z', '--format=', '--', ...pathScopes]);
   const tokens = out.split('\0');
   const churn = new Map();
   const renamedFrom = new Map(); // oldPath -> current name it should be attributed to
@@ -277,8 +296,11 @@ function hashNormalized(content, version) {
 /**
  * Group same-relative-path files across a product's versions into duplicate
  * clusters when their version-normalized content hashes match. Returns a map
- * of repoPath -> { isPrimary, primaryRepoPath, primaryVersion } for every file
- * that participates in a cluster of size > 1.
+ * of repoPath -> { isPrimary, primaryRepoPath, primaryVersion, duplicateVersions }
+ * for every file that participates in a cluster of size > 1. Only the primary
+ * (newest) member gets a non-empty duplicateVersions list — non-primary
+ * members are dropped from the review list entirely, since the primary's row
+ * covers them.
  */
 function detectDuplicates(productFiles, versionRank) {
   const byRelPath = new Map(); // relPath -> [{ repoPath, version, hash }]
@@ -300,11 +322,13 @@ function detectDuplicates(productFiles, versionRank) {
     for (const cluster of byHash.values()) {
       if (cluster.length < 2) continue;
       const primary = cluster.reduce((best, cur) => (versionRank.get(cur.version) < versionRank.get(best.version) ? cur : best));
+      const duplicateVersions = cluster.filter((m) => m !== primary).map((m) => m.version);
       for (const member of cluster) {
         result.set(member.repoPath, {
           isPrimary: member === primary,
           primaryRepoPath: primary.repoPath,
           primaryVersion: primary.version,
+          duplicateVersions: member === primary ? duplicateVersions : [],
         });
       }
     }
@@ -341,6 +365,7 @@ function main() {
   const targetProducts = args.products
     ? PRODUCTS.filter((p) => args.products.includes(p.id))
     : PRODUCTS;
+  const requestedIds = new Set(targetProducts.map((p) => p.id));
 
   if (args.products) {
     const known = new Set(PRODUCTS.map((p) => p.id));
@@ -373,12 +398,18 @@ function main() {
 
     if (entry.hidden && !args.includeHidden) continue; // deliberately excluded, not an orphan
 
-    if (!targetProducts.includes(entry.product)) continue;
+    if (AUDIT_EXCLUDED_PRODUCTS.has(entry.product.id)) continue;
+
+    const excludedPrefixes = PRODUCT_EXCLUDED_PREFIXES[entry.product.id];
+    if (excludedPrefixes && excludedPrefixes.some((prefix) => filePath.startsWith(prefix))) continue;
+
+    const effectiveProductId = PRODUCT_ALIASES[entry.product.id] || entry.product.id;
+    if (!requestedIds.has(entry.product.id) && !requestedIds.has(effectiveProductId)) continue;
 
     const relPath = filePath.slice(entry.docPath.length + 1);
-    const list = perProductFiles.get(entry.product.id) || [];
+    const list = perProductFiles.get(effectiveProductId) || [];
     list.push({ repoPath: filePath, relPath, entry });
-    perProductFiles.set(entry.product.id, list);
+    perProductFiles.set(effectiveProductId, list);
   }
 
   if (!args.activityOnly) {
@@ -402,9 +433,14 @@ function main() {
 
   let totalIncluded = 0;
   let totalExcludedByChurn = 0;
+  let processedProducts = 0;
   const includedByProduct = new Map(); // productId -> included files (post churn/draft filtering) — what verifyAgainstBuild checks
 
   for (const product of targetProducts) {
+    if (PRODUCT_ALIASES[product.id]) continue; // folded into another product's tab, see PRODUCT_ALIASES
+    if (AUDIT_EXCLUDED_PRODUCTS.has(product.id)) continue;
+    processedProducts += 1;
+
     const files = perProductFiles.get(product.id) || [];
     const productOutDir = path.join(outDir, product.id);
     if (!args.dry) fs.mkdirSync(productOutDir, { recursive: true });
@@ -450,27 +486,31 @@ function main() {
     included.sort((a, b) => a.repoPath.localeCompare(b.repoPath));
 
     if (!args.activityOnly) {
-      const rows = included.map((f) => {
-        const dup = dupInfo.get(f.repoPath);
-        const alsoCovers = dup && !dup.isPrimary ? `Covered by ${dup.primaryVersion} — see ${dup.primaryRepoPath}` : '';
-        return [
-          f.title,
-          f.entry.version.version,
-          f.url,
-          f.repoPath,
-          alsoCovers,
-          '', // reviewer
-          '', // audited
-          '', // fixed
-          '', // corrections
-          '', // notes
-        ];
-      });
+      const rows = included
+        .filter((f) => {
+          const dup = dupInfo.get(f.repoPath);
+          return !dup || dup.isPrimary;
+        })
+        .map((f) => {
+          const dup = dupInfo.get(f.repoPath);
+          const duplicates = dup && dup.duplicateVersions.length ? dup.duplicateVersions.join(', ') : '';
+          return [
+            f.title,
+            f.entry.version.version,
+            f.url,
+            f.repoPath,
+            duplicates,
+            '', // reviewer
+            '', // audited
+            '', // fixed
+            '', // notes
+          ];
+        });
 
       if (!args.dry) {
         writeCsv(
           path.join(productOutDir, 'review-list.csv'),
-          ['document_title', 'version', 'live_page_url', 'source_path', 'also_covers', 'reviewer', 'audited', 'fixed', 'corrections', 'notes'],
+          ['document_title', 'version', 'live_page_url', 'source_path', 'duplicates', 'reviewer', 'audited', 'fixed', 'notes'],
           rows
         );
 
@@ -516,7 +556,8 @@ function main() {
       // No _meta.json to read reliably in a dry run (may not exist, or may be stale on purpose) — skip.
     } else if (fs.existsSync(metaPath)) {
       const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-      const activityChurn = computeChurnMap(meta.auditStartedAt, product.path);
+      const aliasedPaths = PRODUCTS.filter((p) => PRODUCT_ALIASES[p.id] === product.id).map((p) => p.path);
+      const activityChurn = computeChurnMap(meta.auditStartedAt, [product.path, ...aliasedPaths]);
       const activityRows = included.map((f) => {
         const c = activityChurn.get(f.repoPath);
         return [f.repoPath, c ? c.added + c.deleted : 0];
@@ -533,7 +574,7 @@ function main() {
     console.log(`✅ ${product.id}: ${included.length} pages included, ${excludedByChurn} excluded (recent churn), ${excludedByDraft} excluded (draft), ${[...dupInfo.values()].filter((d) => !d.isPrimary).length} marked as duplicates`);
   }
 
-  console.log(`\n📦 Done: ${totalIncluded} pages across ${targetProducts.length} product(s), ${totalExcludedByChurn} excluded for recent churn.`);
+  console.log(`\n📦 Done: ${totalIncluded} pages across ${processedProducts} product(s), ${totalExcludedByChurn} excluded for recent churn.`);
 
   if (args.verifyAgainstBuild) {
     verifyAgainstBuild(targetProducts, includedByProduct, args);
