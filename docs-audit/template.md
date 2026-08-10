@@ -6,8 +6,9 @@ product's `review-list.csv` — you don't need a separate copy per page.
 ## Before you start
 
 Open the page's `live_page_url` and the product side by side. Work through
-the page top to bottom. Check every item below, then record every problem you
-find in that row's `corrections` cell.
+the page top to bottom. Check every item below, then write up every problem
+you find using the form below — directly in a Claude Code chat, not in the
+spreadsheet.
 
 ## Checklist
 
@@ -34,11 +35,10 @@ find in that row's `corrections` cell.
   prefer removing it over updating it. Recommend removal by default and keep
   a screenshot only when it shows something the words genuinely can't.
 
-## Recording a correction
+## Writing up a correction
 
-Write one block per problem in the row's `corrections` cell, using this
-format. Use `Alt+Enter` (Google Sheets) or `Ctrl+Enter` (Excel) for line
-breaks inside the cell:
+For each problem you find, fill out one block of this form. Be specific
+enough that someone who has never opened this page can act on it:
 
 ```
 Where: <quote the exact sentence, step number, heading, or snippet>
@@ -46,19 +46,23 @@ Fix: <what it should say instead — write the replacement text>
 Why: <what the product actually does, or what went wrong when you followed the page as written>
 ```
 
-Be specific enough that someone who has never opened this page can act on
-your note.
-
 ## When you're done with a page
 
-If `corrections` is empty, set `audited` to `Yes` and move on.
+If you found no problems, set `audited` to `Done` in the sheet and move on.
 
-If you wrote corrections, copy the `corrections` cell and paste it into
-Claude Code from the repository root with an instruction like:
+If you wrote up one or more corrections, open Claude Code from the repository
+root and paste your form with an instruction like:
 
 > Apply these documentation audit findings to `<source_path>`. Make only the
 > changes my notes describe. Follow the Netwrix writing standards in
 > `docs/CLAUDE.md`, and run `/dale <source_path>` afterward.
+>
+> Where: ...
+> Fix: ...
+> Why: ...
 
 Review Claude's changes, open a pull request against `dev`, and once it
-merges, set `fixed` to `Yes` in the sheet.
+merges, set `fixed` to `Done` in the sheet — then set `audited` to `Done` too,
+since finding and fixing the problem is itself the audit. If the correction
+turned out not to need a code change (e.g. it was already accurate), set
+`fixed` to `No fix necessary` instead.
