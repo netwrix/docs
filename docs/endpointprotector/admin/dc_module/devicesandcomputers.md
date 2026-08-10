@@ -116,7 +116,7 @@ deployed to the database, making it manageable.
 ### DPI Status
 
 The Computers list includes an optional **DPI Status** column that shows the Deep Packet Inspection
-status for each computer. This column is hidden by default.
+status for each computer. Endpoint Protector hides this column by default.
 
 To display the DPI Status column, click **Show/Hide Columns** and select **DPI Status**.
 
@@ -180,7 +180,7 @@ Specific Devices are accessible.
 ![Specifies which Device Types and Speciﬁc Devices can be accessible](computerrights.webp)
 
 The Standard device control rights include the Device Types and Already Existing Devices sections.
-These are generally the only device rights used.
+Most deployments use only these device rights.
 
 In addition to the Standard device control rights, if you enable them in the Global Settings, you
 can create fallback policies for Outside Network and Outside Hours circumstances.
@@ -224,8 +224,7 @@ Terminal Servers, as described in the following sections.
 
 #### Initial Conﬁguration
 
-The process starts with the menu view from Device Control > Computers, namely the action to Mark as
-Terminal Server
+The process starts with the Mark as Terminal Server action in Device Control > Computers
 ![Mark as Terminal Server Action](terminalserver_19x14.webp)
 .
 
@@ -262,8 +261,8 @@ Endpoint Rights Functionality for the rights policy to apply on user logins with
 :::
 
 
-Secondly, the menu from Device Control > Users > Rights will present an additional device type for
-all the users in Endpoint Protector, namely Thin Client Storage (RDP Storage).
+The Device Control > Users > Rights menu also presents an additional device type for all users in
+Endpoint Protector: Thin Client Storage (RDP Storage).
 
 ![Thin Client Storage (RDP Storage) device type](thinclientstorage.webp)
 

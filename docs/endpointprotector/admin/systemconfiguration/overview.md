@@ -105,7 +105,7 @@ copy the following details from this screen using the Copy button:
 
 - Endpoint Protector Server IP
 - Endpoint Protector Server port
-- Deprtment Code
+- Department Code
 
 
 ![Download and install the Endpoint Protector Client corresponding to your operating system](ClientSoftwarePage.webp)
@@ -118,9 +118,9 @@ For more client install options, refer to the dedicated article on [Agent Instal
 
 ## Client Software Upgrade
 
-From this section, you can upload the latest clients previously downloaded from the **Client Software** section to upgrade
-the Endpoint Protector & Enforced Encryption Client and manage the upgraded jobs. The Client Software Upgrade feature is only available
-for Windows and macOS Clients.To upgrade your Linux Clients, submit a request using the [online form](https://www.endpointprotector.com/linux).
+From this section, you can upload the latest clients you downloaded from the **Client Software** section to upgrade
+the Endpoint Protector and Enforced Encryption Client and manage the upgrade jobs. The Client Software Upgrade feature is only available
+for Windows and macOS Clients. To upgrade your Linux Clients, submit a request using the [online form](https://www.endpointprotector.com/linux).
 
 :::note
 When you update your operating system to the latest macOS Ventura, macOS deletes the eppclient.log
@@ -156,7 +156,7 @@ steps:
 ![Create New Upgrade Job](createnewupgradejob.webp)
 
 **Step 2 –** Select the groups and/or computers to perform or exclude from the upgrade and then
-click **Next**. You will view a summary of your selection above the table with endpoints.
+click **Next**. A summary of your selection appears above the table of endpoints.
 
 :::note
 Endpoint Protector upgrades only computers that use the operating system you selected. If
@@ -169,7 +169,7 @@ Endpoint Protector upgrades only the computers.
 ![Select the groups and/or computers to perform or exclude from the upgrade](selectendpointsupgrade.webp)
 
 **Step 3 –** Edit the default job title, add a description and conﬁrm the upgrade job details by
-clicking **Start Upgrade job**. You will view the upgrade as an entry on the Upgrade jobs section.
+clicking **Start Upgrade job**. The upgrade appears as an entry in the Upgrade jobs section.
 
 :::note
 A dedicated cron drives the upgrade process for the Endpoint Protector Client.
@@ -182,7 +182,7 @@ checks and updates process status to Completed or Completed with failures.
 
 ### Manage Upgrade Jobs
 
-From this section you can view the upgraded jobs and use the Actions column to view job details,
+From this section you can view the upgrade jobs and use the Actions column to view job details,
 cancel, pause, retry, archive, or delete an entry on the list.
 
 To continue upgrading canceled Client Upgrade jobs, use the **Retry** option from the Actions
@@ -199,8 +199,7 @@ selection in other jobs.
 ## Client Uninstall
 
 From this section, you can perform a remote uninstall of the Endpoint Protector Client. The
-computers will receive the uninstall command at the same time they receive the next set of commands
-from the server.
+computers receive the uninstall command with the next set of commands from the server.
 
 If the computer is offline, it receives the uninstall command the first time it comes online.
 When you press the uninstall button, the computers appear grayed out until the action completes.
@@ -211,7 +210,7 @@ You can cancel the uninstall command if it hasn't already run.
 
 :::note
 If the server and Endpoint Protector client can't communicate due to missing server
-certiﬁcation validation (when the certiﬁcation validation setting is enabled), you can't run
+certiﬁcation validation (when you enable the certiﬁcation validation setting), you can't run
 uninstall commands from the Endpoint Protector Server. In such cases, if you can't manually
 install the certiﬁcate on the Endpoint Protector Client computer, you can temporarily disable the
 certiﬁcation validation setting on the Endpoint Protector Server and synchronize the Endpoint

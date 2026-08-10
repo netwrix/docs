@@ -7,10 +7,10 @@ sidebar_position: 10
 
 # Main components
 
-Endpoint Protector is designed around several physical entities:
+Endpoint Protector's design centers on several physical entities:
 
-- Computers—the Windows, macOS, and Linux workstations that have the Endpoint Protector Client installed
-- Devices—the devices supported by Endpoint Protector (USB devices, digital photo cameras, USB memory cards, and others)
+- Computers—the Windows, macOS, and Linux workstations that run the Endpoint Protector Client
+- Devices—the devices that Endpoint Protector supports (USB devices, digital photo cameras, USB memory cards, and others)
 - Users—the users who handle the devices and the computers
 
 The server side of Endpoint Protector has several parts working together:
@@ -19,12 +19,12 @@ The server side of Endpoint Protector has several parts working together:
 - **MySQL Database**—stores configuration data, agent provisioning settings, information about users and groups, and policy definitions
 - **CrateDB**—a distributed SQL database that stores Device Control, Content Aware Protection, and eDiscovery logs. CrateDB, optimized for time-series log data, provides faster queries and horizontal scalability for environments with high log volumes
 - **Redis**—an in-memory data store that buffers incoming agent logs before Endpoint Protector ingests them into CrateDB
-- **Web Service**—communicates with the Endpoint Protector Clients and stores the information received from them
+- **Web Service**—communicates with the Endpoint Protector Clients and stores the information they send
 - **Endpoint Protector User Interface**—manages the existing devices, computers, users, groups, and their behavior in the system
 
 The client side of Endpoint Protector has two components:
 
-- **Endpoint Protector Client**—enforces the rights and settings received from the server on Windows, macOS, and Linux computers. The client also automatically deploys Enforced Encryption on USB storage devices.
+- **Endpoint Protector Client**—enforces the rights and settings the server sends on Windows, macOS, and Linux computers. The client also automatically deploys Enforced Encryption on USB storage devices.
 - **Enforced Encryption Client**—enforces FIPS 140-3 validated encryption on USB storage devices as the server specifies. This is a standalone application compatible with Windows and macOS computers.
 
 ![Main Components](maincomponents.webp)
