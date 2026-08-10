@@ -10,7 +10,7 @@ sidebar_label: Requirements
 PingCastle Enterprise requires:
 
 - Windows Server operating systems that support ASP.NET 10.0
-  - Windows Server 2012 R2
+  - Windows Server 2012 R2 (not recommended)
   - Windows Server 2016
   - Windows Server 2019
   - Windows Server 2022 (recommended)

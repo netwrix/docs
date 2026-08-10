@@ -72,7 +72,7 @@ graph LR
 - Requires SQL Server database for data storage
 - Accessible via HTTP/HTTPS (ports 80/443)
 - Provides web interface for administrators and users
-- `PingCastleSchedulerService` handles scheduled scans of local and trusted domains (see [Scheduling scans](enterprisepostinstall.md#scheduling-scans))
+- `PingCastleSchedulerService` handles scheduled scans of local and trusted domains (see [Scheduling your first scan](enterprisepostinstall.md#scheduling-your-first-scan))
 
 #### CloudAPI Service
 
@@ -129,3 +129,23 @@ graph LR
 |---------|------|----------|-------|
 | Microsoft Graph | 443 | TCP | HTTPS outbound from the CloudAPI service |
 | Microsoft 365 (SharePoint, Teams, Exchange, Azure RBAC) | 443 | TCP | HTTPS outbound from the CloudAPI service |
+
+## Security
+
+PingCastle Enterprise is a tool dedicated to improving Active Directory security, so security is a priority at every step of development.
+
+The application uses a framework that prevents most common attacks, such as cross-site scripting (XSS) or SQL injection, by design.
+
+Because attackers can sometimes bypass such protections, the application adds a layer of protection with all known HTTP security headers, including the Content Security Policy header in strict mode. The application stores all JavaScript code in separate files, so any JavaScript injected into the page doesn't run in the browser. You can verify this protection with a third-party service such as Security Headers. The application doesn't accept `unsafe-inline` or `unsafe-eval`.
+
+The application uses enforced controls that check parameters twice against a model — first in the browser, then in the server application — and parameterizes all database queries. The application never builds SQL strings. A filter verifies each database access by checking the query before PingCastle Enterprise sends it to the database. Unit tests cover this code to lower the risk of a misconfigured filter.
+
+The application is based mainly on the following frameworks:
+
+- asp.net core
+- bootstrap
+- jQuery
+- vis.js
+- chart.js
+
+You can view the up-to-date list of components on the about page of the application.

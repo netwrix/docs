@@ -36,6 +36,17 @@ The fields a credential profile needs depend on the scan type.
 
 ![A screenshot of the credential profile creation screen with the Entra ID scan type selected, showing the Agent selection field.](/images/pingcastle/enterprisescheduling/credential-profile-create.webp)
 
+### Scheduling an Entra scan
+
+The **Add tenant** wizard in [Entra scanning](enterpriseentrascan.md) includes its own scheduling step, so you can create a schedule as part of connecting the tenant.
+
+To schedule an Entra scan for a tenant that's already connected, or to add another schedule for an existing tenant:
+
+1. Go to **Configuration** > **Scheduler** > **Credential Profiles**, then click **Create profile**.
+2. Select **Entra ID** as the scan type, select the Agent, and select the tenant you configured in [Entra scanning](enterpriseentrascan.md).
+3. Click **Create profile** to save the profile.
+4. Go to **Scheduled scans**, then **Create schedule**, and select this execution profile. See [Scheduled scans](#scheduled-scans) for the field reference.
+
 ## Scheduled scans
 
 A scheduled scan job ties a credential profile to a recurring schedule. Manage scheduled scans from **Configuration** > **Scheduler** > **Scheduled scans**. Click **Create schedule** to add one.

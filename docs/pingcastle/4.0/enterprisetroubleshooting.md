@@ -17,13 +17,11 @@ Configure logging from the web portal at **Configuration** > **Settings** > **Lo
 
 See [Log Files](#log-files) for how to download the generated logs.
 
-:::note
-The PingCastleSchedulerService doesn't use Serilog. If you need to troubleshoot the scheduler, check the Windows Event Log on the server instead.
-:::
-
 #### Log Files
 
-PingCastle Enterprise and the CloudAPI service (used for Entra ID scanning) use Serilog for logging. Each service writes its logs to a `logs` folder under its own installation location.
+PingCastle Enterprise, the CloudAPI service (used for Entra ID scanning), and the PingCastleSchedulerService use Serilog for logging. PingCastle Enterprise writes logs to a `logs` folder in its installation directory. CloudAPI and PingCastleSchedulerService each write logs to a `logs` folder inside their own subfolder (`CloudAPI` and `Scheduler`, respectively) under the PingCastle Enterprise installation directory.
+
+Since PingCastleSchedulerService has no web interface, its logs aren't included in the portal's log download. Check the `Scheduler\logs` folder directly, or the Windows Event Log on the server, to troubleshoot the scheduler.
 
 To download logs from the web portal, go to **Configuration** > **Settings** > **Logging** and click **Download Today's Logs** or **Download All Logs**.
 
@@ -142,8 +140,6 @@ The application requires database permissions to create tables and modify data. 
 - Firewall configured to allow remote connections (if SQL Server is on a different machine)
 
 **Important:** The application pool identity needs these permissions, not your user account. When running under IIS, the identity is typically `IIS APPPool\AppName`.
-
-![SQL Server TCP/IP disabled in configuration](/images/pingcastle/enterpriseinstall/image103.webp)
 
 **Solution 1: Change Application Pool Identity**
 

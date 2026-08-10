@@ -17,7 +17,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Installation',
-          items: ['enterpriseinstall', 'enterpriseauthsetup', 'enterpriseemailsetup'],
+          items: ['enterpriseinstall', 'enterprisehttpssetup', 'enterpriseauthsetup', 'enterpriseemailsetup'],
         },
         {
           type: 'category',
@@ -26,6 +26,9 @@ module.exports = {
             'enterprisepostinstall',
             'enterprisescheduling',
             'enterpriseentrascan',
+            'enterpriseagentdeployment',
+            'enterprisedecryptionkeys',
+            'enterprisesynchronization',
             {
               type: 'category',
               label: 'Settings',
@@ -46,10 +49,21 @@ module.exports = {
             },
           ],
         },
+        {
+          type: 'category',
+          label: 'User Guide',
+          items: [
+            'enterpriseuser',
+            'enterpriseuser-dashboard',
+            'enterpriseuser-infrastructure',
+            'enterpriseuser-entities',
+            'enterpriseuser-import',
+            'enterpriseuser-account',
+          ],
+        },
         'enterpriseupgrade',
         'enterpriseauditlog',
         'enterprisetroubleshooting',
-        'enterpriseuser',
       ],
     },
     {

@@ -352,6 +352,10 @@ PingCastle includes `PingCastleAutoUpdater.exe`, which automatically downloads t
 
 For environments where reports must be transferred over unsecured channels, PingCastle supports RSA encryption.
 
+:::note
+If you're sending reports to PingCastle Enterprise, configure the matching private key in Enterprise so it can decrypt them. See [Decryption keys](enterprisedecryptionkeys.md).
+:::
+
 **Generate an RSA Key Pair**:
 ```
 PingCastle.exe --generate-key
@@ -437,6 +441,10 @@ For authenticated SMTP, provide values for `UserName` and `Password`. For TLS/SS
 | `--smtplogin <user>` | Specify SMTP username via command line (overrides config) |
 | `--smtppass <password>` | Specify SMTP password via command line (overrides config) |
 | `--smtptls` | Enable TLS/SSL for SMTP (for ports other than 465 and 587) |
+
+:::tip
+If you're using PingCastle Enterprise or Pro, sending reports this way (via `PingCastle.exe`) produces a report without exclusions applied, since exclusions run server-side. Scores in the emailed report likely differ from scores in the web UI.
+:::
 
 **Example**:
 ```powershell

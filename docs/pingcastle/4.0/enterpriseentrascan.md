@@ -38,10 +38,15 @@ To connect a tenant:
 2. Enter the tenant ID for the Entra ID tenant you want to scan.
 3. Select the app registration authentication method: **Client secret** or **Certificate**.
 4. Provide the client secret or certificate for the app registration.
+5. Continue through the wizard's scheduling step to create a scheduled scan for the tenant, or skip it to schedule the scan later.
 
 ![A screenshot of the Add Entra tenant wizard's App credentials step, showing the application client ID field and the client secret or certificate authentication method options.](/images/pingcastle/enterpriseentrascan/app-registration-credentials.webp)
 
 For the full list of Microsoft Graph, Exchange, SharePoint, Teams, and Azure role-based access control (RBAC) permissions the app registration needs, see [Entra scanner permissions](#entra-scanner-permissions).
+
+:::note
+If you skip the wizard's scheduling step, or need to add another schedule later, see [Scheduling an Entra scan](enterprisescheduling.md#scheduling-an-entra-scan).
+:::
 
 ## Entra scanner permissions
 
@@ -81,7 +86,7 @@ The scanner requires application permissions on Microsoft Graph (`appId 00000003
 | Policy.Read.All | `246dd0d5-5bd0-4def-940b-0421030a5b68` | Conditional Access and authentication policy checks |
 | RoleManagement.Read.Directory | `483bed4a-2ad3-4361-a73b-c83ccdbdc53c` | Privileged role assignment checks |
 | SharePointTenantSettings.Read.All | `83d4163d-a2d8-4d3b-9695-4ae3ca98f888` | Tenant-level SharePoint and OneDrive settings checks |
-| Sites.FullControl.All | N/A | Modern authentication and shared link expiration checks |
+| Sites.FullControl.All | N/A | `SharePointModernAuthNotEnabled`, `SharePointSharedLinksNeverExpire`, `SharingInvitationsNotMonitored` |
 | User.Read.All | `df021288-bdef-4463-88db-98f22de89214` | User profile based checks |
 | UserAuthenticationMethod.Read.All | `38d9df27-64da-44fd-b7c5-a6fbac20248f` | Multi-factor authentication (MFA) and authentication method checks |
 | Exchange.ManageAsApp | N/A | Exchange Online Admin API checks |
@@ -123,6 +128,8 @@ Microsoft Graph permissions cover most risk checks that the scanner performs, ei
 ### SharePoint Online
 
 **Required:** the `Sites.FullControl.All` and `Directory.Read.All` permissions listed in the [Microsoft Graph application permissions](#microsoft-graph-application-permissions) table.
+
+`Sites.FullControl.All` is a broad permission — it grants full control over every site collection in the tenant. It enables three risk checks: `SharePointModernAuthNotEnabled`, `SharePointSharedLinksNeverExpire`, and `SharingInvitationsNotMonitored`. If you don't grant it, those three checks show as unable to run, but the rest of the scan, including the other SharePoint and OneDrive checks, still works.
 
 :::warning
 SharePoint Online only accepts certificate-based authentication for the scanner app. If the app registration uses a client secret, SharePoint risk checks fail even when the correct permissions are granted. Configure certificate authentication for specific sharepoint online checks to work correctly.

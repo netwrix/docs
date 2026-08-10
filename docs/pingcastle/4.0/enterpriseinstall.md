@@ -70,7 +70,7 @@ The installer wizard walks you through prerequisite checks, licensing, and confi
 7. **Authentication method**: enable **Windows Authentication**, **OpenID Connect**, **SAML2**, or a combination, and optionally disable local password login. See [Authentication](enterpriseauthsetup.md#authentication) for full configuration details for each method.
 
    :::warning
-   If you enable Windows Authentication, don't select a broadly scoped group such as "Domain Admins" as the restriction group. Windows strips these groups from the token it presents to the application, so authentication always fails for members of that group. Run `whoami /all` to confirm which groups appear in your token before choosing one.
+   If you enable Windows Authentication, don't select a built-in privileged group such as `BUILTIN\Administrators` or "Domain Admins" as the restriction group. Windows strips these groups from the token it presents to the application, so authentication always fails for members of that group. Run `whoami /all` to confirm which groups appear in your token before choosing one.
    :::
 
 8. **HTTPS configuration**: HTTPS is enabled by default. Choose a certificate source:
@@ -78,7 +78,7 @@ The installer wizard walks you through prerequisite checks, licensing, and confi
    - **Existing certificate file**: provide a `.pfx` file and its password.
    - **Existing certificate from the certificate store**: select the certificate from a list.
 
-   See [Configuring HTTPS](enterprisepostinstall.md#configuring-https) for guidance on using a CA-issued certificate in production.
+   See [Configuring HTTPS](enterprisehttpssetup.md#configuring-https) for guidance on using a CA-issued certificate in production.
 
 9. **Email configuration**: choose **SMTP**, **Microsoft Graph**, or **None**. See [Email](enterpriseemailsetup.md#email) for configuration details for each provider.
 10. **Ready to install**: review your selections, then click **Install**. The installer applies your configuration and shows a progress bar. Click **Finish** to close the wizard.

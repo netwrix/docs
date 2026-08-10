@@ -20,6 +20,10 @@ Most changes on these screens take effect within about 30 seconds, without a res
 Entra ID Authentication is a login method, configured through OpenID Connect. It's distinct from Entra scanning, which is a data source that assesses your Entra tenant for security risks. See [Entra scanning](enterpriseentrascan.md) for the scanning feature. PingCastle Enterprise can automatically provision users the first time they sign in through OpenID Connect or SAML2, using just-in-time (JIT) provisioning; see [Provisioning settings](enterprisesettings-scim.md) for the JIT provisioning toggle.
 :::
 
+:::tip
+You can enable OpenID Connect, SAML2, Windows Authentication, and Disable Password Login during installation, on the Authentication method screen of the installer. See [Step 2 - Run PingCastleEnterpriseInstaller.exe](enterpriseinstall.md#step-2-run-pingcastleenterpriseinstallerexe). The instructions on this page apply whether you configure a method during installation or afterward on the **Configuration** > **Settings** screens.
+:::
+
 <Tabs>
   <TabItem value="local" label="Local Authentication" default>
 
@@ -369,17 +373,13 @@ PingCastle maps certificates to user accounts using these identifiers (in order)
 
 **User Account Setup**
 
-Create a user account with a login matching the certificate subject (DNS form). No password is required.
+Create a user account with a login matching the certificate subject (DNS form). No password is required. Use an external user account for this, though any account type works.
 
-![Certificate User Account](/images/pingcastle/enterpriseinstall/Authentication/cert-user-account.webp)
+![Create External User](/images/pingcastle/enterpriseauthsetup/CreateExternalUser.webp)
 
 **Troubleshooting**
 
-If PingCastle can't recognize the certificate, it displays an error:
-
-![Certificate Not Recognized](/images/pingcastle/enterpriseinstall/Authentication/cert-not-recognized.webp)
-
-Ensure the user account login matches one of the preceding certificate identifiers.
+If PingCastle can't recognize the certificate, it displays an error. Ensure the user account login matches one of the preceding certificate identifiers.
 
   </TabItem>
 </Tabs>
