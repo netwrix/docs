@@ -101,9 +101,9 @@ Then, for each required section, judge whether the content is sufficient:
 
 | Section | What "sufficient" looks like |
 |---|---|
-| Symptom / Symptoms | Describes what the user observes clearly enough that they can confirm they have the right article. Includes error messages in code blocks if applicable. |
-| Cause / Causes | Explains *why* the issue occurs — the mechanism — not just that it occurs. Gives the reader enough context to understand why the fix works. |
-| Resolution / Resolutions | Steps are actionable and complete. If multiple options exist, explains *when* to use each. States the expected outcome. |
+| Symptom | Describes what the user observes clearly enough that they can confirm they have the right article. Includes error messages in code blocks if applicable. |
+| Cause | Explains *why* the issue occurs — the mechanism — not just that it occurs. Gives the reader enough context to understand why the fix works. |
+| Resolution | Steps are actionable and complete. If multiple options exist, explains *when* to use each. States the expected outcome. |
 | Overview / Instructions, Question / Answer (How-To) | Overview frames the task and when to do it; Instructions are complete and ordered. Q&A answer is direct and complete. |
 
 A common tell of a thin Cause section: it names the conflict or condition in one sentence but never explains the mechanism. Flag it and ask the TSE to explain the *why*.

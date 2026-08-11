@@ -70,7 +70,7 @@ Check that the required H2 headings are present for the identified article type:
 
 | Type | Required headings |
 |---|---|
-| Resolution (Error or Symptom) | `## Symptom` or `## Symptoms`, `## Cause` or `## Causes`, `## Resolution` or `## Resolutions` |
+| Resolution (Error or Symptom) | `## Symptom`, `## Cause`, `## Resolution` — always singular, even when the section describes multiple items |
 | How-To (Instructions) | `## Overview`, `## Instructions` |
 | How-To (Q&A) | `## Question`, `## Answer` |
 

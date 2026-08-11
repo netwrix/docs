@@ -50,7 +50,7 @@ Resolution articles help customers troubleshoot specific errors or unexpected be
 - Good: `Active Directory Users Missing from Search Results`
 - Bad: `AD not working right` (too vague)
 
-Both resolution article formats use sections: `## Symptom` (or `## Symptoms`), `## Cause` (or `## Causes`), `## Resolution` (or `## Resolutions`).
+Both resolution article formats use sections: `## Symptom`, `## Cause`, `## Resolution` — always singular, even when the section describes multiple items.
 
 ---
 

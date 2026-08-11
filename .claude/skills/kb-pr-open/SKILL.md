@@ -263,19 +263,21 @@ Some checks only make sense *after* fixes have landed. Run these once the fix lo
 
 ```bash
 git fetch origin dev
-git status --porcelain -- docs/
-git log --oneline origin/dev..HEAD -- docs/
+git status --porcelain
+git log --oneline origin/dev..HEAD
 ```
+
+No pathspec on either command — the exit message below claims the whole working tree and branch are clean enough to delete, so the checks must cover the whole tree, not just `docs/`. A narrower pathspec would miss uncommitted or unpushed work elsewhere (for example, a `static/` asset) and make the branch-delete suggestion unsafe.
 
 If any of these commands exits nonzero (for example, `git fetch` fails because of no network), the short-circuit does not apply — proceed to Step 5 rather than treating the failure as "clean."
 
-If **both** the status and log commands succeed and return empty — no uncommitted changes and no commits ahead of `origin/dev` touching `docs/` — exit the workflow with this message:
+If **both** the status and log commands succeed and return empty — no uncommitted changes anywhere in the working tree and no commits ahead of `origin/dev` at all — exit the workflow with this message:
 
-> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev` for `docs/`. There's nothing to commit, push, or PR. If this branch has no other commits ahead of `origin/dev`, it can be deleted with `git switch --detach origin/dev && git branch -d <branch-name>` (safe delete — refuses if there are unmerged commits; detaching onto the freshly fetched `origin/dev` avoids a false refusal from a stale or missing local `dev`). Exiting the workflow."
+> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev`. There's nothing to commit, push, or PR. The branch can be deleted with `git switch --detach origin/dev && git branch -d <branch-name>` (safe delete — refuses if there are unmerged commits; detaching onto the freshly fetched `origin/dev` avoids a false refusal from a stale or missing local `dev`). Exiting the workflow."
 
 Do NOT prompt for local testing. Do NOT propose a commit message. Do NOT enter Step 7.
 
-If either command returns output — uncommitted changes anywhere under `docs/`, or commits already on the branch ahead of `origin/dev` touching `docs/` (for example, content committed by `kb-writer` in an earlier step, or link-text sweep edits outside `docs/kb/`) — proceed normally to Step 5, even if this skill run applied zero fixes.
+If either command returns output — uncommitted changes anywhere in the working tree, or any commit already on the branch ahead of `origin/dev` (for example, content committed by `kb-writer` in an earlier step) — proceed normally to Step 5, even if this skill run applied zero fixes.
 
 ### knowledge_article_id rules (flag state, never force change)
 
