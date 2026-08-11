@@ -73,7 +73,7 @@ vale --config .vale.ini <file>
 | **article-type: qa-format** | **Q&A question format:** In Q&A articles, content under `## Question` (and interrogative sub-headings in FAQ-style articles) must be a complete interrogative sentence — starts with an interrogative word (How do you / How can you / How should you / How will you / Can you / Should you / What / When / Where / Why / Which / Who / Does / Is / Are) and ends with `?`. Use **second person ("you"), not first person ("I")**, per the kb_style_guide.md ("Use second person ('you') when addressing the reader"). "How to..." patterns (e.g., "How to export X?") are Required fixes — rewrite as "How do you export X?" or "Can you X?" as appropriate. Mark N/A if the article isn't Q&A form. |
 | **article-type: heading-labels** | **Resolution section heading pluralization:** Section headings in Symptom Resolution articles are always singular: `## Symptom`, `## Cause`, `## Resolution` — even when the section contains multiple items. Flag `## Symptoms`, `## Causes`, `## Resolutions` as Required fixes. |
 | **title: mechanical** | See "Title-format rules — two categories" below. Required fixes, apply on TSE approval, low ambiguity: gerund-form titles for How-To Instructions articles, title case correction, raw log-line/error-dump title normalization (rulebook §12), and the H1/`sidebar_label`-consistency check (`sidebar_label` must not be truncated vs. `title`). |
-| **title: semantic** | See "Title-format rules — two categories" below. Soft reminders / judgment calls — surface with suggested alternatives and reasoning, never auto-apply: product-name-in-title and article-type/title mismatch. Do NOT flag `> **NOTE:**` blockquote callouts — this is the correct format for KB articles per the style guide, not a Docusaurus `:::note` admonition. |
+| **title: semantic** | See "Title-format rules — two categories" below. Soft reminders / judgment calls — surface with suggested alternatives and reasoning, never auto-apply: product-name-in-title and article-type/title mismatch. |
 | **product-names** | Check that product names and IDs match the Product Long and Short Names table in the style guide. Flag incorrect abbreviations (NDC, NPS, NTA, etc.) and wrong `products` field values (for example, hyphens vs. underscores). |
 | **keywords-quality** | Keywords should be specific and drawn from the article content — error codes, feature names, product names, common customer search terms. Flag if fewer than 8, if they are generic, or if important terms from the article are missing. If a keyword does not appear in the article body but could be a reasonable customer search term for the topic, note it as a low-priority observation rather than a required fix. |
 | **images: location** | Check how images are referenced. KB images must be stored as PNG files in a `0-images/` folder at the **product level** (`docs/kb/<product>/0-images/`), not inside category subfolders. Articles in category subfolders reference them with `../0-images/filename.png`. Flag any `0-images/` folders created inside category subfolders rather than at the product level. |
@@ -120,7 +120,7 @@ Run this scan on every file in addition to the Derek areas table above. Each ite
 | 20 | A list that appears with no lead-in sentence, reading disjointed from surrounding prose | Add a short intro sentence ending in a colon. Route to `kb-writer` when the intro needs content judgment; apply here when the missing context is obvious from the surrounding prose. Rulebook §4. |
 | 21 | A paragraph with 3+ inline cross-reference clauses ("see X, see Y, see Z") stacked in one sentence | Collapse into a single NOTE block with the links listed cleanly (compact enumeration or short bulleted list under the NOTE). Rulebook §8. |
 | 22 | A positional reference ("above"/"below"/"the section on X") that points to a named section in the same file | Replace with `[Section Name](#section-slug)` rather than rewording the positional term away. This is the concrete execution of Dale's `positional-references` suggestion. Rulebook §4. |
-<!-- Row 23 removed — the title-change link-text sweep is post-fix, not part of the pre-fix scan. It now lives under Step 4 (Apply fixes). See "Post-fix sweeps" there. -->
+| 23 | `:::note` / `:::important` / `:::warning` / `:::tip` Docusaurus admonition syntax used anywhere in the article body | KB articles use the blockquote callout format — `> **NOTE:**` / `> **IMPORTANT:**` / `> **WARNING:**` / `> **TIP:**` — not Docusaurus `:::` admonitions, per `kb_style_guide.md`. Convert to blockquote form; if the callout sits inside a numbered list item, apply row 1's 4-space indentation rule to the converted blockquote. |
 
 ### Cross-section consistency scan
 
@@ -167,7 +167,7 @@ Structure per file:
 
 - One row each for Vale and Dale.
 - One row for `Derek (N checks)` — a single roll-up covering every frontmatter sub-field (`title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`) and every other named area (`article-type: structure`, `article-type: qa-format`, `article-type: heading-labels`, `title: mechanical`, `title: semantic`, `product-names`, `keywords-quality`, `images: location`, `images: external-refs`, `images: alt-text`, `links`, `formatting: bold/backticks`, `formatting: lists`, `prose directness`). N is the total count of sub-fields + areas — 21 as of this writing; recount if the areas table changes. Status cell: `N/N scanned, <total findings> findings in <count> areas` (or `✓ Clean` if zero findings).
-- One row for the `kb-editing-conventions scan (rows 1–22)`.
+- One row for the `kb-editing-conventions scan (rows 1–23)`.
 - One row for `Cross-section consistency (all patterns)`.
 
 No per-area or per-sub-field rows appear in the Overview table in default mode, under any circumstance — that detail lives only in the Derek findings table below. The Overview table is a fixed 5 rows regardless of file size; that fixed shape is the coverage receipt for the tool level, backed by the Coverage discipline enumeration for the check level.
@@ -182,7 +182,7 @@ Example shape (default mode):
 | Vale | 2 findings |
 | Dale (N rules) | N/N scanned, 3 findings |
 | Derek (21 checks) | 21/21 scanned, 4 findings in 3 areas |
-| kb-editing-conventions scan (22 rows) | 22/22 scanned, 2 findings (rows §7, §8) |
+| kb-editing-conventions scan (23 rows) | 23/23 scanned, 2 findings (rows §7, §8) |
 | Cross-section consistency (6 patterns) | 6/6 scanned, 1 finding (product-name repetition) |
 ```
 
@@ -214,11 +214,11 @@ Example shape (`+ verbose`):
 | Derek — formatting: bold/backticks | 8/8 scanned, ✓ Clean |
 | Derek — formatting: lists | 8/8 scanned, ✓ Clean |
 | Derek — prose directness | ✓ Clean |
-| kb-editing-conventions scan (22 rows) | 22/22 scanned, 2 findings (rows §7, §8) |
+| kb-editing-conventions scan (23 rows) | 23/23 scanned, 2 findings (rows §7, §8) |
 | Cross-section consistency (6 patterns) | 6/6 scanned, 1 finding (product-name repetition) |
 ```
 
-**N/N scanned discipline.** The Dale row, the `Derek (N checks)` row, the kb-editing-conventions scan row, and the cross-section consistency row must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "22/22" without having walked all 22 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files. For Derek, N is the total across all sub-fields and areas from the enumeration (item 4), including the formatting sub-rows' own extraction-pass counts (item 5) — those individual N/N counts still get computed during the scratch pass every time; in default mode they fold into the single `Derek (N checks)` row's total, and reappear as their own rows only under `+ verbose`.
+**N/N scanned discipline.** The Dale row, the `Derek (N checks)` row, the kb-editing-conventions scan row, and the cross-section consistency row must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "23/23" without having walked all 23 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files. For Derek, N is the total across all sub-fields and areas from the enumeration (item 4), including the formatting sub-rows' own extraction-pass counts (item 5) — those individual N/N counts still get computed during the scratch pass every time; in default mode they fold into the single `Derek (N checks)` row's total, and reappear as their own rows only under `+ verbose`.
 
 **Count-consistency discipline (arithmetic check).** Whenever a status cell shows a total finding count *and* a parenthetical breakdown (e.g., `10/10 scanned, 5 findings (passive-voice ×2, undefined-acronyms ×3)`), the top-line total must equal the sum of the breakdown counts. `2 findings (passive-voice ×2, undefined-acronyms ×3)` is a bug — that's 5, not 2. Same rule applies to every row that shows a breakdown: Vale, Dale, Derek, the scan-table row, cross-section row. Additionally, the number of rows in each findings section table below must equal the count claimed by the corresponding Overview row. Do the arithmetic before writing the row; do not paper over a mismatch by picking one number and hoping the reader doesn't add.
 
@@ -264,7 +264,7 @@ If any of these commands exits nonzero (for example, `git fetch` fails because o
 
 If **both** the status and log commands succeed and return empty — no uncommitted changes and no commits ahead of `origin/dev` touching `docs/kb/` — exit the workflow with this message:
 
-> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev` for `docs/kb/`. There's nothing to commit, push, or PR. If this branch has no other commits ahead of `origin/dev`, it can be deleted with `git switch dev && git branch -d <branch-name>` (safe delete — refuses if there are unmerged commits; you must switch off the branch first since git won't delete the one you have checked out). Exiting the workflow."
+> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev` for `docs/kb/`. There's nothing to commit, push, or PR. If this branch has no other commits ahead of `origin/dev`, it can be deleted with `git switch --detach origin/dev && git branch -d <branch-name>` (safe delete — refuses if there are unmerged commits; detaching onto the freshly fetched `origin/dev` avoids a false refusal from a stale or missing local `dev`). Exiting the workflow."
 
 Do NOT prompt for local testing. Do NOT propose a commit message. Do NOT enter Step 7.
 
