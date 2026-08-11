@@ -184,7 +184,7 @@ jobs:
             ```
 
             IMPORTANT: Write the summary JSON file, then stop. Do NOT run any git commands — the workflow handles staging, committing, and pushing. Do not post any PR comments.
-          claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
+          claude_args: '--allowedTools "Bash(git:*),Bash(bash scripts/check-anchors.sh:*),Read,Write,Edit,Glob,Grep"'
 
       - name: Phase 3 — Dale fixes
         id: phase3
@@ -232,7 +232,7 @@ jobs:
             Step 6: Write the summary JSON file (see Step 5 format above), then stop.
 
             IMPORTANT: Do NOT run any git commands — the workflow handles staging, committing, and pushing. Do not post any PR comments.
-          claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
+          claude_args: '--allowedTools "Bash(git:*),Bash(bash scripts/check-anchors.sh:*),Read,Write,Edit,Glob,Grep"'
 
       - name: Fix heading anchors
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
