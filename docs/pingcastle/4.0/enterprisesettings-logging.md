@@ -5,7 +5,7 @@ sidebar_position: 11
 
 ![A screenshot of the Logging settings tab, showing log level fields, file logging options, and log download buttons.](/images/pingcastle/enterprisesettings-logging/logging-settings.webp)
 
-The **Logging** screen controls how much detail PingCastle Enterprise writes to its logs and where those logs are stored.
+The **Logging** screen controls how much detail PingCastle Enterprise writes to its logs and where it stores those logs.
 
 Changes to these settings take effect within about 30 seconds, without a restart.
 

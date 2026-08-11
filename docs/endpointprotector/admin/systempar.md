@@ -73,7 +73,7 @@ To create a notification:
 For example, a Content Aware Policy classified the file named 'financial_report.xlsx'
 (`\{fileName\}`) as 'Confidential' (`\{type\}`) because it contains confidential data.
 
-Once created, you can associate the custom notification with a specific Content Aware Policy using
+After you create the notification, you can associate it with a specific Content Aware Policy using
 the Notification Template dropdown menu.
 
 To ensure notifications display correctly and securely, Endpoint Protector supports a limited set of
@@ -108,7 +108,7 @@ your message.
 
 ### Custom Device Control User Remediation Notifications
 
-This section is available only if the Device Control User Remediation setting is enabled from the
+This section is available only if you enable the Device Control User Remediation setting in the
 [User Remediation](#user-remediation) section. In this section you can add, edit, and delete custom
 notiﬁcations for Device Control User Remediation.
 
@@ -317,7 +317,7 @@ In this section, you can view, add, edit, export, and remove justiﬁcations. Th
 represents the reason the end-user selects to justify the threat or device remediation.
 
 To add a new justiﬁcation, click **Add**, ﬁll in the mandatory ﬁelds and then click **Save**. You
-can add up to a maximum of 10 justiﬁcations. By default, Endpoint Protector already includes several
+can add a maximum of 10 justiﬁcations. By default, Endpoint Protector already includes several
 justiﬁcations, but ensure that at least one justiﬁcation stays enabled at all times.
 
 To enable and enforce the end-user to view User Remediation pop-up notiﬁcations, manage the option

@@ -815,7 +815,7 @@ The last error was related to the missing KB KB2533623
 
 ### Error at the application startup
 
-When the application is unable to start, the following messages
+When the application can't start, the following messages
 appear:
 
 ![Browser error displayed when the application fails to start](/images/pingcastle/proinstall/image63.webp)

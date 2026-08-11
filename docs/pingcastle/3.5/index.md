@@ -554,7 +554,7 @@ PingCastle.exe --healthcheck --server domain.local --explore-trust --explore-for
 ```powershell
 PingCastle.exe --healthcheck --server domain.local --api-endpoint https://enterprise.local --api-key <your-key> --encrypt --level Full
 ```
-Used with PingCastle Enterprise to send encrypted reports to the centralized web UI.
+Use this with PingCastle Enterprise to send encrypted reports to the centralized web UI.
 
 #### Consolidation with Date Filtering
 ```powershell

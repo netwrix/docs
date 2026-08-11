@@ -30,7 +30,7 @@ PingCastle Enterprise controls access through a permission model based on roles,
 
 Active Directory (AD) administrators typically need access only to the Technical view ("Infrastructure"). Organizational management may need access to both the Management and Technical views ("Dashboard" and "Infrastructure"). The PingCastle Enterprise main administrator has full access, including the Configuration view for advanced customization of the solution, and the Account / User Management view for managing user roles and permissions.
 
-All users can access their personal account settings. Internal users can also reset their password if password-based authentication is enabled.
+All users can access their personal account settings. Internal users can also reset their password if an administrator enables password-based authentication.
 
 ### Permission levels
 
