@@ -72,7 +72,7 @@ Vale enforces 30 Netwrix-specific rules in `.vale/styles/Netwrix/` covering word
 vale <file>
 ```
 
-Two rules require extra care:
+These rules require extra care:
 
 - **`NoteThat`** — Replace "Note that..." or "Please note..." with an admonition block:
   ```md
@@ -82,7 +82,7 @@ Two rules require extra care:
   ```
   Use `:::warning` for warnings, `:::tip` for tips.
 
-- **`BoilerplateCrossRef`** and **`WeakLinkText`** — Read the surrounding context and the link destination before rewriting. The fix must reflect what the reader will actually find at the destination.
+- **`WeakLinkText`** — Read the surrounding context and the link destination before rewriting. The fix must reflect what the reader will actually find at the destination.
 
 ### Dale
 

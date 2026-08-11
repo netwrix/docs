@@ -169,6 +169,8 @@ jobs:
 
             Note: if your fixes change any heading text, do not update anchor links — the workflow repairs all anchor links automatically after all fixes are complete.
 
+            If a fix adds or changes a link with a `#anchor`, the anchor must match a real Markdown heading (a line starting with `#` through `######`) OUTSIDE any fenced code block. Text that merely looks like a heading inside a ``` code block (for example, sample CLI/installer output) is never a valid anchor target, even if it matches the wording you're looking for. Before finishing, run `bash scripts/check-anchors.sh <file>` on every file you touched; if it reports a broken anchor, find the correct heading (or the closest genuine heading that matches the reader's intent) and fix it, or SKIP the violation if no correct target exists.
+
             After fixing, write a JSON summary to /tmp/phase2-summary.json with this structure:
             ```json
             {
@@ -211,6 +213,8 @@ jobs:
             Step 4: Fix each violation in-place, preserving the author's meaning. If you are NOT confident in a fix (ambiguous context, multiple valid interpretations, fix would change meaning), SKIP it.
 
             Note: if your fixes change any heading text, do not update anchor links — the workflow repairs all anchor links automatically after all fixes are complete.
+
+            If a fix adds or changes a link with a `#anchor` (for example, resolving a "positional-references" violation into an explicit link), the anchor must match a real Markdown heading (a line starting with `#` through `######`) OUTSIDE any fenced code block. Text that merely looks like a heading inside a ``` code block (for example, sample CLI/installer output) is never a valid anchor target. Before finishing, run `bash scripts/check-anchors.sh <file>` on every file you touched; if it reports a broken anchor, find the correct heading and fix it, or SKIP the violation if no correct target exists.
 
             Step 5: Write a JSON summary to /tmp/dale-summary.json with this structure:
             ```json
