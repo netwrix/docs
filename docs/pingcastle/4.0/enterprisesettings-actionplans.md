@@ -3,7 +3,7 @@ sidebar_position: 14
 ---
 # Action Plans
 
-![A screenshot of the Action Plans settings tab, showing the default expected days field and the default comment templates table.](/images/pingcastle/enterprisesettings-actionplans/actionplans-settings.webp)
+![A screenshot of the Action Plans settings tab, showing the Number of days since now for action plan field and the Action plan templates table.](/images/pingcastle/enterprisesettings-actionplans/actionplans-settings.webp)
 
 The **Action Plans** screen controls how PingCastle Enterprise populates action plans, the remediation task lists generated from scan findings.
 

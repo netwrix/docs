@@ -6,7 +6,7 @@ sidebar_label: Installation guide
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Quick Installation
+## Installation
 
 
 <Tabs>
@@ -14,17 +14,17 @@ import TabItem from '@theme/TabItem';
 
 Follow these steps for a production-ready installation of PingCastle Enterprise.
 
-#### Prerequisites
+### Prerequisites
 
 1. Download PingCastleEnterpriseInstaller.exe
-2. Windows Server (see [Requirements](enterpriserequirements.md#requirements) section)
+2. Windows Server (see [Requirements](enterpriserequirements.md) page)
 3. SQL Server (Express, Standard, or Enterprise)
 
 :::info
 PingCastleEnterpriseInstaller.exe installs and configures IIS, Windows Authentication, and the ASP.NET 10.0 Hosting Bundle for you. You don't need to install these components manually before running the installer.
 :::
 
-#### Installation Steps
+### Installation Steps
 
 #### Step 1 - Install SQL Server
 
@@ -98,7 +98,7 @@ For testing and proof-of-concept environments, you can streamline the installati
 Use this simplified setup for **testing only**. For production environments, use the Production Installation tab for proper configuration and upgrade support.
 :::
 
-#### Prerequisites
+### Prerequisites
 
 1. Download PingCastleEnterpriseInstaller.exe
 2. Windows Server or Windows 10/11
@@ -108,7 +108,7 @@ Use this simplified setup for **testing only**. For production environments, use
 PingCastleEnterpriseInstaller.exe installs and configures IIS, Windows Authentication, and the ASP.NET 10.0 Hosting Bundle for you. You don't need to install these components manually before running the installer.
 :::
 
-#### Installation Steps
+### Installation Steps
 
 #### Step 1 - Install SQL Server Express with Chocolatey
 
@@ -183,7 +183,7 @@ EXEC sp_addrolemember 'db_owner', 'IIS APPPOOL\PingCastleEnterprise';
 1. Create a local SQL Server account:
    - Use SQL Server authentication
    - Uncheck "User must change password at next login" (PingCastle Enterprise doesn't support automatic password rotation)
-   - You can manually update the password later in the `appsettings.production.json` file
+   - You can manually update the password later in the `appsettings.Production.json` file
 
 ![](/images/pingcastle/enterpriseinstall/image18.webp)
 ![](/images/pingcastle/enterpriseinstall/image19.webp)
@@ -210,7 +210,7 @@ Server=tcp:server.fqdn.com;Database=PingCastle;User Id=pingcastle;Password=pingc
 ```
 
 :::note
-Installation doesn't create the database schema. Any connection issues will appear on first run. Check the Windows Event Log and the Serilog logs in the `logs` folder of the CloudAPI and PingCastle Enterprise installation directories for detailed error messages. You can update the connection string after installation by editing `appsettings.production.json`. Remember to escape special characters in JSON strings (e.g., `\` becomes `\\`).
+Installation doesn't create the database schema. Any connection issues will appear on first run. Check the Windows Event Log and the Serilog logs in the `logs` folder of the CloudAPI and PingCastle Enterprise installation directories for detailed error messages. You can update the connection string after installation by editing `appsettings.Production.json`. Remember to escape special characters in JSON strings (e.g., `\` becomes `\\`).
 :::
 
 ![](/images/pingcastle/enterpriseinstall/image25.webp)

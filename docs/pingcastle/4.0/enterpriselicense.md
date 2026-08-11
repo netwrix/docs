@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 PingCastle Enterprise licenses use one of two models: a legacy per-domain model or the current per-user model.
 
-Configuration > Settings > Licensing shows which model the current license uses, along with usage against the licensed limit. You can also identify the model from the first three characters of the license key: **PC2** for a per-domain license, **PC3** for a per-user license.
+**Configuration** > **Settings** > **Licensing** shows which model the current license uses, along with usage against the licensed limit. You can also identify the model from the first three characters of the license key: **PC2** for a per-domain license, **PC3** for a per-user license.
 
 <Tabs>
 <TabItem value="user" label="Per-user licensing" default>
@@ -34,7 +34,7 @@ Per-domain licenses are based on the number of domains managed, with licenses av
 
 ## Updating your license
 
-Configuration > Settings > Licensing shows the current license and lets you apply a new one.
+**Configuration** > **Settings** > **Licensing** shows the current license and lets you apply a new one.
 
 - **Status** — A read-only display of the license status, edition, and current usage against the licensed limit.
 - **Upload license** — Upload a new license file to replace the current one.

@@ -25,13 +25,13 @@ Since PingCastleSchedulerService has no web interface, its logs aren't included 
 
 To download logs from the web portal, go to **Configuration** > **Settings** > **Logging** and click **Download Today's Logs** or **Download All Logs**.
 
-### Editing the appsettings.json File
+### Editing the appsettings.Production.json File
 
-Some troubleshooting steps require editing the `appsettings.production.json` file directly. This file is in the PingCastle Enterprise installation directory. The CloudAPI service has its own separate copy in its `CloudAPI` subfolder.
+Some troubleshooting steps require editing the `appsettings.Production.json` file directly. This file is in the PingCastle Enterprise installation directory. The CloudAPI service has its own separate copy in its `CloudAPI` subfolder.
 
 Open the file with a plain text or code editor, such as Notepad or Visual Studio Code. Don't use Word or another rich-text editor, since these can introduce hidden formatting that breaks the JSON syntax.
 
-`appsettings.production.json` uses standard JSON syntax:
+`appsettings.Production.json` uses standard JSON syntax:
 
 - Keys and string values use double quotes: `"Key": "Value"`
 - Colons separate a key from its value, and commas separate entries
@@ -41,7 +41,7 @@ Open the file with a plain text or code editor, such as Notepad or Visual Studio
 
 After editing the file, check it for syntax errors before restarting the application. A single misplaced comma or brace prevents the application from starting.
 
-- In PowerShell, run `Get-Content appsettings.production.json | ConvertFrom-Json`. This returns the parsed content if the JSON is valid, or a specific error if it isn't.
+- In PowerShell, run `Get-Content appsettings.Production.json | ConvertFrom-Json`. This returns the parsed content if the JSON is valid, or a specific error if it isn't.
 - Alternatively, paste the file contents into an editor-integrated JSON validator, or an online tool such as [jsonlint.com](https://jsonlint.com/).
 
 :::warning
@@ -80,7 +80,7 @@ Command line error messages:
 Identify the correct version of the ASP.NET Core framework and install it. If deploying to IIS, install the ASP.NET Core Hosting Bundle.
 
 :::note
-The last error relates to the missing KB KB2533623
+The last error relates to the missing update KB2533623
 :::
 
 </details>
@@ -153,13 +153,13 @@ Configure the IIS application pool to run as an Active Directory user that has d
 
 **Solution 2: Use SQL Server Authentication**
 
-Add SQL Server credentials to the connection string in appsettings.json. See [Editing the appsettings.json File](#editing-the-appsettingsjson-file) for syntax rules and how to validate the file before restarting the application.
+Add SQL Server credentials to the connection string in `appsettings.Production.json`. See [Editing the appsettings.Production.json File](#editing-the-appsettingsproductionjson-file) for syntax rules and how to validate the file before restarting the application.
 
 ```
 ;User ID=sa;Password=pass123
 ```
 
-![Connection string in appsettings.json](/images/pingcastle/enterpriseinstall/image107.webp)
+![Connection string in appsettings.Production.json](/images/pingcastle/enterpriseinstall/image107.webp)
 
 ![SQL Server connection with authentication](/images/pingcastle/enterpriseinstall/image108.webp)
 

@@ -5,6 +5,8 @@ sidebar_position: 13
 
 The **Entra Scanner** section syncs its settings from the Entra Scanner microservice. See [Entra scanning](enterpriseentrascan.md) for the scanning feature itself.
 
+Because these settings sync from a separate microservice rather than the main Settings database, they can take longer to apply than settings on other tabs.
+
 - **Api** — Enables or disables the Swagger API documentation in production.
 - **Security & headers** — HTTP Strict Transport Security (HSTS), Content Security Policy, referrer policy, minimum TLS version, forwarded-headers handling, and HTTPS redirection.
 - **Rate limiting** — Request throttling for the API, including permit, window, and queue limits, with separate limits for filtered queries and encryption key rotation.

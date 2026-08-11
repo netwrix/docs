@@ -47,8 +47,10 @@ When you select **Microsoft Graph** as the email provider, configure these field
 - Certificate fields (location, file, thumbprint, store location, and store name) — These fields apply only when you set **Authentication Method** to certificate. They identify which certificate PingCastle uses to authenticate.
 
 :::note
-See [Modern Authentication with Office 365 Using Graph API](#modern-authentication-with-office-365-using-graph-api) for the full walkthrough on setting this up securely.
+See [Modern authentication with Office 365 using Graph API](#modern-authentication-with-office-365-using-graph-api) for the full walkthrough on setting this up securely.
 :::
+
+## Notifications
 
 ### Configuring the web host
 
@@ -68,7 +70,7 @@ PingCastle Enterprise can remind administrators before scheduled items expire an
 
 For example, setting **Default Domain Reminder Days** to 7 sends a reminder email one week before a domain's next scheduled review.
 
-### Modern Authentication with Office 365 Using Graph API
+### Modern authentication with Office 365 using Graph API
 
 PingCastle Enterprise supports sending emails using Microsoft Graph API with modern authentication. Netwrix recommends this method for Office 365 environments, as it provides enhanced security through OAuth 2.0 authentication.
 
@@ -121,9 +123,9 @@ For production environments, use certificates issued by your organization's Cert
 <Tabs>
 <TabItem value="manual" label="Manual Configuration" default>
 
-#### Part 1 Create Entra ID App Registration
+#### Part 1: Create Entra ID app registration
 
-##### Step 1 Access Microsoft Entra Admin Center
+##### Step 1: Access the Microsoft Entra admin center
 
 1. Open a web browser and navigate to https://entra.microsoft.com
 2. Sign in with your administrator account
@@ -131,7 +133,7 @@ For production environments, use certificates issued by your organization's Cert
 
 ![Entra admin center homepage with Settings menu](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-1.png)
 
-##### Step 2: Navigate to App Registrations
+##### Step 2: Navigate to app registrations
 
 1. In the left navigation pane, expand **Identity**
 2. Click **Applications**
@@ -140,7 +142,7 @@ For production environments, use certificates issued by your organization's Cert
 
 ![App registrations page with New registration button](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-2.png)
 
-##### Step 3: Configure Application Registration
+##### Step 3: Configure application registration
 
 1. In the **Name** field, enter: `PingCastle-Email`
 2. Under **Supported account types**, select **Accounts in this organizational directory only**
@@ -149,7 +151,7 @@ For production environments, use certificates issued by your organization's Cert
 
 ![Register an application form](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-3.png)
 
-##### Step 4: Create Client Secret
+##### Step 4: Create client secret
 
 1. In the left menu under **Manage**, click **Certificates & secrets**
 2. Click **+ New client secret**
@@ -159,15 +161,15 @@ For production environments, use certificates issued by your organization's Cert
 6. **Important**: Copy the secret **Value** immediately - you won't see it again
 7. Paste it in Notepad or a password manager for later use
 
-:::warning
+:::note
 If you misplace your secret, you can return to this screen and generate a new one.
 :::
 
 ![Client secrets page](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-4.png)
 
-#### Part 2: Create Shared Mailbox
+#### Part 2: Create shared mailbox
 
-##### Step 5: Access Exchange Admin Center
+##### Step 5: Access the Exchange admin center
 
 1. Navigate to https://admin.exchange.microsoft.com
 2. Sign in with your Exchange administrator account
@@ -176,7 +178,7 @@ If you misplace your secret, you can return to this screen and generate a new on
 
 ![Exchange Admin Center navigation](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-5.png)
 
-##### Step 6: Create Shared Mailbox
+##### Step 6: Create shared mailbox
 
 1. Click **+ Add a shared mailbox**
 2. Fill in the following details:
@@ -187,7 +189,7 @@ If you misplace your secret, you can return to this screen and generate a new on
 
 ![Add a shared mailbox form](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-6.png)
 
-##### Step 7: Verify Shared Mailbox Creation
+##### Step 7: Verify shared mailbox creation
 
 1. Wait for the mailbox creation process to complete
 2. Verify the mailbox appears in the mailboxes list
@@ -195,7 +197,7 @@ If you misplace your secret, you can return to this screen and generate a new on
 
 ![Mailboxes list showing the new shared mailbox](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-7.png)
 
-##### Step 8: Block Shared Mailbox Sign-in
+##### Step 8: Block shared mailbox sign-in
 
 This should be automatically configured, but verify it:
 
@@ -209,9 +211,9 @@ This should be automatically configured, but verify it:
 
 ![User properties page with Account Enabled disabled](/images/pingcastle/enterpriseinstall/GraphAPIEmail/GraphAPIEmail-8.png)
 
-#### Part 3 Configure RBAC for Applications
+#### Part 3: Configure RBAC for applications
 
-##### Step 9 Connect to Exchange Online PowerShell
+##### Step 9: Connect to Exchange Online PowerShell
 
 Open Windows PowerShell as Administrator and run the following commands:
 
@@ -226,7 +228,7 @@ Import-Module ExchangeOnlineManagement
 Connect-ExchangeOnline
 ```
 
-##### Step 10 Create Service Principal
+##### Step 10: Create service principal
 
 Using the values from your app registration, create the service principal:
 
@@ -243,7 +245,7 @@ New-ServicePrincipal -AppId $AppId -ObjectId $ObjectId -DisplayName "PingCastle-
 The `$ObjectId` is the Service Principal Object ID from Enterprise Applications, **not** the Object ID from App Registrations.
 :::
 
-##### Step 11 Create Management Scope
+##### Step 11: Create management scope
 
 Create a management scope that restricts access to only the PingCastle shared mailbox:
 
@@ -253,44 +255,44 @@ $EmailAddress = "pingcastle@yourdomain.com" # The email address of the shared ma
 New-ManagementScope -Name "PingCastle-Email-Scope" -RecipientRestrictionFilter "EmailAddresses -eq '$EmailAddress'"
 ```
 
-##### Step 12 Assign Application Role
+##### Step 12: Assign application role
 
 Assign the Application Mail.Send role to the service principal with the custom scope:
 
 ```powershell
 # Create Role Assignment
-$ObjectId = "" # The Exchange Service Principal Object Id (This is output in Step 10)
-New-ManagementRoleAssignment -Role "Application Mail.Send" -App $ObjectId -CustomResourceScope "PingCastle-Email-Scope"
+$ExchangeSPObjectId = "" # The Exchange Service Principal Object Id (This is output in Step 10)
+New-ManagementRoleAssignment -Role "Application Mail.Send" -App $ExchangeSPObjectId -CustomResourceScope "PingCastle-Email-Scope"
 ```
 
-#### Part 4 Test Configuration
+#### Part 4: Test configuration
 
-##### Step 13 Test Service Principal Authorization
+##### Step 13: Test service principal authorization
 
 Verify the configuration works correctly:
 
 ```powershell
 # Test Service Principal Authorization
 $EmailAddress = "pingcastle@yourdomain.com" # The email address of the shared mailbox
-$ObjectId = "" # The Exchange Service Principal Object Id (This is output in Step 10)
+$ExchangeSPObjectId = "" # The Exchange Service Principal Object Id (This is output in Step 10)
 
-Test-ServicePrincipalAuthorization -Identity $ObjectId -Resource $EmailAddress
+Test-ServicePrincipalAuthorization -Identity $ExchangeSPObjectId -Resource $EmailAddress
 ```
 
 Expected Output:
 - **RoleName**: Application Mail.Send
 - **InScope**: True
 
-##### Step 14 Verify Scope Restriction
+##### Step 14: Verify scope restriction
 
 Test that the service principal can't access other mailboxes:
 
 ```powershell
 # Test with a different email address
 $EmailAddress = "otheruser@yourdomain.com" # A random email that the application should not be able to send as
-$ObjectId = "" # The Exchange Service Principal Object Id (This is output in Step 10)
+$ExchangeSPObjectId = "" # The Exchange Service Principal Object Id (This is output in Step 10)
 
-Test-ServicePrincipalAuthorization -Identity $ObjectId -Resource $EmailAddress
+Test-ServicePrincipalAuthorization -Identity $ExchangeSPObjectId -Resource $EmailAddress
 ```
 
 Expected Output:
@@ -353,7 +355,6 @@ This PowerShell function automates the complete process of creating an Entra ID 
     Set-PingCastleEmailRBAC -TenantId "your-tenant-id" -SharedMailboxDomain "contoso.com" -CertificateAuth -CertificatePath "C:\Certs\pingcastle.pfx"
 
 .NOTES
-    Author: Joe Dibley
     Version: 1.0
     Requires: Exchange Online Management Module, Microsoft Graph PowerShell Module
 #>

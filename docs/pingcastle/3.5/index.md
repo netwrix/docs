@@ -38,7 +38,7 @@ The PingCastle tool is one part of a global methodology for securing Active Dire
 
 ![](/images/pingcastle/basicuser/image1.webp)
 
-The PingCastle methodology page explains how the tool fits into the broader process of securing Active Directory: https://www.pingcastle.com/methodology/
+For details on how the tool fits into the broader process of securing Active Directory, see the [PingCastle methodology page](https://www.pingcastle.com/methodology/).
 
 ## Requirements
 
@@ -232,9 +232,9 @@ This consolidates all available XML reports and generates summary reports with t
 
 Consolidation generates three HTML files:
 
-- **ad_hc_summary.html** - Summary of all reports with the same structure as detailed reports but at a higher level. [Example](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary.html)
-- **ad_hc_summary_full_node_map.html** - Complete trust relationship map showing all discovered domains and trusts.
-- **ad_hc_summary_simple_node_map.html** - Simplified trust relationship map for easier visualization.
+- **ad_hc_summary.html**: Summary of all reports with the same structure as detailed reports but at a higher level. See an [example summary report](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary.html).
+- **ad_hc_summary_full_node_map.html**: Complete trust relationship map showing all discovered domains and trusts.
+- **ad_hc_summary_simple_node_map.html**: Simplified trust relationship map for easier visualization.
 
 ### Option 3: Quick Domain Cartography
 

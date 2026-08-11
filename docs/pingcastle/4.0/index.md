@@ -31,13 +31,13 @@ The tool surfaces this date as the End of Support date.
 To continue using PingCastle after the built-in license expires, you must purchase one of the following:
 
 - **PingCastle Standard**: Traditional licensing model for ongoing use
-- **PingCastle For Service Providers**: Per-assessment licensing where each license is valid for 2 weeks for specific Active Directory domains and forests. You can perform forest-level assessments using wildcard notation (e.g., `*.domain.local` to scan all subdomains within a forest)
+- **PingCastle for Service Providers**: Per-assessment licensing where each license is valid for 2 weeks for specific Active Directory domains and forests. You can perform forest-level assessments using wildcard notation (e.g., `*.domain.local` to scan all subdomains within a forest)
 
 ## Methodology
 
 The PingCastle tool is one part of a global methodology for securing Active Directories.
 
-The PingCastle methodology page explains how the tool fits into the broader process of securing Active Directory: https://www.pingcastle.com/methodology/
+For details on how the tool fits into the broader process of securing Active Directory, see the [PingCastle methodology page](https://www.pingcastle.com/methodology/).
 
 ## Requirements
 
@@ -122,6 +122,50 @@ PingCastle.exe --healthcheck --server domain.local --level Full
 ```
 PingCastle.exe --healthcheck --server domain.local --privileged
 ```
+
+## Scheduling PingCastle Scans
+
+You can automate PingCastle using Windows Task Scheduler to run regular security assessments. The tool supports Managed Service Accounts (available since Windows Server 2008 R2).
+
+### Quick Setup
+
+1. **Create a scheduled task** in Task Scheduler
+2. **Configure account settings**:
+   - Select "Run whether user is logged on or not"
+   - Use a domain service account (not a local account)
+3. **Set the schedule** (e.g., daily, weekly)
+4. **Configure the action**:
+   - Program: `C:\Path\To\PingCastle.exe`
+   - Arguments: `--healthcheck --server domain.local --sendAllTo security@company.com`
+   - Start in: `C:\Path\To\PingCastle`
+
+### Required Permissions
+
+The service account requires:
+
+- **Read access** to Active Directory (standard domain user is sufficient for basic scans)
+- **Write access** to the PingCastle directory for report output
+- **"Log on as batch job"** user right
+
+### Troubleshooting: Log on as Batch Job
+
+If the scheduled task fails to run, verify the service account has the "Log on as batch job" right:
+
+1. Open Local Security Policy (`secpol.msc`) or Group Policy Management
+2. Navigate to: **Local Policies → User Rights Assignment**
+3. Open **"Log on as batch job"** and add the service account
+
+:::note
+If "Add User or Group" is grayed out, a Group Policy Object (typically the Default Domain Controllers Policy) controls the setting. Use `rsop.msc` to identify the controlling GPO and modify it accordingly.
+:::
+
+### Example Command for Scheduled Scans
+
+```powershell
+PingCastle.exe --healthcheck --server * --reachable --sendAllTo security@company.com --encrypt --datefile
+```
+
+This scans all reachable domains, encrypts the reports, adds dates to filenames, and emails results to the security team.
 
 ## Generating Logs for Support
 
@@ -225,15 +269,17 @@ PingCastle.exe --hc-conso
 
 This consolidates all available XML reports and generates summary reports with trust relationship maps. You can combine XML reports generated from multiple locations to create a comprehensive view of your infrastructure.
 
-**Note**: PingCastle performs consolidation automatically when using `--server *` for automatic domain discovery.
+:::note
+PingCastle performs consolidation automatically when using `--server *` for automatic domain discovery.
+:::
 
 **Output Files**
 
 Consolidation generates three HTML files:
 
-- **ad_hc_summary.html** - Summary of all reports with the same structure as detailed reports but at a higher level. [Example](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary.html)
-- **ad_hc_summary_full_node_map.html** - Complete trust relationship map showing all discovered domains and trusts.
-- **ad_hc_summary_simple_node_map.html** - Simplified trust relationship map for easier visualization.
+- **ad_hc_summary.html**: Summary of all reports with the same structure as detailed reports but at a higher level. See an [example summary report](https://www.pingcastle.com/PingCastleFiles/ad_hc_summary.html).
+- **ad_hc_summary_full_node_map.html**: Complete trust relationship map showing all discovered domains and trusts.
+- **ad_hc_summary_simple_node_map.html**: Simplified trust relationship map for easier visualization.
 
 ### Option 3: Quick Domain Cartography
 
@@ -248,7 +294,9 @@ PingCastle.exe --carto
 
 This option discovers all reachable domains, performs a lightweight scan, and generates trust relationship maps. The SID Filtering status is accurate, but individual domain scores aren't available. Scans run in parallel for speed.
 
-**Note**: You can't combine cartography reports run from multiple locations. For comprehensive multi-location data, use Option 1 or Option 2 instead.
+:::note
+You can't combine cartography reports run from multiple locations. For comprehensive multi-location data, use Option 1 or Option 2 instead.
+:::
 
 ## Trust Relationship Maps
 
@@ -406,7 +454,9 @@ PingCastle.exe --reload-report report.xml --encrypt
 PingCastle.exe --reload-report encrypted-report.xml
 ```
 
-**Note**: You can specify only one key for encryption, but you can use multiple keys for decryption. Key selection is automatic.
+:::note
+You can specify only one key for encryption, but you can use multiple keys for decryption. Key selection is automatic.
+:::
 
 ### Email Delivery
 
@@ -465,7 +515,9 @@ PingCastle includes built-in scanners to check for specific security configurati
 
 ![](/images/pingcastle/basicuser/image29.webp)
 
-**WARNING**: Scanning large numbers of workstations may trigger security alerts.
+:::warning
+Scanning large numbers of workstations may trigger security alerts.
+:::
 
 ### Available Scanners
 
@@ -642,7 +694,9 @@ During migration:
 - The original `PingCastle.exe.config` is renamed to `PingCastle.exe.config.bak` as a backup
 - A **Configuration Migration Report** is generated detailing which sections were migrated
 
-**Important**: Visually review the migrated settings in `appsettings.console.json` to ensure they are correct. No configuration context is lost if the upgrade fails.
+:::note
+Visually review the migrated settings in `appsettings.console.json` to ensure they are correct. No configuration context is lost if the upgrade fails.
+:::
 
 ### PingCastle AntiVirus Detections
 
@@ -681,7 +735,7 @@ Netwrix is actively working to reduce false positive detections:
 > * No malicious payloads or hidden behavior are present in the software.
 > * The detections occur only because its ability to enumerate security risks and misconfigurations could provide information an attacker might misuse.
 >
-> In short, PingCastle belongs in the same category as other professional penetration-testing or red-team tools: safe and valuable in the hands of administrators and security professionals, but flagged by antivirus products due to its capabilities.
+> In short, PingCastle belongs in the same category as other professional penetration-testing or red-team tools: safe and valuable when used by administrators and security professionals, but flagged by antivirus products due to its capabilities.
 :::
 
 ## List of open source software used
@@ -713,46 +767,4 @@ The list of components used by PingCastle, but not limited to, is:
 
 - [Font-Awesome](https://fontawesome.com/) licensed under the [MIT
   license](https://tldrlegal.com/license/mit-license)
-
-## Scheduling PingCastle Scans
-
-You can automate PingCastle using Windows Task Scheduler to run regular security assessments. The tool supports Managed Service Accounts (available since Windows Server 2008 R2).
-
-### Quick Setup
-
-1. **Create a scheduled task** in Task Scheduler
-2. **Configure account settings**:
-   - Select "Run whether user is logged on or not"
-   - Use a domain service account (not a local account)
-3. **Set the schedule** (e.g., daily, weekly)
-4. **Configure the action**:
-   - Program: `C:\Path\To\PingCastle.exe`
-   - Arguments: `--healthcheck --server domain.local --sendAllTo security@company.com`
-   - Start in: `C:\Path\To\PingCastle`
-
-### Required Permissions
-
-The service account requires:
-
-- **Read access** to Active Directory (standard domain user is sufficient for basic scans)
-- **Write access** to the PingCastle directory for report output
-- **"Log on as batch job"** user right
-
-### Troubleshooting: Log on as Batch Job
-
-If the scheduled task fails to run, verify the service account has the "Log on as batch job" right:
-
-1. Open Local Security Policy (`secpol.msc`) or Group Policy Management
-2. Navigate to: **Local Policies → User Rights Assignment**
-3. Open **"Log on as batch job"** and add the service account
-
-**Note**: If "Add User or Group" is grayed out, a Group Policy Object (typically the Default Domain Controllers Policy) controls the setting. Use `rsop.msc` to identify the controlling GPO and modify it accordingly.
-
-### Example Command for Scheduled Scans
-
-```powershell
-PingCastle.exe --healthcheck --server * --reachable --sendAllTo security@company.com --encrypt --datefile
-```
-
-This scans all reachable domains, encrypts the reports, adds dates to filenames, and emails results to the security team.
 

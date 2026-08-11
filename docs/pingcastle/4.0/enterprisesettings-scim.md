@@ -22,12 +22,12 @@ To enable SCIM and generate a token:
 1. Go to **Configuration** > **Settings** > **Provisioning**.
 2. Turn on **SCIM Enabled**.
 3. Click **Generate Token**.
-4. In the dialog, enter a label to identify the token (for example, `Okta production`), select a connector type, and set an expiration.
+4. In the dialog, enter a label to identify the token (for example, `Okta production`) and select a connector type.
 5. Copy the token.
 
-By default, tokens expire after 90 days. If you want to reduce maintenance burden, set a longer expiration, such as one year, when creating the token.
+The token doesn't expire. Because a compromised token stays valid indefinitely, revoke and regenerate it immediately if you suspect it has been exposed, and rotate it periodically as part of your organization's credential management practices.
 
-![A screenshot of the Generate SCIM token dialog, showing the label, connector type, and expiration fields with the default 90-day expiration.](/images/pingcastle/enterprisesettings-scim/scim-token-generation.webp)
+![A screenshot of the Generate SCIM token dialog, showing the label and connector type fields.](/images/pingcastle/enterprisesettings-scim/scim-token-generation.webp)
 
 :::warning
 PingCastle Enterprise displays the token only once. If you close the dialog without copying it, generate a new token — you can't retrieve the original value again.
@@ -43,7 +43,7 @@ Configure your identity provider with the token and the `/api/SCIM` base URL. Mo
 
 Refer to your identity provider's SCIM documentation for how to configure these settings.
 
-### The connector type field is just a label
+### Connector type as a reference label
 
 When you generate a token, the connector type field (for example, Okta, Entra ID, or OneLogin) is for your own reference only. It helps you remember which identity provider each token belongs to when you're managing multiple tokens. Selecting a connector type doesn't change how the SCIM connector behaves — PingCastle Enterprise processes all SCIM requests the same way regardless of which connector type you select.
 

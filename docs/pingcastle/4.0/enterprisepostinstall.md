@@ -26,7 +26,7 @@ The scheduled scan wizard labels the credential profile field "execution profile
 
 ### Scheduling an Active Directory scan
 
-1. If the domain isn't already in PingCastle Enterprise, go to **Infrastructure** > **Domains** and create it with just the name. The SID auto-populates when you import a report.
+1. If the domain isn't already in PingCastle Enterprise, go to **Infrastructure** > **Domains** and create it with just the name. PingCastle Enterprise populates the domain's SID automatically the first time it processes a report for that domain, whether from a scheduled scan or a manual import.
 2. Go to **Configuration** > **Scheduler**.
 3. Click **Credential Profiles**, then **Create profile**.
 4. Enter a profile name, select **Active Directory** as the scan type, select the Agent (use the default Agent), and select the domain. Toggle the run-as account switch if you're using a custom account, and add a description if needed.

@@ -3,9 +3,9 @@ sidebar_label: Importing data
 ---
 # Importing Data into PingCastle Enterprise
 
-PingCastle Enterprise allows administrators to consult all report data and make decisions. You can't launch scans directly from the application, so you must run the PingCastle tool in standalone mode and then import the reports it produces.
+PingCastle Enterprise allows administrators to consult all report data and make decisions. Scheduled scans run automatically through the PingCastle Scheduler Service. Import reports that `PingCastle.exe` produces outside that scheduled flow, such as manual runs or scans from domains the scheduler can't reach directly.
 
-There are three ways to do so:
+There are two ways to import reports, plus a separate option for bulk importing entities:
 
 **Option 1: Importing the file manually**
 

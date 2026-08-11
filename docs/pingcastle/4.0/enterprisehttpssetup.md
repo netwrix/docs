@@ -11,11 +11,11 @@ To secure your PingCastle Enterprise installation with HTTPS, follow these stand
 
 2. **Obtain a Certificate**: Request an SSL/TLS certificate from your Certificate Authority (CA)
 
-:::tip
-Ensure the certificate Subject and Subject Alternative Name (SAN) DNS entries match the PingCastle Enterprise URL you configured in DNS (e.g., pingcastle.yourdomain.com). Without this, browsers will show certificate warnings.
-:::
+   :::tip
+   Ensure the certificate Subject and Subject Alternative Name (SAN) DNS entries match the PingCastle Enterprise URL you configured in DNS (e.g., pingcastle.yourdomain.com). Without this, browsers will show certificate warnings.
+   :::
 
-3. **Import the Certificate**: Add the certificate to the machines Personal certificate store:
+3. **Import the Certificate**: Add the certificate to the machine's Personal certificate store:
    - Open the Certificates snap-in (certlm.msc for Local Machine)
    - Navigate to Personal > Certificates
    - Import your certificate with the private key

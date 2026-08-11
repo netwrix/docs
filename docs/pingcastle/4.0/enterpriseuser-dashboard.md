@@ -9,7 +9,7 @@ The dashboard view has two areas: the "Maturity Assessment" and the "Advanced vi
 
 From this global page, you can access a detailed process for each step of the PingCastle maturity assessment (Domain Coverage, Ownership, etc.), while more detailed pages are available in the Advanced menu.
 
-This view is primarily for company management, notably the "Maturity Assessment" part, which shows KPIs as well as objectives and goals to improve the overall level of AD security.
+This view is primarily for company management, notably the "Maturity Assessment" part, which shows KPIs as well as objectives and goals to improve the overall level of Active Directory (AD) security.
 
 Technical stakeholders such as AD administrators can also use it, since it can assist with technical remediation. You can perform detailed analysis through the "Advanced" section.
 
@@ -17,9 +17,9 @@ Technical stakeholders such as AD administrators can also use it, since it can a
 
 **Global view**
 
-The "Maturity Assessment" is based on a maturity evaluation divided into several steps. It consists of 5 main areas, each containing 4 major measures, giving a total of 20 measures.
+The "Maturity Assessment" divides a maturity evaluation into two areas. Each area groups several measures, for a total of five measures across both areas. Several detailed KPIs make up each measure, for a total of 20 detailed KPIs.
 
-Each measure for which the company AD is compliant gives 1 point in the total, ending in a score out of 20 that you can view in a radar chart.
+Each KPI for which the company AD is compliant gives 1 point in the total, ending in a score out of 20 that you can view in a radar chart.
 
 ![](/images/pingcastle/enterpriseuser/image16.webp)
 
@@ -59,8 +59,6 @@ This section covers the following pages:
 
 ![](/images/pingcastle/enterpriseuser/image19.webp)
 
-These general pages help users understand the current level of protection of the company Active Directory. Use this page to understand the work performed and the remaining work for AD security.
-
 **Detailed view per area**
 
 Each area has a dedicated page with a lot of information about what you do well and what you can improve.
@@ -85,7 +83,7 @@ Entities Details for the related tab:
 
 ![](/images/pingcastle/enterpriseuser/image23.webp)
 
-Entities Details for the related tab:
+History for the related tab:
 
 ![](/images/pingcastle/enterpriseuser/image24.webp)
 
@@ -109,7 +107,7 @@ PingCastle recommends working on a unit consisting of 10 to 15 domains. After yo
 
 ![Une image contenant texte Description générée automatiquement](/images/pingcastle/enterpriseuser/image27.webp)
 
-The result is a 15 to 20 matrix where all colored items are a rule that matched.
+The result is a matrix of about 15 to 20 domains, where each colored cell represents a rule that matched.
 
 ![](/images/pingcastle/enterpriseuser/image28.webp)
 

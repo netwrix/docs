@@ -12,7 +12,7 @@ existing configurations. The goal
 provide reliable data to present the situation to the management, thus
 improving over time.
 
-# PingCastle built-in security
+## PingCastle built-in security
 
 PingCastle Pro is a tool dedicated to improve the AD security, so
 security has been a major priority alongside every step of the creation
@@ -51,7 +51,7 @@ The application is based mainly on the following frameworks:
 
 - chart.js
 
-# Authentication and user management
+## Authentication and user management
 
 PingCastle Pro provides authentication through:
 
@@ -59,7 +59,7 @@ PingCastle Pro provides authentication through:
 
 - Entra ID (formerly Azure AD)
 
-# Ping Castle Pro features
+## Ping Castle Pro features
 
 **Main pages overview**
 
@@ -72,12 +72,12 @@ The application has two areas:
 > ![A logo with a triangle and dots Description automatically
 generated](/images/pingcastle/prouser/image4.webp)
 
-# Technical view (\"Audit data\")
+## Technical view (\"Audit data\")
 
 The technical view also named \"Audit Data\" is based on a main domain
 and its data.
 
-## Domains
+### Domains
 
 **Detail information on a domain**
 
@@ -133,13 +133,13 @@ Cartography tab:
 
 ![](/images/pingcastle/prouser/image8.webp)
 
-# Tool configuration (\"Configuration\")
+## Tool configuration (\"Configuration\")
 
 The \"Configuration\" view of the PingCastle Pro application lets the
 user set up the tool completely. In this view, the user can also
 personalize settings so the tool better fits the company's needs.
 
-## Exceptions management
+### Exceptions management
 
 This part enables administrator to configure PingCastle Pro so that it
 adapts to the company specific context. You can configure how
@@ -150,9 +150,9 @@ PingCastle Pro handles exceptions specific to your perimeter.
 **Rule exceptions**
 
 You can set \"rule exceptions\" to completely disable a rule
-within a specific domain. This means PingCastle Pro will not apply this
-rule for a period that you specify. This should be use only
-when for very specific reasons, such as when a rule doesn't apply in
+within a specific domain. This means PingCastle Pro doesn't apply this
+rule for a period that you specify. Use this only
+for very specific reasons, such as when a rule doesn't apply in
 your organization. Contact the PingCastle editors if you have doubts or require extra assistance about exception management.
 
 **Migration**
@@ -162,13 +162,13 @@ inform it in the application when one of your domains is migrating. It
 automatically applies a set of exceptions during the timetable the
 migration is happening.
 
-## Importing data
+### Importing data
 
 PingCastle Pro allows administrators to consult all report data and make decisions.
 
-1.  Therefore, you can't yet launch scans directly from the
-    application, so you must launch the PingCastle tool in standalone
-    mode and then import the reports it produces.
+:::note
+You can't yet launch scans directly from the application, so you must launch the PingCastle tool in standalone mode and then import the reports it produces.
+:::
 
 There are two ways to do so:
 
@@ -194,7 +194,7 @@ Import **page**
 - Option 2: Importing the file automatically through the Agent mode
 
 From the \"Configuration\" tab, you first need to get an API key using
-the \"Agents\" page and configurate the PingCastle agent accordingly.
+the \"Agents\" page and configure the PingCastle agent accordingly.
 
 ![](/images/pingcastle/prouser/image12.webp)
 

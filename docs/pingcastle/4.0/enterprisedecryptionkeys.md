@@ -17,4 +17,4 @@ To set up decryption:
 2. In PingCastle Enterprise, go to **Configuration** > **Decryption** and add the private key.
 3. Add the matching public key to the `appsettings.console.json` file of every agent that should encrypt reports with this key.
 
-Reports uploaded without encryption, or encrypted with a key PingCastle Enterprise doesn't have, aren't affected — only encrypted reports go through decryption on import.
+Reports uploaded without encryption import normally, because decryption applies only to reports encrypted with `--encrypt`. If a report is encrypted with a key PingCastle Enterprise doesn't have, decryption fails and the import fails.

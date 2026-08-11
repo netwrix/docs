@@ -3,7 +3,7 @@ sidebar_label: Manage accounts
 ---
 # Managing Accounts in PingCastle Enterprise
 
-This section introduces how to manage your own account and how administrators can manage other accounts.
+This section introduces how to manage your own account in PingCastle Enterprise.
 
 ## Manage My Account
 

@@ -13,7 +13,7 @@ PingCastle Enterprise supports multiple authentication methods that can work sim
 Set up each method's identity provider using the instructions on this page, then enter the resulting values on the **Login options**, **Windows authentication**, **Certificate authentication**, **Header authentication**, **OIDC Connect**, and **SAML** screens under **Configuration** > **Settings** in the PingCastle Enterprise web interface.
 
 :::note
-Most changes on these screens take effect within about 30 seconds, without a restart. A few settings require a restart, which PingCastle Enterprise schedules automatically.
+Most changes on these screens take effect within about 30 seconds, without a restart. Two setting groups — HTTPS redirection and allowed hosts settings, and database schema changes — restart PingCastle Enterprise automatically: it stops itself about 1 second after you save, then IIS restarts it. Six other restart-flagged settings — the three file logging settings, maximum concurrent scans, and both SCIM rate limit settings — require you to restart PingCastle Enterprise manually after saving.
 :::
 
 :::note
@@ -127,7 +127,7 @@ On **Configuration** > **Settings** > **Windows authentication**, enter the SIDs
 | Windows Group | SID of the Active Directory group that grants login access (e.g., PingCastle_Users) |
 | Windows Group Admin | SID of the Active Directory group that grants administrator privileges (e.g., PingCastle_Admins) |
 
-PingCastle Enterprise also removes a user's access automatically if they no longer belong to the group set in **Windows Group** at their next login.
+PingCastle Enterprise can also remove a user's access if they no longer belong to the group set in **Windows Group**. The `RemoveUserIfNotInWindowsGroupAnymore` configuration key controls this behavior; PingCastle Enterprise checks the key at every Windows login. The key is off by default and has no toggle on the **Settings** screens — enable it by adding it to the application configuration.
 
 :::note
 Windows Authentication doesn't provide an email address when creating accounts. PingCastle Enterprise sets email addresses to a default value that disables notifications.
@@ -393,7 +393,7 @@ The **Login options** screen also includes these fields:
 | Minimum Password Length | The minimum number of characters required for local authentication passwords. Applies only when Local Authentication is enabled. |
 | Session Timeout | The number of minutes a user session can remain idle before PingCastle Enterprise logs the user out. |
 
-### Custom Login Message
+### Custom login message
 
 You can display a custom message on the login page, such as an internal notice or an authorized-use banner, by setting **Custom Login Message** on **Configuration** > **Settings** > **Login options**.
 

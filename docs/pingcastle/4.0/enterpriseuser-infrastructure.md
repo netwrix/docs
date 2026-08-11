@@ -47,7 +47,7 @@ The recommended solution to overcome this limit is to use the local PingCastle c
 
 This export produces a CSV file with the user or computer name and many properties, such as the creation date or operating system as seen by PingCastle.
 
-The other alternative is to change this limit on **Configuration** > **Settings** > **Data retention**, using the **Limit user list output** toggle (default to 100 users).
+The other alternative is to change this limit on **Configuration** > **Settings** > **Data retention**, using the **Limit user list output** toggle. When you turn it on (the default), the cap is 100 users. When you turn it off, the cap raises to 10,000 users rather than becoming unlimited.
 
 History tab:
 

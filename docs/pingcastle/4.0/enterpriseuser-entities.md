@@ -69,7 +69,7 @@ You can set "Rule exceptions" to completely disable a rule within a specific dom
 
 Use this only for very specific reasons, such as when a rule doesn't apply in your organization.
 
-Contact the PingCastle editors if you have doubts or need extra assistance about exception management.
+Contact Netwrix support if you have doubts or need extra assistance about exception management.
 
 For clarity: if you define no start date and no end date, the exception applies to all reports. If you define a start date but no end date, the exception applies starting from the start date. The same holds for the opposite case. When you define both start and end dates, the exception applies only during a limited period.
 

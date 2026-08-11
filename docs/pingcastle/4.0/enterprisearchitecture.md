@@ -128,7 +128,7 @@ graph LR
 | Service | Port | Protocol | Notes |
 |---------|------|----------|-------|
 | Microsoft Graph | 443 | TCP | HTTPS outbound from the CloudAPI service |
-| Microsoft 365 (SharePoint, Teams, Exchange, Azure RBAC) | 443 | TCP | HTTPS outbound from the CloudAPI service |
+| Microsoft 365 (SharePoint, Teams, Exchange, Azure role-based access control (RBAC)) | 443 | TCP | HTTPS outbound from the CloudAPI service |
 
 ## Security
 

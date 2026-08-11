@@ -8,6 +8,20 @@ PingCastle Enterprise helps you improve and follow your overall Active Directory
 
 To configure authentication methods such as local login, OpenID Connect, or SAML2, see [Configuring authentication](enterpriseauthsetup.md).
 
+## Main pages overview
+
+The application has four areas:
+
+- **Management view** (**Dashboard** menu) — Shows the Maturity Assessment and Advanced dashboards for tracking and reporting on overall AD security posture.
+
+- **Technical view** (**Infrastructure** menu) — Provides reports, tables, and charts with detailed technical data on domains, forests, and cartography.
+
+- **Configuration** — Contains administrative settings for the product, such as the audit log, entities, and other settings.
+
+- **User management** (top-right menu) — Lets you manage your own account, and lets administrators manage other users in the product.
+
+Each view targets a specific audience based on the stakeholder's role.
+
 ## Authorization
 
 PingCastle Enterprise controls access through a permission model based on roles, entities, and domains. See [Main pages overview](#main-pages-overview) for the four areas of the application these roles and permissions control access to.
@@ -57,20 +71,6 @@ Claims permission assigns permissions dynamically based on Windows group. Claims
 :::note
 Users provisioned automatically through SAML or OIDC just-in-time (JIT) provisioning are created with no permissions by default. An administrator must assign claims or user permissions to these accounts before they can access domains or Entra tenants. See [Provisioning settings](enterprisesettings-scim.md) for JIT provisioning configuration.
 :::
-
-## Main pages overview
-
-The application has four areas:
-
-- **Management view** (**Dashboard** menu) — Shows the Maturity Assessment and Advanced dashboards for tracking and reporting on overall AD security posture.
-
-- **Technical view** (**Infrastructure** menu) — Provides reports, tables, and charts with detailed technical data on domains, forests, and cartography.
-
-- **Configuration** — Contains administrative settings for the product, such as the audit log, entities, and other settings.
-
-- **User management** (top-right menu) — Lets you manage your own account, and lets administrators manage other users in the product.
-
-Each view targets a specific audience based on the stakeholder's role.
 
 ## Page organization
 

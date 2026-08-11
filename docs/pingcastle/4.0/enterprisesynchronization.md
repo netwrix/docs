@@ -3,19 +3,20 @@ sidebar_label: Synchronization
 ---
 # Synchronization for PingCastle Enterprise
 
-PingCastle Enterprise supports a synchronization mode to implement a
-security zone model (commonly used within Defense sectors). Only domains are
-synchronized (Entra ID isn't supported).
+PingCastle Enterprise supports a synchronization mode that implements a
+security zone model, commonly used within Defense sectors. Synchronization applies only to domains; Entra ID isn't supported.
 
-**PingCastle Enterprise high trust**
+Synchronization uses a two-tier trust model:
 
-PingCastle Enterprise high trust
+**High-trust instance**
 
-**PingCastle Enterprise low trust**
+The high-trust instance, also referred to as the higher instance, sits in the more trusted security zone. It consolidates synchronized data from one or more low-trust instances and enforces licensing: low-trust instances retrieve their license from the high-trust instance at startup.
 
-PingCastle audits
+**Low-trust instance**
 
-This enables report consolidation while keeping report details limited to appropriate security zones.
+A low-trust instance, also referred to as the lower instance, sits in a more restricted security zone. It performs its own audits and forwards a filtered view of its data, based on the export level you configure, to the high-trust instance.
+
+This model lets you consolidate reports across security zones while keeping report details limited to the appropriate zone.
 
 The data synchronized between high trust and low trust instances includes:
 
@@ -25,8 +26,8 @@ The data synchronized between high trust and low trust instances includes:
   Normal = recomputed for Full report, as-is for normal report; Light =
   stripped from Normal and Full, etc.)
 
-The following data isn't synchronized: exceptions, action plans,
-maturity changes, etc.
+PingCastle Enterprise doesn't synchronize exceptions, action plans,
+maturity changes, and other similar data.
 
 ## Configuration
 
@@ -68,40 +69,40 @@ Available export levels:
 - `Light` - Stripped down data from Normal and Full
 - `Paranoid` - Most restrictive level
 
-## Synchronization patterns
+## How synchronization works
 
-PingCastle Enterprise will attempt to retrieve the
-license from the higher instance at startup. If it can't be retrieved, it will use the locally
+At startup, PingCastle Enterprise attempts to retrieve the
+license from the higher instance. If the attempt fails, it uses the locally
 configured license.
 
-PingCastle Enterprise will sync a domain when the domain is edited or when
-the sync button is pressed.
+PingCastle Enterprise syncs a domain when you edit the domain or
+click the sync button.
 
 ![Domain sync button interface](/images/pingcastle/enterpriseinstall/image84.webp)
 
-The Sync button is shown if the sync link is configured AND if the user
-has permission to edit the domain. When a sync is performed, the domain
-properties (status, etc.) will be synchronized along with past reports.
+PingCastle Enterprise shows the Sync button when you configure the sync link
+and you have permission to edit the domain. When you perform a sync, PingCastle Enterprise
+synchronizes the domain properties (status, and so on) along with past reports.
 
-To avoid loading older reports with each change, information about
-the latest audit is shared with the lower instance. The lower instance can
+To avoid loading older reports with each change, PingCastle Enterprise shares
+information about the latest audit with the lower instance. The lower instance can
 choose to upload only missing reports.
 
-If a domain is created by a user locally, it will be synchronized.
-However, if it is removed locally (which is allowed when no
-reports are present), the application will attempt to remove it from the
-higher instance. Removal can't be completed if reports
-already exist, so the remove request may be denied silently.
+When you create a domain locally, PingCastle Enterprise synchronizes it.
+However, if you remove it locally (allowed only when no
+reports exist for it), PingCastle Enterprise attempts to remove it from the
+higher instance. It can't complete the removal if reports
+already exist, so it may deny the remove request silently.
 
 You can also force synchronization of all domains from the
 Interoperability page.
 
 ![Interoperability page with option to force synchronization of all domains](/images/pingcastle/enterpriseinstall/image85.webp)
 
-## Synchronization patterns at import time
+## License verification during report import
 
-To ensure license enforcement, before importing a new report in
-the lower instance, the instance will contact the higher instance to
+To enforce licensing, before importing a new report on
+the lower instance, the instance contacts the higher instance to
 verify that the report doesn't create domains beyond the license
 limit. If there is a temporary network issue, the instance skips this check.
 If the check denies the import, the lower instance doesn't import the report and logs the error.

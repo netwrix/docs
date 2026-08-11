@@ -15,7 +15,7 @@ The Entra scanner runs as a separate microservice called CloudAPI. When you inst
 
 ## Risk coverage
 
-The Entra scanner ships with 102 built-in risk definitions covering Entra ID and connected Microsoft 365 services. Each risk definition is its own file. You can download a risk definition, edit its logic, and re-upload it to change how the scanner evaluates that risk.
+The Entra scanner's risk definitions aren't a fixed count. PingCastle Enterprise fetches them live from an external microservice as versioned, updatable bundles covering Entra ID and connected Microsoft 365 services. (By comparison, the Active Directory scanner evaluates a fixed set of 193 static rules — 187 rule classes plus 6 static cloud rules.) Each Entra risk definition is its own file. You can download a risk definition, edit its logic, and re-upload it to change how the scanner evaluates that risk.
 
 ## Setting up tenant scanning
 
@@ -36,9 +36,10 @@ To connect a tenant:
 
 1. Go to **Configuration** > **Entra Scan Config** and click **Add tenant**.
 2. Enter the tenant ID for the Entra ID tenant you want to scan.
-3. Select the app registration authentication method: **Client secret** or **Certificate**.
-4. Provide the client secret or certificate for the app registration.
-5. Continue through the wizard's scheduling step to create a scheduled scan for the tenant, or skip it to schedule the scan later.
+3. Enter the Application (client) ID of the Entra app registration the scanner uses to authenticate.
+4. Select the app registration authentication method: **Client secret** or **Certificate**.
+5. Provide the client secret or certificate for the app registration.
+6. Continue through the wizard's scheduling step to create a scheduled scan for the tenant, or skip it to schedule the scan later.
 
 ![A screenshot of the Add Entra tenant wizard's App credentials step, showing the application client ID field and the client secret or certificate authentication method options.](/images/pingcastle/enterpriseentrascan/app-registration-credentials.webp)
 
@@ -72,7 +73,7 @@ Usage:
 
 The script requires the `Microsoft.Graph`, `ExchangeOnlineManagement`, and `Az.Resources` PowerShell modules.
 
-### Microsoft Graph application permissions
+### Microsoft Graph permissions reference
 
 The scanner requires application permissions on Microsoft Graph (`appId 00000003-0000-0000-c000-000000000000`). All permissions in the following table are application permissions, not delegated permissions, so they don't require a signed-in user. Every permission requires tenant admin consent.
 
@@ -99,13 +100,13 @@ The scanner requires application permissions on Microsoft Graph (`appId 00000003
 
 ### Microsoft Graph
 
-**Required:** the permissions listed in the [Microsoft Graph application permissions](#microsoft-graph-application-permissions) table.
+**Required:** the permissions listed in the [Microsoft Graph permissions reference](#microsoft-graph-permissions-reference) table.
 
 #### Grant Microsoft Graph permissions from the Entra admin center
 
 1. Go to **App registrations**, select the scanner app, and click **API permissions**.
 2. Click **Add a permission** > **Microsoft Graph** > **Application permissions**.
-3. Select each permission from the [Microsoft Graph application permissions](#microsoft-graph-application-permissions) table, then click **Add permissions**.
+3. Select each permission from the [Microsoft Graph permissions reference](#microsoft-graph-permissions-reference) table, then click **Add permissions**.
 4. Click **Grant admin consent** for the tenant.
 
 Microsoft Graph permissions cover most risk checks that the scanner performs, either on their own or combined with the Exchange Online provider.
@@ -127,12 +128,12 @@ Microsoft Graph permissions cover most risk checks that the scanner performs, ei
 
 ### SharePoint Online
 
-**Required:** the `Sites.FullControl.All` and `Directory.Read.All` permissions listed in the [Microsoft Graph application permissions](#microsoft-graph-application-permissions) table.
+**Required:** the `Sites.FullControl.All` and `Directory.Read.All` permissions listed in the [Microsoft Graph permissions reference](#microsoft-graph-permissions-reference) table.
 
 `Sites.FullControl.All` is a broad permission — it grants full control over every site collection in the tenant. It enables three risk checks: `SharePointModernAuthNotEnabled`, `SharePointSharedLinksNeverExpire`, and `SharingInvitationsNotMonitored`. If you don't grant it, those three checks show as unable to run, but the rest of the scan, including the other SharePoint and OneDrive checks, still works.
 
 :::warning
-SharePoint Online only accepts certificate-based authentication for the scanner app. If the app registration uses a client secret, SharePoint risk checks fail even when the correct permissions are granted. Configure certificate authentication for specific sharepoint online checks to work correctly.
+SharePoint Online only accepts certificate-based authentication for the scanner app. If the app registration uses a client secret, SharePoint risk checks fail even when the correct permissions are granted.
 :::
 
 #### Grant the SharePoint Online permission from the Entra admin center

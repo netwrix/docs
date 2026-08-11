@@ -26,7 +26,7 @@ Where applicable, an audit log entry links directly to the object it describes. 
 - A change to a domain links to that domain's detail page.
 - A change to a user account links to that account.
 
-Not every audit log entry has a linkable target. Entries for deleted objects also appear without a link, since the object no longer exists.
+Not every audit log entry has a linkable target. Entries for deleted objects appear without a link, since the object no longer exists.
 
 ## Audit log settings
 
