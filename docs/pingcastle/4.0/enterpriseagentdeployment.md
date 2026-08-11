@@ -33,7 +33,7 @@ If the server requires TLS 1.2, install the TLS 1.2 client package on the system
 
 ## Automatic Forest Exploration Setup
 
-For large environments, you can simplify scan configuration by using automatic forest exploration. This allows PingCastle to discover and scan all domains within a forest automatically using a wildcard in the `--server` parameter.
+For large environments, you can simplify scan configuration by using automatic forest exploration. PingCastle then discovers and scans all domains within a forest automatically, using a wildcard in the `--server` parameter.
 
 ### Manual Execution
 
@@ -61,5 +61,5 @@ PingCastle.exe --healthcheck --server *.domain.fqdn --Level Full --api-endpoint 
 - `--out` - Log file path for the scan output
 
 :::tip
-The wildcard pattern `*.domain.fqdn` automatically discovers and scans all child domains within the specified forest, eliminating the need to configure individual domain scans.
+The wildcard pattern `*.domain.fqdn` automatically discovers and scans all child domains within the specified forest, so you don't need to configure individual domain scans.
 :::

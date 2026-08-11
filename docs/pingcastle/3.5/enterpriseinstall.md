@@ -157,7 +157,7 @@ graph LR
 
 | Service | Port | Protocol | Notes |
 |---------|------|----------|-------|
-| HTTP | 80 | TCP | Optional, typically redirected to HTTPS |
+| HTTP | 80 | TCP | Optional; typically redirects to HTTPS |
 | HTTPS | 443 | TCP | Recommended |
 
 ##### Active Directory Scanning
@@ -392,7 +392,7 @@ This setting is only for the UI-Based imports.
 
 ### Automatic Forest Exploration Setup
 
-For large environments, you can simplify scan configuration by using automatic forest exploration. This allows PingCastle to discover and scan all domains within a forest automatically using a wildcard in the `--server` parameter.
+For large environments, you can simplify scan configuration by using automatic forest exploration. PingCastle then discovers and scans all domains within a forest automatically, using a wildcard in the `--server` parameter.
 
 #### Manual Execution
 
@@ -419,7 +419,7 @@ PingCastle.exe --healthcheck --server *.domain.fqdn --Level Full --api-endpoint 
 - `--out` - Log file path for the scan output
 
 :::tip
-The wildcard pattern `*.domain.fqdn` will automatically discover and scan all child domains within the specified forest, eliminating the need to configure individual domain scans.
+The wildcard pattern `*.domain.fqdn` automatically discovers and scans all child domains within the specified forest, so you don't need to configure individual domain scans.
 :::
 
 ### Scheduler Configuration
@@ -1522,7 +1522,7 @@ By default, the postgres user has no password. PostgreSQL collation may not hand
 ![](/images/pingcastle/enterpriseinstall/image22.webp)
 
 :::tip TCP/IP Configuration
-A common configuration issue is TCP/IP connectivity. TCP/IP is disabled by default in SQL Server, so you must enable it manually in SQL Server Configuration Manager.
+A common configuration issue is TCP/IP connectivity. SQL Server disables TCP/IP by default, so you must enable it manually in SQL Server Configuration Manager.
 :::
 
 ![](/images/pingcastle/enterpriseinstall/image23.webp)
@@ -1699,7 +1699,7 @@ You can then view the log stream:
 
 ![App Service log stream view](/images/pingcastle/enterpriseinstall/image76.webp)
 
-In the following example, the connectionString wasn't found because Docker doesn't forward it. Correct this before the application can start:
+In the following example, the application couldn't find the connectionString because Docker doesn't forward it. Correct this before the application can start:
 
 ![Connection string error displayed in log stream](/images/pingcastle/enterpriseinstall/image77.webp)
 
@@ -1766,7 +1766,7 @@ Add users to the appropriate groups based on the level of access they require.
 
 **Getting AD Group SIDs**
 
-PingCastle Enterprise needs the Security Identifiers (SIDs) of the groups for setup. Use the tabs to select a way to help you get these.
+PingCastle Enterprise needs the Security Identifiers (SIDs) of the groups for setup. Use the tabs to choose a method for retrieving them.
 
 <Tabs>
   <TabItem value="ad-powershell" label="Active Directory PowerShell" default>
@@ -1825,7 +1825,7 @@ Add the following to `appsettings.json` replacing the SIDs with your Active Dire
 | `RemoveUserIfNotInWindowsGroupAnymore` | When `true`, PingCastle Enterprise removes users who no longer belong to `WindowsGroup` at their next login |
 
 :::note
-Windows Authentication doesn't provide an email address when creating accounts. The application sets email addresses to a default value that disables notifications.
+Windows Authentication doesn't provide an email address when the application creates accounts. The application sets email addresses to a default value that disables notifications.
 :::
 
 ![Windows accounts have no email](/images/pingcastle/enterpriseinstall/Authentication/windows-no-email.webp)
@@ -3083,7 +3083,7 @@ If the server requires TLS 1.2, install the TLS 1.2 client package on the system
 ## Synchronization feature
 
 PingCastle Enterprise supports a synchronization mode to implement a
-security zone model (commonly used within Defense sectors). PingCastle
+security zone model (common within Defense sectors). PingCastle
 synchronizes only domains, not Azure AD.
 
 **PingCastle Enterprise high trust**
@@ -3254,7 +3254,7 @@ Run the application manually from the command line to view immediate error outpu
 dotnet.exe PingCastleEnterprise.dll
 ```
 
-**(dotnet.exe is stored by default on c:\\program files\\dotnet)**
+**(By default, dotnet.exe is in c:\\program files\\dotnet)**
 
 To open the application on the network, use the `--server.urls` parameter:
 
@@ -3411,7 +3411,7 @@ Add SQL Server credentials to the connection string in appsettings.json:
 
 ### Reset Administrator Password
 
-If no administrators are available (password forgotten or the administrator has left the company), you can reset PingCastle to Initialization mode to create a new administrator account.
+If no administrators are available (for example, someone forgot the password or the administrator has left the company), you can reset PingCastle to Initialization mode to create a new administrator account.
 
 **Steps:**
 

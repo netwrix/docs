@@ -77,7 +77,7 @@ It brings you to a page with information to fill in:
 
 - Domain SID: Differentiates the rare cases where two domains have the same FQDN.
 
-- Status: Status of the domain, which you must modify when needed. See the next section for a full explanation.
+- Status: Status of the domain, which you must modify when needed. See "Status of a domain" for a full explanation.
 
 - Entity: Entity to which the created domain belongs. Assigning entities to domains can help manage a very large forest of AD, especially when there are multiple actors dedicated to specific entities.
 

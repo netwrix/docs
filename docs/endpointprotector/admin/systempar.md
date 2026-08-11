@@ -47,7 +47,7 @@ Traditionally, Endpoint Protector delivered Content Aware Protection Notificatio
 Agent version 6.2.3.1 (Windows), 3.0.3.1 (Mac), and 2.4.3.1 (Linux), users can use HTML code to
 format notifications. By using HTML, administrators can highlight key information such as threat
 names or affected files with bold, italics, or underlining, making it easier for users to
-understand. In addition, you can employ colors to differentiate sections or emphasize critical
+understand. In addition, you can use colors to differentiate sections or emphasize critical
 details within the notification. This results in visually engaging notifications that capture user
 attention and ensure users don't miss important information.
 
@@ -162,7 +162,7 @@ Adding such applications to the exceptions list improves performance and avoids 
 interactions with Endpoint Protector.
 
 :::note
-This feature applies at a global level for all Windows endpoints with the Advanced
+This feature applies globally to all Windows endpoints with the Advanced
 Printing and MTP Scanning features enabled.
 :::
 
@@ -229,7 +229,7 @@ For a detailed view of all events and their descriptions, see the following tabl
 | Client Integrity OK                          | Endpoint Protector Client Integrity ok   | Logged when the EPP Client starts and all component files and their signatures pass verification. Signature validation applies to Windows only. |
 | Client Integrity Fail                        | Endpoint Protector Client Integrity failed | Logged when the EPP Client starts and one or more component files are missing or their signatures fail verification. Signature validation applies to Windows only. |
 | Policies Received | Endpoint Protector Client received policy successfully   | Logged when the EPP Client downloads updated settings from the server. Any change to Computer or User settings — such as configuration items, rights, or policies — updates the configuration XML and its hash. When the EPP Client connects to the EPP Server, it presents its current XML hash. If the hash differs from what the server holds, the server sends the updated configuration for the client to download automatically. |
-| Uninstall Attempt                            | Endpoint Protector Client uninstall attempt  | Logged when a deliberate uninstall of the EPP Client is initiated — either directly on the endpoint (for example, via Add/Remove Programs) or from the EPP Server using the Uninstall Client action. |
+| Uninstall Attempt                            | Endpoint Protector Client uninstall attempt  | Logged when someone initiates a deliberate uninstall of the EPP Client — either directly on the endpoint (for example, via Add/Remove Programs) or from the EPP Server using the Uninstall Client action. |
 | EasyLock – successfully deployed             | EasyLock <ul><li>successfully deployed</li></ul>                                                                                |                         |
 | EasyLock <ul><li>deployment failed</li></ul> | EasyLock <ul><li>deployment failed</li></ul>                                                                                    |                         |
 | File Printed                                 | File sent to printer successfully                                                                                               |                         |
@@ -239,7 +239,7 @@ For a detailed view of all events and their descriptions, see the following tabl
 | External Repository Upload Fail              | File Shadow uploaded to Repository failed                                                                                       |                         |
 | Content Remediation Session Active           | Content Aware Protection <ul><li>Threat Remediated</li></ul>                                                                    |                         |
 | Content Remediation Request Canceled by User | Content Aware Protection <ul><li>User Remediation dialog was closed by the user</li></ul>                                       |                         |
-| Forced Uninstall Attempt                     | Endpoint Protector Client forced uninstall attempt | Logged when the EPP Client service is stopped or terminated and one or more component files, registry keys, or drivers are found in an unexpected state. |
+| Forced Uninstall Attempt                     | Endpoint Protector Client forced uninstall attempt | Logged when the EPP Client service stops or terminates and one or more component files, registry keys, or drivers remain in an unexpected state. |
 | Device Remediation Request Canceled by User  | Device Control - Remediation dialog was closed by the user |                         |
 | Device Remediation Session Canceled          | Device Temporarily Unlock with User Remediation canceled                                                                        |                         |
 | Device Remediation Session Active            | Device Temporarily Unlocked with User Remediation                                                                               |                         |

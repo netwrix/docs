@@ -4,7 +4,7 @@ sidebar_label: Synchronization
 # Synchronization for PingCastle Enterprise
 
 PingCastle Enterprise supports a synchronization mode that implements a
-security zone model, commonly used within Defense sectors. Synchronization applies only to domains, not Entra ID.
+security zone model, common within Defense sectors. Synchronization applies only to domains, not Entra ID.
 
 Synchronization uses a two-tier trust model:
 

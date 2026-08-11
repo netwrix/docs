@@ -109,7 +109,7 @@ graph LR
 
 | Service | Port | Protocol | Notes |
 |---------|------|----------|-------|
-| HTTP | 80 | TCP | Optional, typically redirected to HTTPS |
+| HTTP | 80 | TCP | Optional; typically redirects to HTTPS |
 | HTTPS | 443 | TCP | Recommended |
 
 ##### Active Directory Scanning

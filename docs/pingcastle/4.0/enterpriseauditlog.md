@@ -9,13 +9,13 @@ The audit log records administrative changes to objects such as domains, agents,
 
 ![A screenshot of the audit log list view showing rows of administrative changes with columns for timestamp, severity, user, category, action, target, property, before, after, and IP address.](/images/pingcastle/enterpriseauditlog/audit-log-list.webp)
 
-## How audit log rows are structured
+## How the audit log structures rows
 
 The audit log records one row per changed property, not one row per administrative action. If a single action changes multiple properties at once, the audit log produces multiple rows, one for each changed property. These rows share the same timestamp because they all result from the same action.
 
 For example, if you open a scheduled scan's settings and update both its schedule and its target domain in one form submission, the audit log records two rows: one for the schedule change and one for the domain change. Both rows share the same timestamp, but each shows only the single property that changed, along with its previous and new value.
 
-This row-per-property structure means you can filter or scan the log for a specific property change without needing to parse a single row that bundles several unrelated changes together.
+This row-per-property structure means you can filter or scan the log for a specific property change without parsing a single row that bundles several unrelated changes together.
 
 ![A screenshot of the audit log filtered by category, showing a single row-per-property change with its before and after values.](/images/pingcastle/enterpriseauditlog/audit-log-detail.webp)
 

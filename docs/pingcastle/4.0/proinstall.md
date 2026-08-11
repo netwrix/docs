@@ -382,7 +382,7 @@ use PingCastlePro;
 exec sp_addrolemember 'db_owner', 'IIS APPPOOL\PingCastlePro';
 ```
 
-Here is for example some commands for PostGres on Ubuntu 17:
+For example, here are some commands for PostGres on Ubuntu 17:
 
 ```bash
 sudo apt-get install postgresql postgresql-contrib
@@ -754,7 +754,7 @@ The method to run the application manually is to run the command:
 dotnet.exe PingCastlePro.dll
 ```
 
-**(dotnet.exe is stored by default on c:\\program files\\dotnet)**
+**(By default, dotnet.exe is in c:\\program files\\dotnet)**
 
 Additionally, you can open the application on the network by
 specifying the `--server.urls` parameter:

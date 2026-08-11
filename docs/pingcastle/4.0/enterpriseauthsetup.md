@@ -72,7 +72,7 @@ Add users to the appropriate groups based on the level of access they require.
 
 **Getting AD Group SIDs**
 
-PingCastle Enterprise needs the Security Identifiers (SIDs) of the groups for setup. Use the tabs to select a way to help you get these.
+PingCastle Enterprise needs the Security Identifiers (SIDs) of the groups for setup. Use the tabs to choose a method for retrieving them.
 
 <Tabs>
   <TabItem value="ad-powershell" label="Active Directory PowerShell" default>
@@ -126,7 +126,7 @@ On **Configuration** > **Settings** > **Windows authentication**, enter the SIDs
 PingCastle Enterprise can also remove a user's access if they no longer belong to the group set in **Windows Group**. The `RemoveUserIfNotInWindowsGroupAnymore` configuration key controls this behavior; PingCastle Enterprise checks the key at every Windows login. The key is off by default and has no toggle on the **Settings** screens — enable it by adding it to the application configuration.
 
 :::note
-Windows Authentication doesn't provide an email address when creating accounts. PingCastle Enterprise sets email addresses to a default value that disables notifications.
+Windows Authentication doesn't provide an email address when PingCastle Enterprise creates accounts. PingCastle Enterprise sets email addresses to a default value that disables notifications.
 :::
 
 ![Windows accounts have no email](/images/pingcastle/enterpriseinstall/Authentication/windows-no-email.webp)

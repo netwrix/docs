@@ -19,7 +19,7 @@ See [Log Files](#log-files) for how to download the generated logs.
 
 #### Log Files
 
-PingCastle Enterprise, CloudAPI (used for Entra ID scanning), and PingCastleSchedulerService all use Serilog for logging, each writing to its own `logs` folder:
+PingCastle Enterprise, CloudAPI (which handles Entra ID scanning), and PingCastleSchedulerService all use Serilog for logging, each writing to its own `logs` folder:
 
 - PingCastle Enterprise: `logs` in the installation directory
 - CloudAPI: `CloudAPI\logs` in the installation directory
@@ -201,7 +201,7 @@ If the Entra Scan Config or settings are still missing after the restart, collec
 
 ### Reset Administrator Password
 
-If no administrators are available (password forgotten or the administrator has left the company), you can reset PingCastle to Initialization mode to create a new administrator account.
+If no administrators are available (for example, someone forgot the password or the administrator has left the company), you can reset PingCastle to Initialization mode to create a new administrator account.
 
 **Steps:**
 

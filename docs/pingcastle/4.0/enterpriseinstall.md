@@ -197,7 +197,7 @@ EXEC sp_addrolemember 'db_owner', 'IIS APPPOOL\PingCastleEnterprise';
 ![](/images/pingcastle/enterpriseinstall/image22.webp)
 
 :::tip TCP/IP Configuration
-A common configuration issue is TCP/IP connectivity. TCP/IP is disabled by default in SQL Server, so you must enable it manually in SQL Server Configuration Manager.
+A common configuration issue is TCP/IP connectivity. SQL Server disables TCP/IP by default, so you must enable it manually in SQL Server Configuration Manager.
 :::
 
 ![](/images/pingcastle/enterpriseinstall/image23.webp)

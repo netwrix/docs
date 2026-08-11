@@ -3,7 +3,7 @@ sidebar_label: Settings overview
 ---
 # PingCastle Enterprise settings overview
 
-PingCastle Enterprise groups its configuration options into sections on **Configuration** > **Settings**. This page links each section to where it's documented.
+PingCastle Enterprise groups its configuration options into sections on **Configuration** > **Settings**. This page links each section to its documentation.
 
 ## Authentication
 
