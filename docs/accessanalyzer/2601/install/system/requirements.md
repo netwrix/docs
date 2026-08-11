@@ -16,8 +16,8 @@ The installer enforces absolute minimums via preflight checks — the installer 
 
 | Size | Recommended CPU | Recommended Memory | Recommended Disk | Data Threshold |
 | --- | --- | --- | --- | --- |
-| **Small** | 8 cores | 24 GB | 250 GB SSD | Up to 5 TB |
-| **Medium** | 16 cores | 48 GB | 500 GB SSD | 5 TB – 100 TB |
+| **Small** | 8 cores | 24 GB | 300 GB SSD | Up to 5 TB |
+| **Medium** | 16 cores | 48 GB | 600 GB SSD | 5 TB – 100 TB |
 | **Large** | 32 cores | 64 GB | 1 TB SSD | 100 TB – 1 PB |
 | **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD | 1 PB+ |
 
@@ -30,9 +30,11 @@ The installer validates free space on the following paths:
 | --- | --- | --- |
 | `/` | 20 GB | Root filesystem |
 | `/var` | 20 GB | K3s data, containers, logs |
-| `/var/lib` | 20 GB | K3s data directory |
+| `/var/lib` | 52 GB ** | K3s data directory |
 | `/var/log` | 5 GB | System and application logs |
 | `/etc` | 1 GB | Configuration files |
+
+** The scan queue reserves disk space in `/var/lib`, and the actual size of `/var/lib` depends on the deployment size. The scan queue needs 32 GB multiplied by the deployment size. So a deploy size of 2 would mean the scan queue needs 64 GB in addition to the baseline of 20 GB, so `/var/lib` would need to be 84 GB.
 
 The installer also verifies write access for `/var`, `/tmp`, and `/etc`.
 
