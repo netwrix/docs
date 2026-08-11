@@ -31,14 +31,14 @@ Supported database editions:
 - **SQL Server Standard**: Recommended for production environments as needed
 - **SQL Server Enterprise**: Supported for high-availability production environments
 
-PingCastle Enterprise uses Entity Framework Core 10.0.8 (the `Microsoft.EntityFrameworkCore.SqlServer`, `Relational`, `Design`, `Tools`, and `InMemory` packages) for database operations, with the Npgsql provider at version 10.0.2 for PostgreSQL. PingCastle Enterprise provides partial support for PostgreSQL on a best-effort basis. Other database engines aren't specifically supported.
+PingCastle Enterprise uses Entity Framework Core 10.0.8 (the `Microsoft.EntityFrameworkCore.SqlServer`, `Relational`, `Design`, `Tools`, and `InMemory` packages) for database operations, with the Npgsql provider at version 10.0.2 for PostgreSQL. PingCastle Enterprise provides partial support for PostgreSQL on a best-effort basis. It doesn't specifically support other database engines.
 
 ## External System Dependencies
 
 PingCastle Enterprise requires:
 
 - **ASP.NET 10.0 Hosting Bundle**: Required for hosting the web application
-- **IIS (Internet Information Services)**: Used as the web server with Windows Authentication enabled by default
+- **IIS (Internet Information Services)**: Serves as the web server, with Windows Authentication enabled by default
 
 :::info
 PingCastleEnterpriseInstaller.exe installs and configures IIS, Windows Authentication, and the ASP.NET 10.0 Hosting Bundle automatically. Manual installation is only necessary if you're preparing a server in advance or troubleshooting.

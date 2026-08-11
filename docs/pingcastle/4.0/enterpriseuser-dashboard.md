@@ -39,7 +39,7 @@ To go into more detail, the tool computes this score on the first two levels of 
 
 - Risk score - ensure that the local risk of contamination is limited
 
-Each measure has its own detailed page, where you can find more information on how to improve the situation and how to gain the associated "star". A star is an indicator telling whether a single rule linked to a measure is raising an alert or not.
+Each measure has its own detailed page, where you can find more information on how to improve the situation and how to gain the associated "star". A star indicates whether a single rule linked to a measure is raising an alert.
 
 Detailed view of the maturity score:
 
@@ -71,7 +71,7 @@ Then, it displays a few KPIs that compose the maturity evaluation. If you reach 
 
 The second section offers different kinds of detailed information in different tabs. This information can be a couple of indicators that help you understand the situation better, a breakdown of the information shown by entity within the selected perimeter, or a history graph representing how the KPI evolved in the past.
 
-Each chart is dynamic, and you can filter out a category by clicking it in the legend. You can also click certain data points to go directly to the page containing the data used to build the chart.
+Each chart is dynamic, and you can filter out a category by clicking it in the legend. You can also click certain data points to go directly to the page containing the data behind the chart.
 
 Indicators for the related tab:
 

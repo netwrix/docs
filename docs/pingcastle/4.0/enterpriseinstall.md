@@ -43,7 +43,7 @@ The installer wizard walks you through prerequisite checks, licensing, and confi
    :::
 
 2. **License agreement**: review the license agreement and select the checkbox to accept it. You can't proceed until you accept.
-3. **License key**: enter your license key, or browse to the license file provided by Netwrix.
+3. **License key**: enter your license key, or browse to the license file Netwrix provides.
 
    :::info
    If the license key is missing, contact Netwrix support or your account manager.
@@ -73,7 +73,7 @@ The installer wizard walks you through prerequisite checks, licensing, and confi
    If you enable Windows Authentication, don't select a built-in privileged group such as `BUILTIN\Administrators` or "Domain Admins" as the restriction group. Windows strips these groups from the token it presents to the application, so authentication always fails for members of that group. Run `whoami /all` to confirm which groups appear in your token before choosing one.
    :::
 
-8. **HTTPS configuration**: HTTPS is enabled by default. Choose a certificate source:
+8. **HTTPS configuration**: the installer enables HTTPS by default. Choose a certificate source:
    - **Self-signed** (default): the installer generates a 10-year self-signed certificate. Use this for proof-of-concept environments only.
    - **Existing certificate file**: provide a `.pfx` file and its password.
    - **Existing certificate from the certificate store**: select the certificate from a list.

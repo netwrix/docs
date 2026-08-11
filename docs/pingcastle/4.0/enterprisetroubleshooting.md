@@ -37,7 +37,7 @@ Open the file with a plain text or code editor, such as Notepad or Visual Studio
 - Colons separate a key from its value, and commas separate entries
 - The last entry in an object or array doesn't have a trailing comma
 - Curly braces `{}` must open and close in matching pairs
-- Backslashes must be escaped as `\\` (for example, in connection strings or file paths)
+- Escape backslashes as `\\` (for example, in connection strings or file paths)
 
 After editing the file, check it for syntax errors before restarting the application. A single misplaced comma or brace prevents the application from starting.
 
@@ -173,7 +173,7 @@ Add SQL Server credentials to the connection string in `appsettings.Production.j
 If Entra ID scanning isn't available, Enterprise and CloudAPI aren't integrated correctly. Check for either of these signs:
 
 - **Entra Scan Config** isn't available in the **Configuration** dropdown menu.
-- **Configuration** > **Settings** has no Entra configuration settings displayed.
+- **Configuration** > **Settings** doesn't show any Entra configuration settings.
 
 This usually means Enterprise and CloudAPI are out of sync, often because the `CloudServiceAPIKey` doesn't match between the two services.
 

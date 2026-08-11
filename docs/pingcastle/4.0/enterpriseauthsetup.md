@@ -29,12 +29,12 @@ You can enable OpenID Connect, SAML2, Windows Authentication, and Disable Passwo
 
 ### Local authentication
 
-Local authentication is enabled by default and uses username and password stored in the PingCastle Enterprise database. No additional configuration is required.
+PingCastle Enterprise enables local authentication by default, using a username and password stored in the PingCastle Enterprise database. It needs no additional configuration.
 
-To hide the local authentication option when other authentication methods are configured, enable **Disable Password Login** on **Configuration** > **Settings** > **Login options**.
+To hide the local authentication option when you configure other authentication methods, enable **Disable Password Login** on **Configuration** > **Settings** > **Login options**.
 
 :::warning
-When **Disable Password Login** is enabled and Windows Authentication is enabled, any account calling the API will need to be a member of the Windows group configured in **Windows Group**.
+When you enable both **Disable Password Login** and Windows Authentication, any account calling the API must be a member of the Windows group you set in **Windows Group**.
 :::
 
   </TabItem>
@@ -108,7 +108,7 @@ $sid.Value
   </TabItem>
   <TabItem value="whoami" label="whoami (Current User)">
 
-If you are already a member of the groups and have rebooted since being added you can run 
+If you're already a member of the groups and have rebooted since joining them, run
 `whoami /all` to get your group memberships and find the SID in the output
 
 ![Viewing SIDs with whoami](/images/pingcastle/enterpriseinstall/Authentication/whoami-sid.webp)
@@ -143,7 +143,7 @@ To hide the internal username/password login option, enable **Disable Password L
 ![Login page without password option](/images/pingcastle/enterpriseinstall/Authentication/login-page-no-password.webp)
 
 :::warning API Access
-This setup affects all pages for authentication. When **Disable Password Login** is enabled with Windows Authentication, API calls will require both an API key and the calling account to be in the group set in **Windows Group**.
+This setup affects all pages for authentication. When you enable **Disable Password Login** with Windows Authentication, API calls require both an API key and a calling account that belongs to the group you set in **Windows Group**.
 
 To restrict NTLM authentication to specific pages, edit the `web.config` file using the `<location>` directive to restrict authentication to the WindowsAuth page. See [IIS URL Authorization documentation](https://docs.microsoft.com/en-us/iis/manage/configuring-security/understanding-iis-url-authorization).
 :::
@@ -157,7 +157,7 @@ To restrict NTLM authentication to specific pages, edit the `web.config` file us
 
 PingCastle Enterprise supports OpenID Connect authentication using the ASP.NET Core API. Configuration options are [documented here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.openidconnectoptions?view=aspnetcore-1.1&viewFallbackFrom=aspnetcore-8.0).
 
-Proxy settings rely on the current user proxy configuration, which can be defined [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
+Proxy settings rely on the current user proxy configuration, which you can define [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
 
 <details>
 <summary>Configuring Entra ID for OpenIDConnect Authentication</summary>
@@ -215,7 +215,7 @@ On **Configuration** > **Settings** > **OIDC Connect**, enable OIDC login and en
 | Use PKCE | Enables Proof Key for Code Exchange (PKCE), which adds a layer of protection to the authorization code exchange. |
 | Map Inbound Claims | Controls whether PingCastle Enterprise maps claim names from the identity provider to their .NET equivalents. |
 | Scope | The list of OIDC scopes PingCastle Enterprise requests, such as `openid`, `profile`, and `email`. |
-| Require HTTPS Metadata | Requires the OIDC metadata endpoint to be served over HTTPS. |
+| Require HTTPS Metadata | Requires your identity provider to serve the OIDC metadata endpoint over HTTPS. |
 
 All fields except **Scope** depend on your OpenID provider. To hide the internal username/password login option, enable **Disable Password Login** on **Login options**.
 
@@ -233,7 +233,7 @@ On **Configuration** > **Settings** > **Header authentication**, enable **Header
 When a user accesses the login page, PingCastle checks for the specified header. If present, PingCastle considers the user authenticated and uses the header value as the username.
 
 :::danger Security Requirement
-The PingCastle application **must** be isolated by a reverse proxy that prevents unauthenticated users from setting their own authentication header. Failure to properly secure this configuration allows authentication bypass.
+A reverse proxy **must** isolate the PingCastle application and prevent unauthenticated users from setting their own authentication header. Failure to properly secure this configuration allows authentication bypass.
 :::
 
 To hide the internal username/password login option, enable **Disable Password Login** on **Login options**.
@@ -245,7 +245,7 @@ To hide the internal username/password login option, enable **Disable Password L
 
 PingCastle Enterprise supports SAML2 authentication using the [ITfoxtec Identity SAML 2.0](https://www.itfoxtec.com/IdentitySaml2) package. Advanced configuration settings are [documented here](https://github.com/ITfoxtec/ITfoxtec.Identity.Saml2/blob/master/src/ITfoxtec.Identity.Saml2/Configuration/Saml2Configuration.cs).
 
-Proxy settings rely on the current user proxy configuration, which can be defined [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
+Proxy settings rely on the current user proxy configuration, which you can define [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
 
 <details>
 <summary>Configuring SAML2 with Okta</summary>
@@ -373,7 +373,7 @@ PingCastle maps certificates to user accounts using these identifiers (in order)
 
 **User Account Setup**
 
-Create a user account with a login matching the certificate subject (DNS form). No password is required. Use an external user account for this, though any account type works.
+Create a user account with a login matching the certificate subject (DNS form). You don't need to set a password. Use an external user account for this, though any account type works.
 
 ![Create External User](/images/pingcastle/enterpriseauthsetup/CreateExternalUser.webp)
 
@@ -390,7 +390,7 @@ The **Login options** screen also includes these fields:
 
 | Field | Description |
 |---|---|
-| Minimum Password Length | The minimum number of characters required for local authentication passwords. Applies only when Local Authentication is enabled. |
+| Minimum Password Length | The minimum number of characters required for local authentication passwords. Applies only when you enable Local Authentication. |
 | Session Timeout | The number of minutes a user session can remain idle before PingCastle Enterprise logs the user out. |
 
 ### Custom login message

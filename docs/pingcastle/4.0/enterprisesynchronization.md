@@ -4,21 +4,21 @@ sidebar_label: Synchronization
 # Synchronization for PingCastle Enterprise
 
 PingCastle Enterprise supports a synchronization mode that implements a
-security zone model, commonly used within Defense sectors. Synchronization applies only to domains; Entra ID isn't supported.
+security zone model, commonly used within Defense sectors. Synchronization applies only to domains, not Entra ID.
 
 Synchronization uses a two-tier trust model:
 
 **High-trust instance**
 
-The high-trust instance, also referred to as the higher instance, sits in the more trusted security zone. It consolidates synchronized data from one or more low-trust instances and enforces licensing: low-trust instances retrieve their license from the high-trust instance at startup.
+The high-trust instance, also called the higher instance, sits in the more trusted security zone. It consolidates synchronized data from one or more low-trust instances and enforces licensing: low-trust instances retrieve their license from the high-trust instance at startup.
 
 **Low-trust instance**
 
-A low-trust instance, also referred to as the lower instance, sits in a more restricted security zone. It performs its own audits and forwards a filtered view of its data, based on the export level you configure, to the high-trust instance.
+A low-trust instance, also called the lower instance, sits in a more restricted security zone. It performs its own audits and forwards a filtered view of its data, based on the export level you configure, to the high-trust instance.
 
 This model lets you consolidate reports across security zones while keeping report details limited to the appropriate zone.
 
-The data synchronized between high trust and low trust instances includes:
+PingCastle Enterprise synchronizes the following data between high trust and low trust instances:
 
 - The status of the domain (active, removed, etc.)
 
@@ -56,12 +56,12 @@ Specify the Uri as the FQDN of the recipient server and the API key.
 }
 ```
 
-The export level is the one defined in the classic PingCastle Agent configuration.
+The export level matches the one you define in the classic PingCastle Agent configuration.
 If the level requires removing information, PingCastle Enterprise recomputes the data (this can
 result in information loss if the instance is processing a more
 recent report). If the level doesn't restrict the information, PingCastle Enterprise
 forwards it as-is. If the report version is
-more recent, no information is lost.
+more recent, you don't lose any information.
 
 Available export levels:
 - `Full` - No filter applied, all data included
@@ -114,7 +114,7 @@ you enabled logging).
 
 ## Connection tests
 
-To verify the connection is properly configured, you can sync a domain using
+To verify you configured the connection properly, you can sync a domain using
 the button described earlier.
 
 If there is an error, PingCastle Enterprise displays it as an exception.

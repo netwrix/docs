@@ -3,7 +3,7 @@ sidebar_position: 6
 ---
 # Audit Log
 
-The audit log tracks every administrative change made in PingCastle Enterprise. Use it to see who changed what and when, whether you're investigating an unexpected configuration change or confirming that a change you made took effect.
+The audit log tracks every administrative change in PingCastle Enterprise. Use it to see who changed what and when, whether you're investigating an unexpected configuration change or confirming that a change you made took effect.
 
 The audit log records administrative changes to objects such as domains, agents, credential profiles, and scheduled scans. It also records authentication-related changes, such as updates to login options or single sign-on (SSO) configuration. For example, if an administrator switches the login method from password authentication to SSO, that change appears in the audit log with the administrator's name, the timestamp, and the property that changed.
 
@@ -33,6 +33,6 @@ Not every audit log entry has a linkable target. Entries for deleted objects app
 The **Data retention** screen on the **Settings** page exposes two audit-log-related settings:
 
 - **Audit log retention (days)** — How long audit log entries stay in the log before PingCastle Enterprise deletes them.
-- **Audit log export row limit** — The maximum number of rows included when you export the log.
+- **Audit log export row limit** — The maximum number of rows PingCastle Enterprise includes when you export the log.
 
 See [Data Retention](enterprisesettings-dataretention.md) for how to configure these settings.

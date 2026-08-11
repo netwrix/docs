@@ -11,7 +11,7 @@ PingCastle Pro is a tool that helps you improve and follow your overall Active D
 
 **System Specifications**
 
-The Operating systems supported are:
+PingCastle Pro supports the following operating systems:
 
 - For PingCastle scanning functions:
 
@@ -24,7 +24,7 @@ The Operating systems supported are:
     8.0 is supported
 
   - On demand, you can include any operating systems,
-    including Linux, if supported by asp.net core 8.0
+    including Linux, if asp.net core 8.0 supports them
 
 See the [Windows Lifecycle Fact Sheet](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)
 for details regarding each Windows release lifecycle.
@@ -42,7 +42,7 @@ The current supported databases are:
 - Any supported editions of PostGres
 
 :::note
-Any database supported by Entity Framework Core 2 (SQLite, MySQL, and others) may be supported on demand. Contact Netwrix for more information.
+Netwrix may support any database that Entity Framework Core 2 supports (SQLite, MySQL, and others) on demand. Contact Netwrix to request support for a specific database.
 :::
 
 ### External System Dependencies
@@ -62,8 +62,8 @@ PingCastle relies on the Windows account to perform scans and doesn't
 use third party authentication system.
 
 PingCastle Pro requires Microsoft Entra ID or a Windows Active Directory to
-perform authentication. If Entra ID is used, the application must be
-allowed to get the token from Entra ID (typically `login.microsoftonline.com`).
+perform authentication. If you use Entra ID, the application must be able
+to get the token from Entra ID (typically `login.microsoftonline.com`).
 
 ### License
 
@@ -72,7 +72,7 @@ to a maximum of five domains. The number of
 domains include subdomains of a forest.
 
 :::note
-The number of domain controllers isn't used for licensing, only domains.
+Licensing counts only domains, not domain controllers.
 :::
 
 **Example**
@@ -167,9 +167,9 @@ mechanisms.
 
 It requires:
 
-- IIS being installed (it is a Windows component)
+- IIS installed (it is a Windows component)
 
-- An SQL database such as SQL Express being installed
+- An SQL database such as SQL Express installed
 
 - The asp.net core 8.0 \"Hosting Bundle\" available at:
 
@@ -212,10 +212,10 @@ If the license key is missing, contact PingCastle support.
 
 There are two options to configure the database:
 
-- Using a connection string provided directly by the user
+- Using a connection string you provide directly
 
-- Using a connection to a database: it implies the software will create
-  the database on behalf of the user
+- Using a connection to a database: the software then creates
+  the database on your behalf
 
 ![Database configuration options screen in the installer](/images/pingcastle/proinstall/image18.webp)
 
@@ -231,7 +231,7 @@ Then the setup asks for the authentication configuration.
 
 ![Authentication configuration screen in the installer](/images/pingcastle/proinstall/image21.webp)
 
-For Windows, default group which is allowed to PingCastle is everyone.
+For Windows, PingCastle allows the Everyone group by default.
 To change the group, select the browse button. A new dialog appears.
 
 :::note
@@ -312,8 +312,8 @@ apache, Nginx), prepare a database and configure the application.
 
 ### Hosting
 
-The application does work on any infrastructure supported by the asp.net
-core 8.0 middleware.
+The application works on any infrastructure that the asp.net
+core 8.0 middleware supports.
 
 Microsoft has procedures to install the .NET 8.0 runtime:
 
@@ -354,12 +354,12 @@ Configuring the database backup is the customer's responsibility.
 
 PingCastle Pro requires a user account on this database. By default,
 PingCastle Pro creates the tables at the initial run and can add or
-modify existing tables when a software update is designed. If you use
+modify existing tables when a software update requires it. If you use
 this default pattern, the database user MUST be owner of the
 database.
 
-PingCastle Pro supports limited privileges on the database (only read /
-modify / delete data is required) on demand. In this case, Netwrix
+PingCastle Pro supports limited privileges on the database (it needs only
+read, modify, and delete data) on demand. In this case, Netwrix
 provides a SQL script to apply database changes before you apply a
 software update.
 
@@ -522,10 +522,10 @@ To connect to the database, provide a \"connection string\" in the
 \"DefaultConnection\" parameter.
 
 :::note
-Connection strings are stored in JSON and must be properly escaped, for example `\` becomes `\\`. The same applies to double quotes.
+PingCastle Pro stores connection strings in JSON, so you must escape them properly — for example, `\` becomes `\\`. The same applies to double quotes.
 :::
 
-For the license, the parameter is stored in the \"License\" setting.
+For the license, use the \"License\" setting.
 
 Here are some connection string examples:
 
@@ -561,7 +561,7 @@ reports.
 
 ### Azure hosting
 
-PingCastle Pro is known to work with Azure. In that case, you must
+PingCastle Pro works with Azure. In that case, you must
 create a managed application and a database.
 
 Then you must replicate the application configuration into
@@ -704,7 +704,7 @@ domains have to push their information into PingCastle Enterprise.
 ### Program
 
 Run the latest official version of PingCastle. The
-PingCastle.exe program delivered in the same directory than the
+PingCastle.exe program in the same directory as
 PingCastleEnterprise is suitable for use.
 
 :::note
@@ -832,7 +832,7 @@ file appsettings.Production.json.
 
 ### Accurate permissions on the database
 
-When the database doesn\'t contain the table needed, the application
+When the database doesn\'t contain the tables it needs, the application
 tries to create them. If you haven't granted the permissions, PingCastle
 generates a message and the application can't start.
 

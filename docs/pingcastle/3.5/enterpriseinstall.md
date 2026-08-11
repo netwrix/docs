@@ -48,10 +48,10 @@ PingCastle Enterprise uses Entity Framework Core 2 for database operations and p
 PingCastle Enterprise requires:
 
 - **ASP.NET 8.0 Hosting Bundle**: Required for hosting the web application
-- **IIS (Internet Information Services)**: Used as the web server with Windows Authentication enabled by default
+- **IIS (Internet Information Services)**: Serves as the web server, with Windows Authentication enabled by default
 
 :::info
-The ASP.NET 8.0 Hosting Bundle should be installed before configuring IIS to ensure proper module registration. If installed in the wrong order, run a repair on the ASP.NET 8.0 Hosting Bundle to resolve any issues.
+Install the ASP.NET 8.0 Hosting Bundle before configuring IIS to ensure proper module registration. If you install them in the wrong order, run a repair on the ASP.NET 8.0 Hosting Bundle to resolve any issues.
 :::
 
 ### Logon Providers
@@ -65,10 +65,10 @@ PingCastle Enterprise supports multiple authentication methods:
 
 ## License
 
-Licenses are based on the number of domains managed, with licenses available up to unlimited. The number of domains includes subdomains of a forest.
+Licenses depend on the number of domains you manage, with licenses available up to unlimited. The number of domains includes subdomains of a forest.
 
-- Domain Controllers aren't counted for licensing purposes, only domains
-- Licenses are bundled in packs of 10 domains, up to 60, with an unlimited license thereafter
+- Licensing counts only domains, not Domain Controllers
+- Licenses come in packs of 10 domains, up to 60, with an unlimited license thereafter
 
 **Example**: If you have `contoso.com` with two subdomains called `uk.contoso.com` and `us.contoso.com`, this would require a 10-domain licensing pack.
 
@@ -123,7 +123,7 @@ graph LR
 
 #### PingCastle Enterprise Server
 
-- Hosted on IIS with Windows Authentication
+- Runs on IIS with Windows Authentication
 - Requires SQL Server database for data storage
 - Accessible via HTTP/HTTPS (ports 80/443)
 - Provides web interface for administrators and users
@@ -201,7 +201,7 @@ dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-Web
 Download and install the [ASP.NET 8 Hosting Bundle](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
 
 :::warning
-IIS must be installed **before** the ASP.NET 8.0 Hosting Bundle. If installed in the wrong order, repair the Hosting Bundle installation to ensure proper module registration.
+Install IIS **before** the ASP.NET 8.0 Hosting Bundle. If you install them in the wrong order, repair the Hosting Bundle installation to ensure proper module registration.
 :::
 
 #### Step 3 Install SQL Server
@@ -248,7 +248,7 @@ If you're configuring a remote SQL Server (not on the local machine), see the [R
 For testing and proof-of-concept environments, you can streamline the installation process using automation tools such as Chocolatey.
 
 :::warning
-This simplified setup is recommended for **testing only**. For production environments, use the Production Installation tab for proper configuration and upgrade support.
+Use this simplified setup for **testing only**. For production environments, use the Production Installation tab for proper configuration and upgrade support.
 :::
 
 #### Prerequisites
@@ -344,7 +344,7 @@ Ensure the certificate Subject and Subject Alternative Name (SAN) DNS entries ma
    ```
 
 :::important
-The `webhost` configuration is used for links sent to users via email and other notifications. Ensure this matches your HTTPS URL to avoid mixed content warnings and ensure users receive secure links.
+PingCastle Enterprise uses the `webhost` configuration for links it sends to users via email and other notifications. Ensure this matches your HTTPS URL to avoid mixed content warnings and ensure users receive secure links.
 :::
 
 ### IIS Maximum Upload Configuration
@@ -383,7 +383,7 @@ If you need to import reports larger than 200MB manually, you'll need to adjust 
    ```
 
 :::warning
-This setting only affects the client-side validation. Ensure your IIS upload limit (configured earlier) is set appropriately to handle files of this size.
+This setting only affects the client-side validation. Ensure your IIS upload limit (configured earlier) can handle files of this size.
 :::
 
 :::note
@@ -1377,11 +1377,11 @@ This will automatically discover and scan all child domains within each forest.
 ## Manual Installation Without MSI Installer
 
 :::info When to Use Manual Installation
-This section is for advanced users who can't use or prefer not to use the MSI Installer. Manual installation is typically required for:
+This section is for advanced users who can't use or prefer not to use the MSI Installer. You typically need manual installation for:
 - **Linux deployments** with Nginx or Apache
 - **Azure App Service** deployments using `az webapp deploy`
 - **Custom Windows configurations** requiring non-standard setup
-- Environments where the MSI Installer isn't available or can't be used
+- Environments where the MSI Installer isn't available or where you can't use it
 
 For standard Windows Server deployments, the MSI Installer is the recommended and supported installation method.
 :::
@@ -1428,7 +1428,7 @@ PingCastle Enterprise can run on any infrastructure that supports ASP.NET Core 8
 **Azure (Limited Support - Manual Installation)**
 - See the [Azure Hosting](#azure-hosting) section for detailed guidance on deploying to Azure App Service
 - Requires Azure CLI and manual configuration
-- Not officially supported or tested by Netwrix
+- Netwrix doesn't officially support or test this configuration
 
 :::tip IIS Configuration
 For IIS deployments, if the "Default Web Site" conflicts with PingCastle Enterprise, stop the default website and configure it to not start automatically.
@@ -1717,16 +1717,16 @@ PingCastle Enterprise supports multiple authentication methods that can work sim
 <Tabs>
   <TabItem value="local" label="Local Authentication" default>
 
-Local authentication is enabled by default and uses username and password stored in the PingCastle Enterprise database. No additional configuration is required.
+PingCastle Enterprise enables local authentication by default, using a username and password stored in the PingCastle Enterprise database. It needs no additional configuration.
 
-To hide the local authentication option when other authentication methods are configured, add this to `appsettings.json`:
+To hide the local authentication option when you configure other authentication methods, add this to `appsettings.json`:
 
 ```json
 "disablePasswordLogon": true
 ```
 
 :::warning
-When `disablePasswordLogon` is set to `true` and Windows Authentication is enabled, any account calling the API will need to be a member of the `WindowsGroup` that is configured for authentication.
+When you set `disablePasswordLogon` to `true` and enable Windows Authentication, any account calling the API must be a member of the `WindowsGroup` you configured for authentication.
 :::
 
   </TabItem>
@@ -1798,7 +1798,7 @@ $sid.Value
   </TabItem>
   <TabItem value="whoami" label="whoami (Current User)">
 
-If you are already a member of the groups and have rebooted since being added you can run 
+If you're already a member of the groups and have rebooted since joining them, run
 `whoami /all` to get your group memberships and find the SID in the output
 
 ![Viewing SIDs with whoami](/images/pingcastle/enterpriseinstall/Authentication/whoami-sid.webp)
@@ -1842,7 +1842,7 @@ To hide the internal username/password login option, add this to `appsettings.js
 ![Login page without password option](/images/pingcastle/enterpriseinstall/Authentication/login-page-no-password.webp)
 
 :::warning API Access
-This setup affects all pages for authentication. When `disablePasswordLogon` is enabled with Windows Authentication, API calls will require both an API key and the calling account to be in the `WindowsGroup` SID group.
+This setup affects all pages for authentication. When you enable `disablePasswordLogon` with Windows Authentication, API calls require both an API key and a calling account that belongs to the `WindowsGroup` SID group.
 
 To restrict NTLM authentication to specific pages, edit the `web.config` file using the `<location>` directive to restrict authentication to the WindowsAuth page. See [IIS URL Authorization documentation](https://docs.microsoft.com/en-us/iis/manage/configuring-security/understanding-iis-url-authorization).
 :::
@@ -1854,7 +1854,7 @@ To restrict NTLM authentication to specific pages, edit the `web.config` file us
 
 PingCastle Enterprise supports OpenID Connect authentication using the ASP.NET Core API. Configuration options are [documented here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.openidconnectoptions?view=aspnetcore-1.1&viewFallbackFrom=aspnetcore-8.0).
 
-Proxy settings rely on the current user proxy configuration, which can be defined [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
+Proxy settings rely on the current user proxy configuration, which you can define [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
 
 <details>
 <summary>Configuring Entra ID for OpenIDConnect Authentication</summary>
@@ -1912,7 +1912,7 @@ Add the following to `appsettings.json`:
 }
 ```
 
-All parameters except `PostLogoutRedirectUrl` (which should point to your PingCastle Enterprise URL) are dependent on your OpenID provider.
+All parameters except `PostLogoutRedirectUrl` (which should point to your PingCastle Enterprise URL) depend on your OpenID provider.
 
 **Adding Scopes**
 
@@ -1962,7 +1962,7 @@ To hide the internal username/password login option:
 
 PingCastle Enterprise supports SAML2 authentication using the [ITfoxtec Identity SAML 2.0](https://www.itfoxtec.com/IdentitySaml2) package. Advanced configuration settings are [documented here](https://github.com/ITfoxtec/ITfoxtec.Identity.Saml2/blob/master/src/ITfoxtec.Identity.Saml2/Configuration/Saml2Configuration.cs).
 
-Proxy settings rely on the current user proxy configuration, which can be defined [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
+Proxy settings rely on the current user proxy configuration, which you can define [using netsh for IIS running as SYSTEM](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/configure-proxy-internet?view=o365-worldwide).
 
 <details>
 <summary>Configuring SAML2 with Okta</summary>
@@ -2154,7 +2154,7 @@ PingCastle maps certificates to user accounts using these identifiers (in order)
 
 **User Account Setup**
 
-Create a user account with a login matching the certificate subject (DNS form). No password is required.
+Create a user account with a login matching the certificate subject (DNS form). You don't need to set a password.
 
 ![Certificate User Account](/images/pingcastle/enterpriseinstall/Authentication/cert-user-account.webp)
 
@@ -2232,7 +2232,7 @@ The Email configuration section in appsettings.json supports both providers:
 **Configuration Parameters:**
 
 - **Provider**: Email provider type - `SMTP` or `Graph`
-- **Email**: The From address of the emails sent by the application (optional for SMTP, mandatory for Graph)
+- **Email**: The From address the application uses to send email (optional for SMTP, mandatory for Graph)
 - **FromDisplayName**: Display name for the email sender
 
 **SMTP Provider Parameters:**
@@ -3084,7 +3084,7 @@ If the server requires TLS 1.2, install the TLS 1.2 client package on the system
 
 PingCastle Enterprise supports a synchronization mode to implement a
 security zone model (commonly used within Defense sectors). PingCastle
-synchronizes only domains (Azure AD isn't supported).
+synchronizes only domains, not Azure AD.
 
 **PingCastle Enterprise high trust**
 
@@ -3096,7 +3096,7 @@ PingCastle audits
 
 This enables report consolidation while keeping report details limited to appropriate security zones.
 
-The data synchronized between high trust and low trust instances includes:
+PingCastle synchronizes the following data between high trust and low trust instances:
 
 - The status of the domain (active, removed, etc.)
 
@@ -3134,11 +3134,11 @@ Specify the Uri as the FQDN of the recipient server and the API key.
 }
 ```
 
-The export level is the one defined in the classic PingCastle Agent configuration.
-If information needs to be removed, PingCastle recomputes the data (this can
+The export level matches the one you define in the classic PingCastle Agent configuration.
+If the level requires removing information, PingCastle recomputes the data (this can
 result in information loss if the instance is processing a more
-recent report). If the level doesn't need to be restricted, PingCastle
-forwards the information as-is. If the report version is
+recent report). If the level doesn't restrict the information, PingCastle
+forwards it as-is. If the report version is
 more recent, you won't lose any information.
 
 Available export levels:
@@ -3192,7 +3192,7 @@ you enable logging).
 
 ### Connection tests
 
-To verify the connection is properly configured, you can sync a domain using
+To verify you configured the connection properly, you can sync a domain using
 the button described earlier.
 
 If there is an error, PingCastle displays it as an exception.

@@ -11,7 +11,7 @@ On the "Entities" page, you can create and configure the entities within the com
 
 ![](/images/pingcastle/enterpriseuser/image46.webp)
 
-Use entities to best represent the company organization, so that the AD configuration matches the company configuration.
+Use entities to best represent the company organization, so that the Active Directory configuration matches the company configuration.
 
 PingCastle Enterprise configures a default entity named "Default" where it assigns auto-created domains. You can create additional entities and build a hierarchy by setting parent relationships.
 

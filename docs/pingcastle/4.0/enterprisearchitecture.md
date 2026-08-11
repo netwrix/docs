@@ -68,7 +68,7 @@ graph LR
 
 #### PingCastle Enterprise Server
 
-- Hosted on IIS with Windows Authentication
+- Runs on IIS with Windows Authentication
 - Requires SQL Server database for data storage
 - Accessible via HTTP/HTTPS (ports 80/443)
 - Provides web interface for administrators and users

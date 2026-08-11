@@ -30,7 +30,7 @@ See [Configuring Authentication for PingCastle Enterprise](enterpriseauthsetup.m
 
 ## System
 
-- **Database** — Shows the database engine, connection string, detection status, app pool identity, detected schemas, total domain count, and last data update, all read-only. The **Active schema** dropdown shows the schema PingCastle Enterprise currently uses and is the only editable setting on this screen — use it to force a specific schema when multiple schemas are active. Changing it requires a restart.
+- **Database** — Shows the database engine, connection string, detection status, app pool identity, detected schemas, total domain count, and last data update, all read-only. The **Active schema** dropdown shows the schema PingCastle Enterprise uses and is the only editable setting on this screen — use it to force a specific schema when multiple schemas are active. Changing it requires a restart.
 - **Security** — [Antiforgery protection](enterprisesettings-security.md#antiforgery-protection) and [Password rate limiting](enterprisesettings-security.md#password-rate-limiting)
 - **Logging** — [Log levels](enterprisesettings-logging.md#log-levels), [File logging](enterprisesettings-logging.md#file-logging), and [Downloading logs](enterprisesettings-logging.md#downloading-logs)
 - **Application** — [Application](enterprisesettings-application.md)

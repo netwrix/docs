@@ -146,7 +146,7 @@ SharePoint Online only accepts certificate-based authentication for the scanner 
 
 **Required:** assign the **Global Reader** Entra directory role to the app's service principal.
 
-The directory role assigned to the app determines Teams authorization, rather than a fixed Graph permission list. Global Reader covers the read-only Teams cmdlets the scanner uses.
+The directory role you assign to the app determines Teams authorization, rather than a fixed Graph permission list. Global Reader covers the read-only Teams cmdlets the scanner uses.
 
 #### Grant the Global Reader role from the Entra admin center
 

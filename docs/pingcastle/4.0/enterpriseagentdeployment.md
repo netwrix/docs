@@ -7,7 +7,7 @@ sidebar_label: Agent deployment
 
 ## Program version
 
-Use the latest official version of PingCastle.exe (included in the PingCastleEnterprise directory). The application supports reports from different PingCastle versions - newer features only display after you upgrade PingCastle Enterprise, but no data is lost.
+Use the latest official version of PingCastle.exe (included in the PingCastleEnterprise directory). The application supports reports from different PingCastle versions - newer features only display after you upgrade PingCastle Enterprise, but you don't lose any data.
 
 ## Scheduling
 

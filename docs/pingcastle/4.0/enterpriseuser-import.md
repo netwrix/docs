@@ -9,7 +9,7 @@ There are two ways to import reports, plus a separate option for bulk importing 
 
 **Option 1: Importing the file manually**
 
-From the "Configuration" tab, open "Import one or more reports". On that page, you can drag and drop any file produced by the PingCastle standalone executable, and it uploads to the PingCastle Enterprise solution.
+From the "Configuration" tab, open "Import one or more reports". On that page, you can drag and drop any file the PingCastle standalone executable produces, and it uploads to the PingCastle Enterprise solution.
 
 After it's done, the application marks the file with either a success or a failure.
 
@@ -35,7 +35,7 @@ The PingCastle Scheduler Service and credential profiles manage scan scheduling.
 
 ## Reports
 
-You can view all the reports imported into PingCastle Enterprise, regardless of the method used to import them.
+You can view all the reports imported into PingCastle Enterprise, regardless of how you imported them.
 
 To do so, from the "Configuration" tab, click "View all reports" to reach the page:
 

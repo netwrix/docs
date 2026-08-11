@@ -16,7 +16,7 @@ PingCastle Pro is a tool dedicated to improving Active Directory security, so
 security is a major priority at every step of creation and improvement.
 
 First, the application uses a framework that prohibits most common
-attacks such as XSS or SQL Injection by design.
+attacks such as cross-site scripting (XSS) or SQL injection by design.
 
 Because attackers can sometimes bypass such protections, the application has
 an additional layer of protection with all known HTTP security headers
@@ -32,8 +32,8 @@ The application uses enforced controls that check parameters twice
 against a model (in the browser then in the server
 application) and parameterizes all database queries. The application never builds SQL strings.
 
-Then a filter verifies each access to the database and controls the data
-to be queried before sending a database query. Unit tests cover this
+Then a filter verifies each database access by checking the query before
+PingCastle Pro sends it to the database. Unit tests cover this
 code to lower the risk of a misconception in the filter.
 
 The application mainly uses the following frameworks:
@@ -86,7 +86,7 @@ Last report tab:
 
 ![](/images/pingcastle/prouser/image5.webp)
 
-The full detail of the last report performed is accessible in this tab,
+You can access the full detail of the last report in this tab,
 though this page doesn't show it.
 
 History tab:
@@ -115,7 +115,7 @@ someone set a risk to an exception status.
 
 Trust event:
 
-There has been a change in the trust between several domains monitored.
+There has been a change in the trust between several monitored domains.
 It implies that someone established a new trust between two domains,
 deleted an existing trust between two domains, or modified an existing
 trust.
@@ -172,8 +172,8 @@ There are two ways to do so:
 - Option 1: Importing the file manually
 
 From the \"Configuration\" tab, open \"Import one or more reports.
-On that page, you can drag and drop any file produced
-by the PingCastle standalone executable, and it uploads to the
+On that page, you can drag and drop any file the
+PingCastle standalone executable produces, and it uploads to the
 PingCastle Pro solution.
 
 After it's done, PingCastle Pro marks the file with either a success or
@@ -200,7 +200,7 @@ to reach the creation page.
 
 ![](/images/pingcastle/prouser/image13.webp)
 
-To map the agent to a responsible, complete the Owner field. It
+To map the agent to a responsible party, complete the Owner field. It
 can be an entity or a domain, such as the \"default\" entity.
 
 PingCastle Pro generates the API key automatically, but you can change it if it meets the

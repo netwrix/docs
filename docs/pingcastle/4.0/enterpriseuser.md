@@ -12,7 +12,7 @@ To configure authentication methods such as local login, OpenID Connect, or SAML
 
 The application has four areas:
 
-- **Management view** (**Dashboard** menu) — Shows the Maturity Assessment and Advanced dashboards for tracking and reporting on overall AD security posture.
+- **Management view** (**Dashboard** menu) — Shows the Maturity Assessment and Advanced dashboards for tracking and reporting on overall Active Directory security posture.
 
 - **Technical view** (**Infrastructure** menu) — Provides reports, tables, and charts with detailed technical data on domains, forests, and cartography.
 
@@ -60,7 +60,7 @@ The permissions are of two types:
 
 ![Une image contenant texte, capture d'écran, Police, nombre Description générée automatiquement](/images/pingcastle/enterpriseuser/image7.webp)
 
-- Claims permissions. In this case, the application manages user rights dynamically based on the claims submitted by the authentication application (Windows, OpenID, SAML2, etc.).
+- Claims permissions. In this case, the application manages user rights dynamically based on the claims the authentication application submits (Windows, OpenID, SAML2, etc.).
 
 ![Une image contenant texte, capture d'écran, Police, nombre Description générée automatiquement](/images/pingcastle/enterpriseuser/image8.webp)
 

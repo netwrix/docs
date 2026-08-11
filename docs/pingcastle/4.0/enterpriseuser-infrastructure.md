@@ -3,7 +3,7 @@ sidebar_label: Infrastructure
 ---
 # PingCastle Enterprise Infrastructure
 
-The technical view, also named "Infrastructure", is based on a list of domains and its data.
+The technical view, also named "Infrastructure", builds on a list of domains and their data.
 
 ![](/images/pingcastle/enterpriseuser/image32.webp)
 
@@ -33,7 +33,7 @@ Last report tab:
 
 ![](/images/pingcastle/enterpriseuser/image35.webp)
 
-The full detail of the last report performed is accessible in this tab, though this page doesn't show it.
+You can access the full detail of the last report in this tab, though this page doesn't show it.
 
 By default, when there's a list of users, the application limits the output to 100 users.
 
@@ -89,7 +89,7 @@ You can't hard-delete a domain (unless you added it manually by mistake, meaning
 
 **Status of a domain**
 
-The domain status follows a basic lifecycle, as shown in the following graph.
+The domain status follows a basic lifecycle, as the following graph shows.
 
 The default status is "Auto Created", and you must make every change manually when required.
 
@@ -101,9 +101,9 @@ The default status is "Auto Created", and you must make every change manually wh
 
 - Derogation: Special status used to identify domains that the application ignores in the statistics and score calculation. Use this status cautiously and only in specific cases, such as while you're deleting a domain or during a migration.
 
-- Removed: Status used to simulate a hard-deletion. Set this status when the domain no longer exists within your AD.
+- Removed: Status that simulates a hard-deletion. Set this status when the domain no longer exists within your Active Directory.
 
-- Out of Scope: Status used to simulate a hard-deletion. Set this status when the domain doesn't actually belong to your organization and your company shouldn't follow it.
+- Out of Scope: Status that simulates a hard-deletion. Set this status when the domain doesn't actually belong to your organization and your company shouldn't follow it.
 
 ## Forest
 
@@ -119,7 +119,7 @@ Use each cartography to navigate between domains. Hovering over a domain display
 
 The cartography is domain relative, meaning the application creates one cartography for each report. This way, PingCastle Enterprise can display the list of all the domains that a specific domain can see.
 
-**Methodology used to build the maps**
+**How PingCastle builds the maps**
 
 PingCastle uses the data in the report from the most reliable source to the least reliable source, in the following order:
 

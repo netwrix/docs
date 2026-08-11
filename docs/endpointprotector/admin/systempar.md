@@ -18,8 +18,8 @@ policies and Device Control User Remediation.
 ### List of Device Types and Notiﬁcations
 
 On the List of Device Types and Notiﬁcations, you can view the Device Types available in the system
-along with their availability for each operating system and if those devices can be inspected by the
-Content Aware Protection module.
+along with their availability for each operating system and whether the Content Aware Protection
+module can inspect those devices.
 
 You can enable and edit the notiﬁcation messages that appear on the Endpoint Protector Client from
 the Actions column.
@@ -148,8 +148,8 @@ tab. For eDiscovery policies, see [eDiscovery policies and scans](ed_module/edpo
 
 ## Advanced Scanning Detection
 
-The Windows environment is subject to constant OS and security updates and the installed
-applications are in a constant loop of continuous development. To avoid eventual changes that
+The Windows environment is subject to constant OS and security updates, and the installed
+applications are under continuous development. To avoid eventual changes that
 interfere with the Endpoint Protector Client, you can allow specific applications and processes.
 
 The Advanced Scanning Exceptions feature lets you exclude applications from scanning on endpoints
@@ -173,7 +173,7 @@ Printing and MTP Scanning features enabled.
 
 This subsection displays a list of all access rights you can assign to devices.
 
-![Displays a list with all access rights that can be assigned to devices](rights.webp)
+![Displays a list of all access rights you can assign to devices](rights.webp)
 
 ## Events
 
@@ -185,8 +185,8 @@ Actions column.
 
 ### Events Types and Descriptions
 
-This subsection displays a comprehensive list of events, and ensures that administrators can
-effectively manage and monitor their data protection policies. Additionally, there are more speciﬁc
+This subsection displays a comprehensive list of events so administrators can
+manage and monitor their data protection policies. Additionally, there are more speciﬁc
 events, such as those related to EasyLock deployment, printer activity, user information updates,
 transfer limits, external repository uploads, content remediation, forced uninstall attempts, device
 remediation sessions, certiﬁcate management, unplanned client terminations, artifact receipts, and
@@ -267,7 +267,7 @@ Remediation for Device Control.
   for the URL
 
     :::note
-    The following URL formats are accepted:
+    Endpoint Protector accepts the following URL formats:
     :::
 
 
@@ -280,7 +280,7 @@ Remediation for Device Control.
   credentials
 
     :::note
-    The following credential formats are accepted for login:
+    Endpoint Protector accepts the following credential formats for login:
     :::
 
 
@@ -314,7 +314,7 @@ Remediation for Device Control.
 ### Justiﬁcations List
 
 In this section, you can view, add, edit, export, and remove justiﬁcations. The justiﬁcation
-represents the reason selected by the end-user to justify the threat or device remediation.
+represents the reason the end-user selects to justify the threat or device remediation.
 
 To add a new justiﬁcation, click **Add**, ﬁll in the mandatory ﬁelds and then click **Save**. You
 can add up to a maximum of 10 justiﬁcations. By default, Endpoint Protector already includes several

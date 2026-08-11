@@ -17,7 +17,7 @@ The source code of the program is licensed to the Non-Profit Open Software Licen
 
 **Binary License and Usage**
 
-The binary code may not be included as part of a commercial package unless a license is purchased. Visit the **Services** section on https://www.pingcastle.com for licensing options.
+You can't include the binary code as part of a commercial package unless you purchase a license. Visit the **Services** section on https://www.pingcastle.com for licensing options.
 
 **License Expiration**
 
@@ -50,7 +50,7 @@ PingCastle requires an Active Directory account to connect and perform audits. I
 
 PingCastle offers a privileged mode that enhances the reliability and accuracy of specific security checks. While non-privileged mode works for basic operations and many checks, privileged mode provides higher confidence results for certain assessments.
 
-**Running as Administrator**: Running PingCastle as an administrator isn't required for most operations, though certain checks (such as DNS-related checks) may have limited functionality without administrator privileges.
+**Running as Administrator**: Most operations don't require running PingCastle as an administrator, though certain checks (such as DNS-related checks) may have limited functionality without administrator privileges.
 
 **Privileged Mode Command**:
 ```
@@ -269,7 +269,7 @@ The full domain map displays all trust relationships between discovered domains.
 
 **File**: `xxx_simple_node_map.html`
 
-The simplified map presents a cleaner, hierarchical view where each domain appears only once and is connected by a single trust relationship. PingCastle automatically places the domain with the most trusts at the center, though you can specify this manually if needed.
+The simplified map presents a cleaner, hierarchical view where each domain appears only once, connected by a single trust relationship. PingCastle automatically places the domain with the most trusts at the center, though you can specify this manually if needed.
 
 ### Hilbert Map
 
@@ -290,7 +290,7 @@ The Hilbert map provides a visual representation of network IP address space usi
 
 ## Deployment Strategies
 
-PingCastle is designed for scalable deployment in enterprise environments. For comprehensive security coverage, run healthchecks on all domains in your infrastructure. Since PingCastle doesn't require domain-specific accounts, you can use trust relationships to scan multiple domains efficiently.
+PingCastle supports scalable deployment in enterprise environments. For comprehensive security coverage, run healthchecks on all domains in your infrastructure. Since PingCastle doesn't require domain-specific accounts, you can use trust relationships to scan multiple domains efficiently.
 
 ### Decentralized Deployment
 
@@ -351,7 +351,7 @@ PingCastle includes `PingCastleAutoUpdater.exe`, which automatically downloads t
 
 ### Report Encryption
 
-For environments where reports must be transferred over unsecured channels, PingCastle supports RSA encryption.
+For environments where you must transfer reports over unsecured channels, PingCastle supports RSA encryption.
 
 **Generate an RSA Key Pair**:
 ```
