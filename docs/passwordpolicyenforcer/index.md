@@ -1,10 +1,10 @@
 ---
-title: "Netwrix Password Policy Enforcer v11.2"
+title: "Netwrix Password Policy Enforcer"
 description: "Netwrix Password Policy Enforcer Introduction"
 sidebar_position: 1
 ---
 
-# Netwrix Password Policy Enforcer v11.2
+# Netwrix Password Policy Enforcer
 Netwrix Password Policy Enforcer (PPE) helps you secure your network by ensuring users choose strong passwords. PPE rejects new passwords that don't comply with your password policy. If you install the optional Password Policy Client, users can also see which rules their password didn't comply with.
 
 A typical Windows network has both domain and local user accounts. Password Policy Enforcer can enforce password policies for both account types, but you will most likely use it for domain accounts in Active Directory.

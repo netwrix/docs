@@ -18,7 +18,7 @@ PPE only enforces the [Similarity rule](../admin/manage-policies/rules/similarit
 
 To manually install the Password Policy Client:
 
-1. Run **Netwrix_PPE_Client_11.2.0.148_x64.msi** (64-bit) or **Netwrix_PPE_Client_11.2.0.148_x86.msi** (32-bit). The Setup wizard opens.
+1. Run **Netwrix_PPE_Client_x64.msi** (64-bit) or **Netwrix_PPE_Client_x86.msi** (32-bit). The Setup wizard opens.
 
    ![Client Setup](/images/passwordpolicyenforcer/install/clientsetup1.webp)
 
@@ -46,7 +46,7 @@ The Password Policy Client runs automatically during a password change. There is
 Use a software deployment tool or [Group Policy](installationgpm.md) to automate deployment across many computers. You can also run msiexec to install from the command line. For example, run this command with elevated permissions to silently install the 64-bit Password Policy Client:
 
 ```batch
-msiexec /i Netwrix_PPE_Client_11.2.0.148_x64.msi /q
+msiexec /i Netwrix_PPE_Client_x64.msi /q
 ```
 
 :::tip
@@ -65,5 +65,5 @@ Test the Password Policy Client by logging on to a computer, pressing **Ctrl+Alt
 You can uninstall the Password Policy Client from the **Installed apps** page in Windows Settings, or the **Uninstall or change a program** page in Control Panel. You can also run msiexec to uninstall from the command line. For example, run this command with elevated permissions to silently uninstall the 64-bit Password Policy Client:
 
 ```batch
-msiexec /x Netwrix_PPE_Client_11.2.0.148_x64.msi /q
+msiexec /x Netwrix_PPE_Client_x64.msi /q
 ```

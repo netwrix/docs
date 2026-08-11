@@ -12,7 +12,7 @@ You can upgrade PPE by running the installer manually, with [Group Policy](insta
 
 ## Upgrade the server components
 
-The Password Policy Enforcer server installer detects existing installations and upgrades them to version 11.2. Follow the [Install the Server Components](installationserver.md) instructions to upgrade an existing installation. You don't need to uninstall the old version first.
+The Password Policy Enforcer server installer detects existing installations and upgrades them to the latest version. Follow the [Install the Server Components](installationserver.md) instructions to upgrade an existing installation. You don't need to uninstall the old version first.
 
 :::warning
 If the upgrade is major, for example, from 10.x to 11.x, then you should immediately open the [PPE Configuration Console](../admin/configconsole.md) after upgrading the first domain controller in each domain. This automatically imports the configuration settings from the old version to the new one.
@@ -26,7 +26,7 @@ Don't run multiple versions of the Password Policy Server in a domain for an ext
 
 ## Upgrade the Password Policy Client
 
-The Password Policy Client installer detects existing installations and upgrades them to version 11.2. Follow the [Install the Password Policy Client](installationclient.md) instructions to upgrade an existing installation. You don't need to uninstall the old version first.
+The Password Policy Client installer detects existing installations and upgrades them to the latest version. Follow the [Install the Password Policy Client](installationclient.md) instructions to upgrade an existing installation. You don't need to uninstall the old version first.
 
 :::warning
 Don't use any new features while running older Password Policy Enforcer components that may not fully support the new features. Netwrix develops and tests all PPE components together as a single version. For the best experience, use all the components from one version together.
