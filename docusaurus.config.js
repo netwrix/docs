@@ -35,9 +35,6 @@ PRODUCTS.forEach(product => {
 // generateDocusaurusPlugins() applies — otherwise redirects reference routes
 // from products that were never built in this run.
 const targetProduct = process.env.DOCS_PRODUCT;
-const redirectProducts = targetProduct
-  ? PRODUCTS.filter(product => product.id === targetProduct)
-  : PRODUCTS;
 
 const latestVersionMap = targetProduct
   ? Object.fromEntries(
