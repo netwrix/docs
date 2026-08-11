@@ -45,6 +45,7 @@ Accepts one or more KB file paths. All files must be under `docs/kb/`. Append `+
 - Check the current branch:
   - On a feature branch: proceed.
   - On `dev` or `main`: **stop and warn.** Suggest a branch name (`kb/<product>/<slug-from-title>`) and wait for the TSE to confirm before creating anything. Never auto-create a branch.
+- Check Vale is available: `vale --version`. If it errors or is not found, note this in the report as `Vale | not run (Vale not installed)` — never render it as `✓ Clean` — and continue to Step 3 for the remaining checks.
 
 ## 2. Review each file
 
@@ -56,11 +57,17 @@ Run all three checks on each file. Read the source of truth for each — do not 
 vale --config .vale.ini <file>
 ```
 
+If Vale is not installed or returns an error, note this in the report and continue.
+
+`.vale.ini` scopes `BasedOnStyles = NetwrixKB` to `docs/kb/**/*.md`, which replaces (not merges with) the repo-wide `Netwrix` style — so KB files fire `NetwrixKB.*` rules only.
+
 **Known Vale false positives — do not treat as Required fixes:**
 
 - **`NetwrixKB.HeadingCase` on version designators:** Lowercase `v` in version designators (e.g., `v2.8`, `v5.7`, `v2.8+`) is correct title case per Chicago-style convention. When Vale's heading-case rule fires on a heading whose only "violation" is a lowercase `v` followed by digits, treat it as a false positive — note it in the Vale findings table with severity "False positive (no action)" and do NOT propose a rewrite.
 
-**`WeakLinkText` / `BoilerplateCrossRef` fixes require a search, not just a rewrite.** Before proposing any fix for a Vale `WeakLinkText` or `BoilerplateCrossRef` finding, grep `docs/kb/**/*.md` and `docs/<product>/<version>/**/*.md` for a plausible real target based on the referenced topic (e.g., "Accounts and Required Permissions" → search for `accountreqs`, `account.*permission`). If a real target resolves, convert the prose into a proper link to it. Only rewrite the sentence to remove the implied reference if the search turns up nothing. Do not skip the search because the phrasing already implies no real link exists — the trigger already fired precisely because the phrasing looks like an implied reference, and the target often does exist on disk.
+**`WeakLinkText` fixes require a search, not just a rewrite.** Before proposing any fix for a Vale `WeakLinkText` finding, grep `docs/kb/**/*.md` and `docs/<product>/<version>/**/*.md` for a plausible real target based on the referenced topic (e.g., "Accounts and Required Permissions" → search for `accountreqs`, `account.*permission`). If a real target resolves, convert the prose into a proper link to it. Only rewrite the sentence to remove the implied reference if the search turns up nothing. Do not skip the search because the phrasing already implies no real link exists — the trigger already fired precisely because the phrasing looks like an implied reference, and the target often does exist on disk.
+
+`BoilerplateCrossRef` is not part of `NetwrixKB` (it lives only in `.vale/styles/Netwrix/`), so it never fires on `docs/kb/` files under this skill's scope — do not treat a `BoilerplateCrossRef` finding as real if one somehow appears; verify the file's actual style scope first.
 
 **Dale** — apply the Dale rules in `.claude/skills/dale/rules/*.yml` semantically (passive voice, minimizing-difficulty words, idioms, wordiness, undefined acronyms, and the rest). Do not re-implement them from memory — read the rule files.
 
@@ -79,7 +86,7 @@ vale --config .vale.ini <file>
 | **images: location** | Check how images are referenced. KB images must be stored as PNG files in a `0-images/` folder at the **product level** (`docs/kb/<product>/0-images/`), not inside category subfolders. Articles in category subfolders reference them with `../0-images/filename.png`. Flag any `0-images/` folders created inside category subfolders rather than at the product level. |
 | **images: external-refs** | Flag any images linked from external sources (for example, GitHub CDN `https://github.com/user-attachments/assets/...`) — these must be downloaded and committed to the repo. |
 | **images: alt-text** | Alt text must be descriptive, not just the filename. Flag any image where the alt text is only the raw filename (e.g., `![index_files_location.png](path)`) — rewrite as a short description of what the image shows, per `kb_style_guide.md` Screenshots section. |
-| **links** | Find every internal markdown link in the article body — `[text](/docs/...)` patterns to other KB articles and to versioned product docs. For each, resolve the actual target file on disk: check for a `slug` frontmatter override on the target first; if none, the URL segment must match the target's real path/filename (not its `sidebar_label` or `title`). Flag any link whose URL does not resolve to a real file on disk as a Required fix, and correct it to the real path. External links (non-`/docs` URLs) are out of scope for this check. |
+| **links** | Find every internal markdown link in the article body — `[text](/docs/...)` and `[text](pathname:///docs/...)` patterns to other KB articles and to versioned product docs (rulebook §8 mandates the `pathname://` form for internal cross-doc links). For each, resolve the actual target file on disk: check for a `slug` frontmatter override on the target first; if none, the URL segment must match the target's real path/filename (not its `sidebar_label` or `title`). Version segments must use underscores (`8_2`, not `8.2`) per rulebook §8 — flag a dotted version segment as a Required fix even if the rest of the path resolves. Flag any link whose URL does not resolve to a real file on disk as a Required fix, and correct it to the real path. External links (non-`/docs`, non-`pathname://` URLs) are out of scope for this check. Backstop is `npm run build` (`onBrokenLinks: 'throw'` in `docusaurus.config.js`), but that runs late — this check catches broken links before submission. |
 | **formatting: bold/backticks** | Registry paths, registry value names, registry data, error codes (e.g., `0x80070005`, `0x80004005`), commands, and executable names use inline code (backticks). UI element names (button labels, menu items, field names) use **bold** only when they are action targets in the current step (buttons being clicked, fields being filled, dropdowns being selected, menu items being chosen) — a UI element mentioned as context only (not acted on in this step) does not get bold. Flag bolded UI elements that are not action targets as Required fixes. ✓ "Click **Save**." ✓ "Select **PDF** from the **Save as type** dropdown." ✗ "The file appears under the Save as type column." — no bold on contextual reference. |
 | **formatting: lists** | Sequential procedures must be numbered lists, not prose — this applies to Resolution sections and any sub-sections within them (e.g., verification steps), not just top-level procedures. Multi-line commands and command output should use fenced code blocks. |
 | **prose-directness** | Flag sentences where an impersonal subject ("the operation", "the process", "the system") performs an action that the actual actor or action could express more directly. Example: "the operation fails with an error" → "Clicking X fails with an error". Apply judgment — not every impersonal subject is wrong, but flag cases where a direct rewrite is clearly cleaner. |
@@ -252,23 +259,23 @@ Some checks only make sense *after* fixes have landed. Run these once the fix lo
 
 - **Title-change → link-text sweep (rulebook §8).** If a title fix was applied to any file, run a repo-wide search for internal markdown links whose visible text uses the *old* title and update the link text to match the new title. URL resolution alone is not sufficient — visible link text must describe the current target. Concrete: `grep -rE '\[<old title>\]\(/docs/' docs/` (adjust for slashes/special chars). Apply the link-text updates as part of the same commit as the title fix.
 
-**All-clean short-circuit:** Before proceeding to Step 5, check the branch's actual state against `dev`, not just whether this skill run applied any fixes. Refresh the remote-tracking ref first — a local `dev` branch may not exist, or may be stale:
+**All-clean short-circuit:** Before proceeding to Step 5, check the branch's actual state against `dev`, not just whether this skill run applied any fixes. Refresh the remote-tracking ref first — a local `dev` branch may not exist, or may be stale. Scope the pathspec to `docs/` rather than `docs/kb/` — the title-change → link-text sweep above can touch files outside `docs/kb/` (e.g., `docs/<product>/<version>/**/*.md`), and a narrower pathspec here would miss those edits:
 
 ```bash
 git fetch origin dev
-git status --porcelain -- docs/kb/
-git log --oneline origin/dev..HEAD -- docs/kb/
+git status --porcelain -- docs/
+git log --oneline origin/dev..HEAD -- docs/
 ```
 
 If any of these commands exits nonzero (for example, `git fetch` fails because of no network), the short-circuit does not apply — proceed to Step 5 rather than treating the failure as "clean."
 
-If **both** the status and log commands succeed and return empty — no uncommitted changes and no commits ahead of `origin/dev` touching `docs/kb/` — exit the workflow with this message:
+If **both** the status and log commands succeed and return empty — no uncommitted changes and no commits ahead of `origin/dev` touching `docs/` — exit the workflow with this message:
 
-> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev` for `docs/kb/`. There's nothing to commit, push, or PR. If this branch has no other commits ahead of `origin/dev`, it can be deleted with `git switch --detach origin/dev && git branch -d <branch-name>` (safe delete — refuses if there are unmerged commits; detaching onto the freshly fetched `origin/dev` avoids a false refusal from a stale or missing local `dev`). Exiting the workflow."
+> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev` for `docs/`. There's nothing to commit, push, or PR. If this branch has no other commits ahead of `origin/dev`, it can be deleted with `git switch --detach origin/dev && git branch -d <branch-name>` (safe delete — refuses if there are unmerged commits; detaching onto the freshly fetched `origin/dev` avoids a false refusal from a stale or missing local `dev`). Exiting the workflow."
 
 Do NOT prompt for local testing. Do NOT propose a commit message. Do NOT enter Step 7.
 
-If either command returns output — uncommitted changes in `docs/kb/`, or commits already on the branch ahead of `origin/dev` touching `docs/kb/` (for example, content committed by `kb-writer` in an earlier step) — proceed normally to Step 5, even if this skill run applied zero fixes.
+If either command returns output — uncommitted changes anywhere under `docs/`, or commits already on the branch ahead of `origin/dev` touching `docs/` (for example, content committed by `kb-writer` in an earlier step, or link-text sweep edits outside `docs/kb/`) — proceed normally to Step 5, even if this skill run applied zero fixes.
 
 ### knowledge_article_id rules (flag state, never force change)
 
