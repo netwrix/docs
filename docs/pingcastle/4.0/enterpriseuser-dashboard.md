@@ -27,7 +27,7 @@ To go into more detail, the tool computes this score on the first two levels of 
 
 **Initial**
 
-- Domain Coverage - ensure all domains have been reviewed
+- Domain Coverage - ensure you have reviewed all domains
 
 - Ownership - ensure all domains have an owner and that this owner is doing its job
 
@@ -139,7 +139,7 @@ It consists of the following pages:
 
 **Report Analysis**
 
-Consolidation of all the possible reports that PingCastle Enterprise can generate with the information it has in the selected perimeter. There are a lot of features enabling the user to filter data if needed. PingCastle Enterprise may add more reports in the future or on request.
+Consolidation of all the possible reports that PingCastle Enterprise can generate with the information it has in the selected perimeter. Many features let you filter the data as needed. PingCastle Enterprise may add more reports in the future or on request.
 
 **Anomalies**
 
@@ -147,11 +147,11 @@ Covers security misconfigurations across core AD infrastructure and services out
 
 **Trusts**
 
-Assesses risks arising from Active Directory trust relationships, including misconfigurations that can be exploited for cross-domain or cross-forest privilege escalation. Covers issues such as SIDHistory abuse, weak trust configurations, and other trust-path vulnerabilities that put connected domains at risk.
+Assesses risks arising from Active Directory trust relationships, including misconfigurations that attackers can exploit for cross-domain or cross-forest privilege escalation. Covers issues such as SIDHistory abuse, weak trust configurations, and other trust-path vulnerabilities that put connected domains at risk.
 
 **Stale Objects**
 
-Identifies outdated, unused, or poorly maintained objects in Active Directory that indicate weak hygiene practices. Covers inactive user and computer accounts, expired or unused objects, and other legacy artifacts that expand the attack surface if left unaddressed.
+Identifies outdated, unused, or poorly maintained objects in Active Directory that indicate weak hygiene practices. Covers inactive user and computer accounts, expired or unused objects, and other legacy artifacts that expand the attack surface if you leave them unaddressed.
 
 **Privileged accounts**
 

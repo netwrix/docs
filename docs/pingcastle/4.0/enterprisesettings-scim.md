@@ -39,7 +39,7 @@ Configure your identity provider with the token and the `/api/SCIM` base URL. Mo
 
 - **Base URL**: `/api/SCIM`.
 - **userName strategy**: Use the email field as the matching attribute.
-- **Deprovisioning action**: Delete the account rather than deactivate it. Deletion removes access immediately and reduces the risk of a stale account being reactivated or otherwise misused.
+- **Deprovisioning action**: Delete the account rather than deactivate it. Deletion removes access immediately and reduces the risk that someone reactivates or otherwise misuses a stale account.
 
 Refer to your identity provider's SCIM documentation for how to configure these settings.
 

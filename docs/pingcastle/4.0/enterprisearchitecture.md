@@ -140,7 +140,7 @@ Because attackers can sometimes bypass such protections, the application adds a 
 
 The application uses enforced controls that check parameters twice against a model — first in the browser, then in the server application — and parameterizes all database queries. The application never builds SQL strings. A filter verifies each database access by checking the query before PingCastle Enterprise sends it to the database. Unit tests cover this code to lower the risk of a misconfigured filter.
 
-The application is based mainly on the following frameworks:
+The application mainly uses the following frameworks:
 
 - asp.net core
 - bootstrap

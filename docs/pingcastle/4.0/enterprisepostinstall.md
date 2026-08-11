@@ -11,7 +11,7 @@ or hosting, the application won't display the next screen.
 
 For security reasons, there is no default account or password.
 
-When there is no user configured in the application, a special screen appears
+When the application has no configured user, a special screen appears
 to create the first user. This user receives the \"Admin\" role.
 
 ![First user creation screen](/images/pingcastle/enterpriseinstall/image79.webp)
@@ -34,7 +34,7 @@ The scheduled scan wizard labels the credential profile field "execution profile
 6. Click **Scheduled scans**, then **Create schedule**.
 7. Enter a unique job name, select the execution profile you just created, set the scan frequency and time, toggle **Privileged Scan** depending on whether you want to run a privileged scan, set any advanced options you need, then click **Create schedule**.
 
-Once the job runs, its report appears on the domain's page in PingCastle Enterprise.
+After the job runs, its report appears on the domain's page in PingCastle Enterprise.
 
 ### Scheduling an Entra scan
 

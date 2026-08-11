@@ -10,7 +10,7 @@ sidebar_position: 150
 ## Device Types and Notiﬁcations
 
 From this section you can view and manage device types and notiﬁcations, view and enable default
-notiﬁcations and their translations and deﬁne custom notiﬁcations for Content Aware Protection
+notiﬁcations and their translations, and deﬁne custom notiﬁcations for Content Aware Protection
 policies and Device Control User Remediation.
 
 ![Manage device types and notiﬁcations](devicetypesnotif.webp)
@@ -39,19 +39,19 @@ individually for computers or groups, from their speciﬁc Settings sections.
 
 ### Custom Content Aware Protection Notiﬁcations
 
-Endpoint Protector allows you to create informative notifications that users see when a Content
+With Endpoint Protector, you can create informative notifications that users see when a Content
 Aware Policy blocks or reports a file. These notifications provide context about the triggered
 policy and the affected file.
 
-Traditionally, Content Aware Protection Notifications were delivered in plain text. Starting from
+Traditionally, Endpoint Protector delivered Content Aware Protection Notifications in plain text. Starting from
 Agent version 6.2.3.1 (Windows), 3.0.3.1 (Mac), and 2.4.3.1 (Linux), users can use HTML code to
-format notifications. By utilizing HTML, administrators can highlight key information such as threat
+format notifications. By using HTML, administrators can highlight key information such as threat
 names or affected files with bold, italics, or underlining, making it easier for users to
 understand. In addition, you can employ colors to differentiate sections or emphasize critical
 details within the notification. This results in visually engaging notifications that capture user
-attention and ensure important information is not missed.
+attention and ensure users don't miss important information.
 
-Follow the steps to create notifications.
+To create a notification:
 
 **Step 1 –** Click the **Create** button.
 
@@ -61,20 +61,20 @@ Follow the steps to create notifications.
 
 **Step 4 –** Within the **Body** text editor, compose your message using the provided placeholders:
 
-- \{fileName\}: Replaced with the actual blocked/reported file name.
-- \{type\}: Replaced with "blocked" or "reported" based on the policy type.
-- \{threatName\}: Replaced with the identified threat name (if applicable).
-- \{threatMatch\}: Replaced with the specific text that triggered the policy (if applicable).
+- \{fileName\}: The actual blocked or reported file name.
+- \{type\}: Either "blocked" or "reported", based on the policy type.
+- \{threatName\}: The identified threat name (if applicable).
+- \{threatMatch\}: The specific text that triggered the policy (if applicable).
 
 **Step 5 –** Click **Save** to finalize your custom notification.
 
 ![Custom Content Aware Protection Notiﬁcations](capnotifications.webp)
 
-For example, the file named 'financial_report.xlsx' (`\{fileName\}`) was classified as
-'Confidential' (`\{type\}`) because it contains confidential data.
+For example, a Content Aware Policy classified the file named 'financial_report.xlsx'
+(`\{fileName\}`) as 'Confidential' (`\{type\}`) because it contains confidential data.
 
 Once created, you can associate the custom notification with a specific Content Aware Policy using
-the Notification Template drop-down menu.
+the Notification Template dropdown menu.
 
 To ensure notifications display correctly and securely, Endpoint Protector supports a limited set of
 HTML elements. The following list shows the supported elements you can use in your notifications.
@@ -90,31 +90,31 @@ HTML elements. The following list shows the supported elements you can use in yo
 
     - `<span style="color: #rrggbb;">Text</span>` (color) - Replace `#rrggbb` with a hexadecimal
       color code (e.g., `style="color: red;"` for red text)
-    - `<span style="font-size: xxpx;">Text<span>` (font size) - Replace `xxpx` with the desired font
-      size in pixels (e.g., `style="font-size: 16px;"` for 16px font)
+    - `<span style="font-size: xxpx;">Text<span>` (font size) - Replace `xxpx` with the font
+      size you want, in pixels (e.g., `style="font-size: 16px;"` for 16px font)
 
 - Links:
 
     - `<a href="URL">Text</a>` - Replace `URL` with the actual website address and `Text` with the
       clickable link text (e.g., `<a href="https://www.netwrix.com">Netwrix Website</a>`)
 
-Follow the steps to create notifications using HTML code.
+To create notifications using HTML code:
 
 **Step 1 –** As described in the previous steps, create a new notification by clicking **Create**
 and entering a name, title, and body text.
 
-**Step 2 –** Within the body text editor, directly enter the desired HTML code to format your
-message.
+**Step 2 –** Within the body text editor, directly enter the HTML code you want to use to format
+your message.
 
 ### Custom Device Control User Remediation Notifications
 
 This section is available only if the Device Control User Remediation setting is enabled from the
-[User Remediation](#user-remediation) section. In this section you can add, edit and delete custom
+[User Remediation](#user-remediation) section. In this section you can add, edit, and delete custom
 notiﬁcations for Device Control User Remediation.
 
-You can add a maximum of 100 custom notiﬁcations but you cannot delete the default entry.
+You can add a maximum of 100 custom notiﬁcations but you can't delete the default entry.
 
-Follow the steps to add a new custom notiﬁcation.
+To add a new custom notiﬁcation:
 
 **Step 1 –** Click **Create**.
 
@@ -127,9 +127,9 @@ Follow the steps to add a new custom notiﬁcation.
 
 **Example: USB Driver(deviceName) is blocked(action)**
 
-Once the notiﬁcation was created, you can select the custom notiﬁcation from the User Remediation
-Notiﬁcation Template drop-down located in the Device Control section, Global Setting, Users,
-Computers and Groups.
+After you create the notiﬁcation, you can select the custom notiﬁcation from the User Remediation
+Notiﬁcation Template dropdown located in the Device Control section, Global Setting, Users,
+Computers, and Groups.
 
 ![Custom Device Control User Remediation Notiﬁcations](userremediationnotif.webp)
 
@@ -137,8 +137,8 @@ Computers and Groups.
 ## Contextual Detection
 
 :::note
-Global Contextual Detection has been removed in version 5.9.6.0. Contextual detection rules are
-now configured at the policy level only. Each policy can have its own set of up to 15 contextual
+Version 5.9.6.0 removes Global Contextual Detection. You now configure contextual detection rules
+at the policy level only. Each policy can have its own set of up to 15 contextual
 detection rules with independent AND/OR logic.
 
 To configure contextual detection for a Content Aware Protection policy, go to
@@ -150,15 +150,14 @@ tab. For eDiscovery policies, see [eDiscovery policies and scans](ed_module/edpo
 
 The Windows environment is subject to constant OS and security updates and the installed
 applications are in a constant loop of continuous development. To avoid eventual changes that
-interfere with the Endpoint Protector Client, the ability to allow applications and processes is
-available.
+interfere with the Endpoint Protector Client, you can allow specific applications and processes.
 
-The Advanced Scanning Exceptions feature allows applications to be excluded from scanning for
-endpoints with the Advanced Printing and MTP Scanning feature enabled.
+The Advanced Scanning Exceptions feature lets you exclude applications from scanning on endpoints
+with the Advanced Printing and MTP Scanning feature enabled.
 
 This feature maintains a list of applications into which Endpoint Protector will not inject its DLL
-when the “Advanced Printer and MTP Scanning” is enabled. For instance, many applications that cannot
-print or copy files to MTP devices do not require the injection of the Endpoint Protector DLL.
+when you enable “Advanced Printer and MTP Scanning”. For instance, many applications that can't
+print or copy files to MTP devices don't require the injection of the Endpoint Protector DLL.
 Adding such applications to the exceptions list improves performance and avoids unexpected
 interactions with Endpoint Protector.
 
@@ -172,17 +171,17 @@ Printing and MTP Scanning features enabled.
 
 ## Rights
 
-This subsection displays a list with all access rights that can be assigned to devices.
+This subsection displays a list of all access rights you can assign to devices.
 
 ![Displays a list with all access rights that can be assigned to devices](rights.webp)
 
 ## Events
 
-In this section you can view, manage and export the events list logged by Endpoint Protector. You
+In this section you can view, manage, and export the events list logged by Endpoint Protector. You
 can also edit event names and descriptions or enable/disable logging for speciﬁc events from the
 Actions column.
 
-![View, manage and export the events list logged by Netwrix Endpoint Protector](listofevents.webp)
+![View, manage, and export the events list logged by Netwrix Endpoint Protector](listofevents.webp)
 
 ### Events Types and Descriptions
 
@@ -194,7 +193,7 @@ remediation sessions, certiﬁcate management, unplanned client terminations, ar
 DPI bypassed traﬃc. These events provide granular insight into various system activities, ensuring
 that organizations can maintain robust security and compliance measures.
 
-For a detailed view of all events and their descriptions, please see the table below.
+For a detailed view of all events and their descriptions, see the following table.
 
 | Event Name                                   | Description                                                                                                                     | Additional Explanations |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
@@ -253,8 +252,8 @@ For a detailed view of all events and their descriptions, please see the table b
 
 ## User Remediation
 
-User remediation is a feature that allows the end-users to apply a justiﬁcation and self-remediate a
-policy violation or a restricted-access device.
+User remediation lets end-users apply a justiﬁcation and self-remediate a policy violation or a
+restricted-access device.
 
 ![Allows the end-users to apply a justiﬁcation and self-remediate a policy violation or a restricted-access device](userremediation.webp)
 
@@ -263,7 +262,7 @@ policy violation or a restricted-access device.
 In this section, you can customize the User Remediation notiﬁcation, manage settings and enable User
 Remediation for Device Control.
 
-- Display Custom Logo – select a 200x200 pixels image to be displayed on the pop-up notiﬁcation
+- Display Custom Logo – select a 200x200 pixels image to display on the pop-up notiﬁcation
 - Display Custom URL – add a URL to direct the end-user to a speciﬁc web page, and then add a label
   for the URL
 
@@ -304,9 +303,9 @@ Remediation for Device Control.
   feature for the Device Control module.
 
     :::note
-    The Enable User Remediation for Device Control setting is disabled by default. By
-    enabling this feature, all the settings regarding User Remediation will be applied to both
-    Content Aware Protection and Device Control modules.
+    The Enable User Remediation for Device Control setting is disabled by default. When you
+    enable this feature, Endpoint Protector applies all the User Remediation settings to both
+    the Content Aware Protection and Device Control modules.
     :::
 
 
@@ -318,8 +317,8 @@ In this section, you can view, add, edit, export, and remove justiﬁcations. Th
 represents the reason selected by the end-user to justify the threat or device remediation.
 
 To add a new justiﬁcation, click **Add**, ﬁll in the mandatory ﬁelds and then click **Save**. You
-can add up to a maximum of 10 justiﬁcations. By default, several justiﬁcations are already added,
-but make sure that at least one justiﬁcation is enabled all the time.
+can add up to a maximum of 10 justiﬁcations. By default, Endpoint Protector already includes several
+justiﬁcations, but ensure that at least one justiﬁcation stays enabled at all times.
 
 To enable and enforce the end-user to view User Remediation pop-up notiﬁcations, manage the option
 from Device Control, Global Settings, [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md).
@@ -328,7 +327,7 @@ from Device Control, Global Settings, [Device Control](/docs/endpointprotector/a
 
 ### Enabling User Remediation
 
-Follow the steps to use User Remediation for Device Control.
+To use User Remediation for Device Control:
 
 **Step 1 –** Enable the User Remediation for Device Control feature from
 [User Remediation Settings](#user-remediation-settings)
@@ -345,13 +344,13 @@ section, click **Create**, ﬁll in the mandatory ﬁelds and **Save**.
 
 **Step 3 –** Enable the **User Remediation Pop-up** setting from the
 [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic and then select the **customized notiﬁcation**
-from the User Remediation Notiﬁcation Template drop-down list;
+from the User Remediation Notiﬁcation Template dropdown list;
 
 ![User Remediation Pop-up](userremediationpopup.webp)
 
 **Step 4 –** Navigate to [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md), Device Types section and
 enable **User Remediation** for devices with limited access – devices that have full access
-permission cannot beneﬁt from the User Remediation feature.
+permission can't beneﬁt from the User Remediation feature.
 
 :::note
 For built-in devices, such as Webcam and Network share, the User Remediation feature is
@@ -363,7 +362,7 @@ not available.
 
 ### User Remediation Usage
 
-Follow these steps to remediate the device.
+To remediate the device:
 
 **Step 1 –** Open the Endpoint Protector notiﬁer and go to the Device Control tab.
 
@@ -373,15 +372,15 @@ Follow these steps to remediate the device.
 
 **Step 3 –** On the Self Remediate section:
 
-1. Select a **justiﬁcation** from the drop-down list.
+1. Select a **justiﬁcation** from the dropdown list.
 2. Add a **reason** for the justiﬁcation (if required).
 3. Navigate to the **custom URL** situated under the logo.
-4. Add your credentials if the **Require Credentials** setting was enabled (click the username icon
+4. Add your credentials if you enabled the **Require Credentials** setting (click the username icon
    to refresh your current username).
 
-    1. When reopening the dialog, if a different username was used for authentication, EPP Notiﬁer
-       will automatically switch back to the username of the currently logged-in user.
-    2. Usernames are not case sensitive.
+    1. When you reopen the dialog, if you authenticated with a different username, EPP Notiﬁer
+ will automatically switch back to the username of the logged-in user.
+    2. Usernames aren't case sensitive.
 
 5. Add the **number of minutes** needed to remediate the device (you can hover over the default
    number to view the maximum time interval)

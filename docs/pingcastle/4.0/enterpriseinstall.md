@@ -61,7 +61,7 @@ The installer wizard walks you through prerequisite checks, licensing, and confi
    - **Provide a custom connection string**: use an existing database by providing the complete connection string.
 
    :::note
-   When you uninstall the software, the database isn't automatically removed.
+   Uninstalling the software doesn't automatically remove the database.
    :::
 
    :::tip Remote SQL Server Setup
@@ -162,7 +162,7 @@ PingCastle Enterprise requires a database user account with database owner permi
 
 ### SQL Server Permissions
 
-When connecting to an existing database, the account used by PingCastle Enterprise requires database owner permissions. If PingCastle Enterprise runs under the IIS application pool's Windows account, grant permissions with the following SQL:
+When connecting to an existing database, the account PingCastle Enterprise uses requires database owner permissions. If PingCastle Enterprise runs under the IIS application pool's Windows account, grant permissions with the following SQL:
 
 ```sql
 IF NOT EXISTS (SELECT loginname FROM master.dbo.syslogins

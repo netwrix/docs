@@ -12,7 +12,7 @@ When troubleshooting issues with PingCastle Enterprise, you need to view error m
 Configure logging from the web portal at **Configuration** > **Settings** > **Logging**:
 
 - **Write log to file**: Enables or disables file logging
-- **Logging levels**: Control how much detail is captured
+- **Logging levels**: Control how much detail PingCastle Enterprise captures
 - Additional logging settings are also available on this page
 
 See [Log Files](#log-files) for how to download the generated logs.
@@ -21,7 +21,7 @@ See [Log Files](#log-files) for how to download the generated logs.
 
 PingCastle Enterprise, the CloudAPI service (used for Entra ID scanning), and the PingCastleSchedulerService use Serilog for logging. PingCastle Enterprise writes logs to a `logs` folder in its installation directory. CloudAPI and PingCastleSchedulerService each write logs to a `logs` folder inside their own subfolder (`CloudAPI` and `Scheduler`, respectively) under the PingCastle Enterprise installation directory.
 
-Since PingCastleSchedulerService has no web interface, its logs aren't included in the portal's log download. Check the `Scheduler\logs` folder directly, or the Windows Event Log on the server, to troubleshoot the scheduler.
+Since PingCastleSchedulerService has no web interface, the portal's log download doesn't include its logs. Check the `Scheduler\logs` folder directly, or the Windows Event Log on the server, to troubleshoot the scheduler.
 
 To download logs from the web portal, go to **Configuration** > **Settings** > **Logging** and click **Download Today's Logs** or **Download All Logs**.
 
@@ -77,7 +77,7 @@ Command line error messages:
 
 **Solution:**
 
-Identify the correct version of the ASP.NET Core framework and install it. If deploying to IIS, install the ASP.NET Core Hosting Bundle.
+Identify the correct version of the ASP.NET Core framework and install it. If you're deploying to IIS, install the ASP.NET Core Hosting Bundle.
 
 :::note
 The last error relates to the missing update KB2533623
@@ -139,7 +139,7 @@ The application requires database permissions to create tables and modify data. 
 - TCP/IP connectivity enabled on SQL Server
 - Firewall configured to allow remote connections (if SQL Server is on a different machine)
 
-**Important:** The application pool identity needs these permissions, not your user account. When running under IIS, the identity is typically `IIS APPPool\AppName`.
+**Important:** The application pool identity needs these permissions, not your user account. When the application runs under IIS, the identity is typically `IIS APPPool\AppName`.
 
 **Solution 1: Change Application Pool Identity**
 

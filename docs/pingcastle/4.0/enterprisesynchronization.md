@@ -33,8 +33,8 @@ maturity changes, and other similar data.
 
 You need to configure an API key with synchronization rights on the server side.
 
-You must assign the Agent to an entity. You can't assign it to a domain, as the entity will be used as the root to
-assign the newly forwarded domains.
+You must assign the Agent to an entity. You can't assign it to a domain, as PingCastle Enterprise uses the entity as the root for
+assigning the newly forwarded domains.
 
 ![API key configuration showing Agent assignment to entity with synchronization rights](/images/pingcastle/enterpriseinstall/image81.webp)
 
@@ -57,11 +57,11 @@ Specify the Uri as the FQDN of the recipient server and the API key.
 ```
 
 The export level is the one defined in the classic PingCastle Agent configuration.
-If information needs to be removed, the data will be recomputed (this can
+If the level requires removing information, PingCastle Enterprise recomputes the data (this can
 result in information loss if the instance is processing a more
-recent report). If the level doesn't need to be restricted, the
-information will be forwarded as-is. If the report version is
-more recent, no information will be lost.
+recent report). If the level doesn't restrict the information, PingCastle Enterprise
+forwards it as-is. If the report version is
+more recent, no information is lost.
 
 Available export levels:
 - `Full` - No filter applied, all data included
@@ -110,7 +110,7 @@ If the check denies the import, the lower instance doesn't import the report and
 After this check completes, the lower instance performs the import and then
 synchronizes the report to the higher instance. If there is any network issue
 during this step, the instance ignores the error (but logs it if
-logging is enabled).
+you enabled logging).
 
 ## Connection tests
 
@@ -121,8 +121,8 @@ If there is an error, PingCastle Enterprise displays it as an exception.
 
 ![](/images/pingcastle/enterpriseinstall/image86.webp)
 
-Note: The error details may be contained in an inner exception
-shown in the following screenshot. In this example, this is a DNS issue where the host can't be
+Note: An inner exception may contain the error details, as the following screenshot
+shows. In this example, this is a DNS issue where the host can't be
 found.
 
 ![](/images/pingcastle/enterpriseinstall/image87.webp)

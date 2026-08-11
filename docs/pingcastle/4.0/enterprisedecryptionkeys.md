@@ -8,7 +8,7 @@ PingCastle.exe agents can encrypt reports with `--encrypt` before sending them, 
 PingCastle Enterprise needs the matching private key to decrypt those reports when it receives them. Manage this key at **Configuration** > **Decryption**.
 
 :::warning
-The default PingCastle decryption key is insecure and is no longer provided with newer versions of PingCastle. Generate your own key pair and configure it in both PingCastle Enterprise and the agent's `appsettings.console.json` file.
+The default PingCastle decryption key is insecure, and newer versions of PingCastle no longer provide it. Generate your own key pair and configure it in both PingCastle Enterprise and the agent's `appsettings.console.json` file.
 :::
 
 To set up decryption:
