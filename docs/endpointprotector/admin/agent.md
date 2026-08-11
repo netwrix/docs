@@ -27,7 +27,7 @@ termination or modification of the Endpoint Protector Agent.
 :::
 
 :::note
-When enabling Debug logging, deploying a fresh installation, or during upgrade processes where critical drivers/services (such as Deep Packet Inspection (DPI), browser plugins, or Outlook add-ins) must be reloaded, restart the operating system. This mandatory first step in troubleshooting ensures that all dependencies are properly initialized."
+When enabling Debug logging, deploying a fresh installation, or during upgrade processes where critical drivers/services (such as Deep Packet Inspection (DPI), browser plugins, or Outlook add-ins) must be reloaded, restart the operating system. This mandatory first step in troubleshooting ensures that all dependencies are properly initialized.
 :::
 
 ## Lightweight, Cross-Platform Architecture
@@ -79,18 +79,18 @@ You can also apply manual proxy settings using CLI commands:
 
 Example:
 
-msiexec.exe /i "C:\Work\Tools\EPPClientSetup.5.7.1.5_x86_64.msi" /q REBOOT=ReallySuppress
-RUNNOTIFIER=0 /log "C:\Windows\TEMP\epp-upgrade.log" WSIP="192.168.18.125"  WSPORT="8080" 
-DEPT_CODE="defdep"  PROXYIP="127.0.0.1" PROXYPORT="80" AUTHUSR="user_name" AUTHPASS="password"
+```
+msiexec.exe /i "C:\Work\Tools\EPPClientSetup.5.7.1.5_x86_64.msi" /q REBOOT=ReallySuppress RUNNOTIFIER=0 /log "C:\Windows\TEMP\epp-upgrade.log" WSIP="192.168.18.125" WSPORT="8080" DEPT_CODE="defdep" PROXYIP="127.0.0.1" PROXYPORT="80" AUTHUSR="user_name" AUTHPASS="password"
+```
 
 Where:
 
-- PROXY_IP – IP of the proxy
-- PROXY_PORT – Port of the proxy
+- PROXYIP – IP of the proxy
+- PROXYPORT – Port of the proxy
 - AUTHUSR – Username (if authentication for proxy is needed)
 - AUTHPASS – Password (if authentication for proxy is needed)
 
-You can also use the following CLI commands to install Endpoint Protector Client in speciﬁc mode of working.
+You can also use the following CLI commands to install Endpoint Protector Client in specific mode of working.
 
 - WSIP – server address
 - WSPORT – server port number
@@ -112,7 +112,7 @@ installer script, which allows customization of installation parameters.
 
 ### Linux
 
-For Linux, you can only use CLI arguments in the options to bypass proxy settings.sh ﬁle. To do so,
+For Linux, you can only use CLI arguments in the options to bypass proxy settings.sh file. To do so,
 follow these steps:
 
 **Step 1 –** Access the installation folder, open a Terminal, and run the following command:
@@ -123,11 +123,11 @@ follow these steps:
 
 `sudo su`
 
-**Step 3 –** Open the options.sh conﬁguration ﬁle with the following command:
+**Step 3 –** Open the options.sh configuration file with the following command:
 
 `gedit options.sh`
 
-**Step 4 –** In the conﬁguration ﬁle, you see the following ﬁelds for the proxy setup:
+**Step 4 –** In the configuration file, you see the following fields for the proxy setup:
 
 #EPPCLIENT_HTTPS_PROXY=
 
@@ -135,7 +135,7 @@ follow these steps:
 
 **Step 5 –** Remove the # before each entry to apply the proxy setups.
 
-**Step 6 –** For the ﬁrst proxy setup, EPPCLIENT_HTTPS_PROXY, add the proxy server information in
+**Step 6 –** For the first proxy setup, EPPCLIENT_HTTPS_PROXY, add the proxy server information in
 the address:port:user:password format.
 
 **Example: EPPCLIENT_HTTPS_PROXY=address:port:user:password**
@@ -144,7 +144,7 @@ the address:port:user:password format.
 
 `bash install.sh`
 
-Additional CLI commands for Linux in speciﬁc mode:
+Additional CLI commands for Linux in specific mode:
 
 - #EPPCLIENT_SUPRESSRW - suppress FileRead/FileDelete events for NS and Removable devices
 - #EPPCLIENT_DISABLECAP - disabling loading of CAP drivers (CAP will not work)
@@ -171,11 +171,11 @@ then provide the following information:
 To see which distributions are supported for EPP, check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
 
 For Windows and Mac, your input in installing the Endpoint Protector Agent is minimal. The
-Installation folder and Server information are already pre-conﬁgured, and downloadable from the
+Installation folder and Server information are already pre-configured, and downloadable from the
 Endpoint Protector Server.
 
 :::note
-For Linux installation instructions, read the readmeLinux.txt ﬁle available under the Read
+For Linux installation instructions, read the readmeLinux.txt file available under the Read
 this before installing link.
 :::
 
@@ -209,20 +209,20 @@ This option requires the **Client Registration Certificate** feature to be enabl
 :::
 
 
-### Installation on macOS with Deep Packet Inspection and VPN Traﬃc Intercept Active
+### Installation on macOS with Deep Packet Inspection and VPN Traffic Intercept Active
 
 To install on macOS with Deep Packet Inspection and VPN Traffic Intercept active, complete the following steps:
 
 **Step 1 –** Open the Endpoint Protector Server.
 
-**Step 2 –** Go to the **System conﬁguration** section, select **Client Software** and then download
+**Step 2 –** Go to the **System configuration** section, select **Client Software** and then download
 the macOS Endpoint Protector Agent.
 
-**Step 3 –** Decompress the downloaded ﬁle.
+**Step 3 –** Decompress the downloaded file.
 
-![Installation on macOS with Deep Packet Inspection and VPN Traﬃc Intercept Active](./systemconfiguration/ClientSoftwarePage.webp)
+![Installation on macOS with Deep Packet Inspection and VPN Traffic Intercept Active](./systemconfiguration/ClientSoftwarePage.webp)
 
-**Step 4 –** Open the **.pkg** ﬁle and follow the installation steps and give the requested
+**Step 4 –** Open the **.pkg** file and follow the installation steps and give the requested
 permissions.
 
 **Step 5 –** After the installation is complete, go to **System Preferences** > **Security &
@@ -241,38 +241,38 @@ Protector Client** > **Deep Packet Inspection**.
 To learn about Deep Packet Inspection and its configurable options, see the [documentation section for DPI](/docs/endpointprotector/admin/cap_module/deeppacket.md).
 :::
 
-**Step 7 –** Go to the **System Conﬁguration** section, then **System Settings** > **Deep Packet
-Inspection Certiﬁcate**, and download the **CA Certiﬁcate**.
+**Step 7 –** Go to the **System Configuration** section, then **System Settings** > **Deep Packet
+Inspection Certificate**, and download the **CA Certificate**.
 
-![Download the Client CA Certiﬁcates](dpicertificate.webp)
+![Download the Client CA Certificates](dpicertificate.webp)
 
 **Step 8 –** Open the **Keychain Access** application from your macOS and select **System**.
 
 ![Open the Keychain Access application from your macOS and select System](keychainaccess.webp)
 
-**Step 9 –** Decompress the downloaded **ClientCerts** ﬁle.
+**Step 9 –** Decompress the downloaded **ClientCerts** file.
 
-**Step 10 –** Select **cacert.pem** ﬁle and drag and drop it on **System > Keychain Access**.
+**Step 10 –** Select **cacert.pem** file and drag and drop it on **System > Keychain Access**.
 
-![Select cacert.pem ﬁle and drag and drop it on Keychain Access, System](clientcerts.webp)
+![Select cacert.pem file and drag and drop it on Keychain Access, System](clientcerts.webp)
 
-**Step 11 –** Double-click the **X** on the newly added certiﬁcate and on the Trust section, select
+**Step 11 –** Double-click the **X** on the newly added certificate and on the Trust section, select
 **Always Trust**.
 
-![On the newly added certiﬁcate and on the Trust section, select Always Trust.](keychainaccesstwo.webp)
+![On the newly added certificate and on the Trust section, select Always Trust.](keychainaccesstwo.webp)
 
 **Step 12 –** **Save** the changes.
 
-**Step 13 –** Activate **Intercept VPN Traﬃc**.
+**Step 13 –** Activate **Intercept VPN Traffic**.
 
 **Step 14 –** Select one option for **EPP behavior when network extension is disabled**.
 
 - Temporarily Disable Deep Packet Inspection – this option will temporary disable Deep Packet
   Inspection
 - Block Internet Access – this option will end the Internet connection until the end-user approves
-  the Endpoint Protector Proxy Conﬁguration after the computer is rebooted.
+  the Endpoint Protector Proxy Configuration after the computer is rebooted.
 
-![Activate Intercept VPN Traﬃc](./systemconfiguration/interceptvpntraffic.webp)
+![Activate Intercept VPN Traffic](./systemconfiguration/interceptvpntraffic.webp)
 
 **Step 15 –** **Save** the changes.
 
@@ -286,18 +286,18 @@ and **allow** the Endpoint Protector Client Extension.
 
 ![select the General tab and allow the Endpoint Protector Client Extension](generaltabios.webp)
 
-**Step 18 –** **Allow** the Endpoint Protector Proxy Conﬁguration from the pop-up window.
+**Step 18 –** **Allow** the Endpoint Protector Proxy Configuration from the pop-up window.
 
 ![proxypop-up](proxypop-up.webp)
 
 At this point, the macOS Endpoint Protector Client installation is completed.
 
 :::note
-If EPPNotiﬁer isn't visible or notiﬁcations don't display after the installation or
+If EPPNotifier isn't visible or notifications don't display after the installation or
 upgrade of the Endpoint Protector Client on macOS, resolve this issue by restarting your
 machine. In situations where the Endpoint Protector Client is installed and then uninstalled on
-macOS, you may still see EPPNotiﬁer in the Notiﬁcation settings. To remove it from the list,
-right-click and select "Reset notiﬁcations."
+macOS, you may still see EPPNotifier in the Notification settings. To remove it from the list,
+right-click and select "Reset notifications."
 :::
 
 ### Debian Based Distributions
@@ -308,8 +308,11 @@ particularities.
 The following are several examples of supported distributions:
 
 - Ubuntu
-- LinuxMint
 - Debian
+
+:::note
+Ubuntu-based distributions like Mint Linux generally work out of the box with the EPP Client installer built for the corresponding Ubuntu base version. For example, Mint Linux 22.3 might work with the EPP installer for Ubuntu 24.04 LTS. In some cases, the Linux administrator might need to manually adjust dependencies to match the base distribution.
+:::
 
 ![Debian Based Distributions](debianbaseddistributions.webp)
 
@@ -320,10 +323,14 @@ particularities.
 
 The following are several examples of supported distributions:
 
-- CentOS
 - RedHat
+- CentOS
 - Fedora
 - AWS Linux 2
+
+:::note
+RedHat (RHEL)-based distributions like Rocky Linux, Oracle Linux, and CentOS generally work out of the box with the EPP Client installer built for the corresponding RHEL base version. For example, Oracle Linux 10.1 might work with the EPP installer for RHEL 10.1. In some cases, the Linux administrator might need to manually adjust dependencies to match the base distribution.
+:::
 
 ![RedHat based distributions](redhatbaseddistributions.webp)
 
@@ -335,7 +342,7 @@ The following are several examples of supported distributions:
 
 #### Setting the Server IP
 
-For all RedHat-based distributions, you need to follow an additional step after executing the preceding
+For all RedHat-based distributions, you need to follow an additional step after executing these
 commands to set the Endpoint Protector Server IP.
 
 Based on each distribution, follow the corresponding method:

@@ -171,9 +171,21 @@ References:
 - [Ubuntu Release Cycle](https://ubuntu.com/about/release-cycle)
 - [Red Hat Updates and Support Policy](https://access.redhat.com/support/policy/updates/errata)
 
-Other Linux distributions are not supported by default but can be considered as a **Feature Request (FR)** via Netwrix Support. If approved, Netwrix will build the requested Linux client using a “Quick Test” process in QA. In such cases, the customer is responsible for verifying that all functionality works as expected.
+Netwrix doesn't build an EPP Client for the following Linux distributions by default, but you can request one, or a custom Linux distribution, as a **Feature Request (FR)** through Netwrix Support:
 
-These requests are reviewed and prioritized by Netwrix Product Management and may be a billable service.
+- Debian
+- Fedora
+- SUSE
+- OpenSUSE
+- SLED Linux Enterprise Server
+- Pardus OS
+- AWS Linux 2
+
+Netwrix Product Management reviews and prioritizes these requests, which may involve a billable service. If approved, Netwrix builds the client using a **Quick Test** process in QA, and you're responsible for verifying that all functionality works as expected.
+
+:::note
+For Ubuntu-based distributions outside the officially tested and certified list, such as Mint Linux, and RHEL-based distributions such as Rocky Linux, Oracle Linux, or CentOS, the EPP Client installer built for the corresponding base version generally works out of the box. In some cases, the Linux administrator might need to manually adjust dependencies to match the base distribution. For installation steps, see [Linux](/docs/endpointprotector/admin/agent.md#linux) install guide under Agent Install Parameters in the Agent documentation.
+:::
 
 ## Final Thoughts
 
