@@ -210,7 +210,7 @@ that Netwrix distributes alongside the MSI files.
 If the license key is missing, contact PingCastle support.
 :::
 
-There are two options to configure the database:
+You can configure the database in two ways:
 
 - Using a connection string you provide directly
 
@@ -272,7 +272,7 @@ When you remove the software, the setup doesn't remove the database.
 
 To use Azure authentication, enable HTTPS.
 
-Check that the PingCastlePro website is installed.
+Check that IIS lists the PingCastlePro website.
 
 Sometimes the PingCastlePro website doesn't start because the Default Web Site is running instead. Look for the black square icon to the right of the PingCastlePro website, which indicates that it's stopped.
 
@@ -436,8 +436,8 @@ before continuing.
 ![Database properties dialog confirming the owner and server availability](/images/pingcastle/proinstall/image39.webp)
 
 In SQL Server configuration, a typical mistake is to use tcp connection.
-You must enable TCP/IP manually in SQL Server because it is disabled by
-default.
+You must enable TCP/IP manually in SQL Server because SQL Server disables
+it by default.
 
 ![SQL Server Configuration Manager showing TCP/IP enabled for the SQL Server instance](/images/pingcastle/proinstall/image40.webp)
 
@@ -574,8 +574,8 @@ the connection string, named "DefaultConnection".
 
 ## Initial startup
 
-At the first run, the application creates the database. If there
-is an error with the database (missing right, invalid connection string)
+At the first run, the application creates the database. If an error
+occurs with the database (missing right, invalid connection string)
 or hosting, the next screen doesn't appear.
 
 For Azure configuration, the application asks you to connect using
@@ -717,9 +717,8 @@ The best way to schedule it is to run your own scheduler. Indeed, you
 may have purchased a batch product which is looking for failure or
 dependencies.
 
-As an alternative, there is the documentation at the last page of
-PingCastle documentation (the audit program) to run it using the Windows
-scheduler.
+Alternatively, the last page of the PingCastle audit program
+documentation describes how to run it using the Windows scheduler.
 
 The recommended frequency is every week, using a normal user account
 (not privileged) running on a batch server (not a DC).
@@ -764,7 +763,7 @@ specifying the `--server.urls` parameter:
 dotnet.exe PingCastlePro.dll --server.urls=http://*:8080
 ```
 
-However, if there is a permission problem in the database, this method
+However, if a permission problem exists in the database, this method
 won\'t display an error because the database connects under the user
 context, not the system context. Typically on Windows, the IIS
 service connect under IIS APPPool\\AppName. To grant rights to the application pool account on SQL Server, see [How to add the ApplicationPoolIdentity to a SQL Server login](https://blogs.msdn.microsoft.com/ericparvin/2015/04/14/how-to-add-the-applicationpoolidentity-to-a-sql-server-login).

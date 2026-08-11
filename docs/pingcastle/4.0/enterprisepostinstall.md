@@ -5,11 +5,11 @@ sidebar_label: Getting started
 
 ## Initial startup
 
-When the application first runs, it creates the database. If there
-is an error with the database (missing right, invalid connection string)
+When the application first runs, it creates the database. If an error
+occurs with the database (missing right, invalid connection string)
 or hosting, the application won't display the next screen.
 
-For security reasons, there is no default account or password.
+For security reasons, PingCastle Enterprise has no default account or password.
 
 When the application has no configured user, a special screen appears
 to create the first user. This user receives the \"Admin\" role.

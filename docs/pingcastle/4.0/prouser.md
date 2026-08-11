@@ -78,9 +78,9 @@ and its data.
 
 **Detail information on a domain**
 
-This view displays detailed information on the domain, as well as many
-other information such the results of the last report, some history,
-timeline, and cartography. You can modify this by selecting a tab.
+This view displays detailed information on the domain, including the
+results of the last report, some history, a timeline, and cartography.
+You can switch between this information by selecting a tab.
 
 Last report tab:
 
@@ -101,29 +101,29 @@ The events that you can view are the following:
 
 Domain event:
 
-There has been a change on a domain within a specific perimeter in the
+A domain changed within a specific perimeter in the
 PingCastle Pro solution. It can be a domain that a user added, a domain discovered after
 importing a report, a status change, and so on.
 
 Risk event:
 
-There has been a change in the risks followed by the PingCastle Pro
-solution. It either means that the solution discovered a new risk that
+The risks the PingCastle Pro solution follows changed. It either means
+that the solution discovered a new risk that
 the user should follow, or that a risk has cleared and
 that the overall level of security improved. It can also mean that
 someone set a risk to an exception status.
 
 Trust event:
 
-There has been a change in the trust between several monitored domains.
+The trust between several monitored domains changed.
 It implies that someone established a new trust between two domains,
 deleted an existing trust between two domains, or modified an existing
 trust.
 
 Technical event:
 
-There has been a significant technical change modifying the global level
-of security, but which the existing rules don't yet cover. This is
+A significant technical change modified the global level
+of security, but the existing rules don't yet cover it. This is
 a very rare event, and you're unlikely to see it.
 
 Cartography tab:

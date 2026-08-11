@@ -349,7 +349,7 @@ PingCastle Enterprise uses the `webhost` configuration for links it sends to use
 
 ### IIS Maximum Upload Configuration
 
-You may need to increase the default IIS upload limit to accommodate large report files. While there are multiple methods to configure this setting (web.config, IIS Manager), the simplest approach is using PowerShell:
+You may need to increase the default IIS upload limit to accommodate large report files. You can configure this setting several ways (web.config, IIS Manager), but PowerShell is the simplest:
 
 ```powershell
 Import-Module WebAdministration
@@ -2939,11 +2939,11 @@ After completing either the manual or PowerShell configuration, update your Ping
 
 ## Initial startup
 
-On the first run, the application creates the database. If there
-is an error with the database (missing right, invalid connection string)
+On the first run, the application creates the database. If an error
+occurs with the database (missing right, invalid connection string)
 or hosting, the application won't display the next screen.
 
-For security reasons, there is no default account or password.
+For security reasons, PingCastle Enterprise has no default account or password.
 
 When the application has no configured user, a special screen appears
 to create the first user. This user receives the \"Admin\" role.
@@ -3047,7 +3047,7 @@ You can manually trigger archiving on-demand:
 - PingCastle Enterprise strips personal data from the reports
 - PingCastle Enterprise converts the reports to "Normal" detail level
 - Domain scores, statistics, and summary data stay intact
-- This is a one-way transformation that you can't reverse
+- You can't reverse this one-way transformation
 
 
 ## PingCastle agent deployment
@@ -3182,11 +3182,11 @@ Interoperability page.
 To ensure license enforcement, before importing a new report in
 the lower instance, the instance will contact the higher instance to
 verify that the report doesn't create domains beyond the license
-limit. If there is a temporary network issue, the instance skips this check.
+limit. If a temporary network issue occurs, the instance skips this check.
 If the check denies the import, the lower instance doesn't import the report and logs the error.
 
 After this check completes, the lower instance performs the import and then
-synchronizes the report to the higher instance. If there is any network issue
+synchronizes the report to the higher instance. If any network issue occurs
 during this step, the instance ignores the error (but logs it if
 you enable logging).
 
@@ -3195,7 +3195,7 @@ you enable logging).
 To verify you configured the connection properly, you can sync a domain using
 the button described earlier.
 
-If there is an error, PingCastle displays it as an exception.
+If an error occurs, PingCastle displays it as an exception.
 
 ![](/images/pingcastle/enterpriseinstall/image86.webp)
 

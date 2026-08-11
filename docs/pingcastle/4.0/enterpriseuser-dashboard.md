@@ -35,9 +35,9 @@ To go into more detail, the tool computes this score on the first two levels of 
 
 **Repeatable**
 
-- Internal trusts - ensure that the risk of cross domain contamination is limited
+- Internal trusts - ensure you limit the risk of cross domain contamination
 
-- Risk score - ensure that the local risk of contamination is limited
+- Risk score - ensure you limit the local risk of contamination
 
 Each measure has its own detailed page, where you can find more information on how to improve the situation and how to gain the associated "star". A star indicates whether a single rule linked to a measure is raising an alert.
 

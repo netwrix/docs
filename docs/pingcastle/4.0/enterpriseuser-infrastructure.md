@@ -155,16 +155,16 @@ The events that you can view are the following:
 
 Domain event:
 
-There has been a change on a domain within a specific perimeter in the PingCastle Enterprise solution. It can be a domain that a user added, a domain discovered after importing a report, a status change, etc.
+A domain changed within a specific perimeter in the PingCastle Enterprise solution. It can be a domain that a user added, a domain discovered after importing a report, a status change, etc.
 
 Risk event:
 
-There has been a change in the risks followed by the PingCastle Enterprise solution. It either means the application discovered a new risk that you should follow, or cleared a risk so the overall level of security improved. It can also mean that someone set a risk to an exception status.
+The risks the PingCastle Enterprise solution follows changed. It either means the application discovered a new risk that you should follow, or cleared a risk so the overall level of security improved. It can also mean that someone set a risk to an exception status.
 
 Trust event:
 
-There has been a change in the trust between several monitored domains. It implies that someone established a new trust between two domains, deleted an existing trust between two domains, or modified an existing trust.
+The trust between several monitored domains changed. It implies that someone established a new trust between two domains, deleted an existing trust between two domains, or modified an existing trust.
 
 Technical event:
 
-There has been a significant technical change modifying the global level of security, but which the existing rules don't yet cover. This is a rare event, and you probably won't see this kind of event.
+A significant technical change modified the global level of security, but the existing rules don't yet cover it. This is a rare event, and you probably won't see this kind of event.

@@ -38,7 +38,7 @@ PingCastle Enterprise uses the **Webhost** setting for links it sends to users v
 
 ## IIS Maximum Upload Configuration
 
-You may need to increase the default IIS upload limit to accommodate large report files. While there are multiple methods to configure this setting (web.config, IIS Manager), the simplest approach is using PowerShell:
+You may need to increase the default IIS upload limit to accommodate large report files. You can configure this setting several ways (web.config, IIS Manager), but PowerShell is the simplest:
 
 ```powershell
 Import-Module WebAdministration

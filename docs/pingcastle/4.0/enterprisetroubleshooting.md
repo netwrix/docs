@@ -13,7 +13,7 @@ Configure logging from the web portal at **Configuration** > **Settings** > **Lo
 
 - **Write log to file**: Enables or disables file logging
 - **Logging levels**: Control how much detail PingCastle Enterprise captures
-- Additional logging settings are also available on this page
+- This page includes additional logging settings
 
 See [Log Files](#log-files) for how to download the generated logs.
 

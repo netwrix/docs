@@ -190,7 +190,7 @@ manage and monitor their data protection policies. Additionally, there are more 
 events, such as those related to EasyLock deployment, printer activity, user information updates,
 transfer limits, external repository uploads, content remediation, forced uninstall attempts, device
 remediation sessions, certiﬁcate management, unplanned client terminations, artifact receipts, and
-DPI bypassed traﬃc. These events provide granular insight into various system activities, ensuring
+deep packet inspection (DPI) bypassed traﬃc. These events provide granular insight into various system activities, ensuring
 that organizations can maintain robust security and compliance measures.
 
 For a detailed view of all events and their descriptions, see the following table.
@@ -303,7 +303,7 @@ Remediation for Device Control.
   feature for the Device Control module.
 
     :::note
-    The Enable User Remediation for Device Control setting is disabled by default. When you
+    Endpoint Protector disables the Enable User Remediation for Device Control setting by default. When you
     enable this feature, Endpoint Protector applies all the User Remediation settings to both
     the Content Aware Protection and Device Control modules.
     :::

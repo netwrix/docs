@@ -52,7 +52,7 @@ The **Add tenant** wizard includes its own scheduling step, so you can create a 
 To schedule an Entra scan for a tenant that's already connected, or to add another schedule for an existing tenant:
 
 1. Go to **Configuration** > **Scheduler** > **Credential Profiles**, then click **Create profile**.
-2. Select **Entra ID** as the scan type, select the Agent, and select the tenant you configured above.
+2. Select **Entra ID** as the scan type, select the Agent, and select the tenant you connected in [Setting up tenant scanning](#setting-up-tenant-scanning).
 
    ![A screenshot of the credential profile creation screen with the Entra ID scan type selected, showing the Agent selection field.](/images/pingcastle/enterprisescheduling/credential-profile-create.webp)
 

@@ -104,11 +104,11 @@ Interoperability page.
 To enforce licensing, before importing a new report on
 the lower instance, the instance contacts the higher instance to
 verify that the report doesn't create domains beyond the license
-limit. If there is a temporary network issue, the instance skips this check.
+limit. If a temporary network issue occurs, the instance skips this check.
 If the check denies the import, the lower instance doesn't import the report and logs the error.
 
 After this check completes, the lower instance performs the import and then
-synchronizes the report to the higher instance. If there is any network issue
+synchronizes the report to the higher instance. If any network issue occurs
 during this step, the instance ignores the error (but logs it if
 you enabled logging).
 
@@ -117,7 +117,7 @@ you enabled logging).
 To verify you configured the connection properly, you can sync a domain using
 the button described earlier.
 
-If there is an error, PingCastle Enterprise displays it as an exception.
+If an error occurs, PingCastle Enterprise displays it as an exception.
 
 ![](/images/pingcastle/enterpriseinstall/image86.webp)
 
