@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Test Policy
 
-You can check if your Password Policy Enforcer (PPE) policies meet your requirements by clicking **Test policy** in the home page above the policy list, or in the upper-right of the policy editor.
+You can check if your Password Policy Enforcer (PPE) policies meet your requirements by clicking **Test policy** in the [home page](../configconsole.md) above the policy list, or in the upper-right of the [policy editor](./manage_policies.md).
 
 :::warning
 You must save any pending configuration changes before clicking **Test policy** in the policy editor, otherwise the Configuration Console discards your unsaved changes.
