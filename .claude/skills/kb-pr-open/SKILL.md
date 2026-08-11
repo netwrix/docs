@@ -67,7 +67,7 @@ vale --config .vale.ini <file>
 
 | Area | What to check |
 |------|--------------|
-| **frontmatter** | All required fields present and valid: `title`, `description`, `sidebar_label`, `keywords` (8–12 items), `products` (must use the canonical product ID from `src/config/products.js` — no hyphens or underscores as word separators; `dataclassification`, `directorymanager`, `threatmanager` are correct; `data-classification`, `data_classification`, `directory-manager`, `threat-manager` are not), `tags` (must include `kb`), `knowledge_article_id` (see knowledge_article_id rules in Step 4 — the field must always be present; never suggest removing it). `sidebar_label` must not be truncated vs. `title`. |
+| **frontmatter** | All required fields present and valid: `title`, `description`, `sidebar_label`, `keywords` (8–12 items), `products` (must use the canonical product ID from `src/config/products.js` — no hyphens or underscores as word separators; `dataclassification`, `directorymanager`, `threatmanager` are correct; `data-classification`, `data_classification`, `directory-manager`, `threat-manager` are not), `tags` (must include `kb`), `knowledge_article_id` (see knowledge_article_id rules in Step 4 — its state is informational only; never propose adding, removing, or rewriting it). `sidebar_label` must not be truncated vs. `title`. |
 | **article-type: structure** | Identify the article type (How-To Q&A, How-To Instructions, Resolution Error, Resolution Symptom). Verify the structure matches the type. **How-To structure:** How-To articles must use either Instructions form (`## Overview` + `## Instructions`) or Q&A form (`## Question` + `## Answer`). Articles with H1 + body prose but no recognized section structure are a Required structural fix — suggest Instructions form for procedural content or Q&A form for single-answer content; if the prose is missing procedural steps, flag that gap as a TSE-content-decision (kb-writer territory) rather than auto-generating steps. **Wrong-shape check (kb-writer feedback surfaced late):** even when the article DOES have a recognized structure, verify the shape fits the content. Q&A form is for simple procedures with one procedure and minimal caveat content. An article using Q&A form that actually contains two or more distinct procedures, multi-step workflows, or substantial caveat/note content should be flagged as a Required structural fix — restructure to `## Overview` + `## Instructions` with H3 subheadings per procedure. Ideally this decision is caught by `kb-writer` before reaching this skill; if it arrives here unresolved, apply it. |
 | **article-type: qa-format** | **Q&A question format:** In Q&A articles, content under `## Question` (and interrogative sub-headings in FAQ-style articles) must be a complete interrogative sentence — starts with an interrogative word (How do you / How can you / How should you / How will you / Can you / Should you / What / When / Where / Why / Which / Who / Does / Is / Are) and ends with `?`. Use **second person ("you"), not first person ("I")**, per the kb_style_guide.md ("Use second person ('you') when addressing the reader"). "How to..." patterns (e.g., "How to export X?") are Required fixes — rewrite as "How do you export X?" or "Can you X?" as appropriate. Mark N/A if the article isn't Q&A form. |
 | **article-type: heading-labels** | **Resolution section heading pluralization:** Section headings in Symptom Resolution articles are always singular: `## Symptom`, `## Cause`, `## Resolution` — even when the section contains multiple items. Flag `## Symptoms`, `## Causes`, `## Resolutions` as Required fixes. |
@@ -91,7 +91,7 @@ Do NOT flag contractions, heading case, passive voice, jargon, or undefined acro
 
 ### KB Editing Conventions Scan (Derek subsection)
 
-The canonical rulebook lives in the netwrix/docs repo at `.claude/references/kb-editing-conventions.md` — read it before every batch, because it evolves per batch. Do not duplicate its full text here; treat the checklist below as the mechanical scan patterns the skill must run every time. Related memories: `feedback_kb_step_subheadings.md`, `feedback_kb_pr_description_format.md`, `feedback_kb_article_retire_vs_pr.md`.
+The canonical rulebook lives in the netwrix/docs repo at `.claude/references/kb-editing-conventions.md` — read it before every batch, because it evolves per batch. Do not duplicate its full text here; treat the checklist below as the mechanical scan patterns the skill must run every time.
 
 Run this scan on every file in addition to the Derek areas table above. Each item maps to a rule in the rulebook; flag under Derek with `kb-editing-conventions` as the area.
 
@@ -251,20 +251,23 @@ Some checks only make sense *after* fixes have landed. Run these once the fix lo
 
 - **Title-change → link-text sweep (rulebook §8).** If a title fix was applied to any file, run a repo-wide search for internal markdown links whose visible text uses the *old* title and update the link text to match the new title. URL resolution alone is not sufficient — visible link text must describe the current target. Concrete: `grep -rE '\[<old title>\]\(/docs/' docs/` (adjust for slashes/special chars). Apply the link-text updates as part of the same commit as the title fix.
 
-**All-clean short-circuit:** Before proceeding to Step 5, check the branch's actual state against `dev`, not just whether this skill run applied any fixes:
+**All-clean short-circuit:** Before proceeding to Step 5, check the branch's actual state against `dev`, not just whether this skill run applied any fixes. Refresh the remote-tracking ref first — a local `dev` branch may not exist, or may be stale:
 
 ```bash
+git fetch origin dev
 git status --porcelain -- docs/kb/
-git log --oneline dev..HEAD -- docs/kb/
+git log --oneline origin/dev..HEAD -- docs/kb/
 ```
 
-If **both** commands return empty — no uncommitted changes and no commits ahead of `dev` touching `docs/kb/` — exit the workflow with this message:
+If any of these commands exits nonzero (for example, `git fetch` fails because of no network), the short-circuit does not apply — proceed to Step 5 rather than treating the failure as "clean."
 
-> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `dev` for `docs/kb/`. There's nothing to commit, push, or PR. If this branch has no other commits ahead of `dev`, it can be deleted with `git branch -d <current-branch>` (safe delete — refuses if there are unmerged commits). Exiting the workflow."
+If **both** the status and log commands succeed and return empty — no uncommitted changes and no commits ahead of `origin/dev` touching `docs/kb/` — exit the workflow with this message:
+
+> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev` for `docs/kb/`. There's nothing to commit, push, or PR. If this branch has no other commits ahead of `origin/dev`, it can be deleted with `git branch -d <current-branch>` (safe delete — refuses if there are unmerged commits). Exiting the workflow."
 
 Do NOT prompt for local testing. Do NOT propose a commit message. Do NOT enter Step 7.
 
-If either command returns output — uncommitted changes in `docs/kb/`, or commits already on the branch ahead of `dev` touching `docs/kb/` (for example, content committed by `kb-writer` in an earlier step) — proceed normally to Step 5, even if this skill run applied zero fixes.
+If either command returns output — uncommitted changes in `docs/kb/`, or commits already on the branch ahead of `origin/dev` touching `docs/kb/` (for example, content committed by `kb-writer` in an earlier step) — proceed normally to Step 5, even if this skill run applied zero fixes.
 
 ### knowledge_article_id rules (flag state, never force change)
 
@@ -275,7 +278,7 @@ The `knowledge_article_id` field's state is **informational, not corrective**. T
 | Real ID (e.g., `kA04u0000000HuTCAU`) | None | Clean — no finding. |
 | Placeholder (contains `XXXX`, `TODO`, `TBD`, or obvious template markers) | Soft reminder | "Placeholder detected — populate with the real `knowledge_article_id` if applicable, or leave as-is if no ID applies." |
 | Empty string (`knowledge_article_id: ""`) | Soft reminder | "Field is empty — populate if applicable, or leave as-is if no ID applies." |
-| Field missing entirely | Soft reminder | "Field is not present — add it if this article should have a `knowledge_article_id`, or leave as-is if no ID applies." |
+| Field missing entirely | Soft reminder | "Field is not present. This is a valid state for a natively authored article — no action needed unless the article originated from an external ticket." |
 
 **Never propose removing the field when it exists** — its presence preserves the provenance signal (this article expects an external ID).
 
@@ -396,7 +399,7 @@ Proceed as a strict numbered sequence:
 
 ### PR description format
 
-Follow the conventions in `feedback_kb_pr_description_format.md`. Do not duplicate the memory's full text; the shape below is the canonical structure.
+The shape below is the canonical structure for KB PR descriptions.
 
 **Omit** these sections entirely:
 - Per-article filename listing ("Articles (N total)") — redundant with the Files Changed tab.
@@ -430,7 +433,7 @@ Follow the conventions in `feedback_kb_pr_description_format.md`. Do not duplica
 ```
 
 **SME Review Needed rules:**
-- Only include this section if the PR carries **detail-level** UPDATE/KEEP questions. Article-level retire/archive questions belong in the SME meeting report, not in a PR — see `feedback_kb_article_retire_vs_pr.md`. If a PR has no SME questions, omit the section entirely rather than leaving an empty header.
+- Only include this section if the PR carries **detail-level** UPDATE/KEEP questions. Article-level retire/archive questions belong in the SME meeting report, not in a PR. If a PR has no SME questions, omit the section entirely rather than leaving an empty header.
 - Canonical options are **UPDATE / KEEP / ARCHIVE**. Include only the options that apply to a given item — not every item gets all three.
 - **UPDATE** always carries a qualifier in parentheses spelling out what to update.
 - **KEEP** always carries `(accept current version)`.
