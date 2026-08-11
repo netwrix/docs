@@ -45,7 +45,7 @@ Accepts one or more KB file paths. All files must be under `docs/kb/`. Append `+
 - Check the current branch:
   - On a feature branch: proceed.
   - On `dev` or `main`: **stop and warn.** Suggest a branch name (`kb/<product>/<slug-from-title>`) and wait for the TSE to confirm before creating anything. Never auto-create a branch.
-- Check Vale is available: `vale --version`. If it errors or is not found, note this in the report as `Vale | not run (Vale not installed)` — never render it as `✓ Clean` — and continue to Step 3 for the remaining checks.
+- Check Vale is available: `vale --version`. If it errors or is not found, note this in the report as `Vale | not run (Vale not installed)` — never render it as `✓ Clean` — and continue to Step 2 to run Dale and Derek regardless.
 
 ## 2. Review each file
 
