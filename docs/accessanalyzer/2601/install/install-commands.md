@@ -81,7 +81,7 @@ For most deployments, either omit this variable to stay on the latest release, o
 
 ## Environment Variables
 
-You can set most options as environment variables instead of command-line flags. This is the recommended style for scripted or automated deployments — see the [Quick Install](quickinstall.md) for an end-to-end example.
+You can set most options as environment variables instead of command-line flags. Netwrix recommends this style for scripted or automated deployments — see the [Quick Install](quickinstall.md) for an end-to-end example.
 
 Export the variables before running the installer. When you set the same option as both an environment variable and a command-line flag, the flag takes precedence.
 
@@ -216,7 +216,7 @@ The following table lists every identity provider (IdP) flag the installer accep
 
 ## Configuration File
 
-If you run the installer on multiple servers with the same options, you can store common settings in `~/.dspm/installer.yaml` to avoid repeating them every time:
+If you run the installer on multiple servers with the same options, you can store common settings in `~/.dspm/installer.yaml` to avoid repeating them:
 
 ```yaml
 # ~/.dspm/installer.yaml
@@ -253,7 +253,7 @@ For the full list of required network domains, see [Network and Port Requirement
 
 ## If the Installer Stops with Warnings
 
-By default, the installer stops when it detects a preflight warning. In some cases you may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
+By default, the installer stops when it detects a preflight warning. You may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
 
 ```bash
 sudo dspm-installer --accept-warnings
