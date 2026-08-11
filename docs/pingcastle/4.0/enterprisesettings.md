@@ -24,7 +24,7 @@ See [Configuring Authentication for PingCastle Enterprise](enterpriseauthsetup.m
 - **Data retention** — [Data Retention](enterprisesettings-dataretention.md)
 - **Notifications** — [Configuring the web host](enterpriseemailsetup.md#configuring-the-web-host) and [Configuring reminders and the weekly report](enterpriseemailsetup.md#configuring-reminders-and-the-weekly-report)
 - **Email** — [Configuring Email for PingCastle Enterprise](enterpriseemailsetup.md)
-- **Scanning and Scheduling** — [Scanning and Scheduling](enterprisesettings-scanningscheduling.md); see also [Scheduling](enterprisescheduling.md) for how PingCastle Enterprise uses these settings
+- **Scanning and Scheduling** — [Scanning and Scheduling](enterprisesettings-scanningscheduling.md); see also [Active Directory scan scheduling](enterprisescheduling.md) for how PingCastle Enterprise uses these settings
 - **Action Plans** — [Action Plans](enterprisesettings-actionplans.md)
 - **Provisioning** — [Provisioning](enterprisesettings-scim.md)
 

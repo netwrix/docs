@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 ---
-# Scheduling
+# Active Directory scan scheduling
 
 ## Overview
 
@@ -21,20 +21,11 @@ The scheduled scan wizard labels this field "execution profile." Credential prof
 
 Manage credential profiles from **Configuration** > **Scheduler** > **Credential Profiles**. Click **Create profile** to add one.
 
-The fields a credential profile needs depend on the scan type.
-
-**Active Directory scans** need:
+An Active Directory credential profile needs:
 
 - An Agent.
 - A Domain to scan.
 - Optionally, a custom run-as account. If you don't specify one, the scan runs under the `PingCastleSchedulerService` service account.
-
-**Entra scans** need:
-
-- An Agent.
-- A configured tenant. Set up the tenant connection before you create the credential profile. See [Entra scanning](enterpriseentrascan.md) for tenant configuration steps.
-
-![A screenshot of the credential profile creation screen with the Entra ID scan type selected, showing the Agent selection field.](/images/pingcastle/enterprisescheduling/credential-profile-create.webp)
 
 ## Scheduled scans
 
@@ -54,35 +45,6 @@ Each job also supports the following options:
 - **Include trace logging**: turns on verbose diagnostic logging for the scan run, useful when troubleshooting a failed or stalled job.
 
 ![A screenshot of the scheduled scan job creation screen with advanced options expanded, showing the Privileged scan toggle, timeout, and target specific DC fields.](/images/pingcastle/enterprisescheduling/scheduled-scan-job-create.webp)
-
-## Scheduling an Entra scan
-
-The **Add tenant** wizard in [Entra scanning](enterpriseentrascan.md) includes its own scheduling step, so you can create a schedule as part of connecting the tenant.
-
-To schedule an Entra scan for a tenant that's already connected, or to add another schedule for an existing tenant:
-
-1. Go to **Configuration** > **Scheduler** > **Credential Profiles**, then click **Create profile**.
-2. Select **Entra ID** as the scan type, select the Agent, and select the tenant you configured in [Entra scanning](enterpriseentrascan.md).
-3. Click **Create profile** to save the profile.
-4. Go to **Scheduled scans**, then **Create schedule**, and select this execution profile. See [Scheduled scans](#scheduled-scans) for the field reference.
-
-## Migrating scheduled scans from PingCastle Enterprise 3.5.1
-
-If you're upgrading from PingCastle Enterprise 3.5.1, migrate your existing Task Scheduler-based scheduled tasks to `PingCastleSchedulerService`.
-
-To migrate your scheduled scans:
-
-1. Go to **Configuration** > **Scheduler** in PingCastle Enterprise.
-2. Click **Migrate from Task Scheduler**.
-3. Review the verification table. It matches the Agents and Domains from your 3.5.1 scheduled tasks against the Agents and Domains you've configured in PingCastle Enterprise 4.0.
-
-   ![A screenshot of the legacy task migration verification table, matching a Windows Task Scheduler task's domain and agent against PingCastle Enterprise 4.0 configuration.](/images/pingcastle/enterprisescheduling/migration-verification-table.webp)
-
-4. Confirm the migration. PingCastle Enterprise creates a scheduled scan job and credential profile for each matched task and stops managing the old Task Scheduler tasks.
-
-:::note
-Review the verification table carefully before you confirm. Any Agent or Domain that PingCastle Enterprise can't match won't migrate, and you'll need to create a scheduled scan for it manually.
-:::
 
 ## Granting permissions for custom run-as accounts
 

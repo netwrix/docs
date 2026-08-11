@@ -17,16 +17,31 @@ module.exports = {
         {
           type: 'category',
           label: 'Installation',
-          items: ['enterpriseinstall', 'enterprisehttpssetup', 'enterpriseauthsetup', 'enterpriseemailsetup'],
+          items: ['enterpriseinstall', 'enterprisehttpssetup'],
         },
         {
           type: 'category',
           label: 'Configuration',
           items: [
             'enterprisepostinstall',
-            'enterprisescheduling',
-            'enterpriseentrascan',
-            'enterpriseagentdeployment',
+            {
+              type: 'category',
+              label: 'Schedule your first scan',
+              items: [
+                {
+                  type: 'doc',
+                  id: 'enterprisescheduling',
+                  label: 'Active Directory scans',
+                },
+                'enterpriseentrascan',
+                'enterpriseagentdeployment',
+                {
+                  type: 'doc',
+                  id: 'enterpriseschedulingmigration',
+                  label: 'Migrate from 3.5.1',
+                },
+              ],
+            },
             'enterprisedecryptionkeys',
             'enterprisesynchronization',
             {
@@ -37,6 +52,8 @@ module.exports = {
                 id: 'enterprisesettings',
               },
               items: [
+                'enterpriseauthsetup',
+                'enterpriseemailsetup',
                 'enterprisesettings-security',
                 'enterprisesettings-scim',
                 'enterprisesettings-logging',
@@ -59,20 +76,11 @@ module.exports = {
             'enterpriseuser-entities',
             'enterpriseuser-import',
             'enterpriseuser-account',
+            'enterpriseauditlog',
           ],
         },
         'enterpriseupgrade',
-        'enterpriseauditlog',
         'enterprisetroubleshooting',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Pro',
-      items: [
-        'proinstall',
-        'proupgrade',
-        'prouser',
       ],
     },
     {

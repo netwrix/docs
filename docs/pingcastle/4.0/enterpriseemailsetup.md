@@ -1,5 +1,5 @@
 ---
-sidebar_label: Email setup
+sidebar_label: Email
 ---
 # Configuring Email for PingCastle Enterprise
 

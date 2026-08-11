@@ -31,7 +31,7 @@ For bulk configuration, use **Configuration** > **Interoperability** to edit the
 
 ## Scheduler
 
-The PingCastle Scheduler Service and credential profiles manage scan scheduling. See [Scheduling](enterprisescheduling.md) for details on configuring credential profiles and scheduled scans.
+The PingCastle Scheduler Service and credential profiles manage scan scheduling. See [Active Directory scan scheduling](enterprisescheduling.md) for details on configuring credential profiles and scheduled scans.
 
 ## Reports
 

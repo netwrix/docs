@@ -1,5 +1,5 @@
 ---
-sidebar_label: Authentication setup
+sidebar_label: Authentication
 ---
 # Configuring Authentication for PingCastle Enterprise
 
@@ -14,10 +14,6 @@ Set up each method's identity provider using the instructions on this page, then
 
 :::note
 Most changes on these screens take effect within about 30 seconds, without a restart. Two setting groups — HTTPS redirection and allowed hosts settings, and database schema changes — restart PingCastle Enterprise automatically: it stops itself about 1 second after you save, then IIS restarts it. Six other restart-flagged settings — the three file logging settings, maximum concurrent scans, and both SCIM rate limit settings — require you to restart PingCastle Enterprise manually after saving.
-:::
-
-:::note
-Entra ID Authentication is a login method, configured through OpenID Connect. It's distinct from Entra scanning, which is a data source that assesses your Entra tenant for security risks. See [Entra scanning](enterpriseentrascan.md) for the scanning feature. PingCastle Enterprise can automatically provision users the first time they sign in through OpenID Connect or SAML2, using just-in-time (JIT) provisioning; see [Provisioning settings](enterprisesettings-scim.md) for the JIT provisioning toggle.
 :::
 
 :::tip

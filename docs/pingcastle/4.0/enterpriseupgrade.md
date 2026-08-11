@@ -32,6 +32,10 @@ To upgrade PingCastle Enterprise from 3.5.1 to 4.0:
 2. Run `PingCastleEnterpriseInstaller.exe` on the server where PingCastle Enterprise 3.5.1 is installed.
 3. The installer detects the existing 3.5.1 installation, checks for and applies any required prerequisite changes, and performs an in-place upgrade. Because this is an upgrade, it skips most configuration screens, preserves your existing settings, and shows only a minimal set of prompts.
 
+   ![A screenshot of the installer installing the required ASP.NET Hosting Bundle version as part of the upgrade.](/images/pingcastle/enterpriseupgrade/prereq-install.webp)
+
+   The required prerequisites, including the ASP.NET Hosting Bundle, are bundled directly in the installer. The upgrade doesn't need web access to download them.
+
 ## Configuration migration
 
 Starting with version 4.0, PingCastle Enterprise stores configuration settings in the database instead of `appsettings.Production.json`. The application migrates these settings automatically during the upgrade. See [Configuration migration from appsettings.Production.json](enterprisesettings.md#configuration-migration-from-appsettingsproductionjson) for details.

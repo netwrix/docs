@@ -18,7 +18,7 @@ to create the first user. This user receives the \"Admin\" role.
 
 ## Scheduling your first scan
 
-PingCastle Enterprise runs scheduled scans through **Configuration** > **Scheduler**. See [Scheduling](enterprisescheduling.md) for the full field reference.
+PingCastle Enterprise runs scheduled scans through **Configuration** > **Scheduler**. See [Active Directory scan scheduling](enterprisescheduling.md) for the full field reference.
 
 :::note
 The scheduled scan wizard labels the credential profile field "execution profile." Credential profile and execution profile refer to the same thing.
@@ -40,10 +40,12 @@ After the job runs, its report appears on the domain's page in PingCastle Enterp
 
 Entra scans follow a different process for tenant setup. Go to [Entra scanning](enterpriseentrascan.md) and use the **Add tenant** wizard to connect your tenant — the wizard includes its own scheduling step, so you can create the schedule as part of setup.
 
-If you skip that step, or need to add another schedule for a tenant you've already connected, see [Scheduling an Entra scan](enterprisescheduling.md#scheduling-an-entra-scan).
+If you skip that step, or need to add another schedule for a tenant you've already connected, see [Scheduling an Entra scan](enterpriseentrascan.md#scheduling-an-entra-scan).
 
 ## What's next
 
+- **Authentication** — Configure Windows Authentication, OpenID Connect, SAML2, or a combination. See [Authentication](enterpriseauthsetup.md#authentication).
+- **Email** — Configure SMTP or Microsoft Graph for notifications. See [Email](enterpriseemailsetup.md#email).
 - **Entities and permissions** — Group domains and control who can see and act on them. See [Entities](enterpriseuser-entities.md#entities).
 - **Agent deployment** — For domains a security or network boundary keeps the scheduler from reaching. See [Agent deployment](enterpriseagentdeployment.md).
 - **Synchronization** — For multi-instance security zone deployments. See [Synchronization](enterprisesynchronization.md).

@@ -19,11 +19,15 @@ See [Log Files](#log-files) for how to download the generated logs.
 
 #### Log Files
 
-PingCastle Enterprise, the CloudAPI service (used for Entra ID scanning), and the PingCastleSchedulerService use Serilog for logging. PingCastle Enterprise writes logs to a `logs` folder in its installation directory. CloudAPI and PingCastleSchedulerService each write logs to a `logs` folder inside their own subfolder (`CloudAPI` and `Scheduler`, respectively) under the PingCastle Enterprise installation directory.
+PingCastle Enterprise, CloudAPI (used for Entra ID scanning), and PingCastleSchedulerService all use Serilog for logging, each writing to its own `logs` folder:
 
-Since PingCastleSchedulerService has no web interface, the portal's log download doesn't include its logs. Check the `Scheduler\logs` folder directly, or the Windows Event Log on the server, to troubleshoot the scheduler.
+- PingCastle Enterprise: `logs` in the installation directory
+- CloudAPI: `CloudAPI\logs` in the installation directory
+- PingCastleSchedulerService: `Scheduler\logs` in the installation directory
 
-To download logs from the web portal, go to **Configuration** > **Settings** > **Logging** and click **Download Today's Logs** or **Download All Logs**.
+To download PingCastle Enterprise and CloudAPI logs from the web portal, go to **Configuration** > **Settings** > **Logging** and click **Download Today's Logs** or **Download All Logs**.
+
+PingCastleSchedulerService has no web interface, so the portal download doesn't include its logs. Check `Scheduler\logs` directly, or the Windows Event Log on the server, to troubleshoot the scheduler.
 
 ### Editing the appsettings.Production.json File
 

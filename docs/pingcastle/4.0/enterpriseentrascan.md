@@ -45,9 +45,19 @@ To connect a tenant:
 
 For the full list of Microsoft Graph, Exchange, SharePoint, Teams, and Azure role-based access control (RBAC) permissions the app registration needs, see [Entra scanner permissions](#entra-scanner-permissions).
 
-:::note
-If you skip the wizard's scheduling step, or need to add another schedule later, see [Scheduling an Entra scan](enterprisescheduling.md#scheduling-an-entra-scan).
-:::
+## Scheduling an Entra scan
+
+The **Add tenant** wizard includes its own scheduling step, so you can create a schedule as part of connecting the tenant.
+
+To schedule an Entra scan for a tenant that's already connected, or to add another schedule for an existing tenant:
+
+1. Go to **Configuration** > **Scheduler** > **Credential Profiles**, then click **Create profile**.
+2. Select **Entra ID** as the scan type, select the Agent, and select the tenant you configured above.
+
+   ![A screenshot of the credential profile creation screen with the Entra ID scan type selected, showing the Agent selection field.](/images/pingcastle/enterprisescheduling/credential-profile-create.webp)
+
+3. Click **Create profile** to save the profile.
+4. Go to **Scheduled scans**, then **Create schedule**, and select this execution profile. See [Scheduled scans](enterprisescheduling.md#scheduled-scans) for the field reference.
 
 ## Entra scanner permissions
 
