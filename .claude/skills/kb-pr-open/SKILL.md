@@ -259,7 +259,7 @@ Some checks only make sense *after* fixes have landed. Run these once the fix lo
 
 - **Title-change → link-text sweep (rulebook §8).** If a title fix was applied to any file, run a repo-wide search for internal markdown links whose visible text uses the *old* title and update the link text to match the new title. URL resolution alone is not sufficient — visible link text must describe the current target. Concrete: `grep -rE '\[<old title>\]\(/docs/' docs/` (adjust for slashes/special chars). Apply the link-text updates as part of the same commit as the title fix.
 
-**All-clean short-circuit:** Before proceeding to Step 5, check the branch's actual state against `dev`, not just whether this skill run applied any fixes. Refresh the remote-tracking ref first — a local `dev` branch may not exist, or may be stale. Scope the pathspec to `docs/` rather than `docs/kb/` — the title-change → link-text sweep above can touch files outside `docs/kb/` (e.g., `docs/<product>/<version>/**/*.md`), and a narrower pathspec here would miss those edits:
+**All-clean short-circuit:** Before proceeding to Step 5, check the branch's actual state against `dev`, not just whether this skill run applied any fixes. Refresh the remote-tracking ref first — a local `dev` branch may not exist, or may be stale:
 
 ```bash
 git fetch origin dev
