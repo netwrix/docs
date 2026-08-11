@@ -36,6 +36,7 @@ categories = {
         "troubleshooting-common-issues-after-epp-server-migration.md",
         "uninstall-the-client-from-a-mac-computer.md",
         "upgrade_linux_clients_without_uninstalling_and_reinstalling.md",
+        "using-the-live-update-feature-on-5x-legacy-appliances.md",
     ],
     "device-control-and-access-management": [
         "are_ios_devices_recognized_when_connected_to_a_windows_pc.md",

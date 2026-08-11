@@ -46,7 +46,7 @@ sudo dspm-installer
 
 Run `dspm-installer [command] --help` to view usage and available options for any command.
 
-**To pin to a specific release** — recommended when you want to control when upgrades happen during your organization's patching cycle — export the version before downloading and running the installer:
+Netwrix recommends pinning to a specific release when you want to control when upgrades happen during your organization's patching cycle. **To pin to a specific release**, export the version before downloading and running the installer:
 
 ```bash
 # Set the Keygen license key variable
@@ -111,7 +111,7 @@ Export the variables before running the installer. When you set the same option 
 | `DRY_RUN` | `--dry-run` | `true` |
 
 :::note
-`LDAP_BIND_PASSWORD` is the only secret environment variable, and the installer doesn't honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 3](quickinstall.md#required-actions) for the two supported ways to provide the password.
+`LDAP_BIND_PASSWORD` is the only secret environment variable, and the installer doesn't honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 4](quickinstall.md#step-4-run-the-installer) for the two supported ways to provide the password.
 :::
 
 ## Running the Installer
@@ -245,6 +245,7 @@ The installer checks the following before installation begins. The installer wri
 | **SELinux** | — | SELinux in enforcing mode |
 | **Antivirus** | — | Known antivirus software detected |
 | **Network** | DNS resolution fails for a required domain | TCP connection timeout to a required domain |
+| **Clock sync** | — | No clock sync daemon detected |
 
 A **FAIL** result stops the installer. Resolve it before retrying. A **WARN** result also stops the installer by default — see [If the Installer Stops with Warnings](#if-the-installer-stops-with-warnings).
 
@@ -266,6 +267,7 @@ Before using this option, identify which warning the installer reports and revie
 | Unrecognized Linux distribution | The installer didn't recognize your OS as a supported RHEL or Debian variant. | Verify your OS is a supported version before accepting. Contact Netwrix Support if unsure. |
 | SELinux in enforcing mode | SELinux may block k3s container operations. | Accept only if you have confirmed your SELinux policy permits k3s. If unsure, set SELinux to permissive mode first. |
 | Antivirus software detected | An antivirus agent is running and may interfere with container storage paths. | Configure exclusions for the k3s paths listed in the warning output before accepting. |
+| No clock sync daemon detected | Kerberos authentication requires the host's clock to stay within 5 minutes of the Active Directory domain controller. Without a clock sync daemon, clock drift can break Kerberos authentication. | Install `chronyd`, `ntpd`, or `systemd-timesyncd` before accepting. If your environment already keeps the clock synchronized through another method, you can accept the warning. |
 
 If you're unsure whether a warning is safe to accept, contact Netwrix Support before proceeding.
 
@@ -289,4 +291,4 @@ The exit code indicates which phase failed:
 | `70` | App startup | Applications didn't become healthy within 30 minutes. Run `kubectl get pods -n access-analyzer` to check pod status, then contact Netwrix Support |
 | `71` | App startup | A pod entered a permanent failure state. Run `kubectl get pods -A` to identify it, then contact Netwrix Support |
 | `80` | Preflight | Resolve the reported system requirement and retry |
-| `90` | IdP configuration | IdP setup failed after the cluster was deployed. Check the log for the specific error, then use `--configure-idp-only` to retry |
+| `90` | IdP configuration | IdP setup failed after the installer deployed the cluster. Check the log for the specific error, then use `--configure-idp-only` to retry |

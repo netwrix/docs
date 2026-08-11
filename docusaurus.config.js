@@ -31,7 +31,19 @@ PRODUCTS.forEach(product => {
   });
 });
 
-const latestVersionMap = getLatestVersionUrlMap();
+// Filter to a single product when DOCS_PRODUCT is set, matching the filtering
+// generateDocusaurusPlugins() applies — otherwise redirects reference routes
+// from products that were never built in this run.
+const targetProduct = process.env.DOCS_PRODUCT;
+const redirectProducts = targetProduct
+  ? PRODUCTS.filter(product => product.id === targetProduct)
+  : PRODUCTS;
+
+const latestVersionMap = targetProduct
+  ? Object.fromEntries(
+      Object.entries(getLatestVersionUrlMap()).filter(([productId]) => productId === targetProduct)
+    )
+  : getLatestVersionUrlMap();
 
 // Match the product filtering generateDocusaurusPlugins() applies, so redirects
 // never target a product whose pages weren't built for this DOCS_PRODUCT run.
@@ -59,13 +71,12 @@ const config = {
   baseUrl: '/',
 
   // throw on anything that is not configured correctly
-  // (onBrokenLinks is relaxed to 'warn' for DOCS_PRODUCT single-product builds,
-  // since those filter out other products' pages and cross-product absolute
-  // links will 404 on purpose. Markdown link and anchor mistakes are always
-  // real bugs within the built product, so those always throw.)
-  onBrokenLinks: process.env.DOCS_PRODUCT ? 'warn' : 'throw',
-  onBrokenMarkdownLinks: 'throw',
-  onBrokenAnchors: 'throw',
+  // Relaxed to 'warn' for single-product builds (DOCS_PRODUCT set): the navbar
+  // always links to every product, but a filtered build only generates routes
+  // for one of them, so cross-product navbar links are expected to be unresolved.
+  onBrokenLinks: targetProduct ? 'warn' : 'throw',
+  onBrokenMarkdownLinks: targetProduct ? 'warn' : 'throw',
+  onBrokenAnchors: targetProduct ? 'warn' : 'throw',
 
   // Set Mermaid
   markdown: {
