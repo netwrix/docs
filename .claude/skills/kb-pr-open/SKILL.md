@@ -45,6 +45,7 @@ Accepts one or more KB file paths. All files must be under `docs/kb/`. Append `+
 - Check the current branch:
   - On a feature branch: proceed.
   - On `dev` or `main`: **stop and warn.** Suggest a branch name (`kb/<product>/<slug-from-title>`) and wait for the TSE to confirm before creating anything. Never auto-create a branch.
+  - **Detached HEAD** (`git symbolic-ref -q HEAD` fails, or `git branch --show-current` prints nothing): **stop and warn.** A detached HEAD has no upstream for `git push` to resolve later. Ask the TSE to check out or create a feature branch before continuing.
 - Check Vale is available: `vale --version`. If it errors or is not found, note this in the report as `Vale | not run (Vale not installed)` — never render it as `✓ Clean` — and continue to Step 2 to run Dale and Derek regardless.
 
 ## 2. Review each file
@@ -374,7 +375,7 @@ PRs always target `dev`.
 Proceed as a strict numbered sequence:
 
 1. **Push the branch.**
-   - Option A (skill does it): run `git push` directly.
+   - Option A (skill does it): confirm with the TSE before pushing ("Ready to push `<branch>` to origin?"), then run `git push` on approval. This is a git operation and follows the same explicit-approval rule as every other git action in this skill.
    - Option B (TSE does it): provide the `git push` command and wait for TSE to confirm the push succeeded before continuing.
 2. **Run the pre-flight gh pr list command above.**
 3. **If the result is an empty array (`[]`)** → no existing PR → proceed to the **Create new PR** section below.
@@ -388,7 +389,7 @@ Proceed as a strict numbered sequence:
 ### Update existing PR
 
 1. Surface the existing PR's URL, title, and number.
-2. Tell the TSE: "I pushed the new commit to the existing PR. The PR description currently reflects earlier work and may not cover the new changes. Would you like me to update the description?"
+2. Tell the TSE: "The new commit is on the existing PR. The PR description currently reflects earlier work and may not cover the new changes. Would you like me to update the description?"
 3. Offer two options:
    - **Update description:** Draft an updated title and description covering both the existing content and the new additions. Show the draft and wait for approval (same approval gate as below), then run `gh pr edit <number> --title "<new>" --body "<new>"`.
    - **Leave as-is:** Confirm the push went through and stop.
