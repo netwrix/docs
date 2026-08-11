@@ -31,7 +31,19 @@ PRODUCTS.forEach(product => {
   });
 });
 
-const latestVersionMap = getLatestVersionUrlMap();
+// Filter to a single product when DOCS_PRODUCT is set, matching the filtering
+// generateDocusaurusPlugins() applies — otherwise redirects reference routes
+// from products that were never built in this run.
+const targetProduct = process.env.DOCS_PRODUCT;
+const redirectProducts = targetProduct
+  ? PRODUCTS.filter(product => product.id === targetProduct)
+  : PRODUCTS;
+
+const latestVersionMap = targetProduct
+  ? Object.fromEntries(
+      Object.entries(getLatestVersionUrlMap()).filter(([productId]) => productId === targetProduct)
+    )
+  : getLatestVersionUrlMap();
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -47,9 +59,12 @@ const config = {
   baseUrl: '/',
 
   // throw on anything that is not configured correctly
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
-  onBrokenAnchors: 'throw',
+  // Relaxed to 'warn' for single-product builds (DOCS_PRODUCT set): the navbar
+  // always links to every product, but a filtered build only generates routes
+  // for one of them, so cross-product navbar links are expected to be unresolved.
+  onBrokenLinks: targetProduct ? 'warn' : 'throw',
+  onBrokenMarkdownLinks: targetProduct ? 'warn' : 'throw',
+  onBrokenAnchors: targetProduct ? 'warn' : 'throw',
 
   // Set Mermaid
   markdown: {
@@ -137,7 +152,7 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: PRODUCTS.filter(product => {
+        redirects: redirectProducts.filter(product => {
           // Only create redirects for products with multiple versions (not just 'current')
           return !(product.versions.length === 1 && product.versions[0].version === 'current');
         }).map(product => {
