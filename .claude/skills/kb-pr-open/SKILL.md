@@ -251,13 +251,20 @@ Some checks only make sense *after* fixes have landed. Run these once the fix lo
 
 - **Title-change → link-text sweep (rulebook §8).** If a title fix was applied to any file, run a repo-wide search for internal markdown links whose visible text uses the *old* title and update the link text to match the new title. URL resolution alone is not sufficient — visible link text must describe the current target. Concrete: `grep -rE '\[<old title>\]\(/docs/' docs/` (adjust for slashes/special chars). Apply the link-text updates as part of the same commit as the title fix.
 
-**All-clean short-circuit:** Before proceeding to Step 5, check whether any file changes were actually applied to files in `docs/kb/`. If zero Required fixes were applied — either because the findings report had none, or because the TSE pushed back on all findings as false positives — exit the workflow with this message:
+**All-clean short-circuit:** Before proceeding to Step 5, check the branch's actual state against `dev`, not just whether this skill run applied any fixes:
 
-> "All checks clean. No fixes were needed. The article is ready as-is. Since no file changes were made, there's nothing to commit, push, or PR. The branch can be deleted with `git branch -D <current-branch>` if not needed. Exiting the workflow."
+```bash
+git status --porcelain -- docs/kb/
+git log --oneline dev..HEAD -- docs/kb/
+```
 
-Do NOT prompt for local testing. Do NOT propose a commit message. Do NOT enter Step 7. Skill-internal artifacts (memory notes, etc.) do not count as file changes. Only modifications to files in `docs/kb/` trigger the commit/push/PR flow.
+If **both** commands return empty — no uncommitted changes and no commits ahead of `dev` touching `docs/kb/` — exit the workflow with this message:
 
-If at least one Required fix was applied to a file in `docs/kb/`, proceed normally to Step 5.
+> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `dev` for `docs/kb/`. There's nothing to commit, push, or PR. If this branch has no other commits ahead of `dev`, it can be deleted with `git branch -d <current-branch>` (safe delete — refuses if there are unmerged commits). Exiting the workflow."
+
+Do NOT prompt for local testing. Do NOT propose a commit message. Do NOT enter Step 7.
+
+If either command returns output — uncommitted changes in `docs/kb/`, or commits already on the branch ahead of `dev` touching `docs/kb/` (for example, content committed by `kb-writer` in an earlier step) — proceed normally to Step 5, even if this skill run applied zero fixes.
 
 ### knowledge_article_id rules (flag state, never force change)
 
@@ -389,7 +396,7 @@ Proceed as a strict numbered sequence:
 
 ### PR description format
 
-Follow the conventions in `~/.claude/projects/-Users-hilaryramirez/memory/feedback_kb_pr_description_format.md`. Do not duplicate the memory's full text; the shape below is the canonical structure.
+Follow the conventions in `feedback_kb_pr_description_format.md`. Do not duplicate the memory's full text; the shape below is the canonical structure.
 
 **Omit** these sections entirely:
 - Per-article filename listing ("Articles (N total)") — redundant with the Files Changed tab.
