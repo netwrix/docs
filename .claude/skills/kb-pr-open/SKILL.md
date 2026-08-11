@@ -39,6 +39,7 @@ Accepts one or more KB file paths. All files must be under `docs/kb/`. Append `+
 ## 1. Validate context
 
 - Confirm the working directory is the docs repo root.
+- Strip a trailing `+ verbose` from the argument list before validating paths; treat the remaining tokens as file paths.
 - Confirm every provided file exists and is under `docs/kb/`. If a file is missing or outside `docs/kb/`, stop and tell the TSE.
 - Check whether any path contains a nested `kb/` subfolder (for example, `docs/kb/product/kb/article.md`). Flag any such file — it is misplaced and should be at `docs/kb/<product>/<article>.md`.
 - Check the current branch:
@@ -263,7 +264,7 @@ If any of these commands exits nonzero (for example, `git fetch` fails because o
 
 If **both** the status and log commands succeed and return empty — no uncommitted changes and no commits ahead of `origin/dev` touching `docs/kb/` — exit the workflow with this message:
 
-> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev` for `docs/kb/`. There's nothing to commit, push, or PR. If this branch has no other commits ahead of `origin/dev`, it can be deleted with `git branch -d <current-branch>` (safe delete — refuses if there are unmerged commits). Exiting the workflow."
+> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev` for `docs/kb/`. There's nothing to commit, push, or PR. If this branch has no other commits ahead of `origin/dev`, it can be deleted with `git switch dev && git branch -d <branch-name>` (safe delete — refuses if there are unmerged commits; you must switch off the branch first since git won't delete the one you have checked out). Exiting the workflow."
 
 Do NOT prompt for local testing. Do NOT propose a commit message. Do NOT enter Step 7.
 
