@@ -113,6 +113,18 @@ const COLUMN_WIDTHS = {
   notes: 32,
 };
 
+const HEADER_LABELS = {
+  document_title: 'Document Title',
+  version: 'Version',
+  live_page_url: 'Document URL',
+  source_path: 'Source Path',
+  duplicates: 'Duplicated in',
+  reviewer: 'Reviewer',
+  audited: 'Audited',
+  fixed: 'Fixed',
+  notes: 'Notes',
+};
+
 const SECTION_HEADER_FILL = 'FFD9E2F3';
 const SECTION_ROW_FILLS = ['FFFFFFFF', 'FFF2F5FA'];
 
@@ -159,7 +171,7 @@ function addProductSheet(workbook, sheetName, rows) {
   if (rows.length === 0) return sheet;
 
   const header = rows[0];
-  sheet.addRow(header);
+  sheet.addRow(header.map((h) => HEADER_LABELS[h.trim().toLowerCase()] || h));
   const headerRow = sheet.getRow(1);
   headerRow.font = { bold: true };
   headerRow.alignment = { vertical: 'middle' };
