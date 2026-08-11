@@ -7,7 +7,7 @@ sidebar_position: 40
 # User Behavior and Blind Spot Analysis Reports
 
 The User Behavior and Blind Spot Analysis report pack contains a set of smart reports that help you
-identify vulnerabilities and easily answer questions such as:
+identify vulnerabilities and answer questions such as:
 
 - Has there been any abnormal access to sensitive data?
 - Is anyone accessing stale data?
@@ -22,7 +22,7 @@ Predefined node.
 
 ![userbehaviorblindspotanalysis_thumb_0_0](/images/auditor/10.9/admin/reports/types/userbehaviorblindspotanalysis_thumb_0_0.webp)
 
-If you are sure that some audit data is missing (for example, you do not see information on your file
+If you are sure that some audit data is missing (for example, you don't see information on your file
 servers in reports and search results), verify that you configured the Audit Database settings and
 that the product writes data to databases that reside on the default SQL Server instance.
 
@@ -38,13 +38,13 @@ Each report has a set of filters which help organize audit data in the most conv
 ## Report data sources
 
 The following table shows which data source each report uses, so you know
-which monitoring plans to configure before you rely on a specific report. Reports are grouped into
+which monitoring plans to configure before you rely on a specific report. The reports fall into
 the following categories:
 
-- **Data Access** — Contains a set of reports and dashboards that help you detect activity surges and gain a bird's eye view of data access.
+- **Data Access** — Contains a set of reports and dashboards that help you detect activity surges and gain a broad view of data access.
 - **Information Disclosure** — Contains a set of reports that help you identify negligent users who create files that disclose confidential data.
 - **Privilege Elevation** — Contains a set of reports that help you detect changes to privileged groups.
-- **Suspicious Activity** — Contains a set of reports and dashboards that provide you with at-a-glance statistics for user activity.
+- **Suspicious Activity** — Contains a set of reports and dashboards that provide summary statistics for user activity.
 - **Suspicious Files** — Contains a set of reports that help you identify files that could be a security threat.
 - **User Identity Theft** — Contains a set of reports that help you promptly identify compromised accounts and passwords.
 
@@ -80,5 +80,5 @@ the following categories:
 | Temporary User Accounts | Active Directory, Microsoft Entra ID |
 
 You can also create a subscription to
-any report you want to receive on a regular basis. See the
+any report you want to receive regularly. See the
 [Subscriptions](/docs/auditor/10.9/admin/subscriptions/overview.md) topic for additional information.
