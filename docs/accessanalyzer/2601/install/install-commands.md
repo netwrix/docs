@@ -27,7 +27,7 @@ Your license key authenticates access to the Netwrix package registry. Don't sha
 
 ### Choose an installer version
 
-If you don't specify a version, the installer downloads the latest stable release automatically. This is appropriate for initial deployments and when you want to install the latest release:
+If you don't specify a version, the installer downloads the latest stable release automatically. This is appropriate for initial deployments and any time you want the latest release:
 
 ```bash
 # Set the Keygen license key variable
@@ -46,7 +46,7 @@ sudo dspm-installer
 
 Run `dspm-installer [command] --help` to view usage and available options for any command.
 
-Netwrix recommends pinning to a specific release when you want to control when upgrades happen during your organization's patching cycle. **To pin to a specific release**, export the version before downloading and running the installer:
+Netwrix recommends pinning to a specific release to control when upgrades happen during your organization's patching cycle. **To pin to a specific release**, export the version before downloading and running the installer:
 
 ```bash
 # Set the Keygen license key variable
