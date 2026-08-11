@@ -9,9 +9,7 @@ sidebar_position: 45
 You can configure Password Policy Enforcer to use the Have I Been Pwnd (HIBP) database. Netwrix hosts
 a copy of this database on its website. The HIBP database contains a list of the hashes of
 known compromised passwords. During password change operations, you can configure the application to
-reject passwords with a hash that matches a hash in the HIBP database. See the Password Policy
-Enforcer [Compromised Password Check](/docs/passwordpolicyenforcer/11.2/admin/compromisedpasswordcheck.md) topic for HIBP database
-information and configuration options.
+reject passwords with a hash that matches a hash in the HIBP database. See the Password Policy Enforcer [Password Scanner](compromisedpasswordcheck.md) topic for HIBP database information and configuration options.
 
 You must initially deploy the HIBP database to a server or workstation with an internet connection
 that can retrieve and format the file. After you format the database, you can distribute the HIBP
