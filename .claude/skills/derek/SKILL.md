@@ -76,6 +76,8 @@ Check that the required H2 headings are present for the identified article type:
 
 When a required heading is missing, include the full expected heading template in the Message column so the writer can copy it in.
 
+**Pluralized form present (`## Symptoms`, `## Causes`, or `## Resolutions`)** is a distinct case from missing — the section exists, it just uses the wrong label. Flag it as "rename `## Symptoms` to `## Symptom`" (singular; even when the section describes multiple items), not as a missing heading — do not tell the writer to add a section that already exists under the plural name.
+
 ## 3. Title Format
 
 Check that the title matches the expected format for the article type:
