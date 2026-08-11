@@ -23,7 +23,7 @@ By implementing these controls, organizations can protect sensitive information 
 
 ## AI Interaction Visibility and Control in Netwrix Endpoint Protector: Data Loss Prevention for LLMs
 
-Endpoint Protector extends Data Loss Prevention to the most widely used AI technologies — including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X Grok, Claude, Meta AI, Perplexity, Cursor, Comet, Atlassian Rovo and TimelyGPT — ensuring secure and compliant use across your organization. Coverage includes the embedded Microsoft Copilot add-in in Windows 11, New Outlook, New Teams, and Edge. Endpoint Protector also provides visibility and control over ChatGPT, Claude, Claude Code, Claude Cowork, Comet, Cursor and Copilot native clients.
+Endpoint Protector extends Data Loss Prevention to the most widely used AI technologies — including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X Grok, Claude, Meta AI, Perplexity, Cursor, Comet, Atlassian Rovo and TimelyGPT — ensuring secure and compliant use across your organization. Coverage includes the embedded Microsoft Copilot add-in in Windows 11, New Outlook, New Teams, and Edge. Endpoint Protector also provides visibility and control over ChatGPT, Claude, Claude Code, Claude Cowork, Comet, Cursor, and Copilot native clients.
 
 :::note
 Claude Code processes text extraction from attachments locally. This local processing isn't part of EPP inspection. EPP triggers detection only when Claude Code sends this data to Claude's servers.
@@ -38,7 +38,7 @@ To monitor or control AI prompts with EPP, you need to meet the following prereq
 -   Content Aware Protection (CAP) license with the CAP module enabled
 -   Deep Packet Inspection (DPI) module enabled
 
-If you meet these requirements, most of the setup is already complete. This is because any existing web browser monitor/control policy will automatically apply to user interactions with supported AI chat applications, enforcing your policy definitions when violations occur.
+If you meet these requirements, most of the setup is already complete, because any existing web browser monitor/control policy automatically applies to user interactions with supported AI chat applications and enforces your policy definitions when violations occur.
 
 ## Use Case Example
 
@@ -71,7 +71,7 @@ To configure a CAP policy for this purpose:
 **Description of video**:
 The test covers several AI platforms: Copilot, ChatGPT, Google Gemini, DeepSeek, and X Grok.
 
-    -   **Responsiveness Check** – Verified that each AI model was actively responding, ensuring the interaction was genuine and not a simulated or dummy web transaction triggered by the URL.
+    -   **Responsiveness Check** – The test verified that each AI model was actively responding, ensuring the interaction was genuine rather than a simulated or dummy web transaction triggered by the URL.
     -   **Data Leakage Simulation** – The test submitted credit card (CC) patterns to each AI platform for validation. An AI engine generated the sample data. The CAP policy automatically blocks any transaction containing CC data.
     -   **Cross-Engine Validation** – The test repeated the same procedure across all mentioned AI engines to confirm consistent behavior and validate DLP enforcement.​
     -   **Conclusion** – The demonstration confirms that **Netwrix EPP DLP integrates seamlessly with AI tools such as Copilot, ChatGPT, Google Gemini, DeepSeek, and X Grok** to **prevent data leakage, enforce compliance, and ensure secure information handling at the endpoint level**, while maintaining a positive user experience.
@@ -113,7 +113,7 @@ You can use contextual rules to create complex pattern definitions for more accu
 
 **Description of video:**
 
-The test begins with verifying **Copilot’s functionality** to ensure proper operation.
+The test begins by verifying that **Copilot** works correctly.
 
     -   **Initial HR Scenario** – The test simulates an HR use case in which Copilot enhances employment contract templates without sensitive data to improve formatting and presentation quality.
 

@@ -27,13 +27,14 @@ termination or modification of the Endpoint Protector Agent.
 :::
 
 :::note
-When enabling Debug logging, deploying a fresh installation, or during upgrade processes where critical drivers/services (such as Deep Packet Inspection (DPI), browser plugins, or Outlook add-ins) must be reloaded, restart the operating system. This mandatory first step in troubleshooting ensures that all dependencies are properly initialized.
+When enabling Debug logging, deploying a fresh installation, or during upgrade processes that require a reload of critical drivers/services (such as Deep Packet Inspection (DPI), browser plugins, or Outlook add-ins), restart the operating system. This mandatory first step in troubleshooting ensures that all dependencies initialize properly.
 :::
 
 ## Lightweight, Cross-Platform Architecture
 
 The Endpoint Protector Agent doesn't require OS kernel-level integration. This reduces the risk of
-conflicts with other security software, such as antivirus, EDR, and HIPS solutions, and keeps the
+conflicts with other security software, such as antivirus, endpoint detection and response (EDR),
+and host-based intrusion prevention system (HIPS) solutions, and keeps the
 Agent's footprint on the endpoint to a minimum.
 
 ### Kernel Independence
@@ -43,7 +44,7 @@ the stability and compatibility risks associated with kernel-mode components, su
 from driver conflicts or extension issues after an OS update.
 
 On Linux specifically, this also means the Agent isn't dependent on Dynamic Kernel Module Support
-(DKMS) or a rebuild each time the kernel is updated, removing the operational risk — common with
+(DKMS) or a rebuild after each kernel update, removing the operational risk — common with
 kernel-module-based agents — of endpoint protection breaking after a routine kernel update.
 
 ### Cross-OS Feature Parity
@@ -52,16 +53,16 @@ The Agent maintains feature parity across Windows, macOS, and Linux for Device C
 Content Aware Protection (CAP), and eDiscovery. The Enforced Encryption Client, which provides FIPS
 140-3 validated removable media encryption, offers full parity between Windows and macOS.
 
-Endpoint Protector is designed for full feature parity across Windows, macOS, and Linux from
+Netwrix designs Endpoint Protector for full feature parity across Windows, macOS, and Linux from
 initial release, rather than treating Linux as a delayed follow-up to Windows and macOS support. The
-only differences between operating systems are in the specific applications covered by content
-inspection, since the native applications and file-handling behaviors on each OS are inherently
+only differences between operating systems are in the specific applications that content inspection
+covers, since the native applications and file-handling behaviors on each OS are inherently
 platform-specific.
 
 ## Agent install parameters
 
-To improve the Endpoint Protector installation process, use the Endpoint Protector tool that allows
-you to run installation-related actions, identify your current Linux distribution, and view Endpoint
+To improve the Endpoint Protector installation process, use the Endpoint Protector tool to run
+installation-related actions, identify your current Linux distribution, and view Endpoint
 Protector Release Notes.
 
 Use the following commands:
@@ -90,7 +91,7 @@ Where:
 - AUTHUSR – Username (if authentication for proxy is needed)
 - AUTHPASS – Password (if authentication for proxy is needed)
 
-You can also use the following CLI commands to install Endpoint Protector Client in specific mode of working.
+You can also use the following CLI commands to install Endpoint Protector Client in a specific working mode.
 
 - WSIP – server address
 - WSPORT – server port number
@@ -106,13 +107,13 @@ Starting with the 2511 Clients release, the install parameters "IPV6MAPPING," "S
 ### macOS
 :::note
 For macOS, contact the Netwrix Support team to obtain the latest version of the
-installer script, which allows customization of installation parameters.
+installer script, which lets you customize installation parameters.
 :::
 
 
 ### Linux
 
-For Linux, you can only use CLI arguments in the options to bypass proxy settings.sh file. To do so,
+For Linux, you can use CLI arguments only in the options.sh file to bypass proxy settings. To do so,
 follow these steps:
 
 **Step 1 –** Access the installation folder, open a Terminal, and run the following command:
@@ -140,7 +141,7 @@ the address:port:user:password format.
 
 **Example: EPPCLIENT_HTTPS_PROXY=address:port:user:password**
 
-**Step 7 –** Save the changes, and then run the installation without having a VPN connection:
+**Step 7 –** Save the changes, and then run the installation without a VPN connection:
 
 `bash install.sh`
 
@@ -171,8 +172,8 @@ then provide the following information:
 To see which distributions are supported for EPP, check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
 
 For Windows and Mac, your input in installing the Endpoint Protector Agent is minimal. The
-Installation folder and Server information are already pre-configured, and downloadable from the
-Endpoint Protector Server.
+installation folder and server information come pre-configured, and you can download the Agent from
+the Endpoint Protector Server.
 
 :::note
 For Linux installation instructions, read the readmeLinux.txt file available under the Read
@@ -200,12 +201,12 @@ Netwrix provides optional distributions on the product portal upon request, afte
 
 ### Increased Communication Security
 
-During interactive installation, the installer wizard includes an **Increased Communication Security** checkbox. When enabled, the EPP Client will use certificate-based authentication during the registration process and for all subsequent communication with the EPP Server.
-This option corresponds to the **Client Registration Certificate** feature configured on the server side. Before enabling it, ensure that a cryptographic identity signed by the EPP Root CA has been deployed to the endpoint and is present in **Certificate Manager** under *Local Computer → Certificates → Personal*.
+During interactive installation, the installer wizard includes an **Increased Communication Security** checkbox. When you enable it, the EPP Client uses certificate-based authentication during the registration process and for all subsequent communication with the EPP Server.
+This option corresponds to the **Client Registration Certificate** feature configured on the server side. Before enabling it, ensure that you deployed a cryptographic identity signed by the EPP Root CA to the endpoint and that it appears in **Certificate Manager** under *Local Computer → Certificates → Personal*.
 
 
 :::note
-This option requires the **Client Registration Certificate** feature to be enabled and configured on the EPP Server ([**Appliance → Server Maintenance → Client Registration Certificate**](/docs/endpointprotector/admin/appliance.md)) before the client is installed. Enabling it without the corresponding server-side configuration will prevent the client from registering.
+This option requires you to enable and configure the **Client Registration Certificate** feature on the EPP Server ([**Appliance → Server Maintenance → Client Registration Certificate**](/docs/endpointprotector/admin/appliance.md)) before you install the client. Enabling it without the corresponding server-side configuration prevents the client from registering.
 :::
 
 
@@ -267,17 +268,17 @@ Inspection Certificate**, and download the **CA Certificate**.
 
 **Step 14 –** Select one option for **EPP behavior when network extension is disabled**.
 
-- Temporarily Disable Deep Packet Inspection – this option will temporary disable Deep Packet
+- Temporarily Disable Deep Packet Inspection – this option temporarily disables Deep Packet
   Inspection
-- Block Internet Access – this option will end the Internet connection until the end-user approves
-  the Endpoint Protector Proxy Configuration after the computer is rebooted.
+- Block Internet Access – this option ends the Internet connection until the end user approves
+  the Endpoint Protector Proxy Configuration after restarting the computer.
 
 ![Activate Intercept VPN Traffic](./systemconfiguration/interceptvpntraffic.webp)
 
 **Step 15 –** **Save** the changes.
 
-**Step 16 –** The following pop-up displays, informing the end-user that a System Extension
-is blocked and needs to be allowed.
+**Step 16 –** The following pop-up displays, informing the end user that macOS blocked a System
+Extension and that the user must allow it.
 
 ![System Extension is blocked and needs to be allowed](systemextensionblocked.webp)
 
@@ -290,12 +291,12 @@ and **allow** the Endpoint Protector Client Extension.
 
 ![proxypop-up](proxypop-up.webp)
 
-At this point, the macOS Endpoint Protector Client installation is completed.
+The macOS Endpoint Protector Client installation is now complete.
 
 :::note
 If EPPNotifier isn't visible or notifications don't display after the installation or
 upgrade of the Endpoint Protector Client on macOS, resolve this issue by restarting your
-machine. In situations where the Endpoint Protector Client is installed and then uninstalled on
+machine. If you install and then uninstall the Endpoint Protector Client on
 macOS, you may still see EPPNotifier in the Notification settings. To remove it from the list,
 right-click and select "Reset notifications."
 :::
@@ -311,7 +312,7 @@ The following are several examples of supported distributions:
 - Debian
 
 :::note
-Ubuntu-based distributions like Mint Linux generally work out of the box with the EPP Client installer built for the corresponding Ubuntu base version. For example, Mint Linux 22.3 might work with the EPP installer for Ubuntu 24.04 LTS. In some cases, the Linux administrator might need to manually adjust dependencies to match the base distribution.
+Ubuntu-based distributions like Mint Linux generally work with the EPP Client installer built for the corresponding Ubuntu base version without additional configuration. For example, Mint Linux 22.3 might work with the EPP installer for Ubuntu 24.04 LTS. In some cases, the Linux administrator might need to manually adjust dependencies to match the base distribution.
 :::
 
 ![Debian Based Distributions](debianbaseddistributions.webp)
@@ -329,7 +330,7 @@ The following are several examples of supported distributions:
 - AWS Linux 2
 
 :::note
-RedHat (RHEL)-based distributions like Rocky Linux, Oracle Linux, and CentOS generally work out of the box with the EPP Client installer built for the corresponding RHEL base version. For example, Oracle Linux 10.1 might work with the EPP installer for RHEL 10.1. In some cases, the Linux administrator might need to manually adjust dependencies to match the base distribution.
+RedHat (RHEL)-based distributions like Rocky Linux, Oracle Linux, and CentOS generally work with the EPP Client installer built for the corresponding RHEL base version without additional configuration. For example, Oracle Linux 10.1 might work with the EPP installer for RHEL 10.1. In some cases, the Linux administrator might need to manually adjust dependencies to match the base distribution.
 :::
 
 ![RedHat based distributions](redhatbaseddistributions.webp)
@@ -357,7 +358,7 @@ With the Windows Subsystem for Linux (WSL), you can run native Linux distributio
 
 ### WSL1
 
-The Endpoint Protector Client can't be installed directly as an application within WSL.
+You can't install the Endpoint Protector Client directly as an application within WSL.
 
 While direct installation isn't possible, you can still manage and control the usage of WSL
 applications through the Application Denylist feature in Endpoint Protector. With this feature, you can
@@ -389,7 +390,7 @@ WSL2 lets you start a lightweight virtual machine with a specific Linux distribu
 
 - Configure an Application Denylist, as with [WSL1](#wsl1), to block WSL2 usage entirely.
 - Deploy a dedicated Linux EPP Client inside the WSL2 Linux machine to gain EPP visibility into it.
-  The installed instance is treated as a separate machine in the EPP Server, which lets you apply
+  The EPP Server treats the installed instance as a separate machine, which lets you apply
   more granular policies.
 
 :::note
@@ -398,7 +399,7 @@ Netwrix has only tested Ubuntu 26.04 (ARM and x64) and RHEL 10 (x64) in its lab.
 
 ## EPP Client Integrity Checks
 
-This article explains key EPP Client behaviors related to integrity checking, policy synchronization, and service termination. It covers how the EPP Client validates itself at startup, how policy changes are communicated and downloaded, and how different types of client termination are classified and reported.
+This article explains key EPP Client behaviors related to integrity checking, policy synchronization, and service termination. It covers how the EPP Client validates itself at startup, how it communicates and downloads policy changes, and how it classifies and reports different types of client termination.
 
 ### Client Integrity Check Overview
 
@@ -455,7 +456,7 @@ If the EPP Client service didn't stop cleanly, the agent evaluates the state of 
 | Event Type | Condition & Meaning |
 |---|---|
 | **Unplanned Client Termination** | All files, registry keys, and drivers are intact. The service was stopped or killed unexpectedly without any signs of tampering or removal. |
-| **Forced Uninstall Attempt** | The service was stopped or killed, and one or more files, registry keys, or drivers were found in an unexpected state — indicating a partial or unauthorized removal attempt. |
-| **Uninstall Attempt** | A deliberate uninstall of the EPP Client was initiated — either directly on the endpoint (e.g. via Add/Remove Programs) or triggered remotely from the EPP Server using the **Uninstall Client** action. |
+| **Forced Uninstall Attempt** | The service was stopped or killed, and one or more files, registry keys, or drivers are in an unexpected state — indicating a partial or unauthorized removal attempt. |
+| **Uninstall Attempt** | Someone deliberately initiated an uninstall of the EPP Client — either directly on the endpoint (e.g. via Add/Remove Programs) or remotely from the EPP Server using the **Uninstall Client** action. |
 
 The EPP Client agent reports these three event types, which appear in the EPP Server event log for the relevant endpoint.
