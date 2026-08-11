@@ -175,8 +175,8 @@ Structure per file:
 
 - One row each for Vale and Dale.
 - One row for `Derek (N checks)` — a single roll-up covering every frontmatter sub-field (`title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`) and every other named area (`article-type: structure`, `article-type: qa-format`, `article-type: heading-labels`, `title: mechanical`, `title: semantic`, `product-names`, `keywords-quality`, `images: location`, `images: external-refs`, `images: alt-text`, `links`, `formatting: bold/backticks`, `formatting: lists`, `prose directness`). N is the total count of sub-fields + areas — 21 as of this writing; recount if the areas table changes. Status cell: `N/N scanned, <total findings> findings in <count> areas` (or `✓ Clean` if zero findings).
-- One row for the `kb-editing-conventions scan (rows 1–23)`.
-- One row for `Cross-section consistency (all patterns)`.
+- One row for the `kb-editing-conventions scan (rows 1–23 as of this writing; recount if the scan table changes)`.
+- One row for `Cross-section consistency (6 patterns as of this writing; recount if the cross-section table changes)`.
 
 No per-area or per-sub-field rows appear in the Overview table in default mode, under any circumstance — that detail lives only in the Derek findings table below. The Overview table is a fixed 5 rows regardless of file size; that fixed shape is the coverage receipt for the tool level, backed by the Coverage discipline enumeration for the check level.
 
@@ -248,7 +248,9 @@ Group all Derek findings — regardless of which area they came from — into on
 
 ## 4. Apply fixes
 
-Ask the TSE:
+**Skip this prompt if Step 3's report shows zero Required fixes across all files** (no findings, or the TSE already dismissed every finding as a false positive) — there is nothing to apply. Go directly to the All-clean short-circuit below instead of asking the question that follows; the clean path should not stop to ask about fixes that don't exist.
+
+Otherwise, ask the TSE:
 
 > Ready to apply fixes? Share any feedback or adjustments first, or say yes to proceed.
 
@@ -404,9 +406,9 @@ Proceed as a strict numbered sequence:
 4. If the TSE provides edits, incorporate them and show the revised draft for another approval round. Repeat until approved.
 5. Only after explicit approval, proceed with `gh pr create` or provide the final copy-paste content.
 
-**Option A — I do it:** push the branch, show the drafted PR title and description, wait for approval, then run `gh pr create --base dev` with the approved content.
+**Option A — I do it:** the branch is already pushed (Step 7 item 1, above). Show the drafted PR title and description, wait for approval, then run `gh pr create --base dev` with the approved content.
 
-**Option B — You do it:** provide the `git push` command, show the drafted PR title and description, wait for approval, then provide the final approved content formatted for copy/paste and a direct link to GitHub's "New Pull Request" page for the branch once pushed.
+**Option B — You do it:** the branch is already pushed (Step 7 item 1, above). Show the drafted PR title and description, wait for approval, then provide the final approved content formatted for copy/paste and a direct link to GitHub's "New Pull Request" page for the branch.
 
 ### PR description format
 
