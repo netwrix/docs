@@ -25,8 +25,8 @@ EPP agents consist of two parts: the EPP agent itself and the EasyLock client. T
 The Agent support policy includes the following:
 
 - Current Shipping Version Only: Netwrix supports only the latest available version of the EPP agent for each client OS. This ensures access to the newest features, performance improvements, and bug fixes.
-- Bug Fixes: Netwrix addresses critical bugs immediately and then re-ships the agent to the Netwrix portal, where it's available for all customers. There is no specific timeline when the EPP agent will ship.
-- Feature Updates: Netwrix generally introduces new features alongside EPP server releases (or patches to EPP servers). As such, the latest EPP client can accept those new directives coming from the fully-patched server.
+- Bug Fixes: Netwrix addresses critical bugs immediately and then re-ships the agent to the Netwrix portal, where it's available for all customers. The EPP agent has no fixed release timeline.
+- Feature Updates: Netwrix generally introduces new features alongside EPP server releases (or patches to EPP servers). The latest EPP client can accept those new directives from the fully-patched server.
 - Proactive Testing Encouraged: Netwrix advises customers to maintain endpoints on EPP agent versions released within the past year for optimal compatibility, bug fixes, and security fixes.
 
 Staying as close as possible to the latest release reduces the risk of encountering untested upgrade paths or outdated behaviors.
@@ -101,18 +101,18 @@ Not all customers can update immediately. Keep the following in mind:
 For planning purposes, here is the typical Netwrix cadence for shipping:
 
 - Regular Agent Updates: Netwrix releases new agent versions approximately every 4–6 weeks. These releases include bug fixes, performance improvements, and feature updates that don't require a server update.
-- Agent updates along with EPP server: If a new feature ships in EPP server which requires the EPP agent, Netwrix aims to ship another EPP agent very closely in conjunction with the EPP server.
+- Agent updates along with EPP server: If a new feature ships in EPP server which requires the EPP agent, Netwrix aims to ship the matching EPP agent at nearly the same time as the EPP server.
 
 Note: This could mean that Netwrix releases a bugfix for the agent on a Monday and, if EPP server ships with a new feature, replaces the agent in the Netwrix portal the same week. This likely won’t happen often, but it’s possible. In this case, you’re welcome to use the “bugfix only” release, or the newest EPP agent, which shipped with support for any new EPP server features.
 
 - Notification of Updates: Netwrix notifies customers of new versions via the Netwrix Community only
-- Hotfixes: Netwrix may address critical issues that affect a single customer in a particular unusual scenario through hotfix releases. These hotfix releases work the same as any other EPP agent release: Netwrix replaces the existing EPP agent version in the portal with a fix that helps this one customer and anyone else affected by the bug. In these cases, Netwrix makes the latest EPP agent available immediately in the Netwrix portal and may or may not pair it with a broad announcement if it doesn’t affect many customers and isn't a security concern.
+- Hotfixes: Through hotfix releases, Netwrix may address critical issues that affect a single customer in an unusual scenario. These hotfix releases work the same as any other EPP agent release: Netwrix replaces the existing EPP agent version in the portal with a fix that helps this one customer and anyone else affected by the bug. In these cases, Netwrix makes the latest EPP agent available immediately in the Netwrix portal and may or may not pair it with a broad announcement if it doesn’t affect many customers and isn't a security concern.
 
 ## Client OS Supportability Statement
 
 Netwrix develops and tests Netwrix Endpoint Protector (EPP) Agents against actively supported operating systems to ensure security, compatibility, and reliability. This means the agent support lifecycle aligns with the vendor‑published support timelines for each platform.
 
-Following the official operating system vendor policies makes it possible to:
+Following the official operating system vendor policies lets Netwrix:
 
 - Deliver stable, fully tested updates
 - Ensure compatibility with the latest OS features and security updates
@@ -128,7 +128,7 @@ The EPP Client supports both x86-64 and ARM64 processor architectures across all
 - **macOS** — x86-64 (Intel) and ARM64 (Apple Silicon)
 - **Linux** — x86-64 and ARM64 (RHEL 10.x and Ubuntu 26.04)
 
-This ensures consistent DLP coverage regardless of the underlying CPU architecture, including on Apple Silicon Macs, Windows on ARM devices, and ARM-based Linux servers.
+This ensures consistent Data Loss Prevention (DLP) coverage regardless of the underlying CPU architecture, including on Apple Silicon Macs, Windows on ARM devices, and ARM-based Linux servers.
 
 ### Windows Client and Server OS Support
 
@@ -145,7 +145,7 @@ When a Windows OS transitions from **Mainstream** to **Extended Support**, Netwr
 - Continuing agent operation, assuming compatibility
 - Avoiding development of new fixes or enhancements for those platforms
 
-However, **legacy operating systems may lack compatibility with modern security components**—such as updated encryption libraries or secure communications mechanisms—that current environments increasingly require. These limitations are outside Netwrix’s control and may impact agent reliability or feature availability.
+However, **legacy operating systems may lack compatibility with modern security components** that current environments increasingly require, such as updated encryption libraries or secure communications mechanisms. These limitations are outside Netwrix’s control and may impact agent reliability or feature availability.
 
 #### Windows 10 End of Life Note
 
@@ -175,7 +175,7 @@ More information:
 
 ### Linux Clients
 
-Netwrix delivers Data Loss Prevention (DLP) coverage across a wide set of Linux distributions, spanning officially certified, on-request, and community-compatible builds. The EPP Client for Linux is kernel neutral — it doesn't rely on kernel-level modules — which keeps it broadly compatible across Linux distributions and kernel versions without a rebuild for each one. See [Kernel Independence](/docs/endpointprotector/admin/agent.md#kernel-independence) in the Agent documentation for details.
+Netwrix delivers DLP coverage across a wide set of Linux distributions, spanning officially certified, on-request, and community-compatible builds. The EPP Client for Linux is kernel neutral: it doesn't rely on kernel-level modules, which keeps it broadly compatible across Linux distributions and kernel versions without a rebuild for each one. See [Kernel Independence](/docs/endpointprotector/admin/agent.md#kernel-independence) in the Agent documentation for details.
 
 Netwrix tests and certifies the EPP Client for Linux against:
 - Ubuntu LTS versions that are still within their official support lifecycle

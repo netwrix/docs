@@ -43,9 +43,9 @@ The Agent doesn't inject kernel-level drivers or extensions on Windows, macOS, o
 the stability and compatibility risks associated with kernel-mode components, such as system crashes
 from driver conflicts or extension issues after an OS update.
 
-On Linux specifically, this also means the Agent isn't dependent on Dynamic Kernel Module Support
-(DKMS) or a rebuild after each kernel update, removing the operational risk — common with
-kernel-module-based agents — of endpoint protection breaking after a routine kernel update.
+On Linux specifically, the Agent doesn't depend on Dynamic Kernel Module Support (DKMS) or require a
+rebuild after each kernel update. This removes the operational risk of endpoint protection breaking
+after a routine kernel update — a common problem with kernel-module-based agents.
 
 ### Cross-OS Feature Parity
 
@@ -71,7 +71,7 @@ This gives Netwrix consistent endpoint coverage as organizations adopt ARM-based
 
 ## Agent Installation
 
-To see which distributions are supported for EPP, check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
+To see which distributions EPP supports, check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
 
 For Windows and Mac, installing the Endpoint Protector Agent requires minimal input. The
 installation folder and server information come pre-configured, and you can download the Agent from
@@ -134,8 +134,8 @@ Where:
 
 - PROXYIP – IP of the proxy
 - PROXYPORT – Port of the proxy
-- AUTHUSR – Username (if authentication for proxy is needed)
-- AUTHPASS – Password (if authentication for proxy is needed)
+- AUTHUSR – Username (if the proxy requires authentication)
+- AUTHPASS – Password (if the proxy requires authentication)
 
 You can also use the following CLI commands to install Endpoint Protector Client in a specific working mode.
 
@@ -237,7 +237,7 @@ the macOS Endpoint Protector Agent.
 
 ![Installation on macOS with Deep Packet Inspection and VPN Traffic Intercept Active](./systemconfiguration/ClientSoftwarePage.webp)
 
-**Step 4 –** Open the **.pkg** file and follow the installation steps and give the requested
+**Step 4 –** Open the **.pkg** file, follow the installation steps, and grant the requested
 permissions.
 
 **Step 5 –** After the installation is complete, go to **System Preferences** > **Security &
@@ -430,12 +430,12 @@ When the daemon starts, it checks that all expected files are present and report
 
 | Term | Meaning |
 |---|---|
-| **Install files** | The full set of files expected to be present on the endpoint after a successful EPP Client installation. |
+| **Install files** | The full set of files that should be present on the endpoint after a successful EPP Client installation. |
 | **Installation file missing** | The startup check couldn't find one or more expected files. This condition triggers a Client Integrity Failure event. |
 
 ## Tamper mode
 
-Tamper mode provides increased self-protection for the EPP Client. When tamper mode is disabled, the EPP Client relies on standard self-protection mechanisms: watchdog, service auto-restart, and Client Integrity checks. When tamper mode is enabled, the EPP Client also blocks unauthorized termination and modification.
+Tamper mode provides increased self-protection for the EPP Client. When you disable tamper mode, the EPP Client relies on standard self-protection mechanisms: watchdog, service auto-restart, and Client Integrity checks. When you enable tamper mode, the EPP Client also blocks unauthorized termination and modification.
 
 With tamper mode enabled:
 
@@ -467,8 +467,8 @@ If the EPP Client service didn't stop cleanly, the agent evaluates the state of 
 
 | Event Type | Condition & Meaning |
 |---|---|
-| **Unplanned Client Termination** | All files, registry keys, and drivers are intact. The service was stopped or killed unexpectedly without any signs of tampering or removal. |
-| **Forced Uninstall Attempt** | The service was stopped or killed, and one or more files, registry keys, or drivers are in an unexpected state — indicating a partial or unauthorized removal attempt. |
+| **Unplanned Client Termination** | All files, registry keys, and drivers are intact. The service stopped or terminated unexpectedly, with no signs of tampering or removal. |
+| **Forced Uninstall Attempt** | The service stopped or terminated, and one or more files, registry keys, or drivers are in an unexpected state — indicating a partial or unauthorized removal attempt. |
 | **Uninstall Attempt** | Someone deliberately initiated an uninstall of the EPP Client — either directly on the endpoint (e.g. via Add/Remove Programs) or remotely from the EPP Server using the **Uninstall Client** action. |
 
 The EPP Client agent reports these three event types, which appear in the EPP Server event log for the relevant endpoint.
