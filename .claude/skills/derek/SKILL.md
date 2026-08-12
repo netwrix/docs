@@ -47,9 +47,9 @@ Read the named rulebook section before applying each area — do not hard-code r
 | Article structure (required headings, pluralization, wrong-shape check, Q&A format, Resolution Option Structure) | §15 Article Structure |
 | Title format (mechanical + semantic) | §12 Titles |
 | Callout/admonition format | §5 Callout severity |
-| Links | §8 Links — Derek doesn't run Vale, so the `WeakLinkText`/`BoilerplateCrossRef` bullets in §8 aren't Derek's job; apply only the link-resolution and link-form rules |
 | Bolding, inline code, path formatting | §6 Bolding and inline code |
-| Images | §16 Images |
+
+Links and images are `kb-pr-open`'s and `kb-pr-review`'s job, not Derek's — those checks require resolving link targets and image locations on disk across the repo, outside Derek's single-file review model. Derek's scope stays what the Overview states: frontmatter, article type/structure, title format, product names, and keyword/description quality.
 
 ## Product Names
 
@@ -87,7 +87,7 @@ If no issues are found, print the assessment line followed by "Derek found no is
 - Frontmatter field missing entirely: use line `1`
 - Frontmatter field present but invalid: use the line number of that field
 - Missing required heading: use line `1`; include the expected heading template in Message
-- Title format violation: use the line number of the H1 heading
+- Title format violation: use the line number of the H1 heading; if the body has no H1, use line `1` (the `title` frontmatter field) instead
 - Product name violation: use the line number of the offending text
 - Keywords or description quality issue: use the line number of the field in frontmatter
 
