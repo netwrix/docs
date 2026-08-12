@@ -142,6 +142,8 @@ npm run start
 
 Available product IDs are in `src/config/products.js`.
 
+Add `DOCS_PRODUCT_LATEST_ONLY=true` to also restrict the build to that product's latest version only (default `false` builds all versions).
+
 ## Using Claude Code
 
 If you have [Claude Code](https://claude.ai/code) installed, this repository includes skills and agents that can help with documentation work. These are entirely optional — you don't need Claude Code to contribute.

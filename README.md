@@ -172,7 +172,13 @@ export DOCS_PRODUCT="pingcastle"
 npm run start
 ```
 
-This works with any command (`start`, `start-chok`, `build`) and speeds up development when working on a single product. Available product IDs can be found in `src/config/products.js`.
+This works with any command (`start`, `start-chok`, `build`) and speeds up development when working on a single product — plugin generation, navbar, homepage, redirects, and KB copy all scope down to that product automatically. Available product IDs can be found in `src/config/products.js`.
+
+Add `DOCS_PRODUCT_LATEST_ONLY=true` to also restrict the build to that product's latest version only (default `false` builds all versions, same as a full build):
+
+```bash
+DOCS_PRODUCT=pingcastle DOCS_PRODUCT_LATEST_ONLY=true npm run build
+```
 
 ### Development Workflow
 

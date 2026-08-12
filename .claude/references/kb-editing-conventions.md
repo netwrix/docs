@@ -63,7 +63,7 @@ All three are `###` siblings under `## Instructions`, but `Troubleshooting` is a
 ## 5. Callout severity
 
 - **NOTE vs IMPORTANT is a judgment call, not interchangeable by default.** Supplementary/contextual info stays NOTE. Information that affects correctness or causes a real problem if skipped (e.g., a config-change timing caveat that could cause a false test result) should be IMPORTANT. Revisit per file rather than assuming the original author chose correctly.
-- **Blank line required before any NOTE/IMPORTANT/WARNING blockquote.**
+- **Blank line required before any NOTE/IMPORTANT blockquote.** These are the only two callout severities — see `.claude/skills/derek/SKILL.md` §7 for the full Docusaurus-admonition-to-blockquote mapping.
 
 ## 6. Bolding
 
@@ -119,4 +119,5 @@ Content-of-title rules (surface style — gerund form, title case — lives in t
     - `ConfigurationLoader FATAL Hub Location Details Have Not Been Specified` → `ConfigurationLoader Error - Hub Location Details Have Not Been Specified`
     - `TraceLogger ERROR System.Net.Sockets.SocketException Address already in use` → `TraceLogger Error - Address Already in Use`
     - `RemotePlatformDiscovery Could not get credentials from ...` → `Remote Platform Discovery Error - Could Not Get Credentials`
-  - This is separate from the retired `Error:` *prefix* convention. That rule was about not prepending `Error:` to every troubleshooting title. This rule is about the title itself being a log dump — a different anti-pattern. The pattern `<Component> Error - <phrase>` uses an inline `Error` word for disambiguation, not a leading prefix.
+  - This rule and the `Error:` *prefix* convention (required for Resolution (Error) titles generally — see `kb_style_guide.md` and `.claude/skills/derek/SKILL.md` §3) are distinct, and this one wins when both could apply: a title normalized to this `<Component> Error - <phrase>` pattern is **exempt** from the `Error:` prefix requirement. The inline `Error` word already disambiguates the title as an error article; prefixing `Error:` in front of a component name would be redundant, and none of the worked examples above use it.
+  - **This is one instance of a broader exemption, not the only one:** `kb_style_guide.md` exempts *any* Resolution (Error) title where the error message itself already contains the word "error" — not just titles normalized from a raw log dump. Titles like `Agents Have Become Unresponsive Error` or `Directory Name Is Invalid Error` are correct as written; do not flag them for missing `Error:`. Only flag a Resolution (Error) title for missing the prefix when it has none of: the `Error:` prefix, the word "error" anywhere in it, or this normalized log-dump form.

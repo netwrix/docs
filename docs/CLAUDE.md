@@ -25,7 +25,7 @@ Write for the person who knows their job but may be new to this specific product
 
 Edits to one version do not propagate to others. Update each version that needs the change explicitly.
 
-KB articles store images as PNG files in `0-images/` subdirectories alongside the article markdown. These are copied by the KB script — don't move or rename them.
+KB articles store images in `0-images/` subdirectories alongside the article markdown. PNG, WebP, JPG, and JPEG are all in active use and all valid — file format doesn't matter, only location does. These are copied by the KB script — don't move or rename them.
 
 ## Writing Standards
 
