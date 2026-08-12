@@ -183,7 +183,7 @@ Title findings split into two categories based on whether the change is mechanic
 
 - **gerund-for-How-To-Instructions:** "How to..." prefix → gerund form (e.g., "How to Export Event Logs" → "Exporting Event Logs"). Applies only to How-To Instructions form articles (`## Overview` + `## Instructions` structure). Does NOT apply to How-To Q&A articles — Q&A titles describe the topic, not the action, and the interrogative form lives in the `## Question` section.
 - **Title case correction** (e.g., "configure stopwords" → "Configuring Stopwords"). Applies to all article types.
-- **Raw log line / error dump titles** (rulebook §12): titles containing literal log-level tokens (FATAL, ERROR, WARN), stack noise, file paths, or truncation fragments (e.g., `ConfigurationLoader FATAL Hub Location Details Have Not Been Specified in HubDetails.xml at ...`) → normalize to `<Component> Error - <core diagnostic phrase>`, keeping only the searchable message. Examples: `ConfigurationLoader Error - Hub Location Details Have Not Been Specified`; `TraceLogger Error - Address Already in Use`; `Remote Platform Discovery Error - Could Not Get Credentials`. Separate from the retired `Error:` prefix convention — the pattern uses an inline `Error` word for disambiguation, not a leading prefix.
+- **Raw log line / error dump titles** (rulebook §12): titles containing literal log-level tokens (FATAL, ERROR, WARN), stack noise, file paths, or truncation fragments (e.g., `ConfigurationLoader FATAL Hub Location Details Have Not Been Specified in HubDetails.xml at ...`) → normalize to `<Component> Error - <core diagnostic phrase>`, keeping only the searchable message. Examples: `ConfigurationLoader Error - Hub Location Details Have Not Been Specified`; `TraceLogger Error - Address Already in Use`; `Remote Platform Discovery Error - Could Not Get Credentials`. This form **wins over and is exempt from** the `Error:` *prefix* convention required for Resolution (Error) titles generally (`Error: [Unique Error Code/Message]`, per `kb_style_guide.md` and `derek/SKILL.md` §3) — the inline `Error` word already disambiguates the title, so don't also prepend `Error:`. A Resolution (Error) title only needs the `Error:` prefix when it isn't already in this normalized log-dump form.
 - **H1 / `sidebar_label` consistency:** `sidebar_label` must not be truncated vs. `title`.
 
 These changes are low-ambiguity and preserve reader recognition — the article is still "the one about X," just with corrected surface form. Apply them per the normal fix loop.
@@ -203,7 +203,7 @@ These changes alter what the article appears to be *about* from the reader's per
 
 | # | Scan pattern | What to flag / fix |
 |---|--------------|--------------------|
-| 1 | `:::note`/`:::important`/`:::warning`/`:::tip` or `> **NOTE:**` / `> **IMPORTANT:**` / `> **WARNING:**` blockquote inside a numbered list item | The callout must be indented **4 spaces** to attach to the preceding step. Fewer than 4 spaces breaks the list at CommonMark render time — this is a build-breaker, not a style nit. |
+| 1 | `:::note`/`:::tip`/`:::info`/`:::warning`/`:::danger`/`:::important` or `> **NOTE:**` / `> **IMPORTANT:**` blockquote inside a numbered list item | The callout must be indented **4 spaces** to attach to the preceding step. Fewer than 4 spaces breaks the list at CommonMark render time — this is a build-breaker, not a style nit. |
 | 2 | `## Overview` that opens with rationale/context rather than an explicit goal sentence, OR restates the title verbatim, OR reads as a bare symptom/condition | Rewrite so the first sentence states the goal: `This article describes how to <goal>` or equivalent (`explains...`, `shows how to...`). Rationale/context is fine as follow-on, but must not come first. |
 | 3 | Literal string `<!-- link removed -->` in the article body | Search `docs/kb/**/*.md` and `docs/<product>/<version>/**/*.md` for a plausible target before shipping. If a real target exists, restore the cross-link; otherwise leave the comment and note it as unresolved. |
 | 4 | Same UI element or app name bolded in some places and unbolded in others within the same file | Normalize to consistent bolding across all occurrences in that article. |
@@ -225,7 +225,7 @@ These changes alter what the article appears to be *about* from the reader's per
 | 20 | A list that appears with no lead-in sentence, reading disjointed from surrounding prose | Add a short intro sentence ending in a colon. Route to `kb-writer` when the intro needs content judgment; apply here when the missing context is obvious from the surrounding prose. Rulebook §4. |
 | 21 | A paragraph with 3+ inline cross-reference clauses ("see X, see Y, see Z") stacked in one sentence | Collapse into a single NOTE block with the links listed cleanly (compact enumeration or short bulleted list under the NOTE). Rulebook §8. |
 | 22 | A positional reference ("above"/"below"/"the section on X") that points to a named section in the same file | Replace with `[Section Name](#section-slug)` rather than rewording the positional term away. This is the concrete execution of Dale's `positional-references` suggestion. Rulebook §4. |
-<!-- Row 23 removed — the title-change link-text sweep is post-fix, not part of the pre-fix scan. It now lives under Step 10 (Apply fixes with reviewer approval). See "Post-fix sweeps" there. -->
+| 23 | Either (a) `:::note` / `:::tip` / `:::info` / `:::warning` / `:::danger` / `:::important` Docusaurus admonition syntax anywhere in the article body, **or** (b) a `> **<SEVERITY>:**` blockquote whose severity is not `NOTE` or `IMPORTANT` (e.g. `> **TIP:**`, `> **WARNING:**`, `> **CAUTION:**`, `> **DANGER:**`, `> **INFO:**`) — a callout can already be in blockquote form and still have the wrong severity label | KB articles use the blockquote callout format — only two severities exist, `NOTE` and `IMPORTANT` — not Docusaurus `:::` admonitions, and not any other blockquote severity label, per `.claude/skills/derek/SKILL.md` §7 (Admonition Format). Map `:::note`/`> **TIP:**`/`> **INFO:**`/etc. → `> **NOTE:**` and `:::warning`/`> **DANGER:**`/`> **CAUTION:**`/etc. → `> **IMPORTANT:**`. If the callout sits inside a numbered list item, apply row 1's 4-space indentation rule to the converted/relabeled blockquote. |
 
 **Cross-section consistency scan.** Run these checks in addition to the row-based table. These compare two sections of the same article against each other — section-local scans miss them. Rulebook §11.
 
@@ -272,7 +272,7 @@ Per-file structure:
 
 - One row each for Vale and Dale.
 - One row for `Derek (N checks)` — a single roll-up covering every frontmatter sub-field (`title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`) and every other named area (`article-type: structure`, `article-type: qa-format`, `article-type: heading-labels`, `title: mechanical`, `title: semantic`, `product-names`, `keywords-quality`, `images: location`, `images: external-refs`, `images: alt-text`, `links`, `formatting: bold/backticks`, `formatting: lists`, `prose directness`). N is the total count of sub-fields + areas — 21 as of this writing; recount if the areas table changes. Status cell: `N/N scanned, <total findings> findings in <count> areas` (or `✓ Clean` if zero findings).
-- One row for the `kb-editing-conventions scan (rows 1–22)`.
+- One row for the `kb-editing-conventions scan (rows 1–23)`.
 - One row for `Cross-section consistency (all patterns)`.
 
 No per-area or per-sub-field rows appear in the Overview table in default mode, under any circumstance — that detail lives only in the Derek findings table below. The Overview table is a fixed 5 rows regardless of file size; that fixed shape is the coverage receipt for the tool level, backed by the Coverage discipline enumeration for the check level.
@@ -287,7 +287,7 @@ Example shape (default mode):
 | Vale | 2 findings |
 | Dale (N rules) | N/N scanned, 3 findings |
 | Derek (21 checks) | 21/21 scanned, 4 findings in 3 areas |
-| kb-editing-conventions scan (22 rows) | 22/22 scanned, 2 findings (rows §7, §8) |
+| kb-editing-conventions scan (23 rows) | 23/23 scanned, 2 findings (rows #7, #8) |
 | Cross-section consistency (6 patterns) | 6/6 scanned, 1 finding (product-name repetition) |
 ```
 
@@ -319,11 +319,11 @@ Example shape (`+ verbose`):
 | Derek — formatting: bold/backticks | 8/8 scanned, ✓ Clean |
 | Derek — formatting: lists | 8/8 scanned, ✓ Clean |
 | Derek — prose directness | ✓ Clean |
-| kb-editing-conventions scan (22 rows) | 22/22 scanned, 2 findings (rows §7, §8) |
+| kb-editing-conventions scan (23 rows) | 23/23 scanned, 2 findings (rows #7, #8) |
 | Cross-section consistency (6 patterns) | 6/6 scanned, 1 finding (product-name repetition) |
 ```
 
-**N/N scanned discipline.** The Dale row, the `Derek (N checks)` row, the kb-editing-conventions scan row, and the cross-section consistency row must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "22/22" without having walked all 22 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files. For Derek, N is the total across all sub-fields and areas from the enumeration (item 4), including the formatting sub-rows' own extraction-pass counts (item 5) — those individual N/N counts still get computed during the scratch pass every time; in default mode they fold into the single `Derek (N checks)` row's total, and reappear as their own rows only under `+ verbose`.
+**N/N scanned discipline.** The Dale row, the `Derek (N checks)` row, the kb-editing-conventions scan row, and the cross-section consistency row must include an `N/N scanned` count in the status cell. The count comes from the enumeration pass above — it's a self-verifying receipt (the model can't write "23/23" without having walked all 23 rows in the scratch pass). Replace `N` in the Dale row with the actual count of loaded `.yml` files. For Derek, N is the total across all sub-fields and areas from the enumeration (item 4), including the formatting sub-rows' own extraction-pass counts (item 5) — those individual N/N counts still get computed during the scratch pass every time; in default mode they fold into the single `Derek (N checks)` row's total, and reappear as their own rows only under `+ verbose`.
 
 **Count-consistency discipline (arithmetic check).** Whenever a status cell shows a total finding count *and* a parenthetical breakdown (e.g., `10/10 scanned, 5 findings (passive-voice ×2, undefined-acronyms ×3)`), the top-line total must equal the sum of the breakdown counts. `2 findings (passive-voice ×2, undefined-acronyms ×3)` is a bug — that's 5, not 2. Same rule applies to every row that shows a breakdown: Vale, Dale, Derek, the scan-table row, cross-section row. Additionally, the number of rows in each findings section table below must equal the count claimed by the corresponding Overview row. Do the arithmetic before writing the row; do not paper over a mismatch by picking one number and hoping the reader doesn't add.
 
@@ -361,7 +361,7 @@ _<N> KB file(s) reviewed. Ran Vale + Dale + Derek._
 | Vale | 2 findings |
 | Dale | 1 finding |
 | Derek (21 checks) | 21/21 scanned, 2 findings in 1 area |
-| kb-editing-conventions scan (22 rows) | 22/22 scanned, 0 findings |
+| kb-editing-conventions scan (23 rows) | 23/23 scanned, 0 findings |
 | Cross-section consistency (6 patterns) | 6/6 scanned, 0 findings |
 
 #### Vale
