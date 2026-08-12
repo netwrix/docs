@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix Strongpoint for Salesforce Learning Path
-sidebar_position: 486
+sidebar_position: 480
 tags: [training, strongpoint-for-salesforce]
 keywords: [training, course, strongpoint for salesforce]
 description: "Learn about Netwrix Strongpoint for Salesforce through introductory courses"

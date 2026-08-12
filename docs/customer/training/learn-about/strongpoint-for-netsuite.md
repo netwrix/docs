@@ -1,6 +1,6 @@
 ---
 title: Learn About Netwrix Strongpoint for NetSuite Learning Path
-sidebar_position: 485
+sidebar_position: 470
 tags: [training, strongpoint-for-netsuite]
 keywords: [training, course, strongpoint for netsuite]
 description: "Learn about Netwrix Strongpoint for NetSuite through introductory courses"
