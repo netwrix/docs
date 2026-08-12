@@ -179,7 +179,7 @@ For each file in `KB_FILES`:
 | **formatting: lists** | §3 List type + §10 Formatting (fenced code blocks for multi-line commands/output) |
 | **prose-directness** | §4 Sentence-level rules (impersonal-subject directness) |
 
-Do NOT flag contractions, heading case, passive voice, jargon, or undefined acronyms — those belong to Vale and Dale respectively. (Heading case here means the H1 case Vale's `NetwrixKB.HeadingCase` checks — the §12 exception for articles with no body H1 is not covered by Vale and still applies; check the frontmatter `title` value's case directly on those.)
+Do NOT flag contractions, heading case, passive voice, jargon, or undefined acronyms — those belong to Vale and Dale respectively. (`NetwrixKB.HeadingCase` covers all heading levels, not just the H1. The one gap is an article with no body H1 at all — Vale's heading-scoped rule never evaluates that case, so the §12 exception applies there: check the frontmatter `title` value's case directly.)
 
 **Naming note:** `links`, `images`, `formatting: lists`, and `prose-directness` appear as areas in this skill's own Derek findings table, but the `/derek` skill itself does not check any of them (it's scoped to frontmatter, article type/structure, title format, product names, callout format, and bolding/inline-code/path formatting — see `derek/SKILL.md`'s Review Areas table). Running `/derek` directly on a file does not cover those four areas; only `kb-pr-open` and `kb-pr-review` do.
 
