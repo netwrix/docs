@@ -70,7 +70,7 @@ If Vale is not installed or returns an error, note this in the report and contin
 
 **Dale** — apply the Dale rules in `.claude/skills/dale/rules/*.yml` semantically (passive voice, minimizing-difficulty words, idioms, wordiness, undefined acronyms, and the rest). Do not re-implement them from memory — read the rule files.
 
-**Derek** — read `.claude/references/kb-editing-conventions.md` from the repo root before every batch, because it evolves per batch. Read the full article content and perform a holistic KB writing quality review across these areas, reading the named rulebook section for each — do not hard-code rules that may drift:
+**Derek** — read `.claude/references/kb-editing-conventions.md` from the repo root before every batch, because it evolves per batch. Also read `kb_style_guide.md` from the repo root; the rulebook points to it for the Product Names table and the Screenshots alt-text guidance rather than duplicating them. Read the full article content and perform a holistic KB writing quality review across these areas, reading the named rulebook section for each — do not hard-code rules that may drift:
 
 | Area | Rulebook section |
 |------|-------------------|

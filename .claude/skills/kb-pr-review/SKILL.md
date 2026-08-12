@@ -153,7 +153,7 @@ Dale handles: passive voice, vague language, business jargon, idioms, undefined 
 
 ### Step 8 — Perform Derek KB quality review on each file
 
-Read `.claude/references/kb-editing-conventions.md` from the repo root in full before beginning — this is the canonical rulebook. Then, for each review area below, re-read the named rulebook section and apply its rules to the article. The rulebook is the source of truth — do not substitute your own rules.
+Read `.claude/references/kb-editing-conventions.md` from the repo root in full before beginning — this is the canonical rulebook. Also read `kb_style_guide.md` from the repo root; the rulebook points to it for the Product Names table and the Screenshots alt-text guidance rather than duplicating them. Then, for each review area below, re-read the named rulebook section and apply its rules to the article. The rulebook is the source of truth — do not substitute your own rules.
 
 For each file in `KB_FILES`:
 1. Read the full article content.
