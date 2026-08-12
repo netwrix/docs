@@ -220,6 +220,8 @@ Determine the article type from its structure first — this is authoritative an
 - Contains `## Overview` or `## Instructions` (or both) → **How-To (Instructions)**. Same partial-match tolerance.
 - Contains `## Question` or `## Answer` (or both) → **How-To (Q&A)**. If only one is present, §15 flags the other as missing — don't fall through to a different classification.
 
+**Known edge case (not worth reordering for):** checking Instructions before Q&A means a Q&A article that happens to carry an `## Overview` heading classifies as How-To (Instructions) instead, and gets told to add `## Instructions`. This is the mirror risk of the Resolution-first ordering above, but in the opposite direction. In the current corpus this hits exactly one file, `docs/kb/accessanalyzer-2601/kb-article-template.md` — a multi-template reference file containing all three article-type templates concatenated, not a real article — so it isn't worth reordering for. Documented here so it isn't mistaken for a new bug later.
+
 If none of these section structures are present, fall back to the title:
 
 - Title starts with `Error:` → **Resolution (Error)**

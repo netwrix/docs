@@ -181,6 +181,8 @@ For each file in `KB_FILES`:
 
 Do NOT flag contractions, heading case, passive voice, jargon, or undefined acronyms — those belong to Vale and Dale respectively.
 
+**Naming note:** `links` and `images` appear as areas in this skill's own Derek findings table, but the `/derek` skill itself does not check them (it's scoped to frontmatter, article type/structure, title format, product names, callout format, bolding/path formatting, and keyword/description quality — see `derek/SKILL.md`). Running `/derek` directly on a file does not cover links or images; only `kb-pr-open` and `kb-pr-review` do.
+
 **KB Editing Conventions Scan (Derek subsection).** In addition to the areas table above, run the checklist below on every file. These are mechanical scan patterns codified during batch reviews; they map to the canonical rulebook at `.claude/references/kb-editing-conventions.md`. Do not duplicate the rulebook's full text here — treat the checklist as the minimum sweep. If a batch surfaces a new pattern, amend the rulebook and add the corresponding scan row here in the next PR.
 
 | # | Scan pattern | What to flag / fix |

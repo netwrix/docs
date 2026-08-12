@@ -92,6 +92,8 @@ If Vale is not installed or returns an error, note this in the report and contin
 
 > **Multi-file coverage mandate:** For every file passed to the skill — including each individual file in a multi-file invocation — run the full Derek frontmatter sweep across all areas: `tags`, `products`, `keywords`, `sidebar_label`, `title`/title-format, and `knowledge_article_id`, plus `images` and `links`. Do not abbreviate or skip any area. If the same finding applies to multiple files (for example, all files have the same wrong `products` value), still list it under each file individually in the report — do not consolidate. A partial sweep on any single file is a coverage gap and causes downstream rework.
 
+**Naming note:** `links` and `images` appear as areas in this skill's own Derek findings table, but the `/derek` skill itself does not check them (it's scoped to frontmatter, article type/structure, title format, product names, callout format, bolding/path formatting, and keyword/description quality — see `derek/SKILL.md`). Running `/derek` directly on a file does not cover links or images; only `kb-pr-open` and `kb-pr-review` do.
+
 Do NOT flag contractions, heading case, passive voice, jargon, or undefined acronyms in this section — those belong to Vale and Dale respectively.
 
 > **IMPORTANT:** When applying fixes, follow `kb_style_guide.md`, not `docs/CLAUDE.md`. KB articles differ from the docs style guide on contractions (write out in full) and heading case (title case).

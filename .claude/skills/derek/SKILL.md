@@ -75,11 +75,13 @@ Then print the markdown table. Every issue must be a row in this table — no ex
 
 If no issues are found, print the assessment line followed by "Derek found no issues." Do not print an empty table.
 
-**Soft reminders** (rulebook §13's `knowledge_article_id` states — placeholder, empty, or missing entirely) print as a separate note after the table, not as a row, and do not count toward the issue total:
+**Soft reminders** print as separate notes after the table, not as rows, and do not count toward the issue total:
 
-- Empty string: `> **Note:** \`knowledge_article_id\` is blank. If this article originated from a Salesforce or Zendesk ticket, add the Knowledge Article ID here.`
-- Placeholder value: `> **Note:** \`knowledge_article_id\` looks like a placeholder. Populate it with the real ID if applicable, or leave as-is if no ID applies.`
-- Field missing entirely: `> **Note:** \`knowledge_article_id\` is not present. This is a valid state for a natively authored article — no action needed unless the article originated from an external ticket.`
+- Rulebook §13's `knowledge_article_id` states — placeholder, empty, or missing entirely:
+  - Empty string: `> **Note:** \`knowledge_article_id\` is blank. If this article originated from a Salesforce or Zendesk ticket, add the Knowledge Article ID here.`
+  - Placeholder value: `> **Note:** \`knowledge_article_id\` looks like a placeholder. Populate it with the real ID if applicable, or leave as-is if no ID applies.`
+  - Field missing entirely: `> **Note:** \`knowledge_article_id\` is not present. This is a valid state for a natively authored article — no action needed unless the article originated from an external ticket.`
+- Rulebook §12's semantic title reframes (product-name-in-title, article-type/title mismatch) — never a table row, never counted, regardless of how many apply: `> **Note:** Semantic title reframe — <describe the issue>. Suggested alternative(s): <title>, <title>. This is a judgment call — the current title is not wrong; decide whether to change it.`
 
 **Consolidating structure violations:** When multiple required headings are missing for the same article type, use a single `structure-article-type` row. List all missing headings in the Message column. If fixing the title would change the article type and resolve the structure issue automatically, note that in the Message.
 
