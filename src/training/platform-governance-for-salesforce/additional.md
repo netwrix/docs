@@ -6,7 +6,7 @@ The following course is available for self-enrollment through the Learning Libra
 
 :::note
 
-This product was formerly named Netwrix Strongpoint for NetSuite.
+This product was formerly named Netwrix Strongpoint for Salesforce.
 
 :::
 
