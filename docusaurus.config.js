@@ -7,7 +7,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions } from './src/config/products.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -35,14 +35,20 @@ PRODUCTS.forEach(product => {
 // generateDocusaurusPlugins() applies — otherwise redirects reference routes
 // from products that were never built in this run.
 const targetProduct = process.env.DOCS_PRODUCT;
-if (targetProduct && !PRODUCTS.some(product => product.id === targetProduct)) {
-  throw new Error(`DOCS_PRODUCT="${targetProduct}" does not match any product id in src/config/products.js`);
-}
-const redirectProducts = targetProduct
-  ? PRODUCTS.filter(product => product.id === targetProduct)
-  : PRODUCTS;
 
 const latestVersionMap = getLatestVersionUrlMap();
+
+// Match the product filtering generateDocusaurusPlugins() applies, so redirects
+// never target a product whose pages weren't built for this DOCS_PRODUCT run.
+const redirectProducts = getActiveProducts();
+
+// Passed to the client via customFields: React components are bundled by
+// rspack/webpack, which polyfill `process` with an empty env in that context,
+// so process.env.DOCS_PRODUCT isn't readable from component code directly.
+const activeProductIds = redirectProducts.map(product => product.id);
+const activeVersionsByProduct = Object.fromEntries(
+  redirectProducts.map(product => [product.id, getActiveVersions(product).map(v => v.version)])
+);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -112,6 +118,10 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
+  },
+  customFields: {
+    activeProductIds,
+    activeVersionsByProduct,
   },
   clientModules: ['./src/clientModules/scrollBehavior.js'],
   presets: [
