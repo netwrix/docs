@@ -49,7 +49,7 @@ Read the named rulebook section before applying each area — do not hard-code r
 | Callout/admonition format | §5 Callout severity |
 | Bolding, inline code, path formatting | §6 Bolding and inline code |
 
-Links and images are `kb-pr-open`'s and `kb-pr-review`'s job, not Derek's — those checks require resolving link targets and image locations on disk across the repo, outside Derek's single-file review model. Everything else is in scope: the six rows in the table above, plus Product Names, which lives in its own section below the table rather than as a seventh row. That totals the same seven areas the Overview line lists — not a row-by-row match (the Overview folds keyword/description quality into frontmatter and splits "article type and structure" differently than the table's separate §14/§15 rows), just the same overall scope.
+Links and images are `kb-pr-open`'s and `kb-pr-review`'s job, not Derek's — resolving a link target or an image's location means searching across `docs/kb/**` and `docs/<product>/<version>/**` for a matching file, an unbounded lookup with no fixed answer. That's different from the fixed-location lookups Derek does do — checking a `products` value against `src/config/products.js` (§13) or a UI name against the product's own docs (Product Names, below) — each of those is one lookup against one known source, not a search. Everything else is in scope: the six rows in the table above, plus Product Names, which lives in its own section below the table rather than as a seventh row. That totals the same seven areas the Overview line lists — not a row-by-row match (the Overview folds keyword/description quality into frontmatter and splits "article type and structure" differently than the table's separate §14/§15 rows), just the same overall scope.
 
 ## Product Names
 
@@ -82,6 +82,7 @@ If no issues are found, print the assessment line followed by "Derek found no is
   - Placeholder value: `> **Note:** \`knowledge_article_id\` looks like a placeholder. Populate it with the real ID if applicable, or leave as-is if no ID applies.`
   - Field missing entirely: `> **Note:** \`knowledge_article_id\` is not present. This is a valid state for a natively authored article — no action needed unless the article originated from an external ticket.`
 - Rulebook §12's semantic title reframes (product-name-in-title, article-type/title mismatch) — never a table row, never counted, regardless of how many apply: `> **Note:** Semantic title reframe — <describe the issue>. Suggested alternative(s): <title>, <title>. This is a judgment call — the current title is not wrong; decide whether to change it.`
+- Rulebook §13's low-priority keyword observation (a keyword absent from the body but a plausible customer search term) — not a Required fix, never a table row, never counted: `> **Note:** Keyword \`<term>\` doesn't appear in the article body but is a plausible search term. Low-priority — no action required.`
 
 **Consolidating structure violations:** When multiple required headings are missing for the same article type, use a single `structure-article-type` row. List all missing headings in the Message column. If fixing the title would change the article type and resolve the structure issue automatically, note that in the Message.
 
