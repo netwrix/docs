@@ -23,10 +23,10 @@ By implementing these controls, organizations can protect sensitive information 
 
 ## AI Interaction Visibility and Control in Netwrix Endpoint Protector: Data Loss Prevention for LLMs
 
-Endpoint Protector extends Data Loss Prevention to the most widely used AI technologies — including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X Grok, Claude, Meta AI, Perplexity, Cursor, Comet, Atlassian Rovo and TimelyGPT — ensuring secure and compliant use across your organization. Coverage includes the embedded Microsoft Copilot add-in in Windows 11, New Outlook, New Teams, and Edge. Endpoint Protector also provides visibility and control over ChatGPT, Claude, Claude Code, Claude Cowork, Comet, Cursor, and Copilot native clients.
+Endpoint Protector extends Data Loss Prevention to the most widely used AI technologies — including ChatGPT, Microsoft Copilot, Google Gemini, DeepSeek, X AI Grok, Claude, Meta AI, Perplexity, Cursor, Comet, Atlassian Rovo and TimelyGPT — ensuring secure and compliant use across your organization. Coverage includes the embedded Microsoft Copilot add-in in Windows 11, New Outlook, New Teams, and Edge. Endpoint Protector also provides visibility and control over ChatGPT, Claude including Claude Code and Claude Cowork, Comet, Cursor, and Copilot native clients.
 
 :::note
-Claude Code processes text extraction from attachments locally. This local processing isn't part of EPP inspection. EPP triggers detection only when Claude Code sends this data to Claude's servers.
+Claude app processes text extraction from attachments locally. This local processing isn't part of EPP inspection. EPP triggers detection only when Claude Code sends this data to Claude's servers.
 :::
 
 ## Configure Netwrix EPP to Monitor AI Prompt Transactions
