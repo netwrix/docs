@@ -33,7 +33,8 @@ When enabling Debug logging, deploying a fresh installation, or during upgrade p
 ## Lightweight, Cross-Platform Architecture
 
 The Endpoint Protector Agent doesn't require OS kernel-level integration. This reduces the risk of
-conflicts with other security software, such as antivirus, EDR, and HIPS solutions, and keeps the
+conflicts with other security software, such as antivirus, endpoint detection and response (EDR), and
+host-based intrusion prevention system (HIPS) solutions, and keeps the
 Agent's footprint on the endpoint to a minimum.
 
 ### Kernel Independence
@@ -58,7 +59,53 @@ only differences between operating systems are in the specific applications that
 covers, since the native applications and file-handling behaviors on each OS are inherently
 platform-specific.
 
-## Agent install parameters
+### Processor Architecture Support
+
+The EPP Client supports both x86-64 and ARM64 processor architectures across Windows, macOS, and Linux:
+
+- **Windows** — x86-64 and ARM64 (Windows on ARM)
+- **macOS** — x86-64 (Intel) and ARM64 (Apple Silicon)
+- **Linux** — x86-64 and ARM64 (RHEL 10.x and Ubuntu 26.04)
+
+This gives Netwrix consistent endpoint coverage as organizations adopt ARM-based hardware, such as Apple Silicon Macs, Windows on ARM devices, and ARM-based Linux servers.
+
+## Agent Installation
+
+To see which distributions are supported for EPP, check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
+
+For Windows and Mac, installing the Endpoint Protector Agent requires minimal input. The
+installation folder and server information come pre-configured, and you can download the Agent from
+the Endpoint Protector Server.
+
+:::note
+For Linux installation instructions, read the readmeLinux.txt file available under the Read this before installing link.
+:::
+
+The main supported Linux distributions include:
+- Ubuntu
+- RedHat
+
+:::note
+For Ubuntu-based distributions outside the officially tested and certified list, such as Mint Linux, and RHEL-based distributions such as Rocky Linux, Oracle Linux, or CentOS, the EPP Client installer built for the corresponding base version generally works without additional configuration. In some cases, the Linux administrator might need to manually adjust dependencies to match the base distribution. For installation steps, see [Linux](/docs/endpointprotector/admin/agent.md#linux) install guide under Agent Install Parameters in the Agent documentation.
+:::
+
+Netwrix provides optional distributions on the product portal upon request, after the Netwrix Product Team validates them. The following are examples of on-demand distributions:
+- Debian
+- Fedora
+- Pardus OS
+- AWS Linux
+- OpenSUSE
+- SUSE
+- SLED Linux Enterprise Server
+
+Beyond this list, Netwrix can also build a Client for the latest version of other custom Linux distributions on request, as a **Feature Request (FR)** through Netwrix Support. Netwrix Product Management reviews and prioritizes these requests, which may involve a billable service. For details, see [Linux Clients](/docs/endpointprotector/supportability/client-supportability.md#linux-clients) in the Netwrix Endpoint Protector Agent Support Policy.
+
+![The Agent enforces the Rights and Settings received from the Endpoint Protector Server on the protected endpoints (Windows, Mac, and Linux)](setupagent.webp)
+
+![The Agent enforces the Rights and Settings received from the Endpoint Protector Server on the protected endpoints (Windows, Mac, and Linux)](setupagenttwo.webp)
+
+
+### Agent install parameters
 
 To improve the Endpoint Protector installation process, use the Endpoint Protector tool to run
 installation-related actions, identify your current Linux distribution, and view Endpoint
@@ -74,7 +121,7 @@ Use the following commands:
 **Optional CLI commands for installers**
 
 
-### Windows
+#### Windows
 You can also apply manual proxy settings using CLI commands:
 
 Example:
@@ -103,14 +150,14 @@ You can also use the following CLI commands to install Endpoint Protector Client
 Starting with the 2511 Clients release, the install parameters "IPV6MAPPING," "SUPPRESSRD," and "DISABLECAP" will persist during the EPP Client upgrade process.
 :::
 
-### macOS
+#### macOS
 :::note
 For macOS, contact the Netwrix Support team to obtain the latest version of the
 installer script, which lets you customize installation parameters.
 :::
 
 
-### Linux
+#### Linux
 
 For Linux, you can use CLI arguments only in the options.sh file to bypass proxy settings. To do so,
 follow these steps:
@@ -149,7 +196,7 @@ Additional CLI commands for Linux in specific mode:
 - #EPPCLIENT_SUPRESSRW - suppress FileRead/FileDelete events for NS and Removable devices
 - #EPPCLIENT_DISABLECAP - disabling loading of CAP drivers (CAP will not work)
 
-## Bypass Proxy Settings
+### Bypass Proxy Settings
 
 You can bypass proxy settings for all operating systems.
 
@@ -165,38 +212,6 @@ then provide the following information:
 - Select the Use authentication checkbox
 - Username – add proxy server username
 - Password – add proxy server password
-
-## Agent Installation
-
-To see which distributions are supported for EPP, check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
-
-For Windows and Mac, installing the Endpoint Protector Agent requires minimal input. The
-installation folder and server information come pre-configured, and you can download the Agent from
-the Endpoint Protector Server.
-
-:::note
-For Linux installation instructions, read the readmeLinux.txt file available under the Read
-this before installing link.
-:::
-
-
-The main supported Linux distributions include:
-
-- Ubuntu
-- RedHat
-
-Netwrix provides optional distributions on the product portal upon request, after the Netwrix Product Team validates them. The following are examples of on-demand distributions:
-- Debian
-- Fedora
-- Pardus OS
-- AWS Linux
-- OpenSUSE
-- SUSE
-- SLED Linux Enterprise Server
-
-![The Agent enforces the Rights and Settings received from the Endpoint Protector Server on the protected endpoints (Windows, Mac, and Linux)](setupagent.webp)
-
-![The Agent enforces the Rights and Settings received from the Endpoint Protector Server on the protected endpoints (Windows, Mac, and Linux)](setupagenttwo.webp)
 
 ### Increased Communication Security
 
@@ -322,9 +337,7 @@ While the installation process is similar, each distribution and version have th
 particularities.
 
 The following are several examples of supported distributions:
-
 - RedHat
-- CentOS
 - Fedora
 - AWS Linux 2
 

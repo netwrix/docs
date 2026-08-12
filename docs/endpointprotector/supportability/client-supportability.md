@@ -120,6 +120,16 @@ Following the official operating system vendor policies makes it possible to:
 
 The following outlines the current Netwrix OS support approach for Windows, macOS, and Linux environments, including version requirements, exceptions, and links to vendor documentation for up‑to‑date lifecycle information.
 
+### Processor Architecture Support
+
+The EPP Client supports both x86-64 and ARM64 processor architectures across all three supported platforms:
+
+- **Windows** — x86-64 and ARM64 (Windows on ARM)
+- **macOS** — x86-64 (Intel) and ARM64 (Apple Silicon)
+- **Linux** — x86-64 and ARM64 (RHEL 10.x and Ubuntu 26.04)
+
+This ensures consistent DLP coverage regardless of the underlying CPU architecture, including on Apple Silicon Macs, Windows on ARM devices, and ARM-based Linux servers.
+
 ### Windows Client and Server OS Support
 
 Netwrix Endpoint Protector (EPP) Agent supports all **Microsoft Windows client and server operating systems** that remain within Microsoft’s **Mainstream Support** or **Extended Security Update (ESU)** phase. This includes:
@@ -165,18 +175,17 @@ More information:
 
 ### Linux Clients
 
-Netwrix tests and certifies the EPP Client for Linux against:
+Netwrix delivers Data Loss Prevention (DLP) coverage across a wide set of Linux distributions, spanning officially certified, on-request, and community-compatible builds. The EPP Client for Linux is kernel neutral — it doesn't rely on kernel-level modules — which keeps it broadly compatible across Linux distributions and kernel versions without a rebuild for each one. See [Kernel Independence](/docs/endpointprotector/admin/agent.md#kernel-independence) in the Agent documentation for details.
 
+Netwrix tests and certifies the EPP Client for Linux against:
 - Ubuntu LTS versions that are still within their official support lifecycle
 - Red Hat Enterprise Linux versions that are still within their official support lifecycle (highest minor release for each version only.)
 
 References:
-
 - [Ubuntu Release Cycle](https://ubuntu.com/about/release-cycle)
 - [Red Hat Updates and Support Policy](https://access.redhat.com/support/policy/updates/errata)
 
-Netwrix doesn't build an EPP Client for the following Linux distributions by default, but you can request one, or a custom Linux distribution, as a **Feature Request (FR)** through Netwrix Support:
-
+Netwrix doesn't build an EPP Client for the following Linux distributions by default:
 - Debian
 - Fedora
 - SUSE
@@ -184,6 +193,8 @@ Netwrix doesn't build an EPP Client for the following Linux distributions by def
 - SLED Linux Enterprise Server
 - Pardus OS
 - AWS Linux 2
+
+Netwrix builds a Client for the latest version of any of these, or for a custom Linux distribution, on request, as a **Feature Request (FR)** through Netwrix Support.
 
 Netwrix Product Management reviews and prioritizes these requests, which may involve a billable service. After approval, Netwrix builds the client using a **Quick Test** process in QA, and you're responsible for verifying that all functionality works as expected.
 
