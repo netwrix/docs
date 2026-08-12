@@ -263,6 +263,8 @@ When a required heading is missing, include the full expected heading template s
 
 ## 16. Images
 
-- **Location.** KB images must be stored in a `0-images/` folder at the **product level** (`docs/kb/<product>/0-images/`), not inside category subfolders. Articles in category subfolders reference them with `../0-images/filename.<ext>`. Flag any `0-images/` folder created inside a category subfolder rather than at the product level. PNG, WebP, JPG, and JPEG are all in active use and all valid — do not flag file format.
+**PNG, WebP, JPG, and JPEG are all in active use and all valid — do not flag file format under any of the three rows below.**
+
+- **Location.** KB images must be stored in a `0-images/` folder at the **product level** (`docs/kb/<product>/0-images/`), not inside category subfolders. Articles in category subfolders reference them with `../0-images/filename.<ext>`. Flag any `0-images/` folder created inside a category subfolder rather than at the product level.
 - **External references.** Flag any images linked from external sources (for example, GitHub CDN `https://github.com/user-attachments/assets/...`) — these must be downloaded and committed to the repo.
 - **Alt text.** Must be descriptive, not just the filename. Flag any image where the alt text is only the raw filename (e.g., `![index_files_location.png](path)`) — rewrite as a short description of what the image shows, per `kb_style_guide.md`'s Screenshots section.
