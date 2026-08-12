@@ -40,7 +40,7 @@ DOCS_PRODUCT=pingcastle npm run build
 DOCS_PRODUCT=pingcastle npm run start
 ```
 
-The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set automatically by npm scripts). Broken links, markdown links, and anchors all throw build errors (`onBrokenLinks: 'throw'`).
+The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set automatically by npm scripts). Markdown links and anchors always throw build errors. `onBrokenLinks` also throws, except it's relaxed to `'warn'` for `DOCS_PRODUCT` single-product builds, since those intentionally filter out other products' pages (cross-product links 404 on purpose).
 
 ## Architecture
 
@@ -48,7 +48,7 @@ The build requires 16GB heap (`NODE_OPTIONS=--max-old-space-size=16384`, set aut
 
 `src/config/products.js` is the single source of truth. It defines every product's ID, name, versions, categories, and paths. Docusaurus plugins, routes, navbar dropdowns, and sidebars are all auto-generated from this file. To add a product or version, edit this file — don't manually create plugin entries in `docusaurus.config.js`.
 
-Setting the `DOCS_PRODUCT` environment variable (matching a product's `id`) filters plugin generation down to that single product, speeding up local builds and dev server startup. See `generateDocusaurusPlugins()` in `src/config/products.js`.
+Setting the `DOCS_PRODUCT` environment variable (matching a product's `id`) scopes plugin generation, navbar, homepage, redirects, and KB copy down to that single product, speeding up local builds and dev server startup. Set `DOCS_PRODUCT_LATEST_ONLY=true` to also build only that product's latest version (default: all versions). See `getActiveProducts()`/`getActiveVersions()` in `src/config/products.js`.
 
 ### Versioning
 
