@@ -77,7 +77,7 @@ Version strings control which release the installer installs and what auto-upgra
 | `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
 | `1.*` | Auto-upgrades to any 1.x version |
 
-For most deployments, either omit this variable to stay on the latest release, or pin to a specific version (for example, `1.0.8`) to control when upgrades happen during your organization's patching cycle.
+For most deployments, either omit this variable to stay on the latest release or pin to a specific version, such as `1.0.8`.
 
 ## Environment Variables
 
