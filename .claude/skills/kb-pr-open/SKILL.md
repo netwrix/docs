@@ -190,7 +190,7 @@ Example shape (default mode):
 | Vale | 2 findings |
 | Dale (N rules) | N/N scanned, 3 findings |
 | Derek (21 checks) | 21/21 scanned, 4 findings in 3 areas |
-| kb-editing-conventions scan (23 rows) | 23/23 scanned, 2 findings (rows §7, §8) |
+| kb-editing-conventions scan (23 rows) | 23/23 scanned, 2 findings (rows #7, #8) |
 | Cross-section consistency (6 patterns) | 6/6 scanned, 1 finding (product-name repetition) |
 ```
 
@@ -222,7 +222,7 @@ Example shape (`+ verbose`):
 | Derek — formatting: bold/backticks | 8/8 scanned, ✓ Clean |
 | Derek — formatting: lists | 8/8 scanned, ✓ Clean |
 | Derek — prose directness | ✓ Clean |
-| kb-editing-conventions scan (23 rows) | 23/23 scanned, 2 findings (rows §7, §8) |
+| kb-editing-conventions scan (23 rows) | 23/23 scanned, 2 findings (rows #7, #8) |
 | Cross-section consistency (6 patterns) | 6/6 scanned, 1 finding (product-name repetition) |
 ```
 
@@ -262,7 +262,7 @@ Incorporate feedback, then apply fixes. Re-run the relevant check after fixing u
 
 Some checks only make sense *after* fixes have landed. Run these once the fix loop has closed on any relevant file:
 
-- **Title-change → link-text sweep (rulebook §8).** If a title fix was applied to any file, run a repo-wide search for internal markdown links whose visible text uses the *old* title and update the link text to match the new title. URL resolution alone is not sufficient — visible link text must describe the current target. Concrete: `grep -rE '\[<old title>\]\((pathname://)?/docs/|\[<old title>\]\(\.{1,2}/' docs/` — this covers all three internal link forms (`/docs/...`, `pathname:///docs/...`, and relative `.md` links like `../other-article.md`); matching only the bare `/docs/` form would silently skip the other two, both of which are in active use (adjust for slashes/special chars). Apply the link-text updates as part of the same commit as the title fix.
+- **Title-change → link-text sweep (rulebook §8).** If a title fix was applied to any file, run a repo-wide search for internal markdown links whose visible text uses the *old* title and update the link text to match the new title. URL resolution alone is not sufficient — visible link text must describe the current target. Concrete: `grep -rE '\[<old title>\]\((pathname://)?/docs/|\[<old title>\]\(\.{1,2}/' docs/` — this covers all three internal link forms (`/docs/...`, `pathname:///docs/...`, and relative `.md` links like `../other-article.md`). Before interpolating the old title into this pattern, escape ERE metacharacters in it — titles routinely contain `.`, `+`, `(`, `)`, and `:`, and an unescaped `.` or `+` will silently mismatch rather than error (`\.` for a literal period, `\+` for a literal plus, `\(`/`\)` for literal parens). Apply the link-text updates as part of the same commit as the title fix.
 
 **All-clean short-circuit:** Before proceeding to Step 5, check the branch's actual state against `dev`, not just whether this skill run applied any fixes. Refresh the remote-tracking ref first — a local `dev` branch may not exist, or may be stale:
 
@@ -314,7 +314,7 @@ Title findings split into two categories based on whether the change is mechanic
 
 - **gerund-for-How-To-Instructions:** "How to..." prefix → gerund form (e.g., "How to Export Event Logs" → "Exporting Event Logs"). Applies only to How-To Instructions form articles (`## Overview` + `## Instructions` structure). Does NOT apply to How-To Q&A articles — Q&A titles describe the topic, not the action, and the interrogative form lives in the `## Question` section.
 - **Title case correction** (e.g., "configure stopwords" → "Configuring Stopwords"). Applies to all article types.
-- **Raw log line / error dump titles** (rulebook §12): titles containing literal log-level tokens (FATAL, ERROR, WARN), stack noise, file paths, or truncation fragments (e.g., `ConfigurationLoader FATAL Hub Location Details Have Not Been Specified in HubDetails.xml at ...`) → normalize to `<Component> Error - <core diagnostic phrase>`, keeping only the searchable message. Examples: `ConfigurationLoader Error - Hub Location Details Have Not Been Specified`; `TraceLogger Error - Address Already in Use`; `Remote Platform Discovery Error - Could Not Get Credentials`. This is a distinct rule from the `Error:` *prefix* convention required for Resolution (Error) titles (`Error: [Unique Error Code/Message]`, per `kb_style_guide.md` and `derek/SKILL.md` §3) — the inline `Error - <phrase>` form here disambiguates a log-dump title, it isn't a leading `Error:` prefix, and neither form is retired.
+- **Raw log line / error dump titles** (rulebook §12): titles containing literal log-level tokens (FATAL, ERROR, WARN), stack noise, file paths, or truncation fragments (e.g., `ConfigurationLoader FATAL Hub Location Details Have Not Been Specified in HubDetails.xml at ...`) → normalize to `<Component> Error - <core diagnostic phrase>`, keeping only the searchable message. Examples: `ConfigurationLoader Error - Hub Location Details Have Not Been Specified`; `TraceLogger Error - Address Already in Use`; `Remote Platform Discovery Error - Could Not Get Credentials`. This form **wins over and is exempt from** the `Error:` *prefix* convention required for Resolution (Error) titles generally (`Error: [Unique Error Code/Message]`, per `kb_style_guide.md` and `derek/SKILL.md` §3) — the inline `Error` word already disambiguates the title, so don't also prepend `Error:`. A Resolution (Error) title only needs the `Error:` prefix when it isn't already in this normalized log-dump form.
 - **H1 / `sidebar_label` consistency:** `sidebar_label` must not be truncated vs. `title`.
 
 These changes are low-ambiguity and preserve reader recognition — the article is still "the one about X," just with corrected surface form. Apply them per the normal fix-loop.

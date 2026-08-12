@@ -41,7 +41,9 @@ Determine the article type from its structure first — this is authoritative an
 
 - Contains `## Question` and `## Answer` → **How-To (Q&A)**
 - Contains `## Overview` and `## Instructions` → **How-To (Instructions)**
-- Contains a Symptom heading (`## Symptom` or `## Symptoms`), a Cause heading (`## Cause` or `## Causes`), and a Resolution heading (`## Resolution` or `## Resolutions`) → **Resolution** — Error if the title starts with `Error:`, otherwise Symptom. Flag any plural spelling as a rename per §2 — the plural form still counts as a structural match here; it just also gets a §2 finding.
+- Contains a Symptom heading (`## Symptom` or `## Symptoms`), a Cause heading (`## Cause` or `## Causes`), and a Resolution heading (`## Resolution` or `## Resolutions`) → **Resolution**. Flag any plural spelling as a rename per §2 — the plural form still counts as a structural match here; it just also gets a §2 finding.
+  - **Error vs. Symptom is decided by content, not title** — this is what breaks the circularity of checking the title against a classification that was itself derived from the title. If the Symptom section names a specific, identifiable error code, exception, or literal error message (commonly introduced by phrasing like "you receive the following error:" and often shown in a code block) → **Resolution (Error)**. Otherwise → **Resolution (Symptom)**.
+  - Having classified by content, *then* check the title: a Resolution (Error) article's title must start with `Error:` (§3) — flag it as a Required fix if it doesn't, regardless of what the title currently says. This is the check that a title-based classifier can never make, because it would always find the classification and the check in agreement by construction.
 
 If none of these section structures are present, fall back to the title:
 
@@ -88,7 +90,7 @@ When a required heading is missing, include the full expected heading template i
 
 Check that the title matches the expected format for the article type:
 
-- **Resolution (Error):** starts with `Error:` followed by the unique error code or message
+- **Resolution (Error):** starts with `Error:` followed by the unique error code or message. **Exception:** a title already normalized from a raw log dump per the log-line/error-dump rule (`<Component> Error - <core diagnostic phrase>`, rulebook §12) is exempt from the `Error:` prefix — the inline `Error` word already disambiguates it, and re-prefixing would be redundant with the component name leading the title. Only flag the *absence* of `Error:` when the title is neither prefixed nor already in this normalized log-dump form.
 - **How-To (Instructions):** starts with a gerund — not "How to", no question mark
 - **How-To (Q&A):** describes the topic, not the action — a "How to..." or question-form title is expected and correct here (the interrogative form belongs in `## Question`, not the title); do not flag it as missing a gerund
 - **Resolution (Symptom):** `[Feature or Component] [Symptom] [Optional: Context]` — descriptive, not vague (e.g., "AD not working" is too vague)
