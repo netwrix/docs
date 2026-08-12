@@ -6,18 +6,19 @@ keywords: [training, course, certification, partners, professional services, pla
 description: "Become a certified Professional Services Engineer for Netwrix Platform Governance for Salesforce "
 ---
 
-import { NPGSValue, NPGSIntro, NPGSAdditional } from '@site/src/training/platform-governance-for-salesforce';
-import { Company, NPGS } from '@site/src/training/products';
+import { NSSValue } from '@site/src/training/strongpoint-for-salesforce';
+import { NPGSIntro, NPGSAdditional } from '@site/src/training/platform-governance-for-salesforce';
+import { Company, NSS, NPGS } from '@site/src/training/products';
 
 
-Estimated length: 2.25 hours
+Estimated length: 2 hours 1 minute
 
-This learning path grants <Company /> certification as a Professional Services Engineer for this product, formerly Netwrix Strongpoint for Salesforce. It contains the following courses:
+This learning path grants <Company /> certification as a Professional Services Engineer for this product, formerly <NSS />. It contains the following courses:
 
-* 1460 <NPGS /> – Valuable Features
+* 1460 <NSS /> – Valuable Features
 * 3460 Introduction to <NPGS />
 
-<NPGSValue />
+<NSSValue />
 
 <NPGSIntro />
 
