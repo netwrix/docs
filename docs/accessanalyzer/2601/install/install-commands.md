@@ -192,7 +192,7 @@ If an installation fails and you need more detail to diagnose the problem, run w
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --log-level debug
 ```
 
-The installer writes the log to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. Terminal progress output isn't affected — only the log file verbosity changes.
+The installer writes the log to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. This option changes the log file verbosity only; terminal progress output stays the same.
 
 END HIDDEN -->
 ---
