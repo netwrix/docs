@@ -179,9 +179,9 @@ For each file in `KB_FILES`:
 | **formatting: lists** | §3 List type + §10 Formatting (fenced code blocks for multi-line commands/output) |
 | **prose-directness** | §4 Sentence-level rules (impersonal-subject directness) |
 
-Do NOT flag contractions, heading case, passive voice, jargon, or undefined acronyms — those belong to Vale and Dale respectively.
+Do NOT flag contractions, heading case, passive voice, jargon, or undefined acronyms — those belong to Vale and Dale respectively. (Heading case here means the H1 case Vale's `NetwrixKB.HeadingCase` checks — the §12 exception for articles with no body H1 is not covered by Vale and still applies; check the frontmatter `title` value's case directly on those.)
 
-**Naming note:** `links` and `images` appear as areas in this skill's own Derek findings table, but the `/derek` skill itself does not check them (it's scoped to frontmatter, article type/structure, title format, product names, callout format, bolding/path formatting, and keyword/description quality — see `derek/SKILL.md`). Running `/derek` directly on a file does not cover links or images; only `kb-pr-open` and `kb-pr-review` do.
+**Naming note:** `links`, `images`, `formatting: lists`, and `prose-directness` appear as areas in this skill's own Derek findings table, but the `/derek` skill itself does not check any of them (it's scoped to frontmatter, article type/structure, title format, product names, callout format, and bolding/inline-code/path formatting — see `derek/SKILL.md`'s Review Areas table). Running `/derek` directly on a file does not cover those four areas; only `kb-pr-open` and `kb-pr-review` do.
 
 **KB Editing Conventions Scan (Derek subsection).** In addition to the areas table above, run the checklist below on every file. These are mechanical scan patterns codified during batch reviews; they map to the canonical rulebook at `.claude/references/kb-editing-conventions.md`. Do not duplicate the rulebook's full text here — treat the checklist as the minimum sweep. If a batch surfaces a new pattern, amend the rulebook and add the corresponding scan row here in the next PR.
 
