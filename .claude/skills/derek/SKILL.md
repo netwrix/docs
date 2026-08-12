@@ -49,7 +49,7 @@ Read the named rulebook section before applying each area — do not hard-code r
 | Callout/admonition format | §5 Callout severity |
 | Bolding, inline code, path formatting | §6 Bolding and inline code |
 
-Links and images are `kb-pr-open`'s and `kb-pr-review`'s job, not Derek's — those checks require resolving link targets and image locations on disk across the repo, outside Derek's single-file review model. Everything else in the table above — including callouts (§5) and bolding/inline code/paths (§6) — is in scope; the Overview line states the same six-area scope.
+Links and images are `kb-pr-open`'s and `kb-pr-review`'s job, not Derek's — those checks require resolving link targets and image locations on disk across the repo, outside Derek's single-file review model. Everything else is in scope: the six rows in the table above, plus Product Names, which lives in its own section below the table rather than as a seventh row. That's the same seven-area scope the Overview line states.
 
 ## Product Names
 

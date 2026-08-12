@@ -106,7 +106,7 @@ Run this scan on every file in addition to the Derek areas table above. Each ite
 |---|--------------|--------------------|
 | 1 | `:::note`/`:::tip`/`:::info`/`:::warning`/`:::caution`/`:::danger`/`:::important` or `> **NOTE:**` / `> **IMPORTANT:**` blockquote inside a numbered list item | 4-space indent to attach to the preceding step — build-breaker, not a style nit. Rulebook §5. |
 | 2 | `## Overview` that opens with rationale/context rather than an explicit goal sentence, OR restates the title verbatim, OR reads as a bare symptom/condition | Rewrite goal-first. Rulebook §7. |
-| 3 | Literal string `<!-- link removed -->` in the article body | Search for a plausible real target before shipping; restore the cross-link if one exists. Rulebook §8. |
+| 3 | Literal string `<!-- link removed -->` in the article body | Search for a plausible real target before shipping; restore the cross-link if one exists, otherwise leave the comment and note it as unresolved. Rulebook §8. |
 | 4 | Same UI element or app name bolded in some places and unbolded in others within the same file | Normalize bolding across the article. Rulebook §6. |
 | 5 | Trailing periods inside markdown table cells | Strip them — Vale and Dale skip table content. Rulebook §10. |
 | 6 | Numbered step ending on a bare `Click **X**.` with no observable result | Add a closing result sentence, or combine with the next click. Rulebook §4. |

@@ -169,7 +169,7 @@ For each file in `KB_FILES`:
 | **article-type: heading-labels** | §15 Article Structure (pluralization) |
 | **title: mechanical** | §12 Titles (mechanical style corrections) |
 | **title: semantic** | §12 Titles (semantic reframes). Do NOT flag `> **NOTE:**` blockquote callouts — this is correct KB format, not a Docusaurus `:::note` admonition. |
-| **product-names** | `kb_style_guide.md` Product Names table, cross-checked against `src/config/products.js` (authoritative if the two disagree) — plus §13 Frontmatter for the product ID carve-outs (`onesecure`/`general`/`recoveryad`). |
+| **product-names** | `kb_style_guide.md` Product Names table. Flag incorrect abbreviations (NDC, NPS, NTA, etc.) and wrong `products` field values (for example, hyphens vs. underscores) per rulebook §13. |
 | **keywords-quality** | §13 Frontmatter (`keywords` row) |
 | **images: location** | §16 Images |
 | **images: external-refs** | §16 Images |
@@ -187,7 +187,7 @@ Do NOT flag contractions, heading case, passive voice, jargon, or undefined acro
 |---|--------------|--------------------|
 | 1 | `:::note`/`:::tip`/`:::info`/`:::warning`/`:::caution`/`:::danger`/`:::important` or `> **NOTE:**` / `> **IMPORTANT:**` blockquote inside a numbered list item | 4-space indent to attach to the preceding step — build-breaker, not a style nit. Rulebook §5. |
 | 2 | `## Overview` that opens with rationale/context rather than an explicit goal sentence, OR restates the title verbatim, OR reads as a bare symptom/condition | Rewrite goal-first. Rulebook §7. |
-| 3 | Literal string `<!-- link removed -->` in the article body | Search for a plausible real target before shipping; restore the cross-link if one exists. Rulebook §8. |
+| 3 | Literal string `<!-- link removed -->` in the article body | Search for a plausible real target before shipping; restore the cross-link if one exists, otherwise leave the comment and note it as unresolved. Rulebook §8. |
 | 4 | Same UI element or app name bolded in some places and unbolded in others within the same file | Normalize bolding across the article. Rulebook §6. |
 | 5 | Trailing periods inside markdown table cells | Strip them — Vale and Dale skip table content. Rulebook §10. |
 | 6 | Numbered step ending on a bare `Click **X**.` with no observable result | Add a closing result sentence, or combine with the next click. Rulebook §4. |
