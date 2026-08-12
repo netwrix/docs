@@ -41,7 +41,7 @@ Determine the article type from its structure first — this is authoritative an
 
 - Contains `## Question` and `## Answer` → **How-To (Q&A)**
 - Contains `## Overview` and `## Instructions` → **How-To (Instructions)**
-- Contains `## Symptom` / `## Cause` / `## Resolution` → **Resolution** — Error if the title starts with `Error:`, otherwise Symptom
+- Contains a Symptom heading (`## Symptom` or `## Symptoms`), a Cause heading (`## Cause` or `## Causes`), and a Resolution heading (`## Resolution` or `## Resolutions`) → **Resolution** — Error if the title starts with `Error:`, otherwise Symptom. Flag any plural spelling as a rename per §2 — the plural form still counts as a structural match here; it just also gets a §2 finding.
 
 If none of these section structures are present, fall back to the title:
 
