@@ -111,7 +111,7 @@ When the `## Resolution` section contains multiple options labeled as inline tex
 
 ## 7. Admonition Format
 
-KB articles use blockquote callouts, not Docusaurus admonition syntax. Flag any `:::note`, `:::tip`, `:::warning`, or `:::danger` blocks and tell the writer to convert them:
+KB articles use blockquote callouts, not Docusaurus admonition syntax. Flag any `:::note`, `:::tip`, `:::info`, `:::warning`, `:::danger`, or `:::important` blocks and tell the writer to convert them:
 
 - `> **NOTE:**` — for supplementary information
 - `> **IMPORTANT:**` — for critical information that could cause issues if ignored

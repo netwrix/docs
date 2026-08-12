@@ -106,7 +106,7 @@ Run this scan on every file in addition to the Derek areas table above. Each ite
 
 | # | Scan pattern | What to flag / fix |
 |---|--------------|--------------------|
-| 1 | `:::note`/`:::important`/`:::warning`/`:::tip` or `> **NOTE:**` / `> **IMPORTANT:**` / `> **WARNING:**` blockquote inside a numbered list item | The callout must be indented **4 spaces** to attach to the preceding step. Fewer than 4 spaces breaks the list at CommonMark render time — this is a build-breaker, not a style nit. |
+| 1 | `:::note`/`:::tip`/`:::info`/`:::warning`/`:::danger`/`:::important` or `> **NOTE:**` / `> **IMPORTANT:**` / `> **WARNING:**` blockquote inside a numbered list item | The callout must be indented **4 spaces** to attach to the preceding step. Fewer than 4 spaces breaks the list at CommonMark render time — this is a build-breaker, not a style nit. |
 | 2 | `## Overview` that opens with rationale/context rather than an explicit goal sentence, OR restates the title verbatim, OR reads as a bare symptom/condition | Rewrite so the first sentence states the goal: `This article describes how to <goal>` or equivalent (`explains...`, `shows how to...`). Rationale/context is fine as follow-on, but must not come first. See rulebook §7. |
 | 3 | Literal string `<!-- link removed -->` in the article body | Search `docs/kb/**/*.md` and `docs/<product>/<version>/**/*.md` for a plausible target before shipping. If a real target exists, restore the cross-link; otherwise leave the comment and note it as unresolved. |
 | 4 | Same UI element or app name bolded in some places and unbolded in others within the same file | Normalize to consistent bolding across all occurrences in that article (see rulebook §6 for which nouns qualify). |
@@ -128,7 +128,7 @@ Run this scan on every file in addition to the Derek areas table above. Each ite
 | 20 | A list that appears with no lead-in sentence, reading disjointed from surrounding prose | Add a short intro sentence ending in a colon. Route to `kb-writer` when the intro needs content judgment; apply here when the missing context is obvious from the surrounding prose. Rulebook §4. |
 | 21 | A paragraph with 3+ inline cross-reference clauses ("see X, see Y, see Z") stacked in one sentence | Collapse into a single NOTE block with the links listed cleanly (compact enumeration or short bulleted list under the NOTE). Rulebook §8. |
 | 22 | A positional reference ("above"/"below"/"the section on X") that points to a named section in the same file | Replace with `[Section Name](#section-slug)` rather than rewording the positional term away. This is the concrete execution of Dale's `positional-references` suggestion. Rulebook §4. |
-| 23 | `:::note` / `:::important` / `:::warning` / `:::tip` Docusaurus admonition syntax used anywhere in the article body | KB articles use the blockquote callout format — `> **NOTE:**` / `> **IMPORTANT:**` / `> **WARNING:**` / `> **TIP:**` — not Docusaurus `:::` admonitions, per `.claude/skills/derek/SKILL.md` §7 (Admonition Format). Convert to blockquote form; if the callout sits inside a numbered list item, apply row 1's 4-space indentation rule to the converted blockquote. |
+| 23 | `:::note` / `:::tip` / `:::info` / `:::warning` / `:::danger` / `:::important` Docusaurus admonition syntax used anywhere in the article body | KB articles use the blockquote callout format — `> **NOTE:**` / `> **IMPORTANT:**` / `> **WARNING:**` / `> **TIP:**` — not Docusaurus `:::` admonitions, per `.claude/skills/derek/SKILL.md` §7 (Admonition Format). Convert to blockquote form; if the callout sits inside a numbered list item, apply row 1's 4-space indentation rule to the converted blockquote. |
 
 ### Cross-section consistency scan
 
@@ -248,13 +248,15 @@ Group all Derek findings — regardless of which area they came from — into on
 
 ## 4. Apply fixes
 
-**Skip this prompt if Step 3's report shows zero Required fixes across all files** (no findings, or the TSE already dismissed every finding as a false positive) — there is nothing to apply. Go directly to the All-clean short-circuit below instead of asking the question that follows; the clean path should not stop to ask about fixes that don't exist.
+**Skip this prompt only if Step 3's report has zero findings of any kind across all files** — no Required fixes *and* no soft reminders (semantic title reframes, `knowledge_article_id` state notes, low-priority keyword observations, etc.). "Zero Required fixes" alone is not the same set: a file can carry only soft reminders and still have something the TSE may want to act on. If there's anything in the report at all, ask the question below so the TSE gets a chance to engage with it — do not drop straight to the short-circuit just because nothing was auto-applicable.
+
+If the report is truly empty, go directly to the All-clean short-circuit below instead of asking the question that follows.
 
 Otherwise, ask the TSE:
 
 > Ready to apply fixes? Share any feedback or adjustments first, or say yes to proceed.
 
-Incorporate feedback, then apply fixes. Re-run the relevant check after fixing until clean.
+Incorporate feedback, then apply fixes. Re-run the relevant check after fixing until clean. Track whether the report had any findings at all (Required fixes or soft reminders) — the All-clean short-circuit's exit message below needs to know this, separately from the git-state check.
 
 ### Post-fix sweeps
 
@@ -274,9 +276,13 @@ No pathspec on the `status` or `log` commands (`fetch` doesn't take one) — the
 
 If any of these commands exits nonzero (for example, `git fetch` fails because of no network), the short-circuit does not apply — proceed to Step 5 rather than treating the failure as "clean."
 
-If **both** the status and log commands succeed and return empty — no uncommitted changes anywhere in the working tree and no commits ahead of `origin/dev` at all — exit the workflow with this message:
+If **both** the status and log commands succeed and return empty — no uncommitted changes anywhere in the working tree and no commits ahead of `origin/dev` at all — exit the workflow. The wording depends on whether Step 3's report actually had findings (tracked above):
 
-> "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev`. There's nothing to commit, push, or PR. The branch can be deleted with `git switch --detach origin/dev && git branch -d <branch-name>` (safe delete — refuses if there are unmerged commits; detaching onto the freshly fetched `origin/dev` avoids a false refusal from a stale or missing local `dev`). Note: this leaves you on a detached HEAD — check out or create a feature branch before starting the next article, or this skill's own Step 1 guard will stop you. Exiting the workflow."
+> **If the report had zero findings of any kind:** "All checks clean. No fixes were needed, and there are no commits on this branch ahead of `origin/dev`. There's nothing to commit, push, or PR. The branch can be deleted with `git switch --detach origin/dev && git branch -d <branch-name>` (safe delete — refuses if there are unmerged commits; detaching onto the freshly fetched `origin/dev` avoids a false refusal from a stale or missing local `dev`). Note: this leaves you on a detached HEAD — check out or create a feature branch before starting the next article, or this skill's own Step 1 guard will stop you. Exiting the workflow."
+>
+> **If the report had findings that were reviewed and not applied** (dismissed as false positives, or the TSE declined them): "Findings were reviewed and none were applied. There are no commits on this branch ahead of `origin/dev`, so there's nothing to commit, push, or PR from this run. The branch can be deleted with `git switch --detach origin/dev && git branch -d <branch-name>` (safe delete — refuses if there are unmerged commits; detaching onto the freshly fetched `origin/dev` avoids a false refusal from a stale or missing local `dev`). Note: this leaves you on a detached HEAD — check out or create a feature branch before starting the next article, or this skill's own Step 1 guard will stop you. Exiting the workflow."
+
+Never use the first variant when the report had findings — "no fixes were needed" is false in that case even if none were ultimately applied.
 
 Do NOT prompt for local testing. Do NOT propose a commit message. Do NOT enter Step 7.
 
@@ -378,7 +384,7 @@ PRs always target `dev`.
 Proceed as a strict numbered sequence:
 
 1. **Push the branch.**
-   - Option A (skill does it): confirm with the TSE before pushing ("Ready to push `<branch>` to origin?"), then run `git push` on approval. This is a git operation and follows the same explicit-approval rule as every other git action in this skill.
+   - Option A (skill does it): confirm with the TSE before pushing ("Ready to push `<branch>` to origin?"), then run `git push` (or `git push -u origin <current-branch>` if upstream is not yet set — check with `git rev-parse --abbrev-ref --symbolic-full-name @{u}` first, or just use `-u` unconditionally since it's a no-op when upstream already exists) on approval. This is a git operation and follows the same explicit-approval rule as every other git action in this skill.
    - Option B (TSE does it): provide the `git push` command and wait for TSE to confirm the push succeeded before continuing.
 2. **Run the pre-flight gh pr list command above.**
 3. **If the result is an empty array (`[]`)** → no existing PR → proceed to the **Create new PR** section below.
