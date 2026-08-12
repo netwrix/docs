@@ -42,7 +42,7 @@ Read the named rulebook section before applying each area — do not hard-code r
 
 | Area | Rulebook section |
 |---|---|
-| Frontmatter (all required fields, product ID carve-outs, `knowledge_article_id` policy) | §13 Frontmatter |
+| Frontmatter (all required fields including keyword/description quality, product ID carve-outs, `knowledge_article_id` policy) | §13 Frontmatter |
 | Article type identification | §14 Article Type Identification |
 | Article structure (required headings, pluralization, wrong-shape check, Q&A format, Resolution Option Structure) | §15 Article Structure |
 | Title format (mechanical + semantic) | §12 Titles |
