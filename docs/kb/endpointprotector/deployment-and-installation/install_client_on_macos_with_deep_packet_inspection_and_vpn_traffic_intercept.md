@@ -23,7 +23,7 @@ products:
 
 This article explains how to ensure all prerequisites are in place and how to install the Endpoint Protector (EPP) Client on macOS endpoints with Deep Packet Inspection (DPI) and VPN Traffic Intercept active.
 
-For the full reference, see [Installation on macOS with Deep Packet Inspection and VPN Traffic Intercept Active](/docs/endpointprotector/admin/agent#installation-on-macos-with-deep-packet-inspection-and-vpn-traﬃc-intercept-active) in the Agent documentation. For DPI and VPN configuration steps only (if the client is already installed), see [Enabling Deep Packet Inspection and Intercepting VPN Traffic on macOS Clients](/docs/kb/endpointprotector/content-aware-protection-and-dpi/enabling-deep-packet-inspection-and-intercepting-vpn-traffic-on-macos-clients).
+For the full reference, see [Installation on macOS with Deep Packet Inspection and VPN Traffic Intercept Active](/docs/endpointprotector/admin/agent#installation-on-macos-with-deep-packet-inspection-and-vpn-traffic-intercept-active) in the Agent documentation. For DPI and VPN configuration steps only (if the client is already installed), see [Enabling Deep Packet Inspection and Intercepting VPN Traffic on macOS Clients](/docs/kb/endpointprotector/content-aware-protection-and-dpi/enabling-deep-packet-inspection-and-intercepting-vpn-traffic-on-macos-clients).
 
 ## Instructions
 
