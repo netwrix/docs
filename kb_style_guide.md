@@ -28,7 +28,7 @@ How-to articles provide step-by-step guidance for accomplishing specific tasks.
 - Bad: `How to Modify SSRS Report Timeouts?` (starts with "How to", ends with question mark)
 - Bad: `Auditing a non-trusted domain` (sentence case)
 
-**Title format (Question and Answer format only):** describes the topic, not the action — the interrogative form belongs in the `## Question` section, not the title. A "How to..." or question-form title is expected here and is not a gerund violation.
+**Title format (Question and Answer format only):** not required to use gerund/action form, unlike Instructions-format titles. A topic-descriptive title, a "How to..." title, or a question-form title are all valid — none is a gerund violation. The interrogative form doesn't have to live in the title; it can instead appear in the `## Question` section itself.
 
 **Formats:**
 

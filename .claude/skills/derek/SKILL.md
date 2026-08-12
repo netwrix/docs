@@ -37,11 +37,11 @@ Derek focuses on what's left: frontmatter validity, article type and structure, 
 
 # Article Type Identification
 
-Determine the article type from its structure first — this is authoritative and doesn't depend on title phrasing, which Q&A articles are explicitly allowed to leave non-interrogative (see §3):
+Determine the article type from its structure first — this is authoritative and doesn't depend on title phrasing, which Q&A articles are explicitly allowed to leave non-interrogative (see §3). **Partial matches still count** — an article missing one of a type's required headings is that type with a missing heading, not a different type. Requiring *all* headings before classifying would send a Q&A article that's simply missing `## Answer` down the title-fallback path instead, misclassifying it and demanding an unrelated Symptom/Cause/Resolution structure it was never meant to have. Check in this order (first match wins):
 
-- Contains `## Question` and `## Answer` → **How-To (Q&A)**
-- Contains `## Overview` and `## Instructions` → **How-To (Instructions)**
-- Contains a Symptom heading (`## Symptom` or `## Symptoms`), a Cause heading (`## Cause` or `## Causes`), and a Resolution heading (`## Resolution` or `## Resolutions`) → **Resolution**. Flag any plural spelling as a rename per §2 — the plural form still counts as a structural match here; it just also gets a §2 finding.
+- Contains `## Question` or `## Answer` (or both) → **How-To (Q&A)**. If only one is present, §2 flags the other as missing — don't fall through to a different classification.
+- Contains `## Overview` or `## Instructions` (or both) → **How-To (Instructions)**. Same partial-match tolerance.
+- Contains a Symptom heading (`## Symptom` or `## Symptoms`), a Cause heading (`## Cause` or `## Causes`), or a Resolution heading (`## Resolution` or `## Resolutions`) — any one is enough → **Resolution**. §2 flags whichever of the three is missing. Flag any plural spelling as a rename per §2 — the plural form still counts as a structural match here; it just also gets a §2 finding.
   - **Error vs. Symptom is decided by content, not title** — this is what breaks the circularity of checking the title against a classification that was itself derived from the title. If the Symptom section names a specific, identifiable error code, exception, or literal error message (commonly introduced by phrasing like "you receive the following error:" and often shown in a code block) → **Resolution (Error)**. Otherwise → **Resolution (Symptom)**.
   - Having classified by content, *then* check the title against §3: flag a Required fix only when the title has none of — the `Error:` prefix, the word "error" anywhere in it (`kb_style_guide.md`'s own exemption), or the normalized `<Component> Error - <phrase>` log-dump form (rulebook §12). This is the check that a title-based classifier can never make, because it would always find the classification and the check in agreement by construction.
 
@@ -92,7 +92,7 @@ Check that the title matches the expected format for the article type:
 
 - **Resolution (Error):** starts with `Error:` followed by the unique error code or message. **Exceptions (per `kb_style_guide.md`):** (1) if the error message itself already contains the word "error" (e.g. `Agents Have Become Unresponsive Error`, `Directory Name Is Invalid Error`), don't add the `Error:` prefix — this is the broader, more common case; (2) a title already normalized from a raw log dump per the log-line/error-dump rule (`<Component> Error - <core diagnostic phrase>`, rulebook §12) is also exempt — the inline `Error` word already disambiguates it. Only flag the *absence* of `Error:` when the title has none of: the prefix, the word "error" anywhere in it, or this normalized log-dump form.
 - **How-To (Instructions):** starts with a gerund — not "How to", no question mark
-- **How-To (Q&A):** describes the topic, not the action — a "How to..." or question-form title is expected and correct here (the interrogative form belongs in `## Question`, not the title); do not flag it as missing a gerund
+- **How-To (Q&A):** not required to use gerund/action form. A topic-descriptive title, a "How to..." title, or a question-form title are all valid — do not flag any of them as missing a gerund. The interrogative form doesn't have to live in the title; it can instead appear in `## Question` itself.
 - **Resolution (Symptom):** `[Feature or Component] [Symptom] [Optional: Context]` — descriptive, not vague (e.g., "AD not working" is too vague)
 
 Also check: title must not contain a product name — product names belong in the `products` frontmatter field.
@@ -122,13 +122,13 @@ When the `## Resolution` section contains multiple options labeled as inline tex
 
 KB articles use blockquote callouts, not Docusaurus admonition syntax — and only two blockquote severities exist: `NOTE` and `IMPORTANT`. This applies regardless of whether the callout is currently Docusaurus syntax or already a blockquote with the wrong severity label — flag both:
 
-- Any `:::note`, `:::tip`, `:::info`, `:::warning`, `:::danger`, or `:::important` block (Docusaurus syntax, not yet a blockquote).
+- Any `:::note`, `:::tip`, `:::info`, `:::warning`, `:::caution`, `:::danger`, or `:::important` block (Docusaurus syntax, not yet a blockquote).
 - Any `> **<SEVERITY>:**` blockquote whose severity is not `NOTE` or `IMPORTANT` — for example `> **TIP:**`, `> **WARNING:**`, `> **CAUTION:**`, `> **DANGER:**`, `> **INFO:**`. It's already a blockquote; only the severity label is wrong.
 
 Tell the writer to convert/relabel to one of the two severities, per this mapping (covers both the `:::` and blockquote spellings of each severity):
 
 - `:::note` / `> **NOTE:**`, `:::tip` / `> **TIP:**`, `:::info` / `> **INFO:**` → `> **NOTE:**` — for supplementary information
-- `:::warning` / `> **WARNING:**`, `:::danger` / `> **DANGER:**` / `> **CAUTION:**`, `:::important` → `> **IMPORTANT:**` — for critical information that could cause issues if ignored
+- `:::warning` / `> **WARNING:**`, `:::caution` / `> **CAUTION:**`, `:::danger` / `> **DANGER:**`, `:::important` → `> **IMPORTANT:**` — for critical information that could cause issues if ignored
 
 ## 8. Keywords and Description Quality
 
