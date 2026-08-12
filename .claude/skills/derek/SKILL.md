@@ -49,7 +49,7 @@ Read the named rulebook section before applying each area — do not hard-code r
 | Callout/admonition format | §5 Callout severity |
 | Bolding, inline code, path formatting | §6 Bolding and inline code |
 
-Links and images are `kb-pr-open`'s and `kb-pr-review`'s job, not Derek's — those checks require resolving link targets and image locations on disk across the repo, outside Derek's single-file review model. Everything else is in scope: the six rows in the table above, plus Product Names, which lives in its own section below the table rather than as a seventh row. That's the same seven-area scope the Overview line states.
+Links and images are `kb-pr-open`'s and `kb-pr-review`'s job, not Derek's — those checks require resolving link targets and image locations on disk across the repo, outside Derek's single-file review model. Everything else is in scope: the six rows in the table above, plus Product Names, which lives in its own section below the table rather than as a seventh row. That totals the same seven areas the Overview line lists — not a row-by-row match (the Overview folds keyword/description quality into frontmatter and splits "article type and structure" differently than the table's separate §14/§15 rows), just the same overall scope.
 
 ## Product Names
 
@@ -95,4 +95,4 @@ If no issues are found, print the assessment line followed by "Derek found no is
 
 # Troubleshooting
 
-Never re-flag issues that Vale or Dale already catch. Never respond with anything beyond the assessment line and output table.
+Never re-flag issues that Vale or Dale already catch. Never respond with anything beyond the assessment line, the output table, and the soft-reminder notes defined in the Output section above.
