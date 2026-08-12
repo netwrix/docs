@@ -83,7 +83,8 @@ When a required heading is missing, include the full expected heading template i
 Check that the title matches the expected format for the article type:
 
 - **Resolution (Error):** starts with `Error:` followed by the unique error code or message
-- **How-To:** starts with a gerund — not "How to", no question mark
+- **How-To (Instructions):** starts with a gerund — not "How to", no question mark
+- **How-To (Q&A):** describes the topic, not the action — a "How to..." or question-form title is expected and correct here (the interrogative form belongs in `## Question`, not the title); do not flag it as missing a gerund
 - **Resolution (Symptom):** `[Feature or Component] [Symptom] [Optional: Context]` — descriptive, not vague (e.g., "AD not working" is too vague)
 
 Also check: title must not contain a product name — product names belong in the `products` frontmatter field.
@@ -111,10 +112,10 @@ When the `## Resolution` section contains multiple options labeled as inline tex
 
 ## 7. Admonition Format
 
-KB articles use blockquote callouts, not Docusaurus admonition syntax. Flag any `:::note`, `:::tip`, `:::info`, `:::warning`, `:::danger`, or `:::important` blocks and tell the writer to convert them:
+KB articles use blockquote callouts, not Docusaurus admonition syntax — and only two blockquote severities exist: `NOTE` and `IMPORTANT`. Flag any `:::note`, `:::tip`, `:::info`, `:::warning`, `:::danger`, or `:::important` block and tell the writer to convert it to one of the two, per this mapping:
 
-- `> **NOTE:**` — for supplementary information
-- `> **IMPORTANT:**` — for critical information that could cause issues if ignored
+- `:::note`, `:::tip`, `:::info` → `> **NOTE:**` — for supplementary information
+- `:::warning`, `:::danger`, `:::important` → `> **IMPORTANT:**` — for critical information that could cause issues if ignored
 
 ## 8. Keywords and Description Quality
 

@@ -21,12 +21,14 @@ KB articles follow one of two primary types.
 
 How-to articles provide step-by-step guidance for accomplishing specific tasks.
 
-**Title format:** `[Action Gerund] [Specific Task]` — start with a gerund, no "How to" prefix, no question mark.
+**Title format (Instructions format only):** `[Action Gerund] [Specific Task]` — start with a gerund, no "How to" prefix, no question mark.
 
 - Good: `Modifying SSRS Report Timeouts`
 - Good: `Auditing a Non-trusted Domain`
 - Bad: `How to Modify SSRS Report Timeouts?` (starts with "How to", ends with question mark)
 - Bad: `Auditing a non-trusted domain` (sentence case)
+
+**Title format (Question and Answer format only):** describes the topic, not the action — the interrogative form belongs in the `## Question` section, not the title. A "How to..." or question-form title is expected here and is not a gerund violation.
 
 **Formats:**
 

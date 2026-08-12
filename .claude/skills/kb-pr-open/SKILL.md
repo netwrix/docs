@@ -106,7 +106,7 @@ Run this scan on every file in addition to the Derek areas table above. Each ite
 
 | # | Scan pattern | What to flag / fix |
 |---|--------------|--------------------|
-| 1 | `:::note`/`:::tip`/`:::info`/`:::warning`/`:::danger`/`:::important` or `> **NOTE:**` / `> **IMPORTANT:**` / `> **WARNING:**` blockquote inside a numbered list item | The callout must be indented **4 spaces** to attach to the preceding step. Fewer than 4 spaces breaks the list at CommonMark render time — this is a build-breaker, not a style nit. |
+| 1 | `:::note`/`:::tip`/`:::info`/`:::warning`/`:::danger`/`:::important` or `> **NOTE:**` / `> **IMPORTANT:**` blockquote inside a numbered list item | The callout must be indented **4 spaces** to attach to the preceding step. Fewer than 4 spaces breaks the list at CommonMark render time — this is a build-breaker, not a style nit. |
 | 2 | `## Overview` that opens with rationale/context rather than an explicit goal sentence, OR restates the title verbatim, OR reads as a bare symptom/condition | Rewrite so the first sentence states the goal: `This article describes how to <goal>` or equivalent (`explains...`, `shows how to...`). Rationale/context is fine as follow-on, but must not come first. See rulebook §7. |
 | 3 | Literal string `<!-- link removed -->` in the article body | Search `docs/kb/**/*.md` and `docs/<product>/<version>/**/*.md` for a plausible target before shipping. If a real target exists, restore the cross-link; otherwise leave the comment and note it as unresolved. |
 | 4 | Same UI element or app name bolded in some places and unbolded in others within the same file | Normalize to consistent bolding across all occurrences in that article (see rulebook §6 for which nouns qualify). |
@@ -128,7 +128,7 @@ Run this scan on every file in addition to the Derek areas table above. Each ite
 | 20 | A list that appears with no lead-in sentence, reading disjointed from surrounding prose | Add a short intro sentence ending in a colon. Route to `kb-writer` when the intro needs content judgment; apply here when the missing context is obvious from the surrounding prose. Rulebook §4. |
 | 21 | A paragraph with 3+ inline cross-reference clauses ("see X, see Y, see Z") stacked in one sentence | Collapse into a single NOTE block with the links listed cleanly (compact enumeration or short bulleted list under the NOTE). Rulebook §8. |
 | 22 | A positional reference ("above"/"below"/"the section on X") that points to a named section in the same file | Replace with `[Section Name](#section-slug)` rather than rewording the positional term away. This is the concrete execution of Dale's `positional-references` suggestion. Rulebook §4. |
-| 23 | `:::note` / `:::tip` / `:::info` / `:::warning` / `:::danger` / `:::important` Docusaurus admonition syntax used anywhere in the article body | KB articles use the blockquote callout format — `> **NOTE:**` / `> **IMPORTANT:**` / `> **WARNING:**` / `> **TIP:**` — not Docusaurus `:::` admonitions, per `.claude/skills/derek/SKILL.md` §7 (Admonition Format). Convert to blockquote form; if the callout sits inside a numbered list item, apply row 1's 4-space indentation rule to the converted blockquote. |
+| 23 | `:::note` / `:::tip` / `:::info` / `:::warning` / `:::danger` / `:::important` Docusaurus admonition syntax used anywhere in the article body | KB articles use the blockquote callout format — only two severities exist, `> **NOTE:**` and `> **IMPORTANT:**` — not Docusaurus `:::` admonitions, per `.claude/skills/derek/SKILL.md` §7 (Admonition Format). Map `:::note`/`:::tip`/`:::info` → `NOTE` and `:::warning`/`:::danger`/`:::important` → `IMPORTANT`. If the callout sits inside a numbered list item, apply row 1's 4-space indentation rule to the converted blockquote. |
 
 ### Cross-section consistency scan
 
@@ -290,7 +290,7 @@ If either command returns output — uncommitted changes anywhere in the working
 
 ### knowledge_article_id rules (flag state, never force change)
 
-The `knowledge_article_id` field's state is **informational, not corrective**. The skill must surface the field's state but never propose adding it, removing it, or rewriting its value. All four states below are valid — the TSE decides what (if anything) to do.
+The `knowledge_article_id` field's *presence or absence* is informational, not corrective — the skill must never propose adding or removing the field. Its *format*, when present and non-empty, is corrective: it must start with `kA` followed by alphanumeric characters (per `derek/SKILL.md` §1). The four states below are valid, no-action-needed states; the fifth (malformed) is the one exception that gets a Required fix.
 
 | State | Finding | Action |
 |-------|---------|--------|
@@ -298,12 +298,13 @@ The `knowledge_article_id` field's state is **informational, not corrective**. T
 | Placeholder (contains `XXXX`, `TODO`, `TBD`, or obvious template markers) | Soft reminder | "Placeholder detected — populate with the real `knowledge_article_id` if applicable, or leave as-is if no ID applies." |
 | Empty string (`knowledge_article_id: ""`) | Soft reminder | "Field is empty — populate if applicable, or leave as-is if no ID applies." |
 | Field missing entirely | Soft reminder | "Field is not present. This is a valid state for a natively authored article — no action needed unless the article originated from an external ticket." |
+| Present, non-empty, and not a recognized placeholder, but does not start with `kA` followed by alphanumeric characters (e.g., `knowledge_article_id: "12345"`) | **Required fix** | "`knowledge_article_id` doesn't match the expected Salesforce/Zendesk ID format (`kA` + alphanumeric). Correct it to the real ID or clear it — this value can't be a valid ID as written." |
 
 **Never propose removing the field when it exists** — its presence preserves the provenance signal (this article expects an external ID).
 
 **Never propose adding the field when missing** — the article may be natively authored and may not need one.
 
-Reasoning: the field's state is informational. The skill surfaces; the TSE decides.
+Reasoning: whether the field exists at all is the TSE's call, and the skill only surfaces that. Whether an existing, non-empty value is a well-formed ID is not a judgment call — a value that can't be a real Salesforce/Zendesk ID gets flagged like any other format violation.
 
 ### Title-format rules — two categories
 
