@@ -171,6 +171,8 @@ Title findings split into two categories based on whether the change is mechanic
 
 These changes are low-ambiguity and preserve reader recognition — the article is still "the one about X," just with corrected surface form. Apply them per the normal fix loop.
 
+**Fix all three together, not just the one that was flagged.** Frontmatter `title`, the body H1, and `sidebar_label` must stay in sync (per §13's `title` and `sidebar_label` rows). Any mechanical fix above that changes one of them — including a Vale `NetwrixKB.HeadingCase` fix that rewrites only the H1 line — must update the other two in the same edit. Fixing the H1 and leaving the frontmatter `title` (or `sidebar_label`) stale creates a fresh §13 violation that nothing in a single fix pass re-checks.
+
 ### Semantic reframes — soft reminders / judgment calls (author/reviewer decides, never auto-apply)
 
 - **Product name in title** (e.g., "Antivirus Exclusions for Netwrix Data Classification" → drop "for Netwrix Data Classification"). If a product component name (client, agent, add-on) is essential to distinguishing the article from others about the same product, flag it as a judgment call rather than a required fix.
