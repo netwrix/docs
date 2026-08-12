@@ -170,7 +170,7 @@ then provide the following information:
 
 To see which distributions are supported for EPP, check the [supportability article](/docs/endpointprotector/supportability/client-supportability.md).
 
-For Windows and Mac, your input in installing the Endpoint Protector Agent is minimal. The
+For Windows and Mac, installing the Endpoint Protector Agent requires minimal input. The
 installation folder and server information come pre-configured, and you can download the Agent from
 the Endpoint Protector Server.
 
@@ -342,8 +342,8 @@ RedHat (RHEL)-based distributions like Rocky Linux, Oracle Linux, and CentOS gen
 
 #### Setting the Server IP
 
-For all RedHat-based distributions, you need to follow an additional step after executing these
-commands to set the Endpoint Protector Server IP.
+For all RedHat-based distributions, after you run these commands, complete one additional step to
+set the Endpoint Protector Server IP.
 
 Based on each distribution, follow the corresponding method:
 
@@ -413,7 +413,7 @@ If the check fails for any reason, the EPP Client reports a **Client Integrity F
 
 ### File Existence vs. Missing Installation File
 
-When the daemon starts, it checks for the presence of all expected files and reports any that are absent. Two related terms you may encounter:
+When the daemon starts, it checks that all expected files are present and reports any that are missing. Two related terms you may encounter:
 
 | Term | Meaning |
 |---|---|

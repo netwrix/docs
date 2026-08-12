@@ -8,11 +8,11 @@ sidebar_position: 60
 
 **Introduction**
 
-As artificial intelligence tools become increasingly integrated into everyday business processes, Netwrix Endpoint Protector (EPP), a leader in Data Loss Prevention (DLP) technology, has addressed the need for enhanced visibility and control. Starting with EPP Client release 2511, Netwrix introduced a set of features that extends Data Loss Prevention to Large Language Models (LLMs).
+As organizations increasingly integrate artificial intelligence tools into everyday business processes, Netwrix Endpoint Protector (EPP), a leader in Data Loss Prevention (DLP) technology, has addressed the need for enhanced visibility and control. Starting with EPP Client release 2511, Netwrix introduced a set of features that extends Data Loss Prevention to Large Language Models (LLMs).
 
 **Key Features**
 
-This new functionality enables businesses to maintain precise control over information exchanges with popular AI chat applications. By incorporating Data Loss Prevention for LLMs, EPP enhances security by:
+This new functionality enables businesses to maintain precise control over information exchanges with popular AI chat applications. EPP incorporates Data Loss Prevention for LLMs to enhance security by:
 
 -   Letting administrators manage who can interact with AI prompts through web applications.
 -   Offering tools to oversee sensitive content, whether users type it directly or attach it as a file.

@@ -22,7 +22,7 @@ EPP agents consist of two parts: the EPP agent itself and the EasyLock client. T
 
 ## Support Policy Overview
 
-Here is the Agent support policy highlights:
+The Agent support policy includes the following:
 
 - Current Shipping Version Only: Netwrix supports only the latest available version of the EPP agent for each client OS. This ensures access to the newest features, performance improvements, and bug fixes.
 - Bug Fixes: Netwrix addresses critical bugs immediately and then re-ships the agent to the Netwrix portal, where it's available for all customers. There is no specific timeline when the EPP agent will ship.
@@ -31,7 +31,7 @@ Here is the Agent support policy highlights:
 
 Staying as close as possible to the latest release reduces the risk of encountering untested upgrade paths or outdated behaviors.
 
-But again: Netwrix supports only the latest EPP Agent (including the EasyLock client), and applies all fixes (bugs, security updates, and so on) to the latest agent before re-shipping it to the Netwrix portal.
+Netwrix supports only the latest EPP Agent (including the EasyLock client), and applies all fixes (bugs, security updates, and so on) to the latest agent before re-shipping it to the Netwrix portal.
 
 ## How to Stay Supported (Fully)
 
@@ -40,7 +40,7 @@ To maintain full support and avoid disruptions, follow these recommendations:
 - Regular Updates: Keep both the EPP server and agent versions current. Staying within one version of the latest EPP server release ensures continued access to new features and fixes.
 - EPP Cumulative updates: When a new patch for EPP server version is available, test the update in your environment promptly to ensure compatibility and performance.
 - Issue Reproduction: To ensure the most accurate troubleshooting, Netwrix Support will ask you to reproduce issues using the latest agent (and server, if applicable). This ensures that testing runs against the supported configuration and that Netwrix can deliver a fix more quickly. If you can't update your production environment immediately, validate the issue in a test environment using current versions.
-- Here is a decision tree to help you understand how Netwrix can help you fastest:
+- The following decision tree shows how Netwrix can help you fastest:
 
 ![EPP Support Case Decision Tree](EPP_Support_Case_Decision_Tree.png)
 
@@ -56,9 +56,9 @@ To make troubleshooting easier without disrupting your production environment, m
 
 If needed, Netwrix can usually provide complimentary licenses for this type of lab environment.
 
-As long as you’re able to replicate a concern with a supported server (with latest patch) and latest client (in production or a test environment), Netwrix will then endeavor to fix the concern.
+As long as you can replicate a concern with a supported server (with latest patch) and latest client (in production or a test environment), Netwrix will then work to fix it.
 
-By replicating an issue in this “latest environment” — whether in production or in your lab — the Netwrix support team can work more quickly and effectively to help resolve it.
+When you replicate an issue in this “latest environment” — whether in production or in your lab — the Netwrix support team can work more quickly and effectively to help resolve it.
 
 ## Testing and Rolling Out EPP Agent Updates
 
@@ -83,7 +83,7 @@ The following diagram shows the ring model for agent deployment.
 
 You may define your own rings using **EPP Smartgroups**, **MDM**, **SCCM**, or any other deployment method that supports targeted rollouts. The exact percentages and ring boundaries are flexible—adapt them based on your organization's risk tolerance, endpoint diversity, and operational goals.
 
-For more detail on the “ring” model and how it can be adapted to Endpoint Protector rollouts, refer to this Netwrix resource: [Using Rings to Test and Update the Endpoint Policy Manager Client-Side Extension and/or Cloud Client (And How to Stay Supported)](https://helpcenter.netwrix.com/bundle/PolicyPak/page/Content/PolicyPak/Install/Rings.htm)
+For more detail on the “ring” model and how to adapt it to Endpoint Protector rollouts, refer to this Netwrix resource: [Using Rings to Test and Update the Endpoint Policy Manager Client-Side Extension and/or Cloud Client (And How to Stay Supported)](https://helpcenter.netwrix.com/bundle/PolicyPak/page/Content/PolicyPak/Install/Rings.htm)
 
 **Note**: While this guide references Netwrix Endpoint Policy Manager, the same ring-based principles apply to Netwrix Endpoint Protector agent deployments.
 
@@ -93,7 +93,7 @@ Not all customers can update immediately. Keep the following in mind:
 
 - The latest EPP server always has the newest features and directives that it can deliver to the agent. Therefore the latest agent is always the best choice.
 - Reproduction of Issues: If you encounter a bug or problem, the Netwrix support team will require you to replicate the issue on the latest agent version. Netwrix Support needs logs from this latest agent version to proceed with troubleshooting.
-- Regular Updates Recommended: While you can continue to use older agent versions, Netwrix highly recommends staying (at least) on versions released within the past six months. This ensures you benefit from the latest fixes and features. But again, only the very latest EPP agent is within Full Support.
+- Regular Updates Recommended: While you can continue to use older agent versions, Netwrix highly recommends staying (at least) on versions released within the past six months. This ensures you benefit from the latest fixes and features. Only the latest EPP agent is within Full Support.
 - Testing on Clean Machines: To facilitate accurate troubleshooting, maintain a 'clean' testing machine with minimal software installed. Use this machine for pre-rollout testing and issue validation.
 
 ## Lifecycle of Updates
@@ -103,10 +103,10 @@ For planning purposes, here is the typical Netwrix cadence for shipping:
 - Regular Agent Updates: Netwrix releases new agent versions approximately every 4–6 weeks. These releases include bug fixes, performance improvements, and feature updates that don't require a server update.
 - Agent updates along with EPP server: If a new feature ships in EPP server which requires the EPP agent, Netwrix aims to ship another EPP agent very closely in conjunction with the EPP server.
 
-Note: This could mean that Netwrix releases a bugfix for the agent on a Monday and, if EPP server ships with a new feature, replaces the agent in the Netwrix portal the same week. This likely won’t happen often, but it’s possible. In this case, you’re welcome to use the “bugfix only” release, or the newest EPP agent which shipped with the ability to take advantage of any new EPP server features.
+Note: This could mean that Netwrix releases a bugfix for the agent on a Monday and, if EPP server ships with a new feature, replaces the agent in the Netwrix portal the same week. This likely won’t happen often, but it’s possible. In this case, you’re welcome to use the “bugfix only” release, or the newest EPP agent, which shipped with support for any new EPP server features.
 
 - Notification of Updates: Netwrix notifies customers of new versions via the Netwrix Community only
-- Hotfixes: Netwrix may address critical issues that affect a single customer in a particular unusual scenario through hotfix releases. These hotfix releases are really no different than any other EPP agent release. It just means Netwrix replaces the existing EPP agent version in the portal with a fix that helps this one customer and anyone else affected by the bug. In these cases, Netwrix makes the latest EPP agent available immediately in the Netwrix portal and may or may not pair it with a broad announcement if it doesn’t affect many customers and isn't a security concern.
+- Hotfixes: Netwrix may address critical issues that affect a single customer in a particular unusual scenario through hotfix releases. These hotfix releases work the same as any other EPP agent release: Netwrix replaces the existing EPP agent version in the portal with a fix that helps this one customer and anyone else affected by the bug. In these cases, Netwrix makes the latest EPP agent available immediately in the Netwrix portal and may or may not pair it with a broad announcement if it doesn’t affect many customers and isn't a security concern.
 
 ## Client OS Supportability Statement
 
@@ -114,7 +114,7 @@ Netwrix develops and tests Netwrix Endpoint Protector (EPP) Agents against activ
 
 Following the official operating system vendor policies makes it possible to:
 
-- Deliver updates that are stable and fully tested
+- Deliver stable, fully tested updates
 - Ensure compatibility with the latest OS features and security updates
 - Avoid security and reliability risks associated with unsupported operating systems
 
@@ -135,7 +135,7 @@ When a Windows OS transitions from **Mainstream** to **Extended Support**, Netwr
 - Continuing agent operation, assuming compatibility
 - Avoiding development of new fixes or enhancements for those platforms
 
-However, **legacy operating systems may lack compatibility with modern security components**—such as updated encryption libraries or secure communications mechanisms—that current environments increasingly require. These limitations are outside the control of Netwrix and may impact agent reliability or feature availability.
+However, **legacy operating systems may lack compatibility with modern security components**—such as updated encryption libraries or secure communications mechanisms—that current environments increasingly require. These limitations are outside Netwrix’s control and may impact agent reliability or feature availability.
 
 #### Windows 10 End of Life Note
 
