@@ -256,8 +256,10 @@ Per-file structure:
 
 - One row each for Vale and Dale.
 - One row for `Derek (N checks)` — a single roll-up covering every frontmatter sub-field (`title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`) and every other named area (`article-type: structure`, `article-type: qa-format`, `article-type: heading-labels`, `title: mechanical`, `title: semantic`, `product-names`, `keywords-quality`, `images: location`, `images: external-refs`, `images: alt-text`, `links`, `formatting: bold/backticks`, `formatting: lists`, `prose directness`). N is the total count of sub-fields + areas — 21 as of this writing; recount if the areas table changes. Status cell: `N/N scanned, <total findings> findings in <count> areas` (or `✓ Clean` if zero findings).
-- One row for the `kb-editing-conventions scan (rows 1–23 as of this writing; recount if the scan table changes)`.
-- One row for `Cross-section consistency (6 patterns as of this writing; recount if the cross-section table changes)`.
+- One row for `kb-editing-conventions scan (23 rows)`.
+- One row for `Cross-section consistency (6 patterns)`.
+
+Row labels use the current counts (23 scan rows, 6 cross-section patterns) as of this writing — recount and update both the labels above and this note if either table's row count changes in a future batch. These are authoring notes for whoever edits this skill; they must not appear in the generated report itself.
 
 No per-area or per-sub-field rows appear in the Overview table in default mode, under any circumstance — that detail lives only in the Derek findings table below. The Overview table is a fixed 5 rows regardless of file size; that fixed shape is the coverage receipt for the tool level, backed by the Coverage discipline enumeration for the check level.
 
