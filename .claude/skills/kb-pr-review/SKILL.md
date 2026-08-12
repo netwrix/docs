@@ -168,7 +168,7 @@ For each file in `KB_FILES`:
 | **article-type: qa-format** | §15 Article Structure (Q&A question format) |
 | **article-type: heading-labels** | §15 Article Structure (pluralization) |
 | **title: mechanical** | §12 Titles (mechanical style corrections) |
-| **title: semantic** | §12 Titles (semantic reframes). Do NOT flag `> **NOTE:**` blockquote callouts — this is correct KB format, not a Docusaurus `:::note` admonition. |
+| **title: semantic** | §12 Titles (semantic reframes) |
 | **product-names** | `kb_style_guide.md` Product Names table. Flag incorrect abbreviations (NDC, NPS, NTA, etc.) and wrong `products` field values (for example, hyphens vs. underscores) per rulebook §13. |
 | **keywords-quality** | §13 Frontmatter (`keywords` row) |
 | **images: location** | §16 Images |
@@ -256,7 +256,7 @@ Per-file structure:
 
 - One row each for Vale and Dale.
 - One row for `Derek (N checks)` — a single roll-up covering every frontmatter sub-field (`title`, `description`, `sidebar_label`, `keywords`, `products`, `tags`, `knowledge_article_id`) and every other named area (`article-type: structure`, `article-type: qa-format`, `article-type: heading-labels`, `title: mechanical`, `title: semantic`, `product-names`, `keywords-quality`, `images: location`, `images: external-refs`, `images: alt-text`, `links`, `formatting: bold/backticks`, `formatting: lists`, `prose directness`). N is the total count of sub-fields + areas — 21 as of this writing; recount if the areas table changes. Status cell: `N/N scanned, <total findings> findings in <count> areas` (or `✓ Clean` if zero findings).
-- One row for the `kb-editing-conventions scan (rows 1–23)`.
+- One row for the `kb-editing-conventions scan (rows 1–23 as of this writing; recount if the scan table changes)`.
 - One row for `Cross-section consistency (6 patterns as of this writing; recount if the cross-section table changes)`.
 
 No per-area or per-sub-field rows appear in the Overview table in default mode, under any circumstance — that detail lives only in the Derek findings table below. The Overview table is a fixed 5 rows regardless of file size; that fixed shape is the coverage receipt for the tool level, backed by the Coverage discipline enumeration for the check level.
