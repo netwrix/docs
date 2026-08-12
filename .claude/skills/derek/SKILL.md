@@ -37,7 +37,13 @@ Derek focuses on what's left: frontmatter validity, article type and structure, 
 
 # Article Type Identification
 
-Determine the article type from the title:
+Determine the article type from its structure first — this is authoritative and doesn't depend on title phrasing, which Q&A articles are explicitly allowed to leave non-interrogative (see §3):
+
+- Contains `## Question` and `## Answer` → **How-To (Q&A)**
+- Contains `## Overview` and `## Instructions` → **How-To (Instructions)**
+- Contains `## Symptom` / `## Cause` / `## Resolution` → **Resolution** — Error if the title starts with `Error:`, otherwise Symptom
+
+If none of these section structures are present, fall back to the title:
 
 - Title starts with `Error:` → **Resolution (Error)**
 - Title starts with a gerund (verb ending in -ing, e.g., "Configuring...", "Modifying...") → **How-To (Instructions)**
@@ -112,10 +118,15 @@ When the `## Resolution` section contains multiple options labeled as inline tex
 
 ## 7. Admonition Format
 
-KB articles use blockquote callouts, not Docusaurus admonition syntax — and only two blockquote severities exist: `NOTE` and `IMPORTANT`. Flag any `:::note`, `:::tip`, `:::info`, `:::warning`, `:::danger`, or `:::important` block and tell the writer to convert it to one of the two, per this mapping:
+KB articles use blockquote callouts, not Docusaurus admonition syntax — and only two blockquote severities exist: `NOTE` and `IMPORTANT`. This applies regardless of whether the callout is currently Docusaurus syntax or already a blockquote with the wrong severity label — flag both:
 
-- `:::note`, `:::tip`, `:::info` → `> **NOTE:**` — for supplementary information
-- `:::warning`, `:::danger`, `:::important` → `> **IMPORTANT:**` — for critical information that could cause issues if ignored
+- Any `:::note`, `:::tip`, `:::info`, `:::warning`, `:::danger`, or `:::important` block (Docusaurus syntax, not yet a blockquote).
+- Any `> **<SEVERITY>:**` blockquote whose severity is not `NOTE` or `IMPORTANT` — for example `> **TIP:**`, `> **WARNING:**`, `> **CAUTION:**`, `> **DANGER:**`, `> **INFO:**`. It's already a blockquote; only the severity label is wrong.
+
+Tell the writer to convert/relabel to one of the two severities, per this mapping (covers both the `:::` and blockquote spellings of each severity):
+
+- `:::note` / `> **NOTE:**`, `:::tip` / `> **TIP:**`, `:::info` / `> **INFO:**` → `> **NOTE:**` — for supplementary information
+- `:::warning` / `> **WARNING:**`, `:::danger` / `> **DANGER:**` / `> **CAUTION:**`, `:::important` → `> **IMPORTANT:**` — for critical information that could cause issues if ignored
 
 ## 8. Keywords and Description Quality
 
