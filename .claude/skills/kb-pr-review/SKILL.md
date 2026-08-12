@@ -176,7 +176,7 @@ For each file in `KB_FILES`:
 | **images: alt-text** | §16 Images |
 | **links** | §8 Links |
 | **formatting: bold/backticks** | §6 Bolding and inline code |
-| **formatting: lists** | §3 List type |
+| **formatting: lists** | §3 List type + §10 Formatting (fenced code blocks for multi-line commands/output) |
 | **prose-directness** | §4 Sentence-level rules (impersonal-subject directness) |
 
 Do NOT flag contractions, heading case, passive voice, jargon, or undefined acronyms — those belong to Vale and Dale respectively.

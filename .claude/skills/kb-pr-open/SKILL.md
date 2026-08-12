@@ -87,7 +87,7 @@ If Vale is not installed or returns an error, note this in the report and contin
 | **images: alt-text** | §16 Images |
 | **links** | §8 Links |
 | **formatting: bold/backticks** | §6 Bolding and inline code |
-| **formatting: lists** | §3 List type |
+| **formatting: lists** | §3 List type + §10 Formatting (fenced code blocks for multi-line commands/output) |
 | **prose-directness** | §4 Sentence-level rules (impersonal-subject directness) |
 
 > **Multi-file coverage mandate:** For every file passed to the skill — including each individual file in a multi-file invocation — run the full Derek frontmatter sweep across all areas: `tags`, `products`, `keywords`, `sidebar_label`, `title`/title-format, and `knowledge_article_id`, plus `images` and `links`. Do not abbreviate or skip any area. If the same finding applies to multiple files (for example, all files have the same wrong `products` value), still list it under each file individually in the report — do not consolidate. A partial sweep on any single file is a coverage gap and causes downstream rework.

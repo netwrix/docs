@@ -2,7 +2,7 @@
 
 Comprehensive KB editing rulebook covering frontmatter, article type identification, article structure, structure/step condensation, list types, sentence-level rules, callouts, bolding, overview quality, links, placeholders, formatting, cross-section consistency, titles, and images.
 
-Apply during the `kb-pr-open` preemptive scan, the `kb-pr-review` review pass, and the `derek` review on every KB batch. This document is the canonical rulebook — `derek`, `kb-pr-open`, and `kb-pr-review` all read it rather than duplicating its content. Amend it via PR when a batch surfaces a new pattern.
+Apply during the `kb-pr-open` preemptive scan, the `kb-pr-review` review pass, and the `derek` review on every KB batch. This document is the canonical rulebook for these three skills — `derek`, `kb-pr-open`, and `kb-pr-review` all read it rather than duplicating its content, and it takes precedence over anything a skill might otherwise infer on its own. It is a derived, machine-oriented elaboration of `kb_style_guide.md` (the published, human-facing standard), not a replacement for it — where the two disagree, that is a bug in this rulebook, not a case for the rulebook to override the published standard. Amend it via PR when a batch surfaces a new pattern, and reconcile back to `kb_style_guide.md` in the same PR if the change affects a rule stated there.
 
 ## 1. Heading/step structure
 
@@ -120,6 +120,7 @@ All three are `###` siblings under `## Instructions`, but `Troubleshooting` is a
 - **Trailing image-removed comments** don't need their own anchoring sentence, but excess consecutive blank lines around them get trimmed to one.
 - **KB headings are Title Case** (verified against `kb_style_guide.md`, not assumed) — override of the docs-wide sentence-case rule.
 - **Trailing periods inside markdown table cells** get stripped. Vale and Dale skip table content, so these slip through unless caught here.
+- **Multi-line commands and command output use fenced code blocks**, not prose or plain indented text. A command spanning multiple lines, or output pasted from a terminal, gets a triple-backtick fenced block — flag any multi-line command or output that isn't fenced.
 
 ## 11. Cross-section consistency
 
@@ -142,14 +143,14 @@ Per `kb_style_guide.md`'s Article Types and Article Titles sections:
 - **How-To (Instructions):** `[Action Gerund] [Specific Task]` — starts with a gerund, no "How to" prefix, no question mark.
 - **How-To (Q&A):** not required to use gerund/action form. A topic-descriptive title, a "How to..." title, or a question-form title are all valid — none is a gerund violation. The interrogative form doesn't have to live in the title; it can appear in `## Question` instead.
 
-All titles use title case and must not contain a product name — product names belong in the `products` frontmatter field.
+All titles use title case. As a general rule, titles should not contain a product name — product names belong in the `products` frontmatter field — but this is not absolute: see "Semantic reframes" below, where product-name-in-title is a judgment call surfaced as a soft reminder, never auto-applied as a Required fix.
 
 Title findings split into two categories based on whether the change is mechanical or semantic.
 
 ### Mechanical style corrections — Required fixes (apply on approval, low ambiguity)
 
 - **gerund-for-How-To-Instructions:** "How to..." prefix → gerund form (e.g., "How to Export Event Logs" → "Exporting Event Logs"). Applies only to How-To Instructions form articles (`## Overview` + `## Instructions` structure). Does NOT apply to How-To Q&A articles — a topic-descriptive title, a "How to..." title, or a question-form title are all valid for Q&A; none is a gerund violation, and the interrogative form doesn't have to live in the title (it can appear in `## Question` instead).
-- **Title case correction** (e.g., "configure stopwords" → "Configuring Stopwords"). Applies to all article types.
+- **Title case correction** (e.g., "configure stopwords" → "Configuring Stopwords"). Applies to all article types. **Vale's `NetwrixKB.HeadingCase` (`scope: heading`) already fires on the H1**, so this is Vale's finding, not a second Derek/Derek-area row for the same title — do not duplicate it in the Derek findings table. Skills that run both Vale and this rulebook area in the same report (e.g., `kb-pr-open`, `kb-pr-review`) must not flag the same H1 twice.
 - **Raw log line or error dump as title.** Titles like `ConfigurationLoader FATAL Hub Location Details Have Not Been Specified in HubDetails.xml at ...` — literal log lines with level tokens (FATAL, ERROR), stack noise, file paths, or truncation fragments — are unreadable and unsearchable. Normalize to the pattern `<Component> Error - <core diagnostic phrase>`, keeping only the searchable message.
   - Examples of the fix:
     - `ConfigurationLoader FATAL Hub Location Details Have Not Been Specified` → `ConfigurationLoader Error - Hub Location Details Have Not Been Specified`

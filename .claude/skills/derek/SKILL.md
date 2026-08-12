@@ -47,7 +47,7 @@ Read the named rulebook section before applying each area — do not hard-code r
 | Article structure (required headings, pluralization, wrong-shape check, Q&A format, Resolution Option Structure) | §15 Article Structure |
 | Title format (mechanical + semantic) | §12 Titles |
 | Callout/admonition format | §5 Callout severity |
-| Links | §8 Links |
+| Links | §8 Links — Derek doesn't run Vale, so the `WeakLinkText`/`BoilerplateCrossRef` bullets in §8 aren't Derek's job; apply only the link-resolution and link-form rules |
 | Bolding, inline code, path formatting | §6 Bolding and inline code |
 | Images | §16 Images |
 
@@ -58,12 +58,6 @@ Check that Netwrix product names follow the correct pattern from `kb_style_guide
 - First mention in body text: full product name (e.g., "Netwrix Auditor")
 - All subsequent mentions: short product name (e.g., "Auditor")
 - No unapproved abbreviations (e.g., "NA" for Netwrix Auditor)
-
-## Keywords and Description Quality
-
-**Keywords:** The 8–12 keywords should be specific and searchable — error codes, product names, technical terms, and phrases a customer would type into a search bar. Flag if keywords are too generic, simply repeat the title, or are missing obvious terms visible in the article body.
-
-**Description:** Should be 1–2 sentences, SEO-friendly, and accurately summarize what the article covers and what it helps the reader do. Flag if empty, too vague, or a verbatim copy of the title.
 
 # Output
 
