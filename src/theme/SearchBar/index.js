@@ -20,6 +20,12 @@ import {getVersionsForProducts, dedupeToLatestVersion} from '../searchUtils';
 
 let DocSearchModal = null;
 
+// Versions only mean something within one product, so the Versions control — and
+// the version filter behind it — is gated on exactly one product being selected.
+function isSingleProduct(products) {
+    return (products || []).filter(p => p !== '__all__' && p !== '__none__').length === 1;
+}
+
 function importDocSearchModalIfNeeded() {
     if (DocSearchModal) {
         return Promise.resolve();
@@ -204,9 +210,11 @@ function useTransformItems(selectedVersionsRef) {
     const [transformItems] = useState(() => (items) => {
         const mapped = items.map((item) => ({...item, url: processSearchResultUrl(item.url)}));
         // Modal version state never holds the '__all__' sentinel (MultiSelectDropdown
-        // maps the All toggle to []) and can't hold versions without a product
-        // (filters reset on open; onChangeProducts prunes orphan versions), so
-        // non-empty means a real version filter is active — de-dupe off (R3).
+        // maps the All toggle to []) and can only be non-empty while exactly one
+        // product is selected (filters reset on open; onChangeProducts clears versions
+        // whenever the selection stops being a single product — the same condition that
+        // shows the Versions control), so non-empty means a real, visible version filter
+        // is active — de-dupe off (R3).
         const versionFilterActive = (selectedVersionsRef.current || []).length > 0;
         return ungroup(versionFilterActive ? mapped : dedupeToLatestVersion(mapped));
     });
@@ -664,8 +672,13 @@ export default function SearchBar() {
         if (typeof window !== 'undefined') {
             sessionStorage.setItem('docs_product_filter', JSON.stringify(newProducts));
         }
-        // Clear versions that don't exist for the new product selection
-        const validVersions = new Set(getVersionsForProducts(newProducts));
+        // Drop versions the new selection can't show. The Versions control only renders
+        // for a single product, so anything other than one product clears versions
+        // outright — otherwise a hidden filter would keep suppressing results (and
+        // de-duplication) with no UI to clear it.
+        const validVersions = new Set(
+            isSingleProduct(newProducts) ? getVersionsForProducts(newProducts) : [],
+        );
         const cleaned = selectedVersionsRef.current.filter(v => validVersions.has(v));
         if (cleaned.length !== selectedVersionsRef.current.length) {
             selectedVersionsRef.current = cleaned;
@@ -694,9 +707,7 @@ export default function SearchBar() {
         ];
     }, [selectedProducts]);
 
-    const isSingleProductSelected = useMemo(() => {
-        return selectedProducts.filter(p => p !== '__all__' && p !== '__none__').length === 1;
-    }, [selectedProducts]);
+    const isSingleProductSelected = useMemo(() => isSingleProduct(selectedProducts), [selectedProducts]);
 
     // This is where we will portal the filters into the modal DOM.
     const [modalHeaderEl, setModalHeaderEl] = useState(null);

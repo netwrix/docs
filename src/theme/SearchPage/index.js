@@ -47,12 +47,25 @@ const PRODUCT_OPTIONS = [
 });
 
 // Checkbox-based multi-select component
-function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHeight, growToFill = true, sizeScale = 1}) {
+function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHeight, sizeScale = 1}) {
     // options[0] is the "All products" sentinel — skip it for the checkbox list
     const productOptions = options.filter(o => o.value !== '__all__');
     const allSelected = selectedValues.includes('__all__');
     const noneSelected = selectedValues.length === 0;
     const someSelected = !allSelected && !noneSelected;
+
+    // Hooks must run on every render — the option count changes at runtime (the
+    // Versions list re-renders with a different product's versions), so the
+    // single-option early return below has to sit after them or React throws
+    // "Rendered fewer hooks than expected".
+    const selectAllRef = useRef(null);
+
+    useEffect(() => {
+        if (selectAllRef.current) {
+            selectAllRef.current.indeterminate = someSelected;
+            if (!someSelected) selectAllRef.current.indeterminate = false;
+        }
+    }, [someSelected]);
 
     // With only one real option, there's nothing to filter — show it as a
     // plain, always-selected label instead of a confusing single-row checkbox list.
@@ -75,15 +88,6 @@ function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHe
             </div>
         );
     }
-
-    const selectAllRef = useRef(null);
-
-    useEffect(() => {
-        if (selectAllRef.current) {
-            selectAllRef.current.indeterminate = someSelected;
-            if (!someSelected) selectAllRef.current.indeterminate = false;
-        }
-    }, [someSelected]);
 
     function handleSelectAll() {
         if (allSelected && !someSelected) {
@@ -114,7 +118,7 @@ function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHe
         borderRadius: '8px',
         overflowY: 'auto',
         background: 'var(--ifm-background-color)',
-        flex: growToFill ? 1 : '0 1 auto',
+        flex: 1,
         minHeight: 0,
         maxHeight,
     };
@@ -145,7 +149,7 @@ function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHe
     };
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column', flex: growToFill ? 1 : '0 1 auto', minHeight: 0, marginTop: topMargin}}>
+        <div style={{display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, marginTop: topMargin}}>
             <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold', flexShrink: 0}}>
                 {label}
             </label>
@@ -544,9 +548,10 @@ function SearchPageContent() {
                 facetFilters.push(realProducts.map(p => `product_name:${p}`)); // Array within array = OR logic
             }
 
-            // A version filter is only active while a product filter is active — stale
-            // URL/sessionStorage versions must not silently filter while the panel is hidden.
-            const realVersions = realProducts.length > 0 ? selectedVersions.filter(v => v !== '__all__') : [];
+            // A version filter is only active while the Versions panel is visible, i.e.
+            // exactly one product is selected. Versions left over in state, the URL, or
+            // sessionStorage must not silently filter results the user can't unfilter.
+            const realVersions = realProducts.length === 1 ? selectedVersions.filter(v => v !== '__all__') : [];
             if (realVersions.length > 0) {
                 facetFilters.push(realVersions.map(v => `product_version:${v}`)); // Array within array = OR logic
             }
@@ -594,7 +599,7 @@ function SearchPageContent() {
             const urlProducts = selectedProducts.filter(p => p !== '__all__' && p !== '__none__');
             if (urlProducts.length > 0) params.set('products', urlProducts.join(','));
             // Same activation rule as makeSearch: never advertise a version filter the UI doesn't show.
-            const urlVersions = urlProducts.length > 0 ? selectedVersions.filter(v => v !== '__all__') : [];
+            const urlVersions = urlProducts.length === 1 ? selectedVersions.filter(v => v !== '__all__') : [];
             if (urlVersions.length > 0) params.set('versions', urlVersions.join(','));
             if (resultsPerPage !== 25) params.set('resultsPerPage', String(resultsPerPage));
             if (currentPage > 1) params.set('page', String(currentPage));
