@@ -7,7 +7,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions } from './src/config/products.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -31,7 +31,24 @@ PRODUCTS.forEach(product => {
   });
 });
 
+// Filter to a single product when DOCS_PRODUCT is set, matching the filtering
+// generateDocusaurusPlugins() applies — otherwise redirects reference routes
+// from products that were never built in this run.
+const targetProduct = process.env.DOCS_PRODUCT;
+
 const latestVersionMap = getLatestVersionUrlMap();
+
+// Match the product filtering generateDocusaurusPlugins() applies, so redirects
+// never target a product whose pages weren't built for this DOCS_PRODUCT run.
+const redirectProducts = getActiveProducts();
+
+// Passed to the client via customFields: React components are bundled by
+// rspack/webpack, which polyfill `process` with an empty env in that context,
+// so process.env.DOCS_PRODUCT isn't readable from component code directly.
+const activeProductIds = redirectProducts.map(product => product.id);
+const activeVersionsByProduct = Object.fromEntries(
+  redirectProducts.map(product => [product.id, getActiveVersions(product).map(v => v.version)])
+);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -47,7 +64,13 @@ const config = {
   baseUrl: '/',
 
   // throw on anything that is not configured correctly
-  onBrokenLinks: 'throw',
+  // Relaxed to 'warn' for single-product builds (DOCS_PRODUCT set): the navbar
+  // always links to every product, but a filtered build only generates routes
+  // for one of them, so cross-product navbar (site) links are expected to be
+  // unresolved. Markdown links and anchors resolve within the target product's
+  // own plugin instance regardless of filtering, so those stay strict to catch
+  // real mistakes during single-product iteration.
+  onBrokenLinks: targetProduct ? 'warn' : 'throw',
   onBrokenMarkdownLinks: 'throw',
   onBrokenAnchors: 'throw',
 
@@ -96,6 +119,10 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  customFields: {
+    activeProductIds,
+    activeVersionsByProduct,
+  },
   clientModules: ['./src/clientModules/scrollBehavior.js'],
   presets: [
     [
@@ -137,7 +164,7 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        redirects: PRODUCTS.filter(product => {
+        redirects: redirectProducts.filter(product => {
           // Only create redirects for products with multiple versions (not just 'current')
           return !(product.versions.length === 1 && product.versions[0].version === 'current');
         }).map(product => {
