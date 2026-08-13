@@ -12,7 +12,7 @@ import { NPP } from '@site/src/training/products';
 
 Estimated length: 1.5 hours
 
-In this learning path, you will be introduced to <NPP />. It contains the following courses:
+This learning path introduces you to <NPP />. It contains the following courses:
 
 * 1860 <NPP /> – Valuable Features
 * 2860 <NPP /> – Concepts

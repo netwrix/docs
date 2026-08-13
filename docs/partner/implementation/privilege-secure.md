@@ -13,7 +13,7 @@ import { Company, NA, NEPM, NPS } from '@site/src/training/products';
 
 Estimated length: 14 hours
 
-The <NPS /> Professional Services Engineer learning path is to certify <Company /> partners to effectively implement this product in a production environment. By completing this learning path, you will become an official Certified Partner for this product. This learning path provides certification for Professional Services Engineers on:
+The <NPS /> Professional Services Engineer learning path certifies <Company /> partners to effectively implement this product in a production environment. By completing this learning path, you will become an official Certified Partner for this product. This learning path provides certification for Professional Services Engineers on:
 
 * <NPS /> for Discovery
 * <NPS /> for Access Management

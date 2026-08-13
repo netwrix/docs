@@ -12,7 +12,7 @@ import { NSS } from '@site/src/training/products';
 
 Estimated length: 1 minute
 
-In this learning path, you will be introduced to <NSS />. It contains the following courses:
+This learning path introduces you to <NSS />. It contains the following courses:
 
 * 1460 <NSS /> – Valuable Features
 

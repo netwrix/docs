@@ -13,7 +13,7 @@ import { NSN, NPGN } from '@site/src/training/products';
 
 Estimated length: 2 hours 34 minutes
 
-In this learning path, new NetSuite Administrators can quickly learn how to use <NSN />, formerly <NPGN />, when it is already deployed for your organization. It contains the following courses:
+In this learning path, new NetSuite Administrators can quickly learn how to use <NSN />, formerly <NPGN />, when your organization has already deployed it. It contains the following courses:
 
 * 1440 <NSN /> – Valuable Features
 * 3440.1 <NPGN /> – Quick Start for New Change Management Admins
@@ -28,7 +28,7 @@ This learning path is available for self-enrollment through the Learning Library
 
 Prerequisites: 1440 <NSN /> – Valuable Features
 
-This course is designed to get Administrators quickly started with <NPGN />.
+This course quickly gets Administrators started with <NPGN />.
 
 Estimated length: 1 hour 10 minutes
 

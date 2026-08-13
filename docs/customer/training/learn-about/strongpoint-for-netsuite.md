@@ -13,7 +13,7 @@ import { NSN, NPGN } from '@site/src/training/products';
 
 Estimated length: 24 minutes
 
-In this learning path, you will be introduced to <NSN />, formerly <NPGN />. It contains the following courses:
+This learning path introduces you to <NSN />, formerly <NPGN />. It contains the following courses:
 
 * 1440 <NSN /> – Valuable Features
 * 3440 Introduction to <NPGN />
