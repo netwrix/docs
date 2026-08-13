@@ -51,6 +51,8 @@ dropdown. The following options are available:
   environments at Impact Level 5.
 - China (21Vianet) – Microsoft Azure operated by 21Vianet for organizations in China.
 
+![Add Tenant Configuration wizard - Cloud Environment dropdown](/images/identityrecovery/3.1/product/configuration/entra_id/entra_id_configuration_page1a.png)
+
 :::note
 The cloud environment determines the authentication and Microsoft Graph endpoints used for all
 backup, rollback, and recovery operations for this tenant. Select the environment that matches where
