@@ -14,8 +14,8 @@ The following learning paths provide Partner certification for Professional Serv
 * [Netwrix Access Analyzer Professional Services Engineer](./access-analyzer.md)
 * [Netwrix Auditor Professional Services Engineer](./auditor.md)
 * [Netwrix Data Classification Professional Services Engineer](./data-classification.md)
-* [Netwrix Platform Governance for NetSuite Professional Services Engineer](./platform-governance-for-netsuite.md)
-* [Netwrix Platform Governance for Salesforce Professional Services Engineer](./platform-governance-for-salesforce.md)
 * [Netwrix Privilege Secure Professional Services Engineer](./privilege-secure.md)
+* [Netwrix Strongpoint for NetSuite Professional Services Engineer](./strongpoint-for-netsuite.md)
+* [Netwrix Strongpoint for Salesforce Professional Services Engineer](./strongpoint-for-salesforce.md)
 
 Courses are available for other <Company /> products through the Learning Library, but certification for Professional Services Engineers isn't available for those products. 
