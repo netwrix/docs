@@ -54,6 +54,18 @@ Before pasting file contents into any online JSON validator, redact passwords, c
 
 Only restart the PingCastle Enterprise application pool or service after the file passes validation.
 
+### Collecting Installer Logs
+
+If the installer fails or exits unexpectedly, generate a verbose installer log to diagnose the issue or attach to a support case.
+
+Run the installer with the `/l*v` flag and a log file path:
+
+```
+pingcastle-enterprise-installer.exe /l*v C:\path\to\install.log
+```
+
+Include this log file when opening a support case for installation issues.
+
 ### Common Errors and Solutions
 
 Here are common errors, their causes, and how to fix them.

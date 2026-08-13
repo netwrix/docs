@@ -34,6 +34,10 @@ For SQL Express, visit [SQL Server Express Downloads](https://learn.microsoft.co
 
 #### Step 2 - Run PingCastleEnterpriseInstaller.exe (production)
 
+:::note
+Having trouble installing? See [Collecting Installer Logs](/docs/pingcastle/4.0/enterprisetroubleshooting#collecting-installer-logs) in the Troubleshooting guide.
+:::
+
 The installer wizard walks you through prerequisite checks, licensing, and configuration screens in the following order.
 
 1. **Prerequisite check**: the installer checks the server for IIS and the ASP.NET 10.0 Hosting Bundle. If either is missing, it offers to install them for you.
@@ -124,6 +128,10 @@ choco install sql-server-express
 ```
 
 #### Step 2 - Run PingCastleEnterpriseInstaller.exe (test/POC)
+
+:::note
+Having trouble installing? See [Collecting Installer Logs](/docs/pingcastle/4.0/enterprisetroubleshooting#collecting-installer-logs) in the Troubleshooting guide.
+:::
 
 1. Run PingCastleEnterpriseInstaller.exe. The installer checks for IIS and the ASP.NET 10.0 Hosting Bundle and offers to install them if they're missing.
 
