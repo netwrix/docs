@@ -6,8 +6,8 @@ keywords: [training, course, certification, partners, presales, strongpoint for 
 description: "Become a certified Presales Engineer for Netwrix Strongpoint for Salesforce"
 ---
 
-import { NSSValue } from '@site/src/training/strongpoint-for-salesforce';
-import { NPGSIntro, NPGSAdditional } from '@site/src/training/platform-governance-for-salesforce';
+import { NSSValue, NSSAdditional } from '@site/src/training/strongpoint-for-salesforce';
+import { NPGSIntro } from '@site/src/training/platform-governance-for-salesforce';
 import { Company, NSS, NPGS } from '@site/src/training/products';
 
 
@@ -24,4 +24,4 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 
 <NPGSIntro />
 
-<NPGSAdditional />
+<NSSAdditional />

@@ -6,8 +6,8 @@ keywords: [training, course, certification, partners, presales, strongpoint for 
 description: "Become a certified Presales Engineer for Netwrix Strongpoint for NetSuite"
 ---
 
-import { NSNValue } from '@site/src/training/strongpoint-for-netsuite';
-import { NPGNIntro, NPGNChangeManagment, NPGNEnvironmentComparison, NPGNJira, NPGNUserProvisioning, NPGNServiceNow, NPGNZenDesk, NPGNSegregationDuties, NPGNAgent, NPGNUserAccessReview, NPGNAdditional } from '@site/src/training/platform-governance-for-netsuite';
+import { NSNValue, NSNAdditional } from '@site/src/training/strongpoint-for-netsuite';
+import { NPGNIntro, NPGNChangeManagment, NPGNEnvironmentComparison, NPGNJira, NPGNUserProvisioning, NPGNServiceNow, NPGNZenDesk, NPGNSegregationDuties, NPGNAgent, NPGNUserAccessReview } from '@site/src/training/platform-governance-for-netsuite';
 import { Company, NSN, NPGN } from '@site/src/training/products';
 
 
@@ -51,4 +51,4 @@ This learning path grants <Company /> certification as a Presales Engineer for t
 
 <NPGNUserAccessReview />
 
-<NPGNAdditional />
+<NSNAdditional />
