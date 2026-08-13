@@ -20,7 +20,7 @@ The table displays the following information:
 - Duration – The time the collection took to complete
 - Status – Collection state as idle, waiting, error, or success
 - Details – Information about any errors that occurred during the last backup
-- Actions – Displays the icons used to collect, edit, and delete the respective tenant configuration
+- Actions – Displays the icons for collecting, editing, and deleting the respective tenant configuration
 
     - Run backup – Click the **Play** icon to start a new collection (backup) on the respective
       tenant if you need a collection outside the configured schedule
@@ -54,15 +54,15 @@ dropdown. The following options are available:
 ![Add Tenant Configuration wizard - Cloud Environment dropdown](/images/identityrecovery/3.1/product/configuration/entra_id/entra_id_configuration_page1a.png)
 
 :::note
-The cloud environment determines the authentication and Microsoft Graph endpoints used for all
-backup, rollback, and recovery operations for this tenant. Select the environment that matches where
-your Entra tenant is hosted before entering credentials.
+The cloud environment determines which authentication and Microsoft Graph endpoints Identity
+Recovery uses for this tenant's backup, rollback, and recovery operations. Select the environment
+where your Entra tenant resides before you enter credentials.
 :::
 
 **Step 3 –** Enter a tenant [example.tenant.com] in the Tenant field.
 
-**Step 4 –** Enter the Client Id [CLIENTID] for backups, rollbacks, and
-recoveries in the Client ID field.
+**Step 4 –** In the Client ID field, enter the Client Id [CLIENTID] for backups, rollbacks, and
+recoveries.
 
 **Step 5 –** Enter the secret for the application registration in the Secret field.
 
@@ -126,15 +126,15 @@ If you don't want notifications, skip this step.
 
 ![Add Tenant Configuration wizard - Confirm page](/images/identityrecovery/3.1/product/configuration/entra_id/entra_id_configuration_page4.png)
 
-**Step 12 –** The Confirm page displays a summary of the settings you provided on the pages of the
-wizard. Use the Back button to return to a previous page and change any setting. Click **Done**
-to finish the wizard.
+**Step 12 –** The Confirm page displays a summary of the settings you provided in the wizard. Use
+the Back button to return to a previous page and change any setting. Click **Done** to finish the
+wizard.
 
 The new tenant appears on the Entra Id page.
 
 Backups begin as scheduled. On the first scheduled instance, Identity Recovery performs a complete
-backup of the tenant. Then, subsequent backups only include the incremental changes that occurred
-since the previous backup.
+backup of the tenant. Subsequent backups only include the incremental changes that occurred since
+the previous backup.
 
 ### Edit Tenant Configuration
 
@@ -143,6 +143,6 @@ Tenant Configuration wizard opens.
 
 **Step 2 –** Modify the settings you want to change for the tenant configuration.
 
-**Step 3 –** The Confirm page displays a summary of the settings you provided on the pages of the wizard. Use the Back button to return to a previous page and change any setting. Click **Done** to finish the wizard.
+**Step 3 –** The Confirm page displays a summary of the settings you provided in the wizard. Use the Back button to return to a previous page and change any setting. Click **Done** to finish the wizard.
 
 Identity Recovery updates the tenant configuration and backups resume as scheduled.
