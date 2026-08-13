@@ -1,9 +1,9 @@
 ---
-title: Netwrix Strongpoint for Salesforce  Professional Services Engineer
+title: Netwrix Strongpoint for Salesforce Professional Services Engineer
 sidebar_position: 1570
 tags: [certification, partners, professional-services, strongpoint-for-salesforce]
 keywords: [training, course, certification, partners, professional services, strongpoint for salesforce]
-description: "Become a certified Professional Services Engineer for Netwrix Strongpoint for Salesforce "
+description: "Become a certified Professional Services Engineer for Netwrix Strongpoint for Salesforce"
 ---
 
 import { NSSValue, NSSAdditional } from '@site/src/training/strongpoint-for-salesforce';
