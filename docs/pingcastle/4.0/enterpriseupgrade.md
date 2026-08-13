@@ -44,7 +44,7 @@ To upgrade PingCastle Enterprise from 3.5.1 to 4.0:
 
    ![A screenshot of the installer installing the required ASP.NET Hosting Bundle version as part of the upgrade.](/images/pingcastle/enterpriseupgrade/prereq-install.webp)
 
-   The installer bundles the required prerequisites, including the ASP.NET Hosting Bundle, directly. The upgrade doesn't need web access to download them.
+   The installer bundles the required prerequisites directly, including the ASP.NET Hosting Bundle. The upgrade doesn't need web access to download them.
 
 ## Configuration migration
 

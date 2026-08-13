@@ -7,7 +7,7 @@ sidebar_label: Troubleshooting
 
 ### Viewing Application Logs and Errors
 
-When troubleshooting issues with PingCastle Enterprise, you need to view error messages and logs to diagnose problems.
+To diagnose problems with PingCastle Enterprise, view its error messages and logs.
 
 Configure logging from the web portal at **Configuration** > **Settings** > **Logging**:
 
@@ -133,7 +133,7 @@ You can find more detailed error messages in the event log or by running the app
 
 - Invalid license key
 - Missing or misconfigured application settings
-- Runtime dependencies not installed
+- Missing runtime dependencies
 
 **Solution:**
 
