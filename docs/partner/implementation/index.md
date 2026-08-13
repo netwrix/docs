@@ -18,4 +18,4 @@ The following learning paths provide Partner certification for Professional Serv
 * [Netwrix Strongpoint for NetSuite Professional Services Engineer](./strongpoint-for-netsuite.md)
 * [Netwrix Strongpoint for Salesforce Professional Services Engineer](./strongpoint-for-salesforce.md)
 
-Courses are available for other <Company /> products through the Learning Library, but certification for Professional Services Engineers isn't available for those products. 
+The Learning Library offers courses for other <Company /> products, but Professional Services Engineer certification isn't available for them.
