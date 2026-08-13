@@ -24,7 +24,7 @@ It contains the following course: 
 
 ## Introduction to the <Company /> Solution for Privileged Access Management (PAM)
 
-This course will cover the <Company /> Privileged Access Management (PAM) solution — a unified, powerful approach to securing privileged accounts, credentials, and endpoints across your organization.
+This course covers the <Company /> Privileged Access Management (PAM) solution — a unified, powerful approach to securing privileged accounts, credentials, and endpoints across your organization.
 
 In this module, you’ll learn:
 

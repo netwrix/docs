@@ -17,6 +17,6 @@ This learning path grants <Company /> certification as a Sales Professional for 
 
 ## <NSS /> for Sales Professional
 
-In this course, you'll receive a comprehensive overview of <Company />'s leading data security and compliance platform for Salesforce — how it works, what you can do with it, and why it's useful. <NSS /> was formerly <NPGS />.
+This course provides a comprehensive overview of <Company />'s leading data security and compliance platform for Salesforce — how it works, what you can do with it, and why it's useful. <NSS /> was formerly <NPGS />.
 
 Estimated length: 1 hour

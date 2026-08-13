@@ -17,6 +17,6 @@ This learning path grants <Company /> certification as a Sales Professional for 
 
 ## <NSN /> for Sales Professional
 
-This course will provide an overview of <NSN />, formerly <NPGN /> — how it works and how partners like you can benefit.
+This course provides an overview of <NSN />, formerly <NPGN /> — how it works and how partners like you can benefit.
 
 Estimated length: 1 hour 2 minutes
