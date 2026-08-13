@@ -11,7 +11,7 @@ import { NPGNIntro, NPGNChangeManagment, NPGNEnvironmentComparison, NPGNJira, NP
 import { Company, NSN, NPGN } from '@site/src/training/products';
 
 
-Estimated length: 6 hours 39 minutes
+Estimated length: 6 hours 27 minutes
 
 Prerequisite: <NSN /> Sales Professional learning path
 
