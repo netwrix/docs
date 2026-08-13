@@ -868,7 +868,10 @@ function SearchPageContent() {
                             onChange={handleProductChange}
                             maxHeight={isSingleProductSelected ? (isMobile ? '132px' : 'calc((100vh - var(--ifm-navbar-height)) * 0.60)') : undefined}
                         />
-                        {isSingleProductSelected && (
+                        {/* The length guard covers a product name from a stale URL or
+                            sessionStorage that no longer exists in the config — one product is
+                            selected, but it contributes no versions, so there is nothing to list. */}
+                        {isSingleProductSelected && availableVersions.length > 0 && (
                             <MultiSelect
                                 label="Versions"
                                 options={[
