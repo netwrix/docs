@@ -11,7 +11,7 @@ import { NPGNIntro, NPGNChangeManagment, NPGNEnvironmentComparison, NPGNJira, NP
 import { Company, NSN, NPGN } from '@site/src/training/products';
 
 
-Estimated length: 6 hours 37 minutes
+Estimated length: 6 hours 27 minutes
 
 This learning path grants <Company /> certification as a Professional Services Engineer for this product, formerly <NPGN />. It contains the following courses:
 
