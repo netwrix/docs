@@ -11,7 +11,7 @@ import { NIMValue, NIMLifeCycle, NIMConcepts, NIMArchitecture, NIMProjectPlannin
 import { Company, NIM } from '@site/src/training/products';
 
 
-Estimated length: 6 hours 37 minutes
+Estimated length: 6 hours 27 minutes
 
 Prerequisite: <NIM /> Sales Professional learning path
 
