@@ -9,7 +9,7 @@ description: "Become a certified Sales Professional for Netwrix Strongpoint for 
 import { Company, NSS, NPGS } from '@site/src/training/products';
 
 
-Estimated length: 1 hour 10 miuntes
+Estimated length: 1 hour
 
 This learning path grants <Company /> certification as a Sales Professional for this product. It contains the following courses:
 
