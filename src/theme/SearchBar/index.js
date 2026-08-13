@@ -694,6 +694,10 @@ export default function SearchBar() {
         ];
     }, [selectedProducts]);
 
+    const isSingleProductSelected = useMemo(() => {
+        return selectedProducts.filter(p => p !== '__all__' && p !== '__none__').length === 1;
+    }, [selectedProducts]);
+
     // This is where we will portal the filters into the modal DOM.
     const [modalHeaderEl, setModalHeaderEl] = useState(null);
     // Holds the closeModal function passed up from the inner DocSearch component.
@@ -774,18 +778,10 @@ export default function SearchBar() {
             {modalHeaderEl &&
                 createPortal(
                     <>
-                        {/* Custom controls: product + version filters */}
+                        {/* Custom controls: version + product filters */}
                         <div className="search-custom-controls">
-                            <MultiSelectDropdown
-                                label="Products"
-                                options={PRODUCT_OPTIONS}
-                                selectedValues={selectedProducts}
-                                onChange={onChangeProducts}
-                                placeholder="All products"
-                            />
-                            {/* availableVersions always holds the '__all__' sentinel at index 0,
-                                so length > 1 means a specific product is selected (R2). */}
-                            {availableVersions.length > 1 && (
+                            {/* Version filtering only makes sense when exactly one product is selected. */}
+                            {isSingleProductSelected && (
                                 <MultiSelectDropdown
                                     label="Versions"
                                     options={availableVersions}
@@ -794,6 +790,13 @@ export default function SearchBar() {
                                     placeholder="All versions"
                                 />
                             )}
+                            <MultiSelectDropdown
+                                label="Products"
+                                options={PRODUCT_OPTIONS}
+                                selectedValues={selectedProducts}
+                                onChange={onChangeProducts}
+                                placeholder="All products"
+                            />
                         </div>
                         {/* Our own close button — replaces the DocSearch-Close button
                             (which is hidden via CSS) so we avoid mutating React-owned

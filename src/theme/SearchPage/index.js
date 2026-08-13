@@ -47,12 +47,34 @@ const PRODUCT_OPTIONS = [
 });
 
 // Checkbox-based multi-select component
-function MultiSelect({label, options, selectedValues, onChange}) {
+function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHeight, growToFill = true, sizeScale = 1}) {
     // options[0] is the "All products" sentinel — skip it for the checkbox list
     const productOptions = options.filter(o => o.value !== '__all__');
     const allSelected = selectedValues.includes('__all__');
     const noneSelected = selectedValues.length === 0;
     const someSelected = !allSelected && !noneSelected;
+
+    // With only one real option, there's nothing to filter — show it as a
+    // plain, always-selected label instead of a confusing single-row checkbox list.
+    if (productOptions.length === 1) {
+        return (
+            <div style={{display: 'flex', flexDirection: 'column', flexShrink: 0, marginTop: topMargin}}>
+                <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
+                    {label}
+                </label>
+                <div style={{
+                    border: '2px solid var(--ifm-color-emphasis-300)',
+                    borderRadius: '8px',
+                    background: 'var(--ifm-background-color)',
+                    padding: '4px 10px',
+                    fontSize: '13px',
+                    color: 'var(--ifm-color-emphasis-700)',
+                }}>
+                    {productOptions[0].label}
+                </div>
+            </div>
+        );
+    }
 
     const selectAllRef = useRef(null);
 
@@ -92,15 +114,16 @@ function MultiSelect({label, options, selectedValues, onChange}) {
         borderRadius: '8px',
         overflowY: 'auto',
         background: 'var(--ifm-background-color)',
-        flex: 1,
+        flex: growToFill ? 1 : '0 1 auto',
         minHeight: 0,
+        maxHeight,
     };
 
     const rowStyle = {
         display: 'flex',
         alignItems: 'center',
         gap: '8px',
-        padding: '4px 10px',
+        padding: `${4 * sizeScale}px 10px`,
         cursor: 'pointer',
         fontSize: '13px',
         lineHeight: '1.3',
@@ -122,7 +145,7 @@ function MultiSelect({label, options, selectedValues, onChange}) {
     };
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0}}>
+        <div style={{display: 'flex', flexDirection: 'column', flex: growToFill ? 1 : '0 1 auto', minHeight: 0, marginTop: topMargin}}>
             <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold', flexShrink: 0}}>
                 {label}
             </label>
@@ -322,6 +345,10 @@ function SearchPageContent() {
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
 
     const availableVersions = useMemo(() => getVersionsForProducts(selectedProducts), [selectedProducts]);
+
+    const isSingleProductSelected = useMemo(() => {
+        return selectedProducts.filter(p => p !== '__all__' && p !== '__none__').length === 1;
+    }, [selectedProducts]);
 
     // Clear orphan versions when products change
     const handleProductChange = useCallback((newProducts) => {
@@ -834,8 +861,9 @@ function SearchPageContent() {
                             options={PRODUCT_OPTIONS}
                             selectedValues={selectedProducts}
                             onChange={handleProductChange}
+                            maxHeight={isSingleProductSelected ? (isMobile ? '132px' : 'calc((100vh - var(--ifm-navbar-height)) * 0.60)') : undefined}
                         />
-                        {availableVersions.length > 0 && (
+                        {isSingleProductSelected && (
                             <MultiSelect
                                 label="Versions"
                                 options={[
@@ -844,6 +872,8 @@ function SearchPageContent() {
                                 ]}
                                 selectedValues={selectedVersions}
                                 onChange={setSelectedVersions}
+                                topMargin="16px"
+                                sizeScale={1.1}
                             />
                         )}
                     </div>{/* closes filters div */}
