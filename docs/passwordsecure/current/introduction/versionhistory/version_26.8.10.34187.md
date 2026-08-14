@@ -22,8 +22,8 @@ sidebar_position: 5
 - The web app now respects the browser's language settings again if there is no explicit language set.
 
 ### Server Manager
-- The web application no longer spams the error log with "VerifyObjectRight: Insufficient right" entries.
-- Managed Service Providers can now create customers without using a database template again.
+- The web application no longer fills the error log with repeated "VerifyObjectRight: Insufficient right" entries.
+- Managed Service Providers can once again create customers without using a database template.
 
 ## Improved
 ### Windows application
