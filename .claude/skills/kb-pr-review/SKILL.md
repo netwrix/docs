@@ -134,7 +134,7 @@ If Vale is not installed or returns an error, note this in the report and contin
 
 **Known Vale false positive — `NetwrixKB.HeadingCase` on version designators.** Lowercase `v` in version designators (e.g., `v2.8`, `v5.7`, `v2.8+`) is correct title case per Chicago-style convention. When Vale's heading-case rule fires on a heading whose only "violation" is a lowercase `v` followed by digits, treat it as a false positive — note it in the Vale findings table with severity "False positive (no action)" and do NOT propose a rewrite.
 
-**`WeakLinkText` and `BoilerplateCrossRef` findings** — see rulebook (`.claude/references/kb-editing-conventions.md`) §8 Links: `WeakLinkText` fixes require a real-target search before rewriting, and `BoilerplateCrossRef` never fires on `docs/kb/` files under this skill's scope — do not treat it as real if one somehow appears.
+**`WeakLinkText` findings** — see rulebook (`.claude/references/kb-editing-conventions.md`) §8 Links: fixes require a real-target search before rewriting.
 
 ---
 

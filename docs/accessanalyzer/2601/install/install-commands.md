@@ -27,7 +27,7 @@ Your license key authenticates access to the Netwrix package registry. Don't sha
 
 ### Choose an installer version
 
-If you don't specify a version, the installer downloads the latest stable release automatically. This is appropriate for initial deployments and when you want to install the latest release:
+If you don't specify a version, the installer downloads the latest stable release automatically. This is appropriate for initial deployments and any time you want the latest release:
 
 ```bash
 # Set the Keygen license key variable
@@ -46,7 +46,7 @@ sudo dspm-installer
 
 Run `dspm-installer [command] --help` to view usage and available options for any command.
 
-Netwrix recommends pinning to a specific release when you want to control when upgrades happen during your organization's patching cycle. **To pin to a specific release**, export the version before downloading and running the installer:
+Netwrix recommends pinning to a specific release to control when upgrades happen during your organization's patching cycle. **To pin to a specific release**, export the version before downloading and running the installer:
 
 ```bash
 # Set the Keygen license key variable
@@ -74,14 +74,14 @@ Version strings control which release the installer installs and what auto-upgra
 | Value | Behavior |
 | --- | --- |
 | (unset) | Defaults to 1.* — auto-upgrades within the 1.x line; a future 2.x release doesn't install automatically |
-| `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
+| `1.0.8` | Pins to exactly 1.0.8 — no auto-upgrade |
 | `1.*` | Auto-upgrades to any 1.x version |
 
-For most deployments, either omit this variable to stay on the latest release, or pin to a specific version (for example, `1.0.8`) to control when upgrades happen during your organization's patching cycle.
+For most deployments, either omit this variable to stay on the latest release or pin to a specific version, such as `1.0.8`.
 
 ## Environment Variables
 
-You can set most options as environment variables instead of command-line flags. This is the recommended style for scripted or automated deployments — see the [Quick Install](quickinstall.md) for an end-to-end example.
+You can set most options as environment variables instead of command-line flags. Netwrix recommends this style for scripted or automated deployments — see the [Quick Install](quickinstall.md) for an end-to-end example.
 
 Export the variables before running the installer. When you set the same option as both an environment variable and a command-line flag, the flag takes precedence.
 
@@ -111,7 +111,7 @@ Export the variables before running the installer. When you set the same option 
 | `DRY_RUN` | `--dry-run` | `true` |
 
 :::note
-`LDAP_BIND_PASSWORD` is the only secret environment variable, and the installer doesn't honor it — the installer always reads the bind password via an interactive prompt or piped stdin, overwriting any exported value. See [Quick Install — Step 4](quickinstall.md#step-4-run-the-installer) for the two supported ways to provide the password.
+`LDAP_BIND_PASSWORD` is the only secret environment variable, and the installer ignores any exported value. The installer always reads the bind password from an interactive prompt or piped stdin. See [Quick Install — Step 4](quickinstall.md#step-4-run-the-installer) for the interactive prompt.
 :::
 
 ## Running the Installer
@@ -192,7 +192,7 @@ If an installation fails and you need more detail to diagnose the problem, run w
 curl -sLfo - "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-install.sh?auth=license:$LICENSE_KEY" | bash -s -- --log-level debug
 ```
 
-The installer writes the log to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. Terminal progress output isn't affected — only the log file verbosity changes.
+The installer writes the log to `/var/log/dspm-installer.log`. Accepted values are `debug`, `info`, `warn`, and `error`. The default is `info`. This option changes the log file verbosity only; terminal progress output stays the same.
 
 END HIDDEN -->
 ---
@@ -216,7 +216,7 @@ The following table lists every identity provider (IdP) flag the installer accep
 
 ## Configuration File
 
-If you run the installer on multiple servers with the same options, you can store common settings in `~/.dspm/installer.yaml` to avoid repeating them every time:
+If you run the installer on multiple servers with the same options, you can store common settings in `~/.dspm/installer.yaml` to avoid repeating them:
 
 ```yaml
 # ~/.dspm/installer.yaml
@@ -253,7 +253,7 @@ For the full list of required network domains, see [Network and Port Requirement
 
 ## If the Installer Stops with Warnings
 
-By default, the installer stops when it detects a preflight warning. In some cases you may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
+By default, the installer stops when it detects a preflight warning. You may know the warning is acceptable for your environment. Use `--accept-warnings` to allow installation to continue:
 
 ```bash
 sudo dspm-installer --accept-warnings
