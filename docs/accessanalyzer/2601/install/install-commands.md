@@ -74,7 +74,7 @@ Version strings control which release the installer installs and what auto-upgra
 | Value | Behavior |
 | --- | --- |
 | (unset) | Defaults to 1.* — auto-upgrades within the 1.x line; a future 2.x release doesn't install automatically |
-| `1.0.8` | Pinned to exactly 1.0.8 — no auto-upgrade |
+| `1.0.8` | Pins to exactly 1.0.8 — no auto-upgrade |
 | `1.*` | Auto-upgrades to any 1.x version |
 
 For most deployments, either omit this variable to stay on the latest release or pin to a specific version, such as `1.0.8`.
