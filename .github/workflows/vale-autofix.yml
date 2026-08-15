@@ -144,7 +144,7 @@ jobs:
         id: phase2
         if: steps.vale-remaining.outputs.remaining > 0
         continue-on-error: true
-        uses: anthropics/claude-code-action@be7b93b1907a4abad570368f3c74b6fe3807510b # v1
+        uses: anthropics/claude-code-action@1623c36729ac1cd5895198cded705a287de7db79 # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -169,6 +169,8 @@ jobs:
 
             Note: if your fixes change any heading text, do not update anchor links — the workflow repairs all anchor links automatically after all fixes are complete.
 
+            If a fix adds or changes a link with a `#anchor`, the anchor must match a real Markdown heading (a line starting with `#` through `######`) OUTSIDE any fenced code block. Text that merely looks like a heading inside a ``` code block (for example, sample CLI/installer output) is never a valid anchor target, even if it matches the wording you're looking for. Before finishing, run exactly `bash scripts/check-anchors.sh <file>` (that literal invocation, one file per call, no chaining with other commands) on every file where you added or changed a link anchor. The script also reports broken link targets, not just anchors — only act on a finding for an anchor your own edit introduced: find the correct heading and fix it, or SKIP the violation if no correct target exists. Anchors broken because you renamed a heading are repaired automatically by a later step — leave those alone.
+
             After fixing, write a JSON summary to /tmp/phase2-summary.json with this structure:
             ```json
             {
@@ -182,13 +184,13 @@ jobs:
             ```
 
             IMPORTANT: Write the summary JSON file, then stop. Do NOT run any git commands — the workflow handles staging, committing, and pushing. Do not post any PR comments.
-          claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
+          claude_args: '--allowedTools "Bash(git:*),Bash(bash scripts/check-anchors.sh:*),Bash(./scripts/check-anchors.sh:*),Bash(scripts/check-anchors.sh:*),Read,Write,Edit,Glob,Grep"'
 
       - name: Phase 3 — Dale fixes
         id: phase3
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
         continue-on-error: true
-        uses: anthropics/claude-code-action@be7b93b1907a4abad570368f3c74b6fe3807510b # v1
+        uses: anthropics/claude-code-action@1623c36729ac1cd5895198cded705a287de7db79 # v1
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -212,6 +214,8 @@ jobs:
 
             Note: if your fixes change any heading text, do not update anchor links — the workflow repairs all anchor links automatically after all fixes are complete.
 
+            If a fix adds or changes a link with a `#anchor` (for example, resolving a "positional-references" violation into an explicit link), the anchor must match a real Markdown heading (a line starting with `#` through `######`) OUTSIDE any fenced code block. Text that merely looks like a heading inside a ``` code block (for example, sample CLI/installer output) is never a valid anchor target. Before finishing, run exactly `bash scripts/check-anchors.sh <file>` (that literal invocation, one file per call, no chaining with other commands) on every file where you added or changed a link anchor. The script also reports broken link targets, not just anchors — only act on a finding for an anchor your own edit introduced: find the correct heading and fix it, or SKIP the violation if no correct target exists. Anchors broken because you renamed a heading are repaired automatically by a later step — leave those alone.
+
             Step 5: Write a JSON summary to /tmp/dale-summary.json with this structure:
             ```json
             {
@@ -228,7 +232,7 @@ jobs:
             Step 6: Write the summary JSON file (see Step 5 format above), then stop.
 
             IMPORTANT: Do NOT run any git commands — the workflow handles staging, committing, and pushing. Do not post any PR comments.
-          claude_args: '--allowedTools "Bash(git:*),Read,Write,Edit,Glob,Grep"'
+          claude_args: '--allowedTools "Bash(git:*),Bash(bash scripts/check-anchors.sh:*),Bash(./scripts/check-anchors.sh:*),Bash(scripts/check-anchors.sh:*),Read,Write,Edit,Glob,Grep"'
 
       - name: Fix heading anchors
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
