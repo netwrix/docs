@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Application Permissions for Entra ID Sync
 
-The following permissions are required for the credential used by Threat Manager for Microsoft Entra
-ID Sync. See the
+The credential Threat Manager uses for Microsoft Entra ID Sync requires the following permissions.
+See the
 [Active Directory Sync Page](/docs/threatmanager/3.3/administration/configuration/integrations/activedirectorysync.md)
 topic for additional information about syncing the configured Microsoft Entra ID tenants in Threat
 Manager.
@@ -17,6 +17,7 @@ Manager.
 - AgentIdentity.Read.All
 - AgentIdentityBlueprint.Read.All
 - AgentIdentityBlueprintPrincipal.Read.All
+- IdentityRiskyAgent.Read.All
 :::
 
 | Object Type                      | Function                                                   | Access Requirements                         |
@@ -29,6 +30,7 @@ Manager.
 | Device                           | Retrieve all devices                                       | Device.Read.All                             |
 | Group                            | Retrieve all groups                                        | Group.Read.All                              |
 | Group Member                     | Retrieve all group members                                 | GroupMember.Read.All                        |
+| Identity Risky Agent             | Retrieve all risky agents                                  | IdentityRiskyAgent.Read.All                 |
 | Identity Risky Service Principal | Retrieve all risky service principals                      | IdentityRiskyServicePrincipal.Read.All      |
 | Identity Risky User              | Retrieve all risky users                                   | IdentityRiskyUser.Read.All                  |
 | Organization                     | Retrieve organization information                          | Organization.Read.All                       |
