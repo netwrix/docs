@@ -12,10 +12,11 @@ keywords:
   - privacy preferences
   - MDM
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Deploy the Client on macOS Through Intune With Ful
 tags:
   - deployment-and-installation
+  - kb
 title: "Deploy the Client on macOS Through Intune With Full Disk Access"
 knowledge_article_id: kA0Qk0000002B2oKAE
 ---
@@ -26,13 +27,16 @@ knowledge_article_id: kA0Qk0000002B2oKAE
 
 This article explains how to deploy the Netwrix Endpoint Protector client on macOS using Intune and configure full disk access for the client.
 
+For the full reference, see [Microsoft Intune](/docs/endpointprotector/install/intune/overview) and [macOS Deployment](/docs/endpointprotector/install/intune/macosdeployment).
+
+:::note
+This document serves as an optional reference for Microsoft Intune (currently known as Microsoft Endpoint Manager). It is not regularly updated and may not align with the current version of the product. Please refer to the official resources for the most up-to-date information.
+:::
+
 ## Instructions
 
 1. Refer to the official Intune documentation to ensure you are familiar with the deployment procedures and requirements.
-2. Follow the steps in this documentation to deploy the client on macOS through Intune and enable full disk access:
-
-   Deploying the Client on macOS Using Intune – Netwrix Help Center 🤝
-
+2. Follow the steps in [macOS Deployment](/docs/endpointprotector/install/intune/macosdeployment) to deploy the client on macOS through Intune and enable full disk access.
 3. To add the system extension in Intune, perform the following steps:
 
    I. Select **Devices** > **macOS** > **Configuration profiles** > **Create profile**.  

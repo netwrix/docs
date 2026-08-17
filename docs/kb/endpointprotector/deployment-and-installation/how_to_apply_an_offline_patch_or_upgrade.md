@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Apply Offline Patch
 tags:
   - deployment-and-installation
+  - kb
 title: "How to Apply an Offline Patch or Upgrade"
 knowledge_article_id: kA0Qk0000002B7MKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Apply an Offline Patch or Upgrade
@@ -19,6 +20,16 @@ products:
 ## Overview
 
 This article explains how to apply an offline patch or upgrade to **Endpoint Protector** (EPP) when the appliance does not have direct internet access or when you need to control the timing and process of software updates. The instructions include preparing your environment, safely applying the patch, and verifying the update.
+
+For the full reference, see [Server Update](/docs/endpointprotector/admin/systemconfiguration/overview#server-update) in the System Configuration documentation.
+
+:::note
+The Offline Patch Uploader is the only currently available update method — Live Update was dropped starting with the 5.9.4.2 release and remains unavailable on the current 2509+ image-based platform.
+:::
+
+:::tip
+If you're migrating a 5.x server to the current image-based platform (2510/2604) rather than applying a routine patch, follow the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide) instead — it covers the mandatory intermediate upgrade to 5.9.4.2 and the full migration sequence in detail.
+:::
 
 To stay informed about future version releases, visit the [Netwrix Community Endpoint Protector](https://community.netwrix.com/c/products/endpoint-protector/22) page and click the **Subscribe** button.
 
@@ -31,13 +42,11 @@ To stay informed about future version releases, visit the [Netwrix Community End
 
 ### Obtain the Offline Patch
 
-- **Download from the Console**
-  1. In the **Endpoint Protector** console, navigate to the **Announcements** section and select the latest **Endpoint Protector** version release.
-  2. On the release page, locate the banner labeled **Download Netwrix Endpoint Protector x.x.x.x here!** and double-click to download the offline upgrade installation package to your local directory.
+All offline patches are available from the [My Products portal on netwrix.com](https://customer.netwrix.com/sign_in.html?rf=my_products.html). Sign in and download the offline patch file matching your current server version and the version you want to upgrade to.
 
-- **Request from Netwrix Technical Support**
-  1. Open a support ticket and provide your current server version and the version you want to upgrade to.
-  2. Netwrix Technical Support will provide you with the necessary offline patch files for the upgrade.
+:::note
+See the [EPP Server Migration & Upgrade Guide](/docs/endpointprotector/install/migrationprocedure/migrationguide) to verify which upgrade patches are available for your current version. If the patch you need is missing from the My Products portal, contact Netwrix Technical Support for assistance.
+:::
 
 ### Apply the Offline Patch
 
@@ -55,4 +64,6 @@ To stay informed about future version releases, visit the [Netwrix Community End
    ![Endpoint Protector version number in the console interface](./../0-images/servlet_image_138e8d943c1b.png)
 8. If you need to apply additional offline patches, repeat steps 4–7. Offline patches are incremental, like the Live Update functionality. You must apply them one at a time to correctly upgrade the server and avoid issues.
 
-> **NOTE:** There may be a delay between a new general availability (GA) release and the availability of an offline patch for the new server version.
+:::note
+There may be a delay between a new general availability (GA) release and the availability of an offline patch for the new server version.
+:::

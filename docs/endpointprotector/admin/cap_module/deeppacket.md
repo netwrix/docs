@@ -4,6 +4,7 @@ description: "Deep Packet Inspection"
 sidebar_position: 40
 ---
 
+
 # Deep Packet Inspection
 
 The Deep Packet Inspection functionality provides a certain degree of granularity, allowing you to
@@ -374,6 +375,21 @@ Control** > **Settings** (Global, Groups, Computers, etc.). For detailed informa
 the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic.
 :::
 
+### Command-line tools
+
+Starting with version 5.9.6.0, the following command-line tools are available in the Deep Packet
+Inspection Applications list for all operating systems:
+
+- **WGET**
+- **CURL**
+- **AWS CLI**
+
+These tools were previously monitored as file system transfer channels (Content Aware Protection
+only). With this change, they are inspected at the network level by DPI, providing visibility
+into data transfers made through these tools.
+
+To enable or disable DPI for these applications, go to **Content Aware Protection** > **Deep Packet
+Inspection Applications** and select or clear the corresponding checkboxes.
 
 ## Certiﬁcate status matrix
 

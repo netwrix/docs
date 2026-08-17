@@ -14,10 +14,11 @@ keywords:
   - troubleshooting
   - support
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Missing Devices in the Client List
 tags:
   - device-control-and-access-management
+  - kb
 title: "Missing Devices in the Client List"
 knowledge_article_id: kA0Qk0000002B4FKAU
 ---

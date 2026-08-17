@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Block Source Code Using OCR
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "How to Block Source Code Using OCR"
 knowledge_article_id: kA0Qk0000002oAPKAY
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Block Source Code Using OCR

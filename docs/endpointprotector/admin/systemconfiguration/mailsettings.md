@@ -33,7 +33,7 @@ An active Internet connection is required to use this feature.
 
 Use the **E-mail Authentication Type** dropdown to select how Endpoint Protector authenticates with the email server:
 
-- **Basic** — standard username and password authentication. Supports native and SMTP email types, with TLS 1.3.
+- **Basic** — standard username and password authentication. Supports native and SMTP email types. TLS is negotiated automatically, using TLS 1.3 where available and falling back to TLS 1.2 otherwise.
 - **OAuth** — OAuth 2.0 authentication for Microsoft Exchange Online. Use this option to comply with Microsoft's deprecation of Basic Auth for SMTP AUTH.
 
 ### Basic authentication

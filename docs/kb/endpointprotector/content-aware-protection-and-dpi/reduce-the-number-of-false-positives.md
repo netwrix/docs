@@ -12,10 +12,11 @@ keywords:
   - DLP
   - related dictionary
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Reduce the Number of False Positives
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Reduce the Number of False Positives"
 knowledge_article_id: kA0Qk0000002B6nKAE
 ---
@@ -43,9 +44,16 @@ This article explains how to reduce the number of false positives by enabling an
    - **Unrelated File Size (MB)** – The unrelated file size, in megabytes.
    - **Maximum Matches** – The value above which the rule will not be validated (recommended value is 0).
 
-> **NOTE:** For more information, refer to the Contextual Detection section of the manual.
+:::warning
+Global Contextual Rules are superseded by per-policy Contextual Rules. If at least one Content Aware Protection or eDiscovery policy has its own individual Contextual Rule set, Endpoint Protector Clients no longer receive the Global Contextual Rules configured here for that policy. Verify whether the affected policy already has a per-policy Contextual Rule before relying on the global configuration to reduce its false positives.
+:::
+
+:::note
+For more information, see [Contextual Detection](/docs/endpointprotector/admin/systempar#contextual-detection) in the System Parameters documentation.
+:::
 
 ## Related Links
 
-- https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/admin/systempar — System Parameters Overview Documentation
-- https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/admin/overview — Content Detection Summary Documentation
+- [System Parameters](/docs/endpointprotector/admin/systempar) — System Parameters documentation, including Contextual Detection
+- [Content Detection Summary](/docs/endpointprotector/admin/cap_module/contentdetection#content-detection-summary) — Content Detection Summary documentation
+- [Client Settings](/docs/endpointprotector/admin/dc_module/globalsettings#client-settings) — Global Settings documentation, including Extend Source Code Detection and other client-side settings that affect false positive rates

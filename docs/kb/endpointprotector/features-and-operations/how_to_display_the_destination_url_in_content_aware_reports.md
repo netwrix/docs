@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Display Destination URL in Reports
 tags:
   - features-and-operations
+  - kb
 title: "How to Display the Destination URL in Content Aware Reports"
 knowledge_article_id: kA0Qk0000002B66KAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Display the Destination URL in Content Aware Reports

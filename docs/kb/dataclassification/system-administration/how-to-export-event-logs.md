@@ -26,7 +26,7 @@ knowledge_article_id: kA00g000000H9eECAS
 
 ## Question
 
-How do I export the Netwrix Data Classification event logs?
+How do you export the Netwrix Data Classification event logs?
 
 ## Answer
 

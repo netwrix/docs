@@ -6,11 +6,11 @@ sidebar_position: 100
 
 # Migrate the Enterprise Manager Server
 
-Follow the steps to move the Threat Prevention7.5 Enterprise Manager to a different server when
-using default certificates.
+To move the Threat Prevention 7.5 Enterprise Manager to a different server when
+using default certificates, complete the following steps:
 
 :::warning
-Do not remove the Enterprise Manager from the current machine until the migration
+Don't remove the Enterprise Manager from the current machine until the migration
 process is complete.
 :::
 
@@ -37,7 +37,7 @@ folder.
 - Em-crt.pem
 - Em-key.pem
 
-Then, follow these steps to migrate the “secret.dpapi” file (do not copy).
+Then, migrate the “secret.dpapi” file (don't copy) as follows:
 
 1. On the original Enterprise Manager machine: “SecretMgr.exe –e myOutFile”
 
@@ -61,7 +61,7 @@ Then, follow these steps to migrate the “secret.dpapi” file (do not copy).
 **Step 3 –** Start the Threat Prevention Enterprise Manager service on the new machine.
 
 **Step 4 –** On the original Enterprise Manager machine, launch the Administration Console and
-follow these steps to update the Enterprise Manager info for each Agent.
+update the Enterprise Manager info for each Agent as follows:
 
 1. Click **Agents** in the left pane to open the [Agents Interface](/docs/threatprevention/7.5/admin/agents/overview.md).
 2. Right-click an Agent in the grid and select **Update Agent Settings**. You can also select
@@ -73,11 +73,11 @@ follow these steps to update the Enterprise Manager info for each Agent.
    Address/Name field and click **Next**.
 4. Verify that the update task completes for each Agent successfully.
 
-At this point, the Agents should get displayed in the Administration Console on the new Enterprise
+At this point, the Agents should appear in the Administration Console on the new Enterprise
 Manager machine.
 
 :::note
-If you cannot use the Administration Console on the original Enterprise Manager machine,
+If you can't use the Administration Console on the original Enterprise Manager machine,
 then on each machine where the Agent is deployed, you can manually edit the
 “SIWindowsAgent.exe.config” file to update the following entry with the IP address or name of the
 new Enterprise Manager.  
@@ -96,7 +96,7 @@ If Netwrix Threat Prevention is configured to use customer supplied certificates
 recommended that you uninstall, then re-enroll and re-install all Agents with new certificates. This
 is because customer supplied certificates usually have the FQDN info of the Enterprise Manager and
 the new Enterprise Manager machine would typically have a different DNS name. See the
-[Create Custom Managed Certificates for Each Agent](/docs/threatprevention/7.5/install/agent/manual/customcert.md) topic for additional
+[Create Custom Managed Certificates for Each Agent](/docs/threatprevention/7.5/install/agent/customcert.md) topic for additional
 information.
 
 :::

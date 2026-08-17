@@ -4,12 +4,13 @@ description: "Directory Services"
 sidebar_position: 110
 ---
 
+
 # Directory Services
 
 From this section, you can import and synchronize the entities (Users, Computers, and Groups) from
-the company’s Active Directories.
+the company's Active Directories.
 
-![Import and synchronize the entities (Users, Computers, and Groups) from the company’s Active Directories](directoryservices.webp)
+![Import and synchronize the entities (Users, Computers, and Groups) from the company's Active Directories](directoryservices.webp)
 
 
 :::note
@@ -241,6 +242,9 @@ synchronization jobs.
 - Directory (tenant) ID saved earlier on the Tenant ID ﬁeld
 - Application (client) ID saved earlier on the Application (Client) ID ﬁeld
 - Secret ID saved earlier in the Client Secret Value ﬁeld
+- Azure Cloud Environment – select the cloud environment that matches your tenant:
+  - **Commercial** (default) – uses `login.microsoftonline.com` and `graph.microsoft.com`
+  - **GCC High** – uses `login.microsoftonline.us` and `graph.microsoft.us` (for US government and regulated-industry tenants)
 
 ![Add Graph Application to Endpoint Protector Server](azureadtwo.webp)
 
@@ -281,3 +285,8 @@ Microsoft Entra ID. This switch has two states:
 By utilizing this feature, Endpoint Protector ensures seamless synchronization of user names,
 preventing duplicate usernames. Enable or disable the "Map on-premises users" feature based on your
 speciﬁc hybrid environment setup and requirements.
+
+:::note
+You can configure both Commercial and GCC High environments simultaneously using separate API
+Consumer connections. Each connection syncs independently.
+:::

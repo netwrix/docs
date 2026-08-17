@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Stage Endpoint Protector Server
 tags:
   - deployment-and-installation
+  - kb
 title: "How to Stage the Endpoint Protector Server"
 knowledge_article_id: kA0Qk0000002BAkKAM
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Stage the Endpoint Protector Server

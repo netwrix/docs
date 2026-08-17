@@ -13,11 +13,12 @@ keywords:
   - CAP
   - file size
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: How Does the File Size Threshold Apply to Uploads?
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "How Does the File Size Threshold Apply to Uploads?"
 knowledge_article_id: kA0Qk0000002BE0KAM
 ---
