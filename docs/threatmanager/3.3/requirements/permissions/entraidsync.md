@@ -17,6 +17,7 @@ Manager.
 - AgentIdentity.Read.All
 - AgentIdentityBlueprint.Read.All
 - AgentIdentityBlueprintPrincipal.Read.All
+- IdentityRiskyAgent.Read.All
 :::
 
 | Object Type                      | Function                                                   | Access Requirements                         |
@@ -29,6 +30,7 @@ Manager.
 | Device                           | Retrieve all devices                                       | Device.Read.All                             |
 | Group                            | Retrieve all groups                                        | Group.Read.All                              |
 | Group Member                     | Retrieve all group members                                 | GroupMember.Read.All                        |
+| Identity Risky Agent             | Retrieve all risky agents                                  | IdentityRiskyAgent.Read.All                 |
 | Identity Risky Service Principal | Retrieve all risky service principals                      | IdentityRiskyServicePrincipal.Read.All      |
 | Identity Risky User              | Retrieve all risky users                                   | IdentityRiskyUser.Read.All                  |
 | Organization                     | Retrieve organization information                          | Organization.Read.All                       |
