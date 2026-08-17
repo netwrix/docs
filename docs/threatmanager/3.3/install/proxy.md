@@ -12,7 +12,7 @@ settings in the Azure Service configuration file.
 
 ## Configuration File
 
-The proxy is configured in the Azure Service `appsettings.json` file on the Threat Manager server:
+You configure the proxy in the Azure Service `appsettings.json` file on the Threat Manager server:
 
 **C:\Program Files\STEALTHbits\StealthDEFEND\AzureService\appsettings.json**
 
@@ -37,11 +37,11 @@ Add or update the `Proxy` section in `appsettings.json`:
 }
 ```
 
-The table below describes each setting.
+The following table describes each setting.
 
 | Property | Config Key | Type | Description |
 |---|---|---|---|
-| Enabled | `Proxy:Enabled` | bool | Whether the proxy is active. If `false`, all other settings are ignored and direct connections are made. |
+| Enabled | `Proxy:Enabled` | bool | Whether the proxy is active. If `false`, the service ignores all other settings and makes direct connections. |
 | Address | `Proxy:Address` | string | The proxy server URL, e.g. `http://proxy.contoso.com:8080`. Required when `Enabled` is `true`. |
 | BypassProxyOnLocal | `Proxy:BypassProxyOnLocal` | bool | Whether to skip the proxy for local and intranet addresses. |
 | UseDefaultCredentials | `Proxy:UseDefaultCredentials` | bool | Whether to authenticate to the proxy using the Windows identity of the service account. Suitable for NTLM/Kerberos-authenticated proxies. |
@@ -49,7 +49,7 @@ The table below describes each setting.
 | CredentialProfileId | `Proxy:CredentialProfileId` | long | ID of a credential profile to use for proxy authentication. Used instead of `UseDefaultCredentials` when the proxy requires an explicit username and password. See the [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md) topic for information on creating credential profiles. |
 
 :::note
-If `Enabled` is set to `true` and `Address` is left `null`, the service loads the OS-level proxy
+If you set `Enabled` to `true` and leave `Address` as `null`, the service loads the OS-level proxy
 settings and ignores all other settings in this section.
 :::
 
@@ -59,7 +59,8 @@ settings and ignores all other settings in this section.
 
 **C:\Program Files\STEALTHbits\StealthDEFEND\AzureService\appsettings.json**
 
-**Step 2 –** Locate the `Proxy` section. If it doesn't exist, add it as shown in the example above.
+**Step 2 –** Locate the `Proxy` section. If it doesn't exist, add it as shown in the
+[Proxy Settings](#proxy-settings) example.
 
 **Step 3 –** Set `Enabled` to `true`.
 

@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Troubleshooting
 
-In case you are experiencing issues with the Netwrix Threat Manager, see the following topics for
+If you experience issues with Netwrix Threat Manager, see the following topics for
 additional information:
 
 - [Log Files](/docs/threatmanager/3.3/administration/troubleshooting/log.md)

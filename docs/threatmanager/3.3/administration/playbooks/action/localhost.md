@@ -17,7 +17,7 @@ preconfigured action steps.
 ![powershellscriptactionstep](/images/threatmanager/3.0/administration/playbooks/action/powershellscriptactionstep.webp)
 
 - PowerShell Script – Select the PowerShell script to execute. By default, the PowerShell script
-  includes a comment section which includes Threat Manager threat variables that can be used in
+  includes a comment section which includes Threat Manager threat variables that you can use in
   PowerShell script action steps.
 - Credential – Select a credential profile using the dropdown list. This will provide the
   PowerShell action step with a PowerShell credential object, based upon the Threat Manager
@@ -35,7 +35,7 @@ The Send Email action sends an email.
 
 - Subject – The subject of the email
 - To – Specify the email addresses receiving the email
-- Body – The body of the email. HTML is supported.
+- Body – The body of the email. You can use HTML.
 
 ## Stop Process
 
@@ -44,9 +44,9 @@ The Stop Process action stops a process running locally on the host associated w
 ![stopprocess](/images/threatmanager/3.0/administration/playbooks/action/stopprocess.webp)
 
 - Credential – Select a credential profile that contains valid Active Directory credentials.
-  Credential profiles are configured on the
-  [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md). If not
-  specified, the action will be run as the credentials of the Action Service.
+  You configure credential profiles on the
+  [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md). If you
+  don't specify one, the action runs as the credentials of the Action Service.
 
 ## End User Session
 
@@ -55,22 +55,22 @@ target client.
 
 ![endusersession](/images/threatmanager/3.0/administration/playbooks/action/endusersession.webp)
 
-- Users – The users to log out of RDP sessions. If not specified, only the perpetrator will be used.
-  Select the users from the dropdown list:
+- Users – The users to log out of RDP sessions. If you don't specify any, Threat Manager uses only
+  the perpetrator. Select the users from the dropdown list:
 
     - Perpetrator – The account that initiated the threat
     - Both Users and Perpetrators Affected – The account that initiated the threat and also the
       users affected by the threat
 
-- Computers – The computers to log a user out of a RDP session. If not specified, only the
-  perpetrator client will be used. Select computers from the dropdown list:
+- Computers – The computers to log a user out of a RDP session. If you don't specify any, Threat
+  Manager uses only the perpetrator client. Select computers from the dropdown list:
 
     - Perpetrator Client – The computer that initiated the threat
     - Host – The host client that initiated the threat
     - Both Perpetrator Client and Host – The computer and the host client affected by the threat
 
-- Credential – The domain credential used to run the action. Domain credentials are populated by
-  credential profiles that are created on the Integrations page. If not specified, the action will
-  be run under the credentials of the action. Select the credentials from the dropdown list. See
+- Credential – The domain credential used to run the action. Credential profiles created on the
+  Integrations page populate the domain credentials. If you don't specify one, the action runs
+  under the credentials of the action. Select the credentials from the dropdown list. See
   the [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md) topic for
   additional information.

@@ -58,7 +58,7 @@ The type of service account. Possible values include:
 Indicates whether the service account is enabled or disabled in Active Directory.
 
 ### Vulnerable
-Indicates the vulnerability status of the service account based on its supported encryption types. An account is **Vulnerable** if RC4 or DES appears in the `msDS-SupportedEncryptionTypes` attribute, which makes it susceptible to Kerberoasting. An account is **Not vulnerable** if neither RC4 nor DES is present, or if the attribute is empty.
+Indicates the vulnerability status of the service account based on its supported encryption types. An account is **Vulnerable** if RC4 or DES appears in the `msDS-SupportedEncryptionTypes` attribute, which makes it susceptible to Kerberoasting. An account is listed as **Not vulnerable** if neither RC4 nor DES is present, or if the attribute is empty.
 
 ### Password Age (days)
 The number of days since the account's password was last set. An icon next to the value indicates the password age status:
@@ -88,15 +88,15 @@ The number of target systems or resources that this service account accesses or 
 The number of client systems or applications that use this service account for authentication.
 
 ### Created
-The date and time when the service account was created in Active Directory.
+The date and time of the service account's creation in Active Directory.
 
 ## Service Account Details
 
-Click any row in the table to open the details blade for that service account. The blade is organized into four sections.
+Click any row in the table to open the details blade for that service account. The blade has four sections.
 
 **Account Information** displays the display name, domain, account type, enabled status, security identifier (SID), and any tags assigned to the account.
 
-**Authentication** shows the authentication protocols in use, supported encryption types, and whether Kerberos pre-authentication is required for the account.
+**Authentication** shows the authentication protocols in use, supported encryption types, and whether the account requires Kerberos pre-authentication.
 
 **SPNs** lists all Service Principal Names configured for the account. If the account has many SPNs, the list is expandable.
 

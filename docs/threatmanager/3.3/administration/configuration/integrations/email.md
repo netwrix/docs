@@ -14,21 +14,20 @@ email notifications.
 The page has the following information:
 
 - Enabled – Indicates whether email notifications are functioning
-- Mail Server – The IP address or server name of the mail server that will be used to send email
-  notifications
+- Mail Server – The IP address or server name of the mail server that sends email notifications
 - Port – The Port used by the mail server
 - Use TLS – Indicates whether the TLS protocol is in use for email notifications
-- Ignore Certificate Errors – Indicates whether certificate errors will be ignored when sending
-  email
-- User Name – The user name of the credentials that will be used when TLS is enabled
-- Password – The password for the credentials that will be used when TLS is enabled
-- Send From Address – The email address that will be listed as the sender of notifications
-- Send Alerts To – The email address(es) that will receive alert notifications, use a semicolon as a
+- Ignore Certificate Errors – Indicates whether the application ignores certificate errors when
+  sending email
+- User Name – The user name of the credentials the application uses when TLS is enabled
+- Password – The password for the credentials the application uses when TLS is enabled
+- Send From Address – The email address that appears as the sender of notifications
+- Send Alerts To – The email address(es) that receive alert notifications, use a semicolon as a
   separator
 - Subject – The subject line of the alert notification, which can contain data variables. For
   example, [Threat Type] detected by Threat Manager, which would replace the [Threat Type] variable
   with the type of threat detected.
-- URL – The URL to the application console to be included in the email as a link
+- URL – The URL to the application console that the email includes as a link
 - Send Test Email – Click **Send Test Email** to send a test notification to the configured email
   address(es)
 
@@ -44,23 +43,23 @@ To configure email notifications:
 
 **Step 3 –** Enter the following information:
 
-- Mail Server – Enter the IP address or server name of the mail server that will be used to send
-  email notifications
-- Port – Enter the Port used by the mail server. The default port is 25.
-- Use TLS – Toggle the button to **ON** if you want to enable TLS protocol is in use for email
+- Mail Server – Enter the IP address or server name of the mail server that sends email
   notifications
-- Ignore Certificate Errors –Toggle the button to **ON** if you want to ensure certificate errors
-  will be ignored when sending email
-- User Name – If applicable, enter the user name of the credentials that will be used when TLS is
+- Port – Enter the Port used by the mail server. The default port is 25.
+- Use TLS – Toggle the button to **ON** if you want to use the TLS protocol for email
+  notifications
+- Ignore Certificate Errors – Toggle the button to **ON** if you want the application to ignore
+  certificate errors when sending email
+- User Name – If applicable, enter the user name of the credentials the application uses when TLS is
   enabled
-- Password – If applicable, enter the password for the credentials that will be used when TLS is
+- Password – If applicable, enter the password for the credentials the application uses when TLS is
   enabled
-- Send From Address – Enter the email address that will be listed as the sender of notifications
-- Send Alerts To – Enter the email address(es) that will receive alert notifications, use a
+- Send From Address – Enter the email address that appears as the sender of notifications
+- Send Alerts To – Enter the email address(es) that receive alert notifications, use a
   semicolon as a seperator
 - Subject – Enter the subject line of the alert notification, which can contain data variables. By
   default, this includes the [Threat Type] variable.
-- URL – Enter the URL to the application console to be included in the email as a link. By default,
+- URL – Enter the URL to the application console that the email includes as a link. By default,
   this is set to `http://localhost:8080/`
 
 :::info
@@ -71,8 +70,8 @@ with the recipients you want.
 
 
 **Step 4 –** Click **Send Test Email** to send a test notification to the configured email
-address(es). Validate the email was sent by checking that the recipient received the email.
+address(es). Confirm that the recipient received the email.
 
 **Step 5 –** Click **Save Settings** to commit the changes.
 
-Email notifications are now configured.
+The application now sends email notifications.

@@ -18,8 +18,7 @@ You can also create custom threats on this page.
 ## Threats Box
 
 The Threats box displays the threats that are pre-configured with Threat Manager and threats created
-with the Investigation page or through the Custom Threat button. Threats that are crossed out are
-disabled.
+with the Investigation page or through the Custom Threat button. Crossed-out threats are disabled.
 
 ![Threats Box](/images/threatmanager/3.0/threats/threatsbox.webp)
 
@@ -46,13 +45,13 @@ information:
   gray x indicates that the threat type isn't enabled for threat detection.
 - Level – The relative severity level, or risk level, of the threat. See the
   [Fine Tune a Threat](/docs/threatmanager/3.3/administration/configuration/threatdetection/threatconfiguration.md) topic for additional information.
-- Email – A green check mark indicates that email notifications will be sent when the threat is
-  detected. A gray x indicates that emailed notifications are disabled.
-- SIEM – A green check mark indicates that threat information will be sent to a SIEM service when
-  the threat is detected. A gray x indicates that forwarding threat information to a SIEM service is
-  disabled.
-- Playbook – A green check mark indicates that a Playbook is assigned to the threat. This means that
-  a Playbook will be automatically executed every time a threat of this type is detected.
+- Email – A green check mark indicates that Threat Manager sends email notifications when it detects
+  the threat. A gray x indicates that emailed notifications are disabled.
+- SIEM – A green check mark indicates that Threat Manager sends threat information to a SIEM service
+  when it detects the threat. A gray x indicates that forwarding threat information to a SIEM
+  service is disabled.
+- Playbook – A green check mark indicates that the threat has an assigned Playbook. That Playbook
+  runs automatically every time Threat Manager detects a threat of this type.
 - Rollup – A green check mark indicates that rollups are enabled. A gray x indicates that rollups
   aren't enabled. See the [Fine Tune a Threat](/docs/threatmanager/3.3/administration/configuration/threatdetection/threatconfiguration.md) topic for additional
   information.

@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Upgrade Procedure
 
-This topic describes the steps needed for upgrading Threat Manager to the latest version.
+This topic describes the steps for upgrading Threat Manager to the latest version.
 
 
 ## Considerations
@@ -18,12 +18,12 @@ Manager:
 - [Netwrix Threat Prevention Documentation](https://helpcenter.netwrix.com/category/threatprevention)
 - [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
 
-If Netwrix Activity Monitor is used to send data to Threat Manager, the versions of both products
+If you use Netwrix Activity Monitor to send data to Threat Manager, the versions of both products
 must be compatible.
 
 :::note
-Upgrading the Activity Monitor to the latest version isn't required when upgrading
-Threat Manager, but Netwrix recommends the upgrade to take full advantage of the new
+Upgrading Threat Manager doesn't require you to upgrade the Activity Monitor to the
+latest version, but Netwrix recommends the upgrade to take full advantage of the new
 features.
 :::
 

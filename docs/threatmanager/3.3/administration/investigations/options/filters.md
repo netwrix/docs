@@ -7,8 +7,8 @@ sidebar_position: 10
 # Filters Section
 
 The Filters section provides options to build a filter statement by selecting the Attribute,
-Operator, and Filter value. A time period for the report data is also configured here. If multiple
-data sources have been configured, there is also a Source dropdown menu. Filter statements can be
+Operator, and Filter value. You also configure a time period for the report data here. If you
+configured multiple data sources, there is also a Source dropdown menu. Filter statements can be
 simple with one value statement or complex with multiple value statements.
 
 ![Filters section of an investigation](/images/threatmanager/3.0/administration/investigations/options/filterstm.webp)
@@ -20,12 +20,12 @@ The section has the following options for configuring a filter statement:
   [Netwrix Integrations Page](/docs/threatmanager/3.3/administration/configuration/integrations/netwrixintegrations.md) topic for
   additional information.
 - Timeframe – This menu provides several timeframe options as well as a clock and a calendar for
-  setting a custom range. You must set the timeframe for the data to be returned in the report. If
+  setting a custom range. You must set the timeframe for the data the report returns. If
   your report is blank, it is likely due to the timeframe setting. See the Timeframe topic for
   additional information.
-- Attribute – This menu provides a list of attributes that are available on events in the data
+- Attribute – This menu provides a list of attributes available on events in the data
   source. See the Filter Attribute Menu topic for additional information.
-- Operator – This menu controls how the rule is evaluated by specifying the comparison between the
+- Operator – This menu controls how the application evaluates the rule by specifying the comparison between the
   Attribute and the Filter value. Options vary based on the selected attribute. See the Filter
   Operator Menu topic for additional information.
 - Filter – Use it to specify the value to evaluate using the operator for the selected attribute
@@ -39,7 +39,7 @@ See the Build a Filter Statement topic for additional information.
 
 You must set a timeframe for an investigation query. When you run a query, the application scans the
 available data for activity events that match the set filters for the specified timeframe. By
-default, the timeframe is set for the "Last Hour" of activity.
+default, the timeframe covers the "Last Hour" of activity.
 
 ![Investigations Interface showing the Timeframe dropdown menu](/images/threatprevention/7.5/reportingmodule/investigations/options/timeframe.webp)
 
@@ -61,8 +61,8 @@ clock and a calendar for setting a custom range:
   section
 
 :::note
-The timeframe property is saved with the investigation filters. However, it can be
-modified to run a query ad hoc with the same filter statement but a different timeframe.
+The application saves the timeframe property with the investigation filters. However, you
+can modify it to run a query ad hoc with the same filter statement but a different timeframe.
 :::
 
 
@@ -101,35 +101,34 @@ attribute:
 
 - Event ( group header in the menu):
 
-    - Affected Object – The name of the object in Active Directory that was affected by the
-      event
-    - Attribute – The specific property or field of the object that was changed or accessed
-    - Attribute New Value – The new value that the attribute was changed to after the event
+    - Affected Object – The name of the object in Active Directory that the event affected
+    - Attribute – The specific property or field of the object changed or accessed
+    - Attribute New Value – The attribute's new value after the event
     - Attribute Old Value – The value that the attribute had before the event occurred
-    - Blocked – Indicates whether the operation was prevented by a security measure, such as a
-      Netwrix agent
+    - Blocked – Indicates whether a security measure, such as a Netwrix agent, prevented the
+      operation
     - Client – The device, IP address, or host that initiated the event
     - Client Type – The type of client initiating the event, such as host, IP address, or device
     - Domain – The Active Directory domain where the event occurred
-    - Event Operation – The specific action that was attempted or performed during the event (e.g.,
+    - Event Operation – The specific action attempted or performed during the event (e.g.,
       modify, delete)
     - Event Sub-Operation – Additional actions or details related to the primary event operation
     - Event Type – The nature or source of the event data, indicating where or how the event
       originated
     - Perpetrator – The user or service account that initiated the event
     - Perpetrator Type – The type of account (e.g., user, service) that performed the event
-    - Success – Indicates whether the action associated with the event was successfully completed
+    - Success – Indicates whether the action associated with the event completed successfully
     - Tag (Direct) – A label or classification directly applied to the object or event
     - Tag (Effective) – A label or classification that applies to an object due to inheritance from
       a group or policy. For example, if a group has a tag, all its members will inherit that tag
     - Target – The specific object, resource, or entity that was the focus of the event
-    - Target Type – The type or classification of the object, resource, or entity that was targeted
+    - Target Type – The type or classification of the object, resource, or entity targeted
     - Time of Day – The exact date and time when the event occurred
 
 - Active Directory (category group header in the menu):
 
     - Affected Object Distinguished Name – The full path and name of the object in Active Directory
-      that was affected by the event
+      that the event affected
     - Certificate Thumbprint – The unique identifier of a certificate used in the event, typically
       represented as a hexadecimal string
     - Encryption Type – The method or algorithm used to encrypt data during the event (e.g., AES,
@@ -167,21 +166,21 @@ attribute:
       indicating how likely the sign-in was compromised
     - Risk State – The current status of the detected risk, which can be "At Risk," "Dismissed," or
       "Remediated," depending on the actions taken
-    - Target Resource Type – The type of resource or service that was involved in the event, such as
+    - Target Resource Type – The type of resource or service involved in the event, such as
       a specific application or database
 
 - File System (grayed-out category group header in the menu):
 
     - Extension – The file extension indicating the file type (e.g., .txt, .docx)
-    - File Path – The full directory path to where the file is located
+    - File Path – The full directory path to the file
     - File Size – The size of the file, typically measured in bytes
     - File Tag – A label or classification applied to the file for organizational or security
       purposes
 
 - Integrations (category group header in the menu):
 
-    - Policy – The set of rules or configurations applied within the integration., which may require
-      Netwrix Threat Preventiondatabase access to be configured on the NetwrixIntegrations page. See
+    - Policy – The set of rules or configurations applied within the integration, which may require
+      you to configure Netwrix Threat Prevention database access on the Netwrix Integrations page. See
       the [Netwrix Integrations Page](/docs/threatmanager/3.3/administration/configuration/integrations/netwrixintegrations.md) page
       for additional information
 
@@ -207,10 +206,10 @@ You can create a filter for a new investigation or modify a filter for a saved i
 
 ![filtersimple](/images/threatprevention/7.5/reportingmodule/investigations/options/filtersimple.webp)
 
-**Step 2 –** If multiple data sources are configure, select a source from the **Source** dropdown
+**Step 2 –** If you configured multiple data sources, select a source from the **Source** dropdown
 menu.
 
-**Step 3 –** Set the timeframe for the event data to be returned in the report.
+**Step 3 –** Set the timeframe for the event data the report returns.
 
 **Step 4 –** Select an attribute from the Attribute dropdown menu.
 
@@ -235,7 +234,8 @@ attribute. For example:
 - Then the query will return activity for nwxtech\ad.bruce.wayne OR nwxtech\ad.robin.locksley
 
 **Step 7 –** To form a complex filter with multiple attributes, click **Add** to insert a new row
-and repeat steps 4-6. The AND operator is automatically applied to group multiple rows. For example:
+and repeat steps 4-6. The application automatically applies the AND operator to group multiple rows.
+For example:
 
 - When:
 
@@ -252,7 +252,7 @@ Click the X at the end of a row to remove it from the statement.
 :::
 
 
-After the filter is set, you can generate the report ad hoc by clicking **Run Query**. This lets you
+After you set the filter, you can generate the report ad hoc by clicking **Run Query**. This lets you
 test if your filter statement is working as expected. Save the investigation for reuse. You can
 also add subscriptions or export the report data using the options above the Filters section.
 

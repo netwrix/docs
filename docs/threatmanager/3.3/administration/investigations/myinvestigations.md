@@ -16,9 +16,9 @@ Click **Investigate** in the application header bar to open the Investigations i
 The table displays the list of investigations with the following columns:
 
 - Name – The name of the investigation
-- Threat – The check mark indicates that a Threat has been configured for this investigation
-- Favorite – The check mark indicates that the investigation has been tagged as a favorite for the
-  logged in user
+- Threat – The check mark indicates that this investigation has a configured Threat
+- Favorite – The check mark indicates that the logged in user has tagged the investigation as a
+  favorite
 
 Click an investigation to view it. You can run the query, modify the configuration, add a
 subscription, or export the report. See the [Investigation Options](/docs/threatmanager/3.3/administration/investigations/options/overview.md) topic for

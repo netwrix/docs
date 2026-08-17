@@ -41,12 +41,12 @@ The type information displayed depends on the information available for the user
 
 **Profile Card Icons**
 
-The following icons may be displayed in the profile card for user accounts and computers:
+The profile card may display the following icons for user accounts and computers:
 
 ![profileicon](/images/threatmanager/3.0/administration/threatdetails/profileicon.webp)
 
-1. Non-Synced object icon : This icon appears when an object wasn't found in a sync but was created
-   by an event.
+1. Non-Synced object icon : This icon appears when a sync didn't find the object but an event
+   created it.
 2. UBA training hourglass icon : This icon shows that the object is still undergoing its User
    Behavior Analytics (UBA) training period.
 3. Magnifying Glass Icon : This magnifying glass icon will lead you to the investigation page to
@@ -54,7 +54,7 @@ The following icons may be displayed in the profile card for user accounts and c
 
 ## Tabs
 
-Depending on the selected user, group, or host, the following tabs may be displayed:
+Depending on the selected user, group, or host, the page may display the following tabs:
 
 ![This screenshot displays the tabs for the Active Directory Objects page. Tabs include Threats, Activity Summary, and Group Membership.](/images/threatmanager/3.0/administration/threatdetails/adobjecttabs.webp)
 
@@ -85,6 +85,6 @@ To add a tag to a user, group, or computer:
 
 **Step 2 –** Click the tag you want to add from the list of existing tags.
 
-The selected tag is added to the user, group, or computer. See the
+Threat Manager adds the selected tag to the user, group, or computer. See the
 [Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for additional
 information.

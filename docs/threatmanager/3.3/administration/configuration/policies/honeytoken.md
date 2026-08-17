@@ -12,8 +12,8 @@ This is important for a number of reasons.
 - The Honeytoken name should be convincing enough that an adversary would want to use it.
 - to reduce noise, the username format shouldn't match (in part or in full) another user,
   group, or computer account in your environment.
-- Token usernames are limited to 20 characters, and follow the validity rules for a regular Active
-  Directory username.
+- Token usernames can be up to 20 characters long, and follow the validity rules for a regular
+  Active Directory username.
 
 The next step is to configure LDAP monitoring for Honeytokens.
 
@@ -36,13 +36,13 @@ policy from the Policies list. Or, select the policy from the Policies table in 
 ![honeytoken](/images/threatmanager/3.0/administration/configuration/policies/honeytoken.webp)
 
 **Step 3 –** On the Configuration tab of the policy, fill in the requested information and click
-**Copy LDAP Filter**. The Copy LDAP Filter button will automatically copy the exact string that is
-required for Activity Monitor or Threat Prevention to the clipboard to configure the LDAP events for
-this Honeytoken.
+**Copy LDAP Filter**. The Copy LDAP Filter button automatically copies to the clipboard the exact
+string Activity Monitor or Threat Prevention requires to configure the LDAP events for this
+Honeytoken.
 
 ![ldapfiltercopiedtoclipboard](/images/threatprevention/7.5/admin/policies/eventtype/usecase/ldapfiltercopiedtoclipboard.webp)
 
-A notification will pop up and the filter will be saved to the clipboard.
+A notification pops up and the application saves the filter to the clipboard.
 
 ### Configure LDAP Monitoring
 
@@ -64,9 +64,9 @@ select the other **LDAP Monitoring** event type in the list above.
 Threat Manager.
 
 :::tip
-Remember, the Honeytoken tab of the
+Remember, you must configure the Honeytoken tab of the
 [Netwrix Threat Manager Configuration Window](/docs/threatmanager/3.3/install/integration/threatprevention/threatmanagerconfiguration.md)
-must be configured to successfully send LDAP monitoring data to Threat Manager.
+to successfully send LDAP monitoring data to Threat Manager.
 :::
 
 
@@ -76,7 +76,7 @@ To configure LDAP monitoring within Netwrix Activity Monitor for Netwrix Threat
 Manager.
 
 :::note
-LDAP Monitoring isn't enabled, it must be enabled in the Monitored Domains tab.
+LDAP Monitoring is disabled by default. Enable it on the Monitored Domains tab.
 :::
 
 
@@ -96,4 +96,4 @@ LDAP Monitoring isn't enabled, it must be enabled in the Monitored Domains tab.
 
 **Step 14 –** Paste the string copied from Threat Manager and press **Enter**.
 
-LDAP monitoring has been configured for Threat Manager.
+LDAP monitoring now sends data to Threat Manager.

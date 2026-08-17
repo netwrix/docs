@@ -6,8 +6,8 @@ sidebar_position: 90
 
 # Netwrix Integrations Page
 
-The Netwrix Integrations page within the Integrations interface lists the products for which the
-application is configured to connect.
+The Netwrix Integrations page within the Integrations interface lists the products the
+application connects to.
 
 ![Integrations interface on the Netwrix Integration page](/images/threatmanager/3.0/administration/configuration/integrations/page_3.webp)
 
@@ -17,11 +17,11 @@ identifies which database is the default source for Investigation reports. You c
 selecting a different database from the dropdown menu. The table provides the following
 information:
 
-- Name – The name of the integration, as supplied when it was added
+- Name – The name of the integration, as supplied when you added it
 - Host – The name of the database host
 - Catalog – The name of the database
 - Profile – The Name of the Credential Profile assigned to the integration
-- Description – Integration description, as supplied when it was added
+- Description – Integration description, as supplied when you added it
 
 To view integration details or make modifications, select an integration from the list or under
 Netwrix Integrations in the navigation pane.
@@ -59,29 +59,29 @@ Add New Integration window opens.
     - Named instance with non-standard port, use `[SQLHostName]\[SQLInstanceName],[PortNumber]`, for
       example `NT-SQL02\Netwrix,72`
 
-- Credential Profile – Select the Credential Profile by name from the dropdown menu. This was
-  pre-created in the Credential Profiles page.
+- Credential Profile – Select the Credential Profile by name from the dropdown menu. You create this profile
+  on the Credential Profiles page.
 - Configuration Catalog Name – Enter the name of the configuration database. By default, this is set
   to the name of the Threat Prevention database, `NVMonitorConfig`.
 - Catalog Name – Enter the name of the database. By default, this is set to the name of the Threat
   Prevention database, `NVMonitorData`.
-- Integration Service URL – This shouldn't be modified. It is the URL for the service endpoint, by
+- Integration Service URL – Don't modify this value. It is the URL for the service endpoint, by
   default `http://localhost:55558`.
-- Show Deleted Policies – When this option is checked, deleted policies will show on the Policy Sync
+- Show Deleted Policies – When you check this option, deleted policies show on the Policy Sync
   tab of this Netwrix integration.
 
 **Step 4 –** Click **Test Connection** to ensure connection to the database. This will take a
 moment. Then a message will appear in the upper right corner of the console indicating a successful
 or failed connection. If successful, move on to the next step. If failed, recheck your entries for
-error and repeat this step until a successful connection is established.
+errors and repeat this step until the connection succeeds.
 
 **Step 5 –** Click Add. The Add New Integration window closes.
 
-The NetwrixIntegration is listed in the Integrations navigation pane.
+The Netwrix Integration appears in the Integrations navigation pane.
 
 :::note
 For integration with Netwrix Threat Prevention, you can add both the main `NVMonitorData`
-database and the archive database, if one has been configured.
+database and the archive database, if you configured one.
 :::
 
 
@@ -109,8 +109,8 @@ Select the integration from the list to see the details and modification options
     - Delete – The delete button in the upper right corner of the box opens the Delete Stealthbits
       Integration window to confirm the action
 
-- Configuration – Displays the settings entered for the selected integration. These settings can be
-  modified on this tab. See the Configuration Tab topic for additional information.
+- Configuration – Displays the settings entered for the selected integration. You can modify these
+  settings on this tab. See the Configuration Tab topic for additional information.
 - Policy Sync – Displays information on the last policy sync executed. See the Policy Sync Tab topic
   for additional information.
 
@@ -126,14 +126,14 @@ The tab provides the following settings:
 - Credential Profile – Displays the Credential Profile by name
 - Configuration Catalog Name – Displays the name of the configuration database .
 - Catalog Name – Displays the name of the database
-- Integration Service URL – Displays the URL for the service endpoint. This shouldn't be modified.
-- Show Deleted Policies – When this option is checked, deleted policies will show on the Policy Sync
+- Integration Service URL – Displays the URL for the service endpoint. Don't modify this value.
+- Show Deleted Policies – When you check this option, deleted policies show on the Policy Sync
   tab of this Netwrix integration.
 - Test Connection – Click **Test Connection** to ensure connection to the database. This will take a
   moment. Then a message will appear in the upper right corner of the console indicating a
   successful or failed connection.
 
-The Save button is enabled when any settings are modified. Click it to commit the changes before
+The Save button activates when you modify any settings. Click it to commit the changes before
 leaving the page.
 
 ### Policy Sync Tab
@@ -174,7 +174,7 @@ Netwrix Integration.
 
 **Step 6 –** Click the **Save** button.
 
-The Netwrix Integration name and/or description have been modified.
+The Netwrix Integration now has the new name and description.
 
 ## Modify Netwrix Integration Configuration
 
@@ -190,7 +190,7 @@ Netwrix Integration.
 **Step 3 –** To modify the Database Host, modify the value by typing in the textbox.
 
 **Step 4 –** To modify the Credential Profile, select the Credential Profile by name from the
-dropdown menu. This was pre-created in the Credential Profiles page.
+dropdown menu. You create this profile on the Credential Profiles page.
 
 :::note
 If you modify the Credential Profile for a domain, click **Test Connection** to ensure
@@ -204,13 +204,13 @@ corner of the console indicating a successful or failed connection.
 **Step 6 –** For the Catalog Name, modify the value by typing in the textbox.
 
 :::tip
-Remember, the Integration Service URL value shouldn't be modified.
+Remember, you can't modify the Integration Service URL value.
 :::
 
 
 **Step 7 –** Check or uncheck the Show Deleted Policies box as desired.
 
-**Step 8 –** The Save button is enabled when any settings are modified. Click it to commit the
+**Step 8 –** The Save button activates when you modify any settings. Click it to commit the
 changes before leaving the page.
 
-The changes to the Configuration have been committed.
+The application commits the Configuration changes.

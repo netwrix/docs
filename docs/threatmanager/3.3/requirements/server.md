@@ -7,13 +7,13 @@ sidebar_position: 10
 # Application Server Requirements
 
 :::warning
-Netwrix Threat Manager can't be installed on the same server as Netwrix Threat Manager
+Don't install Netwrix Threat Manager on the same server as the Netwrix Threat Manager
 Reporting Module.
 :::
 
 
-The Windows server can be physical or virtual. The following Windows server operating systems are
-supported:
+The Windows server can be physical or virtual. Threat Manager supports the following Windows server
+operating systems:
 
 - Windows Server 2022
 - Windows Server 2019
@@ -25,7 +25,7 @@ Additionally the server must meet these requirements:
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the total number of daily events sent to Threat Manager. Use the total
+These depend upon the total number of daily events sent to Threat Manager. Use the total
 events for a peak day of the week, by activity.
 
 | Environment      | Enterprise | Extra Large | Large  | Medium | Small | Extra Small |
@@ -42,10 +42,10 @@ All values are based upon a seven day event retention period in Threat Manager.
 :::
 
 
-Daily events to be monitored by Threat Manager can typically be discovered by using Netwrix Threat
-Prevention or Netwrix Activity Monitor. When planning a deployment where there is no
-Netwrix agent deployed, it can be more difficult to plan for scale. However, the following are
-estimations based on organization size can be used:
+You can typically discover the daily events Threat Manager monitors by using Netwrix Threat
+Prevention or Netwrix Activity Monitor. When planning a deployment with no Netwrix agent deployed,
+it can be more difficult to plan for scale. However, you can use the following estimations based on
+organization size:
 
 - For fewer than 1,000 active users
 
@@ -78,18 +78,18 @@ The following are additional requirements for the application server:
 
 **Additional Considerations when Database is on the Application Server**
 
-The following considerations must be accommodated for:
+Accommodate the following considerations:
 
-- When running antivirus scans against the PostgreSQL v14 database, the PostgreSQL data folder must
-  be excluded from the scans to prevent database complications.
+- When running antivirus scans against the PostgreSQL v14 database, exclude the PostgreSQL data
+  folder from the scans to prevent database complications.
 - For performance reasons, disable Windows File Indexing on the drive containing the Threat Manager
   database.
-- Disk Defragmentation jobs should never be performed on the drive containing Threat Manager
+- Never perform Disk Defragmentation jobs on the drive containing the Threat Manager
   PostgreSQL database. This can cause operational issues with the PostgreSQL database.
 
 **Permissions for Installation and Application Use**
 
-The following permissions are required to install and use the application:
+Installing and using the application requires the following permissions:
 
 - Membership in the local Administrators group
 
@@ -98,7 +98,7 @@ The following permissions are required to install and use the application:
 While physical machines are always preferred, Netwrix fully supports the use of virtual machines. This
 section contains special considerations when using virtualization.
 
-- VMWare® ESX® – If using ESX, the following specifications are recommended:
+- VMWare® ESX® – If using ESX, Netwrix recommends the following specifications:
 
     - ESX 4.0 / ESXi™ 4.1 or higher
     - Virtual Hardware 7 or higher
@@ -106,5 +106,5 @@ section contains special considerations when using virtualization.
 
 - Virtual Storage Consideration
 
-    - In the server requirements, when separate disks are required for the servers, that should
+    - In the server requirements, when the servers require separate disks, that should
       translate to separate data stores on the VM host machine.

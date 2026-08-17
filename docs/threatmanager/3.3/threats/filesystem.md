@@ -10,19 +10,19 @@ The following threats are monitored for File System:
 
 ## High Risk Permissions
 
-High Risk Permissions are those which grant unrestricted access to a file or folder. When high risk
-permissions are added or increased on a folder or file, a threat is created.
+High Risk Permissions are those which grant unrestricted access to a file or folder. When someone
+adds or increases high risk permissions on a folder or file, Threat Manager creates a threat.
 
 | High Risk Permissions |                                                                                                                                                                                                                                                                              |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Definition            | The High Risk Permissions threat creates a threat when a high risk trustee (Domain Users, Anonymous Logon, Authenticated Users, and Everyone) is added to the ACL on a folder or file. These permissions are high risk because they grant unrestricted access to a resource. |
-| Example               | Domain Users are given Read access to a folder. Everyone is given Full Control on a folder which already had Domain Users with Read Access.                                                                                                                                  |
-| Trigger               | A threat is created when a user adds a high risk trustee (see Definition) to a folder or file, which increases the amount of open access. This threat is updated with the total number of folders or files affected due to the inherited permissions.                         |
+| Definition            | The High Risk Permissions threat creates a threat when someone adds a high risk trustee (Domain Users, Anonymous Logon, Authenticated Users, and Everyone) to the ACL on a folder or file. These permissions are high risk because they grant unrestricted access to a resource. |
+| Example               | An administrator gives Domain Users Read access to a folder. An administrator gives Everyone Full Control on a folder that already had Domain Users with Read Access.                                                                                                        |
+| Trigger               | Threat Manager creates a threat when a user adds a high risk trustee (see Definition) to a folder or file, which increases the amount of open access. Threat Manager updates this threat with the total number of folders or files affected due to the inherited permissions. |
 
 ## NTDS.dit File Access
 
-Unauthorized file system interaction with the NTDS.dit file stored on Active Directory Domain
-Controllers will be detected as a threat.
+Threat Manager detects unauthorized file system interaction with the NTDS.dit file stored on Active
+Directory Domain Controllers as a threat.
 
 | NTDS.dit File Access |                                                                                                                                                                                                                                                                                                                                         |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -32,7 +32,7 @@ Controllers will be detected as a threat.
 ## Ransomware
 
 When a user creates or renames at least 100 files with a known ransomware extension or a name that
-resembles common ransom notes, a threat is created for each rename action.
+resembles common ransom notes, Threat Manager creates a threat for each rename action.
 
 | Ransomware |                                                                                                                                         |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,10 +42,10 @@ resembles common ransom notes, a threat is created for each rename action.
 
 ## Unusual Processes
 
-If a user runs a process on a monitored server for the first time, a threat is created.
+If a user runs a process on a monitored server for the first time, Threat Manager creates a threat.
 
 | Unusual Processes |                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Definition        | The Unusual Processes threat detects if previously unseen processes are launched on critical file servers.                                                                                                                                                                                                                                                                                                                                                  |
-| Example           | A user launches a "python.exe" process that has never been launched by anyone else in the environment.                                                                                                                                                                                                                                                                                                                                                      |
-| Trigger           | Threat Manager records the name of the processes associated with file access activities. Over a learning period (e.g. 30 days), Threat Manager profiles which processes are normal by aggregating data across all file servers. After that, if a new process is identified that has not been seen on any other file servers, a threat will be created. NOTE: This threat is only applicable on Windows file servers when the activity is performed locally. |
+| Definition        | The Unusual Processes threat detects when previously unseen processes launch on critical file servers.                                                                                                                                                                                                                                                                                                                                                      |
+| Example           | A user launches a "python.exe" process that no one else in the environment has launched.                                                                                                                                                                                                                                                                                                                                                                    |
+| Trigger           | Threat Manager records the name of the processes associated with file access activities. Over a learning period (e.g. 30 days), Threat Manager profiles which processes are normal by aggregating data across all file servers. After that, if Threat Manager identifies a new process that it has not seen on any other file servers, it creates a threat. NOTE: This threat is only applicable on Windows file servers when the activity occurs locally. |

@@ -13,14 +13,13 @@ Threat Manager Event Sink in Threat Prevention. See the
 additional information.
 
 :::note
-Integration between Threat Prevention and Threat Manager was introduced with the release
-of Threat Prevention v6.0 or later and Threat Manager v2.0 or later.
+Threat Prevention v6.0 or later and Threat Manager v2.0 or later introduced integration
+between the two products.
 :::
 
 
-The Threat Manager DC Sync threat is sourced by a Threat Prevention AD Replication Monitoring
-policy. Configure the policy to exclude domain controllers on the Host
-(From) filter.
+The Threat Manager DC Sync threat comes from a Threat Prevention AD Replication Monitoring
+policy. Configure the policy to exclude domain controllers on the Host (From) filter.
 
 Threat Prevention v7.2+ supports sending events to Threat Manager using Protobuf, which allows
 for higher performance event delivery to Threat Manager.

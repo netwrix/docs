@@ -41,7 +41,7 @@ Identify the data source for this app in either the Name or Description fields.
 
 **Step 4 –** Click Add to generate the app token.
 
-The app token is added to the App Tokens list in the Integrations box.
+Threat Manager adds the app token to the App Tokens list in the Integrations box.
 
 ## View and Copy the App Token
 
@@ -56,7 +56,8 @@ that the status is set to **ON**.
 
 Follow the instructions to copy the app token.
 
-**Step 1 –** In the App Token box, click **Copy Token**.The app token is copied to the clipboard.
+**Step 1 –** In the App Token box, click **Copy Token**. Threat Manager copies the app token to the
+clipboard.
 
 **Step 2 –** Paste the app token to the location you want.
 

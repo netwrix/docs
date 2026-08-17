@@ -74,8 +74,8 @@ Don't modify the Jwt section of the appsettings.json file.
 :::
 
 
-**Step 3 –**   In the WebService and ADService sections, ports are set to 8080 and 55556
-respectively. ensure these ports are available on your machine.
+**Step 3 –**   In the WebService and ADService sections, the ports are 8080 and 55556
+respectively. Ensure these ports are available on your machine.
 
 **Step 4 –**   Set the **Certificate** value to the value of the certification thumbprint you
 imported previously.
@@ -87,7 +87,7 @@ https://ThreatManagerServer.Domain.com:8080).
 
 **Step 7 –**   Restart the Web Service.
 
-**Step 8 –**   Check the Web Service Log File to ensure the Cert was found and loaded properly. You
+**Step 8 –**   Check the Web Service Log File to ensure the service found and loaded the certificate properly. You
 should see a log file with the output:
 
 ```
@@ -128,7 +128,7 @@ Don't modify the Jwt section of the appsettings.json file.
 :::
 
 
-**Step 3 –**   In the WebService section, the port is set to 55556. ensure it is available on
+**Step 3 –**   In the WebService section, the port is 55556. Ensure it is available on
 your machine.
 
 **Step 4 –**   Set the certificate value to that of the certification thumbprint you imported
@@ -138,8 +138,8 @@ previously.
 
 **Step 6 –**   Restart the Active Directory Service.
 
-**Step 7 –**   Check the Active Directory Service Log File to ensure the Cert was found and loaded
-properly. You should see a log file with the output:
+**Step 7 –**   Check the Active Directory Service Log File to ensure the service found and loaded the
+certificate properly. You should see a log file with the output:
 
 ```
 Found cert with subject % and thumbprint 12345ABCDEF54AED1DB59C349CA4D514628DB4D3

@@ -32,12 +32,12 @@ The Threats page displays three buttons in the top right corner:
 
 ![evidencebox](/images/threatmanager/3.0/administration/threatdetails/evidencebox.webp)
 
-- Unassigned – If the threat has not been assigned to an owner, the button will display as
-  Unassigned. If a user has been assigned to an owner, the button will display the username. Click
-  it to open the Workflow Window where assigned user and/or status can be updated.
-- Set Status – If no status is set for the threat the button will display as _Set Status_. If a
-  status has been set for the threat then this button displays the status of the threat. Click it to
-  open the Workflow Window, where assigned user and/or status can be updated.
+- Unassigned – If the threat has no owner, the button displays as Unassigned. If you assigned a user
+  as owner, the button displays the username. Click it to open the Workflow Window, where you can
+  update the assigned user and the status.
+- Set Status – If the threat has no status, the button displays as _Set Status_. If the threat has a
+  status, this button displays it. Click it to open the Workflow Window, where you can update the
+  assigned user and the status.
 - Threat Response – Click to open the Threat Response Window and designate the playbook to response
   to the threat.
 
@@ -51,7 +51,7 @@ threat.
 The Workflow window contains the following configuration settings:
 
 :::note
-The information displayed on this page is dependent upon the type of threat selected.
+The information on this page depends on the type of threat you select.
 :::
 
 
@@ -64,12 +64,12 @@ The information displayed on this page is dependent upon the type of threat sele
     - Open – Default status for new threats
  - Under Investigation – Threats that are under or pending investigation by an
       administrator
-    - Closed - Resolved – Legitimate threats that have been contained or dealt with
-    - Closed - False Positive – Behavior that has been incorrectly identified by Threat Manager as a
+    - Closed - Resolved – Legitimate threats you have contained or dealt with
+    - Closed - False Positive – Behavior that Threat Manager incorrectly identified as a
       threat
 
         :::note
-        Abnormal behavior threat detection will be influenced by false positives. Marking
+        False positives influence abnormal behavior threat detection. Marking
         abnormal behavior threats as False Positive will reduce the sensitivity of the abnormality
         detection for this perpetrator.
         :::
@@ -90,9 +90,9 @@ The Threat Response window contains the following configuration options:
 ![Threat Response window](/images/threatmanager/3.0/administration/threatdetails/threatresponse.webp)
 
 - Select Playbook – Select a playbook for the threat response
-- Description – Description of the playbook that has been selected
+- Description – Description of the selected playbook
 - Status – The state of the playbook
-- Last Executed – When the playbook was last executed
+- Last Executed – When the playbook last ran
 
 The Threat Details Overview contains the following tabs:
 
@@ -110,10 +110,10 @@ The Event Details tab shows details for the selected threat.
 - Time Stamp – The exact date and time when the event occurred
 - Target – The specific object, resource, or entity that was the focus of the event
 - Perpetrator – The user or service account that initiated the event
-- Successful – Indicates whether the action associated with the event was successfully completed
-  True if the operation was successful. False if the operation failed
-- Blocked – Indicates whether the operation was prevented by a security measure, such as a Netwrix
-  agent True if the operation was blocked by a Netwrix agent. False if not blocked.
+- Successful – Indicates whether the action associated with the event completed successfully.
+  True if the operation succeeded. False if the operation failed
+- Blocked – Indicates whether a security measure, such as a Netwrix agent, prevented the operation.
+  True if a Netwrix agent blocked the operation. False if not blocked.
 - Operation – Type of operation performed
 - Client – The device, IP address, or host that initiated the event
 - Description – A summary of the event
@@ -132,7 +132,7 @@ threat listed in the Event Details tab.
 
 The Related Threats table has the following columns:
 
-- Time Stamp – Time that the threat was detected
+- Time Stamp – Time Threat Manager detected the threat
 - Threat – Type of threat detected
 - Status – Workflow status of the threat: Open, Under investigation, Closed - Resolved, or Closed -
   False Positive
@@ -149,10 +149,10 @@ The Related Activity tab lists activity by the selected user that may be related
 - Time Stamp – The exact date and time when the event occurred
 - Target – The specific object, resource, or entity that was the focus of the event
 - Perpetrator – The user or service account that initiated the event
-- Successful – Indicates whether the action associated with the event was successfully completed
-  True if the operation was successful. False if the operation failed
-- Blocked – Indicates whether the operation was prevented by a security measure, such as a Netwrix
-  agent True if the operation was blocked by a Netwrix agent. False if not blocked.
+- Successful – Indicates whether the action associated with the event completed successfully.
+  True if the operation succeeded. False if the operation failed
+- Blocked – Indicates whether a security measure, such as a Netwrix agent, prevented the operation.
+  True if a Netwrix agent blocked the operation. False if not blocked.
 - Operation – The type of activity performed
 - Client – The device, IP address, or host that initiated the event
 - Description – A summary of the event
@@ -172,6 +172,6 @@ comments.
 The History table has the following columns:
 
 - Add Comments – Type any desired comments in the box and click Add Comment
-- Time Stamp – Exact date and time when the status was updated.
+- Time Stamp – Exact date and time of the status update.
 - Message – Displays the content of the comments entered by users or the system
 - User – The name of the user who entered the comment

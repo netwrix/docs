@@ -13,7 +13,7 @@ administrators.
 **Threat Manager App Token**
 
 The Threat Manager App Token authenticates connection between Threat Prevention and Threat Manager.
-This token is generated in Threat Manager:
+You generate this token in Threat Manager:
 
 - In Threat Manager, navigate to the **Configuration** > **App Tokens** page
 - Generate a new app token
@@ -22,8 +22,7 @@ This token is generated in Threat Manager:
 ## Event Sink Tab
 
 The Event Sink tab connects Threat Prevention to Threat Manager through a uniform resource
-identifier and the Threat Manager App Token. Policy event data is sent to Threat Manager through
-this window.
+identifier and the Threat Manager App Token. This window sends policy event data to Threat Manager.
 
 To configure Threat Prevention to send event data to Threat Manager:
 
@@ -55,31 +54,30 @@ communication with Threat Manager in the secure way.
 - If Threat Manager has TLS enabled, then select the **Enable SSL** checkbox to enable the Agent to
   send events to Threat Manager. Else the Agent will throw an error when connecting.
 - Select the **Ignore Certificate Errors** checkbox to ignore certificate errors that may arise when
-  the Agent connects to Threat Manager. If this checkbox isn't selected, the Agent will fail to
+  the Agent connects to Threat Manager. If you don't select this checkbox, the Agent will fail to
   connect when there are certificate errors.
 
 **Step 5 –** In the App Token box, enter the App Token generated on the App Tokens page in Threat
 Manager.
 
-**Step 6 –** The Policies area lists all the policies that have been created in Threat Prevention.
-The following is displayed for each policy:
+**Step 6 –** The Policies area lists all the policies created in Threat Prevention.
+The area displays the following for each policy:
 
-- Send – When this checkbox is selected, the policy sends the event data to Threat Manager directly
-  from the Agent. This option can also be set by the Send to Netwrix Threat Manager checkbox on the
-  Actions tab of a policy.
+- Send – When you select this checkbox, the policy sends the event data to Threat Manager directly
+  from the Agent. You can also set this option with the Send to Netwrix Threat Manager checkbox on
+  the Actions tab of a policy.
 - State – Displays whether the policy is enabled or disabled
-  The State column doesn't control the state of the policy. A policy can be enabled or disabled
+  The State column doesn't control the state of the policy. You can enable or disable a policy
   either on the General tab of the respective policy or through the Policies Node Right-Click Menu.
 - Name –Shows the display name of the policy
 - Path – Displays the path of the policy within the structure of the Policies node in the left pane.
 
 **Step 7 –** Click **Save**.
 
-All real-time event data from the selected Threat Prevention policies is now being sent to Threat
-Manager.
+The selected Threat Prevention policies now send all real-time event data to Threat Manager.
 
 :::note
-The Threat Manager URI configuration can also be used to send Threat Prevention policy
+You can also use the Threat Manager URI configuration to send Threat Prevention policy
 data to the Activity Monitor host and port (example: amqp://localhost:4499). Threat Prevention can
 only send to either Threat Manager or the Activity Monitor.
 :::
@@ -87,8 +85,9 @@ only send to either Threat Manager or the Activity Monitor.
 
 ## Honey Token Tab
 
-On the Honey Token tab, you specify a samAccountName, which is substituted with the replacement
-samAccountName that you provide. The information on this tab is sent to the Threat Prevention Agent.
+On the Honey Token tab, you specify a samAccountName, which the Agent substitutes with the
+replacement samAccountName you provide. Threat Prevention sends the information on this tab to the
+Threat Prevention Agent.
 If the Agent sees an LDAP query using information from the Honey Token of fake accounts, it alters
 the LDAP query results to return the Replacement samAccountName. This ensures the account looks like
 a real privileged account to lure the perpetrator to it.
@@ -135,7 +134,7 @@ To include the Forged PAC information in events:
 **Step 2 –** On the Forged PAC analytics window, select the gear icon on the upper-right corner of
 the window to open the Configure Analytics window.
 
-**Step 3 –** Add or remove the RIDs of groups to be monitored on the Settings tab. See the Forged
+**Step 3 –** Add or remove the RIDs of the groups to monitor on the Settings tab. See the Forged
 PAC Analytic Type topic for additional information.
 
 **Step 4 –** On the Policy tab, configure the following:
@@ -144,7 +143,7 @@ PAC Analytic Type topic for additional information.
 - Event Type Tab – Keep the default settings or set as desired for the Authentication event filters
 - Actions Tab – Select **Send to Threat Manager**
 
-**Step 5 –** Click Save once configurations are set. The Configure Analytics window closes.
+**Step 5 –** Click Save after you set the configurations. The Configure Analytics window closes.
 
 **Step 6 –** In Threat Prevention, click **Configuration** > **Netwrix Threat Manager
 Configuration** on the menu. The Netwrix Threat Manager Configuration window opens.
@@ -156,5 +155,5 @@ Configuration** on the menu. The Netwrix Threat Manager Configuration window ope
 **Step 8 –** On the Forged PAC tab, select the **Include Forged PAC information in events**
 checkbox. Click **Save**.
 
-When a Forged PAC analytic is triggered in Threat Prevention, the event data will be sent to Threat
-Manager.
+When a Forged PAC analytic triggers in Threat Prevention, Threat Prevention sends the event data to
+Threat Manager.

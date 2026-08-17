@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Import a Playbook
 
-You can import playbooks created in a different location than the Threat Manager installation
-to Threat Manager. This process involves creating a playbook in a JSON file format and then selecting
+You can import playbooks into Threat Manager that you created outside the Threat Manager
+installation. This process involves creating a playbook in a JSON file format and then selecting
 that file for import to Threat Manager.
 
 To import a playbook:
@@ -20,4 +20,4 @@ To import a playbook:
 
 **Step 3 –** This imports the Playbook and adds it to the Playbooks list.
 
-The imported Playbook is automatically selected and displayed.
+Threat Manager automatically selects and displays the imported Playbook.

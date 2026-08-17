@@ -25,7 +25,7 @@ Before migrating, ensure your PostgreSQL 14 installation is on the latest minor 
 
 **Step 1 –** Run `PostgreSQL 14 Setup`
 
-This step can be skipped if you already have a green checkmark here.
+You can skip this step if you already have a green checkmark here.
 
 **Step 2 –** Follow the installer prompts to complete the PostgreSQL 14 update.
 
@@ -52,7 +52,7 @@ Threat Manager is now updated and still connected to PostgreSQL 14.
 
 ## Step 3 – Install PostgreSQL 18
 
-Multiple PostgreSQL instances can be installed on the same server simultaneously. After this step,
+You can install multiple PostgreSQL instances on the same server simultaneously. After this step,
 your existing Threat Manager installation continues to use PostgreSQL 14 (port 5435) and the new
 PostgreSQL 18 instance will be empty (port 5439).
 
@@ -69,7 +69,7 @@ With Threat Manager updated, re-run the installer to perform the database migrat
 
 ![Netwrix Threat Manager installer — Move Database option](/images/threatmanager/3.3/install/upgrade/already_installed.webp)
 
-**Step 1 –** Run `Netwrix Threat Manager Setup`. You will be presented with additional options. Click **Move Database**.
+**Step 1 –** Run `Netwrix Threat Manager Setup`. The installer presents additional options. Click **Move Database**.
 
 ![Netwrix Threat Manager installer — Move Database option](/images/threatmanager/3.3/install/upgrade/ntm_move_database.webp)
 
@@ -86,14 +86,14 @@ With Threat Manager updated, re-run the installer to perform the database migrat
 
 - **Show Advanced Settings** – Expands the following additional parameters:
 
-    - **PG Tools Directory** – Path to the directory where PostgreSQL binaries are located.
+    - **PG Tools Directory** – Path to the directory containing the PostgreSQL binaries.
 
         ![PostgreSQL migration — compression settings](/images/threatmanager/3.3/install/postgresqlcompression.webp)
 
     - **Compression Level** – Select the compression level applied to the exported data. Higher
       compression reduces the disk space required but increases migration time. Options:
 
-        - **None** – No compression is applied.
+        - **None** – The installer applies no compression.
         - **Low** – Lower compression; requires more disk space but completes faster.
         - **Medium** – Balances disk space usage and migration speed.
         - **High** – Highest compression; requires the least disk space but takes longer.
@@ -118,12 +118,12 @@ With Threat Manager updated, re-run the installer to perform the database migrat
 
         :::note
         This option isn't recommended. Use it only if you don't have enough free disk
-        space to perform the migration with the default settings. The data in the old database is
-        preserved, but the database will not function normally after the indexes are dropped.
+        space to perform the migration with the default settings. The old database keeps its data,
+        but it will not function normally after the installer drops the indexes.
         :::
 
         Enabling this option also reveals a **Delete Source Database** checkbox. When selected, the
-        old database is permanently deleted after the export completes.
+        installer permanently deletes the old database after the export completes.
 
         :::warning
         **Delete Source Database** is an extreme option. Only use it if you fully
@@ -150,7 +150,7 @@ Migrating a large database can take 24 hours or more. Threat Manager will be una
 during this time.
 :::
 
-The database has been moved to PostgreSQL 18.
+The installer has moved the database to PostgreSQL 18.
 
 ## Verify the Upgrade
 
@@ -181,7 +181,7 @@ C:\ProgramData\STEALTHbits\PostgreSQL14
 ```
 
 :::note
-If the data directory was installed to a non-default location, look up the path in the
+If the data directory is in a non-default location, look up the path in the
 Windows registry at:
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\PostgreSQL\Installations\postgresql-x64-14`
@@ -189,7 +189,7 @@ Windows registry at:
 
 :::warning
 Verify that Threat Manager is fully operational on PostgreSQL 18 before deleting this
-directory. The data directory can't be recovered after deletion.
+directory. You can't recover the data directory after deletion.
 :::
 
 ## FAQ / Troubleshooting
@@ -211,14 +211,14 @@ example, PostgreSQL 19 would use port 5440.
 
 As a general rule, ensure you have at least **1.5 times** the size of your current PostgreSQL 14
 data directory available as free disk space before starting the migration. The export file is a
-compressed or uncompressed dump of the entire database and must be written to disk before being
-imported into PostgreSQL 18. The migration wizard will check available space during the Validate
+compressed or uncompressed dump of the entire database, and the installer must write it to disk
+before importing it into PostgreSQL 18. The migration wizard will check available space during the Validate
 step and warn you if there isn't enough.
 
 The export file doesn't need to reside on the same disk as either database. The migration wizard
 will prompt you if the default location doesn't have sufficient space.
 
-**Can PostgreSQL 18 be installed on a different server than PostgreSQL 14?**
+**Can I install PostgreSQL 18 on a different server than PostgreSQL 14?**
 
 Yes. The Move Database wizard accepts a hostname and port for the target database, so PostgreSQL 18
 doesn't need to be on the same machine as PostgreSQL 14. If using a remote server, ensure that
@@ -247,19 +247,19 @@ data directory remain intact until you explicitly uninstall them. To roll back:
 After you have deleted the PostgreSQL 14 data directory as described in the Clean Up section,
 rollback is no longer possible without a separate backup.
 
-If you enabled **Reduce Source Database Size**, the PostgreSQL 14 database
-indexes will have been dropped before the failure. The data is still present but the database will
+If you enabled **Reduce Source Database Size**, the installer will have dropped the PostgreSQL 14
+database indexes before the failure. The data is still present, but the database will
 not function normally. In this case, contact Netwrix Support before attempting to re-run the
 migration.
 
-**What if NTM was accidentally pointed at port 5439 in Step 2?**
+**What if I accidentally pointed NTM at port 5439 in Step 2?**
 
-If the Threat Manager installer was pointed at port 5439 during the update step, it will have
+If you pointed the Threat Manager installer at port 5439 during the update step, it will have
 created a new empty database on the PostgreSQL 18 instance. To recover:
 
 1. Uninstall Netwrix Threat Manager.
 2. Use pgAdmin to connect to the PostgreSQL 18 instance (port 5439) and drop the empty database
-   that was created.
+   it created.
 
     :::warning
     When connecting in pgAdmin, ensure you are connecting to the PostgreSQL 18 instance on port
@@ -270,9 +270,9 @@ created a new empty database on the PostgreSQL 18 instance. To recover:
 3. Reinstall Netwrix Threat Manager using `Netwrix Threat Manager Setup`, this time targeting the
    PostgreSQL 14 instance on port **5435**.
 
-**The migration failed mid-way — can it be re-run?**
+**The migration failed mid-way — can I re-run it?**
 
-Yes. The Move Database wizard can be re-run by launching `Netwrix Threat Manager Setup` again and
+Yes. You can re-run the Move Database wizard by launching `Netwrix Threat Manager Setup` again and
 selecting **Move Database**. If the import already started, the target database may already exist.
 If this is the case, use `pgAdmin` to drop the new database first. Or choose a different name for
 the new database.

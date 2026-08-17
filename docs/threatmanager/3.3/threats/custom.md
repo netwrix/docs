@@ -10,7 +10,7 @@ In additional to pre-configured threats, Threat Manager lets you create custom
 threats. A user can create a custom threat if they consider certain events to be dangerous in their
 environment. For example, when one of the privileged users makes file changes.
 
-Custom threats can be created in one of the following ways:
+You can create custom threats in one of the following ways:
 
 - Custom Option on the Threat Detection Page
 - Create Threat Option on the Investigation Page
@@ -61,35 +61,36 @@ information.
 
 - Threat Response – Assigning a threat response includes the following:
 
-    - SIEM Alert – Check the box to forward threat information to a SIEM service when the threat is
-      detected. Uncheck it to turn off forwarding threat information to a SIEM service.
-    - Email Alert – Check the box to send email notifications when the threat is detected. Uncheck
-      it to turn off email notifications.
-    - Run Playbook – Select the playbook that will be used to respond to the threat.
+    - SIEM Alert – Check the box to forward threat information to a SIEM service when Threat Manager
+      detects the threat. Uncheck it to turn off forwarding threat information to a SIEM service.
+    - Email Alert – Check the box to send email notifications when Threat Manager detects the threat.
+      Uncheck it to turn off email notifications.
+    - Run Playbook – Select the playbook to run in response to the threat.
 
 - Threat Settings – Select the Threshold check-box to enable configuration options i.e. the minimum
   number of events during a specific time frame which will trigger a threat.
 
-    - Count –The number of times that an event must occur before a threat is generated
+    - Count –The number of times that an event must occur before Threat Manager generates a threat
     - Time – The time period over which the count must occur to generate a threat. Enter a value and
       set the units for the time period in the next field.
     - Units – The time period units. Options in the dropdown menu include Minutes, Hours, or Days.
-    - Group By Perpetrator – When checked, the threat criteria is evaluated on a per-user basis.
+    - Group By Perpetrator – When checked, Threat Manager evaluates the threat criteria on a
+      per-user basis.
       This means that each perpetrating user's individual activity must match the investigation
       criteria to generate a threat. The default is unchecked.
 
 **Exclusions Tab**
 
-The Exclusions tab lists existing exclusions for the threat. Exclusions allow rule-based definitions
-to be defined for specific criteria to be excluded from threat detection for the threat type.
+The Exclusions tab lists existing exclusions for the threat. Exclusions let you define rules that
+exclude specific criteria from threat detection for the threat type.
 
 ![Threat Exclusion Tab](/images/threatmanager/3.0/threats/exclusionstab.webp)
 
-**Step 10 –** Click **Save**. The investigation is now saved as a custom threat.
+**Step 10 –** Click **Save**. Threat Manager saves the investigation as a custom threat.
 
 ## Create Threat Option on the Investigation Page
 
-For creating a custom threat from an Investigation page, the steps are as follows:
+To create a custom threat from an Investigation page:
 
 1. Click Investigate in the application's header bar.
 2. select an investigation and follow the steps from Step 5 in the Custom Option on the Threat

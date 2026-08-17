@@ -14,7 +14,7 @@ Configure appropriate firewall rules to allow these connections.
 
 ## Data Stream Firewall Rules
 
-The following firewall settings are required for communication between the Threat Manager server and
+Configure the following firewall settings for communication between the Threat Manager server and
 applications that provide the data stream:
 
 | Communication Direction | Protocol | Ports | Description                                                                                                                                                                                                            |
@@ -25,8 +25,8 @@ applications that provide the data stream:
 
 ## Database Firewall Rules
 
-The following firewall settings are required for communication between the Threat Manager server and
-the database server, when it is installed on a separate server:
+Configure the following firewall settings for communication between the Threat Manager server and
+the database server, when the database runs on a separate server:
 
 :::note
 These firewall rules are only needed if using a remote PostgreSQL database. That isn't
@@ -40,7 +40,7 @@ recommended or the default.
 
 ## Application Console Access Firewall Rules
 
-The following firewall settings are required for accessing the Threat Manager console:
+Configure the following firewall settings for accessing the Threat Manager console:
 
 | Communication Direction | Protocol | Ports | Description                              |
 | ----------------------- | -------- | ----- | ---------------------------------------- |
@@ -50,13 +50,13 @@ The following firewall settings are required for accessing the Threat Manager co
 Threat Manager requires the default dynamic port range specified by Microsoft (49152
 through 65535) for Windows Server client/server operations. If a firewall or other appliance is
 blocking these ports, this server will no longer properly respond to client requests and no longer
-support standard IP Stack operations that are required for the operation of this product.
+support the standard IP Stack operations this product requires.
 :::
 
 
 ## Active Directory Domain Controllers Firewall Rules
 
-The following firewall settings are required for communication between the Threat Manager server and
+Configure the following firewall settings for communication between the Threat Manager server and
 Active Directory domain controllers:
 
 | Communication Direction | Protocol | Ports   | Description                                                                                                                   |
@@ -69,8 +69,8 @@ Active Directory domain controllers:
 
 ## Remote Action Service Firewall Rules
 
-The following firewall settings are required for communication between the Threat Manager server and
-the remote Action Service server, when it is installed on additional servers:
+Configure the following firewall settings for communication between the Threat Manager server and
+the remote Action Service server, when the Action Service runs on additional servers:
 
 | Communication Direction | Protocol | Ports | Description                                |
 | ----------------------- | -------- | ----- | ------------------------------------------ |

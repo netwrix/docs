@@ -8,8 +8,7 @@ sidebar_position: 30
 
 Netwrix Threat Manager by default provides some pre-configured threats and users can create custom
 threats using the Custom option or through the Create Threat option on the Investigation page. The
-pre-defined and custom threats are listed in the Threat box. Threats that are crossed out are
-disabled threats.
+Threat box lists the pre-defined and custom threats. Crossed-out threats are disabled.
 
 ![Threats Box](/images/threatmanager/3.0/threats/threatsbox.webp)
 

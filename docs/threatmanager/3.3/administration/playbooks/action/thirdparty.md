@@ -27,25 +27,26 @@ This action sends an authentication push to the Duo API.
 
 ![duoauthenticationpush](/images/threatmanager/3.0/administration/playbooks/action/duoauthenticationpush.webp)
 
-- Users – Select the users to authenticate. If not specified, the user who triggered the threat will
-  be used.
+- Users – Select the users to authenticate. If you don't specify any, Threat Manager uses the user
+  who triggered the threat.
 - Admin Integration Key – Specify the Duo Admin integration key
 - Admin Secret Key – Specify the Duo Admin secret key
 - Admin API Hostname – Specify the Duo Admin API hostname
 - Auth API Integration Key – Specify the Duo Auth integration key
 - Auth API Secret Key – Specify the Duo Auth API secret key
 - Auth API Hostname – Specify the Duo Auth API hostname
-- Prompt Title – Specify the Duo Prompt title. If not specified, a default title will be used.
-- Push Information – Specify the Duo Push information. If not specified, default threat information
-  will be used.
+- Prompt Title – Specify the Duo Prompt title. If you don't specify one, Threat Manager uses a
+  default title.
+- Push Information – Specify the Duo Push information. If you don't specify any, Threat Manager uses
+  default threat information.
 - Fail On – Select the response on which to fail the action step. If not specified, the step will
   fail on "Deny". Select an option from the following:
 
     - Allow
     - Deny
 
-- User Alias – Select the alias of the user to authorize. If not specified, the user's Activity
-  Monitor Account Name will be used. Select an option from the following:
+- User Alias – Select the alias of the user to authorize. If you don't specify one, Threat Manager
+  uses the user's Activity Monitor Account Name. Select an option from the following:
 
     - Display Name
     - SAM Account Name
@@ -69,7 +70,8 @@ This action uses RADIUS profiles to authenticate user activity.
   not specified, the authentication will fail.
 - Method – Specify the RADIUS authentication method value required by the authentication provider.
   This value will vary depending upon vendor. Example values may include: push, SMS, or phone.
-- Users – Select the users to authenticate. If not specified, the perpetrator will be used.
+- Users – Select the users to authenticate. If you don't specify any, Threat Manager uses the
+  perpetrator.
 - Timeout Behavior – Select how to handle a timeout. If not specified, the authentication will fail.
 - Fail On – Select which authentication type to fail on. This allows configuration to determine when
   the action step fails. This is based upon the user response to the RADIUS Authentication request.
@@ -85,16 +87,16 @@ threat information via Syslog.
 
 ## Set Forescout Property On Host
 
-This action adds a property to a Forescout host record. Forescout collections can be configured to
+This action adds a property to a Forescout host record. You can configure Forescout collections to
 monitor this property. This allows Threat Manager to integrate with the Forescout platform to enable
 the use of the capabilities of Forescout for threat response.
 
 ![forescoutproperty](/images/threatmanager/3.0/administration/playbooks/action/forescoutproperty.webp)
 
 - Forescout Server IP – The IP address of the Forescout server
-- Forescout Property String – The value of the Forescout property string to be added to the host
+- Forescout Property String – The value of the Forescout property string to add to the host
   associated with the Target IP
-- Target IP – The resource IP address that will be used to identify the host in Forescout. The
+- Target IP – The resource IP address that identifies the host in Forescout. The
   default is Host.
 - Forescout Password – Password for the Forescout server
 
@@ -117,8 +119,8 @@ This action sends an SMS message through Twilio.
 - SID – The Twilio SID
 - Twilio Number – The phone number provided by Twilio
 - Token – The Twilio token
-- Message – The optional custom SMS message to send. If a message isn't specified, a default SMS
-  message will be sent.
+- Message – The optional custom SMS message to send. If you don't specify a message, Threat Manager
+  sends a default SMS message.
 
 ## VirusTotal Report
 
@@ -126,15 +128,15 @@ This action scans the file hashes against the VirusTotal API and emails the resu
 
 ![virustotalreport](/images/threatmanager/3.0/administration/playbooks/action/virustotalreport.webp)
 
-- Subject – The optional custom email subject. If a subject isn't specified, a default email
-  subject will be used.
+- Subject – The optional custom email subject. If you don't specify a subject, Threat Manager uses
+  a default email subject.
 - Key – The key provided by VirusTotal
 - To – The email addresses receiving the email
 
 ## Webhook
 
-This action executes a webhook via a HTTP request from Threat Manager. Webhooks are used by a
-variety of web applications to trigger actions or receive data from external sources.
+This action executes a webhook via a HTTP request from Threat Manager. A variety of web applications use webhooks
+to trigger actions or receive data from external sources.
 
 ![webhook](/images/threatmanager/3.0/administration/playbooks/action/webhook.webp)
 

@@ -13,7 +13,7 @@ recipients to receive this report as an email attachment in a specified format.
 ![Subscription window](/images/threatprevention/7.5/reportingmodule/investigations/options/subscription.webp)
 
 :::note
-This option requires an email server to be configured.If this requirement isn't met, a
+This option requires a configured email server. If this requirement isn't met, a
 message will appear in the window. See the[Email Page](/docs/threatmanager/3.3/administration/configuration/integrations/email.md)
 section for additional information.
 :::
@@ -25,15 +25,15 @@ To subscribe to an investigation:
 
 **Step 1 –** From the investigation you want, click **Subscriptions**. The Subscription window opens.
 
-The name of the respective investigation is displayed as a link. Click it to view the filter defined
+The name of the respective investigation appears as a link. Click it to view the filter defined
 for the investigation.
 
 **Step 2 –** By default the subscription is enabled. You can disable it with the toggle button by
 the window name.
 
 **Step 3 –** Modify the subscription name as desired in the Subscription name field. The default
-name is: Subscription for `{{Investigation_Name}}`. This variable will be replaced with the name of
-the investigation. The + button opens a variable menu for the field.
+name is: Subscription for `{{Investigation_Name}}`. The application replaces this variable with the name
+of the investigation. The + button opens a variable menu for the field.
 
 **Step 4 –** Enter the email addresses for the recipients of this report subscription in the
 Recipients box.
@@ -52,12 +52,12 @@ configured in the System Settings interface.
 expand this section.
 
 **Step 8 –** Modify the email subject line in the Email subject field as desired. The default name
-is: Subscription to`{{Investigation_Name}}` at `{{Date}}`. These variables will be replaced with the
+is: Subscription to`{{Investigation_Name}}` at `{{Date}}`. The application replaces these variables with the
 name of the investigation and the date of the report. The + button opens a variable menu for the
 field.
 
 **Step 9 –** Set the file name in the File name field. The default name
-is: `{{Investigation_Name}}_{{Date}}`. This variable will be replaced with the name of the
+is: `{{Investigation_Name}}_{{Date}}`. The application replaces this variable with the name of the
 investigation. The + button opens a variable menu for the field.
 
 **Step 10 –** Select the file format for the export from the dropdown menu: CSV, PDF, JSON, Excel
@@ -65,7 +65,7 @@ Viewing.
 
 **Step 11 –** Click **Save**. The Subscription export window closes.
 
-The subscription is listed on the Subscriptions and Exports page of the Investigations interface.
+The subscription appears on the Subscriptions and Exports page of the Investigations interface.
 
 See the [Subscriptions and Exports Page](/docs/threatmanager/3.3/administration/investigations/subscriptionsexports.md) topic for additional
 information.

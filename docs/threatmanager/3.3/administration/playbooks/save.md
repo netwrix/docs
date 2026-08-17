@@ -6,8 +6,7 @@ sidebar_position: 20
 
 # Save a Playbook Step to My Steps
 
-Sometimes it may be convenient to save a step so that it can be added to multiple playbooks without
-recreating the step.
+Save a step so you can add it to multiple playbooks without recreating it.
 
 To save a step to the My Steps list:
 
@@ -17,4 +16,4 @@ To save a step to the My Steps list:
 
 **Step 2 –** Click Save to My Steps.
 
-The step is saved to the My Steps list and can be added to other playbooks as needed.
+The step appears in the My Steps list, and you can add it to other playbooks as needed.

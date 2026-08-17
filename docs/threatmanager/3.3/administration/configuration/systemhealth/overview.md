@@ -12,8 +12,7 @@ threat types and a summary for each job.
 ![System Health interface](/images/threatmanager/3.0/administration/configuration/systemhealth/interface.webp)
 
 :::note
-The System Health page only displays threats that are enabled. Jobs that are disabled are
-not displayed.
+The System Health page only displays enabled threats. It doesn't display disabled jobs.
 :::
 
 

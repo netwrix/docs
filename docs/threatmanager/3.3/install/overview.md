@@ -6,15 +6,15 @@ sidebar_position: 30
 
 # Installation
 
-Before installing Threat Manager, ensure that all of the prerequisites have been met in
-accordance with the [Requirements](/docs/threatmanager/3.3/requirements/overview.md) topic. Additionally, the monitoring
-agents need to be deployed through either Netwrix Threat Prevention or Netwrix Activity Monitor and
-configured to send data to Threat Manager.
+Before installing Threat Manager, ensure your environment meets all the prerequisites in
+the [Requirements](/docs/threatmanager/3.3/requirements/overview.md) topic. Additionally, you must deploy the monitoring
+agents through either Netwrix Threat Prevention or Netwrix Activity Monitor and configure them to
+send data to Threat Manager.
 
-The Threat Manager installer is packaged with four executable files.
+The Threat Manager installer includes four executable files.
 
 :::warning
-The PostgreSQL database must be installed before installing Threat Manager.
+Install the PostgreSQL database before installing Threat Manager.
 :::
 
 
@@ -30,7 +30,7 @@ This executable is for installing the PostgreSQL 14 database. PostgreSQL 14 will
 
 **NetwrixPostgreSQL18.exe**
 
-This executable is for installing the PostgreSQL 18 database. This is the latest recommended version and should be used for all installs going forward.
+This executable is for installing the PostgreSQL 18 database. This is the latest recommended version. Use it for all installs going forward.
 
 **NetwrixThreatManager.exe**
 
@@ -47,7 +47,7 @@ This executable is for installing the application and its services:
 - Netwrix Threat Manager SIEM Service
 - Netwrix Threat Manager Web Service
 
-The following prerequisites will be installed if they aren't present:
+The installer installs the following prerequisites if they aren't present:
 
 - .NET 10
 - .NET Desktop Runtime 10
@@ -92,7 +92,7 @@ To install the Threat Manager application on a single server:
 ![setuplauncher](/images/threatmanager/3.3/install/setuplauncher.webp)
 
 :::info
-The PostgreSQL 14 button is only displayed if PostgreSQL 14 is already installed on the host. PostgreSQL 18 is the recommended version for new installs.
+The PostgreSQL 14 button only appears if PostgreSQL 14 is already installed on the host. PostgreSQL 18 is the recommended version for new installs.
 :::
 
 **Step 1 –** Right-click `Netwrix_Setup.exe` and select Run as administrator. The Netwrix Setup

@@ -37,7 +37,7 @@ The Threats tab for a user displays the threats for the user by timeframe.
 
 ![Entra ID Group Threats Page](/images/threatmanager/3.0/administration/threatdetails/entraidgroupthreats.webp)
 
-A key for threat types is displayed below the chart.
+A key for threat types appears below the chart.
 
 ## Members Tab
 
@@ -76,17 +76,17 @@ Each table has the following columns:
 - Name – The name of the group. Click the link to view group details. See the Group Details Page
   topic for additional information
 - Group Type – The type of group within Microsoft Entra ID
-- Membership Type - How the group membership was assigned
+- Membership Type - How Microsoft Entra ID assigned the group membership
 - Security Enabled - Shows whether the "Security Enabled" flag is enabled within Microsoft
-  Entra ID, if enabled it means that this type of group is used to manage user and computer access
-  to shared resources for a group of users
-- Role Assignments Allowed - This flag shows whether a group can be assigned a role within
-  Microsoft Entra ID
+  Entra ID. When enabled, this type of group manages user and computer access to shared resources
+  for a group of users.
+- Role Assignments Allowed - This flag shows whether Microsoft Entra ID can assign a role to a
+  group
 - Tags - The tags associated with the group
 
 ## Owners Tab
 
-The Owners tab shows which objects can manage the group, these are the "owners".
+The Owners tab lists the objects, known as owners, that can manage the group.
 
 ![Group Membership Owners Tab](/images/threatmanager/3.0/administration/threatdetails/groupmembershipownerstab.webp)
 

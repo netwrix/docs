@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Entra ID Sync Page
 
-The Entra ID Sync page within the Integrations interface lists all the Entra ID tenants for which
-the application is configured to sync.See the
+The Entra ID Sync page within the Integrations interface lists all the Entra ID tenants that the
+application syncs. See the
 [Application Permissions for Entra ID Sync](/docs/threatmanager/3.3/requirements/permissions/entraidsync.md)topic
 for additional information about the permissions required for Microsoft Entra ID syncing.
 
@@ -55,15 +55,15 @@ Add New Integration window opens.
 
 - Tenant – Enter the Microsoft Entra ID tenant you want to connect to (ex. domain onmicrosoft.com)
 - Azure Cloud – Enter the specified cloud instance of Microsoft Entra ID tenant
-- Credential Profile – Select the Credential Profile by name from the dropdown menu. This was
-  pre-created in the Credential Profiles page.
+- Credential Profile – Select the Credential Profile by name from the dropdown menu. You create this profile
+  on the Credential Profiles page.
 - Enabled / Disabled – Toggle indicates if the policy is enabled to run the sync service. By default
   it is set to Enabled.
 
 **Step 4 –** Click **Test Connection** to ensure connection to the tenant. This will take a moment.
 Then a message will appear in the upper right corner of the console indicating a successful or
-failed connection.If successful, move on to the next step. If failed, recheck your entries for error
-and repeat this step until a successful connection is established.
+failed connection. If successful, move on to the next step. If failed, recheck your entries for
+errors and repeat this step until the connection succeeds.
 
 **Step 5 –** Click Add. The Add New Integration window closes.
 
@@ -81,19 +81,19 @@ Select the tenant from the list to see modification options:
 
 - Name – The box at the top displays the name of the tenant.
 
-    - Delete – The delete button in the upper right corner of the box opensthe Delete Domain window
+    - Delete – The delete button in the upper right corner of the box opens the Delete Domain window
       to confirm the action
 
-- Tenant Configuration – Displays the sync policy settings entered for the selected tenant. These
-  settings can be modified on this tab. See the Tenant Configuration Tab topic for additional
+- Tenant Configuration – Displays the sync policy settings entered for the selected tenant. You can
+  modify these settings on this tab. See the Tenant Configuration Tab topic for additional
   information.
 - Sync History – Displays the information on each synchronization event. See the Sync History Tab
   topic for additional information.
 
 ## Tenant Configuration Tab
 
-The Tenant Configuration tab displays the sync policy settings entered for the selected tenant. With
-the exception of the Tenant and Azure Cloud fields, these settings can be updated as needed.
+The Tenant Configuration tab displays the sync policy settings entered for the selected tenant. You
+can update every setting except the Tenant and Azure Cloud fields.
 
 ![tenantconfigurationtab](/images/threatmanager/3.0/administration/configuration/integrations/tenantconfigurationtab.webp)
 
@@ -107,14 +107,15 @@ The Tenant Configuration tab displays the following settings:
 - Enabled/Disabled – Toggle indicates if the policy is enabled to run the sync service
 - Perform a full scan on next run – Indicates whether the next sync will only look for tenant
   changes or run a full scan of the tenant. By default, this option is enabled for the first sync
-  executed when a new tenant is added; however, it is disabled automatically after the first sync.
+  executed when a new tenant is added; however, the system disables it automatically after the first
+  sync.
   Use this option to fully refresh tenant information; it isn't typically needed for normal
   operation.
 - Test Connection – Click **Test Connection** to ensure connection to the tenant. This will take a
   moment. Then a message will appear in the upper right corner of the console indicating a
   successful or failed connection.
 
-The Save button is enabled when any settings are modified. Click it to commit the changes before
+The Save button activates when you modify any settings. Click it to commit the changes before
 leaving the page.
 
 ## Sync History Tab
@@ -128,14 +129,14 @@ The table provides the following information:
 
 - Start Time – Date timestamp when the task started
 - End Time – Date timestamp when the task completed
-- Type – The object class that was being synced
+- Type – The object class being synced
 - Total Objects – The total number of objects synced
 - Objects Changed – The total number of objects modified since the last sync
-- Objects Deleted – The total number of objects that were deleted since the last sync
-- Objects Filtered – The total number of objects that were filtered
+- Objects Deleted – The total number of objects deleted since the last sync
+- Objects Filtered – The total number of objects filtered
 - Status – Event status for the sync task
 
-The table is designed to display 50 records at a time, by default. However, you can change it to 100
+By default, the table displays 50 records at a time. However, you can change it to 100
 or 1,000 rows per page from the Rows per page option given below the right corner of the table. Page
 navigation buttons are next to this option. There is a search box above the left corner of the
 table. You can also export the data using the **Export to CSV** button above the table.
@@ -170,7 +171,7 @@ in the upper right corner of the console indicating a successful or failed conne
 **Step 5 –** Select the **Perform a full scan on next run** checkbox to force the next sync to run a
 full scan of the domain.
 
-**Step 6 –** The Save button is enabled when any settings are modified. Click it to commit the
+**Step 6 –** The Save button activates when you modify any settings. Click it to commit the
 changes before leaving the page.
 
-The changes to the Tenant Configuration have been saved.
+Threat Manager saves the Tenant Configuration changes.

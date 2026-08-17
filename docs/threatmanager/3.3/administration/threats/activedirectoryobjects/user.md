@@ -35,7 +35,7 @@ The Threats tab for a user displays the threats for the user by timeframe.
 
 ![Active Directory User Threats tab](/images/threatmanager/3.0/administration/threatdetails/aduserthreats.webp)
 
-A key for threat types is displayed below the chart.
+A key for threat types appears below the chart.
 
 ## Activity Summary Tab
 
@@ -46,7 +46,7 @@ The Activity Summary tab displays charts for a user's activity over different ti
 The Activity Overview (Past 12 Months) shows a color-coded heat map of user activity. Other metrics
 include, Average Activity by Day, and Events by Type.
 
-The Activity by Host, Activity by Client, and Activity Details tables are displayed below the
+The Activity by Host, Activity by Client, and Activity Details tables appear below the
 charts.
 
 **Activity by Host Table**
@@ -56,8 +56,8 @@ The Activity by Host table displays the user's activity by host.
 ![activitybyhost](/images/threatmanager/3.0/administration/threatdetails/activitybyhost.webp)
 
 - Server – Server where the activity occurred
-- First Access – First date and time that the server was accessed
-- Last Access – Last date and time that the server was accessed
+- First Access – First date and time the user accessed the server
+- Last Access – Last date and time the user accessed the server
 - Number of Events – Total number of activity events on the server
 
 Use the Search icon to search for data contained in any column. Click the Export CSV button to
@@ -71,8 +71,8 @@ The Activity by Client table displays the user's activity by host.
 
 - Client IP – IP address for the client
 - Client Name– Client where the activity occurred
-- First Access – First date and time that the client was accessed
-- Last Access – Last date and time that the client was accessed
+- First Access – First date and time the user accessed the client
+- Last Access – Last date and time the user accessed the client
 - Number of Events – Total number of activity events on the client
 
 Use the Search icon to search for data contained in any column. Click the Export CSV button to

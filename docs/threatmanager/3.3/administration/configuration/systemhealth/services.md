@@ -27,9 +27,9 @@ Select a service from the table or the navigation pane to view its details.
 The page displays the following information:
 
 - Name – The name of the host where the service is running
-- Created – Date timestamp when the service was installed
+- Created – Date timestamp of the service installation
 - Description – An explanation of what the service does
 - Status – Indicates if the service is running
 - Capabilities – This table employs the Name and Value columns to display the service capabilities
 
-If there is a service outage, an alert is displayed below the navigation header.
+If there is a service outage, an alert displays below the navigation header.

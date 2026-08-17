@@ -28,16 +28,16 @@ Follow the instructions to enable SIEM notifications.
 - Port – The port of the SIEM server.
 - Template – Select the template you want from the dropdown list
 
-    - LEEF template – Threat data is sent to the SIEM application in the standard LEEF format
-    - CEF template – Threat data is sent to the SIEM application in the standard CEF format
-    - Custom template – Threat data is sent to the SIEM application in a customized format
+    - LEEF template – Sends threat data to the SIEM application in the standard LEEF format
+    - CEF template – Sends threat data to the SIEM application in the standard CEF format
+    - Custom template – Sends threat data to the SIEM application in a customized format
 
         :::note
         You can implement only one custom template.
         :::
 
 
-    - Notification template – Threat data is sent to the SIEM application in a basic notification
+    - Notification template – Sends threat data to the SIEM application in a basic notification
       format:
 
     `%SYSLOG_DATE%|%HOST%|%COMPANY%|%PRODUCT%|%PRODUCT_VERSION%|%MESSAGE_TYPE%|%MESSAGE%`
@@ -146,9 +146,9 @@ Follow the instructions to enable SIEM notifications.
   | `%THREATPROPERTIES%` | Raw JSON string of the threat properties | `string` (JSON) | `{"key":"value"}` |
   | `%THREATEVENTCOUNT%` | Number of events associated with the threat | `int` | `15` |
   | `%THREATPROCESSNAME%` | Name of the process from the primary event | `string` | `powershell.exe` |
-  | `%THREATTIMEGENERATED%` | Full date/time when the threat was detected | `DateTime` | `03/03/2026 2:30:00 PM` |
-  | `%THREATTIMEGENERATEDDATE%` | Date when the threat was detected (long date format) | `string` (DateTime format `D`) | `Tuesday, March 3, 2026` |
-  | `%THREATTIMEGENERATEDTIME%` | Time when the threat was detected in UTC (short time format) | `string` (DateTime format `t`) | `2:30 PM` |
+  | `%THREATTIMEGENERATED%` | Full date/time when Threat Manager detected the threat | `DateTime` | `03/03/2026 2:30:00 PM` |
+  | `%THREATTIMEGENERATEDDATE%` | Date when Threat Manager detected the threat (long date format) | `string` (DateTime format `D`) | `Tuesday, March 3, 2026` |
+  | `%THREATTIMEGENERATEDTIME%` | Time when Threat Manager detected the threat, in UTC (short time format) | `string` (DateTime format `t`) | `2:30 PM` |
 
   **Evidence**
 
@@ -174,4 +174,4 @@ Follow the instructions to enable SIEM notifications.
 
 **Step 4 –** Click Save Settings to save the configuration settings.
 
-SIEM notifications are now configured.
+Threat Manager now forwards threat information to the configured SIEM service.

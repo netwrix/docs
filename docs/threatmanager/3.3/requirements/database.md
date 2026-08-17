@@ -11,8 +11,8 @@ Use this information when the database server is separate from the application s
 :::
 
 
-The Windows server can be physical or virtual. The following Windows server operating systems are
-supported:
+The Windows server can be physical or virtual. Threat Manager supports the following Windows server
+operating systems:
 
 - Windows Server 2022
 - Windows Server 2019
@@ -33,11 +33,11 @@ The following are additional requirements for the database server:
 
 **Additional Considerations**
 
-The following considerations must be accommodated for:
+Accommodate the following considerations:
 
-- When running antivirus scans against the PostgreSQL v14 database, the PostgreSQL data folder must
-  be excluded from the scans to prevent database complications.
+- When running antivirus scans against the PostgreSQL v14 database, exclude the PostgreSQL data
+  folder from the scans to prevent database complications.
 - For performance reasons, disable Windows File Indexing on the drive containing the Threat Manager
   database.
-- Disk Defragmentation jobs should never be performed on the drive containing Threat Manager
+- Never perform Disk Defragmentation jobs on the drive containing the Threat Manager
   PostgreSQL database. This can cause operational issues with the PostgreSQL database.

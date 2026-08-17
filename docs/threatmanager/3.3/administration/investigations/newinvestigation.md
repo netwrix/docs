@@ -14,12 +14,12 @@ available data with the filters you want for a specific timeframe.
 To generate a new investigation report, configure the filters as desired and set the timeframe. See
 the [Filters Section](/docs/threatmanager/3.3/administration/investigations/options/filters.md) topic for additional information.
 
-Then click **Run Query**. The report data is displayed in the sections below the Filters section.
+Then click **Run Query**. The report data displays in the sections below the Filters section.
 See the [Investigation Reports](/docs/threatmanager/3.3/administration/investigations/reports.md) topic for additional information.
 
 :::note
 If you run a query without applying filters, the report sections display all activity by
-all users for the designated timeframe, which is set by default to _Last Hour_.
+all users for the designated timeframe, which defaults to _Last Hour_.
 :::
 
 
@@ -31,8 +31,8 @@ Use the Save option to save your configured filters to run the investigation aga
 
 ## Save an Investigation
 
-To retain filter configuration after running a query and confirming the report data you want is
-displayed, save an investigation:
+To retain filter configuration after running a query and confirming the report shows the data you
+want, save an investigation:
 
 :::note
 This option is available only to users with the Administrator or the Response Managers
@@ -49,19 +49,19 @@ Investigation window opens.
 
 **Step 3 –** Enter a report description in the **Description** field.
 
-**Step 4 –** From the Folder dropdown menu, select the location where the investigation will be
-saved. The My Investigations folder is the default for custom investigations.
+**Step 4 –** From the Folder dropdown menu, select where to save the investigation. The My
+Investigations folder is the default for custom investigations.
 
-**Step 5 –** Select a user role from the Owner dropdown menu. All users assigned this role would
-own this investigation and they will be able to modify the report.
+**Step 5 –** Select a user role from the Owner dropdown menu. All users assigned this role own this
+investigation and can modify the report.
 
 **Step 6 –** In the Access box, type to search the user role you want to give access of this
-investigation. A list of user roles matching the search string is displayed. Select a single or
+investigation. A list of user roles matching the search string appears. Select a single or
 multiple user roles. All users belonging to the selected roles can view the report.
 
 **Step 7 –** Click **Save**. The Save Investigation window closes.
 
-The investigation is saved to the selected folder, and the folder expands in the navigation pane to
+The application saves the investigation to the selected folder, and the folder expands in the navigation pane to
 display the saved item. Users can open this folder from the navigation pane to access the
 investigation. They can run the investigation, schedule exports, or add subscriptions.
 

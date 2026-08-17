@@ -6,14 +6,14 @@ sidebar_position: 10
 
 # Install the PostgreSQL Database Application
 
-The PostgreSQL database application can be installed on the same server as the application or a
-different server. If it is installed on a different server, the location of the database server must
-be provided while installing the application.
+You can install the PostgreSQL database application on the same server as the application or a
+different server. If you install it on a different server, you must provide the location of the
+database server while installing the application.
 
 To install the PostgreSQL database application:
 
 :::warning
-The PostgreSQL database application must be installed before the application.
+Install the PostgreSQL database application before the application.
 :::
 
 
@@ -39,7 +39,7 @@ agreement. Click Next.
 
 ![Netwrix PostgreSQL Setup wizard on the Folder Location page](/images/threatprevention/7.5/install/reportingmodule/folder.webp)
 
-**Step 4 –** By default, the installation directories are set to:
+**Step 4 –** By default, the installer uses the following installation directories:
 
 - Install Folder – C:\Program Files\Stealthbits\PostgresSQL14
 - Data Folder – C:\ProgramData\Stealthbits\PostgresSQL14
@@ -59,14 +59,14 @@ information.
 
 ## Optionally Configure the Postgres.conf File
 
-PostgreSQL has some unique memory management features that need to be configured specifically based
-on the specifications of the database server. PostgreSQL can easily be starved of resources and
-enter a failed state if careful consideration and configuration of the `postgres.conf` file isn't
-taken under consideration. For larger environments or for those experiencing issues with PostgreSQL,
-the following changes are suggested.
+PostgreSQL has some unique memory management features that you must configure based
+on the specifications of the database server. PostgreSQL can easily run out of resources and
+enter a failed state if you don't carefully consider and configure the `postgres.conf` file.
+For larger environments or for those experiencing issues with PostgreSQL, Netwrix suggests the
+following changes.
 
 :::note
-When setting values, specifically when using a Memory unit, case sensitivity is required.
+When setting values, specifically when using a Memory unit, use the correct case.
 :::
 
 
@@ -75,7 +75,7 @@ The table displays `Postgres.conf` settings and their suggested values.
 | Setting                         | Suggested Value                                                                                        | Notes                                                        |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
 | effective_cache_size            | Total Server Memory (MBs) \* .75                                                                       |                                                              |
-| shared_buffers                  | totalMemory / 4                                                                                        | shared_buffers on windows needs to be limited to 512MB       |
+| shared_buffers                  | totalMemory / 4                                                                                        | Limit shared_buffers on Windows to 512MB                     |
 | wal_buffers                     | 3% of shared_buffers with a min of 32kB and a max of 16MB                                              |                                                              |
 | checkpoint_timeout              | checkpoint_timeout = 30min                                                                             |                                                              |
 | max_wal_size                    | 2048MB                                                                                                 |                                                              |

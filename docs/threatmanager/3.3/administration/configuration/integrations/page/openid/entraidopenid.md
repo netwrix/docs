@@ -9,12 +9,12 @@ sidebar_position: 10
 For enhanced security, you can integrate Microsoft Entra ID OpenID Connect with Threat Manager using
 Proof Key for Code Exchange (PKCE).
 
-ensure the following requirements are fulfilled before configuring Microsoft Entra ID
+Ensure your environment meets the following requirements before configuring Microsoft Entra ID
 OpenID Connect in Threat Manager.
 
-- Full Netwrix Threat Manager version 3.0.473+ or RO 3.0.90+ is installed
-- Direct users (not groups) are supported in the Access User List
-- MSAL.js 2.0 version is supported. See the Microsoft
+- You have installed full Netwrix Threat Manager version 3.0.473+ or RO 3.0.90+
+- The Access User List supports direct users, not groups
+- Threat Manager supports MSAL.js version 2.0. See the Microsoft
   [MSAL.js 2.0 is now generally available with support for authorization code flow](https://devblogs.microsoft.com/microsoft365dev/msal-js-2-0-supports-authorization-code-flow-is-now-generally-available/)
   article for additional information.
 
@@ -28,7 +28,7 @@ To register and then configure the application:
 
 **Step 1 –** log in to Microsoft Entra admin center (https://portal.azure.com/) with a user that is
 part of the “Global Administrator” role or any role that has rights to register an app, such as the
-“Application administrator” role. This is required to give consent to certain permissions
+“Application administrator” role. You need this role to give consent to certain permissions
 in the application.
 
 **Step 2 –** In the Microsoft Entra admin center, go to Microsoft Entra ID > App registration and
@@ -53,7 +53,7 @@ the Select a plateform dropdown.
 - IP address or DNS name – Provide the domain name or IP address, (for example,
   threatManager.MyCompany.com or 192.168.74.200)
 
-- Port – Threat Manager’s default port is 8080, but it could be changed according to your needs
+- Port – Threat Manager’s default port is 8080, but you can change it according to your needs
 
 - End the URL with /callback
 
@@ -65,7 +65,7 @@ The full Redirect URL will be in one of the following format:
 
 **Step 7 –** Click **Register**.
 
-**Step 8 –** The Overview page is displayed. Copy the Application (client) ID and Directory (Tenant)
+**Step 8 –** The Overview page appears. Copy the Application (client) ID and Directory (Tenant)
 ID and keep them safe.
 
 ![EntraID Application and Tenant IDs page](/images/threatmanager/3.0/administration/configuration/integrations/authenticationprovider/appntenantids.webp)
@@ -117,9 +117,9 @@ The page for the OpenID provider had two tabs:
 
 To configure Microsoft Entra ID OpenID Connect in Threat Manager.
 
-- Default – The default profile applied when a user is assigned multiple authentication profiles.
-  When off, the profile will be determined in alphabetical order of the profile name. Toggle off and
-  on as desired.
+- Default – The default profile applied when a user has multiple authentication profiles.
+  When off, the application determines the profile in alphabetical order of the profile name. Toggle
+  off and on as desired.
 - Authority – The Microsoft Entra ID OpenID Connect provider authority URL. It should be in the
   following format:
   `https://login.microsoftonline.com/{Tenant ID}/v2.0`
@@ -134,7 +134,7 @@ To configure Microsoft Entra ID OpenID Connect in Threat Manager.
 
 ## Users/Group Tab
 
-The Users/Groups tab displays users and groups that are assigned to this authentication
+The Users/Groups tab displays the users and groups assigned to this authentication
 profile. To give access to the application to new users, click the New Access button, which opens
 the Add Console Access window. To assign this authentication provider to existing users, go to
 System Settings > User Access Page.
@@ -158,15 +158,15 @@ The table displays the following information:
     - Trash icon – Opens a Warning window to confirm the action of deleting the user or group.
       Removing a user or group removes console access for it.
     - Reset MFA button – Forces the user or every user in the group to reconfigure MFA on the next
-      login. This option is only available if an MFA authentication type is applied to the user or
+      login. This option is only available if an MFA authentication type applies to the user or
       group.
 
 ## Troubleshooting
 
-In case the Microsoft Entra ID OpenID Connect configurations don't work and an error is displayed,
-you can perform the following steps to troubleshoot the error.
+If the Microsoft Entra ID OpenID Connect configurations don't work and an error appears,
+follow these steps to troubleshoot the error.
 
-**Step 1 –** Open any site or tool that provides the possibility to decode a JWT token, for
+**Step 1 –** Open any site or tool that can decode a JWT token, for
 example,` https://jwt.io/`.
 
 **Step 2 –** Right click the Threat Manager login page and select **Inspect**. The Dev Tools page

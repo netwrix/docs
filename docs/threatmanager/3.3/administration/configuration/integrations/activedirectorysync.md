@@ -29,8 +29,8 @@ provides the following information:
     - Checkmark icon – Enabled
     - X icon – Disabled
 
-- Profile – Name of the Credential Profile assigned to the policy. As mentioned earlier, each added
-  domain represents a sync policy.
+- Profile – Name of the Credential Profile assigned to the policy. Each added domain represents a
+  sync policy.
 - Last Sync Start – Date timestamp when the task started for the most recent sync
 - Last Sync Status – Event status for the most recent sync task
 
@@ -64,8 +64,8 @@ Add New Integration window opens.
 
 - Domain – Enter the domain DNS name or domain controller hostname in the required format of
   [DOMAIN.COM], e.g. NT-DC03.NWXTech.com
-- Credential Profile – Select the Credential Profile by name from the dropdown menu. This was
-  pre-created in the Credential Profiles page.
+- Credential Profile – Select the Credential Profile by name from the dropdown menu. You create this profile
+  on the Credential Profiles page.
 - Enabled / Disabled – Toggle indicates if the policy is enabled to run the sync service. By default
   it is set to Enabled.
 - Max Renew Ticket Age (days) – The value indicates the maximum number of days of the Renew Ticket
@@ -84,12 +84,12 @@ Add New Integration window opens.
 
 **Step 5 –** Click **Test Connection** to ensure connection to the domain. This will take a moment.
 Then a message will appear in the upper right corner of the console indicating a successful or
-failed connection.If successful, move on to the next step. If failed, recheck your entries for error
-and repeat this step until a successful connection is established.
+failed connection. If successful, move on to the next step. If failed, recheck your entries for
+errors and repeat this step until the connection succeeds.
 
 **Step 6 –** Click Add. The Add New Integration window closes.
 
-The domain or domain controller (the Domain value supplied in Step 4) is listed in the Integrations
+The domain or domain controller (the Domain value you supplied in Step 4) appears in the Integrations
 navigation pane. Repeat the process to add additional domains.
 
 ## Active Directory Sync Policy Details
@@ -100,8 +100,8 @@ To view the details of an Active Directory sync policy:
 menu. Then select **Integrations** to open the Integrations interface.
 
 **Step 8 –** On the Integrations interface, click **Active Directory Sync** in the navigation pane
-to view a list of the already created Active Directory Sync policies, if any. A policy is
-represented by the domain for which it is created.
+to view a list of the already created Active Directory Sync policies, if any. Each domain represents
+one policy.
 
 **Step 9 –** Select a domain from the table or the navigation pane to view the details of the Active
 Directory Sync policy created for that domain.
@@ -115,16 +115,16 @@ Select the domain from the list to see modification options:
     - Delete – The delete button in the upper right corner of the box opens the Delete Domain window
       to confirm the action
 
-- Domain Configuration – Displays the sync policy settings entered for the selected domain. These
-  settings can be modified on this tab. See the Domain Configuration Tab topic for additional
+- Domain Configuration – Displays the sync policy settings entered for the selected domain. You can
+  modify these settings on this tab. See the Domain Configuration Tab topic for additional
   information.
 - Sync History – Displays the information on each synchronization event. See the Sync History Tab
   topic for additional information.
 
 ### Domain Configuration Tab
 
-The Domain Configuration tab displays the sync policy settings entered for the selected domain. With
-the exception of the domain itself, these settings can be updated as needed.
+The Domain Configuration tab displays the sync policy settings entered for the selected domain. You
+can update every setting except the domain itself.
 
 ![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatmanager/3.0/administration/configuration/integrations/domainconfigurationtab.webp)
 
@@ -140,7 +140,7 @@ The Domain Configuration tab displays the following settings:
   article for additional information.
 
     :::note
-    This value is required to accurately evaluate the Golden Ticket threat.
+    Threat Manager requires this value to accurately evaluate the Golden Ticket threat.
     :::
 
 
@@ -150,7 +150,7 @@ The Domain Configuration tab displays the following settings:
   article for additional information.
 
     :::note
-    This value is required to accurately evaluate the Golden Ticket threat.
+    Threat Manager requires this value to accurately evaluate the Golden Ticket threat.
     :::
 
 
@@ -211,7 +211,7 @@ Remember, the domain can't be modified.
 ![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatmanager/3.0/administration/configuration/integrations/domainconfigurationtab.webp)
 
 **Step 3 –** To modify the Credential Profile, select the Credential Profile by name from the
-dropdown menu. This was pre-created in the Credential Profiles page.
+dropdown menu. You create this profile on the Credential Profiles page.
 
 :::note
 If you modify the Credential Profile for a domain, click **Test Connection** to ensure
@@ -232,7 +232,7 @@ with the domain.
 **Step 8 –** Select the **Perform a full scan on next run** checkbox to force the next sync to run a
 full scan of the domain.
 
-**Step 9 –** The Save button is enabled when any settings are modified. Click it to commit the
+**Step 9 –** The Save button activates when you modify any settings. Click it to commit the
 changes before leaving the page.
 
 Netwrix Threat Manager saves the Domain Configuration changes.

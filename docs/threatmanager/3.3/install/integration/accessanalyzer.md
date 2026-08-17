@@ -1,9 +1,9 @@
 # Netwrix Access Analyzer (formerly Enterprise Auditor) Integration
 
-Access Analyzer can be configured to send Sensitive Data to Threat Manager. In Access Analyzer, the
+You can configure Access Analyzer to send Sensitive Data to Threat Manager. In Access Analyzer, the
 FS_DEFEND_SDD Job exports sensitive data matches collected by the File System Solution Sensitive
 Data Discovery Auditing jobs to Threat Manager. For Threat Manager integration with Access Analyzer,
-the following job groups must be successfully run before running the FS_DEFEND_SDD Job:
+you must successfully run the following job groups before running the FS_DEFEND_SDD Job:
 
 - FileSystem > 0.Collection Job Group
 - FileSystem > 7.Sensitive Data Job Group
@@ -13,8 +13,7 @@ See the File System Solution section of the
 additional information.
 
 :::note
-The Access Analyzer Sensitive Data Discovery Add-On is required for sensitive data
-collection.
+Sensitive data collection requires the Access Analyzer Sensitive Data Discovery Add-On.
 :::
 
 
@@ -28,8 +27,8 @@ instructions to add this instant job to the **Jobs** tree.
 In Access Analyzer, install the FS_DEFEND_SDD Job to the location you want. It is available through
 the Instant Job Library under the File System library.
 
-**Step 1 –** In the Threat Manager Console, generate the app token (endpoint token) to be copied and
-pasted into the Connection Profile, and the host name (endpoint) to be used when creating the custom
+**Step 1 –** In the Threat Manager Console, generate the app token (endpoint token) to copy and
+paste into the Connection Profile, and the host name (endpoint) to use when creating the custom
 host list.
 
 For Access Analyzer to send data to Threat Manager, you must create an app token in Threat
@@ -64,7 +63,7 @@ additional information.
 
 :::info
 Schedule the FS_DEFEND_SDD Job to run as part of the FileSystem Job, after the
-FileSystemOverview Job. The FS_DEFEND_SDD Job should be run after each subsequent sensitive data
+FileSystemOverview Job. Run the FS_DEFEND_SDD Job after each subsequent sensitive data
 collection.
 :::
 
@@ -72,7 +71,7 @@ collection.
 ## Custom Connection Profile for FS_DEFEND_SDD Job
 
 The FS_DEFEND_SDD Job requires a custom Connection Profile to authenticate to Threat Manager. The
-credential for the Connection Profile must be created with the Web Services (JWT) account type.
+You must create the credential for the Connection Profile with the Web Services (JWT) account type.
 
 :::tip
 Remember, , the Threat Manager App Token is generated within Threat Manager.
@@ -83,9 +82,9 @@ Create a Connection Profile and set the following information on the User Creden
 
 - Select Account Type – Web Services (JWT)
 - Domain – `{not a field for this type of credential, defaults to <WSJWT>}`
-- User name – This field should be left blank
+- User name – Leave this field blank
 - Password Storage: Application – Uses Access Analyzer’s configured Profile Security setting as
   selected at the Settings > Other Settings node
 - Access Token – Copy and paste the Threat Manager App Token
 
-The FS_DEFEND_SDD Job must be configured to use this custom Connection Profile.
+You must configure the FS_DEFEND_SDD Job to use this custom Connection Profile.

@@ -23,16 +23,16 @@ Hover over the bar chart or pie chart to view the number of threats by threat ty
 ## Historical Events
 
 The Historical Events section provides a dropdown menu to select threats for a specific date range.
-Threats can also be filtered by specifying a timeframe. A predefined time span can also be selected
+You can also filter threats by specifying a timeframe, or select a predefined time span
 from the menu options in the right pane.
 
 ![historicalevents](/images/threatmanager/3.0/administration/historicalevents.webp)
 
-These threats are displayed in a list format below the Historical Events section.
+These threats appear in a list format below the Historical Events section.
 
 ## Threats List
 
-The Threats list is displayed below the Historical Events section.
+The Threats list appears below the Historical Events section.
 
 ![threatlist](/images/threatmanager/3.0/administration/threatlist.webp)
 
@@ -45,14 +45,14 @@ Edit button which opens the Edit Threats window. The View Details button opens t
 
 ## Filter Threats
 
-The left pane of the page, below Historical Events, lists filters that can be selected and applied
+The left pane of the page, below Historical Events, lists filters you can select and apply
 to display the threats. The filters listed are based on the threat types detected. Each filter is a
-collapsible section that can be hidden or expanded using the arrow. To clear any -selected
+collapsible section that you can hide or expand using the arrow. To clear any selected
 filters, click the **Clear Filters** button.
 
 ### Type
 
-The Type section displays the threat types which can be selected for filtering. This list of threats
+The Type section displays the threat types you can select for filtering. This list of threats
 to filter by is dynamic, depending upon the type of threats detected. See the following topics for
 additional information:
 
@@ -63,8 +63,8 @@ additional information:
 
 ### Level
 
-The Level section displays the threat types which can be selected for filtering. Levels are assigned
-or configured on the [Threat Detection Page](/docs/threatmanager/3.3/administration/configuration/threatdetection/threatdetection.md).
+The Level section displays the threat types you can select for filtering. You assign or configure
+levels on the [Threat Detection Page](/docs/threatmanager/3.3/administration/configuration/threatdetection/threatdetection.md).
 
 ### Tags
 
@@ -73,8 +73,8 @@ range.
 
 #### Sensitive Data
 
-Sensitive Data tags are displayed in threats containing sensitive data when Access Analyzer and the
-Sensitive Data Discovery Add-on are installed in addition to Threat Manager. When installed with the
+Sensitive Data tags appear in threats containing sensitive data when you install Access Analyzer and
+the Sensitive Data Discovery Add-on in addition to Threat Manager. When installed with the
 Sensitive Data Discovery Add-on, Access Analyzer scans for sensitive data using File System
 Sensitive Data Discovery Auditing. See the
 [Netwrix Access Analyzer (formerly Enterprise Auditor) Integration](/docs/threatmanager/3.3/install/integration/accessanalyzer.md)
@@ -82,12 +82,12 @@ topic for additional information. See the File System Solution topic in the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 additional information on Access Analyzer Sensitive Data Discovery capabilities.
 
-When a threat event contains sensitive data, a Sensitive Data tag is displayed next to the threat:
+When a threat event contains sensitive data, a Sensitive Data tag appears next to the threat:
 
 ![threatsensitivedatafilter](/images/threatmanager/3.0/administration/threatsensitivedatafilter.webp)
 
 To view the type of sensitive data contain in a threat, click View Details on the threat containing
-a Sensitive Data tag. The type of sensitive data is displayed in the Sensitive Data column.
+a Sensitive Data tag. The Sensitive Data column displays the type of sensitive data.
 
 The following tables contain a Sensitive Data column:
 
@@ -112,12 +112,12 @@ The Status section may contain the following filters:
 - Open – Default status for new threats
 - Under Investigation – Threats that are under or pending investigation by an
   administrator
-- Closed - Resolved – Legitimate threats that have been contained or dealt with
-- Closed - False Positive – Behavior that has been incorrectly identified by Threat Manager as a
+- Closed - Resolved – Legitimate threats you have contained or dealt with
+- Closed - False Positive – Behavior that Threat Manager incorrectly identified as a
   threat
 
     :::note
-    Abnormal behavior threat detection will be influenced by false positives. Marking
+    False positives influence abnormal behavior threat detection. Marking
     abnormal behavior threats as False Positive will reduce the sensitivity of the abnormality
     detection for this perpetrator.
     :::
@@ -132,7 +132,7 @@ The Assignee section lets you filter by user. Select one or more users.
 
 ## Edit Threats
 
-Threats can be edited to assign a user, set a status, or ignore future threats of a specified type
+You can edit threats to assign a user, set a status, or ignore future threats of a specified type
 using Threat Manager’s Incident Detection Response (IDR) workflow.
 
 To edit a threat:
@@ -151,12 +151,12 @@ To edit a threat:
     - Open – Default status for new threats
  - Under Investigation – Threats that are under or pending investigation by an
       administrator
-    - Closed - Resolved – Legitimate threats that have been contained or dealt with
+    - Closed - Resolved – Legitimate threats you have contained or dealt with
     - Closed - False Positive – Behavior that has been incorrectly identified by Threat Manager as a
       threat
 
         :::note
-        Abnormal behavior threat detection will be influenced by false positives. Marking
+        False positives influence abnormal behavior threat detection. Marking
         abnormal behavior threats as False Positive will reduce the sensitivity of the abnormality
         detection for this perpetrator.
         :::
@@ -167,4 +167,4 @@ To edit a threat:
 
 **Step 3 –** Click Submit to save the changes.
 
-Threats can also be edited from the [Threat Details Page](/docs/threatmanager/3.3/administration/threats/threatdetails/overview.md).
+You can also edit threats from the [Threat Details Page](/docs/threatmanager/3.3/administration/threats/threatdetails/overview.md).

@@ -7,10 +7,10 @@ sidebar_position: 60
 # Playbooks
 
 The first step in designating steps to run in response to a threat is to add a playbook. A playbook
-is used to tie a threat or "trigger type" to the steps you want to take in response to that threat.
-A threat response can be assigned to a playbook on the
-[Threat Detection Page](/docs/threatmanager/3.3/administration/configuration/threatdetection/threatdetection.md). After a playbook has been created,
-steps that specify the action you want for the threat response are then added.
+ties a threat or "trigger type" to the steps you want to take in response to that threat.
+You can assign a threat response to a playbook on the
+[Threat Detection Page](/docs/threatmanager/3.3/administration/configuration/threatdetection/threatdetection.md). After you create a playbook,
+you add steps that specify the action you want for the threat response.
 
 :::info
 Execute playbooks in a test environment and review the results before executing
@@ -28,8 +28,9 @@ To add a playbook:
 
 ![threatresponse](/images/threatmanager/3.0/administration/playbooks/threatresponse.webp)
 
-**Step 1 –** In the Threat Response box, click New Playbook. A new playbook called "My Playbook 1"
-is created. As additional Playbooks are added, sequential numbers are appended to My Playbook.
+**Step 1 –** In the Threat Response box, click New Playbook. Threat Manager creates a new playbook
+called "My Playbook 1". As you add more playbooks, Threat Manager appends sequential numbers to My
+Playbook.
 
 Change the name of the playbook immediately after creation for organizational
 purposes.
@@ -42,7 +43,7 @@ Description field.
 
 **Step 4 –** Click the Save button.
 
-The new playbook now has the name you want, and steps can be added to the playbook. See the Actions
+The new playbook now has the name you want, and you can add steps to it. See the Actions
 Tab topic for additional information.
 
 ## Configure a Playbook
@@ -68,18 +69,18 @@ applicable for the selected playbook.
 The General tab has the following configuration options:
 
 - Allowed for all threat response – Allows customization of which threats are applicable for this
-  playbook. (All threats are allowed by default). If a threat is excluded from Allowed Threats, it
-  will not be available to run ad hoc on the Threat Details page nor available for automated threat
+  playbook. (All threats are allowed by default). If you exclude a threat from Allowed Threats, you
+  can't run it ad hoc on the Threat Details page, and it isn't available for automated threat
   response.
-- Send Email on Execution of Playbook – An email notification will be sent after the playbook has
-  been executed.
-- Search Threats – Select the threats that are allowed to be used as a threat response for this
-  playbook from the dropdown list.
+- Send Email on Execution of Playbook – Threat Manager sends an email notification after the
+  playbook runs.
+- Search Threats – Select the threats allowed as a threat response for this playbook from the
+  dropdown list.
 
 ### Actions Tab
 
-Once a playbook is created or imported, add steps to the playbook using the Actions tab. Steps are
-actions that are taken in response to a threat. See the
+After you create or import a playbook, add steps to it using the Actions tab. Steps are
+actions taken in response to a threat. See the
 [Preconfigured Actions](/docs/threatmanager/3.3/administration/configuration/threatresponse.md#preconfigured-actions) topic for
 additional information.
 
@@ -106,12 +107,12 @@ playbook.
 
 **Step 4 –** Click Add to add the step to the playbook.
 
-The step is added to the playbook.
+The step appears in the playbook.
 
 ### Follow-Up Tab
 
-Follow-Up Playbooks can be configured on the Follow-Up tab. Follow-Up playbooks allow additional
-playbooks to run after the playbook has completed. This allows a Threat Manager administrator to 
+You can configure Follow-Up Playbooks on the Follow-Up tab. Follow-Up playbooks allow additional
+playbooks to run after the playbook completes. This allows a Threat Manager administrator to 
 sequence a series of playbooks together as part of a threat response.
 
 ![followuptab](/images/threatmanager/3.0/administration/playbooks/followuptab.webp)
@@ -137,9 +138,9 @@ The table provides the following information:
 - Threat – The threat type that triggered the playbook
     - Click the threat link to open the [Threat Details Page](/docs/threatmanager/3.3/administration/threats/threatdetails/overview.md) and view
       information about the threat.
-- Threat Detected – The time that the threat was detected
-- Time Started – The time that the playbook was executed
-- Time Finished – The time that the playbook completed execution
+- Threat Detected – The time Threat Manager detected the threat
+- Time Started – The time the playbook started
+- Time Finished – The time the playbook finished
 - Status – The status of the playbook execution:
     - Queued
     - Running

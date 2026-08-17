@@ -15,17 +15,17 @@ Directory group membership.
 
 ![adgroupmembership](/images/threatmanager/3.0/administration/playbooks/action/adgroupmembership.webp)
 
-- Users – Select the users for whom to alter group membership. If not specified, the user who
-  triggered the threat will be used.
+- Users – Select the users for whom to alter group membership. If you don't specify one, Threat Manager uses the
+  user who triggered the threat.
 - Action – Select the action to take on the user's group membership.
     - Add
     - Remove
-- Group – Specify the identity of the group to manage. If not specified, the group affected by the
-  threat will be used.
+- Group – Specify the identity of the group to manage. If you don't specify one, Threat Manager uses
+  the group affected by the threat.
 - Credential – Select a credential profile that contains valid Active Directory credentials.
-  Credential profiles are configured on the
-  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If not specified, the
-  action will be run as the credentials of the Action Service.
+  You configure credential profiles on the
+  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If you don't specify one,
+  the action runs as the credentials of the Action Service.
 
 ## Change Password at Next Logon
 
@@ -34,12 +34,12 @@ user logs on.
 
 ![changepassword](/images/threatmanager/3.0/administration/playbooks/action/changepassword.webp)
 
-- Users – Select the users for whom to reset passwords at next logon. If not specified, the user who
-  triggered the threat will be used.
+- Users – Select the users for whom to reset passwords at next logon. If you don't specify one, Threat Manager uses the
+  user who triggered the threat.
 - Credential – Select a credential profile that contains valid Active Directory credentials.
-  Credential profiles are configured on the
-  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If not specified, the
-  action will be run as the credentials of the Action Service.
+  You configure credential profiles on the
+  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If you don't specify one,
+  the action runs as the credentials of the Action Service.
 
 ## Disable Active Directory Account
 
@@ -51,7 +51,8 @@ The Disable Active Directory Account action disables the specified account.
   credentials. Credential profiles are configured on the
   [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If not specified, the
   action will be run as the credentials of the Action Service.
-- Users – Select users to disable. If not specified, the user who triggered the threat will be used.
+- Users – Select users to disable. If you don't specify one, Threat Manager uses the user who
+  triggered the threat.
 
 ## Disable Active Directory Computer
 
@@ -60,12 +61,13 @@ Directory.
 
 ![disableadcomputer](/images/threatmanager/3.0/administration/playbooks/action/disableadcomputer.webp)
 
-- Disable Domain Controllers – When selected, allows domain controllers to be disabled.
+- Disable Domain Controllers – When selected, lets you disable domain controllers.
 - Active Directory Credentials – Select a credential profile that contains valid Active Directory
   credentials. Credential profiles are configured on the
   [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If not specified, the
   action will be run as the credentials of the Action Service.
-- Computer – Select the computer to disable. If not selected, the host computer will be used.
+- Computer – Select the computer to disable. If you don't select one, Threat Manager uses the host
+  computer.
 
 ## Reset Password
 
@@ -76,9 +78,9 @@ The Reset Password action resets the password of the specified account.
 - Users – Select the users for whom to reset passwords. If not specified, the user who triggered the
   threat will be used.
 - Credential – Select a credential profile that contains valid Active Directory credentials.
-  Credential profiles are configured on the
-  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md) . If not specified, the
-  action will be run as the credentials of the Action Service.
+  You configure credential profiles on the
+  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If you don't specify one,
+  the action runs as the credentials of the Action Service.
 
 ## Revert Permission Change
 
@@ -87,8 +89,8 @@ The Revert Permission Change action reverts a permission change on an Active Dir
 ![revertpermissionchange](/images/threatmanager/3.0/administration/playbooks/action/revertpermissionchange.webp)
 
 - Credential – Select a credential profile that contains valid Active Directory credentials.
-  Credential profiles are configured on the Integrations Interface. If not specified, the action
-  will be run as the credentials of the Action Service.
+  You configure credential profiles on the Integrations Interface. If you don't specify one, the
+  action runs as the credentials of the Action Service.
 
 See the [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md) topic for additional
 information.

@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # Optionally Install the Action Service on Additional Servers
 
-The Action Service is installed with Threat Manager and is configured in the Threat Manager Console.
-The Action Service can also be installed remotely on other servers. This provides the option to run
+Threat Manager installs the Action Service, and you configure it in the Threat Manager Console.
+You can also install the Action Service remotely on other servers. This provides the option to run
 actions defined in the Console from different locations within an organization. The Action Service
-installer is in the zip file with the Threat Manager Console installer. However, it can be
-downloaded from within the Threat Manager Console.
+installer is in the zip file with the Threat Manager Console installer. However, you can also
+download it from within the Threat Manager Console.
 
 To install the Action Service:
 
@@ -28,17 +28,17 @@ progress.
 
 **Step 3 –** When the installation is complete, click Close to exit the installer.
 
-The Threat Manager action service is now installed on a remote server.
+The Threat Manager Action Service now runs on the remote server.
 
 ## Configure a Remote Action Service to Register with Threat Manager
 
-If an Action Service is installed on a remote machine, it must register with the Threat Manager
+If you install an Action Service on a remote machine, it must register with the Threat Manager
 server as an Action Service server. To register, provide the Threat Manager
 web console location and credentials via a command line utility. This process registers the host
 as an Action Service Server and retrieves a JWT, which the service encrypts and stores locally in the
 Action Service C:\ProgramData\Stealthbits directory for future communication with the Threat Manager
-server via REST requests. The configuration User Name and Password aren't stored and aren't
-required for connection after the initial configuration. Once configured, the Action Service server
+server via REST requests. The Action Service doesn't store the configuration User Name and Password,
+and doesn't require them for connection after the initial configuration. Once configured, the Action Service server
 fetches queued actions from Threat Manager to execute locally.
 
 To configure the Action Service using the command line utility:
@@ -78,14 +78,14 @@ The Action Service is now registered with Threat Manager.
 
 ## Configure a Service Account to Run Actions
 
-The Action Service that is installed with Threat Manager can be configured to execute as a service
-account. In this scenario, any actions run by Threat Manager will be executed as the Service
-Account. This, typically, is a simple way to ensure that Playbooks executed by Threat Manager have
+You can configure the Action Service installed with Threat Manager to execute as a service
+account. In this scenario, Threat Manager runs any actions as the Service
+Account. This is typically a simple way to ensure that the Playbooks Threat Manager executes have
 the proper permissions required to complete successfully.
 
 :::note
-If an Action Step has been configured to use a specific Credential Profile, the Action
-Step will use those credentials in the Action Step Script. See the
+If you configured an Action Step to use a specific Credential Profile, the Action
+Step uses those credentials in the Action Step Script. See the
 [Credential Profile Page](/docs/threatmanager/3.3/administration/configuration/integrations/credentialprofile.md) topic
 for additional information.
 :::

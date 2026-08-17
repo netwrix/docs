@@ -28,25 +28,25 @@ meet the following minimum requirements:
 - At least one special character (symbol)
 - Have a minimum length of 10 characters
 
-**Step 3 –** By default, MFA is enabled. Toggle this option off or on as desired. If the Enable MFA
-option is set to ON, the application will provide an internally-generated one-time password (OTP)
-option for the Administrator account. If the Enable MFA option is set to OFF, only a username and
-password will be required to sign in.
+**Step 3 –** By default, MFA is enabled. Toggle this option off or on as desired. If you set the
+Enable MFA option to ON, the application provides an internally-generated one-time password (OTP)
+option for the Administrator account. If you set the Enable MFA option to OFF, sign-in requires only
+a username and password.
 
 **Step 4 –** Click Set Password.
 
-The built-in ADMIN account password is now set.
+The built-in ADMIN account now has a password.
 
-If the Enable MFA option is set to OFF, no additional configuration is required and the Threat
+If you set the Enable MFA option to OFF, no additional configuration is necessary and the Threat
 Manager Console opens. See the [Getting Started with Threat Manager](/docs/threatmanager/3.3/gettingstarted.md) topic for
 next steps.
 
-If the Enable MFA option is set to ON, registration of an MFA authenticator is required. Proceed to
+If you set the Enable MFA option to ON, you must register an MFA authenticator. Proceed to
 the Configure MFA for the Bultin Administrator Account topic.
 
 ## Configure MFA for the Bultin Administrator Account
 
-If MFA was enabled for the buildtin Administrator account during first launch, configure MFA for the account:
+If MFA is enabled for the built-in Administrator account during first launch, configure MFA for the account:
 
 ![registerauthenticator](/images/threatprevention/7.5/install/reportingmodule/registerauthenticator.webp)
 
@@ -62,5 +62,5 @@ of codes for account recovery, if needed.
 
 **Step 4 –** Click **Continue**.
 
-Once MFA is configured for this account, the Threat Manager Console opens. See the
+After you configure MFA for this account, the Threat Manager Console opens. See the
 [Getting Started with Threat Manager](/docs/threatmanager/3.3/gettingstarted.md) topic for next steps.

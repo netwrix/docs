@@ -16,7 +16,7 @@ To edit a playbook step:
 
 **Step 3 –** Click Save.
 
-The playbook step is now updated.
+Threat Manager saves the updated playbook step.
 
 ## Delete a Playbook Step
 
@@ -26,4 +26,4 @@ To delete a playbook step:
 
 **Step 2 –** Click Delete.
 
-The playbook step is deleted.
+Threat Manager deletes the playbook step.

@@ -18,4 +18,4 @@ To export a playbook:
 
 **Step 3 –** Select a directory for the downloaded file.
 
-The playbook is placed in the selected directory.
+Threat Manager places the playbook in the selected directory.

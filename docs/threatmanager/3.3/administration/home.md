@@ -19,8 +19,8 @@ The daily activity summary bar graphs at the top of the page contains the follow
   increments.
 - Threats – Number of threats detected in the past 24 hours. The bar graph displays the threats
   detected over the past 24 in 1-hour increments.
-- Audit Events – Number of instances of activity that aren't necessarily threats, but should be
-  monitored
+- Audit Events – Number of instances of activity that aren't necessarily threats, but that you
+  should monitor
 - Monitored Activities – Number of monitored activities. The bar graph displays the number of
   monitored activities in 1-hour increments.
 

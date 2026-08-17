@@ -16,14 +16,14 @@ The Polices table displays the following information:
 - Name – The policy name
 - Enabled – A green checkmark indicates that the policy is enabled. A red x indicates that the
   policy is disabled
-- Hosts – The number of hosts on which the policy is applied
+- Hosts – The number of hosts the policy applies to
 - Last Deployed – The date and timestamp of the last policy deployment
 - Schedule – The interval at which the policy will deploy
 
 The Deployment History table displays the following information:
 
-- Created – When the policy was applied to a host
-- Host – The host on which the policy was applied. If the host exists in the Threat Manager
+- Created – When Threat Manager applied the policy to a host
+- Host – The host where Threat Manager applied the policy. If the host exists in the Threat Manager
   database, click the host link to go to the [Host Details Page](/docs/threatmanager/3.3/administration/threats/activedirectoryobjects/host.md)
 - User Name – The user account associated with the policy. (In the case of a Honeytoken policy, the
   user account created by the Honeytoken policy.)
@@ -37,11 +37,11 @@ additional information.
 
 A Honeytoken-type policy adds Honeytokens, which are fake credentials stored in memory. When an
 attack scans memory they may try to authenticate or query the domain for information about the
-account. Policies for Honeytokens are added on the Policies page.
+account. You add Honeytoken policies on the Policies page.
 
 :::note
-When a Honeytoken name is specified and the policy is enabled, this policy becomes
-immediately valid for Honeytoken threat detection. refer to
+When you specify a Honeytoken name and enable the policy, the policy becomes
+immediately valid for Honeytoken threat detection. Refer to
 [Configure Honeytoken Threats](/docs/threatmanager/3.3/administration/configuration/policies/honeytoken.md) for Honeytoken naming best practices.
 :::
 
@@ -65,10 +65,10 @@ To add a policy:
 
 
 - Description – The description for the policy
-- Enabled – The policy is set to OFF or disabled by default. Click the red X to set the Honeytoken
+- Enabled – The policy defaults to OFF, or disabled. Click the red X to set the Honeytoken
   to ON and enable it.
 
 **Step 4 –** Click Add.
 
-The Honeytoken policy is listed in the Policies box. Repeat the process to add additional policies
+The Honeytoken policy appears in the Policies box. Repeat the process to add additional policies
 for Honeytokens.

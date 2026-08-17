@@ -43,9 +43,9 @@ This banner contains a link to the page relevant to the issue.
 ## Home Page
 
 The Threat Manager [Home Page](/docs/threatmanager/3.3/administration/home.md) provides a summary overview of the possible threats
-detected in an organization's environment for the past 24 hours. This is displayed with interactive
-graphs and a rollup count that allow tracking and response capabilities for new threats,
-and users with risky activity.
+detected in an organization's environment for the past 24 hours. Interactive graphs and a rollup
+count display this information, providing tracking and response capabilities for new threats and
+users with risky activity.
 
 ## Threats Page
 
@@ -70,8 +70,8 @@ The threat types listed for bar charts are interactive.
 
 ![excludeathreat](/images/threatmanager/3.0/administration/excludeathreat.webp)
 
-Click a threat to exclude it from the chart. The threat will have a black line through it to show
-that it has been excluded. Click the threat again to add it to the chart.
+Click a threat to exclude it from the chart. A black line appears through the threat to show the
+exclusion. Click the threat again to add it to the chart.
 
 ![trendline](/images/threatmanager/3.0/administration/trendline.webp)
 
@@ -84,18 +84,18 @@ over slices in a pie chart to view the number of threats for each threat type.
 
 ## Preview Windows
 
-Anywhere in the Console where a link to a user, group, or host details page is displayed, hover over
+Anywhere in the Console that displays a link to a user, group, or host details page, hover over
 the link to display a preview window.
 
 ![hover](/images/threatmanager/3.0/administration/hover.webp)
 
-Preview windows display cards that provide information about the selected object without having to
-navigate off of the current page. These cards provide information about users, groups, and hosts,
+Preview windows display cards that provide information about the selected object without navigating
+away from the current page. These cards provide information about users, groups, and hosts,
 including any associated tags.
 
 ## Data Grids
 
-Data grids let you search for data and also to configure the presentation of data.
+Data grids let you search for data and configure how it's presented.
 
 ![This screenshot displays interactive elements in a grid.](/images/threatmanager/3.0/administration/datagrids.webp)
 
@@ -117,6 +117,6 @@ The data grids will display multiple authentication events that occur in quick s
 single row. This means that if a user has multiple similar authentication events that occur within a
 minute, the data grids will display a single row in the table for those events.
 
-If a data grid displays File System events that contain sensitive data, a Sensitive Data tag will be
-displayed in the Description field. The Sensitive Data tag is the only tag that will be displayed in
-the Description field.
+If a data grid displays File System events that contain sensitive data, the Description field
+displays a Sensitive Data tag. The Sensitive Data tag is the only tag the Description field
+displays.

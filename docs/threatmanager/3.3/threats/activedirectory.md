@@ -14,7 +14,7 @@ Threat Manager monitors the following threats for Active Directory. Each section
 
 ## AS-REP Roasted Users
 
- AS-REP roasting is a technique that allows retrieving password hashes for users that have 'Don't require Kerberos pre-authentication' property selected. Those hashes can then be cracked offline. 
+ AS-REP roasting is a technique that allows retrieving password hashes for users that have 'Don't require Kerberos pre-authentication' property selected. An attacker can then crack those hashes offline. 
 
 ## DCShadow
 
@@ -33,11 +33,11 @@ information.
 
 ## Domain Backup Key Compromise
 
-The Data Protection API (DPAPI) is used by Windows to encrypt user secrets such as saved credentials, browser cookies, website passwords, and other sensitive information. For computers joined to an Active Directory domain, secrets protected by the DPAPI are also encrypted with a domain backup key. This key is stored in Active Directory and enables recovery of DPAPI-protected secrets should the user lose their own backup key. Because the domain backup key can't be rotated, its exposure is a significant event. 
+Windows uses the Data Protection API (DPAPI) to encrypt user secrets such as saved credentials, browser cookies, website passwords, and other sensitive information. For computers joined to an Active Directory domain, a domain backup key also encrypts DPAPI-protected secrets. Active Directory stores this key, which enables recovery of DPAPI-protected secrets should the user lose their own backup key. Because the domain backup key can't be rotated, its exposure is a significant event. 
 
 ## Exposed Administrative Credentials
 
-Highly privileged accounts, groups, and systems have direct or indirect administrative control over the Active Directory forest/domain. Given the sensitive nature of these accounts, they should only be used on domain controllers. Pass-the-Hash attacks are successful because highly privileged credentials are used to access lower security systems. Having access to a privileged user's hash allows attackers to move laterally. 
+Highly privileged accounts, groups, and systems have direct or indirect administrative control over the Active Directory forest/domain. Given the sensitive nature of these accounts, they should only be used on domain controllers. Pass-the-Hash attacks succeed when highly privileged credentials access lower security systems. Having access to a privileged user's hash allows attackers to move laterally. 
  
 This threat aligns to best practices for securing Active Directory. If an organization doesn't enforce limiting privileged account access to only Domain Controllers, this threat should remain disabled to eliminate noise. 
 
@@ -53,19 +53,19 @@ Trigger: Perform Authentication using fabricated/invalid tickets with groups pre
 
 ## GMSA Password Access
 
-The passwords for Group Managed Service Accounts (GMSA) are stored in BLOB format in the msDS-ManagedPassword attribute of the GMSA account object in Active Directory. It is trivial to convert the BLOB to a useable clear text password. It is suspicious for a user to attempt to read this attribute, as only authorized computer accounts should retrieve a GMSA’s password. 
+Active Directory stores the passwords for Group Managed Service Accounts (GMSA) in BLOB format in the msDS-ManagedPassword attribute of the GMSA account object. It is trivial to convert the BLOB to a useable clear text password. It is suspicious for a user to attempt to read this attribute, as only authorized computer accounts should retrieve a GMSA’s password. 
 
 ## GMSA Permissions Assignment
 
-Permissions to retrieve passwords for Group Managed Service Accounts (GMSA) are typically granted only to the computer account of each computer running the service. The assignment of privileges to non-computer accounts (e.g. human accounts) can be indicative of an adversary's attempt to compromise the GMSA password. 
+Administrators typically grant permissions to retrieve passwords for Group Managed Service Accounts (GMSA) only to the computer account of each computer running the service. The assignment of privileges to non-computer accounts (e.g. human accounts) can be indicative of an adversary's attempt to compromise the GMSA password. 
 
 ## Hidden Object
 
-Changing object Deny Read or Deny List Contents permissions can effectively hide an Active Directory object as it will not be returned in LDAP queries. This causes the object to avoid monitoring and detection, as service accounts used by these solutions will be unable to query the object. 
+Changing object Deny Read or Deny List Contents permissions can effectively hide an Active Directory object because LDAP queries will not return it. This causes the object to avoid monitoring and detection, as service accounts used by these solutions will be unable to query the object. 
 
 ## Honeytoken
 
-Honeytokens are fake credentials stored in memory. When an attack scans memory they may try to authenticate or query the domain for information about the account. A Honeytoken threat can be generated by two methods: LDAP or Authentication. An authentication Honeytoken threat is generated when a perpetrator attempts to authenticate with a Honeytoken user account. An LDAP Honeytoken threat is generated when a perpetrator performs an LDAP query against a Honeytoken user account. 
+Honeytokens are fake credentials stored in memory. When an attack scans memory they may try to authenticate or query the domain for information about the account. Two methods can generate a Honeytoken threat: LDAP or Authentication. Threat Manager generates an authentication Honeytoken threat when a perpetrator attempts to authenticate with a Honeytoken user account. Threat Manager generates an LDAP Honeytoken threat when a perpetrator performs an LDAP query against a Honeytoken user account. 
 
 ## Insecure UAC Change
 
@@ -105,17 +105,17 @@ Providing a user with replication permissions allows the user to execute domain 
 
 ## Sensitive Group Changes
 
-Sensitive Group Changes indicate that the membership of a group containing extremely sensitive permissions has been modified. This includes any Active Directory group with the Sensitive tag in Threat Manager, which includes many standard Active Directory Groups such as: Domain Admins, Enterprise Admins, and Schema Admins. 
+Sensitive Group Changes indicate that someone modified the membership of a group containing extremely sensitive permissions. This includes any Active Directory group with the Sensitive tag in Threat Manager, which includes many standard Active Directory Groups such as: Domain Admins, Enterprise Admins, and Schema Admins. 
 
 ## Service Account Misuse
 
-Indicates that a service account was used to log into a machine that isn't listed in their service principal names attribute. 
+Indicates that someone used a service account to log into a machine that isn't listed in the account's service principal names attribute. 
 
 This threat aligns to best practices for securing Active Directory. If an organization doesn't enforce service accounts to only authenticate to hosts within their servicePrincipalName values, this threat should remain disabled to eliminate noise. 
 
 ## SID History Tampering
 
-Mimikatz or other tools can inject SID History into user accounts. This allows an account to effectively be given permissions, such as Domain Admin, even though it isn't actually a member of Domain Admins. 
+Mimikatz or other tools can inject SID History into user accounts. This effectively gives an account permissions, such as Domain Admin, even though it isn't actually a member of Domain Admins. 
 
 ## SPN Assigned to Privileged User
 

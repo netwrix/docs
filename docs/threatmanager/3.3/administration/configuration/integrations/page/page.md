@@ -36,7 +36,7 @@ Add New Integration window opens.
 
 **Step 4 –** Click Add. The Add New Integration window closes.
 
-The authentication provider is listed in the Integrations navigation pane and the configuration
+The authentication provider appears in the Integrations navigation pane and the configuration
 window for the provider opens. You must configure the provider for use with a supported
 authentication provider type, i.e., OpenID, RADIUS, or SAML.
 
@@ -47,8 +47,7 @@ node in the navigation pane or from the table to configure, view, or modify its 
 
 ![Integrations interface displaying the details for an Authentication Provider with the type dropdown menu open](/images/threatmanager/3.0/administration/configuration/integrations/authenticationprovider/types.webp)
 
-The following authentication provider types are supported; you can configure an authentication
-provider for any of these:
+You can configure an authentication provider for any of the following types:
 
 - RADIUS – See the [RADIUS Authentication Provider](/docs/threatmanager/3.3/administration/configuration/integrations/page/radius.md) topic for additional information.
 - OpenID – See the [OpenID Authentication Provider](/docs/threatmanager/3.3/administration/configuration/integrations/page/openid/openid.md) topic for additional information.

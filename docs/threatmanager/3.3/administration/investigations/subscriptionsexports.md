@@ -19,14 +19,15 @@ The table has the following columns:
 - Type – Icon indicates the delivery method for the subscription: email or shared folder
 - Subscription name – Subscription name of an investigation
 - Status – Indicates the subscription status: Scheduled or Disabled
-- Investigation – Displays the name of the investigation that is associated with the subscription.
+- Investigation – Displays the name of the investigation associated with the subscription.
 - Last run result – Displays the status of the last scheduled report, which include Never run,
   Delivered, Failed to deliver, or Failed to complete
 - Schedule – Displays the schedule frequency of the subscription or export
 - Last Run on – Date timestamp of the last scheduled report
 - Next Run – Date timestamp of the next scheduled report
 - Recipients – List of email recipients subscribed to the report
-- Shared folder – Display name for the configured shared folder where scheduled exports are stored
+- Shared folder – Display name for the configured shared folder where the application stores
+  scheduled exports
 - Actions – Menu option per table row. This column doesn't have a header. It is represented by
   three dots and shows up when you hover over a row.
 
@@ -52,8 +53,8 @@ contains the following options:
   toggle button to show or hide each column
 - Pin to left – Moves the column to the far left of the table and pins it there
 - Pin to right – Moves the column to the far right of the table and pins it there
-- Unpin – Returns the column to its original location. This option appears if the column has been
-  pinned.
+- Unpin – Returns the column to its original location. This option appears if you pinned the
+  column.
 
 ## Build a Table Filter Statement
 
@@ -74,7 +75,7 @@ equals, starts with, ends with, is empty, isn't empty, and is any of.
 additional dropdown menu for creating an _AND_ or an _OR_ statement. Then repeat Steps 1-3 for the
 row.
 
-The table is filtered to matches of the filter.
+The table displays only the rows matching the filter.
 
 ## Actions Menu
 

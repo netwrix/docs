@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # User Login After First Launch
 
-Once Threat Manager is installed, users granted access can log into the console using either of the
+After you install Threat Manager, users granted access can log into the console using either of the
 following methods:
 
 Log into Threat Manager locally on the default port using default credentials. For example

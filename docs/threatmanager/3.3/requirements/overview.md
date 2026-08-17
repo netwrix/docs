@@ -13,18 +13,17 @@ exceptions are covered.
 
 ## Architecture Overview
 
-The following servers are required for installation of the application:
+The application installation requires the following servers:
 
 **Core Component**
 
-- Threat Manager Database Server – This is where the Threat Manager PostgreSQL database is
-  installed.
-- Threat Manager Application Server – This is where the v3.3 application is installed.
-- Threat Manager Client – Threat Manager is a web service that can be accessed locally or remotely
+- Threat Manager Database Server – This is where you install the Threat Manager PostgreSQL database.
+- Threat Manager Application Server – This is where you install the v3.3 application.
+- Threat Manager Client – Threat Manager is a web service that you can access locally or remotely
   through a supported browser.
 - Threat Manager Action Service Server – Actions automate security responses and connect various
-  security applications and processes together. The Action Service is installed with Threat Manager
-  on the application server. However, it can be installed on additional servers.
+  security applications and processes together. Threat Manager installs the Action Service on the
+  application server. However, you can install it on additional servers.
 
 See the following topics for server requirements:
 
@@ -36,16 +35,16 @@ See the following topics for server requirements:
 
 **Target Environment Considerations**
 
-The target environment encompasses all servers, devices, or infrastructure being monitored by
-Netwrix Threat Prevention or Netwrix Activity Monitor in addition to data collected by Netwrix
-Access Analyzer (formerly Enterprise Auditor).
+The target environment encompasses all servers, devices, or infrastructure that Netwrix Threat
+Prevention or Netwrix Activity Monitor monitors, in addition to the data Netwrix Access Analyzer
+(formerly Enterprise Auditor) collects.
 
-- Active Directory Activity Data– Active Directory activity data is collected through integration
+- Active Directory Activity Data– Threat Manager collects Active Directory activity data through
+  integration with Threat Prevention or the Activity Monitor.
+- File System Activity Data – Threat Manager collects File System activity data through integration
   with Threat Prevention or the Activity Monitor.
-- File System Activity Data – File System activity data is collected through integration with Threat
-  Prevention or the Activity Monitor.
-- File System Sensitive Data – File System sensitive data is collected through integration with
-  Access Analyzer.
+- File System Sensitive Data – Threat Manager collects File System sensitive data through
+  integration with Access Analyzer.
 
 See the following documents for server requirements:
 

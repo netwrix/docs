@@ -71,7 +71,7 @@ The table displays the following information:
       access to another account.
       :::
     - Reset MFA button – Forces the user or every user in the group to reconfigure MFA on the next
-      login. This option is only available if an MFA authentication type is applied to the user or
+      login. This option is only available if an MFA authentication type applies to the user or
       group.
     - Change Password icon – Only available for the built-in ADMIN account. This icon opens the Edit
       password for build-in admin window. See the Edit Built-in Admin Password topic for additional
@@ -82,7 +82,7 @@ additional information.
 
 ### Roles Defined
 
-The following Roles can be assigned to AD users and groups:
+You can assign the following roles to AD users and groups:
 
 - Administrator – This role provides unrestricted access to all functionality
 - Report Administrator – This role can configure/use anything on the investigations page
@@ -114,7 +114,7 @@ The following Roles can be assigned to AD users and groups:
     - No access to Playbooks
     - Unable to trigger Playgroups from Threats
 
-- Report Reviewer – This role can only use investigations that have been directly assigned to
+- Report Reviewer – This role can only use investigations directly assigned to
   them
 
     - No access to Configuration pages
@@ -123,15 +123,15 @@ The following Roles can be assigned to AD users and groups:
     - Unable to trigger Playbooks from Threats
     - Only has access to the investigation pages
     - Unable to save Investigations or modify exiting Investigations
-    - Can only see and run saved investigations that have been assigned to them
+    - Can only see and run saved investigations assigned to them
     - Can export reports they have access to
 
 ### Authentication Types Defined
 
-The following authentication types can be assigned to users and groups:
+You can assign the following authentication types to users and groups:
 
 - Built-in MFA – This type uses an Active Directory username and password with a one-time password
-  (OTP) that is configured on the first login by a user via a multi-factor authentication (MFA)
+  (OTP) that the user configures on first login via a multi-factor authentication (MFA)
   solution (Authenticator, DUO, etc.)
 - No MFA – This type uses only an Active Directory username and password for authentication
 - Authentication Provider Profiles – This type enables third-party authentication providers using
@@ -144,8 +144,8 @@ additional information.
 ### Add Console Access
 
 :::note
-Verify that an Active Directory Sync has completed to ensure that user and group
-information is updated. See the [Active Directory Sync Page](/docs/threatmanager/3.3/administration/configuration/integrations/activedirectorysync.md)
+Verify that an Active Directory Sync has completed, so the application has current user
+and group information. See the [Active Directory Sync Page](/docs/threatmanager/3.3/administration/configuration/integrations/activedirectorysync.md)
 for additional information.
 :::
 
@@ -166,8 +166,8 @@ populate as you type with available options. Select a user or group from the men
 **Step 4 –** Select an authentication type from the **Authentication Type** dropdown menu.
 
 :::tip
-Remember, authentication provider profile types are displayed after an integration has been
-configured on the Authentication Provider page of the Integrations interface.
+Remember, authentication provider profile types appear after you configure an integration
+on the Authentication Provider page of the Integrations interface.
 :::
 
 
@@ -175,7 +175,7 @@ configured on the Authentication Provider page of the Integrations interface.
 
 **Step 6 –** Click Add. The Add Console Access window closes.
 
-The user or group is added to the table with the assigned role.
+The user or group appears in the table with the assigned role.
 
 ### Edit Console Access
 
@@ -232,7 +232,7 @@ expiration time for authenticated users.
     - The first page requires a username and password
     - The second page is the multi-factor authentication page
 
-- Token expiration time – The period of inactivity before the user is required to re-authenticate
+- Token expiration time – The period of inactivity before the user must re-authenticate
   for access to the console. Select the expiration time you want from the dropdown menu:
 
     - 15 Minutes

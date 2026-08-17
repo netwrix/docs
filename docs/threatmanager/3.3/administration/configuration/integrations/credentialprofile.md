@@ -7,7 +7,7 @@ sidebar_position: 50
 # Credential Profile Page
 
 The Credential Profile page within the Integrations interface lists all of the credentials used by
-the application to complete tasks. These credentials are securely stored.
+the application to complete tasks. The application stores these credentials securely.
 
 ![Integrations interface on the Credential Profile page](/images/threatmanager/3.0/administration/configuration/integrations/page_2.webp)
 
@@ -22,8 +22,8 @@ permission requirements for each type of task.
 It is a best practice to:
 
 - Create one Credential Profile per domain for Active Directory Sync purposes
-- Create a Credential Profile with Writer permissions to the shared folder where subscription
-  exports will be stored
+- Create a Credential Profile with Writer permissions to the shared folder where the application
+  stores subscription exports
 
 ## Add a Credential Profile
 
@@ -54,7 +54,7 @@ Add New Integration window opens.
 
 **Step 5 –** Click Add. The Add New Integration window closes.
 
-The Credential Profile is listed in the Integrations navigation pane. Repeat the process to add
+The Credential Profile appears in the Integrations navigation pane. Repeat the process to add
 additional Credential Profiles.
 
 ## Credential Profile Details
@@ -113,11 +113,12 @@ view a list of the already created Credential Profiles, if any.
 
 **Step 7 –** Click the **Save** button.
 
-The Credential Profile name and/or description have been modified.
+The application saves the new Credential Profile name and description.
 
 ## Edit Credential
 
-To edit a credential within a Credential Profile (for example, when the account password needs to be updated):
+To edit a credential within a Credential Profile (for example, when you need to update the account
+password):
 
 **Step 1 –** On the Integrations interface, click **Credential Profile** in the navigation pane to
 view a list of the already created Credential Profiles, if any. Select a Credential Profile.
@@ -137,13 +138,12 @@ menu.
 
 **Step 6 –** Click **Save**. The Credential Settings window closes.
 
-The credential within the Credential Profile has been modified.
+The application saves the modified credential within the Credential Profile.
 
 ## Add Additional Credential to a Profile
 
-Multiple credentials can be added to a single profile. Credential stacking is when you add multiple
-credentials to a single profile. While doing certain actions, these credentials will be enumerated
-until one is found that can execute the task.
+Credential stacking is when you add multiple credentials to a single profile. During certain
+actions, the application enumerates these credentials until it finds one that can execute the task.
 
 The following areas use stacking:
 
@@ -159,10 +159,10 @@ The following areas use stacking:
 - Actions
 
     - The full list is available to the actions in the $CredentialList parameter
-    - The $Credential parameter will be populated with the most appropriate credential from the list
+    - The $Credential parameter holds the most appropriate credential from the list
 
-        - The domain of the event will be matched against the domain of the credential
-        - If none match, the first credential in the list is used
+        - The application matches the domain of the event against the domain of the credential
+        - If none match, the application uses the first credential in the list
 
 - Honey Tokens
 

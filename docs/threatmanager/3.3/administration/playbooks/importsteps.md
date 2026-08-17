@@ -7,8 +7,8 @@ sidebar_position: 50
 # Import Action Steps for Playbooks
 
 The Threat Response box contains an Import button which lets you import custom
-actions into Threat Manager. Imported actions are listed in the Threat Response box and can be added
-as Playbook steps.
+actions into Threat Manager. Imported actions appear in the Threat Response box, and you can add
+them as Playbook steps.
 
 To import an action:
 
@@ -20,4 +20,4 @@ To import an action:
 
 **Step 3 –** Click Open.
 
-The action is displayed in the Actions list.
+The action appears in the Actions list.

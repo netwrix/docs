@@ -29,19 +29,19 @@ Configure the following settings for a SAML provider on the Configuration tab:
 
 ![Configuration tab for a SAML authneication provider](/images/threatprevention/7.5/reportingmodule/configuration/integrations/authenticationprovider/configurationsaml.webp)
 
-- Default – The default profile applied when a user is assigned multiple authentication profiles.
-  When off, the profile will be determined in alphabetical order of the profile name. Toggle off and
-  on as desired.
+- Default – The default profile applied when a user has multiple authentication profiles.
+  When off, the application determines the profile in alphabetical order of the profile name. Toggle
+  off and on as desired.
 - Login URI – Login URI is a specific web address where users can authenticate themselves to access
   a web application or service
-- Logout Uri – A logout URI is a specific web address where users are directed to terminate their
-  authenticated session in a web application or service
+- Logout Uri – A logout URI is a specific web address where the application directs users to
+  terminate their authenticated session in a web application or service
 - Login Type – The login type to use to log into the account. Use the dropdown menu to select one
   of the following: Sam Account Name, User Principal Name, Email Address, or Sid
 - User Claim – A user claim is an assertion made by the identity provider about a user, such as
   their name, role, or email, that the service provider can use for authorization decisions
-- Check Certificate – If enabled, this validates the response certificate to the certificate
-  provided in the Certificate field. Use the toggle button to enable and disable this setting.
+- Check Certificate – If enabled, this validates the response certificate against the certificate
+  you provide in the Certificate field. Use the toggle button to enable and disable this setting.
 - Certificate – A certificate is a digital credential used to validate the identity of parties and
   secure communications between an Identity Provider (IdP) and a Service Provider (SP)
 
@@ -49,7 +49,7 @@ Click Save to commit the configuration settings.
 
 ## Users/Groups Tab
 
-The Users/Groups tab displays users and groups that are assigned to this authentication
+The Users/Groups tab displays the users and groups assigned to this authentication
 profile. To give access to the application to new users, click the New Access button, which opens
 the Add Console Access window. To assign this authentication provider to existing users, go to
 System Settings > User Access Page.
@@ -73,7 +73,7 @@ The table displays the following information:
     - Trash icon – Opens a Warning window to confirm the action of deleting the user or group.
       Removing a user or group removes console access for it.
     - Reset MFA button – Forces the user or every user in the group to reconfigure MFA on the next
-      login. This option is only available if an MFA authentication type is applied to the user or
+      login. This option is only available if an MFA authentication type applies to the user or
       group.
 
 See the [User Access Page](/docs/threatmanager/3.3/administration/configuration/systemsettings/useraccess.md) topic for additional information.

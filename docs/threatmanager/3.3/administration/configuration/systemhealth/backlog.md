@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Backlog
 
-The Backlog overview displays a summary of all threats and system jobs with the events in queue to
-be processed. It also displays other job information depending on the job type.
+The Backlog overview displays a summary of all threats and system jobs with the events queued for
+processing. It also displays other job information depending on the job type.
 
 ![Backlog Overview](/images/threatmanager/3.0/administration/configuration/systemhealth/backlogoverview.webp)
 

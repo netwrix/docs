@@ -13,7 +13,7 @@ information about all application events.
 
 The Audit History table displays the following information:
 
-- Log Level – The relative impact of the action. This feature is auto-assigned by the application.
+- Log Level – The relative impact of the action. The application auto-assigns this value.
 - Log Type – The overall type of activity source of the change:
 
     - Audit – User-performed action
@@ -24,12 +24,12 @@ The Audit History table displays the following information:
 - Description – A summary of the event that occurred
 - User Name – The name of the user account that performed the audit event
 - IP Address – The IP address for the user's client machine
-- Category – The general categorization of the operation that was performed
+- Category – The general categorization of the operation performed
 - Sub-Category – The specific category of the operation
-- Status – Indicates whether the event was completed successfully or failed
-- Resource – Where applicable, identifies the related resource that was changed or accessed
+- Status – Indicates whether the event completed successfully or failed
+- Resource – Where applicable, identifies the related resource changed or accessed
 
-The table is designed to display 10 records at a time, by default. However, you can set this to 50,
+By default, the table displays 10 records at a time. However, you can set this to 50,
 100, or 1,000 rows with the dropdown menu above the right corner of the table. There is a search
 box above the left corner of the table. Page navigation buttons are below the table. You can also
 export the data from the current page using the **Export CSV** button.

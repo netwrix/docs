@@ -15,9 +15,9 @@ This action deletes the file associated with the threat.
 ![deletefile](/images/threatmanager/3.0/administration/playbooks/action/deletefile.webp)
 
 - Credential – Select a credential profile that contains valid Active Directory credentials.
-  Credential profiles are configured on the
-  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If not specified, the
-  action will be run as the credentials of the Action Service.
+  You configure credential profiles on the
+  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If you don't specify one,
+  the action runs as the credentials of the Action Service.
 
 ## Revert Permission Change
 
@@ -26,8 +26,8 @@ The Revert Permission Change action reverts a permission change on an Active Dir
 ![revertpermissionchange](/images/threatmanager/3.0/administration/playbooks/action/revertpermissionchange.webp)
 
 - Credential – Select a credential profile that contains valid Active Directory credentials.
-  Credential profiles are configured on the Integrations Interface. If not specified, the action
-  will be run as the credentials of the Action Service.
+  You configure credential profiles on the Integrations Interface. If you don't specify one, the
+  action runs as the credentials of the Action Service.
 
 See the [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md) topic for additional
 information.
@@ -39,6 +39,6 @@ This action saves the file hash to the properties of the threat.
 ![savefilehash](/images/threatmanager/3.0/administration/playbooks/action/savefilehash.webp)
 
 - Credential – Select a credential profile that contains valid Active Directory credentials.
-  Credential profiles are configured on the
-  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If not specified, the
-  action will be run as the credentials of the Action Service.
+  You configure credential profiles on the
+  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If you don't specify one,
+  the action runs as the credentials of the Action Service.

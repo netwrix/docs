@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Install the Threat Manager Application
 
-The application can be installed on the same server as the PostgreSQL databases or a different
-server. If installed on a different server, the location of the database server must be provided
-while installing the application.
+You can install the application on the same server as the PostgreSQL databases or a different
+server. If you install it on a different server, you must provide the location of the database
+server while installing the application.
 
 To install the application:
 
@@ -39,7 +39,7 @@ agreement. Click **Next**.
 
 ![Netwrix Threat Manager Setup wizard Install Folder page](/images/threatmanager/3.0/install/folder.webp)
 
-**Step 4 –** By default, the installation directory is set to:
+**Step 4 –** By default, the installer uses the following installation directory:
 
 - Install Folder – C:\Program Files\STEALTHbits\StealthDEFEND
 
@@ -48,9 +48,9 @@ Optionally, enter a new path or use the **Browse** button to modify as desired. 
 ![Netwrix Threat Manager Setup wizard Connect to the Database page](/images/threatmanager/3.0/install/database.webp)
 
 **Step 5 –** On the Database page, ensure the host and port are set correctly. If installing on the
-same server where the PostgreSQL database application was installed, this information will be
-accurate by default. The default database name is stealthdefend; however, it can be modified as
-desired. Click **Test** to validate the connection information.
+same server where you installed the PostgreSQL database application, this information will be
+accurate by default. The default database name is stealthdefend; however, you can modify it.
+Click **Test** to validate the connection information.
 
 For example, if you change the default database name from stealthdefend to threatmanager and click
 **Test**.
@@ -61,11 +61,10 @@ For example, if you change the default database name from stealthdefend to threa
 doesn't exist and you want to create it. Click **OK** and the window closes.
 
 **Step 7 –** A "Ready for installation" message appears on the Database page of the wizard and the
-Next button is enabled. Click **Next**.
+Next button activates. Click **Next**.
 
 :::note
-If PostgreSQL is installed on a different host, then the connection details should be
-updated accordingly.
+If PostgreSQL runs on a different host, update the connection details accordingly.
 :::
 
 
@@ -83,9 +82,9 @@ closes.
 
 ![Netwrix Setup Launcher with Threat Manager Setup check](/images/threatmanager/3.0/install/applicationcheck.webp)
 
-**Step 10 –** Now that both components have been installed, close the Netwrix Setup Launcher.
+**Step 10 –** Now that you have installed both components, close the Netwrix Setup Launcher.
 
-The Threat Manager application is now installed and the database has been created. There are several
+The installer has now installed the Threat Manager application and created the database. There are several
 post-installation tasks that you may need to complete, depending on your environment. See the
 following topics for additional information:
 

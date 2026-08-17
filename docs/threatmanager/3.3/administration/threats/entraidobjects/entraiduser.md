@@ -115,7 +115,7 @@ Each table has the following columns:
 - Name – The name of the group. Click the link to view group details. See the
   [Group Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidgroup.md) topic for additional information.
 - Group Type – The type of group within Microsoft Entra ID
-- Membership Type - How the group membership was assigned
+- Membership Type - How Microsoft Entra ID assigned the group membership
 
 - Security Enabled - Shows whether the "Security Enabled" flag is enabled within Microsoft
   Entra ID. When enabled, this type of group manages user and computer access to shared resources

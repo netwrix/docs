@@ -28,8 +28,7 @@ see the [Upgrade PostgreSQL 14 to 18](/docs/threatmanager/3.3/install/upgrade/up
 
 To upgrade from PostgreSQL 14.13.x to 14.20.x:
 
-**Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window is
-displayed.
+**Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window opens.
 
 ![Netwrix Threat Manager Setup window](/images/threatmanager/3.3/intsall/upgrade/setup-launcher.webp)
 
@@ -46,7 +45,7 @@ displayed.
 **Step 5 –** The installation begins and the installer displays a Setup Progress window. Click Exit
 when the installation is successful to close the wizard.
 
-PostgreSQL has been upgraded.
+The installer has upgraded PostgreSQL.
 
 :::note
 If you have any antivirus or Endpoint Detection and Response (EDR) software installed on
@@ -59,12 +58,12 @@ antivirus scans:
 - \ProgramData\Stealthbits\PostgreSQL14
 - \Program Files\Stealthbits\StealthDEFEND
 
-PostgreSQL may fail to start or behave unexpectedly when monitored by any tool.
+PostgreSQL may fail to start or behave unexpectedly when any tool monitors it.
 
 ## Install Threat Manager 3.3
 
 **Step 1 –** Click the Netwrix Threat Manager **Setup** button on the Netwrix Threat Manager setup
-window. The following window is displayed:
+window. The following window opens:
 
 ![Install Threat Manager 3.3 Page](/images/threatmanager/3.3/intsall/upgrade/ntm-initial.webp)
 
@@ -77,7 +76,7 @@ then click **Next**.
 
 ![Threat Manager 3.3 Default Setup Folder](/images/threatmanager/3.3/intsall/upgrade/ntm-location.webp)
 
-**Step 4 –** By default, the installation directory is set to:
+**Step 4 –** By default, the installer uses the following installation directory:
 
 **C:\Program Files\STEALTHbits\StealthDEFEND\**
 
@@ -88,9 +87,9 @@ Enter a new path or use the Browse button to modify as desired. Click **Next**.
 **Step 5 –** On the database page, ensure the host and port are set correctly.
 
 :::note
-If installing on the same server where the PostgreSQL database application was installed,
+If installing on the same server where you installed the PostgreSQL database application,
 this information will be accurate by default. The default database name is stealthdefend; however,
-it can be modified as desired.
+you can modify it.
 :::
 
 
@@ -113,10 +112,10 @@ already created them. The installer will also by default install AD and Entra Po
 **Step 10 –** Click **Exit** when the installation completes successfully. The Netwrix Threat
 Manager Setup wizard closes.
 
-**Step 11 –** Now that both components have been installed, close the Netwrix Threat Manager Setup
+**Step 11 –** Now that you have installed both components, close the Netwrix Threat Manager Setup
 Launcher.
 
-Threat Manager 3.3 is now installed, and the database has been upgraded.
+The installer has now installed Threat Manager 3.3 and upgraded the database.
 
 :::info
 After successfully upgrading to the latest Threat Manager version, clear your

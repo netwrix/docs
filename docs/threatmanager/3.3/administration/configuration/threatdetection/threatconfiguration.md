@@ -22,39 +22,39 @@ The Processing tab contains the configuration options for processing the threat.
 
 **General:**
 
-- Status – When set to ON, this threat will be detected by Threat Manager. When set to OFF, this
-  threat will not be detected by Threat Manager. When a threat status is **OFF**and then set to
-  **ON**, a dialog will display wherein which data will be processed is determined.
+- Status – When set to ON, Threat Manager detects this threat. When set to OFF, Threat Manager
+  doesn't detect this threat. When you change a threat status from **OFF** to **ON**, a dialog
+  displays where you determine which data to process.
 
 - Threat Level – The relative severity level, or risk level, of the threat. Threat level controls
   the visibility of the threat and lets you sort, filter, and influence various dashboards and
   visualizations throughout the console. This setting doesn't influence the behavior of the threat
   response.
-    - High – Indicates a serious threat that should be investigated immediately. The high threat
-      level setting can be used as a filter on the [Threats Page](/docs/threatmanager/3.3/administration/threats/threats.md).
+    - High – Indicates a serious threat that you should investigate immediately. You can use the
+      high threat level setting as a filter on the [Threats Page](/docs/threatmanager/3.3/administration/threats/threats.md).
     - Medium – Indicates a potentially serious threat of activities leading to a serious threat that
-      should be investigated. The medium threat level setting can be used as a filter on the
+      you should investigate. You can use the medium threat level setting as a filter on the
       [Threats Page](/docs/threatmanager/3.3/administration/threats/threats.md).
-    - Low – Indicates activity that is a potential risk or a bad practice. The low threat level
-      setting can be used as a filter on the [Threats Page](/docs/threatmanager/3.3/administration/threats/threats.md).
-    - Audit – Indicates activity that isn't necessarily a threat, but should be monitored. The
-      audit setting can be used as a filter on the [Threats Page](/docs/threatmanager/3.3/administration/threats/threats.md). Some threats will
+    - Low – Indicates activity that is a potential risk or a bad practice. You can use the low threat
+      level setting as a filter on the [Threats Page](/docs/threatmanager/3.3/administration/threats/threats.md).
+    - Audit – Indicates activity that isn't necessarily a threat, but that you should monitor. You
+      can use the audit setting as a filter on the [Threats Page](/docs/threatmanager/3.3/administration/threats/threats.md). Some threats
       auto-escalate from audit to a higher level, for example, threats with a high threat event
-      count or if the perpetrators of the threat are sensitive users. Audit events are also shown on
-      the [Home Page](/docs/threatmanager/3.3/administration/home.md).
+      count or if the perpetrators of the threat are sensitive users. The
+      [Home Page](/docs/threatmanager/3.3/administration/home.md) also shows audit events.
     - Informational – Indicates first-time client use or first-time host use, which can be common
       events but may also indicate a threat
 
 **Threat Response:**
 
-Assigning a threat response designates a playbook to automatically be executed immediately when a
-threat of this type is detected.
+Assigning a threat response designates a playbook that runs automatically as soon as Threat Manager
+detects a threat of this type.
 
-- Email Alert – Select On to send email notifications when the threat is detected. Select Off to
-  turn off email notifications.
-- SIEM Alert – Select On to forward threat information to a SIEM service when the threat is
-  detected. Select Off to turn off forwarding threat information to a SIEM service.
-- Run Playbook – Select the playbook that will be used to respond to the threat.
+- Email Alert – Select On to send email notifications when Threat Manager detects the threat. Select
+  Off to turn off email notifications.
+- SIEM Alert – Select On to forward threat information to a SIEM service when Threat Manager detects
+  the threat. Select Off to turn off forwarding threat information to a SIEM service.
+- Run Playbook – Select the playbook to run in response to the threat.
 
 **Rollup:**
 
@@ -63,7 +63,7 @@ Rollup isn't available for all threat types.
 :::
 
 
-- Enabled – Enables rollups when set to ON. The default state is dependent on the threat type.
+- Enabled – Enables rollups when set to ON. The default state depends on the threat type.
 - Rollup Time – The timeframe for the rollup. Select a timeframe from the dropdown list:
     - 1 Minute
     - 5 Minutes
@@ -73,15 +73,15 @@ Rollup isn't available for all threat types.
     - 8 Hours
     - 24 Hours
 
-If rollup is enabled, multiple events from the same perpetrator will be associated with a single
-threat. For the given rollup criteria, if additional threat events are received within the selected
-rollup time, then the threat events are appended to an existing threat instead of creating a new
-threat. For example, if a user creates 1000 ransomware files in the configured rollup timeframe, it
-is reported as 1 ransomware threat with 1000 events, whereas without rollup many threats would be
-created. The configured threat response (Email, SIEM, or Playbooks) will be triggered only once when
-the threat is initially detected regardless of rollup configuration. When a threat rolls up, it will
-also update the detection time of the threat, which will push it to the top of the Threats Page
-timeline.
+If you enable rollup, Threat Manager associates multiple events from the same perpetrator with a
+single threat. For the given rollup criteria, if Threat Manager receives additional threat events
+within the selected rollup time, it appends those threat events to an existing threat instead of
+creating a new threat. For example, if a user creates 1000 ransomware files in the configured rollup
+timeframe, Threat Manager reports 1 ransomware threat with 1000 events, whereas without rollup it
+would create many threats. The configured threat response (Email, SIEM, or Playbooks) triggers only
+once when Threat Manager initially detects the threat, regardless of rollup configuration. When a
+threat rolls up, it also updates the detection time of the threat, which pushes it to the top of the
+Threats Page timeline.
 
 ![Image is a flow chart visually explaining how a threat is handled with or without Rollup enabled.](/images/threatmanager/3.0/administration/configuration/rollupexplanationgraphic.webp)
 
@@ -89,8 +89,8 @@ The diagram provides an outline of the rollup process.
 
 ### Exclusions Tab
 
-The Exclusions tab lists existing exclusions for the threat. Exclusions allow rule-based definitions
-to be defined for specific criteria to be excluded from threat detection for the threat type.
+The Exclusions tab lists existing exclusions for the threat. Exclusions let you define rules that
+exclude specific criteria from threat detection for the threat type.
 
 ![exclusionstab](/images/threatmanager/3.0/administration/configuration/exclusionstab.webp)
 
@@ -144,28 +144,28 @@ exclusion.
 **Step 7 –** Click Saveto save the exclusion details. Click **Cancel** to close the modal and
 disregard any changes made to the exclusion.
 
-The exclusion is added to the Exclusions list and the specified activity will immediately be
-excluded from threat detection for the threat type.
+The exclusion appears in the Exclusions list, and Threat Manager immediately excludes the specified
+activity from threat detection for the threat type.
 
 ### Settings Tab
 
-The Settings Tab provides additional threat-specific settings that are required for some threats.
+The Settings Tab provides additional threat-specific settings that some threats require.
 
 :::note
-The Settings tab is only displayed for threats that require additional settings.
+The Settings tab only appears for threats that require additional settings.
 :::
 
 
 ![This screenshot displays the Settings tab.](/images/threatmanager/3.0/administration/configuration/settingstab.webp)
 
-This tab shows the settings that are required for the Forged Ticket threat.
+This tab shows the settings the Forged Ticket threat requires.
 
-- Sensitive groups only – When enabled, Forged Ticket threats will only be detected if a group that
-  was added to the forged ticket is tagged as sensitive.
+- Sensitive groups only – When enabled, Threat Manager only detects Forged Ticket threats if a group
+  added to the forged ticket has the sensitive tag.
 - Membership cache duration – The number of minutes to cache group membership changes. This value
   should equal the longest expected time for one DC to replicate changes.
-- Use all groups – When enabled, Forged Ticket threats will be detected whenever a user is detected
-  with an unexpected token.
+- Use all groups – When enabled, Threat Manager detects Forged Ticket threats whenever it detects a
+  user with an unexpected token.
 - Specific groups – Only detect threats if the specified groups have been injected into a user's
-  Privilege Account Certificate (PAC). This setting is ignored when the Use all groups setting is
+  Privilege Account Certificate (PAC). This setting has no effect when the Use all groups setting is
   enabled.

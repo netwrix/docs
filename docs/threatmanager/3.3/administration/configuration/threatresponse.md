@@ -7,14 +7,14 @@ sidebar_position: 20
 # Threat Response Page
 
 The Threat Response page lets you create playbooks and add steps which contain
-actions that can be executed in response to detected threats. Threat Manager provides preconfigured
+actions that run in response to detected threats. Threat Manager provides preconfigured
 actions for different targets.
 
 Playbooks are a collection of steps that run sequentially in response to a threat. Each step
-contains an action that is designated for the threat response. These steps typically integrate with
+contains an action designated for the threat response. These steps typically integrate with
 existing resources in the organization such as email and helpdesk platforms, Active Directory, file
-systems, and custom PowerShell scripts. Playbooks can be executed automatically or ad-hoc by a
-Threat Manager Administrator when a threat is detected.
+systems, and custom PowerShell scripts. Playbooks run automatically, or a Threat Manager
+Administrator can run them ad-hoc when Threat Manager detects a threat.
 
 ![threatresponse](/images/threatmanager/3.0/administration/configuration/threatresponse.webp)
 
