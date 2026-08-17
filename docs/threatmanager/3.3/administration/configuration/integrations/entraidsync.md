@@ -15,7 +15,8 @@ for additional information about the permissions required for Microsoft Entra ID
 
 Microsoft Entra ID Sync schedules the Azure service to collect Microsoft Entra ID data for the
 specified Microsoft Entra ID tenants. The Microsoft Entra ID Sync runs continuously, evaluating
-the USN value of Microsoft Entra ID objects and syncing whenever an object changes.
+the Update Sequence Number (USN) value of Microsoft Entra ID objects and syncing whenever an object
+changes.
 
 - Name – Name of the Microsoft Entra ID tenant.
 - Enabled – icon indicates the enabled state:
@@ -150,7 +151,7 @@ To modify the Entra ID Sync policy for the selected Microsoft Entra ID tenant.
 **Step 2 –** On the Tenant Configuration tab, make the modifications you want.
 
 :::tip
-Remember, the Tenant and Azure Cloud fields can't be modified.
+Remember, you can't modify the Tenant and Azure Cloud fields.
 :::
 
 

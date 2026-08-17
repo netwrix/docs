@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # General Threats
 
-The following threats are monitored for File System and Active Directory.
+Threat Manager monitors the following threats for File System and Active Directory.
 
 ## Abnormal User Behavior
 

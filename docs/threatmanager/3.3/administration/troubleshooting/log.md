@@ -33,7 +33,7 @@ Threat Manager has the following logs:
   problems on the system health page, retrieve this log for troubleshooting.
 - License Service Log – This log contains information for the third party licensing components
   used by Threat Manager. Reference this log for any issues with licensing.
-- Reset Service Log – This log contains a number of pieces of information such as logging into the
+- Reset Service Log – This log contains information such as logging into the
   Threat Manager application, licensing, and some website functions. This log is very useful for any
   AJAX errors or errors that the UI exposes.
 - SIEM Service Log – This log contains information relating to emailing threat information from

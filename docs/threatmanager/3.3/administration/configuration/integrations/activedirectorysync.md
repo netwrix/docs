@@ -134,7 +134,7 @@ The Domain Configuration tab displays the following settings:
   [DOMAIN.COM], e.g. NT-DC03.NWXTech.com
 - Credential Profile – Displays the Credential Profile by name
 - Enabled / Disabled – Toggle indicates if the policy is enabled to run the sync service
-- Max Renew Ticket Age (days) – Displays the value indicates the maximum number of days of the Renew
+- Max Renew Ticket Age (days) – Displays the maximum number of days of the Renew
   Ticket Age for the domain. This value must match the domain configuration. See the Microsoft
   [Max-Renew-Age attribute](https://docs.microsoft.com/en-us/windows/win32/adschema/a-maxrenewage)
   article for additional information.
@@ -144,7 +144,7 @@ The Domain Configuration tab displays the following settings:
     :::
 
 
-- Max Ticket Age (hours) – Displays the value indicates the maximum number of hours of the Ticket
+- Max Ticket Age (hours) – Displays the maximum number of hours of the Ticket
   Age for the domain. This value must match the domain configuration. See the Microsoft
   [Max-Ticket-Age attribute](https://docs.microsoft.com/en-us/windows/win32/adschema/a-maxticketage)
   article for additional information.
@@ -198,13 +198,13 @@ export the data from the current page using the **Export CSV** button.
 To modify the Active Directory Sync policy for the selected Active Directory domain:
 
 **Step 1 –** On the Integrations interface, click **Active Directory Sync** in the navigation pane
-to view a list of the already created Active Directory Sync policies, if any. A policy is
-represented by the domain for which it is created.
+to view a list of the already created Active Directory Sync policies, if any. Each domain represents
+one policy.
 
 **Step 2 –** The Domain Configuration tab opens, where you can make the modifications you want.
 
 :::tip
-Remember, the domain can't be modified.
+Remember, you can't modify the domain.
 :::
 
 

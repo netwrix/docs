@@ -14,8 +14,8 @@ This action creates an incident in ServiceNow®.
 
 ![createservicenow](/images/threatmanager/3.0/administration/playbooks/action/createservicenow.webp)
 
-- Instance – Specify the ServiceNow instance. Only enter a name and the .servicenow.com instance is
-  automatically applied. For example, entering "company" will automatically become
+- Instance – Specify the ServiceNow instance. Enter only a name; Threat Manager automatically
+  applies the .servicenow.com instance. For example, entering "company" becomes
   company.servicenow.com.
 - Message – Specify the optional message to display
 - Password – Specify the password for the ServiceNow instance
@@ -39,8 +39,8 @@ This action sends an authentication push to the Duo API.
   default title.
 - Push Information – Specify the Duo Push information. If you don't specify any, Threat Manager uses
   default threat information.
-- Fail On – Select the response on which to fail the action step. If not specified, the step will
-  fail on "Deny". Select an option from the following:
+- Fail On – Select the response on which to fail the action step. If you don't specify one, the step
+  fails on "Deny". Select an option from the following:
 
     - Allow
     - Deny
@@ -67,15 +67,16 @@ This action uses RADIUS profiles to authenticate user activity.
 ![radiusauthentication](/images/threatmanager/3.0/administration/playbooks/action/radiusauthentication.webp)
 
 - User Not Found Behavior – Select how to handle a user not configured for RADIUS authentication. If
-  not specified, the authentication will fail.
+  you don't specify one, the authentication fails.
 - Method – Specify the RADIUS authentication method value required by the authentication provider.
   This value will vary depending upon vendor. Example values may include: push, SMS, or phone.
 - Users – Select the users to authenticate. If you don't specify any, Threat Manager uses the
   perpetrator.
-- Timeout Behavior – Select how to handle a timeout. If not specified, the authentication will fail.
+- Timeout Behavior – Select how to handle a timeout. If you don't specify one, the authentication
+  fails.
 - Fail On – Select which authentication type to fail on. This allows configuration to determine when
   the action step fails. This is based upon the user response to the RADIUS Authentication request.
-  If not specified, the action step will fail with a failed authentication.
+  If you don't specify one, the action step fails with a failed authentication.
 
 ## Send Syslog
 
@@ -88,8 +89,8 @@ threat information via Syslog.
 ## Set Forescout Property On Host
 
 This action adds a property to a Forescout host record. You can configure Forescout collections to
-monitor this property. This allows Threat Manager to integrate with the Forescout platform to enable
-the use of the capabilities of Forescout for threat response.
+monitor this property. This lets Threat Manager integrate with the Forescout platform and use
+Forescout capabilities for threat response.
 
 ![forescoutproperty](/images/threatmanager/3.0/administration/playbooks/action/forescoutproperty.webp)
 

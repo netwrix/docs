@@ -15,7 +15,7 @@ The navigation header contains the following links on the top left side of the p
 - Investigate – Opens the [Investigations Interface](/docs/threatmanager/3.3/administration/investigations/overview.md)
 
 :::note
-For mobile users, only the icons are displayed for the Threats and Investigate links.
+For mobile users, the Threats and Investigate links display only icons.
 :::
 
 
@@ -95,7 +95,7 @@ including any associated tags.
 
 ## Data Grids
 
-Data grids let you search for data and configure how it's presented.
+Data grids let you search for data and configure how the grid displays it.
 
 ![This screenshot displays interactive elements in a grid.](/images/threatmanager/3.0/administration/datagrids.webp)
 

@@ -19,7 +19,7 @@ The License Info section displays the following:
 
 The License section provides a method for importing a new license.
 
-If the license is missing or expired, an alert banner displays, located just below the navigation
+If the license is missing or expired, an alert banner displays just below the navigation
 header.
 
 ## Import License

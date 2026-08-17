@@ -61,15 +61,15 @@ The Threat Response page contains the following configuration tabs:
 
 ### General Tab
 
-The General Tab contains the Allowed Threats box which allows customization of which threats are
-applicable for the selected playbook.
+The General tab contains the Allowed Threats box, which lets you customize which threats apply to
+the selected playbook.
 
 ![generaltab](/images/threatmanager/3.0/administration/playbooks/generaltab.webp)
 
 The General tab has the following configuration options:
 
-- Allowed for all threat response – Allows customization of which threats are applicable for this
-  playbook. (All threats are allowed by default). If you exclude a threat from Allowed Threats, you
+- Allowed for all threat response – Lets you customize which threats apply to this
+  playbook. By default, all threats apply. If you exclude a threat from Allowed Threats, you
   can't run it ad hoc on the Threat Details page, and it isn't available for automated threat
   response.
 - Send Email on Execution of Playbook – Threat Manager sends an email notification after the

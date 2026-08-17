@@ -28,7 +28,7 @@ navigation pane. Click the investigation there to open it.
 
 ## Add a Favorite Investigation
 
-There is an empty star icon beside the name of an investigation not identified as a favorite.
+An empty star icon appears beside the name of an investigation you haven't marked as a favorite.
 
 ![Empty star showing that investigation isn't a favorite](/images/threatmanager/3.0/administration/investigations/favoriteunselectedtm.webp)
 
@@ -36,7 +36,7 @@ Click the star to add the investigation to your Favorites list.
 
 ## Remove an Investigation from Your Favorites
 
-There is a yellow star icon beside the name of an investigation identified as a favorite.
+A yellow star icon appears beside the name of an investigation you marked as a favorite.
 
 ![Favorite investigation star icon selected](/images/threatmanager/3.0/administration/investigations/favoriteselected.webp)
 

@@ -25,8 +25,8 @@ Manages an Entra ID group's membership by adding or removing an object from a gr
 - Action – Select the action to take on the user's group membership
     - Add – Add the user to the specified group
     - Remove – Remove the user from the specified group
-- Credential – Select a credential profile that contains valid Entra ID credentials. Credential
-  profiles are configured on the
+- Credential – Select a credential profile that contains valid Entra ID credentials. You configure
+  credential profiles on the
   [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If you don't specify
   one, the action runs as the credentials of the Action Service.
 
@@ -36,8 +36,8 @@ Flag a user as confirmed compromised within your Entra ID tenant.
 
 ![confirmcompromised](/images/threatmanager/3.0/administration/playbooks/action/confirmcompromised.webp)
 
-- Users – The users to flag as confirmed compromised. If not specified, the user who triggered the
-  threat will be used.
+- Users – The users to flag as confirmed compromised. If you don't specify any, Threat Manager uses
+  the user who triggered the threat.
 
     - Perpetrator – The account that initiated the threat
     - Users Affected – Users affected by the threat

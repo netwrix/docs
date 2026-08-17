@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # File System Threats
 
-The following threats are monitored for File System:
+Threat Manager monitors the following threats for File System:
 
 ## High Risk Permissions
 

@@ -48,8 +48,8 @@ Don't use localhost for the hostname or 127.0.0.1 for the IP address.
 
 **Step 4 –** You can enable SSL for the AMQP event stream.
 
-As Threat Manager supports TLS/SSL, you can also enable SSL in Threat Prevention to enable
-communication with Threat Manager in the secure way.
+Because Threat Manager supports TLS/SSL, you can also enable SSL in Threat Prevention to secure
+communication with Threat Manager.
 
 - If Threat Manager has TLS enabled, then select the **Enable SSL** checkbox to enable the Agent to
   send events to Threat Manager. Else the Agent will throw an error when connecting.

@@ -74,7 +74,7 @@ The FS_DEFEND_SDD Job requires a custom Connection Profile to authenticate to Th
 You must create the credential for the Connection Profile with the Web Services (JWT) account type.
 
 :::tip
-Remember, , the Threat Manager App Token is generated within Threat Manager.
+Remember, you generate the Threat Manager App Token within Threat Manager.
 :::
 
 

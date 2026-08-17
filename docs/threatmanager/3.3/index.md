@@ -24,9 +24,8 @@ physical implementation of Threat Manager components.
 
 ## Administration
 
-Organizations of virtually any size find it impossible, even counterproductive, to evaluate
-the substantial amount of file access events and Active Directory events occurring within their
-environments on any given day. To overcome this challenge and achieve proper visibility into this
+Organizations of virtually any size generate a substantial volume of file access events and Active
+Directory events within their environments on any given day. To provide visibility into this
 otherwise significant blind spot in an organization's cyber security program, Threat Manager®
 provides built-in threat analytics to highlight the most unusual behaviors that occur within an
 organization each day. Threat Manager also lets you investigate activity data in detail using a

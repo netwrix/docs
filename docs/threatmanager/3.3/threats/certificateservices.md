@@ -6,7 +6,7 @@ sidebar_position: 15
 
 # Certificate Services Threats
 
-The following threats are monitored for Active Directory Certificate Services (AD CS).
+Threat Manager monitors the following threats for Active Directory Certificate Services (AD CS).
 
 ## Suspicious ESC1 Enrollment
 

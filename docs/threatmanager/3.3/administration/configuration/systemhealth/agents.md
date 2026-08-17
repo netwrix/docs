@@ -17,4 +17,4 @@ Clicking **Decommission** will remove an agent from the Threat Manager agent li
 
 If an active agent has not contacted the Threat Manager server for 10 minutes, Threat Manager places
 it into offline mode and generates an alert. If an agent becomes unresponsive, a magenta alert
-banner displays, located just below the navigation header.
+banner displays just below the navigation header.

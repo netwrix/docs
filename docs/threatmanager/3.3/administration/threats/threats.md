@@ -152,7 +152,7 @@ To edit a threat:
  - Under Investigation – Threats that are under or pending investigation by an
       administrator
     - Closed - Resolved – Legitimate threats you have contained or dealt with
-    - Closed - False Positive – Behavior that has been incorrectly identified by Threat Manager as a
+    - Closed - False Positive – Behavior that Threat Manager incorrectly identified as a
       threat
 
         :::note

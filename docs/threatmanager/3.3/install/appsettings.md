@@ -6,7 +6,7 @@ sidebar_position: 45
 
 # Modify Service Configuration Settings
 
-Threat Manager services are configured through JSON configuration files. Each service reads its
+JSON configuration files control Threat Manager service settings. Each service reads its
 settings at startup from `appsettings.json` in the service's installation directory.
 
 ## Configuration Files

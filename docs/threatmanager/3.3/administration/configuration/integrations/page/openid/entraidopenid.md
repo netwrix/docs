@@ -164,7 +164,7 @@ The table displays the following information:
 ## Troubleshooting
 
 If the Microsoft Entra ID OpenID Connect configurations don't work and an error appears,
-follow these steps to troubleshoot the error.
+troubleshoot the error as follows.
 
 **Step 1 –** Open any site or tool that can decode a JWT token, for
 example,` https://jwt.io/`.

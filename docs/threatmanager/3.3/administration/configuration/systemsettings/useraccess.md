@@ -23,7 +23,7 @@ Assign roles using one of the following methods:
 - Direct User Assignment – Assigns a role directly to a user
 
     :::note
-    If a user is assigned a role directly, it takes priority over any group membership roles.
+    If you assign a role directly to a user, it takes priority over any group membership roles.
     :::
 
 

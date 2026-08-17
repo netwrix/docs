@@ -80,8 +80,8 @@ The Action Service is now registered with Threat Manager.
 
 You can configure the Action Service installed with Threat Manager to execute as a service
 account. In this scenario, Threat Manager runs any actions as the Service
-Account. This is typically a simple way to ensure that the Playbooks Threat Manager executes have
-the proper permissions required to complete successfully.
+Account. This is typically the most direct way to ensure that the Playbooks Threat Manager executes
+have the permissions required to complete successfully.
 
 :::note
 If you configured an Action Step to use a specific Credential Profile, the Action

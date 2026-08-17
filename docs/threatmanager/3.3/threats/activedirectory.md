@@ -33,11 +33,11 @@ information.
 
 ## Domain Backup Key Compromise
 
-Windows uses the Data Protection API (DPAPI) to encrypt user secrets such as saved credentials, browser cookies, website passwords, and other sensitive information. For computers joined to an Active Directory domain, a domain backup key also encrypts DPAPI-protected secrets. Active Directory stores this key, which enables recovery of DPAPI-protected secrets should the user lose their own backup key. Because the domain backup key can't be rotated, its exposure is a significant event. 
+Windows uses the Data Protection API (DPAPI) to encrypt user secrets such as saved credentials, browser cookies, website passwords, and other sensitive information. For computers joined to an Active Directory domain, a domain backup key also encrypts DPAPI-protected secrets. Active Directory stores this key, which enables recovery of DPAPI-protected secrets should the user lose their own backup key. Because you can't rotate the domain backup key, its exposure is a significant event. 
 
 ## Exposed Administrative Credentials
 
-Highly privileged accounts, groups, and systems have direct or indirect administrative control over the Active Directory forest/domain. Given the sensitive nature of these accounts, they should only be used on domain controllers. Pass-the-Hash attacks succeed when highly privileged credentials access lower security systems. Having access to a privileged user's hash allows attackers to move laterally. 
+Highly privileged accounts, groups, and systems have direct or indirect administrative control over the Active Directory forest/domain. Given the sensitive nature of these accounts, use them only on domain controllers. Pass-the-Hash attacks succeed when highly privileged credentials access lower security systems. Having access to a privileged user's hash allows attackers to move laterally. 
  
 This threat aligns to best practices for securing Active Directory. If an organization doesn't enforce limiting privileged account access to only Domain Controllers, this threat should remain disabled to eliminate noise. 
 

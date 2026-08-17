@@ -28,8 +28,8 @@ The table has the following columns:
 - Recipients – List of email recipients subscribed to the report
 - Shared folder – Display name for the configured shared folder where the application stores
   scheduled exports
-- Actions – Menu option per table row. This column doesn't have a header. It is represented by
-  three dots and shows up when you hover over a row.
+- Actions – Menu option per table row. This column doesn't have a header. Three dots represent it,
+  and the menu appears when you hover over a row.
 
 See the [Add Subscription](/docs/threatmanager/3.3/administration/investigations/options/subscription.md) topic and [Export Report](/docs/threatmanager/3.3/administration/investigations/options/export.md)
 topic for additional information.

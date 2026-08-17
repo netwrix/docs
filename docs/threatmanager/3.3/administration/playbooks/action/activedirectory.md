@@ -48,9 +48,9 @@ The Disable Active Directory Account action disables the specified account.
 ![disableadaccount](/images/threatmanager/3.0/administration/playbooks/action/disableadaccount.webp)
 
 - Active Directory Credentials – Select a credential profile that contains valid Active Directory
-  credentials. Credential profiles are configured on the
-  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If not specified, the
-  action will be run as the credentials of the Action Service.
+  credentials. You configure credential profiles on the
+  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If you don't specify one,
+  the action runs as the credentials of the Action Service.
 - Users – Select users to disable. If you don't specify one, Threat Manager uses the user who
   triggered the threat.
 
@@ -63,9 +63,9 @@ Directory.
 
 - Disable Domain Controllers – When selected, lets you disable domain controllers.
 - Active Directory Credentials – Select a credential profile that contains valid Active Directory
-  credentials. Credential profiles are configured on the
-  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If not specified, the
-  action will be run as the credentials of the Action Service.
+  credentials. You configure credential profiles on the
+  [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If you don't specify one,
+  the action runs as the credentials of the Action Service.
 - Computer – Select the computer to disable. If you don't select one, Threat Manager uses the host
   computer.
 
@@ -75,8 +75,8 @@ The Reset Password action resets the password of the specified account.
 
 ![resetpassword](/images/threatmanager/3.0/administration/playbooks/action/resetpassword.webp)
 
-- Users – Select the users for whom to reset passwords. If not specified, the user who triggered the
-  threat will be used.
+- Users – Select the users for whom to reset passwords. If you don't specify one, Threat Manager
+  uses the user who triggered the threat.
 - Credential – Select a credential profile that contains valid Active Directory credentials.
   You configure credential profiles on the
   [Integrations Interface](/docs/threatmanager/3.3/administration/configuration/integrations/overview.md). If you don't specify one,

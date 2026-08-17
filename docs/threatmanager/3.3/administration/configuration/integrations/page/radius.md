@@ -81,7 +81,8 @@ settings:
   the user’s phone app prompt for authorization.
 - Prefix for Response Text – The application adds this value to the start of the responses. The
   value will vary according to server.
-- Send NAS Identifier – When On, the application transmits NAS identifiers to the RADIUS proxy.
+- Send NAS Identifier – When On, the application transmits Network Access Server (NAS) identifiers
+  to the RADIUS proxy.
   Certain RADIUS proxy implementations require this. Toggle On or Off as desired.
 
 Click Save to save the configuration settings.

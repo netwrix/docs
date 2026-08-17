@@ -38,7 +38,7 @@ events for a peak day of the week, by activity.
 | IOPS             | 8,000      | 5,000       | 3,000  | 2,000  | 1,000 | 500         |
 
 :::note
-All values are based upon a seven day event retention period in Threat Manager.
+These values assume a seven-day event retention period in Threat Manager.
 :::
 
 
@@ -95,7 +95,7 @@ Installing and using the application requires the following permissions:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, Netwrix fully supports the use of virtual machines. This
+While Netwrix always prefers physical machines, it fully supports the use of virtual machines. This
 section contains special considerations when using virtualization.
 
 - VMWare® ESX® – If using ESX, Netwrix recommends the following specifications:

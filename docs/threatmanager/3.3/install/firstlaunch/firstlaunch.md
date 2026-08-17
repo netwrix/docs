@@ -15,7 +15,8 @@ first time.
 
 ![First launch showing fields for setting up the builtin Administrator account](/images/threatprevention/7.5/install/reportingmodule/builtinadminpassword.webp)
 
-There is a built-in ADMIN account used for the initial configuration steps and granting user access.
+Threat Manager includes a built-in ADMIN account for the initial configuration steps and for
+granting user access.
 The User Name is "admin". You will set the password and optionally enable MFA for this account
 during first launch. To set up this account:
 
@@ -46,7 +47,7 @@ the Configure MFA for the Bultin Administrator Account topic.
 
 ## Configure MFA for the Bultin Administrator Account
 
-If MFA is enabled for the built-in Administrator account during first launch, configure MFA for the account:
+If MFA applies to the built-in Administrator account during first launch, configure MFA for the account:
 
 ![registerauthenticator](/images/threatprevention/7.5/install/reportingmodule/registerauthenticator.webp)
 

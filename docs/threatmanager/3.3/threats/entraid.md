@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Entra ID Threats
 
-The following threats are monitored for Microsoft Entra ID.
+Threat Manager monitors the following threats for Microsoft Entra ID.
 
 ## Application Permission Change
 
