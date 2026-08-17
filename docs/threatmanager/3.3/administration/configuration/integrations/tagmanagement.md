@@ -6,34 +6,50 @@ sidebar_position: 100
 
 # Tag Management Page
 
-The Tag Management page displays all tags that are managed by the application, including
-built-in and custom tags. You can add tags and assign objects to those tags.
+The Tag Management page displays all tags that Threat Manager manages, including built-in and
+custom tags. You can add tags and assign objects to those tags.
 
 ![Integrations interface on the Tag Management page](/images/threatmanager/3.0/administration/configuration/integrations/page_6.webp)
 
 The built-in tags include:
 
 - Administrator – An administrator user account
-- Automated Account – An account with automated authentication behavior detected
+- Agent Blueprint – An Agent Identity Blueprint, an application registered in Microsoft Entra ID
+  that defines the identity configuration for an AI agent (a software process that authenticates
+  and acts within Microsoft Entra ID without a human user). For example, an agent that monitors
+  support tickets and drafts responses authenticates using an Agent Identity Blueprint.
+- Agent Identity – A service principal registered in Microsoft Entra ID that acts as the identity
+  for an AI agent. For example, an agent that runs scheduled maintenance tasks authenticates using
+  its Agent Identity.
+- Agent User – A user account in Microsoft Entra ID that represents an AI agent. Agent Users let an
+  agent access APIs and services that require a user identity, such as a shared mailbox or a Teams
+  channel.
+- Automated Account – An account where Threat Manager detected automated authentication behavior
+- Azure Files Storage Account – A computer account that Azure Files creates in Active Directory to
+  enable Kerberos-based Server Message Block (SMB) authentication. It represents an Azure storage
+  account rather than a physical or virtual machine.
+- Certificate Authority – A server that issues and manages digital certificates for a public key
+  infrastructure (PKI)
 - Computer Account – A computer account
+- Disabled – An account or object that's disabled in Active Directory or Microsoft Entra ID.
 - Domain Admin – An Active Directory domain administrator account
 - Domain Controller – An Active Directory domain controller account
 - Global Catalog – An Active Directory global catalog object
-- Honeypot – Tags objects to be included in Honeypot detection
+- Honeypot – Tags objects for Honeypot detection
 - Privileged – A member of a sensitive group. These users typically have access to sensitive systems
   and data and can execute actions that could impact the security, stability, and operation of the
   network or domain.
 - Read-Only Domain Controller – A read-only Active Directory domain controller account
-- Sensitive – A group that has elevated permissions or administrative rights. A member of these
-  groups have the ability to perform critical tasks that can affect the security, configuration, and
+- Sensitive – A group that has elevated permissions or administrative rights. Members of these
+  groups can perform critical tasks that affect the security, configuration, and
   operation of the entire network or domain.
 - Service Account – An Active Directory service account
 - Stale – An Active Directory user account marked as stale
 - Watchlist – Watchlist users
 
 :::note
-Any users with the Watchlist tag will be displayed on the Threat Manager
-[Home Page](/docs/threatmanager/3.3/administration/home.md) Watchlist.
+The Watchlist on the Threat Manager [Home Page](/docs/threatmanager/3.3/administration/home.md)
+displays any users with the Watchlist tag.
 :::
 
 
@@ -41,7 +57,7 @@ The table displays the following information for available tags:
 
 - Name – The name of the tag
 - Description – The description for the tag
-- Created – Date timestamp when the tag was created
+- Created – The tag's creation date and time
 - Created By – The user account that created the tag
 - Members – Number of tagged objects
 
@@ -66,7 +82,7 @@ Add New Integration window opens.
 
 **Step 5 –** Click Add. The Add New Integration window closes.
 
-The tag is listed in the Integrations navigation pane. It can now be applied to objects.
+The tag appears in the Integrations navigation pane. You can now apply it to objects.
 
 ## Tag Details Page
 
@@ -86,15 +102,15 @@ This page provides the following information:
 
 - Name – The tag name. Type in the field to modify the name.
 - Description – The tag description. Type in the field to modify the description.
-- Delete Tag button – This button is only enabled for custom tags. Built-in tags can't be
-  deleted. You will be asked to confirm the action.
-- Search box – Search for objects in the Untagged Items box and the Tagged Items box by typing in
-  the textbox. You can search for user objects, group objects, file objects, or computer objects.
+- Delete Tag button – Available only for custom tags; you can't delete built-in tags. Click Delete
+  Tag, then confirm the deletion.
+- Search box – Search for objects in the Untagged Items box and the Tagged Items box. You can
+  search for users, groups, files, computers, applications, service principals, or roles.
 - Types – The dropdown menu provides object type filter options that apply to the search box
-  results. When a search isn't being conducted, the filter types apply to the Tagged Items box.
-- Untagged Items box – Displays objects that match the search text. This box is blank when a search
-  isn't performed.
-- Tagged Items box – Lists objects with this tag applied
+  results. When you aren't searching, the filter types apply to the Tagged Items box.
+- Untagged Items box – Displays objects that match the search text. This box is blank until you
+  perform a search.
+- Tagged Items box – Lists objects that have this tag
 
 ## Use the Type Filter
 
@@ -109,13 +125,15 @@ Apply the Type filters you want when searching for objects to tag.
 
 The following types are available:
 
-- Users – Active Directory user objects
-- Groups – Active Directory group objects
+- Users – Active Directory and Microsoft Entra ID user objects
+- Groups – Active Directory and Microsoft Entra ID group objects
 - Files – File objects
 - Computers – Active Directory computer objects
+- Applications – Microsoft Entra ID application objects
+- Service Principals – Microsoft Entra ID service principal objects
+- Roles – Microsoft Entra ID role objects
 
-The _tagged items_ and _untagged items_ lists on the window will be filtered to the selected object
-types.
+The window filters the Tagged Items and Untagged Items lists by the selected object types.
 
 ## Apply Tags to Objects
 
@@ -128,17 +146,16 @@ a list of tags.
 
 **Step 2 –** Select a tag from the table or the navigation pane.
 
-**Step 3 –** On the Tag details page, use the search box to conduct a search for the object name.
+**Step 3 –** On the Tag details page, use the search box to search for the object name.
 
-**Step 4 –** Use the Type dropdown menu to apply the object type filter you want to the search
-results.
+**Step 4 –** Use the Type dropdown menu to apply an object type filter to the search results.
 
 **Step 5 –** In the Untagged Items box, check the box to the left of the objects you want.
 
 **Step 6 –** Click the arrow () between the Untagged Items box and the Tagged Items box to add the
 tag to the selected objects.
 
-The tag is applied to the selected objects.
+Threat Manager applies the tag to the selected objects.
 
 ## Remove Tags From Objects
 
@@ -151,14 +168,13 @@ a list of tags.
 
 **Step 2 –** Select a tag from the table or the navigation pane.
 
-**Step 3 –** On the Tag details page, use the search box to conduct a search for the object name.
+**Step 3 –** On the Tag details page, use the search box to search for the object name.
 
-**Step 4 –** Use the Type dropdown menu to apply the object type filter you want to the search
-results.
+**Step 4 –** Use the Type dropdown menu to apply an object type filter to the search results.
 
 **Step 5 –** In the Tagged Items box, check the box to the left of the objects you want.
 
 **Step 6 –** Click the arrow (`<`) between the Untagged Items box and the Tagged Items box to remove
 the tag from the selected objects.
 
-The tag is removed from the selected objects.
+Threat Manager removes the tag from the selected objects.

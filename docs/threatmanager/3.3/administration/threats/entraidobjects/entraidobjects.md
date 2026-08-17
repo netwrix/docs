@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Entra ID Object Details Pages
 
-The Microsoft Entra ID Object details pages provide details on Microsoft Entra ID objects including
-users, groups, applications, devices, and roles. Use these pages to discover more information
-about the various resources related to threats and events in Threat Manager. Pages include:
+The Microsoft Entra ID Object details pages provide information about Microsoft Entra ID objects,
+including users, groups, applications, service principals, and roles. Use these pages to review the
+resources related to threats and events in Threat Manager. Pages include:
 
 - [User Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraiduser.md)
 
@@ -18,6 +18,8 @@ about the various resources related to threats and events in Threat Manager. Pag
 
 - [Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
 
+- [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
+
 ![threatlist](/images/threatmanager/3.0/administration/threatlist.webp)
 
 The [Threats Page](/docs/threatmanager/3.3/administration/threats/threats.md) contains a threats list with hyperlinks to
@@ -25,14 +27,18 @@ access these pages.
 
 **Common Details Page Elements**
 
-The User Details, Group Details, Application details, and Role details pages contain some common page
-elements.
+The User Details, Group Details, Application Details, Service Principal Details, and Role Details
+pages contain some common page elements.
 
 ## Profile Card
 
-The profile card displays information about the selected user, application, group, or role.
+The profile card displays information about the selected user, application, service principal,
+group, or role. The fields vary by object type. See the individual details page topics for the
+fields specific to each object type.
 
 ![Entra ID User Profile Card](/images/threatmanager/3.0/administration/threatdetails/entraiduserprofilecard.webp)
+
+The profile card may include the following fields:
 
 - Name
 - UPN
@@ -46,7 +52,8 @@ The profile card displays information about the selected user, application, grou
 
 ## Tabs
 
-Depending on the selected user, group, application, or role, the following tabs may be displayed:
+Depending on the selected user, group, application, service principal, or role, the page may
+display the following tabs:
 
 ![Tabs](/images/threatmanager/3.0/administration/threatdetails/tabs.webp)
 
@@ -67,15 +74,29 @@ Depending on the selected user, group, application, or role, the following tabs 
     - group - displays a table that lists the users that belong to that group
 
 - Roles - roles assigned to the group or user
+- Owners Tab – Lists the objects that can manage the application or service principal. Doesn't
+  appear for Agent Identity Blueprint Principals
+
+Some tabs display only for AI agent objects. See the
+[Application Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidapplication.md)
+and [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
+for definitions of these object types.
+
+- Sponsors Tab – Lists the directory objects that sponsor an Agent Identity or Agent Identity
+  Blueprint. Appears only for those object types
+- Agent Identities Tab – Lists the Agent Identities and Agent Users created from an Agent Identity
+  Blueprint. Appears only on Agent Identity Blueprint applications
+- Agent Users Tab – Lists the Agent Users linked to an Agent Identity. Appears only on Agent
+  Identity service principals
 
 ## Add Tag Button
 
-Use the Add Tag button to assign existing tags to a user, group, or host computer. It also
-provides the option to create new tags.
+Use the Add Tag button to assign existing tags to a user, group, application, service principal,
+computer, or role. You can also create new tags.
 
 **Add an Existing Tag**
 
-To add a tag to a user, group, or computer:
+To add a tag to a user, group, application, service principal, computer, or role:
 
 ![Existing Tags List](/images/threatmanager/3.0/administration/threatdetails/addtagbutton.webp)
 
@@ -83,6 +104,7 @@ To add a tag to a user, group, or computer:
 
 **Step 2 –** Click the tag you want to add from the list of existing tags.
 
-The selected tag is added to the user, group, application, or role. See the
-[Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) topic for additional
-information.
+Threat Manager adds the selected tag to the user, group, application, service principal, computer,
+or role. See the
+[Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md) to view or manage all
+built-in and custom tags.
