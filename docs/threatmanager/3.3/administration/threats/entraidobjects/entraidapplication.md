@@ -20,29 +20,16 @@ application:
 - Tenant
 - Add Tag button
 
-:::info
-An Agent Identity Blueprint is an application registered in Microsoft Entra ID that defines the
-identity configuration for an AI agent (a software process that authenticates and acts within
-Microsoft Entra ID without a human user). Microsoft Entra ID creates Agent Identity service
-principals and Agent User accounts from an Agent Identity Blueprint. Threat Manager tags Agent
-Identity Blueprints with the built-in Agent Blueprint tag, which the
-[Tag Management Page](/docs/threatmanager/3.3/administration/configuration/integrations/tagmanagement.md)
-describes.
-:::
-
 The page has the following tabs:
 
 - Threats Tab
 - Activity Summary Tab
-- Owners Tab
-- Group Membership Tab (doesn't appear for Agent Identity Blueprint applications)
-- Roles Tab (doesn't appear for Agent Identity Blueprint applications)
-- Sponsors Tab (Agent Identity Blueprint applications only)
-- Agent Identities Tab (Agent Identity Blueprint applications only)
+- Group Membership Tab
+- Roles Tab
 
 ## Threats Tab
 
-The Threats tab displays the application's threats by timeframe.
+The Threats tab for an application displays the threats for the application by timeframe.
 
 ![Application Threat Tab](/images/threatmanager/3.0/administration/threatdetails/threatstab.webp)
 
@@ -54,20 +41,7 @@ The Activity Overview (Past 12 Months) shows a color-coded heat map of user acti
 
 ![Entra ID Application Activity Summary Tab](/images/threatmanager/3.0/administration/threatdetails/activitysummarytab.webp)
 
-## Owners Tab
-
-The Owners tab lists the objects, known as owners, that can manage the application. This tab
-appears for all applications.
-
-The table displays the following columns:
-
-- Name – The display name of the owner. Click the name to open its details page.
-- Type – The type of Entra ID object
-- Email – The email address associated with the owner object
-
 ## Group Membership Tab
-
-This tab doesn't appear for Agent Identity Blueprint applications.
 
 The Group Membership tab displays groups in which the application is a member.
 
@@ -86,19 +60,18 @@ Each table has the following columns:
 - Membership Type - How the group membership was assigned
 
 - Security Enabled - Shows whether the "Security Enabled" flag is enabled within Microsoft
-  Entra ID. When enabled, this type of group manages user and computer access to shared resources
-  for a group of users.
+  Entra ID, if enabled it means that this type of group is used to manage user and computer access
+  to shared resources for a group of users.
 
-- Role Assignments Allowed - This flag shows whether Microsoft Entra ID can assign a role to a
-  group
+- Role Assignments Allowed - This flag shows whether a group can be assigned a role within
+  Microsoft Entra ID
 
 - Tags - The tags associated with the group Image
 
 ## Roles Tab
 
-This tab doesn't appear for Agent Identity Blueprint applications.
-
-The Roles tab displays the roles assigned to the Microsoft Entra ID application.
+The role assignments tab displays a table that lists the roles that have been assigned to the Entra
+ID application.
 
 ![Entra ID User Role Assignment Eligible page](/images/threatmanager/3.0/administration/threatdetails/entraiduserrolestabeligible.webp)
 
@@ -106,15 +79,15 @@ The Roles tab displays the roles assigned to the Microsoft Entra ID application.
 
 The Roles tab displays two tables:
 
-- Eligible Assignments – Lists the roles that the application is eligible for. An eligible
-  assignment is a role assignment that Microsoft Entra ID can activate for the application when
-  needed but that isn't permanently active
+- Eligible Assignments – Lists the roles that the user is eligible for. An eligible assignment
+  refers to a role assignment that a user or group can activate when needed but isn't permanently
+  active
 
-- Active Assignments – Lists roles that are active and available to the application.
+- Active Assignments – Lists roles that are active and usable to a user.
 
 The eligible assignments table has the following columns:
 
-- Role - Roles the application is eligible for
+- Role - Roles the user is eligible for
 - Scope - Defines the boundary within which the assigned role permissions are valid
 - Inherited from - How the eligible assignment was inherited
 - Start Time - When the member is eligible for the role
@@ -132,41 +105,3 @@ The active assignments table has the following columns:
 - End Time - When the role eligibility expires
 - Privileged - Whether the role is privileged (the role has elevated permission or
   administrative access to EntraID resources)
-
-## Sponsors Tab
-
-This tab appears only for Agent Identity Blueprint applications.
-
-The Sponsors tab displays a table of the directory objects that sponsor the Agent Identity
-Blueprint. A sponsor is a user or group in Microsoft Entra ID that's accountable for the AI agent.
-
-![Agent Identity Blueprint Sponsors Tab](/images/threatmanager/3.3/administration/threatdetails/agentblueprintsponsorstab.webp)
-
-The table has the following columns:
-
-- Name – The name of the sponsor
-- Type – The object type of the sponsor
-- Email – The sponsor's email address
-
-## Agent Identities Tab
-
-This tab appears only for Agent Identity Blueprint applications.
-
-The Agent Identities tab displays the Agent Identities and Agent Users created from the Agent
-Identity Blueprint.
-
-![Agent Identities Tab](/images/threatmanager/3.3/administration/threatdetails/agentidentitiestab.webp)
-
-The tab has the following sub-tabs:
-
-- Agent Identities – Lists the Agent Identity service principals created from this Agent Identity
-  Blueprint.
-- Agent Users – Lists the Agent Users associated with this Agent Identity Blueprint.
-
-Each sub-tab table has the following columns:
-
-- Name – The name of the Agent Identity or Agent User. Click the name to open its
-  [Service Principal Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraidserviceprincipal.md)
-  or [User Details Page](/docs/threatmanager/3.3/administration/threats/entraidobjects/entraiduser.md).
-- Type – The object type
-- Email – The email address associated with the object, if any
