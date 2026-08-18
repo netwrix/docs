@@ -85,6 +85,16 @@ function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHe
                 }}>
                     {productOptions[0].label}
                 </div>
+                {label === 'Versions' && (
+                    <p style={{
+                        marginTop: '6px',
+                        marginBottom: 0,
+                        fontSize: '12px',
+                        color: 'var(--ifm-color-emphasis-600)',
+                    }}>
+                        This product only has one version in documentation.
+                    </p>
+                )}
             </div>
         );
     }
@@ -866,7 +876,7 @@ function SearchPageContent() {
                             options={PRODUCT_OPTIONS}
                             selectedValues={selectedProducts}
                             onChange={handleProductChange}
-                            maxHeight={isSingleProductSelected ? (isMobile ? '132px' : 'calc((100vh - var(--ifm-navbar-height)) * 0.60)') : undefined}
+                            maxHeight={isSingleProductSelected && availableVersions.length > 1 ? (isMobile ? '132px' : 'calc((100vh - var(--ifm-navbar-height)) * 0.60)') : undefined}
                         />
                         {/* The length guard covers a product name from a stale URL or
                             sessionStorage that no longer exists in the config — one product is
