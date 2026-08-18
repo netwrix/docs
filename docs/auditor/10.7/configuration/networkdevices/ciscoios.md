@@ -9,22 +9,21 @@ sidebar_position: 30
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+certain built-in Windows services, etc. Proper audit configuration ensures audit data integrity;
+otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
-the
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
 Configure native audit settings manually on the Cisco IOS device to ensure Netwrix Auditor
 collects comprehensive and reliable audit data:
 
-- The global configuration mode is selected.
-- The `logging timestamp` option enabled.
-- The `logging trap` option is selected from 1 to 6 inclusive.
-- The `logging host` parameter is set to the host address where the service is going to be
-  installed. And UDP port (for, example 514) is used for sending messages.
+- Select the global configuration mode.
+- Enable the `logging timestamp` option.
+- Select the `logging trap` option from 1 to 6 inclusive.
+- Set the `logging host` parameter to the host address where you plan to install the service, and
+  use a UDP port (for example, 514) to send messages.
 
 To configure your Cisco IOS devices, do the following:
 
@@ -42,8 +41,8 @@ To configure your Cisco IOS devices, do the following:
 
     Router# logging trap 5
 
-5. Set the IP address of the Netwrix Auditor Server as the logging host parameter. And make sure
-   that the UDP port is used for sending syslog messages (e.g., 514 UDP port). For example:
+5. Set the IP address of the Netwrix Auditor Server as the logging host parameter, and ensure that
+   the device uses a UDP port to send syslog messages (e.g., 514 UDP port). For example:
 
     Router# logging 192.168.1.5
 

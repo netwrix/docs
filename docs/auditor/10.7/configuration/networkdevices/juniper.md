@@ -9,11 +9,10 @@ sidebar_position: 80
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+certain built-in Windows services, etc. Proper audit configuration ensures audit data integrity;
+otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
-the
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
@@ -29,14 +28,13 @@ To configure you Juniper devices, do the following:
 
     # set system syslog host `<host address>` any info
 
-    where `<host address>` is the IP address of the computer where Netwrix Auditor Server is
-    installed.
+    where `<host address>` is the IP address of the computer that hosts Netwrix Auditor Server.
 
     # set system syslog host `<host address>` port `<port name>`
 
     where
 
-    `<host address>` is the IP address of the computer where Netwrix Auditor Server is installed
+    `<host address>` is the IP address of the computer that hosts Netwrix Auditor Server
 
     AND
 

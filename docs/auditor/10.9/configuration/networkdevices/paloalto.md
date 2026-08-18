@@ -9,11 +9,10 @@ sidebar_position: 90
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+certain built-in Windows services, etc. Proper audit configuration ensures audit data integrity;
+otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
-the
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
@@ -24,7 +23,7 @@ syslog forwarding for the target PaloAlto device.
 To configure your PaloAlto devices, create a Syslog server profile and assign it to the log settings
 for each log type.
 
-Follow the steps to configure a Syslog server profile.
+## Configure a Syslog server profile
 
 **Step 1 –** Connect to your PaloAlto device: launch an Internet browser and enter the IP address of
 the firewall in the URL field (https://`<IP address>`).
@@ -44,19 +43,20 @@ the firewall in the URL field (https://`<IP address>`).
 | Format        | Select IETF.                                                                                   |
 | Facility      | Netwrix recommends using default values.                                                       |
 
-Follow the steps to configure syslog forwarding.
+## Configure syslog forwarding
 
 **Step 1 –** In the Web Interface, navigate to **Device** > **Log Settings**.
 
 **Step 2 –** For System, Config, and User ID logs, click Add and enter unique name of your syslog
 server.
 
-**Step 3 –** On the syslog panel, click Add and select the syslog profile you created above.
+**Step 3 –** On the syslog panel, click Add and select the syslog profile you created in
+[Configure a Syslog server profile](#configure-a-syslog-server-profile).
 
 **Step 4 –** Click **Commit** and review the logs on the syslog server.
 
-**NOTE:** After configuring the monitoring plan, Netwrix Auditor will listen to the logs forwarded
-by the Palo Alto device.
+**NOTE:** After you configure the monitoring plan, Netwrix Auditor listens to the logs forwarded by
+the Palo Alto device.
 
 ## PaloAlto Devices
 
