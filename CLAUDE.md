@@ -98,7 +98,7 @@ When a user asks for help with documentation, always use the appropriate tool:
 | `/doc-pr` | Skill | Automated PR editorial review |
 | `/content-fix` | Skill | Autonomous issue-to-PR fixer for content_fix issues |
 | `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
-| `/derek` | Skill | KB article quality reviewer (frontmatter, structure, title format, product names, keywords) |
+| `/derek` | Skill | KB article quality reviewer (frontmatter, structure, title format, product names, callouts, bolding/path formatting, image alt-text/external-refs, keywords) |
 | `/kb-writer` | Skill | Interactive KB article content coach — depth, structure, clarity before linting |
 | `/kb-pr-open` | Skill | Last-mile KB submission helper for TSEs — lints and opens a PR to `dev` |
 | `/kb-pr-review` | Skill | Reviews a KB PR (Vale + Dale + Derek) and drafts a review comment |
