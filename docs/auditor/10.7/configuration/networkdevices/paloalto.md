@@ -16,8 +16,7 @@ may contain warnings, errors, or incomplete audit data.
 knowledge base article for additional information.
 
 Configure native audit settings manually on the PaloAlto device via Web Interface to ensure
-Netwrix Auditor collects comprehensive and reliable audit data: create a Syslog Server profile and
-syslog forwarding for the target PaloAlto device.
+Netwrix Auditor collects comprehensive and reliable audit data.
 
 To configure your PaloAlto devices, create a Syslog server profile and assign it to the log settings
 for each log type.
@@ -54,8 +53,8 @@ server.
 
 **Step 4 –** Click **Commit** and review the logs on the syslog server.
 
-**NOTE:** After you configure the monitoring plan, Netwrix Auditor listens to the logs forwarded by
-the Palo Alto device.
+**NOTE:** After you configure the monitoring plan, Netwrix Auditor listens to the logs that the
+Palo Alto device forwards.
 
 ## PaloAlto Devices
 
