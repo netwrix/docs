@@ -15,18 +15,18 @@ may contain warnings, errors, or incomplete audit data.
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-Configure native audit settings manually on the Cisco ASA device to ensure Netwrix Auditor
-collects comprehensive and reliable audit data:
+Netwrix Auditor can't push configuration changes to network devices, so configure native audit
+settings manually on the Cisco ASA device. When you finish, the device has the following settings:
 
-- Select the global configuration mode.
-- Select the `logging enable` option on the Cisco ASA device.
-- Set the `logging host` parameter to the host address of the audited Cisco ASA device, and use a
+- The global configuration mode is enabled.
+- The `logging enable` option is turned on.
+- The `logging host` parameter is set to the host address of the audited Cisco ASA device, using a
   UDP port (for example, 514) to send messages.
 
     **NOTE:** Don't select the EMBLEM format logging for the syslog server option.
 
-- Enable the `logging timestamp` option.
-- Select the `logging trap` option from 1 to 6 inclusive.
+- The `logging timestamp` option is enabled.
+- The `logging trap` option is set from 1 to 6 inclusive.
 
 To configure your Cisco ASA devices, do the following:
 
@@ -47,8 +47,6 @@ To configure your Cisco ASA devices, do the following:
    port). For example:
 
     hostname(config)# logging host `<Netwrix Auditor server IP address>`
-
-    Don't select the EMBLEM format logging for the syslog server option.
 
 5. Enable the `logging timestamp` option. For example:
 

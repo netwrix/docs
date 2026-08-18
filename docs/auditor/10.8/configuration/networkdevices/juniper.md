@@ -15,12 +15,12 @@ may contain warnings, errors, or incomplete audit data.
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-Configure native audit settings manually on the Juniper device via JunOS Command Line
-Interface (CLI) to ensure Netwrix Auditor collects comprehensive and reliable audit data.
+Configure native audit settings manually on the Juniper device to ensure Netwrix Auditor collects
+comprehensive and reliable audit data.
 
-To configure you Juniper devices, do the following:
+To configure your Juniper devices, do the following:
 
-1. Launch the JunOS Command Line Interface (CLI).
+1. Launch the Junos OS command line interface (CLI).
 2. Execute the following commands:
 
     # configure

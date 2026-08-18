@@ -15,8 +15,8 @@ may contain warnings, errors, or incomplete audit data.
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-Configure native audit settings manually on the Fortinet FortiGate device via Command Line
-Interface (CLI) to ensure Netwrix Auditor collects comprehensive and reliable audit data.
+Configure native audit settings manually on the Fortinet FortiGate device to ensure Netwrix
+Auditor collects comprehensive and reliable audit data.
 
 To configure your Fortinet FortiGate devices, enable logging to multiple Syslog servers and
 configure FortiOS to send log messages to remote syslog servers in Common Event Format (CEF). Do

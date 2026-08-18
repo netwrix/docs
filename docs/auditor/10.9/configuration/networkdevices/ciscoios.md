@@ -15,14 +15,14 @@ may contain warnings, errors, or incomplete audit data.
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-Configure native audit settings manually on the Cisco IOS device to ensure Netwrix Auditor
-collects comprehensive and reliable audit data:
+Netwrix Auditor can't push configuration changes to network devices, so configure native audit
+settings manually on the Cisco IOS device. When you finish, the device has the following settings:
 
-- Select the global configuration mode.
-- Enable the `logging timestamp` option.
-- Select the `logging trap` option from 1 to 6 inclusive.
-- Set the `logging host` parameter to the host address where you plan to install the service, and
-  use a UDP port (for example, 514) to send messages.
+- The global configuration mode is enabled.
+- The `logging timestamp` option is enabled.
+- The `logging trap` option is set from 1 to 6 inclusive.
+- The `logging host` parameter is set to the host address of the computer that hosts Netwrix
+  Auditor Server, using a UDP port (for example, 514) to send messages.
 
 To configure your Cisco IOS devices, do the following:
 

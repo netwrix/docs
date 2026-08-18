@@ -15,13 +15,13 @@ may contain warnings, errors, or incomplete audit data.
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-Configure native audit settings manually on the PaloAlto device via Web Interface to ensure
+Configure native audit settings manually on the Palo Alto device via the web interface to ensure
 Netwrix Auditor collects comprehensive and reliable audit data.
 
-To configure your PaloAlto devices, create a Syslog server profile and assign it to the log settings
-for each log type.
+To configure your Palo Alto devices, create a syslog server profile and assign it to the log
+settings for each log type.
 
-## Configure a Syslog server profile
+## Configure a syslog server profile
 
 **Step 1 –** Connect to your PaloAlto device: launch an Internet browser and enter the IP address of
 the firewall in the URL field (https://`<IP address>`).
@@ -48,8 +48,8 @@ the firewall in the URL field (https://`<IP address>`).
 **Step 2 –** For System, Config, and User ID logs, click Add and enter unique name of your syslog
 server.
 
-**Step 3 –** On the syslog panel, click Add and select the syslog profile you created in
-[Configure a Syslog server profile](#configure-a-syslog-server-profile).
+**Step 3 –** On the syslog panel, click Add and select the syslog server profile you created in
+[Configure a syslog server profile](#configure-a-syslog-server-profile).
 
 **Step 4 –** Click **Commit** and review the logs on the syslog server.
 
