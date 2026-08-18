@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Target Oracle Requirements, Permissions, and Ports
 
-The Enterprise Auditor for Databases Solution provides the ability to audit and monitor Oracle
+The Enterprise Auditor for Databases Solution lets you audit and monitor Oracle
 database environments to collect permissions, sensitive data, and activity events. It scans:
 
 - Oracle Database 12c
@@ -43,17 +43,17 @@ This solution employs the following data collector to scan the target environmen
 
 **For Oracle Data Collection**
 
-- User with SYSDBA role
+- **Recommended** User with SYSDBA role OR [Least Privilege Model](/docs/accessanalyzer/11.6/requirements/databases/oracle/leastprivilege.md)
 - Local Administrator on the target servers – Only applies to Windows Servers and not on Linux or
   Unix operating systems
 
-There is a least privilege model for scanning your domain. See the
+The
 [Oracle Target Least Privilege Model](/docs/accessanalyzer/11.6/requirements/databases/oracle/leastprivilege.md)
-topic for additional information.
+topic describes the least privilege model for scanning your domain.
 
 ## Ports
 
-The following firewall ports are needed:
+Open the following firewall ports:
 
 **For ADInventory Data Collector**
 
@@ -67,4 +67,4 @@ The following firewall ports are needed:
 
 **For SQL Data Collector**
 
-- Specified by Instances table (default is 1521)
+- The Instances table specifies the port (default is 1521)
