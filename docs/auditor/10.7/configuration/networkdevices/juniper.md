@@ -37,8 +37,8 @@ To configure your Juniper devices, do the following:
 
     AND
 
-    `<port number>` is the name of the UDP port used to listen to network devices (514 port used by
-    default). [Network Devices](/docs/auditor/10.7/admin/monitoringplans/networkdevices.md)
+    `<port number>` is the name of the UDP port that Netwrix Auditor uses to listen to network
+    devices (port 514 by default). [Network Devices](/docs/auditor/10.7/admin/monitoringplans/networkdevices.md)
 
     # set system syslog time-format `<current year>`
 
