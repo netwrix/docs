@@ -26,6 +26,16 @@ Test the upgrade in a non-production environment first if one is available. This
 
 PingCastle Enterprise 4.0 replaces the MSI-based installer with a single installer executable, `PingCastleEnterpriseInstaller.exe`. Upgrading from 3.5.1 to 4.0 is an in-place upgrade: you run the new installer on top of your existing 3.5.1 installation, and it detects and upgrades that installation automatically. The installer also detects and applies any prerequisite changes 4.0 requires, such as the correct ASP.NET Hosting Bundle version, so you don't need to update prerequisites manually.
 
+:::warning Known Issue
+In this release, the installer sometimes fails to detect the existing installation directory during an upgrade. If this happens, run the installer from the command line and specify the installation directory with the `INSTALLFOLDER` parameter:
+
+```
+pingcastle-enterprise-installer.exe INSTALLFOLDER="D:\PingCastleEnterprise\" /l*v upgrade.log
+```
+
+Replace `D:\PingCastleEnterprise\` with your actual installation directory.
+:::
+
 To upgrade PingCastle Enterprise from 3.5.1 to 4.0:
 
 1. Download `PingCastleEnterpriseInstaller.exe` for version 4.0.
@@ -34,7 +44,7 @@ To upgrade PingCastle Enterprise from 3.5.1 to 4.0:
 
    ![A screenshot of the installer installing the required ASP.NET Hosting Bundle version as part of the upgrade.](/images/pingcastle/enterpriseupgrade/prereq-install.webp)
 
-   The installer bundles the required prerequisites, including the ASP.NET Hosting Bundle, directly. The upgrade doesn't need web access to download them.
+   The installer bundles the required prerequisites directly, including the ASP.NET Hosting Bundle. The upgrade doesn't need web access to download them.
 
 ## Configuration migration
 
