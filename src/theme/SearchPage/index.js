@@ -16,7 +16,7 @@ import {useAlgoliaThemeConfig, useSearchResultUrlProcessor} from '@docusaurus/th
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import {PRODUCTS} from '../../config/products';
-import {getVersionsForProducts, dedupeToLatestVersion} from '../searchUtils';
+import {getVersionsForProducts, dedupeToLatestVersion, versionLabel} from '../searchUtils';
 
 // Safely strip HTML tags to plain text
 function stripHtmlTagsToText(input) {
@@ -46,6 +46,23 @@ const PRODUCT_OPTIONS = [
     return a.label.localeCompare(b.label);
 });
 
+// Keep only versions the current product selection actually offers. The Versions panel
+// only ever lists the selection's own versions — and for a single-version product it is a
+// plain label with no checkboxes — so a foreign version (from a stale URL param or
+// sessionStorage) would filter every result away with no control able to clear it.
+// '__all__' is a sentinel, not a version, and always survives; if pruning empties the
+// selection the filter has become meaningless, so fall back to '__all__'.
+// Returns the input array itself when there is nothing to prune. That keeps identity
+// stable, which matters twice: the effect that re-checks on every change would otherwise
+// never settle, and a deliberate "uncheck every version" ([]) must not be rewritten to
+// '__all__' — that would re-check the whole list under the user.
+function pruneVersions(versions, selectedProducts) {
+    const valid = new Set(getVersionsForProducts(selectedProducts));
+    const cleaned = versions.filter(v => v === '__all__' || valid.has(v));
+    if (cleaned.length === versions.length) return versions;
+    return cleaned.length > 0 ? cleaned : ['__all__'];
+}
+
 // Checkbox-based multi-select component
 function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHeight, sizeScale = 1}) {
     // options[0] is the "All products" sentinel — skip it for the checkbox list
@@ -72,9 +89,11 @@ function MultiSelect({label, options, selectedValues, onChange, topMargin, maxHe
     if (productOptions.length === 1) {
         return (
             <div style={{display: 'flex', flexDirection: 'column', flexShrink: 0, marginTop: topMargin}}>
-                <label style={{display: 'block', marginBottom: '8px', fontWeight: 'bold'}}>
+                {/* A div, not a <label> — this branch renders static text, so there is no
+                    control for a label element to name. */}
+                <div style={{marginBottom: '8px', fontWeight: 'bold'}}>
                     {label}
-                </label>
+                </div>
                 <div style={{
                     border: '2px solid var(--ifm-color-emphasis-300)',
                     borderRadius: '8px',
@@ -345,15 +364,17 @@ function SearchPageContent() {
             return ['__all__'];
         }
     });
-    // Initialize from URL if present, otherwise from sessionStorage
+    // Initialize from URL if present, otherwise from sessionStorage. Both can name a
+    // version the selected product doesn't have, so prune here rather than letting the
+    // first search go out with a filter the UI can't clear.
     const [selectedVersions, setSelectedVersions] = useState(() => {
-        if (versionsFromUrl.length > 0) return versionsFromUrl;
+        if (versionsFromUrl.length > 0) return pruneVersions(versionsFromUrl, selectedProducts);
         if (typeof window === 'undefined') return ['__all__'];
         const saved = sessionStorage.getItem('docs_version_filter');
         try {
             const parsed = saved ? JSON.parse(saved) : [];
             if (!Array.isArray(parsed) || parsed.length === 0) return ['__all__'];
-            return parsed;
+            return pruneVersions(parsed, selectedProducts);
         } catch { return ['__all__']; }
     });
     const [resultsPerPage, setResultsPerPage] = useState(resultsPerPageFromUrl);
@@ -364,15 +385,20 @@ function SearchPageContent() {
         return selectedProducts.filter(p => p !== '__all__' && p !== '__none__').length === 1;
     }, [selectedProducts]);
 
-    // Clear orphan versions when products change
+    // Clear orphan versions when products change. Synchronous here so the interactive path
+    // never fires a search with the outgoing selection's versions.
     const handleProductChange = useCallback((newProducts) => {
         setSelectedProducts(newProducts);
-        const validVersions = new Set(getVersionsForProducts(newProducts));
-        setSelectedVersions(prev => {
-            const cleaned = prev.filter(v => v === '__all__' || validVersions.has(v));
-            return cleaned.length > 0 ? cleaned : ['__all__'];
-        });
+        setSelectedVersions(prev => pruneVersions(prev, newProducts));
     }, []);
+
+    // Backstop for every path that sets versions without going through
+    // handleProductChange: first mount, and the location.search effect below (browser
+    // back/forward, or arriving from the search modal). pruneVersions returning its input
+    // unchanged is what stops this from looping on its own update.
+    useEffect(() => {
+        setSelectedVersions(prev => pruneVersions(prev, selectedProducts));
+    }, [selectedProducts, selectedVersions]);
 
     // Track if we're restoring from URL (e.g., browser back button).
     // Initialize from pageFromUrl so landing on /search?page=3 works
@@ -886,7 +912,7 @@ function SearchPageContent() {
                                 label="Versions"
                                 options={[
                                     {label: 'All versions', value: '__all__'},
-                                    ...availableVersions.map(v => ({label: v, value: v})),
+                                    ...availableVersions.map(v => ({label: versionLabel(v), value: v})),
                                 ]}
                                 selectedValues={selectedVersions}
                                 onChange={setSelectedVersions}
