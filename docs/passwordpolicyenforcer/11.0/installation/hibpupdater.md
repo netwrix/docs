@@ -124,7 +124,7 @@ to receive hash file updates, then use the Sysvol share for file replication and
 scheduled task to copy the file to a local folder.
 
 :::warning
-%SystemRoot%. hash files should only be read from a local disk. Using shared hash files
+Hash files should only be read from a local disk. Using shared hash files
 degrades performance, and could jeopardize security.
 :::
 
