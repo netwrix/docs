@@ -17,20 +17,14 @@ the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-You can configure your IT Infrastructure for monitoring in one of the following ways:
+Configure native audit settings manually on the Cisco IOS device to ensure Netwrix Auditor
+collects comprehensive and reliable audit data:
 
-- Automatically through a monitoring plan – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary.
-- Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
-  reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
-  configure them manually:
-
-    - The global configuration mode is selected.
-    - The `logging timestamp` option enabled.
-    - The `logging trap` option is selected from 1 to 6 inclusive.
-    - The `logging host` parameter is set to the host address where the service is going to be
-      installed. And UDP port (for, example 514) is used for sending messages.
+- The global configuration mode is selected.
+- The `logging timestamp` option enabled.
+- The `logging trap` option is selected from 1 to 6 inclusive.
+- The `logging host` parameter is set to the host address where the service is going to be
+  installed. And UDP port (for, example 514) is used for sending messages.
 
 To configure your Cisco IOS devices, do the following:
 

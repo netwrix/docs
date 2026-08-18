@@ -17,17 +17,8 @@ the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-You can configure your IT Infrastructure for monitoring in one of the following ways:
-
-- Automatically through a monitoring plan – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary.
-- Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
-  reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
-  configure them manually:
-
-    - The target Juniper device must be configured via JunOS Command Line Interface (CLI) as
-      described below.
+Configure native audit settings manually on the Juniper device via JunOS Command Line
+Interface (CLI) to ensure Netwrix Auditor collects comprehensive and reliable audit data.
 
 To configure you Juniper devices, do the following:
 
