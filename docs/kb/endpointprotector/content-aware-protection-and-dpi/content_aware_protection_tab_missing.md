@@ -8,10 +8,11 @@ keywords:
 sidebar_label: CAP Tab Missing
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "Content Aware Protection Tab Missing"
 knowledge_article_id: kA0Qk0000002B70KAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Content Aware Protection Tab Missing

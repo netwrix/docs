@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Update to macOS 12
 tags:
   - deployment-and-installation
+  - kb
 title: "How to Update to macOS 12 (Monterey) While Using Endpoint Protector Client and Deep Packet Inspection"
 knowledge_article_id: kA0Qk0000002B9UKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Update to macOS 12 (Monterey) While Using Endpoint Protector Client and Deep Packet Inspection

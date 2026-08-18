@@ -4,6 +4,7 @@ description: "Content Detection, Remediation and Compliance"
 sidebar_position: 20
 ---
 
+
 # Content Detection, Remediation and Compliance
 
 Content detection identifies sensitive data across various file types and applications. Remediation
@@ -78,11 +79,13 @@ To create a new Context Detection Rules click **Add**, ﬁll in the following an
 
 ![Creating new Context Detection Rules ](contentdetectionrules.webp)
 
-:::warning
-To address conﬂicts between per-policy and Global Contextual Rules, Endpoint Protector
-clients no longer receive Global Contextual Rules if at least one policy has its individual
-Contextual Rule set. This marks the deprecation of Global Contextual Rules, emphasizing the
-prioritization of individual policy conﬁgurations.
+:::note
+Global Contextual Detection has been removed in version 5.9.6.0. Contextual detection rules are
+now configured at the policy level only — each Content Aware Protection policy and eDiscovery
+policy can have its own set of up to 15 contextual detection rules.
+
+For eDiscovery contextual detection configuration, see
+[eDiscovery policies and scans](/docs/endpointprotector/admin/ed_module/edpolicies.md).
 :::
 
 

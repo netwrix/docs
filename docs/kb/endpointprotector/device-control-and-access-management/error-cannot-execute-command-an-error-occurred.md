@@ -11,10 +11,11 @@ keywords:
   - notification
   - troubleshooting
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: 'Error: "Cannot execute command! An error occurred!"'
 tags:
   - device-control-and-access-management
+  - kb
 title: 'Error: "Cannot execute command! An error occurred!"'
 knowledge_article_id: kA0Qk0000002B73KAE
 ---

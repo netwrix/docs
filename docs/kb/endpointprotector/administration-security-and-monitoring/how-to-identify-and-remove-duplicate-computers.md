@@ -4,7 +4,7 @@ description: >-
   Protector to free up licenses. This article walks you through filtering for
   duplicates and deleting unwanted entries.
 keywords:
-  - endpoint-protector
+  - endpointprotector
   - duplicate-computers
   - licenses
   - device-control
@@ -13,11 +13,12 @@ keywords:
   - remove-duplicates
   - offline
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: How to Identify and Remove Duplicate Computers
 tags:
   - administration-security-and-monitoring
+  - kb
 title: "How to Identify and Remove Duplicate Computers"
 knowledge_article_id: kA0Qk0000002B5xKAE
 ---

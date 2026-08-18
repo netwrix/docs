@@ -15,10 +15,11 @@ keywords:
   - Generate
   - content aware policy
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Restrict Applications or CLI Commands
 tags:
   - features-and-operations
+  - kb
 title: "Restrict Applications or CLI Commands"
 knowledge_article_id: kA0Qk0000002B69KAE
 ---

@@ -92,7 +92,7 @@ description: 'SEO description'
 
 ## Linting with Vale
 
-Vale enforces 30 Netwrix-specific rules covering word choice, punctuation, formatting, and common writing issues. Vale issues are auto-fixed on PRs, but you can run it locally to preview:
+Vale enforces 43 Netwrix-specific rules covering word choice, punctuation, formatting, and common writing issues. Vale issues are auto-fixed on PRs, but you can run it locally to preview:
 
 ```bash
 vale docs/path/to/file.md
@@ -141,6 +141,8 @@ npm run start
 ```
 
 Available product IDs are in `src/config/products.js`.
+
+Add `DOCS_PRODUCT_LATEST_ONLY=true` to also restrict the build to that product's latest version only (default `false` builds all versions).
 
 ## Using Claude Code
 

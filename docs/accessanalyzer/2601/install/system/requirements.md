@@ -10,14 +10,14 @@ Access Analyzer runs on a single Linux virtual machine. The installer runs prefl
 
 ## Deployment Sizing
 
-The installer enforces absolute minimums via preflight checks — the installer blocks installation if the system falls below these thresholds. Use the **Production Recommended** specifications for customer-facing or enterprise deployments.
+The installer enforces absolute minimums via preflight checks and blocks installation if the system falls below these thresholds. Use the **Production Recommended** specifications for customer-facing or enterprise deployments.
 
-**Absolute installer minimums (enforced by preflight):** 6 vCPUs, 24 GB RAM, 20 GB free disk.
+**Absolute installer minimums:** 6 vCPUs, 24 GB RAM, 20 GB free disk.
 
 | Size | Recommended CPU | Recommended Memory | Recommended Disk | Data Threshold |
 | --- | --- | --- | --- | --- |
-| **Small** | 8 cores | 24 GB | 250 GB SSD | Up to 5 TB |
-| **Medium** | 16 cores | 48 GB | 500 GB SSD | 5 TB – 100 TB |
+| **Small** | 8 cores | 24 GB | 300 GB SSD | Up to 5 TB |
+| **Medium** | 16 cores | 48 GB | 600 GB SSD | 5 TB – 100 TB |
 | **Large** | 32 cores | 64 GB | 1 TB SSD | 100 TB – 1 PB |
 | **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD | 1 PB+ |
 
@@ -30,9 +30,11 @@ The installer validates free space on the following paths:
 | --- | --- | --- |
 | `/` | 20 GB | Root filesystem |
 | `/var` | 20 GB | K3s data, containers, logs |
-| `/var/lib` | 20 GB | K3s data directory |
+| `/var/lib` | 52 GB ** | K3s data directory |
 | `/var/log` | 5 GB | System and application logs |
 | `/etc` | 1 GB | Configuration files |
+
+** The scan queue reserves disk space in `/var/lib`, so the required size of `/var/lib` depends on the deployment size. The scan queue needs 32 GB multiplied by the deployment size. For example, a deployment size of 2 requires 64 GB for the scan queue plus the 20 GB baseline, for a total of 84 GB in `/var/lib`.
 
 The installer also verifies write access for `/var`, `/tmp`, and `/etc`.
 
@@ -46,7 +48,7 @@ The installer also verifies write access for `/var`, `/tmp`, and `/etc`.
 
 **Compatible distributions (engineer-validated):** Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are compatible with the installer. Ubuntu is Debian-based, so Debian stable releases are also compatible.
 
-**Not supported:** AIX and other non-Linux operating systems aren't compatible. The installer requires a 64-bit Linux distribution with kernel capabilities including cgroups v1/v2, Linux namespaces, and overlay filesystem support.
+**Not supported:** AIX and other non-Linux operating systems. The installer requires a 64-bit Linux distribution with kernel capabilities including cgroups v1/v2, Linux namespaces, and overlay filesystem support.
 
 ## Kernel and Container Runtime Requirements
 
