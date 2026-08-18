@@ -480,6 +480,10 @@ html {
         margin-right: 0;
         padding: 6px 16px 8px;
         border-bottom: 1px solid var(--docsearch-subtle-color);
+        /* Both filter controls are always rendered (Versions is disabled rather than
+           unmounted), and neither shrinks below its 150px button — so let them stack
+           instead of overflowing this row on narrow phones. */
+        flex-wrap: wrap;
     }
 
     .DocSearch-Button-Keys {
