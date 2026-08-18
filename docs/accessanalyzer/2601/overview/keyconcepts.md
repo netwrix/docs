@@ -87,6 +87,10 @@ For a full list of execution statuses and how they affect other operations, see 
 
 Access Analyzer maps identities to entitlements to show effective permissions and identify overly permissive access.
 
+:::note
+Effective permission calculations that depend on a trust relationship between Active Directory domains or forests aren't always fully accurate. Access Analyzer can't guarantee the same accuracy for group membership and effective access across a trust relationship as it can within a single domain.
+:::
+
 ## Sensitive Data Patterns
 
 A **pattern** is a detection rule used during sensitive data scans. Patterns match file content against regular expressions or classification models. Built-in patterns cover:
