@@ -95,7 +95,7 @@ additional information.
 Auditor supports monitoring the following device versions:
 
 - Clustered-Mode
-    - 9.0 – 9.17
+    - 9.0 – 9.19
     - 8.3
 
 > **NOTE:** Netwrix Auditor supports only CIFS configuration.
@@ -107,7 +107,7 @@ additional information.
 
 Auditor supports monitoring the following device versions:
 
-- Files 3.6 - 5.2
+- Files 3.6 - 5.3
 
 See the [Nutanix](/docs/auditor/10.9/configuration/fileservers/nutanix/overview.md) topic for additional
 information.
