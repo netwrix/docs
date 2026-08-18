@@ -121,8 +121,8 @@ In addition to the restrictions for a monitoring plan, you can use the \*.txt fi
 granular audit data.
 
 :::note
-The new monitoring scope restrictions apply together with previous exclusion settings configured in
-the \*.txt files.
+The new monitoring scope restrictions apply together with previous exclusion settings in the \*.txt
+files.
 :::
 
 See the [Monitoring Plans](/docs/auditor/10.9/admin/monitoringplans/overview.md) topic for

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Monitored Computers
 
-The **Monitored Computers** tab in a User Activity monitoring plan gives you a detailed, per-host view of every monitored computer. Instead of showing a single summary status for the entire plan, the tab reports the health of each computer, so you can identify issues quickly and drill into diagnostic details without leaving the interface.
+The **Monitored Computers** tab in a User Activity monitoring plan gives you a detailed, per-host view of every monitored computer. The tab reports the health of each computer separately, so you can identify issues quickly and view diagnostic details without leaving the interface.
 
 **To access the Monitored Computers tab:**
 
@@ -18,7 +18,7 @@ The **Monitored Computers** tab in a User Activity monitoring plan gives you a d
 
 ## Overview
 
-When you add computers to a monitoring plan using an IP range or an AD container, Netwrix Auditor resolves and tracks each host individually. The Monitored Computers tab lists all resolved computers with their current health status, so you can immediately see which hosts are collecting data normally and which ones require your attention.
+When you add computers to a monitoring plan by IP range or by AD container, Netwrix Auditor resolves and tracks each host individually. The Monitored Computers tab lists all resolved computers with their current health status, so you can immediately see which hosts are collecting data normally and which ones require your attention.
 
 **NOTE:** The Monitored Computers tab doesn't display computers that you exclude from monitoring with the **Exclude these objects** or **Exclude subranges** setting in the item settings.
 
@@ -33,7 +33,7 @@ The grid displays the following columns for each computer:
 | **Name** | The hostname or IP address of the monitored computer. |
 | **Item** | The source that included this computer in the plan — for example, an IP address, an IP range, or an AD container (OU). |
 | **Status** | A consolidated status indicator for the computer. |
-| **Last Activity Time** | The timestamp of the last time the service interacted with the computer. |
+| **Last Activity Time** | The last time the service interacted with the computer. |
 
 ## Filtering and Search
 
