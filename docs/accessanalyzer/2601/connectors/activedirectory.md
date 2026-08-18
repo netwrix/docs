@@ -43,6 +43,10 @@ Open the following ports on all domain controllers you want to scan:
 | 135–139 | TCP | RPC |
 | 49152–65535 | TCP | RPC dynamic ports |
 
+## Limitations
+
+Effective permission calculations that rely on a trust relationship between domains or forests aren't always fully accurate. When a group contains members from a trusted domain in another forest, Access Analyzer can't guarantee the same accuracy for that group's membership and effective access as it can within a single domain.
+
 ## Next steps
 
 Once requirements are met, see [Set Up Active Directory Source Group](../gettingstarted/active-directory/set-up-source-group.md) to configure your first scan.
