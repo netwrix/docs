@@ -33,7 +33,7 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 - Option A – Storage Account → Enter **Storage Account Name, Subscription ID, Tenant Name, Application ID, Application Secret**
 - Option B – Subscription → Enter **Subscription Name, Subscription ID, Tenant Name, Application ID, Application Secret**
 
-**Tip:** If you have multiple storage accounts, use the subscription option for easier management
+**Tip:** If you have multiple storage accounts, use the subscription option to manage them from a single monitored item
 
 
 ### Step 3: Configure Monitoring Scope and Actions
@@ -44,12 +44,12 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 3. Select actions:
 
    - **Changes (Success/Fail)** → Track file creation, modification, deletion, and failed attempts
-     - **Successful** - Use this option to track changes to your data. It helps to find out who made changes to your files, including their creation and deletion
-     - **Failed** - Use this option to detect suspicious activity on Azure Files. It helps to identify potential intruders who tried to modify or delete files, etc., but failed to do it
+     - **Successful** - Use this option to track changes to your data. It shows who created, modified, and deleted your files
+     - **Failed** - Use this option to detect suspicious activity on Azure Files. It helps to identify potential intruders who tried to modify or delete files but failed
 
    - **Read Access (Success/Fail)** → Track file reads and unauthorized read attempts
      - **Successful** - Show successful attempts to read files
-     - **Failed** - Use this option to detect unauthorized attempts to read your data. Enabling this option on public shares generates a high volume of events on Azure Files and increases the amount of data written to the Long-Term Archive
+     - **Failed** - Use this option to detect unauthorized attempts to read your data. Enabling this option on public shares generates a high volume of events on Azure Files and increases the amount of data Netwrix Auditor writes to the Long-Term Archive
 
 **Note:** Enabling read access auditing on public shares may generate high event volume
 
