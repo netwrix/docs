@@ -6,11 +6,10 @@ sidebar_position: 110
 
 # Configure SonicWall Devices
 
-Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
-access auditing requires a certain configuration of native audit settings in the audited environment
-and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration ensures audit data integrity;
-otherwise, your change reports may contain warnings, errors, or incomplete audit data.
+Netwrix Auditor relies on native syslog events for collecting audit data. Therefore, successful
+change and access auditing requires a certain configuration of native audit settings in the audited
+environment. Proper audit configuration ensures audit data integrity; otherwise, your change reports
+may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
