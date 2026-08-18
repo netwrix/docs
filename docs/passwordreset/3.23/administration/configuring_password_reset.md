@@ -252,7 +252,7 @@ A warning icon is shown beside the language dropdown list if an e-mail template 
 every language. Define an e-mail template for every language to ensure that users can
 understand their e-mail alerts.
 
-![configuring_apr_5](/images/passwordpolicyenforcer/10.2/password_reset/administration/configuring_npr_5.webp)
+![configuring_apr_5](/images/passwordpolicyenforcer/password_reset/administration/configuring_npr_5.webp)
 
 :::warning
 An attacker may choose a specific language to avoid detection. E-mail alerts are sent
@@ -380,7 +380,7 @@ text box, and the path to the script file and other parameters in the **Paramete
 :::
 
 
-![configuring_apr_7](/images/passwordpolicyenforcer/10.2/password_reset/administration/configuring_npr_7.webp)
+![configuring_apr_7](/images/passwordpolicyenforcer/password_reset/administration/configuring_npr_7.webp)
 
 ## Security Tab
 

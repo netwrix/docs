@@ -12,7 +12,7 @@ The Data Console allows you to view and export data collected by Password Reset.
 The Data Console has three tabs. The **Recent Activity** tab shows a chart of recent requests. The
 chart is empty when Password Reset is first installed, but populates as the system is used.
 
-![using_the_data_console](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console.webp)
+![using_the_data_console](/images/passwordpolicyenforcer/passwordreset/administration/using_the_data_console.webp)
 
 The bars in the chart show how many successful enrollments, resets, unlocks, and changes occurred
 every day. You can click the bars to see a filtered view of the events for that day. For example,

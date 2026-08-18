@@ -80,16 +80,16 @@ Follow the steps below to reset an account password.
 **Step 3 –** Type the **Answer** to the first question, and then click **Next**. Repeat until all
 questions are answered correctly.
 
-![using_npr_3](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_3.webp)
+![using_npr_3](/images/passwordpolicyenforcer/passwordreset/administration/using_npr_3.webp)
 
 **Step 4 –** Password Reset may ask you to enter a verification code. The verification code is sent to your
 phone by e-mail or SMS. Type the **Code**, and then click **Next**.
 
-![using_npr_5](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_5.webp)
+![using_npr_5](/images/passwordpolicyenforcer/passwordreset/administration/using_npr_5.webp)
 
 **Step 5 –** Type the new **Password** into both text boxes, and then click **Next**.
 
-![using_npr_6](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_6.webp)
+![using_npr_6](/images/passwordpolicyenforcer/passwordreset/administration/using_npr_6.webp)
 
 **Step 6 –** Click **OK** to return to the menu.
 
@@ -102,7 +102,7 @@ Follow the steps below to unlock an account.
 
 **Step 1 –** Click the **Unlock** item in the menu.
 
-![using_npr_7](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_7.webp)
+![using_npr_7](/images/passwordpolicyenforcer/passwordreset/administration/using_npr_7.webp)
 
 **Step 2 –** Type a **Username** and **Domain**, and then click **Next**.
 
@@ -111,12 +111,12 @@ Follow the steps below to unlock an account.
 **Step 3 –** Type the **Answer** to the first question, and then click **Next**. Repeat until all
 questions are answered correctly.
 
-![using_npr_8](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_8.webp)
+![using_npr_8](/images/passwordpolicyenforcer/passwordreset/administration/using_npr_8.webp)
 
 **Step 4 –** Password Reset may ask you to enter a verification code. The verification code is sent to your
 phone by e-mail or SMS. Type the **Code**, and then click **Next**.
 
-![using_npr_9](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_9.webp)
+![using_npr_9](/images/passwordpolicyenforcer/passwordreset/administration/using_npr_9.webp)
 
 **Step 5 –** Click **OK** to return to the menu.
 
@@ -159,7 +159,7 @@ Validation errors appear in a red box below the page instructions. Validation er
 caused by invalid user input. You can often resolve them by changing the value of one or more input
 fields and resubmitting the form.
 
-![using_npr_12](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_12.webp)
+![using_npr_12](/images/passwordpolicyenforcer/passwordreset/administration/using_npr_12.webp)
 
 Critical errors appear on their own page. These errors are mostly a result of configuration or
 system errors. Password Reset may write an event to the Windows Application event log on the Password Reset
@@ -167,7 +167,7 @@ Server computer when a critical error occurs. Users can sometimes overcome a cri
 following the instructions in the error message, but most critical errors are beyond the user's
 control.
 
-![using_npr_13](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_npr_13.webp)
+![using_npr_13](/images/passwordpolicyenforcer/passwordreset/administration/using_npr_13.webp)
 
 Validation and critical error messages are stored in the HTML templates. You can modify the default
 messages by editing the templates. See

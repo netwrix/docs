@@ -13,7 +13,7 @@ The Data Console has three tabs. The **Recent Activity** tab shows a chart of re
 chart is empty when Password Reset is first installed, but it populates as the system is
 used.
 
-![using_the_data_console](/images/passwordpolicyenforcer/10.2/password_reset/administration/using_the_data_console.webp)
+![using_the_data_console](/images/passwordpolicyenforcer/password_reset/administration/using_the_data_console.webp)
 
 The bars in the chart show how many successful enrollments, resets, unlocks, and changes occurred
 every day. You can click the bars to see a filtered view of the events for that day. For example,
@@ -154,7 +154,7 @@ Use the Filter Editor to create complex filters, filters for hidden columns, or 
 regularly used filters. Press **CTRL** + **F** to open the Filter Editor, or click the **Filter
 Editor** button in the lower right corner of the Data Console.
 
-![using_the_data_console_9](/images/passwordpolicyenforcer/10.2/password_reset/administration/using_the_data_console_9.webp)
+![using_the_data_console_9](/images/passwordpolicyenforcer/password_reset/administration/using_the_data_console_9.webp)
 
 A filter may contain several conditions. Conditions start with a column name, followed by an
 operator, and sometimes a value. Column names are shown in green, operators in maroon, and values in

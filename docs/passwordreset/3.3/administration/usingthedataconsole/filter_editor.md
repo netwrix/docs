@@ -10,7 +10,7 @@ Use the Filter Editor to create complex filters, filters for hidden columns, or 
 regularly used filters. Press **CTRL** + **F** to open the Filter Editor, or click the **Filter
 Editor** button in the lower right corner of the Data Console.
 
-![using_the_data_console_9](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_9.webp)
+![using_the_data_console_9](/images/passwordpolicyenforcer/passwordreset/administration/using_the_data_console_9.webp)
 
 A filter may contain several conditions. Conditions start with a column name, followed by an
 operator, and sometimes a value. The Filter Editor shows column names in green, operators in maroon, and values in
@@ -36,4 +36,4 @@ Some columns are hidden in the Data Console. You can use the Filter Editor to cr
 these columns. For example, the filter in the image below shows all users with an NPR v1 enrollment
 record.
 
-![using_the_data_console_10](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_the_data_console_10.webp)
+![using_the_data_console_10](/images/passwordpolicyenforcer/passwordreset/administration/using_the_data_console_10.webp)

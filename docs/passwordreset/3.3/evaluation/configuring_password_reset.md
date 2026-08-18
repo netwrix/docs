@@ -10,7 +10,7 @@ In the previous section, you used Password Reset with a default configuration. Y
 Configuration Console to edit the configuration settings. Click Start > Netwrix Password Reset > NPR
 Configuration Console to open the console.
 
-![configuring_npr_1](/images/passwordpolicyenforcer/11.0/passwordreset/administration/configuring_npr.webp)
+![configuring_npr_1](/images/passwordpolicyenforcer/passwordreset/administration/configuring_npr.webp)
 
 The Configuration Console has a tabbed layout. Click the tabs along the top to see the various
 settings. Most of the settings are self-explanatory. Press **F1** on any of the tabs to see the help

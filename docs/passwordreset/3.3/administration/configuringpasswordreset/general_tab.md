@@ -82,7 +82,7 @@ Password Reset is a configurable password filter that enforces granular password
 advanced features. Password Reset can integrate with Password Policy Enforcer to help users choose a
 compliant password.
 
-![configuring_npr_1](/images/passwordpolicyenforcer/11.0/passwordreset/administration/configuring_npr_1.webp)
+![configuring_npr_1](/images/passwordpolicyenforcer/passwordreset/administration/configuring_npr_1.webp)
 
 Password Reset displays the Password Policy Enforcer policy message when users are prompted for
 their new password, and the Password Policy Enforcer rejection message if the new password does not
@@ -117,7 +117,7 @@ server configuration, and enable "Only accept encrypted client request".
 :::
 
 
-![using_ppe_with_npr](/images/passwordpolicyenforcer/11.0/passwordreset/administration/using_ppe_with_npr.webp)
+![using_ppe_with_npr](/images/passwordpolicyenforcer/passwordreset/administration/using_ppe_with_npr.webp)
 
 Do not enable this option if you are using Netwrix Password Reset v3.3 with Netwrix Password
 Policy Enforcer v8.x or earlier versions, or with Netwrix Password Policy Enforcer/Web. If you are

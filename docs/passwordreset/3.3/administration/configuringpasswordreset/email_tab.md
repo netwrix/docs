@@ -34,7 +34,7 @@ sends an e-mail when the event occurs. Enabled triggers are underlined.
 
 Click the name of an enabled trigger to edit the trigger's e-mail template.
 
-![configuring_npr_4](/images/passwordpolicyenforcer/11.0/passwordreset/administration/configuring_npr_4.webp)
+![configuring_npr_4](/images/passwordpolicyenforcer/passwordreset/administration/configuring_npr_4.webp)
 
 Type the name and e-mail address you wish to appear in the e-mail's From field in the **From** text
 box. The correct format is "Display Name" `<mailbox@domain.com>`
@@ -82,7 +82,7 @@ A warning icon appears beside the language drop-down list if no e-mail template 
 every language. You should define an e-mail template for every language to ensure that users can
 understand their e-mail alerts.
 
-![configuring_npr_5](/images/passwordpolicyenforcer/11.0/passwordreset/administration/configuring_npr_5.webp)
+![configuring_npr_5](/images/passwordpolicyenforcer/passwordreset/administration/configuring_npr_5.webp)
 
 :::warning
 An attacker may choose a specific language to avoid detection. Password Reset sends e-mail alerts
