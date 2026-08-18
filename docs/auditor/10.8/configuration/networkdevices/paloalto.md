@@ -15,11 +15,9 @@ may contain warnings, errors, or incomplete audit data.
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-Configure native audit settings manually on the Palo Alto device via the web interface to ensure
-Netwrix Auditor collects comprehensive and reliable audit data.
-
-To configure your Palo Alto devices, create a syslog server profile and assign it to the log settings
-for each log type.
+Configure native audit settings manually on the Palo Alto device via the web interface: create a
+syslog server profile and assign it to the log settings for each log type to ensure Netwrix
+Auditor collects comprehensive and reliable audit data.
 
 ## Configure a syslog server profile
 
