@@ -67,8 +67,8 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 
 What you can exclude depends on the monitored item type:
 
-- **Azure Subscription items** – On the item's **Scope** tab, exclude specific **storage accounts** by name so Netwrix Auditor skips them entirely for this subscription.
-- **Azure Storage Account items** – On the item's **Scope** tab, use the **Omit List** to exclude specific shares, folders, or files (Universal Naming Convention (UNC) paths). Choose **All** to exclude an object from all data collection, or **SiT** to exclude it from State-in-Time snapshots only. See [Configuring the monitoring scope (omit lists)](/docs/auditor/10.9/configuration/azurefiles/stateintime.md#configuring-the-monitoring-scope-omit-lists) for details.
+- **Azure Subscription items** – On the item's **Scope** tab, exclude specific **storage accounts** or **resource groups** by name so Netwrix Auditor skips them entirely for this subscription.
+- **Azure Storage Account items** – On the item's **Scope** tab, use the **Omit List** to exclude specific shares, folders, or files (Universal Naming Convention (UNC) paths). Choose **All** to exclude an object from all data collection, **SiT** to exclude it from State-in-Time snapshots only, or **User Activity** to exclude it from activity data collection only. See [Configuring the monitoring scope (omit lists)](/docs/auditor/10.9/configuration/azurefiles/stateintime.md#configuring-the-monitoring-scope-omit-lists) for details.
 
 ## Next Steps
 
