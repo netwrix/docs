@@ -17,7 +17,7 @@ You can browse to your compromised passwords base files or enter a path into the
 can contain environment variables like
 
 :::warning
-%SystemRoot%. hash files should only be read from a local disk. Using shared hash files
+Hash files should only be read from a local disk. Using shared hash files
 degrades performance, and could jeopardize security.
 :::
 
