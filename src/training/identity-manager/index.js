@@ -6,5 +6,7 @@ export { default as NIMProjectPlanning } from './2722.md';
 export { default as NIMIntro } from './3720.md';
 export { default as NIMReport } from './3721.md';
 export { default as NIMConnectors } from './3722.md';
+export { default as NIMResources } from './3723.md';
+export { default as NIMJobs } from './3724.md';
 export { default as NIMDemo } from './5720.md';
 export { default as NIMAdditional } from './additional.md';

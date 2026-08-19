@@ -58,6 +58,6 @@ The following learning paths provide Partner certification for Presales Engineer
         * [Netwrix Threat Prevention Presales Engineer](./threat-prevention.md)
 * Other Certifications
     * [Netwrix Change Tracker Presales Engineer](./change-tracker.md)
-    * [Netwrix Platform Governance for NetSuite Presales Engineer](./platform-governance-for-netsuite.md)
-    * [Netwrix Platform Governance for Salesforce Presales Engineer](./platform-governance-for-salesforce.md)
     * [Netwrix PolicyPak Presales Engineer](./policypak.md)
+    * [Netwrix Strongpoint for NetSuite Presales Engineer](./strongpoint-for-netsuite.md)
+    * [Netwrix Strongpoint for Salesforce Presales Engineer](./strongpoint-for-salesforce.md)
