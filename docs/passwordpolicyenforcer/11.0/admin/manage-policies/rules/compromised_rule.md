@@ -13,8 +13,7 @@ vulnerable to credential stuffing attacks.
 
 Select the **Compromised** checkbox to enable the Compromised rule.
 
-You can browse to your compromised passwords base files or enter a path into the text box. The path
-can contain environment variables like
+You can browse to your compromised passwords base files or enter a path into the text box. The path can contain any standard Windows environment variable.
 
 :::warning
 Read hash files only from a local disk. Using shared hash files
