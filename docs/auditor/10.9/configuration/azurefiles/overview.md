@@ -13,7 +13,7 @@ It supports two types of monitored items for Azure Files:
 
 
 **Note:** For all **"data storage accounts"**, you must configure [Diaggnostic settings](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
-to save audit events on **"log storage account(s)"**. Ensure you have the necessary access ([API permissions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#configure-api-permissions), [IAM Roles](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#assign-iam-roles-to-the-app)) for [application](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#azure-application-registration) to read these events and access storage accounts metadata.
+to save audit events on **"log storage accounts"**. Ensure you have the necessary access ([API permissions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#configure-api-permissions), [IAM Roles](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#assign-iam-roles-to-the-app)) for [application](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#azure-application-registration) to read these events and access storage accounts metadata.
 
 ## Prerequisites
 
@@ -35,12 +35,12 @@ to save audit events on **"log storage account(s)"**. Ensure you have the necess
 
   **Netwrix Auditor** relies on **identity-based access** to correctly map file operations to real user accounts. Without it:
    - Audit logs may not contain accurate user information
-   - Activity may be shown as system or anonymous accounts
+   - Activity may appear under system or anonymous accounts
 
 ## Configuration Scope Overview
 
 - **[Azure Application Registration](#azure-application-registration)** - Create Microsoft Entra ID application
-- **[Configure API Permissions](#configure-api-permissions)** - Assign required permissions for created application in EntraID
+- **[Configure API Permissions](#configure-api-permissions)** - Assign the required permissions to the application you created in Microsoft Entra ID
 - **[Assign IAM Roles to the App](#assign-iam-roles-to-the-app)**- Assigning roles to Resource Group, Data Storage Account and Log Storage Account
 - **[Diagnostic Settings](#diagnostic-settings)** - Configure audit logging
 
@@ -53,7 +53,7 @@ Register an application so Netwrix Auditor can authenticate to Azure and read au
 1. In the Azure Portal, go to **Microsoft Entra ID > Manage > App registrations > + New registration**
 2. Enter:
    - **Name**: Name: `NetwrixAuditor-AzureFiles` (this is an example — you can use any descriptive name for the app)
-   - **Supported account types** (see below)
+   - **Supported account types** (see the following account type references)
    - Leave **Redirect URI** blank
 3. Click **Register**
 
@@ -64,6 +64,8 @@ Register an application so Netwrix Auditor can authenticate to Azure and read au
 - **[Identity and account types for single- and multitenant apps](https://learn.microsoft.com/en-us/security/zero-trust/develop/identity-supported-account-types)**
 
 **Note:** Switching audiences later may cause errors
+
+**Recommendation:** Use a separate, dedicated application for Azure Files data collection rather than reusing an application for other purposes. By default, Netwrix Auditor omits its own collection application's activity from auditing — if you share the collection app with other workloads, Netwrix Auditor doesn't capture that other activity.
 
 
 ### Step 2: Gather App Details
@@ -78,7 +80,7 @@ After registration, go to the **Overview** page of your new app and copy:
 2. Click **+ New client secret**
 3. Enter a description (e.g., `NetwrixSecret`) and select expiration
 4. Click **Add**
-5. Copy the **secret value** immediately — it won't be shown again
+5. Copy the **secret value** immediately — Azure doesn't display it again
 
 Netwrix Auditor uses the **App ID** + **Client Secret** for authentication
 
@@ -102,6 +104,7 @@ The Purpose column references Microsoft Graph API endpoints that Netwrix Auditor
 | `User.Read` | Basic user information. Sign in and read user profile. *(default)* |
 | `User.Read.All` | Read all users' full profiles. Required to resolve user security identifiers (SIDs) into display names and User Principal Names (UPNs), and to map access control entries (ACEs) from group membership via the Microsoft Graph endpoint `/users/{id}/transitiveMemberOf` |
 | `Group.Read.All` | Resolve groups and search by SID from discretionary access control lists (DACLs). Required to expand group membership via the Microsoft Graph endpoint `/groups/{id}/transitiveMembers` and filter groups by `securityIdentifier` |
+| `Application.Read.All` | Resolve service principal (application) identities in audit records. Required when a service principal rather than a user performs file or folder activity — these objects have no SID and no UPN, so `User.Read.All` and `Group.Read.All` can't resolve them. Without this permission, such records show a raw object ID instead of a display name, and the collector logs a "no SID and no UPN available to resolve the identity" error in the monitoring plan log. |
 
 
 1. In your app in EntraID, go to **Manage > API permissions > + Add a permission**.
@@ -110,10 +113,12 @@ The Purpose column references Microsoft Graph API endpoints that Netwrix Auditor
    - **User.Read (default)**
    - **User.Read.All**
    - **Group.Read.All**
+   - **Application.Read.All**
 
 - *User.Read* – "Sign in and read user profile." *(default)*
 - *User.Read.All* – "Read all users' full profiles"
 - *Group.Read.All* – "Read all groups"
+- *Application.Read.All* – "Read all applications" — required to resolve service principal display names
 
 
 ### Step 2: Grant Admin Consent
@@ -121,11 +126,12 @@ The Purpose column references Microsoft Graph API endpoints that Netwrix Auditor
 Click **Grant admin consent for TenantName**
 
 **Why this is required:**
-- By default, applications cannot query Microsoft Graph for directory-wide information
-- Admin consent allows the app to use **User.Read.All** and **Group.Read.All**
+- By default, applications can't query Microsoft Graph for directory-wide information
+- Admin consent allows the app to use **User.Read.All**, **Group.Read.All**, and **Application.Read.All**
 - **User.Read.All** lets Netwrix Auditor query Microsoft Entra ID and resolve **user SIDs → user accounts → display names**
 - **Group.Read.All** lets Netwrix Auditor resolve groups from DACLs and expand group membership so reports show which users inherit access through group ACEs
-- Without admin consent, audit logs will only show unresolved SIDs and object IDs instead of usernames and group names, making reports incomplete and less useful
+- **Application.Read.All** lets Netwrix Auditor resolve **service principal (application) identities** that have no SID and no UPN, so activity performed by applications — not just users — shows a display name instead of a raw object ID
+- Without admin consent, audit logs will only show unresolved SIDs and object IDs instead of usernames, group names, and application names, making reports incomplete and less useful
 
 **At the end of this step, your app has granted Microsoft Graph API permissions**
 
@@ -199,7 +205,7 @@ You should assign Azure IAM roles so that Netwrix Auditor can:
 
 ## Diagnostic Settings
 
-Azure Files does not generate audit events by default
+Azure Files doesn't generate audit events by default
 You must configure **Diagnostic Settings** to send file activity logs to your **Log Storage Account**
 
 ### Step 1: Open Diagnostic Settings
@@ -214,7 +220,7 @@ You must configure **Diagnostic Settings** to send file activity logs to your **
 
 1. Enter a name (e.g., `NetwrixAuditorLogs`)
 2. Under **Category groups**, select **Audit**
-   - Only the **Audit** category group is supported by Netwrix Auditor
+   - Netwrix Auditor supports only the **Audit** category group
 
 ### Step 3: Configure Destination
 
@@ -230,7 +236,7 @@ You must configure **Diagnostic Settings** to send file activity logs to your **
 ### Step 4: Save the Configuration
 
 Click **Save**.
-Azure Files audit logs will now be archived into your **Log Storage Account**
+Azure now archives Azure Files audit logs into your **Log Storage Account**
 
 **At the end of this step, you should have:**
 - A Diagnostic Setting under the File resource type
@@ -242,7 +248,7 @@ Azure Files audit logs will now be archived into your **Log Storage Account**
 ## Checklist
 
 - [Azure Application registered](#azure-application-registration) with App ID + Secret
-- [API permissions](#configure-api-permissions) (User.Read, User.Read.All, Group.Read.All) granted
+- [API permissions](#configure-api-permissions) (User.Read, User.Read.All, Group.Read.All, Application.Read.All) granted
 - [IAM roles assigned](#assign-iam-roles-to-the-app) (Reader, Storage File Data Privileged Reader, Storage Blob Data Reader)
 - [Diagnostic Settings configured](#diagnostic-settings) to log to a Log Storage Account
 
@@ -253,6 +259,6 @@ After completing the Azure Files configuration:
 
 1. **Test Connectivity**: Verify authentication and access to storage accounts
 2. **Create Monitoring Plan**: Configure Azure Files monitoring in Netwrix Auditor
-3. **Validate Data Collection**: Confirm audit events are being collected
+3. **Validate Data Collection**: Confirm that Netwrix Auditor collects audit events
 
 For detailed instructions on creating the monitoring plan, see the [Azure Files Monitoring Plan](/docs/auditor/10.9/admin/monitoringplans/azurefiles.md) documentation
