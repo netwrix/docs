@@ -20,8 +20,7 @@ against the HIBP database.
 
 ## Considerations When Deploying the HIBP Database
 
-Before deploying the HIBP database, consider the pros and cons when choosing its deployment
-location.
+Before deploying the HIBP database, consider the pros and cons of each deployment location.
 
 - The HIBP database takes up additional space on the machine where you copy it (approximately 13
   GB, but subject to change)
@@ -60,7 +59,7 @@ Netwrix website.
 ![HIBP Updater](/images/passwordpolicyenforcer/11.0/administration/hibpupdater.webp)
 
 :::warning
-Ensure the initial update of the database occurs during non-office hours. Due to the
+Run the initial database update during non-office hours. Due to the
 size of the hash file, this download consumes significant CPU and time.
 :::
 

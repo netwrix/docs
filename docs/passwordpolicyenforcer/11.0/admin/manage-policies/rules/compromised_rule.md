@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # Compromised Rule
 
-The Compromised rule rejects passwords from prior breaches. These passwords shouldn't be used as
-they are vulnerable to credential stuffing attacks.
+The Compromised rule rejects passwords from prior breaches. Don't use these passwords, as they are
+vulnerable to credential stuffing attacks.
 
 ![Compromised password rule](/images/passwordpolicyenforcer/11.0/administration/compromised.webp)
 
@@ -17,10 +17,10 @@ You can browse to your compromised passwords base files or enter a path into the
 can contain environment variables like
 
 :::warning
-Hash files should only be read from a local disk. Using shared hash files
+Read hash files only from a local disk. Using shared hash files
 degrades performance, and could jeopardize security.
 :::
 
 
-See the [HIBP Updater](/docs/passwordpolicyenforcer/11.0/installation/hibpupdater.md) topic for the information about the Have I Been Pwnd (HIBP)
-database usage.
+See the [HIBP Updater](/docs/passwordpolicyenforcer/11.0/installation/hibpupdater.md) topic for information about using the Have I Been
+Pwnd (HIBP) database.

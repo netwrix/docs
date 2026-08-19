@@ -20,8 +20,7 @@ against the HIBP database.
 
 ## Considerations When Deploying the HIBP Database
 
-Before deploying the HIBP database, consider the pros and cons when choosing its deployment
-location.
+Before deploying the HIBP database, consider the pros and cons of each deployment location.
 
 If you copy and store the HIBP database locally on the Domain Controllers:
 
@@ -71,7 +70,7 @@ Netwrix website.
 ![HIBP Updater](/images/passwordpolicyenforcer/11.1/administration/hibpupdater.webp)
 
 :::warning
-Ensure the initial update of the database occurs during non-office hours. Due to the
+Run the initial database update during non-office hours. Due to the
 size of the hash file, this download consumes significant CPU and time.
 :::
 
