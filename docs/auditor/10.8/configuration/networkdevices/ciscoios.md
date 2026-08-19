@@ -22,7 +22,7 @@ settings manually on the Cisco IOS device. When you finish, the device has the f
 - The `logging timestamp` option is enabled.
 - The `logging trap` option is set from 1 to 6 inclusive.
 - The `logging host` parameter is set to the host address of the computer that hosts Netwrix
-  Auditor Server, using a UDP port (for example, 514) to send messages.
+  Auditor Server, and the device uses a UDP port (for example, 514) to send messages.
 
 To configure your Cisco IOS devices, do the following:
 

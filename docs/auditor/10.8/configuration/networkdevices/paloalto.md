@@ -35,7 +35,7 @@ the firewall in the URL field (https://`<IP address>`).
 | Name          | Specify unique name for a syslog server.                                                       |
 | Syslog Server | Provide a server name by entering its FQDN or IPv4 address.                                    |
 | Transport     | Select UDP.                                                                                    |
-| Port          | Provide the name of the UDP port used to listen to network devices (514 port used by default). |
+| Port          | Provide the name of the UDP port that Netwrix Auditor uses to listen to network devices (port 514 by default). |
 | Format        | Select IETF.                                                                                   |
 | Facility      | Netwrix recommends using default values.                                                       |
 
