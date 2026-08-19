@@ -20,13 +20,13 @@ settings manually on the Cisco ASA device. When you finish, the device has the f
 
 - The global configuration mode is enabled.
 - The `logging enable` option is turned on.
-- The `logging host` parameter specifies the host address of the audited Cisco ASA device, and the
-  device uses a UDP port (for example, 514) to send messages.
+- The `logging host` parameter is set to the host address of the audited Cisco ASA device, using a
+  UDP port (for example, 514) to send messages.
 
     **NOTE:** Don't select the EMBLEM format logging for the syslog server option.
 
 - The `logging timestamp` option is enabled.
-- The `logging trap` option uses a value from 1 to 6 inclusive.
+- The `logging trap` option is set from 1 to 6 inclusive.
 
 To configure your Cisco ASA devices, do the following:
 
