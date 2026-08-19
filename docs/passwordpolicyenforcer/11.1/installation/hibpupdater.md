@@ -24,7 +24,7 @@ Before deploying the HIBP database, consider the pros and cons of each deploymen
 
 If you copy and store the HIBP database locally on the Domain Controllers:
 
-- The HIBP database takes up additional space on the machine where you copy it. (Aproximetly 13GB but subject to change)
+- The HIBP database takes up additional space (approximately 13 GB, but subject to change) on the machine where you copy it.
 - For a local deployment, the database must be on every Domain Controller in the location that the Rule specifies.
 - Checking the password against the HIBP database doesn't use a network connection, so network performance doesn't affect the check. 
 - Password Policy Enforcer checks the pending password candidate against the archived hash file at the local level. If the password hash matches, Password Policy Enforcer rejects the pending password change.
@@ -33,8 +33,8 @@ If you copy and store the HIBP database locally on the Domain Controllers:
 If you keep the HIBP database on a Network Share:
 
 - The database takes up space only on the Network Share, not on each Domain Controller. 
-- Requires a working network connection from the Domain Controllers to the Network Share with Read permissions to check:
-- The pending password candidate from Domain Controller against the HIBP Database stored on the Network Share, this could affect LSASS/Password Change performance depending on the environment.
+- Requires a working network connection from the Domain Controllers to the Network Share with Read permissions, so that a Domain Controller can check the pending password candidate against the HIBP database stored on the Network Share.
+  Depending on the environment, this could affect Local Security Authority Subsystem Service (LSASS) and password change performance.
 - The HIBP database requires space on one Network Location instead of on each domain controller.
 - During a password change, if the Network Share isn't available, the Domain Controller must assume the hash is okay, which could allow a known compromised password.
 
@@ -88,7 +88,7 @@ size of the hash file, this download consumes significant CPU and time.
       download of the HIBP database completes.
 
         :::note
-        Only the full HIBP database file obtained from the Netwrix website has version
+        Only the full HIBP database file that you download from the Netwrix website has version
         information. You can obtain that full HIBP database file using the Website option.
         Alternately, you can obtain the HIBP database outside of the application by downloading it
         directly from the Netwrix website using an FTP connection:
@@ -127,11 +127,11 @@ Compromised rule to read the files from:
 
 See the [Compromised Rule](/docs/passwordpolicyenforcer/11.1/admin/manage-policies/rules/compromised_rule.md) topic for additional information.
 
-This path only works if the computer has a Sysvol share. This won't be the case if you are
-using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
-local policies. If you are using Password Policy Enforcer for local policies and want all computers
-to receive hash file updates, then use the Sysvol share for file replication and a script or
-scheduled task to copy the file to a local folder.
+This path only works if the computer has a Sysvol share. This won't be the case if you use a
+workstation for policy testing, or if you use Password Policy Enforcer to enforce local policies.
+If you use Password Policy Enforcer for local policies and want all computers to receive hash file
+updates, then use the Sysvol share for file replication and a script or scheduled task to copy the
+file to a local folder.
 
 :::warning
 Read hash files only from a local disk. Using shared hash files
@@ -141,9 +141,9 @@ degrades performance, and could jeopardize security.
 
 ## Scheduler
 
-Password Policy Enforcer administrators can use the Scheduler portion of the HIBP Updater to
-automate the tool to retrieve and/or prepare the HIBP dataset. The Scheduler uses Microsoft Task
-Scheduler technology to execute the process.
+Password Policy Enforcer administrators can use the Scheduler in the HIBP Updater to automate
+retrieving and preparing the HIBP dataset. The Scheduler uses Microsoft Task Scheduler to run the
+process.
 
 ### How to Schedule a Task
 

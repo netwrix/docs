@@ -22,8 +22,8 @@ against the HIBP database.
 
 Before deploying the HIBP database, consider the pros and cons of each deployment location.
 
-- The HIBP database takes up additional space on the machine where you copy it (approximately 13
-  GB, but subject to change)
+- The HIBP database takes up additional space (approximately 13 GB, but subject to change) on the
+  machine where you copy it
 - Checking passwords against the HIBP database doesn't require a network connection to the
   application server
 
@@ -77,7 +77,7 @@ size of the hash file, this download consumes significant CPU and time.
       download of the HIBP database completes.
 
         :::note
-        Only the full HIBP database file obtained from the Netwrix website has version
+        Only the full HIBP database file that you download from the Netwrix website has version
         information. You can obtain that full HIBP database file using the Website option.
         Alternately, you can obtain the HIBP database outside of the application by downloading it
         directly from the Netwrix website using an FTP connection:
@@ -116,11 +116,11 @@ Compromised rule to read the files from:
 
 See the [Compromised Rule](/docs/passwordpolicyenforcer/11.0/admin/manage-policies/rules/compromised_rule.md) topic for additional information.
 
-This path only works if the computer has a Sysvol share. This won't be the case if you are
-using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
-local policies. If you are using Password Policy Enforcer for local policies and want all computers
-to receive hash file updates, then use the Sysvol share for file replication and a script or
-scheduled task to copy the file to a local folder.
+This path only works if the computer has a Sysvol share. This won't be the case if you use a
+workstation for policy testing, or if you use Password Policy Enforcer to enforce local policies.
+If you use Password Policy Enforcer for local policies and want all computers to receive hash file
+updates, then use the Sysvol share for file replication and a script or scheduled task to copy the
+file to a local folder.
 
 :::warning
 Read hash files only from a local disk. Using shared hash files
@@ -130,9 +130,9 @@ degrades performance, and could jeopardize security.
 
 ## Scheduler
 
-Password Policy Enforcer administrators can use the Scheduler portion of the HIBP Updater to
-automate the tool to retrieve and/or prepare the HIBP dataset. The Scheduler uses Microsoft Task
-Scheduler technology to execute the process.
+Password Policy Enforcer administrators can use the Scheduler in the HIBP Updater to automate
+retrieving and preparing the HIBP dataset. The Scheduler uses Microsoft Task Scheduler to run the
+process.
 
 ### How to Schedule a Task
 
