@@ -220,6 +220,10 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 If using Enforced Encryption and you change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
 :::
 
+:::warning
+If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, reviewing your SSO configuration after the backup is restored is mandatory. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
+:::
+
 ### Deploying the 2608 Base Image
 
 1. Download the Endpoint Protector **2608** VM image from the [My Products portal on netwrix.com](https://customer.netwrix.com/sign_in.html?rf=my_products.html), or request it from your account team.
@@ -384,6 +388,12 @@ After reconfiguration, verify each integration is functioning:
 | Entra ID / SSO | Perform a test SSO login in an incognito browser window |
 | SIEM / Syslog | Generate a test event; confirm it appears in the SIEM receiver |
 | AWS / S3 / File Shadows | Generate a file shadow; confirm it reaches the S3 bucket |
+
+:::warning
+**Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after the backup is restored. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until this is corrected. You have two options:
+1. Manually recreate the SSO configuration in **System Configuration → SSO / Single Sign-On** with the updated response/callback URL, and update the corresponding redirect URI in your identity provider.
+2. Raise a Netwrix Support case to have the SSO configuration updated on the backend.
+:::
 
 :::warning
 AD Sync may appear to complete successfully but only import a partial set of users or groups. Always cross-check the imported object count against your directory — don't rely solely on the "success" status message.

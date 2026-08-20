@@ -40,6 +40,6 @@ The following learning paths provide Partner certification for Sales Professiona
         * [Netwrix PingCastle Sales Professional](./pingcastle.md)
 * Other Certifications
     * [Netwrix Change Tracker Sales Professional](./change-tracker.md)
-    * [Netwrix Platform Governance for NetSuite Sales Professional](./platform-governance-netsuite.md)
-    * [Netwrix Platform Governance for Salesforce Sales Professional](./platform-governance-salesforce.md)
     * [Netwrix PolicyPak Sales Professional](./policypak.md)
+    * [Netwrix Strongpoint for NetSuite Sales Professional](./strongpoint-for-netsuite.md)
+    * [Netwrix Strongpoint for Salesforce Sales Professional](./strongpoint-for-salesforce.md)
