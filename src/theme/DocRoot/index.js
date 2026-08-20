@@ -11,6 +11,15 @@ import DocRootLayout from '@theme/DocRoot/Layout';
 import NotFoundContent from '@theme/NotFound/Content';
 import {findVersionlessRedirect} from '@site/src/utils/versionlessRedirect';
 
+// Ejected swizzle of DocRoot from @docusaurus/plugin-content-docs 3.10.2.
+// Docusaurus marks this component unsafe to swizzle, so this copy pins 3.10.2
+// behavior and won't pick up upstream changes on its own. On the next
+// Docusaurus bump, re-diff it against
+// node_modules/@docusaurus/plugin-content-docs/lib/theme/DocRoot/index.js and
+// port anything new — the only intended delta below is DocRootNotFound
+// replacing the upstream <NotFoundContent /> in the !currentDocRouteMetadata
+// branch.
+
 // A product that used to have multiple versions but now serves a single
 // unversioned one leaves old links like /docs/<product>/8_2/<rest> dead. Such a
 // path resolves inside this docs plugin instance but doesn't match a real doc,

@@ -57,11 +57,15 @@ const activeVersionsByProduct = Object.fromEntries(
 // still carry a customRoutePath (docs/identitymanager/current) and serve
 // versioned URLs, so comparing against product.path is what makes the
 // "unversioned" inference hold.
+//
+// Reads product.versions rather than getActiveVersions(product) on purpose:
+// DOCS_PRODUCT_LATEST_ONLY narrows the active list to one version, which would
+// make a genuinely multi-version product look collapsed and start rewriting its
+// valid versioned URLs in local single-product builds.
 const unversionedDocsBasePaths = redirectProducts
   .map(product => {
-    const versions = getActiveVersions(product);
-    if (versions.length !== 1) return null;
-    const [version] = versions;
+    if (product.versions.length !== 1) return null;
+    const [version] = product.versions;
     const routeBasePath = version.customRoutePath || generateRouteBasePath(product.path, version.version);
     return routeBasePath === product.path ? `/${routeBasePath}` : null;
   })

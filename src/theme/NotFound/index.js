@@ -7,6 +7,11 @@ import Layout from '@theme/Layout';
 import NotFoundContent from '@theme/NotFound/Content';
 import {findVersionlessRedirect} from '@site/src/utils/versionlessRedirect';
 
+// Ejected swizzle of NotFound from @docusaurus/theme-classic 3.10.2. This copy
+// pins 3.10.2 behavior, so on the next Docusaurus bump re-diff it against
+// node_modules/@docusaurus/theme-classic/lib/theme/NotFound/index.js — the only
+// intended delta is the redirect hook added ahead of the upstream body.
+
 export default function Index() {
   const {siteConfig} = useDocusaurusContext();
   const history = useHistory();
