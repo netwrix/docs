@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Given a doc-audit source_path and the exact "Where" quotes from one or more
+ * Given a doc-audit source_path and the exact "Error" quotes from one or more
  * corrections, reports:
  *   - the product/version, and the review-list.csv row's `duplicates` column
  *     (exact byte-identical siblings, already safe to auto-fix)
@@ -11,7 +11,7 @@
  * problem text is actually present there — not a fuzzy similarity guess.
  *
  * Usage:
- *   echo '["exact where text 1", "exact where text 2"]' \
+ *   echo '["exact error text 1", "exact error text 2"]' \
  *     | node .claude/skills/audit-fix/scripts/find-siblings.mjs docs/accessanalyzer/11.6/foo.md
  *
  * Quotes are optional — omit stdin (or pass `[]`) to only resolve

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-08T02:26:52.859Z",
+  "generatedAt": "2026-08-20T18:59:19.885Z",
   "auditStartedAt": "2026-08-07",
   "product": "1secure",
   "since": "90 days ago",
   "churnThreshold": 0.5,
   "counts": {
     "scanned": 124,
-    "included": 111,
-    "excludedByChurn": 13,
+    "included": 122,
+    "excludedByChurn": 2,
     "excludedByDraft": 0,
     "duplicateRows": 0
   }

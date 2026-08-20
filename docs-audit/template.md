@@ -1,68 +1,53 @@
-# Documentation audit review guide
+# Document Review
 
-Read this once before you start reviewing. It applies to every page in your
-product's `review-list.csv` — you don't need a separate copy per page.
+* **Version:** 
+* **Source Path:** 
+* **Duplicated in:**
 
-## Before you start
+## Steps
 
-Open the page's `live_page_url` and the product side by side. Work through
-the page top to bottom. Check every item below, then write up every problem
-you find using the form below — directly in a Claude Code chat, not in the
-spreadsheet.
+1. Select the '…' in the upper right corner of Xchange to copy this template as Markdown/text into the text editor of your choice.
+2. Read the document at the Document URL in the spreadsheet.
+3. Follow along in the documentation with the application open if possible/necessary.
+4. Go through this checklist and note any corrections that must be made:
+   * Do UI elements match the product?
+   * Do code samples and snippets work as written?
+   * Are the requirements accurate and complete?
+   * Are the steps in any procedures accurate, complete, and correctly ordered?
+   * Are the screenshots accurate and necessary? If the screenshots aren't necessary, they should be removed and the document should be revised not to reference them.
+5. When you are done making corrections, save your changes.
 
-## Checklist
+## Corrections
 
-- **UI elements match the product.** Every menu, button, field, tab, dialog,
-  and label named on the page exists in the product and is named the same
-  way. Names, capitalization, and navigation paths all match.
-- **Code, commands, and configuration work as written.** Run every command,
-  script, query, and configuration snippet exactly as the page presents it.
-  Confirm each one succeeds and produces the documented result. Don't correct
-  a snippet in your head as you read it — if it needs correcting, it's wrong.
-- **Requirements are complete.** Every prerequisite is listed: permissions,
-  roles, licenses, ports, supported versions, dependencies, and any setup the
-  reader must finish first. Confirm nothing is assumed.
-- **The procedure succeeds using only this page.** Follow the steps as
-  written, from a clean starting state, without prior knowledge of the
-  product and without consulting another page. Note every point where you had
-  to guess, backtrack, or look something up.
-- **Screenshots are accurate.** Every screenshot matches the current product:
-  same layout, same labels, same version. Flag any screenshot that shows an
-  older release.
-- **Screenshots are necessary.** For each screenshot, decide whether the text
-  alone would carry the reader through the step. Removing a screenshot that
-  adds nothing reduces the maintenance burden on every future release —
-  prefer removing it over updating it. Recommend removal by default and keep
-  a screenshot only when it shows something the words genuinely can't.
+<!-- One block per error found. Duplicate for additional errors. Leave blank if none. -->
 
-## Writing up a correction
+* **Error (quote the exact text if possible):** GOOD ex. Select the gear in the upper left to open settings.
+* **Fix:** GOOD ex. The gear is actually in the upper right.
 
-For each problem you find, fill out one block of this form. Be specific
-enough that someone who has never opened this page can act on it:
+* **Error (quote the exact text if possible):** GOOD ex. Run `Get-AuditPolicy -ComputerName $server -Category "Logon"` to confirm the policy applied.
+* **Fix:** GOOD ex. The parameter is `-SubCategory`, not `-Category` — running the command as written fails with "A parameter cannot be found that matches parameter name 'Category'."
 
-```
-Where: <quote the exact sentence, step number, heading, or snippet>
-Fix: <what it should say instead — write the replacement text>
-Why: <what the product actually does, or what went wrong when you followed the page as written>
-```
+* **Error (quote the exact text if possible):** GOOD ex. Screenshot below Step 2, showing the "New Policy" dialog.
+* **Fix:** GOOD ex. Remove the screenshot — the dialog only has two fields (Name, Description), both already described in the text, and the screenshot shows the pre-9.2 layout anyway.
 
-## When you're done with a page
+* **Error (quote the exact text if possible):** BAD ex. the settings section
+* **Fix:** BAD ex. fix the wrong button name
 
-If you found no problems, set `audited` to `Done` in the sheet and move on.
+* **Error (quote the exact text if possible):** 
+* **Fix:**
 
-If you wrote up one or more corrections, open Claude Code from the repository
-root and paste your form with an instruction like:
+## Applying corrections
 
-> Apply these documentation audit findings to `<source_path>`. Make only the
-> changes my notes describe. Follow the Netwrix writing standards in
-> `docs/CLAUDE.md`, and run `/dale <source_path>` afterward.
->
-> Where: ...
-> Fix: ...
-> Why: ...
+Once the Corrections section is filled in, paste this whole document into a Claude Code chat opened at the root of the docs repo — the `audit-fix` skill picks it up from there, applies each fix, checks whether this page is duplicated in other versions, and offers to apply the same fix to any duplicates it finds. It reports back what it changed.
 
-Review Claude's changes, open a pull request against `dev`, and once it
-merges, set `fixed` to `Done` in the sheet — then set `audited` to `Done` too,
-since finding and fixing the problem is itself the audit. If the correction
-turned out not to need a code change (e.g. it was already accurate), set
-`fixed` to `No fix necessary` instead.
+## Status
+
+<!-- Fill in after audit-fix reports back. -->
+
+* **Audited:** 
+* **Accurate:** 
+* **Complete:** 
+
+## Fix Summary
+
+<!-- Paste the report audit-fix gives you here. -->

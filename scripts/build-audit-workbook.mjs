@@ -109,7 +109,8 @@ const COLUMN_WIDTHS = {
   duplicates: 32,
   reviewer: 14,
   audited: 13,
-  fixed: 13,
+  accurate: 16,
+  complete: 14,
   notes: 32,
 };
 
@@ -121,7 +122,8 @@ const HEADER_LABELS = {
   duplicates: 'Duplicated in',
   reviewer: 'Reviewer',
   audited: 'Audited',
-  fixed: 'Fixed',
+  accurate: 'Accurate',
+  complete: 'Complete',
   notes: 'Notes',
 };
 
@@ -129,7 +131,8 @@ const SECTION_HEADER_FILL = 'FFD9E2F3';
 const SECTION_ROW_FILLS = ['FFFFFFFF', 'FFF2F5FA'];
 
 const AUDITED_OPTIONS = ['In progress', 'Done'];
-const FIXED_OPTIONS = ['In progress', 'Done', 'No fix necessary'];
+const ACCURATE_OPTIONS = ['Accurate', 'Some inaccuracies'];
+const COMPLETE_OPTIONS = ['Complete', 'Incomplete'];
 
 function addListValidation(sheet, colLetter, firstRow, lastRow, options) {
   if (lastRow < firstRow) return;
@@ -180,7 +183,8 @@ function addProductSheet(workbook, sheetName, rows) {
   const versionCol = header.findIndex((h) => h.trim().toLowerCase() === 'version');
   const sourcePathCol = header.findIndex((h) => h.trim().toLowerCase() === 'source_path');
   const auditedCol = header.findIndex((h) => h.trim().toLowerCase() === 'audited');
-  const fixedCol = header.findIndex((h) => h.trim().toLowerCase() === 'fixed');
+  const accurateCol = header.findIndex((h) => h.trim().toLowerCase() === 'accurate');
+  const completeCol = header.findIndex((h) => h.trim().toLowerCase() === 'complete');
 
   let currentSection = null;
   let sectionIndex = -1;
@@ -227,7 +231,8 @@ function addProductSheet(workbook, sheetName, rows) {
 
   const lastRow = sheet.rowCount; // section header rows push the real last row past rows.length
   if (auditedCol >= 0) addListValidation(sheet, colLetter(auditedCol), 2, lastRow, AUDITED_OPTIONS);
-  if (fixedCol >= 0) addListValidation(sheet, colLetter(fixedCol), 2, lastRow, FIXED_OPTIONS);
+  if (accurateCol >= 0) addListValidation(sheet, colLetter(accurateCol), 2, lastRow, ACCURATE_OPTIONS);
+  if (completeCol >= 0) addListValidation(sheet, colLetter(completeCol), 2, lastRow, COMPLETE_OPTIONS);
 
   return sheet;
 }
@@ -237,25 +242,27 @@ function fillDashboard(dash, productSheets) {
     'Product',
     'Total pages',
     'Audited (Done)',
-    'Fixed (Done)',
-    'Fixed (Not Necessary)',
+    'Accurate',
+    'Some Inaccuracies',
+    'Complete',
+    'Incomplete',
     '% Audited',
-    '% Fixed',
   ];
   dash.addRow(headers);
   dash.getRow(1).font = { bold: true };
 
-  productSheets.forEach(({ sheetName, sourcePathCol, auditedCol, fixedCol }) => {
+  productSheets.forEach(({ sheetName, sourcePathCol, auditedCol, accurateCol, completeCol }) => {
     const ref = `'${sheetName}'!`;
     const rowNum = dash.rowCount + 1;
     dash.addRow([
       sheetName,
       { formula: `COUNTA(${ref}${sourcePathCol}:${sourcePathCol})-1` },
       { formula: `COUNTIF(${ref}${auditedCol}:${auditedCol},"Done")` },
-      { formula: `COUNTIF(${ref}${fixedCol}:${fixedCol},"Done")` },
-      { formula: `COUNTIF(${ref}${fixedCol}:${fixedCol},"No fix necessary")` },
+      { formula: `COUNTIF(${ref}${accurateCol}:${accurateCol},"Accurate")` },
+      { formula: `COUNTIF(${ref}${accurateCol}:${accurateCol},"Some inaccuracies")` },
+      { formula: `COUNTIF(${ref}${completeCol}:${completeCol},"Complete")` },
+      { formula: `COUNTIF(${ref}${completeCol}:${completeCol},"Incomplete")` },
       { formula: `IFERROR(C${rowNum}/B${rowNum},0)` },
-      { formula: `IFERROR((D${rowNum}+E${rowNum})/B${rowNum},0)` },
     ]);
   });
 
@@ -269,18 +276,17 @@ function fillDashboard(dash, productSheets) {
       { formula: `SUM(C${firstDataRow}:C${lastDataRow})` },
       { formula: `SUM(D${firstDataRow}:D${lastDataRow})` },
       { formula: `SUM(E${firstDataRow}:E${lastDataRow})` },
+      { formula: `SUM(F${firstDataRow}:F${lastDataRow})` },
+      { formula: `SUM(G${firstDataRow}:G${lastDataRow})` },
       { formula: `IFERROR(C${totalRowNum}/B${totalRowNum},0)` },
-      { formula: `IFERROR((D${totalRowNum}+E${totalRowNum})/B${totalRowNum},0)` },
     ]);
     totalRow.font = { bold: true };
   }
 
   dash.getColumn(1).width = 32;
-  for (let c = 2; c <= 5; c += 1) dash.getColumn(c).width = 16;
-  for (let c = 6; c <= 7; c += 1) {
-    dash.getColumn(c).width = 12;
-    dash.getColumn(c).numFmt = '0%';
-  }
+  for (let c = 2; c <= 7; c += 1) dash.getColumn(c).width = 16;
+  dash.getColumn(8).width = 12;
+  dash.getColumn(8).numFmt = '0%';
 
   dash.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: headers.length } };
 }
@@ -342,12 +348,14 @@ async function main() {
     const header = rows[0].map((h) => h.trim().toLowerCase());
     const sourcePathIdx = header.indexOf('source_path');
     const auditedIdx = header.indexOf('audited');
-    const fixedIdx = header.indexOf('fixed');
+    const accurateIdx = header.indexOf('accurate');
+    const completeIdx = header.indexOf('complete');
     productSheets.push({
       sheetName,
       sourcePathCol: colLetter(sourcePathIdx >= 0 ? sourcePathIdx : 0),
       auditedCol: colLetter(auditedIdx >= 0 ? auditedIdx : 6),
-      fixedCol: colLetter(fixedIdx >= 0 ? fixedIdx : 7),
+      accurateCol: colLetter(accurateIdx >= 0 ? accurateIdx : 7),
+      completeCol: colLetter(completeIdx >= 0 ? completeIdx : 8),
     });
   }
 

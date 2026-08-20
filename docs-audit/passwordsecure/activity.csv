@@ -718,6 +718,7 @@ docs/passwordsecure/current/introduction/introduction.md,0
 docs/passwordsecure/current/introduction/versionhistory/version_26.3.100.34058.md,0
 docs/passwordsecure/current/introduction/versionhistory/version_26.3.101.34065.md,0
 docs/passwordsecure/current/introduction/versionhistory/version_26.4.10.34111.md,0
+docs/passwordsecure/current/introduction/versionhistory/version_26.5.1.34120.md,0
 docs/passwordsecure/current/introduction/versionhistory/version_history.md,0
 docs/passwordsecure/current/introduction/versioning_scheme.md,0
 docs/passwordsecure/current/maintenance/eccmigration/ecc_migration_administrator_manual.md,0
@@ -725,3 +726,4 @@ docs/passwordsecure/current/maintenance/eccmigration/ecc_migration_user_manual.m
 docs/passwordsecure/current/maintenance/eccmigration/ecc_migration.md,0
 docs/passwordsecure/current/maintenance/moving_the_server.md,0
 docs/passwordsecure/current/maintenance/update.md,0
+docs/passwordsecure/current/msp_system.md,0

@@ -15,7 +15,7 @@
  *   docs-audit/<product>/_meta.json          - scan counts and exclusion reasons
  *   docs-audit/_orphans.csv                   - tracked files in no registered version
  *
- * Review status (reviewer/audited/fixed/notes) lives in the imported
+ * Review status (reviewer/audited/accurate/complete/notes) lives in the imported
  * spreadsheet, not in this repo, so regenerating never risks reviewer data —
  * every run produces a fresh, complete review-list.csv.
  *
@@ -502,7 +502,8 @@ function main() {
             duplicates,
             '', // reviewer
             '', // audited
-            '', // fixed
+            '', // accurate
+            '', // complete
             '', // notes
           ];
         });
@@ -510,7 +511,7 @@ function main() {
       if (!args.dry) {
         writeCsv(
           path.join(productOutDir, 'review-list.csv'),
-          ['document_title', 'version', 'live_page_url', 'source_path', 'duplicates', 'reviewer', 'audited', 'fixed', 'notes'],
+          ['document_title', 'version', 'live_page_url', 'source_path', 'duplicates', 'reviewer', 'audited', 'accurate', 'complete', 'notes'],
           rows
         );
 

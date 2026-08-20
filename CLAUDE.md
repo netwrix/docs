@@ -102,6 +102,7 @@ When a user asks for help with documentation, always use the appropriate tool:
 | `/kb-writer` | Skill | Interactive KB article content coach — depth, structure, clarity before linting |
 | `/kb-pr-open` | Skill | Last-mile KB submission helper for TSEs — lints and opens a PR to `dev` |
 | `/kb-pr-review` | Skill | Reviews a KB PR (Vale + Dale + Derek) and drafts a review comment |
+| `/audit-fix` | Skill | Applies a docs-audit correction to a page and its duplicate versions |
 | `tech-writer` | Agent | Autonomous end-to-end doc writing/editing |
 | `vale-rule-writer` | Agent | Creates new Vale rules |
 | `vale-auditor` | Agent | Audits Vale rule set for conflicts |

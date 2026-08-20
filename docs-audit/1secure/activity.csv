@@ -12,9 +12,14 @@ docs/1secure/admin/datacollection/activedirectoryauditing/permissionsadcontainer
 docs/1secure/admin/datacollection/activedirectoryauditing/permissionsregistrykeys.md,0
 docs/1secure/admin/datacollection/computer/backupfilesdirectories.md,0
 docs/1secure/admin/datacollection/computer/overview.md,0
+docs/1secure/admin/datacollection/entraid.md,0
+docs/1secure/admin/datacollection/exchangeonline.md,0
+docs/1secure/admin/datacollection/gmsa.md,0
 docs/1secure/admin/datacollection/logonactivity/nonadminaccount/networkaccess/networkaccess.md,0
 docs/1secure/admin/datacollection/logonactivity/nonadminaccount/nondomainadmin.md,0
+docs/1secure/admin/datacollection/logonactivity/overview.md,0
 docs/1secure/admin/datacollection/overview.md,0
+docs/1secure/admin/datacollection/sharepointonline.md,0
 docs/1secure/admin/howitworks.md,0
 docs/1secure/admin/login/login.md,0
 docs/1secure/admin/login/sso.md,0
@@ -45,8 +50,10 @@ docs/1secure/admin/searchandreports/activity.md,0
 docs/1secure/admin/searchandreports/applyfilters.md,0
 docs/1secure/admin/searchandreports/auditlogs.md,0
 docs/1secure/admin/searchandreports/billableusers.md,0
+docs/1secure/admin/searchandreports/compliance.md,0
 docs/1secure/admin/searchandreports/customreports.md,0
 docs/1secure/admin/searchandreports/exportreport.md,0
+docs/1secure/admin/searchandreports/filteroperators.md,0
 docs/1secure/admin/searchandreports/overview.md,0
 docs/1secure/admin/searchandreports/stateintime.md,0
 docs/1secure/admin/searchandreports/subscriptions.md,0
@@ -65,9 +72,11 @@ docs/1secure/configuration/admanual/protocolsandports.md,0
 docs/1secure/configuration/admanual/secondarylogonservice.md,0
 docs/1secure/configuration/computer/advancedpolicy.md,0
 docs/1secure/configuration/computer/eventlog.md,0
+docs/1secure/configuration/computer/fileserversandantivirus.md,0
 docs/1secure/configuration/computer/firewallrules.md,0
 docs/1secure/configuration/computer/localpolicy.md,0
 docs/1secure/configuration/computer/objectlevel.md,0
+docs/1secure/configuration/computer/overview.md,0
 docs/1secure/configuration/computer/protocolsandports.md,0
 docs/1secure/configuration/computer/remoteregistryservice.md,0
 docs/1secure/configuration/configureitinfrastructure.md,0
@@ -79,6 +88,7 @@ docs/1secure/configuration/logonactivity/basicauditpolicies.md,0
 docs/1secure/configuration/logonactivity/firewallrules.md,0
 docs/1secure/configuration/logonactivity/overview.md,0
 docs/1secure/configuration/logonactivity/securitylogsize.md,0
+docs/1secure/configuration/networktrafficcompression.md,0
 docs/1secure/configuration/overview.md,0
 docs/1secure/configuration/registerconfig/1secure-classifier-setup-guide.md,0
 docs/1secure/configuration/registerconfig/permissions.md,0
@@ -109,4 +119,5 @@ docs/1secure/security/accesscontrol.md,0
 docs/1secure/security/compliance.md,0
 docs/1secure/security/customerdataprivacy.md,0
 docs/1secure/security/datasecurity.md,0
+docs/1secure/security/overview.md,0
 docs/1secure/setup-and-configuration/index.md,0
