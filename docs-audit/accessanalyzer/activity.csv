@@ -307,6 +307,8 @@ docs/accessanalyzer/11.6/admin/datacollector/file/results.md,0
 docs/accessanalyzer/11.6/admin/datacollector/file/summary.md,0
 docs/accessanalyzer/11.6/admin/datacollector/file/targetfiles.md,0
 docs/accessanalyzer/11.6/admin/datacollector/fsaa/activitysettings.md,0
+docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings/appletsettings.md,0
+docs/accessanalyzer/11.6/admin/datacollector/fsaa/appletsettings/spnmapping.md,0
 docs/accessanalyzer/11.6/admin/datacollector/fsaa/azuretenantmapping.md,0
 docs/accessanalyzer/11.6/admin/datacollector/fsaa/bulkimport.md,0
 docs/accessanalyzer/11.6/admin/datacollector/fsaa/certificatemanagement/certificatemanagement.md,0
@@ -1753,6 +1755,8 @@ docs/accessanalyzer/12.0/admin/datacollector/file/results.md,0
 docs/accessanalyzer/12.0/admin/datacollector/file/summary.md,0
 docs/accessanalyzer/12.0/admin/datacollector/file/targetfiles.md,0
 docs/accessanalyzer/12.0/admin/datacollector/fsaa/activitysettings.md,0
+docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings/appletsettings.md,0
+docs/accessanalyzer/12.0/admin/datacollector/fsaa/appletsettings/spnmapping.md,0
 docs/accessanalyzer/12.0/admin/datacollector/fsaa/azuretenantmapping.md,0
 docs/accessanalyzer/12.0/admin/datacollector/fsaa/bulkimport.md,0
 docs/accessanalyzer/12.0/admin/datacollector/fsaa/certificatemanagement/certificateauthority.md,0
@@ -2011,6 +2015,14 @@ docs/accessanalyzer/12.0/admin/runninginstances/overview.md,0
 docs/accessanalyzer/12.0/admin/schedule/overview.md,0
 docs/accessanalyzer/12.0/admin/schedule/renamewizard.md,0
 docs/accessanalyzer/12.0/admin/schedule/wizard.md,0
+docs/accessanalyzer/12.0/admin/schema/fsaadc/coretables/overview.md,0
+docs/accessanalyzer/12.0/admin/schema/fsaadc/enumeration/overview.md,0
+docs/accessanalyzer/12.0/admin/schema/fsaadc/erd/overview.md,0
+docs/accessanalyzer/12.0/admin/schema/fsaadc/fkreference/overview.md,0
+docs/accessanalyzer/12.0/admin/schema/fsaadc/functions/overview.md,0
+docs/accessanalyzer/12.0/admin/schema/fsaadc/indexreference/overview.md,0
+docs/accessanalyzer/12.0/admin/schema/fsaadc/overview.md,0
+docs/accessanalyzer/12.0/admin/schema/fsaadc/views/overview.md,0
 docs/accessanalyzer/12.0/admin/schema/overview.md,0
 docs/accessanalyzer/12.0/admin/schema/sqldc/coretables/overview.md,0
 docs/accessanalyzer/12.0/admin/schema/sqldc/enumeration/overview.md,0

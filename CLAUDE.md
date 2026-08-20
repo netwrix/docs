@@ -98,6 +98,7 @@ When a user asks for help with documentation, always use the appropriate tool:
 | `/doc-pr` | Skill | Automated PR editorial review |
 | `/content-fix` | Skill | Autonomous issue-to-PR fixer for content_fix issues |
 | `/doc-pr-fix` | Skill | Autonomous PR fixer triggered by `@claude` |
+| `/audit-fix` | Skill | Applies a docs-audit Document Review correction (Error/Fix) to a page and its duplicate versions |
 | `tech-writer` | Agent | Autonomous end-to-end doc writing/editing |
 | `vale-rule-writer` | Agent | Creates new Vale rules |
 | `vale-auditor` | Agent | Audits Vale rule set for conflicts |

@@ -29,6 +29,7 @@ docs/passwordpolicyenforcer/11.2/admin/manage-policies/testpolicy.md,0
 docs/passwordpolicyenforcer/11.2/admin/password-policy-client/configuring_the_password_policy_client.md,0
 docs/passwordpolicyenforcer/11.2/admin/password-policy-client/password_policy_client.md,0
 docs/passwordpolicyenforcer/11.2/admin/ppe_tool.md,0
+docs/passwordpolicyenforcer/11.2/admin/settings.md,0
 docs/passwordpolicyenforcer/11.2/admin/systemaudit.md,0
 docs/passwordpolicyenforcer/11.2/admin/troubleshooting.md,0
 docs/passwordpolicyenforcer/11.2/admin/writeback.md,0
@@ -44,6 +45,7 @@ docs/passwordpolicyenforcer/11.2/evaluation/preparing_the_computer.md,0
 docs/passwordpolicyenforcer/11.2/evaluation/testing_the_password_policy.md,0
 docs/passwordpolicyenforcer/11.2/index.md,0
 docs/passwordpolicyenforcer/11.2/installation/disable_windows_rules.md,0
+docs/passwordpolicyenforcer/11.2/installation/domain_and_local_policies.md,0
 docs/passwordpolicyenforcer/11.2/installation/installationclient.md,0
 docs/passwordpolicyenforcer/11.2/installation/installationgpm.md,0
 docs/passwordpolicyenforcer/11.2/installation/installationserver.md,0

@@ -13,7 +13,7 @@ only holds the generated CSVs you import and the shared review guide.
 
 ```
 docs-audit/
-  template.md              # read this once — the checklist and correction-writing form
+  template.md              # the Document Review template — copy it into Xchange once per page
   _orphans.csv              # tracked doc files that belong to no registered product version
   <product>/
     review-list.csv          # import this as one tab per product
@@ -34,11 +34,12 @@ docs-audit/
    Google Sheets:  =COUNTIF(AccessAnalyzer!G:G,"Done")
    Excel:          =COUNTIF(AccessAnalyzer!G:G,"Done")
    ```
-   (column `G` is `audited` in the schema below — adjust to `fixed` or your
-   sheet's actual column letters). This updates instantly as reviewers edit
-   status cells — no refresh, no script, no export needed. (The generated
-   workbook from `npm run audit:workbook` builds this Dashboard tab for you,
-   with dropdown-restricted `audited`/`fixed` columns on every product tab.)
+   (column `G` is `audited` in the schema below — adjust to `accurate` or
+   `complete` or your sheet's actual column letters). This updates instantly
+   as reviewers edit status cells — no refresh, no script, no export needed.
+   (The generated workbook from `npm run audit:workbook` builds this Dashboard
+   tab for you, with dropdown-restricted `audited`/`accurate`/`complete`
+   columns on every product tab.)
 
 ## Review-list columns
 
@@ -51,24 +52,30 @@ docs-audit/
 | `duplicates` | generator | Blank for a normal row. If other versions of this product have an identical page, lists those versions — there's no separate row for them, this row covers all of them |
 | `reviewer` | you | Your name or initials |
 | `audited` | you | Blank, `In progress`, or `Done` |
-| `fixed` | you | Blank, `In progress`, `Done`, or `No fix necessary` |
+| `accurate` | you | Blank, `Accurate`, or `Some inaccuracies` |
+| `complete` | you | Blank, `Complete`, or `Incomplete` |
 | `notes` | you | Anything else worth flagging |
 
 ## Running an audit
 
-1. Read `template.md` once before you start — it has the full checklist and
-   the form for writing up corrections.
-2. Pick a row. Fill in `reviewer`. Open the live page (`live_page_url`) and
-   the product side by side. Work through the checklist in `template.md`.
+1. Pick a row. Fill in `reviewer`. In Xchange, copy `template.md`'s
+   **Document Review** template into a new page (via the '…' menu) and fill
+   in its `Version`, `Source Path`, and `Duplicated in` fields from this row.
+2. Open the live page (`live_page_url`) and the product side by side. Work
+   through the checklist in the template.
 3. If `duplicates` is filled in, this page is byte-identical (aside from
    version strings) to the same page in the versions listed there — those
    versions don't get their own row. Auditing this row audits all of them.
-4. If you found no problems, set `audited` to `Done` and move on. If you
-   found problems, fill out the `Where / Fix / Why` form in `template.md` and
-   paste it into Claude Code — don't write it in the spreadsheet. Follow the
-   closing instructions in `template.md` to get the fix applied, then set
-   `audited` and `fixed` once it's merged (or `fixed` to `No fix necessary` if
-   no code change was needed).
+4. Set `accurate` to `Accurate` or `Some inaccuracies`, and `complete` to
+   `Complete` or `Incomplete`, based on what you found.
+5. If you found problems, fill out the template's Corrections section (one
+   Error/Fix block per problem), then paste the whole filled-out document
+   into a Claude Code chat at the repo root — the `audit-fix` skill applies
+   the corrections, checks for duplicate versions, and reports back what it
+   changed. If you found no problems, there's nothing to hand off.
+6. Once the fix merges (or you confirm no fix was needed), set `audited` to
+   `Done` in the sheet, and fill in the template's Status and Fix Summary
+   sections in Xchange.
 
 ## Regenerating the lists
 

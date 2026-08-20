@@ -55,9 +55,15 @@ docs/privilegesecurediscovery/2.22/administration/systemmanagement/quickstartfie
 docs/privilegesecurediscovery/2.22/administration/systemmanagement/removeasystem.md,0
 docs/privilegesecurediscovery/2.22/administration/systemmanagement/restoreasystem.md,0
 docs/privilegesecurediscovery/2.22/gettingstarted.md,0
+docs/privilegesecurediscovery/2.22/installation/containerbaseddeployment/awsconfiguration.md,0
+docs/privilegesecurediscovery/2.22/installation/containerbaseddeployment/deploysecureone.md,0
+docs/privilegesecurediscovery/2.22/installation/containerbaseddeployment/overview.md,0
+docs/privilegesecurediscovery/2.22/installation/containerbaseddeployment/prerequisites.md,0
+docs/privilegesecurediscovery/2.22/installation/containerbaseddeployment/verifydeployment.md,0
 docs/privilegesecurediscovery/2.22/installation/dellpoweredge.md,0
 docs/privilegesecurediscovery/2.22/installation/dockercredentials.md,0
 docs/privilegesecurediscovery/2.22/installation/dockersecrets.md,0
+docs/privilegesecurediscovery/2.22/installation/machineprovisionidrac.md,0
 docs/privilegesecurediscovery/2.22/installation/s1clihelperutility.md,0
 docs/privilegesecurediscovery/2.22/integrations/api/advancedapireference.md,0
 docs/privilegesecurediscovery/2.22/integrations/api/apikeymanagement.md,0
