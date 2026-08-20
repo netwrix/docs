@@ -1,6 +1,6 @@
 ---
 title: Netwrix PolicyPak Presales Engineer
-sidebar_position: 1370
+sidebar_position: 1350
 tags: [certification, partners, presales, policypak]
 keywords: [training, course, certification, partners, presales, policypak]
 description: "Become a certified Presales Engineer for Netwrix PolicyPak"

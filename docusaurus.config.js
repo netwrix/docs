@@ -276,7 +276,7 @@ const config = {
       algolia: {
         // Your Algolia credentials
         appId: 'KPMSCF6G6J',
-        apiKey: '1b20f30f13a874cd46f9d5c30b01d99c', // Use the search-only API key, not the admin key
+        apiKey: 'b38509adea6e7a1189bfb0d06ca37436', // Use the search-only API key, not the admin key
         indexName: 'Production Docs',
 
         // NOTE: overridden to false by the custom SearchBar (src/theme/SearchBar), which
