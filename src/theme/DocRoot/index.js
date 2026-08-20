@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import clsx from 'clsx';
 import {HtmlClassNameProvider, ThemeClassNames} from '@docusaurus/theme-common';
 import {
@@ -11,31 +11,34 @@ import DocRootLayout from '@theme/DocRoot/Layout';
 import NotFoundContent from '@theme/NotFound/Content';
 import {findVersionlessRedirect} from '@site/src/utils/versionlessRedirect';
 
-// A product that used to have multiple versions but now ships only a single,
-// unversioned "current" version leaves old links like /docs/<product>/8_2/<rest>
-// dead. Such a path resolves inside this docs plugin instance but doesn't match
-// a real doc, so Docusaurus's DocRoot renders its own not-found content directly
-// (it never reaches the top-level 404 page/theme). We intercept that case here
-// and send the visitor to the unversioned equivalent instead.
+// A product that used to have multiple versions but now serves a single
+// unversioned one leaves old links like /docs/<product>/8_2/<rest> dead. Such a
+// path resolves inside this docs plugin instance but doesn't match a real doc,
+// so Docusaurus's DocRoot renders its own not-found content directly (it never
+// reaches the top-level 404 page/theme). We intercept that case here and send
+// the visitor to the unversioned equivalent instead.
 function DocRootNotFound() {
   const {siteConfig} = useDocusaurusContext();
   const history = useHistory();
   const location = useLocation();
-  const [checked, setChecked] = useState(false);
+
+  // Computed during render rather than held in state: the target is a pure
+  // function of the pathname, so a genuine not-found path renders its content
+  // on the first pass instead of flashing an empty render.
+  const redirectTarget = findVersionlessRedirect(
+    location.pathname,
+    siteConfig.customFields?.unversionedDocsBasePaths
+  );
 
   useEffect(() => {
-    const target = findVersionlessRedirect(
-      location.pathname,
-      siteConfig.customFields?.activeVersionsByProduct
-    );
-    if (target) {
-      history.replace(target);
-    } else {
-      setChecked(true);
+    if (redirectTarget) {
+      // Carry the query string and hash across so anchor deep links still land
+      // on the section the reader clicked.
+      history.replace(redirectTarget + location.search + location.hash);
     }
-  }, [location.pathname, history, siteConfig]);
+  }, [redirectTarget, location.search, location.hash, history]);
 
-  if (!checked) return null;
+  if (redirectTarget) return null;
   return <NotFoundContent />;
 }
 

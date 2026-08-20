@@ -7,7 +7,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { resolve } from 'path';
 import { themes as prismThemes } from 'prism-react-renderer';
-import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions } from './src/config/products.js';
+import { generateDocusaurusPlugins, generateNavbarDropdowns, PRODUCTS, versionToUrl, getDefaultVersion, getLatestVersionUrlMap, getActiveProducts, getActiveVersions, generateRouteBasePath } from './src/config/products.js';
 
 // Strip TypeScript syntax from a generated sidebar.ts and return its apisidebar array.
 // Returns [] if the file doesn't exist yet (before gen-api-docs has run).
@@ -49,6 +49,23 @@ const activeProductIds = redirectProducts.map(product => product.id);
 const activeVersionsByProduct = Object.fromEntries(
   redirectProducts.map(product => [product.id, getActiveVersions(product).map(v => v.version)])
 );
+
+// Docs base paths that currently serve pages without a version segment, used
+// client-side to redirect stale /docs/<product>/<version>/<page> links to
+// /docs/<product>/<page>. Derived from the route base path the plugin actually
+// mounts rather than from the version name: a lone version named 'current' can
+// still carry a customRoutePath (docs/identitymanager/current) and serve
+// versioned URLs, so comparing against product.path is what makes the
+// "unversioned" inference hold.
+const unversionedDocsBasePaths = redirectProducts
+  .map(product => {
+    const versions = getActiveVersions(product);
+    if (versions.length !== 1) return null;
+    const [version] = versions;
+    const routeBasePath = version.customRoutePath || generateRouteBasePath(product.path, version.version);
+    return routeBasePath === product.path ? `/${routeBasePath}` : null;
+  })
+  .filter(Boolean);
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -122,6 +139,7 @@ const config = {
   customFields: {
     activeProductIds,
     activeVersionsByProduct,
+    unversionedDocsBasePaths,
   },
   clientModules: ['./src/clientModules/scrollBehavior.js'],
   presets: [

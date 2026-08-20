@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {translate} from '@docusaurus/Translate';
 import {PageMetadata} from '@docusaurus/theme-common';
 import {useHistory, useLocation} from '@docusaurus/router';
@@ -11,21 +11,26 @@ export default function Index() {
   const {siteConfig} = useDocusaurusContext();
   const history = useHistory();
   const location = useLocation();
-  const [checked, setChecked] = useState(false);
+
+  // The target is a pure function of the pathname, so compute it during render
+  // instead of holding it in state. That keeps the prerendered 404.html intact:
+  // during SSG the pathname is /404.html, which never matches, so the static
+  // page still gets its Layout, content, and title for crawlers and
+  // JS-disabled visitors.
+  const redirectTarget = findVersionlessRedirect(
+    location.pathname,
+    siteConfig.customFields?.unversionedDocsBasePaths
+  );
 
   useEffect(() => {
-    const target = findVersionlessRedirect(
-      location.pathname,
-      siteConfig.customFields?.activeVersionsByProduct
-    );
-    if (target) {
-      history.replace(target);
-    } else {
-      setChecked(true);
+    if (redirectTarget) {
+      // Carry the query string and hash across so anchor deep links still land
+      // on the section the reader clicked.
+      history.replace(redirectTarget + location.search + location.hash);
     }
-  }, [location.pathname, history, siteConfig]);
+  }, [redirectTarget, location.search, location.hash, history]);
 
-  if (!checked) return null;
+  if (redirectTarget) return null;
 
   const title = translate({
     id: 'theme.NotFound.title',

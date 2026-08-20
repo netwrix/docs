@@ -1,24 +1,41 @@
 // Matches a version-style URL segment, e.g. "8_2", "12", "3_3_1".
 const VERSION_SEGMENT_RE = /^\d+(?:_\d+)*$/;
 
-// For a product that used to have multiple versions but now ships only a single,
-// unversioned "current" version, an old link like /docs/<product>/8_2/<rest> is
-// dead. If the unversioned equivalent /docs/<product>/<rest> exists, this returns
-// its path so the caller can redirect there instead of showing a 404. Works for
-// any old version number, since it strips whatever version-shaped segment is
-// present rather than matching a specific hardcoded list.
-export function findVersionlessRedirect(pathname, activeVersionsByProduct) {
-  const match = pathname.match(/^\/docs\/([^/]+)\/(.+)$/);
-  if (!match) return null;
-  const [, productId, rest] = match;
+// For a product that used to have multiple versions but now ships only a
+// single, unversioned version, an old link like /docs/<product>/8_2/<rest> is
+// dead. This strips the stale version segment and returns the unversioned path
+// /docs/<product>/<rest> so the caller can redirect there instead of showing a
+// 404. Works for any old version number, since it strips whatever
+// version-shaped segment is present rather than matching a hardcoded list.
+//
+// `unversionedDocsBasePaths` is built in docusaurus.config.js from each
+// product's real route base path, so a product that serves versioned URLs is
+// never listed — including one whose single version is named 'current' but
+// carries a customRoutePath like docs/identitymanager/current.
+//
+// The target is not checked for existence: an old link whose page is genuinely
+// gone is rewritten to the unversioned 404 rather than the versioned one. That
+// can't loop, because the rewritten path's first segment is no longer
+// version-shaped.
+export function findVersionlessRedirect(pathname, unversionedDocsBasePaths) {
+  // Each base path is matched with a trailing slash so that products whose base
+  // path is a string prefix of another's (platgovnetsuite vs
+  // platgovnetsuiteflashlight) can't match each other.
+  const basePath = unversionedDocsBasePaths?.find((base) =>
+    pathname.startsWith(`${base}/`)
+  );
+  if (!basePath) return null;
 
-  const versions = activeVersionsByProduct?.[productId];
-  const isSingleCurrentVersionProduct =
-    versions && versions.length === 1 && versions[0] === 'current';
-  if (!isSingleCurrentVersionProduct) return null;
+  // Empty segments are dropped so a version root matches with or without a
+  // trailing slash: /docs/1secure/8_2 and /docs/1secure/8_2/ both redirect to
+  // the product root.
+  const [maybeVersion, ...restSegments] = pathname
+    .slice(basePath.length + 1)
+    .split('/')
+    .filter(Boolean);
+  if (!maybeVersion || !VERSION_SEGMENT_RE.test(maybeVersion)) return null;
 
-  const [maybeVersion, ...restSegments] = rest.split('/');
-  if (!VERSION_SEGMENT_RE.test(maybeVersion) || restSegments.length === 0) return null;
-
-  return `/docs/${productId}/${restSegments.join('/')}`;
+  return restSegments.length > 0
+    ? `${basePath}/${restSegments.join('/')}`
+    : `${basePath}/`;
 }
