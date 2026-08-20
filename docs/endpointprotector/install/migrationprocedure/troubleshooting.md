@@ -88,6 +88,18 @@ If `syslog-ng` isn't running, restart the service and confirm SIEM event deliver
 
 ---
 
+### SSO Login Fails After Migration When the Server Uses an IP Address Instead of an FQDN
+
+**Symptom:** After restoring the backup on the new server, users can't log in via SSO. The identity provider returns an error, or the login redirect fails.
+
+**Cause:** The SSO response/callback URL is tied to the server address configured before migration. If the administrator assigned a different IP address (Option B) rather than an FQDN to the new server, the previously configured SSO response URL no longer matches, and the identity provider rejects the authentication response.
+
+**Resolution:** Reviewing the SSO configuration after restore is mandatory whenever the new server uses an IP address instead of an FQDN. Choose one of the following:
+1. Manually recreate the SSO configuration in **System Configuration → SSO / Single Sign-On** with the updated response/callback URL, and update the corresponding redirect URI registered in your identity provider.
+2. Raise a Netwrix Support case to have the SSO configuration updated on the backend.
+
+---
+
 ### Cleaning Up and Recreating an Audit Configuration
 
 **Symptom:** The Audit Log Backup job is stuck, unresponsive, or you need to reset an Audit configuration after migration.
