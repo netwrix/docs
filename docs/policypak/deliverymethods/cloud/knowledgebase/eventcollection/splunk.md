@@ -6,17 +6,23 @@ sidebar_position: 20
 
 # PolicyPak Cloud Event Forwarding to Splunk
 
-Netwrix PolicyPak Cloud customers are entitled to have one day of
-PolicyPak Least Privilege Manager logs stored in PolicyPak Cloud for
-free. If this is not yet enabled for your PolicyPak Cloud tenant, simply open a ticket
-to PolicyPak Support.
+:::warning
+PolicyPak Cloud no longer includes this functionality as of version 25.8.4354.
+:::
 
-If more than one day of storage is needed, PolicyPak Cloud customers must pay a fee.
+Netwrix PolicyPak Cloud customers can store one day of
+PolicyPak Least Privilege Manager logs in PolicyPak Cloud for
+free. If your PolicyPak Cloud tenant doesn't have this enabled yet, open a ticket
+with PolicyPak Support.
 
-As an alternative, customers can use the PolicyPak Cloud Event Forwarding to Splunk
-mechanism, which is free of charge. Follow these steps to configure this option.
+PolicyPak Cloud customers who need more than one day of storage must pay a fee.
 
-**Step 1 –** . Start out by logging into login.splunk.com and get your URL. You will also need you
+As an alternative, customers can use the free PolicyPak Cloud Event Forwarding to Splunk
+mechanism.
+
+## Configure event forwarding to Splunk
+
+**Step 1 –** Log in to login.splunk.com and get your URL. You also need your
 Splunk Access Token
 ([https://docs.splunk.com/observability/en/admin/authentication-tokens/api-access-tokens.html](https://docs.splunk.com/observability/en/admin/authentication-tokens/api-access-tokens.html)
 and
@@ -24,13 +30,13 @@ and
 ). You will need both the URL and API Token during these steps.
 
 :::note
-These directions will send data to Splunk Cloud, but the process is similar to on-prem
-Splunk. Make sure your on-prem Splunk is configured correctly to accept data sources from the
+These directions send data to Splunk Cloud, but the process is similar to on-prem
+Splunk. Configure your on-prem Splunk to accept data sources from the
 Internet.
 :::
 
 
-**Configure Event Forwarder in PP Cloud**
+**Configure Event Forwarder in PolicyPak Cloud**
 
 **Step 2 –** Navigate to [https://cloud.policypak.com/,](https://cloud.policypak.com/) go to
 **Company details** > **Event Forwarder List** > **Add Event Forwarder** .
@@ -39,15 +45,15 @@ Internet.
 
 ![976_3_3](/images/policypak/cloud/eventcollection/976_3_3.webp)
 
-**Step 3 –** Configure and save the new **Event Forwarder**. Please be aware that you must be a
-**Notification Option Admin**' role member. One-time Password is required for saving **Event
-Forwarder** config for extra security.
+**Step 3 –** Configure and save the new **Event Forwarder**. You must be a member of the
+**Notification Option Admin** role. For extra security, saving the **Event
+Forwarder** configuration requires a one-time password.
 
-You may may usethe **Validate** button to check the credentials before saving.
+You can use the **Validate** button to check the credentials before saving.
 
 **Step 4 –** Check the forwarding events state in the Collected Events report.
 
-**Step 5 –** InPolicyPak Cloud confirm that events are forwarded as expected.
+**Step 5 –** In PolicyPak Cloud, confirm that event forwarding works as expected.
 
 ![976_2_2](/images/policypak/cloud/eventcollection/976_2_2.webp)
 
@@ -56,7 +62,7 @@ You may may usethe **Validate** button to check the credentials before saving.
 
 **Step 7 –** View the forwarded events in Splunk..
 
-**Step 8 –** To make sure the events are appearing in Splunk, Navigate to Splunk Home  and  enter
+**Step 8 –** To confirm the events appear in Splunk, navigate to Splunk Home and enter
 the user name and password.
 
 **Step 9 –** Click **Search & Reporting** enter index=**history** filter, then click the **Search**
