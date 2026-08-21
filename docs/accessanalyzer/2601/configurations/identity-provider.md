@@ -11,7 +11,7 @@ Access Analyzer supports federation with your organization's identity system so 
 Setting up an identity provider connection is a two-part process: first you configure the integration in your identity system, then you prepare user accounts inside Access Analyzer.
 
 :::note
-Before continuing, confirm that the infrastructure and network requirements for your IdP type are in place. See [Network and Port Requirements](../install/system/network.md) and [TLS Certificate Requirements](../install/system/certificates.md).
+Before continuing, confirm that the infrastructure and network requirements for your identity provider (IdP) type are in place. See [Network and Port Requirements](../install/system/network.md) and [TLS Certificate Requirements](../install/system/certificates.md).
 :::
 
 ## Supported integration types
@@ -60,7 +60,7 @@ Complete the following steps in the Azure Portal before connecting Access Analyz
 1. Open **Azure Portal** > **Entra ID** > **App registrations** > **New registration**.
 2. Name the application and click **Register**.
 3. Open the registration > **Authentication** > **Add a platform** > **Web**, and add the redirect URI shown on the Access Analyzer setup wizard's **Entra ID** step.
-4. Go to **Certificates & secrets** > **New client secret**. Set an expiry that fits your rotation policy and copy the value immediately — it's only shown once.
+4. Go to **Certificates & secrets** > **New client secret**. Set an expiry that fits your rotation policy and copy the value immediately — the portal shows it only once.
 
 Collect the following values:
 
@@ -85,7 +85,7 @@ Navigate to `https://<your-hostname>` and sign in with the first admin's email a
 Before a user can sign in through the identity provider, their account must exist in Access Analyzer. The application authenticates them against your IdP successfully but denies access if no matching account exists.
 
 :::note
-The email address entered during pre-provisioning must exactly match the address sent by the IdP or stored in the LDAP `mail` attribute, including case. A mismatch causes sign-in to fail.
+The email address you enter during pre-provisioning must exactly match the address the IdP sends or the address in the LDAP `mail` attribute, including case. A mismatch causes sign-in to fail.
 :::
 
 1. Navigate to **Configuration** > **Users**.
@@ -94,7 +94,7 @@ The email address entered during pre-provisioning must exactly match the address
 4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer** (see [Roles](#roles)).
 5. Click **Create User**.
 
-No password is required for pre-provisioned accounts. For details on managing users, see [Users](users.md).
+Pre-provisioned accounts don't require a password. For details on managing users, see [Users](users.md).
 
 ### Roles
 
@@ -111,7 +111,7 @@ Access Analyzer has three roles. The installer assigns the first admin account t
 
 <!-- END SYNC -->
 
-## How sign-in works after IdP is configured
+## How sign-in works after IdP configuration
 
 When identity provider integration is active, the Access Analyzer login page presents a credential form that validates against your directory.
 
@@ -124,7 +124,7 @@ Sessions are valid for up to 8 hours from sign-in and expire after 4 hours of in
 | Item | Detail |
 | --- | --- |
 | **Pre-provisioning required** | Users must have an account in Access Analyzer before their first sign-in. |
-| **Email must match exactly** | The email entered during pre-provisioning must match what the IdP or LDAP directory sends, including case. |
+| **Email must match exactly** | The email you enter during pre-provisioning must match what the IdP or LDAP directory sends, including case. |
 | **Roles managed in Access Analyzer** | You set roles and permissions in Access Analyzer, not in your IdP or directory. |
 | **Local accounts coexist** | The administrator account created at deployment remains a local account and continues to sign in with a password. |
 | **Password reset unavailable for federated accounts** | The **Reset Password** action in the Users page is available for local accounts only. Federated users manage their credentials through your IdP. |

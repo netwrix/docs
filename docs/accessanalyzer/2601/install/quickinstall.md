@@ -21,7 +21,7 @@ Before running the installer, confirm the following:
 
 ### System requirements
 
-**Absolute installer minimums (enforced by preflight):** 6 vCPUs, 24 GB RAM, 20 GB free disk on `/`. The preflight check blocks installation if the system falls below these thresholds.
+**Absolute installer minimums:** 6 vCPUs, 24 GB RAM, 20 GB free disk on `/`. The preflight check blocks installation if the system falls below these thresholds.
 
 Choose a deployment size based on your environment:
 
@@ -51,7 +51,7 @@ Choose a deployment size based on your environment:
 :::
 
 :::note
-If running on a hypervisor, configure **static memory allocation** (not dynamic/ballooned memory). See [Hardware and System Requirements](/docs/accessanalyzer/2601/install/system/requirements) for hypervisor-specific instructions.
+If the server runs on a hypervisor, configure **static memory allocation** (not dynamic/ballooned memory). See [Hardware and System Requirements](/docs/accessanalyzer/2601/install/system/requirements) for hypervisor-specific instructions.
 
 - **VMware vSphere:** disable memory ballooning (`mem.balloon.enable = "FALSE"`)
 - **Hyper-V:** use static memory (`Set-VMMemory -DynamicMemoryEnabled $false`)
@@ -77,7 +77,7 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 | Option | What It Does | Best For | What to Prepare |
 | --- | --- | --- | --- |
 | **Generate self-signed** | Installer generates a certificate automatically — no CA involvement | Quick evaluations and proof-of-concept installs. Not for production — browsers will show a security warning | Nothing — installer handles it |
-| **Sign with AD Certificate Services** | Installer generates a CSR and submits it to your organization's AD CS, where your internal Enterprise CA signs it | Enterprise environments where AD CS is already deployed and the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
+| **Sign with AD Certificate Services** | Installer generates a certificate signing request (CSR) and submits it to your organization's Active Directory Certificate Services (AD CS), where your internal Enterprise CA signs it | Enterprise environments that already run AD CS and where the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
 | **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see [file requirements](#bring-your-own-certificate-file-requirements) |
 
 #### Bring your own certificate file requirements
@@ -238,7 +238,7 @@ An **Advanced Settings** step lets you pin to a specific chart **Target Revision
 
 ### Step 5: Review the installation summary
 
-When the installer finishes, it prints a summary with the application URL, the first admin's temporary password, and required follow-up actions. **Save the password shown here** — it isn't displayed again.
+When the installer finishes, it prints a summary with the application URL, the first admin's temporary password, and required follow-up actions. **Save the password shown here** — the installer doesn't display it again.
 
 ```
 DSPM Installation Complete
@@ -300,7 +300,7 @@ sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
   -o jsonpath='{.data.password}' | base64 -d; echo
 ```
 
-This only returns the original temporary password — once you change it, use the app's password reset flow, or contact Netwrix Support if the first admin account becomes inaccessible.
+This only returns the original temporary password — after you change it, use the app's password reset flow, or contact Netwrix Support if the first admin account becomes inaccessible.
 
 ---
 
