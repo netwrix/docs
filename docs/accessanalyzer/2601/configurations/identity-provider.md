@@ -28,7 +28,7 @@ The installer provisions a local administrator account so you can sign in and st
 On first sign-in, the setup wizard prompts you to connect Active Directory or Entra ID:
 
 - **Connect now** — select **Active Directory** or **Entra ID** and complete the fields in [Part 1](#part-1-configure-your-identity-provider).
-- **Set up later** — skip the wizard and go directly into the app using the local admin account. You keep full access, and the wizard stays reachable at any time by browsing to `/setup`.
+- **Set up later** — skip the wizard and go directly into the app using the local admin account. You keep full access, and you can revisit the wizard anytime at `/setup`.
 
 ## Part 1: Configure your identity provider
 
@@ -60,7 +60,7 @@ Complete the following steps in the Azure Portal before connecting Access Analyz
 1. Open **Azure Portal** > **Entra ID** > **App registrations** > **New registration**.
 2. Name the application and click **Register**.
 3. Open the registration > **Authentication** > **Add a platform** > **Web**, and add two redirect URIs:
-   - The URI shown on the Access Analyzer setup wizard's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — used once, for the admin-consent step below.
+   - The URI shown on the Access Analyzer setup wizard's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — used once, during the admin-consent step.
    - `https://<your-hostname>/idps/callback` — used every time a user signs in with Entra ID.
 4. Go to **Certificates & secrets** > **New client secret**. Set an expiry that fits your rotation policy and copy the value immediately — the portal shows it only once.
 
@@ -75,20 +75,20 @@ Collect the following values:
 Enter these values in the Access Analyzer setup wizard and click **Sign in with Microsoft and continue**. A popup prompts a **Global Administrator** or **Privileged Role Administrator** to sign in and grant consent for Access Analyzer to read the directory.
 
 :::note
-Both redirect URIs must be registered before anyone signs in with Entra ID. The setup wizard's callback completes the connection; `/idps/callback` is Microsoft's redirect target for every subsequent sign-in — omitting it lets you finish setup but blocks sign-in with an `AADSTS50011` redirect URI mismatch.
+Register both redirect URIs before anyone signs in with Entra ID. The setup wizard's callback completes the connection; `/idps/callback` is Microsoft's redirect target for every subsequent sign-in — omitting it lets you finish setup but blocks sign-in with an `AADSTS50011` redirect URI mismatch.
 :::
 
 ## Part 2: Prepare Access Analyzer
 
 ### First sign-in
 
-The installer provisions a local first administrator account automatically during installation — the person whose email you entered at the **First Admin Email** prompt can sign in immediately using the temporary password shown in the installation summary. See [First admin account](../install/quickinstall.md#first-admin-account).
+The installer provisions a local first administrator account during installation — the person whose email you entered at the **First Admin Email** prompt can sign in immediately using the temporary password shown in the installation summary. See [First admin account](../install/quickinstall.md#first-admin-account).
 
 Navigate to `https://<your-hostname>` and sign in with the first admin's email and temporary password, then set a new password when prompted. The setup wizard then prompts you to connect Active Directory or Entra ID — or select **Set up later** to go directly into the app and revisit the wizard anytime at `/setup`.
 
 ### Pre-provision user accounts
 
-Before a user can sign in through the identity provider, their account must exist in Access Analyzer. The application authenticates them against your IdP successfully but denies access if no matching account exists.
+Before a user can sign in through the identity provider, their account must exist in Access Analyzer. The application successfully authenticates them against your IdP but denies access if no matching account exists.
 
 :::note
 The email address you enter during pre-provisioning must exactly match the address the IdP sends or the address in the LDAP `mail` attribute, including case. A mismatch causes sign-in to fail.
