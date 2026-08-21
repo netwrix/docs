@@ -1,12 +1,12 @@
 ---
 title: "Quick Install"
-description: "Install Access Analyzer on a fresh Linux VM with Active Directory authentication, end-to-end"
+description: "Install Access Analyzer on a fresh Linux VM, end-to-end"
 sidebar_position: 5
 ---
 
 # Quick Install
 
-This guide covers installing Access Analyzer on a fresh Linux VM with **Active Directory** as the identity provider.
+This guide covers installing Access Analyzer on a fresh Linux VM. The installer provisions a local administrator account so you can sign in immediately after installation. To let users sign in with Active Directory or Entra ID instead, configure an identity provider afterward — see [Identity Provider](../configurations/identity-provider.md).
 
 ## Prerequisites Checklist
 
@@ -16,9 +16,7 @@ Before running the installer, confirm the following:
 - [ ] Outbound HTTPS access confirmed to all required domains
 - [ ] Server hostname is a fully qualified domain name (FQDN) that resolves to the server IP
 - [ ] TLS certificate option chosen; certificate files prepared if using Bring Your Own
-- [ ] AD/DC Root CA bundle file prepared and placed on the server
-- [ ] Active Directory service account details collected
-- [ ] First admin email address confirmed (must match the AD `mail` attribute exactly)
+- [ ] First admin name and email address decided (this provisions a local account — no AD/Entra dependency)
 - [ ] Netwrix license key ready
 
 ### System requirements
@@ -82,31 +80,27 @@ The installer offers three ways to provision the server's TLS certificate. Choos
 | **Sign with AD Certificate Services** | Installer generates a CSR and submits it to your organization's AD CS, where your internal Enterprise CA signs it | Enterprise environments where AD CS is already deployed and the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
 | **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see [file requirements](#bring-your-own-certificate-file-requirements) |
 
-:::note
-**You must always provide an AD/DC Root CA Bundle regardless of which TLS option you choose.** Even if the installer generates your server certificate, it still needs a separate CA file to trust the connection to your domain controller. See [Active Directory information](#bring-your-own-certificate-file-requirements).
-:::
-
 #### Bring your own certificate file requirements
 
-If you selected **Bring your own certificate**, prepare the following three files and place them in `/opt/dspm-tls/` on the server before running the installer:
+If you selected **Bring your own certificate**, prepare the following three files and place them in `/etc/dspm/` on the server before running the installer:
 
 ```bash
-sudo mkdir -p /opt/dspm-tls
+sudo mkdir -p /etc/dspm
 ```
 
 | File | What It Is |
 | --- | --- |
 | `<hostname>.crt` | Server identity certificate in PEM format. The Subject Alternative Name (SAN) list must include the hostname **in lowercase** and the server's IP address. |
 | `<hostname>.key` | Private key paired with the certificate (PEM). The OS user running the installer must be able to read it — not just `root`. |
-| `ca-bundle.crt` | CA certificates that trust the server certificate. If the CA that signed the server certificate and the CA that signed the domain controller's LDAPS certificate are different, concatenate both — see [Active Directory information](#bring-your-own-certificate-file-requirements). |
+| `ca-bundle.crt` | CA certificates that trust the server certificate. Required only if an internal or private CA signs the certificate — omit it for a publicly trusted certificate. |
 
 **SAN requirement:** The hostname in the SAN list must be lowercase. Browsers normalize hostnames to lowercase during TLS validation — a case mismatch causes HTTP 401 failures at sign-in. The SAN must also include the server IP address.
 
 ```bash
-sudo chown $(whoami) /opt/dspm-tls/<hostname>.key
-sudo chmod 644 /opt/dspm-tls/<hostname>.key
+sudo chown $(whoami) /etc/dspm/<hostname>.key
+sudo chmod 644 /etc/dspm/<hostname>.key
 
-sudo cp /opt/dspm-tls/ca-bundle.crt /usr/local/share/ca-certificates/dspm-ca.crt
+sudo cp /etc/dspm/ca-bundle.crt /usr/local/share/ca-certificates/dspm-ca.crt
 sudo update-ca-certificates
 ```
 
@@ -114,59 +108,25 @@ sudo update-ca-certificates
 
 ```bash
 # Check that the SAN includes your hostname (lowercase) and server IP
-openssl x509 -noout -text -in /opt/dspm-tls/<hostname>.crt | grep -A5 "Subject Alternative"
+openssl x509 -noout -text -in /etc/dspm/<hostname>.crt | grep -A5 "Subject Alternative"
 
 # Verify the cert was signed by your CA bundle
-openssl verify -CAfile /opt/dspm-tls/ca-bundle.crt /opt/dspm-tls/<hostname>.crt
+openssl verify -CAfile /etc/dspm/ca-bundle.crt /etc/dspm/<hostname>.crt
 
 # Verify the key matches the cert (both md5sums must match)
-openssl pkey -pubout -in /opt/dspm-tls/<hostname>.key 2>/dev/null | md5sum
-openssl x509 -noout -pubkey -in /opt/dspm-tls/<hostname>.crt | md5sum
+openssl pkey -pubout -in /etc/dspm/<hostname>.key 2>/dev/null | md5sum
+openssl x509 -noout -pubkey -in /etc/dspm/<hostname>.crt | md5sum
 ```
 
 For the full TLS specification including SAN rules and multi-CA environments, see [TLS Certificate Requirements](system/certificates.md).
 
-### Active Directory information
-
-Gather these values from your directory team before starting. The installer wizard prompts for each one.
-
-| Field | What It Is | Example |
-| --- | --- | --- |
-| LDAP URL | Address of your domain controller. Use port 636 (LDAPS, encrypted) — strongly recommended; port 389 (plain LDAP) is available if LDAPS isn't configured | `ldaps://dc.corp.example.com:636` |
-| Bind DN | Full Distinguished Name of a read-only service account | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` |
-| Bind Password | Password for the service account | — |
-| Users Base DN | LDAP container that holds user accounts | `CN=Users,DC=corp,DC=example,DC=com` |
-| Email Attribute | LDAP attribute storing the user's email address (usually `mail`) | `mail` |
-| AD/DC Root CA Bundle | Root CA certificate that signed the domain controller's LDAPS certificate. Required for all TLS options | `/opt/dspm-tls/ca-bundle.crt` |
-
-**Bind DN format:** The installer requires full Distinguished Name (DN) format — for example, `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com`. The installer doesn't accept User Principal Name (UPN) format (`user@domain.com`). The DN must exactly match the account's record in Active Directory.
-
-**AD/DC Root CA Bundle:** To identify which CA signed the domain controller's LDAPS certificate, run this from the Access Analyzer server:
-
-```bash
-openssl s_client -connect <dc-hostname>:636 -showcerts </dev/null 2>/dev/null \
-  | openssl x509 -noout -issuer
-```
-
-Ask your AD or PKI team for that CA's root certificate in PEM format. Place it at `/opt/dspm-tls/ca-bundle.crt`.
-
-If the server certificate CA and the DC LDAPS CA are the **same**, one file covers both:
-
-```bash
-sudo cp app-ca.crt /opt/dspm-tls/ca-bundle.crt
-```
-
-If they are **different CAs**, concatenate both into a single file:
-
-```bash
-cat app-ca.crt ldaps-ca.crt > /opt/dspm-tls/ca-bundle.crt
-```
-
 ### First admin account
 
-Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions the account automatically. That person signs in using their Active Directory password and doesn't need a separate one.
+Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
 
-The email address must match the `mail` attribute of the person's Active Directory account exactly, including case.
+The installer generates a temporary password for this account and displays it once, in the [installation summary](#step-5-review-the-installation-summary). The first admin must set a new password on their first sign-in.
+
+To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation — see [Identity Provider](../configurations/identity-provider.md).
 
 ### License key
 
@@ -270,61 +230,41 @@ If this returns a version number, the binary is ready. If it returns an error, t
 sudo dspm-installer
 ```
 
-The installer presents an interactive wizard. Have your prerequisites ready before proceeding. Installation takes 15–30 minutes.
-
-**Complete prompt reference:**
-
-The **Example** column shows representative values for illustration — enter your own values when prompted.
-
-| Prompt | Example | Notes |
-| --- | --- | --- |
-| License Key | `NWRX-XXXX-XXXX-XXXX` | Your Netwrix license key |
-| Hostname | `aa2601.corp.example.com` | Must contain a dot; must be lowercase and match the cert SAN exactly |
-| Identity Provider | `Active Directory` | Select from the list |
-| LDAP URL | `ldaps://dc.corp.example.com:636` | Use port 636 (LDAPS) — port 389 is available but unencrypted |
-| Bind DN | `CN=svc-dspm,OU=ServiceAccounts,DC=corp,DC=example,DC=com` | Full DN format required — not UPN format |
-| Bind Password | *(your service account password)* | Input is silent — no characters appear |
-| Users Base DN | `CN=Users,DC=corp,DC=example,DC=com` | The LDAP container that holds user accounts |
-| Email Attribute | `mail` | The LDAP attribute that holds the user's email address |
-| First Admin Email | `admin@corp.example.com` | Must match their AD `mail` attribute exactly, including case |
-| First Admin Name | `Jane Smith` | Used in the UI only |
-| Advanced Settings | `No` *(standard installations)* | See the following note |
-| TLS Certificate | *(select your provisioning method)* | See [TLS certificates](#tls-certificates) |
-| TLS Certificate File *(Bring your own only)* | `/opt/dspm-tls/aa2601.crt` | |
-| TLS Private Key File *(Bring your own only)* | `/opt/dspm-tls/aa2601.key` | |
-| AD/DC Root CA Bundle Path | `/opt/dspm-tls/ca-bundle.crt` | Required for all TLS options |
+The installer presents an interactive wizard: license key, hostname, first admin name and email, and TLS certificate file paths. Each prompt shows an example value and validates your input before moving on — accept a suggested default by pressing **Enter**, or run `dspm-installer --help` for the full flag reference. Installation takes 15–30 minutes.
 
 :::note
-**Advanced Settings** exposes the **Target Revision** prompt — pin to a specific chart version (for example, `1.5.0`), or leave empty to stay on the latest release. Use this to control when upgrades happen during your organization's patching cycle.
+An **Advanced Settings** step lets you pin to a specific chart **Target Revision** (for example, `1.5.0`) instead of installing the latest release. Leave it empty for standard installations.
 :::
 
 ### Step 5: Review the installation summary
 
-When the installer finishes, it displays a summary screen. Review it before proceeding — it includes the application URL, required actions, and useful paths.
-
-:::note
-You can skip this step if you're signing in for the first time and only need to add users and assign roles. Return to complete the required actions before using `kubectl` or configuring firewall rules.
-:::
+When the installer finishes, it prints a summary with the application URL, the first admin's temporary password, and required follow-up actions. **Save the password shown here** — it isn't displayed again.
 
 ```
 DSPM Installation Complete
 
 ## Access Analyzer Web Application
 
-• URL: https://<your-hostname>
-• Administrator account provisioned for <first-admin-email>
-• Check application status: kubectl get pods -n access-analyzer
+- URL: https://<your-hostname>
+- Check application status: kubectl get pods -n access-analyzer
+
+## First Admin Credentials
+
+- Username: <first-admin-email>
+- Password: <generated-password>
+
+Log in at the URL above and complete the required first-login setup.
 
 ## DSPM Command Line Tool
 
 Path: /usr/local/bin/dspmctl
 
-For detailed usage: /usr/local/bin/dspmctl --help
+For detailed usage: dspmctl --help
 
 ## Required Actions
 
-• Ensure firewall allows inbound port 443
-• Log out and back in (or run newgrp dspm) to activate kubectl access
+- Ensure firewall allows inbound port 443
+- Log out and back in (or run newgrp dspm) to activate kubectl access
 
 ## Granting kubectl Access to Additional Users
 
@@ -336,29 +276,31 @@ For detailed usage: /usr/local/bin/dspmctl --help
 Installation log: /var/log/dspm-installer.log
 ```
 
-**Complete the required actions before signing in:**
+Complete the required actions before continuing:
 
 1. Confirm that inbound port 443 is open on the server's firewall.
 2. Log out of your current SSH session and log back in, or run `newgrp dspm`, to activate `kubectl` access for your user. Commands like `kubectl get pods` will not work until you do this.
 
+:::note
+The first admin account signs in with the **local** username and password from the installation summary — not an Active Directory or Entra ID password. You must set a new password on your first sign-in.
+:::
+
 ### Step 6: Sign in
 
-Navigate to `https://<your-hostname>` in a browser. Sign in using the first admin email address and the corresponding Active Directory password.
+Navigate to `https://<your-hostname>` in a browser. Sign in with the first admin email address and the temporary password from the installation summary, then set a new password when prompted.
 
 From here, add additional users under **Configuration** > **Users**.
 
-#### Breakglass account
+**Next step:** to let users sign in with Active Directory or Entra ID instead of local passwords, follow [Identity Provider](../configurations/identity-provider.md) to connect your identity provider — or select **Set up later** in the app and revisit it anytime at `/setup`.
 
-The installer also creates a bootstrap administrator account (`admin@dspm.local`) as a recovery mechanism. If the first admin account becomes inaccessible, use this account to regain access:
+If you lose the temporary password before completing first sign-in, retrieve it again from the Kubernetes secret the installer created:
 
 ```bash
 sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
   -o jsonpath='{.data.password}' | base64 -d; echo
 ```
 
-:::warning
-Don't change the bootstrap account email address — doing so causes authentication failures.
-:::
+This only returns the original temporary password — once you change it, use the app's password reset flow, or contact Netwrix Support if the first admin account becomes inaccessible.
 
 ---
 
@@ -462,7 +404,7 @@ This table also appears at [Configuration > Identity Provider > Roles](../config
 | Role | Description |
 | --- | --- |
 | **Administrator** | Full access: system configuration (sources, scans, connectors, application settings) and user management (create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users). |
-| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. The bootstrap `admin@dspm.local` account has this role. |
+| **User Admin** | User and role management rights only: create, edit, activate, deactivate, and delete users; assign roles; pre-provision federated users. Does **not** have system configuration rights. |
 | **Viewer** | Read-only access to data and reports. No configuration or user management rights. |
 
 The **User Admin** role provides a dedicated account for user management with no system configuration access — useful for delegating user administration separately from system configuration.
@@ -476,7 +418,7 @@ For certificate-specific issues, see [TLS Certificate Requirements — Troublesh
 | Symptom | Likely cause | Fix |
 | --- | --- | --- |
 | Sign-in returns HTTP 401 with correct credentials | SAN hostname is mixed-case; browser normalized it to lowercase | Re-issue the certificate with lowercase hostname in the SAN list |
-| Installer exits with "Failed to read TLS private key" | Key file owned by `root`, installer runs as non-root user | `sudo chown <install-user> /opt/dspm-tls/<hostname>.key` |
+| Installer exits with "Failed to read TLS private key" | Key file owned by `root`, installer runs as non-root user | `sudo chown <install-user> /etc/dspm/<hostname>.key` |
 | Sign-in silently fails with `PKIX path building failed` in Keycloak logs | CA bundle is missing the LDAPS DC's CA | Concatenate the DC's LDAPS CA into the bundle and re-run the installer |
 | Browser rejects the application URL with a SAN mismatch error | Hostname entered as an IP address, or SAN doesn't include the hostname in use | Use a DNS hostname and verify the cert SAN list |
 | Pods not starting after installation | Outbound HTTPS blocked to one or more required endpoints | Verify connectivity to all domains in [Required Domains](#required-domains) |
@@ -516,5 +458,5 @@ See [Uninstalling Access Analyzer](uninstall.md) for the complete uninstall proc
 
 After uninstalling:
 
-- **Same VM**: your certificates are already in place at `/opt/dspm-tls/`. Skip the certificate preparation steps and restart at [Step 1](#step-1-ssh-into-the-server).
-- **New VM, same CA**: upload the same certificate files to `/opt/dspm-tls/` on the new VM (see [TLS certificates](#tls-certificates)), then continue with [Step 1](#step-1-ssh-into-the-server).
+- **Same VM**: your certificates are already in place at `/etc/dspm/`. Skip the certificate preparation steps and restart at [Step 1](#step-1-ssh-into-the-server).
+- **New VM, same CA**: upload the same certificate files to `/etc/dspm/` on the new VM (see [TLS certificates](#tls-certificates)), then continue with [Step 1](#step-1-ssh-into-the-server).
