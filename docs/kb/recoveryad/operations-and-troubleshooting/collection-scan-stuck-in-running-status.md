@@ -20,7 +20,7 @@ tags:
   - kb
   - operations-and-troubleshooting
 products:
-  - recovery-active-directory
+  - identityrecovery
 sidebar_label: Collection Scan Stuck in Running Status
 title: "Collection Scan Stuck in Running Status"
 ---
@@ -37,7 +37,7 @@ The scan hung during its collection step. Netwrix Identity Recovery does not app
 
 ## Resolution
 
-1. In your SQL Server Management Studio instance, locate the Netwrix Identity Recovery database. The default name is `NetwrixRecovery`.
+1. In your SQL Server Management Studio instance, locate the Identity Recovery database. The default name is `NetwrixRecovery`.
 2. Run a query to find the stuck task instance for the affected task:
 
 ```sql
@@ -50,10 +50,10 @@ SELECT TOP 1 * FROM TaskInstances WHERE TaskID = '%taskID%' ORDER BY ID DESC
 UPDATE TaskInstances SET Status = 8 WHERE ID = '%targetID%'
 ```
 
-4. Restart the **Netwrix Recovery Task Server** service on the Netwrix Identity Recovery server.
+4. Restart the `Netwrix Recovery Task Server` service on the Identity Recovery server.
 5. In the console, start a new scan for the affected domain, tenant, or org.
 
-## TaskInstances.Status values
+## TaskInstances.Status Values
 
 | Value | Meaning |
 |---|---|
