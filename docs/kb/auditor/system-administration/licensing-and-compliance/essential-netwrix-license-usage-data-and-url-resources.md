@@ -7,7 +7,7 @@ keywords:
   - Netwrix Auditor
   - whitelist URLs
   - license.nwxcorp
-  - stats.netwrix.com
+  - stats.nwxcorp.com
   - updates.netwrix.com
   - netwrix.com
 products:
@@ -39,6 +39,6 @@ If a Netwrix server in your environment has limited Internet access, whitelist t
 https://license.nwxcorp.com/
 http://updates.netwrix.com/
 http://www.netwrix.com/
-https://stats.netwrix.com/
+https://stats.nwxcorp.com/
 ```
 
