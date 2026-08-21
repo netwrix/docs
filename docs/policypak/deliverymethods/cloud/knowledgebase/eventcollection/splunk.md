@@ -6,6 +6,10 @@ sidebar_position: 20
 
 # PolicyPak Cloud Event Forwarding to Splunk
 
+:::warning
+This functionality was removed from PolicyPak Cloud as of version 25.8.4354.
+:::
+
 Netwrix PolicyPak Cloud customers are entitled to have one day of
 PolicyPak Least Privilege Manager logs stored in PolicyPak Cloud for
 free. If this is not yet enabled for your PolicyPak Cloud tenant, simply open a ticket
