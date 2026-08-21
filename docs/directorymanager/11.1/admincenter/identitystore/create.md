@@ -179,6 +179,29 @@ configurations for it.
 
 ## Create an Identity Store for Google Workspace
 
+### Required Google Cloud / Workspace setup
+
+- Ensure that next APIs are enabled for your Service Account in Google Cloud Console:
+   - Admin SDK API (admin.googleapis.com)
+   - Cloud Identity (cloudidentity.googleapis.com)
+   - Groups Settings API (groupssettings.googleapis.com)
+- The service account used by Directory Manager authenticates to Google Workspace via domain-wide delegation — 
+  a server-to-server method that lets it act on behalf of Workspace users and administrators without an 
+  interactive sign-in. Because this bypasses the normal per-user consent screen, Google requires a Workspace 
+  super administrator to explicitly pre-authorize, for that exact service account, the complete list of OAuth 
+  scopes it's permitted to use. Ensure that next scope is added to your Service Account in Google Workspace
+  Admin panel:
+   - https://www.googleapis.com/auth/admin.directory.group
+   - https://www.googleapis.com/auth/admin.directory.orgunit
+   - https://www.googleapis.com/auth/admin.directory.rolemanagement
+   - https://www.googleapis.com/auth/admin.directory.user
+   - https://www.googleapis.com/auth/admin.directory.userschema
+   - https://www.googleapis.com/auth/admin.reports.audit.readonly
+   - https://www.googleapis.com/auth/apps.groups.settings
+   - https://www.googleapis.com/auth/cloud-identity.groups
+
+### Create Identity Store
+
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
 Step 2 – On the Identify Stores page, click **Create Identity Store** in the top right corner.
