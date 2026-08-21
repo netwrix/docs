@@ -59,7 +59,9 @@ Complete the following steps in the Azure Portal before connecting Access Analyz
 
 1. Open **Azure Portal** > **Entra ID** > **App registrations** > **New registration**.
 2. Name the application and click **Register**.
-3. Open the registration > **Authentication** > **Add a platform** > **Web**, and add the redirect URI shown on the Access Analyzer setup wizard's **Entra ID** step.
+3. Open the registration > **Authentication** > **Add a platform** > **Web**, and add two redirect URIs:
+   - The URI shown on the Access Analyzer setup wizard's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — used once, for the admin-consent step below.
+   - `https://<your-hostname>/idps/callback` — used every time a user signs in with Entra ID.
 4. Go to **Certificates & secrets** > **New client secret**. Set an expiry that fits your rotation policy and copy the value immediately — the portal shows it only once.
 
 Collect the following values:
@@ -71,6 +73,10 @@ Collect the following values:
 | **Client secret** | Created in step 4 |
 
 Enter these values in the Access Analyzer setup wizard and click **Sign in with Microsoft and continue**. A popup prompts a **Global Administrator** or **Privileged Role Administrator** to sign in and grant consent for Access Analyzer to read the directory.
+
+:::note
+Both redirect URIs must be registered before anyone signs in with Entra ID. The setup wizard's callback completes the connection; `/idps/callback` is Microsoft's redirect target for every subsequent sign-in — omitting it lets you finish setup but blocks sign-in with an `AADSTS50011` redirect URI mismatch.
+:::
 
 ## Part 2: Prepare Access Analyzer
 
