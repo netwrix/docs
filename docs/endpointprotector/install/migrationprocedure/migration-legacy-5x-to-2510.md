@@ -401,6 +401,10 @@ Always use the **same IP/FQDN** option. The operational complexity and user impa
 If using Enforced Encryption and you change the IP/FQDN, every user with an EE-protected drive must decrypt their drive and re-encrypt it after reconnecting to the new server. This can be a major operational disruption in large organizations. Netwrix strongly discourages this.
 :::
 
+:::warning
+If you use SSO (Single Sign-On) and choose a different IP address instead of an FQDN for the new server, reviewing your SSO configuration after the backup is restored is mandatory. SSO response/callback URLs are tied to the server address used at configuration time — changing the IP breaks them. After migration, either manually recreate the SSO configuration with the updated response URL, or open a Netwrix Support case to have it updated on the backend. See [Third-Party Integration Reconfiguration](#third-party-integration-reconfiguration) in Post-Migration Verification.
+:::
+
 ### Deploying the 2510 Base Image
 
 :::tip
@@ -694,6 +698,12 @@ After reconfiguration, verify each integration is functioning:
 | SIEM / Syslog | Generate a test event; confirm it appears in the SIEM receiver |
 | AWS / S3 / File Shadows | Generate a file shadow; confirm it reaches the S3 bucket |
 
+:::warning
+**Mandatory if you used an IP address instead of an FQDN for the new server:** Review your SSO configuration after the backup is restored. The SSO response/callback URL registered against the old server address no longer matches, and SSO logins fail until this is corrected. You have two options:
+1. Manually recreate the SSO configuration in **System Configuration → SSO / Single Sign-On** with the updated response/callback URL, and update the corresponding redirect URI in your identity provider.
+2. Raise a Netwrix Support case to have the SSO configuration updated on the backend.
+:::
+
 #### Troubleshooting Failed Integrations
 
 If an integration fails verification, use the following steps:
@@ -716,7 +726,7 @@ AD Sync may appear to complete successfully but only import a partial set of use
 **Entra ID / SSO / SCIM not working:**
 1. Navigate to **System Configuration → SSO / Single Sign-On**.
 2. Re-enter tenant ID, client ID, and client secret — the backup doesn't restore these.
-3. Verify the redirect URI registered in Azure AD matches the new server address.
+3. Verify the redirect URI registered in Azure AD matches the new server address. If the new server uses an IP address instead of an FQDN, either manually recreate the SSO configuration with the updated response/callback URL, or raise a Netwrix Support case to have it updated on the backend.
 4. Perform a test SSO login in an incognito window.
 5. If SCIM provisioning is broken, re-generate the SCIM token in the EPP console and update it in Entra ID.
 

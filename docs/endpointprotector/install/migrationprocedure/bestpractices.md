@@ -86,16 +86,17 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 | 38 | Document all integration credentials and settings before migration — have them ready for re-entry post-restore. |
 | 39 | After AD Sync completes, verify the imported object count matches expectations — silent partial imports can occur even when sync reports success. |
 | 40 | For SIEM integrations, contact Netwrix Support proactively after migration — restoration may require a specialized script. |
+| 41 | If you chose a different IP address instead of an FQDN for the new server, reviewing the SSO configuration after backup restore is mandatory — manually recreate it with the updated response URL, or raise a Netwrix Support case. |
 
 ## Post-Migration Stability
 
 | # | Best Practice |
 |---|---|
-| 41 | Don't apply server patches immediately after backup restore — the import process can disrupt the patch pipeline. Allow 24 hours before patching. |
-| 42 | Observe the migrated server's CPU, RAM, and disk usage closely during the first 24 hours. Temporary peaks are normal — background cron jobs, database schema alignment, and log reindexing tasks continue running. Don't treat elevated resource usage alone as a failure indicator during this window. |
-| 43 | Monitor Audit Log Backup jobs after migration — they can enter an infinite running state. Verify job completion before scheduling recurring backups. |
-| 44 | For air-gapped / offline environments, obtain the Offline Activation Patch for 2608 before the maintenance window begins — request it from Netwrix Support in advance. **2510/2604 path:** request the Offline Activation Patch for 2510 instead. |
-| 45 | After a mass client reinstall or extended communication outage, expect a temporary CPU spike when clients resume communication — machines request settings, rights, and policies simultaneously, and deliver any backlog of blocked logs. Spike severity scales with fleet size and the configured **Policy Refresh Interval** (see [Client Settings](/docs/endpointprotector/admin/dc_module/globalsettings.md#client-settings)). |
-| 46 | Stagger mass client reinstalls or reconnections in batches rather than restoring communication for the entire fleet at once — this reduces peak server load during resynchronization. |
-| 47 | Don't assume a coinciding SIEM or Audit issue is the cause of a CPU spike without evidence — both operate independently of client check-in load. |
-| 48 | If migrating from an older server version, review your SIEM parser configuration against the current syslog export content — recent releases added new fields and data to the export, and an outdated parser may not capture them. |
+| 42 | Don't apply server patches immediately after backup restore — the import process can disrupt the patch pipeline. Allow 24 hours before patching. |
+| 43 | Observe the migrated server's CPU, RAM, and disk usage closely during the first 24 hours. Temporary peaks are normal — background cron jobs, database schema alignment, and log reindexing tasks continue running. Don't treat elevated resource usage alone as a failure indicator during this window. |
+| 44 | Monitor Audit Log Backup jobs after migration — they can enter an infinite running state. Verify job completion before scheduling recurring backups. |
+| 45 | For air-gapped / offline environments, obtain the Offline Activation Patch for 2608 before the maintenance window begins — request it from Netwrix Support in advance. **2510/2604 path:** request the Offline Activation Patch for 2510 instead. |
+| 46 | After a mass client reinstall or extended communication outage, expect a temporary CPU spike when clients resume communication — machines request settings, rights, and policies simultaneously, and deliver any backlog of blocked logs. Spike severity scales with fleet size and the configured **Policy Refresh Interval** (see [Client Settings](/docs/endpointprotector/admin/dc_module/globalsettings.md#client-settings)). |
+| 47 | Stagger mass client reinstalls or reconnections in batches rather than restoring communication for the entire fleet at once — this reduces peak server load during resynchronization. |
+| 48 | Don't assume a coinciding SIEM or Audit issue is the cause of a CPU spike without evidence — both operate independently of client check-in load. |
+| 49 | If migrating from an older server version, review your SIEM parser configuration against the current syslog export content — recent releases added new fields and data to the export, and an outdated parser may not capture them. |

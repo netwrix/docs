@@ -39,7 +39,7 @@ SQL Server Reporting Services (SSRS) connection issues or insufficient permissio
 
 ## Resolution
 
-1. Make sure you are using a supported SQL Server edition. Refer to the following article: [SQL Server Requirements](https://docs.netwrix.com/docs/auditor/10_6/requirements/sqlserver)
+1. Make sure you are using a supported SQL Server edition. Refer to the following article: [SQL Server Requirements](https://docs.netwrix.com/docs/auditor/10_9/requirements/sqlserver)
 
 2. Check the permissions for your Audit Database account. Refer to the following article: [Configure Audit Database Account](https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserver#configure-audit-database-account)
 
@@ -63,7 +63,7 @@ SQL Server Reporting Services (SSRS) connection issues or insufficient permissio
 
 ## Related Links
 
-- [SQL Server Requirements](https://docs.netwrix.com/docs/auditor/10_6/requirements/sqlserver)
+- [SQL Server Requirements](https://docs.netwrix.com/docs/auditor/10_9/requirements/sqlserver)
 - [Configure Audit Database Account](https://docs.netwrix.com/docs/auditor/10_8/requirements/sqlserver#configure-audit-database-account)
 - [Data Collecting Accounts](https://docs.netwrix.com/docs/auditor/10_8/admin/monitoringplans/dataaccounts)
 - [Requirements – Use Group Managed Service Account (gMSA](https://docs.netwrix.com/docs/auditor/10_8/requirements/gmsa)
