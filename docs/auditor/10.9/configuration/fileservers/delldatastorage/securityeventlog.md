@@ -6,15 +6,15 @@ sidebar_position: 20
 
 # Configure Security Event Log
 
-Configure the security event log path, maximum size, and retention on your Dell Data Storage device so that audit data isn't lost when the log fills. Configure the settings in Registry Editor, then verify them in the Computer Management console.
+Configure the security event log path, maximum size, and retention on your Dell Data Storage device so that you don't lose audit data when the log fills. Configure the settings in Registry Editor, then verify them in the Computer Management console.
 
 ## Configure Event Log path, maximum size, and retention in Registry Editor
 
 **Step 1 –** In the Dell **Web UI**, navigate to **Storage → File → File System** and click **+** to create a file system. Name it `events` and set its size to at least 4 GB. This file system stores the security log.
 
-**Step 2 –** Confirm that the account used for data collection can read the share at `\\<file_server_name>\C$\events`.
+**Step 2 –** Confirm that the data collection account can read the share at `\\<file_server_name>\C$\events`.
 
-**Step 3 –** On the computer where Auditor Server is installed, open **Registry Editor**: navigate
+**Step 3 –** On the computer that hosts Auditor Server, open **Registry Editor**: navigate
 to **Start → Run** and type `regedit`.
 
 **Step 4 –** Navigate to **File → Connect Network Registry** and specify `<file_server_name>`.
@@ -29,7 +29,7 @@ to **Start → Run** and type `regedit`.
 
 ## Verify Event Log settings in the Computer Management console
 
-**Step 1 –** On the computer where Auditor Server is installed, open **Computer Management**: navigate
+**Step 1 –** On the computer that hosts Auditor Server, open **Computer Management**: navigate
 to **Start → Run** and type `compmgmt.msc /computer=<file_server_name>`, or right-click **Start** and select **Computer Management**.
 
 **Step 2 –** Navigate to **System Tools → Event Viewer → Windows Logs**, then right-click **Security** and select **Properties**.

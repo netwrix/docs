@@ -31,7 +31,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
 
     - On the Dell Data Storage device:
 
-        - CIFS Network Protocol support is required
+        - Enable CIFS Network Protocol support.
         - Set Security Event Log Maximum Size to 4GB.
         - Set the Audit object access policy to _"Success"_ and "Failure" in the Group Policy of
           the OU that contains the audited Dell VNX/VNXe/Unity/Celerra appliance.
@@ -71,11 +71,11 @@ deletion.
 To collect comprehensive audit data, you must configure your file shares for monitoring. Consider
 the following:
 
-**Step 1 –** [Configure Security Event Log](/docs/auditor/10.7/configuration/fileservers/delldatastorage/securityeventlog.md) to set the log path, maximum size, and retention so that security events aren't overwritten. Auditor
-does not clean Dell Unity logs automatically, so the log starts overwriting when it goes beyond the
+**Step 1 –** [Configure Security Event Log](/docs/auditor/10.7/configuration/fileservers/delldatastorage/securityeventlog.md) to set the log path, maximum size, and retention so that the log doesn't overwrite security events. Auditor
+doesn't clean Dell Unity logs automatically, so the log starts overwriting when it goes beyond the
 limit. See the
 [Unity Family Security Configuration Guide](https://support.emc.com/docu69321_Unity-Family-Security-Configuration-Guide.pdf?language=en_US) for
-additional information on how to set logs roll over manually.
+additional information about configuring log rollover manually.
 
 **Step 2 –** By default, the security log overwrites events older than 10 days, and its size is
 512 KB. The default location for the security.evt log is **C:\security.evt**, which corresponds to
