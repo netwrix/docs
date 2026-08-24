@@ -5,29 +5,11 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # --- Shared functions ---
 
-slugify() {
-  local heading="$1"
-
-  # Check for custom anchor ID: {#custom-id}
-  if [[ "$heading" =~ \{#([a-zA-Z0-9_-]+)\} ]]; then
-    echo "${BASH_REMATCH[1]}"
-    return
-  fi
-
-  # Mirrors github-slugger's behavior (used by Docusaurus, and by
-  # scripts/check-anchors.sh): each removed character leaves its
-  # surrounding whitespace intact, so runs of hyphens are NOT collapsed
-  # and leading/trailing hyphens are NOT trimmed. Underscores are
-  # preserved — github-slugger only strips punctuation/symbols, not word
-  # characters like `_` (e.g. "Box_FileMetrics" stays "box_filemetrics").
-  echo "$heading" \
-    | sed -E 's/^#+ +//' \
-    | tr '[:upper:]' '[:lower:]' \
-    | sed -E "s/[^a-z0-9 _-]//g" \
-    | sed -E 's/ /-/g'
-}
+source "$SCRIPT_DIR/lib/slugify.sh"
 
 _get_product_version_folder() {
   local filepath="$1"
@@ -51,16 +33,23 @@ _word_overlap_score() {
   local -a ow nw
   IFS='-' read -ra ow <<< "$old_slug"
   IFS='-' read -ra nw <<< "$new_slug"
-  local intersect=0 word nword
+  local intersect=0 oreal=0 nreal=0 word nword
   for word in "${ow[@]}"; do
     [ -z "$word" ] && continue
+    oreal=$((oreal + 1))
     for nword in "${nw[@]}"; do
       [ -z "$nword" ] && continue
       if [ "$word" = "$nword" ]; then intersect=$((intersect + 1)); break; fi
     done
   done
-  local maxlen=${#ow[@]}
-  [ ${#nw[@]} -gt "$maxlen" ] && maxlen=${#nw[@]}
+  for nword in "${nw[@]}"; do
+    [ -n "$nword" ] && nreal=$((nreal + 1))
+  done
+  # Count only non-empty tokens: uncollapsed hyphen runs in the slug produce
+  # empty elements when split on '-', which would otherwise inflate the
+  # denominator and deflate the score below the rename-match threshold.
+  local maxlen=$oreal
+  [ "$nreal" -gt "$maxlen" ] && maxlen=$nreal
   [ "$maxlen" -eq 0 ] && echo 0 && return
   echo $(( (intersect * 100) / maxlen ))
 }

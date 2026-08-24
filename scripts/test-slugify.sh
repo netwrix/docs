@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# test-slugify.sh — unit tests for the slugify function in vale-autofix.sh
+# test-slugify.sh — unit tests for the shared slugify function
+# (scripts/lib/slugify.sh), sourced by both vale-autofix.sh and
+# check-anchors.sh.
 set -euo pipefail
 
-# Source just the functions (--test mode skips the main script logic)
-source "$(dirname "$0")/vale-autofix.sh" --test
+source "$(cd "$(dirname "$0")" && pwd)/lib/slugify.sh"
 
 PASS=0
 FAIL=0

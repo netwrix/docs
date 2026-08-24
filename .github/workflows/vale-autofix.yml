@@ -57,6 +57,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Test anchor/slugify scripts
+        if: steps.bot-check.outputs.skip != 'true'
+        run: npm run test:scripts
+
       - name: Get changed markdown files
         id: changed-files
         if: steps.bot-check.outputs.skip != 'true'
