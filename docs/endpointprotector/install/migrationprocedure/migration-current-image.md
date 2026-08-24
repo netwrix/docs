@@ -20,14 +20,11 @@ Since you're already on the image-based platform, migrating to 2608 doesn't requ
 
 | Your Current Version | Recommendation |
 |---|---|
-| 2509, 2510, 2601, 2602 | Upgrade to **2604 first** (recommended), then migrate to 2608 — a direct restore from your current version also works |
-| **2604** | Migrate directly to 2608 — this is the best-tested path |
+| 2509, 2510, 2601, 2602, or 2604 | Migrate directly to 2608 — no intermediate version is required |
 
 :::tip
-2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. However, Netwrix recommends upgrading to **2604** before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs. Netwrix has tested other source versions in that range less extensively for this specific migration.
+2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. It's still good practice to upgrade to 2604 before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs.
 :::
-
-If you're not yet on 2604, apply the 2604 cumulative patch through **Dashboard → Live Update** (or the Offline Patch Uploader for air-gapped environments) before continuing with this article.
 
 ---
 
@@ -168,7 +165,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 
 | # | Task | Status |
 |---|---|---|
-| 1 | On 2604, or accepting that 2509/2510/2601/2602 as a source is less extensively tested | ☐ |
+| 1 | Current server version confirmed as 2509, 2510, 2601, 2602, or 2604 | ☐ |
 | 2 | VM snapshot created and confirmed | ☐ |
 | 3 | System backup created and key saved | ☐ |
 | 4 | Backup file downloaded to secure location | ☐ |
@@ -262,7 +259,7 @@ After successful activation, you should see a green banner at the top.
 
 ![System Maintenance → System Backup v2 — Import and Restore (Migrate) button](backup_v2_import.webp)
 
-4. In the wizard, select the backup file you created from your 2604 (or 2509/2510/2601/2602) server.
+4. In the wizard, select the backup file you created from your current server (2509, 2510, 2601, 2602, or 2604).
 5. Enter the **System Backup Key** you saved during backup creation.
 6. Click **Import**.
 

@@ -23,7 +23,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 | 05 | Verify your license is valid and reflects your current entitlements before starting any migration activity, and again after backup import. `php_els` was strictly a 2509–2604 requirement — 2608 no longer needs it and ignores it if present. **2510/2604 path:** `php_els` is still required. |
 | 06 | Keep the old server VM alive until you fully validate the new environment. Never decommission prematurely. |
 | 07 | Verify that the target server's assigned CPU, RAM, and disk meet at least the minimum sizing in [Server Requirements](/docs/endpointprotector/requirements/server) before starting migration — undersized environments are a common root cause of post-migration performance issues, including recurring server errors. |
-| 08 | If you're on 2509, 2510, 2601, or 2602, upgrade to **2604 first** before migrating to 2608 — 2604 → 2608 is the most thoroughly tested path in Netwrix labs. |
+| 08 | If you're on 2509, 2510, 2601, or 2602, you can migrate directly to 2608 — no intermediate version is required. Upgrading to **2604 first** is still good practice, since 2604 → 2608 is the most thoroughly validated path in Netwrix labs. |
 
 ## Backup and Recovery
 
@@ -75,7 +75,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 |---|---|
 | 33 | If migrating from a legacy 5.x server, create the migration backup on **exactly version 5.9.4.2** — not 5.9.4.1, not 5.9.4.0. Both 2608 and the temporary 2510/2604 path reject any other legacy version and may cause OS regression. |
 | 34 | Label every backup file with the server version and date in the filename (e.g., `epp-5942-backup-2026-04-21.bak`). Mislabelled backups are a leading cause of wrong-version import errors. |
-| 35 | If migrating from the current image platform, 2608 accepts a direct backup from 2509, 2510, 2601, 2602, or 2604 — but reaching 2604 first is the recommended, best-tested path (see [Planning](#planning)). |
+| 35 | If migrating from the current image platform, 2608 accepts a direct backup from 2509, 2510, 2601, 2602, or 2604 — no intermediate version is required. Reaching 2604 first is still good practice, since it's the most thoroughly validated path (see [Planning](#planning)). |
 | 36 | After applying the 5.9.4.2 cumulative patch, wait 24 hours for background DB tasks to complete before creating the migration backup. |
 
 ## 3rd-Party Integrations

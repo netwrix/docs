@@ -32,9 +32,7 @@ If you're on any version older than 5.9.4.2 (5.7.0.0–5.9.4.1), you must first 
 
 ## 2. Reaching 2604 Before Migrating to 2608 {#do-i-need-to-reach-2604-before-migrating-to-2608}
 
-Not strictly, but Netwrix **recommends it**. If you're on 2509, 2510, 2601, or 2602, 2608 accepts a direct backup restore from your current version — but the 2604 → 2608 path is the most thoroughly tested in Netwrix labs. Netwrix has validated other source versions in that range less extensively for this specific migration. See [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image#backup-compatibility).
-
-If you're already on 2604, migrate directly to 2608.
+No. 2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604 — no intermediate version is required. It's still good practice to upgrade to 2604 before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs. See [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image#backup-compatibility).
 
 ---
 

@@ -34,7 +34,11 @@ This guide covers **on-premises (Self-Hosted)** deployments only. The Netwrix te
 
 Endpoint Protector's server platform requires a full image migration rather than a simple in-place patch whenever the underlying base image changes. Netwrix is releasing a new base image, **2608**, that refreshes the entire server stack: Ubuntu 26.04 LTS, PHP 8.5, and updated MySQL and OpenSSL components. The 2608 image also introduces **CrateDB**, a new database component dedicated to storing log data going forward, alongside MySQL, which continues to own server configuration and EPP objects (Computers, Users, and Groups).
 
-Every on-premises EPP Server — whether it's still on a legacy 5.x release or already migrated to the current image-based platform (2509–2604) — needs to migrate again to reach 2608.
+Every on-premises EPP Server — whether it's still on a legacy 5.x release or already on the current image-based platform (2509–2604) — needs to complete this migration to reach 2608.
+
+:::warning 2608 Requires a Full Migration, Not a Patch
+You can't apply 2608 as a cumulative or offline patch on top of an existing 2509–2604 server, the way you move between patches within that platform (for example, 2509 → 2510 → 2604). 2608 is a new base image, so reaching it always requires the full migration procedure described in this guide: deploy a new 2608 VM, then restore your configuration backup onto it. There's no in-place upgrade path to 2608.
+:::
 
 :::note
 CrateDB ships empty on a freshly deployed 2608 server. The migration doesn't move any historical log data into it — this matches today's behavior, where System Configuration Backup carries over policies, users, groups, and device rules, but never log data or file shadows. If you need historical logs for compliance or forensics, export them separately (see [Audit Log Backup](/docs/endpointprotector/admin/systemmaintenance/overview#audit-log-backup)) or retain your old server VM, exactly as described in each migration article's prerequisites.
@@ -50,9 +54,7 @@ flowchart TD
     Patch --> Backup1["Create full backup at 5.9.4.2<br/>→ only 5.9.4.2 backups are accepted"]
     Q -->|"Already on 5.9.4.2"| Backup1
 
-    Q -->|"2509, 2510, 2601, or 2602"| Recommend["Upgrade to 2604 first<br/>→ the best-tested path to 2608"]
-    Recommend --> Backup2["Create backup on 2604<br/>→ System Backup v2 export"]
-    Q -->|"Already on 2604"| Backup2
+    Q -->|"2509, 2510, 2601, 2602, or 2604"| Backup2["Create backup<br/>→ System Backup v2 export"]
 
     Backup1 --> Deploy["Phase 2: Deploy the 2608 base image<br/>→ fresh VM, same or new IP/FQDN"]
     Backup2 --> Deploy
@@ -113,11 +115,10 @@ If you're already on the current image-based platform (2509–2604), a different
 | Older than 5.7.0.0 | ❌ Step-by-step upgrade path required first |
 | 5.7.0.0 – 5.9.4.1 | ❌ Must reach 5.9.4.2 first via cumulative patch |
 | **5.9.4.2** | ✅ **Yes — direct to 2608** |
-| **2509, 2510, 2601, 2602** | ✅ Yes, but Netwrix recommends upgrading to 2604 first |
-| **2604** | ✅ **Yes — the best-tested source version for 2608** |
+| **2509, 2510, 2601, 2602, or 2604** | ✅ **Yes — direct to 2608** |
 
 :::tip
-If you're on 2509, 2510, 2601, or 2602, Netwrix recommends upgrading to **2604** before migrating to 2608. The 2604 → 2608 path is the most thoroughly tested in Netwrix labs; Netwrix hasn't validated other source versions in that range as extensively yet.
+2608 accepts a direct backup restore from any of 2509, 2510, 2601, 2602, or 2604. It's still good practice to upgrade to 2604 before migrating, since the 2604 → 2608 path is the most thoroughly validated in Netwrix labs.
 :::
 
 ### New EPP Client and Server Versioning
