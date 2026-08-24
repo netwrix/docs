@@ -8,13 +8,13 @@ sidebar_position: 20
 
 ## Configure Event Log path, maximum size, and retention using "Registry Editor"
 
-**Step 1 -** On your file server, create a new file system (e.g., with name _events_) where the security log will be stored
-with a minimum size of `4GiB`: **Web UI -> Storage -> File -> File System Tab** and press "+".
+**Step 1 -** On your file server, create a new file system (e.g., with name _events_) with a minimum size of `4GiB` to store
+the security log: **Web UI -> Storage -> File -> File System Tab** and press "+".
 
 **Step 2 -** Ensure it's accessible with the account for collecting data via
 the **"\file_server_name\C$\events"** UNC path.
 
-**Step 3 -** On the computer where Auditor Server is installed, open **Registry Editor**: navigate
+**Step 3 -** On the computer that hosts Auditor Server, open **Registry Editor**: navigate
 to **Start -> Run** and type _"regedit"_.
 
 **Step 4 -** Navigate to **File → Connect Network Registry** and specify the _"file server name"_.
@@ -30,7 +30,7 @@ to **Start -> Run** and type _"regedit"_.
 
 ## Verify Event Log settings using **Computer Management** console
 
-**Step 1 -** On the computer where Auditor Server is installed, open **Computer Managment**: navigate
+**Step 1 -** On the computer that hosts Auditor Server, open **Computer Managment**: navigate
 to **Start -> Run** and type _"compmgmt.msc /computer=file_server_name"_ or right-click _Start_
 and select _"Computer Management"_ in the menu.
 
