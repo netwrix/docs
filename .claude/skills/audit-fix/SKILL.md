@@ -1,6 +1,6 @@
 ---
 name: audit-fix
-description: "Apply a documentation-audit correction to a doc page — whether written in docs-audit/template.md's Where/Fix/Why form, or as freeform prose describing what's wrong and what it should say instead. Trigger this whenever someone pastes a docs-audit correction alongside a source path — usually alongside an instruction like 'Apply these documentation audit findings to `docs/accessanalyzer/11.6/admin/foo.md`' — even if they never say the word 'audit', use the Where/Fix/Why labels, or invoke this skill by name. Locates the file, cross-references the product's docs-audit review-list.csv to find exact-duplicate sibling versions and check near-duplicate ones for the same problem text, applies the fix, and — only after the reviewer confirms the diff looks right — runs vale and /dale until clean."
+description: "Apply a documentation-audit correction to a doc page — whether written in docs-audit/template.md's Where/Fix/Why form, or as freeform prose describing what's wrong and what it should say instead. Trigger this whenever someone pastes a docs-audit correction alongside a source path — usually alongside an instruction like 'Apply these documentation audit findings to `docs/accessanalyzer/11.6/admin/foo.md`' — even if they never say the word 'audit', use the Where/Fix/Why labels, or invoke this skill by name. Sets up a branch off dev, locates the file, cross-references the product's docs-audit review-list.csv to find exact-duplicate sibling versions and check near-duplicate ones for the same problem text, applies the fix, and — only after the reviewer confirms the diff looks right — runs vale and /dale until clean, then offers to commit and open a PR."
 ---
 
 # Audit Fix
@@ -22,7 +22,7 @@ From the pasted message, extract:
 - **The source path.** Usually backtick-quoted in the instruction sentence (e.g. "Apply these documentation audit findings to `docs/accessanalyzer/11.6/admin/foo.md`"). If you can't find an unambiguous path under `docs/`, ask for it — don't guess which file they mean.
 - **One or more correction blocks.** Reviewers don't always use the spreadsheet's labeled form — plenty just paste prose like "the section on X says Y but that's actually Z." Handle both:
   - **Labeled form** — `Where:` / `Fix:` / `Why:`. Use directly: `Where` is a literal string to find, not a paraphrase; `Fix` is the exact replacement text; `Why` is context only, not an edit instruction.
-  - **Freeform prose** — no labels, just a description of what's wrong and (usually) what it should say instead. Read the target file, find the specific sentence/step/snippet the reviewer is describing, and work out your own `Where` (the exact quote you'll search for), `Fix` (the replacement), and `Why` (their stated or implied reasoning) from it. Then **echo these back to the reviewer and get explicit confirmation before proceeding to Step 2** — something like "I read this as: replace `<Where>` with `<Fix>` — is that right?" This step exists because the whole exact-match safety mechanism in Step 4 depends on `Where` being a literal quote; with freeform input, you chose that quote rather than the reviewer, so confirm it before it drives an edit.
+  - **Freeform prose** — no labels, just a description of what's wrong and (usually) what it should say instead. Read the target file, find the specific sentence/step/snippet the reviewer is describing, and work out your own `Where` (the exact quote you'll search for), `Fix` (the replacement), and `Why` (their stated or implied reasoning) from it. Then **echo these back to the reviewer and get explicit confirmation before proceeding to Step 2** — something like "I read this as: replace `<Where>` with `<Fix>` — is that right?" This step exists because the whole exact-match safety mechanism in Step 5 depends on `Where` being a literal quote; with freeform input, you chose that quote rather than the reviewer, so confirm it before it drives an edit.
 
 A single paste can contain several correction blocks (labeled, freeform, or a mix) for the same page — handle all of them together in one pass over that file.
 
@@ -45,11 +45,19 @@ If the script errors because the source path isn't in `review-list.csv` (it can 
 
 ## Step 3: Confirm scope with the reviewer
 
-- **Exact duplicates**: no need to ask — the CSV already proved these are the same page. Include them in Step 4 automatically.
+- **Exact duplicates**: no need to ask — the CSV already proved these are the same page. Include them in Step 5 automatically.
 - **`quote-found` siblings**: ask the reviewer, once, listing every such sibling: "This exact text also appears in `<version>`'s copy — apply the same fix there too?" Let them answer per-file or all-at-once. Don't touch these until they say yes.
 - **`quote-not-found` and `file-missing`**: don't mention these unless the reviewer asks — they're not actionable.
 
-## Step 4: Apply the fix(es)
+## Step 4: Set up a branch
+
+Before touching any files, check the current branch (`git branch --show-current`) and working tree state (`git status`):
+
+- If you already created a branch for this audit session earlier in the conversation, reuse it — don't create a new branch per page or per correction. A single branch can carry several audited pages' fixes.
+- Otherwise, offer to create one: fetch an up-to-date `dev` (`git fetch origin dev`), then branch off it (e.g. `git checkout -b audit-fix/<product>-<short-slug> origin/dev`). Propose a name and get the reviewer's go-ahead before creating it — don't create or switch branches silently.
+- If the current branch already has uncommitted changes that don't look like they're from this session, stop and ask how to proceed rather than switching out from under someone's in-progress work.
+
+## Step 5: Apply the fix(es)
 
 For the primary file, every approved exact-duplicate, and every sibling the reviewer approved in Step 3:
 
@@ -62,13 +70,28 @@ Fix only what the correction describes. If a `Fix` would change something well b
 
 **On a `quote-found` sibling, replace only the matched substring, not the whole line or heading.** The sibling isn't a proven duplicate, so the text around your `Where` quote can differ — an extra anchor tag, a longer sentence, a different heading suffix. Editing the exact substring the script matched avoids clobbering that surrounding content; editing the whole line/paragraph you saw in the *primary* file risks overwriting something in the sibling that was never part of the correction.
 
-## Step 5: Show the diff, wait for confirmation
+## Step 6: Show the diff, wait for confirmation
 
 Summarize what changed, per file (don't reprint entire documents). Explicitly ask the reviewer to confirm the edit looks right before continuing. **Do not run Vale or Dale yet** — linting only happens after the reviewer accepts, so you're not iterating on wording they haven't approved.
 
-## Step 6: Lint, once accepted
+## Step 7: Lint, once accepted
 
-Once the reviewer confirms, for every edited file:
+Before running `vale` for the first time this session, confirm it's installed:
+
+```bash
+vale --version
+```
+
+If it's missing, briefly tell the reviewer why it matters (it catches Netwrix style-guide violations before a human reviewer or CI does) and how to install it for their platform, per `docs/CLAUDE.md`:
+
+- macOS: `brew install vale`
+- Linux: `sudo snap install vale`
+- Windows: `choco install vale`
+- Any platform: download a binary from the [Vale releases page](https://github.com/errata-ai/vale/releases)
+
+Offer to run the install command yourself if one applies to their platform (e.g. `brew`/`snap`/`choco` is available); otherwise give them the command and wait for them to install it before continuing.
+
+Once Vale is available and the reviewer has confirmed the diff, for every edited file:
 
 ```bash
 vale <file>
@@ -82,22 +105,30 @@ Then:
 
 Both linters will very likely report violations that have nothing to do with your edit — these are older audited pages, and pre-existing issues elsewhere in the file are the norm, not the exception. Sort every reported violation into exactly one of these, in order:
 
-1. **Inside the `Fix` text itself** (even if it's on a line your edit touched) — don't fix it and don't ignore it either. Go back to the reviewer with the specific violation and ask how they want to handle it (e.g. an undefined acronym you introduced, or passive voice in wording they gave you). Don't silently rewrite what they just signed off on in Step 5.
+1. **Inside the `Fix` text itself** (even if it's on a line your edit touched) — don't fix it and don't ignore it either. Go back to the reviewer with the specific violation and ask how they want to handle it (e.g. an undefined acronym you introduced, or passive voice in wording they gave you). Don't silently rewrite what they just signed off on in Step 6.
 2. **On a line your edit touched, but outside the `Fix` text** (e.g. surrounding punctuation or a word your edit's surgery incidentally affected) — fix it, then re-run until that line is clean.
-3. **Everywhere else** — pre-existing and unrelated to your edit. Leave it alone and don't mention it — these are older audited pages with plenty of pre-existing lint debt, and reporting it here is just noise against a scope the reviewer never asked you to touch. Don't expand the edit to clean up the whole file — the reviewer approved specific replacement text in Step 5, not a general cleanup pass.
+3. **Everywhere else** — pre-existing and unrelated to your edit. Leave it alone and don't mention it — these are older audited pages with plenty of pre-existing lint debt, and reporting it here is just noise against a scope the reviewer never asked you to touch. Don't expand the edit to clean up the whole file — the reviewer approved specific replacement text in Step 6, not a general cleanup pass.
 
 Re-run each linter after any fix until the lines you touched are clean, then report what was fixed, per file.
 
-## Step 7: Wrap-up
+## Step 8: Wrap-up
 
-Remind the reviewer of the rest of `docs-audit/template.md`'s existing closing steps — this skill doesn't touch the shared spreadsheet or open PRs itself:
+Once linting is clean for every edited file:
 
-- Open a pull request against `dev` with the changes.
-- Once it merges, set `fixed` to `Done` (or `No fix necessary` if nothing needed changing) and `audited` to `Done` for every version row actually touched — the primary version, any exact duplicates, and any approved near-duplicate siblings.
+1. **Write a fix summary.** One or two plain-language sentences per file — what was wrong, what changed — and give it to the reviewer directly in your response so they can paste it straight into the spreadsheet's `Fix summary` cell. Don't just tell them a summary exists; write it.
+2. **Offer to commit.** Ask whether to commit now. If yes, stage only the files this correction touched (never a blanket `git add`) and commit with a message describing the fix.
+3. **Ask what's next:**
+   - If they're done auditing for this session: offer to open a pull request against `dev` (covering everything committed on this branch so far).
+   - If they have more pages to audit: prompt them to paste the next correction. Stay on the same branch — no need to restart Step 4 unless they say otherwise.
+4. **Remind them about the spreadsheet**, once the PR merges — this skill doesn't edit it directly. For every version row actually touched (the primary version, any exact duplicates, and any approved near-duplicate siblings):
+   - Set `Audited` to `Done`.
+   - Set `Accurate` to `Accurate`.
+   - Set `Complete` to `Complete`.
+   - Paste the fix summary from step 1 into that row's `Fix summary` cell.
 
 ## Handling multiple pages in one paste
 
-If the reviewer pastes corrections for more than one page in a single message, treat each source path as its own pass through Steps 1–6 (still one combined confirmation ask if that reads more naturally), and give one wrap-up covering every file touched.
+If the reviewer pastes corrections for more than one page in a single message, treat each source path as its own pass through Steps 1–7 (skip Step 4 after the first page — you're already on the branch), still one combined confirmation ask if that reads more naturally, and give one wrap-up covering every file touched.
 
 ## When something doesn't add up
 
@@ -107,3 +138,4 @@ Ask rather than guess, always — this reuses guidance from `docs-audit/template
 - `Where` text not found verbatim in the target file.
 - A `Fix` that reads like a broader rewrite than the `Where` quote justifies.
 - A sibling the script can't resolve (e.g. `find-siblings.mjs` itself errors) — report the error, don't fall back to manual guessing about which versions share this page.
+- Uncommitted changes already on the current branch that don't look like they're from this session — ask before creating or switching branches.
