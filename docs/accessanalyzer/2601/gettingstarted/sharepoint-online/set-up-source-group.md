@@ -19,11 +19,11 @@ sidebar_position: 3
 6. Under **Certificate**, click **Generate and Download Certificate** to generate a certificate and download it to your machine. Upload this certificate to your registered Entra ID application before proceeding. See [Certificate Configuration](../../connectors/sharepoint-online/tenant-certificate-config.md) for upload steps.
 
    :::note
-   If you click **Regenerate Certificate** in the future, upload the new certificate to your Entra ID App Registration to replace the old one. Removing the old certificate from the App Registration is a manual step in the Azure portal — Access Analyzer cannot remove it on your behalf.
+   If you click **Regenerate Certificate**, upload the new certificate to your Entra ID App Registration to replace the old one. Removing the old certificate from the App Registration is a manual step in the Azure portal — Access Analyzer can't remove it on your behalf.
    :::
 
    :::note
-   The Entra ID application used for the **Client ID** and certificate must have the following API permissions with admin consent granted:
+   Grant the following API permissions, with admin consent, to the Entra ID application for the **Client ID** and certificate:
 
    | API | Permission | Type | Description |
    |---|---|---|---|
@@ -40,7 +40,7 @@ sidebar_position: 3
 7. Click **Test Connection** to verify that Access Analyzer can authenticate to your SharePoint Online tenant. Resolve any failures before proceeding.
 
    :::warning
-   After you upload a new certificate to your Entra ID application, Microsoft Entra ID can take several minutes to propagate the certificate to its token-issuing endpoints. If **Test Connection** fails immediately after uploading a certificate with an error similar to `AADSTS700027: The certificate with identifier used to sign the client assertion is not registered on application`, wait a few minutes and try again before troubleshooting further.
+   After you upload a new certificate to your Entra ID application, Microsoft Entra ID can take several minutes to propagate the certificate to its token-issuing endpoints. If **Test Connection** fails with an error similar to `AADSTS700027: The certificate with identifier used to sign the client assertion is not registered on application` immediately after you upload a certificate, wait a few minutes and try again before troubleshooting further.
    :::
 
 8. Click **Next**.
@@ -49,7 +49,7 @@ sidebar_position: 3
 
    - **Include site URLs** — Limits the scan to specific site collections. Enter one URL per line. Leave empty to scan all sites in the tenant.
    - **Exclude site URLs** — Excludes specific site collections from the scan. Exclusions take precedence over inclusions.
-   - **Scan OneDrive** — When enabled, includes OneDrive personal site collections in the scan.
+   - **Scan OneDrive** — Includes OneDrive personal site collections in the scan.
 
    See [Scanning options](./scanning-options.md) for a full description of available scan types and options.
 
@@ -57,7 +57,7 @@ sidebar_position: 3
 
     - **Now** — Starts the scan immediately after setup completes.
     - **At** — Runs the scan once at a specific date and time.
-    - **Advanced** — Runs the scan on a recurring schedule defined by a cron expression.
+    - **Advanced** — Runs the scan on the recurring schedule you define with a cron expression.
 
 11. Click **Complete Setup**.
 
@@ -69,8 +69,8 @@ To check scan progress, navigate to **Configuration** > **Scan Executions**.
 
 ## Edit a source group
 
-To modify an existing SharePoint Online source group, navigate to **Configuration** > **Source Groups**, select the source group, and click **Edit**. The wizard reopens with your current configuration pre-populated. You can update the source group name, service account, tenant ID, scan configuration, and scan schedule.
+To modify an existing SharePoint Online source group, navigate to **Configuration** > **Source Groups**, select the source group, and click **Edit**. The wizard reopens and displays your current configuration. You can update the source group name, service account, tenant ID, scan configuration, and scan schedule.
 
 :::note
-Updating the service account replaces the certificate used to authenticate with SharePoint Online. Upload the new service account's certificate to your registered Entra ID application before saving.
+Updating the service account replaces the certificate that Access Analyzer uses to authenticate with SharePoint Online. Upload the new service account's certificate to your registered Entra ID application before saving.
 :::
