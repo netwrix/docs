@@ -1,13 +1,13 @@
 ---
 name: audit-fix
-description: "Apply a documentation-audit correction written with docs-audit/template.md's Where/Fix/Why form. Trigger this whenever someone pastes one or more Where:/Fix:/Why: blocks for a docs-audit review — usually alongside an instruction like 'Apply these documentation audit findings to `docs/accessanalyzer/11.6/admin/foo.md`' — even if they never say the word 'audit' or invoke this skill by name. Locates the file, cross-references the product's docs-audit review-list.csv to find exact-duplicate sibling versions and check near-duplicate ones for the same problem text, applies the fix, and — only after the reviewer confirms the diff looks right — runs vale and /dale until clean."
+description: "Apply a documentation-audit correction to a doc page — whether written in docs-audit/template.md's Where/Fix/Why form, or as freeform prose describing what's wrong and what it should say instead. Trigger this whenever someone pastes a docs-audit correction alongside a source path — usually alongside an instruction like 'Apply these documentation audit findings to `docs/accessanalyzer/11.6/admin/foo.md`' — even if they never say the word 'audit', use the Where/Fix/Why labels, or invoke this skill by name. Locates the file, cross-references the product's docs-audit review-list.csv to find exact-duplicate sibling versions and check near-duplicate ones for the same problem text, applies the fix, and — only after the reviewer confirms the diff looks right — runs vale and /dale until clean."
 ---
 
 # Audit Fix
 
-Triggered by a pasted Where/Fix/Why correction, with the source path (see Step 1).
+Triggered by a pasted docs-audit correction, with the source path (see Step 1).
 
-A reviewer worked through `docs-audit/template.md`'s checklist against a live page, found a problem, and pasted a correction. Your job: find every file the correction applies to, make exactly the described change, and only run the linters once the reviewer has confirmed the edit itself is right.
+A reviewer worked through `docs-audit/template.md`'s checklist against a live page, found a problem, and pasted a correction — in Where/Fix/Why form, or just as prose describing what's wrong. Your job: find every file the correction applies to, make exactly the described change, and only run the linters once the reviewer has confirmed the edit itself is right.
 
 Read `docs/CLAUDE.md` before starting — it has the Netwrix writing standards your edits must follow.
 
@@ -20,12 +20,11 @@ This session's own audit of near-duplicate pages across versions (same page, dif
 From the pasted message, extract:
 
 - **The source path.** Usually backtick-quoted in the instruction sentence (e.g. "Apply these documentation audit findings to `docs/accessanalyzer/11.6/admin/foo.md`"). If you can't find an unambiguous path under `docs/`, ask for it — don't guess which file they mean.
-- **One or more correction blocks**, each with:
-  - `Where:` — the exact sentence, step, heading, or snippet to locate. Treat this as a literal string to find, not a paraphrase.
-  - `Fix:` — the exact replacement text.
-  - `Why:` — context only; it explains the reasoning but isn't itself an edit instruction.
+- **One or more correction blocks.** Reviewers don't always use the spreadsheet's labeled form — plenty just paste prose like "the section on X says Y but that's actually Z." Handle both:
+  - **Labeled form** — `Where:` / `Fix:` / `Why:`. Use directly: `Where` is a literal string to find, not a paraphrase; `Fix` is the exact replacement text; `Why` is context only, not an edit instruction.
+  - **Freeform prose** — no labels, just a description of what's wrong and (usually) what it should say instead. Read the target file, find the specific sentence/step/snippet the reviewer is describing, and work out your own `Where` (the exact quote you'll search for), `Fix` (the replacement), and `Why` (their stated or implied reasoning) from it. Then **echo these back to the reviewer and get explicit confirmation before proceeding to Step 2** — something like "I read this as: replace `<Where>` with `<Fix>` — is that right?" This step exists because the whole exact-match safety mechanism in Step 4 depends on `Where` being a literal quote; with freeform input, you chose that quote rather than the reviewer, so confirm it before it drives an edit.
 
-A single paste can contain several `Where`/`Fix`/`Why` blocks for the same page — handle all of them together in one pass over that file.
+A single paste can contain several correction blocks (labeled, freeform, or a mix) for the same page — handle all of them together in one pass over that file.
 
 ## Step 2: Resolve siblings
 
@@ -85,9 +84,9 @@ Both linters will very likely report violations that have nothing to do with you
 
 1. **Inside the `Fix` text itself** (even if it's on a line your edit touched) — don't fix it and don't ignore it either. Go back to the reviewer with the specific violation and ask how they want to handle it (e.g. an undefined acronym you introduced, or passive voice in wording they gave you). Don't silently rewrite what they just signed off on in Step 5.
 2. **On a line your edit touched, but outside the `Fix` text** (e.g. surrounding punctuation or a word your edit's surgery incidentally affected) — fix it, then re-run until that line is clean.
-3. **Everywhere else** — pre-existing and unrelated to your edit. Leave it alone and just list it in your summary. Don't expand the edit to clean up the whole file — the reviewer approved specific replacement text in Step 5, not a general cleanup pass.
+3. **Everywhere else** — pre-existing and unrelated to your edit. Leave it alone and don't mention it — these are older audited pages with plenty of pre-existing lint debt, and reporting it here is just noise against a scope the reviewer never asked you to touch. Don't expand the edit to clean up the whole file — the reviewer approved specific replacement text in Step 5, not a general cleanup pass.
 
-Re-run each linter after any fix until the lines you touched are clean, then report what was fixed and what pre-existing issues you left alone, per file.
+Re-run each linter after any fix until the lines you touched are clean, then report what was fixed, per file.
 
 ## Step 7: Wrap-up
 
