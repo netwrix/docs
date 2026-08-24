@@ -51,7 +51,7 @@ Some rules have a **Detect character substitution** checkbox. PPE tests password
 
 Some rules have a **Tolerance** dropdown. The tolerance controls how strictly PPE enforces the rule.
 
-Tolerance typically refers to the maximum allowable number of consecutive matching characters in the password and some other parameter. Password Policy Enforcer rejects a password if it exceeds the specified tolerance. For example, the logon name "mary**jones**", and the password "**Jones**town" contain five consecutive matching characters (shown in bold). Password Policy Enforcer rejects this password if the tolerance for the User Logon Name rule is four or lower, and accepts it if the tolerance is five or higher.
+Tolerance is the maximum number of consecutive matching characters allowed between the password and another parameter. Password Policy Enforcer rejects a password if it exceeds the specified tolerance. For example, the logon name "mary**jones**", and the password "**Jones**town" contain five consecutive matching characters (shown in bold). Password Policy Enforcer rejects this password if the tolerance for the User Logon Name rule is four or lower, and accepts it if the tolerance is five or higher.
 
 Some rules have an Auto tolerance option. Setting the tolerance to Auto tells Password Policy Enforcer to reject only passwords that contain the entire comparison parameter. This is useful when the length of the comparison parameter is unknown. For example, if you want PPE to reject passwords that contain the user's entire logon name, then you can't specify a fixed tolerance unless all logon names are the same length. Setting the tolerance to Auto lets Password Policy Enforcer calculate an appropriate tolerance during the password change.
 

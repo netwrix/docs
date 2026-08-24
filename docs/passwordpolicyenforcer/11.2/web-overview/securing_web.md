@@ -6,9 +6,9 @@ sidebar_position: 50
 
 # Secure Password Policy Enforcer Web
 
-Password Policy Enforcer Web is designed to operate securely, but you must ensure that the web
+Netwrix designed Password Policy Enforcer Web to operate securely, but you must ensure that the web
 server is also secure. Follow Microsoft's recommendations to secure the web server, and always
-install and use an SSL certificate if Password Policy Enforcer Web is used on an unencrypted network.
+install and use an SSL certificate if you use Password Policy Enforcer Web on an unencrypted network.
 
 ## Install an SSL Certificate
 
@@ -30,6 +30,6 @@ See the
 [Configure Server Certificates in IIS 7](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10)?redirectedfrom=MSDN)
 Microsoft knowledge base article for additional information.
 
-Ensure that users only access Password Policy Enforcer Web over an encrypted connection after the
-SSL certificate is installed. The URL should start with https://. Web browsers can be redirected to
+Ensure that users only access Password Policy Enforcer Web over an encrypted connection after you
+install the SSL certificate. The URL should start with https://. You can redirect web browsers to
 always use the secure URL.

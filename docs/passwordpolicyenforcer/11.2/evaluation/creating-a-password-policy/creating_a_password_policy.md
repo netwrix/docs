@@ -24,8 +24,7 @@ getting started with Password Policy Enforcer.
 
 **Step 2 –** Click **Add policy**.
 
-**Step 3 –** Enter a unique policy name. Maximum is 32 characters. **Eval Policy** is used for this
-example.
+**Step 3 –** Enter a unique policy name. Maximum is 32 characters. This example uses **Eval Policy**.
 
 **Step 4 –** Select a Policy template or **None** if you are creating your own. For a list of
 policies see [Policy Templates ](/docs/passwordpolicyenforcer/11.2/evaluation/creating-a-password-policy/policy_templates.md).

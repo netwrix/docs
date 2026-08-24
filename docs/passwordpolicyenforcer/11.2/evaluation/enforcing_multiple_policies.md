@@ -38,8 +38,8 @@ local **Location** depending on your evaluation set up.
 
 ![Domain Admins added](/images/passwordpolicyenforcer/11.2/evaluation/evaldomainadmins.webp)
 
-- Members of the Domain Admins group (or the PPETestAdmin user, if not using a domain controller)
-  must now comply with the Administrators policy. All other users must comply with the Users policy.
+- Members of the Domain Admins group (or, if you aren't using a domain controller, the PPETestAdmin
+  user) must now comply with the Administrators policy. All other users must comply with the Users policy.
   Users won't notice any difference at this point because the two polices are enforcing identical
   rules.
 
@@ -72,6 +72,6 @@ should enforce the Eval policy for **PPETestUser**, and the Admins policy for **
 :::note
 The [Set Priorities](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/manage_policies.md#set-policy-priorities) topic contains
 more information about policy assignments, and how Password Policy Enforcer resolves policy
-assignment conflicts that occur when more than one policy is assigned to a user.
+assignment conflicts that occur when more than one policy applies to a user.
 
 :::

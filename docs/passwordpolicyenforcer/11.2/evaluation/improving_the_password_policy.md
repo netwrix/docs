@@ -6,14 +6,14 @@ sidebar_position: 60
 
 # Improve the Password Policy
 
-Password Policy Enforcer rules have properties that control how rules are enforced. You can improve
+Password Policy Enforcer rules have properties that control how Password Policy Enforcer enforces
+them. You can improve
 the effectiveness of the Users policy by enabling character substitution detection and
 bi-directional analysis (words typed backwards) for the **Similarity** and **Dictionary** rules.
 
-When character substitution detection is enabled, Password Policy Enforcer searches passwords for
+When you enable character substitution detection, Password Policy Enforcer searches passwords for
 common character substitutions. For example, an S replaced with a $. If a password only complies
-with the policy because of the substitution ( the substitution is needed to make the password
-compliant), then Password Policy Enforcer rejects the password.
+with the policy because of the substitution, then Password Policy Enforcer rejects the password.
 
 Bi-directional analysis tests passwords with their characters reversed to stop users from
 circumventing a rule by entering a non-compliant password backwards. For example, "drowssapym"

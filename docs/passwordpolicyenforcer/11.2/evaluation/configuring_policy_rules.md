@@ -22,7 +22,7 @@ any time by clicking the policy name on the Configuration Console dashboard.
 
 Requirement: Password must contain at least seven characters.
 
-This condition is set with the **Length** rule.
+You set this condition with the **Length** rule.
 
 **Step 1 –** Select **Length**.
 
@@ -35,7 +35,7 @@ the default.
 
 Requirement: Password must contain at least one lowercase alpha character.
 
-This condition is set with the **Characters (Complexity)** rule.
+You set this condition with the **Characters (Complexity)** rule.
 
 **Step 1 –** Select **Characters (Complexity)**.
 
@@ -51,7 +51,7 @@ This condition is set with the **Characters (Complexity)** rule.
 
 Password must contain at least one uppercase character.
 
-This condition is set with the **Characters (Granular)** rule.
+You set this condition with the **Characters (Granular)** rule.
 
 **Step 1 –** Select **Characters (Granular)**.
 
@@ -67,7 +67,7 @@ This condition is set with the **Characters (Granular)** rule.
 
 Requirement: Password must not be similar to the user's logon name.
 
-This condition is set with the **Similarity** rule.
+You set this condition with the **Similarity** rule.
 
 **Step 1 –** Select **Similarity**.
 
@@ -79,7 +79,7 @@ This condition is set with the **Similarity** rule.
 
 Requirement: Password must not exist in a dictionary of common passwords.
 
-This condition is set with the **Dictionary** rule.
+You set this condition with the **Dictionary** rule.
 
 **Step 1 –** Select **Dictionary**.
 
@@ -91,4 +91,4 @@ This condition is set with the **Dictionary** rule.
 
 ![Enable the sample dictionary](/images/passwordpolicyenforcer/11.2/evaluation/evaldict.webp)
 
-When you have added all the rules, click **Save** to save your new policy.
+When you have added all the rules, click **Save**.

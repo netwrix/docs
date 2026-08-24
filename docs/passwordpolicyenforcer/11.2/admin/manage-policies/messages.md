@@ -28,7 +28,7 @@ The [Password Policy Client](../password-policy-client/password_policy_client.md
 
 - PPE uses the **Password policy** template for the message that users see while they change their password. This message explains the password policy. It can also display a "live" policy to show users which rules their password complies with as they type.
 - PPE uses the **Rejection reason** template for the message it shows when it rejects a password. This message tells users which rules their password doesn't comply with.
-- PPE also uses the **Generic rejection** template when a password is rejected, but only if it doesn't know the rejection reason. This most commonly happens when a [Windows password policy](../../installation/disable_windows_rules.md) rejects the password. This message doesn't tell users which rules their password doesn't comply with.
+- PPE also uses the **Generic rejection** template when it rejects a password, but only if it doesn't know the rejection reason. This most commonly happens when a [Windows password policy](../../installation/disable_windows_rules.md) rejects the password. This message doesn't tell users which rules their password doesn't comply with.
 
 ### Password policy template
 

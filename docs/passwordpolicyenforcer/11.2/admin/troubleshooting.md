@@ -9,8 +9,8 @@ sidebar_position: 90
 This topic contains troubleshooting information for the most common support questions. Contact
 Netwrix support with any questions.
 
-Password policy assigned to some users is being enforced for all users. Check the Default Policy in
-the PPS Properties page. Users must comply with the default policy if no other policy is assigned to
+PPE enforces a password policy assigned to some users for all users. Check the Default Policy in
+the Password Policy Server (PPS) Properties page. Users must comply with the default policy if no other policy is assigned to
 them. Select the first (blank) item in the dropdown list if you don't want a default policy.
 
 #### Password policy not displayed during password change

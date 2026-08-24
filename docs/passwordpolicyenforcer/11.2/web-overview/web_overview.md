@@ -21,7 +21,7 @@ server in a DMZ for extra security, then consider using Netwrix Password Reset i
 Policy Enforcer Web.
 
 Password Reset also lets users change their password from a web browser, but it has many other
-features including the ability to work in a DMZ without any domain controllers. Use Password Reset
+features, including working in a DMZ without any domain controllers. Use Password Reset
 if you need to:
 
 - Users can reset a forgotten password or unlock their account by answering questions about

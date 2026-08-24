@@ -18,13 +18,13 @@ Enforcer integration. See the Password Policy Enforcer topic for additional info
 
 ### Domain List
 
-When Password Policy Enforcer Web is first installed, the Domain List is empty and users must type
+When you first install Password Policy Enforcer Web, the Domain List is empty and users must type
 their domain name. You can configure Password Policy Enforcer Web to display a list of domains
 instead of an empty text box.
 
 **Add Domain**
 
-Follow the steps to add a domain to the list.
+To add a domain to the list:
 
 **Step 1 –** Click the **Add...** button.
 
@@ -41,7 +41,7 @@ them alphabetically.
 
 **Remove Domain**
 
-Follow the steps to remove a domain from the list.
+To remove a domain from the list:
 
 **Step 1 –** Select the domain name from the Domain List.
 

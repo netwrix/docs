@@ -26,7 +26,7 @@ location.
 If you copy and store the HIBP database locally on the Domain Controllers:
 
 - The HIBP database takes up additional space on the machine where it is copied. (Aproximetly 13GB but subject to change)
-- If doing local the database needs to be on every Domain Controller in the same location as specified in the Rule.
+- If you use a local database, place it on every domain controller in the same location specified in the rule.
 - A network connection isn't involved and doesn't affect the performance of checking the password against the HIBP database
 - PPE checks the pending password candidate against the archived hash file locally. If the password hash matches an entry, PPE rejects the pending password change.
 
@@ -37,11 +37,11 @@ If you keep the HIBP database on a Network Share:
 - Requires a working network connection from the Domain Controllers to the Network Share with Read permissions to check:
 - The pending password candidate from Domain Controller against the HIBP Database stored on the Network Share, this could affect LSASS/Password Change performance depending on the environment.
 - HIBP database space isn't required on the domain controllers but on one Network Location.
-- At the time of a password change, if the Network Share isn't available, the Domain Controller must assume the hash is okay and the possibility of a known compromised password being accepted.
+- At the time of a password change, if the Network Share isn't available, the Domain Controller must assume the hash is okay, which means it could accept a known compromised password.
 
 ## Installation and Configuration
 
-The HIBP Updater is installed when you install the Password Policy Enforcer Configuration Console.
+Installing the Password Policy Enforcer Configuration Console also installs the HIBP Updater.
 
 :::info
 Only run this from one server.
@@ -71,8 +71,7 @@ Netwrix website.
 ![HIBP Updater](/images/passwordpolicyenforcer/11.2/administration/hibpupdater.webp)
 
 :::warning
-Ensure the initial update of the database occurs during non-office hours. Due to the
-size of the hash file, this download takes up a significant amount of CPU and download time.
+Schedule the initial database update for non-office hours. Because of the hash file's size, this download uses significant CPU and network resources.
 :::
 
 
@@ -112,9 +111,9 @@ size of the hash file, this download takes up a significant amount of CPU and do
 
 - Apply:
 
-    - If Website is selected, then clicking **Apply** downloads the HIBP database from the Netwrix
+    - If you select Website, then clicking **Apply** downloads the HIBP database from the Netwrix
       website and then processes the database for use by the application
-    - If File is selected, then clicking **Apply** processes the local copy of the (manually obtained) database for use by the application
+    - If you select File, then clicking **Apply** processes the local copy of the (manually obtained) database for use by the application
 
 ### Hash File Replication
 
@@ -135,7 +134,7 @@ to receive hash file updates, then use the Sysvol share for file replication and
 scheduled task to copy the file to a local folder.
 
 :::warning
-%SystemRoot%. hash files should only be read from a local disk. Using shared hash files
+%SystemRoot%. Only read hash files from a local disk. Using shared hash files
 degrades performance, and could jeopardize security.
 :::
 

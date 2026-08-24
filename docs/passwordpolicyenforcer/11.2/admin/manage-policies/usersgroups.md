@@ -9,7 +9,7 @@ sidebar_position: 20
 Password Policy Enforcer (PPE) uses policy assignments to decide which policy to enforce for a user. You can assign domain policies to users, groups, and containers (Organizational Units, or OUs). You can assign local policies only to users. See [Domain and Local Policies](../../installation/domain_and_local_policies.md) to learn how domain and local policies differ.
 
 :::warning
-Domain policy assignments for users and groups reference the object's Security Identifier (SID), so they remain valid even if the user or group is renamed. Local policy assignments reference the username directly, so renaming the user invalidates the assignment.
+Domain policy assignments for users and groups reference the object's Security Identifier (SID), so they remain valid even if you rename the user or group. Local policy assignments reference the username directly, so renaming the user invalidates the assignment.
 :::
 
 ## Add a policy assignment
@@ -44,7 +44,7 @@ When you assign a policy to an OU, PPE enforces the policy for all users in the 
 
 ## Policy assignment conflicts
 
-A policy assignment conflict occurs when more than one policy is assigned to a user. Password Policy Enforcer can resolve these conflicts and choose one policy for each user.
+A policy assignment conflict occurs when you assign more than one policy to a user. Password Policy Enforcer can resolve these conflicts and choose one policy for each user.
 
 PPE first tries to resolve a policy assignment conflict by examining the assignment type. Assignments by user take precedence over assignments by group, and assignments by group take precedence over assignments by container. For example, if you assign Policy A to a user by group, and Policy B to the same user by container, then PPE enforces Policy A because assignments by group take precedence over assignments by container.
 
@@ -60,7 +60,7 @@ Password Policy Enforcer enforces the default policy for any user who doesn't ha
 If Password Policy Enforcer has only one policy, and that policy is also the default policy, then PPE enforces the policy for all users. If you want to deploy a single policy gradually, don't make it the default until the deployment is complete.
 :::
 
-## Check which policy is enforced for a user
+## Check which policy PPE enforces for a user
 
 Use the [**Test Policy by User** feature](testpolicy.md#by-user) to check which policy PPE enforces for a user. Enter a username on the left, and the right pane shows the enforced policy.
 
