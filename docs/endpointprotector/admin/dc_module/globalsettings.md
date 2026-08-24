@@ -1017,6 +1017,25 @@ Endpoint Protector installed or in relation to a list of trusted Endpoint Protec
 
 ![Enforced Encryption in Read-Only mode](eeromode.webp)
 
+## eDiscovery: User-Initiated Scan Settings
+
+This section configures the eDiscovery feature for [user-initiated scans](/docs/endpointprotector/admin/ed_module/edscanning.md#user-initiated-scan-settings).
+
+- **User-Initiated Scans** — Enables the User-Initiated Scan feature in the end-user EPP Notifier.
+
+- **Number of Scans** — Retains a specified number of scan results (range: 1–10, default: 1).
+- **Number of Days** — Retains scan results for a specified number of days (range: 1–30, default: 1).
+:::note
+These two settings are mutually exclusive—select one retention method.
+:::
+
+- **Send User-Initiated Scan Events** — Sending scan events can consume significant storage space. Reports can't distinguish these scans from administrator-initiated scans. Consider enabling only if needed.
+- **Prioritize Server-Initiated Scans** — When enabled, administrator-initiated scans automatically stop any running user-initiated scans.
+- **Log File Rollover Size (MB)** — Sets the maximum log file size, in MB, before EPP archives it automatically. Minimum: 0 MB, maximum: 10240 MB.
+- **Log Disk Space Threshold (%)** — Sets the maximum percentage of disk space log files can use before EPP archives them automatically. Minimum: 1%, maximum: 25%.
+
+![eDiscovery User Initiated Scan](ediscovery_userscan.webp)
+
 ## Additional Information
 
 From this section you can restore global settings to default and view the name and date when the
