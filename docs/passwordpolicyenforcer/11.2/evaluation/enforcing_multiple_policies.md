@@ -40,8 +40,7 @@ local **Location** depending on your evaluation set up.
 
 - Members of the Domain Admins group (or, if you aren't using a domain controller, the PPETestAdmin
   user) must now comply with the Administrators policy. All other users must comply with the Users policy.
-  Users won't notice any difference at this point because the two polices are enforcing identical
-  rules.
+  Users won't notice any difference yet because the two policies enforce identical rules.
 
 ### Differentiate Password Policies
 
@@ -62,7 +61,7 @@ to nine characters.
 
 **Step 6 –** Select the **PPETestAdmin** user. The results pane shows that the **Admins Policy** applies, and that the password must **contain at least 9 characters**.
 
-![Admins policy is being tested](/images/passwordpolicyenforcer/11.2/evaluation/evaladmin.webp)
+![Testing the Admins policy](/images/passwordpolicyenforcer/11.2/evaluation/evaladmin.webp)
 
 Use the Password Policy Enforcer configuration console, the Windows Change Password screen, the
 Active Directory Users and Computers console, or the Local Users and Groups console to test password

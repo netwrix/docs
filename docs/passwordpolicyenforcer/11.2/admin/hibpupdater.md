@@ -25,7 +25,7 @@ location.
 
 If you copy and store the HIBP database locally on the Domain Controllers:
 
-- The HIBP database takes up additional space on the machine where it is copied. (Aproximetly 13GB but subject to change)
+- The HIBP database takes up additional space on the machine you copy it to. (Aproximetly 13GB but subject to change)
 - If you use a local database, place it on every domain controller in the same location specified in the rule.
 - A network connection isn't involved and doesn't affect the performance of checking the password against the HIBP database
 - PPE checks the pending password candidate against the archived hash file locally. If the password hash matches an entry, PPE rejects the pending password change.
@@ -127,11 +127,11 @@ Compromised rule to read the files from:
 
 See the [Compromised Rule](/docs/passwordpolicyenforcer/11.2/admin/manage-policies/rules/compromised_rule.md) topic for additional information.
 
-The preceding path only works if the computer has a Sysvol share. This won't be the case if you are
-using a workstation for policy testing, or if you are using Password Policy Enforcer to enforce
-local policies. If you are using Password Policy Enforcer for local policies and want all computers
-to receive hash file updates, then use the Sysvol share for file replication and a script or
-scheduled task to copy the file to a local folder.
+The preceding path only works if the computer has a Sysvol share. This won't be the case if you use
+a workstation for policy testing, or if you use Password Policy Enforcer to enforce local policies.
+If you use Password Policy Enforcer for local policies and want all computers to receive hash file
+updates, then use the Sysvol share for file replication and a script or scheduled task to copy the
+file to a local folder.
 
 :::warning
 %SystemRoot%. Only read hash files from a local disk. Using shared hash files
@@ -141,9 +141,9 @@ degrades performance, and could jeopardize security.
 
 ## Scheduler
 
-Password Policy Enforcer administrators can use the Scheduler portion of the HIBP Updater to
-automate the tool to retrieve and/or prepare the HIBP dataset. The Scheduler uses Microsoft Task
-Scheduler technology to execute the process.
+Password Policy Enforcer administrators can use the Scheduler in the HIBP Updater to automate
+retrieving and preparing the HIBP dataset. The Scheduler uses Microsoft Task Scheduler to run the
+process.
 
 ### How to Schedule a Task
 
@@ -156,13 +156,13 @@ Updater window.
 
 **Step 3 –** Enter the Name and Description of the schedule.
 
-**Step 4 –** Select **Add Trigger** to add the interval that you want to have the schedule run.
+**Step 4 –** Select **Add Trigger** to add the interval at which you want the schedule to run.
 
 - You can add as many triggers as you want to a schedule.
 
 **Step 5 –** Select the Update Type and Location to get the update.
 
-**Step 6 –** After you have set up your schedule, click **OK** to save the schedule.
+**Step 6 –** After you set up your schedule, click **OK** to save it.
 
 PPE updates the HIBP database according to the schedule.
 

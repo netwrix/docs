@@ -6,12 +6,11 @@ sidebar_position: 80
 
 # PPE Tool
 
-The PPE Tool is designed to configure local and domain instances of Password Policy Enforcer and
-produce reports pertaining to the configuration of Password Policy Enforcer. The PPE Tool is
-designed to perform the following functions:
+The PPE Tool configures local and domain instances of Password Policy Enforcer and
+produces reports about the Password Policy Enforcer configuration. The PPE Tool performs the following functions:
 
-- Export the configuration from the existing instance of Password Policy Enforcer, regardless if the
-  server is local or domain.
+- Export the configuration from the existing instance of Password Policy Enforcer, regardless of
+  whether the server is local or domain.
 - Import existing PPE configurations on another PPE server instance.
 - Generate user-friendly reports that contain configuration values and descriptions.
 - Create HTML reports with configuration values and descriptions of the PPE server instance.
@@ -21,7 +20,7 @@ This topic covers how to install the PPE Tool, how to customize and run reports,
 ## Using the PPE Tool
 
 The PPE Tool installs with the default installation of Password Policy Enforcer under the
-`C:\Program Files\Netwrix\Password Policy Enforcer\ppetool` folder. After installation, the PPE Tool supports a number of operations related to Password Policy Enforcer functionality, which are described in the following table.
+`C:\Program Files\Netwrix\Password Policy Enforcer\ppetool` folder. After installation, the PPE Tool supports several operations related to Password Policy Enforcer functionality. The following table describes them.
 
 :::note
 You can execute all PPE Tool operations from the Command Prompt if you run them with administrator
@@ -32,8 +31,7 @@ rights.
 ### PPE Tool Operations
 
 :::info
-PPE Tool operations should only be executed one at a time. For example, you
-shouldn't execute the /e (Export) and /i (Import) operations simultaneously; you shouldn't run /e
+PPE Tool operations must run one at a time. For example, don't run the /e (Export) and /i (Import) operations simultaneously, and don't run the /e
 (Export) and /r (Report) operations simultaneously.
 :::
 
@@ -48,7 +46,7 @@ shouldn't execute the /e (Export) and /i (Import) operations simultaneously; y
 | /c        | config [in file name]  | <ul><li>Uses a config file instead of Password Policy Enforcer export when exporting reports (in the case of /i (Import), /h (Human [out file name]), and /r (Report [out file name]).</li><li>The default file is `config.xml`.</li><li>This operation defines the input file for the i/ (Import) operation, and thus is necessary for importing files to the PPE Tool. An error message appears if you omit the /c (Config [in file name]) option.</li><li>By default, the /h (Human [out file name]) and /r (Report [out file name]) operations use the Password Policy Enforcer instance as the reporting source. The /c (Config [in file name]) operation should provide the source configuration file as an argument to create reports. If you provide an invalid file name as an argument in this operation, the PPE Tool displays the appropriate error message and exits.</li></ul>                                            |
 
 
-Operations PPE Tool options are as follows:
+The PPE Tool options are as follows:
 
 | Task | Task Name              | Task Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ---- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -85,10 +83,10 @@ example, the PPE Tool searches for the file tagname.xml (or, ppe.xml in this ca
 root elements which name match each file name. Each root tag contains child tags (e.g., `<tag>`).
 Each tag has the following attributes:
 
-- name — Contains the original tag name from the input configuration file. If this attribute is
-  omitted, then the original tag and its value are absent in the human-readable report.
-- DisplayName — Contains the user-friendly description for the original tag. If this attribute is
-  omitted, then the original tag and its value appear in the report without a description.
+- name — Contains the original tag name from the input configuration file. If you omit this
+  attribute, then the original tag and its value are absent in the human-readable report.
+- DisplayName — Contains the user-friendly description for the original tag. If you omit this
+  attribute, then the original tag and its value appear in the report without a description.
 
 The `<tag>` tag can also contain the child `<FLAGS>` tag. This tag can have an optional attribute
 'mode' and this attribute can have the following values:

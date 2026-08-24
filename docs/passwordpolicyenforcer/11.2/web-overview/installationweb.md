@@ -38,7 +38,7 @@ Enforcer Web documentation and tools, then click **Next**.
 needed.
 
 :::note
-Password Policy Enforcer Web should be installed in its own virtual directory.
+Install Password Policy Enforcer Web in its own virtual directory.
 :::
 
 

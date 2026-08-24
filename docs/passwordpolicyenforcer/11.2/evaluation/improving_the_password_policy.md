@@ -35,7 +35,7 @@ backwards**.
 
 **Step 5 –** Click **Save**.
 
-Test the improved policy with passwords that were accepted under the previous policy. Password
+Test the improved policy with passwords that the previous policy accepted. Password
 Policy Enforcer should reject all of them.
 
 | Password | Result   | Reason                             |

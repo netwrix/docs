@@ -72,8 +72,8 @@ obscuring any copyright notice violates the License Agreement.
 
 ## Examples
 
-This topic contains examples of common customizations. Use these examples to gain a better
-understanding of Password Policy Enforcer Web's templates. You don't need to be an expert in HTML to
+This topic contains examples of common customizations. Use these examples to better understand
+Password Policy Enforcer Web's templates. You don't need to be an expert in HTML to
 follow these examples, but a basic understanding of HTML will help. Work through them carefully, and
 backup files before you edit them. The examples in this section are from the American English files, but
 the format is the same for all languages.
@@ -85,8 +85,8 @@ default, the installer places the logo in the `\Inetpub\wwwroot\ppeweb\images\` 
 called logo.gif. You can replace this
 file with one containing your organization's logo.
 
-Your logo may appear distorted if it isn't the same size as the Netwrix logo. You can fix this by
-opening en_default.htm in a text editor such as Notepad. Search for the following line, and replace the width (116) and height (69) with the dimensions of your logo in pixels.
+Your logo may appear distorted if it isn't the same size as the Netwrix logo. To fix this, open
+en_default.htm in a text editor such as Notepad. Search for the following line, and replace the width (116) and height (69) with the dimensions of your logo in pixels.
 
 `<img class="logo" src="images/logo.gif" alt="ANIXIS" width="116" height="69" />`
 
@@ -137,8 +137,8 @@ information.
 ![using_ppe_web_2](/images/passwordpolicyenforcer/11.2/web/using_ppe_web_2.webp)
 
 You may see placeholders like %1 and %2 in some error messages. Password Policy Enforcer Web
-replaces these with more information about the error. You should keep these as they provide important information about the
-error, but you can delete them if you don't want them.
+replaces these with more information about the error. Keep these placeholders because they provide
+important information about the error, but you can delete them if you don't want them.
 
 | String                  | Error Message                                  |
 | ----------------------- | ---------------------------------------------- |

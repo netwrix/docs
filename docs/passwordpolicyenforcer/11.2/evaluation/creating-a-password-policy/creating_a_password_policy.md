@@ -6,10 +6,10 @@ sidebar_position: 30
 
 # Create a Password Policy
 
-Password Policy Enforcer has no password policies defined when first installed. You can now
+Password Policy Enforcer has no password policies after you install it. You can now
 create your first Password Policy Enforcer password policy. Password Policy Enforcer accepts all
 passwords in this state, so users only need to comply with the Windows password policy rules (if
-enabled).
+you enable them).
 
 **Step 1 –** Open the Configuration Console:
 
@@ -19,8 +19,8 @@ Double click the **PPE Configuration** desktop shortcut.
 
 ![Configuration Console Dashboard](/images/passwordpolicyenforcer/11.2/evaluation/ppedashboard.webp)
 
-The Configuration Console dashboard shows **No password policies have been set up** when you are
-getting started with Password Policy Enforcer.
+The Configuration Console dashboard shows **No password policies have been set up** when you first
+start using Password Policy Enforcer.
 
 **Step 2 –** Click **Add policy**.
 

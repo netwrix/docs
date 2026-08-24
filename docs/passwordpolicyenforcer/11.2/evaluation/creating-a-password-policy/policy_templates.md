@@ -27,7 +27,7 @@ most popular regulatory frameworks.
     - It also recommends training the workforce on ways to safeguard password information and
       establish guidelines to create and change passwords in a periodic cycle.
     - HIPAA doesn’t offer any specific password complexity guidelines. To comply with HIPAA,
-      organizations are better off following National Institute of Standards and Technology (NIST)
+      organizations should follow National Institute of Standards and Technology (NIST)
       password guidelines.
     - Most of healthcare institutions use the NIST framework.
 

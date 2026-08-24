@@ -31,12 +31,12 @@ Policy Enforcer) and copy the **PPEClt.adml** and **PPEClt.admx** files (highlig
 
 ![ppc_configuration](/images/passwordpolicyenforcer/11.2/administration/ppc_configuration.webp)
 
-**Step 3 –** Go to C:\Windows\Policy Definitions and paste the .admx file in the root of this
+**Step 3 –** Go to `C:\Windows\Policy Definitions` and paste the .admx file in the root of this
 folder.
 
 ![ppc_configuration2](/images/passwordpolicyenforcer/11.2/administration/ppc_configuration2.webp)
 
-**Step 4 –** Go to C:\Windows\Policy Definitions\en-US and paste the .adml file in the root of this
+**Step 4 –** Go to `C:\Windows\Policy Definitions\en-US` and paste the .adml file in the root of this
 folder.
 
 ![ppc_configuration1](/images/passwordpolicyenforcer/11.2/administration/ppc_configuration1.webp)
@@ -78,8 +78,8 @@ message in a message box to draw attention to the password policy.
 ![the_password_policy_client_3](/images/passwordpolicyenforcer/11.2/administration/the_password_policy_client_3.webp)
 
 You can change the default display settings to control which user interface elements the Password
-Policy Client hides, and the point at which it hides them. The display of the Password Policy
-message box is also configurable.
+Policy Client hides, and the point at which it hides them. You can also configure whether the
+Password Policy message box appears.
 
 To change the default display settings for the Password Policy Client on
 Windows 10 and 11:

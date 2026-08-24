@@ -77,8 +77,8 @@ Policy Enforcer Client are also available.
 ## Active Directory Users / Computers Console and local Users and Groups Console
 
 Administrators often change domain passwords from the Active Directory Users and Computers console
-and local passwords from the Local Users and Groups console. In fact, these consoles don't change
-passwords; they reset them. This is an important distinction because a password reset:
+and local passwords from the Local Users and Groups console. In fact, these consoles reset
+passwords rather than change them. This is an important distinction because a password reset:
 
 - Requires privileged access
 - Doesn't require knowing the current password
@@ -109,8 +109,8 @@ Client installed to see this information.
 :::
 
 
-Here are some sample passwords and expected test results when Password Policy Enforcer enforces the
-Users policy. Try to
+The following table shows sample passwords and expected test results when Password Policy Enforcer
+enforces the Users policy. Try to
 change the password for the PPETestUser account to confirm that Password Policy Enforcer is
 enforcing the password policy correctly.
 

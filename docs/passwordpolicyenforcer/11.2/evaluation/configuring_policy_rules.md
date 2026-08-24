@@ -15,8 +15,9 @@ the policy to enforce these rules:
 - Password must not be similar to the user's logon name.
 - Password must not exist in a dictionary of common passwords.
 
-When you create a policy, the policy settings are opened. You can open the settings for a policy at
-any time by clicking the policy name on the Configuration Console dashboard.
+When you create a policy, Password Policy Enforcer opens the policy settings. You can open the
+settings for a policy at any time by clicking the policy name on the Configuration Console
+dashboard.
 
 ![New policy open for settings](/images/passwordpolicyenforcer/11.2/evaluation/newpolicysettings.webp)
 
@@ -45,7 +46,7 @@ You set this condition with the **Characters (Complexity)** rule.
 
 **Step 4 –** Select **Lower Alpha (a-z)**.
 
-**Step 5 –** Select **Upper Alpha (A-Z)** for the next requirement while you are here.
+**Step 5 –** Select **Upper Alpha (A-Z)** now for the next requirement.
 
 ![Set upper and lower case requirements](/images/passwordpolicyenforcer/11.2/evaluation/evalchars.webp)
 
@@ -91,4 +92,4 @@ You set this condition with the **Dictionary** rule.
 
 ![Enable the sample dictionary](/images/passwordpolicyenforcer/11.2/evaluation/evaldict.webp)
 
-When you have added all the rules, click **Save**.
+After you add all the rules, click **Save**.

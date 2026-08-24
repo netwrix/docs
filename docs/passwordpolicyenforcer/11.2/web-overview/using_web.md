@@ -54,8 +54,8 @@ To change a password with Password Policy Enforcer Web:
 
 :::note
 Windows increments the bad password count in Active Directory every time a user enters
-their old password incorrectly. This may trigger a lockout if the Windows account lockout policy is
-enabled.
+their old password incorrectly. This may trigger a lockout if you enable the Windows account lockout
+policy.
 :::
 
 
@@ -67,8 +67,8 @@ value of one or more input fields and resubmitting the form.
 
 ![using_ppe_web_1](/images/passwordpolicyenforcer/11.2/web/using_ppe_web_1.webp)
 
-Password Policy Enforcer Web shows critical errors on their own page. These errors are mostly a
-result of configuration or system errors. Users can sometimes overcome a critical error by following the instructions in the
+Password Policy Enforcer Web shows critical errors on their own page. Configuration or system
+problems usually cause these errors. Users can sometimes overcome a critical error by following the instructions in the
 error message, but most critical errors are beyond the user's control.
 
 ![using_ppe_web_2](/images/passwordpolicyenforcer/11.2/web/using_ppe_web_2.webp)

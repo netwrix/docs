@@ -7,7 +7,7 @@ sidebar_position: 60
 # Test Policy
 
 You can test your Password Policy Enforcer configuration by simulating a password change.
-Click **Test Policy** from the Configuration Console dashboard or when you are setting up a policy.
+Click **Test Policy** from the Configuration Console dashboard or when setting up a policy.
 Test policy opens in a separate window. Remember to **Save** your rules and changes before
 testing.
 
@@ -19,8 +19,8 @@ Test policy opens on the **By user** tab.
 
 Policy testing simulates a password change, but it doesn't change the password.
 
-**Step 1 –** Click **Test policy** from the Configuration Console dashboard or when you are setting
-up a policy.
+**Step 1 –** Click **Test policy** from the Configuration Console dashboard or when setting up a
+policy.
 
 **Step 2 –** Select a **user**.
 
@@ -42,7 +42,7 @@ Expand the **View log** for details:
 - Dictionary word or keyboard pattern matched with the password.
 - Errors or warnings occurred during testing.
 
-Turn on **Verbose Logging** to view the performed tests and results.
+Turn on **Verbose Logging** to view the tests that Password Policy Enforcer performed and their results.
 
 ![Verbose logging](/images/passwordpolicyenforcer/11.2/administration/testuserverbose.webp)
 
@@ -50,8 +50,8 @@ Turn on **Verbose Logging** to view the performed tests and results.
 
 The Bulk Password Test feature lets you check a large number of passwords against a selected policy and get a report of the accepted and rejected passwords.
 
-**Step 1 –** Click **Test policy** from the Configuration Console dashboard or when you are setting
-up a policy.
+**Step 1 –** Click **Test policy** from the Configuration Console dashboard or when setting up a
+policy.
 
 **Step 2 –** Open the **Password bulk test** tab.
 
@@ -73,7 +73,7 @@ the file isn't on a shared drive.
 | Accepted                                | Number of accepted passwords.                                                           |
 | Rejected                                | Number of rejected passwords.                                                           |
 | Number of lines                         | Number of lines within the file.                                                        |
-| Lines processed                         | Shows the number of the processed lines.                                                |
+| Lines processed                         | Number of processed lines.                                                              |
 
 Click **Show full report** to view the test details.
 
