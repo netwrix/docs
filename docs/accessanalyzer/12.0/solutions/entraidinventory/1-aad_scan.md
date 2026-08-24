@@ -27,7 +27,7 @@ The 1-AAD_Scan job uses the AzureADInventory and Entra Data Collectors for the f
 - AAD Inventory – Targets Microsoft Entra tenants to collect inventory data for user group objects
 
     - _(Optional)_ This query can be modified to specify scan options and to collect custom
-      attributes. See the [Configure the AAD_Inventory Query](#configure-the-aadinventory-query)
+      attributes. See the [Configure the AAD_Inventory Query](#configure-the-aad_inventory-query)
       topic for additional information.
 
 - Entra – Collects Entra roles details from the target Microsoft Entra tenants

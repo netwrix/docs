@@ -21,7 +21,7 @@ The 1-AD_Scan Job uses the ADInventory Data Collector for the following query:
   objects
 
     - This query can be modified. See the
-      [Customize the 1-AD_Scan Query](#customize-the-1-adscan-query) topic for additional
+      [Customize the 1-AD_Scan Query](#customize-the-1-ad_scan-query) topic for additional
       information.
 
 ### Customize the 1-AD_Scan Query

@@ -21,7 +21,7 @@ The SP_StaleTeamSites page has the following configurable parameters:
 - Desired Number of Days Since Last Activity To Determine Staleness
 
 See the
-[Customizable Analysis Tasks for the SP_StaleTeamSites Job](#customizable-analysis-tasks-for-the-spstaleteamsites-job)
+[Customizable Analysis Tasks for the SP_StaleTeamSites Job](#customizable-analysis-tasks-for-the-sp_staleteamsites-job)
 for additional information.
 
 ## Analysis Tasks for the SP_StaleTeamSites Job
@@ -37,7 +37,7 @@ The default analysis task is:
 
     - This task contains a configurable parameter to set the number of days a Team has not had
       activity for before it's considered stale. See the
-      [Customizable Analysis Tasks for the SP_StaleTeamSites Job](#customizable-analysis-tasks-for-the-spstaleteamsites-job)
+      [Customizable Analysis Tasks for the SP_StaleTeamSites Job](#customizable-analysis-tasks-for-the-sp_staleteamsites-job)
       topic for additional information.
 
 In addition to the table created by the analysis task, the SP_StaleTeamSites Job produces the

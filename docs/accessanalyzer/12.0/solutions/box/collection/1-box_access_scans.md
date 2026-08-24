@@ -28,7 +28,7 @@ the Scan query. Additionally, the following default configurations are commonly 
 
     - Not scoped
 
-See the [Configure the 1-Box_Access Scans Job](#configure-the-1-boxaccess-scans-job) section for
+See the [Configure the 1-Box_Access Scans Job](#configure-the-1-box_access-scans-job) section for
 instructions.
 
 ### Configure the 1-Box_Access Scans Job

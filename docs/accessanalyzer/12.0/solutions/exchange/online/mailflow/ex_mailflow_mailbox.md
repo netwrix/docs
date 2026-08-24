@@ -22,7 +22,7 @@ The EX_Mailflow_Mailbox job has the following configurable parameter:
   Count** and **User Mailboxes by Message Size** analysis tasks. The default is **30** days.
 
 See the
-[Analysis Tasks for the EX_Mailflow_Mailbox Job](#analysis-tasks-for-the-exmailflowmailbox-job)
+[Analysis Tasks for the EX_Mailflow_Mailbox Job](#analysis-tasks-for-the-ex_mailflow_mailbox-job)
 topic for additional information.
 
 ## Analysis Tasks for the EX_Mailflow_Mailbox Job

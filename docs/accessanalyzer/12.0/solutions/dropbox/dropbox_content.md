@@ -26,7 +26,7 @@ The Dropbox_Content job has the following customizable parameter:
 - Days since File Modification before a file is considered stale
 
 See the
-[Customizable Analysis Tasks for the Dropbox_Content Job](#customizable-analysis-tasks-for-the-dropboxcontent-job)
+[Customizable Analysis Tasks for the Dropbox_Content Job](#customizable-analysis-tasks-for-the-dropbox_content-job)
 topic for additional information.
 
 ## Analysis Tasks for the Dropbox_Content Job
@@ -48,7 +48,7 @@ preconfigured for this job.
 
     - By default, a stale file has not been modified in the past 365 days. You can modify this
       analysis task to edit this number of days. See the
-      [Customizable Analysis Tasks for the Dropbox_Content Job](#customizable-analysis-tasks-for-the-dropboxcontent-job)
+      [Customizable Analysis Tasks for the Dropbox_Content Job](#customizable-analysis-tasks-for-the-dropbox_content-job)
       topic for additional information.
     - Creates an interim processing table in the database for use by downstream analysis and report
       generation

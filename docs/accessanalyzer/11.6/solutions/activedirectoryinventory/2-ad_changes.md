@@ -13,7 +13,7 @@ Inventory Job Group.
 
 Select the Query Option to **Track changes into Change tracking tables** in the 1-AD_Scan Job so the
 Analysis Tasks in the 2-AD_Changes Job work. See Step 4 of the
-[Customize the 1-AD_Scan Query](/docs/accessanalyzer/11.6/solutions/activedirectoryinventory/1-ad_scan.md#customize-the-1-adscan-query)
+[Customize the 1-AD_Scan Query](/docs/accessanalyzer/11.6/solutions/activedirectoryinventory/1-ad_scan.md#customize-the-1-ad_scan-query)
 topic for additional information.
 
 ## Analysis Tasks for the 2-AD_Changes Job
@@ -113,7 +113,7 @@ following analysis tasks are deselected by default:
 
 Notification must have recipients configured for the analysis task. Optionally, the email subject
 and body can be modified. See the
-[Notification Analysis Tasks for the 2-AD_Changes Job](#notification-analysis-tasks-for-the-2-adchanges-job)
+[Notification Analysis Tasks for the 2-AD_Changes Job](#notification-analysis-tasks-for-the-2-ad_changes-job)
 topic for additional information.
 
 In addition to the tables and views created by the analysis tasks, the 2-AD_Changes Job produces the

@@ -35,7 +35,7 @@ configurations are commonly customized:
 
     - Not scoped
 
-See the [Configure the 1-Box_Access Scans Job](#configure-the-1-boxaccess-scans-job) section for
+See the [Configure the 1-Box_Access Scans Job](#configure-the-1-box_access-scans-job) section for
 instructions.
 
 ### Configure the 1-Box_Access Scans Job

@@ -24,7 +24,7 @@ The SP_StaleFiles page has the following configurable parameters:
 - Days since last modification to be considered stale
 
 See the
-[Customizable Analysis Tasks for the SP_StaleFiles Job](#customizable-analysis-tasks-for-the-spstalefiles-job)
+[Customizable Analysis Tasks for the SP_StaleFiles Job](#customizable-analysis-tasks-for-the-sp_stalefiles-job)
 for additional information.
 
 ## Analysis Tasks for the SP_StaleFiles Job
@@ -46,7 +46,7 @@ The default analysis task is:
   node
 
     - This analysis task contains a configurable parameter: `@stale`. See the
-      [Customizable Analysis Tasks for the SP_StaleFiles Job](#customizable-analysis-tasks-for-the-spstalefiles-job)
+      [Customizable Analysis Tasks for the SP_StaleFiles Job](#customizable-analysis-tasks-for-the-sp_stalefiles-job)
       topic for additional information.
 
 In addition to the table created by the analysis task which displays the stale file resources, the

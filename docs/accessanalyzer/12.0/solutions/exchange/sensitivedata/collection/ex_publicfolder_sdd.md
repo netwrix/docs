@@ -28,7 +28,7 @@ The following query is included in the EX_PublicFolder_SDD job:
         - Tax Forms
         - US SSN
 
-    - See the [Configure the EX_PublicFolder_SDD Query](#configure-the-expublicfoldersdd-query)
+    - See the [Configure the EX_PublicFolder_SDD Query](#configure-the-ex_publicfolder_sdd-query)
       topic for additional information
 
 ### Configure the EX_PublicFolder_SDD Query

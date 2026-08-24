@@ -22,7 +22,7 @@ The AWS_UnusedManagedPolicies job has the following configurable parameter:
 - True or False value to include policies managed by AWS
 
 See the
-[Customizable Analysis Tasks for the AWS_UnusedManagedPolicies Job](#customizable-analysis-tasks-for-the-awsunusedmanagedpolicies-job)
+[Customizable Analysis Tasks for the AWS_UnusedManagedPolicies Job](#customizable-analysis-tasks-for-the-aws_unusedmanagedpolicies-job)
 topic for additional information.
 
 ## Analysis Tasks for the AWS_UnusedManagedPolicies Job
@@ -44,7 +44,7 @@ The following analysis tasks are selected by default:
   AWS_UnusedPolicies_Details table accessible under the job’s Results node.
 
     - Optionally, AWS managed policies can be included by setting the parameter to True. See the
-      [Customizable Analysis Tasks for the AWS_UnusedManagedPolicies Job](#customizable-analysis-tasks-for-the-awsunusedmanagedpolicies-job)
+      [Customizable Analysis Tasks for the AWS_UnusedManagedPolicies Job](#customizable-analysis-tasks-for-the-aws_unusedmanagedpolicies-job)
       topic for additional information.
 
 - Unused Managed Policy Summary – Summary by AWS Organization of unused managed policies. Creates

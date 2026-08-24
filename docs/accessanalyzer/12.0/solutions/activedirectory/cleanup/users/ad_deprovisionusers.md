@@ -33,7 +33,7 @@ The AD_DeprovisionUsers page has the following configurable parameters:
 - Days in the Stale Users OU before being deleted
 
 See the
-[Customizable Analysis Parameters for the AD_DeprovisionUsers Job](#customizable-analysis-parameters-for-the-addeprovisionusers-job)
+[Customizable Analysis Parameters for the AD_DeprovisionUsers Job](#customizable-analysis-parameters-for-the-ad_deprovisionusers-job)
 topic for additional information.
 
 ## Analysis Tasks for the AD_DeprovisionUsers Job
@@ -50,7 +50,7 @@ The default analysis tasks are:
   deleted
 
     - This analysis task contains a configurable parameter: `@days_before_deleting`. See the
-      [Customizable Analysis Parameters for the AD_DeprovisionUsers Job](#customizable-analysis-parameters-for-the-addeprovisionusers-job)
+      [Customizable Analysis Parameters for the AD_DeprovisionUsers Job](#customizable-analysis-parameters-for-the-ad_deprovisionusers-job)
       topic for additional information.
 
 - Identify Group Membership – Identifies stale user membership to remove

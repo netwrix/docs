@@ -49,7 +49,7 @@ The FS_CleanupAssessment job has the following configurable parameters:
 - Upper bound for files to be included in the FileDetails table (by LastModfied, in days)
 
 See the
-[Customizable Analysis Tasks for the FS_CleanupAssessment Job](#customizable-analysis-tasks-for-the-fscleanupassessment-job)
+[Customizable Analysis Tasks for the FS_CleanupAssessment Job](#customizable-analysis-tasks-for-the-fs_cleanupassessment-job)
 topic for additional information.
 
 ## Analysis Tasks for the FS_CleanupAssessment Job
@@ -73,14 +73,14 @@ The following analysis tasks are selected by default:
     - See the [Include Metadata Tag Information](#include-metadata-tag-information) topic for
       instructions on how to include metadata tag information in this table
     - Has 3 configurable parameters. See the
-      [Customizable Analysis Tasks for the FS_CleanupAssessment Job](#customizable-analysis-tasks-for-the-fscleanupassessment-job)
+      [Customizable Analysis Tasks for the FS_CleanupAssessment Job](#customizable-analysis-tasks-for-the-fs_cleanupassessment-job)
       topic for additional information.
 
 - Create file-level details table – Creates the SA_FS_CleanupAssessment_FileDetails table accessible
   under the job’s Results node
 
     - Has 2 configurable parameters. See the
-      [Customizable Analysis Tasks for the FS_CleanupAssessment Job](#customizable-analysis-tasks-for-the-fscleanupassessment-job)
+      [Customizable Analysis Tasks for the FS_CleanupAssessment Job](#customizable-analysis-tasks-for-the-fs_cleanupassessment-job)
       topic for additional information.
 
 - Summarize share-level information – Creates the SA_FS_CleanupAssessment_ShareDetails table

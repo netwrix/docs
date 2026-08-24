@@ -50,7 +50,7 @@ Not supported
 
 **Step 2 –** Run the FS_ResourceBasedGroupsAICImport job.
 
-- See the [Run the FS_ResourceBasedGroupsAICImportJob](#run-the-fsresourcebasedgroupsaicimportjob)
+- See the [Run the FS_ResourceBasedGroupsAICImportJob](#run-the-fs_resourcebasedgroupsaicimportjob)
   topic for additional information
 
 **Step 3 –** Review the newly-created resource based groups in the AIC.

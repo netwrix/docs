@@ -14,7 +14,7 @@ multiple users’ effective access at once.
 :::note
 Trustees can be specified in the `UserScoping.csv` file for the SP_TrusteeAccess Job. See
 the
-[Configure CSV File for the Query for the SP_TrusteeAccess Job](#configure-csv-file-for-the-query-for-the-sptrusteeaccess-job)
+[Configure CSV File for the Query for the SP_TrusteeAccess Job](#configure-csv-file-for-the-query-for-the-sp_trusteeaccess-job)
 topic for additional information.
 :::
 
@@ -32,7 +32,7 @@ The SP_TrusteeAccess Job uses the TextSearch Data Collector for the following qu
 The default query is:
 
 - Scoping – Modifies the CSV in the Job Directory. See the
-  [Configure CSV File for the Query for the SP_TrusteeAccess Job](#configure-csv-file-for-the-query-for-the-sptrusteeaccess-job)
+  [Configure CSV File for the Query for the SP_TrusteeAccess Job](#configure-csv-file-for-the-query-for-the-sp_trusteeaccess-job)
   topic for additional information.
 
 ### Configure CSV File for the Query for the SP_TrusteeAccess Job

@@ -44,7 +44,7 @@ The default analysis tasks are:
     - Contains a configurable parameter for the number of days until a password expires to be
       identified
     - See the
-      [Customizable Analysis Tasks for the AD_PasswordExpirationNotification Job](#customizable-analysis-tasks-for-the-adpasswordexpirationnotification-job)
+      [Customizable Analysis Tasks for the AD_PasswordExpirationNotification Job](#customizable-analysis-tasks-for-the-ad_passwordexpirationnotification-job)
       topic for additional information.
 -   **2. Domain Summary** – Creates an interim processing table in the database for use by downstream
        analysis and report generation
@@ -56,7 +56,7 @@ The default analysis tasks are:
        the job’s Results node
 -   **5. Help Desk Notification** – Sends notification of users with passwords set to expire in X days
     - See the
-      [Notification Analysis Task in the AD_PasswordExpirationNotification Job](#notification-analysis-task-in-the-adpasswordexpirationnotification-job)
+      [Notification Analysis Task in the AD_PasswordExpirationNotification Job](#notification-analysis-task-in-the-ad_passwordexpirationnotification-job)
       topic for additional information.
 
 ## Action for the AD_PasswordExpirationNotification Job
@@ -77,7 +77,7 @@ The default actions are:
        password expiration
     - Requires the Notification Actions license feature
     - See the
-      [Action Task in the AD_PasswordExpirationNotification Job](#action-task-in-the-adpasswordexpirationnotification-job)
+      [Action Task in the AD_PasswordExpirationNotification Job](#action-task-in-the-ad_passwordexpirationnotification-job)
       topic for additional information.
 
 In addition to the tables created by the analysis and action tasks, the

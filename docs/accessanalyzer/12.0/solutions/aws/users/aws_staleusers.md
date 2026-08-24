@@ -21,7 +21,7 @@ The AWS_StaleUsers job has the following configurable parameter:
 - Number of days before considering a user stale
 
 See the
-[Customizable Analysis Tasks for the AWS_StaleUsers Job](#customizable-analysis-tasks-for-the-awsstaleusers-job)
+[Customizable Analysis Tasks for the AWS_StaleUsers Job](#customizable-analysis-tasks-for-the-aws_staleusers-job)
 topic for additional information.
 
 ## Analysis Tasks for the AWS_StaleUsers Job
@@ -43,7 +43,7 @@ The following analysis tasks are selected by default:
   Creates the AWS_StaleUser_Details table accessible under the job’s Results node.
 
     - You can customize the number of days from the default value of 60. See the
-      [Customizable Analysis Tasks for the AWS_StaleUsers Job](#customizable-analysis-tasks-for-the-awsstaleusers-job)
+      [Customizable Analysis Tasks for the AWS_StaleUsers Job](#customizable-analysis-tasks-for-the-aws_staleusers-job)
       topic for additional information.
 
 - Stale User Summary – Summarizes stale users in AWS. Creates the AWS_StaleUser_Summary table

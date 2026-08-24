@@ -29,7 +29,7 @@ The following action task is deselected by default.
 
 Before running the FS_NotifyOwners job, select the **Notify Owners** task and
 configure the properties for the SendMail action module. See the
-[Configure the FS_NotifyOwners Action](#configure-the-fsnotifyowners-action) topic for additional
+[Configure the FS_NotifyOwners Action](#configure-the-fs_notifyowners-action) topic for additional
 information.
 
 ### Configure the FS_NotifyOwners Action

@@ -38,7 +38,7 @@ The jobs in the 1.Groups Job Group are:
 - The .Active Directory Inventory Job Group needs to be successfully run
 - For the AD_DeprovisionGroups Job, the target OU needs to be manually set in the Move Groups Action
   Task before executing the actions. See the
-  [Action Tasks for the AD_DepvisionGroups Job](deprovision/ad_deprovisiongroups.md#action-tasks-for-the-addepvisiongroups-job)
+  [Action Tasks for the AD_DepvisionGroups Job](deprovision/ad_deprovisiongroups.md#action-tasks-for-the-ad_depvisiongroups-job)
   topic for additional information.
 - The AD_DeprovisionGroups Job needs to be run before running the AD_DeprovisionGroups_Status Job
 

@@ -21,7 +21,7 @@ The AD_StaleComputers Job has the following configurable parameters:
 - Consider disabled accounts as stale
 
 See the
-[Customizable Analysis Parameters for the AD_StaleComputers Job](#customizable-analysis-parameters-for-the-adstalecomputers-job)
+[Customizable Analysis Parameters for the AD_StaleComputers Job](#customizable-analysis-parameters-for-the-ad_stalecomputers-job)
 topic for additional information.
 
 ## Analysis Tasks for the AD_StaleComputers Job

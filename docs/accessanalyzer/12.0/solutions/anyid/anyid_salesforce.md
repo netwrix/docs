@@ -56,7 +56,7 @@ Schedule the job as required.
 **Query Configuration**
 
 This job contains configurable queries. See the
-[Configure the AnyID_Salesforce Query](#configure-the-anyidsalesforce-query) topic for additional
+[Configure the AnyID_Salesforce Query](#configure-the-anyid_salesforce-query) topic for additional
 information.
 
 **Analysis Configuration**
@@ -82,7 +82,7 @@ The AnyID_Salesforce job uses the PowerShell Data Collector for the query.
 The query is:
 
 - PS Salesforce Import – Imports Salesforce information for analysis. This query has configurable
-  parameters. See the [Configure the AnyID_Salesforce Query](#configure-the-anyidsalesforce-query)
+  parameters. See the [Configure the AnyID_Salesforce Query](#configure-the-anyid_salesforce-query)
   topic for additional information.
 
 ### Configure the AnyID_Salesforce Query

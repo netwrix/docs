@@ -23,7 +23,7 @@ The EX_Mailflow job has the following configurable parameter:
 
 - Number of months to keep
 
-See the [Analysis Tasks for the EX_Mailflow Job](#analysis-tasks-for-the-exmailflow-job) topic for
+See the [Analysis Tasks for the EX_Mailflow Job](#analysis-tasks-for-the-ex_mailflow-job) topic for
 additional information.
 
 ## Queries for the EX_Mailflow Job

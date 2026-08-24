@@ -22,7 +22,7 @@ The AWS_StaleRoles job has the following configurable parameter:
 - Days without log in to consider an account stale
 
 See the
-[Customizable Analysis Tasks for the AWS_StaleRoles Job](#customizable-analysis-tasks-for-the-awsstaleroles-job)
+[Customizable Analysis Tasks for the AWS_StaleRoles Job](#customizable-analysis-tasks-for-the-aws_staleroles-job)
 topic for additional information.
 
 ## Analysis Tasks for the AWS_StaleRoles Job
@@ -45,7 +45,7 @@ The following analysis tasks are selected by default:
 
     - You can customize the number of days without a login to consider an account stale. By default
       it is set to 60. See the
-      [Customizable Analysis Tasks for the AWS_StaleRoles Job](#customizable-analysis-tasks-for-the-awsstaleroles-job)
+      [Customizable Analysis Tasks for the AWS_StaleRoles Job](#customizable-analysis-tasks-for-the-aws_staleroles-job)
       topic for additional information.
 
 - Stale Role Summary – Summarizes stale roles by AWS Account. Creates the AWS_StaleRole_Summary

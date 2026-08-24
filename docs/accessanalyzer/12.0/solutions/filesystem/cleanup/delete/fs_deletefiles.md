@@ -21,7 +21,7 @@ The FS_DeleteFiles job has the following configurable parameter:
 - Number of days without access after which a file is a deletion candidate
 
 See the
-[Customizable Analysis Tasks for the FS_DeleteFiles Job](#customizable-analysis-tasks-for-the-fsdeletefiles-job)
+[Customizable Analysis Tasks for the FS_DeleteFiles Job](#customizable-analysis-tasks-for-the-fs_deletefiles-job)
 topic for additional information.
 
 ## Analysis Tasks for the FS_DeleteFiles Job

@@ -24,7 +24,7 @@ The jobs in the 2.Users Job Group are:
 - The .Active Directory Inventory Job Group needs to be successfully run
 - For the AD_DeprovisionUsers Job, the target OU needs to be manually set in the Move Users Action
   Task before executing the actions. See the
-  [Action Tasks for the AD_DeprovisionUsers Job](/docs/accessanalyzer/11.6/solutions/activedirectory/cleanup/users/ad_deprovisionusers.md#action-tasks-for-the-addeprovisionusers-job)
+  [Action Tasks for the AD_DeprovisionUsers Job](/docs/accessanalyzer/11.6/solutions/activedirectory/cleanup/users/ad_deprovisionusers.md#action-tasks-for-the-ad_deprovisionusers-job)
   topic for additional information.
 - The AD_DeprovisionUsers Job needs to be run before running the AD_DeprovisionUsers_Status Job
 

@@ -28,7 +28,7 @@ The 3-AD_Exceptions Job has the following configurable parameters:
 - List of administrative groups
 
 See the
-[Customize Analysis Parameters for the 3-AD_Exceptions Job](#customize-analysis-parameters-for-the-3-adexceptions-job)
+[Customize Analysis Parameters for the 3-AD_Exceptions Job](#customize-analysis-parameters-for-the-3-ad_exceptions-job)
 topic for additional information.
 
 ## Analysis Tasks for the 3-AD_Exceptions Job

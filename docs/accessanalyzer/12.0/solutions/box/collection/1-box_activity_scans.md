@@ -27,7 +27,7 @@ the Activity Scan query, unless you already completed this step when you configu
 
     - Not scoped
 
-See the [Configure the 1-Box_Activity Scans Job](#configure-the-1-boxactivity-scans-job) section
+See the [Configure the 1-Box_Activity Scans Job](#configure-the-1-box_activity-scans-job) section
 for instructions.
 
 ### Configure the 1-Box_Activity Scans Job

@@ -79,7 +79,7 @@ The default values for parameters that can be customized are:
 | Stale Membership     | @STALE_THRESHOLD            | 10            | A group where 10% of its effective members are stale users            |
 
 See the
-[Configure the Analysis Tasks for the 2-AAD_Exceptions Job](#configure-the-analysis-tasks-for-the-2-aadexceptions-job)
+[Configure the Analysis Tasks for the 2-AAD_Exceptions Job](#configure-the-analysis-tasks-for-the-2-aad_exceptions-job)
 section for instructions to modify parameters. See the
 [AzureADInventory Exception Types Translated](/docs/accessanalyzer/11.6/admin/datacollector/azureadinventory/standardtables.md#azureadinventory-exception-types-translated)
 topic for an explanation of Exception Types.

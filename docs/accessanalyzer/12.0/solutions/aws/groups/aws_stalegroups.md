@@ -21,7 +21,7 @@ The AWS_StaleGroups job has the following configurable parameter:
 - Days without log in to consider an account stale
 
 See the
-[Customizable Analysis Tasks for the AWS_StaleGroups Job](#customizable-analysis-tasks-for-the-awsstalegroups-job)
+[Customizable Analysis Tasks for the AWS_StaleGroups Job](#customizable-analysis-tasks-for-the-aws_stalegroups-job)
 topic for additional information.
 
 ## Analysis Tasks for the AWS_StaleGroups Job
@@ -44,7 +44,7 @@ The following analysis tasks are selected by default:
 
     - The number of days without log in to consider an account stale can be customized. By default it
       is set to 60. See the
-      [Customizable Analysis Tasks for the AWS_StaleGroups Job](#customizable-analysis-tasks-for-the-awsstalegroups-job)
+      [Customizable Analysis Tasks for the AWS_StaleGroups Job](#customizable-analysis-tasks-for-the-aws_stalegroups-job)
       topic for additional information.
 
 - Stale Group Summary – Summarizes statistics for stale groups. Creates the AWS_StaleGroup_Summary

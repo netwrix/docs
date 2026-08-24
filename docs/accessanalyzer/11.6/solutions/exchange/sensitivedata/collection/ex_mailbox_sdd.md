@@ -42,7 +42,7 @@ The following query is included in the EX_Mailbox_SDD job:
         - US SSN
 
 - See the
-  [Configure the EWSMailbox Data Collector for the EX_Mailbox_SDD Job](#configure-the-ewsmailbox-data-collector-for-the-exmailboxsdd-job)
+  [Configure the EWSMailbox Data Collector for the EX_Mailbox_SDD Job](#configure-the-ewsmailbox-data-collector-for-the-ex_mailbox_sdd-job)
   topic for additional information
 
 ### Configure the EWSMailbox Data Collector for the EX_Mailbox_SDD Job

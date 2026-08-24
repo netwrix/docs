@@ -55,7 +55,7 @@ The default analysis tasks are:
   Results node
 
     - This Analysis Task has configurable parameters. See the
-      [Configure the Analysis Tasks for the AD_ShadowAccess Job](#configure-the-analysis-tasks-for-the-adshadowaccess-job)
+      [Configure the Analysis Tasks for the AD_ShadowAccess Job](#configure-the-analysis-tasks-for-the-ad_shadowaccess-job)
       topic for additional information.
 
 - Shadow Access Paths Cleanup – Removes calculated rows that are no longer used
@@ -70,7 +70,7 @@ the following pre-configured reports.
 
 
 See the
-[Report Functions for the AD_ShadowAccess Job](#report-functions-for-the-adshadowaccess-job) topic
+[Report Functions for the AD_ShadowAccess Job](#report-functions-for-the-ad_shadowaccess-job) topic
 for additional information.
 
 ### Customizable Analysis Tasks for the AD_ShadowAccess Job
@@ -88,7 +88,7 @@ The default values for customizable parameters are:
 | @disabled                | 0                           | Set to 0 to ignore disabled users                     |                                       |
 
 See the
-[Configure the Analysis Tasks for the AD_ShadowAccess Job](#configure-the-analysis-tasks-for-the-adshadowaccess-job)
+[Configure the Analysis Tasks for the AD_ShadowAccess Job](#configure-the-analysis-tasks-for-the-ad_shadowaccess-job)
 topic for additional information.
 
 ### Configure the Analysis Tasks for the AD_ShadowAccess Job

@@ -43,10 +43,13 @@ slugify() {
   # are NOT collapsed and leading/trailing hyphens are NOT trimmed. A
   # heading like "Step 4 — Configure" (em dash stripped, two spaces
   # remain) slugs to "step-4--configure", not "step-4-configure".
+  # Underscores are preserved — github-slugger only strips punctuation/
+  # symbols, not word characters like `_` (e.g. "Box_FileMetrics" stays
+  # "box_filemetrics", not "boxfilemetrics").
   printf '%s' "$heading" \
     | sed -E 's/^#+ +//' \
     | tr '[:upper:]' '[:lower:]' \
-    | sed -E "s/[^a-z0-9 -]//g" \
+    | sed -E "s/[^a-z0-9 _-]//g" \
     | sed -E 's/ /-/g'
 }
 

@@ -32,7 +32,7 @@ The AD_DeprovisionGroups page has the following configurable parameters:
 - Days in the Staging OU before deletion
 
 See the
-[Customizable Analysis Parameters for the AD_DeprovisionGroups Job](#customizable-analysis-parameters-for-the-addeprovisiongroups-job)
+[Customizable Analysis Parameters for the AD_DeprovisionGroups Job](#customizable-analysis-parameters-for-the-ad_deprovisiongroups-job)
 topic for additional information.
 
 ## Analysis Tasks for the AD_DeprovisionGroups Job
@@ -49,7 +49,7 @@ The default analysis tasks are:
 - Groups to Delete – Identifies groups in the Stale Groups OU that are ready to be deleted
 
     - This analysis task contains a configurable parameter: `@days_before_deleting`. See the
-      [Customizable Analysis Parameters for the AD_DeprovisionGroups Job](#customizable-analysis-parameters-for-the-addeprovisiongroups-job)
+      [Customizable Analysis Parameters for the AD_DeprovisionGroups Job](#customizable-analysis-parameters-for-the-ad_deprovisiongroups-job)
       topic for additional information.
 
 ### Customizable Analysis Parameters for the AD_DeprovisionGroups Job

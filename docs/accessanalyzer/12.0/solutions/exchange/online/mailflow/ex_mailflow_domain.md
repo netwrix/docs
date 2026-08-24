@@ -21,7 +21,7 @@ The EX_Mailflow_Domain job has the following configurable parameter:
 - Number of days to show in tables and reports
 
 See the
-[Analysis Tasks for the EX_Mailflow_Domain Job](#analysis-tasks-for-the-exmailflowdomain-job)
+[Analysis Tasks for the EX_Mailflow_Domain Job](#analysis-tasks-for-the-ex_mailflow_domain-job)
 topic for additional information.
 
 ## Analysis Tasks for the EX_Mailflow_Domain Job

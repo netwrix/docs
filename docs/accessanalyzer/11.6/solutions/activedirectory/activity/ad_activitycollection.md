@@ -18,7 +18,7 @@ Enterprise Auditor can retrieve AD Activity data in two ways:
 - API Server connected to the archive logs
 
 You configure this in the query. See the
-[Queries for the AD_ActivityCollection Job](#queries-for-the-adactivitycollection-job) topic for
+[Queries for the AD_ActivityCollection Job](#queries-for-the-ad_activitycollection-job) topic for
 additional information.
 
 ## Parameter Configuration
@@ -48,7 +48,7 @@ The AD_ActivityCollection page has the following configurable parameters:
 - Number of days to retain activity data in the AIC
 
 See the
-[Customize Analysis Parameters for the AD_ActivityCollection Job](#customize-analysis-parameters-for-the-adactivitycollection-job)
+[Customize Analysis Parameters for the AD_ActivityCollection Job](#customize-analysis-parameters-for-the-ad_activitycollection-job)
 topic for additional information.
 
 ## Queries for the AD_ActivityCollection Job

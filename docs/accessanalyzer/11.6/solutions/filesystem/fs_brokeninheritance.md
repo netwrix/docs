@@ -29,7 +29,7 @@ The FS_BrokenInheritance job has the following configurable parameter:
     - 2 – Analyze all resources regardless of permission changes between parent and child
 
 See the
-[Analysis Tasks for the FS_BrokenInheritance Job](#analysis-tasks-for-the-fsbrokeninheritance-job)
+[Analysis Tasks for the FS_BrokenInheritance Job](#analysis-tasks-for-the-fs_brokeninheritance-job)
 topic for additional information.
 
 ## Analysis Tasks for the FS_BrokenInheritance Job

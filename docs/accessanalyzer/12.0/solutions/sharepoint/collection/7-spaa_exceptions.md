@@ -27,7 +27,7 @@ The 7-SPAA_Exceptions page has the following configurable parameters:
 
 
 See the
-[Customizable Analysis Tasks for the 7-SPAA_Exceptions Job](#customizable-analysis-tasks-for-the-7-spaaexceptions-job)
+[Customizable Analysis Tasks for the 7-SPAA_Exceptions Job](#customizable-analysis-tasks-for-the-7-spaa_exceptions-job)
 for additional information.
 
 ## Analysis Tasks 7-SPAA_Exceptions Job

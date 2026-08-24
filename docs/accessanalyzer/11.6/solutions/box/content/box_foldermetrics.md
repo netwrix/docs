@@ -34,7 +34,7 @@ The following analysis tasks are selected by default:
   Results node
     - Set to consider content stale after 30 days which is the @STALETHRESHOLD parameter value
     - See the
-      [Customizable Analysis Tasks for the Box_FolderMetrics Job](#customizable-analysis-tasks-for-the-boxfoldermetrics-job)
+      [Customizable Analysis Tasks for the Box_FolderMetrics Job](#customizable-analysis-tasks-for-the-box_foldermetrics-job)
       topic for additional information.
 - Largest Folders – Creates the Box_FolderMetrics_Largest table accessible under the job’s Results
   node
