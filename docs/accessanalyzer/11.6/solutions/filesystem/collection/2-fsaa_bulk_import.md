@@ -18,7 +18,7 @@ access/permission auditing Bulk import category.
 
 - Bulk import – Imports scan data into SQL Server
 
-    - Typically, this query is not modified. See the
+    - Typically, this query isn't modified. See the
       [FileSystemAccess Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/overview.md)
       topic for information on when this query should be modified.
 
@@ -28,7 +28,7 @@ View the analysis tasks by navigating to the **FileSystem** > **0.Collection** >
 Import** > **Configure** node and selecting **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

@@ -22,8 +22,8 @@ The version of the SharePoint Agent must also match the major version of Enterpr
 
 ## Supported Platforms
 
-The SharePoint Agent for the Enterprise Auditor SharePoint & SharePoint Online Solution can be
-installed on the following SharePoint versions as targeted environments:
+You can install the SharePoint Agent for the Enterprise Auditor SharePoint & SharePoint Online
+Solution on the following SharePoint versions as targeted environments:
 
 - SharePoint® 2019
 - SharePoint® 2016
@@ -31,17 +31,17 @@ installed on the following SharePoint versions as targeted environments:
 
 ## Sensitive Data Discovery Auditing Consideration
 
-If utilizing the SharePoint Agent to scan for Sensitive Data, install the Sensitive Data Add-on –
-SPAA Agent (or x64) version of the Sensitive Data Discovery Add-On after the SharePoint Agent has
-been installed on the SharePoint server. This requirement is in addition to having the Sensitive
+If using the SharePoint Agent to scan for Sensitive Data, install the Sensitive Data Add-on –
+SPAA Agent (or x64) version of the Sensitive Data Discovery Add-On after you install the SharePoint
+Agent on the SharePoint server. This requirement is in addition to having the Sensitive
 Data Discovery Add-on installed on the Enterprise Auditor Console server. Sensitive Data Discovery
 Auditing scans also require .NET Framework 4.7.2 or later.
 
 :::note
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the
+If running Sensitive Data Discovery (SDD) scans, you must increase the
 minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For
-example, if the job is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are
-required (8x2=16).
+example, if you configure the job to scan 8 hosts at a time, the job requires an extra 16 GB of RAM
+(8x2=16).
 :::
 
 

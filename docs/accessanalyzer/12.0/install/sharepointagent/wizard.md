@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Installing the SharePoint Agent
 
-The installer will prompt for credentials which are used to set the identity that the SharePoint
+The installer will prompt for credentials that set the identity the SharePoint
 Access Auditor Agent service runs as. The agent service does no additional impersonation, so this is
 the account used to connect to and enumerate SharePoint. The service account credentials provided
 need to be a member of the Log on as a service local policy. Additionally, the credentials provided
@@ -15,8 +15,8 @@ the Access Analyzer Console. See the
 [SharePoint Scan Options](/docs/accessanalyzer/12.0/requirements/sharepoint/scanoptions/scanoptions.md) topic for detailed
 permission information.
 
-Follow the steps to install the SharePoint Agent on the application server which hosts the Central
-Administration component of the targeted SharePoint farms.
+Install the SharePoint Agent on the application server which hosts the Central Administration
+component of the targeted SharePoint farms:
 
 **Step 1 –** Run the `SharePointAgent.exe` executable to open the Netwrix Access Analyzer (formerly
 Enterprise Auditor) SharePoint Agent Setup Wizard.
@@ -49,7 +49,7 @@ SharePoint Agent page, click **Install** to start the installation.
 
 **Step 7 –** When the installation has completed, click **Finish** to exit the wizard.
 
-Now that the SharePoint Agent has been installed on the appropriate application server, it can be
-used by the SharePoint Solution. See the
+Now that you have installed the SharePoint Agent on the appropriate application server, the
+SharePoint Solution can use it. See the
 [SharePoint Solution](/docs/accessanalyzer/12.0/solutions/sharepoint/overview.md) topic for instructions on enabling
 agent service scans on the Agent Settings page.

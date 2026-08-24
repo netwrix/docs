@@ -7,8 +7,8 @@ sidebar_position: 40
 # Actions Node
 
 The Actions node uses Enterprise Auditor action modules to take action on collected and analyzed
-data. Action can be taken on objects leveraging collected data or analyzed data, for example from a
-listing of locked-out accounts, an action can be executed to unlock those accounts.
+data. You can take action on objects leveraging collected data or analyzed data. For example, from a
+listing of locked-out accounts, you can execute an action to unlock those accounts.
 
 :::note
 Action modules are available with a special Enterprise Auditor license.
@@ -52,7 +52,7 @@ The Actions section at the top has five options:
 
 - Execute Action – Opens the Action Execution window and starts executing the selected action
 
-    - Does not require an action task to be checked, only selected
+    - Doesn't require checking an action task, only selecting it
 
 ![Buttons at the bottom of Action Selection page](/images/accessanalyzer/11.6/admin/jobs/job/configure/actionselectiontablebuttons.webp)
 

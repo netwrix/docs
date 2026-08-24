@@ -12,18 +12,18 @@ days default).
 
 ![AD_ActivityCollection Job in the Jobs Tree](/images/accessanalyzer/12.0/solutions/activedirectory/activity/jobstree_1.webp)
 
-There are two ways AD Activity data can be retrieved by Access Analyzer:
+Access Analyzer can retrieve AD Activity data in two ways:
 
 - Network share containing the archive logs
 - API Server connected to the archive logs
 
 This is configured in the query. See the
-[Queries for the AD_ActivityCollection Job](#queries-for-the-ad_activitycollection-job) topic for
+[Queries for the AD_ActivityCollection Job](#queries-for-the-adactivitycollection-job) topic for
 additional information.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
@@ -32,13 +32,12 @@ instructions on how to edit parameters on a job overview page.
 
 The AD_ActivityCollection page has the following configurable parameters:
 
-- Enable to import AD events into the AIC
+- Enable to import AD events into the Netwrix Access Information Center (AIC)
 - Enable to import authentication events into the AIC
 
     :::note
     The import of AD events and authentication events is disabled by default. You must
-    enable these parameters for the activity data to be imported into the Netwrix Access Information
-    Center. See the
+    enable these parameters for the activity data to be imported into the AIC. See the
     [(Optional) Configure Import of AD Activity into Netwrix Access Information Center](/docs/accessanalyzer/12.0/requirements/activedirectory/target/activity/activity.md#optional-configure-import-of-ad-activity-into-netwrix-access-information-center)
     topic for instructions.
     :::
@@ -48,7 +47,7 @@ The AD_ActivityCollection page has the following configurable parameters:
 - Number of days to retain activity data in the AIC
 
 See the
-[Customize Analysis Parameters for the AD_ActivityCollection Job](#customize-analysis-parameters-for-the-ad_activitycollection-job)
+[Customize Analysis Parameters for the AD_ActivityCollection Job](#customize-analysis-parameters-for-the-adactivitycollection-job)
 topic for additional information.
 
 ## Queries for the AD_ActivityCollection Job
@@ -70,9 +69,9 @@ The AD_ActivityCollection Job uses the ADActivity Data Collector for the followi
 
 ### Configure the Query to Import from the Activity Monitor
 
-The AD_ActivityCollection Job requires configuration to collect data. Follow the steps to modify the
-query configuration when Netwrix Activity Monitor is configured to host domain activity logs on an
-API server.
+The AD_ActivityCollection Job requires configuration to collect data. Complete the following steps to
+modify the query configuration when Netwrix Activity Monitor is configured to host domain activity
+logs on an API server.
 
 :::note
 Ensure the Activity Monitor API Server and the required Connection Profile are
@@ -144,9 +143,9 @@ logs.
 
 ### Configure the Query to Import from a Share
 
-The AD_ActivityCollection Job requires configuration to collect data. Follow the steps to modify the
-query configuration when Netwrix Activity Monitor is configured to store activity logs on a network
-share.
+The AD_ActivityCollection Job requires configuration to collect data. Complete the following steps to
+modify the query configuration when Netwrix Activity Monitor is configured to store activity logs on
+a network share.
 
 :::note
 Ensure the Activity Monitor domain output and the required Connection Profile are
@@ -205,7 +204,7 @@ Navigate to the **Jobs** > **Active Directory** > **6.Activity** > **0.Collecti
 **AD_ActivityCollection** Job. Select the **Configure** > **Analysis** node.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -229,8 +228,8 @@ The following analysis tasks are selected by default:
 
 ### Customize Analysis Parameters for the AD_ActivityCollection Job
 
-The customizable parameters for this job allow you to configure importing of AD activity data into
-the Netwrix Access Information Center.
+Use these customizable parameters to configure how the job imports AD activity data into the Netwrix
+Access Information Center.
 
 | Analysis Task                                   | Customizable Parameter Name | Default Value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Value Indicates                                         |
 | ----------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |

@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Active Directory Domain Target Requirements
 
-Netwrix Enterprise Auditor can execute scans on Active Directory domains. The Netwrix Activity
-Monitor can be configured to monitor activity on Active Directory domains and make the event data
+Netwrix Enterprise Auditor can execute scans on Active Directory domains. You can configure the
+Netwrix Activity Monitor to monitor activity on Active Directory domains and make the event data
 available for Enterprise Auditor Active Directory Activity scans.
 
 ## Auditing Permissions
@@ -29,7 +29,7 @@ topic for additional information.
 ## Activity Auditing Permissions
 
 :::note
-Active Directory domain activity events can also be monitored through Netwrix Threat
+You can also monitor Active Directory domain activity events through Netwrix Threat
 Prevention. This requires integration between it and Netwrix Activity Monitor to enable access to
 the data for Enterprise Auditor Active Directory Activity scans. See the
 [Getting Data from NTP for AD Activity Reporting](/docs/accessanalyzer/11.6/requirements/activedirectory/activedirectory/activity/threatprevention.md)
@@ -39,8 +39,8 @@ topic for additional information.
 
 Requirements to Deploy the AD Agent on the Domain Controller
 
-The Netwrix Activity Monitor must have an AD Agent deployed on the domain controller to be
-monitored. While actively monitoring, the AD Agent generates activity log files stored on the
+The Netwrix Activity Monitor must have an AD Agent deployed on the domain controller you want to
+monitor. While actively monitoring, the AD Agent generates activity log files stored on the
 server. The credential used to deploy the AD Agent must have the following permissions on the
 server:
 
@@ -48,8 +48,8 @@ server:
 - READ and WRITE access to the archive location for Archiving feature only
 
 :::note
-For monitoring an Active Directory domain, the AD Agent must be installed on all domain
-controllers within the domain to be monitored.
+To monitor an Active Directory domain, install the AD Agent on all domain
+controllers within the domain you want to monitor.
 :::
 
 
@@ -58,8 +58,8 @@ Enterprise Auditor to read the activity log files must have also have this permi
 
 **Activity Monitor Archive Location**
 
-If the activity log files are being archived, configurable within the Netwrix Activity Monitor
-Console, then the credential used by Enterprise Auditor to read the activity log files must also
+If you archive the activity log files, configurable within the Netwrix Activity Monitor
+Console, then the credential Enterprise Auditor uses to read the activity log files must also
 have READ and WRITE permissions on the archive location.
 
 **Integration with Enterprise Auditor**
@@ -77,9 +77,9 @@ are required for communication between the Agent server and the Netwrix Activity
 | -------------------------------- | -------- | ----- | ------------------- |
 | Activity Monitor to Agent Server | TCP      | 4498  | Agent Communication |
 
-The Windows firewall rules need to be configured on the Windows server, which require certain
-inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+You need to configure the Windows firewall rules on the Windows server, which require certain
+inbound rules if the scans run in applet mode. These scans operate over a default
+port range that you can't specify via an inbound rule. For more information, see the Microsoft
 [Connecting to WMI on a Remote Computer](https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx)
 article.
 

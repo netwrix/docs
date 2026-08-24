@@ -11,18 +11,17 @@ These settings are exclusive to the Enterprise Auditor for Exchange Solution.
 
 ![Exchange - Set up the connection](/images/accessanalyzer/11.6/admin/settings/exchange_1.webp)
 
-The Exchange node is grayed-out by default. In order for these settings to be enabled, it is
-necessary to install both Enterprise Auditor MAPI CDO and Microsoft Exchange MAPI CDO on the
-Enterprise Auditor Console server. See the
+The Exchange node is grayed out by default. To enable these settings, install both Enterprise
+Auditor MAPI CDO and Microsoft Exchange MAPI CDO on the Enterprise Auditor Console server. See the
 [StealthAUDIT MAPI CDO Installation](/docs/accessanalyzer/11.6/install/stealthauditmapicdoinstallation/stealthaudit_mapi_cdo_installation.md)
 topic for additional information.
 
 ![exchange_2](/images/accessanalyzer/11.6/admin/settings/exchange_2.webp)
 
-Once the requirements have been met, the Exchange node is enabled for configuration. These settings
-are utilized to make MAPI connections to the Exchange Server for the Mailbox, PublicFolder,
-Exchange2K, and ExchangePS Data Collectors. The Client Access Server field, or CAS, is also utilized
-by the ExchangePS Data Collector in order to make Remote PowerShell connections for Exchange 2010 or
+After you meet the requirements, the Exchange node is enabled for configuration. These settings
+are used to make MAPI connections to the Exchange Server for the Mailbox, PublicFolder,
+Exchange2K, and ExchangePS Data Collectors. The Client Access Server field, or CAS, is also used
+by the ExchangePS Data Collector to make Remote PowerShell connections for Exchange 2010 or
 newer. The data collectors apply these settings unless modified inside the job query.
 
 ![Set up the connection](/images/accessanalyzer/11.6/admin/settings/exchange_3.webp)
@@ -45,34 +44,34 @@ on which version of Exchange is audited.
           specified for MAPI connections.
 
             - Enter the Alias name in the textbox. The Alias needs to be an Exchange 2010 or newer
-              mailbox, not a mail-enabled service account. However, this mailbox does not need
+              mailbox, not a mail-enabled service account. However, this mailbox doesn't need
               rights on the Exchange Organization; it only needs to reside within it.
 
         - Enter the name of the physical CAS in the Client Access Server textbox. This server can be
-          part of an array, but do not enter the name of a CAS Array. This should also be the
-          Exchange CAS where both Remote PowerShell and Windows Authentication on the PowerShell
-          Virtual Directory have been enabled.
+          part of an array, but don't enter the name of a CAS Array. This should also be the
+          Exchange CAS where you have enabled both Remote PowerShell and Windows Authentication on
+          the PowerShell Virtual Directory.
 
 :::info
-Once the Exchange Connection Settings have been properly configured for the
-version of Exchange to be audited, it is strongly recommended that the settings be tested.
+After you properly configure the Exchange Connection Settings for the
+version of Exchange you want to audit, test the settings.
 :::
 
 
 In the Test Exchange Connection Settings section:
 
-- Enter a Mailbox Server with mailboxes to be audited in the Exchange Server textbox.
+- Enter a Mailbox Server with the mailboxes you want to audit in the Exchange Server textbox.
 - Click the Test Exchange settings link.
 
     ![Test Exchange Connection Setting](/images/accessanalyzer/11.6/admin/settings/exchange_4.webp)
 
 If the Exchange Connection Settings are correct, an output field opens. At the bottom of the output
-field, a mailbox count is stated and a message appears which says, “You have successfully connected
-to this Exchange Server.” Click OK.
+field, the output states a mailbox count and shows a message that reads, “You have successfully
+connected to this Exchange Server.” Click OK.
 
 ![exchange_6](/images/accessanalyzer/11.6/admin/settings/exchange_6.webp)
 
 The Cancel and Save buttons are in the lower-right corner of the Exchange view. These buttons become
-enabled when modifications are made to the Exchange global setting. Whenever changes are made at the
-global level, click Save and then OK to confirm the changes. Otherwise, click Cancel if no changes
-were intended.
+enabled when you make modifications to the Exchange global setting. Whenever you make changes at the
+global level, click Save and then OK to confirm the changes. Otherwise, click Cancel if you don't
+want to save the changes.

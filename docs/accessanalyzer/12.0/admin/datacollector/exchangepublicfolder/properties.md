@@ -6,13 +6,13 @@ sidebar_position: 30
 
 # ExchangePublicFolder: Properties
 
-The Properties page is where properties that will be gathered are selected. It is a wizard page for
-all of the categories.
+Use the Properties page to select the properties to gather. It is a wizard page for all of the
+categories.
 
 ![Exchange Public Folder Data Collector Wizard Properties page](/images/accessanalyzer/12.0/admin/datacollector/exchangepublicfolder/properties.webp)
 
-Properties can be selected individually or you can use the **Select All**, **Clear All**, or **Reset
-All** buttons. All selected properties will be gathered. The **Message Classes** button opens the
+You can select properties individually or use the **Select All**, **Clear All**, or **Reset
+All** buttons. Access Analyzer gathers all selected properties. The **Message Classes** button opens the
 Message classes filters window.
 
 ![Message classes filters window](/images/accessanalyzer/12.0/admin/datacollector/exchangepublicfolder/messageclassesfilterswindow.webp)

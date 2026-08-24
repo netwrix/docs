@@ -21,20 +21,20 @@ relevant topic for specific information on job group settings and recommended sc
 ## ExchangePS Data Collector & Client Access Server
 
 A Client Access Server (CAS) name is required for the ExchangePS Data Collector. When targeting
-Exchange 2013 or 2016, it is possible for the **Settings** > **Exchange** node to have been
-configured with a web address instead of a CAS.
+Exchange 2013 or 2016, the **Settings** > **Exchange** node might be configured with a web address
+instead of a CAS.
 
 - Exchange 2010 Servers – Uses the CAS server set in the global configuration (**Settings** >
   **Exchange** node)
 - Exchange 2013 & 2016 – May require a CAS name set in the ExchangePS Data Collector configuration:
 
-    - If the **Settings** > **Exchange** node was configured for **MAPI over HTTP**, then a CAS
-      server name was supplied and that is used by the ExchangePS Data Collector
+    - If the **Settings** > **Exchange** node was configured for **MAPI over HTTP**, the
+      ExchangePS Data Collector uses the CAS server name you supplied
     - If the **Settings** > **Exchange** node was configured for **MAPI over HTTPS**, then the
       global configuration has a web address instead of an actual server. Therefore, each query
       requires the CAS server to be set as the specific server on the Category page.
 
-Follow the steps to supply a CAS name for data collection.
+To supply a CAS name for data collection:
 
 **Step 1 –** Navigate to the job’s **Configure** node and select **Queries**.
 
@@ -45,8 +45,8 @@ opens.
 Wizard opens.
 
 :::warning
-Unless otherwise indicated within the job group section, do not make changes to other
-wizard pages as they have been pre-configured for the purpose of the job.
+Unless otherwise indicated within the job group section, don't make changes to other
+wizard pages as they have been pre-configured for the job.
 :::
 
 

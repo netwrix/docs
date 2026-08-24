@@ -21,7 +21,7 @@ structure to run those jobs together in the proper order.
 :::
 
 
-Jobs do not have a Settings node like a job group. Job Properties provide the option to break
+Jobs don't have a Settings node like a job group. Job Properties provide the option to break
 inheritance on global or job group settings. See the [Job Properties](/docs/accessanalyzer/12.0/admin/jobs/job/properties/overview.md) topic
 for additional information.
 
@@ -42,7 +42,7 @@ the Web Console.
 ## Job Description Page
 
 The Job Description page displays shortcuts, links, and important information on the job. The Job
-Page allows users to view and modify common job configurations, such as Connection and Storage
+Page lets users view and modify common job configurations, such as Connection and Storage
 profiles, job properties, SQL analysis parameters, and PowerShell parameters. Depending on the type
 of job, the description page will appear different and display information specific to the job
 selected.
@@ -103,7 +103,7 @@ information:
 
 - Graph – Displays a line graph that has information for the last five times the job was executed
 
-Prior to running any job or job group, ensure the following have been properly configured:
+Before running any job or job group, ensure the following have been properly configured:
 
 - Queries, Analysis, Actions, and Reports are configured as desired
 - If collecting data, at least one host list has been assigned
@@ -142,7 +142,7 @@ The following settings can be inherited from a parent:
 If a job has analysis parameters that can be customized, those parameters can be configured in the
 Configuration section of the Job Description Page.
 
-Follow the steps to configure customizable parameters using the Configuration option on the Job
+To configure customizable parameters using the Configuration option on the Job
 Description Page:
 
 **Step 1 –** Navigate to the **Jobs > [Job Group] > [Job]** node. If the job has customizable
@@ -150,7 +150,7 @@ parameters, they will be located under Configuration in the job's Overview secti
 
 ![Configuration section of Job description page](/images/accessanalyzer/12.0/admin/jobs/job/descriptionpageconfigurationsection.webp)
 
-**Step 2 –** Click on a parameter to open the Parameter Configuration window.
+**Step 2 –** Click a parameter to open the Parameter Configuration window.
 
 :::note
 To view a tool-tip that contains information about the Variable Name and the Task Name

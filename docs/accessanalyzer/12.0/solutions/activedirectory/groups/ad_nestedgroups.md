@@ -7,8 +7,8 @@ sidebar_position: 90
 # AD_NestedGroups Job
 
 The AD_NestedGroups Job identifies nested groups within Active Directory and provides details such
-as the levels of nesting. While Active Directory provides the ability to nest certain types of
-groups within other groups, Microsoft recommends nesting does not go beyond two levels in order to
+as the levels of nesting. While Active Directory lets you nest certain types of
+groups within other groups, Microsoft recommends nesting doesn't go beyond two levels to
 avoid difficulties in understanding effective membership and access.
 
 ## Analysis Tasks for the AD_NestedGroups Job
@@ -17,7 +17,7 @@ Navigate to the **Active Directory** > **1.Groups** > **AD_NestedGroups** > **Co
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

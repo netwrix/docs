@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # 1-Box_Activity Scans Job
 
-The 1-Box_Activity Scans Job collects the data which will be further analyzed in order to provide
+The 1-Box_Activity Scans Job collects the data which will be further analyzed to provide
 visibility into user activity events within Box.
 
 ## Queries for the 1-Box_Activity Scans Job
@@ -18,12 +18,12 @@ the Scan Box Permissions Category.
 
 The 1-Box_Activity Scans Job has the following queries:
 
-- Activity Scan – Collects activity data which will be further analyzed in order to provide
+- Activity Scan – Collects activity data which will be further analyzed to provide
   visibility into user activity events within Box.
 
-Prior to the first execution, it is necessary to authenticate to the targeted Box environment if
-this has not already been done when configuring the 1-Box_Access Scans Job. This is done on the
-Authenticate page of the Activity Scan query. Additionally, the following default configurations are
+Before the first execution, authenticate to the targeted Box environment if you haven't already done
+so while configuring the 1-Box_Access Scans Job. This is done on the Authenticate page of the
+Activity Scan query. Additionally, the following default configurations are
 commonly customized:
 
 - Exclusions page:
@@ -34,13 +34,13 @@ commonly customized:
 
     - Not scoped
 
-See the [Configure the 1-Box_Activity Scans Job](#configure-the-1-box_activity-scans-job) section
+See the [Configure the 1-Box_Activity Scans Job](#configure-the-1-boxactivity-scans-job) section
 for instructions.
 
 ### Configure the 1-Box_Activity Scans Job
 
-The 1-Box_Activity Scans Job contains the Activity Scan Query. Follow the steps to configure the
-query.
+The 1-Box_Activity Scans Job contains the Activity Scan Query. To configure the
+query:
 
 **Step 1 –** Navigate to the **Box** > **0.Collection** > **1-Box_Activity Scans** > **Configure**
 node and select **Queries**.
@@ -90,7 +90,7 @@ configured. Click **Authorize** to launch the BoxLogin window and generate an au
 This code allows Enterprise Auditor to report on the Box Enterprise.
 
 :::note
-Authentication to the target Box environment only needs to be completed once, prior to the
+Authentication to the target Box environment only needs to be completed once, before the
 first scan and only in one of the scan jobs.
 :::
 

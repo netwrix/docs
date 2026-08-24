@@ -17,8 +17,8 @@ The options on this page are:
     - Field – Column names
 
         :::note
-        The displayed fields vary depending on the Source Table selected during the
-        creation of the new action
+        The displayed fields vary depending on the Source Table selected when you create
+        the new action.
         :::
 
 

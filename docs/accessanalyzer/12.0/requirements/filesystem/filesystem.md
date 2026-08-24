@@ -10,11 +10,11 @@ The core components for Netwrix Access Analyzer (formerly Enterprise Auditor) ar
 Analyzer Console server, SQL Server, and Access Information Center. See the
 [Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topic for the core requirements.
 
-The File System solution can be configure to use Proxy servers either an applet or as a service. See
-the [File System Scan Options](/docs/accessanalyzer/12.0/requirements/filesystem/scanoptions/scanoptions.md) topic for additional information.
+You can configure the File System solution to use Proxy servers, either as an applet or as a service.
+See the [File System Scan Options](/docs/accessanalyzer/12.0/requirements/filesystem/scanoptions/scanoptions.md) topic for additional information.
 
-In addition to these, integration with either the Netwrix Activity Monitor or the Netwrix Threat
-Prevention is required for event activity data to be scanned. See the
+You also need to integrate with either Netwrix Activity Monitor or Netwrix Threat Prevention to scan
+event activity data. See the
 [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor) or
 the
 [Netwrix Threat Prevention Documentation](https://helpcenter.netwrix.com/category/threatprevention)
@@ -29,7 +29,7 @@ See the following topics for target environment requirements:
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment:
+These depend on the size of the target environment:
 
 | Environment | Enterprise                     | Extra-Large                         | Large                               | Medium                              | Small                               |
 | ----------- | ------------------------------ | ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
@@ -38,26 +38,26 @@ These are dependent upon the size of the target environment:
 | Cores       | 8 CPU                          | 8 CPU                               | 8 CPU                               | 4 CPU                               | 2 CPU                               |
 | Disk Space  | 1.5 TB                         | 770 GB                              | 470 GB                              | 270 GB                              | 130 GB                              |
 
-The above recommended disk space sizing information is based on the needs of Access Analyzer as well
+This recommended disk space sizing information is based on the needs of Access Analyzer as well
 as the File System solution for running Permission scans with default configuration (500 MB per
 million files and folders), that means no tag collection, file-level scanning, activity, or
 sensitive data.
 
-- For tag collection, add 125 MB per million documents to the totals above
+- For tag collection, add 125 MB per million documents to these totals
 - For activity collection, add 250 MB per million files and folders and another 125 MB per million
-  activity events to the totals above
+  activity events to these totals
 - For sensitive data collection, add 500 MB per million files and folders and another 1%-10% of the
   total size of the documents scanned for sensitive data (depending on targeted document types and
-  selected criteria) to the totals above
+  selected criteria) to these totals
 
-For example, in order to scan 200 million files and folders, of which 10 million files will be
+For example, to scan 200 million files and folders, of which 10 million files will be
 scanned for tag collection and sensitive data with a total size of 6 TB, you would need: 160 GB for
 permission collection + 1.25 GB for tag collection (10x125 MB) + 100 GB for sensitive data
 collection (200x500 MB) + 600 GB additional for sensitive data collection (10% of 6 TB) = 861.25 GB
 total disk space.
 
 :::note
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the
+If you run Sensitive Data Discovery (SDD) scans, you need to increase the
 minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. By
 default, SDD scans are configured to run two concurrent threads. For example, if the job is
 configured to scan 8 hosts at a time with two concurrent SDD threads, then an extra 32 GB of RAM are
@@ -68,16 +68,16 @@ required (8x2x2=32).
 **Additional Server Considerations for File System Scans**
 
 If Data Activity Tracking for NAS is required or if NetApp Filers running Clustered Data ONTAP are
-in scope, reducing latency between the scanning server and the target device is highly recommended.
-Additional hardware may be required, especially if the target NAS devices are not collocated with
+in scope, you should reduce latency between the scanning server and the target device.
+Additional hardware may be required, especially if the target NAS devices aren't collocated with
 the Access Analyzer Console server.
 
 **Sensitive Data Discovery Auditing Requirement**
 
 :::note
 The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and does not require any configuration; it has been
-preconfigured to work with Access Analyzer and should never be customized through Java. It will not
+server. The JDK deployed is prepackaged and doesn't require any configuration; it's
+preconfigured to work with Access Analyzer, so don't customize it through Java. It will not
 conflict with other JDKs or Java Runtimes in the same environment.
 :::
 
@@ -85,7 +85,7 @@ conflict with other JDKs or Java Runtimes in the same environment.
 Permissions on the Console Server to Run File System Scans
 
 In most cases the Access Analyzer user is a member of the local Administrators group on the
-application server. However, if the Role Based Access usage is employed, then the user assigned the
+application server. However, if you use Role Based Access, the user assigned the
 role of Job Initiator (for manual execution) or the credential used for the Schedule Service Account
 (for scheduled execution) must have the following permissions to execute File System scans in local
 mode, applet mode, or proxy mode with applet:
@@ -96,12 +96,12 @@ mode, applet mode, or proxy mode with applet:
     - Administrators
 
 These permissions grant the credential the ability to create a high integrity token capable of
-leveraging the “Back up files and directories” from where the Access Analyzer executable is run.
+leveraging the “Back up files and directories” right on the host where the Access Analyzer executable runs.
 
 Additionally, the credential must have `WRITE` access to the `…\StealthAUDIT\FSAA` folder in the
-installation directory. This is required by either the user account running the Access Analyzer
-application, when manually executing jobs from the console, or the Schedule Service Account assigned
-within Access Analyzer, when running jobs as a scheduled tasks.
+installation directory. Either the user account running the Access Analyzer application (when
+manually executing jobs from the console) or the Schedule Service Account assigned within Access
+Analyzer (when running jobs as scheduled tasks) needs this access.
 
 See the [File System Scan Options](/docs/accessanalyzer/12.0/requirements/filesystem/scanoptions/scanoptions.md) topic and the
 [File System Supported Platforms](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/filesystems.md) topic for permissions required to scan
@@ -111,7 +111,7 @@ the environment.
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment.
+These depend on the size of the target environment.
 
 | Environment              | Enterprise                     | Extra-Large                         | Large                               | Medium                              | Small                               |
 | ------------------------ | ------------------------------ | ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |

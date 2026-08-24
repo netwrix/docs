@@ -13,9 +13,9 @@ Use the Export settings page to specify data export settings.
 Select the **Export results data** checkbox to enable the settings. The following options control
 the file type and destination of the exported data:
 
-- Format – Use the drop-down menu to select the file format of the exported data
+- Format – Use the dropdown menu to select the file format of the exported data
 
-    - MS Excel file – Converts file to Microsoft Excel format. If Excel is not installed on the
+    - MS Excel file – Converts file to Microsoft Excel format. If Excel isn't installed on the
       console, a warning message shows and another export file format needs to be selected.
     - CSV file – Converts file to Comma-Separated Values format. Includes the option to compress the
       file to a zip file.
@@ -29,4 +29,4 @@ the file type and destination of the exported data:
   **Location** field. To specify a different location, clear the checkbox and edit the **Location**
   field.
 
-Once the options are selected, click **Next**.
+After you select the options, click **Next**.

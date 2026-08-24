@@ -6,10 +6,10 @@ sidebar_position: 20
 
 # Presentation Dependencies
 
-In the following subsections, each slide is aligned to the jobs that supply its data. The slide
+The following subsections align each slide to the jobs that supply its data. The slide
 number is specific to the **Netwrix_CDSA_Presentation.pptx** file, as there are slight various in
 page numbering with the files designed to be saved as PDFs. Many jobs contribute to multiple slides,
-so jobs are highlighted in bold text the first time they are listed.
+so this topic highlights jobs in bold text the first time they appear.
 
 ## Executive Summary Slide
 
@@ -416,8 +416,8 @@ Data is also supplied by the following jobs when they have been executed:
 
 ## Additional Findings (FS, AD, Windows OS) Slide
 
-Slide 17 in the **Netwrix_CDSA_Presentation.pptx** file is hidden by default. It is recommended to
-use Slides 18-20 instead, even when the primary jobs are the only ones supplying data. Slide 17 is
+Slide 17 in the **Netwrix_CDSA_Presentation.pptx** file is hidden by default. Use Slides 18-20
+instead, even when the primary jobs are the only ones supplying data. Slide 17 is
 an alternative to slides 18-20. It has the following primary job dependencies:
 
 - .Active Directory Inventory

@@ -6,10 +6,9 @@ sidebar_position: 20
 
 # Updating Passwords
 
-Credential passwords in Enterprise Auditor occasionally need to be updated due to reasons such as
-the password expiring due to existing password expiration polices or for security purposes. If a
-password change is required, there are multiple types of accounts where credential passwords must be
-updated:
+You occasionally need to update credential passwords in Enterprise Auditor due to reasons such as
+existing password expiration policies or security purposes. If you need to change a password, there
+are multiple types of accounts where you must update credential passwords:
 
 - [Storage Profiles](#storage-profiles)
 - [Connection Profiles ](#connection-profiles)
@@ -51,8 +50,8 @@ topic for additional information.
 ## Schedule Service Accounts
 
 Enterprise Auditor uses the Schedule Service Account to run scheduled tasks on the Enterprise
-Auditor Console server. The global account is configured at the Settings > Schedule node. However, a
-custom account can be assigned to either a Job or a Scheduled Task.
+Auditor Console server. You configure the global account at the Settings > Schedule node. However,
+you can assign a custom account to either a Job or a Scheduled Task.
 
 ### Settings > Schedule Node
 
@@ -63,22 +62,22 @@ topic for additional information on editing the user credentials for the account
 
 ### Schedules Node
 
-The Schedules Node opens the Scheduled Actions pages where scheduled tasks are listed. From this
-page, actions can be scheduled using the Schedule wizard. See the
+The Schedules Node opens the Scheduled Actions pages, which list scheduled tasks. From this
+page, you can schedule actions using the Schedule wizard. See the
 [Schedule Wizard](/docs/accessanalyzer/11.6/admin/schedule/wizard.md)
 topic for additional information on updating the credentials password in the Schedule wizard.
 
 ### Jobs
 
-Jobs are typically scheduled with the global scheduled account. However, Jobs can also be scheduled
-with a custom account. See the
+Enterprise Auditor typically schedules Jobs with the global scheduled account. However, you can
+also schedule Jobs with a custom account. See the
 [Auto Retry Tab](/docs/accessanalyzer/11.6/admin/jobs/job/properties/autoretry.md)
 topic for information on updating the Schedule Authentication credentials.
 
 ## Notifications (if enabled)
 
-Email notifications are configured in the Notifications node. The following steps only apply if
-Notification authentication has been enabled for the Enterprise Auditor Console. See the
+You configure email notifications in the Notifications node. The following steps only apply if
+you've enabled Notification authentication for the Enterprise Auditor Console. See the
 [Update Notification Authentication Credentials](/docs/accessanalyzer/11.6/admin/settings/notification.md#update-notification-authentication-credentials)
 topic for information on updating Notification authentication credentials.
 

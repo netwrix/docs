@@ -13,7 +13,7 @@ topic for information on host lists.
 
 ![Host Inventory Data Grid](/images/accessanalyzer/11.6/admin/hostmanagement/datagrid.webp)
 
-The icon for each host entry is an indicator of its inventory state:
+The icon for each host entry indicates its inventory state:
 
 | Icon                                                                                                                                           | Inventory State |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
@@ -32,10 +32,10 @@ Use the horizontal scrollbar at the bottom to view the host inventory data, whic
   queue**)
 
     :::note
-    If the Enterprise Auditor application is stopped during host inventory collection,
+    If the Enterprise Auditor application stops during host inventory collection,
     hosts queued for inventory retain the **InventoryState** of **In queue** within the Host
     Management node data grid, as this is the last known state of inventory. It retains that state
-    until the next host inventory collection is executed against the host.
+    until the next host inventory collection runs against the host.
     :::
 
 

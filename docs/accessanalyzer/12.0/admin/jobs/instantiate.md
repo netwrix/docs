@@ -24,12 +24,12 @@ prefix for all job groups. `JOB_` is the prefix for all jobs. Changing the prefi
 from the Jobs tree without deleting it.
 
 Instantiating new, external jobs is as easy as copying and pasting the job or job group into this
-location. However, copying an existing job within the Jobs directory is not supported. If the job
+location. However, copying an existing job within the Jobs directory isn't supported. If the job
 already exists within the Access Analyzer Console server, copying outside of the console may result
 in reporting issues.
 
 :::warning
-Do not use these steps to copy an existing job.
+Don't use these steps to copy an existing job.
 :::
 
 
@@ -50,7 +50,7 @@ colleague, or other entity, it is most likely in one of two formats:
 
 ![Extract zip file contents to the Jobs folder](/images/accessanalyzer/12.0/admin/jobs/instantiateextract.webp)
 
-- If in archive format, extract the desired content to the Jobs directory
+- If in archive format, extract the content you want to the Jobs directory
 
     - Use the default path or specify a specific path using the browse button (…)
     - Select whether to **Show extracted files when complete**. This option is selected by default.
@@ -64,7 +64,7 @@ match that of the jobs or job groups that are already there.
 
 ![Refresh Tree](/images/accessanalyzer/12.0/admin/jobs/refreshtree.webp)
 
-**Step 4 –** In the Access Analyzer Console, right-click on the **Jobs** node and select **Refresh
+**Step 4 –** In the Access Analyzer Console, right-click the **Jobs** node and select **Refresh
 Tree**.
 
 ![Job displayed in the Jobs Tree](/images/accessanalyzer/12.0/admin/jobs/instantiatejobstree.webp)

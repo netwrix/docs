@@ -55,7 +55,7 @@ On first login, Access Analyzer prompts you to enroll an authenticator app for M
 Keep the bootstrap account active as an emergency recovery account, but don't use it for routine user management. Create at least one named User Admin account during initial setup and use that account for ongoing administration.
 :::
 
-For the full first-login walkthrough, see [Quick Install — Step 5](/docs/accessanalyzer/2601/install/quickinstall#step-6-sign-in).
+For the full first-login walkthrough, see [Quick Install — Step 6](/docs/accessanalyzer/2601/install/quickinstall#step-6-sign-in).
 
 ## Recommended initial setup
 
@@ -64,7 +64,7 @@ After installation, complete the following steps in order before handing the pro
 | Step | Action | Notes |
 | --- | --- | --- |
 | **1** | Sign in as `admin@dspm.local` | Uses the bootstrap User Admin account. Retrieve the password using the kubectl command above. |
-| **2** | Create at least one named **User Admin** | Provides a dedicated account for user management with no system configuration access. Use this account for ongoing user administration so that Administrator accounts aren't required for routine user changes. |
+| **2** | Create at least one named **User Admin** | Provides a dedicated account for user management with no system configuration access. Use this account for ongoing user administration so that routine user changes don't require Administrator accounts. |
 | **3** | Create at least one **Administrator** | Grants full access — system configuration and user management. This is typically the person responsible for setting up and maintaining the product. |
 | **4** | Create **Viewer** accounts as needed | Optional. Add Viewer accounts for stakeholders who need read-only access to dashboards and reports. |
 | **5** | Sign out of the bootstrap account | Do day-to-day work from named accounts. |
@@ -80,7 +80,7 @@ Use this procedure when Access Analyzer manages passwords directly.
 1. Click **Add User**.
 2. Enter a **Name**. Names must be between 2 and 100 characters.
 3. Enter an **Email** address. Email addresses must be unique across all users (case-insensitive).
-4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer**. The default is **Viewer** — the intentionally conservative default. Only assign Administrator or User Admin after confirming the user's responsibilities.
+4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer**. The default is **Viewer**, an intentionally conservative choice. Only assign Administrator or User Admin after confirming the user's responsibilities.
 5. Enter a **Password** and confirm it.
 6. Click **Create User**.
 
@@ -96,12 +96,12 @@ Password requirements for local accounts:
 
 ### Add a user (Identity Provider)
 
-When your deployment is configured to use an external Identity Provider, you can pre-provision an account before the user's first sign-in. Access Analyzer creates the account record and links it to the user's IdP identity when they sign in for the first time.
+When you configure your deployment to use an external Identity Provider, you can pre-provision an account before the user's first sign-in. Access Analyzer creates the account record and links it to the user's IdP identity when they sign in for the first time.
 
 1. Click **Add User**.
 2. Enter a **Name**. Names must be between 2 and 100 characters.
 3. Enter an **Email** address. The email must match the address the user has in your IdP exactly, including case.
-4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer**. The default is **Viewer** — the intentionally conservative default. Only assign Administrator or User Admin after confirming the user's responsibilities.
+4. Select a **Role**: **Administrator**, **User Admin**, or **Viewer**. The default is **Viewer**, an intentionally conservative choice. Only assign Administrator or User Admin after confirming the user's responsibilities.
 5. Click **Create User**.
 
 No password is required. The account is ready for the user to sign in through your IdP.
@@ -124,7 +124,7 @@ What you can change depends on the account type:
 | Identity Provider — pre-provisioned (hasn't signed in yet) | Name, Email, Role |
 | Identity Provider — provisioned (has signed in at least once) | Role only |
 
-Name and email are locked for provisioned IdP accounts because those values come from the IdP token. To change them, update the user's profile in your IdP.
+Access Analyzer locks name and email for provisioned IdP accounts because those values come from the IdP token. To change them, update the user's profile in your IdP.
 
 ## Activate a user
 

@@ -22,7 +22,7 @@ Select any desired scan options:
     :::
 
 
-- Authentication – Select an Authentication type from the drop down:
+- Authentication – Select an Authentication type from the dropdown:
 
     - Negotiate
     - Basic

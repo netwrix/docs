@@ -9,9 +9,9 @@ sidebar_position: 40
 The Dropbox_Sharing job provides insight into the sharing of resources within the targeted Dropbox
 environment. It is dependent on data collected by the 0.Collection job group. This job processes
 analysis tasks and generates a report on which resources are being shared and under which policy the
-sharing occurs. Best practices often dictate that these resources should be carefully monitored due
-to the amount of access to the data. If these resources contain privileged data, the access should
-be reevaluated or the sensitive resources relocated.
+sharing occurs. Best practices recommend monitoring these resources carefully due
+to the amount of access to the data. If these resources contain privileged data, reevaluate the
+access or relocate the sensitive resources.
 
 ![2.Sharing > Dropbox_Sharing Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/dropbox/sharingjobstree.webp)
 
@@ -23,7 +23,7 @@ View the analysis tasks by navigating to the **Jobs** > **Dropbox** > **2.Sharin
 **Dropbox_Sharing** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

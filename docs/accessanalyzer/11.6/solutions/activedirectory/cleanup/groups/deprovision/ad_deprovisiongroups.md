@@ -22,7 +22,7 @@ staging OU. The default is 365 days.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to easily modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
@@ -32,7 +32,7 @@ The AD_DeprovisionGroups page has the following configurable parameters:
 - Days in the Staging OU before deletion
 
 See the
-[Customizable Analysis Parameters for the AD_DeprovisionGroups Job](#customizable-analysis-parameters-for-the-ad_deprovisiongroups-job)
+[Customizable Analysis Parameters for the AD_DeprovisionGroups Job](#customizable-analysis-parameters-for-the-addeprovisiongroups-job)
 topic for additional information.
 
 ## Analysis Tasks for the AD_DeprovisionGroups Job
@@ -49,12 +49,12 @@ The default analysis tasks are:
 - Groups to Delete – Identifies groups in the Stale Groups OU that are ready to be deleted
 
     - This analysis task contains a configurable parameter: `@days_before_deleting`. See the
-      [Customizable Analysis Parameters for the AD_DeprovisionGroups Job](#customizable-analysis-parameters-for-the-ad_deprovisiongroups-job)
+      [Customizable Analysis Parameters for the AD_DeprovisionGroups Job](#customizable-analysis-parameters-for-the-addeprovisiongroups-job)
       topic for additional information.
 
 ### Customizable Analysis Parameters for the AD_DeprovisionGroups Job
 
-Customizable parameters enable you to set the values used to classify user and group objects during
+With the customizable parameters, you can set the values used to classify user and group objects during
 this job’s analysis.
 
 | Analysis Task    | Customizable Parameter Name | Default Value | Value Indicates                        |
@@ -71,7 +71,7 @@ Navigate to the **Active Directory** > **Cleanup** > **1.Groups** > **1. Deprovi
 **AD_DeprovisonGroups** > **Configure** node and select **Actions** to view the action tasks.
 
 :::warning
-Do not enable the actions unless it is required. Disable the actions after execution to
+Don't enable the actions unless it is required. Disable the actions after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 :::
 
@@ -87,7 +87,7 @@ The action tasks must be executed together and in order.
 
 - Move Groups – Move groups to staging OU
 
-    - The target staging OU must be set in the Move Groups Action Task prior to executing the action
+    - The target staging OU must be set in the Move Groups Action Task before executing the action
       tasks. See the
       [Configure the Target OU](/docs/accessanalyzer/11.6/solutions/activedirectory/cleanup/configuretargetou.md)
       topic for additional information.

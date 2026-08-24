@@ -6,13 +6,13 @@ sidebar_position: 40
 
 # UX_LargeGroups Job
 
-The UX_LargeGroups job identifies groups with large member counts. These types of groups may cause
-administrative overhead and burden in being able to easily understand who is getting access to
-resources, or how much access is being granted to resources through these groups.
+The UX_LargeGroups job identifies groups with large member counts. Large groups can create
+administrative overhead, making it difficult to see who has access to resources or how much access
+these groups grant.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
@@ -28,7 +28,7 @@ Navigate to the **Unix** > **1.Users and Groups** > **UX_LargeGroups** > **Confi
 select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

@@ -9,12 +9,12 @@ sidebar_position: 20
 The SP_StaleFiles Job identifies files that have not been modified in at least a year across
 SharePoint farms. This aids administrators and users in cleaning up or archiving old and unchanged
 files to help maintain a clean and healthy SharePoint environment. Report includes files, their last
-modified time, total file size, versions and version size, along with file owner and file editor
+modified time, total file size, versions, and version size, along with file owner and file editor
 information.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
@@ -24,7 +24,7 @@ The SP_StaleFiles page has the following configurable parameters:
 - Days since last modification to be considered stale
 
 See the
-[Customizable Analysis Tasks for the SP_StaleFiles Job](#customizable-analysis-tasks-for-the-sp_stalefiles-job)
+[Customizable Analysis Tasks for the SP_StaleFiles Job](#customizable-analysis-tasks-for-the-spstalefiles-job)
 for additional information.
 
 ## Analysis Tasks for the SP_StaleFiles Job
@@ -33,7 +33,7 @@ Navigate to the **Jobs** > **SharePoint** > **4.Content** > **SP_StaleFiles** > 
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job. Only the `@stale` parameter can be configured for the analysis task.
 :::
 
@@ -46,7 +46,7 @@ The default analysis task is:
   node
 
     - This analysis task contains a configurable parameter: `@stale`. See the
-      [Customizable Analysis Tasks for the SP_StaleFiles Job](#customizable-analysis-tasks-for-the-sp_stalefiles-job)
+      [Customizable Analysis Tasks for the SP_StaleFiles Job](#customizable-analysis-tasks-for-the-spstalefiles-job)
       topic for additional information.
 
 In addition to the table created by the analysis task which displays the stale file resources, the

@@ -10,8 +10,8 @@ The AD_StaleComputers Job provides details on stale computers that may be candid
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
-parameters used by analysis tasks in the job. See the
+Use the Configuration section on a Job's overview page to modify any customizable parameters used
+by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
 
@@ -21,7 +21,7 @@ The AD_StaleComputers Job has the following configurable parameters:
 - Consider disabled accounts as stale
 
 See the
-[Customizable Analysis Parameters for the AD_StaleComputers Job](#customizable-analysis-parameters-for-the-ad_stalecomputers-job)
+[Customizable Analysis Parameters for the AD_StaleComputers Job](#customizable-analysis-parameters-for-the-adstalecomputers-job)
 topic for additional information.
 
 ## Analysis Tasks for the AD_StaleComputers Job
@@ -30,7 +30,7 @@ Navigate to the **Active Directory** > **3.Computers** > **AD_StaleComputers** >
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the **2. Summarize by Domain** analysis task. This analysis
+Don't modify or deselect the **2. Summarize by Domain** analysis task. This analysis
 task is preconfigured for this job.
 :::
 
@@ -44,7 +44,7 @@ The default analysis tasks are:
     - Identifies computer objects that are disabled or have exceeded the defined threshold of
       inactivity
     - Creates the SA_AD_StaleComputers_Details table accessible under the job’s Results node
-    - Definition of a stale computer can be customized
+    - You can customize the definition of a stale computer
 
 -   **2. Summarize by Domain** – Creates the SA_AD_StaleComputers_DomainSummay table accessible under
        the job’s Results node
@@ -65,7 +65,7 @@ Analysis parameters that can be customized have the following default values:
 | Analysis Task               | Customizable Parameter Name | Default Value | Value Indicates                                                                                                                                                               |
 | --------------------------- | --------------------------- | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1. Identify Stale Computers | @days_since_last_logon      | 90            | A computer object that has been inactive for 90 days or more                                                                                                                  |
-| 1. Identify Stale Computers | @consider_disable           | 1             | A computer object that has been disabled: <ul><li>Value 1 = Disabled computers are included as stale</li><li>Value 0 = Disabled computers are not included as stale</li></ul> |
+| 1. Identify Stale Computers | @consider_disable           | 1             | A computer object that has been disabled: <ul><li>Value 1 = Disabled computers are included as stale</li><li>Value 0 = Disabled computers aren't included as stale</li></ul> |
 
 
 See the

@@ -6,20 +6,20 @@ sidebar_position: 30
 
 # Backup and Recovery
 
-For data recovery purposes, the Access Analyzer does not need a complete image back up of the Access
+For data recovery purposes, the Access Analyzer doesn't need a complete image back up of the Access
 Analyzer Console server. Rather a standard file level back up of a few key components is all that is
 necessary. This document contains a step-by-step guide for back up and recovery. The choice of back
 up utility is left to the Access Analyzer user.
 
 :::note
-This does not cover back up of the Access Analyzer database.
+This doesn't cover back up of the Access Analyzer database.
 :::
 
 
 ## Steps to Back Up the Console Server
 
-Follow these steps to back up the key components necessary for data recovery of the Access Analyzer
-Console server.
+To back up the key components necessary for data recovery of the Access Analyzer
+Console server:
 
 **Step 1 –** Obtain or save the installation media for Access Analyzer.
 
@@ -58,7 +58,7 @@ Follow these steps for data recovery of the Access Analyzer Console server.
 **Step 1 –** Confirm the prerequisites have been met on the Access Analyzer Console Server. See the
 [Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topic for specific prerequisites.
 
-**Step 2 –** Install the Access Analyzer application. Do not start the Access Analyzer application
+**Step 2 –** Install the Access Analyzer application. Don't start the Access Analyzer application
 at this time.
 
 **Step 3 –** Restore all of the backed up files and folders from Step 2 of Steps to Back up the

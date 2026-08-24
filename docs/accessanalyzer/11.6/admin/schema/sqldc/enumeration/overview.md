@@ -265,10 +265,10 @@ Used to compute the `Database Type` column in `SA_SQLServer_EffectiveRoleMembers
 | `5` | MySql | MySQL |
 | `6` | AzureSqlServerManagedInstance | Azure SQL Managed Instance |
 | `7` | SaDataSource | StealthAUDIT Data Source |
-| `8` | AWSPostgres | AWS PostgreSQL (not currently supported) |
-| `9` | AWSMySql | AWS MySQL (not currently supported) |
-| `10` | EDBPostgreSql | EDB PostgreSQL (not currently supported) |
-| `11` | SqlServerCluster | SQL Server Cluster (not currently supported) |
+| `8` | AWSPostgres | AWS PostgreSQL (not supported) |
+| `9` | AWSMySql | AWS MySQL (not supported) |
+| `10` | EDBPostgreSql | EDB PostgreSQL (not supported) |
+| `11` | SqlServerCluster | SQL Server Cluster (not supported) |
 | `12` | Db2LUW | IBM Db2 LUW |
 | `20` | MongoDb | MongoDB |
 

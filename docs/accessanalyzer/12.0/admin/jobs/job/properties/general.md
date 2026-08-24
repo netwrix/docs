@@ -20,7 +20,7 @@ The following options are available:
   CSV file in the job’s output directory. If there are multiple tables in the job, this option
   creates one file per table.
 - Timeout [value] minutes – Job’s thread timeout value
-- Command – Provides the ability to enter a command that will be executed from the command line upon
+- Command – lets you enter a command that will be executed from the command line upon
   job completion
 
 ## Log Level
@@ -30,7 +30,7 @@ The log level feature includes the following options:
 - Use global setting – use the Application log level feature, configured at the global level.
 
     :::note
-    By selecting the another option from the drop-down list, you break inheritance for
+    By selecting the another option from the dropdown list, you break inheritance for
     this job.
     :::
 

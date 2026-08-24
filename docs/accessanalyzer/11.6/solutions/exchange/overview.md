@@ -37,24 +37,23 @@ topics for additional information.
 **Sensitive Data Discovery Considerations**
 
 The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans.If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
-additional GB of RAM per host.For example, if the job is configured to scan 8 hosts at a time , then
-an extra 16 GB of RAM are required (8x2=16).
+which enables Sensitive Data criteria for scans. If you run Sensitive Data Discovery (SDD) scans,
+increase the minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per
+host. For example, if the job is configured to scan 8 hosts at a time, the job needs an extra 16 GB
+of RAM (8x2=16).
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
-configuration; it has been preconfigured to work with Enterprise Auditor and should never be
-customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
-environment.
+(Java) version on the server. This JDK requires no configuration, works with Enterprise Auditor
+by default, and doesn't conflict with other JDKs or Java Runtimes in the same environment. Don't
+customize it through Java.
 :::
 
 
 **Location**
 
 The Exchange Solution requires a special Enterprise Auditor license. It can be installed from the
-Enterprise Auditor Instant Job Wizard. Once it has been installed into the Jobs tree, navigate to
+Enterprise Auditor Instant Job Wizard. After it has been installed into the Jobs tree, navigate to
 the solution: **Jobs** > **Exchange**.
 
 Each job group within the solution collects data, analyzes the data, and reports on the target
@@ -71,23 +70,23 @@ The Exchange Solution is divided into categories based upon what is being audite
 The following job groups comprise the Exchange Solution:
 
 - [1.HUB Metrics Job Group](/docs/accessanalyzer/11.6/solutions/exchange/hubmetrics/overview.md)
-  – Comprised of data collection, analysis and reports that focus on mail-flow activity occurring
+  – Comprised of data collection, analysis, and reports that focus on mail-flow activity occurring
   within your organization. This job group goes out to each server that contains the Message
   Tracking Logs and parses the log to return the data to the Enterprise Auditor database.
 - [2.CAS Metrics Job Group](/docs/accessanalyzer/11.6/solutions/exchange/casmetrics/overview.md)
-  – Comprised of data collection, analysis and reports that focus on remote connections (Outlook Web
+  – Comprised of data collection, analysis, and reports that focus on remote connections (Outlook Web
   Access, ActiveSync, and Outlook Anywhere Access) occurring within your organization. This job
   group goes out to each server that contains the IIS Logs and parses the log to return the data to
   the Enterprise Auditor database.
 - [3.Databases Job Group](/docs/accessanalyzer/11.6/solutions/exchange/databases/overview.md)
-  – Comprised of data collection, analysis and reports that focus on database sizing, growth, and
+  – Comprised of data collection, analysis, and reports that focus on database sizing, growth, and
   trends
 - [4.Mailboxes Job Group](/docs/accessanalyzer/11.6/solutions/exchange/mailboxes/overview.md)
   – Comprised of data collection, analyses, and reports around mailbox features, logons,
   permissions, and sizing
 
     :::warning
-    It is not recommended to run this job group at this job group level.
+    It isn't recommended to run this job group at this job group level.
     :::
 
 
@@ -97,7 +96,7 @@ The following job groups comprise the Exchange Solution:
       environment.
 
 - [5. Public Folders Job Group](/docs/accessanalyzer/11.6/solutions/exchange/publicfolders/overview.md)
-  – Comprised of data collection, analysis and reports that focus on public folder sizing, content
+  – Comprised of data collection, analysis, and reports that focus on public folder sizing, content
   aging, entitlement, ownership, and the identification of each public folder’s Most Probable Owner.
   The Most Probable Owner is a unique algorithm built into the public folder data collector that is
   determined based on folder ownership, content posted, and size of content posted.
@@ -117,7 +116,7 @@ The following job groups comprise the Exchange Solution:
   depends upon multiple job groups.
 
 The MAPI-based data collectors require both Enterprise Auditor MAPI CDO and Microsoft Exchange MAPI
-CDO to be installed on the Enterprise Auditor Console server. Once these have been installed,
+CDO to be installed on the Enterprise Auditor Console server. After these are installed,
 configure the **Settings** > **Exchange** node for proper connection to the Exchange server. See the
 [Exchange](/docs/accessanalyzer/11.6/admin/settings/exchange.md)
 topic for additional information.

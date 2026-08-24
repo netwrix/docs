@@ -12,7 +12,7 @@ Use the Parameters page to enter the parameter values.
 
 Enter parameter values using the following options:
 
-- Insert Field – Select a field to include in the request from the drop-down menu.
+- Insert Field – Select a field to include in the request from the dropdown menu.
 
     :::note
     The fields available varies based on the source table.
@@ -36,8 +36,8 @@ Enter parameter values using the following options:
 
 - Key / Value Fields – The name or value of the attribute
 
-    - Select a field using the drop-down menu, place the cursor in the cell of the desired Key or
-      Value, and click the blue down-arrow to add it to the selected cell
+    - Select a field using the dropdown menu, place the cursor in the cell of the Key or Value
+      field you want, and click the blue down-arrow to add it to the selected cell
     - Select a cell and click the green circle with plus sign to open the Custom Attribute Editor
       window and add the attribute to the cell
     - Manually enter a field in the cell
@@ -51,16 +51,16 @@ and advanced functions.
 
 Create custom attributes using the following options:
 
-- Insert field – Select a field to insert using the drop-down menu
-- Unique name – Name of the custom attribute that will be created
+- Insert field – Select a field to insert using the dropdown menu
+- Unique name – Name for the custom attribute to create
 
-    - Select a field using the drop-down menu, place the cursor in the Unique name textbox, and
+    - Select a field using the dropdown menu, place the cursor in the Unique name textbox, and
       click the blue down-arrow to add it to the Unique name textbox
     - Manually enter the name
 
 - Data – The actual value of the custom attribute (can be database value or manually specified)
 
-    - Select a field using the drop-down menu, place the cursor in the Data textbox, and click the
+    - Select a field using the dropdown menu, place the cursor in the Data textbox, and click the
       blue down-arrow to add it to the Data textbox
     - Manually enter the data
 

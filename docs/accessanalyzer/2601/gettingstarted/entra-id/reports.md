@@ -19,7 +19,7 @@ The dashboard is organized into three sections: a summary row at the top, an **I
 | **Users** | Total number of user objects synced from the tenant. |
 | **Groups** | Total number of group objects synced from the tenant. |
 | **Roles** | Total number of Azure AD role definitions retrieved. |
-| **MIP Labels** | Total number of Microsoft Information Protection sensitivity labels retrieved from the tenant. |
+| **MIP Labels** | Total number of Microsoft Information Protection (MIP) sensitivity labels retrieved from the tenant. |
 
 ### Identities
 
@@ -34,9 +34,9 @@ The dashboard is organized into three sections: a summary row at the top, an **I
 
 | Card | Description |
 |------|-------------|
-| **Active Labels** | Number of sensitivity labels currently active in the tenant. |
+| **Active Labels** | Number of sensitivity labels active in the tenant. |
 | **Label List** | Table listing all retrieved labels, including label name, classification level, and whether the label is active. |
 
 :::note
-MIP labels retrieved here are made available in **Configuration** > **Sensitive Data**, where you can map them to sensitive data types for use in File Server and SharePoint Online scans.
+You can find the MIP labels retrieved here under **Configuration** > **Sensitive Data**, where you can map them to sensitive data types for use in File Server and SharePoint Online scans.
 :::

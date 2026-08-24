@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The NetApp ONTAP connector reads file shares over SMB to collect share permissions, folder and file ACLs, and file contents for sensitive data classification. The connector doesn't require agent installation on the storage system.
 
-NetApp ONTAP serves CIFS/SMB shares through Storage Virtual Machines (SVMs). Each SVM has its own CIFS server that the connector connects to independently. The CIFS service must be licensed and enabled on each SVM you want to scan.
+NetApp ONTAP serves CIFS/SMB shares through Storage Virtual Machines (SVMs). Each SVM has its own CIFS server that the connector connects to independently. You must license and enable the CIFS service on each SVM you want to scan.
 
 ## Supported versions
 
@@ -38,4 +38,4 @@ To add a NetApp ONTAP SVM to Access Analyzer, see [Set Up File Server Source Gro
 
 ## Known behavior
 
-NetApp ONTAP may return invalid timestamp values on some systems due to a Year 2038 overflow issue in the ONTAP CIFS implementation. Access Analyzer detects and handles this automatically — affected timestamps are recorded as empty rather than causing a scan error.
+NetApp ONTAP may return invalid timestamp values on some systems due to a Year 2038 overflow issue in the ONTAP CIFS implementation. Access Analyzer detects this automatically and records affected timestamps as empty instead of causing a scan error.

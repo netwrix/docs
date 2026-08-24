@@ -6,31 +6,32 @@ sidebar_position: 20
 
 # CyberArk Integration
 
-In order for Access Analyzer to be able to retrieve service account passwords from the CyberArk
-Password Vault, the following prerequisites must be completed:
+For Access Analyzer to retrieve service account passwords from the CyberArk
+Password Vault, complete the following prerequisites:
 
 - The Secrets Manager must be installed on the Access Analyzer Console server. The organization’s
   Vault administrator can provide the Secrets Manager installation package and most likely needs to
-  be present during the installation to provide credentials in order for the Secrets Manager
+  be present during the installation to provide credentials for the Secrets Manager
   installation to complete. See the CyberArk
   [Credential Provider (CP)](https://docs.cyberark.com/credential-providers/Latest/en/Content/CP%20and%20ASCP/Installing-CP.htm) article
   for additional information.
-- An application must be added to CyberArk for the integration with Access Analyzer. The Application
-  Id of this application must then be added to the `GlobalOptions.xml` file for Access Analyzer. See
-  the [Customize CyberArk Application Id](#customize-cyberark-application-id) topic for additional
-  information. The application can be locked down by providing an OS User, a Path, or a Hash. See
+- An application must be added to CyberArk for the integration with Access Analyzer. You must then
+  add the Application Id of this application to the `GlobalOptions.xml` file for Access Analyzer.
+  See the [Customize CyberArk Application Id](#customize-cyberark-application-id) topic for
+  additional information. You can lock down the application by providing an OS User, a Path, or a
+  Hash. See
   the CyberArk
   [Add applications](https://docs.cyberark.com/credential-providers/14.0/en/Content/Common/Adding-Applications.htm) article
   for additional information.
 
     - The OS User needs to be the account running Access Analyzer. This could be the account used to
       launch the Access Analyzer application or an account used as the Schedule Service Account
-      within Access Analyzer. More than one OS User can be added.
+      within Access Analyzer. You can add more than one OS User.
     - The Path should be a local path to the `StealthAUDIT.exe` file. The path should end with the
       file name: `…\StealthAUDIT.exe`.
-    - The Hash should be generated using the **AimGetAppInfo** tool in the
+    - Generate the Hash using the **AimGetAppInfo** tool in the
       `…\CyberArk\ApplicationPasswordProvider\Utils` folder on the server where Secrets Manager is
-      installed. AimGetAppInfo should be run in an Administrator Command Prompt. Run the following
+      installed. Run AimGetAppInfo in an Administrator Command Prompt. Run the following
       command:
 
         ```
@@ -54,12 +55,12 @@ Password Vault, the following prerequisites must be completed:
 
         ![Allowed Machines list for the  CyberArk application](/images/accessanalyzer/12.0/admin/settings/connection/allowedmachines.webp)
 
-    - The machine name for the Access Analyzer console needs to be added on the Allowed Machines
+    - Add the machine name for the Access Analyzer console to the Allowed Machines
       list for the CyberArk application
 
-- Once the Secrets Manager installation has completed and the Access Analyzer application has been
-  created, the necessary CyberArk accounts must be given access to the Safes in which the Access
-  Analyzer service accounts are stored. This includes the account which was created automatically
+- After the Secrets Manager installation completes and you create the Access Analyzer application,
+  give the necessary CyberArk accounts access to the Safes in which the Access
+  Analyzer service accounts are stored. This includes the account CyberArk creates automatically
   during the Secrets Manager installation, as well as the account created automatically as a result
   of the application creation.
 
@@ -67,19 +68,19 @@ Password Vault, the following prerequisites must be completed:
 
     - The account created during the AIM installation is under the naming convention
       `Prov_[COMPUTERNAME]`, where `COMPUTERNAME` is the name of the computer on which AIM is
-      installed. This account should be given **Retrieve accounts**, **List accounts**, and **View
-      Safe Members** rights on the desired Safes.
+      installed. Give this account **Retrieve accounts**, **List accounts**, and **View
+      Safe Members** rights on the Safes it needs to access.
     - The account created during the application creation has the same name as the application
-      itself and should be given **Retrieve accounts** rights on the desired Safes
+      itself. Give it **Retrieve accounts** rights on the Safes it needs to access
 
 ## Customize CyberArk Application Id
 
-The Application id value of the application created within CyberArk for the integration with Access
-Analyzer must be configured within Access Analyzer. This is done in the `GlobalOptions.xml` file
+You must configure Access Analyzer with the Application id value of the application created within
+CyberArk for the integration. You do this in the `GlobalOptions.xml` file
 within the Access Analyzer installation directory. The default location is
 `…\STEALTHbits\StealthAUDIT\`.
 
-Follow the steps to customize the CyberArk Application Id within Access Analyzer.
+Customize the CyberArk Application Id within Access Analyzer:
 
 **Step 1 –** Navigate to the `GlobalOptions.xml` file. Open it with a text editor, for example
 Notepad.
@@ -125,8 +126,8 @@ window when configuring an **Active Directory Account** or **Local Windows Accou
 The credential information supplied in the User Credentials window must be an exact match to what is
 in CyberArk as the privileged account for which it is linked. It is case-sensitive.
 
-If the Connection Profile with a Local Windows Account credential using CyberArk password storage is
-used to target multiple hosts, then the local credential on each host needs to have the exact same
+If you use the Connection Profile with a Local Windows Account credential using CyberArk password
+storage to target multiple hosts, the local credential on each host needs to have the exact same
 username and password combination.
 
 ![Connection view with CyberArk credentials](/images/accessanalyzer/12.0/admin/settings/connection/usercredentials.webp)
@@ -141,8 +142,8 @@ in CyberArk. These values are case-sensitive, and must be an exact match.
 
 ![User Credentials window for Active Directory Account](/images/accessanalyzer/12.0/admin/settings/connection/usercredentialsad.webp)
 
-The table below shows the values from your CyberArk configuration that the User Credentials window
-should be populated with:
+The following table shows the values from your CyberArk configuration that you should use to
+populate the User Credentials window:
 
 | Access Analyzer | CyberArk Property | CyberArk Description                   | Example Value     |
 | --------------- | ----------------- | -------------------------------------- | ----------------- |
@@ -159,8 +160,8 @@ value is `<HOST>` and the CyberArk Address property value is the server address.
 
 ![User Credentials window for Local Windows Account](/images/accessanalyzer/12.0/admin/settings/connection/usercredentialslocal.webp)
 
-The table below shows the values from your CyberArk configuration that the User Credentials window
-should be populated with:
+The following table shows the values from your CyberArk configuration that you should use to
+populate the User Credentials window:
 
 | Access Analyzer | CyberArk Property | CyberArk Description                   | Example Value |
 | --------------- | ----------------- | -------------------------------------- | ------------- |
@@ -171,7 +172,7 @@ should be populated with:
 :::info
 Only use one Local Windows Account credential with CyberArk password storage in a
 Connection Profile. As part of the Access Analyzer to CyberArk integration, the Access Analyzer job
-is stopped immediately if the query from Access Analyzer to CyberArk for the credential fails.
-Therefore, a second credential within the Connection Profile would not be queried.
+stops immediately if the query from Access Analyzer to CyberArk for the credential fails.
+Therefore, Access Analyzer wouldn't query a second credential within the Connection Profile.
 
 :::

@@ -19,7 +19,7 @@ sidebar_position: 3
 6. Under **Certificate**, click **Generate and Download Certificate** to generate a certificate and download it to your machine. Upload this certificate to your registered Entra ID application before proceeding. See [Certificate Configuration](../../connectors/sharepoint-online/tenant-certificate-config.md) for upload steps.
 
    :::note
-   If you click **Regenerate Certificate** in the future, the new certificate must be uploaded to your Entra ID App Registration to replace the old one. Removing the old certificate from the App Registration is a manual step in the Azure portal — Access Analyzer cannot remove it on your behalf.
+   If you click **Regenerate Certificate** in the future, you must upload the new certificate to your Entra ID App Registration to replace the old one. Removing the old certificate from the App Registration is a manual step in the Azure portal — Access Analyzer can't remove it on your behalf.
    :::
 
 7. Click **Test Connection** to verify that Access Analyzer can authenticate to your SharePoint Online tenant. Resolve any failures before proceeding.
@@ -53,5 +53,5 @@ To check scan progress, navigate to **Configuration** > **Scan Executions**.
 To modify an existing SharePoint Online source group, navigate to **Configuration** > **Source Groups**, select the source group, and click **Edit**. The wizard reopens with your current configuration pre-populated. You can update the source group name, service account, tenant ID, scan configuration, and scan schedule.
 
 :::note
-Updating the service account replaces the certificate used to authenticate with SharePoint Online. Ensure the new service account's certificate is uploaded to your registered Entra ID application before saving.
+Updating the service account replaces the certificate used to authenticate with SharePoint Online. Ensure you upload the new service account's certificate to your registered Entra ID application before saving.
 :::

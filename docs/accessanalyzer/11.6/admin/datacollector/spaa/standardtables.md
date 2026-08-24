@@ -30,7 +30,7 @@ The tables and their associated views are grouped by types.
 
 | Tables                      | Details                                                                                                                                                                                                                             |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SA_SPAA_Trustees            | Contains information about any domain user, group, or security principal that has been assigned permissions. This table does not contain local user and groups, as none of the trustees in this table are specific to any one host. |
+| SA_SPAA_Trustees            | Contains information about any domain user, group, or security principal that has been assigned permissions. This table doesn't contain local user and groups, as none of the trustees in this table are specific to any one host. |
 | SA_SPAA_TrusteeGroupMembers | Table contains information on SharePoint group membership.                                                                                                                                                                          |
 
 **Access Calculation Tables**
@@ -46,7 +46,7 @@ The tables and their associated views are grouped by types.
 
 | Tables                 | Details                                                                                                                                                                                                                                     |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SA_SPAA_Exceptions     | Contains information about security issues and concerns. One out-of-the-box exception stored inside this table is the Open Resource exception, which identifies where resources are open to Everyone, Authenticated Users, or Domain Users. |
+| SA_SPAA_Exceptions     | Contains information about security issues and concerns. One built-in exception stored inside this table is the Open Resource exception, which identifies where resources are open to Everyone, Authenticated Users, or Domain Users. |
 | SA_SPAA_ExceptionTypes | Contains summary information about exceptions. It details how many exceptions are found on each host scanned and breaks them down by exception type.                                                                                        |
 
 **Content Tables**

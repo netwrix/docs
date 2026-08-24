@@ -6,20 +6,20 @@ sidebar_position: 30
 
 # Backup and Recovery
 
-For data recovery purposes, the Enterprise Auditor does not need a complete image back up of the
-Enterprise Auditor Console server. Rather a standard file level back up of a few key components is
-all that is necessary. This document contains a step-by-step guide for back up and recovery. The
-choice of back up utility is left to the Enterprise Auditor user.
+For data recovery purposes, the Enterprise Auditor doesn't need a complete image back up of the
+Enterprise Auditor Console server. Rather, a standard file level back up of a few key components is
+sufficient. This document contains a step-by-step guide for back up and recovery. The
+Enterprise Auditor user chooses the back up utility.
 
 :::note
-This does not cover back up of the Enterprise Auditor database.
+This doesn't cover back up of the Enterprise Auditor database.
 :::
 
 
 ## Steps to Back Up the Console Server
 
-Follow these steps to back up the key components necessary for data recovery of the Enterprise
-Auditor Console server.
+To back up the key components necessary for data recovery of the Enterprise
+Auditor Console server:
 
 **Step 1 –** Obtain or save the installation media for Enterprise Auditor.
 
@@ -37,8 +37,8 @@ built-in environment variable `%SAINSTALLDIR%`):
 - ...\ STEALTHbits\StealthAUDIT\rba.conf: Contains the Role Based Access Configuration
 - ...\ STEALTHbits\StealthAUDIT\StealthAUDIT.LIC: The license key
 
-**Step 3 –** Back up all Scheduled Tasks. The method of back up is determined by the Enterprise
-Auditor user. This can be as simple as copying the contents of the tasks folder from the following
+**Step 3 –** Back up all Scheduled Tasks. The Enterprise Auditor user determines the method of back
+up. This can be as simple as copying the contents of the tasks folder from the following
 two locations:
 
 ![C:\Windows\Tasks](/images/accessanalyzer/11.6/admin/maintenance/maintenance_3.webp)
@@ -49,18 +49,18 @@ two locations:
 
 - C:\Windows\System32\Tasks
 
-All key components necessary for data recovery have now been backed up.
+You have now backed up all key components necessary for data recovery.
 
 ## Steps to Restore the Console Server
 
 Follow these steps for data recovery of the Enterprise Auditor Console server.
 
-**Step 1 –** Confirm the prerequisites have been met on the Enterprise Auditor Console Server. See
+**Step 1 –** Confirm that you've met the prerequisites on the Enterprise Auditor Console Server. See
 the
 [Requirements](/docs/accessanalyzer/11.6/requirements/overview.md)
 topic for specific prerequisites.
 
-**Step 2 –** Install the Enterprise Auditor application. Do not start the Enterprise Auditor
+**Step 2 –** Install the Enterprise Auditor application. Don't start the Enterprise Auditor
 application at this time.
 
 **Step 3 –** Restore all of the backed up files and folders from Step 2 of Steps to Back up the
@@ -92,7 +92,7 @@ SET SA_Node = @NHost
 Where SA_Node = @OHost;
 ```
 
-**Step 6 –** Start Enterprise Auditor and confirm all settings and jobs have been restored.
+**Step 6 –** Start Enterprise Auditor and confirm that you've restored all settings and jobs.
 
 **Step 7 –** Enable Role Based Access to write the necessary registry keys:
 
@@ -106,4 +106,4 @@ Where SA_Node = @OHost;
   [Role Based Access](/docs/accessanalyzer/11.6/admin/settings/access/rolebased/overview.md)
   topic for more information
 
-The Enterprise Auditor Console Server is now restored.
+You have now restored the Enterprise Auditor Console Server.

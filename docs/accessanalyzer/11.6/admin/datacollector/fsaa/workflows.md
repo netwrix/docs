@@ -33,12 +33,12 @@ job it is applied to.
 
 ## Remove File System Access Scan Category
 
-The FSAA Data Collector can be used to clean-up or troubleshoot the applet and proxy scanning
+Use the FSAA Data Collector to clean up or troubleshoot the applet and proxy scanning
 servers. This would need to be done through a new job’s query. Set the host list and Connection
-Profile to target the desired applet and proxy servers.
+Profile to target the applet and proxy servers you want.
 
-Follow these steps to build a new query using the FSAA Data Collector with the Remove scan
-executables and data category.
+To build a new query using the FSAA Data Collector with the Remove scan
+executables and data category:
 
 **Step 1 –** Navigate to the **Configure** node of a new or chosen job and select the **Queries**
 node.
@@ -46,7 +46,7 @@ node.
 **Step 2 –** In the Query Selection view, click the **Create Query** link. The Query Properties
 window displays.
 
-**Step 3 –** Select the **Data Source** tab. From the **Data Collector** drop-down menu, select
+**Step 3 –** Select the **Data Source** tab. From the **Data Collector** dropdown menu, select
 **FILESYSTEMACCESS** and then click the **Configure** button. The File System Access Auditor Data
 Collector Wizard opens.
 
@@ -62,20 +62,20 @@ audit scan applet and data from the target server. Run the job to clean-up the t
 
 ## Update Proxy Service Category
 
-The FSAA Data Collector can be used to upgrade the File System Proxy Service already installed on
+Use the FSAA Data Collector to upgrade the File System Proxy Service already installed on
 proxy servers. The FS_UpdateProxy Job is preconfigured to run with the default settings with the
 category of Update proxy service. It is available through the Instant Job Library under the File
 System library.
 
 The Update Proxy Service category option enables users with the ability to update v8.0+ File System
 Proxy Service installations to newer versions. When this query is employed, the job compresses the
-updated binaries and deploy them to the proxy server. Once the proxy server has no active sessions,
+updated binaries and deploy them to the proxy server. When the proxy server has no active sessions,
 the Netwrix Enterprise Auditor FSAA Proxy Scanner service shuts down and the components are updated.
 Finally, the service restarts itself.
 
 :::note
-This option is not for updating v7.x File System Proxy installations. Those must be
-manually updated to at least v8.0 on the proxy server before this query can be used to automate the
+This option isn't for updating v7.x File System Proxy installations. Those must be
+manually updated to at least v8.0 on the proxy server before you can use this query to automate the
 process.
 :::
 
@@ -86,14 +86,14 @@ and use the FS_UpdateProxy Job.
 
 ## Remove Host Category
 
-The FSAA Data Collector can be used to clean-up the Standard Reference Tables by removing data for
+Use the FSAA Data Collector to clean up the Standard Reference Tables by removing data for
 particular hosts. This would need to be done through a new job’s query. The host to be removed is
 set as the host list for the new job. The Connection Profile applied should be the same as the one
 used for the associated **FileSystem** > **0.Collection** > … **Bulk Import** Job.
 
 :::warning
 Be careful when applying this query task, as it results in the deletion of collected
-data. Ensure proper configuration prior to job execution.
+data. Ensure proper configuration before job execution.
 :::
 
 
@@ -102,8 +102,8 @@ Manually enter individual hosts into the host list executing this query.
 :::
 
 
-Follow the steps to build a new query using the FSAA Data Collector with the Remove host data
-category.
+To build a new query using the FSAA Data Collector with the Remove host data
+category:
 
 **Step 1 –** Navigate to the **Configure** node of a new or chosen job and select the **Queries**
 node.
@@ -111,7 +111,7 @@ node.
 **Step 2 –** In the Query Selection view, click the **Create Query** link. The Query Properties
 window displays.
 
-**Step 3 –** Select the **Data Source** tab. From the **Data Collector** drop-down menu, select
+**Step 3 –** Select the **Data Source** tab. From the **Data Collector** dropdown menu, select
 **FILESYSTEMACCESS** and then click **Configure**. The File System Access Auditor Data Collector
 Wizard opens.
 
@@ -127,14 +127,14 @@ job’s **Configure** > **Hosts** node. Run the job to clean-up the targeted hos
 
 :::tip
 Remember, this job deletes data from the Enterprise Auditor database. Use caution and ensure
-proper configuration prior to job execution.
+proper configuration before job execution.
 :::
 
 
 ## Remove Host and Criteria SDD Data
 
 The FS_SDD_DELETE job removes host and criteria sensitive data matches from the Tier 1 database. It
-is preconfigured to run analysis tasks with temporary tables that requires modification prior to job
+is preconfigured to run analysis tasks with temporary tables that requires modification before job
 execution. It is available through the Instant Job Library under the File System library. See the
 [Instant Job Wizard](/docs/accessanalyzer/11.6/admin/jobs/instantjobs/overview.md)
 topic for additional information.
@@ -161,10 +161,10 @@ Applying these analysis tasks result in the deletion of collected data.
 
 ### Configure the FS_SDD_DELETE Analysis Tasks
 
-Follow the steps to configure and run the analysis tasks.
+To configure and run the analysis tasks:
 
-**Step 1 –** Prior to job execution, modify the desired analysis tasks using the
-[Customizable Analysis Parameters for FS_SDD_DELETE Job](#customizable-analysis-parameters-for-fs_sdd_delete-job)
+**Step 1 –** Before job execution, modify the analysis tasks you want using the
+[Customizable Analysis Parameters for FS_SDD_DELETE Job](#customizable-analysis-parameters-for-fssdddelete-job)
 instructions.
 
 **Step 2 –** In the Analysis Selection Pane, check the type of analysis task that will be run.
@@ -176,7 +176,7 @@ status is visible from the **Running Instances** node.
 analysis tasks.
 
 :::warning
-Do not leave these analysis tasks checked in order to avoid accidental data loss.
+Don't leave these analysis tasks checked to avoid accidental data loss.
 :::
 
 
@@ -195,11 +195,11 @@ be deleted during this job’s analysis.
 | Remove Host & Criteria | #Criteria #hosts            | List of Criteria and Host Names to be removed |
 
 The parameters that can be customized are listed in a section at the bottom of the SQL Script
-Editor. Follow the steps to customize analysis task parameters.
+Editor. To customize analysis task parameters:
 
 **Step 1 –** Navigate to the **FS_SDD_DELETE** > **Configure** node and select **Analysis**.
 
-**Step 2 –** In the Analysis Selection view, select the desired analysis task and click on
+**Step 2 –** In the Analysis Selection view, select the analysis task you want and click
 **Analysis Configuration**. The SQL Script Editor opens.
 
 ![ FS_SDD_DELETE Job Analysis Task in SQL Script Editor](/images/accessanalyzer/11.6/admin/datacollector/fsaa/sdddeletesqlscripteditor.webp)
@@ -209,7 +209,7 @@ or **#hosts** row, depending on the analysis task chosen, and then **Edit Table*
 window opens.
 
 :::warning
-Do not change any parameters where the Value states `Created during execution`.
+Don't change any parameters where the Value states `Created during execution`.
 :::
 
 
@@ -264,7 +264,7 @@ Applying these analysis tasks result in the deletion of collected data.
 -   **4. Drop FSDFS Tables** – Drops the File System DFS Auditing tables imported from the previous runs
 -   **5. Drop FSAA Tables** – Drops File System Access Auditing tables imported from the previous runs
 
-Do not try to run these tasks separately, as they are designed to work together. Follow these steps
+Don't try to run these tasks separately, as they are designed to work together. Follow these steps
 to run the analysis tasks:
 
 **Step 1 –** In the Analysis Selection Pane, click **Select All**. All tasks will be checked.
@@ -276,7 +276,7 @@ status is visible from the **Running Job** node.
 All** to deselect these analysis tasks.
 
 :::warning
-Do not leave these analysis tasks checked in order to avoid accidental data loss.
+Don't leave these analysis tasks checked to avoid accidental data loss.
 :::
 
 

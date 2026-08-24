@@ -46,7 +46,7 @@ Using the radio buttons, select where the execution of the applet will take plac
   choose from. If more than one list is selected, scanning is distributed across each host.
 
 :::info
-It is best practice in global implementations to utilize a specific remote server or proxy scanner
+It is best practice in global implementations to use a specific remote server or proxy scanner
 that is located in the same data center as the target hosts. This is particularly beneficial if the
 Enterprise Auditor Console server is in a different data center. See the
 [Proxy Scanning Architecture](/docs/accessanalyzer/11.6/install/filesystemproxy/overview.md#proxy-scanning-architecture)
@@ -55,7 +55,7 @@ topic for additional information.
 
 In the bottom section, the checkbox options affect the execution of the applet:
 
-- Fallback to local mode if applet can't start – If the applet cannot be deployed on the target
+- Fallback to local mode if applet can't start – If the applet can't be deployed on the target
   host, it is deployed locally on the same server as the Enterprise Auditor Console and the scan
   collects data across the network
 - Run remote applet with normal priority (non-proxy applet server uses background priority by

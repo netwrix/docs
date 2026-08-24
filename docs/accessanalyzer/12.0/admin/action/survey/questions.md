@@ -39,7 +39,7 @@ The configurable options are:
   available:
 
     - Text – Specify the survey question
-    - Subjects – Click on the ellipses (**…**) to open the Select subjects window. Specify the
+    - Subjects – Click the ellipses (**…**) to open the Select subjects window. Specify the
       object to which a question is directed. The selected subjects show in the Subjects field. See
       the [Select Subjects Window](#select-subjects-window) topic for additional information.
     - Answer Column Name – The Survey action module inserts the results of the survey directly into
@@ -49,11 +49,11 @@ The configurable options are:
 
         - Yes/No
         - Text
-        - Multiple Choice – If this option is selected, the **Answers** button activates. Click this
+        - Multiple Choice – If you select this option, the **Answers** button activates. Click this
           button to open the Answers window and specify the response options to the multiple choice
           question via the **Add** button.
 
-    - Answers – This button activates if Multiple Choice in the Question Type field is selected.
+    - Answers – This button activates if you select Multiple Choice in the Question Type field.
       Click to access the Answers window.
     - Description – Specify any additional explanation of the survey question. The text appears on
       the survey below the associated question.

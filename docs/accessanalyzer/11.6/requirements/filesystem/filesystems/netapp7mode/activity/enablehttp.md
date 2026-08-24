@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # Enable HTTP or HTTPS
 
-The Activity Monitor Activity Agent must be able to send ONTAPI calls to the vFiler’s data LIF over
-HTTP or HTTPS. The following commands will enable the HTTP or HTTPS communication between the vFiler
-and the Activity Monitor.
+The Activity Monitor Activity Agent must be able to send ONTAP API (ONTAPI) calls to the vFiler’s
+data Logical Interface (LIF) over HTTP or HTTPS. The following commands will enable the HTTP or
+HTTPS communication between the vFiler and the Activity Monitor.
 
 Use the following command to enable HTTP:
 

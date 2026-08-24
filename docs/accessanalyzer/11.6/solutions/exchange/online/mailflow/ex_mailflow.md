@@ -14,7 +14,7 @@ The EX_Mailflow job is located in the **Mailflow** > **0. Collection** job group
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
@@ -23,7 +23,7 @@ The EX_Mailflow job has the following configurable parameter:
 
 - Number of months to keep
 
-See the [Analysis Tasks for the EX_Mailflow Job](#analysis-tasks-for-the-ex_mailflow-job) topic for
+See the [Analysis Tasks for the EX_Mailflow Job](#analysis-tasks-for-the-exmailflow-job) topic for
 additional information.
 
 ## Queries for the EX_Mailflow Job
@@ -44,7 +44,7 @@ The following queries are included in the EX_Mailflow job:
 - LocalDomains – Collects domains local to the Office 365 environment
 
     :::warning
-    Do not modify this query. The query is preconfigured for this job.
+    Don't modify this query. The query is preconfigured for this job.
     :::
 
 
@@ -57,7 +57,7 @@ The following queries are included in the EX_Mailflow job:
 The ExchangePS Data Collector configured with the Mail Flow Metrics category can be scoped to
 specific report dates. By default, the MailFlow Query is set to report on the Last 7 Days.
 
-Follow the steps to modify the query configuration:
+To modify the query configuration:
 
 **Step 1 –** Navigate to the **Exchange** > **8. Exchange Online** > **0. Collection** >
 **EX_Mailflow** > **Configure** node and select **Queries**.
@@ -69,7 +69,7 @@ Properties window opens.
 Wizard opens.
 
 :::warning
-Do not modify other wizard pages. The wizard pages are pre-configured for this job.
+Don't modify other wizard pages. The wizard pages are pre-configured for this job.
 :::
 
 
@@ -95,7 +95,7 @@ View the analysis tasks by navigating to the **Exchange** > **8. Exchange Online
 Collection** > **EX_Mailflow** > **Configure** node and selecting **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -121,7 +121,7 @@ The following analysis task deletes table data from data collection and analysis
 task should remain cleared unless specifically needed:
 
 :::warning
-Do not select the **00. Deletes all Stored Data** option. This analysis task is for
+Don't select the **00. Deletes all Stored Data** option. This analysis task is for
 troubleshooting and cleanup only. Data will be deleted from the database.
 :::
 

@@ -18,11 +18,11 @@ Common labeling patterns:
 | Route by geographic region | `region=us-east`, `region=eu-west` |
 | Dedicate scanners to high-sensitivity source groups | `tier=restricted` |
 
-Define a labeling scheme before deploying scanners and apply it consistently. Labels assigned to a source group are used by all scan executions in that group — you don't need to set them per source.
+Define a labeling scheme before deploying scanners and apply it consistently. All scan executions in a source group use the labels assigned to that group — you don't need to set them per source.
 
 ### Label matching behavior
 
-When a source group has multiple labels configured, a scan is routed to any scanner that matches **at least one** of those label pairs — not all of them. Design your label scheme with this in mind: a scanner carrying `region=us-east` will receive jobs from a source group labeled `region=us-east, tier=restricted` even if the scanner does not carry the `tier=restricted` label.
+When a source group has multiple labels configured, Access Analyzer routes a scan to any scanner that matches **at least one** of those label pairs — not all of them. Design your label scheme with this in mind: a scanner carrying `region=us-east` will receive jobs from a source group labeled `region=us-east, tier=restricted` even if the scanner doesn't carry the `tier=restricted` label.
 
 For strict isolation, use a single label per source group or ensure scanners are labeled precisely to match only the intended groups.
 
@@ -35,15 +35,15 @@ Label keys and values entered in the Deploy Scanner wizard must follow these rul
 | Key | Letters, digits, hyphens | 53 characters |
 | Value | Letters, digits, hyphens, underscores, dots | 63 characters |
 
-Both key and value must start with a letter or digit. Labels are stored with a `dspm.netwrix.com/scanner-` prefix internally — you do not need to include this prefix when entering labels in the wizard.
+Both key and value must start with a letter or digit. Access Analyzer stores labels with a `dspm.netwrix.com/scanner-` prefix internally — you don't need to include this prefix when entering labels in the wizard.
 
 :::note
-The label `scanner-default` is reserved for the built-in system scanner and can't be applied to custom scanners.
+Access Analyzer reserves the label `scanner-default` for the built-in system scanner; you can't apply it to custom scanners.
 :::
 
 ## Plan for scanner redundancy
 
-Assign the same label to multiple scanners that cover the same environment. Scanners sharing a label form a pool — when a scan job is dispatched, Access Analyzer routes it to any available scanner in the pool. If one scanner is offline, unhealthy, or busy, the job routes to another scanner carrying the same label automatically.
+Assign the same label to multiple scanners that cover the same environment. Scanners sharing a label form a pool, and Access Analyzer routes each scan job to any available scanner in the pool. If one scanner is offline, unhealthy, or busy, the job routes to another scanner carrying the same label automatically.
 
 A single scanner per label is a single point of failure. For production environments, deploy at least two scanners per label. This also distributes scan load across the pool when multiple source groups target the same label simultaneously.
 
@@ -63,7 +63,7 @@ A safe approach is to increase by 2–3 at a time and monitor scan completion ti
 
 ## Monitor scanner health
 
-Check the Scanners page regularly to review scanner health status. A scanner in Warning state is under resource pressure — disk, memory, or CPU — and scan performance may be degraded. A scanner in Error state has reported health issues and needs investigation before running additional scans.
+Check the Scanners page regularly to review scanner health status. A scanner in Warning state is under resource pressure — disk, memory, or CPU — and scan performance may degrade. A scanner in Error state has reported health issues and needs investigation before running additional scans.
 
 Common causes of Warning and Error states:
 

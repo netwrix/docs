@@ -28,7 +28,7 @@ The following query is included in the EX_PublicFolder_SDD job:
         - Tax Forms
         - US SSN
 
-    - See the [Configure the EX_PublicFolder_SDD Query](#configure-the-ex_publicfolder_sdd-query)
+    - See the [Configure the EX_PublicFolder_SDD Query](#configure-the-expublicfoldersdd-query)
       topic for additional information
 
 ### Configure the EX_PublicFolder_SDD Query
@@ -46,7 +46,7 @@ Data Collector to scan for sensitive data.
 Collector Wizard opens.
 
 :::warning
-Do not modify other wizard pages. The wizard pages are pre-configured for this job.
+Don't modify other wizard pages. The wizard pages are pre-configured for this job.
 :::
 
 
@@ -58,7 +58,7 @@ Sensitive data matches can be limited to reduce storage space. See the
 for additional information.
 
 :::note
-By default, discovered sensitive data strings are not stored in the Access Analyzer
+By default, discovered sensitive data strings aren't stored in the Access Analyzer
 database.
 :::
 
@@ -88,7 +88,7 @@ additional information.
 ![EWS Public Folder Data Collector Wizard Results page](/images/accessanalyzer/12.0/solutions/exchange/sensitivedata/collection/publicfolderresults.webp)
 
 **Step 7 –** To select which properties are gathered based on category, navigate to the Results
-page.  See the
+page. See the
 [EWSPublicFolder: Results](/docs/accessanalyzer/12.0/admin/datacollector/ewspublicfolder/results.md) topic for
 additional information.
 

@@ -25,7 +25,7 @@ The following job groups need to be successfully run:
 **Schedule Frequency**
 
 This job group has been designed to run daily after the .Active Directory Inventory Job Group has
-been run, to analyze distribution list membership. This job group does not collect data. It uses the
+been run, to analyze distribution list membership. This job group doesn't collect data. It uses the
 data collection from the .Active Directory Inventory Job Group.
 
 :::info

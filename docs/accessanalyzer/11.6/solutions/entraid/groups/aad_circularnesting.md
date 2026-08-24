@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # AAD_CircularNesting Job
 
-The AAD_CircularNesting Job identifies circularly nested groups within Microsoft Entra ID which can
-pose administrative and operational challenges with identifying effective access to resources.
+The AAD_CircularNesting Job identifies circularly nested groups within Microsoft Entra ID. Circular
+nesting can complicate determining effective access to resources.
 
 ## Analysis Tasks for the AAD_CircularNesting Job
 
@@ -15,7 +15,7 @@ Navigate to the **Jobs** > **Entra ID** > **1.Groups** > **AAD_CircularNesting**
 node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

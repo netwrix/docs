@@ -29,14 +29,14 @@ Navigate to the **Windows** > **Privileged Accounts** > **Logon Rights** > **Col
 **SG_LocalUsers** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
 
 ![Analysis Tasks for the SG_LocalUsers Job](/images/accessanalyzer/11.6/solutions/windows/privilegedaccounts/logonrights/collection/localusersanalysis.webp)
 
-The default analysis tasks is:
+The default analysis task is:
 
 - Update LocalUsers – Creates an interim processing table in the database for use by downstream
   analysis and report generation

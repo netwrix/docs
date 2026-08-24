@@ -8,16 +8,16 @@ sidebar_position: 10
 
 The MySQL Solution has been configured to inherit down from the MySQL > Settings node. However, it
 is best practice to assign the host list and the Connection Profile at the data collection level,
-0.Collection Job Group. Once these are assigned to the job group, it can be run directly or
-scheduled.
+0.Collection Job Group. After you assign these to the job group, you can run it directly or
+schedule it.
 
 **Dependencies**
 
 - For AWS RDS and Aurora instances, right-click a job in the **MySQL** > **0.Collection** folder and
   open the properties window. Select the **Performance** tab and ensure that the **Skip Hosts that
-  do not respond to PING**checkbox is not selected.
+  don't respond to PING**checkbox isn't selected.
 
-**Targeted Host(s)**
+**Targeted Hosts**
 
 - The 0.Collection Job Group must be set to run against a custom host list containing the
   MySQL database instances / clusters.
@@ -32,9 +32,9 @@ credentials configured in the Connection Profile must be able to access the MySQ
 permissions and creating a SQL custom connection profile.
 
 The Connection Profile is set to Use the Default Profile, as configured at the global settings
-level. However, since this may not be the Connection Profile with the necessary permissions for the
-assigned hosts, click the radio button for the Select one of the following user defined profiles
-option and select the appropriate Connection Profile drop-down menu.
+level. However, if this isn't the Connection Profile with the necessary permissions for the
+assigned hosts, select the **Select one of the following user defined profiles** option and choose
+the appropriate profile from the Connection Profile dropdown menu.
 
 **Schedule Frequency**
 
@@ -42,7 +42,7 @@ Daily
 
 **Run Order**
 
-The 0.Collection Job Group must be run first before running the other jobs and job groups.
+Run the 0.Collection Job Group before running the other jobs and job groups.
 
 :::info
 Run the solution at the top level: MySQL Job Group
@@ -59,12 +59,12 @@ topic for additional information.
 **Analysis Configuration**
 
 This solution should be run with the default analysis configurations. These analysis tasks are
-preconfigured and should not be modified or deselected.
+preconfigured and shouldn't be modified or deselected.
 
 Disabling obsolete or run-desired jobs allows the solution to run more efficiently. To disable a job
-or job group, right-click on the item and select Disable Job.
+or job group, right-click the item and select Disable Job.
 
 :::info
-Do not delete any jobs. Instead, jobs should be disabled.
+Don't delete any jobs. Instead, disable them.
 
 :::

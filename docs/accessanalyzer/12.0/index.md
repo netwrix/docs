@@ -19,7 +19,7 @@ The platform framework contains the following key components:
 
 Access Analyzer contains over 40 built-in data collection modules covering both on-premises and
 cloud-based platforms from Operating Systems to Office 365. Leveraging an agentless architectural
-approach, our proprietary AnyData collector provides an easy, wizard-driven interface for
+approach, the proprietary AnyData collector provides a wizard-driven interface for
 configuring the application to collect exactly the data needed, enabling fast, flawless,
 lightest-weight possible data collection from dozens of data sources.
 
@@ -34,8 +34,8 @@ require a license.
 
 The .Active Directory Inventory Solution is designed to provide essential user, group membership,
 and computer details from the targeted domains to many Access Analyzer built-in solutions. Key
-information includes user status, user attributes, and group membership. The collected data is
-accessed by other Access Analyzer solutions and the Netwrix Access Information Center for analysis.
+information includes user status, user attributes, and group membership. Other Access Analyzer solutions and the Netwrix Access Information Center access the collected data
+for analysis.
 
 This is a core solution available to all Access Analyzer users.
 
@@ -65,7 +65,7 @@ information.
 
 The .NIS Inventory Solution is designed to provide essential user and group membership information
 from a NIS domain, mapping these principals to Windows-style SIDs. This provides valuable
-information to the File Systems Solution when auditing NFS shares.
+information to the File Systems Solution for auditing NFS shares.
 
 This is a core solution available to all Access Analyzer users.
 
@@ -131,18 +131,18 @@ reports that provide visibility into various aspects of supported databases.
 - Instance Discovery – The Instance Discovery Solution discovers instances on supported database
   servers.
 - MongoDB Solution – The MongoDB Solution automates the process of understanding where MongDB
-  databases exist and provides an overview of the MongoDB environment in order to answer questions
+  databases exist and provides an overview of the MongoDB environment to answer questions
   around data access. With visibility into every corner of MongoDB and the operating system it
   relies upon, organizations can proactively highlight and prioritize risks to sensitive data.
   Additionally, organizations can automate manual, time-consuming, and expensive processes
-  associated with compliance, security, and operations to easily adhere to best practices that keep
+  associated with compliance, security, and operations to adhere to best practices that keep
   MongoDB Server safe and operational.
 - MySQL Solution – The MySQL Solution automates the process of understanding where SQL databases
-  exist and provides an overview of the MySQL environment in order to answer questions around data
+  exist and provides an overview of the MySQL environment to answer questions around data
   access. With visibility into every corner of Microsoft SQL Server and the Windows operating system
   it relies upon, organizations can proactively highlight and prioritize risks to sensitive data.
   Additionally, organizations can automate manual, time-consuming, and expensive processes
-  associated with compliance, security, and operations to easily adhere to best practices that keep
+  associated with compliance, security, and operations to adhere to best practices that keep
   SQL Server safe and operational.
 - Oracle Solution – The Oracle Solution delivers comprehensive permissions, activity, and sensitive
   data auditing and reporting for Oracle databases. Through the power of Access Analyzer, users can
@@ -219,9 +219,8 @@ Sensitive data auditing requires the Sensitive Data Discovery Add-on.
 
 ### Unix Solution
 
-The Unix Solution reports on areas of administrative concern for Unix and Linux systems. Attention
-is given to users and group details, privileged access rights, and NFS and Samba sharing
-configurations.
+The Unix Solution reports on areas of administrative concern for Unix and Linux systems, focusing on
+users and group details, privileged access rights, and NFS and Samba sharing configurations.
 
 See the [Unix Solution](/docs/accessanalyzer/12.0/solutions/unix/overview.md) topic for additional information.
 

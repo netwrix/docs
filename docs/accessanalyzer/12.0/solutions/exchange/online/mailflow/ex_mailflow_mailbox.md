@@ -11,7 +11,7 @@ This job is set to analyze the last 30 days.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
@@ -22,7 +22,7 @@ The EX_Mailflow_Mailbox job has the following configurable parameter:
   Count** and **User Mailboxes by Message Size** analysis tasks. The default is **30** days.
 
 See the
-[Analysis Tasks for the EX_Mailflow_Mailbox Job](#analysis-tasks-for-the-ex_mailflow_mailbox-job)
+[Analysis Tasks for the EX_Mailflow_Mailbox Job](#analysis-tasks-for-the-exmailflowmailbox-job)
 topic for additional information.
 
 ## Analysis Tasks for the EX_Mailflow_Mailbox Job
@@ -31,7 +31,7 @@ View the analysis tasks by navigating to the **Exchange** > **8. Exchange Online
 **EX_Mailflow_Mailbox** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

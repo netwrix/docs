@@ -7,8 +7,8 @@ sidebar_position: 60
 # AAD_NestedGroups Job
 
 The AAD_NestedGroups Job identifies nested groups within Microsoft Entra ID and provides details
-such as the levels of nesting. While Microsoft Entra ID provides the ability to nest certain types
-of groups within other groups, Microsoft recommends nesting does not go beyond two levels in order
+such as the levels of nesting. While Microsoft Entra ID lets you nest certain types
+of groups within other groups, Microsoft recommends nesting doesn't go beyond two levels
 to avoid difficulties in understanding effective membership and access.
 
 ## Analysis Tasks for the AAD_NestedGroups Job
@@ -17,7 +17,7 @@ Navigate to the **Jobs** > **Entra ID** > **1.Groups** > **AAD_NestedGroups** > 
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

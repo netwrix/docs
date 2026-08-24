@@ -8,14 +8,14 @@ sidebar_position: 30
 
 The SG_Sessions job lists sessions and logged on users from all targeted hosts. These active
 sessions and logged on users may have their hashes stored in memory on the target machine, which
-could be leveraged in a Pass the Hash attack.
+an attacker could use in a Pass the Hash attack.
 
 ## Queries for the SG_Sessions Job
 
 The SG_Sessions job uses the SystemInfo Data Collector for the following queries:
 
 :::warning
-The queries) are preconfigured for this job. Never modify the queries.
+The queries are preconfigured for this job. Never modify the queries.
 :::
 
 

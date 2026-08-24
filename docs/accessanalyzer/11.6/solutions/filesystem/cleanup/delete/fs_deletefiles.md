@@ -11,7 +11,7 @@ previously quarantined and can be deleted.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
@@ -21,7 +21,7 @@ The FS_DeleteFiles job has the following configurable parameter:
 - Number of days without access after which a file is a deletion candidate
 
 See the
-[Customizable Analysis Tasks for the FS_DeleteFiles Job](#customizable-analysis-tasks-for-the-fs_deletefiles-job)
+[Customizable Analysis Tasks for the FS_DeleteFiles Job](#customizable-analysis-tasks-for-the-fsdeletefiles-job)
 topic for additional information.
 
 ## Analysis Tasks for the FS_DeleteFiles Job
@@ -30,7 +30,7 @@ Navigate to the **FileSystem** > **Cleanup** > **4. Delete** > **FS_DeleteFiles*
 node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -64,7 +64,7 @@ Navigate to the **FileSystem** > **Cleanup** > **4. Delete** > **FS_DeleteFiles*
 node and select **Actions** to view the action tasks.
 
 :::warning
-Do not enable the action unless it is required. Disable the action after execution to
+Don't enable the action unless it is required. Disable the action after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 :::
 

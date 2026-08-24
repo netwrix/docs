@@ -22,7 +22,7 @@ Navigate to **Box** > **2.Content** > **Box_FolderMetrics** > **Configure** node
 **Analysis** to view analysis tasks.
 
 :::warning
-Most of these analysis tasks should never be modified and never be deselected.
+Don't modify or deselect most of these analysis tasks.
 :::
 
 
@@ -34,7 +34,7 @@ The following analysis tasks are selected by default:
   Results node
     - Set to consider content stale after 30 days which is the @STALETHRESHOLD parameter value
     - See the
-      [Customizable Analysis Tasks for the Box_FolderMetrics Job](#customizable-analysis-tasks-for-the-box_foldermetrics-job)
+      [Customizable Analysis Tasks for the Box_FolderMetrics Job](#customizable-analysis-tasks-for-the-boxfoldermetrics-job)
       topic for additional information.
 - Largest Folders – Creates the Box_FolderMetrics_Largest table accessible under the job’s Results
   node

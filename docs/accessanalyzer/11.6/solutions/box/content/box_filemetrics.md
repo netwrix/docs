@@ -20,7 +20,7 @@ Navigate to **Box** > **2.Content** > **Box_FileMetrics** > **Configure** node a
 **Analysis** to view analysis tasks.
 
 :::warning
-Most of these analysis tasks should never be modified and never be deselected.
+Don't modify or deselect most of these analysis tasks.
 :::
 
 
@@ -32,7 +32,7 @@ The following analysis tasks are selected by default:
   Results node
     - Set to consider content stale after 30 days which is the @STALETHRESHOLD parameter value
     - See the
-      [Customize Analysis Tasks for the Box_FileMetrics Job](#customize-analysis-tasks-for-the-box_filemetrics-job)
+      [Customize Analysis Tasks for the Box_FileMetrics Job](#customize-analysis-tasks-for-the-boxfilemetrics-job)
       topic for additional information.
 - File Count by User – Creates the Box_FileMetrics_UserFileCount table accessible under the job’s
   Results node

@@ -7,7 +7,7 @@ sidebar_position: 10
 # Hosts Node
 
 The Hosts node provides the option to assign a preconfigured host list at the job level. It also
-provides a way to manually assign hosts to be targeted by the job using Host Selection pane.
+provides a way to manually assign hosts for the job to target using Host Selection pane.
 
 ![Host Selection page](/images/accessanalyzer/11.6/admin/jobs/job/configure/hostselection.webp)
 
@@ -20,12 +20,12 @@ it triggers a host inventory query according to the global settings. The host wi
 any individual host lists. See the [Manually Add Hosts to a Job](#manually-add-hosts-to-a-job) topic
 for additional information.
 
-Click **Save** to apply any changes to the host selection. Changes are not implemented unless they
-are saved.
+Click **Save** to apply any changes to the host selection. Changes aren't implemented unless you
+save them.
 
 ## Manually Add Hosts to a Job
 
-Hosts can be added manually at the job level even when inheritance (Use Default Setting) is used for
+You can manually add hosts at the job level even when inheritance (Use Default Setting) is used for
 host list assignment. The job targets the hosts in any assigned host lists as well as any manually
 added at the job level. Follow these directions to manually add a host to a job.
 
@@ -38,8 +38,8 @@ added at the job level. Follow these directions to manually add a host to a job.
 **Step 2 –** In the Individual hosts section of the Host Selection view, enter the Host name in the
 textbox and click **Add**.
 
-**Step 3 –** Repeat the previous step for each host to be added.
+**Step 3 –** Repeat the previous step for each host to add.
 
 **Step 4 –** Click **Save** and then **OK** to confirm the changes.
 
-The manually added host is now targeted by the job.
+The job now targets the manually added host.

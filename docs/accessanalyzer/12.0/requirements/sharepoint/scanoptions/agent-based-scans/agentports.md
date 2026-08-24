@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # SharePoint Agent Ports
 
-The following are the firewall settings are required when executing the Access Auditing (FSAA)
-and/or Sensitive Data Discovery Auditing scans in Agent-based mode for communication between Access
-Analyzer and the target host:
+The following firewall settings are required for communication between Access Analyzer and the
+target host when running Access Auditing (FSAA) and/or Sensitive Data Discovery Auditing scans in
+Agent-based mode:
 
 | Port    | Protocol | Source                                  | Direction | Target                                  | Purpose                                                                |
 | ------- | -------- | --------------------------------------- | --------- | --------------------------------------- | ---------------------------------------------------------------------- |

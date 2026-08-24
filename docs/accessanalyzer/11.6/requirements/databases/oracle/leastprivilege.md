@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Oracle Target Least Privilege Model
 
-We recommend using an account DBA privilege to run Enterprise Auditor against an Oracle database.
-However, if that is not acceptable all the privileges that are required to configure and run the
-solution are below and can be used to implement the least privileges necessary.
+Netwrix recommends using an account with DBA privilege to run Enterprise Auditor against an Oracle
+database. However, if that isn't acceptable, the following privileges are required to configure and
+run the solution and implement the least privileges necessary.
 
 ## Create Session Privilege
 
@@ -21,7 +21,7 @@ GRANT CREATE SESSION TO %USERNAME%;         
 ```
 
 :::note
-The above command will grant the privilege only in the current container. To follow the
+This command grants the privilege only in the current container. To follow the
 least privilege model, only grant the privilege on the containers (or pluggable databases) that you
 will be scanning with Enterprise Auditor.
 :::
@@ -45,8 +45,8 @@ topic for additional information.
 
 This Job uses Nmap to locate listening Oracle ports on servers by scanning for ports using the
 service Oracle TNS Listener or optionally using specified ports, such as 1521. The Nmap utility can
-be downloaded from [nmap.org](http://www.nmap.org/). To run this job, the user needs to have a
-permission to execute any PowerShell script on the local host if the host is running the Microsoft
+be downloaded from [nmap.org](http://www.nmap.org/). To run this job, the user needs permission to
+execute any PowerShell script on the local host if the host is running the Microsoft
 Windows operating system. In addition, on the Windows host, PowerShell execution policy needs to be
 sent as well. For example, to set the execution policy to `Unrestricted`, run the following command
 on the PowerShell command line:
@@ -55,12 +55,12 @@ on the PowerShell command line:
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted          
 ```
 
-In case of Linux and UNIX hosts, the `plink` command needs to be executed on the Enterprise Auditor
+In case of Linux and UNIX hosts, you must execute the `plink` command on the Enterprise Auditor
 Console server to update the local file with the SSH keys.
 
 :::note
-The plink utility in the Enterprise Auditor installation directory has to be used. A
-version of plink gets installed with the Nmap utility.
+You must use the plink utility in the Enterprise Auditor installation directory. The
+Nmap utility installs a version of plink.
 :::
 
 
@@ -77,11 +77,11 @@ C:\Program Files (x86)\Stealthbits\StealthAUDIT\plink <hostname>  -store_new_k
 ## Oracle SID Discovery
 
 This Job collects the Oracle SID from discovered Oracle servers and uses WMI or SSH to collect
-running Oracle processes from the Oracle servers. The process is used to determine the name of the
+running Oracle processes from the Oracle servers. It uses this process to determine the name of the
 Oracle SID. When multiple Oracle instances are running on a server, each SID will have its own entry
 in this table.
 
-This Job requires local administrator rights on the target hosts in order to read the running
+This Job requires local administrator rights on the target hosts to read the running
 processes using either WMI or SSH.
 
 ## Oracle Instance Discovery
@@ -117,12 +117,12 @@ ALTER USER %USERNAME% SET CONTAINER_DATA=ALL CONTAINER = CURRENT;
 
 ## Oracle Permission Auditing
 
-The Oracle Permissions Scan job is responsible for collecting all permissions from all licensed
+The Oracle Permissions Scan job collects all permissions from all licensed
 database types for all target instances.
 
 ### Oracle Database 19c Series Permissions
 
-In order to collect permissions from Oracle Database 19c series, the user credential requires at
+to collect permissions from Oracle Database 19c series, the user credential requires at
 least the following `SELECT` privilege on the targeted database for the following views and tables:
 
 - CDB_COL_PRIVS view
@@ -189,7 +189,7 @@ GRANT SELECT ON DBA_TAB_PRIVS TO %USERNAME%;
 
 ### Oracle Database 12c Series Permissions
 
-In order to collect permissions from Oracle Database 12c series, the user credential requires at
+to collect permissions from Oracle Database 12c series, the user credential requires at
 least the following `SELECT` privilege on the targeted database for the following views and tables:
 
 - CDB_COL_PRIVS view
@@ -233,7 +233,7 @@ GRANT SELECT ON SYS.USER$ TO %USERNAME%;
 
 ### Oracle Database 11g Series Permissions
 
-In order to collect permissions from Oracle Database 11g series, the user credential requires at
+to collect permissions from Oracle Database 11g series, the user credential requires at
 least the following `SELECT` privileges on the targeted database for the following views and tables:
 
 - DBA_COL_PRIVS view
@@ -273,7 +273,7 @@ GRANT SELECT ON SYS.USER$ TO %USERNAME%;
 
 ## Oracle Sensitive Data Auditing
 
-This job is responsible for identifying sensitive data that has been stored within target database
+This job identifies sensitive data stored within target database
 instances.
 
 Before running this scan, ensure that Oracle database statistics are up to date at least for the
@@ -286,7 +286,7 @@ EXEC DBMS_STATS.GATHER_TABLE_STATS('%SCHEMA_NAME%', ‘%TABLE_NAME%’);
 
 ### Oracle Database 12c Series Sensitive Data
 
-In order to perform a sensitive data scan on Oracle database 12c series, the user credential
+to perform a sensitive data scan on Oracle database 12c series, the user credential
 requires at least the following `SELECT` privileges on the targeted database for the following
 views:
 
@@ -307,7 +307,7 @@ GRANT SELECT ON CDB_OBJECTS TO %USERNAME%;
 
 ### Oracle Database 11g Series Sensitive Data
 
-In order to perform a sensitive data scan on Oracle database 11g series, the user credential
+to perform a sensitive data scan on Oracle database 11g series, the user credential
 requires at least the following `SELECT` privileges on the targeted database for the following
 views:
 
@@ -324,9 +324,12 @@ GRANT SELECT ON DBA_TAB_COLS TO %USERNAME%;
 GRANT SELECT ON DBA_OBJECTS TO %USERNAME%;
 ```
 
-Please note that the `SELECT` privilege needs to be granted individually on all sensitive data
-tables to be targeted (more secure). To accomplish it, run the following command for each targeted
-sensitive data table:
+:::note
+The `SELECT` privilege needs to be granted individually on all sensitive data tables to be
+targeted (more secure).
+:::
+
+To accomplish it, run the following command for each targeted sensitive data table:
 
 ```
 GRANT SELECT ON %YOUR_SENSITIVE_DATA_TABLE% TO %USERNAME%;
@@ -341,12 +344,12 @@ GRANT SELECT ANY TABLE TO %USERNAME%;
 
 ## Oracle Activity Auditing
 
-This job is responsible for collecting audit data from configured database server audits on target
+This job collects audit data from configured database server audits on target
 endpoints.
 
 ### Oracle Database 12c Series Activity Data
 
-In order to perform an activity data scan on Oracle database 12c series, the user credential
+to perform an activity data scan on Oracle database 12c series, the user credential
 requires at least the following `SELECT` privileges on the targeted database for the following
 views:
 
@@ -363,7 +366,7 @@ GRANT SELECT ON CDB_COMMON_AUDIT_TRAIL TO %USERNAME%;
 GRANT SELECT ON UNIFIED_AUDIT_TRAIL TO %USERNAME%;
 ```
 
-If the audit trail mode is `QUEUED`, then audit records are not written to disk until the in-memory
+If the audit trail mode is `QUEUED`, then audit records aren't written to disk until the in-memory
 queues are full. The following procedure explicitly flushes the queues to disk, so that the audit
 trail records are viewable in the `UNIFIED_AUDIT_TRAIL` view:
 
@@ -373,7 +376,7 @@ EXEC SYS.DBMS_AUDIT_MGMT.FLUSH_UNIFIED_AUDIT_TRAIL;
 
 ### Oracle Database 11g Series Activity Data
 
-In order to perform an activity data scan on Oracle database 11g series, the user credential
+to perform an activity data scan on Oracle database 11g series, the user credential
 required at least the following `SELECT` privileges on the targeted database for the following
 views:
 
@@ -390,7 +393,7 @@ GRANT SELECT ON DBA_COMMON_AUDIT_TRAIL TO %USERNAME%;
 
 ## Oracle Users with Default Passwords Job
 
-The 4-Oracle_DefaultPasswordUsers job is responsible for collecting usernames of users whose
+The 4-Oracle_DefaultPasswordUsers job collects usernames of users whose
 passwords have not been updated since the database creation.
 
 The user needs to have a `SELECT` privilege on `CDB_USERS_WITH_DEFPWD` table for Oracle container

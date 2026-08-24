@@ -11,7 +11,7 @@ results for the specific folder or file. It is a wizard page for all of the cate
 
 ![File Search Wizard Target Files page](/images/accessanalyzer/12.0/admin/datacollector/file/targetfiles.webp)
 
-Within the Target files configuration page, select the desired method to refine the query.
+Within the Target files configuration page, select the method you want to use to refine the query.
 
 :::note
 Some options are grayed out depending on the option selected.
@@ -21,7 +21,7 @@ Some options are grayed out depending on the option selected.
 **Where is the file or folder?**
 
 This section supplies options for using a fixed path (wildcards and system variables) or registry
-lookup values that are supported by the data collector. This header is available for all Category
+lookup values that the data collector supports. This header is available for all Category
 selections.
 
 For either option, enter the path in the text box or click the browse button (**…**) to select from
@@ -33,19 +33,18 @@ network neighborhoods which begin with `\\`.
 :::
 
 
-- Fixed path – Specify a specific path to the target files. Use the following format:
+- Fixed path – Specify a path to the target files. Use the following format:
   `drive\filepath` (for example, `C:\WINNT\System32`). The browse button (**…**) opens the Remote
   Folder Explorer window.
 
     :::note
-    Further information for the Fixed path option is provided by clicking the tooltip
-    button (**?**).
+    Click the tooltip button (**?**) for more information about the Fixed path option.
     :::
 
 
 - System environment variables – Supply a traditional system root or previously defined variable
-  that maps to a physical path within the file system. This is typically used when the system root
-  is installed on a secondary volume. The following are variables that can be entered at the
+  that maps to a physical path within the file system. You typically use this option when the
+  system root is installed on a secondary volume. You can enter the following variables at the
   beginning of the file path:
 
     - `%SYSTEMROOT%\Temp` – Expands to `C:\WINNT\Temp` on some target hosts
@@ -55,24 +54,24 @@ network neighborhoods which begin with `\\`.
 - Registry Lookup – Find registry keys and values that exist on a target host in the environment.
   Click the browse button (**…**) to open the Access Analyzer Registry Browser window.
 
-    - Access Analyzer Registry – Connect to a host, then select a registry key and path to be used
-      for the lookup by the query
+    - Access Analyzer Registry – Connect to a host, then select a registry key and path for the
+      query to use in the lookup
 
         - Registry Value – This value is automatically populated from the registry key
-        - Levels – After a registry path has been selected, the Levels slider can be used to
+        - Levels – After you select a registry path, use the Levels slider to
           truncate the path for the key value in the Adjust Path dialog box
         - Current Value – Displays the type of data each registry value contains
         - Query 32-bit View – Select this checkbox to query a 32-bit view
         - Query 64-bit View – Select this checkbox to query a 64-bit view
 
-            When a **Fixed path** or **Registry Lookup** is mapped, select options to better refine
+            When you map a **Fixed path** or **Registry Lookup**, select options to better refine
             the search. Select one, none, or both.
 
 - Include network drives – Includes all mapped shared drives in the network in the query
 
     :::warning
-    Including subfolders may result in hundreds of thousands of files being returned
-    depending on the environment being targeted.
+    Including subfolders may return hundreds of thousands of files, depending on the
+    targeted environment.
     :::
 
 
@@ -81,12 +80,12 @@ network neighborhoods which begin with `\\`.
 **What is the file or folder name?**
 
 The options in this section limit the search to folders or files with a specified name against the
-targeted host. When the **I am looking for folders** option is selected, more options become
-available for further refinement.
+targeted host. Selecting the **I am looking for folders** option makes more options available for
+further refinement.
 
 :::note
-The **I am looking for folders** option and it's associated options are unavailable
-(grayed out) when the **Calculate Group Size (Files Only)** category is selected.
+Selecting the **Calculate Group Size (Files Only)** category makes the **I am looking for
+folders** option and its associated options unavailable (grayed out).
 :::
 
 
@@ -96,10 +95,10 @@ The **I am looking for folders** option and it's associated options are unavaila
   property information on these folders
 
     - Include root folder in results – Returns all information within the root folder
-    - Only include root folder – Returns information only for the root folder. This checkbox is
-      enabled when the **Include root folder in results** checkbox is selected.
+    - Only include root folder – Returns information only for the root folder. Selecting the
+      **Include root folder in results** checkbox enables this checkbox.
 
-- With this name – Specific name of a file or folder. A wildcard is used to match any file or folder
+- With this name – Specific name of a file or folder. Use a wildcard to match any file or folder
   to a specific naming convention. When searching for multiple objects, use a semicolon (`;`) to
   separate the objects in the list.
 
@@ -121,8 +120,8 @@ a specific time frames. The following options are available:
 
 File Size Filter
 
-The File Size Filter option is only available when the **Calculate Group Size (Files Only)**
-category is selected. Select an option to activate the filter and narrow the query.
+Selecting the **Calculate Group Size (Files Only)** category makes the File Size Filter option
+available. Select an option to activate the filter and narrow the query.
 
 - None – No file size filter is applied. This option is selected by default.
 - Below – Filter to files smaller than the specified values

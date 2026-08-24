@@ -13,7 +13,7 @@ summarized metrics from the Message Tracking Log. See the
 [Exchange Support and Permissions Explained](/docs/accessanalyzer/11.6/requirements/exchange/support/support.md)
 topic for a complete list of supported platforms.
 
-The ExchangeMetrics Data Collector has been preconfigured within the Exchange Solution. Both this
+The ExchangeMetrics Data Collector comes preconfigured within the Exchange Solution. Both this
 data collector and the solution are available with a special Enterprise Auditor license. See the
 [Exchange Solution](/docs/accessanalyzer/11.6/solutions/exchange/overview.md)
 topic for additional information.
@@ -30,7 +30,7 @@ topic for additional information.
 
 **Permissions**
 
-- Member of the local Administrator group on the targeted Exchange server(s)
+- Member of the local Administrator group on the targeted Exchange servers
 
 See the
 [Exchange Mail-Flow Permissions](/docs/accessanalyzer/11.6/requirements/exchange/support/mailflow.md)
@@ -59,5 +59,5 @@ which contains the following wizard pages:
 
 ![Exchange Metrics Data Collector Wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/exchangemetrics/welcome.webp)
 
-The Welcome page can be hidden by checking the **Do not display this page the next time** box when
-the wizard is open and configuration settings are saved.
+To hide the Welcome page, check the **Don't display this page the next time** box while the wizard
+is open, then save the configuration settings.

@@ -16,7 +16,7 @@ Navigate to the **FileSystem** > **Cleanup** > **2. Notify** > **FS_NotifyOwners
 node and select **Actions** to view the action tasks.
 
 :::warning
-Do not enable the action unless it is required. Disable the action after execution to
+Don't enable the action unless it is required. Disable the action after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 :::
 
@@ -27,29 +27,28 @@ The following action task is deselected by default.
 
 - Notify Owners – Notifies share owners using SendMail module
 
-Prior to running the FS_NotifyOwners job, it is necessary to select the **Notify Owners** task and
+Before running the FS_NotifyOwners job, select the **Notify Owners** task and
 configure the properties for the SendMail action module. See the
-[Configure the FS_NotifyOwners Action](#configure-the-fs_notifyowners-action) topic for additional
+[Configure the FS_NotifyOwners Action](#configure-the-fsnotifyowners-action) topic for additional
 information.
 
 ### Configure the FS_NotifyOwners Action
 
 The recipients and the text of the email can be customized on the Properties page within the Send
-Mail Action Module Wizard. The
+Mail Action Module Wizard. You must run the
 [1. Cleanup Assessment > FS_CleanupAssessment Job](/docs/accessanalyzer/11.6/solutions/filesystem/cleanup/fs_cleanupassessment.md)
-must be run before the Send Mail Action Module Wizard can be opened. Follow these steps to customize
-the Notify Owners action task.
+before you can open the Send Mail Action Module Wizard.
 
 **Step 1 –** Navigate to the job’s **Configure** node and select **Actions**.
 
-**Step 2 –** In the Action Selection view, select the desired action task and click **Action
+**Step 2 –** In the Action Selection view, select the action task and click **Action
 Properties** to view the Action Properties page.
 
 **Step 3 –** Click **Configure Action** to open the Send Mail Action Module Wizard.
 
 :::tip
-Remember, the FS_CleanupAssessment job must be run before the Send Mail Action Module Wizard can
-be opened.
+Remember, you must run the FS_CleanupAssessment job before you can open the Send Mail Action
+Module Wizard.
 :::
 
 
@@ -76,5 +75,5 @@ be opened.
 click **Cancel** if no changes were made. Then click **OK** to close the Send Mail Action Module
 Wizard.
 
-The action task has been customized. It can now be selected and run as part of the FS_NotifyOwners
+You've now customized the action task. You can select and run it as part of the FS_NotifyOwners
 job.

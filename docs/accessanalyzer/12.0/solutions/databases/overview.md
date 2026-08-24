@@ -23,7 +23,7 @@ reports that provide visibility into various aspects of supported databases:
   order to answer questions around data access.
 - [PostgreSQL Solution](/docs/accessanalyzer/12.0/solutions/databases/postgresql/overview.md) – Access Analyzer for PostgreSQL automates the
   process of understanding where PostgreSQL databases exist and provides an overview of the
-  PostgreSQL environment in order to answer questions around data access.
+  PostgreSQL environment to answer questions around data access.
 - [Redshift Solution](/docs/accessanalyzer/12.0/solutions/databases/redshift/overview.md) – Redshift Solution Set is a comprehensive set of
   pre-configured audit jobs and reports that provide visibility into various aspects of Redshift:
   Data Collection, Configuration, and Sensitive Data.
@@ -32,8 +32,8 @@ reports that provide visibility into various aspects of supported databases:
   configuration, sensitive data, and overall security assessment for both the SQL 0.Collection Job
   Group and Azure SQL 0.Collection Job Group.
 
-The Database Solution license includes all supported database platforms supported by Access
-Analyzer. Additionally, Sensitive Data Discovery enables the solution to search database content for
+The Database Solution license includes all database platforms supported by Access Analyzer.
+Additionally, Sensitive Data Discovery enables the solution to search database content for
 sensitive data.
 
 The following table identifies the type of audit functionality for each supported database platform:
@@ -48,7 +48,7 @@ The following table identifies the type of audit functionality for each supporte
 | PostgreSQL         |                    | \*Partially Supported |                 | Fully Supported          | \*\*Partially Supported |
 | Redshift           |                    | \*Partially Supported |                 | Fully Supported          | \*\*Partially Supported |
 
-In the above table:
+In this table:
 
 - \*Partially Supported, "Permission Audit" means the permissions as solely collected at the table
   level.

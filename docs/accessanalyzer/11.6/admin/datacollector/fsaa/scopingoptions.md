@@ -31,7 +31,7 @@ The Scoping Options buttons have the following:
       imported, the user will be prompted to resolve the conflict by either keeping the existing
       configuration or importing the new one, which will overwrite the scoping option.
 
-- Export – Take the currently configured scoping options in the job and export it to a `.fsaascope`
+- Export – Take the configured scoping options in the job and export it to a `.fsaascope`
   file
 
 By default, priority is assigned in the order it is added to the table. Priority can also be
@@ -54,7 +54,7 @@ default scoping settings for the selected resource.
 Set the Resource Name and Host Name:
 
 - Resource Name – Specify a local path or individual share to the target folder or the share name
-- Host Name – Apply scoping options to a specific target host. If a host name is not supplied, all
+- Host Name – Apply scoping options to a specific target host. If a host name isn't supplied, all
   hosts targeted by the job have the scoping options applied.
 
 Both the Resource Name and Host Name textboxes support regular expressions and pattern matching.
@@ -94,7 +94,7 @@ Then set Scoping Type and Priority:
     :::note
     Any included files or folders inherit all options previously checked in the
     [FSAA: Default Scoping Options](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/defaultscopingoptions/defaultscopingoptions.md)
-    page. Manually apply new options if the default ones are not desired in this scan.
+    page. Manually apply new options if the default ones aren't desired in this scan.
     :::
 
 
@@ -178,7 +178,7 @@ All other folder paths are excluded.
 
 **Additional Considerations**
 
-The scoping options listed above can be used to scope for SMB shares and NFS exports but NFS exports
+Use the scoping options listed above to scope for SMB shares and NFS exports, but NFS exports
 are enumerated differently. The include/exclude logic outlined above should be the same for both,
 but when scoping for NFS exports the Resource Name should be the full path to the export.
 

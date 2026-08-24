@@ -11,12 +11,12 @@ text that form the report.
 
 ![Widgets page](/images/accessanalyzer/11.6/admin/report/wizard/widgets.webp)
 
-At the top of the page the selected layout is described. The table contains the available element
-locations where widgets need to be configured.
+The top of the page describes the selected layout. The table contains the available element
+locations where you need to configure widgets.
 
 ![Configure widgets](/images/accessanalyzer/11.6/admin/report/wizard/widgetsconfigure.webp)
 
-To add a new widget to an empty element, click **Configure** and select the desired widget type from
+To add a new widget to an empty element, click **Configure** and select the widget type you want from
 the dropdown menu. The following widgets are available:
 
 - [Grid](#grid)
@@ -38,7 +38,7 @@ following actions by selecting a row and clicking the relevant button:
 
 ## Grid
 
-Use the Grid widget type to configure a table to be displayed on generated reports.
+Use the Grid widget type to configure a table for generated reports.
 
 ![Grid configuration window](/images/accessanalyzer/11.6/admin/report/wizard/widgetgrid.webp)
 
@@ -74,7 +74,7 @@ To generate results, select a location as the data source.
 
 **Export CSV Options**
 
-You can configure the table to allow the data to be exported as a CSV file.
+You can configure the table to allow exporting the data as a CSV file.
 
 - Export table data as CSV – Select this option to enable a report’s table section to be exportable
   as a CSV file from the generated report
@@ -83,7 +83,7 @@ You can configure the table to allow the data to be exported as a CSV file.
       [Interactive Grids](/docs/accessanalyzer/11.6/admin/report/interactivegrids/overview.md)
       topic for details about interactive grids.
       :::warning
-      Only interactive grids can be exported. Non-interactive grids display an "EOIeError" pop-up when you attempt to export a non-interactive grid as CSV.
+      You can only export interactive grids. Non-interactive grids display an "EOIeError" pop-up when you attempt to export a non-interactive grid as CSV.
       :::
 - Rows – Limits the amount of rows exported to the CSV file. The default is **Visible**.
     - Visible – Only includes the amount of rows set by the **Limit Maximum number of displayed rows
@@ -142,8 +142,8 @@ The following settings are available when Interactive grid is selected:
 
 ### Data
 
-The selected data for the table is shown in the section at the bottom of the window. Use this section
-to configure the data to be displayed in the table.
+The section at the bottom of the window shows the selected data for the table. Use this section
+to configure the data to display in the table.
 
 ![Data display](/images/accessanalyzer/11.6/admin/report/wizard/widgetgriddata.webp)
 
@@ -212,7 +212,7 @@ The following options are the available in the Chart Properties:
     - Stacked – Consolidated bar chart for comparing values
 
     :::note
-    Negative numbers can't be plotted.
+    You can't plot negative numbers.
     :::
 
 
@@ -220,7 +220,7 @@ The following options are the available in the Chart Properties:
 - Enum Column – Groups the data in chart by the selected column name
 - Assign color for pie slice – Available only for pie charts. Use this option to customize the color
   for each slice. Select the column header name from the dropdown menu, then use the color selector
-  window to choose the desired color.
+  window to choose the color you want.
 
 ### Link
 
@@ -233,8 +233,8 @@ report to link to and click **Ok**.
 
 ### Data
 
-The table of data for the chart is displayed in the middle of the window. Use this table to
-customize the data to be shown in the chart.
+The middle of the window displays the table of data for the chart. Use this table to
+customize the data to show in the chart.
 
 ![Data table](/images/accessanalyzer/11.6/admin/report/wizard/widgetchartdata.webp)
 
@@ -274,7 +274,7 @@ Text Editor. On this dialog, select either the Basic or Advanced Text Editor and
 Editor**. The selected editor then opens.
 
 :::note
-Once a Text Editor is selected for a Text element, it can't be changed.
+Once you select a Text Editor for a Text element, you can't change it.
 :::
 
 

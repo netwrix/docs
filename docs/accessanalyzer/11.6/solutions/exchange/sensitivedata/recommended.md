@@ -32,8 +32,8 @@ to be set to run against the version-appropriate default dynamic host list:
 - Exchange 2019 MB Servers
 
 :::note
-Default dynamic host lists are populated from hosts in the Host Master Table which meet
-the host inventory criteria for the list. Ensure the appropriate host lists have been populated
+Access Analyzer populates default dynamic host lists from hosts in the Host Master Table
+which meet the host inventory criteria for the list. Ensure the appropriate host lists have been populated
 through host inventory results.
 :::
 

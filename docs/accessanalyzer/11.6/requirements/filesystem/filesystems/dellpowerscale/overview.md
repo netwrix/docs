@@ -38,7 +38,7 @@ topic for additional information.
 
 **Additional Sensitive Data Discovery Auditing Permission**
 
-In order to execute scoped Sensitive Data Discovery Auditing scans, the credential must also have
+to execute scoped Sensitive Data Discovery Auditing scans, the credential must also have
 the LOCAL:System provider selected in each access zone in which the shares to be scanned reside.
 
 The credential must have an Authentication Provider configured for the Isilon/PowerScale device. For
@@ -71,8 +71,8 @@ Share permissions can now be granted to this credential.
 
 ## BackupAdmin Role Assignment for OneFS
 
-Follow the steps to assign the credential to the **BackupAdmin** role through OneFS Storage
-Administration Console.
+Assign the credential to the **BackupAdmin** role through the OneFS Storage
+Administration Console using the following steps.
 
 **Step 1 –** Navigate to the **Access** tab > **Membership & Roles** for the System Access Zone.
 
@@ -125,8 +125,8 @@ scan.
 
 ### Troubleshooting NFSv3 Export Access
 
-If Enterprise Auditor is not discovering the expected NFS export, it is possible that the export
-policy is not properly configured to allow the Enterprise Auditor server or proxy server IP Address
+If Enterprise Auditor isn't discovering the expected NFS export, it is possible that the export
+policy isn't properly configured to allow the Enterprise Auditor server or proxy server IP Address
 to mount the NFS export. One step in troubleshooting this issue is to confirm a Unix client (or WSL
 for Windows) in the same IP range as the Enterprise Auditor server or proxy server can mount the NFS
 export.
@@ -198,7 +198,7 @@ are required for communication between the Agent server and the Netwrix Activity
 
 The Windows firewall rules need to be configured on the Windows server, which require certain
 inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+port range, which can't be specified via an inbound rule. For more information, see the Microsoft
 [Connecting to WMI on a Remote Computer](https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx)
 article.
 

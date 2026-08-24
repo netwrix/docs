@@ -6,11 +6,11 @@ sidebar_position: 90
 
 # SQL: Results
 
-The Results page is where the properties that will be gathered are selected. It is a wizard page for
+Use the Results page to select the properties to gather. It is a wizard page for
 all of the categories.
 
 ![SQL Data Collector Wizard Results Page](/images/accessanalyzer/12.0/admin/datacollector/sql/results.webp)
 
-Properties can be selected individually, or the **Select All** and **Clear All** buttons can be
-used. All selected properties are gathered. Available properties vary based on the category
+You can select properties individually, or use the **Select All** and **Clear All** buttons.
+Access Analyzer gathers all selected properties. Available properties vary based on the category
 selected.

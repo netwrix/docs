@@ -10,7 +10,7 @@ The ADPermissions Data Collector gathers essential user and group inventory info
 standard reference tables. Unlike other Enterprise Auditor data collectors, the ADPermissions Data
 Collector writes data to these tables regardless of the job executing the query.
 
-These tables and their associated views are outlined below:
+The following table outlines these tables and their associated views:
 
 | Table                                  | Details                                           |
 | -------------------------------------- | ------------------------------------------------- |

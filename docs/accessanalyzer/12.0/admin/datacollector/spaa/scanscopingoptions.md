@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # SPAA: Scan Scoping Options
 
-The Scan Scoping Options page provides scoping options to specify the list of URLs to be scanned. It
+The Scan Scoping Options page provides scoping options to specify the list of URLs to scan. It
 is a wizard page for the categories of:
 
 - Scan SharePoint Access
@@ -16,7 +16,7 @@ is a wizard page for the categories of:
 
 The options on the Scan Scoping Options page are:
 
-- Add – When a URL is entered in the text box, adds the URL to the Scope box
+- Add – Entering a URL in the text box adds it to the Scope box
 
     - To scope for a SharePoint Host Named Site Collections, use the text box to enter the URL for
       both the Web App and the HNSC with custom non-existent URL extensions added. See the
@@ -24,19 +24,19 @@ The options on the Scan Scoping Options page are:
       topic for additional information.
 
     :::note
-    If sites are included in the Scope box, all other sites are excluded from the scan.
+    If you include sites in the Scope box, Access Analyzer excludes all other sites from the scan.
     :::
 
 
 - Import CSV – Opens a file explorer to browse for a CSV file
 - Scope box – Lists all added URLs
-- Scope drop-down list – Select include to include a URL in the scan. Select exclude to exclude a
+- Scope dropdown list – Select include to include a URL in the scan. Select exclude to exclude a
   URL from the scan.
 - Remove – Removes the selected URL from the Scope box
 
 ## Scoping to SharePoint Host Named Site Collections
 
-In order to scope to objects within host named site collections, add a scope line which includes the
+to scope to objects within host named site collections, add a scope line which includes the
 URL of the web application containing the host named site collection. To scope the host named site
 collection URL `http://sample.com/documents/` for a host named site collection that exists under the
 web application URL `http://example.com`, follow the steps:
@@ -56,24 +56,24 @@ the HNSCs. Click **Add**.
 
 ![Scan Scoping Options example](/images/accessanalyzer/12.0/admin/datacollector/spaa/scanscopingoptionsexample.webp)
 
-**Step 4 –** The Web App URL must appear above the HNSC URL, as depicted in the example above.
+**Step 4 –** The Web App URL must appear above the HNSC URL, as depicted in the preceding example.
 
-**Step 5 –** The SharePoint Access Auditor Data Collector Wizard is now configured to filter for the
-URL inside the SharePoint Host Named Site Collections.
+**Step 5 –** You have now configured the SharePoint Access Auditor Data Collector Wizard to filter
+for the URL inside the SharePoint Host Named Site Collections.
 
 ## Virtual Hosts
 
-In order to decrease the scan time in large SharePoint Online environments, it is possible to break
-Site Collections for a single host down into subsets, or **Virtual Hosts**, that are treated as
-separate hosts by Access Analyzer. This allows multiple scans of a single host to be run
-concurrently. Follow the steps to configure this.
+To decrease the scan time in large SharePoint Online environments, break
+Site Collections for a single host down into subsets, or **Virtual Hosts**, that Access Analyzer
+treats as separate hosts. This allows you to run multiple scans of a single host
+concurrently. To configure this:
 
 ![CSV file with host and site collection information](/images/accessanalyzer/12.0/admin/datacollector/spaa/virtualhostscsv.webp)
 
-**Step 1 –** Create a new CSV file. Add into rows the information for the host and site collection
-URLs you want to scan in the format `HOSTNAME#DESIGNATOR;URL`.
+**Step 1 –** Create a new CSV file. Add rows containing the host and site collection URL
+information you want to scan, using the format `HOSTNAME#DESIGNATOR;URL`.
 
-- Each unique `DESIGNATOR` is treated as a separate host comprised of the specified URLs.
+- Access Analyzer treats each unique `DESIGNATOR` as a separate host comprised of the specified URLs.
 
 ![Host List for targeting the Virtual Hosts](/images/accessanalyzer/12.0/admin/datacollector/spaa/virtualhostshostlist.webp)
 
@@ -88,15 +88,16 @@ Wizard, use the **Import CSV** button to import the information from the CSV fil
 **Step 4 –** Click **Next** to continue through the other pages of the SharePoint Access Auditor
 Data Collector Wizard. Then click **Finish** on the Summary Page.
 
-Access Analyzer is now configured to scan multiple site collections for the same host concurrently.
+You have now configured Access Analyzer to scan multiple site collections for the same host
+concurrently.
 
-A new host folder is created for each Virtual Host in `Jobs/SA_CommonData/SHAREPOINTACCESS`. You
-will also see a separate line on the Running Instances tab for each Virtual Host included in the
-scan.
+Access Analyzer creates a new host folder for each Virtual Host in
+`Jobs/SA_CommonData/SHAREPOINTACCESS`. You will also see a separate line on the Running Instances
+tab for each Virtual Host included in the scan.
 
 :::note
-The Host List for Bulk Import should be configured to contain each Virtual Host included
-in the above scan using the `HOSTNAME#DESIGNATOR` format. After Bulk Import, the data contained in
+You should configure the Host List for Bulk Import to contain each Virtual Host included in the
+preceding scan, using the `HOSTNAME#DESIGNATOR` format. After Bulk Import, the data contained in
 Tier 1 Database tables and views will resemble a scan run against multiple hosts.
 
 :::

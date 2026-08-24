@@ -10,7 +10,7 @@ On the Data Source page of the Chart Configuration wizard configure the data sou
 
 ![Chart Configuration wizard Data Source page](/images/accessanalyzer/12.0/admin/report/chartwizard/datasource.webp)
 
-In order to generate results, a location must first be selected as the source of the data. The table
+to generate results, a location must first be selected as the source of the data. The table
 on this wizard page contains a list of tables and views within Access Analyzer from jobs that have
 been executed. Select the required data source from the table.
 
@@ -26,5 +26,5 @@ There are the following additional data source options:
 - Show historical data – If there is historical data, selecting this option displays all
   collections. It is keyed off of the Jobruntimekey column.
 
-Once you have selected the data source, click **Next** to proceed to the Configure page. See the
+After you select the data source, click **Next** to proceed to the Configure page. See the
 [Configure](/docs/accessanalyzer/12.0/admin/report/chartwizard/configure.md) topic for additional information.

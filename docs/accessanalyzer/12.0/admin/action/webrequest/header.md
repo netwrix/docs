@@ -12,7 +12,7 @@ Use the Header page to enter the header values for the request.
 
 Use the following options to enter header values:
 
-- Insert field – Select a field to include in the request using the drop-down menu
+- Insert field – Select a field to include in the request using the dropdown menu
 
     :::note
     The fields available varies based on the source table columns.
@@ -26,6 +26,6 @@ Use the following options to enter header values:
 
 - Key / Value fields – The name or value of the attribute
 
-    - Select a field using the drop-down menu, place the cursor in the cell of the desired Key or
-      Value, and click the blue down-arrow to add it to the selected cell
+    - Select a field using the dropdown menu, place the cursor in the cell of the Key or Value
+      field you want, and click the blue down-arrow to add it to the selected cell
     - Manually enter a field in the cell

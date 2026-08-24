@@ -68,7 +68,7 @@ The 8. Exchange Online job group should be run with the default analysis configu
 these analysis tasks are preconfigured and should never be modified or deselected. There are some
 that are deselected by default, as they are for troubleshooting purposes.
 
-The following analysis tasks should not be deselected, but their parameters can be modified:
+The following analysis tasks shouldn't be deselected, but their parameters can be modified:
 
 - **Mailflow** > **0. Collection** > **EX_Mailflow** Job – **03. SET HISTORY RETENTION** Analysis
   Task

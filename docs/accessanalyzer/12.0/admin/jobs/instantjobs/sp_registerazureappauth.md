@@ -19,10 +19,10 @@ authentication and provision appropriate permissions for SharePoint Online scans
 
 ## Instantiate the SP_RegisterAzureAppAuth Job.
 
-Follow the steps to instantiate the SP_RegisterAzureAppAuth Job.
+To instantiate the SP_RegisterAzureAppAuth Job:
 
 **Step 1 –** In Access Analyzer navigate to the SharePoint Job Group (or any other Job Group you
-wish to place the SP_RegistureAzureApp job into).
+want to place the SP_RegistureAzureApp job into).
 
 **Step 2 –** Click **Add Instant Job** to open the Instant Job Wizard.
 
@@ -41,8 +41,8 @@ application (for example, `myorg.onmicrosoft.com`). Click **Save**. The job is n
 After the job successfully runs it will open a browser window to Microsoft Entra ID that, when
 logged-in as a Global Administrator, allows the user to grant administrator consent to the
 Application's configured API Permissions. If the login attempt fails, or the user closes the
-browser, they will need to login to Microsoft Entra ID as a Global Administrator and navigate to the
-Application's API Permissions to grant Admin Consent before the Application can be used for
+browser, they will need to log in to Microsoft Entra ID as a Global Administrator and navigate to the
+Application's API Permissions to grant Admin Consent before you can use the Application for
 SharePoint scans in Access Analyzer.
 
 **Additional Considerations**

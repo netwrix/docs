@@ -15,7 +15,7 @@ Navigate to the **Oracle** > **2.Activity** > **Oracle_Activity** > **Configure*
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

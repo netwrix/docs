@@ -12,7 +12,7 @@ DropboxAccess Data Collector writes data to these tables regardless of the job e
 
 ## Dropbox Access Auditing Tables & Views
 
-These tables and their associated views are outlined below:
+The following table lists these tables and their associated views:
 
 | Table                       | Details                                                                                                                       |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -40,11 +40,11 @@ Data Collector:
 
 ## Dropbox Sensitive Data Discovery Auditing (SEEK) Tables & Views
 
-These tables and their associated views are outlined below:
+The following table lists these tables and their associated views:
 
 | Table                | Details                                                                                                                  |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| SA_Dropbox_Criteria  | Contains the sensitive data criteria which are selected for collection by the scan engine (data collector configuration) |
+| SA_Dropbox_Criteria  | Contains the sensitive data criteria the scan engine selects for collection (data collector configuration) |
 | SA_Dropbox_Matches   | Contains rolled up aggregate counts of the sensitive data criteria matches found during the scan                         |
 | SA_Dropbox_MatchHits | Contains the actual sensitive data discovered within files which matched selected criteria                               |
 

@@ -7,8 +7,9 @@ sidebar_position: 360
 # SystemInfo Data Collector
 
 The SystemInfo Data Collector extracts information from the target system based on the selected
-category. The SystemInfo Data Collector is a core component of Enterprise Auditor, but it has been
-preconfigured within the Windows Solution. While the data collector is available with all Enterprise
+category. The SystemInfo Data Collector is a core component of Enterprise Auditor, and the Windows
+Solution includes it as a preconfigured component. While the data collector is available with all
+Enterprise
 Auditor license options, the Windows Solution is only available with a special Enterprise Auditor
 license. See the
 [Windows Solution](/docs/accessanalyzer/11.6/solutions/windows/overview.md)
@@ -46,5 +47,5 @@ contains the following wizard pages:
 
 ![System Info Data Collector Wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/systeminfo/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+Select the **Don't display this page the next time** checkbox to hide the Welcome page. The wizard
+saves this setting with your configuration changes.

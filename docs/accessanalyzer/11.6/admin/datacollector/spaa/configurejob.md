@@ -6,12 +6,12 @@ sidebar_position: 20
 
 # SharePoint Custom Connection Profile & Host List
 
-The SPAA Data Collector requires a custom Connection Profile and a custom host list to be created
-and assigned to the job conducting the data collection. The host inventory option during host list
-creation makes it necessary to configure the Connection Profile first. While SharePoint on-premises
-uses the Active Directory account type for the credential within a Connection Profile, it is
-necessary for online credentials to be listed first in the credentials list within a Connection
-Profile housing credentials to both environments.
+The SPAA Data Collector requires you to create a custom Connection Profile and a custom host list
+and assign them to the job conducting the data collection. The host inventory option during host
+list creation makes it necessary to configure the Connection Profile first. While SharePoint
+on-premises uses the Active Directory account type for the credential within a Connection Profile,
+you must list online credentials first in the credentials list within a Connection Profile housing
+credentials to both environments.
 
 ## SharePoint Farm
 
@@ -25,17 +25,17 @@ The provisioned credential used should be an Active Directory account.
 Create a Connection Profile and set the following information on the User Credentials window:
 
 - Select Account Type – Active Directory Account
-- Domain – Drop-down menu with available trusted domains displays. Either type the short domain name
+- Domain – dropdown menu with available trusted domains displays. Either enter the short domain name
   in the textbox or select a domain from the menu.
-- User name – Type the user name
+- User name – Enter the user name
 - Password Storage – Choose the for credential password storage:
     - Application – Uses Enterprise Auditor’s configured Profile Security setting as selected at the
       **Settings** > **Application** node
     - CyberArk – Uses the CyberArk Enterprise Password Vault
-- Password – Type the password
-- Confirm – Re-type the password
+- Password – Enter the password
+- Confirm – Re-enter the password
 
-Once the Connection Profile is created, it is time to create the custom host list. See the
+After you create the Connection Profile, create the custom host list. See the
 [Connection](/docs/accessanalyzer/11.6/admin/settings/connection/overview.md)
 topic for additional information.
 
@@ -44,7 +44,7 @@ topic for additional information.
 The custom host list should include:
 
 - One application server per farm
-- Host name without a domain suffix, this means the host name should not contain a period character
+- Host name without a domain suffix, this means the host name shouldn't contain a period character
 
 See the
 [Add Hosts](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/add.md)
@@ -91,14 +91,14 @@ Create a Connection Profile and set the following information on the User Creden
     (x86)\STEALTHbits\StealthAUDIT\PrivateAssemblies\spaa_cert_myorg.pfx,PasswordGoesHere,0
 
     :::note
-    `PasswordGoesHere` should be replaced with the password used when generating the
+    Replace `PasswordGoesHere` with the password used when generating the
     self-signed X.509 certificate if the Microsoft Entra ID Application was Registered and
-    Provisioned manually or the $appPassword parameter used in the SP_RegisterAzureAppAuth Instant
-    Job if that method was used.
+    Provisioned manually, or with the $appPassword parameter used in the SP_RegisterAzureAppAuth
+    Instant Job if that method was used.
     :::
 
 
-Once the Connection Profile is created, it is time to create the custom host list. See the
+After you create the Connection Profile, create the custom host list. See the
 [Connection](/docs/accessanalyzer/11.6/admin/settings/connection/overview.md)
 topic for additional information.
 
@@ -106,11 +106,11 @@ topic for additional information.
 
 The custom host list should include:
 
-- Web or cloud hosts should be specified using the full web DNS part of the site URL, for example an
-  Office 365 site with the URL http://TestSite.sharepoint.com should be added as a host with name
+- Specify web or cloud hosts using the full web DNS part of the site URL. For example, add an
+  Office 365 site with the URL http://TestSite.sharepoint.com as a host named
   TestSite.sharepoint.com
-- Do not use the admin site, for example TestSite-admin.sharepoint.com
-- Do not use IP Addresses
+- Don't use the admin site, for example TestSite-admin.sharepoint.com
+- Don't use IP Addresses
 - Host name must be in DNS format
 
 See the

@@ -8,7 +8,7 @@ sidebar_position: 70
 
 The AzureADInventory Data Collector catalogs user and group object information from Microsoft Entra
 ID, formerly Azure Active Directory. This data collector is a core component of Enterprise Auditor
-and is preconfigured in the .Entra ID Inventory Solution.
+and Netwrix preconfigures it in the .Entra ID Inventory Solution.
 
 Both this data collector and the solution are available with all Enterprise Auditor license options.
 See the
@@ -50,7 +50,7 @@ topic for additional information.
 
 ## AzureADInventory Query Configuration
 
-The AzureADInventory Data Collector is configured through the Entra ID Inventory DC Wizard, which
+Configure the AzureADInventory Data Collector through the Entra ID Inventory DC Wizard, which
 contains the following wizard pages:
 
 - Welcome
@@ -62,5 +62,5 @@ contains the following wizard pages:
 
 ![Entra ID Inventory Data Collector Wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/azureadinventory/welcome.webp)
 
-Hide the Welcome page the next time this data collected is accessed by selecting the **Do not
+To hide the Welcome page the next time you access this data collector, select the **Don't
 display this page the next time** checkbox.

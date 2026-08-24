@@ -24,7 +24,7 @@ information.
 
 **Permissions**
 
-- No special permissions are needed aside from access to a NIS server
+- This data collector needs no special permissions aside from access to a NIS server
 
 ## NIS Query Configuration
 
@@ -41,5 +41,5 @@ following wizard pages:
 
 ![NIS Data Collector Wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/nis/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+Select the **Don't display this page the next time** checkbox to hide the Welcome page when the
+wizard is open and configuration settings are saved.

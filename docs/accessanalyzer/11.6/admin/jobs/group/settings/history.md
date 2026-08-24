@@ -17,12 +17,12 @@ By default, all job groups are set to inherit **Use Default Setting** option fro
 for additional information.
 
 :::warning
-It is important to understand that some pre-configured jobs require history retention
-while others do not support it. See job group and job descriptions for additional information.
+Some pre-configured jobs require history retention
+while others don't support it. See job group and job descriptions for additional information.
 :::
 
 
-If the Default Setting is not preferred, select the custom type of retention settings desired below:
+If you don't want the default setting, select one of the following custom retention settings types:
 
 - Data Retention Period
 

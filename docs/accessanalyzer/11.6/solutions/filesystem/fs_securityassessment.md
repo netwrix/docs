@@ -26,7 +26,7 @@ information from targeted file servers. It is dependent upon the following jobs:
 
     - [7.Sensitive Data > FS_DLPResults Job](/docs/accessanalyzer/11.6/solutions/filesystem/fs_dlpresults.md)
 
-If only select sub-job groups have been run, there are blank sections in the overview report.
+If you run only select sub-job groups, the overview report has blank sections.
 
 ![FS_SecurityAssessment Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/filesystem/securityassessmentjobstree.webp)
 
@@ -39,7 +39,7 @@ View the analysis tasks by navigating to the **FileSystem** > **FS_SecurityAsses
 **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

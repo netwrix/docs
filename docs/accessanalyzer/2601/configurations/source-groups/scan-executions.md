@@ -6,7 +6,7 @@ sidebar_position: 3
 
 # Scan Executions
 
-A scan execution is a single run of a scan at a specific point in time. Each time Access Analyzer runs a scan — whether triggered by a schedule or manually — it creates a new scan execution record. Execution history is retained per source so you can review past run outcomes.
+A scan execution is a single run of a scan at a specific point in time. Each time Access Analyzer runs a scan — whether triggered by a schedule or manually — it creates a new scan execution record. Access Analyzer retains execution history per source so you can review past run outcomes.
 
 Scan executions are distinct from scan configurations. The [scan configuration](scans.md) defines what to collect and when. The scan execution records what happened during a specific run.
 
@@ -24,11 +24,11 @@ Scan executions are distinct from scan configurations. The [scan configuration](
 | **Completed** | The execution finished successfully. |
 | **Stopped** | The execution was manually stopped before completing. Partial results may have been collected. |
 | **Cancelled** | The execution was cancelled before it started or early in the run. No results were collected. |
-| **Failed** | The execution encountered an error and did not complete. Check the execution log for details. |
+| **Failed** | The execution encountered an error and didn't complete. Check the execution log for details. |
 
 ## Source group scan status
 
-The source groups list displays an aggregate scan status for each group. This is computed from the most recent scan execution across all sources in the group, using the following priority order:
+The source groups list displays an aggregate scan status for each group. Access Analyzer computes this from the most recent scan execution across all sources in the group, using the following priority order:
 
 1. **Paused** — One or more sources has a paused execution, and none are running.
 2. **Running** — One or more sources has an execution in a pending, running, pausing, resuming, stopping, or post-processing state.
@@ -41,7 +41,7 @@ This means a group shows **Running** even if only one source is actively scannin
 
 ## Blocked operations during active executions
 
-Several operations are blocked while a source has an execution in an active state (pending, running, pausing, paused, resuming, stopping, or post-processing):
+Access Analyzer blocks several operations while a source has an execution in an active state (pending, running, pausing, paused, resuming, stopping, or post-processing):
 
 - **Deleting a source group** — Stop all active scans before deleting the group.
 - **Removing a source from a group** — Stop the source's active scan before removing it.

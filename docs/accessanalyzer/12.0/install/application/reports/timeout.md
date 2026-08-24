@@ -6,19 +6,17 @@ sidebar_position: 60
 
 # Timeout Parameter for the Web Console
 
-The Web Console is configured with a default timeout parameter of 15 minutes. This can be configured
+The Web Console has a default timeout parameter of 15 minutes. You can configure this
 within the **WebServer.exe.config** file in the Web folder of the Access Analyzer installation
 directory:
 
 **…\STEALTHbits\StealthAUDIT\Web**
 
-Follow the steps to modify the timeout parameter for the Web Console.
-
 **Step 1 –** Open the **WebServer.exe.config** file with a text editor, for example Notepad.
 
 ![WebServer.exe.config file in Notepad](/images/accessanalyzer/12.0/install/application/reports/webserverexeconfigtimeout.webp)
 
-**Step 2 –** Change the value for the `SessionTimeout` parameter to the desired number of minutes:
+**Step 2 –** Change the value for the `SessionTimeout` parameter to the number of minutes you want:
 
 ```
 <add key="SessionTimeout" value="15" />

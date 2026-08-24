@@ -28,7 +28,7 @@ The following queries are included in the PF_FolderOwnership job:
 
     - By default set to search all public folders. It can be scoped.
     - See the
-      [Scope the ExchangePublicFolder Data Collector for the PF_FolderOwnership Job](#scope-the-exchangepublicfolder-data-collector-for-the-pf_folderownership-job)
+      [Scope the ExchangePublicFolder Data Collector for the PF_FolderOwnership Job](#scope-the-exchangepublicfolder-data-collector-for-the-pffolderownership-job)
       topic for additional information
 
 - Assigned Ownership – Collects assigned owners
@@ -36,13 +36,13 @@ The following queries are included in the PF_FolderOwnership job:
     - By default set to search all public folders. It can be scoped.
     - Probable Owner Calculation can be modified
     - See the
-      [Scope the ExchangePublicFolder Data Collector for the PF_FolderOwnership Job](#scope-the-exchangepublicfolder-data-collector-for-the-pf_folderownership-job)
+      [Scope the ExchangePublicFolder Data Collector for the PF_FolderOwnership Job](#scope-the-exchangepublicfolder-data-collector-for-the-pffolderownership-job)
       topic for additional information
 
 ### Scope the ExchangePublicFolder Data Collector for the PF_FolderOwnership Job
 
-The ExchangePublicFolder Data Collector can be scoped if desired. Follow the steps to modify the
-query configuration.
+The ExchangePublicFolder Data Collector can be scoped if desired. To modify the
+query configuration:
 
 :::note
 These instructions include information on modifying the calculation used to determine
@@ -60,7 +60,7 @@ Properties window opens.
 Data Collector Wizard opens.
 
 :::warning
-Do not modify other wizard pages. The wizard pages are pre-configured for this job.
+Don't modify other wizard pages. The wizard pages are pre-configured for this job.
 :::
 
 
@@ -73,8 +73,8 @@ using the following settings:
 
     - Default Public Folders – Select this option to access folders directly with client
       applications such as Microsoft Outlook. In its default configuration, Exchange System Manager
-      displays these folders when a public folder tree is expanded.
-    - System Public Folders – Select this option to access folders that cannot be directly accessed.
+      displays these folders when you expand a public folder tree.
+    - System Public Folders – Select this option to access folders that can't be directly accessed.
       Client applications, such as Microsoft Outlook, use these folders to store information such as
       free and busy data, offline address lists, and organizational forms. Other folders hold
       configuration information that is used by custom applications or by Exchange itself. The
@@ -122,7 +122,7 @@ View the analysis task by navigating to the **Exchange** > **5. Public Folders**
 **Collection** > **PF_FolderOwnership** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

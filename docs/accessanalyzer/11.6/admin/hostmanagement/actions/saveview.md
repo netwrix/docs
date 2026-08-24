@@ -8,11 +8,11 @@ sidebar_position: 110
 
 Use the **Save Current View** option to create a dynamic host list. This option is available from
 either the Host Management node or an individual host list node. The option is inactive until you
-apply a filter to the data grid. Follow the steps to create a dynamic host list.
+apply a filter to the data grid. To create a dynamic host list:
 
 **Step 1 –** Select the Host Management or individual host list node to create the host list from.
 
-**Step 2 –** Filter the data grid for the desired criteria. See the
+**Step 2 –** Filter the data grid for the criteria you want. See the
 [Host Inventory Data Grid](/docs/accessanalyzer/11.6/admin/hostmanagement/datagrid.md)
 topic for additional information.
 
@@ -27,12 +27,12 @@ and click **OK**.
 
 The new host list displays under the Host Management node. When the Enterprise Auditor Console
 closes the host lists under the Host Management node, the hosts reorganize in alphanumeric order.
-Like the default host lists, custom dynamic host lists are auto-populated and updated according to
-host inventory.
+Like the default host lists, Enterprise Auditor auto-populates and updates custom dynamic host lists
+according to host inventory.
 
 :::info
-Do not modify the criteria once a dynamic based list has been created. It is
-better to delete and recreate the list in order to modify a dynamic-based list.
+Don't modify the criteria once you've created a dynamic-based list. To modify a dynamic-based list,
+delete and recreate it instead.
 :::
 
 

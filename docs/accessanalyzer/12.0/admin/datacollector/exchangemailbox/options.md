@@ -16,7 +16,7 @@ the following categories:
 
 ![Exchange Mailbox Data Collector Wizard Options page](/images/accessanalyzer/12.0/admin/datacollector/exchangemailbox/options.webp)
 
-The following options can be configured:
+Configure the following options:
 
 :::note
 Options available vary based upon the category selected.

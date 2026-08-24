@@ -6,9 +6,9 @@ sidebar_position: 20
 
 # 0.Collection Job Group
 
-The MongoDB Solution Collection group is designed to collect high level summary information from
-targeted MongoDB Servers.  This information is used by other jobs in the MongoDB Solution Set for
-further analysis and producing respective reports.
+The MongoDB Solution Collection group collects high level summary information from
+targeted MongoDB Servers. Other jobs in the MongoDB Solution Set use this information for
+further analysis and to produce respective reports.
 
 ![0](/images/accessanalyzer/12.0/solutions/databases/mongodb/collection/0.collecitonjobgroup.webp)
 

@@ -7,7 +7,7 @@ sidebar_position: 70
 # Export Data
 
 Use the **Export Data** option to export all information available in the current grid view for the
-selected host list to a HTML, XML , or CSV file. Follow the steps to export data.
+selected host list to a HTML, XML , or CSV file. To export data:
 
 **Step 1 –** Select the Host Management or individual host list node to export data from, and
 configure the data grid to contain all the columns you want to export. See the

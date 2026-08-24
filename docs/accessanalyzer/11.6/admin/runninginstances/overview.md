@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # Running Instances Node
 
-The Running Instances node displays progress for all running jobs. This includes jobs that are run
-by a scheduled task, interactively within the open Enterprise Auditor instance, or interactively in
+The Running Instances node displays progress for all running jobs. This includes jobs that run
+via a scheduled task, interactively within the open Enterprise Auditor instance, or interactively in
 any other running instance of Enterprise Auditor. The Running Instances node displays the instance
 name, its status and position in the queue, run times for all instances, and detailed views of each
 instance.
@@ -43,13 +43,13 @@ It also has hyperlinks for:
 
 Clicking on any of the hyperlinks displays more information about the running job. The
 **ProcessID**, **View Details, View Log**, and **Stop** links only work while the job is running.
-Once the job is complete, these links are disabled. The host and Connection Profile links continue
+After the job is complete, these links are disabled. The host and Connection Profile links continue
 to work. The **View Schedule** link only displays and is valid for jobs that are running via a
-scheduled task and is not enabled for interactive job executions.
+scheduled task and isn't enabled for interactive job executions.
 
 ![Number of jobs running on bottom bar](/images/accessanalyzer/11.6/admin/runninginstances/overviewbottombar.webp)
 
-The number of jobs currently being run can be found in the lower-left-hand corner of the Enterprise
+You can find the number of jobs being run in the lower-left-hand corner of the Enterprise
 Auditor Console.
 
 ## View Host
@@ -98,7 +98,7 @@ topic for additional information.
 
 ## View Log
 
-The log for this running job can be opened in a text editor, such as Notepad.
+You can open the log for this running job in a text editor, such as Notepad.
 
 ![View Log link](/images/accessanalyzer/11.6/admin/runninginstances/viewlog.webp)
 
@@ -129,7 +129,7 @@ for additional information.
 
 ## Stop
 
-The job execution can be stopped if needed.
+You can stop the job execution if needed.
 
 ![Stop button](/images/accessanalyzer/11.6/admin/runninginstances/stop.webp)
 

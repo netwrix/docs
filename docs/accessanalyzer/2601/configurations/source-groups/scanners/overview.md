@@ -53,9 +53,9 @@ Labels let you:
 - Route scans to geographically local scanners (`region=us-east`, `region=eu-west`)
 - Dedicate scanners to high-sensitivity source groups (`tier=restricted`)
 
-At least one label is required on every custom scanner. Multiple scanners can share the same label — when a source group targets a label that multiple scanners carry, any of those scanners can run the job.
+Every custom scanner requires at least one label. Multiple scanners can share the same label — when a source group targets a label that multiple scanners carry, any of those scanners can run the job.
 
-The system scanner does not use labels. Selecting **System scanner** in a source group always uses the built-in scanner on the Access Analyzer server.
+The system scanner doesn't use labels. Selecting **System scanner** in a source group always uses the built-in scanner on the Access Analyzer server.
 
 ## Related pages
 

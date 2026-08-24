@@ -6,18 +6,18 @@ sidebar_position: 40
 
 # Mailbox Action Module
 
-The Mailbox action module allows you to perform bulk operations on Microsoft Exchange mailboxes, for
+Use the Mailbox action module to perform bulk operations on Microsoft Exchange mailboxes, for
 example deleting mailbox content and modifying permissions and delegates.
 
 :::warning
 This action module can add, change, or remove permissions and delegates from an
-environment. Always verify the data and target mailboxes prior to executing any action.
+environment. Always verify the data and target mailboxes before executing any action.
 :::
 
 
 ## Mailbox Action Source Table Configuration
 
-All data tables used in Access Analyzer action modules require the presence of certain data columns.
+All data tables used in Access Analyzer action modules require certain data columns.
 In addition, individual action modules including Mailbox may have their own column requirements. The
 Mailbox action module requires a column containing mailbox names.
 

@@ -7,10 +7,10 @@ sidebar_position: 10
 # AD_PasswordExpirationNotification Job
 
 The AD_PasswordExpirationNotification Job determines when Active Directory user passwords are about
-to expire and can be configured to send notifications to users prior to password expiration. It is
+to expire and can be configured to send notifications to users before password expiration. It is
 available through the Instant Job Library under the Active Directory library. See the
 [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) section for instructions to add this instant job into the Jobs
-tree. Since this job does not require a host to target, select Local host on the Hosts page of the
+tree. Since this job doesn't require a host to target, select Local host on the Hosts page of the
 Instant Job Wizard.
 
 ![AD_PasswordExpirationNotification job in the Jobs tree](/images/accessanalyzer/12.0/admin/jobs/instantjobs/jobstree_3.webp)
@@ -44,7 +44,7 @@ The default analysis tasks are:
     - Contains a configurable parameter for the number of days until a password expires to be
       identified
     - See the
-      [Customizable Analysis Tasks for the AD_PasswordExpirationNotification Job](#customizable-analysis-tasks-for-the-ad_passwordexpirationnotification-job)
+      [Customizable Analysis Tasks for the AD_PasswordExpirationNotification Job](#customizable-analysis-tasks-for-the-adpasswordexpirationnotification-job)
       topic for additional information.
 -   **2. Domain Summary** – Creates an interim processing table in the database for use by downstream
        analysis and report generation
@@ -56,7 +56,7 @@ The default analysis tasks are:
        the job’s Results node
 -   **5. Help Desk Notification** – Sends notification of users with passwords set to expire in X days
     - See the
-      [Notification Analysis Task in the AD_PasswordExpirationNotification Job](#notification-analysis-task-in-the-ad_passwordexpirationnotification-job)
+      [Notification Analysis Task in the AD_PasswordExpirationNotification Job](#notification-analysis-task-in-the-adpasswordexpirationnotification-job)
       topic for additional information.
 
 ## Action for the AD_PasswordExpirationNotification Job
@@ -77,7 +77,7 @@ The default actions are:
        password expiration
     - Requires the Notification Actions license feature
     - See the
-      [Action Task in the AD_PasswordExpirationNotification Job](#action-task-in-the-ad_passwordexpirationnotification-job)
+      [Action Task in the AD_PasswordExpirationNotification Job](#action-task-in-the-adpasswordexpirationnotification-job)
       topic for additional information.
 
 In addition to the tables created by the analysis and action tasks, the
@@ -92,11 +92,11 @@ AD_PasswordExpirationNotification Job produces the following pre-configured repo
 
 Customizable parameters enable Access Analyzer users to set the values used to classify user and
 group objects during this job’s analysis. The parameters can be customized and are listed in a
-section at the bottom of the SQL Script Editor. Follow the steps to customize an analysis task’s
-parameters.
+section at the bottom of the SQL Script Editor. To customize an analysis task’s
+parameters:
 
 :::warning
-Do not change the table names or report name to align with a different value supplied
+Don't change the table names or report name to align with a different value supplied
 for this parameter. Modifying the table names will result in analysis and report errors downstream.
 Only the report title and descriptions can be modified within the report configuration.
 :::
@@ -107,21 +107,21 @@ Only the report title and descriptions can be modified within the report configu
 | 1. User Password Information | @pswLen                     | 15            | Number of days left until a password expires, should be set according to an organizations policy. |
 
 The parameters that can be customized are listed in a section at the bottom of the SQL Script
-Editor. Follow the steps to customize an analysis task’s parameters.
+Editor. To customize an analysis task’s parameters:
 
 **Step 1 –** Navigate to the **AD_PasswordExpirationNotification** > **Configure** node and select
 **Analysis** to view the analysis tasks.
 
 **Step 2 –** In the Analysis Selection view, select the **1. User Password Information** Analysis
-Task and click on **Analysis Configuration**. The SQL Script Editor opens.
+Task and click **Analysis Configuration**. The SQL Script Editor opens.
 
 ![1. User Password Information Analysis Task in SQL Script Editor](/images/accessanalyzer/12.0/admin/jobs/instantjobs/customizeanalysistask.webp)
 
 **Step 3 –** In the parameters section at the bottom of the editor, find the Value column.
-Double-click on the current value and change as desired.
+Double-click the current value and change as desired.
 
 :::warning
-Do not change any parameters where the Value states **Created during execution**.
+Don't change any parameters where the Value states **Created during execution**.
 :::
 
 
@@ -131,7 +131,7 @@ The new value will be applied to the next job execution.
 
 ## Notification Analysis Task in the AD_PasswordExpirationNotification Job
 
-The Notification Analysis Task can be used to send a single email to specified recipients containing
+Use the Notification Analysis Task to send a single email to specified recipients containing
 a list of all users whose passwords will expire in the specified number of days, that is the users
 listed in the PasswordExpirationNotification_ExpiresWithin15Days table. The analysis is enabled by
 default. Therefore, when the job is executed the following message is sent to the specified
@@ -141,7 +141,7 @@ recipient, such as the organization’s help desk, with information from the ass
 >
 > Support Team,
 >
-> Heads-up.  The following users are facing password expiration in seven days or less:
+> Heads-up. The following users are facing password expiration in seven days or less:
 >
 >**[ -- Password for [User] ([NTAccount]) expires in [DaysUntilExpiration] days]**
 >
@@ -150,22 +150,22 @@ recipient, such as the organization’s help desk, with information from the ass
 > Netwrix
 
 :::warning
-Do not modify the tags, highlighted in bold text above.
+Don't modify the tags, highlighted in bold text above.
 :::
 
 
 The Subject or message body can be modified, for example to replace `Netwrix` with the
-organization’s name. Follow the steps to configure the 5. Help Desk Notification Analysis Task.
+organization’s name. To configure the 5. Help Desk Notification Analysis Task:
 
 **Step 1 –** Navigate to the **AD_PasswordExpirationNotification** > **Configure** node and select
 **Analysis** to view the Analysis tasks.
 
 **Step 2 –** In the Analysis Selection view, select the **5. Help Desk Notification Analysis Task**
-and click on **Analysis Configuration**. The Notification Data Analysis Module opens.
+and click **Analysis Configuration**. The Notification Data Analysis Module opens.
 
 ![SMTP properties page](/images/accessanalyzer/12.0/admin/jobs/instantjobs/smtpproperties.webp)
 
-**Step 3 –** Use the **Next** button to navigate to the SMTP properties page. Do not make changes to
+**Step 3 –** Use the **Next** button to navigate to the SMTP properties page. Don't make changes to
 the preceding pages. The email configuration takes place on the SMTP page. Provide the recipients’
 email addresses, Message Subject, and add the notification email content.
 
@@ -187,7 +187,7 @@ In the Message section, the **Subject** should be configured. Then set the email
 box as desired.
 
 **Step 4 –** To save these configuration changes, use the **Next** button to navigate to the Summary
-page. Do not make changes to any other pages. Click **Finish**. The Notification Data Analysis
+page. Don't make changes to any other pages. Click **Finish**. The Notification Data Analysis
 Module window closes.
 
 ![Analyis Tasks view](/images/accessanalyzer/12.0/admin/jobs/instantjobs/analysistaskshelpdesknotification.webp)
@@ -203,7 +203,7 @@ is executed.
 
 The 1. User Notification Action Task uses the SendMail Action Module to send users notification of
 password expiration. It targets the SMTP Address Column of the users whose passwords are going to
-expire within the desired number of days, that is the users listed in the
+expire within the number of days you set, that is the users listed in the
 PasswordExpirationNotification_ExpiresWithin15Days_UserNotifications table. The action is enabled by
 default. Therefore, when the job is executed the following message is sent to all users in the
 associated table:
@@ -212,8 +212,8 @@ associated table:
 >
 > Hello **[User]**,
 >
-> The password for the account **[NTAccount]** expires on **[ExpirationDate]**. Please change the
-> password prior to the expiration date.  If account profiles are used on mobile devices, please
+> The password for the account **[NTAccount]** expires on **[ExpirationDate]**. Change the
+> password before the expiration date. If account profiles are used on mobile devices,
 > remember to update the password on each device used.
 >
 > Thank you,
@@ -221,14 +221,14 @@ associated table:
 > Netwrix
 
 :::warning
-Do not change the recipient for the action task. While the tags can be moved, do not
+Don't change the recipient for the action task. While the tags can be moved, don't
 remove or modify the tags, which are highlighted in bold text above.
 :::
 
 
 The subject or message body can be modified, for example to replace `Netwrix` with the
-organization’s name. Follow the steps to modify the Subject or message body within the 1. User
-Notification Action Task.
+organization’s name. To modify the Subject or message body within the 1. User
+Notification Action Task:
 
 :::note
 It is necessary for the
@@ -244,7 +244,7 @@ before this action task can be modified.
 on **Action Properties** to view the actions.
 
 :::warning
-Do not modify the action task properties.
+Don't modify the action task properties.
 :::
 
 

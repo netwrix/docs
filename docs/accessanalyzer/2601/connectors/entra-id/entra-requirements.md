@@ -9,11 +9,11 @@ sidebar_position: 20
 Access Analyzer connects to Microsoft Entra ID through a registered application using OAuth2 client credentials. You must register a dedicated Microsoft Entra ID application for Access Analyzer and grant it the required permissions before adding Entra ID as a data source.
 
 :::note
-A user account with the **Global Administrator**, **Application Administrator**, or **Cloud Application Administrator** role is required to register an application and grant admin consent for permissions.
+You need a user account with the **Global Administrator**, **Application Administrator**, or **Cloud Application Administrator** role to register an application and grant admin consent for permissions.
 :::
 
 :::note
-The registered application must be assigned to the **Global Administrator** role for Entra ID data collection.
+You must assign the registered application to the **Global Administrator** role for Entra ID data collection.
 :::
 
 ## Register an app in Microsoft Entra ID

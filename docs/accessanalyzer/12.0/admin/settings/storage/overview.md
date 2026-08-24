@@ -40,7 +40,7 @@ Each Storage Profile consists of the following parts:
     :::
 
 
-    - Windows authentication – Leverages the account used to run the Access Analyzer Console
+    - Windows authentication – Uses the account used to run the Access Analyzer Console
 
         :::note
         This option affects the credentials used for Schedule Service Accounts. See the
@@ -48,16 +48,16 @@ Each Storage Profile consists of the following parts:
         :::
 
 
-    - SQL Server authentication – Leverages the account provided in the **User name** and
+    - SQL Server authentication – Uses the account provided in the **User name** and
       **Password** textboxes
     - Use existing password – Use the password configured for the Storage Profile account
     - Specify a new password below – Enter a new password for the selected Storage Profile account
 
 - Database name – Name of the Access Analyzer database to use in this storage profile
 
-    - Use existing database – Drop-down menu provides a list of databases on the named SQL Server,
+    - Use existing database – dropdown menu provides a list of databases on the named SQL Server,
       provided the connection information supplied is correct. If the menu is empty, then a
-      connection to the SQL Server was not established.
+      connection to the SQL Server wasn't established.
     - Create new database – Access Analyzer automatically creates a new database using the name
       provided in the textbox. This value should be a unique, descriptive name.
 
@@ -78,9 +78,9 @@ A green checkmark in the Storage Profiles list indicates the default Storage Pro
 
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Storage view. These buttons
-become enabled when modifications are made to the Storage global setting. Whenever changes are made
+become enabled when you modify the Storage global settings. Whenever you make changes
 at the global level, click **Save** and then **OK** to confirm the changes. Otherwise, click
-**Cancel** if no changes were intended.
+**Cancel** if you didn't intend to make changes.
 
 The vault provides enhanced security through enhanced encryption to various credentials stored by
 the Access Analyzer application. See the [Vault](/docs/accessanalyzer/12.0/admin/settings/application/vault.md) topic for additional

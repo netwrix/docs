@@ -15,14 +15,14 @@ Navigate to the **Jobs** > **SharePoint** > **8.M365** > **SP_OneDrives** > **Co
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
 
 ![Analysis Tasks for the SP_ExternalUsers Job](/images/accessanalyzer/11.6/solutions/sharepoint/m365/externalusersanalysis.webp)
 
-The default analysis task is:
+The default analysis tasks are:
 
 - Analyze External User Activity – Creates the
   SA_SPAC_SharePointOnlineMostActiveExternalUsersSummary table accessible under the job's Results

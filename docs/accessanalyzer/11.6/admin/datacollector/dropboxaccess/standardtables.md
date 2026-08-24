@@ -12,7 +12,7 @@ DropboxAccess Data Collector writes data to these tables regardless of the job e
 
 ## Dropbox Access Auditing Tables & Views
 
-These tables and their associated views are outlined below:
+The following table outlines these tables and their associated views:
 
 | Table                       | Details                                                                                                                       |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ Data Collector:
 
 ## Dropbox Sensitive Data Discovery Auditing (SEEK) Tables & Views
 
-These tables and their associated views are outlined below:
+The following table outlines these tables and their associated views:
 
 | Table                | Details                                                                                                                  |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------ |

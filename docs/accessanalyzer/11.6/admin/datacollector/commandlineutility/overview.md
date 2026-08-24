@@ -6,8 +6,8 @@ sidebar_position: 90
 
 # CommandLineUtility Data Collector
 
-The CommandLineUtility Data Collector provides the ability to remotely spawn, execute, and extract
-data provided by a Microsoft native or third-party command line utility. It allows users to easily
+The CommandLineUtility Data Collector lets you remotely spawn, execute, and extract
+data provided by a Microsoft native or third-party command line utility. It lets you
 execute a command line utility and capture its output as Enterprise Auditor data. This data
 collector is a core component of Enterprise Auditor and is available with all Enterprise Auditor
 licenses.
@@ -28,8 +28,8 @@ licenses.
 
 ## CommandLineUtility Query Configuration
 
-The CommandLineUtility Data Collector executes a command line utility and captures the output. It is
-configured through the Command Line Utility Data Collector Wizard, which contains the following
+The CommandLineUtility Data Collector executes a command line utility and captures the output.
+Configure it through the Command Line Utility Data Collector Wizard, which contains the following
 pages:
 
 - Welcome
@@ -43,5 +43,5 @@ pages:
 
 ![Command Line Utility Data Collector Wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/commandlineutility/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+To hide the Welcome page, select the **Don't display this page the next time** checkbox while the
+wizard is open, and save the configuration settings.

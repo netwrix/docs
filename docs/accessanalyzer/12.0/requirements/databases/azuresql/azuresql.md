@@ -13,10 +13,10 @@ used by AzureSQL to return the required audit logs. See the
 Microsoft Knowledge Base article for additional information.
 
 :::info
-It is recommended to create a new user when leveraging a least privilege access
-model to access the AzureSQL database because the user must exist in the master database and all
-target databases. A least privilege access model is one that uses the bare minimum privileges
-required to carry out collections for the AzureSQL data collector.
+Netwrix recommends creating a new user when you use a least privilege access model to
+access the AzureSQL database, because the user must exist in the master database and all target
+databases. A least privilege access model is one that uses the bare minimum privileges required to
+carry out collections for the AzureSQL data collector.
 :::
 
 
@@ -27,7 +27,7 @@ The Least Privilege Model requires the following role and permissions:
 - Control permission on target databases
 
     :::note
-    Control permission must be granted on any database you want to collect data for.
+    Grant Control permission on any database you want to collect data for.
     :::
 
 

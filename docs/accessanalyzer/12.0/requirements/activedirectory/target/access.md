@@ -21,7 +21,7 @@ article for additional information.
 
 **Domain Controller Requirements**
 
-The following are requirements for the domain controllers to be scanned:
+The following are requirements for the domain controllers you want to scan:
 
 - .NET Framework 4.5+ installed
 - WINRM Service installed
@@ -105,7 +105,7 @@ The following firewall ports are needed:
 ## Least Privilege Model
 
 You can configure a least privilege model based on your auditing needs and the data collection jobs
-you use. The following jobs and their corresponding data collectors can be run with a
+you use. You can run the following jobs and their corresponding data collectors with a
 least privilege permissions model.
 
 **1-AD_Scan Job Permissions**
@@ -234,7 +234,7 @@ the following minimum requirements:
 - Read permission on the Certification Authority, granted through the Certification Authority
   console's Security tab
 
-The Certification Authority server does not require local administrator rights.
+The Certification Authority server doesn't require local administrator rights.
 
 :::info
 If the job fails to collect Certification Authority security, registry, or enrollment agent data

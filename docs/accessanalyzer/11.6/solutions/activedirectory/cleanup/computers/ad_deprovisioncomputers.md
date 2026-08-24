@@ -19,7 +19,7 @@ staging OU. The default is 365 days.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to easily modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
@@ -29,7 +29,7 @@ The AD_DeprovisionComputers page has the following configurable parameters:
 - Days in the Staging OU before Deleting Account
 
 See the
-[Customizable Analysis Parameters for the AD_DeprovisionComputers Job](#customizable-analysis-parameters-for-the-ad_deprovisioncomputers-job)
+[Customizable Analysis Parameters for the AD_DeprovisionComputers Job](#customizable-analysis-parameters-for-the-addeprovisioncomputers-job)
 topic for additional information.
 
 ## Analysis Tasks for the AD_DeprovisionComputers Job
@@ -47,12 +47,12 @@ The default analysis tasks are:
   under the job’s Results node
 
     - This analysis task contains a configurable parameter: `@days_before_deleting`. See the
-      [Customizable Analysis Parameters for the AD_DeprovisionComputers Job](#customizable-analysis-parameters-for-the-ad_deprovisioncomputers-job)
+      [Customizable Analysis Parameters for the AD_DeprovisionComputers Job](#customizable-analysis-parameters-for-the-addeprovisioncomputers-job)
       topic for additional information.
 
 ### Customizable Analysis Parameters for the AD_DeprovisionComputers Job
 
-Customizable parameters enable you to set the values used to classify user and group objects during
+With the customizable parameters, you can set the values used to classify user and group objects during
 this job’s analysis.
 
 | Analysis Task               | Customizable Parameter Name | Default Value | Value Indicates                                |
@@ -69,7 +69,7 @@ Navigate to the **Active Directory** > **Cleanup** > **3.Computers** > **AD_Depr
 **Configure** node and select **Actions** to view the actions.
 
 :::warning
-Do not enable the actions unless it is required. Disable the actions after execution to
+Don't enable the actions unless it is required. Disable the actions after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 :::
 
@@ -85,7 +85,7 @@ The action tasks must be executed together and in order.
 
 - Move Computers – Move computers to staging OU for deletion
 
-    - The target staging OU must be set in the Move Computers Action Task prior to executing the
+    - The target staging OU must be set in the Move Computers Action Task before executing the
       action tasks. See the
       [Configure the Target OU](/docs/accessanalyzer/11.6/solutions/activedirectory/cleanup/configuretargetou.md)
       topic for additional information.

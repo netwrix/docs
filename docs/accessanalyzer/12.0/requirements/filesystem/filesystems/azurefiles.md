@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Azure Files Target Requirements
 
-Azure Files is a fully managed, cloud-based file sharing service from Microsoft that allows users to
+Azure Files is a fully managed, cloud-based file sharing service from Microsoft. It lets users
 access file shares from anywhere as a virtual network drive. Access Analyzer uses the File System
 solution to execute Access Auditing (FSAA) and Sensitive Data Discovery Auditing scans on Azure
 Files.
@@ -20,8 +20,8 @@ required both in Access Analyzer and the Azure environments:
 
 ## Create Host List
 
-A host list containing the desired target Azure hosts must be created and assigned to the collection
-jobs. You can create the host list with either of the following two methods:
+You must create a host list containing the Azure hosts you want to target and assign it to the
+collection jobs. You can create the host list with either of the following two methods:
 
 - Use the FS_AzureTenantScan instant job to create the host list automatically. See the
   [FS_AzureTenantScan Job](/docs/accessanalyzer/12.0/solutions/filesystem/collection/fs_azuretenantscan.md) topic for
@@ -55,7 +55,7 @@ applet, and credentials for each storage account. These should be configured as 
     - Client ID – The name of the storage account
 
         - For example, if the target is `files.file.core.windows.net` then the Client ID should be
-          `files`. It is not case sensitive.
+          `files`. It isn't case sensitive.
 
     - Key – Connection string value for access keys on the storage account
 
@@ -72,21 +72,21 @@ Azure Files scans require the following configuration of the job and query perfo
 ### Jobs Targeting Azure Files
 
 For FSAA and SEEK scans targeting Azure Files storage accounts, you must clear the **Skip Hosts that
-do not respond to PING** option in the job properties.
+don't respond to PING** option in the job properties.
 
 ![Skip Hosts option on Performance tab of the Job Properties window](/images/accessanalyzer/12.0/requirements/target/config/skiphostsoption.webp)
 
-Right-click on the required scan job in the Jobs tree, and select **Properties** to open the Job
-Properties window. Navigate to the Performance tab, and ensure the **Skip Hosts that do not respond
-to PING** option is not selected. See the
+Right-click the required scan job in the Jobs tree, and select **Properties** to open the Job
+Properties window. Navigate to the Performance tab, and ensure the **Skip Hosts that don't respond
+to PING** option isn't selected. See the
 [Job Properties](/docs/accessanalyzer/12.0/admin/jobs/job/properties/overview.md) and
 [Performance Tab](/docs/accessanalyzer/12.0/admin/jobs/job/properties/performance.md) topics for additional
 information.
 
 ### Query Configuration Considerations
 
-Last Access Time (LAT) preservation is not supported for Azure Files scans. This option must not be
-selected in the query for the FSAA or SEEK scan job.
+Last Access Time (LAT) preservation isn't supported for Azure Files scans. Don't select this option
+in the query for the FSAA or SEEK scan job.
 
 ![Last Access Time (LAT) preservation option in FSAA DC wizard](/images/accessanalyzer/12.0/requirements/target/config/latpreservationoption.webp)
 

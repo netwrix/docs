@@ -8,7 +8,7 @@ sidebar_position: 20
 
 This topic describes the recommended configuration of the servers needed to install the application
 in a production environment. Depending on the size of the organization, it is recommended to review
-your environment and requirements with a Netwrix engineer prior to deployment to ensure all
+your environment and requirements with a Netwrix engineer before deployment to ensure all
 exceptions are covered.
 
 ## Architecture Overview
@@ -46,9 +46,9 @@ The following servers and applications are required for installation of the appl
 **File System Solution-Specific Components**
 
 - Enterprise Auditor File System Proxy Server – In certain environments, a proxy server may be
-  utilized to scan hosts in remote or firewalled sites to increase scan capacity in large
+  used to scan hosts in remote or firewalled sites to increase scan capacity in large
   environments. This feature can be implemented through either an applet or a service. The applet
-  would be deployed as part of the data collection process. The service should be installed prior to
+  would be deployed as part of the data collection process. The service should be installed before
   data collection. See the
   [Proxy Mode as a Service](/docs/accessanalyzer/11.6/requirements/filesystem/scanoptions/scanoptions.md#proxy-mode-as-a-service)
   topic for server requirements.
@@ -60,7 +60,7 @@ The following servers and applications are required for installation of the appl
 
 - Enterprise Auditor SharePoint Agent Server – For agent-based scans, this application can be
   installed on the SharePoint application server that hosts the “Central Administration” component
-  of the targeted farm(s) to auditing permissions, content, and sensitive data for SharePoint
+  of the targeted farms to auditing permissions, content, and sensitive data for SharePoint
   On-Premise. See the
   [SharePoint Scan Options](/docs/accessanalyzer/11.6/requirements/sharepoint/scanoptions/scanoptions.md)
   topic for server requirements.
@@ -76,7 +76,7 @@ The following servers and applications are required for installation of the appl
   for installation requirements and information on collecting activity data.
 - Netwrix Threat Prevention – Enterprise Auditor can integrate with Threat Prevention for Active
   Directory and Windows File System event data. This integration works in conjunction with Netwrix
-  Activity Monitor. See the the
+  Activity Monitor. See the
   [Netwrix Threat Prevention Documentation](https://helpcenter.netwrix.com/category/threatprevention)
   for installation requirements and information on collecting activity data.
 
@@ -192,7 +192,7 @@ The following additional considerations are recommended for the SQL Server:
 
 - The standard Autogrowth setting can cause Enterprise Auditor job delays. Database growth is
   computationally intensive. While SQL Server is growing the database, no other activity can occur.
-  If this option is employed, please speak with a Netwrix engineer to determine an appropriate
+ If this option is employed, speak with a Netwrix engineer to determine an appropriate
   setting for best performance.
 - Microsoft SQL Server supports TLS 1.2, which requires the Enterprise Auditor Console server to
   have either SQL Server Native Client 11 or Microsoft OleDB 18 installed.
@@ -207,8 +207,8 @@ The following permissions are required on the databases:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, we fully support the use of virtual machines. This
-section contains special considerations when leveraging virtualization.
+While physical machines are always preferred, virtual machines are fully supported. This
+section contains special considerations when using virtualization.
 
 - VMWare® ESX® – If using ESX, the following specifications are recommended:
 

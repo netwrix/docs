@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # File Server Scanning Overview
 
-Access Analyzer scans file servers over SMB to map share permissions, folder-level ACLs, and file ownership across your environment. It can also scan file contents to locate sensitive data and, if activity monitoring is configured, track file access events over time. Reports surface open access, broken inheritance, direct user permissions, and sensitive data exposure — giving security and compliance teams the visibility they need to reduce unnecessary access and meet data protection requirements.
+Access Analyzer scans file servers over SMB to map share permissions, folder-level ACLs, and file ownership across your environment. It can also scan file contents to locate sensitive data and, if you configure activity monitoring, track file access events over time. Reports surface open access, broken inheritance, direct user permissions, and sensitive data exposure — giving security and compliance teams the visibility they need to reduce unnecessary access and meet data protection requirements.
 
 ## Supported platforms
 
@@ -21,7 +21,7 @@ Access Analyzer scans any SMB-compatible file server. For platform-specific requ
 
 ## Prerequisites
 
-Before setting up a file server source group, confirm that your environment meets the requirements below. The source group wizard connects to your file servers over SMB, so the Access Analyzer server must be able to reach them on the network and a service account must be available with read access to the shares you want to scan.
+Before setting up a file server source group, confirm that your environment meets the following requirements. The source group wizard connects to your file servers over SMB, so the Access Analyzer server must be able to reach them on the network and a service account must be available with read access to the shares you want to scan.
 
 ### Service account
 

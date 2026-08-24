@@ -7,7 +7,7 @@ sidebar_position: 40
 # Sensitive Data Discovery Add-On Installation
 
 The Sensitive Data Discovery Add-On enables Enterprise Auditor to scan files for criteria matches
-which indicate the existence of sensitive data. Sensitive Data Discovery scans can be run against
+which indicate the existence of sensitive data. You can run Sensitive Data Discovery scans against
 Windows file system servers, Network Attached Storage (NAS) devices, SharePoint on-premises,
 SharePoint Online, OneDrive for Business, DropBox for Business, SQL Server databases, and Exchange
 mailboxes.
@@ -19,7 +19,7 @@ The version of the SharePoint Agent must also match the major version of Enterpr
 
 ## Supported Platforms
 
-The Sensitive Data Discovery Add-On can be installed on the following servers:
+You can install the Sensitive Data Discovery Add-On on the following servers:
 
 - Windows Server 2016 through Windows Server 2022
     - On the Enterprise Auditor Console Server

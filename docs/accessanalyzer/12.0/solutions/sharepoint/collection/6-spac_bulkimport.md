@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # 6-SPAC_BulkImport Job
 
-This job is responsible for retrieving the SPAC Tier 2 database information and import it to the
+This job is responsible for retrieving the SPAC Tier 2 database information and importing it to the
 Access Analyzer SQL database.
 
 ## Queries for the 6-SPAC_BulkImport Job
@@ -22,11 +22,11 @@ The query for the 6-SPAC_BulkImport Job is:
 ### Configure the Query for the 6-SPAC_BulkImport Job
 
 The 6-SPAC_BulkImport Job has been preconfigured to run with the default settings with the category
-of Bulk Import SharePoint Activity Scan Results, which is not visible within the SharePoint Access
-Auditor Data Collector Wizard when opened from within this job. Follow the steps to set any desired
-customizations.
+of Bulk Import SharePoint Activity Scan Results, which isn't visible within the SharePoint Access
+Auditor Data Collector Wizard when opened from within this job. To set any desired
+customizations:
 
-**Step 1 –** Navigate to the **Jobs** > **SharePoint** > **0.Collection** > **2-SPAC_BulkImport** >
+**Step 1 –** Navigate to the **Jobs** > **SharePoint** > **0.Collection** > **6-SPAC_BulkImport** >
 **Configure** node and select **Queries**.
 
 **Step 2 –** In the Query Selection view, click **Query Properties**. The Query Properties window
@@ -38,16 +38,16 @@ displays.
 
 **Step 4 –** On the
 [SPAA: Bulk Import Settings](/docs/accessanalyzer/12.0/admin/datacollector/spaa/bulkimportsettings.md) page, the
-**Set Host Identifier** is not configured by default. Click **Next**.
+**Set Host Identifier** isn't configured by default. Click **Next**.
 
 :::note
-Unless SQL Server Replication is used, it should not be necessary to adjust the **Host
+Unless SQL Server Replication is used, it shouldn't be necessary to adjust the **Host
 Identifier** seed.
 :::
 
 
 :::warning
-Do not configure the options on the Results page.
+Don't configure the options on the Results page.
 :::
 
 
@@ -58,7 +58,7 @@ Do not configure the options on the Results page.
 
 If changes were made, the 6-SPAC_BulkImport Job has now been customized.
 
-## Analysis Tasks for 2-SPAC_BulkImport Job
+## Analysis Tasks for 6-SPAC_BulkImport Job
 
 Navigate to the **Jobs** > **SharePoint** > **0.Collection** > **6-SPAC_BulkImport** > **Configure**
 node and select **Analysis** to view the analysis tasks.

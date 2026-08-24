@@ -26,13 +26,13 @@ The options on the Criteria page are:
   sensitive data criteria to scan for
 - Select All - Click **Select All** to enable all sensitive data criteria for scanning
 - Clear All - Click **Clear All** to remove all selections from the table
-- Select the checkboxes next to the sensitive data criteria options to enable it to be scanned for
+- Select the checkboxes next to the sensitive data criteria options to include them in the scan
   during job execution
 
 The table contains the following types of criteria:
 
 :::note
-Until the Sensitive Data Discovery Add-On is installed, only the headers for the System
+Until you install the Sensitive Data Discovery Add-On, only the headers for the System
 Criteria and User Criteria nodes are visible in the table.
 :::
 

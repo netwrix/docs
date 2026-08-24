@@ -10,8 +10,7 @@ The PowerShell action module provides methods of running PowerShell scripts on t
 on remote hosts. Define PowerShell scripting actions using the PowerShell Action Module Wizard.
 
 :::warning
-Ensure that only the changes required are applied and only to those target systems
-desired.
+Apply only the required changes, and only to the target systems you want to change.
 :::
 
 

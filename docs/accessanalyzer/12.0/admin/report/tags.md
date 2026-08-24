@@ -8,7 +8,7 @@ sidebar_position: 60
 
 Tags can be added to reports to describe the content of the report and use cases for the report. For
 example, tags can be included in a report to show the compliance frameworks to which the report
-maps. To view tags or click on tag links, reports must be viewed in the Web Console. Tags are not
+maps. To view tags or click tag links, reports must be viewed in the Web Console. Tags aren't
 supported in reports in the Jobs tree.
 
 ![Web Console Home Page](/images/accessanalyzer/12.0/admin/report/webconsolehome.webp)
@@ -20,7 +20,7 @@ the Tags tab in the Navigation section on the right-hand side of the Published R
 |:-----------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|
 | *Privileged Accounts Tag on Published Reports homepage*                                               | *Privileged Accounts Tag page*                                                                                 |
 
-Click on a tag to view all reports that contain the selected tag.
+Click a tag to view all reports that contain the selected tag.
 
 ![Job Group view in the Web Console](/images/accessanalyzer/12.0/admin/report/jobgroupview.webp)
 
@@ -31,13 +31,13 @@ name.
 ![Report header](/images/accessanalyzer/12.0/admin/report/reportheader.webp)
 
 When viewing a report in either the Web Console or the Access Analyzer console, tags are displayed
-below the report title. Click on a tag to view all reports that contain that tag. If the tag is
+below the report title. Click a tag to view all reports that contain that tag. If the tag is
 selected from the Reports view in the Access Analyzer Console, the Published Reports Web Console
 opens and direct users to the tag page.
 
 ## Default Tags in Reports
 
-The following sections list out of the box reports that contain each tag. The tags are:
+The following sections list the default reports that contain each tag. The tags are:
 
 ### Open Access
 

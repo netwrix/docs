@@ -6,19 +6,20 @@ sidebar_position: 10
 
 # Role Definitions
 
-The following is a list of all roles leveraged within Enterprise Auditor once Role Based Access is
+The following is a list of all roles used within Enterprise Auditor once Role Based Access is
 enabled, including their intended functionality. A user may have more than one role assigned to
 them.
 
 :::note
-When a job is moved or copied to a separate job group, it inherits the assigned roles at
-the parent and global level from the new job group. Any previous role inheritance is overwritten.
+When you move or copy a job to a separate job group, it inherits the assigned roles at
+the parent and global level from the new job group. Enterprise Auditor overwrites any previous
+role inheritance.
 :::
 
 
 - OS Administrator – Used only for installation purposes
 
-    - This is not not a configured role, but rather the access required during installation
+    - This isn't not a configured role, but rather the access required during installation
 
 - Administrator – At least one must be set before any other roles are assigned
 
@@ -27,8 +28,8 @@ the parent and global level from the new job group. Any previous role inheritanc
     - Rights to preform an upgrade on Enterprise Auditor
 
 :::note
-In order to use Role Base Access with the Exchange Solution, all Exchange users must be
-assigned the Administrator role. This is because the solution requires local Administrator rights on
+To use Role Based Access with the Exchange Solution, assign the Administrator role to all Exchange
+users. This is necessary because the solution requires local Administrator rights on
 the Enterprise Auditor Console server.
 :::
 
@@ -58,7 +59,7 @@ the Enterprise Auditor Console server.
 - Global Options Administrator
 
     - Able to modify global settings, except for the **Setting** > **Access** node
-    - The Exchange node is the exception due to its requirements. Therefore, this node cannot be
+    - The Exchange node is the exception due to its requirements. Therefore, this node can't be
       modified by the Global Options Administrator.
     - Rights to view report Tags within the Web Console but not report content or permissions
 
@@ -120,8 +121,8 @@ the Enterprise Auditor Console server.
           **Configure** > **Reports**> **Configure** > **Publish Security** page) – Able to view
           only this report
 
-By default, many roles are granted rights to view all reports and report content. The inheritance of
-the Report Viewer role can be broken at the job group, job, or report configuration levels. See the
+By default, many roles have rights to view all reports and report content. You can break the Report
+Viewer role's inheritance at the job group, job, or report configuration levels. See the
 [Report Viewer Inheritance](#report-viewer-inheritance) topic for additional information.
 
 ## Enterprise Auditor Console Roles & Rights
@@ -194,15 +195,15 @@ This table identifies the rights granted to users who have access only to the We
 
 ## SQL Server Database Roles & Rights
 
-This table describes the roles that will be created within the SQL Server database and what rights
-they will have to the Enterprise Auditor database. It also describes which Enterprise Auditor roles
-they are mapped to.
+This table describes the roles that you'll create within the SQL Server database and what rights
+they'll have to the Enterprise Auditor database. It also describes which Enterprise Auditor roles
+map to them.
 
-| Database Role(s)                              | Enterprise Auditor Role                                      | Rights                                                                                                                                                                      | Role Description                                                                                                                                                   |
+| Database Roles                              | Enterprise Auditor Role                                      | Rights                                                                                                                                                                      | Role Description                                                                                                                                                   |
 | --------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | SMP Administrator db_datareader db_datawriter | Administrator Job Initiator Job Initiator (No Actions)       | On the dbo schema: ALTER, EXECUTE, INSERT, UPDATE, REFERENCES On the Enterprise Auditor database: CREATE TABLE, CREATE VIEW, CREATE PROCEDURE, CREATE FUNCTION, CREATE TYPE | This role is used by full Administrators and Job Initiators who must run the 2-FSAA Bulk Import Job which requires manipulation of the Enterprise Auditor database |
 | SMP Builder                                   | Job Builder Host Management Administrator                    | On the dbo schema: ELECT, INSERT, DELETE On the Enterprise Auditor database: CREATE TABLE                                                                                   | This role is used by the Job Builder who must be able to create/delete tables, view data, and insert and delete hosts from the Enterprise Auditor Console          |
-| SMP Viewer                                    | Job Viewer Access Administrator Job Approver All other roles | On the dbo schema: SELECT                                                                                                                                                   | This role is used by all roles who do not require anything more than just reading data and information from the database                                           |
+| SMP Viewer                                    | Job Viewer Access Administrator Job Approver All other roles | On the dbo schema: SELECT                                                                                                                                                   | This role is used by all roles who don't require anything more than just reading data and information from the database                                           |
 
 ## Report Viewer Inheritance
 
@@ -218,9 +219,9 @@ reports and their content:
 - Job Viewer
 - Web Administrator
 
-Additional users can be assigned the Report Viewer role at the global, job group, job, or report
-configuration levels. These rights are inherited down through child objects. However, the Report
-Viewer role inheritance can be broken at any level. Break inheritance to remove the right to view
+You can assign additional users the Report Viewer role at the global, job group, job, or report
+configuration levels. Child objects inherit these rights. However, you can break the Report
+Viewer role's inheritance at any level. Break inheritance to remove the right to view
 specific reports at:
 
 - Job Group level – **[Job Group]** >**Settings** > **Reporting** node
@@ -241,5 +242,5 @@ There are two options that control inheritance for Report Viewers when selected:
   Viewer role inherited from a parent object at the lower levels
 - Set all the child objects to inherit these settings – Only available at the Job Group level. Sets
   all Jobs and Reports to inherit group settings for all child objects by automatically selecting
-  the **Include Report Viewers from this object’s parent** option. Any previous configurations are
-  overwritten once **Yes** is selected in the confirmation window.
+  the **Include Report Viewers from this object’s parent** option. The system overwrites any
+  previous configurations once you select **Yes** in the confirmation window.

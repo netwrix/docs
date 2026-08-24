@@ -43,13 +43,13 @@ It also has hyperlinks for:
 
 Clicking on any of the hyperlinks displays more information about the running job. The
 **ProcessID**, **View Details, View Log**, and **Stop** links only work while the job is running.
-Once the job is complete, these links are disabled. The host and Connection Profile links continue
+After the job is complete, these links are disabled. The host and Connection Profile links continue
 to work. The **View Schedule** link only displays and is valid for jobs that are running via a
-scheduled task and is not enabled for interactive job executions.
+scheduled task and isn't enabled for interactive job executions.
 
 ![Number of jobs running on bottom bar](/images/accessanalyzer/12.0/admin/runninginstances/overviewbottombar.webp)
 
-The number of jobs currently being run can be found in the lower-left-hand corner of the Access
+The number of jobs being run can be found in the lower-left-hand corner of the Access
 Analyzer Console.
 
 ## View Host

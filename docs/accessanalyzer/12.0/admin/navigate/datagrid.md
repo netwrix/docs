@@ -23,7 +23,7 @@ Grid view in the Results Pane, indicates how many rows of data are available wit
 (the first value) and how many rows of data are available in the Access Analyzer database for this
 data grid (the second value). The maximum value can be changed by the user and only affects the
 maximum number of rows available for this data grid within the Access Analyzer Console. The total
-value is automatically supplied from the Access Analyzer database and cannot be changed by the user.
+value is automatically supplied from the Access Analyzer database and can't be changed by the user.
 If the total value is less than the maximum value, then all available data for this grid is present
 for sorting, filtering, and searching.
 
@@ -57,7 +57,7 @@ for information on right-click menus within a data grid.
 
 ### Customization Window
 
-The Customization window can be used to customize the data grid to only display specific columns.
+Use the Customization window to customize the data grid to only display specific columns.
 
 ![Customization Window](/images/accessanalyzer/12.0/admin/navigate/datagridfunctionality2.webp)
 
@@ -66,7 +66,7 @@ To open the Customization window, select Field Chooser from the column header ri
 ![Customization Window](/images/accessanalyzer/12.0/admin/navigate/datagridfunctionality3.webp)
 
 Any column that has been removed from the data grid, either by dragging it off the screen or by
-dropping it into this window, will be listed here. A column not currently displayed can be returned
+dropping it into this window, will be listed here. A column not displayed can be returned
 to the data grid by dragging-and-dropping it from this window onto the header row.
 
 ### Footer
@@ -80,8 +80,8 @@ To enable the footer, right-click in a column header and select Footer from the 
 
 ![Footer display](/images/accessanalyzer/12.0/admin/navigate/datagridfunctionality5.webp)
 
-The footer appears as a gray bar at the bottom of the grid (or grid group). Right-click on the
-footer under the desired column. Only the options applicable to the desired column will be valid for
+The footer appears as a gray bar at the bottom of the grid (or grid group). Right-click the
+footer under the column you want. Only the options applicable to that column will be valid for
 selection.
 
 ![Footer options](/images/accessanalyzer/12.0/admin/navigate/datagridfunctionality6.webp)
@@ -133,7 +133,7 @@ either to the stationary section on the left or to the mobile section on the rig
 counts as a single row for the total rows value, but displays in two rows with the second row
 dedicated for the moved column.
 
-Drag the column header(s) back to the table to remove the grouping or use the Clear Sort option in
+Drag the column headers back to the table to remove the grouping or use the Clear Sort option in
 the [Data Grid Right-Click Menu](#data-grid-right-click-menu). Additionally, the sort will clear
 when the user navigates to another place in the console.
 
@@ -145,9 +145,9 @@ dialog located above the Activities Pane.
 
 ![Filter](/images/accessanalyzer/12.0/admin/navigate/datagridfunctionality12.webp)
 
-In the header of every column is a drop-down arrow. This provides users with the ability to filter
-the data grid for a particular item or items within a column. The drop-down menu has the options of
-(All), (Custom…), and an alphabetical listing of all items currently within that column for the data
+In the header of every column is a dropdown arrow. This provides users with the ability to filter
+the data grid for a particular item or items within a column. The dropdown menu has the options of
+(All), (Custom…), and an alphabetical listing of all items within that column for the data
 grid.
 
 - [Custom Filter](#custom-filter) – Click Custom Filter in the header dropdown to open the Custom
@@ -171,20 +171,20 @@ The Custom Filter window options are:
     - Second Comparison Operator – Select from a list of different logical operators that will apply
       to the second custom filter criteria.
 - Two wildcard options:
-    - The underscore (\_) can be used to represent any single character
-    - The asterisk (\*) can be used to represent any series of characters
+    - Use the underscore (\_) to represent any single character
+    - Use the asterisk (\*) to represent any series of characters
 
 #### Creating a Custom Filter
 
-Follow the steps to create a Custom Filter:
+To create a Custom Filter:
 
 **Step 1 –** Click the dropdown arrow in the column header for the column where the Custom Filter is
 going to be applied and select (Custom…) from the list. The Custom Filter window opens.
 
 ![Creating a Custom Filter](/images/accessanalyzer/12.0/admin/navigate/datagridfunctionality14.webp)
 
-**Step 2 –** Set the desired criteria for the custom filter. Select the logical operator from the
-drop-down menu on the left and set the criteria in the textbox on the right.
+**Step 2 –** Set the criteria you want for the custom filter. Select the logical operator from the
+dropdown menu on the left and set the criteria in the textbox on the right.
 
 **Step 3 –** Select either AND/OR and set the second criteria field, following the same method as
 Step 2.
@@ -207,7 +207,7 @@ set. See the [Filtration Dialog](#filtration-dialog) topic for additional inform
 feature.
 
 Filters can be cleared by clicking the red X in the filtration dialog (to clear all filter
-statements), selecting All from the column’s drop-down menu (to clear filters one column at a time),
+statements), selecting All from the column’s dropdown menu (to clear filters one column at a time),
 or by navigating to another place in the console (to clear all filter statements). However, the
 Recent Filters option in the filtration dialog provides a list of the most recent filters applied to
 the data set for users to quickly return to a filtered view.
@@ -253,7 +253,7 @@ The filter options and logical operators are:
 - Comparison Operator – The comparison operator (dark red text) can be changed by clicking on it to
   open a menu with:
     - equals
-    - does not equal
+    - doesn't equal
     - is less than
     - is less than or equal to
     - is greater than
@@ -261,7 +261,7 @@ The filter options and logical operators are:
     - like
     - not like
     - is blank
-    - is not blank
+    - isn't blank
     - between
     - not between
     - in

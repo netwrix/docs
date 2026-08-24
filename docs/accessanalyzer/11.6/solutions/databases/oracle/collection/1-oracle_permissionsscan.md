@@ -20,19 +20,19 @@ The PermissionsScan query uses the SQL Data Collector for the following query:
 ### Configure the 1-Oracle_PermissionsScan Query
 
 The 1-Oracle_PermissionsScan Job is preconfigured to run using the default settings for the
-Permissions Collection category in the SQL Data Collector. Follow the steps to customize
+Permissions Collection category in the SQL Data Collector. To customize
 configurations:
 
 **Step 1 –** Navigate to the **Databases** > **0.Collection** > **Oracle** >
 **1-Oracle_PermissionsScan** > **Configure** node and select Queries.
 
-**Step 2 –** In the Query Selection view, select the PermissionScan query and click on Query
+**Step 2 –** In the Query Selection view, select the PermissionScan query and click Query
 Properties. The Query Properties window opens.
 
 **Step 3 –** Select the Data Source tab and click Configure. The SQL Data Collector wizard opens.
 
 :::warning
-Do not make changes to wizard pages not listed in these steps. They have been
+Don't make changes to wizard pages not listed in these steps. They have been
 pre-configured for this job.
 :::
 
@@ -44,7 +44,7 @@ query target is All Databases. The default query scope is Only select database o
 Retrieve. The Available database objects section will be populated. Databases and instances can be
 added in the following ways:
 
-- Select the desired database objects and click Add
+- Select the database objects you want and click Add
 - Use the Import CSV button to import a list from a CSV file, if desired
 - Optionally, use the Add Custom Filter button to create and apply a custom filter
 
@@ -59,7 +59,7 @@ Navigate to the **Databases** > **0.Collection** > **Oracle** > **1-Oracle_Permi
 **Configure** node and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

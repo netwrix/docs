@@ -14,7 +14,7 @@ applications with the application.
 
 ## Data Collectors Overview
 
-Access Analyzer leverages a wide variety of APIs and protocols to connect to and communicate with
+Access Analyzer uses a wide variety of APIs and protocols to connect to and communicate with
 the systems and applications in an organization’s environment. From MAPI to PowerShell, WMI, LDAP,
 CIFS, and more. It uses the best, most appropriate data collection methodology for every data
 collection task. The majority of Access Analyzer data comes from agentless scans and log collection.

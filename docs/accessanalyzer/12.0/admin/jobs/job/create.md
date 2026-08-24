@@ -6,11 +6,11 @@ sidebar_position: 50
 
 # Create a New Job
 
-Follow the steps to create a new job.
+To create a new job:
 
 ![Create Job from Jobs Tree context menu](/images/accessanalyzer/12.0/admin/jobs/job/createjob.webp)
 
-**Step 1 –** Select the Jobs tree or the desired job group to add the new job to. Right-click and
+**Step 1 –** Select the Jobs tree or the job group you want to add the new job to. Right-click and
 select **Create Job**.
 
 ![New Job added to Jobs Tree](/images/accessanalyzer/12.0/admin/jobs/job/newjob.webp)
@@ -19,7 +19,7 @@ select **Create Job**.
 considerations for naming conventions:
 
 :::warning
-Do not end a job name with a space.
+Don't end a job name with a space.
 :::
 
 

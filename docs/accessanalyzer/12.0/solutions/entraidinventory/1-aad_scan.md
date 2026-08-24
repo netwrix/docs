@@ -27,7 +27,7 @@ The 1-AAD_Scan job uses the AzureADInventory and Entra Data Collectors for the f
 - AAD Inventory – Targets Microsoft Entra tenants to collect inventory data for user group objects
 
     - _(Optional)_ This query can be modified to specify scan options and to collect custom
-      attributes. See the [Configure the AAD_Inventory Query](#configure-the-aad_inventory-query)
+      attributes. See the [Configure the AAD_Inventory Query](#configure-the-aadinventory-query)
       topic for additional information.
 
 - Entra – Collects Entra roles details from the target Microsoft Entra tenants
@@ -35,14 +35,14 @@ The 1-AAD_Scan job uses the AzureADInventory and Entra Data Collectors for the f
 ### Configure the AAD_Inventory Query
 
 The 1-AAD_Scan job is configured to run with the default settings with the category of Scan Entra
-ID. Follow the steps to customize configurations.
+ID. To customize configurations:
 
 **Step 1 –** Navigate to the **.Entra ID Inventory** > **1-AAD_Scan** > **Configure** node and
 select **Queries**.
 
 ![Query Properties button on Query Selection page](/images/accessanalyzer/12.0/solutions/entraidinventory/scanqueryselectionproperties.webp)
 
-**Step 2 –** In the Query Selection view, click on **Query Properties** to open the Query Properties
+**Step 2 –** In the Query Selection view, click **Query Properties** to open the Query Properties
 window.
 
 ![Query Properties window](/images/accessanalyzer/12.0/solutions/entraidinventory/scanqueryproperties.webp)
@@ -94,7 +94,7 @@ Navigate to the **.Entra ID Inventory** > **1-AAD_Scan** > **Configure** node an
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

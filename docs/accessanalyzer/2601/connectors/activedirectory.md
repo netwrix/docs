@@ -45,4 +45,4 @@ Open the following ports on all domain controllers you want to scan:
 
 ## Next steps
 
-Once requirements are met, see [Set Up Active Directory Source Group](../gettingstarted/active-directory/set-up-source-group.md) to configure your first scan.
+After you meet the requirements, see [Set Up Active Directory Source Group](../gettingstarted/active-directory/set-up-source-group.md) to configure your first scan.

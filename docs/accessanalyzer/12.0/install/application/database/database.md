@@ -6,20 +6,20 @@ sidebar_position: 10
 
 # Access Analyzer Database
 
-The Access Analyzer database is dynamic in nature. There are a handful of required system tables
-which are created at installation time or when individual features are used the first time. All
-other data tables in the Access Analyzer database are created and bound to individual jobs which are
-added to the Access Analyzer Console. As jobs are created and modified, corresponding tables are
-created and modified in the database. A job can generate one or more tables.
+The Access Analyzer database is dynamic in nature. Access Analyzer creates a handful of required
+system tables at installation time or when you use individual features for the first time. It
+creates and binds all other data tables in the Access Analyzer database to individual jobs that you
+add to the Access Analyzer Console. As you create and modify jobs, Access Analyzer creates and
+modifies corresponding tables in the database. A job can generate one or more tables.
 
-The structure and schema of each data table is controlled by the Access Analyzer data collector used
-to collect data and write results to the table. There is a one-to-one relationship between a task
+The Access Analyzer data collector used to collect data and write results to the table controls the
+structure and schema of each data table. There is a one-to-one relationship between a task
 created within a Access Analyzer job and the table to which the task writes results. Creating tasks
 or adding and removing properties within a task modifies the schema of the table on subsequent
 execution of the job.
 
 Access Analyzer offers users the ability to modify its preconfigured jobs or create custom jobs and
-tasks as needed. Therefore, precise schema information for data tables cannot be predicted,
+tasks as needed. Therefore, precise schema information for data tables can't be predicted,
 restricted, or locked down.
 
 ## Database Permissions
@@ -34,8 +34,8 @@ to the database.
 :::
 
 
-If database owner rights cannot be obtained, the following SQL script can be executed by a database
-administrator (DBA) against the Access Analyzer database to grant the necessary permissions to the
+If database owner rights can't be obtained, a database
+administrator (DBA) can execute the following SQL script against the Access Analyzer database to grant the necessary permissions to the
 appropriate users (replacing `<SA User ID>` and `<SA Database>` with the appropriate values):
 
 ```sql
@@ -86,16 +86,16 @@ Analyzer.
   user-configured time frame
 - Reporting Needs – Anticipated data needed to generate reports
 
-Recommended SQL Server database sizes are provided for specific solutions in the
-[Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topics. These recommendations are based on
+The [Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topics provide recommended
+SQL Server database sizes for specific solutions. These recommendations are based on
 environmental factors, the number of target objects within an environment (users, hosts, mailboxes,
-etc.), and the applicable factors listed above for the specific solution.
+etc.), and the applicable factors described earlier in this topic for the specific solution.
 
 ### Customer Examples of Database Sizing
 
-The overall database size is ultimately governed by an organization’s auditing objectives. The
-examples below provide a glimpse into how these objectives combine with the applicable factors above
-to impact the Access Analyzer database resource consumption.
+An organization’s auditing objectives ultimately govern the overall database size. The
+following examples provide a glimpse into how these objectives combine with the applicable factors
+described earlier in this topic to impact the Access Analyzer database resource consumption.
 
 - Example from an Active Directory Solution Customer
     - An Active Directory (AD) customer intends to collect AD User/Group/Membership information and
@@ -115,9 +115,9 @@ to impact the Access Analyzer database resource consumption.
       information on file permissions and ages (and possibly, ad hoc, information on file system
       activity) with an overall plan to identify stale data, consolidate active data on a subset of
       the organization’s file system infrastructure, and to move that active data to a cloud-based
-      platform like SharePoint Online. Activity monitoring (FSAC) is to be used ad hoc against open
-      shares to profile resource ownership and also to validate the “staleness” of certain
-      resources. The database sizing for a project of this scope could be up to 750 GB for the
+      platform like SharePoint Online. The customer plans to use Activity monitoring (FSAC) ad hoc
+      against open shares to profile resource ownership and also to validate the “staleness” of
+      certain resources. The database sizing for a project of this scope could be up to 750 GB for the
       database, 240 GB for the transaction log, and 380 GB of TEMPDB space.
 - Example from an Exchange Solution Customer
     - An Exchange customer only intends to collect Mail-Flow Metrics for 100,000 Mailboxes from 10
@@ -131,12 +131,12 @@ to impact the Access Analyzer database resource consumption.
 
 ## Securing the Access Analyzer Database
 
-The typical database configuration is to have **sysadmin Server Role** assigned to the ID used to
+The typical database configuration assigns the **sysadmin Server Role** to the ID used to
 connect to the SQL instance. It will allow full control over the instance where the Access Analyzer
-database resides. This configuration is chosen because Access Analyzer requires some interaction
-with the master database in order to install and configure the initial Access Analyzer database.
-When it is necessary to secure the Access Analyzer database, the following steps should be followed
-to achieve the minimum SQL security levels without breaking core Access Analyzer functionality.
+database resides. Use this configuration because Access Analyzer requires some interaction
+with the master database to install and configure the initial Access Analyzer database.
+The following sections describe how to secure the Access Analyzer database and achieve the minimum
+SQL security levels without breaking core Access Analyzer functionality.
 
 ### Database Creation & First Level of Security
 
@@ -145,7 +145,7 @@ for the server roles and user mappings.
 
 ![SQL Server Management Studio create New Database](/images/accessanalyzer/12.0/install/application/createnewdatabase.webp)
 
-**Step 1 –** Create a new database for use with Access Analyzer. Right-click on the **Databases**
+**Step 1 –** Create a new database for use with Access Analyzer. Right-click the **Databases**
 node and choose **New Database**.
 
 ![SQL Server Management Studio New Database window](/images/accessanalyzer/12.0/install/application/newdatabase.webp)
@@ -168,8 +168,8 @@ Analyzer database. The available options are Windows authentication and SQL Serv
 
 ![SQL Server Management Studio new login with Windows authentication](/images/accessanalyzer/12.0/install/application/loginwindows.webp)
 
-- If **Windows authentication** is desired, then click **Search** and select the desired Windows
-  account, which has been set up for use with Access Analyzer.
+- If **Windows authentication** is desired, then click **Search** and select the Windows
+  account that's set up for use with Access Analyzer.
 
 ![SQL Server Management Studio new login with SQL Server authentication](/images/accessanalyzer/12.0/install/application/loginsql.webp)
 
@@ -177,7 +177,7 @@ Analyzer database. The available options are Windows authentication and SQL Serv
   Analyzer.
 
 :::note
-Set the **Default Database** as Access Analyzer (or the desired Access Analyzer database)
+Set the **Default Database** as Access Analyzer (or the Access Analyzer database you want)
 and choose English as the **Default Language**.
 :::
 
@@ -212,8 +212,8 @@ This step requires the completion of the Access Analyzer installation. See the
 
 ![Connection report window](/images/accessanalyzer/12.0/install/application/connectionreport.webp)
 
-- Click **Apply** and a Connection report window will open. Verify that the connection and test
-  table drop were performed successfully.
+- Click **Apply** and a Connection report window will open. Verify that Access Analyzer performed the
+  connection and test table drop successfully.
 - Click **Close** on the Connection report window and then **Save** the new Storage Profile.
 
 ![Change storage profile dialog](/images/accessanalyzer/12.0/install/application/changestorageprofile.webp)
@@ -225,11 +225,11 @@ appropriate options and then click **OK** to migrate data.
 :::
 
 
-**Step 9 –** Make sure to close and re-open the Access Analyzer Console before continuing to
-configure or use Access Analyzer if a new database Storage Profile was chosen as the default.
+**Step 9 –** ensure to close and re-open the Access Analyzer Console before continuing to
+configure or use Access Analyzer if you chose a new database Storage Profile as the default.
 
-The **blue arrow** signifies the default profile was changed but does not take effect until the
-required restart of the Access Analyzer Console.
+The **blue arrow** signifies that you changed the default profile, but the change doesn't take
+effect until you restart the Access Analyzer Console.
 
 See the [Access Analyzer Initial Configuration](/docs/accessanalyzer/12.0/install/application/firstlaunch.md) topic to perform these steps during
 the initial configuration process after installation.

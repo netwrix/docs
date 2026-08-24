@@ -14,7 +14,7 @@ operation.
 
 Set delegate rights using the following options:
 
-- The following delegate rights can be chosen to access each mailbox folder:
+- Choose one of the following delegate rights to access each mailbox folder:
 
     - None
     - Reviewer
@@ -26,13 +26,13 @@ Set delegate rights using the following options:
     - Publishing Editor
     - Owner
 
-- Select a right from the drop-down menu of any desired mailbox folder, including:
+- Select a right from the dropdown menu of any desired mailbox folder, including:
 
     - Calendar
 
         :::note
-        If Editor or a higher rights level is selected, the **Delegate receives copies of
-        meeting-related messages sent to me** option is enabled for selection.
+        If you select Editor or a higher rights level, the wizard enables the **Delegate
+        receives copies of meeting-related messages sent to me** option.
         :::
 
 

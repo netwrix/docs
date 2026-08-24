@@ -6,13 +6,13 @@ sidebar_position: 30
 
 # Host Discovery Wizard
 
-The Host Discovery Wizard gives complete control over how hosts are discovered on the targeted
-network and which hosts are discovered.
+The Host Discovery Wizard gives you complete control over how the query discovers hosts on the
+targeted network and which hosts it discovers.
 
 ![Console with Create Query Option Highlighted](/images/accessanalyzer/11.6/admin/hostdiscovery/wizard/createqueryhighlighted.webp)
 
 Use the Host Discovery Wizard to create new queries. The wizard opens in the Results pane. Use any
-of the following methods in order to access the Host Discovery Wizard from the Host Discovery node:
+of the following methods to access the Host Discovery Wizard from the Host Discovery node:
 
 - Select **Create Query** in the Activities pane
 - Right-click the **Host Discovery** node and select **Create Query** from the pop-up menu
@@ -28,8 +28,8 @@ for hosts. Hosts are discoverable using one of the following options:
   – Scans a specified range of IP Addresses for active hosts and resolves the names of machines
   using DNS
 - [Query an Active Directory Server (General)](/docs/accessanalyzer/11.6/admin/hostdiscovery/wizard/adgeneral.md)
-  – Scans the default domain controller or a specified server for all computer objects, can be
-  scoped
+  – Scans the default domain controller or a specified server for all computer objects; you can
+  scope it
 - [Query an Active Directory Server (Discover Exchange servers)](/docs/accessanalyzer/11.6/admin/hostdiscovery/wizard/adexchange.md)
   – Scans the default domain controller or a specified server but is scoped to return only computer
   objects sitting in the configuration container for Exchange servers
@@ -42,7 +42,7 @@ for hosts. Hosts are discoverable using one of the following options:
   – Imports a host list from a specified SQL Server database
 
 :::note
-The Advanced Options checkbox in the lower-left corner is a legacy item and should not be
+The Advanced Options checkbox in the lower-left corner is a legacy item and shouldn't be
 selected.
 
 :::

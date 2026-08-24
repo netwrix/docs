@@ -12,7 +12,7 @@ under a column can be selected and copied to the clipboard.
 
 ![Copy Cell Data](/images/accessanalyzer/12.0/admin/report/interactivegrids/copycell.webp)
 
-To copy a cell, select the cell, then right-click on it and select **Copy Cell Data**.
+To copy a cell, select the cell, then right-click it and select **Copy Cell Data**.
 
 :::note
 You may need to allow programmatic clipboard access for your browser the first time you

@@ -13,6 +13,5 @@ Use this page to test a survey and verify proper configuration.
 The configurable options are:
 
 - Start test – Click to test your survey configuration
-- Survey full test – Once the survey configuration test passes inspection, a full survey can be
-  tested against a single user (for example, your own email account) to verify a survey matches
-  design criteria
+- Survey full test – After the survey configuration test passes inspection, test a full survey
+  against a single user (for example, your own email account) to verify it matches design criteria

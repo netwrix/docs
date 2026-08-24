@@ -33,8 +33,8 @@ The log levels are:
   logging
 
     - Records all Info level information
-    - If files are referenced or updated during the process of running the query then the path to
-      the affected file is shown
+    - If the query references or updates files while running, the log shows the path to the
+      affected file
     - Helps [Netwrix Support](https://www.netwrix.com/support.html) to assist in diagnosing issues
       which may be causing host inventories to fail
     - Creates the largest file
@@ -56,16 +56,16 @@ The log levels are:
 - Error – Records all errors which occur during the host discovery process
 
     :::info
-    Set the Log Level to Error. The default setting is Info, but it is
-    recommended that the setting for daily use be set to Error. The other log levels are designed to
+    Set the Log Level to Error. The default setting is Info, but Netwrix recommends setting it
+    to Error for daily use. The other log levels are designed to
     assist with troubleshooting host discovery and host inventory issues.
     :::
 
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Host Discovery view. These
-buttons become enabled when modifications are made to the Host Discovery global settings. Whenever
-changes are made at the global level, click **Save** and then **OK** to confirm the changes.
-Otherwise, click **Cancel** if no changes were intended.
+buttons become enabled when you make modifications to the Host Discovery global settings. Whenever
+you make changes at the global level, click **Save** and then **OK** to confirm the changes.
+Otherwise, click **Cancel** if you don't want to save the changes.
 
 ![Host Discovery Log under Host Discovery node](/images/accessanalyzer/11.6/admin/settings/hostdiscoverylog.webp)
 

@@ -8,7 +8,7 @@ sidebar_position: 30
 
 Select a method to configure the FPolicy for NetApp Data ONTAP 7-Mode devices:
 
-**:::info**
+:::info
 
 [Manually Configure FPolicy (Recommended Option)](#manually-configure-fpolicy-recommended-option) –
 A tailored FPolicy
@@ -30,7 +30,7 @@ A tailored FPolicy
 ## Manually Configure FPolicy (Recommended Option)
 
 This section describes how to manually configure FPolicy. Manual configuration of the FPolicy is
-recommended so that the policy can be scoped. It is necessary to create six FPolicy components and
+recommended so that the policy can be scoped. Create six FPolicy components and
 then enable the FPolicy. See the sections corresponding to each part of this list:
 
 - [Part 1: Create FPolicy](#part-1-create-fpolicy)
@@ -46,7 +46,7 @@ vFiler. This is because FPolicy operates on the affected vFiler. Therefore, when
 commands on a vFiler, the commands must be run from a vFiler context (e.g. via the vFiler run
 command).
 
-Relevant NetApp Documentation: To learn more about configuring file policies, please visit the
+Relevant NetApp Documentation: To learn more about configuring file policies, visit the
 NetApp website and read
 [na_fpolicy – configure file policies](https://library.netapp.com/ecmdocs/ECMP1196890/html/man1/na_fpolicy.1.html)
 article.
@@ -68,8 +68,8 @@ fpolicy create StealthAUDIT screen
 
 ### Part 2: Set FPolicy Required to Off
 
-If the `FPolicy Required` value is set to on, user requests are denied if an FPolicy server is not
-available to implement the policy. If it is set to off, user requests are allowed when it is not
+If the `FPolicy Required` value is set to on, user requests are denied if an FPolicy server isn't
+available to implement the policy. If it is set to off, user requests are allowed when it isn't
 possible to apply the policy to the file because no FPolicy server is available.
 
 IMPORTANT:
@@ -175,6 +175,6 @@ fpolicy enable StealthAUDIT
 ## Automatic Configuration of FPolicy
 
 The Activity Monitor can automatically configure FPolicy on the targeted NetApp Data ONTAP 7-Mode
-device. The FPolicy created monitors all file system activity. This is done when the NetApp device
-is assigned to the agent for monitoring. This option is enabled on the NetApp FPolicy Configuration
-page of the Add New Host window.
+device. The FPolicy it creates monitors all file system activity. The Activity Monitor configures
+FPolicy automatically when you assign the NetApp device to the agent for monitoring. You enable this
+option on the NetApp FPolicy Configuration page of the Add New Host window.

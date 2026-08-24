@@ -33,7 +33,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **AD_ShadowAccess** 
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks, with the exception of the
+Don't modify or deselect the selected analysis tasks, with the exception of the
 **Calculate Shadow Access** analysis tasks. The analysis tasks are preconfigured for this job. The
 **Calculate Shadow Access** analysis task is the only analysis task that has customizable
 parameters.
@@ -55,7 +55,7 @@ The default analysis tasks are:
   Results node
 
     - This Analysis Task has configurable parameters. See the
-      [Configure the Analysis Tasks for the AD_ShadowAccess Job](#configure-the-analysis-tasks-for-the-ad_shadowaccess-job)
+      [Configure the Analysis Tasks for the AD_ShadowAccess Job](#configure-the-analysis-tasks-for-the-adshadowaccess-job)
       topic for additional information.
 
 - Shadow Access Paths Cleanup – Removes calculated rows that are no longer used
@@ -70,7 +70,7 @@ the following pre-configured reports.
 
 
 See the
-[Report Functions for the AD_ShadowAccess Job](#report-functions-for-the-ad_shadowaccess-job) topic
+[Report Functions for the AD_ShadowAccess Job](#report-functions-for-the-adshadowaccess-job) topic
 for additional information.
 
 ### Customizable Analysis Tasks for the AD_ShadowAccess Job
@@ -88,15 +88,15 @@ The default values for customizable parameters are:
 | @disabled                | 0                           | Set to 0 to ignore disabled users                     |                                       |
 
 See the
-[Configure the Analysis Tasks for the AD_ShadowAccess Job](#configure-the-analysis-tasks-for-the-ad_shadowaccess-job)
+[Configure the Analysis Tasks for the AD_ShadowAccess Job](#configure-the-analysis-tasks-for-the-adshadowaccess-job)
 topic for additional information.
 
 ### Configure the Analysis Tasks for the AD_ShadowAccess Job
 
 Customizable parameters enable Enterprise Auditor users to set the values used to classify user and
 group objects during this job’s analysis. The parameters can be customized and are listed in a
-section at the bottom of the SQL Script Editor. Follow the steps to customize an analysis task’s
-parameters.
+section at the bottom of the SQL Script Editor. To customize an analysis task’s
+parameters:
 
 **Step 1 –** Navigate to the **Active Directory Permissions Analyzer** > **AD_ShadowAccess** >
 **Configure** node and select **Analysis** to view analysis tasks.
@@ -109,12 +109,12 @@ then click **Analysis Configuration**. The SQL Script Editor opens.
 ![SQL Script Editor](/images/accessanalyzer/11.6/solutions/activedirectorypermissionsanalyzer/shadowaccesssqlscripteditor.webp)
 
 **Step 3 –** In the parameters section at the bottom of the editor, find the Value column.
-Double-click on the current value and change as desired.
+Double-click the current value and change as desired.
 
 - If the variable type is a table, select the cell and click **Edit Table** to modify the value.
 
 :::warning
-Do not change any parameters where the Value states `Created during execution`.
+Don't change any parameters where the Value states `Created during execution`.
 :::
 
 
@@ -154,9 +154,9 @@ domain and sensitive data.
 ![Report element displaying information on potential attack paths for users found in the targeted domain](/images/accessanalyzer/11.6/solutions/activedirectorypermissionsanalyzer/shadowaccessreport2.webp)
 
 The last report element displays information on potential attack paths for users found in the
-targeted domain. Clicking on the green plus sign next to an attack path will open an Attack Path
-window that displays a step-by-step process of how a user object, if compromised, can be used to
-conduct a shadow attack.
+targeted domain. Click the green plus sign next to an attack path to open an Attack Path window that
+displays a step-by-step process of how an attacker can use a compromised user object to conduct a
+shadow attack.
 
 ![Attack Path window example](/images/accessanalyzer/11.6/solutions/activedirectorypermissionsanalyzer/shadowaccessreport3.webp)
 

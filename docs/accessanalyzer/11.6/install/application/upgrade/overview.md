@@ -11,15 +11,14 @@ that are no longer supported, contact [Netwrix Support](https://www.netwrix.com/
 assistance.
 
 :::note
-If any customizations have been done by a Netwrix Engineer, please ensure custom work is
-not lost during the upgrade process. While using the Upgrade Wizard, customizations are archived
-prior to solution upgrades. These archives are available after the solution upgrades have been
-completed. Contact [Netwrix Support](https://www.netwrix.com/support.html) for additional
+If a Netwrix Engineer has made any customizations, ensure custom work isn't lost during the
+upgrade process. The Upgrade Wizard archives customizations before solution upgrades. These
+archives are available after the solution upgrades finish. Contact [Netwrix Support](https://www.netwrix.com/support.html) for additional
 information.
 :::
 
 
-The purpose of this document is to provide the basic steps needed for upgrading Enterprise Auditor
+This document provides the basic steps needed for upgrading Enterprise Auditor
 and the stock solutions. Contact [Netwrix Support](https://www.netwrix.com/support.html) for
 additional information.
 
@@ -28,11 +27,11 @@ additional information.
 
 **Multiple Enterprise Auditor Consoles Connecting to the Same Database**
 
-In environments where multiple Enterprise Auditor Consoles are using the same SQL Server database,
-every console using the database must also be updated. The act of connecting a Enterprise Auditor
-Console with a newer version to a database updates the database’s schema pursuant to the new
-definition. If a Enterprise Auditor Console with an older version connects to the same database
-after the schema has been updated, corruption to Enterprise Auditor’s system tables can result.
+In environments where multiple Enterprise Auditor Consoles use the same SQL Server database, you
+must also update every console using the database. Connecting an Enterprise Auditor Console with a
+newer version to a database updates the database’s schema according to the new definition. If an
+Enterprise Auditor Console with an older version connects to the same database after you update the
+schema, corruption to Enterprise Auditor’s system tables can result.
 
 **SQL Server Supported Version Change for the Enterprise Auditor Database**
 

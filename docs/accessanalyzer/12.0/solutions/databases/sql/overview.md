@@ -31,8 +31,8 @@ thread requires a minimum of 2 additional GB of RAM per host. For example, a job
 
 :::note
 The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and doesn't require any configuration; it has been
-preconfigured to work with Access Analyzer and should never be customized through Java. It will not
+server. The JDK deployed is prepackaged and doesn't require any configuration. Netwrix preconfigures
+it to work with Access Analyzer, and you shouldn't customize it through Java. It will not
 conflict with other JDKs or Java Runtimes in the same environment.
 :::
 

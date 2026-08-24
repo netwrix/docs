@@ -6,9 +6,9 @@ sidebar_position: 50
 
 # Microsoft Entra ID Single Sign-On
 
-Microsoft Entra ID Single Sign-On (SSO) can be configured for logging in to the Web Console to view
-reports. When configured, users accessing the Web Console are directed to the Microsoft Entra
-ID login page, and can log in using their existing Entra credentials.
+You can configure Microsoft Entra ID Single Sign-On (SSO) for logging in to the Web Console to view
+reports. When configured, the Web Console directs users to the Microsoft Entra
+ID login page, where they can log in using their existing Entra credentials.
 
 The following is required to use Microsoft Entra ID SSO:
 
@@ -20,9 +20,9 @@ ID, and then configure the Web Console to use it.
 
 ## Configure an Application in Microsoft Entra ID
 
-An application must be registered for the Web Console with your Microsoft Entra ID tenant and be
-configured with the necessary single sign-on settings. Follow the steps to create and configure the
-application.
+You must register an application for the Web Console with your Microsoft Entra ID tenant and
+configure it with the necessary single sign-on settings. To create and configure the
+application:
 
 **Step 1 –** Sign into the [Microsoft Entra admin center](https://entra.microsoft.com/).
 
@@ -52,8 +52,8 @@ Configuration section. Add your Identifier and Reply URL, and then click **Save*
     https://app0190.train90.local:8082/federation
     ```
 
-**Step 6 –** Next, click **Edit** on the Attributes & Claims section. The four claims in the table
-below are required. For each of these, click **Add new claim**, enter the information from the
+**Step 6 –** Next, click **Edit** on the Attributes & Claims section. The four claims in the
+following table are required. For each of these, click **Add new claim**, enter the information from the
 table, and then click **Save**.
 
 | Name               | Namespace                                               | Source attribute                  |
@@ -63,23 +63,23 @@ table, and then click **Save**.
 | sid                | http://schemas.xmlsoap.org/ws/2005/05/identity/claims   | user.onpremisessecurityidentifier |
 | upn                | http://schemas.xmlsoap.org/ws/2005/05/identity/claims   | user.onpremisesuserprincipalname  |
 
-Once configured they should show under Additional claims as below:
+Once configured, they should show under Additional claims as follows:
 
 ![Claims configured](/images/accessanalyzer/11.6/install/application/reports/entraidssoclaims.webp)
 
 **Step 7 –** In the **Manage** > **Users and groups** section for your application, add any required
 users or groups to give permission to access the application.
 
-The application is now configured with the necessary settings. The next step is to enable the use of
-Microsoft Entra ID SSO in the web server config file.
+You have now configured the application with the necessary settings. The next step is to enable the
+use of Microsoft Entra ID SSO in the web server config file.
 
 ## Enable in the Web Server Config File
 
-To enable Microsoft Entra ID SSO for the Web Console, the web server config file needs to be updated
-with values from Microsoft Entra ID. Follow the steps to enable the SSO.
+To enable Microsoft Entra ID SSO for the Web Console, you need to update the web server config file
+with values from Microsoft Entra ID. To enable the SSO:
 
 :::tip
-Remember, Enabling Entra ID SSO requires SSL to already have been enabled for the web server. See
+Before enabling Entra ID SSO, make sure you've already enabled SSL for the web server. See
 the
 [Securing the Web Console](/docs/accessanalyzer/11.6/install/application/reports/secure.md)
 topic for additional information.
@@ -122,4 +122,4 @@ For example:
 **Step 4 –** Navigate to Services (`services.msc`). Restart the Netwrix Enterprise Auditor Web
 Server service.
 
-The Web Console has been enabled for Microsoft Entra ID single sign-on.
+You have now enabled the Web Console for Microsoft Entra ID single sign-on.

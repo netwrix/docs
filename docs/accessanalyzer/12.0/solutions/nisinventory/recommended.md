@@ -11,11 +11,11 @@ directly or scheduled.
 
 **Dependencies**
 
-This job group does not have dependencies.
+This job group doesn't have dependencies.
 
 **Targeted Hosts**
 
-The host list assignment should be assigned under the **.NIS Inventory** > **NIS Scan** > **Hosts**
+Assign the host list under the **.NIS Inventory** > **NIS Scan** > **Hosts**
 node. Select the custom host list containing the NIS servers or manually add the host in the
 **Individual hosts** section. See the
 [Unix Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/nis/configurejob.md) topic for
@@ -23,9 +23,9 @@ additional information.
 
 **Connection Profile**
 
-The Connection Profile should be assigned in the **.NIS Inventory** > **NIS Scan** > **Job
-Properties** window on the **Connection** tab. It is set to **Use the Default Profile**, as
-configured at the global settings level. However, if this is not the Connection Profile with the
+Assign the Connection Profile in the **.NIS Inventory** > **NIS Scan** > **Job
+Properties** window, on the **Connection** tab. It is set to **Use the Default Profile**, as
+configured at the global settings level. However, if this isn't the Connection Profile with the
 necessary permissions for targeting the NIS servers, select the **Select one of the following user
 defined profiles** option and select the appropriate Connection Profile. See the
 [Unix Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/nis/configurejob.md) topic for
@@ -55,11 +55,11 @@ analysis task is deselected by default, as it is for troubleshooting purposes on
 
 **History Retention**
 
-History retention is not supported and should be turned off.
+History retention isn't supported and should be turned off.
 
 **Multi-console Support**
 
-Multi-console is not supported.
+Multi-console isn't supported.
 
 **Workflow**
 

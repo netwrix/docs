@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # SPAA: Bulk Import Settings
 
-The Bulk Import Settings page is where the bulk import process settings are configured. It is a
+Use the Bulk Import Settings page to configure the bulk import process settings. It's a
 wizard page for the categories of:
 
 - Bulk Import Access Scan Results
@@ -14,7 +14,7 @@ wizard page for the categories of:
 
 ![Bulk Import Settings page](/images/accessanalyzer/12.0/admin/datacollector/spaa/bulkimportsettings.webp)
 
-Subsequent hosts in job lists will get host IDs incremented by 1. The Host Identifier may require an
-offset to avoid overlapping IDs in collected data. If the **Set Host ID** checkbox is left
-unchecked, then Access Analyzer assigns values starting from 1 to every host. This feature is
-intended only for SQL Server Replication.
+Access Analyzer increments host IDs by 1 for subsequent hosts in job lists. The Host Identifier may require an
+offset to avoid overlapping IDs in collected data. If you leave the **Set Host ID** checkbox
+unchecked, Access Analyzer assigns values starting from 1 to every host. Use this feature only for
+SQL Server Replication.

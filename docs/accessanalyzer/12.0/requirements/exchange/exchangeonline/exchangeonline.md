@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Target Exchange Online Requirements, Permissions, and Ports
 
-The Access Analyzer for Exchange Solution provides the ability to audit Exchange Online. It scans:
+The Access Analyzer for Exchange Solution lets you audit Exchange Online. It scans:
 
 - Exchange Online (Limited)
 

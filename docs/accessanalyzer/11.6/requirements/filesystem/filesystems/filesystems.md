@@ -111,7 +111,7 @@ See the
 [Hitachi Target Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/hitachi/overview.md)
 topic for target environment requirements.
 
-**Nasuni Nasuni Edge Appliances**
+**Nasuni Edge Appliances**
 
 - 8.0+
 
@@ -125,7 +125,7 @@ for target environment requirements.
 - Cluster-Mode 8.2+
 
     :::note
-    The Resiliency feature introduced in ONTAP 9.0 is not supported.
+    The Resiliency feature introduced in ONTAP 9.0 isn't supported.
     :::
 
 

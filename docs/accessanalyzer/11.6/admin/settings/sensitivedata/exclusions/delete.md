@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Deleting False Positive Exclusion Filters
 
-Follow the steps to delete a False Positive Exclusion Filter.
+To delete a False Positive Exclusion Filter:
 
 ![Delete Filter on False Positives tab](/images/accessanalyzer/11.6/admin/settings/sensitivedata/exclusions/deletefilter.webp)
 
@@ -14,4 +14,4 @@ Follow the steps to delete a False Positive Exclusion Filter.
 
 **Step 2 –** Click **Save** on the Sensitive Data view to save changes.
 
-The false positive exclusion filter has been successfully deleted.
+Enterprise Auditor successfully deletes the false positive exclusion filter.

@@ -91,7 +91,7 @@ The query categories are:
 
         - Latest Week Backup – Information about the latest week backup
         - Oldest and Newest Backup – Information about the oldest and the most recent backups
-        - Database File Without Backup – Indicates file names of the files that are not present in
+        - Database File Without Backup – Indicates file names of the files that aren't present in
           the RMAN backup
 
     - Utilities

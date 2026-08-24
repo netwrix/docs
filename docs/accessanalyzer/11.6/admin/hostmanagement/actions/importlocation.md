@@ -12,14 +12,14 @@ database without creating a new host list. See the
 [Host Inventory Data Grid](/docs/accessanalyzer/11.6/admin/hostmanagement/datagrid.md)
 topic for information on the Location column of host inventory.
 
-Follow the steps to import physical location data for hosts.
+To import physical location data for hosts:
 
 **Step 1 –** Ensure the import source file has columns for both the host name as it is identified
 within Enterprise Auditor and the location.
 
 :::note
-When a host name does not match any existing hosts within the Host Master Table, it can be
-added as a new host.
+When a host name doesn't match any existing hosts within the Host Master Table, Enterprise Auditor
+can add it as a new host.
 :::
 
 
@@ -37,11 +37,11 @@ step.
 
 - CSV File
 
-    - File Name – Click the ellipsis (**…**) to open a browser window and select the CSV file. This
-      file needs to be stored on the Enterprise Auditor Console server. Once selected, a preview of
-      the file is shown in the preview box.
+    - File Name – Click the ellipsis (**…**) to open a browser window and select the CSV file. You
+      must store this file on the Enterprise Auditor Console server. Once selected, the preview box
+      shows a preview of the file.
     - Includes header row – Select this checkbox if the file contains a header row. Otherwise, the
-      header row will be included in the import (visible within the preview box).
+      import includes the header row (visible within the preview box).
 
 - Database
 
@@ -52,33 +52,32 @@ step.
       topic for additional information.
 
         :::note
-        The Provider, Advanced, and All tabs of the Data Link Properties window should not
-        be modified.
+        Don't modify the Provider, Advanced, and All tabs of the Data Link Properties window.
         :::
 
 
-    - Table – Use the dropdown to select the table that contains the hosts to be imported. A preview
-      of the selected table is displayed in the preview box.
+    - Table – Use the dropdown to select the table that contains the hosts to be imported. The
+      preview box displays a preview of the selected table.
 
-**Step 5 –** Use either the drop-down menu or click on the column in the preview box to select the
-column containing the host names. The selected column is highlighted in the preview box.
+**Step 5 –** Use either the dropdown menu or click the column in the preview box to select the
+column containing the host names. The preview box highlights the selected column.
 
 ![Import Hosts window Location column selection](/images/accessanalyzer/11.6/admin/hostmanagement/actions/importlocationcsv.webp)
 
-**Step 6 –** Use the **Import column** drop-down menu to select the column containing the location
-information. The selected column is highlighted a lighter color in the preview box.
+**Step 6 –** Use the **Import column** dropdown menu to select the column containing the location
+information. The preview box highlights the selected column in a lighter color.
 
 **Step 7 –** Click **OK** to complete the import.
 
 ![Imported Location column data in the data grid](/images/accessanalyzer/11.6/admin/hostmanagement/actions/importlocationcomplete.webp)
 
 The Location column now contains the imported information. If any of the hosts included in the
-import file are not already in the Host Master Table, Enterprise Auditor prompts for confirmation on
-whether or not to import the host. Selecting **Yes** or **Yes to All** adds the new hosts to the
+import file aren't already in the Host Master Table, Enterprise Auditor prompts for confirmation on
+whether to import the host. Selecting **Yes** or **Yes to All** adds the new hosts to the
 Host Master Table but not to any individual host lists.
 
 :::note
-Any new hosts that match dynamic host list criteria will be added to the appropriate
+Enterprise Auditor adds any new hosts that match dynamic host list criteria to the appropriate
 dynamic host lists.
 
 :::

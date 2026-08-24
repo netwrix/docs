@@ -15,7 +15,7 @@ Navigate to the **Jobs** > **SharePoint** > **8.M365** > **SP_Teams** > **Config
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

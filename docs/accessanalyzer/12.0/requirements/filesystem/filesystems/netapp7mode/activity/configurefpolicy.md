@@ -15,9 +15,9 @@ A tailored FPolicy
 :::
 
 
-- If using vFilers the FPolicy must be created on the vFiler, and the Activity Monitor must target
-  the vFiler. This is because FPolicy operates on the affected vFiler. Therefore, when executing
-  these commands on a vFiler, the commands must be run from a vFiler context (e.g. via the vFiler
+- If using vFilers, create the FPolicy on the vFiler, and target the vFiler with the Activity
+  Monitor. This is because FPolicy operates on the affected vFiler. Therefore, when you run
+  these commands on a vFiler, run them from a vFiler context (e.g., via the vFiler
   run command).
 - Allow the Activity Monitor to create an FPolicy automatically. See the
   [Automatic Configuration of FPolicy](#automatic-configuration-of-fpolicy) topic for additional
@@ -30,7 +30,7 @@ A tailored FPolicy
 ## Manually Configure FPolicy (Recommended Option)
 
 This section describes how to manually configure FPolicy. Manual configuration of the FPolicy is
-recommended so that the policy can be scoped. It is necessary to create six FPolicy components and
+recommended so that the policy can be scoped. Create six FPolicy components and
 then enable the FPolicy. See the sections corresponding to each part of this list:
 
 - [Part 1: Create FPolicy](#part-1-create-fpolicy)
@@ -41,12 +41,12 @@ then enable the FPolicy. See the sections corresponding to each part of this lis
 - [Part 6: Scope FPolicy for Specific Volumes](#part-6-scope-fpolicy-for-specific-volumes)
 - [Part 7: Enable FPolicy](#part-7-enable-fpolicy)
 
-If using vFilers the FPolicy must be created on the vFiler, and the Activity Monitor must target the
-vFiler. This is because FPolicy operates on the affected vFiler. Therefore, when executing these
-commands on a vFiler, the commands must be run from a vFiler context (e.g. via the vFiler run
+If using vFilers, create the FPolicy on the vFiler, and target the vFiler with the Activity Monitor.
+This is because FPolicy operates on the affected vFiler. Therefore, when you run these
+commands on a vFiler, run them from a vFiler context (e.g., via the vFiler run
 command).
 
-Relevant NetApp Documentation: To learn more about configuring file policies, please visit the
+Relevant NetApp Documentation: To learn more about configuring file policies, visit the
 NetApp website and read
 [na_fpolicy – configure file policies](https://library.netapp.com/ecmdocs/ECMP1196890/html/man1/na_fpolicy.1.html)
 article.
@@ -68,9 +68,9 @@ fpolicy create StealthAUDIT screen
 
 ### Part 2: Set FPolicy Required to Off
 
-If the `FPolicy Required` value is set to on, user requests are denied if an FPolicy server is not
-available to implement the policy. If it is set to off, user requests are allowed when it is not
-possible to apply the policy to the file because no FPolicy server is available.
+If you set the `FPolicy Required` value to on, the NetApp device denies user requests when no
+FPolicy server is available to implement the policy. If you set it to off, the NetApp device
+allows user requests even when no FPolicy server is available to apply the policy to the file.
 
 IMPORTANT:
 
@@ -175,6 +175,6 @@ fpolicy enable StealthAUDIT
 ## Automatic Configuration of FPolicy
 
 The Activity Monitor can automatically configure FPolicy on the targeted NetApp Data ONTAP 7-Mode
-device. The FPolicy created monitors all file system activity. This is done when the NetApp device
-is assigned to the agent for monitoring. This option is enabled on the NetApp FPolicy Configuration
+device. The FPolicy created monitors all file system activity. This happens when you assign the
+NetApp device to the agent for monitoring. This option is enabled on the NetApp FPolicy Configuration
 page of the Add New Host window.

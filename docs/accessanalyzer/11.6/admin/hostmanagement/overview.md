@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Host Management
 
-The **Host Management** node is used to manage hosts in a targeted environment. Hosts configured
-under the **Host Management** node can be audited using other features in Enterprise Auditor. This
+Use the **Host Management** node to manage hosts in a targeted environment. You can audit hosts
+configured under the **Host Management** node using other features in Enterprise Auditor. This
 node maintains information for audited computers. To view information on all computers in the
 environment, use the
 [.Active Directory Inventory Solution](/docs/accessanalyzer/11.6/solutions/activedirectoryinventory/overview.md),
@@ -16,7 +16,7 @@ specifically the Active Directory Summary report.
 The Host Management node provides a master list of every host ever introduced to Enterprise Auditor.
 Introduce hosts through
 [Host Discovery Node](/docs/accessanalyzer/11.6/admin/hostdiscovery/overview.md)
-queries or by entering them manually. Hosts are removed from this list only by manually deleting
+queries or by entering them manually. You can only remove hosts from this list by manually deleting
 them. This master listing of hosts, or the Host Master Table, is designed around unique host names,
 not necessarily unique hosts themselves. The data grid provides all host inventory information
 collected on the hosts. See the

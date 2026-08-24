@@ -8,8 +8,8 @@ sidebar_position: 10
 
 The Oracle Solution has been configured to inherit down from the Oracle > Settings node. However, it
 is best practice to assign the host list and the Connection Profile at the data collection level,
-0.Collection Job Group. Once these are assigned to the job group, it can be run directly or
-scheduled.
+0.Collection Job Group. After you assign the host list and Connection Profile to the job group, you
+can run it directly or schedule it.
 
 **Dependencies**
 
@@ -20,19 +20,18 @@ scheduled.
   Enterprise Auditor Console server
 
 Some of the queries in the **Jobs** > **Databases** > **0.Collection** > **Oracle Job Group** can be
-scoped to target specific databases and/or instances. However, it is necessary for the
-SA_SQL_Instances table to be populated before attempting to scope the queries. Therefore, the
-0-Oracle_Servers job must be executed before attempting to scope the rest of the 0.Collection Job
-Group queries.
+scoped to target specific databases and/or instances. However, the SA_SQL_Instances table must be
+populated before you scope the queries. Therefore, you must run the 0-Oracle_Servers job before
+scoping the rest of the 0.Collection Job Group queries.
 
-**Targeted Host(s)**
+**Targeted Hosts**
 
 The 0.Collection Job Group must be set to run against the following dynamic host list:
 
 - Oracle Servers
 
 Default dynamic host lists are populated from hosts in the Host Master Table which meet the host
-inventory criteria for the list. Ensure the appropriate host list(s) have been populated through
+inventory criteria for the list. Ensure the appropriate host lists have been populated through
 host inventory results.
 
 **Connection Profile**
@@ -40,11 +39,11 @@ host inventory results.
 The SQL Data Collector requires a specific set of permissions. The account used can be either an
 Active Directory account or an Oracle account.
 
-For a Windows-integrated Oracle instance it is possible to use one Active Directory credential that
+For a Windows-integrated Oracle instance, you can use one Active Directory credential that
 has permissions on both the Oracle database and the server. This will not generally be the case in
 most customer environments, but it is possible.
 
-If the required permissions are assigned to one Active Directory credential, once the account has
+If the required permissions are assigned to one Active Directory credential, after the account has
 been provisioned, create a custom Connection Profile containing the credentials for the targeted
 environment. See the
 [SQL Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/sql/overview.md)
@@ -66,10 +65,10 @@ node as follows:
     - 4-Oracle_DefaultPasswordUsers Job
     - 5-Oracle_Configuration Job
 
-The Connection Profile is set to Use the Default Profile, as configured at the global settings
-level. However, since this may not be the Connection Profile with the necessary permissions for the
-assigned hosts, click the radio button for the Select one of the following user defined profiles
-option and select the appropriate Connection Profile drop-down menu.
+The Connection Profile defaults to the profile configured at the global settings level. If that
+profile doesn't have the permissions the assigned hosts need, select the radio button for the Select
+one of the following user defined profiles option, then choose the correct profile from the
+Connection Profile dropdown menu.
 
 See the
 [Connection](/docs/accessanalyzer/11.6/admin/settings/connection/overview.md)
@@ -84,7 +83,7 @@ daily.
 
 **Run Order**
 
-The 0-Oracle_Servers Job within the Oracle 0.Collection Job Group must be run first, before running
+Run the 0-Oracle_Servers Job within the Oracle 0.Collection Job Group first, before running
 the rest of the jobs.
 
 :::info
@@ -107,9 +106,9 @@ SQL Data Collector configurations can be modified if desired:
     - 2-Oracle_SensitiveDataScan Job
 - Filter page – Scope the query to target specific databases/instances in the following jobs:
 
-    Remember, it is necessary for the
+    Remember, the
     [0-Oracle_Servers Job](/docs/accessanalyzer/11.6/solutions/databases/oracle/collection/0-oracle_servers.md)
-    to run at least once before attempting to scope any of the following queries:
+    must run at least once before you scope any of the following queries:
 
     - 1-Oracle_PermissionsScan Job
     - 2-Oracle_SensitiveDataScan Job
@@ -126,13 +125,13 @@ SQL Data Collector configurations can be modified if desired:
 **Analysis Configuration**
 
 This solution should be run with the default analysis configurations. These analysis tasks are
-preconfigured and should not be modified or deselected!
+preconfigured and shouldn't be modified or deselected.
 
 Remember, disabling obsolete or un-desired jobs allows the solution to run more efficiently. To
-disable a job or job group, right-click on the item and select Disable Job.
+disable a job or job group, right-click the item and select Disable Job.
 
 :::info
-Do not delete any jobs. Instead, jobs should be disabled.
+Don't delete any jobs. Disable them instead.
 :::
 
 

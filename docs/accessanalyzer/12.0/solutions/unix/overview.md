@@ -28,7 +28,7 @@ for additional information.
 **Location**
 
 The Unix Solution requires a special Access Analyzer license. It can be installed from the Access
-Analyzer Instant Job Wizard. Once it has been installed into the Jobs tree, navigate to the
+Analyzer Instant Job Wizard. After it's installed into the Jobs tree, navigate to the
 solution: **Jobs** > **Unix**.
 
 ## Job Groups

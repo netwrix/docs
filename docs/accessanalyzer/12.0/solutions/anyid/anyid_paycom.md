@@ -7,7 +7,7 @@ sidebar_position: 30
 # AnyID_Paycom Job
 
 The AnyID_Paycom job pulls employee information from Paycom including name, address, date of Birth,
-and SSN. Contact the organization's Paycom administrator in order to generate the CSV export
+and SSN. Contact the organization's Paycom administrator to generate the CSV export
 required for this job. The recommended approach is to copy the CSV file to the Access Analyzer
 Console for best import performance.
 
@@ -29,7 +29,7 @@ Local Host
 
 **Connection Profile**
 
-The AnyID_Paycom job does not require a connection profile.
+The AnyID_Paycom job doesn't require a connection profile.
 
 **History Retention**
 
@@ -42,12 +42,12 @@ Not supported
 
 **Schedule Frequency**
 
-This job should be run based on the desired frequency of Sensitive Data Scans.
+This job should be run based on the frequency you want for Sensitive Data Scans.
 
 **Query Configuration**
 
 This job contains configurable queries. See the
-[Configure the AnyID_Paycom Job](#configure-the-anyid_paycom-job) topic for additional information.
+[Configure the AnyID_Paycom Job](#configure-the-anyidpaycom-job) topic for additional information.
 
 **Analysis Configuration**
 
@@ -72,12 +72,12 @@ The AnyID_Paycom job uses the PowerShell Data Collector for the query.
 The queries are:
 
 - Paycom CSV Import – Imports a CSV file with information from Paycom. This query has configurable
-  parameters. See the [Configure the AnyID_Paycom Job](#configure-the-anyid_paycom-job) topic for
+  parameters. See the [Configure the AnyID_Paycom Job](#configure-the-anyidpaycom-job) topic for
   additional information.
 
 ### Configure the AnyID_Paycom Job
 
-Follow the steps to configure the AnyID_Paycom query.
+To configure the AnyID_Paycom query, complete the following steps.
 
 **Step 1 –** Navigate to the **AnyID Connectors** > **AnyID_Paycom** > **Configure** node and select
 **Queries**.
@@ -95,16 +95,17 @@ the page to expand the Parameters window. See the
 [PowerShell: Edit Query](/docs/accessanalyzer/12.0/admin/datacollector/powershell/editquery.md) topic for additional
 information. Configure the following attributes as needed:
 
-- $SAHOSTNAME – Created during execution. This parameter cannot be modified.
-- $JobCredential – Created during execution. This parameter cannot be modified.
-- $JobCredentials – Created during execution. This parameter cannot be modified.
+- $SAHOSTNAME – Created during execution. This parameter can't be modified.
+- $JobCredential – Created during execution. This parameter can't be modified.
+- $JobCredentials – Created during execution. This parameter can't be modified.
 - $inputfile – File path to the CSV file which contains the identity and attribute information
 - $Attributes – The list of attributes that will be scanned for during sensitive data scanning
 
-    - An attribute in the Attributes list will not be considered a match (in reporting and AIC)
-      unless an attribute in the RequiredAttributes list is also found in the same file
+    - An attribute in the Attributes list will not be considered a match (in reporting and the
+      Access Information Center (AIC)) unless an attribute in the RequiredAttributes list is also
+      found in the same file
 
-- $RequiredAttributes – The list of attributes that need to be found in the document in order to
+- $RequiredAttributes – The list of attributes that need to be found in the document to
   trigger a match
 
     - An attribute in the Attributes list will not be considered a match (in reporting and AIC)
@@ -129,7 +130,7 @@ Navigate to the **Jobs** > **AnyID Connectors** > **AnyID_Paycom** > **Configur
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

@@ -7,22 +7,22 @@ sidebar_position: 90
 # Reporting
 
 The Reporting node is for configuring the global settings for publishing Enterprise Auditor reports.
-The Web Console is where any reports which have been published can be viewed outside of the
+The Web Console is where you can view any published reports outside of the
 Enterprise Auditor Console. The Web Console provides a consolidated logon housing both the published
 reports and the AIC (when applicable).
 
 ![Global Settings Reporting page](/images/accessanalyzer/11.6/admin/settings/reporting.webp)
 
-The publishing of reports can be disabled at the global level by selecting **Do not publish
-reports** from the Publish Option drop-down menu. It can also be disabled at the job group, job, or
+You can disable the publishing of reports at the global level by selecting **Don't publish
+reports** from the Publish Option dropdown menu. You can also disable it at the job group, job, or
 report configuration level. See the
 [Jobs Tree](/docs/accessanalyzer/11.6/admin/jobs/overview.md) topic
 for additional information.
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Reporting view. These
-buttons become enabled when modifications are made to the Reporting global settings. Whenever
-changes are made at the global level, click **Save** and then **OK** to confirm the changes.
-Otherwise, click **Cancel** if no changes were intended.
+buttons become enabled when you make modifications to the Reporting global settings. Whenever
+you make changes at the global level, click **Save** and then **OK** to confirm the changes.
+Otherwise, click **Cancel** if you don't want to save the changes.
 
 ## Website URL
 
@@ -35,10 +35,10 @@ The default address is:
 
 http://[Fully Qualified Domain Name of the Enterprise Auditor Console server]:8082
 
-This link is used to access the Web Console, and it is used for the web link in an emailed report.
-The protocol and port number may need to be modified to align with the organization’s environment,
-but it must match the information in the website’s configuration file. If the Web Console has been
-secured, this address must be manually updated:
+Enterprise Auditor uses this link to access the Web Console and for the web link in an emailed
+report. You may need to modify the protocol and port number to align with the organization’s
+environment, but they must match the information in the website’s configuration file. If you have
+secured the Web Console, manually update this address:
 
 https://[Fully Qualified Domain Name of the StealthAUDIT Console server]:[Port Number]
 
@@ -52,11 +52,11 @@ topic for additional information.
 
 ## Publish Option
 
-The Publish Option allows you to enable or disable the publishing of reports at the global level.
+Use the Publish Option to enable or disable the publishing of reports at the global level.
 
 ![Publish Option on Global Settings Reporting page](/images/accessanalyzer/11.6/admin/settings/publish.webp)
 
-Select the **Publish reports** option to publish all Enterprise Auditor reports or select **Do not
+Select the **Publish reports** option to publish all Enterprise Auditor reports or select **Don't
 publish reports** to disable the publishing. The inheritance of this setting can be broken at the
 job group, job, or report levels.
 
@@ -68,8 +68,8 @@ Configure email reports sent out by Enterprise Auditor using the Email Report op
 
 The **E-mail reports** checkbox enables recipients to receive all published reports, unless
 inheritance is broken at the job group, job, or report level. Separate multiple recipients with a
-semicolon. If commas are used as delimiters for email addresses, they will be converted into
-semicolons when the settings are saved.
+semicolon. If you use commas as delimiters for email addresses, Enterprise Auditor converts them
+into semicolons when you save the settings.
 
 :::info
 Configure email reporting at a specific level to ensure recipients only receive
@@ -78,24 +78,24 @@ reports which apply to them.
 
 
 :::note
-Email reports does not work unless Enterprise Auditor has been configured to send email
+Email reports doesn't work unless you configure Enterprise Auditor to send email
 notifications through the **Notification** node. See the
 [Notification](/docs/accessanalyzer/11.6/admin/settings/notification.md)
 topic for additional information.
 :::
 
 
-The **Do Not Email Report If Blank** checkbox prevents reports from being sent via email if all
-elements are blank when generated. A blank report can occur if there is an error in data collection
+The **Don't Email Report If Blank** checkbox prevents Enterprise Auditor from sending reports via
+email if all elements are blank when generated. A blank report can occur if there is an error in data collection
 or if the report is configured for data which might not always be present (for example, new computer
 objects created since last scan).
 
 :::info
-Enable the **Do Not Email Report If Blank** option.
+Enable the **Don't Email Report If Blank** option.
 :::
 
 
-The report can be sent using the desired **Email Content** option:
+You can send the report using the **Email Content** option you want:
 
 - Web Link – Sends an email notice that the report has been published and provides the recipient
   with a link to it in the Web console
@@ -112,7 +112,7 @@ the email subject line.
 ## Configure JavaScript Settings for the Web Console
 
 Any browser used to access the Web Console must have JavaScript allowed for all features of the Web
-Console to function correctly. If the JavaScript permission is not set as allowed for the entire
+Console to function correctly. If the JavaScript permission isn't set as allowed for the entire
 browser, you must add the Web Console as an allowed site.
 
 Follow the steps to allow JavaScript on the Web Console in Microsoft Edge.
@@ -130,9 +130,10 @@ under All permissions.
 Console and click **Add**.
 
 :::note
-If the global Allowed option is selected, you do not need to specifically add the Web
+If the global Allowed option is selected, you don't need to specifically add the Web
 Console as an allowed site.
 :::
 
 
-The Web Console's URL is added to the Allow list and JavaScript is enabled for the Web Console.
+Microsoft Edge adds the Web Console's URL to the Allow list and enables JavaScript for the Web
+Console.

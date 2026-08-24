@@ -14,16 +14,16 @@ wizard page for the categories of:
 
 ![FSAA Data Collector Wizard Scan Settings page](/images/accessanalyzer/11.6/admin/datacollector/fsaa/scansettings_1.webp)
 
-In the Scan Protocols section, select the desired checkboxes for including certain types of shared
+In the Scan Protocols section, select the checkboxes you want for including certain types of shared
 folders:
 
 - Scan Windows (SMB/CIFS) shares – Includes types of Windows and NAS shares
 - Scan NFS exports (shares) – Includes this type of UNIX and NAS shares
 
-In the middle section, select the desired checkboxes for additional settings:
+In the middle section, select the checkboxes you want for additional settings:
 
 - Enable file system scan streaming – Sends the streamed data directly to the Enterprise Auditor
-  database. A bulk import query is not required when this option is selected
+  database. A bulk import query isn't required when this option is selected
 - Enable scanning of files protected by Azure Information Protection – Adds additional options to
   this wizard to scan for protection labels and encrypted files for sensitive data
 
@@ -37,7 +37,7 @@ In the middle section, select the desired checkboxes for additional settings:
   permissions. Click **Configure Query** to open the Manual Shares Query window. See the
   [Enable the Use SQL Query to Manually Specify Shares](#enable-the-use-sql-query-to-manually-specify-shares)
   topic for additional information.
-- NetApp communication security – This option provides the ability to choose levels of encryption
+- NetApp communication security – This option lets you choose levels of encryption
   and authentication applied during Access Auditing scans of NetApp devices
 
     ![NetApp communication security options](/images/accessanalyzer/11.6/admin/datacollector/fsaa/scansettingsnetapp.webp)
@@ -83,7 +83,7 @@ columns for all shares in the target environment:
 - Host – Name of host where the share resides matching the Host Master table Name field value
 
     :::info
-    Use this column but it is not required.
+    Use this column but it isn't required.
     :::
 
 
@@ -121,7 +121,7 @@ When this option is selected, the data collector runs against the target table t
 in the environment.
 
 :::tip
-Remember, if a share is not in the target table, the data collector assumes that the share does
+Remember, if a share isn't in the target table, the data collector assumes that the share does
 not exist and marks it as deleted.
 :::
 
@@ -130,7 +130,7 @@ not exist and marks it as deleted.
 
 The HTTPS encryption options for the NetApp communication security setting of the global Remote Data
 Collection Configuration page in the File System Access Auditor Data Collector Wizard requires a
-certificate. If the organization uses a self-signed certificate, it is necessary to add this
+certificate. If the organization uses a self-signed certificate, add this
 certificate to enable HTTPS encryption of Enterprise Auditor communications.
 
 The certificate (`cacert.pem`) which is shipped with Enterprise Auditor is in the DC folder of the
@@ -140,14 +140,14 @@ installation directory. The default location is:
 
 If employing remote applet mode or proxy servers, then the certificate (`cacert.pem`) must exist in
 the FSAA folder where the `FSAAAppletServer.exe` process is running (applet/proxy host). Therefore,
-it is necessary to also copy it to the FSAA folder on the target hosts andr proxy servers. This is
+also copy it to the FSAA folder on the target hosts andr proxy servers. This is
 done at runtime when using remote applet mode, but any updates or custom certificates must be copied
 manually. The default location is:
 
 **…\STEALTHbits\StealthAUDIT\FSAA**
 
 :::info
-Do not overwrite this certificate. It is fully trusted by Netwrix. Instead, add
+Don't overwrite this certificate. It is fully trusted by Netwrix. Instead, add
 an underscore (_) character to the start of the file name. Then copy the organization's self-signed
 certificate to this location with the name `cacert.pem`.
 :::

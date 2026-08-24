@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Sensitive Data
 
-The Sensitive Data configuration page defines which types of sensitive content Access Analyzer identifies during scans, whether to run optical character recognition (OCR) on images, and how Microsoft Information Protection (MIP) sensitivity labels are applied to matching files. These settings apply globally and serve as the default for all sensitive data scans.
+The Sensitive Data configuration page defines which types of sensitive content Access Analyzer identifies during scans, whether to run optical character recognition (OCR) on images, and how Access Analyzer applies Microsoft Information Protection (MIP) sensitivity labels to matching files. These settings apply globally and serve as the default for all sensitive data scans.
 
 Navigate to **Configuration** > **Sensitive Data** to view and update the configuration.
 
@@ -17,7 +17,7 @@ The page has two sections:
 
 ## MIP configuration
 
-The MIP configuration section connects Access Analyzer to a Microsoft Entra ID tenant. When a tenant is connected, Access Analyzer retrieves the sensitivity labels defined in your organization's MIP policy and makes them available for mapping in the Sensitive Data Types table.
+The MIP configuration section connects Access Analyzer to a Microsoft Entra ID tenant. After you connect a tenant, Access Analyzer retrieves the sensitivity labels defined in your organization's MIP policy and makes them available for mapping in the Sensitive Data Types table.
 
 ### Select a tenant
 
@@ -98,7 +98,7 @@ You can assign a MIP label to each enabled data type. When Access Analyzer finds
 4. Click **Save Configuration**.
 
 :::note
-Enabling a data type and assigning a label are independent. A data type with no label assigned is still detected during scans — Access Analyzer identifies matching files but doesn't apply a MIP label to them.
+Enabling a data type and assigning a label are independent. Even without an assigned label, Access Analyzer still detects the data type during scans — it identifies matching files but doesn't apply a MIP label to them.
 :::
 
 ## OCR
@@ -117,11 +117,11 @@ The **Label Settings** drawer controls whether Access Analyzer writes MIP sensit
 These settings apply globally and can be overridden per-scan in the scan configuration.
 
 :::note
-Label write-back applies to **File Server and SharePoint Online sensitive data scans only**. Entra ID and Active Directory scans do not support label application.
+Label write-back applies to **File Server and SharePoint Online sensitive data scans only**. Entra ID and Active Directory scans don't support label application.
 :::
 
 :::note
-Label write-back only occurs when **both** conditions are met: a MIP label is mapped to the detected data type in the Sensitive Data Types table, **and** the relevant option below is enabled. All options are off by default — by default, Access Analyzer detects and classifies files but does not write any labels to files.
+Label write-back only occurs when you meet **both** conditions: you map a MIP label to the detected data type in the Sensitive Data Types table, **and** you enable the relevant option in [Options](#options). All options are off by default — by default, Access Analyzer detects and classifies files but doesn't write any labels to files.
 :::
 
 ### Options
@@ -130,10 +130,10 @@ Label write-back only occurs when **both** conditions are met: a MIP label is ma
 When enabled, Access Analyzer removes the MIP label from a file if a subsequent scan finds the file no longer matches any enabled sensitive data type. Off by default.
 
 **Allow overwriting existing labels**
-When enabled, Access Analyzer applies the mapped label to files that already have a MIP label assigned. When disabled, files that already carry any MIP label are skipped — only unlabeled files receive a label. Off by default.
+When enabled, Access Analyzer applies the mapped label to files that already have a MIP label assigned. When disabled, Access Analyzer skips files that already carry any MIP label — only unlabeled files receive a label. Off by default.
 
 - **Allow downgrading labels** *(requires Allow overwriting existing labels to be on)*
-  When enabled, Access Analyzer can replace a higher-priority label with a lower-priority one (for example, replacing "Confidential" with "General"). When disabled, only upgrades or equal-priority replacements are applied. This option is unavailable when **Allow overwriting existing labels** is off. Off by default.
+  When enabled, Access Analyzer can replace a higher-priority label with a lower-priority one (for example, replacing "Confidential" with "General"). When disabled, Access Analyzer applies only upgrades or equal-priority replacements. This option is unavailable when **Allow overwriting existing labels** is off. Off by default.
 
 To configure label handling:
 

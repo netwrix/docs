@@ -24,7 +24,7 @@ purposes. This includes:
 
 - The Application log which contains logging of all activities within Access Analyzer
 - The Upgrade log which logs activities related to the upgrade process
-- The upgrade archive which is a zip file containing all of your Access Analyzer jobs prior to the
+- The upgrade archive which is a zip file containing all of your Access Analyzer jobs before the
   upgrade process
 - Sensitive Data logs that contain details from sensitive data scans performed against various
   repositories
@@ -35,14 +35,14 @@ See the [Logs](#logs) topic for additional information.
 
 ## Logs
 
-Access Analyzer has a few areas where it stores logs. Make sure the log level is set to DEBUG in
-Access Analyzer to gather all necessary information. Once the logs have been created and sent to
-Netwrix Support, then reset the logging level to save disc space.
+Access Analyzer has a few areas where it stores logs. Ensure the log level is set to DEBUG in
+Access Analyzer to gather all necessary information. After the logs have been created and sent to
+Netwrix Support, reset the logging level to save disc space.
 
 To set your logging level to debug go to **Settings** > **Application** – **Set the Application log
 level to Debug** and restart the application.
 
-#### Where Are the Logs Located?
+#### Log File Locations
 
 | Log Name                                            | Log Location                                                                                                                                                               |
 | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

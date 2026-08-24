@@ -41,17 +41,15 @@ Configure the following settings as required:
       [Report Settings Tab](/docs/accessanalyzer/12.0/admin/jobs/job/properties/reportsettings.md) topics for additional
       information.)
     - Publish report – Select this option to publish the report
-    - Do not publish report – Select this option to not publish the report
+    - Don't publish report – Select this option to not publish the report
 - Publish State – Shows the current publish state of the report. If the report is already published,
   you can click the link to open the report in the Web Console.
 
 ## Add Tags to a Report
 
 You can add tags to reports to describe the content and use cases of the report (see the
-[Tags](/docs/accessanalyzer/12.0/admin/report/tags.md) topic for additional information). The Tag Editor allows you to select the tags
-for a report, including creating new ones to select.
-
-Follow the steps to select tags using the Tag Editor.
+[Tags](/docs/accessanalyzer/12.0/admin/report/tags.md) topic for additional information). Use the Tag Editor to select the tags
+for a report, including creating new ones.
 
 **Step 1 –** On the Authoring page of the Report Configuration wizard, click the **Edit** button
 located next to the Tags text box.
@@ -62,7 +60,7 @@ located next to the Tags text box.
 report.
 
 - In addition to selecting existing tags, you can also add new tags to be selected. To create a tag,
-  enter the desired tag name in the text box and click **Add**.
+  enter the tag name in the text box and click **Add**.
 
 **Step 3 –** Click **OK**.
 

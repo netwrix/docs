@@ -18,9 +18,9 @@ The Suspicious Activity job group is comprised of:
 
     - Requires **Access Auditing** component data collection
 
-    [FS_HighestHourlyActivity Job](/docs/accessanalyzer/11.6/solutions/filesystem/activity/suspiciousactivity/fs_highesthourlyactivity.md)
-    – Designed to report on the highest hourly activity event information from targeted file servers
-    broken down by user
+- [FS_HighestHourlyActivity Job](/docs/accessanalyzer/11.6/solutions/filesystem/activity/suspiciousactivity/fs_highesthourlyactivity.md)
+  – Designed to report on the highest hourly activity event information from targeted file servers
+  broken down by user
 
     - Includes a Notification analysis task option
     - Requires **Access Auditing** component data collection

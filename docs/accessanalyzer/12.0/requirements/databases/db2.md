@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Target Db2 Requirements, Permissions, and Ports
 
-The Access Analyzer for Databases Solution provides the ability to audit and monitor Db2 database
+The Access Analyzer for Databases Solution lets you audit and monitor Db2 database
 environments to collect permissions and sensitive data. It scans:
 
 - DB2LUW 11+

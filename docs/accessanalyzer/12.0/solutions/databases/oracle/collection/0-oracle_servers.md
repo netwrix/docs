@@ -14,7 +14,7 @@ running on the targeted servers.
 The Server Discovery query uses the PowerShell Data Collector for the following query:
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 
@@ -22,7 +22,7 @@ Do not modify the query. The query is preconfigured for this job.
 
 - Oracle Servers – Returns a list of Oracle servers from the specified host list
 
-Regarding Oracle instance discovery, there may be errors running the query that are not reported. An
+Regarding Oracle instance discovery, there may be errors running the query that aren't reported. An
 additional log to store the issues has been added for instance discoveries named
 `Oracle_Server_log_[target_hostname]`. This file can be found in
 `%sainstalldir%\Jobs\GROUP_ORACLE_0.Collection\GROUP_1.Discovery\JOB_Oracle_Servers\OUTPUT`. See the
@@ -35,7 +35,7 @@ Navigate to the **Databases** > **0.Collection** > **Oracle** > **0-Oracle_Serve
 node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

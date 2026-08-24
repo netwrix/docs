@@ -27,7 +27,7 @@ Select the checkboxes to apply any desired scan options:
     - Scan archives – Scans for archived mailbox data
     - Scan recoverable items – Scans for recoverable items
 
-- Authentication – Select an Authentication type from the drop down:
+- Authentication – Select an Authentication type from the dropdown:
 
     - Negotiate
     - Basic

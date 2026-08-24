@@ -104,8 +104,8 @@ The following permissions are required:
         cifs users-and-groups local-group add-members ‑group-name "BUILTIN\Backup Operators" ‑member-names [DOMAIN_USER] ‑vserver [SVM_NAME]
         ```
 
-If an ACE does not already exist for a specific user/group on an SVM's c$ share, then it needs to be
-added with the desired rights (No_access, Read, Change, or Full_Control). To check the current ACE
+If an ACE doesn't already exist for a specific user/group on an SVM's c$ share, then it needs to be
+added with the rights you want (No_access, Read, Change, or Full_Control). To check the current ACE
 for a user or group on each SVM's c$ share, the following ONTAP CLI command should be used at the
 cluster management level.
 
@@ -117,7 +117,7 @@ The output will list each SVM's ACL for its c$ share. For example:
 
 ![ONTAP CLI Command Output Example](/images/accessanalyzer/12.0/config/netappcmode/accesscifsmethod2.webp)
 
-If the desired ACE does not exist on an SVM's c$ share, then one can be created with the following
+If the ACE you want doesn't exist on an SVM's c$ share, then one can be created with the following
 command:
 
 ```
@@ -127,7 +127,7 @@ vserver cifs share access-control create -share c$ -user-or-group [USER_OR_GROUP
 If an existing ACE needs to be modified, the following command should be used:
 
 :::warning
-The following command will overwrite an existing ACE. For example, it is possible to
+The following command will overwrite an existing ACE. For example, you can
 downgrade a user with Full_Control to Read, or vice versa.
 :::
 
@@ -142,14 +142,14 @@ instead give the SVM's Backup Operators group read-only access to each share to 
 :::
 
 
-In order to utilize Access Analyzer’s LAT Preservation (Last Access Time) feature during sensitive
+to use Access Analyzer’s LAT Preservation (Last Access Time) feature during sensitive
 data scans and metadata tag collection, applying ONTAP’s SeRestorePrivilege to the service account
 is also required.
 
 As an alternative to membership in BUILTIN\Backup Operators, SeBackupPrivilege can be directly
 applied to a user via the NetApp command line.
 
-The following commands can be used to grant these permissions to the service account to be used for
+Use the following commands to grant these permissions to the service account used for
 scanning by Access Analyzer.
 
 Use the following commands to add SeBackupPrivilege to the Service Account (or a BUILTIN Group):
@@ -196,13 +196,13 @@ cifs share access-control show ‑vserver [SVM_NAME] ‑share c$
 
 ## NFSv3 Credential Configuration
 
-The following is a list of example commands that can be used to configure a NetApp export policy to
+Use the following example commands to configure a NetApp export policy to
 scan a volume via NFSv3 using the Access Analyzer File System Solution.
 
 :::warning
 The export policy for a volume's parent (ex. the SVM's root volume), or the export
 policy for a qtree's parent, must have access rights that are equal or wider in scope to the export
-policy for the target volume/qtree. If Access Analyzer cannot access all segments of a target
+policy for the target volume/qtree. If Access Analyzer can't access all segments of a target
 volume/qtree's junction path, then NFS access will be denied.
 :::
 
@@ -259,7 +259,7 @@ volume modify ‑vserver testserver ‑volume testVolume ‑policy testNFS
 ### Troubleshooting NFSv3 Export Access
 
 If Access Analyzeris not discovering the expected NFS export, it is possible that the export policy
-is not properly configured to allow the Access Analyzer server or proxy server IP Address to mount
+isn't properly configured to allow the Access Analyzer server or proxy server IP Address to mount
 the NFS export. One step in troubleshooting this issue is to confirm a Unix client (or WSL for
 Windows) in the same IP range as the Access Analyzer server or proxy server can mount the NFS
 export.

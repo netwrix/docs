@@ -26,7 +26,7 @@ Configure the Options step using the following options:
 
     - Concatenated – Return the data in a continuous string without gaps
 
-        - Delimiter – Enter the desired delimiter to be used between values
+        - Delimiter – Enter the delimiter to use between values
 
     - First-value only – Only display the first value
 

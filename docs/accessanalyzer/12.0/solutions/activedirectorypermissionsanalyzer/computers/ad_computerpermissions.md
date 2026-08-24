@@ -15,7 +15,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **4.Computers** >
 **AD_ComputerPermissions** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -29,7 +29,7 @@ The default analysis tasks are:
 - Summarize computer object permissions – Creates an interim processing table in the database for
   use by downstream analysis and report generation
 - Computer Ownership – Lists the owners of each computer object and determines if they are a
-  non-standard owner. Users that are not administrators are considered non-standard owners of
+  non-standard owner. Users that aren't administrators are considered non-standard owners of
   computer objects. Creates the SA_AD_ComputerOwnership_Details table accessible under the job’s
   Results node.
 - Computer Ownership Summary – Summarizes owner type by domain

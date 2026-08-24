@@ -15,7 +15,7 @@ Navigate to the **Databases** > SQL > 5.Permissions > SQL_PublicPermissions > C
 select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task(s). The analysis task(s) are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -29,7 +29,7 @@ The default analysis tasks are:
 - Public Permissions Summary – Creates the SA_SQLServer_PublicPermissions_DatabaseSummary table
   accessible under the job’s Results node
 - Public Permissions Summary – Highlights permissions that have been granted to the public role on
-  objects that are not-default SQL or Azure SQL server objects
+  objects that aren't-default SQL or Azure SQL server objects
 - Public Permissions Instance Summary (Non-Default) – Summarizes non-default SQL and Azure SQL
   server public permissions by instance
 

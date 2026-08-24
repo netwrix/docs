@@ -19,15 +19,15 @@ The query for the SG_OpenFolders job is:
 - OpenAccess – Checks for folders with open access
 
     - (Optional) By default, the OpenAccess query used in this job has a search depth of 0 and will
-      return share-level information. If needed, the subfolder depth can be increased in the query
+      return share-level information. If needed, you can increase the subfolder depth in the query
       configuration. See the [Configure the OpenAccess Query](#configure-the-openaccess-query) topic
       for additional information.
 
 ### Configure the OpenAccess Query
 
-The OpenAccess query has been preconfigured to run with the default settings. However, the subfolder
-depth can optionally be increased on the Options page in the System Info Data Collector Wizard.
-Follow the steps to customize the query. See the
+The OpenAccess query has been preconfigured to run with the default settings. However, you can
+optionally increase the subfolder depth on the Options page in the System Info Data Collector Wizard.
+To customize the query, see the
 [SystemInfo Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/systeminfo/overview.md) topic for
 additional information.
 
@@ -45,7 +45,7 @@ Wizard opens.
 **Step 4 –** Navigate to the Options page and select the **Enumerate subfolders within shared
 folder** checkbox and then the **Limit returned subfolders depth to** checkbox.
 
-**Step 5 –** Select the desired subfolders depth level using the arrows. Click **Next**.
+**Step 5 –** Select the subfolders depth level you want using the arrows. Click **Next**.
 
 **Step 6 –** On the Summary page, click **Finish** to save the changes.
 
@@ -57,7 +57,7 @@ Navigate to the **Windows** > **OpenAccess** > **SG_OpenFolders** > **Configure*
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

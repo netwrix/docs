@@ -16,7 +16,7 @@ Navigate to the **FileSystem** > **Cleanup** > **2. Notify** > **FS_NotifyOwners
 node and select **Actions** to view the action tasks.
 
 :::warning
-Do not enable the action unless it is required. Disable the action after execution to
+Don't enable the action unless it is required. Disable the action after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 :::
 
@@ -27,9 +27,9 @@ The following action task is deselected by default.
 
 - Notify Owners – Notifies share owners using SendMail module
 
-Prior to running the FS_NotifyOwners job, it is necessary to select the **Notify Owners** task and
+Before running the FS_NotifyOwners job, select the **Notify Owners** task and
 configure the properties for the SendMail action module. See the
-[Configure the FS_NotifyOwners Action](#configure-the-fs_notifyowners-action) topic for additional
+[Configure the FS_NotifyOwners Action](#configure-the-fsnotifyowners-action) topic for additional
 information.
 
 ### Configure the FS_NotifyOwners Action
@@ -37,12 +37,12 @@ information.
 The recipients and the text of the email can be customized on the Properties page within the Send
 Mail Action Module Wizard. The
 [1. Cleanup Assessment > FS_CleanupAssessment Job](/docs/accessanalyzer/12.0/solutions/filesystem/cleanup/fs_cleanupassessment.md) must be run before
-the Send Mail Action Module Wizard can be opened. Follow these steps to customize the Notify Owners
-action task.
+the Send Mail Action Module Wizard can be opened. To customize the Notify Owners
+action task:
 
 **Step 1 –** Navigate to the job’s **Configure** node and select **Actions**.
 
-**Step 2 –** In the Action Selection view, select the desired action task and click **Action
+**Step 2 –** In the Action Selection view, select the action task you want and click **Action
 Properties** to view the Action Properties page.
 
 **Step 3 –** Click **Configure Action** to open the Send Mail Action Module Wizard.

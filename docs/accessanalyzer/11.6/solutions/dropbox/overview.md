@@ -19,8 +19,8 @@ scanning the targeted Dropbox site. Key information includes:
 - Detailed Dropbox group membership
 - Breakdown of Dropbox content by size, type, and owner
 
-Dropbox can scan the contents of over 400 file types to discover which files contain sensitive data
-using the Sensitive Data Discovery Add-on.
+Using the Sensitive Data Discovery Add-on, Dropbox can scan the contents of over 400 file types to
+discover which files contain sensitive data.
 
 **Supported Platforms**
 
@@ -34,17 +34,17 @@ topic for additional information.
 
 **Sensitive Data Discovery Considerations**
 
-The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
-additional GB of RAM per host. For example, if the job is configured to scan 8 hosts at a time ,
-then an extra 16 GB of RAM are required (8x2=16).
+You must install the Sensitive Data Discovery Add-On on the Enterprise Auditor Console server to
+enable Sensitive Data criteria for scans. If you run Sensitive Data Discovery (SDD) scans, you must
+increase the minimum amount of RAM. Each thread requires a minimum of 2 additional GB of RAM per
+host. For example, if you configure the job to scan 8 hosts at a time, you need an extra 16 GB of
+RAM (8 x 2 = 16).
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
-configuration; it has been preconfigured to work with Enterprise Auditor and should never be
-customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
+(Java) version on the server. The JDK deployed is prepackaged and doesn't require any
+configuration; it has been preconfigured to work with Enterprise Auditor. Don't customize it
+through Java. It will not conflict with other JDKs or Java Runtimes in the same
 environment.
 :::
 
@@ -52,7 +52,7 @@ environment.
 **Location**
 
 The Dropbox Solution requires a special Enterprise Auditor license. It can be installed from the
-Instant Job Wizard. Once it has been installed into the Jobs tree, navigate to the solution:
+Instant Job Wizard. After it has been installed into the Jobs tree, navigate to the solution:
 **Jobs** > **Dropbox**.
 
 The 0.Collection job group collects the data. The other job groups run analyses on the collected

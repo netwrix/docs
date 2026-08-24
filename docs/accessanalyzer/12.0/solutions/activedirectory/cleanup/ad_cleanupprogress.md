@@ -6,10 +6,10 @@ sidebar_position: 50
 
 # AD_CleanupProgress Job
 
-The AD_CleanupProgress Job performs checks against Active Directory security best practices in order
-to proactively identify critical security configurations that leave Active Directory vulnerable to
+The AD_CleanupProgress Job performs checks against Active Directory security best practices to
+proactively identify critical security configurations that leave Active Directory vulnerable to
 attack. The result is a report which provides a listing of findings by severity and category with
-corresponding details that can be used to prioritize and remediate security issues.
+corresponding details you can use to prioritize and remediate security issues.
 
 ![AD_CleanupProgress Job in the Jobs Tree](/images/accessanalyzer/12.0/solutions/activedirectory/cleanup/cleanupprogressjobstree.webp)
 
@@ -17,8 +17,8 @@ corresponding details that can be used to prioritize and remediate security issu
 
 **Step 1 –** Ensure the following prerequisites are met:
 
-- The .Active Directory Inventory Job Group needs to be successfully run prior to running this job
-- The following jobs from the Active Directory Solution must be run prior to running this job:
+- The .Active Directory Inventory Job Group needs to be successfully run before running this job
+- The following jobs from the Active Directory Solution must be run before running this job:
 
     - **Active Directory** > **1.Groups** > **AD_DuplicateGroups**
     - **Active Directory** > **2.Users** > **AD_DirectMembership**
@@ -35,7 +35,7 @@ Navigate to the **Active Directory** > **Cleanup** > **AD_CleanupProgress** > **
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

@@ -30,7 +30,7 @@ then an extra 16 GB of RAM are required (8x2=16).
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
+(Java) version on the server. The JDK deployed is prepackaged and doesn't require any
 configuration; it has been preconfigured to work with Enterprise Auditor and should never be
 customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
 environment.
@@ -40,7 +40,7 @@ environment.
 **Location**
 
 The Db2 Solution requires a special Enterprise Auditor license. It can be installed from the
-Enterprise Auditor Instant Job Wizard. Once it has been installed in the Jobs tree, navigate to the
+Enterprise Auditor Instant Job Wizard. After it has been installed in the Jobs tree, navigate to the
 solution: Jobs > **Databases** > **Db2**.
 
 The 0.Collection Job Group collects the data. The Db2 Solution Set Collection group is designed to

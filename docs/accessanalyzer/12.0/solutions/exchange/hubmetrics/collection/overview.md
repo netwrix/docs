@@ -15,7 +15,7 @@ The jobs in the 0.Collection Job Group are:
 
 - [.AppletStatusCheck Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/collection/appletstatuscheck.md) – Checks the health and status of the applet
   deployed to the target Exchange servers
-- [EX_MetricsCollection Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/collection/ex_metricscollection.md) – Comprised of multiple queries that utilize
+- [EX_MetricsCollection Job](/docs/accessanalyzer/12.0/solutions/exchange/hubmetrics/collection/ex_metricscollection.md) – Comprised of multiple queries that use
   the Exchange Metrics Data Collect to process and collect the message tracking logs on the Exchange
   servers in the environment. These queries collect server, domain, user, and distribution list
   traffic including but not limited to sent, received, journal, NDRs, and transports message. These
@@ -28,6 +28,6 @@ The jobs in the 0.Collection Job Group are:
     This job's query needs to be configured to the internal domains from which to collect
     the sender to recipient traffic. By default, the query is configured to collect the previous 1
     day of Message Tracking Logs and has @netwrix.com configured as the domain. If the domains are
-    not configured in the query, then most likely data collection does not return.
+    not configured in the query, then most likely data collection doesn't return.
 
     :::

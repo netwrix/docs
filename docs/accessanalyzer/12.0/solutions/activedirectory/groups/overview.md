@@ -16,7 +16,7 @@ The following jobs comprise the 1.Groups Job Group:
 - [AD_CircularNesting Job](/docs/accessanalyzer/12.0/solutions/activedirectory/groups/ad_circularnesting.md) – Identifies circularly nested groups within
   Active Directory which can pose administrative and operational challenges with identifying
   effective access to resources
-- [AD_DCLogonGroups Job](/docs/accessanalyzer/12.0/solutions/activedirectory/groups/ad_dclogongroups.md) – Identifies users who are able to log on to Domain
+- [AD_DCLogonGroups Job](/docs/accessanalyzer/12.0/solutions/activedirectory/groups/ad_dclogongroups.md) – Identifies users who can log on to Domain
   Controllers through effective membership to the Enterprise Admins, Domain Admins, Administrators,
   Backup Operators, Account Operators, Print Operators, or Remote Desktop Users groups. This type of
   access should be limited to only those individuals who require this level of administrative
@@ -27,12 +27,11 @@ The following jobs comprise the 1.Groups Job Group:
 - [AD_EmptyGroups Job](/docs/accessanalyzer/12.0/solutions/activedirectory/groups/ad_emptygroups.md) – Identifies empty and single member groups which are
   suitable candidates for consolidation or cleanup
 - [AD_GroupProbableOwners Job](/docs/accessanalyzer/12.0/solutions/activedirectory/groups/ad_groupprobableowners.md) – Determines potential owners for Active
-  Directory Groups which can be used to perform automated membership reviews and enable self-service
+  Directory Groups you can use to perform automated membership reviews and enable self-service
   group management and membership requests
 - [AD_LargestGroups Job](/docs/accessanalyzer/12.0/solutions/activedirectory/groups/ad_largestgroups.md) – Identifies groups with large effective member
-  counts. These types of groups may cause administrative overhead and burden in being able to easily
-  understand who is getting access to resources, or how much access is being granted to resources
-  through these groups.
+  counts. These types of groups can create administrative overhead, making it hard to see who has
+  access to resources or how much access these groups grant.
 
     - The definition of a large group is set by the **.Active Directory Inventory** >
       **3-AD_Exceptions** Job. It can be customized. See the
@@ -42,9 +41,9 @@ The following jobs comprise the 1.Groups Job Group:
 - [AD_MailSecurityGroups Job](/docs/accessanalyzer/12.0/solutions/activedirectory/groups/ad_mailsecuritygroups.md) – Identifies mail-enabled security groups
   within Active Directory
 - [AD_NestedGroups Job](/docs/accessanalyzer/12.0/solutions/activedirectory/groups/ad_nestedgroups.md) – Identifies nested groups within Active Directory and
-  provides details such as the levels of nesting. While Active Directory provides the ability to
-  nest certain types of groups within other groups, Microsoft recommends nesting does not go beyond
-  two levels in order to avoid difficulties in understanding effective membership and access.
+  provides details such as the levels of nesting. While Active Directory lets you
+  nest certain types of groups within other groups, Microsoft recommends nesting doesn't go beyond
+  two levels to avoid difficulties in understanding effective membership and access.
 
     - The definition of a deeply nested group is set by the **.Active Directory Inventory** >
       **3-AD_Exceptions** Job. It can be customized. See the

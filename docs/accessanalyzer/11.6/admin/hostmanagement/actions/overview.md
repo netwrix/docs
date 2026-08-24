@@ -20,9 +20,9 @@ The available actions are:
   the Host Management node)
 - [View/Edit Host](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/viewhost.md)
   – Open the Host Details View, which displays the collected host inventory information for the
-  selected host in an easier-to-read format and allows you to manually edit the host inventory
+  selected host in an easier-to-read format and lets you manually edit the host inventory
   information
-- [Delete Host(s)](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/deletehost.md)
+- [Delete Hosts](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/deletehost.md)
   – Delete host from the selected list (permanently deletes host from the host master table if used
   in the Host Management node)
 - [Import Location](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/importlocation.md)
@@ -58,7 +58,7 @@ Activities available only at the individual host list nodes are:
 - [Edit Query](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/editquery.md)
   – Edit the Host Discovery query settings for the selected query-created host list
 - [Rename List](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/rename.md)
-  – Rename the selected host list (should not be used if the host list has already been assigned to
+  – Rename the selected host list (shouldn't be used if the host list has already been assigned to
   a job for execution)
 - [Delete List](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/deletelist.md)
   – Delete the selected host list
