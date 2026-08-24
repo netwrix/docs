@@ -41,9 +41,13 @@ assert_slug "## Step 1. Configure" "step-1-configure"
 assert_slug '## Setup the Application {#setup}' "setup"
 assert_slug '### Advanced Options {#advanced-opts}' "advanced-opts"
 
-# Extra whitespace and hyphens
-assert_slug "##   Lots   of   Spaces" "lots-of-spaces"
-assert_slug "## Already-Hyphenated--Word" "already-hyphenated-word"
+# Extra whitespace and hyphens — github-slugger does NOT collapse runs of
+# hyphens or trim them; each removed/replaced character leaves its slot.
+assert_slug "##   Lots   of   Spaces" "lots---of---spaces"
+assert_slug "## Already-Hyphenated--Word" "already-hyphenated--word"
+
+# Underscores are preserved (word characters, not punctuation)
+assert_slug "## Box_FileMetrics Job" "box_filemetrics-job"
 
 # Edge cases
 assert_slug "## 123 Numbers First" "123-numbers-first"

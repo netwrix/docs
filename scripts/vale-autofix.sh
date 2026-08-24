@@ -16,13 +16,17 @@ slugify() {
     return
   fi
 
+  # Mirrors github-slugger's behavior (used by Docusaurus, and by
+  # scripts/check-anchors.sh): each removed character leaves its
+  # surrounding whitespace intact, so runs of hyphens are NOT collapsed
+  # and leading/trailing hyphens are NOT trimmed. Underscores are
+  # preserved — github-slugger only strips punctuation/symbols, not word
+  # characters like `_` (e.g. "Box_FileMetrics" stays "box_filemetrics").
   echo "$heading" \
     | sed -E 's/^#+ +//' \
     | tr '[:upper:]' '[:lower:]' \
-    | sed -E "s/[^a-z0-9 -]//g" \
-    | sed -E 's/ +/-/g' \
-    | sed -E 's/-+/-/g' \
-    | sed -E 's/^-+//;s/-+$//'
+    | sed -E "s/[^a-z0-9 _-]//g" \
+    | sed -E 's/ /-/g'
 }
 
 _get_product_version_folder() {
