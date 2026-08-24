@@ -555,7 +555,7 @@ For environments where the payload of an update is a concern, you can save bandw
 
 ### Certificate Bridge and Upgrade Path
 
-To understand the required package set, you first need to know why older 5.x clients can't upgrade directly to 2605.
+To understand the required package set, you first need to know why older 5.x clients can't upgrade directly to 2608.
 
 Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and transitioned all code signing certificates from **CoSoSys signatures** to **Netwrix signatures**. This transition affects how endpoint clients verify server-pushed updates:
 
@@ -563,9 +563,9 @@ Netwrix acquired CoSoSys (the original developer of Endpoint Protector) and tran
 |---|---|---|
 | 5.9.4.1 and older | CoSoSys only | Can't verify Netwrix-signed packages |
 |5.9.4.3 Hotfix 1 | **Both CoSoSys AND Netwrix** | ✅ The required bridge version |
-| 2511 and newer | Netwrix only | The server can't push these to 5.9.4.1 clients directly |
+| 2511 and newer (including 2608) | Netwrix only | The server can't push these to 5.9.4.1 clients directly |
 
-Clients on 5.9.4.1 or older **can't** upgrade directly to 2605. They must first upgrade to **5.9.4.3 Hotfix 1** (which trusts both signature types), then proceed to 2605:
+Clients on 5.9.4.1 or older **can't** upgrade directly to 2608. They must first upgrade to **5.9.4.3 Hotfix 1** (which trusts both signature types), then proceed to 2608:
 
 ![EPP Client Migration — end-to-end process diagram](clientupgradediagram.webp)
 
@@ -579,13 +579,13 @@ The packages you need to upload depend on your current EPP client population and
 
 | Package | Notes |
 |---|---|
-| EPP Client 2605 (Windows) | Latest — primary target for all endpoints |
-| EPP Client 2605 (macOS) | Latest — primary target for all endpoints |
+| EPP Client 2608 (Windows) | Latest — primary target for all endpoints |
+| EPP Client 2608 (macOS) | Latest — primary target for all endpoints |
 | EPP Client 5.9.4.3 Hotfix 1 (Windows) | Bridge client — required only for endpoints still below 5.9.4.3 Hotfix 1 |
 | EPP Client 5.9.4.3 Hotfix 1 (macOS) | Bridge client — required only for endpoints still below 5.9.4.3 Hotfix 1 |
 | Checksum file for each client | Required for integrity verification |
-| EE Client 2605 (Windows) | Latest — required if Enforced Encryption is in use |
-| EE Client 2605 (macOS) | Latest — required if Enforced Encryption is in use |
+| EE Client 2608 (Windows) | Latest — required if Enforced Encryption is in use |
+| EE Client 2608 (macOS) | Latest — required if Enforced Encryption is in use |
 
 ### Upload Procedure
 
