@@ -18,23 +18,24 @@ Deploying the add-on involves the following steps:
 
 In Auditor client, go to the Integrations section and verify Integration API settings:
 
-1. Ensure the **Leverage Integration API** is switched to **ON**.
+1. Ensure **Leverage Integration API** is **ON**.
 2. Check the TCP communication port number – default is **9699**.
 
 See the [Prerequisites](/docs/auditor/10.9/api/prerequisites.md) topic for additional information.
 
-By default, Auditor writes activity records to the _Netwrix_Auditor_API_ database, which isn't
-associated with a specific monitoring plan.
+By default, Auditor writes activity records to the _Netwrix_Auditor_API_ database, which has no
+associated monitoring plan.
 
 Optionally, you can create a dedicated monitoring plan in Auditor. In this case, Auditor writes data
 to a database linked to this plan. Target it at Netwrix API data source and enable for monitoring.
 
-In such scenario, you will need to specify this monitoring plan in the **Monitoring Plan** field in
-the add-on configuration wizard. See **Step 3** below for details.
+In that scenario, specify this monitoring plan in the **Monitoring Plan** field in the add-on
+configuration wizard. See
+[Step 3: Install and Configure the Add-On](#step-3-install-and-configure-the-add-on) for details.
 
 ## Step 2: Configure FlashArray File Auditing and Forwarding
 
-FlashArray File Auditing is a native array feature that must be configured on the array before the
+FlashArray File Auditing is a native array feature that you must configure on the array before the
 add-on can receive any events. The basic workflow is:
 
 1. Set up a remote syslog log target.
@@ -42,12 +43,12 @@ add-on can receive any events. The basic workflow is:
 3. Attach the policy to the Managed Directory (or directories) you want audited.
 4. Set a SACL on the audited directories or files.
 
-> **Important:** Until a SACL is set on an audited path, FlashArray does not emit any audit events
+> **Important:** Until you set a SACL on an audited path, FlashArray doesn't emit any audit events
 > for it — this is the most common reason no data reaches the add-on. Applying a SACL to a path with
-> no File Auditing policy attached also silently fails (no error is returned), so complete steps 1–3
-> before setting SACLs, and verify the SACL was actually applied afterwards.
+> no File Auditing policy attached also silently fails (FlashArray returns no error), so complete
+> steps 1–3 before setting SACLs, and then verify that the SACL took effect.
 
-Both SMB and NFS are supported. Create a remote syslog log target pointing at the add-on
+FlashArray supports both SMB and NFS. Create a remote syslog log target pointing at the add-on
 installation server and the port you plan to use, for example:
 
 ```
@@ -66,9 +67,9 @@ purepolicy audit file add --dir <fs>:<managed_directory> fa-audit-policy
 
 ### Set the SACL
 
-The SACL must be set through file protocol access by a privileged File user — by default, a member
-of the array's **Audit Operators** local group (Domain Admins, and root for AUTH_SYS NFS, are also
-implicit privileged users). To delegate this to a domain user:
+A privileged File user must set the SACL through file protocol access — by default, a member of the
+array's **Audit Operators** local group (Domain Admins, and root for AUTH_SYS NFS, are also implicit
+privileged users). To delegate this to a domain user:
 
 ```
 pureds local group add --external "user@domain.example" "Audit Operators"
@@ -104,7 +105,7 @@ The wizard guides you through the following configuration steps.
 
 - **Listen Port** — TCP port on which the add-on listens for FlashArray File Auditing syslog events
   (default: `6514`). The port must be open on Windows Firewall for inbound connections, and must
-  match the port used when creating the remote syslog target on the array.
+  match the port you specified when creating the remote syslog target on the array.
 
 **Step 3 – Share and AD access account.** Optionally provide a domain account used to:
 
@@ -123,9 +124,8 @@ To change the configuration later, launch the wizard again from the Start menu.
 
 The wizard covers the settings needed to get the add-on running. Advanced tuning — such as choosing
 which shares or protocols a source should collect, excluding specific users or paths, or turning ACL
-enrichment on or off — is available in the add-on's configuration file
-(`addonconfiguration.json`) for advanced scenarios.
+enrichment on or off — is available in the add-on's configuration file (`addonconfiguration.json`).
 
-A couple of behaviors are expected rather than limitations: NFS paths are reported as native Unix
-paths rather than converted to a Windows UNC path, and ACL/owner "after" value enrichment is only
-available for SMB shares, since NFS has no equivalent concept to query.
+The following behaviors are expected: the add-on reports NFS paths as native Unix paths rather than
+converting them to Windows UNC paths, and ACL/owner "after" value enrichment is available only for
+SMB shares, since NFS has no equivalent concept to query.

@@ -22,10 +22,10 @@ add-on.
 
 Notes:
 
-- **What** is reported as a `\\server\share\...` UNC-style path for SMB events. For NFS events, the
-  path is reported exactly as FlashArray reports it — a native Unix path — since there is no
-  Windows-style UNC equivalent to convert it to.
+- The add-on reports **What** as a `\\server\share\...` UNC-style path for SMB events. For NFS
+  events, it reports the path exactly as FlashArray provides it — a native Unix path — since there
+  is no Windows-style UNC equivalent to convert it to.
 - **Owner** and **Permissions** "after" values require SMB and ACL enrichment enabled in the add-on
   configuration; they are never available for NFS events.
-- If a Monitoring Plan is configured in the wizard, its name is also included as a detail on every
-  activity record.
+- If you configure a Monitoring Plan in the wizard, every activity record also includes its name as
+  a detail.
