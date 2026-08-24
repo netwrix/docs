@@ -71,7 +71,7 @@ deletion.
 To collect comprehensive audit data, you must configure your file shares for monitoring. Consider
 the following:
 
-**Step 1 –** [Configure Security Event Log Maximum Size](/docs/auditor/10.8/configuration/fileservers/delldatastorage/securityeventlog.md) to avoid overwriting
+**Step 1 –** [Configure Security Event Log](/docs/auditor/10.8/configuration/fileservers/delldatastorage/securityeventlog.md) to avoid overwriting
 of the security logs; it is recommended to set security log size to a maximum (4GB). Auditor does
 not clean Dell Unity logs automatically, the log will start overwriting when it goes beyond the
 limit. See the
