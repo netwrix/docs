@@ -6,12 +6,12 @@ sidebar_position: 20
 
 # Configure Security Event Log
 
-Follow the steps to configure Event Log file path, maximum size, and retention:
+Configure the Event Log file path, maximum size, and retention:
 
-**Step 1 -** On your file server, create a new file system (e.g., with name _events_) where the security log will be stored
-with a minimum size of `4GiB`: **Unisphere Web UI -> Storage -> File -> File System Tab** and press "+"
+**Step 1 -** On your file server, create a new file system with a minimum size of `4GiB` (e.g., with name _events_)
+to store the security log: **Unisphere Web UI -> Storage -> File -> File System Tab** and press "+"
 
-**Step 2 -** Make sure that it is accessible with DPA via the **\\<file_server_name>\C$\events** UNC path.
+**Step 2 -** Ensure it's accessible with DPA via the **\\<file_server_name>\C$\events** UNC path.
 
 **Step 3 -** On the computer where Auditor Server is installed, open **Registry Editor**: navigate
 to **Start → Run** and type _"regedit"_.
@@ -38,8 +38,8 @@ right-click _Security_ and select _Properties_
 
 
 **NOTE:**
-- You can't change the **"Log name"** (_File_ in the registry) in the **"Security Properties"**,
-set it using **Registry Editor**
+- Set the **"Log name"** (_File_ in the registry) using **Registry Editor**. The **"Security Properties"**
+dialog doesn't let you change it.
 - **Maximum log size** corresponds to _MaxSize_ in the registry and shows in KBytes in the **"Security Properties"**,
 whereas in **"Registry Editor"** it shows in Bytes: _4 294 901 760 Bytes = 4 194 240 KB_
 - **"Override events as needed"** switch corresponds to _Retention = 0_ in the registry
