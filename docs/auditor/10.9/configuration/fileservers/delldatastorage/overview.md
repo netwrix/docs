@@ -71,8 +71,7 @@ deletion.
 To collect comprehensive audit data, you must configure your file shares for monitoring. Consider
 the following:
 
-**Step 1 –** [Configure Security Event Log](/docs/auditor/10.9/configuration/fileservers/delldatastorage/securityeventlog.md) to avoid overwriting
-of the security logs; Netwrix recommends setting the security log size to the maximum (4GB). Auditor
+**Step 1 –** [Configure Security Event Log](/docs/auditor/10.9/configuration/fileservers/delldatastorage/securityeventlog.md) to set the log path, maximum size, and retention so that security events aren't overwritten. Auditor
 does not clean Dell Unity logs automatically, so the log starts overwriting when it goes beyond the
 limit. See the
 [Unity Family Security Configuration Guide](https://support.emc.com/docu69321_Unity-Family-Security-Configuration-Guide.pdf?language=en_US) for
