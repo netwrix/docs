@@ -1,6 +1,6 @@
 ---
 title: "Configure Security Event Log"
-description: "Configure Event Log path, maximum size, and retention on Dell Data Storage devices"
+description: "Configure Security Event Log path, maximum size, and retention on Dell Data Storage devices"
 sidebar_position: 20
 ---
 
@@ -54,7 +54,7 @@ right-click **Security** and select **Properties**.
 
 **Step 3 –** Confirm the following values:
 
-- **Log name**: `C:\events\security.evt`
+- **Log name**: `\\<file_server_name>\C$\events\security.evt`
 - **Maximum log size**: `4,194,240 KB`
 - **Overwrite events as needed**: selected
 
