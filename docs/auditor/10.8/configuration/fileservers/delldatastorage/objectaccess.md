@@ -51,5 +51,5 @@ node on the left and navigate to **Policies → Windows Settings → Security Se
     To update group policies for Dell VNX, you must log in as the `nasadmin` user.
 
 You can configure advanced audit policy to narrow the range of events Auditor tracks and
-records, preventing your AuditArchive and the Security event log from overfilling. See the
+records. This prevents your AuditArchive and the Security event log from overfilling. See the
 [Configure Security Event Log](/docs/auditor/10.8/configuration/fileservers/delldatastorage/securityeventlog.md) topic for additional information.

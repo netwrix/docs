@@ -13,8 +13,8 @@ Dell Data Storage collectively refers to Dell VNX, VNXe, Celerra, and Unity NAS 
 Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
+certain built-in Windows services, etc. You must configure auditing properly to ensure audit data
+integrity; otherwise, your change reports may contain warnings, errors, or incomplete audit data.
 
 :::warning
 You must exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
@@ -57,12 +57,12 @@ You can configure your IT Infrastructure for monitoring in one of the following
           these shares, you must enable the local-to-local, local-to-remote, remote-to-local, and
           remote-to-remote symbolic link evaluations on the computer that hosts Auditor Server.
 
-First, you should decide on the objects and actions you want to track. Consider the following:
+First, decide on the objects and actions you want to track. Consider the following:
 
 - The actions Auditor reports vary depending on the file server type and the audited object (file,
   folder, or share).
 - Monitoring and reporting of the Dell Data Storage systems may not provide the results you expect,
-  because Dell's native auditing does not record every action Auditor can report on. See the
+  because Dell's native auditing doesn't record every action Auditor can report on. See the
   [File Servers](/docs/auditor/10.9/configuration/fileservers/overview.md) topic for additional
   information.
 
