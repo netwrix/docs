@@ -90,17 +90,19 @@ sudo mkdir -p /etc/dspm
 
 | File | What It Is |
 | --- | --- |
-| `<hostname>.crt` | Server identity certificate in PEM format. The Subject Alternative Name (SAN) list must include the hostname **in lowercase** and the server's IP address. |
-| `<hostname>.key` | Private key paired with the certificate (PEM). The OS user running the installer must be able to read it — not just `root`. |
-| `ca-bundle.crt` | CA certificates that trust the server certificate. Required only if an internal or private CA signs the certificate — omit it for a publicly trusted certificate. |
+| `tls.crt` | Server identity certificate in PEM format. The Subject Alternative Name (SAN) list must include the hostname **in lowercase** and the server's IP address. |
+| `tls.key` | Private key paired with the certificate (PEM). The OS user running the installer must be able to read it — not just `root`. |
+| `ca-bundle.pem` | CA certificates that trust the server certificate. Required only if an internal or private CA signs the certificate — omit it for a publicly trusted certificate. |
+
+These are the installer wizard's pre-filled default filenames — stage your files under these names and you can accept each TLS prompt by pressing **Enter**. Using different filenames is fine; type the actual path at the prompt instead of accepting the default.
 
 **SAN requirement:** The hostname in the SAN list must be lowercase. Browsers normalize hostnames to lowercase during TLS validation — a case mismatch causes HTTP 401 failures at sign-in. The SAN must also include the server IP address.
 
 ```bash
-sudo chown $(whoami) /etc/dspm/<hostname>.key
-sudo chmod 644 /etc/dspm/<hostname>.key
+sudo chown $(whoami) /etc/dspm/tls.key
+sudo chmod 644 /etc/dspm/tls.key
 
-sudo cp /etc/dspm/ca-bundle.crt /usr/local/share/ca-certificates/dspm-ca.crt
+sudo cp /etc/dspm/ca-bundle.pem /usr/local/share/ca-certificates/dspm-ca.crt
 sudo update-ca-certificates
 ```
 
@@ -108,14 +110,14 @@ sudo update-ca-certificates
 
 ```bash
 # Check that the SAN includes your hostname (lowercase) and server IP
-openssl x509 -noout -text -in /etc/dspm/<hostname>.crt | grep -A5 "Subject Alternative"
+openssl x509 -noout -text -in /etc/dspm/tls.crt | grep -A5 "Subject Alternative"
 
 # Verify the cert was signed by your CA bundle
-openssl verify -CAfile /etc/dspm/ca-bundle.crt /etc/dspm/<hostname>.crt
+openssl verify -CAfile /etc/dspm/ca-bundle.pem /etc/dspm/tls.crt
 
 # Verify the key matches the cert (both md5sums must match)
-openssl pkey -pubout -in /etc/dspm/<hostname>.key 2>/dev/null | md5sum
-openssl x509 -noout -pubkey -in /etc/dspm/<hostname>.crt | md5sum
+openssl pkey -pubout -in /etc/dspm/tls.key 2>/dev/null | md5sum
+openssl x509 -noout -pubkey -in /etc/dspm/tls.crt | md5sum
 ```
 
 For the full TLS specification including SAN rules and multi-CA environments, see [TLS Certificate Requirements](system/certificates.md).
@@ -418,7 +420,7 @@ For certificate-specific issues, see [TLS Certificate Requirements — Troublesh
 | Symptom | Likely cause | Fix |
 | --- | --- | --- |
 | Sign-in returns HTTP 401 with correct credentials | SAN hostname is mixed-case; browser normalized it to lowercase | Re-issue the certificate with lowercase hostname in the SAN list |
-| Installer exits with "Failed to read TLS private key" | Key file owned by `root`, installer runs as non-root user | `sudo chown <install-user> /etc/dspm/<hostname>.key` |
+| Installer exits with "Failed to read TLS private key" | Key file owned by `root`, installer runs as non-root user | `sudo chown <install-user> /etc/dspm/tls.key` |
 | Sign-in silently fails with `PKIX path building failed` in Keycloak logs | CA bundle is missing the LDAPS DC's CA | Concatenate the DC's LDAPS CA into the bundle and re-run the installer |
 | Browser rejects the application URL with a SAN mismatch error | Hostname entered as an IP address, or SAN doesn't include the hostname in use | Use a DNS hostname and verify the cert SAN list |
 | Pods not starting after installation | Outbound HTTPS blocked to one or more required endpoints | Verify connectivity to all domains in [Required Domains](#required-domains) |
