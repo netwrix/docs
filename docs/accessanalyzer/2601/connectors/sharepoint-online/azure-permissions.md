@@ -57,8 +57,8 @@ The Overview page for the newly registered application opens. Note the following
 
 ### Required permissions
 
-| API | Permission | Description |
-| --- | --- | --- |
-| Microsoft Graph | `Sites.FullControl.All` | Full control of all site collections |
-| Microsoft Graph | `Directory.Read.All` | Read directory data |
-| SharePoint | `Sites.FullControl.All` | Full control of all site collections |
+| API | Permission | Type | Description |
+| --- | --- | --- | --- |
+| Microsoft Graph | `Sites.Read.All` | Application | Read items in all site collections |
+| Microsoft Graph | `Directory.Read.All` | Application | Read directory data |
+| SharePoint | `Sites.FullControl.All` | Application | Full control of all site collections |
