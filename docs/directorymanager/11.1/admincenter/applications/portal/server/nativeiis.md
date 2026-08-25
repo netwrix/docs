@@ -66,7 +66,7 @@ launch URL. You must provide the updated URL to users so they can access the por
    deployment name for the instance.
 6. Click **Save**.
 
-## Move an Instance under a Different IIS Site
+## Move an Instance to a Different IIS Site
 
 You can change the IIS site that hosts a deployment instance of a portal. In doing so, the URL of
 the deployment instance also changes. You must provide the updated URL to your users so they can
@@ -81,15 +81,17 @@ access the instance. See the [Launch a Portal](/docs/directorymanager/11.1/admin
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**. The **Deployment Settings** page appears.
 4. On the **IIS** tab, the **Select Application Deployment** dropdown list displays all portal
-   instances deployed in native IIS. Select an instance to move its directory under a different IIS
-   site.
-5. In the **IIS Site** dropdown list on the **Deployment Configurations** tab, select a site to
-   move the instance’s directory under. The list displays the websites defined in native IIS.
+   instances deployed in native IIS. Select an instance to move to a different IIS site.
+5. In the **IIS Site** dropdown list on the **Deployment Configurations** tab, select a site. The
+   instance moves to the selected site. The list displays the websites defined in native IIS.
 6. Click **Save**.
 
 :::note
-Due to a known limitation, the launch URL doesn't update to the port of the new IIS site. The URL 
-retains the port of the previously assigned site instead. Netwrix plans to fix this in a future release.
+The instance moves to the new IIS site successfully, and its URL changes to match. However, due to
+a known limitation, the **Launch URL** box on the **Deployment Configurations** tab continues to
+display the port of the previously assigned site instead of the new site's port. Before using or
+distributing the launch URL, manually replace the displayed port with the port configured for the
+new IIS site.
 :::
 
 ## View the Launch URL for an Instance
