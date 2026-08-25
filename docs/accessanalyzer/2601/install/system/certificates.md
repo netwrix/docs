@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Access Analyzer requires three certificate-related files at install time. This page describes the format of each file, the rules the installer enforces, and common pitfalls when preparing them.
 
-All three files must be in PEM format. The installer wizard prompts you for the path to each file — no interactive certificate provisioning exists beyond this; you supply files you've already prepared.
+All three files must be in PEM format. The installer prompts you for the path to each file — no interactive certificate provisioning exists beyond this; you supply files you've already prepared.
 
 ## Summary
 
@@ -18,7 +18,7 @@ All three files must be in PEM format. The installer wizard prompts you for the 
 | `tls.key` | TLS Private Key File | Private key paired with the certificate |
 | `ca-bundle.pem` | CA Bundle File (optional) | Trusted root CAs (application and LDAPS) |
 
-These filenames are the wizard's pre-filled defaults at `/etc/dspm/` — see [File Placement on the VM](#file-placement-on-the-vm). Stage your files there under these names and you can accept each TLS prompt by pressing **Enter**; using different names or a different directory just means typing the actual path at the prompt instead.
+These filenames are the installer's pre-filled defaults at `/etc/dspm/` — see [File Placement on the VM](#file-placement-on-the-vm). Stage your files there under these names and you can accept each TLS prompt by pressing **Enter**; using different names or a different directory just means typing the actual path at the prompt instead.
 
 ## 1. Application TLS Certificate (`tls.crt`)
 
@@ -71,7 +71,7 @@ Compare the issuer to the CA that signed your application certificate. If they d
 
 ## File Placement on the VM
 
-The installer wizard's default prompt values point here — using this layout means you can accept every TLS prompt by pressing **Enter**:
+The installer's default prompt values point here — using this layout means you can accept every TLS prompt by pressing **Enter**:
 
 ```
 /etc/dspm/

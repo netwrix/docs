@@ -94,7 +94,7 @@ sudo mkdir -p /etc/dspm
 | `tls.key` | Private key paired with the certificate (PEM). The OS user running the installer must be able to read it — not just `root`. |
 | `ca-bundle.pem` | CA certificates that trust the server certificate. Required only if an internal or private CA signs the certificate — omit it for a publicly trusted certificate. |
 
-These are the installer wizard's pre-filled default filenames — stage your files under these names and you can accept each TLS prompt by pressing **Enter**. Using different filenames is fine; type the actual path at the prompt instead of accepting the default.
+These are the installer's pre-filled default filenames — stage your files under these names and you can accept each TLS prompt by pressing **Enter**. Using different filenames is fine; type the actual path at the prompt instead of accepting the default.
 
 **SAN requirement:** The hostname in the SAN list must be lowercase. Browsers normalize hostnames to lowercase during TLS validation — a case mismatch causes HTTP 401 failures at sign-in. The SAN must also include the server IP address.
 
@@ -132,7 +132,7 @@ To let users sign in with their Active Directory or Entra ID credentials instead
 
 ### License key
 
-You need your Netwrix license key to download the installer; it's the first prompt in the installation wizard. Obtain it from your Netwrix account representative before starting.
+You need your Netwrix license key to download the installer; it's the installer's first prompt. Obtain it from your Netwrix account representative before starting.
 
 ### Connector port requirements
 
@@ -232,7 +232,7 @@ If this returns a version number, the binary is ready. If it returns an error, t
 sudo dspm-installer
 ```
 
-The installer presents an interactive wizard: license key, hostname, first admin name and email, and TLS certificate file paths. Each prompt shows an example value and validates your input before moving on — accept a suggested default by pressing **Enter**, or run `dspm-installer --help` for the full flag reference. Installation takes 15–30 minutes.
+The installer prompts you interactively for: license key, hostname, first admin name and email, and TLS certificate file paths. Each prompt shows an example value and validates your input before moving on — accept a suggested default by pressing **Enter**, or run `dspm-installer --help` for the full flag reference. Installation takes 15–30 minutes.
 
 :::note
 An **Advanced Settings** step lets you pin to a specific chart **Target Revision** (for example, `1.5.0`) instead of installing the latest release. Leave it empty for standard installations.
