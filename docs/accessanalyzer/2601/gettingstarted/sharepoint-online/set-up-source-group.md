@@ -12,11 +12,11 @@ sidebar_position: 3
 
 3. Enter a **Source Group Name**.
 
-4. Select a service account from the **Service Account** dropdown, or click **+** to create one inline. SharePoint Online requires a **Client ID and Certificate** service account type with specific API permissions [documented here](../../connectors/sharepoint-online/azure-permissions.md#required-permissions). See [Service Accounts](../../configurations/service-accounts/overview.md) for details on creating a service account.
+4. Select a service account from the **Service Account** dropdown, or click **+** to create one inline. SharePoint Online requires a **Client ID and Certificate** service account type with specific API permissions. See [Required permissions](../../connectors/sharepoint-online/azure-permissions.md#required-permissions) for the full list of permissions, and [Service Accounts](../../configurations/service-accounts/overview.md) for details on creating a service account.
 
 5. Enter the **Tenant ID** for your Microsoft Entra ID directory. This must be a valid UUID (for example, `550e8400-e29b-41d4-a716-446655440000`).
 
-6. Under **Certificate**, click **Generate and Download Certificate** to generate a certificate and download it to your machine. Upload this certificate to your registered Entra ID application before proceeding. See [Certificate Configuration](../../connectors/sharepoint-online/tenant-certificate-config.md) for upload steps.
+6. Under **Certificate**, click **Generate and Download Certificate** to download a new certificate to your machine. Upload this certificate to your registered Entra ID application before proceeding. See [Certificate Configuration](../../connectors/sharepoint-online/tenant-certificate-config.md) for upload steps.
 
    :::note
    If you click **Regenerate Certificate**, upload the new certificate to your Entra ID App Registration to replace the old one. Removing the old certificate from the App Registration is a manual step in the Azure portal — Access Analyzer can't remove it on your behalf.
@@ -25,7 +25,7 @@ sidebar_position: 3
 7. Click **Test Connection** to verify that Access Analyzer can authenticate to your SharePoint Online tenant. Resolve any failures before proceeding.
 
    :::warning
-   After you upload a new certificate to your Entra ID application, Microsoft Entra ID can take several minutes to propagate the certificate to its token-issuing endpoints. If **Test Connection** fails with an error similar to `AADSTS700027: The certificate with identifier used to sign the client assertion is not registered on application` immediately after you upload a certificate, wait a few minutes and try again before troubleshooting further.
+   After you upload a new certificate to your Entra ID application, Microsoft Entra ID can take several minutes to propagate the certificate to its token-issuing endpoints. During that time, **Test Connection** can fail with an error similar to `AADSTS700027: The certificate with identifier used to sign the client assertion is not registered on application`. If that happens, wait a few minutes and try again before troubleshooting further.
    :::
 
 8. Click **Next**.
