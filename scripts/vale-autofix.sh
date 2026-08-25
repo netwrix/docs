@@ -5,11 +5,14 @@
 
 set -euo pipefail
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Namespaced (not SCRIPT_DIR) because this file is sourced by
+# test-anchor-update.sh, which sets its own SCRIPT_DIR before sourcing —
+# a shared name here would silently clobber the caller's.
+_VALE_AUTOFIX_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # --- Shared functions ---
 
-source "$SCRIPT_DIR/lib/slugify.sh"
+source "$_VALE_AUTOFIX_DIR/lib/slugify.sh"
 
 _get_product_version_folder() {
   local filepath="$1"

@@ -10,6 +10,8 @@ on:
       - '!docs/**/CLAUDE.md'
       - '!docs/**/SKILL.md'
       - '!docs/kb/**'
+      - 'scripts/**'
+      - 'package.json'
 
 concurrency:
   group: vale-autofix-${{ github.event.pull_request.number }}
