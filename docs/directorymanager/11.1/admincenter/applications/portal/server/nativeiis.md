@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Manage Settings for a Native IIS Deployment
 
-You can manage various settings for a portal instance deployed in native IIS.
+You can manage settings for a portal instance deployed in native IIS.
 
 ## Start or Stop an Instance
 
@@ -22,7 +22,7 @@ stop an instance, the following happens:
 1. In Admin Center, select **Applications** in the left pane.  
    On the **GroupID Portal** tab, a portal card displays its info, including all its instances. You
    can differentiate between a standard Directory Manager portal and a Self-Service Password Reset
-   (SSPR) portal from the portal logo, as each portal type has its own logo.
+   (SSPR) portal, as each portal type has its own logo.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**. The **Deployment Settings** page appears.
 4. On the **IIS**, **Remote IIS**, or **Docker** tab, the **Select Application Deployment**
@@ -35,7 +35,7 @@ stop an instance, the following happens:
 
 ## Change the IIS Application Name for an Instance
 
-Each deployment instance of a portal in IIS has an IIS application name that represents that
+Each portal deployment instance in IIS has an IIS application name that represents that
 specific deployment. The name uniquely identifies the deployment in the IIS site. Directory Manager
 uses it to name:
 
@@ -56,8 +56,8 @@ launch URL. You must provide the updated URL to users so they can access the por
 
 1. In Admin Center, select **Applications** in the left pane.  
    On the **GroupID Portal** tab, a portal card displays the portal’s info, including all its
-   instances. You can differentiate between a standard Directory Manager portal and a SSPR portal
-   from the portal logo, as each portal type has its own logo.
+   instances. You can differentiate between a standard Directory Manager portal and a SSPR portal,
+   as each portal type has its own logo.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**. The **Deployment Settings** page appears.
 4. On the **IIS** tab, the **Select Application Deployment** dropdown list displays all portal
@@ -68,7 +68,7 @@ launch URL. You must provide the updated URL to users so they can access the por
 
 ## Move an Instance to a Different IIS Site
 
-You can change the IIS site that hosts a deployment instance of a portal. In doing so, the URL of
+You can change the IIS site that hosts a deployment instance of a portal. When you do, the URL of
 the deployment instance also changes. You must provide the updated URL to your users so they can
 access the instance. See the [Launch a Portal](/docs/directorymanager/11.1/admincenter/applications/portal/create.md#launch-a-portal) topic.
 
@@ -76,8 +76,8 @@ access the instance. See the [Launch a Portal](/docs/directorymanager/11.1/admin
 
 1. In Admin Center, select **Applications** in the left pane.  
    On the **GroupID Portal** tab, a portal card displays its info, including all its instances. You
-   can differentiate between a standard Directory Manager portal and a SSPR portal from the portal
-   logo, as each portal type has its own logo.
+   can differentiate between a standard Directory Manager portal and a SSPR portal, as each portal
+   type has its own logo.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**. The **Deployment Settings** page appears.
 4. On the **IIS** tab, the **Select Application Deployment** dropdown list displays all portal
@@ -87,8 +87,8 @@ access the instance. See the [Launch a Portal](/docs/directorymanager/11.1/admin
 6. Click **Save**.
 
 :::note
-The instance moves to the new IIS site successfully, and its URL changes to match. However, due to
-a known limitation, the **Launch URL** box on the **Deployment Configurations** tab continues to
+The instance moves to the new IIS site, and its URL changes to match. However, due to a known
+limitation, the **Launch URL** box on the **Deployment Configurations** tab continues to
 display the port of the previously assigned site instead of the new site's port. Before using or
 distributing the launch URL, manually replace the displayed port with the port configured for the
 new IIS site.
@@ -102,8 +102,8 @@ Use the URL for a portal's deployment instance to launch that instance.
 
 1. In Admin Center, select **Applications** in the left pane.  
    On the **GroupID Portal** tab, a portal card displays its info, including all its instances. You
-   can differentiate between a standard Directory Manager portal and a SSPR portal from the portal
-   logo, as each portal type has its own logo.
+   can differentiate between a standard Directory Manager portal and a SSPR portal, as each portal
+   type has its own logo.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**. The **Deployment Settings** page appears.
 4. On the **IIS**, **Remote IIS**, or **Docker** tab, the **Select Application Deployment**
@@ -117,8 +117,8 @@ Use the URL for a portal's deployment instance to launch that instance.
 
 1. In Admin Center, select **Applications** in the left pane.  
    On the **GroupID Portal** tab, a portal card displays its info, including all its instances. You
-   can differentiate between a standard Directory Manager portal and a SSPR portal from the portal
-   logo, as each portal type has its own logo.
+   can differentiate between a standard Directory Manager portal and a SSPR portal, as each portal
+   type has its own logo.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**. The **Deployment Settings** page appears.
 4. On the **IIS**, **Remote IIS**, or **Docker** tab, the **Select Application Deployment**
