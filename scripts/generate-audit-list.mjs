@@ -11,9 +11,6 @@
  * across versions (differing only in their own version string), and writes:
  *
  *   docs-audit/<product>/review-list.csv   - one row per unique page
- *   docs-audit/<product>/activity.csv       - repo changes since the audit started
- *   docs-audit/<product>/_meta.json          - scan counts and exclusion reasons
- *   docs-audit/_orphans.csv                   - tracked files in no registered version
  *
  * Review status (reviewer/audited/accurate/complete/notes) lives in the imported
  * spreadsheet, not in this repo, so regenerating never risks reviewer data —
@@ -23,7 +20,6 @@
  *   node scripts/generate-audit-list.mjs                          # all products
  *   node scripts/generate-audit-list.mjs --product=accessanalyzer
  *   node scripts/generate-audit-list.mjs --product=a,b --dry
- *   node scripts/generate-audit-list.mjs --product=a --activity-only
  *   node scripts/generate-audit-list.mjs --product=a --verify-against-build=build
  *
  * Environment variables:
@@ -74,14 +70,12 @@ function parseArgs(argv) {
     since: '90 days ago',
     churnThreshold: 0.5,
     out: 'docs-audit',
-    activityOnly: false,
     dry: false,
     verifyAgainstBuild: null,
   };
 
   for (const raw of argv) {
     if (raw === '--include-hidden') args.includeHidden = true;
-    else if (raw === '--activity-only') args.activityOnly = true;
     else if (raw === '--dry') args.dry = true;
     else if (raw.startsWith('--product=')) args.products = raw.slice('--product='.length).split(',').filter(Boolean);
     else if (raw.startsWith('--since=')) args.since = raw.slice('--since='.length);
@@ -203,14 +197,6 @@ function buildVersionIndex() {
 function assignToVersion(filePath, versionIndex) {
   for (const entry of versionIndex) {
     if (filePath === entry.docPath || filePath.startsWith(entry.docPath + '/')) return entry;
-  }
-  return null;
-}
-
-function assignToProductForOrphanReporting(filePath) {
-  const byPathLength = [...PRODUCTS].sort((a, b) => b.path.length - a.path.length);
-  for (const product of byPathLength) {
-    if (filePath === product.path || filePath.startsWith(product.path + '/')) return product;
   }
   return null;
 }
@@ -378,7 +364,6 @@ function main() {
   const allFiles = listTrackedDocFiles();
   console.log(`   ${allFiles.length} tracked .md/.mdx files under docs/`);
 
-  const orphans = [];
   const perProductFiles = new Map(); // productId -> [{ repoPath, relPath, version, versionLabel, entry }]
 
   for (const filePath of allFiles) {
@@ -390,11 +375,7 @@ function main() {
     if (segments.some((s) => EXCLUDED_SEGMENTS.has(s))) continue;
 
     const entry = assignToVersion(filePath, versionIndex);
-    if (!entry) {
-      const product = assignToProductForOrphanReporting(filePath);
-      orphans.push({ repoPath: filePath, productId: product ? product.id : 'unknown' });
-      continue;
-    }
+    if (!entry) continue; // not part of any registered product version
 
     if (entry.hidden && !args.includeHidden) continue; // deliberately excluded, not an orphan
 
@@ -410,17 +391,6 @@ function main() {
     const list = perProductFiles.get(effectiveProductId) || [];
     list.push({ repoPath: filePath, relPath, entry });
     perProductFiles.set(effectiveProductId, list);
-  }
-
-  if (!args.activityOnly) {
-    if (!args.dry) {
-      fs.writeFileSync(
-        path.join(outDir, '_orphans.csv'),
-        ['repo_path,product_id,reason', ...orphans.map((o) => `${csvEscape(o.repoPath)},${csvEscape(o.productId)},no-registered-version`)].join('\n') + '\n',
-        'utf8'
-      );
-    }
-    console.log(`   ${orphans.length} orphaned files (tracked, no registered version) → _orphans.csv`);
   }
 
   console.log(`📊 Computing 90-day churn ratio (single git log pass)...`);
@@ -485,87 +455,34 @@ function main() {
 
     included.sort((a, b) => a.repoPath.localeCompare(b.repoPath));
 
-    if (!args.activityOnly) {
-      const rows = included
-        .filter((f) => {
-          const dup = dupInfo.get(f.repoPath);
-          return !dup || dup.isPrimary;
-        })
-        .map((f) => {
-          const dup = dupInfo.get(f.repoPath);
-          const duplicates = dup && dup.duplicateVersions.length ? dup.duplicateVersions.join(', ') : '';
-          return [
-            f.title,
-            f.entry.version.version,
-            f.url,
-            f.repoPath,
-            duplicates,
-            '', // reviewer
-            '', // audited
-            '', // accurate
-            '', // complete
-            '', // notes
-          ];
-        });
-
-      if (!args.dry) {
-        writeCsv(
-          path.join(productOutDir, 'review-list.csv'),
-          ['document_title', 'version', 'live_page_url', 'source_path', 'duplicates', 'reviewer', 'audited', 'accurate', 'complete', 'notes'],
-          rows
-        );
-
-        const metaPathForWrite = path.join(productOutDir, '_meta.json');
-        let auditStartedAt = new Date().toISOString().slice(0, 10);
-        if (fs.existsSync(metaPathForWrite)) {
-          try {
-            const existing = JSON.parse(fs.readFileSync(metaPathForWrite, 'utf8'));
-            if (existing.auditStartedAt) auditStartedAt = existing.auditStartedAt;
-          } catch {
-            // ignore unreadable/corrupt existing meta, re-stamp
-          }
-        }
-
-        fs.writeFileSync(
-          metaPathForWrite,
-          JSON.stringify(
-            {
-              generatedAt: new Date().toISOString(),
-              auditStartedAt,
-              product: product.id,
-              since: args.since,
-              churnThreshold: args.churnThreshold,
-              counts: {
-                scanned: files.length,
-                included: included.length,
-                excludedByChurn,
-                excludedByDraft,
-                duplicateRows: [...dupInfo.values()].filter((d) => !d.isPrimary).length,
-              },
-            },
-            null,
-            2
-          ) + '\n',
-          'utf8'
-        );
-      }
-    }
-
-    // Activity: commits/lines changed since this product's audit started, per doc.
-    const metaPath = path.join(productOutDir, '_meta.json');
-    if (args.dry) {
-      // No _meta.json to read reliably in a dry run (may not exist, or may be stale on purpose) — skip.
-    } else if (fs.existsSync(metaPath)) {
-      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-      const aliasedPaths = PRODUCTS.filter((p) => PRODUCT_ALIASES[p.id] === product.id).map((p) => p.path);
-      const activityChurn = computeChurnMap(meta.auditStartedAt, [product.path, ...aliasedPaths]);
-      const activityRows = included.map((f) => {
-        const c = activityChurn.get(f.repoPath);
-        return [f.repoPath, c ? c.added + c.deleted : 0];
+    const rows = included
+      .filter((f) => {
+        const dup = dupInfo.get(f.repoPath);
+        return !dup || dup.isPrimary;
+      })
+      .map((f) => {
+        const dup = dupInfo.get(f.repoPath);
+        const duplicates = dup && dup.duplicateVersions.length ? dup.duplicateVersions.join(', ') : '';
+        return [
+          f.title,
+          f.entry.version.version,
+          f.url,
+          f.repoPath,
+          duplicates,
+          '', // reviewer
+          '', // audited
+          '', // accurate
+          '', // complete
+          '', // notes
+        ];
       });
-      writeCsv(path.join(productOutDir, 'activity.csv'), ['source_path', 'lines_changed_since_audit_start'], activityRows);
-    } else if (args.activityOnly) {
-      console.warn(`⚠️  ${product.id}: no _meta.json found — run without --activity-only first to stamp auditStartedAt`);
+
+    if (!args.dry) {
+      writeCsv(
+        path.join(productOutDir, 'review-list.csv'),
+        ['document_title', 'version', 'live_page_url', 'source_path', 'duplicates', 'reviewer', 'audited', 'accurate', 'complete', 'notes'],
+        rows
+      );
     }
 
     includedByProduct.set(product.id, included);
