@@ -47,7 +47,7 @@ The Overview page for the newly registered application opens. Note the following
 
 6. Click an API to access its permissions, then click the **Application permissions** tab.
 
-7. Select the required permissions for each API (see the following table).
+7. Select the required permissions for each API. See [Required permissions](#required-permissions).
 
 8. Click **Add Permissions**.
 
@@ -57,8 +57,8 @@ The Overview page for the newly registered application opens. Note the following
 
 ### Required permissions
 
-| API | Permission | Description |
-| --- | --- | --- |
-| Microsoft Graph | `Sites.FullControl.All` | Full control of all site collections |
-| Microsoft Graph | `Directory.Read.All` | Read directory data |
-| SharePoint | `Sites.FullControl.All` | Full control of all site collections |
+| API | Permission | Type | Description |
+| --- | --- | --- | --- |
+| Microsoft Graph | `Sites.Read.All` | Application | Read items in all site collections |
+| Microsoft Graph | `Directory.Read.All` | Application | Read directory data |
+| SharePoint | `Sites.FullControl.All` | Application | Full control of all site collections |
