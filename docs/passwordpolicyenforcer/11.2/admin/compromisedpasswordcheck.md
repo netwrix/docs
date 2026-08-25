@@ -1,22 +1,21 @@
 ---
-title: "Compromised Password Check"
-description: "Compromised Password Check"
+title: "Password Scanner"
+description: "Password Scanner"
 sidebar_position: 30
 ---
 
-# Compromised Password Check
+# Password Scanner
 
-The Compromised Password Checker identifies weak or unsafe passwords, including compromised, reused, 
+The Password Scanner identifies weak or unsafe passwords, including compromised, reused, 
 or empty ones. It can notify users via email and advise or force them to change their password. 
 You can schedule the check to run at any time to verify existing passwords against security rules.
 
 :::note
-Create the **Compromised Passwords Base** file before enabling the Compromised Password
-Check. See the [HIBP Updater](/docs/passwordpolicyenforcer/11.2/admin/hibpupdater.md) topic for instructions.
+Create the **Compromised Passwords Base** file before enabling the Password Scanner. See the [HIBP Updater](/docs/passwordpolicyenforcer/11.2/admin/hibpupdater.md) topic for instructions.
 :::
 
 
-Launch the Compromised Password Checker from the Configuration Console:
+Launch the Password Scanner from the Configuration Console:
 
 Click **Start** > **Netwrix Password Policy Enforcer** > **PPE Configuration**
 or
@@ -24,12 +23,10 @@ Double click the **PPE Configuration** desktop shortcut.
 
 Click the **Compromised Passwords** tile on the Configuration Console dashboard. This feature is
 only available when you select **domain** with the [Connect To a Configuration](configconsole.md#connect-to-a-configuration)
-configuration setting. The Compromised Password Check is disabled by default, and the schedule is
+configuration setting. The Password Scanner is disabled by default, and the schedule is
 set to **None**.
 
-Click the **Compromised Password Check** toggle to enable/disable the feature.
-
-![Compromised Password Check](/images/passwordpolicyenforcer/11.2/administration/compromisedpasswords.webp)
+Click the **Password Scanner** toggle to enable/disable the feature.
 
 - **Compromised Passwords Base** specify the database to use when checking for compromised
   passwords. Netwrix recommends using the [HIBP Updater](/docs/passwordpolicyenforcer/11.2/admin/hibpupdater.md) to create this database.
@@ -78,11 +75,11 @@ Guest (S-1-5-21-1006207104-1546379664-2458629591-501)
 
 ---
 
-#### Schedule the Compromised Password Check
+#### Schedule the Password Scanner
 
-Click **Schedule** to set up a schedule to run the Compromised Password Check.
+Click **Schedule** to set up a schedule to run the Password Scanner.
 
-![Schedule the Compromised Password Policy Check](/images/passwordpolicyenforcer/11.2/administration/compromisedpasswordsschedule.webp)
+![Schedule the Password Scanner](/images/passwordpolicyenforcer/11.2/administration/compromisedpasswordsschedule.webp)
 
 Select the **Frequency**:
 
