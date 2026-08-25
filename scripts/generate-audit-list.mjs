@@ -79,7 +79,14 @@ function parseArgs(argv) {
     else if (raw === '--dry') args.dry = true;
     else if (raw.startsWith('--product=')) args.products = raw.slice('--product='.length).split(',').filter(Boolean);
     else if (raw.startsWith('--since=')) args.since = raw.slice('--since='.length);
-    else if (raw.startsWith('--churn-threshold=')) args.churnThreshold = parseFloat(raw.slice('--churn-threshold='.length));
+    else if (raw.startsWith('--churn-threshold=')) {
+      const value = parseFloat(raw.slice('--churn-threshold='.length));
+      if (!Number.isFinite(value)) {
+        console.error(`❌ --churn-threshold must be a number, got: ${raw.slice('--churn-threshold='.length)}`);
+        process.exit(1);
+      }
+      args.churnThreshold = value;
+    }
     else if (raw.startsWith('--out=')) args.out = raw.slice('--out='.length);
     else if (raw === '--verify-against-build') args.verifyAgainstBuild = 'build';
     else if (raw.startsWith('--verify-against-build=')) args.verifyAgainstBuild = raw.slice('--verify-against-build='.length);
@@ -507,7 +514,7 @@ function verifyAgainstBuild(targetProducts, includedByProduct, args) {
     const files = includedByProduct.get(product.id) || [];
     for (const f of files) {
       const url = deriveUrl(f.relPath, f.entry.routeBase);
-      const urlPath = url.slice(SITE_BASE_URL.length);
+      const urlPath = decodeURIComponent(url.slice(SITE_BASE_URL.length));
       const buildFile = path.join(PROJECT_ROOT, args.verifyAgainstBuild, urlPath, 'index.html');
       checked++;
       if (!fs.existsSync(buildFile)) {

@@ -14,14 +14,16 @@
  *   echo '["exact error text 1", "exact error text 2"]' \
  *     | node .claude/skills/audit-fix/scripts/find-siblings.mjs docs/accessanalyzer/11.6/foo.md
  *
- * Quotes are optional — omit stdin (or pass `[]`) to only resolve
- * product/version/duplicates without checking siblings for specific text.
+ * Quotes are optional — pipe `[]` to only resolve product/version/duplicates
+ * without checking siblings for specific text. Always pipe *something* to
+ * stdin (even `[]`); on a non-TTY stdin that's never written to and never
+ * closed, reading stdin blocks indefinitely, so don't omit the pipe entirely.
  */
 
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { PRODUCTS, versionToUrl, generateDocPath } from '../../../../src/config/products.js';
+import { PRODUCTS, generateDocPath } from '../../../../src/config/products.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -60,6 +62,32 @@ function assignToVersion(filePath, versionIndex) {
     if (filePath === entry.docPath || filePath.startsWith(entry.docPath + '/')) return entry;
   }
   return null;
+}
+
+function resolveCanonicalId(productId) {
+  return PRODUCT_ALIASES[productId] || productId;
+}
+
+/**
+ * recoveryforactivedirectory and identityrecovery are two product entries for
+ * the same doc trees — each carries one real version (customDocPath-less,
+ * no customLink) and one `customLink` stub that just redirects to the other
+ * product's matching version. Siblings live across both product entries, not
+ * just within entry.product.versions, so gather every real (non-customLink)
+ * version from every product sharing the same canonical id.
+ */
+function getFamilyVersionEntries(product) {
+  const canonicalId = resolveCanonicalId(product.id);
+  const familyProducts = PRODUCTS.filter((p) => resolveCanonicalId(p.id) === canonicalId);
+  const entries = [];
+  for (const p of familyProducts) {
+    for (const version of p.versions) {
+      if (version.customLink) continue; // alias stub — the real tree is covered by the other product in the family
+      const docPath = version.customDocPath || generateDocPath(p.path, version.version);
+      entries.push({ product: p, version, docPath });
+    }
+  }
+  return entries;
 }
 
 function parseCsvLine(line) {
@@ -129,11 +157,12 @@ function main() {
   const duplicateVersions = new Set(row.duplicates);
   const siblings = [];
 
-  for (const version of entry.product.versions) {
-    if (version.version === entry.version.version) continue; // self
-    const docPath = version.customDocPath || generateDocPath(entry.product.path, version.version);
-    const candidatePath = path.join(docPath, relPath);
+  const familyEntries = getFamilyVersionEntries(entry.product);
+  for (const fam of familyEntries) {
+    if (fam.docPath === entry.docPath) continue; // self
+    const candidatePath = path.join(fam.docPath, relPath);
     const absCandidate = path.join(PROJECT_ROOT, candidatePath);
+    const version = fam.version;
 
     if (!fs.existsSync(absCandidate)) {
       siblings.push({ version: version.version, path: candidatePath, status: 'file-missing' });
