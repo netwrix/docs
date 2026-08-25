@@ -6,6 +6,8 @@ sidebar_position: 30
 
 # Configure Audit Object Access Policy
 
+Configure the Audit object access policy on the OU that contains your Dell Data Storage appliance.
+
 Netwrix recommends that you avoid linking a GPO to the top level of the domain due to the potential
 impact. Instead, create a new organization unit for your file servers within your domain and assign
 GPO there. For instructions on creating a new OU, see the Microsoft article
@@ -46,8 +48,8 @@ node on the left and navigate to **Policies → Windows Settings → Security Se
 
     where `<NAS Server Name>` is the name of the target Unity\VNX server.
 
-    To update group policies for Dell VNX, you must log in as the 'nasadmin' user.
+    To update group policies for Dell VNX, you must log in as the `nasadmin` user.
 
-You can configure advanced audit policy to narrow the range of events the product tracks and
+You can configure advanced audit policy to narrow the range of events Auditor tracks and
 records, preventing your AuditArchive and the Security event log from overfilling. See the
 [Configure Security Event Log](/docs/auditor/10.7/configuration/fileservers/delldatastorage/securityeventlog.md) topic for additional information.
