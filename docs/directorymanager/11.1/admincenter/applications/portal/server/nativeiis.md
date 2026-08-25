@@ -84,17 +84,17 @@ access the instance. See the [Launch a Portal](/docs/directorymanager/11.1/admin
    instances deployed in native IIS. Select an instance to move its directory under a different IIS
    site.
 5. In the **IIS Site** dropdown list on the **Deployment Configurations** tab, select a site to
-   move the instance’s directory under it. The list displays the websites defined in native IIS.
+   move the instance’s directory under. The list displays the websites defined in native IIS.
 6. Click **Save**.
 
 :::note
-Due to a known limitation, the launch URL does not update to the port of the new IIS site. The URL 
+Due to a known limitation, the launch URL doesn't update to the port of the new IIS site. The URL 
 retains the port of the previously assigned site instead. Netwrix plans to fix this in a future release.
 :::
 
 ## View the Launch URL for an Instance
 
-Use the URL for a portal's deployment instance to launch the respective instance.
+Use the URL for a portal's deployment instance to launch that instance.
 
 **To view the URL:**
 
@@ -108,7 +108,7 @@ Use the URL for a portal's deployment instance to launch the respective instance
    dropdown list displays the portal instances deployed in the respective web server. Select an
    instance to view the launch URL for it.
 5. The **Launch URL** box on the **Deployment Configurations** tab displays the URL. Copy and paste
-   it in the browser to launch the deployment instance of the portal or share it with users so
+   it in the browser to launch the portal's deployment instance, or share it with users so
    they can launch the instance.
 
 ## View the Data Service and Security Service Bound to an Instance
