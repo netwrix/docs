@@ -50,6 +50,13 @@ assert_slug "## Already-Hyphenated--Word" "already-hyphenated--word"
 # Underscores are preserved (word characters, not punctuation)
 assert_slug "## Box_FileMetrics Job" "box_filemetrics-job"
 
+# Trailing whitespace and ATX closing sequences: remark strips these from
+# the heading's text node before github-slugger ever runs, so slugify()
+# must match — not leave a trailing hyphen.
+assert_slug "## Clients " "clients"
+assert_slug "## Overview ##" "overview"
+assert_slug "#### C#" "c"
+
 # Edge cases
 assert_slug "## 123 Numbers First" "123-numbers-first"
 assert_slug "## ALL CAPS HEADING" "all-caps-heading"

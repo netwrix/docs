@@ -33,13 +33,20 @@ _word_overlap_score() {
   local -a ow nw
   IFS='-' read -ra ow <<< "$old_slug"
   IFS='-' read -ra nw <<< "$new_slug"
-  local intersect=0 oreal=0 nreal=0 word nword
+  local intersect=0 oreal=0 nreal=0 word nword i
+  local -a used=()
   for word in "${ow[@]}"; do
     [ -z "$word" ] && continue
     oreal=$((oreal + 1))
-    for nword in "${nw[@]}"; do
+    for i in "${!nw[@]}"; do
+      nword="${nw[$i]}"
       [ -z "$nword" ] && continue
-      if [ "$word" = "$nword" ]; then intersect=$((intersect + 1)); break; fi
+      [ -n "${used[$i]:-}" ] && continue
+      if [ "$word" = "$nword" ]; then
+        intersect=$((intersect + 1))
+        used[$i]=1
+        break
+      fi
     done
   done
   for nword in "${nw[@]}"; do

@@ -18,8 +18,17 @@ slugify() {
   # Underscores are preserved — github-slugger only strips punctuation/
   # symbols, not word characters like `_` (e.g. "Box_FileMetrics" stays
   # "box_filemetrics", not "boxfilemetrics").
+  #
+  # Trailing whitespace (and a trailing ATX closing sequence, e.g.
+  # "## Overview ##") must be stripped BEFORE punctuation removal, because
+  # Docusaurus never slugs it: remark trims it off the heading's text node
+  # before github-slugger ever sees it. Leading/trailing trims only run
+  # once, after the ATX markers are gone, so they can't be confused with
+  # intentional interior whitespace runs.
   printf '%s' "$heading" \
-    | sed -E 's/^#+ +//' \
+    | sed -E 's/^#+[[:space:]]+//' \
+    | sed -E 's/[[:space:]]+#+[[:space:]]*$//' \
+    | sed -E 's/[[:space:]]+$//' \
     | tr '[:upper:]' '[:lower:]' \
     | sed -E "s/[^a-z0-9 _-]//g" \
     | sed -E 's/ /-/g'
