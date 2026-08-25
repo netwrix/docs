@@ -23,8 +23,8 @@ Double click the **PPE Configuration** desktop shortcut.
 
 Click the **Compromised Passwords** tile on the Configuration Console dashboard. This feature is
 only available when you select **domain** with the [Connect To a Configuration](configconsole.md#connect-to-a-configuration)
-configuration setting. The Password Scanner is disabled by default, and the schedule is
-set to **None**.
+configuration setting. The Password Scanner is disabled by default, and the schedule
+defaults to **None**.
 
 Click the **Password Scanner** toggle to enable/disable the feature.
 

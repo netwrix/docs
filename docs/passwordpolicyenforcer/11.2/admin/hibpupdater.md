@@ -13,20 +13,20 @@ reject passwords with a hash that matches a hash in the HIBP database. See the P
 Enforcer [Password Scanner](/docs/passwordpolicyenforcer/11.2/admin/compromisedpasswordcheck.md) topic for HIBP database
 information and configuration options.
 
-You must initially deploy the HIBP database to a server or workstation with an internet connection
-that can retrieve and format the file. After you format the database, you can distribute the HIBP
+You must initially deploy the HIBP database to a server or workstation that has an internet
+connection and can retrieve and format the file. After you format the database, you can distribute the HIBP
 database to your domain controllers so the Password Policy Enforcer server can check passwords
 against the HIBP database.
 
 ## Considerations When Deploying the HIBP Database
 
-Before deploying the HIBP database, consider the pros and cons when choosing its deployment
+Before deploying the HIBP database, consider the advantages and disadvantages of each deployment
 location.
 
 If you copy and store the HIBP database locally on the Domain Controllers:
 
-- The HIBP database takes up additional space on the machine where it is copied. (Aproximetly 13GB but subject to change)
-- If doing local the database needs to be on every Domain Controller in the same location as specified in the Rule.
+- The HIBP database takes up additional space on the machine where you copy it. (Aproximetly 13GB but subject to change)
+- For local storage, the database must be on every Domain Controller in the same location that the Rule specifies.
 - A network connection isn't involved and doesn't affect the performance of checking the password against the HIBP database
 - PPE checks the pending password candidate against the archived hash file locally. If the password hash matches an entry, PPE rejects the pending password change.
 
@@ -36,12 +36,12 @@ If you keep the HIBP database on a Network Share:
 - The database takes up space only on the Network Share, not on each Domain Controller. 
 - Requires a working network connection from the Domain Controllers to the Network Share with Read permissions to check:
 - The pending password candidate from Domain Controller against the HIBP Database stored on the Network Share, this could affect LSASS/Password Change performance depending on the environment.
-- HIBP database space isn't required on the domain controllers but on one Network Location.
-- At the time of a password change, if the Network Share isn't available, the Domain Controller must assume the hash is okay and the possibility of a known compromised password being accepted.
+- The HIBP database requires space on one Network Location rather than on each domain controller.
+- During a password change, if the Network Share isn't available, the Domain Controller must assume the hash is acceptable, which could allow a known compromised password.
 
 ## Installation and Configuration
 
-The HIBP Updater is installed when you install the Password Policy Enforcer Configuration Console.
+Installing the Password Policy Enforcer Configuration Console also installs the HIBP Updater.
 
 :::info
 Only run this from one server.
@@ -72,7 +72,7 @@ Netwrix website.
 
 :::warning
 Ensure the initial update of the database occurs during non-office hours. Due to the
-size of the hash file, this download takes up a significant amount of CPU and download time.
+size of the hash file, this download requires significant CPU and download time.
 :::
 
 
@@ -112,9 +112,9 @@ size of the hash file, this download takes up a significant amount of CPU and do
 
 - Apply:
 
-    - If Website is selected, then clicking **Apply** downloads the HIBP database from the Netwrix
+    - If you select Website, clicking **Apply** downloads the HIBP database from the Netwrix
       website and then processes the database for use by the application
-    - If File is selected, then clicking **Apply** processes the local copy of the (manually obtained) database for use by the application
+    - If you select File, clicking **Apply** processes the local copy of the (manually obtained) database for use by the application
 
 ### Hash File Replication
 
@@ -135,7 +135,7 @@ to receive hash file updates, then use the Sysvol share for file replication and
 scheduled task to copy the file to a local folder.
 
 :::warning
-%SystemRoot%. hash files should only be read from a local disk. Using shared hash files
+%SystemRoot%. Read hash files only from a local disk. Using shared hash files
 degrades performance, and could jeopardize security.
 :::
 
@@ -150,20 +150,20 @@ Scheduler technology to execute the process.
 
 **Step 1 –** Click **Scheduler** in the HIBP Updater.
 
-**Step 2 –** Click **Add Schedule**. An Edit Schedule window appears that looks similar to the HIBP
+**Step 2 –** Click **Add Schedule**. An Edit Schedule window appears. It looks similar to the HIBP
 Updater window.
 
 ![editschedule](/images/passwordpolicyenforcer/11.2/administration/editschedule.webp)
 
 **Step 3 –** Enter the Name and Description of the schedule.
 
-**Step 4 –** Select **Add Trigger** to add the interval that you want to have the schedule run.
+**Step 4 –** Select **Add Trigger** to set the interval for the schedule to run.
 
 - You can add as many triggers as you want to a schedule.
 
 **Step 5 –** Select the Update Type and Location to get the update.
 
-**Step 6 –** After you have set up your schedule, click **OK** to save the schedule.
+**Step 6 –** After you set up your schedule, click **OK** to save it.
 
 PPE updates the HIBP database according to the schedule.
 
