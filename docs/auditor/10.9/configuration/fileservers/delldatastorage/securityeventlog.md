@@ -17,8 +17,8 @@ verify them in the Computer Management console.
 click **+** to create a file system. Name it `events` and set its size to at least
 4 GiB. This file system stores the security log.
 
-**Step 2 –** Confirm that the account specified for data collection in the monitoring
-plan can read the share at `\\<file_server_name>\C$\events`.
+**Step 2 –** Confirm that the account you specified for data collection in the
+monitoring plan can read the share at `\\<file_server_name>\C$\events`.
 
 ## Configure Event Log values in Registry Editor
 
@@ -44,9 +44,9 @@ instead of retaining them.
 ## Verify Event Log settings in the Computer Management console
 
 **Step 1 –** On the computer that hosts Auditor Server, open **Computer Management**:
-navigate to **Start → Run** and type `compmgmt.msc /computer=<file_server_name>`, or
-right-click **Start**, select **Computer Management**, then right-click **Computer
-Management (Local)** and select **Connect to another computer** to specify
+navigate to **Start → Run** and type `compmgmt.msc /computer=<file_server_name>`.
+Alternatively, right-click **Start**, select **Computer Management**, then right-click
+**Computer Management (Local)**, select **Connect to another computer**, and specify
 `<file_server_name>`.
 
 **Step 2 –** Navigate to **System Tools → Event Viewer → Windows Logs**, then

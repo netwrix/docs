@@ -80,7 +80,7 @@ partition of the Data Mover. To increase the security log size, you must move it
 Mover root folder.
 
 **Step 1 –** [Configure Security Event Log](/docs/auditor/10.7/configuration/fileservers/delldatastorage/securityeventlog.md) to set the log path, maximum size, and retention so that the log holds enough events between data collections. Auditor
-doesn't clean Dell Unity logs automatically, so the log starts overwriting when it goes beyond the
+doesn't clean Dell Unity logs automatically, so the log starts overwriting when it exceeds the
 limit. See the
 [Unity Family Security Configuration Guide](https://support.emc.com/docu69321_Unity-Family-Security-Configuration-Guide.pdf?language=en_US) for
 additional information about configuring log rollover manually.
