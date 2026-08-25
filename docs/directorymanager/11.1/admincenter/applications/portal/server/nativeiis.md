@@ -88,9 +88,8 @@ to access the instance. See the [Launch a Portal](/docs/directorymanager/11.1/ad
 6. Click **Save**.
 
 :::note
-We've identified a limitation where the launch URL doesn't update to use the port of the new IIS
-site. The URL retains the port of the previously assigned site instead. We intend to fix this in a
-future release.
+Due to a known limitation, the launch URL does not update to the port of the new IIS site. The URL 
+retains the port of the previously assigned site instead. Netwrix plans to fix this in a future release.
 :::
 
 ## View the Launch URL for an Instance
