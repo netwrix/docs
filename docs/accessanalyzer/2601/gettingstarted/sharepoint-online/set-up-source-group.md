@@ -12,7 +12,7 @@ sidebar_position: 3
 
 3. Enter a **Source Group Name**.
 
-4. Select a service account from the **Service Account** dropdown, or click **+** to create one inline. SharePoint Online requires a **Client ID and Certificate** service account type. See [Service Accounts](../../configurations/service-accounts/overview.md) for details.
+4. Select a service account from the **Service Account** dropdown, or click **+** to create one inline. SharePoint Online requires a **Client ID and Certificate** service account type with specific API permissions [documented here](../../connectors/sharepoint-online/azure-permissions.md#required-permissions). See [Service Accounts](../../configurations/service-accounts/overview.md) for details on creating a service account.
 
 5. Enter the **Tenant ID** for your Microsoft Entra ID directory. This must be a valid UUID (for example, `550e8400-e29b-41d4-a716-446655440000`).
 
@@ -20,21 +20,6 @@ sidebar_position: 3
 
    :::note
    If you click **Regenerate Certificate**, upload the new certificate to your Entra ID App Registration to replace the old one. Removing the old certificate from the App Registration is a manual step in the Azure portal — Access Analyzer can't remove it on your behalf.
-   :::
-
-   :::note
-   Grant the following API permissions, with admin consent, to the Entra ID application for the **Client ID** and certificate:
-
-   | API | Permission | Type | Description |
-   |---|---|---|---|
-   | Microsoft Graph | `Directory.Read.All` | Application | Read directory data |
-   | Microsoft Graph | `Files.Read.All` | Application | Read files in all site collections |
-   | Microsoft Graph | `Group.Read.All` | Application | Read all groups |
-   | Microsoft Graph | `Sites.FullControl.All` | Application | Have full control of all site collections |
-   | Microsoft Graph | `Sites.Read.All` | Application | Read items in all site collections |
-   | Microsoft Graph | `User.Read` | Delegated | Sign in and read user profile |
-   | Microsoft Graph | `User.Read.All` | Application | Read all users' full profiles |
-   | SharePoint | `Sites.FullControl.All` | Application | Have full control of all site collections |
    :::
 
 7. Click **Test Connection** to verify that Access Analyzer can authenticate to your SharePoint Online tenant. Resolve any failures before proceeding.
