@@ -31,6 +31,8 @@ PingCastle.exe --healthcheck --server <other domain> --level Full --api-endpoint
 
 If the server requires TLS 1.2, install the TLS 1.2 client package on the system running the audit.
 
+For details on calling the API directly (including through Swagger or PowerShell), see [Using the Swagger API for PingCastle Enterprise](enterpriseapiswagger.md).
+
 ## Automatic Forest Exploration Setup
 
 For large environments, you can simplify scan configuration by using automatic forest exploration. PingCastle then discovers and scans all domains within a forest automatically, using a wildcard in the `--server` parameter.

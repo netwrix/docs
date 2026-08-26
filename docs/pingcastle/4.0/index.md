@@ -507,7 +507,7 @@ PingCastle can send reports in XML format (encrypted or not) to an API endpoint 
 
 ![https://www.pingcastle.com/wp/wp-content/uploads/2018/09/pingcastle-swagger.webp](/images/pingcastle/basicuser/image26.webp)
 
-For custom integrations, the API specification is available in Swagger format via the [Swagger Editor](https://editor.swagger.io/?url=https://gist.githubusercontent.com/vletoux/c6c565c8af07b4df5df65ed01ffeb917/raw/fca7a288050b7b17ba6024f2a23ef8c4d46fd813/pingcastle-swagger.json) or as a [direct download](https://gist.githubusercontent.com/vletoux/c6c565c8af07b4df5df65ed01ffeb917/raw/fca7a288050b7b17ba6024f2a23ef8c4d46fd813/pingcastle-swagger.json).
+For custom integrations, the API specification is available in Swagger format via the [Swagger Editor](https://editor.swagger.io/?url=https://gist.githubusercontent.com/vletoux/c6c565c8af07b4df5df65ed01ffeb917/raw/fca7a288050b7b17ba6024f2a23ef8c4d46fd813/pingcastle-swagger.json) or as a [direct download](https://gist.githubusercontent.com/vletoux/c6c565c8af07b4df5df65ed01ffeb917/raw/fca7a288050b7b17ba6024f2a23ef8c4d46fd813/pingcastle-swagger.json). If you're using PingCastle Enterprise, see [Using the Swagger API for PingCastle Enterprise](enterpriseapiswagger.md) for a full walkthrough of authenticating and calling the API.
 
 ## Scanners
 
