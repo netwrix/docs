@@ -20,4 +20,4 @@ Groups** checkbox on the [Portal Settings](/docs/directorymanager/11.1/portal/ge
 
 You can [Modify Search Directory](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#modify-search-directory) to search expiring groups
 and add [Filter All Groups](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#filter-all-groups)by clicking **My Expiring Group Grid
-Filters**. All the expiring groups matching the filters will be displayed.
+Filters**. All the expiring groups matching the filters appear.

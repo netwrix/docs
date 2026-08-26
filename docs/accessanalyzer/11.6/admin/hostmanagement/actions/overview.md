@@ -41,8 +41,9 @@ The available actions are:
   – Export the current data grid to a HTML, XML, or CSV file
 - [Suspend/Resume Host Inventory](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/suspend.md)
   – Pause an **In progress** host inventory or resume a paused **In queue** host inventory
-- External commands – Sub-header (not activity) that separates the Activities above which occur
-  within the Enterprise Auditor Console from the Activities below which open external processes:
+- External commands – Sub-header (not activity) that separates the preceding Activities, which occur
+  within the Enterprise Auditor Console, from the following Activities, which open external
+  processes:
 
     - Manage Host – Opens the Microsoft Management Console interface for the selected host if it has
       that feature enabled

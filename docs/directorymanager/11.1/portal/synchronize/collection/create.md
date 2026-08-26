@@ -51,7 +51,7 @@ Step 10 – When you run the job collection, the job collection runs and only th
 for which workflow isn't configured. If workflow is configured for any job, the request gets
 generated against that specific job.
 
-Step 11 – Generated workflow request will be displayed in the
+Step 11 – The generated workflow request appears in the
 “[Requests](/docs/directorymanager/11.1/portal/request/overview.md)” section for the workflow approvers. If the approver
 approves the workflow request, the job will execute the results.
 

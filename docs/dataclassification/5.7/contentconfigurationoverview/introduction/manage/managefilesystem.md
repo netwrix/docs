@@ -67,7 +67,7 @@ classification attributes to the classified documents:
    this checkbox is unchecked.
 3. Select the taxonomy you want and click **Edit**.
 4. In the taxonomy properties, select the **Enabled** checkbox and specify the settings described in
-   the table above.
+   the preceding table.
 
 ![file_source_write_cfg_thumb_0_0](/images/dataclassification/5.7/admin/sources/filesystem/file_source_write_cfg_thumb_0_0.webp)
 

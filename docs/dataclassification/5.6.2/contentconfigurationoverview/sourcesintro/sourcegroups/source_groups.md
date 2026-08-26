@@ -13,7 +13,7 @@ screen will present the following pop-up:
 ![addtogroup](/images/dataclassification/5.6.2/sources/source_groups/addtogroup.webp)
 
 A group can either be "mixed", which allows it to contain all source types, or source specific. In
-the example above a group would be created entitled "Demo Content", which only supports the addition
+the preceding example a group would be created entitled "Demo Content", which only supports the addition
 of SharePoint sources. If a supporting source group already exists, you can select it from the
 dropdown list. [See Dynamic Source Groups for more information.](#dynamic-source-groups)
 

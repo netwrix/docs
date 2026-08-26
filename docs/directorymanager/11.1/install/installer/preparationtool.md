@@ -55,8 +55,8 @@ displayed. Click **OK** to restart.
 ## Run the Preparation Tool on a Directory Manager server
 
 If you have an earlier version of Directory Manager 11.0 installed on a machine, then before running
-the preparation tool ensure no other version of the following prerequisite than the mentioned
-below is installed, otherwise uninstall them manually:
+the preparation tool ensure no version other than the following prerequisite versions is installed.
+Otherwise, uninstall them manually:
 
 - Microsoft .NET Desktop Runtime 8.0.8
 - Microsoft ASP.NET Core Hosting Bundle 8.0.8
@@ -76,5 +76,6 @@ below is installed, otherwise uninstall them manually:
     :::
 
 
-After uninstalling the prerequisites, follow the steps given in the Run the Preparation Tool first
-time on a fresh machine section above.
+After uninstalling the prerequisites, follow the steps given in the
+[Run the Preparation Tool first time on a fresh machine](#run-the-preparation-tool-first-time-on-a-fresh-machine)
+section.

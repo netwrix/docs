@@ -134,7 +134,7 @@ the update which will perform the changes (or, leave the update if the scope was
 
 ![bulkupdate_thumb_0_0](/images/dataclassification/5.7/admin/taxonomies/bulkupdate_thumb_0_0.webp)
 
-All updates, report-only or otherwise, can be found under the "Bulk Updates" tab. Updates are queued
+The "Bulk Updates" tab lists all updates, report-only or otherwise. Updates are queued
 and processed in the background with the results exposed through this interface.
 
 ## Managing Term Sets

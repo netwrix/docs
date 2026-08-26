@@ -24,7 +24,7 @@ Don't modify the query. The query is preconfigured for this job.
 
 Errors running the query during Oracle instance discovery might not be reported. An
 additional log to store the issues has been added for instance discoveries named
-`Oracle_Server_log_[target_hostname]`. This file can be found in
+`Oracle_Server_log_[target_hostname]`. This file is in
 `%sainstalldir%\Jobs\GROUP_ORACLE_0.Collection\GROUP_1.Discovery\JOB_Oracle_Servers\OUTPUT`. See the
 [PowerShell Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/powershell/overview.md)
 topic for additional information.

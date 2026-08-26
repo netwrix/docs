@@ -19,8 +19,8 @@ The main dashboard has three high level graphs highlighting the current state of
 
 ![reportsdashboard](/images/dataclassification/5.7/admin/reporting/reportsdashboard.webp)
 
-The Classification Distribution graph highlights areas of classification overlap. In the example
-below the classification “Communications” has been found to be the most highly scoring term that
+The Classification Distribution graph highlights areas of classification overlap. In the preceding
+example the classification “Communications” has been found to be the most highly scoring term that
 overlaps on all 3 of the site collections displayed. However, the classification “Data” applies very
 strongly to the “2013” site collection.
 

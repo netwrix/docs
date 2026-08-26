@@ -152,7 +152,7 @@ Step 4 – Provide the displayed captcha code in the **Captcha** box.
 Step 5 – Click **Reset Password**. You will be directed to a page that shows the second way
 authentication types the Directory Manageradministrator has enabled for your role.
 
-Step 6 – Authenticate your account using any second way authentication option from below.
+Step 6 – Authenticate your account using any of the following second way authentication options.
 
 - Security Question
 

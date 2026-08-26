@@ -95,6 +95,6 @@ run in future and set the notifications settings for the job.
 5. **Review your Changes** before finishing the job.
 6. Click **Finish** and create the job.
 7. After you run the job, a workflow request is triggered.
-8. Generated workflow request will be displayed in the [Requests](/docs/directorymanager/11.1/portal/request/overview.md)
+8. The generated workflow request appears in the [Requests](/docs/directorymanager/11.1/portal/request/overview.md)
     section for the workflow approvers. If the approver approves the workflow request, the job
     will execute the results.

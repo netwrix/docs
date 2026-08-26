@@ -7,7 +7,8 @@ sidebar_position: 20
 # Custom Roles
 
 A custom role can be created within Access Analyzer to combine the rights of other defined roles.
-Follow these steps to create a custom role.
+
+## Create a Custom Role
 
 **Step 1 –** In the Access Analyzer directory, navigate to **PrivateAssemblies** and edit the
 **rba-roles.conf** file. Add a new section for the custom role as shown in the following

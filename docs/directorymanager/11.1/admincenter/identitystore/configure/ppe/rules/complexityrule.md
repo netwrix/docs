@@ -38,7 +38,7 @@ This default character set contains the following:
 | Alpha Upper | Uppercase alphabetic (A - Z) |
 | Alpha       | Uppercase and lowercase alphabetic (a - z & A - Z) |
 | Numeric     | Numerals (0 - 9) |
-| Special     | All characters not included above |
+| Special     | All characters not included in the other rules |
 | High        | All characters above ANSI 126 |
 | Custom      | No default characters |
 

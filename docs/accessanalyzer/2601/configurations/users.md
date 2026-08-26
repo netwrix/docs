@@ -63,7 +63,7 @@ After installation, complete the following steps in order before handing the pro
 
 | Step | Action | Notes |
 | --- | --- | --- |
-| **1** | Sign in as `admin@dspm.local` | Uses the bootstrap User Admin account. Retrieve the password using the kubectl command above. |
+| **1** | Sign in as `admin@dspm.local` | Uses the bootstrap User Admin account. Retrieve the password using the kubectl command in [Bootstrap admin account](#bootstrap-admin-account). |
 | **2** | Create at least one named **User Admin** | Provides a dedicated account for user management with no system configuration access. Use this account for ongoing user administration so that routine user changes don't require Administrator accounts. |
 | **3** | Create at least one **Administrator** | Grants full access — system configuration and user management. This is typically the person responsible for setting up and maintaining the product. |
 | **4** | Create **Viewer** accounts as needed | Optional. Add Viewer accounts for stakeholders who need read-only access to dashboards and reports. |

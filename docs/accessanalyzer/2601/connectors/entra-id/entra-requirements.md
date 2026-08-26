@@ -51,7 +51,7 @@ The Overview page for the newly registered application opens. Copy the following
 
 6. Click **Microsoft Graph**, then click the **Application permissions** tab.
 
-7. Select the required permissions (see table below).
+7. Select the required permissions (see [Required permissions](#required-permissions)).
 
 8. Click **Add Permissions**.
 

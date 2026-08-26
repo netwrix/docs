@@ -117,7 +117,7 @@ You can also add or remove an object from a group's membership for a temporary p
 
         You add Smith as a temporary member to Group A on May 15 for future dates, May 20-30.
 
-        Smith will be displayed in Group A’s membership with ‘Addition Pending’ as its membership
+        Smith appears in Group A’s membership with ‘Addition Pending’ as its membership
         type from May 15 to 19. However, Smith wouldn't be added to group membership in the
         provider.
 
@@ -137,7 +137,7 @@ You can also add or remove an object from a group's membership for a temporary p
 
         You remove Smith from Group A on May 15 for future dates, May 20-30.
 
-        Smith will be displayed in Group A’s membership with ‘Removal Pending’ as membership type
+        Smith appears in Group A’s membership with ‘Removal Pending’ as membership type
         from May 15 to 19.
 
         On May 20, Smith’s membership type in Directory Manager will change to ‘Temporary Removed’;

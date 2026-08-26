@@ -51,7 +51,7 @@ Example
 Assume you selected the _Agriculture_ taxonomy; it has _Farming_ (_ClassID: 11_) and _Produce_
 (_ClassID: 32_) properties.
 
-If you configure tagging as in the screenshot above, the program will write the following
+If you configure tagging as in the preceding screenshot, the program will write the following
 classifications attributes to the classified documents:
 
 - Property Name: _Agriculture_
@@ -66,7 +66,7 @@ To configure tagging on a source level
    this checkbox.
 3. Select the taxonomy you need and click **Edit**.
 4. In the taxonomy properties, select the **Enabled** checkbox and specify the settings described in
-   the table above.
+   the preceding table.
 
 ![file_source_write_cfg_thumb_0_0](/images/dataclassification/5.6.2/sources/file_system/file_source_write_cfg_thumb_0_0.webp)
 

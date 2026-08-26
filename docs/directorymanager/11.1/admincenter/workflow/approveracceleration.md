@@ -75,7 +75,7 @@ node in the Directory Manager portal.
 :::
 
 
-Workflow acceleration rules are discussed below, with these assumed acceleration settings:
+The following sections discuss workflow acceleration rules, with these assumed acceleration settings:
 
 Acceleration level: 3  
 Approval days: 5

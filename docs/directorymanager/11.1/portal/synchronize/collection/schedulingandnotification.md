@@ -52,6 +52,6 @@ Step 7 – Click **Finish** to exit the wizard and create the job collection.
 
 Step 8 – After you run the job collection, a workflow request is triggered.
 
-Step 9 – Generated workflow request will be displayed in the [Requests](/docs/directorymanager/11.1/portal/request/overview.md)
+Step 9 – The generated workflow request appears in the [Requests](/docs/directorymanager/11.1/portal/request/overview.md)
 section for the workflow approvers. If the approver approves the workflow request, the job will
 execute the results.

@@ -15,8 +15,8 @@ Review the following for additional information:
 Use the Folders section to add either Windows Directories, SAMBA, or NFS shares, to the
 index.
 
-Using NFS Shares requires additional Windows components to be installed. Full details / instructions
-can be found within the Netwrix Data Classification Knowledge base. If you want to make other
+Using NFS Shares requires additional Windows components to be installed. The Netwrix Data
+Classification Knowledge base provides full details and instructions. If you want to make other
 configuration changes before collection of the source occurs ensure you tick the checkbox Pause
 source on creation.
 
@@ -26,7 +26,7 @@ Complete the following fields:
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Folder                     | Enter the UNC path of the root folder where collection is to start. You can add either windows directories, or NetApp filer or EMC storage devices, to the index.                                                                                             |
 | Username                   | Specify the account used to process the folder.                                                                                                                                                                                                               |
-| Password                   | Provide a password for the account specified above.                                                                                                                                                                                                           |
+| Password                   | Provide a password for the account specified in **Username**.                                                                                                                                                                                                           |
 | Include sub-folders        | Select if you want to process data in sub-folders and set depth limit.                                                                                                                                                                                        |
 | Depth Limit                | Specify how many levels the indexing should process (if "include sub-folders" is checked).                                                                                                                                                                    |
 | Allow anonymous access     | This option is used to disable security filtering for selected sources. If unselected, the indexing processes will collect Windows Access Control Lists (ACLs) for the files and search results will be filtered based upon the end user's Windows identity.  |

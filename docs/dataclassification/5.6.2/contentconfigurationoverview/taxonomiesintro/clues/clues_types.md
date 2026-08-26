@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Types of Clues
 
-The following types of clues are available, each is described in detail below:
+The following types of clues are available, and this article describes each one in detail:
 
 - [Standard Clues](#standard-clues)
   - [Case-Sensitive Clues](#case-sensitive-clues)
@@ -63,7 +63,7 @@ The date helper supports assisting in the creation of both static and dynamic da
 ![createdateclue](/images/dataclassification/5.6.2/taxonomies/createdateclue.webp)
 
 Both field and value are case-insensitive for metadata matches. Wildcard matches must included a \*
-character before the equals sign (as shown in the example above).
+character before the equals sign (as shown in the preceding example).
 
 The following special metadata fields can be used:
 
@@ -285,9 +285,9 @@ But not any of the following:
 
 A Regular Expression matching clue – by default this is run across all document text and metadata.
 Regular expression clues are run in a case-sensitive manner by default. You can optionally enable
-the "Case-Insensitive Regex Processing" mode, this setting can be found in Config -> Classifier.
+the "Case-Insensitive Regex Processing" mode; this setting is in Config -> Classifier.
 
-Definitions of the required syntax for regular expressions can be found in many places, including
+Many places define the required syntax for regular expressions, including
 Microsoft:
 [Regular Expression Syntax](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/ae5bf541(v=vs.100)).
 

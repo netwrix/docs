@@ -107,7 +107,7 @@ required, customize the Command Timeout and Connection Port properties.
 - AppId – The name of the CyberArk application
 - CommandTimeout – Set to the suggested default of 30
 - ConnectionPort – This is a configurable option found during the installation of the CyberArk
-  Credential Provider. After installation, it can be found in the configuration file located in the
+  Credential Provider. After installation, it is in the configuration file located in the
   installation folder.
 
     See the CyberArk

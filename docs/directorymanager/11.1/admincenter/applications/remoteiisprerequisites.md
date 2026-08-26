@@ -98,7 +98,7 @@ The next step is to assign permissions on the physical folder that binds to your
 
     ![Script for appsettings.json file](/images/directorymanager/11.1/admincenter/portal/appsettings-full.webp)
 
-4. The script to be added is given below:
+4. Add the following script:
 
     ```
        },
@@ -131,7 +131,7 @@ Admin Center uses the
 communicate with remote IIS. Ensure this API is installed as a Windows service on the remote IIS
 machine.
 
-To connect to the API, an access key is required. Follow these steps to generate it.
+To connect to the API, an access key is required.
 
 1. Go to _https://localhost:55539/_ to launch the Microsoft Administration API interface.
 

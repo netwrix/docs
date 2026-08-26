@@ -74,7 +74,7 @@ Step 11 – Click **Finish** and create the job.
 Step 12 – After you run the job, the job runs if workflow isn't configured. If workflow is
 configured, the request gets generated.
 
-Step 13 – Generated workflow request will be displayed in the [Requests](/docs/directorymanager/11.1/portal/request/overview.md)
+Step 13 – The generated workflow request appears in the [Requests](/docs/directorymanager/11.1/portal/request/overview.md)
 section for the workflow approvers. If the approver approves the workflow request, the job will
 execute the results.
 

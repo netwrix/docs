@@ -13,8 +13,8 @@ supported in reports in the Jobs tree.
 
 ![Web Console Home Page](/images/accessanalyzer/12.0/admin/report/webconsolehome.webp)
 
-If Reports from solutions that have been run have tags added to them, those tags can be found under
-the Tags tab in the Navigation section on the right-hand side of the Published Reports homepage.
+If Reports from solutions that have been run have tags added to them, the Tags tab in the Navigation
+section on the right-hand side of the Published Reports homepage lists those tags.
 
 | ![Tags tab on Web Console homepage](/images/accessanalyzer/12.0/admin/report/tagstab.webp)  | ![Privileged Accounts Tag page](/images/accessanalyzer/12.0/admin/report/privilegedaccountstag.webp)  |
 |:-----------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------:|

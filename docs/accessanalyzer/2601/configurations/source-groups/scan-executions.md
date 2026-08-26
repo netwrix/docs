@@ -34,7 +34,7 @@ The source groups list displays an aggregate scan status for each group. Access 
 2. **Running** — One or more sources has an execution in a pending, running, pausing, resuming, stopping, or post-processing state.
 3. **Failed** — One or more sources has a failed execution, and none are running or paused.
 4. **Completed** — All sources have completed their most recent execution successfully.
-5. **Completed with errors** — One or more sources has a stopped or cancelled execution, and none meet the criteria above.
+5. **Completed with errors** — One or more sources has a stopped or cancelled execution, and none meet the preceding criteria.
 6. **Not run yet** — No scan executions exist for any source in the group.
 
 This means a group shows **Running** even if only one source is actively scanning, and it shows **Failed** only when no scans are still in progress.

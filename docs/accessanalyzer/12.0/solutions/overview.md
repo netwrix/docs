@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # Solutions
 
-The predefined job groups and jobs for the various Access Analyzer solutions can be found within the
-Access Analyzer Instant Job Library, according to the license owned by the organization.
+The Access Analyzer Instant Job Library contains the predefined job groups and jobs for the various
+Access Analyzer solutions, according to the license owned by the organization.
 
 ## Understanding Instant Solutions
 

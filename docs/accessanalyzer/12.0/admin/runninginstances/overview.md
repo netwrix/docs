@@ -49,8 +49,8 @@ scheduled task and isn't enabled for interactive job executions.
 
 ![Number of jobs running on bottom bar](/images/accessanalyzer/12.0/admin/runninginstances/overviewbottombar.webp)
 
-The number of jobs being run can be found in the lower-left-hand corner of the Access
-Analyzer Console.
+The lower-left-hand corner of the Access Analyzer Console shows the number of jobs currently
+running.
 
 ## View Host
 

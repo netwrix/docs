@@ -50,7 +50,7 @@ accounts.
 
 4. You can view the notification content in two distinct modes:
 
-    - _Source Code (HTML)_ - This is the default mode, as shown in the figure above. You can make
+    - _Source Code (HTML)_ - This is the default mode, as shown in the preceding figure. You can make
       changes to the notification template in this mode.
     - _Interactive_ - This is the user-friendly, front-end view. Use it to view the email
       notification, as it will be sent to users.

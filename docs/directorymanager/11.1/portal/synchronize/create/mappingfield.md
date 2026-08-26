@@ -23,8 +23,8 @@ Once selected, you can see a specific set of objects that can be created in the 
 providers. After the object type is selected, there are a set of mandatory attributes that are
 required for creating the respective objects.
 
-The tables below show the mandatory attribute for different object types for each provider and what
-transformations that need to apply to them while mapping.
+The following tables show the mandatory attribute for different object types for each provider and
+what transformations that need to apply to them while mapping.
 
 Mandatory attributes for User:
 

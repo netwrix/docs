@@ -12,4 +12,4 @@ the [Portal Settings](/docs/directorymanager/11.1/portal/generalfeatures/portal.
 
 You can [Modify Search Directory](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#modify-search-directory) to search dynasties and add
 [Filter All Groups](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#filter-all-groups)by clicking **My Dynasties Grid Filters**. All
-the dynasties matching the filters will be displayed.
+the dynasties matching the filters appear.

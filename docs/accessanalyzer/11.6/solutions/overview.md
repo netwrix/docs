@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # Solutions
 
-The predefined job groups and jobs for the various Enterprise Auditor solutions can be found within
-the Enterprise Auditor Instant Job Library, according to the license owned by the organization.
+The Enterprise Auditor Instant Job Library contains the predefined job groups and jobs for the
+various Enterprise Auditor solutions, according to the license owned by the organization.
 
 ## Understanding Instant Solutions
 

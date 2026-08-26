@@ -23,7 +23,7 @@ Do the following:
     ![binding_expressions_examples](/images/directorymanager/11.1/admincenter/portal/linkedcombo/binding_expressions_examples.webp)
 
     In an expression, worksheet names are enclosed in brackets while the names of the data columns
-    in the worksheets are without brackets. The expressions in the figure above indicate that the
+    in the worksheets are without brackets. The expressions in the preceding figure indicate that the
     Excel workbook has three worksheets: _Company_, _Country_, and _City_.
 
     - The _Company_ worksheet has one data column: _Name_.
@@ -50,7 +50,7 @@ Do the following:
     4. In the **Binding Expression** dropdown list, select an expression that represents the data
        column you want to link to the field selected in the **Linked Field** list.
        Expressions are auto generated with respect to the number of sheets in the source Excel
-       workbook and the number of columns in a sheet, as shown in the figure above.
+       workbook and the number of columns in a sheet, as shown in the preceding figure.
 
     The following example shows the relationship for an Excel workbook with three worksheets:
     0-Company, 1-Country, and 2-City. (You can also create two linked combos to manage the

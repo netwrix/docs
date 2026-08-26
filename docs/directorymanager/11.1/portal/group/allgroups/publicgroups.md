@@ -13,4 +13,4 @@ respectively.
 
 You can [Modify Search Directory](allgroups.md#modify-search-directory) to search public groups and
 add [Filter All Groups](allgroups.md#filter-all-groups) by clicking **Public Group Grid Filters**.
-All the public groups matching the filters will be displayed.
+All the public groups matching the filters appear.

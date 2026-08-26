@@ -28,7 +28,7 @@ The following sections group the tables and their views by type.
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | SA_FSAA_Trustees           | Contains information about any domain user, group, or security principal that has been assigned permissions. This table doesn't contain local users and groups since none of the trustees in this table are specific to any one host. |
 | SA_FSAA_LocalTrustees      | Contains information about any trustees that don't belong to a domain, primarily local users and local groups                                                                                                                         |
-| SA_FSAA_TrusteeEquivalence | Contains information about Local Group membership. The trustees described can be found in the SA_FSAA_LocalTrustees table.                                                                                                             |
+| SA_FSAA_TrusteeEquivalence | Contains information about Local Group membership. The SA_FSAA_LocalTrustees table contains the trustees described.                                                                                                             |
 
 **Access Calculation Tables**
 

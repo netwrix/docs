@@ -136,7 +136,8 @@ On the Dynasty Options page:
     involves the collaboration of two attributes: manager and direct reports, to create the
     Dynasty’s hierarchical structure.
 
-    Some examples of a managerial Dynasty with a different set of attributes are given below:
+    The following list gives some examples of a managerial Dynasty with a different set of
+    attributes:
 
     - To add another attribute, click **Add** and select the required attribute.
     - To remove an attribute, select it and click **Remove**.

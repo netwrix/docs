@@ -1196,7 +1196,7 @@ After saving the configuration and restarting (or locking the screen):
 
 ### Next Steps
 
-**Basic Setup Complete!** You now have a working credential provider.
+**Basic setup is complete.** You now have a working credential provider.
 
 **Optional Next Steps**:
 - [Configure filtering](#credential-provider-filtering) to control which other login options appear
@@ -1815,7 +1815,7 @@ Setting this to `true` is a **significant security risk**:
    ```xml
    <IgnoreCertificateErrors value="true" />
    ```
-   **Remember to set this back to `false` before production deployment!**
+   **Set this back to `false` before production deployment.**
 
 ---
 

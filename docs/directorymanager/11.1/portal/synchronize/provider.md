@@ -11,7 +11,7 @@ Microsoft Entra ID) as well as create data sources for providers such as files a
 identity stores and data sources can be used as source and destination in Synchronize jobs.
 Synchronize transfers data from one data source to another.
 
-A brief description of each supported data provider is given below.
+The following sections briefly describe each supported data provider.
 
 ## Identity Stores
 

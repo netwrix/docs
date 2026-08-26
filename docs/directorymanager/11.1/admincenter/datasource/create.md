@@ -118,7 +118,7 @@ provider.
 
 The MS Access provider supports automatic schema detection. For Synchronize to communicate with this
 provider, data connectivity components must be installed on the Directory Manager server. These
-components can be found at
+components are available at
 [Microsoft Access Database Engine 2016 Redistributable](https://www.microsoft.com/en-us/download/details.aspx?id=54920).
 
 The Access file for creating a data source can be placed on a local server or OneDrive. Follow the

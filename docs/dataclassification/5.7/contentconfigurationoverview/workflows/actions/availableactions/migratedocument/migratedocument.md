@@ -71,8 +71,8 @@ specific content from those documents. Redaction might be required by your secur
 compliance regulation. For example, you may need to remove SSN from your file.
 
 To use redaction in a workflow, you need to set up one or more redaction plans. You can choose to
-redact the predefined entities by selecting the plans from the dropdown list on the screenshot
-below or create custom groups of entities first.
+redact the predefined entities by selecting the plans from the dropdown list on the following
+screenshot, or create custom groups of entities first.
 
 ![workflow_redaction](/images/dataclassification/5.7/admin/workflows/actions/workflow_redaction.webp)
 

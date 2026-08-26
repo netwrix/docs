@@ -10,7 +10,7 @@ The Activities pane displays a list of activities which can be conducted within 
 selected console section. It is only visible if there are activities available for the selected
 section. In the few cases where the Results pane is a wizard, this pane becomes the navigation pane
 for the wizard, e.g. the Access Analyzer Host Discovery Wizard. If the selected console
-section has an associated Activities Pane, it can be found on the right-hand side of the Access
+section has an associated Activities Pane, it appears on the right-hand side of the Access
 Analyzer Console.
 
 ![activitiespane](/images/accessanalyzer/12.0/admin/navigate/activitiespane.webp)

@@ -23,4 +23,4 @@ Dynasty names help you group a parent Dynasty with its respective child Dynastie
 
 You can [Modify Search Directory](allgroups.md#modify-search-directory) to search dynasties and add
 [Filter All Groups](allgroups.md#filter-all-groups)by clicking **Dynasties Grid Filters**. All the
-dynasties matching the filters will be displayed.
+dynasties matching the filters appear.

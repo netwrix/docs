@@ -13,4 +13,4 @@ respectively.
 
 You can [Modify Search Directory](allgroups.md#modify-search-directory) to search smart groups and
 add [Filter All Groups](allgroups.md#filter-all-groups)by clicking **Smart Group Grid Filter**. All
-the smart groups matching the filters will be displayed.
+the smart groups matching the filters appear.

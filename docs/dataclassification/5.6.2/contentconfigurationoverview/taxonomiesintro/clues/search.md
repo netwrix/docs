@@ -28,7 +28,7 @@ tab and configure search settings.
     - The URL filter must end on a folder boundary.
     - Use custom filter to specify a number of complex filters: boolean, datetime, and numeric.
 
-    **NOTE:** Full description of all filters can be found in the API Reference Guide. You can
+    **NOTE:** The API Reference Guide fully describes all filters. You can
     access it by entering http://localhost/NDC/apidocumentation from your NDC server. If the
     originally installed version of NDC is 5.6 or older, the path is
     http://localhost/conceptqs/apidocumentation.

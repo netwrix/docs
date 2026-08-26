@@ -31,7 +31,7 @@ topic.
 
 ## History views in the portal
 
-The Directory Manager Portal displays history as below:
+The Directory Manager Portal displays history in the following places:
 
 - **My Account History** on the portal's dashboard  
   Displays a list of actions performed by the logged-on user.

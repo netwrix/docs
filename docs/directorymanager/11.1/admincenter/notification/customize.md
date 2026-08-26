@@ -128,7 +128,7 @@ recommended. By using a tag, you can display an attribute’s value in the notif
 | 1.  | TARGETOBJECT     | Can be any object (user/group/contact) that is under consideration in a notification                                              |
 | 2.  | REQUESTER        | The user object who makes a workflow request                                                                                      |
 | 3.  | APPROVER         | The approver in workflow notifications                                                                                            |
-| 4.  | ANOTHER_APPROVER | An approver, other than the ‘approver’ above, who performs an action on the workflow request (as there can be multiple approvers) |
+| 4.  | ANOTHER_APPROVER | An approver, other than APPROVER, who performs an action on the workflow request (as there can be multiple approvers) |
 | 5.  | BEHALFEDPERSON   | The user on whose behalf join/leave requests are made by their manager                                                            |
 | 6.  | RECEIVER         | The receiver of a notification                                                                                                    |
 | 7.  | AUTHOR           | A user who creates/modifies/deletes an object                                                                                     |

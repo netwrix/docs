@@ -231,7 +231,7 @@ You can change the ownership type of an additional owner from temporary to perma
 
         You remove Smith as an additional owner of Group A on May 15 for future dates, May 20-30.
 
-        Smith will be displayed as Group A’s additional owner with ‘Removal Pending’ as ownership
+        Smith appears as Group A’s additional owner with ‘Removal Pending’ as ownership
         type from May 15 to 19.
 
         On May 20, Smith’s ownership type in Directory Manager will change to ‘Temporary Removed’;

@@ -15,4 +15,4 @@ ownership in My Deleted Groups** checkbox on the [Portal Settings](/docs/directo
 
 You can [Modify Search Directory](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#modify-search-directory) to search deleted groups and
 add [Filter All Groups](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#filter-all-groups)by clicking **My Deleted Groups Grid
-Filters**. All your deleted groups matching the filters will be displayed.
+Filters**. All your deleted groups matching the filters appear.

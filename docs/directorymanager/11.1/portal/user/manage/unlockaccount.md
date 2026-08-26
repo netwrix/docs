@@ -48,7 +48,8 @@ Step 4 – Enter captcha in the **Captcha** box.
 Step 5 – Click **Unlock Account**. You will be directed to a page where the authentication types
 you enrolled your account with are listed.
 
-To get authenticated through the required authentication types, click the relevant option below:
+To get authenticated through the required authentication types, click the relevant option in the
+following list:
 
 - Security Questions
 
@@ -146,7 +147,7 @@ You will be directed to a page where the Second Way Authentication type options 
 administrator has configured for your role.
 
 To get authenticated through the defined authentication types for your role, click the relevant
-option below:
+option in the following list:
 
 - Security Question
 

@@ -45,7 +45,7 @@ This section covers the steps you perform on the Box side. You perform steps 3 a
 
 1. Log into your Box cloud-based storage facility using your _Box Developer Account_.
 2. Open the Box developer's console endpoint: `https://app.box.com/developers/console`.
-3. If you have not created an app before, you will see a screen similar to the one below:
+3. If you have not created an app before, you will see a screen similar to the following:
 
     ![box_app](/images/dataclassification/5.7/configuration/configinfrastructure/box_app.webp)
 

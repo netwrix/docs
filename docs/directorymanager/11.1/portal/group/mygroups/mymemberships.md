@@ -14,4 +14,4 @@ groups aren't displayed.
 
 You can [Modify Search Directory](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#modify-search-directory) to search your memberships
 and add [Filter All Groups](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#filter-all-groups)by clicking **My Memberships Grid
-Filters**. All your memberships matching the filters will be displayed.
+Filters**. All your memberships matching the filters appear.

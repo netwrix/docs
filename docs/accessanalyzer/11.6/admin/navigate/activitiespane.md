@@ -10,7 +10,7 @@ The Activities pane displays a list of activities that you can perform within th
 selected console section. It is only visible if there are activities available for the selected
 section. In the few cases where the Results pane is a wizard, this pane becomes the navigation pane
 for the wizard, e.g. the Enterprise Auditor Host Discovery Wizard. If the selected console
-section has an associated Activities Pane, it can be found on the right-hand side of the Enterprise
+section has an associated Activities Pane, it appears on the right-hand side of the Enterprise
 Auditor Console.
 
 ![activitiespane](/images/accessanalyzer/11.6/admin/navigate/activitiespane.webp)

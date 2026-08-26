@@ -14,7 +14,7 @@ See the following sections for detailed information:
 - Hardware Configuration
 
 :::note
-The requirements below are sufficient for evaluation purposes only. Refer to the
+The following requirements are sufficient for evaluation purposes only. Refer to the
 [Requirements to Install Netwrix Data Classification](/docs/dataclassification/5.7/introduction/requirements/overview.md) topic for
 complete information on the requirements for installing Netwrix Data Classification in production
 environments.

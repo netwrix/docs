@@ -22,8 +22,8 @@ Step 2 – The Search In list shows all organizational units or containers in th
 store. Select the checkboxes for the required containers to search in. To search all containers,
 select the **Entire Directory** checkbox.
 
-Step 3 – In the Search box, enter a search parameter. Below are some tips to get the best out of your
-searching:
+Step 3 – In the Search box, enter a search parameter. The following tips help you get the best out
+of your searching:
 
 - You can enter the complete string as a search parameter.
 

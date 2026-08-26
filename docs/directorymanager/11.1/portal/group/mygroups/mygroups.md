@@ -24,7 +24,7 @@ groups only; expired and deleted groups aren't displayed.
 
 You can [Modify Search Directory](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#modify-search-directory) to search your groups and
 add [Filter All Groups](/docs/directorymanager/11.1/portal/group/allgroups/allgroups.md#filter-all-groups)by clicking **My Groups Grid Filters**. All
-your groups matching the filters will be displayed.
+your groups matching the filters appear.
 
 **You can:**
 

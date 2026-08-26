@@ -45,7 +45,7 @@ To delete a workflow, follow the steps described in the
 ## Cloning, Enabling, or Renaming a Workflow
 
 1. Click the link in the **Name** column for the required workflow ( e.g. Global for Google Drive in
-   the figure below):
+   the following figure):
 
 ![workflow_delete_single_thumb_0_0](/images/dataclassification/5.6.2/workflows/workflow_delete_single_thumb_0_0.webp)
 
