@@ -108,8 +108,6 @@ For the full TLS specification, including multi-CA environments, see the TLS Cer
 
 Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
 
-The installer generates a temporary password for this account and displays it once, in the summary it prints at the end of the installation. Copy it before closing the terminal. The first admin must set a new password on their first sign-in.
-
 To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values under Identity provider below before you start, so you have them ready in the setup wizard.
 
 ## Identity provider
