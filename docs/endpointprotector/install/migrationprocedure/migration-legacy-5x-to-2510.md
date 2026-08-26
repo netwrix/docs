@@ -72,7 +72,7 @@ Restore the backup **after** you fully patch the 2510 image to 2604. The 5.9.4.2
 | Backup Source Version | Can Be Restored to 2604 |
 |---|---|
 | Older than 5.7.0.0 | ❌ Step-by-step upgrade path required first |
-| 5.7.0.0 – 5.9.4.1 | ❌ Must reach 5.9.4.2 first via cumulative patch |
+| 5.7.0.0 – 5.9.4.1 (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0, 5.8.2.0, 5.9.0.0, 5.9.1.0, 5.9.2.0, 5.9.3.0, 5.9.4.0, 5.9.4.1) | ❌ Must reach 5.9.4.2 first via cumulative patch |
 | **5.9.4.2** | ✅ **Yes — the only accepted legacy 5.x source version** |
 | **2509, 2510, 2601, 2602, 2604** | ✅ **Yes** |
 
@@ -269,7 +269,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 
 ## Phase 1 — Upgrade to 5.9.4.2 via Cumulative Patch
 
-This phase applies to environments running **any version from 5.7.0.0 through 5.9.4.1**. The cumulative patch upgrades your server directly to 5.9.4.2 in a single operation, incorporating all fixes and features introduced across every intermediate version.
+This phase applies to environments running **any version from 5.7.0.0 through 5.9.4.1** (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0, 5.8.2.0, 5.9.0.0, 5.9.1.0, 5.9.2.0, 5.9.3.0, 5.9.4.0, 5.9.4.1). The cumulative patch upgrades your server directly to 5.9.4.2 in a single operation, incorporating all fixes and features introduced across every intermediate version.
 
 ### Downloading the Cumulative Patch
 
