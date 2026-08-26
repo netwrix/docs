@@ -36,10 +36,6 @@ Choose a deployment size based on your environment:
 The required disk space scales with the number of objects across your sources rather than the size of on-disk data, because Access Analyzer stores only object metadata. These are minimum disk space requirements — allocate more if possible to avoid running out of space later.
 :::
 
-**Network:** Outbound HTTPS (port 443) to the endpoints in the [Required Domains](#required-domains) table.
-
-**License:** Valid Netwrix license key.
-
 :::note
 **Supported OS:** Ubuntu 24.04 LTS is the primary tested platform. Red Hat Enterprise Linux (RHEL) 8 and 9, CentOS, Fedora, and Debian stable releases are also compatible. Access Analyzer doesn't support AIX or non-Linux operating systems.
 :::
@@ -78,7 +74,7 @@ sudo mkdir -p /etc/dspm
 | `<hostname>.key` | Private key paired with the certificate (PEM). The OS user running the installer must be able to read it — not just `root`. |
 | `ca-bundle.crt` | CA certificates that trust the server certificate. Required only if an internal or private CA signs the certificate — omit it for a publicly trusted certificate. |
 
-**SAN requirement:** The hostname in the SAN list must be lowercase. Browsers normalize hostnames to lowercase during TLS validation — a case mismatch causes HTTP 401 failures at sign-in. The SAN must also include the server IP address.
+**SAN requirement:** Browsers normalize hostnames to lowercase during TLS validation. If the SAN entry carries any uppercase characters, sign-in fails with an HTTP 401.
 
 ```bash
 sudo chown $(whoami) /etc/dspm/<hostname>.key
@@ -108,7 +104,7 @@ For the full TLS specification, including multi-CA environments, see the TLS Cer
 
 Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
 
-To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values in [Identity provider](#identity-provider) before you start, so you have them ready in the setup wizard.
+To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values in the next section before you start, so you have them ready in the setup wizard.
 
 ## Identity provider
 
@@ -130,12 +126,14 @@ Collect the following values:
 | --- | --- |
 | **AD domain name** | Fully qualified domain name of your AD forest — for example, `corp.example.com`. Access Analyzer connects over LDAPS (port 636) automatically. |
 | **Service account** | A read-only service account, in User Principal Name (UPN) format — for example, `aa26-svc@corp.example.com` |
-| **Service account password** | — |
+| **Service account password** | The password for the account above |
 | **AD authentication certificate** | The CA certificate (PEM) that issued the domain controller's LDAPS certificate |
 
 You don't need to look up the users base DN or the email attribute yourself. After you enter the domain, service account, and certificate, the wizard tests the connection and discovers both automatically.
 
 ### Entra ID
+
+**Admin consent:** Line up a **Global Administrator** or **Privileged Role Administrator**. They must be available during setup to sign in and grant consent for Access Analyzer to read the directory.
 
 Complete the following steps in the Azure Portal before connecting Access Analyzer.
 
@@ -154,8 +152,6 @@ Collect the following values:
 | **Application (client) ID** | App registration > Overview > Application (client) ID |
 | **Client secret** | Created in step 4 |
 
-Enter these values in the Access Analyzer setup wizard and click **Sign in with Microsoft and continue**. A popup prompts a **Global Administrator** or **Privileged Role Administrator** to sign in and grant consent for Access Analyzer to read the directory.
-
 :::note
 Register both redirect URIs before anyone signs in with Entra ID. The setup wizard's callback completes the connection; `/idps/callback` is Microsoft's redirect target for every subsequent sign-in — omitting it lets you finish setup but blocks sign-in with an `AADSTS50011` redirect URI mismatch.
 :::
@@ -172,7 +168,6 @@ Ports the Access Analyzer server must reach on your data sources and directory s
 
 - **Outbound** from the Access Analyzer server to the target source/host — **required** for all connectors.
 - **Inbound** at the target source/host from the Access Analyzer server — **required** (the target must accept the connection on the listed port).
-- **Two-way communication** between the Access Analyzer server and the target — **optional**. No connector requires it, but you can enable it if your environment does.
 
 | Connector | Port | Protocol | Notes |
 | --- | --- | --- | --- |
