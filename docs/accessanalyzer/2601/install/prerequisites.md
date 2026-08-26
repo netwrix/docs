@@ -12,7 +12,7 @@ Gather the following before you start the Access Analyzer installer. For the ful
 
 - [ ] Server meets hardware and OS requirements
 - [ ] Account with `sudo` access to the server ready
-- [ ] Outbound HTTPS access confirmed to all required domains
+- [ ] Outbound HTTPS access to all required domains confirmed
 - [ ] Server hostname is a fully qualified domain name (FQDN) that resolves to the server IP
 - [ ] TLS certificate option chosen; certificate files prepared if using Bring Your Own
 - [ ] First admin name and email address decided (this provisions a local account — no AD/Entra dependency)
@@ -117,7 +117,7 @@ You need your Netwrix license key to download the installer; it's the first prom
 
 ## Connector port requirements
 
-Ports the Access Analyzer server must be able to reach on your data sources and directory services. Only open the ports for the connectors you plan to configure.
+Ports the Access Analyzer server must reach on your data sources and directory services. Only open the ports for the connectors you plan to configure.
 
 **Direction of traffic:**
 
@@ -163,9 +163,9 @@ Active Directory doesn't require an application registration. Prepare the follow
 
 **Service account:** Create a dedicated, read-only service account in your directory. Access Analyzer never writes to your directory.
 
-**Certificate:** Have the CA certificate that issued your domain controller's LDAPS certificate ready as a PEM file. The setup wizard requires it to complete the connection test.
+**Certificate:** Prepare a PEM file containing the CA certificate that issued your domain controller's LDAPS certificate. The setup wizard requires it to complete the connection test.
 
-**Network access:** The Access Analyzer cluster must be able to reach a domain controller in your AD forest over LDAPS (port 636).
+**Network access:** The Access Analyzer cluster must reach a domain controller in your AD forest over LDAPS (port 636).
 
 Collect the following values:
 
