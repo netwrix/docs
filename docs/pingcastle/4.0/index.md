@@ -6,7 +6,7 @@ sidebar_label: User guide
 
 ## About PingCastle
 
-PingCastle is a security assessment and auditing tool for CISOs, Security Auditors, and IT Professionals working with Active Directory and Entra ID.
+PingCastle is a security assessment and auditing tool for Chief Information Security Officers (CISOs), Security Auditors, and IT Professionals working with Active Directory and Entra ID.
 
 Netwrix offers various products to help protect your network infrastructure. PingCastle focuses on assessment. It collects comprehensive information from your Active Directory and Entra ID environments, analyzes this data for security risks and misconfigurations, and generates detailed reports with actionable findings.
 
@@ -270,7 +270,7 @@ PingCastle.exe --hc-conso
 This consolidates all available XML reports and generates summary reports with trust relationship maps. You can combine XML reports generated from multiple locations to create a comprehensive view of your infrastructure.
 
 :::note
-PingCastle performs consolidation automatically when using `--server *` for automatic domain discovery.
+PingCastle performs consolidation automatically when you use `--server *` for automatic domain discovery.
 :::
 
 **Output Files**
@@ -487,7 +487,7 @@ For authenticated SMTP, provide values for `UserName` and `Password`. For TLS/SS
 | `--sendXmlTo <emails>` | Send only the XML report. Accepts comma-separated email addresses |
 | `--sendHtmlTo <emails>` | Send only the HTML report. Accepts comma-separated email addresses |
 | `--sendAllTo <emails>` | Send both HTML and XML reports. Accepts comma-separated email addresses |
-| `--notifyMail <emails>` | Send notification when reports are received |
+| `--notifyMail <emails>` | Send a notification when reports arrive |
 | `--smtplogin <user>` | Specify SMTP username via command line (overrides config) |
 | `--smtppass <password>` | Specify SMTP password via command line (overrides config) |
 | `--smtptls` | Enable TLS/SSL for SMTP (for ports other than 465 and 587) |
@@ -700,7 +700,7 @@ Visually review the migrated settings in `appsettings.console.json` to ensure th
 
 ### PingCastle AntiVirus Detections
 
-Attackers have used PingCastle as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and EDR products to flag it as malicious.
+Attackers have used PingCastle as a reconnaissance tool in some high-profile attacks, leading some AntiVirus and Endpoint Detection and Response (EDR) products to flag it as malicious.
 
 **Recommended Action**: Whitelist PingCastle.exe on the specific systems and users your organization authorizes for security assessments. Normal end users shouldn't be running PingCastle.
 

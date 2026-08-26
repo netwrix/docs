@@ -35,7 +35,7 @@ For details on calling the API directly (including through Swagger or PowerShell
 
 ## Automatic Forest Exploration Setup
 
-For large environments, you can simplify scan configuration by using automatic forest exploration. PingCastle then discovers and scans all domains within a forest automatically, using a wildcard in the `--server` parameter.
+For large environments, you can simplify scan configuration with automatic forest exploration. When you use a wildcard in the `--server` parameter, PingCastle discovers and scans all domains within a forest automatically.
 
 ### Manual Execution
 
