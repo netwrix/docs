@@ -9,7 +9,7 @@ sidebar_position: 30
 When preparing your Exchange Server for data classification:
 
 :::note
-On-premise Exchange servers support Basic authentication for crawling accounts, while Exchange Online supports either Modern or Basic authentication. Both scenarios are described in the sections below.
+On-premise Exchange servers support Basic authentication for crawling accounts, while Exchange Online supports either Modern or Basic authentication. The following sections describe both scenarios.
 :::
 
 ## Basic Authentication

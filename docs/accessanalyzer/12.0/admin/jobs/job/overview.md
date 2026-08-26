@@ -121,7 +121,7 @@ under the job description:
 
 ![Job Inherited settings](/images/accessanalyzer/12.0/admin/jobs/job/inheritedsettings.webp)
 
-In the example above, the **Assigned 1 Host List** setting is applied directly to the job. Other
+In the preceding example, the **Assigned 1 Host List** setting is applied directly to the job. Other
 settings are inherited from the parent job group. Clicking the **Show inherited settings** button
 opens this list of the inherited settings.
 

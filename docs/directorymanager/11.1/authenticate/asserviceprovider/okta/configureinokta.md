@@ -65,7 +65,7 @@ Okta provider in Directory Manager.
 3. Right-click the metadata file and select the **Open Containing Folder** option on the shortcut
    menu.
 4. The next dialog box displays the file at its download location. Either copy the file to your
-   desktop for simplicity or save its location, so that you can easily locate it for import into
+   desktop for simplicity or save its location, so that you can locate it for import into
    Directory Manager.
 
 ### Configure Users in Okta

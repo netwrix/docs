@@ -142,7 +142,7 @@ this would extract 92 from the number and save it to the destination field.
 
 ## Script
 
-Unlike the built-in transforms described above, the Script transformation is a template for writing
+Unlike the preceding built-in transforms, the Script transformation is a template for writing
 custom scripts. Use the **Script** template by selecting a built-in transform that provides most of
 the functionality you need, select parameters, if any, and then switch the transform type to
 **Script** to view the resulting script. You can then modify the script to add the functionality you

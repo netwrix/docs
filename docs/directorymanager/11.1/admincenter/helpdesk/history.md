@@ -110,8 +110,8 @@ Click the arrow to change the order from ascending to descending and vice versa.
 
 ## Search History
 
-You can search for history records in all the identity stores or specific identity stores. Simply
-enter the name of a user to view all actions performed for it, be it by that same user or another
+You can search for history records in all the identity stores or specific identity stores. Enter
+the name of a user to view all actions performed for it, be it by that same user or another
 user, such as helpdesk. You can also create a filter based on multiple attributes to search for
 specific records.
 

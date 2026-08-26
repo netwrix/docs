@@ -14,7 +14,7 @@ and collects the results for reporting.
 
 The jobs and job groups in the Security Utilities job group are:
 
-- [OpenPortScan Job Group](/docs/accessanalyzer/12.0/solutions/windows/securityutilities/openportscan/overview.md) – Leverages the jobs within this group to reveal all
+- [OpenPortScan Job Group](/docs/accessanalyzer/12.0/solutions/windows/securityutilities/openportscan/overview.md) – Uses the jobs within this group to reveal all
   open ports along with the associated executable on the targeted systems. This is accomplished
   through remotely executing a netstat command on the target hosts and collecting the results for
   reporting.

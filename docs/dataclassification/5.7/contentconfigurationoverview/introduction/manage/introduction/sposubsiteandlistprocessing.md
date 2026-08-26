@@ -26,8 +26,8 @@ already been crawled, manually delete it via the QS, or re-collect the content s
 
 When new content is defined for crawling (i.e. included), perform a re-index operation.
 
-- Use the **Edit** link to modify settings for the selected list or subsite. See below for
-  details.
+- Use the **Edit** link to modify settings for the selected list or subsite. See the following
+  sections for details.
 
 **List Configuration**
 

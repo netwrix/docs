@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Workflow with Role Based Access Enabled
 
-The following workflow summarizes the necessary steps involved to deploy a job once you enable
+The following workflow summarizes the necessary steps involved to deploy a job after you enable
 Role Based Access and assign roles.
 
 **Step 1 –** The Job Builder creates and configures a Access Analyzer job

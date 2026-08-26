@@ -70,7 +70,7 @@ and DFS scan types:
 
 FSAA Trace Logs:
 
-Below are two types of FSAA trace logs created while in local, applet, or proxy modes:
+Access Analyzer creates the following two types of FSAA trace logs while in local, applet, or proxy modes:
 
 - Parent Trace Log – StealthAUDITRPC*[YYYYMMDD_hhmmss]*[Execution_Host].log
     - ProccessID is logged in the job log

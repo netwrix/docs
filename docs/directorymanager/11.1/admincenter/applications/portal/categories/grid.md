@@ -14,7 +14,7 @@ members, such as a member’s display name, department, and email. Add a column 
 attribute required, so that portal users can view or enter values in each column (attribute) for an
 object.
 
-To create a grid, simply define its columns. Each column is mapped to a schema attribute, so each
+To create a grid, define its columns. Each column is mapped to a schema attribute, so each
 column represents the value of the attribute it is mapped to.
 
 After creating the custom grid display type, link it to an appropriate schema attribute to render it
@@ -99,7 +99,7 @@ A few grid display types used in the default portal template are:
 11. In the **Page Size** box, type, or select a value. This value represents the number of records to
     show in the grid, with pagination options to navigate to more records.
 12. Select the **Show Search Filters** checkbox to add a row to the grid that serves as a search
-    bar. This row appears in the grid, as shown below:
+    bar. This row appears in the grid, as shown in the following image:
 
     ![search_row_in_grid](/images/directorymanager/11.1/admincenter/portal/displaytype/search_row_in_grid.webp)
 

@@ -57,7 +57,7 @@ After you register the application, the following settings are needed from your 
 Register Activity Monitor with Microsoft Entra ID:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -90,7 +90,7 @@ application. Now that you've registered the application, grant it permissions.
 Grant permissions to the registered application:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -137,7 +137,7 @@ Now that you've granted the permissions, collect the settings required for Activ
 Find the registered application's Client ID:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -175,7 +175,7 @@ application’s Client Secret Key.
 Find the tenant name where the registered application resides:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -196,7 +196,7 @@ Find the registered application's Client Secret, create a new key, and save its
 value when saving the new key:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::

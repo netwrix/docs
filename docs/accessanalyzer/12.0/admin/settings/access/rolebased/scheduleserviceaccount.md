@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Roles & the Schedule Service Account
 
-Once you enable Role-Based Access, a user or group with the appropriate access role has the ability
+After you enable Role-Based Access, a user or group with the appropriate access role has the ability
 to schedule a job or job group as a Schedule Service Account at the **Settings** > **Schedule**
 node. You can add multiple accounts as needed.
 

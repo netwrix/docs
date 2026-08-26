@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # What's New in 5.6.2
 
-## New Netwrix Community!
+## New Netwrix Community
 
 All Netwrix product announcements have moved to the new Netwrix Community. See announcements for
 Netwrix Data Classification in the

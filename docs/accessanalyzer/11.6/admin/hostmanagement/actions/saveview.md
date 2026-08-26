@@ -31,7 +31,7 @@ Like the default host lists, Enterprise Auditor auto-populates and updates custo
 according to host inventory.
 
 :::info
-Don't modify the criteria once you've created a dynamic-based list. To modify a dynamic-based list,
+Don't modify the criteria after you've created a dynamic-based list. To modify a dynamic-based list,
 delete and recreate it instead.
 :::
 

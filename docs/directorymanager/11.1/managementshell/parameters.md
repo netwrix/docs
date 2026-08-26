@@ -14,7 +14,7 @@ This topic discusses the following:
 ## All Parameters
 
 The following table lists the Directory Manager Management Shell commandlet parameters in
-alphabetical order. Click alphabet letter to easily locate the parameter which starts with that
+alphabetical order. Click an alphabet letter to locate the parameter which starts with that
 letter.
 
 | Parameter Name                                                                                                                                                                                                  | Description |
@@ -292,7 +292,7 @@ letter.
 | Parameter Name      | Description                                                                                                                                                                                                                                                                                                                   |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | LastName            | The last name of user, contact, or mailbox.                                                                                                                                                                                                                                                                                    |
-| LdapFilter          | The LDAP search filter that defines your search criteria. This parameter stores your query. A Smart Group can dynamically build its membership according to the query associated with it. Similar to Smart Group, a Dynasty has the capability to dynamically build its membership according to the query associated with it. |
+| LdapFilter          | The LDAP search filter that defines your search criteria. This parameter stores your query. A Smart Group can dynamically build its membership according to the query associated with it. Similar to Smart Group, a Dynasty can dynamically build its membership according to the query associated with it. |
 | LDAPSearchContainer | The container for the Sun ONE iPlanet data source.                                                                                                                                                                                                                                                                            |
 
 #### M

@@ -30,7 +30,7 @@ Don't end a job name with a space.
   article for limitations.
 - Jobs in a group are run alphanumerically
 - When possible, keep names short to avoid report path errors caused by Microsoft’s maximum path
-  length. See the Microsoft article referenced above.
+  length. See the Microsoft Naming Conventions article referenced previously.
 
 The new job is now ready to be configured. See the
 [Data Collectors](/docs/accessanalyzer/12.0/admin/datacollector/overview.md), [Analysis Modules](/docs/accessanalyzer/12.0/admin/analysis/overview.md),

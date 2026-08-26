@@ -31,7 +31,7 @@ If you run only select sub-job groups, the overview report has blank sections.
 ![FS_SecurityAssessment Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/filesystem/securityassessmentjobstree.webp)
 
 The FS_SecurityAssessment job is comprised of analysis and reports which use the data collected by
-the 0.Collection job group and analyzed by the jobs listed above.
+the 0.Collection job group and analyzed by the jobs listed previously.
 
 ## Analysis Task for the FS_SecurityAssessment Job
 

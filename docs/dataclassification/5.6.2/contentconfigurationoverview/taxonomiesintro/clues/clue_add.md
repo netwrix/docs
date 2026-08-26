@@ -6,8 +6,7 @@ sidebar_position: 20
 
 # Adding a Clue
 
-To add a new clue, go to the topmost row in the list and specify clue properties, as explained
-below:
+To add a new clue, go to the topmost row in the list and specify the following clue properties:
 
 - Type
 - Clue (rule body)
@@ -20,7 +19,7 @@ When ready, click **Insert** on the right.
 
 ## Clue Body
 
-When specifying the clue body, consider exact matching and stemming explained below.
+When specifying the clue body, consider exact matching and stemming, described in the following sections.
 
 ### Exact Matching
 

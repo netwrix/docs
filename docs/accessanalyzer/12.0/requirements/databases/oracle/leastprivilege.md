@@ -152,7 +152,7 @@ least the following `SELECT` privilege on the targeted database for the followin
 - DBA_SYS_PRIVS view
 - DBA_TAB_PRIVS view
 
-For example, to grant all of the above privileges, run the following set of commands in SQL
+For example, to grant all of the preceding privileges, run the following set of commands in SQL
 Developer or SQL\*Plus:
 
 ```
@@ -209,7 +209,7 @@ least the following `SELECT` privilege on the targeted database for the followin
 - V\_$CONTAINERS view.
 - SYS.USER$ table.
 
-For example, to grant all of the above privileges, run the following set of commands in SQL
+For example, to grant all of the preceding privileges, run the following set of commands in SQL
 Developer or SQL\*Plus:
 
 ```
@@ -251,7 +251,7 @@ least the following `SELECT` privileges on the targeted database for the followi
 - V\_$PARAMETER view
 - SYS.USER$ table
 
-For example, to grant all of the above privileges, run the following set of commands in Oracle SQL
+For example, to grant all of the preceding privileges, run the following set of commands in Oracle SQL
 Developer or SQL\*Plus:
 
 ```
@@ -294,7 +294,7 @@ views:
 - CDB_TAB_COLS view
 - CDB_OBJECTS view
 
-For example, to grant the above privileges, run the following set of commands in SQL Developer or
+For example, to grant the preceding privileges, run the following set of commands in SQL Developer or
 SQL\*Plus:
 
 ```
@@ -314,7 +314,7 @@ views:
 - DBA_TAB_COLS view
 - DBA_OBJECTS view
 
-For example, to grant the above privileges, run the following set of commands in SQL Developer or
+For example, to grant the preceding privileges, run the following set of commands in SQL Developer or
 SQL\*Plus:
 
 ```
@@ -355,7 +355,7 @@ views:
 - CDB_COMMON_AUDIT_TRAIL view
 - UNIFIED_AUDIT_TRAIL view
 
-For example, to grant the above privileges, run the following set of commands in SQL Developer or
+For example, to grant the preceding privileges, run the following set of commands in SQL Developer or
 SQL\*Plus:
 
 ```
@@ -381,7 +381,7 @@ views:
 - V\_$DATABASE view
 - DBA_COMMON_AUDIT_TRAIL view
 
-For example, to grant the above privileges, run the following set of commands in SQL Developer or
+For example, to grant the preceding privileges, run the following set of commands in SQL Developer or
 SQL\*Plus:
 
 ```

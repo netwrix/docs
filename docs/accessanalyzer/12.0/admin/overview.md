@@ -34,7 +34,7 @@ Access Analyzer employs a series of powerful, yet easy-to-use Analysis Modules w
 end-users with the ability to perform very simple and sophisticated data analysis routines with
 ease:
 
-- Correlation – Easily correlate data from multiple datasets to create meaningful views
+- Correlation – Correlate data from multiple datasets to create meaningful views
 - Policy – Create rules and policies which automatically categorize your data output, i.e. Severity,
   Classifications, etc.
 - Change – Turn on change detection to see exactly what has changed between time periods

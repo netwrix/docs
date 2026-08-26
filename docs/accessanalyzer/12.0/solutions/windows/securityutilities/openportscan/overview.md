@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # OpenPortScan Job Group
 
-The OpenPortScan job group leverages the jobs within this group to reveal all open ports along with
+The OpenPortScan job group uses the jobs within this group to reveal all open ports along with
 the associated executable on the targeted systems. This is accomplished through remotely executing a
 netstat command on the target hosts and collecting the results for reporting.
 

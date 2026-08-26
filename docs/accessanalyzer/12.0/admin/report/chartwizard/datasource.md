@@ -14,7 +14,7 @@ to generate results, a location must first be selected as the source of the data
 on this wizard page contains a list of tables and views within Access Analyzer from jobs that have
 been executed. Select the required data source from the table.
 
-You can use the search bar located above the table to easily find a desired table. The **Limit
+You can use the search bar located above the table to find a specific table. The **Limit
 selection to tables from the current job**option limits the displayed data to tables from the
 current job. This option is selected by default. You can clear the option to widen the available
 data to all jobs.

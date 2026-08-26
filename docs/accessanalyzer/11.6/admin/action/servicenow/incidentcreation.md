@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # ServiceNow Action: Incident Creation
 
-The Incident Creation page is available once you get ServiceNow approval for your credentials.
+The Incident Creation page is available after you get ServiceNow approval for your credentials.
 Incidents on this page belong to two fields: Mandatory and Optional. ServiceNow's configuration page
 determines the type of field and its incidents. Selecting a field and entering a value includes the
 incident in ServiceNow's incident report.

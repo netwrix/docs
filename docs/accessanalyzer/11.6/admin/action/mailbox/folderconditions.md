@@ -86,5 +86,5 @@ Include/Exclude folders using the following options:
     - This folder and subfolders
     - Subfolders only
 
-- The Remove button becomes enabled once you add a folder to either section. To remove a folder
+- The Remove button becomes enabled after you add a folder to either section. To remove a folder
   from the scope, select it and click **Remove**.

@@ -26,7 +26,7 @@ section.
 
 The requirements in this section apply to a single Netwrix Data Classification server.
 
-To deploy a server cluster, ensure all planned cluster nodes meet the requirements listed below.
+To deploy a server cluster, ensure all planned cluster nodes meet the requirements in this section.
 Consider deploying 1 Netwrix Data Classification Server per approx. 16, 000, 000 objects to process.
 
 See

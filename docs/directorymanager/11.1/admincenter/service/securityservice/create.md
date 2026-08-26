@@ -30,7 +30,7 @@ located on disk.
 4. On the **Create GroupID Application** page, ensure the **IIS** tile is selected.
 5. In the **Application Name** box, enter a name for the service or use the default name. Directory Manager displays the Security service with this name.
 6. In the **Deployment Name** box, enter a deployment name for the service. The application name and
-   deployment name are displayed on the service card, as shown below:
+   deployment name are displayed on the service card, as shown in the following image:
 
     ![securityservicecard](/images/directorymanager/11.1/admincenter/service/securityservice/securityservicecard.webp)
 

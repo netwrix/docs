@@ -78,7 +78,7 @@ The queries are:
 - Epic Clarity Coverage – Imports Epic Clarity subject profile information on coverage
 - Epic Clarity Identity IDs – Imports Epic Clarity subject profile information on identity IDs
 
-The above queries have configurable parameters. See the
+The preceding queries have configurable parameters. See the
 [Configure the AnyID_EpicClarity Queries](#configure-the-anyid_epicclarity-queries) topic for
 additional information.
 

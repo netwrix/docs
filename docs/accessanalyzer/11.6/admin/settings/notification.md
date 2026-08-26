@@ -105,7 +105,7 @@ arrives as expected.
 ![Test Email Settings button](/images/accessanalyzer/11.6/admin/settings/test.webp)
 
 The Test Email Settings button sends a test email to the recipient list. Test by sending an email
-to yourself. Once you configure all Notification settings, click the
+to yourself. After you configure all Notification settings, click the
 **Test Email Settings** button.
 
 ![Test email sent successfully message](/images/accessanalyzer/11.6/admin/settings/testsuccess.webp)

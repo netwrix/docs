@@ -174,7 +174,7 @@ Next, enable Windows Authentication for PowerShell Virtual Directory on the same
 
 ## Enable Windows Authentication for PowerShell Virtual Directory
 
-Once you've enabled Remote PowerShell on an Exchange Server in the environment, also enable
+After you've enabled Remote PowerShell on an Exchange Server in the environment, also enable
 Windows Authentication for the PowerShell Virtual Directory on the same Exchange server.
 
 **Step 1 –** On the server where Remote PowerShell was enabled, open the Internet Information

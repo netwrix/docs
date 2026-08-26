@@ -274,7 +274,7 @@ Text Editor. On this dialog, select either the Basic or Advanced Text Editor and
 Editor**. The selected editor then opens.
 
 :::note
-Once you select a Text Editor for a Text element, you can't change it.
+After you select a Text Editor for a Text element, you can't change it.
 :::
 
 

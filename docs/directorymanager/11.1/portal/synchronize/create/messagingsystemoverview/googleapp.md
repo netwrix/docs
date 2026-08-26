@@ -45,7 +45,7 @@ by default in the **Selected Fields** box:
 
 Step 8 – Click **Next**.
 
-You have to transform all the above fields to work them properly with Google Workspace messaging
+You have to transform all the preceding fields to work them properly with Google Workspace messaging
 provide.
 
 Step 9 – On the **Field Maps** page, click the **Transform** button against:

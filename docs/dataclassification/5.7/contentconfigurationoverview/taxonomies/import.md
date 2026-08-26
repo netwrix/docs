@@ -91,7 +91,7 @@ Do the following:
 The taxonomy update wizard allows large repetitive changes to be made to taxonomies in bulk. Use the
 wizard to:
 
-- Add Clues—Create a default standard clue, a default metadata clue, or simply define the clue
+- Add Clues—Create a default standard clue, a default metadata clue, or define the clue
   template to be used.
 - Update Clues—Update or replace text within the clue text and reference, adjust the score
   (statically or by percentage), set the local/predefined flags for each clue.

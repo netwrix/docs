@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Built-in Reports
 
-There are a number of reports provided that can be run in browser, as well as exported to excel,
-these are described below:
+The product provides the following reports, which you can run in a browser or export to Excel:
 
 - Classification Coverage – Provides a list of documents that have been tagged with X or fewer
   classifications. Assists in locating documents that have a low number of auto classifications and

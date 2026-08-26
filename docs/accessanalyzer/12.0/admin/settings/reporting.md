@@ -33,7 +33,7 @@ The default address is:
 
 http://[Fully Qualified Domain Name of the Access Analyzer Console server]:8082
 
-This link accesses the Web Console, and it also serves as the web link in an emailed report.
+This address accesses the Web Console, and it also serves as the web link in an emailed report.
 You might need to modify the protocol and port number to align with the organization’s environment,
 but it must match the information in the website’s configuration file. If the Web Console is
 secured, you must manually update this address:

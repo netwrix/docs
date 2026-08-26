@@ -53,7 +53,7 @@ update. You can add multiple host lists. Click Next.
 
 **Step 7 –** Review the Summary and click either **Save & Exit** or **Save & Run Jobs Now**.
 
-The proxy doesn't update until you run the job. Once the job runs successfully, Access Analyzer
+The proxy doesn't update until you run the job. After the job runs successfully, Access Analyzer
 updates the servers in the assigned host lists.
 
 ## Manual Upgrade

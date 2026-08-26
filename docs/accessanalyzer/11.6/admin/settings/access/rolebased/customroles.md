@@ -7,7 +7,6 @@ sidebar_position: 20
 # Custom Roles
 
 You can create a custom role within Enterprise Auditor to combine the rights of other defined roles.
-Follow these steps to create a custom role.
 
 **Step 1 –** In the Enterprise Auditor directory, navigate to **PrivateAssemblies** and edit the
 **rba-roles.conf** file. Add a new section for the custom role as shown in the following

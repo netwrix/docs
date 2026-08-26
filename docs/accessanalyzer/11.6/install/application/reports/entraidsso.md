@@ -79,7 +79,7 @@ To enable Microsoft Entra ID SSO for the Web Console, you need to update the web
 with values from Microsoft Entra ID. To enable the SSO:
 
 :::tip
-Before enabling Entra ID SSO, make sure you've already enabled SSL for the web server. See
+Before enabling Entra ID SSO, ensure you've already enabled SSL for the web server. See
 the
 [Securing the Web Console](/docs/accessanalyzer/11.6/install/application/reports/secure.md)
 topic for additional information.

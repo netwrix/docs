@@ -130,7 +130,7 @@ It sends a request to the API, which, in turn, connects to any domain controller
 this way, Data Service communicates with the domain controller to perform the required function.
 
 System.DirectoryServices doesn't evaluate the domain controller in the DC priority list for
-creating a connection. Hence, in the above example, the API will connect to DC_N or DC_W.
+creating a connection. Hence, in the preceding example, the API will connect to DC_N or DC_W.
 
 **“Server Not Operational” error**
 
@@ -143,7 +143,7 @@ indicates that Data service has lost connection with the domain and needs to re-
 connection.
 
 To resolve the error, restart IIS. In this way, Data service will make a connection again using the
-process discussed above. It will connect to a different domain controller and cache the domain logon
+process discussed previously. It will connect to a different domain controller and cache the domain logon
 information (and continue to make a session with this domain controller unless Data service is
 restarted).
 

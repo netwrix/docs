@@ -246,4 +246,4 @@ There are two options that control inheritance for Report Viewers when selected:
 - Set all the child objects to inherit these settings – Only available at the Job Group level. Sets
   all Jobs and Reports to inherit group settings for all child objects by automatically selecting
   the **Include Report Viewers from this object’s parent** option. Access Analyzer overwrites any
-  previous configurations once you select **Yes** in the confirmation window.
+  previous configurations after you select **Yes** in the confirmation window.

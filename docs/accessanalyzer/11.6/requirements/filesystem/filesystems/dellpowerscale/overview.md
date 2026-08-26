@@ -112,7 +112,7 @@ export** (per NFS export):
 - Root Clients
 
 The NFS export to be scanned also needs to be configured so root squash is disabled, which is
-performed in the same Edit export menu as the above settings.
+performed in the same Edit export menu as the preceding settings.
 
 **Step 1 –** Navigate to the export's **Root user mapping** settings.
 

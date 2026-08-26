@@ -91,7 +91,7 @@ Directory Manager.
 The administrator can enable second factor authentication for a security role in an identity store.
 
 If enabled for your role in the identity store, you must pass second factor authentication after
-signing in via any of the above methods.
+signing in via any of the preceding methods.
 
 For second factor authentication, one of the following applies:
 

@@ -395,7 +395,7 @@ Step 4 – Enter a name for the data source in the Name box.
 Step 5 – Enter the DSN name in the DSN box. Directory Manager uses this name to request a connection
 to the ODBC data source. Note the following:
 
-- For a system DSN, simply provide the name of the DSN.
+- For a system DSN, provide the name of the DSN.
 - For a file DSN, provide the file path with file name and extension.
 
 Step 6 – Select the **System DSN** or **File DSN** option button to specify the DSN type to use for

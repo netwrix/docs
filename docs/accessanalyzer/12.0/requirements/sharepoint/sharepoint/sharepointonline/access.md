@@ -106,7 +106,7 @@ article for additional information.
 
 Create the self-signed X.509 certificate:
 
-**Step 1 –** To generate a certificate, use the sample PowerShell command below:
+**Step 1 –** To generate a certificate, use the following sample PowerShell command:
 
 - Change the following parameters in the sample PowerShell command. See the Microsoft
   [New-SelfSignedCertificate](https://docs.microsoft.com/en-us/powershell/module/pki/new-selfsignedcertificate)
@@ -116,7 +116,7 @@ Create the self-signed X.509 certificate:
       certificate
     - Subject – A unique name for the new App (always starts with CN=, to denote a canonical name)
     - FriendlyName – Same as Subject name minus the canonical name prefix
-    - NotAfter – A datetime string denoting the certificate's expiration date - in the above sample,
+    - NotAfter – A datetime string denoting the certificate's expiration date - in the following example,
       Get-Date.AddYears(11) specifies that the certificate will expire 11 years from the current
       datetime
 
@@ -132,7 +132,7 @@ $certPath variable (see Step 1).
 
 :::note
 The environment variable `SAINSTALLDIR` always points to the base Access Analyzer install
-directory; simply append the PrivateAssemblies to point to that folder with the following cmdlet:
+directory; append the PrivateAssemblies to point to that folder with the following cmdlet:
 :::
 
 
@@ -166,7 +166,7 @@ more secure before running this cmdlet.
 Register Access Analyzer with Microsoft Entra ID:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -195,7 +195,7 @@ application. Now that you've registered the application, grant it permissions.
 Upload your self-signed certificate:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -223,7 +223,7 @@ The upload certificate public key .cer file is an application key credential.
 Grant permissions to the registered application:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -307,7 +307,7 @@ Access Analyzer.
 Find the registered application's Client ID:
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+These steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::

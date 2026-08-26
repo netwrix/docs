@@ -12,7 +12,7 @@ configurable.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page lets you easily modify any customizable
+The Configuration section on a Job's overview page lets you modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.

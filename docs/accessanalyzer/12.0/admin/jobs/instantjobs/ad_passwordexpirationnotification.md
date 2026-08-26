@@ -150,7 +150,7 @@ recipient, such as the organization’s help desk, with information from the ass
 > Netwrix
 
 :::warning
-Don't modify the tags, highlighted in bold text above.
+Don't modify the tags, highlighted in bold text in the preceding message.
 :::
 
 
@@ -222,7 +222,7 @@ associated table:
 
 :::warning
 Don't change the recipient for the action task. While the tags can be moved, don't
-remove or modify the tags, which are highlighted in bold text above.
+remove or modify the tags, which are highlighted in bold text in the preceding message.
 :::
 
 

@@ -18,7 +18,7 @@ your company policies and the user's job responsibilities.
 - Super User – has all the permissions of the DSAR Manager role, with the addition of being able to
   see and amend the DSAR settings (user management, output path, batch run-time).
 
-DSAR roles are described briefly in the table below:
+The following table briefly describes the DSAR roles:
 
 | Role         | Query Creation |            | Query Management |              |        | Output |     | Administrative area |
 | ------------ | -------------- | ---------- | ---------------- | ------------ | ------ | ------ | --- | ------------------- |

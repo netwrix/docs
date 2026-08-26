@@ -47,7 +47,7 @@ passwords, permissions, group policies, and domain information:
 - Member of the Domain Administrators group
 
 The majority of jobs in the Active Directory solutions rely on tables with queried data from the
-data collectors mentioned above to perform analysis and generate reports. The remaining jobs use
+data collectors mentioned previously to perform analysis and generate reports. The remaining jobs use
 data collectors to scan environments, and require additional permissions on the target host.
 
 :::info

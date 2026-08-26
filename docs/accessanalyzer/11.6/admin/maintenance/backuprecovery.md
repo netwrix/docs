@@ -38,7 +38,7 @@ built-in environment variable `%SAINSTALLDIR%`):
 - ...\ STEALTHbits\StealthAUDIT\StealthAUDIT.LIC: The license key
 
 **Step 3 –** Back up all Scheduled Tasks. The Enterprise Auditor user determines the method of back
-up. This can be as simple as copying the contents of the tasks folder from the following
+up. For example, you can copy the contents of the tasks folder from the following
 two locations:
 
 ![C:\Windows\Tasks](/images/accessanalyzer/11.6/admin/maintenance/maintenance_3.webp)
@@ -72,7 +72,7 @@ Enterprise Auditor Console Server to the corresponding tasks folder of the opera
 **Step 5 –** For Host Management and Host List Replication in a new host scenario, run the following
 code within the SQL Studio on the Enterprise Auditor database.
 
-- Replace `OldServer` and `NewServer` in the script below with the names of the old and new
+- Replace `OldServer` and `NewServer` in the following script with the names of the old and new
   Enterprise Auditor servers
 
 ```

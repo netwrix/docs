@@ -75,7 +75,7 @@ To configure tagging on a source level
 **File inclusions** tab contains the list of file types that will be included in the indexing
 process. Any file with a file extension not specified in this list will be ignored.
 
-You can delete, modify, or add the necessary inclusions as explained below.
+You can delete, modify, or add the necessary inclusions as explained in the following steps.
 
 To specify inclusions, do the following:
 

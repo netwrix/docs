@@ -35,7 +35,7 @@ Before upgrading, take the following steps:
 
 Seamless upgrade to Netwrix Data Classification 5.6.2 is supported for versions 5.5.4 and 5.5.3.
 
-To upgrade your deployment, after taking the preparatory steps described above, run the product
+To upgrade your deployment, after taking the preceding preparatory steps, run the product
 setup and follow the wizard steps. When finished, all solution components will be operational.
 
 If you need to upgrade from an earlier version, you should perform a staged upgrade, e.g., 5.5.0 →

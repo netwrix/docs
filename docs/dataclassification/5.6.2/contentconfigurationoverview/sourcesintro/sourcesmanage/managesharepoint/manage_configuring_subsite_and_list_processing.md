@@ -24,7 +24,7 @@ re-collect content source data.
 
 When new content is defined for crawling (i.e. included), a re-index operation should be performed.
 
-- The **Edit** link lets you modify settings for the selected list or subsite. See below for
+- The **Edit** link lets you modify settings for the selected list or subsite. See the following sections for
   details.
 
 ## List Configuration

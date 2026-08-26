@@ -7,7 +7,7 @@ sidebar_position: 110
 # Reports
 
 Use Directory Manager Reports to generate web-based reports for an identity store. It
-offers a wizard-guided report generation process for quick and easy reporting.
+offers a wizard-guided report generation process.
 
 Directory Manager reports are organized into four categories:
 
@@ -29,7 +29,7 @@ The user interface of Reports Dashboard is as follows:
 
 ![reportsdashboard](/images/directorymanager/11.1/portal/report/reportsdashboard.webp)
 
-Different elements of the Dashboard are described below:
+The following list describes the different elements of the Dashboard:
 
 - Look on the top of the page for Reports Search. Use it to locate and display information for
   reports.

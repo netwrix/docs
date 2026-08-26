@@ -21,7 +21,7 @@ For the most part, statements and constructs that worked in Visual Basic 6, Visu
 Visual BasicA continue to work in Visual Basic .NET.
 
 Important: A key difference, however, is that the Set keyword is no longer used to assign a value to
-an object. Simply omit it!
+an object. Omit it.
 
 ## Declaring variables
 
@@ -168,7 +168,7 @@ End Select
 It is uncommon to use loops within a DTM script, since the script itself is executed in the context of a
 single source row (or object) and a single destination row (or object). However, complex string
 manipulations may require iterating through the characters of a string. Iteration through the
-characters is most easily accomplished using the or Each construct.
+characters typically uses the For Each construct.
 
 **Example:**
 

@@ -26,7 +26,7 @@ The following targets are supported as destinations:
 - Google Drive
 - SharePoint
 
-Supported migration options are described in the table below.
+The following table describes the supported migration options.
 
 | Source Type    | Source | Update Source Item | Move | Mark source Read Only | Structured Migration | Destination | Migration Config Type |
 | -------------- | ------ | ------------------ | ---- | --------------------- | -------------------- | ----------- | --------------------- |

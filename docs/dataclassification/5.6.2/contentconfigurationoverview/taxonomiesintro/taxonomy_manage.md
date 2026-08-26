@@ -41,13 +41,13 @@ import options:
 - Upload—Imports an XML file directly into the SQL database, large taxonomies will be imported by
   the background services.
 - Load—Certain predefined taxonomies can be fully used as part of the product
-  or simply used as a reference for regular expression and metadata clues.
+  or used as a reference for regular expression and metadata clues.
 
 ![addtaxonomies](/images/dataclassification/5.6.2/taxonomies/addtaxonomies.webp)
 
 ## Merging SQL Taxonomies
 
-SQL taxonomies can be easily merged / updated from the Global Settings page. Select the Update link
+You can merge or update SQL taxonomies from the Global Settings page. Select the Update link
 for the taxonomy that you want to update to load the taxonomy merge wizard:
 
 ![mergesqltaxonomyupdatelink](/images/dataclassification/5.6.2/taxonomies/mergesqltaxonomyupdatelink.webp)
@@ -109,7 +109,7 @@ Do the following:
 The taxonomy update wizard allows large repetitive changes to be made to taxonomies in bulk. Use the
 wizard to:
 
-- Add Clues—Create a default standard clue, a default metadata clue, or simply define the clue
+- Add Clues—Create a default standard clue, a default metadata clue, or define the clue
   template to be used.
 - Update Clues—Update or replace text within the clue text and reference, adjust the score
   (statically or by percentage), set the local/predefined flags for each clue.

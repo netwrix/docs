@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Generate Reports
 
-Generating reports in Directory Manager portal is a two step process that makes the reporting
-process quick and easy. The steps for generating a report are the same for all reports; you have to
+Generating reports in Directory Manager portal is a two step process. The steps for generating a
+report are the same for all reports; you have to
 specify settings, such as the source container or organizational unit, the field to sort all
 records, and the display names for the fields in the report.
 

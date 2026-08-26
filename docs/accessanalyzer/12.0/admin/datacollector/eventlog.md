@@ -102,5 +102,5 @@ In the Available Properties section, select which properties the browser collect
 
 - Remove Icon – Use to remove properties from the search
 
-Once you configure all options, click **OK** to save changes and exit the browser. Click
+After you configure all options, click **OK** to save changes and exit the browser. Click
 **Cancel** to exit without saving.

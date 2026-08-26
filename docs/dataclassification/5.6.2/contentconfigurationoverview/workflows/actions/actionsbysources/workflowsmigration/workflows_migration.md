@@ -9,7 +9,7 @@ sidebar_position: 20
 Use this action to copy or move a document between content sources (from 'source' to
 'destination'). Simple migration copies the file and any document properties and is supported by all
 content source types. Migration action properties specific for different content source types are
-listed in the table below.
+listed in the following table.
 
 | Type                    | As 'source' | As 'destination' | Migration Config Type              | Supports structured migration? | Move? | Update source item? | Mark source 'read-only'? |
 | ----------------------- | ----------- | ---------------- | ---------------------------------- | ------------------------------ | ----- | ------------------- | ------------------------ |

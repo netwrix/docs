@@ -8,7 +8,7 @@ sidebar_position: 20
 
 The Activity Monitor agent employed to monitor NetApp uses 128-bit encrypted Remote Procedure
 Calls (RPC), NetApp ONTAP-API, and NetApp FPolicy to monitor file system events. This includes both
-NetApp 7-Mode and Cluster-Mode configurations. To learn more about FPolicy visit the NetApp
+NetApp 7-Mode and Cluster-Mode configurations. For more information about FPolicy, visit the NetApp
 website and read the
 [What FPolicy is](https://library.netapp.com/ecmdocs/ECMP1401220/html/GUID-54FE1A84-6CF0-447E-9AAE-F43B61CA2138.html)
 article.

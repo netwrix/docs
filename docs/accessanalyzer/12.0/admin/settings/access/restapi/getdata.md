@@ -28,7 +28,7 @@ GET, POST
 - **object-name** – Required value that specifies the unique object name. 
 - **alias-name** – Required value that specifies the unique alias associated with the table, available as a more thoughtfully designed namespace. 
 - **jobRuntimeKey**(Optional) – The execution to retrieve information for. If this is omitted the latest report is provided. 
-- **filters** (Optional) – A filter to be applied before returning data, multiple filters are applied with `and` operators. If an array is specified for the value field for a filter, the filter returns any successful match from the array of values. String comparisons are case insensitive. A list of the available functions is below. Filter functions: 
+- **filters** (Optional) – A filter to be applied before returning data, multiple filters are applied with `and` operators. If an array is specified for the value field for a filter, the filter returns any successful match from the array of values. String comparisons are case insensitive. The following filter functions are available: 
   - equals
   - not_equals
   - greater (greater_equal)

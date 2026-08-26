@@ -51,7 +51,7 @@ One or more of the following job groups or jobs must be run to produce results:
     - Windows > Privileged Accounts > Service Accounts > SG_ServiceAccounts
 
 :::note
-If any of the above jobs aren't completed, the AD_SecurityAssessment job will run but all
+If any of the preceding jobs aren't completed, the AD_SecurityAssessment job will run but all
 checks will not be assessed.
 :::
 

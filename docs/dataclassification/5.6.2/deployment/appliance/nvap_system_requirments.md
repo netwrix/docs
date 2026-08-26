@@ -29,7 +29,7 @@ expiration, you will need to apply your own Windows license.
 ## Hardware Configuration
 
 When deploying Netwrix Data Classification virtual appliance, a pre-configured virtual machine is
-created. The table below contains the default hardware configuration of the VM where Netwrix Data
+created. The following table contains the default hardware configuration of the VM where Netwrix Data
 Classification virtual appliance is going to be deployed:
 
 | Parameter          | Value                                              |

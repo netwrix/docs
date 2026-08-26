@@ -32,7 +32,7 @@ This will enable Enterprise Auditor to discover all the SQL databases present in
 
 ## Create a StealthAUDIT Custom Role
 
-Follow these steps to create an Azure SQL custom role at the subscription level.
+Create an Azure SQL custom role at the subscription level.
 
 ![Azure Portal - Azure Services](/images/accessanalyzer/11.6/requirements/target/config/azuresqlperm_customrolecreation_1.webp)
 
@@ -186,7 +186,7 @@ the role to be made available to the resources.
 
 ## Register an Azure SQL Application
 
-Follow these steps to create an Azure SQL Application Registration in the Azure portal.
+Create an Azure SQL Application Registration in the Azure portal.
 
 **Step 1 –** In the Azure portal under Azure Services, click the **App Registration** icon.
 
@@ -235,7 +235,7 @@ profile.
 
 ## Add a Role Assignment
 
-Follow these steps to add a role assignment to the custom role and newly registered Enterprise
+Add a role assignment to the custom role and newly registered Enterprise
 Auditor Azure SQL application.
 
 **Step 1 –** Navigate to the Subscriptions blade and click the **Access Control (IAM)** option.

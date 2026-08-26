@@ -85,7 +85,7 @@ Create a Connection Profile and set the following information on the User Creden
     - 5 – US Government-High
     - 6 – US Government-DoD
 
-    An example string matching the configuration from above is:
+    An example string matching the preceding configuration is:
 
     C:\Program Files
     (x86)\STEALTHbits\StealthAUDIT\PrivateAssemblies\spaa_cert_myorg.pfx,PasswordGoesHere,0

@@ -73,7 +73,7 @@ languages:
 
     ![predefined_clues](/images/dataclassification/5.7/admin/taxonomies/predefined_clues.webp)
 
-Users can easily extend the built-in classification rules by adding relevant keywords and
+Users can extend the built-in classification rules by adding relevant keywords and
 terms in other languages.
 
 In addition, there are predefined classification rules for various national identification and

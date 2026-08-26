@@ -53,7 +53,7 @@ clusters. You can also specify an interval for syncing.
 
 :::note
 In Directory Manager, a separate Replication service is created for each node in a cluster. To
-enable data syncing between clusters, simply enable the sync option for one Replications service
+enable data syncing between clusters, enable the sync option for one Replications service
 within each cluster.
 :::
 

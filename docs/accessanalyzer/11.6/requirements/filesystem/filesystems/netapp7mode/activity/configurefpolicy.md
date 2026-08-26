@@ -46,7 +46,7 @@ vFiler. This is because FPolicy operates on the affected vFiler. Therefore, when
 commands on a vFiler, the commands must be run from a vFiler context (e.g. via the vFiler run
 command).
 
-Relevant NetApp Documentation: To learn more about configuring file policies, visit the
+Relevant NetApp Documentation: For more information about configuring file policies, visit the
 NetApp website and read
 [na_fpolicy – configure file policies](https://library.netapp.com/ecmdocs/ECMP1196890/html/man1/na_fpolicy.1.html)
 article.

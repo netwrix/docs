@@ -44,7 +44,7 @@ be created within this site.
 
     ![Add a website in IIS](/images/directorymanager/11.1/admincenter/portal/addsite.webp)
 
-3. Enter the information as shown below and click **OK**:
+3. Enter the following information and click **OK**:
 
     ![Add Website window](/images/directorymanager/11.1/admincenter/portal/addwebsite.webp)
 
@@ -131,7 +131,7 @@ Admin Center uses the
 communicate with remote IIS. Ensure this API is installed as a Windows service on the remote IIS
 machine.
 
-To connect to the API, an access key is required. Follow the steps below to generate it.
+To connect to the API, an access key is required. Follow these steps to generate it.
 
 1. Go to _https://localhost:55539/_ to launch the Microsoft Administration API interface.
 

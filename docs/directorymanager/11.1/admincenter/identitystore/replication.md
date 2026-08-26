@@ -33,7 +33,7 @@ Step 4 – On the Replication page, the Attribute Name column displays a list of
 that the Replication service replicates to Elasticsearch for the identity store.
 
 - Use the search box to search for an attribute in the list.  
-  Simply enter a search string in the box; attribute names containing the string will be displayed.
+  Enter a search string in the box; Directory Manager displays attribute names containing the string.
 
 - To remove an attribute from the list, click **Remove** for it.
 - To reset to the default attribute listing, click **Reset to Default**.

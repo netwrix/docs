@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Results Node
 
-Once you execute a job, you can view the query-populated native data tables, the analysis- and
+After you execute a job, you can view the query-populated native data tables, the analysis- and
 action-populated materialized tables and views, and the generated reports under the job’s
 Results node.
 

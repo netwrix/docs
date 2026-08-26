@@ -9,7 +9,7 @@ sidebar_position: 20
 This action copies or moves a document between content sources (from 'source' to
 'destination'). Simple migration copies the file and any document properties. All
 content source types support simple migration. Migration action properties specific for different content source types are
-listed in the table below.
+listed in the following table.
 
 | Type                    | As 'source' | As 'destination' | Migration Config Type              | Supports structured migration? | Move? | Update source item? | Mark source 'read-only'? |
 | ----------------------- | ----------- | ---------------- | ---------------------------------- | ------------------------------ | ----- | ------------------- | ------------------------ |
@@ -59,8 +59,8 @@ In NDC, when moving a file from one storage to another a stub file is created in
 would have a note, that a file has been transferred to a certain location.
 
 While creating a stub file, you can leave a message where the document is migrated to and the
-reasons. You can use the dropdown list to add metadata from the document to the stub file message.
-See below:
+reasons. You can use the dropdown list to add metadata from the document to the stub file message,
+as shown in the following image:
 
 ![workflow_stubfile](/images/dataclassification/5.7/admin/workflows/actions/workflow_stubfile.webp)
 

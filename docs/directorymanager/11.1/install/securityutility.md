@@ -64,7 +64,7 @@ Step 3 – After successful configuration, the following message is displayed.
 
 ![Success message](/images/directorymanager/11.1/install/success.webp)
 
-If there is a Directory Manager multi-instance deployment, execute the above steps on each
+If there is a Directory Manager multi-instance deployment, execute the preceding steps on each
 Directory Manager server in your environment.
 
 :::note

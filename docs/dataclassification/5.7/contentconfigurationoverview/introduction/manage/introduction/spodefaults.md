@@ -7,7 +7,7 @@ sidebar_position: 50
 # Configuring defaults
 
 Use the Source Defaults tab to configure defaults that will be used in the absence of list /
-subsite configurations. Available options are listed in the table below.
+subsite configurations. The following table lists the available options.
 
 :::note
 To apply the options you set in each section, click the **Save** button in that section.

@@ -10,7 +10,7 @@ The Action page specifies the basic action to perform on public folders. The pag
 selection in the Steps pane adjust based on this selection.
 
 :::note
-Once you select and save an action and close the wizard, this page is no longer available, and
+After you select and save an action and close the wizard, this page is no longer available, and
 you can't alter the selection.
 :::
 

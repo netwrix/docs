@@ -110,8 +110,8 @@ Stores one row per sharing link. A sharing link may grant access to one or more 
 |--------|------|-------------|
 | `site_hostname` | `String` | Hostname of the site collection that contains the item. |
 | `site_id` | `String` | SharePoint identifier of the site collection. |
-| `item_id` | `String` | Identifier of the item this link points to. |
-| `permission_id` | `String` | SharePoint permission identifier associated with this link. |
+| `item_id` | `String` | Identifier of the item the sharing link points to. |
+| `permission_id` | `String` | SharePoint permission identifier associated with the sharing link. |
 | `share_id` | `String` | Unique identifier of the sharing link. |
 | `link_type` | `Enum8` | Access level granted by the link. Values: `VIEW`, `EDIT`, `EMBED`, `REVIEW`. |
 | `link_url` | `String` | Full URL of the sharing link. |
@@ -126,8 +126,8 @@ Stores one row per sharing link. A sharing link may grant access to one or more 
 
 | Related table | Join columns | Description |
 |---|---|---|
-| `sharepoint_online_objects` | `site_hostname`, `site_id`, `item_id` | The item this link provides access to. |
-| `sharepoint_online_permissions` | `site_hostname`, `site_id`, `item_id`, `share_id` | Permissions granted through this link. |
+| `sharepoint_online_objects` | `site_hostname`, `site_id`, `item_id` | The item the sharing link provides access to. |
+| `sharepoint_online_permissions` | `site_hostname`, `site_id`, `item_id`, `share_id` | Permissions granted through the sharing link. |
 
 ---
 

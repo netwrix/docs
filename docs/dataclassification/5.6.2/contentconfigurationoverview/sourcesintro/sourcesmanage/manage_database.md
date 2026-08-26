@@ -31,7 +31,7 @@ To configure tagging, do the following:
 2. Select the entity that you want to configure tagging for (table or query) and click **Edit**.
 3. Select **Write Configuration** on the left.
 
-Configure tagging options listed below:
+Configure the following tagging options:
 
 | Option        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

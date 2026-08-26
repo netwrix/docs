@@ -23,7 +23,7 @@ Typically SharePoint environments are crawled per site collection. Sometimes you
 4. The Match Rules are an important configuration option, defining which site collections will be
    crawled. Here are some example match rules that may be required:
 
-    - `.*\/Personal\/.*`—Identifying "/personal/" within the URL (as per the below example) - this
+    - `.*\/Personal\/.*`—Identifying "/personal/" within the URL (as in the following example) - this
       would be the correct configuration to crawl end-user's OneDrive site collections (OneDrive for
       Business)
     - `.*`— Identifies any site collections, ensuring that all collections will be crawled

@@ -49,7 +49,7 @@ display on the job’s description page.
 
 ## Enable a Job
 
-You can enable disabled jobs from the Jobs tree. Follow these steps to enable a disabled job.
+You can enable disabled jobs from the Jobs tree.
 
 **Step 1 –** Select the disabled job. If multiple jobs in a job group are disabled, select the job
 group to enable all of the disabled jobs.

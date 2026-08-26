@@ -83,7 +83,7 @@ information.
 
 ### Active Directory Permissions Analyzer Solution
 
-The Active Directory Permissions Analyzer Solution is designed to easily and automatically determine
+The Active Directory Permissions Analyzer Solution is designed to automatically determine
 effective permissions applied to any and all Active Directory objects, at any scope, allowing for
 the most authoritative view available of who has access to what in Active Directory.
 

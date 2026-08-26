@@ -26,7 +26,7 @@ To uninstall Directory Manager completely, remove the Directory Manager folders 
 from your machine. This done, you don't have the option to upgrade to a newer version of Directory
 Manager.
 
-First, uninstall Directory Manager using the steps described above.
+First, uninstall Directory Manager using the preceding steps.
 
 Next, to completely uninstall Directory Manager from your machine, remove:
 

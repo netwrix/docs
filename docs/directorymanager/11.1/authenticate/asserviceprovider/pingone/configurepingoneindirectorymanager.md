@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Configure the PingOne Provider In Directory Manager
 
-While creating the PingOne provider in Directory Manager, you simply have to import the PingOne
+While creating the PingOne provider in Directory Manager, you import the PingOne
 metadata file to configure all settings for this identity provider.
 
 ## Configure the Provider in Directory Manager

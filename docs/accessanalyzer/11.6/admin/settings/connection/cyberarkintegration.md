@@ -39,7 +39,7 @@ complete the following prerequisites:
         ```
 
         :::info
-        Pipe the output hash value to a file to easily copy and paste it to the
+        Pipe the output hash value to a file to copy and paste it to the
         CyberArk application.
         :::
 

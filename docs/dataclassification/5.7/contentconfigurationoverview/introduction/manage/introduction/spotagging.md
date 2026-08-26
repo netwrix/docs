@@ -12,7 +12,7 @@ classification attributes from **SharePoint Term Sets** that you registered as t
 Netwrix Data Classification.
 
 To configure tagging for your SharePoint source, you should first check the prerequisites and take
-preparatory steps described below. Then you will be able to launch a specially designed SharePoint
+the following preparatory steps. Then you will be able to launch a specially designed SharePoint
 Tagging Wizard.
 
 **To check the prerequisites**
@@ -26,8 +26,8 @@ Tagging Wizard.
 3. Ensure that the term sets you want are registered as taxonomies within the Netwrix Data
    Classification console. See **Importing Taxonomies - SharePoint** section in for details.
 4. Install the appropriate SharePoint product in your SharePoint environment
-   (typically, the provider-hosted add-In named _conceptClassifierApp_; see the procedure below for
-   details).
+   (typically, the provider-hosted add-In named _conceptClassifierApp_; see the following procedure
+   for details).
    This add-on provides a specially designed Wizard that assigns taxonomies to Content Types in
    SharePoint. It also creates the necessary event handlers to keep the classification up to date when
    you add new documents or edit existing documents.

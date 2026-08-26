@@ -95,7 +95,7 @@ Example:
 security login role show enterpriseauditor
 ```
 
-Relevant NetApp Documentation: To learn more about creating security login roles, visit the
+Relevant NetApp Documentation: For more information about creating security login roles, visit the
 NetApp website and read the
 [security login role create](https://library.netapp.com/ecmdocs/ECMP1196817/html/security/login/role/create.html)
 article.
@@ -154,7 +154,7 @@ Verify that the output is displayed as follows:
 
 ![validatesecuritylogincreation](/images/activitymonitor/8.0/config/netappcmode/validatesecuritylogincreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating security logins, visit the NetApp
+Relevant NetApp Documentation: For more information about creating security logins, visit the NetApp
 website and read the
 [security login create](https://library.netapp.com/ecmdocs/ECMP12452955/html/security/login/create.html)
 article.
@@ -211,7 +211,7 @@ Verify that the output is displayed as follows:
 
 ![validateexternalenginecreation](/images/accessanalyzer/12.0/config/netappcmode/validateexternalenginecreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating an external engine, visit the
+Relevant NetApp Documentation: For more information about creating an external engine, visit the
 NetApp website and read the
 [vserver fpolicy policy external-engine create](https://library.netapp.com/ecmdocs/ECMP1366832/html/vserver/fpolicy/policy/external-engine/create.html)
 article.
@@ -259,7 +259,7 @@ Verify that the output is displayed as follows:
 
 ![validatefpolciyeventcreation](/images/accessanalyzer/12.0/config/netappcmode/validatefpolciyeventcreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating an event, visit the NetApp
+Relevant NetApp Documentation: For more information about creating an event, visit the NetApp
 website and read the
 [vserver fpolicy policy event create](https://library.netapp.com/ecmdocs/ECMP1196817/html/vserver/fpolicy/policy/event/create.html)
 article.
@@ -313,7 +313,7 @@ fpolicy policy show ‑instance
 
 ![validatefpolicypolicycreation](/images/accessanalyzer/12.0/config/netappcmode/validatefpolicypolicycreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating a policy, visit the NetApp
+Relevant NetApp Documentation: For more information about creating a policy, visit the NetApp
 website and read the
 [vserver fpolicy policy create](https://library.netapp.com/ecmdocs/ECMP1366832/html/vserver/fpolicy/policy/create.html)
 article.
@@ -363,7 +363,7 @@ fpolicy policy scope show ‑instance
 
 ![validatefpolicyscopecreation](/images/accessanalyzer/12.0/config/netappcmode/validatefpolicyscopecreation.webp)
 
-Relevant NetApp Documentation: To learn more about creating scope, visit the NetApp website
+Relevant NetApp Documentation: For more information about creating scope, visit the NetApp website
 and read the
 [vserver fpolicy policy scope create](https://library.netapp.com/ecmdocs/ECMP1196817/html/vserver/fpolicy/policy/scope/create.html)
 article.
@@ -400,7 +400,7 @@ vserver fpolicy show
 
 ![validatefpolicyenabled](/images/accessanalyzer/12.0/config/netappcmode/validatefpolicyenabled.webp)
 
-Relevant NetApp Documentation: To learn more about enabling a policy, visit the NetApp
+Relevant NetApp Documentation: For more information about enabling a policy, visit the NetApp
 website and read the
 [vserver fpolicy enable](https://library.netapp.com/ecmdocs/ECMP1196817/html/vserver/fpolicy/enable.html)
 article.

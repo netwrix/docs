@@ -124,7 +124,7 @@ To configure the monitored domain output for Netwrix Enterprise Auditor:
 **Step 3 –** Configure the following:
 
 - Configure the number of days you want for the **Period to keep Log files**. This is the number of
-  days the log files are kept on the API server configured in the sections above. Set this to a
+  days the log files are kept on the API server configured in the preceding sections. Set this to a
   greater value than the days between Enterprise Auditor scans.
 
     - For example, if Enterprise Auditor runs the **AD_ActivityCollection** Job once a week (every 7

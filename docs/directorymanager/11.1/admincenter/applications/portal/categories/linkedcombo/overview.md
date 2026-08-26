@@ -141,8 +141,8 @@ the **Linked Combo Display Type** wizard.
 #### Step 2: Render the Linked Fields in the Combo on the Portal
 
 If the fields defined in a linked combo are already rendered on the same portal page as the linked
-combo, ensure that the appropriate display type is used for them. Some examples are shown in the
-table below.
+combo, ensure that the appropriate display type is used for them. The following table shows some
+examples.
 
 On the other hand, if the fields defined in a linked combo aren't available on the same portal page
 as the linked combo, you must create the fields first. These fields must be linked to the same

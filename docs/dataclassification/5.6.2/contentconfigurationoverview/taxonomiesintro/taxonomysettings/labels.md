@@ -28,7 +28,7 @@ setting specified at the term level).
 More than one label can be applied to each term to allow for labels to be applied that are only
 available on a limited set of site collections.
 
-Simply select Add and choose the label you want to assign from the dropdown list:
+Select Add and choose the label you want to assign from the dropdown list:
 
 ![o365labels_thumb_0_0](/images/dataclassification/5.6.2/taxonomies/o365labels_thumb_0_0.webp)
 

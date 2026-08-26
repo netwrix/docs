@@ -39,7 +39,7 @@ time of deletion. The restoration process not only restores the group to the con
 was deleted but it also reinstates the home container for the group, if deleted.
 
 You can also manually delete a logically deleted group in the Recycle Bin, making it physically
-deleted. Simply select the required group and select Delete on the shortcut menu.
+deleted. Select the required group and select Delete on the shortcut menu.
 
 ## Deletion notifications
 

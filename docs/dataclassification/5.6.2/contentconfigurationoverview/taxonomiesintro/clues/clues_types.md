@@ -54,7 +54,7 @@ A clue based on document metadata, with matching based on:
 - Dynamic Date Range matches – Such as: FIELD>TODAY OR FIELD>TODAY-14 (Matching the last 2 weeks)
 - Integer Range matches – Such as FIELD > VALUE or FIELD
 
-Helpers are provided to format metadata clues, to activate the helper simply select the appropriate
+Helpers are provided to format metadata clues. To activate the helper, select the appropriate
 icon for your clue type (numeric, date, and basic):
 ![metadatacluehelpers](/images/dataclassification/5.6.2/taxonomies/metadatacluehelpers.webp)
 
@@ -79,7 +79,7 @@ The raw content type, for example:
 >
 > application/pdf
 
-Most applications should use the CSE-TYPE field or the FILE TYPE field (see below) rather than the
+Most applications should use the CSE-TYPE field or the FILE TYPE field (described in the following sections) rather than the
 CSE-CONTENTTYPE field due to the highly variable nature of the raw values.
 
 Examples:
@@ -318,7 +318,7 @@ Then the following metadata entries will be generated automatically:
 - Regex-SSN:407-54-8832
 - в
 
-These can easily be viewed within the document “Info” popup on the “Metadata” tab (filtered to Regex
+You can view these within the document “Info” popup on the “Metadata” tab (filtered to Regex
 values). The automatically generated metadata field name is a combination of the term name prefixed
 with “Regex-“.
 
@@ -399,7 +399,7 @@ For example, suppose you have a topic _Pensions_ with two children:
 
 The purpose of the two child classes is to identify documents that are about pensions in the USA or
 about pensions in Canada. Rather than add clues to identify pensions documents to the children you
-can simply require documents to be about _Pensions_ by using a Required Class clue type.
+can require documents to be about _Pensions_ by using a Required Class clue type.
 
 ## Term Boost Clues
 
@@ -413,7 +413,7 @@ review the score for each term, not exploring deeper into each term. Review the 
 In a tree view you can find the list of terms, which are displayed in the Term boost list to the
 right. This way you can review or edit the average score for each term.
 
-Use the tree view control below to select boosting classes easy.
+Use the tree view control to select boosting classes.
 
 ![termboost](/images/dataclassification/5.6.2/taxonomies/termboost.webp)
 

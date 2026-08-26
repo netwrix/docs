@@ -82,7 +82,7 @@ OneLogin provider in Directory Manager.
 1. On the OneLogin Home page, click **More Actions** in the top right corner and select **SAML
    Metadata**. This will download the OneLogin metadata file on your machine.
 2. For convenience, either copy the file to your desktop or save its location, so that you can
-   easily locate it for import into Directory Manager.  
+   locate it for import into Directory Manager.  
    Importing the metadata file will being in all the configurations for the OneLogin identity
    provider in Directory Manager.
 

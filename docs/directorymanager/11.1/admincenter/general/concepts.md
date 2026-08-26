@@ -38,7 +38,7 @@ applies the defined rules to the directory and fetches matching records to updat
 memberships.
 
 In this way, Smart Groups are automatically updated whenever the user information changes in the
-directory. This automated group management allows administrators to easily maintain large
+directory. This automated group management allows administrators to maintain large
 distribution lists and security groups without having to manually add or remove members.
 
 ### Dynasties

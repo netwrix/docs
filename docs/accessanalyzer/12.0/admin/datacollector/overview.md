@@ -22,8 +22,8 @@ following options:
 
 - Table – Select a pre-configured table or select DEFAULT to create a new one
 - Add Table – Add a new table to the Table dropdown list
-- Rename Table – Rename the currently selected table
-- Delete Table – Delete the currently selected table
+- Rename Table – Rename the selected table
+- Delete Table – Delete the selected table
 
 Configure the Data Collectors in the Queries section, which has the following options:
 

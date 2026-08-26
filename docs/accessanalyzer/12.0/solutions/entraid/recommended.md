@@ -51,7 +51,7 @@ information.
 
 The following is the recommended workflow:
 
-**Step 1 –** Assign the Local host at the solution level as described above.
+**Step 1 –** Assign the Local host at the solution level as described previously.
 
 **Step 2 –** Run the .Entra ID Inventory Job Group. If you want on-premises directory syncing
 information, run the .Active Directory Inventory Job Group.

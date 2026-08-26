@@ -22,7 +22,7 @@ Use the following options to add, change, or remove Permissions:
   window. See the [Permission Window](#permission-window) topic for additional information.
 - Propagate permissions to child folders – Propagates permissions to the child folders of the
   selected folders
-- Once you select User, Folder, and Permission, click **Add** to add them to the summary of the
+- After you select User, Folder, and Permission, click **Add** to add them to the summary of the
   action
 - To remove an added Permission, select it in the panel and click **Remove**
 

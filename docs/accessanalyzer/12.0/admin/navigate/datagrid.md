@@ -192,7 +192,7 @@ Step 2.
 **Step 4 –** Click OK to confirm changes. The custom filter criteria is now applied to the Data
 Grid.
 
-In the example above, OSName is like \*2008\* AND not like \*Standard\*, the filter returns all data
+In the preceding example, OSName is like \*2008\* AND not like \*Standard\*, the filter returns all data
 records with an operating system name that contains “2008” but not “Standard,” e.g. Windows Server
 2008 Enterprise Edition, 64 bit and Windows Server 2008 R2 Datacenter Edition, 64-bit, etc. Complex
 filters can be created using the Advanced Search option in the Filtration Dialog.

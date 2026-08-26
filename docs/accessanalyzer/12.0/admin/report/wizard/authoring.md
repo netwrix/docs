@@ -25,7 +25,7 @@ Configure the following settings as required:
 - Author – Name of the person or group who created the report. This is displayed at the top of the
   generated report.
 - Tags – Use the tag editor to add and remove tags, see the
-  [Add Tags to a Report](#add-tags-to-a-report) topic below for more information. Tags are displayed
+  [Add Tags to a Report](#add-tags-to-a-report) topic for more information. Tags are displayed
   in the header of the generated reported.
 - Description – A description of the report content. It is displayed beneath the report Title in the
   generated report.

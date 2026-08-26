@@ -10,7 +10,7 @@ A user can have accounts in multiple identity stores in Directory Manager. They 
 of these accounts separately in Directory Manager before they can reset an account's password or
 unlock it (in case it gets locked).
 
-To eliminate the necessity of separate enrollment, a user can simply enroll one of these accounts in
+To eliminate the necessity of separate enrollment, a user can enroll one of these accounts in
 Directory Manager and then link other accounts with it. After linking is complete, the enrolled account becomes
 the master account.
 

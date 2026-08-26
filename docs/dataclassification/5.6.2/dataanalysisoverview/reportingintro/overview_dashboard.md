@@ -93,7 +93,7 @@ You can build up a few different dashboards for combinations of particular sourc
 interested in or particular taxonomies and save this configuration to quickly access required data
 later.
 
-1. Apply custom filters as described above.
+1. Apply custom filters as described previously.
 
     ![dashboard_filters_thumb_0_0](/images/dataclassification/5.6.2/reporting/dashboard_filters_thumb_0_0.webp)
 

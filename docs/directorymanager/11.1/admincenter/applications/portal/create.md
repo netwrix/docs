@@ -175,7 +175,7 @@ located on disk.
     1. As a prerequisite to Directory Manager 11 upgrade, the folder structure for the source
        version was copied to the Directory Manager 11 server. In this case, the design and linked
        combo files for all portals in the previous version are already available on the machine.
-       Else copy the above mentioned files for the respective identity stores associated with the
+       Else copy the previously mentioned files for the respective identity stores associated with the
        Self-Service portal, and place them on your local machine or a shared network location.
     2. In he **Select Identity Stores** area, click **Import Design** next to an identity store name
        to import the design file for it.
@@ -271,7 +271,7 @@ the[Prerequisites for Deployments in Remote IIS](/docs/directorymanager/11.1/adm
       `https://web-server-name:port/IIS-application-name`
       Hence, a different URL is constructed for each deployment of a portal in remote IIS.
 
-11. On providing the above information, the **Website** dropdown list displays the sites defined on
+11. On providing the preceding information, the **Website** dropdown list displays the sites defined on
     the remote IIS server. Select the site that you have configured with the appropriate permissions
     for Directory Manager.
 12. To enter information in the **Service Endpoints**, **Support Information**, **Password Center

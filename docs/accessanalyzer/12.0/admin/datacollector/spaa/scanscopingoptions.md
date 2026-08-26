@@ -65,7 +65,7 @@ for the URL inside the SharePoint Host Named Site Collections.
 
 To decrease the scan time in large SharePoint Online environments, break
 Site Collections for a single host down into subsets, or **Virtual Hosts**, that Access Analyzer
-treats as separate hosts. This allows you to run multiple scans of a single host
+treats as separate hosts. With virtual hosts, you can run multiple scans of a single host
 concurrently. To configure this:
 
 ![CSV file with host and site collection information](/images/accessanalyzer/12.0/admin/datacollector/spaa/virtualhostscsv.webp)

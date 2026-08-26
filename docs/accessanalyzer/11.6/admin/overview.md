@@ -35,7 +35,7 @@ topic for additional information.
 Enterprise Auditor employs a series of powerful Analysis Modules which provide
 end-users with the ability to perform both simple and sophisticated data analysis routines:
 
-- Correlation – Easily correlate data from multiple datasets to create meaningful views
+- Correlation – Correlate data from multiple datasets to create meaningful views
 - Policy – Create rules and policies which automatically categorize your data output, i.e. Severity,
   Classifications, etc.
 - Change – Turn on change detection to see exactly what has changed between time periods

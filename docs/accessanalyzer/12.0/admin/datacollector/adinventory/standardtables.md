@@ -33,7 +33,7 @@ The following table lists these tables and their associated views:
 
 
 Views are the recommended way for you to obtain the information gathered by the ADInventory Data
-Collector. They contain additional information for building queries easily.
+Collector. They contain additional information for building queries.
 
 The following is an explanation of the corresponding views created for some of the tables generated
 by the ADInventory Data Collector:

@@ -115,8 +115,8 @@ Scheduler.
 ![View Schedule link](/images/accessanalyzer/12.0/admin/runninginstances/viewschedule.webp)
 
 Click the **View Schedule** link to display the corresponding Scheduled Task for the running job or
-job group. This link is only enabled for jobs that are running via scheduled task and will not be
-enabled for interactive job executions.
+job group. The **View Schedule** link is only enabled for jobs that are running via scheduled task
+and will not be enabled for interactive job executions.
 
 ![Schedule wizard](/images/accessanalyzer/12.0/admin/runninginstances/schedulewizard.webp)
 
@@ -129,5 +129,5 @@ The job execution can be stopped if needed.
 
 ![Stop button](/images/accessanalyzer/12.0/admin/runninginstances/stop.webp)
 
-Click **Stop** to abort all instances in the job queue. This link is only enabled while a job is
-running.
+Click **Stop** to abort all instances in the job queue. The **Stop** link is only enabled while a
+job is running.

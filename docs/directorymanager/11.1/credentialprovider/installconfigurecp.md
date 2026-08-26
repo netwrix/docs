@@ -2008,7 +2008,7 @@ This section provides ready-to-use configuration examples for typical deployment
 </CPSettings>
 ```
 
-**⚠️ WARNING**: This configuration is for testing only! Never use in production!
+**⚠️ WARNING**: This configuration is for testing only. Never use it in production.
 
 **Testing Checklist**:
 - [ ] Credential provider tile appears on login screen
@@ -2279,7 +2279,7 @@ See [Credential Provider Filtering](#credential-provider-filtering) section for 
 
 #### Q6: Using the same portal URL for reset and unlock
 
-**Answer**: Yes! If your password reset portal handles both functions, you can use the same URL:
+**Answer**: Yes. If your password reset portal handles both functions, you can use the same URL:
 
 ```xml
 <ResetMyPasswordUrl value="https://portal.company.com" />
@@ -2419,7 +2419,7 @@ Only as a temporary workaround for testing:
 <IgnoreCertificateErrors value="true" />
 ```
 
-**⚠️ WARNING**: This is insecure! See [IgnoreCertificateErrors](#ignorecertificateerrors) for security implications.
+**⚠️ WARNING**: This setting is insecure. See [IgnoreCertificateErrors](#ignorecertificateerrors) for security implications.
 
 ---
 

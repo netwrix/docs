@@ -115,8 +115,8 @@ certain period will be temporary. When the period ends, they will be removed fro
 
     - Click **Yes** to extend the policy to include the target groups’ existing membership. All
       members of the target groups convert to temporary at the start of the period, and get
-      removed from the respective groups when the period ends. Simply put, a group’s membership
-      will be emptied when the period ends. Membership change is also logged in the group’s history.
+      removed from the respective groups when the period ends. In other words, a group’s membership
+      is emptied when the period ends. Membership change is also logged in the group’s history.
     - Click **No** to apply the policy to new members only and exempt existing members.
 
 10. The policy is displayed on the **Group/OU Based Membership Life Cycle** page. Click **Save**.  

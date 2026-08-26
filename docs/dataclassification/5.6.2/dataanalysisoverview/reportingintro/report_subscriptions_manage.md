@@ -80,7 +80,7 @@ To save a report configuration template
 Subscriptions for report templates let you schedule email delivery of a variety of reports or
 set of specific search criteria. Subscriptions are helpful if you are a rare guest of Netwrix Data
 Classification and you only need to get statistics based on individual criteria. For example, an IT
-manager can easily provide auditors with weekly reports to prove compliance with regulations.
+manager can provide auditors with weekly reports to prove compliance with regulations.
 [See Report Subscriptions for more information.](/docs/dataclassification/5.6.2/dataanalysisoverview/reportingintro/report_suscriptions.md)
 
 To view existing subscriptions for reports, navigate to the **Report Templates** page on the left

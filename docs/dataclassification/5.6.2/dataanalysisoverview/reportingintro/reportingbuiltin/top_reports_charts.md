@@ -18,7 +18,7 @@ the most frequently requested information:
   [Content Distribution Map](/docs/dataclassification/5.6.2/dataanalysisoverview/reportingintro/content_distribution.md)
   for details.
 - **Recent Tagging**—Displays statistics on the tagging results according to the specified filters.
-  To view this data, ensure the "**Auto-Classification Change Log**" feature is enabled (see the instructions above),
+  To view this data, ensure the "**Auto-Classification Change Log**" feature is enabled (see the preceding instructions),
 - **Recent Document Processing**—Displays statistics on the document processing results for the last
   7 days. This includes collection, indexing, and classification of data in the content sources.
 

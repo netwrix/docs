@@ -35,7 +35,7 @@ The default address is:
 
 http://[Fully Qualified Domain Name of the Enterprise Auditor Console server]:8082
 
-Enterprise Auditor uses this link to access the Web Console and for the web link in an emailed
+Enterprise Auditor uses this address to access the Web Console and for the web link in an emailed
 report. You may need to modify the protocol and port number to align with the organization’s
 environment, but they must match the information in the website’s configuration file. If you have
 secured the Web Console, manually update this address:

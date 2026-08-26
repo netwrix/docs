@@ -17,7 +17,7 @@ Permission types include:
 - Inherited permissions (inherited from a group or folder)
 
 So, for example, if a user is a member of a group that has permissions on a shared server, you can
-simply remove the user from group membership to revoke his/her access to that server.
+remove the user from group membership to revoke his/her access to that server.
 
 To facilitate permission viewing, do the following:
 

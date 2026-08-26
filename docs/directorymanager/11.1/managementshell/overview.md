@@ -149,7 +149,7 @@ Import-PSSession -Session $s -Type cmdlet -AllowClobber
 Connect-IdentityStore -mode "2" -IdentityStoreID "identity store id" -Credential $Cred
 ```
 
-Following line of the above script connects the current user to the identity store (_having ID 1_).
+The following line of the preceding script connects the current user to the identity store (_having ID 1_).
 
 ```
 Connect-IdentityStore -mode "2" -IdentityStoreID "1" -Credential $Cred

@@ -23,7 +23,7 @@ environments.
 
 ## Software Requirements
 
-The table below lists the minimum software requirements for the virtual appliance deployment:
+The following table lists the minimum software requirements for the virtual appliance deployment:
 
 | Virtual Environment | Requirements                                                                                     |
 | ------------------- | ------------------------------------------------------------------------------------------------ |
@@ -34,7 +34,7 @@ The table below lists the minimum software requirements for the virtual applianc
 ## Hardware Configuration
 
 When deploying Netwrix Data Classification virtual appliance, a pre-configured virtual machine is
-created. The table below contains the default hardware configuration of the VM where Netwrix Data
+created. The following table contains the default hardware configuration of the VM where Netwrix Data
 Classification virtual appliance is going to be deployed:
 
 | Parameter          | Value                                              |

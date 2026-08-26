@@ -69,7 +69,7 @@ for details).
 
 Netwrix Data Classification supports both of these mechanism: each registered taxonomy can be mapped
 to a metadata property. Related settings can be configured at a global level (default), or at a
-source level, as described below. Consider the following:
+source level, as described in the following sections. Consider the following:
 
 - To write tags, the program will use the crawling user account, so ensure that this account has
   permissions to create tags.

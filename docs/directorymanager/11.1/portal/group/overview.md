@@ -22,7 +22,7 @@ Directory Manager portal updates Smart Groups and Dynasties on the basis of user
 When directory information changes, Directory Manager portal automatically updates the appropriate
 groups, thus ensuring that groups are never out of date.
 
-This allows administrators to easily maintain large groups without having to manually add and remove
+This allows administrators to maintain large groups without having to manually add and remove
 members.
 
 :::note

@@ -16,7 +16,7 @@ versions, consider using _Exchange Mailbox_ content source.
 
 You can use Match Rules to include and exclude the certain mailboxes.
 
-To configure an Exchange Server source, follow the steps below.
+To configure an Exchange Server source, follow these steps.
 
 **Step 1 –** In Netwrix Data Classification management console, open the **Sources** view and click
 **Add**.

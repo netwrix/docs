@@ -6,9 +6,8 @@ sidebar_position: 50
 
 # Best Practices
 
-With any new product, a few pointers can really help you start off on the right foot. In the spirit
-of making you successful, here are some tips that will help you become an effective user of the
-Access Analyzer in no time. Enjoy!
+With any new product, a few pointers can help you get started effectively. The following tips help
+you become an effective user of Access Analyzer.
 
 ## Do
 
@@ -51,7 +50,7 @@ The following is a list of practices to avoid for Access Analyzer.
 ### Contact Support
 
 When the checklist items don't resolve the issue, contact support with as much applicable
-information as possible from the table below. It is possible that a hot fix may already exist for
+information as possible from the following list. A hot fix may already exist for
 the product.
 
 **What is the version of the Access Analyzer application?**   

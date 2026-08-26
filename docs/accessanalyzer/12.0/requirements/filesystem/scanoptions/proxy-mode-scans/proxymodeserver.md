@@ -70,12 +70,12 @@ as the File System solution for running Permission scans with the default config
 per million files and folders), that means no tag collection, file-level scanning, activity, or
 sensitive data.
 
-- For tag collection, add 125 MB per million documents to the totals above
+- For tag collection, add 125 MB per million documents to the preceding totals
 - For activity collection, add 250 MB per million files and folders and another 125 MB per million
-  activity events to the totals above
+  activity events to the preceding totals
 - For sensitive data collection, add 500 MB per million files and folders and another 1%-10% of the
   total size of the documents scanned for sensitive data (depending on targeted document types and
-  selected criteria) to the totals above
+  selected criteria) to the preceding totals
 
 For example, to scan 200 million files and folders, of which 10 million files will be
 scanned for tag collection and sensitive data with a total size of 6 TB, you would need: 160 GB for

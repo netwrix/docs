@@ -44,7 +44,7 @@ query treats personal sites to which it doesn't have access:
     - The query scans the personal sites
     - When the scan is complete, Enterprise Auditor restores the permissions to what they were
       before the scan, referring to those credentials made a Site Collection Administrator of
-      personal sites in order to conduct the scan.
+      personal sites to conduct the scan.
     - Requires the account used in the Connection Profile credentials to have the Global
       Administrator role for SharePoint Online or be a Farm Administrator for SharePoint on premise.
       This permission is required to facilitate altering the administrators of site collections.

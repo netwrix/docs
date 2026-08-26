@@ -38,7 +38,7 @@ built-in environment variable `%SAINSTALLDIR%`):
 - ...\ STEALTHbits\StealthAUDIT\StealthAUDIT.LIC: The license key
 
 **Step 3 –** Back up all Scheduled Tasks. The method of back up is determined by the Access Analyzer
-user. This can be as simple as copying the contents of the tasks folder from the following two
+user. For example, you can copy the contents of the tasks folder from the following two
 locations:
 
 ![C:\Windows\Tasks](/images/accessanalyzer/12.0/admin/maintenance/maintenance_3.webp)
@@ -70,8 +70,8 @@ Analyzer Console Server to the corresponding tasks folder of the operating syste
 **Step 5 –** For Host Management and Host List Replication in a new host scenario, run the following
 code within the SQL Studio on the Access Analyzer database.
 
-- Replace `OldServer` and `NewServer` in the script below with the names of the old and new Access
-  Analyzer servers
+- Replace `OldServer` and `NewServer` in the following script with the names of the old and new
+  Access Analyzer servers
 
 ```
 Declare @OHost varchar (128)

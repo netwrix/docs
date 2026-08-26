@@ -43,7 +43,7 @@ The following analysis tasks are selected by default:
 - Stale Role Details – Highlights the roles in AWS that are considered stale. Creates the
   AWS_StaleRole_Details table accessible under the job’s Results node.
 
-    - You can customize the number of days without a login to consider an account stale. By default
+    - You can customize the number of days without a log in to consider an account stale. By default
       it is set to 60. See the
       [Customizable Analysis Tasks for the AWS_StaleRoles Job](#customizable-analysis-tasks-for-the-aws_staleroles-job)
       topic for additional information.

@@ -94,7 +94,7 @@ stores.
               **Multiple Objects** link is displayed. Click it to open a popup that lists all
               identical objects for the user found in the other identity store.
 
-            If, on the **Preview Results** dialog box, you don't enter a user name but simply
+            If, on the **Preview Results** dialog box, you don't enter a user name but only
             select an identity store and click **Preview**, all user objects from the selected
             identity store are displayed along with their linked identities in the other identity
             store. If the process takes too long, you can click the orange button at the bottom to

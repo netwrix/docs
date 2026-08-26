@@ -189,7 +189,7 @@ Assign the custom role to your registered application.
 
 **Step 3 –** On the Add role assignment page, select the newly created role and click **Next**.
 
-- You can use the search bar to easily find the custom role.
+- You can use the search bar to find the custom role.
 
 **Step 4 –** On the Members tab, select the Assign access to option as **User, group, or service
 principal**. Then, click **Select members** and search for your registered application. Select the

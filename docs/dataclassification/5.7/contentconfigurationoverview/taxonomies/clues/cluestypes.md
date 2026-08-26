@@ -222,7 +222,7 @@ expression.
 :::
 
 
-These can easily be viewed within the document “Info” popup on the “Metadata” tab (filtered to Regex
+You can view these within the document “Info” popup on the “Metadata” tab (filtered to Regex
 values). The automatically generated metadata field name is a combination of the term name prefixed
 with “Regex-“.
 
@@ -342,7 +342,7 @@ For example, suppose you have a topic _Pensions_ with two children:
 
 The purpose of the two child classes is to identify documents that are about pensions in the USA or
 about pensions in Canada. Rather than add clues to identify pensions documents to the children you
-can simply require documents to be about _Pensions_ by using a Required Class clue type.
+can require documents to be about _Pensions_ by using a Required Class clue type.
 
 ## Term Boost Clues
 

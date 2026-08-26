@@ -15,7 +15,8 @@ The following options are available:
 - Job Name
 - Description
 - Log Level – Indicates the job log level, which can be inherited from the global **Settings** >
-  **Application** log level or customized here. See below for additional information.
+  **Application** log level or customized here. See the [Log Level](#log-level) topic for additional
+  information.
 - Write CSV Files To Job Output Directory – Exports the native data table created by a query to a
   CSV file in the job’s output directory. If there are multiple tables in the job, this option
   creates one file per table.

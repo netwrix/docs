@@ -17,8 +17,8 @@ the schedule task:
 - [Options](#options)
 
 On the Schedule page, click **New** to schedule when the task will run. The Host List and Connection
-pages are optional customizations. See the relevant section below for more information on the
-settings on each wizard page.
+pages are optional customizations. See the relevant section in the preceding list for more
+information on the settings on each wizard page.
 
 When the settings on the wizard pages are configured as desired, click **OK** to save the changes
 and close the window. The task is visible in the Schedule Actions view, at the Schedules node.

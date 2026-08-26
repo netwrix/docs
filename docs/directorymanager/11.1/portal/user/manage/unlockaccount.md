@@ -35,7 +35,7 @@ window for the specified number of times, the following message appears:
 ![GroupID Authenticate](/images/directorymanager/11.1/portal/user/manage/locked.webp)
 
 Now you can't log in to the portal unless you unlock your identity store account. Follow the
-instructions given below to unlock your account:
+instructions to unlock your account:
 
 Step 1 – On the Welcome to Directory Manager page of the portal, click **Account Locked?** card.
 
@@ -132,7 +132,7 @@ You can now log in to Directory Manager portal with your account and perform the
 
 On entering the wrong password on the Directory Manager Authenticate window for the specified number
 of times, your account gets locked. You can't log in to Password Center user portal unless you
-unlock your identity store account. Follow the instructions given below to unlock your account:
+unlock your identity store account. Follow the instructions to unlock your account:
 
 Step 1 – On the Welcome to Directory Manager page of the portal, click **Unlock my account** card.
 

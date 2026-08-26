@@ -18,7 +18,7 @@ classifications on a document and disables future auto-classification for it.
 To apply additional classification:
 
 In the **Add Action** dialog, from the **Action Type** list select **Manually Classify** under
-**Classification**, then configure the necessary terms as described below.
+**Classification**, then configure the necessary terms as described in the following steps.
 
 **NOTE:** The terms you select must belong to a single taxonomy / termset.
 

@@ -34,13 +34,13 @@ These settings are the same for all supported sources.
 
 ## Source-specific settings
 
-Settings for Google Drive content migration are described below.
+The following table describes settings for Google Drive content migration.
 
 | Setting                | Description                                                                | Comments                                                                                       |
 | ---------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | **Destination Folder** | The path to migrate the document to relative to the migration destination. | To migrate to the root folder, leave blank. Destination example: _Folder/SubFolder/SubFolder2_ |
 
-Settings for SharePoint content migration are described below.
+The following table describes settings for SharePoint content migration.
 
 | Setting                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Comments                                                      |
 | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |

@@ -91,7 +91,7 @@ Referenced by `SA_SQLServer_ServerPermissions.class` and `SA_SQLServer_DatabaseP
 
 ## Permission Names (`SA_SQLServer_PermissionNames`)
 
-Referenced by `SA_SQLServer_ServerPermissions.type` and `SA_SQLServer_DatabasePermissions.type`. Values are populated at runtime from `sys.server_permissions` and `sys.database_permissions`. The table below lists commonly encountered permission names; additional permissions may be present depending on SQL Server version and features in use.
+Referenced by `SA_SQLServer_ServerPermissions.type` and `SA_SQLServer_DatabasePermissions.type`. Values are populated at runtime from `sys.server_permissions` and `sys.database_permissions`. The following table lists commonly encountered permission names; additional permissions may be present depending on SQL Server version and features in use.
 
 | Code | Permission Name |
 |---|---|
@@ -121,7 +121,7 @@ Referenced by `SA_SQLServer_ServerPermissions.type` and `SA_SQLServer_DatabasePe
 
 ## Audit Class Types (`SA_SQLServer_AuditClassType`)
 
-Referenced by `SA_SQLServer_AuditActions.class_type` and `SA_SQLServer_Events.class_type`. The full list contains 107 entries; the most commonly encountered types are shown below.
+Referenced by `SA_SQLServer_AuditActions.class_type` and `SA_SQLServer_Events.class_type`. The full list contains 107 entries; the following table shows the most commonly encountered types.
 
 | Code | Description | Code | Description |
 |---|---|---|---|
@@ -148,7 +148,7 @@ Referenced by `SA_SQLServer_AuditActions.class_type` and `SA_SQLServer_Events.cl
 
 ## Audit Actions (Common) (`SA_SQLServer_AuditActions`)
 
-Referenced by `SA_SQLServer_Events.action_id`. The full list contains 173 action definitions; frequently referenced actions are shown below.
+Referenced by `SA_SQLServer_Events.action_id`. The full list contains 173 action definitions; the following sections show frequently referenced actions.
 
 **Login / Logout Actions:**
 
