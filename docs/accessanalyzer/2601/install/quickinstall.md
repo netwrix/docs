@@ -13,6 +13,7 @@ This guide covers installing Access Analyzer on a fresh Linux VM. The installer 
 Before running the installer, confirm the following:
 
 - [ ] Server meets hardware and OS requirements
+- [ ] You must have and account that has `sudo` access to the server
 - [ ] Outbound HTTPS access confirmed to all required domains
 - [ ] Server hostname is a fully qualified domain name (FQDN) that resolves to the server IP
 - [ ] TLS certificate option chosen; certificate files prepared if using Bring Your Own
