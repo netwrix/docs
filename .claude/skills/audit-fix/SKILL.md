@@ -44,10 +44,12 @@ A single paste can contain corrections for more than one page — see "Handling 
 
 ## Step 2: Resolve siblings
 
-Run the bundled script, passing the source path and the `Error` quotes (as a JSON array on stdin) from every correction block in this paste:
+Run the bundled script, passing the source path and the `Error` quotes (as a JSON array on stdin) from every correction block in this paste. Use a quoted heredoc, not `echo '...' |` — audit `Error` quotes are prose lifted straight from doc pages, and any apostrophe (a contraction, a possessive) inside a single-quoted `echo` string terminates it early:
 
 ```bash
-echo '["exact error text 1", "exact error text 2"]' | node .claude/skills/audit-fix/scripts/find-siblings.mjs <source_path>
+node .claude/skills/audit-fix/scripts/find-siblings.mjs <source_path> <<'JSONEOF'
+["exact error text 1", "exact error text 2"]
+JSONEOF
 ```
 
 This reads `docs-audit/<product>/review-list.csv` and reports, for every other version of the product:
@@ -59,11 +61,11 @@ This reads `docs-audit/<product>/review-list.csv` and reports, for every other v
 
 Reconcile this against the template's own `Duplicated in` field from Step 1: if the reviewer listed a version the script doesn't confirm as `exact-duplicate` (or vice versa), mention the discrepancy when you ask about scope in Step 3 — trust the script's CSV-based answer for what gets auto-applied, but don't silently drop what the reviewer wrote.
 
-If the script errors because the source path isn't in `review-list.csv` (it can happen — pages are excluded from the audit list for recent churn, draft status, or product-exclusion reasons), tell the user and ask how to proceed rather than silently skipping or guessing.
+If the script exits non-zero — because the source path isn't in `review-list.csv` (it can happen — pages are excluded from the audit list for recent churn, draft status, or product-exclusion reasons), or because the quotes JSON on stdin was malformed — tell the reviewer and ask how to proceed rather than silently skipping, guessing, or retrying with no quotes.
 
 ## Step 3: Confirm scope with the reviewer
 
-- **Exact duplicates**: no need to ask — the CSV already proved these are the same page. Include them in Step 5 automatically.
+- **Exact duplicates**: no need to ask — the CSV already proved these are the same page. Include them in Step 5 automatically. (The duplicate detection is version-normalized — see the version-token warning in Step 5 before writing the replacement into one of these.)
 - **`quote-found` siblings**: ask the reviewer, once, listing every such sibling: "This exact text also appears in `<version>`'s copy — apply the same fix there too?" Let them answer per-file or all-at-once. Don't touch these until they say yes.
 - **`quote-not-found` and `file-missing`**: don't mention these unless the reviewer asks — they're not actionable.
 
@@ -87,6 +89,8 @@ For the primary file, every approved exact-duplicate, and every sibling the revi
 Fix only what the correction describes. If a `Fix` would change something well beyond the quoted `Error` (e.g. it reads more like a request to rewrite the whole section than to correct a specific error), stop and confirm scope with the reviewer before proceeding — this is a reviewer-approved correction, not free rein to edit.
 
 **On a `quote-found` sibling, replace only the matched substring, not the whole line or heading.** The sibling isn't a proven duplicate, so the text around your `Error` quote can differ — an extra anchor tag, a longer sentence, a different heading suffix. Editing the exact substring the script matched avoids clobbering that surrounding content; editing the whole line/paragraph you saw in the *primary* file risks overwriting something in the sibling that was never part of the correction.
+
+**Before writing a composed replacement into ANY sibling (exact-duplicate or quote-found), check it for version-bearing tokens.** `exact-duplicate` only means the two files hash equal after the generator strips out version strings — it does not mean the files are byte-identical. Every version-specific path or link still differs between them (an image under `/images/<product>/<primary-version>/...`, an internal doc link like `/docs/<product>/<primary-version>/...md`, a version number written out in prose). If the text you're about to write contains one of these, substitute the sibling's own version (reported by the script as that sibling's `version` field) for the primary version's before applying the edit — never carry the primary file's version tokens into a sibling. This matters most when a `Fix` adds a new link or image reference, since that's exactly the house style most likely to embed a version string.
 
 ## Step 6: Show the diff, wait for confirmation
 
@@ -140,7 +144,7 @@ Once linting is clean for every edited file:
    - If they have more pages to audit: prompt them to paste the next correction. Stay on the same branch — no need to restart Step 4 unless they say otherwise.
 4. **Remind them about the two places status lives** — this skill doesn't update either directly:
    - The page's **Document Review doc** in Xchange: fill in its **Status** section (`Audited`, `Accurate`, `Complete`) and paste the fix summary from step 1 into its **Fix Summary** section.
-   - The shared `review-list.csv`/workbook row, for the primary version and every duplicate actually touched: set `audited` (and, if this was the first pass on the page, `accurate`/`complete`) too — the Document Review doc and the spreadsheet track different things (per-page narrative vs. cross-product rollup) and both need updating, ideally once the PR merges.
+   - The **imported spreadsheet** (Google Sheets/Excel Online), for the primary version and every duplicate actually touched: set `audited` (and, if this was the first pass on the page, `accurate`/`complete`) too — the Document Review doc and the spreadsheet track different things (per-page narrative vs. cross-product rollup) and both need updating, ideally once the PR merges. Don't edit the committed `docs-audit/<product>/review-list.csv` file itself for this — per `generate-audit-list.mjs`, review status lives only in the imported spreadsheet, and the next `npm run audit:generate` regenerates the CSV from scratch, silently discarding anything written into it directly.
 
 ## Handling multiple pages in one paste
 

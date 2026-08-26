@@ -11,8 +11,12 @@
  * problem text is actually present there — not a fuzzy similarity guess.
  *
  * Usage:
- *   echo '["exact error text 1", "exact error text 2"]' \
- *     | node .claude/skills/audit-fix/scripts/find-siblings.mjs docs/accessanalyzer/11.6/foo.md
+ *   node .claude/skills/audit-fix/scripts/find-siblings.mjs docs/accessanalyzer/11.6/foo.md <<'JSONEOF'
+ *   ["exact error text 1", "exact error text 2"]
+ *   JSONEOF
+ *
+ * (Use a heredoc, not `echo '...' |` — quotes often contain apostrophes,
+ * which terminate a single-quoted echo string early.)
  *
  * Quotes are optional — pipe `[]` to only resolve product/version/duplicates
  * without checking siblings for specific text. Always pipe *something* to
@@ -33,16 +37,20 @@ const PRODUCT_ALIASES = { recoveryforactivedirectory: 'identityrecovery' };
 
 function readStdinQuotes() {
   if (process.stdin.isTTY) return [];
+  const raw = fs.readFileSync(0, 'utf8').trim();
+  if (!raw) return [];
+  let parsed;
   try {
-    const raw = fs.readFileSync(0, 'utf8').trim();
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) throw new Error('quotes must be a JSON array of strings');
-    return parsed;
+    parsed = JSON.parse(raw);
   } catch (e) {
-    console.error(`⚠️  Could not parse quotes from stdin as a JSON array: ${e.message}`);
-    return [];
+    console.error(`❌ Could not parse quotes from stdin as JSON: ${e.message}`);
+    process.exit(1);
   }
+  if (!Array.isArray(parsed) || !parsed.every((q) => typeof q === 'string')) {
+    console.error('❌ Quotes from stdin must be a JSON array of strings.');
+    process.exit(1);
+  }
+  return parsed;
 }
 
 function buildVersionIndex() {

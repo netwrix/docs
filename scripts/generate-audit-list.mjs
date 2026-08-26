@@ -91,7 +91,8 @@ function parseArgs(argv) {
     else if (raw === '--verify-against-build') args.verifyAgainstBuild = 'build';
     else if (raw.startsWith('--verify-against-build=')) args.verifyAgainstBuild = raw.slice('--verify-against-build='.length);
     else {
-      console.warn(`⚠️  Unrecognized argument: ${raw}`);
+      console.error(`❌ Unrecognized argument: ${raw}`);
+      process.exit(1);
     }
   }
 
@@ -430,6 +431,7 @@ function main() {
 
     for (const f of files) {
       const absPath = path.join(PROJECT_ROOT, f.repoPath);
+      if (!fs.existsSync(absPath)) continue; // tracked in git but deleted in the working tree (see the dirty-tree warning above)
       const currentLines = currentLineCount(absPath);
       if (currentLines === 0) continue;
 
