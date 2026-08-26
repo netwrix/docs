@@ -1,10 +1,10 @@
 ---
-title: "NPS-D: Upgrade MongoDB 4.0 to 8.0"
+title: "Upgrade MongoDB 4.0 to 8.0"
 description: "Migrate an existing NPS-D 26.09.0 deployment from MongoDB 4.0 to MongoDB 8.0"
 sidebar_position: 15
 ---
 
-# NPS-D: Upgrade MongoDB 4.0 to 8.0
+# Upgrade MongoDB 4.0 to 8.0
 
 ## Overview
 
