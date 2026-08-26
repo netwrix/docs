@@ -13,6 +13,7 @@ This guide covers installing Access Analyzer on a fresh Linux VM. The installer 
 Before running the installer, confirm the following:
 
 - [ ] Server meets hardware and OS requirements
+- [ ] Account with `sudo` access to the server
 - [ ] Outbound HTTPS access confirmed to all required domains
 - [ ] Server hostname is a fully qualified domain name (FQDN) that resolves to the server IP
 - [ ] TLS certificate option chosen; certificate files prepared if using Bring Your Own
@@ -21,26 +22,18 @@ Before running the installer, confirm the following:
 
 ### System requirements
 
-**Absolute installer minimums:** 6 vCPUs, 24 GB RAM, 20 GB free disk on `/`. The preflight check blocks installation if the system falls below these thresholds.
-
 Choose a deployment size based on your environment:
 
-| Size | CPU | Memory | Disk | Data Threshold |
-| --- | --- | --- | --- | --- |
-| **Small** | 8 cores | 24 GB | 250 GB SSD | Up to 5 TB |
-| **Medium** | 16 cores | 48 GB | 500 GB SSD | 5 TB – 100 TB |
-| **Large** | 32 cores | 64 GB | 1 TB SSD | 100 TB – 1 PB |
-| **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD | 1 PB+ |
+| Size | CPU | Memory | Minimum Disk Space |
+| --- | --- | --- | --- |
+| **Small** | 8 cores | 32 GB | 500 GB SSD |
+| **Medium** | 16 cores | 48 GB | 1 TB SSD |
+| **Large** | 32 cores | 64 GB | 1 TB SSD |
+| **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD |
 
-**Disk space** — the installer validates free space on multiple paths:
-
-| Path | Minimum Free Space | Purpose |
-| --- | --- | --- |
-| `/` | 20 GB | Root filesystem |
-| `/var` | 20 GB | K3s data, containers, logs |
-| `/var/lib` | 20 GB | K3s data directory |
-| `/var/log` | 5 GB | System and application logs |
-| `/etc` | 1 GB | Configuration files |
+:::note
+The required disk space scales with the number of objects across your sources, not the size of on-disk data, because Access Analyzer stores only object metadata, not actual contents. These are minimum disk space requirements — allocate more if possible to avoid running out of space later.
+:::
 
 **Network:** Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains).
 
@@ -72,17 +65,7 @@ Use a DNS hostname, **not an IP address**. The browser TLS handshake requires a 
 
 ### TLS certificates
 
-The installer offers three ways to provision the server's TLS certificate. Choose your option before gathering certificate materials — only **Bring your own certificate** requires preparation in advance.
-
-| Option | What It Does | Best For | What to Prepare |
-| --- | --- | --- | --- |
-| **Generate self-signed** | Installer generates a certificate automatically — no CA involvement | Quick evaluations and proof-of-concept installs. Not for production — browsers will show a security warning | Nothing — installer handles it |
-| **Sign with AD Certificate Services** | Installer generates a certificate signing request (CSR) and submits it to your organization's Active Directory Certificate Services (AD CS), where your internal Enterprise CA signs it | Enterprise environments that already run AD CS and where the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
-| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized PKI team, or where AD CS isn't available | Three PEM files — see [file requirements](#bring-your-own-certificate-file-requirements) |
-
-#### Bring your own certificate file requirements
-
-If you selected **Bring your own certificate**, prepare the following three files and place them in `/etc/dspm/` on the server before running the installer:
+You must prepare the following three files and place them in `/etc/dspm/` on the server before running the installer:
 
 ```bash
 sudo mkdir -p /etc/dspm
