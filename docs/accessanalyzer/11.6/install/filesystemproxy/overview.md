@@ -37,6 +37,7 @@ topic for information on the required prerequisites.
 The File System Proxy Service for the Enterprise Auditor File System Solution can be installed on
 the following Windows operating systems:
 
+- Windows Server 2025
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016

@@ -36,6 +36,7 @@ the required prerequisites.
 The File System Proxy Service for the Access Analyzer File System Solution can be installed on the
 following Windows operating systems:
 
+- Windows Server 2025
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016

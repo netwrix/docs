@@ -89,7 +89,7 @@ Enterprise Auditor. Most solutions have additional target requirements.
 
 The server can be physical or virtual. The requirements are:
 
-- Windows Server 2016 through Windows Server 2022
+- Windows Server 2016 through Windows Server 2025
 
 Additionally the server must meet these requirements:
 
@@ -155,7 +155,7 @@ The following is a list of supported browsers for the Web Console and the Access
 
 The server requirements include one of the following SQL Server versions:
 
-- SQL Server 2016 through SQL Server 2022
+- SQL Server 2016 through SQL Server 2025
 - Azure SQL Managed Instances
 
 Additionally the server must meet this requirement:

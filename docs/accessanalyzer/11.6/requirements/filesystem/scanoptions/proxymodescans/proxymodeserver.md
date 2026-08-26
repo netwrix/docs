@@ -17,7 +17,7 @@ handling.
 
 The server can be physical or virtual. The requirements for Enterprise Auditor are:
 
-- Windows Server 2016 through Windows Server 2022
+- Windows Server 2016 through Windows Server 2025
 
     - US English language installation
     - Domain member

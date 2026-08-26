@@ -12,6 +12,7 @@ security assessment for Microsoft SQL Server.
 
 **Supported Platforms**
 
+- SQL Server 2025
 - SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017

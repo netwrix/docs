@@ -80,7 +80,7 @@ also be in any of the Local Machine certificate stores.
 If it is necessary to install the Access Information Center on a server separate from the Access
 Analyzer Console, the following minimal server requirements are needed for Access Reporting:
 
-- Windows Server 2016 through Windows Server 2022
+- Windows Server 2016 through Windows Server 2025
 
     - US English language installation
     - Domain member
