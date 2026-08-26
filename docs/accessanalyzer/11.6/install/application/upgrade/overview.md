@@ -29,10 +29,10 @@ additional information.
 **Multiple Enterprise Auditor Consoles Connecting to the Same Database**
 
 In environments where multiple Enterprise Auditor Consoles are using the same SQL Server database,
-you must also update every console using the database. The act of connecting a Enterprise Auditor
-Console with a newer version to a database updates the database’s schema pursuant to the new
-definition. If a Enterprise Auditor Console with an older version connects to the same database
-after the schema has been updated, corruption to Enterprise Auditor’s system tables can result.
+you must also update every console using the database. Connecting an Enterprise Auditor Console with
+a newer version to a database updates the database’s schema to the new definition. If an Enterprise
+Auditor Console with an older version connects to the same database after that schema update,
+corruption to Enterprise Auditor’s system tables can result.
 
 **SQL Server Supported Version Change for the Enterprise Auditor Database**
 

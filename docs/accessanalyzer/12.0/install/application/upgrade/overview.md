@@ -59,10 +59,10 @@ have local administrator rights. Otherwise, the initialization throws an excepti
 Multiple Access Analyzer Consoles Connecting to the Same Database
 
 In environments where multiple Access Analyzer Consoles are using the same SQL Server database,
-you must also update every console using the database. The act of connecting a Access Analyzer
-Console with a newer version to a database updates the database’s schema pursuant to the new
-definition. If a Access Analyzer Console with an older version connects to the same database after
-the schema has been updated, corruption to Access Analyzer’s system tables can result.
+you must also update every console using the database. Connecting an Access Analyzer Console with a
+newer version to a database updates the database’s schema to the new definition. If an Access
+Analyzer Console with an older version connects to the same database after that schema update,
+corruption to Access Analyzer’s system tables can result.
 
 SQL Server Supported Version Change for the Access Analyzer Database
 

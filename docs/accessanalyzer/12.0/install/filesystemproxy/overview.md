@@ -94,9 +94,9 @@ the Access Analyzer Console server.
 
 You configure the proxy communication during the installation of the service on the proxy server,
 and you configure certificate exchange options on the Applet Settings page of the File System Access
-Auditing Data Collector Wizard. The credential provided for the secure communications in the
-installation wizard is also added to the Access Analyzer Connection Profile assigned to the File
-System Solution.
+Auditing Data Collector Wizard. Access Analyzer also adds the credential you supply for secure
+communications in the installation wizard to the Access Analyzer Connection Profile assigned to the
+File System Solution.
 
 See the [File System Proxy Service Installation](/docs/accessanalyzer/12.0/install/filesystemproxy/wizard.md) topic for additional information.
 

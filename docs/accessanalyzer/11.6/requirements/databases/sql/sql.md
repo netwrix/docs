@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Target SQL Server Requirements, Permissions, and Ports
 
-The Enterprise Auditor for Databases Solution provides the ability to audit and monitor SQL Server
+The Enterprise Auditor for Databases Solution lets you audit and monitor SQL Server
 database environments to collect permissions, sensitive data, and activity events. It scans:
 
 - Azure SQL
@@ -19,7 +19,7 @@ database environments to collect permissions, sensitive data, and activity event
 
 **Target SQL Server Requirements**
 
-The following are requirements for the SQL Server to be scanned:
+The target SQL Server must meet the following requirements:
 
 - WINRM Service installed
 - Ensure the following rights are in the `ROOT\Microsoft\SQLServer` and `ROOT\Interop` WMI
@@ -36,7 +36,7 @@ The following are requirements for the SQL Server to be scanned:
 
 - For Activity Auditing – SQL Server Audit:
 
-    - SQL Server Audit Specifications to be configured on the target databases
+    - Configure SQL Server Audit Specifications on the target databases
     - Audit destination must be a binary file
     - See the Microsoft
       [Create a server audit and database audit specification](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification)
@@ -80,9 +80,9 @@ This solution employs the following data collector to scan the target environmen
 - For permissions for data collection:
 
     - Read access to SQL instance
-    - Requires SQL Full-Text and Semantic Extractions for Search feature to be installed on the
-      target SQL instance(s) when using the **Scan full rows for sensitive data** option on the
-      Options wizard page
+    - Requires the SQL Full-Text and Semantic Extractions for Search feature on the target SQL
+      instances when you use the **Scan full rows for sensitive data** option on the Options
+      wizard page
     - Grant Authenticate Server to [DOMAIN\USER]
     - Grant Connect SQL to [DOMAIN\USER]
     - Grant View any database to [DOMAIN\USER]

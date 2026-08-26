@@ -105,7 +105,7 @@ The following are additional requirements for the server:
 
 **Sensitive Data Discovery Auditing**
 
-The following is required to run Sensitive Data Discovery scans:
+Running Sensitive Data Discovery scans requires the following:
 
 - Sensitive Data Discovery Add-On installed on the proxy server
 
