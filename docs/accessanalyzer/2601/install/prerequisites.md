@@ -104,7 +104,7 @@ For the full TLS specification, including multi-CA environments, see the TLS Cer
 
 Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
 
-To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values in [Identity provider](#identity-provider) before you start, so you have them ready in the setup wizard.
+To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values for the directory you use before you start, so you have them ready in the setup wizard.
 
 ## Identity provider
 
