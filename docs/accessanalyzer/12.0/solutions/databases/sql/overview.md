@@ -12,8 +12,8 @@ security assessment for Microsoft SQL Server.
 
 **Supported Platforms**
 
-- SQL Server 2025
-- SQL Server 2022
+- SQL Server 2025
+- SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017
 - SQL Server 2016
@@ -40,7 +40,7 @@ doesn't conflict with other JDKs or Java Runtimes in the same environment.
 
 **Location**
 
-The Microsoft SQL Server Solution is in the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
+The Microsoft SQL Server Solution is in the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
 
 The Database Solution license includes all database platforms that Access Analyzer
 supports. Additionally, Sensitive Data Discovery enables the solution to search database content for

@@ -9,8 +9,8 @@ sidebar_position: 70
 The Access Analyzer for Databases Solution lets you audit and monitor SQL Server
 database environments to collect permissions, sensitive data, and activity events. It scans:
 
-- SQL Server 2025
-- SQL Server 2022
+- SQL Server 2025
+- SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017
 - SQL Server 2016

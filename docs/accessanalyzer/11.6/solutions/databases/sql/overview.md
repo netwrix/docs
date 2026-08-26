@@ -15,8 +15,8 @@ security assessment.
 
 - Azure SQL
 
-- SQL Server 2025
-- SQL Server 2022
+- SQL Server 2025
+- SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017
 - SQL Server 2016
@@ -46,7 +46,7 @@ environment.
 
 **Location**
 
-The SQL Job Group within the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
+The SQL Job Group within the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
 
 The Database Solution license includes all supported database platforms supported by Enterprise
 Auditor. Additionally, the Sensitive Data Discovery Add-On enables the solution to search database
