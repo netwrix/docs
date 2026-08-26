@@ -17,6 +17,30 @@ concurrency:
   group: vale-autofix-${{ github.event.pull_request.number }}
 
 jobs:
+  test-scripts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Check if scripts changed
+        id: scripts-changed
+        run: |
+          CHANGED=$(git diff --name-only origin/dev...HEAD -- scripts/ package.json)
+          if [ -z "$CHANGED" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Test anchor/slugify scripts
+        if: steps.scripts-changed.outputs.changed == 'true'
+        run: npm run test:scripts
+
   vale-autofix:
     if: github.event.pull_request.head.repo.fork == false && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
@@ -59,10 +83,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Test anchor/slugify scripts
-        if: steps.bot-check.outputs.skip != 'true'
-        run: npm run test:scripts
 
       - name: Get changed markdown files
         id: changed-files
