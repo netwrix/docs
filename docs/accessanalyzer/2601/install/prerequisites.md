@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Prerequisites
 
-Gather the following before you start the Access Analyzer installer. For the full installation walkthrough, see [Quick Install](quickinstall.md).
+Gather the following before you start the Access Analyzer installer. Everything the installer asks for is on this page. For the full installation walkthrough, see the Quick Install page.
 
 ## Checklist
 
@@ -17,6 +17,7 @@ Gather the following before you start the Access Analyzer installer. For the ful
 - [ ] TLS certificate option chosen; certificate files prepared if using Bring Your Own
 - [ ] First admin name and email address decided (this provisions a local account — no AD/Entra dependency)
 - [ ] Netwrix license key ready
+- [ ] If using AD or Entra ID sign-in: service account, certificate, or app registration prepared
 
 ## System requirements
 
@@ -35,7 +36,7 @@ Choose a deployment size based on your environment:
 The required disk space scales with the number of objects across your sources rather than the size of on-disk data, because Access Analyzer stores only object metadata. These are minimum disk space requirements — allocate more if possible to avoid running out of space later.
 :::
 
-**Network:** Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains).
+**Network:** Outbound HTTPS (port 443) to the endpoints listed in the Required Domains table below.
 
 **License:** Valid Netwrix license key.
 
@@ -44,7 +45,7 @@ The required disk space scales with the number of objects across your sources ra
 :::
 
 :::note
-If the server runs on a hypervisor, configure **static memory allocation** (not dynamic/ballooned memory). See [Hardware and System Requirements](system/requirements.md) for hypervisor-specific instructions.
+If the server runs on a hypervisor, configure **static memory allocation** (not dynamic/ballooned memory).
 
 - **VMware vSphere:** disable memory ballooning (`mem.balloon.enable = "FALSE"`)
 - **Hyper-V:** use static memory (`Set-VMMemory -DynamicMemoryEnabled $false`)
@@ -101,15 +102,65 @@ openssl pkey -pubout -in /etc/dspm/<hostname>.key 2>/dev/null | md5sum
 openssl x509 -noout -pubkey -in /etc/dspm/<hostname>.crt | md5sum
 ```
 
-For the full TLS specification including SAN rules and multi-CA environments, see [TLS Certificate Requirements](system/certificates.md).
+For the full TLS specification, including multi-CA environments, see the TLS Certificate Requirements page.
 
 ## First admin account
 
 Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
 
-The installer generates a temporary password for this account and displays it once, in the [installation summary](quickinstall.md#step-5-review-the-installation-summary). The first admin must set a new password on their first sign-in.
+The installer generates a temporary password for this account and displays it once, in the summary it prints at the end of the installation. Copy it before closing the terminal. The first admin must set a new password on their first sign-in.
 
-To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation.
+To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values under Identity provider below before you start, so you have them ready in the setup wizard.
+
+## Identity provider
+
+Optional. Access Analyzer runs without an identity provider, using the local first admin account. Configure one if you want users to sign in with credentials they already have. Prepare only the directory you plan to use.
+
+### Active Directory
+
+Active Directory doesn't require an application registration. Prepare the following before connecting.
+
+**Service account:** Create a dedicated, read-only service account in your directory. Access Analyzer never writes to your directory.
+
+**Certificate:** Prepare a PEM file containing the CA certificate that issued your domain controller's LDAPS certificate. The setup wizard requires it to complete the connection test.
+
+**Network access:** The Access Analyzer cluster must reach a domain controller in your AD forest over LDAPS (port 636).
+
+Collect the following values:
+
+| Value | Description |
+| --- | --- |
+| **AD domain name** | Fully qualified domain name of your AD forest — for example, `corp.example.com`. Access Analyzer connects over LDAPS (port 636) automatically. |
+| **Service account** | A read-only service account, in User Principal Name (UPN) format — for example, `aa26-svc@corp.example.com` |
+| **Service account password** | — |
+| **AD authentication certificate** | The CA certificate (PEM) that issued the domain controller's LDAPS certificate |
+
+You don't need to look up the users base DN or the email attribute yourself. After you enter the domain, service account, and certificate, the wizard tests the connection and discovers both automatically.
+
+### Entra ID
+
+Complete the following steps in the Azure Portal before connecting Access Analyzer.
+
+1. Open **Azure Portal** > **Entra ID** > **App registrations** > **New registration**.
+2. Name the application and click **Register**.
+3. Open the registration > **Authentication** > **Add a platform** > **Web**, and add two redirect URIs:
+   - The URI shown on the Access Analyzer setup wizard's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — used once, during the admin-consent step.
+   - `https://<your-hostname>/idps/callback` — used every time a user signs in with Entra ID.
+4. Go to **Certificates & secrets** > **New client secret**. Set an expiry that fits your rotation policy and copy the value immediately — the portal shows it only once.
+
+Collect the following values:
+
+| Value | Where to find it |
+| --- | --- |
+| **Tenant ID** | Azure Portal > Entra ID > Overview > Directory (tenant) ID — the GUID, not the primary domain |
+| **Application (client) ID** | App registration > Overview > Application (client) ID |
+| **Client secret** | Created in step 4 |
+
+Enter these values in the Access Analyzer setup wizard and click **Sign in with Microsoft and continue**. A popup prompts a **Global Administrator** or **Privileged Role Administrator** to sign in and grant consent for Access Analyzer to read the directory.
+
+:::note
+Register both redirect URIs before anyone signs in with Entra ID. The setup wizard's callback completes the connection; `/idps/callback` is Microsoft's redirect target for every subsequent sign-in — omitting it lets you finish setup but blocks sign-in with an `AADSTS50011` redirect URI mismatch.
+:::
 
 ## License key
 
@@ -139,7 +190,7 @@ Ports the Access Analyzer server must reach on your data sources and directory s
 
 ### Required Domains
 
-All outbound endpoints use HTTPS (port 443). The Access Analyzer server must reach the following domains before installation. For firewall rule examples, see [Network and Port Requirements](system/network.md).
+All outbound endpoints use HTTPS (port 443). The Access Analyzer server must reach the following domains before installation. For firewall rule examples, see the Network and Port Requirements page.
 
 | Endpoint | Category | Purpose | When Required |
 | --- | --- | --- | --- |
@@ -159,49 +210,3 @@ All outbound endpoints use HTTPS (port 443). The Access Analyzer server must rea
 | `get.k3s.io` | K3s / Rancher | K3s installer download | Installation only |
 | `rpm.rancher.io` | K3s / Rancher | K3s package repository | Installation only |
 | `storage.googleapis.com` | K3s / Rancher | K3s artifact storage | Installation only |
-
-## Active Directory
-
-Active Directory doesn't require an application registration. Prepare the following before connecting.
-
-**Service account:** Create a dedicated, read-only service account in your directory. Access Analyzer never writes to your directory.
-
-**Certificate:** Prepare a PEM file containing the CA certificate that issued your domain controller's LDAPS certificate. The setup wizard requires it to complete the connection test.
-
-**Network access:** The Access Analyzer cluster must reach a domain controller in your AD forest over LDAPS (port 636).
-
-Collect the following values:
-
-| Value | Description |
-| --- | --- |
-| **AD domain name** | Fully qualified domain name of your AD forest — for example, `corp.example.com`. Access Analyzer connects over LDAPS (port 636) automatically. |
-| **Service account** | A read-only service account, in User Principal Name (UPN) format — for example, `aa26-svc@corp.example.com` |
-| **Service account password** | — |
-| **AD authentication certificate** | The CA certificate (PEM) that issued the domain controller's LDAPS certificate |
-
-You don't need to look up the users base DN or the email attribute yourself. After you enter the domain, service account, and certificate, the wizard tests the connection and discovers both automatically.
-
-## Entra ID
-
-Complete the following steps in the Azure Portal before connecting Access Analyzer.
-
-1. Open **Azure Portal** > **Entra ID** > **App registrations** > **New registration**.
-2. Name the application and click **Register**.
-3. Open the registration > **Authentication** > **Add a platform** > **Web**, and add two redirect URIs:
-   - The URI shown on the Access Analyzer setup wizard's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — used once, during the admin-consent step.
-   - `https://<your-hostname>/idps/callback` — used every time a user signs in with Entra ID.
-4. Go to **Certificates & secrets** > **New client secret**. Set an expiry that fits your rotation policy and copy the value immediately — the portal shows it only once.
-
-Collect the following values:
-
-| Value | Where to find it |
-| --- | --- |
-| **Tenant ID** | Azure Portal > Entra ID > Overview > Directory (tenant) ID — the GUID, not the primary domain |
-| **Application (client) ID** | App registration > Overview > Application (client) ID |
-| **Client secret** | Created in step 4 |
-
-Enter these values in the Access Analyzer setup wizard and click **Sign in with Microsoft and continue**. A popup prompts a **Global Administrator** or **Privileged Role Administrator** to sign in and grant consent for Access Analyzer to read the directory.
-
-:::note
-Register both redirect URIs before anyone signs in with Entra ID. The setup wizard's callback completes the connection; `/idps/callback` is Microsoft's redirect target for every subsequent sign-in — omitting it lets you finish setup but blocks sign-in with an `AADSTS50011` redirect URI mismatch.
-:::
