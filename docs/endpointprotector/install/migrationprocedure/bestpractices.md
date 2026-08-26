@@ -100,3 +100,4 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 | 47 | Stagger mass client reinstalls or reconnections in batches rather than restoring communication for the entire fleet at once — this reduces peak server load during resynchronization. |
 | 48 | Don't assume a coinciding SIEM or Audit issue is the cause of a CPU spike without evidence — both operate independently of client check-in load. |
 | 49 | If migrating from an older server version, review your SIEM parser configuration against the current syslog export content — recent releases added new fields and data to the export, and an outdated parser may not capture them. |
+| 50 | If your environment uses eDiscovery with Scan Locations configured, edit and re-save every such policy after migration — restored policies silently ignore Scan Locations and scan the full disk instead, with no error reported. |

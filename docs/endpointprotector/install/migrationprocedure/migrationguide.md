@@ -113,7 +113,7 @@ If you're already on the current image-based platform (2509–2604), a different
 | Backup Source Version | Can Be Restored to 2608 |
 |---|---|
 | Older than 5.7.0.0 | ❌ Step-by-step upgrade path required first |
-| 5.7.0.0 – 5.9.4.1 | ❌ Must reach 5.9.4.2 first via cumulative patch |
+| 5.7.0.0 – 5.9.4.1 (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0, 5.8.2.0, 5.9.0.0, 5.9.1.0, 5.9.2.0, 5.9.3.0, 5.9.4.0, 5.9.4.1) | ❌ Must reach 5.9.4.2 first via cumulative patch |
 | **5.9.4.2** | ✅ **Yes — direct to 2608** |
 | **2509, 2510, 2601, 2602, or 2604** | ✅ **Yes — direct to 2608** |
 

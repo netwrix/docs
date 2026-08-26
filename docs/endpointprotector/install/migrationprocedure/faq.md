@@ -18,7 +18,7 @@ This page primarily covers migrating to **2608**. Until Netwrix releases 2608 (e
 
 **Yes.** Once your server is on exactly 5.9.4.2, you can deploy the 2608 base image directly and restore your backup onto it — there's no need to route through the older 2510/2604 platform first. See [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x).
 
-If you're on any version older than 5.9.4.2 (5.7.0.0–5.9.4.1), you must first apply the cumulative patch to reach 5.9.4.2, create the backup there, and then deploy 2608. Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 directly onto 2608 will fail at the import step.
+If you're on any version older than 5.9.4.2 (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0, 5.8.2.0, 5.9.0.0, 5.9.1.0, 5.9.2.0, 5.9.3.0, 5.9.4.0, or 5.9.4.1), you must first apply the cumulative patch to reach 5.9.4.2, create the backup there, and then deploy 2608. Attempting to restore a backup from 5.7.x, 5.8.x, 5.9.x, or 5.9.4.1 directly onto 2608 will fail at the import step.
 
 :::tip
 **Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, consider a clean deployment of the 2608 image rather than the full migration path. Reconfiguring EPP on a fresh base installation can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where you don't need historical log data. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.

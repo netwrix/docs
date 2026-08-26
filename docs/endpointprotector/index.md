@@ -6,29 +6,17 @@ sidebar_position: 1
 
 # Netwrix Endpoint Protector
 
-Netwrix Endpoint Protector is a comprehensive Data Loss Prevention (DLP) solution that safeguards
-endpoint systems from data ex-filtration and loss. Portable storage devices and internet
-connectivity are ubiquitous, making data theft and accidental loss a persistent risk.
+Netwrix Endpoint Protector is a comprehensive Data Loss Prevention (DLP) solution that scales from small business environments to large, distributed enterprises, safeguarding endpoint systems from data exfiltration and loss. Portable storage devices and internet connectivity are ubiquitous, making data theft and accidental loss a persistent risk for organizations of every size.
 
-Traditional network security measures often struggle to prevent data breaches originating from
-endpoints such as laptops, desktops, and servers. Endpoint Protector addresses this challenge with a
-robust suite of features including Device Control, Content Aware Protection, eDiscovery, and
-Enforced Encryption.
+Traditional network security measures often struggle to prevent data breaches originating from endpoints such as laptops, desktops, and servers. Endpoint Protector addresses this challenge with a robust suite of features including Device Control, Content Aware Protection, eDiscovery, and Enforced Encryption.
 
-Device Control empowers organizations to manage and monitor all device activities at the endpoint,
-ensuring that sensitive data remains protected from unauthorized access or transfer. Content Aware
-Protection extends this security by scanning and detecting sensitive content at all potential exit
-points, whether users are copying it to external devices or transmitting it over the internet.
+Device Control empowers organizations to manage and monitor all device activities at the endpoint, ensuring that sensitive data remains protected from unauthorized access or transfer. Content Aware Protection extends this security by scanning and detecting sensitive content at all potential exit points, whether users are copying it to external devices or transmitting it over the internet.
 
-Moreover, Endpoint Protector facilitates compliance with regulatory standards such as PCI-DSS,
-HIPAA, and GDPR through predefined discovery patterns and response strategies. It caters to diverse
-organizational needs, from protecting intellectual property and client lists to ensuring compliance
-with industry-specific regulations.
+As AI chat tools and AI-powered browser assistants become part of everyday workflows, Content Aware Protection extends the same visibility and control to AI interactions. Administrators can define which AI applications end users may access, and monitor or block sensitive content — typed directly into a prompt or attached as a file — before it reaches an AI provider that isn't on the organization's approved list. For details, see [Content Aware Protection for AI Interactions](admin/cap_module/capai.md).
 
-With Endpoint Protector, administrators gain a centralized, web-based interface for management
-and enforcement of security policies across all endpoints. Whether preventing accidental
-data leakage or mitigating risks from insider threats, Endpoint Protector offers essential tools to
-safeguard critical business data.
+Moreover, Endpoint Protector facilitates compliance with regulatory standards such as PCI-DSS, HIPAA, and GDPR through predefined discovery patterns and response strategies. It caters to diverse organizational needs, from protecting intellectual property and client lists to ensuring compliance with industry-specific regulations.
+
+With Endpoint Protector, administrators gain a centralized, web-based interface for managing and enforcing security policies across all endpoints — whether that's a small business with a handful of devices or an enterprise fleet spanning thousands of endpoints across multiple locations. Whether preventing accidental data leakage or mitigating risks from insider threats, Endpoint Protector offers essential tools to safeguard critical business data at any scale.
 
 ## Supportability Notice
 
@@ -54,5 +42,4 @@ For detailed information about the support policies and recommended upgrade path
 
 ## Getting Started
 
-The following sections detail the deployment, setup, and configuration steps necessary to
-implement Endpoint Protector and begin protecting your endpoints against data breaches effectively.
+The following sections detail the deployment, setup, and configuration steps necessary to implement Endpoint Protector and begin protecting your endpoints against data breaches effectively.
