@@ -16,15 +16,17 @@ on the corresponding virtualization platform, in particular:
 - Microsoft Hyper-V
 - Nutanix AHV
 
-Note that Netwrix Data Classification supports only Windows OS versions listed in the
+:::note
+Netwrix Data Classification supports only Windows OS versions listed in the
 [Software Requirements](/docs/dataclassification/5.6.2/deployment/requirements/software_requirements.md)
 section.
+:::
 
 ## Netwrix Data Classification Server
 
 The requirements in this section apply to a single Netwrix Data Classification server.
 
-To deploy a server cluster, make sure all planned cluster nodes meet the requirements listed below.
+To deploy a server cluster, ensure all planned cluster nodes meet the requirements listed below.
 Consider deploying 1 Netwrix Data Classification Server per approx. 16, 000, 000 objects to process.
 
 See

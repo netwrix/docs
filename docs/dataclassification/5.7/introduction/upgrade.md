@@ -32,10 +32,7 @@ Classification resides. If not, download it from Microsoft website:
   Files\Netwrix\Data Classification\Index_) and back it up.
 
 :::note
-For versions of 5.7 before 5.7.10, it was necessary to have all NDC services and the NDC
-IIS Application Pool running as the same service account. For 5.7.10 onwards this is no longer necessary, but if upgrading
-from an earlier version of 5.7 you should complete the upgrade to 5.7.10 _before_ changing the service account
-to prevent any possible issues with the upgrade process.
+For versions of 5.7 before 5.7.10, all NDC services and the NDC IIS Application Pool had to run as the same service account. For 5.7.10 onwards this is no longer necessary, but if upgrading from an earlier version of 5.7, complete the upgrade to 5.7.10 _before_ changing the service account to prevent any possible issues with the upgrade process.
 :::
 
 ## Upgrade Process

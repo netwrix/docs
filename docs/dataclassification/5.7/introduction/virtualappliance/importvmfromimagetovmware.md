@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Import Virtual Machine from Image to VMware
 
-Follow the steps to import Virtual Machine from Image to VMware.
+To import Virtual Machine from Image to VMware:
 
 **Step 1 –** Connect to your vSphere infrastructure using vSphere Web client, right-click the object
 you need (datacenter, ESXi host, VM folder or resource pool) and select **Deploy OVF Template**.
@@ -23,7 +23,7 @@ select **File\_\_**>\_**\_Deploy OVF Template**.
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Source               | Browse for the folder that contains the Netwrix Data Classification virtual appliance template.                                                                                                                               |
 | OVF Template Details | Review information on this template.                                                                                                                                                                                          |
-| Name and Location    | Select a name for the new virtual machine if you do not want to use the default name "Netwrix Data Classification". The name must be unique within the inventory folder and may contain up to 80 characters including spaces. |
+| Name and Location    | Select a unique name for the new virtual machine (or use the default "Netwrix Data Classification"). The name can contain up to 80 characters including spaces. |
 | Resource Pool        | Select a resource pool to deploy Netwrix Data Classification virtual appliance.                                                                                                                                               |
 | Storage              | Select destination storage.                                                                                                                                                                                                   |
 | Disk Format          | Netwrix recommends to select the Thin Provision option to save your disk space.                                                                                                                                               |

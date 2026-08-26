@@ -7,8 +7,8 @@ sidebar_position: 60
 # Get-IdentityStore
 
 The commandlet Get-IdentityStore retrieves information about the specified identity store or
-retrieves information of identity store(s) as per the given switches such as _All_, _Connected_,
-_Enabled_ or _Disabled_.
+retrieves information of identity stores as per the given switches such as _All_, _Connected_,
+_Enabled_, or _Disabled_.
 
 The information includes identity store name, description, connection string, notification status,
 roles in identity store, and so on.
@@ -126,7 +126,7 @@ Get-IdentityStore -Connected
 
 Example 5:
 
-This example displays information of all enabled identity store(s).
+This example displays information of all enabled identity stores.
 
 ```
 Get-IdentityStore -Enabled
@@ -134,7 +134,7 @@ Get-IdentityStore -Enabled
 
 Example 6:
 
-This example is for getting information of all disabled identity store(s).
+This example is for getting information of all disabled identity stores.
 
 ```
 Get-IdentityStore -Disabled

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Find Dialog Box
 
-This dialog box enables you to search **User**, **Group**, and **Contact** objects in the connected
+This dialog box lets you search **User**, **Group**, and **Contact** objects in the connected
 identity store.
 
 The object types available for search may vary, depending on the page you launch the **Find** dialog
@@ -19,26 +19,26 @@ Step 1 – From the Look For list, select one or more object types that you want
 - Contacts – to search for contacts only.
 
 Step 2 – The Search In list shows all organizational units or containers in the connected identity
-store. Select the check boxes for the required containers to search in. To search all containers,
-select the **Entire Directory** check box.
+store. Select the checkboxes for the required containers to search in. To search all containers,
+select the **Entire Directory** checkbox.
 
-Step 3 – In the Search box, type a search parameter. Below are some tips to get the best out of your
+Step 3 – In the Search box, enter a search parameter. Below are some tips to get the best out of your
 searching:
 
-- You can type the complete string as a search parameter.
+- You can enter the complete string as a search parameter.
 
-    For example, you can type **Administrator** in this box to find all objects with the display
+    For example, you can enter **Administrator** in this box to find all objects with the display
     name '_Administrator'_.
 
-- You can type a part of the string as a search parameter.
+- You can enter a part of the string as a search parameter.
 
-    For example, you can type **Ad** in this box to find all objects with the display name beginning
+    For example, you can enter **Ad** in this box to find all objects with the display name beginning
     with '_Ad'_.
 
-- You can use wildcard search if you do not remember the exact search criteria.
+- You can use wildcard search if you don't remember the exact search criteria.
 
-    For example, you can type **\*** in this box to find all objects with any display name or you
-    can type **\*d** in this box to find all objects containing '_d'_ anywhere in their display
+    For example, you can enter **\*** in this box to find all objects with any display name or you
+    can enter **\*d** in this box to find all objects containing '_d'_ anywhere in their display
     name.
 
 Step 4 – Click the **Advanced Search** link to display additional search fields (such as

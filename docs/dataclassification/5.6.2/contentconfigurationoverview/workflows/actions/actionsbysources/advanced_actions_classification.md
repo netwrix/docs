@@ -37,7 +37,7 @@ In the **Add Action** dialog, from the **Action Type** list select **Remove Clas
        this option is cleared, then after selecting the necessary taxonomy, you will be presented
        the list of its terms. Select the one you plan to use for filtering.
 
-    **NOTE:** Multiple selection is not supported: to configure several filter values, you should
+    **NOTE:** Multiple selection isn't supported: to configure several filter values, you should
     repeat this procedure for each filter value you need.
 
     3. **Include Children** - select this option if needed.

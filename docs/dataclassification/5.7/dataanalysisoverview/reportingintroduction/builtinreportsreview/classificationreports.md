@@ -20,7 +20,7 @@ Review the list of the built-in classification reports:
 - **Hit Counts**— Provides a grouped summary of hit counts per taxonomy or class - identifying the
   numbers of times the regular expressions used for auto-classification have been identified within
   the indexed corpus.
-- **Reused Terms** - Provides an information on the reused terms feature. You use it when you want
+- **Reused Terms** - Provides information on the reused terms feature. You use it when you want
   the settings of one term to be applied in the other one automatically.
 - Sensitive Documents — Provides a report of classifications of crawled content against sensitive
   taxonomies.

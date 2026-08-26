@@ -23,15 +23,15 @@ Box management portal.
 
 ![box_lic_plans_thumb_0_0](/images/dataclassification/5.6.2/config_infrastructure/box_lic_plans_thumb_0_0.webp)
 
-2. Make sure you have configured a valid Google account (with multi-factor authentication supported)
+2. Ensure you have configured a valid Google account (with multi-factor authentication supported)
    and registered it as a _Box Developer Account_. This account is needed to create an app that
    Netwrix Data Classification will use for interaction with Box API. For more information on the
    custom apps and Box API, refer to
    [this article](https://developer.box.com/guides/authentication/sso/).
 
-**NOTE:** Account with multi-factor authentication will be required for private/public keys creation
-and usage, so if such authentication is not enabled, the program will display a warning message and
-suggest to configure the necessary settings.
+**NOTE:** You must use an account with multi-factor authentication for private/public keys creation
+and usage. If such authentication isn't enabled, the program displays a warning message and
+suggests configuring the necessary settings.
 
 ## Procedure Steps
 
@@ -61,7 +61,7 @@ on the Netwrix Data Classification side and described in the
 8. Select View Your App on the confirmation screen.
 9. Open the **Configuration** window by clicking the related item on the left.
 
-    Navigate to Application Access and make sure that level is set to Enterprise. Click **Save
+    Navigate to Application Access and ensure that level is set to Enterprise. Click **Save
     changes**.
 
 10. Navigate to **Advanced Features** and turn ON both switches: **Perform Actions as User** and
@@ -80,7 +80,7 @@ on the Netwrix Data Classification side and described in the
 
 12. You will be notified about downloading a JSON file with all configuration settings of your app.
 
-    **IMPORTANT!** Since Box does not store any private keys, this file contains the only copy of
+    **IMPORTANT!** Since Box doesn't store any private keys, this file contains the only copy of
     your private key, so store it securely.
 
 ### Step 2. Authorize the App

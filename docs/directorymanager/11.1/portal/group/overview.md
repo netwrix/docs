@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Group Management
 
-Directory Manager portal enables you to manage directory groups, that includes both static groups
+Use Directory Manager portal to manage directory groups, which include both static groups
 and Smart Groups. You can:
 
 - Create static groups, Smart Groups and Dynasties.
@@ -31,7 +31,7 @@ You must [Log in](/docs/directorymanager/11.1/portal/login.md#log-in) before us
 
 
 :::note
-When two identity stores (say, ID1 and ID2) are connected to the same domain (for example,
+When two identity stores (say, ID1, and ID2) are connected to the same domain (for example,
 demo1.com), then objects in demo1.com would have a distinct state in ID1 and ID2. For example, an
 object’s state (such as expiry policy, Smart Group criteria, additional owners, etc.) would be
 different in both identity stores.

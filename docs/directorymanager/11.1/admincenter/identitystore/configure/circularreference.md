@@ -6,7 +6,7 @@ sidebar_position: 120
 
 # Manage Circular Reference
 
-By default, Directory Manager checks for circular reference and does not allow it when users update
+By default, Directory Manager checks for circular reference and doesn't allow it when users update
 objects manually or when objects are auto updated via a Directory Manager schedule. If a circular
 reference occurs, Directory Manager displays an error and prevents the user from saving the change.
 
@@ -28,9 +28,9 @@ circular reference occurs.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Miscellaneous**.
-4. On the **Miscellaneous** page, uncheck the **Check for Circular Reference** check box to allow
+4. On the **Miscellaneous** page, uncheck the **Check for Circular Reference** checkbox to allow
    Directory Manager to save changes to objects that involve circular reference.  
-   The check box is selected by default, indicating that Directory Manager prevents circular
+   The checkbox is selected by default, indicating that Directory Manager prevents circular
    reference in objects.
 5. Click **Save**.
 
@@ -41,6 +41,6 @@ circular reference occurs.
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Miscellaneous**.
 4. On the **Miscellaneous** page, select the **Skip Replicating members related attributes of Groups
-   with dynamic membership** check box to skip the replication of members of a dynamic group in
+   with dynamic membership** checkbox to skip the replication of members of a dynamic group in
    Microsoft Entra ID based identity store.
 5. Click **Save**.

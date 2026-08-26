@@ -17,13 +17,13 @@ directories, databases, and files:
 - ODBC
 - SCIM
 
-## Where are Data Sources Used?
+## Data Source Usage
 
 Data sources are used in the Directory Manager portal in the following ways:
 
 **As source and destination in Synchronize jobs**
 
-Synchronize jobs enable you to provision objects, deprovision objects, and sync data from one data
+Use Synchronize jobs to provision objects, deprovision objects, and sync data from one data
 source to another. See the [Synchronize](/docs/directorymanager/11.1/portal/synchronize/overview.md) topic for additional
 information.
 
@@ -35,7 +35,7 @@ query, you can combine a data source with the directory to search for specific o
 
 **As external data source for membership queries**
 
-A Query Designer enables you to specify membership queries for Smart Groups and Dynasties. When you
+Use a Query Designer to specify membership queries for Smart Groups and Dynasties. When you
 specify a data source in the Query Designer, Directory Manager reads records from it and fetches
 similar objects from the directory to add to a group's membership. See the
 [Query Designer - Database tab](/docs/directorymanager/11.1/portal/group/querydesigner/database.md) topic for additional

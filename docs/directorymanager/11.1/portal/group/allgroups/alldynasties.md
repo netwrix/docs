@@ -8,7 +8,7 @@ sidebar_position: 70
 
 A [Dynasty](/docs/directorymanager/11.1/portal/group/dynasty/overview.md)is a Smart Group that creates and manages other Smart Groups using
 information in the directory. This view lists only the Dynasties created in Directory Manager in the
-connected identity store, and does not include expired and deleted Dynasties.
+connected identity store, and doesn't include expired and deleted Dynasties.
 
 The **Type** column shows whether a Dynasty is a parent, middle, or leaf Dynasty. Both middle and
 leaf Dynasties are child Dynasties. The parent Dynasty comes at the top of the hierarchy, followed

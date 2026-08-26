@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Customize Properties Pages
 
-Directory Manager enables you to customize the property pages displayed in the portal for these
+With Directory Manager, you can customize the property pages displayed in the portal for these
 directory objects:
 
 - User
@@ -21,7 +21,7 @@ directory objects:
   read-only.)
 
 :::note
-A Microsoft Entra ID identity store does not support the _computer_ and _contact_ object
+A Microsoft Entra ID identity store doesn't support the _computer_ and _contact_ object
 types.
 :::
 
@@ -65,13 +65,13 @@ You can customize the following:
 4. Click **Properties** in the left pane; the **Properties** page is displayed.
 5. In the **Select Directory Object** list, select a directory object to add a tab to its properties
    page.  
-   The **Name** list displays the tabs (categories) currently available on the object’s properties
+   The **Name** list displays the tabs (categories) available on the object’s properties
    page.
 6. Click **Add**. The **Add Design Category** pane is displayed.
 7. Enter a name for the tab in the **Name** box. The tab will be displayed on the object’s
    properties page with this name.
-8. In the **Visibility Level** drop-down list, select a security role. The tab would be visible to
-   users of this role and roles with a priority value higher than this role. The tab would not be
+8. In the **Visibility Level** dropdown list, select a security role. The tab would be visible to
+   users of this role and roles with a priority value higher than this role. The tab wouldn't be
    visible to group owners (for their respective groups) and user managers (for their direct
    reports) if they fall in a lower priority role. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
 
@@ -85,22 +85,22 @@ You can customize the following:
         - If _Manager and Owner_ is selected for the _Account_ tab in user properties, the tab would
           be visible to managers for their respective direct reports in the portal.
 
-    - If you have selected ‘User’ or ‘Mailbox’ in the **Select Directory Object** drop-down list,
-      the _Self_ option is also available in the **Visibility Level** drop-down list. Select _Self_
+    - If you have selected ‘User’ or ‘Mailbox’ in the **Select Directory Object** dropdown list,
+      the _Self_ option is also available in the **Visibility Level** dropdown list. Select _Self_
       to make the tab visible to the respective user or mailbox. It would be hidden from other
       users, such as the user’s manager. For example, if the _Self_ role is selected for the
       _General_ tab in user properties, it means that:
 
-        - A user can view the General tab on his or her properties page. He or she cannot view this
+        - A user can view the General tab on his or her properties page. He or she can't view this
           tab on the properties page of another user.
-        - A role with a higher priority value cannot see it for another user.
-        - User managers cannot view it for their direct reports.
-        - A role with the ‘Manage any profile’ permission in the identity store cannot view it for
+        - A role with a higher priority value can't see it for another user.
+        - User managers can't view it for their direct reports.
+        - A role with the ‘Manage any profile’ permission in the identity store can't view it for
           other users.
 
-9. In the **Access Level** drop-down list, select a security role. Users of this role and roles with
+9. In the **Access Level** dropdown list, select a security role. Users of this role and roles with
    a priority value higher than it can add and update the values of fields on this tab. If group
-   owners/user managers fall in a lower priority role, they cannot update the fields on the tab for
+   owners/user managers fall in a lower priority role, they can't update the fields on the tab for
    their respective groups/direct reports. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
 
     - Select _Never_ to make the tab and its fields read-only for all users.
@@ -111,22 +111,22 @@ You can customize the following:
 
         - Only group owners can specify or modify the values of fields on this tab for their
           respective groups in the portal.
-        - A role with a higher priority value cannot specify or update field values.
-        - Group members cannot specify or update field values.
-        - A role with the ‘Manage any Group’ permission in the identity store cannot specify or
+        - A role with a higher priority value can't specify or update field values.
+        - Group members can't specify or update field values.
+        - A role with the ‘Manage any Group’ permission in the identity store can't specify or
           update field values.
 
     - If you have selected ‘User’ or ‘Mailbox’ in the **Select Directory Object** list, the _Self_
-      option is available in the **Access Level** drop-down list.  
+      option is available in the **Access Level** dropdown list.  
       Select _Self_ to enable the respective user or mailbox to specify or modify the value of the
       fields on the tab. The tab would be read-only for the user’s manager and other users. For
       example, if _Self_ is selected for the _General_ tab in user properties, it means that:
 
         - Only the user can add and update the values of fields on the General tab of his or her
           properties page.
-        - A role with a higher priority value cannot specify or update field values.
-        - The user’s manager cannot specify or update field values.
-        - A role with the ‘Manage any profile’ permission in the identity store cannot specify or
+        - A role with a higher priority value can't specify or update field values.
+        - The user’s manager can't specify or update field values.
+        - A role with the ‘Manage any profile’ permission in the identity store can't specify or
           update field values.
 
 10. To add fields to the tab, see the Add a Field to a Tab topic.
@@ -181,16 +181,16 @@ You can change the following for a tab:
 5. On the **Properties** page, select a directory object in the **Select Directory Object** list.
 6. In the **Name** list, click **Edit** for the tab you want to add a field to.
 7. On the **Edit Design Category** pane, click **Add Field**; the **Add Field** pane is displayed.
-8. In the **Field** drop-down list, select a schema attribute to link to this field.  
+8. In the **Field** dropdown list, select a schema attribute to link to this field.  
    Updating the field in the portal is akin to updating the value of this attribute.
 9. In the **Display Name** box, enter a display name for the field. This name is the field’s label
    on the tab.
-10. In the **Display Type** drop-down list, select the display type to use for rendering this field
+10. In the **Display Type** dropdown list, select the display type to use for rendering this field
     on the tab.  
     The list contains basic display types and custom display types defined on the **Custom Display
     Types** page. See the [Display Type Categories](/docs/directorymanager/11.1/admincenter/applications/portal/categories/categories.md) topic.
-11. In the **Visibility Level** drop-down list, select a security role. The tab would be visible to
-    users of this role and roles with a priority value higher than this role. It would not be
+11. In the **Visibility Level** dropdown list, select a security role. The tab would be visible to
+    users of this role and roles with a priority value higher than this role. It wouldn't be
     visible to group owners (for their respective groups) and user managers (for their direct
     reports) if they fall under a lower priority role. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
 
@@ -206,22 +206,22 @@ You can change the following for a tab:
           user properties, the field would be visible to managers for their direct reports in the
           portal.
 
-    - If you have selected ‘User’ or ‘Mailbox’ in the **Select Directory Object** drop-down list,
-      the _Self_ option is also available in the **Visibility Level** drop-down list. Select _Self_
+    - If you have selected ‘User’ or ‘Mailbox’ in the **Select Directory Object** dropdown list,
+      the _Self_ option is also available in the **Visibility Level** dropdown list. Select _Self_
       to make the field visible to the respective user or mailbox. It would be hidden from other
       users, such as the user’s manager. For example, if _Self_ is selected for the _Notes_ field on
       the _Phone/Notes_ tab in user properties, it means that:
 
-        - A user can view the field on his or her properties page only. He or she cannot see this
+        - A user can view the field on his or her properties page only. He or she can't see this
           field on the properties page of another user.
-        - A role with a higher priority value cannot view it for another user.
-        - User managers cannot view it for their direct reports.
-        - A role with the ‘Manage any profile’ permission in the identity store cannot view it for
+        - A role with a higher priority value can't view it for another user.
+        - User managers can't view it for their direct reports.
+        - A role with the ‘Manage any profile’ permission in the identity store can't view it for
           other users.
 
-12. In the **Access Level** drop-down list, select a security role. Users of this role and roles
+12. In the **Access Level** dropdown list, select a security role. Users of this role and roles
     with a priority value higher than this role can add and update the value of this field. If group
-    owners/user managers fall in a lower priority role, they cannot able to update the value of the
+    owners/user managers fall in a lower priority role, they can't able to update the value of the
     field for their respective groups/direct reports. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
 
     - Select _Never_ to make this field read-only for all users.
@@ -233,13 +233,13 @@ You can change the following for a tab:
 
         - Only group owners can specify or modify the value of this field for their groups in the
           portal.
-        - A role with a higher priority value cannot specify or update the field value.
-        - Group members cannot specify or update the field value.
-        - A role with the ‘Manage any Group’ permission in the identity store cannot specify or
+        - A role with a higher priority value can't specify or update the field value.
+        - Group members can't specify or update the field value.
+        - A role with the ‘Manage any Group’ permission in the identity store can't specify or
           update the field value.
 
     - If you have selected ‘User’ or ‘Mailbox’ in the **Select Directory Object** list, the _Self_
-      option is available in the **Access Level** drop-down list. Select _Self_ to enable the
+      option is available in the **Access Level** dropdown list. Select _Self_ to enable the
       respective user or mailbox to specify or modify the value of the field. The field would be
       read-only for other users, such as the user’s manager or a role with a higher priority value.
       For example, if _Self_ is selected for the _Notes_ field on the _Phone / Notes_ tab in user
@@ -247,15 +247,15 @@ You can change the following for a tab:
 
         - Only the respective user can add and update the value of this field on the _Phone / Notes_
           tab in his or her properties page.
-        - A role with a higher priority value cannot specify or update the field value.
-        - The user’s manager cannot specify or update the field value.
-        - A role with the ‘Manage any profile’ permission in the identity store cannot specify or
+        - A role with a higher priority value can't specify or update the field value.
+        - The user’s manager can't specify or update the field value.
+        - A role with the ‘Manage any profile’ permission in the identity store can't specify or
           update the field values.
 
 13. Click **Advanced Options** to display additional fields.
 14. As mentioned for visibility level and access level, the field is visible and editable for
     members of the selected role and roles with a priority value higher than it.  
-    In the **Exclude Roles** area, select the check boxes for the higher priority role(s) to deny
+    In the **Exclude Roles** area, select the checkboxes for the higher priority roles to deny
     them access and visibility on the field.
 15. In the **Tooltip Text** box, enter the text to display when a user hovers the mouse over the
     field.
@@ -272,29 +272,29 @@ You can change the following for a tab:
 
     When you select any of these display types, Directory Manager identifies that the value for the
     field has to be searched and selected using the _Find_ dialog box. The **Search Object Types**
-    area is displayed, where you can select the required object type(s). For example, if you select
+    area is displayed, where you can select the required object types. For example, if you select
     _Group_, only groups can be searched and selected as value for the field.  
     You can launch the _Find_ dialog box from multiple portal pages to search for objects to
     designate as owners, managers, additional owners, members, and more. While specifying the
-    searchable object type(s), you must be aware of the kind of value the field requires.
+    searchable object types, you must be aware of the kind of value the field requires.
 
-18. Select the **Is Required** check box to make it mandatory for users to provide a value for the
+18. Select the **Is Required** checkbox to make it mandatory for users to provide a value for the
     field.
-19. Select the **Is Read Only** check box to make the field read-only.
-20. Select the **Filter Bad Words** check box to ensure that users do not enter any bad word in this
+19. Select the **Is Read Only** checkbox to make the field read-only.
+20. Select the **Filter Bad Words** checkbox to ensure that users don't enter any bad word in this
     field.  
     A value entered for the field is checked against the words listed on the **Bad Words List**
-    page. Matched values cannot be saved. See the [Manage the Bad Words List](/docs/directorymanager/11.1/admincenter/applications/portal/displaytype/badwords.md) topic.
+    page. Matched values can't be saved. See the [Manage the Bad Words List](/docs/directorymanager/11.1/admincenter/applications/portal/displaytype/badwords.md) topic.
 21. The **Image Attribute** list is available when ‘DN’ is selected as the display type. This list
     supports ‘thumbnailPhoto’ as its value.
 
-    - Select the ‘thumbnailPhoto’ attribute in the **Image Attribute** drop-down list when you want
+    - Select the ‘thumbnailPhoto’ attribute in the **Image Attribute** dropdown list when you want
       to auto upload an image for the field. Let’s assume you apply this setting for the Primary
       Manager field in group properties. In the portal, the primary manager's image will be
       displayed alongside his or her name on the group properties page.  
-      Note that for the image to display, the ‘thumbnailPhoto’ attribute must have a value stored;
-      in case of no value, an image placeholder is displayed.
-    - If you do not want to auto upload an image for the field, clear the value in the **Image
+      For the image to display, the ‘thumbnailPhoto’ attribute must have a value stored;
+      if there’s no value, an image placeholder is displayed.
+    - If you don't want to auto upload an image for the field, clear the value in the **Image
       Attribute** box.
 
 22. Click **OK**.  

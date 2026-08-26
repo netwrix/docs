@@ -11,7 +11,7 @@ bar and select **My Direct Reports**.
 
 The page lists the direct reports for which you are the primary manager. To include the direct
 reports for which you are an additional manager, select the **Display Additional Manager Direct
-Reports** check box on the User Settings panel.
+Reports** checkbox on the User Settings panel.
 
 **You can:**
 
@@ -29,7 +29,7 @@ Reports** check box on the User Settings panel.
   report's email address to your email contact list.
 - Select a direct report and click **Add to Group** on the toolbar to the direct report to the
   membership of a group. The [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md) is displayed, where you can
-  search and select the group(s) to add the direct report as a member.
+  search and select the groups to add the direct report as a member.
 - Select a direct report and click **Send email** on the toolbar to send an email to the direct
   report. This launches the default Windows email application for sending an email to the direct
   report.
@@ -43,7 +43,7 @@ page** setting on the User Settings panel. You can modify the search results in 
 Directory. You can select entire directory or a domain to search active groups from.
 
 :::note
-You cannot add or remove direct reports on this page. Use the Organization tab of your profile
+You can't add or remove direct reports on this page. Use the Organization tab of your profile
 to add or remove your direct reports.  
 You can also transfer and terminate your direct reports while you validate your Profile.
 :::

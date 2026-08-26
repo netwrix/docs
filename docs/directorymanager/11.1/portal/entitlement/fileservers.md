@@ -10,7 +10,7 @@ The [ Entitlement](/docs/directorymanager/11.1/portal/entitlement/overview.md) p
 identity store, displaying granular level permission granted to objects on shared files and folders.
 This data is subject to the date and time the permissions were last replicated.
 
-You can view all active servers as enabled and not replicated servers as disabled. It is as:
+You can view all active servers as enabled and not replicated servers as disabled. It appears as follows:
 
 ![disabledfileserver](/images/directorymanager/11.1/portal/entitlement/disabledfileserver.webp)
 
@@ -25,7 +25,7 @@ replicated, the server is enabled.
     - **Last Replication**: day, date, and time when the server was last replicated.
     - **Time Taken**: time it took to complete the replication.
 
-- Double click on the card to explore the server. Once explored, click **Go Back** to return to the
+- Double click the card to explore the server. Once explored, click **Go Back** to return to the
   list of available sites.
 - You can search specific servers on the search bar on the top. If you want to undo the search
   results, click **Refresh List** which will display all the servers on the page.
@@ -44,7 +44,7 @@ displayed, showcasing the following information:
 Date format: mm/dd/yyyy
 :::
 
-- For child folders, the path is as: servername.parentsharedfoldername.
+- For child folders, the path format is: servername.parentsharedfoldername.
 
     ![fileserverpath](/images/directorymanager/11.1/portal/entitlement/fileserverpath.webp)
 
@@ -106,15 +106,15 @@ Below the search box is the **Add new filter** link. Click it to apply a search 
 user/group, access type, and permission criterion. This will display shared files/folders that match
 your criterion.
 
-- Type the name of a user or group in the **User or Group** box. It must be a specific name, like
+- Enter the name of a user or group in the **User or Group** box. It must be a specific name, like
   ‘Sarah’ (for user) or ‘Engineering team’ (for group), and not an object type, like ‘users’,
   ‘groups’, ‘contacts’, or ‘computers’.
-- From the **Access Type** drop-down list, select the _Allow_ or _Deny_ option.
+- From the **Access Type** dropdown list, select the _Allow_ or _Deny_ option.
 - In the **Permission** box, select one or more permissions.
 - Click **Apply filters**.
 
 Directory Manager Entitlement displays folders and files on which the user/group has the speci fic
-access type with respect to the specified permission(s).
+access type with respect to the specified permissions.
 
 **Example:**
 

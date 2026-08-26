@@ -28,8 +28,8 @@ displayed.
 
     Select **Other** to remove other users from the group.
 
-5. To **Join/Leave** the group, you can also click on **Want to write reason to group owner?** and
-   state the the reason for joining or leaving the group for the group owner.
+5. To **Join/Leave** the group, you can also click **Want to write reason to group owner?** and
+   state the reason for joining or leaving the group for the group owner.
 6. Click **Upgrade To** to change the group into one of the following:
 
     - Smart Group
@@ -54,7 +54,7 @@ displayed.
 - [Group properties - General tab](/docs/directorymanager/11.1/portal/group/properties/general.md)
 - [Group properties - Owner tab](/docs/directorymanager/11.1/portal/group/properties/owner.md)
 - [Group properties - Members tab](/docs/directorymanager/11.1/portal/group/properties/members.md)
-- [properties - Member Of tab](/docs/directorymanager/11.1/portal/group/properties/memberof.md)
+- [Group properties - Member Of tab](/docs/directorymanager/11.1/portal/group/properties/memberof.md)
 - [Group properties - Delivery Restrictions tab](/docs/directorymanager/11.1/portal/group/properties/deliveryrestrictions.md)
 - [Object properties - Attributes tab](/docs/directorymanager/11.1/portal/group/properties/attributes.md)
 - [Group properties - Email tab](/docs/directorymanager/11.1/portal/group/properties/email.md)
@@ -69,7 +69,7 @@ displayed.
 - [Group properties - Dynasty Options tab](/docs/directorymanager/11.1/portal/group/properties/dynastyoptions.md) (for Dynasties only)
 
 :::note
-The **Delivery Restrictions**, **Attributes**, **Email**, and **Advanced** tabs are not
-available for groups in a Microsoft Entra IDbased identity store.
+The **Delivery Restrictions**, **Attributes**, **Email**, and **Advanced** tabs aren't
+available for groups in a Microsoft Entra ID based identity store.
 
 :::

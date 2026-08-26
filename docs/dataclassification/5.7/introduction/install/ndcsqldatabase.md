@@ -14,8 +14,7 @@ Server Management Studio or any tool that supports T-SQL (for example, sqlcmd). 
 [Create a Database](https://docs.microsoft.com/en-us/sql/relational-databases/databases/create-a-database) for detailed instructions on creating a new database.
 
 :::note
-For performance purposes, Netwrix strongly recommends installing NDC and the SQL Server hosting
-the NDC database on separate servers.
+Netwrix recommends installing NDC and its database on separate servers for better performance.
 :::
 
 

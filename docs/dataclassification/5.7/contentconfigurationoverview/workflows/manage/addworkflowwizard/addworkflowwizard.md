@@ -26,7 +26,7 @@ See next:
 - [Step 4. Enter Name and Review Settings](/docs/dataclassification/5.7/contentconfigurationoverview/workflows/manage/addworkflowwizard/step4setnameandenable.md)
 
 :::note
-Once created you will be able to modify the workflow using the **Advanced** dialog.
+After you create the workflow, you can modify it using the **Advanced** dialog.
 :::
 
 

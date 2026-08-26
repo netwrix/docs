@@ -6,8 +6,7 @@ sidebar_position: 150
 
 # Preview of a Smart Group Membership
 
-Using this API, you can preview membership changes that will occur in a Smart Group membership as
-per the query given in the body.
+Using this API, you can preview membership changes that will occur in a Smart Group membership according to the query given in the body.
 
 ## Endpoint
 

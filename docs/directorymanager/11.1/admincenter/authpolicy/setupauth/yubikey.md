@@ -10,7 +10,7 @@ YubiKey is a key-sized device that users can plug into the computer’s USB slot
 identity. They can use it to enroll and authenticate their identity store accounts in Directory
 Manager.
 
-YubiKey can only be used on a physical machine. Virtual machines are not supported.
+YubiKey can only be used on a physical machine. Virtual machines aren't supported.
 
 YubiKey supports the following browsers:
 

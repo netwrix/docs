@@ -48,9 +48,9 @@ Step 3 – Select an authentication type to enroll your account with.
 
     1. Click the **Security Questions** tab.
     2. From a **Question X** list, select a security question of your choice (X represents the
-       question number). You can also type a question in the box to create a new question of your
+       question number). You can also enter a question in the box to create a new question of your
        choice.
-    3. Type your answer in the answer box.
+    3. Enter your answer in the answer box.
 
         If the answer meets the requirements, such as length-related checks, a tick mark is
         displayed for it.
@@ -65,13 +65,13 @@ Step 3 – Select an authentication type to enroll your account with.
     Directory Manager to enroll successfully.
 
     1. Click the **Mobile** tab.
-    2. Select your country and then type your mobile number in the box.
+    2. Select your country and then enter your mobile number in the box.
     3. Click **Send Code**.
     4. When the code is successfully sent to your provided mobile number, a box is displayed; enter
        the received code in it.
     5. Click **Enroll Account**.
 
-    If you do not receive the code, recheck your mobile number and click **Send code again**.
+    If you don't receive the code, recheck your mobile number and click **Send code again**.
 
 - Enroll your account using Email
 
@@ -80,16 +80,16 @@ Step 3 – Select an authentication type to enroll your account with.
     Directory Manager to enroll successfully.
 
     1. Click the **Email** tab.
-    2. Type your email address in the box and click **Send Verification Code**.
+    2. Enter your email address in the box and click **Send Verification Code**.
     3. When the code is successfully sent to your provided email address, a box is displayed. Enter
        the received code in it.
     4. Click **Enroll Account**.
 
-    If you do not receive the code, recheck your email address and click **Send code again**.
+    If you don't receive the code, recheck your email address and click **Send code again**.
 
 - Enroll your account using Authenticator
 
-    Before you enroll with Authenticator, make sure you have installed an authenticator app, such as
+    Before you enroll with Authenticator, ensure you have installed an authenticator app, such as
     Google Authenticator or Microsoft Authenticator, on your phone.
 
     1. Click the **Authenticator** tab.
@@ -121,7 +121,7 @@ Step 3 – Select an authentication type to enroll your account with.
 
 :::note
 YubiKey and Windows Hello have issues with enrollment in browsers. To resolve this issue,
-configure a TLS certificate on your machine. Without a TLS certificate, YubiKey and Windows Hello
+configure a TLS certificate on your machine. Without a TLS certificate, YubiKey, and Windows Hello
 will only work with the Firefox browser, as only Firefox allows WebAuthn without a TLS certificate.
 
 :::

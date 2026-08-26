@@ -11,9 +11,9 @@ collection can run in future and can also set the notifications settings for the
 
 Step 1 – On the **Scheduling and Notifications** page:
 
-1. In the **Schedule Job Collection** section, choose from existing schedules from the drop down
+1. In the **Schedule Job Collection** section, choose from existing schedules from the dropdown
    list.
-2. In the **Schedule** section, the **Task name** drop down lists the Smart Group Update jobs
+2. In the **Schedule** section, the **Task name** dropdown lists the Smart Group Update jobs
    existing in the identity store for the Active Directory domain that is provided as destination in
    this Synchronize job. Select a job that you want to run along with this Synchronize job. The
    selected job will run each time the Synchronize job is run either manually or from the
@@ -24,7 +24,7 @@ Step 1 – On the **Scheduling and Notifications** page:
 
 Step 2 – On the **Notifications** section, set up email notification of job collection run results.
 This feature requires Microsoft Exchange. Notifications are disabled by default and can be enabled
-and disabled from this page. Select the **Enable notifications** check box to enable them.
+and disabled from this page. Select the **Enable notifications** checkbox to enable them.
 
 Step 3 – Enter the email address of notification recipients in the given box.
 
@@ -50,8 +50,8 @@ Changes** at the bottom.
 
 Step 7 – Click **Finish** to exit the wizard and create the job collection.
 
-Step 8 – Once you run the job collection, a workflow request is triggered.
+Step 8 – After you run the job collection, a workflow request is triggered.
 
 Step 9 – Generated workflow request will be displayed in the [Requests](/docs/directorymanager/11.1/portal/request/overview.md)
-section for the workflow approver(s). If the approver approves the workflow request, the job will
+section for the workflow approvers. If the approver approves the workflow request, the job will
 execute the results.

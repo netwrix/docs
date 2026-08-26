@@ -7,7 +7,7 @@ sidebar_position: 60
 # Virtual Deployment
 
 In addition to traditional on-premises deployment, Netwrix Data Classification now offers new
-deployment options that can speed time-to-value by getting you up and running in less than 15
+deployment options that reduce time-to-value by getting you deployed and operational in less than 15
 minutes.
 
 Virtual appliance — If you run a Microsoft Hyper-V or VMware vSphere, you can deploy Netwrix Data

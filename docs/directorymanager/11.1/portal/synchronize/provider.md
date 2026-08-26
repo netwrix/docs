@@ -11,7 +11,7 @@ Microsoft Entra ID) as well as create data sources for providers such as files a
 identity stores and data sources can be used as source and destination in Synchronize jobs.
 Synchronize transfers data from one data source to another.
 
-A brief description of about each supported data provider is given below.
+A brief description of each supported data provider is given below.
 
 ## Identity Stores
 
@@ -31,7 +31,7 @@ source and destination.
 - Generic LDAP version 3.0
 
     Use the Generic LDAP Version 3.0 provider to connect to any LDAP version 3-compliant directory
-    server. This provider does not support dynamic schema detection. The schema included for this
+    server. This provider doesn't support dynamic schema detection. The schema included for this
     provider mostly contains commonly used fields. You can add fields to the existing schema.
 
     Synchronize supports many LDAP-compliant directory servers directly and provides specialized
@@ -42,7 +42,7 @@ source and destination.
     - Novell Directory Services
     - Sun ONE Directory Server
 
-    When connecting with any of these, it is recommended that you use their specific provider
+    When connecting with any of these, use their specific provider
     instead of the generic LDAP provider. The use of specialized providers results in performance
     gains since they eliminate the extra steps involved in connecting with generic providers.
 

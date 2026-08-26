@@ -22,7 +22,7 @@ To view a complete list of the **Config** settings for your NDC instance, click 
 The following options can be configured for Classifier:
 
 - [General Options](/docs/dataclassification/5.7/systemconfigurationoverview/configuration/coreconfiguration/classifier/generaloptions.md)
-- [You can decrease the Classifier load, targeting it at monitored content only. This means that you can schedule content to be automatically re-classified only when a specific condition or set of conditions are met, or with a minimum time period between runs.](/docs/dataclassification/5.7/systemconfigurationoverview/configuration/coreconfiguration/classifier/monitoredcontent.md)
+- [Monitored Content](/docs/dataclassification/5.7/systemconfigurationoverview/configuration/coreconfiguration/classifier/monitoredcontent.md)
 - [conceptClassifier App Options](/docs/dataclassification/5.7/systemconfigurationoverview/configuration/coreconfiguration/classifier/conceptclassifier.md) (advanced settings)
 - [Engine Options](/docs/dataclassification/5.7/systemconfigurationoverview/configuration/coreconfiguration/classifier/engineoptions.md)
 

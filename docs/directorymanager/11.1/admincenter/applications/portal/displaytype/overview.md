@@ -6,8 +6,8 @@ sidebar_position: 50
 
 # Design a Portal with Display Types
 
-Display types enable you to control the layout and appearance of a Directory Manager portal and its
-pages. They also enable you to expose the required functionality and data fields in the portal.
+Use display types to control the layout and appearance of a Directory Manager portal and its
+pages. They also let you expose the required functionality and data fields in the portal.
 
 You can associate multiple identity stores with a portal and design a different portal for each
 identity store. Adding links to the navigation bar, adding pages to the portal, and adding fields to

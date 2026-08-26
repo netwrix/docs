@@ -11,8 +11,8 @@ run in future and set the notifications settings for the job.
 
 1. On the **Schedule Job and Notifications** page:
 
-    1. In the **Schedule Job** section, choose an existing job from the drop down list.
-    2. In the **Schedule** section, the **Task name** drop down lists the Smart Group Update jobs
+    1. In the **Schedule Job** section, choose an existing job from the dropdown list.
+    2. In the **Schedule** section, the **Task name** dropdown lists the Smart Group Update jobs
        existing in the identity store for the Active Directory domain that is provided as
        destination in this Synchronize job. Select a job that you want to run along with this
        Synchronize job. The selected job will run each time the Synchronize job is run either
@@ -25,7 +25,7 @@ run in future and set the notifications settings for the job.
 
     1. Select the **Enable** option.
     2. Enter email addresses of notification recipients in **Send notification to the following
-       email(s)** box
+       emails** box
     3. From the **Send Notification** options, select one of the following notification trigger
        event:
 
@@ -39,12 +39,12 @@ run in future and set the notifications settings for the job.
 
             :::info
             This step requires that notification settings are already configured in the
-            connected identity store. Click Configure Notifications if notifications are not
+            connected identity store. Click Configure Notifications if notifications aren't
             configured.
             :::
 
 
-3. Click on **Advanced Settings** to go to **Advanced Setting For the Job** page:
+3. Click **Advanced Settings** to go to **Advanced Setting For the Job** page:
 
    1. Review and test the default query statement shown and modify it, if required on the **Source
    Query** section.
@@ -77,7 +77,7 @@ run in future and set the notifications settings for the job.
       in the source data since the last time the job was run. For this option to apply, your source
       must carry the last updated time stamp of each record.
 
-        The **Select source time stamp** field drop-down box gets enabled when you select the
+        The **Select source time stamp** field dropdown box gets enabled when you select the
         **Update only records that have changed** option. From here, select the attribute or field
         in the source that would contain a value for the time stamp.
 
@@ -94,7 +94,7 @@ run in future and set the notifications settings for the job.
 4. Select **Preview job when finished** checkbox to preview the job.
 5. **Review your Changes** before finishing the job.
 6. Click **Finish** and create the job.
-7. Once you run the job, a workflow request is triggered.
+7. After you run the job, a workflow request is triggered.
 8. Generated workflow request will be displayed in the [Requests](/docs/directorymanager/11.1/portal/request/overview.md)
-    section for the workflow approver(s). If the approver approves the workflow request, the job
+    section for the workflow approvers. If the approver approves the workflow request, the job
     will execute the results.

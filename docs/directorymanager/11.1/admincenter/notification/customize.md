@@ -31,11 +31,11 @@ receive notifications in a different language by personalizing the language sett
     The editor displays a list of all notifications that Directory Manager generates. Notification
     names are displayed in English, regardless of the language you select.
 
-2. By default, English (US) is selected, so you can view and customize the notification templates in
+2. By default, English (United States) is selected, so you can view and customize the notification templates in
    the English language. To set another language:
 
     1. Click **Filter**.
-    2. On the **Filter(s)** dialog box, select a language in the **Locality** drop-down list.
+    2. On the **Filters** dialog box, select a language in the **Locality** dropdown list.
        This list displays the ISO codes of the supported languages.
     3. Click **Apply**.
 
@@ -53,7 +53,7 @@ receive notifications in a different language by personalizing the language sett
     - Source code - Click the **Source Code** tab to view and edit the notification template in the
       HTML editor.
     - Interactive - Click the **Interactive** tab to view the template in a user–friendly format.
-      This is how the notification will be displayed to the recipients. You cannot format or edit
+      This is how the notification will be displayed to the recipients. You can't format or edit
       the template in this view.
 
 6. You can customize the notification template in the following ways:
@@ -82,7 +82,7 @@ You can do the following in the Source Code view:
   the notification.
 
 :::note
-Do not insert tables or custom photos in a notification template.
+Don't insert tables or custom photos in a notification template.
 :::
 
 
@@ -92,7 +92,7 @@ To aid you in content management, the Source Code view uses the same editor that
 Visual Studio; hence, you also have the following options available:
 
 - Use the page navigator in the top right corner of the source code view to scroll through the
-  content. The navigator is divided into sections, enabling you to jump to the beginning, middle and
+  content. The navigator is divided into sections, enabling you to jump to the beginning, middle, and
   end of the source code.
 - Use the options on the **Edit** menu to search for target text (whether it be a word, phrase, or
   tag), to cut the selected text, to copy the selected text, and to redo and undo an operation. You
@@ -120,7 +120,7 @@ will show the email address of the requester, and so on.
 
 ##### Complete List of Tags
 
-Here is a complete list of tags for object attributes. Using tags other than these is not
+Here is a complete list of tags for object attributes. Using tags other than these isn't
 recommended. By using a tag, you can display an attribute’s value in the notification.
 
 |     | Variable         | Description                                                                                                                       |

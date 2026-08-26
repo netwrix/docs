@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Character (Granular) Rules
 
-Password Policy Enforcer has seven Character rules that reject passwords if they contain, or do not
+Password Policy Enforcer has seven Character rules that reject passwords if they contain, or don't
 contain certain characters. These rules can increase password strength or ensure password
 compatibility with other systems.
 
@@ -16,19 +16,19 @@ use the Character rules with their default character sets, or define your own. B
 Password Policy Enforcer selects the Password Policy Enforcer character on the Set Priorities page.
 
 - Enable the **Characters (Granular)** button to enable the Characters rule.
-- Character First – Select character rule(s) for the first character of password
+- Character First – Select character rules for the first character of password
 
     - Select the **Begin** option if this rule should ensure that first character of password should
-      start with the certain characters of the selected rule(s).
+      start with the certain characters of the selected rules.
     - Select **Not Begin** option if this rule should ensure that the first character of password
-      should not start with the certain characters of the selected rule(s).
+      shouldn't start with the certain characters of the selected rules.
 
-- Character Last – Select character rule(s) for the last character password
+- Character Last – Select character rules for the last character password
 
     - Select the **End** option if this rule should ensure that the last character of password
-      should end with the certain characters of the selected rule(s).
+      should end with the certain characters of the selected rules.
     - Select the **Not End** option if this rule should ensure that the last chracter of password
-      should not end the certain character of the selected rule(s).
+      shouldn't end the certain character of the selected rules.
 
 - Characters (Alpha Lower), Characters (Alpha Upper), Character (Alpha), Character (Custom),
   Characters (High), Characters (Numeric), character (Special)
@@ -38,9 +38,9 @@ Password Policy Enforcer selects the Password Policy Enforcer character on the S
 
     - Select the **contain** option if this rule should ensure that new passwords contain certain
       characters. Only one character is required by default, but you can specify a different value
-      by choosing the required number of characters from the drop-down list beside the **contain**
+      by choosing the required number of characters from the dropdown list beside the **contain**
       option.
-    - Select the **not contain any...** option if this rule should ensure that new passwords do not
+    - Select the **not contain any...** option if this rule should ensure that new passwords don't
       contain certain characters.
 
     You can further restrict the rule by defining positions or embedding characters. Click the +
@@ -55,8 +55,8 @@ Password Policy Enforcer selects the Password Policy Enforcer character on the S
 
     - Select **Embedded**
 
-        Select the **Embedded** check box if users are required to embed these characters within
-        their passwords. For example, the passwords "12hello", "1hello", and "hello$987" do not
+        Select the **Embedded** checkbox if users are required to embed these characters within
+        their passwords. For example, the passwords "12hello", "1hello", and "hello$987" don't
         contain any embedded numeric characters, but these passwords do contain embedded numeric
         characters (shown in bold type): "he**7**llo", "4he**3**llo", "23hello**7**$45". Embedded
         numeric and special characters can help to protect passwords from cracking attacks.

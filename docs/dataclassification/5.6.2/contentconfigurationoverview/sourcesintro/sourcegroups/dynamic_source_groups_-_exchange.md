@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Dynamic Source Groups — Exchange
 
-This section contains information on how to configure SharePoint Online dynamic source groups.
+This section contains information on how to configure Exchange dynamic source groups.
 Toggle between Basic and Advanced configuration settings by clicking the icons in the Settings
 button in the bottom left corner of the page.
 
@@ -16,7 +16,7 @@ The following options can be configured for Exchange Dynamic Source Groups:
 
 | Option                 | Description                                                                                                                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Authentication Type    | Basic — Selecting **Credentials** enables users to authenticate using email address and password credentials Modern (O365) — Selecting **Modern (O365)** enables users to authenticate using Tenant ID                                                 |
+| Authentication Type    | Basic — Selecting **Credentials** lets users authenticate with email address and password credentials. Modern (O365) — Selecting **Modern (O365)** lets users authenticate with Tenant ID.                                                 |
 | Exchange API Url       | Enter a URL for an Exchange API for data collection. Leave this field blank to autodetect Exchange APIs.                                                                                                                                               |
 | Crawl Range            | Configure whether to crawl data over a date range or from a specific date onwards.                                                                                                                                                                     |
 | Match Rules            | At least one match rule must be included, match rules are Regular expressions, such as: - `.*@mydomain.com` - `.*@mydomain.co.uk`                                                                                                                      |

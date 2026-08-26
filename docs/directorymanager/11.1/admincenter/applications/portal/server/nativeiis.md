@@ -26,7 +26,7 @@ stop an instance, the following happens:
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
 4. On the **IIS**, **Remote IIS**, or **Docker** tab, the **Select Application Deployment**
-   drop-down list displays the portal instances deployed in the respective web server.  
+   dropdown list displays the portal instances deployed in the respective web server.  
    Select an instance to start or stop it.
 
     - When an instance is running, **Stop** is displayed next to it. Click it to stop the instance.
@@ -60,7 +60,7 @@ launch URL. You must provide the updated URL to users to enable them to access t
    from the portal logo, as each portal type has its own logo.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
-4. On the **IIS** tab, the **Select Application Deployment** drop-down list displays all portal
+4. On the **IIS** tab, the **Select Application Deployment** dropdown list displays all portal
    instances deployed in native IIS. Select an instance to change its IIS application name.
 5. In the **IIS Application Name** box on the **Deployment Configurations** tab, update the IIS
    deployment name for the instance.
@@ -80,10 +80,10 @@ to access the instance. See the [Launch a Portal](/docs/directorymanager/11.1/ad
    logo, as each portal type has its own logo.
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
-4. On the **IIS** tab, the **Select Application Deployment** drop-down list displays all portal
+4. On the **IIS** tab, the **Select Application Deployment** dropdown list displays all portal
    instances deployed in native IIS. Select an instance to move its directory under a different IIS
    site.
-5. In the **IIS Site** drop-down list on the **Deployment Configurations** tab, select a site to
+5. In the **IIS Site** dropdown list on the **Deployment Configurations** tab, select a site to
    move the instance’s directory under it. The list displays the websites defined in native IIS.
 6. Click **Save**.
 
@@ -100,7 +100,7 @@ Use the URL for a portal's deployment instance to launch the respective instance
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
 4. On the **IIS**, **Remote IIS**, or **Docker** tab, the **Select Application Deployment**
-   drop-down list displays the portal instances deployed in the respective web server. Select an
+   dropdown list displays the portal instances deployed in the respective web server. Select an
    instance to view the launch URL for it.
 5. The **Launch URL** box on the **Deployment Configurations** tab displays the URL. Copy and paste
    it in the browser to launch the deployment instance of the portal or share it with users to
@@ -115,7 +115,7 @@ Use the URL for a portal's deployment instance to launch the respective instance
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
 4. On the **IIS**, **Remote IIS**, or **Docker** tab, the **Select Application Deployment**
-   drop-down list displays the portal instances deployed in the respective web server. Select an
+   dropdown list displays the portal instances deployed in the respective web server. Select an
    instance to view the launch URL for it.
 5. The **Data Service** and **Security Service** boxes on the **Deployment Configurations** tab
    display the Data service and Security service this portal instance uses.

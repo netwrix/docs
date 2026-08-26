@@ -6,10 +6,8 @@ sidebar_position: 10
 
 # Database Configuration Wizard
 
-For the database sources, you can enable security-based crawling, that is, finding sensitive data
-(which logically will either be stored in text or binary-based columns). It is possible to create an
-intelligent content mapping, crawling certain fields as unstructured index text, and other fields —
-as mapped metadata.
+For database sources, enable security-based crawling to find sensitive data stored in text or binary-based columns. You can create an
+intelligent content mapping, crawling certain fields as unstructured index text, and other fields as mapped metadata.
 
 This section explains how to use the Database Configuration Wizard for configuring the crawling
 process. You can run this wizard when adding the data source, or you can later open the **Source**
@@ -33,8 +31,7 @@ strings.
 
 ## Tables
 
-On this step, review the grid of the tables in the database that are not currently enabled for
-crawling (if already enabled then don't show in this grid) and have at least one text/binary column.
+On this step, review the grid of tables in the database that aren't enabled for crawling and have at least one text/binary column. Already-enabled tables don't appear in this grid.
 Configure your crawling scope considering the following:
 
 | Column           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -43,7 +40,7 @@ Configure your crawling scope considering the following:
 | Text Columns     | Contains the number of text/binary columns for each table. Click the number link to review the full list.                                                                                                                                                                                                                                                                                                                                              |
 | Metadata Columns | Contains the number of non-text/binary columns for each table. Click the number link to review the full list.                                                                                                                                                                                                                                                                                                                                          |
 | Primary Key      | Contains the primary key for each table. Review the following Microsoft article for more information on SQL Server primary keys: [Primary Keys Constraints](https://docs.microsoft.com/en-us/sql/relational-databases/tables/primary-and-foreign-key-constraints?view=sql-server-ver15#primary-keys-constraints).                                                                                                                                      |
-| Modified Filter  | To improve performance the product performs automatic re-indexing against a field in each table that indicates the last modified date of the row. Where possible, the product will automatically map this based upon the exact match or inclusion of one of the below values within the field name. Additional values can be added below in order to support other naming conventions for modified fields (different language or internal convention). |
+| Modified Filter  | To improve performance the product performs automatic re-indexing against a field in each table that indicates the last modified date of the row. Where possible, the product will automatically map this based upon the exact match or inclusion of one of the below values within the field name. Additional values can be added below to support other naming conventions for modified fields (different language or internal convention). |
 | Include?         | Select if you want to disable crawling for this table. **NOTE:** You can disable crawling for all listed tables using the Include none option in the upper right corner of the wizard or enable crawling accordingly with the Include all.                                                                                                                                                                                                             |
 | View Sample      | Shows a table of the top 15 rows allowing to view if the table is one to exclude.                                                                                                                                                                                                                                                                                                                                                                      |
 
@@ -52,7 +49,7 @@ Configure your crawling scope considering the following:
 On this step, review tables with missing primary keys and/or missing modified filters.
 
 - Missing primary keys – only shows if users have tables that are missing primary keys where the
-  user can select the primary key from a dropdown of all the columns. This step does not show if
+  user can select the primary key from a dropdown of all the columns. This step doesn't show if
   there are no missing primary keys.
 - Missing modified filters – only shows if there are tables missing modified filters. Here tables
   are shown that are missing a modified and that have a datetime (or equivalent) typed column to
@@ -68,8 +65,8 @@ At this step, review your database configuration.
 - Excluded Tables – review the full list of the tables to be excluded from classification scope with
   exclusion reason.
 
-When the database configuration has been completed you will be redirected to the Advanced Source
-Configuration, this allows you to define how the database will be crawled. It is possible to crawl
-either specific tables, or crawl custom queries (defined select statements, which may use JOIN
+When the database configuration is completed, you're redirected to the Advanced Source
+Configuration, where you define how the database is crawled. You can crawl
+either specific tables or custom queries (defined select statements that may use JOIN
 statements across multiple tables).
 [See Database for more information.](/docs/dataclassification/5.6.2/contentconfigurationoverview/sourcesintro/sourcesmanage/manage_database.md)

@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Supported Content Types
 
-The table below lists types of content and their default extensions supported out of the box.
+The following table lists types of content and their default extensions supported by default.
 
 **NOTE:** To review the full list of available content types, navigate to Config → Text Processing →
 Content Type Extraction Methods.

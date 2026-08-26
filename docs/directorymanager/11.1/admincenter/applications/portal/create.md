@@ -58,7 +58,7 @@ located on disk.
 1. In Admin Center, click **Applications** in the left pane.
 2. Click **Add Application**.
 3. On the next page, select **GroupID Portal** and click **Next step**.
-4. On the **Create GroupID Application** page, make sure the **IIS** tile is selected.
+4. On the **Create GroupID Application** page, ensure the **IIS** tile is selected.
 5. In the **Application Name** box, enter a unique name for the portal or use the default name. The
    portal is displayed with this name in Directory Manager.
 6. In the **Deployment Name** box, enter a deployment name for the portal. This name is used to
@@ -81,13 +81,13 @@ located on disk.
       `https://web-server-name:port/IIS-application-name`
       Hence, a different URL is constructed for each deployment of a portal in IIS.
 
-8. In the **IIS Site** drop-down list, select a website to host the portal files. The list displays
+8. In the **IIS Site** dropdown list, select a website to host the portal files. The list displays
    the websites defined on the native IIS server. _GroupIDSite11_ is the default selection.
 9. In the **Service Endpoints** area, bind a Data service and a Security service with the portal.
 
-    1. In the **Data Service** drop-down list, select a Data service for the portal to use. The list
+    1. In the **Data Service** dropdown list, select a Data service for the portal to use. The list
        contains all Data services defined in Directory Manager.
-    2. In the **Security Service** drop-down list, select a Security service for the portal to use.
+    2. In the **Security Service** dropdown list, select a Security service for the portal to use.
        Thelist contains all Security services defined in Directory Manager.
 
 10. In the **Support Information** area, enter internal contact information and resource links for
@@ -106,41 +106,41 @@ located on disk.
        default, this box displays the URL of the portal's help published by Netwrix.
        This URL is mapped to the **Help** icon in the portal.
 
-11. (Optional) Select the **Password Center Mode** check box to create this portal as a Self-Service
-    Password Reset portal (SSPR). A SSPR portal does not offer the standard functions of a Directory
+11. (Optional) Select the **Password Center Mode** checkbox to create this portal as a Self-Service
+    Password Reset portal (SSPR). A SSPR portal doesn't offer the standard functions of a Directory
     Manager portal, such as group management, user management, or entitlement management, but is
-    exclusively dedicated to password-relation activities. This portal enables users to manage their
-    directory account passwords, i.e., the password for the account they use to access their
-    workstations and other Microsoft services. Users can change and reset their passwords, as well
+    exclusively dedicated to password-relation activities. Use this portal to manage your
+    directory account passwords, i.e., the password for the account you use to access your
+    workstations and other Microsoft services. You can change and reset your passwords, as well
     as unlock their accounts. They can also enroll their accounts in Directory Manager and link
     accounts in different identity stores.
 
-    The SSPR portal does not have design settings and advanced settings, like a standard Directory
-    Manager portal has. For this reason, the following configurations are not available on selecting
-    the **Password Center Mode** check box:
+    The SSPR portal doesn't have design settings and advanced settings, like a standard Directory
+    Manager portal has. For this reason, the following configurations aren't available on selecting
+    the **Password Center Mode** checkbox:
 
     - The **Import Design** option for identity stores in the Select Identity Stores area
     - The Advanced Settings area
 
     :::note
-    Directory Manager does not support the upgrade of a Password Center portal (from a
+    Directory Manager doesn't support the upgrade of a Password Center portal (from a
     previous version) to an SSPR portal. You have to create the SSPR portal as a new portal.
     :::
 
 
-12. In the **Select Identity Stores** area, select the check boxes for the identity stores you want
+12. In the **Select Identity Stores** area, select the checkboxes for the identity stores you want
     to associate with the portal. Users in the associated identity stores can sign into the portal
     to manage directory objects, their directory profiles, and more.
-    While associating identity store(s), you may get the following message:
+    While associating identity stores, you may get the following message:
 
     ![linked_message](/images/directorymanager/11.1/admincenter/portal/linked_message.webp)
 
     This relates to the scenario when identity stores in Directory Manager have been linked, as
     discussed in the
     [Linked Identity Stores and the Directory Manager Portal](/docs/directorymanager/11.1/admincenter/identitystore/link/overview.md#linked-identity-stores-and-the-directory-manager-portal)
-    topic. Hence, when two identity stores, IdentityStoreA and IdentityStoreB, are linked and you
+    topic. Hence, when two identity stores (IdentityStoreA and IdentityStoreB) are linked and you
     associate IdentityStoreA with the portal, this message is displayed. It alerts you to associate
-    the second identity store in the linked pair (dentityStoreB) with the portal too, in order to
+    the second identity store in the linked pair (IdentityStoreB) with the portal too, to
     benefit from the linking.
 
 13. Each identity store associated with a portal has its own set of design settings, as listed in
@@ -148,7 +148,7 @@ located on disk.
 
     If you are upgrading to Directory Manager 11 from GroupID 9 or GroupID 10, you can import the
     design settings for an identity store from a Self-Service portal in a previous version - as an
-    alternate to defining these settings from scratch. Following are the details of the file
+    alternate to manually defining these settings. Following are the details of the file
     containing identity store design settings for a Self-Service portal in GroupID 9 and 10:
 
     **Design file name:** `<Identity store name>`..xml.
@@ -170,7 +170,7 @@ located on disk.
     For example: C:\Program Files\Imanami\GroupID
     10.0\SelfService\Inetpub\TestPortal\Web\LinkedCombo\
 
-    **To import the design file and linked combo file(s), do the following:**
+    **To import the design file and linked combo files, do the following:**
 
     1. As a prerequisite to Directory Manager 11 upgrade, the folder structure for the source
        version was copied to the Directory Manager 11 server. In this case, the design and linked
@@ -194,7 +194,7 @@ located on disk.
     [Manage Advanced Settings](/docs/directorymanager/11.1/admincenter/applications/portal/server/advanced.md) topic.
     If you are upgrading to Directory Manager 11 from GroupID 9 or GroupID 10, you can import the
     advanced settings of a Self-Service portal from a previous version as an alternate to defining
-    settings from scratch. Following are the details of the file containing advanced settings for a
+    settings manually. Following are the details of the file containing advanced settings for a
     Self-Service portal in GroupID 9 and 10:
 
     **File name:** server.xml. A separate file exists for each Self-Service portal.
@@ -250,7 +250,7 @@ the[Prerequisites for Deployments in Remote IIS](/docs/directorymanager/11.1/adm
    Portal** tab.
 7. In the **API URL** box, enter the URL of the API to use for communicating with the remote IIS
    server.
-   Make sure the
+   Ensure the
    [Microsoft IIS Administration API](https://learn.microsoft.com/en-us/iis-administration/) is
    installed as a Windows service on the remote IIS machine. Fetch the URL of this API from remote
    IIS and provide it here to enable communication.
@@ -259,7 +259,7 @@ the[Prerequisites for Deployments in Remote IIS](/docs/directorymanager/11.1/adm
    API's interface.
 9. In the **Username** and **Password** boxes, enter the credentials of a Windows account to
    communicate with the API. This account must have access to the remote IIS machine, with
-   sufficient permissions to enable you to create and manipulate objects in IIS.
+   sufficient permissions to create and manipulate objects in IIS.
 10. In the **IIS Application Name** box, enter an IIS deployment name for the portal. This name
     should be unique for each portal deployed within the same site in remote IIS.
 
@@ -271,7 +271,7 @@ the[Prerequisites for Deployments in Remote IIS](/docs/directorymanager/11.1/adm
       `https://web-server-name:port/IIS-application-name`
       Hence, a different URL is constructed for each deployment of a portal in remote IIS.
 
-11. On providing the above information, the **Website** drop-down list displays the sites defined on
+11. On providing the above information, the **Website** dropdown list displays the sites defined on
     the remote IIS server. Select the site that you have configured with the appropriate permissions
     for Directory Manager.
 12. To enter information in the **Service Endpoints**, **Support Information**, **Password Center
@@ -284,11 +284,11 @@ A Directory Manager portal can be created as a Self-Service Password Reset porta
 IIS and remote IIS. A SSPR portal only provides password management functions to end-users.
 
 Creating an SSPR portal is similar to creating a standard Directory Manager portal; you only have to
-select the **Password Center Mode** check box on the Create GroupID Application page. For details,
+select the **Password Center Mode** checkbox on the Create GroupID Application page. For details,
 see Step 11 in the he Create a Portal in Native IIS topic.
 
 :::note
-Directory Manager does not support the upgrade of a Password Center portal (from a previous
+Directory Manager doesn't support the upgrade of a Password Center portal (from a previous
 version) to an SSPR portal. You have to create the SSPR portal as a new portal.
 :::
 
@@ -305,7 +305,7 @@ serve the same identity stores and have the same display and search-related conf
 a shared setting propagates to all deployment instances of the portal.
 
 :::note
-A SSPR portal does not have design settings. Hence, only server settings are shared across
+A SSPR portal doesn't have design settings. Hence, only server settings are shared across
 multiple instances.
 :::
 
@@ -319,7 +319,7 @@ multiple instances.
    the web server where you want to deploy the instance.
    The **Application Name** field displays the name of the portal as read-only.
 4. Fields on the page vary, depending on the web server selected. In any case, the **Support
-   Information**, **Select Identity Stores**, and **Advanced Settings** areas are not available, as
+   Information**, **Select Identity Stores**, and **Advanced Settings** areas aren't available, as
    they remain the same for all instances.
 
     - To deploy an instance in native IIS, follow steps 6-9 in the Create a Portal in Native IIS
@@ -333,14 +333,14 @@ multiple instances.
 ## Create a Portal by Copying an Existing Portal
 
 You can create a new portal by copying an existing portal. All server and design configurations of
-the template portal are duplicated to the new portal. Deployment details are not duplicated, so you
+the template portal are duplicated to the new portal. Deployment details aren't duplicated, so you
 can choose to deploy the new portal in any of the supported web servers. Consider the following:
 
 - You can create a SSPR portal by copying a standard Directory Manager portal. In this case, the
-  design settings of the base portal are not duplicated as the SSPR portal does not have design
+  design settings of the base portal aren't duplicated as the SSPR portal doesn't have design
   settings.
 - You can create a standard Directory Manager portal by copying a SSPR portal. As the SSPR portal
-  does not have design settings, the new portal is created with the default design settings. You can
+  doesn't have design settings, the new portal is created with the default design settings. You can
   modify them as needed.
 
 **To create a portal:**
@@ -353,7 +353,7 @@ can choose to deploy the new portal in any of the supported web servers. Conside
     - The Data service and Security service linked to the portal
     - The support information for the portal, i.e., the admin/helpdesk contact email address and the
       portal's help URL
-    - The identity store(s) associated with the portal
+    - The identity stores associated with the portal
 
 3. You can deploy the new portal in native IIS or remote IIS.
 
@@ -370,21 +370,21 @@ can choose to deploy the new portal in any of the supported web servers. Conside
 
     | Info                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
     | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Name                 | The name given to the portal. Next to the portal name is the portal logo, which enables you to differentiate between a standard Directory Manager portal and a SSPR portal, as each portal type has its own logo.                                                                                                                                                                                                                                                                                                                                                                                                                |
+    | Name                 | The name given to the portal. Next to the portal name is the portal logo, which you can use to differentiate between a standard Directory Manager portal and a SSPR portal, as each portal type has its own logo.                                                                                                                                                                                                                                                                                                                                                                                                                |
     | Identity Stores      | The names of the identity stores the portal serves.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-    | Deployment Instances | Displays the deployment instance(s) of the portal as tiles. A tile shows the deployment name of the instance and the web server where it is deployed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-    | Status               | A portal has one of the following statuses: - **Running:** Indicates that the portal is up and running. - **Stopped:** Indicates that Directory Manager is unable to communicate with the portal. To troubleshoot, go to the web server where the portal is deployed and make sure the portal is running. - **Error:** Any issue other than _stopped_ is categorized as _error_. In this case, contact your system administrator.                                                                                                                                                                                                |
-    | Launch Application   | Click this link to launch the portal. When multiple deployments of a portal are available, select the tile for a deployment instance and click this link to launch that instance.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-    | Ellipsis             | Click it to launch a shortcut menu with the following options: - **Settings:** Launches the portal settings page, where you can manage server and design settings. - **Server Settings:** Includes the deployment details of each portal instance, the help URL for the portal, the identity stores linked with the portal, and more. - **Design settings:** These settings relate to the portal's user interface. - **Deploy Another Instance:** Enables you to deploy another instance of the portal. - **Copy:** Enables you to create a new portal by copying the settings of this portal. - **Delete:** Deletes the portal. |
+    | Deployment Instances | Displays the deployment instances of the portal as tiles. A tile shows the deployment name of the instance and the web server where it is deployed.                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+    | Status               | A portal has one of the following statuses: - **Running:** Indicates that the portal is running. - **Stopped:** Indicates that Directory Manager is unable to communicate with the portal. To troubleshoot, go to the web server where the portal is deployed and ensure the portal is running. - **Error:** Any issue other than _stopped_ is categorized as _error_. In this case, contact your system administrator.                                                                                                                                                                                                |
+    | Launch Application   | Click the **Launch Application** link to launch the portal. When multiple deployments of a portal are available, select the tile for a deployment instance and click **Launch Application** to launch that instance.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+    | Ellipsis             | Click it to launch a shortcut menu with the following options: - **Settings:** Launches the portal settings page, where you can manage server and design settings. - **Server Settings:** Includes the deployment details of each portal instance, the help URL for the portal, the identity stores linked with the portal, and more. - **Design settings:** These settings relate to the portal's user interface. - **Deploy Another Instance:** Deploy another instance of the portal. - **Copy:** Create a new portal by copying the settings of this portal. - **Delete:** Deletes the portal. |
 
 You may notice a portal with an orange card and an orange icon on the card. On hovering the mouse
 over the icon, the tooltip says that _linked mode will not be allowed_. This relates to the scenario
 when identity stores in Directory Manager have been linked, as discussed in the
 [Linked Identity Stores and the Directory Manager Portal](/docs/directorymanager/11.1/admincenter/identitystore/link/overview.md#linked-identity-stores-and-the-directory-manager-portal)
-topic. Hence, when two identity stores, IdentityStoreA and IdentityStoreB, are linked and you
+topic. Hence, when two identity stores (IdentityStoreA and IdentityStoreB) are linked and you
 associate IdentityStoreA with the portal, the portal card appears in orange. It informs you to
-associate the second identity store in the linked pair (dentityStoreB) with the portal too, in order
-to benefit from the linking.
+associate the second identity store in the linked pair (IdentityStoreB) with the portal too, to
+benefit from the linking.
 
 ## Launch a Portal
 

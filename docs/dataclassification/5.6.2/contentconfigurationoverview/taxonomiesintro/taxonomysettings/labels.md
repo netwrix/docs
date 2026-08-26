@@ -11,13 +11,12 @@ This section contains information on how to configure SharePoint and Office 365 
 ## SharePoint Labels
 
 SharePoint labels (Alternate Term Labels) are alternate labels configured in SharePoint against the
-English language. Through the administration interface it is possible to add and remove alternate
-labels. It is not currently possible to change the default label (this should be achieved by
-renaming the node via the treeview right click menu).
+English language. Through the administration interface you can add and remove alternate
+labels. You can't change the default label directly (rename the node via the treeview right click menu).
 
 ## O365 Labels
 
-For a simple automated experience it is possible to assign Office 365 Classification labels to
+For a simple automated experience, assign Office 365 Classification labels to
 existing Term Set structures within Taxonomy Manager.
 
 At the time of classification the classification process will identify any terms that have both met
@@ -29,7 +28,7 @@ setting specified at the term level).
 More than one label can be applied to each term to allow for labels to be applied that are only
 available on a limited set of site collections.
 
-Simply select Add and choose the label you wish to assign from the drop down list:
+Simply select Add and choose the label you want to assign from the dropdown list:
 
 ![o365labels_thumb_0_0](/images/dataclassification/5.6.2/taxonomies/o365labels_thumb_0_0.webp)
 
@@ -38,5 +37,5 @@ synchronized down.
 
 ## Help
 
-The Help tab displays a list of clue type information, as well as allows you to run the product tour
+The Help tab displays a list of clue type information, as well as runs the product tour
 specific to the Taxonomies area.

@@ -11,7 +11,7 @@ an internal business specification.
 
 A group can either be "mixed", which allows it to contain all source types, or source-specific. For example, you could create a 
 source group named "Demo Content", which only supports the addition of SharePoint sources. When you create a source, any existing source 
-groups that support that source type will be displayed in a dropdown in the source configuration screen. 
+groups that support that source type appear in a dropdown in the source configuration screen. 
 
 Certain source types are treated as source groups. See [Dynamic Source Groups](#dynamic-source-groups) for the available 
 group types and configuration options.

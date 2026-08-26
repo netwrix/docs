@@ -15,8 +15,8 @@ the subsites/lists to configure their settings.
   container is configured for crawling.
 - The **Has Config?** column contains an indicator showing whether custom metadata mappings have
   been defined for the entity.
-- The **Exclude** link in the last column allows you to exclude the selected list / subsite from
-  crowling. For excluded entities, this column contains the **Include** link.
+- The **Exclude** link in the last column lets you exclude the selected list or subsite from
+  crawling. For excluded entities, this column contains the **Include** link.
 
 **NOTE:** Excluding the entity will not automatically remove content from the index. If content has
 already been crawled, then it should be manually deleted via the QS; alternatively, you can
@@ -24,7 +24,7 @@ re-collect content source data.
 
 When new content is defined for crawling (i.e. included), a re-index operation should be performed.
 
-- The **Edit** link allows you to modify settings for the selected list or subsite. See below for
+- The **Edit** link lets you modify settings for the selected list or subsite. See below for
   details.
 
 ## List Configuration
@@ -52,4 +52,4 @@ Consider the following:
 
 - In the absence of a subsite level configuration the collector will automatically use the source
   level mappings (on a field by field basis).
-- Content fields cannot be configured at the subsite level.
+- Content fields can't be configured at the subsite level.

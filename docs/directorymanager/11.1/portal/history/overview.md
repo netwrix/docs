@@ -20,12 +20,12 @@ The administrator can configure the following for history tracking:
 - retain history data forever or for a specified duration
 
 Therefore, history data represents only the events that history-tracking is configured to track.
-Furthermore, if history-tracking is not enabled or has been recently disabled for the identity
-store, the portal does not display history data or it displays data that was logged before
+Furthermore, if history-tracking isn't enabled or has been recently disabled for the identity
+store, the portal doesn't display history data or it displays data that was logged before
 history-tracking was turned off.
 
 A user can add a note to a history action that he/she performed. Other users can just view that
-note. This note may explain the reason for performing that action. See the
+note. Thisn'te may explain the reason for performing that action. See the
 [Configure History Tracking](/docs/directorymanager/11.1/admincenter/identitystore/configure/historytracking.md)
 topic.
 

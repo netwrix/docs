@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # SAML Configuration for Directory Manager using Microsoft Entra ID SSO
 
-Microsoft Entra ID SSO enables users to conveniently access all their apps from any location, on any
+With Microsoft Entra ID SSO, users can conveniently access all their apps from any location, on any
 device, from a centralized and branded portal for a simplified user experience and better
 productivity.
 

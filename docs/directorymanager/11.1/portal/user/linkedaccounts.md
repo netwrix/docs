@@ -11,7 +11,7 @@ of these accounts separately in Directory Manager before they can reset an accou
 unlock it (in case it gets locked).
 
 To eliminate the necessity of separate enrollment, a user can simply enroll one of these accounts in
-Directory Manager and then link other accounts with it. Once it's done, the enrolled account becomes
+Directory Manager and then link other accounts with it. After linking is complete, the enrolled account becomes
 the master account.
 
 A user can then unlock or reset the password of any linked account through the authentication policy
@@ -42,26 +42,26 @@ Account**.
 Step 3 – On the **Directory Manager Authenticate** window, provide the credentials for the account
 to link to the master account. A message, _Account has been successfully linked_, is displayed.
 
-If the master account is not enrolled yet, it automatically gets enrolled when an account is linked
+If the master account isn't enrolled yet, it automatically gets enrolled when an account is linked
 to it.
 
 :::note
-An already enrolled or linked account cannot be linked to a master account.
+An already enrolled or linked account can't be linked to a master account.
 :::
 
 
-Step 4 – Select the **Allow Authentication** option for the account(s) you want to use to
+Step 4 – Select the **Allow Authentication** option for the accounts you want to use to
 authenticate with, while unlocking any linked accounts or resetting passwords of linked accounts.
 
-If you do not enable it for the master or child account(s), then the Link Account authentication
-type cannot be used for enrollment and authentication in Directory Manager.
+If you don't enable it for the master or child accounts, then the Link Account authentication
+type can't be used for enrollment and authentication in Directory Manager.
 
 If in the multifactor authentication policy for your role:
 
 - Only Link Account authentication is defined, then a message appears that Link Account
   authentication is disabled.
-- Other authentication type(s) are defined along with the Link Account authentication, then you can
-  use those authentication type(s) to unlock your account and reset the password of your identity
+- Other authentication types are defined along with the Link Account authentication, then you can
+  use those authentication types to unlock your account and reset the password of your identity
   store account.
 
 Step 5 – To link another account, click **Link Account** again and repeat steps 3-4.
@@ -93,26 +93,26 @@ Step 4 – Select the account you want to link to. You will be redirected back t
 Manager portal’s My Linked Account page and a message **Account has been successfully linked** is
 displayed.
 
-If the master account is not enrolled yet, it automatically gets enrolled when an account is linked
+If the master account isn't enrolled yet, it automatically gets enrolled when an account is linked
 to it.
 
 :::note
-An already enrolled or linked account cannot be linked to a master account.
+An already enrolled or linked account can't be linked to a master account.
 :::
 
 
-Step 5 – Turn on the **Allow Authentication** button against the account(s) you want to use to
+Step 5 – Turn on the **Allow Authentication** button against the accounts you want to use to
 authenticate with, while unlocking any linked accounts or resetting passwords of linked accounts.
 
-If you do not enable it either for master or child account(s), then the Link Account authentication
-type cannot be used both for master account and child account(s).
+If you don't enable it either for master or child accounts, then the Link Account authentication
+type can't be used both for master account and child accounts.
 
 If in the Multifactor Authentication policy for your role:
 
 - Only Link Account authentication is defined, then a message appears that Link Account
   authentication is disabled.
-- Other authentication type(s) are defined along with the Link Account authentication, then you can
-  use those authentication type(s) to unlock your account and reset password of your identity store
+- Other authentication types are defined along with the Link Account authentication, then you can
+  use those authentication types to unlock your account and reset password of your identity store
   account.
 
 Step 6 – To link another account, click **Link Account** again and repeat steps 2-4.
@@ -137,7 +137,7 @@ Account**.
 
 In the SSPR portal, click the **Linked Accounts** tile on the main portal page.
 
-Step 2 – On the My Linked Account page, select the check box for the account you want to unlink.
+Step 2 – On the My Linked Account page, select the checkbox for the account you want to unlink.
 
 Step 3 – Click **Un-link Account**. A message is displayed, asking if you want to unlink. Click
 **Yes**.

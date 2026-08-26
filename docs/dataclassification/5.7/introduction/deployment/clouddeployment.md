@@ -41,8 +41,8 @@ Netwrix recommends hosting the NDC SQL database on a dedicated SQL Server instan
 Required disk space for the NDC Index file storage will depend, in particular, on the data
 processing mode you plan to use (_No Index_, _Keyword_ or _Compound Term_).
 
-As a general estimate, required space can be calculated as 35% of the total size of the data you
-plan to be indexed. For example, if you have 45 GB of files, they will require up to 15 GB for
+As a general estimate, calculate required space as 35% of the total data size you
+plan to index. For example, if you have 45 GB of files, they will require up to 15 GB for
 the NDC Index files.
 
 ## Scalability and Performance
@@ -57,7 +57,7 @@ environments can be ranged as follows:
 | Up to 64, 000, 000            | Large-size environment                      |                                                                            |
 | More than 64, 000, 000        | Extra-large environment                     | System architect's assistance is required for deployment planning requires |
 
-Again, consider that for the large-size and extra-large environments, Netwrix strongly recommends
-configuring a cluster of several NDC Servers and applying DQS mode to these clustered servers. See
+For large-size and extra-large environments, Netwrix recommends
+configuring a cluster of several NDC Servers and applying DQS mode. See
 [Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md)
 for details.

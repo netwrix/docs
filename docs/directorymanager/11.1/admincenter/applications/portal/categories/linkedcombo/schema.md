@@ -37,17 +37,17 @@ Do the following:
 
         ![child_fields](/images/directorymanager/11.1/admincenter/portal/linkedcombo/child_fields.webp)
 
-    2. In the **Linked Field** drop-down list, select a field (for example, Country). This field
+    2. In the **Linked Field** dropdown list, select a field (for example, Country). This field
        will be linked to the data column represented by the binding expression you select in the
-       **Binding Expression** drop-down list.
+       **Binding Expression** dropdown list.
        The **Linked Field** list contains predefined, hard coded fields, where each field is already
        mapped to a schema attribute. When you map a field to an expression, the values in the
        worksheet’s data column will be available for the field in the portal. When a portal user
        selects a value, it is set as the attribute’s value for the field.
-    3. The **Parent Field** list does not apply to the first row. For all other rows, use it to
+    3. The **Parent Field** list doesn't apply to the first row. For all other rows, use it to
        select the name of the parent field for the selected linked field. For example, when _State_
        is selected in the _Linked Field_ list, select Country as the parent field.
-    4. In the **Binding Expression** drop-down list, select an expression that represents the data
+    4. In the **Binding Expression** dropdown list, select an expression that represents the data
        column you want to link to the field selected in the **Linked Field** list.
        Expressions are auto generated with respect to the number of sheets in the source Excel
        workbook and the number of columns in a sheet, as shown in the figure above.

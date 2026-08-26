@@ -14,7 +14,7 @@ irrespective of the following:
 - whether the jobs are enabled.
 
 This commandlet can also filter the job list if provided with the filtration parameters such as
-JobType, TriggerType or HavingNotifications. It also accepts a MatchingCriteria parameter that
+JobType, TriggerType, or HavingNotifications. It also accepts a MatchingCriteria parameter that
 determines whether the criteria are to be joined on the AND basis or OR basis.
 
 ## Syntax
@@ -51,7 +51,7 @@ Get-Schedule
 
 Example 2:
 
-This example retrieves those Group Usage Service – GUS job(s) that have monthly trigger and
+This example retrieves those Group Usage Service – GUS jobs that have monthly trigger and
 MatchingCriteria on the And basis.
 
 ```

@@ -9,7 +9,7 @@ sidebar_position: 20
 This section explains various aspects of multi-language support in administrative web console. In
 general, the application is capable of indexing and classifying information in any language through
 native Unicode support. However, the support level for some advanced product capabilities and
-out-of-the-box classification rules varies for different languages.
+built-in classification rules varies for different languages.
 
 Each clue can be restricted to documents written in a subset of the available languages. This is
 useful is a word in one language also appears in another language but has a different meaning. In
@@ -21,7 +21,7 @@ languages:
 ## Indexing and Classification
 
 Documents in any language can be indexed and classified thanks to Unicode support and statistical
-content analysis techniques. This includes Chinese, Greek, Japanese, Russian and other non-Latin
+content analysis techniques. This includes Chinese, Greek, Japanese, Russian, and other non-Latin
 based languages.
 
 ## Stemming
@@ -73,7 +73,7 @@ languages:
 
     ![predefined_clues](/images/dataclassification/5.7/admin/taxonomies/predefined_clues.webp)
 
-Users can easily extend the out-of-the-box classification rules by adding relevant keywords and
+Users can easily extend the built-in classification rules by adding relevant keywords and
 terms in other languages.
 
 In addition, there are predefined classification rules for various national identification and

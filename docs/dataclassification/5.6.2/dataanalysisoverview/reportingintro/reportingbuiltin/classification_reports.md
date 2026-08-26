@@ -12,8 +12,7 @@ Review the list of the built-in classification reports:
   specifically tags added/removed. To log classification changes, enable the related option in the
   product configuration; see Enable Auto-Classification Change Logging for details.
 
-- Classification Coverage—Provides a list of documents that have been tagged with X or fewer
-  classifications. Assists in locating documents that have a low number of auto classifications and
+- Classification Coverage—Provides a list of documents with X or fewer classifications. Assists in locating documents that have a low number of auto classifications and
   highlights the nearest missed classification. Supports filtering by URL and source group.
 - Clue Counts—Provides a report of the number of clues per term, also includes a count of regular
   expression clues.

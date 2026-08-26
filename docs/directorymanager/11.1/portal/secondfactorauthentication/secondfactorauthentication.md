@@ -121,7 +121,7 @@ YubiKey supported browsers:
 - Opera version 40 or later
 - Firefox (requires the U2F Support Add-on extension)
 
-IE and Microsoft Edge are not supported.
+IE and Microsoft Edge aren't supported.
 
 - To enroll your identity store account on the portal using YubiKey, insert the YubiKey device in
   the USB slot of your computer, enter a name for your device in the portal and tap on the device.
@@ -130,7 +130,7 @@ IE and Microsoft Edge are not supported.
 
 :::note
 Users can enroll and authenticate with a YubiKey only on a physical machine. Virtual machines
-are not supported.
+aren't supported.
 :::
 
 
@@ -154,7 +154,7 @@ Step 4 – In the **Windows Hello** section, click **Set up** under **Face** or 
 the recognition data.
 
 :::note
-If your device does not meet the hardware requirements, Windows Hello is not available, even
+If your device doesn't meet the hardware requirements, Windows Hello isn't available, even
 if Windows 10 is installed on it.  
 Window Hello supports the Microsoft Edge browser only.
 

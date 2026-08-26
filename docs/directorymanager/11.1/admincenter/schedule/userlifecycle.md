@@ -12,11 +12,11 @@ identity store:
 
 - Monitors the profile validation dates of users
 - Generates reminder emails
-- Disables users who do not validate their profiles within the given period
+- Disables users who don't validate their profiles within the given period
 
 ## Create a User Life Cycle Schedule
 
-Follow the steps to create a User Life Cycle Schedule.
+To create a User Life Cycle Schedule.
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -33,17 +33,18 @@ Step 5 – In the Schedule Name box, enter a name for the schedule.
 Step 6 – The Name Preview box displays the schedule name prefixed with \_UserLifeCycle\_\_; the
 schedule is displayed with this name in email notifications.
 
-Step 7 – Select a Directory Manager portal URL in the Portal URL drop-down list to include it in
+Step 7 – Select a Directory Manager portal URL in the Portal URL dropdown list to include it in
 notifications generated for the schedule. Users are redirected to this portal to perform any
 necessary action.
 
-Step 8 – In the Scheduler Service Name drop-down list, select a Scheduler service that would be
+Step 8 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
 responsible for triggering this schedule. The number of services displayed in the list depend on the
 number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
 service. See the [Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
 information.
 
-Please note the following while selecting a Scheduler service:
+:::note
+When selecting a Scheduler service:
 
 - The Scheduler service for the Directory Manager instance on which you are creating the schedule is
   selected by default. However, you can select the Scheduler service of another instance as well.
@@ -56,6 +57,7 @@ Please note the following while selecting a Scheduler service:
 
 - If a schedule is run manually on the Admin Center, then the Scheduler service of that instance
   will be used.
+:::
 
 Step 9 – Click **Add Triggers** in the Triggers area to specify a triggering criterion for the
 schedule, that, when met, starts the execution of the schedule. Follow step 11 in the
@@ -68,7 +70,7 @@ the schedule in the identity store. Follow step 12 in the
 topic for additional information.
 
 :::important Password Re-insertion Required
-Due to security enhancements, when editing a schedule, you must re-enter the account password in the Authentication section, even if you are not changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
+Due to security enhancements, when editing a schedule, you must re-enter the account password in the Authentication section, even if you aren't changing the authentication credentials. This is a required security measure to ensure password field sanitization across the product.
 :::
 
 Step 11 – On the Create Schedule page, click **Create Schedule**.

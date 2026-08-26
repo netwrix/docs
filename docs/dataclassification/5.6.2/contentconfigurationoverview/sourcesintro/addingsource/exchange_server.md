@@ -6,10 +6,10 @@ sidebar_position: 50
 
 # Exchange Server
 
-The Exchange Server source configuration screen allows you to enable the crawling and classification
+Use the Exchange Server source configuration screen to enable crawling and classification
 of multiple Exchange mailboxes from the same Exchange server.
 
-**IMPORTANT!** Automatic detection, crawling and classification of multiple Exchange mailboxes from
+**IMPORTANT!** Automatic detection, crawling, and classification of multiple Exchange mailboxes from
 the same Exchange server (and, respectively, _Exchange Server_ content source configuration) is only
 supported for Exchange Server 2013 or later due to limitations in the Microsoft APIs. For earlier
 versions, consider using _Exchange Mailbox_ content source.
@@ -25,9 +25,7 @@ To configure an Exchange Server source:
 
 ## Authentication type: Modern authentication
 
-**NOTE:** For Email Address / Password, the Administrator account that has been assigned the right
-of the Discovery Management role and be given the Mailbox Search and MailboxSearchApplication
-permissions.
+**NOTE:** For Email Address / Password, use an Administrator account with the Discovery Management role and the Mailbox Search and MailboxSearchApplication permissions.
 
 If you plan to use this authentication type, specify the following:
 
@@ -55,7 +53,7 @@ The following settings are also required in both cases:
 
 | Option           | Description                                                                                                                                                                                                                                                                                                                                                                       |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Exchange API URL | By default, the crawling engine will attempt to locate the necessary URL of Exchange Web Services API by using the _Exchange AutoDiscover_ functionality. So, typically, you can leave this field blank. If, however, the _Exchange AutoDiscover_ is not available, then you should specify the Exchange API URL explicitly as follows: `https://<servername>/EWS/Exchange.asmx`. |
+| Exchange API URL | By default, the crawling engine locates the Exchange Web Services API URL using the _Exchange AutoDiscover_ functionality, so you can typically leave this field blank. If _Exchange AutoDiscover_ is unavailable, specify the Exchange API URL explicitly: `https://<servername>/EWS/Exchange.asmx`. |
 | Crawl Range      | Define what portions of data should be retrieved from the Exchange server: - Select **Date Range** to crawl a static set of data within the required interval. - Select **Since** if you want to periodically re-crawl content from the specified date, taking into account the last crawl date for each artifact.                                                                |
 | Match Rules      | Define which mailboxes will be crawled as part of an Exchange Server source. Examples: 1. `.*@netwrix.com`— enter the wildcard (\*) and the domain (here `netwrix.com`) to restrict crawling to a set of domain mailboxes 2. `.*`—enter if you want all mailboxes to be crawled                                                                                                   |
 | Detection Period | Specify how often the source should be checked for changes. Default period is 1 day.                                                                                                                                                                                                                                                                                              |

@@ -12,8 +12,8 @@ This section lists the errors common to all APIs.
 | ----- | ---------- | -------------- | --------- |
 | 1.    | 400        | Bad request         | Wrong parameters     |
 | 2.    | 401        | Unauthorized        | Wrong or expired token   |
-| 3.    | 404        | Not found           | The URL is incorrect or object is not found |
+| 3.    | 404        | Not found           | The URL is incorrect or object isn't found |
 | 4.    | 405        | Method not allowed    | Wrong HTTP verb is used in the request      |
 | 5.    | 500        | Internal server error | An exception or error occurred in API       |
-| 6.    | 501        | Not implemented       | Required function is not implemented by API |
-| 7.    | 503        | Service unavailable   | API service is not available      |
+| 6.    | 501        | Not implemented       | Required function isn't implemented by API |
+| 7.    | 503        | Service unavailable   | API service isn't available      |

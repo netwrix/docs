@@ -6,11 +6,11 @@ sidebar_position: 40
 
 # Sign In Using OneLogin
 
-We configured OneLogin with a Directory Manager client, that is the Directory Manager portal
-_Wizard_ in our example. We also created a user, Leo Ferguson, in OneLogin who should be able to log
+OneLogin must be configured with a Directory Manager client, such as the Directory Manager portal
+_Wizard_ in this example. Additionally, a user named Leo Ferguson must be created in OneLogin to log
 into the _Wizard_ portal using the OneLogin single sign-on option.
 
-For single sign-on using OneLogin, we can choose any of the following ways:
+For single sign-on using OneLogin, you can choose any of the following ways:
 
 - SP-initiated single sign-on - when the SSO operation is initiated from the SP end, i.e., from the
   Directory Manager portal, Wizard.
@@ -27,7 +27,7 @@ For single sign-on using OneLogin, we can choose any of the following ways:
 2. Click the button or image for OneLogin; the OneLogin sign in page is displayed.
 3. Enter Leo Ferguson’s login name and password, and click **Login**. The user is successfully
    logged into the _Wizard_ portal using the OneLogin single sign on option.  
-   Only users defined for our app in OneLogin can log in by entering their user names and passwords.
+   Only users defined for their app in OneLogin can log in to by entering their user names and passwords.
    See the [Define Users in OneLogin](configureinonelogin.md#define-users-in-onelogin) topic.
 
 With single sign-on, you can now launch any Directory Manager client without having to sign in
@@ -35,6 +35,6 @@ again.
 
 ### IdP-Initiated Single Sign-On
 
-1. Launch the OneLogin portal using the URL provided by your organization and log in. The OneLogin
+1. Launch the OneLogin portal using the URL provided by your organization and log in to. The OneLogin
    dashboard displays the apps configured with OneLogin for single sign-on.
-2. On clicking an app, you will be redirected to it. Authentication will not be required.
+2. Click an app to access it. Authentication isn't required.

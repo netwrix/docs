@@ -6,10 +6,9 @@ sidebar_position: 30
 
 # Sign In Using Directory Manager
 
-Let’s assume that we configured three service providers in Directory Manager. Users should be able
-to access these applications through Directory Manager.
+Three service providers are configured in Directory Manager. Users can access these applications through Directory Manager.
 
-For single sign-on using Directory Manager, we can choose any of the following ways:
+For single sign-on using Directory Manager, choose any of the following ways:
 
 - SP-initiated single sign-on - when the SSO operation is initiated from the SP end, i.e., from any
   of the registered service providers.

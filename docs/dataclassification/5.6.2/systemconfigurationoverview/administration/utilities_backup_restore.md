@@ -11,11 +11,11 @@ sidebar_position: 20
 The Backup utility allows for the migration of complex Netwrix Data Classification instance
 configurations.
 
-This allows a user to safely design and test a conceptSearching configuration within a development
+This allows a user to safely design and test a Netwrix Data Classification configuration within a development
 environment and then copy the configuration, or specific parts of the configuration, to a different
-environment (I.E production).
+environment (for example, production).
 
-The tool supports text replacement to allow user defined URL's to be replaced by the equivalent
+The tool supports text replacement to allow user-defined URLs to be replaced by the equivalent
 destination URL. The following configuration options are available for import / export:
 
 - Source Registrations
@@ -35,8 +35,8 @@ destination URL. The following configuration options are available for import / 
 
 ![utilitiesbackup](/images/dataclassification/5.6.2/utilities/utilitiesbackup.webp)
 
-To create a backup simply select Create Backup and select the elements that you wish to include. The
-backup password will be required if you export a backup to XML and re-import to a different
+To create a backup, select **Create Backup** and select the elements to include. You
+must provide the backup password if you export a backup to XML and re-import it to a different
 environment.
 
-Upon import any items that already exist will be skipped.
+Upon import, the system skips items that already exist.

@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # Bulk Edit
 
-The Bulk Edit link can be used to make changes to several clues at one time:
+Use the Bulk Edit link to make changes to several clues at one time:
 
 ![bulkedit](/images/dataclassification/5.6.2/bulkedit.webp)
 
-When this link is used the form changes into a grid editor and many values can be changes and saved
+When you use the Bulk Edit link, the form changes into a grid editor and many values can be changed and saved
 in a single operation. To alter the Mandatory or Is Local settings for all terms quickly simply
 click the header text to toggle all checkboxes between enabled / disabled.
 

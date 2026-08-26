@@ -23,7 +23,7 @@ the following languages:
 
     ![predefined_clues](/images/dataclassification/5.6.2/taxonomies/predefined_clues.webp)
 
-Users can easily extend the out-of-the-box classification rules by adding relevant keywords and
+Users can easily extend the predefined classification rules by adding relevant keywords and
 terms in other languages.
 
 In addition, there are predefined classification rules for various national identification and

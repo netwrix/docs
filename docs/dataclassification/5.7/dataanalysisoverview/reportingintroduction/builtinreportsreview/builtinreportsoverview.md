@@ -17,7 +17,7 @@ these are described below:
 - Clue Counts – Provides a report of the number of clues per term, also includes a count of regular
   expression clues.
 - Clue Coverage – Provides a report on the usage of clues within classification tagging. Assists in
-  highlighting clues that are not aiding the classification process, or clues that are too vague.
+  highlighting clues that aren't aiding the classification process, or clues that are too vague.
   Supports filtering by URL and source group.
 - Document Tagging – Provides a report on the manual and automatically assigned document
   classifications. Supports filtering by URL and source group.
@@ -27,20 +27,20 @@ these are described below:
   their classifications written to the source system (such as SharePoint Managed Metadata Columns).
   Supports filtering by URL and source group.
 - Files Skipped – Provides a list of documents that have been excluded from processing because they
-  were not explicitly included, or were specifically excluded. See Files Included and Files Excluded
+  weren't explicitly included, or were specifically excluded. See Files Included and Files Excluded
   for more information on file inclusion/exclusion. Supports filtering by URL.
 - iFilters Detected – Provides a list of detected iFilters per server. iFilters are the Microsoft
   standard for implementing text extraction from binary files. They are used by many search engines
   (including Microsoft Search) to obtain the plain text required to build a search index. Supports
   filtering by server.
-- Index Analysis – Provides the ability to manually queue items for background index analysis,
+- Index Analysis – Lets you manually queue items for background index analysis,
   initially scoped to assist in identifying fuzzy matched duplicate documents.
 - Manual Tagging – Provides a report on the manual and automatically assigned document
   classifications – filtered specifically to manually classified documents. Supports filtering by
   URL and source group.
 - Near Duplicate Detection – Details near duplicate documents across the index. Near duplicates are
-  detected as a background process, to enable the background processing simply enable the option
-  ‘Near Duplicate Detection’ within the NDC Indexer Settings and rebuild the necessary sources. See
+  detected as a background process. To enable background processing, select the
+  ‘Near Duplicate Detection’ option within the NDC Indexer Settings and rebuild the necessary sources. See
   Core Configuration for the configuration details. Supports filtering by URL, source group and
   excluding content types (comma delimited list of content types such as: “css,pdf”).
 - Page Statuses – Provides a list of documents at a given status within the index. Supports
@@ -50,7 +50,7 @@ these are described below:
 - Term History – Displays a history of changes made to a taxonomy (clues added/deleted etc).
   Supports filtering by term name.
 - Text Extraction Failures – Provides a list of documents in the core index that failed text
-  extraction (granular iFilter error codes). Supports filtering by URL, title and source group.
+  extraction (granular iFilter error codes). Supports filtering by URL, title, and source group.
 - Term Links – Provides a list of links to a specified term (Metadata clues, Term Boosts and
   Required Term links) – useful when retiring taxonomy nodes to avoid invalid links to the term you
-  wish to remove.
+  want to remove.

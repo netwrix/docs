@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Create a Job
 
-Synchronize allows you to move data from one data source to another using a set of sequential
+Synchronize lets you move data from one data source to another using a set of sequential
 commands that run in the background. The set of commands is called a job. You can create a job from
 scratch, from a predefined template, or from a template that you create yourself.
 
@@ -22,14 +22,14 @@ to create your own custom templates. Templates offer predefined settings, which 
 new job (except for the source and destination configurations) and modify as required. You can also
 create a new job by duplicating and modifying an existing one.
 
-Creating a job from scratch requires that you specify the source and destination resources involved
+Creating a new job without using templates requires that you specify the source and destination resources involved
 in the transfer of data. You must also map the fields for the source and destination objects in
 which the data transfer takes place.
 
-You can also apply data transformations. A transformation allows you to modify data as it is being
+You can also apply data transformations. A transformation lets you modify data as it is being
 transferred to the destination.
 
-Once you create a job, you can either run it manually or schedule it to run periodically.
+After you create a job, you can either run it manually or schedule it to run periodically.
 
 You can create templates from existing jobs on-the-fly and reuse their settings in new jobs.
 
@@ -44,7 +44,7 @@ Step 1 – On Directory Manager portal, select **Synchronize**on left pane.
 Step 2 – On the Synchronize portal, click **Create New** and then click **Job**.
 
 Step 3 – On the [Choose Your Job Template](/docs/directorymanager/11.1/portal/synchronize/create/chooseyourjobtemplate.md) page, enter the job details and
-select whether to use a job template or create the job from scratch.
+select whether to use a job template or create a new job without using templates.
 
 Step 4 – Click **Next Step**.
 
@@ -53,7 +53,7 @@ source and destination providers.
 
 Step 6 – Click **Next Step**.
 
-Step 7 – On the [Objects, Fields and Mapping ](/docs/directorymanager/11.1/portal/synchronize/create/objectfieldsandmapping.md) page, map the source and
+Step 7 – On the [Objects, Fields, and Mapping ](/docs/directorymanager/11.1/portal/synchronize/create/objectfieldsandmapping.md) page, map the source and
 destination fields and apply transformations.
 
 Step 8 – On the [Schedule Job and Notifications](/docs/directorymanager/11.1/portal/synchronize/create/scheduleandnotification.md) page, choose a schedule
@@ -71,11 +71,11 @@ Step 10 – **Review your Changes** before finishing the job.
 
 Step 11 – Click **Finish** and create the job.
 
-Step 12 – Once you run the job, the job runs if workflow is not configured. If workflow is
+Step 12 – After you run the job, the job runs if workflow isn't configured. If workflow is
 configured, the request gets generated.
 
 Step 13 – Generated workflow request will be displayed in the [Requests](/docs/directorymanager/11.1/portal/request/overview.md)
-section for the workflow approver(s). If the approver approves the workflow request, the job will
+section for the workflow approvers. If the approver approves the workflow request, the job will
 execute the results.
 
 Step 14 – The **Review Job Run** dialog box appears, providing access to run statistics, reports,

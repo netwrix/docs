@@ -6,7 +6,7 @@ sidebar_position: 90
 
 # Get a Workflow Route
 
-Use this API to get workflow route id of which is specified in the end point URL.
+Use this API to get the workflow route ID specified in the endpoint URL.
 
 ## Endpoint
 

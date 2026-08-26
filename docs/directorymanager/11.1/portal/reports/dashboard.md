@@ -6,8 +6,8 @@ sidebar_position: 110
 
 # Reports
 
-The Directory Manager Reports enables you to generate web-based reports for an identity store. It
-offers a wizard guided report generation process that accounts for quick and easy reporting.
+Use Directory Manager Reports to generate web-based reports for an identity store. It
+offers a wizard-guided report generation process for quick and easy reporting.
 
 Directory Manager reports are organized into four categories:
 
@@ -17,7 +17,7 @@ Directory Manager reports are organized into four categories:
 - [Contact Reports](/docs/directorymanager/11.1/portal/reports/contact.md)
 
 :::note
-A Microsoft Entra ID based identity store does not support the computer and contact object
+A Microsoft Entra ID based identity store doesn't support the computer and contact object
 types.
 :::
 

@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Requirements to Deploy Virtual Appliance
 
-This section provides the software requirements and represents the default hardware configuration
-for the virtual machine where Netwrix Data Classification virtual appliance is going to be deployed.
-Refer to the following sections for detailed information:
+This section lists the software requirements and default hardware configuration for the virtual machine
+that will host the Netwrix Data Classification virtual appliance.
+See the following sections for detailed information:
 
 - Software Requirements
 - Hardware Configuration

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Create a New Job Collection
 
-Using this API you can create a new job collection which is a group of individual jobs that run in a
+Using this API, you can create a new job collection which is a group of individual jobs that run in a
 particular order.
 
 See the [Create a Job Collection ](/docs/directorymanager/11.1/portal/synchronize/collection/create.md)topic for

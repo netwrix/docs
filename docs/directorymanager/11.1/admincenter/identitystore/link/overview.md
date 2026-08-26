@@ -17,14 +17,14 @@ For example, you can create a link between the following types of identity store
 - An Active Directory identity store and a Google Workspace identity store
 
 :::note
-(1) Two identity stores built on the same domain cannot be linked.  
+(1) Two identity stores built on the same domain can't be linked.  
 (2) An identity store must be replicated in Directory Manager before it can be linked.
 :::
 
 
 ## Linked Identity Stores and the Directory Manager Portal
 
-Linking, in itself, is not effective until the identity stores joined via linking are associated
+Linking, in itself, isn't effective until the identity stores joined via linking are associated
 with a Directory Manager portal, say Portal_A. Consider the following:
 
 - The administrator links IdentityStoreA and identityStoreB.
@@ -50,7 +50,7 @@ The following portal functions are impacted under the ‘linked’ mode:
 
 - When a user performs a search, results are fetched from all the linked identity stores.
 - When an action is performed on a user or group object, it is replicated to all the identical
-  objects in the linked identity store(s). In this way, identical user and group objects in the
+  objects in the linked identity stores. In this way, identical user and group objects in the
   linked identity stores are auto synced. Consider the following:
 
     - When you create a static group, its identical static group is created in a linked identity
@@ -61,14 +61,14 @@ The following portal functions are impacted under the ‘linked’ mode:
       identity store.
     - When you create a mailbox or a mail-enabled user, an identical simple user is created in a
       linked identity store.
-    - When you delete a user or group object in an identity store, its linked object(s) are also
+    - When you delete a user or group object in an identity store, its linked objects are also
       deleted.
     - When you update the properties of a user or group object, those same properties are also
-      updated for its linked object(s) in the linked identity store(s).
-    - When you execute the query for a Smart Group to update it, its linked Smart Group(s) will not
+      updated for its linked objects in the linked identity stores.
+    - When you execute the query for a Smart Group to update it, its linked Smart Groups will not
       be auto updated.
-    - When you upgrade a static group (say, GroupA) to a Smart Group, the linked static group(s)
-      (say, GroupB and GroupC) in the linked identity store(s) will not be upgraded to Smart Groups.
+    - When you upgrade a static group (say, GroupA) to a Smart Group, the linked static groups
+      (say, GroupB, and GroupC) in the linked identity stores will not be upgraded to Smart Groups.
 
 - Group listings in the portal (namely All Groups, My Groups, and Deleted Groups) display the groups
   from all the linked identity stores. Users can select groups from any identity store to perform an
@@ -79,10 +79,10 @@ The following portal functions are impacted under the ‘linked’ mode:
 - For entitlements, the portal shows Active Directory file server and SharePoint permissions from
   all the linked identity stores.
 
-When the logged-in user exists in multiple linked identity stores, he or she can perform actions in
-an identity store according to his or her role and permissions in the respective identity store. For
-example, if the user is an administrator in IdentityStoreA and a standard user in IdentityStoreB, he
-or she can perform administrative actions on groups in IdentityStoreA only, even though the group
+When the logged-in user exists in multiple linked identity stores, they can perform actions in
+an identity store according to their role and permissions in the respective identity store. For
+example, if the user is an administrator in IdentityStoreA and a standard user in IdentityStoreB, they
+can perform administrative actions on groups in IdentityStoreA only, even though the group
 listing displays all groups from both the linked identity stores.
 
 ## How to Link Two Identity Stores
@@ -115,16 +115,16 @@ For mapping, always use attributes that store unique values.
 You can link more than two identity stores; in fact, Directory Manager empowers you to link identity
 stores created for Directory Manager supported providers.
 
-You cannot just create one link to link multiple identity stores. Rather, if you want to link three
+You can't just create one link to link multiple identity stores. Rather, if you want to link three
 identity stores, you will have to create two links; to link four identity stores, create three
 links, and so on. Each link involves two identity stores, thereby creating a chain of linked
 identity stores.
 
 Here is how it works:
 
-- Link two identity stores, IdentityStoreA and IdentityStoreB, by following the discussion in the
-  How to Link Two Identity Stores topic.  
-  Directory Manager now considers this link as one entity. Let’s call it Entity1.
+- Link two identity stores, IdentityStoreA, and IdentityStoreB, by following the discussion in the
+  [How to Link Two Identity Stores](#how-to-link-two-identity-stores) section.  
+  Directory Manager now treats these two identity stores as a single entity. Let’s call it Entity1.
 - Next, link IdentityStoreA or IdentityStoreB to IdentityStoreC using the same method.  
   This establishes a link between Entity1 and IdentityStoreC.
 

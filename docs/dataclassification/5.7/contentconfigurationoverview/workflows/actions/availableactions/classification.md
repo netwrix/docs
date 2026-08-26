@@ -37,11 +37,10 @@ In the **Add Action** dialog, from the **Action Type** list select **Remove Clas
 
     1. **Taxonomy** - select what classification taxonomy from the existing ones should be used.
     2. **All Terms** - select this option if you want to filter by all terms in the taxonomy. If
-       this option is cleared, then after selecting the necessary taxonomy, you will be presented
-       the list of its terms. Select the one you plan to use for filtering.
+       you don't select this option, the system displays the list of terms after you select the taxonomy. Select the one you plan to use for filtering.
 
     :::note
-    Multiple selection is not supported: to configure several filter values, you should
+    Multiple selection isn't supported: to configure several filter values, you should
     repeat this procedure for each filter value you need.
     :::
 

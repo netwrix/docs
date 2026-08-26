@@ -16,7 +16,7 @@ you must set up the following prerequisites:
 
 ## Prerequisite Software
 
-Before you can deploy Directory Manager portals and services in remote IIS, make sure the following
+Before you can deploy Directory Manager portals and services in remote IIS, ensure the following
 prerequisite software is installed on the remote IIS machine. Install them in the following order:
 
 1. ASP.NET Core Runtime 6.0.30 (Hosting Bundle)
@@ -128,15 +128,16 @@ The next step is to assign permissions on the physical folder that binds to your
 
 Admin Center uses the
 [Microsoft IIS Administration API](https://docs.microsoft.com/en-us/iis-administration/) to
-communicate with remote IIS. Make sure this API is instphysical folder location of the site",
-created in the section Create a Site in Remote IISalled as a Windows service on the remote IIS
+communicate with remote IIS. Ensure this API is installed as a Windows service on the remote IIS
 machine.
 
 To connect to the API, an access key is required. Follow the steps below to generate it.
 
 1. Go to _https://localhost:55539/_ to launch the Microsoft Administration API interface.
-   Note that this is the default URL. It may change for reasons such as when a different port is
-   used.
+
+   :::note
+   This is the default URL. It may change for reasons such as when a different port is used.
+   :::
 2. Click **ACCESS KEYS**.
 
     ![Access Keys](/images/directorymanager/11.1/admincenter/portal/accesskeys.webp)

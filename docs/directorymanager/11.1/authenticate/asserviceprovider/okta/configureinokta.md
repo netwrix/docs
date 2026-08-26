@@ -26,16 +26,16 @@ To configure Directory Manager in Okta, follow these steps:
 7. On the **General Settings** tab of the **Create SAML Integration** page, provide a user-friendly
    name for the app (for example, Directory Manager Okta Sign-On) in the **App name** box.
 8. Use the **App Logo** option to upload a logo for the Directory Manager app. This logo will be
-   displayed on the Okta dashboard. When a user signs into Okta, he or she will be redirected to the
+   displayed on the Okta dashboard. When a user signs into Okta, they'll be redirected to the
    dashboard that will have Directory Manager and other applications listed for single sign-on.
 9. Click **Next**.
 10. On the **Configure SAML** tab of the **Create SAML Integration** page, provide the consumer URL
     and audience URL that you generated for the Directory Manager client In the **Single sign on
     URL** and **Audience URI (SP Entity ID)** boxes respectively. See the
     [Generate URLs](/docs/directorymanager/11.1/authenticate/asserviceprovider/okta/generateurls.md) topic.
-11. We will not specify any default relay state, so leave the **Default Relay State** field blank.
+11. Leave the **Default Relay State** field blank to not specify any default relay state.
 12. Leave the **Name ID format** field selected to _Unspecified_.
-13. In the **Application username** list, make sure _Okta username_ is selected. This implies that
+13. In the **Application username** list, ensure _Okta username_ is selected. This implies that
     only users defined in Okta can authenticate on the Directory Manager portal _Wizard_ using the
     Okta single sign-on option. See the Configure Users in Okta topic.
 14. Click **Show Advanced Settings**.
@@ -45,8 +45,8 @@ To configure Directory Manager in Okta, follow these steps:
     Skip this section and leave the selections to default. The Okta provider would authenticate
     users on the basis of the username.
 16. Click **Next**.
-17. On the **Feedback** tab of the **Create SAML Integration** page, select the option, **I’m a
-    software vendor. I’d like to integrate my app with Okta** and click **Finish**.
+17. On the **Feedback** tab of the **Create SAML Integration** page, select the option, **This is a
+    software vendor app. Integrate this app with Okta** and click **Finish**.
 
 With this, the Directory Manager OKTA SSO app is successfully added in Okta, and the **Sign-On**
 page is displayed.
@@ -60,7 +60,7 @@ Okta provider in Directory Manager.
 
 1. On the **Sign-On** page, go to the **Sign On** tab. In the **Sign On Methods** area, click the
    **Identity Provider metadata** link.
-2. On the **Opening metadata** dialog box, make sure the **Save File** option is selected and click
+2. On the **Opening metadata** dialog box, ensure the **Save File** option is selected and click
    **OK**. The file downloads and the **Library** dialog box opens, showing the downloaded file.
 3. Right-click the metadata file and select the **Open Containing Folder** option on the shortcut
    menu.
@@ -101,13 +101,13 @@ For new users, Okta generates a password and sends it to them by email.
    authenticate on the Directory Manager portal _Wizard_ using Okta.
 5. The next page on the dialog box displays the **User Name** field populated with the user name.
    Remove the domain after the user’s name, i.e., the part starting with ‘@’. After removing the
-   domain, we are left with the user name. The user will use this name to authenticate on the
+   domain, the user name remains. The user will use this name to authenticate on the
    _Wizard_ portal using Okta.  
-   This done, click **Save and Go Back**.
+   Click **Save and Go Back**.
 6. Repeat steps 4 and 5 for all the required users and then click **Done** on the **Assign Okta
    Sign-On to People** dialog box. The users will be displayed on the **People** page.
 7. The next step is to activate the user accounts. Click the **Directory** link in the ribbon at the
    top.
 8. On the **Directory** page, click the **Activate** link for the required user.
 9. On the **Activate Person** dialog box, click **Activate User**.  
-   With this, we have successfully configured users within the Okta provider.
+   You have successfully configured users within the Okta provider.

@@ -8,7 +8,7 @@ sidebar_position: 10
 
 You can link identity stores built on the supported identity providers in Directory Manager. In this
 way, identical user and group objects existing in multiple identity stores (domains) can be linked
-together and auto synced. Directory Manager further enables you to manage these linked identity
+together and auto synced. Directory Manager further lets you manage these linked identity
 stores.
 
 ## Link Two Identity Stores
@@ -54,7 +54,7 @@ stores.
           Users that satisfy the filter expression will be linked.
     3. On clicking the operator, a menu is displayed with the following options:
 
-        - **Select Group / Deselect Group:** This option is not relevant when there is only one
+        - **Select Group / Deselect Group:** This option isn't relevant when there is only one
           group containing multiple clauses. It is relevant when you have two or more groups. Click
           it to select the respective group. Then select another group to bind them with a logical
           AND/OR.
@@ -78,7 +78,7 @@ stores.
             - For a Microsoft Entra ID identity store, Directory Managerlooks up the values of the
               userPrinicipalName, ObjectGUID, distinguishedName, and name (which is equivalent to
               display name) attributes to match the string using the _Is exactly_ operator.  
-              Note that Microsoft Entra ID does not contain the distinguishedName attribute; however
+              Microsoft Entra ID doesn't contain the distinguishedName attribute; however
               it is available as a pseudo attribute in Directory Manager and its value is the same
               as that of the distinguishedName attribute in Active Directory.
 
@@ -94,7 +94,7 @@ stores.
               **Multiple Objects** link is displayed. Click it to open a popup that lists all
               identical objects for the user found in the other identity store.
 
-            If, on the **Preview Results** dialog box, you do not enter a user name but simply
+            If, on the **Preview Results** dialog box, you don't enter a user name but simply
             select an identity store and click **Preview**, all user objects from the selected
             identity store are displayed along with their linked identities in the other identity
             store. If the process takes too long, you can click the orange button at the bottom to
@@ -104,9 +104,9 @@ stores.
        **Add Filter for Groups** pane.
 
         :::note
-        If you have added multiple clauses but do not group them using the AND/OR operator,
+        If you have added multiple clauses but don't group them using the AND/OR operator,
         Directory Manager auto groups them using AND. Similarly, if you add two groups of clauses
-        but do not group them using the AND/OR operator, Directory Manager auto groups them using
+        but don't group them using the AND/OR operator, Directory Manager auto groups them using
         AND.
         :::
 
@@ -122,7 +122,7 @@ stores.
 
     :::note
     An identity store link is effective when the two identity stores linked together are also
-    associated with a Directory Manager portal, say Portal A. If a portal does not exist with both
+    associated with a Directory Manager portal, say Portal A. If a portal doesn't exist with both
     identity store associated with it, a message is displayed to alert you to it.
     :::
 
@@ -179,7 +179,7 @@ You can edit a link to:
 2. Click the ellipsis button on a card and select **Edit**.  
    The **Link Identity Stores** page opens, displaying the linked identity stores and the filters.
 
-    - **Replace an identity store** - To change the identity store(s) in the link, either click
+    - **Replace an identity store** - To change the identity stores in the link, either click
       **Edit** next to the identity stores’ names. On the **Add Identity Stores** dialog box, select
       the identity stores to replace the existing ones. Then click **Add 2 Stores**.  
       When one or both identity stores are replaced, the filter expression is automatically removed.
@@ -206,7 +206,7 @@ You can edit a link to:
 ## Disable or Enable a Link
 
 When you disable a link between two identity stores, it becomes inactive and the objects in the
-identity stores are not linked anymore in the Directory Manager portal.
+identity stores aren't linked anymore in the Directory Manager portal.
 
 A disabled link can be enabled again to relink objects in the identity stores.
 
@@ -220,7 +220,7 @@ A disabled link can be enabled again to relink objects in the identity stores.
 
 ## Delete a Link
 
-When you delete a link between two identity stores, the objects in the identity stores are not
+When you delete a link between two identity stores, the objects in the identity stores aren't
 linked anymore in the Directory Manager portal.
 
 **To delete a link:**

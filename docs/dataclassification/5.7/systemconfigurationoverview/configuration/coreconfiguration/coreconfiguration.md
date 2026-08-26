@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Core Configuration
 
-Each option has an associated information popup (the “**i**” symbol next to the option name) which describes what the setting does and how it works. Selecting
-the Details tab provides a complete list of the Config settings – as well as an indication of the
-values that have been changed from the default setting.
+Each option has an associated information popup (the “**i**” symbol next to the option name) which describes what the setting does and how it works. The
+Details tab provides a complete list of the Config settings – as well as an indication of the
+values that differ from the default setting.
 
 You can also:
 

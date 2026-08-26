@@ -15,7 +15,7 @@ in various languages. You can change the subject line and the body text in the t
 these languages.
 
 :::note
-Before configuring Email authentication, make sure that an SMTP server is configured for the
+Before configuring Email authentication, ensure that an SMTP server is configured for the
 identity store. See the [Configure an SMTP Server](/docs/directorymanager/11.1/admincenter/identitystore/configure/smtpserver.md) topic.
 :::
 
@@ -36,11 +36,11 @@ accounts.
 
 1. In Admin Center, click **Notification Editor** at the bottom of the left navigation pane.
    The **Notification Editor** is displayed.
-2. By default, notifications templates are displayed in US English. You can select a different
-   language to customize notification templates for that language.
+2. By default, notification templates are displayed in American English. Select a different
+   language to customize templates for that language.
 
     1. To select a language, click **Filter**.
-    2. On the **Filter(s)** dialog box, use the **Locality** drop-down list to select the ISO code
+    2. On the **Filters** dialog box, use the **Locality** dropdown list to select the ISO code
        for your required language.
     3. Click **Apply**.
 

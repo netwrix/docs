@@ -31,7 +31,7 @@ The user type assigned to the user in Microsoft Entra ID, such as _Member_ or _G
 
 - **Member**: This value indicates an employee of the host organization and a user in the
   organization's payroll. For example, this user expects to have access to internal-only sites. This
-  user would not be considered an external collaborator.
+  user wouldn't be considered an external collaborator.
 - **Guest**: This value indicates a user who isn't considered internal to the company, such as an
   external collaborator, partner, customer, or similar user. Such a user wouldn't be expected to
   receive a CEO's internal memo, or receive company benefits, for example.
@@ -56,9 +56,9 @@ The email address of the user.
 
 **Account is enabled**
 
-This check box is selected by default, indicating that the user account is enabled.
+This checkbox is selected by default, indicating that the user account is enabled.
 
-Clear it to disable the user account, so that the user cannot log-on with it.
+Clear it to disable the user account, so that the user can't log-on with it.
 
 **Usage Location**
 

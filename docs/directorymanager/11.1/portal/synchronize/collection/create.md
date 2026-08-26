@@ -23,8 +23,7 @@ Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 Step 2 – On the Synchronize portal, click **Create New** and then click **Job Collection.**
 
 Step 3 – On the [Choose your Job Template](/docs/directorymanager/11.1/portal/synchronize/collection/chooseyourjobcollectiontemplate.md) page, enter job
-collection details and select whether to use a job collection template or create the job collection
-from scratch.
+collection details and select whether to use a job collection template or create a new job collection.
 
 Step 4 – Click **Next Step**
 
@@ -48,13 +47,13 @@ Change** at the bottom.
 
 Step 9 – Click **Finish** to exit the wizard and create the job collection.
 
-Step 10 – Once you run the job collection, the job collection runs and only those jobs will process
-for which workflow is not configured. If workflow is configured for any job, the request gets
+Step 10 – When you run the job collection, the job collection runs and only those jobs will process
+for which workflow isn't configured. If workflow is configured for any job, the request gets
 generated against that specific job.
 
 Step 11 – Generated workflow request will be displayed in the
-“[Requests](/docs/directorymanager/11.1/portal/request/overview.md)” section for the workflow approver(s). If the approver
+“[Requests](/docs/directorymanager/11.1/portal/request/overview.md)” section for the workflow approvers. If the approver
 approves the workflow request, the job will execute the results.
 
 Step 12 – **Run Job Collection** dialog box displays overall collection statistics for the run,
-reports and individual logs for each job in the collection.
+reports, and individual logs for each job in the collection.

@@ -34,14 +34,14 @@ is joined to a domain, techwr5.local, reports would display data for techwr5.loc
     For example, to create a user report, click **User Report** from left pane. You will see all the
     user reports that you can generate.
 
-3. Click on the template of your choice from the list and click **Create Report**.
+3. Click the template of your choice from the list and click **Create Report**.
 4. In **Step 1** of generating a report:
 
-    1. You can specify a custom title for your report. Type the title of the report, replacing the
+    1. You can specify a custom title for your report. Enter the title of the report, replacing the
        existing one, in the **Report Name** box.
     2. Click **Browse** to open the **Select Container** dialog box and select the required source
        container. The default selection is the Global Catalog.
-    3. Select the **Include sub containers** check box to include the sub-containers for the
+    3. Select the **Include sub containers** checkbox to include the sub-containers for the
        selected container when reporting.
     4. In the **Filter Criteria** section, modify the default LDAP filter as required. This filter
        is used for selecting items from the container, to display in the report.
@@ -54,9 +54,9 @@ is joined to a domain, techwr5.local, reports would display data for techwr5.loc
 
     1. The **Fields** section displays the fields that will be included in the report. You can add
        or remove fields from the list. You can also move the given fields to change their order.
-    2. From **Sort By** drop down list, select the field by which you want to sort the results in
+    2. From **Sort By** dropdown list, select the field by which you want to sort the results in
        the report.
-    3. From **Schedule** drop down list, select the schedule for the report. If you select a
+    3. From **Schedule** dropdown list, select the schedule for the report. If you select a
        schedule, the report will run automatically on the specified time of the schedule.
     4. Click **Finish.**
 

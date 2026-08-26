@@ -6,8 +6,7 @@ sidebar_position: 30
 
 # Scalability and Performance
 
-Scalability and performance testing revealed that based on the number of objects to classify, the
-environments can be ranged as follows:
+Testing shows that environments can be categorized as follows based on the number of objects to classify:
 
 | Number of objects to classify | Environment                                 | Comment                                                                                 |
 | ----------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------- |
@@ -16,7 +15,6 @@ environments can be ranged as follows:
 | Up to 64, 000, 000            | Large-size environment                      |                                                                                         |
 | More than 64, 000, 000        | Extra-large environment                     | System architect's assistance is required for deployment planning in such environments. |
 
-**IMPORTANT!** For the large-size and extra-large environments, it is strongly recommended to
-configure a cluster of several NDC Servers and apply DQS mode to these clustered servers. See
+**IMPORTANT!** For large-size and extra-large environments, Netwrix strongly recommends configuring a cluster of several NDC Servers and applying DQS mode to these clustered servers. See
 [Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md)
 for details.

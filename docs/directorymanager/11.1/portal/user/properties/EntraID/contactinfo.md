@@ -12,7 +12,7 @@ Use this tab to view or update the contact information of the user/mailbox.
 
 The street address of the user's office.
 
-City, State or province, ZIP or postal code, Country or region
+City, State, or province, ZIP, or postal code, Country, or region
 
 The city, state, zip code, and country where the office of this user is located.
 

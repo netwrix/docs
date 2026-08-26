@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # Switch Accounts
 
-You do not need to sign out of Admin Center or a portal in order to sign in with a different
+You don't need to sign out of Admin Center or a portal to sign in with a different
 account. Simply use the _switch account_ function to achieve this.
 
 ## Switch your account

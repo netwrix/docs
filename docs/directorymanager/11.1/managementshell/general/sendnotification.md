@@ -19,7 +19,7 @@ X:\Program Files\Imanami\GroupID 8.0\Automate\Templates\Notifications
 Where X is the drive where the Directory Manager installation directory resides.
 
 The **Send-Notification** commandlet also requires a template file for generating an e-mail
-notification. You can utilize one from the available templates or create your own. The commandlet
+notification. You can use one from the available templates or create your own. The commandlet
 also requires an **SMTP server** and a **From** e-mail address that you can configure using the
 **Set-Options** commandlet.
 

@@ -23,11 +23,10 @@ environment.
 
 ## View Replication Service Details
 
-Follow the steps to view Replication Service details.
 
-Step 1 – In Admin Center, click **Applications** in the left pane.
+1. In Admin Center, click **Applications** in the left pane.
 
-Step 2 – On the **Applications** page, click the **Service** tab.  
+2. On the **Applications** page, click the **Service** tab.  
 The tab displays the default Replication service hosted in native IIS. When multiple Directory
 Manager instances have been deployed, you will find multiple default Replication services on this
 tab page, as each instance has its own default Replication service. See the
@@ -36,7 +35,7 @@ topic for additional information.
 For details displayed on a service card, see the table in the
 [View Data Service Details](dataservice/manage.md#view-data-service-details) topic.
 
-You cannot create a Replication Service or delete an existing one from Admin Center.
+You can't create a Replication Service or delete an existing one from Admin Center.
 
 ## Manage Replication Service Settings
 
@@ -59,17 +58,16 @@ within each cluster.
 :::
 
 
-Follow the steps to sync data between clusters.
 
-Step 1 – In Admin Center, select **Applications** in the left pane.
+1. In Admin Center, select **Applications** in the left pane.
 
-Step 2 – On the Applications page, click the **Replication Service** tab.
+2. On the Applications page, click the **Replication Service** tab.
 
-Step 3 – Click the ellipsis button for a service and select **Settings**.
+3. Click the ellipsis button for a service and select **Settings**.
 
-Step 4 – Click **Configurations** under Server Settings.
+4. Click **Configurations** under Server Settings.
 
-Step 5 – On the Configurations page, enable the **Elastic Cluster Syncing** toggle button to sync
+5. On the Configurations page, enable the **Elastic Cluster Syncing** toggle button to sync
 data from all other clusters to the cluster that uses this Replication service.  
 If this toggle button is disabled for a cluster (say, ClusterA), data from other clusters will not
 be synced to ClusterA.  
@@ -77,8 +75,8 @@ Suppose syncing is disabled for ClusterA but enabled for ClusterB and ClusterC. 
 data from ClusterB and ClusterC will not be synced to ClusterA (b) data from ClusterA will be synced
 to ClusterB and ClusterC.
 
-Step 6 – You can specify an interval for syncing data. Click **Edit** under Elastic Cluster Syncing
+6. You can specify an interval for syncing data. Click **Edit** under Elastic Cluster Syncing
 Interval, specify an interval (in seconds) and click the check mark.  
 By default, the interval is set to 5 seconds. You can specify a maximum interval of 900 seconds.
 
-Step 7 – Click **Save**.
+7. Click **Save**.

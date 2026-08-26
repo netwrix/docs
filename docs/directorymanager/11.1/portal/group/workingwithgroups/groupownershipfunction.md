@@ -6,20 +6,20 @@ sidebar_position: 50
 
 # Group Ownership Functions
 
-The Directory Managerportal enables you to perform ownership related functions such as change
-primary owner of a group, specify additional owner(s) of a group, import/export additional owner and
+Use the Directory Manager portal to perform ownership related functions such as change
+primary owner of a group, specify additional owners of a group, import/export additional owner and
 so on.
 
 When a new group is created; by default, the group creator is set as its primary owner. However, you
 can change the primary owner or even remove it, leaving the group orphan.
 
-You cannot remove a group’s primary owner if the Group Owners policy for your role does not allow
+You can't remove a group’s primary owner if the Group Owners policy for your role doesn't allow
 it.
 
 ## Additional owners
 
 You can also specify temporary and permanent additional owners for a group. These can be users,
-contacts and even security groups. In case of a group, all its members will be considered as
+contacts, and even security groups. In case of a group, all its members will be considered as
 additional owners.
 
 You can change the ownership type of an additional owner from temporary to permanent and vice versa.
@@ -30,12 +30,12 @@ However, you can exclude some or all additional owners from receiving email noti
 
 By default, there is no restriction on the number of additional owners a group can have. However, if
 the administrator has specified a maximum and minimum value for additional owners in the Group
-Owners policy for your role in the identity store, you cannot create a group or save modifications
+Owners policy for your role in the identity store, you can't create a group or save modifications
 to it unless it has the specified number of additional owners.
 
 ## Exchange 2013/2016/2019 additional owners
 
-Microsoft Exchange 2013/2016/2019 offers the co-managed by feature that enables you to specify
+Microsoft Exchange 2013/2016/2019 offers the co-managed by feature that lets you specify
 Exchange additional owners for a group, provided that Exchange 2013/2016/2019 is configured as the
 messaging provider for the identity store. Exchange additional owners are stored in the
 _msExchangecoManagedby_ attribute.
@@ -50,7 +50,7 @@ identity store.
 
 
 :::note
-Only users, contacts and security groups can be set as the primary and additional owners of a
+Only users, contacts, and security groups can be set as the primary and additional owners of a
 group. Moreover, only mail-enabled users can be set as Exchange additional owners.
 :::
 
@@ -63,11 +63,11 @@ Note the following for a Microsoft Entra ID based identity store:
 - Only users can be set as primary owners.
 - Microsoft Entra ID supports multiple primary owners for a group.
 - At least one primary owner is mandatory.
-- Exchange additional owners are not supported.
+- Exchange additional owners aren't supported.
 
 ## Change a group's primary owner
 
-Follow the steps to change a group's primary owner.
+To change a group's primary owner.
 
 1. In Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
 
@@ -90,13 +90,13 @@ You can add and remove additional owners for a group.
 Additional owners have the same privileges as the primary owner to manage the group.
 
 :::note
-Only users, contacts and security groups can be set as the additional owners of a group.  
+Only users, contacts, and security groups can be set as the additional owners of a group.  
 If you specify a group, all its members are considered additional owners.
 :::
 
 
 :::note
-The contact object type is not supported in a Microsoft Entra ID based identity store.
+The contact object type isn't supported in a Microsoft Entra ID based identity store.
 :::
 
 
@@ -115,14 +115,14 @@ impact on the number of additional owners the group can have.
    to use the [Find Dialog Box](/docs/directorymanager/11.1/portal/generalfeatures/find.md) for performing a search.
 6. By default, all group-related notifications (such as group expiry, deletion, and renewal
    notifications) are sent to the primary owner and all additional owners. To exclude an additional
-   owner from receiving notifications, select the **Do not notify** check box.
+   owner from receiving notifications, select the **Don't notify** checkbox.
 
     :::note
     When a Smart Group Update job runs on a group, the notification behavior is as follows:
     :::
 
 
-    Even with the **Do not Notify** check box selected, the additional owner will receive the
+    Even with the **Don't Notify** checkbox selected, the additional owner will receive the
     notifications if the administrator has included its email address for job-specific
     notifications.
 
@@ -130,7 +130,7 @@ impact on the number of additional owners the group can have.
 
 ## Import additional owners for a group
 
-Follow the steps to import additional owners for a group.
+To import additional owners for a group.
 
 1. In Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.
 
@@ -194,7 +194,7 @@ Ownership type indicates whether an object is a temporary or permanent additiona
 You can change the ownership type of an additional owner from temporary to permanent and vice versa.
 
 1. [Directory Search](/docs/directorymanager/11.1/portal/generalfeatures/search.md) a group to change the ownership type of its additional
-   owner(s).
+   owners.
 2. Select this group on the Search Results page and click **Properties** on the toolbar.
 3. On the group's [Group Properties](/docs/directorymanager/11.1/portal/group/properties/overview.md) page, click the **Owner** tab.
 4. To change the ownership type of an additional owner, click anywhere in the respective row to make
@@ -262,7 +262,7 @@ additional owners have the same privileges as the primary owner. Directory Manag
 expiry, deletion, and renewal notifications to all Exchange additional owners along with the group’s
 primary owner and additional owners.
 
-Microsoft Exchange 2013/2016/2019 offers the co-managed by feature that enables you to specify
+Microsoft Exchange 2013/2016/2019 offers the co-managed by feature that lets you specify
 Exchange additional group owners.
 
 1. In Directory Manager portal, click **Groups** in the left navigation pane, select **My Groups**.

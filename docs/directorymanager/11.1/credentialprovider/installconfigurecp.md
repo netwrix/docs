@@ -24,7 +24,7 @@ sidebar_position: 1
 
 ## Introduction
 
-The Netwrix Directory Manager Credential Provider, formerly known as Netwrix GroupID Credential Provider, is a Windows Credential Provider that extends the Windows login screen to provide self-service password reset and account unlock functionality. This enables users to reset their passwords or unlock their accounts directly from the Windows login screen without administrator assistance.
+The Netwrix Directory Manager Credential Provider, formerly known as Netwrix GroupID Credential Provider, is a Windows Credential Provider that extends the Windows login screen to provide self-service password reset and account unlock functionality. Use it to reset your password or unlock your account directly from the Windows login screen without administrator assistance.
 
 ### What This Documentation Covers
 
@@ -45,7 +45,7 @@ The Netwrix Directory Manager Credential Provider, formerly known as Netwrix Gro
 
 ### Upgrade Policy
 
-**Important:** This product does NOT support in-place upgrades. To upgrade to a newer version:
+**Important:** This product doesn't support in-place upgrades. To upgrade to a newer version:
 1. Uninstall the current version (see [Rollback Instructions](#rollback-instructions))
 2. Restart the computer
 3. Install the new version following the [First-Time Setup Guide](#first-time-setup-guide)
@@ -92,7 +92,7 @@ This section provides a complete step-by-step walkthrough for installing and con
 
 ### Quick Start Checklist
 
-**Essential steps to get up and running:**
+**Essential steps to install and configure:**
 
 1. [ ] Install the MSI package (PasswordCenterClientSetup64.msi)
 2. [ ] Configure password reset URLs in CPSettings.xml
@@ -106,7 +106,7 @@ This section provides a complete step-by-step walkthrough for installing and con
 
 ### Step 1: Manual Installation
 
-This method is suitable for single computers or small deployments where centralized management is not required.
+This method is suitable for single computers or small deployments where centralized management isn't required.
 
 #### Installation Steps
 
@@ -436,7 +436,7 @@ If you selected "Advanced" in step 3.4, configure additional options:
 3. **Upgrades Tab**:
    - **Note:** This tab is for MSI supersedence configuration only, NOT for in-place upgrades
    - Configure only if this MSI package should replace/uninstall a different product
-   - Leave empty for standard deployments (the product does not support version upgrades)
+   - Leave empty for standard deployments (the product doesn't support version upgrades)
 
 4. **Security Tab**:
    - Verify "Authenticated Users" has "Read" permission
@@ -541,7 +541,7 @@ Get-ADComputer -Filter * -SearchBase "OU=Workstations,DC=company,DC=com" | ForEa
 
 **Client Machine Deployment**:
 
-Once the GPO is configured and linked, client machines within the scope of the policy will automatically receive and install the credential provider:
+After the GPO is configured and linked, client machines within the scope of the policy will automatically receive and install the credential provider:
 
 1. **Automatic Installation Trigger**:
    - Installation occurs automatically during the next computer startup
@@ -579,7 +579,7 @@ Once the GPO is configured and linked, client machines within the scope of the p
 
 1. **Verify GPO Link**:
    - Check GPO is linked to correct OU
-   - Verify link is not disabled
+   - Verify link isn't disabled
    - Check GPO status is "Enabled"
 
 2. **Check Computer Account**:
@@ -606,7 +606,7 @@ Once the GPO is configured and linked, client machines within the scope of the p
 **Issue: Installation Fails**
 
 1. **Check MSI Package**:
-   - Verify MSI is not corrupted
+   - Verify MSI isn't corrupted
    - Check digital signature is valid
    - Test manual installation on one computer
 
@@ -915,7 +915,7 @@ Repeat for each setting:
 
 1. **Check Application Status**:
    - Navigate to: **Apps** → **All apps**
-   - Click on: `Netwrix GroupID Credential Provider`
+   - Click: `Netwrix GroupID Credential Provider`
    - Click: **Device install status**
    - View installation progress per device:
      - Installed
@@ -939,7 +939,7 @@ Repeat for each setting:
 
 **Force Immediate Sync from Intune**:
 1. Navigate to: **Devices** → **All devices**
-2. Select target device(s)
+2. Select target devices
 3. Click: **Sync** (top toolbar)
 4. Device checks in with Intune and applies policies
 
@@ -956,7 +956,7 @@ C:\Program Files (x86)\Microsoft Intune Management Extension\Microsoft.Managemen
 
 Or use Settings app:
 1. Settings → Accounts → Access work or school
-2. Click on your work account
+2. Click your work account
 3. Click: **Info**
 4. Scroll down and click: **Sync**
 
@@ -1141,7 +1141,7 @@ At minimum, you must configure these two URLs:
 - Replace `https://your-password-portal.com/unlock` with your actual account unlock portal URL
 - Both URLs should use HTTPS for security (HTTP is supported but not recommended)
 
-**⚠️ Common Mistake**: Using placeholder URLs like `https://google.com` or `https://localhost`. Make sure to use your actual portal URLs!
+**⚠️ Common Mistake**: Using placeholder URLs like `https://google.com` or `https://localhost`. Use your actual portal URLs instead.
 
 ---
 
@@ -1179,7 +1179,7 @@ After saving the configuration and restarting (or locking the screen):
 
 ### Step 5: Test Password Reset (Optional but Recommended)
 
-1. Click on "Forgot my password?" from the login screen
+1. Click "Forgot my password?" from the login screen
 2. Verify that:
    - A browser window opens
    - Your password reset portal loads correctly
@@ -1194,7 +1194,7 @@ After saving the configuration and restarting (or locking the screen):
 
 ---
 
-### What's Next?
+### Next Steps
 
 **Basic Setup Complete!** You now have a working credential provider.
 
@@ -1457,7 +1457,7 @@ Filtering controls which other Windows credential providers (login methods) are 
 #### Understanding Filtering
 
 **What is Filtering?**
-By default, Windows displays all registered credential providers on the login screen (password, PIN, Windows Hello, etc.). Filtering allows you to:
+By default, Windows displays all registered credential providers on the login screen (password, PIN, Windows Hello, etc.). Use filtering to:
 - Hide specific credential providers in certain scenarios
 - Simplify the login screen by showing only relevant options
 - Create a cleaner user experience
@@ -1484,7 +1484,7 @@ By default, Windows displays all registered credential providers on the login sc
 
 **When to Use**:
 - Set to `false` for production (recommended): Provides a controlled, simplified login experience
-- Set to `true` for troubleshooting: Allows you to see all credential providers, useful for debugging
+- Set to `true` for troubleshooting: See all credential providers for debugging purposes
 
 **Visual Example**:
 
@@ -1655,7 +1655,7 @@ If your organization uses a proxy server for internet access, configure these se
 <ProxyUserName value="proxyuser" />
 ```
 
-**⚠️ Security Note**: Storing credentials in plain text is not recommended. Consider using integrated Windows authentication with your proxy server instead.
+**⚠️ Security Note**: Storing credentials in plain text isn't recommended. Consider using integrated Windows authentication with your proxy server instead.
 
 ---
 
@@ -2123,7 +2123,7 @@ This section addresses common issues and frequently asked questions.
 
 ### Frequently Asked Questions (FAQ)
 
-#### Q1: Where is the CPSettings.xml file located?
+#### Q1: Location of the CPSettings.xml file
 
 **Answer**:
 ```
@@ -2145,7 +2145,7 @@ This file is created during installation if it exists within the same directory 
 
 ---
 
-#### Q2: I changed CPSettings.xml but don't see any changes. Why?
+#### Q2: Changes to CPSettings.xml not taking effect
 
 **Answer**: Changes to configuration require refreshing the login screen.
 
@@ -2248,7 +2248,7 @@ This file is created during installation if it exists within the same directory 
 
 ---
 
-#### Q5: How do I hide Windows Hello or PIN options?
+#### Q5: Hiding Windows Hello or PIN options
 
 **Answer**: Use the `FilterLogon` and `FilterUnlock` settings to hide specific credential providers.
 
@@ -2277,7 +2277,7 @@ See [Credential Provider Filtering](#credential-provider-filtering) section for 
 
 ---
 
-#### Q6: Can I use the same portal URL for both reset and unlock?
+#### Q6: Using the same portal URL for reset and unlock
 
 **Answer**: Yes! If your password reset portal handles both functions, you can use the same URL:
 
@@ -2297,7 +2297,7 @@ Many self-service portals automatically detect whether the user needs password r
 
 ---
 
-#### Q7: How do I deploy to multiple computers?
+#### Q7: Deploying to multiple computers
 
 **Answer**: There are several deployment methods:
 
@@ -2338,7 +2338,7 @@ foreach ($computer in $computers) {
 
 ---
 
-#### Q8: How do I enable logging for troubleshooting?
+#### Q8: Enabling logging for troubleshooting
 
 **Answer**:
 
@@ -2423,9 +2423,9 @@ Only as a temporary workaround for testing:
 
 ---
 
-#### Q10: How do I upgrade to a newer version?
+#### Q10: Upgrading to a newer version
 
-**Answer**: This product does NOT support in-place upgrades. You must uninstall the old version first.
+**Answer**: This product doesn't support in-place upgrades. You must uninstall the old version first.
 
 **Upgrade Procedure**:
 
@@ -2459,7 +2459,7 @@ See [Upgrade Policy](#upgrade-policy) for details.
 
 ---
 
-#### Q11: Do I need to restart after changing configuration?
+#### Q11: Restarting after changing configuration
 
 **Answer**: It depends on what you changed and how:
 
@@ -2484,7 +2484,7 @@ See [Upgrade Policy](#upgrade-policy) for details.
 
 ### Common Error Messages
 
-#### Error: "The page cannot be displayed"
+#### Error: "The page can't be displayed"
 
 **Cause**: Network connectivity or proxy issues
 
@@ -2497,7 +2497,7 @@ See [Upgrade Policy](#upgrade-policy) for details.
 
 ---
 
-#### Error: "This site is not secure" or Certificate Error
+#### Error: "This site isn't secure" or Certificate Error
 
 **Cause**: SSL certificate validation failed
 
@@ -2793,7 +2793,7 @@ C:\Program Files\Imanami\Password Center Client (x64)\CPSettings.xml
 
 **❌ DON'T:**
 - Rely solely on local CPSettings.xml file in enterprise
-- Allow users to modify credential provider settings
+- Users can modify credential provider settings
 - Deploy without testing in pilot group first
 
 **Benefits**:
@@ -2852,7 +2852,7 @@ C:\Program Files\Imanami\Password Center Client (x64)\CPSettings.xml
 
 **PCI DSS** (if applicable):
 - Use strong SSL/TLS (TLS 1.2 or higher)
-- Do not store cardholder data in logs
+- Don't store cardholder data in logs
 - Regular security testing
 - Strong access controls
 
@@ -2962,7 +2962,7 @@ For enterprise environments where the credential provider was deployed via GPO:
 7. **Client Workstation Removal Process**:
    - When client workstations restart, the GPO (now without the Credential Provider) is applied
    - This removes the installed Credential Provider from all client workstations
-   - **Important**: Once the software is removed, users must restart the workstation **again** to remove the links from the Windows logon screen
+   - **Important**: After the software is removed, users must restart the workstation **again** to remove the links from the Windows logon screen
 
 **Force Immediate Removal on Specific Computers**:
 

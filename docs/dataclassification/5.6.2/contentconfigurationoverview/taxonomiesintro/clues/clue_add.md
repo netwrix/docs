@@ -25,7 +25,7 @@ When specifying the clue body, consider exact matching and stemming explained be
 ### Exact Matching
 
 There may be any number of words up to a maximum of 200 characters per clue. However, most clues
-will consist of one, two or three words.
+will consist of one, two, or three words.
 
 Use double quotes around phrases to invoke exact phrase matching.
 
@@ -78,12 +78,12 @@ Higher scores indicate a stronger association with the topic.
 Consider that clues can also be assigned a negative value, which will prevent incorrect
 associations.
 
-- Example 3: _Noise pollution_ should not be associated with _Global Warming_. So _Noise pollution_
+- Example 3: _Noise pollution_ shouldn't be associated with _Global Warming_. So _Noise pollution_
   would be added with a negative value.
 
 ## Mandatory Clues
 
-You can use the Mandatory checkbox to indicate that a clue is required, i.e. a document cannot be
+You can use the Mandatory checkbox to indicate that a clue is required, i.e. a document can't be
 classified against a category unless it matches all of the mandatory clues.
 
 The mandatory clue selector is denoted by the \* icon:
@@ -99,7 +99,7 @@ user to restrict a clue purely to the current Term Set.
 
 ![localclue](/images/dataclassification/5.6.2/taxonomies/localclue.webp)
 
-- Once this option is selected, it will not be possible to amend the clue from any other Term Set
+- After this option is selected, it will not be possible to amend the clue from any other Term Set
   that contains the re-used Term.
 - If you want to share the Term across all Term Sets again, clear the option from the Term Set in
   which it was originally enabled.
@@ -108,8 +108,8 @@ user to restrict a clue purely to the current Term Set.
 
 **NOTE:** The **Synonyms** link is only available for the clues in SQL taxonomies.
 
-The Synonyms link can be used to enter synonym definitions.
+Use the Synonyms link to enter synonym definitions.
 
-In general, the use of this facility is not recommended. The preferred approach is to enter each
+In general, the use of this facility isn't recommended. The preferred approach is to enter each
 synonym as separate clues. Entering each synonym as separate clues will generally result in more
 accurate scoring and therefore to better classification results.
