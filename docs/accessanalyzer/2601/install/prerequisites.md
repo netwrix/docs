@@ -104,7 +104,7 @@ For the full TLS specification, including multi-CA environments, see the TLS Cer
 
 Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
 
-To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values in the next section before you start, so you have them ready in the setup wizard.
+To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values in [Identity provider](#identity-provider) before you start, so you have them ready in the setup wizard.
 
 ## Identity provider
 
@@ -126,22 +126,22 @@ Collect the following values:
 | --- | --- |
 | **AD domain name** | Fully qualified domain name of your AD forest — for example, `corp.example.com`. Access Analyzer connects over LDAPS (port 636) automatically. |
 | **Service account** | A read-only service account, in User Principal Name (UPN) format — for example, `aa26-svc@corp.example.com` |
-| **Service account password** | The password for the account above |
+| **Service account password** | The password for that service account |
 | **AD authentication certificate** | The CA certificate (PEM) that issued the domain controller's LDAPS certificate |
 
 You don't need to look up the users base DN or the email attribute yourself. After you enter the domain, service account, and certificate, the wizard tests the connection and discovers both automatically.
 
 ### Entra ID
 
-**Admin consent:** Line up a **Global Administrator** or **Privileged Role Administrator**. They must be available during setup to sign in and grant consent for Access Analyzer to read the directory.
+**Admin consent:** Identify a **Global Administrator** or **Privileged Role Administrator**. They must be available during setup to sign in and grant consent for Access Analyzer to read the directory.
 
 Complete the following steps in the Azure Portal before connecting Access Analyzer.
 
 1. Open **Azure Portal** > **Entra ID** > **App registrations** > **New registration**.
 2. Name the application and click **Register**.
 3. Open the registration > **Authentication** > **Add a platform** > **Web**, and add two redirect URIs:
-   - The URI shown on the Access Analyzer setup wizard's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — used once, during the admin-consent step.
-   - `https://<your-hostname>/idps/callback` — used every time a user signs in with Entra ID.
+   - The URI shown on the Access Analyzer setup wizard's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — the wizard uses this once, during the admin-consent step.
+   - `https://<your-hostname>/idps/callback` — Microsoft redirects here every time a user signs in with Entra ID.
 4. Go to **Certificates & secrets** > **New client secret**. Set an expiry that fits your rotation policy and copy the value immediately — the portal shows it only once.
 
 Collect the following values:
@@ -150,7 +150,7 @@ Collect the following values:
 | --- | --- |
 | **Tenant ID** | Azure Portal > Entra ID > Overview > Directory (tenant) ID — the GUID, not the primary domain |
 | **Application (client) ID** | App registration > Overview > Application (client) ID |
-| **Client secret** | Created in step 4 |
+| **Client secret** | The value you copied in step 4 |
 
 :::note
 Register both redirect URIs before anyone signs in with Entra ID. The setup wizard's callback completes the connection; `/idps/callback` is Microsoft's redirect target for every subsequent sign-in — omitting it lets you finish setup but blocks sign-in with an `AADSTS50011` redirect URI mismatch.
