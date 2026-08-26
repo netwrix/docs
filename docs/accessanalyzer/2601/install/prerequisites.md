@@ -36,7 +36,7 @@ Choose a deployment size based on your environment:
 The required disk space scales with the number of objects across your sources rather than the size of on-disk data, because Access Analyzer stores only object metadata. These are minimum disk space requirements — allocate more if possible to avoid running out of space later.
 :::
 
-**Network:** Outbound HTTPS (port 443) to the endpoints listed in the Required Domains table below.
+**Network:** Outbound HTTPS (port 443) to the endpoints in the [Required Domains](#required-domains) table.
 
 **License:** Valid Netwrix license key.
 
@@ -58,7 +58,7 @@ The hostname you enter during installation must be a fully qualified domain name
 The hostname must resolve to the VM's IP address from:
 
 - Client browsers — configure a DNS A record, or add an entry to each client's `hosts` file.
-- In-cluster pods — the installer's CoreDNS rewrite handles these automatically. No customer action needed.
+- In-cluster pods — the installer's CoreDNS rewrite handles these automatically. You don't need to do anything.
 
 :::warning
 Use a DNS hostname, **not an IP address**. The browser TLS handshake requires a hostname. Avoid the `.local` and `.localhost` TLDs — both break in-cluster DNS resolution and silently break sign-in flows.
@@ -108,7 +108,7 @@ For the full TLS specification, including multi-CA environments, see the TLS Cer
 
 Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
 
-To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values under Identity provider below before you start, so you have them ready in the setup wizard.
+To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values in [Identity provider](#identity-provider) before you start, so you have them ready in the setup wizard.
 
 ## Identity provider
 
