@@ -26,7 +26,7 @@ Choose a deployment size based on your environment:
 
 | Size | CPU | Memory | Minimum Disk Space |
 | --- | --- | --- | --- |
-| **Small** | 8 cores | 24 GB | 500 GB SSD |
+| **Small** | 8 cores | 32 GB | 500 GB SSD |
 | **Medium** | 16 cores | 48 GB | 1 TB SSD |
 | **Large** | 32 cores | 64 GB | 1 TB SSD |
 | **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD |
