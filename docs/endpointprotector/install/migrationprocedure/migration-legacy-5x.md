@@ -196,7 +196,7 @@ If your organization has compliance requirements for data retention (e.g., GDPR,
 
 ## Phase 1 — Upgrade to 5.9.4.2 via Cumulative Patch
 
-This phase applies to environments running **any version from 5.7.0.0 through 5.9.4.1**. The cumulative patch upgrades your server directly to 5.9.4.2 in a single operation, incorporating all fixes and features introduced across every intermediate version. If you're already on 5.9.4.2, skip to [Phase 2](#phase-2--deploy-the-2608-base-image-and-restore-your-backup).
+This phase applies to environments running **any version from 5.7.0.0 through 5.9.4.1** (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0, 5.8.2.0, 5.9.0.0, 5.9.1.0, 5.9.2.0, 5.9.3.0, 5.9.4.0, 5.9.4.1). The cumulative patch upgrades your server directly to 5.9.4.2 in a single operation, incorporating all fixes and features introduced across every intermediate version. If you're already on 5.9.4.2, skip to [Phase 2](#phase-2--deploy-the-2608-base-image-and-restore-your-backup).
 
 ### Downloading the Cumulative Patch
 
@@ -480,6 +480,18 @@ Verify each active module:
 :::tip
 Generate deliberate test events on a known test machine for each active module. For example: plug in a USB drive (Device Control), transfer a file with sensitive content (CAP), run an eDiscovery scan. Confirm the events appear in the console before declaring the migration complete.
 :::
+
+### eDiscovery Scan Locations Verification
+
+:::warning
+If an eDiscovery policy with configured **Scan Locations** is restored from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead — with no error reported anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
+:::
+
+If you use eDiscovery with Scan Locations configured on any policy, this check is mandatory after restore:
+
+1. Navigate to **eDiscovery** and open each policy that defines Scan Locations.
+2. Edit and save the policy — even without changing anything — to re-apply the Scan Locations.
+3. Run a scan and confirm it targets only the configured Scan Locations, not the full disk.
 
 ### DPI / CAP Functionality Verification
 

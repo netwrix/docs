@@ -344,6 +344,18 @@ Verify each active module:
 Generate deliberate test events on a known test machine for each active module. For example: plug in a USB drive (Device Control), transfer a file with sensitive content (CAP), run an eDiscovery scan. Confirm the events appear in the console before declaring the migration complete.
 :::
 
+### eDiscovery Scan Locations Verification
+
+:::warning
+If an eDiscovery policy with configured **Scan Locations** is restored from a System Configuration Backup, EPP ignores the Scan Locations and runs a full disk scan instead — with no error reported anywhere. This is a known post-migration issue for any environment using the eDiscovery module.
+:::
+
+If you use eDiscovery with Scan Locations configured on any policy, this check is mandatory after restore:
+
+1. Navigate to **eDiscovery** and open each policy that defines Scan Locations.
+2. Edit and save the policy — even without changing anything — to re-apply the Scan Locations.
+3. Run a scan and confirm it targets only the configured Scan Locations, not the full disk.
+
 ### DPI / CAP Functionality Verification
 
 If using Deep Packet Inspection or Content Aware Protection:
