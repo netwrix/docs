@@ -186,6 +186,9 @@ All outbound endpoints use HTTPS (port 443). The Access Analyzer server must rea
 | `release-assets.githubusercontent.com` | GitHub | Release asset downloads | Installation only |
 | `pkg-containers.githubusercontent.com` | GitHub Container Registry | GitHub Packages CDN | Installation and updates |
 | `ghcr.io` | GitHub Container Registry | Container images | Installation and updates |
+| `registry-1.docker.io` | Docker Hub | Container image registry (third-party base images) | Installation and updates |
+| `auth.docker.io` | Docker Hub | Registry authentication tokens | Installation and updates |
+| `production.cloudfront.docker.com` | Docker Hub | Docker image layer CDN | Installation and updates |
 | `get.k3s.io` | K3s / Rancher | K3s installer download | Installation only |
 | `rpm.rancher.io` | K3s / Rancher | K3s package repository | Installation only |
 | `storage.googleapis.com` | K3s / Rancher | K3s artifact storage | Installation only |
