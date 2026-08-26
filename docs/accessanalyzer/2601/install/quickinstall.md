@@ -22,8 +22,6 @@ Before running the installer, confirm the following:
 
 ### System requirements
 
-**Absolute installer minimums:** 6 vCPUs, 24 GB RAM, 20 GB free disk on `/`. The preflight check blocks installation if the system falls below these thresholds.
-
 Choose a deployment size based on your environment:
 
 | Size | CPU | Memory | Disk | Data Threshold |
@@ -32,16 +30,6 @@ Choose a deployment size based on your environment:
 | **Medium** | 16 cores | 48 GB | 500 GB SSD | 5 TB – 100 TB |
 | **Large** | 32 cores | 64 GB | 1 TB SSD | 100 TB – 1 PB |
 | **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD | 1 PB+ |
-
-**Disk space** — the installer validates free space on multiple paths:
-
-| Path | Minimum Free Space | Purpose |
-| --- | --- | --- |
-| `/` | 20 GB | Root filesystem |
-| `/var` | 20 GB | K3s data, containers, logs |
-| `/var/lib` | 20 GB | K3s data directory |
-| `/var/log` | 5 GB | System and application logs |
-| `/etc` | 1 GB | Configuration files |
 
 **Network:** Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains).
 
