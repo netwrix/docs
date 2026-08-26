@@ -103,7 +103,7 @@ sudo -E bash secureone.sh setup --cluster --primary --version <version>
 Follow the prompts. The script initializes the swarm, deploys the stack, and then outputs the exact
 command to run on secondary nodes.
 
-**On each secondary node** (use the command output by the primary):
+**On each secondary node** (use the command that the primary node printed):
 
 ```bash
 sudo -E bash secureone.sh setup --cluster --join-token <TOKEN@HOST:PORT> --version <version>
@@ -116,6 +116,13 @@ sudo -E bash secureone.sh promote
 ```
 
 ## Upgrade an Existing Deployment
+
+:::important MongoDB 4.0 upgrade
+NPS-D 26.09.0 is the bridge release for moving existing deployments from MongoDB 4.0 to
+MongoDB 8.0. After upgrading NPS-D services to 26.09.0, complete
+[Upgrade MongoDB 4.0 to 8.0](../upgrademongodb4to8.md) before upgrading to NPS-D 26.09.1 or a later
+release. NPS-D 26.09.1 and later support MongoDB 8.0 only.
+:::
 
 To upgrade to a new version, run on the primary node:
 
@@ -162,9 +169,9 @@ sudo -E bash secureone.sh <command> [options]
 
 - Run as root with `sudo -E` to preserve environment variables (AWS credentials)
 - AWS CLI installed and authenticated with the Netwrix ECR registry (see [AWS Configuration](./awsconfiguration.md))
-- `python3` — installed automatically by `setup` if missing
-- Docker — installed automatically by `setup` if missing
-- Ubuntu 24.04 (other distributions not tested)
+- `python3` — `setup` installs it automatically if missing
+- Docker — `setup` installs it automatically if missing
+- Ubuntu 24.04 (Netwrix hasn't tested other distributions)
 
 ### Commands
 

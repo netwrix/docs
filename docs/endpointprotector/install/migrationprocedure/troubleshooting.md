@@ -140,6 +140,16 @@ This caching behavior is specific to the legacy communication flow. The 2608 ser
 
 ---
 
+### eDiscovery Scan Locations Ignored After Migration
+
+**Symptom:** After restoring the backup, eDiscovery scans run against the full disk instead of the configured Scan Locations. No error is logged or displayed.
+
+**Cause:** eDiscovery policies with Scan Locations don't fully re-apply when restored from a System Configuration Backup — the Scan Locations setting is silently ignored.
+
+**Resolution:** Edit and save each affected eDiscovery policy (no actual change required) to re-apply its Scan Locations. Verify with a test scan afterward.
+
+---
+
 ### Recurring HTTP 500 Errors Resolved Only by a Full Reboot
 
 **Symptom:** The EPP Server UI intermittently returns HTTP 500 errors, recurring every 1–3 days. Server load average is very high (600+) even though CPU and RAM aren't fully used. Restarting individual services doesn't resolve the error — only a full server reboot restores UI access, until the issue recurs.
