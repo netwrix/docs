@@ -24,12 +24,16 @@ Before running the installer, confirm the following:
 
 Choose a deployment size based on your environment:
 
-| Size | CPU | Memory | Disk | Data Threshold |
-| --- | --- | --- | --- | --- |
-| **Small** | 8 cores | 24 GB | 250 GB SSD | Up to 5 TB |
-| **Medium** | 16 cores | 48 GB | 500 GB SSD | 5 TB – 100 TB |
-| **Large** | 32 cores | 64 GB | 1 TB SSD | 100 TB – 1 PB |
-| **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD | 1 PB+ |
+| Size | CPU | Memory | Minimum Disk Space |
+| --- | --- | --- | --- |
+| **Small** | 8 cores | 24 GB | 500 GB SSD |
+| **Medium** | 16 cores | 48 GB | 1 TB SSD |
+| **Large** | 32 cores | 64 GB | 1 TB SSD |
+| **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD |
+
+:::note
+The required disk space scales with the number of objects across your sources, not the size of on-disk data, because we only store object metadata, not actual contents. These are minimum disk space requirements, and it is encouraged to give more disk space if possible to avoid any issues with running out of space at a later date.
+:::
 
 **Network:** Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains).
 
