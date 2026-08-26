@@ -17,7 +17,7 @@ Netwrix Privilege Secure for Discovery (NPS-D) 26.09.0 provides the supported pa
 
 > **Important:** Complete this migration on NPS-D 26.09.0. NPS-D 26.09.1 and all later releases support MongoDB 8.0 only.
 
-This process is a side-by-side data migration, not an in-place MongoDB server upgrade. NPS-D creates a separate MongoDB 8.0 target and copies data at the application level. Sequential MongoDB server upgrades through versions 4.2, 4.4, 5.0, 6.0, and 7.0 aren't required.
+This process is a side-by-side data migration, not an in-place MongoDB server upgrade. NPS-D creates a separate MongoDB 8.0 target and copies data at the application level. You don't need to perform sequential MongoDB server upgrades through versions 4.2, 4.4, 5.0, 6.0, and 7.0.
 
 ## Side-by-side migration architecture
 
@@ -59,7 +59,7 @@ The MongoDB 8.0 target isn't an active-active database or an automatic failover 
 
 > **Important: cutover retains MongoDB 4.0.** The `cutover` command never deletes the old database. After a clean switch and reference scan, it stops the MongoDB 4.0 service or replica set and retains its data. If any service still references MongoDB 4.0, the old database remains running until you correct that reference.
 
-> **Important for later deployments:** A successful 26.09.0 `cutover` records the MongoDB 8.0 connection settings in `/secureone/s1.env`. Keep this file after migration. For container-based deployments, use the `secureone.sh` script supplied with NPS-D 26.09.0 or later for every subsequent `deploy` or `upgrade`; earlier versions of the script don't read the saved database selection. For an installation originally deployed with an earlier release, the newer script alone isn't sufficient: before another deployment operation, complete **Preserve the migrated state for later deploys and upgrades** in this guide.
+> **Important for later deployments:** A successful 26.09.0 `cutover` records the MongoDB 8.0 connection settings in `/secureone/s1.env`. Keep this file after migration. For container-based deployments, use the `secureone.sh` script that ships with NPS-D 26.09.0 or later for every subsequent `deploy` or `upgrade`; earlier versions of the script don't read the saved database selection. For an installation originally deployed with an earlier release, the newer script alone isn't sufficient: before another deployment operation, complete **Preserve the migrated state for later deploys and upgrades** in this guide.
 
 > **Important: verify that the database selection is persistent.** Cutover attempts to save the MongoDB 8.0 connection settings in `/secureone/s1.env`. Confirm that the cutover output reports either `Pinned ... in /secureone/s1.env` or `/secureone/s1.env already pins ...` for every required setting. If it reports `WARNING: could not pin ... in /secureone/s1.env`, the running application may already be using MongoDB 8.0, but the saved configuration is incomplete. Don't rerun `cutover`, and don't run another `deploy` or `upgrade`. Add the exact line printed by cutover to `/secureone/s1.env`, verify that the setting occurs only once, and complete the persistence checks in this guide first.
 
@@ -84,11 +84,11 @@ The existing cluster uses a replica set named `secureone`. The migration creates
 | Replica placement 2 | `s1_mongo2`        | `s1_mongo2-8`      |
 | Replica placement 3 | `s1_mongo3`        | `s1_mongo3-8`      |
 
-The migration places each MongoDB 8.0 member on the same Swarm node as its MongoDB 4.0 counterpart by using the existing Mongo replica node labels. During the coexistence period, six MongoDB services run across the cluster. This is expected.
+The migration places each MongoDB 8.0 member on the same Swarm node as its MongoDB 4.0 counterpart by using the existing Mongo replica node labels. During the coexistence period, expect six MongoDB services to run across the cluster.
 
 Each MongoDB service has exactly one desired replica. A three-node database cluster means three separate services with one replica each; it doesn't mean three replicas of `mongo1`, `mongo2`, or `mongo3`. Don't set an individual `MONGO1_REPLICA_COUNT`, `MONGO2_REPLICA_COUNT`, or `MONGO3_REPLICA_COUNT` to `3`, `6`, or another value greater than `1`. Docker Swarm can place multiple tasks of the same service on one constrained database node, where they contend for the same bind-mounted data path.
 
-MongoDB 4.0 and MongoDB 8.0 can't form one mixed-version replica set across this version gap. The separate `secureone8` replica set is therefore required.
+MongoDB 4.0 and MongoDB 8.0 can't form one mixed-version replica set across this version gap. The migration therefore requires a separate `secureone8` replica set.
 
 ## Migration commands
 
@@ -163,7 +163,7 @@ df -h /secureone/data/db
 docker info --format '{{.DockerRootDir}}'
 ```
 
-Run `df -h <docker-root-directory>` against the directory returned by Docker. Don't continue unless both the manual capacity review and `s1 mongo-upgrade check` pass.
+Run `df -h <docker-root-directory>` against the directory that Docker returns. Don't continue unless both the manual capacity review and `s1 mongo-upgrade check` pass.
 
 ## Plan the maintenance window
 
@@ -207,14 +207,14 @@ Schedule `run` to finish as close as practical to the approved cutover window. A
 For an existing container-based deployment, use this order:
 
 
-1. Follow [Download and Deploy](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/installation/containerbaseddeployment/deploysecureone) to download the NPS-D 26.09.0 quickstart bundle, and use the `secureone.sh` file supplied in that bundle. Don't use a copy of `secureone.sh` retained from an earlier release.
+1. Follow [Download and Deploy](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/installation/containerbaseddeployment/deploysecureone) to download the NPS-D 26.09.0 quickstart bundle, and use the `secureone.sh` file from that bundle. Don't use a copy of `secureone.sh` retained from an earlier release.
 2. On the primary node, upgrade the NPS-D services:
 
    ```text
    sudo -E bash secureone.sh upgrade --version 26.09.0
    ```
-3. Confirm that every database node is authenticated to the Netwrix container registry as described in [AWS Configuration](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/installation/containerbaseddeployment/awsconfiguration).
-4. Install the 26.09.0 `s1` CLI on the single database host or, for a three-node cluster, repeat these commands on all three database nodes. The command uses the production Netwrix container registry specified in the AWS Configuration procedure. The complete image reference is `176947481038.dkr.ecr.us-west-2.amazonaws.com/secureone-onprem/s1tool:26.09.0`.
+3. Confirm that every database node has authenticated to the Netwrix container registry as described in [AWS Configuration](https://docs.netwrix.com/docs/privilegesecurediscovery/2_22/installation/containerbaseddeployment/awsconfiguration).
+4. Install the 26.09.0 `s1` CLI on the single database host or, for a three-node cluster, repeat these commands on all three database nodes. The command uses the production Netwrix container registry that the AWS Configuration procedure specifies. The complete image reference is `176947481038.dkr.ecr.us-west-2.amazonaws.com/secureone-onprem/s1tool:26.09.0`.
 
    ```text
    NPSD_VERSION=26.09.0
@@ -277,7 +277,7 @@ Complete every item before starting the migration:
  4. For a cluster, confirm the same NPS-D and `s1` version on all three database nodes.
  5. Confirm that the Docker Swarm and existing NPS-D services are healthy.
  6. Identify the deployment topology and stack name.
- 7. Take and verify an independent backup of MongoDB 4.0 by using the customer's established backup and restore procedure or the procedure provided by Netwrix Support for the deployment.
+ 7. Take and verify an independent backup of MongoDB 4.0 by using the customer's established backup and restore procedure or the procedure that Netwrix Support provides for the deployment.
  8. Confirm storage capacity on the source-data filesystem and the Docker named-volume filesystem.
  9. Confirm that every required node can reach and authenticate to the configured NPS-D container registry.
 10. Schedule and communicate the cutover maintenance window.
@@ -310,7 +310,7 @@ Save the output with the migration records. Investigate unhealthy NPS-D or Mongo
 
 ## Migration image delivery
 
-The migration logic runs in a companion container image delivered through the same configured registry as the other NPS-D service images. The migration image doesn't require a separate manual installation after you install the correct 26.09.0 `s1` CLI. Container-based deployments must complete the `s1` installation procedure first.
+The migration logic runs in a companion container image that comes from the same configured registry as the other NPS-D service images. The migration image doesn't require a separate manual installation after you install the correct 26.09.0 `s1` CLI. Container-based deployments must complete the `s1` installation procedure first.
 
 * `check` confirms that the migration image is available from the configured registry.
 * `run` pulls MongoDB 8.0 and the migration image before copying data.
@@ -607,7 +607,7 @@ The following concepts are independent:
 
 Select one node that is both a Swarm manager and a database host. Run `run`, `status`, and `cutover` from that same node. The commands need local access to one MongoDB member, and `status` and `cutover` use the checkpoint volume created on the node that ran `run`.
 
-The MongoDB driver discovers the current source and target primaries through their replica-set connection strings. The selected command node doesn't have to host the current replica-set primary, and no manual primary selection is required.
+The MongoDB driver discovers the current source and target primaries through their replica-set connection strings. The selected command node doesn't have to host the current replica-set primary, and you don't have to select a primary manually.
 
 ### 2. Run the readiness check on every database node
 
@@ -753,15 +753,15 @@ s1 --stack <stack-name> --multi-node mongo-upgrade cutover
 The command follows the same freeze, quiescence, reconciliation, validation, switch, and stale-reference stages as single-node. For the cluster, it:
 
 * Reconciles the MongoDB 4.0 `secureone` replica set with the MongoDB 8.0 `secureone8` replica set.
-* Changes the replica-set connection information used by NPS-D.
+* Changes the replica-set connection information that NPS-D uses.
 * Confirms that the full application stack no longer references `mongo1`, `mongo2`, or `mongo3` as database hosts.
 * Stops `<stack>_mongo1`, `<stack>_mongo2`, and `<stack>_mongo3` only when the stale-reference scan is clean.
 
-During the migration window, seeing six MongoDB services is expected. After a clean cutover, `<stack>_mongo1-8`, `<stack>_mongo2-8`, and `<stack>_mongo3-8` each have one running replica. Each old `<stack>_mongo1`, `<stack>_mongo2`, and `<stack>_mongo3` service has zero running replicas.
+Expect to see six MongoDB services during the migration window. After a clean cutover, `<stack>_mongo1-8`, `<stack>_mongo2-8`, and `<stack>_mongo3-8` each have one running replica. Each old `<stack>_mongo1`, `<stack>_mongo2`, and `<stack>_mongo3` service has zero running replicas.
 
 The values are per service: `MONGO1_REPLICA_COUNT=0`, `MONGO2_REPLICA_COUNT=0`, and `MONGO3_REPLICA_COUNT=0` preserve the stopped legacy replica set after a clean cutover. Don't use `3` or `6` for any individual MongoDB service.
 
-Don't rerun `cutover` after a successful switch or after a partial application-service switch. Follow the recovery guidance printed by the tool and contact Netwrix Support.
+Don't rerun `cutover` after a successful switch or after a partial application-service switch. Follow the recovery guidance that the tool prints and contact Netwrix Support.
 
 ### 8. Validate the cluster
 
@@ -805,9 +805,9 @@ Review the relevant assignments:
 sudo grep -nE '^(DB|REMEDIANT_DB)=' /secureone/s1.env
 ```
 
-The values must match the exact MongoDB 8.0 connection values reported by cutover. `DB` is always required. `REMEDIANT_DB` is also required when cutover changed `REMEDIANT_DB_URL`.
+The values must match the exact MongoDB 8.0 connection values that cutover reports. `DB` is always required. `REMEDIANT_DB` is also required when cutover changed `REMEDIANT_DB_URL`.
 
-If cutover reported `WARNING: could not pin ... in /secureone/s1.env`, use `sudoedit /secureone/s1.env`, remove any older assignment for the named variable, and paste the exact assignment printed by cutover. Keep one active assignment for each variable. MongoDB connection strings can contain shell metacharacters, so retain the quoting printed by the tool. Don't add comments to `s1.env`.
+If cutover reported `WARNING: could not pin ... in /secureone/s1.env`, use `sudoedit /secureone/s1.env`, remove any older assignment for the named variable, and paste the exact assignment that cutover printed. Keep one active assignment for each variable. MongoDB connection strings can contain shell metacharacters, so retain the quoting that the tool printed. Don't add comments to `s1.env`.
 
 Run the `grep` command again and confirm that each required variable occurs exactly once. Don't rerun `cutover` to repair a saved setting.
 
@@ -899,7 +899,7 @@ If the command can't create the log directory, it continues without a persistent
 Large collections can take a long time without producing a new high-level `s1` message. During `run` or cutover:
 
 
-1. Follow the exact log printed by the command:
+1. Follow the exact log that the command prints:
 
    ```text
    tail -f /secureone/logs/mongo-upgrade/<log-file>
@@ -948,7 +948,7 @@ If some services switch to MongoDB 8.0 and others don't, the tool leaves both da
 
 > **Don't rerun the cutover command.** A repeated reconciliation against a partially switched environment can overwrite or remove data written after the partial switch.
 
-Follow only the remediation commands printed for the affected services, confirm the database connection used by every write-path service, and contact Netwrix Support.
+Follow only the remediation commands for the affected services, confirm the database connection that every write-path service uses, and contact Netwrix Support.
 
 ### Stale MongoDB 4.0 reference after the switch
 
@@ -999,8 +999,8 @@ Don't try to bypass this protection. Validate the active database and continue w
 | Only some services switch | The environment is partially cut over. | Don't rerun cutover. Use the printed remediation and contact Support. |
 | Stack scan finds a MongoDB 4.0 reference | Something may still depend on the old database. | Correct the reference before stopping MongoDB 4.0. |
 | `WARNING: could not complete the stale-reference sweep` | The reference scan failed and didn't produce a reliable clean result. | Preserve both database data sets and the cutover log. Don't delete MongoDB 4.0 or perform another deploy or upgrade until you have reviewed every stack service. |
-| `WARNING: could not pin ... in /secureone/s1.env` | The running application may be using MongoDB 8.0, but the database selection isn't durable for another deployment. | Don't rerun cutover and don't deploy or upgrade. Add the exact quoted assignment printed by cutover, keep one entry for the variable, and complete the persistence checks. |
-| `/secureone/s1.env already pins ...` | The required saved value already matches the MongoDB 8.0 value selected by cutover. | Treat this as a successful persistence result for that setting and continue with the remaining post-cutover checks. |
+| `WARNING: could not pin ... in /secureone/s1.env` | The running application may be using MongoDB 8.0, but the database selection isn't durable for another deployment. | Don't rerun cutover and don't deploy or upgrade. Add the exact quoted assignment that cutover printed, keep one entry for the variable, and complete the persistence checks. |
+| `/secureone/s1.env already pins ...` | The required saved value already matches the MongoDB 8.0 value that cutover selected. | Treat this as a successful persistence result for that setting and continue with the remaining post-cutover checks. |
 | `s1 database-status` doesn't identify the active service and live version on a single-node deployment | The current single-node output isn't sufficient as standalone cutover evidence. | Combine the cutover log, `s1 status`, live Docker service state, saved settings, and application validation. |
 | The active stack lacks a required `DB`, `REMEDIANT_DB`, or legacy replica-count placeholder | A later deploy can restore a MongoDB 4.0 reference or start the retained old database. | Stop. Complete **Preserve the migrated state for later deploys and upgrades** or contact Netwrix Support before deploying. |
 | Long period with no high-level output | A large collection may still be processing. | Follow the log and check advancing counters before treating it as a hang. |
@@ -1010,7 +1010,7 @@ Don't try to bypass this protection. Validate the active database and continue w
 
 ### Before cutover
 
-NPS-D still uses MongoDB 4.0. If you can't complete `run`, leave the MongoDB 8.0 target in place for troubleshooting. If you must remove it, use the customer's standard Docker and storage administration process or the steps provided by Netwrix Support for that environment.
+NPS-D still uses MongoDB 4.0. If you can't complete `run`, leave the MongoDB 8.0 target in place for troubleshooting. If you must remove it, use the customer's standard Docker and storage administration process or the steps that Netwrix Support provides for that environment.
 
 ### Cutover fails before the switch
 
@@ -1028,7 +1028,7 @@ Don't change service replica counts, connection strings, or replica-set configur
 
 ### Decommission MongoDB 4.0
 
-> **Important: permanent removal requires a verified backup.** Before deleting MongoDB 4.0, confirm that an independent backup is available and restorable according to the customer's backup, retention, security, and recovery procedures or the instructions provided by Netwrix Support.
+> **Important: permanent removal requires a verified backup.** Before deleting MongoDB 4.0, confirm that an independent backup is available and restorable according to the customer's backup, retention, security, and recovery procedures or the instructions that Netwrix Support provides.
 
 The migration tool doesn't delete MongoDB 4.0. Permanently removing the old service or replica set and its data is a separate manual decommissioning task. You don't have to perform it immediately after cutover.
 
@@ -1040,7 +1040,7 @@ Decommission MongoDB 4.0 only after:
 * No NPS-D service or external integration references MongoDB 4.0.
 * You have verified and retained the independent backup according to the customer's policy.
 
-Use the customer's standard Docker and storage administration process or the environment-specific steps provided by Netwrix Support. Permanent removal makes the disk space used by MongoDB 4.0 available for reuse, but it also removes the local recovery copy. Recovery after this point requires the retained backup.
+Use the customer's standard Docker and storage administration process or the environment-specific steps that Netwrix Support provides. Permanent removal frees the disk space that MongoDB 4.0 used, but it also removes the local recovery copy. Recovery after this point requires the retained backup.
 
 ## Information to collect for Netwrix Support
 
@@ -1057,7 +1057,7 @@ Record the following before migration and include the relevant items if you need
 * The exact command and stage that failed.
 * The final validation summary, including **Checks failed** and **Warnings**.
 * Relevant `check`, `run`, `status`, and `cutover` logs.
-* Any remediation command printed by cutover.
+* Any remediation command that cutover printed.
 * Application validation results after cutover.
 
 Don't include passwords, access tokens, registry credentials, or database connection secrets in a support case.
