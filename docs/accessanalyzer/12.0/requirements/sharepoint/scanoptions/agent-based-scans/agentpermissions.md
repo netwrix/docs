@@ -6,15 +6,15 @@ sidebar_position: 10
 
 # SharePoint Agent Permissions
 
-When Access Analyzer SharePoint scans are run in agent-based mode, the Access Analyzer SharePoint
-Agent must be installed on the SharePoint Application server which hosts the Central Administration
-component prior to executing the scans. This is typically the first server stood up during the
-SharePoint farm installation process in this mode. The data collection processing is conducted by
-the SharePoint Agent for the target environment. The final step in data collection is to transfer
+When you run Access Analyzer SharePoint scans in agent-based mode, install the Access Analyzer
+SharePoint Agent on the SharePoint Application server which hosts the Central Administration
+component before running the scans. This is typically the first server stood up during the
+SharePoint farm installation process in this mode. The SharePoint Agent conducts the data collection
+processing for the target environment. The final step in data collection is to transfer
 the data collected in the SQLite databases, or Tier 2 databases, on the Access Analyzer SharePoint
 Agent server back to the Access Analyzer Console server.
 
-The Access Analyzer SharePoint Agent needs to be installed on the:
+Install the Access Analyzer SharePoint Agent on the:
 
 - SharePoint Application server hosting the Central Administration component
 
@@ -32,19 +32,19 @@ The following are additional requirements for the Access Analyzer SharePoint Age
 
 :::note
 The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and does not require any configuration; it has been
+server. The JDK deployed is prepackaged and doesn't require any configuration; it has been
 preconfigured to work with Access Analyzer and should never be customized through Java. It will not
 conflict with other JDKs or Java Runtimes in the same environment.
 :::
 
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, you must increase the minimum amount
+of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, a job
+configured to scan 8 hosts at a time requires an extra 16 GB of RAM (8x2=16).
 
 ## Permissions Explained
 
-If limited provisioning of the service account is not required by the organization, then the
+If the organization doesn't require limited provisioning of the service account, then the
 following permissions are sufficient for successful agent-based scans:
 
 - Membership in the local Administrator group on the on server where the Access Analyzer SharePoint
@@ -77,10 +77,10 @@ following permissions are sufficient for successful agent-based scans:
         - This is required so the Access Analyzer auditing account can make calls against the
           SharePoint web services to remotely gather information around permissions, site hierarchy,
           content and more
-        - If the group does not exist already, then you need to create a new group at that level and
+        - If the group doesn't exist already, then you need to create a new group at that level and
           grant it Read access. Specifically, it is a group that exists within Central
           Administration at the farm administrator level. This group only requires Read access and
-          is not giving farm admin access. Once the group is created, add the service account that
+          isn't giving farm admin access. After you create the group, add the service account that
           Access Analyzer will be leveraging to scan SharePoint.
 
 - Web Application permissions:
@@ -95,7 +95,7 @@ following permissions are sufficient for successful agent-based scans:
 
     - SPDataAccess on the SharePoint Content database and all Configuration databases
 
-        - This permission should be applied on the desired Configuration database and all Content
+        - Apply this permission on the Configuration database and all Content
           databases for the SharePoint version
         - This version-specific permission is required for Access Analyzer to execute read
           operations directly against the SharePoint databases, gather information from the
@@ -112,14 +112,14 @@ following permissions are sufficient for successful agent-based scans:
       administrative access
     - This grants Access Analyzer rights to scan MySites
 
-Additional permission models are explained for a less and least permission model.
+The following sections explain the less privilege and least privilege permission models.
 
 ## SharePoint Agent-Based Less Privilege Permission Model
 
-If restricted permissions are desired by the organization, then the following permissions are needed
-for the service account to successfully run SharePoint Agent-based scans.
+If the organization requires restricted permissions, then the service account needs the following
+permissions to successfully run SharePoint Agent-based scans.
 
-Prior to installation of the SharePoint Agent, the service account to be supplied during
+Before installing the SharePoint Agent, the service account to be supplied during
 installation and later used to run the Access Auditing (SPAA) and Sensitive Data Discovery Auditing
 scans against the targeted SharePoint environment needs the following permissions:
 
@@ -134,22 +134,22 @@ permissions to run the Access Auditing (SPAA) and Sensitive Data Discovery Audit
 - Membership in the local Users group on the server where the SharePoint Agent is installed
 - DB_Owner on Access Analyzer database if using Windows Authentication for the Storage Profile
 
-If the scans include Web Application scoping, then the following permissions are needed (can be
-skipped if running full farm scans):
+If the scans include Web Application scoping, then the service account needs the following
+permissions (you can skip these when running full farm scans):
 
 - Membership in the local Backup Operators group
 - Membership in the local WSS_WPG group
 - WSS_CONTENT_APPLICATION_POOLS on the SharePoint Configuration database
 
-After the Access Analyzer SharePoint Agent is installed, ensure that the service account has the
+After you install the Access Analyzer SharePoint Agent, ensure that the service account has the
 following permissions:
 
 - Full Control on the agent install directory, default path is:
 
     `C:\Program Files\STEALTHbits\StealthAUDIT\SPAA`
 
-The Access Analyzer SharePoint Agent utilizes Microsoft APIs. The Microsoft APIs require an account
-with the following permissions in order to collect all of the data:
+The Access Analyzer SharePoint Agent uses Microsoft APIs. The Microsoft APIs require an account
+with the following permissions to collect all of the data:
 
 - WSS_CONTENT_APPLICATION_POOLS on the SharePoint Content databases
 - WSS_CONTENT_APPLICATION_POOLS on the SharePoint Configuration database
@@ -161,10 +161,10 @@ If scans include Web Application scoping, this last permission requirement is al
 
 ## SharePoint Agent-Based Least Privilege Permission Model
 
-If a least privilege model is required by the organization, then the following permissions are
-needed for the service account to successfully run SharePoint Agent-based scans.
+If the organization requires a least privilege model, then the service account needs the following
+permissions to successfully run SharePoint Agent-based scans.
 
-Prior to installation of the SharePoint Agent, the service account to be supplied during
+Before installing the SharePoint Agent, the service account to be supplied during
 installation and later used to run the Access Auditing (SPAA) and Sensitive Data Discovery Auditing
 scans the targeted SharePoint environment needs the following permissions:
 
@@ -179,8 +179,8 @@ permissions to run the Access Auditing (SPAA) scans:
 - Membership in the local Users group on the server where the SharePoint Agent is installed
 - DB_Owner on Access Analyzer database if using Windows Authentication for the Storage Profile
 
-If the scans include Web Application scoping, then the following permissions are needed (can be
-skipped if running full farm scans):
+If the scans include Web Application scoping, then the service account needs the following
+permissions (you can skip these when running full farm scans):
 
 - READ Access on the following registry keys:
 
@@ -202,15 +202,15 @@ skipped if running full farm scans):
     - `proc_getDependentObjectsByBaseClass`
     - `proc_ReturnWebFeatures`
 
-After the Access Analyzer SharePoint Agent is installed, ensure that the service account has the
+After you install the Access Analyzer SharePoint Agent, ensure that the service account has the
 following permissions:
 
 - Full Control on the agent install directory, default path is:
 
     `C:\Program Files\STEALTHbits\StealthAUDIT\SPAA`
 
-The Access Analyzer SharePoint Agent utilizes Microsoft APIs. The Microsoft APIs require an account
-with the following permissions in order to collect all of the data:
+The Access Analyzer SharePoint Agent uses Microsoft APIs. The Microsoft APIs require an account
+with the following permissions to collect all of the data:
 
 - `'GRANT EXECUTE'` permissions on the following stored procedures in the SharePoint Configuration
   database:
@@ -222,7 +222,7 @@ with the following permissions in order to collect all of the data:
     - `proc_ReturnWebFeatures`
 
         :::note
-        The above four stored procedures would already have the correct permissions if Web
+        These four stored procedures would already have the correct permissions if Web
         Application scoping is desired.
         :::
 

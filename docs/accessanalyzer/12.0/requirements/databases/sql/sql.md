@@ -34,7 +34,7 @@ The target SQL Server must meet the following requirements:
 
 - For Activity Auditing – SQL Server Audit:
 
-    - SQL Server Audit Specifications to be configured on the target databases
+    - Configure SQL Server Audit Specifications on the target databases
     - Audit destination must be a binary file
     - See the Microsoft
       [Create a server audit and database audit specification](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification)

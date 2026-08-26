@@ -7,48 +7,48 @@ sidebar_position: 20
 # Requirements
 
 This topic describes the recommended configuration of the servers needed to install the application
-in a production environment. Depending on the size of the organization, it is recommended to review
-your environment and requirements with a Netwrix engineer prior to deployment to ensure all
-exceptions are covered.
+in a production environment. Depending on the size of the organization, Netwrix recommends reviewing
+your environment and requirements with a Netwrix engineer before deployment to ensure you cover all
+exceptions.
 
 ## Architecture Overview
 
-The following servers and applications are required for installation of the application:
+Installing the application requires the following servers and applications:
 
 **Core Components**
 
-- Access Analyzer Console Server – This is where the v12.0 application is installed.
-- SQL Server for Access Analyzer Database – As a data-intensive application, a well-provisioned,
-  dedicated SQL Server is recommended.
-- Access Information Center Application Server – This application is typically installed on the
-  Access Analyzer Console server and is a browser-based, interactive dashboard for exploring
+- Access Analyzer Console Server – This is where you install the v12.0 application.
+- SQL Server for Access Analyzer Database – Because Access Analyzer is a data-intensive application,
+  Netwrix recommends a well-provisioned, dedicated SQL Server.
+- Access Information Center Application Server – You typically install this application on the
+  Access Analyzer Console server. It is a browser-based, interactive dashboard for exploring
   permissions, activity, and sensitive data.
 
     :::note
-    The Access Information Center is often installed on the same server as the Access
-    Analyzer application, but it can be installed separately.
+    You often install the Access Information Center on the same server as the Access
+    Analyzer application, but you can install it separately.
     :::
 
 
 **Exchange Solution-Specific Components**
 
-- Access Analyzer MAPI CDO – This application is installed on the Access Analyzer Console server to
+- Access Analyzer MAPI CDO – You install this application on the Access Analyzer Console server to
   enable the Settings > Exchange global configuration interface within Access Analyzer.
 
 **File System Solution-Specific Components**
 
-- Access Analyzer File System Proxy Server – In certain environments, a proxy server may be utilized
-  to scan hosts in remote or firewalled sites to increase scan capacity in large environments. This
-  feature can be implemented through either an applet or a service. The applet would be deployed as
-  part of the data collection process. The service should be installed prior to data collection. See
+- Access Analyzer File System Proxy Server – In certain environments, you can use a proxy server
+  to scan hosts in remote or firewalled sites to increase scan capacity in large environments. You
+  can implement this feature through either an applet or a service. Access Analyzer deploys the
+  applet as part of the data collection process. Install the service before data collection. See
   the [Proxy Mode as a Service](/docs/accessanalyzer/12.0/requirements/filesystem/scanoptions/scanoptions.md#proxy-mode-as-a-service) topic
   for server requirements.
 
 **SharePoint Solution-Specific Components**
 
-- Access Analyzer SharePoint Agent Server – For agent-based scans, this application can be installed
+- Access Analyzer SharePoint Agent Server – For agent-based scans, you can install this application
   on the SharePoint application server that hosts the “Central Administration” component of the
-  targeted farm(s) to auditing permissions, content, and sensitive data for SharePoint On-Premise.
+  targeted farms to audit permissions, content, and sensitive data for SharePoint On-Premise.
   See the [SharePoint Scan Options](/docs/accessanalyzer/12.0/requirements/sharepoint/scanoptions/scanoptions.md) topic for server
   requirements.
 
@@ -66,8 +66,8 @@ The following servers and applications are required for installation of the appl
 
 **Target Environment Considerations**
 
-The target environment encompasses all servers, devices, or infrastructure to be audited by Access
-Analyzer. Most solutions have additional target requirements.
+The target environment encompasses all servers, devices, or infrastructure that Access Analyzer
+audits. Most solutions have additional target requirements.
 
 ## Access Analyzer Console & Access Information Center Server Requirements
 
@@ -102,7 +102,7 @@ additional:
 
 The following are additional requirements for the Console server:
 
-- .NET Framework 4.7.2 installed, which can be downloaded from the link in the Microsoft
+- .NET Framework 4.7.2 installed, which you can download from the link in the Microsoft
   [.NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2)
   article.
 - Microsoft SQL Server supports TLS 1.2, which requires the Access Analyzer Console server to have
@@ -123,7 +123,7 @@ The following permissions are required to install and use the application:
 - Membership in the local Administrators group for the Access Analyzer Console server
 
     :::note
-    Role based access can be enabled for a least privilege user model.
+    You can enable role based access for a least privilege user model.
     :::
 
 
@@ -176,7 +176,7 @@ The following additional considerations are recommended for the SQL Server:
 
 - The standard Autogrowth setting can cause Access Analyzer job delays. Database growth is
   computationally intensive. While SQL Server is growing the database, no other activity can occur.
-  If this option is employed, please speak with a Netwrix engineer to determine an appropriate
+ If you employ this option, speak with a Netwrix engineer to determine an appropriate
   setting for best performance.
 - Microsoft SQL Server supports TLS 1.2, which requires the Access Analyzer Console server to have
   either SQL Server Native Client 11 or Microsoft OleDB 18 installed.
@@ -191,10 +191,10 @@ The following permissions are required on the databases:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, we fully support the use of virtual machines. This
-section contains special considerations when leveraging virtualization.
+Netwrix always prefers physical machines but fully supports the use of virtual machines.
+This section contains special considerations when leveraging virtualization.
 
-- VMWare® ESX® – If using ESX, the following specifications are recommended:
+- VMWare® ESX® – If you use ESX, Netwrix recommends the following specifications:
 
     - ESX 4.0 / ESXi™ 4.1 or higher
     - Virtual Hardware 7 or higher

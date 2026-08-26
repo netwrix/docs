@@ -7,65 +7,65 @@ sidebar_position: 20
 # Requirements
 
 This topic describes the recommended configuration of the servers needed to install the application
-in a production environment. Depending on the size of the organization, it is recommended to review
-your environment and requirements with a Netwrix engineer prior to deployment to ensure all
-exceptions are covered.
+in a production environment. Depending on the size of the organization, Netwrix recommends reviewing
+your environment and requirements with a Netwrix engineer before deployment to ensure you cover all
+exceptions.
 
 ## Architecture Overview
 
-The following servers and applications are required for installation of the application:
+Installing the application requires the following servers and applications:
 
 **Core Components**
 
-- Enterprise Auditor Console Server – This is where the v11.6 application is installed.
-- SQL Server for Enterprise Auditor Database – As a data-intensive application, a well-provisioned,
-  dedicated SQL Server is recommended.
-- Access Information Center Application Server – This application is typically installed on the
-  Enterprise Auditor Console server and is a browser-based, interactive dashboard for exploring
+- Enterprise Auditor Console Server – This is where you install the v11.6 application.
+- SQL Server for Enterprise Auditor Database – Because Enterprise Auditor is a data-intensive
+  application, Netwrix recommends a well-provisioned, dedicated SQL Server.
+- Access Information Center Application Server – You typically install this application on the
+  Enterprise Auditor Console server. It is a browser-based, interactive dashboard for exploring
   permissions, activity, and sensitive data.
 
     :::note
-    The Access Information Center is often installed on the same server as the Enterprise
-    Auditor application, but it can be installed separately.
+    You often install the Access Information Center on the same server as the Enterprise
+    Auditor application, but you can install it separately.
     :::
 
 
 **Add-on Component**
 
-- Enterprise Auditor Sensitive Data Discovery Add-On – This application is installed on the
+- Enterprise Auditor Sensitive Data Discovery Add-On – You install this application on the
   Enterprise Auditor Console server as an add-on enabling Sensitive Data criteria for scans. In some
-  cases it must also be installed on additional servers. See the
+  cases you must also install it on additional servers. See the
   [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
   topic for additional information.
 
 **Exchange Solution-Specific Components**
 
-- Enterprise Auditor MAPI CDO – This application is installed on the Enterprise Auditor Console
+- Enterprise Auditor MAPI CDO – You install this application on the Enterprise Auditor Console
   server to enable the Settings > Exchange global configuration interface within Enterprise Auditor.
 
 **File System Solution-Specific Components**
 
-- Enterprise Auditor File System Proxy Server – In certain environments, a proxy server may be
-  utilized to scan hosts in remote or firewalled sites to increase scan capacity in large
-  environments. This feature can be implemented through either an applet or a service. The applet
-  would be deployed as part of the data collection process. The service should be installed prior to
+- Enterprise Auditor File System Proxy Server – In certain environments, you can use a proxy server
+  to scan hosts in remote or firewalled sites to increase scan capacity in large
+  environments. You can implement this feature through either an applet or a service. Enterprise
+  Auditor deploys the applet as part of the data collection process. Install the service before
   data collection. See the
   [Proxy Mode as a Service](/docs/accessanalyzer/11.6/requirements/filesystem/scanoptions/scanoptions.md#proxy-mode-as-a-service)
   topic for server requirements.
-- Enterprise Auditor Sensitive Data Discovery Add-On – This application is installed on the file
-  system proxy server where the File System Proxy Service is installed as an add-on enabling
+- Enterprise Auditor Sensitive Data Discovery Add-On – You install this application on the file
+  system proxy server that hosts the File System Proxy Service, as an add-on enabling
   Sensitive Data criteria for scans.
 
 **SharePoint Solution-Specific Components**
 
-- Enterprise Auditor SharePoint Agent Server – For agent-based scans, this application can be
-  installed on the SharePoint application server that hosts the “Central Administration” component
-  of the targeted farm(s) to auditing permissions, content, and sensitive data for SharePoint
+- Enterprise Auditor SharePoint Agent Server – For agent-based scans, you can install this
+  application on the SharePoint application server that hosts the “Central Administration” component
+  of the targeted farms to audit permissions, content, and sensitive data for SharePoint
   On-Premise. See the
   [SharePoint Scan Options](/docs/accessanalyzer/11.6/requirements/sharepoint/scanoptions/scanoptions.md)
   topic for server requirements.
-- Enterprise Auditor Sensitive Data Discovery Add-On – This application is installed on the same
-  server where the Enterprise Auditor SharePoint Agent is installed as an add-on enabling Sensitive
+- Enterprise Auditor Sensitive Data Discovery Add-On – You install this application on the same
+  server as the Enterprise Auditor SharePoint Agent, as an add-on enabling Sensitive
   Data criteria for scans.
 
 **Activity Event Data Considerations**
@@ -76,14 +76,14 @@ The following servers and applications are required for installation of the appl
   for installation requirements and information on collecting activity data.
 - Netwrix Threat Prevention – Enterprise Auditor can integrate with Threat Prevention for Active
   Directory and Windows File System event data. This integration works in conjunction with Netwrix
-  Activity Monitor. See the the
+  Activity Monitor. See the
   [Netwrix Threat Prevention Documentation](https://helpcenter.netwrix.com/category/threatprevention)
   for installation requirements and information on collecting activity data.
 
 **Target Environment Considerations**
 
-The target environment encompasses all servers, devices, or infrastructure to be audited by
-Enterprise Auditor. Most solutions have additional target requirements.
+The target environment encompasses all servers, devices, or infrastructure that Enterprise Auditor
+audits. Most solutions have additional target requirements.
 
 ## Enterprise Auditor Console & Access Information Center Server Requirements
 
@@ -118,7 +118,7 @@ additional:
 
 The following are additional requirements for the Console server:
 
-- .NET Framework 4.7.2 installed, which can be downloaded from the link in the Microsoft
+- .NET Framework 4.7.2 installed, which you can download from the link in the Microsoft
   [.NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2)
   article.
 - Microsoft SQL Server supports TLS 1.2, which requires the Enterprise Auditor Console server to
@@ -139,7 +139,7 @@ The following permissions are required to install and use the application:
 - Membership in the local Administrators group for the Enterprise Auditor Console server
 
     :::note
-    Role based access can be enabled for a least privilege user model.
+    You can enable role based access for a least privilege user model.
     :::
 
 
@@ -192,7 +192,7 @@ The following additional considerations are recommended for the SQL Server:
 
 - The standard Autogrowth setting can cause Enterprise Auditor job delays. Database growth is
   computationally intensive. While SQL Server is growing the database, no other activity can occur.
-  If this option is employed, please speak with a Netwrix engineer to determine an appropriate
+ If you employ this option, speak with a Netwrix engineer to determine an appropriate
   setting for best performance.
 - Microsoft SQL Server supports TLS 1.2, which requires the Enterprise Auditor Console server to
   have either SQL Server Native Client 11 or Microsoft OleDB 18 installed.
@@ -207,10 +207,10 @@ The following permissions are required on the databases:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, we fully support the use of virtual machines. This
-section contains special considerations when leveraging virtualization.
+Netwrix always prefers physical machines but fully supports the use of virtual machines.
+This section contains special considerations when leveraging virtualization.
 
-- VMWare® ESX® – If using ESX, the following specifications are recommended:
+- VMWare® ESX® – If you use ESX, Netwrix recommends the following specifications:
 
     - ESX 4.0 / ESXi™ 4.1 or higher
     - Virtual Hardware 7 or higher
