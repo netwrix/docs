@@ -59,6 +59,7 @@ The following firewall ports are needed:
 
 The following are supported Microsoft® Windows® operating systems:
 
+- Windows Server 2025
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016

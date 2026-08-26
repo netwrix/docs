@@ -36,7 +36,7 @@ after the schema has been updated, corruption to Enterprise Auditor’s system t
 
 **SQL Server Supported Version Change for the Enterprise Auditor Database**
 
-With the release of Enterprise Auditor v11.6, SQL Server 2016 through SQL Server 2022 are the
+With the release of Enterprise Auditor v11.6, SQL Server 2016 through SQL Server 2025 are the
 supported versions for the Enterprise Auditor database.
 
 To grant access to additional Solutions in an existing Enterprise Auditor installation, a new

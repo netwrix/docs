@@ -19,7 +19,7 @@ Install the Enterprise Auditor SharePoint Agent on the:
 - SharePoint Application server hosting the Central Administration component
 
     - SharePoint® 2013 through SharePoint® 2019
-    - Windows® Server 2012 through Windows® Server 2025
+    - Windows® Server 2016 through Windows® Server 2025
 
 **Additional Server Requirements**
 
