@@ -103,7 +103,7 @@ sudo -E bash secureone.sh setup --cluster --primary --version <version>
 Follow the prompts. The script initializes the swarm, deploys the stack, and then outputs the exact
 command to run on secondary nodes.
 
-**On each secondary node** (use the command output by the primary):
+**On each secondary node** (use the command that the primary node printed):
 
 ```bash
 sudo -E bash secureone.sh setup --cluster --join-token <TOKEN@HOST:PORT> --version <version>
@@ -169,9 +169,9 @@ sudo -E bash secureone.sh <command> [options]
 
 - Run as root with `sudo -E` to preserve environment variables (AWS credentials)
 - AWS CLI installed and authenticated with the Netwrix ECR registry (see [AWS Configuration](./awsconfiguration.md))
-- `python3` — installed automatically by `setup` if missing
-- Docker — installed automatically by `setup` if missing
-- Ubuntu 24.04 (other distributions not tested)
+- `python3` — `setup` installs it automatically if missing
+- Docker — `setup` installs it automatically if missing
+- Ubuntu 24.04 (Netwrix hasn't tested other distributions)
 
 ### Commands
 
