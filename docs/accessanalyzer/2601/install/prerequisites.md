@@ -32,7 +32,7 @@ Choose a deployment size based on your environment:
 | **Enterprise** | 48 cores | 128 GB | 3 TB+ SSD |
 
 :::note
-The required disk space scales with the number of objects across your sources, not the size of on-disk data, because Access Analyzer stores only object metadata, not the actual contents. These are minimum disk space requirements — allocate more if possible to avoid running out of space later.
+The required disk space scales with the number of objects across your sources rather than the size of on-disk data, because Access Analyzer stores only object metadata. These are minimum disk space requirements — allocate more if possible to avoid running out of space later.
 :::
 
 **Network:** Outbound HTTPS (port 443) to required endpoints — see [Required Domains](#required-domains).
@@ -123,7 +123,7 @@ Ports the Access Analyzer server must reach on your data sources and directory s
 
 - **Outbound** from the Access Analyzer server to the target source/host — **required** for all connectors.
 - **Inbound** at the target source/host from the Access Analyzer server — **required** (the target must accept the connection on the listed port).
-- **Two-way communication** between the Access Analyzer server and the target — **optional**. You can configure it for environments that require it, but no connector requires it.
+- **Two-way communication** between the Access Analyzer server and the target — **optional**. No connector requires it, but you can enable it if your environment does.
 
 | Connector | Port | Protocol | Notes |
 | --- | --- | --- | --- |
