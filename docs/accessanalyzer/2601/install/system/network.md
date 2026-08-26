@@ -10,7 +10,7 @@ Access Analyzer requires outbound internet access during installation and operat
 
 ## Outbound Endpoints (Internet)
 
-All outbound traffic uses HTTPS (port 443). The Access Analyzer server must be able to reach the following endpoints:
+All outbound traffic uses HTTPS (port 443). The Access Analyzer server must reach the following endpoints:
 
 | Endpoint | Category | Purpose | When Required |
 | --- | --- | --- | --- |
@@ -46,12 +46,12 @@ Access Analyzer uses these ports within the VM for service-to-service communicat
 | 6379 | TCP | Redis | Cache and queue connections |
 
 :::note
-All internal ports are bound to the local cluster network. Only port 443 (Traefik) is exposed externally for the web interface.
+All internal ports bind to the local cluster network. Only port 443 (Traefik) accepts external traffic, for the web interface.
 :::
 
 ## Connector Network Requirements
 
-Depending on the connectors you configure, the Access Analyzer VM must also have outbound access to your data sources:
+The Access Analyzer VM must also have outbound access to the data sources for the connectors you configure:
 
 | Connector | Port | Protocol | Notes |
 | --- | --- | --- | --- |

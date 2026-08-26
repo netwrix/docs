@@ -93,7 +93,7 @@ sudo update-ca-certificates
 # Check that the SAN includes your hostname (lowercase) and server IP
 openssl x509 -noout -text -in /etc/dspm/<hostname>.crt | grep -A5 "Subject Alternative"
 
-# Verify the cert was signed by your CA bundle
+# Verify your CA bundle signed the cert
 openssl verify -CAfile /etc/dspm/ca-bundle.crt /etc/dspm/<hostname>.crt
 
 # Verify the key matches the cert (both md5sums must match)
