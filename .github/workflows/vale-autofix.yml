@@ -25,6 +25,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
       - name: Check if scripts changed
@@ -91,7 +92,8 @@ jobs:
         id: changed-files
         if: steps.bot-check.outputs.skip != 'true'
         run: |
-          CHANGED_MD_FILES=$(git diff --name-only origin/dev...HEAD -- docs/ | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' | grep -v '^docs/kb/' || true)
+          DIFF_OUTPUT=$(git diff --name-only origin/dev...HEAD -- docs/)
+          CHANGED_MD_FILES=$(printf '%s\n' "$DIFF_OUTPUT" | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' | grep -v '^docs/kb/' || true)
           if [ -z "$CHANGED_MD_FILES" ]; then
             echo "No docs markdown files changed"
             echo "count=0" >> "$GITHUB_OUTPUT"
