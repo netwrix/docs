@@ -11,6 +11,7 @@ database environments to collect permissions, sensitive data, and activity event
 
 - Azure SQL
 
+- SQL Server 2025
 - SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017
