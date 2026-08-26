@@ -78,9 +78,9 @@ This solution employs the following data collector to scan the target environmen
 - For permissions for data collection:
 
     - Read access to SQL instance
-    - Requires SQL Full-Text and Semantic Extractions for Search feature to be installed on the
-      target SQL instances when using the **Scan full rows for sensitive data** option on the
-      Options wizard page
+    - Requires the SQL Full-Text and Semantic Extractions for Search feature on the target SQL
+      instances when you use the **Scan full rows for sensitive data** option on the Options
+      wizard page
     - Grant Authenticate Server to [DOMAIN\USER]
     - Grant Connect SQL to [DOMAIN\USER]
     - Grant View any database to [DOMAIN\USER]

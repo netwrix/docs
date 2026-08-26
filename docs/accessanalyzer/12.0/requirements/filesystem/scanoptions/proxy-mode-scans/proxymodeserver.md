@@ -10,8 +10,8 @@ The Access Analyzer File System Proxy requirements apply for servers where you e
 service or deploy the applet, unless otherwise stated.
 
 :::note
-Align the proxy server requirements to match the environment size the proxy server will be
-handling.
+Align the proxy server requirements to match the size of the environment the proxy server
+handles.
 :::
 
 
@@ -19,12 +19,12 @@ The server can be physical or virtual. The requirements for Access Analyzer are:
 
 - Windows Server 2016 through Windows Server 2025
 
-    - US English language installation
+    - English (United States) language installation
     - Domain member
 
 **RAM, CPU, and Disk Space**
 
-RAM, CPU, and Disk Space are dependent upon the size of the target environment:
+RAM, CPU, and Disk Space depend on the size of the target environment:
 
 :::warning
 If you run Sensitive Data Discovery (SDD) scans, you must increase the
@@ -64,8 +64,8 @@ time with two concurrent SDD threads requires an extra 32 GB of RAM (8x2x2=32).
     - 2 CPU Cores
     - 130 GB Disk Space
 
-The recommended disk space sizing information is based on the needs of Access Analyzer as well
-as the File System solution for running Permission scans with the default configuration (500 MB
+The recommended disk space sizing information is based on the needs of Access Analyzer and the
+File System solution for running Permission scans with the default configuration (500 MB
 per million files and folders), which means no tag collection, file-level scanning, activity, or
 sensitive data.
 
@@ -106,7 +106,7 @@ The following are additional requirements for the server:
 **Sensitive Data Discovery Auditing**
 
 The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the server. The JDK
-deployed is prepackaged and doesn't require any configuration. It will not conflict with other JDKs
+deployed is prepackaged and doesn't require any configuration. It doesn't conflict with other JDKs
 or Java Runtimes in the same environment.
 
 See the following topics for additional information, based on the type of proxy mode you plan to

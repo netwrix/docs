@@ -8,7 +8,7 @@ sidebar_position: 10
 
 When you run Enterprise Auditor SharePoint scans in agent-based mode, install the Enterprise Auditor
 SharePoint Agent on the SharePoint Application server which hosts the Central
-Administration component before running the scans. This is typically the first server stood up
+Administration component before running the scans. This is typically the first server set up
 during the SharePoint farm installation process in this mode. The SharePoint Agent conducts the data
 collection processing for the target environment. The final step in data collection is
 to transfer the data collected in the SQLite databases, or Tier 2 databases, on the Enterprise
@@ -40,8 +40,8 @@ Console server, running Sensitive Data Discovery scans requires the following:
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
 (Java) version on the server. The JDK deployed is prepackaged and doesn't require any
-configuration; it has been preconfigured to work with Enterprise Auditor and should never be
-customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
+configuration; it is preconfigured to work with Enterprise Auditor, and you should never customize
+it through Java. It doesn't conflict with other JDKs or Java Runtimes in the same
 environment.
 :::
 
@@ -88,8 +88,8 @@ following permissions are sufficient for successful agent-based scans:
         - If the group doesn't exist already, then you need to create a new group at that level and
           grant it Read access. Specifically, it is a group that exists within Central
           Administration at the farm administrator level. This group only requires Read access and
-          isn't giving farm admin access. After you create the group, add the service account that
-          Enterprise Auditor will be leveraging to scan SharePoint.
+          doesn't grant farm admin access. After you create the group, add the service account
+          Enterprise Auditor uses to scan SharePoint.
 
 - Web Application permissions:
 
@@ -111,7 +111,7 @@ following permissions are sufficient for successful agent-based scans:
           content databases, and give read access around sites, roles, and users
 
 - DB_Owner on Enterprise Auditor database if using Windows Authentication for the Storage Profile
-- MySites permissions are based on the SharePointAccess Data Collector configuration option:
+- MySites permissions depend on the SharePointAccess Data Collector configuration option:
 
     - Forcing the service account to become a temporary admin of the personal sites either as the
       service account or as a member of the Company Administrators group requires SharePoint Farm
@@ -127,9 +127,9 @@ The following sections explain the less privilege and least privilege permission
 If the organization requires restricted permissions, then the service account needs the following
 permissions to successfully run SharePoint Agent-based scans.
 
-Before installing the SharePoint Agent, the service account to be supplied during
-installation and later used to run the Access Auditing (SPAA) and Sensitive Data Discovery Auditing
-scans against the targeted SharePoint environment needs the following permissions:
+Before you install the SharePoint Agent, grant the following permissions to the service account you
+supply during installation and later use to run the Access Auditing (SPAA) and Sensitive Data
+Discovery Auditing scans against the targeted SharePoint environment:
 
 - Log on as a Service in the Local Security Policy
 - Membership in the local IIS_IUSRS group
@@ -138,7 +138,7 @@ scans against the targeted SharePoint environment needs the following permission
 After the SharePoint Agent installation, this service account needs the following additional
 permissions to run the Access Auditing (SPAA) and Sensitive Data Discovery Auditing scans:
 
-- Site Collection Administrator on all Site Collections to be scanned
+- Site Collection Administrator on all Site Collections you plan to scan
 - Membership in the local Users group on the server where the SharePoint Agent is installed
 - DB_Owner on Enterprise Auditor database if using Windows Authentication for the Storage Profile
 
@@ -163,7 +163,7 @@ account with the following permissions to collect all of the data:
 - WSS_CONTENT_APPLICATION_POOLS on the SharePoint Configuration database
 
 :::note
-If scans include Web Application scoping, this last permission requirement is already met.
+If scans include Web Application scoping, you have already met this permission requirement.
 :::
 
 
@@ -172,9 +172,9 @@ If scans include Web Application scoping, this last permission requirement is al
 If the organization requires a least privilege model, then the service account needs the following
 permissions to successfully run SharePoint Agent-based scans.
 
-Before installing the SharePoint Agent, the service account to be supplied during
-installation and later used to run the Access Auditing (SPAA) and Sensitive Data Discovery Auditing
-scans the targeted SharePoint environment needs the following permissions:
+Before you install the SharePoint Agent, grant the following permissions to the service account you
+supply during installation and later use to run the Access Auditing (SPAA) and Sensitive Data
+Discovery Auditing scans against the targeted SharePoint environment:
 
 - Log on as a Service in the Local Security Policy
 - Service Account SID added to the `SMSvcHost.exe.config` file
@@ -183,7 +183,7 @@ scans the targeted SharePoint environment needs the following permissions:
 After the SharePoint Agent installation, this service account needs the following additional
 permissions to run the Access Auditing (SPAA) scans:
 
-- Site Collection Administrator on all Site Collections to be scanned
+- Site Collection Administrator on all Site Collections you plan to scan
 - Membership in the local Users group on the server where the SharePoint Agent is installed
 - DB_Owner on Enterprise Auditor database if using Windows Authentication for the Storage Profile
 
@@ -230,8 +230,8 @@ account with the following permissions to collect all of the data:
     - `proc_ReturnWebFeatures`
 
         :::note
-        These four stored procedures would already have the correct permissions if Web
-        Application scoping is desired.
+        If you use Web Application scoping, these stored procedures already have the correct
+        permissions.
         :::
 
 

@@ -66,7 +66,7 @@ Two options are available for implementing the proxy scanning architecture:
 
 When you run File System scans in proxy mode with applet, Enterprise Auditor deploys the File System
 applet to the Windows proxy server when the job runs to conduct data collection. The proxy server
-where the applet is deployed initiates the data collection processing and runs a
+where Enterprise Auditor deploys the applet initiates the data collection processing and runs a
 local mode-type scan against each of the target hosts. The final step in data collection is to compress
 and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Enterprise
 Auditor Console server.
@@ -109,8 +109,8 @@ The diagram illustrates the Enterprise Auditor server communicating securely wit
 on a proxy server, which runs the scan against a file server, collecting the data locally and
 securely. Then the proxy service returns data securely to the Enterprise Auditor server.
 
-When you initiate a proxy mode scan from the Enterprise Auditor Console, it distributes hosts to
-be scanned across all proxy hosts. Enterprise Auditor monitors the scans from the central console.
+When you initiate a proxy mode scan from the Enterprise Auditor Console, it distributes the target
+hosts across all proxy hosts. Enterprise Auditor monitors the scans from the central console.
 Once all proxy hosts have completed scanning, they return all results and SQLite databases to the
 Enterprise Auditor Console server.
 

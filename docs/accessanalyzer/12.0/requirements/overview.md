@@ -77,13 +77,13 @@ The server can be physical or virtual. The requirements are:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English (United States) language installation
 - Domain member
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment. See the following topics for
-additional:
+These depend on the size of the target environment. See the following topics for additional
+information:
 
 - [Active Directory Solution Requirements on the Access Analyzer Console](/docs/accessanalyzer/12.0/requirements/activedirectory/activedirectory.md#active-directory-solution-requirements-on-the-access-analyzer-console)
 - [Active Directory Permissions Analyzer Solution Requirements on the Access Analyzer Console](/docs/accessanalyzer/12.0/requirements/activedirectorypermissionsanalyzer/activedirectorypermissionsanalyzer.md#active-directory-permissions-analyzer-solution-requirements-on-the-access-analyzer-console)
@@ -144,12 +144,12 @@ The server requirements include one of the following SQL Server versions:
 
 Additionally the server must meet this requirement:
 
-- US English language installation
+- English (United States) language installation
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment. See the following topics for
-additional:
+These depend on the size of the target environment. See the following topics for additional
+information:
 
 - [Active Directory Solution Requirements on the SQL Server](/docs/accessanalyzer/12.0/requirements/activedirectory/activedirectory.md#active-directory-solution-requirements-on-the-sql-server)
 - [Active Directory Permissions Analyzer Solution Requirements on the SQL Server](/docs/accessanalyzer/12.0/requirements/activedirectorypermissionsanalyzer/activedirectorypermissionsanalyzer.md#active-directory-permissions-analyzer-solution-requirements-on-the-sql-server)
@@ -167,7 +167,7 @@ additional:
 
 The following are additional requirements for the SQL Server:
 
-- SQL Server must be equal or newer version than the version to be targeted
+- SQL Server must be an equal or newer version than the targeted version
 - All SQL Server databases configured to use ‘Simple Recovery Model’
 
 **Additional Server Considerations**
@@ -191,8 +191,8 @@ The following permissions are required on the databases:
 
 ## Virtual Environment Recommendations
 
-Netwrix always prefers physical machines but fully supports the use of virtual machines.
-This section contains special considerations when leveraging virtualization.
+Netwrix always prefers physical machines but fully supports virtual machines.
+This section contains special considerations for virtual environments.
 
 - VMWare® ESX® – If you use ESX, Netwrix recommends the following specifications:
 
@@ -202,5 +202,5 @@ This section contains special considerations when leveraging virtualization.
 
 - Virtual Storage Consideration
 
-    - In the server requirements, when separate disks are required for the servers, that should
-      translate to separate data stores on the VM host machine.
+    - When the server requirements call for separate disks, use separate data stores on the VM
+      host machine.

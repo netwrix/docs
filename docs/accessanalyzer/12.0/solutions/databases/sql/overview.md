@@ -32,9 +32,9 @@ thread requires a minimum of 2 additional GB of RAM per host. For example, a job
 
 :::note
 The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and doesn't require any configuration; it has been
-preconfigured to work with Access Analyzer and should never be customized through Java. It will not
-conflict with other JDKs or Java Runtimes in the same environment.
+server. The JDK deployed is prepackaged and doesn't require any configuration; it is
+preconfigured to work with Access Analyzer, and you should never customize it through Java. It
+doesn't conflict with other JDKs or Java Runtimes in the same environment.
 :::
 
 
@@ -42,8 +42,8 @@ conflict with other JDKs or Java Runtimes in the same environment.
 
 The Microsoft SQL Server Solution is in the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
 
-The Database Solution license includes all database platforms supported by Access
-Analyzer. Additionally, Sensitive Data Discovery enables the solution to search database content for
+The Database Solution license includes all database platforms that Access Analyzer
+supports. Additionally, Sensitive Data Discovery enables the solution to search database content for
 sensitive data.
 
 ![Microsoft SQL Server Solution](/images/accessanalyzer/12.0/solutions/databases/sql/sqljobgroup.webp)

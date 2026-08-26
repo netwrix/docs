@@ -19,7 +19,7 @@ Access Auditing and Sensitive Data Discovery Auditing support CIFS and NFSv3.
 :::
 
 
-Ports and permissions vary based on the scan mode option selected as well as the target environment.
+Ports and permissions vary based on the selected scan mode option and the target environment.
 
 **Data Collectors**
 
@@ -52,7 +52,7 @@ The following firewall ports are needed:
 
 **Permissions and Ports for FileSystemAccess Data Collector**
 
-- Permissions vary based on the Scan Mode Option selected. See the File System Supported Platforms
+- Permissions vary based on the selected Scan Mode Option. See the File System Supported Platforms
   topic for additional information.
 
 ## Supported Windows Platforms
@@ -112,7 +112,7 @@ See the
 [Hitachi Target Requirements](/docs/accessanalyzer/11.6/requirements/filesystem/filesystems/hitachi/overview.md)
 topic for target environment requirements.
 
-**Nasuni Nasuni Edge Appliances**
+**Nasuni Edge Appliances**
 
 - 8.0+
 
@@ -126,7 +126,7 @@ for target environment requirements.
 - Cluster-Mode 8.2+
 
     :::note
-    The Resiliency feature introduced in ONTAP 9.0 is not supported.
+    Enterprise Auditor doesn't support the Resiliency feature introduced in ONTAP 9.0.
     :::
 
 
