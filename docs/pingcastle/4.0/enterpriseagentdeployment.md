@@ -3,7 +3,7 @@ sidebar_label: Agent deployment
 ---
 # Agent Deployment for PingCastle Enterprise
 
-`PingCastleSchedulerService` handles scheduled scanning for domains it can reach directly. Use agent deployment instead when a security or network boundary prevents that — for example, an isolated or air-gapped domain, or a domain separated from the PingCastle Enterprise server by a firewall the scheduler can't cross. In these cases, run `PingCastle.exe` locally on a server that has access to the target domain, and have it push results directly to PingCastle Enterprise over the API.
+`PingCastleSchedulerService` handles scheduled scanning for domains it can reach directly. Use agent deployment instead when a security or network boundary prevents that — for example, an isolated or air-gapped domain, or a domain that sits behind a firewall the scheduler can't cross. In these cases, run `PingCastle.exe` locally on a server that has access to the target domain, and have it push results directly to PingCastle Enterprise over the API.
 
 ## Program version
 

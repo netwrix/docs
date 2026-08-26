@@ -11,7 +11,7 @@ PingCastle Enterprise exposes a Swagger UI for calling its REST API directly. Us
 
 The Swagger UI loads without requiring a logged-in user, but IIS must allow anonymous access to the site (or at least to the `/swagger` path) for the page to render.
 
-If anonymous authentication is disabled, IIS shows a Windows credential popup before the page loads. This isn't the API's own login prompt — it's IIS requesting a Windows identity.
+If anonymous authentication is disabled, IIS shows a Windows credential popup before the page loads. That popup comes from IIS requesting a Windows identity, not from the API's own login.
 
 To enable anonymous authentication:
 
@@ -112,10 +112,10 @@ Browser developer tools show the raw request and response when Swagger's own dis
 1. Press **F12** (or right-click and select **Inspect**) to open developer tools.
 2. Click the **Network** tab, and tick **Preserve log** if the request needs to survive a page navigation.
 3. Perform the action in Swagger, such as clicking **Execute** on an endpoint.
-4. Find the corresponding request in the list — it's named after the API path, for example `Login`.
+4. Find the corresponding request in the list — its name matches the API path, for example `Login`.
 5. Click the request row and check:
    - **Headers** — confirm the `Authorization` header is present and starts with `Bearer ` for authenticated calls.
-   - **Payload** or **Request** — confirm the JSON body sent matches what you entered.
+   - **Payload** or **Request** — confirm the JSON body Swagger sent matches what you entered.
    - **Response** — read the raw response body, which often contains a more specific error message than the Swagger UI renders, such as `"Agent not found"` or `"Location not provided"`.
    - **Status** — note the HTTP status code: `400` (bad request or invalid input), `401` (authentication problem), `403` (not authorized), or `500` (server error).
 6. Check the **Console** tab for JavaScript errors if the Swagger page itself behaves unexpectedly, such as the **Authorize** dialog not opening.
@@ -287,7 +287,7 @@ Invoke-PcApi -Uri "/api/domains" -Method Get
 
 - A **401** response from `Invoke-WebRequest` or `Invoke-RestMethod` means the same things as [Troubleshoot 401 errors and credential popups](#troubleshoot-401-errors-and-credential-popups): confirm the API key is enabled and the token (`$Global:PingCastle_JWT`) hasn't expired (one-hour lifetime). Call `Connect-PCServer` again to refresh it.
 - If the server uses a self-signed or otherwise untrusted certificate, `Invoke-WebRequest` and `Invoke-RestMethod` fail with a certificate trust error. Resolve this by trusting the certificate — don't disable certificate validation.
-- Use `-Verbose` on `Invoke-PcApi` to print the exact URL being called.
+- Use `-Verbose` on `Invoke-PcApi` to print the exact URL it calls.
 
 ## Related links
 
