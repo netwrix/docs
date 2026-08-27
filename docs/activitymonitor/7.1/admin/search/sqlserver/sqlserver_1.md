@@ -11,9 +11,9 @@ complete according to the size and quantity of the activity log files being sear
 agent. You can
 [Filter](/docs/activitymonitor/7.1/admin/search/overview.md#filter) and
 [Sort](/docs/activitymonitor/7.1/admin/search/overview.md#sort) the
-results using the column headers. Below the Search button is the
+results using the column headers. The
 [Export](/docs/activitymonitor/7.1/admin/search/overview.md#export)
-option.
+option is located below the Search button.
 
 ![SQL Server Search Results](/images/activitymonitor/7.1/admin/search/results/sqlsearchresults.webp)
 

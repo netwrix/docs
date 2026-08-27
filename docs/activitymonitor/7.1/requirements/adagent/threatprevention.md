@@ -18,8 +18,6 @@ Monitor can be configured with outputs for Enterprise Auditor and Threat Manager
 :::
 
 
-Follow these steps to configure this integration.
-
 :::info
 It is a best practice to use the API Server option of the Activity Monitor for
 this integration between Threat Prevention and Enterprise Auditor.
@@ -41,8 +39,8 @@ Threat Manager Configuration** on the menu. The Netwrix Threat Manager Configura
 
 - App Token – Leave this field blank for integration with Activity Monitor
 - Policies – The table displays all policies created in Threat Prevention along with a State icon
-  indicating if the policy is active. Check the **Send** box for the desired policies monitoring the
-  target domain activity.
+  indicating if the policy is active. Check the **Send** box for the policies you want to use for
+  monitoring the target domain activity.
 
 **Step 3 –** Click **Save**.
 

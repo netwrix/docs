@@ -24,8 +24,8 @@ The 7.1 API model consists of the following resources:
 
 **Agent**
 
-- Represents an Activity Monitor Agent. API allows you to view existing agents and their statuses;
-  register, modify or remove agents. There is no way to install, upgrade, or uninstall agents in the
+- Represents an Activity Monitor Agent. Use the API to view existing agents and their statuses,
+  register, modify, or remove agents. There is no way to install, upgrade, or uninstall agents in the
   6.0 API. You can list all the agents or the agents of a **Domain** (i.e. AD-monitoring agents on
   the domain controllers).
 
@@ -62,7 +62,7 @@ DOMAIN\service-account1), protocol (CIFS, NFS), etc.
 
 - File – Information about the actual .TSV, .JSON, and .ZIP files stored on the agent. A file can be
   downloaded.
-- Policy – Represents an Active Directory monitoring policy. The API allows you to create new
+- Policy – Represents an Active Directory monitoring policy. Use the API to create new
   policies, list, modify, and delete existing.
 
 Data is sent and received as JSON objects or JSON Merge Patch for the PATCH requests. Blank fields

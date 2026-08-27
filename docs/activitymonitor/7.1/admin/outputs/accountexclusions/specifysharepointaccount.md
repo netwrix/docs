@@ -12,7 +12,7 @@ The Specify account window is opened from a field where a SharePoint account is 
 
 There are two options for specifying an account:
 
-- SharePoint System Accounts – Check the boxes for the desired system accounts: SHAREPOINT\system,
+- SharePoint System Accounts – Check the boxes for the system accounts you want: SHAREPOINT\system,
   -1, S-1-0-0 (Null SID)
 - Custom – Enter the account in the textbox. Multiple accounts can be added using a semicolon (;).
 

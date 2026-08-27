@@ -13,7 +13,7 @@ The Activity Monitor can be configured to monitor the following:
 - Ability to collect all or specific file activity for specific values or specific combinations of
   values
 
-It provides the ability to feed activity data to SIEM products. The following dashboards have been
+It lets you feed activity data to SIEM products. The following dashboards have been
 specifically created for Activity Monitor event data:
 
 - For IBM® QRadar®, see the
@@ -23,13 +23,13 @@ specifically created for Activity Monitor event data:
   [File Activity Monitor App for Splunk](/docs/activitymonitor/7.1/siem/splunk/overview.md)
   for additional information.
 
-It also provides the ability to feed activity data to other Netwrix products:
+It also lets you feed activity data to other Netwrix products:
 
 - Netwrix Enterprise Auditor
 - Netwrix Threat Prevention
 - Netwrix Threat Manager
 
-Prior to adding a Dell Isilon/PowerScale host to the Activity Monitor, the prerequisites for the
+Before adding a Dell Isilon/PowerScale host to the Activity Monitor, the prerequisites for the
 target environment must be met. See the
 [Dell Isilon/PowerScale Activity Auditing Configuration](/docs/activitymonitor/7.1/requirements/activityagent/nasdeviceconfiguration/isilon-powerscale-aac/isilon-activity.md)
 topic for additional information.
@@ -41,8 +41,6 @@ monitoring the target environment.
 
 
 ## Add Dell Isilon/PowerScale Host
-
-Follow the steps to add a Dell Isilon/PowerScale host to be monitored.
 
 **Step 1 –** Navigate to the Monitored Hosts tab and click Add. The Add New Host window opens.
 
@@ -60,7 +58,7 @@ left blank to collect activity from the Isilon cluster. If desired, add a **Comm
 
 :::note
 All Dell event source types must have the CEE Monitor Service installed on the agent in
-order to collect events. Activity Monitor will detect if the CEE Monitor is not installed and
+order to collect events. Activity Monitor will detect if the CEE Monitor isn't installed and
 display a warning to install the service. If the CEE Monitor service is installed on a remote
 machine, manual configuration is required. See the
 [Dell CEE Options Tab](/docs/activitymonitor/7.1/admin/agents/properties/dellceeoptions.md)
@@ -70,11 +68,11 @@ topic for additional information.
 
 ![Isilon Options page](/images/activitymonitor/7.1/admin/monitoredhosts/add/isilonoptions.webp)
 
-**Step 4 –** On the Isilon Options page, choose whether or not to automatically enable and configure
-auditing on the Isilon cluster. If a manual configuration has been completed, do not enable these
+**Step 4 –** On the Isilon Options page, choose whether to automatically enable and configure
+auditing on the Isilon cluster. If a manual configuration has been completed, don't enable these
 options.
 
-Follow these steps to use this automated option:
+To use this automated option:
 
 - Check the **Enable Protocol Access Auditing in OneFS if it is disabled** box.
 - Enter the User name and User password to connect to the OneFS Platform API.
@@ -92,8 +90,8 @@ Follow these steps to use this automated option:
       All activity for the host is collected and placed in a single activity log file per day.
     - If access zones are selected, only those access zones are monitored and the activity is placed
       in a single activity log file per day.
-        - Use the arrow buttons to move the desired access zones to the **Monitored** box.
-    - (_Optional_) Activity log files can be generated for each access zone. In order to generate
+        - Use the arrow buttons to move the selected access zones to the **Monitored** box.
+    - (_Optional_) Activity log files can be generated for each access zone. to generate
       one activity log file for each access zone, add only one access zone to this configuration of
       the monitored host. Then, add the host again for each access zone to be monitored. When adding
       an Isilon host for each access zone, the Dell device name will be the same for each
@@ -102,7 +100,7 @@ Follow these steps to use this automated option:
         :::note
         Although the Isilon Options page allows multiple access zones to be placed in the
         Monitored box for a single Isilon host, when generating separate activity log files for each
-        access zones, Enterprise Auditor does not support this configuration. Enterprise Auditor
+        access zones, Enterprise Auditor doesn't support this configuration. Enterprise Auditor
         integration requires all access zones to be monitored from a single configuration.
         :::
 
@@ -132,7 +130,7 @@ Click **Next**.
 ![Configure Basic Options](/images/activitymonitor/7.1/admin/monitoredhosts/add/configurebasicoptions.webp)
 
 **Step 7 –** On the Configure Basic Options page, choose which settings to enable. The “Log files”
-are the activity logs created by the activity agent on the proxy host. Select the desired options:
+are the activity logs created by the activity agent on the proxy host. Select the options to enable:
 
 - Report account names – Adds an **Account Name** column in the generated TSV files
 - Add C:\ to the beginning of the reported file paths – Adds ‘C:\” to file paths to be displayed
@@ -151,7 +149,7 @@ are the activity logs created by the activity agent on the proxy host. Select th
       through the UNC Path. If a file is accessed locally, these columns are empty. These columns
       have also been added as Syslog macros.
     - When this option is selected, the user needs to provide credentials in the Auditing tab. If
-      credentials are not provided, the following warning message is displayed:
+      credentials aren't provided, the following warning message is displayed:
         - Credentials are required for this feature. Provide the credentials in the Auditing tab.
 - Report operations with millisecond precision – Changes the timestamps of events being recorded in
   the TSV log file for better ordering of events if multiple events occur within the same second
@@ -195,19 +193,19 @@ Click **Next**.
 **Step 10 –** If Syslog Server is selected on the **Where To Log The Activity** page, the Syslog
 Output page can be configured.
 
-- Syslog server in SERVER[:PORT] format – Type the **Syslog server name** with a SERVER:Port format
+- Syslog server in SERVER[:PORT] format – Enter the **Syslog server name** with a SERVER:Port format
   in the text box.
     - The server name can be short name, fully qualified name (FQDN), or IP Address, as long as the
       organization’s environment can resolve the name format used. The Event stream is the activity
       being monitored according to this configuration for the monitored host.
-- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The drop-down
+- Syslog Protocol – Identify the **Syslog protocol** to be used for the Event stream. The dropdown
   menu includes:
 
     - UDP
     - TCP
     - TLS
 
-    The TCP and TLS protocols add the Message framing drop-down menu. See the
+    The TCP and TLS protocols add the Message framing dropdown menu. See the
     [Syslog Tab](/docs/activitymonitor/7.1/admin/outputs/syslog/syslog.md) topic
     for additional information.
 
@@ -225,7 +223,7 @@ Output page can be configured.
       template for Threat Manager. See the
       [Netwrix Threat Manager Documentation](https://helpcenter.netwrix.com/category/stealthdefend)
       for additional information.
-    - Custom templates can be created. Select the desired template or create a new template by
+    - Custom templates can be created. Select the template you want to use or create a new template by
       modifying an existing template within the Syslog Message Template window. The new message
       template will be named Custom.
 - Add C:\ to the beginning of the reported file paths – Adds ‘C:\” to file paths to be displayed
@@ -244,13 +242,13 @@ Output page can be configured.
       through the UNC Path. If a file is accessed locally, these columns are empty. These columns
       have also been added as Syslog macros.
     - When this option is selected, the user needs to provide credentials in the Auditing tab. If
-      credentials are not provided, the following warning message is displayed:
+      credentials aren't provided, the following warning message is displayed:
         - Credentials are required for this feature. Provide the credentials in the Auditing tab.
 - The Test button – Sends a test message to the Syslog server to check the connection. A green check
   mark or red will determine whether the test message has been sent or failed to send. Messages vary
   by Syslog protocol:
 
-    - UDP – Sends a test message and does not verify connection
+    - UDP – Sends a test message and doesn't verify connection
     - TCP/TLS – Sends test message and verifies connection
     - TLS – Shows error if TLS handshake fails
 
@@ -263,7 +261,7 @@ Click **Finish**.
 ![Activity Monitor with Dell Isilon added](/images/activitymonitor/7.1/admin/monitoredhosts/add/activitymonitoremcisilon.webp)
 
 The added Dell Isilon/PowerScale host is displayed in the monitored hosts table. Once a host has
-been added for monitoring, configure the desired ouptuts. See the
+been added for monitoring, configure the outputs you want to use. See the
 [Output for Monitored Hosts](/docs/activitymonitor/7.1/admin/monitoredhosts/output/output.md)
 topic for additional information.
 
