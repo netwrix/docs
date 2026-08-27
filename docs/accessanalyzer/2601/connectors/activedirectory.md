@@ -49,4 +49,4 @@ Effective permission calculations that rely on a trust relationship between doma
 
 ## Next steps
 
-Once requirements are met, see [Set Up Active Directory Source Group](../gettingstarted/active-directory/set-up-source-group.md) to configure your first scan.
+Once you meet these requirements, see [Set Up Active Directory Source Group](../gettingstarted/active-directory/set-up-source-group.md) to configure your first scan.

@@ -53,8 +53,8 @@ Review the following for additional information:
 - [VMware](/docs/auditor/10.9/admin/monitoringplans/vmware/overview.md)
 - [Windows File Share](fileservers/scope.md#windows-file-share)
 
-Also, you can add a data source to the monitoring plan, or remove a data source that is no longer
-needed.
+Also, you can add a data source to the monitoring plan, or remove a data source you no longer
+need.
 
 ## Add a Data Source to an Existing Plan
 
@@ -73,8 +73,8 @@ To add a data source to an existing plan:
 ## Add Items for Monitoring
 
 After you complete the monitoring plan wizard and specify data sources, add items for monitoring. You
-can add as many items for a data source as you want. In this case, all items will share settings you
-specified for this data source.
+can add as many items for a data source as you want. All items share the settings you specified for
+this data source.
 
 Each data source has a dedicated item type. Netwrix Auditor automatically suggests item types
 associated with your data source.
