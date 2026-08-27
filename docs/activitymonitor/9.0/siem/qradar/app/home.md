@@ -10,11 +10,10 @@ The File System Activity Home dashboard contains the following cards:
 
 ![Home Dashboard for Netwrix Activity Monitor App for QRadar](/images/activitymonitor/9.0/siem/qradar/dashboard/homedashboard.webp)
 
-- Active Users – Number of distinct users recorded performing any type of file activity to/from any
+- Active Users – Number of distinct users performing any type of file activity to/from any
   host over the specified time interval
-- Active Servers – Number of distinct servers accessed (destination IP Addresses) with any type of
-  file activity recorded over the specified time interval
-- Open Offenses – Number of ransomware offenses detected within QRadar from the file activity event
+- Active Servers – Number of distinct servers with file activity (destination IP Addresses) over the specified time interval
+- Open Offenses – Number of ransomware offenses that QRadar finds from the file activity event
   data
 
     - The value for this card is a hyperlink to the [Ransomware Dashboard](/docs/activitymonitor/9.0/siem/qradar/app/ransomware.md).
@@ -32,5 +31,5 @@ The File System Activity Home dashboard contains the following cards:
 
 The time interval is identified in the upper-right corner with the Start and End boxes. This is set
 by default to the “past day,” or 24 hours. To search within a different interval, either manually
-type the desired date and time or use the calendar buttons to set the desired date and time
+enter the date and time you want or use the calendar buttons to set the date and time you want
 interval. Then click Search to refresh the card data.

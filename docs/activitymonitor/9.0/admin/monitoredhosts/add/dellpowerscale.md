@@ -58,7 +58,7 @@ left blank to collect activity from the Isilon cluster. If desired, add a **Comm
 **Next**.
 
 :::note
-All Dell event source types must have the CEE Monitor Service installed on the agent in
+All Dell event source types must have the CEE (Common Event Engine) Monitor Service installed on the agent in
 order to collect events. Activity Monitor will detect if the CEE Monitor isn't installed and
 display a warning to install the service. If the CEE Monitor service is installed on a remote
 machine, manual configuration is required. See the
@@ -262,8 +262,7 @@ Click **Finish**.
 
 ![Activity Monitor with Dell Isilon added](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitoremcisilon.webp)
 
-The added Dell Isilon/PowerScale host is displayed in the monitored hosts/services table. Once a host has
-been added for monitoring, configure the outputs you want. See the
+The monitored hosts/services table displays the added Dell Isilon/PowerScale host. After you add a host for monitoring, configure the outputs you want. See the
 [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic for additional information.
 
 ## Host Properties for Dell Isilon/PowerScale

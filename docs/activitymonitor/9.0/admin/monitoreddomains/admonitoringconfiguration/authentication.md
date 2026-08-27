@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Authentication Tab
 
-The Authentication tab on a domain’s Configuration window allows users to configure communication
+The Authentication tab on a domain’s Configuration window lets you configure communication
 with servers.
 
 ![AD Monitoring Configuration - Authentication Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/operationstab.webp)
@@ -27,7 +27,7 @@ sub-tabs:
 
 The Forged Privilege Account Certificate (PAC) analytic type identifies Kerberos tickets with a
 modified PAC. By manipulating the PAC, a field in the Kerberos ticket that contains a user’s
-authorization data (in Active Directory this is group membership), an attacker is able to grant
+authorization data (in Active Directory this is group membership), an attacker can grant
 themselves additional elevated privileges.
 
 ![AD Monitoring Configuration - Authentication Tab](/images/activitymonitor/9.0/admin/monitoreddomains/admonitoringconfiguration/forgedpac.webp)
@@ -36,7 +36,7 @@ Double-click text box to enter specific **RIDs**. Click OK. The AD agent then co
 PAC and user’s access token for a mismatch to trigger the incident.
 
 :::note
-The Forged PAC analytic is monitoring for when the user is not a member of a group that is
+The Forged PAC analytic is monitoring for when the user isn't a member of a group that is
 listed in the PAC section of the user’s Kerberos ticket. This analytic can be scoped to monitor
 specific groups. To reduce the number of false positives, the AD agent only checks for a mismatch of
 sensitive groups as selected in the policy Settings tab.
@@ -91,7 +91,7 @@ Underneath each section, there is an additional Address detail:
 
 - Value – Must be provided in IP address format
 
-Double-click the text box beneath **Value** to enter the desired IP Addresses to include or exclude.
+Double-click the text box beneath **Value** to enter the IP Addresses you want to include or exclude.
 Press the Enter or Tab key to add another text box.
 
 ## IP Addresses (To)
@@ -106,7 +106,7 @@ Underneath each section, there is an additional Address detail:
 
 Value – Must be provided in IP address format
 
-Double-click the text box beneath **Value** to enter the desired IP Addresses to include or exclude.
+Double-click the text box beneath **Value** to enter the IP Addresses you want to include or exclude.
 Press the Enter or Tab key to add another text box.
 
 ## Operations
@@ -122,7 +122,7 @@ failed events, or both:
 - Failure – Monitors failed events
 
 The **Monitor These Protocols** section is where authentication protocols to be monitored are
-selected for the policy. Check the box to select the authentication protocol(s) to be monitored:
+selected for the policy. Check the box to select the authentication protocols to be monitored:
 
 - All
 - Kerberos
@@ -140,7 +140,7 @@ Local Interactive and/or Remote Interactive logins to the Domain Controllers:
 - All - Report all authentication activity approved by the Domain Controller which includes any
   local or RDP direct connections to the DC.
 
-    - Local - Report only local login to the Domain Controller - ignore all else
+    - Local - Report only local log in to the Domain Controller - ignore all else
     - Remote - Report only remote/RDP access to the Domain Controller - ignore all else
 
 - Exclude failed authentications with previously valid (N-2) password – If enabled, allows to ignore
@@ -157,7 +157,7 @@ The Servers option targets servers to be included or excluded when filtering for
 In both sections, servers must be specified in the form 'DOMAIN\SERVER', where DOMAIN is NetBIOS
 Domain name and SERVER is NetBIOS server name.
 
-Double-click the text box beneath Name to enter the desired servers to include or exclude. Press the
+Double-click the text box beneath Name to enter the servers you want to include or exclude. Press the
 Enter or Tab key to add another text box.
 
 ## Users
@@ -184,7 +184,7 @@ The following details appear beneath both sections:
   e.g. 'CN=Users,DC=Domain,DC=com'. However, for objects with 'sidType' type, it must be in the form
   of WellKnownSidType Enum, e.g. 'AnonymousSid' or 'LocalSid'.
 
-Double-click the text box beneath Distinguished Name to enter the desired group types to include or
-exclude. Double-click the text box beneath **Type** to enter the desired AD object to include or
+Double-click the text box beneath Distinguished Name to enter the group types you want to include or
+exclude. Double-click the text box beneath **Type** to enter the AD object you want to include or
 exclude. Press the Enter or Tab key to add another text box. Check the box under **Subtree** to
 include or exclude child contexts.

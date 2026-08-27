@@ -13,13 +13,13 @@ Netwrix Activity Monitor, which in turn creates the activity log files that Acce
 collects.
 
 :::note
-Threat Prevention can only be configured to send event data to one Netwrix application,
+You can configure Threat Prevention to send event data to only one Netwrix application,
 either Netwrix Activity Monitor or Netwrix Threat Manager but not both. However, the Activity
 Monitor can be configured with outputs for Access Analyzer and Threat Manager
 :::
 
 
-Follow these steps to configure this integration.
+Configure this integration.
 
 :::info
 It is a best practice to use the API Server option of the Activity Monitor for
@@ -42,7 +42,7 @@ Threat Manager Configuration** on the menu. The Netwrix Threat Manager Configura
 
 - App Token – Leave this field blank for integration with Activity Monitor
 - Policies – The table displays all policies created in Threat Prevention along with a State icon
-  indicating if the policy is active. Check the **Send** box for the desired policies monitoring the
+  indicating if the policy is active. Check the **Send** box for the policies you want monitoring the
   target domain activity.
 
 **Step 3 –** Click **Save**.

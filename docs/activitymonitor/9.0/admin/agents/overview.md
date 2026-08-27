@@ -12,9 +12,9 @@ available until an agent is installed.
 ![Image of Agents Home Page](/images/activitymonitor/9.0/admin/agents/agentaddedfinalimage.webp)
 
 The Agents tab is comprised of a button bar, a table of servers hosting activity agents, and an
-Agent Messages box. The button bar allows users to take the following actions:
+Agent Messages box. Users can take the following actions from the button bar:
 
-- Add Agent – Opens the Add New Agent(s) window to deploy the activity/AD agent to a single server
+- Add Agent – Opens the Add New Agents window to deploy the activity/AD agent to a single server
   or to multiple servers at the same time. The following sections provide additional information:
 
     - [Single Activity Agent Deployment](/docs/activitymonitor/9.0/admin/agents/single.md)
@@ -37,7 +37,7 @@ Agent Messages box. The button bar allows users to take the following actions:
 
 - Install – Deploy or upgrade an activity agent to the selected host
 - Upgrade – [When Agent Status is Outdated] Replaces outdated activity agent with current version
-- Update AD Module Installer – Allows you to select the newer AD Module installer. A confirmation
+- Update AD Module Installer – Select a newer AD Module installer. A confirmation
   window then opens and identifies the new installer version. See the
   [Update AD Module Installer](/docs/activitymonitor/9.0/install/upgrade/updateadagentinstaller.md) topic for additional
   information.
@@ -46,7 +46,7 @@ Agent Messages box. The button bar allows users to take the following actions:
 The table of servers hosting activity agents provides the following information:
 
 - Server Name – Name or IP Address of the server hosting an activity agent
-- Status – Status of the deployed activity agent(s)
+- Status – Status of the deployed activity agents
 
     :::note
     If the AD agent has been deployed, a status of “outdated” could apply to either the

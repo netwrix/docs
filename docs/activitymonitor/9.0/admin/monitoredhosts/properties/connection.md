@@ -6,9 +6,7 @@ sidebar_position: 20
 
 # Connection Tab
 
-Once a host is added to the monitored hosts/services table, the configuration settings are edited through the
-tabs in the host’s Properties window. The Connection tab on a host’s Properties window is specific
-to Microsoft Entra ID (formerly Azure AD), Exchange Online, and SharePoint Online hosts.
+After you add a host to the monitored hosts/services table, edit the configuration settings through the tabs in the host’s Properties window. The Connection tab on a host’s Properties window is specific to Microsoft Entra ID (formerly Azure AD), Exchange Online, and SharePoint Online hosts.
 
 ![Conneciton Tab](/images/activitymonitor/9.0/admin/monitoredhosts/properties/azure.webp)
 

@@ -56,7 +56,7 @@ window opens.
 Name** for the device. If desired, add a **Comment**. Click **Next**.
 
 :::note
-All Dell event source types must have the CEE Monitor Service installed on the agent in
+All Dell event source types must have the CEE (Common Event Engine) Monitor Service installed on the agent in
 order to collect events. Activity Monitor will detect if the CEE Monitor isn't installed and
 display a warning to install the service. If the CEE Monitor service is installed on a remote
 machine, manual configuration is required. See the
@@ -219,8 +219,7 @@ Click **Finish**.
 
 ![Activity Monitor with Dell Unity host added](/images/activitymonitor/9.0/admin/monitoredhosts/add/activitymonitoremcunity.webp)
 
-The added Dell Unity host is displayed in the monitored hosts/service table. Once a host has been added for
-monitoring, configure the outputs you want. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
+The monitored hosts/service table displays the added Dell Unity host. After you add a host for monitoring, configure the outputs you want. See the [Output for Monitored Hosts](/docs/activitymonitor/9.0/admin/monitoredhosts/output/output.md) topic
 for additional information.
 
 ## Host Properties for Dell Unity
