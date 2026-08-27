@@ -20,7 +20,7 @@ The **Monitored Computers** tab in a Windows Server monitoring plan gives you a 
 
 When you add computers to a monitoring plan using an IP range or an AD container, Netwrix Auditor resolves and tracks each host individually. The Monitored Computers tab lists all resolved computers with their current health status, so you can immediately see which hosts are collecting data normally and which ones require your attention.
 
-**NOTE:** Computers excluded from monitoring via the **Exclude these objects** setting in the item settings are not displayed in the Monitored Computers tab.
+**NOTE:** Computers excluded from monitoring via the **Exclude these objects** setting in the item settings aren't displayed in the Monitored Computers tab.
 
 ![Monitored Computers tab showing a healthy computer with detail panel](/images/auditor/10.9/admin/monitoringplans/windowsserver/monitored-computers-healthy.webp)
 
@@ -32,7 +32,7 @@ The grid displays the following columns for each computer:
 |---|---|
 | **Name** | The hostname or IP address of the monitored computer. |
 | **Item** | The source that included this computer in the plan — for example, an IP address, an IP range, or an AD container (OU). |
-| **Status** | A consolidated health indicator for the computer. See [Status Values](#status-values) below. |
+| **Status** | A consolidated health indicator for the computer. See [Status Values](#status-values). |
 | **Last Activity Time** | The timestamp of the most recent data collection event for this computer. |
 
 ### Status Values
@@ -68,7 +68,7 @@ Search and filters can be combined. To remove all active filters at once, click 
 
 ## Refreshing the List
 
-The grid does not update automatically. When new data becomes available, a notification bar appears above the grid:
+The grid doesn't update automatically. When new data becomes available, a notification bar appears above the grid:
 
 > *New data is available. Click Refresh to update the list.*
 

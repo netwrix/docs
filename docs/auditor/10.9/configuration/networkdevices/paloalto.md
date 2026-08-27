@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -20,8 +20,8 @@ knowledge base article for additional information.
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
 - Automatically through a monitoring plan – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary.
+  automatically configure audit in the target environment, Auditor checks your current audit
+  settings on each data collection and adjusts them if necessary.
 - Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
   reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
   configure them manually:
@@ -32,7 +32,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
 To configure your PaloAlto devices, create a Syslog server profile and assign it to the log settings
 for each log type.
 
-Follow the steps to configure a Syslog server profile.
+To configure a Syslog server profile:
 
 **Step 1 –** Connect to your PaloAlto device: launch an Internet browser and enter the IP address of
 the firewall in the URL field (https://`<IP address>`).
@@ -52,7 +52,7 @@ the firewall in the URL field (https://`<IP address>`).
 | Format        | Select IETF.                                                                                   |
 | Facility      | Netwrix recommends using default values.                                                       |
 
-Follow the steps to configure syslog forwarding.
+To configure syslog forwarding:
 
 **Step 1 –** In the Web Interface, navigate to **Device** > **Log Settings**.
 

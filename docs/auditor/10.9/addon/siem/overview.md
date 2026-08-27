@@ -15,11 +15,11 @@ data collected by the SIEM solution.
 The add-on enriches your SIEM data with actionable context in human-readable format, including the
 before and after values for every change and data access attempt, both failed and successful.
 Aggregating data into a single audit trail simplifies analysis, makes your SIEM more cost effective,
-and helps you keep tabs on your IT infrastructure.
+and helps you track your IT infrastructure.
 
 Implemented as a PowerShell script, this add-on facilitates the audit data transition from Netwrix
-Auditor to the SIEM solution. All you have to do is provide connection details and schedule the
-script for execution.
+Auditor to the SIEM solution. To use it, provide connection details and schedule the script for
+execution.
 
 On a high level, the add-on works as follows:
 
@@ -50,12 +50,12 @@ follows:
 
 | On...                   | Ensure that...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The Auditor Server side | - Auditor version is **9.96** or 10. - The alert response action settings in Auditor Server are configured as follows: - **Take action when alert occurs** is switched **ON** - **Run** field contains the path to Windows PowerShell: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe` - **With parameters** field contains the required parameters, including the path to **Netwrix_Auditor_Alerts_to_Event_Log_Add-on.ps1** file. Example: `-File C:\Netwrix_Auditor_Add-on_for_SIEM\Netwrix_Auditor_Alerts_to_Event_Log_Add-on.ps1 -NetwrixPathToCsvData` For details on script parameters, see the section below. - **Write data to CSV file** option is selected - **Command line preview** looks like this: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File C:\Netwrix_Auditor_Add-on_for_SIEM\Netwrix_Auditor_Alerts_to_Event_Log_Add-on.ps1 -NetwrixPathToCsvData {CsvFile}` - By default, the executable file will be launched under the _LocalSystem_ account. If you want to use another account, make sure it has **Log on as batch job** privilege on Netwrix Auditor server. You may want to perform the test run after configuring the script as the alert response action. If so, consider that current user account (logged on to Auditor client) must have local **Administrator** privileges on AuditorServer where the executable file is located. |
+| The Auditor Server side | - Auditor version is **9.96** or 10. - The alert response action settings in Auditor Server are configured as follows: - **Take action when alert occurs** is switched **ON** - **Run** field contains the path to Windows PowerShell: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe` - **With parameters** field contains the required parameters, including the path to **Netwrix_Auditor_Alerts_to_Event_Log_Add-on.ps1** file. Example: `-File C:\Netwrix_Auditor_Add-on_for_SIEM\Netwrix_Auditor_Alerts_to_Event_Log_Add-on.ps1 -NetwrixPathToCsvData` For details on script parameters, see the section below. - **Write data to CSV file** option is selected - **Command line preview** looks like this: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File C:\Netwrix_Auditor_Add-on_for_SIEM\Netwrix_Auditor_Alerts_to_Event_Log_Add-on.ps1 -NetwrixPathToCsvData {CsvFile}` - By default, the executable file will be launched under the _LocalSystem_ account. If you want to use another account, ensure it has **Log on as batch job** privilege on Netwrix Auditor server. You may want to perform the test run after configuring the script as the alert response action. If so, consider that current user account (logged on to Auditor client) must have local **Administrator** privileges on AuditorServer where the executable file is located. |
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
-leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.
+Ensure to check your product version, and then review and update your add-ons and scripts that use
+the Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.
 
 ## Activity Records to Event Log Add-on
 
@@ -77,7 +77,7 @@ This add-on works as response action to the alert, as follows:
 
 1. The administrator enables and configured response action for selected alert, as described in the
    following topic:
-   [Configure a Response Action for Alert](/docs/auditor/10.9/admin/alertsettings/responseaction.md). Make sure
+   [Configure a Response Action for Alert](/docs/auditor/10.9/admin/alertsettings/responseaction.md). Ensure
    to provide correct path to the script file and to select the Write data to CSV file option.
 2. When the alert is triggered, the script starts - it retrieves audit data (activity record fields)
    from the CSV file and processes it into log events. Each event contains the user account, action,

@@ -10,7 +10,7 @@ You can fine-tune Netwrix Auditor by specifying data that you want to exclude fr
 monitoring scope. To do it, edit the omitobjlist_gp.txt, omitproplist_gp.txt and omituserlist_gp.txt
 files.
 
-Follow the steps to exclude data from the Group Policy monitoring scope:
+To exclude data from the Group Policy monitoring scope, complete the following steps:
 
 **Step 1 –** Navigate to the _%Netwrix Auditor installation folder%\Active Directory Auditing_
 folder.

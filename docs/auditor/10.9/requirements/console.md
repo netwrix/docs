@@ -12,7 +12,7 @@ the resources required for Netwrix Auditor deployment.
 The actual hardware requirements will depend on the number of activities collected per day in
 addition to the number of files and folders monitored.
 
-**CAUTION:** To keep your systems safe, Auditor should not be exposed to inbound access from the
+**CAUTION:** To keep your systems safe, Auditor shouldn't be exposed to inbound access from the
 internet.
 
 ## Full Installation
@@ -35,11 +35,11 @@ virtualization platform, in particular:
 
 Auditor supports only Windows OS versions listed in the [Software Requirements](/docs/auditor/10.9/requirements/software.md) topic.
 
-Netwrix Auditor and SQL Server instance will be deployed on different servers.
+Deploy Netwrix Auditor and the SQL Server instance on different servers.
 
-Requirements below apply to Netwrix Auditor server.
+The following requirements apply to Netwrix Auditor server.
 
-| Hardware component | Evaluation, PoC or starter environment | Regular environment (up to 1m ARs\*/day) | Large environment (1-10m ARs\*/day)       | XLarge environment (10m ARs\*/day or more)                       |
+| Hardware component | Evaluation, PoC, or starter environment | Regular environment (up to 1m ARs\*/day) | Large environment (1-10m ARs\*/day)       | XLarge environment (10m ARs\*/day or more)                       |
 | ------------------ | -------------------------------------- | ---------------------------------------- | ----------------------------------------- | ---------------------------------------------------------------- |
 | CPUs               | 2 cores                                | 4 CPUs                                   | 8 CPUs                                    | 16 CPUs                                                          |
 | RAM                | 8 GB                                   | min 8 GB                                 | min 16 GB                                 | 64 GB                                                            |
@@ -58,9 +58,9 @@ details, see:
 - [Working Folder](/docs/auditor/10.9/requirements/workingfolder.md)
 
 Netwrix Auditor informs you if you are running out of space on a system disk where the Long-Term
-Archive is stored by default. You will see related events in the Health log once the free disk space
+Archive is stored by default. You will see related events in the Health log when the free disk space
 starts approaching the minimum level. When the free disk space is less than 3 GB, the Netwrix
-services responsible for audit data collection will be stopped.
+services responsible for audit data collection stop.
 
 For detailed information about hardware requirements for a standalone SQL Server, refer to the
 following Microsoft article:
@@ -81,15 +81,15 @@ files or objects in the system. These requirements will add up to the requiremen
 | RAM (Activity Records only)              | 0.125 GB RAM        | 0.625 GB RAM        |
 | RAM (Activity Records and State-in-Time) | 0.5 GB RAM          | 2.5 GB RAM          |
 
-If for example you are monitoring both Active Directory, File Servers, and/or SharePoint Online Data Sources, you calculate
-using the requirements for AD, and then add the requirements for your File Servers and/or SharePoint Online.
+For example, if you are monitoring Active Directory, File Servers, and SharePoint Online data sources, calculate
+using the requirements for AD, then add the requirements for your File Servers and SharePoint Online.
 
 For example, you have a large Active Directory environment which requires 8 cores and 16 GB RAM. Add
 the requirements for 5 million files which are 1 CPU and 2.5 GB RAM. Therefore, you will need 9 CPUs
 and 18.5 GB RAM.
 
-If you need assistance calculating the number of files you have and already using Netwrix Auditor,
-this information is displayed in the Environment Stats located on the Home Screen.
+If you already use Netwrix Auditor and need help calculating the number of files you have, find this
+information in the Environment Stats on the Home screen.
 
 If you have not already started using Netwrix Auditor, you can download the Resource Estimation Tool
 by clicking
@@ -97,8 +97,8 @@ by clicking
 
 ## Client Installation
 
-The client installation includes only Netwrix Auditor client console that enables you to connect to
-the Netwrix Auditor Server installed remotely.
+The client installation includes only the Netwrix Auditor client console, which connects to a
+remotely installed Netwrix Auditor Server.
 
 Virtual deployment is recommended.
 

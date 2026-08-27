@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -20,8 +20,8 @@ knowledge base article for additional information.
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
 - Automatically through a monitoring plan – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary.
+  automatically configure audit in the target environment, Auditor checks your current audit
+  settings on each data collection and adjusts them if necessary.
 - Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
   reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
   configure them manually:
@@ -33,7 +33,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
         - The `logging host` parameter is set to the host address of the audited CiscoASA device.
           And UDP port (for, example 514) is used for sending messages.
 
-            **NOTE:** Do not select the EMBLEM format logging for the syslog server option.
+            **NOTE:** Don't select the EMBLEM format logging for the syslog server option.
 
         - The `logging timestamp` option enabled.
         - The `logging trap` option is selected from 1 to 6 inclusive.
@@ -53,12 +53,12 @@ To configure your Cisco ASA devices, do the following:
     hostname(config)# logging enable
 
 4. Set the IP address of the computer that hosts Netwrix Auditor Server as the `logging host`
-   parameter. And make sure that the UDP port is used for sending syslog messages (e.g., 514 UDP
+   parameter. And ensure that the UDP port is used for sending syslog messages (e.g., 514 UDP
    port). For example:
 
     hostname(config)# logging host `<Netwrix Auditor server IP address>`
 
-    Do not select the EMBLEM format logging for the syslog server option.
+    Don't select the EMBLEM format logging for the syslog server option.
 
 5. Enable the `logging timestamp` option. For example:
 

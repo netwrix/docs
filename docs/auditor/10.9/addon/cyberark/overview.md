@@ -7,7 +7,7 @@ sidebar_position: 80
 # CyberArk Privileged Access Security
 
 Netwrix Auditor is a visibility platform for user behavior analysis and risk mitigation that enables
-control over changes, configurations and access in hybrid IT environments to protect data regardless
+control over changes, configurations, and access in hybrid IT environments to protect data regardless
 of its location. The platform provides security analytics to detect anomalies in user behavior and
 investigate threat patterns before a data breach occurs.
 
@@ -16,8 +16,8 @@ and SSH Keys. It enables organizations to manage and monitor all activities asso
 privileged identities, for example, Windows server administrator, root on a UNIX server, etc. A
 featured set of the Privileged Access Security tools includes, in particular:
 
-- **Privileged Session Manager** - a tool that enables users to securely connect to remote targets
-  with a standard remote desktop client application, providing isolated sessions.
+- **Privileged Session Manager** - a tool for securely connecting to remote targets with a standard
+  remote desktop client application, providing isolated sessions.
 - **Enterprise Password Vault** – a tool for storage and centralized management of the privileged
   accounts; it supports automated changes and logging of the activities associated with all types of
   privileged passwords and SSH Keys. This tool also includes Central Policy Manager service.
@@ -44,16 +44,15 @@ works as follows:
 1. An IT administrator configures Integration API settings to enable data collection and storage to
    the Audit Database for further reporting, search, etc.
 
-    It is recommended to create a dedicated monitoring plan in Auditor and add a dedicated item of
-    **Integration** type to it — then you will be able to filter data in reports and search results
-    by monitoring plan/item name.
+    Create a dedicated monitoring plan in Auditor and add a dedicated item of **Integration** type
+    to it. This lets you filter data in reports and search results by monitoring plan or item name.
 
 2. On the CyberArk server, the administrator opens the **dbparam.ini** file and specifies the
    parameters for syslog message forwarding, including add-on installation server settings, the IDs
    of events to be monitored, etc.
 
     See the [Monitored Events](/docs/auditor/10.9/addon/cyberark/monitoredevents.md) topic for additional information on the events
-    supported for monitoring out of the box.
+    supported for monitoring by default.
 
 3. On the add-on installation server, the administrator runs the installation file and configures
    the Add-On parameters in the configuration wizard.
@@ -83,8 +82,8 @@ follows:
 
 | Where                                                                          | Prerequisite to check                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| The Auditor Server side                                                        | - The Integration API and Audit Database settings are configured in Auditor Server settings. See the [Prerequisites](/docs/auditor/10.9/api/prerequisites.md) and [Audit Database](/docs/auditor/10.9/admin/settings/auditdatabase.md) topics for additional information. - The **TCP 9699** port must be open on Windows firewall for inbound connections. - User account under which data will be written to the Audit Database requires the **Contributor** role in Auditor. See the [Role-Based Access and Delegation](/docs/auditor/10.9/admin/monitoringplans/delegation.md) for additional information. Alternatively, you can grant it the **Global administrator** role, or add that account to the **Netwrix Auditor Administrators** group. |
-| The machine where the Add-On will be installed (Auditor Server is recommended) | - The **UDP 514** port must be open on Windows firewall for inbound connections. If you are using Netwrix Auditor for Network Devices, this port may be already in use, and you should provide another one. Another option is to install the add-on and Auditor Server on different machines. - .Net Framework 4.7.2 and above is installed. Review the following Microsoft technical article for additional information on how to install .Net Framework 4.7.2: [Microsoft .NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).                                    |
+| The Auditor Server side                                                        | - The Integration API and Audit Database settings are configured in Auditor Server settings. See the [Prerequisites](/docs/auditor/10.9/api/prerequisites.md) and [Audit Database](/docs/auditor/10.9/admin/settings/auditdatabase.md) topics for additional information. - The **TCP 9699** port must be open on Windows firewall for inbound connections. - The user account that writes data to the Audit Database requires the **Contributor** role in Auditor. See the [Role-Based Access and Delegation](/docs/auditor/10.9/admin/monitoringplans/delegation.md) for additional information. Alternatively, you can grant it the **Global administrator** role, or add that account to the **Netwrix Auditor Administrators** group. |
+| The machine where you install the Add-On (Auditor Server is recommended) | - The **UDP 514** port must be open on Windows firewall for inbound connections. If you are using Netwrix Auditor for Network Devices, this port may be already in use, and you should provide another one. Another option is to install the add-on and Auditor Server on different machines. - .Net Framework 4.7.2 and above is installed. Review the following Microsoft technical article for additional information on how to install .Net Framework 4.7.2: [Microsoft .NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).                                    |
 | CyberArk PAS                                                                   | Version 10.10.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ### Accounts and Rights

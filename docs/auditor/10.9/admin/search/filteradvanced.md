@@ -6,10 +6,10 @@ sidebar_position: 20
 
 # Use Filters in Advanced Mode
 
-Netwrix Auditor provides an advanced set of filters and match type operators that enable you to
-customize your searches even more precisely.
+Netwrix Auditor provides an advanced set of filters and match type operators to customize your
+searches even more precisely.
 
-Switch to Advanced mode to review your current search in details and modify it if necessary. Click
+Switch to Advanced mode to review your current search in detail and modify it if necessary. Click
 Add to add a new filter to your search.
 
 Review the following for additional information:
@@ -19,9 +19,9 @@ Review the following for additional information:
 
 ## Apply Additional Filters
 
-Expand the Filter list to find additional filters or filter values. The most commonly used filters
-are described in [Use Filters in Simple Mode](/docs/auditor/10.9/admin/search/filtersimple.md). Review the following for additional
-information:
+Expand the Filter list to find additional filters or filter values.
+[Use Filters in Simple Mode](/docs/auditor/10.9/admin/search/filtersimple.md) describes the most
+commonly used filters. Review the following for additional information:
 
 | Filter           | Description                                                                                                                                                                                                                                                                                                                     | Example                                                                                                                                                                                                                                                                                                                                                                                  |
 |------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -38,32 +38,32 @@ information:
 
 ## Search Conditions
 
-When you apply filters at search, you can specify operators that should be used as conditions for
-data you want to retrieve and compare with the certain filter value. A condition can be, for
+When you apply filters at search, you can specify operators to use as conditions for data you want
+to retrieve and compare with a certain filter value. A condition can be, for
 example, Contains, Starts with, and so on.
 
 ![advancedfilters_thumb_0_0](/images/auditor/10.9/admin/search/advancedfilters_thumb_0_0.webp)
 
-The following operators can be used to specify search conditions:
+Use the following operators to specify search conditions:
 
 | Operator         | Description                                                                                                                                                                                                                                  | Example                                                                                                                                                                                   |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Equals           | This operator shows all entries with the exact value specified. Make sure to provide a full object name or path. To apply this operator when adding filters in the Simple mode, provide a value in quotation marks (e.g., _"Domain1\John"_). | Use this operator if you want to get precise results, e.g., _\\FS\Share\NewPolicy.docx_.                                                                                                  |
+| Equals           | This operator shows all entries with the exact value specified. Ensure you provide a full object name or path. To apply this operator when adding filters in the Simple mode, provide a value in quotation marks (e.g., _"Domain1\John"_). | Use this operator if you want to get precise results, e.g., _\\FS\Share\NewPolicy.docx_.                                                                                                  |
 | Not equal to     | This operator shows all entries except those with the exact value specified. In the Search field in the Simple mode, this operator appears as not, e.g., Who not for the Who filter.                                                         | If you set the Who filter to not equal to _Domain1\John_, you will exclude the exact user specified and find all changes performed by other users, e.g., _Domain1\Johnson, Domain2\John_. |
 | Starts with      | This operator shows all entries that start with the specified value.                                                                                                                                                                         | If you set the Who filter to starts with _Domain1\John_, you will find all changes performed by _Domain1\John_, _Domain1\Johnson_, and _Domain1\Johnny_.                                  |
 | Ends with        | This operator shows all entries that end with the exact specified value.                                                                                                                                                                     | If you set the Who filter to ends with _John_, you will find all changes performed by _Domain1\John_, _Domain2\Dr.John_, _Domain3\John_.                                                  |
 | Contains         | This operator shows all entries that contain a value specified in the filter.                                                                                                                                                                | If you set the Who filter to contains _John_, you will get the following results: _Domain1\John_, _Domain1\Johnson_, _Domain2\Johnny_, _John@domain.com_.                                 |
-| Does not contain | This operator shows all entries except those that contain the specified value. In the Search field in the Simple mode, this operator appears as not, e.g., Who not for the Who filter.                                                       | If you set the Who filter to does not contain _John_, you will exclude the following users: _Domain1\John_, _Domain2\Johnson_, and _Johnny@domain.com_.                                   |
-| In group         | This operator relates to the Who filter. It instructs Netwrix Auditor to show only data for the accounts included in the specified group.                                                                                                    | If you set the In group condition for Who filter to _Domain\Administrators_, only the data for the accounts included in that group will be displayed.                                     |
-| Not in group     | This operator relates to the Who filter. It instructs Netwrix Auditor to show only data for the accounts not included in the specified group.                                                                                                | If you set the Not in group condition for Who filter to _Domain\Administrators_, only the data for the accounts not included in that group will be displayed.                             |
+| Doesn't contain | This operator shows all entries except those that contain the specified value. In the Search field in the Simple mode, this operator appears as not, e.g., Who not for the Who filter.                                                       | If you set the Who filter to doesn't contain _John_, you will exclude the following users: _Domain1\John_, _Domain2\Johnson_, and _Johnny@domain.com_.                                   |
+| In group         | This operator relates to the Who filter. It instructs Netwrix Auditor to show only data for the accounts included in the specified group.                                                                                                    | If you set the In group condition for Who filter to _Domain\Administrators_, Netwrix Auditor displays only the data for the accounts included in that group.                                     |
+| Not in group     | This operator relates to the Who filter. It instructs Netwrix Auditor to show only data for the accounts not included in the specified group.                                                                                                | If you set the Not in group condition for Who filter to _Domain\Administrators_, Netwrix Auditor displays only the data for the accounts not included in that group.                             |
 
 
-To modify conditions for the selected filters, make sure you have switched to the Advanced search
+To modify conditions for the selected filters, ensure you have switched to the Advanced search
 mode.
 
 ![advanced_thumb_0_0](/images/auditor/10.9/admin/search/advanced_thumb_0_0.webp)
 
-The image below represents the same search filters as they are shown in the Search field in the
-Simple mode.
+The following image shows the same search filters as they appear in the Search field in Simple
+mode.
 
 ![advancedexample_thumb_0_0](/images/auditor/10.9/admin/search/advancedexample_thumb_0_0.webp)

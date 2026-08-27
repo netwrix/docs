@@ -24,15 +24,15 @@ the following data sources:
 This workflow assumes you already have Netwrix Auditor installed with configured monitoring plans
 for a supported data source.
 
-**NOTE:** Access Reviews is a separately licensed product and is not included with Netwrix Auditor.
-Make sure that you have the Access Reviews license enabled in Auditor.
+**NOTE:** Access Reviews is a separately licensed product and isn't included with Netwrix Auditor.
+ensure that you have the Access Reviews license enabled in Auditor.
 
 See the [Licenses](/docs/auditor/10.9/admin/settings/licenses.md) topic for additional information.
 
 _Remember,_ there is one single Access Review license for all data sources that can send data to the
 application.
 
-Follow the steps to use Netwrix Auditor Access Reviews in conjunction with Auditor.
+To use Netwrix Auditor Access Reviews with Auditor:
 
 **Step 1 –** Install Access Reviews on the same computer where Netwrix Auditor is installed. See the
 [Installation Overview](/docs/auditor/10.9/accessreviews/installation/overview.md) topic for prerequisites and
@@ -42,7 +42,7 @@ additional information.
 the Administrator role. See the [Administrator Overview](/docs/auditor/10.9/accessreviews/admin/overview.md) topic
 for configuration settings and enabling user access.
 
-**Step 3 –** Use the Access reviews configuration tool to setup the data flow from the Auditor
+**Step 3 –** Use the Access reviews configuration tool to set up the data flow from the Auditor
 database to the Access Reviews database. See the
 [Select Data Sources](/docs/auditor/10.9/accessreviews/installation/accessreviewsconfiguration.md) topic for additional information.
 
@@ -70,21 +70,21 @@ Netwrix Auditor Access Reviews is now configured and ready to use.
 
 Review the following considerations:
 
-1. Enabling State-in-Time data collection for your monitoring plans option is not required for the
-   integration works properly.
+1. Enabling State-in-Time data collection for your monitoring plans isn't required for the
+   integration to work properly.
 2. The data collected by Auditor is updated at least once a day.
-3. If a monitoring plan or a data source with enabled integration is deleted, all collected data
-   will be removed from the Access Reviews database.
-4. If there are errors in upload of data to the Access Reviews database, these errors are reflected
-   in the Netwrix Auditor Health Log and text log files; status of items and data sources in Auditor
-   is not affected by these errors.
+3. Deleting a monitoring plan or a data source with enabled integration removes all collected data
+   from the Access Reviews database.
+4. If errors occur uploading data to the Access Reviews database, the Netwrix Auditor Health Log
+   and text log files record these errors; these errors don't affect the status of items and data
+   sources in Auditor.
 5. Permissions-related considerations:
 
-    - For Windows File Servers, permission data for all items in this data source is sent to the
-      Access Reviews application;
-    - Only effective top-level permissions are sent (share+NTFS);
-    - Permission data is sent per file server (entirely for each server);
-    - Transfer of permission data to the Access Reviews application is started when you enable the
+    - For Windows File Servers, Auditor sends permission data for all items in this data source to
+      the Access Reviews application;
+    - Auditor sends only effective top-level permissions (share+NTFS);
+    - Auditor sends permission data per file server (entirely for each server);
+    - Transferring permission data to the Access Reviews application starts when you enable the
       integration for a data source.
 
     ## Initial Configuration
@@ -100,14 +100,14 @@ Review the following considerations:
           [Modify the Builtin Administrator Account](/docs/auditor/10.9/accessreviews/admin/configuration/consoleaccess.md#modify-the-builtin-administrator-account)
           topic for additional information.
 
-    - Notification — Configure the Notification settings required in order for the application to
-      send email. See the
+    - Notification — Configure the Notification settings required for the application to send
+      email. See the
       [Notifications Page](/docs/auditor/10.9/accessreviews/admin/configuration/notifications.md) topic for
       information.
 
     ## Enable Console Users
 
-    Access Reviews Console users granted one of the available roles should be notified.
+    Notify Access Reviews Console users granted one of the available roles.
 
     **_RECOMMENDED:_** The notification should include:
 
@@ -130,7 +130,7 @@ Review the following considerations:
 
     ## Resource Ownership Configuration
 
-    Ownership of resources must be assigned in order to use the Access Reviews workflow:
+    You must assign ownership of resources to use the Access Reviews workflow:
 
     - Resource Ownership — Assign ownership for resources to be managed through the application. See
       the [Resource Owners Interface](/docs/auditor/10.9/accessreviews/resourceowners/interface/interface.md) topic for
@@ -151,6 +151,6 @@ Review the following considerations:
 
     **_RECOMMENDED:_** Set expectations for response time from owners.
 
-    Reviews can be run multiple times, maintaining a historical record for each instance. See the
+    You can run reviews multiple times, maintaining a historical record for each instance. See the
     [Reviews Overview](/docs/auditor/10.9/accessreviews/entitlementreviews/overview.md) topic for additional
     information.

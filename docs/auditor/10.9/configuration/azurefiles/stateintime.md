@@ -4,10 +4,10 @@ This topic describes how to enable State-in-Time data collection for an Azure Fi
 
 > **Note:** When Azure file shares use on-premises Active Directory (AD DS) authentication, the following limitations apply to State-in-Time permission reports:
 >
-> - **Group expansion is unavailable for on-premises AD groups that are not synced to Microsoft Entra ID.** If access to a file or folder is granted through such a group, the report does not list individual group members.
-> - **SID resolution is unavailable for on-premises AD groups and accounts that are not synced to Microsoft Entra ID.** These objects appear as unresolved SIDs instead of display names in permission reports.
+> - **Group expansion is unavailable for on-premises AD groups that aren't synced to Microsoft Entra ID.** If access to a file or folder is granted through such a group, the report doesn't list individual group members.
+> - **SID resolution is unavailable for on-premises AD groups and accounts that aren't synced to Microsoft Entra ID.** These objects appear as unresolved SIDs instead of display names in permission reports.
 >
-> These limitations do not affect environments that use Microsoft Entra ID-only identities or fully synced hybrid identities.
+> These limitations don't affect environments that use Microsoft Entra ID-only identities or fully synced hybrid identities.
 
 ## Prerequisites
 
@@ -82,7 +82,7 @@ By default, Netwrix Auditor collects State-in-Time snapshots daily. To customize
 
 ### Importing historical snapshots
 
-Historical snapshots allow generating reports for past dates. A Global administrator must import historical snapshots.
+Historical snapshots let you generate reports for past dates. A Global administrator must import historical snapshots.
 
 **To import a historical snapshot:**
 

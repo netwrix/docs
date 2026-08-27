@@ -8,17 +8,17 @@ sidebar_position: 30
 
 First, provide a path to your add-on followed by script parameters with their values. Each parameter
 is preceded with a dash; a space separates a parameter name from its value. You can skip some
-parameters— the script uses a default value unless a parameter is explicitly defined. If necessary,
+parameters— the script uses a default value unless you explicitly define one. If necessary,
 modify the parameters as required.
 
-Follow the steps to run add-on with PowerShell:
+To run the add-on with PowerShell:
 
-**Step 1 –** On computer where you want to execute the add-on, start Windows PowerShell.
+**Step 1 –** On the computer where you want to execute the add-on, start Windows PowerShell.
 
-**Step 2 –** Type a path to the add-on. Or simply drag and drop the add-on file in the console
+**Step 2 –** Enter a path to the add-on, or drag and drop the add-on file into the console
 window.
 
-**Step 3 –** Add script parameters. The console will look similar to the following:
+**Step 3 –** Add script parameters. The console looks similar to the following:
 
 Windows PowerShell
 
@@ -33,8 +33,8 @@ quotes and insert the ampersand (**&**) symbol in front (e.g., & "_C:\Netwrix Ad
 **Step 4 –** Hit **Enter**.
 
 Depending on the number of Activity Records stored in Netwrix Auditor Audit Database execution may
-take a while. Ensure the script execution completed successfully. The Netwrix Auditor
-**Integration** event log will be created and filled with events.
+take a while. Ensure the script execution completed successfully. Netwrix Auditor creates the
+**Integration** event log and fills it with events.
 
-By default, the Netwrix Auditor **Integration** event log size is set to **1GB**, and retention is
-set to "_Overwrite events as needed_".
+By default, the add-on sets the Netwrix Auditor **Integration** event log size to **1GB** and the
+retention to "_Overwrite events as needed_".

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Administrator Overview
 
-Access Reviews administrators have access to the Configuration interface where there application
+Access Reviews administrators have access to the Configuration interface where the application
 settings reside. This topic includes the following subtopics:
 
 - [Getting Started](/docs/auditor/10.9/accessreviews/accessreviews.md#getting-started)

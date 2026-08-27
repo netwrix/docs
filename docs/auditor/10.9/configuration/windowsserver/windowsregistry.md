@@ -6,12 +6,12 @@ sidebar_position: 30
 
 # Configure Windows Registry Audit Settings
 
-Windows Registry audit permissions must be configured on each Windows server you want to audit so
-that the “Who” and “When” values are reported correctly for each change. For test environment, PoC
-or evaluation you can use automatic audit configuration. If you want to configure Windows Registry
-manually, follow the instructions below.
+You must configure Windows Registry audit permissions on each Windows server you want to audit so
+that Netwrix Auditor reports the "Who" and "When" values correctly for each change. For a test
+environment, PoC, or evaluation, you can use automatic audit configuration. If you want to
+configure Windows Registry manually, follow these instructions.
 
-The following audit permissions must be set to _"Successful"_ for the
+Set the following audit permissions to _"Successful"_ for the
 `HKEY_LOCAL_MACHINE\SOFTWARE and HKEY_LOCAL_MACHINE\SYSTEM` keys:
 
 - Set Value
@@ -69,7 +69,7 @@ and click **Add**.
 **Step 5 –** Click **Select a principal link** and specify the **Everyone** group in the **Enter the
 object name to select** field.
 
-**Step 6 –** Set **Type** to _"Success"_ and **Applies to** to _"This key and subkeys_.
+**Step 6 –** For **Type**, select _"Success"_. For **Applies to**, select _"This key and subkeys"_.
 
 **Step 7 –** Click **Show advanced permissions** and select the following access types:
 
@@ -83,5 +83,5 @@ object name to select** field.
 
 Repeat the same steps for the `HKEY_LOCAL_MACHINE\SYSTEM` key.
 
-Using Group Policy for configuring registry audit is not recommended, as registry DACL settings may
-be lost.
+Netwrix doesn't recommend using Group Policy to configure registry audit, as registry DACL settings
+may be lost.

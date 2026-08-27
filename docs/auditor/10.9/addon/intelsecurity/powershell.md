@@ -15,7 +15,7 @@ modify the parameters as required.
 
 **Step 1 –** On computer where you want to execute the add-on, start **Windows PowerShell**.
 
-**Step 2 –** Type a path to the add-on. Or simply drag and drop the add-on file in the console
+**Step 2 –** Enter a path to the add-on. Or simply drag and drop the add-on file in the console
 window.
 
 **Step 3 –** Add script parameters. The console will look similar to the following:
@@ -40,12 +40,12 @@ By default, the Netwrix Auditor **Integration** event log size is set to 1GB, an
 to "_Overwrite events as needed_". See the [Integration Event Log Fields](/docs/auditor/10.9/addon/intelsecurity/integrationeventlog.md)
 topic for additional information.
 
-**NOTE:** Event records with more than 30,000 characters length will be trimmed.
+**NOTE:** The add-on trims event records with more than 30,000 characters in length.
 
 At the end of each run, the script creates the
 **Netwrix_Auditor_Event_Log_Export_Add-on_EventIDs.txt** file. It defines mapping between the
 Activity Records and related Event IDs . You can use this file to track possible duplicates of Event
-IDs created at each script execution. Duplicates, if any, are written to the
+IDs created at each script execution. The script writes any duplicates to the
 **Netwrix_Auditor_Event_Log_Export_Add-on_EventIDsDuplicates.txt** file.
 
 Similarly, the add-on also creates the **Netwrix_Auditor_Event_Log_Export_Add-on_CategoriesIDs.txt**
@@ -56,11 +56,11 @@ file that defines mapping between the Data Source and related Category ID.
 Every time you run the script, Auditor makes a timestamp. The next time you run the script, it will
 start retrieving new Activity Records. Consider the following:
 
-- By default, the add-on does not apply any filters when exporting Activity Records. If you are
+- By default, the add-on doesn't apply any filters when exporting Activity Records. If you are
   running the add-on for the first time (there is no timestamp yet) with no filters, it will export
   Activity Records for the last month only. This helps to optimize solution performance during the
-  first run. At the end of the first run, the timestamp will be created, and the next run will start
+  first run. At the end of the first run, the script creates the timestamp, and the next run starts
   export from that timestamp.
 
-- However, if you have specified a time period for Activity Records to be exported, then this filter
-  will be applied at the add-on first run and the runs that follow.
+- However, if you specified a time period for Activity Records to export, the add-on applies this
+  filter at the first run and the runs that follow.

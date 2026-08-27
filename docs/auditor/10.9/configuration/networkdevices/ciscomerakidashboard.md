@@ -18,9 +18,8 @@ The API collects the following changes:
 
 ## Configure Cisco Meraki Dashboard Account
 
-Before you start creating a monitoring plan to audit your Cisco Meraki devices, plan for the data
-collection should meet the requirements listed below. Then you will provide this account in the
-item.
+Before you start creating a monitoring plan to audit your Cisco Meraki devices, plan for the account
+you'll use for data collection. Then provide this account in the monitoring plan wizard.
 
 To use the Meraki Dashboard API, you need to generate an API key during authorization.
 

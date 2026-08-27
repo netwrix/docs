@@ -49,7 +49,7 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 
    - **Read Access (Success/Fail)** → Track file reads and unauthorized read attempts
      - **Successful** - Show successful attempts to read files
-     - **Failed** - Use this option to track suspicious activity. Helps find out who was trying to access your private data without proper justification.Enabling this option on public shares will result in a high number of events generated on Azure Files and the amount of data written to the Long-Term Archive
+     - **Failed** - Use this option to track suspicious activity. Helps find out who was trying to access your private data without proper justification. Enabling this option on public shares will result in a high number of events generated on Azure Files and the amount of data written to the Long-Term Archive
 
 **Note:** Enabling read access auditing on public shares may generate high event volume
 

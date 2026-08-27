@@ -8,15 +8,15 @@ sidebar_position: 10
 
 This option is recommended for organizations that use modern authentication as the identity
 management approach, having multi-factor authentication (MFA) enabled for their user accounts. In
-this scenario,Netwrix Auditor will access the cloud-based infrastructure via Microsoft Graph and
-other modern APIs, being authenticated through a pre-configured Microsoft Entra ID application with
-appropriate access permissions.
+this scenario, Netwrix Auditor accesses the cloud-based infrastructure via Microsoft Graph and other
+modern APIs, authenticating through a pre-configured Microsoft Entra ID application with appropriate
+access permissions.
 
 If you plan to implement such scenario, you should register an Microsoft Entra ID app manually and
 provide its settings to Auditor when configuring a monitored item.
 
-Support for modern authentication will allow you to audit the organizations where MFA is enabled for
-all users, including service accounts.
+With modern authentication, you can audit organizations where MFA is enabled for all users, including
+service accounts.
 
 Required configuration procedure includes several manual steps, as described in the corresponding
 section:
@@ -48,7 +48,7 @@ You will need to create a dedicated app for each cloud-based data source you pla
 
 If you plan to audit all of them, you need to create 4 apps.
 
-Follow the steps to register a new Microsoft Entra ID application.
+Register a new Microsoft Entra ID application:
 
 **Step 1 –** Sign into the **Microsoft 365 Admin Center** with your _Global Administrator_,
 _Application Administrator_ or _Cloud Application Administrator_ account and go to the **Microsoft
@@ -78,7 +78,7 @@ can be assigned _Delegated_ or _Application_ permissions:
 
 - _Delegated_ permissions require a signed-in user present who consents to the permissions every
   time an API call is sent.
-- _Application_ permissions are consented by an administrator once granted.
+- An administrator grants consent for _Application_ permissions once, rather than per API call.
 
 For the newly created app, you should use the _Application_ permissions.
 
@@ -99,7 +99,7 @@ Permission assignment will depend on the data you plan to collect:
 
 | To...                                   | Requirement                                                                                                                                                                                                                        | Comment                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Collect activity and State-in-Time data | Microsoft Entra ID app requires the following Application permissions: 1. Office 365 Management APIs - ActivityFeed.Read 2. Microsoft Graph - Application.ReadWrite.All - Directory.Read.All 3. SharePoint - Sites.FullControl.All | To learn how to assign required permissions, see the Configuring Microsoft Entra ID App for Auditing SharePoint Online section for additional information. Application.ReadWrite.All is required for automatic rotation of the certificate. Rotating certificates in the Entra ID application is important for the following reasons: - Mitigate Risks from Expired Certificates - Enhance Security - Compliance Requirements - Operational Continuity |
+| Collect activity and State-in-Time data | Microsoft Entra ID app requires the following Application permissions: 1. Office 365 Management APIs - ActivityFeed.Read 2. Microsoft Graph - Application.ReadWrite.All - Directory.Read.All 3. SharePoint - Sites.FullControl.All | To learn how to assign required permissions, see the Configuring Microsoft Entra ID App for Auditing SharePoint Online section for additional information. Automatic certificate rotation requires Application.ReadWrite.All. Rotating certificates in the Microsoft Entra ID application reduces the risk of expired certificates, strengthens security, supports compliance requirements, and maintains operational continuity. |
 
 **NOTE:** You can also assign application permissions by editing Microsoft Entra app manifest. See
 the Using Modern Authentication with SharePoint Online topic for additional information on how to
@@ -114,7 +114,7 @@ Go back to the **Microsoft Entra ID admin center** > **Applications** > **App re
 confirm, click **Yes**.
 
 **NOTE:** For Office 365 permissions, go to **Request API Permissions** > **APIs my organization
-users** and type "Office 365" in the search bar.
+uses** and type "Office 365" in the search bar.
 
 See the following Microsoft article for additional information on how to create an application and
 service principal using Microsoft Entra ID Admin portal:
@@ -122,7 +122,7 @@ service principal using Microsoft Entra ID Admin portal:
 
 ### Configuring client secret
 
-Follow the steps to create a new client secret to be used by the app.
+Create a new client secret for the app:
 
 **Step 1 –** Go to **Manage** > **Certificates & secrets** and click **New client secret**.
 
@@ -138,7 +138,7 @@ See the following Microsoft article for more information on how to add a client 
 
 ### Obtaining tenant name
 
-Follow the steps to obtain the tenant name.
+Obtain the tenant name:
 
 **Step 1 –** Navigate to **Microsoft Entra ID** > **Overview**.
 

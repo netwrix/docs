@@ -468,7 +468,7 @@ information.
 ## Netwrix Integration API
 
 In addition to the data sources the product monitors, Auditor supports technology integrations
-that leverage its API. Download free add-ons from
+that use its API. Download free add-ons from
 [Netwrix Auditor Add-on Store](https://www.netwrix.com/netwrix_addons.html) to enrich your audit
 trails with activity from the following systems and applications.
 

@@ -7,21 +7,21 @@ sidebar_position: 10
 # Recommendations
 
 This section covers the Recommendations interface that contains detailed guidance on the Auditor
-usage patterns. Once you installed the product, configured your IT infrastructure, and prepared
+usage patterns. After you install the product, configure your IT infrastructure, and prepare
 Netwrix Service Accounts, you can start collecting data and review it with Netwrix Auditor. The
 recommendations are based on your current product configuration and help you to experience the
 Auditor capabilities in earnest.
 
 ![recommendations](/images/auditor/10.9/admin/navigation/recommendations.webp)
 
-Follow the steps to review the recommendations provided by Netwrix industry experts.
+To review the recommendations provided by Netwrix industry experts:
 
 **Step 1 –** On the Auditor home page, click the **Recommendations** tile.
 
 **Step 2 –** Review the recommendations applicable to your current Auditor configuration and take
 required steps.
 
-Once the required steps are done, the recommendation goes to the '**Complete**' list. You can move
+After you complete the required steps, the recommendation moves to the '**Complete**' list. You can move
 it back to the active state any time you want by clicking the **Move to active** link.
 
 ## Available Recommendations
@@ -35,8 +35,8 @@ data collection, notification, and storage settings and add a source-specific it
 recommendation will appear if you don't have any monitoring plans configured. Clicking the **Add
 plan** button opens the New Monitoring Plan wizard. See the
 [Create a New Plan](/docs/auditor/10.9/admin/monitoringplans/create.md) topic for additional information about plans
-configuration. Once completed, you will be prompted to add an item to your plan, otherwise the
-configuration will be incomplete and the product will not be able to collect data. Auditor
+configuration. After you complete the plan, Netwrix Auditor prompts you to add an item to your
+plan; otherwise, the configuration remains incomplete and the product can't collect data. Auditor
 automatically suggests item types associated with your data source.
 
 ### Start Abandoned Data Source Auditing
@@ -54,12 +54,12 @@ example, account permissions or group membership, you need to enable the State-i
 collection for your data source. See the
 [State–in–Time Reports](/docs/auditor/10.9/admin/reports/types/stateintime/overview.md) topic for additional information
 about the available reports. Clicking the **Go to data source** button opens the settings page of
-the data source to which this recommendation applies to. See the
+the data source to which this recommendation applies. See the
 [Manage Data Sources](/docs/auditor/10.9/admin/monitoringplans/datasources.md) topic for additional information.
 
-**NOTE:** This recommendation will not be shown for to the File Servers data sources (Windows-based
-file shares, NetApp Filers, Dell Data Storage, etc.). Navigate to your file server data source and
-check the state-in-time data collection settings manually.
+**NOTE:** Netwrix Auditor doesn't show this recommendation for File Servers data sources
+(Windows-based file shares, NetApp Filers, Dell Data Storage, etc.). Navigate to your file server
+data source and check the state-in-time data collection settings manually.
 
 ### Subscribe to the Health Summary Email
 
@@ -99,7 +99,7 @@ For completed recommendations, you can configure the retention period to keep th
 select their categories for further displaying on the tile. If you want to proceed with a completed
 recommendation, click the '**Move to active**' link below the recommendation.
 
-Follow the steps to manage recommendations:
+To manage recommendations:
 
 **Step 1 –** On the Auditor home page, click the **Recommendations** tile.
 

@@ -15,8 +15,8 @@ Use this icon to launch the Access Reviews Console for the first time.
 ![Set Builtin Administrator Password page](/images/auditor/10.7/access/reviews/admin/firstlaunchpassword.webp)
 
 The Access Reviews application is installed with a Builtin Administrator account; "admin" is the
-User Name. You will be prompted to set the account's password. It must be eight or more characters
-long. After setting the password, you will need to login with the "admin" account.
+User Name. You must set the account's password, which must be eight or more characters long. After
+setting the password, log in with the "admin" account.
 
 Using the Configuration interface, the Builtin Administrator account can be disabled once a domain
 account has been granted the Administrator role. You can also change the password for the Builtin
@@ -26,13 +26,13 @@ topic for additional information.
 
 ![firstlaunchlandingpage](/images/auditor/10.7/access/reviews/admin/firstlaunchlandingpage.webp)
 
-The Resource Owners interface opens. The first thing that should be done is to configure console
-access for domain users and configure notification settings. Select the Configuration tab. See the
+The Resource Owners interface opens. First, configure console access for domain users and
+configure notification settings. Select the Configuration tab. See the
 [Console Access Page](/docs/auditor/10.9/accessreviews/admin/configuration/consoleaccess.md) and
 [Notifications Page](/docs/auditor/10.9/accessreviews/admin/configuration/notifications.md) topics for additional information.
 
-The interfaces available to console users are controlled by the role assigned. Owners do not need to
-be assigned console access. See the [URL & Login](/docs/auditor/10.9/accessreviews/admin/login.md) topic for information on how users will
+The role assigned to a console user controls which interfaces that user can access. Owners don't
+need to be assigned console access. See the [URL & Login](/docs/auditor/10.9/accessreviews/admin/login.md) topic for information on how users
 log in and where they are directed after login.
 
 See the [Navigation](/docs/auditor/10.9/accessreviews/admin/navigate/navigate.md) topic for information on each of the interfaces.

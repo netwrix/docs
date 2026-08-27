@@ -8,17 +8,17 @@ sidebar_position: 30
 
 First, provide a path to your add-on followed by script parameters with their values. Each parameter
 is preceded with a dash; a space separates a parameter name from its value. You can skip some
-parameters— the script uses a default value unless a parameter is explicitly defined. If necessary,
+parameters— the script uses a default value unless you explicitly define one. If necessary,
 modify the parameters as required.
 
-Follow the steps to run the script with PowerShell.
+To run the script with PowerShell:
 
-**Step 1 –** On computer where you want to execute the add-on, start **Windows PowerShell**.
+**Step 1 –** On the computer where you want to execute the add-on, start **Windows PowerShell**.
 
-**Step 2 –** Type a path to the add-on. Or simply drag and drop the add-on file in the console
+**Step 2 –** Enter a path to the add-on, or drag and drop the add-on file into the console
 window.
 
-**Step 3 –** Add script parameters. The console will look similar to the following:
+**Step 3 –** Add script parameters. The console looks similar to the following:
 
 Windows PowerShell
 
@@ -35,5 +35,5 @@ quotes and insert the ampersand (**&**) symbol in front (e.g., & "_C:\Netwrix Ad
 Depending on the number of Activity Records stored in Auditor Audit Database execution may take a
 while. Ensure the script execution completed successfully.
 
-Every time you run the script, Auditor makes a timestamp. The next time you run the script, it will
-start retrieving new events.
+Every time you run the script, Auditor makes a timestamp. The next time you run the script, it
+retrieves new events starting from that timestamp.

@@ -8,12 +8,12 @@ sidebar_position: 1
 
 Netwrix Auditor can monitor for operations with files and folders on file shares within Azure Files storage accounts.
 It supports two types of monitored items for Azure Files:
- - **Storage account**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shares of one specefied **storage account**
+ - **Storage account**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shares of one specified **storage account**
  - **Azure Subscription**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shares of all **storage accounts** of the specified **Azure Files subscription**
 
 
-**Note:** For all **"data storage accounts"**, you must configure [Diaggnostic settings](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
-to save audit events on **"log storage account(s)"**. Ensure you have the necessary access ([API permissions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#configure-api-permissions), [IAM Roles](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#assign-iam-roles-to-the-app)) for [application](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#azure-application-registration) to read these events and access storage accounts metadata.
+**Note:** For all **"data storage accounts"**, you must configure [Diagnostic settings](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
+to save audit events on **"log storage accounts"**. Ensure you have the necessary access ([API permissions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#configure-api-permissions), [IAM Roles](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#assign-iam-roles-to-the-app)) for [application](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/overview#azure-application-registration) to read these events and access storage accounts metadata.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ to save audit events on **"log storage account(s)"**. Ensure you have the necess
 
   **Netwrix Auditor** relies on **identity-based access** to correctly map file operations to real user accounts. Without it:
    - Audit logs may not contain accurate user information
-   - Activity may be shown as system or anonymous accounts
+   - Activity may appear as system or anonymous accounts
 
 ## Configuration Scope Overview
 
@@ -78,7 +78,7 @@ After registration, go to the **Overview** page of your new app and copy:
 2. Click **+ New client secret**
 3. Enter a description (e.g., `NetwrixSecret`) and select expiration
 4. Click **Add**
-5. Copy the **secret value** immediately — it won't be shown again
+5. Copy the **secret value** immediately — you can't retrieve it again
 
 Netwrix Auditor uses the **App ID** + **Client Secret** for authentication
 
@@ -121,7 +121,7 @@ The Purpose column references Microsoft Graph API endpoints that Netwrix Auditor
 Click **Grant admin consent for TenantName**
 
 **Why this is required:**
-- By default, applications cannot query Microsoft Graph for directory-wide information
+- By default, applications can't query Microsoft Graph for directory-wide information
 - Admin consent allows the app to use **User.Read.All** and **Group.Read.All**
 - **User.Read.All** lets Netwrix Auditor query Microsoft Entra ID and resolve **user SIDs → user accounts → display names**
 - **Group.Read.All** lets Netwrix Auditor resolve groups from DACLs and expand group membership so reports show which users inherit access through group ACEs
@@ -199,7 +199,7 @@ You should assign Azure IAM roles so that Netwrix Auditor can:
 
 ## Diagnostic Settings
 
-Azure Files does not generate audit events by default
+Azure Files doesn't generate audit events by default
 You must configure **Diagnostic Settings** to send file activity logs to your **Log Storage Account**
 
 ### Step 1: Open Diagnostic Settings
@@ -230,7 +230,7 @@ You must configure **Diagnostic Settings** to send file activity logs to your **
 ### Step 4: Save the Configuration
 
 Click **Save**.
-Azure Files audit logs will now be archived into your **Log Storage Account**
+Azure now archives Azure Files audit logs into your **Log Storage Account**
 
 **At the end of this step, you should have:**
 - A Diagnostic Setting under the File resource type

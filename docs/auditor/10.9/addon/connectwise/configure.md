@@ -10,10 +10,10 @@ This section describes how to configure settings of the main add-on component, N
 **ConnectWise Manage Integration Service** that is required for connection to ConnectWise Manage and
 service ticket creation.
 
-Follow the steps to configure ConnectWise.
+To configure ConnectWise:
 
-**Step 1 –** To connect to ConnectWise Manage REST API, the API keys will be required. To obtain
-them, you will need an API Member account. See
+**Step 1 –** To connect to the ConnectWise Manage REST API, you need API keys. To obtain
+them, you need an API Member account. See
 [this article](https://docs.connectwise.com/ConnectWise_Documentation/090/040/010/040) for details.
 
 **Step 2 –** Navigate to the add-on folder and run ConfigureConnection.exe. Follow the steps of the
@@ -40,7 +40,7 @@ step, specify the following:
 | Service Team  | Service team that will be responsible for tickets handling.                                                                                                         |
 | Priority      | Priority for ticket handling. Default is _Priority 3 — Normal Response_.                                                                                            |
 
-**Step 4 –** Configure how Auditor activity record fields will be mapped with **ConnectWise Manage**
+**Step 4 –** Configure how Auditor activity record fields map to **ConnectWise Manage**
 ticket fields.
 
 ![ticketfieldmapping](/images/auditor/10.7/addon/connectwise/ticketfieldmapping.webp)
@@ -52,8 +52,8 @@ ticket fields.
 | Severity Level  | Specify what severity level will be assigned to the service tickets. Default is Medium.                                                                                                                                                                                                                                                                                                                                                                                                   |
 | Business Impact | Specify what business impact level will be assigned to the service tickets. Default is Medium.                                                                                                                                                                                                                                                                                                                                                                                            |
 
-Optionally, you can click the Create Test Ticket button — then a test ticket will be created in
-ConnectWise Manage to help you verify the connection and ticketing settings you configured.
+Optionally, click the Create Test Ticket button to create a test ticket in
+ConnectWise Manage that helps you verify the connection and ticketing settings you configured.
 Its Summary field will contain _[Netwrix Auditor] Test Alert_; its Initial Description field will
 contain _This ticket was created to test the functionality of Netwrix Auditor Add-on for ConnectWise
 Manage_. Also, the test ticket will have a sample attachment (_TestAttachment.txt_).

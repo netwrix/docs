@@ -7,24 +7,23 @@ sidebar_position: 30
 # Resource Owners Overview
 
 The Resource Owners interface is where Access Reviews Console users with either the Security Team or
-Administrator role (to be referred to as Ownership Administrators) can assign ownership of resources
-to be managed through the application. Assigned owners do not require a console user role. Resources
-to be included in the Access Reviews workflow must first be assigned owners within the Resource
-Owners interface.
+Administrator role (referred to as Ownership Administrators) can assign ownership of resources
+to be managed through the application. Assigned owners don't require a console user role. You must
+assign owners to resources within the Resource Owners interface before including them in the
+Access Reviews workflow.
 
 **_RECOMMENDED:_** The Access Reviews application is configured to send Notifications.
 
 _Remember,_ a “resource” refers to the file system shared folders, SharePoint Online site
-collections, and Active Directory (AD) groups. All data available within the Access Reviews
-application is collected by Netwrix Auditor according to the synchronized monitoring plans.
+collections, and Active Directory (AD) groups. Netwrix Auditor collects all data available within
+the Access Reviews application according to the synchronized monitoring plans.
 
-“Owners” are the users who are responsible for reviewing access to the resources to which they are
-assigned.
+“Owners” are the users responsible for reviewing access to their assigned resources.
 
-The My Reviews interface provides owners with access to historical and pending reviews. The My
-Reviews interface is only accessible to users who have been assigned ownership of at least one
-resource. Owners without a console user role are directed to the My Reviews interface at login.
-Owners with a console user role access the pending and historical reviews for their resources by
+The My Reviews interface provides owners with access to historical and pending reviews. Only users
+who own at least one resource can access the My Reviews interface. Owners without a console user
+role go directly to the My Reviews interface at login. Owners with a console user role access the
+pending and historical reviews for their resources by
 clicking the My Reviews tab. See the [Pending Reviews](/docs/auditor/10.9/accessreviews/owneroverview/pendingreviews/pendingreviews.md)
 topic for additional information.
 
@@ -70,7 +69,7 @@ Prerequisite:
 
 Workflow:
 
-**NOTE:** This workflow is not numbered because the Notification piece can occur at any time in the
+**NOTE:** This workflow isn't numbered because the Notification piece can occur at any time in the
 workflow.
 
 - Add resources to be managed by associating a business data owner with a resource. See the
@@ -88,7 +87,7 @@ information:
 - An explanation of what a review is and why your organization is conducting them through the
   Netwrix Auditor Access Reviews application.
 - How owners should log into the application console, specifically what URL and credentials to use.
-- Expectation on response times
+- Expected response times
 - How to access instructions on how to complete a review. You can link to the
   [Owners & Access Reviews](/docs/auditor/10.9/accessreviews/owneroverview/owneroverview.md) topic or download that topic and its subtopics as a
   PDF and make it available within your corporate resources.

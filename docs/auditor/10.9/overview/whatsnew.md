@@ -10,7 +10,7 @@ sidebar_position: 30
 
 All Netwrix product announcements have moved to the new Netwrix Community. See announcements for
 Netwrix Auditor in the [Auditor](https://community.netwrix.com/c/auditor/announcements/90) area of
-our new community.
+the new Netwrix Community.
 
 The following information highlights the new and enhanced features introduced in this Netwrix
 Auditor 10.7 version.
@@ -19,15 +19,15 @@ Auditor 10.7 version.
 
 Integration with Netwrix Privilege Secure
 
-Netwrix Auditor is able to store its collection credentials in Netwrix Privilege Secure, making the
+Netwrix Auditor can store its collection credentials in Netwrix Privilege Secure, making the
 usage of Auditor more secure.
 
 Data sensitivity tags in searches and alerts for NetApp, Qumulo, and Synology
 
 Data sensitivity tags in searches and alerts enable customers using NetApp, Qumulo, and Synology
 systems to reduce the time to detect incidents involving sensitive data and accelerate the response
-to these kinds of threats. They can set up alerts that will be triggered whenever sensitive
-documents are accessed, modified or deleted, or filter out all activity that isn’t related to
+to these kinds of threats. They can set up alerts that trigger whenever sensitive
+documents are accessed, modified, or deleted, or filter out all activity that isn’t related to
 sensitive data.
 
 New sensitive data-related risks for SharePoint Online
@@ -54,12 +54,12 @@ instead of "_User has been added to a privileged group_".
 
 ## Major Enhancements
 
-- Download and read actions in SharePoint Online reports can be easily differentiated.
+- SharePoint Online reports clearly differentiate download and read actions.
 - Configuration of government Microsoft 365 tenants became easier. In the UI you can choose the
   national cloud environment you want to use.
-- Modern authentication options for email notifications are supported.
+- Auditor supports modern authentication options for email notifications.
 - Option to save and send a report at the same time.
 - Support for various new network devices, NAS, and database versions.
 
-Numerous additional enhancements have been made to improve administration, performance, and
-security.
+Netwrix Auditor includes numerous additional enhancements that improve administration,
+performance, and security.

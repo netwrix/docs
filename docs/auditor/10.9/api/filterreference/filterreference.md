@@ -6,11 +6,11 @@ sidebar_position: 80
 
 # Reference for Creating Search Parameters File
 
-Review this section to learn more about operators and how to apply them to Activity Record filters
-to create a unique search. You can:
+This section explains operators and how to apply them to Activity Record filters to create a
+unique search. You can:
 
-- Add different filters to your search. Search results will be sorted by all selected filters since
-  they work as a logical AND.
+- Add different filters to your search. Netwrix Auditor sorts search results by all selected
+  filters because they work as a logical AND.
 
     | Format | Example                                                                                                               |
     |--------|-----------------------------------------------------------------------------------------------------------------------|
@@ -20,9 +20,9 @@ to create a unique search. You can:
 - Specify several values for the same filter. To do this, add two entries one after another.
 
     Entries with Equals, Contains, StartsWith, EndsWith, and InGroup operators work as a logical OR
-    (Activity Records with either of following values will be returned). Entries with DoesNotContain
-    and NotEqualTo operators work as a logical AND (Activity Records with neither of the following
-    values will be returned).
+    (Netwrix Auditor returns Activity Records with either of the following values). Entries with
+    DoesNotContain and NotEqualTo operators work as a logical AND (Netwrix Auditor returns Activity
+    Records with neither of the following values).
 
     | Format | Example                                                                                    |
     | ------ | ------------------------------------------------------------------------------------------ |
@@ -34,7 +34,7 @@ Review the following for additional information:
 - [Filters](/docs/auditor/10.9/api/filterreference/filters.md)
 - [Operators](/docs/auditor/10.9/api/filterreference/filteroperators.md)
 
-The table below shows filters and Activity Records matching them.
+The following table shows filters and Activity Records matching them.
 
 | Filters                                                                                                                                                                                                                  | Matching Activity Records                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -22,8 +22,8 @@ The table displays access information for the resource being reviewed:
 - Access Level (Full Control, Modify, and Read) columns — Blue checkmark icon indicates current
   access level
 
-**Step 2 –** Recommend access changes for a trustee by clicking the icon for the desired access
-level (Full Control, Modify, or Read columns). A yellow checkmark icon indicates the new level of
+**Step 2 –** Recommend access changes for a trustee by clicking the icon for the access level you
+want (Full Control, Modify, or Read columns). A yellow checkmark icon indicates the new level of
 access you are recommending.
 
 **Step 3 –** Recommend removing access by selecting one or more trustees and clicking the **Remove
@@ -33,7 +33,7 @@ recommending all access be removed; it appears in the column for the current lev
 _Remember,_ at any time you can save your recommendations and exit the review. It will remain
 pending until you submit all recommendations for this resource.
 
-**Step 4 –** When the recommended changes are set as desired, click **Next**. The 2 Review changes
+**Step 4 –** When you've set the recommended changes the way you want, click **Next**. The 2 Review changes
 tab opens in the Resource Review page.
 
 ![Resource Reviews page showing an Access Review on 2 Review changes tab](/images/auditor/10.7/access/reviews/entitlementreviews/review/reviewpageaccesstab2.webp)
@@ -45,7 +45,7 @@ notes explaining why the change is recommended.
 **NOTE:** To make changes to your recommendations, you must return to the first tab. Click
 **Previous**.
 
-**Step 6 –** When all recommendations are confirmed and the desire notes added, click **Submit**. A
+**Step 6 –** When you've confirmed all recommendations and added any notes, click **Submit**. A
 message displays stating that the review is complete. Click **OK** to close the message window.
 
 The review for this resource is now complete. You will be redirected to the Pending Reviews page.

@@ -21,7 +21,7 @@ details section presented in the table format.
 
 The summary section shows:
 
-- **Object path** — monitored object path as formatted by Netwrix Auditor in the activity records
+- **Object path** — monitored object path as Netwrix Auditor formats it in the activity records
   (see '_What_' field in the reports, search results and activity summaries). For example, if
   reporting on the database hosted on selected SQL Server, the path will be as follows:
   _Databases\database_name_.
@@ -36,15 +36,15 @@ The detailed information under summary includes:
     - Windows Account
     - Login SQL Authentication
     - DB SQL User with password
-- **Means granted** —how access permissions were granted to this account, e.g., _Direct permissions_
+- **Means granted** —how this account received access permissions, e.g., _Direct permissions_
   or _Server role permissions_.
-- **Job title** —reported for Active Directory users as set in their corresponding attribute. If not
-  set, _`<not set>`_ is reported.
+- **Job title** — the value set in the corresponding attribute for Active Directory users. If no
+  value is set, the report displays _`<not set>`_.
 - **Effective grant** —the effective set of permissions granted to this account on the selected
   object.
 
-Covering rules do not need to be applied, since **Effective grant** permissions are reported
-automatically using these rules.
+You don't need to apply covering rules, since the report applies them automatically when
+calculating **Effective grant** permissions.
 
 ## Filters
 
@@ -56,17 +56,16 @@ This report has the following filters:
   value is filled in automatically.
 - **Snapshot date** —select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
-  To report on other snapshots, make sure they are available through import. For details, see
+  To report on other snapshots, ensure they are available through import. For details, see
   **Manage historical snapshots** option description in the
   [SQL Server](/docs/auditor/10.9/admin/monitoringplans/sqlserver/overview.md) topic.
 - **Item**—name of the SQL Server instance monitored with selected monitoring plan.
-- **Object path** —path to the monitored object, as formatted by Netwrix Auditor in the activity
+- **Object path** —path to the monitored object, as Netwrix Auditor formats it in the activity
   records (see '_What_' field in the reports, search results and activity summaries). Wildcard (\*)
   is supported. For example, to report on the database hosted on selected SQL Server, specify the
   path as follows: _Databases\database_name_.
-- **Permissions** —access permissions which assignment you want to be reported for the selected
-  object.
-- **Means granted** —how access permissions were granted to this account. You can select _Directly_,
+- **Permissions** —access permissions you want to report on for the selected object.
+- **Means granted** —how this account received access permissions. You can select _Directly_,
   _Inherited_, or both (default setting).
 - **User account**—name or SID of the account that has permissions on the selected object. Default
   is _%_ (all accounts).
@@ -77,15 +76,15 @@ This report has the following filters:
 
 ## Considerations and limitations
 
-- Reporting for case-sensitive SQL Servers and databases is not supported.
+- The report doesn't support case-sensitive SQL Servers and databases.
 - The report will not show the RESTORE capability for the database owner.
 
-- When calculating effective rights and permissions, the following will not be considered:
+- When calculating effective rights and permissions, the report will not consider the following:
     - Ownership chaining
     - Cross DB ownership chaining
     - Trustworthy database
     - SQL Server agent fixed database roles
-- Some permissions may not be reported correctly due to the known issues. See Release Notes for
+- The report may not show some permissions correctly due to known issues. See Release Notes for
   details.
 
 ## Related reports
@@ -96,7 +95,7 @@ This report has the following filters:
 
 ## Usage example
 
-Database administrators need to discover who currently has access permissions to **FinReports**
+Database administrators need to discover who has access permissions to **FinReports**
 database stored on the **SQLSrv01\SQLServer2016** instance. This instance is included in the
 monitoring plan named _SQL Servers Monitoring_.
 

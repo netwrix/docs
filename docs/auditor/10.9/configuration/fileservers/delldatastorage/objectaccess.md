@@ -8,11 +8,8 @@ sidebar_position: 30
 
 Netwrix recommends you to avoid linking a GPO to the top level of the domain due to the potential
 impact. Instead, create a new organization unit for your file servers within your domain and assign
-GPO there. For detailed instructions on how to create a new OU, refer to the following Microsoft
-article:
+GPO there. For detailed instructions on how to create a new OU, see
 [Create a New Organizational Unit](https://technet.microsoft.com/en-us/library/cc771564.aspx).
-
-Follow the steps to configure Audit Object Access Policy:
 
 **Step 1 –** Open the **Group Policy Management** console on any domain controller in the target
 domain: navigate to Start > Windows Administrative Tools**→ Group Policy Management.**

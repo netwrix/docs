@@ -10,9 +10,9 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See
 the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
@@ -20,11 +20,11 @@ knowledge base article for additional information.
 You can configure your IT Infrastructure for monitoring in one of the following ways:
 
 - Automatically through a monitoring plan – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary.
-- Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
-  reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
-  configure them manually:
+  automatically configure audit in the target environment, Netwrix Auditor checks your current
+  audit settings on each data collection and adjusts them if necessary.
+- Manually – You must manually adjust native audit settings to ensure comprehensive and reliable
+  audit data collection. You can enable Auditor to continually enforce the relevant audit policies
+  or configure them manually:
 
     - Configure the domain for auditing. See the
       [Audit Configuration Assistant](/docs/auditor/10.9/tools/auditconfigurationassistant.md) topic for
@@ -40,15 +40,15 @@ You can configure your IT Infrastructure for monitoring in one of the following
             **50** hours). See the [Adjust Security Event Log Size and Retention](/docs/auditor/10.9/configuration/activedirectory/securitylog.md)
             topic.
 
-        - To provide for event data collection, the Secondary Logon service must be up and running.
+        - To provide for event data collection, the Secondary Logon service must be running.
           Open **Administrative Tools** > **Services**, right-click the **Secondary Logon** service
-          and on the **General** tab make sure that Startup type for this service is other than
+          and on the **General** tab ensure that Startup type for this service is other than
           _Disabled_.
 
 ## Monitored Objects
 
 Netwrix Auditor tracks changes made to all object classes and attributes in the Active Directory
-Domain, Configuration and Schema partitions. It also tracks changes to new object classes and
+Domain, Configuration, and Schema partitions. It also tracks changes to new object classes and
 attributes added due to the Active Directory Schema extension. For detailed information, refer to
 Microsoft articles:
 
@@ -57,23 +57,23 @@ Microsoft articles:
 
 Review the following limitations:
 
-- Netwrix Auditor does not track changes to non-replicated attributes, such as badPwdCount,
+- Netwrix Auditor doesn't track changes to non-replicated attributes, such as badPwdCount,
   Last-Logon, Last-Logoff, etc. The non-replicated attributes pertain to a particular domain
-  controller and are not replicated to other domain controllers.
-- Changes made through the Exchange Management Console in the Organization Configuration node
-  (Federation Trust, Organization Relationships and Hybrid Configuration tabs) are displayed in an
-  internal Active Directory format that can be difficult to interpret.
+  controller and aren't replicated to other domain controllers.
+- Netwrix Auditor displays changes made through the Exchange Management Console in the Organization
+  Configuration node (Federation Trust, Organization Relationships, and Hybrid Configuration tabs)
+  in an internal Active Directory format that can be difficult to interpret.
 - Netwrix Auditor tracks changes to membership in all groups inside the monitored domain (Domain
-  local groups) and Universal and Global groups of domains in the same forest. Changes to Domain
-  local groups of a different domain in the same forest are not reported.
+  local groups) and Universal and Global groups of domains in the same forest. Netwrix Auditor
+  doesn't report changes to Domain local groups of a different domain in the same forest.
 
 State-in-time data collection is supported for Active Directory.
 
-For AD domain monitoring with Netwrix Auditor, the domain should be configured as explained below.
+For AD domain monitoring with Netwrix Auditor, configure the domain as explained in this section.
 
 ## Domain Audit Policy Settings
 
-Effective domain controllers policy settings must be configured as listed in the table below.
+Configure effective domain controllers policy settings as listed in the following table.
 
 | Policy                         | Audit type  |
 | ------------------------------ | ----------- |
@@ -90,16 +90,16 @@ You can configure either **Basic domain audit policies**, or **Advanced domain a
 
 ## Audit Settings for AD Partitions
 
-Required object-level audit settings for the Active Directory partition must be configured as
-described in the next sections.
+Configure the required object-level audit settings for the Active Directory partition as described
+in the next sections.
 
 ### Domain Partition
 
-Object-level audit settings for the Domain partition must be configured to audit for _Success_ of
-all access operations except the following: _Full Control_, _List Contents_, _Read All Properties_
-and _Read Permissions_.
+Configure object-level audit settings for the Domain partition to audit for _Success_ of all access
+operations except the following: _Full Control_, _List Contents_, _Read All Properties_, and _Read
+Permissions_.
 
-These settings must be configured for **Everyone** security principal and applied to **This object
+Configure these settings for the **Everyone** security principal and apply them to **This object
 and all descendant objects**.
 
 - You can configure these settings automatically using Netwrix Auditor, as described in the
@@ -108,11 +108,11 @@ and all descendant objects**.
 
 ### Configuration and Schema Partitions
 
-Object-level audit settings for the Configuration and **Schema** partitions must be configured to
-audit for _Success_ of all access operations except the following: _Full Control_, _List Contents_,
-_Read All Properties_ and _Read Permissions_
+Configure object-level audit settings for the Configuration and **Schema** partitions to audit for
+_Success_ of all access operations except the following: _Full Control_, _List Contents_, _Read All
+Properties_, and _Read Permissions_.
 
-These settings must be configured for **Everyone** security principal and applied to **This object
+Configure these settings for the **Everyone** security principal and apply them to **This object
 and its descendant objects**.
 
 - You can configure these settings automatically using Netwrix Auditor, as described in the
@@ -121,7 +121,7 @@ and its descendant objects**.
 
 ## Security Event Log Settings
 
-**Security event log** settings for the domain controllers should be configured as follows:
+Configure **Security event log** settings for the domain controllers as follows:
 
 | Setting            | Value                        |
 | ------------------ | ---------------------------- |
@@ -136,13 +136,13 @@ and its descendant objects**.
 
 ## Exchange Settings
 
-If you have an on-premises Exchange server in your Active Directory domain, consider that some
-changes can be made via that Exchange server. To be able to audit and report who made those changes,
-you should:
+If you have an on-premises Exchange server in your Active Directory domain, consider that
+administrators can make some changes via that Exchange server. To be able to audit and report who
+made those changes, you should:
 
-- Configure the Exchange Administrator Audit Logging (AAL) settings, as described the
+- Configure the Exchange Administrator Audit Logging (AAL) settings, as described in the
   [Exchange Administrator Audit Logging Settings](/docs/auditor/10.9/configuration/exchange/auditlog.md) topic.
-- Make sure that the account used for data collection has the following:
+- Ensure that the account used for data collection has the following:
 
     - Membership in the Organization Management or Records Management group
 
@@ -157,7 +157,8 @@ you should:
 - Configure required protocols and ports, as described in the [Active Directory Ports](/docs/auditor/10.9/configuration/activedirectory/ports.md)
   topic.
 - If you plan to restore deleted Active Directory objects and their attributes using the Netwrix
-  Auditor Object Restore for Active Directory tool (shipped with Netwrix Auditor,) it is recommended
-  to set the **Active Directory tombstone lifetime** property to 730 days (default is 180 days). See
+  Auditor Object Restore for Active Directory tool (shipped with Netwrix Auditor), Netwrix
+  recommends setting the **Active Directory tombstone lifetime** property to 730 days (default is
+  180 days). See
   the [Adjust Active Directory Tombstone Lifetime (optional)](/docs/auditor/10.9/configuration/activedirectory/tombstone.md) topic for additional
   information.

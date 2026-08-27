@@ -6,13 +6,11 @@ sidebar_position: 20
 
 # Configure Security Event Log Maximum Size
 
-Follow the steps to configure Event Log maximum size:
-
 **Step 1 –** On your file server, create a new file system where the security log will be stored.
 
 **Step 2 –** Mount this file system on a mount point, e.g., **/events**.
 
-**Step 3 –** Make sure that it is accessible via the **\\`<file_server_name>`\C$\events** UNC path.
+**Step 3 –** ensure that it is accessible via the **\\`<file_server_name>`\C$\events** UNC path.
 
 **Step 4 –** On the computer where Auditor Server is installed, open **Registry Editor**: navigate
 to **Start → Run** and type _"regedit"_.

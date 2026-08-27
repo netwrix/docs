@@ -13,7 +13,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -59,8 +59,8 @@ First, you should decide on the objects and actions you want to track. Consider 
 
 - Actions reported by Auditor vary depending on the file server type and the audited object (file,
   folder, or share).
-- Besides, monitoring and reporting of the Dell Data Storage systems may not provide the results you
-  expect — due to native Dell audit peculiarities. See the [File Servers](/docs/auditor/10.9/configuration/fileservers/overview.md) topic for
+- Monitoring and reporting of the Dell Data Storage systems may not provide the results you expect,
+  due to native Dell audit peculiarities. See the [File Servers](/docs/auditor/10.9/configuration/fileservers/overview.md) topic for
   additional information.
 
 For example, the _change_ operation (in Auditor terminology) includes creation, modification, and
