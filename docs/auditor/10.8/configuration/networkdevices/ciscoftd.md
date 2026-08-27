@@ -16,9 +16,9 @@ may contain warnings, errors, or incomplete audit data.
 knowledge base article for additional information.
 
 Netwrix Auditor can't push configuration changes to network devices, so configure native audit
-settings manually for the Cisco FTD (Firepower Threat Defense) device. Unlike Cisco ASA and Cisco
-IOS devices, Cisco FTD devices are managed through Cisco Firepower Management Center (FMC), so
-configure syslog settings using a platform settings policy instead of the device CLI. When you
+settings manually for the Cisco Firepower Threat Defense (FTD) device. Unlike Cisco ASA and Cisco
+IOS devices, Cisco FTD devices rely on Cisco Firepower Management Center (FMC) for configuration,
+so configure syslog settings using a platform settings policy instead of the device CLI. When you
 finish, the device has the following settings:
 
 - Syslog logging is enabled.

@@ -21,7 +21,6 @@ device:
 - [Configure HPE Aruba Devices](/docs/auditor/10.9/configuration/networkdevices/hpearuba.md)
 - [Configure Pulse Secure Devices](/docs/auditor/10.9/configuration/networkdevices/pulsesecure.md)
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
-the
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
