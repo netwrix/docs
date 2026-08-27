@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Azure Files Configuration Overview
 
-Netwrix Auditor can monitor for operations with files and folders on file shares within Azure Files storage accounts.
+Netwrix Auditor can monitor file and folder operations on file shares within Azure Files storage accounts.
 It supports two types of monitored items for Azure Files:
  - **Storage account**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shares of one specefied **storage account**
  - **Azure Subscription**: monitoring [actions](https://docs.netwrix.com/docs/auditor/10_8/configuration/azurefiles/monitoredobjects) on all shares of all **storage accounts** of the specified **Azure Files subscription**
@@ -133,7 +133,7 @@ Click **Grant admin consent for TenantName**
 - **Application.Read.All** lets Netwrix Auditor resolve **service principal (application) identities** that have no SID and no UPN, so activity performed by applications — not just users — shows a display name instead of a raw object ID
 - Without admin consent, audit logs will only show unresolved SIDs and object IDs instead of usernames, group names, and application names, making reports incomplete and less useful
 
-**At the end of this step, your app has granted Microsoft Graph API permissions**
+**At the end of this step, your app has the required Microsoft Graph API permissions**
 
 
 ## Assign IAM Roles to the App
@@ -198,7 +198,7 @@ You should assign Azure IAM roles so that Netwrix Auditor can:
 - Not supported: Microsoft Entra Domain Services
 - Supported protocol: SMB
 
-**At the end of this step, your app should have assigned roles:**
+**At the end of this step, your app should have the following roles:**
 - Reader (Resource Group)
 - Storage File Data Privileged Reader (Data Storage Account)
 - Storage Blob Data Reader (Log Storage Account)
