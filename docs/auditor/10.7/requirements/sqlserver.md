@@ -13,17 +13,17 @@ generation, Reporting Services (or Advanced Services) are also required.
 Supported SQL Server versions and editions are listed below.
 
 Due to limited database size, Express Edition (with Reporting Services) is recommended only for
-evaluation, PoC or small environments. For production environment, consider using Standard or
+evaluation, PoC, or small environments. For production environments, use Standard or
 Enterprise Edition.
 
 | Version                                                                      | Edition                                                                                                                                                                                                                                                       |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SQl Server 2022                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/download/details.aspx?id=104781) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC and small environments) |
-| SQL Server 2019 (on-premises Windows version) cumulative update 10 and above | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC and small environments)                  |
-| SQL Server 2017                                                              | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC and small environments)                  |
-| SQL Server 2016                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services (SP2)](https://www.microsoft.com/en-us/download/details.aspx?id=56840) (for evaluation, PoC and small environments)                                                                |
-| SQL Server 2014                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services](https://www.microsoft.com/en-us/download/details.aspx?id=42299) (for evaluation, PoC and small environments)                                                                      |
-| SQL Server 2012                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services](http://www.microsoft.com/en-us/download/details.aspx?id=29062) (for evaluation, PoC and small environments)                                                                       |
+| SQl Server 2022                                                              | - Standard or Enterprise Edition - [Express Edition](https://www.microsoft.com/en-us/download/details.aspx?id=104781) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=104502) (for evaluation, PoC, and small environments) |
+| SQL Server 2019 (on-premises Windows version) cumulative update 10 and above | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC, and small environments)                  |
+| SQL Server 2017                                                              | - Standard or Enterprise Edition - [Express Edition](https://go.microsoft.com/fwlink/?linkid=866658) with [Reporting Services](https://www.microsoft.com/en-us/download/details.aspx?id=100122) (for evaluation, PoC, and small environments)                  |
+| SQL Server 2016                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services (SP2)](https://www.microsoft.com/en-us/download/details.aspx?id=56840) (for evaluation, PoC, and small environments)                                                                |
+| SQL Server 2014                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services](https://www.microsoft.com/en-us/download/details.aspx?id=42299) (for evaluation, PoC, and small environments)                                                                      |
+| SQL Server 2012                                                              | - Standard or Enterprise Edition - [Express Edition with Advanced Services](http://www.microsoft.com/en-us/download/details.aspx?id=29062) (for evaluation, PoC, and small environments)                                                                       |
 
 **NOTE:** SQL express is only supported for small environments. It might cause performance issues on
 the medium and large environments.
@@ -97,15 +97,15 @@ These databases are intended for storing various data, as listed below.
 | **`Netwrix_OverviewReportsDB`** | Stores data required for overview reports.                                                                                                                                                |
 | **`Netwrix_Self_Audit`**        | Stores data collected by Netwrix Auditor self-audit (optional, created if the corresponding feature is enabled).                                                                          |
 
-These databases usually do not appear in the UI; they are only listed in the **Database statistics**
+These databases usually don't appear in the UI; they are only listed in the **Database statistics**
 widget of the **Health Status** dashboard. If you need their settings to be modified via SQL Server
-Management Studio, please contact your database administrator. For example, you may need to change
+Management Studio, contact your database administrator. For example, you may need to change
 logging and recovery model (by default, it is set to **simple** for all these databases, as well as
 for the Audit databases).
 
 ## Install Microsoft SQL Server and Reporting Services
 
-Netwrix Auditor uses Microsoft SQL Server database as short-term data storage and utilizes SQL
+Netwrix Auditor uses Microsoft SQL Server database as short-term data storage and uses SQL
 Server Reporting Services engine for report generation. You can either use your existing SQL Server
 for these purposes, or deploy a new server instance. System requirements for SQL Server are listed
 in the corresponding section of this guide.
@@ -113,11 +113,10 @@ in the corresponding section of this guide.
 Consider the following:
 
 - Supported versions are 2012 and later.
-- **NOTE:** Please, note that for the Reporting Services, only English operating systems are
-  supported.
-- Supported editions are Enterprise, Standard and Express with Advanced Services (it includes
+- For Reporting Services, only English operating systems are supported.
+- Supported editions are Enterprise, Standard, and Express with Advanced Services (it includes
   Reporting Services).
-- If downloading SQL Server Express Edition with Advanced Services from Microsoft site, make sure
+- If downloading SQL Server Express Edition with Advanced Services from Microsoft site, ensure
   you download the file whose name contains SQLEXPRADV. Otherwise, Reporting Services will not be
   deployed, and you will not be able to analyze and report on collected data.
 
@@ -139,7 +138,7 @@ When planning for SQL Server that will host Auditor databases, consider the foll
   Netwrix Auditor Server will be installed, or on the remote machine accessible by Netwrix Auditor.
   Remember to check connection settings and access rights.
 - In large and extra-large infrastructures SQL Server should be installed on a separate server or
-  cluster. Installation of Netwrix Auditor and SQL Server on the same server is not recommended in
+  cluster. Installation of Netwrix Auditor and SQL Server on the same server isn't recommended in
   such environments.
 - If you plan to have Netwrix Auditor and SQL Server running on different machines, establish fast
   and reliable connection between them (100 Mbps or higher).
@@ -150,9 +149,9 @@ When planning for SQL Server that will host Auditor databases, consider the foll
   wizard or manually downloading it from Microsoft web site (see Install Microsoft SQL Server and
   Reporting Services).
 
-**CAUTION:** It is not recommended to install Netwrix Auditor databases to a production SQL Server
+**CAUTION:** It isn't recommended to install Netwrix Auditor databases to a production SQL Server
 instance. Such instances may have a lot of maintenance plans or scripts running that may affect data
-uploaded by the product. The product databases are designed for reporting and searching and do not
+uploaded by the product. The product databases are designed for reporting and searching and don't
 require maintenance or backup. For the long-term data storage, Netwrix Auditor uses Long-Term
 Archive. See [File-Based Repository for Long-Term Archive](/docs/auditor/10.7/requirements/longtermarchive.md) for additional
 information.
@@ -163,8 +162,8 @@ of local Administrators group) will be assigned the _sysadmin_ server role for i
 You will also need to provide a path for storing the SQL Server databases - it is recommended to
 specify the data drive for that purpose (by default, system drive is used).
 
-- If you plan to have more than one Netwrix Auditor Servers in your network, make sure to configure
-  them to use different SQL Server instances. The same SQL Server instance cannot be used to store
+- If you plan to have more than one Netwrix Auditor Servers in your network, ensure to configure
+  them to use different SQL Server instances. The same SQL Server instance can't be used to store
   audit data collected by several Netwrix Auditor Servers.
 - Consider that sufficient access rights will be required for the account that will write data to
   the audit databases hosted on the default SQL Server. This account should be assigned the
@@ -185,8 +184,7 @@ For database sizing, it is recommended to estimate:
 - Retention policy for the audit databases
 - Maximum database size supported by different SQL Server versions
 
-To estimate the number of the activity records produced by your data sources, collected and saved by
-Auditor during the week, you can use the Activity records by date widget of the Health Status
+To estimate the number of activity records your data sources produce and Auditor collects and saves during the week, you can use the Activity records by date widget of the Health Status
 dashboard. See the
 [Activity Records Statistics](/docs/auditor/10.7/admin/healthstatus/dashboard/activityrecordstatistics.md) topic for
 additional information.
@@ -205,7 +203,7 @@ performance:
 
 - Each instance uses only up to 1 GB of RAM
 - Each instance uses only up to 4 cores of the first CPU
-- Database size cannot exceed 10 GB
+- Database size can't exceed 10 GB
 
 ## Database Settings
 
@@ -225,7 +223,7 @@ If not yet existing on the specified SQL server instance, the database will be c
 this operation to succeed, ensure that Netwrix Auditor service account has sufficient rights on that
 SQL Server.
 
-Settings of other Auditor databases cannot be modified.
+Settings of other Auditor databases can't be modified.
 
 ### Example
 
@@ -239,16 +237,16 @@ so, you can create 2 monitoring plans:
 
 ### Database Retention
 
-Consider that retention is a global setting, that is, it applies to all Audit databases you
+Consider that retention is a global setting that applies to all Audit databases you
 configure for your monitoring plans.
 
-Follow the steps to change database retention after the product deployment.
+To change database retention after product deployment, complete the following steps:
 
 **Step 1 –** In the Auditor main screen, select Settings > Audit Database.
 
 ![audit_db_settings](/images/auditor/10.7/requirements/audit_db_settings.webp)
 
-**Step 2 –** In the dialog displayed, make sure the Clear stale data when a database retention
+**Step 2 –** In the dialog displayed, ensure the Clear stale data when a database retention
 period is exceeded: is set to ON, then click Modify to specify the required retention period (in
 days).
 
@@ -259,13 +257,13 @@ This setting also applies to the `Netwrix_Auditor_API` database.
 This is the account that Auditor uses to write the collected audit data to the audit databases.
 Starting with version 9.96, you can use Group Managed Service Account (gMSA) for that purpose.
 
-_Remember,_ gMSA cannot be used to access SSRS. Use a standard account for that. See the
+_Remember,_ gMSA can't be used to access SSRS. Use a standard account for that. See the
 [SQL Server Reporting Services](/docs/auditor/10.7/requirements/sqlserverreportingservice.md) topic for additional information.
 
 This account must be granted the **Database owner (`db_owner`)** role and the **dbcreator** server
 role on the SQL Server instance hosting your audit databases.
 
-Follow the steps to assign the **dbcreator** and **`db_owner`** roles.
+To assign the **dbcreator** and **`db_owner`** roles, complete the following steps:
 
 **Step 3 –** On the computer where SQL Server instance with the Audit Database resides, navigate to
 **Start** > **All Programs** > **Microsoft SQL Server** > **SQL Server Management Studio**.

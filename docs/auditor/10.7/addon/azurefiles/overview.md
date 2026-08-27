@@ -9,15 +9,15 @@ sidebar_position: 40
 Azure Files is a Microsoft service that offers file shares in the cloud that are accessible via the
 industry standard Server Message Block (SMB) protocol, Network File System (NFS) protocol, and Azure
 Files REST API. Azure file shares can be mounted concurrently by cloud or on-premises deployments.
-SMB Azure file shares are accessible from Windows, Linux, and macOS clients. To learn more about
+SMB Azure file shares are accessible from Windows, Linux, and macOS clients. For more information about
 Azure Files, refer to the
-[corresponding Microsoft article](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction).
+[Azure Files documentation](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-introduction).
 
 The Netwrix Auditor Add-On for Azure Files works in collaboration with Netwrix Auditor, supplying
-data about SMB changes on your Azure Files shares, such as document reads, modifications and
+data about SMB changes on your Azure Files shares, such as document reads, modifications, and
 deletions.
 
-To get the add-on up and running, please read the following topics:
+To deploy the add-on, read the following topics:
 
 - [Deployment Procedure](/docs/auditor/10.7/addon/azurefiles/deployment.md)
 - [Work with Collected Data](/docs/auditor/10.7/addon/azurefiles/collecteddata.md)

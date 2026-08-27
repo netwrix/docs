@@ -25,7 +25,7 @@ sign-in procedures and improve overall security. In a Windows Server environment
 is provided by the Network Policy Server (NPS).
 
 In addition to providing user authentication and authorization, a RADIUS server can grant or deny
-access to a connecting device based on network policies. Companies leverage these policies to
+access to a connecting device based on network policies. Companies use these policies to
 empower users to connect to the corporate infrastructure using their personal devices, while
 disallowing potentially vulnerable and unsafe devices to minimize risk.
 
@@ -78,5 +78,5 @@ follows:
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
+Ensure to check your product version, and then review and update your add-ons and scripts
 leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.

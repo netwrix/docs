@@ -6,8 +6,6 @@ sidebar_position: 30
 
 # Work with Collected Data
 
-Follow the steps to search for collected data:
-
 **Step 1 –** Start the Auditor client and navigate to **Search**.
 
 **Step 2 –** Click **Search**.

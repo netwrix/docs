@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Enterprise Overview Dashboard
 
-Enterprise Overview dashboard provide a high-level overview of activity trends by date, user,
-server, object type or audited system in your IT infrastructure. They allow you to see the activity
-trends by date, user, object type, server or audited IT system, and drill through to detailed
+Enterprise Overview dashboard provides a high-level overview of activity trends by date, user,
+server, object type, or audited system in your IT infrastructure. You can see activity
+trends by date, user, object type, server, or audited IT system, and drill through to detailed
 reports for further analysis. The Enterprise diagram aggregates data on all Managed Objects and all
 audited systems, while system-specific diagrams provide quick access to important statistics within
 one audited system.
@@ -24,7 +24,7 @@ The current version of Netwrix Auditor contains the following diagrams:
 - VMware
 - Windows Server
 
-If you are sure that some audit data is missing (e.g., you do not see information on your file
+If you are sure that some audit data is missing (e.g., you don't see information on your file
 servers in reports and search results), verify that the Audit Database settings are configured and
 that data is written to databases that reside on the default SQL Server instance.
 
@@ -36,7 +36,7 @@ All diagrams provide the drill-down functionality, which means that by clicking 
 will be redirected to a report with the corresponding filtering and grouping of data that renders
 the next level of detail.
 
-Follow the steps to review a diagram:
+To review a diagram, follow these steps:
 
 - On the Auditor home screen, click the **Reports** tile and open the Enterprise Overview section.
   Click a tile to open a corresponding diagram.

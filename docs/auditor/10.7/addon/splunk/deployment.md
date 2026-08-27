@@ -10,7 +10,7 @@ sidebar_position: 10
 
 In the Netwrix Auditor client, go to the Integrations section and verify Integration API settings:
 
-1. Make sure the Leverage Integration API is switched to ON.
+1. Ensure the Leverage Integration API is switched to ON.
 2. Check the TCP communication port number – default is 9699.
 
 See the
@@ -19,40 +19,31 @@ for additional information.
 
 ## Download the Add-on
 
-Follow the steps to download the add-on.
+1. Download the distribution package Netwrix_Auditor_Add-on_for_Splunk.zip from [https://www.netwrix.com/add-on_for_splunk.html](https://www.netwrix.com/add-on_for_splunk.html).
 
-**Step 1 –** Download the distribution package Netwrix_Auditor_Add-on_for_Splunk.zip from the
-following web page:
-[https://www.netwrix.com/add-on_for_splunk.html](https://www.netwrix.com/add-on_for_splunk.html)
-
-**Step 2 –** Unpack it to a folder on the computer from which you can access Splunk Web.
+2. Unpack it to a folder on the computer from which you can access Splunk Web.
 
 ## Install the Add-on
 
-Follow the steps to install the add-on.
+1. Log in to Splunk Web using a Splunk Administrator account.
 
-**Step 1 –** Login to Splunk Web using Splunk Administrator account.
+2. Open the Splunk Apps settings in any of the following ways:
 
-**Step 2 –** Open the Splunk Apps settings in any of the following ways:
+   - On the main Explore Splunk Enterprise screen, click the gear icon at the top of the left **Apps** panel:
 
-- On the main Explore Splunk Enterprise screen, click the gear icon at the top of the left **Apps**
-  panel:
+     ![config](/images/auditor/10.7/addon/splunk/config.webp)
 
-![config](/images/auditor/10.7/addon/splunk/config.webp)
+   - When on any other screen, you can expand the dropdown list at the top panel and choose Manage Apps:
 
-- When on any other screen, you can expand the drop-down list at the top panel and choose Manage
-  Apps:
+     ![searchreporting](/images/auditor/10.7/addon/splunk/searchreporting.webp)
 
-    ![searchreporting](/images/auditor/10.7/addon/splunk/searchreporting.webp)
+3. On the **Apps** screen, click Install app from file:
 
-**Step 3 –** On the **Apps** screen, click Install app from file:
+   ![installapp](/images/auditor/10.7/addon/splunk/installapp.webp)
 
-![installapp](/images/auditor/10.7/addon/splunk/installapp.webp)
+4. Click Choose File, navigate to the folder where you unpacked the add-on package, select the "TA-netwrix-auditor-add-on-for-splunk-1.6.1.spl" file, and click Open.
 
-**Step 4 –** Click Choose File, navigate to the folder where you unpacked the add-on package, select
-the "TA-netwrix-auditor-add-on-for-splunk-1.6.1.spl" file and click Open.
-
-**Step 5 –** Click Upload.
+5. Click Upload.
 
 ![uploadapp](/images/auditor/10.7/addon/splunk/uploadapp.webp)
 
@@ -66,7 +57,7 @@ The installed add-on should appear in the Apps list in Splunk.
 
 ## Prepare for Using Netwrix Auditor Integration API
 
-Make sure you have the following information required for the add-on configuration:
+Ensure you have the following information required for the add-on configuration:
 
 - User name and password for the account you will be using to access the Netwrix Auditor Integration
   API
@@ -75,14 +66,11 @@ Make sure you have the following information required for the add-on configurati
 
 ## Configure the Add-on
 
-Follow the steps to configure the add-on.
-
-**Step 1 –** From the Explore Splunk Enterprise or from the drop-down list on the top Splunk panel,
-open Netwrix Auditor add-on for Splunk and navigate to the Configuration page:
+1. From the Explore Splunk Enterprise or from the dropdown list on the top Splunk panel, open Netwrix Auditor add-on for Splunk and navigate to the Configuration page:
 
 ![configuration](/images/auditor/10.7/addon/splunk/configuration.webp)
 
-**Step 2 –** Configure the account:
+2. Configure the account:
 
 1. On the Configuration page, open the Account section.
 
@@ -93,7 +81,7 @@ open Netwrix Auditor add-on for Splunk and navigate to the Configuration page:
     - For the Account name provide a unique name for the account that will be visible to the add-on
       users
     - In the Username field insert the user name of the account that will be used to access Netwrix
-      Auditor Integration API. If a domain account is used, make sure to use the _DOMAIN\User_
+      Auditor Integration API. If a domain account is used, ensure to use the _DOMAIN\User_
       format.
     - In the Password field insert the account password
 
@@ -101,7 +89,7 @@ open Netwrix Auditor add-on for Splunk and navigate to the Configuration page:
 
     ![configurationaccount](/images/auditor/10.7/addon/splunk/configurationaccount.webp)
 
-**Step 3 –** Configure the Netwrix Auditor Integration API location:
+3. Configure the Netwrix Auditor Integration API location:
 
 1. On the Configuration page open the Add-on Settings section:
 
@@ -112,21 +100,18 @@ open Netwrix Auditor add-on for Splunk and navigate to the Configuration page:
 3. In the Netwrix Auditor API port field provide the TCP port used by Netwrix Auditor Integration
    API; by default it is 9699.
 
-    **NOTE:** Make sure that your Netwrix Auditor Integration API is configured to use HTTPS
+    **NOTE:** Ensure that your Netwrix Auditor Integration API is configured to use HTTPS
     protocol.
 
 4. Press the **Save** button.
 
 ## Configure Data Input
 
-Splunk uses indexes to store data and manage access to it. While you can send Netwrix Auditor data
-to one of the existing indexes it is strongly recommended to create a separate index.
+Splunk uses indexes to store data and manage access to it. While you can send Netwrix Auditor data to one of the existing indexes, it's strongly recommended to create a separate index.
 
-Follow the steps to configure data input.
+1. Create a new index to store data from Netwrix Auditor:
 
-**Step 1 –** Create a new index to store data from Netwrix Auditor:
-
-1. In Splunk expand the Settings drop-down menu and click on the Indexes option under the DATA
+1. In Splunk expand the Settings dropdown menu and click the Indexes option under the DATA
    section.
 2. Press the **New Index** button to create an index.
 3. Provide the new index parameters:
@@ -134,17 +119,14 @@ Follow the steps to configure data input.
     - Index name — this parameter will be used in the search.
     - App — points where the index configuration is stored; Choosing **Search & Reporting** is
       recommended.
-    - Check if you need to provide custom location for the Home, Cold and Thawed paths. By default
-      they are in the Splunk program folder.
+    - Check if you need to provide a custom location for the Home, Cold, and Thawed paths. By default, they are in the Splunk program folder.
     - Set the Max Size of Entire Index to match the expected volume of logs from Netwrix Auditor.
     - By default, Splunk deletes old events when the size of the index exceeds its max value. If you
       want Splunk to archive them instead specify the Frozen Path.
 
-        Please refer to the
-        [Managing Indexers and Clusters of Indexers](https://docs.splunk.com/Documentation/Splunk/8.1.0/Indexer/Aboutmanagingindexes)
-        manual for additional details on indexes.
+   Refer to the [Managing Indexers and Clusters of Indexers](https://docs.splunk.com/Documentation/Splunk/8.1.0/Indexer/Aboutmanagingindexes) manual for additional details on indexes.
 
-**Step 2 –** Create a data input:
+2. Create a data input:
 
 1. Open Netwrix Auditor add-on for Splunk and go to the **Inputs** section.
 
@@ -166,25 +148,16 @@ Follow the steps to configure data input.
         **CAUTION:** This field should never be empty.
 
     - Checkpoint type specifies location for continuation mark data. File is the recommended option.
-      Do not change this setting unless advised accordingly by your Splunk Administrator.
+      Don't change this setting unless advised accordingly by your Splunk Administrator.
 
 4. Click the **Add** button.
 
 ## Upgrade Procedure
 
-If you were using the older (Windows event log-based) version of Netwrix Auditor add-on for Splunk
-and plan to migrate to the new version, remember to take the additional steps described below. They
-will help to ensure imported data consistency and avoid excessive operations. Otherwise, the new
-add-on will pull Netwrix Auditor’s activity data that had already been imported into your Splunk
-system by the old add-on.
+If you were using the older (Windows event log-based) version of Netwrix Auditor add-on for Splunk and plan to migrate to the new version, take the additional steps described below. They will help ensure imported data consistency and avoid excessive operations. Otherwise, the new add-on will pull Netwrix Auditor activity data that had already been imported into your Splunk system by the old add-on.
 
-Follow the steps to upgrade the add-on.
+1. Stop the old version of Netwrix Auditor add-on for Splunk. You can do this with Windows Scheduled Tasks.
 
-**Step 1 –** Stop the old version of Netwrix Auditor add-on for Splunk. You can do this with the
-Windows Scheduled Tasks.
+2. Locate the Netwrix_Auditor_Activity_Records_to_Event_Log_Add-on_Cookie.bin file in the installation directory of the old add-on for Splunk and store its content to a safe location.
 
-**Step 2 –** Locate the Netwrix_Auditor_Activity_Records_to_Event_Log_Add-on_Cookie.bin file in the
-installation directory of the old add-on for Splunk. Store that file content to a safe location.
-
-**Step 3 –** Install the new add-on. When prompted for Continuation Mark, enter that
-Netwrix*Auditor* Activity_Records_to_Event_Log_Add-on_Cookie.bin file content.
+3. Install the new add-on. When prompted for Continuation Mark, enter the content from the Netwrix_Auditor_Activity_Records_to_Event_Log_Add-on_Cookie.bin file.

@@ -6,28 +6,19 @@ sidebar_position: 10
 
 # Create Alerts for Event Log
 
-Alerts are configurable notifications triggered by certain events and sent to the specified
-recipients. You can enable or disable, and modify existing alerts, and create new alerts. To do it,
-click Configure next to Alerts.
+Alerts are configurable notifications triggered by certain events and sent to the specified recipients. You can enable or disable, modify existing alerts, and create new alerts. To do it, click Configure next to Alerts.
 
-Follow the steps to create new alert.
+1. In the Alerts window, click Add to start a new alert.
 
-**Step 1 –** In the Alerts window, click Add to start new alert.
+2. On the Alert Properties step, specify the alert name and enter an alert description (optional). Specify the number of alerts per email. Grouped alerts for different computers will be delivered in separate email messages. This value is set to 1 by default, which means each alert will be delivered as a separate email message.
 
-**Step 2 –** On the Alert Properties step, specify the alert name and enter alert description
-(optional). Specify the number alerts per email. Grouped alerts for different computers will be
-delivered in separate email messages. This value is set to 1 by default, which means that each alert
-will be delivered as a separate email message.
+3. On the Notifications step, configure email notifications and customize the notification template if needed. Click Edit next to Customize notifications template and modify the template by deleting or inserting information fields.
 
-**Step 3 –** On the Notifications step, configure email notifications and customize the notification
-template, if needed. Click Edit next to Customize notifications template. Edit the template by
-deleting or inserting information fields.
+   The %ManagedObjectName% variable will be replaced with your monitoring plan name.
 
-The %ManagedObjectName% variable will be replaced with your monitoring plan name.
+4. On the Event filters step, specify an event that will trigger the alert.
 
-**Step 4 –** On the Event filters step, specify an event that will trigger the alert.
-
-**Step 5 –** Complete the Event Filters wizard. Complete the following fields:
+5. Complete the Event Filters wizard by filling the following fields:
 
 - In the Event tab:
 
@@ -35,7 +26,7 @@ The %ManagedObjectName% variable will be replaced with your monitoring plan name
     | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
     | Name        | Specify the filter name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
     | Description | Enter the description for this filter (optional).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-    | Event Log   | Select an event log from the drop-down list. You will be alerted on events from this event log. You can also input a different event log. To find out a log’s name, navigate to Start > Windows Administrative Tools > **Event Viewer** > **Applications and Services Logs** > Microsoft > Windows and expand the required Log_Name node, right-click the file under it and select Properties. Find the event log’s name in the Full Name field. Auditor does not collect the Analytic and Debug logs, so you cannot configure alerts for these logs. You can use a wildcard (\*). In this case you will be alerted on events from all Windows logs except for the ones mentioned above. |
+    | Event Log   | Select an event log from the dropdown list. You will be alerted on events from this event log. You can also input a different event log. To find out a log’s name, navigate to Start > Windows Administrative Tools > **Event Viewer** > **Applications and Services Logs** > Microsoft > Windows and expand the required Log_Name node, right-click the file under it and select Properties. Find the event log’s name in the Full Name field. Auditor doesn't collect the Analytic and Debug logs, so you can't configure alerts for these logs. You can use a wildcard (\*). In this case you will be alerted on events from all Windows logs except for the ones mentioned above. |
 
 - In the Event Fields tab:
 
@@ -54,6 +45,6 @@ The %ManagedObjectName% variable will be replaced with your monitoring plan name
 
     | Option                                         | Description                                                                                                                                                                        |
     | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Consider the following event Insertion Strings | Specify this parameter if you want to receive alerts on events containing a specific string in the EventData. You can use a wildcard (\*). Click Add and specify Insertion String. |
+    | Consider the following event Insertion Strings | Specify this parameter if you want to receive alerts on events containing a specific string in the EventData. You can use a wildcard (\*). Click Add and specify the Insertion String. |
 
-**Step 6 –** Click OK to save the changes and close the Event Filters dialog.
+6. Click OK to save the changes and close the Event Filters dialog.

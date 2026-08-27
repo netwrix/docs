@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -32,8 +32,6 @@ You can configure your IT Infrastructure for monitoring in one of the following
 To configure your PaloAlto devices, create a Syslog server profile and assign it to the log settings
 for each log type.
 
-Follow the steps to configure a Syslog server profile.
-
 **Step 1 –** Connect to your PaloAlto device: launch an Internet browser and enter the IP address of
 the firewall in the URL field (https://`<IP address>`).
 
@@ -51,8 +49,6 @@ the firewall in the URL field (https://`<IP address>`).
 | Port          | Provide the name of the UDP port used to listen to network devices (514 port used by default). |
 | Format        | Select IETF.                                                                                   |
 | Facility      | Netwrix recommends using default values.                                                       |
-
-Follow the steps to configure syslog forwarding.
 
 **Step 1 –** In the Web Interface, navigate to **Device** > **Log Settings**.
 

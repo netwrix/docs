@@ -21,16 +21,13 @@ for these logs to "_Overwrite events as needed_". This refers to the following e
   Windows Server 2012 R2 and above)
 - Applications and Services logs > AD FS > Admin log (for AD FS servers )
 
-Refer to the following Microsoft
-[article to read about the recommended event log settings](https://support.microsoft.com/en-us/help/957662/recommended-settings-for-event-log-sizes-in-windows).
+See the Microsoft article on [recommended event log settings](https://support.microsoft.com/en-us/help/957662/recommended-settings-for-event-log-sizes-in-windows) for more information.
 
 The procedure below provides a possible way to specify the event log settings manually. However, if
 you have multiple target computers, consider configuring these settings via Group Policy as also
 described in this section
 
 ## Configure the Event Log Size Manually
-
-Follow the steps to configure Event Log Size and Retention Settings.
 
 **Step 1 –** On a target server, navigate to Start > Windows Administrative Tools > Event Viewer.
 
@@ -39,14 +36,14 @@ Follow the steps to configure Event Log Size and Retention Settings.
 
 ![Log Properties dialog box](/images/1secure/configuration/computer/manualconfig_ws_eventviewerpr2016_thumb_0_0.webp)
 
-**Step 3 –** Make sure Enable logging is selected.
+**Step 3 –** ensure Enable logging is selected.
 
-**Step 4 –** In the Maximum log size field, specify the desired log size.
+**Step 4 –** In the Maximum log size field, specify the log size you want.
 
-**Step 5 –** Make sure the Do not overwrite events (Clear logs manually) check box is cleared. If
+**Step 5 –** ensure the Don't overwrite events (Clear logs manually) checkbox is cleared. If
 selected, change the retention method to _Overwrite events as needed (oldest events first)_.
 
-Make sure the Maximum security log size group policy does not overwrite your log settings. To check
+Ensure the Maximum security log size group policy doesn't overwrite your log settings. To check
 this, start the Group Policy Management console, proceed to the GPO that affects your server, and
 navigate to Computer Configuration > Policies > Windows Settings > Security Settings > Event Log.
 
@@ -61,7 +58,7 @@ Repeat these steps for the following event logs:
 - **Applications and Services Logs > Microsoft > Windows > DNS-Server > Audit**
 
     Configure setting for DNS log only if you want to monitor DNS changes. The log is available on
-    Windows Server 2012 R2 and above and is not enabled by default. See Microsoft documentation for
+    Windows Server 2012 R2 and above and isn't enabled by default. See Microsoft documentation for
     more information on how to enable this log.
 
 - **Applications and Services Logs** **>** **AD FS** **>** **Admin**
@@ -70,10 +67,9 @@ Repeat these steps for the following event logs:
 
 ## Configure the Event Log Size Using Group Policy
 
-Personnel with administrative rights can use Group Policy Objects to apply configuration settings to
-multiple servers in bulk.
+Personnel with administrative rights can use Group Policy Objects to apply configuration settings to multiple servers in bulk.
 
-Follow the steps to configure settings for Application, System and Security event logs.
+### Configure settings for Application, System, and Security event logs
 
 **Step 1 –** Open the Group Policy Management Editor on the domain controller and go to **Computer
 Configuration > Policies > Administrative Templates > Windows Components > Event Log Service**.
@@ -85,7 +81,7 @@ KB_.
 
 **Step 4 –** Specify retention settings for the log; usually it is Overwrite as needed.
 
-Follow the steps to configure settings for other logs.
+### Configure settings for other logs
 
 **Step 1 –** Open the registry editor and go to
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\EventLog\<log_name>. For example:
