@@ -22,7 +22,7 @@ This topic describes how to enable State-in-Time data collection for an Azure Fi
 5. (Optional) Click **Modify** in the **Schedule** section to customize the snapshot collection schedule. By default, Netwrix Auditor collects snapshots daily.
 6. Click **Save** to apply the changes.
 
-After you save the monitoring plan, Netwrix Auditor will begin collecting State-in-Time snapshots according to the configured schedule.
+After you save the monitoring plan, Netwrix Auditor begins collecting State-in-Time snapshots on the configured schedule.
 
 > **Note:** Netwrix Auditor collects the first snapshot at the next scheduled run. Reports won't contain data until then.
 

@@ -13,7 +13,7 @@ It supports two types of monitored items for Azure Files:
 
 
 **Note:** For all **"data storage accounts"**, you must configure [Diaggnostic settings](https://docs.netwrix.com/docs/auditor/10_9/configuration/azurefiles/overview#diagnostic-settings)
-to save audit events on **"log storage account(s)"**. Ensure you have the necessary access ([API permissions](https://docs.netwrix.com/docs/auditor/10_9/configuration/azurefiles/overview#configure-api-permissions), [IAM Roles](https://docs.netwrix.com/docs/auditor/10_9/configuration/azurefiles/overview#assign-iam-roles-to-the-app)) for [application](https://docs.netwrix.com/docs/auditor/10_9/configuration/azurefiles/overview#azure-application-registration) to read these events and access storage accounts metadata.
+to save audit events on **"log storage accounts"**. Ensure you have the necessary access ([API permissions](https://docs.netwrix.com/docs/auditor/10_9/configuration/azurefiles/overview#configure-api-permissions), [IAM Roles](https://docs.netwrix.com/docs/auditor/10_9/configuration/azurefiles/overview#assign-iam-roles-to-the-app)) for [application](https://docs.netwrix.com/docs/auditor/10_9/configuration/azurefiles/overview#azure-application-registration) to read these events and access storage accounts metadata.
 
 ## Prerequisites
 
@@ -52,7 +52,7 @@ Register an application so Netwrix Auditor can authenticate to Azure and read au
 
 1. In the Azure Portal, go to **Microsoft Entra ID > Manage > App registrations > + New registration**
 2. Enter:
-   - **Name**: Name: `NetwrixAuditor-AzureFiles` (this is an example — you can use any descriptive name for the app)
+   - **Name**: `NetwrixAuditor-AzureFiles` (an example — you can use any descriptive name for the app)
    - **Supported account types** (see the following account type references)
    - Leave **Redirect URI** blank
 3. Click **Register**
@@ -147,7 +147,7 @@ Click **Grant admin consent for TenantName**
 
 **IAM Roles:**
 
-You should assign Azure IAM roles so that Netwrix Auditor can:
+Assign Azure IAM roles so that Netwrix Auditor can:
 - Discover file shares in your resource group
 - Read metadata from your data storage account
 - Access audit logs from your log storage account
