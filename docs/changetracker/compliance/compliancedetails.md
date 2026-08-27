@@ -12,9 +12,9 @@ Description
 
 **Step 1 –** Adjust Score Filters to view other score ranges.
 
-**Step 2 –** Click on any report score to see the full report output.
+**Step 2 –** Click any report score to see the full report output.
 
-**Step 3 –** Compare will show differences between the two report runs being reviewed.
+**Step 3 –** Compare shows differences between the two report runs you're reviewing.
 
 ## Compare View
 

@@ -10,18 +10,18 @@ sidebar_position: 10
 
 - **Extend Selected Rules** — Indicates whether to extend the rule to check for the old and new
   values, or replace the rule with one checking for the new value only
-- **Missing Value Passes** — Indicates whether the rule passes if a missing item is detected (e.g.,
-  installed software item is not present on target)
-- **Add No Others Rule** — Indicates whether a rule is added to the sub-section which specifies that
-  no other items of the type should be present on the target, other than ones already specified in
-  other rules. For example, this allows the specification of a set of rules for software versions,
-  and the additional requirement that no other installed software be present
-- **Add Device Information Section** — Indicates whether a section is added at the start of the
-  report to describe to details of the device the report is running on, including OS and IP address
-  details. Note that this should only be used when a Per Device Baseline Policy is being operated –
+- **Missing Value Passes** — Indicates whether the rule passes if a rule item is missing (for
+  example, if installed software isn't present on the target)
+- **Add No Others Rule** — Indicates whether to add a rule to the sub-section that specifies that
+  no other items of this type can be present on the target, other than the ones already specified
+  in other rules. For example, this lets you specify a set of rules for software versions, plus the
+  additional requirement that no other installed software is present
+- **Add Device Information Section** — Indicates whether to add a section at the start of the
+  report that describes the details of the device the report runs on, including OS and IP address
+  details. This option applies only when Change Tracker operates a Per Device Baseline Policy —
   for a Group-wide Baseline Policy, disable this option.
-- **Preview Changes** — Indicates whether a preview of the rule changes is presented for
-  confirmation before they are applied.
+- **Preview Changes** — Indicates whether to present a preview of the rule changes for
+  confirmation before applying them.
 
 From the CIS Controls 7.1: "For a complex enterprise, the establishment of a single security
 baseline configuration (for example, a single installation image for all workstations across the
@@ -41,32 +41,32 @@ Just click the Query icon to get a quick tip on what the Rule Option provides.
 
 ![baselinereviewandeditrules](/images/changetracker/baseline/baselinereviewandeditrules.webp)
 
-Edit Rules provides a means to edit or remove rules before incorporating into your baseline policy,
-or for managing an existing Policy. It is important to understand that during the Setup phase you
-are selecting items with rule logic in order to build a Netwrix policy, in effect, another
-Compliance Report like the hundreds of other reports Netwrix provide for CIS, NIST. PCI etc.
+Edit Rules provides a means to edit or remove rules before incorporating them into your baseline
+policy, or for managing an existing policy. During the Setup phase, you select items with rule
+logic to build a Netwrix policy — in effect, another compliance report like the hundreds of other
+reports Netwrix provides for CIS, NIST, PCI, and other frameworks.
 
 ![baselineeditrules](/images/changetracker/baseline/baselineeditrules.webp)
 
-The Edit Rules function provides an opportunity to add a description and justification for the
-attribute and its inclusion in the policy.
+The Edit Rules function lets you add a description and justification for the attribute and its
+inclusion in the policy.
 
-The Description is prefilled with default explanatory text for open ports and services, but this can
-be replaced or augmented with your own notes, important when deciding to include attributes in your
-baseline as any addition inevitably increases your attack surface. A minimized configuration is
-always the most secure.
+Change Tracker prefills the Description with default explanatory text for open ports and services.
+You can replace or add to this text with your own notes — an important consideration since any
+addition inevitably increases your attack surface. A minimized configuration is always the most
+secure.
 
 Complete:
 
 Baseline Policy creation is now complete, and you can run your first Baseline Policy report using
-the Run Report button
+the Run Report button.
 
 ![baselinerunreport](/images/changetracker/baseline/baselinerunreport.webp)
 
-Running the report will take you to the regular Reports tab, filtered to your new Baseline Policy.
-You can see more about scheduling and controlling reports in the main Reports section.
+Running the report takes you to the regular Reports tab, filtered to your new Baseline Policy.
+The main Reports section covers scheduling and controlling reports in more detail.
 
-You can now either add more devices to the Baseline Members Group or just assign the Baseline Policy
+You can now either add more devices to the Baseline Members Group or assign the Baseline Policy
 to an existing group of devices, then choose your schedule and results delivery options.
 
 ![baselinereportsandqueryschedules](/images/changetracker/baseline/baselinereportsandqueryschedules.webp)
