@@ -10,7 +10,7 @@ Access Analyzer requires outbound internet access during installation and operat
 
 ## Outbound Endpoints (Internet)
 
-All outbound traffic uses HTTPS (port 443). The Access Analyzer server must be able to reach the following endpoints:
+All outbound traffic uses HTTPS (port 443). The Access Analyzer server must reach the following endpoints:
 
 | Endpoint | Category | Purpose | When Required |
 | --- | --- | --- | --- |
@@ -24,6 +24,9 @@ All outbound traffic uses HTTPS (port 443). The Access Analyzer server must be a
 | `release-assets.githubusercontent.com` | GitHub | Release asset downloads | Installation only |
 | `pkg-containers.githubusercontent.com` | GitHub Container Registry | GitHub Packages CDN | Installation and updates |
 | `ghcr.io` | GitHub Container Registry | Container images | Installation and updates |
+| `registry-1.docker.io` | Docker Hub | Container image registry (third-party base images) | Installation and updates |
+| `auth.docker.io` | Docker Hub | Registry authentication tokens | Installation and updates |
+| `production.cloudfront.docker.com` | Docker Hub | Docker image layer CDN | Installation and updates |
 | `get.k3s.io` | K3s / Rancher | K3s installer download | Installation only |
 | `rpm.rancher.io` | K3s / Rancher | K3s package repository | Installation only |
 | `storage.googleapis.com` | K3s / Rancher | K3s artifact storage | Installation only |
@@ -43,12 +46,12 @@ Access Analyzer uses these ports within the VM for service-to-service communicat
 | 6379 | TCP | Redis | Cache and queue connections |
 
 :::note
-All internal ports are bound to the local cluster network. Only port 443 (Traefik) is exposed externally for the web interface.
+All internal ports bind to the local cluster network. Only port 443 (Traefik) accepts external traffic, for the web interface.
 :::
 
 ## Connector Network Requirements
 
-Depending on the connectors you configure, the Access Analyzer VM must also have outbound access to your data sources:
+The Access Analyzer VM must also have outbound access to the data sources for the connectors you configure:
 
 | Connector | Port | Protocol | Notes |
 | --- | --- | --- | --- |
@@ -129,6 +132,7 @@ After configuring firewall rules, verify that the Access Analyzer server can rea
 ```bash
 curl -I https://oci.pkg.keygen.sh
 curl -I https://ghcr.io
+curl -I https://registry-1.docker.io
 curl -I https://get.k3s.io
 ```
 

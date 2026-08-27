@@ -93,7 +93,7 @@ sudo update-ca-certificates
 # Check that the SAN includes your hostname (lowercase) and server IP
 openssl x509 -noout -text -in /etc/dspm/<hostname>.crt | grep -A5 "Subject Alternative"
 
-# Verify the cert was signed by your CA bundle
+# Verify your CA bundle signed the cert
 openssl verify -CAfile /etc/dspm/ca-bundle.crt /etc/dspm/<hostname>.crt
 
 # Verify the key matches the cert (both md5sums must match)
@@ -105,7 +105,7 @@ For the full TLS specification including SAN rules and multi-CA environments, se
 
 ### First admin account
 
-Identify the email address and display name of the person who will be the first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
+Identify the email address and display name of your first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
 
 The installer generates a temporary password for this account and displays it once, in the [installation summary](#step-5-review-the-installation-summary). The first admin must set a new password on their first sign-in.
 
@@ -117,13 +117,13 @@ You need your Netwrix license key to download the installer; it's the first prom
 
 ### Connector port requirements
 
-Ports the Access Analyzer server must be able to reach on your data sources and directory services. Only open the ports for the connectors you plan to configure.
+Ports the Access Analyzer server must reach on your data sources and directory services. Only open the ports for the connectors you plan to configure.
 
 **Direction of traffic:**
 
 - **Outbound** from the Access Analyzer server to the target source/host — **required** for all connectors.
 - **Inbound** at the target source/host from the Access Analyzer server — **required** (the target must accept the connection on the listed port).
-- **Two-way communication** between the Access Analyzer server and the target — **optional**. You can configure it for environments that require it, but no connector requires it.
+- **Two-way communication** between the Access Analyzer server and the target — **optional**. No connector requires it, but you can configure it for environments that do.
 
 | Connector | Port | Protocol | Notes |
 | --- | --- | --- | --- |
@@ -169,6 +169,9 @@ All outbound endpoints use HTTPS (port 443). The Access Analyzer server must rea
 | `release-assets.githubusercontent.com` | GitHub | Release asset downloads | Installation only |
 | `pkg-containers.githubusercontent.com` | GitHub Container Registry | GitHub Packages CDN | Installation and updates |
 | `ghcr.io` | GitHub Container Registry | Container images | Installation and updates |
+| `registry-1.docker.io` | Docker Hub | Container image registry (third-party base images) | Installation and updates |
+| `auth.docker.io` | Docker Hub | Registry authentication tokens | Installation and updates |
+| `production.cloudfront.docker.com` | Docker Hub | Docker image layer CDN | Installation and updates |
 | `get.k3s.io` | K3s / Rancher | K3s installer download | Installation only |
 | `rpm.rancher.io` | K3s / Rancher | K3s package repository | Installation only |
 | `storage.googleapis.com` | K3s / Rancher | K3s artifact storage | Installation only |
