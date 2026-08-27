@@ -2,7 +2,7 @@
 
 This topic describes how to enable State-in-Time data collection for an Azure Files monitoring plan in Netwrix Auditor, configure the monitoring scope using omit lists, and set up optional Azure diagnostic settings for activity-based reports.
 
-> **Note:** By default, Azure Files permission reports show display names only for Entra ID accounts, and Netwrix Auditor doesn't expand on-premises AD groups that aren't synced to Microsoft Entra ID. To show display names for on-premises accounts and list individual members of AD groups, see [Configuring Active Directory integration (optional)](#configuring-active-directory-integration-optional).
+> **Note:** By default, Azure Files permission reports display only users and groups that you migrated to Entra ID from a local Windows domain and added directly to role-based access control (RBAC) or New Technology File System (NTFS) permissions. The reports don't display users who gain access through built-in (well-known) domain or Azure groups. To see all accounts that receive access rights through any groups, enable Active Directory integration. See [Configuring Active Directory integration (optional)](#configuring-active-directory-integration-optional).
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ After you save the monitoring plan, Netwrix Auditor will begin collecting State-
 
 ## Configuring Active Directory integration (optional)
 
-By default, only Entra ID accounts appear with display names in Azure Files reports. If your environment uses on-premises Active Directory (AD DS), you can provide read-only AD credentials so that Netwrix Auditor can:
+By default, Azure Files permission reports display only users and groups that you migrated to Entra ID from a local Windows domain and added directly to RBAC or NTFS permissions. The reports don't display users who gain access through built-in (well-known) domain or Azure groups. If your environment uses on-premises Active Directory (AD DS), you can provide read-only AD credentials so that Netwrix Auditor can:
 
 - Resolve display names for on-premises accounts not synced to Microsoft Entra ID.
 - List individual members of on-premises AD groups (including members of nested groups, resolved transitively) as separate rows in permission reports.
@@ -52,12 +52,13 @@ If you don't provide credentials, report output remains identical to earlier ver
 
 Use omit lists to exclude specific folders or files from State-in-Time data collection, reducing collection time and storage requirements.
 
-Netwrix Auditor for Azure Files supports two types of omit lists:
+Netwrix Auditor for Azure Files supports three types of omit lists:
 
 | Omit list type | Scope |
 |----------------|-------|
 | **All** | Excludes objects from all data collection (activity and State-in-Time) |
 | **SiT** | Excludes objects from State-in-Time data collection only |
+| **User Activity** | Excludes objects from activity data collection only |
 
 ### Configuring omit lists in the Netwrix Auditor UI
 
