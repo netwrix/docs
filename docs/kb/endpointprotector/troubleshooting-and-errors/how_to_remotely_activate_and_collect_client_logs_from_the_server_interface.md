@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Remotely Activate and Collect Client Logs
 tags:
   - troubleshooting-and-errors
+  - kb
 title: "How to Remotely Activate and Collect Client Logs from the Server Interface"
 knowledge_article_id: kA0Qk0000002B2cKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Remotely Activate and Collect Client Logs from the Server Interface
@@ -19,6 +20,10 @@ products:
 ## Overview
 
 This article explains how to remotely enable debug logging on an endpoint machine and collect client logs from the server interface, without requiring input or knowledge from the endpoint user.
+
+This procedure uses the **Automatic Logging** method (the **Collect diagnostics** action), which is the optimal way to gather logs since it requires no action from the end user. For the full Debug Logging reference, see [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) in the Global Settings documentation.
+
+If this automatic method isn't available or doesn't apply to your situation, use the manual terminal-based alternative instead: [How to Manually Activate Debugging Logs on Windows](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_activate_debugging_logs_on_windows) or [How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_generate_logs_for_mac_endpoint_protector_agents_via_terminal).
 
 ## Instructions
 
@@ -45,8 +50,12 @@ This article explains how to remotely enable debug logging on an endpoint machin
 8. Expand the filters. Click the **Event** drop-down menu, then select **Artifact Received** and click **Apply**.  
    ![Filter for Artifact Received event](./../0-images/servlet_image_3f1c3b331cfe.png)
 
-9. Under the events, the uploaded artifact or client logs will be listed and available for download by the system administrator.  
-   > **NOTE:** The artifact may not be available for immediate download and may display a "File not found" error. It can take 20–30 minutes before the file is ready to download."
+9. Under the events, the uploaded artifact or client logs will be listed and available for download by the system administrator.
+
+   :::note
+   The artifact may not be available for immediate download and may display a "File not found" error. It can take 20–30 minutes before the file is ready to download.
+   :::
+
    ![Artifact or client logs available for download](./../0-images/servlet_image_823648e31f8f.png)
 
 10. Once the client logs are downloaded, submit them to the support team as needed.

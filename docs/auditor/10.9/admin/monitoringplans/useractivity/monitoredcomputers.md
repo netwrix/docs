@@ -33,7 +33,7 @@ The grid displays the following columns for each computer:
 | **Name** | The hostname or IP address of the monitored computer. |
 | **Item** | The source that included this computer in the plan — for example, an IP address, an IP range, or an AD container (OU). |
 | **Status** | A consolidated status indicator for the computer. |
-| **Last Activity Time** | The timestamp of the last time the service interacted with the computer. |
+| **Last Activity Time** | The last time the service interacted with the computer. |
 
 ## Filtering and Search
 

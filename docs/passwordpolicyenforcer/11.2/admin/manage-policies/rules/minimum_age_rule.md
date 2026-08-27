@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Age (Min) rule
 
-The Minimum Age rule stops users from quickly cycling through a series of passwords to evade the [History](history_rule.md) and [Similarity](similarity_rule.md) rules. Only [domain policies](../../../installation/domain_and_local_policies.md) can enforce this rule.
+The Minimum Age rule stops users from quickly cycling through a series of passwords to evade the [History rule](history_rule.md) and [Similarity rule](similarity_rule.md). Only [domain policies](../../../installation/domain_and_local_policies.md) can enforce this rule.
 
 ![Minimum age rule](/images/passwordpolicyenforcer/11.2/administration/agemin.webp)
 

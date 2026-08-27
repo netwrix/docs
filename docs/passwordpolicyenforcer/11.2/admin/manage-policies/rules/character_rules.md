@@ -48,7 +48,7 @@ Enter a **Name** for the character set, then enter the characters making up the 
 
 :::tip
 You can combine Character rules to enforce complex password requirements. For example, you might need to enforce a policy such as "passwords must contain a numeric character, but not in the first two positions" to ensure compatibility with some other system. Use two rules to enforce this requirement:
-- Configure the [Characters (Complexity)](complexity_rule.md) rule to require a numeric character.
+- Configure the [Characters (Complexity) rule](complexity_rule.md) to require a numeric character.
 - Configure the **Numeric** character set rule to **Not contain** numeric characters in positions **1** to **2**.
 :::
 
@@ -56,7 +56,7 @@ You can combine Character rules to enforce complex password requirements. For ex
 Other rules use custom character set names and character sets even if you disable the corresponding granular rule. You can redefine character sets even if you don't need to use the granular rules.
 :::
 
-The character set rules are flexible, but reserve them for cases where the [Complexity](complexity_rule.md) and First and Last Character rules can't enforce your desired policy. These other rules are easier to configure and easier for users to understand.
+The character set rules are flexible, but reserve them for cases where the [Complexity](complexity_rule.md) and [First and Last Character rules](#first-and-last-character-rules) can't enforce your desired policy. These other rules are easier to configure and easier for users to understand.
 
 ## First and Last Character rules
 
@@ -66,7 +66,7 @@ Select the **Characters (Granular)** checkbox at the top of the page, then selec
 
 These rules require passwords to begin or end with certain characters by default. **Begin** (First Character rule) or **End** (Last Character rule) below the rule's name indicates this. If you don't want certain characters to appear at the beginning or end of a password, select **Not begin** or **Not end** from the dropdown.
 
-Click the character set names to select them. A checkmark appears next to the selected character sets. For example, selecting **Not end** with **Numeric** and **Special** rejects passwords that end with a numeric or special character:
+Select the character set names to enable them. A checkmark appears next to the selected character sets. For example, selecting **Not end** with **Numeric** and **Special** rejects passwords that end with a numeric or special character:
 
 ![Characters (Last) rule](/images/passwordpolicyenforcer/11.2/administration/last_character_rule.webp)
 

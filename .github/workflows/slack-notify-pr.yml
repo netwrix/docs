@@ -1,0 +1,106 @@
+name: Slack notify PR activity
+
+# Posts a Slack message to #docs-gh whenever a PR is created, has a review
+# requested, or is commented on — @-mentioning the CODEOWNERS team(s) that
+# own the changed files. Fork PRs also get a PR comment tagging codeowners,
+# since they otherwise have no other reviewer visibility into who owns the
+# changed area.
+
+on:
+  # pull_request_target (not pull_request) so this job has repo secrets and
+  # a write-scoped token even for fork PRs. SAFETY: this workflow must never
+  # check out or execute the PR's head content — only read PR metadata via
+  # the GitHub API (gh pr view) and run code from the pinned base ref below.
+  # Adding a checkout of the fork's head ref here would reintroduce the
+  # exact secret-exfiltration risk pull_request_target is meant to avoid.
+  pull_request_target:
+    types: [opened, review_requested]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: slack-notify-pr-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    # issue_comment fires for both issue comments and PR comments — only
+    # continue here when the comment is on a PR. Plain issue comments are
+    # handled by the separate issue-intake workflow. Bot-authored comments
+    # (Vale autofix, Claude reviewers, etc.) are excluded to avoid Slack
+    # spam from automated commentary.
+    if: (github.event_name == 'pull_request_target' || github.event.issue.pull_request) && (github.event_name != 'issue_comment' || github.event.comment.user.type != 'Bot')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Always the base ref — see the SAFETY note above. Never point
+          # this at the PR head/merge ref.
+          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.base.sha || github.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22.x'
+
+      - name: Determine PR number
+        id: pr-info
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request_target" ]; then
+            echo "number=${{ github.event.pull_request.number }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "number=${{ github.event.issue.number }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Resolve CODEOWNERS teams for changed files
+        id: resolve-teams
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          FILES=$(gh pr view ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} --json files --jq '.files[].path')
+          mapfile -t FILE_ARRAY <<< "$FILES"
+          TEAMS=$(node scripts/resolve-codeowners-teams.mjs "${FILE_ARRAY[@]}")
+          echo "teams=$TEAMS" >> "$GITHUB_OUTPUT"
+
+      - name: Build message
+        id: build-message
+        run: |
+          # Build the notification text based on which event/action fired.
+          if [ "${{ github.event_name }}" = "pull_request_target" ] && [ "${{ github.event.action }}" = "opened" ]; then
+            MESSAGE="PR created: ${{ github.event.pull_request.html_url }}"
+          elif [ "${{ github.event_name }}" = "pull_request_target" ] && [ "${{ github.event.action }}" = "review_requested" ]; then
+            MESSAGE="Review requested on PR #${{ steps.pr-info.outputs.number }}: ${{ github.event.pull_request.html_url }}"
+          else
+            MESSAGE="Comment on PR #${{ steps.pr-info.outputs.number }}: ${{ github.event.comment.html_url }}"
+          fi
+          echo "message=$MESSAGE" >> "$GITHUB_OUTPUT"
+
+      - name: Comment on fork PRs tagging codeowners
+        # Fork contributors and reviewers may not be in the Slack channel,
+        # so give them a visible, on-PR codeowners tag too. Only needed
+        # once, on open — review_requested/comments already notify Slack.
+        if: >-
+          github.event_name == 'pull_request_target' &&
+          github.event.action == 'opened' &&
+          github.event.pull_request.head.repo.full_name != github.repository &&
+          steps.resolve-teams.outputs.teams != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NOTIFY_TEAMS: ${{ steps.resolve-teams.outputs.teams }}
+        run: |
+          MENTIONS=$(echo "$NOTIFY_TEAMS" | tr ',' ' ')
+          gh pr comment ${{ steps.pr-info.outputs.number }} --repo ${{ github.repository }} --body "Thanks for the contribution! Tagging codeowners for review: $MENTIONS"
+
+      - name: Send Slack notification
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          NOTIFY_MESSAGE: ${{ steps.build-message.outputs.message }}
+          NOTIFY_TEAMS: ${{ steps.resolve-teams.outputs.teams }}
+        run: |
+          node scripts/notify-slack.mjs --message "$NOTIFY_MESSAGE" --teams "$NOTIFY_TEAMS" || echo "Failed to send Slack notification"

@@ -38,13 +38,16 @@ slugify() {
     printf '%s' "${BASH_REMATCH[1]}"
     return
   fi
+  # Mirrors github-slugger's behavior (used by Docusaurus): each removed
+  # character leaves its surrounding whitespace intact, so runs of hyphens
+  # are NOT collapsed and leading/trailing hyphens are NOT trimmed. A
+  # heading like "Step 4 — Configure" (em dash stripped, two spaces
+  # remain) slugs to "step-4--configure", not "step-4-configure".
   printf '%s' "$heading" \
     | sed -E 's/^#+ +//' \
     | tr '[:upper:]' '[:lower:]' \
     | sed -E "s/[^a-z0-9 -]//g" \
-    | sed -E 's/ +/-/g' \
-    | sed -E 's/-+/-/g' \
-    | sed -E 's/^-+//;s/-+$//'
+    | sed -E 's/ /-/g'
 }
 
 load_headings() {

@@ -1,7 +1,7 @@
 ---
 title: "SharePoint"
 description: "SharePoint"
-sidebar_position: 280
+sidebar_position: 300
 ---
 
 # SharePoint

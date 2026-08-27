@@ -21,6 +21,8 @@ env:
   TARGET_BRANCH: main
   # Teams webhook URL stored in GitHub Secrets for security
   TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+  # Slack webhook URL stored in GitHub Secrets for security
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
 jobs:
   sync-branches:
@@ -28,10 +30,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0  # Full history for merge
           token: ${{ secrets.SYNC_PAT }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '22.x'
 
       - name: Configure git
         run: |
@@ -62,7 +69,7 @@ jobs:
         run: |
           echo "⏳ Waiting for 'build-and-deploy.yml' workflow to complete on ${{ env.SOURCE_BRANCH }}..."
 
-          MAX_WAIT=1800  # 30 minutes max wait
+          MAX_WAIT=2700  # 45 minutes max wait
           WAIT_INTERVAL=30  # Check every 30 seconds
           ELAPSED=0
 
@@ -200,6 +207,11 @@ jobs:
             }]
           }' "${{ env.TEAMS_WEBHOOK_URL }}" || echo "Failed to send Teams notification"
 
+      - name: Send success notification to Slack
+        if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'false'
+        run: |
+          node scripts/notify-slack.mjs --message "✅ dev→main sync succeeded: ${{ steps.merge-details.outputs.commit_count }} commits merged (latest ${{ steps.merge-details.outputs.commit_sha }}). ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || echo "Failed to send Slack notification"
+
       - name: Create GitHub issue for conflict
         if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'true'
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
@@ -276,6 +288,11 @@ jobs:
             }]
           }' "${{ env.TEAMS_WEBHOOK_URL }}" || echo "Failed to send Teams notification"
 
+      - name: Send conflict notification to Slack
+        if: steps.check-new-commits.outputs.has_new_commits == 'true' && steps.merge.outputs.conflict == 'true'
+        run: |
+          node scripts/notify-slack.mjs --message "⚠️ dev→main sync blocked by merge conflict: ${{ steps.check-new-commits.outputs.commits_ahead }} commits waiting. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || echo "Failed to send Slack notification"
+
       - name: Send skip notification to Teams
         if: steps.check-new-commits.outputs.has_new_commits == 'false'
         run: |
@@ -291,6 +308,11 @@ jobs:
               "text": "No new commits found in dev branch. Nothing to sync."
             }]
           }' "${{ env.TEAMS_WEBHOOK_URL }}" || echo "Failed to send Teams notification"
+
+      - name: Send failure notification to Slack
+        if: failure()
+        run: |
+          node scripts/notify-slack.mjs --message "❌ dev→main sync failed: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || echo "Failed to send Slack notification"
 
       - name: Workflow summary
         if: always()

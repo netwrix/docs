@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Server UI Access Issue
 tags:
   - troubleshooting-and-errors
+  - kb
 title: "Error: Server User Interface Only Accessible with Safari on VM-Hosted Servers"
 knowledge_article_id: kA0Qk0000002B2dKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Error: Server User Interface Only Accessible with Safari on VM-Hosted Servers
@@ -23,7 +24,7 @@ This article explains how to resolve an issue where the Endpoint Protector Serve
 ## Instructions
 
 1. Access the VM where the Endpoint Protector server is hosted.
-2. Validate the networking settings are configured correctly. For detailed guidance, see the [Endpoint Protector Setup Wizard – Network Settings](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/install/virtualappliance/setupwizard) documentation.
+2. Validate the networking settings are configured correctly. For detailed guidance, see the [Endpoint Protector Setup Wizard – Network Settings](/docs/endpointprotector/install/virtualappliance/setupwizard) documentation.
 3. Ensure that the gateway is configured and added.
 4. Save the settings.
 

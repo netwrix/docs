@@ -744,7 +744,7 @@ return -100L;" Property="PresenceState" />
 <Column CanBeFiltered="true" ColumnSize="4" DisplayBinding="Category.DisplayName" IsDisplayInSummaryView="true" IsResizable="true" />
 </DisplayTable>
 <MenuItem Identifier="Dashboard_Directory" DisplayName_L1="Directory" DisplayName_L2="Référentiel" ParentMenuItem="Dashboard" />
-<MenuItem Identifier="Nav_Directory" DisplayName_L1="Directory" DisplayName_L2="Référentiel" ParentMenuItem="Nav">
+<MenuItem Identifier="Nav_Directory" DisplayName_L1="Directory" DisplayName_L2="Référentiel" ParentMenuItem="Nav" IconCode="id-card">
 <MenuItem Identifier="Nav_Directory_User" DisplayName_L1="Users" DisplayName_L2="Collaborateurs" EntityType="Directory_User" />
 <MenuItem Identifier="Nav_Directory_Title" DisplayName_L1="Titles" DisplayName_L2="Fonctions" EntityType="Directory_Title" />
 <MenuItem Identifier="Nav_Directory_JobCategory" DisplayName_L1="Job Categories" DisplayName_L2="Familles de métier" EntityType="Directory_JobCategory" />
@@ -774,9 +774,9 @@ return -100L;" Property="PresenceState" />
 <MenuItem Identifier="Reports_Workforce_Directory_PlannedUserExists" ReportQuery="Workforce_Directory_PlannedUserExists" />
 </MenuItem>
 <MenuItem Identifier="Search_Directory_User" DisplayName_L1="Menu" DisplayName_L2="Menu">
-<MenuItem Identifier="Search_Directory_User_NewInternal" DisplayName_L1="New Employee" DisplayName_L2="Entrée d'un interne" IconCode="AddFriend" Workflow="Directory_User_NewInternal" />
-<MenuItem Identifier="Search_Directory_User_NewExternal" DisplayName_L1="New Contractor" DisplayName_L2="Entrée d'un externe" IconCode="AddFriend" Workflow="Directory_User_NewExternal" />
-<MenuItem Identifier="Search_Directory_User_Helpdesk_Start" DisplayName_L1="New User (helpdesk)" DisplayName_L2="Nouveau collaborateur (helpdesk)" IconCode="AddFriend" Workflow="Helpdesk_Directory_User_New" />
+<MenuItem Identifier="Search_Directory_User_NewInternal" DisplayName_L1="New Employee" DisplayName_L2="Entrée d'un interne" IconCode="user-plus" Workflow="Directory_User_NewInternal" />
+<MenuItem Identifier="Search_Directory_User_NewExternal" DisplayName_L1="New Contractor" DisplayName_L2="Entrée d'un externe" IconCode="user-plus" Workflow="Directory_User_NewExternal" />
+<MenuItem Identifier="Search_Directory_User_Helpdesk_Start" DisplayName_L1="New User (helpdesk)" DisplayName_L2="Nouveau collaborateur (helpdesk)" IconCode="user-plus" Workflow="Helpdesk_Directory_User_New" />
 </MenuItem>
 <MenuItem Identifier="Top_Directory_User" DisplayName_L1="Users" DisplayName_L2="Collaborateurs" EntityType="Directory_User" ParentMenuItem="Top" />
 <MenuItem Identifier="UserMenu">
@@ -786,46 +786,46 @@ return -100L;" Property="PresenceState" />
 <MenuItem Identifier="View_Directory_User" DisplayName_L1="Menu" DisplayName_L2="Menu">
 <MenuItem Identifier="Menu_Directory_User_Changes" DisplayName_L1="Actions" DisplayName_L2="Actions">
     <MenuItem Identifier="Menu_Directory_User_Changes_Update" DisplayName_L1="Section" DisplayName_L2="Section">
-    <MenuItem Identifier="Menu_Directory_User_Changes_UpdatePersonalData" DisplayName_L1="Update Personal Data" DisplayName_L2="Modifier les informations personnelles" IconCode="Edit" Workflow="Directory_User_UpdatePersonalData" />
-    <MenuItem Identifier="Menu_Directory_User_Changes_ManageContracts" DisplayName_L1="Manage Contracts" DisplayName_L2="Gérer les contrats" IconCode="Edit" Workflow="Directory_User_ManageContracts" />
-    <MenuItem Identifier="Menu_Directory_User_Changes_ManagePositions" DisplayName_L1="Manage Positions" DisplayName_L2="Gérer les postes" IconCode="Edit" Workflow="Directory_User_ManagePositions" />
-    <MenuItem Identifier="Menu_Directory_User_Changes_ResourcesUpdate" DisplayName_L1="Modify Permissions" DisplayName_L2="Modifier les droits" IconCode="Edit" Workflow="Directory_User_UpdateResources" />
-    <MenuItem Identifier="Menu_Directory_User_Changes_Suspend" DisplayName_L1="Suspend" DisplayName_L2="Suspendre" IconCode="Edit" Workflow="Directory_User_Suspend" />
-    <MenuItem Identifier="Menu_Directory_User_Changes_Reactivate" DisplayName_L1="Reactivate" DisplayName_L2="Réactiver" IconCode="Edit" Workflow="Directory_User_Reactivate" />
+    <MenuItem Identifier="Menu_Directory_User_Changes_UpdatePersonalData" DisplayName_L1="Update Personal Data" DisplayName_L2="Modifier les informations personnelles" IconCode="pen" Workflow="Directory_User_UpdatePersonalData" />
+    <MenuItem Identifier="Menu_Directory_User_Changes_ManageContracts" DisplayName_L1="Manage Contracts" DisplayName_L2="Gérer les contrats" IconCode="pen" Workflow="Directory_User_ManageContracts" />
+    <MenuItem Identifier="Menu_Directory_User_Changes_ManagePositions" DisplayName_L1="Manage Positions" DisplayName_L2="Gérer les postes" IconCode="pen" Workflow="Directory_User_ManagePositions" />
+    <MenuItem Identifier="Menu_Directory_User_Changes_ResourcesUpdate" DisplayName_L1="Modify Permissions" DisplayName_L2="Modifier les droits" IconCode="pen" Workflow="Directory_User_UpdateResources" />
+    <MenuItem Identifier="Menu_Directory_User_Changes_Suspend" DisplayName_L1="Suspend" DisplayName_L2="Suspendre" IconCode="pen" Workflow="Directory_User_Suspend" />
+    <MenuItem Identifier="Menu_Directory_User_Changes_Reactivate" DisplayName_L1="Reactivate" DisplayName_L2="Réactiver" IconCode="pen" Workflow="Directory_User_Reactivate" />
     </MenuItem>
 </MenuItem>
-<MenuItem Identifier="View_Directory_User_Helpdesk" DisplayName_L1="Helpdesk" DisplayName_L2="Helpdesk" IconCode="Phone">
+<MenuItem Identifier="View_Directory_User_Helpdesk" DisplayName_L1="Helpdesk" DisplayName_L2="Helpdesk" IconCode="phone">
     <MenuItem Identifier="View_Directory_User_Helpdesk_Update" DisplayName_L1="Section" DisplayName_L2="Section">
-    <MenuItem Identifier="View_Directory_User_Helpdesk_FixRecord" DisplayName_L1="Repair Data (helpdesk)" DisplayName_L2="Réparer les données (helpdesk)" IconCode="Edit" Workflow="Helpdesk_Directory_User_FixRecord" />
+    <MenuItem Identifier="View_Directory_User_Helpdesk_FixRecord" DisplayName_L1="Repair Data (helpdesk)" DisplayName_L2="Réparer les données (helpdesk)" IconCode="pen" Workflow="Helpdesk_Directory_User_FixRecord" />
     </MenuItem>
     <MenuItem Identifier="View_Directory_User_Helpdesk_Delete" DisplayName_L1="Section" DisplayName_L2="Section">
-    <MenuItem Identifier="View_Directory_User_Helpdesk_Directory_User_Delete" DisplayName_L1="Delete User (helpdesk)" DisplayName_L2="Supprimer un collaborateur (helpdesk)" IconCode="Cancel" Workflow="Helpdesk_Directory_User_Delete" />
+    <MenuItem Identifier="View_Directory_User_Helpdesk_Directory_User_Delete" DisplayName_L1="Delete User (helpdesk)" DisplayName_L2="Supprimer un collaborateur (helpdesk)" IconCode="xmark" Workflow="Helpdesk_Directory_User_Delete" />
     </MenuItem>
 </MenuItem>
 </MenuItem>
-<DisplayEntityType Identifier="Directory_Country" Color="#95c18b" IconCode="MapPin" PluralDisplayName_L1="Countries" PluralDisplayName_L2="Pays">
+<DisplayEntityType Identifier="Directory_Country" Color="#95c18b" IconCode="map-pin" PluralDisplayName_L1="Countries" PluralDisplayName_L2="Pays">
 <Property Identifier="DisplayName" IsRequired="true" />
 <Property Identifier="Identifier" DisplayOrder="-1" IsRequired="true" />
 <Property Identifier="Regions" OutputType="BasicCollection" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_ExternalCompany" Color="#95c18b" IconCode="Suitcase" PluralDisplayName_L1="Companies" PluralDisplayName_L2="Sociétés">
+<DisplayEntityType Identifier="Directory_ExternalCompany" Color="#95c18b" IconCode="suitcase" PluralDisplayName_L1="Companies" PluralDisplayName_L2="Sociétés">
 <Property Identifier="DisplayName" IsRequired="true" />
 <Property Identifier="Identifier" DisplayOrder="-1" IsRequired="true" />
 <Property Identifier="PhotoTag" IsHidden="true" IsReadOnly="true" />
 <Property Identifier="UserRecords" NavigationBinding="Directory_UserRecord:User" OutputType="BasicCollection" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_JobCategory" Color="#95c18b" IconCode="Suitcase" PluralDisplayName_L1="Business Categories" PluralDisplayName_L2="Catégories de métier">
+<DisplayEntityType Identifier="Directory_JobCategory" Color="#95c18b" IconCode="suitcase" PluralDisplayName_L1="Business Categories" PluralDisplayName_L2="Catégories de métier">
 <Property Identifier="DisplayName" IsRequired="true" />
 <Property Identifier="Identifier" DisplayOrder="-1" IsRequired="true" />
 <Property Identifier="Titles" OutputType="BasicCollection" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_Organization" Color="#95c18b" IconCode="Suitcase" PluralDisplayName_L1="Departments" PluralDisplayName_L2="Départements">
+<DisplayEntityType Identifier="Directory_Organization" Color="#95c18b" IconCode="suitcase" PluralDisplayName_L1="Departments" PluralDisplayName_L2="Départements">
 <Property Identifier="Children" OutputType="BasicCollection" />
 <Property Identifier="DisplayName" IsRequired="true" />
 <Property Identifier="Identifier" DisplayOrder="-1" IsRequired="true" />
 <Property Identifier="UserRecords" NavigationBinding="Directory_UserRecord:User" OutputType="BasicCollection" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_OrganizationType" Color="#95c18b" IconCode="Suitcase" PluralDisplayName_L1="Department Types" PluralDisplayName_L2="Types de départment">
+<DisplayEntityType Identifier="Directory_OrganizationType" Color="#95c18b" IconCode="suitcase" PluralDisplayName_L1="Department Types" PluralDisplayName_L2="Types de départment">
 <Property Identifier="DisplayName" IsRequired="true" />
 <Property Identifier="Identifier" DisplayOrder="-1" IsRequired="true" />
 <Property Identifier="Organizations" OutputType="BasicCollection" />
@@ -836,7 +836,7 @@ return -100L;" Property="PresenceState" />
 <Property Identifier="UserRecords" NavigationBinding="Directory_UserRecord:User" OutputType="BasicCollection" />
 </DisplayEntityType>
 <DisplayEntityType Identifier="Directory_PresenceState" PluralDisplayName_L1="User Status" PluralDisplayName_L2="Etats de présence" />
-<DisplayEntityType Identifier="Directory_Region" Color="#95c18b" IconCode="MapPin" PluralDisplayName_L1="Regions" PluralDisplayName_L2="Régions">
+<DisplayEntityType Identifier="Directory_Region" Color="#95c18b" IconCode="map-pin" PluralDisplayName_L1="Regions" PluralDisplayName_L2="Régions">
 <Property Identifier="DisplayName" IsRequired="true" />
 <Property Identifier="Identifier" DisplayOrder="-1" IsRequired="true" />
 <Property Identifier="Sites" OutputType="BasicCollection" />
@@ -850,24 +850,24 @@ return -100L;" Property="PresenceState" />
 <DisplayEntityType Identifier="Directory_ReservedLogin" PluralDisplayName_L1="Reserved Logins">
 <Property Identifier="Value" DisplayOrder="-1" IsRequired="true" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_Site" AutocompleteBinding="Directory_Site:DisplayName" Color="#95c18b" IconCode="MapPin" PluralDisplayName_L1="Sites" PluralDisplayName_L2="Sites">
+<DisplayEntityType Identifier="Directory_Site" AutocompleteBinding="Directory_Site:DisplayName" Color="#95c18b" IconCode="map-pin" PluralDisplayName_L1="Sites" PluralDisplayName_L2="Sites">
 <Property Identifier="DisplayName" IsRequired="true" />
 <Property Identifier="Identifier" DisplayOrder="-1" IsRequired="true" />
 <Property Identifier="PhotoTag" IsHidden="true" IsReadOnly="true" />
 <Property Identifier="UserRecords" InputType="Picker" IsReadOnly="true" NavigationBinding="Directory_UserRecord:User" OutputType="BasicCollection" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_Subsidiary" Color="#95c18b" IconCode="Suitcase" PluralDisplayName_L1="Subsidiaries" PluralDisplayName_L2="Filiales">
+<DisplayEntityType Identifier="Directory_Subsidiary" Color="#95c18b" IconCode="suitcase" PluralDisplayName_L1="Subsidiaries" PluralDisplayName_L2="Filiales">
 <Property Identifier="DisplayName" IsRequired="true" />
 <Property Identifier="Identifier" DisplayOrder="-1" IsRequired="true" />
 <Property Identifier="PhotoTag" IsHidden="true" IsReadOnly="true" />
 <Property Identifier="UserRecords" NavigationBinding="Directory_UserRecord:User" OutputType="BasicCollection" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_Title" AutocompleteBinding="Directory_Title:Identifier" Color="#95c18b" IconCode="Suitcase" MinSearchLength="5" PluralDisplayName_L1="Titles" PluralDisplayName_L2="Fonctions">
+<DisplayEntityType Identifier="Directory_Title" AutocompleteBinding="Directory_Title:Identifier" Color="#95c18b" IconCode="suitcase" MinSearchLength="5" PluralDisplayName_L1="Titles" PluralDisplayName_L2="Fonctions">
 <Property Identifier="DisplayName" IsRequired="true" />
 <Property Identifier="Identifier" DisplayOrder="-1" IsRequired="true" />
 <Property Identifier="UserRecords" NavigationBinding="Directory_UserRecord:User" OutputType="BasicCollection" />
 </DisplayEntityType>
-<DisplayEntityType Identifier="Directory_User" Color="#79C3D2" D0IsActive="true" D1IsActive="true" D2IsActive="true" D3IsActive="true" D4IsActive="true" D5IsActive="true" D6IsActive="true" D7IsActive="true" IconCode="People" PluralDisplayName_L1="Users" PluralDisplayName_L2="Collaborateurs" Priority="0">
+<DisplayEntityType Identifier="Directory_User" Color="#79C3D2" D0IsActive="true" D1IsActive="true" D2IsActive="true" D3IsActive="true" D4IsActive="true" D5IsActive="true" D6IsActive="true" D7IsActive="true" IconCode="users" PluralDisplayName_L1="Users" PluralDisplayName_L2="Collaborateurs" Priority="0">
 <Property Identifier="AssistantOf" OutputType="BasicCollection" />
 <Property Identifier="Identifier" DisplayOrder="-1" />
 <Property Identifier="ManagedOrganizations" InputType="Picker" OutputType="BasicCollection" />

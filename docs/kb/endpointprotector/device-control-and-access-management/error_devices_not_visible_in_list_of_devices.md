@@ -8,10 +8,11 @@ keywords:
 sidebar_label: Devices Not Visible
 tags:
   - device-control-and-access-management
+  - kb
 title: "Error: Devices Not Visible in List of Devices"
 knowledge_article_id: kA0Qk0000002B6eKAE
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # Error: Devices Not Visible in List of Devices

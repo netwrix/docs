@@ -31,7 +31,7 @@ knowledge_article_id: ka0Qk000000DkufIAC
 
 When a new Netwrix Change Tracker agent version is released, you can deploy it automatically from the Change Tracker Hub console. This article provides a comprehensive guide for downloading, uploading, and deploying agent updates, along with best practices for phased rollouts and troubleshooting common issues.
 
-> **NOTE:** For the most current agent update procedures and screenshots, refer to the official documentation: [Agent Updates](/docs/changetracker/8_0/admin/settingstab/agentsanddevices/agentupdates)
+> **NOTE:** For the most current agent update procedures and screenshots, refer to the official documentation: [Agent Updates](/docs/changetracker/admin/settingstab/agentsanddevices/agentupdates)
 
 > **END OF SUPPORT NOTICE**
 >
@@ -320,8 +320,8 @@ A: Navigate to Settings > Agents & Devices. The version is displayed in the Devi
 
 ## Related Links
 
-- [Agent Updates (Official Documentation)](/docs/changetracker/8_0/admin/settingstab/agentsanddevices/agentupdates)
-- [Device Groups](/docs/changetracker/8_0/admin/settingstab/devicegroups)
-- [Agent and Device Ports](/docs/changetracker/8_0/requirements/agentdeviceports)
-- [Component Release History](/docs/changetracker/8_0/componentreleases)
+- [Agent Updates (Official Documentation)](/docs/changetracker/admin/settingstab/agentsanddevices/agentupdates)
+- [Device Groups](/docs/changetracker/admin/settingstab/devicegroups)
+- [Agent and Device Ports](/docs/changetracker/requirements/agentdeviceports)
+- [Component Release History](/docs/changetracker/componentreleases)
 - [at Command ⸱ Red Hat 🡥](https://www.redhat.com/en/blog/linux-at-command)

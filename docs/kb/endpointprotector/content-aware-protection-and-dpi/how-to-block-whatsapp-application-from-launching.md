@@ -13,10 +13,11 @@ keywords:
   - block application
   - denylist
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: How to Block WhatsApp Application from Launching
 tags:
   - content-aware-protection-and-dpi
+  - kb
 title: "How to Block WhatsApp Application from Launching"
 knowledge_article_id: kA0Qk0000002B12KAE
 ---
@@ -26,6 +27,8 @@ knowledge_article_id: kA0Qk0000002B12KAE
 ## Overview
 
 This article explains how to block and prevent the WhatsApp application from opening on Windows and macOS computers by configuring an **Applications Denylist** in the Content Aware Protection policy of **Netwrix Endpoint Protector**.
+
+For the full reference, see [Applications](/docs/endpointprotector/admin/denylistsallowlists/denylists#applications) in the Denylists documentation.
 
 ## Instructions
 
@@ -49,3 +52,7 @@ This article explains how to block and prevent the WhatsApp application from ope
 7. Save the policy and update the policies on the endpoint computers. Ensure you assign the policy to the target computers.  
    ![Assigning the Applications Denylist policy to target computers](./../0-images/ka0Qk000000Dzor_0EMQk00000CAgof.png)
 8. Attempt to open the WhatsApp Desktop application to confirm it is blocked.
+
+:::note
+The Applications Denylist matches on the application name and, optionally, the command-line arguments used to launch it. Using the wildcard `*` in the **Parameters** field, as in these steps, blocks the application regardless of the arguments used to launch it. The Endpoint Protector Client has limited visibility into launches from PowerShell, PowerShell ISE, and basic command-line operations on macOS and Linux — see [Applications](/docs/endpointprotector/admin/denylistsallowlists/denylists#applications) for details.
+:::

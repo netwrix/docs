@@ -29,7 +29,7 @@ knowledge_article_id: kA0Qk0000000ahpKAA
 ## Symptom
 
 - The events report in Netwrix Change Tracker contains one or more `ErrorEvent` events. Their description states `Corrupt`.
-- Agent logs (see [Rolling-Log File Location](/docs/changetracker/8_1/install/agent/rollinglogfile)) contain the following line:
+- Agent logs (see [Rolling-Log File Location](/docs/changetracker/install/agent/rollinglogfile)) contain the following line:
   - **Windows:** `C:\ProgramData\NNT\gen7agent.app.netcore\rolling-log.txt`
   - **Linux:** `/var/nnt/gen7agent.app.netcore/rolling-log.txt`
 
@@ -51,7 +51,7 @@ Perform an agent reset to reconfigure affected agents:
 
 1. Stop the Netwrix Change Tracker Agent Service.
 
-2. Navigate to the agent directory (see [Rolling-Log File Location](/docs/changetracker/8_1/install/agent/rollinglogfile)): `C:\ProgramData\NNT\gen7agent.app.netcore\`
+2. Navigate to the agent directory (see [Rolling-Log File Location](/docs/changetracker/install/agent/rollinglogfile)): `C:\ProgramData\NNT\gen7agent.app.netcore\`
 
 3. Right-click the `Hubdetails.xml` file and select **Edit**.
 
@@ -67,7 +67,7 @@ Perform an agent reset to reconfigure affected agents:
 service nntgen7agentcore stop
 ```
 
-2. Navigate to the agent directory (see [Rolling-Log File Location](/docs/changetracker/8_1/install/agent/rollinglogfile)): `/var/nnt/gen7agent.app.netcore/`
+2. Navigate to the agent directory (see [Rolling-Log File Location](/docs/changetracker/install/agent/rollinglogfile)): `/var/nnt/gen7agent.app.netcore/`
 
 3. Edit the `Hubdetails.xml` file.
 

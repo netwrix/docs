@@ -27,20 +27,20 @@ Follow the instructions to enable SIEM notifications.
     - TCP
 - Port – The port of the SIEM server.
 - Template – Select the template you want from the dropdown list
-
-    - LEEF template – Threat data is sent to the SIEM application in the standard LEEF format
-    - CEF template – Threat data is sent to the SIEM application in the standard CEF format
-    - Custom template – Threat data is sent to the SIEM application in a customized format
+    - **CEF template** – Common Event Format, with a standard syslog date/host prefix
+    - **ISO CEF template** – Common Event Format, with an ISO 8601 timestamp prefix
+    - **Raw CEF template** – Common Event Format, with no date/host prefix (use when your syslog transport or collector already prepends its own date and host header)
+    - **CEF rsyslog template** – Common Event Format, with an rsyslog-compatible timestamp (no colon separator in the date)
+    - **LEEF template** – Log Event Extended Format, used by SIEMs such as IBM QRadar
+    - **Custom template** – An editable starting point (based on the LEEF layout) for building a custom format
 
         :::note
         You can implement only one custom template.
         :::
 
+    - **Notification template** – A simple pipe-delimited format used for basic connectivity tests or generic status notifications rather than forwarding threat details
 
-    - Notification template – Threat data is sent to the SIEM application in a basic notification
-      format:
-
-    `%SYSLOG_DATE%|%HOST%|%COMPANY%|%PRODUCT%|%PRODUCT_VERSION%|%MESSAGE_TYPE%|%MESSAGE%`
+        `%SYSLOG_DATE%|%HOST%|%COMPANY%|%PRODUCT%|%PRODUCT_VERSION%|%MESSAGE_TYPE%|%MESSAGE%`
 
 - Template Format – Selecting Custom template from the Template dropdown list enables this box. It
   displays the variables in Threat Manager that you can use to create a custom SIEM template:
@@ -174,4 +174,4 @@ Follow the instructions to enable SIEM notifications.
 
 **Step 4 –** Click Save Settings to save the configuration settings.
 
-SIEM notifications are now configured.
+You have now configured SIEM notifications.

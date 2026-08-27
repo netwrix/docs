@@ -8,17 +8,22 @@ keywords:
 sidebar_label: Activate Debugging Logs
 tags:
   - troubleshooting-and-errors
+  - kb
 title: "How to Manually Activate Debugging Logs on Windows"
 knowledge_article_id: kA0Qk0000002B7PKAU
 products:
-  - endpoint-protector
+  - endpointprotector
 ---
 
 # How to Manually Activate Debugging Logs on Windows
 
 ## Overview
 
-If you are experiencing issues with the **Endpoint Protector Client** and cannot use the [UI Debug option](https://docs.netwrix.com/docs/endpointprotector/5_9_4_2/admin/dc_module/globalsettings) or the SupportTool, you can manually activate debugging logs on Windows. Follow the instructions below to enable logging for troubleshooting purposes.
+If you are experiencing issues with the **Endpoint Protector Client** and cannot use the [Debug Logging](/docs/endpointprotector/admin/dc_module/globalsettings#debug-logging) UI option or the SupportTool, you can manually activate debugging logs on Windows. Follow the instructions below to enable logging for troubleshooting purposes.
+
+:::tip
+Collecting logs remotely from the server console — the **Automatic Logging** method — is the optimal approach, since it requires no action on the endpoint itself. Use this manual terminal method only when the automatic method isn't available or doesn't apply. See [How to Remotely Activate and Collect Client Logs from the Server Interface](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_remotely_activate_and_collect_client_logs_from_the_server_interface) for the automatic procedure. For the equivalent manual procedure on macOS, see [How to Manually Generate Logs for Mac Endpoint Protector Agents via Terminal](/docs/kb/endpointprotector/troubleshooting-and-errors/how_to_manually_generate_logs_for_mac_endpoint_protector_agents_via_terminal).
+:::
 
 ## Instructions
 

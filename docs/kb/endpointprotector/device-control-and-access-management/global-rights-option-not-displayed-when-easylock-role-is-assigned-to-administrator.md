@@ -15,10 +15,11 @@ keywords:
   - USB
   - access model
 products:
-  - endpoint-protector
+  - endpointprotector
 sidebar_label: Global Rights Option Not Displayed When Easylock R
 tags:
   - device-control-and-access-management
+  - kb
 title: "Global Rights Option Not Displayed When Easylock Role Is Assigned to Administrator"
 knowledge_article_id: kA0Qk0000002j7VKAQ
 ---

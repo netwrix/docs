@@ -13,11 +13,12 @@ keywords:
   - browser certificates
   - fix
 products:
-  - endpoint-protector
+  - endpointprotector
 visibility: public
 sidebar_label: "Error: Secure Connection Failed (Invalid Certificate) Error in Mozilla Firefox"
 tags:
   - troubleshooting-and-errors
+  - kb
 title: 'Error: Secure Connection Failed (Invalid Certificate) Error in Mozilla Firefox'
 knowledge_article_id: kA0Qk0000002BCUKA2
 ---

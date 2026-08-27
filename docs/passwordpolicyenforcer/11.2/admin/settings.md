@@ -12,14 +12,14 @@ Most Password Policy Enforcer (PPE) settings are policy-specific, but there are 
 
 ![General Settings PPE](/images/passwordpolicyenforcer/11.2/administration/settingsgeneral.webp)
 
-**Default policy**. Users must comply with the default password policy if you haven't assigned another policy to them. You can use PPE without a default policy, but Netwrix doesn't recommend this because it might leave some passwords unchecked. If you need to exclude some users from PPE's checking, then it's better to set a default policy and explicitly exclude some users:
+**Default policy**. Select the policy to use as the default from the dropdown. Users must comply with the default password policy if you haven't assigned another policy to them. See [Set the default policy](manage-policies/manage_policies.md#set-the-default-policy) to learn how PPE uses the default policy and how to exempt specific users from it.
 
-1. [Add a policy](manage-policies/manage_policies.md#add-a-policy) for the excluded users.
-2. Leave all the rules disabled for the new policy.
-3. [Assign the policy](manage-policies/usersgroups.md) to the users who don't have to comply with any PPE rules.
+:::warning
+If Password Policy Enforcer has only one policy, and that policy is also the default policy, then PPE enforces the policy for all users. If you want to deploy a single policy gradually, don't make it the default until the deployment is complete.
+:::
 
 :::tip
-Use the [Test Policy by User](manage-policies/testpolicy.md) feature to see which policy PPE enforces for a particular user. You can also review the [Policy Selection Flowchart](manage-policies/usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
+Use the [Test Policy by User](manage-policies/testpolicy.md) feature to see which policy PPE enforces for a particular user. You can also review the [Policy selection flowchart](manage-policies/usersgroups.md#policy-selection-flowchart) to see how PPE selects a policy for a user.
 :::
 
 **Enforce policy when password is reset**. Select this option to enforce the assigned password policy whenever someone resets a password or creates a new user account. This option doesn't change the behavior of the [Minimum Age rule](manage-policies/rules/minimum_age_rule.md), as PPE never enforces this rule during a reset. PPE only enforces the [History rule](manage-policies/rules/history_rule.md) during a reset if you select this checkbox, and also select the History Rule's **Enforce this rule when a password is reset** checkbox.
@@ -28,7 +28,7 @@ Use the [Test Policy by User](manage-policies/testpolicy.md) feature to see whic
 
 **Log event when password not checked by service**. Select this option to log an event to the Windows Application Event Log whenever PPE doesn't check a password. This can happen if:
 
-- Password Policy Enforcer is disabled.
+- PPE is disabled.
 - The policy [assigned](manage-policies/usersgroups.md) to a user is disabled.
 - No policy is assigned to a user, or an error occurs when determining the assigned policy, and a default policy isn't specified.
 - Someone resets a password, and **Enforce policy when password is reset** isn't selected.
@@ -36,7 +36,7 @@ Use the [Test Policy by User](manage-policies/testpolicy.md) feature to see whic
 **Log event when password rejected by service**. Select this option to log an event to the Windows Application Event Log whenever PPE rejects a password. The logged event includes the username, event source (client or server), and the rules the password doesn't comply with. This option doesn't log an event when Windows rejects a password.
 
 :::note
-The Password Policy Client and the Password Policy Server each enforce most PPE rules, but neither enforces all of them. If the PPE Client is installed, it often rejects a non-compliant password before Windows sends the password to the domain controller. If this happens, the logged event might not show all the rules the password doesn't comply with, because the Password Policy Server enforces some rules exclusively. For example, consider a password that doesn't comply with the Length, Complexity, and Compromised rules. If the PPE Client is installed, the event only shows the Length and Complexity rules. This happens because only the server enforces the Compromised rule, and the client rejects the password before it reaches the server. PPE logs all three rules if you use the same password and the PPE Client isn't installed.
+The Password Policy Client and the Password Policy Server each enforce most PPE rules, but neither enforces all of them. If the PPE Client is installed, it often rejects a non-compliant password before Windows sends the password to the domain controller. If this happens, the logged event might not show all the rules the password doesn't comply with, because the Password Policy Server enforces some rules exclusively. For example, consider a password that doesn't comply with the [Length](manage-policies/rules/length_rule.md), [Complexity](manage-policies/rules/complexity_rule.md), and [Compromised](manage-policies/rules/compromised_rule.md) rules. If the PPE Client is installed, the event only shows the Length and Complexity rules. This happens because only the server enforces the Compromised rule, and the client rejects the password before it reaches the server. PPE logs all three rules if you use the same password and the PPE Client isn't installed.
 :::
 
 **Log event when password accepted by service**. Select this option to log an event to the Windows Application Event Log whenever PPE accepts a password. The logged event includes the username. If you have other password filters installed, they can reject a password after PPE accepts it, so the logged event doesn't guarantee the password changed. Windows enforces its own rules before PPE, so the presence of the event indicates that the password complies with any Windows password rules.
