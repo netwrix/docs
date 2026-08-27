@@ -11,6 +11,7 @@ device:
 
 - [Configure Cisco ASA Devices](/docs/auditor/10.7/configuration/networkdevices/ciscoasa.md)
 - [Configure Cisco IOS Devices](/docs/auditor/10.7/configuration/networkdevices/ciscoios.md)
+- [Configure Cisco FTD Devices](/docs/auditor/10.7/configuration/networkdevices/ciscoftd.md)
 - [Cisco Meraki Dashboard ](/docs/auditor/10.7/configuration/networkdevices/ciscomerakidashboard.md)
 - [Configure Cisco Meraki Devices](/docs/auditor/10.7/configuration/networkdevices/ciscomerakidevices.md)
 - [Configure Fortinet FortiGate Devices](/docs/auditor/10.7/configuration/networkdevices/fortinetfortigate.md)
