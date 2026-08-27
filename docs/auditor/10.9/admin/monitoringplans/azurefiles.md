@@ -22,8 +22,8 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 1. In the **Netwrix Auditor**, go to **Home > Monitoring Plans > + Add Plan**
 2. Select **Azure Files**
 3. Configure:
- - [Audit database (SQL)](/docs/auditor/10.9/admin/settings/auditdatabase)
- - [Notifications (SMTP or Exchange Online)](/docs/auditor/10.9/admin/settings/notifications)
+ - [Audit database (SQL)](/docs/auditor/10_9/admin/settings/auditdatabase)
+ - [Notifications (SMTP or Exchange Online)](/docs/auditor/10_9/admin/settings/notifications)
  - Plan name and description
  - Select **Add item now**
 
@@ -68,13 +68,13 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 What you can exclude depends on the monitored item type:
 
 - **Azure Subscription items** – On the item's **Scope** tab, exclude specific **storage accounts** or **resource groups** by name so Netwrix Auditor skips them entirely for this subscription.
-- **Azure Storage Account items** – On the item's **Scope** tab, use the **Omit List** to exclude specific shares, folders, or files (Universal Naming Convention (UNC) paths). Choose **All** to exclude an object from all data collection, **SiT** to exclude it from State-in-Time snapshots only, or **User Activity** to exclude it from activity data collection only. See [Configuring the monitoring scope (omit lists)](/docs/auditor/10.9/configuration/azurefiles/stateintime.md#configuring-the-monitoring-scope-omit-lists) for details.
+- **Azure Storage Account items** – On the item's **Scope** tab, use the **Omit List** to exclude specific shares, folders, or files (Universal Naming Convention (UNC) paths). Choose **All** to exclude an object from all data collection, **State-in-Time** to exclude it from State-in-Time snapshots only, or **User Activity** to exclude it from activity data collection only. See [Configuring the monitoring scope (omit lists)](/docs/auditor/10.9/configuration/azurefiles/stateintime.md#configuring-the-monitoring-scope-omit-lists) for details.
 
 ## Next Steps
 
 After creating the monitoring plan:
 1. **Verify data collection** is working
-2. **[Configure reports](/docs/auditor/10.9/admin/reports/overview)** as needed
-3. **[Set up alerts](/docs/auditor/10.9/admin/alertsettings/create/)** for important events
+2. **[Configure reports](/docs/auditor/10_9/admin/reports/overview)** as needed
+3. **[Set up alerts](/docs/auditor/10_9/admin/alertsettings/create/)** for important events
 
 For configuration requirements, see [Azure Files Configuration](/docs/auditor/10.9/configuration/azurefiles/overview.md)

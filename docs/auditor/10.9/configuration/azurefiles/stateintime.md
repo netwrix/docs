@@ -6,7 +6,7 @@ This topic describes how to enable State-in-Time data collection for an Azure Fi
 
 ## Prerequisites
 
-- An Azure Files monitoring plan must already exist in Netwrix Auditor [Azure Files Configuration Overview](/docs/auditor/10_8/configuration/azurefiles/overview)
+- An Azure Files monitoring plan must already exist in Netwrix Auditor [Azure Files Configuration Overview](/docs/auditor/10_9/configuration/azurefiles/overview)
 - The monitoring plan must target Azure file shares mounted via SMB (Netwrix Auditor doesn't support Azure File Sync or NFS).
 - The service account that the monitoring plan uses must have sufficient permissions to enumerate file and folder ACLs on the Azure file shares.
 - To collect "Times Accessed" data for the Excessive Access Permissions report, you need an Azure storage account configured to receive diagnostic logs.
@@ -22,7 +22,7 @@ This topic describes how to enable State-in-Time data collection for an Azure Fi
 5. (Optional) Click **Modify** in the **Schedule** section to customize the snapshot collection schedule. By default, Netwrix Auditor collects snapshots daily.
 6. Click **Save** to apply the changes.
 
-After you save the monitoring plan, Netwrix Auditor will begin collecting State-in-Time snapshots according to the configured schedule.
+After you save the monitoring plan, Netwrix Auditor begins collecting State-in-Time snapshots on the configured schedule.
 
 > **Note:** Netwrix Auditor collects the first snapshot at the next scheduled run. Reports won't contain data until then.
 
@@ -57,7 +57,7 @@ Netwrix Auditor for Azure Files supports three types of omit lists:
 | Omit list type | Scope |
 |----------------|-------|
 | **All** | Excludes objects from all data collection (activity and State-in-Time) |
-| **SiT** | Excludes objects from State-in-Time data collection only |
+| **State-in-Time** | Excludes objects from State-in-Time data collection only |
 | **User Activity** | Excludes objects from activity data collection only |
 
 ### Configuring omit lists in the Netwrix Auditor UI
@@ -65,7 +65,7 @@ Netwrix Auditor for Azure Files supports three types of omit lists:
 1. Open the Azure Files monitoring plan in edit mode.
 2. Navigate to the **Scope** tab.
 3. Click **Omit List** and specify the Universal Naming Convention (UNC) paths to exclude.
-4. Select the appropriate list type: **All** or **SiT**.
+4. Select the appropriate list type: **All**, **State-in-Time**, or **User Activity**.
 5. Save the monitoring plan.
 
 ### Using omit list text files
@@ -83,7 +83,7 @@ You can also define omit lists using plain text files:
 
 ## Configuring Azure diagnostic settings (optional)
 
-The **Times Accessed** column in the **Excessive Access Permissions in Azure Files** report requires Azure diagnostic settings. Without diagnostic settings, "Times Accessed" defaults to 0 for all objects. [Configuring Diagnostic Settings](/docs/auditor/10_8/configuration/azurefiles/overview#diagnostic-settings)
+The **Times Accessed** column in the **Excessive Access Permissions in Azure Files** report requires Azure diagnostic settings. Without diagnostic settings, "Times Accessed" defaults to 0 for all objects. [Configuring Diagnostic Settings](/docs/auditor/10_9/configuration/azurefiles/overview#diagnostic-settings)
 
 > **Note:** The current version supports only **blob storage** as the destination, not Event Hub or Log Analytics Workspace.
 
