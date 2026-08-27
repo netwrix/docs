@@ -16,8 +16,6 @@ Deploy the AD Agent to each domain controller in the target domain.
 
 ## Configure Domain Controller Agent
 
-Follow the steps to configure the agent deployed to the domain controller.
-
 :::note
 These steps assume the network share where the activity log files will be archived already
 exists.
@@ -35,7 +33,7 @@ controller.
 - Select the **Archive log files on a UNC path** option. Click the ... button and navigate to the
   desired network share.
 - The **User name** and **User password** fields only need to be filled in if the account used to
-  install the agent does not have access to this share.
+  install the agent doesn't have access to this share.
 
     :::tip
         Remember, The account used to install the agent on a domain controller is a Domain
@@ -52,22 +50,18 @@ controller.
 **Step 5 –** Repeat Steps 1-4 for each agent deployed to domain controller pointing to the same
 network share in Step 3 for each agent.
 
-These agent are configured to save the Archive logs to the selected share.
+These agents are configured to save the Archive logs to the selected share.
 
 ## Configure Monitored Domain Output
 
-Follow the steps configure the monitored domain output for Netwrix Access Analyzer (formerly
-Enterprise Auditor).
-
 **Step 1 –** Select the **Monitored Domains** tab.
 
-**Step 2 –** Select the desired domain and click **Add Output**. The Add New Ouptut window opens.
+**Step 2 –** Select the domain and click **Add Output**. The Add New Output window opens.
 
 **Step 3 –** Configure the following:
 
-- Configure the desired number of days for the **Period to keep Log files**. This is the number of
-  days the log files are kept on the API server configured in the sections above. This needs to be
-  set to a greater value than the days between Access Analyzer scans.
+- For **Period to keep Log files**, enter the number of days to keep the log files on the API server 
+  after configuration. This value must be greater than the days between Access Analyzer scans.
 
     - For example, if Access Analyzer runs the **AD_ActivityCollection** Job once a week (every 7
       days), then the Activity Monitor output should be configured to retain at least 10 days of log
@@ -83,8 +77,6 @@ Enterprise Auditor).
 Access Analyzer now has access to the agent log files for this domain.
 
 ## Configure Connection Profile
-
-Follow the steps to configure the Connection Profile in Access Analyzer.
 
 **Step 1 –** On the Settings > Connection node of the Access Analyzer Console, select the Connection
 Profile for the Active Directory solution. If you haven't yet created a Connection Profile or desire
@@ -111,7 +103,7 @@ a specific one for AD Activity, create a new one and provide a unique descriptiv
 the **Settings > Connection** node.
 
 **Step 7 –** Select the **Select one of the following user defined profiles** option. Expand the
-drop-down menu and select the Connection Profile with this credential.
+dropdown menu and select the Connection Profile with this credential.
 
 **Step 8 –** Click **Save** and then **OK** to confirm the changes to the job group settings.
 
@@ -119,7 +111,7 @@ The Connection Profile will now be used for AD Activity collection.
 
 ## Configure the AD_ActivityCollection Job
 
-Access Analyzer requires additional configurations in order to collect domain activity data. Follow
+Access Analyzer requires additional configurations to collect domain activity data. Follow
 the steps to configure the **AD_ActivityCollection** Job.
 
 :::note

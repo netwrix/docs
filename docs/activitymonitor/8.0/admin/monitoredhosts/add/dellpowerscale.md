@@ -169,7 +169,7 @@ Click **Next**.
 
 ![File Output Page](/images/activitymonitor/8.0/admin/monitoredhosts/add/fileoutputpage.webp)
 
-**Step 9 –** If **Log File)** is selected on the **Where To Log The Activity** page, the **File
+**Step 9 –** If **Log File** is selected on the **Where To Log The Activity** page, the **File
 Output** page can be configured.
 
 - Specify output file path – Specify the file path where log files are saved. Click the ellipses

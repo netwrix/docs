@@ -11,7 +11,7 @@ field on the Syslog tab of the output Properties window.
 
 ![Message Template window](/images/activitymonitor/8.0/admin/outputs/window/syslogmessagetemplate.webp)
 
-You can select a preconfigured template from the drop-down menu or create a custom template. The
+You can select a preconfigured template from the dropdown menu or create a custom template. The
 available preconfigured templates vary based on the type of domain/host selected.
 
 ## For Monitored Domains
@@ -30,7 +30,7 @@ Monitored Domains Syslog outputs have the following preconfigured Templates:
 - V 2.0 for IBM QRadar SIEM 7.2.4
 - V 2.0 for Splunk SIEM
 
-Custom templates can be created. Select the desired template or create a new template by modifying
+Custom templates can be created. Select the template you want or create a new template by modifying
 an existing template within the Message Template window. The new message template will be named
 Custom. Macro variables are also available to customize the Syslog message template.
 
@@ -102,7 +102,7 @@ Monitored Hosts Syslog outputs have the following preconfigured Templates:
 - Netwrix Threat Manager (StealthDEFEND) – Use this template for Netwrix Threat Manager integration.
   This is the only supported template for Threat Manager.
 
-Custom templates can be created. Select the desired template or create a new template by modifying
+Custom templates can be created. Select the template you want or create a new template by modifying
 an existing template within the Message Template window. The new message template will be named
 Custom. Macro variables are also available to customize the Syslog message template.
 
@@ -127,7 +127,7 @@ the Syslog message template:
 | SharePoint Online                                       | %DEST_FILENAME%                | Name of the file that is copied or moved                                                                                                   |
 | SharePoint Online                                       | %DEST_RELATIVE_PATH%           | URL of the destination folder where a folder is copied or moved                                                                            |
 | SharePoint Online                                       | %DLP_EXCEPTION%                | Reasons why a policy no longer applies and any information about false positive or override                                                |
-| SharePoint Online                                       | %DLP_POLICY%                   | Policy(s) that triggered the event                                                                                                         |
+| SharePoint Online                                       | %DLP_POLICY%                   | Policys that triggered the event                                                                                                         |
 | SharePoint Online                                       | %DLP_SENSITIVE%                | Indicates whether the event contains the value of the sensitive data type (true/false)                                                     |
 | SharePoint SharePoint Online                            | %DOC_LOCATION%                 | A relative URL of the file or document accessed by the user                                                                                |
 | SharePoint SharePoint Online                            | %EVENT_DATA%                   | - For SharePoint, raw event data - Fore SharePoint Online, additional event data                                                           |

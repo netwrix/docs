@@ -16,7 +16,7 @@ sidebar_position: 40
 | domainId                   | string           |               | AD only: ID of the owning domain                                                                         |
 | domainUrl                  | string           |               | AD only: Link to the owning domain                                                                       |
 | logsUrl                    | string           |               | Link to the file output log files (for the local agent only, that has the API Server running)            |
-| isEnabled                  | bool             |               | Whether or not the output is enabled. If disabled, no activity is forwarded to it.                       |
+| isEnabled                  | bool             |               | Whether the output is enabled. If disabled, no activity is forwarded to it.                       |
 | type                       | string           |               | `LogFile`,`Syslog`,`Amqp`                                                                                |
 | logFile                    | FileOutput       |               | Log file settings                                                                                        |
 | syslog                     | SyslogOutput     |               | Syslog settings                                                                                          |
@@ -64,7 +64,7 @@ sidebar_position: 40
 | separator     | string |               | `Lf`,Cr, `CrLf`, `Nul`, `Rfc5425`                                     |
 | reportUncPath | bool   |               | Report UNC paths in addition to local/native paths                    |
 | addCToPath    | bool   |               | Prepend the path `C:\` and change the forward slashes to backslashes. |
-| template      | string |               | Text of the syslog template that is currently set to be used.         |
+| template | string | | Text of the syslog template that is set to be used. |
 
 ## AmqpOutput
 
@@ -72,7 +72,7 @@ sidebar_position: 40
 | --------- | ------ | ------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | server    | string |               | Hostname/address of the AMQP server or the Threat Manager server and the port in the SERVER:PORT format                             |
 | userName  | string |               | User name for the AMQP connection, if needed. ForThreat Managerintegration, use an empty string.                                    |
-| password  | string |               | Password / App Token for the AMQP connection. Password / App Token is not exposed.                                                  |
+| password  | string |               | Password / App Token for the AMQP connection. Password / App Token isn't exposed.                                                  |
 | queue     | string |               | Message queue name to post events to. ForThreat Manager integration, use an empty string.                                           |
 | exchange  | string |               | Exchange name to post events to. ForThreat Manager integration, use "StealthINTERCEPT" for domain outputs or "AM" for host outputs. |
 | vhost     | string |               | Virtual Host name, if needed. ForThreat Managerintegration, use an empty string.                                                    |
@@ -330,8 +330,8 @@ sidebar_position: 40
 | isArchived   | bool     |               | Determines whether the file is on a local drive of the agent or moved to the archival location. |
 | type         | string   |               | `Tsv`, `Json`                                                                                   |
 | updatedAt    | DateTime |               | Last time the file was updated                                                                  |
-| activityFrom | DateTime |               | Activity events in the file are not younger than the date.                                      |
-| activityTo   | DateTime |               | Activity events in the file are not older than the date.                                        |
+| activityFrom | DateTime |               | Activity events in the file aren't younger than the date.                                      |
+| activityTo   | DateTime |               | Activity events in the file aren't older than the date.                                        |
 | outputId     | string   |               | ID of the output that produced the file.                                                        |
 | contentUrl   | string   |               | Link to the file content. MIME type `application/x-msdownload`                                  |
 

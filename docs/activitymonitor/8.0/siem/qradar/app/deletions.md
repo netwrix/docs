@@ -21,5 +21,4 @@ The Deletions dashboard contains the following cards:
 
 The time interval is identified in the upper-right corner with the Start and End boxes. This is set
 by default to the “past day,” or 24 hours. To search within a different interval, either manually
-type the desired date and time or use the calendar buttons to set the desired date and time
-interval. Then click Search to refresh the card data.
+enter the date and time or use the calendar buttons to set the interval. Then click Search to refresh the card data.

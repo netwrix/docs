@@ -6,7 +6,7 @@ sidebar_position: 90
 
 # NetApp Data ONTAP Cluster-Mode Activity Auditing Configuration
 
-The Activity Monitor agent employed to monitor NetApp leverages NetApp ONTAP API, and the NetApp
+The Activity Monitor agent used to monitor NetApp uses the NetApp ONTAP (Data ONTAP) API and the NetApp
 FPolicy framework to monitor file system events. This includes both NetApp 7-Mode and Cluster-Mode
 configurations. For more information about FPolicy read the
 [What are the two parts of the FPolicy solution ](https://library.netapp.com/ecmdocs/ECMP1401220/html/GUID-54FE1A84-6CF0-447E-9AAE-F43B61CA2138.html)
@@ -16,40 +16,40 @@ Activity Monitor requires two communication channels for ONTAP monitoring:
 
 1. Activity Monitor Agent connects to ONTAP on port 80 or 443 for access to ONTAP API (ONTAPI/ZAPI
    or REST API).
-2. Data LIFs of the SVM connect to Activity Monitor Agent on port 9999 for FPolicy notifications.
+2. Data Logical Interfaces (LIFs) of the SVM connect to Activity Monitor Agent on port 9999 for FPolicy notifications.
 
 The ONTAP API access is mandatory; without the API access the agent will not be able to receive and
 translate events from FPolicy. Both classic ONTAPI/ZAPI and the new REST API are supported. The
-agent uses the API to retrieve information about the storage virtual machines (SVM): CIFS settings,
+agent uses the API to retrieve information about the storage virtual machines (SVM): Common Internet File Sharing (CIFS) settings,
 list of volumes, list of LIFs. Depending on the configuration, the agent can also retrieve the state
 of FPolicy to ensure it is enabled; configure FPolicy and register or unregister itself.
 
 The FPolicy framework enables the collection of audit events on the ONTAP side and their transfer to
-the agent(s) via the designated Data LIFs. Each LIF establishes its own connection with one or
+the agents via the designated Data LIFs. Each LIF establishes its own connection with one or
 several agents and sends notifications as soon as the file transaction occurs. The FPolicy
 connection is asynchronous and buffered; both ONTAP and Activity Monitor have techniques in place to
-make sure that connections are alive and working. The connection can be secured using TLS with
+ensure that connections are alive and working. The connection can be secured using TLS with
 server or mutual authentication.
 
 FPolicy may have a significant impact on file system throughput, and it is always a best practice to
 monitor performance when enabling FPolicy.
 
 :::info
-Create a tailored FPolicy which only collects the desired activity from the
+Create a tailored FPolicy that collects only the activity you need from your
 environment to limit the scope and impact.
 :::
 
 
 For scale-out and fault tolerance purposes, the product supports a range of deployment options. A
-single agent can receive events from multiple SVMs. Or events from a single SVM can be distributed
-among multiple agents. Or a set of SVMs can distribute events among a set of agents. The choice
-depends on the fault tolerance requirements and the expected event flow. As a rule of thumb, the
-_average_ load on a single agent should not exceed 5000 events per second.
+single agent can receive events from multiple SVMs. Events from a single SVM can be distributed
+among multiple agents. A set of SVMs can distribute events among a set of agents. The choice
+depends on the fault tolerance requirements and the expected event flow. In general,
+the _average_ load on a single agent shouldn't exceed 5000 events per second.
 
 Starting with ONTAP 9.15.1, the FPolicy Persistent Store provides resilience and predictable latency
 during scenarios such as network delays or bursts of activity. The feature uses a dedicated volume
 for each SVM as a staging buffer before events are sent to the agent. FPolicy will automatically
-create a volume if one does not already exist.
+create a volume if one doesn't already exist.
 
 :::info
 Enable the Persistent Store feature and allow it to create a volume
@@ -59,7 +59,7 @@ automatically.
 
 ## Configuration Checklist
 
-Complete the following checklist prior to configuring the activity monitoring of NetApp Data ONTAP
+Complete the following checklist before configuring the activity monitoring of NetApp Data ONTAP
 Cluster-Mode devices. Instructions for each item of the checklist are detailed within the following
 sections.
 
@@ -67,10 +67,10 @@ sections.
 
 - Gather the following information:
 
-    - Names of the SVM(s) to be monitored
+    - Names of the SVMs to be monitored
 
         - FPolicy is configured for each SVM separately
-        - This should be the SVM(s) hosting the CIFS or NFS shares(s) to be monitored
+        - This should be the SVMs hosting the CIFS or NFS sharess to be monitored
 
     - Credentials to access ONTAP to provision a role and account.
     - Desired functionality level:
@@ -91,7 +91,7 @@ sections.
         - Limiting the FPolicy to specific file operations is an effective way to limit the
           performance impact of FPolicy
 
-    - IP Address of the server(s) where the Activity Monitor Agent is deployed
+    - IP Address of the servers where the Activity Monitor Agent is deployed
     - API enabled in ONTAP: the classic ONTAPI/ZAPI or the new REST API
 
         - The product supports the REST API for ONTAP 9.13.1 and above.

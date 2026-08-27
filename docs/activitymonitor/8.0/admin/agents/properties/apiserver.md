@@ -13,7 +13,7 @@ activity.
 
 ![API Server Tab for Agent Properties](/images/activitymonitor/8.0/admin/agents/properties/apiservertab.webp)
 
-Check the Enable API access on this agent box to utilize the options on this tab:
+Check the Enable API access on this agent box to use the options on this tab:
 
 - API server port (TCP): [number] (from 1000 to 65535) – Enter the API server port. The default
   is 4494.
@@ -40,7 +40,7 @@ Click Add Application to open the Add or edit API client window.
       configuration of monitored hosts/domain, enough to match the monitored hosts to their log
       files.
     - Read – Provides a read-only access to the list of the agents and their configuration settings;
-      configuration of monitored domains; configuration of monitored hosts. The permission does not
+      configuration of monitored domains; configuration of monitored hosts. The permission doesn't
       provide access to the saved passwords or other secrets.
     - Policy change - Provides permissions required to update the AD Monitoring domain configuration
       settings
@@ -53,7 +53,7 @@ Click Add Application to open the Add or edit API client window.
 - Secret Expires – Displays the number of days until the Client Secret expires before activated. The
   default is 3 days.
 
-The options below the API Application Access window are:
+The following options are available:
 
 - Managing console/Use this console – Use this console button enters the host name of the Activity
   Monitor Console within the textbox

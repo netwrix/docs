@@ -1,10 +1,10 @@
 ---
-title: "Overview Dashobard"
-description: "Overview Dashobard"
+title: "Overview Dashboard"
+description: "Overview Dashboard"
 sidebar_position: 10
 ---
 
-# Overview Dashobard
+# Overview Dashboard
 
 View general information on the Overview Dashboard for Splunk.
 

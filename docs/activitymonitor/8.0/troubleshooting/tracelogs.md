@@ -8,7 +8,7 @@ sidebar_position: 20
 
 While activity agents store activity logs on the servers where they are deployed, the Activity
 Monitor creates Trace Logs that aid in troubleshooting issues. The Trace level option set in the
-drop-down list in the lower right corner of the Activity Monitor Console determines the kind of
+dropdown list in the lower right corner of the Activity Monitor Console determines the kind of
 information kept in the activity agent and monitored hosts logs.
 
 ![Activity Monitor with location of trace logs](/images/activitymonitor/8.0/troubleshooting/tracelogs.webp)
@@ -25,7 +25,7 @@ properties). Select from the following trace log levels:
 - Fatal – Records only when catastrophic system failures / crashes occur
 
 When the log level is changed in the Activity Monitor Console, the new log level is propagated and
-applied immediately to all of the activity agents that do not have custom trace setting.
+applied immediately to all of the activity agents that don't have custom trace setting.
 
 :::note
 Trace level can be adjusted in the Agent Properties for the selected agent. See the

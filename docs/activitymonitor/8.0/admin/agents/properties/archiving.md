@@ -13,7 +13,7 @@ agent and move the archived files to another location on the server or to a netw
 ![Archiving Tab for Agent Properties](/images/activitymonitor/8.0/admin/agents/properties/archiving_tab.webp)
 
 The Days to keep Log files option, listed under the Log Files tab within Host Properties, applies to
-Archive log files. When the entered number of days entered have passed, the activity logs and
+Archive log files. When the entered number of days have passed, the activity logs and
 Archive log files are deleted. The path to the Archive log files is next to the Configure button,
 and listed under the Archive Location column within the Agents tab.
 
@@ -35,7 +35,7 @@ The options in the Configure a network share on this computer window are:
 - Grant read access to – Click the ellipsis (…) to specify an account or group to be granted Read
   and Write access to the archive
 
-The options below the **Configure** button are:
+The following options are available:
 
 - Archive log files on an UNC path (e.g. \\host-name.domain.local\share-name) – Click the ellipsis
   (…) to browse for a location and select the UNC path

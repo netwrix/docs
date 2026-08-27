@@ -11,15 +11,15 @@ events. All audit data can be forwarded to the Dell Common Event Enabler (CEE). 
 listens for all events coming through the Dell CEE and translates all relevant information into
 entries in the Log files or syslog messages.
 
-Complete the following checklist prior to configuring the Activity Monitor to monitor the host.
+Complete the following checklist before configuring the Activity Monitor to monitor the host.
 Instructions for each item of the checklist are detailed within the following sections.
 
 **Checklist Item 1: Plan Deployment**
 
-- Prior to beginning the deployment, gather the following:
+- Before beginning the deployment, gather the following:
 
-    - DNS name of Celerra or VNX CIFS share(s) to be monitored
-    - Data Mover or Virtual Data Mover hosting the share(s) to be monitored
+    - DNS name of Celerra or VNX CIFS shares to be monitored
+    - Data Mover or Virtual Data Mover hosting the shares to be monitored
     - Account with access to the CLI
     - Download the Dell CEE from:
 
@@ -38,9 +38,9 @@ Instructions for each item of the checklist are detailed within the following se
 
 - Important:
 
-    - Open MS-RPC ports between the Dell device and the Windows proxy server(s) where the Dell CEE
+    - Open MS-RPC ports between the Dell device and the Windows proxy servers where the Dell CEE
       is installed
-    - Dell CEE 8.4.2 through Dell CEE 8.6.1 are not supported for use with the VCAPS feature
+    - Dell CEE 8.4.2 through Dell CEE 8.6.1 aren't supported for use with the VCAPS feature
     - Dell CEE requires .NET Framework 3.5 to be installed on the Windows proxy server
 
 - See the [Install & Configure Dell CEE](/docs/activitymonitor/8.0/requirements/activityagent/nas-device-configuration/celerra-vnx-aac/installcee.md) topic for instructions.
