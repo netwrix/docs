@@ -10,7 +10,7 @@ This page defines the core terminology used throughout Access Analyzer.
 
 ## Source Groups
 
-A **source group** is a named collection of related sources that share a common service account and configuration. Sources are the individual hosts or targets within a source group — for example, the specific file servers or domain controllers that Access Analyzer connects to and scans. Source groups are created through the **Connect Source** wizard, which handles source creation, scan configuration, and scheduling in a single workflow.
+A **source group** is a named collection of related sources that share a common service account and configuration. Sources are the individual hosts or targets within a source group — for example, the specific file servers or domain controllers that Access Analyzer connects to and scans. You create source groups through the **Connect Source** wizard, which handles source creation, scan configuration, and scheduling in a single workflow.
 
 - **File Server** source groups can contain multiple servers (for example, all file servers in a department)
 - **Active Directory** source groups can contain multiple domain controllers
@@ -28,7 +28,7 @@ A **service account** stores credentials used to authenticate with data sources 
 - **Client ID + Certificate** — SharePoint Online state-in-time scans. Access Analyzer generates the certificate; you upload the public key to your Azure app registration.
 - **SSH Username / Key** — Edge scanners
 
-Service accounts are managed in **Configuration** > **Service Accounts** and can be shared across multiple sources.
+Manage service accounts in **Configuration** > **Service Accounts**. You can share a service account across multiple sources.
 
 ## User Roles
 
@@ -37,27 +37,27 @@ Access Analyzer has three roles:
 | Role | Responsibilities |
 | --- | --- |
 | **Administrator** | Full access: manages system configuration (sources, scans, connectors, service accounts, application settings) and user management (create accounts, assign roles, manage users). |
-| **User Admin** | User and role management only — creates accounts, assigns roles, and pre-provisions federated users. Cannot change system configuration. |
-| **Viewer** | Read-only access to data, reports, and dashboards. Cannot make changes. |
+| **User Admin** | User and role management only — creates accounts, assigns roles, and pre-provisions federated users. Can't change system configuration. |
+| **Viewer** | Read-only access to data, reports, and dashboards. Can't make changes. |
 
 For a full walkthrough of role assignment, see the [Quick Install — Roles](/docs/accessanalyzer/2601/install/quickinstall#roles) section.
 
 ## Connectors
 
-A **connector** is the component that performs the actual work of communicating with a source. Each source type has a corresponding connector that handles:
+A **connector** is the component that communicates with a source. Each source type has a corresponding connector that handles:
 
 - **Test connection** — Validates that credentials and network connectivity are correct
 - **Access scan / sync** — Enumerates files, folders, permissions, or identities
 
-Connectors are executed as Kubernetes Jobs and managed by the Connector API.
+Connectors run as Kubernetes Jobs, and the Connector API manages them.
 
 ## Edge Scanners
 
 An **edge scanner** is a lightweight, containerized agent that Access Analyzer deploys on demand to perform distributed scanning of remote environments. Edge scanners remove the need for a traditional proxy server — they run as short-lived Kubernetes Jobs, execute their scan, and terminate. There is no persistent agent process and no manual deployment required.
 
-Edge scanners are used for **Active Directory** and **File Server** sources. Entra ID and SharePoint Online connect directly from the Access Analyzer service and do not use edge scanners.
+**Active Directory** and **File Server** sources use edge scanners. Entra ID and SharePoint Online connect directly from the Access Analyzer service and don't use edge scanners.
 
-Edge scanners are registered in **Configuration** > **Source Groups** > **Scanners** and are associated with a service account using **SSH Username / Key** credentials. Scanner labels can be used to route specific scan executions to dedicated scanner pools — for example, to isolate production scanning traffic from non-production environments.
+Register edge scanners in **Configuration** > **Source Groups** > **Scanners** and associate each one with a service account that uses **SSH Username / Key** credentials. Use scanner labels to route specific scan executions to dedicated scanner pools — for example, to isolate production scanning traffic from non-production environments.
 
 For configuration details and best practices, see [Overview of Scanners](/docs/accessanalyzer/2601/configurations/source-groups/scanners/overview).
 
@@ -68,9 +68,9 @@ A **scan** defines what to analyze and how. Access Analyzer supports several sca
 - **Access scans** — Enumerate files, folders, and permissions on data sources to identify who has access to what
 - **Sensitive data scans** — Classify file contents against detection patterns to find PII, credentials, PHI, and financial records
 - **Identity sync scans** — Synchronize users, groups, and roles from IAM sources (Active Directory Inventory, Entra ID Users/Groups/Roles)
-- **Local Users and Groups scans** — Collect local account data from file servers (auto-created when an access scan is enabled)
+- **Local Users and Groups scans** — Collect local account data from file servers (auto-created when you enable an access scan)
 
-Scans can be run on demand or scheduled with a cron expression.
+You can run scans on demand or schedule them with a cron expression.
 
 ## Scan Executions
 
@@ -96,16 +96,16 @@ A **pattern** is a detection rule used during sensitive data scans. Patterns mat
 - **PHI** — Protected health information
 - **Financial Records** — Credit card numbers, bank accounts, financial data
 
-Patterns are organized into **taxonomies** — hierarchical groups of classification rules mapped to compliance frameworks (GDPR, CCPA, HIPAA, PCI DSS, GLBA, CMMC).
+Access Analyzer organizes patterns into **taxonomies** — hierarchical groups of classification rules mapped to compliance frameworks (GDPR, CCPA, HIPAA, PCI DSS, GLBA, CMMC).
 
 ## MIP Labels
 
-**MIP labels** are Microsoft Information Protection sensitivity labels that Access Analyzer reads from scanned files and surfaces alongside sensitive data findings. They are distinct from Sensitive Data Patterns — patterns detect content through classification rules, while MIP labels are labels already applied to files by Microsoft 365 users or automated policies.
+**MIP labels** are Microsoft Information Protection sensitivity labels that Access Analyzer reads from scanned files and surfaces alongside sensitive data findings. They are distinct from Sensitive Data Patterns — patterns detect content through classification rules, while MIP labels are labels that Microsoft 365 users or automated policies have already applied to files.
 
 - **File Server sources** — Access Analyzer reads MIP labels from scanned files and can apply labels to files based on scan findings.
-- **SharePoint Online sources** — Access Analyzer reads MIP labels from native SharePoint metadata. Label application is not supported for SharePoint Online.
+- **SharePoint Online sources** — Access Analyzer reads MIP labels from native SharePoint metadata. Label application isn't supported for SharePoint Online.
 
-Labels are synced from your Entra ID tenant. To make labels available, an Entra ID source group must exist and its **Users, Groups and Roles** scan must have run at least once. Once synced, labels are mapped to sensitive data types in **Configuration** > **Sensitive Data**.
+Access Analyzer syncs labels from your Entra ID tenant. To make labels available, an Entra ID source group must exist and its **Users, Groups, and Roles** scan must have run at least once. After the sync completes, map labels to sensitive data types in **Configuration** > **Sensitive Data**.
 
 ## Dashboards and Reports
 
@@ -113,7 +113,7 @@ Access Analyzer includes pre-built dashboards and reports that surface findings 
 
 ### Dashboards
 
-Two summary dashboards are embedded in the Access Analyzer interface:
+The Access Analyzer interface includes two summary dashboards:
 
 | Dashboard | What it shows |
 | --- | --- |
@@ -122,7 +122,7 @@ Two summary dashboards are embedded in the Access Analyzer interface:
 
 ### Pre-built Reports
 
-Reports are organized by source type and category:
+Access Analyzer organizes reports by source type and category:
 
 | Source | Categories |
 | --- | --- |
