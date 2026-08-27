@@ -73,8 +73,8 @@ To add a data source to an existing plan:
 ## Add Items for Monitoring
 
 After you complete the monitoring plan wizard and specify data sources, add items for monitoring. You
-can add as many items for a data source as you want. In this case, all items will share settings you
-specified for this data source.
+can add as many items for a data source as you want. All items share the settings you specified for
+this data source.
 
 Each data source has a dedicated item type. Netwrix Auditor automatically suggests item types
 associated with your data source.

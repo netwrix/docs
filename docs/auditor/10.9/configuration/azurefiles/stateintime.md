@@ -64,7 +64,7 @@ Netwrix Auditor for Azure Files supports three types of omit lists:
 
 1. Open the Azure Files monitoring plan in edit mode.
 2. Navigate to the **Scope** tab.
-3. Click **Omit List** and specify the UNC paths to exclude.
+3. Click **Omit List** and specify the Universal Naming Convention (UNC) paths to exclude.
 4. Select the appropriate list type: **All** or **SiT**.
 5. Save the monitoring plan.
 

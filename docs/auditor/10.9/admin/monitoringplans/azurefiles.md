@@ -45,7 +45,7 @@ Create monitoring plans for Azure Files to track file and folder changes across 
 
    - **Changes (Success/Fail)** → Track file creation, modification, deletion, and failed attempts
      - **Successful** - Use this option to track changes to your data. It shows who created, modified, and deleted your files
-     - **Failed** - Use this option to detect suspicious activity on Azure Files. It helps to identify potential intruders who tried to modify or delete files but failed
+     - **Failed** - Use this option to detect suspicious activity on Azure Files. It helps identify potential intruders who tried to modify or delete files but failed
 
    - **Read Access (Success/Fail)** → Track file reads and unauthorized read attempts
      - **Successful** - Show successful attempts to read files

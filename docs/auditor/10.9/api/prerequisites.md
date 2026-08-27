@@ -14,7 +14,7 @@ manage other API settings.
 
 ## Configure Integration API settings
 
-On this page, you can view the current port settings and restrictions on the TLS (Transport Layer Security) version used for encrypted connections.
+On this page, you can view the current port settings and restrictions on the TLS (Transport Layer Security) version for encrypted connections.
 
 1. In the Netwrix Auditor main window, navigate to the **Integration** tile.
 2. Ensure the **Leverage Integration API** option is enabled.

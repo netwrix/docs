@@ -33,7 +33,7 @@ To use the gMSA in a Password Expiration Notifier monitoring plan:
 **Step 2 –** On the **General** tab, in the **User name** field, enter the gMSA account name in one of the supported formats:
 
 - `<domain>\<gmsa-name>$` — NetBIOS domain name and `sAMAccountName`, for example `CONTOSO\penGmsa$`. Netwrix recommends this format.
-- `<gmsa-name>$@<domain-fqdn>` — UPN format, for example `penGmsa$@contoso.local`.
+- `<gmsa-name>$@<domain-fqdn>` — User Principal Name (UPN) format, for example `penGmsa$@contoso.local`.
 
 You must include the trailing `$`. Password Expiration Notifier uses the `$` to recognize the account as a gMSA and switch to the appropriate authentication path.
 
@@ -46,7 +46,7 @@ When you save the monitoring plan, Password Expiration Notifier creates a Window
 ## Limitations
 
 :::warning
-The **Select OUs**, **Select Groups**, and **Generate** buttons in the Password Expiration Notifier UI don't work when a gMSA is configured. These buttons issue an LDAP request when you click them from the interactive session of the user who launched Password Expiration Notifier, and interactive sessions don't support gMSA impersonation. Use the scheduled task and the email reports to view password expiration data when the monitoring plan uses a gMSA.
+The **Select OUs**, **Select Groups**, and **Generate** buttons in the Password Expiration Notifier UI don't work when the monitoring plan uses a gMSA. These buttons issue an LDAP request when you click them from the interactive session of the user who launched Password Expiration Notifier, and interactive sessions don't support gMSA impersonation. Use the scheduled task and the email reports to view password expiration data when the monitoring plan uses a gMSA.
 :::
 
 ## Troubleshooting
