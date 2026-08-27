@@ -8,8 +8,6 @@ sidebar_position: 20
 
 Silent installation provides a convenient method for deploying Netwrix Auditor without UI.
 
-Follow the steps to install Auditor in a silent mode.
-
 **Step 1 –** Download the product installation package.
 
 **Step 2 –** Open the command prompt: navigate to Start > Run and type "_cmd_".

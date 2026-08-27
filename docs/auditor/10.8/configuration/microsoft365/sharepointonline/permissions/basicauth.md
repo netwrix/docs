@@ -47,7 +47,6 @@ your Netwrix Auditor, consider that after the upgrade you will have to perform t
 procedure again, selecting one of these approaches. Until then, data collection will not be
 performed.
 
-Follow the steps to assign a privileged role to the account.
 
 **Step 1 –** Sign in to Microsoft Entra ID portal using your Microsoft account.
 
@@ -56,7 +55,7 @@ Follow the steps to assign a privileged role to the account.
 **Step 3 –** Select the account that you want to use as data collecting account, or create a new
 user.
 
-**Step 4 –** Make sure you have disabled multi-factor authentication for this account.
+**Step 4 –** ensure you have disabled multi-factor authentication for this account.
 
 **Step 5 –** Expand Directory role and select the role you need (for example, Global admin or any
 other privileged role).

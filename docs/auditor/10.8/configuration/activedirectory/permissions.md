@@ -38,7 +38,7 @@ additional information.
 
 If you have an on-premises Exchange server in your Active Directory domain, consider that some
 changes can be made via that Exchange server. To be able to audit and report who made those changes,
-you should make sure that the account used for data collection has any of the following:
+you should ensure that the account used for data collection has any of the following:
 
 - Membership in the **Organization Management** or **Records Management** group.
 
@@ -73,10 +73,8 @@ reports, search results and activity summaries.
 
 ## Configure the Manage Auditing and Security Log Policy
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group.
-
-Follow the steps to configure the Manage Auditing and Security Log Policy.
 
 **Step 1 –** Open the **Group Policy Management** console on any domain controller in the target
 domain: navigate to Start > Windows Administrative Tools (Windows Server 2016 and higher) or
@@ -99,22 +97,20 @@ Group**, specify the user that you want to define this policy for.
 
 **Step 7 –** Run the following command to update group policy: `gpupdate /force`
 
-**Step 8 –** Type `repadmin /syncall` command and press Enter for replicate GPO changes to other
+**Step 8 –** Enter `repadmin /syncall` command and press Enter for replicate GPO changes to other
 domain controllers.
 
 **Step 9 –** Ensure that new GPO settings applied on any audited domain controller.
 
 ## Grant Permissions for the Deleted Objects Container
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group.
-
-Follow the steps to grant permissions for the Deleted Objects Container.
 
 **Step 1 –** Log on to any domain controller in the target domain with a user account that is a
 member of the **Domain Admins** group.
 
-**Step 2 –** Navigate to **Start > Run** and type _"cmd"_.
+**Step 2 –** Navigate to **Start > Run** and enter _"cmd"_.
 
 **Step 3 –** Input the following command: `dsacls <deleted_object_dn> /takeownership`
 
@@ -123,7 +119,7 @@ where `deleted_object_dn` is the distinguished name of the deleted directory obj
 For example: `dsacls "CN=Deleted Objects,DC=Corp,DC=local" /takeownership`
 
 **Step 4 –** To grant permission to view objects in the **Deleted Objects** container to a user or a
-group, type the following command:
+group, enter the following command:
 
 `dsacls <deleted_object_dn> /G <user_or_group>:<Permissions>`
 
@@ -135,7 +131,7 @@ For example, `dsacls "CN=Deleted Objects,DC=Corp,DC=local" /G Corp\jsmith:LCRP`
 
 In this example, the user CORP\jsmith has been granted **List Contents** and **Read Property**
 permissions for the **Deleted Objects** container in the **corp.local** domain. These permissions
-let this user view the contents of the **Deleted Objects** container, but do not let this user make
+let this user view the contents of the **Deleted Objects** container, but don't let this user make
 any changes to objects in this container. These permissions are equivalent to the default
 permissions that are granted to the **Domain Admins** group.
 
@@ -147,8 +143,6 @@ log on as a service policy defined locally or on the domain level, the local Log
 policy will be reset. In this case, redefine the Deny log on as a service policy through the Local
 Security Policy console on your computer or on the domain level through the Group Policy Management
 console.
-
-Follow the steps to define the Log On As a Service policy.
 
 **Step 1 –** On the computer where Auditor Server is installed, open the **Local Security Policy**
 snap-in: navigate to Start > Windows Administrative Tools and select Local Security Policy.
@@ -174,8 +168,6 @@ Management console.
 
 ### Configure the Log On As a Batch Job policy via Local Security Policy Snap-in
 
-Follow the steps to configure the Log On As a Batch Job policy via Local Security Policy snap-in.
-
 **Step 1 –** On any domain controller in the target domain, open the **Local Security Policy**
 snap-in: navigate to Start > Windows Administrative Tools and select Local Security Policy.
 
@@ -189,11 +181,8 @@ Specify the account that you want to define this policy for.
 
 ### Configure the Log On As a Batch Job Policy Using the Group Policy Management Console
 
-Perform this procedure only if the account selected for data collection is not a member of the
+Perform this procedure only if the account selected for data collection isn't a member of the
 Domain Admins group.
-
-Follow the steps to configure the Log On As a Batch Job policy using the Group Policy Management
-Console.
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
 navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools
@@ -213,10 +202,10 @@ the left and navigate to Policies > Windows Settings > Security Settings > Local
 **Step 6 –** In the Log on as a batch job Properties dialog, click Add User or Group and specify the
 user that you want to define this policy for.
 
-**Step 7 –** Navigate to Start > Run and type `cmd`. Input the `gpupdate /force` command and press
+**Step 7 –** Navigate to Start > Run and enter `cmd`. Input the `gpupdate /force` command and press
 Enter. The group policy will be updated.
 
-**Step 8 –** Type `repadmin /syncall` command and press Enter for replicate GPO changes to other
+**Step 8 –** Enter `repadmin /syncall` command and press Enter for replicate GPO changes to other
 domain controllers.
 
 **Step 9 –** Ensure that new GPO settings applied on any audited domain controller.

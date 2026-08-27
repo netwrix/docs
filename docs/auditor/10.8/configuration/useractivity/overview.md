@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -30,7 +30,7 @@ You can configure your IT Infrastructure for monitoring in one of the following
 
   **IMPORTANT:** Even if automatic configuration is selected, the following prerequisites must be configured manually.
 
-    - On the audited system(s):
+    - On the audited systems:
 
         - The **Windows Management Instrumentation** and the **Remote Registry** services must be
           running and their **Startup Type** must be set to "Automatic".
@@ -92,12 +92,12 @@ By default, the agent is installed automatically on the audited computers upon t
 Object** wizard completion. If, for some reason, installation has failed, you must install the agent
 manually on each of the audited computers.
 
-Before installing Netwrix Auditor agent to audit user activity, make sure that:
+Before installing Netwrix Auditor agent to audit user activity, ensure that:
 
 - The audit settings are configured properly.
 - The Data Processing Account has access to the administrative shares.
 
-Follow the steps to install Netwrix Auditor agent to audit user activity.
+To install Netwrix Auditor agent to audit user activity.
 
 **Step 1 –** Navigate to _%Netwrix Auditor Installation Folder%\User Activity Video Recording_ and
 copy the UACoreSvcSetup.msi file to the audited computer.

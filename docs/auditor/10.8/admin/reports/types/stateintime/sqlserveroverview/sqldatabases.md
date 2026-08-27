@@ -58,7 +58,7 @@ This report has the following filters:
 
 ## Considerations and recommendations
 
-Reporting for case-sensitive SQL Servers and databases is not supported.
+Reporting for case-sensitive SQL Servers and databases isn't supported.
 
 ## Usage example
 

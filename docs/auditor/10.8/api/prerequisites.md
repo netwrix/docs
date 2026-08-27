@@ -14,11 +14,9 @@ manage other API settings.
 
 ## Configure Integration API Settings
 
-Follow the steps to change the port.
-
 **Step 1 –** In the Netwrix Auditor main window, navigate to the Integration tile.
 
-**Step 2 –** Make sure the Leverage Integration API option is enabled.
+**Step 2 –** Ensure the Integration API option is enabled.
 
 **Step 3 –** Click Modify under the API settings section and specify a port number. Windows firewall
 rule will be automatically created.
@@ -34,10 +32,10 @@ When you first configure the Audit Database settings in Netwrix Auditor, the pro
 several databases for special purposes, including Netwrix_Auditor_API. This database is designed to
 store data imported from the other sources using Netwrix Auditor Integration API.
 
-Make sure that the Audit Database settings are configured in Netwrix Auditor. To check or configure
+Ensure that the Audit Database settings are configured in Netwrix Auditor. To check or configure
 these settings, navigate to the **Settings > Audit Database**.
 
-You cannot use Netwrix Auditor Integration API without configuring the Audit Database.
+You can't use Netwrix Auditor Integration API without configuring the Audit Database.
 
 Refer to the [Audit Database](/docs/auditor/10.8/admin/settings/auditdatabase.md) topic for detailed instructions on
 how to configure SQL Server settings.

@@ -9,11 +9,11 @@ sidebar_position: 40
 To ensure you feed the most recent data to your SIEM solution, Netwrix recommends scheduling a daily
 task for running the add-on.
 
-**Perform the following steps to create a scheduled task:**
+## Create a scheduled task
 
 **Step 1 –** On the computer where you want to execute the add-on, navigate to **Task Scheduler**.
 
-**Step 2 –** On the **General** tab, specify a task name. Make sure the account that runs the task
+**Step 2 –** On the **General** tab, specify a task name. Ensure the account that runs the task
 has all necessary rights and permissions.
 
 **Step 3 –** On the **Triggers** tab, click **New** and define the schedule. This option controls

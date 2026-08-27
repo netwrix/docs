@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -48,7 +48,7 @@ To configure your Cisco IOS devices, do the following:
 
     Router# logging trap 5
 
-5. Set the IP address of the Netwrix Auditor Server as the logging host parameter. And make sure
+5. Set the IP address of the Netwrix Auditor Server as the logging host parameter. And ensure
    that the UDP port is used for sending syslog messages (e.g., 514 UDP port). For example:
 
     Router# logging 192.168.1.5
