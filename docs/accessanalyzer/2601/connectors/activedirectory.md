@@ -39,10 +39,10 @@ Open the following ports on all domain controllers you want to scan:
 | Port | Protocol | Description |
 |------|----------|-------------|
 | 389 | TCP | LDAP |
-| 636 | TCP | LDAPS (when SSL is enabled) |
+| 636 | TCP | LDAPS (when you enable SSL) |
 | 135–139 | TCP | RPC |
 | 49152–65535 | TCP | RPC dynamic ports |
 
 ## Next steps
 
-Once you meet these requirements, see [Set Up Active Directory Source Group](../gettingstarted/active-directory/set-up-source-group.md) to configure your first scan.
+After you meet these requirements, see [Set Up Active Directory Source Group](../gettingstarted/active-directory/set-up-source-group.md) to configure your first scan.

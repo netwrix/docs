@@ -21,7 +21,7 @@ Source groups simplify management by letting you configure shared settings (serv
 
 ## Service Accounts
 
-A **service account** stores credentials used to authenticate with data sources and identity providers. Supported credential types include:
+A **service account** stores the credentials that Access Analyzer uses to authenticate with data sources and identity providers. Supported credential types include:
 
 - **Username / Password** — Active Directory, CIFS/SMB file shares, and local groups
 - **Client ID + Secret** — Entra ID and SharePoint Online (access scans)
@@ -68,13 +68,13 @@ A **scan** defines what to analyze and how. Access Analyzer supports several sca
 - **Access scans** — Enumerate files, folders, and permissions on data sources to identify who has access to what
 - **Sensitive data scans** — Classify file contents against detection patterns to find PII, credentials, PHI, and financial records
 - **Identity sync scans** — Synchronize users, groups, and roles from IAM sources (Active Directory Inventory, Entra ID Users/Groups/Roles)
-- **Local Users and Groups scans** — Collect local account data from file servers (auto-created when you enable an access scan)
+- **Local Users and Groups scans** — Collect local account data from file servers (Access Analyzer creates these automatically when you enable an access scan)
 
 You can run scans on demand or schedule them with a cron expression.
 
 ## Scan Executions
 
-A **scan execution** is a single run of a scan — the record produced each time a scan runs. It is distinct from the scan configuration itself, which defines what to scan and on what schedule.
+A **scan execution** is a single run of a scan — the record that Access Analyzer creates each time a scan runs. It is distinct from the scan configuration itself, which defines what to scan and on what schedule.
 
 Each scan execution captures a status (such as running, completed, or failed), start and end times, duration, and result details. Execution history is visible in **Configuration** > **Source Groups** > **Scan Executions**.
 
@@ -89,7 +89,7 @@ Access Analyzer maps identities to entitlements to show effective permissions an
 
 ## Sensitive Data Patterns
 
-A **pattern** is a detection rule used during sensitive data scans. Patterns match file content against regular expressions or classification models. Built-in patterns cover:
+A **pattern** is a detection rule that Access Analyzer applies during sensitive data scans. Patterns match file content against regular expressions or classification models. Built-in patterns cover:
 
 - **PII** — Personally identifiable information (names, addresses, SSNs, etc.)
 - **Credentials** — Passwords, API keys, tokens, and connection strings
@@ -103,7 +103,7 @@ Access Analyzer organizes patterns into **taxonomies** — hierarchical groups o
 **MIP labels** are Microsoft Information Protection sensitivity labels that Access Analyzer reads from scanned files and surfaces alongside sensitive data findings. They are distinct from Sensitive Data Patterns — patterns detect content through classification rules, while MIP labels are labels that Microsoft 365 users or automated policies have already applied to files.
 
 - **File Server sources** — Access Analyzer reads MIP labels from scanned files and can apply labels to files based on scan findings.
-- **SharePoint Online sources** — Access Analyzer reads MIP labels from native SharePoint metadata. Label application isn't supported for SharePoint Online.
+- **SharePoint Online sources** — Access Analyzer reads MIP labels from native SharePoint metadata. Access Analyzer can't apply labels to SharePoint Online files.
 
 Access Analyzer syncs labels from your Entra ID tenant. To make labels available, an Entra ID source group must exist and its **Users, Groups, and Roles** scan must have run at least once. After the sync completes, map labels to sensitive data types in **Configuration** > **Sensitive Data**.
 

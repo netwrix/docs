@@ -2,7 +2,7 @@
 
 Netwrix Auditor provides State-in-Time reports for Azure Files. With these reports, you can view the permissions state of your Azure file shares at a specific moment in time. These reports complement change and activity reports by giving you a snapshot-based view of who has access to what, and the current state of files and folders across your Azure file shares.
 
-State-in-Time reports rely on daily configuration snapshots collected by Netwrix Auditor. Each snapshot captures the permissions state, folder structure, and file metadata of the monitored Azure file shares at the time of collection.
+State-in-Time reports rely on the daily configuration snapshots that Netwrix Auditor collects. Each snapshot captures the permissions state, folder structure, and file metadata of the monitored Azure file shares at the time of collection.
 
 ## How it works
 
@@ -60,7 +60,7 @@ By default, reports show the current (most recent) state. To view historical sna
 2. In the **Snapshot Date** filter, select the date you want to view.
 3. Click **View Report**.
 
-A Global administrator must import historical snapshots. Once imported, they are available for all State-in-Time reports for that monitoring plan.
+A Global administrator must import historical snapshots. Imported snapshots are available for all State-in-Time reports for that monitoring plan.
 
 ## Export formats
 
