@@ -21,7 +21,7 @@ Gather the following before you start the Access Analyzer installer. Everything 
 
 ## System requirements
 
-Choose a deployment size based on your environment; please note these are absolute minimums.
+Choose a deployment size based on your environment. These values are absolute minimums.
 
 | Size | CPU | Memory | Minimum Disk Space |
 | --- | --- | --- | --- |
