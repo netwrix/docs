@@ -12,4 +12,4 @@ the QRadar SEC token to be saved to the **Settings** interface.
 ![Settings for Netwrix Activity Monitor App for QRadar](/images/activitymonitor/9.0/siem/qradar/settings.webp)
 
 The **More information** link will open the IBM Knowledge Center with information on generating the
-QRadar SEC token. Once the token is generated, copy and paste it here and click Save.
+QRadar SEC token. After the token is generated, paste it here and click Save.

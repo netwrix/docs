@@ -15,7 +15,7 @@ The available options are:
 
 - FPolicy server port (TCP): [number] (from 1000 to 65535) – Enter the FPolicy server port. The
   default is 9999.
-- FPolicy authentication – Select from the following options in the drop-down list. For TLS server
+- FPolicy authentication – Select from the following options in the dropdown list. For TLS server
   authentication, a Server certificate is required. For TLS, mutual authentication, a Server
   certificate and Client certificate are required.
 
@@ -26,9 +26,8 @@ The available options are:
       and import a certificate, and Client certificate to open the Trusted client or CA certificate
       window to import a certificate
 
-- IPv4 or IPv6 whitelist – IP Addresses of the Clustered Data ONTAP nodes, which are allowed to
-  connect to the FPolicy server, can be whitelisted by entering them in the box. IP Addresses should
-  be entered as separate addresses with space, comma, semicolon, or a multi-line list. Leave the box
+- IPv4 or IPv6 whitelist – Enter IP addresses of the Clustered Data ONTAP nodes allowed to
+  connect to the FPolicy server. Separate addresses with space, comma, semicolon, or a multi-line list. Leave the box
   blank to accept connections from any hosts.
 
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The Agent

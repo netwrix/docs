@@ -6,14 +6,14 @@ sidebar_position: 70
 
 # Nasuni Edge Appliance Activity Auditing Configuration
 
-Generation of an API Access Key is required for Nasuni activity monitoring. The Nasuni Edge
-Appliance generates its own audit trail. An API Access Key is used by the Activity Monitor to form a
-network connection to the appliance. Nasuni will then stream event data to the activity agent. See
+Generate an API Access Key for Nasuni activity monitoring. The Nasuni Edge
+Appliance generates its own audit trail. The Activity Monitor uses the API Access Key to form a
+network connection to the appliance. Nasuni then streams event data to the activity agent. See
 [Nasuni Support Documentation](https://www.nasuni.com/support/) for additional information.
 
 **Configuration Checklist**
 
-Complete the following checklist prior to configuring activity monitoring of Nasuni Edge Appliances.
+Complete the following checklist before configuring activity monitoring of Nasuni Edge Appliances.
 Instructions for each item of the checklist are detailed within the following topics.
 
 **Checklist Item 1: Generate Nasuni API Access Key**
@@ -30,7 +30,7 @@ Instructions for each item of the checklist are detailed within the following to
 
 ## Nasuni Filer Management Interface
 
-Follow the steps to generate a Nasuni API Access Key in the Nasuni Filer Management Interface.
+To generate a Nasuni API Access Key in the Nasuni Filer Management Interface:
 
 **Step 1 –** Within the **Configuration** menu, under **USERS & SECURITY**, select API Access Keys.
 The API Access Keys page opens.
@@ -43,8 +43,8 @@ The API Access Keys page opens.
 
 **Step 5 –** In the Successfully Generated API Key window, copy the Key Passcode.
 
-Both the Key Name and the Key Passcode are required by the Activity Monitor in order to connect to
-the Nasuni Edge Appliance. Once the API Key has been generated, it is time to configure and enable
+Both the Key Name and the Key Passcode are required by the Activity Monitor to connect to
+the Nasuni Edge Appliance. After the API Key is generated, you can configure and enable
 monitoring with the Activity Monitor console.
 
 :::note
@@ -55,22 +55,22 @@ the exact same case as generated.
 
 ## Nasuni Management Console
 
-Follow the steps to generate a Nasuni API Access Key in the Nasuni Management Console.
+To generate a Nasuni API Access Key in the Nasuni Management Console:
 
 **Step 1 –** Click Filers and select API Keys from the menu on the left. The Filer API Access Key
 Settings page opens.
 
 **Step 2 –** Click New API Key button. The Add API Access Key window opens.
 
-**Step 3 –** From the Filer drop-down menu, select the desired Nasuni Edge Appliance. Then enter a
+**Step 3 –** From the Filer dropdown menu, select the Nasuni Edge Appliance you want to monitor. Then enter a
 Name for the key; for example, the name of the application.
 
 **Step 4 –** Click Add API Key.
 
 **Step 5 –** A message appears which includes the Key Passcode; copy the Key Passcode.
 
-Both the Key Name and the Key Passcode are required by the Activity Monitor in order to connect to
-the Nasuni Edge Appliance. Once the API Key has been generated, it is time to configure and enable
+Both the Key Name and the Key Passcode are required by the Activity Monitor to connect to
+the Nasuni Edge Appliance. After the API Key is generated, you can configure and enable
 monitoring with the Activity Monitor console.
 
 :::note

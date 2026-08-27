@@ -24,9 +24,9 @@ The configurable options are:
 
 - User name – Specify a user name for the proxy server
 - User password – Specify a password for the user name
-- Bypass list – Specify the Bypass list. This is a list of URIs that do not use the proxy server
-  when accessed. Multiple addresses can be entered separated by space, comma (,), semicolon (;), or
-  as a multi-line list.
+- Bypass list – Specify the Bypass list. This is a list of URIs that don't use the proxy server
+  when accessed. Separate multiple addresses with space, comma (,), semicolon (;), or
+  on separate lines.
 
 Click **OK** to commit the modifications. Click **Cancel** to discard the modifications. The Agent
 Properties window closes.
