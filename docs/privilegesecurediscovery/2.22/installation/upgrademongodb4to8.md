@@ -465,7 +465,7 @@ For a custom stack:
 s1 --stack <stack-name> mongo-upgrade run --resume
 ```
 
-`--resume` skips collections already marked complete and resumes partial collection work from the recorded checkpoint. A regular `run` starts the copy from the beginning, which is also safe but can be much slower.
+`--resume` skips collections already marked complete and resumes partial collection work from the recorded checkpoint. A regular `run` starts the copy from the beginning. That approach is also safe but can be much slower.
 
 After any interruption, use `--resume` and confirm a new validation summary with **Checks failed: 0**. Don't rely on the previous command's final line or exit status.
 
@@ -568,7 +568,7 @@ Stopping old db...
 Cutover complete. App downtime: ~<seconds>s. The old db is stopped but not deleted.
 ```
 
-The line `Running catch-up copy` describes the final reconciliation. It isn't limited to recently changed documents and can be the longest cutover stage.
+The line `Running catch-up copy` describes the final reconciliation. It covers more than recently changed documents and can be the longest cutover stage.
 
 Keep the command in the foreground and watch the log until it finishes. Don't detach `cutover`, pipe automatic confirmation into it, or leave it unattended.
 
@@ -990,7 +990,7 @@ Don't try to bypass this protection. Validate the active database and continue w
 | `no mongo replica found running on this node` | Cluster `check` can't find the expected local MongoDB 4.0 member. | Verify Swarm placement and run `check` on the correct database node. |
 | Existing target uses a different image | A previous or mismatched target service already exists. | Stop. Don't reuse or delete it until Support confirms the correct recovery action. |
 | `secureone8` doesn't become fully healthy | One or more MongoDB 8.0 members didn't reach primary or secondary state. | Check service placement, registry pulls, container logs, and network connectivity. Don't copy data yet. |
-| `No checkpoint file found` | The copy either completed and removed its checkpoint or no checkpoint exists for these endpoints. Current `status` output can't distinguish those states. | Don't use `status` as cutover approval. Use the recorded validation summary. Repeat `run` if successful validation wasn't recorded. |
+| `No checkpoint file found` | The copy either completed and removed its checkpoint or no checkpoint exists for these endpoints. Current `status` output can't distinguish those states. | Don't use `status` as cutover approval. Use the recorded validation summary. Repeat `run` if no successful validation summary exists. |
 | **Checks failed** is greater than zero | One or more validation areas failed. | Don't cut over. Save the log and investigate with Support. |
 | Validation passed with warnings | No hard check failed, but a difference needs review. | Confirm **Checks failed: 0**, review each warning, and escalate unexplained warnings. |
 | A write-path service doesn't stop within five minutes | A long-running process is still active or Swarm can't stop the task. | Let the job finish or stop it safely, confirm zero running tasks, and retry cutover. |
