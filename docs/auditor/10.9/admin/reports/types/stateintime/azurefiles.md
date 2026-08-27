@@ -14,6 +14,8 @@ Netwrix Auditor connects to Azure Files via the SMB protocol and collects the fo
 
 Netwrix Auditor calculates the effective permissions based on **NTFS ACLs + Share-level ACLs + RBAC (Azure Portal)**.
 
+> **Note:** Effective permission calculations that depend on a trust relationship between Active Directory domains or forests aren't always fully accurate. Netwrix Auditor can't guarantee the same accuracy for group membership and effective access across a trust relationship as it can within a single domain.
+
 ## Supported configurations
 
 Azure Files State-in-Time reports support the following authentication configurations:

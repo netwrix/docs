@@ -35,6 +35,8 @@ By default, only Entra ID accounts appear with display names in Azure Files repo
 
 If you don't provide credentials, report output remains identical to earlier versions — this capability is optional and additive.
 
+> **Note:** Effective permission calculations that depend on a trust relationship between Active Directory domains or forests aren't always fully accurate. If a group contains members from a trusted domain in another forest, Netwrix Auditor can't guarantee it resolves those members with the same accuracy as members from the AD domain it's configured to query.
+
 **To configure Active Directory integration:**
 
 1. In Netwrix Auditor, navigate to **Configuration → Monitoring Plans**.
