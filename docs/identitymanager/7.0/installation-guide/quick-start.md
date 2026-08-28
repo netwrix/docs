@@ -38,7 +38,7 @@ When extracting Usercube Bootstrap to the root of the computer, it looks like:
 **Step 5 –** Create a Sources folder in Usercube Bootstrap.
 
 :::tip
- Remember, if you don't have the Usercube Bootstrap folder or if you don't create the Sources folder, the Path in the Directory connection in the Runtime/appsettings.agent.json must be adapted. Note that you don't need to have a Directory.xlsx file at the location described by this Path for now. 
+ Remember, if you don't have the Usercube Bootstrap folder or if you don't create the Sources folder, the Path in the Directory connection in the Runtime/appsettings.agent.json must be adapted. You don't need to have a Directory.xlsx file at the location described by this Path for now. 
 :::
 **Step 6 –** Create a database named Usercube, using the default options.
 
@@ -49,7 +49,7 @@ When extracting Usercube Bootstrap to the root of the computer, it looks like:
 
 **Step 8 –** Open a command prompt and deploy the configuration. See the[ Usercube-Deploy Configuration](../integration-guide/executables/references/deploy-configuration) topic for additional information.
 
-In our example, the command would be, in the Runtime folder:
+In the example, the command would be, in the Runtime folder:
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
@@ -59,7 +59,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 **Step 9 –** Launch the server. See the [Usercube-Server ](../integration-guide/executables/references/server) topic for additional information.
 
-In our example, the command would be, still in the Runtime folder:
+In this example, the command would be, still in the Runtime folder:
 
 ```shell
 ./Usercube-Server.exe
@@ -77,5 +77,5 @@ From there, you can start setting up Identity Manager via the **Settings** page
 
 ![Home Page - Settings](/images/identitymanager/home_settings_v523.webp)
 
-Then, Netwrix recommends following the user guide to start the configuration of your IGA project from scratch. See the [User Guide](../user-guide) topic for additional information.
+Then, Netwrix recommends following the user guide to start the configuration of your IGA project. See the [User Guide](../user-guide) topic for additional information.
 

@@ -20,7 +20,7 @@ For exemple, to bind to the manager's first name of a user, the binding expressi
 User:Manager.FirstName
 ```
 
-In the case of type inheritance, we must specify the type owning the property.
+In the case of type inheritance, must specify the type owning the property.
 
 ```
 AssignedResourceType:Owner.User:FirstName

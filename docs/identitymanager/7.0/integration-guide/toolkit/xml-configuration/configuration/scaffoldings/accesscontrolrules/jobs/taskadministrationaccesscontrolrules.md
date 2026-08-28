@@ -1,10 +1,10 @@
 ---
 title: "TaskAdministrationAccessControlRules"
-description: "Generates all rights to have the access to job administration page."
+description: "Generates all rights to the job administration page."
 sidebar_position: 13
 ---
 
-Generates all rights to have the access to job administration page.
+Generates all rights to the job administration page.
 
 
 
@@ -26,7 +26,7 @@ Generates all rights to have the access to job administration page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Job_Tasks_Job" DisplayName_L1="Administrator - Management for Job" DisplayName_L2="Administrator - Gestion des Job" EntityType="Job" Profile="Administrator">

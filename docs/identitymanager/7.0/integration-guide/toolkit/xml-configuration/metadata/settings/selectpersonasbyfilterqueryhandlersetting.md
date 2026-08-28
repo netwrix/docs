@@ -20,8 +20,8 @@ This setting is used to filter the entity type used by authentication mechanism.
 | Identifier <span class="optionalAttribute">default value: SelectPersonasByFilterQueryHandler</span> | **Type:** String **Description:** Unique identifier of the setting. |
 | MailProperty optional | **Type:** String **Description:** Defines the mail property.**Note:** required to receive the email for two-way password reset, when relevant. |
 | OwnerPhotoTagProperty optional | **Type:** String **Description:** Defines the photo tag property. |
-| PersonTypeFilter optional | **Type:** String **Description:** The documentation is not yet available. |
+| PersonTypeFilter optional | **Type:** String **Description:** The documentation isn't yet available. |
 | PersonTypeFilterProperty optional | **Type:** String **Description:** Defines the filter property |
-| PhotoProperty optional | **Type:** String **Description:** The documentation is not yet available. |
+| PhotoProperty optional | **Type:** String **Description:** The documentation isn't yet available. |
 | ResourceDisplayNameProperty optional | **Type:** String **Description:** Represents the display property. |
 

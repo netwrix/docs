@@ -6,27 +6,27 @@ The following how-to assumes that you have already read the topic on [Indirect P
 
 ### Configure an indirect resource rule
 
-Configuring an Indirect Resource Rule in the Identity Manager Configuration is the only step needed to set up Indirect Permissions and can be done by answering the following questions:
+Configuring an Indirect Resource Rule in the Identity Manager Configuration is the only step needed to set up Indirect Permissions, and can be done by answering the following questions:
 
-- What is the target Entity Type? There are multiple multiple Entity Types but for this example we
+- What is the target Entity Type? There are multiple Entity Types but for this example 
 will choose `AD User (nominative)`. Another rule can be written if you want to handle Indirect Permissions for `AD User (administration)`.
 - Which permissions can be obtained transitively in the Active Directory? Users get permissions by
 being members of a group. The property is `memberOf`.
-- Do we want to look for correspondences in another system? Here, we do not want to. This also means
+- Do want to look for correspondences in another system? Here, don't want to. This also means
 that `Correspondence`, `CorrespondenceMembershipProperty`, and `Entitlement` will remain blank.
 
-Finally, if we compile all this information and using the naming of the standard Identity Manager Demo, we get the following Indirect Resource Rule:
+Finally, if compile all this information, and using the naming of the standard Identity Manager Demo, get the following Indirect Resource Rule:
 
 ```
-<IndirectResourceRule ResourceType="AD_Entry_NominativeUser"    Property="memberOf"    />
+<IndirectResourceRule ResourceType="AD_Entry_NominativeUser" Property="memberOf" />
 ````
 
 
-After adding this rule to the Configuration, do not forget to deploy the configuration.
+After adding this rule to the Configuration, don't forget to deploy the configuration.
 
 ### Set up a test user
 
-The aim of this section is to give you a step-by-step guide for setting up a test user. It will also cover what is displayed in Identity Manager. In this example, we will assign a ```Test Group A``` directly to the test user and the ```Test Group A``` will also be a member of the ```Test Group B```. This way, the test user will also have an indirect assignment to the ```Test Group B```. We will also create the corresponding roles.
+The aim of this section is to give you a step-by-step guide for setting up a test user. It will also cover what is displayed in Identity Manager. In this example, will assign a ```Test Group A``` directly to the test user, and the ```Test Group A``` will also be a member of the ```Test Group B```. This way, the test user will also have an indirect assignment to the ```Test Group B```. will also create the corresponding roles.
 
 ![Group Membership Schema](/images/identitymanager/indirectpermissionsadexample.webp)
 
@@ -34,28 +34,28 @@ A running Active Directory instance is required to reproduce these steps yoursel
 
 #### Edit the Active Directory
 
-Create two groups in your Active Directory, ```TestGroupA``` and ```TestGroupB```. Then add ```TestGroupA``` as a member of ```TestGroupB```. Finally add a test user as a member of ```TestGroupA```. The test user can be any existing user in the AD that is known by Identity Manager.
+Create two groups in your Active Directory, ```TestGroupA```, and ```TestGroupB```. Then add ```TestGroupA``` as a member of ```TestGroupB```. Finally add a test user as a member of ```TestGroupA```. The test user can be any existing user in the AD that is known by Identity Manager.
 
 #### Prepare Identity Manager
 
-Since we have manually edited the Active Directory, we first need to run an AD synchronization job.
-Then we create one Single Role for each group in the Active Directory. We will name them ```TestRoleA``` and ```TestRoleB``` for ```Directory > User```, :
+Since have manually edited the Active Directory, first need to run an AD synchronization job.
+Then create one Single Role for each group in the Active Directory. will name them ```TestRoleA```, and ```TestRoleB``` for ```Directory > User```, :
 
 ![Single Role Configuration Example](/images/identitymanager/srconf_5.2.1.webp)
 
-We will also create a test Composite Role to showcase indirect Composite Roles. We will name it ```TestCRoleAB```:
+ will also create a test Composite Role to showcase indirect Composite Roles. will name it ```TestCRoleAB```:
 
 ![Composite Role Configuration](/images/identitymanager/crconf_5.2.1.webp)
 
-Then we will also need to add some rules. We first need to add one Navigation Rule for each group to link them with their respective Single Role:
+Then will also need to add some rules. first need to add one Navigation Rule for each group to link them with their respective Single Role:
 
 ![Navigation Rule Example](/images/identitymanager/navrule_5.2.1.webp)
 
-And finally, we need to add Single Role Rules to link our two previously created Single Roles to the new Composite Role:
+And finally, need to add Single Role Rules to link two previously created Single Roles to the new Composite Role:
 
 ![Single Role Rule Example](/images/identitymanager/srrule_5.2.1.webp)
 
-Even if two rules of a kind are needed, only one is pictured. Do not forget the other one.
+Even if two rules of a kind are needed, only one is pictured. Don't forget the other one.
 
 #### Indirect permission display
 
@@ -67,7 +67,7 @@ If you first go on the ```View permissions``` tab of your test user, the only ne
 
 ![View Permissions Simplified](/images/identitymanager/viewpermissionssimplified_5.2.1.webp)
 
-To display Indirect Permissions, you need to switch over to the ```Advanced view```. ```TestRoleA``` and ```TestRoleB``` should then appear:
+To display Indirect Permissions, you need to switch over to the ```Advanced view```. ```TestRoleA```, and ```TestRoleB``` should then appear:
 
 ![View Permissions Advanced](/images/identitymanager/viewpermissionsadvanced_5.2.1.webp)
 
@@ -77,43 +77,43 @@ You can also directly display the Assigned Resource Navigations by clicking on `
 
 ## Configure Indirect Permissions in an Microsoft Entra ID
 
-We can follow the same steps to configure this new rule:
+ can follow the same steps to configure this new rule:
 
 - What is the target Entity Type?
-  Once again, we will configure a rule for nominative users. The Entity Type is ```AzureAD_DirectoryObject_NominativeUser```.
+ Once again, will configure a rule for nominative users. The Entity Type is ```AzureAD_DirectoryObject_NominativeUser```.
 - Which permissions can be obtained transitively in the Microsoft Entra ID (formerly Microsoft Azure AD)?
-  Users get permissions by being members of a group. The property is ```memberOf```.
-- Do we want to look for correspondences in another system?
-  Here, we do not want to (it is possible, but it is not the aim of this How-To).
-  This also means that ```Correspondence```, ```CorrespondenceMembershipProperty```, and ```Entitlement``` will remain blank.
+ Users get permissions by being members of a group. The property is ```memberOf```.
+- Do want to look for correspondences in another system?
+ Here, don't want to (it is possible, but it isn't the aim of this How-To).
+ This also means that ```Correspondence```, ```CorrespondenceMembershipProperty```, and ```Entitlement``` will remain blank.
 
-Finally, if we compile all this information and using the naming of the standard Identity Manager Demo, we get the following Indirect Resource Rule:
+Finally, if compile all this information, and using the naming of the standard Identity Manager Demo, get the following Indirect Resource Rule:
 
-                    ```
+ ```
 
 <IndirectResourceRule
-    ResourceType="AzureAD_DirectoryObject_NominativeUser"    Property="memberOf"    />
+ ResourceType="AzureAD_DirectoryObject_NominativeUser" Property="memberOf" />
 
 ````
 ## Configure Indirect Permissions in SharePoint using Correspondences from an Microsoft Entra ID
 
-We can follow the same steps to configure this new rule, but this time we will showcase the correspondence feature:
+ can follow the same steps to configure this new rule, but this time will showcase the correspondence feature:
 
-- What is the target Entity Type? We first start in the Microsoft Entra ID. Once again, we will
+- What is the target Entity Type? first start in the Microsoft Entra ID. Once again, will
 configure a rule for nominative users. The Entity Type is `AzureAD_DirectoryObject_NominativeUser`.
 - Which permissions can be obtained transitively in the Microsoft Entra ID? Users get permissions by
 being members of a group. The property is `memberOf`.
-- Do we want to look for correspondences in another system? Yes, we want to find correspondences in
+- Do want to look for correspondences in another system? Yes, want to find correspondences in
 SharePoint. A correspondence can be found using the `SharePointObject` property.
 - Which permissions can be obtained transitively in SharePoint? Once again, users get permissions
 based on which groups they are a member of. The property capturing this notion for SharePoint entities is `Group`
-- Is being member of a group in SharePoint the type of permissions that we want to capture? While
-this can be computed, we are rather interested in compiling which SharePoint objects a user can view/change/etc. We obtain this information using the `Entitlement` property.
+- Is being member of a group in SharePoint the type of permissions that want to capture? While
+this can be computed, are rather interested in compiling which SharePoint objects a user can view/change/etc. obtain this information using the `Entitlement` property.
 
-Finally, if we compile all this information and use the naming convention of the standard Identity Manager Demo, we get the following Indirect Resource Rule:
+Finally, if compile all this information, and use the naming convention of the standard Identity Manager Demo, get the following Indirect Resource Rule:
 ```
 
-<IndirectResourceRule ResourceType="AzureAD_DirectoryObject_NominativeUser"    Property="memberOf"    Correspondence="SharePointObject"    CorrespondenceMembershipProperty="Group"    Entitlement="Entitlement"    />
+<IndirectResourceRule ResourceType="AzureAD_DirectoryObject_NominativeUser" Property="memberOf" Correspondence="SharePointObject" CorrespondenceMembershipProperty="Group" Entitlement="Entitlement" />
 
 ```
 This rule will also compute indirect permissions for the Microsoft Entra ID.

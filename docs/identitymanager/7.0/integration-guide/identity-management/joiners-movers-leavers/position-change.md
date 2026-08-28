@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Position Change via Records
 
-Identities' Joiners, Movers and Leavers (JML) process can be made easy by using the adequate model: records and contexts.
+Identities' Joiners, Movers, and Leavers (JML) process can be made easy by using the adequate model: records and contexts.
 
 In Identity Manager, position changes are made through workflows or through synchronization to the HR system.
 
@@ -14,11 +14,11 @@ In Identity Manager, position changes are made through workflows or through sync
 
 The entitlements of a user must be updated with the user's position changes: the entitlements needed for the previous position are removed, and the entitlements needed for the next position are added. This is essential to **prevent users from cumulating entitlements** when moving.
 
-Just like onboarding, the entitlement fulfillment can be performed either by using Identity Manager's suggestions for the needed entitlements and adjusting them, or trusting Identity Manager with an automated fulfillment.
+Like onboarding, the entitlement fulfillment can be performed either by using Identity Manager's suggestions for the needed entitlements and adjusting them, or trusting Identity Manager with an automated fulfillment.
 
 Identity Manager's calculations for entitlement assignments rely on heuristics, through identities' key properties called [Entitlement Management](../../../introduction-guide/overview/entitlement-management).
 
-> For example, consider an entity type modeling identities with their job title, department and
+> For example, consider an entity type modeling identities with their job title, department, and
 > location.
 >
 > Then a user working as a accountant in Paris will receive different entitlements from another user
@@ -35,23 +35,23 @@ Any change in an identity's lifecycle, such as a position change, usually entail
 > For example, a position change can typically trigger a change at least in the job title and
 > location, together with the position start and end dates.
 
-It seems natural to model identities by splitting their properties into three entities: one for users' personal data, one for their contract(s) and one for their position(s):
+It seems natural to model identities by splitting their properties into three entities: one for users' personal data, one for their contracts and one for their positions:
 
 ![Records Origin - Three-Entity Model](/images/identitymanager/recordsorigin_firstmodel.webp)
 
-A user can have several positions over time, even simultaneously. A user's contract can change over time too. Even personal data is subject to change. This is why we can have several sets of personal data (and/or several contracts and/or several positions) for a single user, and also why the `User` entity is meant to contain only users' unique identifiers.
+A user can have several positions over time, even simultaneously. A user's contract can change over time too. Even personal data is subject to change. This is why several sets of personal data (and/or several contracts and/or several positions) can exist for a single user, and also why the `User` entity is meant to contain only users' unique identifiers.
 
 > For example, in personal data a marriage can imply a name change, a user can start with a
 > fixed-term contract and change to a permanent one, and position change is obvious.
 
-Even without allowing simultaneous positions, contracts or personal data sets, this model helps **anticipate upcoming changes**.
+Even without allowing simultaneous positions, contracts, or personal data sets, this model helps **anticipate upcoming changes**.
 
 ### Contexts
 
-The model is supposed to facilitate the [Provisioning](../../../integration-guide/provisioning) provisioning of user data and entitlements, yet this first model does not meet all expectations. In case of multiple personal data sets for a single user over time, or multiple contracts, or multiple positions, which values should be used to apply the rules of the role model? How to combine all start and end dates to make sure that all rules are applied based on the right input? These issues imply complex C# expressions in provisioning rules.
+The model is supposed to facilitate the [Provisioning](../../../integration-guide/provisioning) provisioning of user data and entitlements, yet this first model doesn't meet all expectations. In case of multiple personal data sets for a single user over time, or multiple contracts, or multiple positions, which values should be used to apply the rules of the role model? How to combine all start and end dates to ensure that all rules are applied based on the right input? These issues imply complex C# expressions in provisioning rules.
 
 > For example, let's write a C# expression to compute users' **display names** based only on their first
-> and last names. To make sure that **display names** are computed using valid input, we write the
+> and last names. To ensure that **display names** are computed using valid input, use the
 > following:
 >
 > ```
@@ -69,7 +69,7 @@ The model is supposed to facilitate the [Provisioning](../../../integration-guid
 >
 > ```
 
-To simplify the expressions, the model needs to be "flattened" in order to provide all the data of a given user, valid at a given date. Hence users must be modeled by a set datasheets generated by Identity Manager, where all values in one datasheet are valid on a given time period.
+To simplify the expressions, the model needs to be "flattened" to provide all the data of a given user, valid at a given date. Hence users must be modeled by a set datasheets generated by Identity Manager, where all values in one datasheet are valid on a given time period.
 
 > For example, consider the following situation: Mark Barn is a user who has, at day D0, a given set
 > of personal data, a given contract and a given position. At day D1, his contract changes from
@@ -82,12 +82,12 @@ To simplify the expressions, the model needs to be "flattened" in order to provi
 >
 > ![Example - Timelines](/images/identitymanager/recordsorigin_timelines.webp)
 >
-> From this, Identity Manager is able to combine the start and end dates of all entities at all
+> From this, Identity Manager can combine the start and end dates of all entities at all
 > times to generate the following datasheets, named contexts:
 >
 > ![Example - Contexts](/images/identitymanager/recordsorigin_contexts.webp)
 
-Contexts are the result of the combination of all entities (personal data, contract and position) so that all values contained in a given context are valid on a given period of time.
+Contexts are the result of the combination of all entities (personal data, contract, and position) so that all values contained in a given context are valid on a given period of time.
 
 Users can be modeled by up to n\*n\*n contexts, and even more when elements overlap (positions in this example).
 
@@ -110,22 +110,21 @@ The complexity that comes from the combination of all start and end dates is tac
 
 ### Records
 
-The final step to a viable model is to find a way to **store optimally** this context model in the database, in order to be able to perform fast requests. Hence, the final model gathers all entities (personal data, contracts and positions), including their respective start and end dates, into a single entity named records, where a context is a record instance:
+The final step to a viable model is to find a way to **store optimally** this context model in the database, to be able to perform fast requests. Hence, the final model gathers all entities (personal data, contracts, and positions), including their respective start and end dates, into a single entity named records, where a context is a record instance:
 
 ![Records Origin - Final Model](/images/identitymanager/recordsorigin_thirdmodel.webp)
 
 While there are as many contexts for a user as the number of changes in the user's datasheet, there are only as many records as needed to store each value at least once.
 
-> With the example used for the explanation of contexts with `PD`, `C1`, `C2`, `P1` and `P2`, we
-> generate 5 contexts but store only 2 records: `{PD; C1; P1}` and `{PD; C2; P2}`.
+> With the example used for the explanation of contexts with `PD`, `C1`, `C2`, `P1` and `P2`, this generates 5 contexts but stores only 2 records: `{PD; C1; P1}` and `{PD; C2; P2}`.
 >
-> From these 2 records, we can rebuild the 5 contexts.
+> From these 2 records, the 5 contexts can be rebuilt.
 
 Contexts can be considered as the conversion tool between the two user models.
 
 This way, the model stores only Max(n) records instead of n\*n\*n.
 
-Plus, Identity Manager does not need to archive old data, because records and contexts are used only to simplify the application of provisioning rules. As only valid values are provisioned, there is no need to keep track.
+Plus, Identity Manager doesn't need to archive old data, because records and contexts are used only to simplify the application of provisioning rules. As only valid values are provisioned, there is no need to keep track.
 
 This means that a change to be **effective immediately** will not trigger the creation of a new record nor a new context. The record containing the old data will simply be updated.
 

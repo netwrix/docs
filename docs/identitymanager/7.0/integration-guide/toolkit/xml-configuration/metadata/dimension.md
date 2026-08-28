@@ -14,7 +14,7 @@ The following XML fragment defines the dimension `Organization0`. The dimension 
 <Dimension Identifier="Organization0" DisplayName_L1="Department" EntityType="Directory_Organization" ColumnMapping="0" />
 ```
 
-Some types of entities can be organized in a hierarchical tree structure. Thus, for example, organizational units form a tree structure modeled by a `Parent` navigation property that links the entity type to itself. It is possible to use the hierarchical aspect of a dimension in an assignment rule criterion. For example, the assignment must be extended to the whole subunits of a department. Such a dimension must be declared as a hierarchical dimension by specifying the attribute `IsHierarchical="true"`.
+Some types of entities can be organized in a hierarchical tree structure. Thus, for example, organizational units form a tree structure modeled by a `Parent` navigation property that links the entity type to itself. Use the hierarchical aspect of a dimension in an assignment rule criterion. For example, the assignment must be extended to the whole subunits of a department. Such a dimension must be declared as a hierarchical dimension by specifying the attribute `IsHierarchical="true"`.
 
 ```xml
 <Dimension Identifier="Organization0" DisplayName_L1="Department" EntityType="Directory_Organization" ColumnMapping="0" IsHierarchical="true" ParentProperty="Parent" />
@@ -38,6 +38,6 @@ The attribute `ParentProperty` specifies the navigational property defining the 
 | DisplayName_L1 optional | **Type:** String **Description:** Display name of the dimension in language 1 (up to 16). |
 | EntityType required | **Type:** Int64 **Description:** References the linked entity type. |
 | Identifier required | **Type:** String **Description:** Unique identifier of the dimension. |
-| IsExcludedFromRoleMining <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to exclude the dimension from role mining. It means that the dimension is not used as a criteria in the generated rules. |
-| IsHierarchical <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to define a hierarchical dimension. **Note:** Cannot be used without `ParentProperty`. |
+| IsExcludedFromRoleMining <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to exclude the dimension from role mining. It means that the dimension isn't used as a criteria in the generated rules. |
+| IsHierarchical <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** `true` to define a hierarchical dimension. **Note:** Can't be used without `ParentProperty`. |
 | ParentProperty optional | **Type:** Int64 **Description:** Specifies the navigational property defining the hierarchy. |

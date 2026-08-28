@@ -20,7 +20,7 @@ Ergonomically, it is recommended to hide the search symbol in a column header (i
 
 ## Resource Table
 
-The property DisplayTableDesignElement set to resourcetable allows you to create a table similar to the display table with DisplayTableDesignElement set to table but adds a column containing the owner of the resource.
+Set DisplayTableDesignElement to resourcetable to create a table similar to the display table with DisplayTableDesignElement set to table but that adds a column containing the owner of the resource.
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
@@ -36,7 +36,7 @@ Here is the visualization of this resource table on the interface:
 
 .
 
-Instead of creating a table, it is possible to create tiles to give another rendering of the user interface. It is therefore necessary to create the different tiles first. After creating the tiles, they must be imported into the display table with `DisplayTableDesignElement` set to `list`. Display tables with other values of `DisplayTableDesignElement` cannot display tiles.
+Instead of creating a table, create tiles to give another rendering of the user interface. Create the different tiles first, then import them into the display table with `DisplayTableDesignElement` set to `list`. Display tables with other values of `DisplayTableDesignElement` can't display tiles.
 
 See the[Tile](../../../integration-guide/toolkit/xml-configuration/user-interface/tile) topic for additional information.
 

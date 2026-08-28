@@ -12,7 +12,7 @@ When choosing `Nav`, it creates the connector's menu item under the `Nav_Connect
 When choosing `Top`, no menu item is created for the entity type's connector.
 
 :::warning
-If the entity type already has a menu item in the given section (`Nav`, `Top` or `Dashboard`), the scaffolding does not create any more menu item in this section.
+If the entity type already has a menu item in the given section (`Nav`, `Top` or `Dashboard`), the scaffolding doesn't create any more menu item in this section.
 If the entity type has no menu item in the given section, but the connector's menu item already exists in this section, the scaffolding creates only a menu item for the entity type, under the menu item of its connector.
 :::
 

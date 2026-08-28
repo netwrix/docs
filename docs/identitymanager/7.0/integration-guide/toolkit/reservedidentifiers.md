@@ -8,7 +8,7 @@ sidebar_position: 60
 
 Identifiers of [Entity Type](../../integration-guide/toolkit/xml-configuration/metadata/entitytype.md) and [Entity Type](../../integration-guide/toolkit/xml-configuration/metadata/entitytype.md)cannot be one of the following words:
 
-These words can't be written in any case, example: id, Id, iD and ID are forbidden.
+These words can't be written in any case, example: id, Id, iD, and ID are forbidden.
 
 - Id
 - if

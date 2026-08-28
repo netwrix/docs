@@ -10,7 +10,7 @@ This section identifies hardware and software requirements for Identity Manager'
 
 ## Hardware
 
-The database disk storage requirements depend on multiple factors as the database lifespan and the number of entries, for example 100,000 users can take up appropriately **10 GB** of storage
+Database disk storage requirements depend on the database lifespan and number of entries. For example, 100,000 users typically require approximately 10 GB of storage.
 
 :::note
  The maximum SQL Express database is **10 GB**. 
@@ -64,7 +64,7 @@ The installation and setup of the database require using either [SQL server Mana
 
 Identity Manager can authenticate to SQL Server using either a SQL Server authentication login or a Windows authentication login.
 
-Netwrix recommends using the [Windows authentication login](https://docs.microsoft.com/en-us/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver15) to avoid storing a plain text password in the technical configuration files.
+Netwrix recommends using [Windows authentication login](https://docs.microsoft.com/en-us/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver15) to log in to the SQL Server and avoid storing a plain text password in the technical configuration files.
 
 ## SQL Server Roles
 
@@ -83,7 +83,7 @@ For more information about identity and permission management in SQL Server, see
 
 ## Shared SQL Server and Dedicated Database
 
-Identity Manager's SQL Server installation can be used to host other database applications.
+Use Identity Manager's SQL Server installation to host other database applications.
 
 Identity Manager's database itself must be used exclusively for Identity Manager.
 
@@ -95,7 +95,7 @@ SQL feed must be open from Identity Manager's server to SQL Server.
 
 The [max degree of parallelism (MAXDOP)](https://learn.microsoft.com/en-us/azure/azure-sql/database/configure-max-degree-of-parallelism?view=azuresql-db) must be set to 1 in the SQL database.
 
-## What's Next?
+## What's Next
 
 Let's move on to the requirements for Identity Manager's server. See the [Server](../../installation-guide/requirements/server-requirements) topic for additional information.
 

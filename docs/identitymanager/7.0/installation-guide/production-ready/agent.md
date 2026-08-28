@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Install the Agents
 
-Most on-premises installations use an agent **integrated** with Identity Manager's server. If this is your case, **and** the server is **Already** installed, no need to go further. If you need **separate** agents, or if you are installing Identity Manager's agents within Identity Manager's **SaaS** offering, follow this guide.
+Most on-premises installations use an agent integrated with Identity Manager's server. If this is your case and the server is already installed, skip this guide. If you need **separate** agents, or if you are installing Identity Manager's agents within Identity Manager's **SaaS** offering, follow this guide.
 
 :::note
 ensure that Identity Manager's agent requirements are met before going further. See the [Agent](../../installation-guide/requirements/agent-requirements) topic for additional information.
@@ -23,7 +23,7 @@ The agent is configured thanks to the *appsettings.agent.json* file. See the [ap
 
 ## Create an IIS Website
 
-It is **recommended** to run the Identity Manager's agent as an IIS website.
+Netwrix recommends running the Identity Manager's agent as an IIS website.
 
 :::tip
 Remember, to install Identity Manager's agent as a Windows service, see the [Agent](../../installation-guide/requirements/agent-requirements) topic for additional information.
@@ -54,7 +54,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 - When creating the website, enter the following data:
 
-**Step 1 –** Site name: Identity Manager's agent`<Organization>` is the **recommended** naming convention
+**Step 1 –** Site name: Netwrix recommends `Identity Manager's agent<Organization>` as the naming convention
 
 **Step 2 –** Physical path: /`<agent working directory>`/Runtime
 
@@ -64,7 +64,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 **Step 5 –** Port & Hostname: To access Identity Manager's agent. Use the hostname **and** port that has been reserved for Identity Manager.
 
-After creation, the following settings are **recommended**:
+After creation, Netwrix recommends the following settings:
 
 - **Application Pool** > **Identity Manager `<Organization>`** > **Advanced Settings** >
 **General** > **Start Mode** set to AlwaysRunning;
@@ -73,7 +73,7 @@ Model** > **Idle Time-out** (minutes) set to 0 **and** Load User Profile set to 
 - **Application Pool** > **Identity Manager `<Organization>`** > **Recycling** > Regular time
 intervals set to 0.
 
-Recycling the application pool creates a discontinuation in the connection between server **and** agent, which can disrupt some of Identity Manager's features such as the job scheduler. IIS **Already** recycles the application pool at each setting change, thus Netwrix recommends not using periodic recycling.
+Recycling the application pool creates a discontinuation in the connection between server and agent, which can disrupt some of Identity Manager's features such as the job scheduler. IIS already recycles the application pool at each setting change, so Netwrix recommends not using periodic recycling.
 
 The following is [mandatory](https://docs.microsoft.com/en-us/aspnet/core/host-**and**-deploy/iis/?view=aspnetcore-8.0#mandatory):
 
@@ -82,7 +82,7 @@ The following is [mandatory](https://docs.microsoft.com/en-us/aspnet/core/host-*
 
 ![IIS Settings](/images/identitymanager/iis_settings.webp)
 
-This sums up IIS settings.
+These are the required IIS settings.
 
 ## Hosting Bundle
 

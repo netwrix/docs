@@ -34,5 +34,5 @@ The list of arguments:
  | --without-workflow-instances default value: false | Boolean | True to exclude workflow instances. | 
  | --without-campaign-instances default value: false | Boolean | True to exclude access certification campaign items. | 
  | --without-temp default value: false | Boolean | True to exclude the data of temporary tables. | 
- | --without-all default value: false | Boolean | True to exclude history data, job and task instances, workflow instances and access certification campaign items. _Remember,_ this option represents the usual use-case. | 
+ | --without-all default value: false | Boolean | True to exclude history data, job, task instances, workflow instances, and access certification campaign items. _Remember,_ this option represents the usual use-case. | 
  | --log-level optional | LogLevel | Level of log information among: Verbose; Debug; Information; Warning; Error; Fatal. | 

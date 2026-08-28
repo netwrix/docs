@@ -12,7 +12,7 @@ Assigning entitlements means giving users specific permissions, or access rights
 
 As Identity Manager relies on a [**role**-based](https://en.wikipedia.org/wiki/**role**-based_access_control) assignment policy, entitlement assignment is simply **role** assignment. See the [**role** Model](../../integration-guide/role-model)topic for additional information.
 
-So once a user is assigned a **role**, Identity Manager must make the right changes in the managed system(s) to actually enable the corresponding permission. The values to be changed in the managed systems are specified in **provisioning orders**.
+So once a user is assigned a **role**, Identity Manager must make the right changes in the managed systems to actually enable the corresponding permission. The values to be changed in the managed systems are specified in **provisioning orders**.
 
 Hence, an entitlement assignment is both the result of the execution of a provisioning order, and the enablement of an access right.
 
@@ -42,7 +42,7 @@ The same approval workflow is used for requests to add or remove roles.
 For example, Ms. Jackson requests for Mr. Smith the single **role** Server Room Access which has a two-step approval workflow:
 
 - At the end of the workflow, the assigned **role** has the workflow state **Requested**.
-- Once the assignment is processed, the workflow state switches to **Pending Approval** 1/2.
+- After the assignment is processed, the workflow state switches to **Pending Approval** 1/2.
 - Once a reviewer approves the assignment, the state switches to **Pending Approval** 2/2 (and if
 the reviewer declined the assignment, the state would switch to **Declined**).
 - Once a second reviewer approves the assignment, the stat switches to **Approved** and the
@@ -55,20 +55,20 @@ In addition to the workflow state that represents an assignment's progress in th
 :::note
  Contrary to the workflow state that concerns all assignments, the **provisioning state** is only about the assignments that need provisioning. 
 :::
-For example, roles exist only in Identity Manager and not in the managed systems, so assigned roles do not have a **provisioning state**, unlike assigned resource types, scalars and navigation, etc.
+For example, roles exist only in Identity Manager, and not in the managed systems, so assigned roles don't have a **provisioning state**, unlike assigned resource types, scalars, and navigation, etc.
 
 ![**provisioning state** Schema](/images/identitymanager/prov_stateschema_v523.webp)
 
 The schema sums up the usual progress of an assignment's **provisioning state**.
 
-For example, once Mr. Smith's **role** has completed the approval steps, we expect the provisioning of a navigation property:
+For example, once Mr. Smith's **role** has completed the approval steps, expect the provisioning of a navigation property:
 
-- It is not yet ready for provisioning because we decided to add a provisioning review by a
+- It isn't yet ready for provisioning because decided to add a provisioning review by a
 knowledgeable user because it is a sensitive permission, so the assigned resource navigation has the **Awaiting Approval** **provisioning state**.
 - Once a reviewer approves the assignment, the **provisioning state** switches to **Pending**.
 - Once **provisioning orders** are computed and transmitted to the agent, the state switches to
 **Transmitted**.
-- Once the agent confirms that the related order is executed, the state switches to **Executed**.
+- After the agent confirms that the related order is executed, the state switches to **Executed**.
 - Once synchronization validates the consistency of the provisioned value with the policy, the state
 finally switches to **Verified**.
 
@@ -76,13 +76,13 @@ Assignments whose **provisioning orders** are blocked because they are **Awaitin
 
 ## **non-conforming assignments**
 
-Once a policy is configured with all its rules and roles, Identity Manager can combine it with user information in order to determine the **expected assignments**, i.e. the list of all assignments that comply with the policy.
+Once a policy is configured with all its rules and roles, Identity Manager can combine it with user information to determine the **expected assignments**, i.e. the list of all assignments that comply with the policy.
 
 On the other hand, via synchronization Identity Manager can read the **existing assignments**, i.e. the list of all assignments that actually exist in the managed systems.
 
 Technically speaking, Identity Manager creates entitlements in the managed systems, and "translates" them into **role** model language. In other words, Identity Manager create assignments based on the entitlements found in the systems.
 
-A simple comparison between these two lists defines the **non-conforming assignments**, i.e. the list of all assignments that **do not comply** with the policy.
+A simple comparison between these two lists defines the **non-conforming assignments**, i.e. the list of all assignments that **don't comply** with the policy.
 
 ![**non-conforming assignments**](/images/identitymanager/governance_nonconforming.webp)
 
@@ -90,7 +90,7 @@ A **non-conforming** assignment must be reviewed in Identity Manager by a knowle
 
 - Removed if Identity Manager correctly spotted it and the owner should indeed not possess this
 permission;
-- Kept as an **exception** if the configured rules do not apply to this particular case.
+- Kept as an **exception** if the configured rules don't apply to this particular case.
 
 :::note
  **non-conforming assignments** are to be reviewed on the ****role** Reconciliation** and/or **Resource Reconciliation** screens. See the [Evaluate Policy](../../integration-guide/role-assignment/evaluate-policy) topic for additional information. 
@@ -105,7 +105,7 @@ For example, consider a (navigation) rule stating that the QuickBooks Level 1 Ac
 
 Now, let's say synchronization finds the Active Directory QuickBooks group membership for Mr. Smith's Active Directory account. The trouble is, Mr. Smith digital identity has not bee assigned the QuickBooks Access **role**: this is an inconsistency.
 
-In order to fix the inconsistency, Identity Manager creates the assignment of this **role** to Mr. Smith to be reviewed by a knowledgeable user who can determine whether the assignment is legitimate or results from a mistake.
+To fix the inconsistency, Identity Manager creates the assignment of this **role** to Mr. Smith to be reviewed by a knowledgeable user who can determine whether the assignment is legitimate or results from a mistake.
 
 ### Review automation
 
@@ -115,7 +115,7 @@ For example, the single **role** Server Room Access is requested for Mr. Smith, 
 
 ## Resource Type Assignments
 
-Resource types are not as intuitive as roles because they are more complex and subtle. Assigning a resource type materializes:
+Resource types aren't as intuitive as roles because they are more complex and subtle. Assigning a resource type materializes:
 
 - The creation of a resource, usually an account, in the managed system;
 - The creation of scalar and navigation properties for this new resource;
@@ -124,9 +124,9 @@ owner, and the **classification** of the resource into a specific type with spec
 
 ### Reconciliation
 
-Just like any other assignment, a resource type assignment can be **non-confirming** when the resource's existence or its values **do not comply** with the policy.
+Just like any other assignment, a resource type assignment can be **non-confirming** when the resource's existence or its values **don't comply** with the policy.
 
-For example, a SAP account is found for a user who should not have one according to the **role** model's rules.
+For example, a SAP account is found for a user who shouldn't have one according to the **role** model's rules.
 
 :::note
  An account can also be an **orphan** when it is found in the managed system, but no owner could be correlated. 
@@ -143,7 +143,7 @@ The **consolidated workflow state** represents the provisioning progress of the 
 assignment;
 
 :::note
- Except for very technical use cases, resource types should not be requested manually, they should only be inferred by a **role** and thus assigned automatically. 
+ Except for very technical use cases, resource types shouldn't be requested manually, they should only be inferred by a **role** and thus assigned automatically. 
 :::
 - ConsolidatedWorkflowBlockedState indicates whether one or more of the nested scalars/navigations
 are blocked;

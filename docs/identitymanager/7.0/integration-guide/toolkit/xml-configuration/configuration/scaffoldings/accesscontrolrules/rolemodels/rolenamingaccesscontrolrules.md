@@ -26,7 +26,7 @@ Generates the permissions to configure and launch the automatic creation of role
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_RoleMapping_Category" DisplayName_L1="Administrator_Category" DisplayName_L2="Administrator_Category" EntityType="Category" Profile="Administrator">

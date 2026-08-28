@@ -14,7 +14,7 @@ Data synchronization is a data flow from the managed systems into Identity Manag
 
 ### Process
 
-A connector's main purpose is to read and **export** the data previously mapped with [Create an Entity Type](../../user-guide/set-up/connect-system/entity-type-creation) in order to **synchronize** it with Identity Manager. Connectors provide tools to perform a basic extraction of the system's data in the form of CSV/XLSX files. These files are cleansed and loaded into Identity Manager. Synchronization is a three-step ETL process going through **export**, synchronization preparation and the synchronization itself.
+A connector's main purpose is to read and **export** the data previously mapped with [Create an Entity Type](../../user-guide/set-up/connect-system/entity-type-creation) to **synchronize** it with Identity Manager. Connectors provide tools to perform a basic extraction of the system's data in the form of CSV/XLSX files. These files are cleansed and loaded into Identity Manager. Synchronization is a three-step ETL process going through **export**, synchronization preparation and the synchronization itself.
 
 ![Synchronization Schema](/images/identitymanager/synchro_schema.webp)
 
@@ -52,9 +52,9 @@ Also, synchronization must not be disturbed by a change in the source format, su
 
 ****Thresholds must never be deactivated****
 
-Thresholds are essential safety guards that control all changes, for example preventing the overwriting of important data by mistake. Thresholds are by default activated to warn users when synchronization or provisioning triggers too many modifications. If the number of modifications exceeds the specified threshold, Identity Manager stops the synchronization and displays a warning _"Threshold Exceeded"_ on the log page described below.
+Thresholds are essential safety guards that control all changes, for example preventing the overwriting of important data by mistake. Thresholds are by default activated to warn users when synchronization or provisioning triggers too many modifications. If the number of modifications exceeds the specified threshold, Identity Manager stops the synchronization and displays a warning _"Threshold Exceeded"_ on the subsequent log page.
 
-Once the changes have been reviewed, the blocked job can be resumed (or not).
+After the changes are reviewed, the blocked job can be resumed (or not).
 
 Thresholds are configured with default values using the following [Connector](../../integration-guide/toolkit/xml-configuration/connectors/connector) attributes:
 
@@ -83,16 +83,16 @@ Launch synchronization for a given managed system by proceeding as follows:
 
     ![Home - Connectors](/images/identitymanager/home_connectors_v602.webp)
 
-2. On the relevant connector page, in the **Entity Types** frame, click on **Jobs**.
+2. On the relevant connector page, in the **Entity Types** frame, click **Jobs**.
 
-Here are all the tasks available for synchronization. They **synchronize** all connections and entity types for only this connector. It is possible to launch them individually in order to test them and debug a situation, or all together with **All Tasks**. According to the created connection(s) and package(s), all these tasks can be launched either in incremental or complete mode.
+Here are all the tasks available for synchronization. They **synchronize** all connections and entity types for only this connector. Launch them individually to test them and debug a situation, or all together with **All Tasks**. According to the created connections and packages, all these tasks can be launched either in incremental or complete mode.
 
     ![**synchronize** Job](/images/identitymanager/synchro_executionjobs_v602.webp)
 
     - `Update Expressions`: computes the expressions used in the entity type mapping.
     - `All Tasks`: launches all previous tasks in a row.
 
-Notice that some connectors, depending on their connections and packages, can't be synchronized in incremental mode. As a consequence, when clicking on the **Jobs** button, you wouldn't have a choice between `Complete` and `Incremental`. See below this note.
+Notice that some connectors, depending on their connections and packages, can't be synchronized in incremental mode. As a consequence, when clicking on the **Jobs** button, you wouldn't have a choice between `Complete` and `Incremental`. In this case, the following image shows a **synchronize** Job with only the Complete option available.
 
     ![**synchronize** Job (Only Complete)](/images/identitymanager/synchro_executionjobs-complete_v602.webp)
 
@@ -100,7 +100,7 @@ Notice that some connectors, depending on their connections and packages, can't 
 
 **export** and synchronization are executed manually from the connector screens. By default, they are also part of scheduled [Jobs](../../integration-guide/tasks-jobs/jobs) provided by Identity Manager:
 
-- the complete job is scheduled to launch a synchronization once a day of all resources, modified or not;
+- the complete job is scheduled to launch a synchronization once a day of all resources, modified, or not;
 - the incremental job is scheduled to launch a synchronization several times a day only of the resources modified since the last synchronization.
 
 See the [Set Up Incremental Synchronization](../../integration-guide/tasks-jobs/jobfast) and [Set up Complete Synchronization](../../integration-guide/tasks-jobs/jobdaily) topics for additional information.
@@ -115,7 +115,7 @@ You can fine-tune the synchronization and/or provisioning of the connector by cl
 
 ![Edit button](/images/identitymanager/synchro_edit_v600.webp)
 
-Click on **Job Results** to access the progress of this connector's jobs.
+Click **Job Results** to access the progress of this connector's jobs.
 
 All jobs are accessible on the **Job Execution** page in the **Administration** section.
 
@@ -123,7 +123,7 @@ All jobs are accessible on the **Job Execution** page in the **Administration** 
 
 ## Verify an Entity Type's Synchronization
 
-In order to verify both the synchronization configuration and [Create an Entity Type](../../user-guide/set-up/connect-system/entity-type-creation):
+To verify both the synchronization configuration and [Create an Entity Type](../../user-guide/set-up/connect-system/entity-type-creation):
 
 1. Launch synchronization.
 2. Access the connector's logs (from **Job Results** on the connector's dashboard) to ensure that synchronization completed successfully.
@@ -161,29 +161,29 @@ You should first look for configuration validation, and only later validation of
 
 ## Troubleshooting
 
-Make sure you followed the prerequisite guidelines for synchronization.
+Ensure you followed the prerequisite guidelines for synchronization.
 
-Keep in mind that a problem observed in synchronized data might also come from a mistake made previously in the connector's configuration. Therefore, logs can give more details. Logs are accessible from the **Job Results** button on the dashboard of a given connector.
+A problem observed in synchronized data might also come from a mistake made previously in the connector's configuration. Logs can give more details. Logs are accessible from the **Job Results** button on the dashboard of a given connector.
 
-Don't hesitate to launch synchronization-related tasks individually and observe the corresponding logs in order to debug a situation.
+Don't hesitate to launch synchronization-related tasks individually and observe the corresponding logs to debug a situation.
 
 If the connector and/or entity type doesn't appear in the menu items, then:
 
 ![Test Entity Type](/images/identitymanager/home_entitytypes_v602.webp)
 
-Access the relevant connector's page and click on the **Reload** button to take into account the last changes in the entity type mappings.
+Access the relevant connector's page and click the **Reload** button to take into account the last changes in the entity type mappings.
 
 If a newly added property doesn't appear in users' data, then:
 
-Access the relevant connector's page to click on the **Reload** button to take into account the most recent changes in the entity type mappings.
+Access the relevant connector's page to click the **Reload** button to take into account the most recent changes in the entity type mappings.
 
 If a synchronization is blocked by an exceeded threshold, then:
 
 ![Threshold warning](/images/identitymanager/synchro_threshold_v603.webp)
 
-Find out the reasons to decide whether or not to bypass the threshold. Proceed as follows:
+Find out the reasons to decide whether to bypass the threshold. Proceed as follows:
 
-1. On the logs page (accessible from the **Job Results** button), click on the line of a task
+1. On the logs page (accessible from the **Job Results** button), click the line of a task
 instance to see its logs.
 2. Study synchronization counters and the list of all synchronization changes. These tools help you
 make a decision about whether to bypass synchronization thresholds.
@@ -198,7 +198,7 @@ Numerous modifications can also be triggered by:
     - the input of blank files by mistake, because it would overwrite and erase all existing data;
     - a swap of two headers in an input file.
 
-3. If, after verifying, all changes are legitimate, click on the **Resume** button at the top of the
+3. If, after verifying, all changes are legitimate, click the **Resume** button at the top of the
 job progress page. This will restart the job and allow the changes to be synchronized.
 
 Be cautious, check twice for mistakes before resuming.
@@ -208,7 +208,7 @@ Be cautious, check twice for mistakes before resuming.
 If an **export** doesn't complete, then:
 
 - Check the connection's settings.
-- If you manually typed the source column of a property in the entity types, then make sure that the
+- If you manually typed the source column of a property in the entity types, then ensure that the
 source column exists in the corresponding managed system.
 
     ![Source Column](/images/identitymanager/entitytype_sourcecolumn_v602.webp)

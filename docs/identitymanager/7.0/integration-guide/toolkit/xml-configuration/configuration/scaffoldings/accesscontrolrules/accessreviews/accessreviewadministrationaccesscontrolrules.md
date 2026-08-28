@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Scaffolding to generate the rights to administrate campaign creation.
 
-Gives access to a shortcut on the dashboard to access this page.
+Provides a dashboard shortcut to access this page.
 
 ![Access Certification Campaigns](/images/identitymanager/home_accesscertificationcampaigns_v602.webp)
 
@@ -30,7 +30,7 @@ Gives access to a shortcut on the dashboard to access this page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_AccessCertificationCampaign_AccessCertificationCampaign" DisplayName_L1="Administrator_AccessCertificationCampaign_AccessCertificationCampaign" EntityType="AccessCertificationCampaign" Profile="Administrator">

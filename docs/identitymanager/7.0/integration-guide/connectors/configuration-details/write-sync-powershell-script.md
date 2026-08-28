@@ -8,5 +8,5 @@ sidebar_position: 110
 
 This guide shows how to write a PowerShell script used by the [PowerShellSync](../../../integration-guide/connectors/references-connectors/powershellsync) connector.
 
-The documentation is not yet available for this page and will be completed in the near future.
+The documentation isn't yet available for this page and will be completed in the near future.
 

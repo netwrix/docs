@@ -62,14 +62,14 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 ### Query without select section
 
-If select is not specified, API will just return queried elements' Ids.
+If select isn't specified, API will just return queried elements' Ids.
 
 ### Examples
 
 Last 100 started job's instances' Ids.
 
 :::tip
- Remember, The `Top` in the API queries had been deprecated and `PageSize`should be used instead. 
+ Remember, `Top` in API queries is deprecated — use `PageSize` instead. 
 :::
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 

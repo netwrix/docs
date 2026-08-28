@@ -20,8 +20,7 @@ For some managed systems, roles are tightly linked to navigation properties.
 
 In this case, when a role is assigned in the managed system without an existing rule that justifies the role, then new items appear on the **Role Reconciliation****and** the **Resource Reconciliation** screens.
 
-> In the case of the AD example, consider that we want to assign a specific role in SAP. Then, we
-> find the corresponding group in the AD **and** add the identity's DN to its `member` property.
+> In the case of the AD example, consider assigning a specific role in SAP. Then, find the corresponding group in the AD **and** add the identity's DN to its `member` property.
 >
 > The result is a new item on the **Role Reconciliation** screen for said SAP role, plus an item on
 > the **Resource Reconciliation** screen for the new `memberOf` property for said identity.
@@ -37,8 +36,8 @@ reconciled accordingly.
 - If the property is reviewed (approved/declined), then the corresponding role is automatically
 reviewed too, its workflow state transitioned to `Manual` (if approved) or `Cancellation` (if declined, then a deprovisioning order is sent).
 
-> So let's say we add `Cedric Blanc` to the list of members of the SAP groups `SG_APP_SAP_1` **and**
-> `SG_APP_SAP_211`. Then, after the next synchronization, Identity Manager displays one item for
+> For example, add `Cedric Blanc` to the list of members of the SAP groups `SG_APP_SAP_1` **and**
+> `SG_APP_SAP_211`. After the next synchronization, Identity Manager displays one item for
 > each role on the **Role Reconciliation** screen, **and** one item for all changes in the AD account on
 > the **Resource Reconciliation** screen:
 >
@@ -99,7 +98,7 @@ The **Other Resource Properties** frame shows the complying properties associate
 
 6. Choose one of the three possibilities to verify the property:
 
-Decisions must be made with caution as they cannot be undone.
+Decisions must be made with caution as they can't be undone.
 
     - Either click on the approval icon to update the property with the proposed value. It discards
 the whole property history.
@@ -117,14 +116,14 @@ future, this property will no longer be changed automatically.
 
         ![Decline Icon](/images/identitymanager/provmanual_icondecline_v522.svg)
 
-Retaining manual control of changes for sensitive data (i.e. `SAMAccountName`) can be of interest. Identity Manager won't be able to change this data **and** the service account manager will avoid authentication errors. It can be interesting to keep manual some sensitive data changes like `SAMAccountName` for example, so that Identity Manager does not change it **and** the service account manager does not risk problems in authentication.
+Retaining manual control of changes for sensitive data (i.e. `SAMAccountName`) can be of interest. Identity Manager won't be able to change this data **and** the service account manager will avoid authentication errors. It can be interesting to keep manual some sensitive data changes like `SAMAccountName` for example, so that Identity Manager doesn't change it **and** the service account manager doesn't risk problems in authentication.
 
     - Or click on the postponement icon to delay the decision. An unreconciled property is ignored
-by Identity Manager, **and** therefore cannot be modified.
+by Identity Manager, **and** therefore can't be modified.
 
         ![Postponement Icon](/images/identitymanager/provmanual_iconpostpone_v522.svg)
 
-7. Click on **Confirm Property Values**.
+7. Click **Confirm Property Values**.
 8. Trigger provisioning by launching, on the appropriate connector's overview page, **Jobs** >
 **Generate Provisioning Orders**, then, after this first task is done, **Jobs** > **Fulfill**.
 
@@ -132,7 +131,7 @@ by Identity Manager, **and** therefore cannot be modified.
 
 ### Use property view
 
-By default, non-conforming assignments are listed by resource. It is possible to click on a resource **and** then access the list of all unreconciled properties for said resource.
+By default, non-conforming assignments are listed by resource. Click a resource to access the list of all unreconciled properties for said resource.
 
 ![Resource View](/images/identitymanager/orphan_resourceview_v523.webp)
 
@@ -142,7 +141,7 @@ Once enabled, select a resource type to display all unreconciled properties link
 
 ![Property View](/images/identitymanager/orphan_propertyview_v603.webp)
 
-The review process is the same with both views. However with property view, reviewers don't click on a given line, but choose a decision directly on the left of the property line.
+The review process is the same with both views. However with property view, reviewers don't click a given line, but choose a decision directly on the left of the property line.
 
 In addition, using property view enables bulk reconciliation to approve the proposed values or keep the current values for several resources simultaneously.
 
@@ -150,5 +149,5 @@ In addition, using property view enables bulk reconciliation to approve the prop
 
 ## Verify Property Reconciliation
 
-In order to verify the process, check that the changes you ordered appear on the corresponding user's page in the directory.
+To verify the process, check that the changes you ordered appear on the corresponding user's page in the directory.
 

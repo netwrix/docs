@@ -88,7 +88,7 @@ The identifier of the connection and thus the name of the subsection must:
  | --- | --- | 
  | --- | --- | 
  | TimeFormat default value: 60 | **Type** Int32 **Description** Timeout (in seconds) for the export's requests to the targeted server. | 
- | WaitingTimeInSeconds default value: 30 | **Type** Int32 **Description** Time period (in seconds) during which pulling for changes is not allowed during the persistent phase. | 
+ | WaitingTimeInSeconds default value: 30 | **Type** Int32 **Description** Time period (in seconds) during which pulling for changes isn't allowed during the persistent phase. | 
  | --- | --- | 
  | --- | --- | 
  | Filter required | **Type** String **Description** Entries to be excluded from export among all entries from the LDAP instance. Only non-filtered entries are exported. The filter must use [Microsoft's search filter syntax](https://docs.microsoft.com/en-us/windows/win32/adsi/search-filter-syntax). | 
@@ -104,7 +104,7 @@ This connector is meant to generate to the [Application Settings](../../../integ
 Any property can be exported in a specific format when specified. See the [References: Format for the EntityPropertyMapping](../../../integration-guide/connectors/entitypropertymapping-format) topic for additional information.
 
 - a CSV file for each `ConnectionTable` in a related `EntityTypeMapping` or
-`EntityAssociationMapping`, and which is not an `entry`, named `<connectionIdentifier>_<ConnectionTableName>.csv`;
+`EntityAssociationMapping`, and which isn't an `entry`, named `<connectionIdentifier>_<ConnectionTableName>.csv`;
 
     > For example, `OpenLDAPExport_member` as `ConnectionTable` in a mapping will generate the file
     > `Open*LDAPExport_member.csv*` with `member` as link attribute.
@@ -126,7 +126,7 @@ The CSV files are stored in the [Application Settings](../../../integration-guid
 >
 > ```
 >
-> We would have `C:/identitymanagerContoso/Temp/ExportOutput/OpenLDAPExport.csv` like:
+> The output file `C:/identitymanagerContoso/Temp/ExportOutput/OpenLDAPExport.csv` looks like:
 >
 > ```
 > entry.csv
@@ -134,7 +134,7 @@ The CSV files are stored in the [Application Settings](../../../integration-guid
 > Insert,value1,value2,...,valueN
 > ```
 >
-> And we would also have `C:/identitymanagerContoso/Temp/ExportOutput/Open*LDAPExport_member.csv*` like:
+> The second output file `C:/identitymanagerContoso/Temp/ExportOutput/Open*LDAPExport_member.csv*` looks like:
 >
 > ```
 > *LDAPExport_member.csv*
@@ -146,7 +146,7 @@ The CSV files are stored in the [Application Settings](../../../integration-guid
 
 This connector fulfills via the LDAP connector's fulfill process.
 
-The LDAP connector fulfills the creation, deletion and update of LDAP entries, initiated through the Identity Manager UI or by [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) enforcement.
+The LDAP connector fulfills the creation, deletion, and update of LDAP entries, initiated through the Identity Manager UI or by [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) enforcement.
 
 ### Configuration
 
@@ -190,7 +190,7 @@ A new resource is created with the state `disabled`, corresponding to the **user
 
 Some systems using the LDAP protocol require additional attributes in the creation and/or update requests.
 
-If these attributes are not synchronized in Identity Manager, then they cannot be computed and provided by scalar rules or navigation rules. In this case, they can be given as arguments in the provisioning order, through the `ResourceType`'s `ArgumentsExpression`.
+If these attributes aren't synchronized in Identity Manager, then they can't be computed and provided by scalar rules or navigation rules. In this case, they can be given as arguments in the provisioning order, through the `ResourceType`'s `ArgumentsExpression`.
 
 > The following example adds the attribute `description` with a value depending on what is modified:
 >

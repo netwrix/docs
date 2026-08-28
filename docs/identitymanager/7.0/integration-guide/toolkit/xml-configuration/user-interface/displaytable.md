@@ -6,7 +6,7 @@ sidebar_position: 4
 
 A table displays a collections of entity type data grouped into rows.
 
-[Read more about how to customize display tables](/docs/identitymanager/current/integration-guide/ui/how-tos/custom-display-table).
+[Customize display tables](/docs/identitymanager/current/integration-guide/ui/how-tos/custom-display-table).
 
 
 ## Examples
@@ -83,13 +83,13 @@ Contains all the display table columns.
 
 |Property|Details|
 |---|---|
-| AddedMinutes optional | **Type:** Int32 **Description:** Add minutes to the date field with this property. If the value is not defined, the default value is the one defined for the associated display entity property. |
+| AddedMinutes optional | **Type:** Int32 **Description:** Add minutes to the date field with this property. If the value isn't defined, the default value is the one defined for the associated display entity property. |
 | CanBeFiltered <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Can filter the column data. |
 | ColumnSize <span class="optionalAttribute">default value: 1</span> | **Type:** Int32 **Description:** Defines the column size. |
 | DefaultSortPriority optional | **Type:** Int32 **Description:** Defines the default sort priority. |
 | DisplayBinding optional | **Type:** Int64 **Description:** Represents the linked binding path to a scalar property. |
 | DisplayName_L1 optional | **Type:** String **Description:** Display name of the column in language 1 (up to 16). |
-| IsDisplayInDropDownList <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is a drop down list column. |
+| IsDisplayInDropDownList <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is a dropdown list column. |
 | IsDisplayInSummaryView <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is a summary view column. |
 | IsResizable <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is resizable column. |
 | IsSortable <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is sortable column. |

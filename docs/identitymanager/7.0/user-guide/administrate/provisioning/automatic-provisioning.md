@@ -34,13 +34,13 @@ automated provisioning is performed through a connection using a [References: Pa
 
 There is no procedure to perform automated provisioning, for it is automatic and thus handled by Identity Manager in daily jobs.
 
-Make sure that the task used to compute and generate provisioning orders was launched after the request (or the provisioning review, if any), through the complete job in the **Job Execution** page.
+Ensure that the task used to compute and generate provisioning orders was launched after the request (or the provisioning review, if any), through the complete job in the **Job Execution** page.
 
 ![Home Page - Job Execution](/images/identitymanager/home_jobexecution_v602.webp)
 
 ## Verify Automated Provisioning
 
-In order to verify the process:
+To verify the process:
 
 1. Select a test user in the directory, accessible from the home page.
 

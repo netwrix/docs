@@ -41,8 +41,8 @@ The following example computes a new value for the `Card` property in users' rec
 | Identifier required | **Type:** String **Description:** Unique identifier of the aspect. |
 | AcceptNullValueExpression optional | **Type:** String **Description:** C# expression returning a boolean, `true` to consider `null` for the new value returned by `Expression`. By default, `null` values are ignored. |
 | Expression optional | **Type:** String **Description:** C# expression returning a new value for the property to be changed. **Note:** this property can also be defined by a binding via `ExpressionBinding`. |
-| ExpressionBinding optional | **Type:** String **Description:** Binding:- that defines the variable type used in the potential expressions specified in the aspect;- whose difference with `Binding` defines the property involved in the aspect.**Note:** required when handling the property of multi-valued objects, for example records, to make sure to modify the property in all records and not only in one. |
-| IfExpression optional | **Type:** String **Description:** Expression that conditions the aspect execution. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
+| ExpressionBinding optional | **Type:** String **Description:** Binding:- that defines the variable type used in the potential expressions specified in the aspect;- whose difference with `Binding` defines the property involved in the aspect.**Note:** required when handling the property of multi-valued objects, for example records, to ensure to modify the property in all records and not only in one. |
+| IfExpression optional | **Type:** String **Description:** Expression that conditions the aspect execution. [Learn about C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
 | Priority <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Execution priority among all aspects. At a given activity state, the aspect with the highest priority will be triggered first.**Note:** the priority can be a negative value. |
 
 

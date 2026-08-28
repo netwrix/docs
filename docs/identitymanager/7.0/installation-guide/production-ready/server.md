@@ -7,15 +7,15 @@ sidebar_position: 30
 # Install the Server
 
 :::note
- If you are a SaaS client this topic does not apply. You can skip directly to end user authentication. See the Set up End-User Authentication topic for additional information. 
+ If you are a SaaS client this topic doesn't apply. You can skip directly to end user authentication. See the Set up End-User Authentication topic for additional information. 
 :::
 Identity Manager Server can be installed on the same workstation as the database **or** on a separate workstation. If Identity Manager is installed on a separate workstation, it requires the SQL PowerShell components to function properly.
 
-Please make sure that the server requirements are met before going further. See the [Server](../../installation-guide/requirements/server-requirements) topic for additional information.
+Ensure that the server requirements are met before going further. See the [Server](../../installation-guide/requirements/server-requirements) topic for additional information.
 
 ## Server Working Directory
 
-The server executable is beeing been extracted to the working directory as `Usercube-Server.exe` **and** `Usercube-Server.dll` **and** will enable a user **or** IIS to run the Identity Manager Server. See the [Create a Working Directory](../../installation-guide/production-ready/working-directory) topic for additional information.
+The server executable is extracted to the working directory as `Usercube-Server.exe` and `Usercube-Server.dll`, enabling a user or IIS to run the Identity Manager Server. See the [Create a Working Directory](../../installation-guide/production-ready/working-directory) topic for additional information.
 
 ## Set up the License Key
 
@@ -23,15 +23,15 @@ The license key provided by Identity Manager must be set up in the **appsetting.
 
 ## Create an IIS Website
 
-It is **recommended** to run the Identity Manager Server as an IIS website.
+Netwrix recommends running the Identity Manager Server as an IIS website.
 
-To install the Identity Manager Server as a Windows service, please jump to Install the Server as a Windows Service. See the Install the Server topic for additional information.
+To install the Identity Manager Server as a Windows service, jump to Install the Server as a Windows Service. See the Install the Server topic for additional information.
 
 Adding the Identity Manager Server as an IIS website can be achieved with the [Internet Information Services (IIS) Manager](https://www.iis.net) which can be launched with the `INETMGR.MSC` command. You need to have an IIS 10.0 **or** greater.
 
 An IIS website must be created using the [Microsoft guide](https://docs.microsoft.com/en-us/aspnet/core/host-**and**-deploy/iis/?view=aspnetcore-8.0) **and** the following parameters:
 
-- Site name: `Usercube<Organization>` is the **recommended** naming convention
+- Site name: Netwrix recommends using `Usercube<Organization>` as the naming convention
 - Physical path — `/<working directory>/Runtime`
 - Type — `http`
 - IP address — `All unassigned`
@@ -44,7 +44,7 @@ During installation, the following information guides some of your choices:
 - Identity Manager Server's `web.config` can be found in the `Runtime` folder
 - The Identity Manager Server uses .NET
 
-After creation, the following settings are **recommended**:
+After creation, Netwrix recommends the following settings:
 
 - **Application Pool** > `Usercube<Organization>` > **Advanced Settings** > **General** > Start Mode
 set to `AlwaysRunning`;
@@ -53,7 +53,7 @@ Time-out (minutes) set to `0` **and** Load User Profile set to `True`;
 - **Application Pool** > `Usercube<Organization>` > **Recycling** > Regular time intervals set to
 `0`.
 
-Recycling the application pool creates a discontinuation in the connection between server **and** agent, which can disrupt some of Identity Manager's features such as the job scheduler. IIS **Already** recycles the application pool at each setting change, thus Netwrix Identity Manager (formerly Usercube) recommends not using periodic recycling.
+Recycling the application pool creates a discontinuation in the connection between server **and** agent, which can disrupt some of Identity Manager's features such as the job scheduler. IIS already recycles the application pool at each setting change, so Netwrix Identity Manager (formerly Usercube) recommends not using periodic recycling.
 
 The following is mandatory:
 
@@ -85,14 +85,14 @@ To create a service account you need to perform the following steps:
 :::
 **Step 2 –** Access the _Active Directory User **and** Computers_ tool with the command `dsa.mc`.
 
-**Step 3 –** Select the target domain **and** Click on **Users**. From the users list, right-click to select **New** > **User**.
+**Step 3 –** Select the target domain **and** Click **Users**. From the users list, right-click to select **New** > **User**.
 
 **Step 4 –** Choose a mnemonic _First Name_ for the Identity Manager Server, as for **Example** `<b>UsercubeContoso</b>Server`, **and** click **Next**.
 
 :::tip
  Remember, the down-level log on name in the format `DOMAIN/userName`,.as for **Example** `CONTOSO/identitymanagerContosoServer`. 
 :::
-**Step 5 –** Set a password **and** remember it for later, check the boxes **User cannot change password** **and** **Password never expires**.
+**Step 5 –** Set a password **and** remember it for later, check the boxes **User can't change password** **and** **Password never expires**.
 
 This newly created service account is a domain account **and** will be used as an IIS identity.
 
@@ -101,7 +101,7 @@ This newly created service account is a domain account **and** will be used as a
 :::
 ### Set an IIS identity
 
-The following implies that a custom service account has **Already** been created for the Identity Manager Server.
+The following assumes that a custom service account has already been created for the Identity Manager Server.
 
 To set an IIS identity you need to perform the following steps:
 
@@ -109,9 +109,9 @@ To set an IIS identity you need to perform the following steps:
 
 **Step 2 –** Select the `Usercube/<Organization>` application pool **and** right-click **and** select **Advanced Settings**.
 
-**Step 3 –** In the **Process Model** section, on the **Identity** list item, click on the three dots to open the **Application Pool Identity** dialog.
+**Step 3 –** In the **Process Model** section, on the **Identity** list item, click the three dots to open the **Application Pool Identity** dialog.
 
-**Step 4 –** Select the **Custom Account** radio button **and** click on **Set** **and** enter the previously created Service Account credentials:
+**Step 4 –** Select the **Custom Account** radio button **and** click **Set** **and** enter the previously created Service Account credentials:
 
 - User name in the format `DOMAIN/userName` that you have previously written down
 - Password, previously remembered
@@ -141,15 +141,15 @@ This guide will show you how to perform these operations using SQL Server Manage
 
 **Step 2 –** Expand the **Security** **and** **Login** nodes, **and** look for the Identity Manager service account in the list.
 
-If you cannot find the service account click on the **Login** node, right-click **and** select **New** > **Login**.
+If you can't find the service account click the **Login** node, right-click **and** select **New** > **Login**.
 
 **Step 3 –** On the **General** page, enter the service account login name in the down-level logon format, such as `CONTOSO/identitymanagerContosoServer`. If you're not sure about the correct spelling of your service account **or** domain, you can search for it using the search window. From the **Login** node, right-click **and** select **New login** > **Login name** > **Search**.
 
 **Step 4 –** Choose **either****Windows authentication** if you chose to connect the server to the database with a Windows service account (<b>Integrated Security=SSPI</b> in the connection string) **or** a **SQL Server authentication** for a SQL Server account (if you set up the connection string with a login/password). In the SQL case, fill in the same password in the form as in the connection string. You should now see the newly created login in the Login list.
 
-**Step 5 –** From the **Login** node, right-click the newly created login **and** select **Properties** then go to the **Server Roles** page on the left **and** make sure **public** is checked.
+**Step 5 –** From the **Login** node, right-click the newly created login **and** select **Properties** then go to the **Server Roles** page on the left **and** ensure **public** is checked.
 
-**Step 6 –** Go to **User Mapping****and** make sure `Usercube/<Organization/>` is checked (top panel), as well as **db_owner** **and** **public** (bottom panel).
+**Step 6 –** Go to **User Mapping****and** ensure `Usercube/<Organization/>` is checked (top panel), as well as **db_owner** **and** **public** (bottom panel).
 
 ![Bulk](/images/identitymanager/bulk.webp)
 
@@ -175,7 +175,7 @@ See the [Create a Working Directory](../../installation-guide/production-ready/w
 
 The following steps can be performed for each of the relevant directories.
 
-First, let's check what permissions the service account **Already** has.
+First, check what permissions the service account already has.
 
 To do so go to the working directory parent folder, right-click the working directory, select **Properties** **and** then select **Security**.
 
@@ -183,11 +183,10 @@ From there, you have **two** choices.
 
 The Identity Manager Server service account that was chosen previously:
 
-- **Already** has **or** belongs to a group that **Already** has the needed permissions. There is nothing more
-to do
-- Is **missing** one of the needed permissions **and** you need to perform the steps underlined below:
+- Already has the needed permissions, or belongs to a group that already has them. No further action is needed.
+- Is missing one of the needed permissions. Perform the following steps:
 
-**Step 1 –** Click on **Edit** **and** then on **Add**.
+**Step 1 –** Click **Edit** **and** then on **Add**.
 
     ![Object Names](/images/identitymanager/enter-the-object-names-to-select.webp)
 
@@ -199,7 +198,7 @@ to do
 
 The working directory permissions are all set.
 
-The same steps have to be performed on the runtime, the data collection **and** the provisioning orders directories. See the [Create a Working Directory](../../installation-guide/production-ready/working-directory) **and** [Application Settings](../../integration-guide/network-configuration/agent-configuration/appsettings) topics for additional information.
+Perform the same steps on the runtime, the data collection, and the provisioning orders directories. See the [Create a Working Directory](../../installation-guide/production-ready/working-directory) **and** [Application Settings](../../integration-guide/network-configuration/agent-configuration/appsettings) topics for additional information.
 
 ## Encryption **and** Authentication Key Pairs
 
@@ -211,8 +210,7 @@ Each RSA key pair, as in an [X.509](https://en.wikipedia.org/wiki/X.509) public 
 
 - As a [PKCS #12](https://en.wikipedia.org/wiki/PKCS_12) archive (also called Personal Information
 Exchange file **or** `.pfx` file) stored in the Server's host file system. The file contains both the public key certificate **and** the private key.
-- As a certificate from a Windows' certificate store identified by SubjectDistinguishedName **or** by
-Thumbprint. The Windows certificate also contains both the public key certificate **and** the private key. This is the **recommended** method.
+- As a certificate from a Windows certificate store identified by SubjectDistinguishedName or Thumbprint. The Windows certificate also contains both the public key certificate and the private key. Netwrix recommends this method.
 
 The key pairs can be generated with tools such as [OpenSSL](https://www.openssl.org/docs/manmaster/man1/req.html) **or** Microsoft's [New-SelfSignedCertificate](https://docs.microsoft.com/en-us/powershell/module/pkiclient/new-selfsignedcertificate?view=win10-ps), **and** [pvk2pfx tool](https://docs.microsoft.com/en-us/windows-hardware/drivers/devtest/pvk2pfx?redirectedfrom=MSDN).
 
@@ -273,7 +271,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 #### Certificate in the certificate store
 
-The certificate can be stored in the certificate store instead of the file system. This is the **recommended** method.
+The certificate can be stored in the certificate store instead of the file system. Netwrix recommends this method.
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
@@ -296,13 +294,13 @@ Now that the Identity Manager Server has been provided with a service account wi
 
 The connection between the Server **and** the Database requires choosing an authentication method: [Windows Authentication](https://docs.microsoft.com/en-us/sql/relational-databases/security/choose-an-authentication-mode?view=sql-server-ver15#windows-authentication) **or** SQL Server authentication. See the [Connection to the Database](../../integration-guide/network-configuration/server-configuration/database-connection) **and** [Usercube-Protect-CertificatePassword](../../integration-guide/executables/references/protect-certificatepassword) topics for additional information. Windows authentication will require the IIS identity to be set to the custom Windows service account used to log in to the Identity Manager's Windows Server session. SQL authentication will work with both the _built-in_ app pool identity **and** a custom service account. This authentication method will write the login **and** password directly in the connection string.
 
-`Runtime/*appsettings.json*` is a technical configuration file that enables you to set up the connection between the Server **and** the Database through the ConnectionString attribute. See the [Network Configuration](../../integration-guide/network-configuration) topic for additional information.
+Use `Runtime/*appsettings.json*` to configure the connection between the Server **and** the Database through the ConnectionString attribute. See the [Network Configuration](../../integration-guide/network-configuration) topic for additional information.
 
 The connection string is set up in the `Runtime/*appsettings.json*` configuration file which can be edited with any text editor, such as [Notepad++](https://notepad-plus-plus.org/downloads/).
 
 If the SQL Server is hosted on Azure, you should use the AzureCredentials setting before going further.
 
-In the`Runtime/*appsettings.json*` file, find **or** write the `ConnectionString` attributes following the examples shown below:
+In the`Runtime/*appsettings.json*` file, find, or write the `ConnectionString` attributes following the examples shown below:
 
 The first **Example** sets a connection string using the Windows authentication (`<b>Integrated Security=SSPI</b>`) to connect, on a local SQL Server system (`<b>source=.</b>`), to the `<b>UsercubeContoso</b>` database. See the
 
@@ -350,9 +348,9 @@ Your organization's DNS needs to be updated according to the requirements indica
 
 ## Test Your Installation
 
-In order to test your installation you must:
+To test your installation you must:
 
-**Step 1 –** Make sure the IIS site is running.
+**Step 1 –** ensure the IIS site is running.
 
 **Step 2 –** Go to the following URL with a browser: `<hostname>:<port>/hc` with the hostname **and** port set up in Create an IIS website. See the Install the Server topic for additional information.
 
@@ -360,7 +358,7 @@ In order to test your installation you must:
 
 ## Configure the Starting Mode in IIS (optional)
 
-This step is important if the scheduler is enabled. IIS starts the Identity Manager Server only if an incoming http request is made on the server **and** the scheduler is not launched until the Identity Manager Server is started. Because of that, you need to carefully set up the starting mode of IIS to force the starting of the Identity Manager Server.
+This step is important if the scheduler is enabled. IIS starts the Identity Manager Server only if an incoming http request is made on the server **and** the scheduler isn't launched until the Identity Manager Server is started. Because of that, you need to carefully set up the starting mode of IIS to force the starting of the Identity Manager Server.
 
 The Identity Manager Server warm up is done using the `<applicationInitialization>` element in the web.config file, the configuration is described in the [Microsoft documentation](https://learn.microsoft.com/en-us/iis/get-started/whats-new-in-iis-8/iis-80-application-initialization).
 
@@ -380,7 +378,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 Once done, you need to check that the configured jobs are launched via the Identity Manager's scheduler without having to manually issue a request on the Identity Manager Server.
 
-If this is not correctly configured, any restart of your IIS **or** application pool could prevent jobs from being launched.
+If this isn't correctly configured, any restart of your IIS **or** application pool could prevent jobs from being launched.
 
 ## Set up End-User Authentication
 
@@ -394,7 +392,7 @@ The next step consists in setting up one **or** more authentication methods for 
 
 Everything you need to know about setting up authentication is provided in the Technical Configuration Guide. See the [ End-User Authentication](../../integration-guide/network-configuration/server-configuration/end-users-authentication) topic for additional information.
 
-## What's Next?
+## What's Next
 
 Install the Agent is the next step of the process. See the [ Install the Agents](../../installation-guide/production-ready/agent) topic for additional information.
 

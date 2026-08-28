@@ -31,7 +31,7 @@ Configuration settings are detailed further in the following sections:
 
 How to write settings for the network configuration.
 
-### Sets, sections and values
+### Sets, sections, and values
 
 Configuration setting values are organized by functionality into three sets:
 
@@ -65,7 +65,7 @@ Relevant files for the Agent can be found in its working directory:
 - `appsettings.encrypted.agent.json`
 - `appsettings.cyberArk.agent.json`
 
-Each setting file is organized into several sections as shown in the Sets, Sections and values diagram. See the [Architecture](../../integration-guide/architecture) topic for additional information.
+Each setting file is organized into several sections as shown in the Sets, Sections, and values diagram. See the [Architecture](../../integration-guide/architecture) topic for additional information.
 
 Each section's name matches a top level attribute of the file's `json` object.
 

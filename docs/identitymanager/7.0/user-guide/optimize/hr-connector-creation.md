@@ -22,26 +22,26 @@ The HR connector is sometimes the first created connector, used to develop the i
 However, the HR connector requires a specific IT infrastructure (agent, proxy, Virtual Machine,
 etc.) which can take time to implement, and delay the project's progress.
 
-Moreover, in the long run it poses a few problems as HR data usually misses crucial information such
+Moreover, over time it poses a few problems as HR data usually misses crucial information such
 as contractor data, or the projects employees are working on. This can mean that:
 
 - the identity repository is filled using several sources. And when creating identities
   automatically from HR data and other sources, you need to specify which properties of each
-  identity can be overwritten by a change in HR and which cannot. This is to avoid manually changed
+  identity can be overwritten by a change in HR and which can't. This is to avoid manually changed
   attributes being overwritten by the HR data by mistake. This is very tedious.
 - the HR data is rarely up to date early enough to be really useful as a trigger for identity
   creation and deletion. As a result, identities end up being created manually through workflows
   most of the time.
 
-Hence we choose to build the first iteration of the project upon a manual data upload to
+For this reason, build the first iteration of the project upon a manual data upload to
 [Create the Workforce Repository](/docs/identitymanager/current/user-guide/set-up/initial-identities-loading).
 
-This way, we do not have to wait for the agent's implementation to create the first profiles and
-start connecting systems (AD, SAB, SAP, etc.). Thus value is created faster and we can focus on IGA
+This way, you don't have to wait for the agent's implementation to create the first profiles and
+start connecting systems (AD, SAB, SAP, etc.). Value is created faster, and you can focus on IGA
 activities such as the review of orphaned and unused accounts, eliminating risk earlier in the
 process.
 
-We can still connect HR data, later on, to check consistency between our identity repository and HR
+You can still connect HR data later to check consistency between the identity repository and HR
 data, through a certification-like process.
 
 ### Technical details
@@ -51,14 +51,14 @@ inside Identity Manager.
 
 ![Inbound System=](/images/identitymanager/connectorcreation_inbound.webp)
 
-As Identity Manager is able to feed all managed systems, it can also feed itself thanks to specific
+As Identity Manager can feed all managed systems, it can also feed itself thanks to specific
 connections such as the
 [InternalWorkflow](/docs/identitymanager/current/integration-guide/connectors/references-connectors/internalworkflow)
-connection. It means that the corresponding connector is able to launch workflows within Identity
+connection. It means that the corresponding connector can launch workflows within Identity
 Manager and keep track.
 
 Typically, an HR connector with such a connection would be able to launch workflows inside Identity
-Manager for identity creation, update and deletion, based on HR files.
+Manager for identity creation, update, and deletion, based on HR files.
 
 ## Participants and Artifacts
 
@@ -105,7 +105,7 @@ Create an HR connector by proceeding as follows:
 
 ## Verify HR Connector Creation
 
-In order to verify the process:
+To verify the process:
 
 1. Launch synchronization.
 2. Access the connector's logs (from **Job Results** on the connector's dashboard) to ensure that

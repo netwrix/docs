@@ -8,17 +8,17 @@ sidebar_position: 20
 
 The Identity Manager Database can be installed on the Server workstation or on a separate machine.
 
-Please make sure that the [Database](../../installation-guide/requirements/database-requirements) requirements are met before going further.
+Ensure that the [Database](../../installation-guide/requirements/database-requirements) requirements are met before going further.
 
 ## Steps
 
 ### 1. Install SQL server
 
-Microsoft's extensive documentation can be used to get help [installing a SQL Server 2016 or later](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server).
+Refer to Microsoft's extensive documentation for help [installing a SQL Server 2016 or later](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/install-sql-server).
 
 ### 2. Create the database
 
-The **recommended** naming convention is `Usercube<Organization>`, where `<Organization>` is the name of the organization targeted by this installation.
+Netwrix recommends the naming convention `Usercube<Organization>`, where `<Organization>` is the name of the organization targeted by this installation.
 
 > **FAQ**:
 > [How to create a database in SQL Server?](https://docs.microsoft.com/en-us/sql/relational-databases/databases/create-a-database?view=sql-server-ver15)
@@ -52,7 +52,7 @@ screen.
 sqlcmd -S <ComputerName>\<InstanceName> -d Usercube<Organization_name> -i <Usercube.sql>
 ```
 
-## What's Next?
+## What's Next
 
 The next step will consist in:
 

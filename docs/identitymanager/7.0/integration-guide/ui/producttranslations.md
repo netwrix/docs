@@ -28,7 +28,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 }
 ```
 
-The JSON file must only contain string properties: no object, array or number.
+The JSON file must only contain string properties: no object, array, or number.
 
 The properties' name must match the wanted translation keys.
 
@@ -38,15 +38,15 @@ A translation key is an identifier for a given translation: Identity Manager us
 
 To find these keys, go on [Netwrix Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html) , download the SDK of your product version and unzip the folder.
 
-The Translations folder contains two JSON files: en-US.json and fr-FR.json. These files both contain all the translation keys and respectively contain English (US) and french translations.
+The Translations folder contains two JSON files: `en-US.json` and `fr-FR.json`. These files both contain all the translation keys and respectively contain English (United States) and French translations.
 
-The configuration tool throws an error only when the format is wrong, not the keys: if you do not write correct keys, the file will be imported anyway without a warning. Netwrix strongly recommends to copy paste the keys from the JSON files in Translations.
+The configuration tool throws an error only when the format is wrong, not the keys: if you don't write correct keys, the file will be imported anyway without a warning. Netwrix strongly recommends to copy paste the keys from the JSON files in Translations.
 
 ### Key overriding
 
-There is no need to rewrite all the keys if you do not want to modify all the translations: in your JSON file, put only the keys of the translations you need to modify.
+There is no need to rewrite all the keys if you don't want to modify all the translations: in your JSON file, put only the keys of the translations you need to modify.
 
-For languages other than french and English (US), when you do not override a given translation, Identity Manager uses the English (US) one.
+For languages other than French and English (United States), when you don't override a given translation, Identity Manager uses the English (United States) translation.
 
 ### JSON translation file name
 

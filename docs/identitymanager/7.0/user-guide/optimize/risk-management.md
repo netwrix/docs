@@ -44,11 +44,11 @@ See the [Create the Workforce Repository](../../user-guide/set-up/initial-identi
 
 Create a risk by proceeding as follows:
 
-1. On the home page in the **Configuration** section, click on **Risks**.
+1. On the home page in the **Configuration** section, click **Risks**.
 
     ![Home Page - Risks](/images/identitymanager/home_risks_v602.webp)
 
-2. On the risks page, click on the addition button at the top right corner.
+2. On the risks page, click the addition button at the top right corner.
 
     ![Addition Icon](/images/identitymanager/iconadd_v602.svg)
 
@@ -70,15 +70,15 @@ policy message.
     - `Type`
     - `Level`: risk level that is used to compute risk scores.
     - `Rules`: a risk is based on the union of rules, themselves based on the intersection of rule
-items. A rule item specifies the risk-triggering resource(s). A high-privilege risk must contain at least one rule with one rule item. A segregation-of-duties risk must contain at least two rule items in the same rule.
+items. A rule item specifies the risk-triggering resources. A high-privilege risk must contain at least one rule with one rule item. A segregation-of-duties risk must contain at least two rule items in the same rule.
 
-When risks are based on the exemption policy called **Approval required**, the corresponding role requests appear on the **Role Review** screen with a specific workflow state. See below this note. See the [Reconcile a Role](../../user-guide/administrate/non-conforming-assignment-review/role-reconciliation) topic for additional information.
+When risks are based on the exemption policy called **Approval required**, the corresponding role requests appear on the **Role Review** screen with a specific workflow state. See the [Reconcile a Role](../../user-guide/administrate/non-conforming-assignment-review/role-reconciliation) topic for additional information.
 
     ![Risk Icon](/images/identitymanager/riskmanagement_workflowstate_v523.webp)
 
 ### Write risk rules
 
-A risk rule is simply the condition that triggers the assignment of a risk to an identity, depending on the identity's entitlements.
+A risk rule is the condition that triggers the assignment of a risk to an identity, depending on the identity's entitlements.
 
 Within Identity Manager, an entitlement assigned to an identity is represented by the value of a given navigation property, in a resource owned by said identity. See the [Create an Entity Type](../../user-guide/set-up/connect-system/entity-type-creation) topic for additional information.
 
@@ -92,16 +92,16 @@ Within Identity Manager, an entitlement assigned to an identity is represented b
 4. Choose the resource type to be targetted by the risk. See the
 [Categorize Resources](../../user-guide/set-up/categorization) topic for additional information.
 
-    > We choose `AD User (administration)` to prevent this situation from happening in our example.
+    > This example uses `AD User (administration)` to prevent this situation from happening.
 
 5. Choose the navigation property that corresponds to the situation.
 
-    > `memberOf` in our example.
+    > `memberOf` in this example.
 
 6. Choose a value for this navigation property. The value would be a resource from the unified
 resource repository. See the [Identity Management](../../introduction-guide/overview/identity-management) topic for additional information.
 
-    > The group `DL-INTERNET-Restricted` in our example.
+    > The group `DL-INTERNET-Restricted` in this example.
 
     ![Risk Item Example](/images/identitymanager/riskmanagement_newriskitem_v602.webp)
 
@@ -112,7 +112,7 @@ This final value is an entitlement, linked to the owner identity through the nav
     > In our example, a risk is identified for a person as soon as their administration AD account
     > is part of the `DL-INTERNET-Restricted` group.
 
-7. Click on **Create**.
+7. Click **Create**.
 
 Risks are taken into account from the moment the `Compute Resource Risk Scores` task runs (or the complete job which contains said task).
 
@@ -134,13 +134,13 @@ For a given identity in the list, user information can be viewed and accessed by
 
 **After a modification:** while risk scores are computed for all identities and assignments (pre-existing and newly created), a modified exemption policy is applied only to future entitlement assignments. For example, changing the exemption policy of a risk from warning to blocking won't remove entitlements from the identities who already have them. But future assignments are going to be blocked.
 
-The **deletion** of a risk simply triggers the computation of risk scores during the next `Compute Risk Scores` task, and removes any exemption policy steps in an assignment request. See the [**Risk management**](../../integration-guide/governance/risks) topic for additional information.
+The **deletion** of a risk triggers the computation of risk scores during the next `Compute Risk Scores` task and removes any exemption policy steps in an assignment request. See the [**Risk management**](../../integration-guide/governance/risks) topic for additional information.
 
 ## Verify **Risk management**
 
-In order to verify the process, assign to a fake identity a permission that is supposed to trigger the created risk, and check the consequences:
+To verify the process, assign to a fake identity a permission that is supposed to trigger the created risk, and check the consequences:
 
 - The message displayed at the end of the entitlement request must correspond to the configuration
 of the exemption policy. See the [**Risk management**](../../integration-guide/governance/risks) topic for additional information.
-- Once the entitlement is assigned, a line must appear on the **Identified Risks** page.
+- After the entitlement is assigned, a line must appear on the **Identified Risks** page.
 

@@ -15,7 +15,7 @@ Two subcommands are possible for generation.
 - simpleconnector
 - complexconnector
 
-The simple connector allows you to generate the configuration for a CSV file and create the connector. The complex connector allows you to generate the configuration for a list of CSV files and create the connector.
+Use the simple connector to generate the configuration for a CSV file and create the connector. Use the complex connector to generate the configuration for a list of CSV files and create the connector.
 
 ### 1. Simple connector
 

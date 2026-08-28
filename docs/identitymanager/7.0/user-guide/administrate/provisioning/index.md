@@ -12,16 +12,16 @@ How to write to an externally managed system.
 
 There are two notions involved:
 
-- Fulfillment : writing to a managed system, manually or automatically
-- Provisioning : writing automatically as provisioning is automated fulfillment
+- Fulfillment: writing to a managed system, manually, or automatically
+- Provisioning: writing automatically as provisioning is automated fulfillment
 
-But in everyday conversation, in the interface and in this documentation, we use the term provisioning instead of fulfillment.
+In everyday conversation, in the interface, and in this documentation, the term provisioning is used instead of fulfillment.
 
 ## Overview
 
 When modeling your connectors, you had to decide what data you wanted Identity Manager to manage within the external systems. You configured your connectors, and among other things you chose the appropriate connections and packages, to manage identities and their entitlements by writing directly to the managed systems. This is done through said connectors' provisioning capabilities. See the [Model the Data](../../../user-guide/set-up/connect-system/connector-modeling) and [Create a Connection](../../../user-guide/set-up/connect-system/connection-creation) topics for additional information.
 
-When changes are performed on identity data, entitlements or the role model inside Identity Manager, provisioning orders are generated in order to actually write said changes to the external systems. These changes can be written automatically or manually. Manual provisioning is used to involve humans and make them act on the external systems, instead of Identity Manager. Automatic provisioning is used to minimize human intervention and trust Identity Manager with role model enforcement in external systems. See the [Provision Manually](../../../user-guide/administrate/provisioning/manual-provisioning) and [Provision Automatically](../../../user-guide/administrate/provisioning/automatic-provisioning) topics for additional information.
+When changes are performed on identity data, entitlements, or the role model inside Identity Manager, provisioning orders are generated to actually write said changes to the external systems. These changes can be written automatically or manually. Manual provisioning is used to involve humans and make them act on the external systems, instead of Identity Manager. Automatic provisioning is used to minimize human intervention and trust Identity Manager with role model enforcement in external systems. See the [Provision Manually](../../../user-guide/administrate/provisioning/manual-provisioning) and [Provision Automatically](../../../user-guide/administrate/provisioning/automatic-provisioning) topics for additional information.
 
 ### Provisioning states
 
@@ -47,7 +47,7 @@ These states are detailed with their transitions on the individual pages specifi
 
 For security purposes, provisioning orders sometimes need to be reviewed before being propagated to the managed system. Then, a user with the right entitlements accesses the **Provisioning Review** page. Users can either approve provisioning orders that will then be unblocked and finally propagated, or they can decline orders that will subsequently be ignored. See the [Configure a User Profile](../../../user-guide/set-up/user-profile-configuration) topic for additional information.
 
-The review prior to the provisioning of entitlement assignments is usually performed based on the resource type of given identities. For example, the assignment of sensitive entitlements will require a review before being provisioned, whereas basic rights can be assigned at once. Therefore, resources must be carefully classified beforehand. See the [Classify Resources](../../../user-guide/set-up/categorization/classification) topic for additional information.
+The review before provisioning entitlement assignments is usually performed based on the resource type of given identities. For example, the assignment of sensitive entitlements will require a review before being provisioned, whereas basic rights can be assigned at once. Therefore, resources must be carefully classified beforehand. See the [Classify Resources](../../../user-guide/set-up/categorization/classification) topic for additional information.
 
 ## Participants and Artifacts
 
@@ -59,14 +59,14 @@ This operation should be performed in cooperation with the staff in charge of ma
 
 ## Perform Provisioning
 
-In order to perform the provisioning you have to:
+To perform the provisioning you have to:
 
 - Choose whether to adjust your resource types to implement provisioning review
 - Choose whether to adjust your connections to implement manual and/or automated provisioning
 
 ## Verify Provisioning
 
-In order to verify the process:
+To verify the process:
 
 ![Home Page - Directory User](/images/identitymanager/home_directoryuser_v523.webp)
 
@@ -80,5 +80,5 @@ In order to verify the process:
 
 ![Provisioning State Schema](/images/identitymanager/prov_stateschema_v523.webp)
 
-Whether your provisioning workflows trigger provisioning review, or whether they trigger manual or automated provisioning, below is the global state schema.
+Whether your provisioning workflows trigger provisioning review, or whether they trigger manual or automated provisioning, the preceding image shows the global state schema.
 

@@ -43,20 +43,20 @@ For example:
 ```
 
 
-Note that the `Job` value in `OpenIdIdentifier` refers to the `ClientId` written to the [appsettings.agent](../../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) file. Each task will authenticate with the profile associated with this ClientId.
+The `Job` value in `OpenIdIdentifier` refers to the `ClientId` written to the [appsettings.agent](../../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) file. Each task will authenticate with the profile associated with this ClientId.
 
 
 ### Permissions for the agent
 
-This part is not specific to a connector type, see the [Set Up Incremental Synchronization](../../../../integration-guide/connectors/configuration-details/setup-incremental-sync) topic for additional information.
+This part isn't specific to a connector type, see the [Set Up Incremental Synchronization](../../../../integration-guide/connectors/configuration-details/setup-incremental-sync) topic for additional information.
 
 ### Agent's authentication to the server
 
-This part is not specific to a connector type, see the [Set Up Incremental Synchronization](../../../../integration-guide/connectors/configuration-details/setup-incremental-sync) topic for additional information.
+This part isn't specific to a connector type, see the [Set Up Incremental Synchronization](../../../../integration-guide/connectors/configuration-details/setup-incremental-sync) topic for additional information.
 
 ### Permissions for users
 
-This part is not specific to a connector type, see the [Set Up Incremental Synchronization](../../../../integration-guide/connectors/configuration-details/setup-incremental-sync) topic for additional information.
+This part isn't specific to a connector type, see the [Set Up Incremental Synchronization](../../../../integration-guide/connectors/configuration-details/setup-incremental-sync) topic for additional information.
 
 ## Schedule the Job
 
@@ -103,6 +103,6 @@ Validate the job's execution by proceeding as follows:
 [Deploy Configuration Task](../../../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/deployconfigurationtask).
 2. In the UI, access the **Job Execution** page from the dashboard's **Administration** section.
 3. Find the job named with the string input in the job's `DisplayName_Li` property, and launch it.
-4. Once the job is completed, Microsoft Entra ID objects should be synchronized to the database's
+4. After the job is completed, Microsoft Entra ID objects should be synchronized to the database's
 `UR_Resources` table.
 

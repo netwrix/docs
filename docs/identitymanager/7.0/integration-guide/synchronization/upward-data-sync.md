@@ -34,7 +34,7 @@ Identity Manager provides three distinct synchronization algorithms:
 - _complete_
 - _initial_
 
-_Complete_ is most straightforward one. A _complete\_\_Sync Up_ loads the managed systems' data into Identity Manager as-is, replacing entirely the currently held data.
+_Complete_ is most straightforward one. A _complete\_\_Sync Up_ loads the managed systems' data into Identity Manager as-is, replacing entirely the held data.
 
 As it involves sending large amounts of data over HTTP between _Agent_ and _Server_, _complete_ execution time can be quite large.
 
@@ -42,15 +42,15 @@ To improve the _Sync Up_ execution time, Identity Manager provides the _incremen
 
 Changes are computed either by the managed system itself, given such capabilities are available, or by a Identity Manager's _Agent_.
 
-However, the _incremental_ mode cannot be 100% reliable for two reasons.
+However, the _incremental_ mode can't be 100% reliable for two reasons.
 
-First, it relies on external inputs that are not directly controlled by Identity Manager. Second, it only exports changes based on the managed system state, not on Identity Manager's database state.
+First, it relies on external inputs that aren't directly controlled by Identity Manager. Second, it only exports changes based on the managed system state, not on Identity Manager's database state.
 
 External perturbations could cause slight differences between the database's state and the managed systems'. Order can be restored by running a _complete_ Sync Up regularly. A _complete_ Sync Up ensures the database is in a stable state, faithfully reflecting the managed system state, before resuming the _incremental Sync Up_ iterations.
 
 Safeguards are also implemented to avoid accidental overwrites, that would be caused by an empty or incomplete input.
 
-Finally, the _initial\_\_Sync Up_ is designed to be used the first time a managed system connects to Identity Manager. Just as the _complete_, it loads the data as a whole. But, unlike the _complete_, it does not overwrites the currently held data and does not provide any safeguard. The _initial_ mode provides a quick way to perform the first _Sync Up_. The trade-off is security: _initial\_\_Sync Up_ should only be used the first time a managed system connected to Identity Manager and the database is empty, as far as this connector is concerned. Launching the Initial _Sync Up_ twice would actually load the same data twice whereas launching the _complete_ twice would have the same effect as launching the _complete_ once.
+Finally, the _initial\_\_Sync Up_ is designed to be used the first time a managed system connects to Identity Manager. Just as the _complete_, it loads the data as a whole. But, unlike the _complete_, it doesn't overwrites the held data and doesn't provide any safeguard. The _initial_ mode provides a quick way to perform the first _Sync Up_. The trade-off is security: _initial\_\_Sync Up_ should only be used the first time a managed system connected to Identity Manager and the database is empty, as far as this connector is concerned. Launching the Initial _Sync Up_ twice would actually load the same data twice whereas launching the _complete_ twice would have the same effect as launching the _complete_ once.
 
 ### An ETL process
 
@@ -82,7 +82,7 @@ If the managed system has built-in export capabilities, Identity Manager can sim
 
 **For example**, a common scenario is to configure an HR management system to perform daily extracts of its data to CSV files for the _Agent_ to find. This usually can be set up without any Identity Manager's task, just by using the managed system and the organization's network capabilities.
 
-If the managed system does not provide built-in export features but provides an API or an exposed database, it's possible to write a custom _export_ process based on that API or direct requests to the managed system's database. This process can then be used as an _export task_ wrapped in a [Invoke Expression Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/agent/invokeexpressiontask) or an [Invoke Sql Command Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/invokesqlcommandtask). See the [Invoke Expression Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/agent/invokeexpressiontask) topic for additional information. Any Windows process that can be called from a PowerShell script and generate a CSV file can serve as an export process.
+If the managed system doesn't provide built-in export features but provides an API or an exposed database, it's possible to write a custom _export_ process based on that API or direct requests to the managed system's database. This process can then be used as an _export task_ wrapped in a [Invoke Expression Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/agent/invokeexpressiontask) or an [Invoke Sql Command Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/invokesqlcommandtask). See the [Invoke Expression Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/agent/invokeexpressiontask) topic for additional information. Any Windows process that can be called from a PowerShell script and generate a CSV file can serve as an export process.
 
 **How to choose the custom CSV source file format ?** It's best to keep it simple and stick as closely as possible to the managed system data model. Data cleansing and translation to the resource repository's Entity Model is handled later in the _Sync Up_ process. There is no need to try and optimize the CSV source file format in a custom script. It's best to keep it close to the managed system to be able to spot early _export_ errors.
 
@@ -94,11 +94,11 @@ First, it must be a CSV format. One line per entry, and every attribute as a col
 
 Then, there is a slight difference between _Complete/Initial_ and _Incremental_ export.
 
-With the _Complete_ and _Initial_ modes, _CSV source files_ contain an exact extract of the managed system's data as a list of entries. At this point, the Entity Model is not yet involved. Every line of the _CSV source file_ mirrors a line in the source managed system database.
+With the _Complete_ and _Initial_ modes, _CSV source files_ contain an exact extract of the managed system's data as a list of entries. At this point, the Entity Model isn't yet involved. Every line of the _CSV source file_ mirrors a line in the source managed system database.
 
-With _Incremental_ mode, if the source managed system is able, one more column is added. It contains a ADD, UPDATE, or DELETE instruction. _Incremental_ export generates a list of changes made on the managed system since the last export, instead of an exact mirror of the data. Active Directory and Microsoft Entra ID (formerly Microsoft Azure AD), for example, are able to produce such exports, as LDIF files, that the Active Directory connector translates into _resources_ changes. Identity Manager's native support for ServiceNow and SCIM also provides such capabilities.
+With _Incremental_ mode, if the source managed system is able, one more column is added. It contains a ADD, UPDATE, or DELETE instruction. _Incremental_ export generates a list of changes made on the managed system since the last export, instead of an exact mirror of the data. Active Directory and Microsoft Entra ID (formerly Microsoft Azure AD), for example, can produce such exports, as LDIF files, that the Active Directory connector translates into _resources_ changes. Identity Manager's native support for ServiceNow and SCIM also provides such capabilities.
 
-In case the source managed system does not possess _incremental_ export capabilities, the changes computation is performed during the _prepare-synchronization_ step.
+In case the source managed system doesn't possess _incremental_ export capabilities, the changes computation is performed during the _prepare-synchronization_ step.
 
 Inside those constraints, every natively supported _export task_ generates its own _CSV source file format_, described in the [Connectors](../../integration-guide/connectors) section. Usually, two kinds of files are generated: _entries_, describing plain entries, and _associations_, describing associations between entries.
 
@@ -291,7 +291,7 @@ The _syncro_ step is where potential errors laid out in the overview could impac
 - Managed systems limitations, or human error in the export step, could result in a wrong or incomplete _CSV source file_ being fed to the _Synchronization_;
 - Identity Manager database could be restored to an older state to try and fix hardware failure or SQL tests gone wrong.
 
-These events, although exceptional, occur. They cause Identity Manager's database and the managed systems to be slightly off one another. The _incremental__Sync Up_ cannot fix these differences because the database is not taken into account in the changes computation. The _complete__Sync Up_ can fix it because it compares directly the database against the _export_ output files, i.e. it relies on the managed system's state, not on the database state.
+These events, although exceptional, occur. They cause Identity Manager's database and the managed systems to be slightly off one another. The _incremental__Sync Up_ can't fix these differences because the database isn't taken into account in the changes computation. The _complete__Sync Up_ can fix it because it compares directly the database against the _export_ output files, i.e. it relies on the managed system's state, not on the database state.
 
 It is hence **recommended** to run at least a daily _complete_ synchronization to account for these exceptional events and quickly fix the errors they might have cause into the database.
 

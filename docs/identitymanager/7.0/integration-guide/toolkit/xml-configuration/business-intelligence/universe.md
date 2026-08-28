@@ -4,7 +4,7 @@ description: ""
 sidebar_position: 1
 ---
 
-Universes constitute the basis for the configuration of a new model that we will call universe model. Users can then exploit it, through the Query module and/or Power BI, to generate graphic reports.
+Universes constitute the basis for the configuration of a new model called the universe model. Users can then exploit it, through the Query module and/or Power BI, to generate graphic reports.
 
 
 ## Examples
@@ -25,7 +25,7 @@ The following example builds a universe called `Universe1`:
 
 ![Universe - Basic Example](/images/identitymanager/bi_universeexampledisplaynames.webp)
 
-When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
+When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), the following appears:
 ![Universe (Display Names)](/images/identitymanager/universe_columnnamedisplayname.webp)
 
 ##### Basic universe with identifiers instead of display names
@@ -45,7 +45,7 @@ The following example builds a universe called `Universe1` with identifiers as l
 
 ![Universe - Basic Example](/images/identitymanager/bi_universeexample.webp)
 
-When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), we see the following:
+When [getting Identity Manager data in Power BI](/docs/identitymanager/current/integration-guide/governance/reporting/how-tos/connect-powerbi), the following appears:
 ![Universe (Identifiers)](/images/identitymanager/universe_columnnameidentifier.webp)
 
 

@@ -14,19 +14,19 @@ On the Okta dashboard:
 
 ![Add Application](/images/identitymanager/okta_addapplication.webp)
 
-**Step 1 –** Select the **Applications** section and click on the **Add Application** button.
+**Step 1 –** Select the **Applications** section and click the **Add Application** button.
 
 ![Create New App](/images/identitymanager/okta_createnewapp.webp)
 
-**Step 2 –** Then click on the **Create New App** button.
+**Step 2 –** Then click the **Create New App** button.
 
 ![Create Native App](/images/identitymanager/okta_createnativeapp.webp)
 
-**Step 3 –** Select the platform **Native app**. The only sign-on method is the OpenID Connect. Click on **Create**.
+**Step 3 –** Select the platform **Native app**. The only sign-on method is the OpenID Connect. Click **Create**.
 
 **Step 4 –** In **General Settings**, name your Application. You can also add a logo.
 
-**Step 5 –** In the **Configure OpenID Connect** section, enter the connection redirection URL in the part: **Login redirect URLs**. To find out this URL, just take the URL of the Identity Manager application and add `/signin-oidc`. The Identity Manager disconnection redirection URL is also necessary. To construct it, take Identity Manager's URL again and, at the end, add `/signout-callback-oidc`.
+**Step 5 –** In the **Configure OpenID Connect** section, enter the connection redirection URL in the part: **Login redirect URLs**. To find this URL, take the Identity Manager application URL and add `/signin-oidc`. The Identity Manager disconnection redirection URL is also necessary. To construct it, take Identity Manager's URL and add `/signout-callback-oidc` at the end.
 
 :::note
  The **Logout redirect URLs** section is marked as optional but it is mandatory for Identity Manager. 
@@ -35,7 +35,7 @@ On the Okta dashboard:
 
 ## Configure the Client Credentials
 
-The client secret in Identity Manager is required for the OIDC connection. You must therefore configure this OIDC connection option in the application. In the Application Dashboard, click on **Edit** in the **Client Credentials** section. Select the option **Use Client Authentication** and save the changes.
+The client secret in Identity Manager is required for the OIDC connection. You must therefore configure this OIDC connection option in the application. In the Application Dashboard, click **Edit** in the **Client Credentials** section. Select the option **Use Client Authentication** and save the changes.
 
 ![Client Credentials](/images/identitymanager/okta_clientcredentials.webp)
 
@@ -49,7 +49,7 @@ In the **Application** section, check the box **Implicit (Hybrid)** so that the 
 
 To successfully configure the OpenId protocol, you can refer to the dedicated section in the detailed guide. See the [ End-User Authentication](../../integration-guide/network-configuration/server-configuration/end-users-authentication) for additional information.
 
-Below is an illustrative example of how to set up your `appsettings.json` file.
+The following is an illustrative example of how to set up your `appsettings.json` file.
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 

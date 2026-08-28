@@ -17,7 +17,7 @@ The Introduction Guide introduced the role model and how it influences assigning
 3. Identity Manager uses a [role-based](https://en.wikipedia.org/wiki/Role-based_access_control)
 assignment policy to grant entitlements to identities, i.e. granting a role entails granting entitlements.
 4. The role model is first a catalog of available roles
-([Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole) and [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole)), identified by meaningful names aimed at non-technical end-users. These roles represent status of trust and privileges, to be assigned to identities, manually or automatically.
+([Single Role](../../integration-guide/toolkit/xml-configuration/provisioning/singlerole), and [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole)), identified by meaningful names aimed at non-technical end-users. These roles represent status of trust, and privileges, to be assigned to identities, manually, or automatically.
 5. The role model is also a set of rules aiming at assign automatically roles to identities, based
 on relevant criteria, namely [Dimension](../../integration-guide/toolkit/xml-configuration/metadata/dimension).
 6. The role model classifies resources by security concerns thanks to resource types.
@@ -71,7 +71,7 @@ The role model takes a very important place in the applicative configuration. It
 
 The role model is built iteratively, together with the [Entity Model](../../integration-guide/entity-model), as they closely influence one another. See the [Entity Model](../../integration-guide/entity-model) topic for additional information.
 
-The role model evolves and lives during the whole IGA project's lifecycle. Organization rules change, roles and assignment rules are updated, deleted, added.
+The role model evolves, and lives during the whole IGA project's lifecycle. Organization rules change, roles, and assignment rules are updated, deleted, added.
 
 The following gives a few ideas about how a to approach the writing of a role model.
 
@@ -87,9 +87,9 @@ Everyone in the team needs to access the Internet to do research and send e-mail
 
 Aerodynamics engineers need to access remote high-performance computation servers specifically designed to solve aerodynamics equations. The sensitive nature of the data sent to those servers, plus the availability constraints, require restricting access to engineers that absolutely need it to perform their daily tasks. That's another responsibility, that can be translated to a single role `Aerodynamics Computation Server` for example, that grants access to those servers.
 
-Structure engineers, on the other hand, do not perform such heavy computations and do not need access to the aerodynamics computation server. They can work locally, performing computations on their own workstation. They're not assigned the `Aerodynamics Computation Server` role.
+Structure engineers, on the other hand, don't perform such heavy computations and don't need access to the aerodynamics computation server. They can work locally, performing computations on their own workstation. They're not assigned the `Aerodynamics Computation Server` role.
 
-Quality control agents need access to sensitive information such as accident reports, on the internal data server named `data0`. Those highly sensitive privileges are not assigned to everyone. They can be translated to the `Data Server data0` role.
+Quality control agents need access to sensitive information such as accident reports, on the internal data server named `data0`. Those highly sensitive privileges aren't assigned to everyone. They can be translated to the `Data Server data0` role.
 
 The project manager needs access to the `data0` and `data1` servers with client contracts. The `Data Server data0` and `Data Server data1` roles translate those responsibilities.
 
@@ -118,9 +118,9 @@ Let's consider the `Internet Access` defined at step 1.
 
 In practice, Contoso Corporation authorizes or block a user Internet access by setting per-user outbound policies on their network firewall. The firewall integrates with Active Directory which make it possible to use Active Directory groups membership to enable or disable policies for a user.
 
-A security officer, to grant Internet access to an employee, would in practice assign a `Internet Access` group membership to their Active Directory account. That is a fine-grained entitlement entailed by the assignment of the `Internet Access` single role. That means that, to be able to grant or restrict Internet access, the link between an identity and their Active Directory account, used to login to work, must be known.
+A security officer, to grant Internet access to an employee, would in practice assign a `Internet Access` group membership to their Active Directory account. That is a fine-grained entitlement entailed by the assignment of the `Internet Access` single role. That means that, to be able to grant or restrict Internet access, the link between an identity and their Active Directory account, used to log in to work, must be known.
 
-To modelize that need within the role model, every identity with `Internet Access` single role is associated with an Active Directory account. We can find the Active Directory for an identity by comparing the identity email with the Active Directory entry e-mail. That's an example of [Resource Correlation Rule](../../integration-guide/toolkit/xml-configuration/provisioning/resourcecorrelationrule) that define the ownership of an Active Directory entry resource by an identity resource.
+To modelize that need within the role model, every identity with `Internet Access` single role is associated with an Active Directory account. can find the Active Directory for an identity by comparing the identity email with the Active Directory entry e-mail. That's an example of [Resource Correlation Rule](../../integration-guide/toolkit/xml-configuration/provisioning/resourcecorrelationrule) that define the ownership of an Active Directory entry resource by an identity resource.
 
 ### 3. Write assignment rules
 

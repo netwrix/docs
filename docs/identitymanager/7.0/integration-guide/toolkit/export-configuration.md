@@ -35,11 +35,11 @@ Export a SaaS configuration by proceeding as follows:
 1.  Log in for configuration deployment/export with the
 [Usercube-Login](../../integration-guide/executables/references/login.md) executable.
 
-Identity Manager provides an OpenID Connect (OIDC) authentication process in order to ensure strong security, visibility and ease of use.
+Identity Manager provides an OpenID Connect (OIDC) authentication process to ensure strong security, visibility, and ease of use.
 
 Netwrix Identity Manager (formerly Usercube) recommends using Identity Manager's dedicated in-house OIDC Identity Provider (IDP), but you can also use your own IDP if you want to manage authentication yourself.
 
-When using your own IDP, make sure that the IDP implements a valid OIDC protocol and serves id tokens.
+When using your own IDP, ensure that the IDP implements a valid OIDC protocol and serves id tokens.
 
     > For example, when using Identity Manager's IDP:
 >

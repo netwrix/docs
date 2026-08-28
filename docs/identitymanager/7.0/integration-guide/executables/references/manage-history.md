@@ -49,7 +49,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 The database's history can be optimized by removing intermediate versions based on their age, for example keeping only one version the last week, one per month the last 6 months and then one per year for 3 years.
 
-The following example reduces the history from the database, keeping at most one history version per interval. Here we keep one version per day (1440 minutes) in the last 7 days, then one version per month (43920 minutes) in the last 6 months before the previously defined period, then one version per year (525960 minutes) in the last 2 years before the previously defined periods.
+The following example reduces the history from the database, keeping at most one history version per interval. Keep one version per day (1440 minutes) in the last 7 days, then one version per month (43920 minutes) in the last 6 months before the previously defined period, then one version per year (525960 minutes) in the last 2 years before the previously defined periods.
 
 ![Schema - Optimize](/images/identitymanager/tools_managehistory_schema.webp)
 
@@ -65,7 +65,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 ./Usercube-Manage-History.exe <b>--optimize "1440:7 43920:6 525960:2"</b> --database-connection-string "data source=.;Database=Usercube;Integrated Security=SSPI;Min Pool Size=10;encrypt=false;"
 ```
 
-If you want to configure a time period when there is no purge and all history is kept as is, then you can specify a short duration that allows a single change, for example only one minute. The following example copies the previous one, in addition we want to keep all changes of the last 6 hours (360 minutes): `--optimize 1:360 1440:7 43920:6 525960:2`.
+To configure a time period when there is no purge and all history is kept as is, specify a short duration that allows a single change, for example only one minute. The following example copies the previous one, in addition to keeping all changes of the last 6 hours (360 minutes): `--optimize 1:360 1440:7 43920:6 525960:2`.
 
 **Clean duplicates**
 

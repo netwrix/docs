@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Classify Resources
 
-How to define [Resource Classification Rule](../../../integration-guide/toolkit/xml-configuration/provisioning/resourceclassificationrule) in order to classify remaining uncorrelated resources, assigning them resource types. See the [Create a Resource Type](../../../user-guide/set-up/categorization/resource-type-creation) topic for additional information.
+How to define [Resource Classification Rule](../../../integration-guide/toolkit/xml-configuration/provisioning/resourceclassificationrule) to classify remaining uncorrelated resources, assigning them resource types. See the [Create a Resource Type](../../../user-guide/set-up/categorization/resource-type-creation) topic for additional information.
 
 ## Overview
 
@@ -24,7 +24,7 @@ Sometimes, the managed system doesn't use rigorous rules and thus data quality i
 
 Each rule is configured with a confidence rate to express its reliability, according to data quality and sensitivity.
 
-In our case, correlation/classification can be based on a first rule applicable to quality data resources with a high confidence rate, and a second rule applicable to resources with a lower data quality. This second rule is going to have a lower confidence rate, thus a lower priority, because the strategy is to apply the first rule as much as possible. But the second rule is essential in case the first one doesn't apply, though it cannot be trusted as much as the first rule.
+In this case, correlation/classification can be based on a first rule applicable to quality data resources with a high confidence rate, and a second rule applicable to resources with a lower data quality. This second rule is going to have a lower confidence rate, thus a lower priority, because the strategy is to apply the first rule as much as possible. But the second rule is essential in case the first one doesn't apply, though it can't be trusted as much as the first rule.
 
 Hence correlation/classification rules are configured with a confidence rate:
 
@@ -51,12 +51,12 @@ requested manually or assigned automatically by a resource type rule;
 
     ![Correlation Review - Provisioning Review Screen](/images/identitymanager/categorization_reviewsprovisioningreview_v603.webp)
 
-- on the **Resource Reconciliation** page when the owned resource is not allowed by the role model,
+- on the **Resource Reconciliation** page when the owned resource isn't allowed by the role model,
 i.e. not requested manually nor assigned by a resource type rule. For example, the creation of a correlation rule without a resource type rule triggers unauthorized accounts on the **Resource Reconciliation** page.
 
     ![Correlation Review - Resource Reconciliation Screen](/images/identitymanager/categorization_reviewsresourcereconciliation_v603.webp)
 
-Broadly speaking, the **Resource Reconciliation** page displays non-conforming assignments/values (gaps), i.e. resources and property values from the managed systems that are not allowed by a rule in Identity Manager. The **Provisioning Review** page displays the resource and property changes whose workflows require a manual approval.
+Broadly speaking, the **Resource Reconciliation** page displays non-conforming assignments/values (gaps), i.e. resources and property values from the managed systems that aren't allowed by a rule in Identity Manager. The **Provisioning Review** page displays the resource and property changes whose workflows require a manual approval.
 
 ### Classification rule example
 
@@ -70,7 +70,7 @@ return resource.dn != null && resource.dn.Contains("OU=Users,") && resource.dn.C
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the **application owner** who knows the application users, entitlements and data model.
+For a given managed system, integrators may need the help of the **application owner** who knows the application users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -82,7 +82,7 @@ The principle of a classification rule is to use the expression of the target ob
 
 Fill a resource type with a classification rule by proceeding as follows:
 
-1. On the relevant resource type's page, click on **Classification Rules** and the addition icon.
+1. On the relevant resource type's page, click **Classification Rules** and the addition icon.
 
     ![New Classification Rule](/images/identitymanager/resourcetype_newclassifrule_v602.webp)
 
@@ -99,19 +99,19 @@ Classification rules can also be created through the **Access Rules** screen (ac
     - **Target Object** > `Expression`: C# expression based on the resource that needs to be
 classified.
     - `Confidence Rate`: rate expressing the rule's reliability, and its priority order..
-        > Our overview example would look like:
+        > The overview example above would look like:
 >
         > ![Classification Rule Example](/images/identitymanager/classification_example_v602.webp)
 
-3. Click on **Create** and see a line added on the rules page.
-4. On the connector dashboard and in the **Resource Types** frame, click on **Jobs** > **Classify
+3. Click **Create** and see a line added on the rules page.
+4. On the connector dashboard and in the **Resource Types** frame, click **Jobs** > **Classify
 Resource Types** to apply the new classification rules.
 
 ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
 ## Impact of Modifications
 
-An action (addition/modification/deletion) on a classification rule doesn't trigger a new computation of classification for the resources that are already categorized, i.e. **both classified and correlated**. The new version of said classification rule will be applied only to new resources along with the existing resources whose correlation and/or classification was not yet reviewed (as unauthorized accounts on the **Resource Reconciliation** screen).
+An action (addition/modification/deletion) on a classification rule doesn't trigger a new computation of classification for the resources that are already categorized, i.e. **both classified and correlated**. The new version of said classification rule will be applied only to new resources along with the existing resources whose correlation and/or classification wasn't yet reviewed (as unauthorized accounts on the **Resource Reconciliation** screen).
 
 Thus only non-conforming resources (unauthorized accounts on the **Resource Reconciliation** screen) can have their correlation and classification re-computed.
 
@@ -119,15 +119,15 @@ Even without selecting an owner, reviewing unauthorized accounts on the **Resour
 
 This also means that only non-conforming resources (displayed on the **Resource Reconciliation** screen) can have their classification questioned and re-computed.
 
-Simulations are available in order to anticipate the changes induced by a creation/modification/deletion in classification rules. See the [Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
+Simulations are available to anticipate the changes induced by a creation/modification/deletion in classification rules. See the [Perform a Simulation](../../../user-guide/optimize/simulation) topic for additional information.
 
-Any modification in classification rules is taken into account via the classification job: on the connector dashboard and in the **Resource Types** frame, click on **Jobs** > **Classify Resource Types**.
+Any modification in classification rules is taken into account via the classification job: on the connector dashboard and in the **Resource Types** frame, click **Jobs** > **Classify Resource Types**.
 
 ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
 ## Verify Classification
 
-In order to verify the process, analyze samples and check that all objects are classified, and well classified. To do so, click on the target entity type(s) affected by your rule(s) in the left menu of the home page.
+To verify the process, analyze samples and check that all objects are classified, and well classified. To do so, click the target entity types affected by your rules in the left menu of the home page.
 
 ![Test Entity Type](/images/identitymanager/entitytypecreation_test_v602.webp)
 
@@ -139,12 +139,12 @@ Therefore, check that all resources show here a resource type. Moreover, a knowl
 
 ## Troubleshooting
 
-If a resource is not classified (or not correctly), then:
+If a resource isn't classified (or not correctly), then:
 
 ![Unclassified Resource](/images/identitymanager/classification_unclassified_v600.webp)
 
 - If the resource is correlated, check whether the corresponding correlation rule is in the **right**
 resource type.
-- If the resource is not correlated, check the validity of the classification rules.
+- If the resource isn't correlated, check the validity of the classification rules.
 - Check the resource's data quality.
 

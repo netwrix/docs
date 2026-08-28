@@ -10,7 +10,7 @@ Identity Manager can compute, for a given identity, permissions that are obtaine
 
 ## Overview
 
-Assigning a role to a user can give them new permissions in a managed system by giving access to a new role or a new group, for example. This assignment is direct as it is entirely explicit. However, the user might also receive some **additional permissions that are inherited through the new permission** and that are not explicit. For instance in some systems, users can get permissions by being a member of a group but groups can also be members of other groups, and therefore allow for transitive permission acquisitions. These permissions are called indirect. This notion can also be extended when permissions in a managed system also give other permissions in an external system.
+Assigning a role to a user can give them new permissions in a managed system by giving access to a new role or a new group, for example. This assignment is direct as it is entirely explicit. However, the user might also receive some **additional permissions that are inherited through the new permission** and that aren't explicit. For instance in some systems, users can get permissions by being a member of a group but groups can also be members of other groups, and therefore allow for transitive permission acquisitions. These permissions are called indirect. This notion can also be extended when permissions in a managed system also give other permissions in an external system.
 
 Indirect Permissions are automatically computed by the [Compute Role Model Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask) along with standard explicit or direct permissions during a full update. Indirect permissions will not be computed when processing a single user (for instance through "Repair Data (helpdesk)") or during simulations.
 
@@ -46,7 +46,7 @@ Correspondences between resources are necessarily one-sided: the Indirect Permis
 
 An example of an Indirect Resource Rule configuration is available in How-To: [Configure Indirect Permissions](../../integration-guide/role-assignment/configureindirectpermissions) in an Active Directory.
 
-## What Can Be an Indirect Permission?
+## What Can Be an Indirect Permission
 
 The [Compute Role Model Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask) will create indirect Assigned Resource Navigations for the permissions that it finds, but if and only if these permissions are associated with a [Resource Type](../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype).
 
@@ -54,9 +54,9 @@ If a [Single Role](../../integration-guide/toolkit/xml-configuration/provisionin
 
 Finally, if at least one indirect Single Role is used to recover a [Composite Role](../../integration-guide/toolkit/xml-configuration/provisioning/compositerole), then the Composite Role will also be indirect.
 
-## What Can Be Done with Indirect Permissions?
+## What Can Be Done with Indirect Permissions
 
-Currently, Indirect Permissions are only displayed and found in the users' `View Permissions` tab in the `Advanced View`: Indirect Permissions (except Composite Roles) are hidden in the `Simplified View`.
+Indirect Permissions are only displayed and found in the users' `View Permissions` tab in the `Advanced View`: Indirect Permissions (except Composite Roles) are hidden in the `Simplified View`.
 
 Although Indirect Permissions are marked as `Non-conforming`, they can be neither approved nor deleted. They also won't appear in Access certification campaigns.
 

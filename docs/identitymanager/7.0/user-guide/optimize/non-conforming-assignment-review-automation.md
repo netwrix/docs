@@ -18,7 +18,7 @@ This type of rule is useful for example, when integrators intend to:
 null if they need to delete non-conforming assignments as soon as they are detected;
 - Automatically approve or decline discretionary requests if there is no validation after X days;
 - Send notifications to validators before declining or approving pending approval assignments;
-- Get information in order to deactivate an AD account if it hasn't been used in the past X days,
+- Get information to deactivate an AD account if it hasn't been used in the past X days,
 before deleting it.
 
 Integrators must show caution with pending approval assignments because this type of rule could short-circuit the whole approval process.
@@ -39,7 +39,7 @@ Create an automation rule by proceeding as follows:
 
 ![Home Page - Access Rules](/images/identitymanager/home_rules_v602.webp)
 
-**Step 1 –** On the home page in the **Configuration** section, click on **Access Rules**.
+**Step 1 –** On the home page in the **Configuration** section, click **Access Rules**.
 
 ![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
@@ -47,7 +47,7 @@ Create an automation rule by proceeding as follows:
 
 ![Addition Icon](/images/identitymanager/iconadd_v602.webp)
 
-**Step 3 –** Click on the **Automations** tab and on the addition button at the top right corner.
+**Step 3 –** Click the **Automations** tab and on the addition button at the top right corner.
 
 ![New Automation Rule](/images/identitymanager/reviewautomation_newrulefields_v602.webp)
 
@@ -55,17 +55,19 @@ Create an automation rule by proceeding as follows:
 
 - Decision — Action to be taken on the described assignments.
 - Criteria — Conditions that, if met, trigger the rule.
-Currently, the criteria are used to match the context of an assignment and not the user data. For example, if a single role is assigned based on a specific Department, then the context of the assignment has the information about the Department. In that case, an automation rule having in its dimensions that given Department will match this assignment and could Deny/Accept it.
+the criteria are used to match the context of an assignment and not the user data. For example, if a single role is assigned based on a specific Department, then the context of the assignment has the information about the Department. In that case, an automation rule having in its dimensions that given Department will match this assignment and could Deny/Accept it.
 - However, if a single role is assigned without any context on the Department (for example, a manual
 assignment with no parameter on the role), the automation rule will never match this assignment.
-- **NOTE:** No context will never be present for non-conforming or pre-existing roles
+  :::note
+  No context is ever present for non-conforming or pre-existing roles.
+  :::
 - Type — Assignment type concerned by the new rule. Once filled, a new field is displayed to select
 precisely an object from the existing objects belonging to this type.
 - Workflow State — Workflow state of the assignments that need a decision.
 - Waiting Period — Time period since the last change in the assignments' workflow states.
 
 :::tip
- Remember, in a nutshell, this rule applies Decision to all assignments of Type (and matching all criteria), whose workflow state has been set to Workflow State for more than Waiting Period. 
+This rule applies Decision to all assignments of Type (and matching all criteria), whose workflow state has been set to Workflow State for more than Waiting Period.
 :::
 ## Impact of Modifications
 
@@ -73,7 +75,7 @@ A modification in an automation rule doesn't impact the assignments affected by 
 
 ## Verify Review Automation
 
-In order to verify the process:
+To verify the process:
 
 **Step 1 –** On the **Role Review** or **Role Reconciliation** screen, spot an entitlement assignment.
 

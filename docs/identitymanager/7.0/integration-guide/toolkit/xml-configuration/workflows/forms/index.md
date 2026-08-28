@@ -31,4 +31,4 @@ Displays a form to update data for several resources simultaneously.
 Displays a form to select an existing record and update it.
 - [Workflow Update Several Records Entity Form](./workflowupdateseveralrecordsentityform)
 
-Displays a form to create, update or delete one or several records.
+Displays a form to create, update, or delete one or several records.

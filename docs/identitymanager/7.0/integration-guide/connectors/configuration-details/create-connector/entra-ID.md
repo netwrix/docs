@@ -303,7 +303,7 @@ Conf/MicrosoftEntraID/MicrosoftEntraID UI.xml
 
 **Permissions**
 
-In order to access the connector, any user must have the right permissions.
+To access the connector, any user must have the right permissions.
 
 The following example sets the permissions to access the Microsoft Entra ID connector and resources for the Administrator profile.
 

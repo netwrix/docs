@@ -20,7 +20,7 @@ For example, the SAP role can be given with slight differences according to the 
 
 **> ![Role Matrix](/images/identitymanager/parameterizedroles_numerousroles.webp)**
 
-In order to reduce the number of roles, we can configure **roles with parameters** by inserting a criterion in the navigation rules. Thus, instead of having as many roles as entitlements (left on the schema), we can have way fewer roles (right on the schema).
+To reduce the number of roles, configure **roles with parameters** by inserting a criterion in the navigation rules. This way, instead of having as many roles as entitlements (left on the schema), you have way fewer roles (right on the schema).
 
 ![With/Without Parameters](/images/identitymanager/parameterizedroles_parameters.webp)
 
@@ -30,7 +30,7 @@ By extension, a composite role that assigns a parametrized single role is parame
 
 This way, when assigning a parametrized role, a pop-up window is displayed where the parameter must be specified.
 
-The same thing goes with type rules instead of navigation rules when we want to assign resource types instead of entitlements.
+The same applies to type rules instead of navigation rules when assigning resource types instead of entitlements.
 
 ## Configure a Parametrized Role
 
@@ -38,7 +38,7 @@ Configure a parametrized role by proceeding as follows:
 
 **Step 1 –** Create in XML a dimension corresponding to the parameter that will affect the role. See the [Dimension](../../integration-guide/toolkit/xml-configuration/metadata/dimension) topic for additional information.
 
-For example, let's consider that we have many roles available on three different time slots: 8 hours a day, 12 hours a day, or 24 hours a day. We create a dimension for these time slots.
+For example, consider a case with many roles available on three different time slots: 8 hours a day, 12 hours a day, or 24 hours a day. Create a dimension for these time slots.
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
@@ -52,21 +52,21 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 **Step 3 –** Create one navigation rule linked to the role for each available value of the parameter. See the [Create a Role Manually](../../user-guide/set-up/single-roles-catalog-creation/role-manual-creation) topic for additional information.
 
-Here we have three navigation rules, one for each distinct time slot (dimension A). For example:
+This example uses three navigation rules, one for each distinct time slot (dimension A):
 
 ![Example - Rule](/images/identitymanager/parameterizedrole_examplerule_v603.webp)
 
 :::note
- Make sure that the corresponding dimension is specified in the right `DisplayEntityType` in XML to be displayed in the UI. 
+ Ensure that the corresponding dimension is specified in the right `DisplayEntityType` in XML to be displayed in the UI. 
 :::
 :::note
- It is important to note that for manually assigned roles, if a new dimension is added to the definition of the role, the assignment's dimension will not be re-calculated, and will therefore not be propagated to calculate automatic assignments. Example Scenario — Role A was created as a composite role with no parameters a long time ago. Role A was later updated to depend on the optional parameter X and a single role rule was created to assign a single role B if a user had Role A and parameter X set to value Y. If a user already manually had the role A, even if its dimension X (for example its department, which could be calculated) was equal to value Y, got its permissions recalculated, that person would not get the role B. Since the modification occurred after the assignment, it is understood as if the role was assigned voluntarily with dimension X unset. However, if a user got role A assigned after the modification, and its dimension X was equal to value Y, then that user would get the role B. 
+ For manually assigned roles, if a new dimension is added to the definition of the role, the assignment's dimension isn't recalculated, and therefore isn't propagated to calculate automatic assignments. Example scenario — Role A was created as a composite role with no parameters a long time ago. Role A was later updated to depend on the optional parameter X, and a single role rule was created to assign a single role B if a user had Role A and parameter X set to value Y. If a user already manually had the role A, even if its dimension X (for example its department, which could be calculated) was equal to value Y, got its permissions recalculated, that person wouldn't get the role B. Since the modification occurred after the assignment, the system treats the role as if it was assigned voluntarily with dimension X unset. However, if a user got role A assigned after the modification, and its dimension X was equal to value Y, then that user would get the role B. 
 :::
 ![Example - Role Parameter Required](/images/identitymanager/parameterizedrole_exampleroleparameter_v603.webp)
 
 **Step 4 –** Go back to the roles page to edit the single role from step 2, if needing to set the parameter required.
 
-If you want Identity Manager to provide suggestions to set the parameter's value, then make sure that users' [context rule](../../integration-guide/toolkit/xml-configuration/provisioning/contextrule) specifies the dimension.
+If you want Identity Manager to provide suggestions to set the parameter's value, then ensure that users' [context rule](../../integration-guide/toolkit/xml-configuration/provisioning/contextrule) specifies the dimension.
 
 For example, with the `Title` dimension:
 
@@ -78,9 +78,9 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 ## Verify the Parametrized Role
 
-In order to verify the process, request manually the parametrized role for a test user. Some additional pop-ups are displayed to set a value for the role's parameter. See the [Request Entitlement Assignment](../../user-guide/administrate/manual-assignment-request) topic for additional information.
+To verify the process, request manually the parametrized role for a test user. Some additional pop-ups are displayed to set a value for the role's parameter. See the [Request Entitlement Assignment](../../user-guide/administrate/manual-assignment-request) topic for additional information.
 
-In our example:
+In this example:
 
 ![Example - Step 1](/images/identitymanager/parameterizedroles_parameterexamplestep1_v603.webp)
 

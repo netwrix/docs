@@ -20,7 +20,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 ## Automatically Assign Profiles
 
-To automatically assign profiles it is necessary to manipulate the ProfileRuleContext and ProfileRule. See the [Access Control Rule](../toolkit/xml-configuration/access-control/accesscontrolrule) and [Profile Rule Context](../toolkit/xml-configuration/access-control/profilerulecontext) topics for additional information.
+To automatically assign profiles manipulate the ProfileRuleContext and ProfileRule. See the [Access Control Rule](../toolkit/xml-configuration/access-control/accesscontrolrule) and [Profile Rule Context](../toolkit/xml-configuration/access-control/profilerulecontext) topics for additional information.
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
@@ -38,7 +38,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 <SetInternalUserProfilesTask Identifier="SetInternalUserProfiles" DisplayName_L1="Set Internal User Profiles" >        <TaskEntityType EntityType="Referentiel_User"/>        <TaskResourceType ResourceType="AD_Entry_NominativeUser"/>    </SetInternalUserProfilesTask>
 ```
 
-Here the TaskEntityType is the reference to connect to Identity Manager and the ResourceType is the same as in the ProfileRuleContext. Once this configuration is done you can add the task in the job which provisions the Connector AD.
+Here the TaskEntityType is the reference to connect to Identity Manager and the ResourceType is the same as in the ProfileRuleContext. After this configuration is done you can add the task in the job which provisions the Connector AD.
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 

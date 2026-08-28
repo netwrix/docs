@@ -107,7 +107,7 @@ To set up the prerequisites for reading follow the steps below.
 **Set up the prerequisites for writing**
 
 :::note
- Make sure the Read prerequisites are configured first.
+ Ensure the Read prerequisites are configured first.
 :::
 **Step 1 –** Copy the provided DLL `sapnwrfc.dl` into the Runtime of Identity Manager.
 
@@ -179,7 +179,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
  | Name | Type | Description |
  | --- | --- | --- |
  | IsHana default value: false | Boolean | True to connect to an S/4 HANA instance instead of an ERP 6.0. |
- | AseLogin required | String | Login to connect to SAP ASE. |
+ | AseLogin required | String | log in to connect to SAP ASE. |
  | AsePassword required | String | Password to connect to SAP ASE. |
  | Client required | String | Client id of SAP. |
  | Instance required | String | Instance of the SAP database. |
@@ -237,7 +237,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
  | --- | --- | --- |
  | IsHana default value: false | Boolean | True to connect to an S/4 HANA instance instead of an ERP 6.0. |
  | Server required | String | URL of the SAP ERP server. |
- | BapiLogin required | String | Login to connect to the specified server. |
+ | BapiLogin required | String | log in to connect to the specified server. |
  | BapiPassword required | String | Password to connect to the specified server. |
 
 ### Password reset

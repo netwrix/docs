@@ -22,7 +22,7 @@ But the identifier can be also given instead of the id:
 
 `--connector "EasyVista" --api-url "http://localhost:5000/" --api-client-id "Job" --api-secret "secret" --url "https://easyvista.contoso.com" --account "12345" --login "Contoso" --password "cOntoSo6789"`
 
-In this example, for all resource types that have a target entity type of the connector `EasyVista`, we set the fulfillment state of the corresponding assigned resource types.
+In this example, for all resource types that have a target entity type of the connector `EasyVista`, the fulfillment state of the corresponding assigned resource types is set.
 
 ### Resource types specified
 
@@ -34,7 +34,7 @@ But the identifiers can be also given instead of the id:
 
 `--resource-types "EasyVista_NominativeUser" "EasyVista_Administrator" --api-url "http://localhost:5000/" --api-client-id "Job" --api-secret "secret"--url "https://easyvista.contoso.com" --account "12345" --login "Contoso" --password "cOntoSo6789"`
 
-In this example, for the resource types `EasyVista_NominativeUser` and `EasyVista_Administrator`, we set the fulfillment state of the corresponding assigned resource types.
+In this example, for the resource types `EasyVista_NominativeUser` and `EasyVista_Administrator`, the fulfillment state of the corresponding assigned resource types is set.
 
 ## Arguments
 
@@ -51,8 +51,8 @@ In this example, for the resource types `EasyVista_NominativeUser` and `EasyVist
  | --password required | **Type** String **Description** EasyVista server password. | 
  | --- | --- | 
  | --- | --- | 
- | --connector required if --resource-typesis not given | **Type** String **Description** Id or Identifier of the resource types' connector we want to update the fulfillment state. | 
- | --resource-types required if --connectoris not given | **Type** String List **Description** Id or Identifier of the resource types we want to update the fulfillment state. | 
+ | --connector required if --resource-typesis not given | **Type** String **Description** Id or Identifier of the resource types' connector to update the fulfillment state. | 
+ | --resource-types required if --connectoris not given | **Type** String List **Description** Id or Identifier of the resource types to update the fulfillment state. | 
  | --certificate-identifier optional | **Type** String **Description** Unique key used to retrieve the certificate in Azure Key Vault. | 
  | --vault optional | **Type** String **Description** Vault uri. | 
  | --vault-connection-string optional | **Type** String **Description** Connection string to connect to Azure Key Vault. | 

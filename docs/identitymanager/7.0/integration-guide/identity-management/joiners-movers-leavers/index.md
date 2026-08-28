@@ -1,12 +1,12 @@
 ---
-title: "Identity Lifecycle: Joiners, Movers and Leavers"
-description: "Identity Lifecycle: Joiners, Movers and Leavers"
+title: "Identity Lifecycle: Joiners, Movers, and Leavers"
+description: "Identity Lifecycle: Joiners, Movers, and Leavers"
 sidebar_position: 20
 ---
 
-# Identity Lifecycle: Joiners, Movers and Leavers
+# Identity Lifecycle: Joiners, Movers, and Leavers
 
-Identities' Joiners, Movers and Leavers (JML) process can be made easy by using the adequate model: records.
+Identities' Joiners, Movers, and Leavers (JML) process can be made easy by using the adequate model: records.
 
 In Identity Manager, the JML process is done through workflows or through synchronization to the HR system.
 

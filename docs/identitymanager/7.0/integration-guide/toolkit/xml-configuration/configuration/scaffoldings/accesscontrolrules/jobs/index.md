@@ -22,7 +22,7 @@ Generates the access control rules which give to a profile the permissions to ca
 Generates the execution rights for Provisioning and Fulfillment tasks for a given profile.
 - [ResourceChangesViewAccessControlRules](./resourcechangesviewaccesscontrolrules)
 
-Generates the access control rules which gives to a profile the permissions to call the API ResourceChange, ResourceFileChange and ResourceLinkChange.
+Generates the access control rules which gives to a profile the permissions to call the API ResourceChange, ResourceFileChange, and ResourceLinkChange.
 - [ResourceTypeMappingControlRules](./resourcetypemappingcontrolrules)
 
 Generate rights to launch agent fulfillment.
@@ -43,7 +43,7 @@ Generates access control to send notification when a relaunch job finish with an
 Generates rights to launch synchronization task.
 - [TaskAdministrationAccessControlRules](./taskadministrationaccesscontrolrules)
 
-Generates all rights to have the access to job administration page.
+Generates all rights to the job administration page.
 - [TaskInstanceAdministrationAccessControlRules](./taskinstanceadministrationaccesscontrolrules)
 
 Generates access control to update the task instances.

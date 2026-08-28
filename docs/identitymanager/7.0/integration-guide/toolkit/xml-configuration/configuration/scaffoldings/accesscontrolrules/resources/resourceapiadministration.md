@@ -9,7 +9,7 @@ Generates the permissions to create/update/delete/query resources from a given e
 
 
 ## Examples
-The following example gives the `Administrator` profile the rights to create, update, delete and query resources from `Directory_User`.
+The following example gives the `Administrator` profile the rights to create, update, delete, and query resources from `Directory_User`.
 
 ```xml
 <ResourceApiAdministration EntityType="Directory_User" Profile="Administrator"/>
@@ -27,7 +27,7 @@ The following example gives the `Administrator` profile the rights to create, up
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="AdministratorResourceApi_Administration_Directory_User" DisplayName_L1="AdministratorResourceApi_Administration_Directory_User" EntityType="Directory_User" Profile="Administrator">

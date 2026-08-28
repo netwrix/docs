@@ -6,13 +6,13 @@ sidebar_position: 10
 
 # Identity Management
 
-Managing identities' entitlements requires starting by managing identities themselves.
+To manage identities' entitlements, start by managing the identities themselves.
 
 ## A **central repository**
 
 A company involves many sorts of identities: obviously employees, but also external workers like contractors who are usually not tracked in the company's systems except for billing purposes, bots, softwares, etc. All identity types that need to be assigned entitlements to work within the company must be represented.
 
-Companies often use about one system for each identity type. Identity Manager capitalizes on information from several source systems in order to build a **central repository** meant to contain all the data necessary to **manage all identities throughout their whole lifecycle**.
+Companies often use about one system for each identity type. Identity Manager capitalizes on information from several source systems to build a **central repository** meant to contain all the data necessary to **manage all identities throughout their whole lifecycle**.
 
 ![Usercube's Repository](/images/identitymanager/identities_repository.webp)
 
@@ -60,8 +60,7 @@ For a given system, a connector contains:
 
 - the technology which enables data flows between the system and Identity Manager;
 - the related **entities** which model the system's **resources**;
-- the categories which group the system's **resources** together according to the **rules** that we want to
-apply to manage entitlement assignment for this system.
+- the categories which group the system's **resources** together according to the **rules** for managing entitlement assignment for this system.
 
 Thus, a connector enables **synchronization**, i.e. Identity Manager reading from a managed system via an [extract, transform, load](https://en.wikipedia.org/wiki/Extract,_transform,_load) process.
 
@@ -69,7 +68,7 @@ Thus, a connector enables **synchronization**, i.e. Identity Manager reading fro
 
 > A typical example is the **synchronization** of the HR system's data to retrieve employees' personal > information.
 
-It also enables **provisioning**, i.e. Identity Manager writing to a managed system, but that is something we will dig into later.
+It also enables **provisioning**, i.e. Identity Manager writing to a managed system, provisioning is addressed later.
 
 ![**provisioning**](/images/identitymanager/overview_provisioning.webp)
 
@@ -91,17 +90,17 @@ See the [Entitlement Management](../../introduction-guide/overview/entitlement-m
 
 Let's learn about [Entitlement Management](../../introduction-guide/overview/entitlement-management).
 
-## Learn More
+## Related Resources
 
 Learn more on Identity Management.
 
 See how to [Create the Workforce Repository](../../user-guide/set-up/initial-identities-loading).
 
-Learn more on [**connectors**](../../integration-guide/connectors).
+See the [**connectors**](../../integration-guide/connectors) topic for more information.
 
 See how to create a [Connect to a Managed System](../../user-guide/set-up/connect-system).
 
-Learn more on [**synchronization**](../../integration-guide/synchronization).
+See the [**synchronization**](../../integration-guide/synchronization) topic for more information.
 
-Learn more on [**workflows**](../../integration-guide/workflows).
+See the [**workflows**](../../integration-guide/workflows) topic for more information.
 

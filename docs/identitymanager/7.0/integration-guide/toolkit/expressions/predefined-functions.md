@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Identity Manager provides a set of predefined functions that simplify the configuration of entity property expressions and scalar rules. See the [Entity Type](../../../integration-guide/toolkit/xml-configuration/metadata/entitytype.md) and[Resource Type](../../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype.md) topics for additional information.
 
-Unlike C# expressions, Identity Manager's predefined functions do not need any prefix. They can be used as such. See the [C# utility functions](../../../integration-guide/toolkit/expressions/csharp-utility-functions.md) topic for additional information.
+Unlike C# expressions, Identity Manager's predefined functions don't need any prefix. They can be used as such. See the [C# utility functions](../../../integration-guide/toolkit/expressions/csharp-utility-functions.md) topic for additional information.
 
 ### Examples
 

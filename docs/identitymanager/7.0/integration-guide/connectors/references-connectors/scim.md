@@ -65,11 +65,11 @@ To connect to the Salesforce application do the following:
 
 ![salesforce-manageconnectedapps](/images/identitymanager/salesforce-manageconnectedapps.webp)
 
-**Step 6 –** Go to **Manage Connected Apps** and click on the newly created application.
+**Step 6 –** Go to **Manage Connected Apps** and click the newly created application.
 
 ![salesforce-manageconsumerdetails](/images/identitymanager/salesforce-manageconsumerdetails.webp)
 
-**Step 7 –** Click on **Manage Consumer Details**.
+**Step 7 –** Click **Manage Consumer Details**.
 
 ![salesforce-consumerkey](/images/identitymanager/salesforce-consumerkey.webp)
 
@@ -87,7 +87,7 @@ To enable the OAuth authentication do the following:
 
 ![oauthauthentication](/images/identitymanager/oauthauthentication.webp)
 
-**Step 3 –** Go to **OAuth** and **OpenID Connect Settings** in the **Identity** drop-down menu, enable the option to **Allow OAuth Username-Password Flows**.
+**Step 3 –** Go to **OAuth** and **OpenID Connect Settings** in the **Identity** dropdown menu, enable the option to **Allow OAuth Username-Password Flows**.
 
 **Reset the user token**
 
@@ -97,11 +97,11 @@ To reset the user token do the following:
 
 ![salesforce-usertoken-settings](/images/identitymanager/salesforce-usertoken-settings.webp)
 
-**Step 2 –** Click on **Settings** under the profile details.
+**Step 2 –** Click **Settings** under the profile details.
 
 ![salesforce-resetseuritytoken](/images/identitymanager/salesforce-resetseuritytoken.webp)
 
-**Step 3 –** Click on **Reset My Security Token**.
+**Step 3 –** Click **Reset My Security Token**.
 
 ![salesforce-checkemail](/images/identitymanager/salesforce-checkemail.webp)
 
@@ -175,7 +175,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 }
 ```
 
-Here we use an account's credentials (login and password) with our application's credentials (ApplicationId and ApplicationKey).
+This example uses an account's credentials (login and password) with the application's credentials (ApplicationId and ApplicationKey).
 
 The filter `?filter=active eq \"true\"` retrieves active Users from the external system.
 
@@ -193,7 +193,7 @@ The filter `?filter=active eq \"true\"` retrieves active Users from the external
  | Password optional | String | Password of the account. | 
  | ScimSyntax default value: RFC | String | Type of SCIM implementation: RFC - used for the systems that follow SCIM's rules; Salesforce - required when this connector targets Salesforce; <b>cyberark</b> - required when this connector targets <b>cyberark</b>. | 
 
-The credential attributes (ApplicationId, ApplicationKey, Login and Password) are used to obtain a token from the application for our requests.
+The credential attributes (ApplicationId, ApplicationKey, Login, and Password) are used to obtain a token from the application for the connector's requests.
 
 ### Output details
 
@@ -212,9 +212,9 @@ See the [Application Settings](../../../integration-guide/network-configuration/
 
 For the connector to work properly, the connection tables must follow the naming conventions too: `<identifier>_<entity> for entities and <identifier>_members_<entity>` for links.
 
-If the connection column describes a sub-property, then the name should have the following pattern: `{property}:{sub-property}`. The character ":" should not be used in other situations.
+If the connection column describes a sub-property, then the name should have the following pattern: `{property}:{sub-property}`. The character ":" shouldn't be used in other situations.
 
-For example, if we want to retrieve information about Users, Groups and Groups' members, we should have the following configuration:
+For example, to retrieve information about Users, Groups, and Groups' members, use the following configuration:
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
@@ -222,7 +222,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 <EntityTypeMapping Identifier="Salesforce_User" Connector="Salesforce" <b>ConnectionTable="SCIMExport_Users"</b>>  <Property Identifier="SF_id" <b>ConnectionColumn="id"</b> IsPrimaryKey="true" />  <Property Identifier="givenName" <b>ConnectionColumn="name:givenName"</b> />  <Property Identifier="emails" <b>ConnectionColumn="emails:value"</b> /></EntityTypeMapping><EntityTypeMapping Identifier="Salesforce_Group" Connector="Salesforce" <b>ConnectionTable="SCIMExport_Groups"</b>>  <Property Identifier="SF_id" <b>ConnectionColumn="id"</b> IsPrimaryKey="true" />  <Property Identifier="display" <b>ConnectionColumn="displayName"</b> /></EntityTypeMapping><EntityAssociationMapping Identifier="Salesforce_Group_Members" <b>Column1="value"</b> EntityPropertyMapping1="Salesforce_Group:SF_id" <b>Column2="MemberId"</b> EntityPropertyMapping2="Salesforce_User:SF_id" Connector="Salesforce" <b>ConnectionTable="SCIMExport_members_Groups"</b> />
 ```
 
-We would have SCIMExport_Users.csv with the column headers id, `name:givenName` and `emails:value`, `SCIMExport_Groups.csv` with the column headers id and `displayName`, and `SCIMExport_members_Groups.csv` with the column headers value and `MemberId`.
+This configuration creates SCIMExport_Users.csv with the column headers id, `name:givenName`, and `emails:value`; SCIMExport_Groups.csv with the column headers id and `displayName`; and SCIMExport_members_Groups.csv with the column headers value and `MemberId`.
 
 Each column contains the value of the corresponding attribute. SCIM attributes are described in the [RFC document](https://tools.ietf.org/html/rfc7643).
 
@@ -263,10 +263,10 @@ Same as for export, fulfill is configured through connections.
 > }
 > ```
 >
-> Here we use an account's credentials (login and password) with our application's credentials
+> This example uses an account's credentials (login and password) with the application's credentials
 > (ApplicationId and ApplicationKey).
 >
-> We specify that bulk requests are supported with a maximum of 10 operations per request.
+> This configuration specifies that bulk requests are supported with a maximum of 10 operations per request.
 
 #### Setting attributes
 
@@ -282,11 +282,11 @@ Same as for export, fulfill is configured through connections.
  | Password optional | String | Password of the account. | 
  | ScimSyntax default value: RFC | String | Type of SCIM implementation: RFC - used for the systems that follow SCIM's rules; Salesforce - required when this connector targets Salesforce; <b>cyberark</b> - required when this connector targets <b>cyberark</b>. | 
 
-The credential attributes (ApplicationId, ApplicationKey, Login, and Password) are used to obtain a token from the application for our requests.
+The credential attributes (ApplicationId, ApplicationKey, Login, and Password) are used to obtain a token from the application for the connector's requests.
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 

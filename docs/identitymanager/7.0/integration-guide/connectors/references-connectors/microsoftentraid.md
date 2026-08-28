@@ -23,9 +23,9 @@ developed by your own organization.
 
 ## Prerequisites
 
-Implementing this connector requires giving Identity Manager [application permissions](https://docs.microsoft.com/en-us/graph/auth/auth-concepts#application-permissions), because Identity Manager does not access the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) on behalf of a user but with [its own identity](https://docs.microsoft.com/en-us/graph/auth-v2-service), and delegated permissions are not enough. These application permissions require the consent of an administrator of the target Microsoft Entra ID tenant.
+Implementing this connector requires giving Identity Manager [application permissions](https://docs.microsoft.com/en-us/graph/auth/auth-concepts#application-permissions), because Identity Manager doesn't access the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) on behalf of a user but with [its own identity](https://docs.microsoft.com/en-us/graph/auth-v2-service), and delegated permissions aren't enough. These application permissions require the consent of an administrator of the target Microsoft Entra ID tenant.
 
-See the [Register for Microsoft Entra ID](../../../integration-guide/connectors/configuration-details/azuread-register) topic on how to register Identity Manager as an application with the Microsoft Identity Platform in order to grant Identity Manager a service account which authenticates with the target Microsoft Entra ID.
+See the [Register for Microsoft Entra ID](../../../integration-guide/connectors/configuration-details/azuread-register) topic on how to register Identity Manager as an application with the Microsoft Identity Platform to grant Identity Manager a service account which authenticates with the target Microsoft Entra ID.
 
 ## Export
 
@@ -116,9 +116,9 @@ Four entities are exported (`user`; `group`; `directoryRole`; `servicePrincipal`
 
 ``` MicrosoftEntraIDExport_directoryobjects.csv Command,@odata.type,accountEnabled,id,mail ... ```
 :::tip
- Remember, attributes described as "Supported only on the Get `<entity_name>` API" in the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) documentation cannot be retrieved through this connector. The export task will raise an error if these attributes are used in your EntityTypeMapping. 
+ Remember, attributes described as "Supported only on the Get `<entity_name>` API" in the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) documentation can't be retrieved through this connector. The export task will raise an error if these attributes are used in your EntityTypeMapping. 
 :::
-This connector supports [Microsoft Entra ID Schema Extensions](https://docs.microsoft.com/en-us/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions) but does not support [Microsoft Graph Schema Extensions](https://docs.microsoft.com/en-us/graph/extensibility-schema-groups).
+This connector supports [Microsoft Entra ID Schema Extensions](https://docs.microsoft.com/en-us/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions) but doesn't support [Microsoft Graph Schema Extensions](https://docs.microsoft.com/en-us/graph/extensibility-schema-groups).
 
 - `<connectionIdentifier>_<navigationProperty>_<entity>.csv` describing the navigation property from
 one entity to another.
@@ -147,7 +147,7 @@ For more details, see Microsoft's documentation on [columns and attributes synch
 
 ## Fulfill
 
-This connector writes to the Microsoft Entra ID, to create, update and delete Microsoft Entra ID objects, initiated manually through the UI or automatically by enforcing the policy. See the [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) topic for additional information.
+This connector writes to the Microsoft Entra ID, to create, update, and delete Microsoft Entra ID objects, initiated manually through the UI or automatically by enforcing the policy. See the [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) topic for additional information.
 
 ### Configuration
 
@@ -188,7 +188,7 @@ The table below summarizes the setting attributes.
 
 ### Output details
 
-This connector can create a new resource, update and delete any Microsoft Entra ID objects and groups' memberships via the UI.
+This connector can create a new resource, update, and delete any Microsoft Entra ID objects and groups' memberships via the UI.
 
 ## Authentication
 

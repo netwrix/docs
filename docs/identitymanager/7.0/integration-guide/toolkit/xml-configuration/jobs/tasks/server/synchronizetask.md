@@ -24,7 +24,7 @@ Collection must be done by the [PrepareSynchronizationTask](../agent/preparesync
 |---|---|
 | Connector required | **Type:** String **Description:** Identifier of the connector involved in the task. |
 | DisplayName_L1 required | **Type:** String **Description:** Display name of the task in language 1 (up to 16). |
-| DoNotDeleteChanges <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Do not delete change in the change tables. |
+| DoNotDeleteChanges <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Don't delete change in the change tables. |
 | ForceSynchronization <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Force the synchronization |
 | Identifier optional | **Type:** String **Description:** Unique identifier of the task. |
 | Orphans <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Save orphans in a CSV output file |

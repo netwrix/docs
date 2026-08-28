@@ -47,7 +47,7 @@ Integrators should have all the elements they need to operate.
 
 Install the production agent by proceeding as follows:
 
-1. [Create a Working Directory](/docs/identitymanager/current/installation-guide/production-ready/working-directory) and make sure it contains the folders: `Mails`; `Sources`; `Temp`; `Work`.
+1. [Create a Working Directory](/docs/identitymanager/current/installation-guide/production-ready/working-directory) and ensure it contains the folders: `Mails`; `Sources`; `Temp`; `Work`.
 2. [Configure the Agent's Settings](/docs/identitymanager/current/user-guide/deploy/production-agent-installation/settings-files) via the `web.config`,  `appsettings.json` and `appsettings.agent.json` files.
 3. Configure the local server to [install IIS via Server Manager](/docs/identitymanager/current/user-guide/deploy/production-agent-installation/iis-installation).
 4. [Configure the Pool and Site](/docs/identitymanager/current/user-guide/deploy/production-agent-installation/iis-configuration) via IIS.
@@ -56,9 +56,9 @@ Install the production agent by proceeding as follows:
 
 ## Verify Agent Installation
 
-In order to verify the process:
+To verify the process:
 
-- make sure the website is accessible from IIS by clicking on **Browse** (in the menu on the right), **and** from your browser;
-- if logs are enabled, then stop the pool to make sure that no error is thrown;
+- ensure the website is accessible from IIS by clicking on **Browse** (in the menu on the right), **and** from your browser;
+- if logs are enabled, then stop the pool to ensure that no error is thrown;
 - perform from a local device agent-side actions such as sending test emails, reading **and**/or writing inside working folders, or launching/scheduling agent-side tasks.
 

@@ -6,7 +6,7 @@ sidebar_position: 7
 
 This scaffolding generates the rights to configure and launch simulations.
 
-It also gives access to a shortcut on the dashboard allowing to enter the simulation screen. Through this screen, simulations can be launched and results can be visualized.
+It also gives access to a dashboard shortcut for the simulation screen, where you can launch simulations and view results.
 
 The scaffolding generates the following scaffoldings:
 
@@ -36,7 +36,7 @@ The scaffolding generates the following scaffoldings:
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <PolicySimulationControlRules Id="7" Profile="Administrator" />

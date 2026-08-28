@@ -97,7 +97,7 @@ The tasks created in the Scaffoldings are sorted by level. The levels are visibl
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Job Identifier="Job_Daily" DisplayName_L1="94: Complete Job" DisplayName_L2="94: Job quotidien" Agent="Local">

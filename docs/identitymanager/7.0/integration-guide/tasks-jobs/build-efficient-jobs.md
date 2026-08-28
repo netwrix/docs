@@ -13,15 +13,15 @@ This topic shows how to build efficient jobs by minimizing their costs.
 :::
 ### Prerequisites
 
-In order to successfully launch a frequent job (defined as a job called more than once an hour) the following requirements need to be met:
+To successfully launch a frequent job (defined as a job called more than once an hour) the following requirements need to be met:
 
 - Synchronize / Export Task in incremental mode
 - The UpdateEntityPropertyExpressions /ComputeCorrelationKeys/ComputeRoleModel tasks do have the
 SetRecentlyModifiedFlag set to true
 - The ComputeCorrelationKeys/UpdateEntityPropertyExpressions tasks are computed on a subset of
 Entity Types (not all Entity Types at once)
-- UpdateEntityPropertyExpressions/ComputeCorrelationKeys/ComputeRole tasks are not duplicated
-- SetInternalUserProfiles/ActivityInstanceActor tasks are not configured to launch
+- UpdateEntityPropertyExpressions/ComputeCorrelationKeys/ComputeRole tasks aren't duplicated
+- SetInternalUserProfiles/ActivityInstanceActor tasks aren't configured to launch
 
 ## Rule 1: Use Scaffoldings
 
@@ -29,7 +29,7 @@ Identity Manager provides scaffoldings to simplify XML configuration by generat
 
 Most jobs are included in job scaffoldings, thus configured in the most optimal way. So start by using scaffoldings to build jobs. See the [Jobs](../../integration-guide/toolkit/xml-configuration/configuration/scaffoldings/jobs) topic for additional information.
 
-For example, the creation from scratch of a job to perform a complete synchronization for a connector will be tedious. Instead, use Identity Manager's scaffolding, like in the following example concerning the Microsoft Entra ID (formerly Microsoft Azure AD) connector. Instead of a few dozens of lines, write only the following:
+For example, the creation from the beginning of a job to perform a complete synchronization for a connector will be tedious. Instead, use Identity Manager's scaffolding, like in the following example concerning the Microsoft Entra ID (formerly Microsoft Azure AD) connector. Instead of a few dozens of lines, write only the following:
 
 Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
 
@@ -45,7 +45,7 @@ See the[Create Connector Synchro Complete](../../integration-guide/toolkit/xml-c
 
 Many tasks can be executed either on all entity types, or on a given list of entity types.
 
-Make sure to configure the tasks so that they are executed only on the relevant entity types, not all of them by default.
+Ensure to configure the tasks so that they are executed only on the relevant entity types, not all of them by default.
 
 For example, instead of using AllEntityType set to true, write the following:
 
@@ -75,13 +75,13 @@ Launch only the relevant tasks according to the logical chain
 
 Identity Manager's tasks are all linked together by a logical chain that implies that some tasks are supposed to be executed after some others.
 
-Make sure to understand the tasks' logical chain to launch only the relevant tasks. See the [Troubleshoot Connector Jobs](../../integration-guide/tasks-jobs/troubleshoot-connector-jobs) topic for additional information.
+Ensure to understand the tasks' logical chain to launch only the relevant tasks. See the [Troubleshoot Connector Jobs](../../integration-guide/tasks-jobs/troubleshoot-connector-jobs) topic for additional information.
 
-For example, there is no use computing expressions or correlations if there was beforehand no change in the database. Thus, there should not be UpdateEntityPropertyExpressionsTask or ComputeCorrelationKeysTask without first SynchronizeTask or FulfillTask.
+For example, there is no use computing expressions or correlations if there was beforehand no change in the database. Thus, there shouldn't be UpdateEntityPropertyExpressionsTask or ComputeCorrelationKeysTask without first SynchronizeTask or FulfillTask.
 
 ## Rule 3: Wait for Recurring Tasks
 
-Inside a recurring job, there is no need including some tasks twice in order to have the whole cycle, because the next execution will complete what has been started.
+Inside a recurring job, there is no need including some tasks twice to have the whole cycle, because the next execution will complete what has been started.
 
 For example, Identity Manager's feedback loop uses the tasks for synchronization, computation of the role model, provisioning, then once more synchronization and computation of the role model.
 

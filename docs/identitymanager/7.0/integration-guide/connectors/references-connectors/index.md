@@ -126,7 +126,7 @@ Exports users and permissions from Windows shared folders.
 
 - [SharePoint](../../../integration-guide/connectors/references-connectors/sharepoint)
 
-Exports sites, folders, groups and permissions from a SharePoint instance.
+Exports sites, folders, groups, and permissions from a SharePoint instance.
 
 - [Sql](../../../integration-guide/connectors/references-connectors/sql)
 
