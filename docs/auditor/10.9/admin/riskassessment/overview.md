@@ -40,6 +40,7 @@ have at least one item added. See the following table for the certain reports:
 | Administrative groups                                                   | AD domain                                     |                     |
 | Administrative group membership sprawl                                  | Windows Server                                |                     |
 | Empty security group                                                    | AD domain                                     |                     |
+| Empty Entra ID security groups                                          | Microsoft Entra ID                            |                     |
 | Site collections with the "Get a link" feature enabled                  | SharePoint farm                               |                     |
 | Sites with the "Anonymous access" feature enabled                       | SharePoint farm                               |                     |
 | Site collections with broken inheritance                                | SharePoint farm                               |                     |
