@@ -560,6 +560,7 @@ function main() {
   let totalFileErrors = 0;
   let totalVersionErrors = 0;
   let totalSuccess = 0;
+  let totalSkipped = 0;
 
   try {
     // Acquire lock
@@ -652,10 +653,13 @@ function main() {
           console.log(`     Source: ${versionSource}`);
           console.log(`     Dest:   ${destination}`);
 
-          // Check if source exists (per-version, since sources may differ)
+          // Check if source exists (per-version, since sources may differ).
+          // A missing docs/kb/<id> folder means this product simply has no KB
+          // content — that's a legitimate state (e.g. `customer`, `partner`),
+          // not a failure, so skip it without counting it as a version error.
           if (!fs.existsSync(versionSource)) {
-            console.log(`     ⚠️  Source not found: ${versionSource}`);
-            totalVersionErrors++;
+            console.log(`     ℹ️  No KB content for this product/version (${versionSource} does not exist) — skipping`);
+            totalSkipped++;
             continue;
           }
 
@@ -755,7 +759,7 @@ function main() {
       console.log('Note: No files were modified. Re-run without --dry to apply changes.');
     } else {
       console.log('✅ Copy complete');
-      console.log(`Total: ${totalSuccess} successful, ${totalFileErrors} file errors, ${totalVersionErrors} version errors`);
+      console.log(`Total: ${totalSuccess} successful, ${totalSkipped} skipped (no KB content), ${totalFileErrors} file errors, ${totalVersionErrors} version errors`);
     }
     console.log('='.repeat(60));
 
@@ -768,8 +772,11 @@ function main() {
   }
 
   // Single exit point
-  // Exit with success if ANY products copied successfully
-  // Only fail if there were no successes at all
+  // Exit with success if ANY products copied successfully, or if nothing
+  // failed (a run where every processed version was skipped for lacking a
+  // KB folder — e.g. a single-product build for a KB-less product — is not
+  // a failure). Only fail if there were no successes AND something actually
+  // errored.
   if (totalSuccess === 0 && (totalFileErrors > 0 || totalVersionErrors > 0)) {
     process.exit(1);
   }
