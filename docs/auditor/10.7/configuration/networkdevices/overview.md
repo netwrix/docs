@@ -11,6 +11,7 @@ device:
 
 - [Configure Cisco ASA Devices](/docs/auditor/10.7/configuration/networkdevices/ciscoasa.md)
 - [Configure Cisco IOS Devices](/docs/auditor/10.7/configuration/networkdevices/ciscoios.md)
+- [Configure Cisco FTD Devices](/docs/auditor/10.7/configuration/networkdevices/ciscoftd.md)
 - [Cisco Meraki Dashboard ](/docs/auditor/10.7/configuration/networkdevices/ciscomerakidashboard.md)
 - [Configure Cisco Meraki Devices](/docs/auditor/10.7/configuration/networkdevices/ciscomerakidevices.md)
 - [Configure Fortinet FortiGate Devices](/docs/auditor/10.7/configuration/networkdevices/fortinetfortigate.md)
@@ -20,7 +21,6 @@ device:
 - [Configure HPE Aruba Devices](/docs/auditor/10.7/configuration/networkdevices/hpearuba.md)
 - [Configure Pulse Secure Devices](/docs/auditor/10.7/configuration/networkdevices/pulsesecure.md)
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
-the
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
