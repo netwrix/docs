@@ -1,18 +1,18 @@
 ---
 description: >-
-  Explains how to change or replace the server hosting Netwrix Data
-  Classification, including stopping services, backing up the database and index
-  files, reinstalling the same version, and restoring services.
+  Explains that migrating Netwrix Data Classification to another server
+  requires Netwrix Technical Support assistance and how to contact them.
 keywords:
   - Netwrix Data Classification
+  - NDC
   - migration
+  - server migration
   - server replacement
-  - backup
-  - index files
-  - ConceptSearching
-  - Service Viewer
-  - SQL
-  - installation
+  - change server
+  - Netwrix Technical Support
+  - contact support
+  - data loss
+  - index corruption
 products:
   - dataclassification
 sidebar_label: Migrating to Another Server
@@ -31,8 +31,7 @@ How can you migrate the server on which Netwrix Data Classification (NDC) is run
 
 ## Answer
 
-Migrating Netwrix Data Classification to another server requires hands-on assistance to avoid data loss or index corruption. Contact Netwrix Technical Support for guidance specific to your environment.
+Migrating NDC to another server requires hands-on assistance to avoid data loss or index corruption.
 
-:::info
-[Contact Netwrix Technical Support](https://www.netwrix.com/support.html) for assistance with this migration.
-:::
+> **NOTE:**
+> [Contact Netwrix Technical Support](https://www.netwrix.com/support.html) for assistance with this migration.
