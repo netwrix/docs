@@ -31,7 +31,4 @@ How can you migrate the server on which Netwrix Data Classification (NDC) is run
 
 ## Answer
 
-Migrating NDC to another server requires hands-on assistance to avoid data loss or index corruption.
-
-> **NOTE:**
-> [Contact Netwrix Technical Support](https://www.netwrix.com/support.html) for assistance with this migration.
+Migrating NDC to another server requires hands-on assistance to avoid data loss or index corruption. [Contact Netwrix Technical Support](https://www.netwrix.com/support.html) for assistance with this migration.
