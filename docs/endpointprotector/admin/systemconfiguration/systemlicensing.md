@@ -8,7 +8,7 @@ sidebar_position: 40
 
 This section provides a complete overview of your licensing status. Use it to manage licenses
 for Modules, such as Content Aware Protection and eDiscovery, as well as Endpoints, the computers
-you protect. You can import licenses, view details, and handle free trials.
+you protect. You can import licenses, view details, and manage free trials.
 
 ![Licensing](licensingpage.png)
 

@@ -357,7 +357,7 @@ operation from Notepad which contains conﬁdential information, then the Paste 
 is blocked, and the Paste operation on Chrome is allowed
 
 - To inspect extended applications and set Paste restrictions, enable the **Extend Paste
-  restrictions to below applications** setting
+  restrictions to specific applications** setting
 
     :::note
     This setting restricts the Paste operation for the deﬁned applications.

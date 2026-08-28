@@ -144,7 +144,7 @@ This caching behavior is specific to the legacy communication flow. The 2608 ser
 
 **Symptom:** After restoring the backup, eDiscovery scans run against the full disk instead of the configured Scan Locations. No error is logged or displayed.
 
-**Cause:** eDiscovery policies with Scan Locations don't fully re-apply when restored from a System Configuration Backup — the Scan Locations setting is silently ignored.
+**Cause:** eDiscovery policies with Scan Locations don't fully re-apply when restored from a System Configuration Backup — the system silently ignores the Scan Locations setting.
 
 **Resolution:** Edit and save each affected eDiscovery policy (no actual change required) to re-apply its Scan Locations. Verify with a test scan afterward.
 

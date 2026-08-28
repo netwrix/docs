@@ -13,21 +13,20 @@ backups, restoring data, and managing migrations.
 
 ## System Backup
 
-The System Backup feature allows you to create and manage comprehensive backups of your system.
-Using the web interface or administrative console, you can perform backups, restore previous
-versions, and set up automatic routines to ensure your data is consistently protected.
+The System Backup feature lets you create and manage comprehensive backups of your system.
+You can perform backups, restore previous versions, and set up automatic routines using the web interface or administrative console to ensure your data stays protected.
 
 ### Migration readiness checklist (preflight validation)
 
 Before creating a migration backup and restoring it on a new Endpoint Protector Server, validate the
-items below to avoid failed imports/restores.
+following items to avoid failed imports/restores:
 
 #### Source appliance (current server)
 - Ensure you can successfully create a **System Backup (Migration)** and that you securely save
   the **System Backup Key** (required for restore).
-- Download any **previous System Backups** or **Audit Log Backups** you want to keep (these are not
+- Download any **previous System Backups** or **Audit Log Backups** you want to keep (these aren't
   preserved through the migration process).
-- Confirm the resulting backup file is within the supported size limits (see note below). If it is not,
+- Confirm the resulting backup file is within the supported size limits (see the note in the following section). If it isn't,
   contact Customer Support before proceeding.
 
 #### Target appliance (new server)
@@ -39,7 +38,7 @@ items below to avoid failed imports/restores.
 
 :::warning
 If your migration involves upgrading the server from a pre-5206 version to 5.7.0.0, database partitions
-must be enabled prior to the upgrade. Contact Customer Support for assistance.
+must be enabled before the upgrade. Contact Customer Support for assistance.
 :::
 
 ### Creating a System Backup (Migration)
@@ -50,7 +49,7 @@ You can create a new migration backup from the System Maintenance, System Backup
 
 :::note
 For security purposes, the System Backup Key will not be stored by the Endpoint Protector.
-Before proceeding, make sure it is properly saved.
+Before proceeding, ensure it is properly saved.
 :::
 
 
@@ -58,15 +57,15 @@ Before proceeding, make sure it is properly saved.
 
 ### Importing and Restore (Migrate)
 
-A backup can be restored on the same Endpoint Protector Server. However, the main use case would be
-to import and restore the backup on a newer Endpoint Protector Server (e.g.: version higher than
+You can restore a backup on the same Endpoint Protector Server. However, the primary use case is
+to import and restore the backup on a newer Endpoint Protector Server (e.g., version higher than
 5.2.0.6).
 
 The migration process of a System Backup requires the backup ﬁle and System Backup Key.
 
 :::note
-If needed, previous System Backups or Audit Log Backups should be downloaded prior to this
-step, as they will not be kept in process.
+If needed, download previous System Backups or Audit Log Backups before this step, as they
+will not be kept in process.
 :::
 
 
@@ -78,8 +77,8 @@ deployed Endpoint Protector Clients to start communicating with the new Applianc
 
 ### Backup Scheduler
 
-The Backup Scheduler allows you to configure automatic, recurring backups without manual
-intervention. You can access the Backup Scheduler from **System Maintenance** > **System Backup**,
+The Backup Scheduler lets you configure automatic, recurring backups without manual
+intervention. You can access it from **System Maintenance** > **System Backup**,
 next to the **Import and Restore (Migrate)** option.
 
 To configure the Backup Scheduler:
@@ -100,11 +99,11 @@ Scheduled backups run automatically based on the configured frequency. You can v
 and history of scheduled backups in the **List of Backups** table.
 
 :::warning
-Once deleted, a backup cannot be recovered.
+Once deleted, a backup can't be recovered.
 :::
 
 :::info
-The Endpoint Protector Server cannot process backup files larger than 200 MB. If a created backup file exceeds this limit, we recommend that you contact Customer Support for assistance.
+The Endpoint Protector Server can't process backup files larger than 200 MB. If a created backup file exceeds this limit, contact Customer Support for assistance.
 :::
 
 :::note

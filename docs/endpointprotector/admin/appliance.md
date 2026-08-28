@@ -25,9 +25,9 @@ operations and manage the SSH access.
 
 In this section you can set a preferential time zone and/or sync the appliance to an NTP source.
 
-- Time zone – select from the drop-down lists the zone and location
-- NTP Server – type the server or go with the default entry
-- How often to synchronize – select from the drop-down a time interval when to synchronize of go
+- Time zone – select from the dropdown lists the zone and location
+- NTP Server – enter the server or go with the default entry
+- How often to synchronize – select from the dropdown a time interval when to synchronize of go
   with the default selection
 
 :::note
@@ -54,7 +54,7 @@ Starting with the 2509 EPP Server release, the EPP Server no longer supports the
 :::
 
 :::note
-Once you change the IP address, close and open again the Internet browser and then access
+After you change the IP address, close the Internet browser and open it again, then access
 the Endpoint Protector Administration and Reporting Tool with the new IP address.
 :::
 
@@ -67,18 +67,18 @@ Changes from one IP version to another should always be followed by a Save opera
 ![ Change the network settings for the appliance to communicate correctly in your network using IPV6](IPV6appliancesettings.png)
 
 :::note
-For appliances hosted on the following types of images, IP change options will not be available in the UI, but only in the command line: AWS AZURE, GCP. If you are hosting EPP on one of these image types, please use command line option to enter the Setup wizard and change the IP address from there.
+For appliances hosted on the following types of images, IP change options will not be available in the UI, but only in the command line: AWS AZURE, GCP. If you are hosting EPP on one of these image types, use command line option to enter the Setup wizard and change the IP address from there.
 :::
 
 :::note
 When transitioning from IPv4 to IPv6 or vice versa, changes to the Nginx configuration may be necessary:
 - If you are using IPv4 and transitioning to IPv6, ensure that the Nginx configuration is updated to listen on the IPv6 address.
 - If you are using IPv6 and transitioning to IPv4, ensure that the Nginx configuration is updated to listen on the IPv4 address.
-For customers using the standard Nginx configuration (most users), adjustments are made automatically. Also, as stated above, changes from one IP version to another should always be followed by a Save operation to apply the configuration.
+For customers using the standard Nginx configuration (most users), adjustments are made automatically. Changes from one IP version to another should always be followed by a Save operation to apply the configuration.
 
 For customers with custom Nginx configurations (such as those using a different port for client communication), these changes might impact the communication between the agent and server.
 
-In such scenarios, please note that we do not provide official support for custom configurations as part of our documentation. However, our support team is available to assist and manually adjust configurations.
+In such scenarios, custom configurations aren't officially supported in the documentation. However, the Netwrix support team is available to assist with manual configuration adjustments.
 :::
 
 ### DNS Conﬁguration
@@ -95,7 +95,7 @@ To further harden the registration and communication process, Endpoint Protector
 that both endpoints are who they claim to be. 
 
 :::warning
-The Client Registration Certiﬁcate feature is not available for Linux!
+The Client Registration Certificate feature isn't available for Linux.
 :::
 
 ### Client Registration Certiﬁcate
@@ -143,10 +143,10 @@ the endpoints.
 
 ### Server Certiﬁcate Validation
 
-While Client Registration Certificate secures the registration phase, Server Certificate Validation extends certificate verification to all ongoing communication. When enabled, the Endpoint Protector Client validates the server's SSL certificate on every outbound request — ensuring that clients only communicate with a trusted, legitimate Endpoint Protector Server and cannot be redirected to a rogue or impersonated instance.
+While Client Registration Certificate secures the registration phase, Server Certificate Validation extends certificate verification to all ongoing communication. When enabled, the Endpoint Protector Client validates the server's SSL certificate on every outbound request — ensuring that clients only communicate with a trusted, legitimate Endpoint Protector Server and can't be redirected to a rogue or impersonated instance.
 When enabled, the EPP Client validates the server's SSL certificate on every outbound request, verifying three key properties:
 - **Certificate trust** — the server certificate must be issued by a trusted Certificate Authority recognized by the endpoint.
-- **Expiration date** — the server certificate must be currently valid and not expired.
+- **Expiration date** — the server certificate must be valid and not expired.
 - **Hostname matching** — the server certificate's Common Name (CN) or Subject Alternative Name (SAN) must match the hostname the client is connecting to.
 
 
@@ -166,11 +166,11 @@ Before enabling, verify that:
 - The EPP Server hostname matches the certificate's CN or SAN exactly.
 
 **Client-Side Configuration**
-The server-side configuration alone is not sufficient — the EPP Client must also be prepared to participate in certificate-based registration. This is done at installation time.
+The server-side configuration alone isn't sufficient — the EPP Client must also be prepared to participate in certificate-based registration. This is done at installation time.
 When installing the Endpoint Protector Client on Windows or macOS, the   installer wizard includes an **Increased Communication Security** checkbox. Enabling this option instructs the EPP Client to use the certificate-based authentication flow during registration and all subsequent communication with the EPP Server. For detailed installation steps and a walkthrough of the installer wizard, refer to the [Agent Installation](/docs/endpointprotector/admin/agent.md#increased-communication-security) section.
 
 :::warning
-Please use this feature responsibly. Improper certificate configuration combined with enabled certificate validation may disrupt Endpoint Protector Client to Endpoint Protector Server communication.
+use this feature responsibly. Improper certificate configuration combined with enabled certificate validation may disrupt Endpoint Protector Client to Endpoint Protector Server communication.
 **For a successful connection, both server and client certificate validation must be enabled.**
 :::
 
@@ -202,7 +202,7 @@ SIEM are a third-party security information and event management tools that allo
 analyzing logs generated by network devices and software. The integration with SIEM technology
 enables Endpoint Protector to transfer activity events to a SIEM server for analysis and reporting.
 
-In this section, you can add, edit or delete an existing SIEM Server integration. To edit or delete
+In this section, you can add, edit, or delete an existing SIEM Server integration. To edit or delete
 a SIEM Server you need to select an available SIEM server integration.
 
 :::warning
@@ -210,7 +210,7 @@ You can conﬁgure a maximum number of 4 SIEM Server integrations.
 :::
 
 
-![Add, edit or delete an existing SIEM Server integration](siemserverintegration.webp)
+![Add, edit, or delete an existing SIEM Server integration](siemserverintegration.webp)
 
 To create a SIEM Server, click **Add New** and provide the following information:
 
@@ -246,11 +246,7 @@ To create a SIEM Server, click **Add New** and provide the following information
 ![SIEM Intergration - Adding a New Server](siemintegrationnewserver.webp)
 
 :::warning
-Please be aware that the SIEM integration feature in Endpoint Protector comes with
-certain limitations. To make use of the latest features of this SIEM integration, your environment
-must meet speciﬁc criteria. It should have been installed from image version 5.6.0.0 or a more
-recent version, and maintain an active HTTPS connection. Please note that SIEM integration is only
-accessible in environments that meet these stringent prerequisites.
+The SIEM integration feature in Endpoint Protector comes with certain limitations. To use the latest features, your environment must meet specific criteria: it should have been installed from image version 5.6.0.0 or later and maintain an active HTTPS connection. SIEM integration is only accessible in environments that meet these prerequisites.
 :::
 
 
@@ -274,11 +270,11 @@ Endpoint Protector will check the following:
 When validating a certiﬁcate, the entire certiﬁcate chain must be valid, including the CA
 certiﬁcate; if any certiﬁcate of the chain is invalid, the connection will be rejected.
 
-Make sure you update the certiﬁcate ﬁles when they expire.
+ensure you update the certiﬁcate ﬁles when they expire.
 
 :::note
-If you applied the latest patch using the option, and cannot view the SIEM encryption
-setting, please contact Customer Support.
+If you applied the latest patch using the option, and can't view the SIEM encryption
+setting, contact Customer Support.
 :::
 
 
@@ -327,10 +323,7 @@ Example field values include:
 
 ### SIEM Export Log Fields
 
-This section presents the field names for the Endpoint Protector Server's "Standard format," which
-has been available since the Endpoint Protector 5.9.4 release. Endpoint Protector Server exports
-logs to SIEM solutions with a maximum of 2,100 characters. Since the Endpoint Protector 5.9.1
-release, we have increased the message limit to 10000 characters.
+This section presents the field names for the Endpoint Protector Server's "Standard format," available since the Endpoint Protector 5.9.4 release. Endpoint Protector Server exports logs to SIEM solutions with a maximum of 2,100 characters. Starting with Endpoint Protector 5.9.1, the message limit increased to 10,000 characters.
 
 #### Device Control
 
@@ -365,7 +358,7 @@ The standard format for the Device Control fields is as follows:
 
 #### Content Aware Protection
 
-When Reporting V1 is utilized, fields associated with Reporting V2 content, such as [Destination
+When Reporting V1 is used, fields associated with Reporting V2 content, such as [Destination
 Details], [Email Sender], and [Email Subject], will remain blank.
 
 The standard format for the Content Aware Protection fields is as follows:

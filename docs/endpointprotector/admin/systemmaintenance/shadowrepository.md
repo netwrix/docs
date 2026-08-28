@@ -14,7 +14,7 @@ Shadows based on department and repository type.
 
 :::note
 In Endpoint Protector, the Department defines a collection of entities with the same
-attributes. It should not be confused with the department from an organizational chart.
+attributes. It shouldn't be confused with the department from an organizational chart.
 :::
 
 Starting with Endpoint Protector Server version 5.8.0.0, file shadowing was made more reliable on
@@ -37,8 +37,7 @@ To create a File Shadow Repository, click **Add** and then provide the following
   (smbv2) or S3 Bucket
 
 :::note
-If you select S3 Bucket type, the information required to create a File Shadow Repository
-will differ. Read more on S3 Buckets File Shadow Repository in the following section.
+If you select S3 Bucket type, the information required to create a File Shadow Repository differs. See [S3 Bucket File Shadow Repository](#s3-bucket-file-shadow-repository) for details.
 :::
 
 :::note
@@ -50,7 +49,7 @@ the Group has only Read and Execute).
 - Port – add the port used by the File Shadow Repository
 
 :::note
-You are not required to define the port for Samba (smbv1) or Azure File Storage and Samba
+You aren't required to define the port for Samba (smbv1) or Azure File Storage and Samba
 (smbv2) repositories.
 :::
 
@@ -58,7 +57,7 @@ You are not required to define the port for Samba (smbv1) or Azure File Storage 
 - Username and Password – add the repository credentials
 
 :::note
-If you are using the Samba V1 protocol for File Shadows on Mac, make sure that NTLMv1
+If you are using the Samba V1 protocol for File Shadows on Mac, ensure that NTLMv1
 authorization is set on the Samba server.
 :::
 
@@ -74,7 +73,7 @@ executes a dummy file upload using the provided credentials.
   validates the bucket region and name if the authentication response was successful.
 
 :::note
-The Test Connection for Samba v1, Samba v2, and Azure File Storage repositories is not
+The Test Connection for Samba v1, Samba v2, and Azure File Storage repositories isn't
 supported due to additional third-party requirements, such as IP whitelisting and smbclient.
 :::
 
@@ -108,15 +107,15 @@ information:
   settings
 
 :::note
-Make sure the Endpoint Protector Server time is synchronized (Appliance > Server
+ensure the Endpoint Protector Server time is synchronized (Appliance > Server
 Maintenance) with a reliable time source before using an S3 bucket as a File Shadow repository.
 Amazon S3 may reject requests if the server time differs by more than 5 minutes from the S3 service
 time.
 :::
 
 When a shadow is downloaded, Endpoint Protector sends a request to AWS to verify that the file is
-present in the bucket. If the file is not found, the server responds with the message "The object
-object_name does not exist in the S3 Bucket Repository." If the file exists, the shadow is retrieved
+present in the bucket. If the file isn't found, the server responds with the message "The object
+object_name doesn't exist in the S3 Bucket Repository." If the file exists, the shadow is retrieved
 through the Endpoint Protector Server using the SDK.
 
 You can download or delete file shadows from the Reports and Analysis section, the Logs Report page,
@@ -129,8 +128,8 @@ block event associated with the remediated file.
 
 :::note
 When a file is copied to a USB device, both a File Copy and a File Write event are generated,
-and each may display the Download action. The shadow is stored once and is retrieved from the File
-Copy event; the Download action on the File Write event does not return a shadow.
+and each may display the Download action. The shadow is stored once and retrieved from the File
+Copy event; the Download action on the File Write event doesn't return a shadow.
 :::
 
 :::note
@@ -149,7 +148,7 @@ in the Audit.
 In the scenario where there may be an unreliable network, the Client will attempt to
 upload the artifact 10 times before the guard-rail will stop upload attempts. This will delete the
 File Shadow from the queue to ensure endpoint performance, disk space utilization, and mobile
-transfer limits are not affected.
+transfer limits aren't affected.
 :::
 
 ## Internet Connectivity Requirements

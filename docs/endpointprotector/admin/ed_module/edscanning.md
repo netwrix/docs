@@ -66,7 +66,7 @@ Both rollover conditions are enabled by default.
 The **Send user-initiated eDiscovery scan event data to the server** toggle controls whether user-initiated scan results are sent to the EPP server. This setting is **off** by default.
 
 :::warning
-User-initiated scans can generate a large number of event entries that consume significant database space. Enable this setting only if you need server-side visibility into user-initiated scan activity.
+User-initiated scans generate many event entries that consume significant database space. Enable this only if you need server-side visibility into user-initiated scan activity.
 :::
 
 ## Log rotation

@@ -8,28 +8,27 @@ sidebar_position: 20
 
 Single Sign On (SSO) is a powerful authentication process that enhances security and improves user
 experience by allowing users to access multiple applications with a single set of login credentials.
-In this guide, we focus on configuring SSO using Okta, a leading identity management service, to
+This guide focuses on configuring SSO using Okta, a leading identity management service, to
 streamline user access and secure your system effectively.
 
 ## Configuring SSO with Okta
 
 Configuring Single Sign-On with Okta involves several key steps that integrate your server with
 Okta’s authentication framework. Begin by activating SSO within your system’s configuration
-settings, selecting a failover user, and preparing for provider selection. This section will guide
-you through the precise steps required to establish a secure and efficient SSO connection, including
+settings, selecting a failover user, and preparing for provider selection. This section guides you
+through the precise steps required to establish a secure and efficient SSO connection, including
 application integration in Okta, SAML settings configuration, and the necessary data synchronization
-between your server and Okta. Follow the steps below to ensure a successful setup.
+between your server and Okta. Follow the following steps to ensure a successful setup.
 
 **Step 1 –** To activate Single Sign-On, navigate to **System Configuration** > **System
-Settings** > **Single Sign-On**. Once activated, select a Failover Login User from the drop-down
-menu. The Root user is selected by default.
+Settings** > **Single Sign-On**. Once activated, select a Failover Login User from the dropdown
+menu. The Root user is the default selection.
 
 ![Single Sign On Conﬁguration with OKTA](ssookta.webp)
 
-After completing the above steps, a Single Sign-On subsection will appear in the System
-Configuration section.
+After completing these steps, a Single Sign-On subsection appears in the System Configuration section.
 
-**Step 2 –** Select the **Provider** in order for Single Sign On subsection to be displayed.
+**Step 2 –** Select the **Provider** to display the Single Sign On subsection.
 
 ![ssoprovider](ssoprovider.webp)
 

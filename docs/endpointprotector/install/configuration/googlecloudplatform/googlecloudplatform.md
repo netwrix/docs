@@ -6,16 +6,16 @@ sidebar_position: 20
 
 # Google Cloud Platform
 
-In this section, we outline the integration of Endpoint Protector into your Google Cloud Platform
-(GCP) environment. While Endpoint Protector is not available among default images, this guide
-provides a straightforward process for obtaining and deploying it. You will upload a custom image,
+This guide outlines the integration of Endpoint Protector into your Google Cloud Platform
+(GCP) environment. Endpoint Protector isn't available among default images, so this guide
+provides a process for obtaining and deploying it. You'll upload a custom image,
 create a Virtual Machine Instance, and configure the necessary settings to enable Endpoint
 Protector. Follow the steps below to successfully deploy Endpoint Protector within your Google Cloud
 infrastructure.
 
 ## Obtaining and Downloading the GCP Image
 
-Endpoint Protector is not available from the default images on the Google Cloud Platform. To obtain
+Endpoint Protector isn't available from the default images on the Google Cloud Platform. To obtain
 it, follow the process described below:
 
 **Step 1 –** Download the Endpoint Protector image from the link provided by your Endpoint Protector
@@ -32,7 +32,7 @@ on the Google Cloud Platform Console and create a bucket.
 
 ![Naming the bucket](namebucket.webp)
 
-**Step 4 –** Once the bucket is created, upload the Endpoint Protector image file received from
+**Step 4 –** After the bucket is created, upload the Endpoint Protector image file received from
 Endpoint Protector.
 
 :::note
@@ -72,8 +72,8 @@ to the Images page on the Google Cloud Platform Console.
 
 ![Creating an Image](createanimage.webp)
 
-**Step 12 –** Once the process is complete, navigate to the **Images** page and locate the newly
-created disk image. Click on it to view its details.
+**Step 12 –** After the process is complete, navigate to the **Images** page and locate the newly
+created disk image. Click it to view its details.
 
 ![Create Instance](images.webp)
 

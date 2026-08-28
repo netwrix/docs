@@ -16,7 +16,7 @@ As AI chat tools and AI-powered browser assistants become part of everyday workf
 
 Moreover, Endpoint Protector facilitates compliance with regulatory standards such as PCI-DSS, HIPAA, and GDPR through predefined discovery patterns and response strategies. It caters to diverse organizational needs, from protecting intellectual property and client lists to ensuring compliance with industry-specific regulations.
 
-With Endpoint Protector, administrators gain a centralized, web-based interface for managing and enforcing security policies across all endpoints — whether that's a small business with a handful of devices or an enterprise fleet spanning thousands of endpoints across multiple locations. Whether preventing accidental data leakage or mitigating risks from insider threats, Endpoint Protector offers essential tools to safeguard critical business data at any scale.
+Endpoint Protector provides administrators with a centralized, web-based interface for managing and enforcing security policies across all endpoints — whether a small business with a handful of devices or an enterprise fleet spanning thousands of endpoints across multiple locations. It prevents accidental data leakage and mitigates risks from insider threats while safeguarding critical business data at any scale.
 
 ## Supportability Notice
 

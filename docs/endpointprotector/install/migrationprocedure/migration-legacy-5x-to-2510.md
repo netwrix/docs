@@ -135,7 +135,7 @@ Without a valid `php_els` license, the new server's underlying OS components **d
 :::
 
 :::warning
-The 2510 VM image is **not compatible with VMware vSphere 6.5**. If your environment runs vSphere 6.5, you must upgrade the hypervisor before deploying the new EPP image.
+The 2510 VM image isn't compatible with VMware vSphere 6.5. If your environment runs vSphere 6.5, you must upgrade the hypervisor before deploying the new EPP image.
 :::
 
 :::tip
@@ -185,7 +185,7 @@ Plan a maintenance window that accounts for the following:
 
 These times reflect laboratory test results and may vary in your environment depending on several factors, including hardware assigned to the appliance.
 
-**During the upgrade window, the following will be unavailable:**
+**During the upgrade window, you won't have:**
 - EPP/EE client communication with the server
 - Email alerts and SIEM integrations
 - File Shadow and log generation
@@ -528,7 +528,7 @@ If errors appear:
 ![Appliance → Server Information — ELS for PHP = Error after license import](els_error.webp)
 
 :::danger
-If ELS for PHP is **not Active**, stop and resolve this before proceeding. The server can't receive patches without it, and the subsequent upgrade step won't complete successfully.
+If ELS for PHP isn't **Active**, stop and resolve this issue before proceeding. The server can't receive patches without it, and the subsequent upgrade step won't complete successfully.
 :::
 
 ## Phase 3 — Uploading EPP & EE Client Packages

@@ -173,7 +173,7 @@ properly configured for your Linux distribution.
 :::
 
 
-Follow the steps below, specific to your Linux distribution, to configure the certificate manually.
+Follow the steps for your Linux distribution to configure the certificate manually.
 
 **Debian-based Systems (e.g., Ubuntu)**
 
@@ -218,7 +218,7 @@ For more details on certificate installation and management on Linux, see the fo
 :::warning
 Ensure the certificate is added correctly for the Endpoint Protector Client to function
 properly. If the Server Certificate Stack is regenerated, Linux users must manually reconfigure the
-certificate using the steps above.
+certificate using the steps in this section.
 :::
 
 
@@ -363,7 +363,7 @@ From this section, you can enable or disable the Deep Packet Inspection function
 application that is subject to this functionality.
 
 :::note
-Only the applications that support Deep Packet Inspection are available in the list below.
+Only applications that support Deep Packet Inspection appear in this section.
 :::
 
 

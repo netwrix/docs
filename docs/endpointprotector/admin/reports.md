@@ -56,8 +56,7 @@ entire log report as a CSV file.
 
 ### File tracing events by direction
 
-The File Tracing Events Matrix by Direction table is a reference for understanding how
-Endpoint Protector categorizes file tracing events based on data transfer directions.
+This table shows how Endpoint Protector categorizes file tracing events based on data transfer directions.
 
 :::note
 This matrix refers to clients from the 5.9.0.0 release and later.
@@ -99,10 +98,9 @@ corresponding to the Content Aware policies applied. When the scalability archit
 
 When using the latest Endpoint Protector client, you can view log details structured per file scanned.
 
-Expand each entry from the log report list to view the Log Details expanded section, providing the
-following information:
+Expand each entry to view detailed log information:
 
-- Policy—select an active policy from the drop-down list
+- Policy—select an active policy from the dropdown list
 - Policy name—the name of the selected policy
 - Policy type—the type of the selected policy
 - Items type—the Policy Denylist category selected
@@ -115,7 +113,7 @@ following information:
 
 ![Count – the number of matched items](matcheditemscount.webp)
 
-Use the **Show/Hide Columns** drop-down to customize which columns are visible in the report. The **Date/Time(Client UTC)** column is available in this drop-down but is hidden by default.
+Use the **Show/Hide Columns** dropdown to customize which columns are visible in the report. The **Date/Time(Client UTC)** column is available in this dropdown but is hidden by default.
 
 From the Filters section, select the **Include old logs before 5.7** upgrade option from the filter
 section to include all logs in your searches. If the option isn't selected, the filters apply
@@ -248,17 +246,13 @@ connection with the server.
 
 ## Statistics
 
-The Statistics module lets you view system activity related to data traffic and device connections.
-Use the integrated filter to generate reports—select the field of interest
-and click **Apply Filter**.
+The Statistics module lets you view system activity related to data traffic and device connections. Use the integrated filter to generate reports—select the field of interest and click **Apply Filter**.
 
 ![View system activity regarding data traffic and device connections](statistics.webp)
 
 ## Persistent filters
 
-Persistent filters allow you to save filter configurations and column visibility preferences so you
-can quickly return to a frequently used view. Saved filters are private to your administrator
-account.
+With persistent filters, you can save filter configurations and column visibility preferences to quickly return to a frequently used view. Saved filters are private to your administrator account.
 
 Persistent filters are available on the following pages:
 
@@ -276,7 +270,7 @@ Persistent filters are available on the following pages:
    - **Existing filter** — select a previously saved filter from the list to overwrite it with the
      current configuration, then click **Save**.
 4. On reporting pages, select a **Date range** option:
-   - **Use selected** — saves the currently selected date range as part of the filter.
+ - **Use selected** — saves the selected date range as part of the filter.
    - **Predefined range** — saves a relative date range that updates automatically each time the
      filter is loaded. Options: Last day, Last 3 days, Last 7 days, Last 30 days, This Week, This
      Month, Last Week, Last Month.

@@ -59,7 +59,7 @@ If you're unsure whether your license is current, contact Netwrix Support or you
 :::
 
 :::warning
-The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS used by 2510/2604. Verify Ubuntu 26.04 LTS guest support with your hypervisor vendor before scheduling a migration maintenance window.
+The 2608 image runs Ubuntu 26.04 LTS, a newer guest OS than the Ubuntu 22.04 LTS that 2510/2604 use. Verify Ubuntu 26.04 LTS guest support with your hypervisor vendor before scheduling a migration maintenance window.
 :::
 
 :::tip
@@ -113,7 +113,7 @@ Plan a maintenance window that accounts for the following:
 
 These times reflect laboratory test results and may vary in your environment depending on several factors, including hardware assigned to the appliance.
 
-**During the upgrade window, the following will be unavailable:**
+**During the upgrade window, you won't have:**
 - EPP/EE client communication with the server
 - Email alerts and SIEM integrations
 - File Shadow and log generation

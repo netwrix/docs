@@ -17,7 +17,7 @@ The Oﬄine Temporary Password can be generated for the below entities:
 - Computer and User (all ﬁle transfers)
 
 A password is linked to a time period and is unique for a certain device and computer. This means
-the same password cannot be used for a different device or computer. It also cannot be used twice
+the same password can't be used for a different device or computer. It also can't be used twice
 (except for Universal Oﬄine Temporary Password).
 
 The time intervals available are 15 minutes, 30 minutes, 1 hour, 2 hours, 4 hours, 8 hours, 1 day, 2
@@ -38,7 +38,7 @@ When generating an Offline Temporary Password Code that should take effect tomor
 the endpoint time, it should actually be generated for tomorrow, from 15:00 (to adjust for the 1h
 difference in the time zone).
 
-For the predeﬁned duration, the above adjustment is not necessary. The Offline Temporary Password
+For the predeﬁned duration, the above adjustment isn't necessary. The Offline Temporary Password
 Code will be valid for that speciﬁc amount of time, starting with the moment it was redeemed. The
 only thing to consider is that the Offline Temporary Password Code needs to be redeemed the same day
 it was generated.
@@ -50,14 +50,12 @@ restrictions for one hour. It can be used multiple times, by any user that knows
 :::
 
 
-The Universal Oﬄine Temporary Password can be made visible only for Super Administrators. If this
-setting is enabled, Normal and Oﬄine Temporary Password Administrators will not be able to see and
-use it. Enable this setting from System Conﬁguration, System Settings, and Custom settings.
+The Universal Offline Temporary Password can be made visible only for Super Administrators. If this setting is enabled, Normal, and Offline Temporary Password Administrators will not be able to see and use it. Enable this setting from System Configuration, System Settings, and Custom settings.
 
 You have the option to add a justiﬁcation, mentioning the reason why the password was created. This
 can later be used for a better overview or various audit purposes.
 
-Once an Oﬄine Temporary Password has been authorized, any other rights and settings saved afterwards
+After an Offline Temporary Password has been authorized, any other rights and settings saved afterwards
 on the Endpoint Protector Server will not take immediate effect. The Oﬄine Temporary Password has to
 expire and the connection with the Server re-established.
 
@@ -70,7 +68,7 @@ Server-Client communication before the Transfer Limit Reset Time Interval has ex
 
 ## Generating the Oﬄine Temporary Password
 
-Depending on the options selected from the drop-down menus, the Oﬄine Temporary Password (or OTP)
+Depending on the options selected from the dropdown menus, the Oﬄine Temporary Password (or OTP)
 can be generated for an exact device, all devices, or all ﬁle transfers.
 
 ![Generating the Oﬄine Temporary Password](offlinetemporarypassword.webp)
@@ -83,11 +81,9 @@ Computers section, by selecting the Oﬄine Temporary Password option from the A
 When generating an OTP Code for a device, either the Device Code or the Device Name has to be
 entered (one of them will automatically ﬁll in the other ﬁeld).
 
-The Computer Name and the Username ﬁelds do not need to be both ﬁlled in. The OTP Code is perfectly
-valid if only one of them is provided. However, if the OTP Code needs to be valid for an exact
-device, on an exact computer, for an exact user, all of the relevant ﬁelds need to be ﬁlled in.
+You don't need to fill both Computer Name and Username—the OTP Code works with just one. To restrict the code to a specific device, computer, and user, fill all relevant fields.
 
-Once the OTP Code has been generated, it will be displayed on the right side of the image above.
+After the OTP Code has been generated, it will be displayed on the right side of the image above.
 
 As it needs to be provided to the person that made the request, Endpoint Protector offers two quick
 ways of doing this, either by sending a direct e-mail or by printing it out.
@@ -98,7 +94,4 @@ Conﬁguration, System Settings, as the Main Administrator Contact Details.
 :::
 
 
-Similar to generating an Oﬄine Temporary Password for a speciﬁc device, when generating one for all
-devices or all ﬁle transfers, the Computer Name and the Username ﬁelds are not both mandatory. The
-OTP Code is perfectly valid if only one of them is provided. However, if the OTP Code needs to be
-valid for an exact computer and an exact user, all of the relevant ﬁelds need to be ﬁlled in.
+Like generating an OTP for a specific device, generating one for all devices or file transfers doesn't require both Computer Name and Username—use just one. To restrict the OTP to a specific computer and user, fill both fields.
