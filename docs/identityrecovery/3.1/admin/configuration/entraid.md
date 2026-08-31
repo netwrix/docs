@@ -45,9 +45,9 @@ Tenant Configuration wizard.
 dropdown. The following options are available:
 
 - Commercial (Global) – Standard Microsoft cloud. This is the default for most organizations.
-- US Government (GCC High / L4) – Microsoft Azure Government cloud for US government agencies and
+- United States Government (GCC High / L4) – Microsoft Azure Government cloud for United States government agencies and
   contractors at Impact Level 4.
-- US Government DoD (L5) – Microsoft Azure Government DoD cloud for US Department of Defense
+- United States Government DoD (L5) – Microsoft Azure Government DoD cloud for United States Department of Defense
   environments at Impact Level 5.
 - China (21Vianet) – Microsoft Azure operated by 21Vianet for organizations in China.
 

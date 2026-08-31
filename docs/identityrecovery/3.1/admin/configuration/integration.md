@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Netwrix Integrations Page
 
-The Netwrix Integrations page provides the ability to configure access to the data in other Netwrix
+The Netwrix Integrations page lets you configure access to the data in other Netwrix
 products. At present, only Netwrix Threat Prevention is supported. This enables Identity Recovery to
 pull object data from the integrated product and tie it with that same object's data in
 Identity Recovery. Users can then view the audit history and activity data coming from
@@ -17,9 +17,7 @@ Configuration page to open the Netwrix Integrations page.
 
 ![Netwrix Integrations page](/images/identityrecovery/3.1/product/configuration/integrations/integrations_configuration.png)
 
-Follow the steps to configure access to the data of a Netwrix product.
-
-**Step 1 –** On the Netwrix Integrations page, use the Auditing Product Integration drop-down menu
+**Step 1 –** On the Netwrix Integrations page, use the Auditing Product Integration dropdown menu
 to select a product for integration. The menu displays the supported Netwrix products, namely
 Netwrix Threat Prevention.
 
@@ -35,20 +33,18 @@ set the authentication mode.
 - For SQL Server authentication, provide SQL credentials in the Account and Password fields. The
   account requires Read permissions on the Threat Prevention database.
 
-**Step 4 –** Click **Test** to test the connection. A message is displayed to indicate if the test
+**Step 4 –** Click **Test** to test the connection. A message appears to indicate if the test
 succeeded or failed.
 
-**Step 5 –** Identity Recovery users do not have access to audit data in Threat Prevention;
-hence they cannot view it in Identity Recovery. For this reason, you must specify the account(s)
-that have access to Threat Prevention. Only the users that log into Identity Recovery with any of the specified accounts will be able to fetch and view audit and activity data from Threat Prevention for domain objects.
+**Step 5 –** To view audit data from Threat Prevention in Identity Recovery, you must specify which user accounts have Threat Prevention access. Only users who log into Identity Recovery with one of these specified accounts can fetch and view audit and activity data from Threat Prevention for domain objects.
 
-- Click the Add account access button to add an account. The Add Account Access wizard is displayed.
+- Click the Add account access button to add an account. The Add Account Access wizard opens.
 
     ![Add Account Access wizard - Account page](/images/identityrecovery/3.1/product/configuration/integrations/integrations_configuration_page1.png)
 
 - Enter a user's first or last name, display name, sAMAccountName, or group name in the **Search**
   field. As you type, the system will find matches in Active Directory and display the results.
-  Select the desired user and click **Next**.
+  Select the user you want and click **Next**.
 
     ![Add Account Access wizard - Confirm page](/images/identityrecovery/3.1/product/configuration/integrations/integrations_configuration_page2.png)
 
@@ -56,9 +52,9 @@ that have access to Threat Prevention. Only the users that log into Identity Rec
   the Back button to return to a previous page and change any setting. Click **Done** to finish
   the wizard.
 
-The added account is displayed under Account on the Netwrix Integrations page. See the
+The account appears under Account on the Netwrix Integrations page. See the
 [Integration with Threat Prevention](/docs/identityrecovery/3.1/admin/activedirectory/overview.md#integration-with-threat-prevention) topic for additional information.
 
 **Step 6 –** Click **Save**.
 
-Integration settings with a Netwrix product are now configured.
+Identity Recovery now applies your integration settings.

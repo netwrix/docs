@@ -11,8 +11,7 @@ Active Directory Users and Computers (ADUC) console with Identity Recovery speci
 right-click options for object rollback and recovery. Included in this extension is a Recycle Bin
 for restoring deleted objects. Consider the following:
 
-- The RSAT Extension is automatically installed with the Identity Recovery installation
-  package on the Recovery Application Server. The local Extension must be registered on the server
+- The Identity Recovery installation package automatically installs the RSAT Extension on the Recovery Application Server. You must register the local Extension on the server
   to enable the rollback and restore options in ADUC.
 - The Extension can be manually installed on a remote server where ADUC is installed. The Extension
   connects to the Recovery Application Server using the server name or IP address you provide while

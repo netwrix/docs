@@ -32,7 +32,7 @@ The table displays the following information:
 
 ### Add a User or Group
 
-Follow the steps to add a user or group that can log into the Recovery Console. If a group is added
+To add a user or group that can log into the Recovery Console, follow these steps. If you add a group,
 all its members can log in.
 
 **Step 1 –** Click the **Add Account Role** button on the Users and Roles page. The Add Account Role
@@ -44,11 +44,11 @@ wizard opens.
 **Search** field. As you type, the system will find matches in Active Directory and display the
 results.
 
-**Step 3 –** Select the desired user and click **Next**.
+**Step 3 –** Select the user you want and click **Next**.
 
 ![Add Account Role wizard – Role page](/images/identityrecovery/3.1/product/configuration/users_and_roles/users_and_roles_configuration_page2.png)
 
-**Step 4 –** Select the Administrator or Operator role for the account from the **Role** drop-down
+**Step 4 –** Select the Administrator or Operator role for the account from the **Role** dropdown
 menu.
 
 - Administrator – This role allows full control of Identity Recovery, including adding
@@ -65,11 +65,9 @@ menu.
 wizard. Use the Back button to return to a previous page and change any setting. Click **Done**
 to finish the wizard.
 
-The selected user or group is now added to the table with the specified role.
+The system adds the selected user or group to the table with the specified role.
 
 ## Change the Role Assigned to an Account
-
-Follow the steps to change the role assigned to an account.
 
 :::note
 This action is only available for manually added accounts and not for the default account.
@@ -77,12 +75,10 @@ This action is only available for manually added accounts and not for the defaul
 
 **Step 1 –** On the Users and Roles page, click the row for an account to make it editable.
 
-**Step 2 –** Then use the drop-down menu in the Role column to select a different role for the
+**Step 2 –** Then use the dropdown menu in the Role column to select a different role for the
 account.
 
 ### Remove a User or Group
-
-Follow the steps below to remove a user's or group's access to the Recovery Console.
 
 :::note
 This action is only available for manually added accounts and not for the default account.
@@ -94,4 +90,4 @@ This action is only available for manually added accounts and not for the defaul
 
 **Step 3 –** Click **OK** to confirm the action.
 
-The user's or group's access to Identity Recovery is removed.
+The system removes the user's or group's access to Identity Recovery.
