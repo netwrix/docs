@@ -18,7 +18,7 @@ Here is the current state of all versions of Endpoint Protector Server.
 
 | **Discontinued Support** | **Limited Support** | **N-1 Track (Active Support)** | **N Track (Active Support)** |
 | --- | --- | --- | --- |
-| All versions before 5.9.4.2 <br/> Limited support ended Feb 11, 2026. | | There is no N-1 track at this time. | 2604.0.1.0 (Base image 2509/2510)<br/><br/>Released 4th May, 2026.<br/>Full Active Support. |
+| All versions before 5.9.4.2 <br/> Limited support ended Feb 11, 2026. | | 2604.0.1.0 (Base image 2509/2510)<br/><br/>Released 4th May, 2026.<br/>Active Support | 2608.0.1.0 <br/><br/>Released 1st September, 2026.<br/>Full Active Support. |
 
 # Support Definitions Used In This Document
 

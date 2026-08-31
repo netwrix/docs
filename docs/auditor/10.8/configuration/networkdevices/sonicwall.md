@@ -6,27 +6,17 @@ sidebar_position: 110
 
 # Configure SonicWall Devices
 
-Netwrix Auditor relies on native logs for collecting audit data. Therefore, successful change and
-access auditing requires a certain configuration of native audit settings in the audited environment
-and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
-certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
+Netwrix Auditor relies on native syslog events for collecting audit data. Therefore, successful
+change and access auditing requires a certain configuration of native audit settings in the audited
+environment. Proper audit configuration ensures audit data integrity; otherwise, your change reports
+may contain warnings, errors, or incomplete audit data.
 
-**CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
-the
+**CAUTION:** Exclude the folder associated with Netwrix Auditor from antivirus scanning. See the
 [Antivirus Exclusions for Netwrix Auditor](/docs/kb/auditor/system-administration/security-hardening/antivirus-exclusions-for-netwrix-auditor)
 knowledge base article for additional information.
 
-You can configure your IT Infrastructure for monitoring in one of the following ways:
-
-- Automatically through a monitoring plan – This is a recommended method. If you select to
-  automatically configure audit in the target environment, your current audit settings will be
-  checked on each data collection and adjusted if necessary.
-- Manually – Native audit settings must be adjusted manually to ensure collecting comprehensive and
-  reliable audit data. You can enable Auditor to continually enforce the relevant audit policies or
-  configure them manually:
-
-    - Configure log settings, depending on your device type.
+Configure native audit settings manually on the SonicWall device to ensure Netwrix Auditor
+collects comprehensive and reliable audit data. Adjust the log settings for your device type.
 
 To configure your SonicWall devices, do the following:
 
@@ -43,7 +33,7 @@ To configure SonicWall Web Application Firewall
     | - Log Level - Alert Level - Syslog Level                                                                        | Set to "Info".                                                                                 |
     | - Enable Audit Log - Send to Syslog Server in Audit Log Settings - Send to Syslog Server in Access Log Settings | Select these checkboxes.                                                                       |
     | Primary Syslog Server                                                                                           | Enter the address of your Netwrix Auditor Server.                                              |
-    | Primary Syslog Server Port                                                                                      | Provide the name of the UDP port used to listen to network devices (514 port used by default). |
+    | Primary Syslog Server Port                                                                                      | Provide the name of the UDP port that Netwrix Auditor uses to listen to network devices (port 514 by default). |
 
 4. Click Accept.
 5. Navigate to Log → Categories.
@@ -70,7 +60,7 @@ To configure SonicWall SMA
     | - Log Level - Alert Level - Syslog Level                                                                        | Set to "Info".                                                                                 |
     | - Enable Audit Log - Send to Syslog Server in Audit Log Settings - Send to Syslog Server in Access Log Settings | Select these checkboxes.                                                                       |
     | Primary Syslog Server                                                                                           | Enter the address of your Netwrix Auditor Server.                                              |
-    | Primary Syslog Server Port                                                                                      | Provide the name of the UDP port used to listen to network devices (514 port used by default). |
+    | Primary Syslog Server Port                                                                                      | Provide the name of the UDP port that Netwrix Auditor uses to listen to network devices (port 514 by default). |
 
 4. Click Accept.
 5. Navigate to Log → Categories.
@@ -96,12 +86,12 @@ To configure SonicWall NS series
 6. Navigate to Manage → Log Settings → Syslog.
 7. Set the Syslog Format to Default.
 8. Click Add.
-9. In the dialog appears, select Create new address object option in the Name or IP Address combo
-   box.
+9. In the dialog that appears, select the Create new address object option in the Name or IP
+   Address combo box.
 10. Provide name and IP address of the new object.
 11. Click OK.
-12. In the Add Syslog Server dialog, find the IP address you specified on the step 10 in the Name or
-    IP Address list.
+12. In the Add Syslog Server dialog, in the Name or IP Address list, find the IP address you
+    specified in step 10.
 13. Click OK.
 14. Click Save.
 

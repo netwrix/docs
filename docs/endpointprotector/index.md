@@ -24,8 +24,9 @@ To ensure optimal security, performance, and access to the latest features, Netw
 
 ### Support Status Overview
 
-- **Current EPP Server Version (2604)**: Full active support with new features, security updates, and comprehensive technical assistance
+- **Current EPP Server Version (2608)**: Full active support with new features, security updates, and comprehensive technical assistance
 - **Current EPP Client & EE Version (2608)**: Full active support with new features, security updates, and comprehensive technical assistance
+- **Previous EPP Server Version (2604)**: Still in active support. We recommend starting to plan the migration to the new **2608** version to ensure full compatibility and access to the latest security fixes.
 - **Previous versions (2602 and older, including legacy versions 5.9.4.2 and earlier)**: Discontinued support — no new features, security patches, or technical assistance.
 
 ### What This Means

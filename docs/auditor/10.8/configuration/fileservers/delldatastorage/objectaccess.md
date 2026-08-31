@@ -6,12 +6,12 @@ sidebar_position: 30
 
 # Configure Audit Object Access Policy
 
-Netwrix recommends you to avoid linking a GPO to the top level of the domain due to the potential
-impact. Instead, create a new organization unit for your file servers within your domain and assign
-GPO there. For detailed instructions on how to create a new OU, see the following Microsoft
-article:
-[Create a New Organizational Unit](https://technet.microsoft.com/en-us/library/cc771564.aspx).
+Configure the Audit object access policy on the OU that contains your Dell Data Storage appliance.
 
+Netwrix recommends that you avoid linking a GPO to the top level of the domain due to the potential
+impact. Instead, create a new organization unit for your file servers within your domain and assign
+GPO there. For instructions on creating a new OU, see the Microsoft article
+[Create a New Organizational Unit](https://technet.microsoft.com/en-us/library/cc771564.aspx).
 **Step 1 –** Open the **Group Policy Management** console on any domain controller in the target
 domain: navigate to Start > Windows Administrative Tools**→ Group Policy Management.**
 
@@ -47,8 +47,8 @@ node on the left and navigate to **Policies → Windows Settings → Security Se
 
     where `<NAS Server Name>` is the name of the target Unity\VNX server.
 
-    To update group policies for Dell VNX you must be logged in as the 'nasadmin' user.
+    To update group policies for Dell VNX, you must log in as the `nasadmin` user.
 
-You can configure advanced audit policy to narrow the range of events tracked and recorded by the
-product, thus preventing your AuditArchive and the Security event log from overfilling. See the
-[Configure Security Event Log Maximum Size](/docs/auditor/10.8/configuration/fileservers/delldatastorage/securityeventlog.md) topic for additional information.
+You can configure advanced audit policy to narrow the range of events Auditor tracks and
+records. This prevents your AuditArchive and the Security event log from overfilling. See the
+[Configure Security Event Log](/docs/auditor/10.8/configuration/fileservers/delldatastorage/securityeventlog.md) topic for additional information.
