@@ -493,6 +493,18 @@ If you use eDiscovery with Scan Locations configured on any policy, this check i
 2. Edit and save the policy — even without changing anything — to re-apply the Scan Locations.
 3. Run a scan and confirm it targets only the configured Scan Locations, not the full disk.
 
+### CAP Policy Verification
+
+:::note
+In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, with no error reported.
+:::
+
+If you use Content Aware Protection, this check is recommended after restore:
+
+1. Test each active CAP policy against a known-blocked transfer to confirm it still triggers.
+2. If a policy doesn't trigger, open it, edit and save it — even without changing anything — to redistribute it to endpoints.
+3. Re-test to confirm the policy now triggers correctly.
+
 ### DPI / CAP Functionality Verification
 
 If using Deep Packet Inspection or Content Aware Protection:

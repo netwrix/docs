@@ -8,10 +8,6 @@ sidebar_position: 40
 
 The following best practices come from the complete migration workflow and apply to any EPP Server upgrade or migration to 2608.
 
-:::info Temporary — Two Migration Targets Until Late August 2026
-Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customers who need to migrate sooner can still follow the temporary [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510) path instead. Items that differ between the two targets carry a **2510/2604 path:** marker. Netwrix will remove this distinction, and these marked notes, once 2608 ships.
-:::
-
 ## Planning
 
 | # | Best Practice |
@@ -20,7 +16,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 | 02 | Test the complete migration procedure in a lab environment before executing in production. |
 | 03 | Plan a maintenance window at least 2× your estimated migration duration. |
 | 04 | Communicate the maintenance window to all affected stakeholders and end users in advance. |
-| 05 | Verify your license is valid and reflects your current entitlements before starting any migration activity, and again after backup import. `php_els` was strictly a 2509–2604 requirement — 2608 no longer needs it and ignores it if present. **2510/2604 path:** `php_els` is still required. |
+| 05 | Verify your license is valid and reflects your current entitlements before starting any migration activity, and again after backup import. `php_els` was strictly a 2509–2604 requirement — 2608 no longer needs it and ignores it if present. |
 | 06 | Keep the old server VM alive until you fully validate the new environment. Never decommission prematurely. |
 | 07 | Verify that the target server's assigned CPU, RAM, and disk meet at least the minimum sizing in [Server Requirements](/docs/endpointprotector/requirements/server) before starting migration — undersized environments are a common root cause of post-migration performance issues, including recurring server errors. |
 | 08 | If you're on 2509, 2510, 2601, or 2602, you can migrate directly to 2608 — no intermediate version is required. Upgrading to **2604 first** is still good practice, since 2604 → 2608 is the most thoroughly validated path in Netwrix labs. |
@@ -35,7 +31,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 | 12 | For compliance-regulated environments, export audit logs separately before migration — they aren't in the config backup. |
 | 13 | Test backup restoration in a non-production environment at least once before relying on it for production recovery. |
 | 14 | Create audit log backups to export logs off the server — don't use the server as a storage location. You can lose backup files left on the server if the image fails or you replace it. Always download and store audit log backup files in a secure, external location. |
-| 15 | Don't expect historical log data to carry over to the new CrateDB component on 2608 — it ships empty and only stores new log data going forward. This is the same limitation System Configuration Backup already has today (no logs or file shadows), just extended to the new log store. Export logs separately beforehand if you need them. **2510/2604 path:** no CrateDB on this platform — the item doesn't apply, though the underlying "logs aren't in the backup" limitation still does. |
+| 15 | Don't expect historical log data to carry over to the new CrateDB component on 2608 — it ships empty and only stores new log data going forward. This is the same limitation System Configuration Backup already has today (no logs or file shadows), just extended to the new log store. Export logs separately beforehand if you need them. |
 
 ## Database and Infrastructure
 
@@ -51,7 +47,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 
 | # | Best Practice |
 |---|---|
-| 21 | Always reuse the same IP/FQDN for the new server (2608, or 2510/2604 on the temporary path). Changing it creates cascading certificate and Enforced Encryption (EE) trust failures. |
+| 21 | Always reuse the same IP/FQDN for the new server. Changing it creates cascading certificate and Enforced Encryption (EE) trust failures. |
 | 22 | Fill both DNS fields only on unpatched 2509 or early 2510 environments. Patch 2604 fixed the DNS field-saving bug, so 2608 needs no workaround. |
 | 23 | Disable client communications on the new server before restoring a backup to prevent partial-state registrations. |
 | 24 | After migration, monitor SIEM connectivity — it may require reconfiguration and Netwrix Support may need to provide a restoration script. |
@@ -60,7 +56,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 
 | # | Best Practice |
 |---|---|
-| 25 | The 2608 client requires no new bridge version — any client on 5.9.4.3 Hotfix 1 or on any 2511–2605 client version can upgrade directly. If you are using the EPP Server Client Upgrade feature and still have clients on 5.9.4.1 or older, upgrade them to 5.9.4.3 Hotfix 1 first as the signature bridge before proceeding to 2608. **2510/2604 path:** the target client is 2605, not 2608, but the same 5.9.4.3 Hotfix 1 bridge requirement applies for clients on 5.9.4.1 or older. |
+| 25 | The 2608 client requires no new bridge version — any client on 5.9.4.3 Hotfix 1 or on any 2511–2605 client version can upgrade directly. If you are using the EPP Server Client Upgrade feature and still have clients on 5.9.4.1 or older, upgrade them to 5.9.4.3 Hotfix 1 first as the signature bridge before proceeding to 2608. |
 | 26 | Use enterprise deployment tools (Intune, SCCM, Jamf) for client upgrades rather than relying solely on EPP's built-in client upgrade feature, which limits uploads to 50 machines per hour. |
 | 27 | Always run a pilot deployment of 10–20 endpoints before mass client rollout. |
 | 28 | For Enforced Encryption (EE) environments, upload both Windows and macOS EE clients to the server before enabling client communications — the server requires both packages regardless of which OS your endpoints use. |
@@ -73,7 +69,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 
 | # | Best Practice |
 |---|---|
-| 33 | If migrating from a legacy 5.x server, create the migration backup on **exactly version 5.9.4.2** — not 5.9.4.1, not 5.9.4.0. Both 2608 and the temporary 2510/2604 path reject any other legacy version and may cause OS regression. |
+| 33 | If migrating from a legacy 5.x server, create the migration backup on **exactly version 5.9.4.2** — not 5.9.4.1, not 5.9.4.0. 2608 rejects any other legacy version and may cause OS regression. |
 | 34 | Label every backup file with the server version and date in the filename (e.g., `epp-5942-backup-2026-04-21.bak`). Mislabelled backups are a leading cause of wrong-version import errors. |
 | 35 | If migrating from the current image platform, 2608 accepts a direct backup from 2509, 2510, 2601, 2602, or 2604 — no intermediate version is required. Reaching 2604 first is still good practice, since it's the most thoroughly validated path (see [Planning](#planning)). |
 | 36 | After applying the 5.9.4.2 cumulative patch, wait 24 hours for background DB tasks to complete before creating the migration backup. |
@@ -95,7 +91,7 @@ Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customer
 | 42 | Don't apply server patches immediately after backup restore — the import process can disrupt the patch pipeline. Allow 24 hours before patching. |
 | 43 | Observe the migrated server's CPU, RAM, and disk usage closely during the first 24 hours. Temporary peaks are normal — background cron jobs, database schema alignment, and log reindexing tasks continue running. Don't treat elevated resource usage alone as a failure indicator during this window. |
 | 44 | Monitor Audit Log Backup jobs after migration — they can enter an infinite running state. Verify job completion before scheduling recurring backups. |
-| 45 | For air-gapped / offline environments, obtain the Offline Activation Patch for 2608 before the maintenance window begins — request it from Netwrix Support in advance. **2510/2604 path:** request the Offline Activation Patch for 2510 instead. |
+| 45 | For air-gapped / offline environments, obtain the Offline Activation Patch for 2608 before the maintenance window begins — request it from Netwrix Support in advance. |
 | 46 | After a mass client reinstall or extended communication outage, expect a temporary CPU spike when clients resume communication — machines request settings, rights, and policies simultaneously, and deliver any backlog of blocked logs. Spike severity scales with fleet size and the configured **Policy Refresh Interval** (see [Client Settings](/docs/endpointprotector/admin/dc_module/globalsettings.md#client-settings)). |
 | 47 | Stagger mass client reinstalls or reconnections in batches rather than restoring communication for the entire fleet at once — this reduces peak server load during resynchronization. |
 | 48 | Don't assume a coinciding SIEM or Audit issue is the cause of a CPU spike without evidence — both operate independently of client check-in load. |

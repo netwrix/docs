@@ -8,10 +8,6 @@ sidebar_position: 30
 
 This page covers the most common questions and issues you may encounter during EPP server migrations.
 
-:::info Temporary — Two Migration Targets Until Late August 2026
-This page primarily covers migrating to **2608**. Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customers who need to migrate sooner can still follow the temporary [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510) path instead. Entries that differ between the two targets carry a **2510/2604 path:** marker. Netwrix will remove this distinction, and these marked notes, once 2608 ships.
-:::
-
 ---
 
 ## 1. Migrating Directly from 5.9.4.2 to 2608 {#can-i-migrate-directly-from-5942-to-2608}
@@ -22,10 +18,6 @@ If you're on any version older than 5.9.4.2 (5.7.0.0, 5.7.1.0, 5.8.0.0, 5.8.1.0,
 
 :::tip
 **Consider a fresh deployment instead:** If the source server is on a very old or long-obsolete EPP version, consider a clean deployment of the 2608 image rather than the full migration path. Reconfiguring EPP on a fresh base installation can sometimes be faster and less risky than upgrading through multiple intermediate versions — especially in smaller environments or where you don't need historical log data. Discuss this option with your Netwrix account team or Support before committing to the upgrade path.
-:::
-
-:::note
-**2510/2604 path:** The same 5.9.4.2 requirement applies if you need to migrate before 2608 ships — see [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). The only difference is the deployment target (2510/2604 instead of 2608).
 :::
 
 ---
@@ -48,10 +40,6 @@ The migration doesn't carry log data over automatically, and this isn't new beha
 
 If you need historical logs for compliance or forensics, export them via **System Maintenance → Audit Log Backups** before migrating, or keep your old server VM available. See the prerequisites section of either migration article for the full guidance.
 
-:::note
-**2510/2604 path:** CrateDB doesn't exist on this platform — this entire question doesn't apply. The System Configuration Backup limitation (no logs or file shadows) still applies the same way, though.
-:::
-
 ---
 
 ## 4. Client Bridge Version Requirement for the 2608 Client {#is-a-client-bridge-version-required-to-upgrade-to-the-2608-client}
@@ -59,10 +47,6 @@ If you need historical logs for compliance or forensics, export them via **Syste
 **No.** Any client on **5.9.4.3 Hotfix 1** or on any **2511–2605** client version can upgrade directly to the 2608 client — there's no new intermediate/bridge version for this jump.
 
 The historical CoSoSys-to-Netwrix signature bridge (5.9.4.3 Hotfix 1) applies only to endpoints still running an old CoSoSys-signed client (5.9.4.1 or older). See [Client Upgrade Management](/docs/endpointprotector/install/migrationprocedure/clientupgrade#is-a-bridge-client-required-for-2608) for the full compatibility table.
-
-:::note
-**2510/2604 path:** The target client here is **2605**, not 2608, but the bridge logic is identical — clients on 5.9.4.1 or older still need 5.9.4.3 Hotfix 1 first before they can receive the 2605 client. See the Certificate Bridge section in [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510#certificate-bridge-and-upgrade-path).
-:::
 
 ---
 
@@ -91,7 +75,7 @@ This most commonly occurs with large backups or under-resourced VMs, specificall
 **Steps:**
 1. Verify the target VM meets the free-disk minimum in [Server Requirements](/docs/endpointprotector/requirements/server).
 2. Verify the backup file isn't corrupted — re-download from the source server.
-3. Verify you created the backup on a version your target accepts. **2608:** 5.9.4.2 for the legacy path, or 2509/2510/2601/2602/2604 for the current-image path. **2510/2604 path:** only exactly 5.9.4.2 is accepted.
+3. Verify you created the backup on a version your target accepts: 5.9.4.2 for the legacy path, or 2509/2510/2601/2602/2604 for the current-image path.
 4. Try increasing PHP upload limits temporarily (see [Backup File Exceeds 200 MB Import Limit](/docs/endpointprotector/install/migrationprocedure/troubleshooting#backup-file-exceeds-200-mb-import-limit)).
 5. If none of these steps resolves it, contact Netwrix Support with the server logs from `/var/log/epp/`.
 
@@ -241,16 +225,12 @@ Air-gapped activation requires an **Offline Activation Patch** specific to 2608.
 3. Also request any offline CAP / eDiscovery activation patches if your license includes those modules.
 4. Stage all offline patches and have them ready before taking the server offline for migration.
 
-:::note
-**2510/2604 path:** Request the Offline Activation Patch for **2510** instead — the rest of the procedure is the same.
-:::
-
 ---
 
 ## 20. ELS for PHP Installation Failing {#els-for-php-installation-failing}
 
 :::note
-This applies only when migrating onto the **2509–2604** image line — including the temporary [5.x → 2510/2604 path](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). **2608 no longer uses the `php_els` entitlement** — if your license still contains that field, 2608 ignores it, and this issue doesn't apply.
+This applies only when migrating onto the **2509–2604** image line. **2608 no longer uses the `php_els` entitlement** — if your license still contains that field, 2608 ignores it, and this issue doesn't apply.
 :::
 
 This can occur in some migration paths onto 2509–2604 when EPP doesn't correctly recognize the license. See [Verifying the php_els License Entitlement (2509–2604 Only)](/docs/endpointprotector/install/migrationprocedure/troubleshooting.md#verifying-the-php_els-license-entitlement-2509-2604-only) in Troubleshooting for the full verification walkthrough. If ELS still shows as inactive after re-import, contact Netwrix Support — some cases require a manual backend fix.
@@ -260,10 +240,6 @@ This can occur in some migration paths onto 2509–2604 when EPP doesn't correct
 ## 21. The Effective Rights Report Is Empty After Migration {#the-effective-rights-report-is-empty-after-migration}
 
 This is a known reporting layer issue that doesn't affect actual policies or enforcement. Netwrix fixed it in **2608** — migrate to 2608 to resolve it. If you're not yet ready to migrate, contact Netwrix Support for interim guidance.
-
-:::note
-**2510/2604 path:** This issue is still present on 2510/2604 — the fix ships only in 2608.
-:::
 
 ---
 
@@ -314,10 +290,6 @@ Decommission the old server only after:
 Keeping two live EPP Server instances in production at the same time can have licensing implications. Contact your Netwrix account team to adjust licensing accordingly before running the old and new servers in parallel for an extended period.
 :::
 
-:::note
-**2510/2604 path:** Everything in this answer applies the same way — substitute "2510/2604" for "2608" until 2608 ships in late August 2026.
-:::
-
 ---
 
 ## 24. Reverting to an Older Version {#reverting-to-an-older-version}
@@ -327,6 +299,12 @@ Netwrix doesn't support reverting or downgrading an EPP Server to an older versi
 Check that the version on your pre-migration snapshot is still supported before you roll back to it. Rolling back to a version past its support lifecycle leaves you without security patches or Netwrix Support — see [Netwrix Endpoint Protector Server Supportability](/docs/endpointprotector/supportability/server-supportability) before deciding to roll back.
 
 Contact Netwrix Support before attempting any rollback.
+
+---
+
+## 25. CAP Policies Don't Trigger After Migration {#cap-policies-dont-trigger-after-migration}
+
+In rare cases, a Content Aware Protection (CAP) policy restored from a System Configuration Backup doesn't redistribute correctly and stops triggering, with no error reported. If you notice a CAP policy isn't triggering after migration, open the affected policy, edit and save it — even without changing anything — to redistribute it to endpoints. This resolves the issue. See [CAP Policies Not Triggering After Migration](/docs/endpointprotector/install/migrationprocedure/troubleshooting#cap-policies-not-triggering-after-migration) in Troubleshooting for more detail.
 
 ---
 
