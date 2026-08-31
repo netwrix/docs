@@ -33,8 +33,7 @@ membership, including nested groups.
 There is one table at the bottom displaying Membership Paths for the select group. It contains all
 of the ways the audited user has been granted membership to the selected group.
 
-- Type – Type of membership the audited object has to the selected groupType of membership the
-  audited user has to the selected group
+- Type – Type of membership the audited object has to the selected group
 
     - Direct – Object is specifically assigned to this group
     - Nested – Object is a member of a group which has membership in this group

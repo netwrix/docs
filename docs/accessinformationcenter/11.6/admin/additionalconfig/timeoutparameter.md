@@ -23,15 +23,15 @@ the Access Information Center installation directory:
 
 **…\STEALTHbits\Access Information Center**
 
-Follow the steps to modify the timeout parameter.
+To modify the timeout parameter:
 
 **Step 1 –** Open the `AccessInformationCenter.Service.exe.config` file with a text editor, for
 example Notepad.
 
 ![Timeout Parameter in the config file](/images/accessinformationcenter/11.6/admin/additionalconfig/configfiletimeoutparameter.webp)
 
-**Step 2 –** Change the value for the `AuthSessionTimeout` parameter to the desired number of
-minutes. For example:
+**Step 2 –** Change the value for the `AuthSessionTimeout` parameter to the number of
+minutes you want. For example:
 
 ```
 <add key="AuthSessionTimeout" value="20"/>

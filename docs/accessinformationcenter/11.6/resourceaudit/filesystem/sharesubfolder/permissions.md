@@ -74,7 +74,7 @@ within the value set for the **ActivityDays** parameter in the `web.config` file
 set to 60 days. This feature requires the Enterprise Auditor File System Activity Auditing (FSAC)
 collection jobs to be executed on a regular basis.
 
-Select the **Highlight active permissionss** checkbox to show permissions that are in use. When a
+Select the **Highlight active permissions** checkbox to show permissions that are in use. When a
 user or effective member of a group that has permissions to a resource also has activity on the
 resource, a yellow icon is displayed for the permission type to indicate the access level used to
 perform the activity. Therefore, access level cells not highlighted when activity is being monitored
@@ -89,7 +89,7 @@ three other trustees with stale permissions.
 
 ![Activity Statistics report](/images/accessinformationcenter/11.6/resourceaudit/filesystem/sharesubfolder/stalepermissionsevents.webp)
 
-The Activity Statisticsreport indicates that the trustee Jazmina has performed write, manage, and
+The Activity Statistics report indicates that the trustee Jazmina has performed write, manage, and
 delete events on the selected resource. See the
 [Activity Statistics Report](/docs/accessinformationcenter/11.6/resourceaudit/filesystem/sharesubfolder/activitystatistics.md) topic
 for additional information.

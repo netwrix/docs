@@ -7,14 +7,14 @@ sidebar_position: 30
 # Remove Access Window
 
 The Remove Access window opens from the Your Access portal when you select to remove your existing
-access to a resource. Follow the steps to remove your access.
+access to a resource. To remove your access:
 
-**Step 1 –** In the Your Access portal, select the desired resource from the list of current access
+**Step 1 –** In the Your Access portal, select the resource you want from the list of current access
 and click **Remove Access**. The Remove Access window opens to confirm the action.
 
 ![Remove Access window](/images/accessinformationcenter/11.6/accessrequests/window/removeaccess.webp)
 
-**Step 2 –** Click **Yes** to cancel the remove your access for the selected resource.
+**Step 2 –** Click **Yes** to remove your access for the selected resource.
 
 :::note
 You can click **No** to keep the access and close the Remove Access window.

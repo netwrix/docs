@@ -21,7 +21,7 @@ This report is comprised of the following columns:
 
 - Host Name – Name of the server (local groups) or domain where the audited group resides
 - Group Type – Type of group being audited: local or domain
-- Trustee Name – Owner of the trustee account
+- Trustee Name – Name of the trustee
 - Trustee Account – Active Directory account associated with the trustee
 - Department – Department to which the trustee account belongs
 - Title – Trustee’s title as read from Active Directory
@@ -39,7 +39,7 @@ This report is comprised of the following columns:
 If the selected trustee is a group, the Group Membership pane displays the group membership,
 including nested groups.
 
-There is one table at the bottom displaying Membership Paths for the select group. It contains all
+There is one table at the bottom displaying Membership Paths for the selected group. It contains all
 of the ways the audited group has been granted membership to the selected group.
 
 - Type – Type of membership the selected trustee has to the audited group

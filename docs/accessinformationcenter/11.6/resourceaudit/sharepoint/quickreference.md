@@ -1,10 +1,10 @@
 ---
-title: "SharePoint Reports Quick Reference Guide"
-description: "SharePoint Reports Quick Reference Guide"
+title: "SharePoint Reports Quick Reference Guide"
+description: "SharePoint Reports Quick Reference Guide"
 sidebar_position: 10
 ---
 
-# SharePoint Reports Quick Reference Guide
+# SharePoint Reports Quick Reference Guide
 
 The following SharePoint reports are available for selections within the Resources pane.
 
@@ -27,7 +27,7 @@ The following reports are available at the on-premise farm and online instance l
 | [Activity Details Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/farminstance/activitydetails.md)                  | Provides statistical activity event information by user on the selected farm during the specified date range. This report includes a line graph for Active Users Trend. |
 | [Anonymous Access Links Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/farminstance/anonymousaccesslinks.md)       | Displays files that have access links generated to be shared with people outside the organization (guest/anonymous users).                                              |
 | [Exceptions Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/farminstance/exceptions.md)                             | Provides a list of exceptions that were found within the selected farm/instance. This report includes a Details table.                                                  |
-| [External Sharing Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/farminstance/externalsharing.md)                  | Displays resources that are shared with external users, such as users who are invited to sign in using their gmail accounts.                                            |
+| [External Sharing Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/farminstance/externalsharing.md)                  | Displays resources that are shared with external users, such as users invited to sign in using Gmail accounts.                                            |
 | [Scan Summary Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/farminstance/scansummary.md)                          | Provides a summary view of all site collections on the selected farm/instance.                                                                                          |
 | [Sensitive Content Details Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/farminstance/sensitivecontentdetails.md) | Provides details of files where criteria matches were found on the site collection. This report includes a Matches table.                                               |
 | [Sensitive Content Summary Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/farminstance/sensitivecontentsummary.md) | Provides a count of files where criteria matches were found on the site collection. This report includes a Details table.                                               |
@@ -60,7 +60,7 @@ The following reports are available at the site collection, site, list, library,
 | [Exceptions Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/sitecollections/exceptions.md)                                                        | Provides a list of all trustees with access that are causing exceptions on the selected resource. This report includes a Permissions Source table.                                                                                                                                                                                                                            |
 | [Permissions Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/sitecollections/permissions.md)                                                      | Provides a list of trustees with permissions for the selected resource. This report includes a table with trustee access levels Compared to Parent.                                                                                                                                                                                                                           |
 | [Sensitive Content Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/sitecollections/sensitivecontent.md)                                           | Provides a list of files and a hit count per file where criteria matches were found on the selected resource. This report includes a Matches table.                                                                                                                                                                                                                           |
-| [Site Collection Roles Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/sitecollections/sitecollectionroles.md)                                    | Provides a list of all roles or permission levels for the selected site collection, including custom defined roles and role descriptions. It also displays a calculation of the actual rights that each role grants within the targeted SharePoint on-premise farm or SharePoint Online instance. <br />**NOTE:** This report is only available at the site collection level. |
+| [Site Collection Roles Report](/docs/accessinformationcenter/11.6/resourceaudit/sharepoint/sitecollections/sitecollectionroles.md)                                    | Provides a list of all roles or permission levels for the selected site collection, including custom defined roles and role descriptions. It also displays a calculation of the actual rights that each role grants within the targeted SharePoint on-premise farm or SharePoint Online instance. <br />**NOTE:** You can access this report only at the site collection level. |
 
 
 ## SharePoint > Farm / Instance > Exceptions Node Reports

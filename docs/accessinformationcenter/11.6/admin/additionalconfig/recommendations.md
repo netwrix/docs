@@ -14,7 +14,7 @@ Access Information Center installation directory:
 
 **…\STEALTHbits\Access Information Center**
 
-Follow the steps to modify the activity days parameter.
+To modify the activity days parameter:
 
 **Step 1 –** Open the `AccessInformationCenter.Service.exe.config` file with a text editor, for
 example Notepad.
@@ -22,7 +22,7 @@ example Notepad.
 ![Activity Days parameter in the config file](/images/accessinformationcenter/11.6/admin/additionalconfig/configfileactivitydays.webp)
 
 **Step 2 –** Locate the `ActivityDays` parameter. By default, the value will be set to 90 days.
-Change the value to the desired number of Activity Days for the sample. For example, the parameter
+Change the value to the number of Activity Days you want for the sample. For example, the parameter
 would look like this if set to 120 days:
 
 ```

@@ -20,16 +20,13 @@ Choose between:
 
 ![Add Owner window showing Probable Owner option](/images/accessinformationcenter/11.6/resourceowners/window/addownerprobable.webp)
 
-Probable owners are calculated from the available data:
+The system determines probable owners from the available data:
 
 - For File System and SharePoint resources
 
-    - Common Managers – Calculated by looking at the users who have created content within the
-      resource and their manager as defined in Active Directory
-    - Content Owners – Calculated by looking at the users who have created content within the
-      resource
-    - Active Users – Calculated by looking at the users who have performed activity within the
-      resource as identified by Enterprise Auditor activity audits
+    - Common Managers – Users who have created content within the resource and their manager as defined in Active Directory
+    - Content Owners – Users who have created content within the resource
+    - Active Users – Users who have performed activity within the resource as identified by Enterprise Auditor activity audits
 
 - For groups
 
@@ -47,7 +44,7 @@ recommended.
 :::
 
 
-Select the desired owner from the list and click **OK**. The Add Owner window closes and the
+Select the owner you want from the list and click **OK**. The Add Owner window closes and the
 selected user appears in the Owner list.
 
 ## Search for Owner
@@ -55,6 +52,6 @@ selected user appears in the Owner list.
 ![Add Owner window showing Search option](/images/accessinformationcenter/11.6/resourceowners/window/addownersearch.webp)
 
 Enter a name in the search field to find and select users from Active Directory, which populates in
-a drop-down menu as you type. If multiple domains are known to the application, ensure the correct
-domain is selected from the drop-down menu. Click **OK** and the Add Owner window closes. The
+a dropdown menu as you type. If multiple domains are known to the application, ensure the correct
+domain is selected from the dropdown menu. Click **OK** and the Add Owner window closes. The
 selected user appears in the Owner list.

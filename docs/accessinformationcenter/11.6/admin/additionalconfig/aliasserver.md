@@ -19,7 +19,7 @@ installation directory:
 
 **…\STEALTHbits\Access Information Center**
 
-Follow the steps to supply an alias server host name for notification hyperlinks.
+To supply an alias server host name for notification hyperlinks:
 
 **Step 1 –** Open the `AccessInformationCenter.Service.exe.config` file in a text editor, for
 example Notepad.
