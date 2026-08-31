@@ -28,9 +28,9 @@ Directory of C:\Users\Administrator\Downloads
 
 24/02/2017 17:14 19,110,240 nnt-changeTracker™-gen7agent-7.0.0.15-68.exe
 
-2 File(s) 19,110,702 bytes
+2 Files 19,110,702 bytes
 
-2 Dir(s) 4,802,424,832 bytes free
+2 Dirs 4,802,424,832 bytes free
 
 C:\Users\Administrator\Downloads>nnt-changeTracker™-gen7agent-7.0.0.15-68.exe /SP- /VERYSILENT
 /SUPPRESSMSGBOXES

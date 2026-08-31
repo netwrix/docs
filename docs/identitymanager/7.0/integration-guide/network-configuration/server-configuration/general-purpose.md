@@ -12,7 +12,7 @@ JSON files can contain any additional information that you might find useful. Se
 
 For example, to store the agent's address, can add:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 appsettings.json
@@ -27,27 +27,27 @@ The appsettings set allows the following attributes and sections:
 
  | Name | Type | Description | 
  | --- | --- | --- | 
- | ApplicationUri required | String | URI of the server to use in log messages, to communicate with the server in tasks, to allow certain redirect URIs. It must be the same as the agent's appsettings.json's ApplicationUri. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `appsettings.json   {         …         "ApplicationUri": "usercubeserver.contoso.com:5000"   }` | 
+ | ApplicationUri required | String | URI of the server to use in log messages, to communicate with the server in tasks, to allow certain redirect URIs. It must be the same as the agent's appsettings.json's ApplicationUri. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `appsettings.json   {         …         "ApplicationUri": "usercubeserver.contoso.com:5000"   }` | 
  | EncryptionCertificate required | EncryptionCertificate | Settings to configure the encryption of specific files. | 
- | License | String | License key of the server. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `appsettings.json   {         …         "License": "{"LicensedTo":"<Demo>","ValidTo":"<20120905>","IdentityQuota":"<10000>","Signature":"<…>"}"   }` | 
- | Agents optional | Agent List | List of agents' settings used to work on several environments. See the [Architecture](../../../integration-guide/architecture) topic for additional information. This way, each Agent's URI/URL is configured without altering the database. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `appsettings.json   {         …         "Agents": {               "Local": {                     "Uri": "<http://localhost:5010>"               },               …         }   }` | 
+ | License | String | License key of the server. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `appsettings.json   {         …         "License": "{"LicensedTo":"<Demo>","ValidTo":"<20120905>","IdentityQuota":"<10000>","Signature":"<…>"}"   }` | 
+ | Agents optional | Agent List | List of agents' settings used to work on several environments. See the [Architecture](../../../integration-guide/architecture) topic for additional information. This way, each Agent's URI/URL is configured without altering the database. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `appsettings.json   {         …         "Agents": {               "Local": {                     "Uri": "<http://localhost:5010>"               },               …         }   }` | 
  | AppDisplay optional | AppDisplay | Settings to override the application display XML configuration. See the [App Display Setting](../../../integration-guide/toolkit/xml-configuration/metadata/settings/appdisplaysetting) topic for additional information. It is useful to change the application's theme and name without redeploying the whole configuration. | 
  | ApplicationInsights optional | ApplicationInsights | Settings to plug to and configure the [App Insights](https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview) monitoring tool. | 
  | DataProtection optional | DataProtection | Settings to configure the encryption used for the authentication cookies and the anti-forgery tokens. The data protection can be configured to share the keys between several instances of Identity Manager's server, for example when deployed in a cluster where the servers don't have the same machine id. | 
  | DefaultPageSize optional | UInt | Default number of items returned when using squeries, if none specified in PageSize or in squery limit. | 
- | HstsPreload optionalAttribute default value: false | Boolean | Sets the preload parameter of the Strict-Transport-Security header. Preload isn't part of the RFC specification, but is supported by web browsers to preload [HSTS](https://hstspreload.org/) sites on fresh install. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `<pre class="json"><code>*appsettings.json*<br /><br />{<br />  ...<br />  "HstsPreload":  true<br />}</code></pre> ` | 
- | InstallationDirectoryPath default value: Usercube-Server.exe | String | Path of the installation directory. It is used to read other configuration files. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `appsettings.json   {         …        "InstallationDirectoryPath":    "<C://identitymanagerContoso/Runtime>"   }` | 
+ | HstsPreload optionalAttribute default value: false | Boolean | Sets the preload parameter of the Strict-Transport-Security header. Preload isn't part of the RFC specification, but is supported by web browsers to preload [HSTS](https://hstspreload.org/) sites on fresh install. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `<pre class="json"><code>*appsettings.json*<br /><br />{<br />  ...<br />  "HstsPreload":  true<br />}</code></pre> ` | 
+ | InstallationDirectoryPath default value: Usercube-Server.exe | String | Path of the installation directory. It is used to read other configuration files. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `appsettings.json   {         …        "InstallationDirectoryPath":    "<C://identitymanagerContoso/Runtime>"   }` | 
  | MailSettings optional | String | Settings to configure the email service. | 
  | MaxActors default value: 20 maximum value: 50 | UInt | The maximum number of recipients who will be notified of the Workflow changes and can take action. If the number of recipients is exceeding the MaxRecipients value, then the actors will have the task assigned to them but they will not receive an email notification. In order for all actors to receive an email notification the MaxRecipients should be increased as well. | 
  | MaxPageSize optionalAttribute | UInt | It represents the maximum number of items returned when using squeries. |
  | MaxRamPercentageRoleMining optional | UInt | **On-premises installations only.** Limits memory usage for role mining operations as a percentage of available RAM (0-100). Identity Manager always estimates memory requirements before executing role mining. When this setting is greater than 0, operations are prevented if the estimated memory exceeds the specified percentage of available RAM. When not set or set to 0, no percentage-based limit is applied, though operations are still prevented if they would require more memory than total system RAM. Use this setting to prevent role mining from consuming excessive memory on shared servers. Example: `appsettings.json   {         …         "MaxRamPercentageRoleMining": 75   }` See the [Role Mining](../../../integration-guide/role-mining#memory-limitations) topic for additional information. | 
- | NotUseAgent default value: false | Boolean | True to disable the use of the agent. See the[Architecture](../../../integration-guide/architecture) topic for additional information. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `appsettings.json   {         …       "<NotUseAgent>":  true   }` | 
- | OpenIdClients optional | OpenIdClient List | List of hashed secrets used to override the plain-text secrets from the OpenIdClient XML configuration. See the [OpenIdClient](../../../integration-guide/toolkit/xml-configuration/access-control/openidclient) topic for additional information. This way, Identity Manager stores only hashed secrets, for security purposes. Each environment must have its own secret, distinct from the others. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `appsettings.json   {         …       "OpenIdClients": {               "Job": {                     "<HashedSecret>": "<K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols>"               },               "PowerBI": {                     "<HashedSecret>": "<7b8N2NWka5alDrjM7rFqf7+xqq9LIcT5jSoQ+1Ci2V0>"               }         }   }` | 
+ | NotUseAgent default value: false | Boolean | True to disable the use of the agent. See the[Architecture](../../../integration-guide/architecture) topic for additional information. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `appsettings.json   {         …       "<NotUseAgent>":  true   }` | 
+ | OpenIdClients optional | OpenIdClient List | List of hashed secrets used to override the plain-text secrets from the OpenIdClient XML configuration. See the [OpenIdClient](../../../integration-guide/toolkit/xml-configuration/access-control/openidclient) topic for additional information. This way, Identity Manager stores only hashed secrets, for security purposes. Each environment must have its own secret, distinct from the others. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `appsettings.json   {         …       "OpenIdClients": {               "Job": {                     "<HashedSecret>": "<K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols>"               },               "PowerBI": {                     "<HashedSecret>": "<7b8N2NWka5alDrjM7rFqf7+xqq9LIcT5jSoQ+1Ci2V0>"               }         }   }` | 
  | PowerBISettings optional | PowerBISettings | Settings to configure the API used by Power BI to access Identity Manager data. | 
- | Serilog optional | Serilog | Settings to configure the logging service, complying to the Logger properties and structure. See the [Monitoring](../../../integration-guide/monitoring) topic for additional information. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `appsettings.json   {         …       "Serilog": {               "WriteTo": ["Console"],               "MinimumLevel": {                     "Default": "Error",                     "Override": {                           "Usercube": "Information"                     }               }         }   }` | 
+ | Serilog optional | Serilog | Settings to configure the logging service, complying to the Logger properties and structure. See the [Monitoring](../../../integration-guide/monitoring) topic for additional information. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `appsettings.json   {         …       "Serilog": {               "WriteTo": ["Console"],               "MinimumLevel": {                     "Default": "Error",                     "Override": {                           "Usercube": "Information"                     }               }         }   }` | 
  | Swagger optional | Swagger | By enabling [Swagger ](https://swagger.io/tools/swagger-ui/)you can visualize and interact with the API's resources without having any of the implementation logic in place. It is automatically generated from Identity Manager's API, with the visual documentation making it easy for back-end implementation and client-side consumption. | 
- | TempFolderPath default value: ../Temp | String | Path to the temporary folder which contains: - ExportOutput: directory storing data exported from connectors. - JobLogs: directory storing task instance logs. - Reports: directory storing generated reports. - Packages: directory storing the downloaded package logos. - PolicySimulations: directory storing the files generated by policy simulations. - ProvisioningCache.txt: file storing the clustered provisioning cache. When enabled, this file Use coordinate the API cache among clusters. - CorrelationCache.txt - RiskCache.txt - ExpressionCache.txt - scheduler.lock - connector.txt - container.reset.txt: file acting as a reset command for Identity Manager's server, i.e. any change to this file triggers the reset service, thus reloading all the services instantiated by the server. This path can be overridden by **ResetSettings** > **FilepathResetService**. - Mails: directory storing the email messages. This path can be overridden by **ResetSettings** > **PickupDirectory**. - Deployment These elements can be removed, but ensure to restart the server after doing so. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `appsettings.json   {         …       "<TempFolderPath": "../Temp>"   }` | 
- | WorkFolderPath default value: ../Work | String | Path of the work folder which contains: - Collect: directory storing the CSV source files exported by connectors. - ProvisioningOrders: directory storing the orders generated by the server. - FulfillPowerShell: PowerShell provisioner's working directory. - FulfillRobotFramework: Robot Framework's provisioner working directory. - ExportCookies: directory storing the cookies used for incremental export. - Synchronization: directory storing the agent's data collection results. - Upload: directory storing the uploaded media like uploaded pictures, before they are inserted into the database. - appsettings.connection.json These elements must not be removed, because doing so may disrupt Identity Manager's execution after restarting. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `appsettings.json   {         …       "<WorkFolderPath": "../Work>"   }` | 
+ | TempFolderPath default value: ../Temp | String | Path to the temporary folder which contains: - ExportOutput: directory storing data exported from connectors. - JobLogs: directory storing task instance logs. - Reports: directory storing generated reports. - Packages: directory storing the downloaded package logos. - PolicySimulations: directory storing the files generated by policy simulations. - ProvisioningCache.txt: file storing the clustered provisioning cache. When enabled, this file Use coordinate the API cache among clusters. - CorrelationCache.txt - RiskCache.txt - ExpressionCache.txt - scheduler.lock - connector.txt - container.reset.txt: file acting as a reset command for Identity Manager's server, i.e. any change to this file triggers the reset service, thus reloading all the services instantiated by the server. This path can be overridden by **ResetSettings** > **FilepathResetService**. - Mails: directory storing the email messages. This path can be overridden by **ResetSettings** > **PickupDirectory**. - Deployment These elements can be removed, but ensure to restart the server after doing so. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `appsettings.json   {         …       "<TempFolderPath": "../Temp>"   }` | 
+ | WorkFolderPath default value: ../Work | String | Path of the work folder which contains: - Collect: directory storing the CSV source files exported by connectors. - ProvisioningOrders: directory storing the orders generated by the server. - FulfillPowerShell: PowerShell provisioner's working directory. - FulfillRobotFramework: Robot Framework's provisioner working directory. - ExportCookies: directory storing the cookies used for incremental export. - Synchronization: directory storing the agent's data collection results. - Upload: directory storing the uploaded media like uploaded pictures, before they are inserted into the database. - appsettings.connection.json These elements must not be removed, because doing so may disrupt Identity Manager's execution after restarting. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `appsettings.json   {         …       "<WorkFolderPath": "../Work>"   }` | 
 
 ## Swagger
 
@@ -72,7 +72,7 @@ multiple certificates in the same Certificate Store since the Subject Name needs
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 {
@@ -104,7 +104,7 @@ The archive is set using the following attributes:
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
  {
@@ -130,7 +130,7 @@ The Windows certificate is set using these attributes:
 
 If the certificate is saved in Azure Key Vault, must define the certificate identifier and the Vault connection. See the [Azure Key Vault](../../../integration-guide/network-configuration/agent-configuration/azure-key-vault) topic for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 "<EncryptionCertificate>": {
@@ -144,13 +144,13 @@ The encryption of specific files can be disabled via the following attribute:
 
  | Name | Type | Description | 
  | --- | --- | --- | 
- | EncryptFile default value: true | Boolean | True to encrypt specific files such as logs or temporary files. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `appsettings.json   {         …         EncryptionCertificate": {               "EncryptFile": false         }   }` | 
+ | EncryptFile default value: true | Boolean | True to encrypt specific files such as logs or temporary files. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `appsettings.json   {         …         EncryptionCertificate": {               "EncryptFile": false         }   }` | 
 
 ## Mail Settings
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 appsettings.json
@@ -190,7 +190,7 @@ The mail settings details are:
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 appsettings.json
@@ -215,7 +215,7 @@ The application insights details are:
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 appsettings.json
@@ -235,7 +235,7 @@ The PowerBI Settings details are:
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 appsettings.json
@@ -260,7 +260,7 @@ The Data Protection details are:
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 appsettings.json

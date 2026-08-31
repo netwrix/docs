@@ -65,7 +65,7 @@ The export is executed by a job from the UI, or via Usercube-Export-ActiveDirect
 
 This process is configured through a connection in the UI and/or the XML configuration, and in the *appsettings.agent.json* > Connections section:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -90,7 +90,7 @@ The identifier of the connection and thus the name of the subsection must:
 > contoso.server.com using Basic Authentication with **BaseDN**, **Login**, **Password** with
 > EnableSSL for all entries ( "Filter": "(objectclass=\*)"):
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```
@@ -155,7 +155,7 @@ The CSV files are stored in the ExportOutput folder, and the cookie file in the 
 
 For example, with the following configuration example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
                 <EntityType Identifier="AD_Entry" DisplayName_L1="AD - Entry" >  <Property Identifier="dn" DisplayName_L1="dn" IsKey="true" TargetColumnIndex="0" Type="String" />  <Property Identifier="objectCategory" DisplayName_L1="objectCategory" TargetColumnIndex="4" Type="String" />  <Property Identifier="objectGuid" DisplayName_L1="objectGuid" TargetColumnIndex="3" Type="String" IsKey="true" />  <Property Identifier="objectSid" DisplayName_L1="objectSid" TargetColumnIndex="9" Type="String" />  <Property Identifier="pwdLastSet" DisplayName_L1="pwdLastSet" TargetColumnIndex="13" Type="String" />  <Property Identifier="thumbnailPhoto" DisplayName_L1="thumbnailPhoto" Type="Binary" />  <Property Identifier="ParentDn" DisplayName_L1="ParentDN" Type="ForeignKey" TargetColumnIndex="128" />  <Property Identifier="children" DisplayName_L1="children" Type="ForeignKey" />  <Property Identifier="Member" DisplayName_L1="Member" Type="ForeignKey" />  <Property Identifier="memberOf" DisplayName_L1="memberOf" Type="ForeignKey"/></EntityType><EntityTypeMapping Identifier="AD_Entry" Connector="AD" ConnectionTable="ADExport_entries">  <Property Identifier="dn" <b>ConnectionColumn="dn"</b> IsUniqueKey="true" />  <Property Identifier="objectCategory" <b>ConnectionColumn="objectCategory"</b> Format="rdn" />  <Property Identifier="objectGuid" <b>ConnectionColumn="objectGuid"</b> IsPrimaryKey="true" Format="guid" />  <Property Identifier="objectSid" <b>ConnectionColumn="objectSid"</b> IsUniqueKey="true" Format="sid"/>  <Property Identifier="pwdLastSet" <b>ConnectionColumn="pwdLastSet"</b> Format="1601date" />  <Property Identifier="thumbnailPhoto" <b>ConnectionColumn="thumbnailPhoto"</b> Format="binary" /></EntityTypeMapping><EntityAssociation Identifier="AD_Entry_parentdn" DisplayName_L1="Parent DN" IsProperty1Collection="true" Property2="AD_Entry:ParentDn" Property1="AD_Entry:children" /><EntityAssociation Identifier="AD_Entry_member" DisplayName_L1="Member" IsProperty1Collection="true" IsProperty2Collection="true" Property1="AD_Entry:Member" Property2="AD_Entry:memberOf" /><EntityAssociationMapping Identifier="AD_Entry_parentdn" Column2="dn" <b>Column1="parentdn"</b> ConnectionTable="ADExport_entries" EntityPropertyMapping1="AD_Entry:dn" EntityPropertyMapping2="AD_Entry:dn" Connector="AD" /><EntityAssociationMapping Identifier="AD_Entry_member" Column1="dn" <b>Column2="member"</b> ConnectionTable="ADExport_members" EntityPropertyMapping1="AD_Entry:dn" EntityPropertyMapping2="AD_Entry:dn" Connector="AD" />
@@ -163,7 +163,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 The result is `C:/identitymanagerContoso/Temp/ExportOutput/*ADExport_entries.csv*` with a column for each scalar property. See the [Entity Model](../../../integration-guide/entity-model) topic for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 *ADExport_entries.csv*
@@ -193,7 +193,7 @@ Each **BaseDN** will generate a cookie file, but the entries from all **BaseDN**
 > (contoso.server.com), but on two different **BaseDN**s (DC=contoso,DC=com and
 > DC=defense,DC=contoso,DC=com).
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```
@@ -235,7 +235,7 @@ Same as for export, fulfill is configured through connections.
 
 > The following example connects to an AD LDS system located at contoso.server.com.
 >
-> Code attributes enclosed with `<>` need to be replaced with a custom value before entering the
+> Replace code attributes enclosed with `<>` with a custom value before entering the
 > script in the command line.
 >
 > ```
@@ -285,7 +285,7 @@ Same as for export, this connector can fulfill resources to multiple forests tru
 
 The following example fulfills data to two targets: both on the same Server (contoso.server.com), but on two different BaseDNs (DC=contoso,DC=com and DC=defense,DC=contoso,DC=com).
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -319,7 +319,7 @@ If these attributes **aren't** synchronized in Identity Manager, then they can't
 
 The following example adds the attribute description with a value depending on what is modified:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
                 <ResourceType Identifier="LDAP_Entry_NominativeUser" DisplayName_L1="LDAP User (nominative)" Policy="Default" TargetEntityType="LDAP_Entry" Category="Accounts" SourceEntityType="Directory_User" ApprovalWorkflowType="One" HideOnSimplifiedView="true"

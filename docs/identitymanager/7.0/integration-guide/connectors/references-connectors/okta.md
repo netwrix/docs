@@ -48,7 +48,7 @@ This connector exports a list of users, groups, applications with their attribut
 
 This process is configured through a connection in the UI and/or the XML configuration, and in the appsettings.agent.json > Connections section.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json
@@ -71,7 +71,7 @@ The identifier of the connection and thus the name of the subsection must:
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json
@@ -110,7 +110,7 @@ either having a ConnectionColumn or which is used in an entity association;
 
 For example, with the following entity type mapping for users:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <EntityType Identifier="User" DisplayName_L1="User">
@@ -146,7 +146,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 And the following entity type mapping for groups:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
   <EntityType Identifier="Group" DisplayName_L1="Group">
@@ -173,7 +173,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 And the following entity type mapping for applications:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
  <EntityType Identifier="Application" DisplayName_L1="Application">
@@ -223,7 +223,7 @@ Same as for export, fulfill is configured through connections.
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json

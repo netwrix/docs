@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Message Template Window
 
-The Message Template window is opened from the ellipsis (…) button for the Syslog Message Template
+Open the Message Template window from the ellipsis (…) button for the Syslog Message Template
 field on the Syslog tab of the output Properties window.
 
 ![Message Template window](/images/activitymonitor/9.0/admin/outputs/window/syslogmessagetemplate.webp)
@@ -30,13 +30,13 @@ Monitored Domains Syslog outputs have the following preconfigured Templates:
 - V 2.0 for IBM QRadar SIEM 7.2.4
 - V 2.0 for Splunk SIEM
 
-Custom templates can be created. Select the template you want or create a new template by modifying
-an existing template within the Message Template window. The new message template will be named
-Custom. Macro variables are also available to customize the Syslog message template.
+You can create custom templates. Select the template you want or create a new template by modifying
+an existing template within the Message Template window. Activity Monitor names the new message
+template Custom. Macro variables are also available to customize the Syslog message template.
 
 **Macro Variables for Monitored Domains**
 
-Macros are text strings that are replaced with actual values at run time. The following Macro
+Macros are text strings that Activity Monitor replaces with actual values at run time. The following Macro
 variables are available to customize the Syslog message template:
 
 | Variable                       | Definition                                                                           |
@@ -102,13 +102,13 @@ Monitored Hosts/Services Syslog outputs have the following preconfigured Templat
 - Netwrix Threat Manager (StealthDEFEND) – Use this template for Netwrix Threat Manager integration.
   This is the only supported template for Threat Manager.
 
-Custom templates can be created. Select the template you want or create a new template by modifying
-an existing template within the Message Template window. The new message template will be named
-Custom. Macro variables are also available to customize the Syslog message template.
+You can create custom templates. Select the template you want or create a new template by modifying
+an existing template within the Message Template window. Activity Monitor names the new message
+template Custom. Macro variables are also available to customize the Syslog message template.
 
 **Macro Variables**
 
-Macros are text strings that are replaced with actual values at run time. Not all macro variables
+Macros are text strings that Activity Monitor replaces with actual values at run time. Not all macro variables
 are applicable to all environment types. The following Macro variables are available to customize
 the Syslog message template:
 

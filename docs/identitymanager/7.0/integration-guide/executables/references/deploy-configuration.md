@@ -14,7 +14,7 @@ Retrieves all XML configuration files from a given folder, to calculate the conf
 
 The following example deploys an on-premise configuration via a direct connection to the database through its connection string:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 ./Usercube-Deploy-Configuration.exe -d "C:/identitymanager/Conf" <b>--database-connection-string "data source=.;Database=Usercube;Integrated Security=SSPI;Min Pool Size=10;encrypt=false;"</b>
@@ -24,7 +24,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 The following example deploys a SaaS configuration via an HTTP POST request to the server of the remote configuration:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 ./Usercube-Deploy-Configuration.exe -d "C:/identitymanager/Conf" <b>--api-url https://my_usercube_instance.com</b>

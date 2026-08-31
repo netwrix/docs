@@ -24,7 +24,7 @@ Implementing this connector requires an account with the permissions to access a
 
 This process is configured through a connection in the UI and/or the XML configuration, and in the `*appsettings.agent.json* > Connections` section:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
                                   
@@ -49,7 +49,7 @@ The identifier of the connection and thus the name of the subsection must:
 
 The following example scans the example.sharepoint.com SharePoint at the more detailed level (ListItem) with the account [account.example@acme.com](mailto:account.example@usercube.com):
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -186,7 +186,7 @@ Same as for export, fulfill is configured through connections.
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -244,7 +244,7 @@ Protected attributes are stored inside a safe in <b>cyberark</b>, into an accoun
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
                                                 

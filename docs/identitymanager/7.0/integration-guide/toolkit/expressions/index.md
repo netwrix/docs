@@ -43,7 +43,7 @@ In XML, inside the C# expressions, ensure to escape `"` characters by writing th
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <ScalarRule Property="displayName" Expression="C#:person:return person.LastName + &quot; &quot; + person.FirstName;" />
@@ -57,7 +57,7 @@ See Microsoft documentation on [nullable reference types](https://learn.microsof
 
 For example, the following scalar rule computes the value of users' email addresses via a C# expression. The `<?>` characters cut the operations short by returning null when one of the chain members returns null, thus preventing errors.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <ScalarRule Property="EmailAddress" Expression="C#:resource:return resource?.mail?.ToLower();" />
@@ -75,7 +75,7 @@ Identity Manager's engine automatically passes the main argument to the function
 
 Plain built-in function:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 // transform string to uppercase
@@ -84,7 +84,7 @@ Expression="ToUpper"
 
 Built-in function with parameters:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 // add 1440 minutes to a date formated as dd/MM/yyyy
@@ -112,7 +112,7 @@ Expression can includes squeries, using the QueryHandler service.
 
 For example, to query the employee type whose Identifier is CDI:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 C#:user:
@@ -283,7 +283,7 @@ Literal expressions aren't available for QueryRuleTargetExpression attribute, on
 
 **Example**
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <ScalarRule Property="userAccountControl" Expression="C#:bot:return &quot;66048&quot;;" /><ScalarRule Property="userAccountControl" Expression="Literal:66048" />

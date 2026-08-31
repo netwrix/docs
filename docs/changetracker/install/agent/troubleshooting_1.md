@@ -37,7 +37,7 @@ executable path for the user account you're using.
 
 [[root@IP141-Oracle-Linux-7 ~]# NNT_FILEHASH_LINUX_X64
 
-NNT_FILEHASH_LINUX_X64: error while loading shared libraries: libstdc++.so.6: cannot open shared
+NNT_FILEHASH_LINUX_X64: error while loading shared libraries: libstdc++.so.6: can't open shared
 object file: No such file or directory
 
 [root@IP141-Oracle-Linux-7 ~]#

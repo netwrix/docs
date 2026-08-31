@@ -216,7 +216,7 @@ The key pairs can be generated with tools such as [OpenSSL](https://www.openssl.
 
 Here's an **Example** showing how to generate a [PKCS #12](https://en.wikipedia.org/wiki/PKCS_12) archive (`<b>UsercubeContoso</b>.pfx`) bundling a public key certificate (`<b>UsercubeContoso</b>.cert`) **and** an RSA-2048 private key (`<b>UsercubeContoso</b>.key`) with OpenSSL, with a 50-year expiration date:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```text
 1.
@@ -255,7 +255,7 @@ The following parameters are used to link the file to Identity Manager in the `I
 
 Storing a `.pfx` file password in plain text in a production environment is **strongly discouraged**. The password should always be encrypted using the Usercube-Protect-CertificatePassword tool. See the [Usercube-Protect-CertificatePassword](../../integration-guide/executables/references/protect-certificatepassword) topic for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.json*
@@ -273,7 +273,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 The certificate can be stored in the certificate store instead of the file system. Netwrix recommends this method.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.json*
@@ -309,7 +309,7 @@ The service account used by the Server to access the Database is **either**:
 - A Windows account if the connection string was set up using `<b>Integrated Security=SSPI</b>`.
 - A SQL Server account if the connection string was set up with a login/password.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.json*
@@ -322,7 +322,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 The second **Example** sets a connection string using the SQL Server authentication. `CONTOSO/identitymanagerContosoServer` has been set as the Identity Manager Server IIS website identity.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.json*
@@ -370,7 +370,7 @@ You need to:
 - Double check that the following section is set in your web.config file, in the section
 system.webServer:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <applicationInitialization doAppInitAfterRestart="true">  <add initializationPage="/"></applicationInitialization>

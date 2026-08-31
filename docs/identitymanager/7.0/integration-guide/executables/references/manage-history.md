@@ -27,7 +27,7 @@ To clean the database **periodically**, it can be purged of all the history olde
 
 The following example deletes all the history from the database that is more than 12-month old:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 ./Usercube-Manage-History.exe <b>--purge-before-months 12</b> --database-connection-string "data source=.;Database=Usercube;Integrated Security=SSPI;Min Pool Size=10;encrypt=false;"
@@ -39,7 +39,7 @@ The database can be purged of all history older than a given date.
 
 The following example deletes all the history from the database older than May 26th 1993:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 ./Usercube-Manage-History.exe <b>--purge-before-date 19930526</b> --database-connection-string "data source=.;Database=Usercube;Integrated Security=SSPI;Min Pool Size=10;encrypt=false;"
@@ -59,7 +59,7 @@ For each period, if there is more than one version (i.e. `ValidFrom` is inside t
 - The oldest date is kept (that is, in the database, the `ValidFor` is equal to the one of the
 oldest version in the considered period).
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 ./Usercube-Manage-History.exe <b>--optimize "1440:7 43920:6 525960:2"</b> --database-connection-string "data source=.;Database=Usercube;Integrated Security=SSPI;Min Pool Size=10;encrypt=false;"
@@ -73,7 +73,7 @@ As given data can have several versions in the database, redundant rows can be d
 
 The following example remove all duplicates in the database.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 **./Usercube-Manage-History.exe <b>--clean-duplicates</b> --database-connection-string "data source=.;Database=Usercube;Integrated Security=SSPI;Min Pool Size=10;encrypt=false;"**
@@ -81,7 +81,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 The following example remove all duplicates induced by the `pwdLastSet` property.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 ./Usercube-Manage-History.exe <b>--clean-duplicates</b> --excluded-resource-columns "pwdLastSet" --database-connection-string "data source=.;Database=Usercube;Integrated Security=SSPI;Min Pool Size=10;encrypt=false;"
@@ -93,7 +93,7 @@ To reduce the database load, the tool's optimizations can be made via the local 
 
 The following example deletes all the history from the database that is more than 12-month old, **the optimizations being computed in memory instead of in the database**:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 ./Usercube-Manage-History.exe <b>--purge-before-months 12</b> <b>--in-memory</b> --database-connection-string "data source=.;Database=Usercube;Integrated Security=SSPI;Min Pool Size=10;encrypt=false;"
