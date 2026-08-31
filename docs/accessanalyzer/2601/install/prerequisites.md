@@ -6,7 +6,7 @@ sidebar_position: 1
 
 # Prerequisites
 
-Gather the following before you start the Access Analyzer installer. Everything the installer asks for is on this page. For the full installation walkthrough, see the Quick Install page.
+Gather the following before you start the Access Analyzer installer. Everything you need to know for a successful install is on this page.
 
 ## Checklist
 
@@ -21,9 +21,7 @@ Gather the following before you start the Access Analyzer installer. Everything 
 
 ## System requirements
 
-**Absolute installer minimums:** 6 vCPUs, 24 GB RAM, 20 GB free disk on `/`. The preflight check blocks installation if the system falls below these thresholds.
-
-Choose a deployment size based on your environment:
+Choose a deployment size based on your environment. These values are absolute minimums.
 
 | Size | CPU | Memory | Minimum Disk Space |
 | --- | --- | --- | --- |
@@ -104,11 +102,11 @@ For the full TLS specification, including multi-CA environments, see the TLS Cer
 
 Identify the email address and display name of your first administrator. The installer prompts for both values during setup and provisions a **local** account automatically — it doesn't depend on Active Directory, Entra ID, or any other identity provider.
 
-To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values for the directory you use before you start, so you have them ready in the setup wizard.
+To let users sign in with their Active Directory or Entra ID credentials instead, configure an identity provider after installation. Gather the values for the directory you use before you start, so you have them ready in the installer.
 
 ## Identity provider
 
-Optional. Access Analyzer runs without an identity provider, using the local first admin account. Configure one if you want users to sign in with credentials they already have. Prepare only the directory you plan to use.
+Recommended. Access Analyzer runs without an identity provider, using the local first admin account. Configure one if you want users to sign in with credentials they already have. Prepare only the directory you plan to use.
 
 ### Active Directory
 
@@ -116,7 +114,7 @@ Active Directory doesn't require an application registration. Prepare the follow
 
 **Service account:** Create a dedicated, read-only service account in your directory. Access Analyzer never writes to your directory.
 
-**Certificate:** Prepare a PEM file containing the CA certificate that issued your domain controller's LDAPS certificate. The setup wizard requires it to complete the connection test.
+**Certificate:** Prepare a PEM file containing the CA certificate that issued your domain controller's LDAPS certificate. The installer requires it to complete the connection test.
 
 **Network access:** The Access Analyzer cluster must reach a domain controller in your AD forest over LDAPS (port 636).
 
@@ -129,7 +127,7 @@ Collect the following values:
 | **Service account password** | The password for that service account |
 | **AD authentication certificate** | The CA certificate (PEM) that issued the domain controller's LDAPS certificate |
 
-You don't need to look up the users base DN or the email attribute yourself. After you enter the domain, service account, and certificate, the wizard tests the connection and discovers both automatically.
+You don't need to look up the users base DN or the email attribute yourself. After you enter the domain, service account, and certificate, the installer tests the connection and discovers both automatically.
 
 ### Entra ID
 
@@ -140,7 +138,7 @@ Complete the following steps in the Azure Portal before connecting Access Analyz
 1. Open **Azure Portal** > **Entra ID** > **App registrations** > **New registration**.
 2. Name the application and click **Register**.
 3. Open the registration > **Authentication** > **Add a platform** > **Web**, and add two redirect URIs:
-   - The URI shown on the Access Analyzer setup wizard's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — the wizard uses this once, during the admin-consent step.
+   - The URI shown on the Access Analyzer installer's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — the wizard uses this once, during the admin-consent step.
    - `https://<your-hostname>/idps/callback` — Microsoft redirects here every time a user signs in with Entra ID.
 4. Go to **Certificates & secrets** > **New client secret**. Set an expiry that fits your rotation policy and copy the value immediately — the portal shows it only once.
 
@@ -153,7 +151,7 @@ Collect the following values:
 | **Client secret** | The value you copied in step 4 |
 
 :::note
-Register both redirect URIs before anyone signs in with Entra ID. The setup wizard's callback completes the connection; `/idps/callback` is Microsoft's redirect target for every subsequent sign-in — omitting it lets you finish setup but blocks sign-in with an `AADSTS50011` redirect URI mismatch.
+Register both redirect URIs before anyone signs in with Entra ID. The installer's callback completes the connection; `/idps/callback` is Microsoft's redirect target for every subsequent sign-in — omitting it lets you finish setup but blocks sign-in with an `AADSTS50011` redirect URI mismatch.
 :::
 
 ## License key
