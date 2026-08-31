@@ -22,6 +22,10 @@ The following table shows Hub releases and the component versions verified to wo
 | 8.0.0 | 7.1.5      | 2.1.1         | 2.1.0        | 7.0.1   | 8.0.0        |
 | 7.7.4 | 7.1.4      | 2.1.1         | 2.0.4        | 7.0.1   | 6.0.0        |
 
+:::info
+The remaining information on this page applies to the latest Change Tracker release. Confirm the latest release on the [Netwrix Community](https://community.netwrix.com/c/products/change-tracker/news/98).
+:::
+
 ## Windows Operating Systems
 
 The versions in the following table cover Standard and Datacenter editions, plus the server core installation option.
