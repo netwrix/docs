@@ -41,6 +41,7 @@ For the full symptom, cause, and resolution details for each issue, see [Migrati
 - **Predefined HIPAA dictionaries stop working after a server hostname/IP change** — See [Predefined HIPAA Dictionaries Stop Working After Migration](/docs/endpointprotector/install/migrationprocedure/troubleshooting#predefined-hipaa-dictionaries-stop-working-after-migration).
 - **Recurring HTTP 500 errors resolved only by a full reboot** — typically an undersized-server issue, not a one-time import failure. See [Recurring HTTP 500 Errors Resolved Only by a Full Reboot](/docs/kb/endpointprotector/troubleshooting-and-errors/recurring-http-500-errors-resolved-only-by-a-full-reboot).
 - **SSO login fails after migration when the new server uses an IP address instead of an FQDN** — reviewing the SSO configuration after restore is mandatory in this case. See [SSO Login Fails After Migration When the Server Uses an IP Address Instead of an FQDN](/docs/endpointprotector/install/migrationprocedure/troubleshooting#sso-login-fails-after-migration-when-the-server-uses-an-ip-address-instead-of-an-fqdn).
+- **Content Aware Protection (CAP) policies don't trigger after migration** — in rare cases, editing and re-saving the affected policy redistributes it and resolves the issue. See [CAP Policies Not Triggering After Migration](/docs/endpointprotector/install/migrationprocedure/troubleshooting#cap-policies-not-triggering-after-migration).
 
 ## EPP Client Issues
 
