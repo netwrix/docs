@@ -1,23 +1,12 @@
 ---
-title: "SP Initiated SSO"
-description: "SP Initiated SSO"
-sidebar_position: 30
+title: "SP-Initiated SSO"
+description: "Use the current SAML configuration documentation for SP-initiated SSO in NPS-D."
+sidebar_label: "SP-initiated SSO"
+unlisted: true
 ---
 
-# SP Initiated SSO
+# SP-Initiated SSO
 
-SP Initiated SSO
+For Microsoft Entra ID, use [Configure SAML SSO with Microsoft Entra ID](./microsoftentraid/samlsso.md).
 
-# SP Initiated SSO
-
-## Overview
-
-This article explains how to configure SP Initiated flow for Privilege Secure. SSO configuration now
-includes a setting for changing to an SP initiated flow. This is available under the server
-configuration:
-
-![Screen_Shot_2022-10-03_at_10.43.L38_AM.webp](/images/privilegesecure/4.2/discovery/admin/configuration/9301281781911_screen_shot_2022-10-03_at_10.43.38_am.webp)
-
-In the SSO configuration panel iDP or SP initiated flow can be selected:
-
-![Screen_Shot_2022-10-11_at_10.30.L46_AM.webp](/images/privilegesecure/4.2/discovery/admin/configuration/9301281781911_screen_shot_2022-10-11_at_10.30.46_am_649x494.webp)
+For other identity providers, review [SAML SSO configuration](./ssoconfiguration.md) and the provider-specific configuration page.
