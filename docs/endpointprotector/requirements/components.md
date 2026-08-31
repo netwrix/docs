@@ -47,16 +47,12 @@ protection rules and logs activity for auditing purposes.
 
 **MySQL database**
 
-The Endpoint Protector server uses a MySQL 8.4 LTS database that stores configuration data, agent provisioning settings,
+The Endpoint Protector server uses a lastest MySQL LTS database that stores configuration data, agent provisioning settings,
 user activity logs, and incident reports. MySQL handles agent registration, policy definitions, entity management, and other provisioning data.
 
-**CrateDB**
+**Relational Database Management System**
 
-CrateDB is a distributed SQL database optimized for time-series log data. Endpoint Protector uses CrateDB to store Device Control, Content Aware Protection, and eDiscovery logs. You can deploy CrateDB as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. You can add cluster nodes with minimal downtime and availability impact.
-
-**Redis**
-
-Redis serves as an in-memory buffer for incoming agent logs. When endpoints send log data to the server, Redis temporarily caches the logs before Endpoint Protector ingests them into CrateDB. This replaces the previous disk-based caching mechanism, eliminating filesystem read and write bottlenecks and enabling higher throughput.
+Relational Database Management System is a distributed SQL database optimized for time-series log data. Endpoint Protector uses RDBMS to store Device Control, Content Aware Protection, and eDiscovery logs. You can deploy RDBMS as a single node on the Endpoint Protector (EPP) server appliance or as a multi-node cluster for environments that generate high log volumes. You can add cluster nodes with minimal downtime and availability impact.
 
 **Firewall/gateway device**
 
@@ -73,18 +69,6 @@ The Data Loss Prevention (DLP) administrator manages the Endpoint Protector infr
 - LAN Users—internal users connected to the organization's Local Area Network (LAN), whose devices the Endpoint Protector server monitors to prevent unauthorized data transfers
 - Remote Users—remote employees who access the network through secure channels via the firewall/gateway, whose activities Endpoint Protector monitors to ensure consistent policy enforcement
 
-### Server runtime requirements
-
-The Endpoint Protector server runs on the following runtime components:
-
-| Component | Version |
-|-----------|---------|
-| PHP | 8.5 |
-| MySQL | 8.4 LTS |
-| CrateDB | Distributed SQL (configurable as single-node or cluster) |
-| Redis | 7.x |
-| Nginx | Web server and reverse proxy |
-| Ubuntu | Server operating system |
 
 ### Client to server communication
 

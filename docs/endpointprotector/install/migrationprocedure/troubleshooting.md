@@ -6,10 +6,6 @@ sidebar_position: 20
 
 # Troubleshooting Common Issues
 
-:::info Temporary — Two Migration Targets Until Late August 2026
-This page primarily covers migrating to **2608**. Until Netwrix releases 2608 (expected **late August 2026**), legacy 5.x customers who need to migrate sooner can still follow the temporary [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510) path instead. Entries that differ between the two targets carry a **2510/2604 path:** marker. Netwrix will remove this distinction, and these marked notes, once 2608 ships.
-:::
-
 ## EPP Server
 
 ### High CPU Usage After Mass Client Reconnect
@@ -40,10 +36,6 @@ A CPU spike following a mass reconnect event is expected behavior. It doesn't in
 1. Verify the source server version (Appliance → Server Information) against the accepted versions named in the root cause.
 2. If the source is an older 5.x version, complete the cumulative patch to 5.9.4.2 first — see [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x).
 3. Create a new backup on the accepted source version and retry.
-
-:::note
-**2510/2604 path:** The 2510/2604 platform accepts only exactly **5.9.4.2** as a source — see [Migrating from a Legacy 5.x Server to 2510/2604](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510).
-:::
 
 ---
 
@@ -134,10 +126,6 @@ Back up files before deleting them from `/tmp`. Deleting `cflog_initial*` files 
 This caching behavior is specific to the legacy communication flow. The 2608 server release fixes this by making these links independent of the server's hostname — you only need this workaround on servers still below 2608.
 :::
 
-:::note
-**2510/2604 path:** You still need this workaround — the fix ships only in 2608, not 2510/2604.
-:::
-
 ---
 
 ### eDiscovery Scan Locations Ignored After Migration
@@ -147,6 +135,16 @@ This caching behavior is specific to the legacy communication flow. The 2608 ser
 **Cause:** eDiscovery policies with Scan Locations don't fully re-apply when restored from a System Configuration Backup — the Scan Locations setting is silently ignored.
 
 **Resolution:** Edit and save each affected eDiscovery policy (no actual change required) to re-apply its Scan Locations. Verify with a test scan afterward.
+
+---
+
+### CAP Policies Not Triggering After Migration
+
+**Symptom:** After restoring the backup, one or more existing Content Aware Protection (CAP) policies don't trigger — content that should be detected or blocked passes through undetected. No error is logged or displayed.
+
+**Cause:** In rare cases, a CAP policy restored from a System Configuration Backup doesn't fully redistribute to endpoints, so the policy silently stops enforcing.
+
+**Resolution:** Edit and save each affected CAP policy (no actual change required) to redistribute it to endpoints. Verify with a test transfer afterward.
 
 ---
 
@@ -167,7 +165,7 @@ This is a recurring, ongoing issue distinct from the one-time 500 error that can
 ### Verifying the php_els License Entitlement (2509–2604 Only) {#verifying-the-php_els-license-entitlement-2509-2604-only}
 
 :::note
-This applies only to the **2509–2604** image line — including the temporary [5.x → 2510/2604 path](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). **2608 no longer uses the `php_els` entitlement** — if your license still contains that field, 2608 ignores it, and this section doesn't apply.
+This applies only to the **2509–2604** image line. **2608 no longer uses the `php_els` entitlement** — if your license still contains that field, 2608 ignores it, and this section doesn't apply.
 :::
 
 **Symptom:** On a 2509–2604 server, the underlying OS components don't receive updates, or **ELS for PHP** doesn't show as **Active** in **Appliance → Server Information**.
@@ -229,13 +227,13 @@ If errors appear instead:
 **Checklist:**
 1. Verify that you have re-enabled client communications on the new server.
 2. Confirm the new server is reachable on the expected IP/FQDN from endpoints.
-3. Check that you uploaded the 2608 client package to the server (**2510/2604 path:** the 2605 client instead).
+3. Check that you uploaded the 2608 client package to the server.
 4. Verify the old server is no longer running on the same IP if using same-IP strategy.
 5. Check endpoint firewall rules allow outbound on ports 443 and any other configured EPP ports.
 6. Test with a clean install of the latest EPP Client to eliminate potential issues caused by a corrupted existing client.
 
 :::note
-If clients were on 5.9.4.1 or older, they also require the 5.9.4.3 Hotfix 1 signature bridge before they can receive the 2608 client package — any client already on 5.9.4.3 Hotfix 1 or later can go straight to 2608. See [EPP Clients Not Communicating After Migration](/docs/endpointprotector/install/migrationprocedure/faq.md#epp-clients-not-communicating-after-migration) in the FAQ for the full checklist, including the signature bridge requirement. **2510/2604 path:** the same bridge requirement applies for reaching the 2605 client.
+If clients were on 5.9.4.1 or older, they also require the 5.9.4.3 Hotfix 1 signature bridge before they can receive the 2608 client package — any client already on 5.9.4.3 Hotfix 1 or later can go straight to 2608. See [EPP Clients Not Communicating After Migration](/docs/endpointprotector/install/migrationprocedure/faq.md#epp-clients-not-communicating-after-migration) in the FAQ for the full checklist, including the signature bridge requirement.
 :::
 
 ---
