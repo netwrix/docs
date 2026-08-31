@@ -124,12 +124,12 @@ or removing parent resources from the review also adds or removes their children
 
 - After the resources you want have been selected, click **Next**.
 
-![Edit Review wizard Summary page](/docs/accessinformationcenter/11.6/resourcereviews/wizard/summary_1.webp)
+![Edit Review wizard Summary page](/images/accessinformationcenter/11.6/resourcereviews/wizard/summary_1.webp)
 
 **Step 6 –** On the Summary page, review the updated settings and click **Next**. The Access
 Information Center begins to update the review.
 
-![Edit Review wizard update completed message](/docs/accessinformationcenter/11.6/resourcereviews/wizard/completed.webp)
+![Edit Review wizard update completed message](/images/accessinformationcenter/11.6/resourcereviews/wizard/completed.webp)
 
 **Step 7 –** The action status displays on the page. When the review has been updated (100%), click
 **Close**. The Edit Review wizard closes.
