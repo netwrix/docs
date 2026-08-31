@@ -7,13 +7,13 @@ sidebar_position: 50
 
 # Validate and troubleshoot the Microsoft Entra ID integration
 
-Validate each integration layer separately before you expand the production scope. A successful Microsoft Graph connection doesn't prove SAML authentication or endpoint connectivity. A successful endpoint detection and response (EDR) connection test doesn't prove that a connector can complete an endpoint action.
+Validate each Netwrix Privilege Secure for Discovery (NPS-D) integration layer separately before you expand the production scope. A successful Microsoft Graph connection doesn't prove SAML authentication or endpoint connectivity. A successful endpoint detection and response (EDR) connection test doesn't prove that a connector can complete an endpoint action.
 
 ## Troubleshoot directory synchronization and SAML
 
 | Symptom | Action |
 | --- | --- |
-| **Test Connection** fails | Verify the tenant ID, application or client ID, secret **Value**, credential expiration, required application permissions, and administrator consent. |
+| **Test Connection** fails | Verify the tenant ID, application (client) ID, secret **Value**, credential expiration, required application permissions, and administrator consent. |
 | **Test Connection** succeeds, but synchronization fails | Verify consent and credential validity. Review the user, group, device, and relationship synchronization logs. |
 | Users or groups are absent | Confirm that the full synchronization completed. Verify the required Graph permissions, group memberships, and delta-cycle results. |
 | `AADSTS50011` | Correct the Reply URL so that the scheme, host, path, case, and trailing slash match exactly. |
@@ -30,7 +30,7 @@ For local recovery, open `https://npsd.example.com/#/login`, select **Show local
 
 ## Validate endpoint operations
 
-Run only the tests that apply to the selected [endpoint operating model](./overview.md#select-an-endpoint-operating-model) and the capabilities supported by the commissioned connector and installed release.
+Run only the tests that apply to the selected [endpoint operating model](./overview.md#select-an-endpoint-operating-model) and to the capabilities that the commissioned connector and installed release support.
 
 For the Entra Native baseline, acceptance ends after read-only inventory succeeds. Don't test Protect, Deny, Just-In-Time Access (JIT/JITA), or Offline Access Management (OAM) in that model.
 
@@ -79,7 +79,7 @@ Define and approve:
 - Password length and complexity
 - Scheduled and post-use rotation
 - Password-history retention
-- Roles allowed to retrieve an offline credential
+- Roles that can retrieve an offline credential
 - Pilot scope, audit ownership, rollback, and recovery procedures
 
 Validate credential retrieval, endpoint login, rotation, history, audit evidence, and offline recovery before you expand the scope.
@@ -108,7 +108,7 @@ Rotate one integration credential at a time. Complete its connection and functio
 1. Preserve and retest local login.
 2. Schedule a controlled change window.
 3. Activate the new certificate in the same enterprise application.
-4. Update the certificate body stored by NPS-D.
+4. Update the certificate body that NPS-D stores.
 5. Test SP-initiated SAML before you retire the old certificate.
 
 ## Troubleshoot endpoint operations
@@ -116,7 +116,7 @@ Rotate one integration credential at a time. Complete its connection and functio
 | Symptom | Action |
 | --- | --- |
 | Graph synchronization succeeds, but endpoint inventory is empty | Graph synchronization doesn't prove endpoint reachability. For the baseline, verify Domain Name System (DNS) or IP resolution, required ports and protocols, the Scan account, and Scan Mode. For EDR, verify agent health and provider assignment. For Hybrid, verify the direct AD and Windows path. |
-| EDR **Test Connection** succeeds, but the endpoint scan fails | Verify that the device is active and visible in the provider, its identifier maps to the expected NPS-D record, the EDR configuration is enabled and assigned, and the provider credential has the permissions required by the provider guide. |
+| EDR **Test Connection** succeeds, but the endpoint scan fails | Verify that the device is active and visible in the provider, its identifier maps to the expected NPS-D record, the EDR configuration is enabled and assigned, and the provider credential has the permissions that the provider guide requires. |
 | New devices use the EDR configuration, but existing devices don't | Domain defaults apply to newly discovered devices. Assign the EDR configuration to existing devices individually or through **Bulk Actions**. |
 | Protect, JIT/JITA, or OAM is unavailable or fails | Confirm that the selected connector and installed NPS-D release support the action. Verify the device policy and provider-side prerequisites. Don't enable the action until its pilot succeeds. |
 | Tanium Bulk Scan omits devices | Verify the exact computer-group name, group membership, agent health, EDR assignment, and completed, offline, and unmatched counts. |

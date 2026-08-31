@@ -30,7 +30,7 @@ A direct scan succeeds only when:
 
 Keep Protect, Deny, Just-In-Time Access (JIT/JITA), and Offline Access Management (OAM) disabled in this model.
 
-This model doesn't guarantee that NPS-D can scan every Entra-joined device. If an endpoint isn't directly reachable, Microsoft Graph can still supply its directory record, but NPS-D can't collect endpoint-local inventory through Graph. Use Entra Native with EDR or AD and Entra Hybrid when reliable endpoint operations are required.
+This model doesn't guarantee that NPS-D can scan every Entra-joined device. If an endpoint isn't directly reachable, Microsoft Graph can still supply its directory record, but NPS-D can't collect endpoint-local inventory through Graph. Use Entra Native with EDR or AD and Entra Hybrid when you require reliable endpoint operations.
 
 ## Entra Native with EDR
 
@@ -56,7 +56,7 @@ Use the provider guide to configure provider-side access and required NPS-D fiel
    ![Select an EDR provider in NPS-D](/img/product_docs/privilegesecurediscovery/microsoftentraid/15-npsd-edr-provider-selector.webp)
 
 6. Enter a descriptive configuration name, provider URL, dedicated application programming interface (API) credential, proxy settings, and provider-specific values.
-7. Enable the provider option used for remote systems management when the configuration is ready for testing. The field label varies by provider.
+7. Enable the provider option for remote systems management when the configuration is ready for testing. The field label varies by provider.
 
 The following screenshot shows a disabled CrowdStrike Falcon configuration with documentation-only values. It doesn't show a successful connection. Don't copy these values to a production configuration.
 
@@ -115,7 +115,7 @@ An Entra-joined device alone doesn't establish the hybrid model. NPS-D must cont
    - For Kerberos, use the corresponding AD principal and configure the correct AD DNS and NetBIOS names.
 
 7. Keep Protect and OAM disabled. Complete and validate the LDAP synchronization.
-8. Add the corresponding Microsoft Entra source as described in [Configure Microsoft Graph directory synchronization](./directorysynchronization.md).
+8. Add the corresponding Microsoft Entra source. See [Configure Microsoft Graph directory synchronization](./directorysynchronization.md).
 9. Complete both synchronization paths.
 10. Verify that the pilot AD objects correlate with their Microsoft Entra representations without duplicates.
 11. Verify that each pilot user and device maps to one NPS-D record. Confirm the expected AD identifiers, domain, DNS name, domain-controller classification when applicable, group memberships, and source of the effective policy.

@@ -14,7 +14,7 @@ In NPS-D, open **Configure > Server > SAML Configuration**. The values depend on
 | Field | Description |
 | --- | --- |
 | **Entrypoint** | The application-specific IdP URL where NPS-D sends the authentication request. |
-| **Issuer** | The entity identifier that NPS-D expects for the configured SAML relationship. It must exactly match the value configured in the IdP. |
+| **Issuer** | The entity identifier that NPS-D expects for the configured SAML relationship. It must exactly match the value that you configure in the IdP. |
 | **Issuer Cert** | The Base64 body of the active application-specific SAML signing certificate. Exclude the `BEGIN CERTIFICATE` and `END CERTIFICATE` marker lines. |
 | **SSO Enabled** | Enables SAML authentication. Keep a tested local administrator session open while you stage or change the configuration. |
 | **SSO Flow** | Selects the supported IdP-initiated or service provider-initiated flow for the integration. |

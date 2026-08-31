@@ -32,7 +32,7 @@ This procedure applies to NPS-D 25.12.0 and later. Complete the [integration pre
 
    | Permission | Requirement | Purpose |
    | --- | --- | --- |
-   | `Directory.Read.All` | Required | Reads directory, user, group, domain, and membership data used by the NPS-D synchronization flow |
+   | `Directory.Read.All` | Required | Reads directory, user, group, domain, and membership data that the NPS-D synchronization flow uses |
    | `Device.Read.All` | Required | Reads device inventory, device relationships, and device delta changes |
    | `Member.Read.Hidden` | Conditional | Reads hidden group memberships when the deployment requires complete hidden-membership synchronization |
 
@@ -73,7 +73,7 @@ Don't include the generated value in screenshots, tickets, chat, or video.
    | Protect Mode | Keep disabled until you separately commission a supported write path. |
    | Scan and Protect accounts | Enter dedicated least-privilege identities from the approved endpoint-management design. |
 
-NPS-D 26.06 requires the Scan and Protect account fields in the Microsoft Entra form even when the related modes are disabled. Enter only approved, dedicated account values. If an EDR-only deployment doesn't have approved direct Windows accounts, contact Netwrix Support for the supported value convention for the exact installed release before you save the source.
+NPS-D 26.06 requires the Scan and Protect account fields in the Microsoft Entra form even when the related modes are disabled. Enter only approved, dedicated account values. If a deployment that relies only on endpoint detection and response (EDR) doesn't have approved direct Windows accounts, contact Netwrix Support for the supported value convention for the exact installed release before you save the source.
 
 4. Select **Test Connection**.
 5. Save the source.
@@ -89,11 +89,11 @@ For an Entra-native deployment, complete the following checks before you configu
 - Confirm that the pilot user exists in **Configure > Users and Groups**.
 - Confirm that the synchronized `sAMAccountName` and `domain_fqdn` produce the expected user principal name.
 - Confirm that the pilot user has a direct or group-derived NPS-D role.
-- Confirm that required group memberships are present, including hidden memberships when the optional permission is used.
+- Confirm that required group memberships are present, including hidden memberships when you use the optional permission.
 - Complete one full synchronization and at least one later delta cycle.
 - Confirm that distributable evidence contains no credential or sensitive customer identifier.
 
-NPS-D synchronizes general Microsoft Entra groups returned by Microsoft Graph. The flow isn't limited to Microsoft 365 groups. Plan the initial import as tenant-wide because the NPS-D 26.06 Microsoft Entra configuration doesn't provide an object-scope filter.
+NPS-D synchronizes the general Microsoft Entra groups that Microsoft Graph returns. The flow isn't limited to Microsoft 365 groups. Plan the initial import as tenant-wide because the NPS-D 26.06 Microsoft Entra configuration doesn't provide an object-scope filter.
 
 After the import passes these checks, [configure SAML SSO](./samlsso.md).
 

@@ -13,7 +13,7 @@ Complete [Microsoft Graph directory synchronization](./directorysynchronization.
 
 Keep a tested local NPS-D administrator session open throughout the configuration.
 
-The screenshots in this procedure show a documentation lab and example values. Use the customer FQDN and the values from the approved implementation record.
+The screenshots in this procedure show a documentation lab and example values. Use the customer fully qualified domain name (FQDN) and the values from the approved implementation record.
 
 ## Create a non-gallery enterprise application
 
@@ -35,7 +35,7 @@ The screenshots in this procedure show a documentation lab and example values. U
 ## Configure the SAML URLs
 
 1. Open **Single sign-on > SAML > Basic SAML Configuration**.
-2. Enter the values recorded in the [integration worksheet](./overview.md#record-the-integration-values).
+2. Enter the values from the [integration worksheet](./overview.md#record-the-integration-values).
 
    | Microsoft Entra field | Value |
    | --- | --- |
@@ -118,7 +118,7 @@ Keep Auto-Redirect to IdP off until the baseline SAML flow and local recovery lo
 
 | Setting | Login behavior |
 | --- | --- |
-| Off (default) | The local username and password form appears first. When SSO is enabled, users can select **Show SSO login**, then **SSO Login**. |
+| Off (default) | The local username and password form appears first. After you enable SSO, users can select **Show SSO login**, then **SSO Login**. |
 | On with SSO enabled | An unauthenticated request to a protected NPS-D route starts SSO and redirects the browser to the identity provider (IdP). A direct visit to the NPS-D login page opens the SSO view first and retains **Show local login**. |
 | On with SSO disabled | The local login form remains available, and NPS-D doesn't start an SSO redirect. |
 
@@ -177,9 +177,9 @@ If SSO or local recovery fails, use the preserved administrator session to turn 
 Record evidence for the following tests:
 
 - An assigned, synchronized, and authorized pilot user succeeds.
-- An unassigned user is denied by Microsoft Entra.
-- An assigned user who is absent from NPS-D is denied.
-- A user without an effective NPS-D role is denied.
+- Microsoft Entra denies an unassigned user.
+- NPS-D denies an assigned user who has no NPS-D account.
+- NPS-D denies a user without an effective NPS-D role.
 - An incorrect Reply URL fails in a controlled manner.
 - A case-mismatched NameID doesn't match.
 - NPS-D rejects an inactive or incorrect signing certificate.
@@ -192,7 +192,7 @@ Record evidence for the following tests:
 
 The following English walkthrough shows Microsoft Graph synchronization and SP-initiated SAML configuration.
 
-The video was recorded with NPS-D 26.06 and doesn't show Auto-Redirect to IdP, which is available in NPS-D 26.09.0 and later.
+The video uses NPS-D 26.06 and doesn't show Auto-Redirect to IdP, which is available in NPS-D 26.09.0 and later.
 
 <video controls preload="metadata" width="100%">
   <source src="/videos/privilegesecurediscovery/microsoftentraid/entra-id-saml-configuration.mp4" type="video/mp4" />

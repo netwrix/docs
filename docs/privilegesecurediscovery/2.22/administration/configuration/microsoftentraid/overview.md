@@ -40,8 +40,8 @@ Choose the model that provides a reliable path from NPS-D to the managed Windows
 | --- | --- | --- | --- |
 | Directory synchronization | Microsoft Graph | Microsoft Graph | LDAP and Microsoft Graph |
 | SAML SSO | Yes | Yes | Yes |
-| Scan and inventory | Inventory only; direct network access and a valid Scan account are required | Supported EDR path | Direct AD and Windows path; EDR is optional |
-| Protect, Deny, JIT/JITA, and OAM | Keep disabled | Enable only actions supported by the connector and installed release | Commission through the approved direct or EDR path |
+| Scan and inventory | Inventory only; requires direct network access and a valid Scan account | Supported EDR path | Direct AD and Windows path; EDR is optional |
+| Protect, Deny, JIT/JITA, and OAM | Keep disabled | Enable only the actions that the connector and installed release support | Commission through the approved direct or EDR path |
 | Active Directory required | No | No | Yes |
 
 The Entra Native baseline provides Entra directory visibility, SAML SSO, and read-only endpoint inventory when NPS-D can resolve, reach, and authenticate to the Windows endpoint. It doesn't guarantee inventory from every Entra-joined device. If an endpoint isn't directly reachable, Microsoft Graph can still supply its directory record, but NPS-D can't collect endpoint-local inventory through Graph.
