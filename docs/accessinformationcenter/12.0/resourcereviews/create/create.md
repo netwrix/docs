@@ -32,13 +32,13 @@ It contains four pages:
 
 
     - Select whether to notify the review creator when the resources have been reviewed
-    - For Access and Permissions reviews, indicate whether or not child resources with permission
+    - For Access and Permissions reviews, indicate whether child resources with permission
       changes will be included.
 
         :::note
         This typically occurs due to broken inheritance and permissions being explicitly
         set. This option allows the entire resource hierarchy to be reviewed where permissions have
-        been changed. It is not applicable to Membership and Sensitive Data reviews.
+        been changed. It isn't applicable to Membership and Sensitive Data reviews.
         :::
 
 
@@ -54,7 +54,7 @@ See the Create a Review topic for additional information.
 
 ## Create a Review
 
-Follow the steps to create a review.
+Create a review.
 
 **Step 1 –** On the Manage Reviews page, click Create. The Create Review wizard opens.
 
@@ -78,7 +78,7 @@ Follow the steps to create a review.
   [Resource Reviewed Email](/docs/accessinformationcenter/12.0/resourcereviews/approvalprocess/resourcereviewed.md) topic for additional information.
 
     :::note
-    This option is not available for the Builtin Administrator account as it has no email
+    This option isn't available for the Builtin Administrator account as it has no email
     to receive notifications.
     :::
 
@@ -109,7 +109,7 @@ Netwrix Access Analyzer (formerly Enterprise Auditor) data collection scans.
 :::
 
 
-**Step 4 –** Optionally check the **Reviewers are able to see the sensitive data match if
+**Step 4 –** Optionally check the **Reviewers can see the sensitive data match if
 available** option to allow the owner with Console Access roles of Security Team or Administrator to
 view potentially sensitive data within the review. Click **Next** to continue.
 
@@ -123,11 +123,9 @@ not allow the review to be created until those resources have been removed or th
 
 ![Create Review wizard Resources page](/images/accessinformationcenter/12.0/resourcereviews/wizard/resources.webp)
 
-**Step 5 –** On the Resources page, select the resources to be included in the review. The Search
-feature is available to filter the list of available resource that match the type of review being
-created.
+**Step 5 –** On the Resources page, select the resources to be included in the review. Use the Search feature to filter resources by review type.
 
-- The table displays the following information:
+- The table shows the following information:
 
     - Resources — The icon indicates the type of resource. The resource name includes its location,
       such as the UNC path for a file system resource, the URL for SharePoint resource, or Group
@@ -135,21 +133,17 @@ created.
     - Description — Description or explanation of the resource as supplied by either the Ownership
       Administrator or the assigned owner
     - Reviewer — Primary owner assigned to the resource
-    - Confirmed — Indicates whether or not the assigned owner has confirmed ownership of that
-      resource. Tool-tips display when hovering over the icons indicating whether the resource
-      ownership has been confirmed, declined, pending response, or that a confirmation has not been
-      requested.
+    - Confirmed — Shows whether the assigned owner confirmed ownership of the resource. Hover over icons to see whether ownership has been confirmed, declined, is pending a response, or wasn't requested.
     - Scan Data — A checkmark indicates the resource has been scanned. Only resources with scan data
       can be included in a review.
-    - Active Review — Indicates whether or not there is a pending review
+    - Active Review — Indicates whether there is a pending review
 
-- Select the desired resource(s) and click **Add**. The **View Selections** button indicates how
+- Select the resources you want and click **Add**. The **View Selections** button indicates how
   many resources have been selected. Click the button to open the Selected Resources window, where
   you can view and modify the selections. See the
   [Selected Resources Window](/docs/accessinformationcenter/12.0/resourcereviews/interface/selectedresources.md) topic for additional information.
 - Alternatively you can import a list of resources from a CSV file. Click the **Import** button and
-  then select the CSV file. A message displays if items are not found or not valid for the review.
-  Any valid resources are selected and can be viewed in the Selected Resources window.  See the
+  then select the CSV file. A message appears if items aren't found or not valid for the review. The application selects any valid resources, and you can view them in the Selected Resources window.  See the
   [Missing Items Window](/docs/accessinformationcenter/12.0/resourcereviews/create/missingitems.md) topic for additional information
 
     The CSV file must use the following format for the resources:
@@ -159,7 +153,7 @@ created.
     - Groups: `Domain\GroupName`
     - Distribution lists: `Name@domain.com`
 
-- Once the desired resources have been selected, click **Next**.
+- After you've selected the resources you want, click **Next**.
 
 ![Create Review wizard Summary page](/images/accessinformationcenter/12.0/resourcereviews/wizard/summary.webp)
 
@@ -168,11 +162,9 @@ Center begins to create the review.
 
 ![Create Review wizard review created message](/images/accessinformationcenter/12.0/resourcereviews/wizard/created.webp)
 
-**Step 7 –** The action status displays on the page. When the review has been created (100%), click
-**Close**. The Create Review wizard closes.
+**Step 7 –** The page shows the action status. When the review is created (100%), click **Close**. The Create Review wizard closes.
 
-The new review displays in the table on the Manage Reviews page. An email was sent to the primary
-owner assigned to the resource(s) in this review. By default, the application is configured to send
+The new review appears in the table on the Manage Reviews page. The application sends an email to the primary owner assigned to the resources in this review. By default, the application is configured to send
 notifications only to the primary owner. However, this can be customized on the Configuration >
 Notifications page to send notifications to all assigned owners. See the
 [Notifications Page](/docs/accessinformationcenter/12.0/admin/configuration/notifications.md) topic for additional information.

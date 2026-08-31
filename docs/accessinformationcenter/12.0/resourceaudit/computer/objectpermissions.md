@@ -16,7 +16,7 @@ additional information.
 
 ![Object Permissions report](/images/accessinformationcenter/12.0/resourceaudit/computer/objectpermissions.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Trustee Type – Type of the trustee
 - Trustee Name – Trustee with permissions to the object

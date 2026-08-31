@@ -9,8 +9,7 @@ sidebar_position: 10
 The following imported data reports are available for selections within the Resources pane.
 
 :::note
-Although the reports are always displayed at the nodes and levels listed, whether they are
-populated is determined by what data is imported for the environment.
+Although the reports always appear at the nodes and levels listed, whether they contain data depends on what you import for the environment.
 :::
 
 

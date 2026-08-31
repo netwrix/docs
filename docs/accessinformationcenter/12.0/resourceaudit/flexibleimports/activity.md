@@ -12,7 +12,7 @@ range. The **Include Subfolders** option is active by default until removed. See
 
 ![Activity report for imported data](/images/accessinformationcenter/12.0/resourceaudit/flexibleimports/activity.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Access Time – Date and timestamp for when the operation occurred
 - Trustee Name – Owner of the trustee account

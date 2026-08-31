@@ -19,7 +19,7 @@ additional information.
 
 ### Access Analyzer Solutions
 
-The .Active Directory Inventory Solution must be successfully executed prior to installing the
+The .Active Directory Inventory Solution must be successfully executed before installing the
 Access Information Center.
 
 :::info
@@ -31,7 +31,7 @@ supply the data for Resource Audits.
 ### Permissions
 
 Permissions are needed to the Access Analyzer database and to Active Directory. This can be one
-account with sufficient rights to each or two separate accounts. For the purpose of this document,
+account with sufficient rights to each or two separate accounts. In this document,
 these will be referred to as the Database service account and the Active Directory service account.
 
 - Database service account – Typically, this is the same account used by Access Analyzer for a
@@ -72,13 +72,13 @@ additional information and best practices.
 
 To enable Secure Sockets Layer (SSL) for secure remote connections to the Access Information Center,
 a password-enabled certificate with a private key is required. This certificate should reside in a
-local folder for browsing prior to installing the Access Information Center. The certificate can
+local folder for browsing before installing the Access Information Center. The certificate can
 also be in any of the Local Machine certificate stores.
 
 ### Remote AIC Console Sever Requirements
 
-If it is necessary to install the Access Information Center on a server separate from the Access
-Analyzer Console, the following minimal server requirements are needed for Access Reporting:
+To install the Access Information Center on a server separate from the Access Analyzer Console,
+meet the following minimal server requirements for Access Reporting:
 
 - Windows Server 2016 through Windows Server 2022
 
@@ -91,7 +91,7 @@ Analyzer Console, the following minimal server requirements are needed for Acces
 - .NET Framework 4.7.2+
 
 :::note
-If utilizing any of the Access Information Center workflows (Resource Reviews or
+If using any of the Access Information Center workflows (Resource Reviews or
 Self-Service Access Requests), additional CPU cores, memory, and disk space may be needed.
 :::
 

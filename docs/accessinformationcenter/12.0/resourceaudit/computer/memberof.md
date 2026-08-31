@@ -11,13 +11,13 @@ computer is a member. This report includes a Membership Paths table.
 
 ![Member Of report](/images/accessinformationcenter/12.0/resourceaudit/computer/memberof.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Group Account – Account associated with the group
 - Group Mail – Group’s email account as read from Active Directory, if applicable
 - Group ObjectSid – Security ID of the group object
 - Domain Name – Name of the domain
-- Group Scope – Scope of the group object: Domain Local, Global, or Universall
+- Group Scope – Scope of the group object: Domain Local, Global, or Universal
 - Group Target – Type of the group object: Distribution or Security
 - Membership – Type of membership the audited object has to the selected group
 
@@ -38,7 +38,7 @@ Since this report is a list of groups, the Group Membership pane displays the gr
 including nested groups.
 
 There is one table at the bottom displaying Membership Paths for the select group. It contains all
-of the ways the audited computer has been granted membership to the selected group.
+of the ways the audited computer received membership to the selected group.
 
 - Type – Type of membership the audited object has to the selected group
 

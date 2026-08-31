@@ -12,6 +12,6 @@ The following reports are available at the instance level:
 - [Sensitive Content Details Report](/docs/accessinformationcenter/12.0/resourceaudit/sql/instance/sensitivecontentdetails.md)
 - [Sensitive Content Summary Report](/docs/accessinformationcenter/12.0/resourceaudit/sql/instance/sensitivecontentsummary.md)
 
-Remember, instance permissions are populated at the **Instance Permissions** node. See the
+Instance permissions appear at the **Instance Permissions** node. See the
 [Instance Permissions Node Report](/docs/accessinformationcenter/12.0/resourceaudit/sql/instancepermissions/overview.md) topic for additional
 information.

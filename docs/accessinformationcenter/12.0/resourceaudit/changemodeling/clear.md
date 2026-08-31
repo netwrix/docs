@@ -6,9 +6,8 @@ sidebar_position: 40
 
 # Clear Modeled Changes
 
-Modeled changes remain modeled for as long as the Access Information Center user is logged in unless
-committed to Active Directory by the Access Information Center. Follow the steps to clear modeled
-changes without signing out.
+Modeled changes remain modeled as long as the Access Information Center user is logged in unless
+the Access Information Center commits them to Active Directory. To clear modeled changes without signing out:
 
 **Step 1 –** Click the **Change Group Membership** button in the Group Membership pane to open the
 Group Membership Changes window.

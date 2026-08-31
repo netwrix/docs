@@ -14,7 +14,7 @@ access level. This report includes a Permission Source table.
 
 ![Effective Access report at the site collection, site, list, library, and folder levels](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/sitecollections/siteeffectiveaccess.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Trustee Name – Owner of the trustee account
 - Trustee Account:
@@ -52,15 +52,14 @@ Roles) granted to the trustee:
 If the selected trustee in the top section of the report is a group, the Group Membership pane
 displays the group membership, including nested groups.
 
-There is one table at the bottom displaying Permission Source for the select trustee. It contains
-all of the ways the selected trustee has been granted rights to the selected resource. To view the
+One table displays Permission Source for the selected trustee. It shows all of the ways the selected trustee has been granted rights to the selected resource. To view the
 granular rights granted through SharePoint permission levels (SharePoint Roles), see the **Role
 Name** column.
 
 ![Permission Source table](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/sitecollections/siteeffectiveaccesstable.webp)
 
 The number of rows for this table indicates the number of ways this trustee has been granted access.
-This table is comprised of the following columns:
+This table includes the following columns:
 
 - Source Path – Location for which the trustee was granted rights to the selected resource, which
   can be represented two ways:
@@ -73,8 +72,7 @@ This table is comprised of the following columns:
   Collection Administrator, and so on)
 - Source Name – Name of the resource where the permission is assigned
 
-The following rights are a normalized representation of the SharePoint permission levels (SharePoint
-Roles) granted to the trustee:
+The following rights normalize the SharePoint permission levels (SharePoint Roles) granted to the trustee:
 
 - List – Right to view list of SharePoint resources
 - Read – Right to view/read SharePoint resources
@@ -82,7 +80,7 @@ Roles) granted to the trustee:
 - Delete – Right to delete SharePoint resources
 - Manage – Equivalent to full control over SharePoint resources
 
-The following columns display the combined direct and inherited rights:
+These columns display the combined direct and inherited rights:
 
 - Allow Mask – Bitmask corresponding to Windows ACE permission bits for combined direct and
   inherited allow rights

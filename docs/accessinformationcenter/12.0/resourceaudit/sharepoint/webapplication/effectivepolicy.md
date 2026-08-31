@@ -13,7 +13,7 @@ denied.
 
 ![Effective Policy report at the web application and web application URL levels](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/webapplication/webappeffectivepolicy.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Zone – Zone to which the policy is applied (for example, internet, intranet, default, and so on)
 - Url – URL path to the site collection
@@ -31,8 +31,7 @@ This report is comprised of the following columns:
   by the Access Analyzer data collection and analysis configuration to identify stale accounts)
 - Deleted – True or False if trustee account is deleted
 
-The following rights are a normalized representation of the SharePoint permission levels (SharePoint
-Roles) granted to the trustee:
+The following rights normalize the SharePoint permission levels (SharePoint Roles) granted to the trustee:
 
 - Read – Right to view/read SharePoint resources
 - Write – Right to add or modify SharePoint resources
