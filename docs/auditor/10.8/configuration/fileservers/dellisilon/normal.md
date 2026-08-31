@@ -76,7 +76,7 @@ isi smb shares permission create --share=netwrix_audit$ --group="BUILTIN\Adminis
 ```
 
 :::note
-Verify the correctness of the path to the Isilon audit log files in **Monitoring Plans** > **<MP name>** > **<Isilon item name>** > **Edit item** > **General** > **File share UNC path to audit logs**.
+Verify the correctness of the path to the Isilon audit log files in **Monitoring Plans** > `<MP name>` > `<Isilon item name>` > **Edit item** > **General** > **File share UNC path to audit logs**.
 
 It must follow the format:
 

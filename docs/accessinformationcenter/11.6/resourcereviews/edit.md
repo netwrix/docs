@@ -29,7 +29,7 @@ To edit an active review:
 
 **Step 1 –** On the Manage Reviews page, click **Edit**. The Edit Review wizard opens.
 
-![Edit Review wizard Review Type page](/docs/accessinformationcenter/11.6/resourcereviews/wizard/reviewtype_1.webp)
+![Edit Review wizard Review Type page](/images/accessinformationcenter/11.6/resourcereviews/wizard/reviewtype_1.webp)
 
 **Step 2 –** On the Review Type page, configure the notify review creator option as required. The
 Review Name and type are shown on the page but can't be edited. For Permissions, Access, and
