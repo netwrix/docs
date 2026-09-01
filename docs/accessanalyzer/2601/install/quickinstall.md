@@ -203,7 +203,7 @@ rm -f "$TMP_FILE"
 ```
 
 :::note
-The `channel=stable` parameter is required. Without it, Keygen returns the newest artifact across all channels, which can be a pre-release or development build instead of the latest stable release.
+You must include the `channel=stable` parameter. Without it, Keygen returns the newest artifact across all channels, which can be a pre-release or development build instead of the latest stable release.
 :::
 
 ### Step 3: Verify the download
@@ -220,7 +220,7 @@ If this returns a version number, the binary is ready. If it returns an error, t
 sudo dspm-installer
 ```
 
-The installer presents a series of interactive prompts: license key, hostname, first admin name and email, and TLS certificate file paths. Each prompt shows an example value and validates your input before moving on — accept a suggested default by pressing **Enter**, or run `dspm-installer --help` for the full flag reference. Installation takes 15–30 minutes.
+The installer prompts you for the license key, hostname, first admin name and email, and TLS certificate file paths. Each prompt shows an example value and validates your input before moving on — accept a suggested default by pressing **Enter**, or run `dspm-installer --help` for the full flag reference. Installation takes 15–30 minutes.
 
 :::note
 An **Advanced Settings** step lets you pin to a specific chart **Target Revision** (for example, `1.5.0`) instead of installing the latest release. Leave it empty for standard installations.
@@ -290,7 +290,7 @@ sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
   -o jsonpath='{.data.password}' | base64 -d; echo
 ```
 
-This only returns the original temporary password — after you change it, use the app's password reset flow, or contact Netwrix Support if the first admin account becomes inaccessible.
+This returns only the original temporary password — after you change it, use the app's password reset flow, or contact Netwrix Support if the first admin account becomes inaccessible.
 
 ---
 
