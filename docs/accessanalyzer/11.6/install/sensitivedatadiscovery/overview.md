@@ -21,7 +21,7 @@ The version of the SharePoint Agent must also match the major version of Enterpr
 
 You can install the Sensitive Data Discovery Add-On on the following servers:
 
-- Windows Server 2016 through Windows Server 2022
+- Windows Server 2016 through Windows Server 2025
     - On the Enterprise Auditor Console Server
     - On the Windows proxy server hosting the File System Proxy service
         - See the

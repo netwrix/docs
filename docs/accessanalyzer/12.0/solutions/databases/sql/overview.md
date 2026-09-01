@@ -12,7 +12,8 @@ security assessment for Microsoft SQL Server.
 
 **Supported Platforms**
 
-- SQL Server 2022
+- SQL Server 2025
+- SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017
 - SQL Server 2016
@@ -39,10 +40,10 @@ conflict with other JDKs or Java Runtimes in the same environment.
 
 **Location**
 
-The Microsoft SQL Server Solution is in the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
+The Microsoft SQL Server Solution is in the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
 
-The Database Solution license includes all supported database platforms supported by Access
-Analyzer. Additionally, Sensitive Data Discovery enables the solution to search database content for
+The Database Solution license includes all database platforms that Access Analyzer
+supports. Additionally, Sensitive Data Discovery enables the solution to search database content for
 sensitive data.
 
 ![Microsoft SQL Server Solution](/images/accessanalyzer/12.0/solutions/databases/sql/sqljobgroup.webp)
@@ -50,22 +51,22 @@ sensitive data.
 The Microsoft SQL Server Solution includes:
 
 - Databases > 0.Collection > SQL > [0.Collection > SQL Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/collection/overview.md) – This job
-  group is designed to collect high level summary information from Microsoft SQL servers. This
-  information is used by other jobs in the SQL solution set for further analysis and for producing
+  group collects high level summary information from Microsoft SQL servers. Other jobs in the SQL
+  solution set use this information for further analysis and for producing
   respective reports.
-- [1.Users and Roles Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/usersroles/overview.md)– This job group is designed to provide
+- [1.Users and Roles Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/usersroles/overview.md)– This job group provides
   insight into user security, roles, and object permissions to all the SQL server objects
-- [2.Activity Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/activity/overview.md) – This job group is designed to provide insight into
+- [2.Activity Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/activity/overview.md) – This job group provides insight into
   use login activity, object permission changes, any unusual database activity, SQL activity against
   sensitive data, SQL activity against selective or all database objects
-- [3.Permissions Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/permissions/overview.md) – This job group is designed to provide insight
+- [3.Permissions Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/permissions/overview.md) – This job group provides insight
   into all types of permissions at the instance, database, and object level across all the targeted
   SQL servers
-- [4.Configuration Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/configuration/overview.md) – This job group is designed to provide
+- [4.Configuration Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/configuration/overview.md) – This job group provides
   insight into potential vulnerabilities related to SQL server configuration settings
-- [5.Sensitive Data Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/sensitivedata/overview.md)– This job group is designed to provide
+- [5.Sensitive Data Job Group](/docs/accessanalyzer/12.0/solutions/databases/sql/sensitivedata/overview.md)– This job group provides
   insight into where sensitive data exists and who has access to it across all the targeted SQL
   server databases
-- [SQL_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/databases/sql/sql_securityassessment.md) – This job is designed to summarize and
-  categorize the security findings into HIGH, MEDIUM, LOW, and NO FINDING categories based on their
+- [SQL_SecurityAssessment Job](/docs/accessanalyzer/12.0/solutions/databases/sql/sql_securityassessment.md) – This job summarizes and
+  categorizes the security findings into HIGH, MEDIUM, LOW, and NO FINDING categories based on their
   severity.

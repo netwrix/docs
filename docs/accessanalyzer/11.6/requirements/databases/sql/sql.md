@@ -11,14 +11,15 @@ database environments to collect permissions, sensitive data, and activity event
 
 - Azure SQL
 
-- SQL Server 2022
+- SQL Server 2025
+- SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017
 - SQL Server 2016
 
 **Target SQL Server Requirements**
 
-The following are requirements for the SQL Server to be scanned:
+The target SQL Server must meet the following requirements:
 
 - WINRM Service installed
 - Ensure the following rights are in the `ROOT\Microsoft\SQLServer` and `ROOT\Interop` WMI
@@ -35,7 +36,7 @@ The following are requirements for the SQL Server to be scanned:
 
 - For Activity Auditing – SQL Server Audit:
 
-    - SQL Server Audit Specifications to be configured on the target databases
+    - Configure SQL Server Audit Specifications on the target databases
     - Audit destination must be a binary file
     - See the Microsoft
       [Create a server audit and database audit specification](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification)

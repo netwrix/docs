@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # SQL Job Group
 
-The SQL Job Group reports on SQL Server, AzureSQL, or both depending on which collection jobs were
+The SQL Job Group reports on SQL Server, AzureSQL, or both depending on which collection jobs you
 run. The SQL Job Group is a comprehensive set of pre-configured audit jobs and reports that provide
 information on users and roles, activity, permissions, configuration, sensitive data, and overall
 security assessment.
@@ -15,7 +15,8 @@ security assessment.
 
 - Azure SQL
 
-- SQL Server 2022
+- SQL Server 2025
+- SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017
 - SQL Server 2016
@@ -45,10 +46,10 @@ environment.
 
 **Location**
 
-The SQL Job Group within the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
+The SQL Job Group within the Jobs tree, as part of the Database Solution: Jobs > Database > SQL.
 
-The Database Solution license includes all supported database platforms supported by Enterprise
-Auditor. Additionally, the Sensitive Data Discovery Add-On enables the solution to search database
+The Database Solution license includes all database platforms that Enterprise Auditor
+supports. Additionally, the Sensitive Data Discovery Add-On enables the solution to search database
 content for sensitive data.
 
 ![SQL Job Group](/images/accessanalyzer/11.6/solutions/databases/sql/sqljobgroup.webp)
@@ -57,31 +58,31 @@ The SQL Job Group includes:
 
 - Databases > 0.Collection > SQL >
   [0.Collection > SQL Job Group](/docs/accessanalyzer/11.6/solutions/databases/sql/collection/overview.md)
-  – This job group is designed to collect high level summary information from Microsoft SQL servers.
-  This information is used by other jobs in the SQL solution set for further analysis and for
-  producing respective reports.
+  – This job group collects high level summary information from Microsoft SQL servers. Other jobs
+  in the SQL solution set use this information for further analysis and for producing respective
+  reports.
 - Databases > 0.Collection > AzureSQL >
   [0.Collection > Azure SQL Job Group](/docs/accessanalyzer/11.6/solutions/databases/sql/collection-azuresql/overview.md)
-  — This job group is designed to collect high level summary information from targeted Azure SQL
-  Instances. This information is used by other jobs in the Azure SQL solution set to provide further
-  analysis and for producing respective reports.
+  — This job group collects high level summary information from targeted Azure SQL Instances. Other
+  jobs in the Azure SQL solution set use this information to provide further analysis and to produce
+  respective reports.
 - [1.Users and Roles Job Group](/docs/accessanalyzer/11.6/solutions/databases/sql/usersroles/overview.md)–
-  This job group is designed to provide insight into user security, roles, and object permissions to
+  This job group provides insight into user security, roles, and object permissions to
   all the SQL server objects
 - [2.Activity Job Group](/docs/accessanalyzer/11.6/solutions/databases/sql/activity/overview.md)
-  – This job group is designed to provide insight into use login activity, object permission
+  – This job group provides insight into use login activity, object permission
   changes, any unusual database activity, SQL activity against sensitive data, SQL activity against
   selective or all database objects
 - [3.Permissions Job Group](/docs/accessanalyzer/11.6/solutions/databases/sql/permissions/overview.md)
-  – This job group is designed to provide insight into all types of permissions at the instance,
+  – This job group provides insight into all types of permissions at the instance,
   database, and object level across all the targeted SQL servers
 - [4.Configuration Job Group](/docs/accessanalyzer/11.6/solutions/databases/sql/configuration/overview.md)
-  – This job group is designed to provide insight into potential vulnerabilities related to SQL
+  – This job group provides insight into potential vulnerabilities related to SQL
   server configuration settings
 - [5.Sensitive Data Job Group](/docs/accessanalyzer/11.6/solutions/databases/sql/sensitivedata/overview.md)–
-  This job group is designed to provide insight into where sensitive data exists and who has access
+  This job group provides insight into where sensitive data exists and who has access
   to it across all the targeted SQL server databases
     - Requires the Sensitive Data Discovery Add-On.
 - [SQL_SecurityAssessment Job](/docs/accessanalyzer/11.6/solutions/databases/sql/sql_securityassessment.md)
-  – This job is designed to summarize and categorize the security findings into HIGH, MEDIUM, LOW,
+  – This job summarizes and categorizes the security findings into HIGH, MEDIUM, LOW,
   and NO FINDING categories based on their severity.

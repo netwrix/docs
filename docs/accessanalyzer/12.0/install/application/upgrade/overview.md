@@ -64,7 +64,7 @@ you update the schema, corruption to Access Analyzer’s system tables can resul
 
 SQL Server Supported Version Change for the Access Analyzer Database
 
-With the release of Access Analyzer v12.0, SQL Server 2016 through SQL Server 2022 are the supported
+With the release of Access Analyzer v12.0, SQL Server 2016 through SQL Server 2025 are the supported
 versions for the Access Analyzer database.
 
 To grant access to additional Solutions in an existing Access Analyzer installation, you need a new

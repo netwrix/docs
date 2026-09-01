@@ -35,25 +35,25 @@ schema, corruption to Enterprise Auditor’s system tables can result.
 
 **SQL Server Supported Version Change for the Enterprise Auditor Database**
 
-With the release of Enterprise Auditor v11.6, SQL Server 2016 through SQL Server 2022 are the
+With the release of Enterprise Auditor v11.6, SQL Server 2016 through SQL Server 2025 are the
 supported versions for the Enterprise Auditor database.
 
-To grant access to additional Solutions in an existing Enterprise Auditor installation, a new
-license key is required. To update the Enterprise Auditor license key without installing a new
+Granting access to additional Solutions in an existing Enterprise Auditor installation requires a
+new license key. To update the Enterprise Auditor license key without installing a new
 version of the Enterprise Auditor Console, see the
 [Update License Key](/docs/accessanalyzer/11.6/install/application/updatelicense.md)
 topic for instructions.
 
 **License Key Changes**
 
-The following changes in licensing requires the organization needing a new key:
+The following licensing changes require the organization to get a new key:
 
 - Enterprise Auditor v11.6
 
-    - No additional licenses are required for this version
+    - This version requires no additional licenses
 
 - StealthAUDIT v11.5
-    - No additional licenses are required for this version
+    - This version requires no additional licenses
 - StealthAUDIT v11.0
     - The new Data Privacy functionality is now a licensable feature.
     - All database platforms are available as part of a single SQL license.

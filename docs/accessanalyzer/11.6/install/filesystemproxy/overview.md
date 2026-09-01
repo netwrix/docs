@@ -37,6 +37,7 @@ topic for information on the required prerequisites.
 You can install the File System Proxy Service for the Enterprise Auditor File System Solution on
 the following Windows operating systems:
 
+- Windows Server 2025
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
@@ -72,8 +73,9 @@ Auditor Console server.
 
 ![Diagram of Enterprise Auditor server sending an FSAA applet to a proxy server](/images/accessanalyzer/11.6/install/filesystemproxy/proxymodewithapplet.webp)
 
-The diagram illustrates the Enterprise Auditor server sending an FSAA applet to a proxy server,
-which runs the scan against a file server, and then returns data to the Enterprise Auditor server.
+The diagram illustrates the Enterprise Auditor server sending a FileSystemAccess (FSAA) applet to a
+proxy server, which runs the scan against a file server, and then returns data to the Enterprise
+Auditor server.
 
 ### Proxy Mode as a Service
 

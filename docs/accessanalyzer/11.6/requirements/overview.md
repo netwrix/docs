@@ -13,34 +13,34 @@ exceptions are covered.
 
 ## Architecture Overview
 
-The following servers and applications are required for installation of the application:
+Installing the application requires the following servers and applications:
 
 **Core Components**
 
-- Enterprise Auditor Console Server – This is where the v11.6 application is installed.
-- SQL Server for Enterprise Auditor Database – As a data-intensive application, a well-provisioned,
-  dedicated SQL Server is recommended.
-- Access Information Center Application Server – This application is typically installed on the
-  Enterprise Auditor Console server and is a browser-based, interactive dashboard for exploring
+- Enterprise Auditor Console Server – This is where you install the v11.6 application.
+- SQL Server for Enterprise Auditor Database – Because Enterprise Auditor is a data-intensive
+  application, Netwrix recommends a well-provisioned, dedicated SQL Server.
+- Access Information Center Application Server – You typically install this application on the
+  Enterprise Auditor Console server. It is a browser-based, interactive dashboard for exploring
   permissions, activity, and sensitive data.
 
     :::note
-    The Access Information Center is often installed on the same server as the Enterprise
-    Auditor application, but it can be installed separately.
+    You often install the Access Information Center on the same server as the Enterprise
+    Auditor application, but you can install it separately.
     :::
 
 
 **Add-on Component**
 
-- Enterprise Auditor Sensitive Data Discovery Add-On – This application is installed on the
+- Enterprise Auditor Sensitive Data Discovery Add-On – You install this application on the
   Enterprise Auditor Console server as an add-on enabling Sensitive Data criteria for scans. In some
-  cases it must also be installed on additional servers. See the
+  cases you must also install it on additional servers. See the
   [Sensitive Data Discovery Add-On Installation](/docs/accessanalyzer/11.6/install/sensitivedatadiscovery/overview.md)
   topic for additional information.
 
 **Exchange Solution-Specific Components**
 
-- Enterprise Auditor MAPI CDO – This application is installed on the Enterprise Auditor Console
+- Enterprise Auditor MAPI CDO – You install this application on the Enterprise Auditor Console
   server to enable the Settings > Exchange global configuration interface within Enterprise Auditor.
 
 **File System Solution-Specific Components**
@@ -52,8 +52,8 @@ The following servers and applications are required for installation of the appl
   data collection. See the
   [Proxy Mode as a Service](/docs/accessanalyzer/11.6/requirements/filesystem/scanoptions/scanoptions.md#proxy-mode-as-a-service)
   topic for server requirements.
-- Enterprise Auditor Sensitive Data Discovery Add-On – This application is installed on the file
-  system proxy server where the File System Proxy Service is installed as an add-on enabling
+- Enterprise Auditor Sensitive Data Discovery Add-On – You install this application on the file
+  system proxy server that hosts the File System Proxy Service, as an add-on enabling
   Sensitive Data criteria for scans.
 
 **SharePoint Solution-Specific Components**
@@ -64,8 +64,8 @@ The following servers and applications are required for installation of the appl
   On-Premise. See the
   [SharePoint Scan Options](/docs/accessanalyzer/11.6/requirements/sharepoint/scanoptions/scanoptions.md)
   topic for server requirements.
-- Enterprise Auditor Sensitive Data Discovery Add-On – This application is installed on the same
-  server where the Enterprise Auditor SharePoint Agent is installed as an add-on enabling Sensitive
+- Enterprise Auditor Sensitive Data Discovery Add-On – You install this application on the same
+  server as the Enterprise Auditor SharePoint Agent, as an add-on enabling Sensitive
   Data criteria for scans.
 
 **Activity Event Data Considerations**
@@ -82,24 +82,24 @@ The following servers and applications are required for installation of the appl
 
 **Target Environment Considerations**
 
-The target environment encompasses all servers, devices, or infrastructure to be audited by
-Enterprise Auditor. Most solutions have additional target requirements.
+The target environment encompasses all servers, devices, or infrastructure that Enterprise Auditor
+audits. Most solutions have additional target requirements.
 
 ## Enterprise Auditor Console & Access Information Center Server Requirements
 
 The server can be physical or virtual. The requirements are:
 
-- Windows Server 2016 through Windows Server 2022
+- Windows Server 2016 through Windows Server 2025
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English (United States) language installation
 - Domain member
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment. See the following topics for
-additional:
+These depend on the size of the target environment. See the following topics for additional
+information:
 
 - [Active Directory Solution Requirements on the Enterprise Auditor Console](/docs/accessanalyzer/11.6/requirements/activedirectory/activedirectory.md#active-directory-solution-requirements-on-the-enterprise-auditor-console)
 - [Active Directory Permissions Analyzer Solution Requirements on the Enterprise Auditor Console](/docs/accessanalyzer/11.6/requirements/activedirectorypermissionsanalyzer/activedirectorypermissionsanalyzer.md#active-directory-permissions-analyzer-solution-requirements-on-the-enterprise-auditor-console)
@@ -118,7 +118,7 @@ additional:
 
 The following are additional requirements for the Console server:
 
-- .NET Framework 4.7.2 installed, which can be downloaded from the link in the Microsoft
+- .NET Framework 4.7.2 installed, which you can download from the link in the Microsoft
   [.NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2)
   article.
 - Microsoft SQL Server supports TLS 1.2, which requires the Enterprise Auditor Console server to
@@ -139,7 +139,7 @@ The following permissions are required to install and use the application:
 - Membership in the local Administrators group for the Enterprise Auditor Console server
 
     :::note
-    Role based access can be enabled for a least privilege user model.
+    You can enable role based access for a least privilege user model.
     :::
 
 
@@ -155,17 +155,17 @@ The following is a list of supported browsers for the Web Console and the Access
 
 The server requirements include one of the following SQL Server versions:
 
-- SQL Server 2016 through SQL Server 2022
+- SQL Server 2016 through SQL Server 2025
 - Azure SQL Managed Instances
 
 Additionally the server must meet this requirement:
 
-- US English language installation
+- English (United States) language installation
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment. See the following topics for
-additional:
+These depend on the size of the target environment. See the following topics for additional
+information:
 
 - [Active Directory Solution Requirements on the SQL Server](/docs/accessanalyzer/11.6/requirements/activedirectory/activedirectory.md#active-directory-solution-requirements-on-the-sql-server)
 - [Active Directory Permissions Analyzer Solution Requirements on the SQL Server](/docs/accessanalyzer/11.6/requirements/activedirectorypermissionsanalyzer/activedirectorypermissionsanalyzer.md#active-directory-permissions-analyzer-solution-requirements-on-the-sql-server)
@@ -183,7 +183,7 @@ additional:
 
 The following are additional requirements for the SQL Server:
 
-- SQL Server must be equal or newer version than the version to be targeted
+- SQL Server must be an equal or newer version than the targeted version
 - All SQL Server databases configured to use ‘Simple Recovery Model’
 
 **Additional Server Considerations**
@@ -210,7 +210,7 @@ The following permissions are required on the databases:
 While physical machines are always preferred, virtual machines are fully supported. This
 section contains special considerations when using virtualization.
 
-- VMWare® ESX® – If using ESX, the following specifications are recommended:
+- VMWare® ESX® – If you use ESX, Netwrix recommends the following specifications:
 
     - ESX 4.0 / ESXi™ 4.1 or higher
     - Virtual Hardware 7 or higher
@@ -218,5 +218,5 @@ section contains special considerations when using virtualization.
 
 - Virtual Storage Consideration
 
-    - In the server requirements, when separate disks are required for the servers, that should
-      translate to separate data stores on the VM host machine.
+    - When the server requirements call for separate disks, use separate data stores on the VM
+      host machine.

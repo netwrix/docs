@@ -6,25 +6,25 @@ sidebar_position: 10
 
 # Proxy Mode Server Requirements
 
-The Access Analyzer File System Proxy requirements apply for servers where either the service is
-installed or the applet will be deployed unless otherwise stated.
+The Access Analyzer File System Proxy requirements apply for servers where you either install the
+service or deploy the applet, unless otherwise stated.
 
 :::note
-Align the proxy server requirements to match the environment size the proxy server will be
-handling.
+Align the proxy server requirements to match the size of the environment the proxy server
+handles.
 :::
 
 
 The server can be physical or virtual. The requirements for Access Analyzer are:
 
-- Windows Server 2016 through Windows Server 2022
+- Windows Server 2016 through Windows Server 2025
 
-    - US English language installation
+    - English (United States) language installation
     - Domain member
 
 **RAM, CPU, and Disk Space**
 
-RAM, CPU, and Disk Space are dependent upon the size of the target environment:
+RAM, CPU, and Disk Space depend on the size of the target environment:
 
 :::warning
 If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each
@@ -90,7 +90,7 @@ The following are additional requirements for the server:
 - .NET Framework 4.7.2 Installed
 
     :::note
-    .NET Framework 4.7.2 can be downloaded from the link in the Microsoft
+    Download .NET Framework 4.7.2 from the link in the Microsoft
     [.NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2)
     article.
     :::
@@ -99,7 +99,7 @@ The following are additional requirements for the server:
 - Remote Registry Service enabled
 
     :::note
-    The Remote Registry Service only needs to be enabled when running Applet Mode or Proxy
+    You only need to enable the Remote Registry Service when running Applet Mode or Proxy
     Mode with Applet scans.
     :::
 
