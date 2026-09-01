@@ -36,11 +36,11 @@ export LICENSE_KEY='[YOUR_LICENSE_KEY]'
 # Download and install the DSPM installer binary for your Linux system architecture (x86_64 or ARM64) using your license key.
 ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
 TMP_FILE=$(mktemp)
-curl -sLf -o "$TMP_FILE" "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:$LICENSE_KEY"
+curl -sLf -o "$TMP_FILE" "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:$LICENSE_KEY&channel=stable"
 sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
 rm -f "$TMP_FILE"
 
-# Launches the installation wizard 
+# Launches the installer
 sudo dspm-installer
 ```
 
@@ -58,11 +58,11 @@ export TARGET_REVISION='[VERSION]'
 # Download and install the DSPM installer binary for your Linux system architecture (x86_64 or ARM64) using your license key.
 ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
 TMP_FILE=$(mktemp)
-curl -sLf -o "$TMP_FILE" "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:$LICENSE_KEY"
+curl -sLf -o "$TMP_FILE" "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:$LICENSE_KEY&channel=stable"
 sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
 rm -f "$TMP_FILE"
 
-# Launches the installation wizard
+# Launches the installer
 sudo dspm-installer
 ```
 

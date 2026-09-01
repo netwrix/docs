@@ -15,7 +15,7 @@ Netwrix Privilege Secure for Discovery (NPS-D) 26.09.0 provides the supported pa
 
 **Audience:** NPS-D administrators and Netwrix Support engineers who plan, perform, or assist with the database upgrade.
 
-> **Important:** Complete this migration on NPS-D 26.09.0. NPS-D 26.09.1 and all later releases support MongoDB 8.0 only.
+> **Important:** Complete this migration on NPS-D 26.09.0 before upgrading to the NPS-D release that updates the backend to Python 3.13 and supported library versions, or to any later release. That platform update will require MongoDB 8.0 and will no longer support MongoDB 4.0.
 
 This process is a side-by-side data migration, not an in-place MongoDB server upgrade. NPS-D creates a separate MongoDB 8.0 target and copies data at the application level. You don't need to perform sequential MongoDB server upgrades through versions 4.2, 4.4, 5.0, 6.0, and 7.0.
 
@@ -61,7 +61,7 @@ The MongoDB 8.0 target isn't an active-active database or an automatic failover 
 
 > **Important for later deployments:** A successful 26.09.0 `cutover` records the MongoDB 8.0 connection settings in `/secureone/s1.env`. Keep this file after migration. For container-based deployments, use the `secureone.sh` script that ships with NPS-D 26.09.0 or later for every subsequent `deploy` or `upgrade`; earlier versions of the script don't read the saved database selection. For an installation originally deployed with an earlier release, the newer script alone isn't sufficient: before another deployment operation, complete **Preserve the migrated state for later deploys and upgrades** in this guide.
 
-> **Important: verify that the database selection is persistent.** Cutover attempts to save the MongoDB 8.0 connection settings in `/secureone/s1.env`. Confirm that the cutover output reports either `Pinned ... in /secureone/s1.env` or `/secureone/s1.env already pins ...` for every required setting. If it reports `WARNING: could not pin ... in /secureone/s1.env`, the running application may already be using MongoDB 8.0, but the saved configuration is incomplete. Don't rerun `cutover`, and don't run another `deploy` or `upgrade`. Add the exact line printed by cutover to `/secureone/s1.env`, verify that the setting occurs only once, and complete the persistence checks in this guide first.
+> **Important: verify that the database selection is persistent.** Cutover attempts to save the MongoDB 8.0 connection settings in `/secureone/s1.env`. Confirm that the cutover output reports either `Pinned ... in /secureone/s1.env` or `/secureone/s1.env already pins ...` for every required setting. If it reports `WARNING: could not pin ... in /secureone/s1.env`, the running application may already be using MongoDB 8.0, but the saved configuration is incomplete. Don't rerun `cutover`, and don't run another `deploy` or `upgrade`. Copy the exact line that cutover printed into `/secureone/s1.env`, verify that the setting occurs only once, and complete the persistence checks in this guide first.
 
 ### Single-node coexistence
 
@@ -850,7 +850,7 @@ sudo grep -nE 'DB_URL=|REMEDIANT_DB_URL=|DB_REPLICA_COUNT|MONGO[123]_REPLICA_COU
 
 The application services must use `DB_URL=${DB:-...}`. The `internal_api` service must use `REMEDIANT_DB_URL=${REMEDIANT_DB:-...}`. The old database service definitions must use the applicable replica-count variable.
 
-An older active stack can still contain a hardcoded `REMEDIANT_DB_URL`. If it does, back up the file as shown in **Save the active configuration**, then use `sudoedit /secureone/docker-stack.yml` to replace only that environment entry with the applicable parameterized form:
+An older active stack can still contain a hardcoded `REMEDIANT_DB_URL`. If it does, back up the file by following **Save the active configuration**, then use `sudoedit /secureone/docker-stack.yml` to replace only that environment entry with the applicable parameterized form:
 
 Single-node deployment:
 
