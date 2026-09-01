@@ -138,7 +138,7 @@ Complete the following steps in the Azure Portal before connecting Access Analyz
 1. Open **Azure Portal** > **Entra ID** > **App registrations** > **New registration**.
 2. Name the application and click **Register**.
 3. Open the registration > **Authentication** > **Add a platform** > **Web**, and add two redirect URIs:
-   - The URI shown on the Access Analyzer installer's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — the wizard uses this once, during the admin-consent step.
+   - The URI shown on the Access Analyzer installer's **Entra ID** step (`https://<your-hostname>/setup/entra-consent-callback`) — the installer uses this once, during the admin-consent step.
    - `https://<your-hostname>/idps/callback` — Microsoft redirects here every time a user signs in with Entra ID.
 4. Go to **Certificates & secrets** > **New client secret**. Set an expiry that fits your rotation policy and copy the value immediately — the portal shows it only once.
 
@@ -156,7 +156,7 @@ Register both redirect URIs before anyone signs in with Entra ID. The installer'
 
 ## License key
 
-You need your Netwrix license key to download the installer; it's the first prompt in the installation wizard. Obtain it from your Netwrix account representative before starting.
+You need your Netwrix license key to download the installer; it's the first prompt the installer shows. Obtain it from your Netwrix account representative before starting.
 
 ## Connector port requirements
 
