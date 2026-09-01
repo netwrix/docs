@@ -20,7 +20,7 @@ license keys for purchased products. See the
 topic for information on how to register for a Customer Portal account. Navigate to the Netwrix
 Threat Prevention Download section for the 7.5. Download the Threat Prevention Agent binary.
 
-Then follow the steps to update the AD Module installer used by the Activity Monitor Console.
+Update the AD Module installer used by the Activity Monitor Console.
 
 **Step 1 –** On the Agents tab, select **Update AD Module Installer**. The Select AD Module
 installer package (SI Agent.exe) window opens.

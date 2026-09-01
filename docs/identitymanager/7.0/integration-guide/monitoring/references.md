@@ -24,7 +24,7 @@ Arguments:
 - argument2 (string): description2 (string)
 - argument3 (string): description3 (string)
 
-The EventId id must be unique so we could use it to filter the logs we send. See the [Monitoring](../../integration-guide/monitoring) topic for additional information.
+The EventId id must be unique so you can filter the logs sent. See the [Monitoring](../../integration-guide/monitoring) topic for additional information.
 
 #### 500
 

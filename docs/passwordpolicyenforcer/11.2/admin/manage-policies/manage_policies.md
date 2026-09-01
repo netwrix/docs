@@ -42,7 +42,7 @@ Click **Test Policy** to check if Password Policy Enforcer's current configurati
 
 ## Set policy priorities
 
-Policy priorities help Password Policy Enforcer resolve [policy assignment conflicts](usersgroups.md#policy-assignment-conflicts). If more than one policy is assigned to a user, and PPE can't decide which policy to enforce using the other conflict resolution rules, then PPE always enforces the policy with the highest priority.
+Policy priorities help Password Policy Enforcer resolve [policy assignment conflicts](usersgroups.md#policy-assignment-conflicts). If a user has more than one assigned policy, and PPE can't decide which policy to enforce using the other conflict resolution rules, then PPE always enforces the policy with the highest priority.
 
 Click **Set priorities** to view or modify policy priorities. This button is only visible if you have more than one password policy.
 

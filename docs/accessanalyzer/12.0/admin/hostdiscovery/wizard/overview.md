@@ -6,13 +6,13 @@ sidebar_position: 30
 
 # Host Discovery Wizard
 
-The Host Discovery Wizard gives complete control over how hosts are discovered on the targeted
-network and which hosts are discovered.
+The Host Discovery Wizard gives complete control over how Access Analyzer discovers hosts on the
+targeted network and which hosts it discovers.
 
 ![Console with Create Query Option Highlighted](/images/accessanalyzer/12.0/admin/hostdiscovery/wizard/createqueryhighlighted.webp)
 
 Use the Host Discovery Wizard to create new queries. The wizard opens in the Results pane. Use any
-of the following methods in order to access the Host Discovery Wizard from the Host Discovery node:
+of the following methods to access the Host Discovery Wizard from the Host Discovery node:
 
 - Select **Create Query** in the Activities pane
 - Right-click the **Host Discovery** node and select **Create Query** from the pop-up menu
@@ -38,7 +38,6 @@ for hosts. Hosts are discoverable using one of the following options:
 - [Import From a Database](/docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/database.md) – Imports a host list from a specified SQL Server database
 
 :::note
-The Advanced Options checkbox in the lower-left corner is a legacy item and should not be
-selected.
+Don't select the Advanced Options checkbox in the lower-left corner; it's a legacy item.
 
 :::

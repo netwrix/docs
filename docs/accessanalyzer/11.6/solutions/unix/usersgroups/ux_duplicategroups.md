@@ -16,7 +16,7 @@ Navigate to the **Unix** > **1.Users and Groups** > **UX_DuplicateGroups** > **C
 select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

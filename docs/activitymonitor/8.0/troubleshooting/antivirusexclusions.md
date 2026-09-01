@@ -7,7 +7,7 @@ sidebar_position: 30
 # Antivirus Exclusions
 
 Windows activity monitoring and performance of the Activity Agent may be negatively affected by
-antivirus protections. Add the following components to antivirus exclusions in order to avoid
+antivirus protections. Add the following components to antivirus exclusions to avoid
 potential performance degradation.
 
 ## Directories

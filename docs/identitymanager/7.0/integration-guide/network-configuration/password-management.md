@@ -39,7 +39,7 @@ initializes the password.
 
 ## Possible operations per managed system
 
-Identity Manager provides a predefined set of possible operations per managed system (which cannot be changed by the configuration).
+Identity Manager provides a predefined set of possible operations per managed system (which can't be changed by the configuration).
 
  |  | Initialize | Change | Reset | Unlock | _Notes_ | 
  | --- | --- | --- | --- | --- | --- | 

@@ -6,9 +6,9 @@ sidebar_position: 50
 
 # Test the Password Policy
 
-You can test the policy from the policy settings right where you are in the policy settings. You can
-also test it from the Password Policy Enforcer configuration console dashboard, the Windows Change
-Password screen, or the Active Directory Users and Computers / Local Users and Groups consoles.
+You can test the policy directly from the policy settings. You can also test it from the Password
+Policy Enforcer configuration console dashboard, the Windows Change Password screen, or the Active
+Directory Users and Computers / Local Users and Groups consoles.
 
 ## Configuration Console
 
@@ -62,11 +62,11 @@ From the Windows Change Password screen:
 
 **Step 5 –** Click the **submit arrow**.
 
-You may have noticed that the Change Password screen looks different after installing Password
-Policy Enforcer. The Password Policy Enforcer password policy is shown during password changes if
-the Password Policy Client is installed. This helps users to choose a compliant password. The
-Password Policy Client also changes the message that users see when their password is rejected. Both
-these messages are customizable.
+The Change Password screen looks different after you install Password Policy Enforcer. Password
+Policy Enforcer shows its password policy during password changes if you install the Password Policy
+Client. This helps users to choose a compliant password. The Password Policy Client also changes the
+message that users see when Password Policy Enforcer rejects their password. Both these messages are
+customizable.
 
 ![introduction_3](/images/passwordpolicyenforcer/11.2/evaluation/introduction_3.webp)
 
@@ -77,17 +77,18 @@ Policy Enforcer Client are also available.
 ## Active Directory Users / Computers Console and local Users and Groups Console
 
 Administrators often change domain passwords from the Active Directory Users and Computers console
-and local passwords from the Local Users and Groups console. In fact, these consoles don't change
-passwords; they reset them. This is an important distinction because a password reset is:
+and local passwords from the Local Users and Groups console. In fact, these consoles reset
+passwords rather than change them. This is an important distinction because a password reset:
 
-- Restricted to privileged users
-- Performed without knowing the current password
+- Requires privileged access
+- Doesn't require knowing the current password
 
 Password Policy Enforcer can enforce the password policy for both password changes and password
 resets. It does this by default, but you can configure it to only enforce the password policy for
-password changes. The Minimum Age rule is never enforced when a password is reset.
+password changes. Password Policy Enforcer never enforces the Minimum Age rule when someone resets a
+password.
 
-Follow the steps to test password policies from these consoles.
+To test password policies from these consoles:
 
 **Step 1 –** Open the appropriate console:
 
@@ -102,13 +103,14 @@ Follow the steps to test password policies from these consoles.
 **Step 4 –** Click **OK**.
 
 :::note
-These consoles don't explain why a password was rejected. Use the Password Policy
+These consoles don't explain why Password Policy Enforcer rejected a password. Use the Password Policy
 Enforcer configuration console, or the Change Password screen with the Password Policy Enforcer
 Client installed to see this information.
 :::
 
 
-Here are some sample passwords and expected test results when the Users policy is enforced. Try to
+The following table shows sample passwords and expected test results when Password Policy Enforcer
+enforces the Users policy. Try to
 change the password for the PPETestUser account to confirm that Password Policy Enforcer is
 enforcing the password policy correctly.
 

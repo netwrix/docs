@@ -73,7 +73,7 @@ The identifier of the connection and thus the name of the subsection must:
  | Name | Details | 
  | --- | --- | 
  | Server required | **Type** String **Description** URL of the SAP server. | 
- | Login required | **Type** String **Description** Login to authenticate to the specified server. | 
+ | Login required | **Type** String **Description** log in to authenticate to the specified server. | 
  | Password required | **Type** String **Description** Password to authenticate to the specified server. | 
 
 ### Output details
@@ -94,7 +94,7 @@ This connector is meant to generate to the [Application Settings](../../../integ
 
 ## Fulfill
 
-This connector writes to SAP to create, update, and/or delete users, groups, roles and group memberships.
+This connector writes to SAP to create, update, and/or delete users, groups, roles, and group memberships.
 
 ### Configuration
 
@@ -105,7 +105,7 @@ Same as for export, fulfill is configured through connections.
  | Name | Details | 
  | --- | --- | 
  | Server required | **Type** String **Description** URL of the SAP server. | 
- | Login required | **Type** String **Description** Login to authenticate to the specified server. | 
+ | Login required | **Type** String **Description** log in to authenticate to the specified server. | 
  | Password required | **Type** String **Description** Password to authenticate to the specified server. | 
 
 > For example:
@@ -127,7 +127,7 @@ Same as for export, fulfill is configured through connections.
 
 ### Password reset
 
-See the [appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) topic to learn more on how to configure password reset settings.
+Refer to the [password reset configuration in appsettings.agent](../../../integration-guide/network-configuration/agent-configuration/appsettings-agent) for setup details.
 
 When setting a password for an SAP user, the password attribute is defined by the password specified in the corresponding [Resource Type Mappings](../../../integration-guide/toolkit/xml-configuration/connectors/resourcetypemappings).
 

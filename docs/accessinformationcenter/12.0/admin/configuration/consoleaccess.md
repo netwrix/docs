@@ -6,25 +6,24 @@ sidebar_position: 10
 
 # Console Access Page
 
-Console access to the is configured through the **Configuration** > **Console Access** page. Adding
-users to the Access Information Center requires data to be collected by the Access Analyzer .Active
-Directory Inventory Solution.
+Configure console access through the **Configuration** > **Console Access** page. You must collect data through the Access Analyzer .Active
+Directory Inventory Solution to add users to the Access Information Center.
 
 ![Console Access Configuration page](/images/accessinformationcenter/12.0/admin/configuration/consoleaccess.webp)
 
-There are five levels of access, or Roles, which can be granted to domain users or groups:
+You can grant domain users or groups one of five levels of access, or Roles:
 
 - Administrator – Role allows access to all interfaces including the Configuration interface
 - Security Team – Role allows access to all interfaces except for the Configuration interface
     - In the Resource Reviews interface, this role can only view resource reviews that the logged in
       user has created.
-- Reader – Role limits the user’s access solely to reports available in the Resource Audit interface
+- Reader – Role limits the user's access solely to reports available in the Resource Audit interface
   or through the Search features
 - Data Privacy — Role allows the user to search metadata and identities from the Netwrix Access
   Analyzer (formerly Enterprise Auditor) Subject Profiles feature
 - User Access Administrator — Role allows the user to configure console access for other users. This
-  role does not grant access to any other page within the Configuration interface. Nor does it grant
-  access to any other interface within the Access Information Center. This role also does not have
+  role doesn't grant access to any other page within the Configuration interface. Nor does it grant
+  access to any other interface within the Access Information Center. This role also doesn't have
   rights to modify the Builtin Administrator account or their own access.
 
 :::note
@@ -41,23 +40,23 @@ information for either:
 - Specific servers
 
 :::warning
-Before disabling the Builtin Administrator account, it is necessary to first assign at
-least one domain user account to the Administrator role. Login with another Administrator account to
-disable the Builtin Administrator. Failure to do this could result in being locked-out of the
-Configuration interface. As an alternative to disabling this account, the password can be changed.
+You must first assign at least one domain user account to the Administrator role
+before disabling the Builtin Administrator account. Log in with another Administrator account to
+disable the Builtin Administrator. Failure to do this could lock you out of the
+Configuration interface. As an alternative to disabling this account, you can change the password.
 See the Modify the Builtin Administrator Account topic for additional information.
 :::
 
 
-Once users have been granted console access, they can login with their domain credentials. Console
-access is not a requirement for participation as owners or domain users in the Resource Reviews and
-Self-Service Access Requests workflows. See the [URL & Login](/docs/accessinformationcenter/12.0/admin/login/login.md) topic for information on
+Once users have been granted console access, they can log in with their domain credentials. Console
+access isn't a requirement for participation as owners or domain users in the Resource Reviews and
+Self-Service Access Requests workflows. See the [URL & Login](/docs/accessinformationcenter/12.0/admin/login/login.md) topic for information on
 how users will log in and where they are directed after login based on their assigned role or lack
 of role.
 
 ## Add Console Users
 
-Follow the steps to grant domain users or groups console access.
+To grant domain users or groups console access:
 
 ![Console Access Configuration page](/images/accessinformationcenter/12.0/admin/configuration/consoleaccess.webp)
 
@@ -69,16 +68,16 @@ Access wizard opens.
 **Step 2 –** On the Select Trustee page, enter the following information and click Next:
 
 - Domain — If the Access Information Center has been configured for multiple domains, use the
-  drop-down menu to select the desired domain
-- Trustee Type — Choose between adding a user or a group by selecting from the drop-down menu
+  dropdown menu to select the domain you want
+- Trustee Type — Choose between adding a user or a group by selecting from the dropdown menu
 - Search — Begin typing the sAMAccountName or display name and the field will auto-populate options
-  from Active Directory sAMAccountName
+  from Active Directory
 
 ![Console Access wizard showing the Select Access page](/images/accessinformationcenter/12.0/admin/configuration/consoleaccessaddselectaccess.webp)
 
 **Step 3 –** On the Select Access page, enter the following information and click **Finish**:
 
-- Select a role for this trustee – Select a role from the drop down list:
+- Select a role for this trustee – Select a role from the dropdown list:
 
     - Unlimited Access — The Administrator role grants unlimited access
     - Limited Access — All other roles can be granted limited access
@@ -90,24 +89,24 @@ Access wizard opens.
   visibility into data for specific servers. Begin typing server names and the field will
   auto-populate with known servers from scanned data. A resource type appears in parentheses after
   the host name for quick reference.
-- Access is enabled – A user's account must be enabled in order to log into the console. Unchecking
-  this option allows you to configure access to be granted at a future time.
+- Access is enabled – A user's account must be enabled to log into the console. Unchecking
+  this option lets you defer access until you enable it later.
 
 ![Console Access Page displaying users with various assigned roles](/images/accessinformationcenter/12.0/admin/configuration/consoleaccesswithusers.webp)
 
 **Step 4 –** The new user displays in the list on the Console Access page. Repeat these steps for
 each trustee to be granted console access.
 
-Once the first user with the role of Administrator has been added, the Builtin Administrator account
+After the first user with the role of Administrator has been added, the Builtin Administrator account
 can be disabled by that user. See the Modify the Builtin Administrator Account topic for additional
 information.
 
 ## Modify Console Users
 
-Follow the steps to modify a user’s console access.
+To modify a user's console access:
 
 :::note
-These steps are for modifying domain users with console access roles and do not apply to
+These steps modify domain users with console access roles and don't apply to
 the Builtin Administrator account. See the Modify the Builtin Administrator Account topic for
 additional information.
 :::
@@ -118,9 +117,9 @@ modified and click Modify. The Console Access wizard opens to the Select Access 
 
 ![Console Access wizard showing the Select Access page when modifying](/images/accessinformationcenter/12.0/admin/configuration/consoleaccessmodify.webp)
 
-**Step 2 –** Modify the desired settings and click **Finish**:
+**Step 2 –** Modify the settings you want and click **Finish**:
 
-- Select a role for this trustee – Select a role from the drop down list:
+- Select a role for this trustee – Select a role from the dropdown list:
 
     - Unlimited Access — The Administrator role grants unlimited access
     - Limited Access — All other roles can be granted limited access
@@ -132,20 +131,20 @@ modified and click Modify. The Console Access wizard opens to the Select Access 
   visibility into data for specific servers. Begin typing server names and the field will
   auto-populate with known servers from scanned data. A resource type appears in parentheses after
   the host name for quick reference.
-- Access is enabled – A user's account must be enabled in order to log into the console. Unchecking
-  this option allows you to configure access to be granted at a future time.
+- Access is enabled – A user's account must be enabled to log into the console. Unchecking
+  this option lets you defer access until you enable it later.
 
-Any modifications to the user’s role are visible in the list on the Console Access page.
+Any modifications to the user's role appear in the list on the Console Access page.
 
 ## Delete Console Users
 
 :::warning
-Confirmation is not requested when deleting users. An alternative to deleting a console
+The system doesn't request confirmation when deleting users. An alternative to deleting a console
 user is to disable their access. See the Modify Console Users topic for additional information.
 :::
 
 
-Follow the steps to remove a user’s configured console access.
+To remove a user's configured console access:
 
 ![Console Access Page showing various user accounts, with one selected enabling the Modify and Remove buttons](/images/accessinformationcenter/12.0/admin/configuration/consoleaccessremove.webp)
 
@@ -153,11 +152,11 @@ Follow the steps to remove a user’s configured console access.
 
 **Step 2 –** Click Remove.
 
-The user is removed from the list on the Console Access page.
+The system removes the user from the list on the Console Access page.
 
 ## Modify the Builtin Administrator Account
 
-The Builtin Administrator account can be disabled or its password can be changed. Follow the steps
+You can disable the Builtin Administrator account or change its password. Follow the steps
 to modify this account.
 
 ![modifybuiltinadministrator](/images/accessinformationcenter/12.0/admin/configuration/modifybuiltinadministrator.webp)
@@ -167,12 +166,12 @@ Administrator account and click **Modify**. The Builtin Administrator window ope
 
 **Step 2 –** Modify the account as desired and click **OK**:
 
-- Access is enabled — Indicates whether the account can be used to login
-- Change Password — Allows you to change the password for this Builtin Administrator account. Check
+- Access is enabled — Indicates whether the account can log in
+- Change Password — Use this to change the password for this Builtin Administrator account. Check
   the box and enter the new password in both entry fields. The password must be eight or more
   characters long.
 
-The modifications to the Builtin Administrator are processed.
+The system processes the modifications to the Builtin Administrator account.
 
 :::note
 The new password is encrypted in the `AccessInformationCenter.Service.exe.config` file, in

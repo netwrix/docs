@@ -18,20 +18,20 @@ Here you will learn how to define **scalar** properties, which contain **scalar*
 
 Most often, properties inside Identity Manager are each linked to a property from the managed system. This way, data from the managed system can be imported into Identity Manager and stored in the corresponding property. These properties are **mapped** from the source (see step 2).
 
-If the property to be created does not exist in the external source, it is impossible to map the property, but it can still be created with **+ Add a **scalar** property**.
+If the property to be created doesn't exist in the external source, it is impossible to map the property, but it can still be created with **+ Add a **scalar** property**.
 
-This can be used to store data needed for assignment management, but which you cannot write to the connected system. Since these properties do not exist in the connected system, they cannot be written or read.
+Use this to store data needed for assignment management, but which you can't write to the connected system. Since these properties don't exist in the connected system, they can't be written or read.
 
-For example, we may need to create in the AD the property `isUnused` to spot unused accounts. It would be configured with a C# expression based on other properties from the same entity type. These properties, such as `accountExpires` and `lastLogonTimestamp`, are each linked to a property from the AD, while `isUnused` is for governance and surveying AD accounts.
+For example, you might need to create the property `isUnused` in AD to spot unused accounts. It would be configured with a C# expression based on other properties from the same entity type. These properties, such as `accountExpires` and `lastLogonTimestamp`, are each linked to a property from the AD, while `isUnused` is for governance and surveying AD accounts.
 
-Such properties do not exist in the AD, and thus will never be written to the AD, nor overwritten by any property from the AD, but will be recalculated based on the other properties.
+Such properties don't exist in the AD, and thus will never be written to the AD, nor overwritten by any property from the AD, but will be recalculated based on the other properties.
 
 ## Define the Entity Type's **scalar** Properties
 
 Define the entity type's **scalar** properties by proceeding as follows:
 
 1. Start by declaring the [Create the Entity Type](../../../../user-guide/set-up/connect-system/entity-type-creation/entity-type-declaration).
-2. In the entity type's **Properties** section, click on **Map **scalar** properties** to display
+2. In the entity type's **Properties** section, click **Map **scalar** properties** to display
 existing columns from the external source, and select the properties to be used in the entity type.
 
     ![Map from source](/images/identitymanager/entitytypecreation_scalarpropertiesmap_v602.webp)
@@ -49,10 +49,10 @@ Manager.
 C#-compatible. [See Microsoft lexical structure](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/lexical-structure#see-microsoft-lexical-structure).
         - `Name`: will be displayed in the UI to indicate the property.
 
-Entity properties' names and identifiers cannot be "Id".
+Entity properties' names and identifiers can't be "Id".
 
         - `Format`: format used for the property's display in Identity Manager, for search tools and
-computation based on said property. **Do not keep the default string format if the property is not a string**. See the [References: Format for the EntityPropertyMapping](../../../../integration-guide/connectors/entitypropertymapping-format) topic for additional information.
+computation based on said property. **Don't keep the default string format if the property isn't a string**. See the [References: Format for the EntityPropertyMapping](../../../../integration-guide/connectors/entitypropertymapping-format) topic for additional information.
 
             > For example, dates, booleans, integers, etc.
 
@@ -64,7 +64,7 @@ For one entity type, Identity Manager can store up to 128 **scalar** properties
 Advanced settings can be configured according to the description below.
         - `Format`: for **mapped** properties, format used to convert a value during export and fulfill
 from Identity Manager to the connected system, whenever different from a string.
-            > To continue with the `AD - Entry` entity type, we map all the properties we need:
+            > To continue with the `AD - Entry` entity type, map all the needed properties:
 >
             > `accountExpires`; `c`; `cn`; `comment`; `company`; `department`; `description`;
             > `displayName`; `division`; `dn`; `employeeId`; `employeeNumber`; `employeeType`;
@@ -83,7 +83,7 @@ from Identity Manager to the connected system, whenever different from a string.
 >
             > ![AD Entity Type - **scalar** Properties](/images/identitymanager/entitytypecreation_examplead2_v602.webp)
 
-4. Click on the Gear symbol to add advanced settings if needed.
+4. Click the Gear symbol to add advanced settings if needed.
 
     ![Advanced Settings](/images/identitymanager/entitytypecreation_propertiessettings_v602.webp)
 
@@ -111,11 +111,11 @@ value.
         > instead of historizing resources with all their properties, only `lastLogonTimestamp` is
         > updated with the new value.
 
-Clicking on **Continue** closes the pop-up window so that you can continue the configuration of the entity type. **But it does not save anything**.
+Clicking on **Continue** closes the pop-up window so that you can continue the configuration of the entity type. **But it doesn't save anything**.
 
 ## Reload
 
-Every time an entity type mapping is modified and saved, a green pop-up appears saying that you should reload the schema to implement the changes. You do not need to click on the button every time. It is essential though to reload after the final changes are made.
+Every time an entity type mapping is modified and saved, a green pop-up appears saying that you should reload the schema to implement the changes. You don't need to click the button every time. It is essential though to reload after the final changes are made.
 
 ![Reload](/images/identitymanager/entitytypecreation_reload_v522.webp)
 
@@ -129,7 +129,7 @@ Before saving, you must first [Select Primary Keys](../../../../user-guide/set-u
 
 ## Troubleshooting
 
-If the Format column is not displayed in the External System part, then:
+If the Format column isn't displayed in the External System part, then:
 
 ![**scalar** properties](/images/identitymanager/entitytypecreation_scalarpropertieswithoutformat_v522.webp)
 

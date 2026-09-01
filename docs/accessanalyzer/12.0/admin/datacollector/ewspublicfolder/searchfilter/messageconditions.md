@@ -29,7 +29,7 @@ Customize message search filter conditions using the following options:
 - Select conditions – To add it to the search, select any of the following conditions:
 
     :::note
-    The conditions that are available in the Select Conditions box depends on the selected
+    The available conditions in the Select Conditions box depend on the selected
     **Message category**.
     :::
 
@@ -51,7 +51,7 @@ Customize message search filter conditions using the following options:
   of the template conditions
 
     :::note
-    The values present depends on the selections made in the Select conditions box.
+    The available values depend on the selections in the Select conditions box.
     :::
 
 
@@ -61,7 +61,7 @@ Customize message search filter conditions using the following options:
       [Date Range Selection Window](#date-range-selection-window) topic for additional information.
     - Click **search terms** to open the Search Terms Window. See the
       [Search Terms Window](#search-terms-window) topic for additional information.
-    - Click **has attachment(s)** to convert the condition to **has no attachment(s)** and vice
+    - Click **has attachments** to convert the condition to **has no attachments** and vice
       versa
 
 ## MessageClasses Window
@@ -74,7 +74,7 @@ opens if **specific** is clicked in the Edit Conditions box on the Message Condi
 Determine MessageClass-related criteria using the following options:
 
 - To add a class, click **Add**
-- Enter the desired Message Class in the corresponding textbox
+- Enter the Message Class in the corresponding textbox
 - Click **Exact Match** to reveal a dropdown menu of other search criteria under Matching Strategy
   and select the preferred option:
 
@@ -111,11 +111,11 @@ Use the Search Terms window to determine terms for the search. The Search Terms 
 
 Determine terms for the search using the following options:
 
-- Type the desired term into the upper text box and click **Add** to add the term to the lower text
+- Enter the term into the upper text box and click **Add** to add the term to the lower text
   box, which adds the term to the search
 - Select a term in the lower text box, and click **Remove** to remove the term from the search
 - Click **Clear** to clear all terms from the lower box
-- Select the desired qualifier option:
+- Select a qualifier option:
 
     - Contains ALL of the following search terms (And) – Search only returns results containing all
       of the search terms

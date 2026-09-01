@@ -7,7 +7,7 @@ sidebar_position: 60
 # SharePoint Search Query
 
 You can search SharePoint activity that has been monitored and recorded to a File output. When you
-select **SharePoint** from the magnifying glass drop-down menu, a New Search tab opens with the
+select **SharePoint** from the magnifying glass dropdown menu, a New Search tab opens with the
 applicable query filters.
 
 ![SharePoint New Search Tab](/images/activitymonitor/9.0/admin/search/query/sharepointnewsearchtab.webp)
@@ -25,21 +25,21 @@ By default, the query is set to return all event activity for the past day. Conf
 filters will scope results returned.
 
 Set the filters as desired and click **Search**. The application searches through the appropriate
-activity log files and returns the events that match the filters.You can
+activity log files and returns the events that match the filters. You can
 [Filter](/docs/activitymonitor/9.0/admin/search/overview.md#filter) and [Sort](/docs/activitymonitor/9.0/admin/search/overview.md#sort) the results using the column
-headers. Below the Search button is the [Export](/docs/activitymonitor/9.0/admin/search/overview.md#export) option.
+headers. You can also [Export](/docs/activitymonitor/9.0/admin/search/overview.md#export) the results.
 
 **Filter Value Entry**
 
-When the drop-down menu is in front of a query filter, it is used to show or hide the filter entry
+When the dropdown menu is in front of a query filter, it is used to show or hide the filter entry
 field. Field options vary based on the selected query filter:
 
-- Textbox – Enter the filter value. If the field has a drop-down arrow, then you can select from
+- Textbox – Enter the filter value. If the field has a dropdown arrow, then you can select from
   values known to the application.
-- Gray drop-down menu – Provides options to match the value against on of the following, which vary
+- Gray dropdown menu – Provides options to match the value against on of the following, which vary
   based on the filter:
 
-    - Selected values – Filters by the value selected from the drop-down menu for the textbox
+    - Selected values – Filters by the value selected from the dropdown menu for the textbox
     - Simple string with wildcards – Filters by the value entered into the textbox, which contains
       an asterisk (\*) as the wildcard
     - Regular expression – Filters by the Regex entered into the textbox
@@ -54,9 +54,9 @@ configured for every search query.
 
 This section has the following filters:
 
-- From – Set the date and timestamp for the start of the activity range. The drop-down menu opens a
+- From – Set the date and timestamp for the start of the activity range. The dropdown menu opens a
   calendar.
-- To – Set the date and timestamp for the end of the activity range. The drop-down menu opens a
+- To – Set the date and timestamp for the end of the activity range. The dropdown menu opens a
   calendar.
 - Event Type – Filter the data by the event type: All, CheckOut, CheckIn, View, Delete, Update,
   ProfileChange, ChildDelete, SchemaChange, Undelete, Workflow, Copy, Move, AuditMaskChange, Search,

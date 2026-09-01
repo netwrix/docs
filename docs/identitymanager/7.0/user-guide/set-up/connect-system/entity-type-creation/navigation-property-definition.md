@@ -64,7 +64,7 @@ If a property doesn"​™t exist in the source system, you can still create it 
 Define **navigation properties** by following these steps:
 
 1. Start by declaring an [Entity Type](../../../../user-guide/set-up/connect-system/entity-type-creation/entity-type-declaration).
-2. In the entity type's **Properties** section, click on the ****navigation properties**** tab.
+2. In the entity type's **Properties** section, click the ****navigation properties**** tab.
 3. Click **Map a navigation property** to display existing columns from the external source, then
 select the ones to use.
 4. Fill in the information fields:
@@ -135,7 +135,7 @@ Identity Manager can store up to 25 **optimized** mono-valued nav properties. Pr
         > fills quickly.
         > Set `History Precision` to 1 week (10080 min) to only record weekly changes.
 
-Clicking **Continue** closes the window but **does not save** the configuration.
+Clicking **Continue** closes the window but **doesn't save** the configuration.
 
 **---**
 
@@ -151,5 +151,5 @@ The **Reload** button ensures updates appear in the menu links on the UI home pa
 
 ## Next Steps
 
-Once the entity type is defined:with scalar properties, keys, and navigation properties:you can [Set Resources' Display Names](../../../../user-guide/set-up/connect-system/entity-type-creation/display-name-setting).
+After the entity type is defined:with scalar properties, keys, and navigation properties:you can [Set Resources' Display Names](../../../../user-guide/set-up/connect-system/entity-type-creation/display-name-setting).
 

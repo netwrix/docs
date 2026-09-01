@@ -9,9 +9,8 @@ sidebar_position: 10
 Netwrix Password Policy Enforcer uses rules to decide if it should accept or reject a password. Each
 policy has rules that are configured independently of the rules in other policies.
 
-Follow the steps to define rules a PPE policy
 
-Step 1 – The Rules tab opens by default and the following rules are listed in the left pane.
+1. The Rules tab opens by default and the following rules are listed in the left pane.
 
 - [Age (Max) Rule](/docs/directorymanager/11.1/admincenter/identitystore/configure/ppe/rules/maximum_age_rule.md)
 - [Age (Min) Rule](/docs/directorymanager/11.1/admincenter/identitystore/configure/ppe/rules/minimum_age_rule.md)
@@ -29,7 +28,7 @@ Step 1 – The Rules tab opens by default and the following rules are listed in 
 A button beside a rule indicates that the rule is enabled (being enforced) or not. Click a rule to
 set the rule's properties and save it.
 
-Prior to setting up the rules for the policy, review the sections on Detecting Character
+Before setting up the rules for the policy, review the sections on Detecting Character
 Substitutionand Tolerance .
 
 ## Detecting Character Substitution
@@ -39,7 +38,7 @@ some alphabetic characters with non-alphabetic characters that have a similar ap
 example, "sold" becomes "$old". Many of these substitutions are well known and do little to improve
 password strength.
 
-Some Password Policy Enforcer rules have a Detect Character Substitution check box. When this check
+Some Password Policy Enforcer rules have a Detect Character Substitution checkbox. When this check
 box is selected, Password Policy Enforcer tests passwords with, and without character substitution.
 This stops users from circumventing the rule by substituting some characters. Password Policy
 Enforcer detects these common character substitutions:
@@ -211,7 +210,7 @@ Enforcer detects these common character substitutions:
 
 ## Tolerance
 
-Some Password Policy Enforcer rules have a Tolerance drop-down list that allows you to control how
+Some Password Policy Enforcer rules have a Tolerance dropdown list to control how
 strictly the rule is enforced. Tolerance is normally expressed as the maximum allowable number of
 consecutive matching characters in the password and some other parameter. Password Policy Enforcer
 rejects a password if the specified tolerance is exceeded. For example, the logon name
@@ -223,12 +222,12 @@ The User Logon Name, User Display Name, Similarity, and Character Patter rules h
 tolerance option. Setting the tolerance to Auto instructs Password Policy Enforcer to only reject
 passwords that contain the entire parameter being compared. This is very useful when the length of
 the comparison parameter is unknown. For example, if you want Password Policy Enforcer to reject
-passwords that contain the user's entire logon name, then you cannot specify a fixed tolerance
+passwords that contain the user's entire logon name, then you can't specify a fixed tolerance
 unless all logon names have the same length. Setting the tolerance to Auto allows Password Policy
 Enforcer to calculate an appropriate tolerance during every password change.
 
 Password Policy Enforcer sets the tolerance to the length of the comparison parameter minus one. The
-table below shows some parameter values and the calculated tolerance. Password Policy Enforcer
+following table shows some parameter values and the calculated tolerance. Password Policy Enforcer
 rejects a password if it contains all the text in the Value column (or a derivative of it if
 character substitution detection or bi-directional analysis is enabled).
 

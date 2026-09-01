@@ -10,7 +10,7 @@ The **Impersonation Logins** analytic type identifies multiple authenticated acc
 system within the specified time frame.
 
 :::info
-Configure a subset of accounts and/or servers to be monitored in order to avoid
+Configure a subset of accounts and/or servers to be monitored to avoid
 the excessive volume of event activity from monitoring all.
 :::
 
@@ -18,7 +18,7 @@ the excessive volume of event activity from monitoring all.
 | Impersonation Logins |                    |
 | -------------------- | --------------------------- |
 | Definition           | Multiple authenticated accounts from a single system   |
-| Example              | A perpetrator may wish to mask their activities by authenticating using alternate credentials. While logged in using their primary user ID, the perpetrator will authenticate against a network resource using an alternate ID; this is known as impersonation. Impersonation is often used by administrators, but not normally used by end-users. An attacker will often use impersonation to obtain increased rights to remote systems. This analytic identifies hosts that are using impersonated authentications. |
+| Example              | A perpetrator may want to mask their activities by authenticating using alternate credentials. While logged in using their primary user ID, the perpetrator will authenticate against a network resource using an alternate ID; this is known as impersonation. Impersonation is often used by administrators, but not normally used by end-users. An attacker will often use impersonation to obtain increased rights to remote systems. This analytic identifies hosts that are using impersonated authentications. |
 | Trigger              | X different authenticated accounts from a single system in Y hours    |
 | Recommended Settings | Netwrix recommends configuring this analytic to trigger a hit if Threat Prevention monitors 3 different authenticated accounts from a single system in 2 hours.    |
 
@@ -38,7 +38,7 @@ Open the Impersonation Logins Analytic Policy in any of the following ways:
 
 - Click Analytics in the left pane to launch the Analytics interface. Then click the gear icon for
   the analytic.
-- Expand the Analytics node and click the desired analytic. On the analytic window, click the gear
+- Expand the Analytics node and click the analytic. On the analytic window, click the gear
   icon available in the top right corner.
 
 The Configure Analytics window has two tabs:
@@ -58,7 +58,7 @@ remote connections, etc. within the specified interval duration, it will trigger
 
 By default, authentication event data is cached in memory for 24 hours. When an incident is
 triggered, an incident record is saved to the database along with the events that triggered the
-incident. Raw authentication event data that did not contribute to an incident are purged from
+incident. Raw authentication event data that didn't contribute to an incident are purged from
 memory once they are more than 24 hours old.
 
 **Policy Tab**
@@ -68,12 +68,12 @@ memory once they are more than 24 hours old.
 The **Policy** tab for configuring analytics consists of three sub-tabs:
 
 - General tab – Configured the same way a regular policy’s [General Tab](/docs/threatprevention/7.5/admin/policies/configuration/general.md) is
-  configured. The only exception is that the Name and Description are hard coded, and cannot be
+  configured. The only exception is that the Name and Description are hard coded, and can’t be
   modified. The Tags field is disabled for analytics.
 - Event Type tab – Configured the same way a regular policy’s
   [Event Type Tab](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/overview.md) is configured. The only exception is that the
   [Authentication Monitoring Event Type](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/authenticationmonitoring.md) is hard
-  coded, and the Success filter cannot be modified.
+  coded, and the Success filter can’t be modified.
 
   - _Optional:_ Scope the protocol to be monitored on the Authentication Protocol filter. If
     enabling the analytic on a domain controller, also scope the login type.
@@ -95,8 +95,7 @@ The **Policy** tab for configuring analytics consists of three sub-tabs:
 
     :::note
     Some authentication events may return only a host name (NetBIOS or FQDN), others
-    may return only an IP address. It is recommended to take this into account when entering
-    filter values.
+    may return only an IP address. If you enter filter values, take this into account.
     :::
 
 
@@ -130,7 +129,7 @@ The top data grid includes the following information for each incident:
   simultaneously.
 - Last Attempt – Date timestamp of the last event that triggered the incident. Hover over the data
   in this column to view the local time (of the Enterprise Manager) and UTC time simultaneously.
-- Protocols – Protocol(s) used for the monitored operation
+- Protocols – Protocols used for the monitored operation
 - Number of Attempts – Number of attempts monitored during the specified interval matching this rule
 
 Select an incident in the top data grid to view information on the events that triggered the
@@ -141,7 +140,7 @@ incident:
 - Account SID – Security Identifier of the account used in the event for the attempted impersonation
 - To Host – Name of the target host
 - To Host IP Address – IP address of the target host
-- Protocol – Protocol(s) used for the monitored operation
+- Protocol – Protocols used for the monitored operation
 - Access Type – Type of authentication, e.g. RDP, CIFS, etc.
 - Status – Detailed information on the error generated by the event
 - Detected on DC – Fully-qualified name of the domain controller that detected the event

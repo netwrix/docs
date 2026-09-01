@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Agent Backup
 
-Follow the steps to back up the configuration, passwords, Active Directory event data file, and
+Back up the configuration, passwords, Active Directory event data file, and
 activity log files for Activity Monitor Agents deployed on file system servers, SharePoint servers,
 and domain controllers.
 
@@ -22,9 +22,7 @@ The location of the `SBTFileMon.ini` is determined by the registry value:
 
 **Step 2 –** Back up passwords
 
-> Passwords are stored in the `SBTFileMon.ini` file in an encrypted form using DPAPI. They can only
-> be decrypted on the same Windows server. To be able to restore the configuration of a different
-> server, back up the passwords separately. This includes the following:
+> The `SBTFileMon.ini` file stores passwords in an encrypted form using DPAPI. You can only decrypt them on the same Windows server. To restore the configuration on a different server, back up the passwords separately. This includes the following:
 
 - Credentials for Agent
 - Credentials for Monitored Hosts/Services
@@ -48,7 +46,7 @@ default folder is
 **C:\ProgramData\Netwrix\Activity Monitor\Agent\ActivityLogs**
 
 :::note
-Keep in mind that` C:\ProgramData` folder may be hidden. Navigate to it by typing
+The `C:\ProgramData` folder may be hidden. Navigate to it by typing
 `%ALLUSERSPROFILE%` in the File Explorer.
 :::
 

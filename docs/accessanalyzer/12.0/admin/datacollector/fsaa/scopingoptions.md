@@ -6,8 +6,8 @@ sidebar_position: 90
 
 # FSAA: Scoping Options
 
-The Scoping Options page is where scan settings, file details, and file properties settings can be
-configured for a specified resource in the targeted environment. It is a wizard page for the
+Use the Scoping Options page to configure scan settings, file details, and file properties settings
+for a specified resource in the targeted environment. It is a wizard page for the
 following categories:
 
 - File System Access/Permission Auditing Scan
@@ -27,15 +27,15 @@ The Scoping Options buttons have the following:
   conflicting settings occur with one resource
 - Import – Import scoping options from a `.fsaascope` file.
 
-    - If a conflict arises between an existing configured scoping option and an option that is being
-      imported, the user will be prompted to resolve the conflict by either keeping the existing
-      configuration or importing the new one, which will overwrite the scoping option.
+    - If a conflict arises between an existing configured scoping option and the option being
+      imported, the system prompts you to resolve the conflict by keeping the existing
+      configuration or importing the new one, which overwrites the scoping option.
 
-- Export – Take the currently configured scoping options in the job and export it to a `.fsaascope`
+- Export – Take the configured scoping options in the job and export it to a `.fsaascope`
   file
 
-By default, priority is assigned in the order it is added to the table. Priority can also be
-manually assigned with the Increase Priority and Decrease Priority buttons or in the
+By default, priority follows the order in which you add items to the table. You can also manually
+assign priority with the Increase Priority and Decrease Priority buttons or in the
 [Scoping Configuration Window](#scoping-configuration-window). If there is a conflict between an
 inclusion scoping option and an exclusion scoping option with the same priority, the inclusion takes
 precedence.
@@ -45,8 +45,8 @@ scoping options and the expected results.
 
 ## Scoping Configuration Window
 
-The Scoping Configuration Window allows a specific share or folder to be included or excluded from
-the scan. Only included resources require additional scoping. Remember, these settings override the
+Use the Scoping Configuration Window to include or exclude a specific share or folder from the
+scan. Only included resources require additional scoping. Remember, these settings override the
 default scoping settings for the selected resource.
 
 ![Scoping Configuration Window](/images/accessanalyzer/12.0/admin/datacollector/fsaa/scopingconfigurationwindow.webp)
@@ -54,7 +54,7 @@ default scoping settings for the selected resource.
 Set the Resource Name and Host Name:
 
 - Resource Name – Specify a local path or individual share to the target folder or the share name
-- Host Name – Apply scoping options to a specific target host. If a host name is not supplied, all
+- Host Name – Apply scoping options to a specific target host. If a host name isn't supplied, all
   hosts targeted by the job have the scoping options applied.
 
 Both the Resource Name and Host Name textboxes support regular expressions and pattern matching.
@@ -94,15 +94,15 @@ Then set Scoping Type and Priority:
     :::note
     Any included files or folders inherit all options previously checked in the
     [FSAA: Default Scoping Options](/docs/accessanalyzer/12.0/admin/datacollector/fsaa/defaultscopingoptions/defaultscopingoptions.md) page. Manually apply new options if
-    the default ones are not desired in this scan.
+    the default ones aren't desired in this scan.
     :::
 
 
 - Priority – Numerical value that determines which options are used in the case of more than one
   scoping option overlaps for a particular resource. Lower numerical values have a higher priority
   for this scan. When multiple scoping options are added to a single resource, and there is no
-  conflict, the scoping options are merged. However, in some instances, the settings conflict. Below
-  are some known conflicts and their results:
+  conflict, the scoping options are merged. However, in some instances, the settings conflict. The
+  following are some known conflicts and their results:
     - Conflict between two options for a single resource – Higher priority takes precedence
     - Folder scoping option conflicts with a share scoping option – Folder takes precedence
     - Conflict between two scoping options with the same priority – Path determines which option is
@@ -176,11 +176,13 @@ All other folder paths are excluded.
 
 **Additional Considerations**
 
-The scoping options listed above can be used to scope for SMB shares and NFS exports but NFS exports
-are enumerated differently. The include/exclude logic outlined above should be the same for both,
-but when scoping for NFS exports the Resource Name should be the full path to the export.
+Use the scoping options described in
+[Scoping Configuration Window](#scoping-configuration-window) to scope for SMB shares and NFS
+exports, but NFS exports are enumerated differently. The include/exclude logic described earlier
+in this section should be the same for both, but when scoping for NFS exports the Resource Name
+should be the full path to the export.
 
-For example, in the scenario below, the NFS export named NFS_Export is included. All other exports
+For example, in the following scenario, the NFS export named NFS_Export is included. All other exports
 are excluded. Within the NFS_Export export, folder path \ifs\NFS_Export\Test_Folder is included. All
 other folder paths are excluded.
 

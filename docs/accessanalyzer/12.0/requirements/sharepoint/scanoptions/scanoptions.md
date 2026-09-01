@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # SharePoint Scan Options
 
-Required permissions on the targeted SharePoint environment are dependent upon not only the type of
-environment targeted but also the type of data collection scan being executed. There are two types
+Required permissions on the targeted SharePoint environment depend on the type of environment
+targeted and the type of data collection scan running. There are two types
 of Access Auditing (SPAA) and/or Sensitive Data Discovery Auditing scans: agent-based and
 agent-less. The Activity Auditing (SPAC) scans run as agent-less scans from Access Analyzer, but
 they require the Netwrix Activity Monitor to have an activity agent deployed in the target
@@ -17,7 +17,7 @@ environment.
 
 When Access Analyzer SharePoint scans are run in agent-based mode, the Access Analyzer SharePoint
 Agent must be installed on the SharePoint Application server which hosts the Central Administration
-component prior to executing the scans. This is typically the first server stood up during the
+component before executing the scans. This is typically the first server stood up during the
 SharePoint farm installation process in this mode. The data collection processing is conducted by
 the SharePoint Agent for the target environment. The final step in data collection is to transfer
 the data collected in the SQLite databases, or Tier 2 databases, on the Access Analyzer SharePoint

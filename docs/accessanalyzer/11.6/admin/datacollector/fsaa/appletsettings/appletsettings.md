@@ -87,8 +87,8 @@ In the Applet Settings section, configure the following options:
   while the proxy server is busy, before it enters the job engine queue
 - Applet communication timeout: [number] minutes – This option determines the length of time (in
   minutes) the Enterprise Auditor Console attempts to reach the proxy before giving up. Depending on
-  the job configuration, the data collector behaves in one of three ways after the timeout value has
-  been exceeded:
+  the job configuration, the data collector behaves in one of three ways after the timeout value
+  expires:
     - If a communication timeout is reached and the **Stop scan on applet communication timeout**
       option is unchecked, the scan continues running. When the proxy is available again, the data
       collector gets the database files on the next scan of that host. It will either bring the

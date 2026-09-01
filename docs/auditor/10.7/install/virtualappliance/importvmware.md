@@ -43,4 +43,4 @@ in this VMware article:
 
 **Step 6 –** On the Select a template step, select NetwrixAuditor from your ContentLibrary.
 
-**Step 7 –** Proceed with the wizard: select name and folder, resources and storage for the VM.
+**Step 7 –** Proceed with the wizard: select the name, folder, resources, and storage for the VM.

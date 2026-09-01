@@ -18,7 +18,7 @@ first time.
 
 There is a built-in ADMIN account used for the initial configuration steps and granting user access.
 The User Name is "admin". You will set the password and optionally enable MFA for this account
-during first launch. Follow the steps to setup this account.
+during first launch.
 
 **Step 2 –** Specify a password in the **New Password** and **Confirm Password** fields. It must
 meet the following minimum requirements:
@@ -48,8 +48,8 @@ the Configure MFA for the Bultin Administrator Account topic.
 
 ## Configure MFA for the Bultin Administrator Account
 
-If MFA was enabled for the buildtin Administrator account during first launch, follow the steps to
-configure MFA for the account.
+If MFA was enabled for the buildtin Administrator account during first launch, configure MFA for
+the account.
 
 ![registerauthenticator](/images/threatprevention/8.0/install/reportingmodule/registerauthenticator.webp)
 
@@ -59,8 +59,8 @@ instructions to configure multi-factor authentication with an external or third-
 **Step 2 –** On successful registration with an authenticator, enter the verification code and click
 Continue.
 
-**Step 3 –** A list of recovery codes will be presented in order to restore access to the
-application in the event of lost access to the authenticator application or device. Save this list
+**Step 3 –** A list of recovery codes will be presented to restore access to the
+application if there is lost access to the authenticator application or device. Save this list
 of codes to access for account recovery, if needed.
 
 **Step 4 –** Click **Continue**.

@@ -6,8 +6,7 @@ sidebar_position: 20
 
 # Edit Notes Window
 
-The Edit Note window can be opened from a variety of interfaces. Follow the steps to add or edit a
-note.
+You can open the Edit Note window from a variety of interfaces. To add or edit a note:
 
 **Step 1 –** Select the item in the interface and click Edit Notes. The Edit Notes window opens.
 

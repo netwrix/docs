@@ -11,7 +11,7 @@ settings. It can be run directly or scheduled.
 
 **Dependencies**
 
-This job group does not have dependencies.
+This job group doesn't have dependencies.
 
 **Targeted Hosts**
 
@@ -41,7 +41,7 @@ This job group can be scheduled to run as desired.
 :::info
 Run the jobs in the 4.Group Policy Job Group together and in order by running the
 entire job group, instead of the individual jobs. However, these jobs can be run independently, with
-the exception of the AD_OverlappingGPOs Job, which is dependent upon the AD_GroupPolicy Job for data
+the exception of the AD_OverlappingGPOs Job, which depends on the AD_GroupPolicy Job for data
 collection.
 :::
 

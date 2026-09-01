@@ -19,8 +19,8 @@ reviewed:
 
 - File Name – Name of file with extension
 - Size – Size of the file
-- Last Modified – Last modified date timestamp of the file from scanned the file details
-- Owner – Owner of the file from scanned the file details
+- Last Modified – Last modified date timestamp of the file from scanning the file details
+- Owner – Owner of the file from scanning the file details
 - Criteria – Name of the criteria with match hits found within the file. The hyperlink opens the
   Criteria Matches window. See the
   [Criteria Matches Window](/docs/accessinformationcenter/11.6/owneroverview/pendingreviews/criteriamatches.md)
@@ -31,7 +31,7 @@ Remove, or Not Sensitive column. Your selection is indicated by a yellow checkma
 
 - Keep – Recommend no action should be taken
 - Remove – Recommend that the file should be removed from the resource
-- Not Sensitive – Recommend that the file does not contain sensitive data for the designated
+- Not Sensitive – Recommend that the file doesn't contain sensitive data for the designated
   criteria
 
 :::tip

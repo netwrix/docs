@@ -14,7 +14,7 @@ targeted servers.
 The Redshift_TablePrivileges Job uses the SQL Data Collector for queries.
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 
@@ -30,7 +30,7 @@ Navigate to the **Databases** > **0.Collection** > **Redshift** > **Redshift_Tab
 **Configure** node and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

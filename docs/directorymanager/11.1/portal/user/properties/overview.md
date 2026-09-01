@@ -63,7 +63,7 @@ Following is the list of all the properties that Contacts have in Active Directo
 store.
 
 :::note
-Contact object is not supported in Microsoft Entra ID.
+Contact object isn't supported in Microsoft Entra ID.
 :::
 
 

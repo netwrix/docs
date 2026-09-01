@@ -9,15 +9,15 @@ sidebar_position: 20
 Similar to **Folder/File Match Rules**, **Registry Key/Value Match Rules** can be defined and used
 to precisely track only keys and values of interest.
 
-**For example**, tracking the '**WinLogon**' registry key and values is important because there are
-a number of session management security controls defined in this key. However, in certain
-environments, the 'DCacheUpdate' values may change causing spurious alerts that are not significant
-from a security perspective (DCacheUpdate stores domain names in binary form for internal Winlogon
-programming code to use). Therefore the ability to easily track all keys and values below the
-Winlogon key, but exclude DCacheUpdate changes may be desirable.
+**For example**, tracking the '**WinLogon**' registry key and values is important because this key
+defines a number of session management security controls. However, in certain environments,
+the 'DCacheUpdate' values may change, causing spurious alerts that aren't significant from a
+security perspective (DCacheUpdate stores domain names in binary form for internal Winlogon
+programming code to use). You can track all keys and values below the Winlogon key while excluding
+DCacheUpdate changes.
 
-The '**All Registry Values**' Match Rule is available by default but to define the 'Isolate
-DCacheUpdate Value Changes' exclusion, the following Custom PathMatch Definition would be added:
+The '**All Registry Values**' Match Rule is available by default. To define the 'Isolate
+DCacheUpdate Value Changes' exclusion, add the following Custom PathMatch Definition:
 
 ![RegistryInclusion](/images/changetracker/admin/matchrules/registryinclusion.webp)
 
@@ -52,4 +52,4 @@ DCacheUpdate Value Changes' exclusion, the following Custom PathMatch Definition
 
 - Unlimited;
 - None (operate on specified folder only);
-- "n" = recurse through 1, 2 or 3 subfolders.
+- "n" = recurse through 1, 2, or 3 subfolders.

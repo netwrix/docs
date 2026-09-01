@@ -24,14 +24,14 @@ Schedule these jobs to run with the 0.Collection job group.
   identify what services and computers may be affected when disabling NTLM
 - [AD_DomainControllerTraffic Job](/docs/accessanalyzer/11.6/solutions/activedirectory/activity/operations/ad_domaincontrollertraffic.md)
   – Provides a summary of the amount of traffic for Changes, Authentication, Replication, and LDAP
-  Queries for each domain controller which can be used to identify issues with load balancing. If
+  Queries for each domain controller. Use this summary to identify issues with load balancing. If
   the AD_DCSummary job has been run, the roles for each DC will be provided.
 - [AD_HardcodedDCs Job](/docs/accessanalyzer/11.6/solutions/activedirectory/activity/operations/ad_hardcodeddcs.md)
   – Highlight machines that have communicated with only one DC
 - [AD_LoadBalancing Job](/docs/accessanalyzer/11.6/solutions/activedirectory/activity/operations/ad_loadbalancing.md)
   – Analyzes each domain controller's traffic to show what percent of all LDAP, Replication,
   Authentication and Changes are being handled by that particular machine. This helps to highlight
-  domain controllers which are over utilized relative to others within the domain, or unused domain
+  domain controllers which are over used relative to others within the domain, or unused domain
   controllers which may be decommissioned.
 - [AD_MachineOwners Job](/docs/accessanalyzer/11.6/solutions/activedirectory/activity/operations/ad_machineowners.md)
   – Helps to identify the owner of a particular host

@@ -40,11 +40,9 @@ portal.
 
 ## Enable Auditing on CTERA Edge Filer
 
-The CTERA Edge Filer can generate audit log events for the SMB access. Audit events are stored in a
-local file and then forwarded to the CTERA Portal for further processing. The audit log is disabled
-by default and must be enabled.
-
-Follow the steps to enable SMB audit logs.
+The CTERA Edge Filer generates audit log events for SMB access. Each Edge Filer stores audit events in a
+local file and forwards them to the CTERA Portal for further processing. The audit log is disabled
+by default; you must enable it.
 
 **Step 1 –** Log in to the Edge Filer web interface. In the Configuration view, select **Logs** >
 **Audit Logs**.
@@ -64,10 +62,10 @@ create a share.
 **Step 4 –** Adjust the **Keep closed files for** parameter. Otherwise, use the default value.
 
 **Step 5 –** Check all events except the **Read Extended Attributes** event in Events to log list.
-If you do not require monitoring of _Directory Read/List_ operations, which typically generate a
+If you don't require monitoring of _Directory Read/List_ operations, which typically generate a
 high volume of data, uncheck the **List Folder Read Data** event.
 
-**Step 6 –** Make sure that **Log permission changes in human readable format** is unchecked.
+**Step 6 –** ensure that **Log permission changes in human readable format** is unchecked.
 
 **Step 7 –** Click **Save**.
 
@@ -86,8 +84,7 @@ The following services must be enabled and configured on the CTERA Portal:
 - CTERA Edge Filer Syslog Service – Consolidates audit events from Edge Filers and sends them to the
   Activity Monitor Agent and other consumers.
 
-Both services are disabled by default and must be enabled. The Messaging service must be enabled
-first.
+Both services are disabled by default. Enable the Messaging service first, then enable the Edge Filer Syslog service.
 
 ### Enable the Messaging Service
 
@@ -112,7 +109,7 @@ use as messaging servers. Click **Save**.
 :::note
 In a production environment, designate three servers as messaging servers. In a small or
 test environment, CTERA supports using a single messaging server, typically the main database
-server. However, in all other cases, exactly three servers must be assigned as messaging servers.
+server. However, in all other cases, assign exactly three servers as messaging servers.
 See the
 [Managing the CTERA Messaging Service](https://kb.ctera.com/docs/managing-the-ctera-messaging-service-2)
 article for additional information.
@@ -123,7 +120,7 @@ article for additional information.
 and then to ACTIVE. Wait until the status is ACTIVE before proceeding to the next step.
 
 :::note
-If the status does not change to ACTIVE, the log files need to be collected from
+If the status doesn't change to ACTIVE, collect the log files from
 `/usr/local/lib/ctera/work/logs/services` directory.
 See the
 [CTERA Messaging Service Logs](https://kb.ctera.com/docs/setting-up-the-ctera-messaging-service-2#ctera-messaging-service-logs)
@@ -136,7 +133,7 @@ article for additional information.
 Ensure the Enable the Messaging Service section is completed before proceeding to enable the Syslog
 Service.
 
-The Edge Filer Syslog Service can be configured in two ways:
+Configure the Edge Filer Syslog Service in two ways:
 
 - Automatically by the Activity Monitor using the API from CTERA Portal.
 - Manually using the CTERA Portal web interface.
@@ -145,8 +142,6 @@ It is recommended to configure the service automatically. With automatic configu
 Monitor Agent will apply the settings and perform periodic checks to ensure correctness. To enable
 automatic configuration, use the **Enable Edge Filer Syslog auditing** option in the host properties
 and specify credentials to access the CTERA Portal API.
-
-Follow the steps to configure the Edge Filer Syslog Service manually.
 
 **Step 1 –** Configure monitoring of the CTERA Portal in the Activity Monitor Console.
 

@@ -6,15 +6,15 @@ sidebar_position: 80
 
 # Permissions Report
 
-The Permissions report for a computer object provides a list of all resources where the audited
-computer has been assigned permissions. The **Include Inherited** filter option is active by
+The Permissions report for a computer object lists all resources where the audited
+computer has permissions assigned. The **Include Inherited** filter option is active by
 default, which means the report displays both direct and inherited permissions unless modified by
 the Access Information Center user. See the [Results Pane](/docs/accessinformationcenter/12.0/resourceaudit/navigate/overview.md#results-pane)
 topic for information on filter options.
 
 ![Permissions report](/images/accessinformationcenter/12.0/resourceaudit/computer/permissions.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Collector – Refers to the collection source for the permission (for example, **FileSystem** for
   the Access Analyzer File System Solution, **SharePoint** for the Access Analyzer SharePoint

@@ -6,7 +6,7 @@ sidebar_position: 220
 
 # SIEM Generic Integration for CEF Export
 
-Netwrix Auditor Add-on for SIEM helps you to get most from your SIEM investment. This topic focuses
+Netwrix Auditor Add-on for SIEM helps you get more value from your SIEM investment. This topic focuses
 on the CEF Export SIEM solution.
 
 The add-on works in collaboration with Netwrix Auditor, supplying additional data that augments the
@@ -15,10 +15,10 @@ data collected by the SIEM solution.
 The add-on enriches your SIEM data with actionable context in human-readable format, including the
 before and after values for every change and data access attempt, both failed and successful.
 Aggregating data into a single audit trail simplifies analysis, makes your SIEM more cost effective,
-and helps you keep tabs on your IT infrastructure.
+and helps you monitor your IT infrastructure.
 
 Implemented as a PowerShell script, this add-on facilitates the audit data transition from Netwrix
-Auditor to the SIEM solution. All you have to do is provide connection details and schedule the
+Auditor to the SIEM solution. To set it up, provide connection details and schedule the
 script for execution.
 
 On a high level, the add-on works as follows:
@@ -46,5 +46,5 @@ follows:
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
-leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.
+Ensure to check your product version, and then review and update your add-ons and scripts
+that use the Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.

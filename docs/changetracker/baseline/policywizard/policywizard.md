@@ -14,54 +14,53 @@ Data Collection:
 
 ![baselinedatacollection](/images/changetracker/baseline/baselinedatacollection.webp)
 
-Define the Data Collection template to be used for gathering baseline configuration data. This can
-be a new template, or an existing template can be re-used. The following configuration elements to
-be used in Baseline policy, File System Integrity, Installed Software and Updates, Running Processes
-and Service states, Local User Accounts, Command Output (also allows Firewall and Router configs to
-be baselined) and Open Network Ports (using a local netstat or equivalent on the Host or using an
-NMAP Network Scan)
+Define the Data Collection template used to gather baseline configuration data. This can be a new
+template, or you can reuse an existing template. The following configuration elements can be used
+in a Baseline Policy: File System Integrity, Installed Software and Updates, Running Processes and
+Service States, Local User Accounts, Command Output (which also lets you baseline Firewall and
+Router configs), and Open Network Ports (using a local netstat or equivalent on the host, or an
+NMAP network scan).
 
 Specify Source:
 
-A single device is selected to act as the Source for Baseline Policy data. This should be a
-'Control' device or simply a "Representative Example" of what your ideal device configuration should
-be, e.g. a device that has been patched and hardened exactly as you would like every similar device
-to be
+Select a single device to act as the Source for Baseline Policy data. This should be a 'Control'
+device, or simply a 'Representative Example' of what your ideal device configuration should be —
+for example, a device that's patched and hardened exactly as you want every similar device to be.
 
 :::note
-The selected Source device must be enabled as a "Baseline Source". You can do this via the
-Settings > Agent and Device screen, select the required Device click **Edit**. There are technical
-reasons why this is disabled by default; in the interests of storage and performance efficiency, it
-is not desirable to have every Device sending Baseline Events to the Hub unless needed.
+The selected Source device must be enabled as a "Baseline Source." Go to **Settings** > **Agent
+and Device**, select the required device, then click **Edit**. This is disabled by default for
+technical reasons: in the interest of storage and performance efficiency, not every device needs
+to send Baseline Events to the Hub.
 :::
 
 
 ![baselinesource](/images/changetracker/baseline/baselinesource.webp)
 
-Another important decision is whether you want to include changes from Member Devices when you come
-to make future changes to your Baseline Policy. By default, the Source device is the single source
-of configuration items, both for the initial creation of the policy and going forwards, for any
-changes needed to the Baseline, for example, after patching when versions of software items may need
-to be updated. In certain situations, it may be convenient to also include changes to Member Group
-devices too, in which case you can check this box.
+Another important decision is whether to include changes from Member Devices when you make future
+changes to your Baseline Policy. By default, the Source device is the single source of
+configuration items, both for the initial policy creation and for any future changes to the
+Baseline — for example, when software item versions need updating after patching. In some
+situations, it's useful to also include changes from Member Group devices. In that case, check
+this box.
 
 ![baselinespecifymembers](/images/changetracker/baseline/baselinespecifymembers.webp)
 
 Specify Member:
 
-A single device is selected to act as an initial target against which the Baseline Policy Report can
-be run. The Wizard will build a Device Group for both the Source Device and the Member Device which
-in turn allows the Wizard to build a Baseline Report, see later section
+Select a single device to act as an initial target against which the Baseline Policy Report runs.
+The Wizard builds a Device Group for both the Source Device and the Member Device, which in turn
+lets the Wizard build a Baseline Report.
 
 Awaiting Device:
 
-At this stage of the Baseline Wizard, we have a Source Device selected and a Data Collection
-template established. The Source Device Agent will call into the Hub and collect the new instruction
-to gather and report back on the configuration data collected.
+At this stage of the Baseline Wizard, you've selected a Source Device and established a Data
+Collection template. The Source Device Agent calls into the Hub and receives the new instruction
+to gather and report on the configuration data.
 
 Awaiting Data:
 
-Gathering the Baseline configuration data will take anything from 90 seconds to several minutes,
+Gathering the Baseline configuration data takes anywhere from 90 seconds to several minutes,
 depending on the nature or resources of the Source Device and the scope of the Data Collection
 template defined. Be patient, but you can check progress using the **Check Now** button.
 
@@ -69,9 +68,10 @@ template defined. Be patient, but you can check progress using the **Check Now**
 
 Add Rules:
 
-This is the penultimate stage where you get to choose which configuration elements will form the
-Baseline Policy and how, in terms of the Rule Options selected.
+This is the penultimate stage, where you choose which configuration elements form the Baseline
+Policy and how, based on the Rule Options selected.
 
-The Rule Options are what makes the Baseline Policy feature in Change Tracker so powerful. A basic
-compare of a Device to a predefined set of configuration rules is OK in some circumstances but rule
-logic is necessary to convey the other requirements needed in a Baseline Policy.
+The Rule Options are what make the Baseline Policy feature in Change Tracker so powerful. A basic
+comparison of a device to a predefined set of configuration rules is sufficient in some
+circumstances, but rule logic is necessary to convey the other requirements needed in a Baseline
+Policy.

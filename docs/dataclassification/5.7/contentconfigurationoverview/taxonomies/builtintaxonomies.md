@@ -9,14 +9,14 @@ sidebar_position: 10
 Netwrix Data Classification comes with eight taxonomies with hundreds of built-in classification rules.
 
 The four core taxonomies cover a broad range of sensitive personal, financial, and health-related
-information. The remaining four taxonomies derive from the core set. They are tailored to meet the
+information. The remaining four taxonomies derive from the core set. They meet the
 requirements of specific data protection regulations:
 
 - Personally identifiable information covering GDPR scope.
 - Medical records covering HIPAA scope.
 - Financial records and payment cards information covering GLBA and PCI DSS scope.
 
-This section contains the full list of built-in taxonomies supported by Netwrix Data Classification.
+This section lists all built-in taxonomies included in Netwrix Data Classification.
 
 :::note
 Netwrix Data Classification users can see only the taxonomies they have permissions to
@@ -101,7 +101,7 @@ systems:
 
 ##### Patient Health Information (PHI)
 
-Medical forms, treatment records, prescription drugs, social and insurance numbers, 
+Medical forms, treatment records, prescription drugs, social, and insurance numbers, 
 decease names/codes, allergies.
 
 ## Derived Taxonomies

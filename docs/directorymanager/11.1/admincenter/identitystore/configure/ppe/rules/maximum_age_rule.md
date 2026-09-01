@@ -12,14 +12,14 @@ policies.
 
 - Enable/Disable button – Enable the **Age (Max)** rule button to enable the Maximum Age rule.
 
-- Users must change password after days – Choose a value from the drop-down list to specify how many
+- Users must change password after days – Choose a value from the dropdown list to specify how many
   days must elapse before passwords expire.
 
 - Delay expiration by `<_number of days_>` if the password contains `<_number of characters_>` or
   more characters – You can encourage users to choose longer passwords by extending the lifetime of
   their password if it exceeds a certain length. To enable this feature, choose a higher value from
-  the number of days drop-down list and a minimum length from the number of characters drop-down
-  list. Passwords that contain the required number of characters do not expire until the number of
+  the number of days dropdown list and a minimum length from the number of characters dropdown
+  list. Passwords that contain the required number of characters don't expire until the number of
   days (higher) days value. If both days values (i.e. number of days in Users must change password
   after days and number of days in this in this field) are identical, then passwords will expire
   after the specified number of days, irrespective of length.
@@ -29,7 +29,7 @@ policies.
     creates an Active Directory security group called "PPE Extended Maximum Age Users". Password
     Policy Enforcer uses this group to identify which users are eligible for a delayed password
     expiry. Users are added and removed from the group automatically. You can move and rename this
-    group, but do not change the pre-Windows 2000 name. Contact Netwrix support if you must change
+    group, but don't change the pre-Windows 2000 name. Contact Netwrix support if you must change
     the pre-Windows 2000 name. Change a Password Policy Enforcer configuration setting (any setting)
     after moving or renaming the group to trigger a cache update in Password Policy Enforcer.
     Password Policy Enforcer recreates this group if you delete it. To stop creating a group, make
@@ -37,7 +37,7 @@ policies.
     :::
 
 
-- Mode – Mode Choose a value from the Mode drop-down list to specify how Password Policy Enforcer
+- Mode – Mode Choose a value from the Mode dropdown list to specify how Password Policy Enforcer
   handles expired passwords. The Standard mode forces all users with expired passwords to change
   their password during logon. The Transitional modes force a percentage of users with expired
   passwords to change their password during logon. The Warning mode warns users that their password
@@ -60,7 +60,7 @@ policies.
 
     :::note
     The password expiry prompt is a Windows client feature, and is displayed even if the
-    Password Policy Client is not installed. Windows clients display the prompt 5 days before
+    Password Policy Client isn't installed. Windows clients display the prompt 5 days before
     passwords expire by default. You can alter this behavior in the Windows Group Policy security
     settings. See the
     [Interactive logon: Prompt user to change password before expiration](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/interactive-logon-prompt-user-to-change-password-before-expiration)
@@ -79,18 +79,18 @@ policies.
 
 Click the **Set up email** to configure the e-mail message options.
 
-Type the _name_ and _email address_ you wish to appear in the email's From field in the From text
+Enter the _name_ and _email address_ you want to appear in the email's From field in the From text
 box. The correct format is "Display Name" `<mailbox@domain.com>`
 
-Type the text for the email's **Subject** field in the Subject text box.
+Enter the text for the email's **Subject** field in the Subject text box.
 
-Type the _body_ of the email in the large text box.
+Enter the _body_ of the email in the large text box.
 
 ### Set up SMTP
 
-Currently not supported .
+Not supported.
 
 ## Expired Password Log
 
 If you want to record every event of an expired password in a log check the Log event for every
-expired password check box. It will record the event in a log named at the following path.
+expired password checkbox. It will record the event in a log named at the following path.

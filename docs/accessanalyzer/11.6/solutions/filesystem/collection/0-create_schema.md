@@ -8,11 +8,11 @@ sidebar_position: 10
 
 The 0-Create Schema job within the 0.Collection job group creates and updates the schema for the
 tables, views, and functions used by the rest of the File System Solution. This job needs to run
-prior to the other jobs in the 0.Collection job group for both new installations and upgrades. The
-job can be scheduled with any of the collections. Do not delete the job from the job tree.
+before the other jobs in the 0.Collection job group for both new installations and upgrades. The
+job can be scheduled with any of the collections. Don't delete the job from the job tree.
 
 :::info
-This job does not need to be moved. Leave it to run as part of the 0.Collection
+This job doesn't need to be moved. Leave it to run as part of the 0.Collection
 job group.
 :::
 
@@ -23,7 +23,7 @@ View the analysis task by navigating to the **FileSystem** > **0.Collection** > 
 Schema** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

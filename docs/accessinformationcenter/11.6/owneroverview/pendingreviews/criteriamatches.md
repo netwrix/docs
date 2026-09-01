@@ -15,7 +15,7 @@ The table displays the following information for each match found on the selecte
 
 - Criteria Name — Name of the criteria with match hits found within the file
 - Criteria Type — Displays Pattern for pattern based matches (System Criteria), or the subject type
-  based on Subject Profile matches (for example, Customer or Employee)
+  based on Subject Profile matches (for example, Customer, or Employee)
 - Data — Displays the file content that contains the criteria match. This includes the 19 characters
   immediately preceding and following the criteria. The match is highlighted yellow.
 

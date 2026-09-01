@@ -6,7 +6,7 @@ sidebar_position: 90
 
 # Refresh Hosts
 
-Use the **Refresh Hosts** option to manually execute the Host Inventory query. It can be selected
+Use the **Refresh Hosts** option to manually execute the Host Inventory query. You can select it
 for the following:
 
 - All hosts – Use from the Host Management node
@@ -21,4 +21,4 @@ Select the hosts or host list to inventory and then click **Refresh Hosts** in t
 
 ![Refresh Hosts Confirm dialog](/images/accessanalyzer/12.0/admin/hostmanagement/actions/refreshhostsconfirm.webp)
 
-When only particular hosts are selected in a list, a dialog box asks for confirmation of the action.
+When you select only particular hosts in a list, a dialog box asks you to confirm the action.

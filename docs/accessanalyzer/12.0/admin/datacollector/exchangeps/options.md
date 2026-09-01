@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # ExchangePS: Options
 
-The Options page is used to configure additional options. It is a wizard page for all of the
+Use the Options page to configure additional options. It is a wizard page for all of the
 categories.
 
 ![ExchangePS Data Collector Wizard Options page](/images/accessanalyzer/12.0/admin/datacollector/exchangeps/options.webp)
@@ -32,6 +32,6 @@ The following options can be configured:
 
     - Concatenated
 
-        - Delimiter – Enter the desired delimiter to be used between values
+        - Delimiter – Enter the delimiter to use between values
 
     - First-value only

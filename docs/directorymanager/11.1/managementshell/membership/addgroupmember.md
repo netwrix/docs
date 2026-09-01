@@ -12,7 +12,7 @@ Directory. Two types of membership can exist in Directory Manager.
 - Perpetual membership
 - Temporary membership
 
-Modifying the membership of a Smart Group or Dynasty using this commandlet is not recommended, since
+Modifying the membership of a Smart Group or Dynasty using this commandlet isn't recommended, since
 your changes will be discarded the next time the group is updated.
 
 Directory Manager maintains a history for this commandlet, which you can view in Directory Manager

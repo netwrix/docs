@@ -6,15 +6,15 @@ sidebar_position: 10
 
 # Recommended Configurations for the Unix Job Group
 
-The Unix job group has been configured by default to run with the default settings. It can be run
-directly or scheduled.
+The Unix job group is configured to run with the default settings. It can be run directly or
+scheduled.
 
 **Dependencies**
 
 If applicable, the **.NIS Inventory** job group can be run to enable reporting on users and groups
 from NIS environments.
 
-**Target Host(s)**
+**Target Hosts**
 
 All Unix Servers. Create a custom host list in Host Management that contains all Unix servers that
 are in scope to be auditing with the Unix solution.
@@ -37,12 +37,12 @@ Schedule the Unix Solution or individual job groups to run as desired.
 
 **History Retention**
 
-This is not supported in this job group and should be turned off.
+This isn't supported in this job group and should be turned off.
 
 **Run at the Job Group Level**
 
-It is a common practice to run the job in the **1.Users and Groups** job group by running the entire
-job group, instead of the individual jobs.
+It's common practice to run the entire **1.Users and Groups** job group instead of running the
+individual jobs.
 
 **Query Configuration**
 

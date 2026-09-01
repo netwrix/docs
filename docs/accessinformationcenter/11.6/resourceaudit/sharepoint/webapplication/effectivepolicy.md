@@ -13,7 +13,7 @@ denied.
 
 ![Effective Policy report at the web application and web application URL levels](/images/accessinformationcenter/11.6/resourceaudit/sharepoint/webapplication/webappeffectivepolicy.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Zone – Zone to which the policy is applied (for example, internet, intranet, default, and so on)
 - Url – URL path to the site collection

@@ -15,13 +15,13 @@ the categories of:
 
 ![EWS Public Folder Data Collector Wizard Filter page](/images/accessanalyzer/12.0/admin/datacollector/ewspublicfolder/filter.webp)
 
-All folders and attachments are scanned by default. Scope the scan for specific folders and
+By default, the scan includes all folders and attachments. Scope the scan for specific folders and
 attachments:
 
-- Include Folders – Type the folder paths to filter the scan to specific mailbox folders
-- Include Attachments – Type the attachment file names to filter to specific attachments
-- Exclude Folders – Type the folder paths to exclude mailbox folders from the scan
-- Exclude Attachments – Type the file names for the attachments to exclude attachments from the scan
+- Include Folders – Enter the folder paths to filter the scan to specific mailbox folders
+- Include Attachments – Enter the attachment file names to filter to specific attachments
+- Exclude Folders – Enter the folder paths to exclude mailbox folders from the scan
+- Exclude Attachments – Enter the file names for the attachments to exclude attachments from the scan
 
 Use `*` and `?` for matching wildcard and single characters.
 
@@ -30,19 +30,19 @@ Use `*` and `?` for matching wildcard and single characters.
 - Limit attachments size to [numerical value] – Select to limit attachment size and define a
   threshold for maximum size of an attachment returned in the scan. The default value is 20000 KB.
 
-Public folders can also be included or excluded from the scan by retrieving a list of public folders
-and selecting the desired folders.
+You can also include or exclude public folders from the scan by retrieving a list of public folders
+and selecting the folders you want.
 
-Follow the steps to filter the scan by selecting public folders from a list.
+To filter the scan by selecting public folders from a list:
 
 ![Choose folder to include window on Filter settings page](/images/accessanalyzer/12.0/admin/datacollector/ewspublicfolder/filterpublicfolders.webp)
 
 **Step 1 –** Click the **+** button to the right of the Include Folders or Exclude Folders box to
 open the Choose folders to include or Choose folders to exclude window.
 
-**Step 2 –** Click **Retrieve** to load the list of public folders that can be selected.
+**Step 2 –** Click **Retrieve** to load the list of available public folders.
 
-**Step 3 –** Select the desired public folders and click **Add** to add the folders to the Include
+**Step 3 –** Select the public folders you want and click **Add** to add the folders to the Include
 Folders or Exclude Folders list.
 
-After the configuration changes are saved, scans are filtered by the selected public folders.
+After you save the configuration changes, the scan uses the selected public folders as filters.

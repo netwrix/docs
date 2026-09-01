@@ -49,7 +49,7 @@ All risks are assigned an exemption policy that defines the behavior of Identity
 
 ### **blocking**
 
-Risk-triggering permission requests can be forbidden with the **blocking** exemption policy. If at least one of the detected risks in the requested entitlement set has the **blocking** exemption policy, then Identity Manager does not allow the set to be requested at all. A message is displayed and the request must be cancelled:
+Risk-triggering permission requests can be forbidden with the **blocking** exemption policy. If at least one of the detected risks in the requested entitlement set has the **blocking** exemption policy, then Identity Manager doesn't allow the set to be requested at all. A message is displayed and the request must be cancelled:
 
 ![Exemption Policy - **blocking**](/images/identitymanager/risks_blocking_v522.webp)
 
@@ -115,7 +115,7 @@ Once [Risk](../../integration-guide/toolkit/xml-configuration/provisioning/risk)
 
 This score allows an auditor to prioritize the [Access Certification](../../integration-guide/governance/accesscertification) campaign. The identity with the highest risk score poses a more serious security threat and has to be handled first.
 
-During access certification, assignments that are responsible for triggering the risk will be examined and then, kept or discarded.
+During access certification, assignments that are responsible for triggering the risk will be examined, then kept, or discarded.
 
 The risk score computation is performed by the risk score task.
 

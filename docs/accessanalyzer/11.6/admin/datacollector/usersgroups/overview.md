@@ -9,7 +9,8 @@ sidebar_position: 390
 The UsersGroups Data Collector audits user and group accounts for both local and domain, extracting
 system policies.
 
-The UsersGroups Data Collector has been preconfigured within the Windows Solution. Both this data
+The Windows Solution includes the UsersGroups Data Collector as a preconfigured component. Both
+this data
 collector and the solution are available with a special Enterprise Auditor license. See the
 [Windows Solution](/docs/accessanalyzer/11.6/solutions/windows/overview.md)
 topic for additional information.
@@ -47,5 +48,5 @@ contains the following wizard pages:
 
 ![Users and Groups Browser wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/usersgroups/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** box when
-the wizard is open and configuration settings are saved.
+Select the **Don't display this page the next time** box to hide the Welcome page. The wizard
+saves this setting with your configuration changes.

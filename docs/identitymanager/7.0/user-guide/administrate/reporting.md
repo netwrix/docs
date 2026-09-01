@@ -27,7 +27,7 @@ the home page in the **Administration** section;
 
     ![Orphaned Account List](/images/identitymanager/orphan_entitytype_v523.webp)
 
-Identity Manager puts users in control of their reporting. Rich features help produce customizable reports that can be used to check the assignment policy results, or gather information for an audit.
+Identity Manager puts users in control of their reporting. Rich features help produce customizable reports to check the assignment policy results, or gather information for an audit.
 
 Identity Manager provides several different levels of reporting according to your needs and technical tools. You can:
 
@@ -55,13 +55,13 @@ The accessibility of these predefined reports was configured during profile conf
 
 Download predefined reports by proceeding as follows:
 
-1. Click on **Reports** on the left of the home page to access the list of predefined reports.
+1. Click **Reports** on the left of the home page to access the list of predefined reports.
 
     ![Home Page - Reports](/images/identitymanager/home_reports_v602.webp)
 
     ![Reports](/images/identitymanager/reporting_predefinedreports_v602.webp)
 
-2. Choose the appropriate report and click on **Download** to get an Excel report. The
+2. Choose the appropriate report and click **Download** to get an Excel report. The
 downward-pointing arrow provides additional report formats.
 
 ## Add New Reports to the List
@@ -76,31 +76,31 @@ The Query module is based on predefined [Universe](../../integration-guide/toolk
 
 Create a custom report by proceeding as follows:
 
-1. Click on **Query** in the **Administration** section on the home page.
+1. Click **Query** in the **Administration** section on the home page.
 
     ![Home Page - Query](/images/identitymanager/home_query_v602.webp)
 
     ![Query Page](/images/identitymanager/reporting_querypage_v602.webp)
 
 2. Choose a query model from among the list.
-3. Click on **Fields to Display** and select the appropriate fields from among the database
-[Universe](../../integration-guide/toolkit/xml-configuration/business-intelligence/universe) and click on **Confirm**.
+3. Click **Fields to Display** and select the appropriate fields from among the database
+[Universe](../../integration-guide/toolkit/xml-configuration/business-intelligence/universe) and click **Confirm**.
 
     ![Fields to Display](/images/identitymanager/reporting_fieldstodisplay_v522.webp)
 
-In cases where Identity Manager doesn't display correctly the information you need, you must try to understand the entity instances and association instances that constitute the [Universe](../../integration-guide/toolkit/xml-configuration/business-intelligence/universe) that you are working with. Perhaps the fields that you chose cannot be properly correlated.
+In cases where Identity Manager doesn't display correctly the information you need, you must try to understand the entity instances and association instances that constitute the [Universe](../../integration-guide/toolkit/xml-configuration/business-intelligence/universe) that you are working with. Perhaps the fields that you chose can't be properly correlated.
 
-4. Click on **Filters**, write the appropriate condition and click on **Confirm**.
+4. Click **Filters**, write the appropriate condition and click **Confirm**.
 
     ![Filters](/images/identitymanager/reporting_filters_v602.webp)
 
-For example, a report could list user names and identifiers but only those with their `Contract end date` less than today's date, so that we will see all the workers who have left the organization and are still stored in Identity Manager.
+For example, a report could list user names and identifiers but only those with their `Contract end date` less than today's date, so that the report shows all the workers who have left the organization and are still stored in Identity Manager.
 
-5. Once all report settings are defined, click on **Download** to get a CSV report.
+5. Once all report settings are defined, click **Download** to get a CSV report.
 
 ## Create Customized Graphic Reports with Power BI
 
-When facing a periodic need for producing specific reports, especially when a visual presentation is required, Identity Manager offers the possibility to connect to the [Power BI](https://powerbi.microsoft.com/en-us/what-is-power-bi) application. This application will allow you to create customized reports with a vast range of display options (such as graphs, charts, matrixes, etc.) using Identity Manager's universes.
+When facing a periodic need for producing specific reports, especially when a visual presentation is required, Identity Manager connects to the [Power BI](https://powerbi.microsoft.com/en-us/what-is-power-bi) application. Use this application to create customized reports with a vast range of display options (such as graphs, charts, matrixes, etc.) using Identity Manager's universes.
 
 See the [Connect Power BI to Identity Manager](../../integration-guide/governance/reporting/how-tos/connect-powerbi) topic for additional information on how to analyze Identity Manager's data with Power BI.
 

@@ -6,14 +6,14 @@ sidebar_position: 20
 
 # Use a Group Managed Service Account (gMSA)
 
-Inactive User Tracker supports a group Managed Service Account (gMSA) as the data collecting account. With a gMSA, Active Directory generates and rotates the password automatically, so you do not maintain a password for the account or rotate it on a schedule.
+Inactive User Tracker supports a group Managed Service Account (gMSA) as the data collecting account. With a gMSA, Active Directory generates and rotates the password automatically, so you don't maintain a password for the account or rotate it on a schedule.
 
 See the [Use Group Managed Service Account (gMSA)](/docs/auditor/10.9/requirements/gmsa.md) topic for the general prerequisites that apply to every Auditor data source: create the KDS root key, create the gMSA with the `New-ADServiceAccount` cmdlet, install it on the Auditor Server with `Install-ADServiceAccount`, and add it to the local **Administrators** group on the Auditor Server.
 
 After you complete those prerequisites, delegate the Active Directory permissions described below and specify the gMSA in the Inactive User Tracker monitoring plan.
 
 :::note
-The [Data Collecting Account](/docs/auditor/10.9/admin/monitoringplans/dataaccounts.md) topic lists membership in the Domain Admins group as the requirement for Inactive User Tracker. As an alternative, you can delegate only the minimum Active Directory permissions that correspond to the actions enabled in the monitoring plan. Adding the gMSA to the Domain Admins group is not required if you delegate the permissions described in this topic.
+The [Data Collecting Account](/docs/auditor/10.9/admin/monitoringplans/dataaccounts.md) topic lists membership in the Domain Admins group as the requirement for Inactive User Tracker. As an alternative, you can delegate only the minimum Active Directory permissions that correspond to the actions enabled in the monitoring plan. Adding the gMSA to the Domain Admins group isn't required if you delegate the permissions described in this topic.
 :::
 
 ## Minimum Active Directory Permissions
@@ -30,7 +30,7 @@ Delegate only the permissions that match the actions enabled in the Inactive Use
 | Delete account with all its subnodes | All of the permissions for Delete accounts after, plus the `DeleteTree` standard right on user and computer objects |
 
 :::note
-The `Reset Password` extended right applies to user objects only. Computer accounts are not affected by the Set random password after action.
+The `Reset Password` extended right applies to user objects only. Computer accounts aren't affected by the Set random password after action.
 :::
 
 ## Delegate the Permissions
@@ -45,17 +45,15 @@ Repeat the following steps for each OU that contains accounts Inactive User Trac
 
 **Step 3 –** Select **Create a custom task to delegate** and click **Next**.
 
-**Step 4 –** Select **Only the following objects in the folder**, check **User objects** and **Computer objects** (where applicable per the table above), and click **Next**.
+**Step 4 –** Select **Only the following objects in the folder**, check **User objects** and **Computer objects** (where applicable per the permissions table), and click **Next**.
 
-**Step 5 –** On the **Permissions** page, check the permissions that correspond to the actions enabled in your monitoring plan. Refer to the table above to map each action to the required permission.
+**Step 5 –** On the **Permissions** page, check the permissions that correspond to the actions enabled in your monitoring plan. Refer to the permissions table to map each action to the required permission.
 
 **Step 6 –** Click **Next**, then **Finish**.
 
 If the monitoring plan uses the **Move to a specific OU after** action, repeat the wizard on the destination OU and grant `CreateChild` for user and computer objects to the gMSA.
 
 ## Specify the gMSA in the Monitoring Plan
-
-Follow the steps to use the gMSA in an Inactive User Tracker monitoring plan.
 
 **Step 1 –** On the Auditor Server, launch Inactive User Tracker and open an existing monitoring plan for editing, or create a new one. See the [Create Monitoring Plan to Audit Inactive Users](/docs/auditor/10.9/tools/inactiveusertracker/inactiveusertracker.md#create-monitoring-plan-to-audit-inactive-users) section for the full monitoring plan procedure.
 
@@ -75,7 +73,7 @@ When you save the monitoring plan, Inactive User Tracker creates a Windows sched
 ## Limitations
 
 :::warning
-The **Generate report**, **Filter by OU**, and **Browse OU** buttons in the Inactive User Tracker UI do not work when a gMSA is configured. These buttons issue an LDAP request at the time you click them from the interactive session of the user who launched Inactive User Tracker, and gMSA impersonation is not supported in interactive sessions. Use the scheduled task and the email reports to view inactive account data when the monitoring plan uses a gMSA.
+The **Generate report**, **Filter by OU**, and **Browse OU** buttons in the Inactive User Tracker UI don't work when a gMSA is configured. These buttons issue an LDAP request at the time you click them from the interactive session of the user who launched Inactive User Tracker, and gMSA impersonation isn't supported in interactive sessions. Use the scheduled task and the email reports to view inactive account data when the monitoring plan uses a gMSA.
 :::
 
 ## Troubleshooting
@@ -83,4 +81,4 @@ The **Generate report**, **Filter by OU**, and **Browse OU** buttons in the Inac
 | Symptom | Likely cause | Resolution |
 | ------- | ------------ | ---------- |
 | `Cannot find an account...` error when specifying the account | The gMSA name was entered without the trailing `$` or with the wrong domain. | Use the `<domain>\<gmsa-name>$` format, for example `CONTOSO\iutGmsa$`. |
-| The **Generate report**, **Filter by OU**, or **Browse OU** buttons do not work | Known gMSA limitation in interactive sessions. | See the Limitations section. Use the scheduled task and email reports instead. |
+| The **Generate report**, **Filter by OU**, or **Browse OU** buttons don't work | Known gMSA limitation in interactive sessions. | See the Limitations section. Use the scheduled task and email reports instead. |

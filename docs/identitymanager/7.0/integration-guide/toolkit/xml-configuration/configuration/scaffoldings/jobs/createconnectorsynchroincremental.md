@@ -105,7 +105,7 @@ The tasks created in the Scaffoldings are sorted by level. The levels are visibl
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Job Identifier="MicrosoftEntraID_Synchronize_Incremental_Scaffolding" DisplayName_L1="10: Microsoft Entra ID - Synchronization Incremental (scaffolding)" Agent="Local" IsIncremental="true">

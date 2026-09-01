@@ -19,7 +19,7 @@ The available Agent server settings for Nutanix are:
   semicolon (;), or as a multi-line list. Leave the box blank to accept connections from any hosts.
 
     :::note
-    This setting is optional and it allows you to improve security by limiting the number
+    This setting is optional and improves security by limiting the number
     of IP addresses allowed to connect.
     :::
 

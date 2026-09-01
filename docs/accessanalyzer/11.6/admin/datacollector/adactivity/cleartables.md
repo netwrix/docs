@@ -19,13 +19,13 @@ Tables** category task.
 ![Active Directory Activity DC wizard Results page for Remove Tables category](/images/accessanalyzer/11.6/admin/datacollector/adactivity/resultsremovetables.webp)
 
 **Step 3 –** Click **Next** to go to the Results page. Optionally, select the **Success** checkbox
-to display a confirmation of successful removal in the results after the job is run.
+to display a confirmation of successful removal in the results after you run the job.
 
 **Step 4 –** Click **Next** and then Click **Finish** to close the Active Directory Activity DC
 Wizard. Click **OK** to close the Query Properties window.
 
 :::warning
-When the job is run, all of the ADActivity standard reference tables are removed from
-the database.
+When you run the job, Enterprise Auditor removes all of the ADActivity standard reference tables
+from the database.
 
 :::

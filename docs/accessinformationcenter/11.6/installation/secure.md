@@ -7,19 +7,19 @@ sidebar_position: 20
 # Securing the Access Information Center
 
 There are two options for accessing the Access Information Center. You can either go to the Access
-Information Center website directly or you can access it via the Web Console. See the
-[URL & Login](/docs/accessinformationcenter/11.6/admin/login/login.md)
-topic for additional information.
+Information Center website directly or you can access it via the Web Console. See the
+[URL & Login](/docs/accessinformationcenter/11.6/admin/login/login.md)
+topic for additional information.
 
 - Web Console – This console uses an embedded website installed with the Enterprise Auditor Console.
   It provides a consolidated logon for both the Enterprise Auditor Reports and the Access
   Information Center.
 
-In order to secure the Access Information Center, it is first necessary to enable SSL for Access
+to secure the Access Information Center, it is first necessary to enable SSL for Access
 Information Center website. If you access the Access Information Center via the Web Console, then
 both websites must have SSL enabled with the same certificate. See the Securing the Web Console
 topic in the
-[Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
+[Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
 for additional information.
 
 ## Enable SSL for the AIC Website
@@ -30,30 +30,30 @@ Enable Secure Sockets Layer (SSL) for secure, remote connections to the applicat
 Organizations typically have one or more system administrators responsible for Public Key
 Infrastructure (PKI) and certificates. To continue with this configuration, it will first be
 necessary to confer with the PKI administrator to determine which certificate method will conform to
-the organization’s security policies.
+the organization's security policies.
 :::
 
 
-Follow the steps to enable SSL.
+To enable SSL:
 
-**Step 1 –** [Create an SSL Binding](#create-an-sslbinding).
+**Step 1 –** [Create an SSL Binding](#create-an-ssl-binding).
 
 **Step 2 –**
 [Modify the AccessInformationCenter.Service.exe.Config File](#modify-the-accessinformationcenterserviceexeconfig-file).
 
 **Step 3 –**
-[Update the URL in the AIC’s Desktop Icon Properties](#update-the-url-in-the-aics-desktop-icon-properties)
+[Update the URL in the AIC's Desktop Icon Properties](#update-the-url-in-the-aics-desktop-icon-properties)
 
-The Access Information Center is now configured to use SSL for secure, remote connections.
+The Access Information Center is now configured to use SSL for secure, remote connections.
 
-### Create an SSL Binding
+### Create an SSL Binding
 
 You run a PowerShell command to create an SSL binding. The binding command has several environmental
 variables:
 
 - The `$certHash` value is the `Thumbprint` value
 - The `$ip` value of the IP addresses. In the example script below, the value [0.0.0.0] is set for
-  all IP addresses.
+  all IP addresses.
 - The `$port` value must be accurate for your environment. The HTTP default port is 81. The HTTPS
   default is 481. However, it can be customized during installation.
 
@@ -80,8 +80,8 @@ The next step is to modify the `AccessInformationCenter.Service.exe.Config` file
 
 ### Modify the AccessInformationCenter.Service.exe.Config File
 
-Follow the steps to modify the Modify the `AccessInformationCenter.Service.exe.Config` file for
-HTTPS.
+To modify the `AccessInformationCenter.Service.exe.Config` file for
+HTTPS:
 
 **Step 1 –** Open the `AccessInformationCenter.Service.exeWeb.config` file in a text editor, such as
 Notepad. The file is located in the Access Information Center installation directory:
@@ -102,11 +102,11 @@ The URL for the Access Information Center is now
 `https://[Fully Qualified Domain Name for the Machine]:481/v2/login` (if port 481 was used when
 creating the binding). For example, `https://ENGLANDSRV10.NWXTech.com:481/v2/login`.
 
-### Update the URL in the AIC’s Desktop Icon Properties
+### Update the URL in the AIC's Desktop Icon Properties
 
-Follow the steps to update the AIC’s desktop icon's Access Information Center's Properties window.
+To update the AIC's desktop icon's Access Information Center's Properties window:
 
-**Step 1 –** Right click on the **Access Information Center** desktop shortcut and click
+**Step 1 –** Right click the **Access Information Center** desktop shortcut and click
 **Properties**.
 
 ![Access Information Center desktop icon properties](/images/accessinformationcenter/11.6/installation/aicproperties.webp)
@@ -122,21 +122,21 @@ The URL is now updated.
 
 The Access Information Center can be configured for Single Sign-On (SSO) using Windows
 authentication, to skip the opening login screen and authenticate automatically by passing the
-Active Directory credentials for the user’s current domain login session directly. If you are
+Active Directory credentials for the user's current domain login session directly. If you are
 accessing the Access Information Center via the Web Console, single sign-on only needs to be
 configured for the Web Console. See the Enable Single Sign-On topic of the
-[Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
+[Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)
 for additional information.
 
 :::note
-The Access Information Center also supports using Microsoft Entra ID single sign-on. See
+The Access Information Center also supports using Microsoft Entra ID single sign-on. See
 the
 [Microsoft Entra ID Single Sign-On](/docs/accessinformationcenter/11.6/admin/additionalconfig/entraidsso.md)
 topic for additional information.
 :::
 
 
-Follow the steps to enable SSO for accessing the Access Information Center website directly.
+To enable SSO for accessing the Access Information Center website directly:
 
 ![AccessInformationCenter.Service.exe config file in File Explorer](/images/accessinformationcenter/11.6/installation/configfilelocation.webp)
 
@@ -169,14 +169,14 @@ The Access Information Center has been enabled for single sign-on.
 
 ### Local Intranet Settings
 
-Next, configure local intranet settings to enable SSO. This enables users to have authentication
+Next, configure local intranet settings to enable SSO. This lets users have authentication
 pass through Windows Authentication and bypass SSO configuration Prompts for credentials via Browser
 pop-up.
 
-Follow the steps to configure local intranet settings.
+To configure local intranet settings:
 
 **Step 1 –** Open Windows Internet Properties (**Control Panel** > **Network and
-Internet** > **Internet Options**).
+Internet** > **Internet Options**).
 
 ![ConfigureLocalIntranetSettingsforSSO - 1](/images/accessanalyzer/11.6/install/application/reports/internetproperties.webp)
 

@@ -20,18 +20,18 @@ The 1–AzureSQL_PermissionsScan Job uses the SQL Data Collector for the followi
 ### Configure the PermissionsScan Query
 
 The 1-AzureSQL_PermissionScan Job is preconfigured to run using the default settings within the
-Permissions Collection category. Follow the steps to customize configurations.
+Permissions Collection category. To customize configurations:
 
 **Step 1 –** Navigate to the **Databases** > 0.Collection > AzureSQL > 1-AzureSQL_PermissionsScan >
 Configure node and select **Queries**.
 
-**Step 2 –** In the Query Selection view, select the PermissionsScan query and click on Query
+**Step 2 –** In the Query Selection view, select the PermissionsScan query and click Query
 Properties. The Query Properties window appears.
 
 **Step 3 –** Select the Data Source tab and click Configure. The SQL Data Collector Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for this
+Don't make changes to other wizard pages as they have been pre-configured for this
 job.
 :::
 
@@ -44,7 +44,7 @@ page. The default query target is All databases. The default query scope is Only
 objects and click Retrieve. The Available database objects will be populated. Databases and
 instances can be added in the following ways:
 
-- Select the desired database objects and click Add.
+- Select the database objects you want and click Add.
 - Use the Import CSV button to import a list from a CSV file, if desired.
 - Optionally, use the Add Custom Filter button to create and apply a custom filter.
 
@@ -71,7 +71,7 @@ Navigate to the Databases > 0.Collection > **AzureSQL** > 1-AzureSQL_Permissions
 node and select Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

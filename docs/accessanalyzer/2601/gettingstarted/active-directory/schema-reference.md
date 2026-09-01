@@ -5,7 +5,7 @@ sidebar_position: 40
 
 # Active Directory Schema Reference
 
-Access Analyzer stores Active Directory scan data in the `access_analyzer` ClickHouse database. The tables below are created when you set up an Active Directory source group and run a scan. Use this reference when querying scan data directly or integrating Access Analyzer data with external tools.
+Access Analyzer stores Active Directory scan data in the `access_analyzer` ClickHouse database. Access Analyzer creates these tables when you set up an Active Directory source group and run a scan. Use this reference when querying scan data directly or integrating Access Analyzer data with external tools.
 
 :::note
 All tables use the `ReplacingMergeTree` engine. Duplicate rows with the same primary key are deduplicated at merge time. Query the `_latest` views to return only the most recent version of each record.
@@ -13,7 +13,7 @@ All tables use the `ReplacingMergeTree` engine. Duplicate rows with the same pri
 
 ## Metadata columns
 
-All tables include the following columns populated by Access Analyzer during each scan:
+All tables include the following columns, which Access Analyzer populates during each scan:
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -108,9 +108,9 @@ Stores one row per user object discovered in an Active Directory scan.
 | Column | Type | Description |
 |--------|------|-------------|
 | `ms_ds_allowed_to_act_on_behalf_of` | `Array(String)` | List of security descriptors for accounts permitted to delegate to this account using resource-based constrained delegation. |
-| `ms_ds_allowed_to_delegate_to` | `Array(String)` | List of SPNs this account is permitted to delegate to using constrained delegation. |
+| `ms_ds_allowed_to_delegate_to` | `Array(String)` | List of service principal names (SPNs) this account is permitted to delegate to using constrained delegation. |
 | `ms_ds_supported_encryption_types` | `Nullable(Int32)` | Optional. Bitmask of Kerberos encryption types supported by this account. |
-| `service_principal_name` | `Array(String)` | List of service principal names (SPNs) registered to this account. |
+| `service_principal_name` | `Array(String)` | List of SPNs registered to this account. |
 | `legacy_exchange_dn` | `Nullable(String)` | Optional. Legacy Exchange distinguished name, used for mail routing compatibility. |
 | `ms_ds_user_account_control_computer` | `Nullable(Int32)` | Optional. Computer-specific `userAccountControl` flags stored on the user object in hybrid environments. |
 
@@ -203,9 +203,9 @@ Stores custom Active Directory attribute values collected for user objects durin
 
 ### Active Directory Effective Group Membership
 
-Stores the fully flattened, transitively resolved group membership graph. This table is populated by the `active_directory_effective_group_membership_mv` materialized view, which refreshes on a schedule after each scan. Each row represents one effective membership relationship at a given nesting depth.
+Stores the fully flattened, transitively resolved group membership graph. The `active_directory_effective_group_membership_mv` materialized view populates this table and refreshes on a schedule after each scan. Each row represents one effective membership relationship at a given nesting depth.
 
-**Engine:** `MergeTree` (not `ReplacingMergeTree`). The table is rebuilt on each refresh rather than deduplicated by version.
+**Engine:** `MergeTree` (not `ReplacingMergeTree`). Access Analyzer rebuilds the table on each refresh rather than deduplicating it by version.
 
 **Primary key:** `(group_object_guid, member_object_guid)`
 

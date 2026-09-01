@@ -16,7 +16,7 @@ you must set up the following prerequisites:
 
 ## Prerequisite Software
 
-Before you can deploy Directory Manager portals and services in remote IIS, make sure the following
+Before you can deploy Directory Manager portals and services in remote IIS, ensure the following
 prerequisite software is installed on the remote IIS machine. Install them in the following order:
 
 1. ASP.NET Core Runtime 6.0.30 (Hosting Bundle)
@@ -44,7 +44,7 @@ be created within this site.
 
     ![Add a website in IIS](/images/directorymanager/11.1/admincenter/portal/addsite.webp)
 
-3. Enter the information as shown below and click **OK**:
+3. Enter the following information and click **OK**:
 
     ![Add Website window](/images/directorymanager/11.1/admincenter/portal/addwebsite.webp)
 
@@ -98,7 +98,7 @@ The next step is to assign permissions on the physical folder that binds to your
 
     ![Script for appsettings.json file](/images/directorymanager/11.1/admincenter/portal/appsettings-full.webp)
 
-4. The script to be added is given below:
+4. Add the following script:
 
     ```
        },
@@ -128,15 +128,16 @@ The next step is to assign permissions on the physical folder that binds to your
 
 Admin Center uses the
 [Microsoft IIS Administration API](https://docs.microsoft.com/en-us/iis-administration/) to
-communicate with remote IIS. Make sure this API is instphysical folder location of the site",
-created in the section Create a Site in Remote IISalled as a Windows service on the remote IIS
+communicate with remote IIS. Ensure this API is installed as a Windows service on the remote IIS
 machine.
 
-To connect to the API, an access key is required. Follow the steps below to generate it.
+To connect to the API, an access key is required.
 
 1. Go to _https://localhost:55539/_ to launch the Microsoft Administration API interface.
-   Note that this is the default URL. It may change for reasons such as when a different port is
-   used.
+
+   :::note
+   This is the default URL. It may change for reasons such as when a different port is used.
+   :::
 2. Click **ACCESS KEYS**.
 
     ![Access Keys](/images/directorymanager/11.1/admincenter/portal/accesskeys.webp)

@@ -11,7 +11,7 @@ scanned personal drives.
 
 ![OneDrive Scan Summary report](/images/accessinformationcenter/12.0/resourceaudit/sharepoint/onedrive/onedrivescansummary.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - User Name – Name of the user with the OneDrive for Business personal site
 - Url – Path to the OneDrive for Business personal site

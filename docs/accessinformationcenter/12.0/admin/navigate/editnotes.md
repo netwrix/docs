@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Edit Notes Window
 
-The Edit Note window can be opened from a variety of interfaces. Follow the steps to add or edit a
-note.
+You can open the Edit Note window from a variety of interfaces. To add or edit a
+note:
 
 **Step 1 –** Select the item in the interface and click Edit Notes. The Edit Notes window opens.
 
@@ -17,4 +17,4 @@ note.
 
 **Step 3 –** Click OK when finished. The Edit Notes window closes.
 
-The user name and a date timestamp will appear at the beginning of each note added.
+The system displays the user name and a date timestamp at the beginning of each note you add.

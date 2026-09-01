@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **FileSystem** > **2.Direct Permiss
 **FS_DomainUserACLs** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -34,8 +34,8 @@ The following analysis tasks are selected by default:
 -   **4. Direct Resources** – Creates an interim processing table in the database for use by downstream
        analysis and report generation
 
-In addition to the tables and views created by the analysis tasks which displays all direct user
-permissions, the FS_DomainUserACLs job produces the following pre-configured report:
+The tables and views created by the analysis tasks display all direct user permissions. In
+addition, the FS_DomainUserACLs job produces the following pre-configured report:
 
 | Report           | Description                                                                      | Default Tags | Report Elements                                                                                                                                                                                                     |
 | ---------------- | -------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -22,6 +22,7 @@
     "kb:dry": "node scripts/copy-kb-to-versions.mjs --dry",
     "kb:test:aa": "npm run kb:clean && npm run prestart && npm run start",
     "kb:prodtest:aa": "npm run kb:clean && npm run prebuild && npm run build && npm run serve",
+    "test:scripts": "bash scripts/test-slugify.sh && bash scripts/test-heading-skip.sh && bash scripts/test-md-extension-autofix.sh",
     "prepare": "husky || true"
   },
   "dependencies": {

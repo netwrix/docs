@@ -6,37 +6,38 @@ sidebar_position: 10
 
 # Recommended Configuration for the MongoDB Solution
 
-The MongoDB Solution has been configured to inherit down from the MongoDB > Settings node. However,
+The MongoDB Solution inherits settings from the MongoDB > Settings node. However,
 it is best practice to assign the host list and the Connection Profile at the data collection level,
-the 0.Collection Job Group. Once these are assigned to the job group, it can be run directly or
-scheduled.
+the 0.Collection Job Group. After you assign these to the job group, you can run it directly or
+schedule it.
 
 **Dependencies**
 
-- Query must be configured with list of target database clusters / instances
+- The query must be configured with a list of target database clusters or instances
 
 Some of the 0.Collection Job Group queries can be scoped to target specific databases/instances.
-However, it is necessary to add the databases to the query first.
+However, add the databases to the query first.
 
-**Targeted Host(s)**
+**Targeted Hosts**
 
-The 0.Collection Job Group must be set to run against a custom host list containing the MongoDB
+You must set the 0.Collection Job Group to run against a custom host list containing the MongoDB
 database instances / clusters.
 
 **Connection Profile**
 
 The NoSQL Data Collector requires a specific set of permission. See the Permissions section for
 necessary permissions. The account used can be either an Active Directory account or a SQL account.
-Once the account has been provisioned, create a custom Connection Profile containing the credentials
+After you provision the account, create a custom Connection Profile containing the credentials
 for the targeted environment. See the
 [NoSQL Custom Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/nosql/configurejob.md)
 topic for additional information.
 
-The Connection Profile should be assigned under the MongoDB > 0.Collection > Settings > Connection
-node. It is set to Use the Default Profile, as configured at the global settings level. However,
+Assign the Connection Profile under the MongoDB > 0.Collection > Settings > Connection
+node. By default, the connection node uses the Default Profile configured at the global settings
+level. However,
 since this may not be the Connection Profile with the necessary permissions for the assigned hosts,
 click the radio button for the Select one of the following user defined profiles option and select
-the appropriate Connection Profile drop-down menu.
+the appropriate Connection Profile dropdown menu.
 
 See the [Connection](/docs/accessanalyzer/12.0/admin/settings/connection/overview.md) topic for additional
 information.
@@ -50,8 +51,8 @@ daily.
 
 **Run Order**
 
-The 0.Collection Jobs must be run first and in order. The other MongoDB Solution sub-job groups can
-be run in any order, together or individually, after running the 0.Collection Job Group.
+Run the 0.Collection Jobs first and in order. You can run the other MongoDB Solution sub-job groups
+in any order, together, or individually, after running the 0.Collection Job Group.
 
 :::info
 Run the solution at the top level.
@@ -65,7 +66,7 @@ Run the solution at the top level.
    [NoSQL Custom Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/nosql/configurejob.md)
    topic for additional information.
 2. Set the Host list for the 0.Collection Job Group with the servers containing the target
-   databases. Additionally, the database clusters / instances must be added to the Filter page in
+   databases. Additionally, add the database clusters or instances to the Filter page in
    the query configuration. See the
    [NoSQL Custom Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/nosql/configurejob.md)
    topic for additional information.

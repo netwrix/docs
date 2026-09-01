@@ -10,7 +10,7 @@ This information applies to **Select Account Type** > **SQL Authentication** in 
 window.
 
 :::note
-SQL Authentication credentials are used in the Connection Profiles for the SQL, MySQL, and
+You use SQL Authentication credentials in the Connection Profiles for the SQL, MySQL, and
 PostgreSQL Solutions.
 :::
 
@@ -23,5 +23,5 @@ The required credentials for SQL Authentication are:
 - Password Storage – Application (Uses the configured Profile Security setting as selected at the
   **Settings** > **Application** node. See the [Application](/docs/accessanalyzer/12.0/admin/settings/application/overview.md) topic
   for additional information.)
-- Password – Type the password
-- Confirm – Re-type the password
+- Password – Enter the password
+- Confirm – Re-enter the password

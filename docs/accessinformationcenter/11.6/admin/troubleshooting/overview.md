@@ -12,7 +12,7 @@ it will be useful to be aware of these.
 
 **Service Account Delegation**
 
-Delegation can be used to grant the Active Directory service account the minimal rights necessary to
+Use delegation to grant the Active Directory service account the minimal rights necessary to
 allow the Access Information Center to commit changes in Active Directory. See the
 [Service Account Delegation](/docs/accessinformationcenter/11.6/admin/troubleshooting/delegation.md)
 topic for additional information.

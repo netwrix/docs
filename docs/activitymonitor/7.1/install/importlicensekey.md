@@ -11,7 +11,7 @@ a Enterprise Auditor key can be done from the Activity Monitor Console. If the A
 Console is installed on a server where Enterprise Auditor has already been installed, it reads the
 license information from the Enterprise Auditor installation directory.
 
-Follow the steps to import a license key file.
+To import a license key file, complete the following:
 
 ![Activity Monitor Installation with Trial License](/images/activitymonitor/7.1/install/triallicense.webp)
 

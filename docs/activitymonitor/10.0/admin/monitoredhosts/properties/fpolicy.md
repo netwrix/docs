@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # FPolicy Tab
 
-The FPolicy tab allows users to modify FPolicy settings for NetApp devices, privileged access, and
+The FPolicy tab provides options to modify FPolicy settings for NetApp devices, privileged access, and
 enabling/connecting to cluster nodes.
 
 ![FPolicy Tab](/images/activitymonitor/9.0/admin/monitoredhosts/properties/fpolicytab.webp)
@@ -40,7 +40,7 @@ The Enable and Connect settings tab is enabled when the Enable and connect FPoli
 selected.
 
 :::note
-Adding nodes are not needed if set user is using a role that has Network Interface
+Adding nodes aren't needed if set user is using a role that has Network Interface
 permissions.
 :::
 
@@ -49,7 +49,7 @@ permissions.
 
 Add a list of cluster nodes to connect to FPolicy by clicking Add, which opens the Add or Edit
 Cluster Node window. Enter at least one cluster node in the textbox. Separate multiple nodes with
-either commas (,), semicolons (;), or spaces. Click OK and the node(s) is displayed in the **Node
+either commas (,), semicolons (;), or spaces. Click OK and the nodes is displayed in the **Node
 name** list.
 
 ![Connect to Cluster popup window](/images/activitymonitor/9.0/admin/monitoredhosts/properties/enableorconnectsettingsconnecttocluster.webp)
@@ -58,7 +58,7 @@ Click Discover to open the Connect to cluster window and retrieve nodes from the
 
 Specify the Cluster-management LIF and then enter user credentials which will be used to retrieve a
 list of the cluster nodes. This credential must have at least read-only rights to run the system
-node show command on the cluster. Click Get Nodes. If a successful connection is not achieved, the
+node show command on the cluster. Click Get Nodes. If a successful connection isn't achieved, the
 message indicates the error. If a successful connection is achieved, the message indicates how many
 cluster nodes were discovered. Click OK and all discovered nodes are displayed in the **Node name**
 list.

@@ -15,7 +15,7 @@ Navigate to the **Active Directory** > **Cleanup** > **1.Groups** > **1. Deprovi
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis tasks is
+Don't modify or deselect the selected analysis task. The analysis tasks is
 preconfigured for this job.
 :::
 

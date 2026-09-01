@@ -16,7 +16,7 @@ settings (size and retention method). For that, take the steps described below.
 
     ![manual_config_dhcp_log](/images/auditor/10.7/configuration/windowsserver/manual_config_dhcp_log.webp)
 
-4. Make sure the **Enable logging** option is selected.
+4. Ensure the **Enable logging** option is selected.
 5. Set **Maximum log size** to **4 GB**.
 6. Set the retention method to **Overwrite events as needed (oldest events first)**. Click **OK** to
    save the settings and close the dialog.

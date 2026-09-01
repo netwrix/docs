@@ -32,29 +32,29 @@ Use this page to specify basic information about the group.
    prefix combined with the group name.
 4. The group name is also displayed in the **Group Name (Pre Windows 2000)** box. Modify it, if
    required.
-5. Select the **Mail Enabled** check box to create the group as mail-enabled. A mail-enabled group
+5. Select the **Mail Enabled** checkbox to create the group as mail-enabled. A mail-enabled group
    is one with an email address. Members of a mail-enabled group can receive emails.
 6. The **Alias** box displays an alias for creating the group's email address. You can modify the
    alias, if required.
 
     If Microsoft Exchange Server is the designated messaging provider for the identity store, then
-    the alias length is limited to 64 characters, it does not contain spaces, and it is unique to
+    the alias length is limited to 64 characters, it doesn't contain spaces, and it is unique to
     the forest. For other messaging systems, the alias length must not exceed the number of
     characters supported by the respective messaging system.
 
     Also, the alias must not contain characters that are invalid for the configured messaging
     system.
 
-    The **Alias** box is displayed if the **Mail Enabled** check box is selected.
+    The **Alias** box is displayed if the **Mail Enabled** checkbox is selected.
 
 7. Set the group type by selecting an option for **Group Type**.
 
-    - **Security** - this group will be used for securing public folders, printers and other network
+    - **Security** - this group will be used for securing public folders, printers, and other network
       resources.
     - **Distribution** - this group will only be used for email distribution.
 
     :::note
-    If the administrator has predefined a group type, you cannot change it.
+    If the administrator has predefined a group type, you can't change it.
     :::
 
 
@@ -67,7 +67,7 @@ Use this page to specify basic information about the group.
       visible in the Global Catalog.
 
     :::note
-    (1) If the administrator has predefined a group scope, you cannot change it.  
+    (1) If the administrator has predefined a group scope, you can't change it.  
     (2) To create a mail-enabled group (with Exchange 2013/2016/2019 as the messaging provider), you
     must select **Universal** as the group scope.
     :::

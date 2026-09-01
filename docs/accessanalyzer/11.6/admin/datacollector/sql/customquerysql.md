@@ -20,8 +20,8 @@ The configurable options are:
 
 - Test Database:
 
-    - Data Source – Select the host\instance from the drop-down menu
-    - Database – Select the database from the drop-down menu
+    - Data Source – Select the host\instance from the dropdown menu
+    - Database – Select the database from the dropdown menu
 
 - SQL Query textbox – Enter the custom SQL script
 - Validate Query – Click to test the query, results display in the box

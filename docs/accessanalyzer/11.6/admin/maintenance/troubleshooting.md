@@ -15,16 +15,16 @@ installed. The default installation directory is:
 
 `C:\Program Files (x86)\STEALTHbits\StealthAUDIT\`
 
-If the installation directory was customized during installation, it will be:
+If you customized the installation directory during installation, it will be:
 
 `…\STEALTHbits\StealthAUDIT\`
 
-The Enterprise Auditor install directory has several logs that can be accessed for troubleshooting
+The Enterprise Auditor install directory has several logs that you can access for troubleshooting
 purposes. This includes:
 
 - The Application log which contains logging of all activities within Enterprise Auditor
 - The Upgrade log which logs activities related to the upgrade process
-- The upgrade archive which is a zip file containing all of your Enterprise Auditor jobs prior to
+- The upgrade archive which is a zip file containing all of your Enterprise Auditor jobs before
   the upgrade process
 - Sensitive Data logs that contain details from sensitive data scans performed against various
   repositories
@@ -35,14 +35,14 @@ See the [Logs](#logs) topic for additional information.
 
 ## Logs
 
-Enterprise Auditor has a few areas where it stores logs. Make sure the log level is set to DEBUG in
-Enterprise Auditor to gather all necessary information. Once the logs have been created and sent to
-Netwrix Support, then reset the logging level to save disc space.
+Enterprise Auditor has a few areas where it stores logs. Ensure you set the log level to DEBUG in
+Enterprise Auditor to gather all necessary information. After you create and send the logs to
+Netwrix Support, reset the logging level to save disc space.
 
 To set your logging level to debug go to **Settings** > **Application** – **Set the Application log
 level to Debug** and restart the application.
 
-#### Where Are the Logs Located?
+#### Log File Locations
 
 | Log Name                                               | Log Location                                                                                                                                                               |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -70,13 +70,13 @@ and DFS scan types:
 
 FSAA Trace Logs:
 
-Below are two types of FSAA trace logs created while in local, applet, or proxy modes:
+The following are two types of FSAA trace logs created while in local, applet, or proxy modes:
 
 - Parent Trace Log – StealthAUDITRPC*[YYYYMMDD_hhmmss]*[Execution_Host].log
-    - ProccessID is logged in the job log
+    - ProccessID appears in the job log
 - Child Trace Log –
   StealthAUDITRPC*[session_id]*[ScanType]_[Execution_host]_[Target_host]_[YYMMDD_hhmmss].log
-    - ProcessID is logged in the Parent trace log
+    - ProcessID appears in the Parent trace log
 
 When running StealthAUDITRPC as a service, the parent trace log reads as:
 

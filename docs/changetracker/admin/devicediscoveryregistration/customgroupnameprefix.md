@@ -60,7 +60,7 @@ Groups that don't match the prefix, such as the default OS-type group, are still
 | Yes | Groups match prefix | At least one exists | Device added to all valid script groups (gate passes) |
 | Yes | Script returns empty list | — | Device stays in New Devices — no audit event (not an error) |
 
-**Example**: An organization uses the convention `XYZ123_` for all device groups. The registration script returns `["XYZ123_Linux Redhat 9", "Linux Redhat 9"]`. If `XYZ123_Linux Redhat 9` exists in the directory, the gate passes and the device is placed in both groups. If the group was created with a typo — for example, `XYZ123_Redhat 9` — the gate blocks registration and creates an audit event identifying the missing group.
+**Example**: An organization uses the convention `XYZ123_` for all device groups. The registration script returns `["XYZ123_Linux Redhat 9", "Linux Redhat 9"]`. If `XYZ123_Linux Redhat 9` exists in the directory, the gate passes and the device is placed in both groups. If the group name has a typo — for example, `XYZ123_Redhat 9` — the gate blocks registration and creates an audit event identifying the missing group.
 
 ---
 
@@ -98,8 +98,8 @@ Both can be enabled at the same time. If either check blocks registration, the d
 1. Open the audit event to read the exact group names listed.
 2. Compare the name in the audit event against the groups in the directory.
 3. Common causes:
-   - Group was created with a typo (for example, `XYZ123_Redhat 9` instead of `XYZ123_Linux Redhat 9`).
-   - Group hasn't been created in the directory yet.
+   - The group name has a typo (for example, `XYZ123_Redhat 9` instead of `XYZ123_Linux Redhat 9`).
+   - The group doesn't exist in the directory yet.
    - The prefix value in settings doesn't match the convention used in the script — the match is case-sensitive.
 4. After the group name in the directory matches what the script returns, re-register the device or assign it to the group manually.
 

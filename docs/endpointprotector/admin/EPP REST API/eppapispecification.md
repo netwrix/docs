@@ -35,7 +35,7 @@ Treat the `client_secret` like a password. Store it in a secret manager, never c
 
 **POST /oauth/token**
 
-Issues an OAuth 2.0 access token using the Client Credentials grant. This is the only endpoint that does not require a token. Send the request as `application/x-www-form-urlencoded`:
+Issues an OAuth 2.0 access token using the Client Credentials grant. This is the only endpoint that doesn't require a token. Send the request as `application/x-www-form-urlencoded`:
 
 | Field | Required | Description |
 |---|---|---|
@@ -221,7 +221,7 @@ Lists endpoint users. Soft-deleted users are excluded.
 
 ### GET /device-control/users/`{id}`
 
-Returns a single user. Responds 404 if the user does not exist or has been deleted.
+Returns a single user. Responds 404 if the user doesn't exist or has been deleted.
 
 ### POST /device-control/users
 
@@ -252,7 +252,7 @@ Soft-deletes a single user. Returns `{ "response": "allok" }`, or 404 if the use
 
 ### DELETE /device-control/users
 
-Bulk soft-delete. Body: `{ "id": [42, 43, 44] }`. Returns a `resources` map keyed by ID (`code` 200 = deleted, 404 = not found). Status 200 if all succeeded, 207 if any ID was not found, 400 if `id` is missing or not a non-empty array.
+Bulk soft-delete. Body: `{ "id": [42, 43, 44] }`. Returns a `resources` map keyed by ID (`code` 200 = deleted, 404 = not found). Status 200 if all succeeded, 207 if any ID wasn't found, 400 if `id` is missing or not a non-empty array.
 
 ---
 
@@ -313,7 +313,7 @@ Request body (`name` required):
 
 ### PATCH /device-control/computers/`{id}`
 
-Partial update of admin-managed metadata. Agent-managed fields cannot be changed. An identity collision returns 400 with `A computer with this identity already exists.`
+Partial update of admin-managed metadata. Agent-managed fields can't be changed. An identity collision returns 400 with `A computer with this identity already exists.`
 
 ### DELETE /device-control/computers/`{id}`
 
@@ -389,7 +389,7 @@ An unknown `device_type_id` returns 400 with `Unknown device type.`
 
 ### PATCH /device-control/devices/`{id}`
 
-Partial update of admin-managed metadata (`name`, `description`, `friendly_name`, `friendly_description`, `department_id`, `owner_id`). Identity fields (`device_type_id`, `vid`, `pid`, `serial_no`) and agent-managed fields cannot be changed.
+Partial update of admin-managed metadata (`name`, `description`, `friendly_name`, `friendly_description`, `department_id`, `owner_id`). Identity fields (`device_type_id`, `vid`, `pid`, `serial_no`) and agent-managed fields can't be changed.
 
 ### DELETE /device-control/devices/`{id}`
 
@@ -475,7 +475,7 @@ Partial update. `name` must remain unique across active groups.
 
 ### DELETE /device-control/groups/`{id}`
 
-Soft-deletes a single group. The global group cannot be deleted (returns 403).
+Soft-deletes a single group. The global group can't be deleted (returns 403).
 
 ### DELETE /device-control/groups
 
@@ -546,7 +546,7 @@ Request body (`otp_type`, `duration`, and `justification` required):
 | `start_date` | string | Conditional | Required when `duration` = `date` (`YYYY-MM-DD HH:MM:SS`) |
 | `end_date` | string | Conditional | Required when `duration` = `date`; must be after `start_date`, by at most 30 days and 12 hours |
 
-Returns 201 with the created OTP. Validation failures (including a referenced computer or user that does not exist) return 400.
+Returns 201 with the created OTP. Validation failures (including a referenced computer or user that doesn't exist) return 400.
 
 ### PATCH /offline-temporary-passwords/`{id}`
 

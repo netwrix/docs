@@ -6,8 +6,8 @@ sidebar_position: 110
 
 # Nutanix Tab
 
-The Nutanix tab allows users to modify settings after a Nutanix host has been configured. Once a
-Nutanix host is added to the monitored hosts/services table, the configuration can be edited in the host
+Use the Nutanix tab to modify settings after a Nutanix host you've configured. Once a
+Nutanix host you add to the monitored hosts/services table, you can edit the configuration in the host
 Properties.
 
 ![Nutanix Host Properties](/images/activitymonitor/9.0/admin/monitoredhosts/properties/nutanixhostprop01.webp)
@@ -17,7 +17,7 @@ The configurable options are:
 - Nutanix Filer – Enter the name of the filer
 - Username – Enter the user name for the Nutanix account with REST API access
 - Password – Enter the password for the user name
-- Protocol – Select a protocol for the REST API access from the drop-down menu:
+- Protocol – Select a protocol for the REST API access from the dropdown menu:
 
     - Auto Detect
     - HTTPS
@@ -37,7 +37,7 @@ verification during a TLS session
 - Click **OK** to close the window and save the modifications.
 
 :::note
-Nutanix Files does not report events for activity originating from a server where the
+Nutanix Files doesn't report events for activity originating from a server where the
 Activity Monitor Agent is installed.
 
 :::

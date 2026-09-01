@@ -225,7 +225,7 @@ The following example generates the **Workforce** module in the application:
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <EntityType Identifier="Directory_Country" DisplayName_L1="Country" DisplayName_L2="Pays">

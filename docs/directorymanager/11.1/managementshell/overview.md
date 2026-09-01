@@ -7,12 +7,10 @@ sidebar_position: 110
 # Directory Manager Management Shell
 
 Directory Manager Management Shell is a command-line interface for managing objects like users,
-contacts, mailboxes, groups, smart groups, dynasties and for performing other administrative tasks
+contacts, mailboxes, groups, smart groups, and dynasties, and for performing other administrative tasks
 in an Active Directory and Microsoft Entra ID based identity stores.
 
-Built with PowerShell Core technology, Directory Manager Management Shell provides a platform to
-perform many of the tasks you can perform with Directory Manager as well as tasks that the console
-does not support.
+Built with PowerShell Core technology, Directory Manager Management Shell lets you perform many of the tasks you can perform with Directory Manager as well as tasks that the console doesn't support.
 
 This documentation is a reference for the Directory Manager PowerShell commands. It provides detail
 on their function, syntax, parameters, and gives ready-to-use examples that you can modify and test
@@ -41,18 +39,18 @@ identity stores.
 
 Before using Directory Manager Management Shell, you must connect it to an identity store.
 
-Follow the steps to access Management Shell.
+To access Management Shell.
 
-Step 1 – On the Windows Start menu, search for **Directory ManagerManagement Shell 11.1**. Click it
+Step 1 – On the Windows Start menu, search for **Directory Manager Management Shell 11.1**. Click it
 to launch Directory Manager Management Shell 11.1.
 
-Step 2 – On the Netwrix Netwrix Directory Manager Authenticate page, select an identity store to
+Step 2 – On the Netwrix Directory Manager Authenticate page, select an identity store to
 connect to.
 
 ![Login page](/images/directorymanager/11.1/managementshell/login.webp)
 
 :::note
-If your required identity store is not listed, contact the Directory Manager administrator.
+If your required identity store isn't listed, contact the Directory Manager administrator.
 :::
 
 
@@ -85,18 +83,18 @@ Operating Systems:
 - Windows 10 1607+
 
 Windows network location of that machine must be Domain or Private ("Home" or "Work"). If the
-network location is Public, Directory Manager Management Shell cannot create the required firewall
+network location is Public, Directory Manager Management Shell can't create the required firewall
 exception for WS-Management Communication.
 
 The Windows Management Shell remoting features are supported by the WS-Management protocol and the
 Windows Remote Management (WinRM) service that implements WS-Management in Windows.
 
-Also make sure the following is available at the remote machine:
+Also ensure the following is available at the remote machine:
 
 - Windows Powershell 7.4.6
 - Windows Remote Management 2.0
 
-Follow the steps to enable remoting on a Directory Manager machine.
+To enable remoting on a Directory Manager machine.
 
 Step 1 – Click **Start > Windows Powershell**. Right-click Windows PowerShell and select **Run as
 administrator**.
@@ -115,7 +113,7 @@ to re-enable remoting on Windows Server 2016 if it becomes disabled.
 :::
 
 
-You have to run this command only one time on each computer that will receive commands. You do not
+You have to run this command only one time on each computer that will receive commands. You don't
 have to run it on computers that only send commands. Because the configuration starts listeners, it
 is prudent to run it only where it is needed.
 
@@ -138,7 +136,7 @@ Shell and perform the following steps:
 Step 1 – Right-click **Start > PowerShell 7.4.6** using the **Run as Administrator** command to open
 it with Administrator privileges.
 
-Step 2 – At the prompt, type the following script. It will display the new session created for the
+Step 2 – At the prompt, enter the following script. It will display the new session created for the
 remote machine.
 
 ```
@@ -151,19 +149,19 @@ Import-PSSession -Session $s -Type cmdlet -AllowClobber
 Connect-IdentityStore -mode "2" -IdentityStoreID "identity store id" -Credential $Cred
 ```
 
-Following line of the above script connects the current user to the identity store (_having ID 1_).
+The following line of the preceding script connects the current user to the identity store (_having ID 1_).
 
 ```
 Connect-IdentityStore -mode "2" -IdentityStoreID "1" -Credential $Cred
 ```
 
-Follow the steps to get the identity store ID from Directory Manager SQL database in which the
+To get the identity store ID from Directory Manager SQL database in which the
 desired identity store exists:
 
-1. Login to SQL server (having Directory Manager database) with account having read permissions.
+1. Log in to SQL server (having Directory Manager database) with account having read permissions.
 2. View the table “Svc.Identitystore” top 100 rows. See the following snapshot for details:
 
     ![groupiddatabase](/images/directorymanager/11.1/managementshell/directorymanagerdatabase.webp)
 
-Once the script has run, a remote session will be created. You can now run all Directory Manager
+After the script has run, a remote session will be created. You can now run all Directory Manager
 cmdlets through PowerShell 7.4.6 without the need of signing into the Directory Manager server.

@@ -16,12 +16,10 @@ To configure your domain for monitoring manually, you will need:
 - ADSI Edit — Required if you plan to perform configuration steps from a server other than domain
   controller
 
-**NOTE:** If these tools are not installed, refer to the following Microsoft articles:
+**NOTE:** If these tools aren't installed, see the following Microsoft articles:
 
 - [Group Policy Management Console](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265969(v=ws.11))
 - [ADSI Edit](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc773354(v=ws.10)?redirectedfrom=MSDN)
-
-Follow the steps to configure your domain for monitoring.
 
 **Step 1 –** Configure effective domain controllers policy (by default, Default Domain Controllers
 Policy). See the [Configure Basic Domain Audit Policies](/docs/auditor/10.8/configuration/activedirectory/basicpolicy.md) or
@@ -54,12 +52,10 @@ Also, remember to perform the following steps for AD auditing:
 
 ## Enable Secondary Logon Service
 
-Follow the steps to Enable Secondary Logon Service.
-
 **Step 1 –** On the computer where Auditor Server resides, navigate to Start > Windows
 Administrative Tools > **Services**.
 
 **Step 2 –** In the **Services** dialog, locate the **Secondary Logon** service.
 
-**Step 3 –** Right-click the service and on the **General** tab make sure that **Startup type** for
+**Step 3 –** Right-click the service and on the **General** tab ensure that **Startup type** for
 this service is other than _Disabled_. The startup type can be either _Automatic_ or _Manual_.

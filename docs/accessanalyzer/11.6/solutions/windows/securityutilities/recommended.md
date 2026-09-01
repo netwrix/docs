@@ -8,12 +8,12 @@ sidebar_position: 10
 
 **Dependencies**
 
-The RemoteOpenPort job must be must be successfully run prior to running the RetrieveNetstat job.
+The RemoteOpenPort job must be successfully run before running the RetrieveNetstat job.
 
 **Targeted Hosts**
 
 - OpenPortScan Job Group – There is no assigned host list for this job group. Configure a host list
-  with any desired systems to be audited prior to running this job group. Both jobs in the
+  with any desired systems to be audited before running this job group. Both jobs in the
   OpenPortScan job group need to be assigned the same target host list.
 - SG_PowerShellCommands – All Windows Servers (No DCs)
 
@@ -30,7 +30,7 @@ This job group can be scheduled to run as desired.
 **Step 1 –** Ensure that the configured Connection Profile has local administrator privileges and
 Domain Admin privileges if targeting domain controllers.
 
-**Step 2 –** Configure target hosts prior to running this job group.
+**Step 2 –** Configure target hosts before running this job group.
 
 **Step 3 –** Remotely execute a netstat command on the target hosts.
 

@@ -6,9 +6,8 @@ sidebar_position: 80
 
 # Scope an Effective Access Report
 
-Once an Effective Access report’s loading process has stopped, either by completing the analysis of
-the targeted environments or via the **Cancel** button, follow the steps to change the scoping
-settings.
+After an Effective Access report’s loading process has stopped, either by completing the analysis of
+the targeted environments or via the **Cancel** button, to change the scoping settings:
 
 ![Scope button](/images/accessinformationcenter/11.6/resourceaudit/navigate/scope.webp)
 
@@ -22,7 +21,7 @@ window opens.
 - Scope report to the following hosts – Limits the report to selected hosts
 
     - Select the checkbox to apply this scoping option
-    - Select a host from the list in the left box. It is possible to select multiple hosts with
+    - Select a host from the list in the left box. You can select multiple hosts with
       basic Windows commands (Ctrl-left-click).
     - Click **Add**
     - Use **Remove** to edit the selection box on the right
@@ -36,7 +35,7 @@ window opens.
   level set
 
     - Select the checkbox to include nested resources
-    - Move the slider to select the desired nested depth level
+    - Move the slider to select the nested depth level you want
 
 **Step 3 –** When the scoping options have been set as desired, click **OK**.
 

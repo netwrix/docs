@@ -7,12 +7,12 @@ sidebar_position: 40
 # DropboxAccess: Scan Options
 
 Use the Scan Options page to authorize Access Analyzer to generate an Access Token allowing the
-DropboxAccess Data Collector to access and scan an organization’s Dropbox environment. The Access
-Token is used as the credential in the Connection Profile.
+DropboxAccess Data Collector to access and scan an organization’s Dropbox environment. The
+Connection Profile uses the Access Token as its credential.
 
 :::note
-The Access Token needs to be generated only once, prior to the first execution of any job
-in which the DropboxAccess Data Collector is used in a query.
+You only need to generate the Access Token once, before the first job that uses the DropboxAccess
+Data Collector in a query.
 :::
 
 
@@ -21,7 +21,7 @@ The Scan Options page is a wizard page for the following categories:
 - Scan Dropbox Access
 - Scan for Sensitive Content
 
-Follow the steps to create the Access Token:
+To create the Access Token:
 
 ![Dropbox Access Auditor Data Collector Wizard Scan Options page](/images/accessanalyzer/12.0/admin/datacollector/dropboxaccess/scanoptions.webp)
 
@@ -33,7 +33,7 @@ Follow the steps to create the Access Token:
 
 ![Copy Access Token](/images/accessanalyzer/12.0/admin/datacollector/dropboxaccess/scanoptionsaccesstoken.webp)
 
-**Step 3 –** Once the Access Token has been generated, click **Copy to Clipboard**. Click **Next**
+**Step 3 –** After Dropbox generates the Access Token, click **Copy to Clipboard**. Click **Next**
 to finish choosing the configuration options or click **Cancel** to close the Dropbox Access Auditor
 Data Collector Wizard.
 
@@ -42,6 +42,5 @@ Create a Connection Profile using this access token as the credential. See the
 configuring the Dropbox credential.
 
 :::tip
-Remember, assign this Connection Profile to the job group or job where the host assignment for the
-Dropbox environment to be targeted has been assigned.
+Assign this Connection Profile to the job group or job that targets the Dropbox environment.
 :::

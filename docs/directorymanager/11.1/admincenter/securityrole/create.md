@@ -16,7 +16,7 @@ To create a security role for an identity store, you have to specify the followi
 - Policies - Policies refer to settings that apply to role members. For example, the search policy
   limits role members to search for objects in a particular container.
 
-You can create a role from scratch or by copying an existing role. See the
+You can create a role manually or by copying an existing role. See the
 [Security Roles](/docs/directorymanager/11.1/admincenter/securityrole/overview.md) topic for additional information on security roles.
 
 :::note
@@ -26,31 +26,31 @@ or container specified as role criteria.
 :::
 
 
-## Create a Security Role from Scratch
+## Create a Security Role manually
 
-**Follow the steps to create a security role**
+**To create a security role**
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
+2. On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
-Step 3 – Click **Security Roles** under Settings in the left pane.
+3. Click **Security Roles** under Settings in the left pane.
 
-Step 4 – On the **Security Roles** page, click **Add Security Role**. The **Create Security Role**
+4. On the **Security Roles** page, click **Add Security Role**. The **Create Security Role**
 page is displayed.
 
-Step 5 – Enter a name for the security role in the **Name** box.
+5. Enter a name for the security role in the **Name** box.
 
-Step 6 – Enter a brief description for the role in the **Description** box.
+6. Enter a brief description for the role in the **Description** box.
 
-Step 7 – In the **Priority** box, type or select a value in the range, 1-99, to set the role
+7. In the **Priority** box, type, or select a value in the range, 1-99, to set the role
 priority. This should be a unique value for each role in an identity store.
 
-Step 8 – In the **Criteria** area, specify a criterion to determine role members. For details, see
+8. In the **Criteria** area, specify a criterion to determine role members. For details, see
 the [Security Role – Criteria](/docs/directorymanager/11.1/admincenter/securityrole/criteria.md) topic.
 
-Step 9 – Next, assign group management, user management, and other permissions to the security role.
+9. Next, assign group management, user management, and other permissions to the security role.
 For details, see the [Security Role – Permissions](/docs/directorymanager/11.1/admincenter/securityrole/permissions.md) topic.
 
 Step 10 – Select the **HelpDesk Role** checkbox if you want to restrict role members to the Helpdesk
@@ -66,22 +66,22 @@ topic.
 You can use a security role as a template to create a new role. In this case, the criteria,
 permissions, and policies of the template role are copied to the new role.
 
-**Follow the steps to copy a role**
+**To copy a role**
 
-Step 1 – In Admin Center, click **Identity Stores** in the left pane.
+1. In Admin Center, click **Identity Stores** in the left pane.
 
-Step 2 – On the Identity Stores page, click the ellipsis button for an identity store and select
+2. On the Identity Stores page, click the ellipsis button for an identity store and select
 **Edit**.
 
-Step 3 – Click **Security Roles** under Settings in the left pane.
+3. Click **Security Roles** under Settings in the left pane.
 
-Step 4 – On the **Security Roles** page, click the ellipsis button for the security role you want to
+4. On the **Security Roles** page, click the ellipsis button for the security role you want to
 use as template and select **Copy**. The **Copy Security Role** page is displayed.
 
-Step 5 – Follow steps 5-9 in the Create a Security Role from Scratch topic to update role info and
+5. Follow steps 5-9 in the Create a Security Role manually topic to update role info and
 click **Update Security Role**.
 
-Step 6 – On the Security Roles page, click **Save**.
+6. On the Security Roles page, click **Save**.
 
-Step 7 – To update the policies for the new role, see the
+7. To update the policies for the new role, see the
 [Security Role Policies](/docs/directorymanager/11.1/admincenter/securityrole/policy/overview.md) topic.

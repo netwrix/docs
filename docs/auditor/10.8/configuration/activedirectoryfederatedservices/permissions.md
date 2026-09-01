@@ -14,5 +14,5 @@ you will provide this account in the monitoring plan wizard.
 
 - If the target AD FS federation server is a domain controller, then the account must belong to the
   **Administrators** or **Domain Admins** group
-- Otherwise, if the server is not a domain controller, the account must belong to the **Local
+- Otherwise, if the server isn't a domain controller, the account must belong to the **Local
   Administrators** group.

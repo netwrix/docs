@@ -9,7 +9,7 @@ sidebar_position: 70
 If you want to be notified about suspicious activity, you can configure alerts that will be
 triggered by specific events. Alerts are sent after the specified action has been detected. Alerts
 are helpful if you want to be notified about actions critical to your organization security and have
-to mitigate risks once the suspicious action occurs.
+to mitigate risks after the suspicious action occurs.
 
 Review the following to take advantage of the Alerts functionality:
 
@@ -28,13 +28,13 @@ The example alert is triggered when a new user is created in the monitored domai
 
 ## Tags
 
-Netwrix Auditor allows you to apply tags when creating an alert. Applying tags to alerts allows you
-to distinguish one alert from another or create groups of similar alerts.
+You can apply tags when creating an alert in Netwrix Auditor. Applying tags helps you distinguish one
+alert from another or create groups of similar alerts.
 
 ![Manage tags list](/images/auditor/10.8/admin/alertsettings/managetags.webp)
 
-The Tags page contains a complete list of alerts that were created in the product. Currently, you
-cannot assign or create tags on this page.
+The Tags page contains a complete list of alerts that were created in the product. you
+can't assign or create tags on this page.
 
 To apply tags to an alert, navigate to alert settings and locate the Apply tags section on the
 General tab. See the [Create Alerts](/docs/auditor/10.8/admin/alertsettings/create/create.md) topic to receive information about tags applying.

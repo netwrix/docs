@@ -39,7 +39,7 @@ information.
 
 ## Add a PPE Policy
 
-**Follow these steps to add a new policy**
+**To add a new policy:**
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -50,12 +50,12 @@ Step 3 – Click **Configurations** under Settings in the left pane. Then click 
 PPE Policies page is displayed.
 
 Step 4 – Select the domain of the connected identity store from the **Select Domain** box for which
-you wish to add a policy. No PPE policies found message is displayed on the page if no policy is
+you want to add a policy. No PPE policies found message is displayed on the page if no policy is
 defined so far.
 
 Step 5 – Click the **Add Policy** button.
 
-Step 6 – Password Policy Enforcer contains the out-of-the-box policy templates based on the
+Step 6 – Password Policy Enforcer contains built-in policy templates based on the
 requirements of the most popular regulatory frameworks. Select one of the following:
 
 - Policy – Blank policy with no configurations
@@ -80,10 +80,10 @@ renaming a policy.
 
 ## Edit a PPE Policy
 
-Once you add a Password Policy Enforcer policy either on the basis of a blank template or on the
+After you add a Password Policy Enforcer policy either on the basis of a blank template or on the
 basis of pre-configured template, you can edit the policy as per your needs.
 
-Follow the steps to edit a PPE policy.
+To edit a PPE policy.
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -113,7 +113,7 @@ settings of the applied PPE policy.
 
 If a PPE policy is no longer needed, you can delete it.
 
-**Follow the steps to delete a PPE policy**
+**To delete a PPE policy**
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 

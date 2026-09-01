@@ -13,7 +13,7 @@ The SSH Username/Key credential type authenticates using an SSH username and pri
 1. Navigate to **Configuration** > **Service Accounts**.
 2. Click **Add Service Account**.
 3. In the **Name** field, enter a descriptive name for this service account.
-4. From the **Service account type** drop-down, select **SSH Username/Key**.
+4. From the **Service account type** dropdown, select **SSH Username/Key**.
 
    ![Add service account form showing SSH Username/Key fields: name, SSH username, and SSH key](/images/accessanalyzer/2601/configurations/add-service-account-ssh.png)
 

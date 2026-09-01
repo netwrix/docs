@@ -10,7 +10,7 @@ Use the BodyOptions page to select the size unit of messages.
 
 ![Filter Wizard BodyOptions page](/images/accessanalyzer/11.6/admin/datacollector/ewsmailbox/filterwizard/bodyoptions.webp)
 
-Select the desired message size unit:
+Select the message size unit you want:
 
 - KB
 - MB

@@ -6,12 +6,12 @@ sidebar_position: 10
 
 # Nasuni Edge Appliance Access & Sensitive Data Auditing Configuration
 
-It is necessary to generate an API Key Name and Passcode for each on-premise Nasuni Edge Appliance
+Generate an API Key Name and Passcode for each on-premise Nasuni Edge Appliance
 and cloud filer.
 
 ## Nasuni Filer Management Interface
 
-Follow the steps to generate a Nasuni API Access Key in the Nasuni Filer Management Interface.
+To generate a Nasuni API Access Key in the Nasuni Filer Management Interface:
 
 **Step 1 –** Within the **Configuration** menu, under **USERS & SECURITY**, select API Access Keys.
 The API Access Keys page opens.
@@ -39,14 +39,14 @@ documentation for additional information.
 
 ## Nasuni Management Console
 
-Follow the steps to generate a Nasuni API Access Key in the Nasuni Management Console.
+To generate a Nasuni API Access Key in the Nasuni Management Console:
 
 **Step 1 –** Click Filers and select API Keys from the menu on the left. The Filer API Access Key
 Settings page opens.
 
 **Step 2 –** Click New API Key button. The Add API Access Key window opens.
 
-**Step 3 –** From the Filer drop-down menu, select the desired Nasuni Edge Appliance. Then enter a
+**Step 3 –** From the Filer dropdown menu, select the Nasuni Edge Appliance you want. Then enter a
 Name for the key; for example, the name of the application.
 
 **Step 4 –** Click Add API Key.
@@ -68,13 +68,12 @@ documentation for additional information.
 
 ## Nasuni Best Practices for Access Auditing
 
-Nasuni is a hybrid NAS where actively-used data is stored on a Nasuni Edge appliance while the
-authoritative copy of all files and meta data is stored in private or public cloud object storage
-platforms by the UniFS® global file system, and there are egress fees associated with transferring
-data between the two. In order to minimize these egress fees and optimize scan performance, it is
-recommended to deploy a dedicated Nasuni Edge Appliance with all shares to be scanned by Access
-Analyzer mounted, and the Access Analyzer console server, in the same region where the authoritative
-copy resides.
+Nasuni is a hybrid NAS: actively used data resides on a Nasuni Edge Appliance, while the UniFS®
+global file system stores the authoritative copy of all files and metadata in private or public
+cloud object storage platforms. Because transferring data between the two incurs egress fees,
+deploy a dedicated Nasuni Edge Appliance with all shares you want Access Analyzer to scan mounted,
+and place the Access Analyzer console server in the same region as the authoritative copy. This
+minimizes egress fees and optimizes scan performance.
 
 See the
 [External Auditing and Nasuni Best Practices](https://nasuni.my.salesforce.com/sfc/p/#external-auditing-and-nasuni-best-practices)

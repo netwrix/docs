@@ -6,7 +6,7 @@ sidebar_position: 110
 
 # Non-Conforming Assignments
 
-The [Compute Role Model Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask) is able to detect from synchronized data a list of non-conforming or missing resources/entitlements for every identity. That is one of Identity Manager's most powerful governance features, provided you have a full role model configured.
+The [Compute Role Model Task](../../integration-guide/toolkit/xml-configuration/jobs/tasks/server/computerolemodeltask) can detect from synchronized data a list of non-conforming or missing resources/entitlements for every identity. That is one of Identity Manager's most powerful governance features, provided you have a full role model configured.
 
 ## Build the conforming assignment list
 
@@ -18,14 +18,14 @@ The **second step** is building the existing assignment list (list `B`), as expl
 
 ## Compare both lists
 
-We can now **compare both lists** to find out if the managed systems really comply with the decided upon assignment policy.
+ can now **compare both lists** to find out if the managed systems really comply with the decided upon assignment policy.
 
 For every assignment from list `B` representing resources from the synced data:
 
 1. There is a rule path from the identity attribute to the resource provisioning order in the role
 model. The assignment was expected, it can be found in list `A`.
 2. There is no rule path from the identity attribute to the resource provisioning order in the role
-model. The assignment was unexpected, it is not in list `A` or it is in list `A` but not with exactly the same property values.
+model. The assignment was unexpected, it isn't in list `A` or it is in list `A` but not with exactly the same property values.
 
 The "unexpected" (or non-conforming) assignments can be for example orphan accounts. Sometimes, the account itself should indeed exist according to the rules, but its attribute values are "unexpected", contradicting scalar rules.
 

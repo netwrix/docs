@@ -10,8 +10,6 @@ Netwrix Activity Monitor comes with a 10-day trial license to start. If an organ
 key has been acquired already, which should be provided by a Netwrix Representative, the file should
 be saved in the same location where the Activity Monitor will be installed.
 
-Follow the steps to install the Netwrix Activity Monitor Console.
-
 **Step 1 –** Run the NetwrixActivityMonitorSetup.msi executable to open the Netwrix Activity Monitor
 Setup wizard.
 
@@ -21,8 +19,8 @@ Setup wizard.
 
 ![End-User License Agreement Page](/images/activitymonitor/9.0/install/eula.webp)
 
-**Step 3 –** On the End User License Agreement page, check the I accept the terms in the License
-Agreement box and click Next.
+**Step 3 –** On the End User License Agreement page, check the checkbox to accept the license
+terms and click **Next**.
 
 ![Destination Folder Page](/images/activitymonitor/9.0/install/destinationfolder.webp)
 

@@ -11,7 +11,7 @@ results for the specific folder or file. It is a wizard page for all of the cate
 
 ![File Search Wizard Target Files page](/images/accessanalyzer/11.6/admin/datacollector/file/targetfiles.webp)
 
-Within the Target files configuration page, select the desired method to refine the query.
+Within the Target files configuration page, select the method you want to refine the query.
 
 :::note
 Some options are grayed out depending on the option selected.
@@ -59,7 +59,7 @@ network neighborhoods which begin with `\\`.
       used for the lookup by the query
 
         - Registry Value – This value is automatically populated from the registry key
-        - Levels – After a registry path has been selected, the Levels slider can be used to
+        - Levels – After you select a registry path, use the Levels slider to
           truncate the path for the key value in the Adjust Path dialog box
         - Current Value – Displays the type of data each registry value contains
         - Query 32-bit View – Select this checkbox to query a 32-bit view

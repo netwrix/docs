@@ -26,7 +26,7 @@ The permissions needed depends on the functionality level:
 
 - Least Privileged: ONLY Collect Events – This is the minimal functionality level. A user manually
   configures FPolicy and ensures that it stays enabled and connected. The product only collects
-  events. This functionality level is not recommended as it requires an additional solution that
+  events. This functionality level isn't recommended as it requires an additional solution that
   tracks the state of FPolicy and fixes the problem should ONTAP disconnect or should the policy
   become disabled.
 - **_RECOMMENDED:_** Less Privileged: Enable/Connect Policy & Collect Events – With this level, the
@@ -39,9 +39,8 @@ The permissions needed depends on the functionality level:
 No matter which set of permissions you provision, validate the configuration before continuing to
 Part 2. See the Validate Part 1: Security Role Configuration topic for additional information.
 
-If the FPolicy is to be used for both the Activity Monitor and Access Analyzer, the account also
-needs to be provisioned with an additional permission. See the Access Analyzer Integration topic for
-additional information.
+If you use FPolicy with both the Activity Monitor and Access Analyzer, you must provision the account
+with an additional permission. See the Access Analyzer Integration topic for additional information.
 
 The commands to create a role and names of permissions depend on the ONTAP API used. The product
 supports both the classic ONTAPI/ZAPI and the new REST API. For ONTAPI/ZAPI you need to use
@@ -103,7 +102,7 @@ security login rest-role create -role enterpriseauditorrest -api "/api/svm/svms"
 ```
 
 :::note
-If the FPolicy account is configured with these permissions, it is necessary to manually
+If the FPolicy account is configured with these permissions, you need to manually
 configure the FPolicy. See the [Configure FPolicy](/docs/activitymonitor/9.0/requirements/activityagent/nas-device-configuration/ontap-cluster-aac/configurefpolicy.md) topic for additional
 information.
 :::
@@ -127,7 +126,7 @@ permissions to collect events:
 
     :::tip
         Remember, this permission permits the Activity Monitor to enable the FPolicy. If the “Enable
-    and connect FPolicy” option is employed but the permission is not provided, the agent will
+    and connect FPolicy” option is employed but the permission isn't provided, the agent will
     encounter “Failed to enable policy” errors, but it will still be able to connect to the FPolicy.
     Since this permission model requires a manual configuration of the FPolicy, then the need to
     manually enable the FPolicy will be met.
@@ -192,7 +191,7 @@ security login rest-role create -role enterpriseauditorrest -api "/api/protocols
 ```
 
 :::note
-If the FPolicy account is configured with these permissions, it is necessary to manually
+If the FPolicy account is configured with these permissions, you need to manually
 configure the FPolicy. See the [Configure FPolicy](/docs/activitymonitor/9.0/requirements/activityagent/nas-device-configuration/ontap-cluster-aac/configurefpolicy.md) topic for additional
 information.
 :::
@@ -286,7 +285,7 @@ additional information.
 
 ### Access Analyzer Integration
 
-If the desire is for FPolicy to be used with both the Activity Monitor and Access Analyzer, then the
+If you use FPolicy with both the Activity Monitor and Access Analyzer, the
 following permission is also required:
 
 - `security login role show-ontapi` – Readonly access
@@ -340,7 +339,7 @@ article.
 
 ## Part 2: Create Security Login
 
-Once the access control role has been created, apply it to a domain account. Ensure the following
+After the access control role has been created, apply it to a domain account. Ensure the following
 requirements are met:
 
 - The SVM used in the following command must be the same SVM used when creating the access control

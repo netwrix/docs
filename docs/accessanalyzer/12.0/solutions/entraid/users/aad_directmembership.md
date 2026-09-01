@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # AAD_DirectMembership Job
 
-The AAD_DirectMembership Job identifies Microsoft Entra ID users who do not have any group
+The AAD_DirectMembership Job identifies Microsoft Entra ID users who don't have any group
 membership. This condition may indicate unnecessary user accounts that are suitable candidates for
 review and cleanup.
 
@@ -16,7 +16,7 @@ Navigate to the **Jobs** > **Entra ID** > **2.Users** > **AAD_DirectMembership**
 node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

@@ -7,10 +7,10 @@ sidebar_position: 10
 # Profiles
 - [AssignProfileAccessControlRules](./assignprofileaccesscontrolrules)
 
-Gives to a given profile the rights to create, update, delete and query any assigned profile.
+Gives a profile the rights to create, update, delete, and query any assigned profile.
 - [OpenIdClientAdministrationAccessControlRules](./openidclientadministrationaccesscontrolrules)
 
  
 - [ProfileAdministrationAccessControlRules](./profileadministrationaccesscontrolrules)
 
-Gives to a given profile the rights to create, update and delete profiles.
+Gives a profile the rights to create, update, and delete profiles.

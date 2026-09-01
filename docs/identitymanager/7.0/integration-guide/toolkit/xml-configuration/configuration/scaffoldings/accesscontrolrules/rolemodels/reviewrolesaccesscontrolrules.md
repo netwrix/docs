@@ -4,7 +4,7 @@ description: "Generates the permissions to access the role review pages for a gi
 sidebar_position: 13
 ---
 
-Generates the rights to access the access roles review pages for a given entity type and profile.
+Generates the rights to access the roles review pages for a given entity type and profile.
 
 Gives access to a shortcut on the dashboard to access this page.
 
@@ -31,7 +31,7 @@ Gives access to a shortcut on the dashboard to access this page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Workforce/Administration/Directory_User_ReviewRoles_AssignedCompositeRole_Custom_ProvisioningPolicy_ReviewRoles_Directory_User" DisplayName_L1="Workforce/Administration/Review Roles - Review Roles " DisplayName_L2="Administrator - Revue des rôles " EntityType="AssignedCompositeRole" Profile="Administrator">

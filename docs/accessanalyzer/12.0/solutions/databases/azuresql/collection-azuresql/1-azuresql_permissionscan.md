@@ -41,10 +41,10 @@ job.
 **Step 4 –** To query for specific databases/instances, navigate to the
 [SQL Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/sql/overview.md) page. The default query target
 is All databases. The default query scope is Only select database objects and click Retrieve. The
-Available database objects will be populated. Databases and instances can be added in the following
+wizard populates the available database objects. Add databases and instances in the following
 ways:
 
-- Select the desired database objects and click Add.
+- Select the database objects you want and click Add.
 - Use the Import CSV button to import a list from a CSV file, if desired.
 - Optionally, use the Add Custom Filter button to create and apply a custom filter.
 

@@ -159,4 +159,4 @@ The options in the Button Bar are:
 | ![paste](/images/accessanalyzer/12.0/admin/navigate/paste.webp)                       | Clipboard with paper        | Paste the query from the clipboard (Ctrl + V)       |
 | ![delete](/images/accessanalyzer/12.0/admin/navigate/delete.webp)                                 | Red X                       | Delete the selected query                           |
 
-Select a button for the desired action.
+Select a button for the action you want.

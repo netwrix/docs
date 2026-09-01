@@ -79,7 +79,7 @@ The identifier of the connection and thus the name of the subsection must:
 
  | Name | Details | 
  | --- | --- | 
- | InputFilePath required | **Type** String **Description** Path of the JSON file defining which entities and attributes are to be exported. See more details below. | 
+ | InputFilePath required | **Type** String **Description** Path of the JSON file defining which entities and attributes are to be exported. See [JSON file structure](#inputfilepath) details below. | 
  | Login required | **Type** String **Description** Login used to authenticate to Workday. | 
  | Password required | **Type** String **Description** Password used to authenticate to Workday. | 
  | Server required | **Type** String **Description** URL of the targeted Workday instance. **Syntax:**`https://####.workday.com/ccx/service/tenantName` (**without** the Web Service part). | 
@@ -129,7 +129,7 @@ columns:
 ```
 
 - a cookie file named `workday_<connectionIdentifier>_cookie.bin`, containing the time of the last
-export in order to perform an incremental export.
+export to perform an incremental export.
 
 Most exports can be run in complete mode, where the CSV files will contain all entries, or in incremental mode, where CSV files will contain only the entries which have been modified since the last synchronization.
 
@@ -143,7 +143,7 @@ A task can use the `IgnoreCookieFile` boolean property, and a command line (with
 >
 > ```
 >
-> We choose to export only the entity `workers`, so the output is generated to
+> To export only the entity `workers`, the output is generated to
 > `WorkdayExport_workers.csv` in the
 > [Application Settings](../../../integration-guide/network-configuration/agent-configuration/appsettings)Export
 > Output directory .

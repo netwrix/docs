@@ -6,10 +6,7 @@ sidebar_position: 10
 
 # VMware Monitoring Scope
 
-You can fine-tune Netwrix Auditor by specifying various data types that you want to exclude/include
-from/in the VMware reports.
-
-Follow the steps to exclude data from the VMware monitoring scope:
+To exclude data from the VMware monitoring scope, fine-tune Netwrix Auditor by specifying various data types you want to exclude/include:
 
 **Step 1 –** Navigate to the _%Netwrix Auditor installation folder%\Vmware Auditing_ folder.
 

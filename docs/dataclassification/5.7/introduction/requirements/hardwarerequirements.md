@@ -26,7 +26,7 @@ Netwrix Data Classification supports only Windows OS versions listed in the
 The requirements in this section apply to a single Netwrix Data Classification server.
 
 To deploy a server cluster, ensure all planned cluster nodes meet the following requirements.
-Consider deploying 1 Netwrix Data Classification Server per approx. 16, 000, 000 objects to process.
+Consider deploying 1 Netwrix Data Classification Server per approximately 16,000,000 objects to process.
 
 See [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/overview.md) and
 [Configuring NDC Servers Cluster and Load Balancing with DQS Mode](/docs/dataclassification/5.7/introduction/deployment/ndcserverandclient/dqsmode.md) for cluster sizing guidance.
@@ -40,7 +40,7 @@ See [Deployment Planning](/docs/dataclassification/5.7/introduction/deployment/o
 
 ## SQL Server
 
-The requirements in this section are for an SQL database supporting up to 4 NDC Server instances in a DQS cluster. The NDC database server should only be deployed on a dedicated machine, as sharing resources with additional databases on the same server will degrade performance.
+The requirements in this section are for an SQL database supporting up to 4 NDC Server instances in a Distributed Query Server (DQS) cluster. The NDC database server should only be deployed on a dedicated machine, as sharing resources with additional databases on the same server will degrade performance.
 
 | Hardware Component | Up to 16 M objects                                                                                                                                                                                                                                                                | Up to 32 M objects and up to 8 M objects for SharePoint | Up to 64 M objects and up to 16 M objects for SharePoint |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
@@ -80,7 +80,7 @@ Run the following PowerShell script for the Exchange Management Shell to obtain 
 results to calculate the average number of emails per mailbox or provide the total number.
 
 ```
-Get-Mailbox -ResultSize Unlimited | Get-MailboxStatistics SelectItemCount | ForEach {$totalItems+=$_.ItemCount}
+Get-Mailbox -ResultSize Unlimited | Get-MailboxStatistics | Select-Object ItemCount | ForEach-Object {$totalItems+=$_.ItemCount}
 ```
 
 **Office 365: Exchange Online, SharePoint Online and OneDrive**

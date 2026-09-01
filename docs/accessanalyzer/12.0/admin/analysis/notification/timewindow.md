@@ -16,7 +16,7 @@ The following option is available:
   to the most recent data
 
     :::note
-    The checkbox is only enabled if the table selected on the Select Table page has a
-    Access Analyzer **JobRunTimeKey** property. Otherwise, the checkbox is cleared by default.
+    Access Analyzer only enables the checkbox if the table selected on the Select Table page has an
+    Access Analyzer **JobRunTimeKey** property. Otherwise, it clears the checkbox by default.
 
     :::

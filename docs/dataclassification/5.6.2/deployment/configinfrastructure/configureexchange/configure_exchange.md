@@ -8,14 +8,13 @@ sidebar_position: 30
 
 When preparing your Exchange Server for data classification, consider that for on-premise Exchange
 Server, Basic authentication is supported for crawling account, and for Exchange Online you can use
-either Modern authentication or Basic authentication. Both scenarios are described in the sections
-below.
+either Modern authentication or Basic authentication. Both scenarios are described in the following sections.
 
 ## Basic Authentication
 
 This method is supported for Exchange Online and on-premise Exchange organizations. You should
 configure sufficient permissions that will allow the crawling account to impersonate the mailboxes
-that you wish to crawl. This requires the setup of two permissions:
+that you want to crawl. This requires the setup of two permissions:
 
 - ApplicationImpersonation—Allows the crawling account to impersonate each of the mailboxes / users
   configured for collection
@@ -56,18 +55,18 @@ Review the related procedure that corresponds to your Exchange deployment:
     ADMINUSERNAME
 
 **NOTE:** If crawling Microsoft Office 365 for Small Business or many hosted Exchange systems, then
-it is not possible to setup Application Impersonation.
+it isn't possible to set up Application Impersonation.
 
 ## Modern Authentication
 
 Starting with version 5.5.3, Netwrix Data Classification allows for crawling Microsoft Exchange
 Online organization mailboxes using Modern authentication. For that, it uses an Azure AD application
-which can leverage Microsoft API to connect to Exchange Online organization.
+that uses Microsoft API to connect to Exchange Online organization.
 
 **NOTE:** You need to use an admin user name with Modern Authentication.
 
 You should configure sufficient permissions that will allow the crawling account to impersonate the
-mailboxes that you wish to crawl. This requires the setup of two permissions:
+mailboxes that you want to crawl. This requires the setup of two permissions:
 
 - ApplicationImpersonation—Allows the crawling account to impersonate each of the mailboxes / users
   configured for collection

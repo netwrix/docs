@@ -12,11 +12,11 @@ the bottom left corner of the page.
 
 ![dynamicsourcegroupgd](/images/dataclassification/5.7/admin/sources/sourcegroups/dynamicsourcegroups/dynamicsourcegroupgd.webp)
 
-The following options can be configured for File Servers Dynamic Source Groups:
+The following options can be configured for Google Drive Dynamic Source Groups:
 
 | Option              | Description                                                                                                                                                                                                                                                                  |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Administrator Email | Enter the email for a Google Drive administrator account. The information entered here cannot be edited once the configurations for this dynamic source group are saved.                                                                                                     |
+| Administrator Email | Enter the email for a Google Drive administrator account. The information entered here can't be edited after the configurations for this dynamic source group are saved.                                                                                                   |
 | Crawl Shared Drives | Check the box to enable data collection from shared drives. Uncheck the box to disable this option.                                                                                                                                                                          |
 | Crawl User Drives   | Check the box to enable data collection from user drives. Uncheck the box to disable this option.                                                                                                                                                                            |
 | Match Rules         | At least one match rule must be included, match rules are Regular expressions, such as: <ul><li>`.*\/mySharedDrive.*`</li></ul>                                                                                                                                              |

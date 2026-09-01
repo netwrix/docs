@@ -16,7 +16,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **8.Domains** >
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
@@ -30,7 +30,7 @@ The default analysis task is:
 
     - SubjectAltName Allows Privilege Escalation (ESC1)
     - Defined EKUs Allow Arbitrary Certificate Signing (ESC2)
-    - Certificates in Combination can be used for Arbitrary Privilege Escalation (ESC3)
+    - Certificates in Combination Allow Arbitrary Privilege Escalation (ESC3)
     - Exploitable Access Control Entries on Templates (ESC4)
     - Public Key Infrastructure Misconfigurations (ESC5)
     - EDITF_ATTRIBUTESUBJECTALTNAME2 Allows Privilege Escalation (ESC6)

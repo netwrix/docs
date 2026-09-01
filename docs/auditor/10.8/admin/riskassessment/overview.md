@@ -7,10 +7,9 @@ sidebar_position: 90
 # IT Risk Assessment Overview
 
 To help you identify configuration gaps in your environment and understand their impact on overall
-security, Netwrix Auditor offers a dashboard with a number of metrics and drill-down reports on IT
-risk assessment. They pinpoint the weak points in your IT infrastructure such as overly broad
-assignment of access rights, loose password policies, and stale accounts. This information will help
-you to take corrective measures in the required area, ensuring the IT risks stay in the safe zone.
+security, Netwrix Auditor offers a dashboard with metrics and detailed reports on IT
+risk assessment. These reports pinpoint weak points in your IT infrastructure, such as overly broad
+access rights assignment, loose password policies, and stale accounts. This information helps you take corrective measures to keep IT risks in the safe zone.
 
 Risk assessment dashboard can be accessed by clicking the Risk assessment tile in the main window of
 Netwrix Auditor. For details about using the dashboard, see
@@ -60,9 +59,7 @@ have at least one item added. See the following table for the certain reports:
 connection. To check configuration status, go to Settings > Sensitive Data Discovery. See
 [Sensitive Data Discovery ](/docs/auditor/10.8/admin/settings/sensitivedatadiscovery.md)for more information.
 
-**NOTE:** Right after setting up the integration the drill down reports might be empty, while the
-risk indicator is already completed. Please wait until Auditor gets all the information from Netwrix
-Data Classification it needs.
+**NOTE:** After setting up the integration, detailed reports might be empty while the risk indicator is already complete. Wait until Auditor retrieves all the information it needs from Netwrix Data Classification.
 
 ## Required Monitoring Plan Settings
 
@@ -78,16 +75,16 @@ To verify the necessary settings of the existing plan
 
 1. Select the monitoring plan you need and click the **Edit** button.
 2. In the right pane of the dialog displayed, select Edit settings from the Monitoring plan section.
-3. Go to the Audit Database section and make sure that Disable security intelligence ... checkbox is
+3. Go to the Audit Database section and ensure that Disable security intelligence ... checkbox is
    cleared. This will instruct Netwrix Auditor to store data to both Long-Term Archive and audit
    database:
    ![edit_mp_store_data_to_db_thumb_0_0](/images/auditor/10.8/admin/riskassessment/edit_mp_store_data_to_db_thumb_0_0.webp)
-4. Save the settings and return to the window with the monitoring plan details. Make sure you have
+4. Save the settings and return to the window with the monitoring plan details. Ensure you have
    at least one monitored item in the plan. If necessary, add an item.
 5. Select the data source you need (for example, Active Directory) and click Edit data source from
    the Data source section on the right.
    ![edit_mp_open_ds_settings_thumb_0_0](/images/auditor/10.8/admin/riskassessment/edit_mp_open_ds_settings_thumb_0_0.webp)
-6. Make sure that:
+6. Ensure that:
     1. Monitor this data source and collect activity data is switched ON.
     2. Collect data for state-in-time reports is switched ON.
 7. Save the settings and close the dialog.

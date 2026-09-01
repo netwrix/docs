@@ -6,10 +6,10 @@ sidebar_position: 30
 
 # FS_TraverseGroups Job
 
-The **FS_TraverseGroups** Job can be used to create and apply permissions for traverse groups based
-on previous resource based groups. This job would be used in the case where the folder to which
-resource based groups permissions are applied is not the root share folder, or at the root of the
-share. This job prevents users from losing the ability to navigate through the directory structure
+Use the **FS_TraverseGroups** Job to create and apply permissions for traverse groups based
+on previous resource based groups. Use this job if the folder with resource based group permissions
+applied isn't the root share folder, or isn't at the root of the share. This job prevents users
+from losing the ability to navigate through the directory structure
 if the folder is nested. The FS_TraverseGroups Job must be installed from the Instant Job library.
 See the [Instant Job Wizard](/docs/accessanalyzer/12.0/admin/jobs/instantjobs/overview.md) topic for additional
 information.
@@ -18,7 +18,7 @@ information.
 
 **Dependencies**
 
-- The **FS_ResourceBasedGroups** job must be successfully run prior to running this job
+- The **FS_ResourceBasedGroups** job must be successfully run before running this job
 
 **Targeted Hosts**
 
@@ -44,7 +44,7 @@ Not supported
 **Step 2 –** Configure a Host List for the job at the job level.
 
 :::note
-If a host list is not configured, this job will analyze and commit actions on every File
+If a host list isn't configured, this job will analyze and commit actions on every File
 System server known to Access Analyzer. To scope the actions to target specific servers, configure a
 host list at the job level to target only those servers.
 :::
@@ -67,7 +67,7 @@ host list at the job level to target only those servers.
 
 **Step 5 –** Execute File System action task.
 
-- Allow an appropriate grace period for token refresh prior to executing File System action task,
+- Allow an appropriate grace period for token refresh before executing File System action task,
   for example one week
 - Disable the Active Directory action task
 - Enable the Modify Permissions action task
@@ -83,7 +83,7 @@ host list at the job level to target only those servers.
 
 ## Configure & Execute Analysis Tasks
 
-Prior to executing the action tasks, configure and execute the analysis tasks.
+Before executing the action tasks, configure and execute the analysis tasks.
 
 ### Configure the Create Groups Analysis Task
 
@@ -115,21 +115,21 @@ For instructions on configuring analysis parameters, see the
 
 ### Execute Analysis Tasks
 
-Once the Create Groups analysis task has been configured, execute the analysis tasks. The analysis
-tasks are selected by default. Follow the steps to execute the analysis tasks.
+After you configure the Create Groups analysis task, execute the analysis tasks. The analysis
+tasks are selected by default. To execute the analysis tasks:
 
-**Step 1 –** Make sure all of the analysis tasks are enabled.
+**Step 1 –** Ensure all of the analysis tasks are enabled.
 
 :::warning
-Prior to executing the analysis tasks, make sure that all action tasks are disabled.
+Before executing the analysis tasks, ensure that all action tasks are disabled.
 The purpose at this point is only to create the required traversal tables.
 :::
 
 
-**Step 2 –** In the Configure node, select **Actions** and make sure that all of the action tasks
+**Step 2 –** In the Configure node, select **Actions** and ensure that all of the action tasks
 are disabled.
 
-**Step 3 –** Right click on the **FS_TraverseGroups** job and select **Run Job**. This will generate
+**Step 3 –** Right click the **FS_TraverseGroups** job and select **Run Job**. This will generate
 the Change Modeling report.
 
 - Wait for the queued jobs to execute.
@@ -139,9 +139,9 @@ The analysis tasks create the required traversal tables accessible under the job
 ## Configure & Execute Active Directory Action Task
 
 The Active Directory action tasks create and populate resource based groups. The Create Groups
-action tasks must be updated to specify a Target OU for group creation prior to enabling and
-executing the actions. It should also be verified that the action tasks are targeting the same
-domain controller. View the actions by navigating to the place in the Jobs tree where the Traverse
+action tasks must be updated to specify a Target OU for group creation before enabling and
+executing the actions. Also verify that the action tasks target the same domain controller. View
+the actions by navigating to the place in the Jobs tree where the Traverse
 Groups job was installed from the Instant Jobs library. Then go to the **FS_TraverseGroups** >
 **Configure** node and select **Actions**. The Create Groups action task must be configured to
 specify the OU for group creation.
@@ -159,7 +159,7 @@ There are the following action tasks:
 - Create Groups – Create groups and add resource based groups
 - Modify Permissions – Add list groups
 
-It is recommended to review the tables used by the actions prior to executing the actions. For
+It is recommended to review the tables used by the actions before executing the actions. For
 instructions on configuring action tables, see the
 [Configure & Enable the Create Groups Action Task](#configure--enable-the-create-groups-action-task)
 topic. The actions act upon the data within the following tables:
@@ -172,7 +172,7 @@ tasks against these tables.
 
 ### Configure & Enable the Create Groups Action Task
 
-Follow the steps to configure the Create Groups action task.
+To configure the Create Groups action task:
 
 **Step 1 –** Select the action and click **Action Properties**.
 
@@ -192,12 +192,12 @@ groups is the same domain controller used in the Update Members action task.
 ### Execute Active Directory Action Task
 
 The Create Groups action creates the resource based groups. Enabled action tasks can be manually
-executed at the Actions node. Action tasks can be scheduled only at the job level. Follow the steps
-to create the resource based groups.
+executed at the Actions node. Action tasks can be scheduled only at the job level. To create the
+resource based groups:
 
 **Step 1 –** On the Action Selection page, enable the **Create Groups** action task.
 
-**Step 2 –** Right-click on the **FS_TraverseGroups** job and select **Run Job**.
+**Step 2 –** Right-click the **FS_TraverseGroups** job and select **Run Job**.
 
 - Wait for the queued job to execute
 
@@ -205,11 +205,11 @@ The resource based groups are created and populated.
 
 ## Execute File System Action Task
 
-Once the Create Groups action has been executed, the Modify Permissions action can be executed.
-Follow the steps to execute the action.
+After you execute the Create Groups action, you can execute the Modify Permissions action.
+To execute the action:
 
 :::warning
-Prior to executing the File System action tasks, allow a grace period, for example one
+Before executing the File System action tasks, allow a grace period, for example one
 week. This is important for token refresh to occur as users log off and log on again.
 :::
 
@@ -218,7 +218,7 @@ week. This is important for token refresh to occur as users log off and log on a
 
 **Step 2 –** Enable the **Modify Permissions** action task.
 
-**Step 3 –** Right-click on the **FS_TraverseGroups** job and select Run Job.
+**Step 3 –** Right-click the **FS_TraverseGroups** job and select Run Job.
 
 - Wait for the queued job to execute.
 
@@ -227,23 +227,23 @@ with the configured permissions. All other permissions will have been removed fr
 
 ## Generate the List Traverse Group Changes Report
 
-The Generate the List Traverse Group Changes report displays a list of changes made in the
-environment by the action modules.
+The List Traverse Group Changes report displays a list of changes made in the environment by the
+action modules.
 
 | Report                      | Description                                                                        | Default Tags | Report Elements                                                                                                                                              |
 | --------------------------- | ---------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| List Traverse Group Changes | This report shows a list of changes made in the environment by the action modules. | None         | This report is comprised of one elements: <ul><li>Table – This table provides details on the changes made to the environment by the action modules</li></ul> |
+| List Traverse Group Changes | This report shows a list of changes made in the environment by the action modules. | None         | This report is comprised of one element: <ul><li>Table – This table provides details on the changes made to the environment by the action modules</li></ul> |
 
 
- Follow the steps to analyze and report on action history.
+To analyze and report on action history:
 
 :::warning
-Disable all of the action tasks prior to generating the List Traverse Group Changes
+Disable all of the action tasks before generating the List Traverse Group Changes
 report.
 :::
 
 
-**Step 1 –** On the Action Selection page, disable the **Modify Permissions** action task. Make sure
+**Step 1 –** On the Action Selection page, disable the **Modify Permissions** action task. Ensure
 all of the action tasks are disabled.
 
 **Step 2 –** On the Analysis Selection page, enable the **Create Groups** and both **Show Table**

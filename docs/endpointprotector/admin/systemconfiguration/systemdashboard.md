@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Server Functionality
 
-Once the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User
-Interface from the assigned IP address. For more information, please refer to the dedicated chapter [Configuring EPP Server IP](/docs/endpointprotector/admin/appliance.md#ip-conﬁguration).
+After the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User
+Interface from the assigned IP address. For more information, refer to the dedicated chapter [Configuring EPP Server IP](/docs/endpointprotector/admin/appliance.md#ip-conﬁguration).
 
 :::note
 Always use the IP address with HTTPS (Hypertext Transfer Protocol Secure).
@@ -33,7 +33,7 @@ The Conﬁguration Wizard is available only if the basic settings for the Endpoi
 never been conﬁgured.
 
 As an additional security measure, a session timeout is implemented for 300 seconds (5 minutes) of
-inactivity. If you are not active for this amount of time, you are notiﬁed the session will expire
+inactivity. If you aren't active for this amount of time, you are notiﬁed the session will expire
 and logged out unless you select to continue the session.
 
 :::note
@@ -61,7 +61,7 @@ status.
 
 ![View general information of the system’s functionality, alerts, and backup status](systemstatus.webp)
 
-From the System Functionality section, you can enable Endpoint Protector, as well as just speciﬁc
+From the System Functionality section, you can enable Endpoint Protector, as well as specific
 modules (Device Control, Content Aware Protection, or eDiscovery).
 
 ![Enable EPP , as well as just speciﬁc modules](systemfunctionality.webp)
@@ -88,7 +88,7 @@ From the System Backup subsection, you can enable the System Backup.
 ## Server Update
 
 From this section, you can apply the latest security and Endpoint Protector Server offline
-updates. Starting with version 2509, the Live Update feature has been deprecated.
+updates. Starting with version 2509, Endpoint Protector no longer offers the Live Update feature.
 
 :::note
 This feature communicates through port 80. Whitelist the liveupdate.endpointprotector.com
@@ -131,7 +131,7 @@ AWS, Goggle, etc.) with the exception for Operating System and Kernel upgrades.
 
 
 :::note
-Updates are not tested beforehand but are pulled from the oﬃcial Linux repository.
+Updates aren't tested beforehand but are pulled from the oﬃcial Linux repository.
 :::
 
 
@@ -166,9 +166,9 @@ server or other sub-services in the background
 
 ## Effective Rights
 
-In this section you can view currently applied Device Control or Content Aware Protection policies.
+In this section you can view applied Device Control or Content Aware Protection policies.
 Based on the options you select from the Effective Rights Criteria form, you can view information
 based on rights, users, computers, device types, speciﬁc devices, report type (PDF or XLS),
 including Outside Hours and Outside Network Policies, and more.
 
-Once the report is generated, from the Actions column, you can download or delete it.
+After the report is generated, from the Actions column, you can download or delete it.

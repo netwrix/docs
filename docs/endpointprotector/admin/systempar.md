@@ -43,7 +43,7 @@ With Endpoint Protector, you can create informative notifications that users see
 Aware Policy blocks or reports a file. These notifications provide context about the triggered
 policy and the affected file.
 
-Traditionally, Endpoint Protector delivered Content Aware Protection Notifications in plain text. Starting from
+In the past, Endpoint Protector delivered Content Aware Protection Notifications in plain text. Starting from
 Agent version 6.2.3.1 (Windows), 3.0.3.1 (Mac), and 2.4.3.1 (Linux), users can use HTML code to
 format notifications. By using HTML, administrators can highlight key information such as threat
 names or affected files with bold, italics, or underlining, making it easier for users to
@@ -112,9 +112,9 @@ This section is available only if you enable the Device Control User Remediation
 [User Remediation](#user-remediation) section. In this section you can add, edit, and delete custom
 notiﬁcations for Device Control User Remediation.
 
-You can add a maximum of 100 custom notiﬁcations but you can't delete the default entry.
+You can add a maximum of 100 custom notifications. You can't delete the default entry.
 
-To add a new custom notiﬁcation:
+To add a new custom notification:
 
 **Step 1 –** Click **Create**.
 
@@ -127,8 +127,8 @@ To add a new custom notiﬁcation:
 
 **Example: USB Driver(deviceName) is blocked(action)**
 
-After you create the notiﬁcation, you can select the custom notiﬁcation from the User Remediation
-Notiﬁcation Template dropdown located in the Device Control section, Global Setting, Users,
+After you create the notification, you can select the custom notification from the User Remediation
+Notification Template dropdown in the Device Control section, Global Settings, Users,
 Computers, and Groups.
 
 ![Custom Device Control User Remediation Notiﬁcations](userremediationnotif.webp)
@@ -148,9 +148,7 @@ tab. For eDiscovery policies, see [eDiscovery policies and scans](ed_module/edpo
 
 ## Advanced Scanning Detection
 
-The Windows environment is subject to constant OS and security updates, and the installed
-applications are under continuous development. To avoid eventual changes that
-interfere with the Endpoint Protector Client, you can allow specific applications and processes.
+Because Windows and installed applications are constantly updated, you can allow specific applications and processes to prevent interference with the Endpoint Protector Client.
 
 The Advanced Scanning Exceptions feature lets you exclude applications from scanning on endpoints
 with the Advanced Printing and MTP Scanning feature enabled.
@@ -177,21 +175,20 @@ This subsection displays a list of all access rights you can assign to devices.
 
 ## Events
 
-In this section you can view, manage, and export the events list logged by Endpoint Protector. You
-can also edit event names and descriptions or enable/disable logging for speciﬁc events from the
+In this section, you can view, manage, and export the events list logged by Endpoint Protector. You
+can also edit event names and descriptions, or enable/disable logging for specific events from the
 Actions column.
 
 ![View, manage, and export the events list logged by Netwrix Endpoint Protector](listofevents.webp)
 
 ### Events Types and Descriptions
 
-This subsection displays a comprehensive list of events so administrators can
-manage and monitor their data protection policies. Additionally, there are more speciﬁc
-events, such as those related to EasyLock deployment, printer activity, user information updates,
+This subsection displays a comprehensive list of events that administrators use to
+manage and monitor their data protection policies. Events include EasyLock deployment, printer activity, user information updates,
 transfer limits, external repository uploads, content remediation, forced uninstall attempts, device
-remediation sessions, certiﬁcate management, unplanned client terminations, artifact receipts, and
-deep packet inspection (DPI) bypassed traﬃc. These events provide granular insight into various system activities, ensuring
-that organizations can maintain robust security and compliance measures.
+remediation sessions, certificate management, unplanned client terminations, artifact receipts, and
+deep packet inspection (DPI) bypassed traffic. These events provide granular insight into system activities, helping
+organizations maintain robust security and compliance measures.
 
 For a detailed view of all events and their descriptions, see the following table.
 
@@ -252,14 +249,14 @@ For a detailed view of all events and their descriptions, see the following tabl
 
 ## User Remediation
 
-User remediation lets end-users apply a justiﬁcation and self-remediate a policy violation or a
+User remediation lets end users apply a justification and self-remediate a policy violation or a
 restricted-access device.
 
 ![Allows the end-users to apply a justiﬁcation and self-remediate a policy violation or a restricted-access device](userremediation.webp)
 
 ### User Remediation Settings
 
-In this section, you can customize the User Remediation notiﬁcation, manage settings and enable User
+In this section, you can customize the User Remediation notification, manage settings, and enable User
 Remediation for Device Control.
 
 - Display Custom Logo – select a 200x200 pixels image to display on the pop-up notiﬁcation

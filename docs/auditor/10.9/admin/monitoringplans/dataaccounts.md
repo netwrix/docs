@@ -7,15 +7,15 @@ sidebar_position: 30
 # Data Collecting Account
 
 This is a service account that Auditor uses to collect audit data from the monitored items, such as
-domains, OUs and servers. Netwrix recommends the creation of a dedicated service account for that
+domains, OUs, and servers. Netwrix recommends creating a dedicated service account for that
 purpose. Depending on the data source your monitoring plan will process, the account must meet the
-corresponding requirements in the table below.
+corresponding requirements in the following table.
 
-Select the account that will be used to collect data for this item. If you want to use a specific
+Select the account to use to collect data for this item. If you want to use a specific
 account (other than the one you specified during monitoring plan creation), select account type you
 want to use and enter credentials. The following choices are available:
 
-- User/password. The account must be granted the same permissions and access rights as the default
+- User/password. The account needs the same permissions and access rights as the default
   account used for data collection. See the Data Collecting Account topic for additional
   information.
 - Group Managed Service Account (gMSA). You should specify only the account name in the
@@ -28,7 +28,7 @@ want to use and enter credentials. The following choices are available:
 
 - Application and secret for Microsoft 365 with modern authentication.
 
-Each data collecting accounts should meet the requirements from the table below, depending on the
+Each data collecting account should meet the requirements in the following table, depending on the
 data source.
 
 | Data source                                                                          | Required rights and permissions:                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -60,10 +60,10 @@ data source.
 
 ## Update Credentials for Account
 
-Once a Data Collecting Account has been configured, you can always update the password for this
+After you configure a Data Collecting Account, you can always update the password for this
 account in Netwrix Auditor.
 
-Follow the steps to update credentials for the accounts used by Auditor:
+To update credentials for the accounts used by Auditor:
 
 **Step 1 –** On the Auditor home page, navigate to **Settings**.
 

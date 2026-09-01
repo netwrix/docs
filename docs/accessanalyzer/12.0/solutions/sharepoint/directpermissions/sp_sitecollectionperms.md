@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # SP_SiteCollectionPerms Job
 
-Most content will inherit the permissions configured at the root of the site collection. Having an
-understanding of how those permissions are assigned is useful for gaining perspective on the overall
+Most content will inherit the permissions configured at the root of the site collection. Understanding
+how those permissions are assigned gives you perspective on the overall
 SharePoint permission configuration.
 
 ## Analysis Tasks for the SP_SiteCollectionPerms Job
@@ -16,7 +16,7 @@ Navigate to the **Jobs** > **SharePoint** > **1.Direct Permissions** > **SP_Site
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -41,4 +41,4 @@ report:
 
 | Report                             | Description                                                                                                                                                                                                                                  | Default Tags | Report Elements                                                                                                                                                                                                    |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Direct Site Collection Permissions | Most content will inherit the permissions configured at the root of the site collection. Having an understanding of how those permissions are assigned is useful for gaining perspective on the overall SharePoint permission configuration. | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays top 5 site collections by direct permissions</li><li>Table – Provides details on site collections by direct permissions breakdown</li></ul> |
+| Direct Site Collection Permissions | Most content will inherit the permissions configured at the root of the site collection. Understanding how those permissions are assigned gives you perspective on the overall SharePoint permission configuration. | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays top 5 site collections by direct permissions</li><li>Table – Provides details on site collections by direct permissions breakdown</li></ul> |

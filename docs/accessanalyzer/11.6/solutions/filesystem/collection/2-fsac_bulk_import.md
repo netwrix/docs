@@ -18,6 +18,6 @@ activity Bulk import category.
 
 - Bulk Import – Imports data into SQL Server
 
-    - Typically this query is not modified. See the
+    - Typically this query isn't modified. See the
       [FileSystemAccess Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/fsaa/overview.md)
       topic for information on when this query should be modified.

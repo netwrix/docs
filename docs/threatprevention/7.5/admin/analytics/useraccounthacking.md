@@ -10,7 +10,7 @@ The **User Account Hacking** analytic type identifies multiple bad passwords pro
 valid user account in the specified time interval.
 
 :::info
-Configure a subset of accounts to be monitored in order to avoid the excessive
+Configure a subset of accounts to be monitored to avoid the excessive
 volume of event activity from monitoring all accounts.
 :::
 
@@ -18,7 +18,7 @@ volume of event activity from monitoring all accounts.
 | User Account Hacking |                           |
 | -------------------- | ------------------------------- |
 | Definition           | Repeated failed logins below lockout thresholds and/or over extended periods         |
-| Example              | Malware or a bad actor on the network is attempting to compromise an account by guessing the account’s password repeatedly until access is granted. To circumvent built-in lockout policies in Active Directory, the malware or bad actor will only guess so many times before backing off, making sure not to lockout the account. After a period of time has expired, it will continue its routine until the password is guessed correctly. This type of attack is easily automated using a script. The quiet nature of this type of attack often results in the attack going undetected. <br />\*The Enterprise Admin account (SID ending in -500) in Active Directory cannot be locked out making it vulnerable to hacking and eventual breach. While Active Directory will show the account is locked out on the object itself, as soon as the correct password is supplied, the account will be automatically unlocked, giving the perpetrator “God-rights” to the enterprise. |
+| Example              | Malware or a bad actor on the network is attempting to compromise an account by guessing the account’s password repeatedly until access is granted. To circumvent built-in lockout policies in Active Directory, the malware or bad actor will only guess so many times before backing off, making sure not to lockout the account. After a period of time has expired, it will continue its routine until the password is guessed correctly. This type of attack is easily automated using a script. The quiet nature of this type of attack often results in the attack going undetected. <br />\*The Enterprise Admin account (SID ending in -500) in Active Directory can’t be locked out making it vulnerable to hacking and eventual breach. While Active Directory will show the account is locked out on the object itself, as soon as the correct password is supplied, the account will be automatically unlocked, giving the perpetrator “God-rights” to the enterprise. |
 | Trigger              | (X1 failed login attempts from an individual user account in Y1 minutes) OR (X2 failed login attempts from an individual user account in Y3 minutes) OR …         |
 | Recommended Settings | Set the number of attempts 1 or 2 increments below the organization’s Active Directory lockout policy settings.    |
 
@@ -38,7 +38,7 @@ Open the User Account Hacking Analytic Policy in any of the following ways:
 
 - Click Analytics in the left pane to launch the Analytics interface. Then click the gear icon for
   the analytic.
-- Expand the Analytics node and click the desired analytic. On the analytic window, click the gear
+- Expand the Analytics node and click the analytic. On the analytic window, click the gear
   icon available in the top right corner.
 
 The Configure Analytics window has two tabs:
@@ -58,7 +58,7 @@ trigger an incident record.
 
 By default, authentication event data is cached in memory for 24 hours. When an incident is
 triggered, an incident record is saved to the database along with the events that triggered the
-incident. Raw authentication event data that did not contribute to an incident are purged from
+incident. Raw authentication event data that didn't contribute to an incident are purged from
 memory once they are more than 24 hours old.
 
 - Click the **Add** **(+)** button to include additional triggers conditions. If any of the
@@ -81,12 +81,12 @@ from contributing to User Account Hacking incidents.
 The **Policy** tab for configuring analytics consists of three sub-tabs:
 
 - General tab – Configured the same way a regular policy’s [General Tab](/docs/threatprevention/7.5/admin/policies/configuration/general.md) is
-  configured. The only exception is that the Name and Description are hard coded, and cannot be
+  configured. The only exception is that the Name and Description are hard coded, and can’t be
   modified. The Tags field is disabled for analytics.
 - Event Type tab – Configured the same way a regular policy’s
   [Event Type Tab](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/overview.md) is configured. The only exception is that the
   [Authentication Monitoring Event Type](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/authenticationmonitoring.md) is hard
-  coded, and the Success filter cannot be modified.
+  coded, and the Success filter can’t be modified.
 
   - Scope the accounts to include in or exclude from being monitored on the AD Perpetrator filter.
   - _Optional_: Scope the protocol to be monitored on the Authentication Protocol filter. If
@@ -152,7 +152,7 @@ incident:
 
 - From Host – Name of the originating host
 - From Host IP Address – IP address of the originating host
-- Protocol – Protocol(s) used for the monitored operation
+- Protocol – Protocols used for the monitored operation
 - Access Type – Type of authentication, e.g. RDP, CIFS, etc.
 - Status – Detailed information on the error generated by the event
 - Detected on DC – Fully-qualified name of the domain controller that detected the event

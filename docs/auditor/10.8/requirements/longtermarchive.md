@@ -19,10 +19,7 @@ To reduce the impact on the system drive in large and extra-large environments, 
 move Long-Term Archive to another disk. For that, you should estimate the required capacity using
 recommendations in the next section.
 
-Then you should prepare the new folder for repository, target Netwrix Auditor at that folder, and,
-if necessary, move repository data from the old to the new location.
-
-Follow the steps to modify Long-Term Archive location and other settings.
+Then prepare the new folder for the repository, target Auditor at that folder, and move repository data from the old to the new location if necessary.
 
 **Step 1 –** In Auditor client, click Settings > Long-Term Archive; alternatively, if you are
 viewing the Long-Term Archive widget of the Health Status dashboard, click Open settings.
@@ -111,10 +108,7 @@ The custom account must be granted the following rights and permissions:
 
 ### Assign Permissions on the Long-Term Archive Folder
 
-The procedure below applies to Windows Server 2012 R2 and above and may vary slightly depending on
-your OS.
-
-Follow the steps to assign permissions on the Long-Term Archive folder:
+The procedure below applies to Windows Server 2012 R2 and later and may vary depending on your OS.
 
 **Step 1 –** Navigate to a folder where the Long-Term Archive will be stored, right-click it and
 select Properties.
@@ -128,7 +122,7 @@ select Properties.
 
 - Specify an account as principal.
 - Set Type to _"Allow"_.
-- Set Applies to to _"This folder, subfolders and files"_.
+- Set **Applies to** field to _"This folder, subfolders, and files"_.
 - Switch to the Advanced permissions section.
 - Check the following permissions:
     - List folder / read data
@@ -143,11 +137,7 @@ select Properties.
 
 ### Assign Change and Create Files/Write Data Permissions to Upload Subscriptions to File Shares
 
-The procedure below applies to Windows Server 2012 R2 and above and may vary slightly depending on
-your OS.
-
-Follow the steps to assign the **Change** and **Create Files/Write Data** permissions to upload
-subscriptions to file shares:
+The procedure below applies to Windows Server 2012 R2 and later and may vary depending on your OS.
 
 **Step 1 –** Navigate to a folder where report subscriptions will be stored, right-click it and
 select Properties.
@@ -172,11 +162,11 @@ check the Allow flag next to Change.
 
 - Specify a Netwrix Auditor user as principal.
 - Set Type to _"Allow"_.
-- Set Applies to to _"This folder, subfolders and files"_.
+- Set **Applies to** field to _"This folder, subfolders, and files"_.
 - Check Create files / write data in the Advanced permissions section.
 
-The users who are going to access report subscriptions must be granted read access to these shares.
-Netwrix recommends you to create a dedicated folder and grant access to the entire Netwrix Auditor
+The users who are going to access report subscriptions must have read access to these shares.
+Netwrix recommends creating a dedicated folder and granting access to the entire Netwrix Auditor
 Client Users group or any other group assigned the Global reviewer role in Auditor.
 
 ## System Health

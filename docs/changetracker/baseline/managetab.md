@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Manage Tab
 
-A word about remediation and change control when operating a Baseline Configuration Policy…
+This section covers remediation and change control when you operate a Baseline Configuration Policy.
 
 From the CIS Controls 7.1: "Maintain an up-to-date list of all authorized software that is required
 in the enterprise for any business purpose on any business system” and “Ensure that unauthorized
@@ -26,30 +26,28 @@ In summary, the intent of this security control is to maximize security defenses
   device, then
 - Ensure all similar devices are compliant with your Baseline Configuration
 
-But in a contemporary IT environment, change is a constant with the need to regularly patch devices
-and to update configuration settings to meet changing business requirements. This means there needs
-to be a further step in the process to Manage the Baseline Configuration.
+In a real-world IT environment, change is constant. You need to regularly patch devices and update
+configuration settings to meet changing business requirements, so the process requires an
+additional step: managing the Baseline Configuration.
 
-For example, from my worked example earlier, there were three failures reported. One device was
-missing a required item (Notepad++) and one other device was running the wrong version of Notepad++.
-These failures would be remediated by installing or updating the software on the two non-compliant
-devices. However, there was also a third failure – Google Chrome has been reported on the same two
-devices at a later version than required.
+For example, the earlier example reported three failures. One device was missing a required item
+(Notepad++), and another device was running the wrong version of Notepad++. Installing or updating
+the software on the two non-compliant devices remediates these failures. However, a third failure
+also occurred: Google Chrome was reported on the same two devices at a later version than required.
 
 ![baselinefailureanalysis](/images/changetracker/baseline/baselinefailureanalysis.webp)
 
-There are two paths to take from this: The two devices showing failures should be downgraded to
-match the required version, alternatively, it may be preferable to update the Baseline Configuration
-to embrace the newer version? This is a process known as 'promoting to the baseline' where either a
-new or updated element needs to be grafted into the existing Baseline to take into account changing
-times. Netwrix Change Tracker makes this process straightforward too, using the Manage Tab.
+You have two options: downgrade the two devices showing failures to match the required version, or
+update the Baseline Configuration to include the newer version. This process is known as 'promoting
+to the baseline,' where you add a new or updated element to the existing Baseline to account for
+changing conditions. Netwrix Change Tracker performs this process using the Manage tab.
 
 ## Using the Manage Tab
 
-The Manage tab will show any exceptions identified from the last report run.
+The Manage tab shows any exceptions identified from the last report run.
 
 :::note
-The Date and Time filters will be fixed and set according to the time window for the last
+Change Tracker automatically sets the Date and Time filters to match the time window for the last
 Baseline Report run.
 :::
 
@@ -58,56 +56,55 @@ Baseline Report run.
 
 Baseline Exceptions
 
-Exceptions include any failures according the Baseline Policy used in the report, together with any
-new changes affecting the Baseline Policy referenced from the Source device (or if you have chosen
-to include changes from Member Devices too, these will also appear here –
-[see earlier section](/docs/changetracker/baseline/policywizard/policywizard.md) regarding the Baseline Setup Wizard and the step where you
-are asked to 'Specify Source'.
+Exceptions include any failures according to the Baseline Policy used in the report, together with
+any new changes affecting the Baseline Policy referenced from the Source device. If you've chosen
+to include changes from Member Devices too, those changes also appear here. For more information
+about the step where you specify the source, see the
+[Baseline Policy Wizard](/docs/changetracker/baseline/policywizard/policywizard.md) topic.
 
-In this example we are using the default operation of only including changes originating from the
-Source Device for this Baseline Policy. This shows that there has been an update to the version of
-Google Chrome being used on this device, so this is highlighted and offered as a change that may
-need to be promoted to the Baseline Policy.
+This example uses the default operation, which includes only changes originating from the Source
+Device for this Baseline Policy. It shows an update to the version of Google Chrome on this
+device, so Change Tracker highlights this change and offers it as a candidate to promote to the
+Baseline Policy.
 
 Rule Operations:
 
-There are three choices for modifying a Baseline Policy, Extend, Add and Delete. You can also use
-the [Rule Edit function](/docs/changetracker/baseline/policywizard/policywizard.md) back in the Setup tab if you want to remove an existing
-rule entirely. The functions are largely self-explanatory, but tips are provided if you hover over
-each button.
+There are three choices for modifying a Baseline Policy: Extend, Add, and Delete. You can also use
+the [Rule Edit function](/docs/changetracker/baseline/policywizard/policywizard.md) in the Setup
+tab if you want to remove an existing rule entirely. Hover over each button to view a tip
+describing its function.
 
 ![baselineruleoperations](/images/changetracker/baseline/baselineruleoperations.webp)
 
-- Extend – Extend the existing baseline rules for this exception, in other words, promote this item
-  as a 'valid' configuration
-- Add – Adds a new rule to the baseline checking for the presence of this item. Any existing rule
-  for this item is overwritten.
-- Delete – Removes the baseline rule so it will no longer check for this item.
+- Extend – Extends the existing baseline rules for this exception, promoting this item as a
+  'valid' configuration
+- Add – Adds a new rule to the baseline that checks for the presence of this item. This overwrites
+  any existing rule for this item.
+- Delete – Removes the baseline rule so it no longer checks for this item.
 
     :::note
-    Deleting a 'No Others' rule failure will remove all 'No Others' processing for this
+    Deleting a 'No Others' rule failure removes all 'No Others' processing for this
     Tracker type.
     :::
 
 
-Once you have decided how you would like to handle the exceptions, you need to apply any changes
-required using the Apply Changes Now button.
+After you decide how to handle the exceptions, click **Apply Changes Now** to apply the changes.
 
 ![baselineapplychangesnow](/images/changetracker/baseline/baselineapplychangesnow.webp)
 
-You will be prompted to enter the Business Justification for the changes as when creating the
-Baseline Policy originally.
+Change Tracker prompts you to enter the Business Justification for the changes, just as it did
+when you originally created the Baseline Policy.
 
 ## Viewing the Baseline Policy details
 
-To get a ‘hard copy of the Baseline Policy, you can create a Tracking Policy report based on the
+To get a hard copy of the Baseline Policy, you can create a Tracking Policy report based on the
 Baseline Policy. Go to the Reports Center and use the **Actions button**, then select **Add Tracking
 Template Report**.
 
 ![baselinereportsandqueries](/images/changetracker/baseline/baselinereportsandqueries.webp)
 
-An Auditor will often ask to see what the Baseline Policy comprises, when and why changes have been
-made and by whom. This report provides a complete audit trail of changes as well as the breakdown of
-rules included in the policy.
+An auditor often asks to see what the Baseline Policy comprises, when changes were made, why they
+were made, and by whom. This report provides a complete audit trail of changes, as well as a
+breakdown of the rules included in the policy.
 
 ![baselinetest](/images/changetracker/baseline/baselinetest.webp)

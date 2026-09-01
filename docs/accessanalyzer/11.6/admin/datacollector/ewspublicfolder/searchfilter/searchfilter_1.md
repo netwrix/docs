@@ -31,13 +31,13 @@ Customize folder search conditions using the following options:
       [MessageClasses Window](#messageclasses-window) topic for additional information.
     - Click **over 90 Day ago** to open the Date Range Selection Window. See the
       [Date Range Selection Window](#date-range-selection-window)
-    - Click **has attachment(s)** to convert the condition to **has no attachment(s)** and vice
+    - Click **has attachments** to convert the condition to **has no attachments** and vice
       versa
 
 ## MessageClasses Window
 
 Use the MessageClasses window to alter criteria related to message class. The Message Classes window
-opens if **Ipm.Note** or **Ipm.Appointment** is clicked in the Edit Conditions box on the Search
+opens if you click **Ipm.Note** or **Ipm.Appointment** in the Edit Conditions box on the Search
 Filter page.
 
 ![MessagesClasses window](/images/accessanalyzer/11.6/admin/datacollector/ewsmailbox/filterwizard/messageclassessearchfilter.webp)
@@ -45,7 +45,7 @@ Filter page.
 Determine MessageClass-related criteria using the following options:
 
 - To add a class, click **Add**
-- Enter the desired Message Class in the corresponding textbox
+- Enter the Message Class you want in the corresponding textbox
 - Click **Exact Match** to reveal a dropdown menu of other search criteria under Matching Strategy
   and select the preferred option:
 
@@ -60,7 +60,7 @@ Determine MessageClass-related criteria using the following options:
 ## Date Range Selection Window
 
 Use the Date Range Selection window to select a time period or range for the search. The Date Range
-Selection window opens if **over 90 Day ago** is clicked in the Edit Conditions box on the Search
+Selection window opens if you click **over 90 Day ago** in the Edit Conditions box on the Search
 Filter page.
 
 ![Date Range Selection window](/images/accessanalyzer/11.6/admin/datacollector/ewsmailbox/filterwizard/daterangeselectionsearchfilter.webp)

@@ -15,7 +15,7 @@ security roles in an identity store, or (c) both at the identity store and role 
   their identity store accounts using Directory Manager. Hence, password validation checks are
   role-specific
 
-The Password policy also enables you to manage settings related to security questions and account
+With the Password policy, you can manage settings related to security questions and account
 lockout for security roles in an identity store.
 
 ## Set Password Restrictions and Rules for an Identity Store
@@ -62,7 +62,7 @@ following:
   in Directory Manager, after which authentication is disabled.
 - The duration for authentication to remain disabled.
 
-With authentication disabled, role members cannot sign into Directory Manager.
+With authentication disabled, role members can't sign into Directory Manager.
 
 :::note
 The authentication lockout policy only disables the user account in Directory Manager. It does
@@ -96,14 +96,14 @@ not disable it in the provider, such as Active Directory.
 Identity providers have password validation and complexity policies defined, and users must follow
 them while creating passwords. With Directory Manager, you can extend these policies.
 
-Directory Manager enables you to specify password validation checks for a security role in an
+With Directory Manager, you can specify password validation checks for a security role in an
 identity store. This extended policy applies when:
 
 - Role members change or reset their identity store account passwords using Directory Manager.
 - Administrators or helpdesk members reset the identity store account passwords of role members
   using the Helpdesk section in Admin Center.
 
-The policy does not apply when password is reset using the **Reset Password** option in user
+The policy doesn't apply when password is reset using the **Reset Password** option in user
 properties in the Directory Manager portal.
 
 **To specify password validation checks:**
@@ -117,7 +117,7 @@ properties in the Directory Manager portal.
    **Policies** area.
 6. On the **Add Policies** pane, click the **Password** tab.
 7. Password validation settings are listed in the **Password Validation Options** area. Select the
-   check box for a setting to apply it.
+   checkbox for a setting to apply it.
 
     |     | Setting                                             | Descriptions                                                                                                                              |
     | --- | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -128,7 +128,7 @@ properties in the Directory Manager portal.
     | 5.  | Reject Number as First Character in Password        | Prevent role members from creating passwords that begin with a number.                                                                    |
     | 6.  | Reject Number as Last Character in Password         | Prevent role members from creating passwords that end with a number.                                                                      |
     | 7.  | Reject Consecutive Identical Characters in Password | Prevent role members from creating passwords that contain the consecutive use of identical characters.                                    |
-    | 8.  | Enforce Password History (Domain Policy)            | Prevent role members from creating passwords that do not satisfy the password policy for password age/history, as defined for the domain. |
+    | 8.  | Enforce Password History (Domain Policy)            | Prevent role members from creating passwords that don't satisfy the password policy for password age/history, as defined for the domain. |
 
 8. Click **OK**.
 9. On the **Edit Security Role** page, click **Update Security Role**.

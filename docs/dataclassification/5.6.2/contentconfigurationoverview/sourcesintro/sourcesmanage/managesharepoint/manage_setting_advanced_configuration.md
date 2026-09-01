@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Setting advanced configuration
 
-**Advanced SharePoint Configuration** allows you to define which content within the SharePoint site
+Use **Advanced SharePoint Configuration** to define which content within the SharePoint site
 collection will be crawled and to specify metadata mapping settings.
 
 To open the Advanced SharePoint Configuration window:
@@ -20,7 +20,7 @@ The following option tabs are available:
     - Include / Exclude an entity (subsite/list)
     - Define custom metadata mappings per entity (see
       [Understanding custom metadata mappings](#understanding-custom-metadata-mappings))
-- Source Defaults—Allow you to specify the default custom metadata mapping for the site collection.
+- Source Defaults—Use this to specify the default custom metadata mapping for the site collection.
 - Configuration Viewer—Use this simple XML view to examine the raw configuration.
 
 ![sharepointadvancedsourceconfiguration_thumb_0_0](/images/dataclassification/5.6.2/sources/sharepointadvancedsourceconfiguration_thumb_0_0.webp)
@@ -32,7 +32,7 @@ fields. There are two types of mapping:
 
 - **Content Field Mappings** - The fields which listed as **Content Fields** will be extracted and
   indexed when the site collection is crawled.
-- **Special Field Mappings** (Including _Date_ fields) - These mappings allow you to make use of the
+- **Special Field Mappings** (Including _Date_ fields) - These mappings let you use the
   advanced filtering options available in the core search index. You can map any of the available
   SharePoint fields to some of the internal fields. For example, you can configure a SharePoint date
   field to be mapped into the "_Last Modified_" value, allowing results to be retrieved only if they
@@ -43,4 +43,4 @@ settings, and finally, the source-level settings. Thus, in the absence of a list
 configuration, the collector service will automatically use the mappings configured at the subsite
 level (or global level, if there is no subsite configuration).
 
-Mappings operate on a _Defaults_ basis (described later in this section.)
+Mappings operate on a _Defaults_ basis (described in [Understanding custom metadata mappings](#understanding-custom-metadata-mappings).)

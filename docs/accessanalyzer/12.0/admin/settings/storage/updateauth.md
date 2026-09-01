@@ -6,9 +6,6 @@ sidebar_position: 20
 
 # Update Authentication Credentials in a Storage Profile
 
-Follow the steps to update authentication credentials for a Storage Profile in the Access Analyzer
-Console.
-
 **Step 1 –** Navigate to the **Settings** > **Storage** page.
 
 **Step 2 –** Locate and select a **Storage Profile** to update.
@@ -21,4 +18,4 @@ Console.
 
 **Step 5 –** Click **Apply**.
 
-A new password has been added to a Storage profile.
+Access Analyzer adds the new password to the Storage Profile.

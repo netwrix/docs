@@ -14,7 +14,7 @@ inheritance.
 
 ## Prerequisites
 
-Action modules are available with a special Access Analyzer license. In order to use the Resource
+Action modules are available with a special Access Analyzer license. To use the Resource
 Based Groups workflow, the following Access Analyzer licensing components are required:
 
 - File System Feature
@@ -22,7 +22,7 @@ Based Groups workflow, the following Access Analyzer licensing components are re
 - File System Actions Add-on
 - Active Directory Actions Add-on
 
-The following job groups must be successfully run prior to using this workflow:
+The following job groups must be successfully run before using this workflow:
 
 - .Active Directory Inventory Job Group
 - FileSystem > 0.Collection Job Group
@@ -35,7 +35,7 @@ it can be installed from the Instant Job Wizard.
 
 ![Resource Based Groups Job Group in the Jobs Tree](/images/accessanalyzer/12.0/solutions/filesystem/resourcebasedgroups/jobstree.webp)
 
-Once it has been installed into the Jobs tree, navigate to the solution: **Jobs** > **FileSystem** >
+After it's installed into the Jobs tree, navigate to the solution: **Jobs** > **FileSystem** >
 **Resource Based Groups**.
 
 The FS_TraverseGroups Job and the FS_ResourceBasedGroupsAICImport Job must be installed from the
@@ -51,13 +51,13 @@ based groups model.
 
 The following jobs comprise the Resource Based Groups Job Group:
 
-- [FS_ResourceBasedGroups Job](/docs/accessanalyzer/12.0/solutions/filesystem/resourcebasedgroups/fs_resourcebasedgroups.md) – This job will transform permission on
+- [FS_ResourceBasedGroups Job](/docs/accessanalyzer/12.0/solutions/filesystem/resourcebasedgroups/fs_resourcebasedgroups.md) – This job will transform permissions on
   specified folders to a resource based groups model
-- [FS_TraverseGroups Job](/docs/accessanalyzer/12.0/solutions/filesystem/resourcebasedgroups/fs_traversegroups.md) – (Optional) This job can be used to create and
+- [FS_TraverseGroups Job](/docs/accessanalyzer/12.0/solutions/filesystem/resourcebasedgroups/fs_traversegroups.md) – (Optional) Use this job to create and
   apply permissions for traverse groups based on previous resource based groups. The
-  FS_TraverseGroupsJob must be added from the Instant Job Library in order to be used.
+  FS_TraverseGroupsJob must be added from the Instant Job Library to be used.
 - [FS_ResourceBasedGroupAICImport Job](/docs/accessanalyzer/12.0/solutions/filesystem/resourcebasedgroups/fs_resourcebasedgroupaicimport.md) – (Optional) This job
-  imports resources and access groups from the FS_ResoureBasedGroup Job into the Netwrix Access
+  imports resources and access groups from the FS_ResourceBasedGroups Job into the Netwrix Access
   Information Center. The FS_ResourceBasedGroupsAICImport Job must be added from the Instant Job
   Library to be used.
 
@@ -65,8 +65,8 @@ The following jobs comprise the Resource Based Groups Job Group:
 
 **Dependencies**
 
-- The **.Active Directory Inventory** Job Group must be successfully run prior to running this job
-- The **FileSystem** > **0.Collection** Job Group must be successfully run prior to running this job
+- The **.Active Directory Inventory** Job Group must be successfully run before running this job
+- The **FileSystem** > **0.Collection** Job Group must be successfully run before running this job
 
 **Targeted Hosts**
 
@@ -87,10 +87,10 @@ Not supported
 
 ## Scheduling the Resource Based Groups Job Group
 
-Netwrix recommends that the job be run by a scheduled task with an unlimited timeout to ensure the
-job will not be aborted when an interactive session is ended due to logoff (a logoff based on
-inactivity is common in enterprise environments). Netwrix also recommends that the job only be
-scheduled for discrete one-time runs so that results may be reviewed after each execution. See the
+Netwrix recommends running the job as a scheduled task with an unlimited timeout, so the job isn't
+aborted if an interactive session ends due to logoff (a logoff based on inactivity is common in
+enterprise environments). Netwrix also recommends scheduling the job only for discrete one-time
+runs so you can review results after each execution. See the
 [Schedule Jobs](/docs/accessanalyzer/12.0/admin/schedule/overview.md#schedule-jobs) topic for additional information.
 
 Throughout this document reference to executing a job refers to either manual execution or scheduled

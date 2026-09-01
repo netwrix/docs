@@ -33,7 +33,7 @@ Configure auto-completion by proceeding as follows:
 
 1. Retrieve from the SDK artifact the `usercube-configuration.xsd` and
 `Usercube.Demo.code-workspace` files.
-2. Make sure that these files are in the working directory (for example `C:/identitymanagerDemo`).
+2. ensure that these files are in the working directory (for example `C:/identitymanagerDemo`).
 3. In `Usercube.Demo.code-workspace`, declare the following setting, replacing the path
 `C:/identitymanagerDemo/identitymanager-configuration.xsd` by the path of your XSD file:
 

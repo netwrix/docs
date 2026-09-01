@@ -14,7 +14,7 @@ section for information on integration with other Netwrix products.
 ## Considerations
 
 While it is strongly recommended to match the versions of both the console and the activity agent,
-activity agent(s) V3.1+ can be managed by Activity Monitor Console V4.0+. Older versions of activity
+activity agents V3.1+ can be managed by Activity Monitor Console V4.0+. Older versions of activity
 agents will be limited in monitoring capability until upgraded.
 
 The installation and configuration paths for Netwrix Activity Monitor 7.1 have been updated from
@@ -23,8 +23,6 @@ Activity Monitor 7.0. See the
 for additional information.
 
 ## Activity Monitor Upgrade Procedure
-
-Follow the steps to upgrade from the Netwrix Activity Monitor V7.0 to Netwrix Activity Monitor 7.1.
 
 _Prerequisite_ – Ensure console and agent servers have .NET Framework 4.7.2 installed.
 
@@ -43,7 +41,7 @@ Update the activity agents in batches to ensure continuity of monitoring.
 :::
 
 
-**Step 2 –** Select the activity agent(s) to be upgraded. The Windows Ctrl-select option can be used
+**Step 2 –** Select the activity agents to be upgraded. The Windows Ctrl-select option can be used
 to select multiple activity agents. Then click Upgrade.
 
 **Step 3 –** (_Optional_) Deploy AD agents to monitor domains.
@@ -56,6 +54,6 @@ when upgrading to Activity Monitor 7.1.
 
 The selected activity agents are updated to V7.1. If a Threat Prevention Agent is also installed on
 the Windows server for monitoring file systems, the Monitored Hosts tab identifies the host as being
-“Managed by Threat Prevention”, and that ‘monitored host’ is not editable. However, multiple outputs
+“Managed by Threat Prevention”, and that ‘monitored host’ isn't editable. However, multiple outputs
 can be configured for hosts. Add the Windows host to the Monitored Hosts tab to monitor file system
 for outputs to Enterprise Auditor, Threat Manager, and/or SIEM products.

@@ -55,7 +55,7 @@ Helpdesk users may have to authenticate end users before resetting their passwor
 
     - Select the user's mobile number and/or email address in the **Select Mobile** and **Select
       Email** boxes to send the secure link to the user by SMS or email or both. The user must click
-      this link to reset his or her password.
+      the link to reset their password.
 
 8. Click **Reset Password**.
 
@@ -80,7 +80,7 @@ See the [Helpdesk Policy](/docs/directorymanager/11.1/admincenter/securityrole/p
    Use the **History** button to view user history, i.e., the actions performed on the user and by
    the user. This history is specific to helpdesk functions, as listed in the
    [History in Helpdesk](/docs/directorymanager/11.1/admincenter/helpdesk/history.md) topic.
-4. The **Authenticate** page displays the authentication type(s) the user's account is enrolled
+4. The **Authenticate** page displays the authentication types the user's account is enrolled
    with. You could be restricted to authenticate the user according to the authentication policy
    that applies to the user.  
    Click the plus sign for an authentication type to expand it.
@@ -111,7 +111,7 @@ See the [Helpdesk Policy](/docs/directorymanager/11.1/admincenter/securityrole/p
         2. Click **Verify**.
 
     :::note
-    Helpdesk cannot authenticate users with the Link Account, YubiKey, and Windows Hello
+    Helpdesk can't authenticate users with the Link Account, YubiKey, and Windows Hello
     authentication types.
     :::
 

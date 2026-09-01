@@ -10,15 +10,15 @@ You can define a role-based access policy for the Query Designer. Using the Quer
 can create queries for various purposes, as discussed in the
 [ Specify Smart Group Query Attributes](/docs/directorymanager/11.1/admincenter/applications/portal/displaytype/queryattributes.md) topic.
 
-The Query Designer policy enables you to restrict the following Query Designer features for a
+Use the Query Designer policy to restrict the following Query Designer features for a
 security role:
 
 - Policy application on new groups or on existing groups as well.
-- The _Start In_ container - Specify container(s) that will be displayed to role members on the
-  Query Designer. Queries created by role members cannot run beyond the specified containers. You
-  can also enforce the allowed containers so that role members cannot change them.
+- The _Start In_ container - Specify containers that will be displayed to role members on the
+  Query Designer. Queries created by role members can't run beyond the specified containers. You
+  can also enforce the allowed containers so that role members can't change them.
 - Object types - Limit the object types that will be available to role members for including in
-  queries. You can also enforce the allowed object types, so that role members cannot exclude any of
+  queries. You can also enforce the allowed object types, so that role members can't exclude any of
   them from queries.
 - Tabs on the Query Designer - The Query Designer has multiple tabs and all of them are available to
   users by default. You can choose to hide any of these tab from role members.
@@ -89,10 +89,10 @@ matching objects. Users can exclude any container or sub-container, though.
 
 You can restrict the search scope of the query to one or more containers and sub-containers for role
 members. Specify the containers and sub-containers to be displayed in the **Start In** field on the
-**Query Designer** dialog box. You can also enforce the container(s) so that role members cannot
+**Query Designer** dialog box. You can also enforce the containers so that role members can't
 remove a container or sub-container.
 
-**To specify container(s):**
+**To specify containers:**
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
@@ -111,14 +111,14 @@ remove a container or sub-container.
       Container** dialog box, select the required containers and sub-containers, and click **OK**.
       The selected containers are displayed in the **Start In Container** area.
 
-    You can allow a sub-container even if you do not allow its parent container. In this case, the
+    You can allow a sub-container even if you don't allow its parent container. In this case, the
     query will run in the sub-container but not in the parent container.
 
 8. Use the **Enforce Start In Containers** toggle button to enforce the start-in containers.
 
     - When you enforce the allowed containers, they will be displayed as disabled in the **Start
       In** field on the Query Designer. Role members will not be able to change this setting.
-    - When not enforced, role members can remove any of the allowed containers but they cannot add a
+    - When not enforced, role members can remove any of the allowed containers but they can't add a
       container beyond the allowed ones.
 
 9. Click **OK**.
@@ -128,13 +128,13 @@ remove a container or sub-container.
 ## Limit the Objects for Use in a Query
 
 By default, several object types are available to users on the Query Designer for including in
-queries. Users select an object type from the **Find** drop-down list and then select its sub-types
+queries. Users select an object type from the **Find** dropdown list and then select its sub-types
 on the _General_ tab of the Query Designer. The query returns the specified object types to include
 in group membership. The object types and their sub-types are discussed in the
 [Query Designer - General tab](/docs/directorymanager/11.1/portal/group/querydesigner/general.md) topic.
 
 You can limit the object types available to role members for use in queries. You can also enforce
-the object types so that role members cannot exclude an allowed object type from queries.
+the object types so that role members can't exclude an allowed object type from queries.
 
 **To limit object types:**
 
@@ -150,12 +150,12 @@ the object types so that role members cannot exclude an allowed object type from
    types displayed here with the options in the **Find** list on the Query Designer:
 
     - Exchange = Messaging System Recipients
-      Note that the sub-types displayed under **Exchange** are the same as displayed on the General
-      tab when you select _Messaging System Recipients_ in the **Find** drop-down list.
+      the sub-types displayed under **Exchange** are the same as displayed on the General
+      tab when you select _Messaging System Recipients_ in the **Find** dropdown list.
     - Computer = Computers
-    - All = Users, Contacts and Groups
+    - All = Users, Contacts, and Groups
 
-    Select the check boxes for the object sub-types that you want to display to role members in the
+    Select the checkboxes for the object sub-types that you want to display to role members in the
     Query Designer.
 
 8. Use the **Enforce Objects** toggle button to enforce the allowed objects.
@@ -186,7 +186,7 @@ The Query Designer has multiple tabs, where each tab groups similar settings. Th
 You can hide any of these tabs from role members.
 
 :::note
-The General tab is displayed to all users and cannot be hidden. However, you can hide the
+The General tab is displayed to all users and can't be hidden. However, you can hide the
 objects displayed on it, as discussed in the Limit the Objects for Use in a Query topic.
 :::
 
@@ -203,7 +203,7 @@ objects displayed on it, as discussed in the Limit the Objects for Use in a Quer
 6. On the **Add Policies** pane, click the **Query Designer** tab.
 7. The **Tabs** area lists the tabs available on the Query Designer, except the General tab. By
    default, all tabs are selected, indicating that they are displayed to role members.
-   Clear the check box for a tab to hide it from role members.
+   Clear the checkbox for a tab to hide it from role members.
 8. Click **OK**.
 9. On the **Edit Security Role** page, click **Update Security Role**.
 10. On the **Security Roles** page, click **Save**.
@@ -231,15 +231,15 @@ the query (see the **Filter Criteria** tab of the Query Designer). You can:
    indicates that all attributes are available to role members on the **Filter Criteria** tab of the
    Query Designer for creating queries.
 
-    - Clear the check boxes for the attributes that you do not want to display to role members. Use
+    - Clear the checkboxes for the attributes that you don't want to display to role members. Use
       the search box to search for your required attributes.
-    - You can also clear the **Allow all attributes** check box to deny all attributes, then select
-      the check boxes for the required attributes. At least one attribute must be selected.
+    - You can also clear the **Allow all attributes** checkbox to deny all attributes, then select
+      the checkboxes for the required attributes. At least one attribute must be selected.
 
-8. For each attribute, you can specify the operator(s) that can be applied to the attribute on the
+8. For each attribute, you can specify the operators that can be applied to the attribute on the
    **Filter Criteria** tab.
    On the **Allowed Attributes** dialog box, click the plus sign next to an attribute and select the
-   check box for the operators you want to provide for the attribute. When role members select an
+   checkbox for the operators you want to provide for the attribute. When role members select an
    attribute, only the respective operators will be displayed for it. For example, if you allow the
    ‘Contains’ and ‘Equals’ operators for the ‘cn’ attribute, then only these operators will be
    displayed when role members select the ‘cn’ attribute.
@@ -254,8 +254,8 @@ the query (see the **Filter Criteria** tab of the Query Designer). You can:
 9. Click **Save Selection** on the **Allowed Attributes** dialog box. The **Attributes** area
    displays the allowed attributes count.
    To view or update the allowed attributes, click **Edit Allowed Attributes**. On the **Allowed
-   Attributes** dialog box, select the **Show only selected** check box to get a list of the allowed
-   attributes. Make the desired changes and close the dialog box.
+   Attributes** dialog box, select the **Show only selected** checkbox to get a list of the allowed
+   attributes. Make the changes you want and close the dialog box.
 10. Click **OK**.
 11. On the **Edit Security Role** page, click **Update Security Role**.
 12. On the **Security Roles** page, click **Save**.
@@ -293,8 +293,8 @@ attributes and operators are available to create a default filter criteria.
 7. Click **Add Filter** in the **Default Filter Criteria** area. A row is displayed for adding a
    default criterion.
 
-    - Select a schema attribute in the first drop-down list (for example, _title_).
-    - Select an operator in the second drop-down list (for example, _Equals_).
+    - Select a schema attribute in the first dropdown list (for example, _title_).
+    - Select an operator in the second dropdown list (for example, _Equals_).
     - Enter a value for the attribute in the third box (for example, _Manager_).
 
     With this filter, the query would fetch users whose job titles are set to Manager. Role members

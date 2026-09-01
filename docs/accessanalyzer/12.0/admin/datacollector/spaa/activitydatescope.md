@@ -6,17 +6,17 @@ sidebar_position: 110
 
 # SPAA: Activity Date Scope
 
-The Activity Date Scope page is where the range of dates for which the SharePoint activity scan will
-collect data is configured. It is a wizard page for the category of Scan SharePoint Activity.
+Use the Activity Date Scope page to configure the range of dates for which the SharePoint activity
+scan collects data. It's a wizard page for the category of Scan SharePoint Activity.
 
 ![Activity Date Scope page](/images/accessanalyzer/12.0/admin/datacollector/spaa/activitydatescope.webp)
 
 Use the radio buttons to select the **Scan Filters**.
 
 - Relative Timespan
-    - Collect Activity from the last 180 days – The number of days to collect activity can be
-      configured with the up and down arrows
-    - Retain data – The timespan for data retention. Select from the drop-down list:
+    - Collect Activity from the last 180 days – Configure the number of days to collect activity
+      with the up and down arrows
+    - Retain data – The timespan for data retention. Select from the dropdown list:
         - within timespan
         - forever
 - Absolute Timespan

@@ -60,8 +60,8 @@ For file storage, the agent's server should be located close to the monitored NA
 :::
 
 :::info
-For Dell devices, the **Dell Common Event Enabler (CEE)** must be installed on the same server as the agent (recommended) or  
-on another Windows or Linux server. If installed remotely, the CEE must be configured manually to forward activity to the agent.  
+For Dell devices, install the **Dell Common Event Enabler (CEE)** on the same server as the agent (recommended) or  
+on another Windows or Linux server. If you install the CEE remotely, configure it manually to forward activity to the agent.  
 :::
 
 To perform centralized agent maintenance from the application console server, WMI must be enabled on the Windows server where the agent is installed.

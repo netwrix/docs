@@ -34,10 +34,10 @@ On the Dynasty Options page:
 
         Take the following data set:
 
-        - Paul is the top manager with three direct reports: Sam, Eric and Don.
+        - Paul is the top manager with three direct reports: Sam, Eric, and Don.
         - Sam has two direct reports, Peter and Sean.
         - Eric has no direct report.
-        - Don has three direct reports: Ashley, Jason and Tanya.
+        - Don has three direct reports: Ashley, Jason, and Tanya.
         - Jason has a direct report, April.
 
         Directory Manager would create a Dynasty with the following child groups:
@@ -98,27 +98,27 @@ On the Dynasty Options page:
         On the [Query Designer](/docs/directorymanager/11.1/portal/group/querydesigner/overview.md) page, you can also specify a criterion
         to filter the managers for whom you want to create child groups in the Dynasty.
 
-3. Select the **Include manager as member** check box to include the manager as a member of their
+3. Select the **Include manager as member** checkbox to include the manager as a member of their
    group along with their direct reports, while creating groups for the managerial structure. With
-   this check box selected, the manager receives a copy of any email sent to the direct reports
+   this checkbox selected, the manager receives a copy of any email sent to the direct reports
    group.
 
-    By default, this check box is not selected, indicating that the manager of each level of direct
-    reports is not included in their respective group.
+    By default, this checkbox isn't selected, indicating that the manager of each level of direct
+    reports isn't included in their respective group.
 
-4. Select the **Set Manager as owner** check box to set the top manager as the primary owner of the
+4. Select the **Set Manager as owner** checkbox to set the top manager as the primary owner of the
    parent Dynasty.
 
     On the **Owners** page of the wizard, the top manager would be displayed as the primary owner.
     If you change it, the new recipient would be the owner, even with the **Set manager as owner**
-    check box selected.
+    checkbox selected.
 
-    In case the Dynasty is not a flat managerial Dynasty, the manager of each child Dynasty will be
+    In case the Dynasty isn't a flat managerial Dynasty, the manager of each child Dynasty will be
     set as its respective owner.
 
 5. For a hierarchical managerial Dynasty, by default, the Dynasty structure adds a sub-level
    manager’s Smart Groups in the membership of the top-level manager’s Smart Groups. Select the
-   **Exclude nested lists of direct reports** check box to exclude them from the membership.
+   **Exclude nested lists of direct reports** checkbox to exclude them from the membership.
 6. Specify a container for creating child groups. Options are:
 
     - **Create groups in same container as manager**: to create groups in the container the
@@ -136,7 +136,8 @@ On the Dynasty Options page:
     involves the collaboration of two attributes: manager and direct reports, to create the
     Dynasty’s hierarchical structure.
 
-    Some examples of a managerial Dynasty with a different set of attributes are give below:
+    The following list gives some examples of a managerial Dynasty with a different set of
+    attributes:
 
     - To add another attribute, click **Add** and select the required attribute.
     - To remove an attribute, select it and click **Remove**.
@@ -199,7 +200,7 @@ On the Dynasty Options page:
         - Direct reports of Mark
         - Direct reports of Martin
 
-        When Alan is not the additional manager of any user, the parent Dynasty would be created
+        When Alan isn't the additional manager of any user, the parent Dynasty would be created
         without any child Dynasties.
 
     - Specify a custom attribute, ‘customattribute1’

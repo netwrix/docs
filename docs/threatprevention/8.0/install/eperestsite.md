@@ -12,11 +12,9 @@ a candidate password to check whether it complies with the current EPE rules def
 [EPE Settings Window](/docs/threatprevention/8.0/admin/configuration/epesettings.md).
 
 :::note
-This interface does not change the password; it only validates it against the EPE rules.
+This interface doesn't change the password; it only validates it against the EPE rules.
 :::
 
-
-Follow the steps to install the EPE Rest Site.
 
 :::note
 Install the EPE Rest Site on a server with IIS installed and accessible to third-party
@@ -50,10 +48,10 @@ machine.
 By default, Enterprise Manager and Administration Console are selected for installation. However,
 you can choose to select or deselect a component for installation.
 
-- To select a component – Click on the red cross next to a component name and select the **Entire
+- To select a component – Click the red cross next to a component name and select the **Entire
   feature will be installed on local hard drive** option. An icon representing a hard drive appears
   for the component.
-- To deselect a component – Click on the icon next to a component name and select the **Entire
+- To deselect a component – Click the icon next to a component name and select the **Entire
   feature will be unavailable** option. A red cross appears for the component.
 
 As you have to install the EPE Rest Site only, deselect the Enterprise Manager and Administration
@@ -68,7 +66,7 @@ page opens.
 
 ![Threat Prevention Server Setup wizard - Change Destination Folder page](/images/threatprevention/8.0/install/changedestinationfolder.webp)
 
-> - Use the Look in field to select the desired installation folder.
+> - Use the Look in field to select the installation folder you want.
 > - When the Folder name box is set as desired, click **OK**.
 
 The wizard returns to the Custom Setup page. You can use the **Reset** button to revert to the
@@ -122,7 +120,7 @@ the installer will create a database for the EPE Rest Site.
 
     :::note
     In case of SQL Server authentication, the credentials are tested on clicking
-    **Next**. If the credential authentication fails, the setup does not proceed and a pop-up
+    **Next**. If the credential authentication fails, the setup doesn't proceed and a pop-up
     window displays failure details.
     :::
 
@@ -138,7 +136,7 @@ the installer will create a database for the EPE Rest Site.
 
   :::note
   For Windows authentication,the credentials are tested on clicking **Next**. If the
-  credential authentication fails, the setup does not proceed and a pop-up window displays failure
+  credential authentication fails, the setup doesn't proceed and a pop-up window displays failure
   details.
   :::
 

@@ -37,7 +37,7 @@ This report is comprised of the following columns:
 Since this report is a list of groups, the Group Membership pane displays the group membership,
 including nested groups.
 
-There is one table at the bottom displaying Membership Paths for the select group. It contains all
+There is one table at the bottom displaying Membership Paths for the selected group. It contains all
 of the ways the audited group has been granted membership to the selected group.
 
 - Type – Type of membership the audited object has to the selected group

@@ -45,7 +45,7 @@ Configure the following display settings to manage large result sets:
 - **Maximum records per page**—set the number of records displayed per report page
 - **Maximum records from database**—set the maximum number of records pulled from the database in a single query
 
-These settings are available under the global display settings and help ensure fast page loading on servers with large volumes of scan results.
+Use these settings to ensure fast page loading on servers with large scan volumes.
 
 ## Inspect found items
 

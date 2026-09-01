@@ -6,9 +6,7 @@ sidebar_position: 1
 
 # Netwrix Auditor v10.7 Documentation
 
-Netwrix Auditor is a visibility platform for user behavior analysis and risk mitigation that enables
-control over changes, configurations and access in hybrid IT environments to protect data regardless
-of its location. The platform provides security analytics to detect anomalies in user behavior and
+Netwrix Auditor is a visibility platform for user behavior analysis and risk mitigation that enables control over changes, configurations, and access in hybrid IT environments to protect data regardless of its location. The platform provides security analytics to detect anomalies in user behavior and
 investigate threat patterns before a data breach occurs.
 
 Netwrix Auditor includes applications for:
@@ -42,5 +40,5 @@ Major benefits:
 To learn how Netwrix Auditor can help you achieve your specific business objectives, refer to the
 [Netwrix Auditor Best Practices Guide](https://helpcenter.netwrix.com/bundle/Auditor_BestPractices_10.0/resource/NetwrixAuditor_BestPractices_10.0.pdf).
 
-**CAUTION:** To keep your systems safe, Auditor should not be exposed to inbound access from the
+**CAUTION:** To keep your systems safe, Auditor shouldn't be exposed to inbound access from the
 internet.

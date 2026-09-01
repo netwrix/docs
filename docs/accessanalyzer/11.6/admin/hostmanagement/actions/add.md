@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Add Hosts
 
-The **Add Hosts** option creates a new host list. It can be accessed through the **Host Management**
-node. Follow the steps to add a new host list.
+The **Add Hosts** option creates a new host list. You can access it through the **Host Management**
+node. To add a new host list:
 
 ![Add Hosts option on Activities pane of the Host Management node](/images/accessanalyzer/11.6/admin/hostmanagement/actions/addhosts.webp)
 
@@ -18,9 +18,9 @@ node. Follow the steps to add a new host list.
 **Step 2 –** On the Manual Host Entry page, choose to either enter the hosts manually one at a time,
 or use the **Import** option. When the list is completed, click **Next**.
 
-- To enter hosts manually, type the host name in the **Host name** textbox. Then click **Add**. The
-  entry will appear in the **Host list** box. Repeat the process until all hosts for this list have
-  been entered.
+- To enter hosts manually, enter the host name in the **Host name** textbox. Then click **Add**. The
+  entry will appear in the **Host list** box. Repeat the process until you've entered all hosts for
+  this list.
 - The **Import** option opens the Import Hosts window. See the
   [Import Hosts Option](/docs/accessanalyzer/11.6/admin/hostmanagement/actions/importhost.md)
   topic for additional information.
@@ -31,11 +31,11 @@ or use the **Import** option. When the list is completed, click **Next**.
 **Step 3 –** On the Specify Host List Properties page, provide a unique descriptive **Host List
 Name**.
 
-- There cannot be two host lists with the same name. Enterprise Auditor automatically appends a
+- There can't be two host lists with the same name. Enterprise Auditor automatically appends a
   numeral to the end of a host list name to avoid duplicates.
 
-**Step 4 –** On the Specify Host List Properties page, configure when inventory fields should be
-refreshed for hosts in the list and set the credentials to use to conduct the host inventory.
+**Step 4 –** On the Specify Host List Properties page, configure when to refresh inventory fields
+for hosts in the list and set the credentials to use to conduct the host inventory.
 
 - Refresh inventory every time when the host discovery query completes – Automates the host
   inventory process and is dependent on the **Settings** > **Host Inventory** node configuration for
@@ -57,5 +57,5 @@ refreshed for hosts in the list and set the credentials to use to conduct the ho
 **Step 5 –** Click **Finish** to save the host list and close the Host Lost Wizard.
 
 The new list displays at the bottom of the host lists under the **Host Management** node in the
-Navigation pane. Every host added is included in the host master table at the Host Management node
-as well as in the newly created host list.
+Navigation pane. Enterprise Auditor includes every added host in the host master table at the Host
+Management node as well as in the newly created host list.

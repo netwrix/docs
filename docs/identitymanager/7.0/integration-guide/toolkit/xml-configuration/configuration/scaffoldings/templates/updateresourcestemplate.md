@@ -52,7 +52,7 @@ Creates an entity that will be the source of all workflows that manipulate the g
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <EntityTypeDisplayName Id="301" EntityType="HR_Person" />

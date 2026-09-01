@@ -8,14 +8,14 @@ sidebar_position: 3
 
 The Client ID/Secret credential type authenticates with Microsoft Entra ID via the Microsoft Graph API. Use this credential type when configuring Entra ID source groups.
 
-This requires a registered application in your Entra ID tenant with the appropriate API permissions granted.
+This requires a registered application in your Entra ID tenant with the appropriate API permissions.
 
 ## Create a Client ID/Secret service account
 
 1. Navigate to **Configuration** > **Service Accounts**.
 2. Click **Add Service Account**.
 3. In the **Name** field, enter a descriptive name for this service account.
-4. From the **Service account type** drop-down, select **Client ID/Secret**.
+4. From the **Service account type** dropdown, select **Client ID/Secret**.
 
    ![Add service account form showing Client ID/Secret fields: name, client application ID, and client secret](/images/accessanalyzer/2601/configurations/add-service-account-client-secret.png)
 

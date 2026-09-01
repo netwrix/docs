@@ -7,7 +7,7 @@ sidebar_position: 40
 # Customize FPolicy Policy Name
 
 There may be situations when FPolicy needs to be named something other than StealthAUDIT. In those
-cases it is necessary to manually add a parameter to the Activity Monitor agent’s `sbtfilemon.ini`
+cases, manually add a parameter to the Activity Monitor agent’s `sbtfilemon.ini`
 file. After the monitoring agent has been deployed, follow the steps.
 
 **Step 1 –** Open to the `sbtfilemon.ini` file on the agent server in a text editor:

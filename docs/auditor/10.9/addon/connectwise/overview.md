@@ -6,19 +6,19 @@ sidebar_position: 50
 
 # ConnectWise Manage
 
-Managed Service Providers (MSP) need to effectively utilize and standardize IT service management
-tools. Those who use for that purpose the ConnectWise Manage solution usually have similar processes
+Managed Service Providers (MSP) need to effectively use and standardize IT service management
+tools. Those who use the ConnectWise Manage solution for that purpose usually have similar processes
 in place:
 
 - When an incident or a problem occurs in the IT environment, managed client sends (usually by
   email) a request to the MSP’s service desk. A service ticket is then created manually or
   automatically in ConnectWise Manage.
-- Each ticket is assigned to authorized personnel for investigation and resolution in accordance
-  with the existing workflow.
-- To control ticket handling and report on statistics, ConnectWise service boards are used.
+- The existing workflow assigns each ticket to authorized personnel for investigation and
+  resolution.
+- MSP staff use ConnectWise service boards to control ticket handling and report on statistics.
 
 Netwrix has built a ready-to-use add-on that automates incident management, automatically creating
-service tickets for security alerts triggered by Netwrix Auditor This integration brings in the
+service tickets for security alerts triggered by Netwrix Auditor. This integration brings in the
 following benefits:
 
 - Seamless integration with the existing MSP service process
@@ -43,17 +43,18 @@ On a high level, the workflow is as follows:
 2. Whenever the alert is triggered, the add-on uses the Integration API to retrieve activity record
    for the original event from the audit store. An activity record contains the user account,
    action, time, and other details. The add-on creates a service ticket in ConnectWise Manage,
-   populates it with data from the activity record, and assigns Impact, Priority and SLA status to
+   populates it with data from the activity record, and assigns Impact, Priority, and SLA status to
    the ticket.
 3. The designated service team performs data analysis and root cause detection to resolve the
-   ticket; MSP is notified of the results and possible response actions to take on the client side.
+   ticket, then notifies MSP of the results and possible response actions to take on the client
+   side.
 4. MSP performs actions for incident response.
 
-Solution architecture and key components are shown in the figure below:
+The following figure shows the solution architecture and key components:
 
 ![diagram](/images/auditor/10.7/addon/connectwise/diagram.webp)
 
-- **Alert Handler (Netwrix.ITSM.AlertResponseAction.exe)** — the executable that is specified in the
+- **Alert Handler (Netwrix.ITSM.AlertResponseAction.exe)** — the executable that you specify in the
   Auditor alerts as the response action. Alert Handler:
     1. Receives the IDs of the alert and associated activity record.
     2. Forwards them to the Netwrix AuditorConnectWise Manage Integration Service over RPC, putting
@@ -68,7 +69,7 @@ additional information.
     1. Interacts with Auditor via its Integration API to retrieve the activity records from the
        Audit Database by record ID.
     2. Forwards activity record data to ConnectWise Manage via its REST API, creates a new service
-       ticket and populates its properties, as specified by user in the add-on configuration.
+       ticket and populates its properties, as the user specifies in the add-on configuration.
 
 ## Prerequisites
 

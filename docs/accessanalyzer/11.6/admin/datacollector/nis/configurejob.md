@@ -6,13 +6,13 @@ sidebar_position: 20
 
 # Unix Connection Profile & Host List
 
-The NIS Data Collector requires a custom Connection Profile and host list be created and assigned to
-the job or job group conducting the data collection. The host inventory option during host list
-creation makes it necessary to configure the Connection Profile first.
+The NIS Data Collector requires you to create a custom Connection Profile and host list and assign
+them to the job or job group that collects the data. The host inventory option during host list
+creation requires you to configure the Connection Profile first.
 
 ## Connection Profile
 
-Creating the Connection Profile requires having an account with access to the targeted NIS server.
+To create the Connection Profile, you need an account with access to the targeted NIS server.
 
 Create a Connection Profile and set the following information on the User Credentials window:
 
@@ -25,12 +25,12 @@ Create a Connection Profile and set the following information on the User Creden
 - Password/Confirm
 
     - If not using a private key, enter the **Password** and re-type in the **Confirm** field
-    - If using a private key, then the password is not needed. Provide the private key information
+    - If you use a private key, you don't need the password. Provide the private key information
       in the **Use the following private key when connecting** field.
 
 - Use the following port/ports(CSV) for SSH
 
-    - The SSH port needs to be opened in software and hardware firewalls
+    - You must open the SSH port in software and hardware firewalls
     - If desired, select this option and provide the port value
 
 - Use the following private key when connecting
@@ -43,7 +43,7 @@ Create a Connection Profile and set the following information on the User Creden
 
     - If desired, select this option and provide the key value
 
-Once the Connection Profile is created, it is time to create the custom host list. See the
+After you create the Connection Profile, create the custom host list. See the
 [Connection](/docs/accessanalyzer/11.6/admin/settings/connection/overview.md)
 topic for additional information.
 

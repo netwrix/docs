@@ -22,7 +22,7 @@ See the [ Microsoft Entra ID](../../../../integration-guide/connectors/reference
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json
@@ -46,7 +46,7 @@ See the [Connect to a Managed System](../../../../user-guide/set-up/connect-syst
 
 This example declares the MicrosoftEntraID connector on the Local agent:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 Conf/MicrosoftEntraID/MicrosoftEntraID Connector.xml
@@ -66,7 +66,7 @@ For example, Microsoft Entra ID's Users and Groups can be described by entity ty
 
 The following example defines an entity type named MicrosoftEntraID_DirectoryObject to match the attributes selected for extraction from the Microsoft Entra ID instance:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 Conf/MicrosoftEntraID/MicrosoftEntraID Connector.xml
@@ -129,7 +129,7 @@ The following example declares an n-n association between two MicrosoftEntraID_D
 - members from a Group is a collection of MicrosoftEntraID_DirectoryObjects IDs which are members of
 this Group.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 Conf/MicrosoftEntraID/MicrosoftEntraID Connector.xml
@@ -148,7 +148,7 @@ So each element of an entity type mapping is meant to link a property from the C
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 Conf/MicrosoftEntraID/MicrosoftEntraID Connector.xml
@@ -218,7 +218,7 @@ These associations are exported from the Microsoft Entra ID system into the `C:/
 
 The following entity association mapping maps the properties from the MicrosoftEntraID_DirectoryObject_members entity association:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 Conf/MicrosoftEntraID/MicrosoftEntraID Connector.xml
@@ -244,7 +244,7 @@ Each connector should be configured with a menu item, which is created automatic
 
 In XML, it should look like this:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 Conf/MicrosoftEntraID/MicrosoftEntraID Nav.xml
@@ -257,7 +257,7 @@ See the [Organize Resources' Datasheets](../../../../user-guide/set-up/connect-s
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 Conf/MicrosoftEntraID/MicrosoftEntraID UI.xml
@@ -273,7 +273,7 @@ Microsoft Entra ID's resources are listed in a table.
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 Conf/MicrosoftEntraID/MicrosoftEntraID UI.xml
@@ -294,7 +294,7 @@ See the [Set Resources' Display Names](../../../../user-guide/set-up/connect-sys
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 Conf/MicrosoftEntraID/MicrosoftEntraID UI.xml
@@ -303,11 +303,11 @@ Conf/MicrosoftEntraID/MicrosoftEntraID UI.xml
 
 **Permissions**
 
-In order to access the connector, any user must have the right permissions.
+To access the connector, any user must have the right permissions.
 
 The following example sets the permissions to access the Microsoft Entra ID connector and resources for the Administrator profile.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 Conf/MicrosoftEntraID/MicrosoftEntraID Profile Administrator.xml

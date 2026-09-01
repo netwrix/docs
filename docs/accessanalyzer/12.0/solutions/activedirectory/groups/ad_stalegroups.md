@@ -16,7 +16,7 @@ Navigate to the **Active Directory** > **1.Groups** > **AD_StaleGroups** > **Con
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -37,4 +37,4 @@ the following pre-configured report:
 
 | Report                                           | Description                                                                                                                                                                              | Default Tags | Report Elements                                                                                                                                                                                         |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Stale Effective Membership (A.K.A. Stale Groups) | This report identifies groups with stale effective membership. A stale user is defined as someone who has not logged into the domain in over 60 days, is expired, or currently disabled. | None         | This report is comprised of three elements: <ul><li>Bar Chart – Displays group membership</li><li>Table – Provides details on membership</li><li>Table – Provides details on group membership</li></ul> |
+| Stale Effective Membership (A.K.A. Stale Groups) | This report identifies groups with stale effective membership. A stale user is defined as someone who has not logged into the domain in over 60 days, is expired, or disabled. | None | This report is comprised of three elements: <ul><li>Bar Chart – Displays group membership</li><li>Table – Provides details on membership</li><li>Table – Provides details on group membership</li></ul> |

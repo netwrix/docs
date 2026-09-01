@@ -6,13 +6,13 @@ sidebar_position: 170
 
 # Privileged User Monitoring on Linux and Unix Systems
 
-The add-on works in collaboration with Auditor, supplying data about privileged user activity on Linux and Unix. Aggregating data into a single audit trail simplifies analysis, makes activity monitoring more cost effective, and helps you keep tabs on privilege elevation on your Linux and Unix-based devices. For example, it helps monitor the usage of SUDO as well as remote access with openSSH.
+The add-on works in collaboration with Auditor, supplying data about privileged user activity on Linux and Unix. Aggregating data into a single audit trail simplifies analysis, makes activity monitoring more cost effective, and helps you monitor privilege elevation on your Linux and Unix-based devices. For example, it helps monitor the usage of SUDO as well as remote access with openSSH.
 
 On a high level, the add-on works as follows:
 
 **Step 1** – The add-on listens to the specified UDP ports and captures designated Syslog messages.
 
-**Step 2** – Out of the box, messages from Red Hat Enterprise Linux 6, 7, 8, 9, SUSE Linux Enterprise Server 12, openSUSE 42, and Ubuntu 16 are supported. For other distributions, deployment of the rsyslog package may be required. You can edit the add-on configuration to extend the captured message list.
+**Step 2** – By default, messages from Red Hat Enterprise Linux 6, 7, 8, 9, SUSE Linux Enterprise Server 12, openSUSE 42, and Ubuntu 16 are supported. For other distributions, deployment of the rsyslog package may be required. You can edit the add-on configuration to extend the captured message list.
 
 **Step 3** – The add-on processes these events into Netwrix Auditor-compatible format (Activity Records). Each Activity Record contains the user account, action, time, and other details.
 
@@ -42,7 +42,7 @@ Before running the add-on, ensure that all the necessary components and policies
 ### On the target syslog-based platform
 
 - Outbound UDP **514** port must be enabled.
-- The **Syslog daemon** must be configured to redirect events. The procedure below explains how to configure redirection.
+- The **Syslog daemon** must be configured to redirect events. The following procedure explains how to configure redirection.
 
 **NOTE:** The deployment of the rsyslog package may be required.
 

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # NAS Device Support
 
-For Network-Attached Storage (NAS) device support, the Threat Prevention Agent is not deployed on
+For Network-Attached Storage (NAS) device support, the Threat Prevention Agent isn’t deployed on
 the NAS device. Instead, Threat Prevention employs Activity Monitor, which deploys its own activity
 agents to Windows servers acting as proxy servers for NAS activity monitoring. The Threat Prevention
 Agent must be installed on the Windows server where the Activity Monitor’s Activity Agent resides.
@@ -42,7 +42,7 @@ Hitachi
 
 - 11.2+
 
-**Nasuni Nasuni Edge Appliances**
+**Nasuni Edge Appliances**
 
 - 8.0+
 

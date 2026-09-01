@@ -10,11 +10,11 @@ The SP_TeamsSensitiveData Job analyzes sensitive data activity within Teams Site
 
 ## Analysis Tasks for the SP_TeamsSensitiveData Job
 
-Navigate to the **Jobs** > **SharePoint** > **8.M365** > **SP_TeamsSensitiveData** >**Configure**
+Navigate to the **Jobs** > **SharePoint** > **8.M365** > **SP_TeamsSensitiveData** > **Configure**
 node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

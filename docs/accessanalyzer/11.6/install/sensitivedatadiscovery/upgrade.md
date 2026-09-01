@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Upgrade Sensitive Data Discovery Add-on
 
-When the Enterprise Auditor Console and applicable solutions are upgraded, it is necessary to also
+When you upgrade the Enterprise Auditor Console and applicable solutions, also
 upgrade the Sensitive Data Discovery Add-On.
 
 ![Windows Control Panel Uninstall or change a program window](/images/accessanalyzer/11.6/install/sensitivedatadiscovery/uninstall.webp)

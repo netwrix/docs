@@ -6,7 +6,7 @@ sidebar_position: 160
 
 # Renew a Group
 
-It renews a group, identity of which is provided in the endpoint URL.
+Use this API to renew the group specified in the endpoint URL.
 
 ## Endpoint
 

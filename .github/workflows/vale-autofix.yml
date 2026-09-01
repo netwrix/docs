@@ -10,12 +10,43 @@ on:
       - '!docs/**/CLAUDE.md'
       - '!docs/**/SKILL.md'
       - '!docs/kb/**'
+      - 'scripts/**'
+      - 'package.json'
 
 concurrency:
   group: vale-autofix-${{ github.event.pull_request.number }}
 
 jobs:
+  test-scripts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Check if scripts changed
+        id: scripts-changed
+        run: |
+          CHANGED=$(git diff --name-only origin/dev...HEAD -- scripts/ package.json)
+          if [ -z "$CHANGED" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Test anchor/slugify scripts
+        if: steps.scripts-changed.outputs.changed == 'true'
+        run: npm run test:scripts
+
   vale-autofix:
+    needs: test-scripts
+    if: >-
+      github.event.pull_request.head.repo.fork == false &&
+      github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -60,11 +91,9 @@ jobs:
       - name: Get changed markdown files
         id: changed-files
         if: steps.bot-check.outputs.skip != 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          CHANGED_MD_FILES=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' | grep -v '^docs/kb/' || true)
+          DIFF_OUTPUT=$(git diff --name-only origin/dev...HEAD -- docs/)
+          CHANGED_MD_FILES=$(printf '%s\n' "$DIFF_OUTPUT" | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' | grep -v '^docs/kb/' || true)
           if [ -z "$CHANGED_MD_FILES" ]; then
             echo "No docs markdown files changed"
             echo "count=0" >> "$GITHUB_OUTPUT"
@@ -167,9 +196,9 @@ jobs:
             2. Apply a fix that resolves the Vale rule while preserving the author's meaning
             3. If you are NOT confident in a fix (ambiguous context, multiple valid interpretations, fix would change meaning) SKIP it
 
-            Note: if your fixes change any heading text, do not update anchor links — the workflow repairs all anchor links automatically after all fixes are complete.
+            Never edit heading text (a line starting with `#` through `######`, outside any fenced code block). Other files link to headings by anchor, and a heading rename breaks those links. If a violation is on a heading line, SKIP it with reason "heading text — not modified to avoid breaking anchor links".
 
-            If a fix adds or changes a link with a `#anchor`, the anchor must match a real Markdown heading (a line starting with `#` through `######`) OUTSIDE any fenced code block. Text that merely looks like a heading inside a ``` code block (for example, sample CLI/installer output) is never a valid anchor target, even if it matches the wording you're looking for. Before finishing, run exactly `bash scripts/check-anchors.sh <file>` (that literal invocation, one file per call, no chaining with other commands) on every file where you added or changed a link anchor. The script also reports broken link targets, not just anchors — only act on a finding for an anchor your own edit introduced: find the correct heading and fix it, or SKIP the violation if no correct target exists. Anchors broken because you renamed a heading are repaired automatically by a later step — leave those alone.
+            If a fix adds or changes a link with a `#anchor`, the anchor must match a real Markdown heading OUTSIDE any fenced code block. Text that merely looks like a heading inside a ``` code block (for example, sample CLI/installer output) is never a valid anchor target, even if it matches the wording you're looking for. Before finishing, run exactly `bash scripts/check-anchors.sh <file>` (that literal invocation, one file per call, no chaining with other commands) on every file where you added or changed a link anchor. The script also reports broken link targets, not just anchors — only act on a finding for an anchor your own edit introduced: find the correct heading and fix it, or SKIP the violation if no correct target exists.
 
             After fixing, write a JSON summary to /tmp/phase2-summary.json with this structure:
             ```json
@@ -212,9 +241,9 @@ jobs:
 
             Step 4: Fix each violation in-place, preserving the author's meaning. If you are NOT confident in a fix (ambiguous context, multiple valid interpretations, fix would change meaning), SKIP it.
 
-            Note: if your fixes change any heading text, do not update anchor links — the workflow repairs all anchor links automatically after all fixes are complete.
+            Never edit heading text (a line starting with `#` through `######`, outside any fenced code block). Other files link to headings by anchor, and a heading rename breaks those links. If a violation is on a heading line, SKIP it with reason "heading text — not modified to avoid breaking anchor links".
 
-            If a fix adds or changes a link with a `#anchor` (for example, resolving a "positional-references" violation into an explicit link), the anchor must match a real Markdown heading (a line starting with `#` through `######`) OUTSIDE any fenced code block. Text that merely looks like a heading inside a ``` code block (for example, sample CLI/installer output) is never a valid anchor target. Before finishing, run exactly `bash scripts/check-anchors.sh <file>` (that literal invocation, one file per call, no chaining with other commands) on every file where you added or changed a link anchor. The script also reports broken link targets, not just anchors — only act on a finding for an anchor your own edit introduced: find the correct heading and fix it, or SKIP the violation if no correct target exists. Anchors broken because you renamed a heading are repaired automatically by a later step — leave those alone.
+            If a fix adds or changes a link with a `#anchor` (for example, resolving a "positional-references" violation into an explicit link), the anchor must match a real Markdown heading OUTSIDE any fenced code block. Text that merely looks like a heading inside a ``` code block (for example, sample CLI/installer output) is never a valid anchor target. Before finishing, run exactly `bash scripts/check-anchors.sh <file>` (that literal invocation, one file per call, no chaining with other commands) on every file where you added or changed a link anchor. The script also reports broken link targets, not just anchors — only act on a finding for an anchor your own edit introduced: find the correct heading and fix it, or SKIP the violation if no correct target exists.
 
             Step 5: Write a JSON summary to /tmp/dale-summary.json with this structure:
             ```json
@@ -233,11 +262,6 @@ jobs:
 
             IMPORTANT: Do NOT run any git commands — the workflow handles staging, committing, and pushing. Do not post any PR comments.
           claude_args: '--allowedTools "Bash(git:*),Bash(bash scripts/check-anchors.sh:*),Bash(./scripts/check-anchors.sh:*),Bash(scripts/check-anchors.sh:*),Read,Write,Edit,Glob,Grep"'
-
-      - name: Fix heading anchors
-        if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
-        run: |
-          bash scripts/vale-autofix.sh --anchors-only origin/dev /tmp/changed-files.txt
 
       - name: Check anchor links
         id: anchor-check
@@ -260,7 +284,9 @@ jobs:
       - name: Commit all fixes
         if: steps.bot-check.outputs.skip != 'true' && steps.changed-files.outputs.count > 0
         run: |
-          git add -A docs/
+          while IFS= read -r file; do
+            [ -f "$file" ] && git add -- "$file"
+          done < /tmp/changed-files.txt
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

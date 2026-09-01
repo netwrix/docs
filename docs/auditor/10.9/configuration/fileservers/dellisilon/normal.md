@@ -16,9 +16,6 @@ You can configure your cluster for monitoring in one of the following ways:
 
 ## Configure Dell Isilon/PowerScale Cluster in Normal or Enterprise Mode via Shell Script
 
-Follow the steps to configure Dell Isilon/PowerScale cluster in Normal or Enterprise mode using
-shell script:
-
 **Step 1 –** On the computer where Auditor Server resides, navigate to _C:\Program Files
 (x86)\Netwrix Auditor\File Server Auditing_ and copy the configure*ifs.sh shell script to
 */ifs/data\_ catalog on your cluster.
@@ -49,8 +46,6 @@ where
 
 ## Configure Dell Isilon/PowerScale Cluster in Normal or Enterprise Mode Manually
 
-Follow the steps to configure Dell Isilon/PowerScale cluster in Normal or Enterprise mode manually:
-
 **Step 1 –** Navigate to your cluster command prompt through the SSH connection.
 
 **Step 2 –** Log in to your cluster as a root user.
@@ -77,11 +72,11 @@ deprecated. When configuring audit manually, you see the following warning:
 
 WARNING: lwnet has been deprecated.
 
-Please use `isi smb ...` equivalents instead.
+use `isi smb ...` equivalents instead.
 
 See `isi smb --help` for more information.
 
-This command is required to create a shared folder pointed to _/ifs/.ifsvar/audit/_. Please ignore
+This command is required to create a shared folder pointed to _/ifs/.ifsvar/audit/_. ignore
 the warning.
 
 **Step 5 –** Add the BUILTIN\Administrators group in the share permissions for the netwrix*audit$
@@ -92,7 +87,7 @@ isi smb shares permission create --share=netwrix_audit$ --group="BUILTIN\Adminis
 --permission-type=allow --permission=full --zone=system
 ```
 
-**NOTE:** Please verify the correctness of the path to the Isilon audit log files in
+**NOTE:** verify the correctness of the path to the Isilon audit log files in
 `_Monitoring Plans -> <MP name> -> <Isilon item name> -> Edit item -> General -> File share UNC path to audit logs_`
 
 It must follow the format:
@@ -136,7 +131,7 @@ isi auth roles modify netwrix_audit --add-group="BUILTIN\Administrators" --zone=
 When preparing to audit your Dell Isilon/PowerScale storage system, consider the following:
 
 - If you plan to configure audit settings for Dell Isilon/PowerScale storage below the version 8.2
-  manually (without using the**configure_ifs.sh** script), make sure that auditing of the
+  manually (without using the**configure_ifs.sh** script), ensure that auditing of the
   `success create` events is **disabled**.
 
     For Dell Isilon/PowerScale storage below the version 8.2, the storage system logging will become
@@ -146,7 +141,7 @@ When preparing to audit your Dell Isilon/PowerScale storage system, consider the
     For Dell Isilon/PowerScale storage 8.2 and above, this option for manual audit configuration can
     be safely enabled.
 
-- Auditing of the _System_ zone is not supported. As stated by Dell, this zone should be reserved
+- Auditing of the _System_ zone isn't supported. As stated by Dell, this zone should be reserved
   for configuration access only. Current data should be stored in other access zones. See the
 [Isilon OneFS 9.10.0.0 Web Administration Guide](https://www.dell.com/support/manuals/en-al/isilon-onefs/ifs-pub-91000-administration-guide-gui/access-zones-best-practices?guid=guid-49c42b04-e9cd-4520-bfe4-ce2d2c389d87&lang=en-us)
   topic for additional information.

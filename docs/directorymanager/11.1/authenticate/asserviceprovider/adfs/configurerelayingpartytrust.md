@@ -11,7 +11,7 @@ You also have to specify the claim rules for authentication.
 
 ## Configure Relaying Party Trust in AD FS
 
-Follow the steps to configure relaying party trust in AD FS.
+To configure relaying party trust in AD FS:
 
 Step 1 – Launch the AD FS console. In the left pane, select **AD FS > Trust Relationships**.
 Right-click **Relying Party Trusts** and click **Add Relying Party Trust** on the shortcut menu.  
@@ -45,8 +45,8 @@ then click **Next**.
 See the [Generate Entity ID/Audience URL](generateurls.md#generate-entity-idaudience-url) topic.
 
 Step 9 – Use the Configure Multi-factor Authentication Now? page to configure multi-factor
-authentication. At present, we will not configure it, so select the **I do not want to configure
-multi-factor authentications settings for this relying party trust at this time** option button and
+authentication. For this example, skip this step by selecting the option **Don't want to configure
+multi-factor authentications settings for this relying party trust at this time** and
 click **Next**.
 
 Step 10 – Use the Choose Issuance Authorization Rules page to permit all users to get authenticated
@@ -63,22 +63,22 @@ Step 13 – On the Edit Claim Rules dialog box, the Issuance Transform Rules opt
 option of authenticating using an Active Directory attribute. Click **Add Rule**.
 
 Step 14 – To add a rule, select **Transform an Incoming Claim** from the Claim rule template
-drop-down list on the Select Rule Template page and click **Next**.
+dropdown list on the Select Rule Template page and click **Next**.
 
 Step 15 – On the Configure Rule page, specify a rule name in the Claim rule name box.
 
 Step 16 – In the Incoming claim type and Outgoing claim type boxes, select an Active Directory
 attribute for authentication, such as the UPN attribute. The incoming and outgoing claim types
-should be the same as we will not specify a different text or different data for the logon process.
-It will be the exact user principal name for authentication.
+should be the same because no different text or different data is specified for the logon process.
+It uses the exact user principal name for authentication.
 
-Step 17 – Make sure that the **Pass through all claim values** option is selected; then click
+Step 17 – Ensure that the **Pass through all claim values** option is selected; then click
 **Finish**. The new rule is configured and displayed on the Issuance Transform Rules tab.
 
 Step 18 – Click the **Issuance Authorization Rules** tab and notice that the issuance authorization
 rule is already completed.
 
-Step 19 – Click the **Delegation Authorization Rules** tab. We do not need to delegate, so click
+Step 19 – Click the **Delegation Authorization Rules** tab. No delegation is needed, so click
 **Apply** and then **OK**. The AD FS console is displayed with the new relying party trust added.
 
 The next step is to configure the AD FS provider in Directory Manager. See the

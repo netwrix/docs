@@ -14,7 +14,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -46,7 +46,7 @@ Review the following for additional information:
 
 ## Create Monitoring Plans for Event Logs
 
-Follow the steps to configure monitoring plan for event logs.
+To configure a monitoring plan for event logs, complete the following steps:
 
 **Step 1 –** Navigate to **Start** **>** Netwrix Auditor **>** Netwrix Auditor**Event Log
 Manager\_\_**.\_\_
@@ -65,8 +65,8 @@ new plan.
 
     | Option                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
     | ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Computer name                                   | Allows specifying a single computer by entering its FQDN, NETBIOS or IP address. You can click Browse to select a computer from the list of computers in your network.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-    | Active Directory container                      | Allows specifying a whole AD container. Click **Browse** to select from the list of containers in your network. You can also: - Select a particular computer type to be monitored within the chosen AD container: **Domain controllers, Servers (excluding domain controllers)**, or **Workstations**. - Click **Exclude** to specify domains, OUs, and containers you do not want to audit. The list of containers does not include child domains of trusted domains. Use other options **(Computer name, IP address range**, or **Import computer names from a file**) to specify the target computers. |
+    | Computer name                                   | Allows specifying a single computer by entering its FQDN, NETBIOS, or IP address. You can click Browse to select a computer from the list of computers in your network.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+    | Active Directory container                      | Allows specifying a whole AD container. Click **Browse** to select from the list of containers in your network. You can also: - Select a particular computer type to be monitored within the chosen AD container: **Domain controllers, Servers (excluding domain controllers)**, or **Workstations**. - Click **Exclude** to specify domains, OUs, and containers you don't want to audit. The list of containers doesn't include child domains of trusted domains. Use other options **(Computer name, IP address range**, or **Import computer names from a file**) to specify the target computers. |
     | IP address range / Computers within an IP range | Allows specifying an IP range for the audited computers. To exclude computers from within the specified range, click **Exclude**. Enter the IP range you want to exclude, and click **Add**.                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 **Step 4 –** You can specify multiple computer names by importing a list from a .txt file (one
@@ -93,12 +93,12 @@ whether to import the list once, or to update it on every data collection.
 | Password                                            | Enter a password for SMTP authentication.                                                                                                                                                                           |
 | Use Secure Sockets Layer encrypted connection (SSL) | Select this checkbox if your SMTP server requires SSL to be enabled.                                                                                                                                                |
 | Use implicit SSL                                    | Select this checkbox if the implicit SSL mode is used, which means that an SSL connection is established before any meaningful data is sent.                                                                        |
-| Enforce certificate validation to ensure security   | Select this checkbox if you want to verify security certificate on every email transmission. The option is not available for auditing User Activity as well Netwrix Auditor tools.                                  |
+| Enforce certificate validation to ensure security   | Select this checkbox if you want to verify security certificate on every email transmission. The option isn't available for auditing User Activity as well Netwrix Auditor tools.                                  |
 
 **Step 7 –** Navigate to the Audit Database tab to configure Audit Database and review SQL Server
 settings. Netwrix Auditor Event Log Manager synchronizes Audit Database and reports settings with
 the default Audit Database configuration from Netwrix Auditor Server. If this option is disabled,
-contact your Netwrix Auditor Global administrator and make sure that these settings are properly
+contact your Netwrix Auditor Global administrator and ensure that these settings are properly
 configured in Netwrix Auditor Server. Refer to [Audit Database](/docs/auditor/10.7/admin/settings/auditdatabase.md)
 for detailed instructions on how to configure the Audit Database settings.
 
@@ -106,11 +106,11 @@ for detailed instructions on how to configure the Audit Database settings.
 
 | Option                                          | Description                                                                                                                                                                                                                                                  |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Write data to Audit Database and enable reports | Select if you want to generate reports. Even if you do not select this checkbox now, you will still be able to configure these settings later, but already collected audit data will not be imported in the Audit Database.                                  |
+| Write data to Audit Database and enable reports | Select if you want to generate reports. Even if you don't select this checkbox now, you will still be able to configure these settings later, but already collected audit data will not be imported in the Audit Database.                                  |
 | Write event descriptions to Audit Database      | Select if you want to see the exact error or warning text.                                                                                                                                                                                                   |
 | Store events for... days                        | Specify the Audit Database retention period. This setting affects all monitoring plans. The minimum value specified across the plans will be applied. When configuring, mind that your data will be deleted automatically when its retention period is over. |
 
-**NOTE:** You cannot edit SQL Server settings for Netwrix Auditor Event Log Manager.
+**NOTE:** You can't edit SQL Server settings for Netwrix Auditor Event Log Manager.
 
 **Step 9 –** Navigate to the Advanced tab and configure the following:
 
@@ -136,16 +136,16 @@ existing filters, and create new filters. To do it, click Configure next to Audi
 
 The product allows creating inclusive and exclusive audit archiving filters.
 
-Follow the steps to configure audit archiving filters.
+To configure audit archiving filters, complete the following steps:
 
 **Step 1 –** To create or modify an audit archiving filter, see Create Monitoring Plans for Event
 Logs.
 
 **Step 2 –** To collect events required to generate a specific report, you must select a filter
-which name coincides with this report’s name. Click Enable and select Filters for Reports. All
+whose name coincides with this report’s name. Click Enable and select Filters for Reports. All
 filters required to store events for all available reports will be selected automatically.
 
-Follow the steps to create or edit an audit archiving filter.
+To create or edit an audit archiving filter, complete the following steps:
 
 **Step 1 –** On the Audit archiving filters page, click Add or select a filter and click Edit.
 
@@ -156,11 +156,11 @@ Follow the steps to create or edit an audit archiving filter.
 | The Event tab                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Name                                           | Specify the filter name.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Description                                    | Enter the description for this filter (optional).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Event Log                                      | Select an event log from the drop-down list. You will be alerted on events from this event log. You can also input a different event log. To find out a log’s name, navigate to Start > Windows Administrative Tools→ Event Viewer → Applications and Services Logs → Microsoft → Windows and expand the required `<Log_Name>` node, right-click the file under it and select Properties. Find the event log’s name in the Full Name field. Netwrix Auditor Event Log Manager does not collect the Analytic and Debug logs, so you cannot configure alerts for these logs. You can use a wildcard (`*`). For inclusive filters: all Windows logs except for the ones mentioned above will be saved. For exclusive: all Windows logs events will be excluded. |
+| Event Log                                      | Select an event log from the dropdown list. You will be alerted on events from this event log. You can also input a different event log. To find out a log’s name, navigate to Start > Windows Administrative Tools→ Event Viewer → Applications and Services Logs → Microsoft → Windows and expand the required `<Log_Name>` node, right-click the file under it and select Properties. Find the event log’s name in the Full Name field. Netwrix Auditor Event Log Manager doesn't collect the Analytic and Debug logs, so you can't configure alerts for these logs. You can use a wildcard (`*`). For inclusive filters: all Windows logs except for the ones mentioned above will be saved. For exclusive: all Windows logs events will be excluded. |
 | Write to/Don't write to                        | Select the location to write/not to write events to, depending on the filter type (inclusive or exclusive). It is recommended to write events both to the Long-Term Archive and to the Audit Database, because if your database is corrupted, you will be able to import the necessary data from the Long-Term Archive using the DB Importer tool. See Import Audit Data with the Database Importer for more information.                                                                                                                                                                                                                                                                                                                                    |
 | The Event Fields tab                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Event ID                                       | Enter the identifier of a specific event that you want to be save. You can add several IDs separated by comma.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| Event Level                                    | Select the event types that you want to be save. If the Event Level check box is cleared, all event types will be saved. If you want to select the inclusive Success Audit/Failure Audit filters, note that on these platforms these events belong to the “Information” level, so they will not be collected if you select the Information checkbox in the Exclusive Filters.                                                                                                                                                                                                                                                                                                                                                                                |
+| Event Level                                    | Select the event types that you want to be save. If the Event Level checkbox is cleared, all event types will be saved. For inclusive Success Audit/Failure Audit filters on these platforms, these events belong to the “Information” level. They will not be collected if you select the Information checkbox in the Exclusive Filters.                                                                                                                                                                                                                                                                                                                                                                                |
 | Computer                                       | Specify a computer (as it is displayed in the Computer field in the event properties). Only events from this computer will be saved. If you want to specify several computers, you can define a case-sensitive mask for this parameter. Below is an example of a mask: - `*` - any machine - computer – a machine named ‘computer’ - `*`computer`*` - machines with names like ‘xXxcomputerxXx’ or ‘newcomputer’ - computer? – machines with names like ‘computer1’ or ‘computerV’ - co?puter - machines with names like ‘computer’ or ‘coXputer’ - ????? – any machine with a 5-character name - ???`*` - any machine with a 3-character name or longer                                                                                                     |
 | User                                           | Enter a user’s name. Only events created by this user will be saved. If you need to specify several users, you can define a mask for this parameter in the same way as described above.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Source                                         | Specify this parameter if you want to save events from a specific source. Input the event source as it is displayed in the Source field in the event properties. If you need to specify several sources, you can define a mask for this parameter in the same way as described above.                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -175,21 +175,21 @@ health events, you need to create a dedicated monitoring plan for this log with 
 Event Log Manager standalone tool.
 
 You can also review and filter Netwrix Auditor health events right in the product. See
-[Netwrix Auditor Health Log](/docs/auditor/10.7/admin/healthstatus/dashboard/healthlog.md) for addditional
-information
+[Netwrix Auditor Health Log](/docs/auditor/10.7/admin/healthstatus/dashboard/healthlog.md) for additional
+information.
 
-Follow the steps to configure the Netwrix Auditor System Health log monitoring.
+To configure the Netwrix Auditor System Health log monitoring, complete the following steps:
 
 **Step 1 –** Start Netwrix Auditor Event Log Manager and create the new monitoring plan.
 
-**Step 2 –** Make sure that the Enable event log collection checkbox is selected. Specify the name
+**Step 2 –** ensure that the Enable event log collection checkbox is selected. Specify the name
 for the new monitoring plan, for example, _"\_Netwrix Auditor \_Health Status"_.
 
 **Step 3 –** Navigate to the Monitored computers list and add a server where the Netwrix Auditor
 Server resides.
 
 **Step 4 –** Navigate to the Audit Database tab and select Write event descriptions to Audit
-Database if you want to see the exact error or warning text. Make sure that Audit Database settings
+Database if you want to see the exact error or warning text. Ensure that Audit Database settings
 are configured properly, follow the [Audit Database](/docs/auditor/10.7/admin/settings/auditdatabase.md)
 
 **Step 5 –** Click Configure next to Audit archiving filters and select the Netwrix Auditor System
@@ -201,7 +201,7 @@ used to collect data on Netwrix Auditor health status events.
 ## Review Past Event Log Entries
 
 Netwrix Auditor Event Log Manager collects event log entries and stores them to the Audit Archive.
-Follow the steps to review past events.
+To review past events, complete the following steps:
 
 **Step 1 –** On the main Netwrix Auditor Event Log Manager page, click View next to View collected
 events.
@@ -217,7 +217,7 @@ events.
 
 ## Import Audit Data with the Database Importer
 
-Follow the steps to Import Audit Data with the Database Importer.
+To import audit data with the Database Importer, complete the following steps:
 
 **Step 1 –** On the main Netwrix Auditor Event Log Manager page, click Import Data.
 

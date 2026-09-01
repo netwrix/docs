@@ -65,7 +65,17 @@ Use a DNS hostname, **not an IP address**. The browser TLS handshake requires a 
 
 ### TLS certificates
 
-You must prepare the following three files and place them in `/etc/dspm/` on the server before running the installer:
+The installer offers three ways to provision the server's TLS certificate. Choose your option before gathering certificate materials — only **Bring your own certificate** requires preparation in advance.
+
+| Option | What It Does | Best For | What to Prepare |
+| --- | --- | --- | --- |
+| **Generate self-signed** | Installer generates a certificate automatically — no CA involvement | Quick evaluations and proof-of-concept installs. Not for production — browsers will show a security warning | Nothing — installer handles it |
+| **Sign with AD Certificate Services** | Installer generates a certificate signing request (CSR) and submits it to your organization's Active Directory Certificate Services (AD CS), where your internal Enterprise CA signs it | Enterprise environments that already run AD CS and where the server can reach the CA | AD CS must be reachable from the server; an account with certificate enrollment rights |
+| **Bring your own certificate** | You provide a pre-existing certificate, private key, and CA bundle | Environments with a centralized Public Key Infrastructure (PKI) team, or where AD CS isn't available | Three PEM files — see [file requirements](#bring-your-own-certificate-file-requirements) |
+
+#### Bring your own certificate file requirements
+
+If you selected **Bring your own certificate**, prepare the following three files and place them in `/etc/dspm/` on the server before running the installer:
 
 ```bash
 sudo mkdir -p /etc/dspm
@@ -113,7 +123,7 @@ To let users sign in with their Active Directory or Entra ID credentials instead
 
 ### License key
 
-You need your Netwrix license key to download the installer; it's the first prompt in the installation wizard. Obtain it from your Netwrix account representative before starting.
+You need your Netwrix license key to download the installer; it's the first prompt the installer shows. Obtain it from your Netwrix account representative before starting.
 
 ### Connector port requirements
 
@@ -197,10 +207,14 @@ export LICENSE_KEY='YOUR_NETWRIX_LICENSE_KEY'
 ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
 TMP_FILE=$(mktemp)
 curl -sLf -o "$TMP_FILE" \
-  "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}"
+  "https://raw.pkg.keygen.sh/v1/accounts/netwrix/artifacts/dspm-installer-linux-$ARCH?auth=license:${LICENSE_KEY}&channel=stable"
 sudo install -m 0755 "$TMP_FILE" "/usr/local/bin/dspm-installer"
 rm -f "$TMP_FILE"
 ```
+
+:::note
+You must include the `channel=stable` parameter. Without it, Keygen returns the newest artifact across all channels, which can be a pre-release or development build instead of the latest stable release.
+:::
 
 ### Step 3: Verify the download
 
@@ -216,7 +230,7 @@ If this returns a version number, the binary is ready. If it returns an error, t
 sudo dspm-installer
 ```
 
-The installer presents an interactive wizard: license key, hostname, first admin name and email, and TLS certificate file paths. Each prompt shows an example value and validates your input before moving on — accept a suggested default by pressing **Enter**, or run `dspm-installer --help` for the full flag reference. Installation takes 15–30 minutes.
+The installer prompts you for the license key, hostname, first admin name and email, and TLS certificate file paths. Each prompt shows an example value and validates your input before moving on — accept a suggested default by pressing **Enter**, or run `dspm-installer --help` for the full flag reference. Installation takes 15–30 minutes.
 
 :::note
 An **Advanced Settings** step lets you pin to a specific chart **Target Revision** (for example, `1.5.0`) instead of installing the latest release. Leave it empty for standard installations.
@@ -286,7 +300,7 @@ sudo kubectl get secret -n access-analyzer dspm-bootstrap-admin \
   -o jsonpath='{.data.password}' | base64 -d; echo
 ```
 
-This only returns the original temporary password — after you change it, use the app's password reset flow, or contact Netwrix Support if the first admin account becomes inaccessible.
+This returns only the original temporary password — after you change it, use the app's password reset flow, or contact Netwrix Support if the first admin account becomes inaccessible.
 
 ---
 

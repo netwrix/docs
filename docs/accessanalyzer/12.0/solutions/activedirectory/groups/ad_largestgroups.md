@@ -7,8 +7,8 @@ sidebar_position: 70
 # AD_LargestGroups Job
 
 The AD_LargestGroups Job identifies groups with large effective member counts. These types of groups
-may cause administrative overhead and burden in being able to easily understand who is getting
-access to resources, or how much access is being granted to resources through these groups.
+can create administrative overhead, making it hard to see who has access to resources or how much
+access these groups grant.
 
 ## Analysis Task for the AD_LargestGroups Job
 
@@ -16,7 +16,7 @@ Navigate to the **Active Directory** > **1.Groups** > **AD_LargestGroups** > **C
 select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

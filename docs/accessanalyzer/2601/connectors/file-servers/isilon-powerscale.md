@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The Dell Isilon / PowerScale connector reads file shares over SMB to collect share permissions, folder and file ACLs, and file contents for sensitive data classification. The connector doesn't require agent installation on the storage system.
 
-Dell Isilon / PowerScale (based on the OneFS operating system) organizes SMB shares within access zones. The SMB service must be enabled on each access zone you want to scan.
+Dell Isilon / PowerScale (based on the OneFS operating system) organizes SMB shares within access zones. You must enable the SMB service on each access zone you want to scan.
 
 ## Supported versions
 

@@ -6,9 +6,8 @@ sidebar_position: 30
 
 # 1.Activity Job Group
 
-The **Box** > **1.Activity** Job Group identifies long term trends of activity providing insight
-into user activity, usage statistics, and suspicious behavior identifies long-term trends of
-activity providing insight into user activity, usage statistics, and suspicious behavior.
+The **Box** > **1.Activity** Job Group identifies long-term trends of activity, providing insight
+into user activity, usage statistics, and suspicious behavior.
 
 ![1.Activity Job Group in the Jobs Tree](/images/accessanalyzer/12.0/solutions/box/activity/jobstree.webp)
 

@@ -20,12 +20,12 @@ activity log file is created if there is no activity for the day.
 
 **Configuration Checklist**
 
-Complete the following checklist prior to configuring activity monitoring of Dell PowerStore
+Complete the following checklist before configuring activity monitoring of Dell PowerStore
 devices. Instructions for each item of the checklist are detailed within the following topics.
 
 **Checklist Item 1: Plan Deployment**
 
-- Prior to beginning the deployment
+- Before beginning the deployment
 
     - See the
       [Dell PowerStore: File Capabilities](https://www.delltechnologies.com/asset/en-us/products/storage/industry-market/h18155-dell-powerstore-file-capabilities.pdf)
@@ -36,7 +36,7 @@ devices. Instructions for each item of the checklist are detailed within the fol
 
 **Checklist Item 2: [Install Dell CEE](/docs/activitymonitor/10.0/requirements/activityagent/nas-device-configuration/powerstore-aac/installcee.md)**
 
-- Dell CEE should be installed on the Windows proxy server(s) where the Activity Monitor activity
+- Dell CEE should be installed on the Windows proxy servers where the Activity Monitor activity
   agent will be deployed
 
     :::info
@@ -47,7 +47,7 @@ devices. Instructions for each item of the checklist are detailed within the fol
 
 - Important:
 
-    Open MS-RPC ports between the Dell device and the Windows proxy server(s) where the Dell CEE is
+    Open MS-RPC ports between the Dell device and the Windows proxy servers where the Dell CEE is
     installed
 
 **Checklist Item 3: Dell PowerStore Device Configuration**
@@ -68,8 +68,8 @@ devices. Instructions for each item of the checklist are detailed within the fol
 Checklist Item 5: Configure Dell CEE to Forward Events to the Activity Agent
 
 :::note
-When Dell CEE is installed on Windows proxy server(s) where the Activity Monitor activity
-agent will be deployed, the following steps are not needed.
+When Dell CEE is installed on Windows proxy servers where the Activity Monitor activity
+agent will be deployed, the following steps aren't needed.
 :::
 
 

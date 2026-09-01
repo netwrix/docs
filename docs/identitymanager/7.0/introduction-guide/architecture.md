@@ -18,7 +18,7 @@ User Interface;
 
 The managed systems' credentials are used only by the **agent** and are never disclosed to the **server**.
 
-The **agent** can call the **server**, but the **server** **cannot** call the **agent**. The data flows' initiatives are always from the **agent**.
+The **agent** can call the **server**, but the **server** **can't** call the **agent**. The data flows' initiatives are always from the **agent**.
 
 ## Installation Types
 
@@ -36,9 +36,7 @@ Identity Manager can be installed:
 
 Let's learn about Identity Manager [Configuration](../introduction-guide/configuration).
 
-## Learn More
+## Additional Resources
 
-Learn more on Identity Manager's Architecture.
-
-See the [Network Configuration](../integration-guide/network-configuration) topic for additional information.
+See the [Network Configuration](../integration-guide/network-configuration) topic for additional information about Identity Manager's architecture.
 

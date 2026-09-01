@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # Web Service REST API for Applications Accessing Data Remotely
 
-The Enterprise Auditor REST API is integrated into the Web Service as an endpoint using an OAuth 2.0
-client credentials grant for authentication and providing the following access role:
+The Web Service integrates the Enterprise Auditor REST API as an endpoint that uses an OAuth 2.0
+client credentials grant for authentication and provides the following access role:
 
 - Read-Only – Read data only
 

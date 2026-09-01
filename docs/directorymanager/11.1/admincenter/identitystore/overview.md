@@ -6,13 +6,13 @@ sidebar_position: 30
 
 # Identity Stores
 
-Directory Manager enables you to create an identity store on an identity provider and perform
+Use Directory Manager to create an identity store on an identity provider and perform
 different functions in that provider through the identity store. These functions include:
 
 - Group management tasks, such as creating groups, scheduling group updates, and expiring groups.
 - User management tasks, such as creating users and mailboxes, managing users’ profiles, and
   managing direct reports.
-- Bulk user provisioning and deprovisioning in an identity provider, database or even a file, such
+- Bulk user provisioning and deprovisioning in an identity provider, database, or even a file, such
   as an Excel file.
 - Entitlement related tasks, such as updating the effective NTFS permissions for shared resources on
   a file server.

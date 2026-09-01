@@ -7,9 +7,7 @@ sidebar_position: 40
 # Exchange Lockdown Considerations
 
 When an Exchange Lockdown policy is first enabled, operations that are expected to be locked down by
-the policy may not be blocked due to existing connections. It is necessary to ensure the users are
-logged off before testing the blocking behavior of the policy. Following is the safest way to
-resolve existing connections and ensure that events intended to be blocked are being blocked:
+the policy may not be blocked due to existing connections. Ensure users are logged off before testing the blocking behavior of the policy. The safest way to resolve existing connections and ensure that events intended to be blocked are being blocked:
 
 - For Outlook – Restart the MSExchangeRPC service
 - For w3wp clients (e.g. OWA, PowerShell, EWS, ECP, ActiveSync) – Restart IIS
@@ -26,11 +24,7 @@ In Microsoft Outlook 2010, delegation through Outlook performs three operations:
 - Outlook creates a hidden rule in the user’s inbox to forward incoming meeting and task requests
   and responses to the delegate
 
-The first option does not use an Exchange API. Therefore, this action cannot be blocked by an
-[Exchange Lockdown Event Type](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/exchangelockdown.md) policy. However, it
-is possible to achieve the desired blocking effect by creating a corresponding
-[Active Directory Lockdown Event Type](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/activedirectorylockdown.md)
-policy to block any **Send on Behalf of** permission changes.
+The first option doesn't use an Exchange API, so it can't be blocked by an [Exchange Lockdown Event Type](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/exchangelockdown.md) policy. To block this behavior, create a corresponding [Active Directory Lockdown Event Type](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/activedirectorylockdown.md) policy to block **Send on Behalf of** permission changes.
 
 Netwrix recommends using the following event filters on the respective Active Directory Lockdown
 policy:
@@ -60,5 +54,4 @@ A message will appear as follows:
 
 The Exchange Lockdown policy blocks the folder permission changes.
 
-With both lockdown policies working together, it is possible to block changes to existing
-connections.
+When both lockdown policies are enabled together, you can block changes to existing connections.

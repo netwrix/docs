@@ -21,13 +21,13 @@ The sensitive data scan settings are:
       database or cluster
     - Limit of documents to scan — Scan limited number of documents in each database or cluster.
       This option is ideal when discovering sensitive data and has minimal impact on the MongoDB
-      cluster performance. However, if the Subject Profile Request feature is being leveraged, then
-      all the documents in all the database or cluster need to be scanned.
+      cluster performance. However, if you use the Subject Profile Request feature, you need to
+      scan all the documents in all the databases or clusters.
     - Scan documents randomly — Enterprise Auditor requests a set of documents from each database
-      when scanning for sensitive data. The database engine does not return random data from a
-      collection. Instead, Enterprise Auditor returns sequential documents in a collection. In order
-      to ensure a statistical discrete uniform distribution of data being scanned, this option can
-      be selected. When selected, the Enterprise Auditor sensitive data scanner requests randomized
+      when scanning for sensitive data. The database engine doesn't return random data from a
+      collection. Instead, Enterprise Auditor returns sequential documents in a collection. To
+      ensure a statistical discrete uniform distribution of scanned data, select this option.
+      When you select this option, the Enterprise Auditor sensitive data scanner requests randomized
       documents from each collection in all the targeted databases.
 
 - Scan database names for sensitive data – Scans database names for sensitive data if the database
@@ -39,11 +39,11 @@ The sensitive data scan settings are:
 **DLP Options**
 
 - Store discovered sensitive data – Stores potentially sensitive data in the Enterprise Auditor
-  database. Any sampled sensitive data discovered based on the matched criteria is stored in the
-  Enterprise Auditor database. This functionality can be disabled by clearing this checkbox.
+  database. The scan stores any sampled sensitive data discovered based on the matched criteria in
+  the Enterprise Auditor database. Clear this checkbox to disable this functionality.
 
     :::note
-    The **Store discovered sensitive data** option is required to view Content Audit
+    You must select the **Store discovered sensitive data** option to view Content Audit
     reports in the Access Information Center for MongoDB data.
     :::
 
@@ -58,6 +58,6 @@ The sensitive data scan settings are:
   scan was stopped as a result of an error
 
 :::tip
-Remember, the Sensitive Data Discovery Add-on is required to use the sensitive data collection
+Remember, you need the Sensitive Data Discovery Add-on to use the sensitive data collection
 option.
 :::

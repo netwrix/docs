@@ -13,7 +13,7 @@ Creates the display table, the default view and access rights to the entity.
 - [View Template Adaptable](../../../integration-guide/toolkit/xml-configuration/configuration/scaffoldings/templates/viewtemplateadaptable):
 Creates the entity view (designElement = ResourceTable), the report and the rights for a given profile.
 
-These scaffoldings are not enough to access resources. You must add a menu item to define the navigation in the view in the user interface.
+These scaffoldings aren't enough to access resources. You must add a menu item to define the navigation in the view in the user interface.
 
 ## Create an Entity View
 
@@ -26,7 +26,7 @@ The following elements must be in place:
 - [Create Menu Items](../../../integration-guide/ui/how-tos/create-menu-items)
 - [View Access Control Rules](../../../integration-guide/toolkit/xml-configuration/configuration/scaffoldings/accesscontrolrules/resources/viewaccesscontrolrules)
 
-To create the view, you can manipulate one or more forms. The example below shows how to create a view from several different forms. This will allow you to reuse some forms in workflows.
+To create the view, manipulate one or more forms. The example below shows how to create a view from several different forms. You can reuse some forms in workflows.
 
 ```text
     <Form Identifier="View_Referentiel_Guest_PersonnalData_Base" EntityType="Referentiel_Guest">        <Control DisplayName_L1="Perosnnal Data" OutputType="LayoutFieldset">            <Control DisplayName_L1="Complete Name" OutputType="LayoutRowset">                <Control Binding="LastName" IsRequired="true"/>                <Control Binding="FirstName" IsRequired="true"/>            </Control>            <Control Binding="Mail" ColumnSize="8" IsRequired="true"/>            <Control Binding="PhoneNumber" ColumnSize="8" />        </Control>    </Form>    <Form Identifier="View_Referentiel_Guest_AdditionalData_Base" EntityType="Referentiel_Guest">        <Control DisplayName_L1="Additional information" OutputType="LayoutFieldset">            <Control Binding="Contact" />            <Control Binding="StartDate" />            <Control Binding="EndDate" />        </Control>    </Form>    <Form Identifier="View_Referentiel_Guest_Base" EntityType="Referentiel_Guest" FormType="ResourceViewEntity" Menu="View_Referentiel_Guest"
@@ -41,7 +41,7 @@ It is also possible to create only one form that contains all the information:
 
 ### Create an Entity View Using Records
 
-Some entities may have entity records. To view the entity in question with all the records attached to it, it is necessary to fill in forms that will load the record data as well as forms for the parent entity.
+Some entities may have entity records. To view the entity with all its attached records, create forms that load the record data along with forms for the parent entity.
 
 The view form doesn't give access to the view in the interface or the rights to access it.
 

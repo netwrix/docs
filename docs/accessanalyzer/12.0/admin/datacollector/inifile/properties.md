@@ -15,7 +15,7 @@ Use the following options to determine which data to adult:
 - All contents – Collect all contents from the INI file
 
     :::note
-    `*` can be used for matching wildcard or single characters.
+    Use `*` to match a wildcard or single character.
     :::
 
 
@@ -27,7 +27,7 @@ Use the following options to determine which data to adult:
     - Click the ellipses (**…**) to open a file explorer window
     - Select an appropriate .INI file
 
-- Properties – Select a checkbox next to any desired properties. **Select All** or **Clear All** can
-  also be used.
+- Properties – Select a checkbox next to any desired properties, or use **Select All** or **Clear
+  All**.
 
-    If **Differences from standard** is selected, all properties are selected and cannot be altered.
+    If **Differences from standard** is selected, all properties are selected and can't be altered.

@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Work with Collected Data
 
-Follow the steps to work with collected data:
+To work with collected data:
 
 **Step 1 –** On the computer where you executed the add-on, navigate to **Start** > **All
 Programs** > **Event Viewer**.
@@ -18,4 +18,4 @@ Services Logs** >Netwrix Auditor Integration log.
 
 ![EventLog_Export_Example](/images/auditor/10.7/addon/solarwinds/eventlogexportexample_thumb_0_0.webp)
 
-Now you can augment Windows event log with data collected by the Auditor.
+Now you can augment the Windows event log with data collected by Auditor.

@@ -76,11 +76,12 @@ The sensitive data scan settings are:
 **SDD Options**
 
 - Store discovered sensitive data – Stores potentially sensitive data in the Enterprise Auditor
-  database. Any sampled sensitive data discovered based on the matched criteria is stored in the
-  Enterprise Auditor database. This functionality can be disabled by clearing this option.
+  database. Enterprise Auditor stores any sampled sensitive data discovered based on the matched
+  criteria in the Enterprise Auditor database. You can disable this functionality by clearing this
+  option.
 
     :::note
-    The **Store discovered sensitive data** option is required to view Content Audit
+    You must enable the **Store discovered sensitive data** option to view Content Audit
     reports in the Access Information Center for SQL data.
     :::
 
@@ -91,10 +92,9 @@ The sensitive data scan settings are:
     :::
 
 
-- Resume scan from last point on error – Resumes scan from where the previous scan left off when the
-  previous scan was stopped as a result of an error
+- Resume scan from last point on error – Resumes scan from where the previous scan left off if an
+  error stopped the previous scan
 
 :::tip
-Remember, the Sensitive Data Discovery Add-on is required to use the sensitive data collection
-option.
+Remember, using the sensitive data collection option requires the Sensitive Data Discovery Add-on.
 :::

@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # ExchangeMetrics: Collect Mode
 
-The Collect Mode page is where to set the collection mode. It is a wizard page for the categories
+Use the Collect Mode page to set the collection mode. It is a wizard page for the categories
 of:
 
 - Server Volume
@@ -27,8 +27,8 @@ of:
 There are two types of collection modes:
 
 - Query Summary Data Only – In this mode, the applet gathers only existing summary data and returns
-  it to the Enterprise Auditor Console. In order to process Exchange tracking log files, another
-  instance of the applet must be configured.
+  it to the Enterprise Auditor Console. To process Exchange tracking log files, configure another
+  instance of the applet.
 - Process Exchange Tracking Logs and Query Summary Data – In this mode, the applet processes missing
   summary data and returns it to the Enterprise Auditor Console. This mode includes an additional
   setting for **Summary data path**. Choose between:

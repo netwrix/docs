@@ -7,7 +7,7 @@ sidebar_position: 60
 # Predefined Investigations Page
 
 The Predefined Investigations page in the Investigations interface provides a list of saved
-out-of-the-box investigations with applied filters for Computers, Groups, iNetOrgPerson, and User
+built-in investigations with applied filters for Computers, Groups, iNetOrgPerson, and User
 activity reports.
 
 Click **Investigate** in the application header bar to open the Investigations interface. Then click
@@ -55,10 +55,10 @@ By default, this folder contains the following saved investigations:
 
 | Investigation        | Description     | Filters    |
 | -------------------- | -------------------------- | -------------------------- |
-| Group Added          | Occurs when a group of any type is created                 | Two filter statements set: <ul><li>Attribute 1 = Event Operation</li><li>Operator 1 = Equals</li><li>Filter 1 = Active Directory Create </li></ul>AND<ul><li>Attribute 2 = Object Class</li><li>Operator 2 = Equals</li><li>Filter 2 = group</li></ul>   |
+| Group Added          | Occurs when a group of any type is created                 | Two filter statements set: <ul><li>Attribute 1 = Event Operation</li><li>Operator 1 = Equals</li><li>Filter 1 = Active Directory Create </li></ul> AND<ul><li>Attribute 2 = Object Class</li><li>Operator 2 = Equals</li><li>Filter 2 = group</li></ul>   |
 | Group Deleted        | Created when a group is removed / deleted                  | Two filter statements set: <ul><li>Attribute 1 = Event Operation</li><li>Operator 1 = Equals</li><li>Filter 1 = Active Directory Delete</li></ul> AND<ul><li>Attribute 2 = Object Class</li><li>Operator 2 = Equals</li><li>Filter 2 = group</li></ul>   |
 | Group Member Added   | Created when a member is added to a group                  | Two filter statements set: <ul><li>Attribute 1 = Event Sub-Operation</li><li>Operator 1 = Equals</li><li>Filter 1 = Group Members Added</li></ul> AND<ul><li>Attribute 2 = Object Class</li><li>Operator 2 = Equals</li><li>Filter 2 = group</li></ul>   |
-| Group Member Removed | Created when one or more members of a group are removed    | Two filter statements set: <ul><li>Attribute 1 = Event Sub-Operation</li><li>Operator 1 = Equals</li><li>Filter 1 = Group Members Removed </li></ul>AND<ul><li>Attribute 2 = Object Class</li><li>Operator 2 = Equals</li><li>Filter 2 = group</li></ul> |
+| Group Member Removed | Created when one or more members of a group are removed    | Two filter statements set: <ul><li>Attribute 1 = Event Sub-Operation</li><li>Operator 1 = Equals</li><li>Filter 1 = Group Members Removed </li></ul> AND<ul><li>Attribute 2 = Object Class</li><li>Operator 2 = Equals</li><li>Filter 2 = group</li></ul> |
 | Group Moved          | Occurs when a group is moved from one container to another | Two filter statements set: <ul><li>Attribute 1 = Event Sub-Operation</li><li>Operator 1 = Equals</li><li>Filter 1 = Object Move</li></ul> AND<ul><li>Attribute 2 = Object Class</li><li>Operator 2 = Equals</li><li>Filter 2 = group</li></ul>           |
 
 

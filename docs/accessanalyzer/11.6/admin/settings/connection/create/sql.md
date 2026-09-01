@@ -24,5 +24,5 @@ The required credentials for SQL Authentication are:
   **Settings** > **Application** node. See the
   [Application](/docs/accessanalyzer/11.6/admin/settings/application/overview.md)
   topic for additional information.)
-- Password – Type the password
-- Confirm – Re-type the password
+- Password – Enter the password
+- Confirm – Re-enter the password

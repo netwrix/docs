@@ -65,7 +65,7 @@ DTM.Result = LCase(Left(DTM.Source("sn"), 6) & Left(DTM.Source("givenName"), 1))
 - Last name is present in a source field named "sn" (for surname)
 - First name may or may not be present in a source field named "givenName"
 - Middle name may or may not be present in a source field named "middleName"
-- Each part of name may be composed of multiple words separated by hyphens, spaces or commas, and
+- Each part of name may be composed of multiple words separated by hyphens, spaces, or commas, and
   script must pick out the first character of each word – for example,. "Reginald Howard-Hughes
   Thompson, Jr." converts to "rhhtj".
 

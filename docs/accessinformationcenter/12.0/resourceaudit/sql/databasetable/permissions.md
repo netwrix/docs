@@ -11,7 +11,7 @@ selected resource.
 
 ![Permissions report at the database and table levels](/images/accessinformationcenter/12.0/resourceaudit/sql/databasetable/databasepermissions.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Trustee Type – Type of the trustee (for example, Domain User, Database User, or Domain Group)
 - Trustee Name – Owner of the trustee account

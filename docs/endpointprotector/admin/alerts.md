@@ -24,8 +24,7 @@ under the administrator details from **System Configuration** > **System Adminis
 
 ## System alerts
 
-From this section, you can create system alerts, including APNS certificate expiry, updates and
-support expiry, endpoint licenses used, and others.
+From this section, you can create system alerts, including APNS certificate expiry, updates, and support expiry, endpoint licenses used, and others.
 
 ![System Alerts Settings](systemalerts.webp)
 
@@ -73,7 +72,7 @@ File Write, and Enforced Encryption successfully deployed.
 1. Click **Create** and provide the required information:
    - **Event**—select the event type that generates the alert
    - **Alert Name**—enter a name for the alert
-   - **Device Type**—select the device type from the drop-down list
+   - **Device Type**—select the device type from the dropdown list
    - **Devices**—select the specific device already available in the system
    - **Monitored Entities**—select the groups, computers, or users that generate the event
    - **Administrators**—select the administrators who will receive the alerts

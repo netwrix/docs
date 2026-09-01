@@ -8,7 +8,7 @@ sidebar_position: 40
 
 Using display types, you can publish fields in a Directory Manager portal to capture and view data.
 
-A field can be anything from a text box to a drop-down list to a check box, depending on the display
+A field can be anything from a text box to a dropdown list to a checkbox, depending on the display
 type linked to it. You must also link each field to a schema attribute in the directory. Users can
 use the fields in a portal to add and update values for the respective attributes.
 
@@ -28,8 +28,8 @@ Each schema attribute requires a value of a certain type.
   Example: Active Directory attributes _hideDLMembership_ and _isDeleted_
 
 To ensure that portal users update these attributes as supported by the directory, display types
-play an important role. A display type enables you to define the user interface element to use for
-an attribute in the portal (for example, text box, drop-down list, check box, etc.). This user
+play an important role. Use a display type to define the user interface element to use for
+an attribute in the portal (for example, text box, dropdown list, checkbox, etc.). This user
 interface element must support the type of data that can be entered as the attribute value, so that
 users enter valid data through the portal.
 
@@ -68,7 +68,7 @@ You can link a basic display type to a schema attribute straight away. Basic dis
 
     Clicking **Add** launches a dialog box where users can add new values.
 
-- **Check box**
+- **Checkbox**
 
     Use it for schema attributes that accept true or false values, such as the Active Directory
     attributes _reportToOwner_, _reportToOriginator_, and _oOFReplyToOriginator_.
@@ -91,19 +91,19 @@ You can link a basic display type to a schema attribute straight away. Basic dis
     ![multi-value_display_type](/images/directorymanager/11.1/admincenter/portal/displaytype/multi-value_display_type.webp)
 
     Clicking **Add** displays a quick search field along with an option to launch the **Find**
-    dialog box where users can search and select the desired objects.
+    dialog box where users can search and select the objects they need.
 
 ### Custom Display Types
 
-Some display types cannot be linked to schema attributes straight away; they must be customized
+Some display types can't be linked to schema attributes straight away; they must be customized
 first.
 
 Display types that require customization are:
 
 - Text box - you can use it directly with an attribute, but if you want to apply data validation
   checks to it, you must convert it to a custom display type.
-- Drop-down list
-- Linked-field drop-down list
+- Dropdown list
+- Linked-field dropdown list
 - Image
 - Grid
 - Radio
@@ -114,9 +114,9 @@ Display types that require customization are:
 Some applications of display type are:
 
 - Define a simple text box type for a telephone number field and apply a validation rule so that it
-  accepts phone numbers in US format only.
-- Define a drop-down list display type containing a list of the departments in your organization.
-- Create a linked field drop-down list type where selecting the office address auto populates the
+  accepts phone numbers in United States format only.
+- Define a dropdown list display type containing a list of the departments in your organization.
+- Create a linked field dropdown list type where selecting the office address auto populates the
   phone number and fax number.
 
 The default portal template uses several predefined custom display types. See the

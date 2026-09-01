@@ -20,7 +20,7 @@ The 2.Direct Permissions job group is comprised of:
 - [FS_LocalUsersAndGroups Job](/docs/accessanalyzer/12.0/solutions/filesystem/directpermissions/fs_localusersandgroups.md) – Reports on local users and groups that
   have been granted direct permissions on resources from targeted file servers
 - [FS_MissingFullControl Job](/docs/accessanalyzer/12.0/solutions/filesystem/directpermissions/fs_missingfullcontrol.md) – Reports on resources from targeted file
-  servers that have no Full Control rights granted to it
+  servers that have no Full Control rights granted to them
 - [FS_NestedShares Job](/docs/accessanalyzer/12.0/solutions/filesystem/directpermissions/fs_nestedshares.md) – Reports on nested shares that have been granted direct
   permissions from targeted file servers
 - [FS_SIDHistory Job](/docs/accessanalyzer/12.0/solutions/filesystem/directpermissions/fs_sidhistory.md) – Reports on trustees that have a historical SID that has

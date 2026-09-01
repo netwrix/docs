@@ -8,7 +8,7 @@ sidebar_position: 40
 
 ## Endpoint
 
-Use to export data from the Audit Database. By default, first 1,000 Activity Records are returned.
+Use this endpoint to export data from the Audit Database. By default, the first 1,000 Activity Records are returned.
 To get the next Activity Records, send a POST request to the same endpoint containing a Continuation
 mark.
 

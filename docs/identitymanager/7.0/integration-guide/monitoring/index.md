@@ -67,7 +67,7 @@ appsettings.json
 
 ### Custom namespaces
 
-Here is a table giving some namespace that you could add in the `Override` section, in order to monitor the associated module.
+Here is a table giving some namespace that you could add in the `Override` section, to monitor the associated module.
 
  | Module | Namespace | 
  | --- | --- | 
@@ -79,7 +79,7 @@ Here is a table giving some namespace that you could add in the `Override` secti
 
 Each log has a specific set of log properties, defined using the context of the server when generating the log (see [Formatting](https://github.com/serilog/serilog/wiki/Formatting-Output#formatting)).
 
-It is possible to modify the format message of the log displayed by overriding the `outputTemplate` of the logs:
+Modify the format message of the log displayed by overriding the `outputTemplate` of the logs:
 
 ```
 appsettings.json
@@ -109,7 +109,7 @@ In addition to the Microsoft log levels, Serilog provides a [Filters](https://gi
 
 ## Sinks
 
-Serilog allows the user to route log messages to a variety of logging destinations. Every destination is referred to as a sink. [Sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks) allows logs to be routed to destination such as standard consoles, files and logging services. See the Monitoring topic for additional information.
+Serilog allows the user to route log messages to a variety of logging destinations. Every destination is referred to as a sink. [Sinks](https://github.com/serilog/serilog/wiki/Provided-Sinks) allows logs to be routed to destination such as standard consoles, files, and logging services. See the Monitoring topic for additional information.
 
 Identity Manager's supported sinks are:
 
@@ -241,11 +241,11 @@ appsettings.json
 }
 ```
 
-In the example above, the filter defined in **Logger1** will only apply to **Destination1**, and the filter defined in **Logger2** will only apply to **Destination2** and **Destination3**.
+In the preceding example, the filter defined in **Logger1** applies only to **Destination1**, and the filter defined in **Logger2** applies only to **Destination2** and **Destination3**.
 
 When using `Serilog.Sinks.File`, the setting `shared` should be set to `true` in the `Args` section to enable Identity Manager's **Monitoring** screen functionality.
 
-As this `shared` setting allows several systems to interact with the log file simultaneously, so we can have both Serilog writing to the log file and Identity Manager reading it to display its content on the **Monitoring** screen.
+As this `shared` setting allows several systems to interact with the log file simultaneously, both Serilog can write to the log file and Identity Manager can read it to display its content on the **Monitoring** screen.
 
 ```
 {
@@ -365,7 +365,7 @@ Identity Manager supports the [Application Insights](https://docs.microsoft.com
 
 ### Configuration
 
-Both the server and the agent support the Application Insights integration. To set it up, you need to create your own Application Insights instance (see [Create New Resource](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource)). Once done, you should have an instrumentation key. To plug the server or the agent into the Application Insights instance, you simply have to set the key at the root of the appsettings file:
+Both the server and the agent support the Application Insights integration. To set it up, create your own Application Insights instance (see [Create New Resource](https://docs.microsoft.com/en-us/azure/azure-monitor/app/create-new-resource)). Once done, you'll have an instrumentation key. To plug the server or the agent into the Application Insights instance, set the key at the root of the appsettings file:
 
 ```
 appsettings.json
@@ -377,13 +377,13 @@ appsettings.json
 }
 ```
 
-This configuration will automatically add a `Serilog.Sinks.ApplicationInsights` to the Serilog configuration. Thus, declaring explicitly an ApplicationInsights _sink_ in the Serilog configuration is useless. The `ApplicationInsights` section does not only affect the logging system, but also sends metrics periodically such as the percentage of CPU usage.
+This configuration will automatically add a `Serilog.Sinks.ApplicationInsights` to the Serilog configuration. Thus, declaring explicitly an ApplicationInsights _sink_ in the Serilog configuration is useless. The `ApplicationInsights` section doesn't only affect the logging system, but also sends metrics periodically such as the percentage of CPU usage.
 
 ## Logs Monitoring via User Interface
 
 Identity Manager offers the ability to download the application logs directly through the User Interface (UI) via the **Monitoring** screen in the **Administration** section on the Dashboard.
 
-SaaS installations support this feature automatically while on-premises installations support this in two ways. The first one is to leverage the path to the logs from the Serilog configuration when writing application logs into a single file. See the example below. The second option is described in the following subsection.
+SaaS installations support this feature automatically while on-premises installations support this in two ways. The first one is to use the path to the logs from the Serilog configuration when writing application logs into a single file. See the example below. The second option is described in the following subsection.
 
 ```
 appsettings.json
@@ -403,7 +403,7 @@ appsettings.json
 
 ### `LogsPath`
 
-if you store Identity Manager logs thanks to an external mechanism (the web server, etc), then you have to use the second option in order to enable this feature which is via an ad hoc parameter at the root of the appsettings called `LogsPath` indicating the path where the application logs are located:
+if you store Identity Manager logs thanks to an external mechanism (the web server, etc), then you have to use the second option to enable this feature which is via an ad hoc parameter at the root of the appsettings called `LogsPath` indicating the path where the application logs are located:
 
 ```
 appsettings.json

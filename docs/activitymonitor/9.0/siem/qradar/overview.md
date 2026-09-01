@@ -15,9 +15,9 @@ exfiltration attempts. With full control over the data, users can create custom 
 enabling QRadar to correlate file system activity with any log source.
 
 This document describes how to integrate Netwrix products with the Netwrix File Activity Monitor App
-for QRadar found in the IBM X-Force Exchange. Any Netwrix products can be configured to monitor file
+for QRadar found in the IBM X-Force Exchange. You can configure any Netwrix product to monitor file
 system activity and send the monitored events to QRadar. After installing this app, ensure that
-either the Activity Monitor, Threat Prevention, or Access Analyzer has been configured to send
+you configure either the Activity Monitor, Threat Prevention, or Access Analyzer to send
 events to QRadar. See the [Netwrix Technical Knowledge Center](https://helpcenter.netwrix.com/) on
 the Netwrix website for additional information.
 
@@ -25,10 +25,10 @@ the Netwrix website for additional information.
 
 Download the [Netwrix File Activity Monitor App for
 QRadar](https://exchange.xforce.ibmcloud.com/hub/extension/STEALTHbits Technologies:STEALTHbits File Activity Monitor) from the [IBM X-Force App Exchange](https://exchange.xforce.ibmcloud.com/hub).
-After downloading the Stealthbits File Activity Monitor App for QRadar, follow the steps to install
+After downloading the Stealthbits File Activity Monitor App for QRadar, install it by following these steps:
 it within QRadar.
 
-**Step 1 –** Click on the Admin tab within QRadar.
+**Step 1 –** Click the Admin tab within QRadar.
 
 **Step 2 –** Under System Configuration, click Extensions Management.
 
@@ -41,13 +41,12 @@ Then click **Install**.
 **Step 5 –** Close the Extensions Management window, and then select the File Activity Monitor tab
 within QRadar.
 
-The File Activity Monitor tab will appear within QRadar. It is necessary for the QRadar SEC token to
-be saved to the Settings interface of the **File Activity Monitor** App. See the
+The File Activity Monitor tab will appear within QRadar. You must save the QRadar SEC token to the Settings interface of the **File Activity Monitor** App. See the
 [Settings](/docs/activitymonitor/9.0/siem/qradar/settings.md) topic for additional information.
 
 ## Initial Configuration of the QRadar App
 
-Follow the steps to configure QRadar to receive data from Netwrix products.
+Configure QRadar to receive data from Netwrix products by following these steps:
 
 **Step 1 –** Determine the IP Address of the QRadar Console, e.g. run the _ifconfig_ command. This
 information is required for the following sections:
@@ -61,7 +60,7 @@ information is required for the following sections:
 
 **Step 3 –** Select Log Sources.
 
-**Step 4 –** View the Log Sources list. If the data source was not automatically created, click Add
+**Step 4 –** View the Log Sources list. If the data source wasn't automatically created, click Add
 and enter the following information:
 
 - Log Source Name – Enter a descriptive name to identify the data source
@@ -77,7 +76,7 @@ sent correctly between the hosts, and diagnose any possible network issues.
 - Protocol Configuration – Select Syslog
 - Log Source Identifier – Enter the host name or IP Address of the host where the Netwrix
   Activity Monitor agent OR  Threat Prevention is installed
-- Then click Save. Remember, prior to using the Netwrix File Activity Monitor App for QRadar, the
+- Then click Save. Remember, before using the Netwrix File Activity Monitor App for QRadar, the
   related Netwrix product must be configured to send data to QRadar.
 
 The  Netwrix File Activity Monitor App for QRadar can now display activity data from either the

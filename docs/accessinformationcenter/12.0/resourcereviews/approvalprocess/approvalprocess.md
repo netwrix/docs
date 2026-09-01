@@ -11,8 +11,8 @@ Reviews page of the Resource Reviews interface changes to Responses awaiting rev
 
 ![Manage Reviews page with responses awaiting review](/images/accessinformationcenter/12.0/resourcereviews/interfaceapproval.webp)
 
-In the approval process, the Review Administrator looks at the owner-recommended changes and chooses
-to approve, deny, or defer the changes.
+In the approval process, the Review Administrator reviews owner-recommended changes and chooses
+to approve, deny, or defer them.
 
 The Review Administrator may choose to model the requested changes to see how the user's overall
 access will be impacted. Change modeling is conducted through the Resource Audit interface. You can
@@ -28,9 +28,8 @@ be committed when the review is complete.
 :::
 
 
-If the Access Information Center automatically commits the approved change, it is immediately
-visible in Access Information Center reports. It is not necessary to rescan with Netwrix Access
-Analyzer (formerly Enterprise Auditor). If approved changes are being manually committed by your
+If the Access Information Center automatically commits the approved change, Access Information Center reports display it immediately
+visible in Access Information Center reports. Rescanning with Netwrix Access Analyzer (formerly Enterprise Auditor) isn't necessary. If approved changes are being manually committed by your
 organization's IT team, it will be necessary to rescan the environment before the changes will be
 reflected in Access Information Center reports.
 
@@ -40,7 +39,7 @@ decline, or defer all owner-recommended changes for a review.
 
 ## Process Owner Responses
 
-Follow the steps to perform a granular review of a resource owner's recommended changes.
+Perform a granular review of a resource owner's recommended changes.
 
 :::warning
 If the Access Information Center has been configured to commit changes to Active
@@ -65,8 +64,8 @@ resource's reports. This is where you can conduct change modeling.
 
 ![viewresponses](/images/accessinformationcenter/12.0/resourcereviews/viewresponses.webp)
 
-**Step 3 –** By default, the table displays only the recommended changes. Select an item and click
-the desired action button: Accept, Decline, or Defer. The Approval column icon updates. See the
+**Step 3 –** The table displays only the recommended changes by default. Select an item and click
+the action button you want: Accept, Decline, or Defer. The Approval column icon updates. See the
 [View Responses Window](/docs/accessinformationcenter/12.0/resourcereviews/interface/viewresponses.md) topic for additional information.
 
 **Step 4 –** Repeat Step 3 until all changes have been processed. Then click **Close**. The View
@@ -85,14 +84,14 @@ Responses window closes.
   Use the **Export Excel** or **Export CSV** buttons to generate and download an export of accepted
   changes.
 
-**Step 7 –** When remediation is complete, return to the Mange Reviews page (click on the
+**Step 7 –** When remediation is complete, return to the Mange Reviews page (click the
 breadcrumb). Select the review in the list and click **Mark Completed**.
 
 The review remains marked as Completed until the next instance is started.
 
 ## Batch Processing
 
-Follow the steps to perform a batch processing of a resource owner's recommended changes.
+Perform a batch processing of a resource owner's recommended changes.
 
 :::warning
 If the Access Information Center has been configured to commit changes to Active
@@ -106,7 +105,7 @@ Details page opens.
 
 ![Review Details page for reviews awaiting processing](/images/accessinformationcenter/12.0/resourcereviews/reviewdetailsprocess.webp)
 
-**Step 2 –** Select a resource in the list and open the **Process Changes** drop-down menu. You can
+**Step 2 –** Select a resource in the list and open the **Process Changes** dropdown menu. You can
 also select multiple resources in the list to be processed at once using the **Ctrl** and **Shift**
 key and click combinations.
 
@@ -116,7 +115,7 @@ resource's reports. This is where you can conduct change modeling.
 :::
 
 
-**Step 3 –** Select the desired action for all recommended changes: Accept, Decline, or Defer.
+**Step 3 –** Select the action you want for all recommended changes: Accept, Decline, or Defer.
 
 :::tip
 Remember, all recommended changes for the selected resource will be processed with the same
@@ -137,7 +136,7 @@ resolution.
   Use the **Export Excel** or **Export CSV** buttons to generate and download an export of accepted
   changes.
 
-**Step 6 –** When remediation is complete, return to the Mange Reviews page (click on the
+**Step 6 –** When remediation is complete, return to the Mange Reviews page (click the
 breadcrumb). Select the review in the list and click **Mark Completed**.
 
 The review remains marked as Completed until the next instance is started.

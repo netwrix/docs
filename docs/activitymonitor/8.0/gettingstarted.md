@@ -6,13 +6,12 @@ sidebar_position: 10
 
 # Getting Started
 
-Once Netwrix Activity Monitor is installed, the following workflow enables organizations to quickly
-and easily get started with activity monitoring.
+Once Netwrix Activity Monitor is installed, the following workflow enables organizations to get started with activity monitoring quickly.
 
 ## Requirements
 
 The Activity Monitor console needs to be installed on a server. After that agents are deployed to
-the target environment and configured to monitor activity. It is necessary to prepare the target
+the target environment and configured to monitor activity. You must prepare the target
 environment and configure the credentials used by the agents. Each supported environment has
 different requirements. See the following topics for additional information:
 
@@ -32,7 +31,7 @@ different requirements. See the following topics for additional information:
 
 ## Install & Deploy Agents
 
-Once the prerequisites are accomplished, you are ready to install the application and deploy agents.
+After you complete the prerequisites, you are ready to install the application and deploy agents.
 See the following topics for additional information:
 
 - [Install Application](/docs/activitymonitor/8.0/install/application.md)

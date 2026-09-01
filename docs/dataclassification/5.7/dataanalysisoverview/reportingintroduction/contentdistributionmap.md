@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Content Distribution Map
 
-The Content Distribution treemap allows you to interrogate your data in two different ways:
+The Content Distribution treemap lets you interrogate your data in two different ways:
 
 - Taxonomy Grouping—When grouped by taxonomy, the treemap will highlight the sources with the
   largest numbers of documents tagged to the selected taxonomies / terms. An example use case is
@@ -19,10 +19,10 @@ The Content Distribution treemap allows you to interrogate your data in two diff
   of its descendants. Documents can be tagged to one or more terms so the number associated with
   each top level term may exceed the number of documents in the source.
 
-It is possible to filter and refine this display, either selecting specific sources / source-groups
+Filter and refine this display by selecting specific sources / source-groups
 or excluding specific sources / source-groups.
 
 ![contentdistribution_thumb_0_0](/images/dataclassification/5.7/admin/reporting/contentdistribution_thumb_0_0.webp)
 
 You can zoom in to a particular area of the chart by left-clicking in that area; left clicking on
-the title will allow exporting of that specific node. Right-clicking will zoom back out again.
+the title lets you export that node. Right-clicking will zoom back out again.

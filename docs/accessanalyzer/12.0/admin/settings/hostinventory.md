@@ -12,7 +12,7 @@ setting what out-of-the box host lists are visible in the Host Management node.
 
 ![Host Inventory Settings page](/images/accessanalyzer/12.0/admin/settings/hostinventory.webp)
 
-In the Inventory Items section, there are four program property groups:
+The Inventory Items section contains four program property groups:
 
 - Operating System – Includes 7 Items
 - Application – Includes 7 Items
@@ -21,8 +21,8 @@ In the Inventory Items section, there are four program property groups:
 
 Each of these groups brings back the properties enumerated in the list below the group title. These
 collected properties correspond to the columns in the Host Management tables. Deselecting a checkbox
-prevents that information from being collected for target hosts. However, some solutions require
-this information.
+prevents Access Analyzer from collecting that information for target hosts. However, some
+solutions require this information.
 
 :::info
 Leave the default setting of all the groups selected. Consult with
@@ -31,15 +31,15 @@ groups.
 :::
 
 
-In the Performance Tuning section, there are five settings which allocate console resources to the
+The Performance Tuning section contains five settings that allocate console resources to the
 host inventory process:
 
-- Threads – Indicates the number of job threads that are employed during the host inventory process
+- Threads – Indicates the number of job threads Access Analyzer employs during the host inventory
+  process
 
     - The default setting is 20 Threads
-    - Maximum thread count is 100. Thread count will revert back to 100 if values over 100 are
-      entered.
-    - Restart Access Analyzer if thread count is changed for changes to take place
+    - Maximum thread count is 100. Thread count reverts back to 100 if you enter values over 100.
+    - Restart Access Analyzer if you change thread count for changes to take place
 
 - Thread timeout [in seconds] – Indicates the time a thread will spend in retrieving information
   from a host
@@ -48,16 +48,16 @@ host inventory process:
     - If thread can't receive an active response from target host, the thread will move on to the
       next host in the queue
 
-- Stop on Failed Ping – If the Stop on Failed Ping checkbox is selected, hosts that don't respond
-  to pings aren't queried. Otherwise, hosts will be queried regardless.
+- Stop on Failed Ping – If the Stop on Failed Ping checkbox is selected, Access Analyzer doesn't
+  query hosts that don't respond to pings. Otherwise, Access Analyzer queries hosts regardless.
 - PING timeout [in seconds] – Indicates the time a thread will spend pinging a host
 
     - Default setting is 4 seconds
-    - If thread can't connect with a host, the host will be designated as being offline and the
-      thread will move on to the next host in the queue
+    - If the thread can't connect with a host, Access Analyzer designates the host as offline and
+      the thread moves on to the next host in the queue
 
 - Only refresh inventory items older than [time selected] – Indicates the time that needs to pass
-  before the host inventory process is automatically refreshed
+  before Access Analyzer automatically refreshes the host inventory process
 
     - Default setting is 60 days
     - The number textbox has a five-character limit
@@ -72,16 +72,17 @@ host inventory process:
       [Host Discovery Wizard](/docs/accessanalyzer/12.0/admin/hostdiscovery/wizard/overview.md) topic for additional information.
 
 The Desired Host List Views section at the bottom contains all available host lists, both
-built-in lists and custom-created lists. There are seven Default Hosts Lists which correspond
-to the solutions that target them. During the host inventory process, hosts which meet the filter
-criteria for these default lists are automatically populated into that host list. A checkmark in
+built-in lists and custom-created lists. Seven Default Host Lists correspond
+to the solutions that target them. During the host inventory process, Access Analyzer automatically
+populates hosts which meet the filter criteria for these default lists into that host list. A
+checkmark in
 front of the host list indicates that the list is visible in the **Host Management** > **All Hosts**
 node.
 
 The **Cancel** and **Save** buttons are in the lower-right corner of the Host Inventory view. These
-buttons become enabled when modifications are made to the Host Inventory global settings. Whenever
-changes are made at the global level, click **Save** and then **OK** to confirm the changes.
-Otherwise, click **Cancel** if no changes were intended.
+buttons become enabled when you modify the Host Inventory global settings. Whenever
+you make changes at the global level, click **Save** and then **OK** to confirm the changes.
+Otherwise, click **Cancel** if you didn't intend to make changes.
 
 ## Default Host Lists
 
@@ -90,7 +91,7 @@ filter criteria. These lists correspond to the pre-configured solution jobs whic
 
 ### AD Host List
 
-The **AD** Host List can be expanded and contains five sub-groups used by the Active Directory
+You can expand the **AD** Host List, which contains five sub-groups used by the Active Directory
 Solution and the Active Directory Inventory Solution:
 
 ![AD Host List](/images/accessanalyzer/12.0/admin/settings/ad.webp)
@@ -113,7 +114,7 @@ There are no sub-groups for ALL WINDOWS HOSTS.
 
 ### DG Host List
 
-The **DG** Host List can be expanded and contains three sub-groups used by the Data Access
+You can expand the **DG** Host List, which contains three sub-groups used by the Data Access
 Governance for File System Solution.
 
 ![DG Host List](/images/accessanalyzer/12.0/admin/settings/dg.webp)
@@ -126,8 +127,8 @@ The sub-groups are:
 
 ### EXCHANGE Host List
 
-The **EXCHANGE** Host List can be expanded and contains six sub-groups used by the Exchange
-Solution. Four of these sub-groups can also be expand.
+You can expand the **EXCHANGE** Host List, which contains six sub-groups used by the Exchange
+Solution. You can also expand four of these sub-groups.
 
 ![EXCHANGE Host List](/images/accessanalyzer/12.0/admin/settings/exchange.webp)
 
@@ -153,7 +154,7 @@ There are no sub-groups for SQL SERVERS.
 
 ### Windows Server Host List
 
-The **Windows Server** Host List can be expanded and contains three sub-groups used by the
+You can expand the **Windows Server** Host List, which contains three sub-groups used by the
 Windows Solution.
 
 ![Windows Server Host List](/images/accessanalyzer/12.0/admin/settings/windowsserver.webp)
@@ -166,7 +167,7 @@ The sub-groups are:
 
 ### Work Station Host List
 
-The **Work Station** Host List can be expanded and contains one sub-group used by the Windows
+You can expand the **Work Station** Host List, which contains one sub-group used by the Windows
 Solution.
 
 ![Work Station Host List](/images/accessanalyzer/12.0/admin/settings/workstation.webp)

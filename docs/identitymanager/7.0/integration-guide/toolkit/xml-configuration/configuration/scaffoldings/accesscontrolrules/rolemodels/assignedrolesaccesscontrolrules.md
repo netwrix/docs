@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Generates the rights to access the assigned roles page for a given entity type and profile.
 
-Gives access to a shortcut on the dashboard to access this page.
+Provides a dashboard shortcut to access this page.
 
 ## Properties
 
@@ -19,7 +19,7 @@ Gives access to a shortcut on the dashboard to access this page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Profile="RoleAssignedRoles" EntityType="Category" Identifier="RoleAssignedRoles_Category_ProvisioningPolicy_Category" DisplayName_L1="RoleAssignedRoles_Category_ProvisioningPolicy_Category">

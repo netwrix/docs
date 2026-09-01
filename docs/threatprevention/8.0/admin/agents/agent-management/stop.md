@@ -8,7 +8,7 @@ sidebar_position: 20
 
 You may want to stop the Agent on a server for any reason, such as troubleshooting.
 
-Follow the steps to stop the Agent on a server.
+To stop the Agent on a server:
 
 **Step 1 –** Click **Agents** in the left pane to launch the Agents interface.
 
@@ -22,20 +22,19 @@ on the target machine should have access to the system shares. Click **OK** afte
 credentials.
 
 :::note
-The wizard does not block access to the Administration Console and can be minimized while
+The wizard doesn't block access to the Administration Console and can be minimized while
 actions are in progress. If this wizard is hidden by clicking outside of the dialog box, a flashing
 blue link displays on the upper right corner of the interface with the action name displayed. Click
-this link to bring back the focus to the wizard.
+the action link to bring the wizard back into focus.
 :::
 
 
-**Step 4 –** On the Stop Agent window, the Agent will be stopped. One of two status messages
-display:
+**Step 4 –** On the Stop Agent window, the system stops the Agent. One of two status messages
+displays:
 
-- Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of prior to the next attempt.
-- Completed – Indicates that the task is completed
+- Failed – Read the failure messages and close the window. Fix any error messages before the next attempt.
+- Completed – Indicates that the task completes
 
-**Step 5 –** When the task is successfully completed, click **Finish** to close the window.
+**Step 5 –** When you successfully complete the task, click **Finish** to close the window.
 
-The Agent's status is displayed as _Stopped_.
+The Agent's status appears as _Stopped_.

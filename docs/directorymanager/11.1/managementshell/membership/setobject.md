@@ -53,7 +53,7 @@ Set-Object
 
 Example 1:
 
-The following example modifies description of a user specified user against the Identity parameter.
+The following example modifies the description of the specified user against the Identity parameter.
 
 ```
 Set-object -identity "Sonia Iqbal" -Description TestUser

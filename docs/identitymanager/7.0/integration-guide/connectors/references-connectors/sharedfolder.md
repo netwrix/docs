@@ -14,7 +14,7 @@ This page is about [Shared Folders](../../../integration-guide/connectors/refere
 
 ## Overview
 
-Also known as UFA (Identity Manager Folder Access), this connector can be used to scan the access rights assigned to folders and files in computers and networks which comply with the [Windows File Security and Access Rights systems](https://docs.microsoft.com/en-us/windows/win32/fileio/file-security-and-access-rights).
+Also known as UFA (Identity Manager Folder Access), use this connector to scan the access rights assigned to folders and files in computers and networks which comply with the [Windows File Security and Access Rights systems](https://docs.microsoft.com/en-us/windows/win32/fileio/file-security-and-access-rights).
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ batch.
 
 ## Export
 
-This connector scans shared folders in order to export their content to CSV files.
+This connector scans shared folders to export their content to CSV files.
 
 ### Configuration
 
@@ -54,9 +54,9 @@ The identifier of the connection and thus the name of the subsection must:
 - not contain `<`, `>`, `:`, `"`, `/`, `\`, `|`, `?`, `*` and `_`.
 
 > The following example reads `12` levels of folders in the folders `R&D_Projects` and `Management`
-> in the network `OfficeNetwork` and in `C:/`. We only read entitlements about folders and we don't
-> have access rights to the entitlements associated with the SIDs `S-1-3-2-4` and `S-5-7-6-8`. We
-> use the service account [account@example.com](mailto:account@example.com) with its related
+> in the network `OfficeNetwork` and in `C:/`. Only read entitlements about folders and don't
+> have access rights to the entitlements associated with the SIDs `S-1-3-2-4` and `S-5-7-6-8`. Use
+> the service account [account@example.com](mailto:account@example.com) with its related
 > password and domain, and interactive connection:
 >
 > ```
@@ -121,7 +121,7 @@ There are no fulfill capabilities for this connector.
 
 ### Password reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential protection
 

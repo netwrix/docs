@@ -7,14 +7,14 @@ sidebar_position: 10
 # Navigation
 
 Starting with version 10, the home screen in Netwrix Auditor is customizable so you can instantly
-get access to the information that is most relevant to you. This section covers the tiles are
+get access to the information that is most relevant to you. This section covers the tiles that are
 available and how you can use them to create the home screen that works best for you. It also
 illustrates the customization process with several common scenarios.
 
 ## Home Screen Tiles
 
-Home Screen Tiles in the Netwrix Auditor provide an interface that allows users to access main
-information. The following tiles are displayed on the initially configured Home Screen:
+Home Screen tiles in Netwrix Auditor provide an interface for accessing key information. The
+following tiles are displayed on the initially configured Home Screen:
 
 - Welcome to Netwrix Auditor Tile
 - Audit Intelligence Tiles
@@ -37,12 +37,12 @@ and viewing data about your IT ecosystem.
   warnings. See the [Monitoring Overview](/docs/auditor/10.9/admin/healthstatus/dashboard/monitoringoverview.md) topic for
   additional information.
 
-- Once have created a monitoring plan and verified that it is properly configured, run one or more
+- After you create a monitoring plan and verify that it's properly configured, run one or more
   searches to get insights into your IT infrastructure. See the
   [View and Search Collected Data](/docs/auditor/10.9/admin/search/overview.md) topic for additional information.
 
 When you have completed these three steps, you can close this tile by clicking the "Close" link at
-the bottom. The checklist will be replaced by statistics across your audited systems. See the
+the bottom. Statistics about your audited systems replace the checklist. See the
 [Customize Home Screen](/docs/auditor/10.9/admin/navigation/customizehome.md) topic for additional information.
 
 ### Audit Intelligence Tiles
@@ -65,8 +65,8 @@ following links:
 
 | Option           | Description                                                                                                                                                                                                                                                            |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Monitoring plans | Opens the Monitoring plans wizard, where you can add, edit and delete monitoring plans, as well as group them into folders. See the [Monitoring Plans](/docs/auditor/10.9/admin/monitoringplans/overview.md) topic for additional information.                                               |
-| Subscriptions    | Opens the Subscriptions wizard, which enables you to subscribe to Auditor reports and searches, so you can easily stay informed about what is going on in your infrastructure. See the [Subscriptions](/docs/auditor/10.9/admin/subscriptions/overview.md) topic for additional information. |
+| Monitoring plans | Opens the Monitoring plans wizard, where you can add, edit, and delete monitoring plans, as well as group them into folders. See the [Monitoring Plans](/docs/auditor/10.9/admin/monitoringplans/overview.md) topic for additional information.                                               |
+| Subscriptions    | Opens the Subscriptions wizard, where you can subscribe to Auditor reports and searches to stay informed about what's happening in your infrastructure. See the [Subscriptions](/docs/auditor/10.9/admin/subscriptions/overview.md) topic for additional information. |
 | Alert settings   | Opens the All Alerts wizard, where you can create, edit, and enable or disable alerts on critical events in your environment. See the [Alerts](/docs/auditor/10.9/admin/alertsettings/overview.md)topic for additional information.                                                          |
 
 ## Risk Assessment, Compliance Mapping, Live News, and Health Tiles
@@ -74,16 +74,16 @@ following links:
 | Tile               | Description                                                                                                                                                                                                                                                                                                 |
 | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | RISK ASSESSMENT    | Opens the Risk Assessment Overview dashboard, which identifies possible configuration issues in your environment that could impact security. See the [IT Risk Assessment Overview ](/docs/auditor/10.9/admin/riskassessment/overview.md) topic for additional information.                                                        |
-| COMPLIANCE MAPPING | Enables you to review how Auditor can help you comply common standards and regulations. See the [Compliance Mappings](/docs/auditor/10.9/admin/compliancemappings.md) topic for additional information.                                                                                                                           |
+| COMPLIANCE MAPPING | Shows how Auditor helps you comply with common standards and regulations. See the [Compliance Mappings](/docs/auditor/10.9/admin/compliancemappings.md) topic for additional information.                                                                                                                           |
 | LIVE NEWS          | Shows the latest Netwrix news, including product updates.                                                                                                                                                                                                                                                   |
-| HEALTH STATUS      | Opens the Health Status dashboard, which provides at-a-glance insight into product health, data collection, storage and more. See the [Health Status Dashboard](/docs/auditor/10.9/admin/healthstatus/dashboard/overview.md) topic for additional information.                                                                    |
+| HEALTH STATUS      | Opens the Health Status dashboard, which provides at-a-glance insight into product health, data collection, storage, and more. See the [Health Status Dashboard](/docs/auditor/10.9/admin/healthstatus/dashboard/overview.md) topic for additional information.                                                                    |
 | ALERTS HISTORY     | Clicking this tile opens the Alerts History dashboard, which provides detailed information about the latest alerts triggered in your IT infrastructure, enriched with actionable charts and timelines. See the [Alerts Overview Dashboard](/docs/auditor/10.9/admin/alertsettings/dashboard.md) topic for additional information. |
 
 ## Favorite Reports
 
-Initially, the Favorite Reports tile lists the reports that our customers use most frequently. You
+Initially, the Favorite Reports tile lists the most frequently used reports. You
 can add and remove reports to reflect your needs and interests. If you have more favorite reports
-than can fit in the tile, simply click **View all** to see the complete list. See the
+than fit in the tile, click **View all** to see the complete list. See the
 [Customizing Favorite Reports](/docs/auditor/10.9/admin/navigation/customizefavorite.md) topic for additional information.
 
 ## Other

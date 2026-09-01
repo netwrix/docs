@@ -10,7 +10,7 @@ Netwrix Data Classification **Server** can be deployed on a physical server or o
 in the virtualized environment on VMware or Microsoft Hyper-V platform.
 
 When planning for NDC Server, consider a significant CPU load during data processing. Thus,
-installing NDC Server on a highly-loaded production machine is not recommended. For more
+installing NDC Server on a highly-loaded production machine isn't recommended. For more
 information, refer to
 [Hardware Requirements](/docs/dataclassification/5.6.2/deployment/requirements/hardware_requirements.md).
 
@@ -25,10 +25,9 @@ machine image with pre-installed Netwrix Data Classification on Generalized Wind
 
 Remember that for production environments, your NDC Server and database server must meet the
 [Requirements to Install Netwrix Data Classification](/docs/dataclassification/5.6.2/deployment/requirements/requirements_intro.md).
-Virtual appliance configuration is insufficient for production and is not recommended for that
+Virtual appliance configuration is insufficient for production and isn't recommended for that
 purpose.
 
-To balance the load while indexing and classifying data in the large-size and extra-large
-environments (i.e. with over ≥ 16 mln objects to process), it is strongly recommended to deploy
-several NDC Servers and configure **Distributed Query Server** mode for them.
+To balance the load while indexing and classifying data in large-size and extra-large
+environments (with over 16 million objects to process), deploy multiple NDC Servers and configure **Distributed Query Server** mode for them.
 [See Configuring NDC Servers Cluster and Load Balancing with DQS Mode for more information.](/docs/dataclassification/5.6.2/deployment/deploymentplan/ndcserverclient/distributed_query_server_mode.md)

@@ -28,6 +28,6 @@ Access Analyzer authenticates with SharePoint Online using certificate-based aut
 
 9. Enter a description for the certificate.
 
-10. Click **Add**. The certificate is uploaded to the registered application.
+10. Click **Add** to upload the certificate to the registered application.
 
 After uploading, return to the Access Analyzer source group wizard and click **Test Connection** to verify the authentication.

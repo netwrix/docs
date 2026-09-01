@@ -18,7 +18,7 @@ View the analysis tasks by navigating to the **Exchange** > **2. CAS Metrics** >
 **EX_ActiveSync** > **Configure** node and select **Analysis**.
 
 :::warning
-Most of these analysis tasks are preconfigured and should not be modified or
+Most of these analysis tasks are preconfigured and shouldn't be modified or
 deselected. There are some that are deselected by default, as they are for troubleshooting purposes.
 :::
 
@@ -50,7 +50,7 @@ The following analysis task deletes table data from the analysis jobs. This anal
 remain cleared unless specifically needed:
 
 :::warning
-Do not select the **00. Deletes all History** option. This analysis task is for
+Don't select the **00. Deletes all History** option. This analysis task is for
 troubleshooting and cleanup only. Data will be deleted from the database.
 :::
 
@@ -61,8 +61,8 @@ troubleshooting and cleanup only. Data will be deleted from the database.
       [Troubleshooting Data Collection](/docs/accessanalyzer/11.6/solutions/exchange/hubmetrics/collection/ex_metricscollection.md#troubleshooting-data-collection)
       topic for additional information
 
-The following analysis task updates the table to clean the data so that any UserAgent information
-that is returned as NULL is updated based on existing data in the table:
+The following analysis task cleans the table by updating any UserAgent information returned as
+NULL, based on existing data in the table:
 
 - 01a. Clean NULL UserAgent – Updates UserAgent information which was returned as NULL based on
   existing data
@@ -72,7 +72,7 @@ the following pre-configured reports:
 
 | Report                                                | Description                                                                                                                                    | Default Tags | Report Elements                                                                                                                                                                            |
 | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Device Types (Device Population)                      | This report identifies what device models are currently being used with ActiveSync, and the average load they put on the environment each day. | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays most popular devices</li><li>Table – Provides details on most popular devices</li></ul>                             |
+| Device Types (Device Population) | This report identifies what device models are being used with ActiveSync, and the average load they put on the environment each day. | None | This report is comprised of two elements: <ul><li>Bar Chart – Displays most popular devices</li><li>Table – Provides details on most popular devices</li></ul> |
 | Server Traffic (Top Servers by Average Daily Traffic) | This report ranks CAS servers by volume of ActiveSync traffic.                                                                                 | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays top users by average daily traffic</li><li>Table – Provides details on top users by average daily traffic</li></ul> |
 | Top Users (Top Users by Average Daily Traffic)        | This report shows the top users of ActiveSync.                                                                                                 | None         | This report is comprised of two elements: <ul><li>Bar Chart – Displays top users by average daily traffic</li><li>Table – Provides details on top users by average daily traffic</li></ul> |
 | User Devices (User Phones)                            | This report identifies all devices which have been associated with a User, and the time frames when they were used.                            | None         | This report is comprised of one element: <ul><li>Table – Provides details on user devices</li></ul>                                                                                        |

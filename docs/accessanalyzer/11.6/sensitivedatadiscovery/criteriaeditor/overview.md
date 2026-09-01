@@ -6,10 +6,10 @@ sidebar_position: 50
 
 # Sensitive Data Criteria Editor
 
-The Sensitive Data Criteria Editor is accessed from the Criteria Tab in the
-**Settings** > **Sensitive Data** node. Use the Sensitive Data Criteria Editor to view pre-defined
-criteria and to customize or create user-defined criteria. Sensitive Data Criteria can be configured
-in individual data collectors that use the Sensitive Data Discovery Add-On or can be configured to
+Access the Sensitive Data Criteria Editor from the Criteria tab in the
+**Settings** > **Sensitive Data** node. Use it to view pre-defined
+criteria and to customize or create user-defined criteria. You can configure Sensitive Data Criteria
+in individual data collectors that use the Sensitive Data Discovery Add-On, or configure them to
 inherit Sensitive Data Criteria settings from the **Settings** > **Sensitive Data** node. See the
 [Sensitive Data](/docs/accessanalyzer/11.6/admin/settings/sensitivedata/overview.md)
 topic for additional information.
@@ -18,10 +18,9 @@ topic for additional information.
 
 The Sensitive Data Criteria Editor contains two sections:
 
-- Navigation pane – User-configured criteria can be added and removed in the navigation pane using
-  the Add or Remove options. See the [Navigation Pane](#navigation-pane) topic for additional
-  information.
-- Configuration pane – Displays configured settings for the currently selected criteria in the
+- Navigation pane – Add or remove user-configured criteria using the Add or Remove options. See the
+  [Navigation Pane](#navigation-pane) topic for additional information.
+- Configuration pane – Displays configured settings for the selected criteria in the
   navigation pane. See the
   [Configuration Pane](/docs/accessanalyzer/11.6/sensitivedatadiscovery/criteriaeditor/configuration.md)
   topic for additional information.
@@ -42,6 +41,6 @@ The options in the Navigation Pane are:
   [Sensitive Data System Criteria](/docs/accessanalyzer/11.6/sensitivedatadiscovery/systemcriteria.md)
   topic for additional information.
 
-    - System Criteria cannot be modified or removed. To use existing System Criteria configurations
-      in a User Criteria, right-click on a System Criteria and select **Duplicate** from the
+    - System Criteria can't be modified or removed. To use existing System Criteria configurations
+      in a User Criteria, right-click a System Criteria and select **Duplicate** from the
       right-click menu. A configurable copy of the System Criteria appears under User Criteria.

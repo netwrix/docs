@@ -14,24 +14,24 @@ window.
 The required credentials for Oracle are:
 
 - Domain – Field options are dependent upon the additional account type option selected:
-    - Oracle Account – Domain is not a field for this type of credential
-    - Windows account that Access Analyzer is run with – (Domain is not a field for this type of
+    - Oracle Account – Domain isn't a field for this type of credential
+    - Windows account that Access Analyzer is run with – (Domain isn't a field for this type of
       credential)
-    - Active Directory – Drop-down menu with available trusted domains displays. Either type the
+    - Active Directory – dropdown menu with available trusted domains displays. Either enter the
       short domain name in the textbox or select a domain from the menu.
-- User name – Type the user name
-    - This is not a field for the additional account type of Windows account that Access Analyzer is
+- User name – Enter the user name
+    - This isn't a field for the additional account type of Windows account that Access Analyzer is
       run with is selected
 - Password Storage: Application – Uses the configured Profile Security setting as selected at the
   **Settings >** **Application** node
-- Password – Type the password
-    - This is not a field for the additional account type of Windows account that Access Analyzer is
+- Password – Enter the password
+    - This isn't a field for the additional account type of Windows account that Access Analyzer is
       run with
-- Confirm – Re-type the password
-    - This is not a field for the additional account type of Windows account that Access Analyzer is
+- Confirm – Re-enter the password
+    - This isn't a field for the additional account type of Windows account that Access Analyzer is
       run with
-- Role – Specify an Oracle role, if desired. The drop-down menu provides a list of roles. Either
-  type the role name in the textbox or select a role from the menu.
+- Role – Specify an Oracle role, if desired. The dropdown menu provides a list of roles. Either
+  enter the role name in the textbox or select a role from the menu.
     - **NOTE:** When using a least privileged model for Oracle, **SYSDBA** must be selected for the
       Role.
 - Additional Account type – Select radio button of the secondary account type from the list at the

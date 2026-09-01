@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Install the Agents
 
-Most on-premises installations use an agent **integrated** with Identity Manager's server. If this is your case, **and** the server is **Already** installed, no need to go further. If you need **separate** agents, or if you are installing Identity Manager's agents within Identity Manager's **SaaS** offering, follow this guide.
+Most on-premises installations use an agent integrated with Identity Manager's server. If this is your case and the server is already installed, skip this guide. If you need **separate** agents, or if you are installing Identity Manager's agents within Identity Manager's **SaaS** offering, follow this guide.
 
 :::note
 ensure that Identity Manager's agent requirements are met before going further. See the [Agent](../../installation-guide/requirements/agent-requirements) topic for additional information.
@@ -23,7 +23,7 @@ The agent is configured thanks to the *appsettings.agent.json* file. See the [ap
 
 ## Create an IIS Website
 
-It is **recommended** to run the Identity Manager's agent as an IIS website.
+Netwrix recommends running the Identity Manager's agent as an IIS website.
 
 :::tip
 Remember, to install Identity Manager's agent as a Windows service, see the [Agent](../../installation-guide/requirements/agent-requirements) topic for additional information.
@@ -46,7 +46,7 @@ It might require a few modifications to target the agent instead of the server:
 
 **Step 2 –** Change the arguments **and** stdoutLogFile attributes of the `<aspNet>` element as follows:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <aspNetCore processPath="<dotnet>" arguments="<./Usercube-Agent.dll>" stdoutLogEnabled="<false>" stdoutLogFile="<../Temp/stdout-agent.log>" hostingModel="<inprocess>">
@@ -54,7 +54,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 - When creating the website, enter the following data:
 
-**Step 1 –** Site name: Identity Manager's agent`<Organization>` is the **recommended** naming convention
+**Step 1 –** Site name: Netwrix recommends `Identity Manager's agent<Organization>` as the naming convention
 
 **Step 2 –** Physical path: /`<agent working directory>`/Runtime
 
@@ -64,7 +64,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 **Step 5 –** Port & Hostname: To access Identity Manager's agent. Use the hostname **and** port that has been reserved for Identity Manager.
 
-After creation, the following settings are **recommended**:
+After creation, Netwrix recommends the following settings:
 
 - **Application Pool** > **Identity Manager `<Organization>`** > **Advanced Settings** >
 **General** > **Start Mode** set to AlwaysRunning;
@@ -73,7 +73,7 @@ Model** > **Idle Time-out** (minutes) set to 0 **and** Load User Profile set to 
 - **Application Pool** > **Identity Manager `<Organization>`** > **Recycling** > Regular time
 intervals set to 0.
 
-Recycling the application pool creates a discontinuation in the connection between server **and** agent, which can disrupt some of Identity Manager's features such as the job scheduler. IIS **Already** recycles the application pool at each setting change, thus Netwrix recommends not using periodic recycling.
+Recycling the application pool creates a discontinuation in the connection between server and agent, which can disrupt some of Identity Manager's features such as the job scheduler. IIS already recycles the application pool at each setting change, so Netwrix recommends not using periodic recycling.
 
 The following is [mandatory](https://docs.microsoft.com/en-us/aspnet/core/host-**and**-deploy/iis/?view=aspnetcore-8.0#mandatory):
 
@@ -82,7 +82,7 @@ The following is [mandatory](https://docs.microsoft.com/en-us/aspnet/core/host-*
 
 ![IIS Settings](/images/identitymanager/iis_settings.webp)
 
-This sums up IIS settings.
+These are the required IIS settings.
 
 ## Hosting Bundle
 
@@ -209,7 +209,7 @@ In the *appsettings.agent.json* file, the **OpenId** > **AgentIdentifier** can b
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -235,7 +235,7 @@ The integration team should communicate the list of the managed systems to be co
 
 Here is an example of *appsettings.agent.json* connecting an agent to an Active Directory **and** an SAP server.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -312,7 +312,7 @@ The following parameters are used to link the file to Identity Manager in Encryp
 Storing a `.pfx` file password in plain text in a production environment is **strongly discouraged**. It should always be encrypted using the Usercube-Protect-CertificatePassword tool. See the [Usercube-Protect-CertificatePassword](../../integration-guide/executables/references/protect-certificatepassword) topic for additional information.
 :::
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -330,7 +330,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 The certificate can be stored in the certificate store instead of the file system. This is the **recommended** method.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -359,7 +359,7 @@ Their content should be provided by the integration team, in relation to the Ope
 
 The following example shows an *appsettings.agent.json* file that sets an agent to connect to Identity Manager's server (`https://identitymanagerserver.contoso.com`) with the OpenId client identifier `<Job>` **and** the password `<secret>`, stored in the OpenIdClients list which also contains the "admin/secret" login/password pair.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {
@@ -384,7 +384,7 @@ Installing Identity Manager's agent as a Windows service instead of an IIS websi
 
 To install Identity Manager's agent as a service in Windows server, use the following command:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```bat
 sc.exe create Identity Manager binpath= "<Usercube-Agent.exe --service>" displayname= "<Usercube Agent>" start= auto obj= "<DOMAIN\USER>" password= "<PASSWORD>"
@@ -409,7 +409,7 @@ You need to:
 
 **Step 3 –** Double check that the following section is set in your web.config file, in the section system.webServer:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <applicationInitialization doAppInitAfterRestart="<true>">  

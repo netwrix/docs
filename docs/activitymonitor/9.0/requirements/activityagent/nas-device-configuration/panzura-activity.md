@@ -49,8 +49,8 @@ To prepare Panzura CloudFS for monitoring, auditing must be enabled.
 Auditing in CloudFS can be enabled either automatically or manually.
 
 :::info
-Using the automatic option using the CloudFS API streamlines the configuration
-process and ensures that auditing remains enabled and accurate.
+The automatic CloudFS API option streamlines the configuration process and
+ensures that auditing remains enabled and accurate.
 :::
 
 
@@ -59,21 +59,21 @@ process and ensures that auditing remains enabled and accurate.
 Netwrix Activity Monitor uses the CloudFS API to configure Third Party Vendor Support auditing
 option.
 
-If a master node is targeted, the product will configure the global audit settings and assign to be
-pushed to subordinate nodes. If a subordinate node is targeted, the product will configure the local
+If a master node is targeted, the product will configure the global audit settings and push them to
+subordinate nodes. If a subordinate node is targeted, the product will configure the local
 audit settings to override the global ones.
 
 The product will also ensure the settings are correct with periodic checks.
 
 ## Manual Configuration
 
-Follow these steps to enable auditing.
+Enable auditing.
 
 **Step 1 –** Navigate to **Audit Settings** > **Third Party Support**.
 
 **Step 2 –** Enable the **Generate Third Party Logs** option.
 
-**Step 3 –** Enable the **Push to Subordinate(s)** option.
+**Step 3 –** Enable the **Push to Subordinates** option.
 
 **Step 4 –** Enter **other** as the Vendor Name.
 
@@ -87,7 +87,7 @@ of data, also include readdir to the list.
 
 **Step 7 –** Specify - in Exclude Files.
 
-**Step 8 –** Finally, add the Panzura host to be monitored in the Activity Monitor Console.
+**Step 8 –** Add the Panzura host you want to monitor in the Activity Monitor Console.
 
 Auditing is now enabled.
 

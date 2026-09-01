@@ -6,16 +6,16 @@ sidebar_position: 40
 
 # Layout Page
 
-The Layout page allows you to configure the layout of the report's content.
+Use the Layout page to configure the layout of the report's content.
 
 ![layout](/images/accessanalyzer/12.0/admin/report/wizard/layout.webp)
 
-Follow the steps to select the layout:
+To select the layout:
 
-**Step 1 –** Click the **Select the number of rows** drop-down menu and select an option from: 1
+**Step 1 –** Click the **Select the number of rows** dropdown menu and select an option from: 1
 row, 2 rows, or 3 rows.
 
-**Step 2 –** Click on the layout tile you want for the report.
+**Step 2 –** Click the layout tile you want for the report.
 
 The layout for the report has been selected. Each box on the selected tile corresponds to a separate
 widget that you next need to configure on the [Widgets Page](/docs/accessanalyzer/12.0/admin/report/wizard/widgets.md) page of the Report

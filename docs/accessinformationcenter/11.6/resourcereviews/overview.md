@@ -11,7 +11,7 @@ The Resource Reviews interface is where users with either the Security Team or A
 business users or data custodians (to be referred to as Owners) to attest to the access and
 privileges users have to their resources.
 
-For the purpose of the Access Information Center, a “resource” refers to the file system shared
+In the Access Information Center, a “resource” refers to the file system shared
 folders, SharePoint sites, Active Directory (AD) groups, AD distribution lists, and/or local
 Administrators groups. All data available within the Access Information Center is collected by
 Netwrix Enterprise Auditor according to the targeted environments.
@@ -102,7 +102,7 @@ Workflow:
 
 :::info
 When deploying the Access Information Center in an organization to process
-reviews, owners should be notified prior to launching the first set of reviews. See the
+reviews, owners should be notified before launching the first set of reviews. See the
 [Notification to Owners](/docs/accessinformationcenter/11.6/resourceowners/overview.md#notification-to-owners)
 topic for additional information.
 :::

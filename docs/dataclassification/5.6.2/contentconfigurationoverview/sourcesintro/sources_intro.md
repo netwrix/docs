@@ -19,7 +19,7 @@ for more information.
 You can manage the individual content sources or organize them into source groups, which are used as
 logical containers.
 
-**NOTE:** You can configure the unlimited number of sources to work with.
+**NOTE:** You can configure an unlimited number of sources.
 
 See next:
 

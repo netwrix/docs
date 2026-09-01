@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Licensing
 
-The licenses that are loaded into the product define what functionality is available. This is broken
+The licenses you load into the product determine what functionality is available. This is broken
 into:
 
 - Netwrix Data Classification for Box
@@ -27,7 +27,7 @@ and Workflow capabilities, is available for all the listed licenses.
 
 You can add the required license and review a summary of the current license state in your NDC app.
 
-Follow the steps to add a license.
+To add a license:
 
 **Step 1 –** Go to **Settings** > **Licensing**. The Licensing Summary page opens.
 
@@ -38,7 +38,7 @@ sources and features. You can review the following details:
 
 - Source Type – Type of source or feature, i.e. Dropbox, Workflow, and others
 - Status – Valid or Not Licensed
-- Tagging Write Back – Sources that have classifications are written back to the repository
+- Tagging Write Back – The system writes classifications back to the source
 - Valid To – Date of the licence expiry
 - Info icon – Full list of available licences
 

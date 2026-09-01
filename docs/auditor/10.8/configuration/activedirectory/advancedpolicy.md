@@ -33,7 +33,7 @@ To do it, perform the following steps:
    and navigate to Policies → Windows Settings → Security Settings → Local Policies → Security
    Options.
 4. Locate the Audit: Force audit policy subcategory settings to override audit policy category
-   settings and make sure that policy setting is set to _"Enabled"_.
+   settings and ensure that policy setting is set to _"Enabled"_.
 
     ![manualconfig_ad_nla_audit_force_winserver2016](/images/1secure/configuration/ad/manualconfig_ad_nla_audit_force_winserver2016.webp)
 

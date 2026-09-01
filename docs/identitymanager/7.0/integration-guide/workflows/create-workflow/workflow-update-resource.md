@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # For Resource Update (No Record)
 
-This section guides you through the procedure for the creation of a workflow to update a simple resource, i.e. to update, within a given resource, properties that do not involve records.
+This section guides you through the procedure for the creation of a workflow to update a simple resource, i.e. to update, within a given resource, properties that don't involve records.
 
 ## Declare a Workflow
 
@@ -27,7 +27,7 @@ The example below creates a workflow to update only the user's `IsDraft` attribu
 
 The XML configuration below represents the creation of a [Form](../../../integration-guide/toolkit/xml-configuration/user-interface/form) that defines the elements to display in the workflow.
 
-Here we just have one field called `IsDraft` to update the corresponding boolean attribute for a given user:
+In this example, the field `IsDraft` updates the corresponding boolean attribute for a given user:
 
 ```
 <Form Identifier="Workflow_Directory_User_ChangeIsDraft_Base" EntityType="Workflow_Directory_User">  <Control DisplayName_L1="IsDraft" OutputType="LayoutRowset" EntityType="Directory_User">    <Control Binding="IsDraft" />  </Control></Form>
@@ -35,7 +35,7 @@ Here we just have one field called `IsDraft` to update the corresponding boolean
 
 ## Link the Forms to the Workflow
 
-After creating a workflow with given activities, it is necessary to create the form to be displayed when launching the workflow. It has the type corresponding to a resource's update, i.e. `WorkflowEditEntityForm` and it must specify the workflow's context (the entity type of the involved resources, the main property, the activity when the form is called, etc):
+After creating a workflow with given activities, create the form to be displayed when launching the workflow. It has the type corresponding to a resource's update, i.e. `WorkflowEditEntityForm` and it must specify the workflow's context (the entity type of the involved resources, the main property, the activity when the form is called, etc):
 
 ```
 <WorkflowEditEntityForm Identifier="Workflow_Directory_User_ChangeIsDraft" EntityType="Workflow_Directory_User" MainProperty="Workflow_Directory_User:Directory_User" WorkflowRequestType="Self" Activity="Directory_User_ChangeIsDraft:Request" HideRoles="true" FormTitle_L1="Change IsDraft"/>
@@ -53,7 +53,7 @@ A `WorkflowEditEntityForm` requires one child element `MainControl` that defines
 
 ### Add a summary (Optional)
 
-Another child element `SummaryControl` can be added to insert a summary part, i.e. the form used after the workflow execution to show some values, most of the time those affected by the workflow, typically the properties editable in the workflow or generated properties. So in our situation, it displays the `IsDraft` attribute that the user just changed:
+Another child element `SummaryControl` can be added to insert a summary part, i.e. the form used after the workflow execution to show some values, most of the time those affected by the workflow, typically the properties editable in the workflow or generated properties. In this example, it displays the `IsDraft` attribute that the user just changed:
 
 ```
 <WorkflowEditEntityForm Identifier="Workflow_Directory_User_ChangeIsDraft" EntityType="Workflow_Directory_User" MainProperty="Workflow_Directory_User:Directory_User" WorkflowRequestType="Self" Activity="Directory_User_ChangeIsDraft:Request" HideRoles="true" FormTitle_L1="Change IsDraft">  <MainControl OutputType="TransformImport" EmbeddedForm="Workflow_Directory_User_ChangeIsDraft_Base" />
@@ -91,7 +91,7 @@ To create a menu item here for the new workflow, you can add the following XML c
 
 ## Add Aspects
 
-For each workflow, it is possible to add aspects according to the workflow's purpose.
+For each workflow, add aspects according to the workflow's purpose.
 
 ## Customize the Display Table (Optional)
 

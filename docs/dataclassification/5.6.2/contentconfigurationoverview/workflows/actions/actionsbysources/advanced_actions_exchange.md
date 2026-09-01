@@ -37,4 +37,4 @@ Specify the following action parameters:
 | Action parameter       | Description                                                                                                     | Comments                                                             |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | **Target Folder Name** | The name of the folder the move the email to.                                                                   | For subfolders, only include the subfolder name (not the full path). |
-| **Parent Folder Name** | If the target folder name is not unique, specify the parent folder name — to ensure the correct folder is used. | Optional.                                                            |
+| **Parent Folder Name** | If the target folder name isn't unique, specify the parent folder name — to ensure the correct folder is used. | Optional.                                                            |

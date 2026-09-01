@@ -13,7 +13,7 @@ View deletion information in the Deletions Dashboard for Splunk.
 The Deletions dashboard contains the following cards:
 
 - Activity – Timeline of all deletion events in the specified timeframe
-- Top Users – Displays up-to the top five users related to deletion events which have been recorded
+- Top Users – Displays up-to the top five users associated with deletion events that occurred
   in the specified timeframe
 - Latest Events – Tabular format of all deletion events recorded in the specified timeframe
 

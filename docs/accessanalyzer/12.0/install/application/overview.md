@@ -11,7 +11,7 @@ required when first launching the Access Analyzer Console. It also includes addi
 such as how to secure the Access Analyzer Database, and configuring the Web Console for viewing
 reports outside of the Access Analyzer Console.
 
-Prior to installing Access Analyzer, please ensure that all of the prerequisites have been met. See
+Before installing Access Analyzer, ensure that you meet all of the prerequisites. See
 the [Requirements](/docs/accessanalyzer/12.0/requirements/overview.md) topic for more information.
 
 ## Binaries
@@ -22,16 +22,14 @@ Your Netwrix Representative will provide the appropriate binaries.
 - Access Analyzer binary – Core installation package
 
     - Includes data collectors, analysis modules, and action modules
-    - An organization’s license key, needed during installation, controls which components are laid
-      down during installation
-    - If your license includes Sensitive Data Discovery (SDD), the necessary SDD components are
-      installed
+    - An organization’s license key, needed during installation, controls which components the
+      installation lays down
+    - If your license includes Sensitive Data Discovery (SDD), Access Analyzer installs the necessary SDD components
     - Installs the Web Console
 
 - File System Proxy binary – Installation package for the File System Proxy Scanning option
 
-    - If your license includes Sensitive Data Discovery (SDD), the necessary SDD components are
-      installed
+    - If your license includes Sensitive Data Discovery (SDD), Access Analyzer installs the necessary SDD components
     - See the [File System Proxy Service Installation](/docs/accessanalyzer/12.0/install/filesystemproxy/wizard.md) topic for
       additional information.
 
@@ -45,8 +43,7 @@ Your Netwrix Representative will provide the appropriate binaries.
 - SharePoint Agent binary – Installation package for the SharePoint Agent (optional for Access
   Auditing of SharePoint farms)
 
-    - If your license includes Sensitive Data Discovery (SDD), the necessary SDD components are
-      installed
+    - If your license includes Sensitive Data Discovery (SDD), Access Analyzer installs the necessary SDD components
     - See the [SharePoint Agent Installation](/docs/accessanalyzer/12.0/install/sharepointagent/overview.md) topic for additional
       information.
 
@@ -70,7 +67,7 @@ Your Netwrix Representative will provide the appropriate binaries.
       are logged into the Netwrix Partner Portal can download the latest version of their software
       products from the My Product page:
       [https://www.netwrix.com/par/site/products](https://www.netwrix.com/my_products.html). To
-      receive an invitation to the Partner Portal, please contact
+ receive an invitation to the Partner Portal, contact
       [netwrix.msp@netwrix.com](http://netwrix.msp@netwrix.com/).
     - See the
       [Netwrix Access Information Center Documentation](https://helpcenter.netwrix.com/category/accessinformationcenter)

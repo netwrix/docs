@@ -13,7 +13,7 @@ Click **Active Directory** in the left pane to open the Active Directory page.
 
 ![Active Directory page](/images/identityrecovery/3.1/product/active_directory/active_directory.png)
 
-Select a domain from the drop-down menu and expand it to view the domain tree and container
+Select a domain from the dropdown menu and expand it to view the domain tree and container
 structure, which is exactly the same as you get in Active Directory Users and Computers. Objects in
 the domain are also available in the same hierarchical structure.
 
@@ -58,7 +58,7 @@ displayed as:
 
 ![Right-click menu on the Active Directory page](/images/identityrecovery/3.1/admin/activedirectory/rightclickmenu.webp)
 
-The Show audit history and Show activity options are enabled only when both the following conditions
+Identity Recovery enables the Show audit history and Show activity options only when both the following conditions
 are met:
 
 - Threat Prevention data is tied with Identity Recovery data
@@ -71,41 +71,41 @@ These options display data from Threat Prevention.
 
 You can view the changes made to an object by other users.
 
-On the Active Directory page, select and expand a domain in the left pane and locate the object you
+On the Active Directory page, expand a domain in the left pane and locate the object you
 want to view the audit history for. Right-click this object and select **Show audit history** on the
-menu. The Audit History window is displayed.
+menu. The Audit History window opens.
 
 ![Audit History window](/images/identityrecovery/3.1/admin/activedirectory/audithistory.webp)
 
-The following information is displayed for every action performed on the object:
+The Audit History window shows the following information for every action performed on the object:
 
 - Who – The user who performed the action
-- What – The action performed
-- Success – Shows whether the action was successfully performed; _True_ indicates success and
+- What – The action someone performed
+- Success – Whether the action succeeded; _True_ indicates success and
   _False_ indicates failure
-- Where – The object the action was performed on
+- Where – The object that someone acted on
 - When – The date and time of the action
 
 To view the details of an action, click the plus sign in the respective row to expand it.
 Information includes the object attribute that was affected, the type of change made, and the old
 and new values.
 
-### View the Activity Perpetrated by an Object
+### View the Activity by an Object
 
-You can view the activity performed by an object in the environment.
+You can view actions the object performed in the environment.
 
-On the Active Directory page, select and expand a domain in the left pane and locate the object
+On the Active Directory page, expand a domain in the left pane and locate the object
 whose activity you want to view. Right-click this object and select **Show activity** on the menu.
-The Audit Activity window is displayed.
+The Audit Activity window opens.
 
 ![Audit Activity window](/images/identityrecovery/3.1/admin/activedirectory/auditactivity.webp)
 
-The following information is displayed for the actions performed by the object:
+The Audit Activity window shows the following information for actions the object performed:
 
-- What – The action performed
-- Success – Shows whether the action was successfully performed; _True_ indicates success and
+- What – The action the object performed
+- Success – Whether the action succeeded; _True_ indicates success and
   _False_ indicates failure
-- Where – The object the action was performed on
+- Where – The object that the action affected
 - When – The date and time of the action
 
 To view the details of an action, click the plus sign in the respective row to expand it.
@@ -113,6 +113,6 @@ Information includes the object attribute that was affected, the type of change 
 and new values.
 
 :::note
-For objects in the Recycle Bin, the Show activity option is not available.
+For objects in the Recycle Bin, the Show activity option isn't available.
 
 :::

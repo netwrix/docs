@@ -20,9 +20,9 @@ The Host Details View displays in the Results pane, and the rest of the Access A
 unavailable while it is open. You can use the view to manually edit the host inventory information.
 
 - Edit – Enables the textboxes and checkboxes for editing
-- Apply – Saves any changes. This button appears when **Edit** is clicked.
+- Apply – Saves any changes. This button appears when you click **Edit**.
 - Save as HTML – Exports the current view of the selected host’s inventory to an HTML file. Click,
-  then provide a name and location for the export. The export is now sharable as desired. This
+  then provide a name and location for the export. Share the export as desired. This
   button is inactive while in edit mode.
-- Cancel – Abandons any changes. This button displays when **Edit** is clicked.
+- Cancel – Abandons any changes. This button displays when you click **Edit**.
 - Close – Exits the Host Details View

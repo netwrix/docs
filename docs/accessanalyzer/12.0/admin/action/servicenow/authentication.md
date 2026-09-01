@@ -8,7 +8,7 @@ sidebar_position: 10
 
 The Authentication page implements signing into a ServiceNow account.
 
-A ServiceNow account must be set up and configured to determine which incidents will be visible on
+You must set up and configure a ServiceNow account to determine which incidents appear on
 the Incident Creation page.
 
 ![ServiceNow Action Module wizard Authentication page](/images/accessanalyzer/12.0/admin/action/servicenow/authentication.webp)

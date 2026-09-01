@@ -9,12 +9,12 @@ sidebar_position: 10
 The Sensitive Content Details report at the server level provides details of files where criteria
 matches were found on the selected instance. This report includes a table with criteria matches
 visible to Access Information Center users with either Security Team Member or Administrator roles.
-The Matches table requires the storage of discovered sensitive data within the Access Analyzer
-database or it will be blank.
+The Matches table requires the Access Analyzer database to store discovered sensitive data or it
+will be blank.
 
 ![Sensitive Content Details report at the server level](/images/accessinformationcenter/12.0/resourceaudit/exchange/server/serversensitivecontentdetails.webp)
 
-This report is comprised of the following columns:
+This report contains the following columns:
 
 - Criteria Name – Type of potentially sensitive criteria matches found
 - Criteria Type – Pattern for pattern based matches (System Criteria), and subject type based on
@@ -27,7 +27,7 @@ This report is comprised of the following columns:
 There is one table at the bottom displaying Matches in the files where the selected criterion value
 were found:
 
-- Prefix – Text just prior to the sensitive data match in the file
+- Prefix – Text just before the sensitive data match in the file
 - Match – Lists any sensitive data matches found for the highlighted criteria in the top grid of the
   report
 - Suffix – Text just after the sensitive data match in the file

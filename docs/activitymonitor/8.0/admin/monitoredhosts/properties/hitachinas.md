@@ -12,6 +12,6 @@ is specific to Hitachi hosts.
 
 ![Host Properties - Hitachi Tab](/images/activitymonitor/8.0/admin/monitoredhosts/properties/hitachihostproperties.webp)
 
-The Hitachi NAS tab allows users to modify settings that were populated with the information entered
-when the Hitachi host was added. Additionally, the Path pooling interval can be configured. The Path
+Use the Hitachi NAS tab to modify settings that were populated with the information entered
+when the Hitachi host was added. You can also configure the Path pooling interval. The Path
 pooling interval is set to 15 seconds by default.

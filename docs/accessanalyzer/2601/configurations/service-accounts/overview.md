@@ -31,6 +31,6 @@ You can create a service account in two ways:
 
 ## Editing service accounts
 
-Credential fields — passwords and client secrets — are never pre-populated when you edit an existing service account. You must re-enter them each time you save changes.
+Access Analyzer never pre-populates credential fields — passwords and client secrets — when you edit an existing service account. You must re-enter them each time you save changes.
 
 Updating the service account on an existing source group replaces the credentials used for all future scans in that source group. Ensure the replacement account has the required permissions before saving.

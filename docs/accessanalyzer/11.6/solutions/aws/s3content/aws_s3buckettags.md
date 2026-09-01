@@ -15,7 +15,7 @@ Navigate to the **AWS** > **7.S3 Content** > **AWS_S3BucketTags** > **Configure*
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

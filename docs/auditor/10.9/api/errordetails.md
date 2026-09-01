@@ -15,7 +15,7 @@ The error details include:
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Category    | Defines the type of error (XML formatting-related error, invalid input-related error, etc.)                                                                                 |
 | Description | Provides details about this error.                                                                                                                                          |
-| Location    | (optional) Provides a link to a corrupted text in request. XML is considered a default format for Netwrix Auditor Integration API. Error location is defined in XML format. |
+| Location    | (optional) Provides a link to a corrupted text in request. Netwrix Auditor Integration API uses XML as the default format. The API defines error location in XML format. |
 
 The error details have the format similar to the following:
 
@@ -44,7 +44,7 @@ The error details have the format similar to the following:
 } 
 ```
 
-Review examples below to see how error details correspond to invalid requests.
+Review the following examples to see how error details correspond to invalid requests.
 
 | Request                                                                                                                                                                                                                                                                    | Error details returned                                                                                                                                                                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

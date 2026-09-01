@@ -6,8 +6,8 @@ sidebar_position: 70
 
 # Agent First Run
 
-A local UI for the **Gen 7 Agent** provides visibility of operation for troubleshooting purposes. It
-is available from the hosting platform e.g. **http://localhost:8096** and requires credentials of
-username 'admin' and password 'password'.
+A local UI for the **Gen 7 Agent** shows operational status for troubleshooting. It's available
+from the hosting platform, for example, **http://localhost:8096**, and requires the username
+`admin` and password `password`.
 
 ![AgentFirstRun](/images/changetracker/install/agent/agentfirstrun.webp)

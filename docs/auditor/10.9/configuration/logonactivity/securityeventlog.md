@@ -6,8 +6,6 @@ sidebar_position: 40
 
 # Configure Security Event Log Size and Retention Settings
 
-Follow the steps to configure Security Event Log settings:
-
 **Step 1 –** Open the **Group Policy Management** console on any domain controller in the target
 domain: navigate to Start > Windows Administrative Tools (Windows Server 2016 and higher) or
 Administrative Tools (Windows 2012) **Group Policy Management.**
@@ -31,6 +29,6 @@ needed**.
 **Step 6 –** Run the following command to update group policy: `gpupdate /force`
 
 **NOTE:** After configuring security event settings via Group Policy, you may notice that the log
-size on a specific computer is not set correctly. In this case, follow the resolution steps from the
+size on a specific computer isn't set correctly. In this case, follow the resolution steps from the
 Netwrix Knowledge base article to fix the issue:
-[Security log settings do not apply via GPO](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/security-log-settings-do-not-apply-via-gpo).
+[Security log settings don't apply via GPO](/docs/kb/auditor/features-and-operations/glossaries-and-faqs/security-log-settings-do-not-apply-via-gpo).

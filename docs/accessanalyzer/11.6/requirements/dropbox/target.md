@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Target Dropbox Requirements, Permissions, and Ports
 
-The Enterprise Auditor for AWS Solution provides the ability to audit Dropbox. It scans:
+The Enterprise Auditor for AWS Solution lets you audit Dropbox. It scans:
 
 - Dropbox
 
@@ -20,10 +20,10 @@ This solution employs the following data collector to scan the target environmen
 
 - Dropbox Team Administrator
 
-The DropboxAccess Data Collector requires the generation of an access token that is used to
-configure the Connection Profile for Dropbox. The access token is generated from within the Dropbox
-Access Auditor Data Collector Wizard on the Scan Options page. Once the access token is copied into
-a Connection Profile for Dropbox, it will be saved and does not need to be generated again. See the
+The DropboxAccess Data Collector requires an access token to configure the Connection Profile for
+Dropbox. Generate the access token from within the Dropbox Access Auditor Data Collector Wizard on
+the Scan Options page. After you copy the access token into a Connection Profile for Dropbox, it's
+saved and you don't need to generate it again. See the
 [DropboxAccess: Scan Options](/docs/accessanalyzer/11.6/admin/datacollector/dropboxaccess/scanoptions.md)
 topic for additional information.
 

@@ -26,7 +26,7 @@ The following query is included in the EX_ASPolicies Job.
 
 The ExchangePS Data Collector can be scoped if desired.
 
-Follow the steps to scope the ExchangePS Data Collector:
+To scope the ExchangePS Data Collector:
 
 **Step 1 –** Navigate to job’s **Configure** node and select **Queries**.
 
@@ -37,29 +37,29 @@ Properties**. The Query Properties window opens.
 Wizard opens.
 
 :::warning
-Do not modify other wizard pages. The wizard pages are pre-configured for this job.
+Don't modify other wizard pages. The wizard pages are pre-configured for this job.
 :::
 
 
 ![ExchangePS Data Collector Wizard Scope page](/images/activitymonitor/7.1/config/activedirectory/scope.webp)
 
-**Step 4 –** Navigate to the Scope page, and select the desired scoping method from those available.
+**Step 4 –** Navigate to the Scope page, and select the scoping method you want from those available.
 See the
 [ExchangePS: Scope](/docs/accessanalyzer/11.6/admin/datacollector/exchangeps/scope.md) topic
 for additional information.
 
 - Scope by Database – Select the **Scope by Database Target Host: Local Host** option. Then, click
-  **Next** and identify the desired databases on the Scope by Databases page. See the
+  **Next** and identify the databases you want on the Scope by Databases page. See the
   [ExchangePS: Scope by DB](/docs/accessanalyzer/11.6/admin/datacollector/exchangeps/scopedatabases.md) topic
   for additional information.
 - Scope by Mailbox – Select the **Scope by Mailbox Target Host: Local Host** option. Then, click
-  **Next** and identify the desired mailboxes on the Scope by Mailboxes page. See the
+  **Next** and identify the mailboxes you want on the Scope by Mailboxes page. See the
   [ExchangePS: Scope by Mailboxes](/docs/accessanalyzer/11.6/admin/datacollector/exchangeps/scopemailboxes.md) topic
   for additional information.
 - Scope by Server – Select the **Scope by Server Target Host: Exchange MB Server** option. The job
   returns results for specific servers selected in job’s **Configure** > **Hosts** node.
 - Scope by Public Folder – Select the **Scope by Public Folder** option. Then, click **Next** and
-  identify the desired mailboxes on the Scope by Public Folders page. See the
+  identify the mailboxes you want on the Scope by Public Folders page. See the
   [ExchangePS: Scope by Public Folders](/docs/accessanalyzer/11.6/admin/datacollector/exchangeps/scopepublicfolders.md) topic
   for additional information.
 - _Remember,_ the scoping options available vary based on the pre-defined query configurations.
@@ -74,7 +74,7 @@ View the analysis tasks by navigating to the **Exchange** > **2. CAS Metrics** >
 **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
@@ -90,4 +90,4 @@ following pre-configured report:
 
 | Report                                         | Description                                                                                                                                              | Default Tags | Report Elements                                                                                                                                           |
 | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| User ActiveSync Policies (ActiveSync Settings) | Exchange introduced many ActiveSync policies and settings which can be applied to users. This report identifies which users have these settings enabled. | None         | This report is comprised of two elements: <ul><li>Pie Chart – Displays ActiveSync Policies</li><li>Table – Provides details ActiveSync Policies</li></ul> |
+| User ActiveSync Policies (ActiveSync Settings) | Exchange introduced many ActiveSync policies and settings which can be applied to users. This report identifies which users have these settings enabled. | None         | This report is comprised of two elements: <ul><li>Pie Chart – Displays ActiveSync Policies</li><li>Table – Provides details on ActiveSync Policies</li></ul> |

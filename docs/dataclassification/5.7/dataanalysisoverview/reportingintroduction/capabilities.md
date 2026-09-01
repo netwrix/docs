@@ -17,7 +17,7 @@ The main **Dashboard** has three high level graphs highlighting the current stat
 - Classification Coverage—Shows the percentage of classified content, broken down by type, and the
   percentage of content that has not received any auto-classifications
 
-It is possible to filter and refine data presentation to look for the areas that contain the largest
+Filter and refine data presentation to look for the areas that contain the largest
 amount of documents tagged with a particular term, or to only review specific content.
 
 Reporting capabilities also include the following:

@@ -16,7 +16,7 @@ The Logic tab contains the following sections and options:
 
     - Rule Name – The field defaults with the name on the Analysis Properties page and is manually
       editable
-    - Table – Select a table from the drop-down menu containing the baseline values to evaluate
+    - Table – Select a table from the dropdown menu containing the baseline values to evaluate
 
         - To view data from a selected table, click the ellipsis (**…**) to open the Sample Data
           Viewer window, or select a table within the viewer. See the
@@ -48,20 +48,20 @@ Use the Sample Data Viewer window to examine data in a selected table.
 
 The Sample Data Viewer window provides the following options:
 
-- Use the drop-down menu to select a table to view the table’s data. The field defaults with the
+- Use the dropdown menu to select a table to view the table’s data. The field defaults with the
   table selected in the Logic tab if previously selected.
 - Show First [Number] rows – Adjusts the presentation of the number of rows of the selected table.
   The default value is 50. It can be manually adjusted with values between 0 and all.
 
 ## EditConditionsForm Window
 
-Use the EditConditionsForm to configure conditions to be applied to the table.
+Use the EditConditionsForm to configure conditions to apply to the table.
 
 ![EditConditionsForm Window](/images/accessanalyzer/12.0/admin/analysis/businessrules/editconditionsform.webp)
 
 The EditConditionsForm contains the following options:
 
-- Column – Use the drop-down menu to select a column from the table selected in the Logic tab
+- Column – Use the dropdown menu to select a column from the table selected in the Logic tab
 - Operator – Use the dropdown to select an operator:
 
     - `<` – Search for items in the selected column with values less than a selected value
@@ -101,14 +101,14 @@ The Configure Scorecard Options window provides the following options:
     - Action Name – Enter a name for the action
     - Description – Enter a description for the action
 
-- Action Classification – This section allows you to group scorecard action results for reporting
+- Action Classification – Use this section to group scorecard action results for reporting
   purposes
 
     - Category – Enter a desired category name in the field or use the dropdown to select from
       previously titled categories
     - Index – Enter a desired index value for the scorecard action
 
-- Action Score – This section allows you to rank the action’s importance relative to other scorecard
+- Action Score – Use this section to rank the action’s importance relative to other scorecard
   actions
 
     - Score – Enter a desired score value for the scorecard action
@@ -119,9 +119,9 @@ The Configure Scorecard Options window provides the following options:
 
     - Knowledge – Enter information to assist issue resolution, for example a website URL
 
-- Captured Values – This section allows you to select up to five optional properties whose values
-  will be captured and stored with the scorecard entry. For each property selected, a name column
+- Captured Values – Use this section to select up to five optional properties. The system captures
+  and stores their values with the scorecard entry. For each property selected, a name column
   and value column appear in the scorecard.
 
-    - Property [1-5] – Select a property from the selected table using the drop-down menu to capture
+    - Property [1-5] – Select a property from the selected table using the dropdown menu to capture
       and store its values with the scorecard

@@ -16,7 +16,7 @@ locations where widgets need to be configured.
 
 ![Configure widgets](/images/accessanalyzer/12.0/admin/report/wizard/widgetsconfigure.webp)
 
-To add a new widget to an empty element, click **Configure** and select the desired widget type from
+To add a new widget to an empty element, click **Configure** and select the widget type you want from
 the dropdown menu. The following widgets are available:
 
 - [Grid](#grid)

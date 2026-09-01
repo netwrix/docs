@@ -7,11 +7,11 @@ sidebar_position: 40
 # SP_StaleTeamSites Job
 
 The SP_StaleTeamSites Job identifies Teams that have not had activity for a number of days that can
-be set in the analysis (Set as 30 Days by Default).
+be set in the analysis (Set at 30 Days by Default).
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/11.6/admin/jobs/job/overview.md#parameter-configuration)
 topic for instructions on how to edit parameters on a job overview page.
@@ -26,7 +26,7 @@ for additional information.
 
 ## Analysis Tasks for the SP_StaleTeamSites Job
 
-Navigate to the **Jobs** > **SharePoint** > **8.M365** > **SP_StaleTeamSites** >**Configure** node
+Navigate to the **Jobs** > **SharePoint** > **8.M365** > **SP_StaleTeamSites** > **Configure** node
 and select **Analysis** to view the analysis tasks.
 
 ![Analysis Tasks for the SP_StaleTeamSites Job](/images/accessanalyzer/11.6/solutions/sharepoint/m365/staleteamsitesanalysis.webp)

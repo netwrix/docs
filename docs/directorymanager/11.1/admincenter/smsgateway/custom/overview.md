@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # ISMSGateway Members
 
-To define a custom gateway, a list of ISMSGateway members that you must implement are listed below:
+To define a custom gateway, you must implement the following ISMSGateway members:
 
 - [ISmsGateway.AccountId](/docs/directorymanager/11.1/admincenter/smsgateway/custom/accountid.md)
 - [ISmsGateway.Clone](/docs/directorymanager/11.1/admincenter/smsgateway/custom/clone.md)

@@ -10,7 +10,7 @@ The **SharePoint Sites** page lists the sites specified for permission analysis 
 store, displaying granular level permission granted to objects on document libraries. This data is
 subject to the date and time the permissions were last replicated.
 
-You can view all active sites as enabled and inactive sites as disabled. It is as:
+You can view all active sites as enabled and inactive sites as disabled. It appears as follows:
 
 ![disabledsites](/images/directorymanager/11.1/portal/entitlement/disabledsites.webp)
 
@@ -24,7 +24,7 @@ Once permissions are replicated, the site is enabled.
     - **Last Replication**: day, date, and time when the site was last replicated.
     - **Time Taken**: time it took to complete the replication.
 
-- Double click on the card to explore the site. Once explored, click **Go Back** to return to the
+- Double click the card to explore the site. Once explored, click **Go Back** to return to the
   list of available sites.
 - You can search specific sites on the search bar on the top. If you want to undo the search
   results, click **Refresh** which will display all the sites on the page.
@@ -40,8 +40,8 @@ showcasing the following information:
 Date format: mm/dd/yyyy
 :::
 
-- You can view the files and folders within a document library till the nth level. Double-click a
-  folder card to view its direct child files and folders. Continue till the nth level.
+- You can view the files and folders within a document library to the nth level. Double-click a
+  folder card to view its direct child files and folders. Continue to the nth level.
 
     ![sitesfolders](/images/directorymanager/11.1/portal/entitlement/sitesfolders.webp)
 
@@ -90,7 +90,7 @@ temporarily add users.
     Permissions are displayed as **Explicit permissions** which list the effective permissions set
     the user/group has on the file/folder.
 
-## Search document libraries, files and folders in a site
+## Search document libraries, files, and folders in a site
 
 Use the search bar to search for specific files and folders in the site. You can also search for a
 file or folder in a particular folder. Click the card for that folder and search for the required
@@ -104,15 +104,15 @@ Below the search box is the **Add new filter** link. Click it to apply a search 
 user/group, access type, and permission criterion. This will display shared files/folders that match
 your criterion.
 
-- Type the name of a user or group in the **User or Group** box. It must be a specific name, like
+- Enter the name of a user or group in the **User or Group** box. It must be a specific name, like
   ‘Sarah’ (for user) or ‘Engineering team’ (for group), and not an object type, like ‘users’,
   ‘groups’, ‘contacts’, or ‘computers’.
-- From the **Access Type** drop-down list, select the _Allow_ or _Deny_ option.
+- From the **Access Type** dropdown list, select the _Allow_ or _Deny_ option.
 - In the **Permission** box, select one or more permissions.
 - Click **Apply filters**.
 
 Directory Manager Entitlement displays folders and files on which the user/group has the specific
-access type with respect to the specified permission(s).
+access type with respect to the specified permissions.
 
 **Example:**
 

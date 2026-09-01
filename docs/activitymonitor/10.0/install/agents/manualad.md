@@ -8,8 +8,6 @@ sidebar_position: 30
 
 The AD Module, powered by Threat Prevention, can only be installed on domain controllers.
 
-Follow the steps to manually deploy the AD Module.
-
 **Step 1 –** From the Activity Monitor Console machine, copy the AD Agent executable (
 `%ProgramFiles%\Netwrix\Activity Monitor\Console\Agents\SI Agent.exe`) to the domain controller where
 you want to install the Agent. Then run the executable. The Netwrix Threat Prevention Windows Agent
@@ -26,8 +24,8 @@ by another Welcome page.
 
 ![End-User License Agreement Page](/images/activitymonitor/9.0/install/agent/license.webp)
 
-**Step 4 –** On the End-User License Agreement page, check the **I accept the terms in the License
-Agreement** box and click **Next**.
+**Step 4 –** On the End-User License Agreement page, check the box to accept the terms in the License
+Agreement and click **Next**.
 
 ![Destination Folder Page](/images/activitymonitor/9.0/install/agent/destinationfolder_1.webp)
 
@@ -38,7 +36,7 @@ location.
 
 ![Change Destination Folder Page](/images/activitymonitor/9.0/install/agent/changedestination.webp)
 
-> > - Use the Look In field to select the desired installation folder.
+> > - Use the Look In field to select the installation folder you want.
 > > - When the Folder name is as desired, click **OK**. The wizard returns to the Destination Folder
 > >   page.
 > > - Click **Next**.
@@ -51,7 +49,7 @@ location.
 **Step 6 –** Keep the default radio button selection, Managed by Threat Prevention.
 
 :::note
-The CA Certificate Configuration page is not applicable to the Activity Monitor.
+The CA Certificate Configuration page isn't applicable to the Activity Monitor.
 :::
 
 
@@ -77,7 +75,7 @@ product to enable communication with it.
     - Start Agent Service
 
         - The **Start Agent Service** option starts the Threat Prevention Windows Agent service
-          after the installation is complete. If the Threat Prevention Windows Agent service is not
+          after the installation is complete. If the Threat Prevention Windows Agent service isn't
           started at the time of installation, the Activity Monitor Agent will start as needed.
 
     - Create Windows Firewall Rules
@@ -106,11 +104,9 @@ The AD Module (NTP Agent) is now installed on the server.
 
 ## Add the AD Agent to the Console
 
-Follow the steps to add the Activity Monitor Windows Agent (with the AD Module) to the Console:
-
 **Step 1 –** Open the Activity Monitor Console.
 
-**Step 2 –** On the Agents tab, click **Add Agent**. The Add New Agent(s) window opens.
+**Step 2 –** On the Agents tab, click **Add Agent**. The Add New Agents window opens.
 
 ![Install New Agent](/images/activitymonitor/9.0/install/agent/installnew.webp)
 
@@ -128,17 +124,17 @@ Follow the steps to add the Activity Monitor Windows Agent (with the AD Module) 
 ![Active Directory Connection](/images/activitymonitor/9.0/install/agent/adconnection.webp)
 
 **Step 6 –** On the Active Directory Connection page, specify the credentials for the domain or
-domain controller(s) where the agent is installed. Click **Connect** to verify connection to the
+domain controllers where the agent is installed. Click **Connect** to verify connection to the
 domain. Click **Next**.
 
 ![Domains to Monitor](/images/activitymonitor/9.0/install/agent/domains.webp)
 
-**Step 7 –** Select the domain of the domain controller(s) where the agent is installed. Click
+**Step 7 –** Select the domain of the domain controllers where the agent is installed. Click
 **Next**.
 
 ![Domain Controllers to Deploy Agent](/images/activitymonitor/9.0/install/agent/domaincontroller.webp)
 
-**Step 8 –** Select the domain controller(s) where the agent is installed. Click **Test**.
+**Step 8 –** Select the domain controllers where the agent is installed. Click **Test**.
 
 :::note
 When clicking Test while adding the Agent to the Console, the connection may fail. When
@@ -148,7 +144,7 @@ installed.
 :::
 
 
-**Step 9 –** Ignore the warning messages that the agent cannot be installed or upgraded and click
+**Step 9 –** Ignore the warning messages that the agent can't be installed or upgraded and click
 **Next**.
 
 ![Windows Agent Settings](/images/activitymonitor/9.0/install/agent/windowsagent.webp)
@@ -157,7 +153,7 @@ installed.
 
 :::note
 The Activity Monitor Agent Management Group allows users in the specified group to manage
-agents, but does not allow users in specified group to install, upgrade, or uninstall agents.
+agents, but doesn't allow users in specified group to install, upgrade, or uninstall agents.
 :::
 
 

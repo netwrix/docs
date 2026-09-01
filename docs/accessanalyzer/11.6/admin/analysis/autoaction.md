@@ -19,13 +19,12 @@ topic for additional information.
 
 ## Select Action Window
 
-The Select Action window lists the actions that currently exist within the Job that can be selected
+The Select Action window lists the actions that exist within the Job that you can select
 to automatically run upon job execution.
 
 ![Select Action Window](/images/accessanalyzer/11.6/admin/analysis/autoaction.webp)
 
 Select an action from the list. Click **OK** to exit the window, and then click **Save** to preserve
-the changes made to the analysis module. The action now executes as part of the analysis task. If no
-actions were selected, it is best practice to click **Cancel** to close the Select Action window to
-ensure no accidental selections are saved. Actions only display if they exist within the Actions
-node of the current Job.
+the changes made to the analysis module. The action now executes as part of the analysis task. If you selected no actions, click **Cancel**
+instead to close the Select Action window without saving accidental selections. Actions only
+display if they exist within the Actions node of the current Job.

@@ -12,7 +12,7 @@ This tool exports the database to a bacpac file, as a backup.
 
 The following example generates to `C:/identitymanagerDemo` a bacpac file from the Identity Manager database with the given connection string and based on the bacpac template from the SQL folder.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 ./Usercube-Export-Bacpac.exe --database "<Usercube>" -s "<data source=.;Database=Usercube;Integrated Security=SSPI;Min Pool Size=10;encrypt=false;>" --bacpac-path 0 --template-bacpac-path "<C:/identitymanagerDemo/SQL>"
@@ -34,5 +34,5 @@ The list of arguments:
  | --without-workflow-instances default value: false | Boolean | True to exclude workflow instances. | 
  | --without-campaign-instances default value: false | Boolean | True to exclude access certification campaign items. | 
  | --without-temp default value: false | Boolean | True to exclude the data of temporary tables. | 
- | --without-all default value: false | Boolean | True to exclude history data, job and task instances, workflow instances and access certification campaign items. _Remember,_ this option represents the usual use-case. | 
+ | --without-all default value: false | Boolean | True to exclude history data, job, task instances, workflow instances, and access certification campaign items. _Remember,_ this option represents the usual use-case. | 
  | --log-level optional | LogLevel | Level of log information among: Verbose; Debug; Information; Warning; Error; Fatal. | 

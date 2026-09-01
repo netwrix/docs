@@ -14,7 +14,7 @@ you need (datacenter, ESXi host, VM folder or resource pool) and select Deploy O
 **Step 2 –** If you are running VMware 6.0, connect to vSphere using the on-premises vSphere client
 and select File → Deploy OVF Template.
 
-Follow the instructions in the table below:
+Follow the instructions in the following table:
 
 | Step                 | Description                                                                                                                                                                                          |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -23,7 +23,7 @@ Follow the instructions in the table below:
 | Name and Location    | Select a name for the new virtual machine (optional; default name is _"Netwrix Auditor"_). The name must be unique within the Inventory folder; it may contain up to 80 characters including spaces. |
 | Resource Pool        | Select a resource pool to deploy the virtual appliance.                                                                                                                                              |
 | Storage              | Select the destination storage.                                                                                                                                                                      |
-| Disk Format          | To optimize the disk space, it is recommended to select Thin Provision.                                                                                                                              |
+| Disk Format          | To optimize disk space, select Thin Provision.                                                                                                                              |
 | Network Mapping      | If you have multiple networks on your ESXi Server, select the Destination network for a new virtual machine.                                                                                         |
 | Ready to Complete    | Review your virtual machine settings. Click Finish to complete the wizard.                                                                                                                           |
 
@@ -43,4 +43,4 @@ in this VMware article:
 
 **Step 6 –** On the Select a template step, select NetwrixAuditor from your ContentLibrary.
 
-**Step 7 –** Proceed with the wizard: select name and folder, resources and storage for the VM.
+**Step 7 –** Proceed with the wizard: select name and folder, resources, and storage for the VM.

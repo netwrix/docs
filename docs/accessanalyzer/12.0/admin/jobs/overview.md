@@ -69,14 +69,14 @@ jobs can be enabled to track changes to configuration settings. When enabled, co
 are tracked in change logs stored within the job folder. Changes can also be viewed within this
 window.
 
-Remember, custom jobs are not shipped with Access Analyzer but instead user created.
+Remember, custom jobs aren't shipped with Access Analyzer but instead user created.
 
 The Changes window opens from the **Changes** option in the right-click menu from the selected Jobs
 tree, job group, or job node.
 
 ![Changes Window](/images/accessanalyzer/12.0/admin/jobs/changeswindow.webp)
 
-Select **Enabled** from the drop-down menu in the upper-left corner to turn on change tracking of
+Select **Enabled** from the dropdown menu in the upper-left corner to turn on change tracking of
 configuration settings. Select a modification from the table and click **Undo** to revert the
 change.
 
@@ -110,7 +110,7 @@ the Access Analyzer pop-up window to confirm the merge.
 Changes between releases are tracked. Only jobs that are locked can be upgraded.
 
 :::note
-Jobs that are included in Access Analyzer are locked and changes cannot be made to those
+Jobs that are included in Access Analyzer are locked and changes can't be made to those
 jobs.
 
 :::

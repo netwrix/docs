@@ -30,7 +30,7 @@ sidebar_position: 3
 
 ## What happens next
 
-Access Analyzer creates the source group and begins syncing users, groups, and roles from your Entra ID tenant. If you selected **Now**, the scan starts immediately. MIP sensitivity labels are retrieved automatically as part of the scan.
+Access Analyzer creates the source group and begins syncing users, groups, and roles from your Entra ID tenant. If you selected **Now**, the scan starts immediately. Access Analyzer retrieves Microsoft Information Protection (MIP) sensitivity labels automatically as part of the scan.
 
 To check scan progress, navigate to **Configuration** > **Scan Executions**.
 

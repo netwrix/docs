@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Changes Window
 
-Select the desired request on the [Request History Tab](/docs/accessinformationcenter/12.0/accessrequests/interface/interface.md#request-history-tab) of the
+Select the request you want on the [Request History Tab](/docs/accessinformationcenter/12.0/accessrequests/interface/interface.md#request-history-tab) of the
 Access Requests interface and click **View Changes**. The Changes window opens.
 
 ![Changes window](/images/accessinformationcenter/12.0/accessrequests/window/changes.webp)

@@ -6,12 +6,12 @@ sidebar_position: 60
 
 # Edit HTML Templates
 
-Password Policy Enforcer Web's user interface is built with customizable templates. Modify the user interface by editing the templates.
+Netwrix built Password Policy Enforcer Web's user interface with customizable templates. Modify the user interface by editing the templates.
 
 ### User Interface Files
 
 Password Policy Enforcer Web installs four .htm files for every language. Each filename starts with
-a language code. The files for the US English language are:
+a language code. The files for the American English language are:
 
 | Filename        | Content                                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -22,18 +22,18 @@ a language code. The files for the US English language are:
 
 The other user interface files are language independent. Most of the formatting is in ppeweb.css,
 and some additional CSS for Internet Explorer is in ppeweb_ie.css. The image files are in the images
-folder. These files are installed into the `\Inetpub\wwwroot\ppeweb\` folder by default.
+folder. By default, the installer places these files in the `\Inetpub\wwwroot\ppeweb\` folder.
 
 :::note
-Always backup the user interface files before and after editing them. Your changes may be
-overwritten when Password Policy Enforcer Web is upgraded, and some changes could stop Password
+Always backup the user interface files before and after editing them. Upgrading Password Policy
+Enforcer Web may overwrite your changes, and some changes could stop Password
 Policy Enforcer Web from working correctly. Web browsers display pages differently, so test your
 changes with several versions of the most popular browsers to ensure compatibility.
 :::
 
 
 The en_default.htm contains static HTML, but the other .htm files contain special comment tags that
-are used to prepare the pages. Some of these comments define ranges. A range looks like this:
+Password Policy Enforcer Web uses to prepare the pages. Some of these comments define ranges. A range looks like this:
 
 `<!—RANGE_NAME-->Some text or HTML<!--/RANGE_NAME-->`
 
@@ -43,8 +43,8 @@ called a field.
 
 `<!--USERNAME-->`
 
-Fields are replaced by some other information. For example, the field above is replaced with a
-username.
+Password Policy Enforcer Web replaces fields with other information. For example, it replaces
+`<!--USERNAME-->` with a username.
 
 #### Resource Strings
 
@@ -65,27 +65,28 @@ right. Resource strings are always inside a range called RESOURCE_STRINGS. Passw
 Web deletes this range before sending the page to the user's web browser.
 
 :::warning
-You may rebrand the Password Policy Enforcer Web user interface, but it is a violation
-of the License Agreement to modify, remove, or obscure any copyright notice.
+You may rebrand the Password Policy Enforcer Web user interface, but modifying, removing, or
+obscuring any copyright notice violates the License Agreement.
 :::
 
 
 ## Examples
 
-This topic contains examples of common customizations. Use these examples to gain a better
-understanding of Password Policy Enforcer Web's templates. You don't need to be an expert in HTML to
+This topic contains examples of common customizations. Use these examples to better understand
+Password Policy Enforcer Web's templates. You don't need to be an expert in HTML to
 follow these examples, but a basic understanding of HTML will help. Work through them carefully, and
-backup files before you edit them. The examples in this section are from the US English files, but
+backup files before you edit them. The examples in this section are from the American English files, but
 the format is the same for all languages.
 
 ### Replacing the Netwrix Logo
 
-The Netwrix logo is shown in the top left corner of the Welcome page. The logo is installed into the
-`\Inetpub\wwwroot\ppeweb\images\` folder by default, and it is called logo.gif. You can replace this
+Password Policy Enforcer Web shows the Netwrix logo in the top left corner of the Welcome page. By
+default, the installer places the logo in the `\Inetpub\wwwroot\ppeweb\images\` folder, and it is
+called logo.gif. You can replace this
 file with one containing your organization's logo.
 
-Your logo may appear distorted if it isn't the same size as the Netwrix logo. You can fix this by
-opening en_default.htm in a text editor such as Notepad. Search for the following line, and replace the width (116) and height (69) with the dimensions of your logo in pixels.
+Your logo may appear distorted if it isn't the same size as the Netwrix logo. To fix this, open
+en_default.htm in a text editor such as Notepad. Search for the following line, and replace the width (116) and height (69) with the dimensions of your logo in pixels.
 
 `<img class="logo" src="images/logo.gif" alt="ANIXIS" width="116" height="69" />`
 
@@ -97,7 +98,7 @@ want to modify.
 
 Instructions are inside ranges called SECTION_A and SECTION_B. Each section contains the
 instructions for a page in the template. Ensure you edit the instructions in the correct section,
-or they may be displayed on the wrong page.
+or Password Policy Enforcer Web may display them on the wrong page.
 
 `<!--SECTION_A-->`
 
@@ -113,12 +114,12 @@ or they may be displayed on the wrong page.
 
 ### Edit Validation Error Messages
 
-Validation error messages are shown in a yellow box below the page instructions. Validation errors
-are normally caused by invalid user input.
+Password Policy Enforcer Web shows validation error messages in a yellow box below the page
+instructions. Invalid user input normally causes validation errors.
 
 ![using_ppe_web_1](/images/passwordpolicyenforcer/11.2/web/using_ppe_web_1.webp)
 
-Validation error messages are defined in en_ppeweb.htm. The error messages are in the resource
+en_ppeweb.htm defines the validation error messages. The error messages are in the resource
 strings section near the end of the file. See the Resource Strings topic for additional information.
 
 | String                        | Error Message                            |
@@ -129,15 +130,15 @@ strings section near the end of the file. See the Resource Strings topic for add
 
 ### Edit Critical Error Messages
 
-All the critical error messages are defined in `en_error.htm`. The error messages are in the
+`en_error.htm` defines all the critical error messages. The error messages are in the
 resource strings section near the end of the file. See the Resource Strings topic for additional
 information.
 
 ![using_ppe_web_2](/images/passwordpolicyenforcer/11.2/web/using_ppe_web_2.webp)
 
-You may see placeholders like %1 and %2 in some error messages. These are replaced with more
-information about the error. You should keep these as they provide important information about the
-error, but you can delete them if you don't want them.
+You may see placeholders like %1 and %2 in some error messages. Password Policy Enforcer Web
+replaces these with more information about the error. Keep these placeholders because they provide
+important information about the error, but you can delete them if you don't want them.
 
 | String                  | Error Message                                  |
 | ----------------------- | ---------------------------------------------- |
@@ -158,8 +159,8 @@ If you want to display some text for all error messages, then insert your text a
 
 ### Edit Finished Message
 
-The finished message is shown after users successfully change their password. This message is
-defined in en_finished.htm.
+Password Policy Enforcer Web shows the finished message after users successfully change their
+password. en_finished.htm defines this message.
 
 ![editing_the_html_templates_1](/images/passwordpolicyenforcer/11.2/web/editing_the_html_templates_1.webp)
 

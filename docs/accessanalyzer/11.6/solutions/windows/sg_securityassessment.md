@@ -6,10 +6,10 @@ sidebar_position: 70
 
 # SG_SecurityAssessment Job
 
-The SG_SecurityAssessment job performs checks against Windows security best practices in order to
+The SG_SecurityAssessment job performs checks against Windows security best practices to
 proactively identify critical security configurations that leave the environment vulnerable to
 attack. The result is a report which provides a listing of findings by severity and category with
-corresponding details that can be used to prioritize and remediate security issues.
+corresponding details you can use to prioritize and remediate security issues.
 
 ![SG_SecurityAssessment Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/windows/securityassessmentjobstree.webp)
 
@@ -64,7 +64,7 @@ Navigate to the **Windows** > **SG_SecurityAssessment** > **Configure** node and
 to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
@@ -81,4 +81,4 @@ produces the following pre-configured report.
 
 | Report                      | Description                                                                    | Default Tags          | Report Elements                                                                                                                                                                                                                                                                   |
 | --------------------------- | ------------------------------------------------------------------------------ | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Systems Security Assessment | This report summarizes security related results from the Windows solution set. | GDPR, SOX, PCI, HIPAA | This report is comprised of four elements: <ul><li>Pie Chart – Displays a findings by severity</li><li>Table – Provides scope of audit details</li><li>Table – Displays details on security assessment results</li><li>Table – Provides details on findings by category</li></ul> |
+| Systems Security Assessment | This report summarizes security related results from the Windows solution set. | GDPR, SOX, PCI, HIPAA | This report is comprised of four elements: <ul><li>Pie Chart – Displays findings by severity</li><li>Table – Provides scope of audit details</li><li>Table – Displays details on security assessment results</li><li>Table – Provides details on findings by category</li></ul> |

@@ -44,7 +44,7 @@ The following sections describe the different methods for deploying Endpoint Pro
 
 ## Communication Between Endpoint Protector Server and Netwrix Servers
 
-Communication between Endpoint Protector Server (apliance used by your company) and Netwrix servers is possible only when your server is connected to the internet.
+Your Endpoint Protector Server can communicate with Netwrix servers only when you connect it to the internet.
 
 When connected, Netwrix may access the following metadata information:
 

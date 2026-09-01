@@ -18,16 +18,14 @@ The Threat Prevention Agent can be deployed through any of the following methods
 
 - Manually through the Windows Agent Setup Wizard – Run the Agent executable to launch this wizard
 
-See the [Manual Agent Deployment](/docs/threatprevention/7.5/install/agent/manual.md) topic for additional
+See the [Manual Agent Deployment](/docs/threatprevention/7.5/install/agent/manual.md) topic for more
 information.
 
 ## Deploy Agents Wizard
 
-Use the Deploy Agents wizard to deploy Agents from the Administration Console. Computers
-targeted for Agent deployment must meet the minimum .NET Framework version required by the Agent or
-the deployment fails. Remember to check server requirements before deploying the Agent, including
+Use the Deploy Agents wizard to deploy Agents from the Administration Console. Target computers must have the minimum .NET Framework version required by the Agent, or the deployment fails. Check server requirements before deploying the Agent, including
 compatibility with other security products. See the
-[Agent Server Requirements](/docs/threatprevention/7.5/requirements/agent/agent.md) topic for additional information.
+[Agent Server Requirements](/docs/threatprevention/7.5/requirements/agent/agent.md) topic for more information.
 
 :::note
 The wizard doesn't block access to the Administration Console and can be minimized while
@@ -40,8 +38,7 @@ the flashing blue link to bring back the focus to the wizard.
 The Deploy Agents wizard consists of four windows: Select Computers, Set Options, Prerequisites
 Check, and Installing.
 
-To deploy the Agent from the Administration Console to a new or existing machine
-using the Deploy Agents wizard, complete the following steps:
+To deploy the Agent using the Deploy Agents wizard, follow these steps:
 
 :::warning
 Closing the Administration Console while this action is in process causes problems with
@@ -121,8 +118,8 @@ either succeed or fail during a prerequisites or verification check. See the
 [Prerequisites Check Window](/docs/threatprevention/7.5/admin/agents/deploy/prerequisitescheck.md) topic for additional information. Click
 **Next**.
 
-**Step 6 –** On the Updating Settings window, the Agent will be stopped and restarted. One of two
-status messages display:
+**Step 6 –** On the Updating Settings window, the system stops and restarts the Agent. One of two
+status messages displays:
 
 - Failed – Read the failure message and either click **Back** to provide new credentials or click
   **Finish** to close the window and resolve any error messages before the next
@@ -131,4 +128,4 @@ status messages display:
 
 **Step 7 –** Click **Finish** to close the window.
 
-The status of the Agent update will display in the grid on the Agents interface.
+The Agent update status appears in the grid on the Agents interface.

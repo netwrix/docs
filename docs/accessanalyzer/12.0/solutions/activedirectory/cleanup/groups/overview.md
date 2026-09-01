@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # 1.Groups Job Group
 
-The 1.Groups Job Group provides a workflow to safely deprovision groups, as well as the ability to
-stamp security groups with what resources they are given access to.
+The 1.Groups Job Group provides a workflow to safely deprovision groups and stamp security groups
+with the resources they can access.
 
 ![1.Groups Job Group in the Jobs Tree](/images/accessanalyzer/12.0/solutions/activedirectory/cleanup/groups/groupsjobtree.webp)
 
@@ -25,8 +25,8 @@ The jobs in the 1.Groups Job Group are:
   for all security groups to show where the group is provisioned inside the environment.
 
     - [AD_GroupCleanup_Permissions Job](/docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/groups/stamping/ad_groupcleanup_permissions.md) – This job reports
-      on where security groups are being used to assign permissions. This can be used to prioritize
-      remediation for groups that are rarely used.
+      on where security groups are being used to assign permissions. Use this information to
+      prioritize remediation for groups that are rarely used.
     - [AD_GroupStamping Job](/docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/groups/stamping/ad_groupstamping.md) – This job replaces the Notes attribute
       for all security groups to show where the group is provisioned inside the environment. This
       overwrites the Notes field with data from Access Analyzer.
@@ -37,10 +37,10 @@ The jobs in the 1.Groups Job Group are:
 
 - The .Active Directory Inventory Job Group needs to be successfully run
 - For the AD_DeprovisionGroups Job, the target OU needs to be manually set in the Move Groups Action
-  Task prior to executing the actions. See the
+  Task before executing the actions. See the
   [Action Tasks for the AD_DepvisionGroups Job](deprovision/ad_deprovisiongroups.md#action-tasks-for-the-ad_depvisiongroups-job)
   topic for additional information.
-- The AD_DeprovisionGroups Job needs to be run prior to running the AD_DeprovisionGroups_Status Job
+- The AD_DeprovisionGroups Job needs to be run before running the AD_DeprovisionGroups_Status Job
 
 **Step 2 –** Schedule the 1.Groups Job Group to run as desired after the prerequisites have been
 satisfied.

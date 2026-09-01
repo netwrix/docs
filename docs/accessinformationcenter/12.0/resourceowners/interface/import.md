@@ -48,8 +48,7 @@ See the Import Owners topic for additional information.
 
 ## Import Owners
 
-Follow the steps to import a list of multiple resources with assign owners into the Owners
-interface.
+To import a list of multiple resources with assigned owners into the Owners interface:
 
 **Step 1 –** In the Resource Owners interface, click **Import**. The Import Owners wizard opens.
 
@@ -61,12 +60,12 @@ click **Open**.
 ![Import Owners wizard with the 1. Select File page showing resources with assigned owners to be imported](/images/accessinformationcenter/12.0/resourceowners/wizard/selectfilepreview.webp)
 
 **Step 3 –** A preview of the resources and owners appears in the table. The Status column indicates
-whether or not there is a problem (invalid resource or owner). Ensure all resources in the table
+whether there is a problem (invalid resource or owner). Ensure all resources in the table
 have a green tick icon in the Status column, and click **Next** to continue with the import.
 
 :::note
 If a problem is indicated, additional information is displayed by hovering over the red
-exclamation icon. You can not continue with the import if any row contains an invalid resource or
+exclamation icon. You can't continue with the import if any row contains an invalid resource or
 owner. To remove a resource from the table, select the row and click **Remove**. The row is removed
 from the table.
 :::
@@ -77,7 +76,7 @@ from the table.
 **Step 4 –** On the Options page, configure the available options as required.
 
 - Confirm ownership — This will automatically confirm ownership for all of the resources upon
-  import, and is selected by default. If ownership confirmation is not required for these resources,
+  import, and is selected by default. If ownership confirmation isn't required for these resources,
   deselect the Confirm ownership for imported resources checkbox.
 - If the CSV file only contains Groups and no other resource types, the following additional options
   are available:
@@ -94,6 +93,6 @@ from the table.
 **Step 6 –** The action status displays on the page. When the update has completed (100%), click
 **Close**. The Import Owners wizard closes.
 
-These resources are now being manages by the Access Information Center. See the
+These resources are now being managed by the Access Information Center. See the
 [Update Resource Wizard](/docs/accessinformationcenter/12.0/resourceowners/interface/update.md) topic for information on making alterations to the imported
 resources.

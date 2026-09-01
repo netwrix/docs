@@ -6,8 +6,6 @@ sidebar_position: 10
 
 # Assign Application Permissions Using Manifest
 
-Follow the steps to assign application permissions using manifest.
-
 **Step 1 –** Under **App registrations**, select the newly created app.
 
 **Step 2 –** Select **Manifest** on the left.

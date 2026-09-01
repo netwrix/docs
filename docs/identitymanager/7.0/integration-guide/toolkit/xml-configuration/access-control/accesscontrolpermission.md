@@ -11,7 +11,7 @@ There can be nested permissions like */a/b/c*. Like for files, access rights can
 
 The available permissions are built automatically by the product.
 There are predefined permissions for all the features provided with the product.
-The other permissions are generated from the configured Entity Types, Workflows and Reports.
+The other permissions are generated from the configured Entity Types, Workflows, and Reports.
 
 Each connected user has access to all the permissions from the Profile Rules he belongs to.
 

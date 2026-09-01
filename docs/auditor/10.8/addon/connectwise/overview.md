@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # ConnectWise Manage
 
-Managed Service Providers (MSP) need to effectively utilize and standardize IT service management
+Managed Service Providers (MSP) need to effectively use and standardize IT service management
 tools. Those who use for that purpose the ConnectWise Manage solution usually have similar processes
 in place:
 
@@ -43,7 +43,7 @@ On a high level, the workflow is as follows:
 2. Whenever the alert is triggered, the add-on uses the Integration API to retrieve activity record
    for the original event from the audit store. An activity record contains the user account,
    action, time, and other details. The add-on creates a service ticket in ConnectWise Manage,
-   populates it with data from the activity record, and assigns Impact, Priority and SLA status to
+   populates it with data from the activity record, and assigns Impact, Priority, and SLA status to
    the ticket.
 3. The designated service team performs data analysis and root cause detection to resolve the
    ticket; MSP is notified of the results and possible response actions to take on the client side.

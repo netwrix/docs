@@ -8,7 +8,7 @@ sidebar_position: 20
 
 Use this page to specify web page introductory text (if any) for the web page specified on the Web
 Server page. See the [Survey: Web Server](/docs/accessanalyzer/12.0/admin/action/survey/webserver.md) topic for additional information. The
-introductory text appears on the landing page when recipients click on the survey link in the email.
+introductory text appears on the landing page when recipients click the survey link in the email.
 
 ![Survey Action Module Wizard Introduction Page](/images/accessanalyzer/12.0/admin/action/survey/introduction.webp)
 
@@ -19,7 +19,7 @@ The configurable options are:
   are limited to data from the SQL table specified at the Source Table field on the Action
   Properties page.
 
-    Place the cursor in the text where a field should appear. Next, click on the drop-down and
+    Place the cursor in the text where a field should appear. Next, click the dropdown and
     select a field from the list. When a selection appears in the field, click the blue down arrow.
     The field appears in the text.
 

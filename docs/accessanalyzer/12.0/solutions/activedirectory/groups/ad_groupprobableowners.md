@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # AD_GroupProbableOwners Job
 
-The AD_GroupProbableOwners Job determines potential owners for Active Directory Groups which can be
-used to perform automated membership reviews and enable self-service group management and membership
+The AD_GroupProbableOwners Job determines potential owners for Active Directory Groups, which you can
+use to perform automated membership reviews and enable self-service group management and membership
 requests.
 
 ## Analysis Tasks for the AD_GroupProbableOwners Job
@@ -16,7 +16,7 @@ Navigate to the **Active Directory** > **1.Groups** > **AD_GroupProbableOwners**
 node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

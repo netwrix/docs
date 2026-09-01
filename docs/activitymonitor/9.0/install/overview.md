@@ -7,13 +7,13 @@ sidebar_position: 30
 # Installation
 
 This topic describes the console installation and agent deployment the process for Activity Monitor.
-Prior to installing the application, ensure that all requirements have been met. See the
+Before installing the application, verify that you've met all requirements. See the
 [Requirements ](/docs/activitymonitor/9.0/requirements/overview.md) topic for additional information.
 
 ## Software Compatibility & Versions
 
-For proper integration between the Activity Monitor and other Netwrix products, it is necessary for
-the versions to be compatible.
+For proper integration between the Activity Monitor and other Netwrix products, ensure the
+versions are compatible.
 
 | Component                                             | Version |
 | ----------------------------------------------------- | ------- |

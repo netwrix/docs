@@ -22,11 +22,11 @@ The rest of Mr. James' personal information, such as his birth date, etc., can b
 
 ### Entitlement management
 
-As Mr. James is not the first mechanical engineer in Contoso, Identity Manager already contains a **composite role** named "R&D Mechanical Engineer". This role is meant to give its owners access to the company's sensitive data useful for mechanical engineers. Assigning this role will trigger the assignment of several **single roles**, each one giving one access right.
+As Mr. James isn't the first mechanical engineer in Contoso, Identity Manager already contains a **composite role** named "R&D Mechanical Engineer". This role is meant to give its owners access to the company's sensitive data useful for mechanical engineers. Assigning this role will trigger the assignment of several **single roles**, each one giving one access right.
 
 Technically speaking, each access right is granted via a membership to a specific Active Directory group. Thus Identity Manager also contains a **navigation rule** that gives this group membership to any user owning this single role.
 
-In our example, each access right corresponds to an AD group membership, but it could be any entitlement in any external system.
+In this example, each access right corresponds to an AD group membership, but it could be any entitlement in any external system.
 
 For Mr. James to get the access rights that he needs, there are several options:
 
@@ -37,11 +37,11 @@ title "Mechanical Engineer", so Mr. James will get the role on his first day.
 
 As the needed access rights involve the AD, Mr. James also needs to own an AD account which will be linked to its identity in Identity Manager via **correlation rules**.
 
-Once the requests for the role and the account are approved, Identity Manager can **connect** to the Active Directory and create Mr. James' account and add it to the proper groups, via **provisioning rules**.
+After the requests for the role and the account are approved, Identity Manager can **connect** to the Active Directory and create Mr. James' account and add it to the proper groups, via **provisioning rules**.
 
 ### Governance
 
-Once the role model is well underway, Identity Manager can compare **existing** access rights to **expected** access rights. Thus, Identity Manager makes sure that Mr. James always has all the entitlements he needs in order to work, but not more to prevent security breaches.
+When the role model is well underway, Identity Manager can compare **existing** access rights to **expected** access rights. Thus, Identity Manager makes sure that Mr. James always has all the entitlements he needs to work, but not more to prevent security breaches.
 
 ## Next Steps
 

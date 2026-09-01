@@ -54,7 +54,7 @@ Run this job group at 1:00 AM.
 
 **History Retention**
 
-History retention should not be enabled on this job group. History is kept through analysis tasks.
+History retention shouldn't be enabled on this job group. History is kept through analysis tasks.
 Modify the following analysis tasks to customize the amount of history which is kept:
 
 | Job Name             | Analysis Task Name    | Default History |
@@ -82,13 +82,13 @@ following exceptions:
 The 1. HUB Metrics Job Group should be run with the default analysis configurations.
 
 :::warning
-Most of these analysis tasks are preconfigured and should not be modified or
+Most of these analysis tasks are preconfigured and shouldn't be modified or
 deselected. There are a few which are deselected by default, as they are for troubleshooting
 purposes.
 :::
 
 
-The following analysis tasks should not be deselected, but their parameters can be modified:
+The following analysis tasks shouldn't be deselected, but their parameters can be modified:
 
 - **0. Collection** > **EX_MetricsCollection** Job – **08. SET HISTORY RETENTION** Analysis Task
 - **0. Collection** > **EX_MetricsDetails** Job – **02. SET HISTORY RETENTION** Analysis Task

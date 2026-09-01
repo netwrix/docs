@@ -36,9 +36,9 @@ many rows as required while entering data.
 4. Click **Custom Display Types** in the left pane.
 5. On the **Custom Display Types** page, click **Add** on the **Custom Display Types** tab.
 6. On the **New Display Type** pane, enter a name for the display type and select _Multiline
-   Textbox_ in the **Type** drop-down list.
-   You cannot change the name of a custom display type once you have created it.
-7. In the **Rows** box, type or select a value to specify the number of rows the multiline textbox
+   Textbox_ in the **Type** dropdown list.
+   You can't change the name of a custom display type after you have created it.
+7. In the **Rows** box, type, or select a value to specify the number of rows the multiline textbox
    display type should have. These rows make up the on-screen length of the textbox. Users can use
    the _Enter_ key to add as many rows as required while entering data.
 8. Click **OK**.

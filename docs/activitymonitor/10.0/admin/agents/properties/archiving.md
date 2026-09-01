@@ -23,7 +23,7 @@ is disabled by default.
 - Disk Quota — Maximum disk space the agent is allowed to use on the server it is installed on (at
   least 100MB) – Select the number of megabytes or gigabytes. The default is 5 GB.
 - Archive log files on this computer – Select to archive the logs on the server hosting this
-  activity agent. When archiving is enabled, this is the default selection. Click Configure to open
+  activity agent. When you enable archiving, the system defaults to this option. Click Configure to open
   the Configure a network share on this computer window and provide the following information:
 
 ![Popup window for Configure a network share on this computer option](/images/activitymonitor/9.0/admin/agents/properties/archivingtabconfigure.webp)

@@ -49,7 +49,7 @@ The Actions section at the top has five options:
 
 - Execute Action – Opens the Action Execution window and starts executing the selected action
 
-    - Does not require an action task to be checked, only selected
+    - Doesn't require an action task to be checked, only selected
 
 ![Buttons at the bottom of Action Selection page](/images/accessanalyzer/12.0/admin/jobs/job/configure/actionselectiontablebuttons.webp)
 

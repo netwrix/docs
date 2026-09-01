@@ -6,8 +6,7 @@ sidebar_position: 90
 
 # Get Token
 
-This API generates a token for a user to access the Directory Manager APIs. This API is also used to
-get a valid token in case the token expires in a session.
+This API generates a token for a user to access the Directory Manager APIs. You can also use this API to get a valid token if the token expires in a session.
 
 ## Endpoint
 

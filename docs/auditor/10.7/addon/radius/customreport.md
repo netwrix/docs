@@ -11,8 +11,6 @@ additional script, **Netwrix_Auditor_Saved_Search_for_RADIUS_Server_Logons.ps1**
 the add-on and creates the RADIUS server logons since yesterday custom search-based report in the
 Auditor client.
 
-Follow the steps to create a custom report with the script.
-
 **Step 1 –** Copy the **Netwrix_Auditor_Saved_Search_for_RADIUS_Server_Logons.ps1** script to the
 Auditor Server.
 

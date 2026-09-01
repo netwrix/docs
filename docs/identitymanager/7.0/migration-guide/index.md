@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Migration Guide
 
-This guide is designed to provide step-by-step procedures in order to migrate Identity Manager from your current version to the latest one.
+This guide is designed to provide step-by-step procedures to migrate Identity Manager from your current version to the latest one.
 
 :::note
  For the latest SaaS versions, if you are using the administrator scaffolding the necessary permissions for the update are added to the administrator scaffolding and they will be taken into account the next time the configuration is deployed. 
@@ -41,7 +41,7 @@ This guide is designed to provide step-by-step procedures in order to migrate Id
 
 ## Specific Information to Migrate from v6.1 to vsaas
 
-If you are looking to upgrade the Netwrix Identity Manager version from 6.1 to saas you will not need to take any action because the database will automatically be upgraded. If you have problems importing your configuration into saas related to C# expressions, please run the Identity Usercube-Check-ExpressionsConsistency tool. See the [Usercube-Check-ExpressionsConsistency](../integration-guide/executables/references/check-expressionsconsistency) topic for additional information.
+If you are looking to upgrade the Netwrix Identity Manager version from 6.1 to saas you will not need to take any action because the database will automatically be upgraded. If you have problems importing your configuration into saas related to C# expressions, run the Identity Usercube-Check-ExpressionsConsistency tool. See the [Usercube-Check-ExpressionsConsistency](../integration-guide/executables/references/check-expressionsconsistency) topic for additional information.
 
 ## Specific Information to Migrate from v6.0 to v6.1
 

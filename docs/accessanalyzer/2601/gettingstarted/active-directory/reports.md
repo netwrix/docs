@@ -10,7 +10,7 @@ After the first Active Directory scan completes, the **AD Scan Summary** dashboa
 
 ## AD Scan Summary
 
-The dashboard is organized into four sections: a summary row at the top, a **Users** section, a **Groups** section, and an **All Risks** section.
+The dashboard has four sections: a summary row at the top, a **Users** section, a **Groups** section, and an **All Risks** section.
 
 ### Summary row
 

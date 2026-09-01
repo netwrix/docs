@@ -65,8 +65,8 @@ You should also provide links to the appropriate topics based on the user's role
 
 ## Resource Ownership Configuration
 
-It is possible to enable business owners and data custodians to manage their resources through the
-application. Also, ownership of resources must be assigned in order to use the Resource Reviews and
+You can enable business owners and data custodians to manage their resources through the
+application. You must also assign ownership of resources to use the Resource Reviews and
 Access Requests workflows.
 
 - Resource Ownership — Assign ownership for resources to be managed through the application. See the
@@ -77,8 +77,8 @@ Access Requests workflows.
 
 ## Resource Review Workflow
 
-The Access Information Center can be configured to run Resource Reviews, or attestations. All
-resources to be included in reviews must be assigned owners on the Resource Owners interface. The
+You can configure the Access Information Center to run Resource Reviews, or attestations. You must assign owners on the Resource Owners interface for all
+resources that you want to include in reviews. The
 workflow consists of:
 
 - Resource Reviews — Configure reviews for Access, Membership, Permissions, or Sensitive Data

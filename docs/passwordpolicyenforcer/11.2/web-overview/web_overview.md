@@ -21,13 +21,13 @@ server in a DMZ for extra security, then consider using Netwrix Password Reset i
 Policy Enforcer Web.
 
 Password Reset also lets users change their password from a web browser, but it has many other
-features including the ability to work in a DMZ without any domain controllers. Use Password Reset
+features, including working in a DMZ without any domain controllers. Use Password Reset
 if you need to:
 
-- Users can reset a forgotten password or unlock their account by answering questions about
-  themselves, such as their date of birth, first pet's name, etc. Users can access APR from the web
-  browser, or from the Windows Logon and Unlock screens if the APR Client is installed.
-- Send e-mail alerts to users whenever their account is used in the password management system.
+- Let users reset a forgotten password or unlock their account by answering questions about
+  themselves, such as their date of birth, first pet's name, etc. Users can access Password Reset
+  from a web browser, or from the Windows Logon and Unlock screens if you install the Password Reset Client.
+- Send e-mail alerts to users whenever someone uses their account in the password management system.
 - Keep a detailed, searchable audit log of all user activity.
 - Separate the web server from he internal network for extra security.
 

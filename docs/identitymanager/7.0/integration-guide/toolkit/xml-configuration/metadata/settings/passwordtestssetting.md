@@ -24,5 +24,5 @@ The following example encourages users to choose a strong password with at least
 |Property|Details|
 |---|---|
 | Identifier <span class="optionalAttribute">default value: PasswordTests</span> | **Type:** String **Description:** Unique identifier of the setting. |
-| PasswordRegex optional | **Type:** String **Description:** Regular expression(s) (regex) that users' passwords must match to be acceptable when set manually. When setting several regex, passwords must match all of them to be considered strong, and 70% to be considered average. Below that, a password is considered weak and cannot be confirmed.**Default value:** `'^..*$', '^...*$', '^....*$', '^.....*$', '^......*$', '^.......*$', '^........*$', '^.........*$', '^..........*$', '^.*[0-9].*$', '^.*[a-z].*$', '^.*[A-Z].*$', '^.*[^A-Za-z0-9].*$'` |
+| PasswordRegex optional | **Type:** String **Description:** Regular expressions (regex) that users' passwords must match to be acceptable when set manually. When setting several regex, passwords must match all of them to be considered strong, and 70% to be considered average. Below that, a password is considered weak and can't be confirmed.**Default value:** `'^..*$', '^...*$', '^....*$', '^.....*$', '^......*$', '^.......*$', '^........*$', '^.........*$', '^..........*$', '^.*[0-9].*$', '^.*[a-z].*$', '^.*[A-Z].*$', '^.*[^A-Za-z0-9].*$'` |
 

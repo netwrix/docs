@@ -95,7 +95,7 @@ associated with your data source.
 
 To add, modify, and remove items, you must have the Global administrator role in the product
 or the **Configurator** role on the plan. See the
-[Role-Based Access and Delegation](/docs/auditor/10.9/admin/monitoringplans/delegation.md)topic for additional information.
+[Role-Based Access and Delegation](/docs/auditor/10.9/admin/monitoringplans/delegation.md) topic for additional information.
 
 To add a new item to a data source:
 

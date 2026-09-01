@@ -6,9 +6,9 @@ sidebar_position: 70
 
 # Compliance Reports
 
-For your convenience, besides grouping by data source the reports are grouped by compliance
-standards. Auditor provides out-of-box reports that allow validating compliance with different
-standards and regulations, including but not limited to:
+For your convenience, in addition to grouping by data source, Auditor groups the reports by
+compliance standards. Auditor provides out-of-box reports that allow validating compliance with
+different standards and regulations, including but not limited to:
 
 - FERPA
 - FISMA/NIST SP800-53 rev4
@@ -21,8 +21,8 @@ standards and regulations, including but not limited to:
 - SOX
 - CJIS
 
-Each compliance folder provides overview on a selected standard, to read it, click on the folder
-name. Click Read More to learn more about mapping between these standards and Auditor reports.
+Each compliance folder provides an overview of a selected standard; click the folder name to open
+it. Click Read More to review how these standards map to Auditor reports.
 
 In the report filters, select a monitoring plan you want to generate a report for. To review data
 sources and items included in each plan, navigate to the Monitoring Plans section.

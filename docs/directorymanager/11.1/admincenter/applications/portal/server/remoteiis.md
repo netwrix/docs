@@ -27,7 +27,7 @@ When creating a portal’s deployment instance in remote IIS, you have to provid
 You also have to provide an IIS application name, select a site to host the portal instance, and
 specify the Data service and Security service the instance should use.
 
-Once the instance is created, you can view these settings but you cannot modify them.
+After the instance is created, you can view these settings but you can't modify them.
 
 To view deployment settings:
 
@@ -38,7 +38,7 @@ To view deployment settings:
 2. Click the ellipsis button for a portal and select **Settings**.
 3. Click **Deployments** under **Server Settings**; the **Deployment Settings** page is displayed.
    Click the **Remote IIS** tab.
-4. On the **Remote IIS** tab, the **Select Application Deployment** drop-down list displays all
+4. On the **Remote IIS** tab, the **Select Application Deployment** dropdown list displays all
    portal instances deployed in remote IIS. Select an instance to view its settings.
 5. On the **Deployment Configurations** tab, you can view the API URL, access token, and
    credentials. You can also view the name of the portal application in remote IIS, the site where

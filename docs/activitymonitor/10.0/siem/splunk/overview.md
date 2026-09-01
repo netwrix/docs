@@ -28,7 +28,7 @@ After downloading the Netwrix File Activity Monitor App for Splunk from [Splunkb
 Splunk to install the app.
 
 :::note
-In order to use the Ransomware dashboard within the app, install
+to use the Ransomware dashboard within the app, install
 [Splunk User Behavior Analytics](https://www.splunk.com/en_us/products/premium-solutions/user-behavior-analytics.html)
 (any version) and the [Machine Learning Toolkit](https://splunkbase.splunk.com/app/2890/) app for
 Splunk (version 2.0.0+).
@@ -41,7 +41,7 @@ configured to receive data from either theActivity Monitor or Threat Prevention.
 
 ## Initial Configuration of the Splunk App
 
-Follow the steps to configure Splunk to receive data from Netwrix products.
+To configure Splunk to receive data from Netwrix products, complete the following steps:
 
 **Step 1 –** Determine the IP Address of the Splunk Console, e.g. run the ifconfig command. This
 information is required for the following sections:
@@ -58,7 +58,7 @@ information is required for the following sections:
 **Step 3 –** Select UDP.
 
 **Step 4 –** Click New and add a new data input with Port 514. If another Splunk UDP input is
-already using 514, another value (515 or higher) can be used as long as it is not blocked by the
+already using 514, another value (515 or higher) can be used as long as it isn't blocked by the
 network. Remember to configure the port within the Netwrix product configuration to align with
 this change.
 
@@ -73,7 +73,7 @@ this change.
 - Host – Select IP
 - Index – Select Default
 
-**Step 7 –** Review and save the new settings. Remember, prior to using the Netwrix File
+**Step 7 –** Review and save the new settings. Remember, before using the Netwrix File
 Activity Monitor App for Splunk, the related Netwrix products must be configured to send data to
 Splunk.
 

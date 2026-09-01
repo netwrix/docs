@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Exchange Online Auditing Configuration
 
-It is necessary to register Access Analyzer as a web application to the targeted Microsoft Entra ID,
-formerly Azure Active Directory, in order for Access Analyzer to scan the environment. This
+Register Access Analyzer as a web application in the targeted Microsoft Entra ID, formerly Azure
+Active Directory, so it can scan the environment. This
 generates the Client ID (App ID) and self-signed certificate (Certificate Thumbprint) needed for the
 Connection Profile credentials and/or the Custom Attributes Import Wizard page. See
 [Microsoft Support](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-api-prerequisites-azure-portal)
@@ -21,7 +21,7 @@ Microsoft Entra ID.
 
 **Configuration Settings from the Registered Application**
 
-The following settings are needed from your tenant once you have registered the application:
+The following settings are needed from your tenant after you register the application:
 
 - Client ID – This is the Application (client) ID for the registered application
 - Tenant name – This is the primary domain name of the Microsoft Entra tenant
@@ -30,9 +30,9 @@ The following settings are needed from your tenant once you have registered the 
 
 Configure Modern Authentication for Exchange Online using EX_RegisterAzureAppAuth Instant Job
 
-Registering a Microsoft Entra ID application and provisioning it to grant permissions to Exchange
-Online can be automated using the EX_RegisterAzureAppAuth job from the Access Analyzer Instant Job
-Library. The EX_RegisterAzureAppAuth job uses the PowerShell Data Collector to automatically
+You can automate registering a Microsoft Entra ID application and provisioning it to grant
+permissions to Exchange Online using the EX_RegisterAzureAppAuth job from the Access Analyzer
+Instant Job Library. The EX_RegisterAzureAppAuth job uses the PowerShell Data Collector to automatically
 configure modern authentication for Exchange Online. It requires:
 
 - A Connection Profile containing a Microsoft Entra ID Global Admin credential with an Account Type
@@ -48,7 +48,7 @@ configure modern authentication for Exchange Online. It requires:
 - Azure AD PowerShell module installed on targeted hosts
 
     :::note
-    If the module is not already installed, the job will attempt to install it.
+    If the module isn't already installed, the job will attempt to install it.
     :::
 
 
@@ -58,7 +58,7 @@ configure modern authentication for Exchange Online. It requires:
         Install-Module AzureAD
         ```
 
-    - TLS 1.2 is required for the Azure AD PowerShell module. Run the following command to configure
+    - You need TLS 1.2 for the Azure AD PowerShell module. Run the following command to configure
       it:
 
         ```
@@ -107,12 +107,12 @@ The following permissions are required:
 
 ## Create Self–Signed Certificate
 
-A self signed certificate needs to be created on the Access Analyzer console server. This is used by
-Access Analyzer to connect to the Microsoft Entra tenant.
+Create a self-signed certificate on the Access Analyzer console server. Access Analyzer uses this
+certificate to connect to the Microsoft Entra tenant.
 
 Follow the steps create the self-signed certificate.
 
-**Step 1 –** To generate a certificate, use the sample PowerShell command below:
+**Step 1 –** To generate a certificate, use the following sample PowerShell command:
 
 - Change the following parameters in the sample PowerShell command. See the Microsoft
   [New-SelfSignedCertificate](https://docs.microsoft.com/en-us/powershell/module/pki/new-selfsignedcertificate)
@@ -122,9 +122,9 @@ Follow the steps create the self-signed certificate.
       certificate
     - Subject – A unique name for the new App (always starts with CN=, to denote a canonical name)
     - FriendlyName – Same as Subject name minus the canonical name prefix
-    - NotAfter – A datetime string denoting the certificate's expiration date - in the above sample,
-      Get-Date.AddYears(11) specifies that the certificate will expire 11 years from the current
-      datetime
+    - NotAfter – A datetime string denoting the certificate's expiration date - in the following
+      sample, Get-Date.AddYears(11) specifies that the certificate will expire 11 years from the
+      current datetime
 
 Example PowerShell:
 
@@ -138,7 +138,7 @@ $certPath variable (see Step 1).
 
 :::note
 The environment variable `SAINSTALLDIR` always points to the base Access Analyzer install
-directory; simply append the PrivateAssemblies to point to that folder with the following cmdlet:
+directory; append the PrivateAssemblies to point to that folder with the following cmdlet:
 :::
 
 
@@ -167,15 +167,15 @@ Export-PfxCertificate -Cert $cert -FilePath "$($env:SAINSTALLDIR)PrivateAssembli
   [Export-PfxCertificate](https://docs.microsoft.com/en-us/powershell/module/pki/export-pfxcertificate)
   article for additional information.
 
-The self signed certificate has been created. The next steps are to create a Microsoft Entra ID
+You've created the self-signed certificate. The next steps are to create a Microsoft Entra ID
 application and then upload this certificate to it.
 
 ## Register a Microsoft Entra ID Application
 
-Follow the steps to register Access Analyzer with Microsoft Entra ID.
+Register Access Analyzer with Microsoft Entra ID.
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+The following steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -197,14 +197,14 @@ registrations.
 **Step 5 –** Click **Register**.
 
 The Overview page for the newly registered app opens. Review the newly created registered
-application. Now that the application has been registered, permissions need to be granted to it.
+application. Now that you've registered the application, grant it permissions.
 
 ## Upload Self-Signed Certificate
 
 Follow the steps upload your self-signed certificate.
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+The following steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -225,17 +225,17 @@ Optionally add a Description.
 
 **Step 6 –** Click **Add**.
 
-The Certificate Thumbprint of this uploaded certificate is needed for the Access Analyzer Connection
+You need the Certificate Thumbprint of this uploaded certificate for the Access Analyzer Connection
 Profile. See the
 [Exchange Modern Authentication for User Credentials](/docs/accessanalyzer/12.0/admin/settings/connection/create/exchangemodernauth.md)
 topic for additional information.
 
 ## Grant Permissions to the Registered Application
 
-Follow the steps to grant permissions to the registered application.
+Grant permissions to the registered application.
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+The following steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -264,15 +264,15 @@ uses tab to find and select Office 365 Exchange Online. Select the following per
 **Step 6 –** Click **Grant Admin Consent for [tenant]**. Then click **Yes** in the confirmation
 window.
 
-Now that the permissions have been granted to it, the Connection Profile and host settings for
-Access Analyzer need to be collected.
+Now that you've granted the permissions, collect the Connection Profile and host settings for
+Access Analyzer.
 
 ## Identify the Tenant's Name
 
-Follow the steps to find the Tenant Name where the registered application resides.
+Find the Tenant Name where the registered application resides.
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+The following steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -287,16 +287,16 @@ names** to open the Custom domain names list.
 
 **Step 4 –** Save this value in a text file.
 
-This is needed for the Access Analyzer Connection Profile. See the
+You need this for the Access Analyzer Connection Profile. See the
 [Exchange Modern Authentication for User Credentials](/docs/accessanalyzer/12.0/admin/settings/connection/create/exchangemodernauth.md)
 topic for additional information. Next identify the application’s Client ID.
 
 ## Identify the Client ID
 
-Follow the steps to find the registered application's Client ID.
+Find the registered application's Client ID.
 
 :::note
-The steps below are for registering an app through the Microsoft Entra admin center. These
+The following steps are for registering an app through the Microsoft Entra admin center. These
 steps may vary slightly if you use a different Microsoft portal. See the relevant Microsoft
 documentation for additional information.
 :::
@@ -310,6 +310,6 @@ list.
 
 **Step 3 –** Save this value in a text file.
 
-This is needed for the Access Analyzer Connection Profile. See the
+You need this for the Access Analyzer Connection Profile. See the
 [Exchange Modern Authentication for User Credentials](/docs/accessanalyzer/12.0/admin/settings/connection/create/exchangemodernauth.md)
 topic for additional information.

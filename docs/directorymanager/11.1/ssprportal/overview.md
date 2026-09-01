@@ -7,7 +7,7 @@ sidebar_position: 60
 # Welcome to the SSPR Portal
 
 A Self-Service Password Reset portal (SSPR) is a type of Directory Manager portal that only
-facilitates password-related functions. It enables users to manage their directory account
+facilitates password-related functions. Users can manage their directory account
 passwords, i.e., the password for the account they use to access their workstations and other
 Microsoft services.
 
@@ -36,7 +36,7 @@ GroupID page lists the following functions:
 You can either click a function and then sign in to perform that function or first sign in and then
 select a function.
 
-- Click a link to perform the specific function. Since you are not signed in, you will be redirected
+- Click a link to perform the specific function. Since you aren't signed in, you will be redirected
   to the GroupID Authenticate page. See the [Log in](/docs/directorymanager/11.1/portal/login.md#log-in) topic for signing
   into the portal. Then you can proceed to perform the specific function. See the
   [Manage your Identity Store Accounts](/docs/directorymanager/11.1/ssprportal/functions.md) topic for a discussion of these functions.

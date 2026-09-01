@@ -9,7 +9,7 @@ sidebar_position: 20
 On the Manual Host Entry page of the Host List Wizard, the **Import** option allows hosts to be
 imported from either a CSV file or a database into the host list being created.
 
-Follow the steps to import hosts.
+To import hosts:
 
 ![Import option on the Manual Host Entry page of the Host List Wizard](/images/accessanalyzer/12.0/admin/hostmanagement/actions/hostlistwizardimport.webp)
 
@@ -28,11 +28,11 @@ step.
 
 - CSV File
 
-    - File Name – Click the ellipsis (**…**) to open a browser window and select the CSV file. This
-      file needs to be stored on the Access Analyzer Console server. Once selected, a preview of the
-      file is shown in the preview box.
-    - Includes header row – Select this checkbox if the file contains a header row. Otherwise, the
-      header row will be included in the import (visible within the preview box).
+    - File Name – Click the ellipsis (**…**) to open a browser window and select the CSV file. You
+      must store this file on the Access Analyzer Console server. After you select the file, Access
+      Analyzer shows a preview in the preview box.
+    - Includes header row – Select this checkbox if the file contains a header row. Otherwise, Access Analyzer
+      includes the header row in the import (visible within the preview box).
 
 ![Import Hosts window for importing from Database](/images/accessanalyzer/12.0/admin/hostmanagement/actions/importhostsdatabase.webp)
 
@@ -45,15 +45,15 @@ step.
       information.
 
         :::note
-        The Provider, Advanced, and All tabs of the Data Link Properties window should not
-        be modified.
+        Don't modify the Provider, Advanced, and All tabs of the Data Link Properties
+        window.
         :::
 
 
-    - Table – Use the dropdown to select the table that contains the hosts to be imported. A preview
-      of the selected table is displayed in the preview box.
+    - Table – Use the dropdown to select the table that contains the hosts to import. Access Analyzer displays a preview
+      of the selected table in the preview box.
 
-**Step 4 –** Use either the drop-down menu or click on the column in the preview box to select the
+**Step 4 –** Use either the dropdown menu or click the column in the preview box to select the
 column containing the host names. The selected column is highlighted in the preview box.
 
 **Step 5 –** Click **OK** to complete the import.

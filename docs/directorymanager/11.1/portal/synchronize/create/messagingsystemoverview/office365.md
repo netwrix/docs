@@ -14,19 +14,19 @@ you the facility to sync or deprovision subscriptions from Office 365 messaging 
 While creating or editing a Synchronize job (mailbox-enabled user) you can sync subscriptions from
 Office 365 messaging provider.
 
-On the **Object, Fields and Mapping** page:
+On the **Object, Fields, and Mapping** page:
 
-1. Click **Add Messaging Provider** and select **Office 365** from the drop down list.
+1. Click **Add Messaging Provider** and select **Office 365** from the dropdown list.
 2. Enter domain name in which the mail server resides in the **Domain Name** box.
-3. Type the user name of an authorized user account on the mail server in the **User name** box.
-4. Type the application id in **Application ID** box.
+3. Enter the user name of an authorized user account on the mail server in the **User name** box.
+4. Enter the application id in **Application ID** box.
 5. Enter password of the user mentioned in the User name field in the **Password** box.
 6. Enter **Tenant ID** in the box. Tenant ID is **a globally unique identifier (GUID)** that is
    different than your organization name or domain.
 7. Enter client secret in the **Client Secret** box.
 8. Click **Sync Again**.
 
-    The name of mail server(s) in the given environment populates in the **Server Name** list,
+    The name of mail servers in the given environment populates in the **Server Name** list,
     select your required mail server from the list.
 
 9. Click **Save**.
@@ -52,13 +52,13 @@ On the **Object, Fields and Mapping** page:
     - UsageLocation
     - Password
 
-12. On the **Field Map(s)** section, click the **Transform** button against the:
+12. On the **Field Maps** section, click the **Transform** button against the:
 
     1. the **LicenseAssignment** field.
 
         1. On the **Transform** dialog box, select _Static - assign a static value_ from the **Set
            the destination field to** box.
-        2. Select check box(es) of the required subscription(s) from the list of subscriptions
+        2. Select checkbox(es) of the required subscriptions from the list of subscriptions
            displayed.
         3. Click **Transform**.
 
@@ -99,7 +99,7 @@ On the **Object, Fields and Mapping** page:
         2. Click
            [Auto-Generate Unique, Complex Passwords](/docs/directorymanager/11.1/portal/synchronize/transformation/autogenerateuniquepassword.md).
         3. On the Password Complexity Options dialog box, enter 10 in the **Password Length** box.
-        4. Clear the **Special symbols** check box.
+        4. Clear the **Special symbols** checkbox.
         5. Click **Transform.**
 
     5. Continue with the rest of the pages of the wizard to complete the job.
@@ -109,14 +109,14 @@ On the **Object, Fields and Mapping** page:
 To delete a subscription in an existing job, double click the required job. **Edit job** wizard
 opens.
 
-1. Click **Next** until you reach on the **Filed Map(s)** page of the **Edit job** wizard.
+1. Click **Next** until you reach on the **Filed Maps** page of the **Edit job** wizard.
 2. Click the **Transform** button against the: the **LicenseAssignment** field.
 
     1. On the **Transform** dialog box, select _Static - assign a static value_ from the **Set the
        destination field to** box.
-    2. Select check box(es) of the required subscription(s) you want to remove from the list of
+    2. Select checkbox(es) of the required subscriptions you want to remove from the list of
        subscriptions displayed.
-    3. Select the Deprovisioning check box.
+    3. Select the Deprovisioning checkbox.
     4. Click **Transform**.
 
 3. Click **Finish** or click **Next** if you want to modify a setting on any rest of the pages of

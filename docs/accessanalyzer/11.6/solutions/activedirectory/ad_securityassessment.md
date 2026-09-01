@@ -9,7 +9,7 @@ sidebar_position: 80
 The AD_SecurityAssessment Job performs checks against Active Directory security best practices in
 order to proactively identify critical security configurations that leave Active Directory
 vulnerable to attack. The result are reports that provide a listing of findings by severity and
-category with corresponding details that can be used to prioritize and remediate security issues.
+category with corresponding details. Use these details to prioritize and remediate security issues.
 
 ![AD Security Assessment Job](/images/accessanalyzer/11.6/solutions/activedirectory/securityassessmentjobstree.webp)
 
@@ -51,14 +51,14 @@ One or more of the following job groups or jobs must be run to produce results:
     - Windows > Privileged Accounts > Service Accounts > SG_ServiceAccounts
 
 :::note
-If any of the above jobs are not completed, the AD_SecurityAssessment job will run but all
+If any of the preceding jobs aren't completed, the AD_SecurityAssessment job will run but all
 checks will not be assessed.
 :::
 
 
 **Target Host**
 
-This job group does not collect data. No target host is required.
+This job group doesn't collect data. No target host is required.
 
 **Connection Profile**
 
@@ -70,11 +70,11 @@ Scheduled to run as desired
 
 **History Retention**
 
-History is not supported. Turning on history will cause issues with data analysis and reporting.
+History isn't supported. Turning on history will cause issues with data analysis and reporting.
 
 **Multi-console Support**
 
-Multiple StealthAUDIT consoles are not supported. This job should be run from a single StealthAUDIT
+Multiple StealthAUDIT consoles aren't supported. This job should be run from a single StealthAUDIT
 console.
 
 ## Analysis Task for the AD_SecurityAssessment Job
@@ -83,7 +83,7 @@ Navigate to the **Jobs** > Active Directory > AD_SecurityAssessment > Configure 
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

@@ -6,15 +6,15 @@ sidebar_position: 120
 
 # Linux Generic Syslog
 
-The add-on works in collaboration with Netwrix Auditor, supplying data about activity on your Linux-based devices. Aggregating data into a single audit trail simplifies analysis, makes activity monitoring more cost effective, and helps you keep tabs on your IT infrastructure.
+The add-on works in collaboration with Netwrix Auditor, supplying data about activity on your Linux-based devices. Aggregating data into a single audit trail simplifies analysis, makes activity monitoring more cost effective, and helps you monitor your IT infrastructure.
 
-Implemented as a service, this add-on facilitates the data transition from Linux-based systems to Netwrix Auditor. All you have to do is provide connection details and specify parsing rules.
+Implemented as a service, this add-on facilitates the data transition from Linux-based systems to Netwrix Auditor. To set it up, provide connection details and specify parsing rules.
 
 On a high level, the add-on works as follows:
 
 **Step 1** – The add-on listens to the specified UDP ports and captures designated Syslog messages.
 
-**Step 2** – Out of the box, messages from Red Hat Enterprise Linux 6, 7, 8, 9, SUSE Linux Enterprise Server 12, openSUSE 42, and Ubuntu 16 are supported. For other distributions, deployment of the rsyslog package may be required. You can edit the add-on configuration to extend the captured message list.
+**Step 2** – By default, the add-on supports messages from Red Hat Enterprise Linux 6, 7, 8, 9, SUSE Linux Enterprise Server 12, openSUSE 42, and Ubuntu 16. For other distributions, deployment of the rsyslog package may be required. You can edit the add-on configuration to extend the captured message list.
 
 **Step 3** – The add-on processes these events into Netwrix Auditor-compatible format (Activity Records). Each Activity Record contains the user account, action, time, and other details.
 
@@ -44,7 +44,7 @@ Before running the add-on, ensure that all the necessary components and policies
 ### On the target syslog-based platform
 
 - Outbound UDP **514** port must be enabled.
-- The **Syslog daemon** must be configured to redirect events. The procedure below explains how to configure redirection.
+- The **Syslog daemon** must be configured to redirect events. The following procedure explains how to configure redirection.
 
 **NOTE:** The deployment of the rsyslog package may be required.
 

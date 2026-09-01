@@ -11,14 +11,13 @@ same folder as **SyslogService.exe.**
 
 To change the add-on logging level, use the **LogLevel** parameter in the **Settings.xml** file.
 
-- It is recommended that before the first run you set this parameter to `debug`. This will
-  facilitate operations tracking and possible problem solving.
-- After that it is strongly recommended to re-set this parameter to `error` to prevent the
-  uncontrolled log growth.
+- Before the first run, set this parameter to `debug`. This makes it easier to track operations and
+  troubleshoot problems.
+- After that, reset this parameter to `error` to prevent uncontrolled log growth.
 
-If you cannot see collected data in Auditor, check the following:
+If you can't see collected data in Auditor, check the following:
 
-1. In Auditor settings, go to the **Integrations** section and make sure the **Leverage Integration
+1. In Auditor settings, go to the **Integrations** section and ensure the **Leverage Integration
    API** is switched to **ON**. Check the communication port number – default is **9699**.
-2. If you configured a dedicated monitoring plan, make sure data source monitoring is enabled.
+2. If you configured a dedicated monitoring plan, ensure data source monitoring is enabled.
 3. Verify the parameters you provided in **Settings.xml** and **dbparam.ini**.

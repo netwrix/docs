@@ -10,7 +10,8 @@ The AD_KerberoastingRisk job identifies accounts vulnerable to kerberoasting. Ke
 threat where attackers target service accounts in Active Directory to steal their passwords.
 
 In a kerberoasting attack, attackers request service tickets (TGS) for service accounts from the Key
-Distribution Center (KDC). These tickets are encrypted with the service account's password hash.
+Distribution Center (KDC). Active Directory encrypts these tickets with the service account's
+password hash.
 Attackers attempt to crack these hashes offline to reveal the passwords for the service accounts.
 
 Encryption types vulnerable to kerberoasting include RC4 and DES. AES-128 can also be considered
@@ -22,7 +23,7 @@ article for additional information on kerberoasting.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
@@ -43,7 +44,7 @@ Navigate to the **Active Directory** > **5.Domains** > **AD_KerberoastingRisk** 
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -54,9 +55,9 @@ The default analysis tasks are:
 
 - Kerberoasting Details – Provides details on accounts vulnerabilities to Kerberoasting
 
-    - This task uses three customizable parameters. These allow you to optionally consider AES-128
-      as a weak encryption type, consider Password Never Expires as being easily crackable, and
-      include disabled user accounts. See the
+    - This task uses three customizable parameters. Use these parameters to optionally consider
+      AES-128 as a weak encryption type, consider Password Never Expires as being easily crackable,
+      and include disabled user accounts. See the
       [Parameter Configuration](#parameter-configuration) topic for additional information.
 
 - Kerberoasting Summary – Summarizes accounts by domain with counts for multiple vulnerabilities

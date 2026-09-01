@@ -28,7 +28,7 @@ Use the following command to enable HTTPS:
 options httpd.admin.ssl.enable on
 ```
 
-Check HTTP Status:
+Check HTTPS Status:
 
 ```
 options httpd.admin.ssl.enable

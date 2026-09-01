@@ -15,25 +15,25 @@ configuring email groups and health service notifications. Review the following 
 
 ## Email Servers
 
-Email servers can be configured to enable external communication. For instance when the health
+Configure email servers to enable external communication. For example, when the health
 service identifies an issue.
 
-Servers can be amended post configuration by selecting Edit, or, new SMTP servers can be added by
-selecting Add Email Server Configuration.
+Edit existing servers by selecting **Edit**, or add new SMTP servers by
+selecting **Add Email Server Configuration**.
 
 ![configemailservers](/images/dataclassification/5.6.2/configuration/configemailservers.webp)
 
 The SMTP details should be entered based on the values provided by your network team. Each
 configuration supports both SSL enabled SMTP servers, and those without SSL enabled.
 
-It is also possible to supply a test email address which will be used to test the configuration
+Optionally, supply a test email address to test the configuration
 settings.
 
 ![configemailserveradd](/images/dataclassification/5.6.2/configuration/configemailserveradd.webp)
 
 ## Email Groups
 
-Email groups are used to define a logical group of people to email, essentially – a mailing list.
+Email groups define a logical group of people to email — essentially a mailing list.
 
 Each email group is linked to an SMTP server, so, before configuring an email group, you must
 configure your Email Servers.
@@ -43,24 +43,23 @@ members.
 
 ![configaddemailgroup](/images/dataclassification/5.6.2/configuration/configaddemailgroup.webp)
 
-Each group can have one or more members, and can be assigned a friendly name, which will be
-displayed when selecting an email group.
+Each group can have one or more members and a friendly name. The system displays this name when you select an email group.
 
 ## Health Service Notifications
 
-Health Service Notifications can be configured to email a specific group of people when something
-goes wrong within the product. Each notification configuration is linked to an email group, so,
-before configuring notifications, you must configure your Email Groups.
+Configure Health Service Notifications to email a specific group of people when an issue
+occurs in the product. Each notification configuration links to an email group, so
+configure your Email Groups before configuring notifications.
 
 To add a new notification configuration select Add Notification Configuration, or select Edit on
 each row to change the configuration.
 
 ![confighealthnotifications_thumb_0_0](/images/dataclassification/5.6.2/configuration/confighealthnotifications_thumb_0_0.webp)
 
-Notifications can be set to trigger on warnings, or just on errors – by default problems of any
-level will be reported.
+Set notifications to trigger on warnings or errors. By default, the system reports problems at any
+level.
 
-The Daily Summary can also be disabled / enabled, this functionality sends out a summary email of
+You can enable or disable the Daily Summary. When enabled, this feature sends a summary email of
 outstanding problems each morning.
 
 ![configaddhealthnotification](/images/dataclassification/5.6.2/configuration/configaddhealthnotification.webp)

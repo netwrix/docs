@@ -6,7 +6,7 @@ sidebar_position: 60
 
 # Security Utilities Job Group
 
-The Security Utilities job group is designed to reveal all open ports along with the associated
+The Security Utilities job group reveals all open ports along with the associated
 executable on the targeted systems. The job remotely executes a netstat command on the target hosts
 and collects the results for reporting.
 
@@ -15,9 +15,9 @@ and collects the results for reporting.
 The jobs and job groups in the Security Utilities job group are:
 
 - [OpenPortScan Job Group](/docs/accessanalyzer/11.6/solutions/windows/securityutilities/openportscan/overview.md)
-  – Reveals all open ports along with the associated executable on the targeted systems leveraging
-  the jobs within this group. This is accomplished through remotely executing a netstat command on
-  the target hosts and collecting the results for reporting.
+  – Reveals all open ports along with the associated executable on the targeted systems using
+  the jobs within this group. It remotely executes a netstat command on
+  the target hosts and collects the results for reporting.
 - [SG_PowerShellCommands Job](/docs/accessanalyzer/11.6/solutions/windows/securityutilities/sg_powershellcommands.md)
-  – This job highlights instances where suspicious PowerShell commands have been found in a host’s
+  – This job highlights suspicious PowerShell commands found in a host’s
   PowerShell log

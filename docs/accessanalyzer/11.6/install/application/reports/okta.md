@@ -8,7 +8,7 @@ sidebar_position: 90
 
 Create an Enterprise Auditor Application in Okta Using the WS-Fed Template
 
-Follow the steps to create an Enterprise Auditor Application in Okta Using the WS-Fed Template:
+To create an Enterprise Auditor Application in Okta using the WS-Fed template:
 
 **Step 1 –** Log in to Okta.
 
@@ -28,12 +28,12 @@ Retrieve the Values to Paste into the Enterprise Auditor WebServer.exe.config Fi
 
 **Step 1 –** In the Enterprise Auditor application, click the **Sign On** tab.
 
-**Step 2 –** Right click on the **Identity Provider metadata** link and select **Copy Link Address**
+**Step 2 –** Right click the **Identity Provider metadata** link and select **Copy Link Address**
 to get the value for the WSFederationMetadata URL.
 
 **<add key="WsFederationMetadata" value="INSERT URL HERE" />**
 
-**Step 3 –** Click on the General tab to copy the value for the **Realm**. This value will be unique
+**Step 3 –** Click the General tab to copy the value for the **Realm**. This value will be unique
 per tenant.
 
 `https://www.okta.com/<YOURVALUEHERE>`
@@ -44,7 +44,7 @@ per tenant.
 
 Edit the WebServer.exe.config File
 
-Follow the steps to edit the **WebServer.exe.config** file:
+To edit the **WebServer.exe.config** file:
 
 **Step 1 –** Open the **WebServer.exe.config** file with a text editor, such as Notepad++. It is
 located in the Web folder within the Enterprise Auditor installation.
@@ -110,7 +110,7 @@ to populate the following fields.
 
 ![oktaprofileeditor](/images/accessanalyzer/11.6/install/application/reports/oktaprofileeditor.webp)
 
-**Step 2 –** Navigate to the Directory menu and select **Profile Editor** from the drop-down menu.
+**Step 2 –** Navigate to the Directory menu and select **Profile Editor** from the dropdown menu.
 Click the **Edit Profile** button for the Enterprise Auditor application.
 
 ![Okta Add Attribute button](/images/accessanalyzer/11.6/install/application/reports/oktaaddattribute.webp)
@@ -137,12 +137,12 @@ attribute, click **Save and Add Another**.
 
 ![To Okta option under the Directory Provisioning Tab](/images/accessanalyzer/11.6/install/application/reports/oktadirectoryprovisioningtookta.webp)
 
-**Step 5 –** Navigate to the **Directory** menu and click on the **Provisioning** tab. Click **To
+**Step 5 –** Navigate to the **Directory** menu and click the **Provisioning** tab. Click **To
 Okta**.
 
 ![Okta Show Unmapped Attributes](/images/accessanalyzer/11.6/install/application/reports/oktashowunmappedattributes.webp)
 
-**Step 6 –** Locate and map the attributes that were added for the profile by clicking the
+**Step 6 –** Locate and map the attributes that you added for the profile by clicking the
 **Pencil** icon to edit attributes. To locate the attributes, scroll down and select **Show Unmapped
 Attributes**.
 
@@ -164,7 +164,7 @@ additional information.
 
 ## Setting Up Multi-Factor Authentication
 
-Follow the steps to configure multi-factor-authentication for Enterprise Auditor:
+To configure multi-factor authentication for Enterprise Auditor:
 
 ![Okta MFA App Sign on Rule window](/images/accessanalyzer/11.6/install/application/reports/oktamfaappsignonrule.webp)
 
@@ -180,4 +180,4 @@ opens. Configure the following options:
 **Step 2 –** Scroll down to the Access section. Check the **Prompt for factor** box and select
 **Every Sign On**. Click **Save**.
 
-Multi-Factor Authentication is now configured for Enterprise Auditor.
+You have now configured Multi-Factor Authentication for Enterprise Auditor.

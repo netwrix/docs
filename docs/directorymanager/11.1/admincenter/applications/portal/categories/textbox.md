@@ -13,12 +13,12 @@ to:
 - use regular expressions to validate the data users enter in the text box
 - force users to provide a unique value for the field
 
-## What are Regular Expressions?
+## Regular Expressions
 
 A regular expression is a pattern of text that consists of ordinary characters (for example, letters
 a through z) and special characters, known as metacharacters. You can use regular expressions to
 ensure that users enter data in an input field according to a standard pattern. For example, the
-regular expression for a US phone number of the pattern: (555) 123-4567 will be: ^\(\d\d\d\)
+regular expression for a phone number of the pattern: (555) 123-4567 will be: ^\(\d\d\d\)
 \d\d\d-\d\d\d\d.
 
 To learn about regular expressions and their syntax, see
@@ -90,33 +90,33 @@ A few text box display types used in the default portal template are:
 4. Click **Custom Display Types** in the left pane. The **Custom Display Types** page is displayed.
 5. Click **Add** on the **Custom Display Types** tab.
 6. On the **New Display Type** pane, enter a name for the display type in the **Name** box.  
-   You cannot change the name of a custom display type once you have created it.
-7. Select _Textbox_ in the **Type** drop-down list.
+   You can't change the name of a custom display type after you've created it.
+7. Select _Textbox_ in the **Type** dropdown list.
 8. Specify a value in the **Default Value** box to set it as the default value for the text box.
    Users can modify this value in the portal.
-9. In the **Regular Expression** box, type a regular expression to use for validating data that
-   users enter in the text box using the portal. Leave this box blank if you do not want to apply a
+9. In the **Regular Expression** box, enter a regular expression to use for validating data that
+   users enter in the text box using the portal. Leave this box blank if you don't want to apply a
    validation rule to the data.
 
     1. Click **Test Regular Expression** to check if the regular expression is valid.
-    2. On the **Test Regular Expression** dialog box, type an example that satisfies the regular
+    2. On the **Test Regular Expression** dialog box, enter an example that satisfies the regular
        expression and click **Test**.
 
 10. In the **Error Message** box, enter the text to be displayed as an error message when portal
-    users enter data in the text box that does not conform to the regular expression.
+    users enter data in the text box that doesn't conform to the regular expression.
 11. You can place a real-time validation check to ensure that users enter a unique value for the
     field. Directory Manager can look up the value for uniqueness in the directory or an external
     data source. The portal prevents users from proceeding unless a unique value is provided.
 
-    - Select the **Unique** check box to force the user to enter a value that is unique for the
+    - Select the **Unique** checkbox to force the user to enter a value that is unique for the
       field (attribute) in the directory.
     - You can also use an external data source, such as an Excel file, to validate the uniqueness of
       the value in real time. Use an API to connect to the external data source. Select the
-      **External Validation URL** check box and enter the URL of your API in the box.
+      **External Validation URL** checkbox and enter the URL of your API in the box.
 
     **Example**: Link this text box display type to the group name field on the Create New Group
     page. When a user enters a name for the group, the portal will look up this name for uniqueness
-    in the directory/external data source in real time and display an error message if it is not
+    in the directory/external data source in real time and display an error message if it isn't
     unique.
 
 12. Click **OK**.
@@ -137,7 +137,7 @@ The API returns the following parameters:
 
 | Parameter | Description                                                                                                          |
 | --------- | -------------------------------------------------------------------------------------------------------------------- |
-| status    | Should be ‘true’ (when the attribute value is unique) or ‘false’ (when the attribute value is not unique).           |
+| status    | Should be ‘true’ (when the attribute value is unique) or ‘false’ (when the attribute value isn’t unique).           |
 | message   | (Optional) For the ‘false’ status, you can return an error message in this parameter, that is displayed to the user. |
 | data      | Not in use                                                                                                           |
 

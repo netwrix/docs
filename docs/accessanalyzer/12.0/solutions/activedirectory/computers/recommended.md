@@ -11,22 +11,22 @@ default settings. It can be run directly or scheduled.
 
 **Dependencies**
 
-The **.Active Directory Inventory** Job Group needs to be successfully executed prior to running
+The **.Active Directory Inventory** Job Group needs to be successfully executed before running
 this job group.
 
 **Target Host**
 
-This job group does not collect data. No target host is required.
+This job group doesn't collect data. No target host is required.
 
 **Connection Profile**
 
-This job group does not collect data. No specific Connection Profile is required.
+This job group doesn't collect data. No specific Connection Profile is required.
 
 **Schedule Frequency**
 
-The data analyzed by the 3.Computers Job Group jobs is collected by the .Active Directory Inventory
-Job Group. Therefore, it is recommended to schedule these jobs to run after the .Active Directory
-Inventory job group collection has completed. These jobs can be scheduled to run as desired.
+The .Active Directory Inventory Job Group collects the data that the 3.Computers Job Group jobs
+analyze. Schedule these jobs to run after the .Active Directory Inventory Job Group finishes
+collecting data, and run them as often as needed.
 
 **Run at the Job Group Level**
 
@@ -43,8 +43,8 @@ analysis tasks are preconfigured for this Job Group.
 
 Some analysis tasks have customizable parameters:
 
-- The **Active Directory** > **3.Computers** > **AD_StaleComputers** Job defines stale users. The
-  parameters can be customized.
+- The **Active Directory** > **3.Computers** > **AD_StaleComputers** Job defines stale users. You
+  can customize the parameters.
 
 **Workflow**
 

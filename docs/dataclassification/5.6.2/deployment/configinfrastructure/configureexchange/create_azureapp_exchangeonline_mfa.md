@@ -24,7 +24,7 @@ Netwrix Data Classification and other services.
     2. Go to the **Details** tab.
     3. Select **Copy to File**.
 
-    **NOTE:** Do not export private key.
+    **NOTE:** Don't export private key.
 
     4. Set file type to _DER-encoded CER_.
 
@@ -62,18 +62,18 @@ Azure AD applications can be assigned _Delegated_ or _Application_ permissions:
 For the newly created app, you should use _Application_ permissions.
 
 **NOTE:** By default, a new application is granted one delegated permission for **Microsoft Graph
-API** – **User.Read**. It is not required and can be removed.
+API** – **User.Read**. It isn't required and can be removed.
 
 Do the following:
 
-When found, click on the entry and proceed with adding the necessary permissions. The steps from
+When found, click the entry and proceed with adding the necessary permissions. The steps from
 here on remain the same, so in most cases you would need the Application permissions entry, and the
 relevant set of permissions therein (such as full_access_as_app for EWS OAuth, Exchange.ManageAsApp
 for CBA). Select the relevant entries, hit the Add permissions
 
-1. At the top of the **Request API permissions** pane, click the **APIs my organization uses** tab
+1. At the top of the **Request API permissions** pane, click the **APIs your organization uses** tab
    and search for _Office 365 Exchange Online_.
-2. Click on the _Office 365 Exchange Online_ entry in the list of apps found.
+2. Click the _Office 365 Exchange Online_ entry in the list of apps found.
 3. Proceed with adding the permissions for this app: select **Application permissions** and then
    select **full_access_as_app**.
 4. Click **Add permissions**.

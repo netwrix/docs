@@ -39,11 +39,11 @@ Run Provisioning
 
 Let's analyze the four parts of this example:
 
-- **Settings**: we import here the Telnet library to use the functions defined in it.
-- **Variables**: we define the variable `IPADDRESS` to use it later.
-- **Keywords**: we define a custom function called `Open Telnet Connection`. It will use a function
+- **Settings**: This section imports the Telnet library to use the functions defined in it.
+- **Variables**: This section defines the variable `IPADDRESS` to use it later.
+- **Keywords**: This section defines a custom function called `Open Telnet Connection`. It will use a function
 defined in the Telnet library (called `Open Connection`) and the variable `IPADDRESS` which has been defined before in the `Variables` section.
-- **Test Cases**: we define here the main function which we choose to call `Run Provisioning` (it
+- **Test Cases**: This section defines the main function which you can call `Run Provisioning` (it
 can be named anything), and which will be run when launching the script. It will use the function `Open Telnet Connection`.
 
 Robot Framework needs two spaces between two different instructions to parse them correctly. For example, `Open Connection` consists of only one instruction. Only one space is thus needed between the two words. But, `Open Connection ${IPADDRESS}` consists of two instructions, the function and the parameter. Two spaces are then required to separate `Connection` from `${IPADDRESS}`. To read your script more easily, you could also use the pipe character (`|`) between instructions, like this: `Open Connection | ${IPADDRESS}`.
@@ -137,13 +137,13 @@ See the [Robot Framework User Guide](https://robotframework.org/robotframework/l
 
  | Keyword | Details |
  | --- | --- |
- | Catch Keyword | **Arguments** `Keyword`: Keyword `*args` **Description** Launches `Keyword` with the given arguments `*args` if the keyword launched by `Try Keyword` failed. If `Try Keyword` was not called, this keyword will not do anything. `Catch Keyword` should always be called right after `Try Keyword`. **Example** Try to connect to `Usercube.com`. If the connection fails, restart the browser and try to connect to `Usercube.com`: `Connect to URL    Try Keyword Go To Usercube.com    Catch Keyword Restart Browser At URL Usercube.com` |
- | Generate Password | **Description** Generates a password based on the [Password Reset Settings](../../../integration-guide/toolkit/xml-configuration/connectors/passwordresetsettings) associated to the [Resource Type Mappings](../../../integration-guide/toolkit/xml-configuration/connectors/resourcetypemappings) being provisioned. `Send Password Notification` should always be called after `Generate Password`, preferably right after the password is used. If `Send Password Notification` is not called before the provisioning of the resource is over, it will automatically be called. If multiple passwords should be generated, `Send Password Notification` should be called after each password generation. **Returns** `Password`: string |
- | Get Secure Data | **Arguments** `Attribute`: string `Erase Data`: boolean **Description** Retrieves the secured option `Attribute` from the connector configuration. If `Erase Data` is set to true, the secured option is deleted once it is read. **Example** Get Login option and erase it: ```Get Secure Data | Login | True``` |
+ | Catch Keyword | **Arguments** `Keyword`: Keyword `*args` **Description** Launches `Keyword` with the given arguments `*args` if the keyword launched by `Try Keyword` failed. If `Try Keyword` wasn't called, this keyword will not do anything. `Catch Keyword` should always be called right after `Try Keyword`. **Example** Try to connect to `Usercube.com`. If the connection fails, restart the browser and try to connect to `Usercube.com`: `Connect to URL    Try Keyword Go To Usercube.com    Catch Keyword Restart Browser At URL Usercube.com` |
+ | Generate Password | **Description** Generates a password based on the [Password Reset Settings](../../../integration-guide/toolkit/xml-configuration/connectors/passwordresetsettings) associated to the [Resource Type Mappings](../../../integration-guide/toolkit/xml-configuration/connectors/resourcetypemappings) being provisioned. `Send Password Notification` should always be called after `Generate Password`, preferably right after the password is used. If `Send Password Notification` isn't called before the provisioning of the resource is over, it will automatically be called. If multiple passwords should be generated, `Send Password Notification` should be called after each password generation. **Returns** `Password`: string |
+ | Get Secure Data | **Arguments** `Attribute`: string `Erase Data`: boolean **Description** Retrieves the secured option `Attribute` from the connector configuration. If `Erase Data` is set to true, the secured option is deleted after it is read. **Example** Get Login option and erase it: ```Get Secure Data | Login | True``` |
  | Launch Provisioning | **Description** Launches the provisioning defined by the provisioning orders. This keyword is required for any provisioning to happen. |
  | Log Debug | **Arguments** `Message`: string **Description** Logs `Message` at the `Debug` log level. **Example** Log a keyword failure message: `Log Debug The keyword has failed` |
  | Log Error | **Arguments** `Message`: string **Description** Logs `Message` at the `Error` log level. **Example** Log a keyword failure message: `Log Error The keyword has failed` |
- | Send Password Notification | **Description** Sends a notification containing the last password generated. If `Generate Password` is called and `Send Password Notification` is not called before the provisioning of the resource is over, `Send Password Notification` will automatically be called. |
+ | Send Password Notification | **Description** Sends a notification containing the last password generated. If `Generate Password` is called and `Send Password Notification` isn't called before the provisioning of the resource is over, `Send Password Notification` will automatically be called. |
  | Try Keyword | **Arguments** `Keyword`: Keyword `*args` **Description** Launches `Keyword` with the given arguments `*args`, and ignores its errors. If `Keyword` fails, the keyword sent to `Catch Keyword` will run. `Try Keyword` should always be called right before `Catch Keyword`. **Example** Try to connect to `Usercube.com`. If the connection fails, restart the browser and try to connect to `Usercube.com`: `Connect to URL    Try Keyword Go To Usercube.com    Catch Keyword Restart Browser At URL Usercube.com` |
 
 ## Error handling
@@ -178,7 +178,7 @@ The `Restart Browser` keyword logs a debug message before restarting the browser
 
 ### Error Handling for ExecuteAdd, ExecuteDelete, and ExecuteModify
 
-The `ExecuteAdd`, `ExecuteDelete`, and `ExecuteModify` methods are harder to interact with. First, it is not possible to get their execution status within the script. Second, if the execution failed, it should be kept as a failure in order to log the failure.
+The `ExecuteAdd`, `ExecuteDelete`, and `ExecuteModify` methods are harder to interact with. First, it isn't possible to get their execution status within the script. Second, if the execution failed, it should be kept as a failure to log the failure.
 
 To simplify error handling, consider the following structure:
 
@@ -201,21 +201,21 @@ Restart Program And Fail
     Fail  ${failmessage}
 ```
 
-In this example, `ExecuteAdd` does not call the custom keywords to add a new user directly, and only calls `Add User` instead. This means that it is possible to call `Add User` from the `Try Keyword` keyword. If `Add User` fails, then `Execute Add` fails. Therefore it is possible to catch a failure with this structure.
+In this example, `ExecuteAdd` doesn't call the custom keywords to add a new user directly, and only calls `Add User` instead. This means you can call `Add User` from the `Try Keyword` keyword. If `Add User` fails, then `Execute Add` fails. Therefore you can catch a failure with this structure.
 
-Note that `Restart Program And Fail` fails. This failure is necessary as the provisioning order would be counted as a success otherwise.
+`Restart Program And Fail` fails. This failure is necessary as the provisioning order would be counted as a success otherwise.
 
 ## Testing a RobotFramework script
 
-In order to write a RobotFramework script, we need to test that it works. It is possible to test the script by running a fulfillment job from the Identity Manager interface. While this kind of test proves that everything works as expected, it can take a long time. There is a faster method to check that the script runs.
+To write a RobotFramework script, you must test that it works. Test the script by running a fulfillment job from the Identity Manager interface. While this kind of test proves that everything works as expected, it can take a long time. There is a faster method to check that the script runs.
 
 Suppose the RobotFramework script's path is `RobotFramework/script.robot`.
 
-We need the following elements :
+You need the following elements :
 
 - A provisioning order, in folder `RobotFrameworkScript/Order`. The provisioning order can be
 encrypted or unencrypted. The script will write the encrypted results to `RobotFrameworkScript/Order/results.csv`.
-- The path to the `Runtime` folder. In our example, we will consider this path as
+- The path to the `Runtime` folder. For example, consider this path as
 `C:/identitymanagerDemo/Runtime`.
 
 The `RobotFramework/script.robot` script may be run from the command prompt.
@@ -228,7 +228,7 @@ robot --variable ORDERPATH:./Order --variable RUNTIMEPATH:C:/identitymanagerDemo
 
 This command will generate an output file, a log file, and a report file in the `RobotFramework` folder. This command will also write information to the command prompt.
 
-For most testing cases, we only care about the command prompt information and the log file, written at `RobotFramework/log.html`. The other outputs can be removed.
+For most testing cases, only the command prompt information and the log file matter, written at `RobotFramework/log.html`. The other outputs can be removed.
 
 ```text
 cd RobotFramework
@@ -238,7 +238,7 @@ robot --loglevel NONE --report NONE --variable ORDERPATH:./Order --variable RUNT
 
 ### `Get Secure Data` and `Generate Password`
 
-Most keywords are not different when a script is launched manually. The keywords `Get Secure Data` and `Generate Password` are exceptions.
+Most keywords aren't different when a script is launched manually. The keywords `Get Secure Data` and `Generate Password` are exceptions.
 
 - `Get Secure Data`: This keyword expects the Robot Framework process to receive a json list of
 attributes in the stdin stream. This can be provided manually by writing the data in the command prompt. As an example, if the script requires a `Login` and `Password` attribute : `{"Login":"login","Password":"password"}`
@@ -252,7 +252,7 @@ blank script.
 
 ## Use Case: Write a Script to Fulfill a CSV File
 
-The goal of the script is to append, for each provisioning order, a line in a CSV file located on an external system which we will access through a Telnet connection.
+The goal of the script is to append, for each provisioning order, a line in a CSV file located on an external system that is accessed through a Telnet connection.
 
 Let's consider the following `ResourceType`:
 
@@ -272,7 +272,7 @@ Insert;007;James;Bond
 
 ### Define settings
 
-In every Robot Framework script, we need to import the resource file `UsercubeRobotFramework.resource`. In this example, we also need to import the Telnet library to use its functions.
+In every Robot Framework script, import the resource file `UsercubeRobotFramework.resource`. In this example, also import the Telnet library to use its functions.
 
 ```text
 *** Settings ***
@@ -282,7 +282,7 @@ Library  Telnet
 
 ### Define variables
 
-To connect to the external system through Telnet, we need an IP address corresponding to the external system. We will store the IP address in the global variable `${IPADDRESS}`. We also use the global variable `${CSVFILEPATH}` to define the CSV file where the data will be written in the external system.
+To connect to the external system through Telnet, you need an IP address corresponding to the external system. Store the IP address in the global variable `${IPADDRESS}`. Also use the global variable `${CSVFILEPATH}` to define the CSV file where the data will be written in the external system.
 
 ```text
 *** Variables ***
@@ -292,7 +292,7 @@ ${IPADDRESS}  192.168.1.22
 
 ### Define custom keywords
 
-We define all the custom functions which we will use to provision the external system:
+Define all the custom functions that are used to provision the external system:
 
 - `Delete CSV File`: removes a possible pre-existing CSV file.
 - `Write In CSV`: executes a command to write the line in the CSV file in the external system.
@@ -331,7 +331,7 @@ The method `Get Secure Data` will retrieve the value of the attributes filled in
 
 ### Define mandatory keywords
 
-To be able to provision the external system, we need the three required functions: `ExecuteAdd`, `ExecuteDelete` and `ExecuteModify`. These methods are called by the connector depending on the action to perform on the external system.
+To be able to provision the external system, use the three required functions: `ExecuteAdd`, `ExecuteDelete` and `ExecuteModify`. These methods are called by the connector depending on the action to perform on the external system.
 
 ```text
 *** Keywords ***
@@ -348,7 +348,7 @@ ExecuteModify
     Write Data  Update  ${order['Changes']['identifier']}  ${order['Changes']['firstName']}  ${order['Changes']['lastName']}
 ```
 
-Here, for each action, we use the function `Write Data` defined in the previous section to write the changes to the CSV file with a corresponding word `Insert`, `Delete` or `Update`.
+Here, for each action, use the function `Write Data` defined in the previous section to write the changes to the CSV file with a corresponding word `Insert`, `Delete` or `Update`.
 
 ### Define test cases
 
@@ -364,7 +364,7 @@ Run Provisioning
     Close All Connections
 ```
 
-In our test case, we will perform the following operations in `Run Provisioning`:
+In this test case, the following operations are performed in `Run Provisioning`:
 
 - Open the Telnet connection with the external system.
 - Remove a possible pre-existing CSV file.

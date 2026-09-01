@@ -16,8 +16,6 @@ Setting up both basic and advanced audit policies may lead to incorrect audit re
 basic audit policies to be ignored and prevent conflicts, enable the _Audit: Force audit policy
 subcategory settings_ policy.
 
-Follow the steps to enforce advanced policies.
-
 **Step 1 –** On the audited server, open the Local Security Policy snap-in and navigate to Start >
 Windows Administrative Tools > Local Security Policy.
 

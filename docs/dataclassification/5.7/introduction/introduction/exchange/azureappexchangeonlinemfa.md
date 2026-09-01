@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Create Entra ID app for Modern Authentication
 
-To connect to Exchange Online organization that uses Modern authentication, you need to create an
+To connect to an Exchange Online organization that uses Modern authentication, you need to create an
 Azure AD application, as described in this section.
 
 ## Step 1: Prepare application certificate
@@ -28,7 +28,7 @@ Netwrix Data Classification and other services.
     3. Select **Copy to File**.
 
     :::note
-    Do not export private key.
+    Don't export private key.
     :::
 
 
@@ -73,22 +73,17 @@ For the newly created app, you should use _Application_ permissions.
 
 :::note
 By default, a new application is granted one delegated permission for **Microsoft Graph
-API** – **User.Read**. It is not required and can be removed.
+API** – **User.Read**. It isn't required and can be removed.
 :::
 
 
 Do the following:
 
-When found, click on the entry and proceed with adding the necessary permissions. The steps from
-here on remain the same, you would need the Application permissions entry, and the relevant set of
-permissions therein (such as full_access_as_app for EWS OAuth, Exchange.ManageAsApp for CBA). Select
-the relevant entries, hit the Add permissions
-
-1. At the top of the **Request API permissions** pane, click the **APIs my organization uses** tab
+1. At the top of the **Request API permissions** pane, click the **APIs your organization uses** tab
    and search for _Office 365 Exchange Online_.
-2. Go to APIs my organization uses and search for "office" in the search bar.
+2. Go to APIs your organization uses and search for "office" in the search bar.
 3. Select Office 365 Exchange Online.
-4. Click on the _Office 365 Exchange Online_ entry in the list of apps found.
+4. Click the _Office 365 Exchange Online_ entry in the list of apps found.
 5. Proceed with adding the permissions for this app: select **Application permissions** and then
    select **full_access_as_app**.
 6. Click **Add a permission**.

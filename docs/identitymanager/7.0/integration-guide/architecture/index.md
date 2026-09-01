@@ -39,7 +39,7 @@ All reading or writing actions in the information system are initiated by the ag
 
 Tasks can run on the Server side or on the Agent side.
 
-Tasks that run on the Server side are still executed by an Agent. This is the application of the one-way data flow principle. Agents can send commands to the Server to execute a Task through an HTTP request but the Server cannot command an Agent, hence isolating the sensitive Agents from the exposed Server.
+Tasks that run on the Server side are still executed by an Agent. This is the application of the one-way data flow principle. Agents can send commands to the Server to execute a Task through an HTTP request but the Server can't command an Agent, hence isolating the sensitive Agents from the exposed Server.
 
 As a result, each set of planned Tasks is assigned to a specific Agent, depending on the managed systems its Tasks relate to.
 

@@ -24,8 +24,8 @@ The following example executes the script `aspect.ps1` on the local agent, when 
 |---|---|
 | Identifier required | **Type:** String **Description:** Unique identifier of the aspect. |
 | Agent optional | **Type:** String **Description:** Agent on which the script will be launched. |
-| ExpressionBinding optional | **Type:** String **Description:** Binding:- that defines the variable type used in the potential expressions specified in the aspect;- whose difference with `Binding` defines the property involved in the aspect.**Note:** required when handling the property of multi-valued objects, for example records, to make sure to modify the property in all records and not only in one. |
-| IfExpression optional | **Type:** String **Description:** Expression that conditions the aspect execution. [See more details on C# expressions](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
+| ExpressionBinding optional | **Type:** String **Description:** Binding:- that defines the variable type used in the potential expressions specified in the aspect;- whose difference with `Binding` defines the property involved in the aspect.**Note:** required when handling the property of multi-valued objects, for example records, to ensure to modify the property in all records and not only in one. |
+| IfExpression optional | **Type:** String **Description:** Expression that conditions the aspect execution. [Learn about C# expression syntax](/docs/identitymanager/current/integration-guide/toolkit/expressions#c-expressions). |
 | Priority <span class="optionalAttribute">default value: 0</span> | **Type:** Int32 **Description:** Execution priority among all aspects. At a given activity state, the aspect with the highest priority will be triggered first.**Note:** the priority can be a negative value. |
 | ScriptFile optional | **Type:** String **Description:** Path of the script file to be executed by the aspect. |
 

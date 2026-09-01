@@ -17,7 +17,7 @@ The information displayed in the table includes:
 - Item Reviewed — Item upon which changes were suggested by the owner
 - Current — Current state of the item at the time of the review
 - Desired — Change suggested by the owner
-- Notes — Icon indicates a Note has been added. Click on the icon to read the attached note(s).
+- Notes — Icon indicates a Note has been added. Click the icon to read the attached notes.
 - Approval — Status of the Review Administrator's approval
 
     - Clock — Indicates waiting on the Review Administrator to make an official decision

@@ -7,7 +7,7 @@ sidebar_position: 90
 # MySQL Reports
 
 MySQL reports are accessed through the Resource Audit interface. Explore the MySQL resources by
-expanding the levels within the Resources pane and selecting the desired resource. The data within
+expanding the levels within the Resources pane and selecting the resource you want. The data within
 these reports is collected by the Enterprise Auditor MySQL solution. See the MySQL Solution topic in
 the
 [Netwrix Enterprise Auditor Documentation](https://helpcenter.netwrix.com/category/accessanalyzer)

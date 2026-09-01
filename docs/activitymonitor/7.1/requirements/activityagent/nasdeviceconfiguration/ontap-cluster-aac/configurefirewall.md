@@ -30,11 +30,11 @@ Monitor.
 
 Both classic ONTAPI/ZAPI and the new REST API are supported. Starting with ONTAP 9.13.1, the product
 uses REST API by default if it is available. HTTP and HTTPS protocols are supported. For HTTPS, two
-modes are supported: strict and ignore errors. For the strict mode, the product allows you to
-disable the host name validation in case the agent cannot resolve the FQDN of the LIF.
+modes are supported: strict and ignore errors. For the strict mode, you can
+disable the host name validation in case the agent can't resolve the FQDN of the LIF.
 
 Enabling the API access varies depending on ONTAP version. The following sections list common steps
-on enabling the API access. Please refer to the NetApp documentation for more details.
+on enabling the API access. refer to the NetApp documentation for more details.
 
 ### Management-http Service
 
@@ -74,7 +74,7 @@ network interface service-policy add-service -service management-https -policy d
 
 ### Firewall Policy
 
-For ONTAP 9.5 and older, the following commands can be used to either create a new firewall policy
+For ONTAP 9.5 and older, use the following commands to either create a new firewall policy
 or modify an existing policy if ONTAPI is blocked.
 
 #### Create New Firewall HTTP Policy
@@ -148,15 +148,15 @@ Verify that the output is displayed as follows:
 ## FPolicy
 
 The FPolicy framework enables the collection of audit events on the ONTAP side and their transfer to
-the agent(s) via the designated Data LIFs. Each LIF establishes its own connection with one or
+the agents via the designated Data LIFs. Each LIF establishes its own connection with one or
 several agents and sends notifications as soon as the file transaction occurs. The FPolicy
 connection is asynchronous and buffered; both ONTAP and Activity Monitor have techniques in place to
-make sure that connections are alive and working. The connection can be secured using TLS with
+ensure that connections are alive and working. The connection can be secured using TLS with
 server or mutual authentication.
 
 ONTAP cluster nodes connect to the agent on port 9999 by default. The port can be changed in the
-agent's settings. The agent adds this port to Windows Firewall exclusions automatically. Please
-ensure the port is not blocked by other firewalls between ONTAP and the agent.
+agent's settings. The agent adds this port to Windows Firewall exclusions automatically. Ensure
+the port isn't blocked by other firewalls between ONTAP and the agent.
 
 ### Data-fpolicy-client Service
 

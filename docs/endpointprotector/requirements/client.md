@@ -9,8 +9,7 @@ sidebar_position: 20
 ## Lightweight, Cross-Platform Design
 
 The Endpoint Protector Client doesn't require OS kernel-level integration. This design reduces the
-risk of conflicts with other security applications, such as antivirus, EDR, and HIPS solutions, and
-keeps the Client's footprint on the endpoint to a minimum.
+risk of conflicts with other security applications, such as antivirus, Endpoint Detection and Response (EDR), and Host-based Intrusion Prevention System (HIPS) solutions, and keeps the Client's footprint on the endpoint to a minimum.
 
 ### Kernel Independence
 
@@ -48,7 +47,7 @@ the endpoint’s hardware configuration. In an idle state, the base requirements
   when sending logs or uploading shadow files.
 
 :::note
-For Content Aware Protection and eDiscovery scanning, more CPU and RAM are required.
+For Content Aware Protection and eDiscovery scanning, you need more CPU and RAM.
 :::
 
 The following table shows the resource consumption when all modules are enabled, functions are
@@ -83,7 +82,7 @@ add exclusions for specific files, folders, and processes on Windows, macOS, and
 in the following sections.
 
 :::warning Important
-Before escalating any Endpoint Client performance issue, ensure that the security tool exclusions in the following sections for EPP are configured and deployed on the affected endpoint, and that you have rebooted the computer.
+Before escalating any Endpoint Client performance issue, configure, and deploy the security tool exclusions listed in the following sections for EPP on the affected endpoint, then reboot the computer.
 :::
 
 ### Recommended Exclusions for Windows
@@ -121,7 +120,7 @@ C:\Program Files\CoSoSys\Endpoint Protector\cssguard.exe
 C:\Program Files\CoSoSys\Endpoint Protector\EPPNotifier.exe
 C:\Program Files\CoSoSys\Endpoint Protector\BrowserBroker.exe <- EPP versions before 2601
 C:\Program Files\CoSoSys\Endpoint Protector\EppExtensionHost.exe <- EPP Versions starting 2601
-  Alternative (for the above 4 files):
+  Alternative:
   C:\Program Files\CoSoSys\Endpoint Protector\*
 C:\Windows\System32\drivers\cssdlp20.sys
 C:\Windows\System32\drivers\cssredir.sys
@@ -225,7 +224,4 @@ epp_sslsplit
 epp_netdlp_setup
 linux_install_certicates.sh
 epp_collect_dpi_info_linux.sh
-```
-
 By applying these exclusions, you will allow the Endpoint Protector Client to operate smoothly alongside other security products, ensuring both functionality and protection across endpoints.
-```

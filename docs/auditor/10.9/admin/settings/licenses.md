@@ -6,11 +6,12 @@ sidebar_position: 90
 
 # Licenses
 
-The Licenses tab allows you to review the status of your current licenses, update them and add new
-licenses. To learn about Netwrix Auditor licenses, refer to the following Netwrix Knowledge Base
-article: [Netwrix Auditor Licensing FAQs]([https://www.netwrix.com/kb/2113](https://docs.netwrix.com/docs/kb/auditor/features-and-operations/glossaries-and-faqs/netwrix-auditor-licensing-faqs).
+Use the Licenses tab to review the status of your current licenses, update them, and add new
+licenses. To learn about Netwrix Auditor licenses, see the
+[Netwrix Auditor Licensing FAQs](https://docs.netwrix.com/docs/kb/auditor/features-and-operations/glossaries-and-faqs/netwrix-auditor-licensing-faqs)
+Knowledge Base article.
 
-Follow the steps to update or add a license.
+To update or add a license:
 
 **Step 1 –** Click **Upload License File**.
 
@@ -19,16 +20,16 @@ Follow the steps to update or add a license.
 
 ## Notes for Managed Service Providers
 
-Being a Managed Service Provider (MSP) you are supplied with a special MSP license that allows you
-to deploy Netwrix Auditor on several servers with the same license key. In this case the license
+As a Managed Service Provider (MSP), you receive a special MSP license that lets you deploy
+Netwrix Auditor on several servers with the same license key. In this case the license
 count is based on total number of users across all managed client environments.
 
-MSP billing is calculated based on the arithmetic average of the number of licenses used in that
-month. This is determined by the following formula:
+Netwrix calculates MSP billing based on the arithmetic average of the number of licenses used in that
+month, using the following formula:
 
 (LicensesUsedOnDay1 + LicensesUsedOnDay2 … LicensesUsedOnDay29 + LicensesUsedOnDay30) / 30
 
-To ensure that licenses are calculated correctly (per heartbeat) by Netwrix, perform the following
+To ensure that Netwrix calculates licenses correctly (per heartbeat), perform the following
 steps.
 
 **Step 1 –** Create organizational units within audited domains and add there service accounts you
@@ -39,13 +40,13 @@ folder\Netwrix Auditor\Administrative Console_ and locate MSP.xml.
 
 **Step 3 –** In MSP.xml, provide the following:
 
-- CustomInstanceIdentificator – It is used to identify a server where Netwrix Auditor Server is
+- CustomInstanceIdentificator – Identifies a server where Netwrix Auditor Server is
   installed. It can be any custom name, for example a server name, code name or any other name you
   use to distinguish one server from another (e.g., ABCServer).
 
-    **NOTE:** Netwrix recommends you to assign a unique identifier for each client. This information
-    is stored in the Netwrix Partner Portal and helps you identify each instance when you invoice
-    customers for Netwrix services.
+    **NOTE:** Netwrix recommends you to assign a unique identifier for each client. Netwrix stores
+    this information in the Netwrix Partner Portal, which helps you identify each instance when you
+    invoice customers for Netwrix services.
 
     Netwrix gathers the following information about MSP licenses: identifier, license key and
     license count.
@@ -75,8 +76,8 @@ Internet Explorer 8) have troubles processing them.
 **Step 4 –** Navigate to _Netwrix Auditor installation folder\Netwrix Auditor\Administrative
 Console_ and start **Netwrix.CallHome.MSPTool.exe**. The tool transfers information on service
 accounts to Netwrix Auditor. Netwrix Auditor uses this information to exclude service accounts from
-license count so that only heartbeat users will be calculated.
+license count so that it calculates only heartbeat users.
 
 **NOTE:** You must run Netwrix.CallHome.MSPTool.exe every time you update MSP.xml.
 
-The appearance of the license will be reflected in the MSP portal.
+The updated license appears in the MSP portal.

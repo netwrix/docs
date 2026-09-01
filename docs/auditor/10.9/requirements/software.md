@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Software Requirements
 
-The table below lists the software requirements for the Auditor installation:
+The following table lists the software requirements for the Auditor installation:
 
 | Component                       | Full installation (both Auditor Server and Client)                                                                                                                                                                                                                                                                                                     | Client installation (client only)                                                                                                                                                                                                                                                                                                     |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,19 +33,19 @@ Server, in the monitored environment, or in both locations.
 SQL Server Reporting Services are needed for these types of reports. See the
 [Requirements for SQL Server to Store Audit Data](/docs/auditor/10.9/requirements/sqlserver.md) topic for additional information.
 
-**NOTE:** It is not recommended to install SQL Server (including Express edition), SQL Server Reporting Services (SSRS), or Netwrix Auditor on a domain controller.
+**NOTE:** It isn't recommended to install SQL Server (including Express edition), SQL Server Reporting Services (SSRS), or Netwrix Auditor on a domain controller.
 
 **Microsoft Edge WebView2**
 
 To view SSRS-based reports in Netwrix Auditor, the WebView2 runtime component must be installed.  
-If the component is not detected on the system, it will be automatically installed during the Netwrix Auditor setup process.  
+If the component isn't detected on the system, it will be automatically installed during the Netwrix Auditor setup process.  
 See the following Microsoft article for additional information about the WebView2 runtime component: [Microsoft Edge WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2).
 
 ## Server and Client
 
-It is recommended to deploy Auditor Server on the virtualized server – to simplify backup, provide
-scalability for future growth, and facilitate hardware configuration updates. Auditor Client can be
-deployed on a physical or virtual workstation, as it only provides the UI.
+Netwrix recommends deploying Auditor Server on a virtualized server to simplify backup, provide
+scalability for future growth, and facilitate hardware configuration updates. You can deploy
+Auditor Client on a physical or virtual workstation, as it only provides the UI.
 
 You can deploy Netwrix Auditor on the VM running on any of the following hypervisors:
 
@@ -65,13 +65,13 @@ information.
 You can deploy Auditor on servers or workstations running supported Windows OS version. See system
 requirements for details.
 
-Installation on the domain controller is not supported.
+Installation on the domain controller isn't supported.
 
 If you plan to have the audited system and Auditor Server residing in the workgroups, consider that
-in such scenario the product cannot be installed on the machine running Windows 7.
+in such scenario the product can't be installed on the machine running Windows 7.
 
 Domain trusts, however, may affect data collection from different data sources. To prevent this,
-consider the recommendations and restrictions listed below.
+consider the following recommendations and restrictions.
 
 | If Auditor Server and the audit system reside... | Mind the following restrictions...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -80,15 +80,15 @@ consider the recommendations and restrictions listed below.
 | In non-trusted domains                           | - The computer where Auditor Server is installed must be able to access the target system (server, share, database instance, SharePoint farm, DC, etc.) by its DNS or NetBIOS name. - For monitoring Active Directory, File Servers, SharePoint, Group Policy, Inactive Users, Logon Activity, and Password Expiration, the domain where your target system resides as well as all domain controllers must be accessible by DNS or NetBIOS names—use the _nslookup_ command-line tool to look up domain names. - For monitoring Windows Server and User Activity, each monitored computer (the computer where Netwrix Auditor User Activity Core Service resides) must be able to access the Auditor Server host by its DNS or NetBIOS name. |
 | In workgroups                                    | - The computer where Auditor Server is installed must be able to access the target system (server, share, database instance, SharePoint farm, DC, etc.) by its DNS or NetBIOS name. - For monitoring Active Directory, File Servers, SharePoint, Group Policy, Inactive Users, Logon Activity, and Password Expiration, the domain where your target system resides as well as all domain controllers must be accessible by DNS or NetBIOS names—use the _nslookup_ command-line tool to look up domain names. - For monitoring Windows Server and User Activity, each monitored computer (the computer where Netwrix Auditor User Activity Core Service resides) must be able to access the Auditor Server host by its DNS or NetBIOS name. |
 
-In the next sections you will find some recommendations based on the size of your monitored
-environment and the number of activity records (ARs) the product is planned to process per day.
+The following sections provide recommendations based on the size of your monitored
+environment and the number of activity records (ARs) you plan to process per day.
 
 Activity record stands for one operable chunk of information in Auditor workflow.
 
 ### Simple Deployment
 
-This scenario can be used for PoC, evaluation, or testing purposes. It can be also suitable for
-small infrastructures, producing only several thousands of activity records per day. In this
+Use this scenario for PoC, evaluation, or testing purposes. It's also suitable for
+small infrastructures, producing only several thousand activity records per day. In this
 scenario, you only deploy Auditor Server and default client, selecting Full installation option
 during the product setup.
 
@@ -99,9 +99,9 @@ in the Auditor documentation.
 
 ### Distributed Deployment (Client-Server)
 
-In this scenario, multiple Auditor clients are installed on different machines.
+In this scenario, you install multiple Auditor clients on different machines.
 
-Follow the steps to perform distributed deployment.
+To perform distributed deployment:
 
 **Step 1 –** Install Auditor Server and default Client, selecting Full installation during the
 product setup.
@@ -111,4 +111,4 @@ selecting Client installation during the setup. Alternatively, you can install A
 Group Policy. See the [Install Client via Group Policy](/docs/auditor/10.9/install/viagrouppolicy.md) topic for
 additional information.
 
-Default local client will be always installed together with the Auditor in all scenarios.
+The default local client is always installed together with Auditor in all scenarios.

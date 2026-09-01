@@ -8,8 +8,8 @@ sidebar_position: 20
 
 The Activity Summary report at the **File System** node provides an overview of activity performed
 on files and folders in each of the scanned servers. It reflects the total count of operations
-performed in each server, including operations in folders that are not shared. This activity report
-does not include a date range filter as it contains totals for all operations ever monitored by
+performed in each server, including operations in folders that aren't shared. This activity report
+doesn't include a date range filter as it contains totals for all operations ever monitored by
 Enterprise Auditor for the targeted environment.
 
 ![Activity Summary report at the File System node](/images/accessinformationcenter/11.6/resourceaudit/filesystem/activitysummary.webp)

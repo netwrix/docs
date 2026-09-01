@@ -46,30 +46,28 @@ folder:
 
 ## Create a Certificate Signing Request
 
-Follow the steps to create and export a certificate signing request to a specified folder.
-
 **Step 1 –** Identify the certificate authority you will use to generate the signed certificates.
 
 **Step 2 –** Open the Services explorer window (services.msc) and stop the Netwrix Threat Prevention
 Enterprise Manager service.
 
-**Step 3 –** Navigate to the directory containing `SICertMgr.exe`. Right-click on the application
+**Step 3 –** Navigate to the directory containing `SICertMgr.exe`. Right-click the application
 and select **Run as Administrator**. The Certificate Management Wizard opens.
 
 ![Certificate Management Wizard on the Select Action page](/images/threatprevention/7.5/install/selectaction.webp)
 
-**Step 4 –** On the Select Action page, select **Create Certificate Signing Request(s)**. This
-action creates and exports a certificate signing request to a designated folder. Click **Next**.
+**Step 4 –** On the Select Action page, select **Create Certificate Signing Requests**. This
+action creates and exports certificate signing requests to a designated folder. Click **Next**.
 
 ![Certificate Management Wizard on the Select Components page](/images/threatprevention/7.5/install/selectcomponents.webp)
 
-**Step 5 –** On the Select Components page, click **Next** to proceed with creating a certificate
-signing request for the Enterprise Manager.
+**Step 5 –** On the Select Components page, click **Next** to proceed with creating certificate
+signing requests for the Enterprise Manager.
 
-![Certificate Management Wizard on the Export Certificate Signing Request(s) to page](/images/threatprevention/7.5/install/exportcertificate.webp)
+![Certificate Management Wizard on the Export Certificate Signing Requests page](/images/threatprevention/7.5/install/exportcertificate.webp)
 
-**Step 6 –** On the Export Certificate Signing Request(s) to page, select the folder to place the
-certificate request file. Click **Next** to generate the file.
+**Step 6 –** On the Export Certificate Signing Requests page, select the folder to place the
+certificate request files. Click **Next** to generate them.
 
 The following file is created and placed in the specified folder:
 
@@ -101,29 +99,27 @@ The procedure to sign the certificates will vary based on the certificate author
 folder on the Threat Prevention server.
 
 When copied, run the Certificate Management Wizard again to complete the certificate signing
-request(s).
+requests.
 
 ## Complete a Certificate Signing Request
 
-Follow the steps to complete a certificate signing request.
-
-**Step 1 –** Navigate to the directory containing `SICertMgr.exe`. Right-click on the application
+**Step 1 –** Navigate to the directory containing `SICertMgr.exe`. Right-click the application
 and select **Run as Administrator**. The Certificate Management Wizard opens.
 
 ![Certificate Management Wizard on the Select Action page](/images/threatprevention/7.5/install/selectactioncomplete.webp)
 
-**Step 2 –** On the Select Action page, select **Complete Certificate Signing Request(s)**. This
-action installs the signed certificate and configures Threat Prevention Enterprise Manager to trust
-the client certificate signed by the customer's certificate authority. Click **Next**.
+**Step 2 –** On the Select Action page, select **Complete Certificate Signing Requests**. This
+action installs the signed certificates and configures Threat Prevention Enterprise Manager to trust
+the client certificates signed by the customer's certificate authority. Click **Next**.
 
-![Certificate Management Wizard on the Import Signed Certificate(s) page](/images/threatprevention/7.5/install/importsignedcertificates.webp)
+![Certificate Management Wizard on the Import Signed Certificates page](/images/threatprevention/7.5/install/importsignedcertificates.webp)
 
-**Step 3 –** On the Import Signed Certificate(s) page, select the folder containing the signed
+**Step 3 –** On the Import Signed Certificates page, select the folder containing the signed
 certificates. Then click **Next**.
 
-![Certificate Management Wizard - Import Certificate Authority Certificate(s) page](/images/threatprevention/7.5/install/importcertificateauthority.webp)
+![Certificate Management Wizard - Import Certificate Authority Certificates page](/images/threatprevention/7.5/install/importcertificateauthority.webp)
 
-**Step 4 –** On the Import Certificate Authority Certificate(s) page, select the PEM file containing
+**Step 4 –** On the Import Certificate Authority Certificates page, select the PEM file containing
 your certificate authority's root and intermediate certificates. Click **Next**.
 
 ![Certificate Management Wizard on the Certificates Import page](/images/threatprevention/7.5/install/certificatesimported.webp)

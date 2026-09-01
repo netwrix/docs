@@ -6,8 +6,8 @@ sidebar_position: 150
 
 # GPO Setting Lockdown Event Type
 
-The GPO Setting Lockdown event type can prevent all changes against specified GPOs. Note that this
-is for the entire GPO (file) and not specific settings in the GPO.
+The GPO Setting Lockdown event type can prevent all changes against specified GPOs. This applies to
+the entire GPO (file), not specific settings in the GPO.
 
 The event filters for the GPO Setting Lockdown event type are:
 
@@ -21,8 +21,7 @@ Each filter tab acts like an "AND" statement for the filter. Any filter tab left
 like an "ALL" for that filter set.
 
 If setting a filter to “Exclude” a domain from this blocking policy, this setting overrides any
-”Block” user filters. This means that in order to block a user, you must not “Exclude” the domain
-where that user resides.
+“Block” user filters. To block a user, you must not “Exclude” the domain where that user resides.
 
 :::warning
 Lockdown/blocking policies with blank filters result in everything being locked down or
@@ -50,7 +49,7 @@ In the Group Policy Objects section, scope to specific GPOs:
 
   - The **Add** (+) button opens the
     [Select Active Directory Group Policy Objects Window](/docs/threatprevention/7.5/admin/policies/configuration/eventtype/window/grouppolicyobjects.md).
-  - The Remove (x) button deletes the selected item(s) from that box.
+  - The Remove (x) button deletes the selected items from that box.
 
 ## Domains/Servers Filter
 
@@ -65,11 +64,11 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection.
+See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -98,11 +97,11 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection.
+See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 
 :::

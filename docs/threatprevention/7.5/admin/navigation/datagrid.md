@@ -26,8 +26,7 @@ grids employ features for data sorting, filtering, searching, and more.
 
 ## Customization Window
 
-Right-click on a column header and select **Column Chooser** to open the Customization window, that
-lists the column(s) that were removed from the data grid display.
+Right-click a column header and select **Column Chooser** to open the Customization window, that lists the columns that were removed from the data grid display.
 
 ![Customization Window](/images/threatprevention/7.5/admin/navigation/customization.webp)
 
@@ -71,8 +70,7 @@ single attribute in any of these boxes or selecting an attribute from a dropdown
 data grid for matches within that column and the selected comparison operator.
 
 :::note
-The Alerts grid does not display the Auto Filter Row by default. It must be selected
-through the grid’s Show Auto Filter Row option from the right-click menu.
+The Alerts grid doesn’t display the Auto Filter Row by default. It must be selected through the grid’s Show Auto Filter Row option from the right-click menu.
 :::
 
 
@@ -110,18 +108,14 @@ displayed depend on the column it is opened from.
 
 ## Search Data
 
-The Find Panel enables you to search for data in the data grid. It is represented with a magnifying
-glass icon. It is displayed by default but you can choose to hide or show it using the Show/Hide
-Find Panel option on the
-[Data Grid Right-Click Menu](/docs/threatprevention/7.5/admin/navigation/rightclickmenus.md#data-grid-right-click-menu).
+Use the Find Panel to search for data in the data grid. It is represented with a magnifying glass icon. It is displayed by default but you can choose to hide or show it using the Show/Hide Find Panel option on the [Data Grid Right-Click Menu](/docs/threatprevention/7.5/admin/navigation/rightclickmenus.md#data-grid-right-click-menu).
 
-On clicking the magnifying glass icon, the Find box appears as:
+When you click the magnifying glass icon, the Find box appears as:
 
 ![Search function for data grid](/images/threatprevention/7.5/admin/navigation/searchfunction.webp)
 
-- Type a search criteria and click **Find**. The data grid filters to events where the search
-  criteria is matched, highlighting the match.
-- The drop-down arrow in the textbox provides a history of recent searches for quick reference.
+- Enter a search criteria and click **Find**. The data grid filters to events where the search criteria is matched, highlighting the match.
+- The dropdown arrow in the textbox provides a history of recent searches for quick reference.
 - Click **Clear** to clear both the search criteria and the filtered view.
 - The **X** at the far left of the panel closes the Find Panel.
 
@@ -145,22 +139,17 @@ Ensure that all desired filters are set on the data grid before export.
 
 ![Export window](/images/threatprevention/7.5/admin/navigation/export.webp)
 
-The Export window provides options for what is exported and what action(s) to take.
+The Export window provides options for what is exported and what actions to take.
 
 In the Export options section, select the option buttons for the Columns and Rows subsections.
 
-- For Columns, you can export data displayed in Visible Columns Only or for All Columns. See the
-  Customization Window topic for details on selecting what columns are visible in a data grid.
+- For Columns, you can export data displayed in Visible Columns Only or for All Columns. See the Customization Window topic for details on selecting what columns are visible in a data grid.
 - For Rows, the exported data can show All Rows or Filtered Only.
 
-In the Export Actions section, select where data will be exported. Check the boxes for Save File
-Locally and/or Email to and populate the required fields.
+In the Export Actions section, select where data will be exported. Check the boxes for Save File Locally and/or Email to and populate the required fields.
 
-- For the Save File Locally action, a Save As window is displayed when you click Export. Use the
-  default path and file name to save the CSV file or choose another one. Then click Save..
-- For the Email to action, provide an email address for each recipient, which can be individuals,
-  distribution lists, or a combination. Use either a comma (,) or a semi-colon (;) to separate
-  multiple recipients. Click Export to export the data.
+- For the Save File Locally action, a Save As window is displayed when you click Export. Use the default path and file name to save the CSV file or choose another one. Then click Save.
+- For the Email to action, provide an email address for each recipient (individuals, distribution lists, or a combination). Use either a comma (,) or a semi-colon (;) to separate multiple recipients. Click Export to export the data.
 
 :::note
 The Email to action requires the SMTP host Information to be configured. This can only be

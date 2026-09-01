@@ -37,7 +37,7 @@ Navigate to the **Jobs** > **Windows** > **Privileged Accounts** > **Service Acc
 **SG_ServiceAccounts** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

@@ -7,7 +7,7 @@ sidebar_position: 40
 # SystemInfo: Probable Owner
 
 On the Probable Owner page, select options for determining the owner using weighted calculations.
-This page is enabled when the **Probable Owner** property is selected on the Results page.
+This page becomes available when you select the **Probable Owner** property on the Results page.
 
 ![System Info Data Collector Wizard Probable Owner page](/images/accessanalyzer/12.0/admin/datacollector/systeminfo/probableowner.webp)
 
@@ -20,7 +20,7 @@ In the Determine owner section, select from the following options:
 - Determine owner from Current User
 - Determine owner from Last User
 - Custom weights – Select this radio button to use custom weights to determine the probable owner.
-  These weights can be set by clicking the ellipsis next to the Result weights box to open the
+  Set these weights by clicking the ellipsis next to the Result weights box to open the
   Probable Owner Settings window.
 
 ![Custom weights Probable Owner Settings window](/images/accessanalyzer/12.0/admin/datacollector/systeminfo/customweights.webp)
@@ -52,7 +52,7 @@ Click **Set Users to Exclude** to open the Probable Owner Settings window:
 
 In the Output options section, select from the following options:
 
-- Get the most probable owner(s)
+- Get the most probable owners
 - Get probable owners with relative deviation to the most probable owner – Enables the following
   option:
 

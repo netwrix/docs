@@ -11,14 +11,14 @@ customized version of the Import Hosts window. Add host locations from a CSV fil
 database without creating a new host list. See the [Host Inventory Data Grid](/docs/accessanalyzer/12.0/admin/hostmanagement/datagrid.md) topic
 for information on the Location column of host inventory.
 
-Follow the steps to import physical location data for hosts.
+To import physical location data for hosts:
 
 **Step 1 –** Ensure the import source file has columns for both the host name as it is identified
 within Access Analyzer and the location.
 
 :::note
-When a host name does not match any existing hosts within the Host Master Table, it can be
-added as a new host.
+When a host name doesn't match any existing hosts within the Host Master Table, you can
+add it as a new host.
 :::
 
 
@@ -36,11 +36,11 @@ step.
 
 - CSV File
 
-    - File Name – Click the ellipsis (**…**) to open a browser window and select the CSV file. This
-      file needs to be stored on the Access Analyzer Console server. Once selected, a preview of the
-      file is shown in the preview box.
-    - Includes header row – Select this checkbox if the file contains a header row. Otherwise, the
-      header row will be included in the import (visible within the preview box).
+    - File Name – Click the ellipsis (**…**) to open a browser window and select the CSV file. You
+      must store this file on the Access Analyzer Console server. After you select the file, Access
+      Analyzer shows a preview in the preview box.
+    - Includes header row – Select this checkbox if the file contains a header row. Otherwise, Access Analyzer
+      includes the header row in the import (visible within the preview box).
 
 - Database
 
@@ -51,20 +51,20 @@ step.
       information.
 
         :::note
-        The Provider, Advanced, and All tabs of the Data Link Properties window should not
-        be modified.
+        Don't modify the Provider, Advanced, and All tabs of the Data Link Properties
+        window.
         :::
 
 
-    - Table – Use the dropdown to select the table that contains the hosts to be imported. A preview
-      of the selected table is displayed in the preview box.
+    - Table – Use the dropdown to select the table that contains the hosts to import. Access Analyzer displays a preview
+      of the selected table in the preview box.
 
-**Step 5 –** Use either the drop-down menu or click on the column in the preview box to select the
+**Step 5 –** Use either the dropdown menu or click the column in the preview box to select the
 column containing the host names. The selected column is highlighted in the preview box.
 
 ![Import Hosts window Location column selection](/images/accessanalyzer/12.0/admin/hostmanagement/actions/importlocationcsv.webp)
 
-**Step 6 –** Use the **Import column** drop-down menu to select the column containing the location
+**Step 6 –** Use the **Import column** dropdown menu to select the column containing the location
 information. The selected column is highlighted a lighter color in the preview box.
 
 **Step 7 –** Click **OK** to complete the import.
@@ -72,12 +72,12 @@ information. The selected column is highlighted a lighter color in the preview b
 ![Imported Location column data in the data grid](/images/accessanalyzer/12.0/admin/hostmanagement/actions/importlocationcomplete.webp)
 
 The Location column now contains the imported information. If any of the hosts included in the
-import file are not already in the Host Master Table, Access Analyzer prompts for confirmation on
-whether or not to import the host. Selecting **Yes** or **Yes to All** adds the new hosts to the
+import file aren't already in the Host Master Table, Access Analyzer prompts for confirmation on
+whether to import the host. Selecting **Yes** or **Yes to All** adds the new hosts to the
 Host Master Table but not to any individual host lists.
 
 :::note
-Any new hosts that match dynamic host list criteria will be added to the appropriate
+Access Analyzer adds any new hosts that match dynamic host list criteria to the appropriate
 dynamic host lists.
 
 :::

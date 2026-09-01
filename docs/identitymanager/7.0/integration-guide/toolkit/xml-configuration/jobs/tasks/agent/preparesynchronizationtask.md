@@ -12,14 +12,14 @@ The task reads files from the source directory, usually the [temp folder > Expor
 
 The following actions are performed on the *CSV source files*:
 
-1. Remove columns that are not used in [`<EntityTypeMapping>`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) or [`<EntityAssociationMapping>`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping).
+1. Remove columns that aren't used in [`<EntityTypeMapping>`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) or [`<EntityAssociationMapping>`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping).
 2. Remove entries that have a null primary key.
 3. Remove duplicates.
 4. Sort entries according to the primary key.
 
 The result of the *Prepare-Synchronization* is stored in the [*export directory*](/docs/identitymanager/current/integration-guide/network-configuration/agent-configuration/appsettings) as three files:
 
-- For every entity type of the relevant *Connector* involved in an [`<EntityTypeMapping>`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) or an [`<EntityAssociationMapping>`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping) , a `.sorted.csv` file is generated, containing the final, cleansed and sorted result.
+- For every entity type of the relevant *Connector* involved in an [`<EntityTypeMapping>`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) or an [`<EntityAssociationMapping>`](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping) , a `.sorted.csv` file is generated, containing the final, cleansed, and sorted result.
 
 - Duplicates are kept in a separate `.duplicates.csv` file.
 

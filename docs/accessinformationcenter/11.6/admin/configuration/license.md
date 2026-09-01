@@ -10,7 +10,7 @@ Access to specific types of reports and workflows is controlled through the Acce
 Center license, which is also the Netwrix Enterprise Auditor license key. The details of your
 current license can be viewed on the License page of the Configuration interface. Enabling
 additional features would require an updated license key, which can be discussed with your Netwrix
-Account Representative. If the features displayed in this tab do not reflect the features actually
+Account Representative. If the features displayed in this tab don't reflect the features actually
 licensed, contact [Netwrix Support](https://www.netwrix.com/support.html). See the
 [Upload License](#upload-license) topic for information on updating the license key.
 
@@ -37,15 +37,15 @@ are controlled through the license:
 
 The Access Information Center can receive data from other Netwrix Enterprise Auditor solutions. When
 the data is available in the Enterprise Auditor database, it will be included in the Access
-Information Center reports. Additionally, the Flexible Imports feature can be used to incorporate
+Information Center reports. Additionally, use the Flexible Imports feature to incorporate
 third-party data into reports.
 
 ### Upload License
 
-Follow the steps to update the license key.
+To update the license key:
 
 :::note
-The LIC file must be named to `StealthAUDIT.lic`. If it has another name, rename it before
+The LIC file must be named `StealthAUDIT.lic`. If it has another name, rename it before
 completing the steps.
 :::
 
