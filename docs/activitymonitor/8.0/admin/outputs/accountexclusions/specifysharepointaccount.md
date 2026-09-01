@@ -6,15 +6,15 @@ sidebar_position: 10
 
 # Specify Account Window
 
-The Specify account window is opened from a field where a SharePoint account is needed.
+The Specify account window opens from a field where a SharePoint account is needed.
 
 ![Specify Account popup window](/images/activitymonitor/8.0/admin/outputs/window/sharepointspecifyaccount.webp)
 
 There are two options for specifying an account:
 
-- SharePoint System Accounts – Check the boxes for the desired system accounts: SHAREPOINT\system,
+- SharePoint System Accounts – Check the boxes for the system accounts you want: SHAREPOINT\system,
   -1, S-1-0-0 (Null SID)
-- Custom – Enter the account in the textbox. Multiple accounts can be added using a semicolon (;).
+- Custom – Enter the account in the textbox. You can add multiple accounts using a semicolon (;).
 
     - For System Service Accounts – Enter the SID for system service accounts
     - For Local User Accounts – Enter either the user name or SID for the local account

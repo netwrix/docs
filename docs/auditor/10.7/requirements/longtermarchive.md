@@ -22,7 +22,7 @@ recommendations in the next section.
 Then you should prepare the new folder for repository, target Netwrix Auditor at that folder, and,
 if necessary, move repository data from the old to the new location.
 
-Follow the steps to modify Long-Term Archive location and other settings.
+To modify Long-Term Archive location and other settings, complete the following steps:
 
 **Step 1 –** In Auditor client, click Settings > Long-Term Archive; alternatively, if you are
 viewing the Long-Term Archive widget of the Health Status dashboard, click Open settings.
@@ -114,7 +114,7 @@ The custom account must be granted the following rights and permissions:
 The procedure below applies to Windows Server 2012 R2 and above and may vary slightly depending on
 your OS.
 
-Follow the steps to assign permissions on the Long-Term Archive folder:
+To assign permissions on the Long-Term Archive folder, complete the following steps:
 
 **Step 1 –** Navigate to a folder where the Long-Term Archive will be stored, right-click it and
 select Properties.
@@ -127,8 +127,8 @@ select Properties.
 **Step 4 –** In the Permission Entry for `<Folder_Name>` dialog, apply the following settings:
 
 - Specify an account as principal.
-- Set Type to _"Allow"_.
-- Set Applies to to _"This folder, subfolders and files"_.
+- Set **Type** to **Allow**.
+- For **Applies to**, select **This folder, subfolders, and files**.
 - Switch to the Advanced permissions section.
 - Check the following permissions:
     - List folder / read data
@@ -146,8 +146,7 @@ select Properties.
 The procedure below applies to Windows Server 2012 R2 and above and may vary slightly depending on
 your OS.
 
-Follow the steps to assign the **Change** and **Create Files/Write Data** permissions to upload
-subscriptions to file shares:
+To assign the **Change** and **Create Files/Write Data** permissions to upload subscriptions to file shares, complete the following steps:
 
 **Step 1 –** Navigate to a folder where report subscriptions will be stored, right-click it and
 select Properties.
@@ -171,9 +170,9 @@ check the Allow flag next to Change.
 **Step 8 –** Apply the following settings to your Permission Entry.
 
 - Specify a Netwrix Auditor user as principal.
-- Set Type to _"Allow"_.
-- Set Applies to to _"This folder, subfolders and files"_.
-- Check Create files / write data in the Advanced permissions section.
+- Set **Type** to **Allow**.
+- For **Applies to**, select **This folder, subfolders, and files**.
+- Check **Create files / write data** in the Advanced permissions section.
 
 The users who are going to access report subscriptions must be granted read access to these shares.
 Netwrix recommends you to create a dedicated folder and grant access to the entire Netwrix Auditor

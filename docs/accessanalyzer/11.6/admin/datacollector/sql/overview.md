@@ -11,9 +11,9 @@ application name of the application responsible for activity events, an IP Addre
 the client server, and sensitive data reports. This data collector also provides information on
 Oracle databases including infrastructure and operations.
 
-The SQL Data Collector has been preconfigured within the Database data collection jobs for Db2,
-MySQL, Oracle, PostgreSQL, Redshift, and SQL Server databases. Both this data collector and the
-Database Solution are available with a special Enterprise Auditor license. See the following topics
+The Database data collection jobs for Db2, MySQL, Oracle, PostgreSQL, Redshift, and SQL Server
+databases include the SQL Data Collector as a preconfigured component. Both this data collector
+and the Database Solution are available with a special Enterprise Auditor license. See the following topics
 for additional information:
 
 - [Db2 Solution](/docs/accessanalyzer/11.6/solutions/databases/db2/overview.md)
@@ -84,8 +84,8 @@ For SQL:
 - For permissions for data collection:
 
     - Read access to SQL instance
-    - Requires SQL Full-Text and Semantic Extractions for Search feature to be installed on the
-      target SQL instance(s) when using the **Scan full rows for sensitive data** option on the
+    - Requires you to install the SQL Full-Text and Semantic Extractions for Search feature on the
+      target SQL instances when using the **Scan full rows for sensitive data** option on the
       Options wizard page
     - Grant Authenticate Server to [DOMAIN\USER]
     - Grant Connect SQL to [DOMAIN\USER]
@@ -102,11 +102,11 @@ topic for additional information.
 
 **Sensitive Data Discovery Considerations**
 
-The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
-additional GB of RAM per host. For example, if the job is configured to scan 8 hosts at a time ,
-then an extra 16 GB of RAM are required (8x2=16).
+You must install the Sensitive Data Discovery Add-On on the Enterprise Auditor Console server,
+which enables Sensitive Data criteria for scans. If you run Sensitive Data Discovery (SDD) scans,
+you must increase the minimum amount of RAM. Each thread requires a minimum of 2
+additional GB of RAM per host. For example, if you configure the job to scan 8 hosts at a time,
+you need an extra 16 GB of RAM (8x2=16).
 
 ## SQL Query Configuration
 
@@ -114,8 +114,8 @@ The SQL Data Collector is configured through the SQL Data Collector Wizard. The 
 following pages, which change based upon the query category selected:
 
 :::note
-The SQL Data Collector is used in multiple Enterprise Auditor Solutions, and the query
-categories used are dependent on the solution.
+Enterprise Auditor uses the SQL Data Collector in multiple Solutions, and the query
+categories used depend on the solution.
 :::
 
 

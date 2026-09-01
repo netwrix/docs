@@ -11,7 +11,7 @@ Account, the Enterprise Auditor application can run multiple tasks simultaneousl
 [Schedule](/docs/accessanalyzer/11.6/admin/settings/schedule.md)
 topic for information on configuring the Schedule Service Account.
 
-The following tasks can be scheduled:
+You can schedule the following tasks:
 
 - Job or Job Group – Schedule jobs to run at the job or job group level. See the
   [Schedule Jobs](#schedule-jobs) topic for additional information.
@@ -25,11 +25,11 @@ The following tasks can be scheduled:
 
 ## Schedule Jobs
 
-Jobs can be scheduled at the job group or job level.
+You can schedule jobs at the job group or job level.
 
 ![Schedule option from Job Tree](/images/accessanalyzer/11.6/admin/schedule/jobtree.webp)
 
-Select the desired job group or job. Right-click on the node and select **Schedule** to open the
+Select the job group or job you want. Right-click the node and select **Schedule** to open the
 Schedule wizard.
 
 ![Schedule Job wizard](/images/accessanalyzer/11.6/admin/schedule/schedule.webp)

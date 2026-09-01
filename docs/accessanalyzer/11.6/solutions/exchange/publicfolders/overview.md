@@ -33,8 +33,8 @@ The following comprise the 5. Public Folders job group:
 
 The **5. Public Folders** > **Ownership** job group uses the ExchangePublicFolder, a MAPI-based data
 collector. Therefore, it requires both Enterprise Auditor MAPI CDO and Microsoft Exchange MAPI CDO
-to be installed on the Enterprise Auditor Console server. Once these have been installed, the
-**Settings** > **Exchange** node must be configured for proper connection to the Exchange server.
+to be installed on the Enterprise Auditor Console server. After these are installed, configure the
+**Settings** > **Exchange** node for proper connection to the Exchange server.
 See the
 [Exchange](/docs/accessanalyzer/11.6/admin/settings/exchange.md)
 topic for additional information.

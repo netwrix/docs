@@ -30,9 +30,9 @@ Each row in the table represents one registered scanner.
 | Healthy | Green | The scanner node is reachable and operating normally |
 | Warning | Yellow | The node is reachable but under resource pressure (disk, memory, or CPU) |
 | Error | Red | The node is reachable but in an unhealthy state |
-| Offline | Gray | The node is not reachable from the Access Analyzer server |
+| Offline | Gray | The node isn't reachable from the Access Analyzer server |
 
-Scans may perform poorly on a scanner in Warning state — consider resolving the resource pressure before scheduling large scans. Investigate the scanner host when the status is Error. An Offline scanner cannot run scans — source groups that target it will not execute until the scanner comes back online or a different scanner with the matching label becomes available.
+Scans may perform poorly on a scanner in Warning state — consider resolving the resource pressure before scheduling large scans. Investigate the scanner host when the status is Error. An Offline scanner can't run scans — source groups that target it will not execute until the scanner comes back online or a different scanner with the matching label becomes available.
 
 ## Scan status
 
@@ -63,4 +63,4 @@ To delete a scanner:
 2. Click the delete icon on the scanner row.
 3. Confirm the deletion.
 
-A scanner can only be deleted when no scan jobs are running on it. If scans are in progress, wait for them to complete before deleting. The system scanner (built-in scanner on the Access Analyzer server) cannot be deleted.
+You can only delete a scanner when no scan jobs are running on it. If scans are in progress, wait for them to complete before deleting. You can't delete the system scanner (built-in scanner on the Access Analyzer server).

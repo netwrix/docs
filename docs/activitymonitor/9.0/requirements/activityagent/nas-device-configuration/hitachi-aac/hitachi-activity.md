@@ -11,7 +11,7 @@ multiple file systems. Auditing is enabled and configured per file system. This 
 to enable auditing on an HNAS and to configure the Activity Monitor to monitor activity coming from
 the Hitachi device auditing.
 
-The Activity Monitor does not use the EVS or file system name to connect to HNAS. Therefore, all
+The Activity Monitor doesn't use the EVS or file system name to connect to HNAS. Therefore, all
 that is required of the user for HNAS activity collection is the following:
 
 - Logs path (UNC)
@@ -39,11 +39,11 @@ clients using other protocols would be costly in terms of system performance, be
 operation would have to be audited as an open operation. **Therefore, when file system auditing is
 enabled, by default, only clients connecting through the CIFS protocol are allowed access to the
 file system.** Access by clients using other protocols, like NFS, can, however, be allowed. When
-such access is allowed, access to file system objects through these protocols is not audited.”
+such access is allowed, access to file system objects through these protocols isn't audited.”
 
 :::note
 File system auditing can be configured to deny access to clients connecting with protocols
-that cannot be audited (NFS). Please see the Hitachi
+that can't be audited (NFS). see the Hitachi
 [Server and Cluster Administration Guide](https://support.hds.com/download/epcra/hnas0106.pdf) for
 additional information.
 :::
@@ -51,7 +51,7 @@ additional information.
 
 **Configuration Checklist**
 
-Complete the following checklist prior to configuring activity monitoring of Hitachi devices.
+Complete the following checklist before configuring activity monitoring of Hitachi devices.
 Instructions for each item of the checklist are detailed within the following topics.
 
 **Checklist Item 1: [Configure Audit Logs on HNAS](/docs/activitymonitor/9.0/requirements/activityagent/nas-device-configuration/hitachi-aac/configurelogs.md)**

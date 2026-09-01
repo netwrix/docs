@@ -1,10 +1,10 @@
 ---
-title: "Get a Data Source by Type and with ID"
-description: "Get a Data Source by Type and with ID"
+title: "Get a Data Source by Enter and with ID"
+description: "Get a Data Source by Enter and with ID"
 sidebar_position: 50
 ---
 
-# Get a Data Source by Type and with ID
+# Get a Data Source by Enter and with ID
 
 Using this API, you can retrieve information of a data source by its type and ID. For example, an
 SQL data source with a specific id.

@@ -10,7 +10,7 @@ sidebar_position: 30
 
 All Netwrix product announcements have moved to the new Netwrix Community. See announcements for
 Netwrix Auditor in the [Auditor](https://community.netwrix.com/c/auditor/announcements/90) area of
-our new community.
+the new community.
 
 The following information highlights the new and enhanced features introduced in this Netwrix
 Auditor 10.7 version.
@@ -19,7 +19,7 @@ Auditor 10.7 version.
 
 Integration with Netwrix Privilege Secure
 
-Netwrix Auditor is able to store its collection credentials in Netwrix Privilege Secure, making the
+Netwrix Auditor can store its collection credentials in Netwrix Privilege Secure, making the
 usage of Auditor more secure.
 
 Data sensitivity tags in searches and alerts for NetApp, Qumulo, and Synology
@@ -27,7 +27,7 @@ Data sensitivity tags in searches and alerts for NetApp, Qumulo, and Synology
 Data sensitivity tags in searches and alerts enable customers using NetApp, Qumulo, and Synology
 systems to reduce the time to detect incidents involving sensitive data and accelerate the response
 to these kinds of threats. They can set up alerts that will be triggered whenever sensitive
-documents are accessed, modified or deleted, or filter out all activity that isn’t related to
+documents are accessed, modified, or deleted, or filter out all activity that isn’t related to
 sensitive data.
 
 New sensitive data-related risks for SharePoint Online

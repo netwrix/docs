@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Configure Data Collection Settings
 
-To successfully track user activity, make sure that the following settings are configured on the
+To successfully track user activity, ensure that the following settings are configured on the
 audited computers and on the computer where Netwrix Auditor Server is installed:
 
 - The **Windows Management Instrumentation** and the **Remote Registry** services are running and
@@ -25,23 +25,19 @@ audited computers and on the computer where Netwrix Auditor Server is installed:
 
 ## Check the Windows Services Status
 
-Follow the steps to check the status and startup type of Windows services.
-
 **Step 1 –** Navigate to Start > Windows Administrative Tools > Services.
 
-**Step 2 –** In the **Services** snap-in, locate the **Remote Registry** service and make sure that
+**Step 2 –** In the **Services** snap-in, locate the **Remote Registry** service and ensure that
 its status is _"Started"_ (on pre-Windows Server 2012 versions) and _"Running"_ (on Windows Server
-2012 and above). If it is not, right-click the service and select Start from the pop-up menu.
+2012 and above). If it isn't, right-click the service and select Start from the pop-up menu.
 
-**Step 3 –** Check that the **Startup Type** is set to _"Automatic"_. If it is not, double-click the
+**Step 3 –** Check that the **Startup Type** is set to _"Automatic"_. If it isn't, double-click the
 service. In the **Remote Registry Properties** dialog, in the **General** tab, select _"Automatic"_
-from the drop-down list.
+from the dropdown list.
 
 **Step 4 –** Perform the steps above for the **Windows Management Instrumentation** service.
 
 ## Windows Features Communication
-
-Follow the steps to allow Windows features to communicate through Firewall.
 
 **Step 1 –** Navigate to **Start → Control Panel** and select **Windows Firewall.**
 
@@ -49,14 +45,12 @@ Follow the steps to allow Windows features to communicate through Firewall.
 program or feature through Windows Firewall** on the left.
 
 **Step 3 –** In the Allow an app or feature through Windows Firewall page that opens, locate the
-**File and Printer Sharing** feature and make sure that the corresponding checkbox is selected under
+**File and Printer Sharing** feature and ensure that the corresponding checkbox is selected under
 Domain.
 
 **Step 4 –** Repeat step 3 for the **Windows Management Instrumentation (WMI)** feature.
 
 ## Open Local TCP Port 9004
-
-Follow the steps to open Local TCP Port 9004 for inbound connections.
 
 **Step 1 –** On the computer where Netwrix Auditor is installed, navigate to **Start → Control
 Panel** and select **Windows Firewall.**
@@ -73,7 +67,7 @@ left.
 - On the Program step, specify the path: %Netwrix Auditor installation folder%/Netwrix Auditor/User
   Activity Video Recording/UAVRServer.exe.
 - On the Action step, select the Allow the connection action.
-- On the Profile step, make sure that the rule applies to Domain.
+- On the Profile step, ensure that the rule applies to Domain.
 - On the Name step, specify the rule's name, for example UA Server inbound rule.
 
 **Step 5 –** Double-click the newly created rule and open the Protocols and Ports tab.
@@ -84,8 +78,6 @@ left.
 - Set Local port to _"Specific Ports"_ and specify to _"9004"_.
 
 ## Open Local TCP Port 9003
-
-Follow the steps to open Local TCP Port 9003 for inbound connections.
 
 **Step 1 –** On a target computer navigate to **Start → Control Panel** and select **Windows
 Firewall.**
@@ -114,8 +106,6 @@ left.
 - Set Local port to _"Specific Ports"_ and specify to _"9003"_.
 
 ## Open Remote TCP Port 9004
-
-Follow the steps to open Remote TCP Port 9004 for outbound connections.
 
 **Step 1 –** On a target computer, navigate to **Start → Control Panel** and select **Windows
 Firewall.**

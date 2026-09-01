@@ -16,7 +16,7 @@ The AD_DomainInfo Job uses the ActiveDirectory Data Collector and the LDAP Data 
 following queries:
 
 :::warning
-Do not modify the queries. The queries are preconfigured for this job.
+Don't modify the queries. The queries are preconfigured for this job.
 :::
 
 
@@ -42,7 +42,7 @@ Navigate to the **Active Directory > 5.Domains > AD_DomainInfo > Configure** nod
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

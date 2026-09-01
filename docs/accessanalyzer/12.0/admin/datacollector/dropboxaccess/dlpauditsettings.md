@@ -15,8 +15,8 @@ Configure the DLP audit settings:
 
 - Scan Performance:
 
-    - Don’t process files larger than – Limits the files to be scanned for sensitive content to
-      files smaller than the specified size
+    - Don’t process files larger than – Limits scanning for sensitive content to files smaller
+      than the specified size
 
 - File types to scan:
 
@@ -27,13 +27,13 @@ Configure the DLP audit settings:
   the scan:
 
     - Store discovered sensitive data – Stores a copy of any potentially sensitive data that matches
-      the selected criteria in the Access Analyzer database. This copy can be used to check for
-      false positives, data that matches the selected criteria but is not actually sensitive.
+      the selected criteria in the Access Analyzer database. Use this copy to check for
+      false positives, data that matches the selected criteria but isn't actually sensitive.
     - Limit stored matches per criteria to [number] – Identifies the number of potentially sensitive
-      data matches that are copied to the database. The default is 5 matches. This option is
-      available only if the **Store discovered sensitive data** option is selected.
+      data matches copied to the database. The default is 5 matches. This option is available
+      only if you select the **Store discovered sensitive data** option.
 
-- Perform differential scan of – Enables users to choose whether to employ incremental scanning:
+- Perform differential scan of – Choose whether to employ incremental scanning:
 
     - Files modified since last scan – Scans only files modified since the last scan
     - Files modified since [date] – Only scans files modified after the specified date

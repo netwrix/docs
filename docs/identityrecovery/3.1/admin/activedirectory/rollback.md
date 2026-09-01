@@ -8,9 +8,6 @@ sidebar_position: 10
 
 You can revert an Active Directory object to its previous state.
 
-Follow the steps to roll back an Active Directory object, including user accounts, groups, and
-organizational units.
-
 **Step 1 –** Click Active Directory in the left pane to open the
 [Active Directory Page](/docs/identityrecovery/3.1/admin/activedirectory/overview.md).
 
@@ -34,7 +31,7 @@ select the checkbox(es) for the attributes you want to roll back. Click **Next**
 
 - Use any writable domain controller – The system picks any writable domain controller in the domain
   for the rollback operation
-- Use a specific domain controller – Select a domain controller from the drop-down menu for the
+- Use a specific domain controller – Select a domain controller from the dropdown menu for the
   rollback operation
 
 **Step 6 –** Click **Next**.
@@ -45,12 +42,12 @@ select the checkbox(es) for the attributes you want to roll back. Click **Next**
 domain tree area where the object resides. On the Credentials page:
 
 - If the account specified during domain configuration has Domain Admin privileges, click **Next**.
-- If the domain account does not have Domain Admin privileges, select the **Use alternate
+- If the domain account doesn't have Domain Admin privileges, select the **Use alternate
   credentials to perform the object rollback** checkbox and enter an account with Domain Admin
   privileges, then click **Next**.
 
 For a Least Privilege Access Model to provision an Active Directory security group with the
-permissions that are necessary to perform backups, rollbacks and recovery, see the
+permissions that are necessary to perform backups, rollbacks, and recovery, see the
 [Least Privilege Access Model](/docs/identityrecovery/3.1/requirements/targetdomain.md#least-privilege-access-model)
 topic.
 
@@ -62,6 +59,6 @@ to finish the wizard.
 
 ![Object Rollback Sucessful message](/images/identityrecovery/3.1/product/active_directory/rollback/active_directory_rollback_finished.png)
 
-**Step 9 –** A completed message is displayed when the rollback is successful. Click **OK**.
+**Step 9 –** A completion message appears when the rollback succeeds. Click **OK**.
 
-The object has been rolled back.
+Identity Recovery has rolled back the object.

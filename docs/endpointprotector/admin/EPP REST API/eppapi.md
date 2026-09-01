@@ -24,7 +24,7 @@ The API is organized into the following groups:
 
 ## Availability
 
-The EPP REST API is available as a controlled Preview for approved integration, automation, and reporting use cases. It is not enabled by default.
+The EPP REST API is available as a controlled Preview for approved integration, automation, and reporting use cases. It isn't enabled by default.
 
 To request Preview access, open a Netwrix Support case and include:
 
@@ -72,9 +72,9 @@ Access tokens are short-lived and expire after 1 hour by default. Request a new 
 
 ### Security model
 
-- **Dedicated client credentials** — Netwrix Support provisions a `client_id` and `client_secret` specifically for API access. Console administrator credentials are not used to authenticate to the API.
+- **Dedicated client credentials** — Netwrix Support provisions a `client_id` and `client_secret` specifically for API access. Console administrator credentials aren't used to authenticate to the API.
 - **Signed, short-lived tokens** — access tokens are signed JSON Web Tokens (JWT) with a default lifetime of 1 hour. The server validates every request before it reaches an endpoint.
-- **Least exposure** — the token endpoint is the only endpoint that does not require a token. Every other endpoint rejects requests without a valid, unexpired token with a 401 response.
+- **Least exposure** — the token endpoint is the only endpoint that doesn't require a token. Every other endpoint rejects requests without a valid, unexpired token with a 401 response.
 - **Attributable writes** — create and update operations record the authenticating client identifier in the `created_by` and `modified_by` fields of the affected record.
 
 :::warning
@@ -182,12 +182,12 @@ The first form is returned for authentication failures, invalid IDs, and missing
 
 - **Create** uses `POST` to the collection. For Users, Computers, and Devices, create is idempotent by identity: if a record with the same identity already exists, the API updates and returns it (HTTP 200) instead of creating a duplicate, and restores it if it had been deleted. A brand-new record returns HTTP 201.
 - **Update** uses `PATCH` to a single resource and is partial — only the fields present in the body are changed. Pass a field as `null` to clear an optional value such as `department_id`.
-- **Agent-managed fields** (for example a computer's `ip`, `mac`, and `os_version`, or a device's `vid`, `pid`, and `serial_no` after registration) are populated automatically by the EPP agent and cannot be set through the API.
+- **Agent-managed fields** (for example a computer's `ip`, `mac`, and `os_version`, or a device's `vid`, `pid`, and `serial_no` after registration) are populated automatically by the EPP agent and can't be set through the API.
 
 ### Deleting records
 
 - **Delete** uses `DELETE` on a single resource and performs a soft delete: the record is flagged deleted and excluded from future queries but retained for audit. A successful delete returns `{ "response": "allok" }`.
-- **Bulk delete** uses `DELETE` on the collection with a body of `{ "id": [ ... ] }`. Each ID is processed independently; the response is a `resources` map keyed by ID, where each entry has a `code` (200 = deleted, 404 = not found). If every ID succeeds, the status is 200; if any ID was not found, the status is 207 (Multi-Status).
+- **Bulk delete** uses `DELETE` on the collection with a body of `{ "id": [ ... ] }`. Each ID is processed independently; the response is a `resources` map keyed by ID, where each entry has a `code` (200 = deleted, 404 = not found). If every ID succeeds, the status is 200; if any ID wasn't found, the status is 207 (Multi-Status).
 
 ## HTTP status codes
 

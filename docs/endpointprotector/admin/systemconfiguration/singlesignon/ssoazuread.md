@@ -17,21 +17,20 @@ Setting up Single Sign-On (SSO) with Azure AD integrates your server with Azure'
 services. By configuring system settings, activating SSO, and choosing a login user, you prepare
 your server for seamless integration. This guide covers setting up a new enterprise application in
 Azure, configuring SAML settings, and syncing data between your server and Azure AD. Follow the
-steps below to activate Single Sign-On with Azure AD.
+following steps to activate Single Sign-On with Azure AD.
 
 **Step 1 –** Navigate to **System Conﬁguration** > **System Settings** > **Single Sign On**.
 
-**Step 2 –** Upon the activation, select a **Failover Login User** from the drop-down; root user
+**Step 2 –** Upon the activation, select a **Failover Login User** from the dropdown; root user
 will be selected by default.
 
 ![Single Sign On Conﬁguration with Microsoft Entra ID ](ssomicrosoftentraid.webp)
 
-After the above steps have been completed, a Single Sign On subsection is displayed in the System
-Conﬁguration section.
+After these steps are complete, a Single Sign On subsection appears in the System Configuration section.
 
 :::note
-The Failover Login User you selected cannot be deleted from Endpoint Protector Server
-while it is selected. Single Sign On cannot be activated without a Failover Login User.
+The Failover Login User you selected can't be deleted from Endpoint Protector Server
+while it is selected. Single Sign On can't be activated without a Failover Login User.
 :::
 
 
@@ -67,8 +66,7 @@ Conﬁguration** page.
 
 ![Entra ID SAML](entraidsaml.webp)
 
-**Step 9 –** On the Basic SAML Conﬁguration page, delete the data that is by default completed for
-Identiﬁer (Entity Edit).
+**Step 9 –** On the Basic SAML Configuration page, delete the default value in the Identifier (Entity ID) field.
 
 ![Basic SAML Conﬁguration page](entraidbasicsamlconf.webp)
 
@@ -151,8 +149,7 @@ Configuration** > **Single Sign-On** > **Failover Login URL** and **Save** it.
 
 ![Add user/group](entraidusergroupsfour.webp)
 
-**Step 25 –** The user is assigned to the application, and logging into Endpoint Protector with
-Azure is now possible.
+**Step 25 –** Assign the user to the application. You can now log into Endpoint Protector with Azure.
 
 **Step 26 –** Log out of the Endpoint Protector Server and log back in. The administrator should be
 redirected to http://login.microsoftonline.com/ for the Azure login process.

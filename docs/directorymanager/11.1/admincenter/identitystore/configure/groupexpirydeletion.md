@@ -86,7 +86,7 @@ an exception; it fetches data from the directory.
 
 
 :::note
-The Recycle Bin does not display data for a Microsoft Entra ID identity store.
+The Recycle Bin doesn't display data for a Microsoft Entra ID identity store.
 :::
 
 
@@ -94,11 +94,11 @@ The Recycle Bin does not display data for a Microsoft Entra ID identity store.
 
 Physical group deletion refers to manually deleting groups from the Directory Manager portal.
 Directory Manager moves a physically deleted group to the Recycle Bin while stripping it of most of
-its properties. You cannot delete a group from the Recycle Bin; however, you can restore it. The
+its properties. You can't delete a group from the Recycle Bin; however, you can restore it. The
 restoration process not only restores the group to its original container, but it also reinstates
 the home container for the group, if deleted.
 
-A physically deleted group is restored with limited attributes; its membership is not restored.
+A physically deleted group is restored with limited attributes; its membership isn't restored.
 Smart Groups and Dynasties are restored as static groups with no members and no query.
 
 ### Logical Deletion
@@ -118,7 +118,7 @@ deleted.
 ### Deletion Notifications
 
 When the Group Life Cycle schedule deletes a group, it notifies the group owners or, if there is no
-owner, the default approver. The job does not delete a group that neither has an owner nor a default
+owner, the default approver. The job doesn't delete a group that neither has an owner nor a default
 approver. See the
 [Specify a Default Approver](/docs/directorymanager/11.1/admincenter/workflow/advancedsettings.md#specify-a-default-approver)
 topic.

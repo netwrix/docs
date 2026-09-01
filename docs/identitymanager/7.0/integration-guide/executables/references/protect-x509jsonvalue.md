@@ -26,7 +26,7 @@ kxABACJhXxJwnGJSug/nE6ODGGYwnzhX1WeYUHmS7gkMLpF15K7POOZAVWsl93zuYaVStPK0sV+U6mOE
 kxABAJT+2u1C1r0JI8criUz15QkI71x6/BPeNMlPWEL5ZHkTvZWVnMLG/zNJz9PvnjfecROC4fkxPRI5U+sF8W1caH8DtxnzM0ctYD0QtRcpS9z48y2mUzOzl3pU68BQyosyZGZW0ifXVI9UJVGMzMTfWloCw+R+xfZHviYLVGT8y2PKkCBdNp7IcZN4qT6mq8AmTIMSgwagR854n1EHn8lT5nUUFmhZ7iIJ/sonEVG4uyTAjND9YXSsfL9dm2ipTzXrybruIkVU051aczdohreMRsfeSB6TDAYa3GEMNeAb3CzI5I/6NpKYEzZEoYu4JXAzE6bqHeK2oVJyrmTL11kwq4m9fTMwlwmB0GaPeJtbQoih6TIX2qlOPfQdsrZt0dl5qw==
 ```
 
-Then you just need to copy and paste them.
+Then you need to copy and paste them.
 
 The following example shows how to update the OpenId ClientSecret matching the "ContosoCharlotte" OpenId ClientId in the `appsettings.encrypted.agent.json` file.
 

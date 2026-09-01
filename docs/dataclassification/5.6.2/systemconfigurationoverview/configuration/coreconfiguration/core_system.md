@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # System
 
-This configuration tab contains the settings related to system health, operation and logging. Each
+This configuration tab contains the settings related to system health, operation, and logging. Each
 configuration option has an associated “i” which describes the nature of the setting.
 
 ![core_system_thumb_0_0](/images/dataclassification/5.6.2/configuration/core/core_system_thumb_0_0.webp)

@@ -7,7 +7,7 @@ sidebar_position: 30
 # GID Exclusions Tab
 
 The GID Exclusions tab on an output Properties window is where monitoring scope by group can be
-modified. These settings are initially configured when the output is added.
+modified. The system initially configures these settings when you add the output.
 
 Select an output for a Linux host on the Monitored Hosts & Services tab and click **Edit** to open the output
 Properties window.
@@ -18,10 +18,10 @@ The tab contains the following settings:
 
 - Add – Opens the Add or Edit GID window to add a group for exclusion. See the
   [Add or Edit GID Window](/docs/activitymonitor/9.0/admin/outputs/gidexclusions/addeditgid.md) topic for additional information.
-- Remove – Removes the selected group from exclusion. Confirmation is not requested.
+- Remove – Removes the selected group from exclusion. Confirmation isn't requested.
 
     :::warning
-    If an account is removed by group, use the **Cancel** button to discard the change.
+    If you remove a group by mistake, use the **Cancel** button to discard the change.
     :::
 
 

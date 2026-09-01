@@ -30,7 +30,7 @@ The following example displays the resources of the `Directory_Country` entity t
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <DisplayTable Identifier="Directory_Country" DisplayTableDesignElement="adaptable" EntityType="Directory_Country" IsEntityTypeDefault="true">

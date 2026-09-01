@@ -25,18 +25,16 @@ You can investigate lockouts originating from the following sources:
 
 ## Upgrade recommendations
 
-Since the functionality of older and newer versions does not match one-to-one (see Feature
+Since the functionality of older and newer versions doesn't match one-to-one (see Feature
 comparison of Netwrix Account Lockout Examiner 4.1 and 5.x), there is no upgrade path for **Netwrix
 Account Lockout Examiner 4.1**.
 
-Though its users can continue working with that older version, we recommend to use the latest
-Netwrix Account Lockout Examiner to benefit from the variety of its new features and enhanced
-usability.
+Though its users can continue working with that older version, the latest Netwrix Account Lockout Examiner is recommended to benefit from the variety of its new features and enhanced usability.
 
 ## Feature comparison of Netwrix Account Lockout Examiner 4.1 and 5.x
 
-Netwrix Account Lockout Examiner 5.1 and later is not an evolutionary update, but rather a total
-revamp of version 4.1. Hence, the functionality of the older and newer versions does not match
+Netwrix Account Lockout Examiner 5.1 and later isn't an evolutionary update, but rather a total
+revamp of version 4.1. Hence, the functionality of the older and newer versions doesn't match
 one-to-one. Feature comparison is provided in the table below.
 
 | Feature                                                           | Version 4.1             | Version 5.x                                                                                                 |
@@ -64,7 +62,7 @@ one-to-one. Feature comparison is provided in the table below.
 Users of Account Lockout Examiner 4.1 can continue using that older version, as there is no upgrade
 path, just a new installation of the latest version.
 
-We welcome any feedback and ideas you might have. You can check in on
+Feedback and ideas are welcome. You can check in on
 [Netwrix page at Spiceworks](https://community.spiceworks.com/pages/NetWrix?tab=353) or submit
 direct feedback via
-[this link](https://community.spiceworks.com/products/47099-netwrix-account-lockout-examiner).
+[Netwrix Account Lockout Examiner feedback page](https://community.spiceworks.com/products/47099-netwrix-account-lockout-examiner).

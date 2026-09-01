@@ -13,13 +13,13 @@ product (same VID and/or PID).
 A new Custom Class can be created by clicking on the Create. An existing policy can be edited by
 double-clicking on it.
 
-You can edit, duplicate or delete a policy after selecting the policy.
+You can edit, duplicate, or delete a policy after selecting the policy.
 
 ![Provides you with the option to create new classes of devices for easier management](customclasses.webp)
 
 Before adding devices to a Custom Class, the Name, Description, Device Type (USB Storage Devices,
-Cameras, etc.), Device Right (Allow Access, Block Access, etc.) must be provided. Once this is done,
-there are multiple ways of adding devices to a Custom Class:
+Cameras, etc.), Device Right (Allow Access, Block Access, etc.) must be provided. After providing
+these, there are multiple ways of adding devices to a Custom Class:
 
 - New Device (VID, PID, Serial Number) – will allow at Step 2 to add new devices based on Vendor ID,
   Product ID, and Serial Number.
@@ -37,9 +37,9 @@ there are multiple ways of adding devices to a Custom Class:
 
 ![Add multiple devices at the same time, by specifying the ﬁrst and last Serial Number in the range](multipledevices.webp)
 
-> **NOTE:** Although this feature can work in situations where the Serial Number range does not
-> follow a noticeable pattern, this is not recommended. In this type of situation, some devices will
-> be ignored by Endpoint Protector and the Custom Class will not have the expected effect.
+:::note
+Although this feature can work in situations where the Serial Number range doesn't follow a noticeable pattern, this isn't recommended. In this type of situation, some devices will be ignored by Endpoint Protector and the Custom Class will not have the expected effect.
+:::
 
 - Bulk List of Devices – will allow at Step 2 to add up to 1000 devices at the same time. There are
   two methods to choose from, either importing a list or simply pasting the information.
@@ -50,10 +50,10 @@ there are multiple ways of adding devices to a Custom Class:
   option is intended to be used in scenarios when a very fast way to change all device types in the
   system but speciﬁc device rights were granularly added to some users or computers.
 
-For example; we created a Custom Class CD-ROM Allow and set Allow access rights to devices of type
-CD-ROM /DVD-ROM. Let’s say that CD-ROMs have Deny access rights set on Client PC CIP0. Once the
-custom class CD-ROM Allow is created and Custom Classes is enabled, all the CD-ROMs/DVD-ROMs will
-have access, even if on the Client PC CIP0 they have Deny access.
+For example: create a Custom Class CD-ROM Allow and set Allow access rights to devices of type
+CD-ROM/DVD-ROM. If CD-ROMs have Deny access rights set on Client PC CIP0, after the custom class
+CD-ROM Allow is created and Custom Classes is enabled, all the CD-ROMs/DVD-ROMs will have access,
+even if on Client PC CIP0 they have Deny access.
 
 ## Priorities for Device Rights
 
@@ -116,9 +116,9 @@ You can choose to log out or continue your session, resetting the session timeou
 ![Rights Functionality ](rightsfunctionality.webp)
 
 For example; Device X is allowed from Global Rights. If in the Computer Rights section, the same
-device does not have permission to be used, the device will not be usable. Same applies vice-versa:
+device doesn't have permission to be used, the device will not be usable. Same applies vice-versa:
 if the device lacks access permission globally, and has permission set per computer, the device will
-be allowed. The same applies for Global Rights and Group Rights: if globally the device does not
+be allowed. The same applies for Global Rights and Group Rights: if globally the device doesn't
 have permission to be used, and group permission exists, the device will be allowed.
 
 ### Priorities for Device Control Policies

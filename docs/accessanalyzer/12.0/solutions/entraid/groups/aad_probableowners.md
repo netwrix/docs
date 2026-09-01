@@ -6,9 +6,9 @@ sidebar_position: 70
 
 # AAD_ProbableOwners Job
 
-The AAD_ProbableOwners Job determines potential owners for Microsoft Entra ID Groups which can be
-used to perform automated membership reviews and enable self-service group management and membership
-requests.
+The AAD_ProbableOwners Job determines potential owners for Microsoft Entra ID groups. Use these
+results to perform automated membership reviews and enable self-service group management and
+membership requests.
 
 ## Analysis Tasks for the AAD_ProbableOwners Job
 
@@ -16,7 +16,7 @@ Navigate to the **Jobs** > **Entra ID** > **1.Groups** > **AAD_ProbableOwners** 
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

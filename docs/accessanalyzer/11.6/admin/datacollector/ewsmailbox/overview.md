@@ -7,8 +7,8 @@ sidebar_position: 140
 # EWSMailbox Data Collector
 
 The EWSMailbox Data Collector provides configuration options to scan mailbox contents, permissions,
-and sensitive data, and is preconfigured within the Exchange Solution. Both this data collector and
-the solution are available with a special Enterprise Auditor license. See the
+and sensitive data. Netwrix preconfigures it within the Exchange Solution. Both this data collector
+and the solution are available with a special Enterprise Auditor license. See the
 [Exchange Solution](/docs/accessanalyzer/11.6/solutions/exchange/overview.md)
 topic for additional information.
 
@@ -33,14 +33,13 @@ topic for additional information.
 **Sensitive Data Discovery Considerations**
 
 The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
-additional GB of RAM per host. For example, if the job is configured to scan 8 hosts at a time ,
-then an extra 16 GB of RAM are required (8x2=16).
+which enables Sensitive Data criteria for scans. If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each thread
+requires a minimum of 2 additional GB of RAM per host. For example, if you configure the job to
+scan 8 hosts at a time, it requires an extra 16 GB of RAM (8x2=16).
 
 ## EWSMailbox Query Configuration
 
-The EWSMailbox Data Collector is configured through the Exchange Mailbox Data Collector Wizard,
+Configure the EWSMailbox Data Collector through the Exchange Mailbox Data Collector Wizard,
 which contains the following wizard pages:
 
 :::note

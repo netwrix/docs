@@ -16,7 +16,7 @@ for[ Enterprise Password Enforcer](/docs/threatprevention/7.5/solutions/epe.md)
 :::
 
 
-Follow the steps to configure a policy to monitor the creation of weak passwords.
+ a policy to monitor the creation of weak passwords.
 
 ![EPE Settings window](/images/threatprevention/7.5/admin/configuration/epesettings.webp)
 
@@ -25,7 +25,7 @@ environment.
 
 - Click **Configuration** > **EPE Settings** on the menu to open the EPE Settings window.
 - Download the latest copy of the HaveIBeenPwned dictionary file. See the
-  [Download and Configure the Have I Been Pwnd Hash List](/docs/threatprevention/7.5/admin/configuration/epesettings.md#download-and-configure-the-have-i-been-pwnd-hash-list)
+  [Download and Configure the Have I Been Pwned Hash List](/docs/threatprevention/7.5/admin/configuration/epesettings.md#download-and-configure-the-have-i-been-pwned-hash-list)
   topic for additional information.
 - Determine whether you want to deploy the dictionary to each domain controller or keep it locally
   on the Enterprise Manager server. See the
@@ -39,7 +39,7 @@ environment.
 
 ![New Monitor EPE Policy - General tab](/images/threatprevention/7.5/admin/policies/eventtype/usecase/newmonitorepepolicy.webp)
 
-- Right-click on the **Policies > Auditing** folder and select **New > Policy**.
+- Right-click the **Policies > Auditing** folder and select **New > Policy**.
 - On the General tab, provide a unique descriptive name, e.g. Monitor Weak Passwords, and
   description, e.g. This policy monitors the creation of weak passwords according to the global
   EPE settings.

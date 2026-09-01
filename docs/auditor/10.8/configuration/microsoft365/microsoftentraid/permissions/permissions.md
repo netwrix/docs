@@ -6,11 +6,10 @@ sidebar_position: 20
 
 # Permissions for Microsoft Entra ID Auditing
 
-Auditor allows you to audit Office 365 organizations that have established modern authentication as
+Use Auditor to audit Office 365 organizations that have established modern authentication as
 their identity management approach, including support for
 [multi-factor authentication (MFA)](https://docs.microsoft.com/en-us/azure/active-directory/authentication/concept-mfa-howitworks).
-To learn more about modern authentication, refer to the following Microsoft article:
-[What is modern authentication](https://docs.microsoft.com/en-us/office365/enterprise/hybrid-modern-auth-overview#what-is-modern-authentication).
+For more information about modern authentication, see [What is modern authentication](https://docs.microsoft.com/en-us/office365/enterprise/hybrid-modern-auth-overview#what-is-modern-authentication).
 
 In this scenario, Netwrix Auditor will access the cloud-based infrastructure via Microsoft Graph and
 other modern APIs, being authenticated through a pre-configured Microsoft Entra ID (formerly Azure
@@ -20,7 +19,7 @@ app and provide its settings to Auditor when configuring a monitored item.
 ## For Microsoft Entra ID Auditing
 
 To collect audit data in your cloud-based environment, Netwrix uses a dedicated Microsoft Entra ID
-application and leverages APIs access permissions granted to that app. To register such application
+application and uses APIs access permissions granted to that app. To register such application
 and assign required permissions, a Microsoft Entra ID account with an administrative role will be
 required:
 
@@ -72,7 +71,6 @@ service principal using Microsoft Entra ID Admin portal:
 
 ### Configure Client Secret
 
-Follow the steps to create a new client secret to be used by the app.
 
 **Step 1 –** Go to **Manage** > **Certificates & secrets** and click **New client secret**.
 
@@ -88,7 +86,6 @@ See the following Microsoft article for more information on how to add a client 
 
 ### Obtain Tenant Name
 
-Follow the steps to obtain the tenant name.
 
 **Step 1 –** Go to **Microsoft Entra ID** > **Overview**.
 

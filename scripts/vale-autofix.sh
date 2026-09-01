@@ -5,25 +5,14 @@
 
 set -euo pipefail
 
+# Namespaced (not SCRIPT_DIR) because this file is sourced by
+# test-anchor-update.sh, which sets its own SCRIPT_DIR before sourcing —
+# a shared name here would silently clobber the caller's.
+_VALE_AUTOFIX_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # --- Shared functions ---
 
-slugify() {
-  local heading="$1"
-
-  # Check for custom anchor ID: {#custom-id}
-  if [[ "$heading" =~ \{#([a-zA-Z0-9_-]+)\} ]]; then
-    echo "${BASH_REMATCH[1]}"
-    return
-  fi
-
-  echo "$heading" \
-    | sed -E 's/^#+ +//' \
-    | tr '[:upper:]' '[:lower:]' \
-    | sed -E "s/[^a-z0-9 -]//g" \
-    | sed -E 's/ +/-/g' \
-    | sed -E 's/-+/-/g' \
-    | sed -E 's/^-+//;s/-+$//'
-}
+source "$_VALE_AUTOFIX_DIR/lib/slugify.sh"
 
 _get_product_version_folder() {
   local filepath="$1"
@@ -47,16 +36,30 @@ _word_overlap_score() {
   local -a ow nw
   IFS='-' read -ra ow <<< "$old_slug"
   IFS='-' read -ra nw <<< "$new_slug"
-  local intersect=0 word nword
+  local intersect=0 oreal=0 nreal=0 word nword i
+  local -a used=()
   for word in "${ow[@]}"; do
     [ -z "$word" ] && continue
-    for nword in "${nw[@]}"; do
+    oreal=$((oreal + 1))
+    for i in "${!nw[@]}"; do
+      nword="${nw[$i]}"
       [ -z "$nword" ] && continue
-      if [ "$word" = "$nword" ]; then intersect=$((intersect + 1)); break; fi
+      [ -n "${used[$i]:-}" ] && continue
+      if [ "$word" = "$nword" ]; then
+        intersect=$((intersect + 1))
+        used[$i]=1
+        break
+      fi
     done
   done
-  local maxlen=${#ow[@]}
-  [ ${#nw[@]} -gt "$maxlen" ] && maxlen=${#nw[@]}
+  for nword in "${nw[@]}"; do
+    [ -n "$nword" ] && nreal=$((nreal + 1))
+  done
+  # Count only non-empty tokens: uncollapsed hyphen runs in the slug produce
+  # empty elements when split on '-', which would otherwise inflate the
+  # denominator and deflate the score below the rename-match threshold.
+  local maxlen=$oreal
+  [ "$nreal" -gt "$maxlen" ] && maxlen=$nreal
   [ "$maxlen" -eq 0 ] && echo 0 && return
   echo $(( (intersect * 100) / maxlen ))
 }

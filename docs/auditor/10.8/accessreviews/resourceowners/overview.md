@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The Resource Owners interface is where Access Reviews Console users with either the Security Team or
 Administrator role (to be referred to as Ownership Administrators) can assign ownership of resources
-to be managed through the application. Assigned owners do not require a console user role. Resources
+to be managed through the application. Assigned owners don't require a console user role. Resources
 to be included in the Access Reviews workflow must first be assigned owners within the Resource
 Owners interface.
 
@@ -70,7 +70,7 @@ Prerequisite:
 
 Workflow:
 
-**NOTE:** This workflow is not numbered because the Notification piece can occur at any time in the
+**NOTE:** This workflow isn't numbered because the Notification piece can occur at any time in the
 workflow.
 
 - Add resources to be managed by associating a business data owner with a resource. See the

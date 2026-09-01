@@ -7,22 +7,22 @@ sidebar_position: 10
 # Appendix for the StealthAUDIT MAPI CDO Installation Guide
 
 :::warning
-The Enterprise Auditor MAPI CDO must be installed first before installing the Microsoft
+You must install the Enterprise Auditor MAPI CDO first before installing the Microsoft
 Exchange MAPI CDO.
 :::
 
 
-Before installing either binary, close the Enterprise Auditor application and ensure the following
-requirements have been met:
+Before installing either binary, close the Enterprise Auditor application and ensure you meet the
+following requirements:
 
-- Exchange System Manager for Exchange 2003 is not installed on the Enterprise Auditor Console
+- Exchange System Manager for Exchange 2003 isn't installed on the Enterprise Auditor Console
   server.
-- Microsoft Outlook is not installed on the Enterprise Auditor Console server.
+- Microsoft Outlook isn't installed on the Enterprise Auditor Console server.
 
 These programs will interfere with the Microsoft Exchange MAPI CDO installation and with MAPI
-connections if they are installed on the Enterprise Auditor Console server.
+connections if you install them on the Enterprise Auditor Console server.
 
-Follow these steps to install the Microsoft Exchange MAPI CDO.
+To install the Microsoft Exchange MAPI CDO:
 
 **Step 1 –** Download and run the ExchangeMapiCDO application from Microsoft.
 
@@ -55,5 +55,4 @@ agreement and click Next.
 
 **Step 6 –** When the installation is complete, click Finish.
 
-Reopen the Enterprise Auditor application, and the Settings > Exchange node is enabled for
-configuration.
+Reopen the Enterprise Auditor application. You can now configure the Settings > Exchange node.

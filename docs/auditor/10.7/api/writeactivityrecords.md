@@ -10,8 +10,8 @@ sidebar_position: 60
 
 Write data to the Audit Database and to the Long-Term Archive. By default, all imported data is
 written to a special Netwrix_Auditor_API database and recognized as the Netwrix API data source.
-This data is not associated with any monitoring plan in the product. You can associate Activity
-Records with a plan, in this case data will be written to a database linked to this plan. Make sure
+This data isn't associated with any monitoring plan in the product. You can associate Activity
+Records with a plan, in this case data will be written to a database linked to this plan. ensure
 the plan you specify is already created in Netwrix Auditor, the Netwrix API data source is added to
 the plan and enabled for monitoring.
 

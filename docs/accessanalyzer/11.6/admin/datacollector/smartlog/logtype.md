@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # SMARTLog: Log Type
 
-The Log Type page is used to select the log type to be processed.
+Use the Log Type page to select the log type to process.
 
 ![SMART Log DC Wizard Log Type page](/images/accessanalyzer/11.6/admin/datacollector/smartlog/logtype.webp)
 
@@ -15,16 +15,16 @@ The log types are:
 - Windows Event Log – Connects to and extract information from any Windows event log made available
   on the target host
 - Windows Event Log (Archived) – Extract events from an offline log by moving the log to the
-  Enterprise Auditor Console and having it processed on the local host instead of the target host
+  Enterprise Auditor Console and processing it on the local host instead of the target host
 - Internet Information Server Log – An Exchange query that returns information from Outlook Web
   Access IIS logs found on CAS servers
 
-    - The IIS log must be configured to generate specific columns in order for the SMARTLog Data
-      Collector to audit them. See the
+    - Configure the IIS log to generate specific columns so the SMARTLog Data
+      Collector can audit them. See the
       [IIS Log Auditing Requirements](#iis-log-auditing-requirements) topic for additional
       information.
 
-- File Change Detection Log – This is a legacy option. It should not be selected.
+- File Change Detection Log – This is a legacy option. Don't select it.
 
 ## IIS Log Auditing Requirements
 

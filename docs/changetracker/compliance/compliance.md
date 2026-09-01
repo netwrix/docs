@@ -9,23 +9,23 @@ sidebar_position: 80
 The **Compliance** tab provides an overview of compliance scores for all devices within any selected
 group.
 
-The screen shows the previous 7 compliance report results to track any drift against your selected
-hardened build standard and whether scores are improving or worsening.
+The screen shows the previous seven compliance report results to track any drift against your
+selected hardened build standard and whether scores are improving or worsening.
 
-Ensure Devices are maintaining compliance and track progress over time when implementing a new
-Hardened Build Standard. View estate/device compliance by selecting a different Compliance Standard
-from the Compliance Report selector then drill into report results by clicking on the Report Score
-for any Device.
+Use this tab to confirm that devices maintain compliance and to track progress over time when you
+implement a new hardened build standard. To view estate or device compliance, select a different
+compliance standard from the Compliance Report selector, then drill into report results by
+clicking the report score for any device.
 
-You can view any individual report by clicking the result score, and export the reports you select
-with the checkboxes in a range of formats (PDF, Excel, or CSV), with an option to select more
-detailed results.
+You can view any individual report by clicking its result score. To export reports, select them
+with the checkboxes, then choose a format (PDF, Excel, or CSV) and, optionally, more detailed
+results.
 
 Review the following for additional information:
 
 - [Overview Tab](/docs/changetracker/compliance/complianceoverviewtab.md)
 - [Policy Tab](/docs/changetracker/compliance/compliancepolicy.md)
-- [Details Tab ](/docs/changetracker/compliance/compliancedetails.md)
+- [Details Tab](/docs/changetracker/compliance/compliancedetails.md)
 
 ## Comparing results
 
@@ -39,8 +39,8 @@ identify the configuration differences between two devices.
 
 Netwrix Change Tracker scores devices against a hardened build standard using compliance report
 templates. The following tables list the templates available for each compliance standard and the
-platforms they support. Template names appear exactly as shown in Change Tracker; the `NNT` prefix
-(and the `Netwrix` prefix on some templates) is part of the name.
+platforms they support. Template names appear exactly as they appear in Change Tracker; the `NNT`
+prefix (and the `Netwrix` prefix on some templates) is part of the name.
 
 :::info
 Only Center for Internet Security (CIS) benchmark reports ship bundled with the Hub Server

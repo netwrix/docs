@@ -6,14 +6,14 @@ sidebar_position: 20
 
 # SMARTLog: Sample Host
 
-The Sample Host page is used to configure the host. It is a wizard page for all log types.
+Use the Sample Host page to configure the host. It's a wizard page for all log types.
 
 ![SMART Log DC Wizard Sample Host page](/images/accessanalyzer/11.6/admin/datacollector/smartlog/samplehost.webp)
 
 Select a host for running a test query on the Criteria page from the following radio buttons:
 
 - Local Computer – localhost
-- Another computer – If selecting another computer for the host, click the ellipsis to open the
+- Another computer – If you select another computer for the host, click the ellipsis to open the
   Select Computer window. See the [Select Computer Window](#select-computer-window) topic for
   additional information.
 
@@ -21,7 +21,7 @@ Select a host for running a test query on the Criteria page from the following r
 
 ![Select Computer window](/images/accessanalyzer/11.6/admin/datacollector/smartlog/selectcomputerwindow.webp)
 
-If selecting another computer for the host, click the ellipsis to open the Select Computer window
+If you select another computer for the host, click the ellipsis to open the Select Computer window
 and select a computer. The options in the Select Computer window are:
 
 - Object Types – Either enter the object type name in the textbox or click **Object Types** to
@@ -41,13 +41,13 @@ and select a computer. The options in the Select Computer window are:
 The Common Queries section is included on the advanced Select Computer window in addition to object
 type and location in the original Select Computer window.
 
-- Name – Select a qualifier from the drop-down menu and enter a name of an object in the associated
+- Name – Select a qualifier from the dropdown menu and enter a name of an object in the associated
   text box
-- Description – Select a qualifier from the drop-down menu and enter a description in the associated
+- Description – Select a qualifier from the dropdown menu and enter a description in the associated
   text box
 - Select the **Disabled accounts** checkbox to include disabled accounts in the search
 - Select the **Non-expiring password** checkbox to include non-expiring passwords in the search
-- Select the number of **Days since last logon** from the drop-down menu
+- Select the number of **Days since last logon** from the dropdown menu
 - Click the **Columns** button to open the Choose Columns window
 
     ![Choose Columns window](/images/accessanalyzer/11.6/admin/datacollector/smartlog/choosecolumnswindow.webp)

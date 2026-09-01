@@ -31,7 +31,7 @@ Gives access to a shortcut on the dashboard to access this page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="HR_ActivityTemplateState" DisplayName_L1="Main/Administrator - Workflow Supervision" DisplayName_L2="Métier/RH - Supervision des Workflows" EntityType="ActivityTemplateState" Profile="Administrator">

@@ -6,21 +6,21 @@ sidebar_position: 30
 
 # PasswordSecurity: Dictionaries
 
-The Dictionaries page provides configuration settings for storing passwords to be used as a
-reference for the scan.
+The Dictionaries page provides configuration settings for storing passwords that the scan uses as a
+reference.
 
 ![Password Security Data Collection Wizard Dictionary options page](/images/accessanalyzer/12.0/admin/datacollector/passwordsecurity/dictionaries.webp)
 
 The configurable dictionary options are:
 
 - Use Stealthbits dictionary (> 100,000 passwords) – If enabled, compares passwords against
-  out-of-the-box dictionary comprised of commonly used password hashes
+  a built-in dictionary comprised of commonly used password hashes
 - Automatically update the Stealthbits dictionary – Checks for the latest version of the Netwrix
-  weak password dictionary file when the job is executed, and downloads the latest version from the
+  weak password dictionary file when the job runs, and downloads the latest version from the
   [Netwrix website](https://www.netwrix.com/)
 
-    - If the Access Analyzer server does not have an internet connection, the weak password
-      dictionary can be downloaded directly from the
+    - If the Access Analyzer server doesn't have an internet connection, you can download the weak
+      password dictionary directly from the
       [My Products](https://www.netwrix.com/my_products.html) page of the Netwrix website. See the
       [Download the Netwrix Weak Password Dictionary](#download-the-netwrix-weak-password-dictionary)
       topic for additional information.
@@ -29,8 +29,8 @@ The configurable dictionary options are:
 - Add – Add a custom dictionary file in one of the following formats:
 
     - Plaintext – Line separated in a text file
-    - NLTM Hashes – Can be added with hashes or sorted hashes. The haveibeenpwned dictionary can be
-      used. See the
+    - NLTM Hashes – Provide hashes or sorted hashes. You can use the haveibeenpwned
+      dictionary. See the
       [Download and Configure the Have I Been Pwnd (HIBP) Hash List](#download-and-configure-the-have-i-been-pwnd-hibp-hash-list)
       topic for additional information.
 
@@ -43,8 +43,8 @@ The configurable dictionary options are:
 
 ## Download the Netwrix Weak Password Dictionary
 
-**Step 1 –** If the Access Analyzer server does not have an internet connection, the weak passwords
-dictionary can be downloaded directly from the
+**Step 1 –** If the Access Analyzer server doesn't have an internet connection, download the weak
+passwords dictionary directly from the
 [My Products](https://www.netwrix.com/my_products.html) page of the Netwrix website.
 
 **Step 2 –** After downloading the dictionary file manually do one the following:
@@ -67,18 +67,18 @@ dictionary can be downloaded directly from the
 ## Download and Configure the Have I Been Pwnd (HIBP) Hash List
 
 If you don't have internet access on the Netwrix Access Analyzer (formerly Enterprise Auditor)
-server or want to download the files from another location that has internet access, you can do so
-by using the Pwnd Passwords Downloader.
+server, or you want to download the files from another location with internet access, use the Pwnd
+Passwords Downloader.
 
-The Pwnd Passwords Downloader is a Dotnet tool used to download all Pwned Passwords hash ranges and
-save them offline so they can be used without a dependency on the k-anonymity API. Use this tool to
-get the latest breached hashes from the Have I Been Pwnd (HIBP) database.
+The Pwnd Passwords Downloader is a Dotnet tool that downloads all Pwned Passwords hash ranges and
+saves them offline for use without a dependency on the k-anonymity API. Use this tool to get the
+latest breached hashes from the Have I Been Pwnd (HIBP) database.
 
 :::note
 The
 [](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)[Pwnd Passwords Downloader](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader)
-is a third party, open source tool, created by the HaveIBeenPwned team and distributed under a BSD
-3-Clause License. You might experience issues during the hash download process, depending on your
+is a third-party, open source tool that the HaveIBeenPwned team created and distributes under a
+BSD 3-Clause License. You might experience issues during the hash download process, depending on your
 threading settings or the load on the CloudFlare backend. The Pwnd Passwords Downloader tool will
 automatically retry to continue downloading the hashes until it fully completes the download
 process.
@@ -94,14 +94,14 @@ The Pwnd Passwords Downloader has the following prerequisite:
   can download .NET 6 from Microsoft:
   [https://dotnet.microsoft.com/en-us/download/dotnet/6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
-The HIBP database takes up additional space on the machine where it is copied (approximately 13 GB,
-but subject to change). The Have I Been Pwnd database (HIBP) hashes can take up to 30 GB. Make sure
+The HIBP database takes up additional space on the machine where you copy it (approximately 13 GB,
+but subject to change). The Have I Been Pwnd database (HIBP) hashes can take up to 30 GB. ensure
 that you have enough free space on your disk in your Netwrix Access Analyzer (formerly Enterprise
 Auditor) install directory (`%sainstalldir%`).
 
 ### Install the Pwnd Passwords Downloader
 
-Follow the steps to install the Pwnd Passwords Downloader.
+To install the Pwnd Passwords Downloader:
 
 **Step 3 –** Open command prompt, and navigate to your .NET install folder (for example,
 `C:\Program Files (x86)\dotnet`).
@@ -118,7 +118,7 @@ dotnet tool install --global haveibeenpwned-downloader
 
 ### Update an Installed Pwnd Passwords Downloader
 
-Follow the steps to update an installed Pwnd Passwords Downloader.
+To update an installed Pwnd Passwords Downloader:
 
 **Step 1 –** Open the command prompt.
 
@@ -132,7 +132,7 @@ dotnet tool update --global haveibeenpwned-downloader
 
 ### Download NTML Hashes with the Pwnd Passwords Downloader
 
-Follow the steps to download NTLM hashes.
+To download NTLM hashes:
 
 **Step 1 –** Navigate to the folder where you want to download the hashes.
 
@@ -155,5 +155,5 @@ This screenshot shows the completed download.
 haveibeenpwned-downloader.exe -n pwnedpasswords_ntlm -o
 ```
 
-For a complete list of available parameters, please check the
+For a complete list of available parameters, check the
 [Pwnd Passwords Downloader GitHub page](https://github.com/HaveIBeenPwned/PwnedPasswordsDownloader).

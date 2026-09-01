@@ -20,13 +20,13 @@ This window is only available to Threat Prevention administrators.
 :::
 
 
-The user account that ran the installation is automatically set with the administrator role. This is
-the only active user until more are added. This ensures that no unauthorized accounts can open the
-Administration Console.
+Threat Prevention automatically sets the user account that ran the installation with the
+administrator role. This is the only active user until you add more. This ensures that no
+unauthorized accounts can open the Administration Console.
 
 ## Roles
 
-There are two roles that can be applied to a Threat Prevention user:
+You can apply two roles to a Threat Prevention user:
 
 - Administrator – Full access to the Administration Console, though access can be restricted. See
   the Administrator Permissions topic for additional information.
@@ -55,8 +55,8 @@ information on the new reporting console.
 | Modify User Access Rights                                   | Yes                             | No                              |
 | LDAP Operations Center                                      | Yes                             | No                              |
 
-\*If an administrator changes permissions on protected policies they do not own, a system alert is
-generated.
+\*Threat Prevention generates a system alert if an administrator changes permissions on protected
+policies they don't own.
 
 See the [Policies Interface](/docs/threatprevention/8.0/admin/policies/overview.md) topic for information on protected and
 unprotected policies.
@@ -67,8 +67,8 @@ NVMonitorConfig and NVMonitorData databases, according to the assigned role:
 - Administrator Role
 
   - Read/Write data
-  - If using [Database Maintenance Window](/docs/threatprevention/8.0/admin/configuration/databasemaintenance/overview.md) – SQL Admin (sa)
-    rights are required
+  - If using [Database Maintenance Window](/docs/threatprevention/8.0/admin/configuration/databasemaintenance/overview.md), you need
+    SQL Admin (sa) rights
 
 - Console Operator Role
 
@@ -76,13 +76,13 @@ NVMonitorConfig and NVMonitorData databases, according to the assigned role:
 
 ## Administrator Permissions
 
-The Features button is enabled for users with the Administrator role. It provides options to limit
-Administrator permissions to manage features, stop the Agent, or uninstall the Agent.
+Threat Prevention enables the Features button for users with the Administrator role. It provides
+options to limit Administrator permissions to manage features, stop the Agent, or uninstall the
+Agent.
 
 ![Users and Roles window showing the Edit Features window](/images/threatprevention/8.0/admin/configuration/userroles/featuresbutton.webp)
 
-Follow the steps to edit the features for the selected user. All listed features are enabled by
-default.
+All listed features are enabled by default.
 
 **Step 1 –** Click the **Features** button. The Edit features window opens.
 
@@ -90,4 +90,4 @@ default.
 
 **Step 3 –** Click **OK**.
 
-The user is denied rights to the deselected features.
+Threat Prevention denies the user rights to the deselected features.

@@ -80,16 +80,16 @@ The NDC Collector is implemented as a Microsoft Windows Service.
 
 ## Indexer
 
-The Indexer takes each new document collected by the NDC Collector and indexes terms from 
+The Indexer takes each new document the NDC Collector collected and indexes terms from 
 the extracted text within the NDC Index.
 
 The index can be read from concurrently with the indexing process. However, significant indexing
-activity can lead to a corresponding drop in index performance, in which case the Indexer should
-either be run during quiet periods (e.g. overnight) or the indexing should be performed separately
+activity can lead to a corresponding drop in index performance. In this case, run the Indexer
+during quiet periods (e.g. overnight) or perform indexing separately
 with a batch process updating the live index periodically.
 
-If the Indexer is to update the live index as a background task then it is vital that this process
-runs on the same server where the NDC Index Database is located.
+If you want the Indexer to update the live index as a background task, run it on the same server
+where you store the NDC Index Database.
 
 The Indexer is implemented as a Microsoft Windows Service.
 

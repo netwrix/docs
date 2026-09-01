@@ -10,8 +10,8 @@ You can manage the following replication settings for an identity store:
 
 - Specify the object attributes that you want to use in the identity store. The Replication service
   then replicates the selected attributes to Elasticsearch.  
-  Attributes that you do not select for replication will not be available in the identity store and
-  cannot be used in Directory Manager functions.
+  Attributes that you don't select for replication will not be available in the identity store and
+  can't be used in Directory Manager functions.
 - Force run the service at any given time to replicate object attributes.
 - Restore object data to Elasticsearch for an identity store.
 
@@ -20,7 +20,7 @@ You can manage the following replication settings for an identity store:
 For an identity store, a few attributes have been specified for replication by default. You can
 modify the list as required.
 
-Follow the steps to select object attributes.
+To select object attributes.
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -33,7 +33,7 @@ Step 4 – On the Replication page, the Attribute Name column displays a list of
 that the Replication service replicates to Elasticsearch for the identity store.
 
 - Use the search box to search for an attribute in the list.  
-  Simply enter a search string in the box; attribute names containing the string will be displayed.
+  Enter a search string in the box; Directory Manager displays attribute names containing the string.
 
 - To remove an attribute from the list, click **Remove** for it.
 - To reset to the default attribute listing, click **Reset to Default**.
@@ -41,7 +41,7 @@ that the Replication service replicates to Elasticsearch for the identity store.
 Step 5 – Click **Add Replication Attributes** to add an attribute to the list.
 
 Step 6 – The Select Replication Attributes dialog box displays a list of the schema attributes in
-the provider. Select the check boxes for the attributes you want to replicate for the identity store
+the provider. Select the checkboxes for the attributes you want to replicate for the identity store
 and click **Save**. The attributes are added to the Attribute Name column on the Replication page.
 
 :::note
@@ -59,12 +59,12 @@ Step 7 – Click **Save**.
 
 ## Replicate a Custom Attribute
 
-By default, a custom attribute for any object type (user, group, computer, public folder) is not
+By default, a custom attribute for any object type (user, group, computer, public folder) isn't
 replicated for an identity store.
 
 Let’s assume you have a custom attribute, SerialNumber, for the user object in Active Directory.
 
-Follow the steps to replicate its value in the Elasticsearch repository.
+To replicate its value in the Elasticsearch repository.
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 
@@ -76,9 +76,9 @@ Step 3 – Click **Replication** under Settings in the left pane.
 Step 4 – On the Replication page, click **Add Replication Attributes** to search, select, and add
 the required attribute (for example, _SerialNumber_) to the **Attribute Name** list.
 
-Step 5 – The Replicate to Objects dialog box is displayed, click:
+Step 5 – The Replicate to Objects dialog box is displayed. Enter your selection:
 
-- RECOMMENDED: Yes – To run replication from scratch for the object type the added attribute belongs
+- RECOMMENDED: Yes – To run replication for all objects in the category the added attribute belongs
   to (i.e., user object in the example).
 - No – To run replication for the object at next replication interval when the object is modified.
 
@@ -174,7 +174,7 @@ restores the following for an identity store:
 - the Directory Manager pseudo attributes of those objects from the Directory Manager database to
   Elasticsearch
 
-Follow the steps to restore object data:
+To restore object data:
 
 Step 1 – In Admin Center, click **Identity Stores** in the left pane.
 

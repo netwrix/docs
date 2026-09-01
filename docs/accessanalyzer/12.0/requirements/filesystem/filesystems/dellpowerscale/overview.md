@@ -38,7 +38,7 @@ topic for additional information.
 
 **Additional Sensitive Data Discovery Auditing Permission**
 
-In order to execute scoped Sensitive Data Discovery Auditing scans, the credential must also have
+to execute scoped Sensitive Data Discovery Auditing scans, the credential must also have
 the LOCAL:System provider selected in each access zone in which the shares to be scanned reside.
 
 The credential must have an Authentication Provider configured for the Isilon/PowerScale device. For
@@ -71,8 +71,8 @@ Share permissions can now be granted to this credential.
 
 ## BackupAdmin Role Assignment for OneFS
 
-Follow the steps to assign the credential to the **BackupAdmin** role through OneFS Storage
-Administration Console.
+To assign the credential to the **BackupAdmin** role through the OneFS Storage Administration
+Console, complete the following steps.
 
 **Step 1 –** Navigate to the **Access** tab > **Membership & Roles** for the System Access Zone.
 
@@ -111,8 +111,8 @@ export** (per NFS export):
 - Always read-only clients
 - Root Clients
 
-The NFS export to be scanned also needs to be configured so root squash is disabled, which is
-performed in the same Edit export menu as the above settings.
+You must also disable root squash for the NFS export, which you configure in the same Edit export
+menu as these settings.
 
 **Step 1 –** Navigate to the export's **Root user mapping** settings.
 
@@ -120,14 +120,12 @@ performed in the same Edit export menu as the above settings.
 
 **Step 3 –** Set both User and Group to **0** (effectively mapping root client UID/GID to 0).
 
-Both of these steps need to be performed in each NFS export's settings that a user would like to
-scan.
+Perform both of these steps in each NFS export's settings that you want to scan.
 
 ### Troubleshooting NFSv3 Export Access
 
-If Access Analyzer is not discovering the expected NFS export, it is possible that the export policy
-is not properly configured to allow the Access Analyzer server or proxy server IP Address to mount
-the NFS export. One step in troubleshooting this issue is to confirm a Unix client (or WSL for
+If Access Analyzer isn't discovering the expected NFS export, the export policy might not be
+configured to allow the Access Analyzer server or proxy server IP address to mount the NFS export. One step in troubleshooting this issue is to confirm a Unix client (or WSL for
 Windows) in the same IP range as the Access Analyzer server or proxy server can mount the NFS
 export.
 
@@ -159,7 +157,7 @@ server:
 - Membership in the local Administrators group
 - READ and WRITE access to the archive location for Archiving feature only
 
-It is also necessary to enable the Remote Registry Service on the Activity Agent server.
+You also need to enable the Remote Registry Service on the Activity Agent server.
 
 For integration between the Activity Monitor and Access Analyzer, the credential used by Access
 Analyzer to read the activity log files must have also have this permission.
@@ -182,9 +180,9 @@ instructions.
 
 **Activity Monitor Archive Location**
 
-If the activity log files are being archived, configurable within the Netwrix Activity Monitor
-Console, then the credential used by Access Analyzer to read the activity log files must also have
-READ and WRITE permissions on the archive location.
+If you configure the Netwrix Activity Monitor Console to archive activity log files, the credential
+used by Access Analyzer to read the activity log files must also have READ and WRITE permissions on
+the archive location.
 
 ## Activity Auditing Port Requirements
 
@@ -195,9 +193,9 @@ are required for communication between the Agent server and the Netwrix Activity
 | -------------------------------- | -------- | ----- | ------------------- |
 | Activity Monitor to Agent Server | TCP      | 4498  | Agent Communication |
 
-The Windows firewall rules need to be configured on the Windows server, which require certain
-inbound rules be created if the scans are running in applet mode. These scans operate over a default
-port range, which cannot be specified via an inbound rule. For more information, see the Microsoft
+Configure the Windows firewall rules on the Windows server. If the scans run in applet mode, create
+the required inbound rules. These scans operate over a default port range, which you can't specify
+in an inbound rule. For more information, see the Microsoft
 [Connecting to WMI on a Remote Computer](https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx)
 article.
 
@@ -213,7 +211,7 @@ Monitor Activity Agent server and the target Dell Isilon/PowerScale device:
 
 Additional Firewall Rules for Integration between Access Analyzer and Activity Monitor
 
-Firewall settings are dependent upon the type of environment being targeted. The following firewall
+Firewall settings depend on the type of environment being targeted. The following firewall
 settings are required for communication between the agent server and the Access Analyzer Console:
 
 | Communication Direction         | Protocol | Ports      | Description                    |

@@ -15,11 +15,11 @@ In the Users section, select from the following options:
 - All users – All users found on the target host
 - All users in the following groups – Click the ellipsis (**…**) to open the Find a Group browser
   window and specify a group. See the [Find a Group/User Browser](#find-a-groupuser-browser) topic
-  for additional information. A specific group can also be entered manually into the text field.
+  for additional information. You can also enter a specific group manually into the text field.
 - These users – Click the ellipsis (**…**) to open the Find a User browser window and specify one or
   more users. See the [Find a Group/User Browser](#find-a-groupuser-browser) topic for additional
-  information. A specific user can also be entered manually into the text field.
-- Special users – The users found can be flagged as special users in the following categories:
+  information. You can also enter a specific user manually into the text field.
+- Special users – You can flag users found as special users in the following categories:
 
     - Administrator
     - Guest
@@ -65,7 +65,7 @@ opens the Find a Group or Find a User browser.
 ![Find a group window](/images/accessanalyzer/11.6/admin/datacollector/usersgroups/category/findagroup.webp)
 
 The Find a Group and Find a User browsers display a list of groups or users, depending on which one
-is being used, that can be selected for the option. Select from a specific host using the Sample
+you use, that you can select for the option. Select from a specific host using the Sample
 from host option, or leave the text field blank and click **Connect** to retrieve all user groups or
 users that are selectable.
 

@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # ExchangePS: Filter by Message
 
-The Filter by Message page is used to define the filter conditions of the search. It is a wizard
+Use the Filter by Message page to define the filter conditions of the search. It is a wizard
 page for the category of:
 
 - Mailbox Search
@@ -36,16 +36,16 @@ Available conditions to select from include:
 See the [Date Range Selection Window](#date-range-selection-window) and
 [Words Window](#words-window) topics for additional information.
 
-In the Select Search Mailbox Parameters section, select the desired filter parameters:
+In the Select Search Mailbox Parameters section, select the filter parameters:
 
-- Do not Include Archive
+- Don't Include Archive
 - Include Unsearchable Items
 - Search Dumpster
 - Search Dumpster Only
 
 #### Date Range Selection Window
 
-The Date Range Selection window is opened by the **Specify Date Range...** option for a date related
+The **Specify Date Range...** option opens the Date Range Selection window for a date related
 filter on the Filter by Message page.
 
 ![Date Range Selection window](/images/accessanalyzer/12.0/admin/datacollector/exchangeps/daterangeselectionwindow.webp)
@@ -56,19 +56,19 @@ Select the range category on the left and configure the range setting in the ena
   **Years**.
 - Last – Select the number and time units. The available time units are: **Days**, **Months**, or
   **Years**.
-- Before – Drop-down menu opens a calendar selection view, choose the end date
-- After – Drop-down menu opens a calendar selection view, choose the start date
-- Between (Date) – Drop-down menus open calendar selection view, choose the start and end dates
-- Between – Select the numbers for the lower and upper range boundary, and the desired time units.
+- Before – dropdown menu opens a calendar selection view, choose the end date
+- After – dropdown menu opens a calendar selection view, choose the start date
+- Between (Date) – dropdown menus open calendar selection view, choose the start and end dates
+- Between – Select the numbers for the lower and upper range boundary, and the time units.
   The available time units are: **Days**, **Months**, or **Years**.
 
-When the date range is specified, click **OK**. The selected date range shows as a filter on the
+After you specify the date range, click **OK**. The selected date range shows as a filter on the
 Filter by Message page. Click the filter to open the Date Range Selection window to modify the date
 range.
 
 #### Words Window
 
-The Words window is opened by the **Specify words...** option for a word related filter on the
+The **Specify words...** option opens the Words window for a word related filter on the
 Filter by Message page.
 
 ![Words window](/images/accessanalyzer/12.0/admin/datacollector/exchangeps/wordswindow.webp)

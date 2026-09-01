@@ -12,7 +12,6 @@ Netwrix recommends that you avoid linking a GPO to the top level of the domain d
 impact. Instead, create a new organization unit for your file servers within your domain and assign
 GPO there. For instructions on creating a new OU, see the Microsoft article
 [Create a New Organizational Unit](https://technet.microsoft.com/en-us/library/cc771564.aspx).
-
 **Step 1 –** Open the **Group Policy Management** console on any domain controller in the target
 domain: navigate to Start > Windows Administrative Tools**→ Group Policy Management.**
 

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Editing False Positive Exclusion Filters
 
-Follow the steps to edit a False Positive Exclusion Filter.
+To edit a False Positive Exclusion Filter:
 
 ![Edit Filter on False Positives tab](/images/accessanalyzer/11.6/admin/settings/sensitivedata/exclusions/editfilter.webp)
 
@@ -21,4 +21,4 @@ closes.
 
 **Step 4 –** Click **Save** on the Sensitive Data view to save changes.
 
-The false positive exclusion filter has been successfully edited.
+Enterprise Auditor successfully saves your edits to the false positive exclusion filter.

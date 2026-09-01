@@ -11,8 +11,6 @@ a Access Analyzer key can be done from the Activity Monitor Console. If the Acti
 is installed on a server where Access Analyzer has already been installed, it reads the license
 information from the Access Analyzer installation directory.
 
-Follow the steps to import a license key file.
-
 ![Activity Monitor Installation with Trial License](/images/activitymonitor/8.0/install/triallicense.webp)
 
 **Step 1 –** Click the `__Licensed to: <Trial User>__` hyperlink in the lower-left corner of the

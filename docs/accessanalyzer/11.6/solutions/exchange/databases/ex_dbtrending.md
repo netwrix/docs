@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **Exchange** > **3. Databases** > *
 **Configure** node and selecting **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -39,4 +39,4 @@ the following pre-configured report:
 
 | Report                                        | Description                                                                                                                                                                                                                                                                                         | Default Tags | Report Elements                                                                                                                                        |
 | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Capacity Planning <ul><li>Databases</li></ul> | This report displays the growth rate trend of your private stores and the growth rate trend of your public stores.  The trend is projected for two months. These reports help identify bad trends in growth on Exchange servers for hard drive space usage is key in avoiding running out of space. | None         | This report is comprised of two elements: <ul><li>Line Chart – Displays private store trend</li><li>Line Chart – Displays public store trend</li></ul> |
+| Capacity Planning <ul><li>Databases</li></ul> | This report displays the growth rate trend of your private stores and the growth rate trend of your public stores. The trend is projected for two months. These reports help identify bad trends in growth on Exchange servers for hard drive space usage is key in avoiding running out of space. | None         | This report is comprised of two elements: <ul><li>Line Chart – Displays private store trend</li><li>Line Chart – Displays public store trend</li></ul> |

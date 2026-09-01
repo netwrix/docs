@@ -8,7 +8,7 @@ sidebar_position: 90
 
 Use the Remove-Container commandlet to delete organizational units from Directory. The commandlet
 only supports deletion of containers at leaf level, having no objects. If the container contains
-objects or sub-containers, the commandlet does not process the request and throws an exception.
+objects or sub-containers, the commandlet doesn't process the request and throws an exception.
 
 ## Syntax
 

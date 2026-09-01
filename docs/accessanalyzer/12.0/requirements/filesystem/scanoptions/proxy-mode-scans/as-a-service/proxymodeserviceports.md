@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Proxy Mode as a Service Port Requirements
 
-The following are the firewall settings are required when executing the Access Auditing (FSAA)
+The following firewall settings are required when executing the Access Auditing (FSAA)
 and/or Sensitive Data Discovery Auditing scans in proxy mode as a service for communication between
 Access Analyzer and the proxy server:
 
@@ -22,7 +22,7 @@ Data Collector Wizard.
 :::
 
 
-The following are the firewall settings are required when executing the Access Auditing (FSAA)
+The following firewall settings are required when executing the Access Auditing (FSAA)
 and/or Sensitive Data Discovery Auditing scans in proxy mode as a service for communication between
 the proxy server and the target host:
 

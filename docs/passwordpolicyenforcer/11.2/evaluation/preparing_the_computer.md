@@ -6,15 +6,16 @@ sidebar_position: 10
 
 # Prepare the Computer
 
-You only need one computer for the evaluation. A Windows Server 2016, 2019, or 2022 domain
-controller in its own domain is recommended. You can also use Windows 10 or 11 if you only need to
+You only need one computer for the evaluation. Netwrix recommends a Windows Server 2016, 2019, or
+2022 domain controller in its own domain. You can also use Windows 10 or 11 if you only need to
 enforce policies for local accounts.
 
 ## Disable the Windows Password Policy Rules
 
-If the Password Policy Enforcer and Windows password policies are both enabled, then users must
-comply with both policies. This isn't recommended for the evaluation because the Windows policy may
-stop users from reusing recent passwords, or from changing their password more than once a day.
+If you enable both the Password Policy Enforcer and Windows password policies, then users must
+comply with both policies. Netwrix doesn't recommend this for the evaluation because the Windows
+policy may stop users from reusing recent passwords, or from changing their password more than once
+a day.
 These restrictions can make it difficult to evaluate Password Policy Enforcer.
 
 This procedure disables the Windows password policy:
@@ -41,7 +42,7 @@ This procedure disables the Windows password policy:
 
 **Step 4 –** Enter **0** in the text box, then click **OK**.
 
-**Step 5 –** Repeat the step above for the Maximum Password Age and Minimum Password Length
+**Step 5 –** Repeat Step 4 for the Maximum Password Age and Minimum Password Length
 policies.
 
 **Step 6 –** Double-click the **Group Policy Management Editor**.

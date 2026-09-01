@@ -45,8 +45,8 @@ But the identifiers can be also given instead of the id:
  | --password required | **Type** String **Description** EasyVista server password. | 
  | --- | --- | 
  | --- | --- | 
- | --connector required if --resource-typesis not given | **Type** String **Description** Id or Identifier of the resource types' connector we want to update the fulfillment state. | 
- | --resource-types required if --connectoris not given | **Type** String List **Description** Id or Identifier of the resource types we want to update the fulfillment state. | 
+ | --connector required if --resource-typesis not given | **Type** String **Description** Id or Identifier of the resource types' connector to update the fulfillment state. | 
+ | --resource-types required if --connectoris not given | **Type** String List **Description** Id or Identifier of the resource types to update the fulfillment state. | 
  | --certificate-identifier optional | **Type** String **Description** Unique key used to retrieve the certificate in Azure Key Vault. | 
  | --vault optional | **Type** String **Description** Vault uri. | 
  | --vault-connection-string optional | **Type** String **Description** Connection string to connect to Azure Key Vault. | 

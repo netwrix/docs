@@ -18,8 +18,6 @@ one. Depending on the size of the archive database, it could be yearly or every 
 
 ## Configure the Archive Database
 
-Follow the steps to configure settings for the archive database.
-
 **Step 1 –** Click **Configuration** > **Database** > **Maintenance** on the menu. The Database
 Maintenance window is displayed. Click the **Archive DB** tab.
 
@@ -52,12 +50,10 @@ Alerts generated for the archive database maintenance job are displayed on the
 This helps differnciate between alerts generated for database maintenance and archive database
 maintenance.
 
-Follow the steps to enable database maintenance for the archive database.
-
 **Step 1 –** Click **Configuration** > **Database** > **Maintenance** on the menu. The Database
 Maintenance window is displayed. Click the **Archive DB** tab.
 
-Make sure archive database settings have been configured and the archiving process has run at least
+ensure archive database settings have been configured and the archiving process has run at least
 once.
 
 **Step 2 –** Click the **Configure Archive DB Maintenance** button. The Archive DB Maintenance
@@ -86,7 +82,7 @@ The following information is displayed at the top of the window:
 
 The Refresh button in the upper-right corner refreshes this database and job information.
 
-**Step 3 –** From the Run SQL Agent job on drop-down menu, select an option to determine the SQL
+**Step 3 –** From the Run SQL Agent job on dropdown menu, select an option to determine the SQL
 Agent that will run the maintenance job.
 
 - Select **Main DB** if the archive database resides on the same SQL Server machine as the

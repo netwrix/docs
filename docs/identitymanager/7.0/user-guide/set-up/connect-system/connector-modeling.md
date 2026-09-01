@@ -12,9 +12,9 @@ How to choose the appropriate model for a connector's data.
 
 In this part, you work outside Identity Manager to define the model that is going to be used in the next steps to represent a managed system's resources **and** entitlements inside Identity Manager, as a connector.
 
-This page is no technical procedure, but rather a guide aiming to give a global view on connectors (with their components **and** their purpose), in order to help integrators choose the most appropriate way to model the managed system in the form of a connector later inside Identity Manager.
+This page is no technical procedure, but rather a guide aiming to give a global view on connectors (with their components **and** their purpose), to help integrators choose the most appropriate way to model the managed system in the form of a connector later inside Identity Manager.
 
-The aim is to think about said managed system in order to specify:
+The aim is to think about said managed system to specify:
 
 - what data you need to import into Identity Manager;
 - how you are going to organize this data together, **and** model it as a connector inside Identity
@@ -22,7 +22,7 @@ Manager.
 
 ### Useful data
 
-Modeling the connector is a matter of identifying what data you want to get into Identity Manager. You should not retrieve all the data from the managed system, but only two kinds of useful data:
+Modeling the connector is a matter of identifying what data you want to get into Identity Manager. You shouldn't retrieve all the data from the managed system, but only two kinds of useful data:
 
 1. data that represents how the authorization system works in the managed system, i.e. data that
 composes entitlements **and** their assignments;
@@ -33,16 +33,16 @@ The model must take both into account. So both kinds of data must be extracted f
 > Let's take an example. An Active Directory manages authorization through group membership (using
 > the user-group paradigm).
 >
-> So first we need to retrieve both groups **and** accounts, in order to manage the AD's assignments of
-> entitlements for our users (in the AD **language**: manage their accounts **and** group memberships).
+> So first, retrieve both groups **and** accounts to manage the AD's assignments of
+> entitlements for users (in the AD **language**: manage their accounts **and** group memberships).
 >
-> Secondly, we want to control attributes such as the name or e-mail of the account, **and** ensure they
-> are consistent with the correlated identity. Thus these attributes are the second kind of
-> information that we want to retrieve.
+> Secondly, control attributes such as the name or e-mail of the account, **and** ensure they
+> are consistent with the correlated identity. These attributes are the second kind of
+> information to retrieve.
 
 ### Data models
 
-Fortunately, you won't have to design your connector model from scratch. NETWRIX has done a little work ahead, **and** you are presented here with four model templates that have proven to work so far. Experience shows that most managed systems can be shaped using one or a mix of the following:
+Fortunately, you won't have to design your connector model from the beginning. NETWRIX has done a little work ahead, **and** you are presented here with four model templates that have proven to work so far. Experience shows that most managed systems can be shaped using one or a mix of the following:
 
 - the User model is the most **simple** model for a connector, where a user is directly associated with
 a list of entitlements;
@@ -97,7 +97,7 @@ The model must stay as **simple** as possible. Embed just enough information.
 
 **Keep it readable for most users**
 
-The model must be easy to understand. For this, adopt a business approach, i.e. make the model user-friendly **and** close to real activities. This functional approach is essential to the efficiency of data flows (synchronization/provisioning loop). Keep in mind that the aim is to define a model close to the **reality** of the system.
+The model must be easy to understand. For this, adopt a business approach, i.e. make the model user-friendly **and** close to real activities. This functional approach is essential to the efficiency of data flows (synchronization/provisioning loop). The aim is to define a model close to the **reality** of the system.
 
 **Keep it open to changes**
 
@@ -145,13 +145,13 @@ attribute (scalar property) containing the list of authorized resources.
 
 Some of the managed systems following this model offer predefined **types of accounts**, with a pre-packaged set of authorizations (such as the `basic` user with read/write permissions on non-sensitive resources, or the `admin` with higher privileges).
 
-Account types make modeling easier, as they bring another level of information about the entitlements they contain. So we can embed more useful information in the model, thanks to an attribute that represents the account type.
+Account types make modeling easier, as they bring another level of information about the entitlements they contain. So the model can embed more useful information, thanks to an attribute that represents the account type.
 
 In further steps, you will be able to define one resource type per account type **and** map each one to a role for assignment **and** provisioning.
 
 #### Example - Canteen badges
 
-Canteen badges are a **simple** system handled with the User model. Indeed users can simply have among their attributes the access authorization for a given building **and** a given time. Or also, instead of creating an entity type for users, we can create an entity type for the badges. They would have in their attributes their respective access location **and** time, **and** an attribute listing authorized users.
+Canteen badges are a **simple** system handled with the User model. Indeed users can have among their attributes the access authorization for a given building **and** a given time. Or, instead of creating an entity type for users, you can create an entity type for the badges. They would have in their attributes their respective access location **and** time, **and** an attribute listing authorized users.
 
 ![User Model - Canteen Badges Example](/images/identitymanager/connectormodel_user-canteen.webp)
 
@@ -191,7 +191,7 @@ In further steps, you will be able to define one resource type per account type 
 
 The SAB system handles authorizations using users **and** groups. A user is authorized to perform an action according to their group membership.
 
-We define two **entity types** `SAB - User` **and** `SAB - Group`. We fill them with a few attributes useful to manage entitlements in the SAB application. Finally, we add a navigation property in both **entity types** in order to link `User` with `Group` with an "n-to-n" relationship.
+This example defines two **entity types**, `SAB - User` **and** `SAB - Group`, and fills them with a few attributes useful to manage entitlements in the SAB application. Finally, it adds a navigation property in both **entity types** to link `User` with `Group` with an "n-to-n" relationship.
 
 ![User-Group Example - SAB](/images/identitymanager/connectormodel_sab.webp)
 
@@ -243,7 +243,7 @@ The Account-Profile-Transaction model is better suited to represent a system, wi
 
 - To be able to perform an action or read a piece of data, a user must be granted one or several
 **transactions**. **transactions** represent fine-grained entitlements. They can be associated to a type **and** conditions that restrict their use, such as a maximum per day or a context of validity.
-- **transactions** are not assigned directly to an account, but are **packaged into profiles**, which are
+- **transactions** aren't assigned directly to an account, but are **packaged into profiles**, which are
 then assigned to accounts, which are owned by users.
 - Profiles can sometimes be classified into categories representing the sensitivity of the
 **transactions** they contain.
@@ -259,7 +259,7 @@ Thus you need to create one entity type to represent accounts, one for profiles,
 
 Each entity type needs to be shaped with properties, chosen according to the data useful for entitlement assignment.
 
-The only sensitive **and** required properties are those constituting the link between **entity types**, i.e. the **navigation properties** representing the packaging of **transactions** into profiles on the one hand, **and** the assignment of profiles to accounts on the other hand. You can potentially add a navigation property in the `Profile` entity type in order to categorize profiles within larger profiles.
+The only sensitive **and** required properties are those constituting the link between **entity types**, i.e. the **navigation properties** representing the packaging of **transactions** into profiles on the one hand, **and** the assignment of profiles to accounts on the other hand. You can potentially add a navigation property in the `Profile` entity type to categorize profiles within larger profiles.
 
 Instead of creating as many `Profile` objects as there are categories of profile, NETWRIX recommends **shaping the `Profile` object with a `category` attribute**. Indeed, a multiple-object model complexifies the addition of new profiles in the future. **and** as new profiles can be created in the future though, then you must plan for it.
 
@@ -269,7 +269,7 @@ See the schema below this note.
 
 ![Profiles Example](/images/identitymanager/connectormodel_profiles.webp)
 
-**transactions** are not mandatory in a model. Most of the time, the profile packages are predefined once **and** for all, or are the responsibility of the **application owner**. Then Identity Manager doesn't need to manage the specific **transactions** for a profile directly inside the managed system. You can hence avoid modeling **transactions** altogether. In this case, you fall back on the User-Group model with a twist: if profile categories are relevant in the system's authorization mechanism, then you must take them into account.
+**transactions** aren't mandatory in a model. Most of the time, the profile packages are predefined once **and** for all, or are the responsibility of the **application owner**. Then Identity Manager doesn't need to manage the specific **transactions** for a profile directly inside the managed system. You can hence avoid modeling **transactions** altogether. In this case, you fall back on the User-Group model with a twist: if profile categories are relevant in the system's authorization mechanism, then you must take them into account.
 
 #### Example - TSS
 
@@ -290,7 +290,7 @@ The Star model is better suited to represent a system, where the ability to perf
 > For example, you might want to give certain entitlements only to users who have an administrator
 > profile **and** work in Marseilles.
 
-As the parameter combination is not predetermined, the whole system can become highly complex with the addition of data criteria.
+As the parameter combination isn't predetermined, the whole system can become highly complex with the addition of data criteria.
 
 Users are represented by the accounts they own.
 
@@ -306,7 +306,7 @@ Each entity type needs to be shaped with properties, chosen according to the dat
 
 The difficulty of this model is to map everything to roles in the role model. In Identity Manager's role model, one assignment is always one role. But in this case, in the managed system, an assignment is a tuple of things.
 
-To map the tuple of things on a role, we have several choices:
+Mapping the tuple of things to a role offers several options:
 
 1. **Create a role per possible combination of tuple of things**. This can quickly get out of hand as
 far as the number of created roles is concerned.
@@ -317,7 +317,7 @@ The flexibility generated by parameters is particularly interesting for roles th
 
 #### Example
 
-Consider an application which manages entitlement assignment with different rules, according to users' profiles, attachment areas **and** sites. Our example shows 4 profiles, 4 attachment areas **and** 3 sites. So a user may be assigned a given entitlement for a given profile, attachment area **and** site.
+Consider an application which manages entitlement assignment with different rules, according to users' profiles, attachment areas **and** sites. This example shows 4 profiles, 4 attachment areas **and** 3 sites. So a user may be assigned a given entitlement for a given profile, attachment area **and** site.
 
 ![Star Model Example](/images/identitymanager/connectormodel_starmodel.webp)
 
@@ -333,40 +333,40 @@ available profiles, attachment areas **and** sites, which makes a total of 48 ro
 
 **Step 1: choose the connector model.**
 
-Let's say we are modeling an Active Directory, which handles authorization through the group memberships of accounts. In other words, to assign an entitlement to an identity, we make the AD account of said identity member of the corresponding AD group. That is exactly what the User-Group template is designed to handle. See the Model the Data topic for additional information.
+This example models an Active Directory, which handles authorization through the group memberships of accounts. In other words, to assign an entitlement to an identity, the AD account of that identity becomes a member of the corresponding AD group. That is exactly what the User-Group template is designed to handle. See the Model the Data topic for additional information.
 
 ![User-Group Model](/images/identitymanager/connectormodel_usergroup.webp)
 
 **Step 2: adapt the model to your **reality**.**
 
-We start by renaming the `Account` object as `AD_User` **and** the `Group` object as `AD_Group`.
+Start by renaming the `Account` object as `AD_User` **and** the `Group` object as `AD_Group`.
 
 ![AD Example - Step 1](/images/identitymanager/connectormodel_ad-step1.webp)
 
 **Step 3: define useful data close to your **reality**.**
 
-We **shape** these objects with the following attributes:
+Shape these objects with the following attributes:
 
 ![AD Example - Step 2](/images/identitymanager/connectormodel_ad.webp)
 
 **Step 4: ensure that all objects have unique keys.**
 
-Indeed we defined `objectGuid` as a key for both accounts **and** groups.
+This example uses `objectGuid` as a key for both accounts **and** groups.
 
 **Step 5: ensure the guidelines' enforcement.**
 
-We could content ourselves with this model. The main benefit of this model is to closely mimic the **reality** of the AD authorization mechanism. But we'd like to go a bit further, applying a "keep it open to changes" approach.
+This model is sufficient as it stands. Its main benefit is that it closely mimics the **reality** of the AD authorization mechanism. However, applying a "keep it open to changes" approach takes it further.
 
 Observe the similarities between `AD_User` **and** `AD_Group`. There are many attributes repeating between the two **entity types**.
 
-We can simplify: prefer a single object `AD_Entry` that can represent both users **and** groups. The difference between the two types of object will be made clear via specific properties like `objectCategory`, `member` **and** `memberOf`.
+To simplify, prefer a single object `AD_Entry` that can represent both users **and** groups. Specific properties like `objectCategory`, `member`, **and** `memberOf` make the difference between the two types of object clear.
 
 Beyond avoiding repetition, this makes the model easily adaptable if new elements pop up.
 
-> For example, we could want to include computers or organizational units in the model in the
+> For example, the model could include computers or organizational units in the
 > future. Instead of creating two new additional objects `AD_Computer` **and** `AD_OU`, the existing
-> object `AD_Entry` can represent them both at no additional modeling cost. Even though we could add
-> `AD_Computer` **and** `AD_OU` without merging groups with entries, designing `AD_Entry` with all these
+> object `AD_Entry` can represent them both at no additional modeling cost. Even though `AD_Computer`
+> **and** `AD_OU` could be added without merging groups with entries, designing `AD_Entry` with all these
 > attributes provides the means to add objects without creating new **entity types**.
 >
 > ![AD_Entry Example](/images/identitymanager/connectormodel_adentry.webp)

@@ -13,7 +13,7 @@ permissions:
 - Detailed Account Permissions in vCenter
 - Object Permissions in vCenter
 
-To instruct Netwrix Auditor to collect data needed for these reports, make sure that **Collect data
+To instruct Netwrix Auditor to collect data needed for these reports, ensure that **Collect data
 for state-in-time reports** option is selected in the corresponding monitoring plan properties. See
 the [Settings for Data Collection](/docs/auditor/10.7/admin/monitoringplans/create.md#settings-for-data-collection)
 topic for more information.
@@ -41,7 +41,7 @@ filters and values:
 - Time zone — is set automatically.
 - **Snapshot date** —select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
-  To report on other snapshots, make sure they are available through import. For details, see
+  To report on other snapshots, ensure they are available through import. For details, see
   **Manage historical snapshots** option description in
   [VMware](/docs/auditor/10.7/admin/monitoringplans/vmware/overview.md)
 - Item — name of the item within your monitoring plan.
@@ -77,7 +77,7 @@ filters and values:
 - Time zone — is set automatically.
 - **Snapshot date** —select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
-  To report on other snapshots, make sure they are available through import. For details, see
+  To report on other snapshots, ensure they are available through import. For details, see
   **Manage historical snapshots** option description in
   [VMware](/docs/auditor/10.7/admin/monitoringplans/vmware/overview.md)
 - Item — name of the item within your monitoring plan.
@@ -110,7 +110,7 @@ filters and values:
 - Time zone — is set automatically.
 - **Snapshot date** —select the date of state-in-time snapshot you want to report on. By default,
   the report includes data obtained during the latest data collection session (_Current Session_).
-  To report on other snapshots, make sure they are available through import. For details, see
+  To report on other snapshots, ensure they are available through import. For details, see
   **Manage historical snapshots** option description in
   [VMware](/docs/auditor/10.7/admin/monitoringplans/vmware/overview.md)
 - Item — name of the item within your monitoring plan.

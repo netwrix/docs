@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Schedule Wizard
 
-The schedule wizard allows you to configure scheduled tasks for jobs, job groups, Host Discovery
+Use the schedule wizard to configure scheduled tasks for jobs, job groups, Host Discovery
 queries, and Host Inventory queries. The wizard has five wizard pages with options for setting up
 the schedule task:
 
@@ -17,8 +17,8 @@ the schedule task:
 - [Options](#options)
 
 On the Schedule page, click **New** to schedule when the task will run. The Host List and Connection
-pages are optional customizations. See the relevant section below for more information on the
-settings on each wizard page.
+pages are optional customizations. See the relevant section in the preceding list for more
+information on the settings on each wizard page.
 
 When the settings on the wizard pages are configured as desired, click **OK** to save the changes
 and close the window. The task is visible in the Schedule Actions view, at the Schedules node.
@@ -54,7 +54,7 @@ The options in the Trigger window are:
       Days [value] of the month or the [value] [Day of the Week] of the month. By default, this is
       set to recur every month. To select only specific months, use Months dropdown menu and
       deselect the undesired months.
-    - The drop-down menu next to **Start** opens a calendar view for selecting the date
+    - The dropdown menu next to **Start** opens a calendar view for selecting the date
     - Selecting the **Synchronize across time zones** checkbox will synchronize the scheduled task
       to run without respect to the time zone
 
@@ -78,7 +78,7 @@ configuration of this tab is optional.
 
 ![Host List wizard page](/images/accessanalyzer/12.0/admin/schedule/hostlist.webp)
 
-Choose the desired setting from the following options:
+Choose the setting you want from the following options:
 
 - Use Host list from Job – A default setting and applies the host list designated at the job or job
   group level. This is also the recommended setting.
@@ -95,7 +95,7 @@ queried by the task being scheduled. Customizations to the configuration of this
 
 ![Connection wizard page](/images/accessanalyzer/12.0/admin/schedule/connection.webp)
 
-Choose the desired setting from the following options:
+Choose the setting you want from the following options:
 
 - Use Profile from Job – A default setting and applies the Connection Profile designated at the job
   or job group level
@@ -123,7 +123,7 @@ The options on the Run as wizard page are:
 - Use default Schedule Service Account – Uses the default Schedule Service Account that is set at
   the **Settings** > **Schedule** node
 - Use selected Schedule Service Account – Select the Schedule Service Account to use for the task
-  from a list of available accounts in the drop-down menu
+  from a list of available accounts in the dropdown menu
 - Use Custom Credentials – Use custom credentials not stored in the Access Analyzer Console. Enter
   the User Name for the custom credentials.
 

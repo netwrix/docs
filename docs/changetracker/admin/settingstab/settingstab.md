@@ -6,16 +6,16 @@ sidebar_position: 60
 
 # Settings Tab
 
-Configuration of all administrative and user settings is performed here. Select one of the tabs on
-the left for specific settings – contact [Netwrix Support](https://www.netwrix.com/support.html) for
+Configure all administrative and user settings here. Select the tab for the settings you want to
+change. Contact [Netwrix Support](https://www.netwrix.com/support.html) for
 additional information.
 
-- [Agents and Devices](/docs/changetracker/admin/settingstab/agentsanddevices/agentsanddevices.md) – Edit Device attributes such as Group, Type and
+- [Agents and Devices](/docs/changetracker/admin/settingstab/agentsanddevices/agentsanddevices.md) – Edit Device attributes such as Group, Type, and
   Credentials, or Delete Devices
-- [](#)[Device Groups](/docs/changetracker/admin/settingstab/devicegroups.md) – Administer Device Group names. Click on a Device Group to
+- [Device Groups](/docs/changetracker/admin/settingstab/devicegroups.md) – Administer Device Group names. Click a Device Group to
   edit the assigned Device Tracking template and Compliance Report, and to set the reporting
   schedule
-- [Scheduling, Creating and Editing Intelligent Planned Change Rules](/docs/changetracker/admin/plannedchanges/plannedchangeadministration.md#scheduling-creating-and-editing-intelligent-planned-change-rules)
+- [Scheduling, Creating, and Editing Intelligent Planned Change Rules](/docs/changetracker/admin/plannedchanges/plannedchangeadministration.md#scheduling-creating-and-editing-intelligent-planned-change-rules)
   – Edit the Schedule, Device Group assignment and Rules for Planned Changes
 - [Policy Templates](/docs/changetracker/admin/settingstab/policytemplates/overview.md) – Edit and upload/download configuration policy
   templates

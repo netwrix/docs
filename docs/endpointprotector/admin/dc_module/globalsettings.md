@@ -9,7 +9,7 @@ sidebar_position: 40
 
 From this section, you can apply settings globally to all Endpoint Protector entities.
 
-Any setting that appears in Global Settings offers additional functionality, as these settings can be customized per group, user, or computer. This allows administrators to configure precise, granular policies across the organization using the options available in this tab. Because of this, Global Settings may include options that are also available in other components, such as [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md), [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket.md) or [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md).
+Any setting that appears in Global Settings offers additional functionality, as these settings can be customized per group, user, or computer. This allows administrators to configure precise, granular policies across the organization using the options available in this tab. As a result, Global Settings may include options also available in other components, such as [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md), [Deep Packet Inspection](/docs/endpointprotector/admin/cap_module/deeppacket.md) or [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md).
 
 - If there are no settings defined granularly for a computer, and it doesn't belong to a group,
   these are the settings it will inherit.
@@ -50,8 +50,7 @@ the Client's behavior for each specific entity (Global, Groups, and Computers).
 >
 > **Step 3 –** Save your settings to apply the chosen language selection.
 
-> With this enhanced language selection feature, Endpoint Protector provides a more accommodating
-> experience for users, making notifications and alerts more accessible and user-centric.
+> This feature makes notifications more accessible to users.
 
 - Tamper Mode – enable this setting to protect the Endpoint Protector Client from unauthorized termination and modification. When enabled, EPP Client installation folders have limited access and the EPP Client prevents unauthorized actors from unloading its processes on Windows and daemons macOS. 
 Tamper Mode applies to all supported operating systems (Windows, macOS, and Linux).
@@ -81,11 +80,11 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
   acts as a quarantine folder before a transferred file has been fully inspected for content,
   avoiding any potential file loss due to blocked transfers. After the specified time interval, the
   files are permanently deleted.
-- Log Size (MB) – enter the largest size of all logs stored on the Client. If the value is reached,
-  new logs will overwrite the oldest ones. These circumstances occur only when the Client and Server
+- Log Size (MB) – enter the largest size of all logs stored on the Client. When the value
+  reaches this limit, new logs overwrite the oldest ones. This occurs only when the Client and Server
   don't communicate for an extended period.
-- Shadow Size (MB) – enter the largest size of all file shadows on the Client. If the value is
-  reached, new shadows will overwrite the oldest ones. These circumstances occur only when the
+- Shadow Size (MB) – enter the largest size of all file shadows on the Client. When the value
+  reaches this limit, new shadows overwrite the oldest ones. This occurs only when the
   Client and Server don't communicate for an extended period.
 - Min File Size for Shadowing (KB) – enter the smallest size of a file at which a File Shadow is
   created.
@@ -111,15 +110,10 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
 - Custom Client Notifications - if enabled, the Client Notifications can be customized.
 - Mandatory OTP Justification - if enabled, the Justification a User has to provide when requesting or
   using an Offline Temporary Password is mandatory.
-- Extend Source Code Detection - if enabled, this will extend the detection also inside of file type,
-  such as PDF, Docx, etc. With Monitor Webmail setting enabled, you can also detect source code in
-  emails in subject and body using web browsers.
+- Extend Source Code Detection - if enabled, detection extends to file types such as PDF and Docx. With Monitor Webmail enabled, you can also detect source code in emails using web browsers.
 
     :::note
-    Source Code Detection may encounter challenges when dealing with small code snippets.
-    This can occur due to the potential overlap among various programming languages. It's important
-    to consider these limitations when configuring and using Source Code Detection for optimal
-    results.
+    Source Code Detection may struggle with small code snippets due to overlap among programming languages.
     :::
 
 
@@ -156,8 +150,8 @@ Tamper Mode applies to all supported operating systems (Windows, macOS, and Linu
   notifications.
 - Notifications Pop-up – you can select between the traditional notification, system tray, or pop-up
   notifications.
-- Enable Minifilter driver – only available for Windows, this setting allows the use of an enhanced
-  driver that provides more reliability and ease of maintenance. You can also enable this setting on
+- Enable Minifilter driver – only available for Windows, this setting enables an enhanced
+  driver for more reliability and easier maintenance. You can also enable this setting on
   the Computers/Users/Groups/Global Rights sections with Manage Settings from the Actions column.
 - User Remediation Notification Template - you can select from the dropdown list a custom
   notification.
@@ -319,8 +313,8 @@ In this section, you can manage the following settings:
   on endpoint machines, containing more details.
 - Disable DPI Dropped Connections Notifications - check this setting to suppress notifications shown
   by the Notification Center nearby the System tray.
-- Block Unsecured Connection - if enabled, unsecured access through HTTP will be blocked and user
-  access restricted.
+- Block Unsecured Connection - if enabled, blocks unsecured HTTP access and restricts user
+  access.
 
     :::note
     The Block Unsecured Connection feature is only available when the Deep Packet
@@ -972,10 +966,10 @@ the **Actions** column.
 
 ### Data Obfuscation Rules
 
-All data is obfuscated according to the following rules:
+Endpoint Protector obfuscates all data according to these rules:
 
-- the first 4 characters are displayed if the length of the threat is lower than 12 characters, or
-- the first 6 characters are displayed if the length of the threat is longer than 12 characters
+- display the first 4 characters if the threat is shorter than 12 characters, or
+- display the first 6 characters if the threat is longer than 12 characters
 
 Specific use cases:
 
@@ -984,7 +978,7 @@ Specific use cases:
 3. For Brazil ID (CPF), the first 3 and the last 2 characters are obfuscated
 
 :::note
-Data isn't obfuscated for the file-type threat, file-size threat, and date threat.
+Endpoint Protector doesn't obfuscate file-type, file-size, and date threats.
 :::
 
 

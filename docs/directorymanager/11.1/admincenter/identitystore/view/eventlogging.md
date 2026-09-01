@@ -22,7 +22,7 @@ In case of multiple deployments of a client or service, separate logs are mainta
 deployment instance.
 
 Use the **Applications** node in Admin Center to manage Windows logging and file logging for each of
-the above (except for Management Shell).
+the preceding components (except for Management Shell).
 
 ## File Logging
 

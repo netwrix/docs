@@ -16,7 +16,7 @@ The task reads files from the source directory, usually the temp folder > Export
 
 The following actions are performed on the _CSV source files_:
 
-1. Remove columns that are not used in
+1. Remove columns that aren't used in
 [Entity Type Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) or [Entity Association Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping).
 2. Remove entries that have a null primary key.
 3. Remove duplicates.
@@ -25,7 +25,7 @@ The following actions are performed on the _CSV source files_:
 The result of the _Prepare-Synchronization_ is stored in the [Application Settings](../../../integration-guide/network-configuration/server-configuration/general-purpose) as three files:
 
 - For every entity type of the relevant _Connector_ involved in an
-[Entity Type Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) or an [Entity Association Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping), a `.sorted.csv` file is generated, containing the final, cleansed and sorted result.
+[Entity Type Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entitytypemapping) or an [Entity Association Mapping](../../../integration-guide/toolkit/xml-configuration/connectors/entityassociationmapping), a `.sorted.csv` file is generated, containing the final, cleansed, and sorted result.
 - Duplicates are kept in a separate `.duplicates.csv` file.
 - Null primary key entries are kept in a separate `.nullpk.csv` file.
 

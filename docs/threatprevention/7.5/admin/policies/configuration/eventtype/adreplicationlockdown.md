@@ -9,7 +9,7 @@ sidebar_position: 50
 The primary use case of the AD Replication Lockdown event type is to prevent non-domain controllers
 from using replication APIs. Each blocked replication attempt results in an event with details. Make
 sure the policy has a ‘white list’ of ‘allowed/known good’ domain controllers so that legitimate
-replication is not blocked.
+replication isn't blocked.
 
 The event filters for the AD Replication Lockdown event type are:
 
@@ -29,8 +29,8 @@ blocked.
 :::
 
 
-Since Windows cannot detect if a sync request is coming from a legitimate domain controller, this
-event type is designed to block requests from computers that are not ‘allowed’ by the policy.
+Since Windows can't detect if a sync request is coming from a legitimate domain controller, this
+event type is designed to block requests from computers that aren't ‘allowed’ by the policy.
 
 Legitimate domain controllers must be identified in the event filters. This can be done through one
 of the following methods:
@@ -87,10 +87,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -115,7 +115,7 @@ The Permissions filter has two sections:
   - Replicate Directory Changes All – Permission required for replication of credentials and
     secret data
   - Replicate Directory Changes in Filtered Set – Replicates attributes protected by filtered
-    attribute sets (FAS). Read-only Domain Controllers (RODCs) should not have this permission.
+    attribute sets (FAS). Read-only Domain Controllers (RODCs) shouldn't have this permission.
 
 ## Domains/Servers Filter
 
@@ -130,10 +130,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -154,10 +154,10 @@ Use the buttons in the Include Hosts and Include Collections areas to edit the l
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 

@@ -16,17 +16,17 @@ Administrator can either enable
 Password Policy Enforcer policies for the identity store.
 
 :::note
-MFA enabled Microsoft Entra ID users cannot change their passwords in Directory Manager. If
+MFA enabled Microsoft Entra ID users can't change their passwords in Directory Manager. If
 they try to do so, the following message is displayed:
 :::
 
 
 ![Change Password error message for Entra ID user](/images/directorymanager/11.1/portal/user/manage/changepasswordentraiduser.webp)
 
-If the user's account is a master account, password of its child accounts also cannot be changed in
+If the user's account is a master account, password of its child accounts also can't be changed in
 Directory Manager.
 
-Follow these steps to change your password.
+To change your password.
 
 Step 1 – In the portal, click your profile info in the top right corner and select **Change
 password**.
@@ -43,14 +43,14 @@ Notice the following in the blue bar:
 
 Step 3 – In the Change Password section, do the following:
 
-- Type the password of your selected account in the **Current Password** box.
-- Type your new password in the **New Password** box. The new password must conform to the rules of
+- Enter the password of your selected account in the **Current Password** box.
+- Enter your new password in the **New Password** box. The new password must conform to the rules of
   the applied password policy for the identity store.
-- Type the new password in the **Confirm New Password** box.
+- Enter the new password in the **Confirm New Password** box.
 
 Step 4 – Click **Change Password**.
 
-If you have reused an old password that does not meet the Enforce password history policy of the
+If you have reused an old password that doesn't meet the Enforce password history policy of the
 provider, a message informs you that the password must be different from the old one.
 
 Step 5 – On successful change password, the message,"Password has been reset successfully." is

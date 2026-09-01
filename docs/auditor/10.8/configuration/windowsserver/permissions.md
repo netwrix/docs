@@ -20,7 +20,7 @@ The account used for data collection must meet the following requirements on the
 
 ## Assign Permission To Read the Registry Key
 
-**NOTE:** This permission is required only if the account selected for data collection is not a
+**NOTE:** This permission is required only if the account selected for data collection isn't a
 member of the Domain Admins group.
 
 This permission should be assigned on each domain controller in the audited domain, so if your
@@ -31,8 +31,6 @@ To assign permissions manually, use the Registry Editor snap-in or the Group Pol
 console.
 
 ### Assign Permission via the Registry Editor Snap-in
-
-Follow the steps to assign permission via the Registry Editor snap-in:
 
 **Step 1 –** On your target server, open Registry Editor: navigate to **Start > Run** and type
 _"regedit"_.
@@ -48,7 +46,7 @@ Set\Services\EventLog\Security_.
 
 ### Assign Permission using the Group Policy Management Console
 
-Follow the steps to assign permission using the Group Policy Management console;
+To assign permission using the Group Policy Management console:
 
 **Step 1 –** Open the Group Policy Management console on any domain controller in the target domain:
 navigate to Start > Windows Administrative Tools (Windows Server 2016/2019) or Administrative Tools

@@ -78,15 +78,15 @@ example, you can delete the ‘denied’ requests that are old by 30 days or mor
 4. On the **Workflows** page, click the **Advanced Workflow Settings** tab. Go to the **Workflow
    Requests** section.
 5. In the **Delete requests that are x or more days old** box, specify a number, say 30. Directory Manager
-   auto-deletes workflow requests that are 30 days old and older.
+   auto-deletes workflow requests that are at least 30 days old.
 6. Select the type of requests you want to delete.
 
     - **Pending:** to delete pending requests, including your own.
     - **Approved:** to delete approved requests.
     - **Denied:** to delete denied requests.
 
-7. Click **Delete**. Directory Manager deletes requests of the selected type that are old or older
-   than the specified number of days.
+7. Click **Delete**. Directory Manager deletes requests of the selected type that are at least the
+   specified number of days old.
 8. Click **Save**.
 
 ## Integrate with Microsoft Power Automate

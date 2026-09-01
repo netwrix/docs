@@ -11,8 +11,8 @@ formerly Azure Active Directory.
 
 ## Auditing Permissions
 
-It is necessary to register Access Analyzer as a web application to the targeted Microsoft Entra ID
-in order for Access Analyzer to scan the environment. This generates the Client ID (App ID) and Key
+Register Access Analyzer as a web application in the targeted Microsoft Entra ID so it can scan the
+environment. This generates the Client ID (App ID) and Key
 (App Key) needed for the Connection Profile credentials and the Custom Attributes Import Wizard
 page.
 
@@ -20,9 +20,9 @@ See the [Microsoft Entra ID Auditing Configuration](/docs/accessanalyzer/12.0/re
 
 ## Entra Roles Permissions
 
-To collect Microsoft Entra roles information from the Microsoft Entra tenant additional permissions
-are required to be assigned to the registered application. This includes creating a custom role with
-the required resource manager permissions.
+To collect Microsoft Entra roles information from the Microsoft Entra tenant, you must assign
+additional permissions to the registered application. This includes creating a custom role with the
+required resource manager permissions.
 
 See the
 [Microsoft Entra Roles Auditing Configuration](/docs/accessanalyzer/12.0/requirements/entraid/entraid/entraroles.md)

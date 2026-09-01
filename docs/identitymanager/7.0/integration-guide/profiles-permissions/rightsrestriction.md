@@ -97,7 +97,7 @@ To be able to see these properties, a user must have these permissions with a fu
 >
     > ```
 
-When there is not any profile with a full access, then the visibility restriction is lifted and all users can access the properties.
+When there isn't any profile with a full access, then the visibility restriction is lifted and all users can access the properties.
 
 ## Limit a Profile's Permissions
 

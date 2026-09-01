@@ -76,8 +76,8 @@ See the topic for target environment requirements.
 
 ## Azure Files Support
 
-Azure Files is a fully managed, cloud-based file sharing service from Microsoft that allows users to
-access file shares from anywhere as a virtual network drive. Access Analyzer supports Access
+Azure Files is a fully managed, cloud-based file sharing service from Microsoft. With Azure Files,
+users can access file shares from anywhere as a virtual network drive. Access Analyzer supports Access
 Auditing (FSAA) and Sensitive Data Discovery Auditing scans of Azure Files.
 
 See the [Azure Files Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/azurefiles.md) topic for additional information.
@@ -114,7 +114,7 @@ environment requirements.
 See the [Hitachi Target Requirements](/docs/accessanalyzer/12.0/requirements/filesystem/filesystems/hitachi/overview.md) topic for target
 environment requirements.
 
-**Nasuni Nasuni Edge Appliances**
+**Nasuni Edge Appliances**
 
 - 8.0+
 

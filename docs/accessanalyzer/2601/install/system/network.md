@@ -46,7 +46,7 @@ Access Analyzer uses these ports within the VM for service-to-service communicat
 | 6379 | TCP | Redis | Cache and queue connections |
 
 :::note
-All internal ports bind to the local cluster network. Only port 443 (Traefik) accepts external traffic, for the web interface.
+The local cluster network keeps all internal ports contained. Traefik exposes only port 443 externally, for the web interface.
 :::
 
 ## Connector Network Requirements

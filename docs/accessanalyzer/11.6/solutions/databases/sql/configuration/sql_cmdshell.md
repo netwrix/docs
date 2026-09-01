@@ -7,8 +7,8 @@ sidebar_position: 30
 # SQL_CMDShell Job
 
 The SQL_CMDShell Job reports on whether the `xp_cmdshell` stored procedure is enabled or disabled.
-Since `xp_cmdshell` allows users to execute operating system commands when connected to the SQL or
-the Azure SQL server, it can be used to launch malicious attacks. Microsoft recommends that the
+Since `xp_cmdshell` lets users execute operating system commands when connected to the SQL or
+the Azure SQL server, attackers can use it to launch malicious attacks. Microsoft recommends that the
 `xp_cmdshell` stored procedure be disabled.
 
 ## Analysis Tasks for the SQL_CMDShell Job
@@ -17,7 +17,7 @@ Navigate to the **Databases** > SQL > 4.Configuration > SQL_CMDShell > Configure
 Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task(s). The analysis task(s) are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

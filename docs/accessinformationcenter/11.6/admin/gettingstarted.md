@@ -78,8 +78,8 @@ You should also provide links to the appropriate topics based on the user's role
 
 ## Resource Ownership Configuration
 
-It is possible to enable business owners and data custodians to manage their resources through the
-application. Also, ownership of resources must be assigned in order to use the Resource Reviews and
+You can enable business owners and data custodians to manage their resources through the
+application. Also, ownership of resources must be assigned to use the Resource Reviews and
 Access Requests workflows.
 
 - Resource Ownership — Assign ownership for resources to be managed through the application. See the

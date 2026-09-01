@@ -6,14 +6,14 @@ sidebar_position: 60
 
 # Securing Published Reports Only
 
-In order to secure published reports through the Web Console, it is necessary to enable Role Based
-Access within the Access Analyzer Console. If that is the only reason the Role Based Access feature
-is being enabled, ensure the following requirements are met:
+To secure published reports through the Web Console, enable Role Based
+Access within the Access Analyzer Console. If that is the only reason you're enabling the Role
+Based Access feature, ensure you meet the following requirements:
 
 - Administrator role assigned to all Access Analyzer Console users
 
-    - Anyone not assigned an Administrator role are unable to access the Access Analyzer Console
-      after Role Based Access is enabled
+    - Anyone without an Administrator role can't access the Access Analyzer Console after you
+      enable Role Based Access
 
 - Web Administrator role assigned to individuals who should have access to all reports, tags, and
   report permissions but not the Access Analyzer Console
@@ -25,7 +25,7 @@ is being enabled, ensure the following requirements are met:
     - Job Level Assignment – Access to reports published by the job
     - Report Configuration Level Assignment – Access to the specific report
 
-Follow the steps to assign roles at the global level.
+Assign roles at the global level as follows.
 
 **Step 1 –** Navigate to the **Settings** > **Access** node.
 
@@ -44,8 +44,8 @@ ellipsis (**…**) to browse for accounts with the Select User or Group window.
 
 ![Console Access page with user added](/images/accessanalyzer/12.0/admin/settings/access/rolebased/consoleaccessfinish.webp)
 
-**Step 5 –** Select a role for the group or user from the Role list. Click **Finish**. The group or
-user and role is added to the Role Membership list in the Roles view.
+**Step 5 –** Select a role for the group or user from the Role list. Click **Finish**. Access
+Analyzer adds the group or user and role to the Role Membership list in the Roles view.
 
 :::warning
 The first role or set of roles saved must include the Administrator role. Clicking Save
@@ -57,20 +57,20 @@ the Access Analyzer Console.
 **Step 6 –** Repeat Steps 2-4 to assign the Administrator, Web Administrator, and Report Viewer
 roles to other groups or users.
 
-**Step 7 –** Click **Save** and then **OK** to confirm the changes. All applied roles are lost if
-they are not saved.
+**Step 7 –** Click **Save** and then **OK** to confirm the changes. You lose all applied roles if
+you don't save them.
 
-Role Based Access is enabled when the first role has been assigned.
+Access Analyzer enables Role Based Access when you assign the first role.
 
-![Error message when Administrator role is not specified](/images/accessanalyzer/12.0/admin/settings/access/rolebased/noadminerror.webp)
+![Error message when Administrator role isn't specified](/images/accessanalyzer/12.0/admin/settings/access/rolebased/noadminerror.webp)
 
 The first role or set of roles saved must include the Administrator role. Clicking **Save** for the
 first role or set or roles without including the Administrator generates an error message in the
 Access Analyzer Console.
 
-When Role Based Access is first enabled, restart the Access Analyzer application to ensure all roles
-are properly active. The Report Viewer role can be assigned at the job group, job, and report
-configuration levels. See the [Reporting Node](/docs/accessanalyzer/12.0/admin/jobs/group/settings/reporting.md),
+When you first enable Role Based Access, restart the Access Analyzer application to ensure all
+roles are properly active. You can assign the Report Viewer role at the job group, job, and
+report configuration levels. See the [Reporting Node](/docs/accessanalyzer/12.0/admin/jobs/group/settings/reporting.md),
 [Report Roles Tab](/docs/accessanalyzer/12.0/admin/jobs/job/properties/reportroles.md), and
 [Publish Security Page](/docs/accessanalyzer/12.0/admin/report/wizard/publishsecurity.md) topics for additional
 information.

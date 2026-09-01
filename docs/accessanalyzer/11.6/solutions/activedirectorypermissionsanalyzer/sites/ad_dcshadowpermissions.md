@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # AD_DCShadowPermissions Job
 
-The AD_DCShadowPermissions Job highlights all Active Directory users that are capable of potentially
-performing a DCShadow attack within the targeted domains.
+The AD_DCShadowPermissions Job highlights all Active Directory users that can perform a DCShadow
+attack within the targeted domains.
 
 ## Analysis Tasks for the AD_DCShadowPermissions Job
 
@@ -15,7 +15,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **9.Sites** >
 **AD_DCShadowPermissions** > **Configure** node and select **Analysis** to view analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

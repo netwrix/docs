@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Portal Settings
 
-You can fine-tune your portal pages by customizing display options. This also enables you to
+You can fine-tune your portal pages by customizing display options. With these options, you can
 personalize the GroupID portal.
 
 These settings are saved for a user with respect to the identity store. When this user logs on to
@@ -80,7 +80,7 @@ History is displayed if the administrator has enabled history tracking for the i
 ## Set the number of history items to show for objects
 
 Set the number of history items to display on the History tab. This tab is displayed when viewing
-the properties for a User, Group, Contact or Mailbox.
+the properties for a User, Group, Contact, or Mailbox.
 
 This setting also controls the number of history items displayed on the
 [My History](/docs/directorymanager/11.1/portal/history/myhistory.md), [My Direct Reports' History](/docs/directorymanager/11.1/portal/history/mydirectreport.md),
@@ -103,7 +103,7 @@ be shown on the navigation bar.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – In the **Most recent objects** box, type the number of recent objects to display on the
+Step 2 – In the **Most recent objects** box, enter the number of recent objects to display on the
 navigation bar.
 
 Step 3 – Click **Save**.
@@ -117,7 +117,7 @@ portal is running in:
 
 - **Linked mode**: domains of all the linked identity stores are listed.
 
-To select domain(s) for searches:
+To select domains for searches:
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
@@ -132,7 +132,7 @@ You can specify the number of search results to be displayed on a portal page.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – In the **Search results per page** box, type or select the number of search results to
+Step 2 – In the **Search results per page** box, type, or select the number of search results to
 display on a page.
 
 Step 3 – Click **Save**.
@@ -144,7 +144,7 @@ however, set this page to display those groups too for which you are an addition
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – Select the **Display additional group ownership in My Groups** check box.
+Step 2 – Select the **Display additional group ownership in My Groups** checkbox.
 
 Step 3 – Selecting this option also displays the history of these groups in the **My Groups
 History** view.
@@ -159,7 +159,7 @@ are an additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – Select the **Display additional group ownership in My Expiring Groups** check box.
+Step 2 – Select the **Display additional group ownership in My Expiring Groups** checkbox.
 
 Step 3 – Click **Save**.
 
@@ -171,7 +171,7 @@ additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – Select the **Display additional group ownership in My Expired Groups** check box.
+Step 2 – Select the **Display additional group ownership in My Expired Groups** checkbox.
 
 Step 3 – Click **Save**.
 
@@ -183,11 +183,11 @@ additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – Select the **Display additional group ownership in My Deleted Groups** check box.
+Step 2 – Select the **Display additional group ownership in My Deleted Groups** checkbox.
 
 Step 3 – Click **Save**.
 
-## Display additional group ownership in my Smart Groups
+## Display additional group ownership in Smart Groups
 
 By default, the **My Smart Groups** page displays the Smart Group that you are the primary owner
 for. You can, however, set this page to display those Smart Groups too for which you are an
@@ -195,18 +195,18 @@ additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – Select the **Display additional group ownership in My Smart Groups** check box.
+Step 2 – Select the **Display additional group ownership in My Smart Groups** checkbox.
 
 Step 3 – Click **Save**.
 
-## Display additional group ownership in my Dynasties
+## Display additional group ownership in Dynasties
 
 By default, the My Dynasties page displays the Dynasties that you are the primary owner for. You
 can, however, set this page to display those Dynasties too for which you are an additional owner.
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – Select the **Display additional group ownership in My Dynasties** check box.
+Step 2 – Select the **Display additional group ownership in My Dynasties** checkbox.
 
 Step 3 – Click **Save**.
 
@@ -217,7 +217,7 @@ You can, however, set this page to display those users too for which you are an 
 
 Step 1 – Click the **Settings** icon at the top of the page.
 
-Step 2 – Select the **Display Additional Manager Direct Reports** check box.
+Step 2 – Select the **Display Additional Manager Direct Reports** checkbox.
 
 Step 3 – Click **Save**.
 
@@ -242,5 +242,5 @@ The following table lists the default values that are reset:
 | Most recent objects                            | 5                                                |
 | Domains to Search                              | Entire Directory                                 |
 | Search results per page                        | 25                                               |
-| Display additional group ownership check boxes | Not selected                                     |
+| Display additional group ownership checkboxes | Not selected                                     |
 | Display Additional Manager Direct Reports      | Not selected                                     |

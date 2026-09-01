@@ -26,7 +26,7 @@ sidebar_position: 5
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Workflow_CreateUpdateDelete" DisplayName_L1="Administrator_Workflow" DisplayName_L2="Administrator_Workflow" EntityType="Workflow" Profile="Administrator">

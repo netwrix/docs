@@ -6,8 +6,7 @@ sidebar_position: 50
 
 # AzureADInventory: Custom Attributes
 
-Use the Custom Attributes wizard page to define custom attributes that will be used in the Microsoft
-Entra ID scan.
+Use the Custom Attributes wizard page to define custom attributes for the Microsoft Entra ID scan.
 
 ![Entra ID Inventory Data Collector Wizard Custom Attributes page](/images/accessanalyzer/12.0/admin/datacollector/azureadinventory/customattributes.webp)
 
@@ -16,26 +15,26 @@ Configuration options for Custom Attributes include:
 - Collect Open Extensions – If enabled, data collector will perform a full scan and collect all
   extension attributes for Microsoft Entra ID objects
 
-    - Enabling this option will increase the time it takes for the data collector to complete the
-      scan. Disabling this option will configure the data collector run a differential scan, which
-      will only scan changes since the last scan was performed.
+    - Enabling this option increases the time it takes for the data collector to complete the
+      scan. Disabling this option configures the data collector to run a differential scan instead,
+      which scans only changes since the last scan ran.
 
     :::warning
-    A full scan is required when new attributes are added or removed.
+    Adding or removing attributes requires a full scan.
     :::
 
 
-- Add – Adds a manually entered attribute that is included in the scan. This option opens the Custom
+- Add – Adds a manually entered attribute to the scan. This option opens the Custom
   Attribute window.
 - Edit – Make changes to a previously added attribute. This option opens the Custom Attribute
   window.
 - Remove – Deletes the attribute from the table and therefore the scan
 - Import – Use the Azure Connection Profile credentials or manually inputted credentials to import
-  custom attributes for the scan using a valid tenant name. This option opens up the Custom
+  custom attributes for the scan using a valid tenant name. This option opens the Custom
   Attributes Import Wizard.
 
 Use the **Add**, **Edit**, and **Remove** buttons at the bottom of the window to configure the
-custom attributes to be gathered by the scan. Use the **Add** button to open the
+custom attributes the scan gathers. Use the **Add** button to open the
 [Custom Attribute Window](#custom-attribute-window). The **Import** button opens the
 [Custom Attributes Import Wizard](#custom-attributes-import-wizard).
 
@@ -48,17 +47,17 @@ window.
 
 The options on the Custom Attributes window are:
 
-- Tenant Filter – Use a Tenant Name or wildcard to target the desired environment. Wildcards (\*)
-  can be used.
-- Object Class – One or more object class for the attribute can be selected:
+- Tenant Filter – Use a Tenant Name or wildcard to target the environment you want. You can use
+  wildcards (\*).
+- Object Class – Select one or more object classes for the attribute:
     - User
     - Group
     - Contact
 - Attribute Name – Microsoft Entra ID attribute name
-- Collect all sub-attributes – Allows the collection of sub-attributes
-    - Sub-Attribute Name – Define the sub-attribute name. Wildcards (\*) can be used.
+- Collect all sub-attributes – Lets you collect sub-attributes
+    - Sub-Attribute Name – Define the sub-attribute name. You can use wildcards (\*).
 
-Repeat this process until all desired Custom Attributes have been included. Click **OK** to save the
+Repeat this process until you've added all desired custom attributes. Click **OK** to save the
 attribute.
 
 #### Custom Attributes Import Wizard
@@ -73,7 +72,7 @@ Custom Attributes Import Wizard opens.
 ![Custom Attributes Import Wizard](/images/accessanalyzer/12.0/admin/datacollector/azureadinventory/customattributesimportwizard.webp)
 
 **Step 2 –** On the Connection page, enter the Tenant Name of the instance of Microsoft Entra ID to
-be targeted, and then select the method of supplying credentials for the specified tenant instance:
+target, and then select how to supply credentials for the specified tenant instance:
 
 - Use the following connection profile entry – Select an Azure Connection Profile from the dropdown
   list
@@ -92,7 +91,7 @@ See the [Microsoft Entra ID Auditing Configuration](/docs/accessanalyzer/12.0/re
 [Microsoft Entra ID Connection Profile & Host List](/docs/accessanalyzer/12.0/admin/datacollector/azureadinventory/configurejob.md) topics for additional
 information.
 
-**Step 3 –** Click **Test Connection** in order to connect to the tenant with the supplied
+**Step 3 –** Click **Test Connection** to connect to the tenant with the supplied
 credentials. If they are correct, the Schema Attributes and Application Attributes pages become
 available. Click **Next** to navigate to them.
 

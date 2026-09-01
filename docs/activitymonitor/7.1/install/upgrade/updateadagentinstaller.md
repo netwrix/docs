@@ -16,11 +16,8 @@ license keys for purchased products. See the
 topic for information on how to register for a Customer Portal account. Navigate to the Netwrix
 Threat Prevention Download section for the 7.4. Download the Threat Prevention Agent binary.
 
-Then follow the steps to update the AD Agent installer used by the Activity Monitor Console.
-
 **Step 1 –** On the Agents tab, select **Update Installer**. The Select Active Directory Module
-installer package (SI Agent.exe) windowSelect Active Directory Module installer package (SI
-Agent.exe) window opens.
+installer package (SI Agent.exe) window opens.
 
 ![Update Agent Installer](/images/activitymonitor/7.1/install/updateagentinstaller.webp)
 
@@ -30,9 +27,7 @@ installer and click **Open**.
 ![Confirmation Window](/images/activitymonitor/7.1/install/updateagentinstallerpopup.webp)
 
 **Step 3 –** A confirmation window opens displaying the version information for the selected
-installer. Click **Yes** to update to this version or **No** to cancel the operation. A confirmation
-window opens displaying the version information for the selected installer. Click **Yes** to update
-to this version or **No** to cancel the operation.
+installer. Click **Yes** to update to this version or **No** to cancel the operation.
 
-The AD agent installer is update. Use the Install button on the Agents tab to upgrade the deployed
+The AD agent installer is now updated. Use the Install button on the Agents tab to upgrade the deployed
 AD agents to the new version.

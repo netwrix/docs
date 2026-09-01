@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Sign In Using AD FS
 
-We configured the ADS FS provider with a Directory Manager client, that is the Directory Manager
-portal _Wizard_ in our example. For single sign-on using AD FS, we can choose any of the following
+This example configures the ADS FS provider with a Directory Manager client, specifically the Directory Manager
+portal _Wizard_. For single sign-on using AD FS, you can choose any of the following
 ways:
 
 - SP-initiated single sign-on - when the SSO operation is initiated from the SP end, i.e., from the
@@ -30,7 +30,7 @@ with the URL you provided as the IDP login URL (see the
 
 Step 3 – Sign in as an Active Directory regular user. On signing in, the authentication is routed to
 AD FS, that will validate the user with respect to the specified attribute (i.e., user principal
-name – UPN in our case) and log him or her into the Directory Manager portal.
+name – UPN in this example) and log him or her into the Directory Manager portal.
 
 With single sign-on, you can now launch any Directory Manager client without having to sign in
 again.

@@ -23,7 +23,7 @@ information on creating an Excel data source using Directory Manager.
 
 #### Sample Request Syntax
 
-The syntax given below provides you information for creating an Excel data source.
+The following syntax shows how to create an Excel data source.
 
 ```
 {

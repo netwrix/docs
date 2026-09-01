@@ -53,8 +53,7 @@ The following columns display the combined direct and inherited rights:
 If the selected trustee in the top section of the report is a group, the Group Membership pane
 displays the group membership, including nested groups.
 
-There is one table at the bottom displaying Compared to Parent permissions for the select trustee.
-It contains information on explicit permissions granted for the selected resource.
+The Compared to Parent table at the bottom shows explicit permissions granted for the selected resource.
 
 ![Compared to Parent table](/images/accessinformationcenter/12.0/resourceaudit/filesystem/sharesubfolder/sharepermissionstable.webp)
 

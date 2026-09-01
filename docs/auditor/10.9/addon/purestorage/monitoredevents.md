@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Monitoring Scope
 
-Review a full list of object types and activities monitored on Pure Storage FlashArray with the
-add-on.
+Review a full list of object types and activities that the add-on monitors on Pure Storage
+FlashArray.
 
 | Object       | Action                                                                 | Property                                                                                                    |
 | ------------ | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |

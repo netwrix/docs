@@ -7,13 +7,13 @@ sidebar_position: 50
 # Delivery Restrictions tab
 
 Use this tab to apply email restrictions to this group. You can manage the list of objects (users,
-contacts, groups) from whom this group can and cannot receive emails.
+contacts, groups) from whom this group can and can't receive emails.
 
 By default, no object is added to the **Accept from** and **Reject from** lists, which indicates
 that the group can receive emails from any object. However, when you specify an object in the
 **Accept from** list, the group will receive emails from that object only.
 
-**A scenario can be as:**
+**Example:**
 
 If you want the group to receive emails from all except one member (Member A) of a group (Group A),
 add Group A to the Accept from list and then add Member A to the Reject from list.

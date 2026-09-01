@@ -14,12 +14,12 @@ This page is about [NIM Profile](../../../integration-guide/connectors/reference
 
 ## Overview
 
-The NIM (Netwrix Identity Manager) Profile connector enables Identity Manager to manage its own profile assignments. This connector allows you to:
+The NIM (Netwrix Identity Manager) Profile connector enables Identity Manager to manage its own profile assignments. Use this connector to:
 
 - Automatically assign profiles based on rules
 - Include assigned profiles in access certification campaigns
 - Apply separation of duties risk rules to Identity Manager profile permissions
-- Leverage the full governance lifecycle (approval workflows, audit trails, role mining, etc.)
+- Apply the full governance lifecycle (approval workflows, audit trails, role mining, etc.)
 
 The connector supports two operational modes:
 
@@ -49,7 +49,7 @@ The user generating the [NIM Profile Template](#configuration-template) must hav
 
 The NIM Profile connector uses an automated configuration wizard that generates the necessary connector configuration based on a template.
 
-More specifically, based on the profiles, dimensions and entity types in the target instance, the wizard will generate and deploy:
+More specifically, based on the profiles, dimensions, and entity types in the target instance, the wizard will generate and deploy:
 - Entity types and associations
 - Single roles (one per profile)
 - Resource types
@@ -78,9 +78,9 @@ The connector supports scenarios where:
 - Users have both time-limited and permanent profile assignments
 
 :::warning
-The product currently faces limitations concerning evolutions:
+The product faces limitations concerning evolutions:
 - If the target instance's configuration changes (profiles added or removed, dimensions modified, ...), the connector configuration may become outdated. This could lead to uncorrelated resources for newly added profiles. For now, the only option is to re-create a connection and re-run the configuration wizard to regenerate the connector configuration.
-- Since the generation of the template also creates hard coded resources, it is not yet possible to export the configuration from one environment and import it in another environment. The template needs to be generated using the wizard in the second environment too.
+- Since the generation of the template also creates hard coded resources, it isn't yet possible to export the configuration from one environment and import it in another environment. The template needs to be generated using the wizard in the second environment too.
 :::
 
 ### Local Mode vs Remote Mode
@@ -97,7 +97,7 @@ When the owner entity type differs from the identity entity type, binding expres
 
 In Remote mode, the source and target instances are different.
 
-The wizard cannot automatically determine how to map identities between the source and the target Identity Manager instances. The following steps must therefore be performed:
+The wizard can't automatically determine how to map identities between the source and the target Identity Manager instances. The following steps must therefore be performed:
 - Locate Placeholder Expressions (for Query and Correlation Rule): Placeholders contain the text "PLACEHOLDER" and include guidance.
 - Update Query Rules: For each Resource Type, replace the placeholder with an expression that returns the target instance user identifier.
 
@@ -116,7 +116,7 @@ The wizard cannot automatically determine how to map identities between the sour
   - If correlation fails (0 matches found), review and correct the user binding expressions
 
 :::warning
-In Remote mode, if placeholder expressions are not replaced, the connector will appear to work (Export and Synchronization jobs complete successfully), but no correlation will occur.
+In Remote mode, if placeholder expressions aren't replaced, the connector will appear to work (Export and Synchronization jobs complete successfully), but no correlation will occur.
 :::
 
 ## Export
@@ -189,7 +189,7 @@ This connector provisions profile assignments to the target Identity Manager ins
 
 :::note
 The `BlockProvisioning` property is set to `true` and the `ApprovalWorkflowType` is set to `ManualAssignmentNotAllowed` on generated Resource Types.
-Therefore provisioning must occur through the Role Model engine based on Single Role assignments only. Once the orders are created, they have to be reviewed in the Provisioning Review screen.
+Therefore provisioning must occur through the Role Model engine based on Single Role assignments only. After the orders are created, review them in the Provisioning Review screen.
 :::
 
 ### Configuration
@@ -240,7 +240,7 @@ The connector:
 | Incorrect user binding expressions | Verify user binding expressions return valid identifiers |
 | User data not synchronized to source instance | Synchronize before correlating profile assignments |
 
-### Fulfillment operations are not executed
+### Fulfillment operations aren't executed
 
 | Possible cause | Resolution |
 | --- | --- |
@@ -250,13 +250,13 @@ The connector:
 
 ### Computed profiles display as non-conforming
 
-[ProfileRules](../../toolkit/xml-configuration/access-control/profilerulecontext) will continue to be computed. To ensure that computed profiles are properly recognized by the Compute Role Model job and do not display as non-conforming, Profile rules should be written through Single Role rules as for other connectors, rather than using ProfileRules.
+[ProfileRules](../../toolkit/xml-configuration/access-control/profilerulecontext) will continue to be computed. To ensure that computed profiles are properly recognized by the Compute Role Model job and don't display as non-conforming, Profile rules should be written through Single Role rules as for other connectors, rather than using ProfileRules.
 
 ## Authentication
 
 ### Password Reset
 
-This connector does not reset passwords.
+This connector doesn't reset passwords.
 
 ### Credential Protection
 

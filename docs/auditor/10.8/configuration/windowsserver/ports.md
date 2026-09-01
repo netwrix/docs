@@ -63,7 +63,7 @@ left.
 - Performance Logs and Alerts (Tcp-In)
 
 If you plan to audit Windows Server 2019 or Windows 10 Update 1803 without network compression
-service, make sure the following inbound connection rules are enabled:
+service, ensure the following inbound connection rules are enabled:
 
 - Remote Scheduled Tasks Management (RPC)
 - Remote Scheduled Tasks Management (RPC-EMAP)

@@ -10,7 +10,7 @@ Netwrix Auditor relies on native logs for collecting audit data. Therefore, succ
 access auditing requires a certain configuration of native audit settings in the audited environment
 and on the Auditor console computer. Configuring your IT infrastructure may also include enabling
 certain built-in Windows services, etc. Proper audit configuration is required to ensure audit data
-integrity, otherwise your change reports may contain warnings, errors or incomplete audit data.
+integrity, otherwise your change reports may contain warnings, errors, or incomplete audit data.
 
 **CAUTION:** Folder associated with Netwrix Auditor must be excluded from antivirus scanning. See
 the
@@ -27,7 +27,7 @@ configuration replicated between them. The first AD FS federation server you set
 becomes the **primary** server. Other federation servers you add to the farm will become
 **secondary** servers.
 
-Make sure you have Windows Remote Management properly configured on your Auditor console computer.
+Ensure you have Windows Remote Management properly configured on your Auditor console computer.
 See the [Software Requirements](/docs/auditor/10.7/requirements/software.md) topic for additional information.
 
 You can configure your IT Infrastructure for monitoring in one of the following ways:
@@ -81,7 +81,7 @@ need to configure audit settings manually, as described later in this section.
 ![mp_adfs_listing_thumb_0_0](/images/auditor/10.7/configuration/activedirectoryfederatedservices/mp_adfs_listing_thumb_0_0.webp)
 
 **Step 2 –** In the **Configure audit settings** section, select **Adjust audit settings
-automatically** check box.
+automatically** checkbox.
 
 ![mp_data_source_ad_fs_thumb_0_0](/images/auditor/10.7/configuration/activedirectoryfederatedservices/mp_data_source_ad_fs_thumb_0_0.webp)
 
@@ -92,7 +92,6 @@ necessary log settings on these servers.
 
 ## Configure AD FS farm manually
 
-Follow the steps to enable AD FS audit settings and set up Windows audit policy.
 
 **Step 1 –** AD FS audit settings must be configured on the primary AD FS server, i.e. on the first
 server you have set up in the farm:

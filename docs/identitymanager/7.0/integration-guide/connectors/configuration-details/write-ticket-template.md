@@ -48,7 +48,7 @@ Identity Manager also provides a way of using conditions with Mustache for the 
 {{/each}}
 ```
 
-This template goes through all the changes provided by the provisioning order. If any one of them meets the condition for an internal employee, we display the internal employee message. Several messages can be shown if several changes meet the condition.
+This template goes through all the changes provided by the provisioning order. If any one of them meets the condition for an internal employee, the internal employee message is displayed. Several messages can be shown if several changes meet the condition.
 
 ## Template example
 

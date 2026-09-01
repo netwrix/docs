@@ -56,9 +56,9 @@ Add an exclusion for `%ProgramFiles%\Netwrix\Password Policy Enforcer\PPEClt.DLL
 ## Testing the Password Policy Client
 
 Test the Password Policy Client by logging on to a computer, pressing **Ctrl+Alt+Del**, and clicking **Change a password**. You should see the password policy rules on the password change screen. If you don't see the rules, then ensure that:
-- The [Password Policy Server (PPS)](installationserver.md) is installed on all domain controllers in the domain.
+- You installed the [Password Policy Server (PPS)](installationserver.md) on all domain controllers in the domain.
 - You restarted all domain controllers after installing the PPS.
-- A PPE policy is [assigned](../admin/manage-policies/usersgroups.md) to the logged on user account.
+- You [assigned](../admin/manage-policies/usersgroups.md) a PPE policy to the logged on user account.
 
 ## Uninstalling
 

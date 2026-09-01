@@ -6,7 +6,7 @@ sidebar_position: 2
 
 This scaffolding creates the administrator profile with a predefined set of rights.
 
-To create the rights for this profile, a scaffolding list is launched inside the creation of the administrator profile.
+To create the rights for this profile, the scaffolding launches a list of nested scaffoldings during administrator profile creation.
 
 The scaffolding generates the following scaffoldings:
 
@@ -18,7 +18,7 @@ Generates the permissions to administrate campaign creation.
 Generates the permissions to access the assigned roles page for a given entity type and profile.
 - [Assign Profile Access Control Rules](../accesscontrolrules/profiles/assignprofileaccesscontrolrules)
 
-Gives to a given profile the rights to create, update, delete and query any assigned profile.
+Gives to a given profile the rights to create, update, delete, and query any assigned profile.
 - [Basket Rules Control Rules](../accesscontrolrules/rolemodels/basketrulescontrolrules)
 
 Generates the permissions to execute the different requests to display the information in the rights basket.
@@ -42,7 +42,7 @@ Assigns a set of rights to a given profile to execute any job, and view all job 
  
 - [Manage Setting Access Control Rule](../accesscontrolrules/queries/managesettingaccesscontrolrule)
 
-Generates the access control rule which gives to a profile the permission to query, create, update and delete settings from the UM_Settings table.
+Generates the access control rule which gives to a profile the permission to query, create, update, and delete settings from the UM_Settings table.
 - [Monitoring Administration Access Control Rules](../accesscontrolrules/monitoring/monitoringadministrationaccesscontrolrules)
 
 Generates the access control rule which gives to a profile the permission to query the monitoring screen.
@@ -51,7 +51,7 @@ Generates the access control rule which gives to a profile the permission to que
 Generates the permissions to access the manual provisioning pages for a given entity type and profile.
 - [Profile Administration Access Control Rules](../accesscontrolrules/profiles/profileadministrationaccesscontrolrules)
 
-Gives to a given profile the rights to create, update and delete profiles.
+Gives to a given profile the rights to create, update, and delete profiles.
 - [Provisioning Access Control Rules](../accesscontrolrules/jobs/provisioningaccesscontrolrules)
 
 Generates the execution rights for Provisioning and Fulfillment tasks for a given profile.
@@ -158,7 +158,7 @@ Generates the permissions to access the workflow supervision page.
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Profile Identifier="Administrator" DisplayName_L1="Administrator" DisplayName_L2="Administrateur" />

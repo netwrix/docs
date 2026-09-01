@@ -10,7 +10,7 @@ Navigate to the **Jobs > Databases > MongoDB > Configuration > MongoDB_Databa
 node and select Analysis to view the Analysis Tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

@@ -15,7 +15,7 @@ weak passwords.
 The Collect Weak Passwords Job uses the PowerShell Data Collector for the following query:
 
 :::warning
-Do not modify the query. The query is preconfigured for this job.
+Don't modify the query. The query is preconfigured for this job.
 :::
 
 
@@ -32,7 +32,7 @@ Navigate to the Jobs > **Databases** > SQL > 3.Users and Roles > SQL_PasswordIs
 and select Analysis to view the analysis tasks.
 
 :::warning
-Most of these analysis tasks are preconfigured and should not be modified and or
+Most of these analysis tasks are preconfigured and shouldn't be modified and or
 deselected unless otherwise specified.
 :::
 
@@ -49,7 +49,7 @@ The default analysis tasks are:
           [Configure the Customizable Parameters in an Analysis Task](/docs/accessanalyzer/12.0/admin/jobs/job/configure/analysis/analysiscustomizableparameters.md)
           topic for additional information on modifying analysis parameters.
 - Shared Passwords – Highlights SQL Server Logins with shared password hashes
-- No Password – Inserts users that do not have a password set into the details table
+- No Password – Inserts users that don't have a password set into the details table
 - Summarize the Weak Password Results – Summarizes the data that has been collected by the weak
   passwords job
 

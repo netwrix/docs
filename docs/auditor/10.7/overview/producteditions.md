@@ -18,7 +18,7 @@ Enterprise Advanced version. Alternatively, you can switch to Free Community Edi
 
 Free Community Edition helps you maintain visibility into your environment by delivering daily
 reports that summarize changes that took place in the last 24 hours. However, you will no longer be
-able to use interactive search, predefined reports, alerts and dashboards, or store your security
+able to use interactive search, predefined reports, alerts, or dashboards, or store your security
 intelligence. After switching to free mode, you may need to re-arrange your audit configuration due
 to the limitations.
 
@@ -63,7 +63,7 @@ Refer to a table below to compare product editions.
 | Activity Summary                                                                                                                                              | 1 recipient                                                        | Multiple recipients                                         |
 | AuditArchive                                                                                                                                                  | –                                                                  | Both Long-Term Archive and Audit Database                   |
 | Search                                                                                                                                                        | –                                                                  | +                                                           |
-| Reports (including organization–level reports, overview diagrams, change and activity reports, reports with video and review status) and special report packs | –                                                                  | +                                                           |
+| Reports (including organization–level reports, overview diagrams, change, and activity reports, and reports with video and review status) and special report packs | –                                                                  | +                                                           |
 | State–in–time reports                                                                                                                                         | –                                                                  | +                                                           |
 | Ability to save search as a custom report                                                                                                                     | –                                                                  | +                                                           |
 | Subscriptions                                                                                                                                                 | –                                                                  | +                                                           |

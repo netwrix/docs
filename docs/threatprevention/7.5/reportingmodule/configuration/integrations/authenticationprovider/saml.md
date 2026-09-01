@@ -6,15 +6,13 @@ sidebar_position: 30
 
 # SAML Authentication Provider
 
-The Security Assertion Markup Language (SAML) is an XML framework for exchanging authentication and
-authorization information. It provides functions to describe and transmit security-related
-information. This means that you can use one set of credentials to log in to many different
-websites. It is much easier to manage one login per user than separate logins for email, Customer
+The Security Assertion Markup Language (SAML) provides an XML framework for exchanging authentication and
+authorization information. It describes and transmits security-related information, which lets you use one set of credentials to log in to many different websites. Managing one login per user is much easier than managing separate logins for email, Customer
 Relationship Management (CRM) software, Active Directory, and more.
 
-Once you have added an authentication provider, as discussed in the
-[Add an Authentication Provider](/docs/threatprevention/7.5/reportingmodule/configuration/integrations/authenticationprovider/page.md#add-an-authentication-provider)topic, the next step is to
-configure the provider for use with a supported authentication provider type, i.e., OpenID, RADIUS,
+After you add an authentication provider, as discussed in the
+[Add an Authentication Provider](/docs/threatprevention/7.5/reportingmodule/configuration/integrations/authenticationprovider/page.md#add-an-authentication-provider) topic, the next step is to
+configure the provider for use with a supported authentication provider type: OpenID, RADIUS,
 or SAML.
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
@@ -44,25 +42,21 @@ Configure the following settings for a SAML provider on the Configuration tab:
 - Default – The default profile applied when a user is assigned multiple authentication profiles.
   When off, the profile will be determined in alphabetical order of the profile name. Toggle off and
   on as desired.
-- Login URI – Login URI is a specific web address where users can authenticate themselves to access
-  a web application or service
-- Logout Uri – A logout URI is a specific web address where users are directed to terminate their
-  authenticated session in a web application or service
-- Login Type – The login type to use to log into the account. Use the drop-down menu to select one
-  of the following: Sam Account Name, User Principal Name, Email Address, or Sid
-- User Claim – A user claim is an assertion made by the identity provider about a user, such as
-  their name, role, or email, that the service provider can use for authorization decisions
+- Login URI — The web address where users authenticate to access a web application or service.
+- Logout URI — The web address where users go to end their authenticated session.
+- Login Type — The login type to use to log into the account. Use the dropdown menu to select one
+  of the following: SAM Account Name, User Principal Name, Email Address, or SID.
+- User Claim — An assertion from the identity provider about a user, such as their name, role, or email, that the service provider can use for authorization decisions.
 - Check Certificate – If enabled, this validates the response certificate to the certificate
   provided in the Certificate field. Use the toggle button to enable and disable this setting.
-- Certificate – A certificate is a digital credential used to validate the identity of parties and
-  secure communications between an Identity Provider (IdP) and a Service Provider (SP)
+- Certificate — A digital credential that validates the identity of parties and secures communications between an Identity Provider (IdP) and a Service Provider (SP).
 
 Click Save to commit the configuration settings.
 
 ## Users/Groups Tab
 
-The Users/Groups tab displays users and groups that are currently assigned to this authentication
-profile. To give access to the application to new users, click the New Access button, which opens
+The Users/Groups tab displays users and groups assigned to this authentication
+profile. To grant new users access, click the New Access button, which opens
 the Add Console Access window. To assign this authentication provider to existing users, go to
 System Settings > User Access Page.
 
@@ -71,21 +65,16 @@ System Settings > User Access Page.
 The table displays the following information:
 
 - Access rule type – Indicates the access type as _Allow_, which enables console access, or _Deny_,
-  which disables console access
-- Login name – The NTStyle domain name for the user or group account
-- Display name – The display name for the user or group account
-- Domain name – Name of the domain. This may be either the domain DNS name or domain controller
-  hostname.
-- Role – The role assigned to the user or group for accessing this application
-- Authentication Type – Type of MFA authentication assigned to the user or group
-- Action – This column has the following icons for conducting actions on the user or group:
+  which disables console access.
+- Login name — The NTStyle domain name for the user or group account.
+- Display name — The display name for the user or group account.
+- Domain name — Name of the domain, either the domain DNS name or domain controller hostname.
+- Role — The role assigned to the user or group for accessing this application.
+- Authentication Type — Type of Multi-Factor Authentication (MFA) assigned to the user or group.
+- Action — This column has the following icons for conducting actions on the user or group:
 
-  - Edit icon – Allows you to edit the columns in the selected row by enabling drop-down menus.
-    The edit icon changes to a save icon while in edit mode.
-  - Trash icon – Opens a Warning window to confirm the action of deleting the user or group.
-    Removing a user or group removes console access for it.
-  - Reset MFA button – Forces the user or every user in the group to reconfigure MFA on the next
-    login. This option is only available if an MFA authentication type is applied to the user or
-    group.
+  - Edit icon — You can edit the columns in the selected row by enabling dropdown menus. The edit icon changes to a save icon while in edit mode.
+  - Trash icon — Opens a Warning window to confirm deleting the user or group. Removing a user or group removes console access for it.
+  - Reset MFA button — Forces the user or every user in the group to reconfigure MFA on the next login. This option is only available if an MFA authentication type is applied to the user or group.
 
 See the [User Access Page](/docs/threatprevention/7.5/reportingmodule/configuration/systemsettings/useraccess.md) topic for additional information.

@@ -9,7 +9,7 @@ sidebar_position: 40
 This page displays the default query for the Smart Group; however, you can modify it. The group’s
 membership is updated with the records fetched by the query.
 
-- The **Container(s)** area displays the domain or containers the query will run on.
+- The **Containers** area displays the domain or containers the query will run on.
 - **Object Types**: Lists the object types the query will fetch.
 - The **Server** and **Storage** areas are displayed if the query only fetches messaging system
   recipients. These areas display the server and storage for the query to fetch the records from.
@@ -19,7 +19,7 @@ In an Active Directory identity store, the default query returns the following:
 - If a messaging provider is configured for the identity store, the default query returns messaging
   system recipients (users with mailboxes, users with external email addresses, and contacts with
   external email addresses).
-- Without a messaging provider, the default query returns all users, contacts and groups in the
+- Without a messaging provider, the default query returns all users, contacts, and groups in the
   identity store.
 
 In a Microsoft Entra ID identity store, the default query returns the following:
@@ -42,7 +42,7 @@ From the **Scheduled Job** list, select a Smart Group Update job to associate wi
 This list contains Smart Group Update jobs defined in the identity store.
 
 :::note
-If the administrator has enforced the job selection option, you cannot proceed unless you
+If the administrator has enforced the job selection option, you can't proceed unless you
 select a scheduled job for this group.
 :::
 

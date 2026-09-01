@@ -17,12 +17,12 @@ they enrolled with, when they perform any of the following actions in the Direct
 - Reset identity store account passwords
 - Unlock their accounts
 
-Helpdesk users with restricted access also use authentication type(s) to authenticate end-users
+Helpdesk users with restricted access also use authentication types to authenticate end-users
 before resetting their password or unlocking their identity store account. See the
 [Set Restricted Mode](/docs/directorymanager/11.1/admincenter/securityrole/policy/helpdesk.md#set-restricted-mode) topic.
 
 :::note
-Multifactor authentication defined in Microsoft Entra Admin Center does not integrate with MFA
+Multifactor authentication defined in Microsoft Entra Admin Center doesn't integrate with MFA
 in Directory Manager. See the
 [Multifactor Authentication Policy](/docs/directorymanager/11.1/admincenter/identitystore/advsentraid.md#multifactor-authentication-policy)
 topic.

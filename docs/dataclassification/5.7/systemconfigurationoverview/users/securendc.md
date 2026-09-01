@@ -18,13 +18,11 @@ the product. To begin the process of securing the product, follow these steps:
 1. Access the Administration Console.
 2. Select Settings > Users from the top navigation bar.
 3. Select Add.
-4. Your username will be pre-filled and must first be added to ensure that you don't lose access to
-   the system.
+4. Your username comes pre-filled. You must add it first to ensure you don't lose access to the system.
 5. You can now add other users / groups as required - either as Superusers, or with access to
    specific areas / functions
 
-Superusers have access to all areas / functions within the product but may not see all search
-results (if they have been filtered based on security in the source system such as SharePoint).
+Superusers have access to all areas and functions within the product but may not see all search results if the source system (such as SharePoint) filtered them based on security.
 
 Optionally, you can also consider using a federated authentication mechanism, such as Azure AD.
 
@@ -59,7 +57,7 @@ groupings to this engine:
 - All other files—Stores the compound term processing search index, identifying which documents
   should be returned for a given query
 
-Text.cse can be optionally encrypted using AES/SHA256 to further improve the security of the full text at rest. You can enable this by:
+You can optionally encrypt Text.cse using AES/SHA256 to improve the security of the full text at rest. To enable this:
 
 1. Accessing the Administration Console.
 2. Selecting **Config** from the top navigation bar.
@@ -67,14 +65,13 @@ Text.cse can be optionally encrypted using AES/SHA256 to further improve the sec
 select the wrench icon in the bottom left to display it).
 4. Selecting **Save**.
 
-The other index files can't be reverse-engineered to retrieve the full document text - however, they do
+The other index files don't expose the full document text—however, they do
 contain the weightings and terms within the text. Netwrix recommends restricting access to all files at
 the file system level as well as considering file system encryption.
 
 ## Review Web Service Endpoints
 
-There are several web service endpoints which provide access to various levels of information within
-Netwrix Data Classification. If you are exposing the administration interface to the internet then
+Several web service endpoints provide access to various levels of information within Netwrix Data Classification. If you are exposing the administration interface to the internet then
 you may want to fully restrict access to these endpoints via your firewall or IIS Configuration
 (potentially removing all external access).
 

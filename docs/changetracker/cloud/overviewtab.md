@@ -10,23 +10,23 @@ sidebar_position: 10
 
 Actions Button:
 
-To create a new Cloud Tracker report or group, click here.
+To create a new Cloud Tracker report or group, use the Actions button.
 
 Risk by Group:
 
-Any Groups that have reported a score below your specified Compliance Report Score will be indicated
-here according to the Group's assigned Risk Score. See the Reports topic in the
+Any Groups that report a score below your specified Compliance Report Score appear here, according
+to the Group's assigned Risk Score. See the Reports topic in the
 [Netwrix Change Tracker Admin Guide](https://netwrix-dev.zoominsoftware.io/category/changetracker)
-for additional information. Click on any bar to see the details of poor-scoring Cloud systems.
+for additional information. Click any bar to see the details of poor-scoring Cloud systems.
 
 Filter Pop-out:
 
-Click in this area to reveal the Date, Time, Group, Device and Policy filters.
+Click in this area to reveal the Date, Time, Group, Device, and Policy filters.
 
 Policy Dashboardlets:
 
-Shows current and previous scores for each policy group and an indication of whether compliance is
-improving, deteriating, or static, count of Cloud Systems being reported on and whether the group
-has met the threshold for compliance or not.
+Shows current and previous scores for each policy group, an indication of whether compliance is
+improving, deteriorating, or static, the count of Cloud Systems included in the report, and
+whether the group has met the compliance threshold.
 
-Click on the **Dashboardlet tile** to see the details behind the policy.
+Click the **Dashboardlet tile** to see the details behind the policy.

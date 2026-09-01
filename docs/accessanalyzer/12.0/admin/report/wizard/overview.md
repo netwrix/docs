@@ -10,10 +10,8 @@ You can use the Report Configuration Wizard to configure reports. The wizard can
 existing report or when creating a new report. See the [Creating a Report](/docs/accessanalyzer/12.0/admin/report/create.md) and
 [Editing Existing Reports](/docs/accessanalyzer/12.0/admin/report/edit.md) topics for additional information.
 
-Follow the steps to configure a report using the wizard.
-
 :::note
-Skip any sections or pages that do not require changes to the existing configuration.
+Skip any sections or pages that don't require changes to the existing configuration.
 :::
 
 
@@ -27,18 +25,18 @@ specific settings. Click **Next**.
 
 **Step 4 –** The [Publish Security Page](/docs/accessanalyzer/12.0/admin/report/wizard/publishsecurity.md) page is only enabled if role-based
 access is configured for the Access Analyzer console. On this page you can view and configure
-accounts with permissions to view the report. If you are not using role-based access, you can skip
+accounts with permissions to view the report. If you aren't using role-based access, you can skip
 this page. Click **Next**.
 
 **Step 5 –** On the [Layout Page](/docs/accessanalyzer/12.0/admin/report/wizard/layout.md) page, select the number of rows using the dropdown
-menu. Then select the desired pre-defined layout from the options displayed. Click **Next**.
+menu. Then select the pre-defined layout you want from the options displayed. Click **Next**.
 
 **Step 6 –** On the [Widgets Page](/docs/accessanalyzer/12.0/admin/report/wizard/widgets.md) page, configure widgets for each element of the
 layout.
 
 **Step 7 –** Click **Finish** to save your changes.
 
-- If you do not want to save your changes or have not made any changes, click **Cancel** on any page
+- If you don't want to save your changes or have not made any changes, click **Cancel** on any page
   to exit the wizard without saving your changes.
 
 Your configuration has been saved. For information on how to view your report, see the

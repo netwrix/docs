@@ -6,28 +6,27 @@ sidebar_position: 10
 
 # Using the Filter Panel
 
-The **Filter** panel is extremely powerful for focusing attention on events of interest, even in
-large and complex estates with thousands of change/report events to manage.
+The **Filter** panel helps you focus attention on events of interest, even in large and complex
+estates with thousands of change/report events to manage.
 
 ![EventsReportsFiltersGroupsDevices](/images/changetracker/admin/tabs/eventsreportsfiltersgroupsdevices.webp)
 
-The new Event Filter in has several key improvements:
+The Event Filter panel includes the following options:
 
-- **Recent Group & Device Selections** - This provides a dynamically updated list of most recently
-  used devices/groups, so your favorites are always easily within reach.
-- **Choose** - presents a full list of Devices to allow direct selection.
-- **Search Devices** - provides a dynamic filter based on partial IP address/partial name for a
-  Device.
-- **Date & Time** - Range shortcuts Provides a simple selection of pre-defined time ranges, with the
-  option to cycle backwards or forwards.
-- **Event Filters** - New options to filter by Username or File Hash value now optimized.
-- **Planned Change** - New option to filter further by Planned Change Schedule name.
+- **Recent Group & Device Selections** — Provides a dynamically updated list of your most recently
+  used devices and groups.
+- **Choose** — Presents a full list of Devices to allow direct selection.
+- **Search Devices** — Provides a dynamic filter based on a partial IP address or partial name for
+  a Device.
+- **Date & Time Range Shortcuts** — Provides a simple selection of predefined time ranges, with the
+  option to cycle backward or forward.
+- **Event Filters** — Optimized options to filter by username or file hash value.
+- **Planned Change** — Filter further by Planned Change Schedule name.
 
-Once a filter has been set, this will persist across all other tabs, so for example, if you switch
-from the Devices tab to the Events tab, the same filter selected will be applied to the events
-shown.
+After you set a filter, it persists across all other tabs. For example, if you switch from the
+Devices tab to the Events tab, Change Tracker applies the same filter to the events shown.
 
-Filter parameters set will also be shown at the top of the Events page even when the Filter Control
-panel is hidden.
+Filter parameters that you set also appear at the top of the Events page, even when the Filter
+Control panel is hidden.
 
 ![page_guide_3](/images/changetracker/admin/tabs/page_guide_3.webp)

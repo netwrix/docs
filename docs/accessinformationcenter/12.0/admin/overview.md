@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Administrator Overview
 
-Access Information Center administrators have access to the Configuration interface where there
+Access Information Center administrators have access to the Configuration interface where their
 application settings reside. This topic covers:
 
 - [Getting Started](/docs/accessinformationcenter/12.0/admin/gettingstarted.md)

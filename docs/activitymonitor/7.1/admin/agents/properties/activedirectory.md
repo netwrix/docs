@@ -12,7 +12,7 @@ be enabled for agents on domain controllers.
 
 ![Agent Properties - Active Directory Tab](/images/activitymonitor/7.1/admin/agents/properties/mainimage.webp)
 
-The Agent Settings allow users to control the AD agent’s properties:
+Use the Agent Settings to control the AD agent’s properties:
 
 - Harden the Agent – Protects the AD agent from being altered, stopped, or started from within the
   local Service Control Manager
@@ -22,17 +22,17 @@ The Agent Settings allow users to control the AD agent’s properties:
     :::note
     This is a safety measure that disables monitoring if the environment changes as in
     rare cases the instrumentation may cause LSASS crashes. Should the version change occur, a
-    warning will be shown next to the agent on the Agents page. The **Start pending modules** button
-    allows you to force the agent to enable monitoring.
+    warning will be shown next to the agent on the Agents page. Use the **Start pending modules** button
+    to force the agent to enable monitoring.
     :::
 
 
 - Enable DNS Host Name Resolution – If selected, the AD agent looks up the missing data (a NetBIOS
-  name, a Fully Qualified Domain Name, or an IP Address) that is missing fromthe event
+  name, a Fully Qualified Domain Name, or an IP Address) from the event
 
     :::note
     This provides more uniform data, but may have a performance impact on the machine
-    where the AD agent is deployed, especially if that machine does not handle the name resolution
+    where the AD agent is deployed, especially if that machine doesn't handle the name resolution
     locally.
     :::
 
@@ -64,16 +64,16 @@ Monitoring through Threat Prevention.
 :::
 
 
-If Threat Prevention data is not used by other Netwrix products, uninstall the activity agent from
-the domain controllers if you do not plan to receive Active Directory activity in Activity Monitor
-anymore and the agents are not used for file system monitoring. If Threat Prevention data is to be
+If Threat Prevention data isn't used by other Netwrix products, uninstall the activity agent from
+the domain controllers if you don't plan to receive Active Directory activity in Activity Monitor
+anymore and the agents aren't used for file system monitoring. If Threat Prevention data is to be
 used by other Netwrix products, see the
 [Configuring StealthINTERCEPT to Send Active Directory Activity to the Activity Monitor](#configuring-stealthintercept-to-send-active-directory-activity-to-the-activity-monitor)
 topic for additional information.
 
 ## Configuring StealthINTERCEPT to Send Active Directory Activity to the Activity Monitor
 
-Once the activity agent is deployed to a domain controller with an existing Threat Prevention agent,
+When the activity agent is deployed to a domain controller with an existing Threat Prevention agent,
 a connection can be secured between both agents. Follow these instructions to configure the policy
 used for Active Directory Activity Monitoring from the Threat Prevention Admin Console.
 

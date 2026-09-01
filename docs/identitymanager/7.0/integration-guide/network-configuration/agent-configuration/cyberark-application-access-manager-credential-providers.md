@@ -12,13 +12,13 @@ This guide shows how to protect sensitive data by connecting Identity Manager t
 
 Identity Manager often needs to connect to [Connectors](../../../integration-guide/connectors) with credentials that need protection. See the [Connectors](../../../integration-guide/connectors) topic for additional information.
 
-By default, the data used to connect to external systems is stored in plain text in the **Connections** section of the `appsettings.agent.json` file. This is not a secure option.
+By default, the data used to connect to external systems is stored in plain text in the **Connections** section of the `appsettings.agent.json` file. This isn't a secure option.
 
 ## CyberArk for Data Protection
 
-CyberArk's Application Access Manager (AAM) Credential Providers, part of the Privileged Access Security solution, is used to stop storing hard-coded credentials in applications, scripts or configuration files, and instead store them in CyberArk's vault to be centrally logged and managed.
+CyberArk's Application Access Manager (AAM) Credential Providers, part of the Privileged Access Security solution, is used to stop storing hard-coded credentials in applications, scripts, or configuration files, and instead store them in CyberArk's vault to be centrally logged, and managed.
 
-This way, the company can easily become compliant with potential internal and regulatory requirements of periodic password replacement, and able to securely monitor privileged access across all systems, databases and applications.
+This way, the company can become compliant with potential internal, and regulatory requirements of periodic password replacement, and able to securely monitor privileged access across all systems, databases, and applications.
 
 CyberArk is made of **vaults**. Inside a vault, **safes** can be created and **owners** allocated. **Accounts** and files can then be stored in **safes** accessible by users.
 
@@ -37,7 +37,7 @@ Implementing the Credential Provider method requires placing the C/C++ Applicati
 
 Identity Manager supports both AAMs. [CyberArk's overview](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-CP/11.4/en/Content/CCP/The-CyberArk-Application-Identity-Management-Solution.htm?tocpath=Get%20Started%7C_____1#cyberarks-overview) can help choose which AAM to go to.
 
-See more details about Credential Provider's [system requirements](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-CP/11.4/en/Content/CP%20and%20ASCP/SysReq-Credential-Provider.htm?tocpath=Installation%7CSystem%20Requirements%7C_____1#system-requirements) and [installation guide](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-CP/11.4/en/Content/CP%20and%20ASCP/installing-the-Credential-Provider.htm?TocPath=Installation%7CCredential%20Provider%7CInstall%20the%20Credential%20Provider%7C_____0#installation-guide).
+Review the Credential Provider [system requirements](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-CP/11.4/en/Content/CP%20and%20ASCP/SysReq-Credential-Provider.htm?tocpath=Installation%7CSystem%20Requirements%7C_____1#system-requirements) and [installation guide](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-CP/11.4/en/Content/CP%20and%20ASCP/installing-the-Credential-Provider.htm?TocPath=Installation%7CCredential%20Provider%7CInstall%20the%20Credential%20Provider%7C_____0#installation-guide).
 
 ## Compatible Settings
 
@@ -67,7 +67,7 @@ CyberArk uses for each client application an **AppID**, i.e. a unique name to id
 
 ### Authentication
 
-Several [authentication methods](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-CP/Latest/en/Content/Common/Adding-Applications.htm?tocpath=Administration%7CManage%20applications%7C_____1#authentication-methods) are available to protect the whole system and make sure that Identity Manager actually does the API calls.
+Several [authentication methods](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-CP/Latest/en/Content/Common/Adding-Applications.htm?tocpath=Administration%7CManage%20applications%7C_____1#authentication-methods) are available to protect the whole system and ensure that Identity Manager actually does the API calls.
 
 Netwrix Identity Manager (formerly Usercube)recommends:
 
@@ -84,13 +84,13 @@ Finally, [allowed machines](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM
 
 **if** IIS is configured with `AIMWebService` set to `Require SSL`, then an SSL certificate must be provided.
 
-Identity Manager does not require a certificate, so it can be launched without certificate-related parameters, **if** CyberArk is configured to allow it.
+Identity Manager doesn't require a certificate, so it can be launched without certificate-related parameters, **if** CyberArk is configured to allow it.
 
 ## Create a CyberArk Account
 
-CyberArk's Password Vault Web Access (PVWA) is meant to enable users to access sensitive data through **Accounts** in CyberArk, from any local or remote location.
+CyberArk's Password Vault Web Access (PVWA) is meant to lets you access sensitive data through **Accounts** in CyberArk, from any local or remote location.
 
-The following procedure requires credentials in order to connect to PVWA.
+The following procedure requires credentials to connect to PVWA.
 
 Create a CyberArk account by [adding it to the PVWA](https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-CP/Latest/en/Content/CP%20and%20ASCP/cv_Managing-Single-**Accounts**.htm?tocpath=Administration%7CCredential%20Provider%7CAccounts%20and%20Safes%7C_____1#adding-it-to-the-pvwa), defining at least the following properties:
 
@@ -108,7 +108,7 @@ Netwrix Identity Manager (formerly Usercube) recommends customizing the account'
 
 [See CyberArk's documentation on how to add a safe member](https://docs.cyberark.com/PAS/13.0/en/Content/PASIMP/**safes**-add-a-safe-member-ClassicUI.htm?tocpath=Administrator%7CPrivileged%20Accounts%7CAccess%20Control%7CSafes%20and%20Safe%20members%7CClassic%20interface%7C_____3).
 
-In order to assign the permissions to access the application, follow CyberArk's instructions to [build the environment for the Credential Provider in the PVWA](https://docs.cyberark.com/AAM-CP/13.0/en/Content/CP%20and%20ASCP/Building-CP-Environment.htm).
+To assign the permissions to access the application, follow CyberArk's instructions to [build the environment for the Credential Provider in the PVWA](https://docs.cyberark.com/AAM-CP/13.0/en/Content/CP%20and%20ASCP/Building-CP-Environment.htm).
 
 The aim here is to give the right permissions to:
 
@@ -167,7 +167,7 @@ Netwrix Identity Manager (formerly Usercube)recommends using Windows' certificat
 
 On the other hand, the PFX file takes priority over Windows' certificate, which means that when `File` is specified then the PFX certificate is used, even **if** the options for Windows' certificate are specified too.
 
-In both ways, missing and/or incorrect settings trigger an error and no certificate is loaded.
+In both ways, missing, and/or incorrect settings trigger an error, and no certificate is loaded.
 
 #### As a PFX file
 
@@ -223,8 +223,8 @@ The Windows certificate is set using these attributes:
 
  | Name | Details | 
  | --- | --- | 
- | DistinguishedName optional | **Type** String **Description** _SubjectDistinguishedName_ of the store certificate. **Note:** **required** when `Thumbprint` is not specified. | 
- | Thumbprint optional | **Type** String **Description** _Thumbprint_ of the store certificate. **Note:** **required** when `DistinguishedName` is not specified. | 
+ | DistinguishedName optional | **Type** String **Description** _SubjectDistinguishedName_ of the store certificate. **Note:** **required** when `Thumbprint` isn't specified. | 
+ | Thumbprint optional | **Type** String **Description** _Thumbprint_ of the store certificate. **Note:** **required** when `DistinguishedName` isn't specified. | 
  | StoreLocation **required** | **Type** String **Description** Location of the relevant Windows certificate store: `LocalMachine` or `CurrentUser`. | 
  | StoreName **required** | **Type** String **Description** Name of the relevant Windows certificate store. | 
 
@@ -265,7 +265,7 @@ file;
 
 After updating `*appsettings.cyberArk.agent.json*`, the agent must be restarted for the changes to take effect.
 
-To get a given property's value, Identity Manager reads first the section in `*appsettings.cyberArk.agent.json*` for the appropriate connection. Only **if** the property is not listed here will Identity Manager read the corresponding section in `appsettings.agent.json` to find it.
+To get a given property's value, Identity Manager reads first the section in `*appsettings.cyberArk.agent.json*` for the appropriate connection. Only **if** the property isn't listed here will Identity Manager read the corresponding section in `appsettings.agent.json` to find it.
 
 Thus, when a property is listed in both appsettings files, the value from the CyberArk vault takes priority over the one from the usual appsettings file.
 

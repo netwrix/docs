@@ -11,7 +11,7 @@ selected resource.
 
 ![Permissions report at the mailbox and folder level](/images/accessinformationcenter/12.0/resourceaudit/exchange/mailboxfolder/mailboxpermissions.webp)
 
-This report is comprised of the following columns:
+This report contains the following columns:
 
 - Trustee Type – Type of the trustee (for example, Domain User or Domain Group)
 - Trustee Name – Owner of the trustee account

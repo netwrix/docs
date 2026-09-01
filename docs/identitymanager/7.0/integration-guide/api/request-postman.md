@@ -17,7 +17,7 @@ Get an access token by proceeding as follows:
 
     ![Postman: New Request](/images/identitymanager/postman_newrequest.webp)
 
-3. Fill in the fields and click on **Save to Identity Manager**.
+3. Fill in the fields and click **Save to Identity Manager**.
 
     ![Postman: New Request Fields](/images/identitymanager/postman_requestfields.webp)
 
@@ -33,7 +33,7 @@ Get an access token by proceeding as follows:
         - **scope**: usercube_api
         - **grant_type**: client_credentials
 
-5. Click on **Send** and get the access token from the response body.
+5. Click **Send** and get the access token from the response body.
 
     ![Postman: Access Token](/images/identitymanager/postman_accesstoken.webp)
 
@@ -52,7 +52,7 @@ Use an access token by proceeding as follows:
         - **TYPE**: Bearer Token
         - **Token**: `<Access Token>`
 
-3. Click on **Send** and get the result from the response body.
+3. Click **Send** and get the result from the response body.
 
     ![Postman: Access Token Result](/images/identitymanager/postman_accesstokenresult.webp)
 
@@ -71,7 +71,7 @@ Create a combined request by proceeding as follows:
         - **TYPE**: OAuth 2.0
         - **Header Prefix**: Bearer
 
-3. Click on **Get New Access Token** and fill in the fields as follows:
+3. Click **Get New Access Token** and fill in the fields as follows:
 
     ![Postman: New Access Token Fields (Combined Request)](/images/identitymanager/postman_newaccesstokencombined.webp)
 
@@ -80,16 +80,16 @@ Create a combined request by proceeding as follows:
     - **Access Token URL**: `<URL IdentityManager>`/connect/token
     - **Client ID**: `<OpenIdClient id>`@`<FQDN Usercube>`
 
-Do not replace `@` with its encoding.
+Don't replace `@` with its encoding.
 
     - **Client Secret**: `<OpenIdClient secret>`
     - **Scope**: usercube_api
     - **Client Authentication**: Send client credentials in body
 
-4. Click on **Request Token** to get the token.
+4. Click **Request Token** to get the token.
 
     ![Postman: Get Token (Combined Request)](/images/identitymanager/postman_gettokencombined.webp)
 
-5. Click on **Use Token** and **Send** and get the result from the response body.
+5. Click **Use Token** and **Send** and get the result from the response body.
 
     ![Postman: Access Token Result (Combined Request)](/images/identitymanager/postman_accesstokenresult.webp)

@@ -11,7 +11,7 @@ generation.
 
 ## Limitations
 
-1. For the following File Server State-in-Time reports wildcard _%_ is not supported for the
+1. For the following File Server State-in-Time reports wildcard _%_ isn't supported for the
    "_Object Path_" field:
 
     - Account permissions

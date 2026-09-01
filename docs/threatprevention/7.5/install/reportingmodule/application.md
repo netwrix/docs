@@ -10,8 +10,6 @@ The application can be installed on the same server as the PostgreSQL databases 
 server. If installed on a different server, the location of the database server must be provided
 while installing the application.
 
-Follow the steps to install the application.
-
 :::warning
 The PostgreSQL database application must be installed before the application is
 installed.
@@ -20,7 +18,7 @@ installed.
 
 :::note
 These steps assume you have launched the installer through the Netwrix Setup Launcher
-(`Netwrix_Setup.exe`). If you are not using it, right-click on `NetwrixThreatManagerReporting.exe`
+(`Netwrix_Setup.exe`). If you aren't using it, right-click `NetwrixThreatManagerReporting.exe`
 and select Run as administrator. Then skip to Step 2.
 :::
 
@@ -54,10 +52,10 @@ same server where the PostgreSQL database application was installed, this inform
 accurate by default. The default database name is stealthdefend; however, it can be modified as
 desired. Click **Test** to validate the connection information.
 
-![Warning message that the database does not exist, Create?](/images/threatprevention/7.5/install/reportingmodule/databasecreatemessage.webp)
+![Warning message that the database doesn't exist, Create?](/images/threatprevention/7.5/install/reportingmodule/databasecreatemessage.webp)
 
 **Step 6 –** If a successful connection is made, a message window displays confirming the database
-does not exist and you want to create it. Click **OK** and the window closes.
+doesn't exist and you want to create it. Click **OK** and the window closes.
 
 ![Netwrix Threat Mannager Reporting Setup wizard on the Database page showing Ready for installation message](/images/threatprevention/7.5/install/reportingmodule/databaseready.webp)
 
@@ -67,7 +65,7 @@ Next button is enabled. Click **Next**.
 ![Netwrix Threat Mannager Reporting Setup wizard on the Firewall Rules page](/images/threatprevention/7.5/install/reportingmodule/firewallrules.webp)
 
 **Step 8 –** By default, the **Create Inbound Windows Firewall Rules** checkbox is selected,
-indicating that the installer will create these. Deselect the checkbox if you do not want the
+indicating that the installer will create these. Deselect the checkbox if you don't want the
 installer to automatically create these rules because you have already created them. Click **Next**.
 
 ![Netwrix Threat Mannager Reporting Setup wizard on the Completed page](/images/threatprevention/7.5/install/reportingmodule/completed_1.webp)

@@ -10,14 +10,14 @@ Directory Manager provides a list of predefined security questions for enrollmen
 authentication. You can update this list by adding or removing questions.
 
 When an identity store is created, four questions from this global pool are automatically added to
-the identity store's local question pool. This pool is not shared with other identity stores.
+the identity store's local question pool. This pool isn't shared with other identity stores.
 
 ## Add a Question to the Question Pool
 
 1. In Admin Center, click **Settings** at the bottom of the left navigation pane.
 2. On the **GroupID Settings** page, click the **Question Pool** tab.
 3. To add a question, click **Add New Question**.
-4. On the **Add New Question** dialog box, type a security question in the **Question** box and
+4. On the **Add New Question** dialog box, enter a security question in the **Question** box and
    click **Add Question**."The new question is displayed on the **Question Pool** tab. Questions are
    sorted in alphabetical order.
 
@@ -32,4 +32,4 @@ To search for a security question in the list, enter a search string in the sear
 2. On the **GroupID Settings** page, click the **Question Pool** tab.
 3. On the **Question Pool** tab, click **Delete** for a question to delete it.
 4. Click **Delete** on the **Delete Question** dialog box.  
-   Deleting a question does not impact the users currently enrolled with the question.
+   Deleting a question doesn't impact the users enrolled with the question.

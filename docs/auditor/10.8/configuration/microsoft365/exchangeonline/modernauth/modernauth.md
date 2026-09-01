@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Access Exchange Online Using Modern Authentication
 
-Support for modern authentication will allow you to audit the organizations where MFA is enabled for
+Support for modern authentication enables auditing of the organizations where MFA is enabled for
 all users, including service accounts.
 
 This option is recommended for organizations that use modern authentication as the identity
@@ -29,7 +29,6 @@ You will need to create a dedicated app for each cloud-based data source you pla
 
 If you plan to audit all of them, you need to create 4 apps.
 
-Follow the steps to register a new Microsoft Entra ID application.
 
 **Step 1 –** Sign into the **Microsoft 365 Admin Center** with your _Global Administrator_,
 _Application Administrator_ or _Cloud Application Administrator_ account and go to the **Microsoft
@@ -91,7 +90,6 @@ article: [ Microsoft Entra app manifest](https://learn.microsoft.com/en-us/azur
 
 #### Grant Admin Consent to a Tenant
 
-Follow the steps to grant Admin consent to a tenant.
 
 Go back to the **Microsoft Entra ID admin center** > **Applications** > **App registrations** >
 **API permissions** and click **Grant admin consent for** *`<tenant name>`*. When prompted to
@@ -106,7 +104,6 @@ service principal using Microsoft Entra ID Admin portal:
 
 ### Grant Required Roles
 
-Follow the steps to grant the required Microsoft Entra ID (formerly Azure AD) roles to the new
 application.
 
 **Step 1 –** In the Entra portal, click **View** under Manage Microsoft Entra ID.
@@ -126,7 +123,6 @@ service principal using Microsoft Entra ID Admin portal:
 
 ### Configure Client Secret
 
-Follow the steps to create a new client secret to be used by the app.
 
 **Step 1 –** Go to **Manage** > **Certificates & secrets** and click **New client secret**.
 
@@ -142,7 +138,6 @@ See the following Microsoft article for more information on how to add a client 
 
 ## Add an Exchange Online Monitoring Plan
 
-Follow the steps to add Exchange Online monitoring plan in the Netwrix Auditor:
 
 **Step 1 –** In the Monitoring Plans, click **Add Plan** button.
 
@@ -164,7 +159,6 @@ Exchange Online monitoring plan has been added to Auditor and initial data colle
 
 ### Obtain the Tenant Name
 
-Follow the steps to obtain the tenant name.
 
 **Step 1 –** Navigate to **Microsoft Entra ID** > **Overview**.
 

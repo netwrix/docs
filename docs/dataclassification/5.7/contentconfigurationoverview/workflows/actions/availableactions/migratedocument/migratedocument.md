@@ -6,10 +6,10 @@ sidebar_position: 20
 
 # Migrate Document
 
-This action can be used to copy or move a document between content sources (from 'source' to
-'destination'). Simple migration copies the file and any document properties and is supported by all
-content source types. Migration action properties specific for different content source types are
-listed in the table below.
+This action copies or moves a document between content sources (from 'source' to
+'destination'). Simple migration copies the file and any document properties. All
+content source types support simple migration. Migration action properties specific for different content source types are
+listed in the following table.
 
 | Type                    | As 'source' | As 'destination' | Migration Config Type              | Supports structured migration? | Move? | Update source item? | Mark source 'read-only'? |
 | ----------------------- | ----------- | ---------------- | ---------------------------------- | ------------------------------ | ----- | ------------------- | ------------------------ |
@@ -32,8 +32,7 @@ On the What do you want to do step, select Migrate Document action. do the follo
 
 1. Specify migration source and folder:
 
-    - Select migration destination under Which type of repository should the document be migrated
-      to?. You can add migration destination directly from wizard:
+    - Select the migration destination type under Which type of repository do you want to migrate the document to? You can add a migration destination directly from the wizard:
 
         ![migration_destination_thumb_0_0](/images/dataclassification/5.7/admin/workflows/actions/migration_destination_thumb_0_0.webp)
 
@@ -46,13 +45,13 @@ On the What do you want to do step, select Migrate Document action. do the follo
 
     | Option                                                                        | Description                                                                                                                                                                                                                                                               |
     | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | Replicate folder structure                                                    | If supported by the source system, subfolders will be created in the migration destination to match the relative path in the source. In the case of Exchange this will also include a folder for the mailbox name (I.E: \\MigrationDestination\User@domain.com\Inbox\HR). |
+    | Replicate folder structure                                                    | If supported by the source system, subfolders will be created in the migration destination to match the relative path in the source. In the case of Exchange this will also include a folder for the mailbox name (i.e., \\MigrationDestination\User@domain.com\Inbox\HR). |
     | Copy or Move the document                                                     | Select one of the following: - Copy - Move                                                                                                                                                                                                                                |
     | Mark Source as Read-only                                                      | The original item can be marked as read only.                                                                                                                                                                                                                             |
     | What action should be taken if the document already exists at the destination | Select action to perform: - Replace - Append Counter - Append Migration Date                                                                                                                                                                                              |
-    | Create a stub file?                                                           | - Do not create - Create a stub file                                                                                                                                                                                                                                      |
-    | What should the stub file contain?                                            | When you move a file, you can optionally create a file in it's original location stating where the file has been moved to. This allows you to configure the content of that file.                                                                                         |
-    | Redact the document                                                           | If update of the source item is supported by the source system, then using this option will instruct the program to apply the redaction plan to the source document after its successful migration. **NOTE:** This option is only available when performing a copy.       |
+    | Create a stub file?                                                           | - Don't create - Create a stub file                                                                                                                                                                                                                                      |
+    | What should the stub file contain?                                            | When you move a file, you can optionally create a stub file in its original location showing the file's new location. You can configure the content of that file.                                                                                         |
+    | Redact the document                                                           | If the source system supports updating the source item, you can use this option to apply the redaction plan to the source document after successful migration. **NOTE:** This option is only available when performing a copy.       |
 
 ## Creating a stub file
 
@@ -60,8 +59,8 @@ In NDC, when moving a file from one storage to another a stub file is created in
 would have a note, that a file has been transferred to a certain location.
 
 While creating a stub file, you can leave a message where the document is migrated to and the
-reasons. You can use the drop-down list to add metadata from the document to the stub file message.
-Please see below:
+reasons. You can use the dropdown list to add metadata from the document to the stub file message,
+as shown in the following image:
 
 ![workflow_stubfile](/images/dataclassification/5.7/admin/workflows/actions/workflow_stubfile.webp)
 
@@ -72,12 +71,12 @@ specific content from those documents. Redaction might be required by your secur
 compliance regulation. For example, you may need to remove SSN from your file.
 
 To use redaction in a workflow, you need to set up one or more redaction plans. You can choose to
-redact the predefined entities by selecting the plans from the drop-down list on the screenshot
-below or create custom groups of entities first.
+redact the predefined entities by selecting the plans from the dropdown list on the following
+screenshot, or create custom groups of entities first.
 
 ![workflow_redaction](/images/dataclassification/5.7/admin/workflows/actions/workflow_redaction.webp)
 
-If the redaction has failed for such files as PDF, that had OCR with images and cannot be fully
+If the redaction has failed for such files as PDF, that had OCR with images and can't be fully
 recognized, these files will get quarantined, leaving a stub file, instead of a redacted file.
 
 To modify action settings for the certain workflow, select the workflow and use the Advanced UI

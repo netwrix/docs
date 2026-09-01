@@ -19,16 +19,16 @@ physically deleted. However,
 - A group with a valid expiry policy will not be deleted.
 - A group without an expiry policy will be physically deleted.
 
-    Directory groups that are created outside of Directory Manager do not have an expiry policy.
+    Directory groups that are created outside of Directory Manager don't have an expiry policy.
 
-    In Directory Manager, you cannot distinguish groups with an expiry policy from groups without an
+    In Directory Manager, you can't distinguish groups with an expiry policy from groups without an
     expiry policy because groups without an expiry policy are displayed with "Never Expire' set as
     policy.
 
 Moreover, when you use the **Expire** button on the toolbar to expire a group with a ‘Never Expire’
 policy, the portal physically deletes it.
 
-Physically deleted groups are not available in the portal anymore.
+Physically deleted groups aren't available in the portal anymore.
 
 To renew a physically deleted group, contact the Directory Manager administrator.
 
@@ -48,7 +48,7 @@ topic for additional information on group deletion.
 ## Group Deletion Notifications
 
 The Group Life Cycle job also notifies the owner or, if there is no owner, the default approver
-specified in the Group Life Cycle policy for the identity store. The job does not delete a group
+specified in the Group Life Cycle policy for the identity store. The job doesn't delete a group
 that neither has an owner nor a default approver.
 
 Deleted groups are locked for further operations until renewed.

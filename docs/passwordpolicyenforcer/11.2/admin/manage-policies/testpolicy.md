@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # Test Policy
 
-You can quickly test your Password Policy Enforcer configuration by simulating a password change.
-Click **Test Policy** from the Configuration Console dashboard or when you are setting up a policy.
+You can test your Password Policy Enforcer configuration by simulating a password change.
+Click **Test Policy** from the Configuration Console dashboard or when setting up a policy.
 Test policy opens in a separate window. Remember to **Save** your rules and changes before
 testing.
 
@@ -19,8 +19,8 @@ Test policy opens on the **By user** tab.
 
 Policy testing simulates a password change, but it doesn't change the password.
 
-**Step 1 –** Click **Test policy** from the Configuration Console dashboard or when you are setting
-up a policy.
+**Step 1 –** Click **Test policy** from the Configuration Console dashboard or when setting up a
+policy.
 
 **Step 2 –** Select a **user**.
 
@@ -28,8 +28,8 @@ up a policy.
 
 ![Failing Password](/images/passwordpolicyenforcer/11.2/administration/testuserfail.webp)
 
-The entered password is failing in this example, due to not meeting the length requirement. There is
-a red x indicating the failure. You can hover over the requirements to see the rule name.
+In this example, the password fails because it doesn't meet the length requirement. A red x
+indicates the failure. You can hover over the requirements to see the rule name.
 
 In this example, the password passes. Notice the green check beside the entered password.
 
@@ -37,12 +37,12 @@ In this example, the password passes. Notice the green check beside the entered 
 
 Expand the **View log** for details:
 
-- Computer the configuration was read from.
-- Policy was assigned to the user, and why.
+- The computer from which Password Policy Enforcer read the configuration.
+- The policy Password Policy Enforcer assigned to the user, and why.
 - Dictionary word or keyboard pattern matched with the password.
 - Errors or warnings occurred during testing.
 
-Turn on **Verbose Logging** to view the performed tests and results.
+Turn on **Verbose Logging** to view the tests that Password Policy Enforcer performed and their results.
 
 ![Verbose logging](/images/passwordpolicyenforcer/11.2/administration/testuserverbose.webp)
 
@@ -50,8 +50,8 @@ Turn on **Verbose Logging** to view the performed tests and results.
 
 The Bulk Password Test feature lets you check a large number of passwords against a selected policy and get a report of the accepted and rejected passwords.
 
-**Step 1 –** Click **Test policy** from the Configuration Console dashboard or when you are setting
-up a policy.
+**Step 1 –** Click **Test policy** from the Configuration Console dashboard or when setting up a
+policy.
 
 **Step 2 –** Open the **Password bulk test** tab.
 
@@ -62,7 +62,7 @@ up a policy.
 **Step 4 –** **Browse** to the text file containing the passwords to test. Processing is faster if
 the file isn't on a shared drive.
 
-**Step 5 –** Click **Test passwords**. The **Statistics** are displayed.
+**Step 5 –** Click **Test passwords**. The **Statistics** appear.
 
 ![Test results](/images/passwordpolicyenforcer/11.2/administration/testbulkresult.webp)
 
@@ -73,7 +73,7 @@ the file isn't on a shared drive.
 | Accepted                                | Number of accepted passwords.                                                           |
 | Rejected                                | Number of rejected passwords.                                                           |
 | Number of lines                         | Number of lines within the file.                                                        |
-| Lines processed                         | Shows the number of the processed lines.                                                |
+| Lines processed                         | Number of processed lines.                                                              |
 
 Click **Show full report** to view the test details.
 
@@ -89,13 +89,13 @@ You can use the **Report settings** to customize the report:
 
 - Policy testing simulates a password change, but it may not always reflect what happens when a user
   changes their password. A password change may yield different results to a policy test because:
-- Policy testing doesn't simulate the Windows password policy rules. If the Windows password rules
-  are enabled, then Windows may reject a password even though it complies with all the Password
+- Policy testing doesn't simulate the Windows password policy rules. If you enable the Windows
+  password rules, then Windows may reject a password even though it complies with all the Password
   Policy Enforcer rules.
 - Policy testing doesn't enforce the Minimum Age rule.
 - Policy testing doesn't enforce the History rule.
-- Policy testing enforces the password policy even if Password Policy Enforcer or the assigned
-  policy is disabled. Use this to test your configuration before enabling Password Policy
+- Policy testing enforces the password policy even if you disable Password Policy Enforcer or the
+  assigned policy. Use this to test your configuration before enabling Password Policy
   Enforcer, or a new password policy.
 - Policy testing occurs on the computer that the Configuration Console is running on. If the Configuration Console
   is connected to a remote domain configuration, then it may not find the dictionary file on

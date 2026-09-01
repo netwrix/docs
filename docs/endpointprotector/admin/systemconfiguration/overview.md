@@ -47,7 +47,7 @@ recent updates checked or installed, and view a list of available updates.
 
 :::note
 The security update options are available only for customer-hosted instances (for example,
-AWS or Google), except for Operating System and Kernel upgrades.
+AWS, or Google), except for Operating System and Kernel upgrades.
 :::
 
 :::warning
@@ -156,7 +156,7 @@ steps:
 ![Create New Upgrade Job](createnewupgradejob.webp)
 
 **Step 2 –** Select the groups and/or computers to perform or exclude from the upgrade and then
-click **Next**. A summary of your selection appears above the table of endpoints.
+click **Next**. A summary of your selection appears at the top of the table.
 
 :::note
 Endpoint Protector upgrades only computers that use the operating system you selected. If

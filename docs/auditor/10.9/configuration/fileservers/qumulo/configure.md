@@ -16,13 +16,15 @@ To configure Core Audit for Qumulo file servers
 2. Navigate to Cluster and click Audit.
 3. Under the Configuration, provide the following:
 
-    - Remote Syslog Address – Provide the IP address or the computer listened by Syslog. It should
-      be a third-party Syslog forward service or the machine where Netwrix Auditor is installed.
+    - Remote Syslog Address – Provide the IP address or hostname of the computer that listens for
+      Syslog messages. It should be a third-party Syslog forward service or the machine where
+      Netwrix Auditor is installed.
     - Port Number – use the default value (_514_).
 
     ![qumulo_web_ui](/images/auditor/10.7/configuration/fileservers/qumulo/qumulo_web_ui.webp)
 
 When you see the green line “_Connected_”, the environment is ready.
 
-For detailed information about Qumulo Web UI. refer to the following Qumulo how-to article:
-[Qumulo Core Audit Logging](https://care.qumulo.com/hc/en-us/articles/360021454193-Qumulo-Core-Audit-Logging).
+See the Qumulo how-to article
+[Qumulo Core Audit Logging](https://care.qumulo.com/hc/en-us/articles/360021454193-Qumulo-Core-Audit-Logging)
+for detailed information about the Qumulo Web UI.

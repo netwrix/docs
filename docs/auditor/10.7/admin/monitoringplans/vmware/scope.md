@@ -9,11 +9,11 @@ sidebar_position: 10
 You can fine-tune Netwrix Auditor by specifying various data types that you want to exclude/include
 from/in the VMware reports.
 
-Follow the steps to exclude data from the VMware monitoring scope:
+## Exclude Data from the VMware Monitoring Scope
 
-**Step 1 –** Navigate to the _%Netwrix Auditor installation folder%\Vmware Auditing_ folder.
+1. Navigate to the _%Netwrix Auditor installation folder%\Vmware Auditing_ folder.
 
-**Step 2 –** Edit the \*.txt files, based on the following guidelines:
+2. Edit the \*.txt files based on the following guidelines:
 
 - Each entry must be a separate line.
 - A wildcard (\*) is supported. You can use \* for cmdlets and their parameters.

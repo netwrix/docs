@@ -60,7 +60,7 @@ Dynasties have a multi-level structure. For example, you can create a Dynasty th
 country, then state, and then city. When updated, the Dynasty creates a group for every country,
 then it creates a group for every state in a country, and finally it creates a group for each city
 within each state. Thus, each user in the organization belongs to a country group, a state group,
-and a city group, and as the groups are updated through their multi-level structure, you do not need
+and a city group, and as the groups are updated through their multi-level structure, you don't need
 to worry that they will go out-of-date.
 
 Dynasties come in handy for creating and maintaining large dynamic distribution lists in your

@@ -33,9 +33,9 @@ article.
 
 ## Run Netwrix Access Information Center Service
 
-Follow the steps to configure the Netwrix Access Information Center service to run using the gMSA.
+To configure the Netwrix Access Information Center service to run using the gMSA:
 
-**Step 1 –** Open the Services Console. Right-click on the Netwrix Access Information Center service
+**Step 1 –** Open the Services Console. Right-click the Netwrix Access Information Center service
 and select **Properties**.
 
 ![Netwrix Access Information Center service properties window](/images/accessinformationcenter/11.6/admin/additionalconfig/gmsaserviceproperties.webp)
@@ -54,7 +54,7 @@ The Netwrix Access Information Center service is now running using the provided 
 If the Netwrix Access Information Center service is running with a gMSA, you can use the gMSA to
 connect to the Enterprise Auditor database, email server, and Active Directory.
 
-Follow the steps to connect using the gMSA.
+To connect using the gMSA:
 
 **Step 1 –** Log in to the Access Information Center.
 

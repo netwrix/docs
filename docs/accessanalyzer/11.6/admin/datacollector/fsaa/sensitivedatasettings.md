@@ -45,7 +45,7 @@ Use the radio buttons to select the File types to scan:
     - Spreadsheets
     - Text/Markup files
 
-- Perform differential scan of – Enables users to choose whether to employ incremental scanning:
+- Perform differential scan of – Lets you choose whether to use incremental scanning:
 
     - Files modified or newly discovered since last scan – Scans newly discovered files and files
       with a modified date after the previous scan date
@@ -62,7 +62,7 @@ been installed on the Enterprise Auditor Console.
 The Performance Options section allows the user to modulate the efficiency of SDD scans.
 
 - Number of SDD scan processes [number] – Increases the number of SDD scanner processes that spawn
-  as part of a scan, increasing parallel scanning. The value should not exceed 2x the number of CPU
+  as part of a scan, increasing parallel scanning. The value shouldn't exceed 2x the number of CPU
   threads available.
 
     :::info

@@ -110,7 +110,7 @@ You have to provide the mandatory information for creating a Smart Group in the
       ],
       "info": [
         {
-          "Value": "This is an automated group, please do not modify membership. Membership is controlled by GroupID.",
+          "Value": "This is an automated group, please don't modify membership. Membership is controlled by GroupID.",
           "Action": 0
         }
       ],

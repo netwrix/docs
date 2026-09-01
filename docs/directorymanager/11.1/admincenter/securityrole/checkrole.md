@@ -13,7 +13,7 @@ Directory Manager clients. Moreover, a user can also have multiple roles in a cl
 the highest priority role takes precedence when the user logs into that specific client. See
 [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
 
-Directory Manager enables you to view the highest priority role of a user in a client. This role
+Use Directory Manager to view the highest priority role of a user in a client. This role
 identifies the access level of that user in the client. Select a client and specify a user.
 Directory Manager fetches the highest priority role of the user with respect to the client.
 
@@ -25,11 +25,11 @@ Directory Manager fetches the highest priority role of the user with respect to 
 3. Click **Security Roles** under **Settings** in the left pane.
 4. On the **Security Roles** page, click **Check Security Roles**. The **Check Security Roles**
    dialog box is displayed.
-5. In the **Client name** drop-down list, select a Directory Manager client to view the highest
+5. In the **Client name** dropdown list, select a Directory Manager client to view the highest
    priority role of a user within it. For example, select a Directory Manager portal to view the
    highest priority role that a user has in the portal.  
    This list displays the names of the deployed clients only. If a client, such as the Directory
-   Manager portal, is not deployed for the identity store, it will not be listed.  
+   Manager portal, isn't deployed for the identity store, it will not be listed.  
    To view the highest privileged role that a user has in the identity store, select _None_ in the
    **Client Name** list.
 6. In the box below, specify a user.

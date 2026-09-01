@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # SQL: Criteria
 
-The Criteria page is where criteria to be used for discovering sensitive data are configured. It is
-a wizard page for the Sensitive Data Collection category.
+Use the Criteria page to configure criteria for discovering sensitive data. It's a wizard page for
+the Sensitive Data Collection category.
 
 ![SQL Data Collector Wizard Criteria page](/images/accessanalyzer/12.0/admin/datacollector/sql/criteria.webp)
 
@@ -21,8 +21,8 @@ The options on the Criteria page are:
 
     - Select All– Click **Select All** to enable all sensitive data criteria for scanning
     - Clear All – Click **Clear All** to remove all selections from the table
-    - Select the checkboxes next to the sensitive data criteria options to enable it to be scanned
-      for during job execution
+    - Select the checkboxes next to the sensitive data criteria options to include them in job
+      execution scans
 
 The table contains the following types of criteria:
 
@@ -36,7 +36,7 @@ The table contains the following types of criteria:
 
 :::note
 Adding unnecessary criteria can adversely impact the scanner performance and can cause the
-scanning job to take a long time. If performance is adversely affected, revisit the sensitive data
-scanning criteria and remove criteria that is not required.
+scanning job to take a long time. If performance suffers, revisit the sensitive data
+scanning criteria and remove criteria that isn't required.
 
 :::

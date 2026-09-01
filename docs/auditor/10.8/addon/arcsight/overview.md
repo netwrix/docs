@@ -44,7 +44,7 @@ follows:
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
+Ensure to check your product version, and then review and update your add-ons and scripts
 leveraging the Integration API. Download the latest add-on version in the Add-on Store. See the
 [Integration API](/docs/auditor/10.8/api/overview.md)topic for additional information.
 

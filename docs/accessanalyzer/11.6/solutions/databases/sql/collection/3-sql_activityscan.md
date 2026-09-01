@@ -30,18 +30,18 @@ The ActivityScan Job uses the SQL Data Collector for the following query:
 ### Configure the ActivityScan Query
 
 The 3-SQL_ActivityScan Job is preconfigured to run using the default settings within the Server
-Audits Events Collection category. Follow the steps to customize configurations.
+Audits Events Collection category. To customize configurations:
 
 **Step 1 –** Navigate to the **Databases** > 0.Collection > SQL > 3-SQL_ActivityScan > Configure
 node and select Queries.
 
-**Step 2 –** In the Query Selection view, click on Query Properties. The Query Properties window
+**Step 2 –** In the Query Selection view, click Query Properties. The Query Properties window
 appears.
 
 **Step 3 –** Select the Data Source tab, and click Configure. The SQL Data Collector Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 
@@ -50,7 +50,7 @@ purpose of this job.
 
 **Step 4 –** To modify scan options, navigate to the
 [SQL Data Collector](/docs/accessanalyzer/11.6/admin/datacollector/sql/overview.md)
-page. Select the desired scan options. The query is preconfigured with the following default
+page. Select the scan options you want. The query is preconfigured with the following default
 settings:
 
 - Collect only events since last scan – Collects activity recorded since the previous scan
@@ -66,7 +66,7 @@ page. The query is configured by default to target Only select database objects.
 Available database objects will be populated. Databases and instances can be added in the following
 ways:
 
-Select the desired database objects and click Add.
+Select the database objects you want and click Add.
 
 Use the Import CSV button to import a list from a CSV file.
 
@@ -83,7 +83,7 @@ Navigate to the **Databases** > 0.Collection > SQL > 3-SQL_ActivityScan > Config
 Analysis to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task(s). The analysis task(s) are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

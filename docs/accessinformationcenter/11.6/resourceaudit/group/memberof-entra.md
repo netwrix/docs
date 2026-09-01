@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Member Of Report for Entra ID Group
 
-The Member Of report for a group object provides a list of all Entra Id (formerly Azure Active
+The Member Of report for a group object provides a list of all Entra ID (formerly Azure Active
 Directory) groups of which the audited group is a member. This report includes a Membership Paths
 table.
 

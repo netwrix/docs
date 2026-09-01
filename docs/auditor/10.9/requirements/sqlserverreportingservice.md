@@ -16,13 +16,13 @@ you should configure SQL Server Reporting Services (2012 R2 and above required).
 
 Consider the following:
 
-- SQL Server and SQL Server Reporting Services (or Power BI Report Server for SQL Server 2025+)
-  can be deployed on separate machines only in commercial edition. SQL Server Express Edition
-  with Advanced Services doesn't support such deployment scenario.
+- You can deploy SQL Server and SQL Server Reporting Services (or Power BI Report Server for SQL
+  Server 2025+) on separate machines only in the commercial edition. SQL Server Express Edition
+  with Advanced Services doesn't support this deployment scenario.
 - Power BI Report Server is available for SQL Server 2025 Enterprise and Standard editions.
   For SQL Server 2022 and earlier Enterprise editions, PBIRS usage rights apply only to core
   licenses with active Software Assurance (SA).
-- SSRS can still be used, and its databases can be hosted on Microsoft SQL Server, including SQL Server 2025.
+- You can still use SSRS, and host its databases on Microsoft SQL Server, including SQL Server 2025.
 
 **NOTE:** Netwrix recommends using HTTPS instead of HTTP. Also configure HTTPS for the Reporting Service.
 
@@ -32,8 +32,8 @@ configure SSRS/PBIRS or audit database settings.
 
 ## Configure SSRS / PBIRS Account
 
-An account used to upload data to the SQL Server Reporting Services (SSRS) or Power BI Report
-Server (PBIRS) must be granted the Content Manager role on the report server **Home** folder.
+Grant the account used to upload data to SQL Server Reporting Services (SSRS) or Power BI Report
+Server (PBIRS) the Content Manager role on the report server **Home** folder.
 
 **NOTE:** You can't use gMSA to access SSRS/PBIRS. Use a standard account for that purpose.
 

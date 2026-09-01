@@ -13,7 +13,7 @@ agent and move the archived files to another location on the server or to a netw
 ![Archiving Tab for Agent Properties](/images/activitymonitor/7.1/admin/agents/properties/archiving_tab.webp)
 
 The Days to keep Log files option, listed under the Log Files tab within Host Properties, applies to
-Archive log files. When the entered number of days entered have passed, the activity logs and
+Archive log files. When the specified number of days have passed, the activity logs and
 Archive log files are deleted. The path to the Archive log files is next to the Configure button,
 and listed under the Archive Location column within the Agents tab.
 

@@ -12,7 +12,7 @@ This guide shows how to create in the XML configuration profiles and the appropr
 
 Here is the xml configuration to create a profile in Identity Manager. See the [Profile](../toolkit/xml-configuration/access-control/profile) topic for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <Profile Identifier="User" DisplayName_L1="Basic User" DisplayName_L2="Utilisateur de base" />
@@ -20,9 +20,9 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 ## Automatically Assign Profiles
 
-To automatically assign profiles it is necessary to manipulate the ProfileRuleContext and ProfileRule. See the [Access Control Rule](../toolkit/xml-configuration/access-control/accesscontrolrule) and [Profile Rule Context](../toolkit/xml-configuration/access-control/profilerulecontext) topics for additional information.
+To automatically assign profiles manipulate the ProfileRuleContext and ProfileRule. See the [Access Control Rule](../toolkit/xml-configuration/access-control/accesscontrolrule) and [Profile Rule Context](../toolkit/xml-configuration/access-control/profilerulecontext) topics for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <ProfileRuleContext ResourceType="AD_Entry_NominativeUser" SubBinding="Directory_User:Records" IsAppliedToRoot="false">    <ProfileRule Profile="User" /></ProfileRuleContext>
@@ -32,15 +32,15 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 The Identity Manager-Set-InternalUserProfiles task is mandatory to automatically assign the profile. The task can be selected from the Job provisioning list. See the [Set Internal User Profiles Task](../toolkit/xml-configuration/jobs/tasks/server/setinternaluserprofilestask) topic for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <SetInternalUserProfilesTask Identifier="SetInternalUserProfiles" DisplayName_L1="Set Internal User Profiles" >        <TaskEntityType EntityType="Referentiel_User"/>        <TaskResourceType ResourceType="AD_Entry_NominativeUser"/>    </SetInternalUserProfilesTask>
 ```
 
-Here the TaskEntityType is the reference to connect to Identity Manager and the ResourceType is the same as in the ProfileRuleContext. Once this configuration is done you can add the task in the job which provisions the Connector AD.
+Here the TaskEntityType is the reference to connect to Identity Manager and the ResourceType is the same as in the ProfileRuleContext. After this configuration is done you can add the task in the job which provisions the Connector AD.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <Job Identifier="AD_Provisioning" DisplayName_L1="AD - Provisioning" DisplayName_L2="AD - Provisioning" Agent="Local">        ...

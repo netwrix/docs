@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Types of Clues
 
-The following clue types of clues are available, each clue type is described in detail below.
+The following sections describe each clue type in detail.
 
 ## Standard Clues
 
@@ -42,16 +42,16 @@ A clue based on document metadata, with matching based on:
 - Dynamic Date Range matches – Such as: FIELD>TODAY OR FIELD>TODAY-14 (Matching the last 2 weeks)
 - Integer Range matches – Such as FIELD > VALUE or FIELD
 
-Helpers are provided to format metadata clues, to activate the helper simply select the appropriate
-icon for the desired clue type (numeric, date, and basic):
+Helpers are provided to format metadata clues. To activate a helper, select the appropriate
+icon for the clue type you want (numeric, date, or basic):
 ![metadatacluehelpers](/images/dataclassification/5.7/admin/taxonomies/metadatacluehelpers.webp)
 
 The date helper supports assisting in the creation of both static and dynamic date clues:
 
 ![createdateclue](/images/dataclassification/5.7/admin/taxonomies/createdateclue.webp)
 
-Both field and value are case-insensitive for metadata matches. Wildcard matches must included a \*
-character before the equals sign (as shown in the example above).
+Both field and value are case-insensitive for metadata matches. Wildcard matches must include a \*
+character before the equals sign (as shown in the preceding example).
 
 The following special metadata fields can be used:
 
@@ -63,7 +63,7 @@ The following special metadata fields can be used:
 
     application/pdf
 
-    Most applications should use the CSE-TYPE field or the FILE TYPE field (see below) rather than
+    Most applications should use the CSE-TYPE field or the FILE TYPE field (described in the following section) rather than
     the CSE-CONTENTTYPE field due to the highly variable nature of the raw values.
 
     Examples:
@@ -154,7 +154,7 @@ The following special metadata fields can be used:
 
     _MODIFIED = 2010-01-01_
 
-    _MODIFIED MODIFIED > 2010-01-01_
+    _MODIFIED > 2010-01-01_
 
     Only the date can be specified, not the time.
 
@@ -162,7 +162,7 @@ The following special metadata fields can be used:
 
 A case-insensitive fuzzy/phonetic phrase match clue. Phonetic clues ignore all non-alphanumeric
 characters. Words that contain no digits are matched using a phonetic algorithm so that words that
-sound similar will be matched. Phonetic clues do not use word stemming in the matching process.
+sound similar will be matched. Phonetic clues don't use word stemming in the matching process.
 
 For example, the following clue:
 
@@ -183,9 +183,9 @@ But not any of the following:
 
 A Regular Expression matching clue – by default this is run across all document text and metadata.
 Regular expression clues are run in a case-sensitive manner by default. You can optionally enable
-the "Case-Insensitive Regex Processing" mode, this setting can be found in Config -> Classifier.
+the "Case-Insensitive Regex Processing" mode; this setting is in Config -> Classifier.
 
-Definitions of the required syntax for regular expressions can be found in many places, including
+Many places define the required syntax for regular expressions, including
 Microsoft:
 [Regular Expression Syntax](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/ae5bf541(v=vs.100)).
 
@@ -205,7 +205,7 @@ This sample clue ensures that:
 - The first section must be in the range 001 – 772
 
 Any regular expression matches found will be extracted and added to the NDC index automatically. For
-example, if we have a document that contains this text:
+example, if a document contains this text:
 
 **Here is one SSN: 407-54-8831**
 
@@ -217,12 +217,12 @@ Then the following metadata entries will be generated automatically:
 - Regex-SSN:407-54-8832
 
 :::note
-The example social security numbers above intentionally do not match the regular
+The example social security numbers in the preceding code blocks intentionally don't match the regular
 expression.
 :::
 
 
-These can easily be viewed within the document “Info” popup on the “Metadata” tab (filtered to Regex
+You can view these within the document “Info” popup on the “Metadata” tab (filtered to Regex
 values). The automatically generated metadata field name is a combination of the term name prefixed
 with “Regex-“.
 
@@ -233,13 +233,13 @@ expression. This is particularly relevant for expressions that may include false
 social security numbers (simple pattern) or credit card numbers (sample data). The classification
 engine includes a number of post match validation steps:
 
-- Exclusion Patterns—Provides the ability to exclude a match based upon an exclusion pattern
+- Exclusion Patterns—Lets you exclude a match based upon an exclusion pattern
   (exclude sample data etc). Exclusion patterns can be added by selecting the “Exclusions” link. If
   any exclusion rule is matched the regular expression result will be discarded.
 
     **TIP:** Hit count based regular expression clue exclusions — restrict whether a regular
     expression clue should match based upon the number of unique matches found against the regular
-    expression. I.E, a regex to match any number against the text: "1 1 1 2 3 4" - has 4 hits, 4
+    expression. That is, a regex to match any number against the text: "1 1 1 2 3 4" - has 4 hits, 4
     unique numbers.
 
 - Validation Checks—Regex validation checks provide a way of reducing false positives returned by
@@ -247,21 +247,21 @@ engine includes a number of post match validation steps:
 
     - check-digit validations (suitable for credit card numbers, international bank account numbers
       etc),
-    - simple pattern-based exclusions to remove test data and values that are not of interest,
+    - simple pattern-based exclusions to remove test data and values that aren't of interest,
     - minimum or maximum constraints on both the number of matches and the number of unique matches.
 
-    Currently supported checks include: _Mod 97/10_, _Luhn_, _Verhoeff_
+    Supported checks include: _Mod 97/10_, _Luhn_, _Verhoeff_
 
     :::tip
         Remember, If any validation check fails, then the regular expression result will be discarded.
     :::
 
 
-_Follow the steps to add a validation check._
+**Add a validation check:**
 
-1. Select the Validation Check link for the desired clue.
+1. Select the Validation Check link for the clue you want.
 2. Click Add.
-3. Select the desired check **Type** from the drop-down list, and specify other settings depending
+3. Select the check **Type** you want from the dropdown list, and specify other settings depending
    on the type.
 
     ![clues_regexp_validationcheck](/images/dataclassification/5.7/admin/taxonomies/clues_regexp_validationcheck.webp)
@@ -270,7 +270,7 @@ _Follow the steps to add a validation check._
 
 ##### Proximity matches
 
-Proximity matches enable you to include or exclude a RegEx match based on the presence of certain
+Proximity matches let you include or exclude a RegEx match based on the presence of certain
 text before or after it.
 
 For example, you might have a RegEx to look for driver’s license numbers, but you know that your
@@ -285,15 +285,15 @@ Matches can be added by selecting the “Proximity Matches” link. Matches are 
   be applied for each matching inclusion rule.
 
 :::note
-This functionality is only available when utilising classification Engine v2. The
-additional settings are also not currently available in SharePoint Term Sets (but can be linked via
+This functionality is only available when using classification Engine v2. The
+additional settings aren't available in SharePoint Term Sets (but can be linked via
 Term Boosts).
 :::
 
 
-Follow the steps to use **Proximity Match** feature.
+**Use the Proximity Match feature:**
 
-1. On the Content > Term Management > Regex Exc**lusions pa**ge, select Proximity Matches against
+1. On the Content > Term Management > Regex Exclusions page, select Proximity Matches against
    the RegEx clue you need.
 2. Select Add to add a proximity match.
 3. On the Details tab, specify the required information:
@@ -303,14 +303,14 @@ Follow the steps to use **Proximity Match** feature.
 - Range - score range to be classified (50, by default). For example, 50 words at maximum.
 - Options - Specify "Match before", "Match after", or "Exclude on match" for the pattern.
 - Boost - In normal operation, the proximity feature acts as a boolean switch and if the proximity
-  does not match then the entire clue fails to match. If you check the **Boost** option then this
+  doesn't match then the entire clue fails to match. If you check the **Boost** option then this
   changes. If the regex matches in the document, then it scores the base score, if the proximity
   match also matches then the base score is increased by the amount assigned to the boost. e.g. the
   base regex might score 40 and the boost might score an extra 10 making a total of 50 points.
-  However if the regex matches but the boost does not, it will still score 40 points.
+  However if the regex matches but the boost doesn't, it will still score 40 points.
 
     :::note
-    This option applies directly to the term/clue and cannot be used for the Term Boost
+    This option applies directly to the term/clue and can't be used for the Term Boost
     calculation.
     :::
 
@@ -319,7 +319,7 @@ Follow the steps to use **Proximity Match** feature.
 
 ## Required Terms clue
 
-The Required Term clue type can be used to require another class to be classified as a pre-requisite
+Use the Required Term clue type to require another class as a prerequisite
 for this class. This is most often used when the children of a class require the parent to also be
 classified.
 
@@ -333,7 +333,7 @@ A tree view control makes selecting the required class easy:
 
 ![requiredterm](/images/dataclassification/5.7/admin/taxonomies/requiredterm.webp)
 
-For example, suppose that we have a topic _Pensions_ with two children:
+For example, suppose you have a topic _Pensions_ with two children:
 
 - Pensions
 
@@ -342,21 +342,21 @@ For example, suppose that we have a topic _Pensions_ with two children:
 
 The purpose of the two child classes is to identify documents that are about pensions in the USA or
 about pensions in Canada. Rather than add clues to identify pensions documents to the children you
-can simply require documents to be about _Pensions_ by using a Required Class clue type.
+can require documents to be about _Pensions_ by using a Required Class clue type.
 
 ## Term Boost Clues
 
-You use the Term Boost clue type to specify that a Class Score is to be boosted from another term.
+Use the Term Boost clue type to specify that a Class Score is to be boosted from another term.
 This is most often used when a complex class is implemented using several child (or even grandchild)
-classes. Basically, you would want to apply these clues to refer to the other term or taxonomy and
-review the score for each term, not drilling down to each term. Review the example:
+classes. You can apply these clues to refer to the other term or taxonomy and
+review the score for each term without exploring each term in detail. Review the example:
 
 ![termboostclue_int](/images/dataclassification/5.7/admin/taxonomies/termboostclue_int.webp)
 
 In a tree view you can find the list of terms, which are displayed in the Term boost list to the
 right. This way you can review or edit the average score for each term.
 
-Use the tree view control below to select boosting classes easy.
+Use the tree view control to select the boosting classes.
 
 ![termboost](/images/dataclassification/5.7/admin/taxonomies/termboost.webp)
 
@@ -372,7 +372,7 @@ descendants at once.
 At classification time if the referenced node or any of its descendants (up to the configured level)
 reach their threshold then the term boost will be applied.
 
-Select the Exclude Not Available for Tagging check box, if you want to exclude the terms, which are
+Select the Exclude Not Available for Tagging checkbox, if you want to exclude the terms, which are
 not available for tagging. This feature lets you select the grayed-out terms and exclude them for
 tagging for your taxonomy. For example, you have UK ZIP code, which was tagged as **Available for
 Tagging** before. It doesn't qualify as sensitive for your Confidential term. Therefore, you can
@@ -382,7 +382,7 @@ apply this feature.
 
 ## Language Clues
 
-The language clue type can be used to require documents to be written primarily in a specified
+Use the language clue type to require documents to be written primarily in a specified
 language as a filter on classification.
 
 For example, if you create a new class and want documents to be classified only if they are written
@@ -397,7 +397,7 @@ creating NOT functionality.
 
 For example:
 
-If you want to classify any document where a word does NOT exist (such as _Pensions_), you could
+If you want to classify any document where a word doesn't exist (such as _Pensions_), you could
 first add a static clue with a score of 50, and then add a standard clue looking for _Pensions_ with
 a negative score (-50).
 

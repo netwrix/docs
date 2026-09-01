@@ -12,14 +12,14 @@ The Best Practices folder contains the following templates:
 
 | Template                | Description     | TAGS |
 | ----------------------- | ------------------ | ---- |
-| All AD Changes          | Gathers all AD changes. <br />Utilizes the built-in “Exclude Class” – Classes Collection and “Exclude Attribute” – Attributes Collection to restrict unwanted events. Add classes and attributes which will NOT be monitored to these collections | None |
+| All AD Changes          | Gathers all AD changes. <br />uses the built-in “Exclude Class” – Classes Collection and “Exclude Attribute” – Attributes Collection to restrict unwanted events. Add classes and attributes which will NOT be monitored to these collections | None |
 | All GPO Setting Changes | No customizations required to monitor all GPO setting changes      | None |
 
 **Exchange Folder**
 
 :::warning
-Use cation with _all Lockdown/Blocking Templates_! Blank filters result in _everything_
-being locked down or blocked!
+Use caution with _all Lockdown/Blocking Templates_! Blank filters result in _everything_
+locks down or blocks everything!
 :::
 
 
@@ -37,19 +37,19 @@ being locked down or blocked!
 **Object Lockdown Folder**
 
 :::warning
-Use cation with _all Lockdown/Blocking Templates_! Blank filters result in _everything_
-being locked down or blocked!
+Use caution with _all Lockdown/Blocking Templates_! Blank filters result in _everything_
+locks down or blocks everything!
 :::
 
 
 | Template           | Description      | TAGS |
 | ----------------- | -------------------- | ---- |
-| AD Object Permissions Lockdown                                  | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />Utilizes the built-in “Object Permissions - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the desired Objects to protect.                       | None |
-| AD Root Object Lockdown                                         | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />Utilizes the built-in “Root Object - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the desired Objects to protect.                        | None |
-| Critical GPO Lockdown                                           | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />Utilizes the built-in “Critical GPO - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the desired GPOs to protect.                              | None |
-| DNS Record Lockdown                  | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />Utilizes the built-in “DNS Records - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, and fill in the built-in collection.                      | None |
-| Group Lockdown of Delete, Move, Rename, and Membership Events   | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />Utilizes the built-in “Group Lockdown - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the desired Groups to protect.                         | None |
-| Group, User, and OU Lockdown of Delete, Move, and Rename Events | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />Utilizes the built-in “Group User OU Object Delete and Move - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the desired Objects to protect.      | None |
-| OU Structure Lockdown              | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />Utilizes the built-in “OU Structure - >Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the desired OUs to protect.                 | None |
-| User Lockdown of Delete, Move, Rename and Modify Events         | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />Utilizes the built-in “User Lockdown - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, and fill in the built-in Allow Lockdown Perpetrator Collection, and add the desired Users to protect. | None |
+| AD Object Permissions Lockdown                                  | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />uses the built-in “Object Permissions - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the Objects you want to protect.                       | None |
+| AD Root Object Lockdown                                         | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />uses the built-in “Root Object - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the Objects you want to protect.                        | None |
+| Critical GPO Lockdown                                           | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />uses the built-in “Critical GPO - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the GPOs you want to protect.                              | None |
+| DNS Record Lockdown                  | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />uses the built-in “DNS Records - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, and fill in the built-in collection.                      | None |
+| Group Lockdown of Delete, Move, Rename, and Membership Events   | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />uses the built-in “Group Lockdown - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the Groups you want to protect.                         | None |
+| Group, User, and OU Lockdown of Delete, Move, and Rename Events | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />uses the built-in “Group User OU Object Delete and Move - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the Objects you want to protect.      | None |
+| OU Structure Lockdown              | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />uses the built-in “OU Structure - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, fill in the built-in collection, and add the OUs you want to protect.                 | None |
+| User Lockdown of Delete, Move, Rename, and Modify Events         | USE CAUTION WITH ALL LOCKDOWN TEMPLATES <br />uses the built-in “User Lockdown - Allow Perpetrators” – Lockdown Perpetrators Collection. <br />Change the AD Perpetrator tab to ALLOW instead of BLOCK, and fill in the built-in Allow Lockdown Perpetrator Collection, and add the Users you want to protect. | None |
 

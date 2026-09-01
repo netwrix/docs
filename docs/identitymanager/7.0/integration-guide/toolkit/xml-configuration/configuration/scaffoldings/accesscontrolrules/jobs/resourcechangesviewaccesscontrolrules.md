@@ -1,10 +1,10 @@
 ---
 title: "ResourceChangesViewAccessControlRules"
-description: "Generates the access control rules which gives to a profile the permissions to call the API ResourceChange, ResourceFileChange and ResourceLinkChange."
+description: "Generates the access control rules which give a profile the permissions to call the API ResourceChange, ResourceFileChange, and ResourceLinkChange."
 sidebar_position: 6
 ---
 
-Generates the access control rules which gives to a profile the permissions to call the API `ResourceChange`, `ResourceFileChange` and `ResourceLinkChange`.
+Generates the access control rules which give a profile the permissions to call the API `ResourceChange`, `ResourceFileChange`, and `ResourceLinkChange`.
 
 Data from `UR_ResourceChanges`, `UR_ResourceFileChanges` and `UR_ResourceLinkChanges` tables can be retrieved by these APIs.
 
@@ -27,7 +27,7 @@ Data from `UR_ResourceChanges`, `UR_ResourceFileChanges` and `UR_ResourceLinkCha
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Custom_ResourceChanges_AD_Entry" DisplayName_L1="Administrator - ResourceChanges - AD - Entry" DisplayName_L2="Administrator - ResourceChanges - Entrée AD" EntityType="AD_Entry" Profile="Administrator">

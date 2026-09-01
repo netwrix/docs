@@ -5,7 +5,7 @@ sidebar_position: 2
 ---
 
 The Compute Role Model correlation keys will pre-calculate all the keys needed by the Compute Role Model to match the resources.
-If the resource or property does not exist or needs to change, the task insert a new line in this table:
+If the resource or property doesn't exist or needs to change, the task insert a new line in this table:
 
 - Resource correlation keys
 

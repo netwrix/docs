@@ -10,8 +10,8 @@ The Prior Actions page selects previously executed actions for rollback. It is a
 **Rollback a previously executed action** is selected on the Action page.
 
 :::note
-Once an action is selected and saved, and the wizard is closed, this page is no longer
-available and the selection cannot be altered.
+After you select and save an action and close the wizard, this page is no longer available, and
+you can't alter the selection.
 :::
 
 

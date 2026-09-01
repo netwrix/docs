@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # AD_GroupMembershipPermissions Job
 
-The AD_GroupMembershipPermissions Job highlights all Active Directory users that are capable of
-modifying group membership within the targeted domains.
+The AD_GroupMembershipPermissions Job highlights all Active Directory users that can modify group
+membership within the targeted domains.
 
 ## Analysis Tasks for the AD_GroupMembershipPermissions Job
 
@@ -16,7 +16,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **2.Groups** >
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

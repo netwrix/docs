@@ -32,9 +32,10 @@ follow pre-configured report:
 
 ### Configure the Group Member Activity Analysis Task
 
-Customizable parameters enable you to set the values used to include the SIDs for admin groups
+Use the customizable parameters to set the values that include the SIDs for admin groups
 during this job’s analysis. The parameters can be customized and are listed in a section at the
-bottom of the SQL Script Editor. Follow the steps to customize an analysis task’s parameters.
+bottom of the SQL Script Editor. Complete the following steps to customize an analysis task’s
+parameters.
 
 **Step 1 –** Navigate to the **Active Directory** > **6.Activity** > **Group Usage** >
 **AD_GroupMemberActivity** > **Configure** node and select **Analysis**.
@@ -42,10 +43,10 @@ bottom of the SQL Script Editor. Follow the steps to customize an analysis task�
 ![Group Member Activity analysis task configuration](/images/accessanalyzer/12.0/solutions/activedirectory/activity/groupusage/groupmemberactivityanalysisconfiguration.webp)
 
 **Step 2 –** In the Analysis Selection view, select the Group Member Activity analysis task and
-click on **Analysis Configuration**. The SQL Script Editor opens.
+click **Analysis Configuration**. The SQL Script Editor opens.
 
 :::warning
-Do not change any parameters where the Value states `Created during execution`.
+Don't change any parameters where the Value states `Created during execution`.
 :::
 
 
@@ -54,8 +55,8 @@ Do not change any parameters where the Value states `Created during execution`.
 **Step 3 –** In the parameters section at the bottom of the editor, find the Value column. Select
 the cell for the temporary table called #admingroups, and click **Edit Table** to modify the value.
 
-- The new value should include SIDs for admin groups to be considered administrative groups beyond
-  the default admin groups.
+- The new value should include the SIDs of any additional groups you want the job to treat as
+  administrative groups, beyond the default admin groups.
 
 **Step 4 –** Click **Save and Close** to finalize the customization and close the SQL Script Editor
 window.

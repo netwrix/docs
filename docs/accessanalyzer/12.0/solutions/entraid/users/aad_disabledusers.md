@@ -7,7 +7,7 @@ sidebar_position: 20
 # AAD_DisabledUsers Job
 
 The AAD_DisabledUsers Job identifies disabled user accounts within Microsoft Entra ID. These
-accounts should be reviewed and cleaned up in order to increase security and reduce complexity.
+accounts should be reviewed and cleaned up to increase security and reduce complexity.
 
 ## Analysis Tasks for the AAD_DisabledUsers Job
 
@@ -15,7 +15,7 @@ Navigate to the **Jobs** > **Entra ID** > **2.Users** > **AAD_DisabledUsers** > 
 and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

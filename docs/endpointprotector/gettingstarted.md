@@ -22,7 +22,7 @@ Before starting, ensure that your environment meets the following requirements:
 - Disk Space: Sufficient for agent installation,
 - Network: Access to Endpoint Protector Server,
 
-See the [Requirements](/docs/endpointprotector/requirements/overview.md) topic for additional information.
+For more information, see [Requirements](/docs/endpointprotector/requirements/overview.md).
 
 ## Staging the Server
 
@@ -32,7 +32,7 @@ See the [Requirements](/docs/endpointprotector/requirements/overview.md) topic f
       also visible on the backend console.
     - Log in using your administrator credentials.
 
-See the [Server Functionality](/docs/endpointprotector/admin/systemdashboard.md) topic for additional information.
+For more information, see [Server Functionality](/docs/endpointprotector/admin/systemdashboard.md).
 
 ## Managing Administrators
 
@@ -41,8 +41,7 @@ See the [Server Functionality](/docs/endpointprotector/admin/systemdashboard.md)
     - Create and manage administrator accounts with appropriate permissions under System
       Configuration > System Administrators.
 
-See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic for additional
-Information.
+For more information, see [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
 
 ## Configuring Device Control
 
@@ -52,7 +51,7 @@ Information.
     - Create Custom Policies to configure device access rules.
     - Customize policies based on device types and access requirements.
 
-See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) topic for additional information.
+For more information, see [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md).
 
 ## Configuring Content Aware Protection
 
@@ -62,8 +61,7 @@ See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) to
     - Create Custom Policies to define file monitoring and protection rules.
     - Specify Denylists, Predefined Content, or Custom Content to identify sensitive data.
 
-See the [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md) topic for more
-information.
+For more information, see [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md).
 
 ## Configuring an eDiscovery Scan
 
@@ -73,7 +71,7 @@ information.
     - Create custom scan policies to identify sensitive data at rest on endpoint systems.
     - Configure scan options and remediation actions (Encrypt, Decrypt, Delete).
 
-See the [eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md) topic for more information.
+For more information, see [eDiscovery](/docs/endpointprotector/admin/ed_module/edmodule.md).
 
 ## Configuring the User Experience
 
@@ -92,7 +90,7 @@ See the [Device Control](/docs/endpointprotector/admin/dc_module/dcmodule.md) to
     - Configure settings such as Time Interval for user actions and User Remediation Pop-up
       notifications.
 
-See the [System Parameters](/docs/endpointprotector/admin/systempar.md) topic for user remediation configuration details.
+For user remediation configuration details, see [System Parameters](/docs/endpointprotector/admin/systempar.md).
 
 ### Setting Up Offline Temporary Password
 
@@ -101,8 +99,7 @@ See the [System Parameters](/docs/endpointprotector/admin/systempar.md) topic fo
     - Navigate to Offline Temporary Passwords.
     - Generate passwords to provide temporary access rights when User Remediation is unavailable.
 
-See the [Offline Temporary Password](/docs/endpointprotector/admin/otpassword.md) topic for more
-information.
+For more information, see [Offline Temporary Password](/docs/endpointprotector/admin/otpassword.md).
 
 ## Deploying Agents
 
@@ -110,9 +107,9 @@ information.
 
     - Access System Configuration > Client Software.
     - Download and deploy Endpoint Protector Client packages for Windows, macOS, and Linux systems.
-    - use MDM software or other deployment tools for efficient agent deployment.
+    - Use MDM software or other deployment tools for efficient agent deployment.
 
-See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic for agent download and deployment details.
+For agent download and deployment details, see [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
 
 ## Blocking Content Aware Protection Policies
 
@@ -121,8 +118,7 @@ See the [System Configuration](/docs/endpointprotector/admin/systemconfiguration
     - Duplicate "Report Only" Content Aware Protection (CAP) policies and modify them to enforce restrictions.
     - Activate blocking policies to prevent unauthorized data movements.
 
-See the [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md) topic for more
-information.
+For more information, see [Content Aware Protection](/docs/endpointprotector/admin/cap_module/capmodule.md).
 
 ## Performing Remediation within eDiscovery
 
@@ -132,9 +128,8 @@ information.
     - Perform actions such as Encrypt, Decrypt, or Delete on identified sensitive data to mitigate
       risks.
 
-See the
-[eDiscovery Scan Result and Actions](/docs/endpointprotector/admin/dc_module/dcmodule.md)
-topic for remediation action details.
+For remediation action details, see
+[eDiscovery Scan Results and Actions](/docs/endpointprotector/admin/ed_module/edmodule.md).
 
 ## Deploying Enforced Encryption
 
@@ -161,4 +156,4 @@ topic for remediation action details.
     - Monitoring Devices:
     - Manage Enforced Encryption devices in Clients list section.
 
-See the [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md) topic for deployment, configuration, and monitoring details.
+For deployment, configuration, and monitoring details, see [Enforced Encryption](/docs/endpointprotector/admin/ee_module/eemodule.md).

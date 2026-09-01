@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Account Exclusions Tab
 
-The Account Exclusions tab on an output Properties window is where monitoring scope by account name
-can be modified. These settings are initially configured when the output is added.
+The Account Exclusions tab on an output Properties window lets you modify the monitoring scope by account name. You initially configure these settings when you add the output.
 
 Select an output from the Monitored Hosts tab and click **Edit** to open the output Properties
 window. The tab varies based on the type of host selected.
@@ -25,7 +24,7 @@ The tab contains the following settings:
 - Add Unix Account – Opens the Specify Unix Account window to add an account for exclusion. See the
   [Specify Unix Account Window](/docs/activitymonitor/7.1/admin/outputs/accountexclusions/specifyunixaccount.md)
   topic for additional information.
-- Remove – Removes the selected account from exclusion. Confirmation is not requested.
+- Remove – Removes the selected account from exclusion. Confirmation isn't requested.
 
     :::warning
     If an account is removed by accident, use the **Cancel** button to discard the
@@ -55,7 +54,7 @@ The tab contains the following settings:
 - Add Unix Account – Opens the Specify Unix Account window to add an account for exclusion. See the
   [Specify Unix Account Window](/docs/activitymonitor/7.1/admin/outputs/accountexclusions/specifyunixaccount.md)
   topic for additional information.
-- Remove – Removes the selected account from exclusion. Confirmation is not requested.
+- Remove – Removes the selected account from exclusion. Confirmation isn't requested.
 
     :::warning
     If an account is removed by accident, use the **Cancel** button to discard the
@@ -85,7 +84,7 @@ The tab contains the following settings:
 - Add Unix Account – Opens the Specify Unix Account window to add an account for exclusion. See the
   [Specify Unix Account Window](/docs/activitymonitor/7.1/admin/outputs/accountexclusions/specifyunixaccount.md)
   topic for additional information.
-- Remove – Removes the selected account from exclusion. Confirmation is not requested.
+- Remove – Removes the selected account from exclusion. Confirmation isn't requested.
 
     :::warning
     If an account is removed by accident, use the **Cancel** button to discard the
@@ -115,7 +114,7 @@ The tab contains the following settings:
 - Add SharePoint Account – Opens the Specify account window to add an account for exclusion. See the
   [Specify Account Window](/docs/activitymonitor/7.1/admin/outputs/accountexclusions/specifysharepointaccount.md)
   topic for additional information.
-- Remove – Removes the selected account from exclusion. Confirmation is not requested.
+- Remove – Removes the selected account from exclusion. Confirmation isn't requested.
 
     :::warning
     If an account is removed by accident, use the **Cancel** button to discard the
@@ -141,7 +140,7 @@ The tab contains the following settings:
 - Add Sql User – Opens the Specify Sql User name window to add an account for exclusion. See the
   [Specify Sql User Name Window](/docs/activitymonitor/7.1/admin/outputs/accountexclusions/specifysqluser.md)
   topic for additional information.
-- Remove – Removes the selected account from exclusion. Confirmation is not requested.
+- Remove – Removes the selected account from exclusion. Confirmation isn't requested.
 
     :::warning
     If an account is removed by accident, use the **Cancel** button to discard the
@@ -168,7 +167,7 @@ The tab contains the following settings:
   See the
   [Specify Account or Group Window](/docs/activitymonitor/7.1/admin/outputs/accountexclusions/specifywindowsaccount.md)
   topic for additional information.
-- Remove – Removes the selected account from exclusion. Confirmation is not requested.
+- Remove – Removes the selected account from exclusion. Confirmation isn't requested.
 
     :::warning
     If an account is removed by accident, use the **Cancel** button to discard the

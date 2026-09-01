@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Types of Clues
 
-The following clue types of clues are available, each clue type is described in detail below:
+The following types of clues are available, and this article describes each one in detail:
 
 - [Standard Clues](#standard-clues)
   - [Case-Sensitive Clues](#case-sensitive-clues)
@@ -54,8 +54,8 @@ A clue based on document metadata, with matching based on:
 - Dynamic Date Range matches – Such as: FIELD>TODAY OR FIELD>TODAY-14 (Matching the last 2 weeks)
 - Integer Range matches – Such as FIELD > VALUE or FIELD
 
-Helpers are provided to format metadata clues, to activate the helper simply select the appropriate
-icon for the desired clue type (numeric, date, and basic):
+Helpers are provided to format metadata clues. To activate the helper, select the appropriate
+icon for your clue type (numeric, date, and basic):
 ![metadatacluehelpers](/images/dataclassification/5.6.2/taxonomies/metadatacluehelpers.webp)
 
 The date helper supports assisting in the creation of both static and dynamic date clues:
@@ -63,7 +63,7 @@ The date helper supports assisting in the creation of both static and dynamic da
 ![createdateclue](/images/dataclassification/5.6.2/taxonomies/createdateclue.webp)
 
 Both field and value are case-insensitive for metadata matches. Wildcard matches must included a \*
-character before the equals sign (as shown in the example above).
+character before the equals sign (as shown in the preceding example).
 
 The following special metadata fields can be used:
 
@@ -79,7 +79,7 @@ The raw content type, for example:
 >
 > application/pdf
 
-Most applications should use the CSE-TYPE field or the FILE TYPE field (see below) rather than the
+Most applications should use the CSE-TYPE field or the FILE TYPE field (described in the following sections) rather than the
 CSE-CONTENTTYPE field due to the highly variable nature of the raw values.
 
 Examples:
@@ -122,15 +122,19 @@ or
 
 CSE-FOLDERS=http://www.abc.com/jobs/
 
-Note that when using cse-Folders with a right-truncated path the path must always end with a slash
+:::note
+When using cse-Folders with a right-truncated path the path must always end with a slash
 character.
+:::
 
 A clue based on selected folders within the path would look like this
 
 CSE-FOLDERS=myfolder/myfolder2
 
-Note that when using cse-Folders with subfolder matches the value must not begin or end with a slash
+:::note
+When using cse-Folders with subfolder matches the value must not begin or end with a slash
 character.
+:::
 
 CSE-FOLDER
 
@@ -140,7 +144,7 @@ CSE-FOLDER=http://www.abc.com/jobs/
 
 matches: http://www.abc.com/jobs/123.txt
 
-does not match: http://www.abc.com/jobs/UK/123.txt
+doesn't match: http://www.abc.com/jobs/UK/123.txt
 
 CSE-LASTMODIFIEDDATE
 
@@ -252,7 +256,7 @@ This field can be matched using the equal, greater than or less than operators, 
 
 MODIFIED = 2010-01-01
 
-MODIFIED MODIFIED > 2010-01-01
+MODIFIED > 2010-01-01
 
 Only the date can be specified, not the time.
 
@@ -260,7 +264,7 @@ Only the date can be specified, not the time.
 
 A case-insensitive fuzzy/phonetic phrase match clue. Phonetic clues ignore all non alphanumeric
 characters. Words that contain no digits are matched using a phonetic algorithm so that words that
-sound similar will be matched. Phonetic clues do not use word stemming in the matching process.
+sound similar will be matched. Phonetic clues don't use word stemming in the matching process.
 
 For example, the following clue:
 
@@ -281,13 +285,13 @@ But not any of the following:
 
 A Regular Expression matching clue – by default this is run across all document text and metadata.
 Regular expression clues are run in a case-sensitive manner by default. You can optionally enable
-the "Case-Insensitive Regex Processing" mode, this setting can be found in Config -> Classifier.
+the "Case-Insensitive Regex Processing" mode; this setting is in Config -> Classifier.
 
-Definitions of the required syntax for regular expressions can be found in many places, including
+Many places define the required syntax for regular expressions, including
 Microsoft:
 [Regular Expression Syntax](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/ae5bf541(v=vs.100)).
 
-The following example clue matches US Social Security Numbers found anywhere in the document text:
+The following example clue matches United States Social Security Numbers found anywhere in the document text:
 
 
 `[/,,/.,/=,\s]((?!000)[0-6]\d{2}|7[0-6]\d|77[0-2])-((?!00)\d{2})-((?!0000)\d{4})[/,,/.,\s]`
@@ -302,7 +306,7 @@ This sample clue ensures that:
 - The first section must be in the range 001 – 772
 
 Any regular expression matches found will be extracted and added to the NDC index automatically. For
-example, if we have a document that contains this text:
+example, if a document contains this text:
 
 Here is one SSN: 407-54-8831
 
@@ -314,7 +318,7 @@ Then the following metadata entries will be generated automatically:
 - Regex-SSN:407-54-8832
 - в
 
-These can easily be viewed within the document “Info” popup on the “Metadata” tab (filtered to Regex
+You can view these within the document “Info” popup on the “Metadata” tab (filtered to Regex
 values). The automatically generated metadata field name is a combination of the term name prefixed
 with “Regex-“.
 
@@ -325,13 +329,13 @@ expression. This is particularly relevant for expressions that may include false
 social security numbers (simple pattern) or credit card numbers (sample data). The classification
 engine includes a number of post match validation steps:
 
-- Exclusion Patterns—Provides the ability to exclude a match based upon an exclusion pattern
+- Exclusion Patterns—Let you exclude a match based upon an exclusion pattern
   (exclude sample data etc). Exclusion patterns can be added by selecting the “Exclusions” link. If
   any exclusion rule is matched the regular expression result will be discarded.
 
     **TIP:** Hit count based regular expression clue exclusions — restrict whether a regular
     expression clue should match based upon the number of unique matches found against the regular
-    expression. I.E, a regex to match any number against the text: "1 1 1 2 3 4" - has 4 hits, 4
+    expression. For example, a regex to match any number against the text: "1 1 1 2 3 4" - has 4 hits, 4
     unique numbers.
 
 - Validation Checks—Regex validation checks provide a way of reducing false positives returned by
@@ -339,26 +343,26 @@ engine includes a number of post match validation steps:
 
     - check-digit validations (suitable for credit card numbers, international bank account numbers
       etc),
-    - simple pattern-based exclusions to remove test data and values that are not of interest,
+    - simple pattern-based exclusions to remove test data and values that aren't of interest,
     - minimum or maximum constraints on both the number of matches and the number of unique matches.
 
-    Currently supported checks include: _Mod 97/10_, _Luhn_, _Verhoeff_
+    Supported checks include: _Mod 97/10_, _Luhn_, _Verhoeff_
 
     **IMPORTANT!** If any validation check fails, then the regular expression result will be
     discarded.
 
 To add a validation check:
 
-1. Select the Validation Check link for the desired clue
+1. Select the Validation Check link for your clue
 2. Click Add
-3. Select the desired check **Type** from the drop-down list, and specify other settings depending
+3. Select your check **Type** from the dropdown list, and specify other settings depending
    on the type.
 
 ![clues_regexp_validationcheck_thumb_0_48](/images/dataclassification/5.6.2/taxonomies/clues_regexp_validationcheck_thumb_0_48.webp)
 
 4. Click Save.
 
-- Proximity Matches—Provides the ability to include/exclude regular expression matches based upon
+- Proximity Matches—Let you include/exclude regular expression matches based upon
   the existence of text before or after the regular expression match. Matches can be added by
   selecting the “Proximity Matches” link. Matches are processed as follows:
 
@@ -366,13 +370,13 @@ To add a validation check:
     - If no ‘Include’ matches exist – or, at least one ‘Include’ match passes then the regular
       expression result will be considered valid
 
-**NOTE:** This functionality is only available when utilising classification Engine v2. The
-additional settings are also not currently available in SharePoint Term Sets (but can be linked via
+**NOTE:** This functionality is only available when using classification Engine v2. The
+additional settings are also not available in SharePoint Term Sets (but can be linked via
 Term Boosts).
 
 ## Required Terms clue
 
-The Required Term clue type can be used to require another class to be classified as a pre-requisite
+Use the Required Term clue type to require another class to be classified as a pre-requisite
 for this class. This is most often used when the children of a class require the parent to also be
 classified.
 
@@ -386,7 +390,7 @@ A tree view control makes selecting the required class easy:
 
 ![requiredterm](/images/dataclassification/5.6.2/taxonomies/requiredterm.webp)
 
-For example, suppose that we have a topic _Pensions_ with two children:
+For example, suppose you have a topic _Pensions_ with two children:
 
 - Pensions
 
@@ -395,21 +399,21 @@ For example, suppose that we have a topic _Pensions_ with two children:
 
 The purpose of the two child classes is to identify documents that are about pensions in the USA or
 about pensions in Canada. Rather than add clues to identify pensions documents to the children you
-can simply require documents to be about _Pensions_ by using a Required Class clue type.
+can require documents to be about _Pensions_ by using a Required Class clue type.
 
 ## Term Boost Clues
 
-You use the Term Boost clue type to specify that a Class Score is to be boosted from another term.
+Use the Term Boost clue type to specify that a Class Score is to be boosted from another term.
 This is most often used when a complex class is implemented using several child (or even grandchild)
-classes. Basically, you would want to apply these clues to refer to the other term or taxonomy and
-review the score for each term, not drilling down to each term. Review the example:
+classes. Basically, apply these clues to refer to the other term or taxonomy and
+review the score for each term, not exploring deeper into each term. Review the example:
 
 ![termboostclue_int_thumb_0_0](/images/dataclassification/5.6.2/taxonomies/termboostclue_int_thumb_0_0.webp)
 
 In a tree view you can find the list of terms, which are displayed in the Term boost list to the
 right. This way you can review or edit the average score for each term.
 
-Use the tree view control below to select boosting classes easy.
+Use the tree view control to select boosting classes.
 
 ![termboost](/images/dataclassification/5.6.2/taxonomies/termboost.webp)
 
@@ -425,7 +429,7 @@ descendants at once.
 At classification time if the referenced node or any of its descendants (up to the configured level)
 reach their threshold then the term boost will be applied.
 
-Select the Exclude Not Available for Tagging check box, if you want to exclude the terms, which are
+Select the Exclude Not Available for Tagging checkbox, if you want to exclude the terms, which are
 not available for tagging. This feature lets you select the grayed-out terms and exclude them for
 tagging for your taxonomy. For example, you have UK ZIP code, which was tagged as **Available for
 Tagging** before. It doesn't qualify as sensitive for your Confidential term. Therefore, you can
@@ -435,7 +439,7 @@ apply this feature.
 
 ## Language Clues
 
-The language clue type can be used to require documents to be written primarily in a specified
+Use the language clue type to require documents to be written primarily in a specified
 language as a filter on classification.
 
 For example, if you create a new class and want documents to be classified only if they are written
@@ -450,7 +454,7 @@ creating NOT functionality.
 
 For example:
 
-If you want to classify any document where a word does NOT exist (such as _Pensions_), you could
+If you want to classify any document where a word doesn't exist (such as _Pensions_), you could
 first add a static clue with a score of 50, and then add a standard clue looking for _Pensions_ with
 a negative score (-50).
 

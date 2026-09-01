@@ -6,9 +6,9 @@ sidebar_position: 10
 
 # Email Templates
 
-The HTML templates used to format notification email can be customized. These templates are designed
-to make the message viewable within an email client. It is recommended to edit text and layout as
-desired, but NOT to embed new images or logos. The following table shows the notification email
+You can customize the HTML templates used to format notification email. These templates are designed
+to make the message viewable within an email client. Netwrix recommends editing text and layout as
+needed, but not embedding new images or logos. The following table shows the notification email
 templates and describes the purpose of each.
 
 | Template Name               | Message Type Description                                                                                                                           |
@@ -23,11 +23,11 @@ provide the message with dynamic content, i.e. inserting values and strings from
 the static portion of the message body. These Substitution Tokens begin and end with the “@” symbol,
 e.g. @UserName@.
 
-Substitution Tokens are only valid for certain Notification message templates. Below is a table of
-the Substitution Tokens, the value or string they represent, and the message templates in which they
-may be used.
+Substitution Tokens are only valid for certain Notification message templates. The following table
+lists the Substitution Tokens, the value or string they represent, and the message templates in
+which they may be used.
 
-| Substitution Token    | Description                                                                                                                                       | Applicable Template(s)                     |
+| Substitution Token    | Description                                                                                                                                       | Applicable Templates                     |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
 | @LoginUrl@            | URL that allows a user to access the default (login) page                                                                                         | OwnershipChangeNotification ReminderDigest |
 | @ResourceDescription@ | Description of resource - To use the resource's description in emails instead of the path, replace @ResourcePath@ with @ResourceDescription@      | OwnershipConfirm ReminderDigest            |
@@ -39,14 +39,13 @@ may be used.
 
 ## Customize Email Templates
 
-Email templates are shipped in a ZIP file and stored in the Access Reviews installation directory:
+The Access Reviews installation directory contains the email templates in a ZIP file:
 
 ...\Netwrix\Access Reviews
 
-Follow the steps to customize the email templates.
+To customize the email templates:
 
-**NOTE:** To successfully modify these Notifications email templates, a familiarity with basic HTML
-is necessary.
+**NOTE:** To modify these Notifications email templates, you need basic HTML knowledge.
 
 ![Access Reviews installation directory showing the Templates zip file](/images/auditor/10.7/access/reviews/admin/additionalconfig/emailtemplates.webp)
 
@@ -60,20 +59,20 @@ installation directory to be preserved during future application upgrades.
 
 ![Templates folder showing email templates](/images/auditor/10.7/access/reviews/admin/additionalconfig/emailtemplatesfolder.webp)
 
-**Step 3 –** Locate the desired HTML message template.
+**Step 3 –** Locate the HTML message template you want.
 
 **Step 4 –** Open the file with a text editor, e.g. Notepad, and customize the email body.
 
 **NOTE:** Using a tool other than a text editor to edit HTML files, such as a WYSIWYG web page
-editor which may drastically alter the underlying HTML code, is not supported.
+editor which may drastically alter the underlying HTML code, isn't supported.
 
-**Step 5 –** Email subject lines can be edited by changing the text between the opening `<title>`
+**Step 5 –** Edit email subject lines by changing the text between the opening `<title>`
 tag and the closing `</title>` tag.
 
-**Step 6 –** After making changes, save the file and view it within a web browser to see what the
-changes will look like. The Substitution Tokens will display without supplied values.
+**Step 6 –** After making changes, save the file and view it in a web browser to see what the
+changes look like. The Substitution Tokens display without supplied values.
 
-**Step 7 –** After making the desired changes, save and close the text editor. Then re-launch the
+**Step 7 –** After making your changes, save the file, close the text editor, and relaunch the
 application.
 
-The modifications to the HTML email templates are in use by the notification emails.
+The notification emails use your modified HTML email templates.

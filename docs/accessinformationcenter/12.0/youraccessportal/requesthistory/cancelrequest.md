@@ -8,10 +8,9 @@ sidebar_position: 10
 
 The Cancel Request window opens from the Request History Page of the Your Access portal when you
 select to cancel an access request. See the
-[Request History Page](/docs/accessinformationcenter/12.0/youraccessportal/requesthistory/requesthistory.md) topic for additional information.
-Follow the steps to cancel an access request.
+[Request History Page](/docs/accessinformationcenter/12.0/youraccessportal/requesthistory/requesthistory.md) topic for additional information. To cancel an access request:
 
-**Step 1 –** On the Request History Page of the Your Access portal, select the desired request and
+**Step 1 –** On the Request History Page of the Your Access portal, select the request you want and
 click **Cancel**. The Cancel Request window opens to confirm the action.
 
 ![Cancel Request window](/images/accessinformationcenter/12.0/accessrequests/window/cancelrequest.webp)

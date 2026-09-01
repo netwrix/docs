@@ -95,7 +95,7 @@ These databases store various data, as listed in the following table.
 | `Netwrix_AlertsDB`              | Stores alerts.                                                                                                                                                                            |
 | `Netwrix_Auditor_API`           | Stores activity records collected using Integration API.                                                                                                                                  |
 | `Netwrix_Auditor_EventLog`      | Stores internal event records.                                                                                                                                                            |
-| **`Netwrix_CategoriesDB`**      | Intended for integration with Netwrix Data Classification. Netwrix Auditor always creates this database, but it participates in the workflow only when you enable the DDC Provider. See [Sensitive Data Discovery](/docs/auditor/10.9//admin/settings/sensitivedatadiscovery.md) for instructions on enabling the DDC Provider. |
+| **`Netwrix_CategoriesDB`**      | Intended for integration with Netwrix Data Classification. Netwrix Auditor always creates this database, but it participates in the workflow only when you enable the Data Discovery and Classification (DDC) Provider. See [Sensitive Data Discovery](/docs/auditor/10.9//admin/settings/sensitivedatadiscovery.md) for instructions on enabling the DDC Provider. |
 | `Netwrix_CommonDB`              | Stores views to provide cross-database reporting.                                                                                                                                         |
 | `Netwrix_ImportDB`              | Stores data imported from Long-Term Archive.                                                                                                                                              |
 | **`Netwrix_OverviewReportsDB`** | Stores data required for overview reports.                                                                                                                                                |
@@ -257,27 +257,27 @@ role on the SQL Server instance hosting your audit databases.
 
 To assign the **dbcreator** and **`db_owner`** roles:
 
-**Step 3 –** On the computer where SQL Server instance with the Audit Database resides, navigate to
+**Step 1 –** On the computer where SQL Server instance with the Audit Database resides, navigate to
 **Start** > **All Programs** > **Microsoft SQL Server** > **SQL Server Management Studio**.
 
-**Step 4 –** Connect to the server.
+**Step 2 –** Connect to the server.
 
-**Step 5 –** In the left pane, expand the **Security** node. Right-click the **Logins** node and
+**Step 3 –** In the left pane, expand the **Security** node. Right-click the **Logins** node and
 select **New Login** from the pop-up menu.
 
 ![manualconfig_ssms_newlogin2016](/images/1secure/configuration/sqlserver/manualconfig_ssms_newlogin2016.webp)
 
-**Step 6 –** Click **Search** next to **Login Name** and specify the user that you want to assign
+**Step 4 –** Click **Search** next to **Login Name** and specify the user that you want to assign
 the **`db_owner`** role to.
 
-**Step 7 –** Select **Server roles** on the left and assign the **dbcreator** role to the new login.
+**Step 5 –** Select **Server roles** on the left and assign the **dbcreator** role to the new login.
 
-**Step 8 –** Select the **User Mapping** tab. Select all databases used by Auditor to store audit
+**Step 6 –** Select the **User Mapping** tab. Select all databases used by Auditor to store audit
 data in the upper pane and check **`db_owner`** in the lower pane.
 
 **NOTE:** Perform this step only when you change the existing Audit Database Account to a new one.
 
-**Step 9 –** If the account that you want to assign the **`db_owner`** role to already exists
+**Step 7 –** If the account that you want to assign the **`db_owner`** role to already exists
 in **SQL Server Logins**, expand the **Security** > **Logins** node, right-click the account,
 select **Properties** from the pop-up menu, and edit its roles.
 

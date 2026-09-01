@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Reporting Capabilities
 
-Selecting **Analysis** → Reports in the management console helps a user extract a wealth of
-information from the NDC index.
+Selecting **Analysis** → Reports in the management console gives you access to detailed information from the NDC index.
 
 The main **Dashboard** has three high level graphs highlighting the current state of processing:
 
@@ -17,8 +16,7 @@ The main **Dashboard** has three high level graphs highlighting the current stat
 - Classification Coverage—Shows the percentage of classified content, broken down by type, and the
   percentage of content that has not received any auto-classifications
 
-It is possible to filter and refine data presentation to look for the areas that contain the largest
-amount of documents tagged with a particular term, or to only review specific content.
+You can filter and refine data presentation to find areas with the most documents tagged with a particular term, or to review specific content.
 
 Reporting capabilities also include the following:
 

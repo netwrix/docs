@@ -25,7 +25,7 @@ A menu item displays grouped navigation actions.
 | Identifier required | **Type:** String **Description:** Unique identifier of the item. |
 | IsExpandedByDefault <span class="optionalAttribute">default value: true</span> | **Type:** Boolean **Description:** Is an expanded by default menu item. |
 | IsSelfForm <span class="optionalAttribute">default value: false</span> | **Type:** Boolean **Description:** Is a self form menu item. |
-| ParentMenuItem optional | **Type:** Int64 **Description:** Defines the parent menu item. Five ParentMenuItem are hard coded: - Dashboard: Allow to display MenuItem in dashboard (Home page) - Nav: Allow to display MenuItem in navigation section (the left part in dashboard) - UserMenu: Allow to display MenuItem in links list on click on user account in the top right corner - Reports: Define all the reports downloadable in the application - Top: Allow to display MenuItem in top bar of the application, between "Home" and "My tasks" |
+| ParentMenuItem optional | **Type:** Int64 **Description:** Defines the parent menu item. Five ParentMenuItem are hard coded: - Dashboard: Allow to display MenuItem in dashboard (Home page) - Nav: Allow to display MenuItem in navigation section (the left part in dashboard) - UserMenu: Allow to display MenuItem in links list on click user account in the top right corner - Reports: Define all the reports downloadable in the application - Top: Allow to display MenuItem in top bar of the application, between "Home" and "My tasks" |
 | ReportQuery optional | **Type:** Int64 **Description:** Represents the linked report query. |
 | URI optional | **Type:** String **Description:** Represents the menu URI. |
 | Workflow optional | **Type:** Int64 **Description:** Represents the linked workflow. |

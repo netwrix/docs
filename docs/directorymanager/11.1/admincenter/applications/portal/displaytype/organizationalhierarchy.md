@@ -11,7 +11,7 @@ hierarchy is displayed in graphical form, creating a kind of an organogram. It p
 of the organization with the specified user as the focal point.
 
 By default, the organizational hierarchy chart displays four attributes of a user: _title_, _display
-name_, _email_, and _picture_. You can replace an attribute with another one but you cannot add or
+name_, _email_, and _picture_. You can replace an attribute with another one but you can't add or
 remove attributes. Hence the attribute count remains ‘four’.
 
 **What do you want to do?**
@@ -30,14 +30,14 @@ remove attributes. Hence the attribute count remains ‘four’.
    displayed.  
    By default, the **Display Name** area displays four attributes. The values of these attributes
    are displayed for users on the organizational hierarchy chart in the portal. You can only replace
-   an attribute with another attribute; you cannot add a fifth attribute or reduce the list to
+   an attribute with another attribute; you can't add a fifth attribute or reduce the list to
    three.
 5. Click **Edit** for an attribute to replace it. The **Edit Field** pane is displayed.
-6. In the **Field** drop-down list, select a schema attribute to display on the organizational
+6. In the **Field** dropdown list, select a schema attribute to display on the organizational
    hierarchy chart.
 7. In the **Display Name** box, enter a user-friendly name for the attribute, that would serve as
    the attribute name on the chart. The attribute’s value will be displayed next to this name.
-8. In the **Display Type** drop-down list, select the display type to use for rendering the
+8. In the **Display Type** dropdown list, select the display type to use for rendering the
    attribute on the organizational hierarchy chart. The display type must match the attribute. For
    example, the ‘TreePicture’ display type matches the ‘thumbnailPhoto’ attribute.  
    This list contains basic display types and custom display types defined on the **Custom Display

@@ -7,7 +7,8 @@ sidebar_position: 380
 # Unix Data Collector
 
 The Unix Data collector provides host inventory, software inventory, and logical volume inventory on
-UNIX & Linux platforms. The Unix Data Collector has been preconfigured within the Unix Solution.
+UNIX & Linux platforms. The Unix Solution includes the Unix Data Collector as a preconfigured
+component.
 Both this data collector and the solution are available with a special Enterprise Auditor license.
 See the
 [Unix Solution](/docs/accessanalyzer/11.6/solutions/unix/overview.md)
@@ -26,7 +27,7 @@ topic for additional information.
 
 - Root permissions in Unix/Linux
 
-If the Root permission is unavailable, a least privileged model can be used. See the
+If the Root permission is unavailable, you can use a least privileged model. See the
 [Least Privilege Model](/docs/accessanalyzer/11.6/requirements/unix/target.md#least-privilege-model)
 topic additional information.
 

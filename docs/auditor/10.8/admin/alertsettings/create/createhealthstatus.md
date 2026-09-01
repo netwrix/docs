@@ -16,13 +16,13 @@ data on Auditor health status events. See the topic for additional information.
 
 **Step 1 –** Start Netwrix Auditor Event Log Manager and create the new monitoring plan.
 
-**Step 2 –** Make sure that the Enable event log collection checkbox is selected. Specify the name
+**Step 2 –** ensure that the Enable event log collection checkbox is selected. Specify the name
 for the new plan, for example, _"\_Netwrix Auditor \_Health Status"_.
 
 **Step 3 –** Navigate to the Monitored computers list and add a server where the Auditor server
 resides.
 
-**Step 4 –** On the General tab, click Configure next to Alerts. Make sure the predefined alerts are
+**Step 4 –** On the General tab, click Configure next to Alerts. Ensure the predefined alerts are
 disabled. Click Add to create anew alert.
 
 **Step 5 –** In the Alert Properties wizard, specify the alert name and enter alert description

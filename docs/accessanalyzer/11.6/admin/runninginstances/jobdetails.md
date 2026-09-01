@@ -38,7 +38,7 @@ The tab includes:
 - Status – Execution status, for example **Queued**, **Running**, **Success**, or **Warning**.
 - Message – Enterprise Auditor message regarding runtime activity
 - Runtime – Duration of task execution
-- Stop – Aborts all currently running instances
+- Stop – Aborts all running instances
 
 ## History Tab
 
@@ -74,13 +74,14 @@ topic for additional information.
 
 ## Queued Jobs Tab
 
-The Queued Jobs tab displays a list of jobs in queue and the order in which they are executed.
+The Queued Jobs tab displays a list of jobs in queue and the order in which Enterprise Auditor
+executes them.
 
 ![Queued Jobs tab](/images/accessanalyzer/11.6/admin/runninginstances/jobdetailsqueuedjobs.webp)
 
 The tab includes:
 
-- Order – Order in which the queued jobs are executed. This order can be changed on the Queued Jobs
+- Order – Order in which the queued jobs are executed. You can change this order on the Queued Jobs
   tab by using the buttons at the bottom.
 - Job Path – Folder path in Jobs directory
 - State – Queue status, for example **Running** or  **Waiting**

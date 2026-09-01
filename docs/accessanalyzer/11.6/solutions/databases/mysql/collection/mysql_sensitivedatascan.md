@@ -24,25 +24,25 @@ The query is:
 ### Configure the SensitiveDataScan Query
 
 The MySQL_SensitiveDataScan Job is preconfigured to run using the default settings for the Sensitive
-Data Collection category. Follow the steps to customize configurations.
+Data Collection category. To customize configurations:
 
 **Step 1 –** Navigate to the Databases > 0.Collection > MySQL > MySQL_SensitiveDataScan > Configure
 node and select Queries.
 
-**Step 2 –** In the Query Selection view, select the Sensitive Data Scan query click on Query
+**Step 2 –** In the Query Selection view, select the Sensitive Data Scan query click Query
 Properties. The Query Properties window appears.
 
 **Step 3 –** Select the Data Source tab, and click Configure. The SQL Data Collector Wizard opens.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for this
+Don't make changes to other wizard pages as they have been pre-configured for this
 job.
 :::
 
 
 ![Sensitive Data Scan Settings](/images/accessanalyzer/11.6/solutions/databases/mysql/collection/sensitivedatscan_optionspage.webp)
 
-**Step 4 –** To modify sensitive data scan options, select the desired scan options. See the
+**Step 4 –** To modify sensitive data scan options, select the scan options you want. See the
 [SQL: Options](/docs/accessanalyzer/11.6/admin/datacollector/sql/options.md)
 page for additional information.
 
@@ -84,7 +84,7 @@ objects. Click Retrieve. The Available database objects box will populate. The d
 scan all MySQL Databases returned, excluding the listed system schemas and tables in red. Databases
 and instances can be added in the following ways:
 
-- Select the desired database objects and click Add.
+- Select the database objects you want and click Add.
 - Use the Import CSV button to import a list from a CSV file, if desired.
 - Use the Add Custom Filter button to create and apply a custom filter.
 
@@ -99,7 +99,7 @@ Navigate to the **Databases** > **0.Collection** > **MySQL** > **MySQL_Sensitive
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

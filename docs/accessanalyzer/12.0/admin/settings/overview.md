@@ -6,15 +6,15 @@ sidebar_position: 20
 
 # Global Settings
 
-The global settings have an overall impact on the running ofAccess Analyzer jobs. Settings are
-inherited through a parent-child structure from the Settings node through the Jobs tree to the
-individual jobs unless inheritance is broken by direct assignment at either the job group or the
-individual job level.
+The global settings have an overall impact on the running of Access Analyzer jobs. Access Analyzer
+inherits settings through a parent-child structure from the Settings node through the Jobs tree to
+the individual jobs, unless direct assignment at either the job group or the individual job level
+breaks the inheritance.
 
 ![Configuration Settings](/images/accessanalyzer/12.0/admin/settings/globalsettings.webp)
 
-Some of these settings are configured during the initial launching of theAccess Analyzer Console.
-Others are configured as desired by the end-user. Expand the Settings node in the Navigation pane to
+You configure some of these settings during the initial launch of the Access Analyzer Console, and
+configure others as needed. Expand the Settings node in the Navigation pane to
 select a global setting to configure:
 
 - [Access](/docs/accessanalyzer/12.0/admin/settings/access/overview.md)
@@ -37,11 +37,11 @@ select a global setting to configure:
       according to the data collector being used
 - [Exchange](/docs/accessanalyzer/12.0/admin/settings/exchange.md)
     - Required for auditing an organization’s Exchange environment
-    - Only enabled for configuration once the Access Analyzer for Exchange Solution prerequisites
+    - Only enabled for configuration after the Access Analyzer for Exchange Solution prerequisites
       are installed
     - Configure Microsoft Exchange server connections and requires Exchange server versions and
       names
-    - The ExchangeMailbox, Exchange2K, ExchangePS, and ExchangePublicFolder Data Collectors utilize
+    - The ExchangeMailbox, Exchange2K, ExchangePS, and ExchangePublicFolder Data Collectors use
       these global settings
 - [History](/docs/accessanalyzer/12.0/admin/settings/history.md)
     - Configure job data retention period settings
@@ -65,11 +65,11 @@ select a global setting to configure:
 - [Schedule](/docs/accessanalyzer/12.0/admin/settings/schedule.md)
     - Optional configuration during the initial launch if Windows authentication is used with the
       Storage Profile
-    - Required in order to schedule host inventory, job, analysis task, and action task execution
+    - Required to schedule host inventory, job, analysis task, and action task execution
     - Provide credentials used against the Access Analyzer Console server to execute scheduled jobs
       with the Windows Task Scheduler
     - Creating a Schedule Service Account requires credentials on the Access Analyzer Console server
-    - Multiple Schedule Service Accounts can be configured
+    - You can configure multiple Schedule Service Accounts
 - [Sensitive Data](/docs/accessanalyzer/12.0/admin/settings/sensitivedata/overview.md)
     - Flag locations which are known to contain false positive criteria matches to be filtered out
       of Sensitive Data Discovery reports

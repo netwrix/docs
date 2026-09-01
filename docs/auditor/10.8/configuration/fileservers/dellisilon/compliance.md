@@ -16,26 +16,16 @@ You can configure your cluster for monitoring in one of the following ways:
 
 ## Configure Dell Isilon/PowerScale Cluster in Compliance Mode Via Shell Script
 
-Follow the steps to configure Dell Isilon/PowerScale cluster in Compliance mode via the shell
-script:
-
-**Step 1 –** On the computer where Auditor Server resides, navigate to _C:\Program Files
-(x86)\Netwrix Auditor\File Server Auditing_ and copy the configure*ifs.sh shell script to
-*/ifs/data\_ catalog on your cluster.
-
-**Step 2 –** Navigate to your cluster command prompt through the SSH connection.
-
-**Step 3 –** Log in to your cluster as a **compadmin** user.
-
-**Step 4 –** Run the shell script by executing the following command:
+1. On the computer where Auditor Server resides, navigate to `C:\Program Files (x86)\Netwrix Auditor\File Server Auditing` and copy the `configure_ifs.sh` shell script to `/ifs/data` on your cluster.
+2. Navigate to your cluster command prompt through the SSH connection.
+3. Log in to your cluster as a **compadmin** user.
+4. Run the shell script by executing the following command:
 
 `sh /ifs/data/configure_ifs.sh -z zone1 -a 1`
 
-where
-
-`zone1` is the name of the audited access zone on your file server.
-
-`1` is a combination of the bitwise flags. The table below shows the example combination of 4 flags:
+Where:
+- `zone1` is the name of the audited access zone on your file server.
+- `1` is a combination of the bitwise flags. The table below shows the example combination of 4 flags:
 
 |                          |      |
 | ------------------------ | ---- |
@@ -45,18 +35,15 @@ where
 | `Failed read attempts`   | `8`  |
 | `Total:`                 | `15` |
 
-**Step 5 –** Create a shared folder named netwrix*audit$ on a system zone. This folder points to
-*/ifs\_:
+5. Create a shared folder named `netwrix_audit$` on a system zone. This folder points to `/ifs`:
 
 `isi smb shares create --name=netwrix_audit$ --path=/ifs/ --zone=system --browsable=true`
 
-**Step 6 –** Add the BUILTIN\Administrators group in the share permissions for netwrix*audit$ folder
-with *"full access"\_ rights:
+6. Add the `BUILTIN\Administrators` group in the share permissions for `netwrix_audit$` folder with `full access` rights:
 
 `isi smb shares permission create --share=netwrix_audit$ --group="BUILTIN\Administrators" --permission-type=allow --permission=full --zone=system`
 
-**Step 7 –** Grant your data collection account the _"read access"_ rights to the catalog
-_/ifs/.ifsvar/audit_ :
+7. Grant your data collection account `read access` rights to the `/ifs/.ifsvar/audit` catalog:
 
 `isi zone modify system --add-user-mapping-rules="Enterprise\Administrator ++ compadmin [group]"`
 
@@ -64,31 +51,23 @@ Where `Enterprise\Administrator` is your account name.
 
 ## Configure Dell Isilon/PowerScale Cluster in Compliance Mode Manually
 
-Follow the steps to configure Dell Isilon/PowerScale cluster in Compliance mode manually:
-
-**Step 1 –** Navigate to your cluster command prompt through the SSH connection.
-
-**Step 2 –** Log in to your cluster as a **compadmin** user.
-
-**Step 3 –** Create a shared folder named netwrix*audit$ on a system zone. This folder points to
-*/ifs\_:
+1. Navigate to your cluster command prompt through the SSH connection.
+2. Log in to your cluster as a **compadmin** user.
+3. Create a shared folder named `netwrix_audit$` on a system zone. This folder points to `/ifs`:
 
 `isi smb shares create --name=netwrix_audit$ --path=/ifs/ --zone=system --browsable=true`
 
-**Step 4 –** Add the BUILTIN\Administrators group in the share permissions for netwrix*audit$ folder
-with *"full access"\_ rights:
+4. Add the `BUILTIN\Administrators` group in the share permissions for `netwrix_audit$` folder with `full access` rights:
 
 `isi smb shares permission create --share=netwrix_audit$ --group="BUILTIN\Administrators" --permission-type=allow --permission=full --zone=system`
 
-**Step 5 –** Grant your data collecting account the _"read access"_ rights to the catalog
-_/ifs/.ifsvar/audit_ :
+5. Grant your data collection account `read access` rights to the `/ifs/.ifsvar/audit` catalog:
 
 `isi zone modify system --add-user-mapping-rules="Enterprise\Administrator ++ compadmin [group]"`
 
 Where `Enterprise\Administrator` is your account name.
 
-**Step 6 –** Enable protocol auditing for a selected zone (for example, _"zone1"_). Do one of the
-following, depending on your Dell Isilon/PowerScale version:
+6. Enable protocol auditing for a selected zone (for example, `zone1`). Do one of the following, depending on your Dell Isilon/PowerScale version:
 
 | EMC Isilon/PowerScale 7.x                                                                    | EMC Isilon/PowerScale 8.x                                                                           |
 | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -108,8 +87,7 @@ your cluster.
 | Failed read attempts                                                                        |                                                                                                             |
 | `isi zone zones modify ` `zone1 ` `--audit-failure= create,read`                            | `isi audit settings ` `modify --zone=zone1 ` `--audit-failure=create,read, open`                            |
 
-**Step 7 –** Create the _"netwrix_audit"_ role and add the required privileges to this role. For
-example:
+7. Create the `netwrix_audit` role and add the required privileges to this role. For example:
 
 ```isi auth roles create --name=netwrix_audit
 

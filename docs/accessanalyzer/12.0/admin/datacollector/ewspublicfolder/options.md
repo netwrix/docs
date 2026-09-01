@@ -18,11 +18,11 @@ Select any desired scan options:
 
     :::info
     Use this option when scanning multiple Exchange environments with a single
-    job and the Connection Profile has multiple credentials in it.
+    job and the Connection Profile has multiple credentials.
     :::
 
 
-- Authentication – Select an Authentication type from the drop down:
+- Authentication – Select an Authentication type from the dropdown:
 
     - Negotiate
     - Basic

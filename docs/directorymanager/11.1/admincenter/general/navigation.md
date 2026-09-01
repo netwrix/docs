@@ -26,7 +26,7 @@ When you perform a search, it looks up the following in Admin Center:
   such as workflows, schedules, and security roles.
 - SMS gateway accounts
 - Directory Manager applications - Directory Manager portals, Data services, and Security services
-- Admin Center pages, such as the Replication, Notifications and Licensing pages
+- Admin Center pages, such as the Replication, Notifications, and Licensing pages
 - Admin Center functions, such as restore replication, unlock account, etc. Clicking an action
   redirects you to the relevant page.
 
@@ -53,19 +53,19 @@ The top right corner of the application displays the following:
 
 ## Menu Pane
 
-The menu pane in the left enables you to navigate to different functions in Admin Center.
+Use the menu pane on the left to navigate to different functions in Admin Center.
 
 | Menu Option         | Description                                                                                                                                                                                                                                                                                           |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Dashboard           | Displays the latest values for Directory Manager KPIs                                                                                                                                                                                                                                                 |
 | Identity Stores     | Displays the identity stores defined in Directory Manager. You can: <ul><li>Create identity stores</li><li>Manage the security roles and settings for an identity store</li><li>Link identity stores</li></ul>                                                                                        |
-| Data Sources        | Enables you to create and manage data sources to be used as source and destination in Synchronize jobs, in query-based searches, and in group membership queries                                                                                                                                      |
+| Data Sources        | Create and manage data sources to be used as source and destination in Synchronize jobs, in query-based searches, and in group membership queries                                                                                                                                      |
 | Replication         | Controls global replication settings that apply to all identity stores                                                                                                                                                                                                                                |
 | Notifications       | Displays the queued notifications for all identity stores. It also provides access to the Notification Editor                                                                                                                                                                                         |
 | Helpdesk            | Enables helpdesk users to perform password reset, account unlock, and account unenroll operations for identity store users                                                                                                                                                                            |
-| Applications        | Enables you to create Directory Manager applications, namely: <ul><li>Directory Manager portal</li><li>Data service</li><li>Security service</li></ul> You can also manage the following: <ul><li>Admin Center deployment</li><li>Replication service</li><li>Email service</li><li>Scheduler service</li></ul> |
+| Applications        | Create Directory Manager applications, namely: <ul><li>Directory Manager portal</li><li>Data service</li><li>Security service</li></ul> You can also manage the following: <ul><li>Admin Center deployment</li><li>Replication service</li><li>Email service</li><li>Scheduler service</li></ul> |
 | History             | Displays history for major actions performed in Admin Center, such as identity store creation, changes to notification templates, and more                                                                                                                                                            |
-| SMS Gateways        | Allows you to create SMS gateway accounts that Directory Manager uses to send text messages to the users’ mobile numbers                                                                                                                                                                              |
+| SMS Gateways        | Create SMS gateway accounts that Directory Manager uses to send text messages to the users’ mobile numbers                                                                                                                                                                              |
 | Notification Editor | Lists templates for Directory Manager-generated notifications. These templates apply to all identity stores                                                                                                                                                                                           |
 | Settings            | Lets you manage the following: <ul><li>Directory Manager licensing</li><li>Global pool of security questions</li><li>Directory Manager logs</li></ul>                                                                                                                                                 |
 

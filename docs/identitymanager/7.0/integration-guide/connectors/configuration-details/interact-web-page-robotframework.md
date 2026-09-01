@@ -10,7 +10,7 @@ This guide explains how to write a Robot Framework script that interacts with a 
 
 ## Example: Interacting with a web-based application
 
-Consider an external system that is accessible through a web interface, and that does not offer an API. In this situation, we can either interact manually with the external system , or with a Robot Framework connection.
+Consider an external system that is accessible through a web interface, and that doesn't offer an API. In this situation, you can either interact manually with the external system , or with a Robot Framework connection.
 
 ## Prerequisites
 
@@ -34,13 +34,13 @@ While not strictly required, it is highly reccomended to look at the [Robot Fram
 
 ## Selenium basics
 
-Selenium is a web browser automation tool. Selenium can automatically perform scripted actions in a web browser. Selenium is not easy to use on its own, and it is easier to use Selenium via the Robot Framework. However, the basics are still the same.
+Selenium is a web browser automation tool. Selenium can automatically perform scripted actions in a web browser. Selenium isn't easy to use on its own, and it is easier to use Selenium via the Robot Framework. However, the basics are still the same.
 
-The basic structure of a web page is defined with HTML. It is accessible with the inspect tool, which can be opened by pressing the F12 key on most browsers. For Selenium, we want to find information on specific parts of the page. Inspecting an element can be done by right clicking the element, and clicking **Inspect**.
+The basic structure of a web page is defined with HTML. It is accessible with the inspect tool, which can be opened by pressing the F12 key on most browsers. For Selenium, use the inspect tool to find information on specific parts of the page. Inspecting an element can be done by right clicking the element, and clicking **Inspect**.
 
 ![Inspect Tool](/images/identitymanager/robotframeworkselenium_inspecttool.webp)
 
-Suppose the goal of the script is to copy the content of the code block, and paste it to a file, to ensure that the file is up to date with the documentation. To do this, the Robot Framework has to click on the **copy to clipboard** button with the keyword [`Click Element`](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#click-element).
+Suppose the goal of the script is to copy the content of the code block, and paste it to a file, to ensure that the file is up to date with the documentation. To do this, the Robot Framework has to click the **copy to clipboard** button with the keyword [`Click Element`](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#click-element).
 
 ## Locating elements
 
@@ -50,7 +50,7 @@ In the HTML, the button has a class `class="copy-to-clipboard"`. The element loc
 
 ### XPath element locators
 
-Each element on the web page has an XPath, and each XPath uniquely identifies an element. This means that we can always use an XPath locator. To get the XPath of an element, inspect the element, then right click it in the HTML, and click on **Copy** > **Full XPath**.
+Each element on the web page has an XPath, and each XPath uniquely identifies an element. This means you can always use an XPath locator. To get the XPath of an element, inspect the element, then right click it in the HTML, and click **Copy** > **Full XPath**.
 
 ![Copy Full XPath](/images/identitymanager/robotframeworkselenium_copyfullxpath.webp)
 
@@ -60,7 +60,7 @@ XPaths change as the page is updated. Using a location strategy other than the X
 
 ### Hypertext references and API calls
 
-Some elements have links to other websites or pages of the same website. In the HTML inspection, these elements are likely to have a `href` attribute containing the link. `Href` stands for hypertext reference. By going directly to the linked URL instead of clicking the link, the script does not need to specify an element locator for the link.
+Some elements have links to other websites or pages of the same website. In the HTML inspection, these elements are likely to have a `href` attribute containing the link. `Href` stands for hypertext reference. By going directly to the linked URL instead of clicking the link, the script doesn't need to specify an element locator for the link.
 
 In some cases, an API can be called simply by going to the right URL. This URL may be used as a shortcut to avoid having to fill in text fields. The `href` attributes may show the format of the API calls.
 
@@ -118,21 +118,21 @@ ${BANKINGURL}  http://localhost:5011
 
 ### Define custom keywords
 
-The script defines several custom keywords. As the element locators may not be easily understandable, it is important that the keywords are not long, and have descriptive names.
+The script defines several custom keywords. As the element locators may not be easily understandable, it is important that the keywords aren't long, and have descriptive names.
 
  | Keyword | Details | 
  | --- | --- | 
- | Modify User | Sets a password for the user, then applies the provisioning order. This keyword does everything the `Execute Modify` keyword should do, so that it can be used for error handling. As the provisioned resource type may not have password reset settings, the password generation could fail, which is why it is called by the `Try Keyword` keyword. | 
+ | Modify User | Sets a password for the user, then applies the provisioning order. This keyword does everything the `Execute Modify` keyword should do, so you can use it for error handling. As the provisioned resource type may not have password reset settings, the password generation could fail, which is why it is called by the `Try Keyword` keyword. | 
  | Restart Banking And Fail | Restarts the Banking Application, then fails the keyword execution. This keyword should be used when the Banking application is in an unknown state. | 
  | Launch Banking App | Launches the Banking web application. To check that the web browser is on the right page, the title of the page is verified with the `Title Should Be` keyword. | 
  | Set Password | Generates a password for the provisioned user, sets their Banking password to that password, then sends a notification. This keyword attempts to send the notification as soon as the password is set. First, this ensures that the notification is sent even if the rest of the script would crash. Second, this keeps the password in memory for the least amount of time possible, which reduces security risks. | 
  | Add Group To User | Selects the group that should be added, and clicks the **Save** button. This keyword also verifies that the web browser has the expected title. The `Click Element At Coordinates` keyword is used to reset the state of the page, as selecting the group hides the **Save** button. | 
  | Search User And Add Group | Goes to the page to add groups to the right user, and calls `Add Group To User`. This keyword also verifies that the web page has the expected title. | 
  | Add Groups | Calls `Search User And Add Group` for each group in the provisioning order. | 
- | Add All Groups | Computes the number of groups to add, and if there is at least one, calls `Add Groups`. The only way to find the number of groups to add is in the **Changes** > **groups_add** section of the provisioning order. This section does not exist if there are no groups to add, so the `Run Keyword And Ignore Error` is called to avoid propagating the error. | 
+ | Add All Groups | Computes the number of groups to add, and if there is at least one, calls `Add Groups`. The only way to find the number of groups to add is in the **Changes** > **groups_add** section of the provisioning order. This section doesn't exist if there are no groups to add, so the `Run Keyword And Ignore Error` is called to avoid propagating the error. | 
  | Remove Group From User | Goes to the URL corresponding to the API call to remove the group from the user. | 
  | Remove Groups | Calls `Remove Group From User` for each group in the provisioning order. | 
- | Remove All Groups | Computes the number of groups to remove, and if there is at least one, calls `Remove Groups`. The only way to find the number of groups to remove is in the **Changes** > **groups_remove** section of the provisioning order. This section does not exist if there are no groups to remove, so the `Run Keyword And Ignore Error` is called to avoid propagating the error. | 
+ | Remove All Groups | Computes the number of groups to remove, and if there is at least one, calls `Remove Groups`. The only way to find the number of groups to remove is in the **Changes** > **groups_remove** section of the provisioning order. This section doesn't exist if there are no groups to remove, so the `Run Keyword And Ignore Error` is called to avoid propagating the error. | 
 
 ```text
 *** Keywords ***
@@ -226,7 +226,7 @@ ExecuteModify
 
 ### Define test cases
 
-Although the Robot Framework is used for provisioning in Identity Manager, it is most often used for testing, which is why the `Test Cases` section defines what should happen when Identity Manager starts the Robot Framework task. Note that the `Launch Provisioning` keyword is mandatory for the provisioning to happen.
+Although the Robot Framework is used for provisioning in Identity Manager, it is most often used for testing, which is why the `Test Cases` section defines what should happen when Identity Manager starts the Robot Framework task. The `Launch Provisioning` keyword is mandatory for the provisioning to happen.
 
 As the browser should always be closed after the tests, a teardown is used to ensure that regardless of the script's execution state, the browser is closed.
 

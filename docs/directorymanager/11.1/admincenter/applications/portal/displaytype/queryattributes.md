@@ -47,12 +47,12 @@ on the following pages in the portal:
 
 You can also specify the following for an attribute:
 
-- The operator(s) that can be applied to the attribute on the Query Designer dialog boxes. For
+- The operators that can be applied to the attribute on the Query Designer dialog boxes. For
   example, if you allow the ‘Contains’ and ‘Equals’ operators for the ‘cn’ attribute, then only
   these operators will be displayed when users select the ‘cn’ attribute on any of the Query
   Designers.
 - The display type to use for specifying the value of the attribute. For example, it can be a simple
-  text box, a drop-down list, or a button that launches the Find dialog box for searching and
+  text box, a dropdown list, or a button that launches the Find dialog box for searching and
   selecting an object.
 - The maximum number of characters that users can enter as value for an attribute.
 
@@ -89,14 +89,14 @@ You can also specify the following for an attribute:
    purposes.
 8. Use the **Display Name** box to specify a user-friendly name for the attribute. The attribute
    would be displayed in the portal with this name.
-   This box is not available when multiple attributes have been selected.
-9. Select a security role in the **Visibility Level** drop-down list. The attribute(s) would be
+   This box isn't available when multiple attributes have been selected.
+9. Select a security role in the **Visibility Level** dropdown list. The attributes would be
    visible to users of the selected role and roles with a priority value higher than the selected
    role. See [Priority](/docs/directorymanager/11.1/admincenter/securityrole/manage.md).
-   Select _Never_ to hide the attribute(s) from all users.
-10. Use the **Display Type** drop-down list to specify the display type to use for enabling users to
-    provide a value for the attribute(s) in the portal. For example, you can select a text box,
-    drop-down list, or DN as display type. In case of DN, users can search and select a directory
+   Select _Never_ to hide the attributes from all users.
+10. Use the **Display Type** dropdown list to specify the display type to use for enabling users to
+    provide a value for the attributes in the portal. For example, you can select a text box,
+    dropdown list, or DN as display type. In case of DN, users can search and select a directory
     object as value for the attribute.
     The list contains basic display types and custom display types defined on the **Custom Display
     Types** page. See the [Display Type Categories](/docs/directorymanager/11.1/admincenter/applications/portal/categories/categories.md) topic.
@@ -105,15 +105,15 @@ You can also specify the following for an attribute:
 11. In the **ToolTip Text** box, enter the text to display when a user hovers the mouse over the
     attribute .
 
-    This box is not available when multiple attributes have been selected.
+    This box isn't available when multiple attributes have been selected.
 
 12. In the **Max Length** box, enter a number that represents the maximum number of characters that
     users can enter as value for an attribute.
-    Entering _0_ indicates that the attribute(s) can accept an unlimited number of characters as
+    Entering _0_ indicates that the attributes can accept an unlimited number of characters as
     value.
 13. The **Selected Operators** area lists the operators that can be applied to attributes in the
     Query Designers.
-    Select the check box for the operator(s) you want to provide for the selected attribute(s).
+    Select the checkbox for the operators you want to provide for the selected attributes.
 14. Click **OK**.
 15. Click **Save** on the **Smart Group Attributes** page.
 
@@ -155,7 +155,7 @@ You can change the following for an attribute:
 4. Click **Smart Group Attributes** in the left pane.
 5. On the **Smart Group Attributes** page, click the **Selected Attributes** tile under **Select
    Smart Group Attributes**. The _Name_ column lists any attributes that you have already specified.
-6. Click **Remove** for an attribute to remove it. Removed attributes would not be available in the
+6. Click **Remove** for an attribute to remove it. Removed attributes wouldn't be available in the
    portal for building Smart Group queries and other purposes. However, Smart Groups and Dynasti
    created using those attributes will be unaffected.
 7. Click **Save**.

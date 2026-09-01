@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Microsoft Entra ID Activity Auditing Configuration
 
-It is necessary to register Activity Monitor as a web application to the targeted Microsoft Entra ID
-(formerly Azure AD), in order for Activity Monitor to monitor the environment. This generates the
+Register Activity Monitor as a web application to the targeted Microsoft Entra ID
+(formerly Azure AD) to enable Activity Monitor to monitor the environment. This generates the
 Client ID and Client Secret needed by the Activity Agent. See
 [Microsoft Support](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-api-prerequisites-azure-portal)
 for assistance in configuring the Microsoft Entra ID web application.
@@ -20,15 +20,14 @@ Microsoft Entra ID.
 
 **Configuration Settings from the Registered Application**
 
-The following settings are needed from your tenant once you have registered the application:
+The following settings are needed from your tenant after you register the application:
 
 - Tenant ID – This is the Tenant ID for Microsoft Entra ID
 - Client ID – This is the Application (client) ID for the registered application
 - Client Secret – This is the Client Secret Value generated when a new secret is created
 
     :::warning
-    It is not possible to retrieve the value after saving the new key. It must be
-    copied first.
+    You can't retrieve the value after saving the new key. Copy it first.
     :::
 
 
@@ -46,7 +45,7 @@ The following permissions are required:
 
 ## Register a Microsoft Entra ID Application
 
-Follow the steps to register Activity Monitor with Microsoft Entra ID.
+To register Activity Monitor with Microsoft Entra ID, complete the following steps:
 
 :::note
 The steps below are for registering an app through the Microsoft Entra admin center. These
@@ -79,8 +78,7 @@ application. Now that the application has been registered, permissions need to b
 
 ## Grant Permissions to the Registered Application
 
-Follow the steps to set up permissions to enable the Activity Monitor to monitor data and collect
-logs from Microsoft Entra ID.
+To set up permissions to enable the Activity Monitor to monitor data and collect logs from Microsoft Entra ID, complete the following steps:
 
 :::note
 The steps below are for registering an app through the Microsoft Entra admin center. These
@@ -116,7 +114,7 @@ be collected.
 
 ## Identify the Client ID
 
-Follow the steps to find the registered application's Client ID.
+To find the registered application's Client ID, complete the following steps:
 
 :::note
 The steps below are for registering an app through the Microsoft Entra admin center. These
@@ -154,7 +152,7 @@ application’s Client Secret Key.
 
 **Overview Page**
 
-Follow the steps to find the tenant name where the registered application resides.
+To find the tenant name where the registered application resides, complete the following steps:
 
 :::note
 The steps below are for registering an app through the Microsoft Entra admin center. These
@@ -174,8 +172,7 @@ application’s Client Secret Key.
 
 ## Generate the Client Secret Key
 
-Follow the steps to find the registered application's Client Secret, create a new key, and save its
-value when saving the new key.
+To find the registered application's Client Secret, create a new key, and save its value when saving the new key, complete the following steps:
 
 :::note
 The steps below are for registering an app through the Microsoft Entra admin center. These
@@ -185,8 +182,7 @@ documentation for additional information.
 
 
 :::warning
-It is not possible to retrieve the value after saving the new key. It must be copied
-first.
+You can't retrieve the value after saving the new key. Copy it first.
 :::
 
 
@@ -212,8 +208,7 @@ list.
 **Step 5 –** Click **Add** to generate the key.
 
 :::warning
-If this page is left before the key is copied, then the key is not retrievable, and
-this process will have to be repeated.
+If you leave this page before copying the key, you can't retrieve it later, and you'll have to repeat this process.
 :::
 
 

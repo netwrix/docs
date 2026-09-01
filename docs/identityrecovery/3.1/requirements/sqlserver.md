@@ -41,7 +41,7 @@ Additional Server Requirements
 
 The following are additional requirements for the SQL Server:
 
-- All SQL Server databases configured to use ‘Simple Recovery Model’
+- All SQL Server databases must use ‘Simple Recovery Model’
 
 Database Permissions
 

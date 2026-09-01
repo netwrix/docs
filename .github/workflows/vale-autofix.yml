@@ -10,12 +10,43 @@ on:
       - '!docs/**/CLAUDE.md'
       - '!docs/**/SKILL.md'
       - '!docs/kb/**'
+      - 'scripts/**'
+      - 'package.json'
 
 concurrency:
   group: vale-autofix-${{ github.event.pull_request.number }}
 
 jobs:
+  test-scripts:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Check if scripts changed
+        id: scripts-changed
+        run: |
+          CHANGED=$(git diff --name-only origin/dev...HEAD -- scripts/ package.json)
+          if [ -z "$CHANGED" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Test anchor/slugify scripts
+        if: steps.scripts-changed.outputs.changed == 'true'
+        run: npm run test:scripts
+
   vale-autofix:
+    needs: test-scripts
+    if: >-
+      github.event.pull_request.head.repo.fork == false &&
+      github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -60,11 +91,9 @@ jobs:
       - name: Get changed markdown files
         id: changed-files
         if: steps.bot-check.outputs.skip != 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          CHANGED_MD_FILES=$(gh pr diff "$PR_NUMBER" --name-only | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' | grep -v '^docs/kb/' || true)
+          DIFF_OUTPUT=$(git diff --name-only origin/dev...HEAD -- docs/)
+          CHANGED_MD_FILES=$(printf '%s\n' "$DIFF_OUTPUT" | grep -E '^docs/.*\.md$' | grep -v '/CLAUDE\.md$' | grep -v '/SKILL\.md$' | grep -v '^docs/kb/' || true)
           if [ -z "$CHANGED_MD_FILES" ]; then
             echo "No docs markdown files changed"
             echo "count=0" >> "$GITHUB_OUTPUT"

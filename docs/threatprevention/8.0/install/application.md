@@ -6,15 +6,13 @@ sidebar_position: 10
 
 # Application Server Install
 
-Follow the steps to install Threat Prevention.
-
 **Step 1 –** From the Threat Prevention Installer package, run the server executable
 (threatprevention-server-8.0.x.xxx.msi). The Netwrix Threat Prevention Server Setup wizard opens.
 
 :::note
 Run the msi via the command prompt with elevated privileges (domain admin rights) on a
-domain-joined machine. Else the installer runs and completes without errors, though no components
-are installed.
+domain-joined machine. Else the installer runs and completes without errors, though it doesn't
+install any components.
 :::
 
 
@@ -25,7 +23,7 @@ happens:
 
 - If the installer detects .NET Framework 4.7.2 or later version installed on the machine, it
   proceeds with the installation.
-- If it does not detect .NET Framework 4.7.2 or later version, a message is displayed to inform you
+- If it doesn't detect .NET Framework 4.7.2 or later version, a message is displayed to inform you
   to install it.
 
   ![.NET Framework Required](/images/threatprevention/8.0/install/netrequired.webp)
@@ -54,10 +52,10 @@ machine.
 By default, Enterprise Manager and Administration Console are selected for installation. However,
 you can choose to select or deselect a component for installation.
 
-- To select a component – Click on the red cross next to a component name and select the **Entire
+- To select a component – Click the red cross next to a component name and select the **Entire
   feature will be installed on local hard drive** option. An icon representing a hard drive appears
   for the component.
-- To deselect a component – Click on the icon next to a component name and select the **Entire
+- To deselect a component – Click the icon next to a component name and select the **Entire
   feature will be unavailable** option. A red cross appears for the component.
 
 The components require the following hard drive space for installation:
@@ -76,7 +74,7 @@ page opens.
 
 ![Threat Prevention Server Setup wizard - Change Destination Folder page](/images/threatprevention/8.0/install/changedestinationfolder.webp)
 
-> - Use the Look in field to select the desired installation folder.
+> - Use the Look in field to select the installation folder you want.
 > - When the Folder name box is set as desired, click **OK**.
 
 The wizard returns to the Custom Setup page. You can use the **Reset** button to revert to the
@@ -146,7 +144,7 @@ connection.
 
     :::note
     In case of SQL Server authentication, the credentials are tested on clicking
-    **Next**. If the credential authentication fails, the setup does not proceed and a pop-up
+    **Next**. If the credential authentication fails, the setup doesn't proceed and a pop-up
     window displays failure details.
     :::
 
@@ -169,7 +167,7 @@ connection.
 
   :::note
   For Windows authentication, the credentials are tested on clicking **Next**. If the
-  credential authentication fails, the setup does not proceed and a pop-up window displays failure
+  credential authentication fails, the setup doesn't proceed and a pop-up window displays failure
   details.
   :::
 
@@ -181,7 +179,7 @@ finished, the Completed the Netwrix Threat Prevention Server Setup Wizard page i
 
 ![Threat Prevention Server Setup wizard – Completed page](/images/threatprevention/8.0/install/complete.webp)
 
-If .NET Framework 4.7.2 is not installed, the Completed the Netwrix Threat Prevention Server Setup
+If .NET Framework 4.7.2 isn't installed, the Completed the Netwrix Threat Prevention Server Setup
 Wizard page displays the **Run .NET installation package** checkbox. Check it and click **Finish**
 to install it.
 

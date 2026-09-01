@@ -15,7 +15,7 @@ related to configuring reports. The options at the top of the Reports view are:
 
 - Properties – Opens the [Job Properties](/docs/accessanalyzer/12.0/admin/jobs/job/properties/overview.md) page for the job that the
   report is for
-- Run Now – Runs the currently selected job that the report is for
+- Run Now – Runs the selected job that the report is for
 - Open Folder – Opens the Report’s folder location with supporting files in the Windows Explorer
 - View Log – Opens the log for the job that the report is for
 

@@ -37,7 +37,7 @@ Create a policy by proceeding as follows:
 
 ![New Policy](/images/identitymanager/policycreation_policies_v602.webp)
 
-**Step 2 –** Click on **+ New policy** at the top right corner.
+**Step 2 –** Click **+ New policy** at the top right corner.
 
 ![createpolicy](/images/identitymanager/createpolicy.webp)
 
@@ -56,13 +56,13 @@ types to have their assignment's end dates postponed without any validation
 - Is Managed by External Source — Can be enabled **only during policy creation** to indicate that its
 permissions are managed by another IGA tool and are to be ignored by Identity Manager's role model computation
 - Maximum Duration — Duration (in minutes) after which the policy's roles and resource types will be
-automatically revoked, if no earlier end date is specified. It impacts only the roles and resource types which are manually assigned after the maximum duration is set. Pre-assigned items are not impacted.
+automatically revoked, if no earlier end date is specified. It impacts only the roles and resource types which are manually assigned after the maximum duration is set. Pre-assigned items aren't impacted.
 - Grace Period — Duration (in minutes) for which a lost automatic role or resource type is
 prolonged. A review will be required to validate or decline the entitlement prolongation. Inferred entitlements won't be lost unless the end of the grace period is reached or the prolongation is declined.
 - Lock the end date — locks manual permission's at the end date
 
     - Explicit, by default not context bound — By default, the assignment's end date will not be
-context bound in order to encourage the manual entry of an end date
+context bound to encourage the manual entry of an end date
     - Explicit, by default context bound — By default, the assignment's end date will be context
 bound and therefore locked, but a manual date can be entered
     - Never — The assignment's end date will never be locked and needs to be specified manually
@@ -70,13 +70,13 @@ bound and therefore locked, but a manual date can be entered
     - Dimensions — Criteria that, if met, trigger the membership of given identities to the policy
 
 :::note
- What we call another IGA tool can be another application or even another version of Identity Manager. 
+ Another IGA tool can refer to another application or even another version of Identity Manager. 
 :::
-**Step 4 –** Click on **Create**.
+**Step 4 –** Click **Create**.
 
-Once you have completed the steps the policy is created.
+After you complete the steps, the policy is created.
 
 ## Verify Policy Creation
 
-In order to verify the process, check that the policy has been added with the right options to the list on the **Access Policies** page.
+To verify the process, check that the policy has been added with the right options to the list on the **Access Policies** page.
 

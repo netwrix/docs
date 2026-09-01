@@ -19,8 +19,8 @@ topic for additional information.
 
 ![Publish Security page](/images/accessanalyzer/11.6/admin/report/wizard/publishsecurity.webp)
 
-Roles assigned at the global level are inherited down to the report configuration. Additional report
-viewer privileges can also be added at the job group or job levels.
+Roles assigned at the global level inherit down to the report configuration. You can also add
+additional report viewer privileges at the job group or job levels.
 
 De-select the Include Report Reviewers from this object's parent checkbox to remove all inherited
 accounts with the Report Viewer role.
@@ -33,15 +33,15 @@ steps to add an account.
 
 ![Select User, Service Account, or Group window](/images/accessanalyzer/11.6/admin/report/wizard/addreportviewer.webp)
 
-**Step 2 –** On the Select User, Service Account or Group window, select the desired account and
+**Step 2 –** On the Select User, Service Account or Group window, select the account you want and
 then click **OK**.
 
 ![Report Viewer user added in wizard](/images/accessanalyzer/11.6/admin/report/wizard/reportviewer.webp)
 
-The selected account is added to the list with a Role of Report Viewer.
+Enterprise Auditor adds the selected account to the list with a Role of Report Viewer.
 
 :::note
-The permission for accounts that are not Inherited can also be removed using the wizard.
+You can also remove the permission for accounts that aren't Inherited using the wizard.
 To remove an account, select it and then click **Remove**.
 
 :::

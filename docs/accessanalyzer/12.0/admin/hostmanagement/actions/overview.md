@@ -18,9 +18,9 @@ The available actions are:
 - [Add Hosts](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/add.md) – Create a new host list by manually entering hosts or importing a host list
   (only available in the Host Management node)
 - [View/Edit Host](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/viewhost.md) – Open the Host Details View, which displays the collected host
-  inventory information for the selected host in an easier-to-read format and allows you to manually
+  inventory information for the selected host in an easier-to-read format and lets you manually
   edit the host inventory information
-- [Delete Host(s)](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/deletehost.md) – Delete host from the selected list (permanently deletes host
+- [Delete Hosts](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/deletehost.md) – Delete host from the selected list (permanently deletes host
   from the host master table if used in the Host Management node)
 - [Import Location](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/importlocation.md) – Import the physical location data for hosts from a CSV file
   or database without creating a new host list. Location column is in the
@@ -35,8 +35,9 @@ The available actions are:
 - [Export Data](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/export.md) – Export the current data grid to a HTML, XML, or CSV file
 - [Suspend/Resume Host Inventory](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/suspend.md) – Pause an **In progress** host inventory or resume a
   paused **In queue** host inventory
-- External commands – Sub-header (not activity) that separates the Activities above which occur
-  within the Access Analyzer Console from the Activities below which open external processes:
+- External commands – Sub-header (not activity) that separates the activities that occur
+  within the Access Analyzer Console from the following external command activities, which open
+  external processes:
 
     - Manage Host – Opens the Microsoft Management Console interface for the selected host if it has
       that feature enabled
@@ -50,7 +51,7 @@ Activities available only at the individual host list nodes are:
 - [Edit List](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/editlist.md) – Edit the selected host list in the Host List Wizard
 - [Edit Query](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/editquery.md) – Edit the Host Discovery query settings for the selected query-created
   host list
-- [Rename List](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/rename.md) – Rename the selected host list (should not be used if the host list has
-  already been assigned to a job for execution)
+- [Rename List](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/rename.md) – Rename the selected host list (don't use this option if you've
+  already assigned the host list to a job for execution)
 - [Delete List](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/deletelist.md) – Delete the selected host list
 - [View Query](/docs/accessanalyzer/12.0/admin/hostmanagement/actions/viewquery.md) – Opens the Host Discovery Queries window

@@ -8,9 +8,6 @@ sidebar_position: 10
 
 You can revert an Entra ID object to its previous state.
 
-Follow the steps to roll back an Entra ID object, including user accounts, groups, and
-organizational units.
-
 **Step 1 –** Click Entra ID in the left pane to open the
 [Entra ID Page](/docs/identityrecovery/3.1/admin/entraid/overview.md).
 
@@ -32,8 +29,8 @@ to finish the wizard.
 ![Object Rollback wizard - Confirm page](/images/identityrecovery/3.1/product/entra_id/rollback/entra_id_rollback_page2.png)
 
 
-**Step 5 –** A completed message is displayed when the rollback is successful. Click **OK**.
+**Step 5 –** When the rollback is successful, a completion message appears. Click **OK**.
 
 ![Object Rollback Sucessful message](/images/identityrecovery/3.1/product/entra_id/rollback/entra_id_rollback_finished.png)
 
-The object has been rolled back.
+The system has rolled back the object.

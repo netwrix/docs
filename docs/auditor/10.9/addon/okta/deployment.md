@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Deploy the Add-On
 
-Follow the steps to deploy the Add-On.
+To deploy the Add-On:
 
 **Step 1 –** Download the distribution package.
 

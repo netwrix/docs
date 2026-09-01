@@ -29,7 +29,7 @@ members can create user objects in any OU in the identity store.
 each role, then the policies configured for all roles apply to the user. Hence, a user with three
 roles - where a different OU for the Group object is specified for each role - can create groups in
 any of the three OUs.  
-(2( The New Object policy does not apply to a Microsoft Entra ID identity store.
+(2( The New Object policy doesn't apply to a Microsoft Entra ID identity store.
 :::
 
 
@@ -43,7 +43,7 @@ any of the three OUs.
 5. On the **Edit Security Role** page, click **Specify policies for the members** in the
    **Policies** area.
 6. On the **Add Policies** pane, click the **New Object** tab.
-7. Select the **Users can create objects only in their own container** check box to limit role
+7. Select the **Users can create objects only in their own container** checkbox to limit role
    members to create directory objects in the organizational unit they reside in respectively.  
    Selecting this option disables the remaining options on the tab.
 8. Click **OK**.
@@ -59,9 +59,9 @@ the OU the logged-in user resides in as read-only.
 ## Restrict Role Members to Create Objects in Specific OUs
 
 You can specify one or more containers for an object type (say Group) to restrict role members to
-create group objects in those container(s) only.
+create group objects in those containers only.
 
-**To specify OU(s) for object creation:**
+**To specify OUs for object creation:**
 
 1. In Admin Center, click **Identity Stores** in the left pane.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
@@ -71,9 +71,9 @@ create group objects in those container(s) only.
 5. On the **Edit Security Role** page, click **Specify policies for the members** in the
    **Policies** area.
 6. On the **Add Policies** pane, click the **New Object** tab.
-7. Click **Add** and select an object type to specify the container(s) for.
+7. Click **Add** and select an object type to specify the containers for.
 8. On the **Add Container** dialog box, select one or more containers where role members can create
-   the particular objects. Then click **Add**. The container(s) are displayed with the name of the
+   the particular objects. Then click **Add**. The containers are displayed with the name of the
    respective object type.
 9. You can choose to set a container for all object types. Click the **Copy** button for a container
    and then click **Yes** on the **Copy Container** message box. The container is displayed with all
@@ -84,7 +84,7 @@ create group objects in those container(s) only.
 
 :::note
 When role members create a new object, the _Container_ option shows the containers specified
-for the respective object type. The user can select the desired container to create the object
+for the respective object type. The user can select the container you want to create the object
 there. When one container is specified, the _Container_ option displays its distinguished name as
 read-only.
 :::

@@ -166,8 +166,8 @@ good choice here) and click Add Proxied Device. Add the new devices to the Splun
 Devices group.
 
 If the logs collected are from a custom application, you may want to treat the application as
-a device in Change Tracker instead of its individual servers. This way change events would belong
-to the application and not to individual servers. To do this, manually create a proxied
+a device in Change Tracker instead of its individual servers. This way, change events belong
+to the application, not to individual servers. To do this, manually create a proxied
 device named after the application, then ensure the SPL query uses the same application name
 for its Device column.
 

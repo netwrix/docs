@@ -9,7 +9,7 @@ sidebar_position: 50
 Use this API to retrieve information of multiple contacts from a specified identity store.
 
 :::note
-The contact object type is not supported in a Microsoft Entra ID based identity store.
+The contact object type isn't supported in a Microsoft Entra ID based identity store.
 :::
 
 

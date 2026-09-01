@@ -23,9 +23,9 @@ developed by your own organization.
 
 ## Prerequisites
 
-Implementing this connector requires giving Identity Manager [application permissions](https://docs.microsoft.com/en-us/graph/auth/auth-concepts#application-permissions), because Identity Manager does not access the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) on behalf of a user but with [its own identity](https://docs.microsoft.com/en-us/graph/auth-v2-service), and delegated permissions are not enough. These application permissions require the consent of an administrator of the target Microsoft Entra ID tenant.
+Implementing this connector requires giving Identity Manager [application permissions](https://docs.microsoft.com/en-us/graph/auth/auth-concepts#application-permissions), because Identity Manager doesn't access the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) on behalf of a user but with [its own identity](https://docs.microsoft.com/en-us/graph/auth-v2-service), and delegated permissions aren't enough. These application permissions require the consent of an administrator of the target Microsoft Entra ID tenant.
 
-See the [Register for Microsoft Entra ID](../../../integration-guide/connectors/configuration-details/azuread-register) topic on how to register Identity Manager as an application with the Microsoft Identity Platform in order to grant Identity Manager a service account which authenticates with the target Microsoft Entra ID.
+See the [Register for Microsoft Entra ID](../../../integration-guide/connectors/configuration-details/azuread-register) topic on how to register Identity Manager as an application with the Microsoft Identity Platform to grant Identity Manager a service account which authenticates with the target Microsoft Entra ID.
 
 ## Export
 
@@ -33,11 +33,11 @@ For a configured set of directory objects on an Microsoft Entra ID instance, thi
 
 ### Configuration
 
-This process is configured through a connection in the UI and/or the XML configuration. See the [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) topic for additional information.
+You configure this process through a connection in the UI and/or the XML configuration. See the [Connection](../../../integration-guide/toolkit/xml-configuration/connectors/connection) topic for additional information.
 
 Or in the `appsettings.agent.json > Connections` section:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json
@@ -61,7 +61,7 @@ appsettings.agent.json
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json
@@ -89,7 +89,7 @@ The table below summarizes the setting attributes of Microsoft Entra ID connecto
  | ApplicationId (required) | String | GUID that uniquely identifies the application registration in the Azure tenant. **NOTE:** The value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (client) ID** | 
  | ApplicationKey (required) | String | Secret associated with the `ApplicationId` **NOTE:** The value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Certificate & secrets** > **Client secrets** > **Client Secret** | 
  | TenantId (required) | String | GUID that uniquely identifies the Azure tenant. **NOTE:** The value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (tenant) ID** | 
- | ResponseUri (default value: `http://localhost`) | String | URI used by Azure to contact back the application with the tokens. This response Uri needs to be registered in the [app registration](https://aka.ms/msal-net-register-app). | 
+ | ResponseUri (default value: `http://localhost`) | String | URI used by Azure to contact back the application with the tokens. You must register this response Uri in the [app registration](https://aka.ms/msal-net-register-app). | 
  | MicrosoftAuthorityPath (optional) | String | Pattern for Microsoft Authority Path. | 
  | MicrosoftGraphPath (default value: https://graph.microsoft.com/.default) | String | Scope requested to access a protected API. **NOTE:** For this flow (client credentials), the scope should be of the form `{ResourceIdUri/.default}`. [See Microsoft's documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-client-creds-grant-flow#see-microsofts-documentation) for additional information. | 
  | MicrosoftGraphPathApi (default value: `https://graph.microsoft.com/v1.0/`) | String | Microsoft Graph Uri API. | 
@@ -102,23 +102,23 @@ This connector is meant to generate the following files:
 mapping associated with the connection.
 
 :::note
- The values are exported from the entities listed in the attribute `C0` of the `EntityTypeMapping`. 
+ The connector exports the values from the entities listed in the attribute `C0` of the `EntityTypeMapping`. 
 :::
 For example, with the following configuration:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <EntityTypeMapping Identifier="MicrosoftEntraID_DirectoryObject" Connector="MicrosoftEntraID" ConnectionTable="MicrosoftEntraIDExport_directoryobjects" C0="user group directoryRole servicePrincipal">   <Property Identifier="accountEnabled" ConnectionColumn="accountEnabled" />   <Property Identifier="objectid" ConnectionColumn="id" IsPrimaryKey="true" />   <Property Identifier="mail" ConnectionColumn="mail" /> </EntityTypeMapping>
 ```
 
-Four entities are exported (`user`; `group`; `directoryRole`; `servicePrincipal`) and whose names are to be found in the column `@odata.type`. Then `MicrosoftEntraIDExport_directoryobjects.csv` looks like:
+The connector exports four entities (`user`; `group`; `directoryRole`; `servicePrincipal`), whose names appear in the column `@odata.type`. Then `MicrosoftEntraIDExport_directoryobjects.csv` looks like:
 
 ``` MicrosoftEntraIDExport_directoryobjects.csv Command,@odata.type,accountEnabled,id,mail ... ```
 :::tip
- Remember, attributes described as "Supported only on the Get `<entity_name>` API" in the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) documentation cannot be retrieved through this connector. The export task will raise an error if these attributes are used in your EntityTypeMapping. 
+ Remember, this connector can't retrieve attributes described as "Supported only on the Get `<entity_name>` API" in the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-1.0) documentation. The export task raises an error if you use these attributes in your EntityTypeMapping. 
 :::
-This connector supports [Microsoft Entra ID Schema Extensions](https://docs.microsoft.com/en-us/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions) but does not support [Microsoft Graph Schema Extensions](https://docs.microsoft.com/en-us/graph/extensibility-schema-groups).
+This connector supports [Microsoft Entra ID Schema Extensions](https://docs.microsoft.com/en-us/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions) but doesn't support [Microsoft Graph Schema Extensions](https://docs.microsoft.com/en-us/graph/extensibility-schema-groups).
 
 - `<connectionIdentifier>_<navigationProperty>_<entity>.csv` describing the navigation property from
 one entity to another.
@@ -129,7 +129,7 @@ For example `AzureADExport_members_group.csv` would look like:
 Where command can be `insert`, `update` or `delete`; groupId is the id of the group; id is the id of the group member (in this context).
 
 :::note
- Only the navigation properties `members` and `owners` are exported. These navigation properties are automatically detected according to the data exported. 
+ The connector exports only the navigation properties `members` and `owners`, and detects them automatically according to the data exported. 
 :::
 - one file `<connectionIdentifier>_cookie_<entity>.bin` per entity, containing an URL with a
 `delta token` useful for incremental export.
@@ -137,25 +137,25 @@ Where command can be `insert`, `update` or `delete`; groupId is the id of the gr
     > For example `MicrosoftEntraIDExport_cookie_user.bin`
 
 :::tip
- Remember, most exports can be run in complete mode, where the CSV files will contain all entries, or in incremental mode, where CSV files will contain only the entries which have been modified since the last synchronization. 
+ Remember, you can run most exports in complete mode, where the CSV files contain all entries, or in incremental mode, where CSV files contain only the entries modified since the last synchronization. 
 :::
 A task can use the IgnoreCookieFile boolean property, and a command line (with an executable) can use the option --ignore-cookies.
 
-The CSV files are stored in the Export Output folder, and the cookie file in the Export Cookies folder. See the [Application Settings](../../../integration-guide/network-configuration/agent-configuration/appsettings) topic for additional information.
+The connector stores the CSV files in the Export Output folder, and the cookie file in the Export Cookies folder. See the [Application Settings](../../../integration-guide/network-configuration/agent-configuration/appsettings) topic for additional information.
 
 For more details, see Microsoft's documentation on [columns and attributes synchronized to Microsoft Entra ID](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-sync-attributes-synchronized).
 
 ## Fulfill
 
-This connector writes to the Microsoft Entra ID, to create, update and delete Microsoft Entra ID objects, initiated manually through the UI or automatically by enforcing the policy. See the [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) topic for additional information.
+This connector writes to the Microsoft Entra ID, to create, update, and delete Microsoft Entra ID objects, initiated manually through the UI or automatically by enforcing the policy. See the [Evaluate Policy](../../../integration-guide/role-assignment/evaluate-policy) topic for additional information.
 
 ### Configuration
 
-Same as for export, fulfill is configured through connections.
+Same as for export, you configure fulfill through connections.
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 appsettings.agent.json
@@ -182,13 +182,13 @@ The table below summarizes the setting attributes.
  | --- | --- | --- | 
  | ApplicationId required | String | GUID that uniquely identifies the application registration in the Azure tenant. **NOTE:** value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (client) ID** | 
  | ApplicationKey required | String | Secret associated with the `ApplicationId`. **NOTE:** value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Certificate & secrets** > **Client secrets** > **Client Secret** | 
- | TenantId required | String | **NOTE:** GUID that uniquely identifies the Azure tenant. value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (tenant) ID** | 
- | ResponseUri default value: `http://localhost` | String | URI used by Azure to contact back the application with the tokens. This response Uri needs to be registered in the [app registration](https://aka.ms/msal-net-register-app). | 
+ | TenantId required | String | GUID that uniquely identifies the Azure tenant. **NOTE:** value obtained at registration: **App registrations** > **Owned applications** > **Identity Manager** > **Overview** > **Application (tenant) ID** | 
+ | ResponseUri default value: `http://localhost` | String | URI used by Azure to contact back the application with the tokens. You must register this response Uri in the [app registration](https://aka.ms/msal-net-register-app). | 
  | MicrosoftGraphPathApi default value: https://graph.microsoft.com/v1.0/ | String | Microsoft Graph Uri API. | 
 
 ### Output details
 
-This connector can create a new resource, update and delete any Microsoft Entra ID objects and groups' memberships via the UI.
+This connector can create a new resource, update, and delete any Microsoft Entra ID objects and groups' memberships via the UI.
 
 ## Authentication
 
@@ -200,7 +200,7 @@ See the[appsettings.agent](../../../integration-guide/network-configuration/agen
 
 **Credential protection**
 
-Data protection can be ensured through:
+You can ensure data protection through:
 
 - [RSA Encryption](../../../integration-guide/network-configuration/agent-configuration/rsa-encryption),
 configured in the `appsettings.encrypted.agent.json` file

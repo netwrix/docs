@@ -56,7 +56,7 @@ In short, Netwrix will try to help, but the resolution covers only configurable 
 
 ### Discontinued Support
 
-A product or product version that is **discontinued** isn't maintained by Netwrix and isn't eligible to receive technical support assistance or updates of any kind. Customers are required to update to an actively supported version to obtain assistance or receive updates. An end-of-life product:
+A product or product version that is **discontinued** isn't maintained by Netwrix and isn't eligible to receive technical support assistance or updates of any kind. Customers must update to an actively supported version to obtain assistance or receive updates. An end-of-life product:
 
 - Doesn't receive new feature releases, bug fixes, or security fixes
 - Is ineligible for assistance from the Netwrix technical support team
@@ -65,7 +65,7 @@ A product or product version that is **discontinued** isn't maintained by Netwri
 
 ## Endpoint Protector Specific Definitions
 
-The table below defines the key lifecycle stages for each Endpoint Protector Server version and what level of support is offered at each stage. These milestones reflect how versions are managed over time, how updates are delivered, and what patching behavior is expected.
+The table below defines the key lifecycle stages for each Endpoint Protector Server version and what level of support each stage offers. These milestones reflect how versions are managed over time, how updates are delivered, and what patching behavior is expected.
 
 To remain fully supported, customers must stay within the actively supported “N” or “N-1” version tracks and have the latest Fixes & Features (F&F) and Critical Security Patch (CSP) updates applied.
 
@@ -78,7 +78,7 @@ The table below defines how long different versions remain eligible for support 
 | Initial Fixes & Features (F&F) Patch | The first cumulative Fixes & Features patch for a major version. | Required for Active Support. Contains all fixes, improvements, and CSPs from the initial release. |
 | Subsequent F&F Patches | Additional cumulative F&F updates for that version line. | Required for Active Support. Each F&F patch includes all earlier F&F patches and any CSPs from its cycle. |
 | Critical Security Patch (CSP) | Released between F&F patches to address urgent security issues. | Must be applied on top of the latest F&F patch. Required for Active Support.<br/><br/>Cumulative only within that version. Can't be applied independently. |
-| Next Version (N+1) | A new major version is triggered when a required change (security or functional) can't be delivered via an offline patch. | Active Support. This marks a new baseline; prior N and N-1 tracks may transition based on policy. |
+| Next Version (N+1) | Netwrix triggers a new major version when a required change (security or functional) can't be delivered via an offline patch. | Active Support. This marks a new baseline; prior N and N-1 tracks may transition based on policy. |
 | Second Subsequent Version (N+2) | A version now two major cycles newer than the most current version. | Original N track receives limited Support for 30 days.<br/><br/>On the 31<sup>st</sup> day, the support for that original N track transitions to Discontinued Support. |
 
 ## Important Clarifications Explored In this Document
@@ -213,12 +213,12 @@ To balance stability with early access, Netwrix applies a tiered rollout strateg
 
 **Self-Hosted (On-Premises) Customers**
 
-- Self-Hosted customers maintain **full control** over when and how all patches—both security and non-security—are applied.
-- Security patches aren't automatically applied; instead, they are made available as Offline Patch installers.
-- This model is recommended for organizations that:
-  - Operate in regulated industries
-  - Require scheduled maintenance windows
-  - Need to validate changes before deployment
+- Self-Hosted customers maintain **full control** over when and how to apply all patches—both security and non-security.
+- Security patches don't apply automatically; instead, customers download and apply them as Offline Patch installers.
+- Use this model if your organization:
+  - Operates in regulated industries
+  - Requires scheduled maintenance windows
+  - Needs to validate changes before deployment
 
 Summary Comparison Table
 
@@ -237,7 +237,7 @@ To maintain full, Active support and avoid disruptions, Netwrix recommends:
 
 - Regular Updates: Keep both the EPP server and agent versions current. Staying in the N or N-1 track plus keeping CSP and F&F patches updated ensures continued access to all security plus new features and fixes.
 - EPP Server updates: When a new patch for EPP server version is available, test the update in your environment promptly to ensure compatibility and performance.
-- Issue Reproduction: If a bug or issue arises, the Netwrix support team AT LEAST requires that the latest agent version be installed and the issue reproduced on that version, before proceeding with a support case. If you’re using an outdated EPP server, support may also require you to update EPP server to the latest F&F and/or CSP for full end-to-end checking before a case is permitted to proceed.
+- Issue Reproduction: If a bug or issue arises, the Netwrix support team requires that you install the latest agent version and reproduce the issue on that version before proceeding with a support case. If you’re using an outdated EPP server, support may also require you to update EPP server to the latest F&F and/or CSP for full end-to-end checking before support proceeds with your case.
 
 ## How to Get Ideal Support (Practical)
 
@@ -259,9 +259,9 @@ As long as you’re able to replicate a concern with a supported server (with la
 
 Netwrix Endpoint Protector (EPP) follows a support model where the current (“N”) and previous (“N-1”) major server versions are fully supported, as long as they are fully patched. However, customers may ask: _When does a new version get designated as a “Next Version,” replacing the previous N and N-1?_
 
-A new major version is triggered only under specific technical conditions—not merely because a new server image or patch has been released.
+Netwrix triggers a new major version only under specific technical conditions—not merely because a new server image or patch has been released.
 
-Netwrix designates a version as a new major version (“Next Version”) when one or more of the following triggering conditions occur:
+Netwrix designates a version as a new major version (“Next Version”) when one or more of the following conditions occur:
 
 - Operating System Foundation Changes: The underlying OS (typically Ubuntu) is upgraded to a new LTS or version that introduces fundamental changes that can't be backported.
 - Core Component Shifts: Replacement or major revision of critical third-party components (e.g., database engines, libraries, middleware) that materially alter how the system operates.
@@ -300,7 +300,7 @@ Both "tracks" are fully supported as long as the latest Offline Patch is applied
 
 … PLUS any corresponding CSPs which were generated after those Fixes & Features Patches.
 
-In some future date, should a new major N release ships, then and only then does:
+When a new major N release ships in the future, the following occurs:
 
 - The "Track" of 2509.0.1.0 go to Limited Support (for 120 days), then Discontinued support (after 120 days)
 - The new N+1 version becomes the current N track, and 2509.0.1.0 (25.9) transitions to N-1 support (immediately.)

@@ -62,7 +62,7 @@ To make changes to your recommendations, you must return to the first tab. Click
 :::
 
 
-**Step 6 –** When all recommendations are confirmed and the desire notes added, click **Submit**. A
+**Step 6 –** When all recommendations are confirmed and the notes you want added, click **Submit**. A
 message displays stating that the review is complete. Click **OK** to close the message window.
 
 The review for this resource is now complete. You will be redirected to the Pending Reviews page.

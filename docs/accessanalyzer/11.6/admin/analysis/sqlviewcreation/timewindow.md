@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # SQLViewCreation: Time Window
 
-Use the Source and Time Window page to specify which data to access if using multiple Enterprise
-Auditor Consoles or history is enabled.
+Use the Source and Time Window page to specify which data to access when using multiple Enterprise
+Auditor Consoles or with history enabled.
 
 ![View and Table Creation Analysis Module wizard Source and Time Window page](/images/accessanalyzer/11.6/admin/analysis/sqlviewcreation/timewindow.webp)
 
@@ -28,5 +28,5 @@ data was collected:
     - Data from this Enterprise Auditor Console only – Uses only data from the Enterprise Auditor
       Console generating the current analysis module
 
-- Time Window – Select a time window for each table in the analysis. The drop-down menu selections
+- Time Window – Select a time window for each table in the analysis. The dropdown menu selections
   vary based on each table's history settings.

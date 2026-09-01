@@ -14,7 +14,7 @@ domain controller within the domain.
 The AD_TimeSync Job uses the Registry Data Collector for the following query:
 
 :::warning
-Do not modify this query. The query is preconfigured for this job.
+Don't modify this query. The query is preconfigured for this job.
 :::
 
 

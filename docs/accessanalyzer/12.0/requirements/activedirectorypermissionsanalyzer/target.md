@@ -21,7 +21,7 @@ article for additional information.
 
 **Domain Controller Requirements**
 
-The following are requirements for the domain controllers to be scanned:
+The following are requirements for the domain controllers you want to scan:
 
 - .NET Framework 4.5+ installed
 - WINRM Service installed

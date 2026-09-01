@@ -6,8 +6,8 @@ sidebar_position: 60
 
 # EWSMailbox: Criteria
 
-The Select DLP criteria for this scan page is where to select the criteria to use for the sensitive
-data scan are selected. It is a wizard page for the Sensitive Data category.
+Use the Select DLP criteria for this scan page to select the criteria for the sensitive data scan.
+It is a wizard page for the Sensitive Data category.
 
 ![EWS Mailbox Data Collector Wizard Criteria page](/images/accessanalyzer/12.0/admin/datacollector/ewsmailbox/criteria.webp)
 
@@ -20,8 +20,8 @@ The options on the Criteria page are:
   sensitive data criteria to scan for
 - Select All - Click **Select All** to enable all sensitive data criteria for scanning
 - Clear All - Click **Clear All** to remove all selections from the table
-- Select the checkboxes next to the sensitive data criteria options to enable it to be scanned for
-  during job execution
+- Select the checkboxes next to the sensitive data criteria options you want to scan during job
+  execution
 
 The table contains the following types of criteria:
 

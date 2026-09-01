@@ -11,8 +11,8 @@ trustee on the selected domain during the specified date range.
 
 ![Principal Attribute Changes report](/images/accessinformationcenter/12.0/resourceaudit/activedirectory/domain/principalattributechanges.webp)
 
-This table is blank if no changes occurred during the specified date range. This report is comprised
-of the following columns:
+This table is blank if no changes occurred during the specified date range. This report contains
+the following columns:
 
 - Trustee Name – Owner of the trustee account
 - Trustee Account – Active Directory account associated with the trustee

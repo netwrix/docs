@@ -25,7 +25,7 @@ component of Access Analyzer and is available with all Access Analyzer licenses.
 
 ## PowerShell Query Configuration
 
-The PowerShell Data Collector is configured through the PowerShell Data Collector Wizard, which
+Configure the PowerShell Data Collector through the PowerShell Data Collector Wizard, which
 contains the following pages:
 
 - Welcome
@@ -37,5 +37,5 @@ contains the following pages:
 
 ![PowerShell Data Collector Wizard Welcome page](/images/accessanalyzer/12.0/admin/datacollector/powershell/welcome.webp)
 
-The Welcome page can be hidden by checking the **Do not display this page the next time** box when
-the wizard is open and configuration settings are saved.
+You can hide the Welcome page by checking the **Don't display this page the next time** box while
+the wizard is open and saving configuration settings.

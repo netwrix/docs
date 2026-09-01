@@ -83,8 +83,7 @@ apply to all ﬁles located in the speciﬁc folder but also to any other ﬁles
 subfolders.
 
 :::note
-In addition to deﬁning the File Location Denylist, the browser or application used to
-transfer ﬁles also needs to be selected from within the Content Aware Protection Policy.
+To use File Location Denylists, also select the browser or application for file transfers from within the Content Aware Protection Policy.
 :::
 
 
@@ -148,17 +147,14 @@ across the protected network. Regex Denylists are available for both the Content
 and eDiscovery modules.
 
 :::warning
-If possible, avoid using Regular Expressions, as their complexity typically increases
-the resources usage. Using a large number of regular expressions as ﬁltering criteria typically
-increases CPU usage. Also, improper regular expressions or improper use can have negative
-implications.
+Avoid Regular Expressions when possible—their complexity increases resource usage and CPU load. Improper regex patterns can have negative effects.
 :::
 
 
 From this section, you can view and add regex expressions and from the Actions column, you can edit
 or delete an existing denylist.
 
-To create a new denylist, under the list of available denylists, click **Ad**d, provide a **name**
+To create a new denylist, under the list of available denylists, click **Add**, provide a **name**
 and **description** and then add the regex expression.
 
 ![You can view and add regex expressions and from the Actions column](regexdenylists.webp)
@@ -196,7 +192,7 @@ This means that only text with the exact same casing will be matched.
 **Example:**<br />
 **Pattern:** `test@example\\.com`<br />
 **Matches:** `test@example.com`<br />
-Does **not match:** `TEST@EXAMPLE.COM` or `Test@Example.Com`
+Doesn't **match:** `TEST@EXAMPLE.COM` or `Test@Example.Com`
 
 
 **2. Case-Insensitive Matching**
@@ -224,7 +220,7 @@ Regex also lets you apply case-insensitive matching only to specific parts of yo
 **Example:**<br />
 **Pattern:** `(?i)confidential(?-i) document`<br />
 **Matches:** `"CONFIDENTIAL document"`, `"Confidential document"`<br />
-Does **not match:** `"CONFIDENTIAL DOCUMENT"`
+Doesn't **match:** `"CONFIDENTIAL DOCUMENT"`
 
 **Regex Operators**
 

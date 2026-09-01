@@ -8,7 +8,7 @@ sidebar_position: 10
 
 When Enterprise Auditor SharePoint scans are run in agent-based mode, the Enterprise Auditor
 SharePoint Agent must be installed on the SharePoint Application server which hosts the Central
-Administration component prior to executing the scans. This is typically the first server stood up
+Administration component before executing the scans. This is typically the first server deployed
 during the SharePoint farm installation process in this mode. The data collection processing is
 conducted by the SharePoint Agent for the target environment. The final step in data collection is
 to transfer the data collected in the SQLite databases, or Tier 2 databases, on the Enterprise
@@ -30,7 +30,7 @@ The following are additional requirements for the Enterprise Auditor SharePoint 
 
 **Sensitive Data Discovery Auditing Requirement**
 
-In addition to having the Sensitive Data Discovery Add-on be installed on the Enterprise Auditor
+In addition to having the Sensitive Data Discovery Add-on installed on the Enterprise Auditor
 Console server, The following is required to run Sensitive Data Discovery scans:
 
 - Sensitive Data Discovery Add-On, 64-bit version, installed on the Enterprise Auditor SharePoint
@@ -39,20 +39,20 @@ Console server, The following is required to run Sensitive Data Discovery scans:
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
+(Java) version on the server. The JDK deployed is prepackaged and doesn't require any
 configuration; it has been preconfigured to work with Enterprise Auditor and should never be
 customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
 environment.
 :::
 
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
+If running Sensitive Data Discovery (SDD) scans, you must increase the minimum amount
 of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
 is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
 
 ## Permissions Explained
 
-If limited provisioning of the service account is not required by the organization, then the
+If limited provisioning of the service account isn't required by the organization, then the
 following permissions are sufficient for successful agent-based scans:
 
 - Membership in the local Administrator group on the on server where the Enterprise Auditor
@@ -85,10 +85,10 @@ following permissions are sufficient for successful agent-based scans:
         - This is required so the Enterprise Auditor auditing account can make calls against the
           SharePoint web services to remotely gather information around permissions, site hierarchy,
           content and more
-        - If the group does not exist already, then you need to create a new group at that level and
+        - If the group doesn't exist already, then you need to create a new group at that level and
           grant it Read access. Specifically, it is a group that exists within Central
           Administration at the farm administrator level. This group only requires Read access and
-          is not giving farm admin access. Once the group is created, add the service account that
+          isn't giving farm admin access. After the group is created, add the service account that
           Enterprise Auditor will be leveraging to scan SharePoint.
 
 - Web Application permissions:
@@ -103,7 +103,7 @@ following permissions are sufficient for successful agent-based scans:
 
     - SPDataAccess on the SharePoint Content database and all Configuration databases
 
-        - This permission should be applied on the desired Configuration database and all Content
+        - This permission should be applied on the Configuration database and all Content
           databases for the SharePoint version
         - This version-specific permission is required for Enterprise Auditor to execute read
           operations directly against the SharePoint databases, gather information from the
@@ -127,7 +127,7 @@ Additional permission models are explained for a less and least permission model
 If restricted permissions are desired by the organization, then the following permissions are needed
 for the service account to successfully run SharePoint Agent-based scans.
 
-Prior to installation of the SharePoint Agent, the service account to be supplied during
+Before installation of the SharePoint Agent, the service account to be supplied during
 installation and later used to run the Access Auditing (SPAA) and Sensitive Data Discovery Auditing
 scans against the targeted SharePoint environment needs the following permissions:
 
@@ -156,8 +156,8 @@ following permissions:
 
     `C:\Program Files\STEALTHbits\StealthAUDIT\SPAA`
 
-The Enterprise Auditor SharePoint Agent utilizes Microsoft APIs. The Microsoft APIs require an
-account with the following permissions in order to collect all of the data:
+The Enterprise Auditor SharePoint Agent uses Microsoft APIs. The Microsoft APIs require an
+account with the following permissions to collect all of the data:
 
 - WSS_CONTENT_APPLICATION_POOLS on the SharePoint Content databases
 - WSS_CONTENT_APPLICATION_POOLS on the SharePoint Configuration database
@@ -172,7 +172,7 @@ If scans include Web Application scoping, this last permission requirement is al
 If a least privilege model is required by the organization, then the following permissions are
 needed for the service account to successfully run SharePoint Agent-based scans.
 
-Prior to installation of the SharePoint Agent, the service account to be supplied during
+Before installation of the SharePoint Agent, the service account to be supplied during
 installation and later used to run the Access Auditing (SPAA) and Sensitive Data Discovery Auditing
 scans the targeted SharePoint environment needs the following permissions:
 
@@ -217,8 +217,8 @@ following permissions:
 
     `C:\Program Files\STEALTHbits\StealthAUDIT\SPAA`
 
-The Enterprise Auditor SharePoint Agent utilizes Microsoft APIs. The Microsoft APIs require an
-account with the following permissions in order to collect all of the data:
+The Enterprise Auditor SharePoint Agent uses Microsoft APIs. The Microsoft APIs require an
+account with the following permissions to collect all of the data:
 
 - `'GRANT EXECUTE'` permissions on the following stored procedures in the SharePoint Configuration
   database:
@@ -230,7 +230,7 @@ account with the following permissions in order to collect all of the data:
     - `proc_ReturnWebFeatures`
 
         :::note
-        The above four stored procedures would already have the correct permissions if Web
+        These four stored procedures would already have the correct permissions if Web
         Application scoping is desired.
         :::
 

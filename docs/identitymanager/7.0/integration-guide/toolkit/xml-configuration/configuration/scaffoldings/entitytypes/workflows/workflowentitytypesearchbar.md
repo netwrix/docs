@@ -29,7 +29,7 @@ The starting entity must have a search bar and create the workflow entity type t
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <SearchBar EntityType="Workflow_Directory_User" SearchBarDesignElement="Inline">

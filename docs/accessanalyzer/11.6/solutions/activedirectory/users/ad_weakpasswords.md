@@ -19,20 +19,20 @@ dictionaries and other exceptions. Exceptions include:
 - Delegable Admins – Administrator account is allowed to be delegated to a service
 - DES Encryption Only – Account is using Kerberos DES encryption. DES encryption is considered weak
   as the 56-bit key is prone to brute force attacks. See the Microsoft
-  [AD DS: User accounts and trusts in this domain should not be configured for DES only](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff646918(v=ws.10))
+  [AD DS: User accounts and trusts in this domain shouldn't be configured for DES only](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff646918(v=ws.10))
   article for additional information.
 - Empty Password – Account has an empty password
-- Kerberos Pre-authentication is not required – Account does not require Kerberos
+- Kerberos Pre-authentication isn't required – Account doesn't require Kerberos
   pre-authentication. Kerberos pre-authentication can mitigate against brute force attacks. See the
   Microsoft
-  [Kerberos Pre-Authentication: Why It Should Not Be Disabled](https://learn.microsoft.com/en-us/archive/technet-wiki/23559.kerberos-pre-authentication-why-it-should-not-be-disabled)
+  [Kerberos Pre-Authentication: Why It Shouldn't Be Disabled](https://learn.microsoft.com/en-us/archive/technet-wiki/23559.kerberos-pre-authentication-why-it-should-not-be-disabled)
   article for additional information.
 - LM Hash – Account has stored LM hashes. The LM hash is a relatively weak hash that is prone to
   brute force attacks. See the Microsoft
   [How to prevent Windows from storing a LAN manager hash of your password in Active Directory and local SAM databases](https://learn.microsoft.com/en-US/troubleshoot/windows-server/windows-security/prevent-windows-store-lm-hash-password)
   article for additional information.
 - Password Never Expires – Account has a password that never expires
-- Password Not Required – Account does not require a password
+- Password Not Required – Account doesn't require a password
 - Weak Historical Password – Account has a historical password that was found in the dictionary
 - Weak Password – Account has a password that was found in the dictionary
 - Shares Common Password – Account shares a password with another account
@@ -53,8 +53,7 @@ The query for this job are:
 
 ### Configure the Weak Passwords Query
 
-The PasswordSecurity Data Collector can be scoped if desired. Follow the steps to modify the query
-configuration.
+The PasswordSecurity Data Collector can be scoped if desired. To modify the query configuration:
 
 **Step 1 –** Navigate to the job’s Configure node and select Queries.
 
@@ -67,7 +66,7 @@ Collector Wizard opens.
 ![Password Security Data Collection Wizard Scan options page](/images/accessanalyzer/11.6/solutions/activedirectory/users/optionsweakpassword.webp)
 
 :::warning
-Read the warning prior to enabling the cleartext password feature.
+Read the warning before enabling the cleartext password feature.
 :::
 
 
@@ -95,7 +94,7 @@ Navigate to the **Active Directory** > **2.Users** > **AD_WeakPasswords** > **Co
 select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

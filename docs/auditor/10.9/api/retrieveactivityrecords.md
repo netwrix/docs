@@ -8,7 +8,7 @@ sidebar_position: 40
 
 ## Endpoint
 
-Use to export data from the Audit Database. By default, first 1,000 Activity Records are returned.
+Use to export data from the Audit Database. By default, Netwrix Auditor returns the first 1,000 Activity Records.
 To get the next Activity Records, send a POST request to the same endpoint containing a Continuation
 mark.
 
@@ -56,8 +56,8 @@ This example describes how to retrieve all Activity Records from the Audit Datab
 | XML    | `curl https://WKSWin2012:9699/netwrix/api/v1/activity_records/enum -u Enterprise\NetwrixUser:NetwrixIsCool`             |
 | JSON   | `curl https://WKSWin2012:9699/netwrix/api/v1/activity_records/enum?format=json -u Enterprise\NetwrixUser:NetwrixIsCool` |
 
-**Step 2 –** Receive the response. Activity Records are retrieved according to the account's
-delegated scope. Below is an example of a successful GET request. The status is 200 OK. For XML, a
+**Step 2 –** Receive the response. Netwrix Auditor retrieves Activity Records according to the
+account's delegated scope. The following example shows a successful GET request. The status is 200 OK. For XML, a
 response body contains the `ActivityRecordList` root element with Activity Records and a
 Continuation mark inside. For JSON, a response body contains the `ActivityRecordList` array with
 Activity Records collected in braces {} and a Continuation mark.

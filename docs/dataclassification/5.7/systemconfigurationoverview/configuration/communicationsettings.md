@@ -18,12 +18,12 @@ configuring email groups and health service notifications. Review the following 
 Email servers can be configured to enable external communication. Use email servers to send report
 subscriptions and health errors to users automatically.
 
-Servers can be modified after initial configuration by selecting Edit, and new SMTP servers can be added by
+You can modify servers after initial configuration by selecting Edit, and add new SMTP servers by
 selecting Add Email Server Configuration.
 
 ![configemailservers](/images/dataclassification/5.7/configuration/configemailservers.webp)
 
-The SMTP details should be entered based on the values provided by your network team. 
+Enter the SMTP details using the values from your network team. 
 NDC supports SMTP servers with and without SSL configured. Anonymous SMTP server authentication is also supported.
 
 You can supply a test email address to test the configuration settings
@@ -32,7 +32,7 @@ You can supply a test email address to test the configuration settings
 
 [](#)Email Groups
 
-Email groups are used to define a logical group of people to email, essentially – a mailing list.
+You use email groups to define a logical group of people to email—essentially, a mailing list.
 
 Each email group is linked to an SMTP server, so, before configuring an email group, you must
 configure your Email Servers.
@@ -42,12 +42,12 @@ members.
 
 ![configaddemailgroup](/images/dataclassification/5.7/configuration/configaddemailgroup.webp)
 
-Each group can have one or more members, and can be assigned a friendly name, which will be
-displayed when selecting an email group.
+Each group can have one or more members, and you can assign a friendly name, which appears when you
+select an email group.
 
 [](#)Health Service Notifications
 
-Health Service Notifications can be configured to email a specific group of people when something
+Configure Health Service Notifications to email a specific group of people when something
 goes wrong within the product. Each notification configuration is linked to an email group, so,
 before configuring notifications, you must configure your Email Groups.
 
@@ -56,10 +56,10 @@ each row to change the configuration.
 
 ![confighealthnotifications_thumb_0_0](/images/dataclassification/5.7/configuration/confighealthnotifications_thumb_0_0.webp)
 
-Notifications can be set to trigger on warnings, or just on errors – by default problems of any
-level will be reported.
+Set notifications to trigger on warnings, or only on errors. By default, the system reports problems of any
+level.
 
-The Daily Summary can also be disabled / enabled, this functionality sends out a summary email of
+You can disable or enable the Daily Summary. This functionality sends a summary email of
 outstanding problems each morning.
 
 ![configaddhealthnotification](/images/dataclassification/5.7/configuration/configaddhealthnotification.webp)

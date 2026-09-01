@@ -11,14 +11,14 @@ ID, Google Workspace, or Generic LDAP. The Schema Replication schedule replicate
 these identity providers to the Directory Manager database.
 
 Unlike other schedules that exist separately for each identity store, Directory Manager has only one
-Schema Replication schedule that serves all identity stores. While the schedule is displayed
-separately for each identity store, it does not represent separate schedules. So when you run the
+Schema Replication schedule that serves all identity stores. Although the system displays the schedule
+separately for each identity store, it doesn't represent separate schedules. So when you run the
 Schema Replication schedule for an identity store, it replicates the schema for all identity stores
 in Directory Manager. And if you terminate it, the process is terminated for all identity stores.
 Moreover, the schedule runs every time it is triggered from any of the identity stores, be it
 manually or according to its triggers.
 
-When the Schema Replication schedule runs for the first time, it replicates schema from scratch. In
+When the Schema Replication schedule runs for the first time, it replicates the entire schema. In
 all subsequent runs, it replicates any changes made to the schema. Of this replicated schema, you
 can choose the object attributes you actually want to use in an identity store. See the
 [Specify Object Attributes to Replicate](/docs/directorymanager/11.1/admincenter/identitystore/replication.md#specify-object-attributes-to-replicate)
@@ -30,8 +30,7 @@ For Microsoft Entra ID, schema is replicated from the schema file for Graph API 
 
 
 The Schema Replication schedule runs in the context of the super admin account in the Directory
-Manager provider. You cannot create or delete a Schema Replication schedule; only update the
-existing one.
+Manager provider. You can only update the existing Schema Replication schedule.
 
 ## Update the Schema Replication Schedule
 
@@ -48,25 +47,26 @@ ellipsis button for the schedule and select **Edit**.
 Step 5 – On the Edit Schedule page, the Schedule Name and Name Preview boxes display the name of the
 schedule as read-only.
 
-Step 6 – In the Scheduler Service Name drop-down list, select a Scheduler service that would be
-responsible for triggering this schedule. The number of services displayed in the list depend on the
+Step 6 – In the Scheduler Service Name dropdown list, select a Scheduler service that would be
+responsible for triggering this schedule. The list displays a number of services that depends on the
 number of nodes in all Elasticsearch clusters in the environment, as each node has its own Scheduler
 service. See the [Scheduler Service](/docs/directorymanager/11.1/admincenter/service/schedulerservice.md) topic for additional
 information.
 
-Please note the following while selecting a Scheduler service:
+:::note
+When selecting a Scheduler service, the Scheduler service for the Directory Manager instance on which you are creating the schedule is selected by default. However, you can select the Scheduler service of another instance as well.
+:::
 
-- The Scheduler service for the Directory Manager instance on which you are creating the schedule is
-  selected by default. However, you can select the Scheduler service of another instance as well.
+
 
 - The Scheduler service can be changed even after creating the schedule. Upon the next run, the
-  schedule will be triggered by the newly-selected Scheduler service.
+  newly-selected Scheduler service will trigger the schedule.
 
 - If the selected Scheduler service fails to trigger the schedule, then no other Scheduler service
   can be selected automatically.
 
-- If a schedule is run manually on the Admin Center, then the Scheduler service of that instance
-  will be used.
+- If you run a schedule manually on the Admin Center, the Scheduler service of that instance
+  is used.
 
 :::warning
 In case of multiple Scheduler services, you must bind the same service with the Schema

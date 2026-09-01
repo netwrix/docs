@@ -6,9 +6,9 @@ sidebar_position: 60
 
 # Reserved identifiers
 
-Identifiers of [Entity Type](../../integration-guide/toolkit/xml-configuration/metadata/entitytype.md) and [Entity Type](../../integration-guide/toolkit/xml-configuration/metadata/entitytype.md)cannot be one of the following words:
+Identifiers of [Entity Type](../../integration-guide/toolkit/xml-configuration/metadata/entitytype.md) and [Entity Type](../../integration-guide/toolkit/xml-configuration/metadata/entitytype.md)can't be one of the following words:
 
-These words can't be written in any case, example: id, Id, iD and ID are forbidden.
+These words are reserved in any casing; for example, id, Id, iD, and ID are all forbidden.
 
 - Id
 - if

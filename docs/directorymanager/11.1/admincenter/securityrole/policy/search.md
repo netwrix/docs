@@ -15,12 +15,12 @@ store. Use the Search policy to:
 - Designate a criterion to limit the objects that role members can search.
 
 :::note
-Microsoft Entra ID supports a single container only, so the search scope cannot be restricted
+Microsoft Entra ID supports a single container only, so the search scope can't be restricted
 container-wise in a Microsoft Entra ID identity store.
 :::
 
 
-## How does the Search Policy Work?
+## Search Policy Behavior
 
 Let’s assume you specify a container, localOU, and set the LDAP filter to (Country=United States\*)
 for an Active Directory identity store. Now consider these scenarios:
@@ -106,8 +106,8 @@ criteria.
 7. In the **Filters** area, click **Add Filter**.
 8. A row is displayed for adding a criterion.
 
-    1. Select a schema attribute in the first drop-down list (for example, _mail_).
-    2. Select an operator in the second drop-down list (for example, _Ends with_).
+    1. Select a schema attribute in the first dropdown list (for example, _mail_).
+    2. Select an operator in the second dropdown list (for example, _Ends with_).
     3. Enter a value for the schema attribute in the third box (for example, _@Netwrix.com_).
 
     With this filter, search performed by role members will display objects with email addresses

@@ -11,25 +11,26 @@ database list from SQL Server and then proceeds to the File System Data Collecto
 the database file, essentially inventorying the installed databases, their paths, and sizes.
 
 :::note
-Because the object instances are not thread-safe, scripts like these that use objects
-external to Access Analyzer should be run with only one thread.
+Because the object instances aren't thread-safe, run scripts like these that use objects
+external to Access Analyzer with only a single thread.
 :::
 
 
-In this example, a connection is opened with a SQL server. The SQL server name is provided by Access
-Analyzer during the query. Access Analyzer provides the active host to the script using the
+In this example, the script opens a connection with a SQL server. Access Analyzer provides the SQL
+server name during the query. Access Analyzer provides the active host to the script using the
 **Query.Host** property.
 
 The script then queries the Master database, requesting a **recordset** containing all databases and
-proceeds to get the row count. Setting the **Query.ResultRows** property creates a row of storage
-for each record in the recordset. It then proceeds to read data from each row by looping row by row.
-For each row, the database name, filename, and ID are captured. The script then calls a function to
-get the size of the file. The **FileSize** function uses the database filename to construct a query
-to the File System Data Collector, which ultimately returns the size of the file.
+gets the row count. Setting the **Query.ResultRows** property creates a row of storage
+for each record in the recordset. It then reads data from each row, looping row by row.
+For each row, the script captures the database name, filename, and ID. The script then calls a
+function to get the size of the file. The **FileSize** function uses the database filename to
+construct a query to the File System Data Collector, which ultimately returns the size of the
+file.
 
-The data for each database is stored in the Query object.
+The script stores the data for each database in the Query object.
 
-Finally, the SQL objects are freed.
+Finally, the script frees the SQL objects.
 
 ## Example of Compound Query Script
 

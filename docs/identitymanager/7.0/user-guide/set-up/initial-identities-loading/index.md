@@ -10,7 +10,7 @@ How to initiate the repository for workforce identities by loading identities in
 
 ## Overview
 
-Loading the digital identities into Identity Manager is the very first task you have to perform,once you installed the development environment.
+Loading the digital identities into Identity Manager is the very first task you have to perform after you install the development environment.
 
 The identity repository is supposed to contain the list of all kinds of identities in the company. Each identity will be represented by a set of properties that are to be used in the calculations for entitlement assignments.
 
@@ -31,11 +31,11 @@ The **initial workforce repository** is going to be the first version of a compr
 
 ### Creation strategy for the workforce repository
 
-In a nutshell, Identity Manager has made it as easy as a copy-paste from employee and contractor HR files into an MS Excel file.
+Identity Manager makes this process as easy as a copy-paste from employee and contractor HR files into an MS Excel file.
 
 #### Special properties generation
 
-First, you have to choose rules about how email, login, and internal identifiers are going to be built for new identities, and for existing identities who do not have these unique properties yet.
+First, you have to choose rules about how email, login, and internal identifiers are going to be built for new identities, and for existing identities who don't have these unique properties yet.
 
 #### Organizational model creation
 
@@ -43,9 +43,9 @@ Then, you are going to need a **model of the organization's structure** where th
 
 The model is where you are going to identify for example the type of identities you want to manage (such as employees and contractors), the hierarchical relationships between them, the geographical areas they work in, and so on.
 
-Identity Manager has already built a template model for you, in the form of an Excel file. This basic model is customizable and will be adaptable to most organizations. You can customize it simply by writing information from your organization into said Excel file.
+Identity Manager has already built a template model for you, in the form of an Excel file. This basic model is customizable and will be adaptable to most organizations. You can customize it by writing information from your organization into said Excel file.
 
-Even if you have more specific or exotic needs that aren't met by this model, it is still a good starting point and a good way to quickly start delivering value. We recommend that you start building your project using this model, identify its limits along the way, and enhance it down the road to make it fit your needs more accurately.
+Even if you have more specific or exotic needs that aren't met by this model, it is still a good starting point and a good way to quickly start delivering value. Netwrix recommends that you start building your project using this model, identify its limits along the way, and enhance it down the road to make it fit your needs more accurately.
 
 #### Organizational model filling
 
@@ -53,7 +53,7 @@ Then, you write down the actual identities information, still using the same Exc
 
 The data you are going to load is analyzed by the engine and some simplifications will be suggested.
 
-**HR synchronization is not enough:**
+**HR synchronization isn't enough:**
 
 Another way of handling a part of the initial data loading is to set up an automated synchronization of HR data with Identity Manager.
 
@@ -64,11 +64,11 @@ progress;
 - HR data usually misses crucial information (for example contractor data) and is rarely up to date
 early enough to be really useful.
 
-Hence, in order to rather focus on awaited IGA activities, we choose to build the first iteration of the project upon a manual data upload to create the **initial workforce repository**.
+Hence, to focus on awaited IGA activities instead, the recommended approach builds the first iteration of the project upon a manual data upload to create the **initial workforce repository**.
 
 ## Participants and Artifacts
 
-Integrators may need the help of the **HR department** and its **assistants** who know the organization in order to get the identity and organizational data. After the initial loading, the **HR department** can review the data to confirm its accuracy.
+Integrators may need the help of the **HR department** and its **assistants** who know the organization to get the identity and organizational data. After the initial loading, the **HR department** can review the data to confirm its accuracy.
 
  | Input | Output | 
  | --- | --- | 
@@ -80,7 +80,7 @@ Integrators may need the help of the **HR department** and its **assistants** wh
 
 Create the workforce repository by proceeding as follows:
 
-1. [Configure Unique Property Generation](../../../user-guide/set-up/initial-identities-loading/generate-unique-properties) for **all users**, pre-existing and new, who do not have them yet.
+1. [Configure Unique Property Generation](../../../user-guide/set-up/initial-identities-loading/generate-unique-properties) for **all users**, pre-existing and new, who don't have them yet.
 2. [Load Identities to Identity Manager](../../../user-guide/set-up/initial-identities-loading/load-identities) to Identity Manager based on the recommended attributes from the provided organizational model
 [Template Description](../../../user-guide/set-up/initial-identities-loading/template-description).
 3. [Adjust the Workforce Data Model](../../../user-guide/set-up/initial-identities-loading/adjust-datamodel) following Identity Manager's suggestions.
@@ -88,7 +88,7 @@ Create the workforce repository by proceeding as follows:
 
 ## Next Steps
 
-Once the initial identities are loaded, integrators can start the User Profile configuration. See the [Configure a User Profile](../../../user-guide/set-up/user-profile-configuration) topic for additional information.
+After the initial identities are loaded, integrators can start the User Profile configuration. See the [Configure a User Profile](../../../user-guide/set-up/user-profile-configuration) topic for additional information.
 
 From there you will be able to keep your repository up to date:
 

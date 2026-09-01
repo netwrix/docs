@@ -17,7 +17,7 @@ Further permission assignment will depend on the data you plan to collect:
 - To collect activity data including **logon attempts**, the administrative role is required, as
   well as the Premium Plan license.
 - To collect activity data without logons, the privileged role can be revoked from the specified
-  account after the initial data collection. Ongoing audit data collection will leverage Microsoft
+  account after the initial data collection. Ongoing audit data collection will use Microsoft
   APIs access permissions granted to Microsoft Entra ID app and, therefore, requires no tenant-level
   administrative permissions.
 
@@ -49,8 +49,6 @@ your Netwrix Auditor, consider that after the upgrade you will have to perform t
 procedure again, selecting one of these approaches. Until then, data collection will not be
 performed.
 
-Follow the steps to assign a privileged role to the account.
-
 **Step 1 –** Sign in to Microsoft Entra ID portal using your Microsoft account.
 
 **Step 2 –** Select Microsoft Entra ID on the left.
@@ -58,7 +56,7 @@ Follow the steps to assign a privileged role to the account.
 **Step 3 –** Select the account that you want to use as data collecting account, or create a new
 user.
 
-**Step 4 –** Make sure you have disabled multi-factor authentication for this account.
+**Step 4 –** ensure you have disabled multi-factor authentication for this account.
 
 **Step 5 –** Expand Directory role and select the role you need (for example, Global admin or any
 other privileged role).
@@ -82,7 +80,7 @@ A less privileged role has now been assigned to the account.
 ## Assigning 'Security Administrator' or 'Security Reader' Role
 
 To audit _Successful_ and/or _Failed Logons_ in Microsoft Entra ID, the Security Administrator or
-Security Reader role is required. Follow the steps to assign the role you need:
+Security Reader role is required. To assign the role you need:
 
 **Step 1 –** Sign in to [Microsoft Entra ID portal](https://portal.azure.com/) using your Microsoft
 account.
@@ -95,6 +93,4 @@ account.
 
 **Step 5 –** Click Add member and select the account that you want to assign the role to.
 
-Refer to the following Microsoft article:
-[Microsoft Entra built-in roles](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles)
-for additional information on the Administrator role permissions.
+See the [Microsoft Entra built-in roles](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-assign-admin-roles) article for more information on Administrator role permissions.

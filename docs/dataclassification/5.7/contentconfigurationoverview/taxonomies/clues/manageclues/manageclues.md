@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Manage Clues
 
-This section describes how you can edit, import, move and delete clues for the selected taxonomy
+This section describes how you can edit, import, move, and delete clues for the selected taxonomy
 term set.
 
 - To delete a clue, select the checkbox next to it and click **Delete**.

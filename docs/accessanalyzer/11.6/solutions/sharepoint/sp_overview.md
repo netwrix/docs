@@ -6,9 +6,8 @@ sidebar_position: 120
 
 # SP_Overview Job
 
-The SP_Overview job provides an overview of the SharePoint Environment, providing a high level view
-into what makes up a SharePoint Environment and the types of security risks and toxic permissions
-found during scans.
+The SP_Overview job provides a high-level view of the SharePoint environment, including the types
+of security risks and toxic permissions found during scans.
 
 ![SP_Overview Job in the Jobs Tree](/images/accessanalyzer/11.6/solutions/sharepoint/overviewjobstree.webp)
 
@@ -19,7 +18,7 @@ and
 [SharePoint Activity Auditing](/docs/accessanalyzer/11.6/solutions/sharepoint/collection/overview.md#sharepoint-activity-auditing)
 components of the
 [0.Collection Job Group](/docs/accessanalyzer/11.6/solutions/sharepoint/collection/overview.md).
-It also depends on the running of the sub-job groups within the solution. If only select sub-job
+It also depends on running the sub-job groups within the solution. If only select sub-job
 groups have been run, there will be blank sections of this overview report.
 
 ## Analysis Tasks for the SP_Overview Job
@@ -28,14 +27,14 @@ Navigate to the **Jobs** > **SharePoint** > **SP_Overview** > **Configure** node
 **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 
 
 ![Analysis Tasks for the SP_Overview Job](/images/accessanalyzer/11.6/solutions/sharepoint/overviewanalysis.webp)
 
-The default analysis tasks is:
+The default analysis task is:
 
 - Generate Overview – Creates an interim processing table in the database for use by downstream
   analysis and report generation

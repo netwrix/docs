@@ -16,9 +16,6 @@ You can configure your cluster for monitoring in one of the following ways:
 
 ## Configure Dell Isilon/PowerScale Cluster in Compliance Mode Via Shell Script
 
-Follow the steps to configure Dell Isilon/PowerScale cluster in Compliance mode via the shell
-script:
-
 **Step 1 –** On the computer where Auditor Server resides, navigate to _C:\Program Files
 (x86)\Netwrix Auditor\File Server Auditing_ and copy the configure*ifs.sh shell script to
 */ifs/data\_ catalog on your cluster.
@@ -63,8 +60,6 @@ _/ifs/.ifsvar/audit_ :
 Where `Enterprise\Administrator` is your account name.
 
 ## Configure Dell Isilon/PowerScale Cluster in Compliance Mode Manually
-
-Follow the steps to configure Dell Isilon/PowerScale cluster in Compliance mode manually:
 
 **Step 1 –** Navigate to your cluster command prompt through the SSH connection.
 

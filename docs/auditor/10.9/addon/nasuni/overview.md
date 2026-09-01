@@ -8,10 +8,10 @@ sidebar_position: 140
 
 The add-on works in collaboration with Netwrix Auditor, supplying data about activity on your
 Nasuni-based devices. Aggregating data into a single audit trail simplifies analysis, makes activity
-monitoring more cost effective, and helps you keep tabs on your IT infrastructure.
+monitoring more cost effective, and helps you monitor your IT infrastructure.
 
 Implemented as a service, this add-on facilitates the data transition from Nasuni-based systems to
-Netwrix Auditor. All you have to do is provide connect ion details and specify parsing rules.
+Netwrix Auditor. To set it up, provide connection details and specify parsing rules.
 
 On a high level, the add-on works as follows:
 
@@ -34,9 +34,7 @@ follows:
 | The Auditor Server side                         | - The Audit Database settings are configured in Auditor Server. See the [Prerequisites](/docs/auditor/10.9/api/prerequisites.md) and [Audit Database](/docs/auditor/10.9/admin/settings/auditdatabase.md) topics for additional information. - The TCP **9699** port (default Integration API port) is open for inbound connections. - The user writing data to the Audit Database is granted the **Contributor** role in Auditor. See the [Role-Based Access and Delegation](/docs/auditor/10.9/admin/monitoringplans/delegation.md) topic for additional information. Alternatively, you can grant the **Global administrator** role or add the user to the **Netwrix Auditor Administrators** group. In this case, this user will have the most extended permissions in the product. |
 | The computer where the add-on will be installed | - The UDP 514 port is open for inbound connections. - .Net Framework 4.7.2 and above is installed. Review the following Microsoft technical article for additional information on how to install .Net Framework 4.7.2: [Microsoft .NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2).                                                                                                                                                                                                                                                                                                               |
 
-### Configure Logging for
-
-Follow the steps to configure the syslog integration.
+### Configure Logging for Nasuni
 
 **Step 1 –** Log in to the Nasuni Management Console and go to the **Console Settings** > **Syslog
 Exports**.
@@ -53,8 +51,8 @@ configuration.
 **Step 4 –** Enable auditing:
 
 1. On the Volumes tab, open **Auditing**.
-2. Choose the volume you wish to be audited and click **Edit Volumes**.
-3. Select the **Auditing Enabled** option and choose which Event Types you wish to be reported.
+2. Choose the volume you want to be audited and click **Edit Volumes**.
+3. Select the **Auditing Enabled** option and choose which Event Types you want to be reported.
 4. Hit the **Save Auditing Settings** button.
 
 ### Accounts and Rights
@@ -77,5 +75,5 @@ admin privileges.
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts
-leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.
+Ensure to check your product version, and then review and update your add-ons and scripts
+that use the Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.

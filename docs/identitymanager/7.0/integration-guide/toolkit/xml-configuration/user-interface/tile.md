@@ -47,7 +47,7 @@ One data to display in a tile.
 
 |Property|Details|
 |---|---|
-| AddedMinutes optional | **Type:** Int32 **Description:** Add minutes to the date field with this property. If the value is not defined, the default value is the one defined for the associated display entity property. |
+| AddedMinutes optional | **Type:** Int32 **Description:** Add minutes to the date field with this property. If the value isn't defined, the default value is the one defined for the associated display entity property. |
 | Binding required | **Type:** Int64 **Description:** Defines the binding path to a scalar property. |
 | LineDisplayOrderIndicator required | **Type:** Int32 **Description:** Defines the display position of the data in the row. |
 | LineNumber required | **Type:** Int32 **Description:** Defines the number of the line in which the data is displayed. When the tileDesignElement of the tile is "picture-text", four lines are customizable, and 2 lines are hard coded: - 5: id of the resource to navigate on click - 6: photoTag |

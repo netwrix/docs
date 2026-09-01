@@ -25,7 +25,7 @@ $refresh_token = $content.refresh_token;
 ```
 
 :::info
-Tokens contain sensitive information and should be stored securely. See the
+Store tokens securely because they contain sensitive information. See the
 Microsoft
 [ConvertTo-SecureString](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.4)
 article for additional information.

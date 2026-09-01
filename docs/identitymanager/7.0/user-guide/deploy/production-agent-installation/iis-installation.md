@@ -10,24 +10,24 @@ This guide shows how to configure the local server to install IIS via Server Man
 
 ## Overview
 
-When running on Windows Server, Server Manager makes available parameters to configure the local server at will. [See more details](https://learn.microsoft.com/en-us/windows-server/administration/server-manager/manage-the-local-server-and-the-server-manager-console).
+When running on Windows Server, Server Manager makes available parameters to configure the local server at will. See Microsoft's [Server Manager documentation](https://learn.microsoft.com/en-us/windows-server/administration/server-manager/manage-the-local-server-and-the-server-manager-console) for details.
 
-This page describes the optimal configuration of the local server to install IIS in order to prepare the production agent's installation.
+This page describes the optimal configuration of the local server to install IIS to prepare the production agent's installation.
 
 ## Install IIS via Server Manager
 
 Install IIS via Server Manager by proceeding as follows:
 
-1. Open the Server Manager program and click on **Add roles and features**.
+1. Open the Server Manager program and click **Add roles and features**.
 
     ![Server Manager: Step 1](/images/identitymanager/prodagent_servermanager1.webp)
 
-2. Click on **Next**, then in **Installation Type** make sure that **Role-based or feature-based
-installation** is selected and click on **Next**.
+2. Click **Next**, then in **Installation Type** ensure that **Role-based or feature-based
+installation** is selected and click **Next**.
 
     ![Server Manager: Step 2](/images/identitymanager/prodagent_servermanager2.webp)
 
-3. In **Server Selection** tick **Select a server from the server pool** and click on **Next**.
+3. In **Server Selection** tick **Select a server from the server pool** and click **Next**.
 
     ![Server Manager: Step 3](/images/identitymanager/prodagent_servermanager3.webp)
 
@@ -40,7 +40,7 @@ installation** is selected and click on **Next**.
 
     ![Server Manager: Step 5](/images/identitymanager/prodagent_servermanager5.webp)
 
-6. In **Confirmation** click on **Install**.
+6. In **Confirmation** click **Install**.
 
     ![Server Manager: Step 6](/images/identitymanager/prodagent_servermanager6.webp)
 

@@ -13,11 +13,11 @@ all of the categories. Available options vary based on the category selected.
 
 The Options page contains the following options:
 
-- Process folders that physically reside on the target server only – This option will limit
-  extraction to only the subset of public folders which reside on this server when selected. Clear
-  this option if targeting the Exchange 2010 Public Folder Server. The ability to scope to the
-  targeted server is not available for Exchange 2010. The entire public folder hierarchy is
-  returned.
+- Process folders that physically reside on the target server only – When selected, this option
+  limits extraction to only the subset of public folders that reside on this server. Clear this
+  option if targeting the Exchange 2010 Public Folder Server. The ability to scope to the targeted
+  server isn't available for Exchange 2010, so the query returns the entire public folder
+  hierarchy.
 - Message size units:
 
     - KB
@@ -27,7 +27,7 @@ The Options page contains the following options:
   When this option is selected, it will include subfolders in message counters, according to the
   Scope page settings. See the [ExchangeMetrics: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangemetrics/scope.md) topic for
   additional information.
-- Large attachment threshold (Kb) – Configure the desired size limit for attachments. The default
+- Large attachment threshold (Kb) – Configure the size limit for attachments. The default
   value is 500.
 
 In the Attachment types section, configure attachment count types.

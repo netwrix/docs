@@ -11,7 +11,7 @@ selected Active Directory object.
 
 ![Permissions report at the domain object level](/images/accessinformationcenter/12.0/resourceaudit/activedirectory/domainobject/permissions.webp)
 
-This report is comprised of the following columns:
+This report contains the following columns:
 
 - Trustee Type – Type of the trustee (for example, Domain User or Domain Group)
 - Trustee Name – Owner of the trustee account
@@ -25,8 +25,7 @@ This report is comprised of the following columns:
 - ObjectSid – Security ID of the object
 - Disabled – True or False if trustee account is disabled
 - Deleted – True or False if trustee account is deleted
-- Stale – True or False if trustee account is stale (according to the length of inactive time used
-  by the Access Analyzer data collection and analysis configuration to identify stale accounts)
+- Stale – True or False if the Access Analyzer data collection and analysis configuration considers the trustee account stale (based on how long the account has been inactive)
 - Source – Direct or Inherited permission type
 - Type – Direct or Inherited type of permission
 

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Plugins for Additional Actions
 
-In addition to the common workflow actions provided out-of-the-box, you can set up additional
+In addition to the common workflow actions provided with the product, you can set up additional
 actions using the plugins. Either use sample plugins from the vendor, or create your own custom
 plugins. Plugins should be stored in the dedicated folder, under _C:\Program
 Files\ConceptSearching\Plugins_.
@@ -18,8 +18,7 @@ The following sample plugins (implemented as DLLs) can be provided upon request:
 - Twitter action
 - SQL Lookup
 
-To search for the plugins within default location, go to the **Plugins** tab and click Detect
-Plugins.
+To search for plugins in the default location, go to the **Plugins** tab and click **Detect Plugins**.
 
 Click the Enable link to enable selected plugins.
 

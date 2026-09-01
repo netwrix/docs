@@ -16,7 +16,7 @@ of existing jobs on-the-fly to reuse their settings in new jobs.
 
 ## Create a Job Template
 
-Follow the steps to create a job template.
+To create a job template.
 
 Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
@@ -67,12 +67,12 @@ Step 2 – On the Synchronize portal, click **Job Templates**.
 Step 3 – On the Job Templates page, click the **three vertical dots** icon on the template in the
 list that you want to export and click **Export**.
 
-If you want to export multiple job templates, select all and click **Export Job(s)** from the top
+If you want to export multiple job templates, select all and click **Export Jobs** from the top
 right corner.
 
 ## Create a Job from a Template
 
-Follow the steps to create a job from a template.
+To create a job from a template.
 
 Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
@@ -93,7 +93,7 @@ template on to the new job.
 
 ## Rename a Job Template
 
-Follow the steps to rename a job template.
+To rename a job template.
 
 Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 
@@ -107,7 +107,7 @@ Step 4 – On Rename Job Template Name & Description wizard, update the name and
 
 ## Delete a Job Template
 
-Follow the steps to delete a job template.
+To delete a job template.
 
 Step 1 – On Directory Manager portal, select **Synchronize** on left pane.
 

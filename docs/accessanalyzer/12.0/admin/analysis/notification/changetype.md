@@ -7,8 +7,8 @@ sidebar_position: 30
 # Notification: Change Type
 
 Use the Select Change Type page to choose the types of changes for which to trigger a notification.
-The selections on this page are optional. This page is only active if Change Detection Table is
-selected on the Table Type page.
+The selections on this page are optional. This page is only active if you select Change Detection Table
+on the Table Type page.
 
 ![Notification Data Analysis Module wizard Select Change Type page](/images/accessanalyzer/12.0/admin/analysis/notification/changetype.webp)
 

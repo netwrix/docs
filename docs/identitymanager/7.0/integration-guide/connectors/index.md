@@ -12,24 +12,24 @@ Connectors are Identity Manager's links to the managed systems, the technical re
 
 Connectors are the mechanisms that enable Identity Manager to read and write data to/from your organization's systems. The feedback mechanism ensures Identity Manager's reliability.
 
-In this documentation, we talk about managed systems (sometimes called external systems) to refer to third-party applications, i.e. the applications used in your organization, such as Active Directory, ServiceNow, EasyVista, SAP, SharePoint, etc.
+In this documentation, managed systems (sometimes called external systems) refer to third-party applications, such as Active Directory, ServiceNow, EasyVista, SAP, SharePoint, etc., that are used in your organization.
 
 A connector, therefore, acts as an interface between Identity Manager and a managed system.
 
 ![Connector Schema](/images/identitymanager/connectorcreation_connectorschema.webp)
 
-Netwrix Identity Manager (formerly Usercube)strongly recommends the creation of one connector for each application.
+Netwrix Identity Manager (formerly Usercube) strongly recommends creating one connector for each application.
 
 > For example, integrators may create an `AD` connector with the goal of importing an Active
 > Directory's data into Identity Manager, and writing to the Active Directory from Identity Manager,
 > either manually for administration accounts, or automatically for basic accounts.
 >
-> Integrators may create a `SharePoint` connector in order to manage read and write entitlements for
+> Integrators may create a `SharePoint` connector to manage read and write entitlements for
 > users in SharePoint.
 
 ### Data Flows
 
-In the early steps of a project, we'll consider most of our connectors to be outbound, i.e. Identity Manager will feed data into connected managed systems.
+In the early steps of a project, most connectors are outbound, with Identity Manager feeding data into connected managed systems.
 
 ![Outbound System=](/images/identitymanager/connectorcreation_outbound.webp)
 
@@ -42,43 +42,43 @@ For a connector's synchronization, Identity Manager provides tools to perform a 
 
 For provisioning, Identity Manager generates provisioning orders and the connector provides tools to either automatically write these orders to the managed system or to create a ticket for manual provisioning.
 
-> For example, we can use the data from Identity Manager's identity repository to fill in later the
+> For example, use the data from Identity Manager's identity repository to fill in the
 > AD's fields, such as users' display names based on their first names and last names from the
 > repository. See the
 > [Create the Workforce Repository](../../user-guide/set-up/initial-identities-loading)
 > topic for additional information.
 
-Identity Manager can also benefit from inbound connectors, that will write data to Identity Manager's central identity repository. While both inbound and outbound connectors allow data to flow both ways, they do not work in the same manner. See the [Create an HR Connector](../../user-guide/optimize/hr-connector-creation) topic for additional information.
+Identity Manager can also benefit from inbound connectors, that will write data to Identity Manager's central identity repository. While both inbound and outbound connectors allow data to flow both ways, they don't work in the same manner. See the [Create an HR Connector](../../user-guide/optimize/hr-connector-creation) topic for additional information.
 
 ### Technical principles
 
 Identity Manager's connectors all operate on the same basic principles. Technically speaking:
 
-> For example, let's say that we want to connect Identity Manager to our Active Directory, or AD:
+> For example, to connect Identity Manager to Active Directory (AD):
 
 - A connector must be created, first as a named container which will include the connections and
 entity types related to one managed system; See the [Connector](../../integration-guide/toolkit/xml-configuration/connectors/connector) topic for additional information.
 
-    > We create a connector named `AD` (so far, an empty shell).
+    > Create a connector named `AD` (initially an empty shell).
 
 - A connector is linked to an agent which acts as the go-between for Identity Manager's server and
 the managed system; See the [Architecture](../../introduction-guide/architecture) topic for additional information.
 
-    > Our `AD` connector uses the provided SaaS agent.
+    > The `AD` connector uses the provided SaaS agent.
 
 - A connection describes the technology used that enables data to flow back and forth between
 Identity Manager and the managed system; See the [Connection](../../integration-guide/toolkit/xml-configuration/connectors/connection) topic for additional information.
 
-    > We want to use a connection `Directory/Active Directory` to perform synchronization and
+    > Use a connection `Directory/Active Directory` to perform synchronization and
     > automated provisioning, and a second connection `Ticket/identitymanager` to perform manual
     > provisioning through Identity Manager.
 
 You can find standard connections dedicated to one application (AD, Microsoft Entra ID, etc.), and generic connections to communicate with any application (CSV, Powershell, RobotFramework, SQL, etc.).
 
-- The shape of the extracted managed system's data is modeled by entity types (we will use the term
-resource to refer to an entity type that has been instantiated); See the [Entity Type](../../integration-guide/toolkit/xml-configuration/metadata/entitytype) topic for additional information.
+- The shape of the extracted managed system's data is modeled by entity types (the term
+resource refers to an entity type that has been instantiated); See the [Entity Type](../../integration-guide/toolkit/xml-configuration/metadata/entitytype) topic for additional information.
 
-    > We create a single entity type `AD - Entry` which contains all the attributes that will
+    > Create a single entity type `AD - Entry` which contains all the attributes that will
     > describe its resources, i.e. AD groups and users. The attributes include the department, the
     > employee identifier, the manager, the group membership (`member`/`memberOf`), the dn, the
     > parent dn, etc.
@@ -86,9 +86,9 @@ resource to refer to an entity type that has been instantiated); See the [Entity
 - The intent of resources within the managed system is made clear by categorizing resources into
 resource types. See the [Resource Type](../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) and [Categorize Resources](../../user-guide/set-up/categorization) topics for additional information.
 
-    > We categorize AD resources into distinct resource types: `AD User (nominative)` for basic
-    > accounts, which we want Identity Manager to provision automatically;
-    > `AD User (administration)` for sensitive administration accounts, which we want to provision
+    > Categorize AD resources into distinct resource types: `AD User (nominative)` for basic
+    > accounts, which Identity Manager should provision automatically;
+    > `AD User (administration)` for sensitive administration accounts, which Identity Manager should provision
     > manually through Identity Manager.
 
 ![Connector Technical Schema](/images/identitymanager/connectorcreation_connectortechnicalschema.webp)
@@ -101,7 +101,7 @@ When provisioning a managed system, the corresponding connector also needs at le
 
 ## Configure a Connector
 
-Netwrix Identity Manager (formerly Usercube)recommends creating and configuring a connector via the UI. See the [Connect to a Managed System](../../user-guide/set-up/connect-system) topic for additional information.
+Netwrix Identity Manager (formerly Usercube) recommends creating and configuring a connector via the UI. See the [Connect to a Managed System](../../user-guide/set-up/connect-system) topic for additional information.
 
 ## Supported Systems
 
@@ -132,8 +132,8 @@ Netwrix Identity Manager (formerly Usercube)recommends creating and configuring 
  | SCIM | Exports and fulfills data from/to a SCIM-compliant web application. See the [SCIM](../../integration-guide/connectors/references-connectors/scim), [Export CyberArk Data via SCIM ](../../integration-guide/connectors/configuration-details/scim-cyberark-export) and [ Provision Salesforce Users' Profiles via SCIM](../../integration-guide/connectors/configuration-details/scim-salesforce-provisioning-entitlements) topics for additional information. | √ | √ | 
  | ServiceNow Entity Management | Manages ServiceNow entities. See the [ServiceNow](../../integration-guide/connectors/references-connectors/servicenowentitymanagement) topic for additional information. | √ | √ | 
  | ServiceNow Ticket | Creates tickets in ServiceNow. See the [ServiceNowTicket](../../integration-guide/connectors/references-connectors/servicenowticket) topic for additional information. | X | √ | 
- | SharedFolder | Scans a Windows file directory and exports a list of folders, files, users and their associated permissions. See the [SharedFolders](../../integration-guide/connectors/references-connectors/sharedfolder) topic for additional information. | √ | X | 
- | SharePoint | Exports a SharePoint's list of objects, users, groups, roles and their relationships. See the [SharePoint](../../integration-guide/connectors/references-connectors/sharepoint) and [Set up SharePoint's Export and Synchronization](../../integration-guide/connectors/configuration-details/sharepoint-export) topics for additional information. | √ | √ | 
+ | SharedFolder | Scans a Windows file directory and exports a list of folders, files, users, and their associated permissions. See the [SharedFolders](../../integration-guide/connectors/references-connectors/sharedfolder) topic for additional information. | √ | X | 
+ | SharePoint | Exports a SharePoint's list of objects, users, groups, roles, and their relationships. See the [SharePoint](../../integration-guide/connectors/references-connectors/sharepoint) and [Set up SharePoint's Export and Synchronization](../../integration-guide/connectors/configuration-details/sharepoint-export) topics for additional information. | √ | √ | 
  | SQL | Exports data from various Database Management Systems. See the [Sql](../../integration-guide/connectors/references-connectors/sql) topic for additional information. | √ | X | 
  | SQL Server Entitlements | Exports server and database principals from Microsoft SQL Server. See the [Sql Server Entitlements](../../integration-guide/connectors/references-connectors/sqlserverentitlements) topic for additional information. | √ | X | 
  | Top Secret | Exports the Top Secret (TSS) users and profiles. See the [Top Secret](../../integration-guide/connectors/references-connectors/topsecret) topic for additional information. | √ | X | 

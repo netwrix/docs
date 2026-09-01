@@ -63,20 +63,20 @@ Customize message search filter conditions using the following options:
     - Click **search terms** to open the Search Terms Window. See the
       [Search Terms Window (Message Conditions)](#search-terms-window-message-conditions) topic for
       additional information.
-    - Click **has attachment(s)** to convert the condition to **has no attachment(s)** and vice
+    - Click **has attachments** to convert the condition to **has no attachments** and vice
       versa
 
 ## MessageClasses Window (Message Conditions)
 
 Use the MessageClasses window to alter criteria related to message class. The Message Classes window
-opens if **specific** is clicked in the Edit Conditions box on the Message Conditions page.
+opens if you click **specific** in the Edit Conditions box on the Message Conditions page.
 
 ![MessagesClasses window](/images/accessanalyzer/11.6/admin/datacollector/ewsmailbox/filterwizard/messageclassesmessage.webp)
 
 Determine MessageClass-related criteria using the following options:
 
 - To add a class, click **Add**
-- Enter the desired Message Class in the corresponding textbox
+- Enter the Message Class you want in the corresponding textbox
 - Click **Exact Match** to reveal a dropdown menu of other search criteria under Matching Strategy
   and select the preferred option:
 
@@ -91,7 +91,7 @@ Determine MessageClass-related criteria using the following options:
 ## Date Range Selection Window
 
 Use the Date Range Selection window to select a time period or range for the search. The Date Range
-Selection window opens if **in specific date** is clicked in the Edit Conditions box on the Message
+Selection window opens if you click **in specific date** in the Edit Conditions box on the Message
 Conditions page.
 
 ![Date Range Selection window](/images/accessanalyzer/11.6/admin/datacollector/ewsmailbox/filterwizard/daterangeselectionmessage.webp)
@@ -107,17 +107,17 @@ Determine the time period or range of the search using the following options:
 ## Search Terms Window (Message Conditions)
 
 Use the Search Terms window to determine terms for the search. The Search Terms window opens if
-**search terms** is selected in the Edit Conditions box.
+you select **search terms** in the Edit Conditions box.
 
 ![Search Terms window](/images/accessanalyzer/11.6/admin/datacollector/ewsmailbox/filterwizard/searchtermswindow.webp)
 
 Determine terms for the search using the following options:
 
-- Type the desired term into the upper text box and click **Add** to add the term to the lower text
+- Enter the term you want into the upper text box and click **Add** to add the term to the lower text
   box, which adds the term to the search
 - Select a term in the lower text box, and click **Remove** to remove the term from the search
 - Click **Clear** to clear all terms from the lower box
-- Select the desired qualifier option:
+- Select the qualifier option you want:
 
     - Contains ALL of the following search terms (And) – Search only returns results containing all
       of the search terms

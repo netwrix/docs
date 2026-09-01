@@ -26,7 +26,7 @@ Generates access control to send notification when job finish with an error stat
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="Administrator_Job_RunJobLaunch_Notification_Errored" DisplayName_L1="Administrator - Management for Task" DisplayName_L2="Administrator - Gestion des Task" EntityType="Task" Profile="Administrator">

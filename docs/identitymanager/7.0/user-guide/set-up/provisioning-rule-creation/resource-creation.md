@@ -6,13 +6,13 @@ sidebar_position: 10
 
 # Create Resources
 
-How to define [Resource Type](../../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) rules to create **new** (target) resources for given users, computing and provisioning their properties based on source resources.
+How to define [Resource Type](../../../integration-guide/toolkit/xml-configuration/provisioning/resourcetype) rules to create **new** (target) resources for given users, computing, and provisioning their properties based on source resources.
 
 ## Overview
 
 Sources are usually identities, and targets are usually accounts from the managed systems.
 
-Here, we are going to create target resources and assign them to given users. We are going to [Provision](../../../user-guide/administrate/provisioning) these resources, i.e. write them to the managed system.
+This topic explains how to create target resources and assign them to given users, then [Provision](../../../user-guide/administrate/provisioning) these resources, i.e. write them to the managed system.
 
 The right tools for the job are resource type rules.
 
@@ -23,7 +23,7 @@ The application of a resource type rule can depend on the assignment of a single
 
 ## Participants and Artifacts
 
-For a given managed system, integrators may need the help of the **application owner** who knows the application users, entitlements and data model.
+For a given managed system, integrators may need the help of the **application owner** who knows the application users, entitlements, and data model.
 
  | Input | Output | 
  | --- | --- | 
@@ -35,7 +35,7 @@ See the [Categorize Resources](../../../user-guide/set-up/categorization) topic 
 
 Create a resource type rule by proceeding as follows:
 
-1. Click on **Access Rules** on the home page in the **Configuration** section.
+1. Click **Access Rules** on the home page in the **Configuration** section.
 
     ![Home - Access Rules](/images/identitymanager/home_rules_v602.webp)
 
@@ -43,7 +43,7 @@ Create a resource type rule by proceeding as follows:
 
     ![Entity Type Choice](/images/identitymanager/provrules_entitytype_v602.webp)
 
-3. Click on the **Resource Types** tab and on the addition button at the top right corner.
+3. Click the **Resource Types** tab and on the addition button at the top right corner.
 
     ![Addition Icon](/images/identitymanager/iconadd_v602.svg)
 
@@ -58,11 +58,11 @@ suggested permissions in the permission basket of users matching the criteria du
     - `Offset of effective date`: time period that defines the actual effective date for resource
 creation/deletion according to the value's start and/or end date.
     - **Criteria**: conditions that, if met, trigger the resource creation.
-        > Our example would look like:
+        > This example would look like:
 >
         > ![Resource Type Rule Example](/images/identitymanager/provrules_exampletype_v602.webp)
 
-5. Click on **Create** and see a line added on the rules page.
+5. Click **Create** and see a line added on the rules page.
 
 ## Impact of Modifications
 
@@ -70,19 +70,19 @@ Any modification in a resource type rule is taken into account when launching th
 
 ![Resource Type Jobs](/images/identitymanager/synchro_resourcetype_v602.webp)
 
-This task applies the rules and computes **new** assignments. Therefore, if a given rule's criterion is modified, then all corresponding assignments are computed again. If a resource was created automatically for an identity by a resource type rule, and if the user's criteria do not comply with the **new** version of the rule, then the corresponding resource is automatically deleted.
+This task applies the rules and computes **new** assignments. Therefore, if a given rule's criterion is modified, then all corresponding assignments are computed again. If a resource was created automatically for an identity by a resource type rule, and if the user's criteria don't comply with the **new** version of the rule, then the corresponding resource is automatically deleted.
 
 A modification in a resource type rule can trigger the removal of a resource only on the Identity Manager side. There are several barriers to cross before said resource is removed from the managed system: first before the creation of an Assigned Resource Type in Identity Manager's database, and again before the actual action in the managed system.
 
-> In our example, let's say that we replace the country criterion `Germany` with `France`. Consider
+> In this example, say the country criterion `Germany` is replaced with `France`. Consider
 > a user who had a SAP account assigned through this rule. Now that the country criterion has
-> changed, our user working in Germany would be deprived of their account.
+> changed, the user working in Germany would be deprived of their account.
 
-Simulations are available in order to anticipate the changes induced by a creation/modification/deletion in resource type rules.
+Simulations are available to anticipate the changes induced by a creation/modification/deletion in resource type rules.
 
 ## Verify Rule Creation
 
-In order to verify the process, start by checking the rule's details on the **Access Rules** page. Then, you can:
+To verify the process, start by checking the rule's details on the **Access Rules** page. Then, you can:
 
 1. Select a test user in the directory, accessible from the home page.
 

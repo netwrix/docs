@@ -21,7 +21,7 @@ Monitor.
 
 
 :::note
-Nutanix Files does not report events for activity originating from a server where the
+Nutanix Files doesn't report events for activity originating from a server where the
 Activity Monitor Agent is installed.
 
 :::

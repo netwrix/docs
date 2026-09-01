@@ -107,7 +107,7 @@ Creates the Initialization Job for the given agent.
 
 ## Generated XML
 
-Our example generates the following configuration:
+This example generates the following configuration:
 
 ```xml
 <Job Identifier="InitializationJob" DisplayName_L1="ZZ Administration/Initialization" DisplayName_L2="ZZ Administration/Initialisation" Agent="Local" IsInitializationJob="true" UserStartDenied="true">

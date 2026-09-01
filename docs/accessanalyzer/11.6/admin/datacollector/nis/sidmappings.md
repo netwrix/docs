@@ -6,13 +6,14 @@ sidebar_position: 50
 
 # NIS: SID Mappings
 
-The SID Mappings page is where the Windows-style SID mappings for the Unix User ID and Group ID are
-specified. It is a wizard page for the category of:
+Use the SID Mappings page to specify the Windows-style SID mappings for the Unix User ID and Group
+ID. It is a wizard page for the category of:
 
 - Scan NIS User and Groups
 
 ![NIS Data Collector Wizard SID Mappings page](/images/accessanalyzer/11.6/admin/datacollector/nis/sidmappings.webp)
 
 The default settings work for most environments. Use this page to **Add**, **Edit**, or **Remove**
-ID Mappings. Multiple entries are allowed. For each range of User ID or Group ID entered, the offset
-is added to the ID and the resulting SID is the format with `%d` replaced by the ID.
+ID Mappings. You can add multiple entries. For each range of User ID or Group ID you enter, the
+wizard adds the offset to the ID, and the resulting SID uses the format with `%d` replaced by the
+ID.

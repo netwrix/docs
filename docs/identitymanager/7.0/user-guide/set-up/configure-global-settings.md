@@ -16,7 +16,7 @@ The Settings interface provides information and management options for the appli
 
 ### Look and Feel
 
-The **Look and Feel** section allows you to customize the application to your preferences.
+Use the **Look and Feel** section to customize the application to your preferences.
 
 The customization includes the following:
 

@@ -75,7 +75,7 @@ upon login.
 
 ![Home page for Resource Owner with no assigned role](/images/accessinformationcenter/12.0/admin/homeresourceowner.webp)
 
-Features available to owners is dependent upon the features enabled by the Owner Administrators.
+The Owner Administrators control the features available to owners.
 
 ## Your Access Portal
 

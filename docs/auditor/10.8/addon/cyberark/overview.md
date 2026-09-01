@@ -7,7 +7,7 @@ sidebar_position: 80
 # CyberArk Privileged Access Security
 
 Netwrix Auditor is a visibility platform for user behavior analysis and risk mitigation that enables
-control over changes, configurations and access in hybrid IT environments to protect data regardless
+control over changes, configurations, and access in hybrid IT environments to protect data regardless
 of its location. The platform provides security analytics to detect anomalies in user behavior and
 investigate threat patterns before a data breach occurs.
 
@@ -16,7 +16,7 @@ and SSH Keys. It enables organizations to manage and monitor all activities asso
 privileged identities, for example, Windows server administrator, root on a UNIX server, etc. A
 featured set of the Privileged Access Security tools includes, in particular:
 
-- **Privileged Session Manager** - a tool that enables users to securely connect to remote targets
+- **Privileged Session Manager** - a tool for securely connecting to remote targets
   with a standard remote desktop client application, providing isolated sessions.
 - **Enterprise Password Vault** – a tool for storage and centralized management of the privileged
   accounts; it supports automated changes and logging of the activities associated with all types of
@@ -53,7 +53,7 @@ works as follows:
    of events to be monitored, etc.
 
     See the [Monitored Events](/docs/auditor/10.8/addon/cyberark/monitoredevents.md) topic for additional information on the events
-    supported for monitoring out of the box.
+    supported for monitoring by default.
 
 3. On the add-on installation server, the administrator runs the installation file and configures
    the Add-On parameters in the configuration wizard.

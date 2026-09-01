@@ -19,10 +19,10 @@ sidebar_position: 2
 | **Exclude site URLs** | Excludes specific site collections from the scan. Enter one URL per line. Exclusions take precedence over inclusions. |
 | **Scan OneDrive** | When enabled, includes OneDrive personal site collections in the scan. Enabled by default. |
 
-The Access scan also reads Microsoft Information Protection (MIP) sensitivity labels from SharePoint item metadata and stores them alongside the permission data. Access Analyzer reads existing labels only — writing or modifying MIP labels on SharePoint Online items is not supported.
+The Access scan also reads Microsoft Information Protection (MIP) sensitivity labels from SharePoint item metadata and stores them alongside the permission data. Access Analyzer reads existing labels only — it doesn't support writing or modifying MIP labels on SharePoint Online items.
 
 ## Sensitive Data scan
 
 The Sensitive Data scan reads file contents to detect and classify sensitive information. It runs after the Access scan completes and uses the file inventory collected during that scan.
 
-Sensitive data classification policies, MIP label mappings, and OCR settings are configured globally and apply to all source groups. To configure them, navigate to **Configuration** > **Sensitive Data**. See [Sensitive Data Configuration](../../configurations/sensitive-data.md) for details.
+You configure sensitive data classification policies, MIP label mappings, and optical character recognition (OCR) settings globally, and they apply to all source groups. To configure them, navigate to **Configuration** > **Sensitive Data**. See [Sensitive Data Configuration](../../configurations/sensitive-data.md) for details.

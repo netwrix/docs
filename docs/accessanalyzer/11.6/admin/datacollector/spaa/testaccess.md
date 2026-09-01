@@ -22,12 +22,12 @@ The options and sections on the Test Access page are:
   Server text box. Click **Check Access** to test access to the SharePoint environment.
 
     - For example – `sbnjqasp30` or `sbnjqasp3.qa.com`
-    - Do not include `http[s]://` or use a URL for the server name. The Test Access function cannot
-      be scoped to individual Web applications.
+    - Don't include `http[s]://` or use a URL for the server name. You can't scope the Test
+      Access function to individual Web applications.
 
 - Access Test Results – Displays information on test results. Test criteria are listed in the
-  **Description** column. Test results will be returned as either **Pass** or **Fail** in the
-  Results column.
+  **Description** column. The Test Access page returns test results as either **Pass** or **Fail**
+  in the Results column.
 - Save Report – Click **Save Report** to export and save a text version of the test results
 
 |                                                                                                                                          |                                                                                                                                           |

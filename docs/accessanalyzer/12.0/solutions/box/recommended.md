@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # Recommended Configurations for the Box Solution
 
-The jobs that run analysis tasks in the Box Solution requires the host list to be assigned.
+The jobs that run analysis tasks in the Box Solution require you to assign a host list.
 
 **Dependencies**
 
-- The .Active Directory Inventory Job Group must be successfully run prior to running this Job Group
+- The .Active Directory Inventory Job Group must be successfully run before running this Job Group
 - 2-Box_Import Job – Imports data collected by the 1-Box_Access Scans Job and 1-Box_Activity Scans
   Job
 
@@ -20,29 +20,29 @@ The jobs that run analysis tasks in the Box Solution requires the host list to b
 
 Within host inventory, the Box hosts will return a HostStatus of **Offline**.
 
-If multiple Enterprise_IDs are to be scanned, it is necessary to duplicate the jobs within the
-0.Collection Job Group for each target host. Since the 2-Box_Import Job must always be run after the
-1-Box_Access Scans Job and 1-Box_Activity Scans Job, it is a best practice to set up sub-job groups
-for each target named to identify the target, for example EMEA Box. Copying the jobs will append a
-number to the job’s name. Once authorization codes have been generated for each 1-Box_Access Scans
-Job and 1-Box_Activity Scans Job, then the solution can be scheduled to run as desired.
+To scan multiple Enterprise_IDs, duplicate the jobs within the 0.Collection Job Group for each
+target host. Since the 2-Box_Import Job must always run after the 1-Box_Access Scans Job and
+1-Box_Activity Scans Job, set up sub-job groups for each target as a best practice, named to
+identify the target, for example, EMEA Box. Copying the jobs will append a number to the job's
+name. After you generate authorization codes for each 1-Box_Access Scans Job and 1-Box_Activity
+Scans Job, you can schedule the solution to run as desired.
 
 **Connection Profile**
 
-The Box Solution requires a specific credential for the Connection Profile which has access to the
-SA Installer location. It is also necessary to authenticate to the target Box environment, which is
-done through the Box Data Collector query configuration. An Enterprise Admin account (or Co-Admin
-account with permission to **Run new reports and access existing reports** enabled) credential is
-needed to generate an authorization code in the form of an Access Token. This can be done through
-the query configuration either in the 1-Box_Access Scans Job’ Authentication wizard page or the
-1-Box_Activity Scans Job’s Authentication wizard page of the Box Data Collector Wizard. See the
+The Box Solution requires a specific credential for the Connection Profile that has access to the
+SA Installer location. You also need to authenticate to the target Box environment through the Box
+Data Collector query configuration. You need an Enterprise Admin account (or a Co-Admin account
+with the **Run new reports and access existing reports** permission enabled) to generate an
+authorization code in the form of an Access Token. Configure this through the query configuration
+in either the 1-Box_Access Scans Job's Authentication wizard page or the 1-Box_Activity Scans Job's
+Authentication wizard page of the Box Data Collector Wizard. See the
 [Box Data Collector](/docs/accessanalyzer/12.0/admin/datacollector/box/overview.md) topic for additional information.
 
 **Access Token**
 
 The Access Token is valid for 60 days. If Box scans are running on a regular schedule, then the
 Access Token automatically refreshes once an hour. However, if it has been more than 60 days since
-the last scan, it is necessary to regenerate the Access Token.
+the last scan, regenerate the Access Token.
 
 **Schedule Frequency**
 
@@ -56,7 +56,7 @@ This solution can be run with the default query configuration. However, the foll
 - 1-Box_Access Scans Scan query
 - 1-Box_Activity Scans Activity Scan query
 
-The Box_Import Job's Import query is preconfigured to run a full import and should not be modified.
+The Box_Import Job's Import query is preconfigured to run a full import and shouldn't be modified.
 
 **Analysis Configuration**
 
@@ -77,15 +77,14 @@ can be modified:
 depth.
 
 **Step 3 –** In the 1-Box_Access Scans Job, configure the Scan query to generate an authentication
-code to authenticate to the targeted Box environment. This step only needs to be run prior to the
-first scan.
+code to authenticate to the targeted Box environment. Run this step only before the first scan.
 
 **Step 4 –** (Optional) Modify analysis task parameters for the reporting jobs.
 
 **Step 5 –** Schedule the Box Job Group to run as desired.
 
 :::note
-The 0.Collection > 2-Box_Import Job must be run after the 1-Box_Access Scans Job and
+The 0.Collection > 2-Box_Import Job must run after the 1-Box_Access Scans Job and
 1-Box_Activity Scans Job because it imports the data collected by the scan jobs.
 :::
 

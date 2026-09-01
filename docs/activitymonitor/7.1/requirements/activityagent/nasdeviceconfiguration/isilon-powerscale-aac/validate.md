@@ -6,18 +6,18 @@ sidebar_position: 30
 
 # Validate Setup
 
-Once the Activity Monitor agent is configured to monitor the Dell device, the automated
-configuration must be validated to ensure events are being monitored.
+After you configure the Activity Monitor agent to monitor the Dell device, validate the automated
+configuration to ensure events are being monitored.
 
 ## Validate Dell CEE Registry Key Settings
 
 After the Activity Monitor activity agent has been configured to monitor the Dell device, it will
 configure the Dell CEE automatically if it is installed on the same server as the agent. This needs
 to be set manually in the rare situations where it is necessary for the Dell CEE to be installed on
-a different server than the Windows proxy server(s) where the Activity Monitor activity agent is
+a different server than the Windows proxy servers where the Activity Monitor activity agent is
 deployed.
 
-If the monitoring agent is not registering events, validate that the EndPoint is accurately set.
+If the monitoring agent isn't registering events, validate that the EndPoint is accurately set.
 Open the Registry Editor (run regedit). For the synchronous real-time delivery mode (AUDIT), use the
 following steps.
 
@@ -84,7 +84,7 @@ additional information.
 ## Validate Dell CEE Services are Running
 
 After the Activity Monitor Activity Agent has been configured to monitor the Dell device, the Dell
-CEE services should be running. If the Activity Agent is not registering events and the EndPoint is
+CEE services should be running. If the Activity Agent isn't registering events and the EndPoint is
 set accurately, validate that the Dell CEE services are running. Open the Services (run
 `services.msc`).
 
@@ -114,19 +114,19 @@ and Disable monitoring.
 
 **HKEY_LOCAL_MACHINE\SOFTWARE\EMC\CEE\Configuration**
 
-**Step 10 –** Right-click on **Debug** and select Modify. The Edit DWORD Value window opens. In the
+**Step 10 –** Right-click **Debug** and select Modify. The Edit DWORD Value window opens. In the
 Value data field, enter the value of 3F. Click OK, and the Edit DWORD Value window closes.
 
 :::note
-If the Debug DWORD Value does not exist, it needs to be added.
+If the Debug DWORD Value doesn't exist, it needs to be added.
 :::
 
 
-**Step 11 –** Right-click on **Verbose** and select Modify. The Edit DWORD Value window opens. In
+**Step 11 –** Right-click **Verbose** and select Modify. The Edit DWORD Value window opens. In
 the Value data field, enter the value of 3F. Click OK, and the Edit DWORD Value window closes.
 
 :::note
-If the Verbose DWORD Value does not exist, it needs to be added.
+If the Verbose DWORD Value doesn't exist, it needs to be added.
 :::
 
 

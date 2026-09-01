@@ -88,11 +88,11 @@ The add-on captures comprehensive audit data including:
 
 This Azure SQL Managed Instance add-on is a **free integration solution** for Netwrix Auditor.
 
-**We value your feedback!** Your experience and suggestions help us improve the add-on. Please share your feedback on:
+Your feedback is valuable! Your experience and suggestions help improve the add-on. Share your feedback on:
 - Functionality and features
 - Documentation and setup process
 - Additional requirements or use cases
 
 ## Compatibility Notice
 
-Make sure to check your product version, and then review and update your add-ons and scripts leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.
+Ensure to check your product version, and then review and update your add-ons and scripts leveraging Netwrix Auditor Integration API. Download the latest add-on version in the Add-on Store.

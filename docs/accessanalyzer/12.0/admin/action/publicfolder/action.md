@@ -10,8 +10,8 @@ The Action page specifies the basic action to perform on public folders. The pag
 selection in the Steps pane adjust based on this selection.
 
 :::note
-Once an action is selected and saved, and the wizard is closed, this page is no longer
-available and the selection cannot be altered.
+After you select and save an action and close the wizard, this page is no longer
+available, and you can't alter the selection.
 :::
 
 
@@ -19,9 +19,8 @@ available and the selection cannot be altered.
 
 Choose from the following actions:
 
-- Define a new action – Enables the Operation page where the operation on which the action is based
-  is selected
-- Rollback a previously executed action – Enables the Prior Actions page where a list of previously
-  executed actions is displayed and a selected action may be rolled back. Not all operations support
-  rollback, and the Support Rollback option must be enabled prior to execution for the action to be
-  eligible for rollback.
+- Define a new action – Enables the Operation page, where you select the operation on which to base
+  the action
+- Rollback a previously executed action – Enables the Prior Actions page, which displays a list of
+  previously executed actions that you can roll back. Not all operations support rollback. Enable
+  the Support Rollback option before execution to make the action eligible for rollback.

@@ -26,7 +26,7 @@ Creates the reading right of the resource picker.
 
 ## Generated XML
 
-Our example generates the following configuration:
+The example above generates the following configuration:
 
 ```xml
 <AccessControlRule Identifier="AdministratorAdministrator_Resource_Custom_Workflows" DisplayName_L1="Administrator - Resources Picker - " DisplayName_L2="Administrator - Picker de ressources" EntityType="Resource" Profile="Administrator">

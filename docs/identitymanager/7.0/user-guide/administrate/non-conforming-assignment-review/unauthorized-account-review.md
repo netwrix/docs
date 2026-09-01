@@ -42,7 +42,7 @@ home page.
     ![Resource Reconciliation Page](/images/identitymanager/unauth_unauthorizedaccounts_v602.webp)
 
 4. Choose the default resource view or the property view with the top right toggle.
-5. Click on the line of an account with an owner.
+5. Click the line of an account with an owner.
 
 In the following example, the nominative LDAP account linked to the resource `U40897 / Internal Users / acme / com` has the owner `Maxime Guillot` with an 80% confidence rate.
 
@@ -56,9 +56,9 @@ The **Resource Properties** frame shows all the properties of the resources. The
 
 6. Select the appropriate decision.
 
-Decisions must be made with caution as they cannot be undone.
+Decisions must be made with caution as they can't be undone.
 
-7. Click on **Confirm Account Deletion** or **Authorize Account** according to the previous decision.
+7. Click **Confirm Account Deletion** or **Authorize Account** according to the previous decision.
 8. Trigger the [Provision](../../../user-guide/administrate/provisioning) by launching, on the appropriate connector's overview page **Jobs** > **Generate Provisioning Orders**, then, after this first task is done,
 **Jobs** > **Fulfill**.
 
@@ -66,7 +66,7 @@ Decisions must be made with caution as they cannot be undone.
 
 ### Use property view
 
-By default, non-conforming assignments are listed by resource. It is possible to click on a resource and then access the list of all unreconciled properties for said resource.
+By default, non-conforming assignments are listed by resource. Click a resource to access the list of all unreconciled properties for said resource.
 
 ![Resource View](/images/identitymanager/orphan_resourceview_v523.webp)
 
@@ -76,17 +76,17 @@ Once enabled, select a resource type to display all unreconciled properties link
 
 ![Property View](/images/identitymanager/orphan_propertyview_v603.webp)
 
-The review process is the same with both views. However with property view, reviewers don't click on a given line, but choose a decision directly on the left of the property line.
+The review process is the same with both views. However with property view, reviewers don't click a given line, but choose a decision directly on the left of the property line.
 
 In addition, using property view enables bulk reconciliation to approve the proposed values or keep the current values for several resources simultaneously.
 
 ![Bulk Reconcile](/images/identitymanager/orphan_bulkreconcile_v603.webp)
 
-Bulk keeping non-authorized accounts, by clicking on **Bulk Reconcile** then **Approve Current Values**, does not approve their unreconciled properties which will still be displayed on this screen.
+Bulk keeping non-authorized accounts, by clicking on **Bulk Reconcile** then **Approve Current Values**, doesn't approve their unreconciled properties which will still be displayed on this screen.
 
 ## Verify Review
 
-In order to verify the process, check that the changes you ordered appear on the corresponding user's **View Permissions** tab.
+To verify the process, check that the changes you ordered appear on the corresponding user's **View Permissions** tab.
 
 ![View Permissions Tab](/images/identitymanager/viewpermissions_v602.webp)
 

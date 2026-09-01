@@ -15,7 +15,7 @@ View the analysis tasks by navigating to the **Exchange** > **7. Sensitive Data*
 **EX_SDDResults** > **Configure** node and select **Analysis**.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -25,12 +25,12 @@ preconfigured for this job.
 The following analysis tasks are selected by default:
 
 - Mailbox Details – Creates the EX_SDDResults_MailboxDetails table, accessible under the job’s
-  Results node. Provides details regarding the number of matches that are found per item in each
+  Results node. Provides details regarding the number of matches found per item in each
   mailbox.
 - Mailbox Summary – Creates the EX_SDDResults_MailboxSummary table, accessible under the job’s
   Results node. Summarizes the items found with matches.
 - Public Folder Details – Creates the EX_SDDResults_PublicFolderDetails table, accessible under the
-  job’s Result node. Provides details regarding the number of matches that are found per item in
+  job’s Result node. Provides details regarding the number of matches found per item in
   each public folder.
 - Public Folder Mailstore Summary – Creates the EX_SDDResults_PublicFolderSummary table, accessible
   under the job’s Results node. Summarizes the items found with matches.
@@ -41,7 +41,7 @@ The following analysis task deletes table data from data collection and analysis
 task should remain cleared unless specifically needed:
 
 :::warning
-Do not select the **Deletes all Stored Data** option. This analysis task is for
+Don't select the **Deletes all Stored Data** option. This analysis task is for
 troubleshooting and cleanup only. Data will be deleted from the database.
 :::
 

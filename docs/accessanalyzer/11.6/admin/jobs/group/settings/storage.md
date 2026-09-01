@@ -14,9 +14,9 @@ topic for additional information.
 ![Job Group Storage Settings](/images/accessanalyzer/11.6/admin/jobs/group/storage.webp)
 
 By default, all job groups are set to inherit the **Use Default Profile** option from the global
-level or a parent job group. If it is necessary for a job group to send data to a different
+level or a parent job group. If a job group needs to send data to a different
 database, the Storage Profile must already exist at the global level. Select the **Use This
-Profile** radio button and choose the non-default Storage Profile from the drop-down menu.
+Profile** radio button and choose the non-default Storage Profile from the dropdown menu.
 
 Selecting the **Set all the child objects to inherit these settings** option forces inheritance of
 this setting to all sub-groups and jobs within the job group. When enabled, this option overrides

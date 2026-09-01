@@ -14,7 +14,7 @@ Membership Paths table.
 
 This report is comprised of the following columns:
 
-- Trustee Name – Owner of the trustee account
+- Trustee Name – Name of the trustee
 - Domain Name – Name of the domain
 - Department – Department to which the trustee account belongs
 - Mail – Trustee’s email account as read from Active Directory

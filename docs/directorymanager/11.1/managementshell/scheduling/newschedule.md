@@ -65,7 +65,7 @@ This example uses insecure credentials.
 
 Example 2:
 
-This example creates a smart-group schedule triggering every 7th of every March, August and
+This example creates a smart-group schedule triggering every 7th of every March, August, and
 September.
 
 ```

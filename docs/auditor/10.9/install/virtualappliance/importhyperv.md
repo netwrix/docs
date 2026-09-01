@@ -13,7 +13,7 @@ Perform the following steps to import a virtual machine:
 **Step 2 –** Navigate to **Start** → **All Apps** → **Hyper-V Manager**.
 
 **Step 3 –** In the Hyper-V Manager, navigate to **Actions** → **Import virtual machine** and follow
-the instructions of the wizard. Review the table below for more information.
+the instructions of the wizard. Review the following table for more information.
 
 | Step                   | Description                                                            |
 | ---------------------- | ---------------------------------------------------------------------- |

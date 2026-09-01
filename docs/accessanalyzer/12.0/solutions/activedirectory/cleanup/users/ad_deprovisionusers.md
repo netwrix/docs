@@ -11,11 +11,11 @@ accounts.
 
 **Step 1 –** Move stale users to a staging OU for deletion.
 
-**Step 2 –** The assigned manager is alerted by email of the impending deletion.
+**Step 2 –** Alerts the assigned manager by email of the impending deletion.
 
-**Step 3 –** User accounts are disabled.
+**Step 3 –** Disables user accounts.
 
-**Step 4 –** Users are flagged as **To Be Deleted**.
+**Step 4 –** Flags users as **To Be Deleted**.
 
 **Step 5 –** Delete users from the staging OU.
 
@@ -23,8 +23,8 @@ accounts.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
-parameters used by analysis tasks in the job. See the
+Use the Configuration section on a Job's overview page to modify any customizable parameters used
+by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
 
@@ -57,8 +57,8 @@ The default analysis tasks are:
 
 ### Customizable Analysis Parameters for the AD_DeprovisionUsers Job
 
-Customizable parameters enable you to set the values used to classify user and group objects during
-this job’s analysis.
+Use customizable parameters to set the values used to classify user and group objects during this
+job's analysis.
 
 | Analysis Task           | Customizable Parameter Name | Default Value | Value Indicates                                 |
 | ----------------------- | --------------------------- | ------------- | ----------------------------------------------- |
@@ -74,7 +74,7 @@ Navigate to the **Active Directory** > **Cleanup** > **2.Users** > **AD_Deprovis
 **Configure** node and select **Actions** to view the actions.
 
 :::warning
-Do not enable the actions unless it is required. Disable the actions after execution to
+Don't enable the actions unless it is required. Disable the actions after execution to
 prevent making unintended and potentially harmful changes to Active Directory.
 :::
 
@@ -90,7 +90,7 @@ The action tasks must be executed together and in order.
 
 - Move Users – Move users to staging OU for deletion
 
-    - The target OU must be set in the Move Users Action Task prior to executing the action tasks.
+    - The target OU must be set in the Move Users Action Task before executing the action tasks.
       See the [Configure the Target OU](/docs/accessanalyzer/12.0/solutions/activedirectory/cleanup/configuretargetou.md) topic for additional information.
 
 - Notify Manager – Notify assigned manager by email of the impending deletion

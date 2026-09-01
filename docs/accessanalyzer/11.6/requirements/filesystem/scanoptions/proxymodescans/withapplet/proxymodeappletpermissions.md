@@ -29,9 +29,9 @@ for network authentication” must be disabled for the applet to start.
 :::
 
 
-Sensitive Data Discovery Auditing scans require .NET Framework 4.7.2 or later to be installed on the
-server where the applet is to be deployed in order for Sensitive Data Discovery collections to
-successfully occur.
+Sensitive Data Discovery Auditing scans require .NET Framework 4.7.2 or later on the
+server where the applet is deployed, for Sensitive Data Discovery collections to
+succeed.
 
 
 See the [Proxy Mode with Applet Port Requirements](https://docs.netwrix.com/docs/accessanalyzer/11_6/requirements/filesystem/scanoptions/proxy-mode-scans/with-applet/proxymodeappletports) topic for firewall rule

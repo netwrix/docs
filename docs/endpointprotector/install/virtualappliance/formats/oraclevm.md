@@ -5,14 +5,13 @@ sidebar_position: 30
 ---
 # Oracle VM VirtualBox
 
-Oracle VM VirtualBox supports the OVF format for deploying virtual appliances, offering a
-user-friendly open-source solution.
+Oracle VM VirtualBox supports the Open Virtualization Format (OVF) for deploying virtual appliances, offering an open-source solution.
 
 ## Oracle VM VirtualBox
 
 Deploy your appliance using Oracle VM VirtualBox with the OVF format.
 
-Follow the steps to get started with the import process.
+To get started with the import process:
 
 **Step 1 –** Unzip the downloaded package.
 
@@ -24,7 +23,7 @@ Follow the steps to get started with the import process.
 
 ![Importing Appliances](importappliance.webp)
 
-**Step 4 –** On the Appliance to import page, click the **File icon**, browse and select the OVF ﬁle
+**Step 4 –** On the Appliance to import page, click the **File icon**, browse, and select the OVF ﬁle
 from the extracted zip.
 
 ![ Selecting the OVF ﬁle from the extracted zip](selectsource.webp)

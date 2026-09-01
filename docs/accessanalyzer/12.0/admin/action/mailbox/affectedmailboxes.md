@@ -20,7 +20,7 @@ Select mailboxes to process using the following options:
 
 - Users found in the following column – Select this option to identify users via a data table column
 
-    - Use the drop-down menu to select a data table column containing either the Mailbox display
+    - Use the dropdown menu to select a data table column containing either the Mailbox display
       name or email address
     - Select a data type for the selected field using the following options:
 

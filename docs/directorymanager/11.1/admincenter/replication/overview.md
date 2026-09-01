@@ -55,7 +55,7 @@ specific to an identity store.
   Elasticsearch. See the [Manage Local Replication Settings](/docs/directorymanager/11.1/admincenter/identitystore/replication.md) topic.
 
 :::note
-The Replication service does not replicate excluded domains for an identity store. See the
+The Replication service doesn't replicate excluded domains for an identity store. See the
 [Exclude an Active Directory Domain from Replication](/docs/directorymanager/11.1/admincenter/identitystore/manage.md#exclude-an-active-directory-domain-from-replication)
 topic.
 :::

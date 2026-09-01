@@ -20,8 +20,7 @@ of the following columns:
 If the selected trustee in the top section of the report is a group, the Group Membership pane
 displays the group membership, including nested groups.
 
-There is one table at the bottom displaying Permission Source for the select trustee. It contains
-all of the ways the selected trustee has been granted rights to the selected resource.
+The Permission Source table at the bottom contains all of the ways the selected trustee has been granted rights to the selected resource.
 
 ![Permission Source table](/images/accessinformationcenter/12.0/resourceaudit/filesystem/exceptions/exceptionsbytypetable.webp)
 

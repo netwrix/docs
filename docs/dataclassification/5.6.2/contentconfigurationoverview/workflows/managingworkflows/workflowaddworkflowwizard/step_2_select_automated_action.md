@@ -6,9 +6,8 @@ sidebar_position: 20
 
 # Step 2. Select Action
 
-After you select the required type of content source, you will be offered the number of automated
-actions available for such content, for example, send an alert by email or update document metadata,
-etc.
+After you select the required type of content source, you can choose from automated
+actions available for that content source, such as sending an email alert or updating document metadata.
 
 Click the action you need and configure the necessary settings. For details, see
 [Available Actions](/docs/dataclassification/5.6.2/contentconfigurationoverview/workflows/actions/actionsbysources/actions_by_sources.md).

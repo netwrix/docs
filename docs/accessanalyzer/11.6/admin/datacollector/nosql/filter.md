@@ -6,10 +6,10 @@ sidebar_position: 50
 
 # NoSQL: Filter
 
-The Filter page is where the query can be scoped to target specific databases or instances. It is a
+Use the Filter page to scope the query to target specific databases or instances. It is a
 wizard page for the Sensitive Data Collection category.
 
-It is necessary to populate the available Mongo databases/instances before the query can be scoped.
+Populate the available Mongo databases/instances before scoping the query.
 See the [Manage Connections Window](#manage-connections-window) topic for additional information.
 
 ![NoSQL Data Collector Wizard Filter page](/images/accessanalyzer/11.6/admin/datacollector/nosql/filter.webp)
@@ -33,24 +33,24 @@ The configurable filter options are:
 
     - Exclude — Excludes selected databases/instances and displays them in red
     - Include — Reverts an exclusion. By default, all sub tables are included.
-    - Build Pattern — Opens the Build Pattern dialogue to build a custom filter to be applied to the
+    - Build Pattern — Opens the Build Pattern dialogue to build a custom filter to apply to the
       selected database objects. See the [Build or Edit Pattern](#build-or-edit-pattern) topic for
       additional information.
 
-- Selections — Displays selected database objects for which the query has been scoped. Right click
+- Selections — Displays selected database objects the query is scoped to. Right click
   to open context menu:
 
-    - Remove Pattern — Selected database/instance will be removed from the query
+    - Remove Pattern — Removes the selected database/instance from the query
     - Edit Pattern — Opens the Edit Pattern dialogue with the following options (See the
       [Build or Edit Pattern](#build-or-edit-pattern) topic for additional information):
 
         - Exclude — Excludes selected databases/instances and displays them in red
         - Include — Reverts an exclusion. By default, all sub tables are included.
-        - Pattern — Build a custom filter to be applied to the selected database objects
+        - Pattern — Build a custom filter to apply to the selected database objects
 
 ## Manage Connections Window
 
-The Manage Connections window enables users to add MongoDB database instances to search for
+Use the Manage Connections window to add MongoDB database instances to search for
 sensitive data. Click **Connections** to open the window.
 
 ![Manage Connections window](/images/accessanalyzer/11.6/admin/datacollector/nosql/manageconnections.webp)
@@ -64,8 +64,8 @@ additional information on how to connect to a MongoDB database, see the MongoDB
 - Is Active — Select the checkbox to include the database on the Servers Pane on the Filter page
 - Server Label — The name of the server
 - Host — Name or IP address of the host where the database is located
-- Port Number — Port number for the database. The default port is 27017. If a non-default port is
-  being used, it should be specified in the Port Number section.
+- Port Number — Port number for the database. The default port is 27017. If you use a non-default
+  port, specify it in the Port Number section.
 - Auth Database — The database used for authorization. Typically it is the **admin** database.
 - Read Preference — Read preference describes how MongoDB clients route read operations to the
   members of a replica set by default, an application directs its read operations to the primary
@@ -80,7 +80,7 @@ In the Manage Connections table, the following information is also listed:
   information has been validated. **N** indicates the information has not been validated.
 - Last Inspected — Indicates the date and time of when the connection information was last
   inspected. If blank, the connection information has not yet been validated.
-- Enable Impersonation – Impersonation does not apply to MongoDB and this column will be blank.
+- Enable Impersonation – Impersonation doesn't apply to MongoDB and this column will be blank.
 
 The Manage Connections window has the following buttons:
 
@@ -92,7 +92,7 @@ The Manage Connections window has the following buttons:
 
 #### Build or Edit Pattern
 
-The Build / Edit Pattern window enables users to apply a custom scoping filter to the query.
+Use the Build / Edit Pattern window to apply a custom scoping filter to the query.
 
 ![Edit Existing Pattern window](/images/accessanalyzer/11.6/admin/datacollector/nosql/editpattern.webp)
 
@@ -104,7 +104,7 @@ The Build / Edit Pattern window has the following features:
 - Pattern — Build a custom filter to be applied to the selected database objects
 
     :::note
-    Color-coding indicating Excluded and Included objects does not display until after a
-    selection is validated using the **Validate Selections** button on the Filter page.
+    Color-coding indicating Excluded and Included objects doesn't display until after you validate
+    a selection using the **Validate Selections** button on the Filter page.
 
     :::

@@ -21,7 +21,7 @@ See the Add a Resource topic for additional information.
 
 ## Add a Resource
 
-Follow the steps to add resources one at a time and assign owners.
+To add resources one at a time and assign owners:
 
 **Step 1 –** In the Resource Owners interface, click **Add**. The Add new resource wizard opens.
 
@@ -36,8 +36,7 @@ Follow the steps to add resources one at a time and assign owners.
         - For example, http://farm.corp.com
     - For groups, enter the group name in NTAccount format [DOMAIN\GROUP]
         - For example, acme\app.group
-- Browse option – Navigate through the resource tree to select the desired File System or SharePoint
-  resource.
+- Browse option – Navigate through the resource tree to select the File System or SharePoint resource you want.
 
 ![Add new resources wizard showing 2. Select Owners page](/images/auditor/10.7/access/reviews/resourceowners/wizard/selectowners_1.webp)
 
@@ -58,7 +57,7 @@ the owners:
 - Owner Mail — Trustee's email address as read from Active Directory
 - Owner Title — Trustee's title as read from Active Directory
 - Owner Department — Trustee's department as read from Active Directory
-- Confirmed — Indicates whether or not the assigned owner has confirmed ownership of that resource.
+- Confirmed — Indicates whether the assigned owner has confirmed ownership of that resource.
   Tool-tips display when hovering over the icons indicating whether the resource ownership has been
   confirmed, declined, pending response, or that a confirmation has not been requested.
 

@@ -8,7 +8,7 @@ sidebar_position: 50
 
 The Resource Owners interface is where Access Information Center users with either the Security Team
 or Administrator role (to be referred to as Ownership Administrators) can assign ownership of
-resources to be managed through the application. Assigned owners do not require an Access
+resources to be managed through the application. Assigned owners don't require an Access
 Information Center user role, as they manage their resources through the Owner portal. Resource
 management options are controlled by the configuration for each resource within the Resource Owners
 interface. Resources to be included in either the Resource Review or the Self-Service Access
@@ -33,7 +33,7 @@ Netwrix Access Analyzer (formerly Enterprise Auditor) according to the targeted 
 assigned. The Access Information Center provides the means to assign resource owners manually or
 based on a calculation of the “Probable Owner.”
 
-The Owner portal provides access to resource reports, historical and pending access requests, and
+The Owner portal provides access to resource reports, historical, and pending access requests, and
 historical and pending entitlement reviews. Owners can also make ad hoc changes to access if that
 feature has been enabled for the resource. The Owner portal is only accessible to users who have
 been assigned ownership of at least one resource. Owners without an Access Information Center user
@@ -107,7 +107,7 @@ Prerequisites:
 Workflow:
 
 :::note
-This workflow is not numbered because the Notification piece can occur at any time in the
+This workflow isn't numbered because the Notification piece can occur at any time in the
 workflow.
 :::
 

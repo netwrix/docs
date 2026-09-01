@@ -12,7 +12,7 @@ Use the SQLscripting analysis module to apply SQL scripting to the selected job.
 
 The SQLscripting analysis module evaluates the Access Analyzer user’s permission level to determine
 whether to allow the connected user to run the scripted command. Since this evaluation is based on
-specific SQL database permissions and is not always under Access Analyzer’s control, some scripts
+specific SQL database permissions and isn't always under Access Analyzer’s control, some scripts
 with correct syntax may fail due to insufficient permissions.
 
 The SQL Script Editor window has the following options:
@@ -25,13 +25,13 @@ The SQL Script Editor window has the following options:
 
 - Syntax Check – Checks SQL script syntax
 
-    - Syntax Check does not identify logic errors, only instances where syntax is incorrect. Click
+    - Syntax Check doesn't identify logic errors, only instances where syntax is incorrect. Click
       **Syntax Check** to open the Script Errors window which identifies syntax errors.
-    - Syntax Check reports back syntax errors starting from the beginning of the script to the end.
-      Syntax Check does not return a list of errors.
+    - Syntax Check reports syntax errors starting from the beginning of the script to the end.
+      Syntax Check doesn't return a list of errors.
 
-- Load file – Opens a File Explorer which can be used to navigate to a SQL file
-- Save to File – Saves the currently configured script into a SQL file
+- Load file – Opens a File Explorer to navigate to a SQL file
+- Save to File – Saves the configured script into a SQL file
 - Undo – Undo the previous changes made to script (Ctrl+Z)
 - Redo – Redo the previous changes made to script (Ctrl+Y)
 - Cut – Cuts the highlighted script from the SQL script editor (Ctrl+X)
@@ -41,9 +41,8 @@ The SQL Script Editor window has the following options:
   [Transact-SQL Reference](https://learn.microsoft.com/en-us/previous-versions/sql/sql-server-2005/ms189826(v=sql.90))
   article
 
-Click **Save and Close** to return to the Analysis Properties page. If no changes were made or
-intended, it is best practice to click **Cancel** to close the SQL Script Editor wizard to ensure no
-accidental changes are saved.
+Click **Save and Close** to return to the Analysis Properties page. If you didn't make or intend any
+changes, click **Cancel** to close the SQL Script Editor wizard so you don't save accidental changes.
 
 ## Parameters
 
@@ -75,8 +74,8 @@ The parameters have the following properties:
 - Name – Name of the variable or table
 - Type – Type of variable or table
 
-    - String variables utilize a text string input
-    - Integers and floats are able to handle invalid inputs
+    - String variables use a text string input
+    - Integers and floats can handle invalid inputs
     - Boolean variables only take True/False input, in SQL they are 1/0
     - Percentages only take whole numbers 0-100, converted to 0.0 to 1.0 in SQL
     - Temporary and Variable Tables
@@ -98,9 +97,9 @@ The Edit table window has the following options:
     - If the name begins with a `#` it is a temporary table
     - If the name begins with a `@` it is a table variable
 
-        - In SQLCommand, these can be passed in as structured table parameters
+        - In SQLCommand, you can pass these in as structured table parameters
 
-    - If neither is specified, Access Analyzer assumes it is a temporary table
+    - If the name doesn't begin with either character, Access Analyzer assumes it's a temporary table
 
 - Description – Use the Parameters window to edit the description
 - Values – Add, edit, and remove values from the table
@@ -110,8 +109,8 @@ The Edit table window has the following options:
     - Delete – Deletes the selected value
     - Up/Down – Changes the value position higher or lower
 
-A CSV file is created under the job’s directory when a parameter table is added to the analysis. A
-pre-existing CSV file can also be uploaded to populate the table.
+Access Analyzer creates a CSV file under the job’s directory when you add a parameter table to the
+analysis. You can also upload a pre-existing CSV file to populate the table.
 
-Click **OK** to confirm changes to the table. If no changes were made or intended, click **Cancel**
-to close the Edit Table window to ensure no accidental changes are saved.
+Click **OK** to confirm changes to the table. If you didn't make or intend any changes, click
+**Cancel** to close the Edit Table window so you don't save accidental changes.

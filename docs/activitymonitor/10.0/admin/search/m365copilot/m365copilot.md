@@ -24,8 +24,7 @@ Set the filters as desired and click **Search**. The application searches throug
 activity log files and returns the events that match the filters. You can
 [Filter](/docs/activitymonitor/10.0/admin/search/overview.md#filter) and
 [Sort](/docs/activitymonitor/10.0/admin/search/overview.md#sort) the results using the column
-headers. Below the Search button is the
-[Export](/docs/activitymonitor/10.0/admin/search/overview.md#export) option.
+headers. The [Export](/docs/activitymonitor/10.0/admin/search/overview.md#export) option is also available.
 
 ## General Category
 

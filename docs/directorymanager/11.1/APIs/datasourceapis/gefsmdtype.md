@@ -6,8 +6,8 @@ sidebar_position: 100
 
 # Get File Server Metadata by Type
 
-Using this API you can get metadata information of data source(s) by server type. For example, all
-Excel data source(s) defined so far in Directory Manager that have their source files in cloud.
+Using this API you can get metadata information of data sources by server type. For example, all
+Excel data sources defined so far in Directory Manager that have their source files in cloud.
 
 ## Endpoint
 

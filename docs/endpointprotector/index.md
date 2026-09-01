@@ -16,7 +16,7 @@ As AI chat tools and AI-powered browser assistants become part of everyday workf
 
 Moreover, Endpoint Protector facilitates compliance with regulatory standards such as PCI-DSS, HIPAA, and GDPR through predefined discovery patterns and response strategies. It caters to diverse organizational needs, from protecting intellectual property and client lists to ensuring compliance with industry-specific regulations.
 
-With Endpoint Protector, administrators gain a centralized, web-based interface for managing and enforcing security policies across all endpoints — whether that's a small business with a handful of devices or an enterprise fleet spanning thousands of endpoints across multiple locations. Whether preventing accidental data leakage or mitigating risks from insider threats, Endpoint Protector offers essential tools to safeguard critical business data at any scale.
+Endpoint Protector provides administrators with a centralized, web-based interface for managing and enforcing security policies across all endpoints — whether a small business with a handful of devices or an enterprise fleet spanning thousands of endpoints across multiple locations. It prevents accidental data leakage and mitigates risks from insider threats while safeguarding critical business data at any scale.
 
 ## Supportability Notice
 
@@ -24,9 +24,9 @@ To ensure optimal security, performance, and access to the latest features, Netw
 
 ### Support Status Overview
 
-- **Current EPP Server Version (2608)**: Full active support with new features, security updates, and comprehensive technical assistance
-- **Current EPP Client & EE Version (2608)**: Full active support with new features, security updates, and comprehensive technical assistance
-- **Previous EPP Server Version (2604)**: Still in active support. We recommend starting to plan the migration to the new **2608** version to ensure full compatibility and access to the latest security fixes.
+- **Current Endpoint Protector (EPP) Server Version (2608)**: Full active support with new features, security updates, and comprehensive technical assistance
+- **Current EPP Client & Enforced Encryption (EE) Version (2608)**: Full active support with new features, security updates, and comprehensive technical assistance
+- **Previous EPP Server Version (2604)**: Still in active support. Plan the migration to the new **2608** version to ensure full compatibility and access to the latest security fixes.
 - **Previous versions (2602 and older, including legacy versions 5.9.4.2 and earlier)**: Discontinued support — no new features, security patches, or technical assistance.
 
 ### What This Means

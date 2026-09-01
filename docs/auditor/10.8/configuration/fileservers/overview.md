@@ -30,13 +30,11 @@ by Auditor on these supported storage systems.:
 
 ## State-in-Time Data
 
-State-in-time data collection is supported for files, folders and shares on Windows-based file
-servers, Dell and NetApp storage systems, and Nutanix File Servers. Remember to select the
-corresponding option in the data source settings within the monitoring plan.
+State-in-time data collection is supported for files, folders, and shares on Windows-based file servers, Dell, and NetApp storage systems, and Nutanix File Servers. Remember to select the corresponding option in the data source settings within the monitoring plan.
 
 ## Sensitive Data
 
-Starting with the version 10, the product is able to report about sensitive data in your IT
+Starting with the version 10, the product can report about sensitive data in your IT
 infrastructure. Pay attention to the "_Data categories_" column in search and reports (for the
 "_File_" object types only). See the
 [Sensitive Data Discovery ](/docs/auditor/10.8/admin/settings/sensitivedatadiscovery.md) topic for additional
@@ -46,17 +44,18 @@ information on how to enable monitoring of sensitive data in Auditor.
 
 The table below lists the object types and attributes that can be monitored by Auditor.
 
-For more information on the attributes marked with (\*) , refer to the following Microsoft article:
+For more information on the attributes marked with (\*), see the Microsoft article:
 [File Attribute Constants](https://msdn.microsoft.com/en-us/library/windows/desktop/gg258117(v=vs.85).aspx).
 
 | Object type | Attributes                                                                                                                                                                                                                                                                                                                               |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | File        | - Attributes\* - Location - Name - Ownership - Permissions: - Group Permissions - User Permissions - Primary Group - Security descriptor control flags - Size - Data categories                                                                                                                                                          |
-| Folder      | - Attributes\* The Reparse point attribute content is available for reviewing only when State-In-Time snapshot collection is enabled. Mind that reparse point content changes cannot be audited. - Location - Name - Ownership - Permissions: - Group Permissions - User Permissions - Primary Group - Security descriptor control flags |
+| Folder      | - Attributes\* The Reparse point attribute content is available for reviewing only when State-In-Time snapshot collection is enabled. Mind that reparse point content changes can't be audited. - Location - Name - Ownership - Permissions: - Group Permissions - User Permissions - Primary Group - Security descriptor control flags |
 | Share       | - Access-based Enumeration - Caching - Continuous Availability - Description - Enable BranchCache - Encrypt Data Access - Local Path - User Limit                                                                                                                                                                                        |
 
-**CAUTION:** File and folder attributes marked with the (\*) are not monitored by default. Please
-contact Netwrix Technical Support team to monitor these file and folder attributes.
+:::caution
+File and folder attributes marked with (\*) aren't monitored by default. Contact Netwrix Technical Support to monitor these file and folder attributes.
+:::
 
 In addition to general object attributes, Auditor generates the following attributes associated with
 the object and reserved for internal use:

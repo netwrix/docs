@@ -22,7 +22,7 @@ include any of them.
 | Successful _delete_ operations         | FILE_DELETE DIRECTORY_DELETE                 |
 | Failed _read/modify/delete_ attempts\* | FILE_OPEN                                    |
 
-\* - Failed attempt to move/rename file are not audited.
+\* - Failed attempt to move/rename file aren't audited.
 
 ## Configuration Procedure
 
@@ -96,7 +96,7 @@ here:
 
 _"all_mount_targets" : true_ - instructs to notify on changes to all shares
 
-_"protocol_type_list" : ["SMB"]_ - instructs to track SMB shares (the only currently supported)
+_"protocol_type_list" : ["SMB"]_ - instructs to track SMB shares (the only supported)
 
 _`<NAME_OF_NOTIFICATION_POLICY>`_ – enter the name of notification policy you want to create
 
@@ -143,7 +143,7 @@ _`<UUID_OF_MOUNT_TARGET`>_ – enter the uuid of target you want to audit.
 
 ## Example
 
-The JSON-formatted structure below is an example of the request body that can be used to create a
+Use the JSON-formatted structure below to create a
 notification policy named _MOUNT_POINT_POLICY_ to audit the mount a share on Nutanix File Server
 with the _uuid=378896fd-e829-4869-84a2-6c29268acfff_. The following operations will be audited:
 

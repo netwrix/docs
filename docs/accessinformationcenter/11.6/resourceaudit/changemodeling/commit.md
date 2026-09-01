@@ -21,7 +21,7 @@ The following user roles can commit changes:
 
 :::note
 All users with access to the Resource Audit interface can model changes. The **Commit**
-button in the Group Membership Changes window is not available to users with the Reader role or
+button in the Group Membership Changes window isn't available to users with the Reader role or
 owners with no assigned role. A resource owner can use the **Change Access** button in the Owner
 portal.
 :::

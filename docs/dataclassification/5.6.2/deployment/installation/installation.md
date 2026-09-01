@@ -48,8 +48,8 @@ sidebar_position: 50
       Classification's Services files. For example, _C:\Program Files\NDC Services._
     - Provide user name and password for the product services service account.
 
-        **NOTE:** This account is granted the Logon as a service privilege automatically on the
-        computer where Netwrix Data Classification is going to be installed.
+        **NOTE:** The system automatically grants this account the Logon as a service privilege on the
+        computer where you install Netwrix Data Classification.
 
     - Select additional service options, if necessary.
 

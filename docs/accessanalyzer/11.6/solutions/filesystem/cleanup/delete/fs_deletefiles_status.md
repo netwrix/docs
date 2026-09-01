@@ -17,7 +17,7 @@ Navigate to the **FileSystem** > **Cleanup** > **4. Delete** > **FS_DeleteFiles_
 **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis task. The analysis task is
+Don't modify or deselect the selected analysis task. The analysis task is
 preconfigured for this job.
 :::
 

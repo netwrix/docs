@@ -15,11 +15,11 @@ The Options page provides format options for returned data. It is a wizard page 
     - Return data as collected
     - Return data in a separate row for each property set in the following group
 
-        - Select the group from the drop-down menu
+        - Select the group from the dropdown menu
 
     - Return each value of the following property in a separate row
 
-        - Select the property from the drop-down menu
+        - Select the property from the dropdown menu
 
 - How to return multi-valued properties in one cell – Select from the following options:
 

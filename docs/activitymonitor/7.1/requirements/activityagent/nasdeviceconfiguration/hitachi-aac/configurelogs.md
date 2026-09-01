@@ -6,8 +6,6 @@ sidebar_position: 10
 
 # Configure Audit Logs on HNAS
 
-Follow the steps to configure access to the HNAS audit logs on the Hitachi device.
-
 **Step 1 –** Open a browser and enter the IP Address for HNAS in the address bar to launch the
 Hitachi Storage Navigator (SN). Enter the username and password.
 
@@ -33,7 +31,7 @@ auditing). In the Audit Log section, set the maximum log file size to a value of
 is recommended to set it to 16 MB. In the Log roll over policy section, select New. The product does
 not support the Wrap policy. Click OK to close.
 
-Once access has been configured on the Hitachi device, it is necessary to configure access to the
+Once access has been configured on the Hitachi device, you must configure access to the
 HNAS audit logs on the Windows server. See the
 [Configure Access to HNAS Audit Logs on Activity Agent Server](/docs/activitymonitor/7.1/requirements/activityagent/nasdeviceconfiguration/hitachi-aac/configureaccesstologs.md)
 topic for additional information.

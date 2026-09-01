@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Manage Group Membership Settings
 
-Directory Manager enables you to update group membership in the following ways:
+Use Directory Manager to update group membership in the following ways:
 
 - Add members manually (only recommended for static groups)
 - Auto update Smart Groups and Dynasties using a Smart Group Update schedule.
@@ -50,7 +50,7 @@ member count and takes necessary action before adding members to the group.
 In case of an Office 365 group, the option to break the membership into child groups has the
 following impact - An Office 365 group (Group A) will be updated according to the Smart Group update
 process. However, when the maximum membership limit is hit, the update process will create child
-group(s) and try to add them as members of Group A. Since an Office 365 group cannot have groups as
+groups and try to add them as members of Group A. Since an Office 365 group can't have groups as
 members, Group A’s membership will be empty. The child groups will continue to exist but without any
 link to Group A.
 :::
@@ -66,10 +66,10 @@ link to Group A.
    maximum members that a Smart Group or Dynasty can contain.
 5. Select one of the following options for **When threshold reached:**
 
-    - **Do not update:** to prevent any action when the maximum membership limit is hit on update.
+    - **Don't update:** to prevent any action when the maximum membership limit is hit on update.
       As a result, the group will not be updated and will retain its old membership.
     - **Nest into child groups:** to create nested child groups when the maximum membership limit is
-      reached. Each nested group, in turn, cannot have more than the maximum number of members
+      reached. Each nested group, in turn, can't have more than the maximum number of members
       specified. Nested groups are displayed in Directory Manager as members of the parent group.
 
 6. Click **Save**.
@@ -91,22 +91,22 @@ You can choose to delete or retain the orphan nested groups in the identity stor
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Out of Bounds**.
-4. On the **Out of Bounds** page, select the **Delete orphan nested groups** check box to delete
+4. On the **Out of Bounds** page, select the **Delete orphan nested groups** checkbox to delete
    nested groups that become orphan on membership update.  
-   To retain orphan nested groups, do not select the check box.
+   To retain orphan nested groups, don't select the checkbox.
 5. Click **Save**.
 
 ## Set a Group Update Threshold
 
 Out-of-bounds exceptions prevent large, unforeseen membership changes to groups. When an
-out-of-bounds exception occurs, Directory Manager does not update group membership and notifies the
-intended recipient(s) by email. If they deem the change as valid, they can update the group manually
+out-of-bounds exception occurs, Directory Manager doesn't update group membership and notifies the
+intended recipients by email. If they deem the change as valid, they can update the group manually
 in the Directory Manager portal.
 
 :::note
 1. Settings in the **Threshold** section apply in case of membership update through a Smart
 Group Update schedule. On manual update, these settings have no impact.  
-2. If the group is not updated manually after an out-of-bounds exception, the changes remain
+2. If the group isn't updated manually after an out-of-bounds exception, the changes remain
 pending and the group will not be updated in future when the Smart Group Update job runs.  
 3. Out-of-bounds exception notifications are sent as per notification settings configured for the
 Smart Group Update schedule responsible for updating the respective group.
@@ -119,7 +119,7 @@ Smart Group Update schedule responsible for updating the respective group.
 2. On the **Identity Stores** page, click the ellipsis button for an identity store and select
    **Edit**.
 3. Click **Configurations** under **Settings** in the left pane. Then click **Out of Bounds**.
-4. On the **Out of Bounds** page, use the toggle button for **Do not update and alert** to monitor
+4. On the **Out of Bounds** page, use the toggle button for **Don't update and alert** to monitor
    out-of-bounds exceptions in group memberships and enable alerts in case an out-of-bounds
    exception occurs.
 5. Provide values for the following:
@@ -140,19 +140,19 @@ Smart Group Update schedule responsible for updating the respective group.
 
         Since 40 is greater than 20, Directory Manager treats it as an out-of-bounds exception.
 
-    2. In the **And either current or new membership exceeds** box, type the number of current or
+    2. In the **And either current or new membership exceeds** box, enter the number of current or
        new memberships. If the current or new membership of a group is equal or less than the
-       specified number, Directory Manager does not raise an out-of-bounds exception for the group,
-       even when the change percentage is exceeded. This allows you to ignore changes to small
+       specified number, Directory Manager doesn't raise an out-of-bounds exception for the group,
+       even when the change percentage is exceeded. You can ignore changes to small
        groups.
 
         For example, you set the change percentage to 20 and specify 25 in the **And either current
         or new membership exceeds** box. It works as follows:
 
         - For current (existing) membership - When the existing membership of a group is equal or
-          less than 25, Directory Manager does not trigger out-of-bounds for this group when the
+          less than 25, Directory Manager doesn't trigger out-of-bounds for this group when the
           change percentage is exceeded (is greater than 20). For example, adding 3 new members to a
-          group of 10 members would not trigger an exception. Directory Manager will ignore the
+          group of 10 members wouldn't trigger an exception. Directory Manager will ignore the
           change percentage and update the group.
         - For new membership - When, say 12 new members are added to a group with 10 existing
           members, the new membership reaches 22, which is less than 25. Even though the change

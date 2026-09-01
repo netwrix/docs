@@ -8,18 +8,17 @@ sidebar_position: 70
 
 ## Queued Reports
 
-When large search exports are run the report may take some time to compile, in this instance the
-background processes create the report and make it available for download via the Queued Reports
-dashboard. Reports can be deleted prior to, or after, processing as well as downloaded as many times
+When you run large search exports, the report may take some time to compile. In this case, the
+background processes create the report and download it via the Queued Reports
+dashboard. You can delete reports before or after processing and download them as many times
 as necessary.
 
 ![queuedreportresult_thumb_0_0](/images/dataclassification/5.7/admin/reporting/queuedreportresult_thumb_0_0.webp)
 
 ## Plugins for Custom Reports
 
-While there are a number of reports included in the product by default, it is also expected that
-specific business needs may arise that require reporting not covered by the default reports. With
-this in mind, you can create custom report using Plugins. Once the custom report plugin is deployed,
+While the product includes many reports by default, specific business needs may also arise that require reporting the default reports don't cover. With
+this in mind, you can create a custom report using Plugins. After you deploy the custom report plugin,
 the report will appear in the main reports list (with the built-in reports). A sample plugin
 incorporates:
 

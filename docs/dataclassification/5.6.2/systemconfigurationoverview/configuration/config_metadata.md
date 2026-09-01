@@ -33,7 +33,7 @@ This list allows metadata values to be mapped from a source value to a new targe
 
 ![configmetadatavaluemappings_thumb_0_0](/images/dataclassification/5.6.2/configuration/configmetadatavaluemappings_thumb_0_0.webp)
 
-For example, if we create an entry for the field “Modified By”, with Source=”Cheryl Tweedy” and
+For example, if you create an entry for the field “Modified By”, with Source=”Cheryl Tweedy” and
 Target=”Cheryl Cole”, then a document with this metadata:
 
 `“Modified By: Cheryl Tweedy;”`
@@ -42,15 +42,14 @@ Will generate an index with this metadata:
 
 `“Modified By: Cheryl Cole;”`
 
-This facility can be useful when you need to align metadata field values for example when employees
-change their name or are replaced by different people.
+Use this feature to align metadata field values, for example when employees
+change their name or when replacements are hired.
 
 ## Owner Mapping Priorities
 
-This feature applies to the CSE-owner function for a workflow. Suppose, you want to email the
-documents after the classification to the CSE owner. Then you may need to specify what is the role
-you stand for these documents: Owner, Author, Creator, etc. You can prioritise any of these roles by
-clicking the![arrowup](/images/dataclassification/5.6.2/configuration/arrowup.webp)
+This feature applies to the CSE-owner function for a workflow. If you want to email the
+documents after classification to the CSE owner, specify which role represents these documents: Owner, Author, Creator, or other. You can prioritize any of these roles by
+clicking the ![arrowup](/images/dataclassification/5.6.2/configuration/arrowup.webp)
 or ![arrowadown](/images/dataclassification/5.6.2/configuration/arrowadown.webp)
 arrows.
 

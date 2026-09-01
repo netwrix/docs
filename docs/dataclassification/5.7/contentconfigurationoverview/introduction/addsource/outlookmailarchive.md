@@ -6,11 +6,11 @@ sidebar_position: 80
 
 # Outlook Mail Archive
 
-The Outlook Mail Archive source configuration screen allows you to enable the crawling and
+Use the Outlook Mail Archive source configuration screen to enable the crawling and
 classification of content stored in PST files:
 
 :::note
-If you wish to make other configuration changes before collection of the source occurs
+If you want to make other configuration changes before collection of the source occurs
 ensure you tick the checkbox Pause source on creation.
 :::
 

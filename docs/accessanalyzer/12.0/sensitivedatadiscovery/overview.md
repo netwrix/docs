@@ -13,11 +13,12 @@ criteria or create new criteria.
 :::note
 Sensitive Data Discovery requires a special license. If your license includes Sensitive
 Data Discovery, then the necessary components for Sensitive Data Discovery are installed during the
-Access Analyzer, FSAA Proxy, and SPAA Agent installations.
+Access Analyzer, File System Access Auditing (FSAA) Proxy, and SharePoint Access Auditing (SPAA)
+Agent installations.
 :::
 
 
-Sensitive Data Discovery can be used with any of the following Access Analyzer solutions:
+You can use Sensitive Data Discovery with any of the following Access Analyzer solutions:
 
 - AWS Solution
 - Dropbox Solution
@@ -50,7 +51,7 @@ Data Discovery.
 
 :::note
 The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and does not require any configuration; it has been
+server. The JDK deployed is prepackaged and doesn't require any configuration; it has been
 preconfigured to work with Access Analyzer and should never be customized through Java. It will not
 conflict with other JDKs or Java Runtimes in the same environment.
 

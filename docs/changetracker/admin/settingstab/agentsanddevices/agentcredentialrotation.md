@@ -6,66 +6,63 @@ sidebar_position: 30
 
 # Agent Credential Rotation
 
-There are two ways to change the credentials that agents use to authenticate with the Hub. If it is
-suspected that agents have been compromised, it is recommended to take the out of band process
-described in this document.
+There are two ways to change the credentials that agents use to authenticate with the Hub. If you
+suspect that agents have been compromised, use the out-of-band process described in this document.
 
-If authentication details are being rotated as part of a routine process, then the in band
-alternative is to set all agents to use new credentials from within the Hub's web console. See the
+If you're rotating authentication details as part of a routine process, use the in-band
+alternative instead: set all agents to use new credentials from within the Hub's web console. See the
 [Agent Configuration](/docs/changetracker/admin/settingstab/agentsanddevices/agentconfiguration.md) topic for additional information.
 
-The scripts at the bottom of this page can be used to update authentication details on devices.
-These scripts can be rolled out to all devices with an IT automation system. These scripts stop the
-agent, set the new authentication details in the agent's configuration file, and then restart the
-agent, which on start-up will encrypt the password. An encrypted password with have E1 tags in the
-configuration file.
+Use the scripts at the bottom of this page to update authentication details on devices. You can roll
+out these scripts to all devices with an IT automation system. Each script stops the agent, sets the
+new authentication details in the agent's configuration file, and restarts the agent. On restart, the
+agent encrypts the password. The encrypted password has E1 tags in the configuration file.
 
 ## The Agent Account
 
-During installation of the Hub, an account named **Agent** is created with just the Agent role. This
-role enables agents to use this account to authenticate with the Hub. As the agent account has no
-other roles, it can only be used by agents to authenticate.
+Installing the Hub creates an account named **Agent** with just the Agent role. This role enables
+agents to use this account to authenticate with the Hub. Because the agent account has no other
+roles, only agents can use it to authenticate.
 
 ### Rotate Agent Credentials
 
-The existing agent account can be seen in the Users section of the Hub.
+You can find the existing agent account in the Users section of the Hub.
 
 ![agentaccountmanagement](/images/changetracker/admin/settings/agentaccountmanagement.webp)
 
 :::warning
-Changing the password of an account used by agents to authenticate will cause the
-agents to go offline as they will be attempting to authenticate with the old password.
+Changing the password of an account that agents use to authenticate causes the
+agents to go offline because they keep attempting to authenticate with the old password.
 :::
 
 
 :::info
-For a smooth transition, it is recommended to create a new account with just the
-**Agent** role. This account will have a different user name and password. Once created, the agent's
-configuration can be updated to use the new account. When all agents have been migrated, the old
-agent account can be removed.
+For a smooth transition, create a new account with just the
+**Agent** role. Give this account a different user name and password. After you create it, update the
+agent's configuration to use the new account. After you migrate all agents, remove the old
+agent account.
 :::
 
 
-Follow the steps to create the new agent account.
+Create the new agent account:
 
 **Step 1 –** Click **Create New User**, give it a user name and just the Agent role.
 
 ![newpassword](/images/changetracker/admin/settings/newpassword.webp)
 
 **Step 2 –** Click **Update**, and the User Password dialog opens with a complex password. This is
-only shown once. It is recommended that this be saved in a password management system for future
-use.
+only shown once, so save it in a password management system for future use.
 
 ## Agent Authentication Update on Windows
 
-For Windows devices the `ChangePasswordOOB.ps1` PowerShell script can be used to update the
+For Windows devices, use the `ChangePasswordOOB.ps1` PowerShell script to update the
 authentication details and restart the agent.
 
-The two variables, `$newUsername` and `$newPassword`, near the top of the script, must be set to
+Set the two variables, `$newUsername` and `$newPassword`, near the top of the script, to
 match the new agent account.
 
-Running the script will set the new authentication details and restart the agent while producing the
-output below.
+Running the script sets the new authentication details, restarts the agent, and produces output
+similar to the following.
 
 ![newagentscript_1049x168](/images/changetracker/admin/settings/newagentscript_1049x168.webp)
 
@@ -117,13 +114,14 @@ Write-Host "Service '$serviceName' started successfully."
 
 ## Agent Authentication Update on Linux
 
-For Linux devices a bash script named `UpdatePasswordOOB.sh` is available to set the authentication
+For Linux devices, use the bash script named `UpdatePasswordOOB.sh` to set the authentication
 details and restart the agent.
 
-The two variables `newUsername` and `newPassword` near the top of the script must be set to match
+Set the two variables `newUsername` and `newPassword` near the top of the script to match
 the new agent account.
 
-Running the script will set the password and restart the agent while producing the output below.
+Running the script sets the password, restarts the agent, and produces output similar to the
+following.
 
 ![agentpasswordscript_1028x217](/images/changetracker/admin/settings/agentpasswordscript_1028x217.webp)
 

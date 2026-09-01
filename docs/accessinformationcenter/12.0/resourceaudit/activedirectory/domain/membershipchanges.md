@@ -11,8 +11,8 @@ changes on the selected domain during the specified date range.
 
 ![Membership Changes report](/images/accessinformationcenter/12.0/resourceaudit/activedirectory/domain/membershipchanges.webp)
 
-This table is blank if no changes occurred during the specified date range. This report is comprised
-of the following columns:
+This table is blank if no changes occurred during the specified date range. This report contains
+the following columns:
 
 - Scan Time – Date and timestamp of the Access Analyzer scan that identified the change
 - Group Name – Name of the group

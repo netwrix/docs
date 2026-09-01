@@ -11,16 +11,16 @@ installation directory:
 
 **…\STEALTHbits\Access Information Center**
 
-Follow the steps to modify the log level.
+To modify the log level:
 
 **Step 1 –** Open the `AccessInformationCenter.Service.exe.config` file in a text editor, for
 example Notepad.
 
 ![Log Level parameter in the config file](/images/accessinformationcenter/12.0/admin/troubleshooting/loglevel.webp)
 
-**Step 2 –** The level value is set in the `LogLevel` parameter, where 0 is the default level. As
+**Step 2 –** The `LogLevel` parameter sets the level value, where 0 is the default level. As
 the logging level increases from 0 to 3, the types of information and level of detail included
-within the log file also increase. Change to the desired log level:
+within the log file also increase. Change to the log level you want:
 
 ```
 <add key="LogLevel" value="0"/>
@@ -35,5 +35,5 @@ within the log file also increase. Change to the desired log level:
 
 **Step 3 –** Save and close the `AccessInformationCenter.Service.exe.config` file.
 
-Once troubleshooting has finished, it is recommended to return the log level to the least verbose
+Once troubleshooting is complete, return the log level to the least verbose
 level, Error = 0, to prevent the log file from growing too large.

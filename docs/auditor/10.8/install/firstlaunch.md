@@ -22,7 +22,7 @@ To start using Netwrix Auditor
     can log in with your Windows credentials by simply clicking Connect. Select Use specified
     credentials if you want to log in as another user.
 
-    Make sure you have sufficient permissions to access the product. If you cannot log into Netwrix
+    ensure you have sufficient permissions to access the product. If you can't log into Netwrix
     Auditor with your Windows credentials, contact your Netwrix Auditor administrator.
 
 After logging into Netwrix Auditor, you will see the following window:

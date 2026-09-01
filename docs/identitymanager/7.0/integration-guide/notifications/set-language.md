@@ -12,7 +12,7 @@ This guide shows how to set the language for all notifications.
 
 Identity Manager sends all kinds of notification emails whose language is by default the language specified in the configuration as the first language.
 
-The language can also be configured explicitly with a language code. If this language code is not defined, then notifications use the first language.
+The language can also be configured explicitly with a language code. If this language code isn't defined, then notifications use the first language.
 
 ## Set the First Language
 
@@ -46,7 +46,7 @@ Set the language explicitly for server-side-task notifications by proceeding as 
 >
     > ```
 
-When `LanguageCode` is not defined, then the language of notifications will be the first language, i.e. the one specified with `Indicator` set to `1`.
+When `LanguageCode` isn't defined, then the language of notifications will be the first language, i.e. the one specified with `Indicator` set to `1`.
 
 2. Deploy the configuration and relaunch the server.
 

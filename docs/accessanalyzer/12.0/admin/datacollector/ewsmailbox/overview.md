@@ -7,8 +7,8 @@ sidebar_position: 150
 # EWSMailbox Data Collector
 
 The EWSMailbox Data Collector provides configuration options to scan mailbox contents, permissions,
-and sensitive data, and is preconfigured within the Exchange Solution. Both this data collector and
-the solution are available with a special Access Analyzer license. See the
+and sensitive data. The Exchange Solution includes this preconfigured data collector. Both this
+data collector and the solution are available with a special Access Analyzer license. See the
 [Exchange Solution](/docs/accessanalyzer/12.0/solutions/exchange/overview.md) topic for additional information.
 
 **Protocols**
@@ -31,13 +31,13 @@ the solution are available with a special Access Analyzer license. See the
 
 **Sensitive Data Discovery Considerations**
 
-If running Sensitive Data Discovery (SDD) scans, it will be necessary to increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each thread
+requires a minimum of 2 additional GB of RAM per host. For example, if you configure the job to
+scan 8 hosts at a time, it requires an extra 16 GB of RAM (8 x 2 = 16).
 
 ## EWSMailbox Query Configuration
 
-The EWSMailbox Data Collector is configured through the Exchange Mailbox Data Collector Wizard,
+You configure the EWSMailbox Data Collector through the Exchange Mailbox Data Collector Wizard,
 which contains the following wizard pages:
 
 :::note

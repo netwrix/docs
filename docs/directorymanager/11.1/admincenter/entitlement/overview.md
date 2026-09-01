@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Entitlement
 
-Directory Manager Entitlement enables you to stay informed on the permissions assigned to objects
+With Directory Manager Entitlement, you can stay informed on the permissions assigned to objects
 residing on your Active Directory servers and SharePoint sites.
 
 ## Entitlement for Active Directory
@@ -30,7 +30,7 @@ the following:
 
 - Specify one or more file servers in identity store configurations.
 - Compute the permissions assigned to directory objects on the shared files and folders on those
-  file server(s), and replicate those permissions to Elasticsearch.
+  file servers, and replicate those permissions to Elasticsearch.
 - View and manage entitlements in the Entitlement section of the Directory Manager portal.
 
 See the [Manage File Servers](/docs/directorymanager/11.1/admincenter/entitlement/managefs.md) topic for additional information.
@@ -86,7 +86,7 @@ automatically created in the identity store:
 - [Entitlement Temporary Permissions Schedule](/docs/directorymanager/11.1/admincenter/schedule/entitlementtemporarypermissions.md) -
   updates the temporary permissions for objects on file servers and SharePoint sites.
 
-## What is Replication?
+## Replication
 
 When a file server/SharePoint site is added for entitlement management, an essential task is to
 replicate object permissions from the file server or SharePoint site to the Elasticsearch

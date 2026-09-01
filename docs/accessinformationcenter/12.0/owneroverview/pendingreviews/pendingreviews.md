@@ -17,7 +17,7 @@ your pending reviews.
 Use the **Sign in** link at the bottom to open the Owner portal in the Access Information Center.
 
 :::tip
-Remember, Your company domain credentials are used to log in.
+Remember, use your company domain credentials to log in.
 :::
 
 
@@ -34,7 +34,7 @@ The Pending Reviews page lists all of your resources included in pending reviews
 
 ![Pending Reviews page of the Reviews interface](/images/accessinformationcenter/12.0/resourcereviews/pendingreviews.webp)
 
-The information displayed in the table includes:
+The table displays the following information:
 
 - Created — Date timestamp for when the review was creation. If it has been run multiple times, this
   is the date timestamp of the last instance.
@@ -60,13 +60,11 @@ make recommendations for changes. Consider the following examples:
 - In an Access or a Permissions review, you can recommend changes to the type of access granted to
   the resource.
 - In a Membership Review, you can recommend removing group membership from specific users.
-- In a Sensitive Data review, you can choose between keeping the file as is, recommend that a file
-  be removed from its current location, or indicate that the file is not sensitive and flag it as a
+- In a Sensitive Data review, you can keep the file as is, recommend removing the file from its current location, or indicate that the file isn't sensitive and flag it as a
   false positive.
 
 :::tip
-Remember, any proposed changes are not committed until the Review Administrator approves the
-recommendation and processes those changes.
+Remember, the Review Administrator must approve proposed changes before they take effect.
 :::
 
 
@@ -84,7 +82,7 @@ features:
     - 1 Make changes — Displays current access for the resource. For a Sensitive Data review, this
       tab displays a list of files on your resource where potentially sensitive content has been
       identified.
-    - 2 Review changes — Displays changes you recommend making for your review prior to submission
+    - 2 Review changes — Displays changes you recommend making for your review before submission
 
 - You are reviewing — Indicates the type of review, the resource being reviewed, and the date
   timestamp for when the review instance was started
@@ -92,8 +90,8 @@ features:
 - Save Changes — Saves all recommended changes, enabling you to leave the review in progress and
   return at a later time to complete it. It opens the Saving review window, which displays a status
   for the action.
-- Remove Access — On the 1 Make changes tab, removes access from the selected trustee(s). Ctrl-click
-  can be used for multi-select. Current access blue icon with a checkmark will turn to an empty
+- Remove Access — On the 1 Make changes tab, removes access from the selected trustees. Use Ctrl-click
+  for multi-select. Current access blue icon with a checkmark will turn to an empty
   yellow icon.
 - Only show changes since last review — Scopes the table to only display those items that have been
   modified since the last review instance

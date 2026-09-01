@@ -16,15 +16,15 @@ Logging (AAL) settings are configured as follows:
 | AdminAuditLogAgeLimit | 30                                                                                                                                                                                                                                                                                                                                                     | Determines how long audit log entries will be retained (default is 90 days)      |
 | AdminAuditLogCmdlets  | \*                                                                                                                                                                                                                                                                                                                                                     | Instructs the program to create a log entry for every cmdlet that is run.        |
 | LogLevel              | Verbose                                                                                                                                                                                                                                                                                                                                                | Sets logging level.                                                              |
-| ExcludedCmdlets       | \*-InboxRule, \*-MailboxAutoReplyConfiguration, Set-MailboxAuditBypassAssociation, Set-MailboxAutoReplyConfiguration, Set-MailboxCalendarConfiguration, Set-MailboxCalendarFolder, Set-MailboxFolderPermission, Set-MailboxJunkEmailConfiguration, Set-MailboxMessageConfiguration, Set-MailboxRegionalConfiguration, Set-MailboxSpellingConfiguration | This list of exclusions is set up as explained in step 3 of the procedure below. |
+| ExcludedCmdlets       | \*-InboxRule, \*-MailboxAutoReplyConfiguration, Set-MailboxAuditBypassAssociation, Set-MailboxAutoReplyConfiguration, Set-MailboxCalendarConfiguration, Set-MailboxCalendarFolder, Set-MailboxFolderPermission, Set-MailboxJunkEmailConfiguration, Set-MailboxMessageConfiguration, Set-MailboxRegionalConfiguration, Set-MailboxSpellingConfiguration | This list of exclusions is set up as explained in step 3 of the following procedure. |
 
 You can configure these settings automatically using Netwrix Auditor, as described in the
 [Active Directory: Automatic Configuration](/docs/auditor/10.9/configuration/activedirectory/automatic.md) topic.
 
-To configure them manually, refer to the procedure described below.
+To configure them manually, see the following procedure.
 
-You can perform this procedure on any of the Exchange servers, and these settings will then be
-replicated to all Exchange servers in the domain.
+You can perform this procedure on any of the Exchange servers; Exchange then replicates these
+settings to all Exchange servers in the domain.
 
 **To configure Exchange Administrator Audit Logging settings**
 
@@ -33,7 +33,7 @@ Programs → Exchange Management Shell**.
 
 **Step 2 –** Execute the following command depending on your Exchange version:
 
-- Exchange 2019, 2016 and 2013
+- Exchange 2019, 2016, and 2013
 
     `Set-AdminAuditLogConfig -AdminAuditLogEnabled $true -AdminAuditLogAgeLimit 30 -AdminAuditLogCmdlets * -LogLevel Verbose`
 
@@ -41,7 +41,7 @@ Programs → Exchange Management Shell**.
 
 `Set-AdminAuditLogConfig -AdminAuditLogEnabled $true -AdminAuditLogAgeLimit 30 -AdminAuditLogCmdlets *`
 
-**Step 3 –** To reduce server load, you can exclude the cmdlets listed in the table above from
+**Step 3 –** To reduce server load, you can exclude the listed cmdlets from
 Exchange logging. For that:
 
 - On the computer where Netwrix Auditor is installed, browse to the _%Netwrix Auditor Server
@@ -52,4 +52,4 @@ Exchange logging. For that:
 
     `<Path_To_SetAALExcludedCmdlets_File>.\SetAALExcludedCmdlets.ps1`
 
-Make sure your policies allow script execution.
+Ensure your policies allow script execution.

@@ -35,7 +35,7 @@ have completed.
 
 ## Parameter Configuration
 
-The Configuration section on a Job's overview page allows you to easily modify any customizable
+Use the Configuration section on a Job's overview page to modify any customizable
 parameters used by analysis tasks in the job. See the
 [Parameter Configuration](/docs/accessanalyzer/12.0/admin/jobs/job/overview.md#parameter-configuration) topic for
 instructions on how to edit parameters on a job overview page.
@@ -58,7 +58,7 @@ Navigate to the **FileSystem** > **Cleanup** > **1. Cleanup Assessment** >
 **FS_CleanupAssessment** > **Configure** node and select **Analysis** to view the analysis tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 
@@ -140,7 +140,7 @@ Data Collector Wizard opens.
 the **Collect tags/keywords from file metadata properties** option.
 
 :::warning
-Do not make changes to other wizard pages as they have been pre-configured for the
+Don't make changes to other wizard pages as they have been pre-configured for the
 purpose of this job.
 :::
 

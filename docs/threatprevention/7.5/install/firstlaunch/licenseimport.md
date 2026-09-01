@@ -8,8 +8,6 @@ sidebar_position: 10
 
 Threat Prevention comes with a temporary 6-day license.
 
-Follow the steps to import a license key file to continue using the product.
-
 **Step 1 –** Contact your Netwrix Sales Representative and request for a license key.
 
 :::note

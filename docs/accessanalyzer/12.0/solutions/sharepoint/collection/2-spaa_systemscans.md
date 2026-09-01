@@ -22,20 +22,20 @@ The query for the 2-SPAA_SystemScans Job is:
 ### Configure 2-SPAA_SystemScans Job
 
 The 2-SPAA_SystemScans Job has been preconfigured to run with the default settings using the SPAA
-Data Collector category of Scan SharePoint Access, which is not visible within the SharePoint Access
+Data Collector category of Scan SharePoint Access, which isn't visible within the SharePoint Access
 Auditor Data Collector Wizard when opened from within this job.
 
 :::warning
-Users should not change scans in a way that would result in less data being returned on
+Users shouldn't change scans in a way that would result in less data being returned on
 a subsequent scan (i.e. scanning fewer web applications, scanning fewer site collections, or a
 shallower depth scan). Those resources not included in a subsequent scan are marked as deleted in
 the Tier 2 database and subsequently removed from the Tier 1 database.
 :::
 
 
-Follow the steps to set any desired customizations.
+To set any desired customizations:
 
-**Step 1 –** Navigate to the **Jobs** > **SharePoint** > **0.Collection** > **1-SPAA_SystemScans** >
+**Step 1 –** Navigate to the **Jobs** > **SharePoint** > **0.Collection** > **2-SPAA_SystemScans** >
 **Configure** node and select the **Queries** node.
 
 **Step 2 –** In the Query Selection view, click **Query Properties**. The Query Properties window
@@ -69,7 +69,7 @@ desired and click **Next**.
 use the default settings unless an agent scan mode is desired. Click **Next**.
 
 :::warning
-Do not configure the options on the Results page.
+Don't configure the options on the Results page.
 :::
 
 
@@ -78,4 +78,4 @@ Do not configure the options on the Results page.
 **Step 9 –** On the Summary page, click **Finish** to save any setting modifications or click
 **Cancel** if no changes were made. Then click **OK** to close the Query Properties window.
 
-If changes were made, the 1-SPAA_SystemScans Job has now been customized.
+If changes were made, the 2-SPAA_SystemScans Job has now been customized.

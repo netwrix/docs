@@ -6,8 +6,7 @@ sidebar_position: 20
 
 # Server Functionality
 
-Once the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User
-Interface from the assigned IP address.
+After the Endpoint Protector Hardware or Virtual Appliance setup is complete, access the User Interface from the assigned IP address.
 
 The default Endpoint Protector Appliance IP address is https://192.168.0.201
 
@@ -20,8 +19,7 @@ Use the default login credentials for the root account. To obtain the password, 
 ticket through the
 [Netwrix Customer Portal](https://www.netwrix.com/sign_in.html?rf=my_products.html).
 
-For detailed information on settings change or creating additional administrators, refer to the
-[System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic.
+To configure settings or create administrators, see [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
 
 ![Page for default login credentials for the root account](login.webp)
 
@@ -35,13 +33,12 @@ settings at any time.
 The Conﬁguration Wizard is available only if the basic settings for the Endpoint Protector have
 never been conﬁgured.
 
-As an additional security measure, a session timeout is implemented for 300 seconds (5 minutes) of
-inactivity. If you are not active for this amount of time, you are notiﬁed the session will expire
-and logged out unless you select to continue the session.
+As an additional security measure, a session timeout is set to 300 seconds (5 minutes) of
+inactivity. If you aren't active for this amount of time, a notification appears indicating the session will expire,
+and you are logged out unless you select to continue the session.
 
 :::note
-You can customize the session timeout and timeout counter from the
-[System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md) topic.
+You can customize the session timeout and timeout counter in [System Configuration](/docs/endpointprotector/admin/systemconfiguration/overview.md).
 :::
 
 
@@ -59,12 +56,12 @@ sections.
 
 ## System Status
 
-In this section you can view general information of the system’s functionality, alerts, and backup
+In this section, you can view general information about the system’s functionality, alerts, and backup
 status.
 
 ![View general information of the system’s functionality, alerts, and backup status](systemstatus.webp)
 
-From the System Functionality section, you can enable Endpoint Protector, as well as just speciﬁc
+From the System Functionality section, you can enable Endpoint Protector or specific
 modules (Device Control, Content Aware Protection, or eDiscovery).
 
 ![Enable EPP , as well as just speciﬁc modules](systemfunctionality.webp)
@@ -91,9 +88,9 @@ From the System Backup subsection, you can enable the System Backup.
 
 ## Effective Rights
 
-In this section you can view currently applied Device Control or Content Aware Protection policies.
+In this section you can view applied Device Control or Content Aware Protection policies.
 Based on the options you select from the Effective Rights Criteria form, you can view information
 based on rights, users, computers, device types, speciﬁc devices, report type (PDF or XLS),
 including Outside Hours and Outside Network Policies, and more.
 
-Once the report is generated, from the Actions column, you can download or delete it.
+After the report is generated, from the Actions column, you can download or delete it.

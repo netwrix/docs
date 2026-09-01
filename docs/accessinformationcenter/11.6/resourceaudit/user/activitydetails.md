@@ -24,7 +24,7 @@ This report is comprised of the following columns:
 - Access – Whether the trustee was granted access to execute the operation: **Allowed** or
   **Denied**
 - Path – Original location where the operation occurred
-- Target Path – New location if changed by the operation. Blank if the operation does not result in
+- Target Path – New location if changed by the operation. Blank if the operation doesn't result in
   a new path.
 - Process Name – Name of the process which performed the operation
 - Originating Address – IP Address of the NAS host from where the activity event originated. Blank
@@ -46,7 +46,7 @@ This table is comprised of the following columns:
     - Remove – Permission removed from trustee
     - Update – Permission modified for trustee
 
-- Ace Type – Whether or not the right assigned is allowed or denied
-- Inheritance – Whether or not the Ace is inherited
+- Ace Type – Whether the right assigned is allowed or denied
+- Inheritance – Whether the Ace is inherited
 - Ace Flags – Inheritance flag description
 - Access Rights – Type of right assigned

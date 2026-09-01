@@ -17,9 +17,9 @@ the [Host Discovery](/docs/accessanalyzer/12.0/admin/settings/hostdiscovery.md) 
 The following options are above the data grid:
 
 - Reload Log – Refresh the log data for the selected Log date and Query Name
-- Log date – Select the desired **Log date** from the drop-down menu to view transactions
+- Log date – Select the **Log date** you want from the dropdown menu to view transactions
 - Query Name – The default selection is **All Queries**. To narrow the data to a desired query,
-  select a query name from the drop-down menu.
+  select a query name from the dropdown menu.
 
 The data grid contains the following columns:
 

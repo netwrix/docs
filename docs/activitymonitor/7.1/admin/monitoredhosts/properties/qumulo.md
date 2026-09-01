@@ -6,7 +6,7 @@ sidebar_position: 130
 
 # Qumulo Tab
 
-The Qumulo tab allows users to modify settings after a Qumulo host has been configured. Once a
+The Qumulo tab lets you modify settings after a Qumulo host has been configured. Once a
 Qumulo host is added to the monitored hosts table, the configuration can be edited in the host
 Properties.
 
@@ -17,7 +17,7 @@ The configurable options are:
 - Cluster name – Enter the name of the filer
 - Username – Enter the user name for the Qumulo user
 - Password – Enter the password for the user name
-- Protocol – Select one of the following protocols from the drop-down menu:
+- Protocol – Select one of the following protocols from the dropdown menu:
 
     - Auto Detect
     - HTTPS
@@ -25,8 +25,9 @@ The configurable options are:
 
 - Connect – Click to connect using the selected protocol and validate the connection with Qumulo
 
-![Trusted Server Certificate popup window](/images/activitymonitor/7.1/admin/monitoredhosts/add/trustedservercertificate.webp)-
-HTTPS Options – Opens the Trusted server certificate window to customize the certificate
+![Trusted Server Certificate popup window](/images/activitymonitor/7.1/admin/monitoredhosts/add/trustedservercertificate.webp)
+
+- HTTPS Options – Opens the Trusted server certificate window to customize the certificate
 verification during a TLS session
 
 - Import – Click to browse for a trusted server certificate

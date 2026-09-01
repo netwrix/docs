@@ -18,20 +18,18 @@ The following table lists the options available on the **General** tab for each 
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Messaging System Recipients | <ul><li>Users with mailboxes – Includes users with messaging system mailboxes</li><li>Users with External Email Address – Includes users with email addresses that are external to your organization</li><li>Contacts with External Email Address – Includes contacts with email addresses that are external to your organization</li><li>Mail-Enabled Groups – Includes mail-enabled groups</li><li>Mail-Enabled Folders – Includes mail-enabled folders</li></ul> |
 | Computers                   | <ul><li>Workstations and Servers – Includes workstations and servers</li><li>Domain Controllers – Includes domain controllers</li></ul>                                                                                                                                                                                                                                                                                                                             |
-| Custom                      | By default, it includes all object options for Messaging System Recipients, Computers, and Users, Contact, and Groups. For this reason, the General tab does not display any option for this object type.                                                                                                                                                                                                                                                           |
-| Users, Contacts and Groups  | <ul><li>Users – Includes users</li><li>Contacts – Includes contacts</li><li>Groups – Includes groups</li></ul>                                                                                                                                                                                                                                                                                                                                                      |
+| Custom                      | By default, it includes all object options for Messaging System Recipients, Computers, and Users, Contact, and Groups. For this reason, the General tab doesn't display any option for this object type.                                                                                                                                                                                                                                                           |
+| Users, Contacts, and Groups  | <ul><li>Users – Includes users</li><li>Contacts – Includes contacts</li><li>Groups – Includes groups</li></ul>                                                                                                                                                                                                                                                                                                                                                      |
 
 :::note
-The Computer and Contact object types are not supported in a Microsoft Entra ID identity
+The Computer and Contact object types aren't supported in a Microsoft Entra ID identity
 store.
 :::
 
 
 **Preview**
 
-Enables you to preview the results returned with the criteria specified on all tabs of the Query
-Designer dialog box. This is a check to ensure the accuracy of data before changes are committed to
-the directory.
+Use X to preview the results returned with the criteria specified on all tabs of the Query Designer dialog box. This is a check to ensure the accuracy of data before you commit changes to the directory.
 
 **OK**
 

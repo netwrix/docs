@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # SMARTLog: Sample Host
 
-The Sample Host page is used to configure the host. It is a wizard page for all log types.
+Use the Sample Host page to configure the host. It's a wizard page for all log types.
 
 ![SMART Log DC Wizard Sample Host page](/images/accessanalyzer/12.0/admin/datacollector/smartlog/samplehost.webp)
 
@@ -38,16 +38,16 @@ and select a computer. The options in the Select Computer window are:
 
 ![Advanced Select Computer window](/images/accessanalyzer/12.0/admin/datacollector/smartlog/selectcomputerwindowadvanced.webp)
 
-The Common Queries section is included on the advanced Select Computer window in addition to object
-type and location in the original Select Computer window.
+The advanced Select Computer window includes the Common Queries section in addition to object
+type and location from the original Select Computer window.
 
-- Name – Select a qualifier from the drop-down menu and enter a name of an object in the associated
+- Name – Select a qualifier from the dropdown menu and enter a name of an object in the associated
   text box
-- Description – Select a qualifier from the drop-down menu and enter a description in the associated
+- Description – Select a qualifier from the dropdown menu and enter a description in the associated
   text box
 - Select the **Disabled accounts** checkbox to include disabled accounts in the search
 - Select the **Non-expiring password** checkbox to include non-expiring passwords in the search
-- Select the number of **Days since last logon** from the drop-down menu
+- Select the number of **Days since last logon** from the dropdown menu
 - Click the **Columns** button to open the Choose Columns window
 
     ![Choose Columns window](/images/accessanalyzer/12.0/admin/datacollector/smartlog/choosecolumnswindow.webp)

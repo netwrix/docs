@@ -6,8 +6,7 @@ sidebar_position: 40
 
 # Summary Criteria
 
-Summary criteria are designed as a way of combining Regular Expression (Pattern) criteria and
-Keyword criteria.
+Summary criteria combine Regular Expression (Pattern) criteria and Keyword criteria.
 
 ![Edit new Summary criteria](/images/accessanalyzer/12.0/sensitivedatadiscovery/criteriaeditor/criteriatype/newsummarycriteria.webp)
 
@@ -22,7 +21,7 @@ The options on the Summary criteria configuration page are:
 - Test Criteria – Opens the Criteria Tester window to test current Summary criteria configurations.
   See the [Criteria Tester Window](/docs/accessanalyzer/12.0/sensitivedatadiscovery/criteriaeditor/configuration.md#criteria-tester-window) topic for additional
   information.
-- Required matched criteria – Lists sub-criteria configured for currently selected criteria in the
+- Required matched criteria – Lists sub-criteria configured for selected criteria in the
   navigation pane. The columns in the table are:
 
     - Name – Name of the sub-criteria
@@ -34,7 +33,7 @@ The options on the Summary criteria configuration page are:
 - Add – Add a sub-criteria to the required matched criteria list. The three types of sub-criteria
   that can be added are **Keyword**, **Pattern**, and **Summary**.
 - Remove – Remove the selected sub-criteria from the Required matched criteria list
-- Edit – Edit the currently selected sub-criteria
+- Edit – Edit the selected sub-criteria
 - Match Type – Choose whether match hits for the Summary criteria **Must match** or **Must not
   match**
 - Must match at least this many criteria – Adjust the slider to configure how many sub-criteria must
@@ -45,7 +44,7 @@ The options on the Summary criteria configuration page are:
       Required matched criteria list
 
 :::warning
-The character distance feature does not account for summaries that are nested within
+The character distance feature doesn't account for summaries that are nested within
 other summaries.
 :::
 
@@ -58,7 +57,6 @@ other summaries.
     - Using this feature requires any combination of two or more Regular Expression (Pattern) and
       Keyword sub-criteria
 
-- Include keywords as part of match hits – Select this checkbox to enable the inclusion of keywords
-  as part of match hits
+- Include keywords as part of match hits – Select this checkbox to include keywords in match hits
 - Cancel – Exit the Sensitive Data Criteria Editor without saving changes
-- Save – Save changes made to the currently selected criteria
+- Save – Save changes made to the selected criteria

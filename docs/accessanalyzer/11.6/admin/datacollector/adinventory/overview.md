@@ -9,11 +9,11 @@ sidebar_position: 40
 The extraction and correlation of user, group, and computer attributes drastically transforms the
 meaning of data collected across the many systems and applications that are linked to Active
 Directory. The ADInventory Data Collector is designed as a highly scalable and useful data
-collection mechanism to catalogue user, group, and computer object information that can be used by
-other solutions within Enterprise Auditor.
+collection mechanism to catalogue user, group, and computer object information that other solutions
+within Enterprise Auditor can use.
 
-The ADInventory Data Collector is a core component of Enterprise Auditor and has been preconfigured
-to be used within the .Active Directory Inventory Solution. Both this data collector and the
+The ADInventory Data Collector is a core component of Enterprise Auditor. Netwrix preconfigures it
+for use within the .Active Directory Inventory Solution. Both this data collector and the
 solution are available with all Enterprise Auditor license options. See the
 [.Active Directory Inventory Solution](/docs/accessanalyzer/11.6/solutions/activedirectoryinventory/overview.md)
 topic for additional information.
@@ -44,14 +44,14 @@ topic for additional information.
 
 ## Functional Design of the ADInventory Data Collector
 
-The ADInventory Data Collector has been designed to update incrementally. Once it has run against a
+The ADInventory Data Collector updates incrementally. After it runs against a
 domain controller, additional collections gather changes made since the last scan. This enables the
-ADInventory Data Collector to function efficiently within large environments. Each time it is run
+ADInventory Data Collector to function efficiently within large environments. Each time you run it
 against different domain controllers, it restarts the cycle.
 
 ## ADInventory Query Configuration
 
-The ADInventory Data Collector is configured through the Active Directory Inventory DC Wizard, which
+Configure the ADInventory Data Collector through the Active Directory Inventory DC Wizard, which
 contains the following wizard pages:
 
 - Welcome
@@ -64,5 +64,5 @@ contains the following wizard pages:
 
 ![Active Directory Inventory DC Wizard Welcome page](/images/accessanalyzer/11.6/admin/datacollector/adinventory/welcome.webp)
 
-The Welcome page can be hidden by selecting the **Do not display this page the next time** checkbox
-when the wizard is open and configuration settings are saved.
+To hide the Welcome page, select the **Don't display this page the next time** checkbox while the
+wizard is open, and save the configuration settings.

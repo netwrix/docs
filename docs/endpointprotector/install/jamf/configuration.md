@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Creating the Configuration Profile
 
-In order to use Jamf, first, you need to create a new configuration profile. To do so, follow these
-steps:
+To use Jamf, you need to create a new configuration profile. Follow these steps:
 
 **Step 1 –** Open the Jamf Pro account and log in using your credentials.
 
@@ -23,7 +22,7 @@ On the New macOS Configuration Profile section, you can manage profile settings 
 devices and users to which you want to deploy the profile.
 
 :::note
-Click **Save** only once you have managed all settings and the profile scope.
+Click **Save** after you have managed all settings and the profile scope.
 :::
 
 
@@ -43,7 +42,7 @@ You can continue with the default settings for the category, level, and distribu
 You will add the Client CA Certificate in .cer format on the Certificate settings section.
 
 :::note
-This step is not required if you are not using Deep Package Inspection. To continue the
+This step isn't required if you aren't using Deep Package Inspection. To continue the
 process, go to the Privacy Preferences Policy Control section.
 :::
 
@@ -168,7 +167,7 @@ system extensions without a pop-up, and then enter the following information:
   changes.
 
 :::note
-This setting will be applied starting with MacOS 12 version (Monterey).
+This setting applies starting with MacOS 12 (Monterey).
 :::
 
 
@@ -189,8 +188,7 @@ Ventura's (macOS 13) new capability. This can be accomplished by taking the foll
 
 **Step 9 –** On the left, under the Options box, select **Managed Logged In Items**.
 
-Endpoint Protector Items can be simply disabled in your Jamf Configuration Profiles from here.
-Simply uncheck the box next to the Endpoint ProtectorItem(s) you want to disable, and then click
+Disable Endpoint Protector Items in your Jamf Configuration Profiles. Uncheck the box next to the Endpoint ProtectorItems you want to disable, and then click
 **Save** to save your changes.
 
 :::note
@@ -203,7 +201,7 @@ necessary to keep your system secure.
 ## VPN Settings
 
 :::note
-This step is not required if you are not using VPN services. To continue the process, go
+This step isn't required if you aren't using VPN services. To continue the process, go
 to the Scope section.
 :::
 
@@ -252,8 +250,7 @@ On the Notifications section, click **Configure** and then enter the following i
 
 ## Scope
 
-Once you manage all settings, go to the Scope tab and select the devices and users to deploy the new
-profile.
+After you manage all settings, go to the Scope tab and select the devices and users to deploy the new profile.
 
 Click **Save** to apply all settings to the new configuration profile.
 

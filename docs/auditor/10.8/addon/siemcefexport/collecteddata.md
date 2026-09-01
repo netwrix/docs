@@ -6,8 +6,6 @@ sidebar_position: 50
 
 # Work with Collected Data
 
-Follow the steps to work with collected data:
-
 **Step 1 –** Navigate to the destination folder and open a CEF log file.
 
 **Step 2 –** Review audit data exported from the Audit Database. For example, review this

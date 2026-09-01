@@ -6,8 +6,8 @@ sidebar_position: 20
 
 # ExchangePS: Category
 
-The Category page contains a connection section where connection options are defined. It is also
-where the query category is selected. The available query categories are sub-divided by auditing
+The Category page contains a connection section where you define connection options. It's also
+where you select the query category. The available query categories are sub-divided by auditing
 focus.
 
 ![ExchangePS Data Collector Wizard Category page](/images/accessanalyzer/12.0/admin/datacollector/exchangeps/category.webp)
@@ -53,7 +53,7 @@ focus:
     - Mailbox Databases – Collects information on mailbox databases
 
         :::note
-        This option is not available for Office 365 target environments
+        This option isn't available for Office 365 target environments
         :::
 
 
@@ -110,7 +110,7 @@ Get-MailboxStatistics
 Get-MailboxDatabase
 ```
 
-When this category is selected, the following ExchangePS Data Collector Wizard pages are available
+When you select this category, the following ExchangePS Data Collector Wizard pages are available
 for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
@@ -131,7 +131,7 @@ Get-MailboxStatistics
 Get-MailboxDatabase
 ```
 
-When this category is selected, the following ExchangePS Data Collector Wizard pages are available
+When you select this category, the following ExchangePS Data Collector Wizard pages are available
 for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
@@ -149,7 +149,7 @@ PowerShell query this category runs is as follows:
 Get-MailboxDatabase
 ```
 
-When this category is selected, the following ExchangePS Data Collector Wizard pages are available
+When you select this category, the following ExchangePS Data Collector Wizard pages are available
 for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
@@ -167,7 +167,7 @@ PowerShell query this category runs is as follows:
 Get-MailboxDatabase
 ```
 
-When this category is selected, the following ExchangePS Data Collector Wizard pages are available
+When you select this category, the following ExchangePS Data Collector Wizard pages are available
 for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
@@ -185,7 +185,7 @@ PowerShell query this category runs is as follows:
 Get-MailboxDatabase
 ```
 
-When this category is selected, the following ExchangePS Data Collector Wizard pages are available
+When you select this category, the following ExchangePS Data Collector Wizard pages are available
 for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
@@ -205,7 +205,7 @@ Get-Mailbox
 Get-MailboxDatabase
 ```
 
-When this category is selected, the following ExchangePS Data Collector Wizard pages are available
+When you select this category, the following ExchangePS Data Collector Wizard pages are available
 for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
@@ -217,8 +217,8 @@ for configuration:
 
 **Mailbox Access Logons**
 
-This category returns the Mailbox Access Auditing log details. Mailbox Access Auditing does need to
-be enabled on the Mailboxes in order for this job to return any information. The PowerShell queries
+This category returns the Mailbox Access Auditing log details. You must enable Mailbox Access
+Auditing on the mailboxes for this job to return any information. The PowerShell queries
 this category runs are as follows:
 
 ```
@@ -226,7 +226,7 @@ Search-MailboxAuditLog
 Get-Mailbox
 ```
 
-When this category is selected, the following ExchangePS Data Collector Wizard pages are available
+When you select this category, the following ExchangePS Data Collector Wizard pages are available
 for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
@@ -252,7 +252,7 @@ Get-Mailbox
 Get-ThrottlingPolicyAssociation
 ```
 
-When this category is selected, the following ExchangePS Data Collector Wizard pages are available
+When you select this category, the following ExchangePS Data Collector Wizard pages are available
 for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
@@ -275,7 +275,7 @@ Get-ActiveSyncDeviceStatistics
 Get-Mailbox
 ```
 
-When this category is selected, the following ExchangePS Data Collector Wizard pages are available
+When you select this category, the following ExchangePS Data Collector Wizard pages are available
 for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
@@ -290,8 +290,8 @@ Public Folder Information audit focus contains the following categories:
 
 **Public Folder Content**
 
-This category returns general statistics and sizing for the public folder environment. When it is
-selected, the following ExchangePS Data Collector Wizard pages are available for configuration:
+This category returns general statistics and sizing for the public folder environment. When you
+select it, the following ExchangePS Data Collector Wizard pages are available for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
 - [ExchangePS: Results](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/results.md)
@@ -301,8 +301,8 @@ selected, the following ExchangePS Data Collector Wizard pages are available for
 
 **Public Folder Permissions**
 
-This category returns permissions information for the public folder environment. When it is
-selected, the following ExchangePS Data Collector Wizard pages are available for configuration:
+This category returns permissions information for the public folder environment. When you
+select it, the following ExchangePS Data Collector Wizard pages are available for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
 - [ExchangePS: Results](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/results.md)
@@ -316,8 +316,8 @@ Office 365 audit focus contains the following category:
 
 **Mail Flow Metrics**
 
-This category returns information about mail flow in the target Exchange Online environment. When it
-is selected, the following ExchangePS Data Collector Wizard pages are available for configuration:
+This category returns information about mail flow in the target Exchange Online environment. When
+you select it, the following ExchangePS Data Collector Wizard pages are available for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)
 - [ExchangePS: Mail Flow](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/mailflow.md)
@@ -332,7 +332,7 @@ Domain Information audit focus contains the following category:
 
 **Domains**
 
-This category returns information about domains in the Exchange environment. When it is selected,
+This category returns information about domains in the Exchange environment. When you select it,
 the following ExchangePS Data Collector Wizard pages are available for configuration:
 
 - [ExchangePS: Scope](/docs/accessanalyzer/12.0/admin/datacollector/exchangeps/scope.md)

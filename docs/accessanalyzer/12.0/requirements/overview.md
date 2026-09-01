@@ -7,9 +7,8 @@ sidebar_position: 20
 # Requirements
 
 This topic describes the recommended configuration of the servers needed to install the application
-in a production environment. Depending on the size of the organization, it is recommended to review
-your environment and requirements with a Netwrix engineer prior to deployment to ensure all
-exceptions are covered.
+in a production environment. Depending on the size of your organization, review your environment
+and requirements with a Netwrix engineer before deployment to ensure all exceptions are covered.
 
 ## Architecture Overview
 
@@ -18,8 +17,8 @@ The following servers and applications are required for installation of the appl
 **Core Components**
 
 - Access Analyzer Console Server – This is where the v12.0 application is installed.
-- SQL Server for Access Analyzer Database – As a data-intensive application, a well-provisioned,
-  dedicated SQL Server is recommended.
+- SQL Server for Access Analyzer Database – Because Access Analyzer is a data-intensive
+  application, use a well-provisioned, dedicated SQL Server for the database.
 - Access Information Center Application Server – This application is typically installed on the
   Access Analyzer Console server and is a browser-based, interactive dashboard for exploring
   permissions, activity, and sensitive data.
@@ -37,10 +36,10 @@ The following servers and applications are required for installation of the appl
 
 **File System Solution-Specific Components**
 
-- Access Analyzer File System Proxy Server – In certain environments, a proxy server may be utilized
-  to scan hosts in remote or firewalled sites to increase scan capacity in large environments. This
-  feature can be implemented through either an applet or a service. The applet would be deployed as
-  part of the data collection process. The service should be installed prior to data collection. See
+- Access Analyzer File System Proxy Server – In certain environments, a proxy server can scan hosts
+  in remote or firewalled sites to increase scan capacity in large environments. You can implement
+  this feature through either an applet or a service: the applet deploys as part of the data
+  collection process, and you install the service before data collection. See
   the [Proxy Mode as a Service](/docs/accessanalyzer/12.0/requirements/filesystem/scanoptions/scanoptions.md#proxy-mode-as-a-service) topic
   for server requirements.
 
@@ -48,7 +47,7 @@ The following servers and applications are required for installation of the appl
 
 - Access Analyzer SharePoint Agent Server – For agent-based scans, this application can be installed
   on the SharePoint application server that hosts the “Central Administration” component of the
-  targeted farm(s) to auditing permissions, content, and sensitive data for SharePoint On-Premise.
+  targeted farms to auditing permissions, content, and sensitive data for SharePoint On-Premise.
   See the [SharePoint Scan Options](/docs/accessanalyzer/12.0/requirements/sharepoint/scanoptions/scanoptions.md) topic for server
   requirements.
 
@@ -66,8 +65,8 @@ The following servers and applications are required for installation of the appl
 
 **Target Environment Considerations**
 
-The target environment encompasses all servers, devices, or infrastructure to be audited by Access
-Analyzer. Most solutions have additional target requirements.
+The target environment encompasses all servers, devices, or infrastructure that Access Analyzer
+audits. Most solutions have additional target requirements.
 
 ## Access Analyzer Console & Access Information Center Server Requirements
 
@@ -176,7 +175,7 @@ The following additional considerations are recommended for the SQL Server:
 
 - The standard Autogrowth setting can cause Access Analyzer job delays. Database growth is
   computationally intensive. While SQL Server is growing the database, no other activity can occur.
-  If this option is employed, please speak with a Netwrix engineer to determine an appropriate
+ If you use this option, speak with a Netwrix engineer to determine an appropriate
   setting for best performance.
 - Microsoft SQL Server supports TLS 1.2, which requires the Access Analyzer Console server to have
   either SQL Server Native Client 11 or Microsoft OleDB 18 installed.
@@ -191,10 +190,10 @@ The following permissions are required on the databases:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, we fully support the use of virtual machines. This
-section contains special considerations when leveraging virtualization.
+While physical machines are always preferred, Access Analyzer fully supports the use of virtual machines. This
+section contains special considerations for virtualized environments.
 
-- VMWare® ESX® – If using ESX, the following specifications are recommended:
+- VMWare® ESX® – If you use ESX, the following specifications are recommended:
 
     - ESX 4.0 / ESXi™ 4.1 or higher
     - Virtual Hardware 7 or higher
@@ -202,5 +201,5 @@ section contains special considerations when leveraging virtualization.
 
 - Virtual Storage Consideration
 
-    - In the server requirements, when separate disks are required for the servers, that should
-      translate to separate data stores on the VM host machine.
+    - When the server requirements call for separate disks, use separate data stores on the VM
+      host machine.

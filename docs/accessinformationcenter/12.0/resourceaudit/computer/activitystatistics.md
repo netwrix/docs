@@ -12,12 +12,12 @@ Traffic Trend.
 
 ![Activity Statistics report](/images/accessinformationcenter/12.0/resourceaudit/computer/activitystatistics.webp)
 
-This report is comprised of the following columns:
+This report includes the following columns:
 
 - Collector – Refers to the collection source for the permission (for example, **FileSystem** for
   the Access Analyzer File System Solution, **SharePoint** for the Access Analyzer SharePoint
   Solution, and so on)
-- Server Name – Name of the file system server or SharePoint farm/instanceS where the activity event
+- Server Name – Name of the file system server or SharePoint farm/instance where the activity event
   occurred
 - Path – Location of the resource where the activity event occurred
 - Reads – Count of view/read operations on resource

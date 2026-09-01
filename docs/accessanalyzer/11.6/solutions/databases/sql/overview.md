@@ -29,14 +29,14 @@ topic for additional information.
 **Sensitive Data Discovery Considerations**
 
 The Sensitive Data Discovery Add-On must be installed on the Enterprise Auditor Console server,
-which enables Sensitive Data criteria for scans.If running Sensitive Data Discovery (SDD) scans, it
-will be necessary to increase the minimum amount of RAM. Each thread requires a minimum of 2
-additional GB of RAM per host.For example, if the job is configured to scan 8 hosts at a time , then
-an extra 16 GB of RAM are required (8x2=16).
+which enables Sensitive Data criteria for scans. If running Sensitive Data Discovery (SDD) scans, you
+must increase the minimum amount of RAM. Each thread requires a minimum of 2
+additional GB of RAM per host. For example, if the job is configured to scan 8 hosts at a time, you
+need an extra 16 GB of RAM (8 x 2 = 16).
 
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
-(Java) version on the server. The JDK deployed is prepackaged and does not require any
+(Java) version on the server. The JDK deployed is prepackaged and doesn't require any
 configuration; it has been preconfigured to work with Enterprise Auditor and should never be
 customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
 environment.

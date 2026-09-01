@@ -12,15 +12,15 @@ This guide shows how to set up a [SCIM](../../../integration-guide/connectors/re
 
 ### External system configuration
 
-Usually CyberArk provides the environment to use AAM (_Application Access Manager_) and SCIM (_System for Cross-domain Identity Management_). For example, PrivateArk Server, PrivateArk and other tools can be found on a VM-based environment.
+Usually CyberArk provides the environment to use AAM (_Application Access Manager_) and SCIM (_System for Cross-domain Identity Management_). For example, PrivateArk Server, PrivateArk, and other tools can be found on a VM-based environment.
 
-It is strongly recommended that you follow the official **CyberArk SCIM Server Implementation Guide** (the CyberArk team can provide this document) in order to set up the environment. When you've completed the installation or if CyberArk has already installed it, you can verify the installation:
+It is strongly recommended that you follow the official **CyberArk SCIM Server Implementation Guide** (the CyberArk team can provide this document) to set up the environment. When you've completed the installation or if CyberArk has already installed it, you can verify the installation:
 
-1. Log into **PrivateArk Client**, locate and open the **SCIM Config** safe.
+1. Log into **PrivateArk Client**, locate, and open the **SCIM Config** safe.
 2. Check the presence of the following objects:
 
     - `Encryption-key`: The SCIM Server uses a local cache to store objects retrieved from the
-Vault. Although no credentials (other than the ones in the SCIM Config safe, which are not stored on the cache) are retrieved, we encrypt the cache with this encryption key. The key is randomly generated, and not exposed by the installer, but can be changed if desired.
+Vault. Although no credentials (other than the ones in the SCIM Config safe, which aren't stored on the cache) are retrieved, the cache is encrypted with this encryption key. The key is randomly generated, and not exposed by the installer, but can be changed if desired.
     - `GlobalConfig.yml`: This is the configuration file for the overall SCIM server settings. It is
 responsible for the setting of performance parameters and additional added features.
     - `Usercube-account`: This is a privileged account to allow Identity Manager to authenticate its
@@ -39,7 +39,7 @@ Accounts, Permissions, and Users. This user is required by the CyberArk's Comman
         - `Client-user`: This is a CyberArk user for authenticating requests made to the SCIM server
 using the REST API. (The name Client-user' can change and be replaced by Identity Manager-user' for example.)
 
-Now we can consider that the installation is correct, the login is `Usercube-user` and the password `CyberArk1`.
+At this point, the installation is correct, the login is `Usercube-user` and the password is `CyberArk1`.
 
 ### Identity Manager configuration
 
@@ -69,8 +69,8 @@ In the newly created subsection, fill in:
 
 - The **Server** attribute with the CyberArk's address. It has the form:
 `https://host:port/CyberArk/scim`.
-- The **Login** attribute with the User's login value (in our example, `Usercube-user`).
-- The **Password** attribute with the User's login value (in our example, `Cyberark1`).
+- The **Login** attribute with the User's login value (for example, `Usercube-user`).
+- The **Password** attribute with the User's login value (for example, `Cyberark1`).
 
 > For example:
 >
@@ -117,9 +117,9 @@ The `Filter` and `FilterGroup` setting syntax is detailed in the [SCIM](../../..
 
 ##### Example
 
-The following example sets up the **Users**, **ContainerPermissions**, **Containers** and **Groups** for export.
+The following example sets up the **Users**, **ContainerPermissions**, **Containers**, and **Groups** for export.
 
-For **Users**, we give an example for each type of attribute:
+For **Users**, this section provides examples for each type of attribute:
 
 - **userName** is an attribute of the base schema.
 - **ldapFullDN** is an attribute of the `urn:ietf:params:scim:schemas:cyberark:1.0:User` schema
@@ -182,7 +182,7 @@ It is strongly recommended that the applicative configuration be stored the
 - Use the [Connector](../../../integration-guide/toolkit/xml-configuration/connectors/connector) element to
   declare the connector with the following attributes:
 
-    - **Identifier** identifies this connector in the applicative configuration. We recommend using
+    - **Identifier** identifies this connector in the applicative configuration. Use
       a meaningful name such as `CyberArk`. If several connections to several CyberArk targets are
       possible, only one CyberArk Connector per Agent is used. See the
       [Create a Working Directory](../../../installation-guide/production-ready/working-directory)

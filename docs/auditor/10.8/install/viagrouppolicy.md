@@ -10,7 +10,7 @@ The Netwrix Auditor client can be deployed on multiple computers via Group Polic
 helpful if you want to grant access to configuration and audit data to a significant number of
 employees and, therefore, have to run Netwrix Auditor installation on multiple computers.
 
-If installing via Group Policy, make sure to deploy Netwrix Auditor client and Netwrix Auditor
+If installing via Group Policy, ensure to deploy Netwrix Auditor client and Netwrix Auditor
 server on different machines. If both components are installed on the same machine, you may
 experience issues with future upgrades.
 
@@ -32,7 +32,7 @@ To run the Netwrix Auditor installation, you must be a member of the local Admin
 
 1. Create a shared folder that will be used for distributing the installation package.
 
-    Make sure that the folder is accessible from computers where the Netwrix Auditor clients are
+    ensure that the folder is accessible from computers where the Netwrix Auditor clients are
     going to be deployed. You must grant the Read permissions on this folder to these computer
     accounts.
 
@@ -43,7 +43,6 @@ To run the Netwrix Auditor installation, you must be a member of the local Admin
 It is recommended to create a dedicated organizational unit using Active Directory Users and
 Computers and add computers where you want to deploy the Netwrix Auditor client.
 
-Follow the steps to create a Group Policy
 
 **Step 1 –** Open the **Group Policy Management** console on any domain controller in the target
 domain: navigate to Start > Windows Administrative Tools (Windows Server 2016 and higher) or

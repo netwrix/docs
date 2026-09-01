@@ -19,31 +19,30 @@ There are several steps in preparing Azure Files for monitoring:
 
 ## Enable auditing for storage accounts
 
-Auditing in Azure Files is disabled by default. It must be enabled for each storage account to be monitored.  
+Azure Files disables auditing by default. You must enable auditing for each storage account you want to monitor.  
 
 ![Azure Files auditing](/images/activitymonitor/9.0/config/azure-files/azure-files-audit.webp)
 
 ### Logs storage account
 You must provide a storage account for audit data. The audit data is written as blobs named `insight-logs` to that storage account.  
-It must be a different storage account — it cannot be the same account that hosts Azure Files.  
+Use a different storage account from the one that hosts Azure Files.  
 
-It is recommended to share such a *logs storage account* among multiple *files storage accounts*.  
+Share a single *logs storage account* among multiple *files storage accounts*.  
 A single account can store nearly unlimited blobs and up to 5 PB of data, which is more than enough for audit logs.  
-A shared account also helps stay within the Azure limit of 250–500 accounts per region per subscription.  
+A shared account also helps you stay within the Azure limit of 250–500 accounts per region per subscription.  
 
-However, for security reasons, you may choose to use separate *logs storage accounts* so that activity from different accounts is not mixed in the same blob storage.  
+However, for security reasons, you may choose to use separate *logs storage accounts* so that activity from different accounts isn't mixed in the same blob storage.  
 
-The *logs storage account* must be in the same Azure region as the monitored Azure Files storage account, but it does not need 
-to be in the same resource group or subscription.  
+Place the *logs storage account* in the same Azure region as the monitored Azure Files storage account, but it can be in a different resource group or subscription.  
 
-Because the product does not require historical logs, it is recommended to configure an **Azure Lifecycle Management rule** for this storage account  
+Because the product doesn't require historical logs, configure an **Azure Lifecycle Management rule** for this storage account  
 to control storage volume and cost (not documented here). Otherwise, the data will be stored indefinitely.  
 
 ### Diagnostic setting
 
 To enable auditing, you must enable the Diagnostic Setting for each Azure Files storage account to be monitored.  
 
-This can be done for each storage account individually or in bulk using Azure Policy to set Diagnostic Settings  
+Enable the Diagnostic Setting for each storage account individually or in bulk using Azure Policy to set Diagnostic Settings  
 at the management group, subscription, or resource group scope (not documented here).
 
 1. Open the storage account in the Microsoft Azure portal.  
@@ -52,7 +51,7 @@ at the management group, subscription, or resource group scope (not documented h
 2. Click **Add diagnostic setting** to create a new auditing configuration or open an existing one.  
 
 3. Under the **Logs** section, select **audit**, **StorageRead**, **StorageWrite**, and **StorageDelete**.  
-   You can adjust these categories based on your needs; for example, unselect **StorageRead** if you are not interested in read activity.  
+   You can adjust these categories based on your needs; for example, unselect **StorageRead** if you aren't interested in read activity.  
 
 4. Under the **Destination details** section, select **Archive to a storage account**, then choose the storage account prepared in Step 1.  
 
@@ -64,24 +63,22 @@ It may take up to 90 minutes for the changes to take effect.
 
 ## Register an application in Azure
 
-Monitoring of Azure Files requires an application to be registered in the Azure portal, assigning it permissions to access the Graph API and  
+To monitor Azure Files, register an application in the Azure portal and assign it permissions to access the Graph API and  
 RBAC roles to access storage accounts.  
 
 :::note
-A user account with the **Global Administrator** role is required to register an app and grant admin consent in Microsoft Azure.
+Use a user account with the **Global Administrator** role to register an app and grant admin consent in Microsoft Azure.
 :::
 
 If you already have an application registered for Activity Monitor for Entra ID, SharePoint Online, or Exchange Online, you can reuse that  
 registration for Azure Files by assigning additional RBAC roles.
 
-Follow these steps to register the application in Azure.  
-
 ### Open Microsoft Azure portal
 
 - Azure Public – https://portal.azure.com/  
-- Azure for US Government GCC – https://portal.azure.com/  
-- Azure for US Government GCC High – https://portal.azure.us/  
-- Azure for US Government DoD – https://portal.azure.us/  
+- Azure for United States Government GCC – https://portal.azure.com/  
+- Azure for United States Government GCC High – https://portal.azure.us/  
+- Azure for United States Government DoD – https://portal.azure.us/  
 - Azure Germany – https://portal.microsoftazure.de/  
 - Azure China by 21Vianet – https://portal.azure.cn/  
 
@@ -97,7 +94,7 @@ Use the search box to locate the **App registrations** page, then select **New r
 
 ### Copy Application (client) ID and Tenant (directory) ID
 
-On the **Overview** page, copy the **Application (client) ID** and **Directory (tenant) ID** values and save them for later.  
+From the **Overview** page, copy the **Application (client) ID** and **Directory (tenant) ID** values and save them for later.  
 
 ### Create a new client secret
 
@@ -111,7 +108,7 @@ Be aware of the client secret's expiration date. You'll need to generate a new o
 :::
 
 :::warning
-Make sure you copy the **Value**, not the **Secret ID**.
+Ensure you copy the **Value**, not the **Secret ID**.
 :::
 
 ### Grant API permissions
@@ -136,7 +133,7 @@ Assign the following roles to the registered application:
   Allows enumeration of storage accounts and reading of their settings.  
 
 - `Storage Blob Data Reader` – the data plane role.  
-  Allows reading of audit data from the logs storage account(s).  
+  Allows reading of audit data from the logs storage accounts.  
 
 You can assign these roles at different levels, which grant access to all storage accounts within the selected scope:
 
@@ -187,7 +184,7 @@ The last step is adding the Azure Files storage account to Activity Monitor.
 1. On the **Monitored Hosts & Services** page, select **Add Host/Service**.  
 2. Select the agent that will be monitoring Azure Files, and then select **Next**.  
 3. Select **Azure Files**, specify the tenant’s domain name, and then select **Next**.  
-4. On the **Connection** page, specify the Tenant ID (if it was not resolved automatically), Client ID, and Client Secret—values  
+4. On the **Connection** page, specify the Tenant ID (if it wasn't resolved automatically), Client ID, and Client Secret—values  
 copied in the previous steps during application registration.  
 5. Select **Connect**.  
 The button will verify the connection to Azure, enumerate all storage accounts, and retrieve their settings visible to the registered application.  

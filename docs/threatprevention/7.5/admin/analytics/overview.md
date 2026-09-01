@@ -15,7 +15,7 @@ on incidents that are triggered by those events.
 
 Once an Analytic is configured and enabled, the Agent begins monitoring for events. Each event is
 stored in the Agent memory until the trigger threshold is met. Then an incident is logged in the
-database along with the event details that triggered the incident. Events that do not trigger an
+database along with the event details that triggered the incident. Events that don't trigger an
 incident are discarded from memory after the corresponding time range.
 
 The tables below outline the authentication analytics Threat Prevention provides out-of-the box,
@@ -48,7 +48,7 @@ type.
 The Refresh button on the Analytics ribbon repopulates both the graphical display and the analytic
 list.
 
-The Permissions section at the bottom of the interface allows you to protect Analytic policies at
+Use the Permissions section at the bottom of the interface to protect Analytic policies at
 the Analytics node. Once a user is assigned permission, all analytic policies, configurations, and
 data are protected from any user not included in the permissions list. See the
 [Protect Policies](/docs/threatprevention/7.5/admin/policies/dataprotection.md#protect-policies) topic for instructions on how to
@@ -67,12 +67,12 @@ the monitored incidents and configuring the analytic type:
 - [Horizontal Movement Attacks Analytic Type](/docs/threatprevention/7.5/admin/analytics/horizontalmovementattacks.md) – Reports on security
   principals that are accessing more than the threshold of resources during a specified time
   interval. This may be indicative of a person trying to obtain information from as many servers as
-  possible which they normally would not be accessing.
+  possible which they normally wouldn't be accessing.
 - [Bad User ID (by User) Analytic Type](/docs/threatprevention/7.5/admin/analytics/baduseriduser.md) – Reports on pre-authentication failures
-  due to using account names that cannot be found in Active Directory. These incidents are grouped
+  due to using account names that can't be found in Active Directory. These incidents are grouped
   per account name.
 - [Bad User ID (by Source Host) Analytic Type](/docs/threatprevention/7.5/admin/analytics/baduseridsourcehost.md) – Reports on
-  pre-authentication failures due to using account names that cannot be found in Active Directory.
+  pre-authentication failures due to using account names that can't be found in Active Directory.
   These incidents are grouped per source host.
 - [Breached Password Analytic Type](/docs/threatprevention/7.5/admin/analytics/breachedpassword.md) – Reports on multiple failed
   authentications followed by a successful authentication in a specified time frame

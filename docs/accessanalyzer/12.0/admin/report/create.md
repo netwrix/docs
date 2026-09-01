@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Creating a Report
 
-Creating and customizing reports allows you to design outputs uniquely crafted to your requirements.
+Create and customize reports to design outputs uniquely crafted to your requirements.
 Reports can vary by section order, sourced data, file format, and other elements within the reports
 configuration.
 
@@ -16,16 +16,15 @@ You can add additional reports by the following methods:
 - [Copy an Existing Report](#copy-an-existing-report)
 
 :::note
-It is important to consider whether a report should be added to an existing job, or a new
-job created to generate the report. Contact [Netwrix Support](https://www.netwrix.com/support.html)
+Consider whether to add a report to an existing job or create a new
+job to generate the report. Contact [Netwrix Support](https://www.netwrix.com/support.html)
 for additional information on report outputs.
 :::
 
 
 ## Create a Custom Report
 
-You can create a new custom report for an existing job from the job’s Reports node. Follow the steps
-to create a new report.
+You can create a new custom report for an existing job from the job’s Reports node.
 
 **Step 1 –** Navigate to **Jobs** > **[Job]** > **Configure** and select the **Reports** node.
 
@@ -49,17 +48,16 @@ topic.
 ## Copy an Existing Report
 
 You can create a new report by copying an existing report and pasting it in a job’s Reports node.
-You can then optionally customize the report as required. Follow the steps to create a copy of an
-existing report.
+You can then optionally customize the report as required.
 
 ![Copy Report](/images/accessanalyzer/12.0/admin/report/copy.webp)
 
-**Step 1 –** Navigate to the Reports node where the desired report to copy is located. Click the
+**Step 1 –** Navigate to the Reports node where the report you want to copy is located. Click the
 vertical ellipsis menu next to the report and select Copy.
 
 ![Paste Report](/images/accessanalyzer/12.0/admin/report/paste.webp)
 
-**Step 2 –** Navigate to the Reports node in the desired destination for the new report. Click the
+**Step 2 –** Navigate to the Reports node in the destination you want for the new report. Click the
 vertical ellipsis menu in the header row of the Reports table and select Paste.
 
 The copy of the report is added to the Reports table. Reports that are copied maintain the same

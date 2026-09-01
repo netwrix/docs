@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # AD_ResetPasswordPermissions Job
 
-The AD_ResetPasswordPermissions Job highlights all Active Directory users that are capable of
-resetting another user's password within the targeted domains. It uses the data collected by the
+The AD_ResetPasswordPermissions Job highlights all Active Directory users that can reset another
+user's password within the targeted domains. It uses the data collected by the
 0.Collection Job Group to provide information on permissions applied to user objects in Active
 Directory.
 
@@ -18,7 +18,7 @@ Navigate to the **Active Directory Permissions Analyzer** > **1.Users** >
 tasks.
 
 :::warning
-Do not modify or deselect the selected analysis tasks. The analysis tasks are
+Don't modify or deselect the selected analysis tasks. The analysis tasks are
 preconfigured for this job.
 :::
 

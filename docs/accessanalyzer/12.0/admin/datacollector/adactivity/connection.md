@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # ADActivity: SAM Connection
 
-The SAM connection page is where the port number is configured to send Active Directory data from
+Use the SAM connection page to configure the port number for sending Active Directory data from
 Netwrix Activity Monitor. It is a wizard page for the category of:
 
 - Import from SAM
@@ -24,14 +24,13 @@ archive via an API Server:
       scan to continue
 
 - Test SAM host – Enter the Activity Monitor API server name in a qualified domain name format.
-  Click Connect to test the connection. A successful result populates the section underneath with a
-  Refresh token.
-- Exclude – Select archives to be ignored by the Active Directory Activity DC scan
+  Click Connect to test the connection. A successful connection displays a Refresh token.
+- Exclude – Select archives for the Active Directory Activity DC scan to ignore
 
     :::warning
     Save the Refresh token to a Text Editor for later use. The Refresh token resets
-    each time the Test SAM host option is connected to. It must be replaced in the Connection
-    profile if it is regenerated.
+    each time you use the Test SAM host option to connect. If it regenerates, replace it in the
+    Connection profile.
     :::
 
 
