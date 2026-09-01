@@ -16,11 +16,11 @@ Installing the application requires the following servers and applications:
 
 **Core Components**
 
-- Access Analyzer Console Server – This is where the v12.0 application is installed.
+- Access Analyzer Console Server – This is where you install the v12.0 application.
 - SQL Server for Access Analyzer Database – Because Access Analyzer is a data-intensive
   application, use a well-provisioned, dedicated SQL Server for the database.
-- Access Information Center Application Server – This application is typically installed on the
-  Access Analyzer Console server and is a browser-based, interactive dashboard for exploring
+- Access Information Center Application Server – You typically install this application on the
+  Access Analyzer Console server. It is a browser-based, interactive dashboard for exploring
   permissions, activity, and sensitive data.
 
     :::note
@@ -190,10 +190,10 @@ The following permissions are required on the databases:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, Access Analyzer fully supports the use of virtual machines. This
+While physical machines are always preferred, Access Analyzer fully supports virtual machines. This
 section contains special considerations for virtualized environments.
 
-- VMWare® ESX® – If you use ESX, the following specifications are recommended:
+- VMWare® ESX® – If you use ESX, Netwrix recommends the following specifications:
 
     - ESX 4.0 / ESXi™ 4.1 or higher
     - Virtual Hardware 7 or higher

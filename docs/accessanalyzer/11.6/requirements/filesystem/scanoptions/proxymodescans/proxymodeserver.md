@@ -64,9 +64,9 @@ time with two concurrent SDD threads requires an extra 32 GB of RAM (8x2x2=32).
     - 2 CPU Cores
     - 130 GB Disk Space
 
-This recommended disk space sizing information is based on the needs of Enterprise Auditor as
-well as the File System solution for running Permission scans with the default configuration (500
-MB per million files and folders), that means no tag collection, file-level scanning, activity, or
+This recommended disk space sizing information is based on the needs of Enterprise Auditor and
+the File System solution for running Permission scans with the default configuration (500
+MB per million files and folders), which means no tag collection, file-level scanning, activity, or
 sensitive data.
 
 - For tag collection, add 125 MB per million documents to these totals
@@ -76,8 +76,8 @@ sensitive data.
   total size of the documents scanned for sensitive data (depending on targeted document types and
   selected criteria) to these totals
 
-For example, to scan 200 million files and folders, of which 10 million files will be
-scanned for tag collection and sensitive data with a total size of 6 TB, you would need: 160 GB for
+For example, to scan 200 million files and folders, of which you scan 10 million files
+for tag collection and sensitive data with a total size of 6 TB, you would need: 160 GB for
 permission collection + 1.25 GB for tag collection (10x125 MB) + 100 GB for sensitive data
 collection (200x500 MB) + 600 GB additional for sensitive data collection (10% of 6 TB) = 861.25 GB
 Disk Space.

@@ -10,8 +10,8 @@ Access Analyzer 12.0 uses the Upgrade Wizard. For upgrades from versions of Acce
 no longer supported, contact [Netwrix Support](https://www.netwrix.com/support.html) for assistance.
 
 :::note
-If a Netwrix Engineer has made any customizations, ensure the custom work is
-not lost during the upgrade process. The Upgrade Wizard archives customizations
+If a Netwrix Engineer has made any customizations, ensure you preserve the custom work
+during the upgrade process. The Upgrade Wizard archives customizations
 before solution upgrades. These archives are available after the solution upgrades
 complete. Contact [Netwrix Support](https://www.netwrix.com/support.html) for additional
 information.
@@ -57,9 +57,9 @@ have local administrator rights. Otherwise, Access Analyzer throws an exception 
 Multiple Access Analyzer Consoles Connecting to the Same Database
 
 In environments where multiple Access Analyzer Consoles use the same SQL Server database,
-you must also update every console that uses the database. The act of connecting a Access Analyzer
-Console with a newer version to a database updates the database’s schema pursuant to the new
-definition. If a Access Analyzer Console with an older version connects to the same database after
+you must also update every console that uses the database. Connecting an Access Analyzer
+Console with a newer version to a database updates the database’s schema according to the new
+definition. If an Access Analyzer Console with an older version connects to the same database after
 you update the schema, corruption to Access Analyzer’s system tables can result.
 
 SQL Server Supported Version Change for the Access Analyzer Database

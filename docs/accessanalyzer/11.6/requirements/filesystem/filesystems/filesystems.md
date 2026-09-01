@@ -126,7 +126,7 @@ for target environment requirements.
 - Cluster-Mode 8.2+
 
     :::note
-    The Resiliency feature introduced in ONTAP 9.0 isn't supported.
+    Enterprise Auditor doesn't support the Resiliency feature introduced in ONTAP 9.0.
     :::
 
 

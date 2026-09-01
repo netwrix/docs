@@ -7,9 +7,8 @@ sidebar_position: 20
 # Requirements
 
 This topic describes the recommended configuration of the servers needed to install the application
-in a production environment. Depending on the size of the organization, it is recommended to review
-your environment and requirements with a Netwrix engineer before deployment to ensure all
-exceptions are covered.
+in a production environment. Depending on the size of your organization, review your environment
+and requirements with a Netwrix engineer before deployment to ensure all exceptions are covered.
 
 ## Architecture Overview
 
@@ -45,11 +44,10 @@ Installing the application requires the following servers and applications:
 
 **File System Solution-Specific Components**
 
-- Enterprise Auditor File System Proxy Server – In certain environments, a proxy server may be
-  used to scan hosts in remote or firewalled sites to increase scan capacity in large
-  environments. This feature can be implemented through either an applet or a service. The applet
-  would be deployed as part of the data collection process. The service should be installed before
-  data collection. See the
+- Enterprise Auditor File System Proxy Server – In certain environments, a proxy server can scan
+  hosts in remote or firewalled sites to increase scan capacity in large environments. You can
+  implement this feature through either an applet or a service: the applet deploys as part of the
+  data collection process, and you install the service before data collection. See the
   [Proxy Mode as a Service](/docs/accessanalyzer/11.6/requirements/filesystem/scanoptions/scanoptions.md#proxy-mode-as-a-service)
   topic for server requirements.
 - Enterprise Auditor Sensitive Data Discovery Add-On – You install this application on the file
@@ -58,10 +56,10 @@ Installing the application requires the following servers and applications:
 
 **SharePoint Solution-Specific Components**
 
-- Enterprise Auditor SharePoint Agent Server – For agent-based scans, this application can be
-  installed on the SharePoint application server that hosts the “Central Administration” component
-  of the targeted farms to auditing permissions, content, and sensitive data for SharePoint
-  On-Premise. See the
+- Enterprise Auditor SharePoint Agent Server – For agent-based scans, you can install this
+  application on the SharePoint application server that hosts the “Central Administration”
+  component of the targeted farms to auditing permissions, content, and sensitive data for
+  SharePoint On-Premise. See the
   [SharePoint Scan Options](/docs/accessanalyzer/11.6/requirements/sharepoint/scanoptions/scanoptions.md)
   topic for server requirements.
 - Enterprise Auditor Sensitive Data Discovery Add-On – You install this application on the same
@@ -192,7 +190,7 @@ The following additional considerations are recommended for the SQL Server:
 
 - The standard Autogrowth setting can cause Enterprise Auditor job delays. Database growth is
   computationally intensive. While SQL Server is growing the database, no other activity can occur.
- If this option is employed, speak with a Netwrix engineer to determine an appropriate
+ If you use this option, speak with a Netwrix engineer to determine an appropriate
   setting for best performance.
 - Microsoft SQL Server supports TLS 1.2, which requires the Enterprise Auditor Console server to
   have either SQL Server Native Client 11 or Microsoft OleDB 18 installed.
@@ -207,8 +205,8 @@ The following permissions are required on the databases:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, virtual machines are fully supported. This
-section contains special considerations when using virtualization.
+While physical machines are always preferred, Enterprise Auditor fully supports virtual machines.
+This section contains special considerations for virtualized environments.
 
 - VMWare® ESX® – If you use ESX, Netwrix recommends the following specifications:
 

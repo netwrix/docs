@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # SharePoint Agent Permissions
 
-When Access Analyzer SharePoint scans are run in agent-based mode, the Access Analyzer SharePoint
-Agent must be installed on the SharePoint Application server which hosts the Central Administration
-component before executing the scans. This is typically the first server stood up during the
-SharePoint farm installation process in this mode. The data collection processing is conducted by
-the SharePoint Agent for the target environment. The final step in data collection is to transfer
+When you run Access Analyzer SharePoint scans in agent-based mode, you must install the Access
+Analyzer SharePoint Agent on the SharePoint Application server that hosts the Central Administration
+component before executing the scans. This is typically the first server deployed during the
+SharePoint farm installation process in this mode. The SharePoint Agent conducts the data
+collection processing for the target environment. The final step in data collection is to transfer
 the data collected in the SQLite databases, or Tier 2 databases, on the Access Analyzer SharePoint
 Agent server back to the Access Analyzer Console server.
 
@@ -32,23 +32,23 @@ The following are additional requirements for the Access Analyzer SharePoint Age
 
 :::note
 The appropriate JDK (Java) version for Sensitive Data Discovery is installed on the
-server. The JDK deployed is prepackaged and doesn't require any configuration; it has been
-preconfigured to work with Access Analyzer and should never be customized through Java. It will not
-conflict with other JDKs or Java Runtimes in the same environment.
+server. The JDK deployed is prepackaged and doesn't require any configuration. Netwrix
+preconfigures it to work with Access Analyzer, and you shouldn't customize it through Java. It
+doesn't conflict with other JDKs or Java Runtimes in the same environment.
 :::
 
 
 If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each thread
-requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+requires a minimum of 2 additional GB of RAM per host. For example, if you configure the job to
+scan 8 hosts at a time, you need an extra 16 GB of RAM (8x2=16).
 
 ## Permissions Explained
 
-If limited provisioning of the service account isn't required by the organization, then the
+If the organization doesn't require limited provisioning of the service account, then the
 following permissions are sufficient for successful agent-based scans:
 
-- Membership in the local Administrator group on the on server where the Access Analyzer SharePoint
-  Agent is installed
+- Membership in the local Administrator group on the server where you install the Access Analyzer
+  SharePoint Agent
 
     - Only needed for agent installation
 
@@ -79,8 +79,8 @@ following permissions are sufficient for successful agent-based scans:
           content and more
         - If the group doesn't exist already, then you need to create a new group at that level and
           grant it Read access. Specifically, it is a group that exists within Central
-          Administration at the farm administrator level. This group requires only Read access, not
-          farm admin access. After the group is created, add the service account that
+          Administration at the farm administrator level. This group requires only Read access and
+          doesn't grant farm admin access. After you create the group, add the service account that
           Access Analyzer uses to scan SharePoint.
 
 - Web Application permissions:
@@ -222,8 +222,8 @@ with the following permissions to collect all of the data:
     - `proc_ReturnWebFeatures`
 
         :::note
-        These four stored procedures already have the correct permissions if Web Application
-        scoping is desired.
+        These four stored procedures already have the correct permissions if you want Web
+        Application scoping.
         :::
 
 

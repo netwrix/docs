@@ -14,12 +14,12 @@ Access Information Center.
 ## Prerequisites
 
 You typically install the Access Information Center on the same server as Access Analyzer. However,
-you can install it on a remote server. See the Remote AIC Console Sever Requirements topic for
-additional information.
+you can install it on a remote server. See the Remote Access Information Center Console Server
+Requirements topic for additional information.
 
 ### Access Analyzer Solutions
 
-The .Active Directory Inventory Solution must be successfully executed before installing the
+You must successfully execute the .Active Directory Inventory Solution before installing the
 Access Information Center.
 
 :::info
@@ -31,8 +31,8 @@ supply the data for Resource Audits.
 ### Permissions
 
 Permissions are needed to the Access Analyzer database and to Active Directory. This can be one
-account with sufficient rights to each or two separate accounts. In this document,
-these will be referred to as the Database service account and the Active Directory service account.
+account with sufficient rights to each or two separate accounts. This document refers to
+these as the Database service account and the Active Directory service account.
 
 - Database service account – Typically, this is the same account that Access Analyzer uses for a
   database service account. Installation requires this credential.
@@ -71,11 +71,11 @@ additional information and best practices.
 ### SSL Certificate
 
 To enable Secure Sockets Layer (SSL) for secure remote connections to the Access Information Center,
-a password-enabled certificate with a private key is required. This certificate should reside in a
+you need a password-enabled certificate with a private key. This certificate should reside in a
 local folder for browsing before installing the Access Information Center. The certificate can
 also be in any of the Local Machine certificate stores.
 
-### Remote AIC Console Sever Requirements
+### Remote Access Information Center Console Server Requirements
 
 To install the Access Information Center on a server separate from the Access Analyzer Console,
 meet the following minimal server requirements for Access Reporting:
@@ -92,7 +92,7 @@ meet the following minimal server requirements for Access Reporting:
 
 :::note
 If using any of the Access Information Center workflows (Resource Reviews or
-Self-Service Access Requests), additional CPU cores, memory, and disk space may be needed.
+Self-Service Access Requests), you may need additional CPU cores, memory, and disk space.
 :::
 
 

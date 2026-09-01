@@ -6,11 +6,11 @@ sidebar_position: 10
 
 # SharePoint Agent Permissions
 
-When Enterprise Auditor SharePoint scans are run in agent-based mode, the Enterprise Auditor
-SharePoint Agent must be installed on the SharePoint Application server which hosts the Central
+When you run Enterprise Auditor SharePoint scans in agent-based mode, you must install the
+Enterprise Auditor SharePoint Agent on the SharePoint Application server that hosts the Central
 Administration component before executing the scans. This is typically the first server deployed
-during the SharePoint farm installation process in this mode. The data collection processing is
-conducted by the SharePoint Agent for the target environment. The final step in data collection is
+during the SharePoint farm installation process in this mode. The SharePoint Agent conducts the
+data collection processing for the target environment. The final step in data collection is
 to transfer the data collected in the SQLite databases, or Tier 2 databases, on the Enterprise
 Auditor SharePoint Agent server back to the Enterprise Auditor Console server.
 
@@ -31,7 +31,7 @@ The following are additional requirements for the Enterprise Auditor SharePoint 
 **Sensitive Data Discovery Auditing Requirement**
 
 In addition to having the Sensitive Data Discovery Add-on installed on the Enterprise Auditor
-Console server, The following is required to run Sensitive Data Discovery scans:
+Console server, running Sensitive Data Discovery scans requires the following:
 
 - Sensitive Data Discovery Add-On, 64-bit version, installed on the Enterprise Auditor SharePoint
   Agent server
@@ -40,23 +40,23 @@ Console server, The following is required to run Sensitive Data Discovery scans:
 :::note
 The Sensitive Data Discovery Add-on installation package installs the appropriate JDK
 (Java) version on the server. The JDK deployed is prepackaged and doesn't require any
-configuration; it has been preconfigured to work with Enterprise Auditor and should never be
-customized through Java. It will not conflict with other JDKs or Java Runtimes in the same
+configuration. Netwrix preconfigures it to work with Enterprise Auditor, and you shouldn't
+customize it through Java. It doesn't conflict with other JDKs or Java Runtimes in the same
 environment.
 :::
 
 
 If running Sensitive Data Discovery (SDD) scans, you must increase the minimum amount
-of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if the job
-is configured to scan 8 hosts at a time , then an extra 16 GB of RAM are required (8x2=16).
+of RAM. Each thread requires a minimum of 2 additional GB of RAM per host. For example, if you
+configure the job to scan 8 hosts at a time, you need an extra 16 GB of RAM (8x2=16).
 
 ## Permissions Explained
 
-If limited provisioning of the service account isn't required by the organization, then the
+If the organization doesn't require limited provisioning of the service account, then the
 following permissions are sufficient for successful agent-based scans:
 
-- Membership in the local Administrator group on the on server where the Enterprise Auditor
-  SharePoint Agent is installed
+- Membership in the local Administrator group on the server where you install the Enterprise
+  Auditor SharePoint Agent
 
     - Only needed for agent installation
 
@@ -87,9 +87,9 @@ following permissions are sufficient for successful agent-based scans:
           content and more
         - If the group doesn't exist already, then you need to create a new group at that level and
           grant it Read access. Specifically, it is a group that exists within Central
-          Administration at the farm administrator level. This group only requires Read access and
-          isn't giving farm admin access. After the group is created, add the service account that
-          Enterprise Auditor will be leveraging to scan SharePoint.
+          Administration at the farm administrator level. This group requires only Read access and
+          doesn't grant farm admin access. After you create the group, add the service account that
+          Enterprise Auditor uses to scan SharePoint.
 
 - Web Application permissions:
 
@@ -127,7 +127,7 @@ The following sections explain the less privilege and least privilege permission
 If the organization requires restricted permissions, then the service account needs the following
 permissions to successfully run SharePoint Agent-based scans.
 
-Before installation of the SharePoint Agent, the service account to be supplied during
+Before installing the SharePoint Agent, the service account to be supplied during
 installation and later used to run the Access Auditing (SPAA) and Sensitive Data Discovery Auditing
 scans against the targeted SharePoint environment needs the following permissions:
 
@@ -172,7 +172,7 @@ If scans include Web Application scoping, you have already met this permission r
 If the organization requires a least privilege model, then the service account needs the following
 permissions to successfully run SharePoint Agent-based scans.
 
-Before installation of the SharePoint Agent, the service account to be supplied during
+Before installing the SharePoint Agent, the service account to be supplied during
 installation and later used to run the Access Auditing (SPAA) and Sensitive Data Discovery Auditing
 scans the targeted SharePoint environment needs the following permissions:
 
@@ -230,8 +230,8 @@ account with the following permissions to collect all of the data:
     - `proc_ReturnWebFeatures`
 
         :::note
-        These four stored procedures would already have the correct permissions if Web
-        Application scoping is desired.
+        These four stored procedures already have the correct permissions if you want Web
+        Application scoping.
         :::
 
 

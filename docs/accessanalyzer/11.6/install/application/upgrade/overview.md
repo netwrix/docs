@@ -11,14 +11,14 @@ that are no longer supported, contact [Netwrix Support](https://www.netwrix.com/
 assistance.
 
 :::note
-If a Netwrix Engineer has made any customizations, ensure custom work isn't lost during the
+If a Netwrix Engineer has made any customizations, ensure you preserve the custom work during the
 upgrade process. The Upgrade Wizard archives customizations before solution upgrades. These
 archives are available after the solution upgrades finish. Contact [Netwrix Support](https://www.netwrix.com/support.html) for additional
 information.
 :::
 
 
-This document provides the basic steps needed for upgrading Enterprise Auditor
+This document provides the basic steps for upgrading Enterprise Auditor
 and the stock solutions. Contact [Netwrix Support](https://www.netwrix.com/support.html) for
 additional information.
 
