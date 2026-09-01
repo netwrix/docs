@@ -71,9 +71,9 @@ configured interval. The alert is sent to the Syslog configured on the **Syslog 
 
 ![Message Template popup window for Syslog Alerts](/images/activitymonitor/9.0/admin/agents/properties/inactivityalertssyslogalertsmessagetemplate.webp)
 
-Custom templates can be created. Select the template you want or create a new template by modifying
-an existing template within the Syslog Message Template window. The new message template is named
-Custom.
+You can create custom templates. Select the template you want or create a new template by modifying
+an existing template within the Syslog Message Template window. Activity Monitor names the new message
+template Custom.
 
 Click **OK** to apply changes and exit, or **Cancel** to exit without saving any changes.
 
@@ -111,7 +111,7 @@ Click **OK** to apply changes and exit, or **Cancel** to exit without saving any
 
 ## Macro Variables for Agents
 
-Macros are text strings that are replaced with actual values at run time. The following Macro
+Macros are text strings that Activity Monitor replaces with actual values at run time. The following Macro
 variables are available to customize the Syslog and Email message template:
 
 | Macro                       | Definition                                                    |

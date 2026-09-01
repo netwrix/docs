@@ -40,7 +40,7 @@ Configure a parametrized role by proceeding as follows:
 
 For example, consider a case with many roles available on three different time slots: 8 hours a day, 12 hours a day, or 24 hours a day. Create a dimension for these time slots.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <Dimension Identifier="TimeSlot" DisplayName_L1="Time Slot" EntityType="Access_TimeSlot" ColumnMapping="10" IsExcludedFromRoleMining="true" />
@@ -70,7 +70,7 @@ If you want Identity Manager to provide suggestions to set the parameter's value
 
 For example, with the `Title` dimension:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <ContextRule Identifier="Directory_User" DisplayName_L1="Directory_User" B0="Directory_UserRecord:Organization" <b>B1="Directory_UserRecord:Title"</b> B2="Directory_UserRecord:Site" B3="Directory_UserRecord:Site.Region.Country" B4="Directory_UserRecord:UserType.Category" ... Policy="Default" SourceEntityType="Directory_User" />

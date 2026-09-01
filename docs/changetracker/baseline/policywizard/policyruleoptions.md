@@ -29,11 +29,11 @@ entire enterprise) is sometimes not practical or deemed unacceptable. It is like
 need to support different standardized images, based on the proper hardening to address risks and
 needed functionality of the intended deployment. For example, a web server in the demilitarized zone
 (DMZ) versus an email or other application server in the internal network. The number of variations
-should be kept to a minimum in order to better understand and manage the security properties of
+should be kept to a minimum to better understand and manage the security properties of
 each, but organizations then must be prepared to manage multiple baselines."
 
 :::note
-Just click the Query icon to get a quick tip on what the Rule Option provides.
+Click the Query icon to get a quick tip on what the Rule Option provides.
 :::
 
 
@@ -41,8 +41,8 @@ Just click the Query icon to get a quick tip on what the Rule Option provides.
 
 ![baselinereviewandeditrules](/images/changetracker/baseline/baselinereviewandeditrules.webp)
 
-Edit Rules provides a means to edit or remove rules before incorporating them into your baseline
-policy, or for managing an existing policy. During the Setup phase, you select items with rule
+Edit Rules lets you edit or remove rules before incorporating them into your baseline
+policy, or manage an existing policy. During the Setup phase, you select items with rule
 logic to build a Netwrix policy — in effect, another compliance report like the hundreds of other
 reports Netwrix provides for CIS, NIST, PCI, and other frameworks.
 

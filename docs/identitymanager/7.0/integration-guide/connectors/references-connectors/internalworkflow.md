@@ -41,7 +41,7 @@ This connector retrieves the files containing provisioning orders that correspon
 
 This process is configured through a connection in the UI **and**/or the XML configuration, **and** in the *appsettings.agent.json* > **Connections** section:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -65,7 +65,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -92,7 +92,7 @@ The file specified in WorkflowJsonPath must have a specific structure.
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *FulfillInternalWorkflow.json*

@@ -11,11 +11,11 @@ This section describes the settings available in the agent's *appsettings.json* 
 :::note
  JSON files **can** contain any additional information that you might find useful. See the following example. 
 :::
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 For example, to store the agent's address, **can** add:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 *appsettings.json*
@@ -30,7 +30,7 @@ The appsettings set allows the following attributes and sections:
 
  | Name | Type | Description | 
  | --- | --- | --- | 
- | ApplicationUri (required) | Uri | Server's listening URI. Used by the agent to send requests to the server. Example: Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line. `*appsettings.json*   {  "ApplicationUri": "   <https://identitymanagerserver.contoso.com:5000>"   }` | 
+ | ApplicationUri (required) | Uri | Server's listening URI. Used by the agent to send requests to the server. Example: Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line. `*appsettings.json*   {  "ApplicationUri": "   <https://identitymanagerserver.contoso.com:5000>"   }` | 
  | Jobs (optional) | Job | Settings to configure all jobs with common values. | 
  | Scheduler (optional) | Scheduler | Settings to configure Identity Manager's scheduler. | 
  | TaskTimeoutSupplement default value: 0 | Int32 | Additional time (in minutes) for the Invoke-Job tool's Timeout property. Example: `*appsettings.json*   {       "TaskTimeoutSupplement": 10   }` | 
@@ -106,7 +106,7 @@ On the other hand, the PFX file takes priority over Windows' certificate, which 
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 {
@@ -139,7 +139,7 @@ The archive is set using the following attributes:
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
  {
@@ -165,7 +165,7 @@ The Windows certificate is set using these attributes:
 
 If the certificate is saved in Azure Key Vault, must define the certificate identifier and the Vault connection. See the [Azure Key Vault](../../../integration-guide/network-configuration/agent-configuration/azure-key-vault) topic for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 "<EncryptionCertificate>": {
@@ -181,7 +181,7 @@ Like the Encryption Certificate, this information **can** be set one of two ways
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 *appsettings.json*
@@ -205,7 +205,7 @@ The archive is set using the following attributes:
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 *appsettings.json*
@@ -282,7 +282,7 @@ Identity Manager supports the Application Insights integration. It means that y
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 *appsettings.json*

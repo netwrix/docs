@@ -28,7 +28,7 @@ See the [Azure Key Vault](../../../integration-guide/network-configuration/agent
 
 The default behavior of the server configuration is outlined through an example.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {

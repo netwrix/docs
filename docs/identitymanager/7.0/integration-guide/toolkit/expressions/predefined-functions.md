@@ -14,7 +14,7 @@ Unlike C# expressions, Identity Manager's predefined functions don't need any pr
 
 The following example shows two predefined functions. The first function normalizes the HR_Person FirstName. The other one converts the end date into a UTC date and adds 1440 minutes.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
         <ScalarRule Property="CFirstName" Binding="HR_Person:FirstName" Expression="Simplify" Policy="Default" />

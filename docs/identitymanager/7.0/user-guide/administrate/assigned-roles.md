@@ -22,7 +22,7 @@ Users require the `/Custom/ProvisioningPolicy/AssignedRoles/{EntityType}` permis
 
 The following example provides the rights for the Administrator profile to access the Assigned Roles page on the **Entity Type** `Directory_User`. See the [Create a Provisioning Rule](../../user-guide/set-up/provisioning-rule-creation) and [Create Roles in the Role Catalog](../../user-guide/set-up/single-roles-catalog-creation) topics for additional information.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <AssignedRolesAccessControlRules EntityType="Directory_User" Profile="Administrator" />

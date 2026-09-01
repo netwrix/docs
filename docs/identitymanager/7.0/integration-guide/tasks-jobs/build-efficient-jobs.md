@@ -31,7 +31,7 @@ Most jobs are included in job scaffoldings, thus configured in the most optimal 
 
 For example, the creation from the beginning of a job to perform a complete synchronization for a connector will be tedious. Instead, use Identity Manager's scaffolding, like in the following example concerning the Microsoft Entra ID (formerly Microsoft Azure AD) connector. Instead of a few dozens of lines, write only the following:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <CreateConnectorSynchroComplete DisplayName_L1="10: Microsoft Entra ID - Synchronization Complete (scaffolding)" Connector="MicrosoftEntraID" JobIdentifier="MicrosoftEntraID_Synchronize_Complete_Scaffolding"/>
@@ -49,7 +49,7 @@ Ensure to configure the tasks so that they are executed only on the relevant ent
 
 For example, instead of using AllEntityType set to true, write the following:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <ComputeCorrelationKeysTask DisplayName_L1="Directory User - Update the correlation keys" >
@@ -65,7 +65,7 @@ Make the relevant tasks incremental by flagging the resources that were recently
 
 For example, instead of computing the role model as if it had never been computed before, apply only the changes by writing the following:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <ComputeRoleModelTask Identifier="MicrosoftEntraID_Synchronize_Incremental_ComputeRoleModel_WithDirty" DisplayName_L1="Apply the Role Model" Level="6" Dirty="true">  <TaskEntityType EntityType="Directory_User" /></ComputeRoleModelTask>
@@ -87,7 +87,7 @@ For example, Identity Manager's feedback loop uses the tasks for synchronization
 
 Instead of including any task twice, rather write a job with each task once, schedule a periodic execution of the job, and wait for the next execution to get the whole cycle. For example for the AD:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <Job Identifier="Synchronization_RoleModelComputation_Provisioning" DisplayName_L1="91: Synchronization / RoleModelComputation / Provisioning" Agent="Local">  <ExportTask Identifier="Export_AD" DisplayName_L1="AD - Extract Changes" Agent="Local" Connector="AD" Level="0" OpenIdClient="Job" Connection="ADExportFulfillment" ContinueOnError="true" />  <PrepareSynchronizationTask Identifier="PrepareSynchronization_AD" DisplayName_L1="Synchronization (agent side)" Agent="Local" Connector="AD" Level="1" OpenIdClient="Job" SynchronizationMode="Incremental" Type="ActiveDirectory">      <TaskDependsOnTask ParentTask="Export_AD" />  </PrepareSynchronizationTask>  <SynchronizeTask Identifier="Synchronization_AD" DisplayName_L1="Synchronization (server side)" Connector="AD" Level="2" Type="ActiveDirectory">  <TaskDependsOnTask ParentTask="PrepareSynchronization_AD" />  </SynchronizeTask>  <UpdateEntityPropertyExpressionsTask Identifier="UpdateEntityPropertyExpressions_AD" DisplayName_L1="Update Computed Properties" Level="4">      <TaskEntityType EntityType="AD_Entry" />      ...

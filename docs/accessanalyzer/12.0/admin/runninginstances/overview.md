@@ -49,7 +49,7 @@ scheduled task and isn't enabled for interactive job executions.
 
 ![Number of jobs running on bottom bar](/images/accessanalyzer/12.0/admin/runninginstances/overviewbottombar.webp)
 
-The lower-left-hand corner of the Access Analyzer Console shows the number of jobs currently
+The lower-left-hand corner of the Access Analyzer Console shows the number of jobs 
 running.
 
 ## View Host
@@ -82,7 +82,7 @@ job. See the [Running Job Details](/docs/accessanalyzer/12.0/admin/runninginstan
 
 ## View Details
 
-Additional details on the status of the tasks the job is running are available.
+You can view additional details on the status of the tasks the job is running.
 
 ![View Details link](/images/accessanalyzer/12.0/admin/runninginstances/viewdetails.webp)
 
@@ -95,7 +95,7 @@ The View Details link opens the running job's details with three tabs of inform
 
 ## View Log
 
-The log for this running job can be opened in a text editor, such as Notepad.
+You can open the log for this running job in a text editor, such as Notepad.
 
 ![View Log link](/images/accessanalyzer/12.0/admin/runninginstances/viewlog.webp)
 
@@ -116,7 +116,7 @@ Scheduler.
 
 Click the **View Schedule** link to display the corresponding Scheduled Task for the running job or
 job group. The **View Schedule** link is only enabled for jobs that are running via scheduled task
-and will not be enabled for interactive job executions.
+and isn't enabled for interactive job executions.
 
 ![Schedule wizard](/images/accessanalyzer/12.0/admin/runninginstances/schedulewizard.webp)
 
@@ -125,7 +125,7 @@ The Schedule wizard for the running task opens. See the
 
 ## Stop
 
-The job execution can be stopped if needed.
+You can stop the job execution if needed.
 
 ![Stop button](/images/accessanalyzer/12.0/admin/runninginstances/stop.webp)
 

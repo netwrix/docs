@@ -51,7 +51,7 @@ When extracting Usercube Bootstrap to the root of the computer, it looks like:
 
 In the example, the command would be, in the Runtime folder:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```shell
 ./Usercube-Deploy-Configuration.exe -s "<data source=.;Database=Usercube;Integrated Security=SSPI;Min Pool Size=10;encrypt=false;>" -d "<C:/UsercubeBootstrap/Conf>"

@@ -37,7 +37,7 @@ For example in the AD, compute a Boolean property **<b>isUnused</b>** based on o
 
 Write an expression for <b>isUnused</b> based on the bits of <b>userAccountControl</b>, the value of **<b>accountExpires</b>**, and the value of <b>LastLogonTimeStamp</b>:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 <EntityPropertyExpression Identifier="AD_Entry_<b>isUnused</b>"Expression="C#:resource:

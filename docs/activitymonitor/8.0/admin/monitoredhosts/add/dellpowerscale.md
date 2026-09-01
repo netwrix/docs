@@ -228,9 +228,9 @@ Output page can be configured.
       template for Threat Manager. See the
       [Netwrix Threat Manager Documentation](https://helpcenter.netwrix.com/category/stealthdefend)
       for additional information.
-    - Custom templates can be created. Select the template you want or create a new template by
-      modifying an existing template within the Syslog Message Template window. The new message
-      template will be named Custom.
+    - You can create custom templates. Select the template you want or create a new template by
+      modifying an existing template within the Syslog Message Template window. Activity Monitor names the new message
+      template Custom.
 - Add C:\ to the beginning of the reported file paths – Adds ‘C:\” to file paths to be displayed
   like a Windows file path:
     - Display example if checked – C:\Folder\file.txt

@@ -8,27 +8,27 @@ Record sections shape identity data for a given entity type, by grouping propert
 
 Record sections impact the generation of identities' contexts which contain users' dimension values valid on a given period of time. The aim is to simplify the application of the role model' rules for provisioning.
 
-Thanks to this data organization in sections, the identities of a given entity type can be modeled by more than one context over time, even simultaneously. This means that users can have more than one contract, or position, at a time, and that data changes can be anticipated.
+Thanks to this data organization in sections, more than one context can model the identities of a given entity type over time, even simultaneously. This means that users can have more than one contract, or position, at a time, and that you can anticipate data changes.
 
 See [identity modeling](/docs/identitymanager/current/integration-guide/identity-management/joiners-movers-leavers/position-change#a-model-for-identity-changes) for details.
 
 :::info
 **Configuration recommendations:**
 
-As record sections can't be configured without a [context rule](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/contextrule), NETWRIX recommends starting with the configuration of the context rule before configuring record sections.
+Because you can't configure record sections without a [context rule](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/contextrule), NETWRIX recommends starting with the configuration of the context rule before configuring record sections.
 
-NETWRIX recommends defining at least two record sections: a default section for the properties shared by all records, and another section for a given set of properties which differentiate between records. The default section must contain zero properties, the shared properties are those that aren't defined in the other sections.
+NETWRIX recommends defining at least two record sections: a default section for the properties shared by all records, and another section for a given set of properties which differentiate between records. The default section must contain zero properties; the shared properties are those that the other sections don't define.
 
 For example, to model several positions for a single user, configure the default record section to contain the properties shared by all positions such as personal data, and configure the position section to contain the properties specific to each position. Similar to the position section, you can also typically configure a section for contracts.
 :::
 
 
 ## Examples
-The following example models users from the `Directory_User` entity type with three sets of properties: user properties, contract properties and position properties. All created records will be resources from the `Directory_UserRecord` entity type.
+The following example models users from the `Directory_User` entity type with three sets of properties: user properties, contract properties and position properties. All created records are resources from the `Directory_UserRecord` entity type.
 
-The properties from the contract (or position) section are the properties specific to each contract (or position). The properties from `Directory_User` that aren't specified in the record sections are the properties shared between all records, here user properties.
+The properties from the contract (or position) section are the properties specific to each contract (or position). The properties from `Directory_User` that the record sections don't specify are the properties shared between all records, here user properties.
 
-Each section must be defined with start and end dates, so that Identity Manager's engine can combine all periods of validity and apply the rules with the right input at any time.
+You must define each section with start and end dates, so that Identity Manager's engine can combine all periods of validity and apply the rules with the right input at any time.
 
 ```xml
 Default section:
@@ -104,9 +104,9 @@ Time gaps may exist where no context is defined, for example with a position but
 
 ![Schema - ExtensionKind](/images/identitymanager/recordsection_extensionkind.webp)
 
-This example extends an existing contract to the gap, for example because users' email addresses are built using the contract type to add `-ext` for external users. The position isn't extended.
+This example extends an existing contract to the gap, for example because Identity Manager builds users' email addresses using the contract type to add `-ext` for external users. Identity Manager doesn't extend the position.
 
-In the following example, the contract section uses `SortKeyExpression` to establish between existing contracts a priority order that will determine which contract should be extended to the gap. Based on this C# expression that returns a value `A`, `B` or `C`, the `ExtendedSortKey` considers as extendable only the contracts whose expression returns `C`.
+In the following example, the contract section uses `SortKeyExpression` to establish between existing contracts a priority order that determines which contract to extend to the gap. Based on this C# expression that returns a value `A`, `B` or `C`, the `ExtendedSortKey` considers as extendable only the contracts whose expression returns `C`.
 
 The position section uses `ExtensionKind` set to `None` to block the extension mechanism.
 
@@ -125,7 +125,7 @@ Position section:
 ```
 
 :::warning
-When not specifying any sort key nor extended sort key, Identity Manager will select a context to extend to the gap. However, it may not be functionally the most meaningful context.
+When you don't specify a sort key or an extended sort key, Identity Manager selects a context to extend to the gap. However, it may not be functionally the most meaningful context.
 :::
 
 
@@ -133,7 +133,7 @@ When not specifying any sort key nor extended sort key, Identity Manager will se
 
 |Property|Details|
 |---|---|
-| BoundaryKind <span class="optionalAttribute">default value: 0</span> | **Type:** RecordBoundaryKind **Description:** Defines how the section dates are computed for a resource, when the current start/end dates are null. `0` - None: start date and end date are equal respectively to the minimum value of `StartProperty` and maximum value of `EndProperty` when comparing the default sections of all records. `1` - Kept: start and end dates are equal respectively to the default start date (1900/01/01 00:00:00) and end date (2079/06/06 00:00:00). **Info:** the boundary has no effect on the default section which is the reference to compute the default dates in other sections. When the default section's start/end dates are null, then they equal the default start/end dates. |
+| BoundaryKind <span class="optionalAttribute">default value: 0</span> | **Type:** RecordBoundaryKind **Description:** Defines how Identity Manager computes the section dates for a resource, when the current start/end dates are null. `0` - None: start date and end date are equal respectively to the minimum value of `StartProperty` and maximum value of `EndProperty` when comparing the default sections of all records. `1` - Kept: start and end dates are equal respectively to the default start date (1900/01/01 00:00:00) and end date (2079/06/06 00:00:00). **Info:** the boundary has no effect on the default section which is the reference to compute the default dates in other sections. When the default section's start/end dates are null, then they equal the default start/end dates. |
 | DisplayName_L1 required | **Type:** String **Description:** Display name of the section in language 1 (up to 16). |
 | EndProperty optional | **Type:** Int64 **Description:** Date property among those from the `ResourceEntityType` which specifies the end of validity for all [properties](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection#child-element-property) of the section. It can't be a property computed by an `EntityPropertyExpression`. |
 | ExtendedSortKey optional | **Type:** String **Description:** Value used as a threshold for `SortKeyExpression` values to determine whether the [property](/docs/identitymanager/current/integration-guide/toolkit/xml-configuration/provisioning/recordsection#child-element-property) values of a given record section can be extended from a context where the values are defined to another context where no properties from the section are defined. This extension is enabled only when the value of `SortKeyExpression` of the section is higher (with an ordinal comparison) than `ExtendedSortKey`. |
@@ -154,8 +154,6 @@ A record section is a set of record properties which belong to the resource enti
 In the following example, the position section gathers the properties `Organization`, `Location` and `Title`, while the default section gathers all the other properties from `Directory_UserRecord`.
 
 The property `Location` can be extended from a context where the location is defined to a context where it isn't. The two other properties can't be extended.
-
-See more details about record extension.
 
 ```xml
 Default section:

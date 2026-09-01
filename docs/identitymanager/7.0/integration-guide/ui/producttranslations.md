@@ -18,7 +18,7 @@ The translations are given to Identity Manager in a JSON file, through the confi
 
 Example with the translation keys`accessCertificationReview.recommendation.manuallyAuthorized`, `app.common.button.create.label` and `app.common.labels.whenCreated`:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {
@@ -52,7 +52,7 @@ For languages other than French and English (United States), when you don't over
 
 Product translations must be linked to a defined Language in the configuration. For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 <Language Code="en-US" IndicatorNumber="1" JsonPath="translation.en-US.json" />

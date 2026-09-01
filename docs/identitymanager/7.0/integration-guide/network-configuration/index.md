@@ -73,7 +73,7 @@ The section content is written as the matching attribute's value which can be br
 
 Each subsection can then be broken down into more setting attributes and deeper nested subsections.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 settings.example.json
@@ -100,7 +100,7 @@ The backslash character `\` is an escape character in a JSON file. An error will
 
 In this example, the value for the attribute Password will be parsed as `<pass\word>`:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 {
@@ -116,7 +116,7 @@ Each setting value is stored as the value of an environment variable whose name 
 
 Here is an example showing how to construct a setting environment variable name from its matching `json` file.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```
 {

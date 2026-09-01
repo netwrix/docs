@@ -21,7 +21,7 @@ Google Cloud Platform Credentials example:
 ![Graphical user interface, text, application, email](/images/changetracker/cloud/cloudgoogleplatformcredentials.webp)
 
 :::note
-Just click the Query icon to get a quick tip on what the Credential field requires.
+Click the Query icon to get a quick tip on what the Credential field requires.
 :::
 
 
@@ -58,17 +58,17 @@ AWS Platform Credentials Example:
 - Description – Optionally provide a credential description
 - ARN – AWS Resource Name of a role a user can assume when establishing a trust relationship
 - ExternalId – An Id used in establishing the trust relationship
-- Root AccessKeyId – The Access Key Id of the AWS user for whom the trust relationship is
-  established
-- Root SecretAccessKey – The Access Key Secret of the AWS user for whom the trust relationship is
-  established
+- Root AccessKeyId – The Access Key Id of the AWS user for whom you establish the trust
+  relationship
+- Root SecretAccessKey – The Access Key Secret of the AWS user for whom you establish the trust
+  relationship
 
 ### Special Instructions for AWS Cloud Reporting
 
 The NNT Cloud Tracker feature set uses the Microsoft PowerShell cmdlets for AWS.
 
-You may experience a failure message after the Credentials Test has run: "Cannot execute AWS
-commands, error: The specified module 'AWSPowerShell. NETCore was not loaded because no valid module
+You may experience a failure message after the Credentials Test has run: "Can't execute AWS
+commands, error: The specified module 'AWSPowerShell. NETCore wasn't loaded because no valid module
 file was found in any module directory".
 
 In this case, run the following PowerShell setup on the host running the Gen7Agent NETCore used
@@ -104,8 +104,8 @@ Azure Platform Credentials Example:
 
 The NNT Cloud Tracker feature set uses the Microsoft PowerShell cmdlets for AWS.
 
-You may experience a failure message after the Credentials Test has run: "Cannot execute Az
-commands, error on Import-Module: The specified module 'Az' was not loaded because no valid module
+You may experience a failure message after the Credentials Test has run: "Can't execute Az
+commands, error on Import-Module: The specified module 'Az' wasn't loaded because no valid module
 file was found".
 
 In this case, run the following PowerShell setup on the host running the Gen7Agent NETCore used

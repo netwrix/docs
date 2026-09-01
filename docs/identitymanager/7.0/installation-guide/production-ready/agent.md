@@ -46,7 +46,7 @@ It might require a few modifications to target the agent instead of the server:
 
 **Step 2 –** Change the arguments **and** stdoutLogFile attributes of the `<aspNet>` element as follows:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <aspNetCore processPath="<dotnet>" arguments="<./Usercube-Agent.dll>" stdoutLogEnabled="<false>" stdoutLogFile="<../Temp/stdout-agent.log>" hostingModel="<inprocess>">
@@ -209,7 +209,7 @@ In the *appsettings.agent.json* file, the **OpenId** > **AgentIdentifier** can b
 
 For example:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -235,7 +235,7 @@ The integration team should communicate the list of the managed systems to be co
 
 Here is an example of *appsettings.agent.json* connecting an agent to an Active Directory **and** an SAP server.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -312,7 +312,7 @@ The following parameters are used to link the file to Identity Manager in Encryp
 Storing a `.pfx` file password in plain text in a production environment is **strongly discouraged**. It should always be encrypted using the Usercube-Protect-CertificatePassword tool. See the [Usercube-Protect-CertificatePassword](../../integration-guide/executables/references/protect-certificatepassword) topic for additional information.
 :::
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -330,7 +330,7 @@ Code attributes enclosed with `<>` need to be replaced with a custom value befor
 
 The certificate can be stored in the certificate store instead of the file system. This is the **recommended** method.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 *appsettings.agent.json*
@@ -359,7 +359,7 @@ Their content should be provided by the integration team, in relation to the Ope
 
 The following example shows an *appsettings.agent.json* file that sets an agent to connect to Identity Manager's server (`https://identitymanagerserver.contoso.com`) with the OpenId client identifier `<Job>` **and** the password `<secret>`, stored in the OpenIdClients list which also contains the "admin/secret" login/password pair.
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```json
 {
@@ -384,7 +384,7 @@ Installing Identity Manager's agent as a Windows service instead of an IIS websi
 
 To install Identity Manager's agent as a service in Windows server, use the following command:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```bat
 sc.exe create Identity Manager binpath= "<Usercube-Agent.exe --service>" displayname= "<Usercube Agent>" start= auto obj= "<DOMAIN\USER>" password= "<PASSWORD>"
@@ -409,7 +409,7 @@ You need to:
 
 **Step 3 –** Double check that the following section is set in your web.config file, in the section system.webServer:
 
-Code attributes enclosed with `<>` need to be replaced with a custom value before entering the script in the command line.
+Replace code attributes enclosed with `<>` with a custom value before entering the script in the command line.
 
 ```xml
 <applicationInitialization doAppInitAfterRestart="<true>">  
