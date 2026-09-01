@@ -13,7 +13,7 @@ deployment script.
 ## Prerequisites
 
 - All nodes have [OS prerequisites](./prerequisites.md) installed
-- All nodes are [authenticated with ECR](./awsconfiguration.md)
+- All nodes have [authenticated with Amazon Elastic Container Registry (ECR)](./awsconfiguration.md)
 
 ## Step 1 — Download the Quickstart Bundle
 
@@ -121,8 +121,8 @@ sudo -E bash secureone.sh promote
 NPS-D 26.09.0 is the bridge release for moving existing deployments from MongoDB 4.0 to
 MongoDB 8.0. After upgrading NPS-D services to 26.09.0, complete
 [Upgrade MongoDB 4.0 to 8.0](../upgrademongodb4to8.md) before upgrading to the NPS-D release that
-updates the backend to Python 3.13 and supported library versions, or any later release. As part of
-that platform update, MongoDB 8.0 will be required, and MongoDB 4.0 will no longer be supported.
+updates the backend to Python 3.13 and supported library versions, or any later release. That
+platform update will require MongoDB 8.0 and will no longer support MongoDB 4.0.
 :::
 
 To upgrade to a new version, run on the primary node:
