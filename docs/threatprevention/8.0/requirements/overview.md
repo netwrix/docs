@@ -8,7 +8,7 @@ sidebar_position: 20
 
 This topic describes the recommended configuration of the servers needed to install the Threat
 Prevention application in a production environment. Depending on the size of the organization, you
-must review your environment and requirements with a Netwrix engineer prior to deployment to ensure
+must review your environment and requirements with a Netwrix engineer before deployment to ensure
 all exceptions are covered.
 
 ## Architecture Overview
@@ -48,7 +48,7 @@ See the following topics for additional information:
   the [EPE Settings Window](/docs/threatprevention/8.0/admin/configuration/epesettings.md).
 
   :::note
-  This interface does not change the password; it only validates it against the EPE
+  This interface doesn't change the password; it only validates it against the EPE
   rules.
   :::
 

@@ -47,7 +47,7 @@ types.
 The operation selected affects what options are available on this filter and what other filters are
 available for the event type:
 
-- LDAP Search – Use the LDAP Search operation to search for and identify activity that does not
+- LDAP Search – Use the LDAP Search operation to search for and identify activity that doesn't
   conform to your security configurations
 
   - This option displays additional filters for Secure configurations and Search scopes. See the
@@ -59,7 +59,7 @@ available for the event type:
 
   - See the [LDAP Ping Operations Use Case](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/ldapmonitoring/ldapping.md) topic for additional information.
 
-  When LDAP Ping is selected, the Secure Configurations and Search scopes sections are not
+  When LDAP Ping is selected, the Secure Configurations and Search scopes sections aren't
   displayed.
 
 ## Domains/Servers Filter
@@ -75,11 +75,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -108,11 +107,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -133,17 +131,17 @@ Select the **Block** or **Allow** option button and then edit the list.
 
 :::warning
 Users should fully understand the blocking rule summary displayed in the Rule Preview
-filter in order to understand the scope of what will be blocked. Blocking more than the intended
+filter to understand the scope of what will be blocked. Blocking more than the intended
 queries will adversely impact the LDAP environment.
 :::
 
 
-Enter a query in the LDAP Queries box. You can type a string in the textbox. Alternatively, use the
+Enter a query in the LDAP Queries box. You can enter a string in the textbox. Alternatively, use the
 buttons in the respective sections.
 
 - The Add (+) buttons open the
   [Select Active Directory Objects Window](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/window/objects.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Hosts (from) Filter
 
@@ -158,12 +156,12 @@ Select the **Block** or **Allow** option button and then edit the list.
   this policy will not validate the new passwords for the accounts listed here. Selecting **Block**
   means that this policy will validate the new passwords for the accounts listed here.
 - For the [Authentication Lockdown Event Type](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/authenticationlockdown.md), this filter blocks or
-  only allows authentication from the identified host(s).
+  only allows authentication from the identified hosts.
 
 Use the buttons in the Include Hosts area to edit the list.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/window/selectcomputers.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Rule Preview Filter
 

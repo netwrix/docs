@@ -35,10 +35,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -57,33 +57,33 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
-**Attribute, Operator and Value**
+**Attribute, Operator, and Value**
 
-When an attribute is selected, it is added to the filter and a drop-down menu is displayed in the
+When an attribute is selected, it is added to the filter and a dropdown menu is displayed in the
 Operation column with **Any Value** selected. You can further scope the attributes to enable the
 policy to only capture events based on the new value. Use the Operation and Value columns of the
 Include Attributes and Exclude Attributes boxes to achieve this.
 
-The Operation drop-down menu has the following options:
+The Operation dropdown menu has the following options:
 
 - Any Value – No scoping applied for this attribute
 - Equal – Attribute values that are identical to the Value field
-- Not Equal – Attribute values that do not match the Value field
+- Not Equal – Attribute values that don't match the Value field
 - Contains – Attribute value includes the user supplied string (numbers are treated as strings) in
   the Value field
-- Not Contain – Attribute values do not include the user supplied string (numbers are treated as
+- Not Contain – Attribute values don't include the user supplied string (numbers are treated as
   strings) in the Value field
 
-Select an **Operation** and type a value in the textbox. 
+Select an **Operation** and Enter a value in the textbox. 
 
 When you select another attribute, a new row is added, where you can specify an operator and a value
 for that attribute. Each row is treated as an “OR” statement. If any event matches any of the
 attribute filters, then the event data includes all attributes in the list.
 
 :::note
-You cannot specify more than one value for an attribute and you cannot select the same
+You can't specify more than one value for an attribute and you can't select the same
 attribute twice. To use the same attribute again, you have to add the same event type again to the
 policy, select that event type and then select a previously used attribute to include in the Add
 Attributes filter.
@@ -96,7 +96,7 @@ both.
 
 ![Event Type – Success filter](/images/threatprevention/8.0/admin/policies/eventtype/success.webp)
 
-Select the radio button for the desired monitoring filter:
+Select the radio button for the monitoring filter you want:
 
 - Success – Only monitors successful events
 - Failure – Only monitors failed events
@@ -118,10 +118,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -148,10 +148,10 @@ areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::

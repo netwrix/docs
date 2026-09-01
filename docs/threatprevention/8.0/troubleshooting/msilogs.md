@@ -20,7 +20,7 @@ directory to a log file called _SIAgentLog.log_:
 
 **SI Agent.exe” /L SIAgentLog.log**
 
-An installation of the Agent on a 64-bit system where .NET Framework 4.7.2 or higher is not
+An installation of the Agent on a 64-bit system where .NET Framework 4.7.2 or higher isn't
 installed generates two log files:
 
 - Log for “SI Agent.exe” – This log file has the smallest size and is a good starting point
@@ -42,7 +42,7 @@ the following:
 
 After this registry edit, Windows Installer will track the progress of the installation and post it
 to a log in the `%TEMP%` folder. Although the new log's file name will be randomized, its first
-three letters will be "MSI" and it will have the “.log” extension. Type the following line at a
+three letters will be “MSI” and it will have the “.log” extension. Enter the following line at a
 command prompt to locate the Temp folder:
 
 **cd %temp%**

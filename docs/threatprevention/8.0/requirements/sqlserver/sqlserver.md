@@ -38,7 +38,7 @@ These depend on the size of the target environment.
 | SQL Transaction Log Disk | 80 GB    | 80 GB     | 40 GB    | 20 GB   |
 | SQL TEMP DB Disk   | 160 GB      | 160 GB      | 80 GB     | 40 GB   |
 
-The disk sizes for the three SQL Server databases can be reduced if not utilizing all Threat
+The disk sizes for the three SQL Server databases can be reduced if not using all Threat
 Prevention solutions.
 
 **Additional SQL Server Requirements**
@@ -54,7 +54,7 @@ The following additional considerations are recommended for the SQL Server:
 
 - The standard Autogrowth setting for the database can cause Threat Prevention delays. Database
   growth is computationally intensive. While SQL Server is growing the database, no other activity
-  can occur. If this option is employed, please speak with a Netwrix engineer to determine an
+  can occur. If this option is employed, speak with a Netwrix engineer to determine an
   appropriate setting for best performance.
 
   :::info
@@ -83,7 +83,7 @@ performance and fault tolerance.
 
 
 :::note
-For SQL Server 2012+, it is necessary to restrict the maximum server memory value to
+For SQL Server 2012+, restrict the maximum server memory value to
 60-70% of the total physical RAM to avoid a situation where SQL Server will starve other
 applications of memory. See the
 [Restrict SQL Server Maximum Server Memory](/docs/threatprevention/8.0/troubleshooting/sqlserver.md) topic for additional

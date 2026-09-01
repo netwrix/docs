@@ -7,7 +7,7 @@ sidebar_position: 60
 # Predefined Investigations Page
 
 The Predefined Investigations page in the Investigations interface provides a list of saved
-out-of-the-box investigations with applied filters for Computers, Groups, iNetOrgPerson, and User
+built-in investigations with applied filters for Computers, Groups, iNetOrgPerson, and User
 activity reports.
 
 Click **Investigate** in the application header bar to open the Investigations interface. Then click

@@ -40,11 +40,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -69,11 +68,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.0/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection you want. See the [Dynamic Collections](/docs/threatprevention/8.0/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -88,11 +86,11 @@ Use the Target Processes filter to set the scope of the policy to monitor Lsass 
 - Select **Lsass** for moitoring Lsass process access.
 - Select **Custom Process** for moitoring any other process access.
 
-For the Custom Process option type the process name in the textbox. Use the
+For the Custom Process option, enter the process name in the textbox. Use the
 buttons in the process list area to edit the list.
 
 - The Process **Add** (+) button adds a textbox to the list to add an additional process.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 
 ## Requesting Processes Filter
@@ -103,17 +101,17 @@ exclude specific processes from being monitored.
 
 ![Processes Monitoring filter](/images/threatprevention/8.0/admin/policies/eventtype/processesmonitoring.webp)
 
-Type the process in the textbox for the desired option: Include Process or Exclude Process. Use the
+Enter the process in the textbox for the Include Process or Exclude Process option. Use the
 buttons in the respective areas to edit the lists.
 
 - The Process **Add** (+) button adds a textbox to the list to add an additional process.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::warning
 In a production environment, only exclude processes using the Exclude Process area.
-While there is an option to include processes, it is NOT recommended in a policy that is monitoring
+While there is an option to include processes, it isn't recommended in a policy that is monitoring
 a production environment. Adding a process in the Include Process area limits the policy to only
-monitoring that process. Unknown malicious processes would not be monitored by the policy. In a
+monitoring that process. The policy wouldn't monitor unknown malicious processes. In a
 sandbox environment, the Include Process option can be useful for testing/capturing the LSASS
 activity for specific processes to see what access they are requesting.
 :::
@@ -126,7 +124,7 @@ maliciously impact the target process.
 
 ![openprocessflagsmonitoring](/images/threatprevention/8.0/admin/policies/eventtype/openprocessflagsmonitoring.webp)
 
-Check the box to select the process flag(s) to be monitored. This will trigger an event if the
+Check the box to select the process flags to be monitored. This will trigger an event if the
 request for an target process handle contains one or more of the selected process flags.
 
 - PROCESS_VM_WRITE – Select this checkbox to write to memory in a process

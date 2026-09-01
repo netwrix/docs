@@ -30,7 +30,7 @@ from the [Splunkbase](https://splunkbase.splunk.com/). Then follow the
 guide provided by Splunk to install the app.
 
 :::note
-In order to use the User Behavior Analytics dashboard in the app, install
+To use the User Behavior Analytics dashboard in the app, install
 [Splunk User Behavior Analytics](https://www.splunk.com/en_us/products/premium-solutions/user-behavior-analytics.html)
 (any version) and the [Machine Learning Toolkit](https://splunkbase.splunk.com/app/2890/) app for
 Splunk (version 2.0.0+).
@@ -44,10 +44,8 @@ Threat Prevention.
 
 ## Initial Configuration of the Active Directory App for Splunk
 
-Follow the steps to configure Splunk to receive data from Threat Prevention.
-
 :::tip
-Remember, prior to using the Active Directory App for Splunk, the relevant Netwrix product must be
+Remember, before using the Active Directory App for Splunk, the relevant Netwrix product must be
 configured to send data to Splunk.
 :::
 

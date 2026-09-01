@@ -9,7 +9,7 @@ sidebar_position: 20
 You can automatically deploy Agents to discovered domain controllers in a domain, provided that the
 Agent has already been deployed on at least one domain controller in the domain.
 
-Follow the steps to auto deploy the Agent.
+To auto deploy the Agent:
 
 **Step 1 –** Click **Agents** in the left pane to launch the Agents interface. Then click
 **Configure Auto Deploy** to launch the Configure Auto Deploy window.
@@ -27,7 +27,7 @@ options:
   - Installation Location – Select the radio button to indicate the installation directory on the
     target domain controllers
     - Default – Uses the default installation directory
-    - Textbox – Enter the desired installation location, e.g. d:\myagent
+    - Textbox – Enter a custom installation location, e.g. d:\myagent
   - Safe Mode – If selected, the Agent checks LSASS versions on start up. Any changes in LSASS
     since the previous start prevents the Windows AD Events monitoring module from loading. See
     the [Agent Safe Mode](/docs/threatprevention/8.0/admin/agents/safemode.md) topic for additional information.
@@ -36,5 +36,5 @@ options:
   - Port – Displays the port the Enterprise Manager uses to communicate with the Agent
 
 **Step 3 –** Click **Apply** to enable the auto deploy feature. When domain controllers are
-discovered where the Agent is not already installed, Threat Prevention automatically deploys the
+discovered where the Agent isn't already installed, Threat Prevention automatically deploys the
 Agent with all applicable modules to those domain controllers.
