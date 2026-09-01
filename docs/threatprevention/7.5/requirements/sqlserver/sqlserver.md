@@ -18,8 +18,7 @@ The server must meet this requirement:
   additional information.
 
 :::info
-It is a best practice and strongly recommended to have a dedicated database
-server.
+Use a dedicated database server for best performance.
 :::
 
 
@@ -38,15 +37,15 @@ These depend on the size of the target environment.
 | SQL Transaction Log Disk | 80 GB    | 80 GB     | 40 GB    | 20 GB   |
 | SQL TEMP DB Disk   | 160 GB      | 160 GB      | 80 GB     | 40 GB   |
 
-The disk sizes for the three SQL Server databases can be reduced if not utilizing all Threat
+The disk sizes for the three SQL Server databases can be reduced if you're not using all Threat
 Prevention solutions.
 
 **Additional SQL Server Requirements**
 
-The following are additional requirements for the SQL Server:
+Meet these requirements for SQL Server:
 
-- All SQL Server databases must be configured to use ‘Simple Recovery Model’.
-- SQL Agent Service is needed to use the Database Maintenance feature in Threat Prevention.
+- Configure all SQL Server databases to use ‘Simple Recovery Model’.
+- Install SQL Agent Service to use the Database Maintenance feature in Threat Prevention.
 
 **Additional SQL Server Considerations**
 
@@ -54,8 +53,8 @@ The following additional considerations are recommended for the SQL Server:
 
 - The standard Autogrowth setting for the database can cause Threat Prevention delays. Database
   growth is computationally intensive. While SQL Server is growing the database, no other activity
-  can occur. If this option is employed, please speak with a Netwrix engineer to determine an
-  appropriate setting for best performance.
+  can occur. If you use this option, contact a Netwrix engineer to determine an
+  appropriate setting.
 
   :::info
   In the SQL Server Management Studio, set the Database Properties' File Growth
@@ -83,8 +82,8 @@ performance and fault tolerance.
 
 
 :::note
-For SQL Server 2012+, it is necessary to restrict the maximum server memory value to
-60-70% of the total physical RAM to avoid a situation where SQL Server will starve other
+For SQL Server 2012+, restrict the maximum server memory value to
+60-70% of the total physical RAM to avoid SQL Server starving other
 applications of memory. See the
 [Restrict SQL Server Maximum Server Memory](/docs/threatprevention/7.5/troubleshooting/sqlserver.md) topic for additional
 information.
@@ -93,11 +92,10 @@ information.
 
 **Database Permissions**
 
-The following permissions are required on the databases:
+Configure the following permissions on the databases:
 
 - Database Owner
-- Provisioned to use Default Schema of ‘dbo’
+- Default Schema of ‘dbo’
 
-Additional permissions are required for the optional Database Maintenance feature in Threat
-Prevention. See the [Database Maintenance Feature Requirements](/docs/threatprevention/7.5/requirements/sqlserver/dbmaintenance.md) topic for
+The optional Database Maintenance feature requires additional permissions. See the [Database Maintenance Feature Requirements](/docs/threatprevention/7.5/requirements/sqlserver/dbmaintenance.md) topic for
 additional information.

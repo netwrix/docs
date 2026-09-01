@@ -56,7 +56,7 @@ and Settings folder and the Agent on server2 monitoring only the C:\Users\All Us
   - EXAMPLE\server1
   - EXAMPLE\server3
 
-By adding the Agents on server1 and server3 in the Additional Agents filter, server1 and server3
+By adding the Agents on server1 and server3 in the Additional Agents filter, server1, and server3
 will monitor both folder paths, but server2 still only monitors the C:\Users\All Users folder.
 
 Event data collected by the policies with this event type are also available for consumption by
@@ -123,7 +123,7 @@ wildcard in the exclude box are ignored.
 
 :::tip
 Remember, adding an include filter scopes the policy to monitor only matching files. Adding an
-exclude filter scopes the policy to monitor all files that do not match. If both include and exclude
+exclude filter scopes the policy to monitor all files that don't match. If both include and exclude
 filters are applied to a single policy, the exclude filter takes precedence. If the boxes are left
 blank, all files are monitored according to all the policy filter selections.
 :::
@@ -164,10 +164,10 @@ areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -197,7 +197,7 @@ Agents/Domains list on the right displays Agents and domains included in the pol
   - The double arrows will move all items to the other list.
 
 :::note
-There is no impact if a selected path does not exist on the server where an Agent resides.
+There is no impact if a selected path doesn't exist on the server where an Agent resides.
 :::
 
 
@@ -221,10 +221,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -244,7 +244,7 @@ both.
 
 ![Event Type – Success filter](/images/threatprevention/7.5/admin/policies/eventtype/success.webp)
 
-Select the radio button for the desired monitoring filter:
+Select the radio button for a monitoring filter:
 
 - Success – Only monitors successful events
 - Failure – Only monitors failed events

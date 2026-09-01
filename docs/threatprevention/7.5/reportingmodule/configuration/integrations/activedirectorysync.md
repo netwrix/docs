@@ -19,7 +19,7 @@ Directory domains, if any. Each added domain represents a sync policy.
 ![Integrations interface on the Active Directory Sync page](/images/threatprevention/7.5/reportingmodule/configuration/integrations/page.webp)
 
 A service named StealthDEFEND Active Directory Service continuously runs to collect data for the
-specified domain(s). It evaluates the USN value of an object and syncs when the object changes. The
+specified domains. It evaluates the USN value of an object and syncs when the object changes. The
 table provides the following information:
 
 - Name – Name of the domain. This may be either the domain DNS name or domain controller hostname.
@@ -39,15 +39,13 @@ Directory Sync in the navigation pane.
 ## Add an Active Directory Sync Policy
 
 :::note
-Prior to adding an Active Directory Sync policy, you must first configure a Credential
+Before adding an Active Directory Sync policy, you must first configure a Credential
 Profile with credentials properly provisioned for running the sync operation for the domain. See the
 [Reporting Module Server Requirements](/docs/threatprevention/7.5/requirements/reportingserver.md) topic for the
 permissions. See the [Credential Profile Page](/docs/threatprevention/7.5/reportingmodule/configuration/integrations/credentialprofile.md) topic for additional
 information on creating a profile.
 :::
 
-
-Follow the steps to add a domain/Active Directory sync policy.
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -57,13 +55,13 @@ Add New Integration window opens.
 
 ![Add New Integration window with Active Directory Sync type selected](/images/threatprevention/7.5/reportingmodule/configuration/integrations/activedirectorysync.webp)
 
-**Step 3 –** In the Type drop-down menu, select Active Directory Sync.
+**Step 3 –** In the Type dropdown menu, select Active Directory Sync.
 
 **Step 4 –** Enter the following information:
 
 - Domain – Enter the domain DNS name or domain controller hostname in the required format of
   [DOMAIN.COM], e.g. NT-DC03.NWXTech.com
-- Credential Profile – Select the Credential Profile by name from the drop-down menu. This was
+- Credential Profile – Select the Credential Profile by name from the dropdown menu. This was
   pre-created in the Credential Profiles page.
 - Enabled / Disabled – Toggle indicates if the policy is enabled to run the sync service. By default
   it is set to Enabled.
@@ -92,8 +90,6 @@ The domain or domain controller (the Domain value supplied in Step 4) is listed 
 navigation pane. Repeat the process to add additional domains.
 
 ## Active Directory Sync Policy Details
-
-Follow the steps to view the details of an Active Directory sync policy.
 
 **Step 7 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -174,30 +170,29 @@ The table provides the following information:
 - Status – Event status for the sync task
 
 The table is designed to display 10 records at a time, by default. However, you can set this to 50,
-100, or 1,000 rows with the drop-down menu above the right corner of the table. There is a search
+100, or 1,000 rows with the dropdown menu above the right corner of the table. There is a search
 box above the left corner of the table. Page navigation buttons are below the table. You can also
 export the data from the current page using the **Export CSV** button.
 
 ## Modify Active Directory Sync Policy
 
-Follow the steps to modify the Active Directory Sync policy for the selected Active Directory
 domain.
 
 **Step 1 –** On the Integrations interface, click **Active Directory Sync** in the navigation pane
 to view a list of the already created Active Directory Sync policies, if any. A policy is
 represented by the domain for which it is created. Select a domain.
 
-**Step 2 –** The Domain Configuration tab opens, where you can make the desired modification.
+**Step 2 –** The Domain Configuration tab opens, where you can make the modification you want.
 
 :::tip
-Remember, the domain cannot be modified.
+Remember, the domain can't be modified.
 :::
 
 
 ![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatprevention/7.5/reportingmodule/configuration/integrations/domainconfigurationtab.webp)
 
 **Step 3 –** To change the Credential Profile, select the Credential Profile by name from the
-drop-down menu. This was pre-created in the Credential Profiles page.
+dropdown menu. This was pre-created in the Credential Profiles page.
 
 :::note
 If you change the Credential Profile for a domain, click **Test Connection** to ensure
@@ -212,7 +207,7 @@ corner of the console indicating a successful or failed connection.
 
 **Step 6 –** For the Max Ticket Age (hours) value, modify the value by typing in the textbox.
 
-**Step 7 –** Select or deselect the **Use SSL** box for the desired security state for communication
+**Step 7 –** Select or deselect the **Use SSL** box for the security setting you want state for communication
 with the domain.
 
 **Step 8 –** The Save button is enabled when any settings are modified. Click it to commit the

@@ -77,11 +77,11 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection.
+See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 
@@ -102,11 +102,11 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
-Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic Collection.
+See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
 

@@ -12,7 +12,7 @@ network requirements. If choosing the Create Windows Firewall Rules option eithe
 [Administration Console Remote Install](/docs/threatprevention/7.5/install/adminconsole.md), on the Set Options page of the
 [Deploy Agents Wizard](/docs/threatprevention/7.5/admin/agents/deploy/overview.md#deploy-agents-wizard), or in step 7 of a
 [Manual Agent Deployment](/docs/threatprevention/7.5/install/agent/manual.md), then Threat Prevention will create the
-necessary Windows firewall rules. If using a third party firewall, it will be necessary to manually
+necessary Windows firewall rules. If using a third party firewall, you must manually
 set these.
 
 :::note

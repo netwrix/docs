@@ -12,8 +12,8 @@ window.
 
 ![Select File System Objects Window](/images/threatprevention/7.5/admin/policies/eventtype/window/filesystemobjects.webp)
 
-- Select an Agent from the drop-down menu and click **Connect**.
-- Navigate through the domain tree and check the desired item(s) in the **Results** pane on the
+- Select an Agent from the dropdown menu and click **Connect**.
+- Navigate through the domain tree and check the items you want in the **Results** pane on the
   right.
 - Then click **OK** to close the window.
 
@@ -25,8 +25,8 @@ filter, or the File System Enterprise Auditor filter.
 ![Select File System Objects Window - NAS Device added](/images/threatprevention/7.5/admin/policies/eventtype/window/filesystemobjectsnas.webp)
 
 For NAS monitoring, the selected Agent needs to be deployed to a Windows server acting as a proxy
-server for NAS activity. If the correct Agent is selected, the IP address(es) of the NAS device(s)
-are displayed in the Navigation pane. Type the path(s), one per row in the Results pane. Click
+server for NAS activity. If the correct Agent is selected, the IP addresses of the NAS devices
+are displayed in the Navigation pane. Enter the paths, one per row in the Results pane. Click
 **OK** and the NAS paths are added to the list of paths to be monitored.
 
 The paths entered can be file or folder names.

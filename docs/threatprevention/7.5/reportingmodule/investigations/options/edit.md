@@ -10,8 +10,6 @@ An investigation can be edited and even duplicated.
 
 ## Edit an Investigation
 
-Follow the steps to edit an investigation.
-
 **Step 1 –** Click **Investigate** in the application header bar to open the Investigations
 interface. Then click a folder in the navigation pane to access a saved investigation. An
 investigation is located in the folder where it was saved.
@@ -27,13 +25,9 @@ name, description, and folder of the saved investigation. If you save the invest
 different folder, it will be moved from the original location to the new folder. You can also update
 the user roles granted ownership and access to the investigation report.
 
-**Step 5 –** Click **Save**. The Save Investigation window closes.
-
-The investigation is saved with the modified settings.
+**Step 5 –** Click **Save**. The Save Investigation window closes and the investigation is saved.
 
 ## Duplicate an Investigation
-
-Follow the steps to duplicate an investigation.
 
 **Step 1 –** Click **Investigate** in the application header bar to open the Investigations
 interface. Then click a folder in the navigation pane to access a saved investigation. An
@@ -56,15 +50,10 @@ The Name box displays the investigation name with the word "copy" appended to it
 - Description – An optional description of the investigation
 - Folder – The folder in the navigation pane where the investigation is saved
 
-**Step 5 –** Select a user role from the **Owner** drop-down menu. All users assigned this role
+**Step 5 –** Select a user role from the **Owner** dropdown menu. All users assigned this role
 would own this investigation and they will be able to modify the report.
 
-**Step 6 –** In the Access box, type to search the role you want to give access of this
-investigation. A list of user roles matching the search string is displayed. Select a single or
-multiple user roles. All users belonging to the selected role(s) can view the report.
+**Step 6 –** In the Access box, type to search the roles you want to give access to this
+investigation. A list of user roles matching the search string is displayed. Select one or more roles. All users belonging to the selected roles can view the report.
 
-**Step 7 –** Click **Save**. The Save Investigation window closes.
-
-The duplicated investigation is saved to the selected folder, and the folder expands in the
-navigation pane to display the saved item. You can access the investigation from the navigation
-pane.
+**Step 7 –** Click **Save**. The Save Investigation window closes and the duplicated investigation is saved to the selected folder. The folder expands in the navigation pane to display the new investigation.

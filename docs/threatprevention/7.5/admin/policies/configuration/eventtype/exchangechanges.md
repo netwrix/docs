@@ -63,7 +63,7 @@ Select the **Include** or **Exclude** button and then edit the list.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Exchange Trustees Filter
 
@@ -84,7 +84,7 @@ Use the buttons in the Trustees and Collections of Trustees areas to edit the li
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 The other option button options dictate how the Exchange Trustees filter and the Exchange
 Perpetrators filter relate to each other. They include:
@@ -119,13 +119,13 @@ committing changes from being monitored.
 
 ![Policy window - Exchange Perpetrator filter](/images/threatprevention/7.5/admin/policies/eventtype/exchangeperpetrator.webp)
 
-Options at the top enable you to include or exclude monitoring user access to mailboxes based on the
+Options at the top let you include or exclude monitoring user access to mailboxes based on the
 assigned roles.
 
 The Logged on As checkbox options are:
 
-- Delegate – User who is not the owner of the mailbox being accessed
-- Administrator – User who is not the owner of the mailbox being accessed but has administrative
+- Delegate – User who isn't the owner of the mailbox being accessed
+- Administrator – User who isn't the owner of the mailbox being accessed but has administrative
   privileges
 - Owner – User who is the owner of the mailbox being accessed
 
@@ -141,7 +141,7 @@ The Logged on As radio button options include:
   - When the Include option button is selected for the Logged On As checkboxes and the Exclude
     option button is selected for the AND/OR options – FIf the Administrator is Included for the
     Logged On As option and Joe Smith is Excluded in the Perpetrator list, then the filter will
-    only be true if the event is triggered by Joe Smith AND Joe Smith is not an administrator of
+    only be true if the event is triggered by Joe Smith AND Joe Smith isn't an administrator of
     the affected mailbox.
 
 - OR Perpetrators Must Be Met – When either the Logged On As selection OR the Perpetrator is met,
@@ -166,10 +166,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select a Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::

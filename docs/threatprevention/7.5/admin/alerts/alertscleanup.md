@@ -11,11 +11,8 @@ cleanups for this data.
 
 :::info
 Export alert data before using the Clear option. See the
-[Alerts Export Window](/docs/threatprevention/7.5/admin/alerts/alertsexport.md) topic for additional information.
+[Alerts Export Window](/docs/threatprevention/7.5/admin/alerts/alertsexport.md) topic for more information.
 :::
-
-
-Follow the steps to clear the alerts data.
 
 **Step 1 –** Click **Alerts** in the left pane to launch the Alerts interface.
 

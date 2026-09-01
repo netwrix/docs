@@ -7,8 +7,8 @@ sidebar_position: 40
 # Installing Window
 
 The Deploy Agents wizard's Installing window is the last in a sequence of four windows to deploy the
-Agent on a computer. This window performs the desired action, tracks the deployment process, and
-displays a successful or failed status.
+Agent on a computer. This window performs the deployment, tracks progress, and
+displays success or failure status.
 
 ![Deploy Agents wizard – Installing page](/images/threatprevention/7.5/admin/agents/deploy/installing.webp)
 

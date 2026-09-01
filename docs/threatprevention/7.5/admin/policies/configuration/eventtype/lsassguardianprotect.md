@@ -7,7 +7,7 @@ sidebar_position: 200
 # LSASS Guardian – Protect Event Type
 
 Based on policy rules, the LSASS Guardian – Protect event type can prevent processes not ‘white
-listed’ from accessing LSASS by preventing the Write, Read and/or Create Thread operations. An event
+listed’ from accessing LSASS by preventing the Write, Read, and/or Create Thread operations. An event
 is generated for each prevented access attempt with details about the process and as it’s attempted
 versus actual access allowed.
 
@@ -59,10 +59,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -81,10 +81,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/7.5/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/7.5/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -105,21 +105,21 @@ applications, to the Allow list.
 
 Select the **Block** or **Allow** option button and then edit the list.
 
-Type the process in the textbox. Use the buttons above the box to edit the list.
+Enter the process in the textbox. Use the buttons above the box to edit the list.
 
 - The **Add** (+) button adds a textbox to the list to add an additional process.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::warning
 Leave this filter blank:
 :::
 
 
-- While you can select to **Block** processes, it is _not recommended_ for locking down LSASS.
+- While you can select to **Block** processes, it isn't recommended for locking down LSASS.
   Adding a process block filter will limit the policy to only block that process. Unknown malicious
-  processes would not be blocked by the policy.
+  processes wouldn't be blocked by the policy.
 - While you can select to **Allow** processes, it is possible that a malicious process could be
-  renamed to the same as an “allowed” process. Therefore, the malicious process would not be
+  renamed to the same as an “allowed” process. Therefore, the malicious process wouldn't be
   blocked.
 
 ## Open Process Flags Filter
@@ -129,7 +129,7 @@ maliciously impact LSASS.
 
 ![openprocessflagsmonitoring](/images/threatprevention/7.5/admin/policies/eventtype/openprocessflagsmonitoring.webp)
 
-Check the box to select the process flag(s) to be removed from the LSASS handle that is returned to
+Check the box to select the process flags to be removed from the LSASS handle that is returned to
 the requesting process.
 
 - PROCESS_VM_WRITE – Select this checkbox to write to memory in a process
@@ -139,12 +139,12 @@ the requesting process.
     other processes.
 
 :::info
-Leave these filters enabled. Do not deselect these options.
+Leave these filters enabled. Don't deselect these options.
 :::
 
 
 :::note
-LSASS Guardian Protect does not fully block an operation like other lockdown policies. It
+LSASS Guardian Protect doesn't fully block an operation like other lockdown policies. It
 allows the handle request to complete, but the handle returned will have the specified flags
 removed.
 
