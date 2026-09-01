@@ -8,12 +8,6 @@ sidebar_position: 10
 
 ---
 
-:::tip Need to Migrate Before 2608 Ships?
-Netwrix expects to release **2608** in **late August 2026**. If you're on a legacy 5.x server and need to migrate sooner, the previous target platform (2510/2604) is still a valid, supported path — see [Migrating from a Legacy 5.x Server to 2510/2604 (Temporary)](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). **If your timeline allows waiting, Netwrix recommends migrating directly to 2608 instead** — migrating to 2510/2604 now means a second migration shortly afterward. Netwrix will retire this temporary article once 2608 is generally available.
-:::
-
----
-
 :::warning
 **Action Required**
 
@@ -83,10 +77,6 @@ Check your current server version under **Appliance → Server Information**, th
 |---|---|
 | Any version from **5.7.0.0 to 5.9.4.2** (5700, 5710, 5800, 5810, 5820, 5900, 5910, 5920, 5930, 5940, 5941, 5942) | [Migrating from a Legacy 5.x Server to 2608](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x) |
 | Any version from **2509 to 2604** (2509, 2510, 2601, 2602, 2604) | [Migrating from the Current Image Platform to 2608](/docs/endpointprotector/install/migrationprocedure/migration-current-image) |
-
-:::tip Need to Migrate Before 2608 Ships?
-Netwrix expects to release **2608** in **late August 2026**. If you're on a legacy 5.x server and need to migrate sooner, the previous target platform (2510/2604) is still a valid, supported path — see [Migrating from a Legacy 5.x Server to 2510/2604 (Temporary)](/docs/endpointprotector/install/migrationprocedure/migration-legacy-5x-to-2510). **If your timeline allows waiting, Netwrix recommends migrating directly to 2608 instead** — migrating to 2510/2604 now means a second migration shortly afterward. Netwrix will retire this temporary article once 2608 is generally available.
-:::
 
 Both articles converge on the same two final phases, common to every migration regardless of your starting version:
 
