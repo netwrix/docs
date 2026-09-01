@@ -12,26 +12,26 @@ and requirements with a Netwrix engineer before deployment to ensure all excepti
 
 ## Architecture Overview
 
-The following servers and applications are required for installation of the application:
+Installing the application requires the following servers and applications:
 
 **Core Components**
 
-- Access Analyzer Console Server – This is where the v12.0 application is installed.
+- Access Analyzer Console Server – This is where you install the v12.0 application.
 - SQL Server for Access Analyzer Database – Because Access Analyzer is a data-intensive
   application, use a well-provisioned, dedicated SQL Server for the database.
-- Access Information Center Application Server – This application is typically installed on the
-  Access Analyzer Console server and is a browser-based, interactive dashboard for exploring
+- Access Information Center Application Server – You typically install this application on the
+  Access Analyzer Console server. It is a browser-based, interactive dashboard for exploring
   permissions, activity, and sensitive data.
 
     :::note
-    The Access Information Center is often installed on the same server as the Access
-    Analyzer application, but it can be installed separately.
+    You often install the Access Information Center on the same server as the Access
+    Analyzer application, but you can install it separately.
     :::
 
 
 **Exchange Solution-Specific Components**
 
-- Access Analyzer MAPI CDO – This application is installed on the Access Analyzer Console server to
+- Access Analyzer MAPI CDO – You install this application on the Access Analyzer Console server to
   enable the Settings > Exchange global configuration interface within Access Analyzer.
 
 **File System Solution-Specific Components**
@@ -45,7 +45,7 @@ The following servers and applications are required for installation of the appl
 
 **SharePoint Solution-Specific Components**
 
-- Access Analyzer SharePoint Agent Server – For agent-based scans, this application can be installed
+- Access Analyzer SharePoint Agent Server – For agent-based scans, you can install this application
   on the SharePoint application server that hosts the “Central Administration” component of the
   targeted farms to auditing permissions, content, and sensitive data for SharePoint On-Premise.
   See the [SharePoint Scan Options](/docs/accessanalyzer/12.0/requirements/sharepoint/scanoptions/scanoptions.md) topic for server
@@ -72,17 +72,17 @@ audits. Most solutions have additional target requirements.
 
 The server can be physical or virtual. The requirements are:
 
-- Windows Server 2016 through Windows Server 2022
+- Windows Server 2016 through Windows Server 2025
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- English (United States) language installation
 - Domain member
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment. See the following topics for
-additional:
+These depend on the size of the target environment. See the following topics for additional
+information:
 
 - [Active Directory Solution Requirements on the Access Analyzer Console](/docs/accessanalyzer/12.0/requirements/activedirectory/activedirectory.md#active-directory-solution-requirements-on-the-access-analyzer-console)
 - [Active Directory Permissions Analyzer Solution Requirements on the Access Analyzer Console](/docs/accessanalyzer/12.0/requirements/activedirectorypermissionsanalyzer/activedirectorypermissionsanalyzer.md#active-directory-permissions-analyzer-solution-requirements-on-the-access-analyzer-console)
@@ -101,7 +101,7 @@ additional:
 
 The following are additional requirements for the Console server:
 
-- .NET Framework 4.7.2 installed, which can be downloaded from the link in the Microsoft
+- .NET Framework 4.7.2 installed, which you can download from the link in the Microsoft
   [.NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2)
   article.
 - Microsoft SQL Server supports TLS 1.2, which requires the Access Analyzer Console server to have
@@ -122,7 +122,7 @@ The following permissions are required to install and use the application:
 - Membership in the local Administrators group for the Access Analyzer Console server
 
     :::note
-    Role based access can be enabled for a least privilege user model.
+    You can enable role based access for a least privilege user model.
     :::
 
 
@@ -138,17 +138,17 @@ The following is a list of supported browsers for the Web Console and the Access
 
 The server requirements include one of the following SQL Server versions:
 
-- SQL Server 2016 through SQL Server 2022
+- SQL Server 2016 through SQL Server 2025
 - Azure SQL Managed Instances
 
 Additionally the server must meet this requirement:
 
-- US English language installation
+- English (United States) language installation
 
 **RAM, CPU, and Disk Space**
 
-These are dependent upon the size of the target environment. See the following topics for
-additional:
+These depend on the size of the target environment. See the following topics for additional
+information:
 
 - [Active Directory Solution Requirements on the SQL Server](/docs/accessanalyzer/12.0/requirements/activedirectory/activedirectory.md#active-directory-solution-requirements-on-the-sql-server)
 - [Active Directory Permissions Analyzer Solution Requirements on the SQL Server](/docs/accessanalyzer/12.0/requirements/activedirectorypermissionsanalyzer/activedirectorypermissionsanalyzer.md#active-directory-permissions-analyzer-solution-requirements-on-the-sql-server)
@@ -166,7 +166,7 @@ additional:
 
 The following are additional requirements for the SQL Server:
 
-- SQL Server must be equal or newer version than the version to be targeted
+- SQL Server must be an equal or newer version than the targeted version
 - All SQL Server databases configured to use ‘Simple Recovery Model’
 
 **Additional Server Considerations**
@@ -190,10 +190,10 @@ The following permissions are required on the databases:
 
 ## Virtual Environment Recommendations
 
-While physical machines are always preferred, Access Analyzer fully supports the use of virtual machines. This
+While physical machines are always preferred, Access Analyzer fully supports virtual machines. This
 section contains special considerations for virtualized environments.
 
-- VMWare® ESX® – If you use ESX, the following specifications are recommended:
+- VMWare® ESX® – If you use ESX, Netwrix recommends the following specifications:
 
     - ESX 4.0 / ESXi™ 4.1 or higher
     - Virtual Hardware 7 or higher

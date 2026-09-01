@@ -11,14 +11,15 @@ database environments to collect permissions, sensitive data, and activity event
 
 - Azure SQL
 
-- SQL Server 2022
+- SQL Server 2025
+- SQL Server 2022
 - SQL Server 2019
 - SQL Server 2017
 - SQL Server 2016
 
 **Target SQL Server Requirements**
 
-The following are requirements for the SQL Server to be scanned:
+The target SQL Server must meet the following requirements:
 
 - WINRM Service installed
 - Ensure the following rights are in the `ROOT\Microsoft\SQLServer` and `ROOT\Interop` WMI
@@ -35,7 +36,7 @@ The following are requirements for the SQL Server to be scanned:
 
 - For Activity Auditing – SQL Server Audit:
 
-    - SQL Server Audit Specifications to be configured on the target databases
+    - Configure SQL Server Audit Specifications on the target databases
     - Audit destination must be a binary file
     - See the Microsoft
       [Create a server audit and database audit specification](https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/create-a-server-audit-and-database-audit-specification)
@@ -79,9 +80,9 @@ This solution employs the following data collector to scan the target environmen
 - For permissions for data collection:
 
     - Read access to SQL instance
-    - Requires SQL Full-Text and Semantic Extractions for Search feature to be installed on the
-      target SQL instances when using the **Scan full rows for sensitive data** option on the
-      Options wizard page
+    - Requires the SQL Full-Text and Semantic Extractions for Search feature on the target SQL
+      instances when you use the **Scan full rows for sensitive data** option on the Options
+      wizard page
     - Grant Authenticate Server to [DOMAIN\USER]
     - Grant Connect SQL to [DOMAIN\USER]
     - Grant View any database to [DOMAIN\USER]
@@ -111,4 +112,4 @@ The following firewall ports are needed:
 
 **For SQL Data Collector**
 
-- Specified by Instances table (default is 1433)
+- The Instances table specifies the port (default is 1433)

@@ -37,6 +37,7 @@ topic for information on the required prerequisites.
 You can install the File System Proxy Service for the Enterprise Auditor File System Solution on
 the following Windows operating systems:
 
+- Windows Server 2025
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
@@ -65,15 +66,16 @@ Two options are available for implementing the proxy scanning architecture:
 
 When you run File System scans in proxy mode with applet, Enterprise Auditor deploys the File
 System applet to the Windows proxy server when the job runs to conduct data collection. The proxy
-server where the applet is deployed initiates the data collection processing and uses a
+server hosting the applet initiates the data collection processing and uses a
 local mode-type scan to each of the target hosts. The final step in data collection is to compress
 and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Enterprise
 Auditor Console server.
 
 ![Diagram of Enterprise Auditor server sending an FSAA applet to a proxy server](/images/accessanalyzer/11.6/install/filesystemproxy/proxymodewithapplet.webp)
 
-The diagram illustrates the Enterprise Auditor server sending an FSAA applet to a proxy server,
-which runs the scan against a file server, and then returns data to the Enterprise Auditor server.
+The diagram illustrates the Enterprise Auditor server sending a FileSystemAccess (FSAA) applet to a
+proxy server, which runs the scan against a file server, and then returns data to the Enterprise
+Auditor server.
 
 ### Proxy Mode as a Service
 
@@ -107,8 +109,8 @@ The diagram illustrates the Enterprise Auditor server communicating securely wit
 on a proxy server, which runs the scan against a file server, collecting the data locally and
 securely. Then the proxy service returns data securely to the Enterprise Auditor server.
 
-When you initiate a proxy mode scan from the Enterprise Auditor Console, it distributes hosts to
-be scanned across all proxy hosts. Enterprise Auditor monitors the scans from the central console.
+When you initiate a proxy mode scan from the Enterprise Auditor Console, it distributes hosts for
+scanning across all proxy hosts. Enterprise Auditor monitors the scans from the central console.
 Once all proxy hosts complete scanning, they return all results and SQLite databases to the
 Enterprise Auditor Console server.
 

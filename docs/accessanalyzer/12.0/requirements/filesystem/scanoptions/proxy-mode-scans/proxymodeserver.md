@@ -6,32 +6,31 @@ sidebar_position: 10
 
 # Proxy Mode Server Requirements
 
-The Access Analyzer File System Proxy requirements apply for servers where either the service is
-installed or the applet will be deployed unless otherwise stated.
+The Access Analyzer File System Proxy requirements apply for servers where you either install the
+service or deploy the applet, unless otherwise stated.
 
 :::note
-Align the proxy server requirements to match the environment size the proxy server will be
-handling.
+Align the proxy server requirements to match the size of the environment the proxy server
+handles.
 :::
 
 
 The server can be physical or virtual. The requirements for Access Analyzer are:
 
-- Windows Server 2016 through Windows Server 2022
+- Windows Server 2016 through Windows Server 2025
 
-    - US English language installation
+    - English (United States) language installation
     - Domain member
 
 **RAM, CPU, and Disk Space**
 
-RAM, CPU, and Disk Space are dependent upon the size of the target environment:
+RAM, CPU, and Disk Space depend on the size of the target environment:
 
 :::warning
 If you run Sensitive Data Discovery (SDD) scans, increase the minimum amount of RAM. Each
 thread requires a minimum of 2 additional GB of RAM per host. By
-default, SDD scans are configured to run two concurrent threads. For example, if the job is
-configured to scan 8 hosts at a time with two concurrent SDD threads, then an extra 32 GB of RAM are
-required (8x2x2=32).
+default, SDD scans run two concurrent threads. For example, if you configure the job to scan
+8 hosts at a time with two concurrent SDD threads, you need an extra 32 GB of RAM (8x2x2=32).
 :::
 
 
@@ -65,9 +64,9 @@ required (8x2x2=32).
     - 2 CPU Cores
     - 130 GB Disk Space
 
-This recommended disk space sizing information is based on the needs of Access Analyzer as well
-as the File System solution for running Permission scans with the default configuration (500 MB
-per million files and folders), that means no tag collection, file-level scanning, activity, or
+This recommended disk space sizing information is based on the needs of Access Analyzer and
+the File System solution for running Permission scans with the default configuration (500 MB
+per million files and folders), which means no tag collection, file-level scanning, activity, or
 sensitive data.
 
 - For tag collection, add 125 MB per million documents to the preceding totals
@@ -77,8 +76,8 @@ sensitive data.
   total size of the documents scanned for sensitive data (depending on targeted document types and
   selected criteria) to the preceding totals
 
-For example, to scan 200 million files and folders, of which 10 million files will be
-scanned for tag collection and sensitive data with a total size of 6 TB, you would need: 160 GB for
+For example, to scan 200 million files and folders, of which you scan 10 million files
+for tag collection and sensitive data with a total size of 6 TB, you would need: 160 GB for
 permission collection + 1.25 GB for tag collection (10x125 MB) + 100 GB for sensitive data
 collection (200x500 MB) + 600 GB additional for sensitive data collection (10% of 6 TB) = 861.25 GB
 Disk Space.
@@ -90,7 +89,7 @@ The following are additional requirements for the server:
 - .NET Framework 4.7.2 Installed
 
     :::note
-    .NET Framework 4.7.2 can be downloaded from the link in the Microsoft
+    Download .NET Framework 4.7.2 from the link in the Microsoft
     [.NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2)
     article.
     :::
@@ -99,7 +98,7 @@ The following are additional requirements for the server:
 - Remote Registry Service enabled
 
     :::note
-    The Remote Registry Service only needs to be enabled when running Applet Mode or Proxy
+    You only need to enable the Remote Registry Service when running Applet Mode or Proxy
     Mode with Applet scans.
     :::
 

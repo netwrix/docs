@@ -36,6 +36,7 @@ the required prerequisites.
 You can install the File System Proxy Service for the Access Analyzer File System Solution on the
 following Windows operating systems:
 
+- Windows Server 2025
 - Windows Server 2022
 - Windows Server 2019
 - Windows Server 2016
@@ -64,7 +65,7 @@ Two options are available for implementing the proxy scanning architecture:
 
 When you run File System scans in proxy mode with applet, Access Analyzer deploys the File System
 applet to the Windows proxy server when the job runs to conduct data collection. The proxy server
-where the applet is deployed initiates the data collection processing and uses a
+hosting the applet initiates the data collection processing and uses a
 local mode-type scan to each of the target hosts. The final step in data collection is to compress
 and transfer the data collected in the SQLite databases, or Tier 2 databases, back to the Access
 Analyzer Console server.

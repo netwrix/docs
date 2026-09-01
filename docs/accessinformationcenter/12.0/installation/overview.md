@@ -6,20 +6,20 @@ sidebar_position: 20
 
 # Installation Overview
 
-The Netwrix Access Information Center relies on collected and analyzed data that is stored in a
-Microsoft® SQL® Server database. Netwrix Access Analyzer (formerly Enterprise Auditor) must be
-installed, and there are specific solutions that are prerequisites for installing and using the
+The Netwrix Access Information Center relies on collected and analyzed data stored in a
+Microsoft® SQL® Server database. Netwrix Access Analyzer (formerly Enterprise Auditor) and
+specific solutions are prerequisites for installing and using the
 Access Information Center.
 
 ## Prerequisites
 
-The Access Information Center is typically installed on the same server as Access Analyzer. However,
-it can be installed on a remote server. See the Remote AIC Console Sever Requirements topic for
-additional information.
+You typically install the Access Information Center on the same server as Access Analyzer. However,
+you can install it on a remote server. See the Remote Access Information Center Console Server
+Requirements topic for additional information.
 
 ### Access Analyzer Solutions
 
-The .Active Directory Inventory Solution must be successfully executed before installing the
+You must successfully execute the .Active Directory Inventory Solution before installing the
 Access Information Center.
 
 :::info
@@ -31,23 +31,23 @@ supply the data for Resource Audits.
 ### Permissions
 
 Permissions are needed to the Access Analyzer database and to Active Directory. This can be one
-account with sufficient rights to each or two separate accounts. In this document,
-these will be referred to as the Database service account and the Active Directory service account.
+account with sufficient rights to each or two separate accounts. This document refers to
+these as the Database service account and the Active Directory service account.
 
-- Database service account – Typically, this is the same account used by Access Analyzer for a
-  database service account. This credential is required for installation.
+- Database service account – Typically, this is the same account that Access Analyzer uses for a
+  database service account. Installation requires this credential.
 
     - If you choose to use a different account, it must have the following permissions:
 
         - Database Owner
         - Provisioned to use Default Schema of ‘dbo’
 
-    - Database connection via TLS 1.2 (SQL Native Client) is supported.
+    - The Access Information Center supports database connections via TLS 1.2 (SQL Native Client).
 
 - Active Directory service account – At a minimum, Access Information Center login authentication
   and Resource Audits require the Active Directory service account to have rights to read Active
-  Directory. This credential is configured during installation based on the account used for
-  connecting to the database. See the
+  Directory. You configure this credential during installation based on the account you use to
+  connect to the database. See the
   [Active Directory Page](/docs/accessinformationcenter/12.0/admin/configuration/activedirectory.md) topic for additional
   information.
 
@@ -58,9 +58,9 @@ Active Directory. This is an optional component of change modeling, resource own
 and the Entitlement Reviews workflow. It is a requirement for the Self-Service Access Requests
 workflow.
 
-In order for the Access Information Center to commit changes to Active Directory, Active Directory
+For the Access Information Center to commit changes to Active Directory, the Active Directory
 service account must have additional rights on the OUs that house the security and distribution
-groups to be managed:
+groups you want to manage:
 
 - Allow Read Members
 - Allow Write Members
@@ -71,18 +71,18 @@ additional information and best practices.
 ### SSL Certificate
 
 To enable Secure Sockets Layer (SSL) for secure remote connections to the Access Information Center,
-a password-enabled certificate with a private key is required. This certificate should reside in a
+you need a password-enabled certificate with a private key. This certificate should reside in a
 local folder for browsing before installing the Access Information Center. The certificate can
 also be in any of the Local Machine certificate stores.
 
-### Remote AIC Console Sever Requirements
+### Remote Access Information Center Console Server Requirements
 
 To install the Access Information Center on a server separate from the Access Analyzer Console,
 meet the following minimal server requirements for Access Reporting:
 
-- Windows Server 2016 through Windows Server 2022
+- Windows Server 2016 through Windows Server 2025
 
-    - US English language installation
+    - English (United States) language installation
     - Domain member
 
 - 2+ CPU Cores
@@ -92,13 +92,13 @@ meet the following minimal server requirements for Access Reporting:
 
 :::note
 If using any of the Access Information Center workflows (Resource Reviews or
-Self-Service Access Requests), additional CPU cores, memory, and disk space may be needed.
+Self-Service Access Requests), you may need additional CPU cores, memory, and disk space.
 :::
 
 
 ## Software Compatibility & Versions
 
-For proper functionality, it is necessary for the version of the Access Information Center to be
+For proper functionality, the version of the Access Information Center must be
 compatible with the existing Access Analyzer installation. If necessary,
 [Netwrix Support](https://www.netwrix.com/support.html) can confirm whether the two product versions
 are compatible.
