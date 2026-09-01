@@ -17,7 +17,7 @@ The scan types available depend on the source type:
 | **File Server** | Access Scan, Sensitive Data Scan |
 | **SharePoint Online** | Access Scan, Sensitive Data Scan |
 | **Active Directory** | Active Directory Inventory |
-| **Entra ID** | Users, Groups and Roles |
+| **Entra ID** | Users, Groups, and Roles |
 
 ### Access Scan
 
@@ -29,13 +29,13 @@ Access scans include a **concurrent** option that scans multiple file paths or o
 
 Classifies file and document content against the detection patterns configured under **Configuration** > **Sensitive Data**. Identifies files containing PII, PHI, credentials, financial records, and other sensitive data across File Server and SharePoint Online sources.
 
-Sensitive Data Scans include a **concurrent** option that allows classification to run against multiple files simultaneously within a single source. Enable this on sources with large file counts to improve throughput.
+Sensitive Data Scans include a **concurrent** option that classifies multiple files simultaneously within a single source. Enable this on sources with large file counts to improve throughput.
 
 ### Active Directory Inventory
 
 Synchronizes users, groups, group memberships, and security-relevant attributes from Active Directory domains. Access Analyzer uses the inventory to resolve identity information across all other scan types and to populate the Active Directory dashboard.
 
-### Users, Groups and Roles
+### Users, Groups, and Roles
 
 Synchronizes users, groups, and role assignments from your Microsoft Entra ID (Azure AD) tenant. This scan type also collects Microsoft Information Protection (MIP) sensitivity labels applied across the tenant.
 
@@ -74,7 +74,7 @@ The schedule determines when a scan runs automatically. You configure the schedu
 
 | Option | Description |
 | --- | --- |
-| **Run scan now** | Starts the scan immediately when the source group is saved. No recurring schedule is set. |
+| **Run scan now** | Starts the scan immediately when you save the source group. No recurring schedule applies. |
 | **Run scan at** | Schedules a single one-time run at a specific date and time. The scan doesn't repeat after that run. |
 | **Advanced** | Sets a recurring schedule using a cron expression. Use this for daily, weekly, or custom interval schedules. |
 

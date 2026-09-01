@@ -34,9 +34,8 @@ require a license.
 
 The .Active Directory Inventory Solution is designed to provide essential user, group membership,
 and computer details from the targeted domains to many Enterprise Auditor built-in solutions. Key
-information includes user status, user attributes, and group membership. The collected data is
-accessed by other Enterprise Auditor solutions and the Netwrix Access Information Center for
-analysis.
+information includes user status, user attributes, and group membership. Other Enterprise Auditor
+solutions and the Netwrix Access Information Center access the collected data for analysis.
 
 This is a core solution available to all Enterprise Auditor users.
 
@@ -189,8 +188,8 @@ Sensitive data auditing requires the Sensitive Data Discovery Add-on.
 
 The Exchange Solution provides auditing and reporting on multiple aspects of the Exchange
 environment to assist with identifying risk, understanding usage, and decreasing bloat. Areas of
-focus include Audit and Compliance, Maintenance and Cleanup, Metrics and Capacity, Operations and
-Health, Public Folders and Configuration Baseline.
+focus include Audit and Compliance; Maintenance and Cleanup; Metrics and Capacity; Operations and
+Health; and Public Folders and Configuration Baseline.
 
 See the
 [Exchange Solution](/docs/accessanalyzer/11.6/solutions/exchange/overview.md)
@@ -236,9 +235,8 @@ Sensitive data auditing requires the Sensitive Data Discovery Add-on.
 
 ### Unix Solution
 
-The Unix Solution reports on areas of administrative concern for Unix and Linux systems. Attention
-is given to users and group details, privileged access rights, and NFS and Samba sharing
-configurations.
+The Unix Solution reports on areas of administrative concern for Unix and Linux systems, focusing on
+user and group details, privileged access rights, and NFS and Samba sharing configurations.
 
 See the
 [Unix Solution](/docs/accessanalyzer/11.6/solutions/unix/overview.md)

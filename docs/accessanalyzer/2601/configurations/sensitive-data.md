@@ -24,7 +24,7 @@ The MIP configuration section connects Access Analyzer to a Microsoft Entra ID t
 1. In the **Tenant ID** dropdown, select the Entra ID source that represents the tenant whose MIP labels you want to use.
 2. Click **Save Configuration**.
 
-The dropdown lists Entra ID source groups that have completed at least one **Users, Groups and Roles** scan. If the dropdown is empty, either no Entra ID source group exists or the scan has not run yet. Run the scan first, then return to this page to select the tenant.
+The dropdown lists Entra ID source groups that have completed at least one **Users, Groups, and Roles** scan. If the dropdown is empty, either no Entra ID source group exists or the scan has not run yet. Run the scan first, then return to this page to select the tenant.
 
 After you select a tenant, Access Analyzer retrieves the associated MIP labels. The status bar below the dropdown shows:
 
@@ -114,14 +114,14 @@ Enabling OCR increases scan processing time.
 
 The **Label Settings** drawer controls whether Access Analyzer writes MIP sensitivity labels back to files during sensitive data scans, and how it handles files that already carry a label. To open it, click **Label Settings** in the upper-right corner of the Sensitive Data Types card.
 
-These settings apply globally and can be overridden per-scan in the scan configuration.
+These settings apply globally, and you can override them per scan in the scan configuration.
 
 :::note
 Label write-back applies to **File Server and SharePoint Online sensitive data scans only**. Entra ID and Active Directory scans don't support label application.
 :::
 
 :::note
-Label write-back only occurs when you meet **both** conditions: you map a MIP label to the detected data type in the Sensitive Data Types table, **and** you enable the relevant option in [Options](#options). All options are off by default — by default, Access Analyzer detects and classifies files but doesn't write any labels to files.
+Label write-back only occurs when you meet **both** conditions: you map a MIP label to the detected data type in the Sensitive Data Types table, **and** you enable the relevant option in [Options](#options). All options are off by default, so Access Analyzer detects and classifies files but doesn't write any labels to them.
 :::
 
 ### Options

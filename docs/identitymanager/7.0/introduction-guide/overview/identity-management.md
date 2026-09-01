@@ -10,9 +10,9 @@ To manage identities' entitlements, start by managing the identities themselves.
 
 ## A **central repository**
 
-A company involves many sorts of identities: obviously employees, but also external workers like contractors whom the company's systems usually don't track except for billing purposes, bots, software, etc. You must represent all identity types that need entitlements to work within the company.
+A company involves many sorts of identities: employees, but also external workers like contractors whom the company's systems usually don't track except for billing purposes, bots, software, and more. You must represent all identity types that need entitlements to work within the company.
 
-Companies often use about one system for each identity type. Identity Manager capitalizes on information from several source systems to build a **central repository** meant to contain all the data necessary to **manage all identities throughout their whole lifecycle**.
+Companies often use one system per identity type. Identity Manager capitalizes on information from several source systems to build a **central repository** meant to contain all the data necessary to **manage all identities throughout their whole lifecycle**.
 
 ![Usercube's Repository](/images/identitymanager/identities_repository.webp)
 
@@ -20,7 +20,7 @@ Identity Manager's **central repository** acts as an intermediary between the sy
 
 Without an intermediary, adding one system to a set of n systems requires up to n sets of **rules**, one for each reading/writing relationship that this system has with the others. The complexity is quadratic.
 
-Now with the **central repository** as an intermediary, implementing a new system requires only one more set of **rules**. The complexity becomes linear.
+With the **central repository** as an intermediary, implementing a new system requires only one more set of **rules**. The complexity becomes linear.
 
 ![quadratic-linear-complexity](/images/identitymanager/quadratic-linear-complexity.webp)
 
@@ -28,7 +28,7 @@ Now with the **central repository** as an intermediary, implementing a new syste
 
 Identity Manager models identities, along with any Identity Governance and Administration (IGA) related data, by an [entity-relationship model](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model?featherlight=true).
 
-**Entities** organize and model all this data. This concept is quite similar to a database: an entity is a set of properties, some are scalar so "simple" properties, and others are navigation properties which make links between **entities**, quite like foreign keys in a database.
+**Entities** organize and model all this data. This concept is quite similar to a database: an entity is a set of properties, where some are scalar, or "simple", properties and others are navigation properties that link **entities** together, much like foreign keys in a database.
 
 > For example, consider an entity `Directory_User` with properties like `Name`, `Email`, `JobTitle`,
 > `Department`.
@@ -66,7 +66,8 @@ Thus, a connector enables **synchronization**, i.e. Identity Manager reading fro
 
 ![**synchronization**](/images/identitymanager/overview_synchronization.webp)
 
-> A typical example is the **synchronization** of the HR system's data to retrieve employees' personal > information.
+> A typical example is the **synchronization** of the HR system's data to retrieve employees'
+> personal information.
 
 It also enables **provisioning**, i.e. Identity Manager writing to a managed system. A later topic covers provisioning.
 
@@ -74,7 +75,7 @@ It also enables **provisioning**, i.e. Identity Manager writing to a managed sy
 
 ## Repository Updates
 
-Once you configure Identity Manager, with not only **connectors** but also roles and **rules**, etc. (which constitute a different topic), you can make changes to the repository through:
+After you configure Identity Manager, with not only **connectors** but also roles and **rules**, etc. (which constitute a different topic), you can make changes to the repository through:
 
 - **synchronization**, which copies changes made in the managed systems
 to Identity Manager;
@@ -88,7 +89,7 @@ See the [Entitlement Management](../../introduction-guide/overview/entitlement-m
 
 ## Next Steps
 
-Let's learn about [Entitlement Management](../../introduction-guide/overview/entitlement-management).
+Learn about [Entitlement Management](../../introduction-guide/overview/entitlement-management).
 
 ## Related Resources
 
@@ -96,7 +97,7 @@ See how to [Create the Workforce Repository](../../user-guide/set-up/initial-ide
 
 See the [**connectors**](../../integration-guide/connectors) topic for more information.
 
-See how to create a [Connect to a Managed System](../../user-guide/set-up/connect-system).
+See how to [Connect to a Managed System](../../user-guide/set-up/connect-system).
 
 See the [**synchronization**](../../integration-guide/synchronization) topic for more information.
 

@@ -8,8 +8,8 @@ sidebar_position: 120
 
 The Exchange Solution provides auditing and reporting on multiple aspects of the Exchange
 environment to assist with identifying risk, understanding usage, and decreasing bloat. Areas of
-focus include Audit and Compliance, Maintenance and Cleanup, Metrics and Capacity, Operations and
-Health, Public Folders and Configuration Baseline. Sensitive Data Discovery searches mailboxes and
+focus include Audit and Compliance; Maintenance and Cleanup; Metrics and Capacity; Operations and
+Health; and Public Folders and Configuration Baseline. Sensitive Data Discovery searches mailboxes and
 public folders to discover where sensitive information of any type exists.
 
 **Supported Platforms**
@@ -49,18 +49,18 @@ Runtimes in the same environment.
 
 **Location**
 
-The Exchange Solution requires a special Access Analyzer license. It can be installed from the
-Access Analyzer Instant Job Wizard. After it's installed into the Jobs tree, navigate to the
+The Exchange Solution requires a special Access Analyzer license. You can install it from the
+Access Analyzer Instant Job Wizard. After you install it into the Jobs tree, navigate to the
 solution: **Jobs** > **Exchange**.
 
 Each job group within the solution collects data, analyzes the data, and reports on the target
-Exchange environment, with the exception of the 6. Distribution Lists job group that only analyzes
-data and generates reports. The EX_UserOverview job runs analysis on the collected data and
+Exchange environment, except for the 6. Distribution Lists job group that only analyzes data and
+generates reports. The EX_UserOverview job runs analysis on the collected data and
 generates reports.
 
 ## Job Groups
 
-The Exchange Solution is divided into categories based upon what is being audited.
+The Exchange Solution groups jobs into categories based on what they audit.
 
 ![Exchange Job Group Overview page](/images/accessanalyzer/12.0/solutions/exchange/overviewpage.webp)
 
@@ -90,9 +90,9 @@ The following job groups comprise the Exchange Solution:
 
 - [5. Public Folders Job Group](/docs/accessanalyzer/12.0/solutions/exchange/publicfolders/overview.md) – Comprised of data collection, analysis
   and reports that focus on public folder sizing, content aging, entitlement, ownership, and the
-  identification of each public folder’s Most Probable Owner. The Most Probable Owner is a unique
-  algorithm built into the public folder data collector that is determined based on folder
-  ownership, content posted, and size of content posted.
+  identification of each public folder’s Most Probable Owner. The Most Probable Owner is determined by a
+  unique algorithm built into the public folder data collector, based on folder ownership, content
+  posted, and size of content posted.
 - [6. Distribution Lists Job Group](/docs/accessanalyzer/12.0/solutions/exchange/distributionlists/overview.md) – Lists the direct and effective
   membership to distribution lists in addition to providing context around potentially stale
   distribution lists

@@ -105,7 +105,7 @@ Access Analyzer organizes patterns into **taxonomies** — hierarchical groups o
 - **File Server sources** — Access Analyzer reads MIP labels from scanned files and can apply labels to files based on scan findings.
 - **SharePoint Online sources** — Access Analyzer reads MIP labels from native SharePoint metadata. Label application isn't supported for SharePoint Online.
 
-Access Analyzer syncs labels from your Entra ID tenant. To make labels available, an Entra ID source group must exist and its **Users, Groups and Roles** scan must have run at least once. Once synced, you map labels to sensitive data types in **Configuration** > **Sensitive Data**.
+Access Analyzer syncs labels from your Entra ID tenant. To make labels available, an Entra ID source group must exist and its **Users, Groups, and Roles** scan must have run at least once. Once synced, you map labels to sensitive data types in **Configuration** > **Sensitive Data**.
 
 ## Dashboards and Reports
 

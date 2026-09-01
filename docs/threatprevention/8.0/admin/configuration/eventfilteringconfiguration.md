@@ -7,8 +7,8 @@ sidebar_position: 50
 # Event Filtering Configuration Window
 
 The Event Filtering Configuration window lets you exclude specific Active Directory and
-Authentication events from being monitored. A latency threshold can be set to generate alerts for AD
-events.
+Authentication events from being monitored. You can set a latency threshold to generate alerts for
+AD events.
 
 :::note
 This window is only available to Threat Prevention administrators.
@@ -23,7 +23,7 @@ Configuration window.
 **Step 2 –** The filter options are grouped by AD Global Pre Filters, Authentication Global Pre
 Filters, and Alerts. Check the checkboxes to activate the filters and click **Save**.
 
-To disable a filter for diagnostic purposes, simply uncheck its checkbox and click **Save**.
+To disable a filter for diagnostic purposes, uncheck its checkbox and click **Save**.
 
 Click the Help icon (?) for an option in the AD Global Pre Filters area to view the type of “noise”
 events being filtered.
@@ -46,8 +46,8 @@ filters.json file located in the installation directory of the Enterprise Manage
 ## Exclude ‘Noise’ Events Option
 
 The Exclude ‘Noise’ Events option is enabled by default to filter out login and internal low level
-attributes that can be considered ‘noise’ events, resulting in a bloating of the database. This
-option can be scoped to include any combination of the following ‘noise’ events:
+attributes that can be considered ‘noise’ events, which bloat the database. You can scope this
+option to include any combination of the following ‘noise’ events:
 
 - Successful AD User Logins – Excludes events with the following attributes where ‘objectClass’ does
   not equal computer:
@@ -75,26 +75,24 @@ option can be scoped to include any combination of the following ‘noise’ eve
 ## Exclude AD DNS Events Option
 
 The Exclude AD DNS Events option is enabled by default to filter out DNS events. These events can
-result in a bloating of the database. They must meet both of the following conditions to be
-excluded:
+bloat the database. They must meet both of the following conditions to be excluded:
 
 - objectClass = ‘dnsNode’ or ‘dnsZone’
 - Contains the ‘dnsRecord’ or ‘dNSTombstoned’ attribute
 
 When the Exclude AD DNS Events checkbox is unchecked, DNS record events are displayed in a
-human-readable format on the Recent Events tab of the Active Directory policy. to search
-these results, the Affected Object: Class can be set to equals dnsNode for the dnsRecord attribute
-to display.
+human-readable format on the Recent Events tab of the Active Directory policy. To search these
+results, set Affected Object: Class to equal dnsNode so the dnsRecord attribute displays.
 
 ## Don't Ignore Events With Unchanged Attributes
 
-The Don't Ignore Events With Unchanged Attributes option is disabled by default to filter out events where an attribute’s old value is equal to its new value.
+The Don't Ignore Events With Unchanged Attributes option is disabled by default to filter out events where an attribute’s old value equals its new value.
 
 ## Exclude Logins from Machine Accounts Option
 
 The Exclude Logins from Machine Accounts option is enabled by default to filter out machine logins.
-These events can result in a bloating of the database. Click the **configure** link to open the Edit
-Collection window.
+These events can bloat the database. Click the **configure** link to open the Edit Collection
+window.
 
 ![Edit Collection window - For Machine Accounts](/images/threatprevention/8.0/admin/configuration/editcollectionmachineaccounts.webp)
 
@@ -103,8 +101,8 @@ Configuration window. Either use the **Add** (+) button to open the
 [Select Active Directory Perpetrators Window](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/window/perpetrators.md)
 to browse for machine accounts or enter the account name in the textbox.
 
-Only perpetrators with accounts ending in “$” are considered for this filter. Wild cards (\*) can be
-used for partial matches to account names.
+Only perpetrators with accounts ending in “$” are considered for this filter. Use wild cards (\*)
+for partial matches to account names.
 
 All machine accounts in the textbox are either included or excluded from event data monitoring by
 the Agent. Machine accounts not in the list have the unselected property applied.
@@ -116,19 +114,19 @@ Select one of the following radio buttons to apply to the list of account names:
 - Remove on match – Excluded and ignored by the Agent. Machine accounts not in the list are included
   and sent to the Agent for event data monitoring.
 
-Repeat the process until all machine accounts to be included or excluded from Authentication event
-data have been entered in the list. Then click **OK**.
+Repeat the process until you've entered all machine accounts to include or exclude from
+Authentication event data. Then click **OK**.
 
 **Usage Tip**
 
-Windows Server 2012 introduced gMSA (Group Managed Service Accounts). gMSA accounts include
-“$” in their names, so by default Threat Prevention filters out authentication traffic generated by these accounts because they ‘look’ like machine accounts which prior to Server 2012 were the only account names ending in “$”.
+Windows Server 2012 introduced group Managed Service Accounts (gMSA). gMSA accounts include
+“$” in their names, so by default Threat Prevention filters out authentication traffic generated by these accounts because they ‘look’ like machine accounts, which before Server 2012 were the only account names ending in “$”.
 The ability in Threat Prevention to add a list of filter strings to the “Exclude Logins from Machine
 Accounts” global filter lets you capture activity by gMSA type accounts as this activity is
-typically of interest whereas true ‘machine accounts’ isn't. By supplying either an explicit list
-of gMSA account names, or if a naming convention has been adopted, a set of wild card strings such
-as “gMSA\*” or “svc\*”, allows capturing authentication activity from such accounts while ignoring
-the noisy ‘machine accounts’.
+typically of interest whereas true ‘machine accounts’ aren't. Supplying either an explicit list of
+gMSA account names or, if a naming convention exists, a set of wild card strings such as “gMSA\*” or
+“svc\*” lets you capture authentication activity from such accounts while ignoring the noisy
+‘machine accounts’.
 
 ## Exclude Authentication Events from Selected Hosts Option
 
@@ -141,13 +139,13 @@ Collection window.
 The Exclude Authentication Events from Hosts collection is only accessible through the Event
 Filtering Configuration window. All three methods of identification for a host (IP address, NETBIOS
 host name, or DNS host name) must be known to effectively exclude authentication from the
-host. Identify the host to be excluded in the textbox under the IP Address column and hit **Enter**
+host. Identify the host to exclude in the textbox under the IP Address column and press **Enter**
 or select the next row in the grid. Threat Prevention attempts to discover the NETBIOS host name and
 the DNS host name associated with the supplied IP address. If the host identification isn't
 resolved or is inaccurate, manually enter the information.
 
-Repeat the process until all hosts for which authentication event data will not be collected have
-been entered in the list. Then click **OK**. The Edit Collection window closes, and the Exclude
+Repeat the process until you've entered all hosts for which Threat Prevention won't collect
+authentication event data. Then click **OK**. The Edit Collection window closes, and the Exclude
 Authentication Events from selected hosts option can be enabled.
 
 ## Exclude Authentication Events from Selected Accounts Option
@@ -163,26 +161,26 @@ Event Filtering Configuration window. Use the **Add** (+) button to open the
 [Select Active Directory Perpetrators Window](/docs/threatprevention/8.0/admin/policies/configuration/eventtype/window/perpetrators.md)
 to browse for the accounts you want to exclude. Account names [domain name\account] can also be typed in the
 textbox. Wild cards (\*) can be used as part of either the domain name or account. An asterisk (\*)
-appearing anywhere other than as the first character or the last character are treated as a literal
-character instead of as a wild card. For example: \*\Service1 would exclude all Service1 accounts
+appearing anywhere other than as the first or last character is treated as a literal character
+instead of as a wild card. For example: \*\Service1 would exclude all Service1 accounts
 whether it is a domain or local account, and Example\Service\* would exclude all accounts that start
 with “Service” for the Example domain.
 
-Repeat the process until all accounts to be excluded from Authentication event data have been
-entered in the list. Then click OK. The Edit Collection window closes, and the Exclude
+Repeat the process until you've entered all accounts to exclude from Authentication event data.
+Then click **OK**. The Edit Collection window closes, and the Exclude
 Authentication Events from selected accounts option can be enabled.
 
 ## AD Events Latency Threshold Option
 
-The Send Latency Alerts option is disabled by default. It is used to generate alerts if the time
-delay between when the Agent detects an AD event and the time the Enterprise Manager receives it
-exceeds the specified latency threshold. This option is helpful for troubleshooting when
-experiencing slow connection in the environment. These events can result in a bloating of the
-database especially if the latency threshold is set too low.
+The Send Latency Alerts option is disabled by default. It generates alerts if the time delay
+between when the Agent detects an AD event and the time the Enterprise Manager receives it exceeds
+the specified latency threshold. This option is helpful for troubleshooting when experiencing slow
+connection in the environment. These events can bloat the database, especially if you set the
+latency threshold too low.
 
 Select the Send Latency Alerts checkbox to enable this option. Use the arrows, or type into the
 textbox, to set the latency threshold in minutes for the time when the Agent detects the event and
-the Enterprise Manager receives it. When events exceed the timeframe, alerts are displayed in the
-[Alerts Interface](/docs/threatprevention/8.0/admin/alerts/overview.md). Email or SIEM alerts can be generated by selecting the
-Agent Latency checkbox in the Operations tab of the
+the Enterprise Manager receives it. When events exceed the timeframe, alerts appear in the
+[Alerts Interface](/docs/threatprevention/8.0/admin/alerts/overview.md). To generate email or SIEM alerts, select the
+Agent Latency checkbox on the Operations tab of the
 [System Alerting Window](/docs/threatprevention/8.0/admin/configuration/systemalerting/overview.md).
