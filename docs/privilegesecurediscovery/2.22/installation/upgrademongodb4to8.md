@@ -15,7 +15,7 @@ Netwrix Privilege Secure for Discovery (NPS-D) 26.09.0 provides the supported pa
 
 **Audience:** NPS-D administrators and Netwrix Support engineers who plan, perform, or assist with the database upgrade.
 
-> **Important:** Complete this migration on NPS-D 26.09.0. NPS-D 26.09.1 and all later releases support MongoDB 8.0 only.
+> **Important:** Complete this migration on NPS-D 26.09.0 before upgrading to the NPS-D release that updates the backend to Python 3.13 and supported library versions, or to any later release. As part of that platform update, MongoDB 8.0 will be required, and MongoDB 4.0 will no longer be supported.
 
 This process is a side-by-side data migration, not an in-place MongoDB server upgrade. NPS-D creates a separate MongoDB 8.0 target and copies data at the application level. You don't need to perform sequential MongoDB server upgrades through versions 4.2, 4.4, 5.0, 6.0, and 7.0.
 

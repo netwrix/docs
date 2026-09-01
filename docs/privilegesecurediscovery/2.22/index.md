@@ -34,3 +34,13 @@ and continued active development. Customers requiring bug fixes or security upda
 to the latest supported release. Contact your Netwrix account representative for upgrade guidance.
 :::
 
+:::important MongoDB 4.0 deployments
+NPS-D 26.09.0 is the bridge release for moving existing deployments from MongoDB 4.0 to MongoDB
+8.0. New NPS-D 26.09.0 installations use MongoDB 8.0 by default. A future NPS-D release will
+update the backend to Python 3.13 and supported library versions. As part of that platform update,
+MongoDB 8.0 will be required, and MongoDB 4.0 will no longer be supported.
+
+If your deployment still uses MongoDB 4.0, upgrade to NPS-D 26.09.0 and complete
+[Upgrade MongoDB 4.0 to 8.0](./installation/upgrademongodb4to8.md) before upgrading to that release
+or any later version.
+:::

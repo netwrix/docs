@@ -120,8 +120,9 @@ sudo -E bash secureone.sh promote
 :::important MongoDB 4.0 upgrade
 NPS-D 26.09.0 is the bridge release for moving existing deployments from MongoDB 4.0 to
 MongoDB 8.0. After upgrading NPS-D services to 26.09.0, complete
-[Upgrade MongoDB 4.0 to 8.0](../upgrademongodb4to8.md) before upgrading to NPS-D 26.09.1 or a later
-release. NPS-D 26.09.1 and later support MongoDB 8.0 only.
+[Upgrade MongoDB 4.0 to 8.0](../upgrademongodb4to8.md) before upgrading to the NPS-D release that
+updates the backend to Python 3.13 and supported library versions, or any later release. As part of
+that platform update, MongoDB 8.0 will be required, and MongoDB 4.0 will no longer be supported.
 :::
 
 To upgrade to a new version, run on the primary node:
