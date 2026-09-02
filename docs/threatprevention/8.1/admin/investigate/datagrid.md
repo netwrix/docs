@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Investigate Data Grid
 
-Events are displayed in the data grid on the Investigate interface.
+The data grid on the Investigate interface displays events.
 
-Follow the steps to view events in the data grid.
+To view events in the data grid:
 
 **Step 1 –** Click **Investigate** in the left pane to launch the Investigate interface.
 
@@ -23,22 +23,21 @@ Follow the steps to view events in the data grid.
 **Step 3 –** Select the **Production** or **Archive** option button to view events from the
 respective database.
 
-The archive database is part of the Threat Prevention Database Maintenance feature and it can only
-be queried from the Administration Console. See the
+The archive database is part of the Threat Prevention Database Maintenance feature, and you can only
+query it from the Administration Console. See the
 [Archive Data](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/archive.md) topic for additional information.
 
-**Step 4 –** Use the **Get Top [number] Events** box to specify the number of events to be
-displayed.
+**Step 4 –** Use the **Get Top [number] Events** box to specify the number of events to
+display.
 
 **Step 5 –** Check the For Each Policy checkbox to view the specified number of events on a per
-policy basis. If unchecked, the specified number of events displayed are solely based on the time
-the event was logged.
+policy basis. If unchecked, the specified number of events displayed is based solely on the time
+Threat Prevention logged the event.
 
 **Step 6 –** Use the Refresh button to repopulate the data grid with the current information for the
 selected options.
 
-The Show All Columns link automatically adds any columns to the data grid that are currently hidden
-from view.
+The Show All Columns link automatically adds any hidden columns to the data grid.
 
 Each column in the data grid has a prefix identifying the type of information displayed.
 Double-click a populated grid column to access the
@@ -64,7 +63,7 @@ event. The columns display the following information for each event:
   - Authenticate – DN of the user object making the request
 
   :::note
-  For LDAP bind/monitoring/blocking, Affected Object Path is not used
+  For LDAP bind/monitoring/blocking, Affected Object Path isn't used
   :::
 
 
@@ -94,12 +93,12 @@ event. The columns display the following information for each event:
 - Perpetrator: Protocol – Protocol used for the monitored operation
 
   - File System monitoring/blocking – Name of the share where the operation was monitored/blocked.
-    It will be blank if the affected host has an operating system older than Windows Server 2008
+    This is blank if the affected host has an operating system older than Windows Server 2008
     R2.
 
 - Perpetrator: IP Address – IP address of the originating host
 
-  - File System monitoring/blocking – It will be blank if the affected host has an operating
+  - File System monitoring/blocking – This is blank if the affected host has an operating
     system older than Windows Server 2008 R2.
 
 - Perpetrator: MAC Address – Network adapter identifier
@@ -114,11 +113,11 @@ Investigate interface.
 
 ![Investigate Interface - Attributes area](/images/threatprevention/8.1/admin/investigate/attributes.webp)
 
-The following information (as applicable to the event) is displayed:
+The interface displays the following information (as applicable to the event):
 
 - Attribute Name – The name of the object attribute that is affected
 - Operation – The operation performed on the attribute
-- Old Value – Value prior to the monitored change
+- Old Value – Value before the monitored change
 - New Value – Value after the monitored change
 
 This data grid employs features for sorting, filtering, searching, and more. See the

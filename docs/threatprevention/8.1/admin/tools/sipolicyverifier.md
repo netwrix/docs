@@ -8,7 +8,7 @@ sidebar_position: 30
 
 A policy references file system paths and Active Directory objects — shares, folders,
 organizational units, groups, and accounts. When one of those objects is deleted, moved, or
-restructured, the policy that references it doesn't report an error. It simply stops matching
+restructured, the policy that references it doesn't report an error. It stops matching
 anything, and the gap goes unnoticed until an audit or an incident exposes it.
 
 `SIPolicyVerifier.exe` reads an exported policy file and checks whether every path and Active
@@ -93,7 +93,7 @@ spare.
 qualified domain name of the server that owns it, in that order, and the first one that answers is
 used. A path already written in UNC form is checked as it is. Each attempt times out after 15
 seconds. When every attempt against a server times out, the server is reported as unreachable and
-its paths are reported as skipped, which is not the same as invalid.
+its paths are reported as skipped, which isn't the same as invalid.
 
 **Active Directory objects** – A distinguished name is looked up over LDAP against the domain named
 in the distinguished name itself. A value in `<domain>\<user>` form is looked up by account name in

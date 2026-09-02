@@ -53,8 +53,8 @@ alert. Reporting uses the events database.
 
 ## Send to SIEM
 
-This action is added by selecting the desired SIEM profile to be the recipient of the SIEM
-notifications from the drop-down menu. Only SIEM profiles previously created are available for
+This action is added by selecting the SIEM profile you want to be the recipient of the SIEM
+notifications from the dropdown menu. Only SIEM profiles previously created are available for
 selection. This action can also be assigned on the
 [SIEM Tab](/docs/threatprevention/8.1/admin/configuration/systemalerting/siem.md) of the System Alerting Window.
 
@@ -86,13 +86,13 @@ Threat Manager Configuration window.
 ## Email Notifications
 
 :::warning
-Email notifications should not be used on highly active policies. Please reserve this
+Email notifications shouldn't be used on highly active policies. reserve this
 feature for policies where immediate notification of an event is needed.
 :::
 
 
-To enable email notifications, select the desired message profile to be recipient of the email
-notifications from the drop-down menu. Only message profiles previously created are available for
+To enable email notifications, select the message profile you want to be recipient of the email
+notifications from the dropdown menu. Only message profiles previously created are available for
 selection. This action can also be assigned on the
 [System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md).
 
@@ -109,7 +109,7 @@ Enable the Email Notifications checkbox, select a message profile and then choos
   - Subject – Threat Prevention will send an email notification (say, Notification1) for the first
     event only, and skip notifications for any other events whose email notification will have the
     same subject line as Notification1. It will skip sending notifications for the duration you
-    specify in the boxes below. Note that the subject line is configured within the message
+    specify in the boxes below. The subject line is configured within the message
     profile.
 
 - Set the duration (in minutes or hours) for which emails notifications are skipped after an email

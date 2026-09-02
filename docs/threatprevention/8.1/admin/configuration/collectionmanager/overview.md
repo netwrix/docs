@@ -6,7 +6,7 @@ sidebar_position: 10
 
 # Collection Manager Window
 
-The Collection Manager window enables you to manage all Microsoft Collections. Click
+Use the Collection Manager window to manage all Microsoft Collections. Click
 **Configuration** > **Collections** on the menu to launch it. This window is only available to
 Threat Prevention administrators.
 
@@ -15,15 +15,15 @@ Threat Prevention administrators.
 Collections are reusable lists of policy filter settings that help streamline the task of
 associating filters with event types on the Event Type tab during
 [Policy Configuration](/docs/threatprevention/8.1/admin/policies/configuration/configuration.md) or
-[Template Configuration](/docs/threatprevention/8.1/admin/templates/configuration/configuration.md). They are configured globally and can be
-used in multiple policies in place of or in conjunction with individual filters. These collections
-are empty until you populate them with your environment information. When a collection is modified,
-the modifications affect all policies referencing the collection. At least one Agent must be
-deployed to populate Collections.
+[Template Configuration](/docs/threatprevention/8.1/admin/templates/configuration/configuration.md). You configure them globally and can
+use them in multiple policies in place of or in conjunction with individual filters. These
+collections are empty until you populate them with your environment information. When you modify a
+collection, the modifications affect all policies referencing the collection. You must deploy at
+least one Agent to populate Collections.
 
-To use policy templates to create new policies, Collections must be configured. Several templates
-are configured using Collections as a policy filter. If the Collection is empty, then the policy
-does not monitor what it was designed to monitor.
+To use policy templates to create new policies, you must configure Collections. Several templates
+use Collections as a policy filter. If the Collection is empty, the policy
+doesn't monitor what it was designed to monitor.
 
 Collections are organized into the following categories for Microsoft Collections:
 
@@ -42,7 +42,7 @@ Collections are organized into the following categories for Microsoft Collection
 - ADCS Attributes – Any certificate attribute within Active Directory Certificate Services
 - IP Addresses – Any client address
 - Hosts – Any computer (by NetBIOS, DNS, and IP address)
-- File Paths – List of file paths for Windows file systems to be used with multiple agents
+- File Paths – List of file paths for Windows file systems, for use with multiple agents
 
 Select a collection category and click **Manage…** i to open the
 [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md).

@@ -22,19 +22,17 @@ The event filters for the Active Directory Lockdown event type are:
 
 ![Policy window - Active Directory Lockdown Event Type](/images/threatprevention/8.1/admin/policies/eventtype/adlockdown.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 :::warning
-Lockdown/blocking policies with blank filters result in everything being locked down or
-blocked.
+Lockdown/blocking policies with blank filters lock down or block everything.
 :::
 
 
 ## AD Event Filter
 
-Use the AD Event filter to select Active Directory events to be monitored or locked down by the
-policy.
+Use the AD Event filter to select the Active Directory events the policy monitors or locks down.
 
 ![Policy window - AD Event filter](/images/threatprevention/8.1/admin/policies/eventtype/adevent.webp)
 
@@ -52,7 +50,7 @@ selection.
 
 Use the AD Objects and Containers filter to set the scope of the policy to lockdown changes to
 specific objects or containers within Active Directory or to exclude changes to specific objects or
-containers from being locked down.
+containers from lockdown.
 
 ![Policy window - AD Objects and Containers filter](/images/threatprevention/8.1/admin/policies/eventtype/adobjectsandcontainers.webp)
 
@@ -68,10 +66,10 @@ areas to edit the lists.
   appropriate Collection category.
 - GUIDs area – The Add (+) button opens the
   [Select Active Directory Contexts Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/context.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -81,7 +79,7 @@ for additional information.
 
 ![Sub-Tree option in event type filters](/images/threatprevention/8.1/admin/policies/eventtype/subtree.webp)
 
-When contexts are added, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
+When you add contexts, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
 and all child contexts. Uncheck it to apply the filter to the listed context only.
 
 **Don’t check object names inside ‘member’ attribute**
@@ -96,7 +94,7 @@ is related to adding members to a group.
 
 Use the AD Classes And Attributes filter to set the scope of the policy to lockdown changes to
 specific Active Directory classes and/or attributes, or to exclude changes to specific classes
-and/or attributes from being locked down.
+and/or attributes from lockdown.
 
 ![Policy window - AD Classes And Attributes filter](/images/threatprevention/8.1/admin/policies/eventtype/adclassesattributes.webp)
 
@@ -110,10 +108,10 @@ Use the buttons in the Classes and Attributes areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -123,7 +121,7 @@ for additional information.
 
 Use the AD Perpetrator filter for lockdown to set the scope of the policy to lockdown specific
 security principals committing changes or to exclude specific security principals committing changes
-from being locked down.
+from lockdown.
 
 ![AD Perpetrator Protect filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratorprotect.webp)
 
@@ -131,8 +129,8 @@ Select the **Block** or **Allow** option button and then edit the list.
 
 :::note
 For the [Password Enforcement Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md), selecting **Allow**
-means that this policy will not validate the new passwords for the accounts listed here. Selecting
-**Block** means that this policy will validate the new passwords for the accounts listed here.
+means that this policy doesn't validate the new passwords for the accounts listed here. Selecting
+**Block** means that this policy validates the new passwords for the accounts listed here.
 :::
 
 
@@ -143,10 +141,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -162,15 +160,15 @@ hosts as originators of an event.
 Select the **Block** or **Allow** option button and then edit the list.
 
 - For the [Password Enforcement Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md), selecting **Allow** means that
-  this policy will not validate the new passwords for the accounts listed here. Selecting **Block**
-  means that this policy will validate the new passwords for the accounts listed here.
+  this policy doesn't validate the new passwords for the accounts listed here. Selecting **Block**
+  means that this policy validates the new passwords for the accounts listed here.
 - For the [Authentication Lockdown Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/authenticationlockdown.md), this filter blocks or
-  only allows authentication from the identified host(s).
+  only allows authentication from the identified hosts.
 
 Use the buttons in the Include Hosts area to edit the list.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/selectcomputers.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## User Account Control Filter
 
@@ -179,12 +177,13 @@ Use the User Account Control (UAC) filter to block specific UAC settings by the 
 ![Policy window - User Account Control (UAC) filter](/images/threatprevention/8.1/admin/policies/eventtype/useraccountcontrol.webp)
 
 The User Account Control filter displays a list of UAC flags. Choose specific userAccountControl
-flags from the list using the **Attribute Set** and/or **Attribute Clear** checkboxes. If an
-attribute is added or removed in Active Directory, it is blocked based on the filter set.
+flags from the list using the **Attribute Set** and/or **Attribute Clear** checkboxes. If someone
+adds or removes an attribute in Active Directory, Threat Prevention blocks it based on the filter
+set.
 
 ## Rule Preview Filter
 
-The Rule Preview filter displays a summary of the selected filter options. This is primarily used
+The Rule Preview filter displays a summary of the selected filter options. You use this primarily
 for troubleshooting.
 
 ![Event Type - Rule Preview filter](/images/threatprevention/8.1/admin/policies/eventtype/rulepreview.webp)

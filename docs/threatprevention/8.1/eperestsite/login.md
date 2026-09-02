@@ -4,9 +4,9 @@ description: "Login to EPE REST Service APIs"
 sidebar_position: 20
 ---
 
-# Login to EPE REST Service APIs
+# log in to EPE REST Service APIs
 
-You can use APIs to login to the EPE REST Service:
+You can use APIs to log in to the EPE REST Service:
 
 - POST api/account/login (Digest)
 - POST api/account/logoff (Digest)
@@ -16,7 +16,7 @@ You can use APIs to login to the EPE REST Service:
 
 This API is used to login under a specified account.
 
-This operation returns a session hash value in the body of the response, that can be used for
+This operation returns a session hash value in the body of the response, which you can use for
 api/Epe/CheckPassword requests. To use this value in an api/Epe/CheckPassword request, provide it in
 the header of the request.
 
@@ -39,7 +39,7 @@ Required Input Parameters
 
 This API is used to log off from a specified session.
 
-This operation makes session for the specified account and the hash value is not valid anymore.
+This operation makes session for the specified account and the hash value isn't valid anymore.
 
 **Authentication required – Digest**
 
@@ -59,7 +59,7 @@ Required Header Input Parameters
 
 This API is used to login under a specified account.
 
-This operation returns an access_token value in the body of the response, that can be used for
+This operation returns an access_token value in the body of the response, which you can use for
 api/Epe/CheckPassword requests. To use this value in an api/Epe/CheckPassword request, provide it in
 the header of the request.
 

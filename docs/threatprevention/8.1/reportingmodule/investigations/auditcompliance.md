@@ -6,7 +6,7 @@ sidebar_position: 50
 
 # Audit and Compliance Page
 
-The Audit and Compliance page in the Investigations interface list of saved out-of-the-box
+The Audit and Compliance page in the Investigations interface list of saved built-in
 investigations with applied filters for commonly used Audit and Compliance activity reports.
 
 Click **Investigate** in the application header bar to open the Investigations interface. Then click

@@ -8,14 +8,14 @@ sidebar_position: 20
 
 You may need to export collections, policies, and templates from the Administration Console and them
 import them back for certain reasons, such as during a reinstall. The Export Policies and Templates
-Window enables you to export these items to an XML file. See the
+Window exports these items to an XML file. See the
 [Export Policies and Templates Window](/docs/threatprevention/8.1/admin/tools/exportpoliciestemplates.md) topic for additional information
 on export.
 
-The Import window enables you to select an already exported XML file for import and configure the
+Use the Import window to select an already exported XML file for import and configure the
 import settings.
 
-Follow the steps to import the file.
+To import the file:
 
 **Step 1 –** Open the Import window in any of the following ways:
 
@@ -31,13 +31,13 @@ templates will be saved, and how duplicate items will be handled.
 be imported. Once selected, the Import File Details box displays statistical information on what
 will be imported and notes that were added while exporting the file.
 
-**Step 3 –** The Destination Folders section enables you to specify a folder from within the folder
+**Step 3 –** Use the Destination Folders section to specify a folder from within the folder
 structure in the Navigation pane for saving the policies and/or templates imported from the XML
 file. For policies, you can specify a folder under the Policies node in the navigation pane. For
 templates, you can specify a folder under the Templates node.
 
 :::note
-You cannot create new folder locations.
+You can't create new folder locations.
 :::
 
 
@@ -72,10 +72,10 @@ respectively.
 - Create Empty Collection
 
 **Step 5 –** Check the Append Import Details to Modified Entries checkbox to append the import
-information to a pre-existing item instead of overwriting it. This means that if a policy, template
-or collections exists in the system with the same name as in the XML file, the system will add the
-information from the XML file to it. If this checkbox is not checked, the system will overwrite the
-existing policy, template or collection with the respective item from the XML file.
+information to a pre-existing item instead of overwriting it. This means that if a policy, template,
+or collection exists in the system with the same name as in the XML file, the system will add the
+information from the XML file to it. If this checkbox isn't checked, the system will overwrite the
+existing policy, template, or collection with the respective item from the XML file.
 
 **Step 6 –** When the options are set as desired, click **Import**.
 

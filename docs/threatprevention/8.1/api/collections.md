@@ -38,7 +38,7 @@ Example of a remove collection command:
 
 ## Add or Modify Collections
 
-The `Export-SICollection` and `Import-SICollection` commands can be used to export and edit the XML
+Use the `Export-SICollection` and `Import-SICollection` commands to export and edit the XML
 file of an existing collection, and then import (add or replace) the edited collection. See the
 [Not a Policy XML Expert](/docs/threatprevention/8.1/api/overview.md#not-a-policy-xml-expert) topic for additional information on
 and how to make changes to the XML.
@@ -52,7 +52,7 @@ Console export function. See the
 [Export Policies and Templates Window](/docs/threatprevention/8.1/admin/tools/exportpoliciestemplates.md) topic for
 additional information.
 
-The following parameter(s) are required:
+The following parameters are required:
 
 - CollectionIDs [String] – List of comma separated Collection IDs
 
@@ -76,7 +76,7 @@ against the GUIDs in the XML file. One of the following actions occur:
 
 - XML file GUID matches existing collection – Updates the existing collection to match the new XML
   settings and fields
-- XML file GUID does not match any existing collections – New collection is created according to the
+- XML file GUID doesn't match any existing collections – New collection is created according to the
   XML parameters. It is created with a Threat Prevention system generated GUID and Collection ID;
   the system discards the GUID and Collection ID from the source XML.
 
@@ -101,11 +101,11 @@ Example of adding an import XML file:
 
 The API returns as output the CollectionID, GUID, and Collection Name of the collection that has
 been updated or created. If a new collection was created, it is up to the user to capture the
-Collection ID and Collection GUID assigned by Threat Prevention in order to later access that
+Collection ID and Collection GUID assigned by Threat Prevention to later access that
 collection.
 
 :::tip
-Remember, the Collection ID and Collection GUID are not the same as those in the source XML file.
+The Collection ID and Collection GUID aren't the same as those in the source XML file.
 Use the `Get-SICollection` API call to find the newly created collection and its associated GUID and
 Collection ID by name.
 :::

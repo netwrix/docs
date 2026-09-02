@@ -9,7 +9,7 @@ sidebar_position: 10
 The Netwrix Active Directory security monitoring solution enables organizations to efficiently
 monitor and prevent Active Directory changes, authentications, and attacks in real-time, without any
 reliance on native logging or security controls. Using the preconfigured Netwrix Active Directory
-App for QRadar, you can quickly understand all Active Directory changes as a whole, patterns of
+App for QRadar, you can understand all Active Directory changes as a whole, patterns of
 activity indicative of account compromise, and attempts to compromise security, along with the
 ability to block undesired changes and access.
 
@@ -28,9 +28,9 @@ IBM X-Force Exchange.
 Download the
 [Stealthbits Active Directory App for QRadar](https://exchange.xforce.ibmcloud.com/hub/extension/STEALTHbits%20Technologies:StealthINTERCEPT%20Dashboard)
 from the [IBM X-Force App Exchange](https://exchange.xforce.ibmcloud.com/hub). After downloading it,
-follow these steps to install it within QRadar.
+use the following steps to install it within QRadar.
 
-**Step 1 –** Click on the Admin tab in QRadar.
+**Step 1 –** Click the Admin tab in QRadar.
 
 **Step 2 –** Under System Configuration, click Extensions Management.
 
@@ -49,10 +49,10 @@ additional information.
 
 ## Initial Configuration for the Active Directory App for QRadar
 
-Follow the steps to configure QRadar to receive data from Threat Prevention.
+To configure QRadar to receive data from Threat Prevention:
 
 :::tip
-Remember, prior to using the Active Directory app for QRadar, Threat Prevention must be configured
+Before using the Active Directory app for QRadar, you must configure Threat Prevention
 to send data to QRadar.
 :::
 
@@ -66,7 +66,7 @@ Threat Prevention to send data to QRadar.
 
 **Step 3 –** Select **Log Sources**.
 
-**Step 4 –** View the Log Sources list. If the data source was not automatically created, click Add,
+**Step 4 –** View the Log Sources list. If the data source wasn't automatically created, click Add,
 enter the following information, and click Save.
 
 - Log Source Name – Enter a descriptive name to identify the data source
@@ -77,7 +77,7 @@ enter the following information, and click Save.
   - Threat Prevention Alerts
   - Threat Prevention Analytics
 
-    (It is necessary to set up three separate log sources, and each one should use one of these
+    (Set up three separate log sources, and each one should use one of these
     types.)
 
 - Protocol Configuration – Select Syslog
@@ -96,7 +96,7 @@ The Netwrix Active Directory App will now display activity from the Threat Preve
 Creating an index for the StealthINTERCEPT logs enhances the performance of the Netwrix Active
 Directory App for QRadar.
 
-**Step 1 –** Click on the Admin tab in QRadar.
+**Step 1 –** Click the Admin tab in QRadar.
 
 **Step 2 –** Under System Configuration, click Index Management.
 

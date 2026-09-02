@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The Netwrix Threat Hunting solution enables organizations to target and hunt active cyber threats.
 Using the preconfigured Netwrix Threat Hunting App for Splunk, analysts have a powerful incident
-response tool that allows them to quickly and efficiently compile forensic evidence to investigate
+response tool that lets them compile forensic evidence efficiently to investigate
 the scope, impact, and root cause of an incident. The Netwrix Threat Hunting App for Splunk focuses
 in on the actions of specific users, including the files they accessed and changes they made to
 escalate privileges to data resources.
@@ -21,7 +21,7 @@ send the monitored events to Splunk.
   show file system activity will display data.
 - If only Threat Prevention is configured to send events to Splunk, all the cards will display data.
 
-After installing the Threat Hunting App for Splunk, ensure that the applicable Netwrix product(s)
+After installing the Threat Hunting App for Splunk, ensure that the applicable Netwrix products
 have been configured to send events to Splunk.
 
 ## App Installation in Splunk (Threat Hunting)
@@ -38,12 +38,12 @@ Threat Prevention or Netwrix File Activity Monitor.
 
 ## Initial Configuration of the Threat Hunting App for Splunk
 
-Follow the steps to configure Splunk to receive data from either Threat Prevention or Netwrix
-Netwrix Activity Monitor.
+To configure Splunk to receive data from either Threat Prevention or Netwrix
+Activity Monitor:
 
 :::tip
-Remember, prior to using the Netwrix Threat Hunting App for Splunk, the relevant Netwrix product
-must be configured to send data to Splunk.
+Before using the Netwrix Threat Hunting App for Splunk, you must configure the relevant Netwrix
+product to send data to Splunk.
 :::
 
 

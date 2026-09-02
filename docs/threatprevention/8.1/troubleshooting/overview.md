@@ -13,7 +13,7 @@ consideration when using the Administration Console.
 
 **Best Practice #1 – Collect What You Need, NOT Everything**
 
-While Threat Prevention is capable of collecting many events, it is recommended to carefully scope
+While Threat Prevention can collect many events, Netwrix recommends carefully scoping
 policies, e.g. admin group membership, finance data access, or VIP mailbox non-owner logons.
 Excessive data events accumulating from monitoring everything can overwhelm the Threat Prevention
 user with ‘noise', fill the Threat Prevention databases prematurely, and adversely impact
@@ -39,19 +39,19 @@ Whether choosing to archive or delete data, this is always a good feature to ena
 Analytics provide organizations with the ability to capture and analyze authentication or file
 system traffic. The best way to employ analytics is to turn on one at a time and then ‘tune’ it to
 the targeted environment before turning on another. Each environment generates unique authentication
-or file system ‘noise’ that can be filtered out by adjusting triggers and filters. Once the analytic
-is in tune with the environment, move to the next one desired.
+or file system ‘noise’ that can be filtered out by adjusting triggers and filters. After the analytic
+is in tune with the environment, move to the next one you want.
 
 **Best Practice #4 – Monitor before Blocking**
 
 The lockdown event types are used to block events. When configuring a blocking policy, it is always
-a best practice to configure and enable a monitoring policy with the desired filters first as a
-trial run. This will allow you to ensure the filters set will block events the way they were
-intended. Once the desired filters are confirmed, then the blocking policy is good-to-go.
+a best practice to configure and enable a monitoring policy with the filters you want first as a
+trial run. This confirms the filters set will block events the way they were
+intended. After the filters are confirmed, then the blocking policy is good-to-go.
 
 **Best Practice #5 – File System ‘Read’ Monitoring, in Moderation**
 
-It is recommended to limit the use of monitoring Read events within a file system to those files
+Netwrix recommends limiting the use of monitoring Read events within a file system to those files
 containing very sensitive data (e.g. super-secret blends of herbs and spices, launch codes, etc.).
 The volume of Read events in most environments can fill the Threat Prevention databases prematurely.
 
@@ -60,14 +60,14 @@ The volume of Read events in most environments can fill the Threat Prevention da
 The following information provides basic troubleshooting techniques and frequently asked questions
 (FAQs) for the Administration Console users.
 
-**FAQ: Microsoft just released a security bulletin that impacts LSASS. How do I know if the Microsoft KB will affect the Agent instrumentation?**
+**FAQ: Microsoft just released a security bulletin that impacts LSASS. How do you know if the Microsoft KB will affect the Agent instrumentation?**
 
 The Agent has been configured to monitor LSASS after a reboot (triggered by the Microsoft KB). If
 LSASS stops shortly after a reboot (default within five minutes), then the Agent will be stopped and
 the Agent service will be changed to manual start.
 
 :::info
-Reach out to [Netwrix Support](https://www.netwrix.com/support.html) prior to
+Reach out to [Netwrix Support](https://www.netwrix.com/support.html) before
 restarting the Agent, as a hotfix may exist which will prevent future issues with that Microsoft
 Security Bulletin.
 :::
@@ -75,7 +75,7 @@ Security Bulletin.
 
 Threat Prevention sends the _LSASS process terminated_ alert when the LSASS process stops shortly
 after a reboot. The Agent stops and all monitoring/blocking by that Agent stops. To resolve the
-issue, either upgrade to the latest version of the Agent or simply upgrade
+issue, either upgrade to the latest version of the Agent or upgrade
 SI.ActiveDirectoryMonitor.dll - commonly known as ADMonitor DLL (recommended). See the
 [Upgrade ADMonitor](/docs/threatprevention/8.1/admin/agents/agent-management/upgradeadmonitor.md)topic for additional information.
 
@@ -86,7 +86,7 @@ topic for additional information.
 :::
 
 
-**FAQ: The user interface is not displaying correctly and windows are cut off. What should I do?**
+**FAQ: The user interface isn't displaying correctly and windows are cut off. What should you do?**
 
 If any of the dialogs in the Administration Console have buttons or other user interface (UI)
 elements hidden or partially hidden, then you are advised to reduce their Windows font size. For
@@ -101,7 +101,7 @@ for Authentication traffic. This allows the Active Directory event data to flow 
 even if there is a flood of Authentication traffic. A flood in Authentication traffic could result
 in a loss of Authentication event data. However, this will not impact Active Directory event data.
 
-**FAQ: How can I prevent flooding the memory with authentication traffic?**
+**FAQ: How can you prevent flooding the memory with authentication traffic?**
 
 The options in the
 [Event Filtering Configuration Window](/docs/threatprevention/8.1/admin/configuration/eventfilteringconfiguration.md)
@@ -124,7 +124,7 @@ add that domain to the Trusted Domains Blacklist so the Agent skips it. See the
 [Trusted Domains Blacklist Window](/docs/threatprevention/8.1/admin/configuration/trusteddomainsblacklist.md)
 topic for additional information.
 
-**FAQ: Where are the Threat Prevention log files, and how do I change what they record?**
+**FAQ: Where are the Threat Prevention log files, and how do you change what they record?**
 
 Each component writes to a `logs` folder inside its own installation folder, and AD Monitor keeps a
 separate set of logs on the domain controller. See the

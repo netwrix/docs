@@ -21,7 +21,7 @@ supported:
 
 Additionally the server must meet these requirements:
 
-- US English language installation
+- U.S. English language installation
 - Domain member
 
 **RAM, CPU, and Disk Space**
@@ -61,7 +61,7 @@ Enforcement solution, is deployed on the server where the Enterprise Manager res
 
 The following are additional requirements for the Threat Prevention server:
 
-- .NET 4.7.2 or .NET 4.8.x installed. If the installer does not find it already installed, it will
+- .NET 4.7.2 or .NET 4.8.x installed. If the installer doesn't find it already installed, it will
   install .NET Framework 4.7.2.
 
 **Additional Server Considerations**

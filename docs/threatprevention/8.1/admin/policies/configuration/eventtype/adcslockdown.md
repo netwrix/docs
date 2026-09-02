@@ -19,12 +19,11 @@ The event filters for the ADCS Lockdown event type are:
 
 ![Policy window - ADCS Lockdown Event Type](/images/threatprevention/8.1/admin/policies/eventtype/adcslockdown.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 :::warning
-Lockdown/blocking policies with blank filters result in everything being locked down or
-blocked.
+Lockdown/blocking policies with blank filters lock down or block everything.
 :::
 
 
@@ -41,10 +40,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -53,7 +52,7 @@ for additional information.
 ## ADCS Lockdown Attributes Filter
 
 Use the ADCS Lockdown Attributes filter to set the scope of the policy to lockdown requests to
-specific attributes, or to exclude requests to specific attributes from being locked down.
+specific attributes, or to exclude requests to specific attributes from lockdown.
 
 ![Policy window - ADCS Lockdown Attributes filter](/images/threatprevention/8.1/admin/policies/eventtype/adcslockdownattributes.webp)
 
@@ -66,14 +65,14 @@ Use the buttons in the Attributes area to edit the list.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 
 ## AD Perpetrator Filter
 
 Use the AD Perpetrator filter for lockdown to set the scope of the policy to lockdown specific
 security principals committing changes or to exclude specific security principals committing changes
-from being locked down.
+from lockdown.
 
 ![AD Perpetrator Protect filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratorprotect.webp)
 
@@ -81,8 +80,8 @@ Select the **Block** or **Allow** option button and then edit the list.
 
 :::note
 For the [Password Enforcement Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md), selecting **Allow**
-means that this policy will not validate the new passwords for the accounts listed here. Selecting
-**Block** means that this policy will validate the new passwords for the accounts listed here.
+means that this policy doesn't validate the new passwords for the accounts listed here. Selecting
+**Block** means that this policy validates the new passwords for the accounts listed here.
 :::
 
 
@@ -93,10 +92,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -114,11 +113,11 @@ Select the **Block** or **Allow** option button and then edit the list.
 Use the buttons in the Include Hosts area to edit the list.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/selectcomputers.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Rule Preview Filter
 
-The Rule Preview filter displays a summary of the selected filter options. This is primarily used
+The Rule Preview filter displays a summary of the selected filter options. You use this primarily
 for troubleshooting.
 
 ![Event Type - Rule Preview filter](/images/threatprevention/8.1/admin/policies/eventtype/rulepreview.webp)

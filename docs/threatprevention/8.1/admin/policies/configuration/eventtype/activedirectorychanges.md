@@ -25,13 +25,12 @@ The event filters for the Active Directory Changes event type are:
 
 ![Policy window - Active Directory Changes Event Type](/images/threatprevention/8.1/admin/policies/eventtype/adchanges.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 ## AD Event Filter
 
-Use the AD Event filter to select Active Directory events to be monitored or locked down by the
-policy.
+Use the AD Event filter to select the Active Directory events the policy monitors or locks down.
 
 ![Policy window - AD Event filter](/images/threatprevention/8.1/admin/policies/eventtype/adevent.webp)
 
@@ -58,10 +57,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -83,19 +82,19 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 **Sub Tree**
 
 ![Sub-Tree option in event type filters](/images/threatprevention/8.1/admin/policies/eventtype/subtree.webp)
 
-When contexts are added, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
+When you add contexts, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
 and all child contexts. Uncheck it to apply the filter to the listed context only.
 
 ## AD Classes Filter
 
 Use the AD Classes filter to set the scope of the policy to only monitor specific classes within
-Active Directory or to exclude specific classes from being monitored.
+Active Directory or to exclude specific classes from monitoring.
 
 ![Policy window - AD Classes filter](/images/threatprevention/8.1/admin/policies/eventtype/adclasses.webp)
 
@@ -105,12 +104,12 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## AD Attributes Filter
 
 Use the AD Attributes filter to set the scope of the policy to only monitor specific Active
-Directory attributes or to exclude specific attributes from being monitored.
+Directory attributes or to exclude specific attributes from monitoring.
 
 ![Policy window - AD Attributes filter](/images/threatprevention/8.1/admin/policies/eventtype/adattributes.webp)
 
@@ -121,41 +120,41 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
-**Attribute, Operator and Value**
+**Attribute, Operator, and Value**
 
-When an attribute is selected, it is added to the filter and a drop-down menu is displayed in the
+When an attribute is selected, it is added to the filter and a dropdown menu is displayed in the
 Operation column with **Any Value** selected. You can further scope the attributes to enable the
 policy to only capture events based on the new value. Use the Operation and Value columns of the
 Include Attributes and Exclude Attributes boxes to achieve this.
 
-The Operation drop-down menu has the following options:
+The Operation dropdown menu has the following options:
 
 - Any Value – No scoping applied for this attribute
 - (empty value) – Blank attribute values
 - Equal – Attribute values that are identical to the Value field
-- Not Equal – Attribute values that do not match the Value field
+- Not Equal – Attribute values that don't match the Value field
 - Less Than – Attribute values below the numeric value or before the alphabetical value supplied in
   the Value field
 - Greater Than – Attribute values above the numeric value or after the alphabetical value supplied
   in the Value field
 - Contains – Attribute value includes the user supplied string (numbers are treated as strings) in
   the Value field
-- Not Contain – Attribute values do not include the user supplied string (numbers are treated as
+- Not Contain – Attribute values don't include the user supplied string (numbers are treated as
   strings) in the Value field
 - Starts with – Attribute values start with the user supplied string in the Value field
 
-Select an **Operation** and type a value in the textbox. The value may include alphanumeric
-characters, string type, or dates. Only one value is supported; do not specify multiple values for
-the attribute. Also the Value field is not case sensitive.
+Select an **Operation** and enter a value in the textbox. The value may include alphanumeric
+characters, string type, or dates. Only one value is supported; don't specify multiple values for
+the attribute. Also the Value field isn't case sensitive.
 
 When you select another attribute, a new row is added, where you can specify an operator and a value
 for that attribute. Each row is treated as an “OR” statement. If any event matches any of the
 attribute filters, then the event data includes all attributes in the list.
 
 :::note
-You cannot specify more than one value for an attribute and you cannot select the same
+You can't specify more than one value for an attribute and you can't select the same
 attribute twice. To use the same attribute again, you have to add the same event type again to the
 policy, select that event type and then select a previously used attribute to include in the Add
 Attributes filter.
@@ -169,7 +168,7 @@ flags to add to the filter.
 ## AD Objects Filter
 
 Use the AD Objects filter to set the scope of the policy to only monitor specific objects in Active
-Directory or to exclude specific objects from being monitored.
+Directory or to exclude specific objects from monitoring.
 
 ![Policy window - AD Objects filter](/images/threatprevention/8.1/admin/policies/eventtype/adobjects.webp)
 
@@ -180,10 +179,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -193,7 +192,7 @@ for additional information.
 
 Use the AD Perpetrator filter for monitoring to set the scope of the policy to only monitor specific
 security principals committing changes or to exclude specific security principals committing changes
-from being monitored.
+from monitoring.
 
 ![Event Type - AD Perpetrator Monitoring filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratormonitoring.webp)
 
@@ -205,10 +204,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -218,7 +217,7 @@ for additional information.
 
 ![Sub-Tree option in event type filters](/images/threatprevention/8.1/admin/policies/eventtype/subtree.webp)
 
-When contexts are added, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
+When you add contexts, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
 and all child contexts. Uncheck it to apply the filter to the listed context only.
 
 ## IP Addresses (from) Filter
@@ -235,10 +234,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -247,7 +246,7 @@ for additional information.
 ## Hosts (from) Filter
 
 Use the Hosts (from) filter for monitoring to set the scope of the policy to only monitor specific
-hosts as originators of an event or to exclude specific hosts from being monitored.
+hosts as originators of an event or to exclude specific hosts from monitoring.
 
 ![Event Type – Hosts (from) filter](/images/threatprevention/8.1/admin/policies/eventtype/hostsfrom.webp)
 
@@ -258,10 +257,10 @@ areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -274,7 +273,7 @@ both.
 
 ![Event Type – Success filter](/images/threatprevention/8.1/admin/policies/eventtype/success.webp)
 
-Select the radio button for the desired monitoring filter:
+Select the radio button for the monitoring filter you want:
 
 - Success – Only monitors successful events
 - Failure – Only monitors failed events
@@ -300,7 +299,7 @@ condition box displays conditions grouped by logical operators.
 
 **Logical Operator**
 
-The logical operator is displayed as left aligned red text. To change the logical operator, click on
+The logical operator is displayed as left aligned red text. To change the logical operator, click
 it to open a menu with the following options:
 
 - And
@@ -316,12 +315,12 @@ To add a filter (condition) to the filter statement or to start a new group of f
 - Add Condition – Adds a conditions to the filter statement
 - Add Group – Adds a group with a conditions and a logical operator to the filter statement
 
-A new row is inserted that displays an event data drop-down menu, a comparison operator, and a Value
+A new row is inserted that displays an event data dropdown menu, a comparison operator, and a Value
 box.
 
 **Event Data Selection**
 
-The Event Data drop-down menu is displayed in orange. it contains a list of all the fields that can
+The Event Data dropdown menu is displayed in orange. it contains a list of all the fields that can
 be part of an event. Click it to select an event name. Your selection is displayed in orange text in
 the box below.
 
@@ -329,10 +328,10 @@ The “Attributes: New” and “Attributes: Old” options are special cases di
 
 **Comparison Operator**
 
-The comparison operator drop-down menu is displayed in blue. To change it, click on it to open a
+The comparison operator dropdown menu is displayed in blue. To change it, click it to open a
 menu with options that associate with the selected event data field.
 
-If you have selected the “Attributes: New” or “Attributes: Old” option in the Event Data drop-down
+If you have selected the “Attributes: New” or “Attributes: Old” option in the Event Data dropdown
 menu, then only the following comparison operators are available:
 
 - ContainsValue
@@ -345,12 +344,12 @@ Your selected comparison operator is displayed in blue text in the box below.
 
 **Value**
 
-The value box is displayed in green. Click in it to type a value, then press Enter. The value is
+The value box is displayed in green. Click in it to enter a value, then press Enter. The value is
 displayed in green text in the box below.
 
 :::note
 The Value box only accepts a single string except when the “Attributes: New” or
-“Attributes: Old” option is selected in the Event Data drop-down menu.
+“Attributes: Old” option is selected in the Event Data dropdown menu.
 :::
 
 
@@ -358,7 +357,7 @@ In case of “Attributes: New” and “Attributes: Old”, type three comma sep
 in the Value box in the following format:
 
 %name%,%suboperation%,%value%
-(White space is not allowed between the comma and the argument, unless white space is part of the
+(White space isn't allowed between the comma and the argument, unless white space is part of the
 argument.)
 
 where:
@@ -372,14 +371,14 @@ All the parameters are optional and only evaluated if non-empty. This means that
 attributes either only by %name% or %suboperation% or %value% or by combination of
 %name%/%suboperation%/%value%.
 
-If %value% is not specified, all the functions behave in the same way because they implement the
+If %value% isn't specified, all the functions behave in the same way because they implement the
 same logic for %name% / %suboperation% comparison. The difference is applicable only when %value% is
 specified.
 
 Following is how the comparison operator (displayed in blue) works with %value%:
 
 - ContainsValue – matches if an attribute has any value containing %value%
-- DoesNotContainValue – matches if an attribute does not have any value containing %value%
+- DoesNotContainValue – matches if an attribute doesn't have any value containing %value%
 - EqualsValue – matches if an attribute has any value equal to %value%
 - StartsWithValue – matches if an attribute has any value starting with %value%
 - EndsWithValue – matches if an attribute has any value ending with %value%

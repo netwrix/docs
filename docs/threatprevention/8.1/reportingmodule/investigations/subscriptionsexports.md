@@ -31,7 +31,7 @@ The table has the following columns:
 - Next Run – Date timestamp of the next scheduled report
 - Recipients – List of email recipients subscribed to the report
 - Shared folder – Display name for the configured shared folder where scheduled exports are stored
-- Actions – Menu option per table row. This column does not have a header. It is represented by
+- Actions – Menu option per table row. This column doesn't have a header. It is represented by
   three dots and shows up when you hover over a row.
 
 Click a row to open the Subscription to or Schedule export window where you can edit the
@@ -68,17 +68,17 @@ The Table Filter window opens from the table column menu.
 
 ![Table Filter window](/images/threatprevention/8.1/reportingmodule/investigations/filterwindow.webp)
 
-Follow the steps to build a filter statement.
+To build a filter statement:
 
-**Step 1 –** Select a table column from the **Columns** drop-down menu.
+**Step 1 –** Select a table column from the **Columns** dropdown menu.
 
-**Step 2 –** Select an operator from the **Operator** drop-down menu. Options include: contains,
-equals, starts with, ends with, is empty, is not empty, and is any of.
+**Step 2 –** Select an operator from the **Operator** dropdown menu. Options include: contains,
+equals, starts with, ends with, is empty, isn't empty, and is any of.
 
 **Step 3 –** Enter the text string for the filter value in the **Value** box.
 
 **Step 4 –** To build a complex filter statement, click **Add filter**. A new row appears with an
-additional drop-down menu for creating an _AND_ or an _OR_ statement. Then repeat Steps 1-3 for the
+additional dropdown menu for creating an _AND_ or an _OR_ statement. Then repeat Steps 1-3 for the
 row.
 
 The table is filtered to matches of the filter.

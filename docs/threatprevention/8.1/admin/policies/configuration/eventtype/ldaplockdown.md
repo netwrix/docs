@@ -21,12 +21,11 @@ The event filters for the LDAP Monitoring event type are:
 
 ![Policy window - LDAP Lockdown Event Type](/images/threatprevention/8.1/admin/policies/eventtype/ldaplockdown.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 :::warning
-Lockdown/blocking policies with blank filters result in everything being locked down or
-blocked.
+Lockdown/blocking policies with blank filters lock down or block everything.
 :::
 
 
@@ -47,7 +46,7 @@ types.
 The operation selected affects what options are available on this filter and what other filters are
 available for the event type:
 
-- LDAP Search – Use the LDAP Search operation to search for and identify activity that does not
+- LDAP Search – Use the LDAP Search operation to search for and identify activity that doesn't
   conform to your security configurations
 
   - This option displays additional filters for Secure configurations and Search scopes. See the
@@ -59,7 +58,7 @@ available for the event type:
 
   - See the [LDAP Ping Operations Use Case](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/ldapmonitoring/ldapping.md) topic for additional information.
 
-  When LDAP Ping is selected, the Secure Configurations and Search scopes sections are not
+  When LDAP Ping is selected, the Secure Configurations and Search scopes sections aren't
   displayed.
 
 ## Domains/Servers Filter
@@ -75,10 +74,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -88,7 +87,7 @@ for additional information.
 
 Use the AD Perpetrator filter for lockdown to set the scope of the policy to lockdown specific
 security principals committing changes or to exclude specific security principals committing changes
-from being locked down.
+from lockdown.
 
 ![AD Perpetrator Protect filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratorprotect.webp)
 
@@ -96,8 +95,8 @@ Select the **Block** or **Allow** option button and then edit the list.
 
 :::note
 For the [Password Enforcement Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md), selecting **Allow**
-means that this policy will not validate the new passwords for the accounts listed here. Selecting
-**Block** means that this policy will validate the new passwords for the accounts listed here.
+means that this policy doesn't validate the new passwords for the accounts listed here. Selecting
+**Block** means that this policy validates the new passwords for the accounts listed here.
 :::
 
 
@@ -108,10 +107,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -120,7 +119,7 @@ for additional information.
 ## LDAP Query Filter
 
 Use the LDAP Query filter for lockdown to set the scope of the policy to lockdown specific LDAP
-queries or to exclude specific queries from being locked down.
+queries or to exclude specific queries from lockdown.
 
 ![Policy window - LDAP Query filter](/images/threatprevention/8.1/admin/policies/eventtype/ldapquerylockdown.webp)
 
@@ -133,17 +132,17 @@ Select the **Block** or **Allow** option button and then edit the list.
 
 :::warning
 Users should fully understand the blocking rule summary displayed in the Rule Preview
-filter in order to understand the scope of what will be blocked. Blocking more than the intended
+filter to understand the scope of what will be blocked. Blocking more than the intended
 queries will adversely impact the LDAP environment.
 :::
 
 
-Enter a query in the LDAP Queries box. You can type a string in the textbox. Alternatively, use the
+Enter a query in the LDAP Queries box. You can enter a string in the textbox. Alternatively, use the
 buttons in the respective sections.
 
 - The Add (+) buttons open the
   [Select Active Directory Objects Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/objects.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Hosts (from) Filter
 
@@ -155,19 +154,19 @@ hosts as originators of an event.
 Select the **Block** or **Allow** option button and then edit the list.
 
 - For the [Password Enforcement Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md), selecting **Allow** means that
-  this policy will not validate the new passwords for the accounts listed here. Selecting **Block**
-  means that this policy will validate the new passwords for the accounts listed here.
+  this policy doesn't validate the new passwords for the accounts listed here. Selecting **Block**
+  means that this policy validates the new passwords for the accounts listed here.
 - For the [Authentication Lockdown Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/authenticationlockdown.md), this filter blocks or
-  only allows authentication from the identified host(s).
+  only allows authentication from the identified hosts.
 
 Use the buttons in the Include Hosts area to edit the list.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/selectcomputers.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Rule Preview Filter
 
-The Rule Preview filter displays a summary of the selected filter options. This is primarily used
+The Rule Preview filter displays a summary of the selected filter options. You use this primarily
 for troubleshooting.
 
 ![Event Type - Rule Preview filter](/images/threatprevention/8.1/admin/policies/eventtype/rulepreview.webp)

@@ -70,8 +70,8 @@ The HIPAA folder contains the following templates:
 
 | Template         | Description           | TAGS |
 | ---------- | -------------- | ---- |
-| HIPAA: AD Account Logons                  | No customizations required. Make sure the Configuration > Event Filtering > Exclude 'Noise' Events option is Off for this policy        | None |
-| HIPAA: Successful Account Authentications | Gathers successful AD authentications. <br />Utilizes built-In “Successful Authentications” – Include Perpetrators Collection to define which accounts will be monitored for successful authentications. Add accounts to be monitored to this collection | None |
+| HIPAA: AD Account Logons                  | No customizations required. ensure the Configuration > Event Filtering > Exclude 'Noise' Events option is Off for this policy        | None |
+| HIPAA: Successful Account Authentications | Gathers successful AD authentications. <br />uses built-In “Successful Authentications” – Include Perpetrators Collection to define which accounts will be monitored for successful authentications. Add accounts to be monitored to this collection | None |
 
 **164.308 (a)(5)(ii)(D) – Password Management Folder**
 
@@ -105,5 +105,5 @@ The HIPAA folder contains the following templates:
 
 | Template       | Description         | TAGS |
 | -------------- | ---------------- | ---- |
-| HIPAA: AD PHI User Account Logons                | No customizations required. Make sure the Configuration > Event Filtering > Exclude 'Noise' Events option is Off for this policy         | None |
-| HIPAA: Successful AD PHI Account Authentications | Gathers Successful AD Authentications. <br />Utilizes built-In “Successful HIPAA PHI Account Authentications” – Include Perpetrators Collection to define which accounts will be monitored for successful authentications. Add accounts to be monitored to this collection | None |
+| HIPAA: AD PHI User Account Logons                | No customizations required. ensure the Configuration > Event Filtering > Exclude 'Noise' Events option is Off for this policy         | None |
+| HIPAA: Successful AD PHI Account Authentications | Gathers Successful AD Authentications. <br />uses built-In “Successful HIPAA PHI Account Authentications” – Include Perpetrators Collection to define which accounts will be monitored for successful authentications. Add accounts to be monitored to this collection | None |

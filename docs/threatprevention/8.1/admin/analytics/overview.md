@@ -10,15 +10,15 @@ Analytics provide organizations with the ability to capture and analyze authenti
 occurring within their Active Directory environments in real-time to detect patterns of behavior and
 scenarios relating to attacks and attempts to compromise security.
 
-An Analytic is basically a hard-coded policy. Instead of reporting on individual events, it reports
-on incidents that are triggered by those events.
+An Analytic is a hard-coded policy that reports on incidents triggered by events, rather than on the
+individual events themselves.
 
-Once an Analytic is configured and enabled, the Agent begins monitoring for events. Each event is
-stored in the Agent memory until the trigger threshold is met. Then an incident is logged in the
-database along with the event details that triggered the incident. Events that do not trigger an
-incident are discarded from memory after the corresponding time range.
+Once you configure and enable an Analytic, the Agent begins monitoring for events. The Agent stores
+each event in memory until the trigger threshold is met. It then logs an incident in the
+database along with the event details that triggered the incident. The Agent discards events that
+don't trigger an incident from memory after the corresponding time range.
 
-The tables below outline the authentication analytics Threat Prevention provides out-of-the box,
+The following tables outline the authentication analytics Threat Prevention provides out-of-the box,
 along with definitions and examples to better understand each analytic.
 
 Click **Analytics** in the left pane to launch the Analytics interface.
@@ -48,9 +48,9 @@ type.
 The Refresh button on the Analytics ribbon repopulates both the graphical display and the analytic
 list.
 
-The Permissions section at the bottom of the interface allows you to protect Analytic policies at
-the Analytics node. Once a user is assigned permission, all analytic policies, configurations, and
-data are protected from any user not included in the permissions list. See the
+Use the Permissions section at the bottom of the interface to protect Analytic policies at
+the Analytics node. Once you assign permission to a user, Threat Prevention protects all analytic
+policies, configurations, and data from any user not included in the permissions list. See the
 [Protect Policies](/docs/threatprevention/8.1/admin/policies/dataprotection.md#protect-policies) topic for instructions on how to
 protect analytic policies.
 
@@ -60,20 +60,20 @@ Directly under the Analytics node are the individual analytics nodes for accessi
 the monitored incidents and configuring the analytic type:
 
 - [Brute Force Attacks Analytic Type](/docs/threatprevention/8.1/admin/analytics/bruteforceattacks.md) – Reports on failed attempts from a
-  single host to access a given host. It can be triggered by different user accounts with bad
-  passwords or invalid account names.
+  single host to access a given host. Different user accounts with bad passwords or invalid account
+  names can trigger it.
 - [User Account Hacking Analytic Type](/docs/threatprevention/8.1/admin/analytics/useraccounthacking.md) – Reports on multiple bad passwords
   provided for a given valid user account
 - [Horizontal Movement Attacks Analytic Type](/docs/threatprevention/8.1/admin/analytics/horizontalmovementattacks.md) – Reports on security
   principals that are accessing more than the threshold of resources during a specified time
-  interval. This may be indicative of a person trying to obtain information from as many servers as
-  possible which they normally would not be accessing.
+  interval. This may indicate a person trying to obtain information from as many servers as
+  possible, which they normally wouldn't access.
 - [Bad User ID (by User) Analytic Type](/docs/threatprevention/8.1/admin/analytics/baduseriduser.md) – Reports on pre-authentication failures
-  due to using account names that cannot be found in Active Directory. These incidents are grouped
-  per account name.
+  due to using account names that don't exist in Active Directory. Threat Prevention groups these
+  incidents per account name.
 - [Bad User ID (by Source Host) Analytic Type](/docs/threatprevention/8.1/admin/analytics/baduseridsourcehost.md) – Reports on
-  pre-authentication failures due to using account names that cannot be found in Active Directory.
-  These incidents are grouped per source host.
+  pre-authentication failures due to using account names that don't exist in Active Directory.
+  Threat Prevention groups these incidents per source host.
 - [Breached Password Analytic Type](/docs/threatprevention/8.1/admin/analytics/breachedpassword.md) – Reports on multiple failed
   authentications followed by a successful authentication in a specified time frame
 - [Concurrent Logins Analytic Type](/docs/threatprevention/8.1/admin/analytics/concurrentlogins.md) – Reports on logins from multiple locations
@@ -82,7 +82,7 @@ the monitored incidents and configuring the analytic type:
   accounts from a single system within a specified time frame
 - [Golden Ticket Analytic Type](/docs/threatprevention/8.1/admin/analytics/goldenticket.md) – Reports on Kerberos tickets that exceed the
   specified maximum lifetimes for a user ticket or maximum lifetimes for a user ticket renewal
-- [File System Attacks (by User) Analytic Type](/docs/threatprevention/8.1/admin/analytics/filesystemattacksuser.md) – Reports on significant
+- [File System Attacks (by User) Analytic Type](/docs/threatprevention/8.1/admin/analytics/filesystemattacksuser.md) – Reports on a significant
   number of file changes made by an account in a short time period
 - [Kerberos Weak Encryption Analytic Type](/docs/threatprevention/8.1/admin/analytics/kerberosweakencryption.md) – Reports on Kerberos tickets
   with RC4_HMAC_MD5 encryption

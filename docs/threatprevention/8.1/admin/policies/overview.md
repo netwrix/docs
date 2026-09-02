@@ -21,7 +21,7 @@ The columns are (left to right):
 - Policy State – Indicates whether the policy is enabled (green) or disabled (gray)
 
   :::note
-  This only displays the state of the policy. It does not change its state.
+  This only displays the state of the policy. It doesn't change its state.
   :::
 
 
@@ -67,7 +67,7 @@ It contains the following options:
 | Remove              | Deletes the selected policy                                                                                                                                                         |
 
 :::note
-If the selected policy is protected and the current user does not have the Manage Policies
+If the selected policy is protected and the current user doesn't have the Manage Policies
 permission for it, these options are grayed-out. See the [Data Protection](/docs/threatprevention/8.1/admin/policies/dataprotection.md) topic
 for additional information on protection.
 

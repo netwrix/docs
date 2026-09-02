@@ -7,16 +7,16 @@ sidebar_position: 30
 # Schedule Database Maintenance
 
 You must schedule the database maintenance job, which runs the specified operation on each of the
-enabled event type data, analytic data, and/or policy data older than a specific period. This job
-can be run once now; it can be scheduled to run once at a later time; or it can be scheduled to run
+enabled event type data, analytic data, and/or policy data older than a specific period. You can run
+this job once now, schedule it to run once at a later time, or schedule it to run
 on a regular rotation.
 
-Follow the steps to configure a schedule.
+To configure a schedule:
 
 ![Database Maintenance window - Schedule tab](/images/threatprevention/8.1/admin/configuration/databasemaintenance/schedule.webp)
 
 **Step 1 –** Click **Configuration** > **Database** > **Maintenance** on the menu. The Database
-Maintenance window is displayed.
+Maintenance window opens.
 
 **Step 1 –** Click the **Schedule** tab.
 
@@ -24,8 +24,8 @@ Maintenance window is displayed.
 
 **Step 2 –** Select a frequency to run the database maintenance job:
 
-- One Time: Run now – Runs the database maintenance job once when the configurations on the Database
-  Maintenance window are saved
+- One Time: Run now – Runs the database maintenance job once when you save the configurations on the
+  Database Maintenance window
 - One Time: Run later – Runs the database maintenance job once according to the Start Date and Start
   Time set
 - Daily – Runs the database maintenance job once a day according to the Start Date and Start Time
@@ -44,10 +44,10 @@ Maintenance window is displayed.
 
 **Step 4 –** Click **Save** to save the settings.
 
-The database maintenance job is now scheduled to run at the configured time and day. All enabled
-tasks at the time when the job runs are executed.
+The database maintenance job now runs at the configured time and day. The job runs all tasks that
+are enabled at the time it runs.
 
-This scheduled job can be viewed through the Microsoft SQL Server Management Studio within the **SQL
+You can view this scheduled job in Microsoft SQL Server Management Studio in the **SQL
 Server Agent** > **Jobs** folder (SiDbMainJob).
 
 ![Database Maintenance job in Microsoft SQL Server Management Studio](/images/threatprevention/8.1/admin/configuration/databasemaintenance/dbmaintenancejob.webp)

@@ -99,7 +99,7 @@ product to enable communication with it.
   - For Activity Monitor – Enter the path to the activity agent configuration file for this host.
 
     :::tip
-        Remember, the Activity Monitor activity agent must already be deployed on the domain
+        The Activity Monitor activity agent must already be deployed on the domain
     controller and enabled before installing the AD agent. The default path is:
     `…\Netwrix\Netwrix Threat Prevention\SIWindowsAgent\SAMConfig.xml`
     :::

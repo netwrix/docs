@@ -27,7 +27,7 @@ using it on the Enterprise Manager server only.
 
 The following components are installed by the Threat Prevention installation package:
 
-- Threat Prevention Prerequisites – .NET 4.7.2 or .NET 4.8.x installed. If the installer does not
+- Threat Prevention Prerequisites – .NET 4.7.2 or .NET 4.8.x installed. If the installer doesn't
   find it already installed, it will install .NET Framework 4.7.2.
 - Enterprise Manager
 
@@ -112,7 +112,7 @@ not be displayed to the end-user, but all EPE rules will be fully enforced.
 
 **Domain Controllers**
 
-- PPE.dll – If PPE.dll does not load, the password policy will not get enforced
+- PPE.dll – If PPE.dll doesn't load, the password policy will not get enforced
 
 ### Netwrix Password Policy Enforcer (PPE)
 
@@ -129,11 +129,11 @@ work if they get blocked by antivirus software:
 
 **Netwrix Password Reset Server**
 
-If you are using Netwrix Password Reset, then make sure the antivirus program does not block the
+If you are using Netwrix Password Reset, then ensure the antivirus program doesn't block the
 following files on the Netwrix Password Reset server:
 
 - apr.sdf
 - aprlog.sdf
 
-These files get updated frequently, so there may be some performance benefit, and they do not
+These files get updated frequently, so there may be some performance benefit, and they don't
 contain any executable code.

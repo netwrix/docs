@@ -7,7 +7,7 @@ sidebar_position: 60
 # Policy Reporting Dashboard
 
 The Policy Reporting dashboard is for viewing Threat Prevention events from any enabled policy that
-is sending events to Splunk. The Policy drop-down menu in the upper-left corner of the dashboard
+is sending events to Splunk. The Policy dropdown menu in the upper-left corner of the dashboard
 will be populated with all the enabled Threat Prevention policies sending event data to Splunk in
 alphanumeric order. On selecting a policy, the dashboard cards will load the event data from that
 policy.

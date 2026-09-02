@@ -69,7 +69,7 @@ oldest one is deleted.
 :::warning
 Archived files were named `SIEnterpriseManager.log.1`, `SIEnterpriseManager.log.2`, and
 so on in versions before 8.1. Update any script or monitoring tool that collects archived logs by
-matching the `.log.<number>` pattern, because it does not match the timestamped names.
+matching the `.log.<number>` pattern, because it doesn't match the timestamped names.
 :::
 
 ## Log Levels
@@ -89,7 +89,7 @@ folder: `SIEnterpriseManager.log.config`, `SIWinConsole.log.config`, and
 `SIWindowsAgent.log.config`. Edit this file to enable logging for an individual feature, which is
 more targeted than raising the log level for the whole component.
 
-Each file ships with a set of example rules that are commented out. Follow the steps to enable one.
+Each file ships with a set of example rules that are commented out. To enable one:
 
 **Step 1 –** Open the `.log.config` file for the component in a text editor.
 
@@ -97,7 +97,7 @@ Each file ships with a set of example rules that are commented out. Follow the s
 markers around it.
 
 **Step 3 –** Move the rule above the catch-all rule, `<logger name="*" … />`, and confirm the rule
-has `final="true"` so the catch-all rule does not write the same entry a second time.
+has `final="true"` so the catch-all rule doesn't write the same entry a second time.
 
 **Step 4 –** Save the file.
 
@@ -139,7 +139,7 @@ Feature-level logging at the Debug level produces a high volume of entries.
 
 ## Windows Event Log Entries
 
-The Enterprise Manager and Administration Console do not write entries to the **SI Events** source
+The Enterprise Manager and Administration Console don't write entries to the **SI Events** source
 in the Windows Event Log. Use the file logs described in this topic instead.
 
 For system alerts that Threat Prevention raises deliberately, such as a stopped Agent or a failed

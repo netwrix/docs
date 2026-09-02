@@ -36,7 +36,7 @@ Collections.
 
 ## Create, Configure, and Enable Policies
 
-After deploying Agents and completing initial configuration, it is time to create, configure, and
+After you deploy Agents and complete the initial configuration, create, configure, and
 enable policies to begin monitoring your organization’s environment. Do either of the following:
 
 - Use a policy template to create a policy. See the
@@ -50,7 +50,7 @@ information to begin monitoring.
 
 :::warning
 Use extreme caution when enabling lockdown policies to ensure that the required events
-do not unintentionally get blocked.
+don't unintentionally get blocked.
 :::
 
 

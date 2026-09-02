@@ -12,5 +12,5 @@ button to open this window.
 
 ![ADCS Attribute List Window](/images/threatprevention/8.1/admin/policies/eventtype/window/adcsattributelist.webp)
 
-Select the desired attributes and click **OK**. The selection is displayed in the appropriate box of
+Select the attributes you want and click **OK**. The selection is displayed in the appropriate box of
 the ADCS Attributes filter.

@@ -19,16 +19,15 @@ The event filters for the File System Lockdown event type are:
 
 ![Policy window - File System Lockdown Event Type](/images/threatprevention/8.1/admin/policies/eventtype/filesystemlockdown_1.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 :::warning
-Lockdown/blocking policies with blank filters result in everything being locked down or
-blocked.
+Lockdown/blocking policies with blank filters lock down or block everything.
 :::
 
 
-It is necessary to select paths/collections to be locked down on the File System filter. The policy
+Select paths/collections to be locked down on the File System filter. The policy
 will lockdown the path/collection from the SI Agent used to select it for the filter which is
 indicated in the parenthesis after the path/collection. The path/collection can be locked down by
 other SI Agents by selecting them on the **Additional Agents** filter.
@@ -68,7 +67,7 @@ Type is used by the same enabled policy.
 
 Use the File System filter for lockdown to select the types of file system events to be locked down
 by the policy. It is also where the policy is scoped to only lockdown specific file system paths or
-to exclude specific file system paths from being locked down.
+to exclude specific file system paths from lockdown.
 
 ![Policy window - File System filter for lockdown](/images/threatprevention/8.1/admin/policies/eventtype/filesystemlockdown.webp)
 
@@ -113,10 +112,10 @@ the Paths and Path Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -146,7 +145,7 @@ Agents/Domains list on the right displays Agents and domains included in the pol
   - The double arrows will move all items to the other list.
 
 :::note
-There is no impact if a selected path does not exist on the server where an Agent resides.
+There is no impact if a selected path doesn't exist on the server where an Agent resides.
 :::
 
 
@@ -158,7 +157,7 @@ also included in this policy.
 
 Use the AD Perpetrator filter for lockdown to set the scope of the policy to lockdown specific
 security principals committing changes or to exclude specific security principals committing changes
-from being locked down.
+from lockdown.
 
 ![AD Perpetrator Protect filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratorprotect.webp)
 
@@ -166,8 +165,8 @@ Select the **Block** or **Allow** option button and then edit the list.
 
 :::note
 For the [Password Enforcement Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md), selecting **Allow**
-means that this policy will not validate the new passwords for the accounts listed here. Selecting
-**Block** means that this policy will validate the new passwords for the accounts listed here.
+means that this policy doesn't validate the new passwords for the accounts listed here. Selecting
+**Block** means that this policy validates the new passwords for the accounts listed here.
 :::
 
 
@@ -178,10 +177,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -189,7 +188,7 @@ for additional information.
 
 ## Rule Preview Filter
 
-The Rule Preview filter displays a summary of the selected filter options. This is primarily used
+The Rule Preview filter displays a summary of the selected filter options. You use this primarily
 for troubleshooting.
 
 ![Event Type - Rule Preview filter](/images/threatprevention/8.1/admin/policies/eventtype/rulepreview.webp)

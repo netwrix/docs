@@ -19,7 +19,7 @@ The upgrade process involves the following steps:
 
 Threat Manager Reporting v2.8 used PostgreSQL v14.8.x while v3.0 uses PostgreSQL v14.13.x.
 
-Follow the steps to upgrade from PostgreSQL 14.8.x to 14.13.x.
+To upgrade from PostgreSQL 14.8.x to 14.13.x:
 
 **Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window is
 displayed.
@@ -27,7 +27,7 @@ displayed.
 ![Netwrix Threat Manager Setup window](/images/threatprevention/8.1/install/upgrade/tm3installation.webp)
 
 **Step 2 –** Click **PostgreSQL Setup** to upgrade the PostgreSQL version. The following message is
-displayed, indicating the currently installed version:
+displayed, indicating the installed version:
 
 ![Threat Manager Reporting - Upgrade DB Confirmation dialog box](/images/threatprevention/8.1/install/upgrade/upgradedbprompt.webp)
 
@@ -49,7 +49,7 @@ PostgreSQL has been upgraded.
 
 ## Upgrade Threat Manager Reporting from 2.8 to 3.0
 
-Follow the steps to upgrade from Threat Manager Reporting 2.8 to 3.0.
+To upgrade from Threat Manager Reporting 2.8 to 3.0:
 
 **Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window is
 displayed.

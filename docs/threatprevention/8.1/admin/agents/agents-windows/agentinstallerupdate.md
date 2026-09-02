@@ -6,18 +6,18 @@ sidebar_position: 10
 
 # Agent Installer Update Window
 
-Netwrix periodically releases updated Agent installation packages. Typically these updates are
-associated with Microsoft KBs (hot-fixes) which alter the LSASS components interfering with the
+Netwrix periodically releases updated Agent installation packages. Typically these updates
+accompany Microsoft KBs (hot-fixes) that alter the LSASS components and interfere with the
 Agent instrumentation. See the [Agent Information](/docs/threatprevention/8.1/install/agent/overview.md) topic for
 additional information.
 
 To download an installation package, the Threat Prevention server must be connected to the internet.
-It may be necessary to allow the following URL in the browser security settings:
+You may need to allow the following URL in the browser security settings:
 
 - For Threat Prevention v8.1:
   [https://www.netwrix.com/go/siagent810zip](https://www.netwrix.com/go/siagent810zip)
 
-Follow the steps to download the updated Agent installer.
+To download the updated Agent installer:
 
 **Step 1 –** Click **Agents** in the left pane to launch the Agents interface. Then click **Update
 Agent Installer** to launch the Agent Installer Update window.
@@ -26,7 +26,7 @@ Agent Installer** to launch the Agent Installer Update window.
 
 **Step 2 –** Click **Check for Newer Version of the Netwrix Threat Prevention Agent**. Threat
 Prevention downloads the Agent installer from a static URL and then compares the Agent installer
-currently in use to the installer downloaded.
+in use to the installer downloaded.
 
 ![Agent Installer Update window showing that Agent Installer is up-to-date](/images/threatprevention/8.1/admin/agents/window/uptodate.webp)
 
@@ -39,8 +39,8 @@ currently in use to the installer downloaded.
   option to apply the update. Click **Apply Update**.
 
 :::note
-When the Agent installer is replaced with a newer version, all Agents’ versions in the
-Agents interface are highlighted to indicate they are not the current version. Agents should then be
-updated to the new version using the Upgrade Agent option on the right-click menu.
+When you replace the Agent installer with a newer version, the Agents interface highlights
+every Agent version to indicate that it isn't the current version. Update those Agents to the new
+version using the Upgrade Agent option on the right-click menu.
 
 :::

@@ -27,12 +27,12 @@ editing the configuration files discussed in this topic.
 :::
 
 
-**Step 2 –**   Copy the thumbprint of the certificate as you will need to utilize it while editing
+**Step 2 –**   Copy the thumbprint of the certificate as you will need to use it while editing
 the configuration files.
 
 ## Web Service Configuration File
 
-Follow the steps to configure the Web Service Configuration file.
+To configure the Web Service Configuration file:
 
 **Step 1 –**   Open the Web Service configuration file on the Netwrix Threat Manager Reporting
 Module server.
@@ -66,12 +66,12 @@ to add a trailing comma after the `“EncryptRecording”:false` line.
 ```
 
 :::warning
-Do not modify the Jwt section of the appsettings.json file.
+Don't modify the Jwt section of the appsettings.json file.
 :::
 
 
 **Step 3 –**   In the WebService and ADService sections, ports are set to 8080 and 55556
-respectively. Make sure these ports are available on your machine.
+respectively. ensure these ports are available on your machine.
 
 **Step 4 –**   Set the **Certificate** value to the value of the certification thumbprint you
 imported previously.
@@ -92,7 +92,7 @@ Found cert with subject % and thumbprint 12345ABCDEF54AED1DB59C349CA4D514628DB4D
 
 ## Active Directory Service Configuration File
 
-Follow the steps to configure the Active Directory Service Configuration file.
+To configure the Active Directory Service Configuration file:
 
 **Step 1 –**   Open the Active Directory Service configuration file on the Netwrix Threat Manager
 Reporting Module server:
@@ -120,11 +120,11 @@ comma after the `“EncryptRecording”:false` line in the file.
 ```
 
 :::warning
-Do not modify the Jwt section of the appsettings.json file.
+Don't modify the Jwt section of the appsettings.json file.
 :::
 
 
-**Step 3 –**   In the WebService section, the port is set to 55556. Make sure it is available on
+**Step 3 –**   In the WebService section, the port is set to 55556. ensure it is available on
 your machine.
 
 **Step 4 –**   Set the certificate value to that of the certification thumbprint you imported

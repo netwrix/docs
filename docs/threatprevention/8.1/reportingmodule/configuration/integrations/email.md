@@ -6,7 +6,7 @@ sidebar_position: 40
 
 # Email Page
 
-The Email page within the Integrations interface allows users to configure the application to send
+Use the Email page within the Integrations interface to configure the application to send
 email notifications.
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
@@ -37,7 +37,7 @@ The page has the following information:
 
 ## Configure Email Notifications
 
-Follow the steps to configure email notifications.
+To configure email notifications:
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -53,7 +53,7 @@ menu. Then select **Integrations** to open the Integrations interface.
 - Mail Server – Enter the IP address or server name of the mail server that will be used to send
   email notifications
 - Port – Enter the Port used by the mail server. The default port is 25.
-- Use TLS – Toggle the button to **ON** if you wish to enable TLS protocol is in use for email
+- Use TLS – Toggle the button to **ON** if you want to enable TLS protocol is in use for email
   notifications
 - Ignore Certificate Errors – When **ON**, certificate errors will be ignored when sending email
 - User Name – If applicable, enter the user name of the credentials that will be used when TLS is
@@ -70,8 +70,8 @@ menu. Then select **Integrations** to open the Integrations interface.
 
 :::info
 When first configuring email notification, enter your email in the Send Alerts To
-field for the connection test completed in Step 4. Once the test is successful, replace your email
-with the desired recipients.
+field for the connection test completed in Step 4. After the test is successful, replace your email
+with the recipients you want.
 :::
 
 

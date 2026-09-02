@@ -7,17 +7,17 @@ sidebar_position: 40
 # Log Level Configuration Window
 
 The Log Level Configuration window displays the current log levels for the Agents, Enterprise
-Manager, and Administration Console. It also enables you to set new log levels.
+Manager, and Administration Console. You can also use it to set new log levels.
 
 :::note
 Since Threat Prevention supports multiple instances of the Administration Console, each
-instance has its own settings for log levels. Changing the settings only affect the respective
+instance has its own settings for log levels. Changing the settings affects only the respective
 console instance. The Enterprise Manager and Agent log settings are global - the most recent changes
 made from any console instance apply.
 :::
 
 
-Follow the steps to set log levels.
+To set log levels:
 
 **Step 1 –** Click **Agents** in the left pane to launch the Agents interface. Then click **Update
 Logging Levels** on the top bar to launch the Log Level Configuration window.
@@ -46,15 +46,16 @@ Logging Levels** on the top bar to launch the Log Level Configuration window.
   - Error – Records all errors that occur
   - Fatal – Records only when catastrophic system failures/crashes occur
 
-  No matter what log level is selected, a log file is archived once it reaches its size limit, and
-  up to ten archived files are kept per log. When the eleventh archive is created, the oldest one is
-  deleted. See the
+  No matter which log level you select, Threat Prevention archives a log file when it reaches its
+  size limit and keeps up to ten archived files per log. When it creates the eleventh archive, it
+  deletes the oldest one. See the
   [Log Files and Logging Configuration](/docs/threatprevention/8.1/troubleshooting/logging.md) topic
   for additional information on where the logs are written and how archived files are named.
 
   :::note
-  A log level set from the Administration Console or through PowerShell is written back to the
-  configuration file of the component it applies to, so the setting survives a service restart.
+  Threat Prevention writes a log level set from the Administration Console or through PowerShell
+  back to the configuration file of the component it applies to, so the setting survives a service
+  restart.
   :::
 
 **Step 3 –** To update the logging level for Enterprise Manager and the Administration Console:
@@ -78,18 +79,18 @@ archive holds the complete contents of two folders on the Agent server:
 - `ADMonitor_logs`, which holds the AD Monitor logs. This folder exists only where AD Monitor runs,
   which is on a domain controller.
 
-Every file in both folders is included, active and archived alike, so a single download gives
-Netwrix Support the full history rather than the most recent entries alone. See the
+The archive includes every file in both folders — active and archived alike — so a single download
+gives Netwrix Support the full history rather than the most recent entries alone. See the
 [Log Files and Logging Configuration](/docs/threatprevention/8.1/troubleshooting/logging.md) and
 [AD Monitor Logging Configuration](/docs/threatprevention/8.1/troubleshooting/admonitorlogging.md)
 topics for a description of the individual log files.
 
 :::note
 In versions before 8.1, **Get Agent Log** downloaded the active Agent log file on its own.
-AD Monitor logs had to be collected from the domain controller by hand.
+You had to collect AD Monitor logs from the domain controller by hand.
 :::
 
-Follow the steps to collect the Agent log files.
+To collect the Agent log files:
 
 ![Get Agent Log icon](/images/threatprevention/8.1/admin/agents/window/getagentlog.webp)
 
@@ -110,10 +111,11 @@ the log folders at the moment you download it.
 
 ## Access the Enterprise Manager & Administration Console Log Files
 
-The Enterprise Manager log files are stored on the Threat Prevention server while the Administration
-Console log files are stored on the machine where the respective console is installed.
+Threat Prevention stores the Enterprise Manager log files on the Threat Prevention server, and
+stores the Administration Console log files on the machine where the respective console is
+installed.
 
-Log files are stored in the following locations:
+The default log file locations are:
 
 **Enterprise Manager Log Files**
 

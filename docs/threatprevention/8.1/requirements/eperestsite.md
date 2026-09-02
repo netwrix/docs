@@ -15,14 +15,14 @@ The following additional component is required:
 - Internet Information Services (IIS) v6 or higher
 
 You can install the EPE Rest Site on the Netwrix Threat Manager Reporting Module server. To install
-it on a different machine, make sure the following is installed as a prerequisite:
+it on a different machine, ensure the following is installed as a prerequisite:
 
 - DotNet 4.5.2 or higher
 - ASP.NET 4.5 or higher
 
 ## Database Requirements
 
-While installing the EPE Rest Site, the installer requires an SQL Server instance to be available to
+While you install the EPE Rest Site, the installer requires an available SQL Server instance to
 store locally hosted accounts to authenticate. The EPE Rest Site creates a database named “EpeUsers”
 with ASP.NET related tables to manage such local accounts.
 
@@ -31,9 +31,9 @@ Prevention database or a separate instance (such as a free instance of SQL Expre
 installed locally on the machine where the EPE Rest Site is installed.
 
 :::note
-The “EpeUsers” database is not created during the installation, but when you create the
+The “EpeUsers” database isn't created during the installation, but when you create the
 first “internal” account.
 :::
 
 
-The database is not deleted when you uninstall the EPE Rest Site.
+The database isn't deleted when you uninstall the EPE Rest Site.

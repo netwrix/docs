@@ -17,20 +17,20 @@ controller has no route to, can hold up a single lookup for a minute or more. Un
 events, the lookups fall behind, the Agent's event queue fills, and the Agent reports that it lost
 events.
 
-The Trusted Domains Blacklist lists the domains the Agent must never query. A domain on the list is
-skipped instead of queried, so account resolution no longer waits for it. The list is set per
-monitored domain, because a domain that is unreachable from one domain controller may be perfectly
-reachable from another.
+The Trusted Domains Blacklist lists the domains the Agent must never query. The Agent skips a domain
+on the list rather than querying it, so account resolution no longer waits for it. You set the list
+per monitored domain, because a domain that is unreachable from one domain controller may be
+perfectly reachable from another.
 
 :::note
-Blacklisting a domain means the Agent can't resolve accounts that live in it. Events
-involving those accounts are still captured, but the account details on them may be incomplete.
+Blacklisting a domain means the Agent can't resolve accounts that live in it. The Agent
+still captures events involving those accounts, but the account details on them may be incomplete.
 Blacklist only the domains that don't answer.
 :::
 
 ## Configure the Blacklist
 
-Follow the steps to blacklist a trusted domain.
+To blacklist a trusted domain:
 
 **Step 1 –** Click **Configuration** > **Trusted Domains Blacklist** on the menu to open the Trusted
 Domains Blacklist window.
@@ -45,7 +45,7 @@ rather than typing the names, select an Agent and pick the domains from the list
 The Enterprise Manager sends the updated list to the Agents. No Agent restart is needed.
 
 :::warning
-The blacklist is delivered from the Enterprise Manager to the Agents, so both must run
+The Enterprise Manager delivers the blacklist to the Agents, so both must run
 version 8.1 or later. Upgrade the Enterprise Manager, Administration Console, and Agents together.
 See the [Upgrade Procedure](/docs/threatprevention/8.1/install/upgrade/overview.md) topic for
 additional information.
@@ -59,7 +59,7 @@ single domain, or that fail reporting that the server isn't operational. See the
 [Log Files and Logging Configuration](/docs/threatprevention/8.1/troubleshooting/logging.md) topic
 for additional information.
 
-After the domain is blacklisted, the Agent records each skipped domain in its log at the debug
+After you blacklist the domain, the Agent records each skipped domain in its log at the debug
 level.
 
 See the

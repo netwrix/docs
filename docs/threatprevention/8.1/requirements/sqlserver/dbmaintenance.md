@@ -14,7 +14,7 @@ Authentication to the SQL Server) must have enough rights to execute the Databas
 feature.
 
 :::note
-If the account used to run Database Maintenance is changed, it is necessary to manually
+If the account used to run Database Maintenance is changed, manually
 delete the DBMaintenance SQL Agent Job in the SQL Server Management Studio.
 :::
 
@@ -84,7 +84,7 @@ successfully and all data will be deleted/moved as configured.
 :::
 
 
-If it is not possible to grant the ‘user’ owner rights to the NVMonitorData database, grant the
+If it isn't possible to grant the ‘user’ owner rights to the NVMonitorData database, grant the
 following instead:
 
 - db_datareader role

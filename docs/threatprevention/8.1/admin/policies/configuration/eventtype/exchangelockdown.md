@@ -19,12 +19,11 @@ The event filters for the Exchange Lockdown event type are:
 
 ![Policy window - Exchange Lockdown Event Type](/images/threatprevention/8.1/admin/policies/eventtype/exchangelockdown.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 :::warning
-Lockdown/blocking policies with blank filters result in everything being locked down or
-blocked.
+Lockdown/blocking policies with blank filters lock down or block everything.
 :::
 
 
@@ -34,7 +33,7 @@ See the [Exchange Lockdown Considerations](/docs/threatprevention/8.1/troublesho
 information on resolving this.
 
 :::note
-There are additional factors to consider in order to block delegations through Outlook.
+There are additional factors to consider to block delegations through Outlook.
 See the [Troubleshooting FAQs](/docs/threatprevention/8.1/troubleshooting/overview.md#troubleshooting-faqs) topic for
 additional information.
 :::
@@ -66,7 +65,7 @@ Whether these events are blocked or allowed depends on the other filters applied
 
 Use the Exchange Mailbox Objects and Containers filter for lockdown to set the scope of the policy
 to lockdown changes to specific objects or containers within Exchange or to exclude changes to
-specific objects or containers from being locked down.
+specific objects or containers from lockdown.
 
 ![Policy window - Exchange Mailbox Objects and Containers filter ](/images/threatprevention/8.1/admin/policies/eventtype/exchangemailboxobjectsandcontainers.webp)
 
@@ -77,7 +76,7 @@ Select the **Include** or **Exclude** button and then edit the list.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Exchange Trustees Filter
 
@@ -97,7 +96,7 @@ Use the buttons in the Trustees and Collections of Trustees areas to edit the li
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 The other option button options dictate how the Exchange Trustees filter and the Exchange
 Perpetrators filter relate to each other. They include:
@@ -111,7 +110,7 @@ Perpetrators filter relate to each other. They include:
     the mailbox trustee.
   - For a Block example, if this policy is protecting a CEO mailbox, the Trustee list includes
     Larry Dawson for Block, and John Adair is included in the Perpetrator block list, then Larry
-    Dawson cannot be added as the mailbox trustee by anyone AND John Adair cannot add anyone else
+    Dawson can't be added as the mailbox trustee by anyone AND John Adair can't add anyone else
     as the mailbox trustee.
 
 - Trustee AND Perpetrator Must Be Met – Both the Trustee selection AND the Perpetrator selection
@@ -128,17 +127,17 @@ Perpetrators filter relate to each other. They include:
 
 Use the Exchange Perpetrator filter for lockdown to set the scope of the policy to only lock down
 specific security principals committing changes or to exclude specific security principals
-committing changes from being locked down.
+committing changes from lockdown.
 
 ![Policy window - Exchange Perpetrator filter for lockdown](/images/threatprevention/8.1/admin/policies/eventtype/exchangeperpetratorlockdown.webp)
 
-Options at the top enable you to block or allow user access to mailboxes based on the assigned
+Use the options at the top to block or allow user access to mailboxes based on the assigned
 roles.
 
 The Logged on As checkbox options are:
 
-- Delegate – User who is not the owner of the mailbox being accessed
-- Administrator – User who is not the owner of the mailbox being accessed but has administrative
+- Delegate – User who isn't the owner of the mailbox being accessed
+- Administrator – User who isn't the owner of the mailbox being accessed but has administrative
   privileges
 - Owner – User who is the owner of the mailbox being accessed
 
@@ -181,10 +180,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -192,7 +191,7 @@ for additional information.
 
 ## Rule Preview Filter
 
-The Rule Preview filter displays a summary of the selected filter options. This is primarily used
+The Rule Preview filter displays a summary of the selected filter options. You use this primarily
 for troubleshooting.
 
 ![Event Type - Rule Preview filter](/images/threatprevention/8.1/admin/policies/eventtype/rulepreview.webp)

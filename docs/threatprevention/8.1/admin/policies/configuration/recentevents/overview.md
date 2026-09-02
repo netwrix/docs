@@ -70,7 +70,7 @@ below in the default order of the data grid columns:
   - Authenticate – DN of the user object making the request
 
   :::note
-  For LDAP bind/monitoring/blocking, Affected Object Path is not used
+  For LDAP bind/monitoring/blocking, Affected Object Path isn't used
   :::
 
 
@@ -121,7 +121,7 @@ The following information (as applicable to the event) is displayed:
 
 - Attribute Name – The name of the object attribute that is affected
 - Operation – The operation performed on the attribute
-- Old Value – Value prior to the monitored change
+- Old Value – Value before the monitored change
 - New Value – Value after the monitored change
 
 This data grid employs features for sorting, filtering, searching, and more. See the
@@ -129,7 +129,7 @@ This data grid employs features for sorting, filtering, searching, and more. See
 
 ## Recent Events Right-Click Menu
 
-Right-click on a row in the data grid to open the right-click menu.
+Right-click a row in the data grid to open the right-click menu.
 
 ![Recent Events tab - Right-Click menu](/images/threatprevention/8.1/admin/policies/recentevents/rightclickmenu.webp)
 
@@ -137,4 +137,4 @@ Right-click on a row in the data grid to open the right-click menu.
 - Event Viewer – Opens the [Event Viewer Window](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/eventviewer.md) for the selected event/data row
 - Event Tracker – Opens the [Event Tracker Window](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/eventtracker.md) for the selected event/data row
 - [Execute PS Script](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/executepsscript.md) – Opens a Windows Explorer window to the scripts folder.
-  Enables users to run a PowerShell script for the selected event/data row.
+  Use it to run a PowerShell script for the selected event/data row.

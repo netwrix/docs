@@ -11,7 +11,7 @@ the Password Enforcement event type. This module has no impact on the applicatio
 only provides feedback to end users by listing the reasons EPE rejected a candidate password.
 
 While rejecting a password, EPE displays the reasons for rejected to the user. If no reasons are
-shown, then the password was rejected by the OS prior to being evaluated by EPE.
+shown, then the password was rejected by the OS before being evaluated by EPE.
 
 :::note
 For multilingual support, you must uninstall a previous version of the Credential Provider
@@ -28,7 +28,7 @@ server or workstation are:
 
 ## Deploy the EPE User Feedback Module
 
-Follow the steps to deploy the EPE User Feedback module.
+To deploy the EPE User Feedback module:
 
 **Step 1 –** Ensure the **Enable EPE User Feedback Module** checkbox is selected on the
 [EPE Settings Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md).
@@ -59,7 +59,7 @@ SICredentialProviderx64 or x32.
 
 The _Enterprise Password Enforcer_ GPO contains static text that the EPE User Feedback module
 displays on the login screen. Typically this text would be edited by the Threat Prevention
-administrator to describe password policy rules to provide guidance to end users prior to typing in
+administrator to describe password policy rules to provide guidance to end users before typing in
 a new password.
 
 Edit the Enterprise Password Enforcer GPO to modify the text displayed to the end-users. You can

@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Agent Silent Install Option
 
-You can use command line options to install the Agent silently. These options can be leveraged to
+You can use command line options to install the Agent silently. Use these options to
 deploy the Agent via custom batch files, login scripts, or for integrating with third-party software
 distribution solutions that an organization may already have in their environment.
 
@@ -33,8 +33,8 @@ command line.
 | Property Name       | Description            | Default Value           |
 | ------------ | ---------------- | --------------------- |
 | CUSTOM_CA               | If this property is set to True, then the custom-managed certificate mode is enabled. This mode uses certificates that are signed by the customer's external certificate authority. In this mode, the installer will not generate certificates and will not start the Agent Service at the end of the installation. | FALSE             |
-| EMCERTIFICATE         | Enterprise Manager Certificate Thumbprint      | This value can be found in the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) by clicking the Agent Enrollment Secret icon to open the [Enrollment Secret Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/enrollmentsecretconfiguration.md). This value is not used for high security mode.        |
-| ENROLLMENTSECRET (Required for enrolling new Agent) | Agent Enrollment Secret          | This value can be found in the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) by clicking the Agent Enrollment Secret icon to open the [Enrollment Secret Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/enrollmentsecretconfiguration.md). This is a required field if using auto security mode. It is not used for high security mode. |
+| EMCERTIFICATE         | Enterprise Manager Certificate Thumbprint      | This value can be found in the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) by clicking the Agent Enrollment Secret icon to open the [Enrollment Secret Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/enrollmentsecretconfiguration.md). This value isn't used for high security mode.        |
+| ENROLLMENTSECRET (Required for enrolling new Agent) | Agent Enrollment Secret          | This value can be found in the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) by clicking the Agent Enrollment Secret icon to open the [Enrollment Secret Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/enrollmentsecretconfiguration.md). This is a required field if using auto security mode. It isn't used for high security mode. |
 | SAFEMODE       | Start Agent Service in safe mode         | FALSE          |
 | STARTAGENTSERVICE       | Start Agent Service on successful installation        | FALSE        |
 | ADDFWRULES          | Create firewall rules for the Agent Service          | TRUE       |
@@ -53,8 +53,8 @@ command line.
 The following examples show some standard scenarios for Agent installations.
 
 :::note
-Parameters with TRUE or FALSE are case sensitive. In the examples, EMCERTIFICATE and
-ENROLLMENTSECRET have been generated and are unique to each install. These need to be retrieved from
+Parameters with TRUE or FALSE are case sensitive. EMCERTIFICATE and
+ENROLLMENTSECRET in the examples have been generated and are unique to each install. These need to be retrieved from
 the Administration Console.
 :::
 

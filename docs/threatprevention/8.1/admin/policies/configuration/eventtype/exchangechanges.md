@@ -18,7 +18,7 @@ The event filters for the Exchange Changes event type are:
 
 ![Policy window - Exchange Changes Event Type](/images/threatprevention/8.1/admin/policies/eventtype/exchangechanges.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 ## Exchange Event Filter
@@ -52,7 +52,7 @@ specific operations and permissions:
 
 Use the Exchange Mailbox Objects and Containers filter for monitoring to set the scope of the policy
 to monitor changes to specific objects or containers within Exchange or to exclude changes to
-specific objects or containers from being monitored.
+specific objects or containers from monitoring.
 
 ![Policy window - Exchange Mailbox Objects and Containers filter](/images/threatprevention/8.1/admin/policies/eventtype/exchangemailboxobjectsandcontainers.webp)
 
@@ -63,7 +63,7 @@ Select the **Include** or **Exclude** button and then edit the list.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Exchange Trustees Filter
 
@@ -84,7 +84,7 @@ Use the buttons in the Trustees and Collections of Trustees areas to edit the li
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 The other option button options dictate how the Exchange Trustees filter and the Exchange
 Perpetrators filter relate to each other. They include:
@@ -115,17 +115,17 @@ Perpetrators filter relate to each other. They include:
 
 Use the Exchange Perpetrator filter for monitoring to set the scope of the policy to only monitor
 specific security principals committing changes or to exclude specific security principals
-committing changes from being monitored.
+committing changes from monitoring.
 
 ![Policy window - Exchange Perpetrator filter](/images/threatprevention/8.1/admin/policies/eventtype/exchangeperpetrator.webp)
 
-Options at the top enable you to include or exclude monitoring user access to mailboxes based on the
+Use the options at the top to include or exclude monitoring user access to mailboxes based on the
 assigned roles.
 
 The Logged on As checkbox options are:
 
-- Delegate – User who is not the owner of the mailbox being accessed
-- Administrator – User who is not the owner of the mailbox being accessed but has administrative
+- Delegate – User who isn't the owner of the mailbox being accessed
+- Administrator – User who isn't the owner of the mailbox being accessed but has administrative
   privileges
 - Owner – User who is the owner of the mailbox being accessed
 
@@ -141,7 +141,7 @@ The Logged on As radio button options include:
   - When the Include option button is selected for the Logged On As checkboxes and the Exclude
     option button is selected for the AND/OR options – FIf the Administrator is Included for the
     Logged On As option and Joe Smith is Excluded in the Perpetrator list, then the filter will
-    only be true if the event is triggered by Joe Smith AND Joe Smith is not an administrator of
+    only be true if the event is triggered by Joe Smith AND Joe Smith isn't an administrator of
     the affected mailbox.
 
 - OR Perpetrators Must Be Met – When either the Logged On As selection OR the Perpetrator is met,
@@ -166,10 +166,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -177,7 +177,7 @@ for additional information.
 
 ## Rule Preview Filter
 
-The Rule Preview filter displays a summary of the selected filter options. This is primarily used
+The Rule Preview filter displays a summary of the selected filter options. You use this primarily
 for troubleshooting.
 
 ![Event Type - Rule Preview filter](/images/threatprevention/8.1/admin/policies/eventtype/rulepreview.webp)
