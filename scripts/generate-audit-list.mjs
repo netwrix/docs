@@ -41,8 +41,27 @@ const SITE_BASE_URL = 'https://docs.netwrix.com';
 const EXCLUDED_BASENAMES = new Set(['CLAUDE.md', 'SKILL.md']);
 const EXCLUDED_SEGMENTS = new Set(['kb', '_partials', 'docs-staging']);
 
-// Products excluded from the audit entirely.
-const AUDIT_EXCLUDED_PRODUCTS = new Set(['partner', 'customer']);
+// Products excluded from the audit entirely — the Dashboard workbook removed
+// these sheets outright (Privilege Secure for Discovery: only had one
+// version, 2.22, and the whole sheet was dropped).
+const AUDIT_EXCLUDED_PRODUCTS = new Set(['partner', 'customer', 'privilegesecurediscovery']);
+
+// Specific product versions excluded from the audit — deprecated or
+// already-unsupported releases the Dashboard has ruled out of scope, even
+// though the version folder still exists in the repo for archival purposes.
+// Update this map as versions are deprecated; it does not affect the docs
+// site itself, only which pages the audit tooling generates rows for.
+// Keyed by the *physical* product id (pre-PRODUCT_ALIASES) — e.g. Identity
+// Recovery 2.6's files live under docs/recoveryforactivedirectory/2.6/, so
+// the exclusion is keyed there, not under identityrecovery.
+const AUDIT_EXCLUDED_VERSIONS = {
+  activitymonitor: new Set(['7.1', '8.0']),
+  auditor: new Set(['10.7']),
+  identitymanager: new Set(['6.1']),
+  recoveryforactivedirectory: new Set(['2.6']),
+  privilegesecure: new Set(['4.2']),
+  threatmanager: new Set(['3.0']),
+};
 
 // recoveryforactivedirectory is the old name for identityrecovery (it's
 // hideFromNavbar in products.js, "superseded by Identity Recovery") — file its
@@ -388,6 +407,9 @@ function main() {
     if (entry.hidden && !args.includeHidden) continue; // deliberately excluded, not an orphan
 
     if (AUDIT_EXCLUDED_PRODUCTS.has(entry.product.id)) continue;
+
+    const excludedVersions = AUDIT_EXCLUDED_VERSIONS[entry.product.id];
+    if (excludedVersions && excludedVersions.has(entry.version.version)) continue;
 
     const excludedPrefixes = PRODUCT_EXCLUDED_PREFIXES[entry.product.id];
     if (excludedPrefixes && excludedPrefixes.some((prefix) => filePath.startsWith(prefix))) continue;
