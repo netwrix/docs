@@ -12,9 +12,9 @@ DLL), in LSASS without having to upgrade the entire Agent. To facilitate this, t
 ADMonitor DLL.
 
 :::note
-The Agent and the ADMonitor DLL should have the same major/minor version, such as 8.0.x.x,
-where x.x for the DLL can be equal or higher than that of the Agent. Example: Agent 8.0.0.123 and
-DLL 8.0.0.777
+The Agent and the ADMonitor DLL should have the same major/minor version, such as 8.1.x.x,
+where x.x for the DLL can be equal or higher than that of the Agent. Example: Agent 8.1.0.123 and
+DLL 8.1.0.777
 :::
 
 

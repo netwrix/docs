@@ -119,6 +119,68 @@ activity for specific processes to see what access they are requesting.
 :::
 
 
+### Folder and Checksum Filtering
+
+A process name is a label that any user with write access to a folder can change. A malicious tool
+renamed to `svchost.exe` matches a rule written against the name `svchost.exe`. To identify the
+requesting process by something the caller doesn't control, narrow an entry by the folder the
+process runs from, by the checksum of the process image, or by both.
+
+**Folder** – Restrict an entry to processes that run from a specific folder, for example
+`C:\Windows\System32\`. A renamed tool no longer matches the entry unless it also runs from that
+folder.
+
+**SHA-256** – Add one or more approved SHA-256 hashes to an entry. The entry then matches only when
+the file the process runs from hashes to an approved value, so a file placed in an approved folder
+is still rejected unless its contents match.
+
+:::note
+Restricting an entry to a folder narrows the ways a process can be impersonated, but a
+malicious file written into that folder still matches. Add a checksum to the entry to close that
+gap.
+:::
+
+:::warning
+The hash of an executable changes every time it's patched or upgraded. Refresh the
+approved hashes for an entry after every update to the tool it covers. Until the hashes are
+refreshed, the entry is treated according to the checksum option described below.
+:::
+
+Threat Prevention resolves the folder and computes the checksum ahead of the request, so neither
+check delays the request itself. Both are unavailable for a process the Agent hasn't seen yet, and
+the folder is never available for the Windows System process, which runs from kernel memory and has
+no file on disk. Two options set what happens in those cases.
+
+| Option | Default | Description |
+| --- | --- | --- |
+| Monitor if at least one folder is specified in a filter and source process folder is unresolved | Checked | Generates an event when a folder is specified for the entry and the folder of the requesting process can't be resolved |
+| Monitor if Checksum Unavailable | Checked | Generates an event when a hash is specified for the entry and no hash is available for the requesting process |
+
+:::tip
+Leave both options checked unless there's a specific reason to change them. Unchecking
+them means activity that can't be identified goes unrecorded.
+:::
+
+### Kernel Stack Attribute
+
+The Windows System process, which runs as process ID 4, opens handles to LSASS as part of normal
+operating system activity. It has no file on disk, so its **Image Path** attribute reports the name
+`System` and nothing more. That value is the same whether the request came from the operating system
+or from a driver claiming to be part of it.
+
+For every request that arrives from the System process, Threat Prevention records the call stack of
+the requesting thread, resolved to module names and offsets, in a separate **Kernel Stack** event
+attribute. Read the **Kernel Stack** attribute rather than the **Image Path** attribute when the
+question is what made a System-process request.
+
+Treat a frame that resolves to no loaded driver, and reports a raw address instead of a module name,
+as a finding worth investigating.
+
+:::note
+Policy rules don't evaluate the **Kernel Stack** attribute. Threat Prevention records it on
+the event for review after the fact.
+:::
+
 ## Open Process Flags Filter
 
 Use the Open Process Flags filter to set the scope of the policy for requested handles that would

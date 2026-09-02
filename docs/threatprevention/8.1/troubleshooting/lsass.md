@@ -102,3 +102,11 @@ and click **OK**.
 
 When the LSASS process terminated event alert is triggered, an email notification is sent to the
 assigned (step 3) recipient(s).
+
+## Check the Hooks on a Domain Controller
+
+Another security product that hooks the same LSASS APIs as the Agent can cause failed hooks or an
+unstable LSASS process. To list every hook present in LSASS and identify the ones that don't belong
+to Threat Prevention, use the LSASS hook scan tool. See the
+[LSASS Hook Scan Tool](/docs/threatprevention/8.1/troubleshooting/lsasshookscan.md) topic for
+additional information.

@@ -6,7 +6,7 @@ sidebar_position: 100
 
 # Migrate the Enterprise Manager Server
 
-To move the Threat Prevention 8.0 Enterprise Manager to a different server when
+To move the Threat Prevention 8.1 Enterprise Manager to a different server when
 using default certificates, complete the following steps:
 
 :::warning

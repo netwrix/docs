@@ -17,7 +17,7 @@ The following servers are required to install the application:
 
 **Core Component**
 
-- Threat Prevention Application Server – The following v8.0 application components are installed
+- Threat Prevention Application Server – The following v8.1 application components are installed
   here:
 
   - Enterprise Manager

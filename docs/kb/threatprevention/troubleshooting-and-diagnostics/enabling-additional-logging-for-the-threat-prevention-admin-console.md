@@ -31,6 +31,14 @@ How to enable additional logging for the Threat Prevention Admin Console.
 ## Instructions
 There are two options for enabling additional logging:
 
+:::note
+Version 8.1 changed the logging engine used by the Admin Console, so the `SIWinConsole.log.config` file has a different format. In version 8.1 and later:
+
+- The root element is `<nlog>` instead of `<log4net>`, and the log level is set by the `minlevel` attribute on a `<logger>` rule rather than by a `<level>` element.
+- Saving the file applies the change immediately. Restarting the Admin Console isn't necessary.
+- A log level set through Option two is written back to the configuration file, so it survives a restart.
+:::
+
 ### Option one
 1. Access the SI management server.
 2. Open the Enterprise Manager installation folder. The default location is `...\STEALTHbits\StealthINTERCEPT\SIWinConsole`.

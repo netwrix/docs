@@ -45,3 +45,8 @@ Follow the steps to export policies and templates:
 
 A file is created that contains policy, template, and collection information as per the configured
 settings. See the [Import Window](/docs/threatprevention/8.1/admin/tools/import.md) topic to import this file.
+
+The exported file is also the input for the Policy Verifier tool, which reports the file system
+paths and Active Directory objects that policies reference but that no longer exist. See the
+[Policy Verifier Tool](/docs/threatprevention/8.1/admin/tools/sipolicyverifier.md) topic for
+additional information.

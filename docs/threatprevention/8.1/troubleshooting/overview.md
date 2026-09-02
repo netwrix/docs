@@ -109,3 +109,25 @@ provide administrators with a method of filtering out authentication event data 
 and/or accounts. These options can be configured to ignore authentication traffic from sources known
 to be safe. This affects what gets sent to the Agent. It will have a direct impact on scalability
 for the organization’s environment.
+
+**FAQ: The Agent reports that its queue overflowed and that events were lost. What causes this?**
+
+The Agent resolves the account details on an event by querying every trusted domain over LDAP until
+one answers. When a trusted domain can't be reached — a domain isolated in a perimeter network, or a
+cross-forest trust the domain controller has no route to — each query to it has to time out first. A
+single lookup can take a minute or more, and under a steady flow of events the queue fills faster
+than the Agent drains it.
+
+Enable debug logging for account resolution on the Agent and look for directory searches that take
+tens of seconds against one domain, or that fail reporting that the server isn't operational. Then
+add that domain to the Trusted Domains Blacklist so the Agent skips it. See the
+[Trusted Domains Blacklist Window](/docs/threatprevention/8.1/admin/configuration/trusteddomainsblacklist.md)
+topic for additional information.
+
+**FAQ: Where are the Threat Prevention log files, and how do I change what they record?**
+
+Each component writes to a `logs` folder inside its own installation folder, and AD Monitor keeps a
+separate set of logs on the domain controller. See the
+[Log Files and Logging Configuration](/docs/threatprevention/8.1/troubleshooting/logging.md) and
+[AD Monitor Logging Configuration](/docs/threatprevention/8.1/troubleshooting/admonitorlogging.md)
+topics for additional information.

@@ -59,8 +59,8 @@ for information on this integration.
 
 The following files are available for download:
 
-- threatprevention-server-8.0.x.msi
-- threatprevention-agent-8.0.x.exe
+- threatprevention-server-8.1.x.msi
+- threatprevention-agent-8.1.x.exe
 - threatmanager-reportonly-3.0.x.zip – Contains the Netwrix Threat Manager Reporting Module
   installer. See the [Reporting Module Installation](/docs/threatprevention/8.1/install/reportingmodule/overview.md) topic for
   additional information.

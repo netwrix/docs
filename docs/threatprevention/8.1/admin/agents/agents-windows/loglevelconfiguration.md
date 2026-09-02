@@ -46,9 +46,16 @@ Logging Levels** on the top bar to launch the Log Level Configuration window.
   - Error – Records all errors that occur
   - Fatal – Records only when catastrophic system failures/crashes occur
 
-  No matter what log level is selected, the logs have a maximum cap size of 55 MB. When a log file
-  reaches 50 MB, it is closed and a new file is started. No more than ten closed files (50 MB) are
-  kept. When the eleventh file reaches 50 MB, the oldest closed file is overwritten.
+  No matter what log level is selected, a log file is archived once it reaches its size limit, and
+  up to ten archived files are kept per log. When the eleventh archive is created, the oldest one is
+  deleted. See the
+  [Log Files and Logging Configuration](/docs/threatprevention/8.1/troubleshooting/logging.md) topic
+  for additional information on where the logs are written and how archived files are named.
+
+  :::note
+  A log level set from the Administration Console or through PowerShell is written back to the
+  configuration file of the component it applies to, so the setting survives a service restart.
+  :::
 
 **Step 3 –** To update the logging level for Enterprise Manager and the Administration Console:
 
@@ -64,7 +71,25 @@ Logging Levels** on the top bar to launch the Log Level Configuration window.
 
 ## Access Agent Log Files
 
-Follow the steps to access the Agent log files.
+**Get Agent Log** collects the Agent log files into a single ZIP archive and downloads it. The
+archive holds the complete contents of two folders on the Agent server:
+
+- `logs`, which holds the Agent host logs
+- `ADMonitor_logs`, which holds the AD Monitor logs. This folder exists only where AD Monitor runs,
+  which is on a domain controller.
+
+Every file in both folders is included, active and archived alike, so a single download gives
+Netwrix Support the full history rather than the most recent entries alone. See the
+[Log Files and Logging Configuration](/docs/threatprevention/8.1/troubleshooting/logging.md) and
+[AD Monitor Logging Configuration](/docs/threatprevention/8.1/troubleshooting/admonitorlogging.md)
+topics for a description of the individual log files.
+
+:::note
+In versions before 8.1, **Get Agent Log** downloaded the active Agent log file on its own.
+AD Monitor logs had to be collected from the domain controller by hand.
+:::
+
+Follow the steps to collect the Agent log files.
 
 ![Get Agent Log icon](/images/threatprevention/8.1/admin/agents/window/getagentlog.webp)
 
@@ -73,11 +98,15 @@ and click **Get Agent Log** .
 
 ![Save As window for Agent logs](/images/threatprevention/8.1/admin/agents/window/saveaswindow.webp)
 
-**Step 2 –** The Save As window opens with the selected Agent’s log already selected from its
-original location. Select the new location and click **Save**.
+**Step 2 –** The Save As window opens. Select the location for the archive and click **Save**.
 
-You can now view a copy of the log file without navigating to its location on the machine where the
-Agent is deployed.
+You can now review the Agent log files, or attach the archive to a support case, without connecting
+to the machine where the Agent is deployed.
+
+:::tip
+Collect the archive after you reproduce a problem, not before. The archive is a snapshot of
+the log folders at the moment you download it.
+:::
 
 ## Access the Enterprise Manager & Administration Console Log Files
 
@@ -107,3 +136,9 @@ Log files for a remote instance of the Administration Console are available at t
 location on the respective machine.
 
 :::
+
+The log levels in this window don't apply to AD Monitor, the component that runs inside the LSASS
+process on a domain controller. AD Monitor keeps its own configuration file and its own log files.
+See the
+[AD Monitor Logging Configuration](/docs/threatprevention/8.1/troubleshooting/admonitorlogging.md)
+topic for additional information.

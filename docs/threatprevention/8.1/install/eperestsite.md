@@ -25,7 +25,7 @@ applications that have to use the REST API.
 
 
 **Step 1 –** From the Threat Prevention Installer package, run the server executable
-(threatprevention-server-8.0.x.xxx.msi). The Netwrix Threat Prevention Server Setup wizard opens.
+(threatprevention-server-8.1.x.xxx.msi). The Netwrix Threat Prevention Server Setup wizard opens.
 
 ![Threat Prevention Server Setup wizard - Welcome page](/images/threatprevention/8.1/install/welcome.webp)
 

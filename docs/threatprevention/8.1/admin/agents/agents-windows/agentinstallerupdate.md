@@ -14,8 +14,8 @@ additional information.
 To download an installation package, the Threat Prevention server must be connected to the internet.
 It may be necessary to allow the following URL in the browser security settings:
 
-- For Threat Prevention v8.0:
-  [https://www.netwrix.com/go/siagent800zip](https://www.netwrix.com/go/siagent800zip)
+- For Threat Prevention v8.1:
+  [https://www.netwrix.com/go/siagent810zip](https://www.netwrix.com/go/siagent810zip)
 
 Follow the steps to download the updated Agent installer.
 

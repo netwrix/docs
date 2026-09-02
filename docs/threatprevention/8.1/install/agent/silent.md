@@ -14,7 +14,7 @@ distribution solutions that an organization may already have in their environmen
 
 The WiX installer application for Agent runs under control of Windows installer component (MSI).
 Therefore, standard MSI command-line options can be used with the
-“threatprevention-agent-7.4.0.xxx.exe” install.
+“threatprevention-agent-8.1.x.xxx.exe” install.
 
 Available command-line options can be found in the
 [Microsoft Standard Installer Command-Line Options](<https://msdn.microsoft.com/en-us/library/windows/desktop/aa372024(v=vs.85).aspx>)

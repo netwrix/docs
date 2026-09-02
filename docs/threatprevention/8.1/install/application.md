@@ -9,7 +9,7 @@ sidebar_position: 10
 Follow the steps to install Threat Prevention.
 
 **Step 1 –** From the Threat Prevention Installer package, run the server executable
-(threatprevention-server-8.0.x.xxx.msi). The Netwrix Threat Prevention Server Setup wizard opens.
+(threatprevention-server-8.1.x.xxx.msi). The Netwrix Threat Prevention Server Setup wizard opens.
 
 :::note
 Run the msi via the command prompt with elevated privileges (domain admin rights) on a

@@ -31,6 +31,14 @@ How to enable debug logging on the Netwrix Threat Manager Windows agent.
 ## Instructions
 There are two options.
 
+:::note
+Version 8.1 changed the logging engine used by the agent, so the `SIWindowsAgent.log.config` file has a different format. In version 8.1 and later:
+
+- The root element is `<nlog>` instead of `<log4net>`, and the log level is set by the `minlevel` attribute on a `<logger>` rule rather than by a `<level>` element.
+- Saving the file applies the change immediately. Restarting the `SIWindowsAgent` service isn't necessary.
+- A log level set through Option 2 is written back to the configuration file, so it survives a service restart.
+:::
+
 ### Option 1
 1. Access the server with the SI Windows agent running.
 2. Open the Windows Agent installation folder. The default location is `...\STEALTHbits\StealthINTERCEPT\SIWindowsAgent\`
