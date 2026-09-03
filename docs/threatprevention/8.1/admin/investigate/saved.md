@@ -6,19 +6,19 @@ sidebar_position: 10
 
 # Saved Investigations
 
-You can apply filters on the [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) to filter event data as desired.
-Filters settings can be saved. Follow the steps to save a filtered view.
+You can apply filters on the [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) to filter event data.
+You can also save filter settings. To save a filtered view:
 
 ![Investigate Interface - Save a Filtered View](/images/threatprevention/8.1/admin/investigate/saveview.webp)
 
 **Step 1 –** Click **Investigate** in the left pane to launch the Investigate interface.
 
-**Step 2 –** Set the filter [1] as desired, Refresh the data grid [2], and click **Save Filter
+**Step 2 –** Set the filter [1], refresh the data grid [2], and click **Save Filter
 Settings and Layout** [3]. The Filter Set Name window opens.
 
 ![Filter Set Name window](/images/threatprevention/8.1/admin/investigate/filtersetname.webp)
 
-**Step 3 –** Type a name for this filtered view and click **OK**.
+**Step 3 –** Enter a name for this filtered view and click **OK**.
 
 ![Saved filter view in the navigation pane](/images/threatprevention/8.1/admin/investigate/savedview.webp)
 

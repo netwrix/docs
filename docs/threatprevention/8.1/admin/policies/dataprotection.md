@@ -19,7 +19,7 @@ it:
     [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md).
 
     Only users granted the View Data permission on the folder where the object has been
-    identified for protection are able to view any results of events that include the object.
+    identified for protection can view any results of events that include the object.
     See the Protect Objects section for instructions on protecting policies or objects.
 
   - Manage Policies checkbox – Affects the ability to change policy configuration settings. See
@@ -37,7 +37,7 @@ it:
 
 :::note
 These protections only apply to viewing event data within the Administration Console, and
-do not carry-over to the Netwrix Threat Manager Reporting Module application.
+don't carry-over to the Netwrix Threat Manager Reporting Module application.
 :::
 
 
@@ -47,7 +47,7 @@ Policies can be protected at the folder level under the Policies node. When a us
 permission on a folder, all policies and subfolders within that folder are protected from any user
 not included in the Permissions list.
 
-Follow the steps to protect policies.
+To protect policies:
 
 ![Policy folder - Permissions page](/images/threatprevention/8.1/admin/policies/permissions.webp)
 
@@ -82,12 +82,12 @@ policies within this folder or its subfolders.
 In addition to protecting policies, objects being monitored or blocked by policies can also be
 protected. This feature ensures regulatory compliance. Any object granted protection is protected
 across all policies and reports, including its child objects. That means if a policy from another
-folder monitors or blocks a change affecting the protected object, the resulting event is not
+folder monitors or blocks a change affecting the protected object, the resulting event isn't
 included in any result data. Only users granted permissions on the folder where the object is
-protected are able to view event data for that object. This protection applies to a policy’s Recent
+protected can view event data for that object. This protection applies to a policy’s Recent
 Events tab and the Investigate interface.
 
-Follow the steps to protect objects.
+To protect objects:
 
 ![Policy folder - Permissions page](/images/threatprevention/8.1/admin/policies/permissions.webp)
 
@@ -98,7 +98,7 @@ is displayed.
 
 ![Select Active Directory Contexts window](/images/threatprevention/8.1/admin/policies/adcontexts.webp)
 
-**Step 8 –** On the Select Active Directory Contexts window, select an Agent from the drop-down menu
+**Step 8 –** On the Select Active Directory Contexts window, select an Agent from the dropdown menu
 and click **Connect**. Expand the domain tree in the Navigation pane. Select an item in the Results
 pane on the right and click **OK**. See the [Selection Windows](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/overview.md) topic
 for additional information.

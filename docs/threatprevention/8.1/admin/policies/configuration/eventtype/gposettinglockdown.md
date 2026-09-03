@@ -6,8 +6,11 @@ sidebar_position: 150
 
 # GPO Setting Lockdown Event Type
 
-The GPO Setting Lockdown event type can prevent all changes against specified GPOs. Note that this
-is for the entire GPO (file) and not specific settings in the GPO.
+The GPO Setting Lockdown event type can prevent all changes against specified GPOs.
+
+:::note
+This is for the entire GPO (file) and not specific settings in the GPO.
+:::
 
 The event filters for the GPO Setting Lockdown event type are:
 
@@ -17,16 +20,15 @@ The event filters for the GPO Setting Lockdown event type are:
 
 ![New Policy window - GPO Setting Lockdown Event Type](/images/threatprevention/8.1/admin/policies/eventtype/ggposettinglockdown.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 If setting a filter to “Exclude” a domain from this blocking policy, this setting overrides any
-”Block” user filters. This means that in order to block a user, you must not “Exclude” the domain
+”Block” user filters. This means that to block a user, you must not “Exclude” the domain
 where that user resides.
 
 :::warning
-Lockdown/blocking policies with blank filters result in everything being locked down or
-blocked.
+Lockdown/blocking policies with blank filters lock down or block everything.
 :::
 
 
@@ -50,7 +52,7 @@ In the Group Policy Objects section, scope to specific GPOs:
 
   - The **Add** (+) button opens the
     [Select Active Directory Group Policy Objects Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/grouppolicyobjects.md).
-  - The Remove (x) button deletes the selected item(s) from that box.
+  - The Remove (x) button deletes the selected items from that box.
 
 ## Domains/Servers Filter
 
@@ -65,10 +67,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -78,7 +80,7 @@ for additional information.
 
 Use the AD Perpetrator filter for lockdown to set the scope of the policy to lockdown specific
 security principals committing changes or to exclude specific security principals committing changes
-from being locked down.
+from lockdown.
 
 ![AD Perpetrator Protect filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratorprotect.webp)
 
@@ -98,10 +100,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 

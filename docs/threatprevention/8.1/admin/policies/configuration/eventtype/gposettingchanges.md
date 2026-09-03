@@ -7,7 +7,7 @@ sidebar_position: 140
 # GPO Setting Changes Event Type
 
 The GPO Setting Changes event type generates events based on rules for specified (or all) GPOs, to
-report what setting(s) in a GPO are modified.
+report what settings in a GPO are modified.
 
 The event filters for the GPO Setting Changes event type are:
 
@@ -17,7 +17,7 @@ The event filters for the GPO Setting Changes event type are:
 
 ![Policy window - GPO Setting Changes Event Type](/images/threatprevention/8.1/admin/policies/eventtype/gposettingchanges.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 ## AD Group Policy Object Changes Filter
@@ -41,13 +41,13 @@ In the Group Policy Objects section, scope to specific GPOs:
 
   - The **Add** (+) button opens the
     [Select Active Directory Group Policy Objects Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/grouppolicyobjects.md).
-  - The Remove (x) button deletes the selected item(s) from that box.
+  - The Remove (x) button deletes the selected items from that box.
 
 ## AD Perpetrator Filter
 
 Use the AD Perpetrator filter for monitoring to set the scope of the policy to only monitor specific
 security principals committing changes or to exclude specific security principals committing changes
-from being monitored.
+from monitoring.
 
 ![Event Type - AD Perpetrator Monitoring filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratormonitoring.webp)
 
@@ -59,10 +59,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -72,7 +72,7 @@ for additional information.
 
 ![Sub-Tree option in event type filters](/images/threatprevention/8.1/admin/policies/eventtype/subtree.webp)
 
-When contexts are added, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
+When you add contexts, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
 and all child contexts. Uncheck it to apply the filter to the listed context only.
 
 ## Advanced Filter
@@ -87,7 +87,7 @@ conditions to a filter statement. Conditions can be singular or grouped by a log
 
 **Logical Operator**
 
-The logical operator is displayed as left aligned red text. To change the logical operator, click on
+The logical operator is displayed as left aligned red text. To change the logical operator, click
 it to open a menu with the following options:
 
 - And
@@ -102,12 +102,12 @@ row is inserted that displays a column (attribute), a comparison operator, and a
 
 **Column Selection**
 
-The selected column is displayed in blue text. Click on it to open a menu with all available columns
+The selected column is displayed in blue text. Click it to open a menu with all available columns
 from the GPO Setting Changes Recent Events data grid.
 
 **Comparison Operator**
 
-The comparison operator is displayed in green text. To change it, click on it to open a menu with
+The comparison operator is displayed in green text. To change it, click it to open a menu with
 options that associate with the data in the GPO Setting Changes Recent Events data grid.
 
 **Filter Criteria**

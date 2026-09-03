@@ -15,7 +15,7 @@ Collection and click the Manage button to open the List of Collections window.
 
 ![List of Collections window](/images/threatprevention/8.1/admin/configuration/collectionmanager/listofcollections.webp)
 
-At the top of the window, the Collection Category is displayed. Each item in the list displays:
+The Collection Category displays at the top of the window. Each item in the list displays:
 
 - Name – Name of the collection
 - Item Count – Number of items in the collection
@@ -25,7 +25,7 @@ Use the Add, Edit, Remove, Dependencies, and Export buttons to modify a collecti
 
 ## Add New Collection Window
 
-Follow the steps to add a static collection.
+To add a static collection:
 
 **Step 1 –** Click **Add** on the List of Collections window to open the Add New Collection window.
 
@@ -35,19 +35,19 @@ Follow the steps to add a static collection.
 
 - The _I will provide a list_ option button enables the default setting for a static collection.
 - The _I want a list to come from the database table_ option button enables a dynamic collection.
-  Enter the table name in the textbox that appears or select it from the drop-down menu. See the
+  Enter the table name in the textbox that appears or select it from the dropdown menu. See the
   [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic for additional information.
 
 **Step 3 –** Provide a unique, descriptive name for the collection in the name box.
 
 **Step 4 –** Provide a detailed description in the Description box.
 
-**Step 5 –** The Created By, Created On, Modified By, and Modified On boxes are automatically
-populated when collections are created or changed.
+**Step 5 –** Threat Prevention automatically populates the Created By, Created On, Modified By, and
+Modified On boxes when you create or change collections.
 
 **Step 6 –** Use the Add (+) button to search for Items that match the selected Collection category.
 
-The Select… window opens. Select a server/Agent from the drop-down menu and click **Connect**.
+The Select… window opens. Select a server/Agent from the dropdown menu and click **Connect**.
 Expand the domain tree in the navigation pane. Select an item in the Results pane on the right and
 click **OK**. See the [Selection Windows](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/overview.md) topic for
 additional information.
@@ -56,12 +56,12 @@ additional information.
 
 Use the **Remove** (x) button to remove Items from the list on the Add New Collection window.
 
-Some collection can be configured to be dynamic collections. See the
+You can configure some collections as dynamic collections. See the
 [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic for additional information. The Perpetrators and Lockdown
 Perpetrators collections also have the option to expand group membership. See the Expand Groups
 Option for Perpetrators & Objects Collection topic for additional information.
 
-**Step 7 –** When the configuration is set as desired, click **OK** to save the collection.
+**Step 7 –** When the configuration is set, click **OK** to save the collection.
 
 ## Expand Groups Option for Perpetrators & Objects Collection
 
@@ -75,24 +75,24 @@ collections:
 
 ![Expand Groups option on the Add New Collection window](/images/threatprevention/8.1/admin/configuration/collectionmanager/expandgroups.webp)
 
-- For Perpetrators – If checked, the groups and nested-groups are expanded to monitor effective
-  group membership at the user level. This means the Agent monitors/blocks based on the user’s token
-  instead of the group’s token. The impact specifically for Lockdown Perpetrators collections is
-  that this option allows for the immediate blocking of a currently logged in user who has had a
-  group membership change while logged in.
-- For Objects – If checked, when a group object is added, then the groups and nested-groups are
-  expanded to monitor effective group membership at the user level. This means the Agent
-  monitors/blocks based on the user’s token instead of the group’s token. The impact specifically
-  for Lockdown Objects collections is that this option allows for the immediate blocking of a
-  currently logged in user who has had a group membership change while logged in.
+- For Perpetrators – If checked, Threat Prevention expands the groups and nested groups to monitor
+  effective group membership at the user level. This means the Agent monitors/blocks based on the
+  user’s token rather than the group’s token. For Lockdown Perpetrators collections specifically,
+  this option immediately blocks a logged-in user whose group membership changed while they were
+  logged in.
+- For Objects – If checked, when you add a group object, Threat Prevention expands the groups and
+  nested groups to monitor effective group membership at the user level. This means the Agent
+  monitors/blocks based on the user’s token rather than the group’s token. For Lockdown Objects
+  collections specifically, this option immediately blocks a logged-in user whose group membership
+  changed while they were logged in.
 
-The Expand Groups option does NOT apply to other object types.
+The Expand Groups option **doesn't** apply to other object types.
 
-There is a maximum cap of 1000 users/objects that can be expanded. If the total number of users or
+Threat Prevention can expand a maximum of 1000 users/objects. If the total number of users or
 objects of the groups added to a single collection exceeds 1000, then the Agent defaults to
 monitoring/blocking based on the groups’ tokens.
 
-If group membership cannot be resolved, then the Agent defaults to monitoring/blocking based on the
+If group membership can't be resolved, then the Agent defaults to monitoring/blocking based on the
 groups’ tokens.
 
 ## Edit Collection Window
@@ -110,8 +110,8 @@ Collection Window topic for additional information on these settings.
 **Step 1 –** Select a collection on the List of Collections window and click **Remove**.
 
 :::note
-You cannot delete a collection that is assigned to an active policy, as indicated in the
-Dependency Count column. Remove a collection from all policies it has been assigned to before
+You can't delete a collection assigned to an active policy, as indicated in the
+Dependency Count column. Remove the collection from all policies it's assigned to before
 deleting it.
 :::
 
@@ -135,9 +135,9 @@ collection is assigned to. View the list and click **OK**.
 You can select one or more collections on the List of Collections window and export their
 information to a TSV file.
 
-Follow the steps to export a collection in the list.
+To export a collection in the list:
 
 **Step 1 –** Select one or more collections on the List of Collections window and click **Export**.
 
-**Step 2 –** The Save As window opens. It displays the default file name and location where it will
-be saved. Modify if required and click **Save**.
+**Step 2 –** The Save As window opens. It displays the default file name and save location. Modify
+them if required and click **Save**.

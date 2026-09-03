@@ -36,7 +36,7 @@ scan fails.
 
 ## Run a Scan
 
-Follow the steps to scan a domain controller.
+To scan a domain controller:
 
 **Step 1 –** Copy `LsassHookScan.exe` to the target domain controller, into a folder that also holds
 a copy of `plsahlp.sys`.
@@ -50,14 +50,14 @@ LsassHookScan.exe > lsasshookscan_<hostname>_<date>.txt
 ```
 
 **Step 4 –** Review the text file, and attach the complete file to the support case. A screenshot of
-part of the output is not enough for analysis.
+part of the output isn't enough for analysis.
 
 ### Options
 
 | Option | Description |
 | --- | --- |
 | (none) | Reports everything found, including the hooks that belong to Threat Prevention |
-| --whitelist-ntp | Omits the hooks and memory regions attributed to Threat Prevention from both the report and the verdict. Use this to see only what does not belong to Threat Prevention. |
+| --whitelist-ntp | Omits the hooks and memory regions attributed to Threat Prevention from both the report and the verdict. Use this to see only what doesn't belong to Threat Prevention. |
 | --help | Prints usage information and exits |
 
 Options are accepted as `--option`, `-option`, `/option`, or with no prefix at all.

@@ -11,7 +11,7 @@ policy. You can customize the settings as required.
 
 ## Create a Policy From a Template
 
-Click the Templates or Tags node in the Navigation pane and move the desired template to the
+Click the Templates or Tags node in the Navigation pane and move the template you want to the
 Policies node.
 
 - From under the Templates node, templates can be moved to the Policies node via drag-and-drop or
@@ -23,7 +23,7 @@ The policy will be disabled but will contain all of the preconfigured settings.
 
 ## Customize a Policy Created From a Template
 
-Follow the steps to customize a policy that was created from a template.
+To customize a policy that was created from a template:
 
 **Step 1 –** Click Policies in the Navigation pane and open the policy you created from a template.
 
@@ -40,7 +40,7 @@ being locked down or blocked.
 that are specific to each environment.
 
 :::tip
-Remember, Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 is treated like an "ALL" for that filter set.
 :::
 

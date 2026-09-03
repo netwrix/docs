@@ -15,7 +15,7 @@ Export alert data before using the Clear option. See the
 :::
 
 
-Follow the steps to clear the alerts data.
+To clear the alerts data:
 
 **Step 1 –** Click **Alerts** in the left pane to launch the Alerts interface.
 
@@ -31,14 +31,14 @@ Follow the steps to clear the alerts data.
 - Log Level – Deletes alerts that have the log levels that are checked. The log levels are
   equivalent to the alert severity levels in the data grid on the
   [Alerts Interface](/docs/threatprevention/8.1/admin/alerts/overview.md).
-- Save deleted to File – Saves alert data to a CSV file before it is deleted from the database. On
+- Save deleted to File – Saves alert data to a CSV file before Threat Prevention deletes it from the database. On
   clicking Start, the Save As window appears. Specify a file name and location; the default name is
   “Alerts*Backup*[date]\_[timestamp]”. Then click Save.
 - Analytics Alerts – Choose to display Threat Prevention analytics alerts in the database and/or
-  show them in the Alerts interface. If you choose to display them on the Alerts interface, then
-  this data will also be deleted in the cleanup function.
-- Cleanup Scheduling – Deletes alerts after a specific number of days if the severity level is
-  selected from the list. Set the start time for when the cleanup begins.
+  show them in the Alerts interface. If you choose to display them on the Alerts interface, the
+  cleanup function also deletes this data.
+- Cleanup Scheduling – Deletes alerts after a specific number of days if you select the severity
+  level from the list. Set the start time for when the cleanup begins.
 
 **Step 4 –** Click **Start** to run the alerts cleanup with the applied settings.
 
@@ -46,5 +46,5 @@ Follow the steps to clear the alerts data.
 window.
 
 Threat Prevention clears alert data from the database according to these configurations. It
-generates a new alert to notify that the alert data is cleared, identifies the user who cleared the
-alerts, displays a date time stamp, and what options were configured for the cleanup operation.
+generates a new alert that reports the cleared alert data, identifies the user who cleared the
+alerts, and displays a date timestamp and the options you configured for the cleanup operation.

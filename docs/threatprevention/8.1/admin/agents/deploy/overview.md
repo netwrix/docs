@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Deploy Agents
 
-The Threat Prevention Agent can be deployed through any of the following methods:
+You can deploy the Threat Prevention Agent through any of the following methods:
 
 - Deploy the Agent to servers through the Administration Console – You can deploy the Agent to one
   or multiple servers through the Administration Console
@@ -30,10 +30,10 @@ compatibility with other security products. See the
 [Agent Server Requirements](/docs/threatprevention/8.1/requirements/agent/agent.md) topic for additional information.
 
 :::note
-The wizard doesn't block access to the Administration Console and can be minimized while
-actions are in progress. If this wizard is hidden by clicking outside of the dialog box, a flashing
-blue link displays on the upper right corner of the interface with the action name displayed. Click
-the flashing blue link to bring back the focus to the wizard.
+The wizard doesn't block access to the Administration Console, and you can minimize it while
+actions are in progress. If you hide the wizard by clicking outside of the dialog box, a flashing
+blue link with the action name displays in the upper right corner of the interface. Click
+the flashing blue link to return the focus to the wizard.
 :::
 
 
@@ -62,8 +62,8 @@ the Deploy Agents to These Computers box. Use any of the three methods, as repre
 tabs on the window. See the [Select Computers Window](/docs/threatprevention/8.1/admin/agents/deploy/selectcomputers.md) topic for additional
 information. Click **Next**.
 
-If you open this window through the [Right-Click Menu](/docs/threatprevention/8.1/admin/agents/overview.md#right-click-menu) action, the
-list is auto-populated with the computers selected on the Agents interface.
+If you open this window through the [Right-Click Menu](/docs/threatprevention/8.1/admin/agents/overview.md#right-click-menu) action, Threat
+Prevention populates the list with the computers you selected on the Agents interface.
 
 ![Deploy Agents wizard – Set Options page](/images/threatprevention/8.1/admin/agents/deploy/setoptions.webp)
 
@@ -107,8 +107,8 @@ To update the settings for a deployed Agent through the Agents interface, comple
 **Step 2 –** On the Agents interface, right-click the Agent and select Update Agent Settings on the
 [Right-Click Menu](/docs/threatprevention/8.1/admin/agents/overview.md#right-click-menu). The Select Computers window opens.
 
-**Step 3 –** On the Select Computers window, the computer where the Agent is deployed is
-automatically added to the Update Agent settings on These Computers box. See the
+**Step 3 –** On the Select Computers window, Threat Prevention automatically adds the computer
+where the Agent is deployed to the Update Agent settings on These Computers box. See the
 [Select Computers Window](/docs/threatprevention/8.1/admin/agents/deploy/selectcomputers.md) topic for additional information. Click **Next**.
 
 **Step 4 –** On the Set Options window, ensure the proper credentials, modules, and Enterprise
@@ -121,13 +121,13 @@ either succeed or fail during a prerequisites or verification check. See the
 [Prerequisites Check Window](/docs/threatprevention/8.1/admin/agents/deploy/prerequisitescheck.md) topic for additional information. Click
 **Next**.
 
-**Step 6 –** On the Updating Settings window, the Agent will be stopped and restarted. One of two
-status messages display:
+**Step 6 –** On the Updating Settings window, Threat Prevention stops and restarts the Agent. One
+of two status messages displays:
 
 - Failed – Read the failure message and either click **Back** to provide new credentials or click
   **Finish** to close the window and resolve any error messages before the next
   attempt
-- Completed – Indicates that the Agent has been successfully updated
+- Completed – Indicates that the Agent updated successfully
 
 **Step 7 –** Click **Finish** to close the window.
 

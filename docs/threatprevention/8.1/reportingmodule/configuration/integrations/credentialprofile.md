@@ -25,7 +25,7 @@ list of permission requirements for each type of task.
 
 **Best Practice Recommendation**
 
-It is a best practice to:
+As a best practice:
 
 - Create one Credential Profile per domain for Active Directory Sync purposes
 - Create a Credential Profile with Writer permissions to the shared folder where subscription
@@ -33,7 +33,7 @@ It is a best practice to:
 
 ## Add a Credential Profile
 
-Follow the steps to add a Credential Profile.
+To add a Credential Profile:
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -43,7 +43,7 @@ Add New Integration window opens.
 
 ![Add New Integration window with Credential Profile type selected](/images/threatprevention/8.1/reportingmodule/configuration/integrations/credentialprofile.webp)
 
-**Step 3 –** In the Type drop-down menu, select Credential Profile.
+**Step 3 –** In the Type dropdown menu, select Credential Profile.
 
 **Step 4 –** Enter the following information:
 
@@ -65,7 +65,7 @@ additional Credential Profiles.
 
 ## Credential Profile Details
 
-Follow the steps to view the details of a Credential Profile.
+To view the details of a Credential Profile:
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -94,13 +94,13 @@ for a Credential Profile:
     Credential topic for additional information.
   - Delete Credential – The delete button to the right of the credentials opens the Delete
     Credential window to confirm the action
-  - Add Credential – This button allows you to add additional credentials to this profile. This
-    functionality is available for a full Netwrix Threat Manager implementation, and does not
+  - Add Credential – Use this button to add additional credentials to this profile. This
+    functionality is available for a full Netwrix Threat Manager implementation, and doesn't
     apply to the Netwrix Threat Manager Reporting Module.
 
 ## Edit Profile
 
-Follow the steps to edit a Credential Profile name and/or description.
+To edit a Credential Profile name and/or description:
 
 **Step 1 –** Use the gear icon in the upper right corner of the console to open the Configuration
 menu. Then select **Integrations** to open the Integrations interface.
@@ -124,7 +124,7 @@ The Credential Profile name and/or description have been modified.
 
 ## Edit Credential
 
-Follow the steps to edit a credential within a Credential Profile. This may be necessary if the
+Use the following steps to edit a credential within a Credential Profile. This may be necessary if the
 account password needs to be updated.
 
 **Step 1 –** On the Integrations interface, click **Credential Profile** in the navigation pane to
@@ -135,7 +135,7 @@ Credential Settings window opens.
 
 ![Credential Settings window](/images/threatprevention/8.1/reportingmodule/configuration/integrations/credentialsettingswindow.webp)
 
-**Step 3 –** To edit the platform type, select either SQL or Windows from the **Platform** drop-down
+**Step 3 –** To edit the platform type, select either SQL or Windows from the **Platform** dropdown
 menu.
 
 **Step 4 –** To edit the account user name, enter the account user name in the required format of

@@ -7,8 +7,8 @@ sidebar_position: 20
 # Archive Data
 
 To use the Move operation on the [Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md), you must specify a
-database where data is archived. You can also define settings to delete data aged beyond a specified
-threshold from the archive database.
+database where Threat Prevention archives data. You can also define settings to delete data aged
+beyond a specified threshold from the archive database.
 
 :::info
 Consider periodically retiring the current archive database and creating a new
@@ -18,14 +18,14 @@ one. Depending on the size of the archive database, it could be yearly or every 
 
 ## Configure the Archive Database
 
-Follow the steps to configure settings for the archive database.
+To configure settings for the archive database:
 
 **Step 1 –** Click **Configuration** > **Database** > **Maintenance** on the menu. The Database
-Maintenance window is displayed. Click the **Archive DB** tab.
+Maintenance window opens. Click the **Archive DB** tab.
 
 ![Database Maintenance window - Archive DB tab](/images/threatprevention/8.1/admin/configuration/databasemaintenance/archivedb.webp)
 
-**Step 2 –** Enter the following information for the database where data is to be archived:
+**Step 2 –** Enter the following information for the database where Threat Prevention archives data:
 
 - Server – SQL Server where the archive database is located
 - Port – Instance port number, by default this is set to 0
@@ -43,51 +43,51 @@ To query archived event data, use the Investigate interface. See the
 ## Enable Database Maintenance for the Archive Database
 
 You can specify settings to automatically delete archived data that has aged beyond a specified
-threshold. The threshold can be set per Event Type, per Analytics, and/or per Policy. While all
-three options can be enabled with different retention periods, the Event Type maintenance settings
+threshold. You can set the threshold per Event Type, per Analytics, and/or per Policy. Although you
+can enable all three options with different retention periods, the Event Type maintenance settings
 take precedence over Policy maintenance settings where the selected policy employs that event type.
 
-Alerts generated for the archive database maintenance job are displayed on the
-[Alerts Interface](/docs/threatprevention/8.1/admin/alerts/overview.md) with "Archive DB:" as prefix in the Message column.
-This helps differnciate between alerts generated for database maintenance and archive database
+The [Alerts Interface](/docs/threatprevention/8.1/admin/alerts/overview.md) displays alerts generated for the archive database
+maintenance job with "Archive DB:" as a prefix in the Message column.
+This helps you distinguish between alerts generated for database maintenance and archive database
 maintenance.
 
-Follow the steps to enable database maintenance for the archive database.
+To enable database maintenance for the archive database:
 
 **Step 1 –** Click **Configuration** > **Database** > **Maintenance** on the menu. The Database
-Maintenance window is displayed. Click the **Archive DB** tab.
+Maintenance window opens. Click the **Archive DB** tab.
 
-Make sure archive database settings have been configured and the archiving process has run at least
-once.
+Ensure that you have configured the archive database settings and that the archiving process has run
+at least once.
 
 **Step 2 –** Click the **Configure Archive DB Maintenance** button. The Archive DB Maintenance
 window is displayed.
 
 ![Archive DB Maintenance window](/images/threatprevention/8.1/admin/configuration/databasemaintenance/archivedbmaintenance.webp)
 
-The following information is displayed at the top of the window:
+The top of the window displays the following information:
 
 - Archive Database Information:
 
-> > - Server – SQL Server where database maintenance is performed
+> > - Server – SQL Server where Threat Prevention performs database maintenance
 > > - Database – Name of the database
 > > - Database Size – Current size of the database
 > > - Oldest Data – Date of the oldest data in the database
 
 - Job Information:
-  - Last run – Date timestamp when the last database maintenance job was executed
+  - Last run – Date timestamp when the last database maintenance job ran
   - Status – Status of the job. Different statuses are:
     - Idle – Indicates that no database maintenance task is running
     - Succeeded – Indicates that the most recent job finished without error
     - Running – Indicates that a job is running
     - Error – Indicates that the job started but terminated on an error
-  - Running Step – During job execution, this field populates with the step being executed
+  - Running Step – During job execution, this field populates with the current step
   - Elapsed Time – Overall elapsed time of job execution
 
 The Refresh button in the upper-right corner refreshes this database and job information.
 
-**Step 3 –** From the Run SQL Agent job on drop-down menu, select an option to determine the SQL
-Agent that will run the maintenance job.
+**Step 3 –** From the Run SQL Agent job on dropdown menu, select an option to determine the SQL
+Agent that runs the maintenance job.
 
 - Select **Main DB** if the archive database resides on the same SQL Server machine as the
   NVMonitorData database.

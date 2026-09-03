@@ -21,14 +21,14 @@ This window is only available to Threat Prevention administrators.
 
 
 The user account that ran the installation is automatically set with the administrator role. This is
-the only active user until more are added. This ensures that no unauthorized accounts can open the
+the only active user until you add more. This ensures that no unauthorized accounts can open the
 Administration Console.
 
 ## Roles
 
-There are two roles that can be applied to a Threat Prevention user:
+You can apply two roles to a Threat Prevention user:
 
-- Administrator – Full access to the Administration Console, though access can be restricted. See
+- Administrator – Full access to the Administration Console, though you can restrict access. See
   the Administrator Permissions topic for additional information.
 - Console Operator – Can create and run policies, and view event data.
 
@@ -55,8 +55,8 @@ information on the new reporting console.
 | Modify User Access Rights                                   | Yes                             | No                              |
 | LDAP Operations Center                                      | Yes                             | No                              |
 
-\*If an administrator changes permissions on protected policies they do not own, a system alert is
-generated.
+\*If an administrator changes permissions on protected policies they don't own, Threat Prevention
+generates a system alert.
 
 See the [Policies Interface](/docs/threatprevention/8.1/admin/policies/overview.md) topic for information on protected and
 unprotected policies.
@@ -67,8 +67,8 @@ NVMonitorConfig and NVMonitorData databases, according to the assigned role:
 - Administrator Role
 
   - Read/Write data
-  - If using [Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md) – SQL Admin (sa)
-    rights are required
+  - If using the [Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md) – You need SQL
+    Admin (sa) rights
 
 - Console Operator Role
 
@@ -81,13 +81,13 @@ Administrator permissions to manage features, stop the Agent, or uninstall the A
 
 ![Users and Roles window showing the Edit Features window](/images/threatprevention/8.1/admin/configuration/userroles/featuresbutton.webp)
 
-Follow the steps to edit the features for the selected user. All listed features are enabled by
-default.
+To edit the features for the selected user, use the following steps. All listed features are enabled
+by default.
 
 **Step 1 –** Click the **Features** button. The Edit features window opens.
 
-**Step 2 –** Check and uncheck features as desired.
+**Step 2 –** Check and uncheck features as needed.
 
 **Step 3 –** Click **OK**.
 
-The user is denied rights to the deselected features.
+The user has no rights to the deselected features.

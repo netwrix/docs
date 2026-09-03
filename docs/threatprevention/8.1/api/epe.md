@@ -58,7 +58,7 @@ Example of adding an import xml file:
 
 ## Export Character Substitutions
 
-The `Export-SICharacterSubstitution` command exports the character substitution data currently being
+The `Export-SICharacterSubstitution` command exports the character substitution data being
 used by the Enterprise Manager. The content exported is the same as displayed in the
 [Substitutions Editor Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#substitutions-editor-window).
 
@@ -84,7 +84,7 @@ Example of adding an import xml file:
 ## Export Character Substitution Words
 
 The `Export-SICharacterSubstitutionWords` command exports the EPE Words subject to character
-substitution currently being used by the Enterprise Manager. The content exported is the same as
+substitution being used by the Enterprise Manager. The content exported is the same as
 displayed in the
 [Words List Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#words-list-dictionary-window).
 
@@ -105,7 +105,7 @@ The following parameter is required:
 
 ## Export Passwords Dictionary
 
-The `Export-SIPasswordsDictionary` command exports the EPE Password Dictionary currently being used
+The `Export-SIPasswordsDictionary` command exports the EPE Password Dictionary being used
 by the Enterprise Manager. The content exported is the same as displayed in the
 [Password Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#password-dictionary-window).
 

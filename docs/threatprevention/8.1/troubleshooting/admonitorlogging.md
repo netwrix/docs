@@ -27,7 +27,7 @@ controller. The default path is:
 
 | Log file | Contents |
 | --- | --- |
-| DebugTrace.log | Verbose, code-level trace of the path AD Monitor takes while processing activity. Use it to diagnose why something does not work. |
+| DebugTrace.log | Verbose, code-level trace of the path AD Monitor takes while processing activity. Use it to diagnose why something doesn't work. |
 | EventTrace.log | One structured line per captured event. Use it to confirm that a specific event was captured, and for automated parsing. |
 | HookTrace.log | Trace of the API hooks themselves. |
 | LoaderTrace.log | Trace of AD Monitor loading into the host process. |
@@ -145,7 +145,7 @@ output, leave `DebugFilter` unset and use `EventFilter` to scope `EventTrace.log
 | Rules | Policy rule evaluation, including which rule allowed or blocked an operation |
 | Timers | AD Monitor's internal timer housekeeping. This reports on AD Monitor itself, not on directory activity. |
 
-`Rules` is not an activity area of its own. It applies to every operation type, so combine it with
+`Rules` isn't an activity area of its own. It applies to every operation type, so combine it with
 the area you are investigating. For example, `DebugFilter = Rules DCSync` shows why a specific
 DCSync request was allowed or blocked.
 
@@ -209,9 +209,9 @@ invalid line is ignored; the rest of the file still applies.
 
 | Message in DebugTrace.log | Cause | Resolution |
 | --- | --- | --- |
-| Unrecognized EventFilter token '\<value\>', ignoring | The value is misspelled or is not a valid category | Correct the value against the EventFilter list in this topic |
+| Unrecognized EventFilter token '\<value\>', ignoring | The value is misspelled or isn't a valid category | Correct the value against the EventFilter list in this topic |
 | Incorrect FlushIntervalMillis value: \<number\>, must be > 0 and \<= 60000 | The value is out of range | Set a value between 1 and 60000. The previous value stays in effect. |
-| Incorrect 'MaxFileSizeMb' specified: should be a positive number | The value is not a positive number | Set a positive whole number |
+| Incorrect 'MaxFileSizeMb' specified: should be a positive number | The value isn't a positive number | Set a positive whole number |
 
 Two more conditions are expected behavior rather than errors:
 

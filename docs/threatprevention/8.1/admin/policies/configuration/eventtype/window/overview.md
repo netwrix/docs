@@ -14,7 +14,7 @@ filter values.
 ## Select an Agent
 
 On several Select… windows, you must select a server where the Agent has been deployed, as these
-windows present live information provided by the Agent. If no Agent is found, the window does not
+windows present live information provided by the Agent. If no Agent is found, the window doesn't
 open.
 
 ![Selection Window - Connect to Agent/Server option](/images/threatprevention/8.1/admin/policies/eventtype/window/selectagent.webp)
@@ -30,21 +30,21 @@ solution related policies:
 
 ## Browse Mode
 
-Select a server/Agent from the drop-down menu and click **Connect**.
+Select a server/Agent from the dropdown menu and click **Connect**.
 
 ![Selection Window - Browse mode](/images/threatprevention/8.1/admin/policies/eventtype/window/adperpetrators.webp)
 
 - Select the option button for **Browse Mode**.
 - Expand the domain tree in the Navigation pane to select a container. The Results pane populates
   with the available items.
-- Check the desired item(s) in the Results pane on the right and click **OK**.
+- Check the items you want in the Results pane on the right and click **OK**.
 
-The selection(s) are displayed in the appropriate box of the filter tab from where you opened the
+The selections are displayed in the appropriate box of the filter tab from where you opened the
 Select… window.
 
 ## Search Mode
 
-Select a server/Agent from the drop-down menu and click **Connect**.
+Select a server/Agent from the dropdown menu and click **Connect**.
 
 ![Selection Window - Search Mode](/images/threatprevention/8.1/admin/policies/eventtype/window/searchmode.webp)
 
@@ -62,11 +62,11 @@ Select a server/Agent from the drop-down menu and click **Connect**.
 
   - Value – Search string
 
-- After selecting the desired options, click **Search Now**. The Results pane begins to populate
+- After selecting the options you want, click **Search Now**. The Results pane begins to populate
   with matching results.
 - Choose between **Show [number] AD objects** and specify a value or **Show all**. Already selected
   objects for this filter that match the search are visible but grayed-out.
-- Check the desired item(s) in the Results pane on the right and click **OK**.
+- Check the items you want in the Results pane on the right and click **OK**.
 
-The selection(s) are displayed in the appropriate box of the filter tab from where you opened the
+The selections are displayed in the appropriate box of the filter tab from where you opened the
 Select… window.

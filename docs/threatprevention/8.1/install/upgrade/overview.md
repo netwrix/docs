@@ -19,12 +19,12 @@ This topic provides the basic steps needed to upgrade the following on the same 
 To migrate the Threat Prevention server to a different machine, see the
 [Migrate the Enterprise Manager Server](/docs/threatprevention/8.1/install/migrateemserver.md) topic.
 
-To upgrade older versions, please reach out to
+To upgrade older versions, contact
 [Netwrix Support](https://www.netwrix.com/support.html) for assistance.
 
 :::note
 By design, the Threat Prevention 7.5 server (Enterprise Manager) can talk to 7.3.9 and 7.4
-Agents, and does not accept connections from pre 7.3.9 Agents. Existing customers must upgrade to
+Agents, and doesn't accept connections from pre 7.3.9 Agents. Existing customers must upgrade to
 7.3.9 first and then to 7.5. Else pre 7.3.9 Agents will be orphaned.
 :::
 
@@ -42,7 +42,7 @@ installed and all systems where the Agent is deployed. For deploying Agent, see 
 [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) topic.
 
 :::info
-It is a best practice to export policies for backup prior to performing an
+As a best practice, export policies for backup before performing an
 upgrade.
 :::
 
@@ -96,13 +96,13 @@ topics for additional information.
 
 You can upgrade from an earlier Threat Prevention 8.1 build to a later build of the same version.
 
-Follow the steps to install a later build of the same version.
+To install a later build of the same version:
 
 **Step 1 –** Uninstall the existing Threat Prevention server from Control Panel > Programs.
 
-- Do not make any changes to the existing Threat Prevention database. The database schema is
+- Don't make any changes to the existing Threat Prevention database. The database schema is
   automatically upgraded.
-- Do not manually delete any other files post uninstall.
+- Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install the newer build to the same location as the previous build. See the
 [Application Server Install](/docs/threatprevention/8.1/install/application.md) topic for additional information.
@@ -113,13 +113,13 @@ Version 8.1 keeps the installation paths and the Agent compatibility of version 
 follows the same steps as an upgrade between builds. The CertsInfo folder doesn't move, so the
 Agents reconnect without any manual step.
 
-Follow the steps to upgrade from Threat Prevention 8.0 to 8.1.
+To upgrade from Threat Prevention 8.0 to 8.1:
 
 **Step 1 –** Uninstall the existing Threat Prevention server from Control Panel > Programs.
 
-- Do not make any changes to the existing Threat Prevention database. The database schema is
+- Don't make any changes to the existing Threat Prevention database. The database schema is
   automatically upgraded.
-- Do not manually delete any other files post uninstall.
+- Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install Threat Prevention 8.1 to the same location as the previous version. See the
 [Application Server Install](/docs/threatprevention/8.1/install/application.md) topic for additional information.
@@ -134,13 +134,13 @@ before you upgrade. A customized `Logging.ini` on a domain controller needs to b
 
 ## Infrastructure Upgrade Procedure for 7.5 to 8.1
 
-Follow the steps to upgrade from Threat Prevention 7.5 to 8.1.
+To upgrade from Threat Prevention 7.5 to 8.1:
 
 **Step 1 –** Uninstall the existing Threat Prevention server from Control Panel > Programs.
 
-- Do not make any changes to the existing Threat Prevention database. The database schema is
+- Don't make any changes to the existing Threat Prevention database. The database schema is
   automatically upgraded.
-- Do not manually delete any other files post uninstall.
+- Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install the Threat Prevention 8.1 infrastructure using the "Database Login Information"
 for the existing Threat Prevention 7.5 database. See the
@@ -180,26 +180,26 @@ before you upgrade. A customized `Logging.ini` on a domain controller needs to b
 
 You can upgrade from an earlier Threat Prevention 7.5 build to a later build of the same version.
 
-Follow the steps to install a later build of the same version.
+To install a later build of the same version:
 
 **Step 1 –** Uninstall the existing Threat Prevention server from Control Panel > Programs.
 
-- Do not make any changes to the existing Threat Prevention database. The database schema is
+- Don't make any changes to the existing Threat Prevention database. The database schema is
   automatically upgraded.
-- Do not manually delete any other files post uninstall.
+- Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install the newer build to the same location as the previous build. See the
 [Application Server Install](/docs/threatprevention/8.1/install/application.md) topic for additional information.
 
 ## Infrastructure Upgrade Procedure for 7.4 to 7.5
 
-Follow the steps to upgrade from Threat Prevention 7.4 to 7.5.
+To upgrade from Threat Prevention 7.4 to 7.5:
 
 **Step 1 –** Uninstall the existing Threat Prevention server from Control Panel > Programs.
 
-- Do not make any changes to the existing Threat Prevention database. The database schema is
+- Don't make any changes to the existing Threat Prevention database. The database schema is
   automatically upgraded.
-- Do not manually delete any other files post uninstall.
+- Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install the Threat Prevention 7.5 infrastructure using the "Database Login Information"
 for the existing Threat Prevention 7.4 database. See the
@@ -229,13 +229,13 @@ then to 7.5.
 
 ## Infrastructure Upgrade Procedure for 7.3.9 to 7.5
 
-Follow the steps to upgrade from StealthINTERCEPT 7.3.9 to Threat Prevention 7.5.
+To upgrade from StealthINTERCEPT 7.3.9 to Threat Prevention 7.5:
 
 **Step 1 –** Uninstall the existing StealthINTERCEPT server from Control Panel > Programs.
 
-- Do not make any changes to the existing Threat Prevention database. The database schema is
+- Don't make any changes to the existing Threat Prevention database. The database schema is
   automatically upgraded.
-- Do not manually delete any other files post uninstall.
+- Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install the Threat Prevention 7.5 infrastructure using the "Database Login Information"
 for the existing StealthINTERCEPT database. See the [Application Server Install](/docs/threatprevention/8.1/install/application.md)
@@ -265,11 +265,11 @@ then to 7.5.
 
 ## Infrastructure Upgrade Procedure for 7.3.7 to 7.3.9
 
-Follow the steps to upgrade from StealthINTERCEPT 7.3.7+ to 7.3.9.
+To upgrade from StealthINTERCEPT 7.3.7+ to 7.3.9:
 
 **Step 1 –** Uninstall the existing StealthINTERCEPT server.
 
-- Do not make any changes to the existing StealthINTERCEPT database. The database schema is
+- Don't make any changes to the existing StealthINTERCEPT database. The database schema is
   automatically upgraded.
 
 **Step 2 –** Install the StealthINTERCEPT infrastructure for the newer version, using the "Database

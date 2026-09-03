@@ -19,7 +19,7 @@ The event filters for the File System Changes event type are:
 
 ![Policy window - File System Changes Event Type](/images/threatprevention/8.1/admin/policies/eventtype/filesystemchanges.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 You must select paths/collections to be included or excluded on the **Paths** filter within the
@@ -56,8 +56,8 @@ and Settings folder and the Agent on server2 monitoring only the C:\Users\All Us
   - EXAMPLE\server1
   - EXAMPLE\server3
 
-By adding the Agents on server1 and server3 in the Additional Agents filter, server1 and server3
-will monitor both folder paths, but server2 still only monitors the C:\Users\All Users folder.
+By adding the Agents on server1 and server3 in the Additional Agents filter, both server1 and
+server3 monitor both folder paths, but server2 still only monitors the C:\Users\All Users folder.
 
 Event data collected by the policies with this event type are also available for consumption by
 Netwrix Access Analyzer (formerly Enterprise Auditor) if the File System Enterprise Auditor Event
@@ -122,8 +122,8 @@ wildcard. Files that match the wildcard in the include box are monitored. Files 
 wildcard in the exclude box are ignored.
 
 :::tip
-Remember, adding an include filter scopes the policy to monitor only matching files. Adding an
-exclude filter scopes the policy to monitor all files that do not match. If both include and exclude
+Adding an include filter scopes the policy to monitor only matching files. Adding an
+exclude filter scopes the policy to monitor all files that don't match. If both include and exclude
 filters are applied to a single policy, the exclude filter takes precedence. If the boxes are left
 blank, all files are monitored according to all the policy filter selections.
 :::
@@ -147,12 +147,12 @@ Perpetrator filter.
 ## Paths Filter
 
 Use the Paths filter to set the scope of the policy to only monitor specific file system paths or to
-exclude specific file system paths from being monitored.
+exclude specific file system paths from monitoring.
 
 ![Policy window - Paths filter](/images/threatprevention/8.1/admin/policies/eventtype/paths.webp)
 
 The Include Paths section defines the top level folder or individual files for monitoring. Use the
-Exclude Paths section to refine and remove any child items from being monitored. Any files or
+Exclude Paths section to refine and remove any child items from monitoring. Any files or
 folders to be excluded need to be a subset of a folder identified in the Include Paths section. This
 is also where the NAS device paths are added.
 
@@ -164,10 +164,10 @@ areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -197,7 +197,7 @@ Agents/Domains list on the right displays Agents and domains included in the pol
   - The double arrows will move all items to the other list.
 
 :::note
-There is no impact if a selected path does not exist on the server where an Agent resides.
+There is no impact if a selected path doesn't exist on the server where an Agent resides.
 :::
 
 
@@ -209,7 +209,7 @@ also included in this policy.
 
 Use the AD Perpetrator filter for monitoring to set the scope of the policy to only monitor specific
 security principals committing changes or to exclude specific security principals committing changes
-from being monitored.
+from monitoring.
 
 ![Event Type - AD Perpetrator Monitoring filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratormonitoring.webp)
 
@@ -221,10 +221,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -234,7 +234,7 @@ for additional information.
 
 ![Sub-Tree option in event type filters](/images/threatprevention/8.1/admin/policies/eventtype/subtree.webp)
 
-When contexts are added, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
+When you add contexts, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
 and all child contexts. Uncheck it to apply the filter to the listed context only.
 
 ## Success Filter
@@ -244,7 +244,7 @@ both.
 
 ![Event Type – Success filter](/images/threatprevention/8.1/admin/policies/eventtype/success.webp)
 
-Select the radio button for the desired monitoring filter:
+Select the radio button for the monitoring filter you want:
 
 - Success – Only monitors successful events
 - Failure – Only monitors failed events

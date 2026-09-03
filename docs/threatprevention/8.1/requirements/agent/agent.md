@@ -34,7 +34,7 @@ These depend on the amount of activity expected:
 The disk space requirement covers the following:
 
 - Agent Size – 150 MB
-- Agent Queues – In the event of a network outage, the agent will cache up to 40 GB of event data
+- Agent Queues – If there is a network outage, the agent will cache up to 40 GB of event data
 - Diagnostic Logging – 1 GB
 
 **Additional Enterprise Password Enforcer Solution Requirements**
@@ -74,7 +74,7 @@ The following permission is required to install the Agent:
 The following products conflict with the agent:
 
 :::warning
-Do not install these products on a server where an agent is deployed. Do NOT install an
+Don't install these products on a server where an agent is deployed. **Don't** install an
 agent on a server where these products are installed.
 :::
 

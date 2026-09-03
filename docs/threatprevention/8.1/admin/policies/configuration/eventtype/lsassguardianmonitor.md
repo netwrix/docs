@@ -20,7 +20,7 @@ The event filters for the Process Guardian – Monitor event type are:
 
 ![Policy window - Process Guardian – Monitor Event Type](/images/threatprevention/8.1/admin/policies/eventtype/lsassmonitor.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 
@@ -28,7 +28,7 @@ like an "ALL" for that filter set.
 
 Use the AD Perpetrator filter for monitoring to set the scope of the policy to only monitor specific
 security principals committing changes or to exclude specific security principals committing changes
-from being monitored.
+from monitoring.
 
 ![Event Type - AD Perpetrator Monitoring filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratormonitoring.webp)
 
@@ -40,10 +40,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -53,7 +53,7 @@ for additional information.
 
 ![Sub-Tree option in event type filters](/images/threatprevention/8.1/admin/policies/eventtype/subtree.webp)
 
-When contexts are added, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
+When you add contexts, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
 and all child contexts. Uncheck it to apply the filter to the listed context only.
 
 ## Domains/Servers Filter
@@ -69,10 +69,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -88,17 +88,17 @@ Use the Target Processes filter to set the scope of the policy to monitor Lsass 
 - Select **Lsass** for moitoring Lsass process access.
 - Select **Custom Process** for moitoring any other process access.
 
-For the Custom Process option type the process name in the textbox. Use the
+For the Custom Process option enter the process name in the textbox. Use the
 buttons in the process list area to edit the list.
 
 - The Process **Add** (+) button adds a textbox to the list to add an additional process.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 
 ## Requesting Processes Filter
 
 Use the Requesting Processes filter to set the scope of the policy to only monitor specific processes or
-exclude specific processes from being monitored.
+exclude specific processes from monitoring.
 
 
 ![Requesting Processes filter for a Process Guardian monitoring policy](/images/threatprevention/8.1/admin/policies/eventtype/processesmonitoring.webp)
@@ -112,9 +112,9 @@ above each grid to edit it.
 
 :::warning
 In a production environment, only exclude processes using the Exclude area.
-While there is an option to include processes, it is NOT recommended in a policy that is monitoring
+While there is an option to include processes, it **isn't** recommended in a policy that is monitoring
 a production environment. Adding a process in the Include area limits the policy to only
-monitoring that process. Unknown malicious processes would not be monitored by the policy. In a
+monitoring that process. Unknown malicious processes wouldn't be monitored by the policy. In a
 sandbox environment, the Include option can be useful for testing/capturing the LSASS
 activity for specific processes to see what access they are requesting.
 :::
@@ -196,7 +196,7 @@ maliciously impact the target process.
 
 ![openprocessflagsmonitoring](/images/threatprevention/8.1/admin/policies/eventtype/openprocessflagsmonitoring.webp)
 
-Check the box to select the process flag(s) to be monitored. This will trigger an event if the
+Check the box to select the process flags to be monitored. This will trigger an event if the
 request for an target process handle contains one or more of the selected process flags.
 
 - PROCESS_VM_WRITE – Select this checkbox to write to memory in a process

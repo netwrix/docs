@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # File Actions
 
-A File action can output the event data collected by a policy to a log file. Follow the steps to add
-a File action to a policy/template.
+A File action can output the event data collected by a policy to a log file. To add
+a File action to a policy/template:
 
 ![Actions tab - Actions Configurations area](/images/threatprevention/8.1/admin/policies/actions/actionsconfigurationsarea.webp)
 
@@ -32,15 +32,15 @@ window.
 
   - The name can include a full UNC path to place the file at a desired location.
 
-- Select the radio button for the desired File Output Format:
+- Select the radio button for the File Output Format you want:
   - XML
   - Comma Delimited (CSV)
-- Adjust the File Size Limit and Minimum disk space required for reporting values as desired
+- Adjust the File Size Limit and Minimum disk space required for reporting values as needed
 
   :::note
   Set thresholds for file event consumers to maximize performance and minimize
-  individual file sizes. When a file reaches its maximum size, it continues to record data but the
-  oldest data in the file is deleted to make room for the newest.
+  individual file sizes. When a file reaches its maximum size, it continues to record data but
+  deletes the oldest data in the file to make room for the newest.
   :::
 
 
@@ -53,5 +53,5 @@ window.
 
 ![Actions tab - File action created](/images/threatprevention/8.1/admin/policies/actions/fileaction.webp)
 
-The Actions tab now displays the configured settings for the specified File action. The action
-configuration can be directly edited through this display as well.
+The Actions tab now displays the configured settings for the specified File action. You can also
+edit the action configuration directly through this display.

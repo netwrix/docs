@@ -16,12 +16,12 @@ additional information.
 :::
 
 
-Follow the steps to configure a policy to block the creation of weak passwords.
+To configure a policy to block the creation of weak passwords:
 
 ![EPE Settings window](/images/threatprevention/8.1/admin/configuration/epesettings.webp)
 
 :::note
-It is a best practice to create and enable a monitoring policy prior to creating and
+As a best practice, create and enable a monitoring policy before creating and
 enabling a blocking policy. See the [Monitor Weak Passwords Use Case](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/monitorweakpasswords.md) topic
 for additional information.
 :::
@@ -46,7 +46,7 @@ environment.
 
 ![New Prevent Weak Passwords Policy - General tab](/images/threatprevention/8.1/admin/policies/eventtype/usecase/newblockepepolicy.webp)
 
-- Right-click on the **Policies > Auditing** folder and select **New > Policy**.
+- Right-click the **Policies > Auditing** folder and select **New > Policy**.
 - On the General tab, provide a unique descriptive name, e.g. Prevent Weak Passwords, and
   description, e.g. This policy blocks the creation of weak passwords according to the global
   EPE settings.

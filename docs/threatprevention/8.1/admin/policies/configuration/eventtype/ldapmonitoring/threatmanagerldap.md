@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # Netwrix Threat Manager Honeytoken Threats Use Case
 
-Follow these steps to configure LDAP monitoring.
+Use the following procedures to configure LDAP monitoring.
 
 ## Obtain the LDAP Monitoring Configuration String
 
-Follow the steps to obtain the LDAP monitoring configuration string.
+To obtain the LDAP monitoring configuration string:
 
 **Step 1 –** From the Threat Manager homepage, navigate to the Configuration menu and select
 Policies.
@@ -31,7 +31,7 @@ A notification will pop up and the filter will be saved to the clipboard.
 
 ## Configure LDAP Monitoring
 
-Follow the steps to configure LDAP monitoring for Threat Manager.
+To configure LDAP monitoring for Threat Manager.
 
 **Step 4 –** In the Threat PreventionAdministration Console , go to **Templates** > **Netwrix Threat
 Manager** > **Netwrix Threat Manager for AD LDAP**.
@@ -49,7 +49,7 @@ select the other **LDAP Monitoring** event type in the list above.
 Threat Manager.
 
 :::tip
-Remember, the Honeytoken tab of the
+The Honeytoken tab of the
 [Netwrix Threat Manager Configuration Window](/docs/threatprevention/8.1/admin/configuration/threatmanagerconfiguration.md)
-must be configured in order to successfully send LDAP monitoring data to Threat Manager.
+must be configured to successfully send LDAP monitoring data to Threat Manager.
 :::

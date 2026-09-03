@@ -17,7 +17,7 @@ the Threat Prevention solutions:
   - For GPO monitoring and blocking, the Threat Prevention Agent on all domain controllers must
     also have the Windows File System module
 
-- Threat Prevention for Enterprise Password Enforcer – Blocking creation of passwords that do not
+- Threat Prevention for Enterprise Password Enforcer – Blocking creation of passwords that don't
   meet requirements
 
   - Deploy Agents on all domain controllers with the Windows AD Events module
@@ -51,7 +51,7 @@ The Agent server has the following requirement:
 When executing any of the right-click commands on the
 [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) (with the exception of Harden Agent, Soften
 Agent, and Remove Server from list), the Administration Console uses WMI to remotely query the
-registry on the target Agent machine(s) to understand where the Agent configuration files are
+registry on the target Agent machines to understand where the Agent configuration files are
 located (install path). Next, WMI is used to stop the Agent service, modify the configuration files,
 and restart the Agent.
 
@@ -77,7 +77,7 @@ on all domain controllers within the domains to be monitored.
 Both Activity Monitor and Threat Prevention can monitor the same domain controller. Deploy agents
 from both products to the server. Activity Monitor identifies the Windows host as being “Managed by
 Threat Prevention” on the Monitored Hosts tab when it detects an Agent on the server. This host's
-configuration cannot be modified within the Activity Monitor console. Threat Prevention policies
+configuration can't be modified within the Activity Monitor console. Threat Prevention policies
 control the configuration for that monitored host. However, Activity Monitor can be configured to
 provide multiple outputs for a host, e.g. for Netwrix Access Analyzer (formerly Enterprise Auditor),
 Netwrix Threat Manager, or SIEM products. Add a new output for the same host to the Monitored Host
@@ -106,7 +106,7 @@ Agent must also be installed on one domain controller, which can be read only.
 - Exchange Server 2010
 
 :::note
-The Exchange Server Monitoring module is not started on an Agent if newer Exchange Server
+The Exchange Server Monitoring module isn't started on an Agent if newer Exchange Server
 updates are detected at run time, and a corresponding message displays in the Agent log file and the
 Agents interface.
 :::
@@ -122,7 +122,7 @@ on all Windows file servers within the domains to be monitored.
 Both Activity Monitor and Threat Prevention can monitor the same Windows server. Deploy agents from
 both products to the server. Activity Monitor identifies the Windows host as being “Managed by
 Threat Prevention” on the Monitored Hosts tab when it detects an Agent on the server. This host's
-configuration cannot be modified within the Activity Monitor console. Threat Prevention policies
+configuration can't be modified within the Activity Monitor console. Threat Prevention policies
 control the configuration for that monitored host. However, Activity Monitor can be configured to
 provide multiple outputs for a host, e.g. for Netwrix Access Analyzer (formerly Enterprise Auditor),
 Netwrix Threat Manager, or SIEM products. Add a new output for the same host to the Monitored Host

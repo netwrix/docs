@@ -6,12 +6,12 @@ sidebar_position: 40
 
 # Agents Interface
 
-Use the Agents interface to quickly view, deploy, and manage Agents from a centralized
+Use the Agents interface to view, deploy, and manage Agents from a centralized
 location to the targeted domain controllers in a domain. The Agent must be deployed on all domain
 controllers that you want to receive event data for. Once one or more Agents are deployed to a
 domain, it becomes known as a targeted domain.
 
-The Threat Prevention Agent can be deployed through any of the following methods:
+You can deploy the Threat Prevention Agent through any of the following methods:
 
 - Deploy the Agent to servers through the Administration Console – You can deploy the Agent to one
   or multiple servers through the Administration Console
@@ -62,9 +62,9 @@ information for an Agent:
 
 
 - FSMO Roles – The FSMO (Flexible Single Master Operation) roles assigned to the domain
-  controller where the Agent is deployed. Role names are displayed as abbreviations. For example,
-  'SM' is displayed for the Schema Master role. Hover over data in this column to view the full
-  names.
+  controller where the Agent is deployed. The column displays role names as abbreviations. For
+  example, it displays 'SM' for the Schema Master role. Hover over data in this column to view the
+  full names.
 
   :::note
   You can use the FSMO roles information in combination with a policy created for the
@@ -83,20 +83,20 @@ information for an Agent:
 
   - Active (green) – The Agent is actively monitoring/blocking events and communicating with the
     Enterprise Manager
-  - Active (Modules Pending) – The Agent is active, but the Windows AD Events module has not been
+  - Active (Modules Pending) – The Agent is active, but the Windows AD Events module hasn't
     loaded due to Safe Mode. See the [Agent Safe Mode](/docs/threatprevention/8.1/admin/agents/safemode.md) topic for additional
     information.
-  - Stopped (orange) – The Agent has been stopped and isn't monitoring/blocking events
+  - Stopped (orange) – The Agent is stopped and isn't monitoring/blocking events
   - Lost Connection (red) – The Agent isn't actively communicating with the Enterprise Manager
-  - No Agent (gray) – a domain controller has been found within the targeted domain where the
-    Agent isn't yet deployed
+  - No Agent (gray) – Threat Prevention found a domain controller within the targeted domain
+    where the Agent isn't yet deployed
 
 - Address – IP address of the server where the Agent is deployed. Hover over data in this column to
   view the IP address with port
 - Agent Version – Installed Agent build version
 
-  - If the Agent’s version is older than the current version available in Threat Prevention, it is
-    highlighted. This indicates that an upgrade is recommended.
+  - If the Agent’s version is older than the current version available in Threat Prevention, the
+    grid highlights it to indicate that Netwrix recommends an upgrade.
   - Hover over data in this column to view a listing of the Agent’s configured settings. This
     displays information on modules that are running and those that are pending (for Safe Mode).
 
@@ -146,8 +146,8 @@ interface
 
 ## Right-Click Menu
 
-A right-click menu is available for each row in the data grid. Options not applicable to the
-selected Agent are grayed-out.
+Each row in the data grid has a right-click menu. Options that don't apply to the
+selected Agent are grayed out.
 
 ![Agents Interface - Right-Click Menu](/images/threatprevention/8.1/admin/agents/rightclickmenu.webp)
 
@@ -163,14 +163,14 @@ The right-click menu contains the following selections:
 | Start Agent              | Starts the Agent service on the selected machines. See the [Start Agent](/docs/threatprevention/8.1/admin/agents/agent-management/start.md) topic for additional information.                                                                                                                                                                                                                                              |
 | Stop Agent               | Stops the Agent service on the selected machines. See the [Stop Agent](/docs/threatprevention/8.1/admin/agents/agent-management/stop.md) sections for additional information.                                                                                                                                                                                                                                              |
 | Start Pending Modules    | Starts Agent service modules that didn't start with the Agent due to a change in LSASS (only available on Agents configured to use Safe Mode). See the [Agent Safe Mode](/docs/threatprevention/8.1/admin/agents/safemode.md) topic and the [Start Pending Modules](/docs/threatprevention/8.1/admin/agents/agent-management/startpendingmodules.md) topic for additional information.                                      |
-| Harden Agent             | Protects an Agent from being altered, stopped, or started from within the local Service Control Manager. See the [Harden Agent](/docs/threatprevention/8.1/admin/agents/agent-management/harden.md) topic for additional information.                                                                                                                                                                                        |
+| Harden Agent             | Prevents anyone from altering, stopping, or starting an Agent from within the local Service Control Manager. See the [Harden Agent](/docs/threatprevention/8.1/admin/agents/agent-management/harden.md) topic for additional information.                                                                                                                                                                                        |
 | Soften Agent             | Unlocks the Agent so it can be controlled from within the local Service Control Manager. See the [Soften Agent](/docs/threatprevention/8.1/admin/agents/agent-management/soften.md) topic for additional information.                                                                                                                                                                                                        |
-| Remove Server from List  | Removes a server from the Agent data grid. If the server has a deployed Agent, it will be added back to the list the next time the Agent sends information to the Enterprise Manager. See the [Remove Server from List](/docs/threatprevention/8.1/admin/agents/agent-management/removeserver.md) topic for additional information.                                                                                          |
+| Remove Server from List  | Removes a server from the Agent data grid. If the server has a deployed Agent, Threat Prevention adds the server back to the list the next time the Agent sends information to the Enterprise Manager. See the [Remove Server from List](/docs/threatprevention/8.1/admin/agents/agent-management/removeserver.md) topic for additional information.                                                                                          |
 | Clear SQLite Agent Queue | When the Agent is unable to communicate with the Enterprise Manager, Agent events queue up in the Agents local SQLite database until the Enterprise Manager is available to accept events. The Clear SQLite Agent Queue option dumps the queue and all pending events are lost. See the [Clear SQLite Agent Queue](/docs/threatprevention/8.1/admin/agents/agent-management/clearqueue.md) topic for additional information. |
 
-For certain actions, you can select multiple Agents listed in the data grid, to perform that action
-on all the selected Agents. The appropriate right-click menu options will not be grayed out if
-multi-selection is available for the particular action. Agents must be in the same state to
+For certain actions, you can select multiple Agents in the data grid and perform that action
+on all of them. When multi-selection is available for an action, its right-click menu option isn't
+grayed out. Agents must be in the same state to
 complete a multi-select action (for example, all selected Agents must be stopped to use the Start
 action).
 
@@ -178,7 +178,7 @@ To perform centralized Agent maintenance from the Administration Console, you mu
 on the machine where the Agent is installed. The Soften Agent, Harden Agent, and Remove Server from
 List actions are an exception. When executing the other commands, the Administration Console uses
 WMI to remotely query the registry on the target Agent machines to understand where the Agent
-configuration files are located (install path). Next, WMI is used to stop the Agent service, modify
+configuration files are located (install path). Next, it uses WMI to stop the Agent service, modify
 the configuration files, and restart the Agent.
 
 See the [Firewall Ports](/docs/threatprevention/8.1/requirements/ports.md) topic for default ports required for WMI
@@ -193,8 +193,8 @@ Consider the following:
 - Occasionally a Microsoft Security Bulletin impacting LSASS can interfere with the Agent
   instrumentation resulting in LSASS shutting down. The Agent is configured to monitor for an LSASS
   process termination shortly after a server reboot. The
-  [LSASS Process Terminated](/docs/threatprevention/8.1/troubleshooting/lsass.md) alert (Operations alert) is triggered
-  in this event and the Agent is stopped. As a result, all monitoring/blocking by that Agent stops.
+  [LSASS Process Terminated](/docs/threatprevention/8.1/troubleshooting/lsass.md) alert (Operations alert) triggers
+  in this event and the Agent stops. As a result, all monitoring/blocking by that Agent stops.
   To resolve the issue, either upgrade to the latest version of the Agent or upgrade
   SI.ActiveDirectoryMonitor.dll - commonly known as ADMonitor DLL (recommended). See the
   [Upgrade ADMonitor](/docs/threatprevention/8.1/admin/agents/agent-management/upgradeadmonitor.md)topic for additional information.
@@ -207,16 +207,16 @@ Consider the following:
   :::
 
 
-- In addition to the LSASS process termination check, the Agent can be configured for a Safe Mode.
+- In addition to the LSASS process termination check, you can configure the Agent for a Safe Mode.
   In Safe Mode, the Agent records the version of the LSASS DLLs that it hooks into during
-  installation. When an Agent is restarted, it compares the DLL versions with the recorded list. If
-  the versions don't match, the Windows AD Events monitoring module isn't loaded. The Agent’s
+  installation. When you restart an Agent, it compares the DLL versions with the recorded list. If
+  the versions don't match, the Windows AD Events monitoring module doesn't load. The Agent’s
   status in the Agents interface changes to Active (Modules Pending), and all Active Directory
   monitoring/blocking by that Agent stops. The 'Agent Started in AD Monitor pending mode' alert
-  (Operations alert) is triggered in this event. To resolve the issue temporarily, the Threat
+  (Operations alert) triggers in this event. To resolve the issue temporarily, the Threat
   Prevention administrator should start the pending modules. See the
-  [Start Pending Modules](/docs/threatprevention/8.1/admin/agents/agent-management/startpendingmodules.md) topic for additional information. It is
-  also recommended to upgrade SI.ActiveDirectoryMonitor.dll (commonly known as ADMonitor DLL) to
+  [Start Pending Modules](/docs/threatprevention/8.1/admin/agents/agent-management/startpendingmodules.md) topic for additional information. Netwrix
+  also recommends upgrading SI.ActiveDirectoryMonitor.dll (commonly known as ADMonitor DLL) to
   resolve the issue permanently. See the [Upgrade ADMonitor](/docs/threatprevention/8.1/admin/agents/agent-management/upgradeadmonitor.md)
   topic for additional information.
 

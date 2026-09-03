@@ -26,7 +26,7 @@ window.
 - Check the box for **Enabled** to allow the policy to launch the script
 - Description – Provide a clear and detailed description for this .NET Script action. This is
   optional but recommended.
-- Select the radio button for the script language being used:
+- Select the radio button for the script language you are using:
   - Visual Basic
   - C#
 - Click **Edit…** to open the Threat Prevention Script Editor window and provide the script
@@ -38,16 +38,16 @@ Threat Prevention Script Editor Tools topic for additional information, i.e. Run
 Encrypt functionality. See the Default Visual Basic Script and Default C# Script topics for default
 custom scripts. Save and close.
 
-**Step 5 –** On the Add Action window, the new script is displayed in the **Script Preview**
-section. Check the **Enable compiler error logging** checkbox to enable Threat Prevention to log
+**Step 5 –** On the Add Action window, the **Script Preview** section displays the new script.
+Check the **Enable compiler error logging** checkbox to enable Threat Prevention to log
 information about the compiling of scripts.
 
 **Step 6 –** Click Save to close the Add Action window and apply changes.
 
 ![Actions tab - .Net Script Action Created](/images/threatprevention/8.1/admin/policies/actions/netscriptaction.webp)
 
-The Actions tab now displays the configured settings for the specified .NET Script action. The
-action configuration can be directly edited through this display as well.
+The Actions tab now displays the configured settings for the specified .NET Script action. You can
+also edit the action configuration directly through this display.
 
 ## Threat Prevention Script Editor Tools
 
@@ -68,11 +68,11 @@ The Tools menu contains the following options:
 - Reset to Default Script – Replaces the existing script with the default script that ships with
   Threat Prevention.
 - Encrypt – Encrypts selected portions of the script to an encrypted string with a decrypt command
-  for run time. See the following note explaining why only a plain text string, information in the
-  script between quote marks (“), should be encrypted.
+  for run time. The following note explains why you should encrypt only a plain text string, which
+  is information in the script between quote marks (“).
 
 :::tip
-Remember, when testing a script in the Script Editor, the **Run** option executes the script in
+When you test a script in the Script Editor, the **Run** option executes the script in
 the context of the user logged into the Administration Console. In production, when this script
 runs as part of a policy, it runs in the context of the account configured for the Enterprise
 Manager. If the script depends on specific user/account rights, consider that when using the
@@ -82,15 +82,15 @@ Manager. If the script depends on specific user/account rights, consider that wh
 
 :::warning
 The Tools > Encrypt option obfuscates plain text strings, e.g. credentials, within the script.
-Encrypting functions or other commands result in the script not working. Encrypt only a literal
-string, between the quote marks (“). Do not include the quote marks in the encryption.
+Encrypting functions or other commands results in the script not working. Encrypt only a literal
+string, between the quote marks (“). Don't include the quote marks in the encryption.
 :::
 
 
 ## Default Visual Basic Script
 
-The following Visual Basic script is configured as a default action. It will either create the
-c:\nveventdata.txt file or append the event data to it.
+The following Visual Basic script is configured as a default action. It either creates the
+c:\nveventdata.txt file or appends the event data to it.
 
 ```
 Imports Microsoft.VisualBasic
@@ -239,8 +239,8 @@ End Namespace
 
 ## Default C# Script
 
-The following C# script is configured as a default action. It will either create the
-c:\nveventdata.txt file or append the event data to it.
+The following C# script is configured as a default action. It either creates the
+c:\nveventdata.txt file or appends the event data to it.
 
 ```
 namespace ScriptNamespace

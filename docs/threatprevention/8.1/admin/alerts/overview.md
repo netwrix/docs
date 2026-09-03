@@ -6,9 +6,9 @@ sidebar_position: 50
 
 # Alerts Interface
 
-The Alerts interface allows you to quickly view recent Security events, Operations events, and
+Use the Alerts interface to view recent Security events, Operations events, and
 Configuration events for Threat Prevention - all of which are known as alerts. These events are
-system-generated and do not require any prior configuration.
+system-generated and don't require any prior configuration.
 
 You can choose to view alerts related to analytics configuration and monitoring status on the Alerts
 interface. See the [Alerts Cleanup Window](/docs/threatprevention/8.1/admin/alerts/alertscleanup.md) topic for options to display
@@ -31,17 +31,18 @@ The following options are available on the toolbar:
 
 Example for the Alerts for Last [number] Hours Option
 
-Below is an example of how to use the Alerts for Last [number] Hours option.
+The following example shows how to use the Alerts for Last [number] Hours option.
 
-The number of hours set is based on UTC and is adjusted for the time zones of the Administration
-Console server and the Agent that is monitoring the events. Let's assume the following:
+Threat Prevention bases the number of hours on UTC and adjusts it for the time zones of the
+Administration Console server and the Agent that is monitoring the events. Let's assume the
+following:
 
 - The Administration Console server is in New York, USA (UTC -5)
 - The option is set to display events for Last 4 Hours
 - The Agent that is monitoring the events is in London, UK (UTC +0)
 
-If you click the Refresh button at noon New York time, then the events displayed would have been
-generated between 8 A.M. and 12 P.M. New York time, or between 1 P.M. and 5 P.M. London time.
+If you click the Refresh button at noon New York time, the interface displays events generated
+between 8 A.M. and 12 P.M. New York time, or between 1 P.M. and 5 P.M. London time.
 
 ## Alerts Data Grid
 
@@ -56,7 +57,7 @@ The data grid displays the following information for each event:
     example, when it fails to connect to a SEIM server
   - Warning – Indicates change events that affect the global operations of Threat Prevention
   - Info – Covers all other system events
-- Component – The type of system event for which the alert is triggered:
+- Component – The type of system event that triggers the alert:
 
   - Threat Prevention Security events
   - Threat Prevention Operations events
@@ -69,7 +70,7 @@ The data grid displays the following information for each event:
 - Alert – Name of the event that triggered the alert
 - User – Security principal of the account that triggered the event
 - Message – Description and details about the event. The **Policy updated on server
-  Changeset #[number]** link is displayed for events that represent a change to a policy, be it a
+  Changeset #[number]** link displays for events that represent a change to a policy, be it a
   policy under the Policies node or one defined for analytics. Click it to open the
   [Policy Comparison Window](/docs/threatprevention/8.1/admin/alerts/policycomparison.md) where you can view any changes made to the
   policy. Alerts generated for an archive database maintenance job have "Archive DB:" as the message
@@ -84,14 +85,14 @@ In addition to this information, several notifications have been sent for the ev
 
 ## Additional Considerations
 
-Below are some considerations:
+Consider the following:
 
 - Occasionally a Microsoft Security Bulletin impacting LSASS can interfere with the Agent
   instrumentation resulting in LSASS shutting down. The Agent is configured to monitor for an LSASS
   process termination shortly after a server reboot. The
-  [LSASS Process Terminated](/docs/threatprevention/8.1/troubleshooting/lsass.md) alert (Operations alert) is triggered
-  in this event and the Agent is stopped. As a result, all monitoring/blocking by that Agent stops.
-  To resolve the issue, either upgrade to the latest version of the Agent or simply upgrade
+  [LSASS Process Terminated](/docs/threatprevention/8.1/troubleshooting/lsass.md) alert (Operations alert) triggers
+  in this event and the Agent stops. As a result, all monitoring/blocking by that Agent stops.
+  To resolve the issue, either upgrade to the latest version of the Agent or upgrade
   SI.ActiveDirectoryMonitor.dll - commonly known as ADMonitor DLL (recommended). See the
   [Upgrade ADMonitor](/docs/threatprevention/8.1/admin/agents/agent-management/upgradeadmonitor.md)topic for additional information.
 
@@ -103,16 +104,16 @@ Below are some considerations:
   :::
 
 
-- In addition to the LSASS process termination check, the Agent can be configured for a Safe Mode.
+- In addition to the LSASS process termination check, you can configure the Agent for a Safe Mode.
   In Safe Mode, the Agent records the version of the LSASS DLLs that it hooks into during
-  installation. When an Agent is restarted, it compares the DLL versions with the recorded list. If
-  the versions do not match, the Windows AD Events monitoring module is not loaded. The Agent’s
+  installation. When you restart an Agent, it compares the DLL versions with the recorded list. If
+  the versions don't match, the Windows AD Events monitoring module doesn't load. The Agent’s
   status in the Agents interface changes to Active (Modules Pending), and all Active Directory
   monitoring/blocking by that Agent stops. The 'Agent Started in AD Monitor pending mode' alert
-  (Operations alert) is triggered in this event. To resolve the issue temporarily, the Threat
+  (Operations alert) triggers in this event. To resolve the issue temporarily, the Threat
   Prevention administrator should start the pending modules. See the
   [Start Pending Modules](/docs/threatprevention/8.1/admin/agents/agent-management/startpendingmodules.md) topic for additional
-  information. It is also recommended to upgrade SI.ActiveDirectoryMonitor.dll (commonly known as
+  information. Netwrix also recommends upgrading SI.ActiveDirectoryMonitor.dll (commonly known as
   ADMonitor DLL) to resolve the issue permanently. See the
   [Upgrade ADMonitor](/docs/threatprevention/8.1/admin/agents/agent-management/upgradeadmonitor.md) topic for additional information.
 

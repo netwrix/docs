@@ -10,11 +10,11 @@ When the Agent is unable to communicate with the Enterprise Manager, Agent event
 Agents local SQLite database until the Enterprise Manager is available to accept events. The Clear
 SQLite Agent Queue option dumps the queue and all pending events are lost.
 
-Follow the steps to clear the SQLite Agent queue for an Agent:
+To clear the SQLite Agent queue for an Agent:
 
 :::warning
-These events are permanently deleted and are not processed by the Enterprise Manager on
-reconnection. This option is for diagnostic and troubleshooting purposes only.
+Threat Prevention permanently deletes these events, and the Enterprise Manager doesn't
+process them on reconnection. This option is for diagnostic and troubleshooting purposes only.
 :::
 
 
@@ -30,18 +30,18 @@ on the target machine should have access to the system shares. Click **OK** afte
 credentials.
 
 :::note
-The wizard does not block access to the Administration Console and can be minimized while
-actions are in progress. If this wizard is hidden by clicking outside of the dialog box, a flashing
-blue link displays on the upper right corner of the interface with the action name displayed. Click
-this link to bring back the focus to the wizard.
+The wizard doesn't block access to the Administration Console, and you can minimize it while
+actions are in progress. If you hide the wizard by clicking outside of the dialog box, a flashing
+blue link with the action name displays in the upper right corner of the interface. Click
+the flashing link to return the focus to the wizard.
 :::
 
 
 **Step 4 –** On the Access Verification window, the system performs a prerequisites or verification
 check that can fail or succeed.
 
-- Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of prior to the next attempt.
+- Failed – Read the failure messages and close the window. Resolve any error messages before the
+  next attempt.
 - Success – Click **Next** to begin clearing the SQLite Agent Queue
 
 :::note
@@ -53,10 +53,10 @@ data collection.
 **Step 5 –** The Clear Agent Queue window displays the task in progress and then its status as
 either:
 
-- Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of prior to the next attempt.
+- Failed – Read the failure messages and close the window. Resolve any error messages before the
+  next attempt.
 - Completed – Indicates that the task is completed
 
 **Step 6 –** When the task is successfully completed, click **Finish** to close the window.
 
-The SQLite Agent queue is automatically cleared.
+Threat Prevention automatically clears the SQLite Agent queue.

@@ -8,17 +8,18 @@ sidebar_position: 20
 
 Threat Prevention comes with several policy templates that cover a wide range of event monitoring
 and lockdown. Pre-created policy templates are provided as part of the initial Threat Prevention
-installation process. New policy templates can be created from scratch or from existing policies.
+installation process. New policy templates can be created from the beginning or from existing
+policies.
 
-When Threat Prevention is upgraded, new and updated policy templates are available for import. They
-are not automatically imported during the installation of the latest version. Updates can be made to
+When Threat Prevention is upgraded, new policy templates and updated ones are available for import. They
+aren't automatically imported during the installation of the latest version. Updates can be made to
 upgrade existing templates for a new release. See the
 [Upgrade Policy Templates](/docs/threatprevention/8.1/install/upgrade/policytemplates.md) topic for additional
 information.
 
 When the Administration Console is launched for the first time, the administrator is asked to import
-pre-created policy templates. If the administrator does not import the templates, they can be
-imported later. See the Import Templates topic for additional information. Once the templates are
+pre-created policy templates. If the administrator doesn't import the templates, they can be
+imported later. See the Import Templates topic for additional information. After the templates are
 imported, they are available through an organized folder structure.
 
 ## Template Folders
@@ -81,7 +82,7 @@ Templates in the [Templates Interface](/docs/threatprevention/8.1/admin/template
 
 ## Import Templates
 
-The pre-created policy templates are stored in the `SI_Templates_All.xml` file. If they were not
+The pre-created policy templates are stored in the `SI_Templates_All.xml` file. If they weren't
 imported when the Administration Console is first launched, you can import them later by following
 these steps.
 
@@ -97,7 +98,7 @@ window. The location of the default templates is:
 
 ![Import window](/images/threatprevention/8.1/admin/templates/import.webp)
 
-**Step 4 –** The Import window auto-fills with the import file details. Do not change the defaults
+**Step 4 –** The Import window auto-fills with the import file details. Don't change the defaults
 settings. Click **Import**.
 
 :::note

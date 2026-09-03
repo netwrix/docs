@@ -7,11 +7,11 @@ sidebar_position: 30
 # Policy Comparison Window
 
 When you edit a policy, the change creates an alert in the Alerts interface. You can track the
-changes made to the policy through a comparison of the new xml with the old xml. Threat Prevention
+policy changes by comparing the new xml with the old xml. Threat Prevention
 uses fc.exe to do a comparison but you can also employ a third party comparison tool for better
 results.
 
-Follow the steps to run a comparison.
+To run a comparison:
 
 **Step 1 –** Click **Alerts** in the left pane to launch the Alerts interface.
 
@@ -30,8 +30,8 @@ comparison tool location in quotations. Next, add **%1 %2** after the quoted loc
 example, _cmd.exe /K fc.exe %1 %2_. Click **OK** to close the window.
 
 :::note
-By default, fc.exe is specified as the path but it is recommended to replace this with a
-path to a Windows based comparison tool such as Beyond Compare for best results.
+By default, the path points to fc.exe. Netwrix recommends replacing it with a
+path to a Windows-based comparison tool such as Beyond Compare for best results.
 :::
 
 

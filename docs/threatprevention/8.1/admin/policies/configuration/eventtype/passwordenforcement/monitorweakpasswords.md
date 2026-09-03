@@ -16,7 +16,7 @@ for[ Enterprise Password Enforcer](/docs/threatprevention/8.1/solutions/epe.md)
 :::
 
 
-Follow the steps to configure a policy to monitor the creation of weak passwords.
+To configure a policy to monitor the creation of weak passwords:
 
 ![EPE Settings window](/images/threatprevention/8.1/admin/configuration/epesettings.webp)
 
@@ -39,7 +39,7 @@ environment.
 
 ![New Monitor EPE Policy - General tab](/images/threatprevention/8.1/admin/policies/eventtype/usecase/newmonitorepepolicy.webp)
 
-- Right-click on the **Policies > Auditing** folder and select **New > Policy**.
+- Right-click the **Policies > Auditing** folder and select **New > Policy**.
 - On the General tab, provide a unique descriptive name, e.g. Monitor Weak Passwords, and
   description, e.g. This policy monitors the creation of weak passwords according to the global
   EPE settings.

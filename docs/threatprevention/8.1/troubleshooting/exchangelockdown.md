@@ -7,7 +7,7 @@ sidebar_position: 40
 # Exchange Lockdown Considerations
 
 When an Exchange Lockdown policy is first enabled, operations that are expected to be locked down by
-the policy may not be blocked due to existing connections. It is necessary to ensure the users are
+the policy may not be blocked due to existing connections. Ensure the users are
 logged off before testing the blocking behavior of the policy. Following is the safest way to
 resolve existing connections and ensure that events intended to be blocked are being blocked:
 
@@ -26,9 +26,9 @@ In Microsoft Outlook 2010, delegation through Outlook performs three operations:
 - Outlook creates a hidden rule in the user’s inbox to forward incoming meeting and task requests
   and responses to the delegate
 
-The first option does not use an Exchange API. Therefore, this action cannot be blocked by an
+The first option doesn't use an Exchange API. Therefore, this action can't be blocked by an
 [Exchange Lockdown Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/exchangelockdown.md) policy. However, it
-is possible to achieve the desired blocking effect by creating a corresponding
+is possible to achieve the blocking effect you want by creating a corresponding
 [Active Directory Lockdown Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/activedirectorylockdown.md)
 policy to block any **Send on Behalf of** permission changes.
 
@@ -60,5 +60,5 @@ A message will appear as follows:
 
 The Exchange Lockdown policy blocks the folder permission changes.
 
-With both lockdown policies working together, it is possible to block changes to existing
+With both lockdown policies working together, you can block changes to existing
 connections.

@@ -9,7 +9,7 @@ sidebar_position: 20
 The Netwrix Active Directory security monitoring solution enables organizations to efficiently
 monitor and prevent Active Directory changes, authentications, and attacks in real-time, without any
 reliance on native logging or security controls. Using the preconfigured Netwrix Active Directory
-App for Splunk, you can quickly understand all Active Directory changes as a whole, patterns of
+App for Splunk, you can understand all Active Directory changes as a whole, patterns of
 activity indicative of account compromise, and attempts to compromise security, along with the
 ability to block undesired changes and access.
 
@@ -30,7 +30,7 @@ from the [Splunkbase](https://splunkbase.splunk.com/). Then follow the
 guide provided by Splunk to install the app.
 
 :::note
-In order to use the User Behavior Analytics dashboard in the app, install
+to use the User Behavior Analytics dashboard in the app, install
 [Splunk User Behavior Analytics](https://www.splunk.com/en_us/products/premium-solutions/user-behavior-analytics.html)
 (any version) and the [Machine Learning Toolkit](https://splunkbase.splunk.com/app/2890/) app for
 Splunk (version 2.0.0+).
@@ -44,11 +44,11 @@ Threat Prevention.
 
 ## Initial Configuration of the Active Directory App for Splunk
 
-Follow the steps to configure Splunk to receive data from Threat Prevention.
+To configure Splunk to receive data from Threat Prevention:
 
 :::tip
-Remember, prior to using the Active Directory App for Splunk, the relevant Netwrix product must be
-configured to send data to Splunk.
+Before using the Active Directory App for Splunk, you must configure the relevant Netwrix
+product to send data to Splunk.
 :::
 
 

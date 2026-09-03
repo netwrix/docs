@@ -27,7 +27,7 @@ All changes made to a template must be saved before leaving the configuration in
 ## Tags
 
 Tags are enabled as an organizational tool for templates only. Many preconfigured templates have
-tags that enable users to quickly find a desired template through various groupings. Tags do not
+tags, so users can find a template through various groupings. Tags don't
 create a duplicate template, but rather display the template in different folders under the TAGS
 node. Multiple tags can be identified for a template with a comma-separated list. New tags can be
 created, which create a new folder under the TAGS node. Use the right-click Refresh option on the

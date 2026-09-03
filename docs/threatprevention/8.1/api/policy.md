@@ -54,7 +54,7 @@ Example of a delete policy command:
 
 ## Add or Modify Policies
 
-The `Export-SIPolicy` and` Import-SIPolicy` commands can be used to export and edit the XML file of
+Use the `Export-SIPolicy` and` Import-SIPolicy` commands to export and edit the XML file of
 an existing policy, and then import (add or replace) the edited policy. See the
 [Not a Policy XML Expert](/docs/threatprevention/8.1/api/overview.md#not-a-policy-xml-expert) topic for additional information on
 policy layout and how to make changes to the XML.
@@ -68,7 +68,7 @@ export function. See the
 [Export Policies and Templates Window](/docs/threatprevention/8.1/admin/tools/exportpoliciestemplates.md) topic for
 additional information.
 
-The following parameter(s) are required:
+The following parameters are required:
 
 - PolicyIDs [String] – List of comma separated policy IDs
 
@@ -92,7 +92,7 @@ GUIDs in the XML file. One of the following actions occur:
 
 - XML file GUID matches existing policy – Updates the existing policy to match the new XML settings
   and fields
-- XML file GUID does not match any existing policies – New policy is created according to the XML
+- XML file GUID doesn't match any existing policies – New policy is created according to the XML
   parameters. It is created with a system generated GUID and Policy ID; the system discards the GUID
   and Policy ID from the source XML.
 
@@ -124,10 +124,10 @@ Example of adding an import XML file:
 
 The API returns as output the PolicyID, GUID, and Policy Name of the policy that has been updated or
 created. If a new policy was created, it is up to the user to capture the Policy ID and Policy GUID
-assigned by Threat Prevention in order to later access that policy.
+assigned by Threat Prevention to later access that policy.
 
 :::tip
-Remember, the Policy ID and Policy GUID is not the same as those in the source XML file. Use the
+The Policy ID and Policy GUID aren't the same as those in the source XML file. Use the
 `Get-SIPolicy` API call to find the newly created policy and its associated GUID and Policy ID by
 the name.
 :::

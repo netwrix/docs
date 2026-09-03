@@ -9,12 +9,12 @@ sidebar_position: 20
 Once Threat Prevention is installed, the Administration Console administrator is the only user who
 can launch it for the first time.
 
-Follow the steps to launch Threat Prevention for the first time.
+To launch Threat Prevention for the first time:
 
 **Step 1 –** On first launch, the Netwrix Threat Prevention Licensing Configuration window is
 displayed to the first Administration Console administrator, showing a license key warning:
 
-- Product license will expire in `<number>` days. Please contact your Netwrix representative for a
+- Product license will expire in `<number>` days. contact your Netwrix representative for a
   new license.
 
 This warning always displays when the organization’s license is within 14 days of expiring. Click
@@ -26,7 +26,7 @@ This warning always displays when the organization’s license is within 14 days
 later.
 
 In Threat Prevention, many policy templates are pre-configured for the most common policy types, so
-that you can quickly configure a policy. See the
+that you can configure a policy. See the
 [Templates Interface](/docs/threatprevention/8.1/admin/templates/overview.md) topic for details.
 
 - Click **Yes** on the Import Templates dialog box to import all the templates into the
@@ -50,7 +50,7 @@ manage the Agent.
 
 - Click **Yes** on the Install Agents dialog box to launch the **Deploy Agents** wizard. See the
   [Deploy Agents](/docs/threatprevention/8.1/admin/agents/deploy/overview.md) topic for additional information.
-- Click **No** if you do not want to install the Agents now. To install Agents later, see the
+- Click **No** if you don't want to install the Agents now. To install Agents later, see the
   [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) topic.
 
 See the [Getting Started ](/docs/threatprevention/8.1/gettingstarted.md)topic for the next steps.

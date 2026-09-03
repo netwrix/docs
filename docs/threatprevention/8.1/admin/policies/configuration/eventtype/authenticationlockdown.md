@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Authentication Lockdown Event Type
 
-Based on policy rules, the Authentication Lockdown event type can block specific Kerberos, TGT, TGS
+Based on policy rules, the Authentication Lockdown event type can block specific Kerberos, TGT, TGS,
 and/or NTLM authentication requests. An event is generated for each blocked authentication attempt.
 
 The event filters for the Authentication Lockdown event type are:
@@ -19,12 +19,11 @@ The event filters for the Authentication Lockdown event type are:
 
 ![Policy window - Authentication Lockdown Event Type](/images/threatprevention/8.1/admin/policies/eventtype/authenticationlockdown.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 :::warning
-Lockdown/blocking policies with blank filters result in everything being locked down or
-blocked.
+Lockdown/blocking policies with blank filters lock down or block everything.
 :::
 
 
@@ -34,9 +33,9 @@ interactive logons, etc.
 
 Due to the method used by Windows to establish an RDP session to a computer with the less secure
 mode (“Allow connections from computers running any version of Remote Desktop (less secure)” option
-in the System Properties of the target host) Threat Prevention cannot see the ‘from host’
+in the System Properties of the target host) Threat Prevention can't see the ‘from host’
 information to block. Therefore, if the target host is configured with the less secure mode, the
-Hosts (from) filter does not block authentications for these RDP sessions. Since the perpetrator and
+Hosts (from) filter doesn't block authentications for these RDP sessions. Since the perpetrator and
 host to information is available to Threat Prevention with this mode of RDP session, use the AD
 Perpetrator for lockdown filter and the Hosts (to) filter to block authentications.
 
@@ -91,7 +90,7 @@ When the Allow filter is used, it allows only the specified security principals 
 
 Use the AD Perpetrator filter for lockdown to set the scope of the policy to lockdown specific
 security principals committing changes or to exclude specific security principals committing changes
-from being locked down.
+from lockdown.
 
 ![AD Perpetrator Protect filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratorprotect.webp)
 
@@ -99,8 +98,8 @@ Select the **Block** or **Allow** option button and then edit the list.
 
 :::note
 For the [Password Enforcement Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md), selecting **Allow**
-means that this policy will not validate the new passwords for the accounts listed here. Selecting
-**Block** means that this policy will validate the new passwords for the accounts listed here.
+means that this policy doesn't validate the new passwords for the accounts listed here. Selecting
+**Block** means that this policy validates the new passwords for the accounts listed here.
 :::
 
 
@@ -111,10 +110,10 @@ Use the buttons in the Perpetrators and Collections of Perpetrators areas to edi
 - Collections of Perpetrators area - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -130,15 +129,15 @@ hosts as originators of an event.
 Select the **Block** or **Allow** option button and then edit the list.
 
 - For the [Password Enforcement Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md), selecting **Allow** means that
-  this policy will not validate the new passwords for the accounts listed here. Selecting **Block**
-  means that this policy will validate the new passwords for the accounts listed here.
+  this policy doesn't validate the new passwords for the accounts listed here. Selecting **Block**
+  means that this policy validates the new passwords for the accounts listed here.
 - For the Authentication Lockdown Event Type, this filter blocks or only allows authentication from
-  the identified host(s).
+  the identified hosts.
 
 Use the buttons in the Include Hosts area to edit the list.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/selectcomputers.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Hosts (to) Filter
 
@@ -150,11 +149,11 @@ hosts as target hosts of an event.
 Use the buttons in the Include Hosts area to edit the list.
 
 - The Hosts Add (+) button opens the [Select Computer Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/selectcomputers.md).
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Rule Preview Filter
 
-The Rule Preview filter displays a summary of the selected filter options. This is primarily used
+The Rule Preview filter displays a summary of the selected filter options. You use this primarily
 for troubleshooting.
 
 ![Event Type - Rule Preview filter](/images/threatprevention/8.1/admin/policies/eventtype/rulepreview.webp)

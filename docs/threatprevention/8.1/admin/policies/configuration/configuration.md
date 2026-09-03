@@ -14,13 +14,13 @@ into the following major components:
 - [Event Type Tab](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/overview.md)
 - [Actions Tab](/docs/threatprevention/8.1/admin/policies/configuration/actions/overview.md) (Event Consumers)
 
-Each major component has its own tabbed view. A policy requires at least the General tab and Event
-Type tab to be configured before it properly functions. The Actions tab is optional.
+Each major component has its own tabbed view. You must configure at least the General tab and Event
+Type tab before a policy functions properly. The Actions tab is optional.
 
-The [Recent Events Tab](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/overview.md) provides information on the events that have been
-recently monitored or blocked by the respective policy. These events are also available on the
+The [Recent Events Tab](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/overview.md) provides information on the events the respective
+policy recently monitored or blocked. These events are also available on the
 [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md).
 
-Through a PowerShell API integration, it is possible to create, edit, delete, and enable policies
+Through a PowerShell API integration, you can create, edit, delete, and enable policies
 without opening the Administration Console. See the
 [PowerShell API Integration](/docs/threatprevention/8.1/api/overview.md) topic for additional information.

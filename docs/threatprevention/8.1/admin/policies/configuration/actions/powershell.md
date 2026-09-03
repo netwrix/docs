@@ -6,11 +6,11 @@ sidebar_position: 30
 
 # PowerShell 4.0 Actions
 
-A PowerShell 4.0 script can be written and assigned to a policy by Threat Prevention users or a
-Netwrix Engineer via engaging Netwrix Professional Services. The script will be invoked by the
-Enterprise Manager for an enabled policy.
+Threat Prevention users, or a Netwrix Engineer through Netwrix Professional Services, can write a
+PowerShell 4.0 script and assign it to a policy. The Enterprise Manager invokes the script for an
+enabled policy.
 
-Follow the steps to add a PowerShell 4.0 action to a policy/template.
+To add a PowerShell 4.0 action to a policy/template:
 
 ![Actions tab - Actions Configurations area](/images/threatprevention/8.1/admin/policies/actions/actionsconfigurationsarea.webp)
 
@@ -35,21 +35,21 @@ Follow the steps to add a PowerShell 4.0 action to a policy/template.
 for additional information, i.e. Run for testing and Encrypt functionality. See the Default
 PowerShell 4.0 Script topic for the default custom script. Save and close.
 
-**Step 5 –** On the Add Action window, the new script is displayed in the **Script Preview**
-section. Check the **Enable compiler error logging** checkbox to enable Threat Prevention to log
+**Step 5 –** On the Add Action window, the **Script Preview** section displays the new script.
+Check the **Enable compiler error logging** checkbox to enable Threat Prevention to log
 information about the compiling of scripts.
 
 **Step 6 –** Click Save to close the Add Action window and apply changes.
 
 ![Actions tab – PowerShell 4.0 Action Created](/images/threatprevention/8.1/admin/policies/actions/powershellaction.webp)
 
-The Actions tab now displays the configured settings for the specified PowerShell 4.0 action. The
-action configuration can be directly edited through this display as well.
+The Actions tab now displays the configured settings for the specified PowerShell 4.0 action. You
+can also edit the action configuration directly through this display.
 
 ## Default PowerShell 4.0 Script
 
-The following PowerShell 4.0 script is configured as a default action. It will either create the
-_c:\nveventdata.txt_ file or append the event data to it.
+The following PowerShell 4.0 script is configured as a default action. It either creates the
+_c:\nveventdata.txt_ file or appends the event data to it.
 
 ```
 # Note: Powershell 4.0 or later is required for 

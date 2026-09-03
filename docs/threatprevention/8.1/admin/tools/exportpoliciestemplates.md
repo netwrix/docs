@@ -8,9 +8,9 @@ sidebar_position: 10
 
 You may need to export collections, policies, and templates from the Administration Console and them
 import them back for certain reasons, such as during a reinstall. The Export Policies and Templates
-Window enables you to export these items to an XML file.
+Window exports these items to an XML file.
 
-Follow the steps to export policies and templates:
+To export policies and templates:
 
 **Step 1 –** Open the Export Policies and Templates Window in several ways.
 
@@ -29,7 +29,7 @@ Follow the steps to export policies and templates:
   - Export Collections – Check the box to enable the option buttons:
     - Export All Collections
     - Export Only Collections Used in Policies and Templates
-    - Do Not Include Collection Items checkbox – Excludes collection items from the Collection
+    - Don't Include Collection Items checkbox – Excludes collection items from the Collection
       export
 - Event Consumers and Alerts
   - Export All Event Consumers and Alerts – Exports all event consumers (actions) and alerts

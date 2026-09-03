@@ -19,7 +19,7 @@ process is complete.
 [Application Server Install](/docs/threatprevention/8.1/install/application.md) topic for additional information.
 
 :::tip
-Remember, point to the existing SQL Server for the NVMonitorData and NVConfig databases on the
+Point to the existing SQL Server for the NVMonitorData and NVConfig databases on the
 Database Login Information page of the wizard during installation.
 :::
 

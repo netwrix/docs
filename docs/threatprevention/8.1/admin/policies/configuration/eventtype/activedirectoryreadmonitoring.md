@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The Active Directory Read Monitoring event type reports on a user's accessing or reading specific
 security-related Active Directory attributes. Active Directory processes a high volume of 'Read'
-requests. This event type is not designed to capture all or a majority of the 'Read' activity.
+requests. This event type isn't designed to capture all or a majority of the 'Read' activity.
 
 The event filters for the Active Directory Read Monitoring event type are:
 
@@ -23,14 +23,14 @@ The event filters for the Active Directory Read Monitoring event type are:
 
 ![Policy window - Active Directory Read Monitoring Event Type](/images/threatprevention/8.1/admin/policies/eventtype/adreadmonitoring.webp)
 
-Each filter tab acts like an "AND" statement for the filter. Any filter tab left blank is treated
+Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
 :::warning
 This event type monitors all specified domain controller Read events. Use this event
 type with significant filters or else it can adversely impact overall system performance and
-significantly increase the size of the Event Database. Limit the policy to specific attributes in
-order to avoid overwhelming the database with a high volume of unnecessary events.
+significantly increase the size of the Event Database. Limit the policy to specific attributes to
+avoid overwhelming the database with a high volume of unnecessary events.
 :::
 
 
@@ -47,10 +47,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -59,7 +59,7 @@ for additional information.
 ## AD Classes Filter
 
 Use the AD Classes filter to set the scope of the policy to only monitor specific classes within
-Active Directory or to exclude specific classes from being monitored.
+Active Directory or to exclude specific classes from monitoring.
 
 ![Policy window - AD Classes filter](/images/threatprevention/8.1/admin/policies/eventtype/adclasses.webp)
 
@@ -69,12 +69,12 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## AD Objects Filter
 
 Use the AD Objects filter to set the scope of the policy to only monitor specific objects in Active
-Directory or to exclude specific objects from being monitored.
+Directory or to exclude specific objects from monitoring.
 
 ![Policy window - AD Objects filter](/images/threatprevention/8.1/admin/policies/eventtype/adobjects.webp)
 
@@ -85,10 +85,10 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -110,20 +110,20 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 **Sub Tree**
 
 ![Sub-Tree option in event type filters](/images/threatprevention/8.1/admin/policies/eventtype/subtree.webp)
 
-When contexts are added, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
+When you add contexts, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
 and all child contexts. Uncheck it to apply the filter to the listed context only.
 
 ## AD Perpetrator Filter
 
 Use the AD Perpetrator filter for monitoring to set the scope of the policy to only monitor specific
 security principals committing changes or to exclude specific security principals committing changes
-from being monitored.
+from monitoring.
 
 ![Event Type - AD Perpetrator Monitoring filter](/images/threatprevention/8.1/admin/policies/eventtype/adperpetratormonitoring.webp)
 
@@ -135,10 +135,10 @@ Collections areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -148,13 +148,13 @@ for additional information.
 
 ![Sub-Tree option in event type filters](/images/threatprevention/8.1/admin/policies/eventtype/subtree.webp)
 
-When contexts are added, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
+When you add contexts, a Sub-Tree checkbox displays. Check it to apply the filter to the parent
 and all child contexts. Uncheck it to apply the filter to the listed context only.
 
 ## AD Attributes Filter
 
 Use the AD Attributes filter to set the scope of the policy to only monitor specific Active
-Directory attributes or to exclude specific attributes from being monitored.
+Directory attributes or to exclude specific attributes from monitoring.
 
 ![Policy window - AD Attributes Monitoring filter](/images/threatprevention/8.1/admin/policies/eventtype/adattributesmonitor.webp)
 
@@ -164,12 +164,12 @@ Use the buttons in the Include and Exclude areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 ## Hosts (from) Filter
 
 Use the Hosts (from) filter for monitoring to set the scope of the policy to only monitor specific
-hosts as originators of an event or to exclude specific hosts from being monitored.
+hosts as originators of an event or to exclude specific hosts from monitoring.
 
 ![Event Type – Hosts (from) filter](/images/threatprevention/8.1/admin/policies/eventtype/hostsfrom.webp)
 
@@ -180,10 +180,10 @@ areas to edit the lists.
 - The Collection button opens the
   [List of Collections Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/listcollections.md) to the
   appropriate Collection category.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The Remove (x) button deletes the selected items from that box.
 
 :::note
-To enable a Dynamic Policy, use the Collection button to select the desired Dynamic
+To enable a Dynamic Policy, use the Collection button to select the applicable Dynamic
 Collection. See the [Dynamic Collections](/docs/threatprevention/8.1/admin/configuration/collectionmanager/dynamic.md) topic
 for additional information.
 :::
@@ -191,7 +191,7 @@ for additional information.
 
 ## Rule Preview Filter
 
-The Rule Preview filter displays a summary of the selected filter options. This is primarily used
+The Rule Preview filter displays a summary of the selected filter options. You use this primarily
 for troubleshooting.
 
 ![Event Type - Rule Preview filter](/images/threatprevention/8.1/admin/policies/eventtype/rulepreview.webp)

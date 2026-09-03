@@ -8,8 +8,8 @@ sidebar_position: 80
 
 The **Golden Tickets** analytic type identifies Kerberos tickets that exceed the specified maximum
 lifetimes for a user ticket or maximum lifetimes for a user ticket renewal. Every time an account
-authenticates, the ticket is checked against the maximum ticket lifetime and maximum renewals
-configured within this analytic type. Any ticket that exceeds either ‘maximum’ will trigger an
+authenticates, Threat Prevention checks the ticket against the maximum ticket lifetime and maximum
+renewals configured within this analytic type. Any ticket that exceeds either ‘maximum’ triggers an
 incident.
 
 | Golden Tickets       |                                 |
@@ -35,14 +35,14 @@ Open the Golden Tickets Analytic Policy in any of the following ways:
 
 - Click Analytics in the left pane to launch the Analytics interface. Then click the gear icon for
   the analytic.
-- Expand the Analytics node and click the desired analytic. On the analytic window, click the gear
+- Expand the Analytics node and click the analytic you want. On the analytic window, click the gear
   icon available in the top right corner.
 
 The Configure Analytics window has two tabs:
 
-- Settings – Where the analytic trigger is defined
-- Policy – Where filters can be added, additional actions configured, a custom schedule set, and the
-  policy enabled
+- Settings – Where you define the analytic trigger
+- Policy – Where you add filters, configure additional actions, set a custom schedule, and enable
+  the policy
 
 **Settings Tab**
 
@@ -50,9 +50,9 @@ The Configure Analytics window has two tabs:
 
 Set the _Maximum Lifetime for User Ticket [value] Hours_ and the _Maximum Lifetime for User Ticket
 Renewal [value] Days_ to trigger the incident. The default Microsoft Windows lifetime for user
-tickets is ten hours, and the renewal period is seven days. This analytic policy will check each
-ticket that requests authentication against the values set in this analytic policy. Any time a
-ticket exceeds either of these values, an incident is triggered.
+tickets is ten hours, and the renewal period is seven days. This analytic policy checks each
+ticket that requests authentication against the values you set in this analytic policy. Any time a
+ticket exceeds either of these values, an incident triggers.
 
 **Policy Tab**
 
@@ -61,48 +61,48 @@ ticket exceeds either of these values, an incident is triggered.
 The **Policy** tab for configuring analytics consists of three sub-tabs:
 
 - General tab – Configured the same way a regular policy’s [General Tab](/docs/threatprevention/8.1/admin/policies/configuration/general.md) is
-  configured. The only exception is that the Name and Description are hard coded, and cannot be
+  configured. The only exception is that the Name and Description are hard coded, and can't be
   modified. The Tags field is disabled for analytics.
 - Event Type tab – Configured the same way a regular policy’s
   [Event Type Tab](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/overview.md) is configured. The only exception is that the
   [Authentication Monitoring Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/authenticationmonitoring.md) is hard
-  coded, and the Success filter cannot be modified.
+  coded, and the Success filter can't be modified.
 
   :::info
-  Do not configure any filters for this analytic type.
+  Don't configure any filters for this analytic type.
   :::
 
 
-  - _Optional:_ Scope the protocol to be monitored on the Authentication Protocol filter. If
-    enabling the analytic on a domain controller, also scope the login type.
+  - _Optional:_ Scope the protocol to monitor on the Authentication Protocol filter. If you
+    enable the analytic on a domain controller, also scope the login type.
 
     :::note
     The Exclude failed authentications with ‘N-2’ passwords option requires a GPO
-    within the organization be configured to ‘Enforce password history’ with a setting of a
-    minimum of ‘3 passwords remembered’ or it will not have an effect.
+    within the organization configured to ‘Enforce password history’ with a setting of a
+    minimum of ‘3 passwords remembered’. Otherwise, the option has no effect.
     :::
 
 
-  - \_Optional:\_Scope the domains to be included in or excluded from monitoring on the
+  - \_Optional:\_Scope the domains to include in or exclude from monitoring on the
     Domains/Servers filter.
-  - \_Optional:\_Scope the accounts to include in or exclude from being monitored on the AD
+  - \_Optional:\_Scope the accounts to include in or exclude from monitoring on the AD
     Perpetrator filter.
-  - \_Optional:\_Scope the servers to be included in or excluded from monitoring on the IP
+  - \_Optional:\_Scope the servers to include in or exclude from monitoring on the IP
     Addresses (from) filter, the IP Addresses (to) filter, the Hosts (from) filter, or the Hosts
     (to) filter.
 
     :::note
     Some authentication events may return only a host name (NetBIOS or FQDN), others
-    may return only an IP address. It is recommended to take this into account when entering
+    may return only an IP address. Take this into account when entering
     filter values.
     :::
 
 
 - Actions tab – Configured the same way a regular policy’s
   [Actions Tab](/docs/threatprevention/8.1/admin/policies/configuration/actions/overview.md) is configured. The only exceptions are that the
-  “Send to Event DB” and “Email Notifications” options are disabled. The event data collected by
-  analytic policies are stored in memory until an incident is triggered. For the “Send Raw Data to
-  SIEM” option, use _caution_, as this will send all event data not the triggered incident, which
+  “Send to Event DB” and “Email Notifications” options are disabled. Analytic policies store the
+  event data they collect in memory until an incident triggers. Use _caution_ with the “Send Raw
+  Data to SIEM” option, as it sends all event data rather than the triggered incident, which
   could be a large volume of data. To send notifications on incidents, use the
   [System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md) to configure Email and SIEM
   alerts.
@@ -113,7 +113,7 @@ The data grid on the **Golden Tickets** node lists one row per incident identifi
 
 ![Golden Ticket Analytic Type  window](/images/threatprevention/8.1/admin/analytics/goldenticket.webp)
 
-The data grid can be filtered according to the Event Tracker status: All, New, or Reviewed. See the
+You can filter the data grid according to the Event Tracker status: All, New, or Reviewed. See the
 [Event Tracker Window](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/eventtracker.md) topic for additional information.
 
 The top data grid includes the following information for each incident:
@@ -123,7 +123,7 @@ The top data grid includes the following information for each incident:
 - To Host – Name of the target host
 - To Host IP Address – IP address of the target host
 - Account Name – Security principal of the account that triggered the incident
-- Account SID – Security Identifier of the account used in the event that triggered the incident
+- Account SID – Security Identifier of the account used in the incident-triggering event
 - Access Type – Type of authentication, e.g. RDP, CIFS, etc.
 - Status – Indication of whether the authentication was successful
 - Date/Time – Date timestamp of the monitored event. Hover over the data in this column to view the

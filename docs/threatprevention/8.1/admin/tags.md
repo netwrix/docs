@@ -14,7 +14,7 @@ view its folder.
 
 ![Tags node](/images/threatprevention/8.1/admin/tags/tags.webp)
 
-Adding tags to a template does not create a duplicate template, but rather multiple places to access
+Adding tags to a template doesn't create a duplicate template, but rather multiple places to access
 the template from. A modification made to a template within a folder under the TAGS node is a
 modification to that template no matter where it is accessed after that, i.e. from under the
 Templates node or from another folder under the TAGS node.

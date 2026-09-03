@@ -12,7 +12,7 @@ information. This means that you can use one set of credentials to log in to man
 websites. It is much easier to manage one login per user than separate logins for email, Customer
 Relationship Management (CRM) software, Active Directory, and more.
 
-Once you have added an authentication provider, as discussed in the
+After you have added an authentication provider, as discussed in the
 [Add an Authentication Provider](/docs/threatprevention/8.1/reportingmodule/configuration/integrations/authenticationprovider/page.md#add-an-authentication-provider)topic, the next step is to
 configure the provider for use with a supported authentication provider type, i.e., OpenID, RADIUS,
 or SAML.
@@ -48,7 +48,7 @@ Configure the following settings for a SAML provider on the Configuration tab:
   a web application or service
 - Logout Uri – A logout URI is a specific web address where users are directed to terminate their
   authenticated session in a web application or service
-- Login Type – The login type to use to log into the account. Use the drop-down menu to select one
+- Login Type – The login type to use to log into the account. Use the dropdown menu to select one
   of the following: Sam Account Name, User Principal Name, Email Address, or Sid
 - User Claim – A user claim is an assertion made by the identity provider about a user, such as
   their name, role, or email, that the service provider can use for authorization decisions
@@ -61,7 +61,7 @@ Click Save to commit the configuration settings.
 
 ## Users/Groups Tab
 
-The Users/Groups tab displays users and groups that are currently assigned to this authentication
+The Users/Groups tab displays users and groups that are assigned to this authentication
 profile. To give access to the application to new users, click the New Access button, which opens
 the Add Console Access window. To assign this authentication provider to existing users, go to
 System Settings > User Access Page.
@@ -80,7 +80,7 @@ The table displays the following information:
 - Authentication Type – Type of MFA authentication assigned to the user or group
 - Action – This column has the following icons for conducting actions on the user or group:
 
-  - Edit icon – Allows you to edit the columns in the selected row by enabling drop-down menus.
+  - Edit icon – Use it to edit the columns in the selected row by enabling dropdown menus.
     The edit icon changes to a save icon while in edit mode.
   - Trash icon – Opens a Warning window to confirm the action of deleting the user or group.
     Removing a user or group removes console access for it.

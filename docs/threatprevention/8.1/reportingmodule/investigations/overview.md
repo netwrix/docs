@@ -26,16 +26,16 @@ interface defaults to the New Investigation page as follows:
 
 The Investigations interface contains the following pages:
 
-- New Investigation – Enables you to run queries on available data with desired filters for a
+- New Investigation – Use it to run queries on available data with desired filters for a
   specific timeframe. See the [New Investigation Page](/docs/threatprevention/8.1/reportingmodule/investigations/newinvestigation.md) topic for additional
   information.
 - Favorites – Provides a list of saved queries the logged in user has tagged as a Favorite. See the
   [Favorites Page](/docs/threatprevention/8.1/reportingmodule/investigations/favorites.md) topic for additional information.
-- Audit and Compliance – Provides a list of saved out-of-the-box investigations with applied filters
+- Audit and Compliance – Provides a list of saved built-in investigations with applied filters
   for commonly used Audit and Compliance activity reports. See the
   [Audit and Compliance Page](/docs/threatprevention/8.1/reportingmodule/investigations/auditcompliance.md) topic for additional information.
-- Predefined Investigations – Provides a list of saved out-of-the-box investigations with applied
-  filters for Applications, Computers, Groups, iNetOrgPerson, Roles and User activity reports. See
+- Predefined Investigations – Provides a list of saved built-in investigations with applied
+  filters for Applications, Computers, Groups, iNetOrgPerson, Roles, and User activity reports. See
   the [Predefined Investigations Page](/docs/threatprevention/8.1/reportingmodule/investigations/predefinedinvestigations.md) topic for additional
   information.
 - My Investigations – Provides a list of saved investigations created by the application users. A
@@ -58,5 +58,5 @@ investigations by name.
 
 ![Investigations Search showing matching results](/images/threatprevention/8.1/reportingmodule/investigations/search.webp)
 
-Type in the search box. As you type, a drop-down will populate with saved investigations containing
+Type in the search box. As you type, a dropdown will populate with saved investigations containing
 matches. The part of the investigation name that matches the search text is in bold.

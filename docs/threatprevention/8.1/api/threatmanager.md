@@ -35,7 +35,7 @@ There are three methods available for data output:
   for additional information.
 
   :::tip
-    Remember, the port number for Activity Monitor is 4499.
+    The port number for Activity Monitor is 4499.
   :::
 
 
@@ -79,7 +79,7 @@ The `Set-SILdapDeception` command changes the settings on the Honey Token Tab of
 [Netwrix Threat Manager Configuration Window](/docs/threatprevention/8.1/admin/configuration/threatmanagerconfiguration.md).
 
 :::tip
-Remember, these settings must be an exact match to the configuration set up in the Threat Manager
+These settings must exactly match the configuration set up in the Threat Manager
 Honey Token threat.
 :::
 
