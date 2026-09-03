@@ -111,9 +111,9 @@ buttons in the respective areas to edit the lists.
 
 :::warning
 In a production environment, only exclude processes using the Exclude Process area.
-While there is an option to include processes, it **isn't** recommended in a policy that is monitoring
-a production environment. Adding a process in the Include Process area limits the policy to only
-monitoring that process. Unknown malicious processes wouldn't be monitored by the policy. In a
+While there is an option to include processes, Netwrix **doesn't** recommend it in a policy that is
+monitoring a production environment. Adding a process in the Include Process area limits the policy
+to only monitoring that process. The policy wouldn't monitor unknown malicious processes. In a
 sandbox environment, the Include Process option can be useful for testing/capturing the LSASS
 activity for specific processes to see what access they are requesting.
 :::
@@ -142,8 +142,8 @@ gap.
 
 :::warning
 The hash of an executable changes every time it's patched or upgraded. Refresh the
-approved hashes for an entry after every update to the tool it covers. Until the hashes are
-refreshed, the entry is treated according to the checksum option described below.
+approved hashes for an entry after every update to the tool it covers. Until you refresh the hashes,
+Threat Prevention treats the entry according to the **Monitor if Checksum Unavailable** option.
 :::
 
 Threat Prevention resolves the folder and computes the checksum ahead of the request, so neither

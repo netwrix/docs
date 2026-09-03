@@ -42,7 +42,7 @@ Example:
   - C:\Documents and Settings (EXAMPLE\server1)
   - C:\Users\All Users (EXAMPLE\server2)
 
-The above configuration in a policy results in the SI Agent on server1 locking down only
+This configuration in a policy results in the SI Agent on server1 locking down only
 C:\Documents and Settings folder and the SI Agent on server2 locking down only C:\Users\All Users
 folder.
 

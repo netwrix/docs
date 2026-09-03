@@ -66,7 +66,7 @@ additional information.
   due to use of a previously valid, but now expired, password.
 
   You must configure a GPO within the organization to Enforce password history with a setting of a
-  minimum of 3 passwords remembered in order for the Threat Prevention policy to exclude failed
+  minimum of 3 passwords remembered so that the Threat Prevention policy can exclude failed
   authentications for N-2. This policy is located within a **GPO** > **Computer Configuration** >
   **Windows Settings** > **Security Settings** > **Account Policies** > **Password Policy** (shown
   in the example GPO > Default DomainPolicy).

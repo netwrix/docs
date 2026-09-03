@@ -154,9 +154,9 @@ and all child contexts. Uncheck it to apply the filter to the listed context onl
 
 **Block if user's groups isn't resolved checkbox**
 
-When applying EPE rules based on group membership, it may happen that at runtime, Threat Prevention
-can't determine the groups the user making a password change is a member of. It is here that the
-Block if user's groups isn't resolved checkbox determines the action to take.
+When Threat Prevention applies EPE rules based on group membership, it may not be able to determine
+at runtime which groups the user making a password change belongs to. The Block if user's groups
+isn't resolved checkbox determines the action to take in that case.
 
 - For example, if you select the Block option button and check the Block if user's groups isn't
   resolved checkbox, then if Threat Prevention can't determine the group membership of a given
@@ -259,7 +259,7 @@ the 13 possible "Character Rules" enforced. Here is how you handle this.
   enable the 8 desired "Character Rules". Then for "Optional Rules", select the "Comply with at
   least" option button and enter 4 in the box.
 
-The different sections on the Password Rules filter are discussed below.
+The following descriptions cover the different sections on the Password Rules filter.
 
 **Mode Section**
 
@@ -280,8 +280,8 @@ Use the Test Password Rules button to open the
 These settings authenticate passwords against a default `dictionary.dat` file of known weak and/or
 compromised passwords. Additional passwords can be manually added or uploaded via a TXT file.
 
-In order for the password to be rejected, the pending user password must match exactly to a listed
-password in the Password Dictionary list. See the
+Threat Prevention rejects the password only when the pending user password matches a listed
+password in the Password Dictionary list exactly. See the
 [Password Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#password-dictionary-window) and the
 [Substitutions Editor Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#substitutions-editor-window) topics
 for additional information.

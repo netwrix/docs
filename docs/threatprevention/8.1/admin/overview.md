@@ -21,7 +21,7 @@ The following components make up Threat Prevention:
 
 ## Software Components
 
-Threat Prevention consists of a number of components that work together to monitor and report on
+Threat Prevention consists of several components that work together to monitor and report on
 activity on a network:
 
 - Threat Prevention Enterprise Manager

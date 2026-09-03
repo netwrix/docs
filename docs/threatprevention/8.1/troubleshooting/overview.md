@@ -36,7 +36,7 @@ Whether choosing to archive or delete data, this is always a good feature to ena
 
 **Best Practice #3 – Analytics? Turn on One at a Time & Tune**
 
-Analytics provide organizations with the ability to capture and analyze authentication or file
+Analytics let organizations capture and analyze authentication or file
 system traffic. The best way to employ analytics is to turn on one at a time and then ‘tune’ it to
 the targeted environment before turning on another. Each environment generates unique authentication
 or file system ‘noise’ that can be filtered out by adjusting triggers and filters. After the analytic

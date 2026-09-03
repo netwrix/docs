@@ -10,9 +10,8 @@ To collect real-time activity data, the Agent hooks into (intercepts) specific M
 LSASS process. Note the following:
 
 - Occasionally Microsoft issues KBs (hot-fixes) that alter the LSASS components. Most of these
-  hot-fixes don't alter the APIs in terms of the number or type parameters passed into them or
-  values returned which are monitored by the Agent, and therefore don't impact operation of the
-  Agent.
+  hot-fixes don't alter the number or type of parameters passed into the APIs, or the returned
+  values the Agent monitors, and therefore don't impact operation of the Agent.
 - Infrequently Microsoft issues a KB that changes one of these APIs in a way that can result in
   interfering with the Agent instrumentation. This in turn can result in an exception which causes
   the LSASS process to terminate. Historically, an update resulting in this type of exception is
@@ -25,7 +24,7 @@ LSASS process. Note the following:
   Threat Prevention hooks aren't deployed.
 
 The Agent can detect if the LSASS process has terminated. If an LSASS termination is observed within
-the first five minutes from last reboot, then the Agent assumes it is due to the above situation and
+the first five minutes from last reboot, then the Agent assumes it is due to this situation and
 will take the following two actions well before the OS shuts down for the first time:
 
 - First, it sends an alert to the Enterprise Manager, “LSASS shutdown detected”

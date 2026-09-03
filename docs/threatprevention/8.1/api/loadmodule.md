@@ -10,7 +10,7 @@ The following steps are provided to load the Threat Prevention PowerShell module
 required with each PowerShell session before running the available APIs.
 
 :::note
-The command below assumes the Threat Prevention installation directory is in the C drive
+The following command assumes the Threat Prevention installation directory is in the C drive
 on the server where the PowerShell console resides.
 :::
 
@@ -38,7 +38,7 @@ Example of `Connect-SIEnterpriseManager` without any parameters (PS and EM are o
 
 **Connect-SIEnterpriseManager**
 
-Example of `Connect-SIEnterpriseManager` using two of the above parameters:
+Example of `Connect-SIEnterpriseManager` using two of these parameters:
 
 **Connect-SIEnterpriseManager -A 192.168.189.57 -R 1**
 

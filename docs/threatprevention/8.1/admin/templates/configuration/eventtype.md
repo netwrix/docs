@@ -31,7 +31,7 @@ feature.
 :::
 
 
-After the event type to be monitored by the policy is selected, use the filters to scope the policy.
+After you select the event type for the policy to monitor, use the filters to scope the policy.
 
 Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.

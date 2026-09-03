@@ -118,12 +118,11 @@ Enter the process in the textbox. Use the buttons above the box to edit the list
 
 
 :::note
-- While you can select to **Block** processes, it _isn't recommended_ for locking down target process.
-  Adding a process block filter will limit the policy to only block that requesting process. Unknown malicious
-  processes wouldn't be blocked by the policy.
-- While you can select to **Allow** processes, it is possible that a malicious process could be
-  renamed to the same as an “allowed” process. Therefore, the malicious process wouldn't be
-  blocked.
+- While you can select to **Block** processes, Netwrix _doesn't recommend_ it for locking down target
+  processes. Adding a process block filter will limit the policy to only block that requesting
+  process. The policy wouldn't block unknown malicious processes.
+- While you can select to **Allow** processes, an attacker could rename a malicious process to match
+  an “allowed” process. Therefore, the policy wouldn't block the malicious process.
 :::
 
 
@@ -150,8 +149,8 @@ gap.
 
 :::warning
 The hash of an executable changes every time it's patched or upgraded. Refresh the
-approved hashes for an entry after every update to the tool it covers. Until the hashes are
-refreshed, the entry is treated according to the checksum option described below.
+approved hashes for an entry after every update to the tool it covers. Until you refresh the hashes,
+Threat Prevention treats the entry according to the **Block if Checksum Unavailable** option.
 :::
 
 Threat Prevention resolves the folder and computes the checksum ahead of the request, so neither

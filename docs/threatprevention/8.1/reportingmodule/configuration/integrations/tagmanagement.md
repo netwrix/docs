@@ -6,7 +6,7 @@ sidebar_position: 70
 
 # Tag Management Page
 
-The Tag Management page displays all tags that are managed by the application, including
+The Tag Management page displays all tags the application manages, including
 built-in and custom tags. You can add tags and assign objects to those tags.
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
@@ -30,7 +30,7 @@ The built-in tags include:
   network or domain.
 - Read-Only Domain Controller – A read-only Active Directory domain controller account
 - Sensitive – A group that has elevated permissions or administrative rights. A member of these
-  groups have the ability to perform critical tasks that can affect the security, configuration, and
+  groups can perform critical tasks that affect the security, configuration, and
   operation of the entire network or domain.
 - Service Account – An Active Directory service account
 - Stale – An Active Directory user account marked as stale

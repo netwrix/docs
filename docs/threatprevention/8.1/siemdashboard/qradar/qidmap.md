@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # QIDmap Information for QRadar SIEM Integration
 
-Vendors have the ability to create what is called a QIDmap. The purpose of the mapping file is to
+Vendors can create a QIDmap. The purpose of the mapping file is to
 create a listing of the events that the vendor can provide. It also creates a mapping that IBM
 consumes, producing a DSM. After the DSM is in place, QRadar can take Threat Prevention events and
 categorize them.

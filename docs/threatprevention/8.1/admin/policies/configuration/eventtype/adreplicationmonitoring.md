@@ -52,7 +52,7 @@ If no filters are applied, saving the policy configuration displays a warning me
 
 :::note
 The AD Replication Monitoring event type internally looks for use of the GetNCChanges()
-API and reports an event when this API is invoked by a machine outside the scope of the policy
+API and reports an event when a machine outside the scope of the policy invokes this API
 filters.
 :::
 

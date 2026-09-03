@@ -27,7 +27,7 @@ The Recent Events tab has the following options on the toolbar:
 
 Example for the Events for Last [number] Hours Option
 
-Below is an example of how to use the Events for Last [number] Hours option:
+The following example shows how to use the Events for Last [number] Hours option:
 
 The number of hours set is based on UTC and is adjusted for the time zones of the Administration
 Console server and the Agent that is monitoring the events. Let's assume the following:
@@ -49,8 +49,8 @@ See the [Event Tracker Window](/docs/threatprevention/8.1/admin/policies/configu
 
 ## Recent Events Data Grid
 
-The data grid on the Recent Events tab includes the following information for each event, listed
-below in the default order of the data grid columns:
+The data grid on the Recent Events tab includes the following information for each event, in the
+default order of the data grid columns:
 
 - Event: Time Logged – Timestamp for when the event was monitored/blocked. The specified time is the
   local time for the server where the Agent is deployed. Hover over the data in this column to view

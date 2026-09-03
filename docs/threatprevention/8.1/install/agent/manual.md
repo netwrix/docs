@@ -136,9 +136,9 @@ product to enable communication with it.
     the LSASS DLL versions has been modified since the last time the Threat Prevention Windows
     Agent service was started.
   - Start Agent Service – This option starts the Threat Prevention Windows Agent service after the
-    Agent is installed. If the Threat Prevention Windows Agent service isn't started during
-    installation, the Agent requires a manual start or needs to be started automatically after a
-    server reboot. Until the Agent is started, no activity monitoring or blocking occurs.
+    Agent is installed. If installation doesn't start the Threat Prevention Windows Agent service,
+    you must start the Agent manually, or it starts automatically after a server reboot. Until the
+    Agent starts, no activity monitoring or blocking occurs.
 
     :::note
     If **Custom-managed** is selected on the CA Certificate Configuration page, the
@@ -213,6 +213,6 @@ Successful page is displayed.
 
 **Step 11 –** When installation is complete, click **Close**.
 
-If the certificates are managed by Threat Prevention, Agent deployment is completed. If the
-custom-managed certificate option was selected, see the
+If Threat Prevention manages the certificates, Agent deployment is complete. If you selected the
+custom-managed certificate option, see the
 [Create Custom Managed Certificates for Each Agent](/docs/threatprevention/8.1/install/agent/customcert.md) topic for additional information.

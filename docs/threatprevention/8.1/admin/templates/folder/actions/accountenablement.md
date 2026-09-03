@@ -18,7 +18,7 @@ The following environmental variables must be added to the script before executi
   - True = Use SSL
 - SMTPFROM – Valid email account sending the email to the recipient
 - SMTPID – Valid username for SMTP server within the user's environment
-- SMTPPwD – Valid password for the username above
+- SMTPPwD – Valid password for the SMTPID username
 
 In the Templates > Actions folder in the Navigation pane, the _AD Changes: Notify Admin that account
 is now enabled_ template is preconfigured to use this action script.

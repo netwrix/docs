@@ -16,13 +16,13 @@ Click **User Access** in the navigation pane.
 
 ![System Settings interface on the User Access page](/images/threatprevention/8.1/reportingmodule/configuration/systemsettings/useraccess.webp)
 
-Roles are assigned by the following methods:
+The application assigns roles by the following methods:
 
-- Group Membership – Members of the group will be given the role assigned
+- Group Membership – Members of the group receive the assigned role
 
   :::note
-  If a user is a member of multiple assigned groups, the group with the highest level of
-  privilege is assigned
+  If a user is a member of multiple assigned groups, the application assigns the group with
+  the highest level of privilege
   :::
 
 

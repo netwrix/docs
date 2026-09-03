@@ -73,11 +73,10 @@ on its own. See the
 [Access Agent Log Files](/docs/threatprevention/8.1/admin/agents/agents-windows/loglevelconfiguration.md#access-agent-log-files)
 topic for additional information.
 
-**AD Monitor log files** – `ADTrace.log` and `LDAPTrace.log` are replaced by a single
-`EventTrace.log`, which also records Kerberos, DCSync, NTLM, password change, AD CS, AD FS, and FSMO
-events.
+**AD Monitor log files** – A single `EventTrace.log` replaces `ADTrace.log` and `LDAPTrace.log`. It
+also records Kerberos, DCSync, NTLM, password change, AD CS, AD FS, and FSMO events.
 
-**AD Monitor settings** – Three settings in a customized `Logging.ini` need to be changed. An
+**AD Monitor settings** – You must change three settings in a customized `Logging.ini`. An
 obsolete setting is ignored without an error, so the logging you expect stops appearing with no
 other symptom.
 
@@ -130,7 +129,7 @@ Agent.
 See the [Upgrade Agent](/docs/threatprevention/8.1/install/upgrade/agent.md) topic for additional information.
 
 Review the [Logging Changes in Version 8.1](#logging-changes-in-version-81) section in this topic
-before you upgrade. A customized `Logging.ini` on a domain controller needs to be updated by hand.
+before you upgrade. You must update a customized `Logging.ini` on a domain controller by hand.
 
 ## Infrastructure Upgrade Procedure for 7.5 to 8.1
 
@@ -174,7 +173,7 @@ This is a requirement when upgrading from Threat Prevention 7.5, as the HIBP pas
 :::
 
 Review the [Logging Changes in Version 8.1](#logging-changes-in-version-81) section in this topic
-before you upgrade. A customized `Logging.ini` on a domain controller needs to be updated by hand.
+before you upgrade. You must update a customized `Logging.ini` on a domain controller by hand.
 
 ## Infrastructure Upgrade Procedure for 7.5.x to 7.5.y
 

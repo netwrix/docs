@@ -6,9 +6,9 @@ sidebar_position: 30
 
 # Uninstall Agent
 
-When a newer version of the Agent is available, the Agents need to be uninstalled before the latest
-version can be deployed. You can uninstall an Agent using the Uninstall Agent Wizard (recommended
-method) or manually. Instructions for each method are provided in this topic.
+When a newer version of the Agent is available, you must uninstall the Agents before you can deploy
+the latest version. You can uninstall an Agent using the Uninstall Agent Wizard (recommended
+method) or manually. This topic provides instructions for each method.
 
 ## Uninstall Agent Wizard
 

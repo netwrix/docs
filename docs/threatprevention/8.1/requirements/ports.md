@@ -136,8 +136,8 @@ are required for communication between the Agent server and the Netwrix Activity
 | -------------------------------- | -------- | ----- | ------------------- |
 | Activity Monitor to Agent Server | TCP      | 4498  | Agent Communication |
 
-The Windows firewall rules need to be configured on the Windows server, which require certain
-inbound rules be created if the scans are running in applet mode. These scans operate over a default
+You must configure the Windows firewall rules on the Windows server, which require certain
+inbound rules if the scans are running in applet mode. These scans operate over a default
 port range, which can't be specified via an inbound rule. For guidance on connecting to WMI on a remote computer, see the Microsoft
 [Connecting to WMI on a Remote Computer](<https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx>)
 article.

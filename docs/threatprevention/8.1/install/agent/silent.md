@@ -13,12 +13,12 @@ distribution solutions that an organization may already have in their environmen
 **MSI Compliant Command-Line Options**
 
 The WiX installer application for Agent runs under control of Windows installer component (MSI).
-Therefore, standard MSI command-line options can be used with the
+Therefore, you can use standard MSI command-line options with the
 “threatprevention-agent-8.1.x.xxx.exe” install.
 
-Available command-line options can be found in the
+The
 [Microsoft Standard Installer Command-Line Options](<https://msdn.microsoft.com/en-us/library/windows/desktop/aa372024(v=vs.85).aspx>)
-article.
+article lists the available command-line options.
 
 Two of the more useful options are:
 
@@ -33,8 +33,8 @@ command line.
 | Property Name       | Description            | Default Value           |
 | ------------ | ---------------- | --------------------- |
 | CUSTOM_CA               | If this property is set to True, then the custom-managed certificate mode is enabled. This mode uses certificates that are signed by the customer's external certificate authority. In this mode, the installer will not generate certificates and will not start the Agent Service at the end of the installation. | FALSE             |
-| EMCERTIFICATE         | Enterprise Manager Certificate Thumbprint      | This value can be found in the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) by clicking the Agent Enrollment Secret icon to open the [Enrollment Secret Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/enrollmentsecretconfiguration.md). This value isn't used for high security mode.        |
-| ENROLLMENTSECRET (Required for enrolling new Agent) | Agent Enrollment Secret          | This value can be found in the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) by clicking the Agent Enrollment Secret icon to open the [Enrollment Secret Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/enrollmentsecretconfiguration.md). This is a required field if using auto security mode. It isn't used for high security mode. |
+| EMCERTIFICATE         | Enterprise Manager Certificate Thumbprint      | You can find this value in the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) by clicking the Agent Enrollment Secret icon to open the [Enrollment Secret Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/enrollmentsecretconfiguration.md). This value doesn't apply to high security mode.        |
+| ENROLLMENTSECRET (Required for enrolling new Agent) | Agent Enrollment Secret          | You can find this value in the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) by clicking the Agent Enrollment Secret icon to open the [Enrollment Secret Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/enrollmentsecretconfiguration.md). This is a required field if using auto security mode. It doesn't apply to high security mode. |
 | SAFEMODE       | Start Agent Service in safe mode         | FALSE          |
 | STARTAGENTSERVICE       | Start Agent Service on successful installation        | FALSE        |
 | ADDFWRULES          | Create firewall rules for the Agent Service          | TRUE       |
@@ -54,8 +54,8 @@ The following examples show some standard scenarios for Agent installations.
 
 :::note
 Parameters with TRUE or FALSE are case sensitive. EMCERTIFICATE and
-ENROLLMENTSECRET in the examples have been generated and are unique to each install. These need to be retrieved from
-the Administration Console.
+ENROLLMENTSECRET in the examples are generated values, unique to each install. You must retrieve
+these from the Administration Console.
 :::
 
 

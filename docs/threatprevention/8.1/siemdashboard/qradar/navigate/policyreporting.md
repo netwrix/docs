@@ -7,8 +7,8 @@ sidebar_position: 70
 # Policy Reporting Dashboard
 
 The Policy Reporting dashboard is for viewing Threat Prevention events from any enabled policy that
-is sending events to QRadar. This dashboard requires the SEC token to be saved in the Settings
-interface in order for QRadar to actively see Threat Prevention policies and associated recent
+is sending events to QRadar. This dashboard requires the SEC token saved in the Settings
+interface so that QRadar can actively see Threat Prevention policies and associated recent
 events. See the [Settings](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/settings.md) topic for additional information.
 
 The Policies tab on the left side of the dashboard toggles the Policies panel open and close. All
