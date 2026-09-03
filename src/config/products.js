@@ -648,9 +648,15 @@ export const PRODUCTS = [
     icon: '',
     versions: [
       {
+        version: '8.1',
+        label: '8.1',
+        isLatest: true,
+        sidebarFile: './sidebars/threatprevention/8.1.js',
+      },
+      {
         version: '8.0',
         label: '8.0',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatprevention/8.0.js',
       },
       {
@@ -660,7 +666,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/threatprevention/7.5.js',
       }
     ],
-    defaultVersion: '8.0',
+    defaultVersion: '8.1',
   },
 ];
 
