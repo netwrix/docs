@@ -31,7 +31,7 @@ query it from the Administration Console. See the
 display.
 
 **Step 5 –** Check the For Each Policy checkbox to view the specified number of events on a per
-policy basis. If unchecked, the specified number of events displayed is based solely on the time
+policy basis. If unchecked, the number of events displayed depends solely on the time
 Threat Prevention logged the event.
 
 **Step 6 –** Use the Refresh button to repopulate the data grid with the current information for the
@@ -63,7 +63,7 @@ event. The columns display the following information for each event:
   - Authenticate – DN of the user object making the request
 
   :::note
-  For LDAP bind/monitoring/blocking, Affected Object Path isn't used
+  Threat Prevention doesn't use Affected Object Path for LDAP bind/monitoring/blocking.
   :::
 
 

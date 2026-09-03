@@ -99,7 +99,7 @@ must meet the following requirements:
 | AccountName    | NVARCHAR (1024) | Distinguished name of the account. Can't be null.                                                                                                                                 |
 | AccountSid     | NVARCHAR (184)  | SDDL form of the account Security ID. Can't be null.                                                                                                                              |
 | AccountType    | INT             | Account type using the following values: <ul><li>0 = none</li><li>1 = user</li><li>2 = group</li><li>3 = context</li><li>4 = orgRole</li><li>5 = sidtype</li><li>6 = other</li><li>7 = dynamic</li><li>8 = dynamic_group</li></ul> Can't be null. |
-| IncludeSubtree | INT             | Indicates if child containers should be used: <ul><li>0 = Child containers NOT included</li><li>1 = Child containers included</li></ul> Can't be null.                                                  |
+| IncludeSubtree | INT             | Indicates whether to include child containers: <ul><li>0 = Child containers NOT included</li><li>1 = Child containers included</li></ul> Can't be null.                                                  |
 
 Example table entry:
 
@@ -182,7 +182,7 @@ requirements:
 | Column Name    | Column Type     | Column Description                                                                   |
 | -------------- | --------------- | --------------------- |
 | Path           | NVARCHAR (1024) | File path to the target folder. Can't be null.                                      |
-| IncludeSubtree | INT             | Indicates whether subfolders are processed: <ul><li>0 = Not Included</li><li>1 = Included</li></ul> |
+| IncludeSubtree | INT             | Indicates whether Threat Prevention processes subfolders: <ul><li>0 = Not Included</li><li>1 = Included</li></ul> |
 | TargetAgent    | NVARCHAR (1024) | Agent that monitors the target server. Can't be null.                               |
 
 Example table entry:

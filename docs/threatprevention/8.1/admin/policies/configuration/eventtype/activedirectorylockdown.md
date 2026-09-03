@@ -7,8 +7,8 @@ sidebar_position: 20
 # Active Directory Lockdown Event Type
 
 Based on policy rules, the Active Directory Lockdown event type can prevent a change in Active
-Directory. Every time a change is prevented, an event with details about the prevented change is
-generated.
+Directory. Every time the policy prevents a change, Threat Prevention generates an event with
+details about the prevented change.
 
 The event filters for the Active Directory Lockdown event type are:
 
@@ -43,8 +43,8 @@ Check the **All** box to monitor or lockdown all operations, or select specific 
 - Object Modified – The policy monitors for Active Directory objects being modified
 - Object Moved or Renamed – The policy monitors for Active Directory objects being moved or renamed
 
-If applied to a Lockdown Event Type, the policy both monitors and lockdowns the objects based on the
-selection.
+If you apply this filter to a Lockdown Event Type, the policy both monitors and locks down the
+objects based on the selection.
 
 ## AD Objects and Containers Filter
 

@@ -11,7 +11,7 @@ identifiers (SIDs), and service principal names (SPNs) over LDAP. It doesn't kno
 domain holds a given account, so it queries every domain the monitored domain trusts, until one
 answers.
 
-When one of those trusted domains can't be reached, each query to it has to time out before the
+When the Agent can't reach one of those trusted domains, each query to it has to time out before the
 Agent moves on. A domain isolated in a perimeter network, or a cross-forest trust the domain
 controller has no route to, can hold up a single lookup for a minute or more. Under a steady flow of
 events, the lookups fall behind, the Agent's event queue fills, and the Agent reports that it lost
@@ -44,7 +44,7 @@ The window holds one row per source domain, with the following columns:
 - Excluded Domains (semicolon-separated) – The DNS names of the domains the Agent must never query,
   separated by semicolons, for example `dmz.example.com;partner.example.net`.
 
-**Step 2 –** Click **Add Row** to add an empty row, and then type the source domain and the excluded
+**Step 2 –** Click **Add Row** to add an empty row, and then enter the source domain and the excluded
 domains.
 
 To pick the excluded domains from the trusts an Agent reports rather than typing their names, click
@@ -53,15 +53,15 @@ To pick the excluded domains from the trusts an Agent reports rather than typing
 ![Select Trusted Domains window](/images/threatprevention/8.1/admin/configuration/trusteddomainsblacklist_selecttrusts.webp)
 
 - Select the Agent in the **Agent (DC)** list and click **Connect** to retrieve the domains it
-  trusts. Each one is listed with its NetBIOS name and its DNS name.
+  trusts. The list shows each one with its NetBIOS name and its DNS name.
 - Check the domains to exclude, or use **Select All** and **Unselect All**, and then click **OK**.
-  The domains are added as the excluded domains for that Agent's source domain.
+  Threat Prevention adds those domains as the excluded domains for that Agent's source domain.
 
 **Step 3 –** To remove a row, select it and click **Delete**.
 
 **Step 4 –** Click **OK**.
 
-The Enterprise Manager sends the updated list to the Agents. No Agent restart is needed.
+The Enterprise Manager sends the updated list to the Agents. You don't need to restart the Agents.
 
 :::warning
 The Enterprise Manager delivers the blacklist to the Agents, so both must run

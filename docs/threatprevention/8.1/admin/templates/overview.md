@@ -11,21 +11,21 @@ Prevention. Click **Temaples** in the Navigation pane to launch the Templates in
 
 ![Templates Interface](/images/threatprevention/8.1/admin/templates/templates.webp)
 
-The following is displayed for a template:
+The interface displays the following for a template:
 
 - Name
 - Path – Location within the Navigation pane
 - Description
 
-The list of templates can be sorted alphanumerically ascending or descending by clicking on a column
+You can sort the list of templates alphanumerically ascending or descending by clicking on a column
 header. An arrow appears in the right corner of the column header indicating the type of sorting.
 You can also right-click a template to get a right-click menu.
 
 **Templates Node**
 
-Under the Templates node in the Navigation pane, folders are used to organize the templates. Folders
-can be created at the top level or as sub-folders since Threat Prevention supports unlimited levels
-for organizing templates. The pre-created templates are organized into multiple folders. See the
+Under the Templates node in the Navigation pane, folders organize the templates. You can create
+folders at the top level or as sub-folders since Threat Prevention supports unlimited levels
+for organizing templates. Threat Prevention organizes the pre-created templates into multiple folders. See the
 [Pre-Created Templates](/docs/threatprevention/8.1/admin/templates/folder/overview.md) topic for additional information.
 
 - Click a template to open it and view its configurations. See the

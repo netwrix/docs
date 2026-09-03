@@ -24,9 +24,9 @@ window.
 - Check the box for **Enabled** to allow the policy to send the event data to the file
 - Description – Provide a clear and detailed description for this File action. This is optional but
   recommended.
-- File Name – Provide a name for the file. The file extension is added automatically
+- File Name – Provide a name for the file. Threat Prevention adds the file extension automatically
 
-  - By default, the file is created at the following location:
+  - By default, Threat Prevention creates the file at the following location:
 
 **…\Netwrix\Netwrix Threat Prevention\SIEnterpriseManager\output\file**
 

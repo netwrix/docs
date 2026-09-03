@@ -38,7 +38,7 @@ SIAgentCert.exe utility as an Administrator. The utility checks for the followin
 - agentcsr.pem
 - key.pem
 
-If these files aren't present because no certificates were previously created, the utility
+If these files aren't present because you haven't created certificates before, the utility
 generates an `agent-key.pem` file and an `agent-csr.pem` and places them in the CertsInfo folder.
 
 **Step 2 –** The `SIAgentCert.exe` utility prompts you to sign the certificate using the generated

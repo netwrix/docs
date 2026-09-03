@@ -6,9 +6,9 @@ sidebar_position: 80
 
 # Certificate Management Wizard
 
-The Certificate Management Wizard is a standalone component used to configure Threat Prevention
-Enterprise Manager to use custom managed certificates that are created and signed by an external
-certificate authority. This provides customers with the option to use certificates signed by their
+The Certificate Management Wizard is a standalone component that configures Threat Prevention
+Enterprise Manager to use custom managed certificates that an external certificate authority
+creates and signs. This provides customers with the option to use certificates signed by their
 certificate authority instead of the default certificate authority in Threat Prevention Enterprise
 Manager.
 
@@ -29,7 +29,7 @@ for additional information.
 
 **How to use the Certificate Management Wizard**
 
-The Certificate Management Wizard must be run twice to perform two actions.
+You must run the Certificate Management Wizard twice to perform two actions.
 
 - The first action creates and exports certificate signing requests to a specified folder.
 - The second action installs the signed certificate and configures Threat Prevention Enterprise
@@ -39,7 +39,7 @@ The Certificate Manager Wizard application, `SICertMgr.exe`, is available in the
 
 **...\Netwrix\Netwrix Threat Prevention\SIEnterpriseManager**
 
-The Threat Prevention installer generates default certificates, that are located in the following
+The Threat Prevention installer generates default certificates in the following
 folder:
 
 **...\Netwrix\Netwrix Threat Prevention\SIEnterpriseManager\CertsInfo**
@@ -71,11 +71,11 @@ signing request for the Enterprise Manager.
 **Step 6 –** On the Export Certificate Signing Requests to page, select the folder to place the
 certificate request file. Click **Next** to generate the file.
 
-The following file is created and placed in the specified folder:
+The wizard creates and places the following file in the specified folder:
 
 - em-csr.pem
 
-The following files are placed in the
+The wizard places the following files in the
 `...\Netwrix\Netwrix Threat Prevention\SIEnterpriseManager\CertsInfo` folder:
 
 - Secret.dpapi
@@ -86,14 +86,14 @@ The following files are placed in the
 
 ![Certificate Management Wizard on the Certificate Signing Requests Created page](/images/threatprevention/8.1/install/csrfilescreated.webp)
 
-**Step 7 –** The Certificate Signing Requests Created page is displayed when the certificate signing
-request has been created. Click **Finish**.
+**Step 7 –** The Certificate Signing Requests Created page opens when the wizard has created the
+certificate signing request. Click **Finish**.
 
 **Step 8 –** Copy the signed certificates from the SI-CSR-Files folder to your certificate authority
 and generate the signed certificates.
 
 :::note
-The procedure to sign the certificates will vary based on the certificate authority used.
+The procedure to sign the certificates varies based on the certificate authority you use.
 :::
 
 
@@ -131,10 +131,10 @@ your certificate authority's root and intermediate certificates. Click **Next**.
 **Step 5 –** The Certificates Import page displays the number of files imported. Click **Finish** to
 close the wizard.
 
-The "\*.pem" files are imported to the following folder:
+The wizard imports the "\*.pem" files to the following folder:
 `...\Netwrix\Netwrix Threat Prevention\SIEnterpriseManager\CertsInfo`
 
 **Step 6 –** Restart the Threat Prevention Enterprise Manager service.
 
-Threat Prevention has been successfully configured to use certificates signed by the customer's
+You have now configured Threat Prevention to use certificates signed by the customer's
 certificate authority.

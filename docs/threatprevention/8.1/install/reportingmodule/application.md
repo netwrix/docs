@@ -6,15 +6,15 @@ sidebar_position: 20
 
 # Install the Netwrix Threat Manager Reporting Module
 
-The application can be installed on the same server as the PostgreSQL databases or a different
-server. If installed on a different server, the location of the database server must be provided
-while installing the application.
+You can install the application on the same server as the PostgreSQL databases or a different
+server. If you install it on a different server, you must provide the location of the database
+server while installing the application.
 
 To install the application:
 
 :::warning
-The PostgreSQL database application must be installed before the application is
-installed.
+You must install the PostgreSQL database application before you install the
+application.
 :::
 
 
@@ -41,7 +41,7 @@ checkbox. Click **Next**.
 
 ![Netwrix Threat Mannager Reporting Setup wizard on the Install Folder page](/images/threatprevention/8.1/install/reportingmodule/folder_1.webp)
 
-**Step 4 –** By default, the installation directory is set to:
+**Step 4 –** By default, the wizard sets the installation directory to:
 
 - Install Folder – C:\Program Files\STEALTHbits\StealthDEFEND
 
@@ -49,15 +49,15 @@ Optionally, enter a new path or use the **Browse** button to modify as desired. 
 
 ![Netwrix Threat Mannager Reporting Setup wizard on the Database page](/images/threatprevention/8.1/install/reportingmodule/database.webp)
 
-**Step 5 –** On the Database page, ensure the host and port are set correctly. If installing on the
-same server where the PostgreSQL database application was installed, this information will be
-accurate by default. The default database name is stealthdefend; however, it can be modified as
+**Step 5 –** On the Database page, ensure the host and port are set correctly. If you install on the
+same server where you installed the PostgreSQL database application, this information is
+accurate by default. The default database name is stealthdefend; however, you can modify it as
 desired. Click **Test** to validate the connection information.
 
 ![Warning message that the database doesn't exist, Create?](/images/threatprevention/8.1/install/reportingmodule/databasecreatemessage.webp)
 
-**Step 6 –** If a successful connection is made, a message window displays confirming the database
-doesn't exist and you want to create it. Click **OK** and the window closes.
+**Step 6 –** If the connection succeeds, a message window displays confirming that the database
+doesn't exist and that you want to create it. Click **OK** and the window closes.
 
 ![Netwrix Threat Mannager Reporting Setup wizard on the Database page showing Ready for installation message](/images/threatprevention/8.1/install/reportingmodule/databaseready.webp)
 
@@ -72,16 +72,16 @@ installer to automatically create these rules because you have already created t
 
 ![Netwrix Threat Mannager Reporting Setup wizard on the Completed page](/images/threatprevention/8.1/install/reportingmodule/completed_1.webp)
 
-**Step 9 –** The installation process will begin and the Setup wizard will display the progress.
+**Step 9 –** The installation process begins and the Setup wizard displays the progress.
 Click Exit when the installation completes successfully. The Netwrix Threat Manager Reporting Setup
 wizard closes.
 
 ![Netwrix Setup Launcher showingThreat Manager Reporting Setup completed](/images/threatprevention/8.1/install/reportingmodule/applicationcheck.webp)
 
-**Step 10 –** Now that both components have been installed, close the Netwrix Setup Launcher.
+**Step 10 –** Now that you have installed both components, close the Netwrix Setup Launcher.
 
-The Netwrix Threat Manager Reporting Module application is now installed and the database has been
-created. There are several post-installation tasks that you may need to complete, depending on your
+You have now installed the Netwrix Threat Manager Reporting Module application and created the
+database. There are several post-installation tasks that you may need to complete, depending on your
 environment.
 
 - [Secure the Reporting Module Console](/docs/threatprevention/8.1/install/reportingmodule/secure.md)

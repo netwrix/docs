@@ -13,13 +13,13 @@ App for Splunk, you can understand all Active Directory changes as a whole, patt
 activity indicative of account compromise, and attempts to compromise security, along with the
 ability to block undesired changes and access.
 
-Threat Prevention can be configured to monitor Active Directory events and send the monitored events
+You can configure Threat Prevention to monitor Active Directory events and send the monitored events
 to Splunk.
 
 You can integrate Netwrix’ products with the Netwrix Active Directory App for Splunk.
 
 - Install the Active Directory App for Splunk.
-- Ensure that Threat Prevention has been configured to send events to Splunk. See the
+- Ensure that you have configured Threat Prevention to send events to Splunk. See the
   [SIEM Tab](/docs/threatprevention/8.1/admin/configuration/systemalerting/siem.md)topic for additional information.
 
 ## App Installation in Splunk
@@ -37,7 +37,7 @@ Splunk (version 2.0.0+).
 :::
 
 
-The Netwrix Active Directory tab will appear in the Splunk web interface.
+The Netwrix Active Directory tab appears in the Splunk web interface.
 
 After installing the Netwrix Active Directory App for Splunk, configure it to receive data from
 Threat Prevention.
@@ -62,8 +62,8 @@ Threat Prevention to send data to Splunk.
 **Step 3 –** Select UDP.
 
 **Step 4 –** Click New and add a new data input with port 514. If another Splunk UDP input is
-already using 514, you should be able to safely use another value (515 or higher), as long as it is
-not blocked by the network.
+already using 514, you should be able to safely use another value (515 or higher), as long as the
+network doesn't block it.
 
 **Step 5 –** Click Next.
 
@@ -79,7 +79,7 @@ not blocked by the network.
 **Step 8 –** To test that the configuration is working correctly, check the Search and Reporting app
 inside of the web console for Splunk (search for Threat Prevention). There should be sample logs
 with KEY=%VALUE% pairs in the Event column. If there are no events, use a packet sniffer to ensure
-that packets are being sent correctly between the two hosts, and diagnose any possible network
+that packets travel correctly between the two hosts, and diagnose any possible network
 issues.
 
 The Netwrix Active Directory App will now display activity from the Threat Prevention data.

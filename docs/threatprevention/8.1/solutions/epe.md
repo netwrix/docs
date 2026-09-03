@@ -9,7 +9,7 @@ sidebar_position: 20
 Attackers often use dictionaries of previously breached passwords or knowledge of well-known
 passwords to compromise accounts. To mitigate this risk and the likelihood of generic or known
 passwords used in organizations, Threat Prevention Enterprise Password Enforcer (EPE) proactively
-prevents their usage when passwords are set (even when they meet complexity requirements).
+prevents their usage when users set passwords (even when they meet complexity requirements).
 
 The zip file for Threat Prevention installation includes an optional module, EPE User Feedback. It
 provides feedback to end users on the Windows login screen for why Threat Prevention rejected their
@@ -19,8 +19,8 @@ Rules policy (see the
 the Password Enforcement event type). The user can use this information to create a new password
 that passes the complexity requirements of the organization.
 
-You can choose a method to deploy the EPE User Feedback module; however, logon scripts are a
-suggested way to deploy this zero configuration msi. Before deploying the EPE User Feedback
+You can choose a method to deploy the EPE User Feedback module; however, Netwrix suggests logon
+scripts for deploying this zero configuration msi. Before deploying the EPE User Feedback
 module, you must select the Enable EPE User Feedback Module checkbox in the
 [EPE Settings Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md). See the
 [EPE User Feedback Module](/docs/threatprevention/8.1/install/epeuserfeedback.md) topic for additional information.

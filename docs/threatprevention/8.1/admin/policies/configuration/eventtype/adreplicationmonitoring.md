@@ -24,9 +24,9 @@ Each filter tab acts like an "AND" statement for the filter. Threat Prevention t
 like an "ALL" for that filter set.
 
 Since Windows can't detect if a sync request is coming from a legitimate domain controller, this
-event type is designed to monitor requests from computers that aren't ‘excluded’ by the policy.
-Therefore, legitimate domain controllers should be identified in the event filters. This can be done
-through one of the following methods:
+event type monitors requests from computers that the policy doesn't ‘exclude’.
+Therefore, you should identify legitimate domain controllers in the event filters. Use one of the
+following methods:
 
 - AD Perpetrator filter
 
@@ -35,20 +35,20 @@ through one of the following methods:
   - Add the Users OU > Domain Controllers group
   - Add any other groups containing domain controllers. It triggers an error message reminding the
     user that only domain controllers should be excluded
-  - Any domain controller not included in the groups are monitored for syncing/replication
+  - The policy monitors any domain controller not included in the groups for syncing/replication
     requests
 
 - Domains/Servers filter
 
   - Use this filter for a static list of domain controllers
   - Add domain controllers to the Exclude list
-  - Any domain controller not excluded are monitored for syncing/replication requests
+  - The policy monitors any domain controller you don't exclude for syncing/replication requests
 
 The Threat Manager DC Sync threat is sourced by a Threat Prevention AD Replication Monitoring
-policy. It is necessary for the policy to be configured to exclude domain controllers on the Host
+policy. You must configure the policy to exclude domain controllers on the Host
 (From) filter.
 
-If no filters are applied, saving the policy configuration displays a warning message.
+If you apply no filters, saving the policy configuration displays a warning message.
 
 :::note
 The AD Replication Monitoring event type internally looks for use of the GetNCChanges()

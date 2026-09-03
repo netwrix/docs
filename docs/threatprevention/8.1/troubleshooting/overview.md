@@ -39,15 +39,15 @@ Whether choosing to archive or delete data, this is always a good feature to ena
 Analytics let organizations capture and analyze authentication or file
 system traffic. The best way to employ analytics is to turn on one at a time and then ‘tune’ it to
 the targeted environment before turning on another. Each environment generates unique authentication
-or file system ‘noise’ that can be filtered out by adjusting triggers and filters. After the analytic
+or file system ‘noise’ that you can filter out by adjusting triggers and filters. After the analytic
 is in tune with the environment, move to the next one you want.
 
 **Best Practice #4 – Monitor before Blocking**
 
-The lockdown event types are used to block events. When configuring a blocking policy, it is always
+Use the lockdown event types to block events. When you configure a blocking policy, it is always
 a best practice to configure and enable a monitoring policy with the filters you want first as a
-trial run. This confirms the filters set will block events the way they were
-intended. After the filters are confirmed, then the blocking policy is good-to-go.
+trial run. This confirms that the filters you set block events the way you
+intended. After you confirm the filters, the blocking policy is good-to-go.
 
 **Best Practice #5 – File System ‘Read’ Monitoring, in Moderation**
 
@@ -62,9 +62,9 @@ The following information provides basic troubleshooting techniques and frequent
 
 **FAQ: Microsoft just released a security bulletin that impacts LSASS. How do you know if the Microsoft KB will affect the Agent instrumentation?**
 
-The Agent has been configured to monitor LSASS after a reboot (triggered by the Microsoft KB). If
-LSASS stops shortly after a reboot (default within five minutes), then the Agent will be stopped and
-the Agent service will be changed to manual start.
+The Agent monitors LSASS after a reboot (triggered by the Microsoft KB). If
+LSASS stops shortly after a reboot (default within five minutes), the Agent stops and its service
+changes to manual start.
 
 :::info
 Reach out to [Netwrix Support](https://www.netwrix.com/support.html) before
@@ -89,31 +89,31 @@ topic for additional information.
 **FAQ: The user interface isn't displaying correctly and windows are cut off. What should you do?**
 
 If any of the dialogs in the Administration Console have buttons or other user interface (UI)
-elements hidden or partially hidden, then you are advised to reduce their Windows font size. For
+elements hidden or partially hidden, reduce their Windows font size. For
 example, some high resolution laptops may have their system font size set to a default of “Medium”.
-In such cases it may be necessary to change this to “Small” for all dialogs in theconsole to be
-displayed fully.
+In such cases you may need to change this to “Small” for all dialogs in the console to
+display fully.
 
-**FAQ: How are Active Directory and Authentication raw events handled by Threat Prevention?**
+**FAQ: How does Threat Prevention handle Active Directory and Authentication raw events?**
 
 There are two streams of data with their own memory buffers: one for Active Directory and another
 for Authentication traffic. This allows the Active Directory event data to flow without interruption
 even if there is a flood of Authentication traffic. A flood in Authentication traffic could result
-in a loss of Authentication event data. However, this will not impact Active Directory event data.
+in a loss of Authentication event data. However, this doesn't impact Active Directory event data.
 
 **FAQ: How can you prevent flooding the memory with authentication traffic?**
 
 The options in the
 [Event Filtering Configuration Window](/docs/threatprevention/8.1/admin/configuration/eventfilteringconfiguration.md)
 provide administrators with a method of filtering out authentication event data from selected hosts
-and/or accounts. These options can be configured to ignore authentication traffic from sources known
-to be safe. This affects what gets sent to the Agent. It will have a direct impact on scalability
-for the organization’s environment.
+and/or accounts. You can configure these options to ignore authentication traffic from sources known
+to be safe. This affects what Threat Prevention sends to the Agent, and it has a direct impact on
+scalability for the organization’s environment.
 
 **FAQ: The Agent reports that its queue overflowed and that events were lost. What causes this?**
 
 The Agent resolves the account details on an event by querying every trusted domain over LDAP until
-one answers. When a trusted domain can't be reached — a domain isolated in a perimeter network, or a
+one answers. When the Agent can't reach a trusted domain — a domain isolated in a perimeter network, or a
 cross-forest trust the domain controller has no route to — each query to it has to time out first. A
 single lookup can take a minute or more, and under a steady flow of events the queue fills faster
 than the Agent drains it.

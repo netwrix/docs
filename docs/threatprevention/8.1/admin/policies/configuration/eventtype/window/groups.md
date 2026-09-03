@@ -7,7 +7,7 @@ sidebar_position: 90
 # Select AD Groups Window
 
 The Select AD Groups window provides a list of available Active Directory groups. Selected objects
-are added to the filter from where you clicked the **Add** (+) button to open this window.
+Threat Prevention adds them to the filter from where you clicked the **Add** (+) button to open this window.
 
 ![Select AD Groups Window](/images/threatprevention/8.1/admin/policies/eventtype/window/selectactivedirectory/adgroups.webp)
 
@@ -20,4 +20,4 @@ are added to the filter from where you clicked the **Add** (+) button to open th
 
 See the [Selection Windows](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/overview.md) topic for additional information.
 
-The selection is displayed in the appropriate box of the AD Account filter or the AD Groups filter.
+The selection appears in the appropriate box of the AD Account filter or the AD Groups filter.

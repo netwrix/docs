@@ -6,10 +6,10 @@ sidebar_position: 40
 
 # Administrator Auditing Dashboard
 
-The Administrator Auditing dashboard is specifically fed by a Threat Prevention policy named Domain
-Admin Activity. See the [SIEM Folder Templates](/docs/threatprevention/8.1/admin/templates/folder/siem.md) topic
+A Threat Prevention policy named Domain Admin Activity specifically feeds the Administrator Auditing
+dashboard. See the [SIEM Folder Templates](/docs/threatprevention/8.1/admin/templates/folder/siem.md) topic
 for information on this policy template. If this policy template isn't enabled and actively
-monitoring, then this dashboard will be blank.
+monitoring, this dashboard is blank.
 
 ![Administrator Auditing Dashboard](/images/threatprevention/8.1/siemdashboard/splunk/activedirectory/dashboard/administratorauditing.webp)
 
@@ -24,4 +24,4 @@ monitoring, then this dashboard will be blank.
 - Administrator Group Changes – Tabular format of all group changes to the Domain, Schema, and
   Enterprise Admin groups that have been recorded in the specified timeframe
 
-The specified timeframe is set by default to the last 24 hours, or past day.
+The specified timeframe defaults to the last 24 hours, or past day.

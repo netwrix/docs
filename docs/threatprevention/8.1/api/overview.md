@@ -8,8 +8,8 @@ sidebar_position: 50
 
 Using PowerShell, you can obtain information on or manipulate specific policy, collection, and
 Netwrix Threat Manager integration configurations in the Threat Prevention Administration Console
-without having it open. This can be done on the same machine or from a remote server where the
-Enterprise Manager isn't located. The following PowerShell APIs can be used:
+without having it open. You can do this on the same machine or from a remote server where the
+Enterprise Manager isn't located. You can use the following PowerShell APIs:
 
 - Initial Configuration:
   - Connect-SIEnterpriseManager
@@ -55,22 +55,22 @@ Enterprise Manager isn't located. The following PowerShell APIs can be used:
 
 ## Prerequisites
 
-The following prerequisites must be met before using the APIs:
+You must meet the following prerequisites before using the APIs:
 
 - The PowerShell service account must be an Active Directory account with the Threat Prevention
-  administrator role assigned to it. The role is assigned through the
+  administrator role assigned to it. You assign the role through the
   [Users and Roles Window](/docs/threatprevention/8.1/admin/configuration/userroles/overview.md).
-- The Threat Prevention PowerShell module (SI.SIMonitor.PowerShell.dll) must be loaded into
-  PowerShell. This module is stored in the installation directory within the Enterprise Manager
-  folder:
+- You must load the Threat Prevention PowerShell module (SI.SIMonitor.PowerShell.dll) into
+  PowerShell. Threat Prevention stores this module in the installation directory within the
+  Enterprise Manager folder:
 
 **…\Netwrix\Netwrix Threat Prevention\SIEnterpriseManager\**
 
   To disallow the use of the PowerShell module, remove the module from the Enterprise Manager
   folder.
 
-- PowerShell commands are executed through a PowerShell console on either the Enterprise Manager
-  server or on a remote server. When PowerShell is used on a remote server without the Enterprise
+- You execute PowerShell commands through a PowerShell console on either the Enterprise Manager
+  server or on a remote server. When you use PowerShell on a remote server without the Enterprise
   Manager installed, see the Remote PowerShell Connection section for requirements.
 
 ## Not a Policy XML Expert
@@ -82,7 +82,7 @@ To compare two XML files as exported from Threat Prevention:
 **Step 2 –** In the Administration Console, edit the same policy settings and filters through the
 Event Type tab. Export as a second XML file with a different name.
 
-**Step 3 –** Open both XML files and compare the XML to see how policies are altered.
+**Step 3 –** Open both XML files and compare the XML to see how Threat Prevention alters policies.
 
 After you identify how Threat Prevention modifies XML files, you can apply that to the
 [Add or Modify Policies](/docs/threatprevention/8.1/api/policy.md#add-or-modify-policies) instructions.

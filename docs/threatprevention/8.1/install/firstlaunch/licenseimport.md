@@ -26,8 +26,8 @@ to recognize it and convert it to a .lic file.
 
 **Step 3 –** The SIEnterpriseManager service automatically recognizes and imports the file.
 
-**Step 4 –** (Optional) Restarting Enterprise Manager is often required after importing a new
-license key as that would stop the application from alerting about the expired license.
+**Step 4 –** (Optional) You often need to restart Enterprise Manager after importing a new
+license key, which stops the application from alerting about the expired license.
 
-The license key has been successfully imported. The organization’s license information is available
+You have now imported the license key. The organization’s license information is available
 on the [License Manager Window](/docs/threatprevention/8.1/admin/navigation/licensemanager.md).

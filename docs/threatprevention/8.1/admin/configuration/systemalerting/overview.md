@@ -16,14 +16,14 @@ products. Alerts are grouped into five types:
 
 - Security – Provides alerts on things that impact:
 
-  - What data is collected
+  - What data Threat Prevention collects
   - The ability to collect the data
   - Changes to who can access it
 
-- Operations – Provides alerts on internal operations of the product that aren't directly
-  influenced by a user
+- Operations – Provides alerts on internal operations of the product that a user doesn't directly
+  influence
 - Configuration – Provides alerts on changes to general configuration settings
-- Analytics – Provides alerts when an analytic incident is triggered. These alerts aren't available
+- Analytics – Provides alerts when an analytic incident triggers. These alerts aren't available
   for Event Log alerts.
 - Policies – Provides alerts when a policy monitors or blocks an event. These alerts aren't
   available for Event Log alerts.

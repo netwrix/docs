@@ -20,8 +20,8 @@ This window is only available to Threat Prevention administrators.
 :::
 
 
-The user account that ran the installation is automatically set with the administrator role. This is
-the only active user until you add more. This ensures that no unauthorized accounts can open the
+Threat Prevention automatically assigns the administrator role to the user account that ran the
+installation. This is the only active user until you add more. This ensures that no unauthorized accounts can open the
 Administration Console.
 
 ## Roles

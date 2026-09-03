@@ -7,8 +7,8 @@ sidebar_position: 170
 # LDAP Lockdown Event Type
 
 The LDAP Lockdown event type can prevent execution of LDAP queries that meet policy filters/rules.
-Be careful as overly broad rules can ‘break’ the environment. An event is generated with details for
-each blocked LDAP query.
+Be careful as overly broad rules can ‘break’ the environment. Threat Prevention generates an event
+with details for each blocked LDAP query.
 
 The event filters for the LDAP Monitoring event type are:
 
@@ -29,7 +29,7 @@ Lockdown/blocking policies with blank filters lock down or block everything.
 :::
 
 
-This event type can only be used in a policy by itself or with another LDAP event type. This means
+You can use this event type in a policy only by itself or with another LDAP event type. This means
 that:
 
 - If you select this event type, all other event types will be grayed out except the LDAP event
@@ -58,8 +58,8 @@ available for the event type:
 
   - See the [LDAP Ping Operations Use Case](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/ldapmonitoring/ldapping.md) topic for additional information.
 
-  When LDAP Ping is selected, the Secure Configurations and Search scopes sections aren't
-  displayed.
+  When you select LDAP Ping, the Secure Configurations and Search scopes sections don't
+  display.
 
 ## Domains/Servers Filter
 
@@ -125,15 +125,15 @@ queries or to exclude specific queries from lockdown.
 
 Select the **Block** or **Allow** option button and then edit the list.
 
-- Allow – From the list of strings you specify in the LDAP Queries area, if at least one is found as
-  substring in a candidate LDAP query, then the query will be executed
-- Block – From the list of strings you specify in the LDAP Queries area, if at least one is found as
-  substring in a candidate LDAP query, then thequery will be blocked
+- Allow – From the list of strings you specify in the LDAP Queries area, if a candidate LDAP query
+  contains at least one as a substring, the query runs
+- Block – From the list of strings you specify in the LDAP Queries area, if a candidate LDAP query
+  contains at least one as a substring, the policy blocks the query
 
 :::warning
-Users should fully understand the blocking rule summary displayed in the Rule Preview
-filter to understand the scope of what will be blocked. Blocking more than the intended
-queries will adversely impact the LDAP environment.
+Fully understand the blocking rule summary in the Rule Preview
+filter so you know the scope of what the policy blocks. Blocking more than the intended
+queries adversely impacts the LDAP environment.
 :::
 
 

@@ -18,8 +18,8 @@ it:
     [Recent Events Tab](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/overview.md) and the
     [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md).
 
-    Only users granted the View Data permission on the folder where the object has been
-    identified for protection can view any results of events that include the object.
+    Only users granted the View Data permission on the folder where you identified the object
+    for protection can view any results of events that include the object.
     See the Protect Objects section for instructions on protecting policies or objects.
 
   - Manage Policies checkbox – Affects the ability to change policy configuration settings. See
@@ -29,8 +29,8 @@ it:
   [Select Active Directory Contexts Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/context.md)
   within the policy folder
 
-  Protected objects are hidden from the following types of data no matter what policy
-  monitored/blocked it:
+  Threat Prevention hides protected objects from the following types of data, no matter which
+  policy monitored or blocked them:
 
   - [Recent Events Tab](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/overview.md) data
   - [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) data
@@ -43,23 +43,23 @@ don't carry-over to the Netwrix Threat Manager Reporting Module application.
 
 ## Protect Policies
 
-Policies can be protected at the folder level under the Policies node. When a user is assigned
-permission on a folder, all policies and subfolders within that folder are protected from any user
-not included in the Permissions list.
+You can protect policies at the folder level under the Policies node. When you assign a user
+permission on a folder, Threat Prevention protects all policies and subfolders within that folder
+from any user not included in the Permissions list.
 
 To protect policies:
 
 ![Policy folder - Permissions page](/images/threatprevention/8.1/admin/policies/permissions.webp)
 
 **Step 1 –** Select a folder under the Policies node in the Navigation pane. The Policies interface
-is displayed.
+opens.
 
 **Step 2 –** In the Permissions ribbon, click the **Add** (+) button.
 
 ![Select User window](/images/threatprevention/8.1/admin/policies/selectuser.webp)
 
-**Step 3 –** On the Select User window, select the user to be granted permission on this folder and
-the policies within it.
+**Step 3 –** On the Select User window, select the user you want to grant permission on this folder
+and the policies within it.
 
 :::note
 Only users with rights assigned in the
@@ -67,7 +67,7 @@ Only users with rights assigned in the
 :::
 
 
-**Step 4 –** The window closes and the user is displayed in the Permissions list with the View Data
+**Step 4 –** The window closes and the user appears in the Permissions list with the View Data
 permission granted by default. To add the Manage Policies permission, check the box for that user.
 Only those users specifically granted permission to this folder can view event data or configure the
 policies within this folder or its subfolders.
@@ -79,12 +79,12 @@ policies within this folder or its subfolders.
 
 ## Protect Objects
 
-In addition to protecting policies, objects being monitored or blocked by policies can also be
-protected. This feature ensures regulatory compliance. Any object granted protection is protected
+In addition to protecting policies, you can protect the objects that policies monitor or block.
+This feature ensures regulatory compliance. Any object granted protection is protected
 across all policies and reports, including its child objects. That means if a policy from another
-folder monitors or blocks a change affecting the protected object, the resulting event isn't
-included in any result data. Only users granted permissions on the folder where the object is
-protected can view event data for that object. This protection applies to a policy’s Recent
+folder monitors or blocks a change affecting the protected object, Threat Prevention excludes the
+resulting event from all result data. Only users granted permissions on the folder where the object
+is protected can view event data for that object. This protection applies to a policy’s Recent
 Events tab and the Investigate interface.
 
 To protect objects:
@@ -92,7 +92,7 @@ To protect objects:
 ![Policy folder - Permissions page](/images/threatprevention/8.1/admin/policies/permissions.webp)
 
 **Step 6 –** Select a folder under the Policies node in the Navigation pane. The Policies interface
-is displayed.
+opens.
 
 **Step 7 –** In the Protected Objects ribbon, click the **Add** (+) button.
 
@@ -103,7 +103,7 @@ and click **Connect**. Expand the domain tree in the Navigation pane. Select an 
 pane on the right and click **OK**. See the [Selection Windows](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/overview.md) topic
 for additional information.
 
-**Step 9 –** The window closes and the object is displayed in the Protected Objects list. Only those
+**Step 9 –** The window closes and the object appears in the Protected Objects list. Only those
 users specifically granted permission to this folder can view event data for the protected object or
 its children.
 
@@ -112,4 +112,4 @@ its children.
 
 **Step 10 –** Click **Save** when the permissions are set as desired.
 
-Protected objects have now been added to the Policies interface.
+You have now added protected objects to the Policies interface.

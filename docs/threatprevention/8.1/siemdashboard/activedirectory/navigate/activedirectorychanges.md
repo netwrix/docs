@@ -23,4 +23,4 @@ The Active Directory Changes dashboard contains the following cards:
 - Change Events – Tabular format of all Active Directory change events that have been recorded in
   the specified timeframe
 
-The specified timeframe is set by default to the last 24 hours, or past day.
+The specified timeframe defaults to the last 24 hours, or past day.

@@ -13,11 +13,11 @@ categorize them.
 
 The built-in low-level categories have two levels:
 
-- IBM will look to see if it can match the EventID field AND the Event Category field. If a match is
-  found, the data will be displayed using the Event Name Threat Prevention supplied in the QIDmap.
-  The data will be linked to the defined Low Level Category.
+- IBM looks to see if it can match the EventID field AND the Event Category field. If it finds a
+  match, it displays the data using the Event Name Threat Prevention supplied in the QIDmap, and
+  links the data to the defined Low Level Category.
 
-- If no EventID field match is found, IBM will default back to just the Event Category field. The
+- If IBM finds no EventID field match, it defaults back to the Event Category field alone. The
   fallback ID of 19001 is IBM’s collection of general auditing information.
 
 | EventID                                               | Event Category       | Low Level Category | Event Name                                                            |

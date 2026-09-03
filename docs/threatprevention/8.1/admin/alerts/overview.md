@@ -81,7 +81,8 @@ This data grid employs features for sorting, filtering, searching, and more. See
 
 Select an event in the data grid to view its details.
 
-In addition to this information, several notifications have been sent for the event.
+In addition to this information, the details list the notifications Threat Prevention sent for the
+event.
 
 ## Additional Considerations
 

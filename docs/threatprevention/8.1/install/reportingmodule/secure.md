@@ -83,7 +83,7 @@ https://ThreatManagerReportingModuleServer.Domain.com:8080).
 
 **Step 7 –**   Restart the Web Service.
 
-**Step 8 –**   Check the Web Service Log File to ensure the Cert was found and loaded properly. You
+**Step 8 –**   Check the Web Service Log File to ensure the service found and loaded the certificate properly. You
 should see a log file with the output:
 
 ```
@@ -134,7 +134,7 @@ previously.
 
 **Step 6 –**   Restart the Active Directory Service.
 
-**Step 7 –**   Check the Active Directory Service Log File to ensure the Cert was found and loaded
+**Step 7 –**   Check the Active Directory Service Log File to ensure the service found and loaded the certificate
 properly. You should see a log file with the output:
 
 ```

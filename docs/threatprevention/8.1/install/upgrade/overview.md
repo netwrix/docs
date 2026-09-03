@@ -37,8 +37,8 @@ if you selected **No** during the upgrade process.
 
 ## Considerations
 
-The upgrade process must be done on all servers where the Threat Prevention Infrastructure is
-installed and all systems where the Agent is deployed. For deploying Agent, see the
+You must perform the upgrade process on all servers where you installed the Threat Prevention
+Infrastructure and all systems where you deployed the Agent. For deploying Agent, see the
 [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) topic.
 
 :::info
@@ -58,7 +58,7 @@ files don't change, so an existing procedure for collecting logs still works. Co
 archived file names, and one integration do change. Review the following before you upgrade, and
 plan the changes to any customized configuration.
 
-**Archived log file names** – Archived logs are named with a timestamp, such as
+**Archived log file names** – Archived logs carry a timestamp, such as
 `SIEnterpriseManager_20260804-153000.log`, instead of a sequence number, such as
 `SIEnterpriseManager.log.1`. Update any script or monitoring tool that collects archived logs by
 matching the `.log.<number>` pattern.
@@ -77,8 +77,8 @@ topic for additional information.
 also records Kerberos, DCSync, NTLM, password change, AD CS, AD FS, and FSMO events.
 
 **AD Monitor settings** – You must change three settings in a customized `Logging.ini`. An
-obsolete setting is ignored without an error, so the logging you expect stops appearing with no
-other symptom.
+AD Monitor ignores an obsolete setting without an error, so the logging you expect stops appearing
+with no other symptom.
 
 | Setting in a customized Logging.ini | Change to make |
 | --- | --- |
@@ -99,8 +99,8 @@ To install a later build of the same version:
 
 **Step 1 –** Uninstall the existing Threat Prevention server from Control Panel > Programs.
 
-- Don't make any changes to the existing Threat Prevention database. The database schema is
-  automatically upgraded.
+- Don't make any changes to the existing Threat Prevention database. Threat Prevention upgrades the
+  database schema automatically.
 - Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install the newer build to the same location as the previous build. See the
@@ -116,8 +116,8 @@ To upgrade from Threat Prevention 8.0 to 8.1:
 
 **Step 1 –** Uninstall the existing Threat Prevention server from Control Panel > Programs.
 
-- Don't make any changes to the existing Threat Prevention database. The database schema is
-  automatically upgraded.
+- Don't make any changes to the existing Threat Prevention database. Threat Prevention upgrades the
+  database schema automatically.
 - Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install Threat Prevention 8.1 to the same location as the previous version. See the
@@ -137,8 +137,8 @@ To upgrade from Threat Prevention 7.5 to 8.1:
 
 **Step 1 –** Uninstall the existing Threat Prevention server from Control Panel > Programs.
 
-- Don't make any changes to the existing Threat Prevention database. The database schema is
-  automatically upgraded.
+- Don't make any changes to the existing Threat Prevention database. Threat Prevention upgrades the
+  database schema automatically.
 - Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install the Threat Prevention 8.1 infrastructure using the "Database Login Information"
@@ -183,8 +183,8 @@ To install a later build of the same version:
 
 **Step 1 –** Uninstall the existing Threat Prevention server from Control Panel > Programs.
 
-- Don't make any changes to the existing Threat Prevention database. The database schema is
-  automatically upgraded.
+- Don't make any changes to the existing Threat Prevention database. Threat Prevention upgrades the
+  database schema automatically.
 - Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install the newer build to the same location as the previous build. See the
@@ -196,8 +196,8 @@ To upgrade from Threat Prevention 7.4 to 7.5:
 
 **Step 1 –** Uninstall the existing Threat Prevention server from Control Panel > Programs.
 
-- Don't make any changes to the existing Threat Prevention database. The database schema is
-  automatically upgraded.
+- Don't make any changes to the existing Threat Prevention database. Threat Prevention upgrades the
+  database schema automatically.
 - Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install the Threat Prevention 7.5 infrastructure using the "Database Login Information"
@@ -232,8 +232,8 @@ To upgrade from StealthINTERCEPT 7.3.9 to Threat Prevention 7.5:
 
 **Step 1 –** Uninstall the existing StealthINTERCEPT server from Control Panel > Programs.
 
-- Don't make any changes to the existing Threat Prevention database. The database schema is
-  automatically upgraded.
+- Don't make any changes to the existing Threat Prevention database. Threat Prevention upgrades the
+  database schema automatically.
 - Don't manually delete any other files post uninstall.
 
 **Step 2 –** Install the Threat Prevention 7.5 infrastructure using the "Database Login Information"
@@ -268,8 +268,8 @@ To upgrade from StealthINTERCEPT 7.3.7+ to 7.3.9:
 
 **Step 1 –** Uninstall the existing StealthINTERCEPT server.
 
-- Don't make any changes to the existing StealthINTERCEPT database. The database schema is
-  automatically upgraded.
+- Don't make any changes to the existing StealthINTERCEPT database. Threat Prevention upgrades the
+  database schema automatically.
 
 **Step 2 –** Install the StealthINTERCEPT infrastructure for the newer version, using the "Database
 Login Information" for the existing StealthINTERCEPT database. See the

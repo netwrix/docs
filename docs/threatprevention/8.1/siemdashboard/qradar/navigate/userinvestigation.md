@@ -6,7 +6,7 @@ sidebar_position: 80
 
 # User Investigation Dashboard
 
-The User Investigation dashboard only appears when a search is conducted. This can be done by
+The User Investigation dashboard only appears when you conduct a search. You can do this by
 clicking a user-account hyperlink in the Perpetrator or Affected Object columns of a table card.
 Alternatively, enter the complete user name in the Search box on the right side of the navigation
 bar.
@@ -29,14 +29,14 @@ The User Investigation dashboard contains the following cards:
   interval. See the [Table Card Features](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/navigate.md#table-card-features) topic for additional
   information.
 
-The time interval is identified in the upper-right corner with the _Start_ and _End_ boxes. This is
-set by default to the past three (3) hours. To search within a different interval, either manually
+The time interval is identified in the upper-right corner with the _Start_ and _End_ boxes. This
+defaults to the past three (3) hours. To search within a different interval, either manually
 enter the date and time you want or use the calendar buttons to set them
 interval. Then click **Search** to refresh the card data.
 
-When a search using a time interval longer than twelve (12) hours is instigated, the database query
-is broken into multiple mini-queries. This will result in a visible reset of the dashboard display
-at the end of each mini-query until all data for the selected time interval has been retrieved.
+When you instigate a search using a time interval longer than twelve (12) hours, the app breaks the
+database query into multiple mini-queries. This visibly resets the dashboard display at the end of
+each mini-query until the app has retrieved all data for the selected time interval.
 
 Additionally, use this feature to scope the report data to just Threat Prevention collected
 events or to all information in QRadar for the selected user, which opens in another tab. Click

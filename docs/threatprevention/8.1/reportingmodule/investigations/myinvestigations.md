@@ -13,15 +13,15 @@ investigation.
 Click **Investigate** in the application header bar to open the Investigations interface. Then click
 **My Investigations** in the navigation pane. This expands the menu to display a list of saved
 investigations created by the application users. To get this list in the adjacent pane, hover your
-mouse over the My Investigations option and click the icon that is displayed.
+mouse over the My Investigations option and click the icon that appears.
 
 ![Investigations interface on the My Investigations page](/images/threatprevention/8.1/reportingmodule/investigations/myinvestigations.webp)
 
 The table displays the list of investigations with the following columns:
 
 - Name – The name of the investigation
-- Favorite – The check mark indicates that the investigation has been tagged as a favorite for the
-  logged in user
+- Favorite – The check mark indicates that the logged in user tagged the investigation as a
+  favorite
 
 Click an investigation to view it. You can run the query, modify the configuration, add a
 subscription, or export the report. See the [Investigation Options](/docs/threatprevention/8.1/reportingmodule/investigations/options/overview.md) topic for

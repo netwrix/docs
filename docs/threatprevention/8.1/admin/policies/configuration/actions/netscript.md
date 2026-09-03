@@ -82,14 +82,14 @@ Manager. If the script depends on specific user/account rights, consider that wh
 
 :::warning
 The Tools > Encrypt option obfuscates plain text strings, e.g. credentials, within the script.
-Encrypting functions or other commands results in the script not working. Encrypt only a literal
+Encrypting functions or other commands breaks the script. Encrypt only a literal
 string, between the quote marks (“). Don't include the quote marks in the encryption.
 :::
 
 
 ## Default Visual Basic Script
 
-The following Visual Basic script is configured as a default action. It either creates the
+Threat Prevention configures the following Visual Basic script as a default action. It either creates the
 c:\nveventdata.txt file or appends the event data to it.
 
 ```
@@ -239,7 +239,7 @@ End Namespace
 
 ## Default C# Script
 
-The following C# script is configured as a default action. It either creates the
+Threat Prevention configures the following C# script as a default action. It either creates the
 c:\nveventdata.txt file or appends the event data to it.
 
 ```

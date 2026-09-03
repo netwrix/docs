@@ -19,4 +19,4 @@ The GPO Monitoring dashboard contains the following cards:
 - Change Details – Tabular format of all Group Policy Object change events that have been recorded
   in the specified timeframe
 
-The specified timeframe is set by default to the last 24 hours, or past day.
+The specified timeframe defaults to the last 24 hours, or past day.

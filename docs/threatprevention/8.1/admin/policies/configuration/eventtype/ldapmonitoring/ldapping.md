@@ -12,7 +12,7 @@ whether services are live on a domain controller. It also returns information ab
 queried Active Directory accounts. The LDAP Ping operation enables Threat Prevention to monitor and
 block unwanted LDAP Ping activity, which is anonymous.
 
-Threat Prevention can be configured to monitor and block LDAP Nom Nom, which is a tool that performs
+You can configure Threat Prevention to monitor and block LDAP Nom Nom, a tool that performs
 an anonymous bruteforce attack to find user names in Active Directory from domain controllers by
 using LDAP Ping requests.
 

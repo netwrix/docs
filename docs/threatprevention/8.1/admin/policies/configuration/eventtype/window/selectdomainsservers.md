@@ -7,8 +7,8 @@ sidebar_position: 110
 # Select Domains and Servers Window
 
 The Select Domains And Servers window provides a list of available domains and servers to either
-include or exclude. Objects in the Included Domains And Servers list are added to the appropriate
-filter from where you clicked the **Add** (+) button to open this window.
+include or exclude. Threat Prevention adds the objects in the Included Domains And Servers list to
+the appropriate filter from where you clicked the **Add** (+) button to open this window.
 
 ![Select Domains and Servers Window](/images/threatprevention/8.1/admin/policies/eventtype/window/selectdomainsservers.webp)
 
@@ -18,4 +18,4 @@ filter from where you clicked the **Add** (+) button to open this window.
 - Use the **Remove** (`<<`) button to return the selected item to the list on the left.
 - When the Included Domains And Servers list is complete, click **OK**.
 
-The selection is displayed in the appropriate box of the Domains/Servers filter.
+The selection appears in the appropriate box of the Domains/Servers filter.

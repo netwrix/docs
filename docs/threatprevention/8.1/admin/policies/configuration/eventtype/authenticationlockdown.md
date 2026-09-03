@@ -7,7 +7,8 @@ sidebar_position: 70
 # Authentication Lockdown Event Type
 
 Based on policy rules, the Authentication Lockdown event type can block specific Kerberos, TGT, TGS,
-and/or NTLM authentication requests. An event is generated for each blocked authentication attempt.
+and/or NTLM authentication requests. Threat Prevention generates an event for each blocked
+authentication attempt.
 
 The event filters for the Authentication Lockdown event type are:
 
@@ -40,11 +41,11 @@ host to information is available to Threat Prevention with this mode of RDP sess
 Perpetrator for lockdown filter and the Hosts (to) filter to block authentications.
 
 :::note
-When the Authentication Monitoring or Lockdown event type is assigned to a policy outside
-of the Analytic policies, then all collected authentication event data is stored in the database,
-not in memory as it is for the Analytic policies. However, it does consolidate the authentication
-events which occur every minute, resulting in up to a one minute delay between the event and the
-reporting of the event.
+When you assign the Authentication Monitoring or Lockdown event type to a policy outside
+of the Analytic policies, Threat Prevention stores all collected authentication event data in the
+database rather than in memory as it does for the Analytic policies. However, it consolidates the
+authentication events that occur every minute, which can delay the reporting of an event by up to
+one minute.
 :::
 
 
@@ -63,7 +64,7 @@ being locked down.
   - NTLM
 
   :::warning
-  Saving all TGT and/or TGS authentication data results in the bloating of the Threat
+  Saving all TGT and/or TGS authentication data bloats the Threat
   Prevention database. Configure policy filters and use Database Maintenance while monitoring
   these protocols to retain data for the necessary timeframe. See the
   [Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md) topic for

@@ -27,12 +27,12 @@ Two of the more useful options are:
 
 **All Properties for the Agent Installer**
 
-The following table details all properties that can be specified to the Agent installer via the
+The following table details all properties you can specify to the Agent installer via the
 command line.
 
 | Property Name       | Description            | Default Value           |
 | ------------ | ---------------- | --------------------- |
-| CUSTOM_CA               | If this property is set to True, then the custom-managed certificate mode is enabled. This mode uses certificates that are signed by the customer's external certificate authority. In this mode, the installer will not generate certificates and will not start the Agent Service at the end of the installation. | FALSE             |
+| CUSTOM_CA               | If you set this property to True, the installer enables the custom-managed certificate mode. This mode uses certificates that the customer's external certificate authority signs. In this mode, the installer will not generate certificates and will not start the Agent Service at the end of the installation. | FALSE             |
 | EMCERTIFICATE         | Enterprise Manager Certificate Thumbprint      | You can find this value in the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) by clicking the Agent Enrollment Secret icon to open the [Enrollment Secret Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/enrollmentsecretconfiguration.md). This value doesn't apply to high security mode.        |
 | ENROLLMENTSECRET (Required for enrolling new Agent) | Agent Enrollment Secret          | You can find this value in the [Agents Interface](/docs/threatprevention/8.1/admin/agents/overview.md) by clicking the Agent Enrollment Secret icon to open the [Enrollment Secret Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/enrollmentsecretconfiguration.md). This is a required field if using auto security mode. It doesn't apply to high security mode. |
 | SAFEMODE       | Start Agent Service in safe mode         | FALSE          |

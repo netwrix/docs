@@ -6,12 +6,12 @@ sidebar_position: 10
 
 # Upgrade Policy Templates
 
-When new or updated policy templates are available with a Threat Prevention upgrade, they aren't
-automatically imported when you install the latest version. Use the Import feature to update
+When new or updated policy templates are available with a Threat Prevention upgrade, the
+installation of the latest version doesn't import them automatically. Use the Import feature to update
 templates and import new templates.
 
 :::tip
-Remember, use these steps when the Templates Update window option was selected as **No** during
+Remember, use these steps when you selected **No** in the Templates Update window during
 the [Upgrade Procedure](/docs/threatprevention/8.1/install/upgrade/overview.md) process.
 :::
 
@@ -28,7 +28,7 @@ To upgrade policy templates and import new templates:
 
 **Step 4 –** The Import window displays information for the templates. Click **Import**.
 
-**Step 5 –** An Import Decision window opens when a duplicate collection or template is found.
+**Step 5 –** An Import Decision window opens when the import finds a duplicate collection or template.
 Choose between:
 
 - Replace Existing
@@ -43,6 +43,6 @@ To only import new templates, check the **Apply to All** box and select **Skip**
 :::
 
 
-**Step 7 –** When the Operation Completed message is displayed, click **OK**.
+**Step 7 –** When the Operation Completed message displays, click **OK**.
 
-These new policy templates can now be accessed from under the Templates node in the Navigation pane.
+You can now access these new policy templates from under the Templates node in the Navigation pane.

@@ -6,7 +6,7 @@ sidebar_position: 30
 
 # Licensing Page
 
-License information is displayed on the Licensing page of the System Settings interface.
+The Licensing page of the System Settings interface displays license information.
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
 select **System Settings** to open the System Settings interface.

@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Recent Events Tab
 
-The Recent Events tab provides information on the events that have been recently monitored or
-blocked by the selected policy. See the [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) for
+The Recent Events tab provides information on the events the selected policy recently monitored or
+blocked. See the [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) for
 recent events monitored or blocked by all policies. You can also view event data configured to be
 sent to syslog (SIEM) on the [SIEM Output Viewer](/docs/threatprevention/8.1/admin/configuration/siemoutputviewer.md) window.
 
@@ -29,17 +29,17 @@ Example for the Events for Last [number] Hours Option
 
 The following example shows how to use the Events for Last [number] Hours option:
 
-The number of hours set is based on UTC and is adjusted for the time zones of the Administration
-Console server and the Agent that is monitoring the events. Let's assume the following:
+Threat Prevention bases the number of hours on UTC and adjusts it for the time zones of the
+Administration Console server and the Agent that is monitoring the events. Let's assume the following:
 
 - The Administration Console server is in New York, USA (UTC -5)
 - The option is set to display events for Last 4 Hours
 - The Agent that is monitoring the events is in London, UK (UTC +0)
 
-If you click the Refresh button at noon New York time, then the events displayed would have been
-generated between 8 A.M. and 12 P.M. New York time, or between 1 P.M. and 5 P.M. London time.
+If you click the Refresh button at noon New York time, the tab displays events generated
+between 8 A.M. and 12 P.M. New York time, or between 1 P.M. and 5 P.M. London time.
 
-The data grid can be filtered according to the Event Tracker Status:
+You can filter the data grid according to the Event Tracker Status:
 
 - All
 - New
@@ -70,7 +70,7 @@ default order of the data grid columns:
   - Authenticate – DN of the user object making the request
 
   :::note
-  For LDAP bind/monitoring/blocking, Affected Object Path isn't used
+  Threat Prevention doesn't use Affected Object Path for LDAP bind/monitoring/blocking.
   :::
 
 
@@ -117,7 +117,7 @@ Select an event to view additional information about it.
 
 ![Recent Events tab - Additional Information for an event](/images/threatprevention/8.1/admin/policies/recentevents/recenteventdetails.webp)
 
-The following information (as applicable to the event) is displayed:
+The tab displays the following information (as applicable to the event):
 
 - Attribute Name – The name of the object attribute that is affected
 - Operation – The operation performed on the attribute

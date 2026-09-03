@@ -136,7 +136,7 @@ To include the Forged PAC information in events:
 **Step 2 –** On the Forged PAC analytics window, select the gear icon on the upper-right corner of
 the window to open the Configure Analytics window.
 
-**Step 3 –** Add or remove the RIDs of groups to be monitored on the Settings tab. See the
+**Step 3 –** Add or remove the RIDs of the groups you want to monitor on the Settings tab. See the
 [Forged PAC Analytic Type](/docs/threatprevention/8.1/admin/analytics/forgedpac.md) topic for additional information.
 
 **Step 4 –** On the Policy tab, configure the following:
@@ -145,7 +145,7 @@ the window to open the Configure Analytics window.
 - Event Type Tab – Keep the default settings or set as desired for the Authentication event filters
 - Actions Tab – Select **Send to Threat Manager**
 
-**Step 5 –** Click Save once configurations are set. The Configure Analytics window closes.
+**Step 5 –** Click **Save** after you set the configurations. The Configure Analytics window closes.
 
 **Step 6 –** In Threat Prevention, click **Configuration** > **Netwrix Threat Manager
 Configuration** on the menu. The Netwrix Threat Manager Configuration window opens.

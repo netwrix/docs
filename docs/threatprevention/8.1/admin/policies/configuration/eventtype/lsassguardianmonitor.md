@@ -196,15 +196,15 @@ maliciously impact the target process.
 
 ![openprocessflagsmonitoring](/images/threatprevention/8.1/admin/policies/eventtype/openprocessflagsmonitoring.webp)
 
-Check the box to select the process flags to be monitored. This will trigger an event if the
+Check the box to select the process flags to monitor. This triggers an event if the
 request for an target process handle contains one or more of the selected process flags.
 
 - PROCESS_VM_WRITE – Select this checkbox to write to memory in a process
 - PROCESS_CREATE_THREAD – Select this checkbox to create a thread
 - PROCESS_VM_READ – Select this checkbox to report if the calling process, such as an application,
   wants to read process memory
-  - A typical use case for this is the creation of an LSASS dump file, since read rights are
-    required to create a dump file of the process.
+  - A typical use case for this is the creation of an LSASS dump file, since creating a dump file
+    of the process requires read rights.
   - Uncheck this checkbox to not generate an event if the calling process, such as an application,
     requests LSASS memory read access.
 - PROCESS_SUSPEND_RESUME – Select this checkbox to suspend or resume a process

@@ -6,14 +6,14 @@ sidebar_position: 10
 
 # Install the PostgreSQL Database Application
 
-The PostgreSQL database application can be installed on the same server as the application or a
-different server. If it is installed on a different server, the location of the database server must
-be provided while installing the application.
+You can install the PostgreSQL database application on the same server as the application or a
+different server. If you install it on a different server, you must provide the location of the
+database server while installing the application.
 
 To install the PostgreSQL database application:
 
 :::warning
-The PostgreSQL database application must be installed before the application.
+You must install the PostgreSQL database application before the application.
 :::
 
 
@@ -39,7 +39,7 @@ checkbox. Click Next.
 
 ![Netwrix PostgreSQL Setup wizard on the Folder Location page](/images/threatprevention/8.1/install/reportingmodule/folder.webp)
 
-**Step 4 –** By default, the installation directories are set to:
+**Step 4 –** By default, the wizard sets the installation directories to:
 
 - Install Folder – C:\Program Files\Stealthbits\PostgresSQL14
 - Data Folder – C:\ProgramData\Stealthbits\PostgresSQL14

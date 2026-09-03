@@ -11,7 +11,7 @@ grids employ features for data sorting, filtering, searching, and more.
 
 ![Data Grid Functionality pointers](/images/threatprevention/8.1/admin/navigation/datagridfunctionality.webp)
 
-- The Group by Box [1] ribbon impacts how much data is displayed. See the Sort Data topic for
+- The Group by Box [1] ribbon affects how much data the grid displays. See the Sort Data topic for
   additional information.
 - The Refresh [2] button populates the data grid with the current information according to the
   selections.
@@ -145,7 +145,7 @@ Ensure that you set all the filters you need on the data grid before export.
 
 ![Export window](/images/threatprevention/8.1/admin/navigation/export.webp)
 
-The Export window provides options for what is exported and what actions to take.
+The Export window provides options for what to export and what actions to take.
 
 In the Export options section, select the option buttons for the Columns and Rows subsections.
 

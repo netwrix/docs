@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Active Directory Sync Page
 
-The Active Directory Sync page within the Integrations interface lists the domains that are synced
-to theNetwrix Threat Manager Reporting Module database. The sync operation gets all information
+The Active Directory Sync page within the Integrations interface lists the domains that sync
+to the Netwrix Threat Manager Reporting Module database. The sync operation gets all information
 about an Active Directory environment (users, groups, hosts, etc).
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
@@ -81,14 +81,14 @@ Add New Integration window opens.
   [5.1.1.2 Using SSL/TLS](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/8e73932f-70cf-46d6-88b1-8d9f86235e81#5112-using-ssltls)
   article for additional information.
 
-**Step 5 –** Click **Test Connection** to ensure connection to the domain. This will take a moment.
-Then a message will appear in the upper right corner of the console indicating a successful or
-failed connection.If successful, move on to the next step. If failed, recheck your entries for error
-and repeat this step until a successful connection is established.
+**Step 5 –** Click **Test Connection** to ensure connection to the domain. This takes a moment.
+Then a message appears in the upper right corner of the console indicating a successful or
+failed connection. If successful, move on to the next step. If it fails, recheck your entries for
+errors and repeat this step until the connection succeeds.
 
 **Step 6 –** Click Add. The Add New Integration window closes.
 
-The domain or domain controller (the Domain value supplied in Step 4) is listed in the Integrations
+The domain or domain controller (the Domain value supplied in Step 4) appears in the Integrations
 navigation pane. Repeat the process to add additional domains.
 
 ## Active Directory Sync Policy Details
@@ -107,15 +107,15 @@ Directory Sync policy created for that domain.
 
 ![Active Directory Sync details page for a specific domain](/images/threatprevention/8.1/reportingmodule/configuration/integrations/details.webp)
 
-The following information is displayed for a sync policy:
+The page displays the following information for a sync policy:
 
 - Name – The box at the top displays the name of the domain
 
   - Delete – The delete button in the upper right corner of the box opens the Delete Domain window
     to confirm the action
 
-- Domain Configuration – Displays the sync policy settings entered for the selected domain. These
-  settings can be modified on this tab. See the Domain Configuration Tab topic for additional
+- Domain Configuration – Displays the sync policy settings entered for the selected domain. You can
+  modify these settings on this tab. See the Domain Configuration Tab topic for additional
   information.
 - Sync History – Displays the information on each synchronization event. See the Sync History Tab
   topic for additional information.
@@ -123,7 +123,7 @@ The following information is displayed for a sync policy:
 ### Domain Configuration Tab
 
 The Domain Configuration tab displays the sync policy settings entered for the selected domain. With
-the exception of the domain itself, these settings can be updated as needed.
+the exception of the domain itself, you can update these settings as needed.
 
 ![Active Directory Sync details page for a specific domain showing the Domain Configuration tab](/images/threatprevention/8.1/reportingmodule/configuration/integrations/domainconfigurationtab.webp)
 
@@ -147,11 +147,11 @@ The Domain Configuration tab displays the following settings:
   article for additional information.
 - Perform a full scan on next run – Indicates whether the next sync will only look for domain
   changes or run a full scan of the domain. This option is always enabled.
-- Test Connection – Click **Test Connection** to ensure connection to the domain. This will take a
-  moment. Then a message will appear in the upper right corner of the console indicating a
+- Test Connection – Click **Test Connection** to ensure connection to the domain. This takes a
+  moment. Then a message appears in the upper right corner of the console indicating a
   successful or failed connection.
 
-The Save button is enabled when any settings are modified. Click it to commit the changes before
+The Save button is enabled when you modify any settings. Click it to commit the changes before
 leaving the page.
 
 ### Sync History Tab
@@ -201,7 +201,7 @@ dropdown menu. This was pre-created in the Credential Profiles page.
 
 :::note
 If you change the Credential Profile for a domain, click **Test Connection** to ensure
-connection to the domain. This will take a moment. Then a message will appear in the upper right
+connection to the domain. This takes a moment. Then a message appears in the upper right
 corner of the console indicating a successful or failed connection.
 :::
 
@@ -215,7 +215,7 @@ corner of the console indicating a successful or failed connection.
 **Step 7 –** Select or deselect the **Use SSL** box for the security state you want for communication
 with the domain.
 
-**Step 8 –** The Save button is enabled when any settings are modified. Click it to commit the
+**Step 8 –** The Save button is enabled when you modify any settings. Click it to commit the
 changes before leaving the page.
 
-Changes to the Domain Configuration have been saved.
+You have now saved the changes to the Domain Configuration.

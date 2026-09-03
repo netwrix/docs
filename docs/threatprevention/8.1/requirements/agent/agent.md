@@ -23,7 +23,7 @@ The supported Exchange Servers are:
 
 **RAM, Cores, and Disk Space**
 
-These depend on the amount of activity expected:
+These depend on the amount of activity you expect:
 
 | Environment | Recommended | Minimum |
 | ----------- | ----------- | ------- |
@@ -39,13 +39,13 @@ The disk space requirement covers the following:
 
 **Additional Enterprise Password Enforcer Solution Requirements**
 
-The Have I Been Pwnd (HIBP) database, which is an optional feature of the Enterprise Password
-Enforcer solution, can be deployed on the server where the Agent resides to improve performance. It
+You can deploy the Have I Been Pwnd (HIBP) database, an optional feature of the Enterprise Password
+Enforcer solution, on the server where the Agent resides to improve performance. It
 requires:
 
 - Additional 15 GB of disk space to deploy
 
-You can also have the HIBP database deployed on some Agent servers, while other Agent servers work
+You can also deploy the HIBP database on some Agent servers while other Agent servers work
 with the copy installed on the Enterprise Manager server. See the
 [EPE Settings Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md) topic for additional information.
 
@@ -53,14 +53,14 @@ with the copy installed on the Enterprise Manager server. See the
 
 The following are additional requirements for the Agent server:
 
-- .NET Framework 4.7.2 installed, which can be downloaded from the link in the Microsoft
+- .NET Framework 4.7.2 installed, which you can download from the link in the Microsoft
   [.NET Framework 4.7.2 offline installer for Windows](https://support.microsoft.com/en-us/topic/microsoft-net-framework-4-7-2-offline-installer-for-windows-05a72734-2127-a15d-50cf-daf56d5faec2)
   article
 - WMI enabled on the machine, which is optional but required for centralized Agent maintenance
 
 **Permissions for Installation**
 
-The following permission is required to install the Agent:
+You need the following permission to install the Agent:
 
 - Membership in the local Administrators group
 
@@ -91,7 +91,7 @@ thereby prevent monitoring Active Directory events:
   - Specifically the “Avast self-defense module”
 
 :::note
-These products and other similar products can be configured via a whitelist to allow the
+You can configure these products and other similar products via a whitelist to allow the
 agent to operate.
 
 :::

@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Active Directory Changes Event Type
 
-The Active Directory Changes event type can be configured to generate an event when an Active
-Directory object or attribute is changed (add, delete, modify, move, rename).
+You can configure the Active Directory Changes event type to generate an event when someone changes
+an Active Directory object or attribute (add, delete, modify, move, rename).
 
 The event filters for the Active Directory Changes event type are:
 
@@ -41,8 +41,8 @@ Check the **All** box to monitor or lockdown all operations, or select specific 
 - Object Modified – The policy monitors for Active Directory objects being modified
 - Object Moved or Renamed – The policy monitors for Active Directory objects being moved or renamed
 
-If applied to a Lockdown Event Type, the policy both monitors and lockdowns the objects based on the
-selection.
+If you apply this filter to a Lockdown Event Type, the policy both monitors and locks down the
+objects based on the selection.
 
 ## Domains/Servers Filter
 
@@ -124,8 +124,8 @@ Collections areas to edit the lists.
 
 **Attribute, Operator, and Value**
 
-When an attribute is selected, it is added to the filter and a dropdown menu is displayed in the
-Operation column with **Any Value** selected. You can further scope the attributes to enable the
+When you select an attribute, Threat Prevention adds it to the filter and displays a dropdown menu
+in the Operation column with **Any Value** selected. You can further scope the attributes to enable the
 policy to only capture events based on the new value. Use the Operation and Value columns of the
 Include Attributes and Exclude Attributes boxes to achieve this.
 
@@ -139,18 +139,18 @@ The Operation dropdown menu has the following options:
   the Value field
 - Greater Than – Attribute values above the numeric value or after the alphabetical value supplied
   in the Value field
-- Contains – Attribute value includes the user supplied string (numbers are treated as strings) in
-  the Value field
-- Not Contain – Attribute values don't include the user supplied string (numbers are treated as
+- Contains – Attribute value includes the user supplied string (Threat Prevention treats numbers as
   strings) in the Value field
+- Not Contain – Attribute values don't include the user supplied string (Threat Prevention treats
+  numbers as strings) in the Value field
 - Starts with – Attribute values start with the user supplied string in the Value field
 
 Select an **Operation** and enter a value in the textbox. The value may include alphanumeric
-characters, string type, or dates. Only one value is supported; don't specify multiple values for
-the attribute. Also the Value field isn't case sensitive.
+characters, string type, or dates. The filter supports only one value; don't specify multiple values
+for the attribute. Also the Value field isn't case sensitive.
 
-When you select another attribute, a new row is added, where you can specify an operator and a value
-for that attribute. Each row is treated as an “OR” statement. If any event matches any of the
+When you select another attribute, a new row appears, where you can specify an operator and a value
+for that attribute. Threat Prevention treats each row as an “OR” statement. If any event matches any of the
 attribute filters, then the event data includes all attributes in the list.
 
 :::note
@@ -268,7 +268,7 @@ for additional information.
 
 ## Success Filter
 
-The Success filter is where the policy is set to only monitor successful events, failed events, or
+Use the Success filter to set the policy to monitor only successful events, only failed events, or
 both.
 
 ![Event Type – Success filter](/images/threatprevention/8.1/admin/policies/eventtype/success.webp)
@@ -290,7 +290,7 @@ changes.
 You can define a criteria (filter statements) to monitor event data based on event data values or
 event attribute values or both.
 
-Filter statements can be added to the Include condition and Exclude condition boxes. The filter uses
+You can add filter statements to the Include condition and Exclude condition boxes. The filter uses
 pre-defined logical and comparison operators to create filter criteria for the scan. You can add
 conditions to a filter statement. Conditions can be singular or grouped by a logical operator.
 
@@ -299,7 +299,7 @@ Include condition box displays conditions grouped by logical operators.
 
 **Logical Operator**
 
-The logical operator is displayed as left aligned red text. To change the logical operator, click
+The logical operator displays as left aligned red text. To change the logical operator, click
 it to open a menu with the following options:
 
 - And
@@ -315,13 +315,13 @@ To add a filter (condition) to the filter statement or to start a new group of f
 - Add Condition – Adds a conditions to the filter statement
 - Add Group – Adds a group with a conditions and a logical operator to the filter statement
 
-A new row is inserted that displays an event data dropdown menu, a comparison operator, and a Value
+A new row appears that displays an event data dropdown menu, a comparison operator, and a Value
 box.
 
 **Event Data Selection**
 
-The Event Data dropdown menu is displayed in orange. it contains a list of all the fields that can
-be part of an event. Click it to select an event name. Your selection is displayed in orange text in
+The Event Data dropdown menu displays in orange. It contains a list of all the fields that can
+be part of an event. Click it to select an event name. Your selection appears in orange text in
 the box below.
 
 The “Attributes: New” and “Attributes: Old” options are special cases, and the following
@@ -329,7 +329,7 @@ descriptions cover them in detail.
 
 **Comparison Operator**
 
-The comparison operator dropdown menu is displayed in blue. To change it, click it to open a
+The comparison operator dropdown menu displays in blue. To change it, click it to open a
 menu with options that associate with the selected event data field.
 
 If you have selected the “Attributes: New” or “Attributes: Old” option in the Event Data dropdown
@@ -341,16 +341,16 @@ menu, then only the following comparison operators are available:
 - StartsWithValue
 - EndsWithValue
 
-Your selected comparison operator is displayed in blue text in the box below.
+Your selected comparison operator appears in blue text in the box below.
 
 **Value**
 
-The value box is displayed in green. Click in it to enter a value, then press Enter. The value is
-displayed in green text in the box below.
+The value box displays in green. Click in it to enter a value, then press Enter. The value appears
+in green text in the box below.
 
 :::note
-The Value box only accepts a single string except when the “Attributes: New” or
-“Attributes: Old” option is selected in the Event Data dropdown menu.
+The Value box only accepts a single string except when you select the “Attributes: New” or
+“Attributes: Old” option in the Event Data dropdown menu.
 :::
 
 
@@ -358,7 +358,7 @@ In case of “Attributes: New” and “Attributes: Old”, type three comma sep
 in the Value box in the following format:
 
 %name%,%suboperation%,%value%
-(White space isn't allowed between the comma and the argument, unless white space is part of the
+(Don't put white space between the comma and the argument, unless white space is part of the
 argument.)
 
 where:
@@ -368,13 +368,13 @@ where:
   Remove Value, or Change Attribute (case insensitive)
 - %value% – The attribute value (case insensitive)
 
-All the parameters are optional and only evaluated if non-empty. This means that you can select
+All the parameters are optional, and Threat Prevention evaluates them only if they are non-empty. This means that you can select
 attributes either only by %name% or %suboperation% or %value% or by combination of
 %name%/%suboperation%/%value%.
 
-If %value% isn't specified, all the functions behave in the same way because they implement the
-same logic for %name% / %suboperation% comparison. The difference is applicable only when %value% is
-specified.
+If you don't specify %value%, all the functions behave in the same way because they implement the
+same logic for %name% / %suboperation% comparison. The difference applies only when you specify
+%value%.
 
 Following is how the comparison operator (displayed in blue) works with %value%:
 
@@ -405,5 +405,5 @@ Following is an example of a filter statement defined in the Include condition b
 ````And
 [Attributes: New] [StartsWithValue] [telephoneNumber, change attribute, (555)]```
 
-This filter statement would only generate an event if an object's telephoneNumber attribute is changed and the new value starts with (555), rather than generating an event every time the telephone number is changed.
+This filter statement would only generate an event if someone changes an object's telephoneNumber attribute and the new value starts with (555), rather than generating an event every time the telephone number changes.
 ````

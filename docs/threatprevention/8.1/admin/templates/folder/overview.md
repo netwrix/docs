@@ -7,27 +7,26 @@ sidebar_position: 20
 # Pre-Created Templates
 
 Threat Prevention comes with several policy templates that cover a wide range of event monitoring
-and lockdown. Pre-created policy templates are provided as part of the initial Threat Prevention
-installation process. New policy templates can be created from the beginning or from existing
-policies.
+and lockdown. The initial Threat Prevention installation process provides pre-created policy
+templates. You can create new policy templates from the beginning or from existing policies.
 
-When Threat Prevention is upgraded, new policy templates and updated ones are available for import. They
-aren't automatically imported during the installation of the latest version. Updates can be made to
-upgrade existing templates for a new release. See the
+When you upgrade Threat Prevention, new and updated policy templates are available for import. The
+installation of the latest version doesn't import them automatically. You can update existing
+templates for a new release. See the
 [Upgrade Policy Templates](/docs/threatprevention/8.1/install/upgrade/policytemplates.md) topic for additional
 information.
 
-When the Administration Console is launched for the first time, the administrator is asked to import
-pre-created policy templates. If the administrator doesn't import the templates, they can be
-imported later. See the Import Templates topic for additional information. After the templates are
-imported, they are available through an organized folder structure.
+When you launch the Administration Console for the first time, it asks the administrator to import
+pre-created policy templates. If the administrator doesn't import the templates, you can import
+them later. See the Import Templates topic for additional information. After you import the
+templates, they are available through an organized folder structure.
 
 ## Template Folders
 
-The pre-created policy templates are organized in an easy-to-navigate folder structure under
+Threat Prevention organizes the pre-created policy templates in a folder structure under
 Templates in the [Templates Interface](/docs/threatprevention/8.1/admin/templates/overview.md).
 
-- The Actions folder contains several pre-configured PowerShell scripts that can be used as response
+- The Actions folder contains several pre-configured PowerShell scripts that you can use as response
   actions to alerts.
 - The ADCS folder contains several pre-configured templates to detect and prevent AD Certificate Services attacks.
 - The templates that Netwrix engineers deem most useful are located within subfolders in the Best
@@ -82,9 +81,9 @@ Templates in the [Templates Interface](/docs/threatprevention/8.1/admin/template
 
 ## Import Templates
 
-The pre-created policy templates are stored in the `SI_Templates_All.xml` file. If they weren't
-imported when the Administration Console is first launched, you can import them later by following
-these steps.
+Threat Prevention stores the pre-created policy templates in the `SI_Templates_All.xml` file. If you
+didn't import them when you first launched the Administration Console, you can import them later by
+following these steps.
 
 **Step 1 –** Click **Tools > Import** on the menu. The Import window opens.
 

@@ -6,17 +6,16 @@ sidebar_position: 70
 
 # Firewall Ports
 
-The following default ports are required for Threat Prevention functionality unless modified as per
-network requirements. If choosing the Create Windows Firewall Rules option either in step 6 of the
+Threat Prevention functionality requires the following default ports unless you modify them as per
+network requirements. If you choose the Create Windows Firewall Rules option either in step 6 of the
 [Application Server Install](/docs/threatprevention/8.1/install/application.md), in step 6 of the
 [Administration Console Remote Install](/docs/threatprevention/8.1/install/adminconsole.md), on the Set Options page of the
 [Deploy Agents Wizard](/docs/threatprevention/8.1/admin/agents/deploy/overview.md#deploy-agents-wizard), or in step 7 of a
-[Manual Agent Deployment](/docs/threatprevention/8.1/install/agent/manual.md), then Threat Prevention will create the
-necessary Windows firewall rules. If using a third party firewall, it will be necessary to manually
-set these.
+[Manual Agent Deployment](/docs/threatprevention/8.1/install/agent/manual.md), Threat Prevention creates the
+necessary Windows firewall rules. If you use a third party firewall, you must set these manually.
 
 :::note
-SIEM ports are configured when SIEM alerting is enabled in Threat Prevention. See the
+You configure SIEM ports when you enable SIEM alerting in Threat Prevention. See the
 [System Alerting Window](/docs/threatprevention/8.1/admin/configuration/systemalerting/overview.md) topic for additional
 information.
 :::
@@ -129,7 +128,7 @@ talk to the Threat Prevention SQL database:
 
 ## Ports for NAS Device Activity Monitoring
 
-Firewall settings depend on the type of environment being targeted. The following firewall settings
+Firewall settings depend on the type of environment you target. The following firewall settings
 are required for communication between the Agent server and the Netwrix Activity Monitor Console:
 
 | Communication Direction          | Protocol | Ports | Description         |
@@ -137,8 +136,8 @@ are required for communication between the Agent server and the Netwrix Activity
 | Activity Monitor to Agent Server | TCP      | 4498  | Agent Communication |
 
 You must configure the Windows firewall rules on the Windows server, which require certain
-inbound rules if the scans are running in applet mode. These scans operate over a default
-port range, which can't be specified via an inbound rule. For guidance on connecting to WMI on a remote computer, see the Microsoft
+inbound rules if the scans run in applet mode. These scans operate over a default
+port range that you can't specify via an inbound rule. For guidance on connecting to WMI on a remote computer, see the Microsoft
 [Connecting to WMI on a Remote Computer](<https://msdn.microsoft.com/en-us/library/windows/desktop/aa389290(v=vs.85).aspx>)
 article.
 
@@ -202,8 +201,8 @@ Agent server and the target NetApp Data ONTAP 7-Mode device:
 Activity Monitor.
 
 :::note
-If either HTTP or HTTPS aren't enabled, the FPolicy on the NetApp Data ONTAP 7-Mode
-device must be configured manually. Also, the External Engine will not reconnect automatically in
+If either HTTP or HTTPS aren't enabled, you must configure the FPolicy on the NetApp Data ONTAP
+7-Mode device manually. Also, the External Engine doesn't reconnect automatically in
 the case of a server reboot or service restart.
 :::
 
@@ -223,8 +222,8 @@ Agent server and the target NetApp Data ONTAP Cluster-Mode device:
 Activity Monitor.
 
 :::note
-If either HTTP or HTTPS aren't enabled, the FPolicy on the NetApp Data ONTAP 7-Mode
-device must be configured manually. Also, the External Engine will not reconnect automatically in
+If either HTTP or HTTPS aren't enabled, you must configure the FPolicy on the NetApp Data ONTAP
+7-Mode device manually. Also, the External Engine doesn't reconnect automatically in
 the case of a server reboot or service restart.
 :::
 
@@ -239,7 +238,7 @@ Agent server and the target Panzura device:
 | Activity Agent Server to Panzura           | HTTPS         | 443   | Panzura API             |
 | Panzura filers to Activity Agent Server | AMQP over TCP | 4497  | Panzura Event Reporting |
 
-Protect the port with a username and password. The credentials will be configured in Panzura.
+Protect the port with a username and password. You configure the credentials in Panzura.
 
 ## Ports for Integration with Full Netwrix Threat Manager
 

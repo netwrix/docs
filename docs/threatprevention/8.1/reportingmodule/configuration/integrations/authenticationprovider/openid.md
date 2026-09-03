@@ -35,11 +35,11 @@ Configure the following settings for an OpenID provider on the Configuration tab
 
 ![Configuration tab for an OpenID authneication provider](/images/threatprevention/8.1/reportingmodule/configuration/integrations/authenticationprovider/configurationopenid.webp)
 
-- Default – The default profile applied when a user is assigned multiple authentication profiles.
-  When off, the profile will be determined in alphabetical order of the profile name. Toggle off and
-  on as desired.
-- Authority – The OpenId Connect provider authority URI. Out-going redirection requires the correct
-  Authority path to be set. Incorrect settings will generally result in a 404 error.
+- Default – The default profile applied when you assign a user multiple authentication profiles.
+  When off, the application determines the profile in alphabetical order of the profile name. Toggle
+  off and on as desired.
+- Authority – The OpenId Connect provider authority URI. Out-going redirection requires you to set
+  the correct Authority path. Incorrect settings generally result in a 404 error.
 - Client Id – The ID assigned to an application that allows it to request authentication and
   interact with the identity provider
 - Login Type – The login type to use to log into the account. Use the dropdown menu to select one
@@ -52,7 +52,7 @@ Click Save to commit the configuration settings.
 
 ## Users/Groups Tab
 
-The Users/Groups tab displays users and groups that are assigned to this authentication
+The Users/Groups tab displays users and groups that you assign to this authentication
 profile. To give access to the application to new users, click the New Access button, which opens
 the Add Console Access window. To assign this authentication provider to existing users, go to
 System Settings > User Access Page.

@@ -23,15 +23,15 @@ happens:
 
 - If the installer detects .NET Framework 4.7.2 or later version installed on the machine, it
   proceeds with the installation.
-- If it doesn't detect .NET Framework 4.7.2 or later version, a message is displayed to inform you
-  to install it.
+- If it doesn't detect .NET Framework 4.7.2 or later version, the wizard displays a message
+  informing you to install it.
 
   ![.NET Framework Required](/images/threatprevention/8.1/install/netrequired.webp)
 
   You can either exit the wizard and install it manually or walk through the wizard until its last
   page and install it as part of the Threat Prevention installation process.
 
-On clicking Next, the End-User License Agreement page is displayed.
+When you click Next, the End-User License Agreement page opens.
 
 ![Threat Prevention Server Setup wizard - End-User License Agreement page](/images/threatprevention/8.1/install/licenseagreement.webp)
 
@@ -61,9 +61,9 @@ you can choose to select or deselect a component for installation.
 As you have to install the Administration Console only, deselect the Enterprise Manager and EPE Rest
 Site components.
 
-**Step 5 –** On selecting the Win Console option, the page displays the location where the
-Administration Console will be installed. By default, the Threat Prevention infrastructure
-components are installed to the `C:\Program Files\Netwrix\Netwrix Threat Prevention\` directory.
+**Step 5 –** When you select the Win Console option, the page displays the location where the wizard
+installs the Administration Console. By default, the wizard installs the Threat Prevention
+infrastructure components to the `C:\Program Files\Netwrix\Netwrix Threat Prevention\` directory.
 
 _(Optional)_ Click **Browse…** to change the installation location. The Change destination folder
 page opens.
@@ -100,16 +100,16 @@ See the
 for additional information.
 
 Checking the **Create Windows Firewall Rules** box automatically sets the Windows firewall rules
-needed to open these ports on the server during the installation process. If using a third party
+needed to open these ports on the server during the installation process. If you use a third party
 firewall, uncheck this option and manually create the necessary firewall rules. See the
 [Firewall Ports](/docs/threatprevention/8.1/requirements/ports.md) topic for additional information.
 
-When the settings are configured, click **Next**.
+After you configure the settings, click **Next**.
 
 ![Threat Prevention Server Setup wizard - Ready to Install page](/images/threatprevention/8.1/install/readytoinstall.webp)
 
 **Step 7 –** On the Ready to Install Netwrix Threat Prevention Server page, click **Install**. When
-finished, the Completed the Netwrix Threat Prevention Server Setup Wizard page is displayed.
+it finishes, the Completed the Netwrix Threat Prevention Server Setup Wizard page opens.
 
 ![Threat Prevention Server Setup wizard – Completed page](/images/threatprevention/8.1/install/complete.webp)
 
@@ -125,11 +125,11 @@ You can also choose to skip the built-in download of .NET Framework 4.7.2 and in
 
 ![Threat Prevention Admin Console desktop icon](/images/threatprevention/8.1/install/winconsoleicon.webp)
 
-The Administration Console has been installed, and the Windows Console icon is now on the desktop.
+The wizard has installed the Administration Console, and the Windows Console icon is now on the desktop.
 
 **Step 9 –** To enable the remote Administration Console to communicate with the Enterprise Manager,
 you must manually copy the ca-crt.pem file from the CertsInfo folder on the Threat Prevention server
-to the CertsInfo folder on the machine where the Administration Console is installed:
+to the CertsInfo folder on the machine where you installed the Administration Console:
 
 CertsInfo folder path on the Threat Prevention server:
 
@@ -146,4 +146,4 @@ undermines security.
 :::
 
 
-The remote Administration Console is now ready to be launched.
+You can now launch the remote Administration Console.

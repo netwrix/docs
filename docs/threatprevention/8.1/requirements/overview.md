@@ -13,23 +13,23 @@ all exceptions are covered.
 
 ## Architecture Overview
 
-The following servers are required to install the application:
+You need the following servers to install the application:
 
 **Core Component**
 
-- Threat Prevention Application Server – The following v8.1 application components are installed
+- Threat Prevention Application Server – You install the following v8.1 application components
   here:
 
   - Enterprise Manager
   - Administration Console
 
-- Agents – The Agents are deployed in the target environment to monitor and/or block activity
-- Netwrix Threat Manager Reporting Module Server – The Reporting Console is installed here. This can
-  be on the same server as the Threat Prevention server, but that would require the server resources
-  to be sufficient for both applications.
-- SQL Server for the Threat Prevention Database – As a data-intensive application, a
-  well-provisioned, dedicated SQL Server is recommended. The SQL Server should be on a separate
-  server from the Threat Prevention server.
+- Agents – You deploy the Agents in the target environment to monitor and/or block activity
+- Netwrix Threat Manager Reporting Module Server – You install the Reporting Console here. It can
+  be on the same server as the Threat Prevention server, but that server must have resources
+  sufficient for both applications.
+- SQL Server for the Threat Prevention Database – Because Threat Prevention is a data-intensive
+  application, Netwrix recommends a well-provisioned, dedicated SQL Server. The SQL Server should be
+  on a separate server from the Threat Prevention server.
 
 See the following topics for additional information:
 
@@ -40,7 +40,7 @@ See the following topics for additional information:
 
 **Optional Components**
 
-- Remote Administration Console Instances – The Administration Console can be deployed remotely on
+- Remote Administration Console Instances – You can deploy the Administration Console remotely on
   additional machines. As a prerequisite, the Threat Prevention server must already be provisioned.
 - EPE Rest Site – This is an optional web server that third parties can use to integrate with the
   Threat Prevention Enterprise Password Enforcer (EPE) solution. It allows third-party applications
@@ -60,8 +60,8 @@ See the following topics for additional information:
 
 **Target Environment Considerations**
 
-The target environment encompasses all servers, devices, or infrastructure to be monitored and/or
-protected by Threat Prevention:
+The target environment encompasses all servers, devices, or infrastructure that Threat Prevention
+monitors and/or protects:
 
 - Active Directory – Deploy an Agent to all domain controllers
 - Exchange – Deploy an Agent to all HUB, CAS, and Mailbox Exchange servers and one domain controller
@@ -69,7 +69,7 @@ protected by Threat Prevention:
 
   - Windows – Deploy an Agent to all file servers containing objects that require protection
   - Network Attached Storage (NAS) Devices – This requires integration with Netwrix Activity
-    Monitor. Deploy an Agent to the proxy server where the Netwrix Activity Monitor Activity Agent
-    is deployed. See the
+    Monitor. Deploy an Agent to the proxy server where you deployed the Netwrix Activity Monitor
+    Activity Agent. See the
     [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)
     for installation requirements and information on collecting activity data.

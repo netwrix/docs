@@ -21,13 +21,13 @@ policy from the Policies list. Or, select the policy from the Policies table in 
 ![honeytoken](/images/threatprevention/8.1/admin/policies/eventtype/usecase/honeytoken.webp)
 
 **Step 3 –** On the Configuration tab of the policy, fill in the requested information and click
-**Copy LDAP Filter**. The Copy LDAP Filter button will automatically copy the exact string that is
-required for Activity Monitor or Threat Prevention to the clipboard to configure the LDAP events for
+**Copy LDAP Filter**. The Copy LDAP Filter button automatically copies to the clipboard the exact string that is
+required for Activity Monitor or Threat Prevention, to configure the LDAP events for
 this Honeytoken.
 
 ![ldapfiltercopiedtoclipboard](/images/threatprevention/8.1/admin/policies/eventtype/usecase/ldapfiltercopiedtoclipboard.webp)
 
-A notification will pop up and the filter will be saved to the clipboard.
+A notification pops up and Threat Manager saves the filter to the clipboard.
 
 ## Configure LDAP Monitoring
 
@@ -49,7 +49,7 @@ select the other **LDAP Monitoring** event type in the list above.
 Threat Manager.
 
 :::tip
-The Honeytoken tab of the
+You must configure the Honeytoken tab of the
 [Netwrix Threat Manager Configuration Window](/docs/threatprevention/8.1/admin/configuration/threatmanagerconfiguration.md)
-must be configured to successfully send LDAP monitoring data to Threat Manager.
+to successfully send LDAP monitoring data to Threat Manager.
 :::

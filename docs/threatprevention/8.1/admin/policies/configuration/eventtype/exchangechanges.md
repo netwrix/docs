@@ -23,8 +23,8 @@ like an "ALL" for that filter set.
 
 ## Exchange Event Filter
 
-On the Exchange Event filter for monitoring, select the types of Exchange events to be monitored by
-the policy.
+On the Exchange Event filter for monitoring, select the types of Exchange events for the policy to
+monitor.
 
 ![Policy window - Exchange Event filter for monitoring](/images/threatprevention/8.1/admin/policies/eventtype/exchangeevent.webp)
 
@@ -94,12 +94,12 @@ Perpetrators filter relate to each other. They include:
 
   - For an Include example, if this policy is monitoring a CEO mailbox, the Trustee list is set to
     includes Brad Wilson, and the Perpetrator list is set to include Administrator, then the
-    policy will monitor when Brad Wilson is added as the mailbox trustee by anyone AND it will
-    monitor anyone else added as the mailbox trustee by Administrator.
+    policy will monitor when anyone adds Brad Wilson as the mailbox trustee AND it will
+    monitor anyone else that Administrator adds as the mailbox trustee.
   - For an Exclude example, if this policy is monitoring a CEO mailbox, the Trustee list is set to
     exclude Brad Wilson, and the Perpetrator list is set to exclude Administrator, then the policy
-    will not monitor when Brad Wilson is added as the mailbox trustee by anyone AND it will not
-    monitor anyone else added as the mailbox trustee by Administrator.
+    will not monitor when anyone adds Brad Wilson as the mailbox trustee AND it will not
+    monitor anyone else that Administrator adds as the mailbox trustee.
 
 - Trustee AND Perpetrator Must Be Met – Both the Trustee selection AND the Perpetrator selection
   must be met

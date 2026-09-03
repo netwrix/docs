@@ -21,7 +21,7 @@ Alerting window opens. The Email tab displays by default.
 - Configure SMTP Host Information
 - Create Message Profiles
 
-**Step 3 –** Once configured, click **Events** on the **Email** tab. Decide what events receive
+**Step 3 –** After you configure both, click **Events** on the **Email** tab. Decide what events receive
 notifications and assign one or more message profiles to the event.
 
 **Step 4 –** Click the button next to Disabled to toggle the setting to **Enabled**.
@@ -33,8 +33,8 @@ the left pane.
 notifications.
 
 **Step 7 –** Click the **Select Profile, please** option for an event/incident/policy and select a
-Message Profile from the dropdown menu to assign it to the event/incident/policy. When an alert is
-generated for the event/incident/policy, Threat Prevention sends an email to all recipients
+Message Profile from the dropdown menu to assign it to the event/incident/policy. When Threat
+Prevention generates an alert for the event/incident/policy, it sends an email to all recipients
 specified in the Message Profile.
 
 - For policies, you can assign multiple profiles by either checking the profiles you want or the
@@ -49,8 +49,8 @@ event.
 
 Click **Suppression time** for an event and select an option from the dropdown menu:
 
-- A duration ( 1 min, 2 min, 5 min, 10 min, 30 min, 60 min) – Once an alert is generated for the
-  event, Threat Prevention doesn't generate another alert for it during the next X minutes (X is
+- A duration ( 1 min, 2 min, 5 min, 10 min, 30 min, 60 min) – After Threat Prevention generates an
+  alert for the event, it doesn't generate another alert for it during the next X minutes (X is
   the duration you selected) even if the event occurs.
 - Disabled – Threat Prevention doesn't suppress alerts
 
@@ -60,9 +60,8 @@ You select a suppression time of 30 minutes for an event. Threat Prevention then
 for that event. If the event occurs again within the next 30 minutes, Threat Prevention doesn't
 generate another alert.
 
-Use the suppression time feature to handle situations where numerous alerts are generated
-for an event, such as Agent Latency, causing the Enterprise Manager and Administration Console to
-freeze.
+Use the suppression time feature to handle situations where an event such as Agent Latency generates
+numerous alerts and freezes the Enterprise Manager and Administration Console.
 
 **Step 9 –** For Analytics, choose whether to enable Ongoing Attack Alerts. When checked,
 Threat Prevention sends periodic reminders of an ongoing attack if it continues after the initial

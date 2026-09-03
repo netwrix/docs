@@ -14,15 +14,15 @@ Click **Investigate** in the application header bar to open the Investigations i
 **Predefined Investigations** in the navigation pane. This expands the menu to display the folders
 containing predefined investigations. Expand a folder to view the investigations under it. To get a
 list of all the predefined investigations in the adjacent pane, hover your mouse over the Predefined
-Investigations option and click the icon that is displayed.
+Investigations option and click the icon that appears.
 
 ![Investigations interface on the Predefined Investigations page](/images/threatprevention/8.1/reportingmodule/investigations/predefinedinvestigations.webp)
 
 The table displays the list of investigations with the following columns:
 
 - Name – The name of the investigation
-- Favorite – The check mark indicates that the investigation has been tagged as a favorite for the
-  logged in user
+- Favorite – The check mark indicates that the logged in user tagged the investigation as a
+  favorite
 
 Click an investigation to view it. You can run the query, modify the configuration, add a
 subscription, or export the report. See the [Investigation Options](/docs/threatprevention/8.1/reportingmodule/investigations/options/overview.md) topic for

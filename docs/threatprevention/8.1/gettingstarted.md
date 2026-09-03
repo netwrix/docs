@@ -29,7 +29,7 @@ to select your desired events for sending notifications.
 ## Configure Collections
 
 Collections are reusable lists of policy filter settings. To create new policies using policy
-templates, Collections must be configured. Several templates are configured using Collections as a
+templates, you must configure Collections. Several templates use Collections as a
 policy filter. See the
 [Collection Manager Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/overview.md) topic to configure
 Collections.
@@ -45,28 +45,28 @@ enable policies to begin monitoring your organization’s environment. Do either
   [Policy Configuration](/docs/threatprevention/8.1/admin/policies/configuration/configuration.md) and
   [Template Configuration](/docs/threatprevention/8.1/admin/templates/configuration/configuration.md) topics for additional information.
 
-On enabling and saving a policy configuration, the Agent is automatically sent the necessary
-information to begin monitoring.
+When you enable and save a policy configuration, Threat Prevention automatically sends the Agent the
+information it needs to begin monitoring.
 
 :::warning
-Use extreme caution when enabling lockdown policies to ensure that the required events
-don't unintentionally get blocked.
+Use extreme caution when enabling lockdown policies to ensure that you don't unintentionally block
+required events.
 :::
 
 
 :::info
 Start with monitoring the environment before enabling lockdown policies. For
-example, first configure a monitoring policy for the events to be blocked. Watch the captured events
-to ensure the filters are returning the expected events. Once assured, create the lockdown policy to
-block those events.
+example, first configure a monitoring policy for the events you want to block. Watch the captured
+events to ensure the filters return the expected events. After you are confident, create the
+lockdown policy to block those events.
 :::
 
 
 :::info
 After configuring a new policy, navigate to either the
 [Recent Events Tab](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/overview.md) in the policy's configuration or to the
-[Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) to confirm that the intended events being
-monitored are intended. Refresh the data to view the recent events.
+[Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) to confirm that the policy monitors the
+intended events. Refresh the data to view the recent events.
 :::
 
 
@@ -77,8 +77,8 @@ You can view event data using any of the following:
 - Administration Console – Navigate to either the Recent Events tab in the policy's configuration or
   to the Investigate interface to view data for the events being monitored. See the
   [Recent Events Tab](/docs/threatprevention/8.1/admin/policies/configuration/recentevents/overview.md) and
-  [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) topics for details. Event data configured
-  to be sent to syslog (SIEM) can also be viewed on the
+  [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md) topics for details. You can also view
+  event data configured for syslog (SIEM) on the
   [SIEM Output Viewer](/docs/threatprevention/8.1/admin/configuration/siemoutputviewer.md) window.
 - Netwrix Threat Manager Reporting Module – Use this application to run investigations and generate
   reports. See the Set Up the Threat Manager Reporting Module topic to install and launch the
@@ -86,7 +86,7 @@ You can view event data using any of the following:
 
 ## Configure Database Maintenance
 
-Database maintenance is essential to manage the size of the event database. The size should be based
+Database maintenance is essential to manage the size of the event database. Base the size
 on your data retention needs for various types of event data. See the
 [Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md) topic for
 additional information.
@@ -103,15 +103,15 @@ additional information.
 
 **Installation**
 
-Install the Netwrix Threat Manager Reporting Module application. Typically, this is done on the same
-server where Threat Prevention resides, but it can be on any server within the same environment.
+Install the Netwrix Threat Manager Reporting Module application. Typically, you install it on the
+same server where Threat Prevention resides, but it can be on any server within the same environment.
 This application needs access to the Threat Prevention database. See the
 [Reporting Module Installation](/docs/threatprevention/8.1/install/reportingmodule/overview.md) topic for additional
 information.
 
 **First Launch**
 
-On launching Netwrix Threat Manager Reporting Module for the first time, you will set the password
+When you launch Netwrix Threat Manager Reporting Module for the first time, you set the password
 for the builtin Administrator account, and optionally enable MFA for that account. See the
 [First Launch](/docs/threatprevention/8.1/install/reportingmodule/firstlaunch.md) topic for additional information.
 

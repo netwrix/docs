@@ -8,8 +8,8 @@ sidebar_position: 50
 
 The primary use case of the AD Replication Lockdown event type is to prevent non-domain controllers
 from using replication APIs. Each blocked replication attempt results in an event with details. Make
-sure the policy has a ‘white list’ of ‘allowed/known good’ domain controllers so that legitimate
-replication isn't blocked.
+sure the policy has a ‘white list’ of ‘allowed/known good’ domain controllers so that the policy
+doesn't block legitimate replication.
 
 The event filters for the AD Replication Lockdown event type are:
 
@@ -29,10 +29,10 @@ Lockdown/blocking policies with blank filters lock down or block everything.
 
 
 Since Windows can't detect if a sync request is coming from a legitimate domain controller, this
-event type is designed to block requests from computers that aren't ‘allowed’ by the policy.
+event type blocks requests from computers that the policy doesn't ‘allow’.
 
-Legitimate domain controllers must be identified in the event filters. This can be done through one
-of the following methods:
+You must identify legitimate domain controllers in the event filters. Use one of the following
+methods:
 
 - AD Perpetrator filter
 
@@ -41,20 +41,20 @@ of the following methods:
   - Add the Users OU > Domain Controllers group
   - Add any other groups containing domain controllers. It triggers an error message reminding the
     user that only domain controllers should be allowed.
-  - Any domain controller not included in these groups are blocked from syncing/replication
+  - The policy blocks any domain controller not included in these groups from syncing/replication
 
 - Domains/Servers filter
 
   - Use this filter for a static list of domain controllers
   - Add domain controllers to the Exclude list
-  - Any domain controller not excluded is blocked from syncing/replication
+  - The policy blocks any domain controller you don't exclude from syncing/replication
 
 :::warning
 Not allowing ALL domain controllers to sync has negative impacts on Active Directory.
 :::
 
 
-If no filters are applied, saving the policy configuration displays a warning message.
+If you apply no filters, saving the policy configuration displays a warning message.
 
 :::note
 The AD Replication Lockdown event type internally looks for use of the GetNCChanges() API

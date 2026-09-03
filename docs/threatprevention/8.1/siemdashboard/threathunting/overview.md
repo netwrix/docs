@@ -13,16 +13,16 @@ the scope, impact, and root cause of an incident. The Netwrix Threat Hunting App
 in on the actions of specific users, including the files they accessed and changes they made to
 escalate privileges to data resources.
 
-You can integrate Netwrix products with the Netwrix Threat Hunting App for Splunk. Both Threat
-Prevention and Netwrix File Activity Monitor can be configured to monitor Threat Hunting events and
+You can integrate Netwrix products with the Netwrix Threat Hunting App for Splunk. You can configure
+both Threat Prevention and Netwrix File Activity Monitor to monitor Threat Hunting events and
 send the monitored events to Splunk.
 
-- If only Netwrix File Activity Monitor is configured to send events to Splunk, only the cards that
-  show file system activity will display data.
-- If only Threat Prevention is configured to send events to Splunk, all the cards will display data.
+- If you configure only Netwrix File Activity Monitor to send events to Splunk, only the cards that
+  show file system activity display data.
+- If you configure only Threat Prevention to send events to Splunk, all the cards display data.
 
-After installing the Threat Hunting App for Splunk, ensure that the applicable Netwrix products
-have been configured to send events to Splunk.
+After installing the Threat Hunting App for Splunk, ensure that you have configured the applicable
+Netwrix products to send events to Splunk.
 
 ## App Installation in Splunk (Threat Hunting)
 
@@ -31,7 +31,7 @@ from the [Splunkbase](https://splunkbase.splunk.com/). Then follow the
 [Splunk Add-ons](http://docs.splunk.com/Documentation/AddOns/released/Overview/Installingadd-ons)
 guide provided by Splunk to install the app.
 
-The Netwrix Threat Hunting tab will appear in the Splunk web interface.
+The Netwrix Threat Hunting tab appears in the Splunk web interface.
 
 After installing the Netwrix Threat Hunting App for Splunk, configure it to receive data from either
 Threat Prevention or Netwrix File Activity Monitor.
@@ -63,8 +63,8 @@ required for the following:
 **Step 3 –** Select UDP.
 
 **Step 4 –** Click New and add a new data input with port 514. If another Splunk UDP input is
-already using 514, you should be able to safely use another value (515 or higher), as long as it is
-not blocked by the network.
+already using 514, you should be able to safely use another value (515 or higher), as long as the
+network doesn't block it.
 
 **Step 5 –** Click Next.
 
@@ -84,7 +84,7 @@ not blocked by the network.
 **Step 8 –** To test that the configuration is working correctly, check the Search and Reporting app
 inside of the web console for Splunk (search for SFAM or Threat Prevention). There should be logs of
 events that are generated as soon as Splunk starts receiving data. If there are no events, use a
-packet sniffer to ensure that packets are being sent correctly between the two hosts, and diagnose
+packet sniffer to ensure that packets travel correctly between the two hosts, and diagnose
 any possible network issues.
 
 The Netwrix Threat Hunting App will now display activity from either the Activity Monitor data or

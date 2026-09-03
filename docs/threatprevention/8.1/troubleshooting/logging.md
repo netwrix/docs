@@ -58,18 +58,18 @@ topic for additional information.
 
 ## Archived Log Files
 
-A log file is archived when it reaches its size limit, and again each time the component starts. The
+The component archives a log file when it reaches its size limit, and again each time the component starts. The
 archived file keeps the original name with a timestamp appended, in the format
 `_<yyyyMMdd-HHmmss>`. For example, an archived Enterprise Manager log is named:
 
 **SIEnterpriseManager_20260804-153000.log**
 
-Each component keeps up to ten archived files per log. When the eleventh archive is created, the
-oldest one is deleted.
+Each component keeps up to ten archived files per log. When the component creates the eleventh
+archive, it deletes the oldest one.
 
 :::warning
-Archived files were named `SIEnterpriseManager.log.1`, `SIEnterpriseManager.log.2`, and
-so on in versions before 8.1. Update any script or monitoring tool that collects archived logs by
+In versions before 8.1, archived files had names like `SIEnterpriseManager.log.1`,
+`SIEnterpriseManager.log.2`, and so on. Update any script or monitoring tool that collects archived logs by
 matching the `.log.<number>` pattern, because it doesn't match the timestamped names.
 :::
 
@@ -80,8 +80,8 @@ Configuration window in the Administration Console. See the
 [Log Level Configuration Window](/docs/threatprevention/8.1/admin/agents/agents-windows/loglevelconfiguration.md)
 topic for additional information.
 
-A log level set from the Administration Console or through PowerShell is written back to the
-component's `.log.config` file, so the setting survives a service restart.
+Threat Prevention writes a log level set from the Administration Console or through PowerShell back
+to the component's `.log.config` file, so the setting survives a service restart.
 
 ## Edit the Log Configuration File
 
@@ -102,7 +102,7 @@ has `final="true"` so the catch-all rule doesn't write the same entry a second t
 
 **Step 4 –** Save the file.
 
-The change applies immediately. No service or console restart is needed.
+The change applies immediately. You don't need to restart the service or the console.
 
 :::note
 This applies only to the managed components. AD Monitor reads its configuration when it

@@ -24,36 +24,35 @@ There is also a Settings interface for configuring the QRadar SEC token.
 
 ![Active Directory App for QRadar - Top Ribbon](/images/threatprevention/8.1/siemdashboard/qradar/topribbon.webp)
 
-The User Investigation and Host Investigation dashboards only appear when a search is conducted.
-This can be done by clicking a hyperlink in the Perpetrator, Affected Object (when it is a user
+The User Investigation and Host Investigation dashboards only appear when you conduct a search.
+You can do this by clicking a hyperlink in the Perpetrator, Affected Object (when it is a user
 account), Source IP, or Destination IP columns of a table card. Alternatively, enter the complete
 user name or host IP address in the Search box on the right side of the navigation bar.
 
 ## Progress Bar
 
-When a search using a time interval longer than twelve (12) hours is initiated, the database query
-is broken into multiple mini-queries. A progress bar will appear in the bottom left of the screen
-that fills up as each query is completed. The progress bar will automatically reappear if it is
-clicked on.
+When you instigate a search using a time interval longer than twelve (12) hours, the app breaks the
+database query into multiple mini-queries. A progress bar appears in the bottom left of the screen
+and fills up as each query completes. The progress bar automatically reappears if you click it.
 
 ## Table Card Features
 
 Dashboards have several cards with a tabular format. Each of these cards have the following
 features:
 
-- Only five (5) pages of data will be loaded at a time. Applying the Search or Sort features or
-  moving beyond the five ‘loaded’ pages will result in a “Processing” banner being temporarily
-  displayed over the table while the server is directly queried for the necessary data.
+- The card loads only five (5) pages of data at a time. Applying the Search or Sort features or
+  moving beyond the five ‘loaded’ pages temporarily displays a “Processing” banner over the table
+  while the app queries the server directly for the necessary data.
 - Search data entries for all columns (except the Timestamp and Event Count columns) by typing in
   the Search box in the upper-right corner of the card.
 
-  - Any entries with a match will remain in the table while all non-matching entries will be
-    filtered out.
-  - Total number of entries “Showing” will adjust for the filtered total.
+  - Any entries with a match remain in the table while the card filters out all non-matching
+    entries.
+  - The total number of entries “Showing” adjusts for the filtered total.
 
-- Sort can be applied to one column at a time by clicking on the column header you want.
-- Show 10, 25, 100, or All entries in the table. Only visible entries can be exported.
-- Result data visible in the table can be exported from the dashboard:
+- You can apply Sort to one column at a time by clicking on the column header you want.
+- Show 10, 25, 100, or All entries in the table. You can export only visible entries.
+- You can export result data visible in the table from the dashboard:
 
   - Copy – Copy to clipboard to paste to another application
   - CSV – Export to a Comma Separated Value file
@@ -65,4 +64,4 @@ features:
 Dashboards have several cards with a graphical format. Each of these cards have the following
 features:
 
-- Graph parts can be toggled on and off by clicking on individual elements in the legend
+- You can toggle graph parts on and off by clicking on individual elements in the legend

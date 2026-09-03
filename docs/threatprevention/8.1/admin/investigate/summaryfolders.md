@@ -7,7 +7,7 @@ sidebar_position: 20
 # Summary Folders
 
 The EPE Summary and LDAP Summary folders under Investigate in the navigation pane are pre-defined
-reports that show consolidated recent event activity for EPE or LDAP which spans all
+reports that show consolidated recent event activity for EPE or LDAP that spans all
 EPE or LDAP policies. The reports include default groupings that best show the consolidated data.
 
 ![EPE Summary and LDAP Summary folders](/images/threatprevention/8.1/admin/investigate/summaryfolders.webp)

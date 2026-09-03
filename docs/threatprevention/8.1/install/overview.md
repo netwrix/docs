@@ -15,7 +15,7 @@ Active Directory, Exchange, and file systems.
   file servers
 - Threat Prevention EPE Rest Site that third parties can use to integrate with the Enterprise
   Password Enforcer (EPE) solution
-- Netwrix Threat Manager Reporting Module that is installed with a separate installation package
+- Netwrix Threat Manager Reporting Module, which you install with a separate installation package
 
 :::note
 Threat Prevention supports the deployment of remote Administration Console, enabling you
@@ -103,16 +103,16 @@ The following file in the directory: `…\Netwrix\StealthAudit\FSAC`
 **Client Machines**
 
 If you are using Threat Prevention's Enterprise Password Enforcer (EPE) User Feedback module for
-client machines, the following file should be excluded:
+client machines, exclude the following file:
 
 - SI_CredentailProvider.dll
 
-If this file is blocked by antivirus software, the reasons for rejecting a candidate password will
-not be displayed to the end-user, but all EPE rules will be fully enforced.
+If antivirus software blocks this file, the end user doesn't see the reasons for rejecting a
+candidate password, but Threat Prevention still fully enforces all EPE rules.
 
 **Domain Controllers**
 
-- PPE.dll – If PPE.dll doesn't load, the password policy will not get enforced
+- PPE.dll – If PPE.dll doesn't load, Threat Prevention doesn't enforce the password policy
 
 ### Netwrix Password Policy Enforcer (PPE)
 
@@ -120,8 +120,8 @@ If you are using Netwrix Password Policy Enforcer, the following processes may b
 
 **Client Machines**
 
-The following DLLs on the client machines (all computers, mostly end user desktops/laptops) will not
-work if they get blocked by antivirus software:
+The following DLLs on the client machines (all computers, mostly end user desktops/laptops) don't
+work if antivirus software blocks them:
 
 - PPEClt.dll
 - APRClt.dll

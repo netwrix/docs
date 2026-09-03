@@ -6,8 +6,8 @@ sidebar_position: 10
 
 # Load the PowerShell Module
 
-The following steps are provided to load the Threat Prevention PowerShell module. These steps are
-required with each PowerShell session before running the available APIs.
+Use the following steps to load the Threat Prevention PowerShell module. You must complete these
+steps in each PowerShell session before running the available APIs.
 
 :::note
 The following command assumes the Threat Prevention installation directory is in the C drive
@@ -16,17 +16,17 @@ on the server where the PowerShell console resides.
 
 
 **Step 1 –** Run the following command to load the module into PowerShell. The highlighted part of
-the command assumes the default installation directory, but a custom path can be used.
+the command assumes the default installation directory, but you can use a custom path.
 
 Import-Module “C:\Program Files\Netwrix\Netwrix Threat
 Prevention\SIEnterpriseManager\SI.SIMonitor.PowerShell.dll”
 
 **Step 2 –** Connect to the Enterprise Manager using the `Connect-SIEnterpriseManager` command. The
-following parameters may be used:
+following parameters are available:
 
 :::note
-If PowerShell is running on a separate machine to the Enterprise Manager, at least the
-address is required.
+If PowerShell runs on a separate machine from the Enterprise Manager, you must supply at
+least the address.
 :::
 
 

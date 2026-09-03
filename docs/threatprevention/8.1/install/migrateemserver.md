@@ -87,13 +87,13 @@ You will find the SIWindowsAgent.exe.config file at:
 :::
 
 
-**Step 5 –** Once all Agents are displayed in the Administration Console on the new Enterprise
+**Step 5 –** After all Agents appear in the Administration Console on the new Enterprise
 Manager machine, you can decommission the original Enterprise Manager machine and/or uninstall the
 Netwrix Threat Prevention server.
 
 :::note
-If Netwrix Threat Prevention is configured to use customer supplied certificates. It is
-recommended that you uninstall, then re-enroll and re-install all Agents with new certificates. This
+If you configured Netwrix Threat Prevention to use customer supplied certificates, Netwrix
+recommends that you uninstall, then re-enroll and re-install all Agents with new certificates. This
 is because customer supplied certificates usually have the FQDN info of the Enterprise Manager and
 the new Enterprise Manager machine would typically have a different DNS name. See the
 [Create Custom Managed Certificates for Each Agent](/docs/threatprevention/8.1/install/agent/customcert.md) topic for additional

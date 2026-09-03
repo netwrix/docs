@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Policy APIs
 
-Policies are used in Threat Prevention to define the objects and events to be monitored or blocked
+Threat Prevention uses policies to define the objects and events to monitor or block
 in your environment, where to monitor on the network, and when to monitor.
 
 You can use APIs to perform the following functions:
@@ -20,12 +20,12 @@ You can use APIs to perform the following functions:
 
 ## Get Policy
 
-The `Get-SIPolicy` command is used to return a list of policy names, the GUID, and their associated
+Use the `Get-SIPolicy` command to return a list of policy names, the GUID, and their associated
 policy ID numbers.
 
 ## Enable or Disable a Policy
 
-The `Enable-SIPolicy` command is used to enable or disable a policy using the policy ID retrieved in
+Use the `Enable-SIPolicy` command to enable or disable a policy using the policy ID retrieved in
 the `Get-SIPolicy` command. Both the following parameters are required:
 
 - PolicyID [uint32] – Policy ID
@@ -43,7 +43,7 @@ Example of a disable policy command:
 
 ## Delete a Policy
 
-The `Remove-SIPolicy` command is used to delete a policy using the policy ID retrieved in the
+Use the `Remove-SIPolicy` command to delete a policy using the policy ID retrieved in the
 `Get-SIPolicy` command. The following parameter is required:
 
 - PolicyID [uint32] – Policy ID
@@ -72,7 +72,7 @@ The following parameters are required:
 
 - PolicyIDs [String] – List of comma separated policy IDs
 
-Example of multiple policy exports that are displayed in the PowerShell Console:
+Example of multiple policy exports in the PowerShell Console:
 
 **Export-SIPolicy -PolicyIDs "111,222,33,555"**
 
@@ -83,7 +83,7 @@ Example of a single policy export to a file:
 ### Import Policies from an XML File
 
 The `Import-SIPolicy` command imports a policy into the Enterprise Manager from an external XML
-file. This command is used to replace/modify an existing policy or create a new one. The data
+file. Use this command to replace/modify an existing policy or create a new one. The data
 produced by this command is identical in format to that produced by the Administration Console
 import function. See the [Import Window](/docs/threatprevention/8.1/admin/tools/import.md) topic for additional information.
 
@@ -92,13 +92,13 @@ GUIDs in the XML file. One of the following actions occur:
 
 - XML file GUID matches existing policy – Updates the existing policy to match the new XML settings
   and fields
-- XML file GUID doesn't match any existing policies – New policy is created according to the XML
-  parameters. It is created with a system generated GUID and Policy ID; the system discards the GUID
-  and Policy ID from the source XML.
+- XML file GUID doesn't match any existing policies – Threat Prevention creates a new policy
+  according to the XML parameters, with a system generated GUID and Policy ID; the system discards
+  the GUID and Policy ID from the source XML.
 
 :::note
 If an existing policy and a new policy in the pending XML import file share the same
-policy name, an error is displayed and the existing policy remains unchanged.
+policy name, an error displays and the existing policy remains unchanged.
 :::
 
 
@@ -111,8 +111,8 @@ The following parameter is required:
 
 - FileName [String] – Path to file with valid XML content
 
-Policies exported from the [Policies Interface](/docs/threatprevention/8.1/admin/policies/overview.md) have the option to be
-password protected. When importing these policies, the following parameter is required along with
+You can password-protect policies exported from the [Policies Interface](/docs/threatprevention/8.1/admin/policies/overview.md).
+When importing these policies, you must supply the following parameter along with
 the FileName:
 
 - Pwd [String] – Password if importing a policy that was exported from the Administration Console
@@ -122,9 +122,9 @@ Example of adding an import XML file:
 
 **Import-SIPolicy -FileName "c:\Import\ExampleImport2.xml"**
 
-The API returns as output the PolicyID, GUID, and Policy Name of the policy that has been updated or
-created. If a new policy was created, it is up to the user to capture the Policy ID and Policy GUID
-assigned by Threat Prevention to later access that policy.
+The API returns as output the PolicyID, GUID, and Policy Name of the policy it updated or
+created. If it created a new policy, you must capture the Policy ID and Policy GUID that Threat
+Prevention assigned in order to access that policy later.
 
 :::tip
 The Policy ID and Policy GUID aren't the same as those in the source XML file. Use the

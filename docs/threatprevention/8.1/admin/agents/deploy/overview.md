@@ -72,7 +72,7 @@ selected machines. Review the Enterprise Manager IP address/name and port for ac
 the modules you want to install for this Agent. You can also set other properties for the Agent. See
 the [Set Options Window ](/docs/threatprevention/8.1/admin/agents/deploy/setoptions.md)topic for additional information.
 
-**Step 5 –** Once configurations are set, click **Next**.
+**Step 5 –** After you set the configurations, click **Next**.
 
 ![Deploy Agents wizard – Prerequisites Check page](/images/threatprevention/8.1/admin/agents/deploy/prerequisitescheck.webp)
 

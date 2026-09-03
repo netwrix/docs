@@ -6,7 +6,7 @@ sidebar_position: 20
 
 # Upgrade Agent
 
-The Threat Prevention Agent is updated from the Agents interface.
+You update the Threat Prevention Agent from the Agents interface.
 
 :::note
 If you are using an Endpoint Detection and Response (EDR) solution to protect LSASS, you
@@ -18,7 +18,7 @@ must create an exclusion for Threat Prevention using any of these methods:
   topic in the EDR.
 - Add the hash of the individual files in the EDR. In this case, every time you deploy a new Agent
   version, the hashes change and you must update them. If you don't do this before upgrade, the
-  Agent will not be able to hook into LSASS as the executable hash will be different.
+  Agent can't hook into LSASS because the executable hash differs.
 
 In most cases, you only need to white-list the SIWindowsAgent.exe and SI.ActiveDirectoryMonitor.dll
 files.
@@ -45,10 +45,10 @@ orange background.
 The Access Verification window opens.
 
 :::note
-The wizard doesn't block access to the Administration Console and can be minimized while
-actions are in progress. If this wizard is hidden by clicking outside of the dialog box, a flashing
-blue link displays on the upper right corner of the interface with the action name displayed. Click
-the flashing link to bring back the focus to the wizard.
+The wizard doesn't block access to the Administration Console, and you can minimize it while
+actions are in progress. If you hide this wizard by clicking outside of the dialog box, a flashing
+blue link with the action name displays in the upper right corner of the interface. Click
+the flashing link to return the focus to the wizard.
 :::
 
 
@@ -56,11 +56,11 @@ the flashing link to bring back the focus to the wizard.
 
 **Step 5 –** The Access Verification window displays one of the following statuses:
 
-- Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of before the next attempt.
-- Success – If this is displayed as status, click **Next** to begin upgrading the Agent.
+- Failed – Read the failure messages and close the window. Resolve any error messages before the
+  next attempt.
+- Success – If the status displays Success, click **Next** to begin upgrading the Agent.
 - If some but not all items fail, click **Next** to continue the action on those
-  where access verification was successful.
+  where access verification succeeded.
 
 :::note
 Closing the Administration Console while this action is in process causes problems with
@@ -70,13 +70,13 @@ data collection.
 
 ![Upgrade Agent window](/images/threatprevention/8.1/install/upgrade/upgradeagent.webp)
 
-**Step 6 –** On the Upgrade Agent window, the old Agent will be uninstalled and the newer version of
-the Agent installed. One of two status messages display:
+**Step 6 –** On the Upgrade Agent window, Threat Prevention uninstalls the old Agent and installs
+the newer version. One of two status messages display:
 
 - Started – Self-upgrading agent
-- Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of before the next attempt.
+- Failed – Read the failure messages and close the window. Resolve any error messages before the
+  next attempt.
 
-**Step 7 –** When the task is successfully completed, click **Finish** to close the window.
+**Step 7 –** When the task completes successfully, click **Finish** to close the window.
 
-The Agent's status is displayed as Active.
+The Agent's status displays as Active.

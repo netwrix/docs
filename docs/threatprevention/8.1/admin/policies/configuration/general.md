@@ -62,11 +62,11 @@ Set the schedule in the weekly calendar at the bottom of the schedule section.
 
 ![Schedule section in a policy set to Always Active](/images/threatprevention/8.1/admin/policies/schedule.webp)
 
-When the schedule is set to Always Active, the weekly calendar is grayed-out.
+When you set the schedule to Always Active, the weekly calendar is grayed-out.
 
 ![Schedule section in a policy set to Active at Specific Times](/images/threatprevention/8.1/admin/policies/schedulespecifictimes.webp)
 
-When the schedule is set to Active at Specified Times, the weekly calendar is enabled. Each block of
+When you set the schedule to Active at Specified Times, the weekly calendar is enabled. Each block of
 time on the calendar represents a 30-minute period.
 
 - Blue blocks – Active times for the enabled policy

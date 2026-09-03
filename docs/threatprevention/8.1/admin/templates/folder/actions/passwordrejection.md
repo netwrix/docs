@@ -7,11 +7,11 @@ sidebar_position: 50
 # Password Rejection Custom Script
 
 The following C# script sends an email notification to the specified perpetrator when their Active
-Directory password is rejected by the active
+Directory password fails the active
 [Password Rules Filter](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/passwordenforcement/passwordenforcement.md#password-rules-filter)
 criteria.
 
-The following environmental variables must be added to the script before execution:
+You must add the following environmental variables to the script before execution:
 
 - SMTPHOST – Name of the organization’s SMTP server
 - SMTPPORT – Port used by the organization’s SMTP server

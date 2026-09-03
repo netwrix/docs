@@ -22,7 +22,7 @@ You can use the Boomerang plugin for the Chrome browser to work with the EPE Res
 ## Supported Languages
 
 The EPE Rest Site offers multi-language support, ensuring users receive clear and consistent
-messages when a candidate password is rejected. Supported languages are:
+messages when Threat Prevention rejects a candidate password. Supported languages are:
 
 - Chinese Simplified
 - Chinese Traditional

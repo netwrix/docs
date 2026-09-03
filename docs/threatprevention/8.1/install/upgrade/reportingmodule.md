@@ -21,13 +21,12 @@ Threat Manager Reporting v2.8 used PostgreSQL v14.8.x while v3.0 uses PostgreSQL
 
 To upgrade from PostgreSQL 14.8.x to 14.13.x:
 
-**Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window is
-displayed.
+**Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window opens.
 
 ![Netwrix Threat Manager Setup window](/images/threatprevention/8.1/install/upgrade/tm3installation.webp)
 
-**Step 2 –** Click **PostgreSQL Setup** to upgrade the PostgreSQL version. The following message is
-displayed, indicating the installed version:
+**Step 2 –** Click **PostgreSQL Setup** to upgrade the PostgreSQL version. The following message
+displays, indicating the installed version:
 
 ![Threat Manager Reporting - Upgrade DB Confirmation dialog box](/images/threatprevention/8.1/install/upgrade/upgradedbprompt.webp)
 
@@ -45,19 +44,18 @@ checkbox. Click Next.
 **Step 6 –** The installation begins and the installer displays a Setup Progress window. Click Exit
 when the installation is successful to close the wizard.
 
-PostgreSQL has been upgraded.
+You have now upgraded PostgreSQL.
 
 ## Upgrade Threat Manager Reporting from 2.8 to 3.0
 
 To upgrade from Threat Manager Reporting 2.8 to 3.0:
 
-**Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window is
-displayed.
+**Step 1 –** Run `Netwrix_Setup.exe` as an administrator. The Netwrix Setup Launcher window opens.
 
 ![Netwrix Threat Manager Setup window](/images/threatprevention/8.1/install/upgrade/tm3installation.webp)
 
 **Step 2 –** Click **Netwrix Threat Manager Setup** to upgrade to version 3.0 of the Netwrix Threat
-Manager Reporting Module. The following message is displayed:
+Manager Reporting Module. The following message displays:
 
 ![Threat Manager Reporting - Upgrade Application Confirmation dialog box](/images/threatprevention/8.1/install/upgrade/upgradeappprompt.webp)
 
@@ -69,5 +67,5 @@ Manager Reporting Module. The following message is displayed:
 [Install the Netwrix Threat Manager Reporting Module](/docs/threatprevention/8.1/install/reportingmodule/application.md) topic,
 starting at Step 2.
 
-Threat Manager Reporting is upgraded from 2.8 to 3.0. Remember to clear your web browser's cache
-after the upgrade.
+You have now upgraded Threat Manager Reporting from 2.8 to 3.0. Remember to clear your web browser's
+cache after the upgrade.

@@ -31,12 +31,12 @@ health details.
 
 The Settings tab has the following configurable settings:
 
-- Time to Retain Reports – Time period to retain reports. Reports with a created date older than the
-  retain time will be removed at this interval. By default, this is set to 1 Month. Use the
+- Time to Retain Reports – Time period to retain reports. The job removes reports with a created
+  date older than the retain time at this interval. By default, this is set to 1 Month. Use the
   dropdown menu to select another interval, which includes 1 Day, 1 Week, 1 Month, 3 Months, and 6
   Months as options.
 - Time Interval to Run Report Cleanup – The interval to run the Report Cleanup job. At the interval
-  specified, any reports older than the retention period will be cleaned up. By default, this is set
+  specified, the job cleans up any reports older than the retention period. By default, this is set
   to 1 Day. Use the dropdown menu to select another interval, which includes 1 Day, 1 Week, and 1
   Month as options.
 - Time During the day to run the Cleanup – The time during the day to run the Cleanup script,
@@ -49,5 +49,5 @@ The Health tab displays the following information:
 
 ![Health tab of the Report Maintenance job details page](/images/threatprevention/8.1/reportingmodule/configuration/systemsettings/reporthealth.webp)
 
-- Size of Reports Directory – Displays the size of the directory where reports are stored
+- Size of Reports Directory – Displays the size of the directory where the application stores reports
 - Next Run Time – Date timestamp for the next time the job will run

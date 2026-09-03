@@ -11,13 +11,13 @@ to detect, block, and alert on unauthorized or high-risk activity within Active 
 environments - without relying on native Windows logging mechanisms. It captures and inspects all
 authentication, access, and modification activity at the domain controller level, providing full
 visibility into changes across individual Active Directory objects, attributes, group memberships,
-and Group Policy Objects (GPOs). All actions are recorded in a detailed audit trail that includes
-pre- and post-change values with actor context.
+and Group Policy Objects (GPOs). Threat Prevention records all actions in a detailed audit trail
+that includes pre- and post-change values with actor context.
 
 Key aspects of the Active Directory solution are:
 
 - Proactive Enforcement - Blocks unauthorized or policy-violating changes (for example, group
-  membership or GPO edits) before they are applied, strengthening native Active Directory controls
+  membership or GPO edits) before they take effect, strengthening native Active Directory controls
 - Real-Time Authentication Monitoring - Captures and logs all authentication requests, including
   Kerberos and NTLM logons, providing visibility into authentication events across the environment
 - Granular Change Monitoring - Provides detailed monitoring of all changes within Active Directory,

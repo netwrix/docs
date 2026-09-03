@@ -52,8 +52,8 @@ Threat Prevention offers the following pre-defined solutions for protecting your
 - LDAP Monitoring
 
   - Includes both Monitoring and Lockdown for LDAP events
-  - Includes Monitoring of user connections made to LDAP (Bind), which occur before queries are
-    submitted to LDAP
+  - Includes Monitoring of user connections made to LDAP (Bind), which occur before clients submit
+    queries to LDAP
 
 In the Administration Console, all solutions use the same base software. The difference is in the
 Policy Event Types available for use with different solutions.

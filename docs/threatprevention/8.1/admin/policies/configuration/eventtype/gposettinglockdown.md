@@ -23,7 +23,7 @@ The event filters for the GPO Setting Lockdown event type are:
 Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
-If setting a filter to “Exclude” a domain from this blocking policy, this setting overrides any
+If you set a filter to “Exclude” a domain from this blocking policy, that setting overrides any
 ”Block” user filters. This means that to block a user, you must not “Exclude” the domain
 where that user resides.
 

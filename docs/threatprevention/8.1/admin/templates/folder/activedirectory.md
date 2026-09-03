@@ -46,8 +46,8 @@ following templates:
 **Lockdown Folder**
 
 :::warning
-Use cation with _all Lockdown/Blocking Templates_! Blank filters result in _everything_
-being locked down or blocked.
+Use caution with _all Lockdown/Blocking Templates_. Blank filters lock down or block
+_everything_.
 :::
 
 

@@ -12,5 +12,5 @@ on a data row, displays a pivot view of the data.
 ![Event Viewer Window](/images/threatprevention/8.1/admin/policies/recentevents/eventviewer.webp)
 
 The Event Viewer window displays the details for one event at a time, and only includes those
-columns visible within the data grid. The arrow buttons at the bottom of the window allow for
-navigation through the events displayed in the data grid.
+columns visible within the data grid. Use the arrow buttons at the bottom of the window to navigate
+through the events displayed in the data grid.

@@ -32,18 +32,18 @@ The columns are (left to right):
 
 **Policies Node**
 
-Under the Policies node in the Navigation pane, folders are used to organize the policies. Folders
-can be created at the top level or as sub-folders. Threat Prevention supports unlimited levels for
+Under the Policies node in the Navigation pane, folders organize the policies. You can create
+folders at the top level or as sub-folders. Threat Prevention supports unlimited levels for
 organizing policies. A user with administrator rights can apply protection on a folder node. See the
 [Data Protection](/docs/threatprevention/8.1/admin/policies/dataprotection.md) topic for additional information.
 
 - Click a policy to open it and view its configuration and recent event data.
-- Use drag-and-drop to move policies from one folder to another, unless restricted by policy
-  protections.
-- Templates can also be dragged from a template folder and dropped into a policy folder, which
+- Use drag-and-drop to move policies from one folder to another, unless policy protections restrict
+  it.
+- You can also drag a template from a template folder and drop it into a policy folder, which
   copies the template into a policy. See the [Templates Interface](/docs/threatprevention/8.1/admin/templates/overview.md) topic
   for additional information.
-- An enabled policy is identified within the Navigation pane by the green dot over the policy icon.
+- The green dot over the policy icon identifies an enabled policy in the Navigation pane.
 
 ![Enabled and Disabled Policies in the Navogation pane](/images/threatprevention/8.1/admin/policies/enableddisabledpolicies.webp)
 

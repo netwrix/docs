@@ -8,7 +8,7 @@ sidebar_position: 30
 
 The Active Directory Read Monitoring event type reports on a user's accessing or reading specific
 security-related Active Directory attributes. Active Directory processes a high volume of 'Read'
-requests. This event type isn't designed to capture all or a majority of the 'Read' activity.
+requests. This event type doesn't capture all or a majority of the 'Read' activity.
 
 The event filters for the Active Directory Read Monitoring event type are:
 

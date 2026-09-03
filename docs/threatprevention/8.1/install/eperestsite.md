@@ -59,9 +59,9 @@ you can choose to select or deselect a component for installation.
 As you have to install the EPE Rest Site only, deselect the Enterprise Manager and Administration
 Console components.
 
-**Step 5 –** On selecting the EPE Rest Site option, the page displays the location where the EPE
-Rest Site will be installed. By default, the Threat Prevention infrastructure components are
-installed to the `C:\Program Files\Netwrix\Netwrix Threat Prevention\` directory.
+**Step 5 –** When you select the EPE Rest Site option, the page displays the location where the
+wizard installs the EPE Rest Site. By default, the wizard installs the Threat Prevention
+infrastructure components to the `C:\Program Files\Netwrix\Netwrix Threat Prevention\` directory.
 
 _(Optional)_ Click **Browse…** to change the installation location. The Change destination folder
 page opens.
@@ -83,11 +83,11 @@ to communicate with the other Threat Prevention components.
 - Enterprise Manager port for Console and PowerShell API Communications – 3740
 
 Checking the **Create Windows Firewall Rules** box automatically sets the Windows firewall rules
-needed to open these ports on the server during the installation process. If using a third party
+needed to open these ports on the server during the installation process. If you use a third party
 firewall, uncheck this option and manually create the necessary firewall rules. See the
 [Firewall Ports](/docs/threatprevention/8.1/requirements/ports.md) topic for additional information.
 
-When the settings are configured, click **Next**.
+After you configure the settings, click **Next**.
 
 ![Netwrix Threat Prevention EPE Rest Setup wizard - Database Login Information page](/images/threatprevention/8.1/install/database.webp)
 
@@ -100,8 +100,8 @@ the installer will create a database for the EPE Rest Site.
 - Select the **Windows authentication** or **SQL Server Credentials** option button (for SQL Server
   authentication) and enter the credentials:
 
-  - Windows authentication uses the credentials provided on the Logon page, which is displayed if
-    this option is selected.
+  - Windows authentication uses the credentials provided on the Logon page, which appears if you
+    select this option.
   - For SQL Server authentication, provide SQL credentials in the **Login ID** and **Password**
     boxes.
 
@@ -121,7 +121,7 @@ the installer will create a database for the EPE Rest Site.
   - If using SQL Server authentication, skip the next step.
 
     :::note
-    In case of SQL Server authentication, the credentials are tested on clicking
+    For SQL Server authentication, the wizard tests the credentials when you click
     **Next**. If the credential authentication fails, the setup doesn't proceed and a pop-up
     window displays failure details.
     :::
@@ -129,15 +129,15 @@ the installer will create a database for the EPE Rest Site.
 
 ![Netwrix Threat Prevention EPE Rest Setup wizard - Logon page](/images/threatprevention/8.1/install/windowsauthentication.webp)
 
-**Step 8 –** If Windows authentication is selected, the Logon page is displayed.
+**Step 8 –** If you select Windows authentication, the Logon page opens.
 
-- Provide the username (Domain\User format) and password. The EPE Rest website would run under this
-  account and the credentials will also be used to connect to the EPE Rest Site database. These
+- Provide the username (Domain\User format) and password. The EPE Rest website runs under this
+  account, and it also uses these credentials to connect to the EPE Rest Site database. These
   credentials must have elevated privileges with rights to create and modify the database.
 - Click **Next**.
 
   :::note
-  For Windows authentication,the credentials are tested on clicking **Next**. If the
+  For Windows authentication, the wizard tests the credentials when you click **Next**. If the
   credential authentication fails, the setup doesn't proceed and a pop-up window displays failure
   details.
   :::
@@ -146,7 +146,7 @@ the installer will create a database for the EPE Rest Site.
 ![Threat Prevention Server Setup wizard - Ready to Install page](/images/threatprevention/8.1/install/readytoinstall.webp)
 
 **Step 9 –** On the Ready to Install Netwrix Threat Prevention Server page, click **Install**. When
-finished, the Completed the Netwrix Threat Prevention Server Setup Wizard page is displayed.
+it finishes, the Completed the Netwrix Threat Prevention Server Setup Wizard page opens.
 
 ![Threat Prevention Server Setup wizard – Completed page](/images/threatprevention/8.1/install/complete.webp)
 

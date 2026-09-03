@@ -61,7 +61,7 @@ Ensure that you have configured the archive database settings and that the archi
 at least once.
 
 **Step 2 –** Click the **Configure Archive DB Maintenance** button. The Archive DB Maintenance
-window is displayed.
+window opens.
 
 ![Archive DB Maintenance window](/images/threatprevention/8.1/admin/configuration/databasemaintenance/archivedbmaintenance.webp)
 

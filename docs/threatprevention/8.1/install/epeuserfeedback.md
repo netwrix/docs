@@ -59,7 +59,7 @@ SICredentialProviderx64 or x32.
 
 The _Enterprise Password Enforcer_ GPO contains static text that the EPE User Feedback module
 displays on the login screen. Typically the Threat Prevention administrator edits this text to
-describe password policy rules and guide end users before they type a new password.
+describe password policy rules and guide end users before they enter a new password.
 
 Edit the Enterprise Password Enforcer GPO to modify the text displayed to the end-users. You can
 change up to ten lines of text.

@@ -13,9 +13,9 @@ filter values.
 
 ## Select an Agent
 
-On several Select… windows, you must select a server where the Agent has been deployed, as these
-windows present live information provided by the Agent. If no Agent is found, the window doesn't
-open.
+On several Select… windows, you must select a server where you deployed the Agent, as these
+windows present live information the Agent provides. If Threat Prevention finds no Agent, the window
+doesn't open.
 
 ![Selection Window - Connect to Agent/Server option](/images/threatprevention/8.1/admin/policies/eventtype/window/selectagent.webp)
 
@@ -24,7 +24,7 @@ solution related policies:
 
 - Active Directory – Select any Agent on any domain controller within the domain of interest
 - Exchange – Select any Agent on any Exchange server
-- Windows File System – Select the Agent on the target machine where the files to be monitored
+- Windows File System – Select the Agent on the target machine where the files you want to monitor
   reside
 - NAS File System – Select the Agent on the Windows server acting as a proxy server for NAS activity
 
@@ -39,7 +39,7 @@ Select a server/Agent from the dropdown menu and click **Connect**.
   with the available items.
 - Check the items you want in the Results pane on the right and click **OK**.
 
-The selections are displayed in the appropriate box of the filter tab from where you opened the
+The selections appear in the appropriate box of the filter tab from where you opened the
 Select… window.
 
 ## Search Mode
@@ -68,5 +68,5 @@ Select a server/Agent from the dropdown menu and click **Connect**.
   objects for this filter that match the search are visible but grayed-out.
 - Check the items you want in the Results pane on the right and click **OK**.
 
-The selections are displayed in the appropriate box of the filter tab from where you opened the
+The selections appear in the appropriate box of the filter tab from where you opened the
 Select… window.

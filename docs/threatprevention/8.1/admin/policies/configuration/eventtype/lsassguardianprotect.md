@@ -8,9 +8,9 @@ sidebar_position: 200
 
 Based on policy rules, the Process – Protect event type can prevent processes not ‘white
 listed’ from accessing LSASS or any other custom process by preventing the Write, Read,
-Create Thread, Suspend/Resume, Terminate, and/or Create Process operations. An event
-is generated for each prevented access attempt with details about the process and as it’s attempted
-versus actual access allowed.
+Create Thread, Suspend/Resume, Terminate, and/or Create Process operations. Threat Prevention
+generates an event for each prevented access attempt with details about the process and the
+attempted versus actual access allowed.
 
 The event filters for the Process Guardian – Protect event type are:
 
@@ -198,8 +198,8 @@ maliciously impact target process.
 
 ![openprocessflagsmonitoring](/images/threatprevention/8.1/admin/policies/eventtype/openprocessflagsmonitoring.webp)
 
-Check the box to select the process flags to be removed from the target process handle that is returned to
-the requesting process.
+Check the box to select the process flags to remove from the target process handle that Threat
+Prevention returns to the requesting process.
 
 
 - PROCESS_VM_WRITE – Select this checkbox to write to memory in a process
@@ -215,7 +215,6 @@ the requesting process.
 
 :::note
 Process Guardian Protect doesn't fully block an operation like other lockdown policies. It
-allows the handle request to complete, but the handle returned will have the specified flags
-removed.
+allows the handle request to complete, but removes the specified flags from the returned handle.
 
 :::

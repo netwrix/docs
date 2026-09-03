@@ -14,5 +14,5 @@ into the following major components:
 - [Event Type Tab](/docs/threatprevention/8.1/admin/templates/configuration/eventtype.md)
 - [Actions Tab](/docs/threatprevention/8.1/admin/templates/configuration/actions.md) (Event Consumers)
 
-Each major component has its own tabbed view. A policy requires at least the General tab and Event
-Type tab to be configured before it properly functions. The Actions tab is optional.
+Each major component has its own tabbed view. You must configure at least the General tab and Event
+Type tab before a policy functions properly. The Actions tab is optional.

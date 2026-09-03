@@ -30,7 +30,7 @@ and retention period for multiple tasks, use the **ctrl-left click** command.
 
 **Step 3 –** Select either **Move** or **Delete** from the Operation dropdown menu.
 
-- The Move operation requires the Archive DB tab to be configured. See the
+- The Move operation requires you to configure the Archive DB tab. See the
   [Archive Data](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/archive.md) topic for additional information.
 
 **Step 4 –** Set the Retention Period value and unit (Day, Week, or Month). This value indicates the

@@ -21,13 +21,13 @@ You can use APIs to perform the following functions:
 
 ## Get Collection
 
-The `Get-SICollection` command is used to return a Threat Prevention collection. Collections are
-managed on the [Collection Manager Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/overview.md) and
-are used in specific policy filters, where different filters support different types of collections.
+Use the `Get-SICollection` command to return a Threat Prevention collection. You manage collections
+on the [Collection Manager Window](/docs/threatprevention/8.1/admin/configuration/collectionmanager/overview.md) and
+use them in specific policy filters, where different filters support different types of collections.
 
 ## Remove a Collection
 
-The `Remove-SICollection` command is used to delete a collection using the collection ID retrieved
+Use the `Remove-SICollection` command to delete a collection using the collection ID retrieved
 in the `Get-SICollection` command. The following parameter is required:
 
 - CollectionID
@@ -56,7 +56,7 @@ The following parameters are required:
 
 - CollectionIDs [String] – List of comma separated Collection IDs
 
-Example of multiple collection exports that are displayed in the PowerShell Console:
+Example of multiple collection exports in the PowerShell Console:
 
 **Export-SICollection –CollectionIDs “222,131,44”**
 
@@ -67,7 +67,7 @@ Example of a single collection export to a file:
 ### Import Collections from an XML File
 
 The `Import-SICollection` command imports a collection into the Enterprise Manager from an external
-XML file. This command is used to replace/modify an existing collection or create a new one. The
+XML file. Use this command to replace/modify an existing collection or create a new one. The
 data produced by this command is identical to that produced by the Administration Console import
 function. See the [Import Window](/docs/threatprevention/8.1/admin/tools/import.md) topic for additional information.
 
@@ -76,13 +76,13 @@ against the GUIDs in the XML file. One of the following actions occur:
 
 - XML file GUID matches existing collection – Updates the existing collection to match the new XML
   settings and fields
-- XML file GUID doesn't match any existing collections – New collection is created according to the
-  XML parameters. It is created with a Threat Prevention system generated GUID and Collection ID;
+- XML file GUID doesn't match any existing collections – Threat Prevention creates a new collection
+  according to the XML parameters, with a system generated GUID and Collection ID;
   the system discards the GUID and Collection ID from the source XML.
 
 :::note
 If an existing collection and a new collection in the pending XML import file share the
-same collection name, an error is displayed and the existing collection remains unchanged.
+same collection name, an error displays and the existing collection remains unchanged.
 :::
 
 
@@ -99,10 +99,9 @@ Example of adding an import XML file:
 
 **Import-SICollection –FileName “c:\Import\ExampleImport2.xml”**
 
-The API returns as output the CollectionID, GUID, and Collection Name of the collection that has
-been updated or created. If a new collection was created, it is up to the user to capture the
-Collection ID and Collection GUID assigned by Threat Prevention to later access that
-collection.
+The API returns as output the CollectionID, GUID, and Collection Name of the collection it updated
+or created. If it created a new collection, you must capture the Collection ID and Collection GUID
+that Threat Prevention assigned in order to access that collection later.
 
 :::tip
 The Collection ID and Collection GUID aren't the same as those in the source XML file.

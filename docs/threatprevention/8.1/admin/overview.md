@@ -36,8 +36,7 @@ activity on a network:
 **Threat Prevention Enterprise Manager**
 
 The Threat Prevention Enterprise Manager stores and maintains policies and policy templates, as well
-as receives and processes all captured events. Only one Enterprise Manager is needed for any
-environment.
+as receives and processes all captured events. Any environment needs only one Enterprise Manager.
 
 **Threat Prevention Administration Console**
 
@@ -127,9 +126,9 @@ Some settings in a policy template are necessarily generic. For example, you may
 filters associated with a template's event types to refer to a particular local domain,
 container, or group.
 
-There are usually no actions associated with a policy template because these are typically
-customized for a particular installation, e.g. the name of a text file, the connection information
-for a local SMTP server, etc.
+There are usually no actions associated with a policy template because you typically
+customize them for a particular installation, e.g. the name of a text file, the connection
+information for a local SMTP server, etc.
 
 See the [Pre-Created Templates](/docs/threatprevention/8.1/admin/templates/folder/overview.md) and
 [Template Configuration](/docs/threatprevention/8.1/admin/templates/configuration/configuration.md) topics for additional information.

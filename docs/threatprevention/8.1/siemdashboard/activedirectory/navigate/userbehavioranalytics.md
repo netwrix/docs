@@ -23,4 +23,4 @@ The User Behavior Analytics dashboard contains the following cards:
 - User Behavior Anomalies Details – Tabular format of all events associated with the potential user
   behavior anomalies over the specified time interval
 
-The specified timeframe is set by default to the last 24 hours, or past day.
+The specified timeframe defaults to the last 24 hours, or past day.

@@ -6,13 +6,13 @@ sidebar_position: 10
 
 # Application Server Requirements
 
-This topic lists the requirements for the Threat Prevention server, where Enterprise Manager has to
-be installed.
+This topic lists the requirements for the Threat Prevention server, where you must install
+Enterprise Manager.
 
 **Windows Server Requirements**
 
-The Windows Server can be physical or virtual. The following Windows Server operating systems are
-supported:
+The Windows Server can be physical or virtual. Threat Prevention supports the following Windows
+Server operating systems:
 
 - Windows Server 2025
 - Windows Server 2022
@@ -26,7 +26,7 @@ Additionally the server must meet these requirements:
 
 **RAM, CPU, and Disk Space**
 
-These depend on the size of the target environment and whether Analytics will be used.
+These depend on the size of the target environment and whether you use Analytics.
 
 | Environment | Large with Analytics           | Large without Analytics        | Small with Analytics        | Small without Analytics     |
 | ----------- | ------- | ------------- | ------------- | --------- |
@@ -52,8 +52,8 @@ The disk space calculation formula is: Enterprise Manager GBs + 2(RAM size):
 
 **Additional Enterprise Password Enforcement Solution Requirements**
 
-The Have I Been Pwnd (HIBP) database, which is an optional feature of the Enterprise Password
-Enforcement solution, is deployed on the server where the Enterprise Manager resides. It requires:
+You deploy the Have I Been Pwnd (HIBP) database, an optional feature of the Enterprise Password
+Enforcement solution, on the server where the Enterprise Manager resides. It requires:
 
 - Additional 66 GB of disk space to deploy
 
@@ -82,7 +82,7 @@ The following are recommended for the Administration Console server:
 
 **Permissions for Installation and Application Use**
 
-The following permissions are required to install and use the application:
+You need the following permissions to install and use the application:
 
 - Membership in the local Administrators group
 

@@ -7,7 +7,7 @@ sidebar_position: 50
 # Folder Settings Page
 
 Use the Folder Settings page within the Integrations interface to designate the
-Investigation exports folder location. Additionally, a shared folder can be provided for
+Investigation exports folder location. Additionally, you can provide a shared folder for
 subscription purposes.
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
@@ -17,26 +17,27 @@ Click **Folder Settings** in the navigation pane.
 
 ![Integrations interface on the Folder Settings page](/images/threatprevention/8.1/reportingmodule/configuration/integrations/page_4.webp)
 
-By default, Investigation exports are placed in the Downloads folder of the logged in user, on the
-machine where that user is accessing the application. When a Local Folder path is designated, all
-Investigation exports are also stored in the specified folder on the application server.
+By default, the application places Investigation exports in the Downloads folder of the logged in
+user, on the machine where that user is accessing the application. When you designate a Local Folder
+path, the application also stores all Investigation exports in the specified folder on the
+application server.
 
-When shared folders are added, they are displayed in a table at bottom of the page.
+When you add shared folders, they appear in a table at the bottom of the page.
 
 ![Shared Folder table on the Folders Settings page](/images/threatprevention/8.1/reportingmodule/configuration/integrations/sharedfoldertable.webp)
 
 The Shared Folders table has the following columns:
 
 - Display Name – The name of the shared folder as displayed in the application
-- Path to the Shared folder – The path to the shared folder where subscription reports are stored
+- Path to the Shared folder – The path to the shared folder where the application stores subscription reports
 - Credential Profile – Name of the Credential Profile
 - Access – The users that can save their subscription exports to the shared folder
-- Last Time tested – Date timestamp when the shared folder was tested to ensure it is configured
-  correctly
+- Last Time tested – Date timestamp when the application last tested the shared folder to ensure
+  correct configuration
 
 **Additional Options**
 
-When you hover over a row within the Shared Folders table, three additional options are displayed:
+When you hover over a row within the Shared Folders table, three additional options appear:
 
 ![Shared Folder table on the Folders Settings page showing additional options](/images/threatprevention/8.1/reportingmodule/configuration/integrations/additionaloptions.webp)
 
@@ -58,10 +59,10 @@ menu. Then select **Integrations** to open the Integrations interface.
 **Step 3 –** In the Path field, enter a valid folder path on the server where the application is
 installed. For example, C:\Reports.
 
-**Step 4 –** The Save button is enabled when any settings are modified. Click it to commit the
+**Step 4 –** The Save button is enabled when you modify any settings. Click it to commit the
 changes before leaving the page.
 
-Investigation exports will now be saved to the designated local folder on the application server.
+The application now saves Investigation exports to the designated local folder on the application server.
 
 ## Add a Shared Folder
 
@@ -98,4 +99,4 @@ menu. Then select **Integrations** to open the Integrations interface.
 
 **Step 5 –** Click **Add**. The Add New Shared Folder window closes.
 
-The specified shared folder has been configured for subscription exports.
+You have now configured the specified shared folder for subscription exports.

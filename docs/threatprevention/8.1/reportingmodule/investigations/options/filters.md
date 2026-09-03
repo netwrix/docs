@@ -7,13 +7,13 @@ sidebar_position: 10
 # Filters Section
 
 The Filters section provides options to build a filter statement by selecting the Attribute,
-Operator, and Filter value. A time period for the report data is also configured here. If multiple
-data sources have been configured, there is also a Source dropdown menu.. Filter statements can be
+Operator, and Filter value. You also configure a time period for the report data here. If you
+configured multiple data sources, there is also a Source dropdown menu. Filter statements can be
 simple with one value statement or complex with multiple value statements.
 
 Click **Investigate** in the application header bar to open the Investigations interface. Then
 create a new investigation or click a folder in the navigation pane to access a saved investigation.
-An investigation is located in the folder where it was saved.
+An investigation is located in the folder where you saved it.
 
 ![Filters section of an investigation](/images/threatprevention/8.1/reportingmodule/investigations/options/filters.webp)
 
@@ -26,13 +26,13 @@ The following options are available for configuring a filter statement:
   [Netwrix Integrations Page](/docs/threatprevention/8.1/reportingmodule/configuration/integrations/netwrixintegrations.md) topic for
   additional information.
 - Timeframe – This menu provides several timeframe options as well as a clock and a calendar for
-  setting a custom range. You must set the timeframe for the data to be returned in the report. If
+  setting a custom range. You must set the timeframe for the data the report returns. If
   your report is blank, it is likely due to the timeframe setting. See the Timeframe topic for
   additional information.
 - Attribute – This menu provides a list of attributes that are available on events in the data
   source. See the Filter Attribute Menu topic for additional information.
-- Operator – This menu controls how the rule is evaluated by specifying the comparison between the
-  Attribute and the Filter value. Options vary based on the selected attribute. See the Filter
+- Operator – This menu controls how the application evaluates the rule by specifying the comparison
+  between the Attribute and the Filter value. Options vary based on the selected attribute. See the Filter
   Operator Menu topic for additional information.
 - Filter – Use it to specify the value to evaluate using the operator for the selected attribute
 - Add – This appears in a new row of the Filter table, in the Attribute column. Clicking it opens
@@ -45,7 +45,7 @@ See the Build a Filter Statement topic for additional information.
 
 You must set a timeframe for an investigation query. When you run a query, the application scans the
 available data for activity events that match the set filters for the specified timeframe. By
-default, the timeframe is set for the "Last Hour" of activity.
+default, the timeframe covers the "Last Hour" of activity.
 
 ![Investigations Interface showing the Timeframe dropdown menu](/images/threatprevention/8.1/reportingmodule/investigations/options/timeframe.webp)
 
@@ -67,8 +67,8 @@ clock and a calendar for setting a custom range:
   section
 
 :::note
-The timeframe property is saved with the investigation filters. However, it can be
-modified to run a query ad hoc with the same filter statement but a different timeframe.
+The application saves the timeframe property with the investigation filters. However, you can
+modify it to run a query ad hoc with the same filter statement but a different timeframe.
 :::
 
 
@@ -106,12 +106,12 @@ The Attribute menu in the Filters sectionhas the following options grouped by th
 
 - Event (grayed-out category group header in the menu):
 
-  - Affected Object – The name of the object in Active Directory that was affected by the event
+  - Affected Object – The name of the object in Active Directory that the event affected
   - Attribute – The attribute of the Active Directory object affected by the event
   - Attribute New Value – The attribute value of the Active Directory object after the activity
   - Attribute Old Value – The attribute value of the Active Directory object before the activity
-  - Blocked – Indicates whether the operation was prevented by a security measure, such as a
-    Netwrix agent
+  - Blocked – Indicates whether a security measure, such as a Netwrix agent, prevented the
+    operation
   - Client – The device, IP address, or host that initiated the event
   - Client Type – The type of client initiating the event, such as host, IP address, or device
   - Domain – Active Directory domain where the event occurred
@@ -121,7 +121,7 @@ The Attribute menu in the Filters sectionhas the following options grouped by th
   - Event Type – The nature or source of the event data, indicating where or how the event
     originated
   - Perpetrator – The user or service account that initiated the event
-  - Success – Indicates whether the action associated with the event was successfully completed
+  - Success – Indicates whether the action associated with the event completed successfully
   - Tag (Direct) – A label or classification directly applied to the object or event
   - Tag (Effective) – A label or classification that applies to an object due to inheritance from
     a group or policy. For example, if a group has a tag, all its members will inherit that tag
@@ -131,7 +131,7 @@ The Attribute menu in the Filters sectionhas the following options grouped by th
 - Active Directory (grayed-out category group header in the menu):
 
   - Affected Object Distinguished Name – The full path and name of the object in Active Directory
-    that was affected by the event
+    that the event affected
   - Certificate Thumbprint – The unique identifier of a certificate used in the event, typically
     represented as a hexadecimal string
   - Encryption Type – The method or algorithm used to encrypt data during the event (e.g., AES,
@@ -182,22 +182,22 @@ the steps to build a filter statement.
 
 ![filtersimple](/images/threatprevention/8.1/reportingmodule/investigations/options/filtersimple.webp)
 
-**Step 2 –** If multiple data sources are configure, select a source from the **Source** dropdown
+**Step 2 –** If you configured multiple data sources, select a source from the **Source** dropdown
 menu.
 
-**Step 3 –** Set the timeframe for the event data to be returned in the report.
+**Step 3 –** Set the timeframe for the event data the report returns.
 
 **Step 4 –** Select an attribute from the Attribute dropdown menu.
 
 **Step 5 –** Select an operator from the Operator dropdown menu.
 
-**Step 6 –** Enter a value in the Filter box. Possible values available from the events will
-populate in a dropdown menu as you type. Select the value you want from the dropdown menu. If the
+**Step 6 –** Enter a value in the Filter box. Possible values available from the events populate a
+dropdown menu as you type. Select the value you want from the dropdown menu. If the
 value you type isn't available in the dropdown menu, use the Add button to add it to the Filter
 box.
 
 :::note
-Adding additional values in the same Filter box will add an OR statement for the
+Adding additional values in the same Filter box adds an OR statement for the
 attribute. For example:
 :::
 
@@ -210,7 +210,7 @@ attribute. For example:
 - Then the query will return activity for nwxtech\ad.bruce.wayne OR nwxtech\ad.robin.locksley
 
 **Step 7 –** To form a complex filter with multiple attributes, click **Add** to insert a new row
-and repeat steps 4-6. The AND operator is automatically applied to group multiple rows. For example:
+and repeat steps 4-6. The application automatically applies the AND operator to group multiple rows. For example:
 
 - When:
 
@@ -227,8 +227,8 @@ Click the X at the end of a row to remove it from the statement.
 :::
 
 
-After the filter is set, you can generate the report ad hoc by clicking **Run Query**. The allows you
-to test if your filter statement is working as desired. Save the investigation for reuse. You can
+After you set the filter, you can generate the report ad hoc by clicking **Run Query**. This allows
+you to test whether your filter statement works as desired. Save the investigation for reuse. You can
 also add subscriptions or export the report data using the options above the Filters section.
 
 See the [Investigation Reports](/docs/threatprevention/8.1/reportingmodule/investigations/reports/reports.md) topic for additional information.

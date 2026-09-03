@@ -20,12 +20,12 @@ within the past three (3) hours. It has the following cards:
 - GPO Changes – Number of group policy object changes recorded in the specified timeframe, i.e.,
   last three (3) hours. The value for this card is a hyperlink to the
   [GPO Monitoring Dashboard](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/gpomonitoring.md).
-- Administrator Events – Number of events related to Administrators that have been recorded in the
+- Administrator Events – Number of events related to Administrators recorded in the
   specified timeframe, i.e., last three (3) hours. The value for this card is a hyperlink to the
   [Administrator Auditing Dashboard](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/administratorauditing.md).
-- Active Users – Number of distinct users who have been involved with events that have been recorded
+- Active Users – Number of distinct users involved with events recorded
   in the specified timeframe, i.e., past three (3) hours
-- Monitored Domains – Number of distinct domains involved with events that have been recorded in the
+- Monitored Domains – Number of distinct domains involved with events recorded in the
   specified timeframe, i.e., past three (3) hours
 - Threat Prevention Events – Timeline of all events sent by Threat Prevention to QRadar within the
   last three (3) hours

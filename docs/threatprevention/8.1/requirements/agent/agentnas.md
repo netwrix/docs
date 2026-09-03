@@ -6,15 +6,15 @@ sidebar_position: 10
 
 # NAS Device Support
 
-For Network-Attached Storage (NAS) device support, the Threat Prevention Agent isn't deployed on
+For Network-Attached Storage (NAS) device support, you don't deploy the Threat Prevention Agent on
 the NAS device. Instead, Threat Prevention employs Activity Monitor, which deploys its own activity
-agents to Windows servers acting as proxy servers for NAS activity monitoring. The Threat Prevention
-Agent must be installed on the Windows server where the Activity Monitor’s Activity Agent resides.
+agents to Windows servers acting as proxy servers for NAS activity monitoring. You must install the
+Threat Prevention Agent on the Windows server where the Activity Monitor’s Activity Agent resides.
 
-The Activity Monitor Activity Agent configuration dictates what file system activity is being
-monitored. The Activity Agent writes activity log files on the proxy server. The Agent monitors the
-activity log files as the data is written and sends events to the Threat Prevention event database
-according to the enabled policy configuration.
+The Activity Monitor Activity Agent configuration dictates what file system activity it
+monitors. The Activity Agent writes activity log files on the proxy server. The Agent monitors the
+activity log files as the Activity Agent writes the data and sends events to the Threat Prevention
+event database according to the enabled policy configuration.
 
 Supported Platforms for Netwrix Activity Monitor Agent & Agent Deployment
 

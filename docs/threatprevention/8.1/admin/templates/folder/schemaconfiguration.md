@@ -11,7 +11,7 @@ The Schema and Configuration folder contains the following templates:
 | Subfolder      | Template        | Description     | TAGS       |
 | --------- | ---------------- | --------- | ----------- |
 |                    | Attribute Added to the Global Catalog      | When the GC flag for an attribute is changed        | <ul><li>NEW 7.0.1 TEMPLATES</li></ul> |
-|                    | Extended Rights Added                      | When a new extended right is added.  Extended rights grant permissions to carry an operation such as change/reset password or send/receive as is it not an individual attribute rather an operation. | <ul><li>NEW 7.0.1 TEMPLATES</li></ul> |
+|                    | Extended Rights Added                      | When a new extended right is added. Extended rights grant permissions to carry an operation such as change/reset password or send/receive as is it not an individual attribute rather an operation. | <ul><li>NEW 7.0.1 TEMPLATES</li></ul> |
 |                    | Global Catalog Server Added                | DC is promoted to a global catalog server        | <ul><li>NEW 7.0.1 TEMPLATES</li></ul> |
 |                    | Global Catalog Server Removed              | DC is no longer a global catalog server         | <ul><li>NEW 7.0.1 TEMPLATES</li></ul> |
 |                    | Naming Context Added                       | When a domain or application partition is added       | <ul><li>NEW 7.0.1 TEMPLATES</li></ul> |

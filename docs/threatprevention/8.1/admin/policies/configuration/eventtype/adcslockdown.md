@@ -6,8 +6,9 @@ sidebar_position: 230
 
 # ADCS Lockdown Event Type
 
-Based on policy rules, the ADCS Lockdown event type can prevent a certificate request in ADCS infrastructure. 
-Every time a request is prevented, an event with details about the prevented requiest is generated.
+Based on policy rules, the ADCS Lockdown event type can prevent a certificate request in Active
+Directory Certificate Services (ADCS) infrastructure. Every time the policy prevents a request,
+Threat Prevention generates an event with details about the prevented request.
 
 The event filters for the ADCS Lockdown event type are:
 

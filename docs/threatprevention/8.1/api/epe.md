@@ -29,13 +29,13 @@ Enforcer (EPE) rules configured in the Password Rules event filter and the globa
 
 The following parameters are required:
 
-- Server – Domain controller with the Threat Prevention Agent that will be used to check the
+- Server – Domain controller with the Threat Prevention Agent that checks the
   password value. Supply the server in one of the following formats:
   - Domain\ServerName
   - ServerName
   - IP Address
 - User – The user account testing the password
-- Password – Password value to be validated
+- Password – Password value to validate
 
 Example of a password validation command:
 
@@ -44,9 +44,9 @@ Example of a password validation command:
 ## Import Character Substitutions
 
 The `Import-SICharacterSubstitution` command imports the EPE Character Substitution Dictionary to
-the Enterprise Manager. Imported file content is displayed in the
-[Substitutions Editor Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#substitutions-editor-window)
-accessed through the EPE Settings window.
+the Enterprise Manager. The
+[Substitutions Editor Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#substitutions-editor-window),
+accessed through the EPE Settings window, displays the imported file content.
 
 The following parameter is required:
 
@@ -58,9 +58,9 @@ Example of adding an import xml file:
 
 ## Export Character Substitutions
 
-The `Export-SICharacterSubstitution` command exports the character substitution data being
-used by the Enterprise Manager. The content exported is the same as displayed in the
-[Substitutions Editor Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#substitutions-editor-window).
+The `Export-SICharacterSubstitution` command exports the character substitution data the
+Enterprise Manager uses. The exported content matches what the
+[Substitutions Editor Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#substitutions-editor-window) displays.
 
 Example:
 
@@ -69,8 +69,8 @@ Example:
 ## Import Character Substitution Words
 
 The `Import-SICharacterSubstitutionWords` command imports the EPE words subject to character
-substitution to the Enterprise Manager. Imported file content is added to the
-[Words List Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#words-list-dictionary-window)
+substitution to the Enterprise Manager. Threat Prevention adds the imported file content to the
+[Words List Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#words-list-dictionary-window),
 accessed through the EPE Settings window.
 
 The following parameter is required:
@@ -84,9 +84,8 @@ Example of adding an import xml file:
 ## Export Character Substitution Words
 
 The `Export-SICharacterSubstitutionWords` command exports the EPE Words subject to character
-substitution being used by the Enterprise Manager. The content exported is the same as
-displayed in the
-[Words List Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#words-list-dictionary-window).
+substitution that the Enterprise Manager uses. The exported content matches what the
+[Words List Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#words-list-dictionary-window) displays.
 
 Example:
 
@@ -95,9 +94,9 @@ Example:
 ## Import Passwords Dictionary
 
 The `Import-SIPasswordsDictionary` command imports the EPE Password Dictionary to the Enterprise
-Manager from the specified file. Imported file content is displayed in the
-[Password Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#password-dictionary-window)
-accessed through the EPE Settings window.
+Manager from the specified file. The
+[Password Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#password-dictionary-window),
+accessed through the EPE Settings window, displays the imported file content.
 
 The following parameter is required:
 
@@ -105,9 +104,9 @@ The following parameter is required:
 
 ## Export Passwords Dictionary
 
-The `Export-SIPasswordsDictionary` command exports the EPE Password Dictionary being used
-by the Enterprise Manager. The content exported is the same as displayed in the
-[Password Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#password-dictionary-window).
+The `Export-SIPasswordsDictionary` command exports the EPE Password Dictionary that
+the Enterprise Manager uses. The exported content matches what the
+[Password Dictionary Window](/docs/threatprevention/8.1/admin/configuration/epesettings.md#password-dictionary-window) displays.
 
 Example:
 
@@ -115,8 +114,8 @@ Example:
 
 ## Set the Pwned Database
 
-The `Set-SIPwnedDB` command converts the single specified hash file to the internal files used by
-the Enterprise Manager and/or Threat Prevention Agents.
+The `Set-SIPwnedDB` command converts the single specified hash file to the internal files that
+the Enterprise Manager and/or Threat Prevention Agents use.
 
 The following parameter is required:
 

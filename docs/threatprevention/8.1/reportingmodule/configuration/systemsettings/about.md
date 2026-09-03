@@ -19,8 +19,8 @@ Click **About Threat Manager** in the navigation pane.
 The About Threat Manager section contains application version information. It also includes the
 application copyright information.
 
-The Third-Party Licenses section contains a list of all third-party licenses in use by the
-application. Each component and its license is listed.
+The Third-Party Licenses section contains a list of all third-party licenses the
+application uses. The section lists each component and its license.
 
 - To view the details for a specific license, click the arrow icon on its left to expand the license
   details.

@@ -9,7 +9,7 @@ sidebar_position: 10
 The following C# script sends an email notification to the specified administrator when an Active
 Directory account is enabled.
 
-The following environmental variables must be added to the script before execution:
+You must add the following environmental variables to the script before execution:
 
 - SMTPHOST – Name of the organization’s SMTP server
 - SMTPPORT – Port used by the organization’s SMTP server

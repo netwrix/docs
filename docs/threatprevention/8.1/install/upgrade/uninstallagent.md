@@ -26,21 +26,21 @@ on the target machine should have access to the system shares. Click **OK** afte
 credentials.
 
 :::note
-The wizard doesn't block access to the Administration Console and can be minimized while
-actions are in progress. If this wizard is hidden by clicking outside of the dialog box, a flashing
-blue link displays on the upper right corner of the interface with the action name displayed. Click
-the flashing link to bring back the focus to the wizard.
+The wizard doesn't block access to the Administration Console, and you can minimize it while
+actions are in progress. If you hide this wizard by clicking outside of the dialog box, a flashing
+blue link with the action name displays in the upper right corner of the interface. Click
+the flashing link to return the focus to the wizard.
 :::
 
 
 **Step 4 –** On the Access Verification window, the system performs a prerequisites or verification
 check that can fail or succeed.
 
-- Failed – Read the failure messages and close the window. Ensure any error messages are taken care
-  of before the next attempt.
+- Failed – Read the failure messages and close the window. Resolve any error messages before the
+  next attempt.
 - Success – Click **Next** to begin uninstalling the Agent
 - If some but not all items fail, you can click **Next** to continue the action on those where
-  access verification was successful.
+  access verification succeeded.
 
 :::note
 Closing the Administration Console while this action is in process causes problems with
@@ -48,12 +48,11 @@ data collection.
 :::
 
 
-**Step 5 –** The Uninstall Agent window displays whether the Agent was successfully uninstalled or
-not.
+**Step 5 –** The Uninstall Agent window displays whether the uninstall succeeded.
 
-**Step 6 –** When the task is successfully completed, click **Finish** to close the window.
+**Step 6 –** When the task completes successfully, click **Finish** to close the window.
 
-The Agent's status is displayed as _No Agent_. You can use the Install Agent option on the
+The Agent's status displays as _No Agent_. You can use the Install Agent option on the
 right-click menu to reinstall the Agent on that machine.
 
 ## Manual Uninstall on the Agent Server
@@ -66,8 +65,8 @@ Features.
 **Step 2 –** Uninstall the Netwrix Threat Prevention Windows Agent program from the list and close
 Programs and Features.
 
-The corresponding Threat Prevention services are automatically removed from services.msc during this
-uninstall process:
+This uninstall process automatically removes the corresponding Threat Prevention services from
+services.msc:
 
 - Netwrix Threat Prevention Windows Agent
 - Netwrix Windows File Monitoring Service (for Threat Prevention for File System)

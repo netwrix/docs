@@ -8,7 +8,7 @@ sidebar_position: 120
 
 Based on policy rules, the File System Lockdown event type can prevent file activity on selected
 files, such as create/read/write/delete/rename or security descriptor changes done via NTFS or VSS
-access. An event is generated for each blocked activity.
+access. Threat Prevention generates an event for each blocked activity.
 
 The event filters for the File System Lockdown event type are:
 
@@ -27,13 +27,13 @@ Lockdown/blocking policies with blank filters lock down or block everything.
 :::
 
 
-Select paths/collections to be locked down on the File System filter. The policy
-will lockdown the path/collection from the SI Agent used to select it for the filter which is
-indicated in the parenthesis after the path/collection. The path/collection can be locked down by
-other SI Agents by selecting them on the **Additional Agents** filter.
+Select the paths/collections to lock down on the File System filter. The policy
+locks down the path/collection from the SI Agent you used to select it for the filter, which appears
+in the parenthesis after the path/collection. Other SI Agents can also lock down the
+path/collection when you select them on the **Additional Agents** filter.
 
-If no path is provided, an error message displays when the analytic policy is enabled: The policy
-must have at least one path to monitor defined.
+If you don't provide a path, an error message displays when you enable the analytic policy: The
+policy must have at least one path to monitor defined.
 
 Example:
 
@@ -60,13 +60,13 @@ By adding the SI Agents on server1 and server3 in the Additional Agents filter, 
 server3 lockdown both folder paths, but server2 will only lockdown the C:\Users\All Users folder.
 
 Event data collected by the policies with this event type are also available for consumption by
-Netwrix Access Analyzer (formerly Enterprise Auditor) if the File System Enterprise Auditor Event
-Type is used by the same enabled policy.
+Netwrix Access Analyzer (formerly Enterprise Auditor) if the same enabled policy uses the File
+System Enterprise Auditor Event Type.
 
 ## File System Filter
 
-Use the File System filter for lockdown to select the types of file system events to be locked down
-by the policy. It is also where the policy is scoped to only lockdown specific file system paths or
+Use the File System filter for lockdown to select the types of file system events for the policy to
+lock down. It is also where you scope the policy to lock down only specific file system paths or
 to exclude specific file system paths from lockdown.
 
 ![Policy window - File System filter for lockdown](/images/threatprevention/8.1/admin/policies/eventtype/filesystemlockdown.webp)
@@ -125,8 +125,8 @@ for additional information.
 
 ![Paths filter - Sub Folder checkbox](/images/threatprevention/8.1/admin/policies/eventtype/subfolder.webp)
 
-When paths are added, a Sub-Folder checkbox displays. If checked, the filter is applied to the
-parent and all child content (files and folders). If unchecked, the filter is only applied to the
+When you add paths, a Sub-Folder checkbox displays. If checked, the filter applies to the
+parent and all child content (files and folders). If unchecked, the filter applies only to the
 listed folder and its first-level contents.
 
 ## Additional Agents Filter
@@ -149,9 +149,9 @@ There is no impact if a selected path doesn't exist on the server where an Agent
 :::
 
 
-When a domain is added to the Selected Agents\Domains list, all Agents deployed in that domain are
-included in the policy. If a domain is specified, then any Agent later installed in that domain is
-also included in this policy.
+When you add a domain to the Selected Agents\Domains list, the policy includes all Agents deployed
+in that domain. If you specify a domain, the policy also includes any Agent later installed in that
+domain.
 
 ## AD Perpetrator Filter
 

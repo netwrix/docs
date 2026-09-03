@@ -29,8 +29,8 @@ The application assigns roles by the following methods:
 - Direct User Assignment – Assigns a role directly to a user
 
   :::note
-  If a user is assigned a role directly, it takes priority over any group membership
-  roles that have been assigned
+  If you assign a role directly to a user, it takes priority over any assigned group
+  membership roles
   :::
 
 
@@ -74,9 +74,8 @@ The table displays the following information:
     The edit icon changes to a save icon while in edit mode. See the Edit Console Access topic for
     additional information.
   - Trash icon – Opens a Warning window to confirm the action of deleting the user or group.
-    Removing a user or group removes console access for it. The builtin "ADMIN" account
-    can't have its access removed until an account besides the builtin "ADMIN" is granted
-    administrative access to the console.
+    Removing a user or group removes console access for it. You can't remove access for the
+    builtin "ADMIN" account until you grant another account administrative access to the console.
   - Reset MFA button – Forces the user or every user in the group to reconfigure MFA on the next
     login. This option is only available if an MFA authentication type is applied to the user or
     group.
@@ -89,15 +88,15 @@ additional information.
 
 ### Roles Defined
 
-The following roles can be assigned to users and groups:
+You can assign the following roles to users and groups:
 
 - Administrator – This role provides unrestricted access to all functionality
-- Report Reviewer – This role can only use investigations that have been directly assigned to
+- Report Reviewer – This role can only use investigations that you directly assign to
   them
 
   - No access to Configuration pages
   - Only has access to the investigation pages
-  - Can only see and run saved investigations that have been assigned to them
+  - Can only see and run saved investigations that you assign to them
   - Unable to save Investigations or modify exiting Investigations
   - Can export reports they have access to
 
@@ -130,16 +129,16 @@ deployment.
 
 ### Authentication Types Defined
 
-The following authentication types can be assigned to users and groups:
+You can assign the following authentication types to users and groups:
 
 - Built-in MFA – This type uses an Active Directory username and password with a one-time password
-  (OTP) that is configured on the first login by a user via a multi-factor authentication (MFA)
+  (OTP) that the user configures on first login via a multi-factor authentication (MFA)
   solution (Authenticator, DUO, etc.)
 - No MFA – This type uses only an Active Directory username and password for authentication
 - Authentication Provider Profiles – This type enables third-party authentication providers using
-  RADIUS, OpenID, and SAML integrations. Methods of authentication will vary based on the
-  third-party authentication provider. This must be configure in the Authentication Provider page of
-  the Integrations interface to be available for user assignment.
+  RADIUS, OpenID, and SAML integrations. Methods of authentication vary based on the
+  third-party authentication provider. You must configure this on the Authentication Provider page
+  of the Integrations interface to make it available for user assignment.
 
 See the [Authentication Provider Page](/docs/threatprevention/8.1/reportingmodule/configuration/integrations/authenticationprovider/page.md) topic for
 additional information.
@@ -147,8 +146,8 @@ additional information.
 ### Add Console Access
 
 :::note
-Verify that an Active Directory Sync has completed to ensure that user and group
-information is updated. See the [Active Directory Sync Page](/docs/threatprevention/8.1/reportingmodule/configuration/integrations/activedirectorysync.md)
+Verify that an Active Directory Sync has completed to ensure that the user and group
+information is current. See the [Active Directory Sync Page](/docs/threatprevention/8.1/reportingmodule/configuration/integrations/activedirectorysync.md)
 for additional information.
 :::
 
@@ -163,8 +162,8 @@ Console Access window opens.
 
 ![Add Console Access window](/images/threatprevention/8.1/reportingmodule/configuration/systemsettings/addconsoleaccess.webp)
 
-**Step 3 –** Begin typing a user or group name in the **User Access** box. The dropdown menu will
-populate as you type with available options. Select a user or group from the menu.
+**Step 3 –** Begin typing a user or group name in the **User Access** box. The dropdown menu
+populates with available options as you type. Select a user or group from the menu.
 
 **Step 4 –** Select an authentication type from the **Authentication Type** dropdown menu.
 
@@ -178,7 +177,7 @@ on the Authentication Provider page of the Integrations interface.
 
 **Step 6 –** Click Add. The Add Console Access window closes.
 
-The user or group is added to the table with the assigned role.
+The application adds the user or group to the table with the assigned role.
 
 ### Edit Console Access
 
@@ -197,7 +196,7 @@ Type for this user or group.
 
 **Step 4 –** Click the Save icon, which replaced the Edit icon.
 
-The modification for the selected user or group is committed.
+The application commits the modification for the selected user or group.
 
 ### Edit Built-in Admin Password
 
@@ -219,7 +218,7 @@ built-in ADMIN account. The Edit password for built-in admin window opens.
 
 **Step 6 –** Click Save. The Edit password for built-in admin window closes.
 
-The password for the built-in ADMIN account has been updated.
+You have now updated the password for the built-in ADMIN account.
 
 ## Settings
 
@@ -235,7 +234,7 @@ expiration time for authenticated users.
   - The first page requires a username and password
   - The second page is the multi-factor authentication page
 
-- Token expiration time – The period of inactivity before the user is required to re-authenticate
+- Token expiration time – The period of inactivity before the user must re-authenticate
   for access to the console. Select the expiration time you want from the dropdown menu:
 
   - 15 Minutes

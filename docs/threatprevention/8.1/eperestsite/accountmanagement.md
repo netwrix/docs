@@ -22,7 +22,7 @@ This API returns a list of internal accounts stored in the EpeUsers database.
 **Authentication required – Yes**
 
 Authentication Type – Basic authentication. Any valid account such as a local account for this
-machine or a domain account that can be verified on this machine should work.
+machine or a domain account that this machine can verify should work.
 
 **Example**
 

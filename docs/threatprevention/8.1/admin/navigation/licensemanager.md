@@ -44,7 +44,7 @@ opens.
 
 ![License Manager window](/images/threatprevention/8.1/admin/navigation/licensemanager.webp)
 
-This window lists the modules that you are licensed for. Each module is linked to a Threat
+This window lists the modules that you are licensed for. Each module links to a Threat
 Prevention solution.
 
 Following is a list of the solutions with their respective modules. You can also view the event

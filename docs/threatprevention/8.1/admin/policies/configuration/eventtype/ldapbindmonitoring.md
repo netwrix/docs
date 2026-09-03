@@ -8,8 +8,8 @@ sidebar_position: 180
 
 The LDAP Bind Monitoring event type monitors all connections established with LDAP, including the
 users who connected with LDAP. While the [LDAP Monitoring Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/ldapmonitoring/ldapmonitoring.md) creates
-events when actual LDAP queries are executed, LDAP Bind Monitoring creates events when a connection
-is established with LDAP.
+events when LDAP queries run, LDAP Bind Monitoring creates events when a client establishes a
+connection with LDAP.
 
 The event filters for the LDAP Bind Monitoring event type are:
 
@@ -25,7 +25,7 @@ The event filters for the LDAP Bind Monitoring event type are:
 Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
-This event type can only be used in a policy by itself or with another LDAP event type. This means
+You can use this event type in a policy only by itself or with another LDAP event type. This means
 that:
 
 - If you select this event type, all other event types will be grayed out except the LDAP event
@@ -34,15 +34,15 @@ that:
 
 ## Bind Protocol Filter
 
-The Bind Protocol filter determines if events should be captured for an LDAP bind operation based on
-the security protocol used by the bind operation.
+The Bind Protocol filter determines whether Threat Prevention captures events for an LDAP bind
+operation, based on the security protocol the bind operation used.
 
 ![Policy window - Bind Protocol filter](/images/threatprevention/8.1/admin/policies/eventtype/bindprotocol.webp)
 
 Select **All** to report on any LDAP bind that used any protocol.
 
-You can also limit Threat Prevention to capture LDAP bind events only when one of the selected
-protocols are used.
+You can also limit Threat Prevention to capture LDAP bind events only when a bind operation uses one
+of the selected protocols.
 
 - SSL
 - StartTLS
@@ -74,7 +74,7 @@ for additional information.
 
 ## Success Filter
 
-The Success filter is where the policy is set to only monitor successful events, failed events, or
+Use the Success filter to set the policy to monitor only successful events, only failed events, or
 both.
 
 ![Event Type – Success filter](/images/threatprevention/8.1/admin/policies/eventtype/success.webp)

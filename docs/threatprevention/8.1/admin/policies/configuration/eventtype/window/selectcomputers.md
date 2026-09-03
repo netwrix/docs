@@ -6,8 +6,8 @@ sidebar_position: 100
 
 # Select Computer Window
 
-The Select Computer window provides a list of available computers. Selected objects are added to the
-filter from where you clicked the **Add** (+) button to open this window.
+The Select Computer window provides a list of available computers. Threat Prevention adds the
+selected objects to the filter from where you clicked the **Add** (+) button to open this window.
 
 ![Select Computer Window](/images/threatprevention/8.1/admin/policies/eventtype/window/selectcomputers.webp)
 
@@ -20,7 +20,7 @@ filter from where you clicked the **Add** (+) button to open this window.
 
 See the [Selection Windows](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/overview.md) topic for additional information.
 
-The selection is displayed in the appropriate box of the Hosts (from) filter or the Hosts (to)
+The selection appears in the appropriate box of the Hosts (from) filter or the Hosts (to)
 filter.
 
 :::note

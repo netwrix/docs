@@ -44,8 +44,8 @@ Maintenance window opens.
 
 **Step 4 –** Click **Save** to save the settings.
 
-The database maintenance job now runs at the configured time and day. The job runs all tasks that
-are enabled at the time it runs.
+The database maintenance job now runs at the configured time and day. The job runs all tasks
+enabled at the time it runs.
 
 You can view this scheduled job in Microsoft SQL Server Management Studio in the **SQL
 Server Agent** > **Jobs** folder (SiDbMainJob).

@@ -6,13 +6,13 @@ sidebar_position: 20
 
 # First Launch
 
-Once Threat Prevention is installed, the Administration Console administrator is the only user who
+After you install Threat Prevention, the Administration Console administrator is the only user who
 can launch it for the first time.
 
 To launch Threat Prevention for the first time:
 
-**Step 1 –** On first launch, the Netwrix Threat Prevention Licensing Configuration window is
-displayed to the first Administration Console administrator, showing a license key warning:
+**Step 1 –** On first launch, the Netwrix Threat Prevention Licensing Configuration window opens
+for the first Administration Console administrator, showing a license key warning:
 
 - Product license will expire in `<number>` days. contact your Netwrix representative for a
   new license.
@@ -25,14 +25,14 @@ This warning always displays when the organization’s license is within 14 days
 **Step 2 –** On the Import Templates dialog box, you can choose to import policy templates now or
 later.
 
-In Threat Prevention, many policy templates are pre-configured for the most common policy types, so
+Threat Prevention pre-configures many policy templates for the most common policy types, so
 that you can configure a policy. See the
 [Templates Interface](/docs/threatprevention/8.1/admin/templates/overview.md) topic for details.
 
 - Click **Yes** on the Import Templates dialog box to import all the templates into the
   Administration Console now. Once complete, the templates are available to all Administration
   Console users.
-- On clicking **No**, the Import Templates dialog box appears asking, “Do you want to be prompted
+- When you click **No**, the Import Templates dialog box appears asking, “Do you want to be prompted
   again next time this application loads?”
 
 You can import the policy templates any time later. See the
@@ -44,8 +44,8 @@ information.
 **Step 3 –** On the Install Agents dialog box, you can choose to install the Agent on servers now or
 later.
 
-The Agent is responsible for monitoring the events as configured in policies. The Agent must be
-deployed on all the servers where these events occur. Use the Administration Console to deploy and
+The Agent is responsible for monitoring the events as configured in policies. You must deploy the
+Agent on all the servers where these events occur. Use the Administration Console to deploy and
 manage the Agent.
 
 - Click **Yes** on the Install Agents dialog box to launch the **Deploy Agents** wizard. See the

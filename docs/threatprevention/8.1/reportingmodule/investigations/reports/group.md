@@ -32,7 +32,7 @@ The Group Details page has the following tabs:
 
 ## Members Tab
 
-On the Group Details page, the Members tab is displayed by default.
+On the Group Details page, the Members tab appears by default.
 
 The Members tab displays information about the members of the group. It has two sub-tabs:
 

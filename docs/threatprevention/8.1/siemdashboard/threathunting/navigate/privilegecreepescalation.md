@@ -7,7 +7,7 @@ sidebar_position: 30
 # Privilege Creep/Escalation
 
 The Privilege Creep/Escalation option uses the Account Name field to determine which user is
-targeted when searching for threats. Wildcard characters (%) are allowed.
+targeted when searching for threats. You can use wildcard characters (%).
 
 The Privilege Creep/Escalation option contains the following cards:
 
@@ -20,4 +20,4 @@ The Privilege Creep/Escalation option contains the following cards:
   twenty successful group modification events where the Account Name matches the Perpetrator, as
   recorded in the specified timeframe
 
-The specified timeframe is set by default to _All Time_.
+The specified timeframe defaults to _All Time_.

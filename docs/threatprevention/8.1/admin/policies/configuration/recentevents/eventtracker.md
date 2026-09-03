@@ -17,7 +17,7 @@ to **New**.
 
 **Step 2 –** Enter your remarks in the Comments box regarding the review of the event.
 
-**Step 3 –** On saving your changes, the Last Updated user and date timestamp are updated.
+**Step 3 –** When you save your changes, Threat Prevention updates the Last Updated user and date timestamp.
 
 On the window from where you opened the Event Tracker Window, use the Tracking state or a similar
 dropdown menu to filter the events/incidents in the data grid according to the Event Tracker

@@ -6,7 +6,7 @@ sidebar_position: 125
 
 # File System Enterprise Auditor Event Type
 
-The File System Enterprise Auditor event type is used to send File System activity to Netwrix Access
+Use the File System Enterprise Auditor event type to send File System activity to Netwrix Access
 Analyzer (formerly Enterprise Auditor).
 
 The event filters for the File System Enterprise Auditor event type are:
@@ -21,19 +21,19 @@ The event filters for the File System Enterprise Auditor event type are:
 Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
-This event type is specifically designed to capture Windows file system activity events for
+This event type specifically captures Windows file system activity events for
 consumption by Netwrix Access Analyzer (formerly Enterprise Auditor), formerly StealthAUDIT.
 
-These events aren't captured in the Threat Prevention database, but are collected in a data file
-that can be read by the File System collection. See the File System Solution topic in the
+Threat Prevention doesn't capture these events in its database; instead, it collects them in a data
+file that the File System collection can read. See the File System Solution topic in the
 [Netwrix Access Analyzer Documentation](https://helpcenter.netwrix.com/category/accessanalyzer) for
 information on this collection component.
 
 Event data collected by the policies with either the
 [File System Changes Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/filesystemchanges/filesystemchanges.md) or the
 [File System Lockdown Event Type](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/filesystemlockdown.md) are also available for consumption by
-Netwrix Access Analyzer (formerly Enterprise Auditor) if the File System Enterprise Auditor event
-type is used by the same policy.
+Netwrix Access Analyzer (formerly Enterprise Auditor) if the same policy uses the File System
+Enterprise Auditor event type.
 
 ## File System Enterprise Auditor Filter
 
@@ -68,8 +68,8 @@ for additional information.
 
 ![Paths filter - Sub Folder checkbox](/images/threatprevention/8.1/admin/policies/eventtype/subfolder.webp)
 
-When paths are added, a Sub-Folder checkbox displays. If checked, the filter is applied to the
-parent and all child content (files and folders). If unchecked, the filter is only applied to the
+When you add paths, a Sub-Folder checkbox displays. If checked, the filter applies to the
+parent and all child content (files and folders). If unchecked, the filter applies only to the
 listed folder and its first-level contents.
 
 ## File System Agents Filter
@@ -92,9 +92,9 @@ There is no impact if a selected path doesn't exist on the server where an Agent
 :::
 
 
-When a domain is added to the Selected Agents\Domains list, all Agents deployed in that domain are
-included in the policy. If a domain is specified, then any Agent later installed in that domain is
-also included in this policy.
+When you add a domain to the Selected Agents\Domains list, the policy includes all Agents deployed
+in that domain. If you specify a domain, the policy also includes any Agent later installed in that
+domain.
 
 :::note
 There must be at least one Agent in the Selected Agents/Domains list for policies using
@@ -114,7 +114,7 @@ the activity logs.
   read operations, uncheck this option.
 - In the [Number] **Days to Retain Log** box, specify a number to indicate the number of days the
   logs remain before Threat Prevention deletes them.
-- In the Exclude Processes area, specify any processes that should be excluded from monitoring
+- In the Exclude Processes area, specify any processes to exclude from monitoring
   by this policy. Enter the process in the Exclude Processes textbox. You must enter a process name
   exactly as is; for example, as it appears on the Details tab of Windows Task Manager. For example,
   to exclude the Windows Explorer actions like opening and closing of files, enter ‘explorer.exe’ in

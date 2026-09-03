@@ -28,12 +28,12 @@ controller. The default path is:
 | Log file | Contents |
 | --- | --- |
 | DebugTrace.log | Verbose, code-level trace of the path AD Monitor takes while processing activity. Use it to diagnose why something doesn't work. |
-| EventTrace.log | One structured line per captured event. Use it to confirm that a specific event was captured, and for automated parsing. |
+| EventTrace.log | One structured line per captured event. Use it to confirm that AD Monitor captured a specific event, and for automated parsing. |
 | HookTrace.log | Trace of the API hooks themselves. |
 | LoaderTrace.log | Trace of AD Monitor loading into the host process. |
 | DotNetLoaderTrace.log | Trace of the managed components AD Monitor loads. |
 
-A log file is rolled over on the schedule set by `RollingInterval`, and once it reaches
+AD Monitor rolls a log file over on the schedule set by `RollingInterval`, and when it reaches
 `MaxFileSizeMb`. The rolled-over file carries the date and time in its name, for example
 `DebugTrace_2026-08-13_00-00-00-635.log`.
 
@@ -43,7 +43,7 @@ Agents interface. It downloads the `ADMonitor_logs` folder along with the Agent 
 topic for additional information.
 
 AD Monitor loads into more than one process, and the log file names carry the context it loaded
-into. Alongside the file names above, the same folder holds a `Term` set for the Terminal Services
+into. Alongside the file names in the preceding table, the same folder holds a `Term` set for the Terminal Services
 context and an `Svchost` set for the svchost-hosted context, for example `TermDebugTrace.log`,
 `TermHookTrace.log`, and `SvchostDebugTrace.log`. Read the set that matches the process you're
 investigating; for Active Directory and authentication activity on a domain controller, that's the
@@ -59,15 +59,15 @@ events, none of which had a dedicated log file before.
 A log bundle contains either `ADTrace.log` and `LDAPTrace.log`, or `EventTrace.log` — never both.
 This is a reliable way to tell which version produced a bundle.
 
-The same release also removes a disk write for every logged line. Only Critical and Error entries
-are written to disk immediately; everything else is buffered and written at the interval set by
-`FlushIntervalMillis`. Verbose logging therefore costs less on a busy domain controller than it did
+The same release also removes a disk write for every logged line. AD Monitor writes only Critical
+and Error entries to disk immediately; it buffers everything else and writes it at the interval set
+by `FlushIntervalMillis`. Verbose logging therefore costs less on a busy domain controller than it did
 in earlier versions.
 
 :::note
 `DebugTrace.log` and `EventTrace.log` cover related activity but serve different purposes.
 `DebugTrace.log` is an unstructured trace of a code path. `EventTrace.log` is a concise, structured
-record of what was captured.
+record of what AD Monitor captured.
 :::
 
 ## Logging.ini
@@ -80,7 +80,7 @@ controller. The default path is:
 :::warning
 AD Monitor reads `Logging.ini` when it loads into the LSASS process. A change to this
 file takes effect only after the Agent service restarts. This differs from the managed components,
-which apply configuration changes as soon as the file is saved.
+which apply configuration changes as soon as you save the file.
 :::
 
 The file ships with the following settings. Lines that begin with `//` are comments.
@@ -104,9 +104,9 @@ MaxLogFiles = 5
 | HookTrace | Minimum severity written to `HookTrace.log`, using the same values as `DebugTrace`. |
 | DebugFilter | Space-separated list of the areas to include in `DebugTrace.log` and `HookTrace.log`. Leave it unset to include everything. |
 | EventFilter | Space-separated list of the event categories to write to `EventTrace.log`. Leave it unset to disable event logging. |
-| FlushIntervalMillis | How often, in milliseconds, buffered entries are written to disk. The default is 500 and the maximum is 60000. Critical and Error entries in `DebugTrace.log` and `HookTrace.log` are always written immediately. |
-| MaxFileSizeMb | Size in megabytes at which a log file is rolled over. The default is 20. |
-| RollingInterval | Time interval at which a log file is rolled over, in `hh:mm:ss` format. |
+| FlushIntervalMillis | How often, in milliseconds, AD Monitor writes buffered entries to disk. The default is 500 and the maximum is 60000. AD Monitor always writes Critical and Error entries in `DebugTrace.log` and `HookTrace.log` immediately. |
+| MaxFileSizeMb | Size in megabytes at which AD Monitor rolls a log file over. The default is 20. |
+| RollingInterval | Time interval at which AD Monitor rolls a log file over, in `hh:mm:ss` format. |
 | MaxLogFiles | Number of rolled-over files to keep. |
 
 `EventFilter` is unset by default, so `EventTrace.log` stays empty until you list the categories you
@@ -115,8 +115,8 @@ when AD Monitor loads.
 
 :::warning
 `EventTrace.log` output is always buffered, including Critical and Error entries. If the
-LSASS process terminates without shutting down cleanly, up to one flush interval's worth of entries
-is lost. When you investigate a crash, read `DebugTrace.log`, where Critical and Error entries reach
+LSASS process terminates without shutting down cleanly, AD Monitor loses up to one flush interval's
+worth of entries. When you investigate a crash, read `DebugTrace.log`, where Critical and Error entries reach
 the disk immediately.
 :::
 
@@ -204,8 +204,8 @@ EventFilter = AdmEvent
 
 ## Configuration Errors
 
-AD Monitor validates `Logging.ini` when it loads and reports problems in `DebugTrace.log`. An
-invalid line is ignored; the rest of the file still applies.
+AD Monitor validates `Logging.ini` when it loads and reports problems in `DebugTrace.log`. It
+ignores an invalid line; the rest of the file still applies.
 
 | Message in DebugTrace.log | Cause | Resolution |
 | --- | --- | --- |

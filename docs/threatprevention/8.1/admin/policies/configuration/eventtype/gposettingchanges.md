@@ -7,7 +7,7 @@ sidebar_position: 140
 # GPO Setting Changes Event Type
 
 The GPO Setting Changes event type generates events based on rules for specified (or all) GPOs, to
-report what settings in a GPO are modified.
+report which settings in a GPO change.
 
 The event filters for the GPO Setting Changes event type are:
 
@@ -81,13 +81,13 @@ Use the Advanced Filter to include or exclude attribute conditions for GPO setti
 
 ![Policy window - Advanced Filter](/images/threatprevention/8.1/admin/policies/eventtype/advancedgpo.webp)
 
-Filter statements can be added to the Include condition and Exclude condition boxes. The filter uses
+You can add filter statements to the Include condition and Exclude condition boxes. The filter uses
 pre-defined logical and comparison operators to create filter criteria for the scan. You can add
 conditions to a filter statement. Conditions can be singular or grouped by a logical operator.
 
 **Logical Operator**
 
-The logical operator is displayed as left aligned red text. To change the logical operator, click
+The logical operator displays as left aligned red text. To change the logical operator, click
 it to open a menu with the following options:
 
 - And
@@ -98,16 +98,16 @@ it to open a menu with the following options:
 **Add icon (+)**
 
 To apply more filters to the set or start a new group of filters, click the **Add** (+) icon. A new
-row is inserted that displays a column (attribute), a comparison operator, and a Value box.
+row appears that displays a column (attribute), a comparison operator, and a Value box.
 
 **Column Selection**
 
-The selected column is displayed in blue text. Click it to open a menu with all available columns
+The selected column displays in blue text. Click it to open a menu with all available columns
 from the GPO Setting Changes Recent Events data grid.
 
 **Comparison Operator**
 
-The comparison operator is displayed in green text. To change it, click it to open a menu with
+The comparison operator displays in green text. To change it, click it to open a menu with
 options that associate with the data in the GPO Setting Changes Recent Events data grid.
 
 **Filter Criteria**

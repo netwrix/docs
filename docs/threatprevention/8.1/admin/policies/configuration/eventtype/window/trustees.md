@@ -7,10 +7,10 @@ sidebar_position: 80
 # Select Active Directory Trustees Window
 
 The Select Active Directory Trustees window provides a list of available Exchange trustees to either
-include or exclude. Selected objects are added to the filter from where you clicked the **Add** (+)
-button to open this window.
+include or exclude. Threat Prevention adds the selected objects to the filter from where you clicked
+the **Add** (+) button to open this window.
 
-Trustees are the objects that rights are assigned to, e.g. Exchange mailboxes or Exchange
+Trustees are the objects that receive rights, e.g. Exchange mailboxes or Exchange
 distribution lists.
 
 ![Select Active Directory Trustees Window](/images/threatprevention/8.1/admin/policies/eventtype/window/selectactivedirectory/adtrustees.webp)
@@ -24,7 +24,7 @@ distribution lists.
 
 See the [Selection Windows](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/overview.md) topic for additional information.
 
-The selection is displayed in the appropriate box of the Exchange Trustees filter.
+The selection appears in the appropriate box of the Exchange Trustees filter.
 
 :::note
 For information on the well-known SID types, see the Microsoft article

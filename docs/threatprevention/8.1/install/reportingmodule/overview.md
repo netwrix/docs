@@ -6,8 +6,8 @@ sidebar_position: 40
 
 # Reporting Module Installation
 
-Before installing Netwrix Threat Manager Reporting Module 3.0, ensure that all the
-prerequisites have been met in accordance with the
+Before installing Netwrix Threat Manager Reporting Module 3.0, ensure that you have met all the
+prerequisites in accordance with the
 [Reporting Module Server Requirements](/docs/threatprevention/8.1/requirements/reportingserver.md) topic.
 
 The Netwrix Threat Manager Reporting Module installer (threatmanager-reportonly-3.0.x.zip) is
@@ -15,7 +15,7 @@ available for download with the Netwrix Threat Prevention installation package, 
 executable files.
 
 :::warning
-The PostgreSQL database must be installed before installing Netwrix Threat Manager
+You must install the PostgreSQL database before installing Netwrix Threat Manager
 Reporting Module.
 :::
 
@@ -41,7 +41,7 @@ This executable is for installing the application and its services:
 - StealthDEFEND License Service
 - StealthDEFEND Web Service
 
-The following prerequisites will be installed if they aren't present:
+The installer installs the following prerequisites if they aren't present:
 
 - .NET Framework 4.8+
 - .NET Desktop Runtime 8.0.11

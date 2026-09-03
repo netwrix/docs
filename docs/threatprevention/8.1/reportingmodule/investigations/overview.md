@@ -6,13 +6,13 @@ sidebar_position: 20
 
 # Investigations Interface
 
-The Investigation interface allows administrators to investigate all data available to the
-application through a series of customizable filters. These investigations can be saved so they can
-be run ad hoc at a later time.Click **Investigate** in the application header bar to open the
+The Investigation interface lets administrators investigate all data available to the
+application through a series of customizable filters. You can save these investigations and run them
+ad hoc at a later time. Click **Investigate** in the application header bar to open the
 Investigations interface.
 
-If you have not integrated the Threat Manager Reporting module with a Netwrix product, the interface
-is displayed as:
+If you haven't integrated the Threat Manager Reporting module with a Netwrix product, the interface
+appears as:
 
 ![Investigations interface](/images/threatprevention/8.1/reportingmodule/interface.webp)
 
@@ -39,7 +39,7 @@ The Investigations interface contains the following pages:
   the [Predefined Investigations Page](/docs/threatprevention/8.1/reportingmodule/investigations/predefinedinvestigations.md) topic for additional
   information.
 - My Investigations – Provides a list of saved investigations created by the application users. A
-  link to this page is displayed in the navigation pane when you save your first investigation. See
+  link to this page appears in the navigation pane when you save your first investigation. See
   the [My Investigations Page](/docs/threatprevention/8.1/reportingmodule/investigations/myinvestigations.md) topic for additional information.
 - Subscriptions and Exports – Provides a list of investigations that are either subscribed to or
   scheduled for export. See the[Subscriptions and Exports Page](/docs/threatprevention/8.1/reportingmodule/investigations/subscriptionsexports.md) topic for
@@ -58,5 +58,5 @@ investigations by name.
 
 ![Investigations Search showing matching results](/images/threatprevention/8.1/reportingmodule/investigations/search.webp)
 
-Type in the search box. As you type, a dropdown will populate with saved investigations containing
+Type in the search box. As you type, a dropdown populates with saved investigations containing
 matches. The part of the investigation name that matches the search text is in bold.

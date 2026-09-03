@@ -29,7 +29,7 @@ The event filters for the LDAP Monitoring event type are:
 Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
-This event type can only be used in a policy by itself or with another LDAP event type. This means
+You can use this event type in a policy only by itself or with another LDAP event type. This means
 that:
 
 - If you select this event type, all other event types will be grayed out except the LDAP event
@@ -58,8 +58,8 @@ available for the event type:
 
   - See the [LDAP Ping Operations Use Case](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/ldapmonitoring/ldapping.md) topic for additional information.
 
-  When LDAP Ping is selected, the Secure Configurations and Search scopes sections aren't
-  displayed.
+  When you select LDAP Ping, the Secure Configurations and Search scopes sections don't
+  display.
 
 ## LDAP Runtime Filter
 
@@ -68,8 +68,8 @@ execution times.
 
 ![Policy window - LDAP Runtime filter](/images/threatprevention/8.1/admin/policies/eventtype/ldapruntime.webp)
 
-Identical LDAP queries occurring within a ten second aggregation window are reported as a single
-event with a count indicating the number of occurrences within that ten second window. The single
+Threat Prevention reports identical LDAP queries occurring within a ten second aggregation window as
+a single event with a count indicating the number of occurrences within that ten second window. The single
 reported event also has a minimum, maximum, and average runtime reflecting the individual events
 that occurred during the ten second window.
 
@@ -84,8 +84,8 @@ Check the options you want and set the range for the LDAP event collection thres
 - Filter out queries with runtime less than N ms – This option discards any LDAP queries that
   execute in less time than the specified value
 
-  - It is evaluated before and independent of any other event filters
-  - It is implemented inside the Agent instrumentation layer (LSASS). It is more efficient than
+  - Threat Prevention evaluates it before and independent of any other event filters
+  - The Agent instrumentation layer (LSASS) implements it, which makes it more efficient than
     the other LDAP Query Runtime options, which are implemented in the Agent Service.
 
 ## Domains/Servers Filter
@@ -112,7 +112,7 @@ for additional information.
 
 ## Success Filter
 
-The Success filter is where the policy is set to only monitor successful events, failed events, or
+Use the Success filter to set the policy to monitor only successful events, only failed events, or
 both.
 
 ![Event Type – Success filter](/images/threatprevention/8.1/admin/policies/eventtype/success.webp)
@@ -172,14 +172,14 @@ in the textbox. Alternatively, use the buttons in the respective sections.
 
 ## LDAP Result Filter
 
-Use the LDAP Result filter to set the scope of the policy to only monitor what is returned by the
-query, quantity of objects and/or specific objects, or exclude the query from monitoring based
+Use the LDAP Result filter to set the scope of the policy to only monitor what the query returns,
+quantity of objects and/or specific objects, or exclude the query from monitoring based
 on the results.
 
 ![Policy window - LDAP Result filter](/images/threatprevention/8.1/admin/policies/eventtype/queryresult.webp)
 
-To scope by the number of objects returned by a query, check the Number of objects box and set the
-number of objects to be returned in the Minumun and Maximum boxes.
+To scope by the number of objects a query returns, check the Number of objects box and set the
+number of objects to return in the Minumun and Maximum boxes.
 
 Specify the object you want in the Include Objects box. You can enter a string in the textbox.
 Alternatively, use the buttons in the respective sections.

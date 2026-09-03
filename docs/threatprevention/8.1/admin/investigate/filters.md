@@ -7,9 +7,9 @@ sidebar_position: 40
 # Investigate Filters
 
 On the [Investigate Interface](/docs/threatprevention/8.1/admin/investigate/overview.md), you can apply six filter categories to
-the recent events available in the data grid. By default, no filters are applied. For the Policy
-filter, all enabled unprotected policies and any protected policies the current user has rights to
-view are selected, and the other filter categories are blank. You can apply filters using any
+the recent events available in the data grid. By default, no filters apply. For the Policy
+filter, Threat Prevention selects all enabled unprotected policies and any protected policies the
+current user has rights to view, and leaves the other filter categories blank. You can apply filters using any
 combination of the filter categories. Use the Refresh button to repopulate the data grid with the
 current information for the selected filters.
 
@@ -30,8 +30,8 @@ current user doesn't have rights to view are grayed-out.
 **Who**
 
 To filter by Who, check the Perpetrator box to filter for a particular security principal committing
-the change and/or check the Affected Object box to filter for a particular object being affected by
-a change.
+the change and/or check the Affected Object box to filter for a particular object that a change
+affects.
 
 For the Perpetrator option, select the option button for either:
 
@@ -101,9 +101,8 @@ To filter by Other, check the box(es) for the filter types you want:
 Filter criteria can be a partial match.
 
 :::warning
-The Full Text Search isn't driven by indexes. Unless other indexed criteria are
-selected, the full text search could result in a scan of the entire SQL database which could be very
-slow for large databases.
+The Full Text Search doesn't use indexes. Unless you select other indexed criteria, the
+full text search can scan the entire SQL database, which can be very slow for large databases.
 :::
 
 

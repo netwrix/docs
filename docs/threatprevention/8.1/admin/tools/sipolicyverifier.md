@@ -43,13 +43,13 @@ topic for additional information.
 
 **Agents export (optional)** – Click **Agents** in the left pane to launch the Agents interface, and
 then click **Export Agents List** on the top bar. This export tells the tool which server each
-policy path belongs to, so each path is checked against the right server. Without it, every path is
-checked on the machine running the tool.
+policy path belongs to, so the tool checks each path against the right server. Without it, the tool
+checks every path on the machine running it.
 
 :::tip
 In an environment with a single domain controller, copy the policies export to that domain
 controller and run the tool there. Both the Active Directory objects and the file paths resolve
-locally, and the agents export isn't needed.
+locally, and you don't need the agents export.
 :::
 
 ## Run the Tool
@@ -62,9 +62,9 @@ SIPolicyVerifier.exe <policies-xml> [options]
 
 | Option | Default | Description |
 | --- | --- | --- |
-| --agents \<path\> | (none) | Path to the agents export. Without it, all file paths are checked on the local machine. |
+| --agents \<path\> | (none) | Path to the agents export. Without it, the tool checks all file paths on the local machine. |
 | --output \<path\> | report.html | Path for the report |
-| --include-disabled | off | Also check disabled policies, which are skipped by default |
+| --include-disabled | off | Also check disabled policies, which the tool skips by default |
 | --max-parallel \<number\> | 4 | Number of checks to run at the same time, from 1 to 64 |
 | --verbose | off | Print each check to the screen as it completes |
 
@@ -89,16 +89,16 @@ spare.
 
 ## How the Checks Work
 
-**File paths** – A local path is converted to a UNC path using the IP address, host name, and fully
-qualified domain name of the server that owns it, in that order, and the first one that answers is
-used. A path already written in UNC form is checked as it is. Each attempt times out after 15
-seconds. When every attempt against a server times out, the server is reported as unreachable and
-its paths are reported as skipped, which isn't the same as invalid.
+**File paths** – The tool converts a local path to a UNC path using the IP address, host name, and
+fully qualified domain name of the server that owns it, in that order, and uses the first one that
+answers. It checks a path already written in UNC form as it is. Each attempt times out after 15
+seconds. When every attempt against a server times out, the tool reports the server as unreachable
+and its paths as skipped, which isn't the same as invalid.
 
-**Active Directory objects** – A distinguished name is looked up over LDAP against the domain named
-in the distinguished name itself. A value in `<domain>\<user>` form is looked up by account name in
-that domain. Each search times out after 15 seconds. Results are cached across the whole run, so an
-object referenced by ten policies is looked up once.
+**Active Directory objects** – The tool looks up a distinguished name over LDAP against the domain
+named in the distinguished name itself. It looks up a value in `<domain>\<user>` form by account
+name in that domain. Each search times out after 15 seconds. The tool caches results across the
+whole run, so it looks up an object referenced by ten policies once.
 
 ## Read the Report
 
@@ -115,7 +115,7 @@ Attach both files to a support case, not the HTML report alone.
 | --- | --- |
 | 0 | Every object checked exists |
 | 1 | At least one object is missing or unreachable |
-| 2 | The input file or the environment is at fault, so no conclusion can be drawn about the policies |
+| 2 | The input file or the environment is at fault, so the tool can't draw a conclusion about the policies |
 
 See the [Import Window](/docs/threatprevention/8.1/admin/tools/import.md) topic for additional
 information.

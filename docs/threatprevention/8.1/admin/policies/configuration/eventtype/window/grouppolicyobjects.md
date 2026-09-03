@@ -7,7 +7,7 @@ sidebar_position: 50
 # Select Active Directory Group Policy Objects Window
 
 The Select Active Directory Group Policy Objects window provides a list of available GPOs. Selected
-objects are added to the filter from where you clicked the **Add** (+) button to open this window.
+Threat Prevention adds the selected objects to the filter from where you clicked the **Add** (+) button to open this window.
 
 ![Select Active Directory Group Policy Objects Window](/images/threatprevention/8.1/admin/policies/eventtype/window/selectactivedirectory/adgpo.webp)
 
@@ -18,5 +18,5 @@ objects are added to the filter from where you clicked the **Add** (+) button to
 
 See the [Selection Windows](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/overview.md) topic for additional information.
 
-The selection is displayed in the appropriate box of the AD Group Policy Object filter or the AD
+The selection appears in the appropriate box of the AD Group Policy Object filter or the AD
 Group Policy Object Changes filter.

@@ -42,13 +42,13 @@ Machine Accounts option in the Authentication Global Pre Filters section.
 :::
 
 
-When activated, the Agent filters out the event data according to configurations defined in the
-filters.json file located in the installation directory of the Enterprise Manager.
+When you activate a filter, the Agent filters out the event data according to the configurations in
+the filters.json file in the Enterprise Manager installation directory.
 
 ## Exclude ‘Noise’ Events Option
 
 The Exclude ‘Noise’ Events option is enabled by default to filter out login and internal low level
-attributes that can be considered ‘noise’ events, resulting in a bloating of the database. You can
+attributes that qualify as ‘noise’ events and bloat the database. You can
 scope this option to include any combination of the following ‘noise’ events:
 
 - Successful AD User Logins – Excludes events with the following attributes where ‘objectClass’
@@ -77,8 +77,8 @@ scope this option to include any combination of the following ‘noise’ events
 ## Exclude AD DNS Events Option
 
 The Exclude AD DNS Events option is enabled by default to filter out DNS events. These events can
-result in a bloating of the database. They must meet both of the following conditions to be
-excluded:
+bloat the database. Threat Prevention excludes only the events that meet both of the following
+conditions:
 
 - objectClass = ‘dnsNode’ or ‘dnsZone’
 - Contains the ‘dnsRecord’ or ‘dNSTombstoned’ attribute
@@ -95,7 +95,7 @@ The Don't Ignore Events With Unchanged Attributes option is disabled by default 
 ## Exclude Logins from Machine Accounts Option
 
 The Exclude Logins from Machine Accounts option is enabled by default to filter out machine logins.
-These events can result in a bloating of the database. Click the **configure** link to open the Edit
+These events can bloat the database. Click the **configure** link to open the Edit
 Collection window.
 
 ![Edit Collection window - For Machine Accounts](/images/threatprevention/8.1/admin/configuration/editcollectionmachineaccounts.webp)
@@ -164,9 +164,9 @@ The Exclude Authentication Events from Selected Accounts collection is only acce
 Event Filtering Configuration window. Use the **Add** (+) button to open the
 [Select Active Directory Perpetrators Window](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/perpetrators.md)
 to browse for the accounts you want. You can also type account names [domain name\account] in the
-textbox. You can use wild cards (\*) as part of either the domain name or account. An asterisk (\*)
-appearing anywhere other than as the first character or the last character is treated as a literal
-character rather than a wild card. For example: \*\Service1 would exclude all Service1 accounts
+textbox. You can use wild cards (\*) as part of either the domain name or account. Threat Prevention
+treats an asterisk (\*) appearing anywhere other than as the first character or the last character
+as a literal character rather than a wild card. For example: \*\Service1 would exclude all Service1 accounts
 whether it is a domain or local account, and Example\Service\* would exclude all accounts that start
 with “Service” for the Example domain.
 
@@ -179,7 +179,7 @@ Authentication Events from selected accounts option.
 The Send Latency Alerts option is disabled by default. It generates alerts if the time
 delay between when the Agent detects an AD event and when the Enterprise Manager receives it
 exceeds the specified latency threshold. This option helps you troubleshoot slow connections in the
-environment. These events can result in a bloating of the database, especially if you set the
+environment. These events can bloat the database, especially if you set the
 latency threshold too low.
 
 Select the Send Latency Alerts checkbox to enable this option. Use the arrows, or type into the

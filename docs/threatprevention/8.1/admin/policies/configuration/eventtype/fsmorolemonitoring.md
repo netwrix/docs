@@ -24,15 +24,15 @@ like an "ALL" for that filter set.
 
 ## FSMO Operations Filter
 
-Use the FSMO Operations filter to capture events when a domain controller is assigned a FSMO role or
-when a FSMO role is seized from a domain controller.
+Use the FSMO Operations filter to capture events when a domain controller acquires a FSMO role or
+when someone seizes a FSMO role from a domain controller.
 
 ![Policy window - FSMO Operations filter](/images/threatprevention/8.1/admin/policies/eventtype/fsmooperations.webp)
 
 Select the **All** checkbox to generate events when a domain controller acquires or relinquishes a
 FSMO role.
 
-On selecting it, both the Acquire and Relinquish checkboxes are automatically checked.
+When you select it, Threat Prevention automatically checks both the Acquire and Relinquish checkboxes.
 
 - Check the **Acquire** checkbox to generate events when a domain controller acquires a FSMO role.
 - Check the **Relinquish** checkbox to generate events when a domain controller relinquishes a FSMO
@@ -40,8 +40,8 @@ On selecting it, both the Acquire and Relinquish checkboxes are automatically ch
 
 ## FSMO Roles Filter
 
-On the FSMO Roles filter, specific FSMO role assignments for a domain controller are selected to be
-monitored.
+On the FSMO Roles filter, select the specific FSMO role assignments for a domain controller to
+monitor.
 
 ![Policy window - FSMO Roles filter](/images/threatprevention/8.1/admin/policies/eventtype/fsmoroles.webp)
 

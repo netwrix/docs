@@ -22,12 +22,12 @@ The Netwrix Threat Hunting App for Splunk contains only one dashboard called Thr
   - Sensitive Data Hunting – File Name
   - Privilege Creep/Escalation – Account Name
 
-- The Day of Week checklist provides the option to choose which days of the week will be filtered
-  out when looking for threats. By default, all of the days are checked. When a day is unchecked,
-  Splunk will filter out events that occurred on that day.
-- The Time of Day checklist provides the option to choose which times of day will be filtered out
-  when looking for threats. By default, all of the times of day are checked. When a day is
-  unchecked, Splunk will filter out events that occurred on that day.
+- The Day of Week checklist provides the option to choose which days of the week to filter
+  out when looking for threats. By default, all of the days are checked. When you uncheck a day,
+  Splunk filters out events that occurred on that day.
+- The Time of Day checklist provides the option to choose which times of day to filter out
+  when looking for threats. By default, all of the times of day are checked. When you uncheck a day,
+  Splunk filters out events that occurred on that day.
 
 Click Submit to refresh the card data and reload the page with the current parameters (Timeframe,
 search term, Day of Week, and Time of Day).

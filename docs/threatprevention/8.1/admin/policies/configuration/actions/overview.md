@@ -23,7 +23,7 @@ The following types of actions are available:
 
   - File Actions – Records the events to a log (text) file in XML or Comma Delimited (CSV) format
   - .NET Script Actions – Runs a user‐supplied script that implements an automated action in
-    response to the event. Scripts can be written in Visual Basic or C#
+    response to the event. You can write scripts in Visual Basic or C#
   - PowerShell 4.0 Actions – Runs a user-supplied PowerShell script that implements an automated
     action in response to the event
 

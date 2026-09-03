@@ -41,7 +41,7 @@ time in milliseconds before a service times out.
 
 **Step 7 –** Restart the computer.
 
-The ServicesPipeTimeout value is now modified.
+You have now modified the ServicesPipeTimeout value.
 
 ## Create the ServicesPipeTimeout Entry
 
@@ -51,6 +51,6 @@ To create the ServicesPipeTimeout entry using the Registry Editor:
 
 **Step 2 –** Type **ServicesPipeTimeout** and press **Enter**.
 
-The ServicesPipeTimeout entry is now added.
+You have now added the ServicesPipeTimeout entry.
 
 See the [Best Practices and Troubleshooting](/docs/threatprevention/8.1/troubleshooting/overview.md) topic for additional information.

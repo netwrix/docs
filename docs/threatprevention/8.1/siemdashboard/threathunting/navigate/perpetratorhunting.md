@@ -7,7 +7,7 @@ sidebar_position: 10
 # Perpetrator Hunting
 
 The Perpetrator Hunting option uses the Perpetrator Name field to determine which user is targeted
-when searching for threats. Wildcard characters (%) are allowed.
+when searching for threats. You can use wildcard characters (%).
 
 The Perpetrator Hunting option contains the following cards:
 
@@ -22,4 +22,4 @@ The Perpetrator Hunting option contains the following cards:
 - Last Twenty File System Events – Shows the last twenty File System events recorded in the
   specified timeframe
 
-The specified timeframe is set by default to _All Time_.
+The specified timeframe defaults to _All Time_.

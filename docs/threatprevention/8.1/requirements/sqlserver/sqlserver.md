@@ -38,15 +38,15 @@ These depend on the size of the target environment.
 | SQL Transaction Log Disk | 80 GB    | 80 GB     | 40 GB    | 20 GB   |
 | SQL TEMP DB Disk   | 160 GB      | 160 GB      | 80 GB     | 40 GB   |
 
-The disk sizes for the three SQL Server databases can be reduced if not using all Threat
+You can reduce the disk sizes for the three SQL Server databases if you don't use all Threat
 Prevention solutions.
 
 **Additional SQL Server Requirements**
 
 The following are additional requirements for the SQL Server:
 
-- All SQL Server databases must be configured to use ‘Simple Recovery Model’.
-- SQL Agent Service is needed to use the Database Maintenance feature in Threat Prevention.
+- You must configure all SQL Server databases to use ‘Simple Recovery Model’.
+- You need the SQL Agent Service to use the Database Maintenance feature in Threat Prevention.
 
 **Additional SQL Server Considerations**
 
@@ -54,7 +54,7 @@ The following additional considerations are recommended for the SQL Server:
 
 - The standard Autogrowth setting for the database can cause Threat Prevention delays. Database
   growth is computationally intensive. While SQL Server is growing the database, no other activity
- can occur. If this option is employed, speak with a Netwrix engineer to determine an
+ can occur. If you employ this option, speak with a Netwrix engineer to determine an
   appropriate setting for best performance.
 
   :::info
@@ -93,11 +93,11 @@ information.
 
 **Database Permissions**
 
-The following permissions are required on the databases:
+The databases require the following permissions:
 
 - Database Owner
 - Provisioned to use Default Schema of ‘dbo’
 
-Additional permissions are required for the optional Database Maintenance feature in Threat
-Prevention. See the [Database Maintenance Feature Requirements](/docs/threatprevention/8.1/requirements/sqlserver/dbmaintenance.md) topic for
+The optional Database Maintenance feature in Threat Prevention requires additional permissions. See
+the [Database Maintenance Feature Requirements](/docs/threatprevention/8.1/requirements/sqlserver/dbmaintenance.md) topic for
 additional information.

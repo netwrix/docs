@@ -69,7 +69,7 @@ The report contains five sections and a verdict.
 | Section | Contents |
 | --- | --- |
 | Non-Microsoft modules in LSASS | Every third-party DLL loaded into the LSASS process, with its file version |
-| Code-section diff results | A byte-level comparison of each function on disk against the same function in memory, which is how a hook is detected |
+| Code-section diff results | A byte-level comparison of each function on disk against the same function in memory, which is how the tool detects a hook |
 | Anonymous executable pages | Executable memory regions that belong to no module on disk. Threat Prevention regions are reported as a count; unidentified regions are listed individually. |
 | Threat Prevention hook summary | The hooks attributed to Threat Prevention |
 | Unknown and third-party hook summary | The hooks that belong to another product. This is the section to read first when investigating a conflict. |

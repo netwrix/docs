@@ -7,8 +7,8 @@ sidebar_position: 120
 # Select Exchange Objects from Active Directory Window
 
 The Select Exchange Objects from Active Directory window provides a list of Active Directory users
-that have mailboxes configured, to either include or exclude. Selected objects are added to the
-filter from where you clicked the **Add** (+) button to open this window.
+that have mailboxes configured, to either include or exclude. Threat Prevention adds the selected
+objects to the filter from where you clicked the **Add** (+) button to open this window.
 
 ![Select Exchange Objects from Active Directory Window](/images/threatprevention/8.1/admin/policies/eventtype/window/selectactivedirectory/exchangeobjectsfromad.webp)
 
@@ -19,5 +19,5 @@ filter from where you clicked the **Add** (+) button to open this window.
 
 See the [Selection Windows](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/overview.md) topic for additional information.
 
-The selection is displayed in the appropriate box of the Exchange Mailbox Objects and Containers
+The selection appears in the appropriate box of the Exchange Mailbox Objects and Containers
 filter.

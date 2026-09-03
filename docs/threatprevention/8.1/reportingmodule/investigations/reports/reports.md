@@ -27,7 +27,7 @@ additional information.
 
 Click **Investigate** in the application header bar to open the Investigations interface. Then
 create a new investigation or click a folder in the navigation pane to access a saved investigation.
-An investigation is located in the folder where it was saved.
+An investigation is located in the folder where you saved it.
 
 Enter information in the Filters section, which includes one or more filter statements and a
 timeframe, to generate the report.
@@ -48,13 +48,13 @@ The table displays the following data:
   view user details.
 - Perpetrator – The name of the user, group, or entity responsible for carrying out an action. This
   name is in sAMAccountName format. Click the link to view perpetrator details.
-- Successful – Indicates whether the action associated with the event was successfully completed:
+- Successful – Indicates whether the action associated with the event completed successfully:
 
   - True – The operation was successful
   - False – The operation failed
 
-- Blocked – Indicates whether the operation was prevented by a security measure, such as a Netwrix
-  agent:
+- Blocked – Indicates whether a security measure, such as a Netwrix agent, prevented the
+  operation:
 
   - True – The operation was blocked
   - False – The operation wasn't blocked
@@ -78,8 +78,8 @@ specified for the investigation.
 ![Events Over Time section of an Investigations report](/images/threatprevention/8.1/reportingmodule/investigations/eventsovertime.webp)
 
 - Hover over a time period to view the type of event and number of events logged for that timeframe.
-- Hover over the pie chart to view the total number of each type of event. The total number of all
-  events is displayed in the middle of the pie chart.
+- Hover over the pie chart to view the total number of each type of event. The middle of the pie
+  chart displays the total number of all events.
 
 ## Top Resources Tab
 

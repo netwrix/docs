@@ -6,15 +6,15 @@ sidebar_position: 10
 
 # Database Maintenance Feature Requirements
 
-All operations to configure database maintenance on the
-[Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md) are executed
-by the Enterprise Manager. Therefore, either the SQL Server account supplied during Threat
+The Enterprise Manager executes all operations to configure database maintenance on the
+[Database Maintenance Window](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/overview.md).
+Therefore, either the SQL Server account supplied during Threat
 Prevention installation or the Windows account configured to run the Enterprise Manager (for Windows
 Authentication to the SQL Server) must have enough rights to execute the Database Maintenance
 feature.
 
 :::note
-If the account used to run Database Maintenance is changed, manually
+If you change the account used to run Database Maintenance, manually
 delete the DBMaintenance SQL Agent Job in the SQL Server Management Studio.
 :::
 
@@ -33,7 +33,7 @@ The database user must have the following rights to run Database Maintenance:
 
 **Database Permissions**
 
-The following rights are required to run database maintenance:
+Running database maintenance requires the following rights:
 
 - In the master database:
 
@@ -66,9 +66,9 @@ these databases.
 
 **Archive Database Permissions**
 
-If the **Move** option is selected on the
+If you select the **Move** option on the
 [Archive Data](/docs/threatprevention/8.1/admin/configuration/databasemaintenance/archive.md) tab of the Database
-Maintenance window, an additional account must be provided for the destination server/database. This
+Maintenance window, you must provide an additional account for the destination server/database. This
 account must have rights to:
 
 - Create the database on the specified server
@@ -78,13 +78,13 @@ account must have rights to:
 ## Less Privilege Model for NVMonitorData Database Permission
 
 :::note
-If this less privileged model is used, then the last step in the Database Maintenance
-process, executing sp_updatestats, will fail. However, all other steps in the process will complete
-successfully and all data will be deleted/moved as configured.
+If you use this less privileged model, the last step in the Database Maintenance
+process, executing sp_updatestats, fails. However, all other steps in the process complete
+successfully and Threat Prevention deletes/moves all data as configured.
 :::
 
 
-If it isn't possible to grant the ‘user’ owner rights to the NVMonitorData database, grant the
+If you can't grant the ‘user’ owner rights to the NVMonitorData database, grant the
 following instead:
 
 - db_datareader role
@@ -197,8 +197,8 @@ exec(@q);
 
 :::warning
 Errors may occur if this script designates an existing user for granting Less Privilege
-Model permissions for database maintenance. This happens because the user is directed to be dropped
-and subsequently recreated.
+Model permissions for database maintenance. This happens because the script drops and then recreates
+the user.
 :::
 
 

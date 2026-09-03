@@ -29,7 +29,7 @@ There are three methods available for data output:
 - File on an Agent – Sends event data to a specified file. The server must have a deployed Agent.
 - Activity Monitor – Sends event data either directly to an Activity Monitor port or a file, that
   Activity Monitor will access on a domain controller where both the Threat Prevention Agent and
-  Activity Monitor agent are located. Then Activity Monitor must be configured to send the data to
+  Activity Monitor agent are located. Then you must configure Activity Monitor to send the data to
   Threat Manager. See the
   [Netwrix Activity Monitor Documentation](https://helpcenter.netwrix.com/category/activitymonitor)
   for additional information.
@@ -44,10 +44,10 @@ The following parameters are required:
 - AppToken – String generated on the App Tokens page of Threat Manager Configuration menu
 - URI – Threat Manager hostname or IP address
 - Protocol – Specifies the behavior of the string as AMQP or File path
-- Path – File path to the Agent location where Threat Prevention event data is sent. This parameter
-  is required when the protocol is set to File.
+- Path – File path to the Agent location where Threat Prevention sends event data. This parameter
+  is required when you set the protocol to File.
 - ComputerName – Location the Threat Prevention Agents send event data for Threat Manager. This
-  parameter is required when the protocol is set to AMQP.
+  parameter is required when you set the protocol to AMQP.
 - Port – Threat Manager port. The default is 10001.
 
 Example using URI and AppToken to connect to Threat Manager:
@@ -64,7 +64,7 @@ Example using Activity Monitor to send to Threat Manager:
 
 ## Get Threat Manager Configuration
 
-The `Get-SIDefendConfig` command is used to return all settings on the Event Sink Tab of the
+Use the `Get-SIDefendConfig` command to return all settings on the Event Sink Tab of the
 [Netwrix Threat Manager Configuration Window](/docs/threatprevention/8.1/admin/configuration/threatmanagerconfiguration.md).
 
 ## Get LDAP Deception

@@ -24,12 +24,12 @@ To import the file:
 
 ![Import Window](/images/threatprevention/8.1/admin/tools/import.webp)
 
-The Import window includes options for specifying the locations where imported policies and
-templates will be saved, and how duplicate items will be handled.
+The Import window includes options for specifying where to save imported policies and
+templates, and how to handle duplicate items.
 
 **Step 2 –** In the Select Import File section, use the ellipsis (…) to browse for the XML file to
-be imported. Once selected, the Import File Details box displays statistical information on what
-will be imported and notes that were added while exporting the file.
+import. After you select it, the Import File Details box displays statistical information on what
+Threat Prevention will import and the notes you added while exporting the file.
 
 **Step 3 –** Use the Destination Folders section to specify a folder from within the folder
 structure in the Navigation pane for saving the policies and/or templates imported from the XML
@@ -48,14 +48,14 @@ Select one of the following option buttons:
 - Place in Specific Folders – Choose an option button:
   - Place All in This Single Folder –Select this option and then use the Folder Destination for
     Policies and/or Folder Destination for Templates box to select a folder for importing the
-    policies and/or templates respectively. All policies from the XML file will be imported to the
-    selected folder while ignoring any folder hierarchy mentioned in the XML file. The same is
-    true for templates.
+    policies and/or templates respectively. Threat Prevention imports all policies from the XML
+    file to the selected folder, ignoring any folder hierarchy mentioned in the XML file. The same
+    is true for templates.
   - Maintain Folder Hierarchy from Which They Were Exported – Select this option and then use the
     Folder Destination for Policies and/or Folder Destination for Templates box to select a folder
-    for importing the policies and/or templates respectively. All policies from the XML file will
-    be imported with the selected folder acting as the parent folder, and any folder hierarchy as
-    it was at the time of export will be re-created. The same is true for templates.
+    for importing the policies and/or templates respectively. Threat Prevention imports all
+    policies from the XML file with the selected folder acting as the parent folder, and re-creates
+    any folder hierarchy as it was at the time of export. The same is true for templates.
 
 Use the ellipsis (…) next to the Folder Destination for Policies and/or Folder Destination for
 Templates box to browse for the folder where you want to import the policies and/or templates
@@ -77,6 +77,6 @@ or collection exists in the system with the same name as in the XML file, the sy
 information from the XML file to it. If this checkbox isn't checked, the system will overwrite the
 existing policy, template, or collection with the respective item from the XML file.
 
-**Step 6 –** When the options are set as desired, click **Import**.
+**Step 6 –** After you set the options as desired, click **Import**.
 
-Information from the XML file is imported into Threat Prevention as per the configured settings.
+Threat Prevention imports the information from the XML file as per the configured settings.

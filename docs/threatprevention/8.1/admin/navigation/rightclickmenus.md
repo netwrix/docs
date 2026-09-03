@@ -75,7 +75,7 @@ From the node for a specific policy or template, the right-click menu contains t
 | Enable              | Enables the selected policy. Only available for policies.      |
 | Disable             | Disables the selected policy. Only available for policies.        |
 | Copy                | Copies the selected policy/template         |
-| Cut                 | Copies the selected policy/template. Then it deletes the selected policy/template when the copy is pasted to a new folder. |
+| Cut                 | Copies the selected policy/template. Then it deletes the selected policy/template when you paste the copy into a new folder. |
 
 :::note
 If the logged in user doesn't have the Manage Policies permissions for a protected

@@ -7,8 +7,8 @@ sidebar_position: 40
 # Select Active Directory Contexts Window
 
 The Select Active Directory Contexts window provides a list of available contexts to either include
-or exclude. Selected objects are added to the filter from where you clicked the **Add** (+) button
-to open this window.
+or exclude. Threat Prevention adds the selected objects to the filter from where you clicked the
+**Add** (+) button to open this window.
 
 ![Select Active Directory Contexts Window](/images/threatprevention/8.1/admin/policies/adcontexts.webp)
 
@@ -21,5 +21,5 @@ to open this window.
 
 See the [Selection Windows](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/overview.md) topic for additional information.
 
-The selection is displayed in the appropriate box of the AD Account filter, the AD Context filter,
+The selection appears in the appropriate box of the AD Account filter, the AD Context filter,
 or the AD Objects and Containers filter.

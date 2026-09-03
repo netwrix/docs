@@ -6,8 +6,7 @@ sidebar_position: 10
 
 # Agent Not Communicating with the Enterprise Manager
 
-If the Agent isn't communicating with the Enterprise Manager, the following questions should be
-addressed:
+If the Agent isn't communicating with the Enterprise Manager, address the following questions:
 
 - Is there a firewall blocking communication?
 
@@ -17,7 +16,7 @@ addressed:
     (default path is `…\Netwrix\Threat Prevention\SIWindowsAgent\SIWindowsAgent.exe`) specified on
     the **Program and Services** tab along with selecting the **This Program** radio button.
 
-- Does the server where the Agent has been deployed have multiple network adapters (multi-homed)?
+- Does the server where you deployed the Agent have multiple network adapters (multi-homed)?
 
   - If yes, then the Agent is likely trying to communicate with the Enterprise Manager through the
     wrong network. See the Bind To topic to resolve this issue.

@@ -48,7 +48,7 @@ can also edit the action configuration directly through this display.
 
 ## Default PowerShell 4.0 Script
 
-The following PowerShell 4.0 script is configured as a default action. It either creates the
+Threat Prevention configures the following PowerShell 4.0 script as a default action. It either creates the
 _c:\nveventdata.txt_ file or appends the event data to it.
 
 ```

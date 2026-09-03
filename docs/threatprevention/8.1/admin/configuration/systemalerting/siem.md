@@ -19,7 +19,7 @@ Alerting window opens.
 **Step 2 –** Click **Configure** to configure a SIEM server. See the Configure a SIEM Server topic
 for additional information.
 
-**Step 3 –** Once configured, click **Events** on the **SIEM** tab.
+**Step 3 –** After you configure the server, click **Events** on the **SIEM** tab.
 
 ![Netwrix Threat Prevention System Alerting window - SEIM tab](/images/threatprevention/8.1/admin/configuration/systemalerting/seim.webp)
 
@@ -35,8 +35,8 @@ SIEM Server topic.
 notifications.
 
 **Step 7 –** Click the **Select Profile, please** dropdown menu for an event/incident/policy and
-select a SIEM Profile to assign to it. When an alert is generated for the event/incident/policy,
-Threat Prevention sends a notification to the SIEM server specified in the SIEM Profile.
+select a SIEM Profile to assign to it. When Threat Prevention generates an alert for the
+event/incident/policy, it sends a notification to the SIEM server specified in the SIEM Profile.
 
 - For policies, you can assign multiple profiles by either checking the profiles you want or the
   Select All option. Click **OK** in the dropdown menu to confirm the selection.
@@ -50,8 +50,8 @@ event.
 
 Click **Suppression time** for an event and select an option from the dropdown menu:
 
-- A duration ( 1 min, 2 min, 5 min, 10 min, 30 min, 60 min) – Once an alert is generated for the
-  event, Threat Prevention doesn't generate another alert for it during the next X minutes (X is
+- A duration ( 1 min, 2 min, 5 min, 10 min, 30 min, 60 min) – After Threat Prevention generates an
+  alert for the event, it doesn't generate another alert for it during the next X minutes (X is
   the duration you selected) even if the event occurs.
 - Disabled – Threat Prevention doesn't suppress alerts
 
@@ -61,9 +61,8 @@ You select a suppression time of 30 minutes for an event. Threat Prevention then
 for that event. If the event occurs again within the next 30 minutes, Threat Prevention doesn't
 generate another alert.
 
-Use the suppression time feature to handle situations where numerous alerts are generated
-for an event, such as Agent Latency, causing the Enterprise Manager and Administration Console to
-freeze.
+Use the suppression time feature to handle situations where an event such as Agent Latency generates
+numerous alerts and freezes the Enterprise Manager and Administration Console.
 
 **Step 9 –** For Analytics, choose whether to enable Ongoing Attack Alerts. When checked,
 Threat Prevention sends periodic reminders of an ongoing attack if it continues after the initial
@@ -133,7 +132,7 @@ mapping file formats are specifically designed for Analytics incidents.
 
 **Step 11 –** Click **OK** to save the settings.
 
-Once a SIEM server is configured, assign it to events using the System Alerting window’s SIEM Tab or
+After you configure a SIEM server, assign it to events using the System Alerting window’s SIEM Tab or
 the [Actions Tab](/docs/threatprevention/8.1/admin/policies/configuration/actions/overview.md) of a policy or the
 [Actions Tab](/docs/threatprevention/8.1/admin/templates/configuration/actions.md) of a policy template.
 

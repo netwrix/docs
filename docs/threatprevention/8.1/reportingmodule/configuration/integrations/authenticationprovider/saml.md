@@ -32,7 +32,7 @@ The details page for a SAML authentication provider has two tabs:
 
 **Prerequisites**
 
-For users to be able to use SAML, "SMTP" must be set up and an email address must be stored with the
+For users to use SAML, you must set up "SMTP" and store an email address with the
 respective users.
 
 ## Configuration Tab
@@ -41,12 +41,12 @@ Configure the following settings for a SAML provider on the Configuration tab:
 
 ![Configuration tab for a SAML authneication provider](/images/threatprevention/8.1/reportingmodule/configuration/integrations/authenticationprovider/configurationsaml.webp)
 
-- Default – The default profile applied when a user is assigned multiple authentication profiles.
-  When off, the profile will be determined in alphabetical order of the profile name. Toggle off and
-  on as desired.
+- Default – The default profile applied when you assign a user multiple authentication profiles.
+  When off, the application determines the profile in alphabetical order of the profile name. Toggle
+  off and on as desired.
 - Login URI – Login URI is a specific web address where users can authenticate themselves to access
   a web application or service
-- Logout Uri – A logout URI is a specific web address where users are directed to terminate their
+- Logout Uri – A logout URI is a specific web address that directs users to terminate their
   authenticated session in a web application or service
 - Login Type – The login type to use to log into the account. Use the dropdown menu to select one
   of the following: Sam Account Name, User Principal Name, Email Address, or Sid
@@ -61,7 +61,7 @@ Click Save to commit the configuration settings.
 
 ## Users/Groups Tab
 
-The Users/Groups tab displays users and groups that are assigned to this authentication
+The Users/Groups tab displays users and groups that you assign to this authentication
 profile. To give access to the application to new users, click the New Access button, which opens
 the Add Console Access window. To assign this authentication provider to existing users, go to
 System Settings > User Access Page.

@@ -17,4 +17,4 @@ The Lightweight Directory Access Protocol (LDAP) dashboard contains the followin
 - Change Events – Tabular format of all non-trivial LDAP queries that have been recorded in the
   specified timeframe
 
-The specified timeframe is set by default to the last 24 hours, or past day.
+The specified timeframe defaults to the last 24 hours, or past day.

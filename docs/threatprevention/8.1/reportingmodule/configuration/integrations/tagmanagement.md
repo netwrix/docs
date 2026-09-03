@@ -65,7 +65,7 @@ Add New Integration window opens.
 
 **Step 5 –** Click Add. The Add New Integration window closes.
 
-The tag is listed in the Integrations navigation pane. It can now be applied to objects.
+The tag appears in the Integrations navigation pane. You can now apply it to objects.
 
 ## Tag Details Page
 
@@ -85,14 +85,14 @@ This page provides the following information:
 
 - Name – The tag name. Type in the field to modify the name.
 - Description – The tag description. Type in the field to modify the description.
-- Delete Tag button – This button is only enabled for custom tags. Built-in tags can't be
-  deleted. You will be asked to confirm the action.
+- Delete Tag button – This button is only enabled for custom tags. You can't delete built-in tags.
+  The application asks you to confirm the action.
 - Search box – Search for objects in the Untagged Items box and the Tagged Items box by typing in
   the textbox. You can search for user objects, group objects, file objects, or computer objects.
 - Types – The dropdown menu provides object type filter options that apply to the search box
-  results. When a search isn't being conducted, the filter types apply to the Tagged Items box.
-- Untagged Items box – Displays objects that match the search text. This box is blank when a search
-  isn't performed.
+  results. When you aren't conducting a search, the filter types apply to the Tagged Items box.
+- Untagged Items box – Displays objects that match the search text. This box is blank when you don't
+  perform a search.
 - Tagged Items box – Lists objects with this tag applied
 
 ## Use the Type Filter
@@ -113,7 +113,7 @@ The following types are available:
 - Files – File objects
 - Computers – Active Directory computer objects
 
-The _tagged items_ and _untagged items_ lists on the window will be filtered to the selected object
+The window filters the _tagged items_ and _untagged items_ lists to the selected object
 types.
 
 ## Apply Tags to Objects
@@ -137,7 +137,7 @@ results.
 **Step 6 –** Click the arrow (`>`) between the Untagged Items box and the Tagged Items box to add
 the tag to the selected objects.
 
-The tag is applied to the selected objects.
+The application applies the tag to the selected objects.
 
 ## Remove Tags From Objects
 
@@ -160,4 +160,4 @@ results.
 **Step 6 –** Click the arrow (`<`) between the Untagged Items box and the Tagged Items box to remove
 the tag from the selected objects.
 
-The tag is removed from the selected objects.
+The application removes the tag from the selected objects.

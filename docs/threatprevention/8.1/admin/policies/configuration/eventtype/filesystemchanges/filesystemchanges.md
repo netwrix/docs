@@ -22,10 +22,10 @@ The event filters for the File System Changes event type are:
 Each filter tab acts like an "AND" statement for the filter. Threat Prevention treats any filter tab left blank
 like an "ALL" for that filter set.
 
-You must select paths/collections to be included or excluded on the **Paths** filter within the
+You must select the paths/collections to include or exclude on the **Paths** filter within the
 target file system. The policy monitors the path/collection from the Agent used to select it; the
-Agent is indicated in the parenthesis after the path/collection. The path/collection can be
-monitored by other Agents that you can select on the Additional Agents filter.
+Agent appears in the parenthesis after the path/collection. Other Agents that you select on the
+Additional Agents filter can also monitor the path/collection.
 
 :::note
 Any files or folders you exclude must be a subset of a folder identified in the
@@ -33,7 +33,7 @@ Include Paths section.
 :::
 
 
-If no path is provided, an error message is displayed when the policy is enabled: The policy must
+If you don't provide a path, an error message displays when you enable the policy: The policy must
 have at least one path defined.
 
 Example:
@@ -60,13 +60,13 @@ By adding the Agents on server1 and server3 in the Additional Agents filter, bot
 server3 monitor both folder paths, but server2 still only monitors the C:\Users\All Users folder.
 
 Event data collected by the policies with this event type are also available for consumption by
-Netwrix Access Analyzer (formerly Enterprise Auditor) if the File System Enterprise Auditor Event
-Type is used by the same enabled policy.
+Netwrix Access Analyzer (formerly Enterprise Auditor) if the same enabled policy uses the File
+System Enterprise Auditor Event Type.
 
 ## File System Filter
 
-Use the File System filter for monitoring to select the types of file system events to be monitored
-by the policy.
+Use the File System filter for monitoring to select the types of file system events for the policy
+to monitor.
 
 ![Policy window - File System filter for monitoring](/images/threatprevention/8.1/admin/policies/eventtype/filesystem.webp)
 
@@ -118,14 +118,14 @@ types:
 **Wildcards area**
 
 The **Wildcards** boxes are to scope the policy using an asterisk (\*) or question mark (?) as the
-wildcard. Files that match the wildcard in the include box are monitored. Files that match the
-wildcard in the exclude box are ignored.
+wildcard. The policy monitors files that match the wildcard in the include box and ignores files
+that match the wildcard in the exclude box.
 
 :::tip
 Adding an include filter scopes the policy to monitor only matching files. Adding an
-exclude filter scopes the policy to monitor all files that don't match. If both include and exclude
-filters are applied to a single policy, the exclude filter takes precedence. If the boxes are left
-blank, all files are monitored according to all the policy filter selections.
+exclude filter scopes the policy to monitor all files that don't match. If you apply both include
+and exclude filters to a single policy, the exclude filter takes precedence. If you leave the boxes
+blank, the policy monitors all files according to all the policy filter selections.
 :::
 
 
@@ -179,8 +179,8 @@ for additional information.
 
 ![Paths filter - Sub Folder checkbox](/images/threatprevention/8.1/admin/policies/eventtype/subfolder.webp)
 
-When paths are added, a Sub-Folder checkbox displays. If checked, the filter is applied to the
-parent and all child content (files and folders). If unchecked, the filter is only applied to the
+When you add paths, a Sub-Folder checkbox displays. If checked, the filter applies to the
+parent and all child content (files and folders). If unchecked, the filter applies only to the
 listed folder and its first-level contents.
 
 ## Additional Agents Filter
@@ -203,9 +203,9 @@ There is no impact if a selected path doesn't exist on the server where an Agent
 :::
 
 
-When a domain is added to the Selected Agents\Domains list, all Agents deployed in that domain are
-included in the policy. If a domain is specified, then any Agent later installed in that domain is
-also included in this policy.
+When you add a domain to the Selected Agents\Domains list, the policy includes all Agents deployed
+in that domain. If you specify a domain, the policy also includes any Agent later installed in that
+domain.
 
 ## AD Perpetrator Filter
 
@@ -241,7 +241,7 @@ and all child contexts. Uncheck it to apply the filter to the listed context onl
 
 ## Success Filter
 
-The Success filter is where the policy is set to only monitor successful events, failed events, or
+Use the Success filter to set the policy to monitor only successful events, only failed events, or
 both.
 
 ![Event Type – Success filter](/images/threatprevention/8.1/admin/policies/eventtype/success.webp)

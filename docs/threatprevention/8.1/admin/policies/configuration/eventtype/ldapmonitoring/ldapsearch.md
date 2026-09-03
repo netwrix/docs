@@ -20,13 +20,13 @@ selected configurations and scope of the LDAP query.
 
 **Secure configurations**
 
-This setting determines if events should be captured for an LDAP operation based on the security
-protocol used by that operation.
+This setting determines whether Threat Prevention captures events for an LDAP operation, based on
+the security protocol that operation used.
 
 Select **All** to capture LDAP events that used any protocol.
 
-You can also limit Threat Prevention to capture LDAP events only when one of the selected
-protocols are used.
+You can also limit Threat Prevention to capture LDAP events only when an operation uses one of the
+selected protocols.
 
 - SSL
 - StartTLS
@@ -42,5 +42,5 @@ Select the All checkbox to search all scopes, or select specific scoping levels:
 - One level
 - Subtree
 
-Only LDAP queries using the selected security options and search scope levels will have events
-reported by the Agent.
+The Agent reports events only for LDAP queries that use the selected security options and search
+scope levels.

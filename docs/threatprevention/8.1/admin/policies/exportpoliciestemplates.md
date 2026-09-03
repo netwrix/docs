@@ -25,10 +25,10 @@ selection. On the right-click menu, click the Export option.
 
 ![Export Policies and Templates window](/images/threatprevention/8.1/admin/policies/export.webp)
 
-**Step 3 –** In the Notes textbox, enter any information to be saved with the XML file.
+**Step 3 –** In the Notes textbox, enter any information you want to save with the XML file.
 
-**Step 4 –** The Encrypt Sensitive Fields option can be toggled on or off.
+**Step 4 –** You can toggle the Encrypt Sensitive Fields option on or off.
 
-If on, provide a value in the Password and Verify Password boxes to be used as the encryption key.
+If on, provide a value in the Password and Verify Password boxes to use as the encryption key.
 
 **Step 5 –** Click **Export**.

@@ -6,8 +6,8 @@ sidebar_position: 30
 
 # Credential Profile Page
 
-The Credential Profile page within the Integrations interface lists all of the credentials used by
-the application to complete tasks. These credentials are securely stored.
+The Credential Profile page within the Integrations interface lists all of the credentials the
+application uses to complete tasks. The application stores these credentials securely.
 
 Use the gear icon in the upper right corner of the console to open the Configuration menu. Then
 select **Integrations** to open the Integrations interface.
@@ -28,8 +28,8 @@ list of permission requirements for each type of task.
 As a best practice:
 
 - Create one Credential Profile per domain for Active Directory Sync purposes
-- Create a Credential Profile with Writer permissions to the shared folder where subscription
-  exports will be stored
+- Create a Credential Profile with Writer permissions to the shared folder where the application
+  stores subscription exports
 
 ## Add a Credential Profile
 
@@ -60,7 +60,7 @@ Add New Integration window opens.
 
 **Step 5 –** Click Add. The Add New Integration window closes.
 
-The Credential Profile is listed in the Integrations navigation pane. Repeat the process to add
+The Credential Profile appears in the Integrations navigation pane. Repeat the process to add
 additional Credential Profiles.
 
 ## Credential Profile Details
@@ -77,8 +77,8 @@ view a list of the already created Credential Profiles, if any.
 
 ![Integrations interface displaying the details for a Credenital Profile](/images/threatprevention/8.1/reportingmodule/configuration/integrations/details_1.webp)
 
-Select the profile from the list to see modification optionsThe following information is displayed
-for a Credential Profile:
+Select the profile from the list to see modification options. The page displays the following
+information for a Credential Profile:
 
 - Name and Description – The box at the top displays the name and description of the profile
 
@@ -120,7 +120,7 @@ view a list of the already created Credential Profiles, if any.
 
 **Step 7 –** Click the **Save** button.
 
-The Credential Profile name and/or description have been modified.
+The Credential Profile now uses the modified name and/or description.
 
 ## Edit Credential
 
@@ -145,4 +145,4 @@ menu.
 
 **Step 6 –** Click **Save**. The Credential Settings window closes.
 
-The credential within the Credential Profile has been modified.
+You have now modified the credential within the Credential Profile.

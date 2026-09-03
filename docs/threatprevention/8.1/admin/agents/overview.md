@@ -7,8 +7,8 @@ sidebar_position: 40
 # Agents Interface
 
 Use the Agents interface to view, deploy, and manage Agents from a centralized
-location to the targeted domain controllers in a domain. The Agent must be deployed on all domain
-controllers that you want to receive event data for. Once one or more Agents are deployed to a
+location to the targeted domain controllers in a domain. You must deploy the Agent on all domain
+controllers that you want to receive event data for. After you deploy one or more Agents to a
 domain, it becomes known as a targeted domain.
 
 You can deploy the Threat Prevention Agent through any of the following methods:
@@ -166,7 +166,7 @@ The right-click menu contains the following selections:
 | Harden Agent             | Prevents anyone from altering, stopping, or starting an Agent from within the local Service Control Manager. See the [Harden Agent](/docs/threatprevention/8.1/admin/agents/agent-management/harden.md) topic for additional information.                                                                                                                                                                                        |
 | Soften Agent             | Unlocks the Agent so it can be controlled from within the local Service Control Manager. See the [Soften Agent](/docs/threatprevention/8.1/admin/agents/agent-management/soften.md) topic for additional information.                                                                                                                                                                                                        |
 | Remove Server from List  | Removes a server from the Agent data grid. If the server has a deployed Agent, Threat Prevention adds the server back to the list the next time the Agent sends information to the Enterprise Manager. See the [Remove Server from List](/docs/threatprevention/8.1/admin/agents/agent-management/removeserver.md) topic for additional information.                                                                                          |
-| Clear SQLite Agent Queue | When the Agent is unable to communicate with the Enterprise Manager, Agent events queue up in the Agents local SQLite database until the Enterprise Manager is available to accept events. The Clear SQLite Agent Queue option dumps the queue and all pending events are lost. See the [Clear SQLite Agent Queue](/docs/threatprevention/8.1/admin/agents/agent-management/clearqueue.md) topic for additional information. |
+| Clear SQLite Agent Queue | When the Agent is unable to communicate with the Enterprise Manager, Agent events queue up in the Agents local SQLite database until the Enterprise Manager is available to accept events. The Clear SQLite Agent Queue option dumps the queue and discards all pending events. See the [Clear SQLite Agent Queue](/docs/threatprevention/8.1/admin/agents/agent-management/clearqueue.md) topic for additional information. |
 
 For certain actions, you can select multiple Agents in the data grid and perform that action
 on all of them. When multi-selection is available for an action, its right-click menu option isn't

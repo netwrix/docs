@@ -11,8 +11,8 @@ Threat Prevention Administration Console.
 
 **Windows Requirements**
 
-The Windows Server can be physical or virtual. The following Windows Server operating systems are
-supported:
+The Windows Server can be physical or virtual. Threat Prevention supports the following Windows
+Server operating systems:
 
 - Windows Server 2025
 - Windows Server 2022
@@ -44,7 +44,7 @@ The following are additional requirements for the Threat Prevention Administrati
 
 **Permissions for Installation and Application Use**
 
-The following permissions are required to install and use the application:
+You need the following permissions to install and use the application:
 
 - Membership in the local Administrators group
 

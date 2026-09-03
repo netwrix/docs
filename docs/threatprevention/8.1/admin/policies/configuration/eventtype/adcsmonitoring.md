@@ -6,8 +6,8 @@ sidebar_position: 220
 
 # ADCS Monitoring Event Type
 
-The ADCS Monitoring event type can be configured to generate an event when an Active
-Directory Certificate Services receive Certificate Requests.
+You can configure the ADCS Monitoring event type to generate an event when Active
+Directory Certificate Services (ADCS) receives certificate requests.
 
 The event filters for the ADCS Monitoring event type are:
 
@@ -61,8 +61,8 @@ Collections areas to edit the lists.
 
 **Attribute, Operator, and Value**
 
-When an attribute is selected, it is added to the filter and a dropdown menu is displayed in the
-Operation column with **Any Value** selected. You can further scope the attributes to enable the
+When you select an attribute, Threat Prevention adds it to the filter and displays a dropdown menu
+in the Operation column with **Any Value** selected. You can further scope the attributes to enable the
 policy to only capture events based on the new value. Use the Operation and Value columns of the
 Include Attributes and Exclude Attributes boxes to achieve this.
 
@@ -71,15 +71,15 @@ The Operation dropdown menu has the following options:
 - Any Value – No scoping applied for this attribute
 - Equal – Attribute values that are identical to the Value field
 - Not Equal – Attribute values that don't match the Value field
-- Contains – Attribute value includes the user supplied string (numbers are treated as strings) in
-  the Value field
-- Not Contain – Attribute values don't include the user supplied string (numbers are treated as
+- Contains – Attribute value includes the user supplied string (Threat Prevention treats numbers as
   strings) in the Value field
+- Not Contain – Attribute values don't include the user supplied string (Threat Prevention treats
+  numbers as strings) in the Value field
 
 Select an **Operation** and enter a value in the textbox. 
 
-When you select another attribute, a new row is added, where you can specify an operator and a value
-for that attribute. Each row is treated as an “OR” statement. If any event matches any of the
+When you select another attribute, a new row appears, where you can specify an operator and a value
+for that attribute. Threat Prevention treats each row as an “OR” statement. If any event matches any of the
 attribute filters, then the event data includes all attributes in the list.
 
 :::note
@@ -91,7 +91,7 @@ Attributes filter.
 
 ## Success Filter
 
-The Success filter is where the policy is set to only monitor successful events, failed events, or
+Use the Success filter to set the policy to monitor only successful events, only failed events, or
 both.
 
 ![Event Type – Success filter](/images/threatprevention/8.1/admin/policies/eventtype/success.webp)

@@ -6,15 +6,15 @@ sidebar_position: 70
 
 # Policy Reporting Dashboard
 
-The Policy Reporting dashboard is for viewing Threat Prevention events from any enabled policy that
+Use the Policy Reporting dashboard to view Threat Prevention events from any enabled policy that
 is sending events to QRadar. This dashboard requires the SEC token saved in the Settings
 interface so that QRadar can actively see Threat Prevention policies and associated recent
 events. See the [Settings](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/settings.md) topic for additional information.
 
-The Policies tab on the left side of the dashboard toggles the Policies panel open and close. All
-the enabled Threat Prevention policies sending event data to QRadar will be listed in alphanumeric
-order. On selecting a policy, the dashboard cards will load the event data from that policy and will
-reset to data search of the past three (3) hours.
+The Policies tab on the left side of the dashboard toggles the Policies panel open and close. The
+panel lists all the enabled Threat Prevention policies sending event data to QRadar in alphanumeric
+order. When you select a policy, the dashboard cards load the event data from that policy and
+reset to a data search of the past three (3) hours.
 
 The Policy Reporting dashboard contains the following cards:
 
@@ -42,11 +42,11 @@ The Policy Reporting dashboard contains the following cards:
   recorded in the specified timeframe. See the
   [Table Card Features](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/navigate.md#table-card-features) topic for additional information.
 
-The time interval is identified in the upper-right corner with the _Start_ and _End_ boxes. This is
-set by default to the past three (3) hours. To search within a different interval, either manually
+The time interval is identified in the upper-right corner with the _Start_ and _End_ boxes. This
+defaults to the past three (3) hours. To search within a different interval, either manually
 enter the date and time you want or use the calendar buttons to set them
 interval. Then click **Search** to refresh the card data.
 
-When a search using a time interval longer than twelve (12) hours is instigated, the database query
-is broken into multiple mini-queries. This will result in a visible reset of the dashboard display
-at the end of each mini-query until all data for the selected time interval has been retrieved.
+When you instigate a search using a time interval longer than twelve (12) hours, the app breaks the
+database query into multiple mini-queries. This visibly resets the dashboard display at the end of
+each mini-query until the app has retrieved all data for the selected time interval.

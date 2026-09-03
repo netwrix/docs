@@ -14,7 +14,7 @@ Explorer window to the scripts folder within the Threat Preventionfile system.
 You can execute Windows PowerShell scripts stored in this folder for the selected event. Select a
 script to execute it.
 
-An example script has been placed in this folder. The example PowerShell script creates or appends
+This folder contains an example script. The example PowerShell script creates or appends
 the _si_eventdata.txt_ file on the C:\ drive. The example script also contains all the parameters
 needed for working with the selected event data.
 

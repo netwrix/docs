@@ -7,8 +7,8 @@ sidebar_position: 70
 # Select Active Directory Perpetrators Window
 
 The Select Active Directory Perpetrators window provides a list of available AD users and groups.
-Selected objects are added to the filter from where you clicked the **Add** (+) button to open this
-window.
+Threat Prevention adds the selected objects to the filter from where you clicked the **Add** (+)
+button to open this window.
 
 ![Select Active Directory Perpetrators Window](/images/threatprevention/8.1/admin/policies/eventtype/window/adperpetrators.webp)
 
@@ -21,7 +21,7 @@ window.
 
 See the [Selection Windows](/docs/threatprevention/8.1/admin/policies/configuration/eventtype/window/overview.md) topic for additional information.
 
-The selection is displayed in the appropriate box of the AD Account filter, the AD Perpetrator
+The selection appears in the appropriate box of the AD Account filter, the AD Perpetrator
 filter, the Exchange Perpetrators filter, or the Perpetrators to Exclude filter.
 
 :::note

@@ -35,20 +35,20 @@ Configure the following settings for a RADIUS provider on the Configuration tab
 
 ![Configuration tab for a RADIUS authneication provider](/images/threatprevention/8.1/reportingmodule/configuration/integrations/authenticationprovider/configurationradius.webp)
 
-- Default – The default profile applied when a user is assigned multiple authentication profiles.
-  When off, the profile will be determined in alphabetical order of the profile name. Toggle off and
-  on as desired.
+- Default – The default profile applied when you assign a user multiple authentication profiles.
+  When off, the application determines the profile in alphabetical order of the profile name. Toggle
+  off and on as desired.
 - Server FQDN/IP – The address of the RADIUS proxy
 - Port – The port for the RADIUS proxy
 - Auth Type – The security protocol used by the RADIUS proxy. Use the dropdown menu to select
   either MSCHAPv2 or PAP.
 - Shared Secret – A secret shared between the application server and the RADIUS proxy
-- User Name Format Type – Active Directory attribute or attributes that will be sent to the RADIUS
-  authentication provider to identify the user. Some common identification attributes are available
+- User Name Format Type – Active Directory attribute or attributes that the application sends to the
+  RADIUS authentication provider to identify the user. Some common identification attributes are available
   in the dropdown list. If necessary, a custom option is also provided. This option instructs the
   application to send a custom value to the RADIUS provider based on the user's Active Directory
   attribute, supplied in the Custom Name Format field.
-- Custom Name Format – This field appears when the Custom User Name Format Type is selected. It has
+- Custom Name Format – This field appears when you select the Custom User Name Format Type. It has
   a unique syntax as follows:
 
   - Active Directory Attribute: `{attributename}`
@@ -65,7 +65,7 @@ Configure the following settings for a RADIUS provider on the Configuration tab
 
     - Example – `{firstname}_{telephoneNumber:4}`
 
-  - Text values can be hard coded to send a static text value for each user:
+  - You can hard code text values to send a static text value for each user:
 
     - Example – `MyCompany_{lastname}`
 
@@ -83,25 +83,25 @@ settings you must configure:
 
 ![Customization tab for a Radius authneication provider](/images/threatprevention/8.1/reportingmodule/configuration/integrations/authenticationprovider/customizationtab.webp)
 
-- Title for MFA Authentication dialog – The title that is displayed to the user when prompted for
-  MFA
-- Text for MFA Authentication dialog – The text description that is displayed to the user when
-  prompted for MFA
-- Send Initial Text – If On, the value in the Initial Auto Response Text is automatically sent to
-  the RADIUS proxy without user action. Toggle On or Off as desired.
-- Initial Auto Response Text – This value is sent to the RADIUS server automatically if the Send
-  Initial Text option is enabled. For example, this might be “push” to immediately have the user’s
-  phone app prompt for authorization.
-- Prefix for Response Text – This value is added to the start of the responses. The value will vary
-  according to server.
-- Send NAS Identifier – When On, NAS identifiers are transmitted to the RADIUS proxy. This is needed
+- Title for MFA Authentication dialog – The title the application displays to the user when
+  prompting for MFA
+- Text for MFA Authentication dialog – The text description the application displays to the user
+  when prompting for MFA
+- Send Initial Text – If On, the application automatically sends the value in the Initial Auto
+  Response Text to the RADIUS proxy without user action. Toggle On or Off as desired.
+- Initial Auto Response Text – The application sends this value to the RADIUS server automatically
+  if you enable the Send Initial Text option. For example, this might be “push” to immediately have
+  the user’s phone app prompt for authorization.
+- Prefix for Response Text – The application adds this value to the start of the responses. The
+  value varies according to server.
+- Send NAS Identifier – When On, the application transmits NAS identifiers to the RADIUS proxy. This is needed
   for certain RADIUS proxy implementations that require it. Toggle On or Off as desired.
 
 Click Save to save the configuration settings.
 
 ### Users/Groups Tab
 
-The Users/Groups tab displays users and groups that are assigned to this authentication
+The Users/Groups tab displays users and groups that you assign to this authentication
 profile. To give access to the application to new users, click the New Access button, which opens
 the Add Console Access window. To assign this authentication provider to existing users, go to
 System Settings > User Access Page.

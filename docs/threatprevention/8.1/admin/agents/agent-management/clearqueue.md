@@ -8,7 +8,7 @@ sidebar_position: 80
 
 When the Agent is unable to communicate with the Enterprise Manager, Agent events queue up in the
 Agents local SQLite database until the Enterprise Manager is available to accept events. The Clear
-SQLite Agent Queue option dumps the queue and all pending events are lost.
+SQLite Agent Queue option dumps the queue and discards all pending events.
 
 To clear the SQLite Agent queue for an Agent:
 

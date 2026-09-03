@@ -22,8 +22,8 @@ Object Explorer pane and select **Properties**.
 then scope the maximum server memory value to 12-14 GB (12000-14000 MB). Then click **OK** to save
 the modification.
 
-The SQL Server is now limited in its memory usage. When lowering maximum server memory, the change
-in the amount of memory being used by SQL server may not be immediately apparent. The SQL Server
+The SQL Server is now limited in its memory usage. When you lower maximum server memory, the change
+in the amount of memory SQL Server uses may not be immediately apparent. The SQL Server
 releases any used memory beyond the newly set maximum gradually.
 
 See the [Best Practices and Troubleshooting](/docs/threatprevention/8.1/troubleshooting/overview.md) topic for additional information.

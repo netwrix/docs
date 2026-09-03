@@ -13,8 +13,8 @@ To install Threat Prevention:
 
 :::note
 Run the msi via the command prompt with elevated privileges (domain admin rights) on a
-domain-joined machine. Else the installer runs and completes without errors, though no components
-are installed.
+domain-joined machine. Else the installer runs and completes without errors, though it installs no
+components.
 :::
 
 
@@ -25,15 +25,15 @@ happens:
 
 - If the installer detects .NET Framework 4.7.2 or later version installed on the machine, it
   proceeds with the installation.
-- If it doesn't detect .NET Framework 4.7.2 or later version, a message is displayed to inform you
-  to install it.
+- If it doesn't detect .NET Framework 4.7.2 or later version, the wizard displays a message
+  informing you to install it.
 
   ![.NET Framework Required](/images/threatprevention/8.1/install/netrequired.webp)
 
   You can either exit the wizard and install it manually or walk through the wizard until its last
   page and install it as part of the Threat Prevention installation process.
 
-On clicking Next, the End-User License Agreement page is displayed.
+When you click Next, the End-User License Agreement page opens.
 
 ![Threat Prevention Server Setup wizard - End-User License Agreement page](/images/threatprevention/8.1/install/licenseagreement.webp)
 
@@ -68,7 +68,7 @@ The components require the following hard drive space for installation:
 
 Optionally, you can change the installation directory location for Threat Prevention.
 
-**Step 5 –** By default, the Threat Prevention infrastructure components are installed to the
+**Step 5 –** By default, the wizard installs the Threat Prevention infrastructure components to the
 `C:\Program Files\Netwrix\Netwrix Threat Prevention\` directory.
 
 _(Optional)_ Click **Browse…** to change the installation location. The Change destination folder
@@ -107,11 +107,11 @@ See the
 for additional information.
 
 Checking the **Create Windows Firewall Rules** box automatically sets the Windows firewall rules
-needed to open these ports on the server during the installation process. If using a third party
+needed to open these ports on the server during the installation process. If you use a third party
 firewall, uncheck this option and manually create the necessary firewall rules. See the
 [Firewall Ports](/docs/threatprevention/8.1/requirements/ports.md) topic for additional information.
 
-When the settings are configured, click **Next**.
+After you configure the settings, click **Next**.
 
 ![Threat Prevention Server Setup wizard - Database Login Information page](/images/threatprevention/8.1/install/databselogininfor.webp)
 
@@ -124,8 +124,8 @@ connection.
 - Select the **Windows authentication** or **SQL Server Credentials** option button (for SQL Server
   authentication) and enter the credentials:
 
-  - Windows authentication uses the credentials provided on the Logon page, which is displayed if
-    this option is selected.
+  - Windows authentication uses the credentials provided on the Logon page, which appears if you
+    select this option.
   - For SQL Server authentication, provide SQL credentials in the **Login ID** and **Password**
     boxes.
 
@@ -145,7 +145,7 @@ connection.
   - If using SQL Server authentication, skip the next step.
 
     :::note
-    In case of SQL Server authentication, the credentials are tested on clicking
+    For SQL Server authentication, the wizard tests the credentials when you click
     **Next**. If the credential authentication fails, the setup doesn't proceed and a pop-up
     window displays failure details.
     :::
@@ -153,7 +153,7 @@ connection.
 
 ![Threat Prevention Server Setup wizard – Logon page](/images/threatprevention/8.1/install/logon.webp)
 
-**Step 8 –** If Windows authentication is selected, the Logon page is displayed.
+**Step 8 –** If you select Windows authentication, the Logon page opens.
 
 - Provide the username (Domain\User format) and password that the Threat Prevention Enterprise
   Manager service will impersonate when connecting to the database. These credentials must have
@@ -168,7 +168,7 @@ connection.
 - Click **Next**.
 
   :::note
-  For Windows authentication, the credentials are tested on clicking **Next**. If the
+  For Windows authentication, the wizard tests the credentials when you click **Next**. If the
   credential authentication fails, the setup doesn't proceed and a pop-up window displays failure
   details.
   :::
@@ -177,7 +177,7 @@ connection.
 ![Threat Prevention Server Setup wizard - Ready to Install page](/images/threatprevention/8.1/install/readytoinstall.webp)
 
 **Step 9 –** On the Ready to Install Netwrix Threat Prevention Server page, click **Install**. When
-finished, the Completed the Netwrix Threat Prevention Server Setup Wizard page is displayed.
+it finishes, the Completed the Netwrix Threat Prevention Server Setup Wizard page opens.
 
 ![Threat Prevention Server Setup wizard – Completed page](/images/threatprevention/8.1/install/complete.webp)
 
@@ -194,5 +194,5 @@ installation is complete, click **Finish**.
 
 ![Threat Prevention Admin Console desktop icon](/images/threatprevention/8.1/install/desktopicon.webp)
 
-The selected components have been installed, and the Threat Prevention Console icon is now on the
-desktop. See the [First Launch](/docs/threatprevention/8.1/install/firstlaunch/firstlaunch.md) topic for the next steps.
+The wizard has installed the selected components, and the Threat Prevention Console icon is now on
+the desktop. See the [First Launch](/docs/threatprevention/8.1/install/firstlaunch/firstlaunch.md) topic for the next steps.

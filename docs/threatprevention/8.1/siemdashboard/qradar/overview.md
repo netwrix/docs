@@ -13,14 +13,14 @@ App for QRadar, you can understand all Active Directory changes as a whole, patt
 activity indicative of account compromise, and attempts to compromise security, along with the
 ability to block undesired changes and access.
 
-Threat Prevention (formerly StealthINTERCEPT) can be configured to monitor Active Directory events
+You can configure Threat Prevention (formerly StealthINTERCEPT) to monitor Active Directory events
 and send the monitored events to QRadar.
 
 You can integrate Netwrix’ products with the Netwrix Active Directory App for QRadar found in the
 IBM X-Force Exchange.
 
 - Install the Active Directory App for QRadar.
-- Ensure that Threat Prevention has been configured to send events to QRadar. See the
+- Ensure that you have configured Threat Prevention to send events to QRadar. See the
   [SIEM Tab](/docs/threatprevention/8.1/admin/configuration/systemalerting/siem.md) topic for additional information.
 
 ## App Installation in QRadar
@@ -43,8 +43,8 @@ Then click Install.
 **Step 5 –** Close the Extensions Management window, and then select the Active Directory tab in
 QRadar.
 
-The Active Directory tab will appear in QRadar. It is necessary for the QRadar SEC token to be saved
-to the Settings interface of the Active Directory App. See the [Settings](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/settings.md) topic for
+The Active Directory tab appears in QRadar. You must save the QRadar SEC token to the Settings
+interface of the Active Directory App. See the [Settings](/docs/threatprevention/8.1/siemdashboard/qradar/navigate/settings.md) topic for
 additional information.
 
 ## Initial Configuration for the Active Directory App for QRadar
@@ -66,7 +66,7 @@ Threat Prevention to send data to QRadar.
 
 **Step 3 –** Select **Log Sources**.
 
-**Step 4 –** View the Log Sources list. If the data source wasn't automatically created, click Add,
+**Step 4 –** View the Log Sources list. If QRadar didn't automatically create the data source, click Add,
 enter the following information, and click Save.
 
 - Log Source Name – Enter a descriptive name to identify the data source
@@ -86,7 +86,7 @@ enter the following information, and click Save.
 
 **Step 5 –** To test that the configuration is working correctly, check the Log Activity page inside
 of the web console for QRadar. There should be logs of events with the Event Name of Unknown. If
-there are no events, use a packet sniffer to ensure that packets are being sent correctly between
+there are no events, use a packet sniffer to ensure that packets travel correctly between
 the two hosts, and diagnose any possible network issues.
 
 The Netwrix Active Directory App will now display activity from the Threat Prevention data.

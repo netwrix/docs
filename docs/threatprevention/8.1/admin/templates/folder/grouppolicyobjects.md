@@ -10,8 +10,8 @@ The **Templates** > **Microsoft** > **Group Policy Objects** folder in the Navig
 the following templates:
 
 :::warning
-Use cation with _all Lockdown/Blocking Templates_! Blank filters result in _everything_
-being locked down or blocked.
+Use caution with _all Lockdown/Blocking Templates_. Blank filters lock down or block
+_everything_.
 :::
 
 

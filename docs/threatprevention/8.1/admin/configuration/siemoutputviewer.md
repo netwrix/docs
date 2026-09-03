@@ -48,7 +48,7 @@ event/policy/analytics data to SIEM) in real time, the window displays them.
 - Host – The IP address or name of the SIEM server, configured in the SIEM server settings
 - Port – The port number to communicate with the SIEM server, configured in the SIEM server settings
 - Protocol – The protocol set when configuring the SIEM server, i.e., TCP or UDP
-- SSL – Shows whether SSL is used when sending data to SIEM (applies if TCP is set as the protocol)
+- SSL – Shows whether Threat Prevention uses SSL when sending data to SIEM (applies if TCP is set as the protocol)
 - Message – The actual data sent to syslog
 - Status – This field is empty if the message sends successfully. Otherwise, it contains the
   text of the received error, for example, 'Connection timeout'
@@ -70,7 +70,7 @@ This data grid employs features for sorting, filtering, searching, and more.
   the grid. See the
   [Data Grid Right-Click Menu](/docs/threatprevention/8.1/admin/navigation/rightclickmenus.md#data-grid-right-click-menu) topic
   for additional information.
-- The Group by Box ribbon just above the header row impacts how much data is displayed. See the
+- The Group by Box ribbon above the header row affects how much data the grid displays. See the
   [Sort Data](/docs/threatprevention/8.1/admin/navigation/datagrid.md#sort-data) topic for additional information.
 - You can reorder columns and remove them from the data grid. You can add removed columns back
   through the [Customization Window](/docs/threatprevention/8.1/admin/navigation/datagrid.md#customization-window).
