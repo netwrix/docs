@@ -96,26 +96,21 @@ buttons in the process list area to edit the list.
 - The Process **Add** (+) button adds a textbox to the list to add an additional process.
 - The Remove (x) button deletes the selected item(s) from that box.
 
-This tab also holds the options that apply when the folder or the checksum of a requesting process
-can't be resolved, along with **Never Block Windows System Process (PID = 4)**. See
-[Folder and Checksum Filtering](#folder-and-checksum-filtering) and
-[Never Block Windows System Process (PID = 4)](#never-block-windows-system-process-pid--4) in this
-topic for additional information.
-
 ## Requesting Processes Filter
 
 Use the Requesting Processes filter to set the scope of the policy to only lockdown specific processes or
 exclude specific processes from being locked down.
 
 
-![Policy window - Requesting Processes filter](/images/threatprevention/8.1/admin/policies/eventtype/processesprotect.webp)
+![Requesting Processes filter for a Process Guardian blocking policy](/images/threatprevention/8.1/admin/policies/eventtype/processesprotect.webp)
 
 Select the **Block** or **Allow** option button and then edit the list.
 
-Type the process in the textbox. Use the buttons above the box to edit the list.
+Add an entry to the process grid. Use the buttons above the grid to edit it.
 
-- The **Add** (+) button adds a textbox to the list to add an additional process.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The **Add** (+) button adds a row to the grid.
+- The Remove (x) button deletes the selected row from the grid.
+- The Lookup button finds a running process and fills in its details.
 
 
 :::note
@@ -128,42 +123,43 @@ Type the process in the textbox. Use the buttons above the box to edit the list.
 :::
 
 
-### Folder and Checksum Filtering
+### Image Path and Checksum Filtering
 
 A process name is a label that any user with write access to a folder can change, so an allow entry
 written against a name alone also matches a malicious tool renamed to that name. To identify the
-requesting process by something the caller doesn't control, narrow an entry by the folder the
-process runs from, by the checksum of the process image, or by both.
+requesting process by something the caller doesn't control, enter its full image path instead of its
+name, add the checksum of the process image, or do both.
 
-**Folder** – Restrict an entry to processes that run from a specific folder, for example
-`C:\Windows\System32\`. A renamed tool no longer matches the entry unless it also runs from that
-folder.
+**Process (name or path)** – Enter either a process name, such as `mimikatz.exe`, or a full image
+path, such as `C:\tools\mimikatz.exe`. Names and paths are case insensitive. An entry written as a
+path matches only a process that runs from that location, so a renamed tool elsewhere on disk no
+longer matches it.
 
-**SHA-256** – Add one or more approved SHA-256 hashes to an entry. The entry then matches only when
-the file the process runs from hashes to an approved value, so a file placed in an approved folder
-is still rejected unless its contents match.
+**Use Checksum** and **SHA-256** – Check **Use Checksum** for an entry and enter the approved
+SHA-256 hash in the **SHA-256** column. The entry then matches only when the file the process runs
+from hashes to the approved value, so a file placed at an approved path is still rejected unless its
+contents match.
 
 :::note
-Restricting an entry to a folder narrows the ways a process can be impersonated, but a
-malicious file written into that folder still matches. Add a checksum to the entry to close that
-gap.
+Writing an entry as a path narrows the ways a process can be impersonated, but a malicious
+file written into that folder still matches. Add a checksum to the entry to close that gap.
 :::
 
 :::warning
 The hash of an executable changes every time it's patched or upgraded. Refresh the
-approved hashes for an entry after every update to the tool it covers. Until the hashes are
-refreshed, the entry is treated according to the checksum option described below.
+approved hash for an entry after every update to the tool it covers. Until you do, the entry is
+treated according to **Block if Checksum Unavailable**.
 :::
 
-Threat Prevention resolves the folder and computes the checksum ahead of the request, so neither
-check delays the blocking decision. Both are unavailable for a process the Agent hasn't seen yet,
-and the folder is never available for the Windows System process, which runs from kernel memory and
-has no file on disk. Two options on the Target Processes tab set what happens in those cases.
+Threat Prevention resolves the path and computes the checksum ahead of the request, so neither check
+delays the blocking decision. Neither is available for a process the Agent hasn't seen yet, and a
+path is never available for the Windows System process, which runs from kernel memory and has no
+file on disk. The following options set what happens in those cases.
 
 | Option | Default | Description |
 | --- | --- | --- |
-| Block if at least one folder is specified in a filter and source process folder is unresolved | Checked | Blocks the request when a folder is specified for the entry and the folder of the requesting process can't be resolved |
-| Block if Checksum Unavailable | Checked | Blocks the request when a hash is specified for the entry and no hash is available for the requesting process |
+| Block if Checksum Unavailable | Cleared | Set per entry, in the grid next to the hash. Blocks the request when the entry uses a checksum and no hash is available for the requesting process. |
+| Block if at least one folder is specified in a filter and source process folder is unresolved | Checked | Blocks the request when an entry specifies a path and the path of the requesting process can't be resolved |
 
 :::warning
 Unchecking either option allows a request that Threat Prevention can't identify.
@@ -179,7 +175,8 @@ The Windows System process, which runs as process ID 4, opens handles to LSASS a
 operating system activity, such as managing security tokens and enforcing access control. Blocking
 it disrupts the operating system.
 
-Check **Never Block Windows System Process (PID = 4)** to exclude that process from the policy.
+Check **Never Block Windows System Process (PID = 4)**, below the process grid on this tab, to
+exclude that process from the policy.
 Threat Prevention reads the process ID from the operating system rather than from the caller, so a
 process that claims to be the System process doesn't match this exclusion.
 

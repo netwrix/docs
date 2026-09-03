@@ -35,12 +35,31 @@ Follow the steps to blacklist a trusted domain.
 **Step 1 –** Click **Configuration** > **Trusted Domains Blacklist** on the menu to open the Trusted
 Domains Blacklist window.
 
-**Step 2 –** Select the monitored domain the blacklist applies to.
+![Trusted Domains Blacklist window](/images/threatprevention/8.1/admin/configuration/trusteddomainsblacklist.webp)
 
-**Step 3 –** Add the domains to exclude. To choose from the domains an Agent reports as trusted
-rather than typing the names, select an Agent and pick the domains from the list it returns.
+The window holds one row per source domain, with the following columns:
 
-**Step 4 –** Click **Save**.
+- Source Domain – The NetBIOS name of the monitored domain the row applies to, for example
+  `NWXTECH`. Enter an asterisk (`*`) to apply the row to every Agent.
+- Excluded Domains (semicolon-separated) – The DNS names of the domains the Agent must never query,
+  separated by semicolons, for example `dmz.example.com;partner.example.net`.
+
+**Step 2 –** Click **Add Row** to add an empty row, and then type the source domain and the excluded
+domains.
+
+To pick the excluded domains from the trusts an Agent reports rather than typing their names, click
+**Add from Agent…** instead.
+
+![Select Trusted Domains window](/images/threatprevention/8.1/admin/configuration/trusteddomainsblacklist_selecttrusts.webp)
+
+- Select the Agent in the **Agent (DC)** list and click **Connect** to retrieve the domains it
+  trusts. Each one is listed with its NetBIOS name and its DNS name.
+- Check the domains to exclude, or use **Select All** and **Unselect All**, and then click **OK**.
+  The domains are added as the excluded domains for that Agent's source domain.
+
+**Step 3 –** To remove a row, select it and click **Delete**.
+
+**Step 4 –** Click **OK**.
 
 The Enterprise Manager sends the updated list to the Agents. No Agent restart is needed.
 

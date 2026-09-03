@@ -25,23 +25,23 @@ results point to a conflict.
 
 ## Requirements
 
-- `LsassHookScan.exe` and `plsahlp.sys`, both installed in the Enterprise Manager installation
-  folder by the Threat Prevention Server installer
+- `LsassHookScan.exe`, available from [Netwrix Support](https://www.netwrix.com/support.html)
+- `plsahlp.sys`, installed with the Agent. The default path is
+  `…\Netwrix\Netwrix Threat Prevention\SIWindowsAgent\plsahlp.sys`.
 - An account with administrative rights on the target server
 
-Copy both files to the target domain controller. `plsahlp.sys` must sit in the same folder as
-`LsassHookScan.exe`. On a server where Protected Process Light (PPL) is enabled for LSASS, the tool
-needs the driver to read the process; without it, the scan fails.
+Put `plsahlp.sys` in the same folder as `LsassHookScan.exe`. On a server where Protected Process
+Light (PPL) is enabled for LSASS, the tool needs the driver to read the process; without it, the
+scan fails.
 
 ## Run a Scan
 
 Follow the steps to scan a domain controller.
 
-**Step 1 –** Copy `LsassHookScan.exe` and `plsahlp.sys` from the Enterprise Manager installation
-folder to the target domain controller.
+**Step 1 –** Copy `LsassHookScan.exe` to the target domain controller, into a folder that also holds
+a copy of `plsahlp.sys`.
 
-**Step 2 –** Open a command prompt as an administrator and change to the folder containing the two
-files.
+**Step 2 –** Open a command prompt as an administrator and change to that folder.
 
 **Step 3 –** Run the tool and redirect the output to a file:
 

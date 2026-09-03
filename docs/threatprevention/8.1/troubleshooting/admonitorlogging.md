@@ -20,8 +20,10 @@ after you finish collecting logs.
 
 ## Log Files
 
-AD Monitor writes to the `ADMonitor_logs` folder inside the AD Monitor installation folder on the
-domain controller.
+AD Monitor writes to the `ADMonitor_logs` folder inside the Agent installation folder on the domain
+controller. The default path is:
+
+**…\Netwrix\Netwrix Threat Prevention\SIWindowsAgent\ADMonitor_logs\**
 
 | Log file | Contents |
 | --- | --- |
@@ -29,16 +31,23 @@ domain controller.
 | EventTrace.log | One structured line per captured event. Use it to confirm that a specific event was captured, and for automated parsing. |
 | HookTrace.log | Trace of the API hooks themselves. |
 | LoaderTrace.log | Trace of AD Monitor loading into the host process. |
+| DotNetLoaderTrace.log | Trace of the managed components AD Monitor loads. |
+
+A log file is rolled over on the schedule set by `RollingInterval`, and once it reaches
+`MaxFileSizeMb`. The rolled-over file carries the date and time in its name, for example
+`DebugTrace_2026-08-13_00-00-00-635.log`.
 
 To collect these files without signing in to the domain controller, use **Get Agent Log** in the
 Agents interface. It downloads the `ADMonitor_logs` folder along with the Agent host logs. See the
 [Access Agent Log Files](/docs/threatprevention/8.1/admin/agents/agents-windows/loglevelconfiguration.md#access-agent-log-files)
 topic for additional information.
 
-AD Monitor loads into more than one process. In the svchost and Terminal Services contexts,
-`DebugTrace.log` and `HookTrace.log` are written with a `Svchost` or `Term` prefix, for example
-`SvchostDebugTrace.log` and `TermHookTrace.log`. `EventTrace.log` never takes a prefix — every
-context writes to the same file name.
+AD Monitor loads into more than one process, and the log file names carry the context it loaded
+into. Alongside the file names above, the same folder holds a `Term` set for the Terminal Services
+context and an `Svchost` set for the svchost-hosted context, for example `TermDebugTrace.log`,
+`TermHookTrace.log`, and `SvchostDebugTrace.log`. Read the set that matches the process you're
+investigating; for Active Directory and authentication activity on a domain controller, that's the
+unprefixed set.
 
 ### Changes in Version 8.1
 
@@ -63,8 +72,10 @@ record of what was captured.
 
 ## Logging.ini
 
-AD Monitor reads its settings from `Logging.ini` in the AD Monitor installation folder on the domain
-controller.
+AD Monitor reads its settings from `Logging.ini` in the Agent installation folder on the domain
+controller. The default path is:
+
+**…\Netwrix\Netwrix Threat Prevention\SIWindowsAgent\Logging.ini**
 
 :::warning
 AD Monitor reads `Logging.ini` when it loads into the LSASS process. A change to this
@@ -93,7 +104,7 @@ MaxLogFiles = 5
 | HookTrace | Minimum severity written to `HookTrace.log`, using the same values as `DebugTrace`. |
 | DebugFilter | Space-separated list of the areas to include in `DebugTrace.log` and `HookTrace.log`. Leave it unset to include everything. |
 | EventFilter | Space-separated list of the event categories to write to `EventTrace.log`. Leave it unset to disable event logging. |
-| FlushIntervalMillis | How often, in milliseconds, buffered entries are written to disk. The default is 500 and the maximum is 60000. Critical and Error entries are always written immediately. |
+| FlushIntervalMillis | How often, in milliseconds, buffered entries are written to disk. The default is 500 and the maximum is 60000. Critical and Error entries in `DebugTrace.log` and `HookTrace.log` are always written immediately. |
 | MaxFileSizeMb | Size in megabytes at which a log file is rolled over. The default is 20. |
 | RollingInterval | Time interval at which a log file is rolled over, in `hh:mm:ss` format. |
 | MaxLogFiles | Number of rolled-over files to keep. |
@@ -101,6 +112,16 @@ MaxLogFiles = 5
 `EventFilter` is unset by default, so `EventTrace.log` stays empty until you list the categories you
 want. Setting `AdmEvent` or `LdapEvent` also starts the underlying Active Directory and LDAP capture
 when AD Monitor loads.
+
+:::warning
+`EventTrace.log` output is always buffered, including Critical and Error entries. If the
+LSASS process terminates without shutting down cleanly, up to one flush interval's worth of entries
+is lost. When you investigate a crash, read `DebugTrace.log`, where Critical and Error entries reach
+the disk immediately.
+:::
+
+`Logging.ini` holds further settings that control Exchange monitoring and internal diagnostics. Set
+those only when [Netwrix Support](https://www.netwrix.com/support.html) asks you to.
 
 :::warning
 `DebugFilter` narrows all output in `DebugTrace.log` and `HookTrace.log`, not only the
@@ -120,7 +141,6 @@ output, leave `DebugFilter` unset and use `EventFilter` to scope `EventTrace.log
 | Kerberos | Kerberos ticket requests and validation |
 | LDAP | LDAP connections and queries |
 | NTLM | NTLM authentication |
-| PagedSearch | LDAP paged search continuation and resource limits |
 | PwdChg | Password changes and resets |
 | Rules | Policy rule evaluation, including which rule allowed or blocked an operation |
 | Timers | AD Monitor's internal timer housekeeping. This reports on AD Monitor itself, not on directory activity. |
@@ -197,8 +217,8 @@ Two more conditions are expected behavior rather than errors:
 
 - `EventTrace.log` stays empty while Active Directory activity is happening. `EventFilter` is unset,
   which disables event logging. Set it to the categories you need.
-- `HookTrace.log` grows quickly. The default level for `HookTrace` is the most verbose one. Set
-  `HookTrace = Warning` or a less verbose level to reduce the output.
+- `HookTrace.log` grows quickly. Set `HookTrace = Warning`, or a less verbose level, to reduce the
+  output.
 
 See the [Best Practices and Troubleshooting](/docs/threatprevention/8.1/troubleshooting/overview.md)
 topic for additional information.

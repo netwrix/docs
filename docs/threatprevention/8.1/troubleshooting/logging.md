@@ -42,6 +42,7 @@ Each component writes its logs to a `logs` folder inside its own installation fo
 | Agent | EventComeOutSqlite.log | Events leaving the local event queue |
 | Agent | ADWS.log | Active Directory Web Services channel activity |
 | Agent | ADWS_startup.log | Active Directory Web Services channel startup |
+| Agent | SIAgentUpdater.log | Agent self-upgrade activity |
 
 The default locations for the Enterprise Manager and Administration Console logs are:
 
@@ -85,9 +86,9 @@ component's `.log.config` file, so the setting survives a service restart.
 ## Edit the Log Configuration File
 
 Each managed component reads its logging settings from a `.log.config` file in its installation
-folder: `SIEnterpriseManager.log.config`, `SIWinConsole.log.config`, and
-`SIWindowsAgent.log.config`. Edit this file to enable logging for an individual feature, which is
-more targeted than raising the log level for the whole component.
+folder: `SIEnterpriseManager.log.config`, `SIWinConsole.log.config`, `SIWindowsAgent.log.config`,
+and `SIAgentUpdater.log.config`. Edit this file to enable logging for an individual feature, which
+is more targeted than raising the log level for the whole component.
 
 Each file ships with a set of example rules that are commented out. Follow the steps to enable one.
 

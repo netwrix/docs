@@ -101,65 +101,73 @@ Use the Requesting Processes filter to set the scope of the policy to only monit
 exclude specific processes from being monitored.
 
 
-![Processes Monitoring filter](/images/threatprevention/8.1/admin/policies/eventtype/processesmonitoring.webp)
+![Requesting Processes filter for a Process Guardian monitoring policy](/images/threatprevention/8.1/admin/policies/eventtype/processesmonitoring.webp)
 
-Type the process in the textbox for the desired option: Include Process or Exclude Process. Use the
-buttons in the respective areas to edit the lists.
+Add an entry to the Include (name or path) grid or the Exclude (name or path) grid. Use the buttons
+above each grid to edit it.
 
-- The Process **Add** (+) button adds a textbox to the list to add an additional process.
-- The Remove (x) button deletes the selected item(s) from that box.
+- The **Add** (+) button adds a row to the grid.
+- The Remove (x) button deletes the selected row from the grid.
+- The Lookup button finds a running process and fills in its details.
 
 :::warning
-In a production environment, only exclude processes using the Exclude Process area.
+In a production environment, only exclude processes using the Exclude area.
 While there is an option to include processes, it is NOT recommended in a policy that is monitoring
-a production environment. Adding a process in the Include Process area limits the policy to only
+a production environment. Adding a process in the Include area limits the policy to only
 monitoring that process. Unknown malicious processes would not be monitored by the policy. In a
-sandbox environment, the Include Process option can be useful for testing/capturing the LSASS
+sandbox environment, the Include option can be useful for testing/capturing the LSASS
 activity for specific processes to see what access they are requesting.
 :::
 
 
-### Folder and Checksum Filtering
+### Image Path and Checksum Filtering
 
 A process name is a label that any user with write access to a folder can change. A malicious tool
-renamed to `svchost.exe` matches a rule written against the name `svchost.exe`. To identify the
-requesting process by something the caller doesn't control, narrow an entry by the folder the
-process runs from, by the checksum of the process image, or by both.
+renamed to `svchost.exe` matches an entry written against the name `svchost.exe`. To identify the
+requesting process by something the caller doesn't control, enter its full image path instead of its
+name, add the checksum of the process image, or do both.
 
-**Folder** – Restrict an entry to processes that run from a specific folder, for example
-`C:\Windows\System32\`. A renamed tool no longer matches the entry unless it also runs from that
-folder.
+**Process (name or path)** – Enter either a process name, such as `mimikatz.exe`, or a full image
+path, such as `C:\tools\mimikatz.exe`. Names and paths are case insensitive. An entry written as a
+path matches only a process that runs from that location, so a renamed tool elsewhere on disk no
+longer matches it.
 
-**SHA-256** – Add one or more approved SHA-256 hashes to an entry. The entry then matches only when
-the file the process runs from hashes to an approved value, so a file placed in an approved folder
-is still rejected unless its contents match.
+**Use Checksum** and **SHA-256** – Check **Use Checksum** for an entry and enter the approved
+SHA-256 hash in the **SHA-256** column. The entry then matches only when the file the process runs
+from hashes to the approved value, so a file placed at an approved path is still rejected unless its
+contents match.
 
 :::note
-Restricting an entry to a folder narrows the ways a process can be impersonated, but a
-malicious file written into that folder still matches. Add a checksum to the entry to close that
-gap.
+Writing an entry as a path narrows the ways a process can be impersonated, but a malicious
+file written into that folder still matches. Add a checksum to the entry to close that gap.
 :::
 
 :::warning
 The hash of an executable changes every time it's patched or upgraded. Refresh the
-approved hashes for an entry after every update to the tool it covers. Until the hashes are
-refreshed, the entry is treated according to the checksum option described below.
+approved hash for an entry after every update to the tool it covers. Until you do, the entry is
+treated according to **Monitor if Checksum Unavailable**.
 :::
 
-Threat Prevention resolves the folder and computes the checksum ahead of the request, so neither
-check delays the request itself. Both are unavailable for a process the Agent hasn't seen yet, and
-the folder is never available for the Windows System process, which runs from kernel memory and has
-no file on disk. Two options set what happens in those cases.
+Threat Prevention resolves the path and computes the checksum ahead of the request, so neither check
+delays the request itself. Neither is available for a process the Agent hasn't seen yet, and a path
+is never available for the Windows System process, which runs from kernel memory and has no file on
+disk. The following options set what happens in those cases.
 
 | Option | Default | Description |
 | --- | --- | --- |
-| Monitor if at least one folder is specified in a filter and source process folder is unresolved | Checked | Generates an event when a folder is specified for the entry and the folder of the requesting process can't be resolved |
-| Monitor if Checksum Unavailable | Checked | Generates an event when a hash is specified for the entry and no hash is available for the requesting process |
+| Monitor if Checksum Unavailable | Cleared | Set per entry, in the grid next to the hash. Generates an event when the entry uses a checksum and no hash is available for the requesting process. |
+| Monitor if at least one folder is specified in a filter and source process folder is unresolved | Checked | Generates an event when an entry specifies a path and the path of the requesting process can't be resolved |
+| Ignore Windows System Process (PID = 4) | Cleared | Excludes the Windows System process from the policy. Threat Prevention reads the process ID from the operating system rather than from the caller, so a process that claims to be the System process doesn't match this exclusion. |
 
 :::tip
-Leave both options checked unless there's a specific reason to change them. Unchecking
-them means activity that can't be identified goes unrecorded.
+Leave **Monitor if at least one folder is specified in a filter and source process folder is
+unresolved** checked unless there's a specific reason to change it. Unchecking it means activity
+that can't be identified goes unrecorded.
 :::
+
+Run these filters in a monitoring policy before you rely on them in a blocking policy. Compare the
+events the policy generates with the ones it generated on process names alone, so you know which
+requests a path or a hash excludes.
 
 ### Kernel Stack Attribute
 
