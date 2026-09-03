@@ -650,13 +650,13 @@ export const PRODUCTS = [
       {
         version: '8.1',
         label: '8.1',
-        isLatest: true,
+        isLatest: false,
         sidebarFile: './sidebars/threatprevention/8.1.js',
       },
       {
         version: '8.0',
         label: '8.0',
-        isLatest: false,
+        isLatest: true,
         sidebarFile: './sidebars/threatprevention/8.0.js',
       },
       {
@@ -666,7 +666,7 @@ export const PRODUCTS = [
         sidebarFile: './sidebars/threatprevention/7.5.js',
       }
     ],
-    defaultVersion: '8.1',
+    defaultVersion: '8.0',
   },
 ];
 
